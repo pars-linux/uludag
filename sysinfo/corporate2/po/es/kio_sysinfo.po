@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 13:56+0200\n"
+"POT-Creation-Date: 2010-07-08 21:15+0300\n"
 "PO-Revision-Date: 2010-01-01 17:10-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -65,86 +65,83 @@ msgid "Network Folders"
 msgstr "Carpetas de Red"
 
 #: sysinfo/sysinfo.cpp:241
-msgid "Network"
-msgstr "Red"
-
-#: sysinfo/sysinfo.cpp:249
 msgid "Memory"
 msgstr "Memoria"
 
-#: sysinfo/sysinfo.cpp:250
+#: sysinfo/sysinfo.cpp:242
 msgid "Physical memory: "
 msgstr "Memoria Física:"
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
+#: sysinfo/sysinfo.cpp:242 sysinfo/sysinfo.cpp:244 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
 msgstr "%1 de %2 libre"
 
-#: sysinfo/sysinfo.cpp:251
+#: sysinfo/sysinfo.cpp:243
 msgid "Swap memory: "
 msgstr "Memoria de intercambio:"
 
-#: sysinfo/sysinfo.cpp:253
+#: sysinfo/sysinfo.cpp:245
 msgid "Not in use"
 msgstr "Sin uso"
 
-#: sysinfo/sysinfo.cpp:260
+#: sysinfo/sysinfo.cpp:252
 msgid "Disks"
 msgstr "Discos"
 
-#: sysinfo/sysinfo.cpp:267
-msgid "Operating System"
-msgstr "Sistema Operativo"
-
-#: sysinfo/sysinfo.cpp:269
-msgid "KDE <b>%1</b> on <b>%2</b>"
-msgstr "KDE <b>%1</b> en <b>%2</b>"
-
-#: sysinfo/sysinfo.cpp:280
+#: sysinfo/sysinfo.cpp:261
 msgid "Processor"
 msgstr "Procesador (CPU)"
 
-#: sysinfo/sysinfo.cpp:285
+#: sysinfo/sysinfo.cpp:266
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:286, c-format
+#: sysinfo/sysinfo.cpp:267
+#, fuzzy, c-format
 msgid "1 core"
 msgid_plural "%n cores"
 msgstr[0] "1 core"
 msgstr[1] " core"
 
-#: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
-msgid "Processor supports virtualization"
-msgstr "Procesador soporta virtualización"
+#: sysinfo/sysinfo.cpp:278
+msgid "Operating System"
+msgstr "Sistema Operativo"
 
-#: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
-msgid "Processor doesn't support virtualization"
-msgstr "Procesador no soporta virtualización"
+#: sysinfo/sysinfo.cpp:280
+msgid "KDE <b>%1</b> on <b>%2</b>"
+msgstr "KDE <b>%1</b> en <b>%2</b>"
 
-#: sysinfo/sysinfo.cpp:299
+#: sysinfo/sysinfo.cpp:290
 msgid "Display"
 msgstr "Monitor"
 
-#: sysinfo/sysinfo.cpp:302
+#: sysinfo/sysinfo.cpp:293
 msgid "Driver: "
 msgstr "Controlador:"
 
-#: sysinfo/sysinfo.cpp:310
+#: sysinfo/sysinfo.cpp:303
 msgid "Machine Information"
 msgstr "Información del equipo"
 
-#: sysinfo/sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:304
 msgid "Vendor: "
 msgstr "Fabricante:"
 
-#: sysinfo/sysinfo.cpp:312
+#: sysinfo/sysinfo.cpp:305
 msgid "Product: "
 msgstr "Producto:"
 
-#: sysinfo/sysinfo.cpp:313
+#: sysinfo/sysinfo.cpp:306
 msgid "BIOS: "
 msgstr "BIOS: "
+
+#: sysinfo/sysinfo.cpp:345
+msgid "Processor supports virtualization"
+msgstr "Procesador soporta virtualización"
+
+#: sysinfo/sysinfo.cpp:346
+msgid "Processor doesn't support virtualization"
+msgstr "Procesador no soporta virtualización"
 
 #: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
@@ -154,37 +151,34 @@ msgstr "Montado en %1"
 msgid "Not mounted"
 msgstr "no montado"
 
-#: sysinfo/sysinfo.cpp:506
+#: sysinfo/sysinfo.cpp:491
 msgid "3D Not Supported"
 msgstr "Sin Soporte 3D"
 
-#: sysinfo/sysinfo.cpp:508
+#: sysinfo/sysinfo.cpp:493
 msgid "3D Supported"
 msgstr "Soporte 3D"
 
-#: sysinfo/sysinfo.cpp:517
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Red <strong>no accesible</strong>"
+#~ msgid "Network"
+#~ msgstr "Red"
 
-#: sysinfo/sysinfo.cpp:519
-msgid "You are <strong>offline</strong>"
-msgstr "<strong>No hay </strong>conexión de red"
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Red <strong>no accesible</strong>"
 
-#: sysinfo/sysinfo.cpp:521
-msgid "Network is <strong>shutting down</strong>"
-msgstr "La red está <strong>desconectandose</strong>"
+#~ msgid "You are <strong>offline</strong>"
+#~ msgstr "<strong>No hay </strong>conexión de red"
 
-#: sysinfo/sysinfo.cpp:523
-msgid "<strong>Establishing</strong> connection to the network"
-msgstr "<strong>Estableciendo</strong> conexión de red"
+#~ msgid "Network is <strong>shutting down</strong>"
+#~ msgstr "La red está <strong>desconectandose</strong>"
 
-#: sysinfo/sysinfo.cpp:525
-msgid "You are <strong>online</strong>"
-msgstr "Estamos <strong>en línea</strong>"
+#~ msgid "<strong>Establishing</strong> connection to the network"
+#~ msgstr "<strong>Estableciendo</strong> conexión de red"
 
-#: sysinfo/sysinfo.cpp:527
-msgid "Unknown network status"
-msgstr "Estado de red desconocido"
+#~ msgid "You are <strong>online</strong>"
+#~ msgstr "Estamos <strong>en línea</strong>"
+
+#~ msgid "Unknown network status"
+#~ msgstr "Estado de red desconocido"
 
 #~ msgid "%1 free of %2"
 #~ msgstr "%1 libre de %2"

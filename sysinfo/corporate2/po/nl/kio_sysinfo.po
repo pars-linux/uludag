@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 13:56+0200\n"
+"POT-Creation-Date: 2010-07-08 21:15+0300\n"
 "PO-Revision-Date: 31/12/09 16:49\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -64,87 +64,83 @@ msgid "Network Folders"
 msgstr "Netwerkmappen"
 
 #: sysinfo/sysinfo.cpp:241
-msgid "Network"
-msgstr "Netwerk"
-
-#: sysinfo/sysinfo.cpp:249
 msgid "Memory"
 msgstr "Geheugen"
 
-#: sysinfo/sysinfo.cpp:250
+#: sysinfo/sysinfo.cpp:242
 msgid "Physical memory: "
 msgstr "Fysiek geheugen"
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
+#: sysinfo/sysinfo.cpp:242 sysinfo/sysinfo.cpp:244 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
 msgstr "%1 van %2 is vrij"
 
-#: sysinfo/sysinfo.cpp:251
+#: sysinfo/sysinfo.cpp:243
 msgid "Swap memory: "
 msgstr "Swapgeheugen: "
 
-#: sysinfo/sysinfo.cpp:253
+#: sysinfo/sysinfo.cpp:245
 msgid "Not in use"
 msgstr "Niet in gebruik"
 
-#: sysinfo/sysinfo.cpp:260
+#: sysinfo/sysinfo.cpp:252
 msgid "Disks"
 msgstr "Schijven"
 
-#: sysinfo/sysinfo.cpp:267
-msgid "Operating System"
-msgstr "Besturingssysteem"
-
-#: sysinfo/sysinfo.cpp:269
-msgid "KDE <b>%1</b> on <b>%2</b>"
-msgstr "KDE <b>%1</b> op <b>%2</b>"
-
-#: sysinfo/sysinfo.cpp:280
+#: sysinfo/sysinfo.cpp:261
 msgid "Processor"
 msgstr "Processor"
 
-#: sysinfo/sysinfo.cpp:285
+#: sysinfo/sysinfo.cpp:266
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:286
+#: sysinfo/sysinfo.cpp:267
 #, c-format
 msgid "1 core"
 msgid_plural "%n cores"
 msgstr[0] "2 kern"
 msgstr[1] "%n kernen"
 
-#: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
-msgid "Processor supports virtualization"
-msgstr "Processor ondersteunt virtualisatie"
+#: sysinfo/sysinfo.cpp:278
+msgid "Operating System"
+msgstr "Besturingssysteem"
 
-#: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
-msgid "Processor doesn't support virtualization"
-msgstr "Processor ondersteunt geen virtualisatie"
+#: sysinfo/sysinfo.cpp:280
+msgid "KDE <b>%1</b> on <b>%2</b>"
+msgstr "KDE <b>%1</b> op <b>%2</b>"
 
-#: sysinfo/sysinfo.cpp:299
+#: sysinfo/sysinfo.cpp:290
 msgid "Display"
 msgstr "Beeldscherm"
 
-#: sysinfo/sysinfo.cpp:302
+#: sysinfo/sysinfo.cpp:293
 msgid "Driver: "
 msgstr "Stuurprogramma: "
 
-#: sysinfo/sysinfo.cpp:310
+#: sysinfo/sysinfo.cpp:303
 msgid "Machine Information"
 msgstr "Machine informatie"
 
-#: sysinfo/sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:304
 msgid "Vendor: "
 msgstr "Leverancier: "
 
-#: sysinfo/sysinfo.cpp:312
+#: sysinfo/sysinfo.cpp:305
 msgid "Product: "
 msgstr "Product: "
 
-#: sysinfo/sysinfo.cpp:313
+#: sysinfo/sysinfo.cpp:306
 msgid "BIOS: "
 msgstr "BIOS: "
+
+#: sysinfo/sysinfo.cpp:345
+msgid "Processor supports virtualization"
+msgstr "Processor ondersteunt virtualisatie"
+
+#: sysinfo/sysinfo.cpp:346
+msgid "Processor doesn't support virtualization"
+msgstr "Processor ondersteunt geen virtualisatie"
 
 #: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
@@ -154,35 +150,31 @@ msgstr "Aangekoppeld aan %1"
 msgid "Not mounted"
 msgstr "Niet aangekoppeld"
 
-#: sysinfo/sysinfo.cpp:506
+#: sysinfo/sysinfo.cpp:491
 msgid "3D Not Supported"
 msgstr "geen 3D-ondersteuning"
 
-#: sysinfo/sysinfo.cpp:508
+#: sysinfo/sysinfo.cpp:493
 msgid "3D Supported"
 msgstr "3D-ondersteuning"
 
-#: sysinfo/sysinfo.cpp:517
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Netwerk is <strong>onbereikbaar</strong>"
+#~ msgid "Network"
+#~ msgstr "Netwerk"
 
-#: sysinfo/sysinfo.cpp:519
-msgid "You are <strong>offline</strong>"
-msgstr "U bent <strong>offline</strong>"
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Netwerk is <strong>onbereikbaar</strong>"
 
-#: sysinfo/sysinfo.cpp:521
-msgid "Network is <strong>shutting down</strong>"
-msgstr "Netwerk is <strong>afgesloten</strong>"
+#~ msgid "You are <strong>offline</strong>"
+#~ msgstr "U bent <strong>offline</strong>"
 
-#: sysinfo/sysinfo.cpp:523
-msgid "<strong>Establishing</strong> connection to the network"
-msgstr "<strong>Bezig</strong> te verbinden met het netwerk"
+#~ msgid "Network is <strong>shutting down</strong>"
+#~ msgstr "Netwerk is <strong>afgesloten</strong>"
 
-#: sysinfo/sysinfo.cpp:525
-msgid "You are <strong>online</strong>"
-msgstr "U bent <strong>online</strong>"
+#~ msgid "<strong>Establishing</strong> connection to the network"
+#~ msgstr "<strong>Bezig</strong> te verbinden met het netwerk"
 
-#: sysinfo/sysinfo.cpp:527
-msgid "Unknown network status"
-msgstr "Onbekende netwerkstatus"
+#~ msgid "You are <strong>online</strong>"
+#~ msgstr "U bent <strong>online</strong>"
 
+#~ msgid "Unknown network status"
+#~ msgstr "Onbekende netwerkstatus"
