@@ -136,7 +136,7 @@ padding: 20px;
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../data/kaptan.qrc">:/raw/pics/basket.png</pixmap>
+      <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/basket.png</pixmap>
      </property>
     </widget>
    </item>

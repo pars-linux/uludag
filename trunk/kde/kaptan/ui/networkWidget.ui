@@ -46,7 +46,7 @@ border:0px;
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../data/kaptan.qrc">:/raw/pics/applications-internet.png</pixmap>
+        <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/applications-internet.png</pixmap>
        </property>
       </widget>
      </item>

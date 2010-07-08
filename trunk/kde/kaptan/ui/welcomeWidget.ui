@@ -131,7 +131,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../data/kaptan.qrc">:/raw/pics/kaptan_welcome.png</pixmap>
+      <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/kaptan_welcome.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>false</bool>

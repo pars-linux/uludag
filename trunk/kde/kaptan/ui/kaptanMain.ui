@@ -39,12 +39,12 @@
   </property>
   <property name="windowIcon">
    <iconset resource="../data/kaptan.qrc">
-    <normaloff>:/raw/pics/cr64-app-kaptan.png</normaloff>:/raw/pics/cr64-app-kaptan.png</iconset>
+    <normaloff>:/raw/pixmap/cr64-app-kaptan.png</normaloff>:/raw/pixmap/cr64-app-kaptan.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">#kaptan{
-	/*background-image:url(':/raw/pics/bg2.png');*/
-	background-image: url(:/raw/pics/bg2.png);
+	/*background-image:url(':/raw/pixmap/bg2.png');*/
+	background-image: url(:/raw/pixmap/bg2.png);
     background-repeat: no-repeat;
     background-position: left top;
     background-color: #642437;
@@ -112,7 +112,7 @@ border-bottom: 1px solid rgba(0,0,0,10)</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../data/kaptan.qrc">:/raw/pics/cr64-app-kaptan.png</pixmap>
+           <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/cr64-app-kaptan.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -206,7 +206,7 @@ border-bottom: 1px solid rgba(0,0,0,10)</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="../data/kaptan.qrc">:/raw/pics/kaptan-logo.png</pixmap>
+           <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/kaptan-logo.png</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -346,7 +346,7 @@ QPushButton::flat:pressed{
            </property>
            <property name="icon">
             <iconset resource="../data/kaptan.qrc">
-             <normaloff>:/raw/pics/cross.png</normaloff>:/raw/pics/cross.png</iconset>
+             <normaloff>:/raw/pixmap/cross.png</normaloff>:/raw/pixmap/cross.png</iconset>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -360,7 +360,7 @@ QPushButton::flat:pressed{
            </property>
            <property name="icon">
             <iconset resource="../data/kaptan.qrc">
-             <normaloff>:/raw/pics/arrow-left.png</normaloff>:/raw/pics/arrow-left.png</iconset>
+             <normaloff>:/raw/pixmap/arrow-left.png</normaloff>:/raw/pixmap/arrow-left.png</iconset>
            </property>
            <property name="flat">
             <bool>true</bool>
@@ -377,7 +377,7 @@ QPushButton::flat:pressed{
            </property>
            <property name="icon">
             <iconset resource="../data/kaptan.qrc">
-             <normaloff>:/raw/pics/arrow-right.png</normaloff>:/raw/pics/arrow-right.png</iconset>
+             <normaloff>:/raw/pixmap/arrow-right.png</normaloff>:/raw/pixmap/arrow-right.png</iconset>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -419,7 +419,7 @@ QPushButton::flat:pressed{
            </property>
            <property name="icon">
             <iconset resource="../data/kaptan.qrc">
-             <normaloff>:/raw/pics/tick.png</normaloff>:/raw/pics/tick.png</iconset>
+             <normaloff>:/raw/pixmap/tick.png</normaloff>:/raw/pixmap/tick.png</iconset>
            </property>
            <property name="checkable">
             <bool>false</bool>

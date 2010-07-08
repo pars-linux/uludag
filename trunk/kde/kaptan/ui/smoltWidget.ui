@@ -41,7 +41,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="../data/kaptan.qrc">:/raw/pics/view-pim-contacts.png</pixmap>
+      <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/view-pim-contacts.png</pixmap>
      </property>
     </widget>
    </item>

@@ -453,7 +453,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pics/kde-windows.png</pixmap>
+               <pixmap>:/raw/pixmap/kde-windows.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -637,7 +637,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pics/preferences-system.png</pixmap>
+               <pixmap>:/raw/pixmap/preferences-system.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -813,7 +813,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pics/system-help.png</pixmap>
+               <pixmap>:/raw/pixmap/system-help.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
