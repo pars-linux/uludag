@@ -9,8 +9,9 @@ from clcolorize import colorize
 
 class TestGUI:
     """class for the testcase gui."""
-    def __init__(self, element, report=None):
+    def __init__(self, element, packagelist, report=None):
         self.element = element
+        self.packagelist = packagelist
         self.report = list()
         
     def test_gui_main(self):
@@ -21,6 +22,7 @@ class TestGUI:
         while counter < totalCases:
             print colorize('Case {0} of {1}',
                            'bold').format(counter+1, totalCases)
+            print 'Package: ', colorize('{0}', 'bold').format(''.join(self.packagelist))
             downloadList = []
             for downloadTag in case[counter].getiterator('download'):
                 downloadList.append(downloadTag.text)
