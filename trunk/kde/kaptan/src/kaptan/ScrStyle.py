@@ -21,7 +21,7 @@ from kaptan.ScreenWidget import ScreenWidget
 from kaptan.styleWidget import Ui_styleWidget
 from stylewidget import StyleItemWidget
 
-from desktopparser import DesktopParser
+from kaptan.desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -47,11 +47,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
         defaultDesktopNumber = int(group.readEntry('Number'))
 
         self.ui.spinBoxDesktopNumbers.setValue(defaultDesktopNumber)
-        lst2 = glob.glob1("/usr/kde/4/share/apps/kaptan/gui/styles", "*.style")
+        lst2 = glob.glob1("/usr/kde/4/share/apps/kaptan/kaptan/kde-themes", "*.style")
 
         for desktopFiles in lst2:
             parser = DesktopParser()
-            parser.read("/usr/kde/4/share/apps/kaptan/gui/styles/" +str(desktopFiles))
+            parser.read("/usr/kde/4/share/apps/kaptan/kaptan/kde-themes/" +str(desktopFiles))
             try:
                 styleName = unicode(parser.get_locale('Style', 'name[%s]'%self.catLang, ''))
             except:
@@ -70,7 +70,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 colorScheme = unicode(parser.get_locale('Style', 'colorScheme', ''))
                 iconTheme = unicode(parser.get_locale('Style', 'iconTheme', ''))
                 windowDecoration = unicode(parser.get_locale('Style', 'windowDecoration', ''))
-                styleThumb = unicode(os.path.join("/usr/kde/4/share/apps/kaptan/gui/styles/",  parser.get_locale('Style', 'thumbnail','')))
+                styleThumb = unicode(os.path.join("/usr/kde/4/share/apps/kaptan/kaptan/kde-themes/",  parser.get_locale('Style', 'thumbnail','')))
 
                 colorDict = {}
                 colorDir = "/usr/kde/4/share/apps/color-schemes/"
