@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea programming-tr.tex -->
+<!--HEVEA command line is: hevea programming-tr.tex programming-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -86,7 +86,7 @@ mcpp
 translate-toolkit-docs
 ctags
 </PRE></LI><LI CLASS="li-enumerate">translate-toolkit paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import translate
 </PRE></LI><LI CLASS="li-enumerate">cdecl paketi kurulumu sonrası:<P>Aşağıda bulunan kopmutun düzgün çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # cdecl
@@ -154,10 +154,10 @@ eric-i18n-tr
  </PRE><P>Yerel dili değiştirmek için:
 </P><PRE CLASS="verbatim">export LC_ALL= &lt;lang_LANG&gt;
 </PRE><P>lang_LANG şeklinde yazılmış olan, pt-BT için pt_BT, diğer diller için örneğin de_DE olacaktır.</P><P>Daha sonra bu çalıştırdığınız komut dizininde eric4 komutunu çalıştırın, paket eğer help ile ilgili ise help dosyasının, uygulama dili ise uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">ipython-gui paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırdığınızda ipython guilerinin sorunsuz bir şekilde açıldığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # ipython-wx
- # ipythonx
+</P><PRE CLASS="verbatim"> ipython-wx
+ ipythonx
 </PRE></LI><LI CLASS="li-enumerate">ipython paketi kurulumu sonrası: <P>Aşağıda bulunan komutları çalıştırdığınızda, bulunduğunuz dizinde test adında bir dosya oluştuğunu ve içerisinde "test ipython" yazdığını gözlemleyin:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  a = open("test", "a")
  a.write("test ipython")
 </PRE></LI><LI CLASS="li-enumerate">drscheme paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt-creator paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
@@ -270,6 +270,41 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
  epydoc-doc
  reportlab-docs
  pyinotify-doc 
+ python-e_dbus
+ python-Genshi-doc
+</PRE></LI><LI CLASS="li-enumerate">python-pyliblzma paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import lzma
+</PRE></LI><LI CLASS="li-enumerate">python-foolscap paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import foolscap
+</PRE></LI><LI CLASS="li-enumerate">python-Genshi paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import genshi
+</PRE></LI><LI CLASS="li-enumerate">dnspython paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import dns
+</PRE></LI><LI CLASS="li-enumerate">pyPdf paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import pyPdf
+</PRE></LI><LI CLASS="li-enumerate">python-evas paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import evas
+</PRE></LI><LI CLASS="li-enumerate">python-ethumb paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import ethumb
+</PRE></LI><LI CLASS="li-enumerate">python-elementary paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import elementary
+</PRE></LI><LI CLASS="li-enumerate">python-edje paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import edje
+</PRE></LI><LI CLASS="li-enumerate">python-ecore paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import ecore
+</PRE></LI><LI CLASS="li-enumerate">urwid paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import urwid
 </PRE></LI><LI CLASS="li-enumerate">Pygments paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
@@ -611,23 +646,26 @@ python/test_python-memcache.py
 </P><PRE CLASS="verbatim"> # ipython
  import winpdb
 </PRE><P>(DeprecationWarning önemli değildir.)</P></LI><LI CLASS="li-enumerate">cython paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import cython
 </PRE></LI><LI CLASS="li-enumerate">lxml paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import lxm
 </PRE></LI><LI CLASS="li-enumerate">python-RuleDispatch paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import dispatch
 </PRE></LI><LI CLASS="li-enumerate">python-nose paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import nose
 </PRE></LI><LI CLASS="li-enumerate">PyICU paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import PyICU
 </PRE></LI><LI CLASS="li-enumerate">python-simplejson paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim">  ipython
+</P><PRE CLASS="verbatim"> ipython
  import simplejson
+</PRE></LI><LI CLASS="li-enumerate">python-openid paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import openid
 </PRE></LI></OL><!--TOC subsection Java alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıdaki paketlerin kurulumu sonrası:
@@ -699,11 +737,11 @@ ocaml paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekil
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/ocaml-test.ml 
 ocaml ocaml-test.ml
 </PRE></LI><LI CLASS="li-itemize">R paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve bir grafiğin oluştuğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_R.R
- # R --vanilla --slave &lt; test_R.R
-</PRE></LI><LI CLASS="li-itemize">R-mathlib paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.	
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_r-mathlib.c
- # gcc -o test_r-matlib test_r-matlib.c -lm -lRmath
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_R.R
+ R --vanilla --slave &lt; test_R.R
+</PRE></LI><LI CLASS="li-itemize">R-mathlib paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin. (gcc paketini öncelikle kurmanız gerekmektedir.)	
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test-r-mathlib.c
+ gcc -o test-r-matlib test-r-matlib.c -lm -lRmath
 </PRE></LI></UL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->

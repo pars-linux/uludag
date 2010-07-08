@@ -32,14 +32,20 @@ programming-tr.pdf python-mlt testini gerçekleştiriniz.
 
 \section{Stream alt Bileşeni}
 \begin{enumerate}
- \item mpeg4ip paketi kurulumu sonrası:
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ mpd
+\end{verbatim}
+
+\item mpeg4ip paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
 
 Aşağıda bulunan komutun avi wav dönüşümünü gerçekleştirdiğini gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
-# avi2wav Lake_dance_XviD.AVI
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+ avi2wav Lake_dance_XviD.AVI
 \end{verbatim}
 
 \item streamripper paketi kurulumu sonrası:
@@ -74,7 +80,19 @@ Menü $\rightarrow$ digikam $\rightarrow$ İçeriye Aktar $\rightarrow$ Facebook
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
 jack-audio-connection-kit 
+mpc
+ncmpc
+ncmpcpp
 \end{verbatim}
+
+\item ZynAddSubFX paketi kurulumu sonrası:
+
+Kmenü'den uygulamayı açın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+\item ardour paketi kurulumu sonrası:
+
+Kmenü'den uygulamayı açın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+
 \item qmmp paketi kurulumu sonrası:
  
 Aşağıda bulunan tar dosyasını indirdikten sonra uygulamayı çalıştırın ve seslerin düzgün çıktığını gözlemleyin.
@@ -205,6 +223,18 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
+\item recordmydesktop paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve bilgisayar üzerinde dosya açma kapama, uygulama açma kapama gibi işlemler yapın. 
+\begin{verbatim}
+ recordmydesktop
+\end{verbatim}
+
+Ctrl+C tuşlarına basın ve videonun encode edilmesini bekleyin. Daha sonra aşağıda bulunan komut ile video'nun sorunsuz bir şekilde oluştuğunu gözlemleyin.
+
+\begin{verbatim}
+ mplayer out.ogv 
+\end{verbatim}
 
 \item mpgtx paketi kurulumu sonrası:
 
@@ -263,6 +293,7 @@ Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
  nrg2iso
  vnc2swf
  subtitleripper
+uif2iso
 \end{verbatim}
 \item soundconverter paketi kurulumu sonrası:
 \begin{verbatim}
@@ -460,6 +491,8 @@ Lake_dance_XviD.AVI
  gimp-save-for-web
  gimpfx-foundry
  gimp-ufraw-plugin
+ imagemagick-doc
+ tuxpaint-doc 
 \end{verbatim}
 \item autopano-sift-C paketi kuruluu sonrası:
 
@@ -517,23 +550,23 @@ multimedia-tr.pdf blender testini gerçekleştiriniz.
 
 Aşağıda bulunan komutları çalıştırın ve uygulamanın karakterleri taryabildiğini ve test adında bir dosyaya yazabildiğini gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/font1.pbm.gz
- # gocr -i font1.pbm.gz -o test
- # vi test
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/font1.pbm.gz
+ gocr -i font1.pbm.gz -o test
+ vi test
 \end{verbatim}
 
 \item graphviz paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_graphviz.mm
-# mm2gv  test_graphviz.mm -o test.gv
-# dotty test.gv
-# gv2gxl test.gv -o test.gxl
-# gxl2dot test.gxl test.dot
-# acyclic test.dot test_asyclic.dot
-# lneato test.dot
-# vimdot test.dot
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_graphviz.mm
+ mm2gv  test_graphviz.mm -o test.gv
+ dotty test.gv
+ gv2gxl test.gv -o test.gxl
+ gxl2dot test.gxl test.dot
+ acyclic test.dot test_asyclic.dot
+ lneato test.dot
+ vimdot test.dot
 \end{verbatim}
 
  \item Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde gimp uygulamasını açın ve uygulamanın ilgili dilde olduğunu gözlemleyin.
@@ -616,16 +649,16 @@ office-tr.pdf koffice-krita testinin gerçekleştiriniz.
 
  Kmenüden uygulamayı çalıştırın ve Dosya $\rightarrow$ Aç yolunu izleyerek aşağıda bulunan dosyanın açılabildiğini gözlemleyin.
   \begin{verbatim}
-   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
   \end{verbatim}
 
 \item autotrace paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
   \begin{verbatim}
-   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/bmp_24.bmp
-   # autotrace bmp_24.bmp -output-file test.eps  -output-format eps
-   # gwenview test.eps 
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/bmp_24.bmp
+   autotrace bmp_24.bmp -output-file test.eps  -output-format eps
+   gwenview test.eps 
   \end{verbatim}
 
  \item gimp paketi kurulumu sonrası:
@@ -634,16 +667,21 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
   \end{verbatim}
 
  Yukarıda bulunan farklı formattaki dosyaları gimp ile açınız, sorunsuz bir şekilde açıldıklarını gözlemleyiniz.
+
+\item smile paketi kurulumu sonrası:
+
+Kmenü'den uygulamanın açıldığını gözlemleyin.
+
 \item digikam paketi kurulumu sonrası:
 
   \begin{verbatim}
-   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}
 
  Digikam uygulaması için seçtiğiniz dosya dizinine yukarıda klasör içinde bulunan dosyaları kopyalayınız ve sorunsuz bir şekilde çalıştığını gözlemleyiniz.
-\item imagemagick ve imagemagick-doc kurulumu sonrası:
+\item imagemagick  paketi kurulumu sonrası:
   \begin{verbatim}
-   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}
 
 Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile düzgün çalıştığını gözlemleyiniz.
@@ -652,7 +690,7 @@ Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile dü
    animate test_animate.gif
    display test.* (diğer tüm dosyalar için)
   \end{verbatim}
-\item tuxpaint, tuxpaint-stamps ve tuxpaint-doc paketleri kurulumu sonrası:
+\item tuxpaint, tuxpaint-stamps paketleri kurulumu sonrası:
   \begin{itemize}
    \item Uygulamayı açın çeşitli çizimler yapın ve kaydedin, sorunsuz bir şekilde çalıştığını ve ilgili yerlerde ses dosyaları çalıştırdığını gözlemleyin.
    \item Stamps butonuna basın ve sağ tarafta bulunan pullardan birini eklemeye çalışın sorunsuz bir şekilde eklendiğini gözlemleyin.
@@ -701,6 +739,16 @@ Aşağıda bulunan komutların düzgün bir şekilde çalıştıklarını gözle
 \section{Editor alt Bileşeni}
 
 \begin{enumerate}
+\item pitivi paketi kurulumu sonrası:
+
+Uygulamayı kmenü'den açın. 
+
+Aşağıda bulunan dosyayı indirin. 
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+\end{verbatim}
+
+Uygulamanın boş olan beyaz alanına sağ tıklayın. "Import clips" seçeneğini seçin ve indirmiş olduğunuz dosyayı buraya ekleyin. Bu dosya beyaz alana eklenecektir, bu eklenmiş görüntüyü sağ bölümde bulunan video penceresine götürün ve dosyanın ses ve görüntü olarak sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item python-eyeD3 paketi kurulumu sonrası:
 

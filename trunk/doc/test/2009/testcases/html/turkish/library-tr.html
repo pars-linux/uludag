@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea library-tr.tex -->
+<!--HEVEA command line is: hevea library-tr.tex library-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Library Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -97,7 +97,21 @@ libytnef
 gtkglarea
 lablgtk2
 egenix-mx-base-doc
-</PRE></LI><LI CLASS="li-enumerate">OpenSceneGraph paketi kurulumu sonrası:<P>game-tr.pdf flightgear testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">egenix-mx-base paketi kurulumu sonrası:<P>ipython pakteni kurun ve aşğıda bulunan komutların sorusuz olarak çalıştırğını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+libmms
+libmpdclient
+telepathy-farsight
+telepathy-farsight-docs
+telepathy-gabble
+telepathy-haze
+telepathy-sofiasip
+telepathy-sunshine
+telepathy-butterfly
+libpqxx
+libpqxx-docs
+xulrunner-devel
+givaro
+givaro-doc
+</PRE></LI><LI CLASS="li-enumerate">libktorrent paketi kurulumu sonrası:<P>network-tr.pdf ktorrent testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">gnonlin paketi kurulumu sonrası:<P>multimedia-tr.pdf pitivi testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">OpenSceneGraph paketi kurulumu sonrası:<P>game-tr.pdf flightgear testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">egenix-mx-base paketi kurulumu sonrası:<P>ipython pakteni kurun ve aşğıda bulunan komutların sorusuz olarak çalıştırğını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
  import mx
 </PRE></LI><LI CLASS="li-enumerate">pari paketi kurulumu sonrası:<P>Aşağıda bulunan komutun 2*2 sonucunu bulduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> gp 
@@ -156,22 +170,22 @@ multimedia-tr.pdf gimp, digikam ve imagemagick testlerini geçekleştiriniz.
 <PRE CLASS="verbatim">   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   </PRE></LI></UL>
 </LI><LI CLASS="li-enumerate">iksemel paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/component.xml
- # ikslint -s component.xml
- # iksperf -a component.xml 
-</PRE><P>Yukarıda bulunan komutların düzgün çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">xulrunner ve xulrunner-devel paketleri kurulumu sonrası:
+<PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/component.xml
+ikslint -s component.xml
+iksperf -a component.xml 
+</PRE><P>Yukarıda bulunan komutların düzgün çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">xulrunner paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 office-tr.pdf openoffice testlerini gerçekleştirin.
 </LI><LI CLASS="li-itemize">network-tr.pdf firefox testlerini gerçekleştirin.
 </LI><LI CLASS="li-itemize">network-tr.pdf gecko-mediaplayer testlerini gerçekleştirin.
 </LI><LI CLASS="li-itemize">multimedia-tr.pdf vlc-firefox testlerini gerçekleştirin.
 </LI></UL></LI><LI CLASS="li-enumerate">libvorbis paketi kurulumu sonrası:<P>multimedia-tr.pdf vorbis-tools testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">xerces-c paketi kurulumu sonrası:<P>Aşağıda bulunan dosyaları aynı dizin içerisine indirin.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xml
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xsd
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test-xerces-c.sh
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xml
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xsd
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test-xerces-c.sh
 </PRE><P>./test-xerces-c.sh dosyasını çalıştırın ve çıktısında hata çıktısı olup olmadığını gözlemleyin:
-</P><PRE CLASS="verbatim"># chmod 755 test-xerces-c.sh
-# ./test-xerces-c.sh | less
+</P><PRE CLASS="verbatim">chmod 755 test-xerces-c.sh
+./test-xerces-c.sh | less
 </PRE></LI><LI CLASS="li-enumerate">apr ve apr-util paketi kurulumu sonrası:<P>programming-tr.pdf subversion testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">portaudio paketi kurulumu sonrası:<P>multimedia-tr.pdf qpitch testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libv4l paketi kurulumu sonrası: (Kamerası olanlar test edebilecektir.)<P>multimedia-tr.pdf vlc testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">qca2 ve qca2-apidocs paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan komutu çalıştırın:

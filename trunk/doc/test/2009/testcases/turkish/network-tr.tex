@@ -42,10 +42,17 @@ Aşağıda bulunan komut ile servisin başlatıldığından emin olun.
 
 \section{analyzer alt Bileşeni}
 \begin{enumerate}
-\item aşağıda bulunan paketler sadece kurulum testine tabidir.
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  aircrack-ng
 \end{verbatim}
+\item nikto paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun hata vermeden çalıştığını gözlemleyin.
+\begin{verbatim}
+nikto -h 192.168.0.1 -p 443 -ssl 
+\end{verbatim}
+
 
 \item avahi paketi kurulumu sonrası:
 
@@ -158,8 +165,10 @@ giftcurs
 
 \item ktorrent paketi kurulumu sonrası:
 
-Kmenu'den uygulamayı açın ve sorunsuz açıldığını gözlemeyin. 
-
+Aşağıda bulunan bağlantıyı Firefox bağlantı bölümüne kopyalayın ve ENTER'a basın. Ktorrent uygulamasının açıldığını gözlemleyin.
+\begin{verbatim}
+ http://www.torrentdownloads.net/download/879161/Pardus+2009+International+iso
+\end{verbatim}
 
  \item linuxdcpp paketi kurulumu sonrası:
 Tercihler bölümünden bir rumuz giriniz. 
@@ -196,6 +205,14 @@ Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indi
 \section{Chat alt Bileşeni}
 \begin{enumerate}
 
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+
+\begin{verbatim}
+ telepathy-mission-control
+ amsn-plugins
+ konversation-docs 
+\end{verbatim}
+
 \item quassel ve qassel-data paketleri kurulumu sonrası:
 
 quassel uygulamasını başlatın ve Başlan butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.
@@ -221,9 +238,13 @@ Konversation uygulamasını çalıştırın, Dosya $\rightarrow$ Çabuk bağlan 
 \item skype paketi kurulumu sonrası:
 
 Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
+\item amsn-skin-dark-matter paketi kurulumu sonrası:
+
+Kmenüden amsn uygulamasını açın ve Hesap $\rightarrow$ Kabuk Seç yolunu izleyerek "Dark Matter" seçin ve kabuğun değiştiğini gözlemleyin.
+
 \item amsn-skin-oxygen paketi kurulumu sonrası:
 
-Kmenüden amsn uygulamasını açın ve okosijen teması ile açıldığını gözlemleyin.
+Kmenüden amsn uygulamasını açın ve Hesap $\rightarrow$ Kabuk Seç yolunu izleyerek Oxygen" seçin ve kabuğun değiştiğini gözlemleyin.
 
 \item amsn paketi kurulumu sonrası:
 
@@ -236,7 +257,7 @@ Kmenüden uygulamayı açın ve eğer bir jabber hesabınız var ise bu bu hesab
 \item choqok paketi kurulumu sonrası:
 
 Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter'a bağlanabildiğinizi gözlemleyin.	
-\item konversation ve konversation-docs paketleri kurulumu sonrası:
+\item konversation paketi kurulumu sonrası:
 
 Uygulamayı çalıştırın ve öntanımlı kanallara bağlandığınızı gözlemleyin.
 
@@ -300,9 +321,13 @@ Bu dosyayı indirin ve indirme penceresinin düzgün bir şekilde açıldığın
 
 \section{Monitor alt Bileşeni}
 \begin{enumerate}
+\item knemo paketi kurulumu sonrası:
+
+Uygulamayı Kmenü'den açın ve sistem çekmesine uygulamanın  eklendiğini gözlemleyin. 
  \item net-snmp paketi kurulumu sonrası:
 
-Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin.
+Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin. Uygulamanın üzerine tıklayın ve açılam pencereden trafik seçeneğini seçin, sorusuz bir şekilde paket trafiğinin izlenebildiğini gözlemleyin.
+
 \begin{verbatim}
  service net_snmp status
 \end{verbatim}
@@ -330,6 +355,15 @@ Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut
 \item Filtre oluşturabildiğimizi gözlemliyoruz.
 \item Eğer daha önce thunderbird kullanıyor isek, ev dizini altında .thunderbird dizininin silinmediğini gözlemliyoruz.
 \end{itemize}
+\item pyzor paketi kurulumu sonrası:
+
+(Warninglari önemsemeyiniz.)
+
+Aşağıda bulunan komutun "public.pyzor.org:24441 (200, OK)" olarak döndüğünü gözlemleyin.
+\begin{verbatim}
+ pyzor ping
+\end{verbatim}
+
  \item spamassassin ve spamd paketleri kurulumu sonrası:
 \begin{enumerate}
 	\item İlgili paketi kurduktan sonra:

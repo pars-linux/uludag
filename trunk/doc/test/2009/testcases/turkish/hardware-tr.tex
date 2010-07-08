@@ -31,9 +31,9 @@
 
 Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda düğmelerinize basın ve kumandanın tanınmış olduğunu gözlemleyin.
 \begin{verbatim}
-# modprobe lirc_gpio
-# lircd
-# irw  
+modprobe lirc_gpio
+lircd
+irw  
 \end{verbatim}
 
 \end{enumerate}
@@ -53,6 +53,11 @@ Kmenu'den Ati Graphics Adapter Settings'i açın ve ati kartınızı bulabildiğ
  \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
 ql2x00-firmware
+aic94xx-firmware
+ar9170-firmware
+bluez-firmware
+ql2x00-firmware
+v4l-dvb-firmware
 \end{verbatim}
 \end{enumerate}
 
@@ -181,6 +186,13 @@ Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 
 \section{Optical alt Bileşeni}
 \begin{enumerate}
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+
+\begin{verbatim}
+ k3b-docs
+\end{verbatim}
+
 \item lsdvd paketi kurulumu sonrası:
 
 Bir muzik veya video DVD'sini bilgisayarınızın sürücüsüne takın. Aşağıda bulunan konutu çalıştırın ve DVD'de bulunan verilerin listelendiğini gözlemleyin. 
@@ -204,7 +216,7 @@ Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabi
  \begin{verbatim}
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/sound/sample.ogg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
  \end{verbatim}
 
 Daha sonra bu cd'de bulunanların okunabildiğini gözlemleyin.
@@ -222,6 +234,9 @@ Audio CD'yi mount edin ve daha sonra aşağıda bulunan klomutları çalıştır
  cdparanoia -vsQ
  cdparanoia -B
 \end{verbatim}
+\item k3b-extra-themes paketi kurulumu sonrası:
+
+k3b uygulamasını çalıştırın, Ayarlar $\rightarrow$ k3b uygulamasını yapılandır $\rightarrow$ Temalar yolunu takip edin ve farklı bir tema seçin. Bu temanın uygulanabildiğini gözlemleyin.
 
 \item k3b paketi kurulumu sonrası:
 \begin{itemize}
@@ -244,14 +259,27 @@ Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve gör
 \end{enumerate}
 \section{Emulator alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+
+\begin{verbatim}
+ wine-devel
+\end{verbatim}
+\item virtinst paketi kurulumu sonrası:
+
+Aşağıda buluna  komutu çalıştırın ve sırayla istenen bilgileri girin. Sanal sistemin açıldığını gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+virt-install --promt
+\end{verbatim}
+
  \item zsnes paketi kurulumu sonrası:
 
 Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, sorunsuz bir şekilde çalıştırğını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/10%20Yard%20Fight%20(A&S%20NES%20Hack).smc 
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/10%20Yard%20Fight%20(A&S%20NES%20Hack).smc 
 \end{verbatim}
 
- \item wine ve wine-devel paketleri kurulumu sonrası:
+ \item wine paketi kurulumu sonrası:
 \begin{verbatim}
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/Firefox%20Setup%203.5.5.exe
  wine Firefox\ Setup\ 3.5.5.exe
@@ -338,14 +366,19 @@ Bluetooth aygıtınızı bilgisayarınıza takınız ve aşağıda bulunan komut
 
 wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye çalışın.
 
-\item Aşağıda bulunan paketler aynı şekilde test edilecektir.
-\begin{verbatim}
-blueman
-kdebluetooth 
-\end{verbatim}
+\item blueman paketi kurulumu sonrası:
 
 \begin{itemize}
- \item Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
+ \item Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
+
+ \item Sistem çekmecesinde bulunan blueman ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.
+
+\end{itemize}
+
+\item kbluetooth paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
 
  \item Sistem çekmecesinde bulunan kbluetooth ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.
 
@@ -373,6 +406,7 @@ kdebluetooth
   device-mapper-static
   lvm2
   lvm2-static
+  udftools
 \end{verbatim}
 
 \item testdisk paketi kurulumu sonrası:
