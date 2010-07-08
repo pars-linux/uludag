@@ -54,8 +54,7 @@ def getPardusPartInfo():
       os.makedirs(path)
       link.Disk.Manager["mudur"].mount(i[1],path)
     pardusPartInfo.append([open(path+"/etc/pardus-release").read().rstrip("\n"),i[1],i[0],path])
-  
-  pardusPartInfo.reverse()
+
   
   return pardusPartInfo
 
