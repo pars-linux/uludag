@@ -14,10 +14,21 @@
         <Summary>Flite: a small run-time speech synthesis engine</Summary>
         <Description>Flite (festival-lite) is a small, fast run-time speech synthesis engine developed at CMU and primarily designed for small embedded machines and/or large servers. Flite is designed as an alternative synthesis engine to Festival for voices built using the FestVox suite of voice building tools.</Description>
         <Archive sha1sum="5370eebe917ba2b57dfdbaf15013b99bbe748631" type="tarbz2">http://www.speech.cs.cmu.edu/flite/packed/flite-1.4/flite-1.4-release.tar.bz2</Archive>
+        <!--
+        <Patches>
+            <Patch level="1">flite-1.3-sharedlibs.patch</Patch>
+        </Patches>
+        -->
+        <BuildDependencies>
+            <Dependency>alsa-lib</Dependency>
+        </BuildDependencies>
     </Source>
 
     <Package>
         <Name>flite</Name>
+        <RuntimeDependencies>
+            <Dependency>alsa-lib</Dependency>
+        </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="doc">/usr/share/doc</Path>

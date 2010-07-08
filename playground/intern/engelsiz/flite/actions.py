@@ -12,15 +12,15 @@ from pisi.actionsapi import pisitools
 WorkDir = "flite-1.4-release"
 
 def setup():
-    autotools.configure("--enable-shared \
-                         --with-audio=alsa \
-                         --disable-static" )
+    autotools.configure("--with-audio=alsa")
 
 def build():
     autotools.make("-j1")
 
 def install():
     autotools.install()
-    
+
+    pisitools.remove("/usr/lib/*.a")
+
     pisitools.dodoc("COPYING", "README")
 
