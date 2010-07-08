@@ -1,0 +1,14 @@
+diff -uNr espeak-1.40.02-source/src/Makefile espeak-1.40.02-source-mod/src/Makefile
+--- espeak-1.40.02-source/src/Makefile	2008-12-23 00:37:41.000000000 +0200
++++ espeak-1.40.02-source-mod/src/Makefile	2009-06-30 12:29:32.414693347 +0200
+@@ -24,8 +24,8 @@
+ LN_SF = /bin/ln -sf
+ MKDIR = mkdir -p
+ 
+-AUDIO = portaudio
+-#AUDIO = pulseaudio
++#AUDIO = portaudio
++AUDIO = pulseaudio
+ #AUDIO = sada
+ 
+ ifeq ($(AUDIO),pulseaudio)
