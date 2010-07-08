@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea network-tr.tex -->
+<!--HEVEA command line is: hevea network-tr.tex network-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Network Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section filter alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  filter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -58,8 +58,10 @@ iproute2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun ağ arayüzleri 
 </P><PRE CLASS="verbatim"> service  iptables status
 </PRE></LI></OL><!--TOC section analyzer alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  analyzer alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-aşağıda bulunan paketler sadece kurulum testine tabidir.
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> aircrack-ng
+</PRE></LI><LI CLASS="li-enumerate">nikto paketi kurulumu sonrası:<P>Aşağıda bulunan komutun hata vermeden çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim">nikto -h 192.168.0.1 -p 443 -ssl 
 </PRE></LI><LI CLASS="li-enumerate">avahi paketi kurulumu sonrası:<P>hardware-tr.pdf cups testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">nmap paketi kurulumu sonrası:<P>Aşağıda bulunan komutun verilen adresleri taradığını gözlemleyin.
 </P><PRE CLASS="verbatim"> nmap -v -sP 192.168.0.0/16 10.0.0.0/8
 </PRE></LI><LI CLASS="li-enumerate">whois paketi kurulumu sonrası:
@@ -95,7 +97,9 @@ gift-fasttrack
 gift-gnutella
 gift-openft
 giftcurs
-</PRE></LI><LI CLASS="li-enumerate">ktorrent paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz açıldığını gözlemeyin. </P></LI><LI CLASS="li-enumerate">linuxdcpp paketi kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">ktorrent paketi kurulumu sonrası:<P>Aşağıda bulunan bağlantıyı Firefox bağlantı bölümüne kopyalayın ve ENTER’a basın. Ktorrent uygulamasının açıldığını gözlemleyin.
+</P><PRE CLASS="verbatim"> http://www.torrentdownloads.net/download/879161/Pardus+2009+International+iso
+</PRE></LI><LI CLASS="li-enumerate">linuxdcpp paketi kurulumu sonrası:
 Tercihler bölümünden bir rumuz giriniz. <P>Uygulamayı açın kullanıcısı fazla olan public hublardan birine bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.
 </P></LI></OL><!--TOC section Download alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Download alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -106,12 +110,15 @@ wget paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştı
 </PRE></LI><LI CLASS="li-enumerate">youtube-dl paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indirildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"># http://www.youtube.com/watch?v=iLNngHQ_lj0
 </PRE></LI></OL><!--TOC section Chat alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlan butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> telepathy-mission-control
+ amsn-plugins
+ konversation-docs 
+</PRE></LI><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlan butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
 </P><PRE CLASS="verbatim"> su -
  vi /etc/xinetd.d/bitlbee
 </PRE><P>Konversation uygulamasını çalıştırın, Dosya → Çabuk bağlan yolunu izleyerek, Sunucu bilgisayar kısmına "localhost" yazın ve "Bağlan" butonuna basın. Uygulamanın alt bölümünde bulunan kannallarda "bitlbee" kanalının açılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">skype paketi kurulumu sonrası:<P>Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">amsn-skin-oxygen paketi kurulumu sonrası:<P>Kmenüden amsn uygulamasını açın ve okosijen teması ile açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">amsn paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve msn ayarlarınızı yapınız. Sorunsuz bir şekilde beğlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">psi ve psimedia paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve eğer bir jabber hesabınız var ise bu bu hesabı ekleyin ve bağlantının şağlanabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">choqok paketi kurulumu sonrası:<P>Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter’a bağlanabildiğinizi gözlemleyin.	
-</P></LI><LI CLASS="li-enumerate">konversation ve konversation-docs paketleri kurulumu sonrası:<P>Uygulamayı çalıştırın ve öntanımlı kanallara bağlandığınızı gözlemleyin.</P></LI><LI CLASS="li-enumerate">pidgin paketi kurulumu sonrası:
+</P></LI><LI CLASS="li-enumerate">amsn-skin-dark-matter paketi kurulumu sonrası:<P>Kmenüden amsn uygulamasını açın ve Hesap → Kabuk Seç yolunu izleyerek "Dark Matter" seçin ve kabuğun değiştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">amsn-skin-oxygen paketi kurulumu sonrası:<P>Kmenüden amsn uygulamasını açın ve Hesap → Kabuk Seç yolunu izleyerek Oxygen" seçin ve kabuğun değiştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">amsn paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve msn ayarlarınızı yapınız. Sorunsuz bir şekilde beğlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">psi ve psimedia paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve eğer bir jabber hesabınız var ise bu bu hesabı ekleyin ve bağlantının şağlanabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">choqok paketi kurulumu sonrası:<P>Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter’a bağlanabildiğinizi gözlemleyin.	
+</P></LI><LI CLASS="li-enumerate">konversation paketi kurulumu sonrası:<P>Uygulamayı çalıştırın ve öntanımlı kanallara bağlandığınızı gözlemleyin.</P></LI><LI CLASS="li-enumerate">pidgin paketi kurulumu sonrası:
 Uygulamayı açın ve bir üyelik için bilgilerinizi kaydedin ve sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin.</LI></OL><!--TOC section Web alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Web alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -136,8 +143,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> smbldap-tools
 </PRE></LI></OL><!--TOC section Monitor alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Monitor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-net-snmp paketi kurulumu sonrası:<P>Servis yöneticisinden net_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin.
-</P><PRE CLASS="verbatim"> service net_snmp status
+knemo paketi kurulumu sonrası:<P>Uygulamayı Kmenü’den açın ve sistem çekmesine uygulamanın eklendiğini gözlemleyin. 
+</P></LI><LI CLASS="li-enumerate">net-snmp paketi kurulumu sonrası:<P>Servis yöneticisinden net_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin. Uygulamanın üzerine tıklayın ve açılam pencereden trafik seçeneğini seçin, sorusuz bir şekilde paket trafiğinin izlenebildiğini gözlemleyin.</P><PRE CLASS="verbatim"> service net_snmp status
 </PRE></LI><LI CLASS="li-enumerate">net-snmptrap paketi kurulumu sonrası:<P>Servis yöneticisinden net_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> service net_snmptrap status
 </PRE></LI><LI CLASS="li-enumerate">wireshark paketi kurulumu sonrası:
@@ -152,7 +159,9 @@ Bir e-posta hesabı oluşturuyoruz.
 </LI><LI CLASS="li-itemize">Filtre oluşturabildiğimizi gözlemliyoruz.
 </LI><LI CLASS="li-itemize">Eğer daha önce thunderbird kullanıyor isek, ev dizini altında .thunderbird dizininin silinmediğini gözlemliyoruz.
 </LI></UL>
-</LI><LI CLASS="li-enumerate">spamassassin ve spamd paketleri kurulumu sonrası:
+</LI><LI CLASS="li-enumerate">pyzor paketi kurulumu sonrası:<P>(Warninglari önemsemeyiniz.)</P><P>Aşağıda bulunan komutun "public.pyzor.org:24441 (200, OK)" olarak döndüğünü gözlemleyin.
+</P><PRE CLASS="verbatim"> pyzor ping
+</PRE></LI><LI CLASS="li-enumerate">spamassassin ve spamd paketleri kurulumu sonrası:
 <OL CLASS="enumerate" type=a><LI CLASS="li-enumerate">
 	İlgili paketi kurduktan sonra:
 	</LI><LI CLASS="li-enumerate">Menüden uygulamalar → Kmail’i açın ve spam filtresini aktifleştirmek için:

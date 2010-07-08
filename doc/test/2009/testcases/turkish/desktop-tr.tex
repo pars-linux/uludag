@@ -14,6 +14,34 @@
 \begin{document}
 
 \maketitle
+\section{Enlightment alt Bileşeni}
+\begin{itemize}
+
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ethumb
+e_dbus
+ecore
+edje
+eet
+efreet
+eina
+elementary
+embryo
+evas
+libeweather
+\end{verbatim}
+\item enlightenment paketi kurulumu sonrası:
+
+Sistemi yeniden başlatın ve kullanıcı adı ve parola giriş ekranının sol alt kısmında bulunan butona basın ve "enlightenment" seçeneğini işaretleyin ve bu şekilde giriş yapın. Sistemin enlightenment pencere desteği ile açıldığını gözlemleyin.
+
+
+\item editje paketi kurulumu sornası:
+
+Kmenu'den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözelmleyin.
+
+\end{itemize}
+
 \section{Gnome alt Bileşeni}
 \begin{itemize}
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -89,6 +117,10 @@ Masaüstüne sağ tıklayın, görünüm ayarlarını seçin. Resim bölümünde
 
 Bilgisayarınızı yeniden başlatın ve ikonların düzgün bir şekilde görüntülendiğni gözlemleyin.
 
+\item hicolor-icon-theme paketi kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Simgeler $\rightarrow$ Gelişmiş yolunu izleyin ve masaüstü simge boyutunu 128 olarak ayarlayın ve uygula butonuna basın. Masaüstü simgelerinizin büyümüş olduğunu gözlemleyin.
+
  \item Aşağıdaki paketler aynı şekilde test edilecektir.
 \begin{verbatim}
 cursor-theme-oxygen-black
@@ -110,6 +142,10 @@ Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ Fare $\rightarrow$ 
 
 \section{Font alt Bileşeni}
 \begin{itemize}
+\item Orkhun-fonts paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve Orjhun Brush fontunun ekli olduğunu gözlemleyin.
+
 \item  terminus-font paketi kurulumu sonrası:
 
 Konsole uygulamasını açın, uygulama üzerine sağ tıklayın, geçerli profili düzenle $\rightarrow$ görünüm $\rightarrow$ Yazı tipini düzenle seçeneklerini izleyin, ve terminus fontunu seçin ve fontun değiştiğini gözlemleyin.
@@ -155,6 +191,12 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
 \item strigi paketi kurulumu sonrası: 
 
 Sistem ayarları $\rightarrow$ Gelişmiş $\rightarrow$ Masaüstü araması $\rightarrow$  Strigi masaüstü indeksleyiciyi etkinleştir yolunu izleyin ve uygula butonuna basın. Sorunsuz bir şekilde etkinleştiğini gözlemleyin.
+
+\item xdg-utils paketi kurulumu sonrası:
+
+network-tr.pdf wireshark testini gerçekleştiriniz.
+
+multimedia-tr.pdf gimp testini gerçekleştiriniz.
 
 \item xdg-user-dirs paketi kurulumu sonrası:
 
@@ -329,8 +371,8 @@ science-tr.pdf wxMaxima testini gerçekleştirin.
 \begin{itemize}
  \item ipython paketini kurun ve aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 \begin{verbatim}
- # ipython
- # import snack
+ ipython
+ import snack
 \end{verbatim}
   \item hardware-tr.pdf partimage testini gerçekleştirin.
 
@@ -447,6 +489,10 @@ kde-l10n-zh_TW
 
 \subsection*{Admin alt bileşeni}
 \begin{enumerate} 
+\item disk-manager paketi kurulumu sonrası:
+
+disk-manager.pdf testini gerçekleştiriniz.
+% 
 \item display-settings paketi kurulumu sonrası:
   
 Eğer yedek bir monitörünüz veya projektörünüz var ise test edebilirsiniz.
@@ -641,8 +687,8 @@ Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştır�
 
  \item kdegraphics paketini kurun:
 \begin{verbatim}	
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/circus-bw_hats.jpg
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/tepecik_01.png
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/circus-bw_hats.jpg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/tepecik_01.png
 \end{verbatim}
 Yukarıda bulunan dosyaların (2009 okular) (2008 kpdf) ve gwenview ile açıldığını gözlemleyin.
 \item amarok paketini kurun:
@@ -705,17 +751,17 @@ Aşağıda bulunan dosyaların gwenview  ile çalıştıklarını gözlemleyin.
 \end{verbatim}
 Aşapıda bulunan dosyaların okular ile düzgün çalıştığını gözlemleyin:
 \begin{verbatim} 
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
- # okular
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+  okular
  \end{verbatim}
 
 Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 \begin{verbatim}
- # kcolorchooser
- # kruller
- # ksnapshot
+  kcolorchooser
+  kruller
+  ksnapshot
 \end{verbatim}
 
 
@@ -732,11 +778,12 @@ Bilgisayarınız açılırken kullanıcı giriş ekranının sorunsuz açıldı�
 \item  ksplash-pardus-theme paketi kurulumu sonrası:
 
 Bilgisayarınız açılırken KDE açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyin.
+
  \item  QtCurve-KDE4 paketi kurulumu sonrası:
 
 Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Biçim yolunu izleyerek QtCurve stilini seçiniz ve stilin sorunsuz bir şekilde değiştiğini gözlemleyiniz.
 
-Yeni nir kullanıcı açınız ve türkçe olan sisteminizin uygulamalarının türkçe olduğundan emin olunuz. (gwenview, service manager, kaptan)
+Yeni bir kullanıcı açınız ve türkçe olan sisteminizin uygulamalarının türkçe olduğundan emin olunuz. (gwenview, service manager, kaptan)
 
 \item plasmoid-daisy paketi kurulumu sonrası:
 

@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea hardware-tr.tex -->
+<!--HEVEA command line is: hevea hardware-tr.tex hardware-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Hardware Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section CPU alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  CPU alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -55,9 +55,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
   </PRE></LI></OL><!--TOC section Irda alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Irda alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 lirc paketi kurulumu sonrası:<P>(Eğer bilgisayarınız infrared destekliyor ise test edebilirsiniz.)</P><P>Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda düğmelerinize basın ve kumandanın tanınmış olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"># modprobe lirc_gpio
-# lircd
-# irw  
+</P><PRE CLASS="verbatim">modprobe lirc_gpio
+lircd
+irw  
 </PRE></LI></OL><!--TOC section Graphics alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Graphics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 ati-control-center paketi kurulumu sonrası:<P>(sadece ati ekran kartı sürücüsü olanlar test edebilecektir.)</P><P>Kmenu’den Ati Graphics Adapter Settings’i açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
@@ -65,6 +65,11 @@ ati-control-center paketi kurulumu sonrası:<P>(sadece ati ekran kartı sürüc�
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Firmware alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim">ql2x00-firmware
+aic94xx-firmware
+ar9170-firmware
+bluez-firmware
+ql2x00-firmware
+v4l-dvb-firmware
 </PRE></LI></OL><!--TOC section Printer alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Printer alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim">gutenprint 
@@ -104,15 +109,15 @@ sane-backends paketi kurulumu sonrası:<P>Eğer bir tarayıcınız var ise bu pa
 # scanimage 
 </PRE><P>İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
 İkinci komutun ise düzgün bir şekilde tarama yaptığını ve bir .pnm uzantılı bir resim dosyası ürettiğini gözlemleyin.</P></LI></OL><!--TOC section Optical alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc10">10</A>  Optical alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-lsdvd paketi kurulumu sonrası:<P>Bir muzik veya video DVD’sini bilgisayarınızın sürücüsüne takın. Aşağıda bulunan konutu çalıştırın ve DVD’de bulunan verilerin listelendiğini gözlemleyin. 
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc10">10</A>  Optical alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> k3b-docs
+</PRE></LI><LI CLASS="li-enumerate">lsdvd paketi kurulumu sonrası:<P>Bir muzik veya video DVD’sini bilgisayarınızın sürücüsüne takın. Aşağıda bulunan konutu çalıştırın ve DVD’de bulunan verilerin listelendiğini gözlemleyin. 
 </P><PRE CLASS="verbatim"> lsdvd
 </PRE></LI><LI CLASS="li-enumerate">cdrdao paketi kurulumu sonrası:<P>Aşağıdaki bağlantıda bulunan iso’yu DAO modunda DVD ve CD’ye yazdırın. 
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 </PRE><P>Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso’nun düzgün bir şekilde boot ettiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">cdrtools paketi kurulumu sonrası:<P>Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/sound/sample.ogg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
  </PRE><P>Daha sonra bu cd’de bulunanların okunabildiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">cdparanoia paketi kurulumu sonrası:<P>Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
@@ -121,7 +126,7 @@ lsdvd paketi kurulumu sonrası:<P>Bir muzik veya video DVD’sini bilgisayarın�
  </PRE><P>Audio CD’yi mount edin ve daha sonra aşağıda bulunan klomutları çalıştırın:
 </P><PRE CLASS="verbatim"> cdparanoia -vsQ
  cdparanoia -B
-</PRE></LI><LI CLASS="li-enumerate">k3b paketi kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">k3b-extra-themes paketi kurulumu sonrası:<P>k3b uygulamasını çalıştırın, Ayarlar → k3b uygulamasını yapılandır → Temalar yolunu takip edin ve farklı bir tema seçin. Bu temanın uygulanabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">k3b paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıdaki bağlantıda bulunan iso’yu DVD ve CD’ye yazdırın. 
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
@@ -130,9 +135,13 @@ Aşağıdaki bağlantıda bulunan iso’yu DVD ve CD’ye yazdırın.
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
 </PRE>Yazdırdığınız CD veya DVD’den video veya müziklerinizi açın, ses ve görüntünün sorunsuz bir şekilde olduğunu gözlemleyin.</LI></UL></LI></OL><!--TOC section Emulator alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Emulator alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-zsnes paketi kurulumu sonrası:<P>Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, sorunsuz bir şekilde çalıştırğını gözlemleyin.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/10%20Yard%20Fight%20(A&amp;S%20NES%20Hack).smc 
-</PRE></LI><LI CLASS="li-enumerate">wine ve wine-devel paketleri kurulumu sonrası:
+Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> wine-devel
+</PRE></LI><LI CLASS="li-enumerate">virtinst paketi kurulumu sonrası:<P>Aşağıda buluna komutu çalıştırın ve sırayla istenen bilgileri girin. Sanal sistemin açıldığını gözlemleyin.
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+virt-install --promt
+</PRE></LI><LI CLASS="li-enumerate">zsnes paketi kurulumu sonrası:<P>Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, sorunsuz bir şekilde çalıştırğını gözlemleyin.
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/10%20Yard%20Fight%20(A&amp;S%20NES%20Hack).smc 
+</PRE></LI><LI CLASS="li-enumerate">wine paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/emulator/Firefox%20Setup%203.5.5.exe
  wine Firefox\ Setup\ 3.5.5.exe
 </PRE><UL CLASS="itemize"><LI CLASS="li-itemize">
@@ -167,11 +176,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </PRE></LI><LI CLASS="li-enumerate">obex-data-server paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takın ve dosya paylaşımı yapmaya çalışın. Sorunsuz bir şekilde yapılabildiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">bluez paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takınız ve aşağıda bulunan komutun bu aygıtı listelediğini gözlemleyiniz.
 </P><PRE CLASS="verbatim"> list-devices
-</PRE></LI><LI CLASS="li-enumerate">cwiid paketi kurulumu sonrası: (Nintendo video oyun kumandanız var ise bu testi gerçekleştirebilirsiniz.)<P>wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye çalışın.</P></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketler aynı şekilde test edilecektir.
-<PRE CLASS="verbatim">blueman
-kdebluetooth 
-</PRE><UL CLASS="itemize"><LI CLASS="li-itemize">
-Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">Sistem çekmecesinde bulunan kbluetooth ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.</LI></UL></LI></OL><!--TOC section Mobile alt Bileşeni-->
+</PRE></LI><LI CLASS="li-enumerate">cwiid paketi kurulumu sonrası: (Nintendo video oyun kumandanız var ise bu testi gerçekleştirebilirsiniz.)<P>wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye çalışın.</P></LI><LI CLASS="li-enumerate">blueman paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
+Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">Sistem çekmecesinde bulunan blueman ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.</LI></UL></LI><LI CLASS="li-enumerate">kbluetooth paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
+Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">Sistem çekmecesinde bulunan kbluetooth ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.</LI></UL></LI></OL><!--TOC section Mobile alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc15">15</A>  Mobile alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
 <PRE CLASS="verbatim"> gobi_loader
@@ -185,6 +192,7 @@ Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
   device-mapper-static
   lvm2
   lvm2-static
+  udftools
 </PRE></LI><LI CLASS="li-enumerate">testdisk paketi kurulumu sonrası:<P>"testdisk" komutunu çalıştırın ve Create → Select a Media → None → Analyse → QuickSearch yolunu izleyin ve sorunsuz bir şekilde seçilen disk içerisinde bulunan bölümlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">ddrescue paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test2 dosyasına test_ddrescue içeriğini kopyaladığını gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/disk/test_ddrescue
   ddrescue test_ddrescue test2

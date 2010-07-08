@@ -64,7 +64,29 @@ libytnef
 gtkglarea
 lablgtk2
 egenix-mx-base-doc
+libmms
+libmpdclient
+telepathy-farsight
+telepathy-farsight-docs
+telepathy-gabble
+telepathy-haze
+telepathy-sofiasip
+telepathy-sunshine
+telepathy-butterfly
+libpqxx
+libpqxx-docs
+xulrunner-devel
+givaro
+givaro-doc
 \end{verbatim}
+\item libktorrent paketi kurulumu sonrası:
+
+network-tr.pdf ktorrent testini gerçekleştiriniz.
+
+\item gnonlin paketi kurulumu sonrası:
+
+multimedia-tr.pdf pitivi testini gerçekleştirin.
+
 \item OpenSceneGraph paketi kurulumu sonrası:
 
 game-tr.pdf flightgear testini gerçekleştirin.
@@ -327,15 +349,14 @@ network-tr.pdf firefox ve office-tr.pdf openoffice testlerini gerçekleştiriniz
 \end{itemize}
 \item iksemel paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/component.xml
- # ikslint -s component.xml
- # iksperf -a component.xml 
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/component.xml
+ikslint -s component.xml
+iksperf -a component.xml 
 \end{verbatim}
-
 
 Yukarıda bulunan komutların düzgün çalıştığını gözlemleyin.
 
-\item xulrunner ve xulrunner-devel paketleri kurulumu sonrası:
+\item xulrunner paketi kurulumu sonrası:
 \begin{itemize}
 \item office-tr.pdf openoffice testlerini gerçekleştirin.
 \item network-tr.pdf firefox testlerini gerçekleştirin.
@@ -351,15 +372,15 @@ multimedia-tr.pdf vorbis-tools testini gerçekleştirin.
 
 Aşağıda bulunan dosyaları aynı dizin içerisine indirin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xml
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xsd
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test-xerces-c.sh
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xml
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/shiporder.xsd
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test-xerces-c.sh
 \end{verbatim}
 
 ./test-xerces-c.sh dosyasını çalıştırın ve çıktısında hata çıktısı olup olmadığını gözlemleyin:
 \begin{verbatim}
-# chmod 755 test-xerces-c.sh
-# ./test-xerces-c.sh | less
+chmod 755 test-xerces-c.sh
+./test-xerces-c.sh | less
 \end{verbatim}
 
 \item apr ve apr-util paketi kurulumu sonrası:

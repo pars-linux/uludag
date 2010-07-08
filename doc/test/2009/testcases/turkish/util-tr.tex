@@ -14,12 +14,37 @@
 \begin{document}
 
 \maketitle
+\section{Benchmark alt bileşeni}
+\begin{enumerate}
+ \item phoronix-test-suite paketi kurulumu sonası:
+
+Aşağıda bulunan komutu çalıştırın, bir pencere açıldığını gözlemleyin.
+  \begin{verbatim}
+   phoronix-test-suite gui
+  \end{verbatim}
+
+Testler bölümünden "SuperTuxCard" seçin ve install butonuna basın. 
+
+\end{enumerate}
+
+
 \section{Archive alt bileşeni}
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  unshield
+ minizip
 \end{verbatim}
+
+\item xz paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açtığını gözlemleyin.
+\begin{verbatim}
+ mkidir test
+ xz test
+ unxz test.xz
+\end{verbatim}
+
 
 \item rar paketi kurulumu sonrası:
 
@@ -34,10 +59,10 @@ Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturdu
 
 Aşağıda bulunan komutların dosyayı önce sıkıştırıp sonra açtığını gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_lrzip
- # lrzip test_lrzip
- # mkdir test
- # lrzip -d test_lrzip.lrz -O test/
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_lrzip
+  lrzip test_lrzip
+  mkdir test
+  lrzip -d test_lrzip.lrz -O test/
 \end{verbatim}
 
 
@@ -50,11 +75,11 @@ Aşağıda bulunan komutların dosyayı önce sıkıştırıp sonra açtığın�
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 \begin{verbatim}
- # mcrypt --list
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_mcrypt
- # mcrypt -a blowfish test_mcrypt
- # mcrypt -d test_mcrypt.nc
- # vi test_mcrypt
+  mcrypt --list
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_mcrypt
+  mcrypt -a blowfish test_mcrypt
+  mcrypt -d test_mcrypt.nc
+  vi test_mcrypt
 \end{verbatim}
 
 
@@ -167,14 +192,14 @@ Aşağıda bulunan komutu çalıştırın ve yeni bir kabuğun açıldığını 
 
 Aşağıda bulunan komutun hata alınmadan çalıştığını gözlemleyin.
 \begin{verbatim}
- # pisi --help
+ pisi --help
 \end{verbatim}
 
 \item command-not-found paketi kurulumu sonrası:
 
 Amsn paketi sisteminizde kurulu değil ise, aşağıda bulunan komutu yazdığınızda:
 \begin{verbatim}
- # amsn
+ amsn
 \end{verbatim}
 
 Aşağıda bulunan çıktıyı verdiğini gözlemleyiniz:

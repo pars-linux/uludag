@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea server-tr.tex -->
+<!--HEVEA command line is: hevea server-tr.tex server-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -88,7 +88,8 @@ Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </PRE></LI></OL><!--TOC section Web alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
-<PRE CLASS="verbatim">mod_dav_svn
+<PRE CLASS="verbatim">mod_wsgi
+mod_dav_svn
 gitweb
 openldap-client
 openldap-server
