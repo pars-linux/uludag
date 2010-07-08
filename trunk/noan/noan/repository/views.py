@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.template import RequestContext
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
 from django.contrib.auth.decorators import login_required
+from django.utils.translation import ugettext_lazy as _
 
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
@@ -202,7 +203,14 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     tmp_path = os.path.join('/tmp', pisi_package)
     url = urllib.URLopener()
     if os.path.exists(tmp_path): os.unlink(tmp_path)
-    url.retrieve(pisi_url, tmp_path)
+    try:
+        url.retrieve(pisi_url, tmp_path)
+    except IOError:
+        context = {
+            'msg': _('The file you requested is not at the server. There may be an update.'),
+        }
+        return render_response(request, 'repository/404.html', context)
+
     package = pisi.package.Package(tmp_path)
     files = package.get_files()
     os.unlink(tmp_path)
