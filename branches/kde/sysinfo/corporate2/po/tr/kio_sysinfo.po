@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 13:56+0200\n"
+"POT-Creation-Date: 2010-07-08 21:15+0300\n"
 "PO-Revision-Date: 2008-05-16 13:07+0300\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -61,87 +61,83 @@ msgid "Network Folders"
 msgstr "Ağ Dizinleri"
 
 #: sysinfo/sysinfo.cpp:241
-msgid "Network"
-msgstr "Ağ Durumu"
-
-#: sysinfo/sysinfo.cpp:249
 msgid "Memory"
 msgstr "Bellek Kullanımı"
 
-#: sysinfo/sysinfo.cpp:250
+#: sysinfo/sysinfo.cpp:242
 msgid "Physical memory: "
 msgstr "Fiziksel bellek: "
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
+#: sysinfo/sysinfo.cpp:242 sysinfo/sysinfo.cpp:244 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
 msgstr "%2'ın %1'ı boş"
 
-#: sysinfo/sysinfo.cpp:251
+#: sysinfo/sysinfo.cpp:243
 msgid "Swap memory: "
 msgstr "Takas alanı: "
 
-#: sysinfo/sysinfo.cpp:253
+#: sysinfo/sysinfo.cpp:245
 msgid "Not in use"
 msgstr "Kullanılmıyor"
 
-#: sysinfo/sysinfo.cpp:260
+#: sysinfo/sysinfo.cpp:252
 msgid "Disks"
 msgstr "Diskler"
 
-#: sysinfo/sysinfo.cpp:267
-msgid "Operating System"
-msgstr "İşletim Sistemi"
-
-#: sysinfo/sysinfo.cpp:269
-msgid "KDE <b>%1</b> on <b>%2</b>"
-msgstr "<b>%2</b> üzerinde KDE <b>%1</b>"
-
-#: sysinfo/sysinfo.cpp:280
+#: sysinfo/sysinfo.cpp:261
 msgid "Processor"
 msgstr "İşlemci"
 
-#: sysinfo/sysinfo.cpp:285
+#: sysinfo/sysinfo.cpp:266
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:286
+#: sysinfo/sysinfo.cpp:267
 #, c-format
 msgid "1 core"
 msgid_plural "%n cores"
 msgstr[0] "1 çekirdek"
 msgstr[1] "%n çekirdek"
 
-#: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
-msgid "Processor supports virtualization"
-msgstr "Sanallaştırma destekleniyor"
+#: sysinfo/sysinfo.cpp:278
+msgid "Operating System"
+msgstr "İşletim Sistemi"
 
-#: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
-msgid "Processor doesn't support virtualization"
-msgstr "Sanallaştırma desteklenmiyor"
+#: sysinfo/sysinfo.cpp:280
+msgid "KDE <b>%1</b> on <b>%2</b>"
+msgstr "<b>%2</b> üzerinde KDE <b>%1</b>"
 
-#: sysinfo/sysinfo.cpp:299
+#: sysinfo/sysinfo.cpp:290
 msgid "Display"
 msgstr "Ekran"
 
-#: sysinfo/sysinfo.cpp:302
+#: sysinfo/sysinfo.cpp:293
 msgid "Driver: "
 msgstr "Sürücü: "
 
-#: sysinfo/sysinfo.cpp:310
+#: sysinfo/sysinfo.cpp:303
 msgid "Machine Information"
 msgstr "Makine Bilgileri"
 
-#: sysinfo/sysinfo.cpp:311
+#: sysinfo/sysinfo.cpp:304
 msgid "Vendor: "
 msgstr "Üretici: "
 
-#: sysinfo/sysinfo.cpp:312
+#: sysinfo/sysinfo.cpp:305
 msgid "Product: "
 msgstr "Ürün: "
 
-#: sysinfo/sysinfo.cpp:313
+#: sysinfo/sysinfo.cpp:306
 msgid "BIOS: "
 msgstr "BIOS: "
+
+#: sysinfo/sysinfo.cpp:345
+msgid "Processor supports virtualization"
+msgstr "Sanallaştırma destekleniyor"
+
+#: sysinfo/sysinfo.cpp:346
+msgid "Processor doesn't support virtualization"
+msgstr "Sanallaştırma desteklenmiyor"
 
 #: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
@@ -151,37 +147,34 @@ msgstr "%1 noktasına bağlı"
 msgid "Not mounted"
 msgstr "Bağlı değil"
 
-#: sysinfo/sysinfo.cpp:506
+#: sysinfo/sysinfo.cpp:491
 msgid "3D Not Supported"
 msgstr "3B desteği yok"
 
-#: sysinfo/sysinfo.cpp:508
+#: sysinfo/sysinfo.cpp:493
 msgid "3D Supported"
 msgstr "3B desteği var"
 
-#: sysinfo/sysinfo.cpp:517
-msgid "Network is <strong>unreachable</strong>"
-msgstr "Ağ <strong>erişilebilir değil</strong>"
+#~ msgid "Network"
+#~ msgstr "Ağ Durumu"
 
-#: sysinfo/sysinfo.cpp:519
-msgid "You are <strong>offline</strong>"
-msgstr "Şu anda <strong>bağlı değilsiniz</strong>"
+#~ msgid "Network is <strong>unreachable</strong>"
+#~ msgstr "Ağ <strong>erişilebilir değil</strong>"
 
-#: sysinfo/sysinfo.cpp:521
-msgid "Network is <strong>shutting down</strong>"
-msgstr "Ağ bağlantısı <strong>sonlandırılıyor</strong>"
+#~ msgid "You are <strong>offline</strong>"
+#~ msgstr "Şu anda <strong>bağlı değilsiniz</strong>"
 
-#: sysinfo/sysinfo.cpp:523
-msgid "<strong>Establishing</strong> connection to the network"
-msgstr "Ağ bağlantısı <strong>sağlanıyor</strong>"
+#~ msgid "Network is <strong>shutting down</strong>"
+#~ msgstr "Ağ bağlantısı <strong>sonlandırılıyor</strong>"
 
-#: sysinfo/sysinfo.cpp:525
-msgid "You are <strong>online</strong>"
-msgstr "Şu anda <strong>bağlısınız</strong>"
+#~ msgid "<strong>Establishing</strong> connection to the network"
+#~ msgstr "Ağ bağlantısı <strong>sağlanıyor</strong>"
 
-#: sysinfo/sysinfo.cpp:527
-msgid "Unknown network status"
-msgstr "Bilinmeyen ağ durumu"
+#~ msgid "You are <strong>online</strong>"
+#~ msgstr "Şu anda <strong>bağlısınız</strong>"
+
+#~ msgid "Unknown network status"
+#~ msgstr "Bilinmeyen ağ durumu"
 
 #~ msgid "%1 free of %2"
 #~ msgstr "%2 'ın %1 'ı boş"
