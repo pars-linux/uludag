@@ -51,10 +51,15 @@ class listDialog(urwid.Frame):
 	fn_flag=True	
 	
     
-    liste = urwid.LineBox(urwid.ListBox(self.simpleList))
+    #liste = urwid.LineBox(urwid.ListBox(self.simpleList))
+    liste = urwid.ListBox(self.simpleList)
+    liste = urwid.AttrWrap(liste,palette[0])
+
+    #liste =urwid.Pile([urwid.Filler(urwid.Divider('_'),'top'),liste])#,urwid.Filler(urwid.Divider('_'),'top')])
+    #liste = urwid.AttrWrap(liste,palette[2])
     
     urwid.Frame.__init__(self,liste)
-    self.header = urwid.LineBox(urwid.Text(header))
+    self.header = urwid.Pile([urwid.Text(header),urwid.Divider('_'),urwid.Divider()])
     
 	
     if fn_flag:
@@ -63,7 +68,7 @@ class listDialog(urwid.Frame):
     
     
   def addMenuItem(self,label,function,args=None):
-    item= urwid.AttrWrap(MenuItem(label,function,args),self.palette[0],self.palette[1])
+    item= urwid.AttrWrap(MenuItem(" - "+label,function,args),self.palette[0],self.palette[1])
     self.simpleList.insert(0,item)
     
   def getContents(self):
@@ -76,7 +81,8 @@ class listDialog(urwid.Frame):
     
     #self.footer = urwid.LineBox(urwid.Text("Seçilen disk : "+item.args[0]+" label:"+item.args[1]))
   def createFooter(self,text):
-    self.footer = urwid.LineBox(urwid.Text(text))
+    self.footer = urwid.Pile([urwid.Divider('_'),urwid.Divider(),urwid.Text(text)])
+    #urwid.LineBox(urwid.Text(text))
     
     
 class PasswordDialog(urwid.Frame):
@@ -93,8 +99,8 @@ class PasswordDialog(urwid.Frame):
     liste = urwid.ListBox(self.simpleList)
 
     urwid.Frame.__init__(self,liste)
-    self.header = urwid.LineBox(urwid.Text(header))
-    self.footer = urwid.LineBox(urwid.Text(footer))
+    self.header =  urwid.Pile([urwid.Text(header),urwid.Divider('_'),urwid.Divider()])
+    self.footer =  urwid.Pile([urwid.Divider('_'),urwid.Divider(),urwid.Text(footer)])
    
   
   def clearBoxes(self):

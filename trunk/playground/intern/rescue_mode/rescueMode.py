@@ -9,8 +9,12 @@ from pardus import diskutils
 import gc
 
 class rescueMode:
-  palette = [('pardus','white','dark magenta'),
-	     ('focus','black','dark cyan')]
+  palette = [('window','black','light gray'),
+	     ('focus','white','dark red'),
+	     ('border','black','dark blue'),
+	     ('p_border','black','light gray'),
+	     ('shadow','white','black'),
+	     ('body','black','dark blue')]
 	     
   def __init__(self):
     self.screenContainer = []
@@ -18,8 +22,8 @@ class rescueMode:
 
     #create main frame
     body = urwid.Filler(urwid.Divider(),'top')
-    header = urwid.AttrWrap(urwid.Text("Pardus 2011 Kurtarma Moduna Hoşgeldiniz"),'pardus')
-    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> çıkış | <F2> Geri dön"),'right'),'pardus')
+    header = urwid.AttrWrap(urwid.Padding(urwid.Text("Pardus Kurtarma Modu"),'center'),'window')
+    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> çıkış | <F2> Geri dön"),'right'),'window')
     self.mainFrame=urwid.Frame(body,header,footer)
 
     
@@ -29,11 +33,12 @@ class rescueMode:
   def rescueOptionsScreen(self,forward=True):  
     
     #create firt window
-    frame = guiTools.listDialog(None,['pardus','focus'],"Yapmak istediğiniz işlemi seçiniz") 
+    frame = guiTools.listDialog(None,['window','focus'],"Yapmak istediğiniz işlemi seçiniz") 
     
     frame.addMenuItem("Shell'e git",self.goShell)
     frame.addMenuItem("Windows boot loader'ı yükle",self.windowsListScreen)
     frame.addMenuItem("Pardus'u kurtar",self.selectDiskScreen)
+   
     
     self.createWindow(frame,80,15)  
   
@@ -67,7 +72,7 @@ class rescueMode:
     windowsPartitions = diskTools.getWindowsPartitions()
     
     if windowsPartitions:
-      frame = guiTools.listDialog(windowsInfo,['pardus','focus'],"Bootloader'ını geri yüklemek istediğiniz Windows'u seçiniz")
+      frame = guiTools.listDialog(windowsInfo,['window','focus'],"Bootloader'ını geri yüklemek istediğiniz Windows'u seçiniz")
       for windows in diskTools.getWindowsPartitions():
 	frame.addMenuItem("Windows%s"%windows[1],installWinBootLoader,windows)
       self.createWindow(frame,80,15)
@@ -80,7 +85,7 @@ class rescueMode:
     """ INFOOO """
     if forward:
       self.screenContainer.append(self.rescueOptionsScreen)
-    
+
     def diskInfo(disk):
       return "Seçilen disk : "+disk.args[0]+" label:"+disk.args[1]
     
@@ -94,7 +99,7 @@ class rescueMode:
     
     if pardusPartitions:
     
-      frame = guiTools.listDialog(diskInfo,['pardus','focus'],"Lütfen listeden disk bölümünü seçin") 
+      frame = guiTools.listDialog(diskInfo,['window','focus'],"Lütfen listeden disk bölümünü seçin") 
 	  
       for pardus in diskTools.getPardusPartInfo():
 	frame.addMenuItem(pardus[0],selectDisk,[pardus[1],pardus[2],pardus[3]])
@@ -108,7 +113,7 @@ class rescueMode:
       self.screenContainer.append(self.selectDiskScreen)
 
     frame = guiTools.listDialog("Seçilen disk : "+self.selectedDisk[0]+" label:"+self.selectedDisk[1],
-    ['pardus','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
+    ['window','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
     
     frame.addMenuItem("Pisi geçmişi",self.pisiHistoryListScreen)
     frame.addMenuItem("Parola Değiştir",self.userlistScreen)
@@ -126,7 +131,7 @@ class rescueMode:
       self.screenContainer.append(self.selectOperationScreen)
        
     frame = guiTools.listDialog("Seçilen disk : "+self.selectedDisk[0]+" label:"+self.selectedDisk[1],
-    ['pardus','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
+    ['window','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
       
     screen = self.installGrub
     if len(self.otherDevices)>1:
@@ -148,7 +153,7 @@ class rescueMode:
       self.bootDevice = args[0][0]
       self.installGrub(args[1])
     
-    frame = guiTools.listDialog(diskInfo,['pardus','focus'],"Birden fazla açılış diski var. Lütfen listeden açılış diskinizi seçiniz.") 
+    frame = guiTools.listDialog(diskInfo,['window','focus'],"Birden fazla açılış diski var. Lütfen listeden açılış diskinizi seçiniz.") 
         
     for i in diskTools.getDeviceModel(self.otherDevices):
        frame.addMenuItem(i[0],installGrub,[i[1],2])
@@ -179,7 +184,7 @@ class rescueMode:
     self.pop_up("Kullanıcı listesi alınıyor")
     users = self.dbus.getUserlist()
     frame = guiTools.listDialog(self.selectedDisk[2],
-    ['pardus','focus'],"Lütfen kullanıcı seçiniz")
+    ['window','focus'],"Lütfen kullanıcı seçiniz")
     
     
     for user in users:
@@ -221,7 +226,7 @@ class rescueMode:
       return False
     
     editCaptions = ["Yeni Şifre        :","Yeni Şifre Tekrar :"]
-    frame = guiTools.PasswordDialog(func,['pardus','focus'],editCaptions,"Lütfen yeni şifrenizi giriniz.","Şifresi değiştirilecek kullanıcı: "+str(user[1]))
+    frame = guiTools.PasswordDialog(func,['window','focus'],editCaptions,"Lütfen yeni şifrenizi giriniz.","Şifresi değiştirilecek kullanıcı: "+str(user[1]))
    
     
     self.otherUnhandled_input = frame.unhandled_input
@@ -249,7 +254,7 @@ class rescueMode:
     self.pop_up("Pisi geçmişi alınıyor")
     historys = self.dbus.getHistory()
     frame = guiTools.listDialog(self.selectedDisk[2],
-    ['pardus','focus'],"Lütfen kurtarmak istediğiniz geçmişi seçiniz")
+    ['window','focus'],"Lütfen kurtarmak istediğiniz geçmişi seçiniz")
     
     
     for history in historys:
@@ -260,17 +265,35 @@ class rescueMode:
 
   def createWindow(self,body,width,height,header=None,footer=None):
     
-    window=urwid.LineBox(urwid.AttrWrap(urwid.Frame(body,header,footer),'pardus'))
+    window=urwid.LineBox(urwid.AttrWrap(urwid.Frame(body,header,footer),'window'))
+    window=urwid.AttrWrap(window,'window')
+    window = urwid.Columns( [window,('fixed', 2, urwid.AttrWrap(
+            urwid.Filler(urwid.Text(('border','  ')), "top")
+            ,'shadow'))])
+    window = urwid.Frame( window, footer = 
+         urwid.AttrWrap(urwid.Text(('border','  ')),'shadow'))
+    
     window = urwid.Padding(window, 'center', width )
     window = urwid.Filler(window, 'middle', height )
     temp =self.mainFrame.body
-    self.mainFrame.body=window
+    self.mainFrame.body=urwid.AttrWrap(window,'body')
     gc.collect()
     
   def pop_up(self,mesaj):
-    widget = urwid.Padding(urwid.Text(mesaj),'center')
-    widget = urwid.Filler(widget,'middle')
-    widget = urwid.Overlay(urwid.LineBox(urwid.AttrWrap(widget,'focus')), self.mainFrame, 'center', 50, 'middle', 5)    
+    
+    window=urwid.Frame(urwid.AttrWrap(urwid.LineBox(urwid.Filler(urwid.Padding(urwid.Text(mesaj),'center'),'middle')),'focus'))
+    window=urwid.AttrWrap(window,'window')
+    window = urwid.Columns( [window,('fixed', 2, urwid.AttrWrap(
+           urwid.Filler(urwid.Text(('p_border','  ')), "top")
+          ,'shadow'))])
+    window = urwid.Frame( window, footer = 
+        urwid.AttrWrap(urwid.Text(('p_border','  ')),'shadow'))
+    
+    #window = urwid.Padding(window, 'center')
+   # window = urwid.WidgetWrap(window)
+    
+    
+    widget = urwid.Overlay(window, self.mainFrame, 'center', 50, 'middle', 5)    
     self.loop.widget=widget
     self.loop.draw_screen()
     
