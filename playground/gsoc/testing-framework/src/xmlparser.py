@@ -98,7 +98,7 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testgui_install.test_install_main()
-        self.testreport.append(testgui.TestGUI(element))
+        self.testreport.append(testgui.TestGUI(element, packagelist))
         # Add the install report to the final report
         self.testreport[counter].report.extend(testgui_install.report)
         self.testreport[counter].test_gui_main()
