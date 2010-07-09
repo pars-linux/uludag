@@ -19,11 +19,12 @@ class rescueMode:
   def __init__(self):
     self.screenContainer = []
     self.otherUnhandled_input = None
+    self.dbus = None
 
     #create main frame
     body = urwid.Filler(urwid.Divider(),'top')
     header = urwid.AttrWrap(urwid.Padding(urwid.Text("PKM - Pardus Kurtarma Modu"),'center'),'window')
-    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> PKM hakkında | <F2> Geri dön"),'right'),'window')
+    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> PKM hakkında | <F2> Geri dön | <F10> Kabuğa git"),'right'),'window')
     self.mainFrame=urwid.Frame(body,header,footer)
 
     
@@ -38,12 +39,15 @@ class rescueMode:
     
     frame.addMenuItem("Pardus'u kurtar",self.selectDiskScreen)
     frame.addMenuItem("Windows önyükleyicisini kurtar",self.windowsListScreen)
-    frame.addMenuItem("Shell'e git",self.goShell)
+    #frame.addMenuItem("Shell'e git",self.goShell)
     
     self.createWindow(frame,80,15)  
   
   def goShell(self):
     """This function closes the rescue mode and turn the shell"""
+    self.popUp("Diskler ayrılıyor")
+    self.closeProcess()
+    
     self.loop.screen.stop()
     raise urwid.ExitMainLoop()
 
@@ -84,6 +88,9 @@ class rescueMode:
     
   def selectDiskScreen(self,forward=True):
     """ INFOOO """
+    
+    self.disconnectDBus()
+      
     if forward:
       self.screenContainer.append(self.rescueOptionsScreen)
 
@@ -180,11 +187,11 @@ class rescueMode:
     if forward:
       self.screenContainer.append(self.selectOperationScreen)
     
-    self.popUp("DBUS'a bağlanılıyor")
-    self.dbus = dbusTools.pardusDbus(self.selectedDisk[2])
+    
+    self.connectDBus()
     self.popUp("Kullanıcı listesi alınıyor")
     users = self.dbus.getUserlist()
-    frame = guiTools.listDialog(self.selectedDisk[2],
+    frame = guiTools.listDialog("Seçilen disk : "+self.selectedDisk[0]+" label:"+self.selectedDisk[1],
     ['window','focus'],"Lütfen kullanıcı seçiniz")
     
     
@@ -208,26 +215,19 @@ class rescueMode:
     def func(passwd,re_passwd):
       if passwd == re_passwd:
 	if passwd != "" :  
-	  if len(passwd) >3:
-	    if passwd != user[1]:
 	      self.popUp("Şifre değiştiriliyor")
-	      time.sleep(1)
-	      if self.dbus.setUserPass(int(user[0]), passwd):
-		  self.popUp("Kullanıcının şifresi değiştirilemedi.")
+	      time.sleep(1)	      
+	      returnValue = self.dbus.setUserPass(int(user[0]), passwd)
+	      if returnValue[0] == 'message':
+		self.finalScreen(returnValue[1])
 	      else:
-		  self.finalScreen("Kullanıcının şifresi değiştirildi.")
-	      return True
-	    else:
-	      error_message("Kullanıcı adınız parolanız olamaz")
-	  else:
-	    error_message("Parolanız çok kısa")
-	    return False
+		error_message(returnValue[1])
       else:
 	error_message("Yanlış giriş yaptınız lütfen tekrar deneyin")
       return False
     
     editCaptions = ["Yeni Şifre        :","Yeni Şifre Tekrar :"]
-    frame = guiTools.PasswordDialog(func,['window','focus'],editCaptions,"Lütfen yeni şifrenizi giriniz.","Şifresi değiştirilecek kullanıcı: "+str(user[1]))
+    frame = guiTools.PasswordDialog(func,['window','focus'],editCaptions,"Şifresi değiştirilecek kullanıcı: "+str(user[1]))
    
     
     self.otherUnhandled_input = frame.unhandled_input
@@ -244,14 +244,14 @@ class rescueMode:
       self.screenContainer.append(self.selectOperationScreen)
       
       
-    def takeBack2(no):
+    def takeBack(no):
       self.popUp("Pisi geçmişi kurtarılıyor")
       #time.sleep(1)
       self.dbus.takeBack(no)
-      self.finalScreen("Pisi geçmişi kurtarıldı.")
+      self.finalScreen("Pisi geçmişi kurtarıldı.") 
+  
+    self.connectDBus()
     
-    self.popUp("DBUS'a bağlanılıyor")
-    self.dbus = dbusTools.pardusDbus(self.selectedDisk[2])
     self.popUp("Pisi geçmişi alınıyor")
     historys = self.dbus.getHistory()
     frame = guiTools.listDialog(self.selectedDisk[2],
@@ -259,7 +259,7 @@ class rescueMode:
     
     
     for history in historys:
-      frame.addMenuItem("no: %d tarih: %s saat: %s"%(history.no,history.date,history.time),takeBack2,history.no)
+      frame.addMenuItem("no: %d tarih: %s saat: %s (%s)"%(history.no,history.date,history.time,history.type),takeBack,history.no)
     
     self.createWindow(frame,80,30)
     self.closePopUp()
@@ -275,37 +275,32 @@ class rescueMode:
   def aboutRescuMode(self):
     self.popUp("Pardus Kurtarma Modu\nSürüm:1.0 (beta)\nLisans:GPL_v2\n\nYazar:Mehmet Burak Aktürk\nE-posta: mb.akturk@gmail.com",height=10)
   
-  def createWindow(self,body,width,height,header=None,footer=None):
-    
-    window=urwid.LineBox(urwid.AttrWrap(urwid.Frame(body,header,footer),'window'))
-    window=urwid.AttrWrap(window,'window')
-    window = urwid.Columns( [window,('fixed', 2, urwid.AttrWrap(
-            urwid.Filler(urwid.Text(('border','  ')), "top")
-            ,'shadow'))])
-    window = urwid.Frame( window, footer = 
-         urwid.AttrWrap(urwid.Text(('border','  ')),'shadow'))
-    
+  def createWindow(self,body,width,height):
+    window=guiTools.Window(body,["window","border","shadow"])
     window = urwid.Padding(window, 'center', width )
     window = urwid.Filler(window, 'middle', height )
-    temp =self.mainFrame.body
     self.mainFrame.body=urwid.AttrWrap(window,'body')
     gc.collect()
     
+  def closeScreen(self):
+    self.closePopUp()
+    frame = guiTools.listDialog(None,['focus','window'],"Lütfen kurtarmak istediğiniz geçmişi seçiniz")
+    frame.addMenuItem("Go to shell",self.goShell)
+    frame.addMenuItem("Restart Computer",None)
+    frame.addMenuItem("Shut down",None)
+    
+    window = guiTools.Window(frame,["focus","p_border","shadow"])
+    
+    widget = urwid.Overlay(window, self.mainFrame, 'center',50,'middle', 10)    
+    self.loop.widget=widget
+    self.loop.draw_screen()
+    
+        
+    
+    
+    
   def popUp(self,message,width=50,height=5):
-    
-    
-    
-    window=urwid.Frame(urwid.AttrWrap(urwid.LineBox(urwid.Filler(urwid.Padding(urwid.Text(message),'center'),'middle')),'focus'))
-    window=urwid.AttrWrap(window,'window')
-    window = urwid.Columns( [window,('fixed', 2, urwid.AttrWrap(
-           urwid.Filler(urwid.Text(('p_border','  ')), "top")
-          ,'shadow'))])
-    window = urwid.Frame( window, footer = 
-        urwid.AttrWrap(urwid.Text(('p_border','  ')),'shadow'))
-    #self.loop.unhandled_input=noIO
-    
-    #window = urwid.Padding(window, 'center')
-   # window = urwid.WidgetWrap(window)
+    window = guiTools.Window(urwid.Filler(urwid.Padding(urwid.Text(message),'center'),'top'),["focus","p_border","shadow"])
     widget = urwid.Overlay(window, self.mainFrame, 'center',width, 'middle', height)    
     self.loop.widget=widget
     self.loop.draw_screen()
@@ -313,6 +308,23 @@ class rescueMode:
   def closePopUp(self): 
      self.loop.widget = self.mainFrame
      
+  def connectDBus(self):
+    if self.dbus == None or self.dbus.path != self.selectedDisk[2]:
+	self.popUp("DBUS'a bağlanılıyor")
+	self.dbus = dbusTools.pardusDbus(self.selectedDisk[2])
+	
+  def disconnectDBus(self):
+    if self.dbus != None:
+      self.popUp("DBUS kapatılıyor")
+      self.dbus.finalizeChroot()
+      self.dbus = None
+      self.closePopUp()
+  
+  def closeProcess(self):
+    self.disconnectDBus()
+    diskTools.umountPardusPartitions()
+    
+      
   def run(self):
     self.loop = urwid.MainLoop(self.mainFrame,self.palette,unhandled_input=self.IO)
     self.loop.screen.tty_signal_keys('undefined','undefined','undefined','undefined','undefined')
@@ -327,6 +339,8 @@ class rescueMode:
     if 'f2' in input :
       if self.screenContainer:
 	self.screenContainer.pop()(False)
+    if 'f10' in input:
+	self.closeScreen()
  
     if self.otherUnhandled_input:
       self.otherUnhandled_input(input)

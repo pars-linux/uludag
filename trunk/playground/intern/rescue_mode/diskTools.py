@@ -5,7 +5,10 @@ from pardus import diskutils
 import comar
 import parted
 from shellTools import run_quiet
+from shutil import rmtree
+import time
 
+mountedPardusPartitions = set([])
 
 def getDeviceModel(devices):
   devices_model = []
@@ -16,16 +19,17 @@ def getDeviceModel(devices):
     
 def getPartitionsLabels():
   
-  partitionsLabels=[]
+  partitionsLabels=set([])
   
   for i in glob.glob("/dev/disk/by-label/*"):
-    partitionsLabels.append(i.lstrip("/dev/disk/by-label/"))
+    partitionsLabels.add(i.lstrip("/dev/disk/by-label/"))
   
   return partitionsLabels
   
 def getPardusPartitions():
   
   pardusPartitions = []
+  
   
   for i in getPartitionsLabels():
     if "PARDUS_ROOT" in i:
@@ -38,8 +42,11 @@ def getPardusPartInfo():
   
   pardusPartInfo = []
   link = comar.Link(socket="/var/run/dbus/system_bus_socket")
+  
   for i in getPardusPartitions():
     path = "/mnt/rescue_disk/"+i[0]
+
+    mountedPardusPartitions.add(path)
     if os.path.exists(path):
       flag = True
       for mounted in link.Disk.Manager["mudur"].getMounted():
@@ -99,6 +106,19 @@ def isWindowsBoot(partition_path, file_system):
         umount(m_dir)
         return False
         
+def umountPardusPartitions():
+    link = comar.Link(socket="/var/run/dbus/system_bus_socket")
+    for i in mountedPardusPartitions:
+      while True:
+	try:
+	  link.Disk.Manager["mudur"].umount(i)
+	  break
+	except comar.dbus.DBusException:
+	  pass
+     # print i
+      os.removedirs(i)  
+        
+        
 def mount(source, target, fs):
     run_quiet("mount -t %s %s %s"%(fs,source,target))
 def umount(target):
@@ -108,7 +128,8 @@ def umount(target):
 
 
 def main():
-  print detectAll("/dev/sda")
+  link = comar.Link(socket="/var/run/dbus/system_bus_socket")
+  link.Disk.Manager["mudur"].umount("/mnt/rescue_disk/PARDUS_ROOT1")
   
 
 if __name__=="__main__":

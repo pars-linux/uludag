@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os, dbus, comar, subprocess, pisi
-from shellTools import chrootRun
-
+import shellTools
+import time
 
 _sys_dirs = ["dev","proc","sys"]
 
@@ -12,11 +12,11 @@ class pardusDbus:
     self.path = path 
     for _dir in _sys_dirs:
         tgt = os.path.join(path, _dir)
-        os.system("mount --bind /%s %s" % (_dir, tgt))
+        shellTools.mount(_dir, tgt,param="--bind")
        
-    chrootRun(path,"/sbin/ldconfig")
-    chrootRun(path,"/sbin/update-environment")
-    chrootRun(path,"/bin/service dbus start")
+    shellTools.chrootRun(path,"/sbin/ldconfig")
+    shellTools.chrootRun(path,"/sbin/update-environment")
+    shellTools.chrootRun(path,"/bin/service dbus start")
     
     self.socket_file = os.path.join(path,"var/run/dbus/system_bus_socket")
      
@@ -39,13 +39,18 @@ class pardusDbus:
     pisi.api.set_signal_handling(False)
     
   def getUserlist(self):
- 
     users = self.baselayout.userList()
     return filter(lambda user: user[0]==0 or (user[0]>=1000 and user[0]<=65000), users)
   
   def setUserPass(self,uid, password):
-    info = self.baselayout.userInfo(uid)
-    return self.baselayout.setUser(uid, info[1], info[3], info[4], password, info[5])
+    try:
+	info = self.baselayout.userInfo(uid)
+	if self.baselayout.setUser(uid, info[1], info[3], info[4], password, info[5]):
+	  return ["message","değişmedi"]
+	else:
+	  return ["message","değişti"]
+    except dbus.DBusException as error:
+	return ["error",error.message]
 
   def getHistory(limit=50):
     pdb = pisi.db.historydb.HistoryDB()
@@ -58,6 +63,10 @@ class pardusDbus:
             i+=1
             if i==limit:
                 break
+    #for i in result:
+    #  print "%d"%i.no
+     # print "---"
+    #time.sleep(5)
     return result
   
   def takeBack(self,operation):
@@ -65,24 +74,44 @@ class pardusDbus:
     os.symlink("/",self.path + self.path)
     pisi.api.takeback(operation)
     os.unlink(self.path +self.path)
+    
+  def finalizeChroot(self):
+    # close filesDB if it is still open
+    historydb = pisi.db.historydb.HistoryDB()
+    if historydb.is_initialized():
+	#print "merhaba"
+	time.sleep(5)
+        historydb.cache_flush()
 
+    # stop dbus
+    shellTools.chrootRun(self.path,"/bin/service dbus stop")
+
+    # kill comar in chroot if any exists
+    shellTools.chrootRun(self.path,"/bin/killall comar")
+
+    # unmount sys dirs
+    c = _sys_dirs
+    c.reverse()
+    for _dir in c:
+        tgt = os.path.join(self.path, _dir)
+        shellTools.umount(tgt)
+
+    # swap off if it is opened
+    shellTools.run_quiet("swapoff -a")
+
+    # umount target dir
+ #   umount_(self.path)
     
   
 
 
-def main():
-  a = pardusDbus("/mnt/rescue_disk/PARDUS_ROOT")
-  for b in a.getHistory():
-    print b.no
+#def main():
   
-  print ""
- # a = pardusDbus("/mnt/rescue_disk/PARDUS_ROOT1")
-  #for b in a.getHistory():
-   # print b.no
   
 
 if __name__ == "__main__":
-  main()
+  pass
+ # main()
     
 
   
