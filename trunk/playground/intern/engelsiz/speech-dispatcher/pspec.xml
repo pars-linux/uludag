@@ -27,6 +27,9 @@
             <Dependency>pulseaudio</Dependency>
             <Dependency>libsndfile</Dependency>
         </BuildDependencies>
+        <Patches>
+            <Patch level="1">fix-flite-libs.patch</Patch>
+        </Patches>
     </Source>
 
     <Package>
