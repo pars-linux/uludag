@@ -4,15 +4,15 @@
 # Licensed under the GNU General Public License, version 2.
 # See the file http://www.gnu.org/copyleft/gpl.txt.
 
-
 from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
+from pisi.actionsapi import get
 
-
-WorkDir = "flite-1.4-release"
+WorkDir = "flite-%s-release" % get.srcVERSION()
 
 def setup():
-    autotools.configure("--with-audio=alsa")
+    autotools.configure("--enable-shared \
+                         --with-audio=alsa")
 
 def build():
     autotools.make("-j1")
@@ -20,7 +20,6 @@ def build():
 def install():
     autotools.install()
 
-    pisitools.remove("/usr/lib/*.a")
-
     pisitools.dodoc("COPYING", "README")
+
 
