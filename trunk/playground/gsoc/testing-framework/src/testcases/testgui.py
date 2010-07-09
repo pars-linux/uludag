@@ -51,11 +51,15 @@ class TestGUI:
         
     def download_file(self, file):
         """Download a file using wget."""
-        downloadFile = ['wget'] + ['-m'] + ['-nd'] + file
-        fileName = os.path.basename(''.join(file))
-        startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
-        if startwget == 0:
-            print colorize('{0}', 'bold').format(fileName), " downloaded to: '{0}'".format(os.getcwd())
-            self.report.append('{0} downloaded to: {1}'.format(fileName, os.getcwd()))
-        else:
-            print "The file specified for the download does not exist."
+        totalDownloads = len(file)
+        counter = 0
+        while counter < totalDownloads:
+            downloadFile = ['wget'] + ['-m'] + ['-nd'] + file[counter].split()
+            fileName = os.path.basename(''.join(file[counter]))
+            startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
+            if startwget == 0:
+                print colorize('{0}', 'bold').format(fileName), " downloaded to: '{0}'".format(os.getcwd())
+                self.report.append('{0} downloaded to: {1}'.format(fileName, os.getcwd()))
+            else:
+                print "The file specified for the download does not exist."
+            counter += 1
