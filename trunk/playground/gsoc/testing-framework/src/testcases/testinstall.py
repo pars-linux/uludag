@@ -15,10 +15,11 @@ class TestInstall:
     will check all the available repositories to see whether the package exists.
     After checking all the above, then only it would proceed to call the Pisi API
     to attempt to install the packages."""
-    def __init__(self, packagelist, installedpackages, availablepackages, report=None):
+    def __init__(self, packagelist, installedpackages, availablepackages, failcode=None, report=None):
         self.packagelist = packagelist
         self.installedpackages = installedpackages
         self.availablepackages = availablepackages
+        self.failcode = 1
         self.report = list()
     
     def test_install_main(self):
@@ -55,6 +56,7 @@ class TestInstall:
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
                 self.report.append('Error: To install the packages, run the framework with root privileges')
+                self.failcode = 0       # for the testcases gui, shell and automated
                 print colorize('Failed: Privilege error. Run as root user.', 'red')
                 return
             counter += 1
