@@ -88,7 +88,7 @@ class listDialog(urwid.Frame):
     
 class PasswordDialog(urwid.Frame):
   
-  def __init__(self,function,palette,editCaptions,header="",footer=""):
+  def __init__(self,function,palette,editCaptions,header=""):
     self.palette = palette
     self.function = function
     self.passwd = PasswordEdit(editCaptions[0])
@@ -101,7 +101,7 @@ class PasswordDialog(urwid.Frame):
 
     urwid.Frame.__init__(self,liste)
     self.header =  urwid.Pile([urwid.Text(header),urwid.Divider('_'),urwid.Divider()])
-    self.footer =  urwid.Pile([urwid.Divider('_'),urwid.Divider(),urwid.Text(footer)])
+  #  self.footer =  urwid.Pile([urwid.Divider('_'),urwid.Divider(),urwid.Text(footer)])
    
   
   def clearBoxes(self):
@@ -114,6 +114,20 @@ class PasswordDialog(urwid.Frame):
   def unhandled_input(self, input):
     if input == 'enter':
 	self.function(self.passwd.password,self.re_passwd.password)
+
+def Window(frame,palette):
+    window=urwid.LineBox(frame)
+    window=urwid.AttrWrap(window,palette[0])
+    window = urwid.Columns( [window,('fixed', 2, urwid.AttrWrap(
+            urwid.Filler(urwid.Text((palette[1],'  ')), "top")
+            ,palette[2]))])
+    window = urwid.Frame( window, footer = 
+         urwid.AttrWrap(urwid.Text((palette[1],'  ')),palette[2]))
+  
+     
+      
+    return window
+  
 	
 if __name__=="__main__":
   ps = PasswordEdit("burak")
