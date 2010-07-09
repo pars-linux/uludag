@@ -5,12 +5,13 @@
 # See the file http://www.gnu.org/copyleft/gpl.txt.
 
 
+from pisi.actionsapi import shelltools
 from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
+from pisi.actionsapi import get
 
 
 def setup():
-    #autotools.autoreconf("-fi")
     autotools.configure("--disable-static \
                          --without-ibmtts \
                          --without-ivona \
@@ -20,9 +21,6 @@ def setup():
                          --with-espeak \
                          --with-libao \
                          --with-pulse")
-
-    #pisitools.dosed('libtool', '^hardcode_libdir_flag_spec=.*', 'hardcode_libdir_flag_spec=""')
-    #pisitools.dosed('libtool', '^runpath_var=LD_RUN_PATH', 'runpath_var=DIE_RPATH_DIE')
 
 
 def build():
@@ -36,6 +34,15 @@ def install():
     # Rename generically named binaries
     pisitools.rename("/usr/bin/long_message", "spd_long_message")
     pisitools.rename("/usr/bin/run_test", "spd_run_test")
+
+    # Remove configuration files from /usr/share
+    pisitools.removeDir("/usr/share/speech-dispatcher")
+
+    # Set executable bit
+    shelltools.chmod("%s/usr/lib/%s/site-packages/speechd/_test.py" % (get.installDIR(), get.curPYTHON()), 0755)
+
+    # Create log directory (FIXME: mode 0700 postinstall)
+    pisitools.dodir("/var/log/speech-dispatcher")
 
     pisitools.dodoc("AUTHORS", "COPYING", "README")
 
