@@ -19,6 +19,12 @@ class TestGUI:
         """Execute the gui test case and display the commands."""
         case = self.element.xpath('case')
         totalPackages = len(self.packagelist)
+        downloadList = []
+        for downloadTag in self.element.getiterator('download'):
+            downloadList.append(downloadTag.text)
+        if downloadList:
+            self.download_file(downloadList)
+        print '\n'
         totalCases = len(case)
         totalCounter = 0
         while totalCounter < totalPackages:
@@ -32,11 +38,6 @@ class TestGUI:
                 if linkList:
                     print colorize('Open the following link in your browser: ', 'bold')
                     print ''.join(linkList)
-                downloadList = []
-                for downloadTag in case[counter].getiterator('download'):
-                    downloadList.append(downloadTag.text)
-                if downloadList:
-                    self.download_file(downloadList)
                 textList = []
                 for element in case[counter].getiterator('text'):
                     textList.append(element.text)
@@ -53,13 +54,15 @@ class TestGUI:
         """Download a file using wget."""
         totalDownloads = len(file)
         counter = 0
+        print '\nFiles saved to: ', colorize('{0}', 'bold').format(os.getcwd())
+        print 'Downloading ...\n', 
         while counter < totalDownloads:
             downloadFile = ['wget'] + ['-m'] + ['-nd'] + file[counter].split()
             fileName = os.path.basename(''.join(file[counter]))
             startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
             if startwget == 0:
-                print colorize('{0}', 'bold').format(fileName), " downloaded to: '{0}'".format(os.getcwd())
+                print colorize('{0}', 'bold').format(fileName)
                 self.report.append('{0} downloaded to: {1}'.format(fileName, os.getcwd()))
             else:
-                print "The file specified for the download does not exist."
+                print "The file {0} does not exist.".format(''.join(file[counter]))
             counter += 1
