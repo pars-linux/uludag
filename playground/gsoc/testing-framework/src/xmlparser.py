@@ -98,6 +98,10 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testgui_install.test_install_main()
+        if testgui_install.failcode == 0:
+            print colorize('Skipping test ...', 'red')
+            self.testreport.append(None)
+            return
         self.testreport.append(testgui.TestGUI(element, packagelist))
         # Add the install report to the final report
         self.testreport[counter].report.extend(testgui_install.report)
@@ -139,6 +143,10 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testautomated_install.test_install_main()
+        if testautomated_install.failcode == 0:
+            print colorize('Skipping test ...', 'red')
+            self.testreport.append(None)
+            return
         self.testreport.append(testautomated.TestAutomated(packagelist,
                                                   commandText,
                                                   expectedText))
@@ -163,6 +171,10 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testshell_install.test_install_main()
+        if testshell_install.failcode == 0:
+            print colorize('Skipping test ...', 'red')
+            self.testreport.append(None)
+            return
         self.testreport.append(testshell.TestShell(element, textList))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
@@ -220,8 +232,4 @@ class XMLParser:
         
     def generate_report(self, totaltests):
         """Generate a report and write it to a file."""
-        counter = 0
-        while counter < totaltests:
-            print self.testreport[counter].report
-            print '-' * 8
-            counter += 1
+        pass
