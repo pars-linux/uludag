@@ -18,25 +18,27 @@
         <Description>Speech Dispatcher is a device independent layer for speech synthesis that provides a common easy to use interface for both client applications (programs that want to speak) and for software synthesizers (programs actually able to convert text to speech).</Description>
         <Archive sha1sum="85c4231b9731bdc63671398c3a27e618f47ab5cd" type="targz">http://www.freebsoft.org/pub/projects/speechd/speech-dispatcher-0.7.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency>dotconf</Dependency>
-            <Dependency>libsndfile</Dependency>
             <Dependency>libao</Dependency>
-            <Dependency>alsa-lib</Dependency>
+            <Dependency>flite</Dependency>
             <Dependency>espeak</Dependency>
-            <Dependency>pulseaudio</Dependency>
+            <Dependency>dotconf</Dependency>
             <Dependency>texinfo</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>pulseaudio</Dependency>
+            <Dependency>libsndfile</Dependency>
         </BuildDependencies>
     </Source>
 
     <Package>
         <Name>speech-dispatcher</Name>
         <RuntimeDependencies>
-            <Dependency>dotconf</Dependency>
-            <Dependency>libsndfile</Dependency>
             <Dependency>libao</Dependency>
-            <Dependency>alsa-lib</Dependency>
+            <Dependency>flite</Dependency>
             <Dependency>espeak</Dependency>
+            <Dependency>dotconf</Dependency>
+            <Dependency>alsa-lib</Dependency>
             <Dependency>pulseaudio</Dependency>
+            <Dependency>libsndfile</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
@@ -44,9 +46,20 @@
             <Path fileType="data">/usr/share</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib</Path>
-            <Path fileType="library">/usr/lib/python2.*</Path>
             <Path fileType="data">/usr/share/speech-dispatcher</Path>
             <Path fileType="config">/etc/speech-dispatcher</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>python-speech-dispatcher</Name>
+        <PartOf>programming.language.python</PartOf>
+        <Summary>Python bindings for speech-dispatcher</Summary>
+        <RuntimeDependencies>
+            <Dependency>speech-dispatcher</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/python2.*</Path>
         </Files>
     </Package>
 

@@ -14,7 +14,6 @@ def setup():
                          --without-ibmtts \
                          --without-ivona \
                          --without-nas \
-                         --without-flite \
                          --with-alsa \
                          --with-espeak \
                          --with-libao \
