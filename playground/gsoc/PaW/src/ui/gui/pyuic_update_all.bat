@@ -9,5 +9,4 @@ pyuic4 main.ui -o main.py
 pyuic4 source.ui -o source.py
 pyuic4 usb.ui -o usb.py
 pyuic4 welcome.ui -o welcome.py
-
-
+pyuic4 finish.ui -o finish.py

@@ -13,10 +13,9 @@ from logger import getLogger
 log = getLogger('Installer Backend')
 
 try:
-    from tools.wmi import wmi
     import _winreg
 except ImportError, NameError:
-    log.debug('Could not import _winreg or wmi. Missing module.')
+    log.debug('Could not import _winreg. Missing module.')
 
 class Installer():
     gui = None
@@ -38,11 +37,6 @@ class Installer():
     def __init__(self, mainEngine):
         "Initialize installer instance."
         self.mainEngine = mainEngine
-
-        try:
-            self.wmi = wmi.WMI(privileges=["Shutdown"])
-        except:
-            log.warning("Could not use WMI. Most probably on Linux.")
 
         try:
             self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
@@ -87,9 +81,6 @@ class Installer():
             return bool(ctypes.windll.WINMM.mciSendStringW(u"set cdaudio door open", None, 0, None))
         except:
             return False
-
-    def reboot(self):
-        self.wmi.Win32_OperatingSystem(Primary=1)[0].Reboot()
 
     def setTempFolder(self):
         self.mainEngine.config.tmpDir = tempfile.mkdtemp()

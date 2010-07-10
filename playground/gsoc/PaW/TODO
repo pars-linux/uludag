@@ -11,11 +11,15 @@ TODO
 
 * make initramfs to boot CD properly from nested folder other than device root.
 
+* do not allow install CDs, ISOs, USBs. look for repo/ folder and prevent it.
+
 * plan more on installation directory structure
 
 * solve levenshtein more less distance issue.
 
 * decide on a a stable URL for version updates.
+
+* test installing on a different partition than primary windows boot drive(C:).
 
 * prevent exit event, prompt question, exit cleanup
 

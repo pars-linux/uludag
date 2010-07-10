@@ -10,10 +10,11 @@ import ui.controller.stepOptUSB as stepOptUSB
 import ui.controller.stepOptInternet as stepOptInternet
 import ui.controller.stepDownloading as stepDownloading
 import ui.controller.stepInstalling as stepInstalling
+import ui.controller.stepFinish as stepFinish
 
 class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD,
-        stepOptInternet, stepOptUSB, stepDownloading, stepInstalling] # steps
+        stepOptInternet, stepOptUSB, stepDownloading, stepInstalling, stepFinish]
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):
@@ -34,7 +35,7 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     def connectSignals(self):
 	QtCore.QObject.connect(self.btnNext, QtCore.SIGNAL('clicked()'), self.goNext)
 	QtCore.QObject.connect(self.btnBack, QtCore.SIGNAL('clicked()'), self.goBack)
-	QtCore.QObject.connect(self.btnFinish, QtCore.SIGNAL('clicked()'), self.goFinish)
+	QtCore.QObject.connect(self.btnFinish, QtCore.SIGNAL('clicked()'), self.goNext)
 
 
     def populateWidgets(self):
@@ -72,9 +73,6 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	    if(curWidget.onRollback()):
 		self.jumpScreen(self.historyStack.pop())
 
-    def goFinish(self):
-	pass
-
     def onScreenChange(self):
 	self.updateNavButtons()
 	self.updateHeading()
@@ -91,7 +89,6 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	    else:
 		self.btnBack.show()
 		self.btnFinish.hide()
-
 
     def updateHeading(self):
 	heading = self.stackedWidget.currentWidget().heading
