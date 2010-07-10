@@ -10,6 +10,7 @@ TODO
 * solve gui freezing problem during installation.
 
 * make initramfs to boot CD properly from nested folder other than device root.
+  update kernel params, accordingly.
 
 * do not allow install CDs, ISOs, USBs. look for repo/ folder and prevent it.
 
@@ -49,4 +50,4 @@ TODO
 
 * create pardus 2009 packages for paw-specific installations.
 
-* test insalling with downloaded file.
+* test insalling with downloaded file

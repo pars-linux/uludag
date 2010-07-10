@@ -65,13 +65,13 @@ class Widget(QtGui.QWidget, StepWidget):
 
         gfxboot_cfg = locate_file_in_path('%s\\' % currentDrive.DeviceID, self.gfxboot_cfg_file)
         if not gfxboot_cfg:
-            log.debug('Could not locate gfxboot.cfg')
+            log.debug('Could not locate %s.' % self.gfxboot_cfg_file)
             return None
 
         distro_name = version_name_from_gfxboot(gfxboot_cfg)
 
         if not distro_name:
-            log.debug('No distro specified in gfxboot.cfg')
+            log.debug('No distro specified in %.' % self.gfxboot_cfg_file)
             return None
 
         result = self.mainEngine.versionManager.getByDistance(distro_name, tolerance)
