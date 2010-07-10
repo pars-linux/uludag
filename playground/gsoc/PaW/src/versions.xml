@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pardus SYSTEM "versions.dtd">
+<!-- Currently, only mirrors with FTP are supported. -->
 
 <pardus ver="1.0" lastUpdated="24/01/2010">
     <version id="pardus2009.2">
@@ -57,6 +58,7 @@
     </version>
 
     <version id="md5summer">
+        <!-- for small tests -->
 	<name>md5summer</name>
 	<size>907264</size>
 	<type>32-bit</type>
