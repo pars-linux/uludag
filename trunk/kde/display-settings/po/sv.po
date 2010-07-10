@@ -1,20 +1,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:34+0300\n"
-"PO-Revision-Date: 2009-12-12 08:23+0100\n"
-"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"PO-Revision-Date: 2010-07-10 18:21+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
 msgid "Configure display devices"
@@ -115,11 +116,11 @@ msgstr "Åtkomst nekad."
 
 #: src/displaysettings/deviceswidget.py:119
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestande. Vill du använda den drivrutinen?</p></qt>"
+msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestanda. Vill du använda den drivrutinen?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
-msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestande. För att använda den måste du installera paketet <b>%2</b> och välja <b>%1</b> i grafikkortsinställningarna.</qt>"
+msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestanda. För att använda den måste du installera paketet <b>%2</b> och välja <b>%1</b> i grafikkortsinställningarna.</qt>"
 
 #: src/displaysettings/deviceswidget.py:144
 msgid "Start Package Manager"
