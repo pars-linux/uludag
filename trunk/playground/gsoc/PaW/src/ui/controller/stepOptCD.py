@@ -1,11 +1,11 @@
 import os
 import sys
-import ConfigParser
-from utils import levenshtein
 
 from PyQt4 import QtGui, QtCore
 from ui.controller.stepTemplate import StepWidget
 from ui.gui.cd import Ui_cd
+from utils import locate_file_in_path
+from utils import version_name_from_gfxboot
 
 from logger import getLogger
 log = getLogger('CD Option Step')
@@ -13,6 +13,7 @@ log = getLogger('CD Option Step')
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Install from Pardus Live CD/DVD"
     cd = None
+    gfxboot_cfg_file = "gfxboot.cfg"
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
@@ -27,12 +28,12 @@ class Widget(QtGui.QWidget, StepWidget):
 
     def onDriveUpdated(self):
         pass
-#        version = self.determineCDVersion()
-#        if version:
-#            cdDrive = getSelectedCDDrive()
-#            self.gui.lblPath.setText("%s CD detected in %s successfully." % (version.name, cdDrive.DeviceID))
-#        else:
-#            self.gui.lblPath.setText("Unrecognized Pardus CD in drive.")
+        version = self.determineCDVersion()
+        if version:
+            cdDrive = self.getSelectedCDDrive()
+            self.gui.lblPath.setText("%s CD detected in %s successfully." % (version.name, cdDrive.DeviceID))
+        else:
+            self.gui.lblPath.setText("Unrecognized Pardus CD in drive.")
 
     def populateCDs(self):
 	self.gui.comboDrive.clear()
@@ -64,60 +65,28 @@ class Widget(QtGui.QWidget, StepWidget):
         except WindowsError, IOError:
             return True
 
-    def locate_gfxboot_cfg(self, path):
-            """
-            Locates first occurrence of gfxboot.cfg in the path.
-                'path' should be an absolute path.
-            """
-            filename = 'gfxboot.cfg'
-            try:
-                contents = os.listdir(path)
-            except WindowsError as e:
-                log.error('Could not reach CD drive. %s' % e)
-                return None
-            
-            try: index = contents.index(filename)
-            except ValueError: index = -1 # indicates does not exist
-
-            if not index == -1 and os.path.isfile(os.path.join(path,filename)):
-                return os.path.join(path, filename)
-            else:
-                for item in contents:
-                    if os.path.isdir(os.path.join(path, item)): # nested dirs
-                        result = self.locate_gfxboot_cfg(os.path.join(path,item))
-                        if result: return result
-            return None
-
     def determineCDVersion(self, tolerance = 10):
         """
         Determines Pardus release version by parsing gfxboot.cfg and
         obtaining distro name then comparing it with names defined in
         versions.xml file using Levenshtein distance of 'tolerance' value.
-        Newer version with appropriate distane will be matched.
         """
         # TODO: tolerance TBD.
         currentDrive = self.getSelectedCDDrive()
         if not currentDrive: return None
         
-        gfxboot_cfg = self.locate_gfxboot_cfg('%s\\' % currentDrive.DeviceID)
+        gfxboot_cfg = locate_file_in_path('%s\\' % currentDrive.DeviceID, self.gfxboot_cfg_file)
         if not gfxboot_cfg:
             log.debug('Could not locate gfxboot.cfg')
             return None
 
-        config_parser = ConfigParser.ConfigParser()
-        config_parser.read(gfxboot_cfg)
-        distro_name = config_parser.get('base','distro')
+        distro_name = version_name_from_gfxboot(gfxboot_cfg)
 
         if not distro_name:
             log.debug('No distro specified in gfxboot.cfg')
             return None
 
-        result = None
-        # TODO: improve algorithm!
-        for version in self.mainEngine.versionManager.versions:
-            l_distance = levenshtein(version.name, distro_name)
-            if l_distance < tolerance:
-                result = version
+        result = self.mainEngine.versionManager.getByDistance(distro_name, tolerance)
                 
         if result:
             log.debug('Detected version: %s' % result.name)
@@ -133,7 +102,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose Pardus CD drive or folder to proceed.', QtGui.QMessageBox.Ok)
 	    return False
         elif self.isEmptyDrive(currentDrive):
-            QtGui.QMessageBox.warning(self, 'Could not read CD/DVD', 'You do not have CD/DVD in %s or drive is not ready. If you have a working CD/DVD in it, please try again.' % currentDrive.DeviceID, QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self, 'Could not read CD/DVD', 'You do not have a CD/DVD in %s or drive is not ready. If you have a working CD/DVD in it, please try again.' % currentDrive.DeviceID, QtGui.QMessageBox.Ok)
             return False
 	else:
             self.mainEngine.config.cdDrive = self.getSelectedCDDrive()
@@ -143,7 +112,7 @@ class Widget(QtGui.QWidget, StepWidget):
                 self.mainEngine.version = version
             else:
                 reply = QtGui.QMessageBox.warning(self, 'Unknown Pardus CD/DVD', 'Unable to identify Pardus release of CD/DVD in %s. It is NOT recommended to continue installation. Do you want to exit?' % currentDrive.DeviceID, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
-                if reply == QtGui.QMessageBox.Yes: sys.exit()
+                if reply == QtGui.QMessageBox.Yes: sys.exit() # TODO: redirect to a exit event function
                 
 	    return True
 

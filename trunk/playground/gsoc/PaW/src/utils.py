@@ -1,4 +1,6 @@
 import subprocess
+import os
+import ConfigParser
 
 from logger import getLogger
 log = getLogger('Utils')
@@ -116,3 +118,34 @@ def levenshtein(a,b):
             current[j] = min(add, delete, change)
 
     return current[n]
+
+
+def locate_file_in_path(path, filename):
+        """
+        Locates first occurrence of given file with 'filename' parameter
+        by searching recursively in given path (this can be a CD-DVD or USB
+        drive root. First, root is scanned then subfolders are scanned according
+        to their names in ascending order. This is a depth-first search.
+        """
+        try:
+            contents = os.listdir(path)
+        except:
+            return None # device may not be ready or unexisting path.
+        
+        try: index = contents.index(filename)
+        except ValueError: index = -1 # indicates does not exist here.
+
+        if not index == -1 and os.path.isfile(os.path.join(path,filename)):
+            return os.path.join(path, filename)
+        else:
+            for item in contents:
+                if os.path.isdir(os.path.join(path, item)): # nested dirs
+                    result = locate_file_in_path(os.path.join(path,item), filename)
+                    if result: return result
+        return None
+
+def version_name_from_gfxboot(gfxboot_cfg_path):
+    config_parser = ConfigParser.ConfigParser()
+    config_parser.read(gfxboot_cfg_path)
+    distro_name = config_parser.get('base','distro')
+    return distro_name

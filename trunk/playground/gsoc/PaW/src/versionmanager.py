@@ -1,6 +1,7 @@
 import xml.dom.minidom
 from PyQt4.QtNetwork import QHttp
 from PyQt4 import QtCore
+from utils import levenshtein
 
 from logger import getLogger
 log = getLogger("VersionManager")
@@ -147,6 +148,25 @@ class VersionManager():
             if long(version.size) == long(size):
                 return version
         return None
+
+    def getByDistance(self, name, tolerance = 10):
+        """Returns version if there is a version within Levenshtein distance of
+        'tolerance' parameter for 'name' parameter. Nearest version is returned.
+        Comparison is done case-insensitively. First appearing in versions.xml
+        is chosen on tie. None is returned if no version is in given distance.
+        """
+        nearest = None
+        minDistance = 999
+
+        for version in self.versions:
+            n1 = version.name.lower()
+            n2 = name.lower()
+            l_distance = levenshtein(n1, n2)
+
+            if l_distance < tolerance and l_distance < minDistance:
+                minDistance = l_distance
+                nearest = version
+        return nearest
 
     def getByMD5Sum(self, hash):
         'MD5 hash as in versions.xml'
