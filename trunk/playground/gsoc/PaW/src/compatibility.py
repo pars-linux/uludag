@@ -7,19 +7,25 @@ log = getLogger("Compatibility")
 
 # TODO: Write an wrapper class for CD, LogicalDisk and USB.
 class LogicalDisk():
+    "Class for harddisk partitions."
+
     DeviceID, Name, FreeSpace, Size, FileSystem = None, None, 0, 0, None
+    
     def __init__(self, id, name, free, size, filesystem = None):
 	self.DeviceID = id
         self.Name = name
 	self.FreeSpace = free
 	self.Size = size
-	self.FileSystem = filesystem
+	self.FileSystem = filesystem # TODO: redundant? maybe for initrd?
 
     def __repr__(self):
 	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
 class CD():
+    "Class for CD/DVD-ROM devices."
+
     DeviceID, Name, FreeSpace, Size = None, None, 0, 0
+
     def __init__(self, id, name, free = 0, size = 0):
 	self.DeviceID = id
         self.Name = name
@@ -30,7 +36,10 @@ class CD():
 	return 'CD: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
 class USB():
+    "Class for USB devices."
+
     DeviceID, Name, FreeSpace, Size = None, None, 0, 0
+    
     def __init__(self, id, name, free = 0, size = 0):
 	self.DeviceID = id
         self.Name = name
@@ -42,15 +51,22 @@ class USB():
 
 
 class Compatibility():
-
+    """A class that handles many OS operations such as rebooting,
+    determining CPU arch, CD/DVD-ROMs, USB drives, harddisk partitions. etc.
+    """
     totalMemory, architectureBit, architectureName = None, None, None
     disks, cds, usbs = [], [], []
     OS, wmi = None, None
 
     def __init__(self):
+        """
+        Initializes WMI object.
+        Forces to determine CPU architecture and total physical memory.
+        """
 	try:
 	    from tools.wmi import wmi
-	    self.wmi = wmi.WMI()
+            self.wmi = wmi.WMI(privileges=["Shutdown"]) # priv. to reboot.
+            log.warning("Could not use WMI. Most probably on Linux.")
             log.debug('Running on Windows.')
             self.winTotalMemory()
 	    self.winArchitecture()
@@ -67,23 +83,33 @@ class Compatibility():
 
     def winArchitecture(self):
         """
-        Notice: Takes almost 2.5 seconds on my avg laptop running Win 7.
+        Finds CPU arch on Windows systems on Win 2000 or newer.
+        
+        Notice: Takes almost 2.5 seconds on an avg laptop running Win 7.
         Considerably slower than all other WMI operations. May take longer on
         older PCs.
+        
+        Postcondition: self.architectureBit, self.architecturename,
+                       self.os updated.
         """
         # TODO: Still causes performance bottleneck, find alternative.
 	if(self.wmi):
 	        if(self.wmi.Win32_Processor(Architecture = 0x9)):
-		    name = 'x64'
+		    name = 'x86_64'
 		    bits = 64
                 else:
-		    name = 'x32'
+		    name = 'x86'
 		    bits = 32
 
 		self.architectureBit, self.architectureName = bits, name
 		self.os = 'Windows'
 
     def unixArchitecture(self):
+        """
+        Finds CPU arch on unix systems.
+        Postcondition: self.architectureBit, self.architecturename,
+                       self.os updated.
+        """
 	out = commands.getstatusoutput('grep lm /proc/cpuinfo')[1] #if lm exists x64.
 
 	if(out):
@@ -95,9 +121,13 @@ class Compatibility():
 
 	self.architectureBit, self.architectureName = bits, name
 
-	self.os = 'Windows'
+	self.os = 'Linux'
 
     def unixTotalMemory(self):
+        """
+        Finds total physical memory on unix systems by parsing /proc/meminfo.
+        Postcondition: self.totalMemory is in bytes.
+        """
 	file = open('/proc/meminfo')
 	if file:
 	    self.totalMemory = long(file.read().split('\n')[0].split()[1])*1024
@@ -108,21 +138,36 @@ class Compatibility():
 	file.close()
 
     def winTotalMemory(self):
+        """
+        Finds total physical memory on Windows.
+        Postcondition: self.totalMemory is in bytes.
+        """
 	cs = self.wmi.Win32_ComputerSystem()
 	totalMemory = None
-	for o in cs:
+	for o in cs: # CPU loop.
 	    if o.TotalPhysicalMemory != None:
 		totalMemory = long(o.TotalPhysicalMemory.encode('utf8'))
-		break
+		break # There may be additional CPU's. Break on first.
 
 	self.totalMemory = totalMemory
 
     def winPopulateDisks(self):
+        """
+        Finds hdd partitions and creates collection of instances in self.disks.
+        Note: Only the partitions can be seen under My Computer are detected.
+        For example, WinRE(rescue) or Unix partitions (ext3, ext4, squashfs)
+        will not be detected due to WMI.
+        
+        Postcondition: self.disks has hard drive partitions.
+        """
 	self.disks = []
 	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
 	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
 
     def winPopulateCDs(self):
+        """
+        Finds CD/DVD-ROM drives and creates CD object collections in self.cds.
+        """
 	self.cds = []
 	for cd in self.wmi.Win32_LogicalDisk(DriveType=5):
             # TODO: TBD: First 2 letters of combobox is drive letter + colon.
@@ -136,6 +181,7 @@ class Compatibility():
             self.cds.append(CD(DeviceID, VolumeName, FreeSpace,Size)) # Caption, Size, VolumeName, FreeSpace
 
     def winPopulateUSBs(self):
+        "Finds USB drives and creates CD object collections in self.usbs"
         from time import time as t
 	self.usbs = []
 	for usb in self.wmi.Win32_LogicalDisk(DriveType=2):
@@ -150,6 +196,10 @@ class Compatibility():
             self.usbs.append(USB(DeviceID, VolumeName, FreeSpace,Size)) # Caption, Size, VolumeName, FreeSpace
             
     def unixPopulateDisks(self):
+        """
+        Finds harddisk partitions on unix and populates self.disks with
+        collection of LogicalDisk instances.
+        """
 	self.disks = []
 	for disk in commands.getstatusoutput('df --block-size=1')[1].split('\n')[1:]:
 	    #--block-size=1  for getting result in bytes
@@ -188,5 +238,12 @@ class Compatibility():
             return 0
 
     def isAdministrator(self):
-        "Returns true if the user logged in has administrator privileges."
+        "Returns true if the user of the program has administrator privileges."
         return bool(ctypes.windll.shell32.IsUserAnAdmin())
+
+    def reboot(self):
+        """
+        Reboots the computer immediately by sending command to primary OS
+        via WMI.
+        """
+        self.wmi.Win32_OperatingSystem(Primary=1)[0].Reboot()

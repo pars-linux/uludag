@@ -133,4 +133,4 @@ class Widget(QtGui.QWidget, StepWidget):
 
 
     def nextIndex(self):
-	return 2 # TODO: implement better
+	return 2
