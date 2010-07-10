@@ -132,22 +132,10 @@ def print_device(nm_device):
 
 def print_devices(nm_handle):
     """Print the device list."""
-    devices = {
-        DeviceType.UNKNOWN  : [],
-        DeviceType.WIFI     : [],
-        DeviceType.GSM      : [],
-        DeviceType.CDMA     : [],
-        DeviceType.ETHERNET : [],
-    }
-
-    for device in nm_handle.devices:
-        devices[device.type].append(device)
-
-    for device in devices:
-        if len(devices[device]) > 0:
-            print colorize("%s devices" % str(device).capitalize(), 'green')
-            for dev in devices[device]:
-                print_device(dev)
+    for device_type in nm_handle.devices_map:
+        print colorize("%s devices" % str(device_type).split("-")[-1].capitalize(), 'green')
+        for device in nm_handle.devices_map[device_type]:
+            print_device(device)
 
 def get_connection(nm_handle, text = "connection"):
     """Get a connection from user"""
