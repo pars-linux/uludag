@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: display-settings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:34+0300\n"
-"PO-Revision-Date: 2010-07-10 18:21+0200\n"
+"PO-Revision-Date: 2010-07-10 18:38+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -346,7 +346,7 @@ msgstr "Drivrutin"
 
 #: ui/ui_videocard.py:78
 msgid "Use the default driver for the detected card."
-msgstr "Använd förvald drifrutin för avkänt grafikkort."
+msgstr "Använd förvald drivrutin för avkänt grafikkort."
 
 #: ui/ui_videocard.py:79 ui/ui_videocard.py:82
 msgid "Select from the list:"
