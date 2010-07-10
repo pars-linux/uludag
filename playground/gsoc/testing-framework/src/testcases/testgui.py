@@ -66,3 +66,4 @@ class TestGUI:
             else:
                 print "The file {0} does not exist.".format(''.join(file[counter]))
             counter += 1
+        print 'File(s) downloaded to: ', colorize('{0}', 'bold').format(os.getcwd())
