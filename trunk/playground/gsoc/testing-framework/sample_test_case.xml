@@ -1,0 +1,182 @@
+<?xml version="1.0" ?>
+<document>
+<testcase test="install" lang="en">
+<package>gift</package>
+<package>gift-ares</package>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>linuxdcpp</package>
+<case>
+    <text>Enter a nick from Preferences tab.</text>
+    <text>Open the application from Kmenu and try to connect a crowded hub. Observe that connection established without any problem.</text>
+</case>
+</testcase>
+
+<testcase test="shell" lang="en">
+<package>youtube-dl</package>
+<case>
+    <text>Execute following command and observe a file with .flv extension is downloaded.</text>
+    <command>youtube-dl http://www.youtube.com/watch?v=5u2q3P60XEk</command>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>choqok</package>
+<case>
+    <text>Run the program and if you have a twitter account, save your account information and observe you will be connected twitter correctly.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>konversation</package>
+<case>
+    <text>Run the program and observe you can connect default channels.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>pidgin</package>
+<case>
+    <text>Run the program and save your account information and observe you can connect correctly.</text>
+</case>
+</testcase>
+
+<testcase test="shell" lang="en">
+<package>links</package>
+<case>
+    <text>Run the below command and observe that the google main page opened on console.</text>
+    <command>links www.google.com </command>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>bilbo</package>
+<case>
+    <text>Open the application from Kmenu and enter a blog title and subject and save it locally. Observe that it runs correctly.</text>
+    <text>If you have a blog, follaw Blog $\rightarrow$ Add Blog path and add your bolg and try to send a new blog.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>firefox</package>
+<package>arora</package>
+<case>
+    <text>Observe buttons work correctly on page below.</text>
+    <download>http://www.croczilla.com/~alex/old-site/dom2.xml</download>
+    <text>(for Firefox) Observe .firefox directory which is on Home directory had not regenerated.</text>
+    <text>Observe your bookmarks had not lost.</text>
+    <text>Observe pages which are opened recently opens corrently when reload.</text>
+    <text>Open the site below and try watch video full screen, observe sound and display are correct.</text>
+</case>
+<case>
+
+    <text>Try download a document under: http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/</text>
+    <text>Observe the save as window is appeared.</text>
+    <text>Download this file and observe the download window is appeared correctly.</text>
+</case>
+<case>
+    <text> Run a few video from:</text>
+    <text>Observe they can run on firefox.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>wireshark</package>
+<case>
+<text>After installation wireshark package:</text>
+<text>Run Wireshark, select eth0 from interface list and observe related packages with this interface will be listed.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>thunderbird</package>
+<package>sylpheed</package>
+<case>
+    <text>Create an e-mail account.</text>
+    <text>Observe can receive Mail.</text>
+    <text>Observe can send Mail.</text>
+    <text>Observe can create filter.</text>
+    <text>If we are already using thunderbird, observe the .thunderbird directory is not deleted under Home.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>sylpheed</package>
+<case>
+    <text>Create an e-mail account.</text>
+    <text>Observe can receive Mail.</text>
+    <text>Observe can send Mail.</text>
+    <text>Observe can create filter.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>spamassassin</package>
+<package>spamd</package>
+<case>
+    <text>Run Kmail from Menu and in order to activate spam filter:</text>
+    <text>Follow Tools -> Spam Blocking Wizard path from Kmail menubar.</text>
+    <text>Open the spam filter wihich is you downloaded.</text>
+    <text>Right click an email and follow Apply filter $\rightarrow$ Categorize filter as junk mail path from combobox.</text>
+    <text>Observe this spam is gone to spam folder.( If you have not change, default spam folder is recycle folder.)</text>
+</case>
+<case>
+    <text>Donwload gtube.txt from link below.</text>
+    <text>Execute the following command:</text>
+    <command> cat  gtube.txt | spamc </command>
+	<text>The commmand will return an output like this:</text>
+	<command>
+		If your spam filter supports it, the GTUBE provides a test by which you
+	    	can verify that the filter is installed correctly and is detecting incoming
+    		spam. You can send yourself a test mail containing the following string of
+    		characters (in upper case and with no white spaces and line breaks):}
+ 		XJS*C4JDBQADN1.NSBN3*2IDNEN*GTUBE-STANDARD-ANTI-UBE-TEST-EMAIL*C.34X
+    </command>
+    <text> After that, copy the encrypted part and mail to yourself.</text>
+    <text>Obverse this mail is gone to spam folder directly.</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>flashplugin</package>
+<case>
+    <text>Install the Opera package and observe video is worked correctly which is on link below.</text>
+    <text>Can it be full-screen? Is there any sound problem?</text>
+</case>
+</testcase>
+
+<testcase test="gui" lang="en">
+<package>gecko-mediaplayer</package>
+<case>
+    <text>Observe gecko-mediaplayer is being added on Firefox -> Edit -> Options -> Manage add-ons -> Plugins.</text>
+    <text>Run videos on firefox which are in directory below and observe they run correctly.</text>
+</case>
+</testcase>
+
+<testcase test="shell" lang="en">
+<package>lftp</package>
+<case>
+    <text>Observe these connands run correctly.</text>
+    <command>
+     lftp http://ftp.pardus.org.tr/pub/
+     ls
+     cd pardus
+     </command>
+</case>
+</testcase>
+<testcase test="gui" lang="en">
+<package>ifplugd</package>
+<case>
+    <text>Observe that the network manager can list the networks and can activate and inactivate the network without any problem.</text>
+</case>
+</testcase>
+
+<testcase test="automated" lang="en">
+<package>net-snmp</package>
+<case>
+    <command>service start net-snmp start</command>
+    <expected> net_snmp</expected>
+</case>
+</testcase>
+</document>
