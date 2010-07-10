@@ -149,9 +149,8 @@ def print_devices(nm_handle):
             for dev in devices[device]:
                 print_device(dev)
 
-
-def remove_connection(nm_handle):
-    """Delete a connection."""
+def get_connection(nm_handle, text = "connection"):
+    """Get a connection from user"""
     connections = {
                 '802-11-wireless'   : [],
                 '802-3-ethernet'    : [],
@@ -164,18 +163,58 @@ def remove_connection(nm_handle):
         connections[connection.settings.type].append(connection)
 
     connection_list = []
-
+    type_num = 0
     for connection_type in connections:
         if len(connections[connection_type]) > 0:
             conn_interface = connection_type.split("-").pop().capitalize()
             print colorize("%s connections" % conn_interface, 'green')
             for (index, connection) in enumerate(connections[connection_type]):
-                print "  [%s] %s" % (index+1,
+                print "  [%s] %s" % (index+type_num+1,
                                      connection.settings.id)
                 connection_list.append(connection)
+            type_num += index + 1
 
-            connection = connection_list[(get_number("Delete", 1, len(connections[connection_type])) - 1)]
-            connection.delete()
+    connection = connection_list[(get_number(text, 1, len(connection_list)) - 1)]
+    return connection
+
+
+def remove_connection(nm_handle):
+    """Delete a connection."""
+    connection = get_connection(nm_handle, "Remove")
+    connection.delete()
+def get_IP_assignment(settings):
+    print colorize("Select IP assignment method:", "yellow")
+    print "  [1] Enter an IP address manually"
+    print "  [2] Automatically obtain an IP address"
+    if get_number("Type", 1, 2) == 2:
+        ignore_auto_dns = False
+        if "ignore-auto-dns" in settings._settings["ipv4"].keys():
+            ignore_auto_dns = settings._settings["ipv4"]["ignore-auto-dns"]
+        settings.set_auto()
+        settings._settings["ipv4"]["ignore-auto-dns"] = ignore_auto_dns
+    else:
+        settings.address = get_input("Address")
+        settings.netmask = get_input("Mask")
+        settings.gateway = get_input("Gateway")
+    return settings
+
+def get_DNS_assignment(settings):
+    print colorize("Select Name server (DNS) assignment method:", "yellow")
+    print "  [1] Enter an name server address manually"
+    print "  [2] Automatically obtain from DHCP"
+    dns = get_number("Type", 1, 2)
+    if dns == 1:
+        primary_dns = get_input("First Address")
+        secondary_dns = get_input("Second Address")
+
+        settings._settings["ipv4"]["ignore-auto-dns"] = True
+        #FIXME: networkmanager library does not support more than one dns address
+        settings.dns = primary_dns
+    elif dns == 2:
+         settings._settings["ipv4"]["ignore-auto-dns"] = False
+         #settings.dns = None
+
+    return settings
 
 def create_ethernet_connection(nm_handle, _device):
     """Create an ethernet connection."""
@@ -185,33 +224,9 @@ def create_ethernet_connection(nm_handle, _device):
     settings.uuid = str(uuid.uuid4())
     settings.device = _device
     settings.mac_address = _device.hwaddress
+    settings = get_IP_assignment(settings)
+    settings = get_DNS_assignment(settings)
 
-    print colorize("Select IP assignment method:", "yellow")
-    print "  [1] Enter an IP address manually"
-    print "  [2] Automatically obtain an IP address"
-    if get_number("Type", 1, 2) == 2:
-        settings.set_auto()
-    else:
-        settings.address = get_input("Address")
-        settings.netmask = get_input("Mask")
-        settings.gateway = get_input("Gateway")
-
-    print colorize("Select Name server (DNS) assignment method:", "yellow")
-    print "  [1] Enter an name server address manually"
-    print "  [2] Automatically obtain from DHCP"
-    dns = get_number("Type", 1, 2)
-    dns_address = ""
-    if dns == 1:
-        dns_mode = "manual"
-
-        primary_dns = get_input("First Address")
-        secondary_dns = get_input("Second Address")
-
-        settings._settings["ipv4"]["ignore-auto-dns"] = True
-        #FIXME: networkmanager library does not support more than one dns address
-        settings.dns = primary_dns
-    elif dns == 2:
-        dns_mode = "auto"
     connection_id = None
     connection_ids = []
 
@@ -235,47 +250,161 @@ def create_wireless_connection(nm_handle, _device):
 
 def create_connection(nm_handle):
     """Create a connection."""
-    if len(nm_handle.devices) == 0:
-        # No network devices
-        return
-
-    devices = {
-        DeviceType.UNKNOWN  : [],
-        DeviceType.WIFI     : [],
-        DeviceType.GSM      : [],
-        DeviceType.CDMA     : [],
-        DeviceType.ETHERNET : [],
-    }
 
     functions = {
             DeviceType.ETHERNET : create_ethernet_connection,
             DeviceType.WIFI : create_wireless_connection,
             }
 
-    for device in nm_handle.devices:
-        devices[device.type].append(device)
+    if len(nm_handle.devices) == 0:
+        # No network devices
+        return
+
+    device_types = nm_handle.devices_map.keys()
 
     print colorize("Select device type:", "yellow")
 
-    device_list = []
-    for device in devices:
-        if len(devices[device]) > 0:
-            device_list.append(device)
-            print "  [%s] %s" % (len(device_list), str(device).capitalize())
+    for device_type in device_types:
+        print "  [%s] %s" % (device_types.index(device_type) + 1,
+                                    str(device_type).capitalize())
 
-    device_type = get_number("Device type", 1, len(device_list))
+    device_no = get_number("Device type", 1, len(device_types)) - 1
 
-    filtered_devices = devices[device_list[device_type-1]]
+    filtered_devices = nm_handle.devices_map[device_types[device_no]]
 
-    if len(filtered_devices) > 0:
-        print
+    device = get_device(nm_handle, filtered_devices)
+
+    if device is not None:
+        functions[device.type](nm_handle, device)
+
+def get_device(nm_handle, device_list = None, type = None):
+
+    types = {
+                    '802-11-wireless'   : DeviceType.WIFI,
+                    '802-3-ethernet'    : DeviceType.ETHERNET,
+        }
+
+    if device_list is None:
+        if type is None:
+            device_list = nm_handle.devices
+        else:
+            device_list = nm_handle.devices_map[types[type]]
+
+    if len(device_list) > 0:
         print colorize("Select device:", "yellow")
-        for (index, device) in enumerate(filtered_devices):
+        for (index, device) in enumerate(device_list):
             print "  [%s] %s" % (index+1, device)
-        dev_no = get_number("Device", 1, len(filtered_devices)) - 1
+        dev_no = get_number("Device", 1, len(device_list)) - 1
+        print
+        return device_list[dev_no]
 
-        functions[filtered_devices[dev_no].type](nm_handle, filtered_devices[dev_no])
 
+def get_device_by_mac(nm_handle, mac_address, type = None):
+    types = {
+                    '802-11-wireless'   : DeviceType.WIFI,
+                    '802-3-ethernet'    : DeviceType.ETHERNET,
+#                    'cdma'              : [],
+#                    'gsm'               : [],
+#                    'unknown'           : [],
+                }
+    devices = None
+    if not type == None:
+        device_type = types[type]
+        devices = nm_handle.devices_map[device_type]
+    else:
+        devices = nm_handle.devices
+
+    device = None
+    for dev in devices:
+        if mac_address == dev.hwaddress:
+            device = dev
+            break
+    return device
+
+def edit_connection(nm_handle):
+    """Edit a connection."""
+    connection = get_connection(nm_handle, "Edit")
+    changing = True
+    settings = connection.settings
+    while changing:
+        print
+        print colorize("Select an option:", "yellow")
+        con_mac_address = settings.mac_address
+        device_name = ""
+        if con_mac_address == None:
+            device_name = "Device independent"
+        else:
+            device = get_device_by_mac(nm_handle, con_mac_address)
+            if device == None:
+                device_name = "Device unplugged" #not installed
+            else:
+                vendor = ""
+                model = ""
+
+                if GUDEV_HANDLE is not None:
+                    udev_device = \
+                        GUDEV_HANDLE.query_by_subsystem_and_name("net",
+                                                                 device.interface)
+                    if udev_device:
+                        vendor = udev_device.get_property("ID_VENDOR_FROM_DATABASE")
+                        model = udev_device.get_property("ID_MODEL_FROM_DATABASE")
+
+                device_name = " %6s %s %s [driver: %s]" % (colorize(device.interface, "light"),
+                                                    vendor, model, colorize(device.driver, "yellow"))
+        _index = 1
+
+        print "  [%d] Change device: %s" % (_index, device_name)
+        _index += 1
+
+        method = "Manual"
+        if settings.auto:
+            method = "Automatic"
+        print "  [%d] Change IP assignment method: %s" % (_index, method)
+        _index += 1
+
+        method = "Automatic"
+        if not settings.dns == None:
+            if "ignore-auto-dns" in settings._settings["ipv4"].keys()\
+                    and settings._settings["ipv4"]["ignore-auto-dns"]:
+                        method = "Manual"
+        print "  [%d] Change name server (DNS) assignment method: %s" % (_index, method)
+        _index += 1
+
+        print "  [%d] Change profile name: %s" % (_index, settings.id)
+        _index +=1
+
+        print "  [%d] Save and finish editing" % _index
+
+        option = get_number("Option", 1, _index ) - 1
+        print
+        if option == 0:
+            settings.device = \
+                    get_device(nm_handle, type = settings.type)
+        elif option == 1:
+            dns = settings.dns
+            settings = get_IP_assignment(settings)
+            if dns is not None:
+                settings.dns = dns
+        elif option == 2:
+            settings = get_DNS_assignment(settings)
+        elif option == 3:
+            connection_id = None
+            connection_ids = []
+
+            for conn in nm_handle.connections:
+                connection_ids.append(conn.settings.id)
+
+            while not connection_id:
+                connection_id = get_input("Profile name").strip()
+                if connection_id in connection_ids:
+                    print "There is already a connection named '%s'" % connection_id
+                    print
+                    connection_id = None
+
+            settings.id = connection_id
+        elif option == 4:
+            changing = False
+    nm_handle.get_connection(settings.uuid).update(settings)
 
 def set_connection_state_down(nm_handle, connection_id):
     """Set the state of a given connection to Down."""
@@ -301,27 +430,32 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
                         print "The connection's mac address did not match this device"
                     return
 
-        for device in nm_handle.devices:
-            if conn.settings.mac_address and \
-               device.hwaddress == conn.settings.mac_address:
+        if conn.settings.mac_address:
+            device = get_device_by_mac(nm_handle, conn.settings.mac_address)
+            if device is not None:
                 nm_handle.activate_connection(conn, device)
                 return
 
         # The connection doesn't have a fixed MAC so
         # we have to ask for the interface
         # or use a possibly given interface through CLI
+
+        types = {
+                    '802-11-wireless'   : DeviceType.WIFI,
+                    '802-3-ethernet'    : DeviceType.ETHERNET,
+#                    'cdma'              : [],
+#                    'gsm'               : [],
+#                    'unknown'           : [],
+        }
+
         device_list = []
-        for device in nm_handle.devices:
-            if str(device.type) == \
-               conn.settings.type.split("-").pop().upper():
-                device_list.append(device)
-        if len(device_list) > 0:
-            print colorize("Select device:", "yellow")
-            for (index, device) in enumerate(device_list):
-                print "  [%s] %s" % (index+1, device)
-            dev_no = get_number("Device", 1, len(device_list)) - 1
-            device = device_list[dev_no]
+        device_list.append(nm_handle.devices_map[types[conn.settings.type]])
+        device = get_device(nm_handle, device_list)
+
+        if device is not None:
             nm_handle.activate_connection(conn, device)
+        else:
+            print "No device"
     else:
         print "There is no connection named: %s" % connection_id
 
@@ -414,6 +548,8 @@ When activating a connection, you should either provide an interface like
         create_connection(nm_handle)
     elif options.action == "remove":
         remove_connection(nm_handle)
+    elif options.action == "edit":
+        edit_connection(nm_handle)
     elif options.a_connection is not None:
         set_connection_state_up(nm_handle, options.a_connection, interface)
     elif options.d_connection is not None:
