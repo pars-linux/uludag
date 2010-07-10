@@ -9,9 +9,17 @@ TODO
 
 * solve gui freezing problem during installation.
 
-* edit initramfs to boot CD properly from nested folder other than device root.
+* make initramfs to boot CD properly from nested folder other than device root.
 
 * plan more on installation directory structure
+
+* solve levenshtein more less distance issue.
+
+* decide on a a stable URL for version updates.
+
+* prevent exit event, prompt question, exit cleanup
+
+* finish screen and rebooting tests.
 
 * Live CD or ISO detection feature for versions prior to Pardus 2011, prevent
   usage of those Install CDs or Install ISO files.
@@ -24,3 +32,11 @@ TODO
 * plan about uninstall script.
 
 * verify kernel, initrd, img PATHs from 2009, and 2009.1, live CDs.
+
+* vendor, version, release props for exe app.
+
+* better graphical interface.
+
+* py2exe builds.
+
+* create pardus 2009 packages for paw-specific installations.

@@ -25,6 +25,10 @@
   <property name="windowTitle">
    <string>PaW: Pardus Windows Installer</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>ui/img/pardus_icon_48_48.ico</normaloff>ui/img/pardus_icon_48_48.ico</iconset>
+  </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <layout class="QGridLayout" name="gridLayout">
@@ -81,6 +85,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnBack">
+         <property name="toolTip">
+          <string>Click to proceed previous step.</string>
+         </property>
          <property name="text">
           <string>&lt; &amp;Back</string>
          </property>
@@ -88,6 +95,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnNext">
+         <property name="toolTip">
+          <string>Click to proceed installation.</string>
+         </property>
          <property name="text">
           <string>&amp;Next &gt;</string>
          </property>
@@ -95,6 +105,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnFinish">
+         <property name="toolTip">
+          <string>Ta-da! Pardus is ready.</string>
+         </property>
          <property name="text">
           <string>&amp;Finish!</string>
          </property>

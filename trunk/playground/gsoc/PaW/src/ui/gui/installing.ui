@@ -65,6 +65,9 @@
    </item>
    <item row="3" column="0">
     <widget class="QTextEdit" name="textEdit">
+     <property name="toolTip">
+      <string>Installation process.</string>
+     </property>
      <property name="verticalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOn</enum>
      </property>

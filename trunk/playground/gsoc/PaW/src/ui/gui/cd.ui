@@ -22,7 +22,11 @@
     </widget>
    </item>
    <item row="1" column="0">
-    <widget class="QComboBox" name="comboDrive"/>
+    <widget class="QComboBox" name="comboDrive">
+     <property name="toolTip">
+      <string>Choose a CD drive from the list.</string>
+     </property>
+    </widget>
    </item>
    <item row="3" column="0">
     <spacer name="verticalSpacer">

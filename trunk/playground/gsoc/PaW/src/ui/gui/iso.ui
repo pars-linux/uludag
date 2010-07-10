@@ -34,6 +34,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnBrowse">
+         <property name="toolTip">
+          <string>Click here to choose a CD image.</string>
+         </property>
          <property name="text">
           <string>Browse...</string>
          </property>
@@ -65,6 +68,9 @@
        </item>
        <item>
         <widget class="QPushButton" name="btnValidate">
+         <property name="toolTip">
+          <string>If you want to validate your ISO file, you can click here.</string>
+         </property>
          <property name="text">
           <string>Validate ISO File (Optional)</string>
          </property>
