@@ -3,6 +3,7 @@ import os
 from PyQt4 import QtGui, QtCore
 from ui.controller.stepTemplate import StepWidget
 from ui.gui.iso import Ui_iso
+from md5sum import ThreadedChecksum
 
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Choose ISO File"
@@ -26,6 +27,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.filePath = str(fileDialog.getOpenFileName(self, 'Open ISO File'))
 	self.onFileUpdated()
 
+
     def onFileUpdated(self):
 	self.gui.txtFileName.setText(self.filePath)
         useFileSize = True # Hard-coded switch. True for 'validate by size'.
@@ -45,19 +47,29 @@ class Widget(QtGui.QWidget, StepWidget):
         else:
             self.gui.lblVersion.setText('Unknown Pardus Live CD image.')
 
-    def md5sumFile(self):
+
+    def validateFile(self):
         if not self.filePath:
             return None
         elif not os.path.isfile(os.path.normpath(self.filePath)):
             return None
         else:
-            hash = self.mainEngine.md5sum.encryptFile(self.filePath)
-            return hash
+            self.validateBtnText = self.gui.btnValidate.text()
+            self.gui.btnValidate.setText('Validating...')
+            t = ThreadedChecksum(self.mainEngine.md5sum, self.filePath, self.on_md5_finish)
+            t.start()
 
-    def validateFile(self):
+            if t.wait():
+                self.hash = self.mainEngine.md5sum.encryptFile(self.filePath)
+
+
+    def on_md5_finish(self):
+        if hasattr(self, 'validateBtnText') and self.validateBtnText:
+            self.gui.btnValidate.setText(self.validateBtnText)
+
         computed, original = None, None
         if self.version: original = self.version.md5sum
-        if self.filePath and self.version: computed = self.md5sumFile()
+        if self.filePath and self.version and self.hash: computed = self.hash
 
         if not self.filePath:
             title = 'No Image Specified'
@@ -78,6 +90,7 @@ class Widget(QtGui.QWidget, StepWidget):
 
 	method(self, title, msg, QtGui.QMessageBox.Ok)
 
+
     def onSubmit(self):
 	if not self.filePath:
 	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose an ISO file (*.iso) to proceed.', QtGui.QMessageBox.Ok)
@@ -93,6 +106,7 @@ class Widget(QtGui.QWidget, StepWidget):
             self.mainEngine.config.isoPath = self.filePath
             self.mainEngine.version = self.version
 	    return True
+
 
     def nextIndex(self):
 	return 8
