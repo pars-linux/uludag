@@ -30,7 +30,7 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	self.jumpScreen(0)
 	self.show()
 
-	self.move(300,200)
+	self.centerWindow()
 
     def connectSignals(self):
 	QtCore.QObject.connect(self.btnNext, QtCore.SIGNAL('clicked()'), self.goNext)
@@ -93,3 +93,17 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     def updateHeading(self):
 	heading = self.stackedWidget.currentWidget().heading
 	self.lblHeading.setText(QtGui.QApplication.translate("MainWidget", heading, None, QtGui.QApplication.UnicodeUTF8))
+
+    def centerWindow(self):
+        screen = rect  = QtGui.QDesktopWidget().screenGeometry()
+        x = (screen.width() - self.width()) / 2
+        y = (screen.height() - self.height()) / 2
+        self.move(x, y)
+
+    def closeEvent(self, event):
+        reply = QtGui.QMessageBox.warning(self, 'Are you sure to quit?', 'Do you really want to quit the installation? If you quit, everything installed will be removed.', QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+        if reply ==  QtGui.QMessageBox.Yes:
+            # TODO: cleanup upon exit.
+            event.accept()
+        else:
+            event.ignore()

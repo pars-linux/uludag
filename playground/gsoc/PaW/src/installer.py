@@ -2,10 +2,9 @@ import os
 import shutil
 import ctypes
 import tempfile
+import registry
 from taskrunner import Task
 from taskrunner import TaskList
-
-import registry
 from utils import populate_template_file
 from utils import run_shell_cmd
 
@@ -46,8 +45,26 @@ class Installer():
         # creates path for temp file and folder
         self.setTempFolder()
         self.setTempFile()
+        print self.hasRegistryKey()
+
+    def hasRegistryKey(self):
+        """
+        Returns True if there already exist a registry key which should be
+        created by installationRegistry() method. Indicates there has been a
+        previous attempt to install PaW, or it is already installed.
+        Handles WindowsError exception which is thrown upon the request of
+        unexisting registry path. Returns False, in this case.
+        """
+        try:
+            key = registry.hGetKey(self.hlmPath)
+            if key: return True
+            else: return False
+        except: return False
 
     def installationRegistry(self):
+        """
+        Creates installation registry keys and values on Windows registry.
+        """
         # TODO: InstallLocation, DisplayIcon, Comments
         try:
             key = registry.hCreateKey(self.hlmPath)
@@ -68,8 +85,9 @@ class Installer():
         return True
 
     def uninstallationRegistry(self):
+        "Removes registry key for this program."
         try:
-            self.reg.DeleteKey(hDefKey=_winreg.HKEY_LOCAL_MACHINE, sSubKeyName=self.hlmPath)
+            self.reg.hDeleteKey(self.hlmPath)
             log.debug('Registry subkey has been removed successfully.')
         except:
             log.exception('Could not remove registry keys upon uninstallation.')
@@ -83,20 +101,32 @@ class Installer():
             return False
 
     def setTempFolder(self):
+        """
+        Create a folder on temp folder of operating system to save
+        downloaded ISO and other files.
+        """
         self.mainEngine.config.tmpDir = tempfile.mkdtemp()
 
     def setTempFile(self):
+        "Request a filename to save downloaded ISO"
         self.mainEngine.config.tmpFile = \
             os.path.join(self.mainEngine.config.tmpDir, 'downloaded.iso')
+            # TODO: Rename downloaded file path.
 
     def getInstallationRoot(self):
+        """
+        Returns installation root to copy boot and disk files under it.
+        """
         return os.path.join(self.mainEngine.config.drive.DeviceID + '\\', self.mainEngine.appid)
 
     def getUninstallationString(self):
+        """Returns Windows commandline string to uninstall program. Most
+        probably will be saved into registry to handle uninstallation."""
         return ''
         # TODO: Implement.
 
     def getGrubLoaderDestination(self):
+        "Returns default grub loader destination, which is in the boot partition."
         system_drive_root = '%s\\' % self.mainEngine.compatibility.OS.SystemDrive
         return os.path.join(system_drive_root, self.grub_loader_file)
 
@@ -278,6 +308,10 @@ class Installer():
         return True
 
     def extract_iso_files(self):
+        """
+        Extracts predefined (hard-coded in this method) files into boot/ folder
+        in the installation path. Those files are kernel, initrd and img.
+        """
         source = self.mainEngine.config.isoPath
         destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
 
@@ -298,62 +332,52 @@ class Installer():
         log.debug('Files extracted from ISO.')
         return True
 
+    def copy_files_from_device(self, isCD = True):
+        """
+        Copies predefined (hard-coded in this method) files from given
+        device into 'boot' folder under installation root.. Those files are
+        kernel, initrd and img. If isCD is True, it looks for configured CD
+        device; otherwise, USB device will be set as the source.
+        """
+        source = 'CD' if isCD else 'USB'
+        
+        log.debug('Start copying files from %s.' % source)
+        if isCD:
+            device_root = self.mainEngine.config.cdDrive.DeviceID + '\\'
+        else:
+            device_root = self.mainEngine.config.usbDrive.DeviceID + '\\'
             
+        destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
+
+        if self.mainEngine.version:
+            files = [
+                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
+                self.mainEngine.version.img]
+        else:
+            log.warning('Could not recognize version. Using default %s paths.' % source)
+            files = [self.default_kernel_path, self.default_initrd_path,
+                self.default_img_path]
+
+        for file_path in files:
+            path = os.path.abspath(os.path.join(device_root, file_path))
+
+            if not os.path.isfile(path):
+                log.error('Could not locate %s' % path)
+                return False
+
+            try:
+                shutil.copy(path, destination)
+                log.debug('%s copied to %s' % (path, destination))
+            except IOError as e:
+                log.error('Could not copy: %s' % e); return False
+                
+        return True
 
     def copy_cd_files(self):
-        log.debug('Start copying files from CD.')
-        cd_root = self.mainEngine.config.cdDrive.DeviceID + '\\'
-        destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
-
-        if self.mainEngine.version:
-            files = [
-                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
-                self.mainEngine.version.img]
-        else:
-            log.warning('Could not recognize version. Using default CD paths.')
-            files = [self.default_kernel_path, self.default_initrd_path,
-                self.default_img_path]
-
-        for file_path in files:
-            path = os.path.abspath(os.path.join(cd_root, file_path))
-            if not os.path.isfile(path):
-                log.error('Could not locate %s' % path)
-                return False
-
-            try:
-                shutil.copy(path, destination)
-                log.debug('%s copied to %s' % (path, destination))
-            except IOError as e:
-                log.error('Could not copy: %s' % e); return False
-        return True
+        return self.copy_files_from_device(isCD = True) # CD.
 
     def copy_usb_files(self):
-        # TODO: Duplicate of copy_usb_files.
-        log.debug('Start copying files from USB.')
-        usb_root = self.mainEngine.config.usbDrive.DeviceID + '\\'
-        destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
-
-        if self.mainEngine.version:
-            files = [
-                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
-                self.mainEngine.version.img]
-        else:
-            log.warning('Could not recognize version. Using default USB paths.')
-            files = [self.default_kernel_path, self.default_initrd_path,
-                self.default_img_path]
-
-        for file_path in files:
-            path = os.path.abspath(os.path.join(usb_root, file_path))
-            if not os.path.isfile(path):
-                log.error('Could not locate %s' % path)
-                return False
-
-            try:
-                shutil.copy(path, destination)
-                log.debug('%s copied to %s' % (path, destination))
-            except IOError as e:
-                log.error('Could not copy: %s' % e); return False
-        return True
+        return self.copy_files_from_device(isCD = False) # USB.
 
     def modify_boot_sequence(self):
         winMajorVersion = self.mainEngine.compatibility.winMajorVersion()
