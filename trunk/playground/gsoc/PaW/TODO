@@ -18,7 +18,7 @@ TODO
 
 * solve levenshtein more less distance issue.
 
-* decide on a a stable URL for version updates.
+* decide on a a stable URL for version definition xml file.
 
 * test installing on a different partition than primary windows boot drive(C:).
 
@@ -26,7 +26,7 @@ TODO
 
 * cleanup upon installation
 
-* saving installation config and logs to a file.
+* saving installation config (user,pass?,partition,path etc.) and logs to a file
 
 * logging handler for a log file and infobox on installing screen.
 
@@ -38,7 +38,7 @@ TODO
 * idea of renaming grldr as parldr (any better ideas in terms of 8.3 naming
   convention?)
 
-* plan about uninstall script.
+* plan about uninstall script. 
 
 * verify kernel, initrd, img PATHs from 2009, and 2009.1, live CDs.
 
@@ -51,3 +51,12 @@ TODO
 * create pardus 2009 packages for paw-specific installations.
 
 * test insalling with downloaded file
+
+* replaces menu.lst of WUBI for Ubuntu on XP, 2000, 2003. boot.ini conflicts.
+
+* if there is a Pardus folder under installation root, do not allow proceed,
+  first uninstall the program and then let the user continue. plan more on the
+  scenario. we can warn the user at the beginning of the program if there is
+  Pardus key in the appropriate registry path.
+
+* split installer and uninstaller py files?
