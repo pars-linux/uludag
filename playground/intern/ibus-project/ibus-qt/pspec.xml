@@ -27,7 +27,7 @@
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib/libibus-qt.so.*</Path>
-            <Path fileType="library">/usr/lib/qt4/plugins/inputmethods/libqtim-ibus.so</Path>
+            <Path fileType="library">/usr/qt/4/plugins/inputmethods/libqtim-ibus.so</Path>
             <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
@@ -40,16 +40,6 @@
         <Files>
             <Path fileType="library">/usr/lib/libibus-qt.so</Path>
             <Path fileType="header">/usr/include</Path>
-        </Files>
-    </Package>
-
-    <Package>
-        <Name>ibus-docs</Name>
-        <RuntimeDependencies>
-            <Dependency>ibus</Dependency>
-        </RuntimeDependencies>
-        <Files>
-            <Path fileType="doc">/usr/share/doc/html</Path>
         </Files>
     </Package>
 
