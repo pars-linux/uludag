@@ -22,6 +22,8 @@
         <Name>kasumi</Name>
         <Files>
             <Path fileType="executable">/usr/bin/kasumi</Path>
+            <Path fileType="localdata">/usr/share/locale/ja/LC_MESSAGES/kasumi.mo</Path>
+            <Path fileType="localdata">/usr/share/locale/it/LC_MESSAGES/kasumi.mo</Path>
             <Path fileType="man">/usr/share/man/man1/kasumi.1*</Path>
             <Path fileType="doc">/usr/share/doc</Path>
             <Path fileType="data">/usr/share/pixmaps/kasumi.png</Path>
