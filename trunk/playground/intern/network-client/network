@@ -113,7 +113,7 @@ def print_connections(nm_handle):
                         devices = active.devices
                 print_connection(state, connection.settings, devices)
 
-def print_device(nm_device):
+def print_device(nm_device, index = -1):
     """Pretty print a specific device."""
     vendor = ""
     model = ""
@@ -124,7 +124,8 @@ def print_device(nm_device):
         if udev_device:
             vendor = udev_device.get_property("ID_VENDOR_FROM_DATABASE")
             model = udev_device.get_property("ID_MODEL_FROM_DATABASE")
-
+    if index > 0:
+        print "  [%s]" % index,
     print " %6s %s %s [driver: %s]" % (colorize(nm_device.interface, "light"),
                                        vendor, model,
                                        colorize(nm_device.driver, "yellow"))
@@ -285,7 +286,7 @@ def get_device(nm_handle, device_list = None, type = None):
     if len(device_list) > 0:
         print colorize("Select device:", "yellow")
         for (index, device) in enumerate(device_list):
-            print "  [%s] %s" % (index+1, device)
+            print_device(device, index + 1)
         dev_no = get_number("Device", 1, len(device_list)) - 1
         print
         return device_list[dev_no]
