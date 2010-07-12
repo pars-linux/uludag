@@ -7,6 +7,7 @@ import dbusTools
 import bootloaderTools
 from pardus import diskutils
 import gc
+import pisi
 
 class rescueMode:
   palette = [('window','black','light gray'),
@@ -23,8 +24,8 @@ class rescueMode:
 
     #create main frame
     body = urwid.Filler(urwid.Divider(),'top')
-    header = urwid.AttrWrap(urwid.Padding(urwid.Text("PKM - Pardus Rescue Mode"),'center'),'window')
-    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("< UP -DOWN > Move on menu | <F1> About PKM | <F2> Undo | <F10>  Quit"),'right'),'window')
+    header = urwid.AttrWrap(urwid.Padding(urwid.Text("PRM - Pardus Rescue Mode"),'center'),'window')
+    footer = urwid.AttrWrap(urwid.Padding(urwid.Text("< UP - DOWN > Move on menu | < ENTER > Select |< ESC > Cancel | <F1> About PRM | <F2> Back | <F10>  Quit"),'right'),'window')
     self.mainFrame=urwid.Frame(body,header,footer)
 
     
@@ -34,6 +35,7 @@ class rescueMode:
   def rescueOptionsScreen(self,forward=True):  
     
     #create firt window
+    self.disconnectDBus()
     frame = guiTools.listDialog(None,['window','focus'],"Please select an option from list") 
     
     
@@ -124,7 +126,7 @@ class rescueMode:
     frame = guiTools.listDialog(self.selectedDiskInfo,
     ['window','focus'],"Please select an operation")
     
-    frame.addMenuItem("Reinstall GRUB ( boot problems )",self.grubOperationScreen)
+    frame.addMenuItem("Reinstall GRUB (boot problems)",self.grubOperationScreen)
     frame.addMenuItem("Change password (lost password)",self.userlistScreen)
     frame.addMenuItem("Pisi history (undo package operations)",self.pisiHistoryListScreen)
     
@@ -197,7 +199,7 @@ class rescueMode:
     
     
     for user in users:
-      frame.addMenuItem(str(user[1]),self.changeUserPassword,user)
+      frame.addMenuItem(str(user[1]+" (%s)"%str(user[2])),self.changeUserPassword,user)
     
     self.createWindow(frame,80,30)
     self.closePopUp()
@@ -245,37 +247,30 @@ class rescueMode:
     if forward:
       self.screenContainer.append(self.selectOperationScreen)
       
-      
-    def takeBack(no):
-      self.popUp("Taking back Pisi history")
-      #time.sleep(1)
-      self.dbus.takeBack(no)
-      self.finalScreen("Pisi history had been taken back") 
-  
     self.connectDBus()
     
     self.popUp("Getting Pisi history information")
     historys = self.dbus.getHistory()
-    frame = guiTools.listDialog(self.selectedDisk[2],
+    frame = guiTools.listDialog(self.selectedDiskInfo,
     ['window','focus'],"Please select an operation to undo")
     
     
     for history in historys:
-      frame.addMenuItem("operation: %d %s (%s)"%(history.no,history.date,history.type),takeBack,history.no)
+      frame.addMenuItem("operation: %d, %s (%s)"%(history.no,history.date,history.type),self.pisiHistoryActionsScreen,history.no)
     
     self.createWindow(frame,80,30)
     self.closePopUp()
 
   def finalScreen(self,message):
     self.screenContainer = [self.rescueOptionsScreen]
-    body = urwid.Padding(urwid.Text(message+" Please press return to restart computer"),'center')
+    body = urwid.Padding(urwid.Text(message+" Press F2 to return main menu or press F10 to quit"),'center')
     body = body = urwid.Filler(body,'middle')
     self.createWindow(body,80,10)
     self.closePopUp()
     self.otherUnhandled_input = None  
     
   def aboutRescuMode(self):
-    self.popUp("Pardus Resceu Mode\nVersion:1.0 (beta)\nLicence:GPL_v2\n\nAuthor:Mehmet Burak Aktürk\nE-mail: mb.akturk@gmail.com",height=10)
+    self.popUp("Pardus Rescue Mode\nVersion:1.0 (beta)\nLicence:GPL_v2\n\nAuthor:Mehmet Burak Aktürk\nE-mail: mb.akturk@gmail.com",height=10)
   
   def createWindow(self,body,width,height):
     window=guiTools.Window(body,["window","border","shadow"])
@@ -284,6 +279,29 @@ class rescueMode:
     self.mainFrame.body=urwid.AttrWrap(window,'body')
     gc.collect()
     
+    
+  def pisiHistoryActionsScreen(self,no):
+    
+    def takeBack():
+      self.popUp("Taking back Pisi history %d"%no)
+      time.sleep(3)
+     # self.dbus.takeBack(history.no)
+      self.finalScreen("Pisi history had been taken back") 
+      
+    self.closePopUp()
+    
+    historyDictionary = self.dbus.getHistoryActions(no)
+    frame = guiTools.listDialog("Please press ENTER if you want to continue or press ESC to cancel",['focus','window'],"There are %d actions"%len(historyDictionary))
+    counter = 1 
+    for i in historyDictionary:
+      frame.addMenuItem("action %d : %s %s"%(counter,historyDictionary[i][0],i),takeBack)
+      counter+=1
+      
+    window = guiTools.Window(frame,["focus","p_border","shadow"])   
+    widget = urwid.Overlay(window, self.mainFrame, 'center',60,'middle', 20)
+    self.loop.widget=widget
+    self.loop.draw_screen()
+      
   def closeScreen(self):
     self.closePopUp()
     frame = guiTools.listDialog(None,['focus','window'],"Please select what you want to do")
@@ -293,7 +311,7 @@ class rescueMode:
     
     window = guiTools.Window(frame,["focus","p_border","shadow"])
     
-    widget = urwid.Overlay(window, self.mainFrame, 'center',50,'middle', 10)    
+    widget = urwid.Overlay(window, self.mainFrame, 'center',50,'middle', 10)
     self.loop.widget=widget
     self.loop.draw_screen()
     
@@ -302,6 +320,7 @@ class rescueMode:
     
     
   def popUp(self,message,width=50,height=5):
+    self.closePopUp()
     window = guiTools.Window(urwid.Filler(urwid.Padding(urwid.Text(message),'center'),'top'),["focus","p_border","shadow"])
     widget = urwid.Overlay(window, self.mainFrame, 'center',width, 'middle', height)    
     self.loop.widget=widget
@@ -338,10 +357,11 @@ class rescueMode:
       self.aboutRescuMode()
     if 'esc' in input:
       self.closePopUp()
-    if 'f2' in input :
+    if 'f2' in input:
       if self.screenContainer:
 	self.screenContainer.pop()(False)
     if 'f10' in input:
+	#raise urwid.ExitMainLoop()
 	self.closeScreen()
  
     if self.otherUnhandled_input:
