@@ -37,8 +37,6 @@ xml version="1.0" ?>
             <Dependency>notify-python</Dependency>
             <Dependency>pyxdg</Dependency>
             <Dependency>gconf</Dependency>
-            <Dependency versionFrom="1.3.5">ibus-libs</Dependency>
-            <Dependency versionFrom="1.3.5">ibus-gtk2</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
