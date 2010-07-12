@@ -20,7 +20,7 @@ from networkmanager import NetworkManager, WiredSettings, DeviceType
 
 # Color characters
 COLORS = {
-            'red'       : '\x1b[31;01m',
+            'red'        : '\x1b[31;01m',
             'blue'       : '\x1b[34;01m',
             'cyan'       : '\x1b[36;01m',
             'gray'       : '\x1b[30;01m',
@@ -151,16 +151,15 @@ def get_connection(nm_handle, text = "connection"):
         connections[connection.settings.type].append(connection)
 
     connection_list = []
-    type_num = 0
+    index = 0
     for connection_type in connections:
         if len(connections[connection_type]) > 0:
-            conn_interface = connection_type.split("-").pop().capitalize()
+            conn_interface = connection_type.split("-")[-1].capitalize()
             print colorize("%s connections" % conn_interface, 'green')
-            for (index, connection) in enumerate(connections[connection_type]):
-                print "  [%s] %s" % (index+type_num+1,
-                                     connection.settings.id)
+            for (_index, connection) in enumerate(connections[connection_type]):
+                print "  [%s] %s" % ((index + 1 + _index), connection.settings.id)
                 connection_list.append(connection)
-            type_num += index + 1
+            index = len(connection_list)
 
     connection_num = get_number(text, 1, len(connection_list)) - 1
     connection = connection_list[connection_num]
