@@ -116,7 +116,7 @@ def umountPardusPartitions():
 	except comar.dbus.DBusException:
 	  pass
      # print i
-      os.removedirs(i)  
+      
         
         
 def mount(source, target, fs):

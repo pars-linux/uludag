@@ -6,7 +6,6 @@ import time
 _sys_dirs = ["dev","proc","sys"]
 
 
-
 class pardusDbus:
   def __init__(self,path):
     self.path = path 
@@ -46,9 +45,9 @@ class pardusDbus:
     try:
 	info = self.baselayout.userInfo(uid)
 	if self.baselayout.setUser(uid, info[1], info[3], info[4], password, info[5]):
-	  return ["message","değişmedi"]
+	  return ["message","The password could not be updated"]
 	else:
-	  return ["message","değişti"]
+	  return ["message","The password was updated"]
     except dbus.DBusException as error:
 	return ["error",error.message]
 
@@ -63,25 +62,23 @@ class pardusDbus:
             i+=1
             if i==limit:
                 break
-    #for i in result:
-    #  print "%d"%i.no
-     # print "---"
-    #time.sleep(5)
     return result
   
   def takeBack(self,operation):
     # dirty hack for COMAR to find scripts.
-    os.symlink("/",self.path + self.path)
+    os.symlink("/",self.path + "/tmp/pisihistory")
+    time.sleep(10)
     pisi.api.takeback(operation)
-    os.unlink(self.path +self.path)
+    os.unlink(self.path + "/tmp/pisihistory" )
+  
+  def getHistoryActions(self,no):
+    return pisi.operations.history.get_takeback_actions(no)
     
   def finalizeChroot(self):
     # close filesDB if it is still open
-    historydb = pisi.db.historydb.HistoryDB()
-    if historydb.is_initialized():
-	#print "merhaba"
-	time.sleep(5)
-        historydb.cache_flush()
+   #
+    pisi.db.invalidate_caches()
+
 
     # stop dbus
     shellTools.chrootRun(self.path,"/bin/service dbus stop")
