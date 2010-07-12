@@ -98,6 +98,7 @@ def print_connections(nm_handle):
 
     for connection in nm_handle.connections:
         connections[connection.settings.type].append(connection)
+
     for connection_key in connections:
         if len(connections[connection_key]) > 0:
             # Convert ethernet->Ethernet, wireless->Wireless, etc.
@@ -108,7 +109,7 @@ def print_connections(nm_handle):
                 devices = []
                 state = DEACTIVATED
                 for active in nm_handle.active_connections:
-                    if active.connection.settings.id == connection.settings.id:
+                    if active.connection.settings.uuid == connection.settings.uuid:
                         state = ACTIVATED
                         devices = active.devices
                 print_connection(state, connection.settings, devices)
@@ -169,6 +170,8 @@ def get_connection(nm_handle, text = "connection"):
 
 def remove_connection(nm_handle):
     """Delete a connection."""
+    if not len(nm_handle.connections) > 0:
+        return
     connection = get_connection(nm_handle, "Remove")
     connection.delete()
 
@@ -373,8 +376,11 @@ def edit_connection(nm_handle):
         option = get_number("Option", 1, _index ) - 1
         print
         if option == 0:
-            settings.device = \
-                    get_device(nm_handle, type = settings.type)
+            device = get_device(nm_handle, type = settings.type)
+            settings.device = device
+            settings.mac_address = str(device.hwaddress)
+            #FIXME:should continue
+            changing = False
         elif option == 1:
             dns = settings.dns
             settings = get_ip_assignment(settings)
