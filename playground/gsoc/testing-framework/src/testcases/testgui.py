@@ -4,7 +4,6 @@
 import os
 import subprocess
 
-import sys
 from clcolorize import colorize
 
 
