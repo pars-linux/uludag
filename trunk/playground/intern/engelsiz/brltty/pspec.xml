@@ -28,7 +28,7 @@
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/brltty</Path>
             <Path fileType="config">/etc/brltty</Path>
             <Path fileType="config">/etc</Path>
             <!--
