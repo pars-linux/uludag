@@ -16,29 +16,21 @@
         <Summary>BRLTTY gives a braille user access to the text consoles of a Linux/Unix system</Summary>
         <Description>BRLTTY is a background process (daemon) which provides access to the Linux/Unix console (when in text mode) for a blind person using a refreshable braille display.It drives the braille display and provides complete screen review functionality. </Description>
         <Archive sha1sum="d25802d08599b75841e7bb2f29bc88737f2992d2" type="targz">http://mielke.cc/brltty/releases/brltty-4.2.tar.gz</Archive>
-        <BuildDependencies>
-            <!--<Dependency>byacc</Dependency>-->
-        </BuildDependencies>
     </Source>
 
     <Package>
         <Name>brltty</Name>
-        <RuntimeDependencies>
-            <!--<Dependency>byacc</Dependency>-->
-        </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib</Path>
             <Path fileType="library">/usr/lib/brltty</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="header">/usr/include/brltty</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="man">/usr/share/man</Path>
             <Path fileType="config">/etc/brltty</Path>
             <Path fileType="config">/etc</Path>
-            <!--
-            <Path fileType="doc">/usr/share/doc</Path>
-            <Path fileType="data">/usr/share</Path>
-            <Path fileType="data">/usr/lib/pkgconfig</Path>
-            <Path fileType="header">/usr/include</Path>
-            <Path fileType="library">/usr/lib/python2.*</Path>
-            <Path fileType="data">/usr/share/brltty</Path>
-            -->
+            <Path fileType="library">/var/lib/lib</Path>
         </Files>
     </Package>
 
