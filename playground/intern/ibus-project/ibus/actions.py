@@ -19,4 +19,5 @@ def build():
 def install():
     autotools.install("libexecdir=%s/%s" % (get.installDIR(), get.libexecDIR()))
     pisitools.removeDir("/usr/share/pixmaps")
-    pisitools.dodoc("AUTHORS", "ChangeLog", "COPYING", "NEWS", "README")
+
+    pisitools.dodoc("AUTHORS", "COPYING", "README")
