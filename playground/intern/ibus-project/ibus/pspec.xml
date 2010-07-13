@@ -58,6 +58,7 @@ xml version="1.0" ?>
     <Package>
         <Name>ibus-gtk2</Name>
         <RuntimeDependencies>
+        <Summary>IBus im module for gtk2</Summary>
             <Dependency>gtk2</Dependency>
         </RuntimeDependencies>
         <Files>
@@ -67,6 +68,7 @@ xml version="1.0" ?>
 
     <Package>
         <Name>ibus-libs</Name>
+        <Summary>IBus libraries</Summary>
         <Files>
             <Path fileType="library">/usr/lib/libibus.so.*</Path>
         </Files>
@@ -74,6 +76,7 @@ xml version="1.0" ?>
 
     <Package>
         <Name>ibus-devel</Name>
+        <Summary>The ibus-devel package contains the header files and developer docs for ibus.</Summary>
         <RuntimeDependencies>
             <Dependency version="1.3.5">ibus</Dependency>
         </RuntimeDependencies>
