@@ -7,7 +7,17 @@
     </Source>
 
     <Package>
+        <Name>ibus-gtk2</Name>
+        <Summary xml:lang="tr">gtk2 için IBus im modülü</Summary>
+    </Package>
+
+    <Package>
+        <Name>ibus-libs</Name>
+        <Summary xml:lang="tr">ibus için kütüphane</Summary>
+    </Package>
+
+    <Package>
         <Name>ibus-devel</Name>
-        <Summary xml:lang="tr">ibus için geliştirme dosyaları</Summary>
+        <Summary xml:lang="tr">ibus için geliştirme başlık dosyaları ve belgeleri</Summary>
     </Package>
 </PISI>
