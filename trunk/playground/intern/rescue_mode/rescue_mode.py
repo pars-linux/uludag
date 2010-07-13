@@ -32,14 +32,16 @@ class RescueMode:
         self.selected_disk_info = None
         self.other_devices = None
 
+        self.popup_status = -1
+
         #create main frame
         body = urwid.Filler(urwid.Divider(),'top')
         header = urwid.AttrWrap(urwid.Padding(
             urwid.Text("PRM - Pardus Rescue Mode"),'center'),'window')
         footer = urwid.AttrWrap(
             urwid.Padding(urwid.Text("< UP - DOWN > Move on menu | "+
-                "< ENTER > Select |< ESC > Cancel |<F1> About PRM | "+
-                "<F2> Back | <F10>  Quit"),'right'),'window')
+                "< ENTER > Select | < ESC > Cancel or Back | <F1> About PRM | "+
+                "<F10>  Quit"),'right'),'window')
         self.main_frame = urwid.Frame(body, header, footer)
 
 
@@ -169,7 +171,7 @@ class RescueMode:
     def go_screen(self, forward=True):
         """go_screen == grub operation screen
         this method shows grub operations"""
-        
+
         if forward:
             self.screen_container.append(self.sop_screen)
 
@@ -223,7 +225,7 @@ class RescueMode:
         """ul_screen = userlist screen
         this method shows user list from user
         selected pardus partition"""
-        
+
         if forward:
             self.screen_container.append(self.sop_screen)
         self.connect_dbus()
@@ -282,7 +284,7 @@ class RescueMode:
         """phl_Screen = pisi history list screen
         this method shows pisi history from user selected
         pardus partitions"""
-        
+
         if forward:
             self.screen_container.append(self.sop_screen)
         self.connect_dbus()
@@ -304,7 +306,7 @@ class RescueMode:
         """phal_screen = pisi history actions list
         screen. This method showss actions list which will
         be done after user select a history from history list"""
-        
+
         def take_back():
             self.pop_up("Taking back Pisi history %d" % number)
             time.sleep(3)
@@ -329,7 +331,8 @@ class RescueMode:
                 'center', 60, 'middle', 20)
         self.loop.widget = widget
         self.loop.draw_screen()
-    
+        self.popup_status = 0
+
     def final_screen(self, message):
         self.screen_container = [self.ro_screen]
         body = urwid.Padding(urwid.Text(message+" Press F2 to return main "+
@@ -338,11 +341,12 @@ class RescueMode:
         self.create_window(body, 80, 10)
         self.close_popup()
         self.other_inputs = None
+
     def about_rescuemode(self):
         self.pop_up("Pardus Rescue Mode\n\nVersion:1.0 (beta)\n"+
                     "Licence:GPL_v2\n\n" +
                     "Author:Mehmet Burak Aktürk\n"+
-                    "E-mail: mb.akturk@gmail.com", height=10)
+                    "E-mail: mb.akturk@gmail.com", height=10, status=0)
 
     def create_window(self, body, width, height):
         window = gui_tools.create_window(body, ["window", "border", "shadow"])
@@ -351,7 +355,7 @@ class RescueMode:
         self.main_frame.body = urwid.AttrWrap(window, 'body')
         gc.collect()
 
-    
+
 
     def close_screen(self):
         self.close_popup()
@@ -367,7 +371,7 @@ class RescueMode:
         self.loop.widget = widget
         self.loop.draw_screen()
 
-    def pop_up(self, message, width=50, height=5):
+    def pop_up(self, message, width=50, height=5, status=1):
         self.close_popup()
         window = gui_tools.create_window(urwid.Filler(
             urwid.Padding(urwid.Text(message), 'center'), 'top'),
@@ -376,8 +380,10 @@ class RescueMode:
                 'center',width, 'middle', height)
         self.loop.widget = widget
         self.loop.draw_screen()
+        self.popup_status = status
 
-    def close_popup(self): 
+    def close_popup(self):
+        self.popup_status = -1
         self.loop.widget = self.main_frame
 
     def connect_dbus(self):
@@ -409,10 +415,13 @@ class RescueMode:
         if 'f1'in pressed :
             self.about_rescuemode()
         if 'esc' in pressed:
-            self.close_popup()
-        if 'f2' in pressed:
-            if self.screen_container:
-                self.screen_container.pop()(False)
+            if self.popup_status == 0:
+                self.close_popup()
+            elif self.popup_status == 1:
+                pass
+            elif self.popup_status == -1:
+                if self.screen_container:
+                    self.screen_container.pop()(False)
         if 'f10' in pressed:
             self.close_screen()
 
