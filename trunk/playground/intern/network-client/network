@@ -273,21 +273,21 @@ def create_connection(nm_handle):
     if device is not None:
         functions[device.type](nm_handle, device)
 
-def get_device(nm_handle, device_list = None, type = None):
+def get_device(nm_handle, device_list = None, type = None, mustSelect = True):
     """Get device from user"""
     types = {
                     '802-11-wireless'   : DeviceType.WIFI,
                     '802-3-ethernet'    : DeviceType.ETHERNET,
         }
-
     if device_list is None:
         if type is None:
             device_list = nm_handle.devices
         else:
             device_list = nm_handle.devices_map[types[type]]
-
     if len(device_list) > 0:
         print colorize("Select device:", "yellow")
+        if not mustSelect:
+            print "  [0]  Device independent"
         for (index, device) in enumerate(device_list):
             print_device(device, index + 1)
         dev_no = get_number("Device", 1, len(device_list)) - 1
@@ -376,7 +376,7 @@ def edit_connection(nm_handle):
         option = get_number("Option", 1, _index ) - 1
         print
         if option == 0:
-            device = get_device(nm_handle, type = settings.type)
+            device = get_device(nm_handle, type = settings.type, mustSelect = False)
             settings.device = device
             settings.mac_address = str(device.hwaddress)
             #FIXME:should continue
@@ -413,6 +413,8 @@ def set_connection_state_down(nm_handle, connection_id):
     for active_conn in nm_handle.active_connections:
         if active_conn.connection.settings.id == connection_id:
             active_conn.devices[0].disconnect()
+            return
+    print "There is no active connection or no connection named %s" % connection_id
 
 def set_connection_state_up(nm_handle, connection_id, interface=None):
     """Set the state of a given connection to Up."""
@@ -450,8 +452,7 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
 #                    'unknown'           : [],
         }
 
-        device_list = []
-        device_list.append(nm_handle.devices_map[types[conn.settings.type]])
+        device_list = nm_handle.devices_map[types[conn.settings.type]]
         device = get_device(nm_handle, device_list)
 
         if device is not None:
