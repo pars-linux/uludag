@@ -11,8 +11,7 @@ from pisi.actionsapi import get
 
 
 def setup():
-    autotools.configure("--disable-static \
-                         --disable-stripping \
+    autotools.configure("--disable-stripping \
                          --without-curses \
                          --with-espeak \
                          --with-speechd")
@@ -23,5 +22,6 @@ def build():
 def install():
     autotools.rawInstall("INSTALL_ROOT=%s" % get.installDIR()) 
     
+    pisitools.remove("/usr/lib/libbrlapi.a") 
     pisitools.dodoc("README")
 
