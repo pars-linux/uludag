@@ -11,10 +11,8 @@ from pisi.actionsapi import get
 
 
 def setup():
-    autotools.configure("--disable-stripping \
-                         --disable-java-bindings \
-                         --disable-lisp-bindings \
-                         --disable-tcl-bindings \
+    autotools.configure("--disable-static \
+                         --disable-stripping \
                          --without-curses \
                          --with-espeak \
                          --with-speechd")
@@ -23,12 +21,7 @@ def build():
     autotools.make("-j1")
 
 def install():
-    #autotools.install()
-    autotools.rawInstall("DESTDIR=%s" % get.installDIR()) 
-    #autotools.rawInstall("DESTDIR=\"%s\" BINDIR=%s" % (get.installDIR(), get.sbinDIR())) 
-
-    #pisitools.dodir("/etc")
-    #pisitools.dodir("/etc/brltty")
+    autotools.rawInstall("INSTALL_ROOT=%s" % get.installDIR()) 
     
     pisitools.dodoc("README")
 
