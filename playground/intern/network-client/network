@@ -217,22 +217,16 @@ def create_ethernet_connection(nm_handle, _device):
 
     settings = None
     settings = WiredSettings()
-    settings.uuid = str(uuid.uuid4())
+    settings.uuid = uuid.uuid4()
     settings.device = _device
     settings.mac_address = _device.hwaddress
     settings = get_ip_assignment(settings)
     settings = get_dns_assignment(settings)
-
     connection_id = None
-    connection_ids = []
-
-    for conn in nm_handle.connections:
-        connection_ids.append(conn.settings.id)
-
     print
     while not connection_id:
         connection_id = get_input("Profile name").strip()
-        if connection_id in connection_ids:
+        if nm_handle.get_connections_by_id(connection_id) is not None:
             print "There is already a connection named '%s'" % connection_id
             print
             connection_id = None
@@ -242,7 +236,25 @@ def create_ethernet_connection(nm_handle, _device):
 
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
-    pass
+    settings = WirelessSettings()
+    settings.uuid = str(uuid.uuid4())
+    settings.device = _device
+    setings.mac_address = _device.hwaddress
+    settings = get_ip_assignment(settings)
+    settings = get_dns_assignment(settings)
+
+
+    connection_id = None
+    print
+    while not connection_id:
+        connection_id = get_input("Profile name").strip()
+        if nm_handle.get_connections_by_id(connection_id) is None:
+            print "There is already a connection named '%s'" % connection_id
+            print
+            connection_id = None
+
+    settings.id = connection_id
+    nm_handle.add_connection(settings)
 
 def create_connection(nm_handle):
     """Create a connection."""
