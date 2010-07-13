@@ -8,7 +8,7 @@ xml version="1.0" ?>
             <Name>Caner Başaran</Name>
             <Email>basaran.caner@gmail.com</Email>
         </Packager>
-        <License>LGPLv2.1</License>
+        <License>LGPLv2+</License>
         <Icon>ibus</Icon>
         <IsA>app:gui</IsA>
         <Summary>Intelligent Input Bus for Linux OS </Summary>
