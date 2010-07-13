@@ -8,7 +8,7 @@
             <Name>Caner Başaran</Name>
             <Email>basaran.caner@gmail.com</Email>
         </Packager>
-        <License>GPLv2</License>
+        <License>GPLv2+</License>
         <IsA>library</IsA>
         <Summary>Qt IBus library and Qt input method plugin</Summary>
         <Description>Qt IBus library and Qt input method plugin</Description>
@@ -28,18 +28,19 @@
         <Files>
             <Path fileType="library">/usr/lib/libibus-qt.so.*</Path>
             <Path fileType="library">/usr/qt/4/plugins/inputmethods/libqtim-ibus.so</Path>
-            <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
 
     <Package>
-        <Name>ibus-devel</Name>
+        <Name>ibus-qt-devel</Name>
+        <Summary>Development tools and documents for ibus qt</Summary>
         <RuntimeDependencies>
             <Dependency>ibus</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib/libibus-qt.so</Path>
             <Path fileType="header">/usr/include</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
 
