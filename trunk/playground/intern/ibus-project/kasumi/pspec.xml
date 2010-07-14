@@ -15,6 +15,7 @@
         <Archive sha1sum="38155494d684f61e74ed1498ec90cc0fc68d791a" type="targz">http://jaist.dl.sourceforge.jp/kasumi/41436/kasumi-2.5.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>gtk2</Dependency>
+            <Dependency>anthy-devel</Dependency>
         </BuildDependencies>
     </Source>
 
