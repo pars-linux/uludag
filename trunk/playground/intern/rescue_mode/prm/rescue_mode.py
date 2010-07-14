@@ -10,6 +10,7 @@ import dbus_tools
 import bootloader_tools
 from pardus import diskutils
 import gc
+import os
 
 class RescueMode:
     """This class for using to rescue pardus system
@@ -67,6 +68,7 @@ class RescueMode:
 
         self.loop.screen.stop()
         raise urwid.ExitMainLoop()
+        
 
 #######################################
 ######## WINDOWS PROCESS ##############
@@ -335,7 +337,7 @@ class RescueMode:
 
     def final_screen(self, message):
         self.screen_container = [self.ro_screen]
-        body = urwid.Padding(urwid.Text(message+" Press F2 to return main "+
+        body = urwid.Padding(urwid.Text(message+" Press ESC to return main "+
                "menu or press F10 to quit"), 'center')
         body = urwid.Filler(body, 'middle')
         self.create_window(body, 80, 10)
@@ -428,6 +430,5 @@ class RescueMode:
         if self.other_inputs:
             self.other_inputs(pressed)
 
-if __name__ == "__main__":
-    RESCUE = RescueMode()
-    RESCUE.run()
+
+    
