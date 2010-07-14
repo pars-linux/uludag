@@ -8,7 +8,7 @@
             <Name>Caner Başaran</Name>
             <Email>basaran.caner@gmail.com</Email>
         </Packager>
-        <License>GPLv2</License>
+        <License>GPLv2+</License>
         <IsA>app</IsA>
         <Summary>The Hangul engine for IBus input platform</Summary>
         <Description>The Hangul engine for IBus platform. It provides Korean input method from libhangul.
