@@ -36,6 +36,7 @@
             <Path fileType="doc">/usr/share/doc</Path>
             <Path fileType="data">/usr/share/ibus-chewing</Path>
             <Path fileType="data">/usr/share/ibus/component/chewing.xml</Path>
+            <Path fileType="localdata">/usr/share/locale/zh_*/LC_MESSAGES/ibus-chewing.mo</Path>
         </Files>
     </Package>
 
