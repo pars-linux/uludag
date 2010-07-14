@@ -38,4 +38,4 @@ grub --no-floppy --batch < /tmp/_grub"""
 
 def install_windows_bootloader(windows):
     """This module for rescue Windows bootloaders"""
-    run_quiet("./install-mbr  -i n -p D -t  %d %s" % (windows[1], windows[0]))
+    run_quiet("install-mbr  -i n -p D -t  %d %s" % (windows[1], windows[0]))
