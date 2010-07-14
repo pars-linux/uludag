@@ -18,3 +18,4 @@ def build():
 def install():
     autotools.rawInstall("DESTDIR=%s libexecdir=/%s" %(get.installDIR(), get.libexecDIR()))
 
+    pisitools.dodoc("AUTHORS", "COPYING", "README")
