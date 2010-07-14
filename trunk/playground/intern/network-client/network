@@ -16,7 +16,7 @@ import sys
 import uuid
 from optparse import OptionParser
 
-from networkmanager import NetworkManager, WiredSettings, DeviceType
+from networkmanager import NetworkManager, WiredSettings, WirelessSettings, DeviceType
 
 # Color characters
 COLORS = {
@@ -234,26 +234,78 @@ def create_ethernet_connection(nm_handle, _device):
     settings.id = connection_id
     nm_handle.add_connection(settings)
 
+def dbus_byte_array_to_string(array):
+    import dbus
+    cikti = ""
+    for i in array:
+        cikti += chr(i)
+    return cikti
+
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
+    import dbus
+
     settings = WirelessSettings()
-    settings.uuid = str(uuid.uuid4())
+    settings.uuid = uuid.uuid4()
     settings.device = _device
-    setings.mac_address = _device.hwaddress
+    settings.mac_address = _device.hwaddress
+
+    #"""Get device mode"""
+    device_modes = ["infrastructure","ad-hoc"]
+    index_ = 1
+    print
+    print colorize("Select device mode:", "yellow")
+    for mode_name in device_modes:
+        print "  [%s] %s" % (index_, mode_name.upper())
+        index_ += 1
+    mode_no = get_number("Device Mode", 1, len(device_modes)) - 1
+
+    print mode_no
+    settings._settings["802-11-wireless"][dbus.String("mode")] = \
+                                                device_modes[mode_no]
+
+    #"""Get ssid"""
+    remote = None
+    while not remote:
+        remotes = []
+        print
+        index_ = 1
+        for remotePoint in _device.access_points:
+            remotes.append(remotePoint)
+            print "  [%s] %s" % (index_,\
+                        dbus_byte_array_to_string(remotePoint.ssid))
+            index_ += 1
+        print "  [%s] Rescan" % index_
+        print "  [%s] Enter SSID manually" % (index_ + 1)
+        remoteNo = get_number("ESSID", 1, len(remotes) + 2) - 1
+        if remoteNo < len(remotes) and remoteNo > -1:
+            remote = remotes[remoteNo]
+        elif remoteNo == len(remotes):
+            remote = None
+        elif remoteNo == len(remotes) + 1:
+            #FIXME:remote is string, not device
+            remote = get_input("ESSID")
+    settings._settings["802-11-wireless"][dbus.String('ssid')] = remote.ssid
+
+
+    #"""Get IP and DNS assignment method"""
     settings = get_ip_assignment(settings)
     settings = get_dns_assignment(settings)
 
 
+    #"""Get connection id"""
     connection_id = None
     print
     while not connection_id:
         connection_id = get_input("Profile name").strip()
-        if nm_handle.get_connections_by_id(connection_id) is None:
+        if nm_handle.get_connections_by_id(connection_id) is not None:
             print "There is already a connection named '%s'" % connection_id
             print
             connection_id = None
 
     settings.id = connection_id
+
+
     nm_handle.add_connection(settings)
 
 def create_connection(nm_handle):
@@ -575,6 +627,5 @@ When activating a connection, you should either provide an interface like
 
     # FIXME: Do better error handling
     return 0
-
 if __name__ == "__main__":
     sys.exit(main())
