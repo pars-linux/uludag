@@ -188,7 +188,7 @@ class RescueMode:
 
         self.create_window(frame, 80, 15)
 
-    def select_grub_disk(self):
+    def select_grub_disk(self, args):
         self.screen_container.append(self.go_screen)
 
         def disk_info(disk):
@@ -310,9 +310,8 @@ class RescueMode:
         be done after user select a history from history list"""
 
         def take_back():
-            self.pop_up("Taking back Pisi history %d" % number)
-            time.sleep(3)
-            # self.dbus.take_back(history.no)
+            self.pop_up("Taking back Pisi history")
+            self.dbus.take_back(number)
             self.final_screen("Pisi history had been taken back")
             self.close_popup()
 
@@ -340,7 +339,7 @@ class RescueMode:
         body = urwid.Padding(urwid.Text(message+" Press ESC to return main "+
                "menu or press F10 to quit"), 'center')
         body = urwid.Filler(body, 'middle')
-        self.create_window(body, 80, 10)
+        self.create_window(body, 80, 15)
         self.close_popup()
         self.other_inputs = None
 

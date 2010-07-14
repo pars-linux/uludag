@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import urwid
 
+
 class MenuItem(urwid.Text):
 
     """A custom widget for the --menu option"""
@@ -112,7 +113,6 @@ def create_window(frame, palette):
     window = urwid.Frame( window, footer =
          urwid.AttrWrap(urwid.Text((palette[1], '  ')), palette[2]))
     return window
-
 
 #if __name__ == "__main__":
 #    ps = PasswordEdit("burak")
