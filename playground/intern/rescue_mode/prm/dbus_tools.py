@@ -19,8 +19,8 @@ class PardusDbus:
         self.socket_file = os.path.join(path, "var/run/dbus/system_bus_socket")
 
         dbus.bus.BusConnection(address_or_type="unix:path=%s" % self.socket_file)
-        link = comar.Link(socket=self.socket_file)
-        self.baselayout = link.User.Manager["baselayout"]
+        self.link = comar.Link(socket=self.socket_file)
+        self.baselayout = self.link.User.Manager["baselayout"]
 
         options = pisi.config.Options()
         options.yes_all = True
@@ -58,7 +58,8 @@ class PardusDbus:
         i = 0
         for operation in pdb.get_last():
             # Dont add repo updates to history list
-            if not operation.type == 'repoupdate':
+            actions = pisi.operations.history.get_takeback_actions(operation.no)
+            if operation.type != 'repoupdate' and len(actions) > 0:
                 result.append(operation)
                 i += 1
                 if i == limit:
@@ -67,9 +68,11 @@ class PardusDbus:
 
     def take_back(self, operation):
         # dirty hack for COMAR to find scripts.
-        os.symlink("/", self.path + "/tmp/pisihistory")
-        pisi.api.takeback(operation)
-        os.unlink(self.path + "/tmp/pisihistory" )
+        #os.symlink("/", self.path + "/tmp/pisihistory")
+        self.link.System.Manager["pisi"].takeBack(operation)
+
+       # pisi.api.takeback(operation)
+        #os.unlink(self.path + "/tmp/pisihistory" )
 
     def get_history_actions(self, number):
         return pisi.operations.history.get_takeback_actions(number)
