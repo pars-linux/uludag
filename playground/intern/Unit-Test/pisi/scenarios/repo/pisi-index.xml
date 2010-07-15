@@ -1,0 +1,69 @@
+<PISI>
+    <Package>
+        <Name>flightgear</Name>
+        <Summary xml:lang="en">flightgear is a good application</Summary>
+        <Description xml:lang="en">flightgear is a free software that can do anything it wants</Description>
+        <PartOf>None</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>flightgear-data</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2006-18-18</Date>
+                <Version>1.0</Version>
+                <Comment>No Comment</Comment>
+                <Name>Faik Uygur</Name>
+                <Email>faik@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1636</PackageSize>
+        <PackageHash>1a0f2ddc43d22ccd3913b358d570ea6d5b4ad79d</PackageHash>
+        <PackageURI>flightgear-1.0-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>flightgear</Name>
+            <Homepage>http://cekirdek.uludag.org.tr/~faik/pisi</Homepage>
+            <Packager>
+                <Name>Faik Uygur</Name>
+                <Email>faik@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>flightgear-data</Name>
+        <Summary xml:lang="en">flightgear-data is a good application</Summary>
+        <Description xml:lang="en">flightgear-data is a free software that can do anything it wants</Description>
+        <PartOf>None</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2006-18-18</Date>
+                <Version>1.0</Version>
+                <Comment>No Comment</Comment>
+                <Name>Faik Uygur</Name>
+                <Email>faik@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1617</PackageSize>
+        <PackageHash>9e5ea21579ea47c0f12c26160eff468bca19ebe5</PackageHash>
+        <PackageURI>flightgear-data-1.0-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>flightgear-data</Name>
+            <Homepage>http://cekirdek.uludag.org.tr/~faik/pisi</Homepage>
+            <Packager>
+                <Name>Faik Uygur</Name>
+                <Email>faik@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+</PISI>

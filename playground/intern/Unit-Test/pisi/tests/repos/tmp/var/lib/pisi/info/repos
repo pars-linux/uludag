@@ -1,0 +1,55 @@
+<REPOS>
+    <Repo>
+        <Name>pardus-2007</Name>
+        <Url>repos/pardus-2007-bin/pisi-index.xml.bz2</Url>
+        <Status>active</Status>
+        <Media>remote</Media>
+    </Repo>
+    <Repo>
+        <Name>contrib-2007</Name>
+        <Url>repos/contrib-2007-bin/pisi-index.xml.bz2</Url>
+        <Status>active</Status>
+        <Media>remote</Media>
+    </Repo>
+    <Repo>
+        <Name>pardus-2007-src</Name>
+        <Url>repos/pardus-2007/pisi-index.xml.bz2</Url>
+        <Status>active</Status>
+        <Media>remote</Media>
+    </Repo>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</REPOS>

@@ -1,0 +1,35 @@
+<PISI>
+    <Source>
+        <Name>curl</Name>
+        <Homepage>www.pardus.org.tr</Homepage>
+        <Packager>
+            <Name>Joe Packager</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Packager>
+        <License>GPL-2</License>
+        <IsA>app:gui</IsA>
+        <Summary xml:lang="en">curl is a very useful package</Summary>
+        <Description xml:lang="en">curl is a very useful package that is known for its usefulness.</Description>
+        <Archive type="targz" sha1sum="cc64dfa6e068fe1f6fb68a635878b1ea21acfac7">http://cekirdek.uludag.org.tr/~faik/pisi/skeleton.tar.gz</Archive>
+    </Source>
+    <Package>
+        <Name>curl</Name>
+        <RuntimeDependencies>
+            <Dependency>libidn</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>openssl</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="data">/usr/bin</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2010-07-15</Date>
+            <Version>0.3</Version>
+            <Comment>First release</Comment>
+            <Name>Joe Packager</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Update>
+    </History>
+</PISI>

@@ -1,0 +1,11 @@
+<Files>
+    <File>
+        <Path>usr/bin/db4</Path>
+        <Type>data</Type>
+        <Size>924</Size>
+        <Uid>0</Uid>
+        <Gid>0</Gid>
+        <Mode>0755</Mode>
+        <Hash>51ef5070661989378602dab2f23c519ada8fd709</Hash>
+    </File>
+</Files>

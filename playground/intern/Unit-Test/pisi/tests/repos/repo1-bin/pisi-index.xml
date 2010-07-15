@@ -1,0 +1,194 @@
+<PISI>
+    <Distribution>
+        <SourceName>Pardus</SourceName>
+        <Description xml:lang="en">Sample Repository 1</Description>
+        <Version>2007</Version>
+        <Type>Core</Type>
+        <Obsoletes>
+            <Package>wengophone</Package>
+            <Package>rar</Package>
+        </Obsoletes>
+    </Distribution>
+    <Package>
+        <Name>annebenpaketoldum</Name>
+        <Summary xml:lang="en">annebenpaketoldum is a very useful package</Summary>
+        <Description xml:lang="en">annebenpaketoldum is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>util.misc</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-12</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1598</PackageSize>
+        <PackageHash>b1952a5b7dfda7b65c1d5386e31aaa1b58c641ae</PackageHash>
+        <PackageURI>annebenpaketoldum-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>annebenpaketoldum</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>kolpapaket</Name>
+        <Summary xml:lang="en">kolpapaket is a very useful package</Summary>
+        <Description xml:lang="en">kolpapaket is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>util.misc</PartOf>
+        <License>GPL-2</License>
+        <Conflicts>
+            <Package releaseTo="10">osman</Package>
+        </Conflicts>
+        <History>
+            <Update release="1">
+                <Date>2010-07-12</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1612</PackageSize>
+        <PackageHash>92f200e40f1026c28f0a31393b856734787acc4c</PackageHash>
+        <PackageURI>kolpapaket-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>kolpapaket</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>dialog</Name>
+        <Summary xml:lang="en">dialog is a very useful package</Summary>
+        <Description xml:lang="en">dialog is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:cli</IsA>
+        <PartOf>util.misc</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-12</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1574</PackageSize>
+        <PackageHash>f95add6fefa4675e5808f74f2683f8c3656ac31a</PackageHash>
+        <PackageURI>dialog-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>dialog</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>osman</Name>
+        <Summary xml:lang="en">osman is a very useful package</Summary>
+        <Description xml:lang="en">osman is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>util.misc</PartOf>
+        <License>GPL-2</License>
+        <Conflicts>
+            <Package releaseTo="10">kolpapaket</Package>
+        </Conflicts>
+        <History>
+            <Update release="1">
+                <Date>2010-07-12</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1605</PackageSize>
+        <PackageHash>db2ebeeabec041ddea78937df3b9fb34c09ed87a</PackageHash>
+        <PackageURI>osman-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>osman</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Component>
+        <Name>system</Name>
+        <LocalName xml:lang="en">System</LocalName>
+        <Summary xml:lang="en">System component</Summary>
+        <Description xml:lang="en">System packages</Description>
+        <Group>system</Group>
+        <Maintainer>
+            <Name>Joe Maintainer</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Maintainer>
+    </Component>
+    <Component>
+        <Name>system.base</Name>
+        <LocalName xml:lang="en">Base System</LocalName>
+        <Summary xml:lang="en">Sample Base System</Summary>
+        <Description xml:lang="en">Base System Packages</Description>
+        <Group>system</Group>
+        <Maintainer>
+            <Name>Joe Maintainer</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Maintainer>
+    </Component>
+    <Component>
+        <Name>util</Name>
+        <LocalName xml:lang="en">FIXME</LocalName>
+        <Summary xml:lang="en">FIXME</Summary>
+        <Description xml:lang="en">FIXME</Description>
+        <Group>accessories</Group>
+        <Maintainer>
+            <Name>Joe Maintainer</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Maintainer>
+    </Component>
+    <Component>
+        <Name>util.misc</Name>
+        <LocalName xml:lang="en">FIXME</LocalName>
+        <Summary xml:lang="en">FIXME</Summary>
+        <Description xml:lang="en">FIXME</Description>
+        <Group>accessories</Group>
+        <Maintainer>
+            <Name>Joe Maintainer</Name>
+            <Email>joe@pardus.org.tr</Email>
+        </Maintainer>
+    </Component>
+</PISI>

@@ -1,0 +1,269 @@
+<PISI>
+    <Distribution>
+        <SourceName>Pardus</SourceName>
+        <Description xml:lang="en">contrib-2007</Description>
+        <Version>2007</Version>
+        <Type>Core</Type>
+        <Obsoletes>
+            <Package>xara</Package>
+        </Obsoletes>
+    </Distribution>
+    <Package>
+        <Name>libpcap</Name>
+        <Summary xml:lang="en">libpcap is a very useful package</Summary>
+        <Description xml:lang="en">libpcap is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1585</PackageSize>
+        <PackageHash>6ade265f715d7cbb336bb3f65ab3e844ffbbdeea</PackageHash>
+        <PackageURI>libpcap-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>libpcap</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>ctorrent</Name>
+        <Summary xml:lang="en">ctorrent is a very useful package</Summary>
+        <Description xml:lang="en">ctorrent is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>openssl</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1613</PackageSize>
+        <PackageHash>0f1aa9efdf6cb355b53355b914483fc13d8ace90</PackageHash>
+        <PackageURI>ctorrent-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>ctorrent</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>lft</Name>
+        <Summary xml:lang="en">lft is a very useful package</Summary>
+        <Description xml:lang="en">lft is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>libpcap</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1605</PackageSize>
+        <PackageHash>c0a602b327964f6ef5601fab899c26773d665af9</PackageHash>
+        <PackageURI>lft-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>lft</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>lynx</Name>
+        <Summary xml:lang="en">lynx is a very useful package</Summary>
+        <Description xml:lang="en">lynx is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1578</PackageSize>
+        <PackageHash>51b43272b1dc19133007a7f103c35dda70d93bc3</PackageHash>
+        <PackageURI>lynx-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>lynx</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>iat</Name>
+        <Summary xml:lang="en">iat is a very useful package</Summary>
+        <Description xml:lang="en">iat is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.util</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1570</PackageSize>
+        <PackageHash>1bfbffaac61a5b67fa8a53c6b9a88df6365c20ba</PackageHash>
+        <PackageURI>iat-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>iat</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>cpulimit</Name>
+        <Summary xml:lang="en">cpulimit is a very useful package</Summary>
+        <Description xml:lang="en">cpulimit is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.util</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1583</PackageSize>
+        <PackageHash>f1e13c45e7fb8350f1d30ee193fbb916e9f7ae33</PackageHash>
+        <PackageURI>cpulimit-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>cpulimit</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>rpl</Name>
+        <Summary xml:lang="en">rpl is a very useful package</Summary>
+        <Description xml:lang="en">rpl is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.util</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1572</PackageSize>
+        <PackageHash>f4fd987732f315366714e79259486504a8f8562b</PackageHash>
+        <PackageURI>rpl-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>rpl</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Component>
+        <Name>applications</Name>
+        <LocalName xml:lang="en">applications</LocalName>
+        <Summary xml:lang="en">applications</Summary>
+        <Description xml:lang="en">applications</Description>
+        <Group>system</Group>
+    </Component>
+    <Component>
+        <Name>applications.util</Name>
+        <LocalName xml:lang="en">applications.util</LocalName>
+        <Summary xml:lang="en">applications.util</Summary>
+        <Description xml:lang="en">applications.util</Description>
+        <Group>system</Group>
+    </Component>
+    <Component>
+        <Name>applications.network</Name>
+        <LocalName xml:lang="en">applications.network</LocalName>
+        <Summary xml:lang="en">applications.network</Summary>
+        <Description xml:lang="en">applications.network</Description>
+        <Group>system</Group>
+    </Component>
+</PISI>

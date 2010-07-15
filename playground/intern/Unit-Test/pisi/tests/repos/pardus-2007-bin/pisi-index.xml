@@ -1,0 +1,548 @@
+<PISI>
+    <Distribution>
+        <SourceName>Pardus</SourceName>
+        <Description xml:lang="en">pardus-2007</Description>
+        <Version>2007</Version>
+        <Type>Core</Type>
+        <Obsoletes>
+            <Package>wengophone</Package>
+            <Package>rar</Package>
+        </Obsoletes>
+    </Distribution>
+    <Package>
+        <Name>ethtool</Name>
+        <Summary xml:lang="en">ethtool is a very useful package</Summary>
+        <Description xml:lang="en">ethtool is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1582</PackageSize>
+        <PackageHash>cbf8df073dc0d507d2438dc2a99f98fd5da9b96b</PackageHash>
+        <PackageURI>ethtool-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>ethtool</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>nfdump</Name>
+        <Summary xml:lang="en">nfdump is a very useful package</Summary>
+        <Description xml:lang="en">nfdump is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1581</PackageSize>
+        <PackageHash>b67a7367b092e891275b560ca90c6e684158c213</PackageHash>
+        <PackageURI>nfdump-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>nfdump</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>db4</Name>
+        <Summary xml:lang="en">db4 is a very useful package</Summary>
+        <Description xml:lang="en">db4 is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1570</PackageSize>
+        <PackageHash>a8143991b986c80b0d896a08691002af8943fd55</PackageHash>
+        <PackageURI>db4-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>db4</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>libidn</Name>
+        <Summary xml:lang="en">libidn is a very useful package</Summary>
+        <Description xml:lang="en">libidn is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1577</PackageSize>
+        <PackageHash>619403a006a5a7b01cb396912fa300151e0b7f89</PackageHash>
+        <PackageURI>libidn-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>libidn</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>zlib</Name>
+        <Summary xml:lang="en">zlib is a very useful package</Summary>
+        <Description xml:lang="en">zlib is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1575</PackageSize>
+        <PackageHash>411ddaf7bcaf295e7618aea618db32c0625abda9</PackageHash>
+        <PackageURI>zlib-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>zlib</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>openssl</Name>
+        <Summary xml:lang="en">openssl is a very useful package</Summary>
+        <Description xml:lang="en">openssl is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1580</PackageSize>
+        <PackageHash>72bfb1e02f3d3eeba4114bb73f42d375f43c72da</PackageHash>
+        <PackageURI>openssl-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>openssl</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>jpeg</Name>
+        <Summary xml:lang="en">jpeg is a very useful package</Summary>
+        <Description xml:lang="en">jpeg is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1574</PackageSize>
+        <PackageHash>69d66f5f7d1b6b4fb7a683f806d95944d53c4797</PackageHash>
+        <PackageURI>jpeg-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>jpeg</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>pam</Name>
+        <Summary xml:lang="en">pam is a very useful package</Summary>
+        <Description xml:lang="en">pam is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1570</PackageSize>
+        <PackageHash>f601a73b5e830370c22abd79198c2b2a6c594a2d</PackageHash>
+        <PackageURI>pam-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>pam</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>gsl</Name>
+        <Summary xml:lang="en">gsl is a very useful package</Summary>
+        <Description xml:lang="en">gsl is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1571</PackageSize>
+        <PackageHash>1fd45392323a584642463354a9c57cb0b272d4fc</PackageHash>
+        <PackageURI>gsl-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>gsl</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>shadow</Name>
+        <Summary xml:lang="en">shadow is a very useful package</Summary>
+        <Description xml:lang="en">shadow is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>db4</Dependency>
+            <Dependency>pam</Dependency>
+            <Dependency>cracklib</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1619</PackageSize>
+        <PackageHash>ef4508833fa94fdcbf81e086447d8378f4908bf8</PackageHash>
+        <PackageURI>shadow-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>shadow</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>bogofilter</Name>
+        <Summary xml:lang="en">bogofilter is a very useful package</Summary>
+        <Description xml:lang="en">bogofilter is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>gsl</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1619</PackageSize>
+        <PackageHash>41a0fa4535ee309205e7cf20bcee37d0e9c58527</PackageHash>
+        <PackageURI>bogofilter-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>bogofilter</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>ncftp</Name>
+        <Summary xml:lang="en">ncftp is a very useful package</Summary>
+        <Description xml:lang="en">ncftp is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>applications.network</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1579</PackageSize>
+        <PackageHash>9d3a280bd42a41aeeffbcabd91212635af12fbaf</PackageHash>
+        <PackageURI>ncftp-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>ncftp</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>curl</Name>
+        <Summary xml:lang="en">curl is a very useful package</Summary>
+        <Description xml:lang="en">curl is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <RuntimeDependencies>
+            <Dependency>libidn</Dependency>
+            <Dependency>zlib</Dependency>
+            <Dependency>openssl</Dependency>
+        </RuntimeDependencies>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1616</PackageSize>
+        <PackageHash>806316d4fc1f2c58ced276423e5c667148da6f41</PackageHash>
+        <PackageURI>curl-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>curl</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>bash</Name>
+        <Summary xml:lang="en">bash is a very useful package</Summary>
+        <Description xml:lang="en">bash is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1572</PackageSize>
+        <PackageHash>df65a7363244c96c2594dc4897ce9b59e91e1782</PackageHash>
+        <PackageURI>bash-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>bash</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Package>
+        <Name>cracklib</Name>
+        <Summary xml:lang="en">cracklib is a very useful package</Summary>
+        <Description xml:lang="en">cracklib is a very useful package that is known for its usefulness.</Description>
+        <IsA>app:gui</IsA>
+        <PartOf>system.base</PartOf>
+        <License>GPL-2</License>
+        <History>
+            <Update release="1">
+                <Date>2010-07-15</Date>
+                <Version>0.3</Version>
+                <Comment>First release</Comment>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Update>
+        </History>
+        <Distribution>Pardus</Distribution>
+        <DistributionRelease>2009</DistributionRelease>
+        <Architecture>i686</Architecture>
+        <InstalledSize>924</InstalledSize>
+        <PackageSize>1579</PackageSize>
+        <PackageHash>2dab010800ade25fa1b2ca225a96a14579854056</PackageHash>
+        <PackageURI>cracklib-0.3-1.pisi</PackageURI>
+        <PackageFormat>1.1</PackageFormat>
+        <Source>
+            <Name>cracklib</Name>
+            <Homepage>www.pardus.org.tr</Homepage>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Source>
+    </Package>
+    <Component>
+        <Name>system</Name>
+        <LocalName xml:lang="en">system</LocalName>
+        <Summary xml:lang="en">system</Summary>
+        <Description xml:lang="en">system</Description>
+        <Group>system</Group>
+    </Component>
+    <Component>
+        <Name>system.base</Name>
+        <LocalName xml:lang="en">system.base</LocalName>
+        <Summary xml:lang="en">system.base</Summary>
+        <Description xml:lang="en">system.base</Description>
+        <Group>system</Group>
+    </Component>
+    <Component>
+        <Name>applications</Name>
+        <LocalName xml:lang="en">applications</LocalName>
+        <Summary xml:lang="en">applications</Summary>
+        <Description xml:lang="en">applications</Description>
+        <Group>system</Group>
+    </Component>
+    <Component>
+        <Name>applications.network</Name>
+        <LocalName xml:lang="en">applications.network</LocalName>
+        <Summary xml:lang="en">applications.network</Summary>
+        <Description xml:lang="en">applications.network</Description>
+        <Group>system</Group>
+    </Component>
+</PISI>
