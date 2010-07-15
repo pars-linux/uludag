@@ -1,0 +1,10 @@
+libidn
+zlib
+openssl
+jpeg
+db4
+shadow
+curl
+pam
+bash
+cracklib

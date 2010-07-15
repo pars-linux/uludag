@@ -1,0 +1,51 @@
+<PISI>
+    <Components>
+        <Component>
+            <Name>system</Name>
+            <LocalName>system</LocalName>
+            <Summary>system</Summary>
+            <Description>system</Description>
+            <Group>system</Group>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Component>
+
+        <Component>
+            <Name>system.base</Name>
+            <LocalName>system.base</LocalName>
+            <Summary>system.base</Summary>
+            <Description>system.base</Description>
+            <Group>system</Group>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Component>
+
+        <Component>
+            <Name>applications</Name>
+            <LocalName>applications</LocalName>
+            <Summary>applications</Summary>
+            <Description>applications</Description>
+            <Group>system</Group>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Component>
+
+        <Component>
+            <Name>applications.network</Name>
+            <LocalName>applications.network</LocalName>
+            <Summary>applications.network</Summary>
+            <Description>applications.network</Description>
+            <Group>system</Group>
+            <Packager>
+                <Name>Joe Packager</Name>
+                <Email>joe@pardus.org.tr</Email>
+            </Packager>
+        </Component>
+    </Components>
+</PISI>

@@ -1,0 +1,8 @@
+<PISI>
+    <Operation type="repoupdate" date="2010-07-15" time="13:49">
+        <Repository operation="update">
+            <Name>pardus-2007-src</Name>
+            <Uri>repos/pardus-2007/pisi-index.xml.bz2</Uri>
+        </Repository>
+    </Operation>
+</PISI>

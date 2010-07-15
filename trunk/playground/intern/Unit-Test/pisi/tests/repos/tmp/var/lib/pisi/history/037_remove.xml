@@ -1,0 +1,7 @@
+<PISI>
+    <Operation type="remove" date="2010-07-15" time="13:49">
+        <Package operation="remove">
+            <Name>ctorrent</Name>
+            <Before version="0.3" release="1"/></Package>
+    </Operation>
+</PISI>
