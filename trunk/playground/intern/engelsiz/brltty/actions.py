@@ -13,8 +13,10 @@ from pisi.actionsapi import get
 def setup():
     autotools.configure("--disable-stripping \
                          --without-curses \
+                         --with-flite \
                          --with-espeak \
-                         --with-speechd")
+                         --with-speechd \
+                         --with-speech-dispatcher")
 
 def build():
     autotools.make("-j1")
