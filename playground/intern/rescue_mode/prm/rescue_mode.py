@@ -8,6 +8,8 @@ import disk_tools
 import gui_tools
 import dbus_tools
 import bootloader_tools
+from shell_tools import reboot
+from shell_tools import shutdown
 from pardus import diskutils
 import gc
 import os
@@ -359,12 +361,19 @@ class RescueMode:
 
 
     def close_screen(self):
+        def reboot_sys():
+            self.close_process()
+            reboot()
+        def shutdown_sys():
+            self.close_process()
+            shutdown()
+            
         self.close_popup()
         frame = gui_tools.ListDialog(None,
                 ['focus', 'window'], "Please select what you want to do")
         frame.add_item("Go to shell", self.go_shell)
-        frame.add_item("Restart Computer", None)
-        frame.add_item("Shut down", None)
+        frame.add_item("Restart Computer",reboot_sys)
+        frame.add_item("Shut down", shutdown_sys)
 
         window = gui_tools.create_window(frame, ["focus", "p_border", "shadow"])
         widget = urwid.Overlay(window, self.main_frame,

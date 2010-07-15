@@ -25,8 +25,8 @@ def umount(target, param=''):
 
 def reboot():
     """Reboot the system"""
-    run_quiet("/tmp/reboot -f")
+    run_quiet("/sbin/reboot -f")
 
 def shutdown():
     """Shut down the computer"""
-    run_quiet("/tmp/shutdown -h now")
+    run_quiet("/sbin/shutdown -h now")

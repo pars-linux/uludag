@@ -10,6 +10,7 @@ class PardusDbus:
         self.path = path
         for _dir in SYS_DIRS:
             tgt = os.path.join(path, _dir)
+            _dir = os.path.join("/", _dir)
             shell_tools.mount(_dir, tgt, param="--bind")
 
         shell_tools.chroot_run(path, "/sbin/ldconfig")
