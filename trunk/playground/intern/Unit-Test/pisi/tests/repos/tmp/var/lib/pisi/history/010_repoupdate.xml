@@ -1,8 +1,0 @@
-<PISI>
-    <Operation type="repoupdate" date="2010-07-15" time="13:49">
-        <Repository operation="update">
-            <Name>repo1</Name>
-            <Uri>repos/repo1-bin/pisi-index.xml.bz2</Uri>
-        </Repository>
-    </Operation>
-</PISI>
