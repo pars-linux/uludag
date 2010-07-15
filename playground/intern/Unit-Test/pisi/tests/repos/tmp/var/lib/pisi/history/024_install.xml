@@ -1,7 +1,0 @@
-<PISI>
-    <Operation type="install" date="2010-07-15" time="13:49">
-        <Package operation="install">
-            <Name>ethtool</Name>
-            <After version="0.3" release="1"/></Package>
-    </Operation>
-</PISI>
