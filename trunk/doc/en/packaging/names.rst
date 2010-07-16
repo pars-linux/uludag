@@ -264,7 +264,7 @@ Python Modules
 
 Python packages must have a prefix of "python-" in their names even if their
 name include "py" sub-string. If the package is for Python3, "python3-" prefix
-must be used intead.
+must be used instead.
 
 Examples::
 
