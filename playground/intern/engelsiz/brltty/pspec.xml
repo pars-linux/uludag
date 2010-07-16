@@ -50,15 +50,15 @@
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="config">/etc/brltty</Path>
+            <Path fileType="config">/etc</Path>
             <Path fileType="library">/usr/lib</Path>
             <Path fileType="library">/usr/lib/brltty</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="header">/usr/include/brltty</Path>
             <Path fileType="doc">/usr/share/doc</Path>
             <Path fileType="man">/usr/share/man</Path>
-            <Path fileType="config">/etc/brltty</Path>
-            <Path fileType="config">/etc</Path>
-            <Path fileType="library">/var/lib/lib</Path>
+            <Path fileType="data">/var/lib/BrlAPI</Path>
         </Files>
     </Package>
 
