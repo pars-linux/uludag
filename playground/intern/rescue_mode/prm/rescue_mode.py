@@ -103,8 +103,8 @@ class RescueMode:
 
         if windows_partitions:
             frame = gui_tools.ListDialog(windows_info, ['window', 'focus'],
-                    "Please select a Windows installed\
-                            disk which you want to rescue")
+                    "Please select a Windows installed " +
+                            "disk which you want to rescue")
             for windows in disk_tools.get_windows_partitions():
                 frame.add_item("Windows%s" % windows[1],
                                 install_win_bl, windows)
@@ -314,7 +314,7 @@ class RescueMode:
         def take_back():
             self.pop_up("Taking back Pisi history")
             self.dbus.take_back(number)
-            self.final_screen("Pisi history had been taken back")
+            self.final_screen("Pisi history was taken back")
             self.close_popup()
 
         history_dic = self.dbus.get_history_actions(number)
@@ -380,6 +380,7 @@ class RescueMode:
                 'center', 50,'middle', 10)
         self.loop.widget = widget
         self.loop.draw_screen()
+        self.popup_status = 0
 
     def pop_up(self, message, width=50, height=5, status=1):
         self.close_popup()
