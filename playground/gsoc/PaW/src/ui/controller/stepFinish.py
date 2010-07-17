@@ -25,13 +25,10 @@ class Widget(QtGui.QWidget, StepWidget):
 
     def onSubmit(self):
         # TODO: cleanup upon installer exit.
-        print 'Clicked finish button.'
 
         if self.gui.chkReboot.isChecked():
-            print 'Rebooting.'
             self.mainEngine.compatibility.reboot()
         else:
-            print 'Terminating.'
             sys.exit() # Succesful termination. Retcode is 0.
 
         return True # TODO: unreachable code statement. false recommended for latency on reboot.

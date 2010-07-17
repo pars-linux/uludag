@@ -1,5 +1,6 @@
 import subprocess
 import os
+import os.path
 import ConfigParser
 
 from logger import getLogger
@@ -91,13 +92,21 @@ def run_shell_cmd(cmdargs, shell = False, stdout = subprocess.PIPE,
     '''
     This is a blocking method and may take a long time to complete.
     Use this with a threading instance or twisted library.
+
+    Returns output of a shell command. cmdargs should be a list and first
+    element should be the absolute path to the executable. Returns False if the
+    execution fails.
     '''
 
-    sp = subprocess.Popen(
-        args = cmdargs,
-        stdin=subprocess.PIPE, stdout=stdout, stderr=stderr,
-        shell = shell
-    )
+    try:
+        sp = subprocess.Popen(
+            args = cmdargs,
+            stdin=subprocess.PIPE, stdout=stdout, stderr=stderr,
+            shell = shell
+        )
+    except:
+        log.error('Could not execute command: %s' % ' '.join(cmdargs))
+        return False
 
     retcode = sp.wait() # wait until process returns
     # TODO: all those can be replaced with subprocess.call(cmdargs) or check_call
@@ -108,6 +117,7 @@ def run_shell_cmd(cmdargs, shell = False, stdout = subprocess.PIPE,
     else:
         log.exception("Error code returned from shell executable:[%s]||return code: %d||stderr=%s||stdout=%s||"
             % (' '.join(cmdargs), retcode, sp.stderr.read(), sp.stdout.read()))
+        return False
 
 
 # Simple Levenshtein Distance snippet.
@@ -200,3 +210,27 @@ def boot_ini_cleaner(boot_ini_path, grldr_name):
     except IOError as e:
         log.error('Could not write to %s file for cleanup: %s' % (boot_ini_path, e))
         return False
+
+
+def backup_bcdedit(bcdedit_path, destination_file):
+    """
+    Backups bcdedit.exe output (requires to administrator privileges) on
+    Windows Vista and 7 in order to save old boot configuration data to
+    a file at backup/ root at installation dir.
+
+    Returns False if could not write to file, True if the operation is
+    successful.
+    """
+    output = run_shell_cmd([bcdedit_path])
+    if output:
+        try:
+            f = open(destination_file, 'wb');
+            f.write(output)
+            f.close()
+            log.debug('Successfully saved bcdedit backup.')
+            return True
+        except IOError as e:
+            log.error('Could not write bcdedit backup file %s: %s' % (destination, e))
+            return False
+    else:
+        log.error('No output received from bcdedit command.')

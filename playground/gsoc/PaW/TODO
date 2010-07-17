@@ -1,11 +1,7 @@
 TODO
 --------------------
 
-* boot.ini backup system
-* safe boot.ini cleaner upon uninstallation
-
 * grub4dos record removal method using bcdedit safely
-* bcdedit backup system (if possible) + restore tool
 
 * solve gui freezing problem during installation.
 
@@ -16,15 +12,13 @@ TODO
 
 * plan more on installation directory structure
 
-* solve levenshtein more less distance issue.
-
 * decide on a a stable URL for version definition xml file.
 
 * test installing on a different partition than primary windows boot drive(C:).
 
-* prevent exit event, prompt question, cleanup upon exit.
+* cleanup upon exit.
 
-* cleanup upon installation
+* installation cleanup
 
 * logging handler for a log file and infobox on installing screen.
 
@@ -50,7 +44,7 @@ TODO
 
 * test insalling with downloaded file
 
-* replaces menu.lst of WUBI for Ubuntu on XP, 2000, 2003. boot.ini conflicts.
+* WUBI of Ubuntu conflicts with PaW because of having same menu.lst in c:\.
 
 * if there is a Pardus folder under installation root, do not allow proceed,
   first uninstall the program and then let the user continue. plan more on the
