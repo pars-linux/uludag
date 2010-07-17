@@ -9,6 +9,7 @@ from taskrunner import Task
 from taskrunner import TaskList
 from utils import populate_template_file
 from utils import run_shell_cmd
+from utils import backup_bcdedit
 
 from logger import getLogger
 log = getLogger('Installer Backend')
@@ -36,6 +37,8 @@ class Installer():
     default_img_path = 'pardus.img'
 
     cfg_file = "pardus.ini"
+    boot_ini_backup_file = "boot.ini.bak"
+    bcdedit_backup_file = "bcdedit.bak"
 
     def __init__(self, mainEngine):
         "Initialize installer instance."
@@ -138,7 +141,7 @@ class Installer():
         Backups boot.ini file at given path.
         Precondition: boot_ini_path exists.
         """
-        destination = os.path.join(self.getInstallationRoot(), 'backup')
+        destination = os.path.join(self.getInstallationRoot(), 'backup', boot_ini_backup_file)
         try:
             shutil.copy(boot_ini_path, destination)
         except IOError as e:
@@ -232,7 +235,11 @@ class Installer():
 
         if not bcdedit_path:
             log.exception('Could not locate bcdedit.exe')
-            return
+            return False
+
+        # BACKUP bcdedit boot data configuration to a file before modifying.
+        destination_file = os.path.join(self.getInstallationRoot(), 'backup', self.bcdedit_backup_file)
+        backup_bcdedit(bcdedit_path, destination_file)
 
         guid = run_shell_cmd([bcdedit_path, '/create', '/d', self.mainEngine.appid, '/application', 'bootsector'])
         # TODO: replace app name
@@ -248,7 +255,10 @@ class Installer():
             run_shell_cmd(cmd)
 
         self.mainEngine.config.bcd_guid = guid
-        registry.hSetValue(self.hlmPath, 'BcdeditGUID', guid)
+        try:
+            registry.hSetValue(self.hlmPath, 'BcdeditGUID', guid)
+        except:
+            log.error('Could not write BCD GUID to registry key.')
         # TODO: enable this after registry errors are fixed. 
         log.debug('bcdedit record created successfully.')
         return True
@@ -274,6 +284,8 @@ class Installer():
         cfg.set('installation', 'os', self.mainEngine.compatibility.OS.Caption)
         cfg.set('installation', 'osmajorversion', self.mainEngine.compatibility.winMajorVersion())
         cfg.set('installation', 'grubloader', self.grub_loader_file)
+        if hasattr(self.mainEngine.config, 'bcd_guid'):
+            cfg.set('installation', 'bcdguid', self.mainEngine.config.bcd_guid)
 
         
 
@@ -539,14 +551,14 @@ class Installer():
 
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
-            Task(self.copy_cd_files, 'Copying files from CD', cb),
-            Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            Task(foo, 'Copying uninstallation files', cb),
-            Task(self.create_cfg_file, 'Creating configuration file', cb),
+            #Task(self.copy_cd_files, 'Copying files from CD', cb),
+            #Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
+            #Task(foo, 'Copying uninstallation files', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
-            Task(foo, 'CD cleanup after installation', cb),
-            Task(self.ejectCD, 'Ejecting CD tray', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
+            #Task(foo, 'CD cleanup after installation', cb),
+            #Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]
 
     def get_usb_installation_tasks(self, associated_tasklist):
@@ -558,9 +570,9 @@ class Installer():
             Task(self.copy_usb_files, 'Copying files from USB', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(foo, 'ISO cleanup after installation', cb)
         ]
 
@@ -574,8 +586,8 @@ class Installer():
             Task(self.extract_iso_files, 'Extracting files from ISO', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(foo, 'CD cleanup after installation', cb),
         ]
