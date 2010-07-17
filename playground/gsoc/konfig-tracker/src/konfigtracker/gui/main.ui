@@ -36,19 +36,19 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QListWidget" name="listWidget"/>
+        <widget class="QTableWidget" name="backupList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QPushButton" name="pushButton">
+          <widget class="QPushButton" name="backupButton">
            <property name="text">
             <string>Backup</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QPushButton" name="pushButton_2">
+          <widget class="QPushButton" name="restoreButton">
            <property name="text">
             <string>Restore</string>
            </property>
@@ -89,7 +89,7 @@
      </property>
     </widget>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="backupLog">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -99,7 +99,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -110,7 +110,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_3"/>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>

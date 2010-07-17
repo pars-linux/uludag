@@ -1,7 +1,4 @@
-# monitor.py
-# Author : Jain Basil Aliyas
-# Date : 8 june 2010
-
+# -*- coding: utf-8 -*-
 from PyKDE4.kio import KDirWatch
 from operations import *
 
@@ -21,8 +18,5 @@ class Monitor(QThread):
 		Run condition for the thread, which will install the monitor in the directory.
 		"""
 		app = self.app
-		(self.dw).addDir(GetLocalDir() + "share/config")
-		app.connect(self.dw,SIGNAL("dirty(QString)"),self.initBackup)
-
-	def initBackup(self):
-		Backup()
+		(self.dw).addDir(source_path)
+		app.connect(self.dw,SIGNAL("dirty(QString)"),performBackup)

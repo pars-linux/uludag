@@ -1,27 +1,27 @@
+# -*- coding: utf-8 -*-
 from PyKDE4.kdecore import KStandardDirs
 
 from time import strftime,localtime
 import distutils.dir_util as DirUtil
 import git,os
 
-def GetLocalDir():
-	"""
-	return the local kde directory here. ie. $HOME/$KDEDIR
-	"""
-	return KStandardDirs().localkdedir()
+#Path to konfig-tracker db
+db_path = str(KStandardDirs().localkdedir() + "KonfigTracker")
 
+#Source path of configuration files
+source_path = str(KStandardDirs().localkdedir() + "share/config")
+restore_path = str(KStandardDirs().localkdedir() + "share")
 
-def CreateDB(path):
+def createDatabase(path):
 	"""
 	Initialize a git repository in path.
 	"""
 	gitRepo = git.Git(path)
 	gitRepo.init()
 
-
-def Commit():
+def gitCommit():
 	backupTime = strftime("%a, %d %b %Y %H:%M:%S", localtime())
-	repo = git.Git(GetLocalDir() + "/KonfigTrackerDB/")
+	repo = git.Git(db_path)
 	message = "Backup on "+ backupTime
 	try:
 		repo.execute(["git","commit","-a","-m",message])
@@ -29,51 +29,57 @@ def Commit():
 	except git.errors.GitCommandError:
 		pass
 
-def AddToDB():
+def addToDatabase():
 	"""
         Add blobs into the repository
         """
-        repo = git.Git( GetLocalDir()+ "/KonfigTrackerDB/")
+        repo = git.Git(db_path)
         repo.execute(["git","add","."])
-        Commit()
+        git_commit()
 
-def Backup():
+def performBackup():
         """
 	This will perform the initial import of config files from
 	.kde4/share/config to .kde4/konfigtracker-repo.
 	"""
-	srcPath = str(GetLocalDir() + "/share/config")
-	destPath = str(GetLocalDir() + "/KonfigTrackerDB/config")
+	srcPath = str(source_path)
+	destPath = str(db_path + "/config")
 
 	if DirUtil.copy_tree(srcPath,destPath,update=1):
-		AddToDB()
+		addToDatabase()
 
 def restore(commitId):
 	"""
 	Restore the config files to a particular commit
 	"""
 	#check whether this commitId is at the head now. If yes, don't perform the restore.
-	repo = git.Git(GetLocalDir() + "/KonfigTrackerDB/")
-	repo.execute(["git","read-tree",commitId])
+	repo = git.Git(db_path)
+	repo.execute(["git","read-tree", commitId])
 	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
-	destPath = str(GetLocalDir() + "/share")
 	srcPath = "/tmp/config"
-	DirUtil.copy_tree(srcPath,destPath,update=1)
+	DirUtil.copy_tree(srcPath, restore_path, update=1)
 
 def restoreParent(commitId):
 	"""
 	Restore to parent of a commit passed
 	"""
-	repo = git.Git(GetLocalDir() + "/KonfigTrackerDB/")
-	parent=repo.commits(commitId).parents
+	repo = git.Git(db_path)
+	parent = repo.commits(commitId).parents
 	repo.execute(["git","read-tree",parent])
 	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
-	destPath = str(GetLocalDir() + "/share")
 	srcPath = "/tmp/config"
-	DirUtil.copy_tree(srcPath,destPath,update=1)
+	DirUtil.copy_tree(srcPath, restore_path, update=1)
 
-def packData(commitId):
+def archiveDatabase(commitId):
 	"""
 	Pack the data at this commit into an archive
 	"""
-	pass	
+	pass
+
+def slotCommitList():
+	"""
+	Slot which will return a list of commits. This will be used to update the ui
+	"""
+	repo = git.Repo(db_path)
+	commit_list = repo.commits()
+	print commit_list[0].id

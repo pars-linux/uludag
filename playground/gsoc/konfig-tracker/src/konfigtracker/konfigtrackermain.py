@@ -1,8 +1,4 @@
-#===============================================================================
-# konfigtracker
-#===============================================================================
-
-
+# -*- coding: utf-8 -*-
 #necessary modules
 import os
 from operations import *
@@ -37,15 +33,14 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		
 
 	def InitApplication(self):
-        	""" If there exist no database in this path, this function will create
+        	""" 
+		If there exist no database in this path, this function will create
         	one, and initialize a git repository there.
         	"""
-        	path = GetLocalDir()  + "/KonfigTrackerDB"
-
-        	if not os.access(path,os.F_OK):
-			os.mkdir(path)
-			CreateDB(path)
-			Backup()
+        	if not os.access(db_path,os.F_OK):
+			os.mkdir(db_path)
+			createDatabase(db_path)
+			performBackup()
 			
 	def connectMainSignals(self):
-		pass
+		self.connect(self.backupButton, SIGNAL("clicked(bool)"), slotCommitList)
