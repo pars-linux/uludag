@@ -36,7 +36,7 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QTableWidget" name="backupList"/>
+        <widget class="QListWidget" name="backupList"/>
        </item>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">

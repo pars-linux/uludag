@@ -19,4 +19,7 @@ class Monitor(QThread):
 		"""
 		app = self.app
 		(self.dw).addDir(source_path)
-		app.connect(self.dw,SIGNAL("dirty(QString)"),performBackup)
+		app.connect(self.dw,SIGNAL("dirty(QString)"),self.doBackup)
+	
+	def doBackup(self):
+		performBackup()

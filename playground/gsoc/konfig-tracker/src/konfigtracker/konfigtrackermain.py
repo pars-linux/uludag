@@ -24,7 +24,10 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.setFixedSize(self.width(), self.height())
         	self.app = app
 		self.connectMainSignals()
-
+		
+		#update the list for setting up the backupList widget
+		commitMap = getCommitMap()
+		print commitMap
 
 		#Backend Initializations
         	self.InitApplication()
@@ -43,4 +46,5 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 			performBackup()
 			
 	def connectMainSignals(self):
-		self.connect(self.backupButton, SIGNAL("clicked(bool)"), slotCommitList)
+		self.connect(self.backupButton, SIGNAL("clicked(bool)"), slotPerformBackup)
+		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), slotPerformRestore)
