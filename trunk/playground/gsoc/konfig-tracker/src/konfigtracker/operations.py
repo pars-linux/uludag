@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 from PyKDE4.kdecore import KStandardDirs
 
-from time import strftime,localtime
+from time import strftime, localtime, asctime 
 import distutils.dir_util as DirUtil
 import git,os
 
-#Path to konfig-tracker db
-db_path = str(KStandardDirs().localkdedir() + "KonfigTracker")
+# Path to konfig-tracker db
+db_path = str(KStandardDirs().localkdedir() + "konfigtracker-db")
 
-#Source path of configuration files
+# Source path of configuration files
 source_path = str(KStandardDirs().localkdedir() + "share/config")
 restore_path = str(KStandardDirs().localkdedir() + "share")
 
@@ -35,17 +35,16 @@ def addToDatabase():
         """
         repo = git.Git(db_path)
         repo.execute(["git","add","."])
-        git_commit()
+        gitCommit()
 
 def performBackup():
         """
 	This will perform the initial import of config files from
 	.kde4/share/config to .kde4/konfigtracker-repo.
 	"""
-	srcPath = str(source_path)
-	destPath = str(db_path + "/config")
+	dest_path = str(db_path + "/config")
 
-	if DirUtil.copy_tree(srcPath,destPath,update=1):
+	if DirUtil.copy_tree(source_path,dest_path,update=1):
 		addToDatabase()
 
 def restore(commitId):
@@ -76,10 +75,24 @@ def archiveDatabase(commitId):
 	"""
 	pass
 
-def slotCommitList():
+def slotUpdateView():
 	"""
 	Slot which will return a list of commits. This will be used to update the ui
 	"""
 	repo = git.Repo(db_path)
 	commit_list = repo.commits()
 	print commit_list[0].id
+
+def slotPerformBackup():
+	pass
+
+def slotPerformRestore():
+	pass
+
+def getCommitMap():
+	"""
+	Get the list of commits from database, form a dictionary of commitid and committed_date
+	"""
+	repo = git.Repo(db_path)
+	commit_list = repo.commits('master',max_count=100)
+	return dict([(c.id,asctime(c.committed_date)) for c in commit_list])

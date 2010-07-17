@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Sat Jul 17 11:52:30 2010
+# Created: Sun Jul 18 02:56:15 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -25,10 +25,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.horizontalLayout = QtGui.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.backupList = QtGui.QTableWidget(self.frame)
+        self.backupList = QtGui.QListWidget(self.frame)
         self.backupList.setObjectName("backupList")
-        self.backupList.setColumnCount(0)
-        self.backupList.setRowCount(0)
         self.horizontalLayout.addWidget(self.backupList)
         self.verticalLayout = QtGui.QVBoxLayout()
         self.verticalLayout.setObjectName("verticalLayout")
