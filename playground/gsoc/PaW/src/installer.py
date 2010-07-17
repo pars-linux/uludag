@@ -3,6 +3,8 @@ import shutil
 import ctypes
 import tempfile
 import registry
+import time
+from ConfigParser import RawConfigParser
 from taskrunner import Task
 from taskrunner import TaskList
 from utils import populate_template_file
@@ -33,6 +35,8 @@ class Installer():
     default_initrd_path = 'boot/initrd'
     default_img_path = 'pardus.img'
 
+    cfg_file = "pardus.ini"
+
     def __init__(self, mainEngine):
         "Initialize installer instance."
         self.mainEngine = mainEngine
@@ -45,7 +49,6 @@ class Installer():
         # creates path for temp file and folder
         self.setTempFolder()
         self.setTempFile()
-        print self.hasRegistryKey()
 
     def hasRegistryKey(self):
         """
@@ -56,7 +59,7 @@ class Installer():
         unexisting registry path. Returns False, in this case.
         """
         try:
-            key = registry.hGetKey(self.hlmPath)
+            key = registry.hGeztKey(self.hlmPath)
             if key: return True
             else: return False
         except: return False
@@ -250,6 +253,59 @@ class Installer():
         log.debug('bcdedit record created successfully.')
         return True
 
+    def create_cfg_file(self):
+        """
+        Writes installation configuration to an .ini file with a filename hard
+        coded as a propery in this class and places it under config/ folder
+        in the installation root."""
+        cfg = RawConfigParser()
+
+        cfg.add_section('config')
+        cfg.set('config', 'username', self.mainEngine.config.username)
+        cfg.set('config', 'password', self.mainEngine.config.password)
+        cfg.set('config', 'drive', self.mainEngine.config.drive.DeviceID)
+        cfg.set('config', 'size', self.mainEngine.config.size)
+
+        cfg.add_section('installation')
+        cfg.set('installation', 'path', self.getInstallationRoot())
+        cfg.set('installation', 'registrykey', self.hlmPath)
+        cfg.set('installation', 'date', time.ctime())
+        cfg.set('installation', 'version', self.mainEngine.appversion)
+        cfg.set('installation', 'os', self.mainEngine.compatibility.OS.Caption)
+        cfg.set('installation', 'osmajorversion', self.mainEngine.compatibility.winMajorVersion())
+
+        if hasattr(self.mainEngine.config, 'isoPath'):
+            cfg.set('installation', 'source', 'iso')
+        elif hasattr(self.mainEngine.config, 'usbDrive'):
+            cfg.set('installation', 'source', 'usb')
+        elif hasattr(self.mainEngine.config, 'cdDrive'):
+            cfg.set('installation', 'source', 'cd')
+        else:
+            cfg.set('installation', 'source', 'none')
+
+        cfg.add_section('version')
+        if self.mainEngine.version:
+            cfg.set('version', 'id', self.mainEngine.version.id)
+            cfg.set('version', 'name', self.mainEngine.version.name)
+            cfg.set('version', 'kernel', self.mainEngine.version.kernel)
+            cfg.set('version', 'initrd', self.mainEngine.version.initrd)
+            cfg.set('version', 'img', self.mainEngine.version.img)
+        else:
+            cfg.set('version', 'id', '')
+            cfg.set('version', 'name', '')
+
+        destination = os.path.join(self.getInstallationRoot(), 'config', self.cfg_file)
+
+        try:
+            with open(destination, 'wb') as file_handle:
+                cfg.write(file_handle)
+            log.debug('Successfully written into configuration file.')
+            return True
+        except IOError as e:
+            log.error('IOError on writing configuration file: %s' % e)
+            return False
+
+
     def extract_from_iso(self, source, destination, file_paths):
         """
         For 7z, file paths should be specified as a/b/c
@@ -295,6 +351,7 @@ class Installer():
             '.',
             'boot',
             'backup',
+            'config',
             'log']
 
         for dir in dirs:
@@ -482,6 +539,7 @@ class Installer():
             Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'CD cleanup after installation', cb),
@@ -497,23 +555,24 @@ class Installer():
             Task(self.copy_usb_files, 'Copying files from USB', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
-            #Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'ISO cleanup after installation', cb)
         ]
 
-    def get_cd_installation_tasks(self, associated_tasklist):
+    def get_iso_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
 
         def foo():pass
 
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
-            Task(self.copy_cd_files, 'Copying files from CD', cb),
+            Task(self.extract_iso_files, 'Extracting files from ISO', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
+            Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'CD cleanup after installation', cb),
-            Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]

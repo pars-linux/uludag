@@ -66,7 +66,6 @@ class Compatibility():
 	try:
 	    from tools.wmi import wmi
             self.wmi = wmi.WMI(privileges=["Shutdown"]) # priv. to reboot.
-            log.warning("Could not use WMI. Most probably on Linux.")
             log.debug('Running on Windows.')
             self.winTotalMemory()
 	    self.winArchitecture()
