@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # PyKDE4 Stuff
 from PyKDE4.kdecore import *
 
