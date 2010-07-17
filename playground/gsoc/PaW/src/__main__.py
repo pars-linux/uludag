@@ -1,7 +1,7 @@
 import sys
 from PyQt4 import QtGui
 
-from guicontroller import PaWnGui
+from guicontroller import PaWGui
 from ftpdownloader import FTPDownloader
 from versionmanager import VersionManager
 from compatibility import Compatibility
@@ -9,7 +9,7 @@ from md5sum import MD5sum
 from installer import Installer
 
 from logger import getLogger
-log = getLogger('PaWn')
+log = getLogger('PaW')
 
 class Config(object):
     def __repr__(self, repr = ''):
@@ -17,7 +17,7 @@ class Config(object):
 	    repr += "->  %s=%s\n"%(key,value)
 	return repr
 
-class PaWn():
+class PaW():
     application = 'Pardus (Paw)' # ASCII, please.
     appid = 'Pardus' # ASCII, please.
     appversion = '0.2'
@@ -32,7 +32,7 @@ class PaWn():
         self.installer = Installer(self)
         self.initFTP()
         
-	self.gui = PaWnGui(self)
+	self.gui = PaWGui(self)
 
     def initFTP(self):
         log.info('FTP Downloader inited for %s.' % self.config.tmpFile)
@@ -40,5 +40,5 @@ class PaWn():
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
-    pawn = PaWn()
+    paw = PaW()
     sys.exit(app.exec_())

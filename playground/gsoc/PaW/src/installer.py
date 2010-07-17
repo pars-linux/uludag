@@ -273,6 +273,9 @@ class Installer():
         cfg.set('installation', 'version', self.mainEngine.appversion)
         cfg.set('installation', 'os', self.mainEngine.compatibility.OS.Caption)
         cfg.set('installation', 'osmajorversion', self.mainEngine.compatibility.winMajorVersion())
+        cfg.set('installation', 'grubloader', self.grub_loader_file)
+
+        
 
         if hasattr(self.mainEngine.config, 'isoPath'):
             cfg.set('installation', 'source', 'iso')
