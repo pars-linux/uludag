@@ -43,7 +43,6 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	    self.stackedWidget.addWidget(step.Widget(self.mainEngine))
 
     def	proceedScreen(self, index):
-	#print 'requested to proceed to', index
 	prevIndex =  self.stackedWidget.currentIndex()
 	
 	if not (prevIndex == index):
@@ -51,8 +50,6 @@ class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	    if prevWidget.onSubmit():
 		self.historyStack.append(prevIndex)
 		self.jumpScreen(index)
-		#print 'appended', self.historyStack
-
 
     def jumpScreen(self, index):
 	self.stackedWidget.setCurrentIndex(index)

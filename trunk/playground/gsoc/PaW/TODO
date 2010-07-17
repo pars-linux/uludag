@@ -26,8 +26,6 @@ TODO
 
 * cleanup upon installation
 
-* saving installation config (user,pass?,partition,path etc.) and logs to a file
-
 * logging handler for a log file and infobox on installing screen.
 
 * Live CD or ISO detection feature for versions prior to Pardus 2011, prevent

@@ -3,7 +3,6 @@ from PyQt4 import QtGui,QtCore
 from ui.controller.stepTemplate import StepWidget
 from utils import humanReadableSize
 
-
 from ui.gui.configuration import Ui_configuration
 
 class Widget(QtGui.QWidget, StepWidget):
@@ -128,7 +127,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.mainEngine.config.username = username
 	self.mainEngine.config.password = password
 	self.mainEngine.config.drive = self.getSelectedDrive()
-	self.mainEngine.config.size = self.installationSize
+	self.mainEngine.config.size = long(self.installationSize)
 	return True
 
 
