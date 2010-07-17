@@ -3,7 +3,7 @@ from ui.controller.stepTemplate import StepWidget
 from ui.gui.welcome import Ui_welcome
 
 class Widget(QtGui.QWidget, StepWidget):
-    heading = "Welcome to PaWn"
+    heading = "Welcome to PaW!"
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)

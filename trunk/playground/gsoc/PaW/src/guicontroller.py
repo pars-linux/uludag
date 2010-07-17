@@ -12,7 +12,7 @@ import ui.controller.stepDownloading as stepDownloading
 import ui.controller.stepInstalling as stepInstalling
 import ui.controller.stepFinish as stepFinish
 
-class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
+class PaWGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD,
         stepOptInternet, stepOptUSB, stepDownloading, stepInstalling, stepFinish]
     historyStack = []
