@@ -55,7 +55,6 @@ class Widget(QtGui.QWidget, StepWidget):
         pass
 
     def onSubmit(self):
-        #TODO: installer cleanup planned here?
 	return True
 
     def nextIndex(self):

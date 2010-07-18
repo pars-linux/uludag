@@ -92,7 +92,7 @@ class PaWGui(QtGui.QWidget, Ui_main): #is also a mainWidget
 	self.lblHeading.setText(QtGui.QApplication.translate("MainWidget", heading, None, QtGui.QApplication.UnicodeUTF8))
 
     def centerWindow(self):
-        screen = rect  = QtGui.QDesktopWidget().screenGeometry()
+        screen = QtGui.QDesktopWidget().screenGeometry()
         x = (screen.width() - self.width()) / 2
         y = (screen.height() - self.height()) / 2
         self.move(x, y)
@@ -100,7 +100,7 @@ class PaWGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     def closeEvent(self, event):
         reply = QtGui.QMessageBox.warning(self, 'Are you sure to quit?', 'Do you really want to quit the installation? If you quit, everything installed will be removed.', QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
         if reply ==  QtGui.QMessageBox.Yes:
-            # TODO: cleanup upon exit.
+            self.mainEngine.cleanup()
             event.accept()
         else:
             event.ignore()

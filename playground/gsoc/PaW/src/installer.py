@@ -113,8 +113,11 @@ class Installer():
     def getUninstallationString(self):
         """Returns Windows commandline string to uninstall program. Most
         probably will be saved into registry to handle uninstallation."""
-        return ''
-        # TODO: Implement.
+        installer_path = os.path.join(self.getInstallationRoot(), 'paw', self.mainEngine.executable)
+
+        uninstall_string = "%s --uninstall"
+        return uninstall_string
+        
 
 
     def getGrubLoaderDestination(self):
@@ -595,12 +598,11 @@ class Installer():
             Task(self.copy_installer, 'Copying PaW installer files', cb),
             #Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            #Task(self.installationRegistry, 'Creating Registry keys', cb),
-            #Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
+            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
-            Task(foo, 'CD cleanup after installation', cb),
             Task(self.ejectCD, 'Ejecting CD tray', cb),
-            Task(self.copy_log, 'Copying installation log.', cb)
+            Task(self.copy_log, 'Copying installation log.', cb),
         ]
 
 
@@ -608,6 +610,7 @@ class Installer():
         cb = associated_tasklist.startNext # callback
 
         def foo():pass
+        
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
             Task(self.copy_installer, 'Copying PaW installer files', cb),
@@ -616,10 +619,8 @@ class Installer():
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
-            Task(foo, 'ISO cleanup after installation', cb),
-            Task(self.copy_log, 'Copying installation log.', cb)
+            Task(self.copy_log, 'Copying installation log.', cb),
         ]
-
 
     def get_iso_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
@@ -634,6 +635,5 @@ class Installer():
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
-            Task(foo, 'CD cleanup after installation', cb),
-            Task(self.copy_log, 'Copying installation log.', cb)
+            Task(self.copy_log, 'Copying installation log.', cb),
         ]
