@@ -79,7 +79,7 @@ class PaW():
         Cleans temporary files on demand. Should be called upon exit.
         """
         try:
-            #shutil.rmtree(self.config.tmpDir, ignore_errors = True)
+            shutil.rmtree(self.config.tmpDir, ignore_errors = True)
             log.info('Cleanup done.')
             return True
         except:

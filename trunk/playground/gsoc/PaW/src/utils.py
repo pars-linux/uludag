@@ -70,7 +70,8 @@ def populate_template_file(path, values):
         ifstream = open(path, 'r')
         template_contents = ifstream.read()
         ifstream.close()
-    except:
+    except Exception as e:
+        log.error('Could not find template %s: %s' % (path, e))
         return False
 
     return populate_template(template_contents, values)

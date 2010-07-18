@@ -43,6 +43,11 @@ echo *********************************************
 echo Copying other required files.
 cd ..
 copy %srcpath%versions.xml %builddir%\
+copy %srcpath%files\boot.ini.tpl %builddir%\
+copy %srcpath%files\grub4dos\menu.lst.tpl %builddir%\
+copy %srcpath%files\grub4dos\grldr %builddir%\
+copy %srcpath%files\grub4dos\grldr.mbr %builddir%\
+copy %srcpath%files\grub4dos\pardus.tag %builddir%\
 copy %srcpath%ui\img\pardus_icon_48_48.ico %builddir%\
 
 echo *********************************************

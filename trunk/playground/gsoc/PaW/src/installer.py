@@ -26,6 +26,9 @@ class Installer():
     grub_mbr_path = '/grldr.mbr'
     grub_identifier_file = 'pardus.tag'
     grub_identifier_path = '/pardus.tag'
+    menu_lst_template_file = 'menu.lst.tpl'
+    menu_lst_file = 'menu.lst'
+    boot_ini_template_file = 'boot.ini.tpl'
 
     default_kernel_path = 'boot/kernel'
     default_kernel_params = ''
@@ -115,10 +118,9 @@ class Installer():
         probably will be saved into registry to handle uninstallation."""
         installer_path = os.path.join(self.getInstallationRoot(), 'paw', self.mainEngine.executable)
 
-        uninstall_string = "%s --uninstall"
+        uninstall_string = "\"%s \" uninstall" % installer_path
         return uninstall_string
         
-
 
     def getGrubLoaderDestination(self):
         "Returns default grub loader destination, which is in the boot partition."
@@ -180,7 +182,14 @@ class Installer():
             'OPTION_NAME': self.mainEngine.application
         }
 
-        new_contents = populate_template_file('files/boot.ini.tpl', config)
+        boot_ini_template_path = \
+            os.path.join('files', self.boot_ini_template_file)
+
+        if not os.path.isfile(boot_ini_path):
+            #boot.ini may be copied in the same folder with executable
+            boot_ini_template_path= os.path.join(self.boot_ini_template_file)
+
+        new_contents = populate_template_file(boot_ini_template_path, config)
 
         if fstream:
             try:
@@ -535,27 +544,40 @@ class Installer():
             }
 
         # save menu.lst under OS drive root.
-        menu_lst_dest = os.path.join(destination, 'menu.lst')
-        menu_lst = populate_template_file(os.path.join(source, 'menu.lst.tpl'), values)
+        menu_lst_dest = os.path.join(destination, self.menu_lst_file)
+        template_source = os.path.join(source, self.menu_lst_template_file)
+        if not os.path.isfile(template_source):
+            # template source may be in the same folder with installer.
+            template_source = os.path.abspath(self.menu_lst_template_file)
+            
+        menu_lst = populate_template_file(template_source, values)
         try:
             menu_lst_stream = open(menu_lst_dest, 'w')
             menu_lst_stream.write(menu_lst)
             menu_lst_stream.close
             log.debug('%s created successfully.' % menu_lst_dest)
         except IOError as e:
-            log.error('Could not write %s. %s' % (menu_lst_dest, e)); return False
+            log.error('Could not write %s. %s' % (menu_lst_dest, e))
+            return False
 
         # copy rest of grub4dos files
         files = [self.grub_loader_file, self.grub_mbr_file, self.grub_identifier_file]
         for file_name in files:
             path = os.path.abspath(os.path.join(source, file_name))
+
             if not os.path.isfile(path):
-                log.error('Could not locate %s' % path); return False
+                log.error('Could not locate %s, trying for the same folder.' % path)
+                path = os.path.abspath(file_name) # look at the executable folder
+
+            if not os.path.isfile(path):
+                log.error('Could not locate %s' % path)
+                return False
             try:
                 shutil.copy(path, destination)
                 log.debug('%s copied to %s' % (os.path.basename(path), destination))
             except IOError as e:
-                log.error('Could not copy grub4dos file %s: %s' % (path,e)); return False
+                log.error('Could not copy grub4dos file %s: %s' % (path,e))
+                return False
         return True
 
 
