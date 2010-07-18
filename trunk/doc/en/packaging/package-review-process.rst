@@ -39,8 +39,8 @@ The package reviewing process steps on `Pardus Bug Tracking System
    indicated in the ``Details`` part of the bug report.
 
 #. The repository of the package (contrib, pardus etc.) which the developer is
-   willing to maintain the package in, should be indicated in the ``Details`` part
-   of the bug report.
+   willing to maintain the package in, preferably with the reason, should be 
+   indicated in the ``Details`` part of the bug report.
 
 #. If the package depends on other packages currently in reviewing process,
    the bug report should ``depend`` on those other packages' bug reports to
