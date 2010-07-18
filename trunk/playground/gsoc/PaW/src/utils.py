@@ -208,7 +208,7 @@ def boot_ini_cleaner(boot_ini_path, grldr_name):
         f.close()
         return True
     except IOError as e:
-        log.error('Could not write to %s file for cleanup: %s' % (boot_ini_path, e))
+        log.error('Could not write to %s file for removal: %s' % (boot_ini_path, e))
         return False
 
 
@@ -260,6 +260,11 @@ def copy_folder(source, destination):
     This method is blocking so that it may take long to execute if the files
     are too big. Uses shutil. If the destination folder does not exist, creates
     the file. If any errors occur, returns False; True otherwise.
+
+    Differs from shutil.copytree by ability of logging errors on copying
+    specific files and directories.
+
+    NOTE: Permissions and last access-modification times are copied, too.
     """
     contents = os.listdir(source)
 

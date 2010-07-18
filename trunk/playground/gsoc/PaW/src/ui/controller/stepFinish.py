@@ -24,7 +24,7 @@ class Widget(QtGui.QWidget, StepWidget):
         self.gui.txtPassword.setText(self.mainEngine.config.password)
 
     def onSubmit(self):
-        # TODO: cleanup upon installer exit.
+        self.mainEngine.cleanup()
 
         if self.gui.chkReboot.isChecked():
             self.mainEngine.compatibility.reboot()

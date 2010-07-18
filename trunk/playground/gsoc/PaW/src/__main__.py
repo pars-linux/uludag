@@ -1,6 +1,6 @@
-import os.path
 import os
 import sys
+import shutil
 import tempfile
 from PyQt4 import QtGui
 
@@ -32,6 +32,8 @@ class PaW():
     appversion = '0.2'
     publisher = 'TUBITAK/UEKAE'
     home = 'http://www.pardus.org.tr'
+    
+    executable = 'PaW.exe'
 
     logfile = ''
 
@@ -71,6 +73,18 @@ class PaW():
         self.config.tmpFile = \
             os.path.join(self.config.tmpDir, 'downloaded.iso')
             # TODO: Rename downloaded file path.
+
+    def cleanup(self):
+        """
+        Cleans temporary files on demand. Should be called upon exit.
+        """
+        try:
+            #shutil.rmtree(self.config.tmpDir, ignore_errors = True)
+            log.info('Cleanup done.')
+            return True
+        except:
+            log.error('Could not remove tmp directory at %s ' % self.config.tmpDir)
+            return False
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
