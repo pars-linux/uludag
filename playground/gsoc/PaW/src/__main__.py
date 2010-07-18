@@ -30,7 +30,7 @@ class PaW():
     application = 'Pardus (Paw)' # ASCII, please.
     appid = 'Pardus' # ASCII, please.
     appversion = '0.2'
-    publisher = 'TUBITAK/UEKAE'
+    publisher = 'Pardus-Linux (TM)'
     home = 'http://www.pardus.org.tr'
     
     executable = 'PaW.exe'

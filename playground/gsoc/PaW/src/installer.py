@@ -69,7 +69,6 @@ class Installer():
         """
         Creates installation registry keys and values on Windows registry.
         """
-        # TODO: InstallLocation, DisplayIcon, Comments
         try:
             key = registry.hCreateKey(self.hlmPath)
         except Exception as e:
@@ -79,15 +78,15 @@ class Installer():
         registry.hSetValue(key, 'DisplayName', self.mainEngine.application)
         registry.hSetValue(key, 'DisplayVersion', self.mainEngine.appversion)
         registry.hSetValue(key, 'UninstallString', self.getUninstallationString())
+        registry.hSetValue(key, 'DisplayIcon', self.getDisplayIconPath())
         registry.hSetValue(key, 'HelpLink', self.mainEngine.home)
         registry.hSetValue(key, 'URLInfoAbout', self.mainEngine.home)
-        registry.hSetValue(key, 'Publisher', self.mainEngine.home)
+        registry.hSetValue(key, 'Publisher', self.mainEngine.publisher)
         registry.hSetValue(key, 'NoModify', 1, True)
         registry.hSetValue(key, 'NoRepair', 1, True)
 
         log.debug('Finished creating installation registry keys.')
         return True
-
 
     def uninstallationRegistry(self):
         "Removes registry key for this program."
@@ -118,9 +117,16 @@ class Installer():
         probably will be saved into registry to handle uninstallation."""
         installer_path = os.path.join(self.getInstallationRoot(), 'paw', self.mainEngine.executable)
 
-        uninstall_string = "\"%s \" uninstall" % installer_path
+        uninstall_string = "%s /u" % installer_path
         return uninstall_string
-        
+
+    def getDisplayIconPath(self):
+        """
+        Returns icon path which is going to be extracted from .exe installer
+        file under paw/ folder of installation root."""
+        installer_path = os.path.join(self.getInstallationRoot(), 'paw', self.mainEngine.executable)
+
+        return "%s,0" % installer_path
 
     def getGrubLoaderDestination(self):
         "Returns default grub loader destination, which is in the boot partition."
@@ -560,8 +566,26 @@ class Installer():
             log.error('Could not write %s. %s' % (menu_lst_dest, e))
             return False
 
+        # copy pardus.tag
+        tagpath = os.path.abspath(os.path.join(source, self.grub_identifier_file))
+        tag_destination = os.path.abspath(self.mainEngine.config.drive.DeviceID + '\\')
+        if not os.path.isfile(tagpath):
+             # look at the executable folder
+            log.error('Could not locate %s, trying for the same folder.' % tagpath)
+            tagpath = os.path.abspath(self.grub_identifier_file)
+
+        if not os.path.isfile(tagpath):
+            log.error('Could not locate %s' % tagpath)
+            return False
+        try:
+            shutil.copy(tagpath, tag_destination)
+            log.debug('%s TAGFILE copied to %s' % (os.path.basename(tagpath), tag_destination))
+        except IOError as e:
+            log.error('Could not copy tag file %s: %s' % (tagpath,e))
+            return False
+
         # copy rest of grub4dos files
-        files = [self.grub_loader_file, self.grub_mbr_file, self.grub_identifier_file]
+        files = [self.grub_loader_file, self.grub_mbr_file]
         for file_name in files:
             path = os.path.abspath(os.path.join(source, file_name))
 
@@ -621,7 +645,7 @@ class Installer():
             #Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
-            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            #Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(self.ejectCD, 'Ejecting CD tray', cb),
             Task(self.copy_log, 'Copying installation log.', cb),
