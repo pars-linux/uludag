@@ -1,7 +1,7 @@
 from PyQt4 import QtCore
 
-from logger import getLogger
-log = getLogger("TaskRunner")
+import logger
+log = logger.getLogger("TaskRunner")
 
 class Task(QtCore.QThread):
     "Threaded task using QThread class of Qt."

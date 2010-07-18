@@ -1,7 +1,7 @@
 from _winreg import *
 
-from logger import getLogger
-log = getLogger('Registry Handler')
+import logger
+log = logger.getLogger('Registry Handler')
 
 try:
     import _winreg

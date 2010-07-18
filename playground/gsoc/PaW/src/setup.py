@@ -27,7 +27,6 @@ setup (
                 'optimize' : 2,
                 'dist_dir': 'dist',
                 'xref' : False, # can be enabled for debugging.
-                'bundle_files': 2, # none, for now
                 'compressed' : False,
                 'ascii' : False
             }

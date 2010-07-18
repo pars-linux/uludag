@@ -1,7 +1,7 @@
 import os
+import sys
 import shutil
 import ctypes
-import tempfile
 import registry
 import time
 from ConfigParser import RawConfigParser
@@ -10,9 +10,10 @@ from taskrunner import TaskList
 from utils import populate_template_file
 from utils import run_shell_cmd
 from utils import backup_bcdedit
+from utils import copy_folder
 
-from logger import getLogger
-log = getLogger('Installer Backend')
+import logger
+log = logger.getLogger('Installer Backend')
 
 class Installer():
     gui = None
@@ -41,12 +42,10 @@ class Installer():
 
         try:
             self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
-        except AttributeError:
+        except AttributeError as e:
+            log.error('Error initializing HLM Path: %s' % e)
             pass # supress
 
-        # creates path for temp file and folder
-        self.setTempFolder()
-        self.setTempFile()
 
     def hasRegistryKey(self):
         """
@@ -61,6 +60,7 @@ class Installer():
             if key: return True
             else: return False
         except: return False
+
 
     def installationRegistry(self):
         """
@@ -85,6 +85,7 @@ class Installer():
         log.debug('Finished creating installation registry keys.')
         return True
 
+
     def uninstallationRegistry(self):
         "Removes registry key for this program."
         try:
@@ -92,6 +93,7 @@ class Installer():
             log.debug('Registry subkey has been removed successfully.')
         except:
             log.exception('Could not remove registry keys upon uninstallation.')
+
 
     def ejectCD(self):
         "If CD/DVD is used, eject CD/DVD-ROM tray after installation."
@@ -101,24 +103,12 @@ class Installer():
         except:
             return False
 
-    def setTempFolder(self):
-        """
-        Create a folder on temp folder of operating system to save
-        downloaded ISO and other files.
-        """
-        self.mainEngine.config.tmpDir = tempfile.mkdtemp()
-
-    def setTempFile(self):
-        "Request a filename to save downloaded ISO"
-        self.mainEngine.config.tmpFile = \
-            os.path.join(self.mainEngine.config.tmpDir, 'downloaded.iso')
-            # TODO: Rename downloaded file path.
-
     def getInstallationRoot(self):
         """
         Returns installation root to copy boot and disk files under it.
         """
         return os.path.join(self.mainEngine.config.drive.DeviceID + '\\', self.mainEngine.appid)
+
 
     def getUninstallationString(self):
         """Returns Windows commandline string to uninstall program. Most
@@ -126,10 +116,12 @@ class Installer():
         return ''
         # TODO: Implement.
 
+
     def getGrubLoaderDestination(self):
         "Returns default grub loader destination, which is in the boot partition."
         system_drive_root = '%s\\' % self.mainEngine.compatibility.OS.SystemDrive
         return os.path.join(system_drive_root, self.grub_loader_file)
+
 
     def backup_boot_ini(self, boot_ini_path):
         """
@@ -139,11 +131,12 @@ class Installer():
         destination = os.path.join(self.getInstallationRoot(), 'backup', boot_ini_backup_file)
         try:
             shutil.copy(boot_ini_path, destination)
-        except IOError as e:
+        except Exception as e:
             log.error('Could not copy boot.ini: %s' % e)
             return False
         log.debug('Boot.ini backup completed.')
         return True
+
 
     def modify_boot_ini(self):
         """
@@ -200,6 +193,7 @@ class Installer():
         # restore system+readonly+hidden attribs of boot.ini
         run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path])
         return True
+
 
     def modify_bcd(self):
         """
@@ -258,6 +252,7 @@ class Installer():
         log.debug('bcdedit record created successfully.')
         return True
 
+
     def create_cfg_file(self):
         """
         Writes installation configuration to an .ini file with a filename hard
@@ -275,14 +270,13 @@ class Installer():
         cfg.set('installation', 'path', self.getInstallationRoot())
         cfg.set('installation', 'registrykey', self.hlmPath)
         cfg.set('installation', 'date', time.ctime())
+        cfg.set('installation', 'logfile', self.mainEngine.logfile)
         cfg.set('installation', 'version', self.mainEngine.appversion)
         cfg.set('installation', 'os', self.mainEngine.compatibility.OS.Caption)
         cfg.set('installation', 'osmajorversion', self.mainEngine.compatibility.winMajorVersion())
         cfg.set('installation', 'grubloader', self.grub_loader_file)
         if hasattr(self.mainEngine.config, 'bcd_guid'):
             cfg.set('installation', 'bcdguid', self.mainEngine.config.bcd_guid)
-
-        
 
         if hasattr(self.mainEngine.config, 'isoPath'):
             cfg.set('installation', 'source', 'iso')
@@ -313,6 +307,46 @@ class Installer():
             return True
         except IOError as e:
             log.error('IOError on writing configuration file: %s' % e)
+            return False
+
+
+    def copy_installer(self):
+        """
+        Copier installer root i.e. PaW/ folder and its subdirectories
+        recursively into PaW/ folder under the installation root. It determines
+        root of installer from sys.executable, however if it is Python
+        interpreter, it includes 'Python' and we prevent copying Python
+        installation to installation dir., in a case-insensitive manner.
+        """
+        installer_root = os.path.dirname(sys.executable)
+        destination = os.path.join(self.getInstallationRoot(), 'PaW')
+
+        try: # do not allow folder containing 'python'
+            if installer_root.lower().index('python') > -1:
+                log.warning('Installer executable dir contains \'python\'. Will not be copied!')
+        except ValueError: # not an error in fact.
+            if not copy_folder(installer_root, destination):
+                log.error('Could not copy installer to the installation root.')
+                return False
+            else:
+                log.debug('Copied installer/uninstaller successfully.')
+                return True
+
+
+    def copy_log(self):
+        """
+        Copies installation log from temporary folder to log/ folder under
+        installation root.
+        """
+        source = self.mainEngine.logfile
+        destination = os.path.join(self.getInstallationRoot(), 'log')
+
+        try:
+            shutil.copy(source, destination)
+            log.debug('Copied installation log.')
+            return True
+        except Exception as e:
+            log.error('Could not copy installation log %s: %s' % (source, e))
             return False
 
 
@@ -351,6 +385,7 @@ class Installer():
 
         return True
 
+
     def createDirStructure(self):
         "Creates directory structure on installation drive."
         base = self.getInstallationRoot()
@@ -362,7 +397,8 @@ class Installer():
             'boot',
             'backup',
             'config',
-            'log']
+            'log',
+            'paw']
 
         for dir in dirs:
             path = os.path.join(base, dir)
@@ -373,6 +409,7 @@ class Installer():
                 log.debug('%s already exists.' % path)
 
         return True
+
 
     def extract_iso_files(self):
         """
@@ -398,6 +435,7 @@ class Installer():
         self.extract_from_iso(source, destination, files)
         log.debug('Files extracted from ISO.')
         return True
+
 
     def copy_files_from_device(self, isCD = True):
         """
@@ -440,11 +478,14 @@ class Installer():
                 
         return True
 
+
     def copy_cd_files(self):
         return self.copy_files_from_device(isCD = True) # CD.
 
+
     def copy_usb_files(self):
         return self.copy_files_from_device(isCD = False) # USB.
+
 
     def modify_boot_sequence(self):
         winMajorVersion = self.mainEngine.compatibility.winMajorVersion()
@@ -457,6 +498,7 @@ class Installer():
             # Windows Vista, Windows 7 or newer.
             log.debug('Detected Windows Vista, Windows 7 or newer.')
             return self.modify_bcd()
+
 
     def copy_grub4dos_files(self):
         os_drive = self.mainEngine.compatibility.OS.SystemDrive
@@ -513,6 +555,7 @@ class Installer():
                 log.error('Could not copy grub4dos file %s: %s' % (path,e)); return False
         return True
 
+
     def start(self):
         "Starts installation process specific for ISOs and CD/DVDs."
         self.tasklist = TaskList(callback=self.onAdvance)
@@ -532,12 +575,15 @@ class Installer():
         self.tasklist.setTasks(tasks)
         self.tasklist.start()
 
+
     def onAdvance(self):
         percentage = self.tasklist.getPercentage()
         if self.gui: self.gui.onAdvance(percentage)
 
+
     def connectGui(self, gui):
         self.gui = gui
+
 
     def get_cd_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
@@ -546,15 +592,17 @@ class Installer():
 
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
-            Task(self.copy_cd_files, 'Copying files from CD', cb),
+            Task(self.copy_installer, 'Copying PaW installer files', cb),
+            #Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            Task(foo, 'Copying uninstallation files', cb),
-            Task(self.installationRegistry, 'Creating Registry keys', cb),
-            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            #Task(self.installationRegistry, 'Creating Registry keys', cb),
+            #Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(foo, 'CD cleanup after installation', cb),
             Task(self.ejectCD, 'Ejecting CD tray', cb),
+            Task(self.copy_log, 'Copying installation log.', cb)
         ]
+
 
     def get_usb_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
@@ -562,14 +610,16 @@ class Installer():
         def foo():pass
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
+            Task(self.copy_installer, 'Copying PaW installer files', cb),
             Task(self.copy_usb_files, 'Copying files from USB', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            Task(foo, 'Copying uninstallation files', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
-            Task(foo, 'ISO cleanup after installation', cb)
+            Task(foo, 'ISO cleanup after installation', cb),
+            Task(self.copy_log, 'Copying installation log.', cb)
         ]
+
 
     def get_iso_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
@@ -578,11 +628,12 @@ class Installer():
 
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
+            Task(self.copy_installer, 'Copying PaW installer files', cb),
             Task(self.extract_iso_files, 'Extracting files from ISO', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            Task(foo, 'Copying uninstallation files', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
             Task(foo, 'CD cleanup after installation', cb),
+            Task(self.copy_log, 'Copying installation log.', cb)
         ]

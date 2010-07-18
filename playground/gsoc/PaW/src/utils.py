@@ -1,10 +1,10 @@
 import subprocess
 import os
-import os.path
+import shutil
 import ConfigParser
 
-from logger import getLogger
-log = getLogger('Utils')
+import logger
+log = logger.getLogger('Utils')
 
 sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB']
 timeUnitsSingle = ['second', 'minute', 'hour', 'day']
@@ -252,3 +252,34 @@ def remove_bcdedit_record(bcdedit_path, guid):
     else:
         log.error('Could not remove bcdedit record.')
         return False
+
+
+def copy_folder(source, destination):
+    """
+    Copies contents of a folder (recursively) to another folder.
+    This method is blocking so that it may take long to execute if the files
+    are too big. Uses shutil. If the destination folder does not exist, creates
+    the file. If any errors occur, returns False; True otherwise.
+    """
+    contents = os.listdir(source)
+
+    if not os.path.isdir(destination):
+        try:
+            os.mkdir(destination)
+        except Exception as e:
+            log.error('Could not create folder %s: %s' (destination, e))
+
+    for i in contents:
+        path = os.path.join(source, i)
+        if os.path.isfile(path):
+            try:
+                shutil.copy(path, destination) # TODO exception handling
+            except Exception as e:
+                log.error('Could not copy %s to %s: %s' % (i, destination, e))
+                return False
+        else:
+            # recursive iteration over directories
+            if not copy_folder(path, os.path.join(destination, i)):
+                return False # on any nested failure, this should fail, too.
+
+    return True

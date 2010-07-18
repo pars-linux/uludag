@@ -1,5 +1,17 @@
+import os.path
+import os
 import sys
+import tempfile
 from PyQt4 import QtGui
+
+import logger
+if __name__=='__main__':
+    tmpDir = tempfile.mkdtemp()
+    logfile = os.path.join(tmpDir, 'paw.log')
+    logger.destination = logfile
+    print 'Logging file is in %s.' % logger.destination
+    log = logger.getLogger('PaW (main)')
+    log.info('Hi!')
 
 from guicontroller import PaWGui
 from ftpdownloader import FTPDownloader
@@ -7,9 +19,6 @@ from versionmanager import VersionManager
 from compatibility import Compatibility
 from md5sum import MD5sum
 from installer import Installer
-
-from logger import getLogger
-log = getLogger('PaW')
 
 class Config(object):
     def __repr__(self, repr = ''):
@@ -24,19 +33,44 @@ class PaW():
     publisher = 'TUBITAK/UEKAE'
     home = 'http://www.pardus.org.tr'
 
+    logfile = ''
+
     def __init__(self):
 	self.config = Config()
+        self.setTempFolder()
+        self.setTempFile() # should be after setTempFolder
+
 	self.compatibility = Compatibility()
 	self.versionManager = VersionManager()
 	self.md5sum = MD5sum()
         self.installer = Installer(self)
-        self.initFTP()
+        self.initFTP()      # should be after installer
+        self.initLogger()
         
 	self.gui = PaWGui(self)
 
     def initFTP(self):
         log.info('FTP Downloader inited for %s.' % self.config.tmpFile)
         self.ftpDownloader = FTPDownloader(self.config.tmpFile)
+
+
+    def initLogger(self):
+        global logfile
+        self.logfile = logfile
+
+    def setTempFolder(self):
+        """
+        Create a folder on temp folder of operating system to save
+        downloaded ISO and other files.
+        """
+        global tmpDir
+        self.config.tmpDir = tmpDir
+
+    def setTempFile(self):
+        "Request a filename to save downloaded ISO"
+        self.config.tmpFile = \
+            os.path.join(self.config.tmpDir, 'downloaded.iso')
+            # TODO: Rename downloaded file path.
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)

@@ -6,8 +6,8 @@ from ui.gui.usb import Ui_usb
 from utils import locate_file_in_path
 from utils import version_name_from_gfxboot
 
-from logger import getLogger
-log = getLogger('USB Option Step')
+import logger
+log = logger.getLogger('USB Option Step')
 
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Install from USB Memory Stick"
