@@ -14,11 +14,6 @@ from utils import backup_bcdedit
 from logger import getLogger
 log = getLogger('Installer Backend')
 
-try:
-    import _winreg
-except ImportError, NameError:
-    log.debug('Could not import _winreg. Missing module.')
-
 class Installer():
     gui = None
     iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
@@ -551,14 +546,14 @@ class Installer():
 
         return [
             Task(self.createDirStructure, 'Creating directory structure', cb),
-            #Task(self.copy_cd_files, 'Copying files from CD', cb),
-            #Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
-            #Task(foo, 'Copying uninstallation files', cb),
+            Task(self.copy_cd_files, 'Copying files from CD', cb),
+            Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
+            Task(foo, 'Copying uninstallation files', cb),
             Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(self.create_cfg_file, 'Creating configuration file', cb),
-            #Task(foo, 'CD cleanup after installation', cb),
-            #Task(self.ejectCD, 'Ejecting CD tray', cb),
+            Task(foo, 'CD cleanup after installation', cb),
+            Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]
 
     def get_usb_installation_tasks(self, associated_tasklist):

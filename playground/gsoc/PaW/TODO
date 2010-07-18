@@ -1,8 +1,6 @@
 TODO
 --------------------
 
-* grub4dos record removal method using bcdedit safely
-
 * solve gui freezing problem during installation.
 
 * make initramfs to boot CD properly from nested folder other than device root.
@@ -39,6 +37,12 @@ TODO
 * better graphical interface.
 
 * py2exe builds.
+    * redirect stdout, stderr to tmp folder, move to logs upon finish.
+    * include required files (images, xml files) in the distribution.
+    * optimize bytecode
+    * remove _ssl module (to be discussed)
+    * 
+
 
 * create pardus 2009 packages for paw-specific installations.
 

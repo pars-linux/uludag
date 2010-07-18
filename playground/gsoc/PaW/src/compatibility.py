@@ -1,3 +1,4 @@
+import sys
 import commands
 import platform
 import ctypes
@@ -50,11 +51,15 @@ class USB():
 	return 'USB: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
 
+
+
+
+
 class Compatibility():
     """A class that handles many OS operations such as rebooting,
     determining CPU arch, CD/DVD-ROMs, USB drives, harddisk partitions. etc.
     """
-    totalMemory, architectureBit, architectureName = None, None, None
+    totalMemory, architectureBit, architectureName = None, 0, None
     disks, cds, usbs = [], [], []
     OS, wmi = None, None
 
@@ -70,12 +75,11 @@ class Compatibility():
             self.winTotalMemory()
 	    self.winArchitecture()
             self.OS = self.wmi.Win32_OperatingSystem()[0] # for .SystemDrvie
-	except (ImportError):
-	    log.debug('Running on Linux.')
+	except ImportError as e:
+	    log.error('Could not execute WMI: %s' % e)
+            sys.exit(1)
 	    # TODO: Windows systems without WMI (ME, 98, NT, 3.1 checks)
 	    self.wmi = None
-	    self.unixTotalMemory()
-	    self.unixArchitecture()
             # TODO: Linux populate CDs
 
 	log.debug('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
@@ -103,38 +107,38 @@ class Compatibility():
 		self.architectureBit, self.architectureName = bits, name
 		self.os = 'Windows'
 
-    def unixArchitecture(self):
-        """
-        Finds CPU arch on unix systems.
-        Postcondition: self.architectureBit, self.architecturename,
-                       self.os updated.
-        """
-	out = commands.getstatusoutput('grep lm /proc/cpuinfo')[1] #if lm exists x64.
-
-	if(out):
-	    name = 'x64'
-	    bits = 64
-	else:
-	    name = 'x86'
-	    bits = 32
-
-	self.architectureBit, self.architectureName = bits, name
-
-	self.os = 'Linux'
-
-    def unixTotalMemory(self):
-        """
-        Finds total physical memory on unix systems by parsing /proc/meminfo.
-        Postcondition: self.totalMemory is in bytes.
-        """
-	file = open('/proc/meminfo')
-	if file:
-	    self.totalMemory = long(file.read().split('\n')[0].split()[1])*1024
-	    #\n splitting lines of /proc/meminfo
-	    #[0] is MemTotal:   123123123 kB line.
-	    #.split()[1] gets 123123123 part
-	    #1024 for kb to byte conversion
-	file.close()
+#    def unixArchitecture(self):
+#        """
+#        Finds CPU arch on unix systems.
+#        Postcondition: self.architectureBit, self.architecturename,
+#                       self.os updated.
+#        """
+#	out = commands.getstatusoutput('grep lm /proc/cpuinfo')[1] #if lm exists x64.
+#
+#	if(out):
+#	    name = 'x64'
+#	    bits = 64
+#	else:
+#	    name = 'x86'
+#	    bits = 32
+#
+#	self.architectureBit, self.architectureName = bits, name
+#
+#	self.os = 'Linux'
+#
+#    def unixTotalMemory(self):
+#        """
+#        Finds total physical memory on unix systems by parsing /proc/meminfo.
+#        Postcondition: self.totalMemory is in bytes.
+#        """
+#	file = open('/proc/meminfo')
+#	if file:
+#	    self.totalMemory = long(file.read().split('\n')[0].split()[1])*1024
+#	    #\n splitting lines of /proc/meminfo
+#	    #[0] is MemTotal:   123123123 kB line.
+#	    #.split()[1] gets 123123123 part
+#	    #1024 for kb to byte conversion
+#	file.close()
 
     def winTotalMemory(self):
         """

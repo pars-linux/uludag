@@ -234,3 +234,21 @@ def backup_bcdedit(bcdedit_path, destination_file):
             return False
     else:
         log.error('No output received from bcdedit command.')
+
+def remove_bcdedit_record(bcdedit_path, guid):
+    """
+    Removal tool for Windows Boot Configuration Data record using bcdedit.exe.
+    bcdedit_path should be given as exact path of bcdedit.exe.
+    GUID should be the specific identifier for boot entry.
+    in format i.e. {75d22dd6-4f86-11de-89fb-001e68399a06}
+    Returns True if the operation is successful; False, if it fails.
+    """
+
+    output = run_shell_cmd([bcdedit_path, '/delete', guid])
+
+    if output:
+        log.debug('Bcdedit record removed successfully.')
+        return True
+    else:
+        log.error('Could not remove bcdedit record.')
+        return False
