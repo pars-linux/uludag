@@ -26,8 +26,8 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    olması, gözden geçirme sürecindeki başka bir paketin bağımlılığı olması vb.)
    hatanın 'Ayrıntılar' kısmına yazılmalıdır.
 
-#. Paketin katkı depolarına alınması gerekiyor ise, hatanın "Ayrıntılar" bölümünde
-   bu durumun açıklanması gerekmektedir.
+#. Paket sorumlusunun paketin bakımını sürdürmek istediği depo (contrib, pardus vs.)
+   adı tercihen sebebiyle birlikte, hatanın "Ayrıntılar" bölümüne yazılmalıdır.
 
 #. Paket, gözden geçirme sürecinde bulunan başka bir pakete bağlı ise o paket
    için açılan hataya bağımlı olarak işaretlenir.
