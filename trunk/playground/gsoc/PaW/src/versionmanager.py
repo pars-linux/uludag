@@ -3,8 +3,8 @@ from PyQt4.QtNetwork import QHttp
 from PyQt4 import QtCore
 from utils import levenshtein
 
-from logger import getLogger
-log = getLogger("VersionManager")
+import logger
+log = logger.getLogger("VersionManager")
 
 class Version():
     def __repr__(self):

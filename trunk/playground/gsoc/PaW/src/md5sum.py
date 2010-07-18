@@ -1,8 +1,8 @@
 from PyQt4 import QtCore
 import hashlib
 
-from logger import getLogger
-log = getLogger("MD5sum")
+import logger
+log = logger.getLogger("MD5sum")
 
 class MD5sum():
     "MD5 sum driver class."

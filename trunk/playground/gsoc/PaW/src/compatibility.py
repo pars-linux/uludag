@@ -3,8 +3,8 @@ import commands
 import platform
 import ctypes
 
-from logger import getLogger
-log = getLogger("Compatibility")
+import logger
+log = logger.getLogger("Compatibility")
 
 # TODO: Write an wrapper class for CD, LogicalDisk and USB.
 class LogicalDisk():

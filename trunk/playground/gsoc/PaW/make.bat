@@ -2,19 +2,23 @@
 
 set prjname=PaW
 set pawexe=PaW.exe
+set srcpath=src\
+set icopath=%srcpath%ui\img\pardus_icon_64_64.ico
 set builddir=build
 set pyinstallerdir=pyinstaller
 
 echo *********************************************
 echo Starting PyInstaller script
-mkdir build
+echo NOTE: Make sure that SVN is installed and in PATH.
 
 echo *********************************************
-echo Removing pyinstaller folder if exists.
+echo Removing pyinstaller and build folder if exists.
 rd /S /Q %pyinstallerdir%
+rd /S /Q %builddir%
+mkdir %builddir%
 
 echo *********************************************
-echo Checking out latest PyInstaller
+echo Checking out the latest pyInstaller via SVN
 svn co http://svn.pyinstaller.org/trunk %pyinstallerdir%
 echo Checked out PyInstaller
 
@@ -25,26 +29,26 @@ python Configure.py
 
 echo *********************************************
 echo Creating specificiations for PaW
-python Makespec.py --onefile --windowed --icon=../src/ui/img/pardus_icon_64_64.ico --name=PaW ..\src\__main__.py
+python Makespec.py --onefile --icon=..\%srcpath%ui\img\pardus_icon_64_64.ico --name=%prjname% ..\%srcpath%__main__.py
 
 echo *********************************************
-echo Building PaW
-python Build.py PaW\PaW.spec
+echo Building %prjname%
+python Build.py %prjname%\%prjname%.spec
 
 echo *********************************************
-echo Copying generated .exe file to build\.
-copy PaW\dist\PaW.exe ..\build\
+echo Copying generated .exe file to %builddir%\.
+copy %prjname%\dist\%prjname%.exe ..\%builddir%\
 
 echo *********************************************
 echo Copying other required files.
 cd ..
-copy src\versions.xml build\
-copy src\ui\img\pardus_icon_48_48.ico build\
+copy %srcpath%versions.xml %builddir%\
+copy %srcpath%ui\img\pardus_icon_48_48.ico %builddir%\
 
 echo *********************************************
 echo Removing pyinstaller
 rd /S /Q %pyinstallerdir%
 
 echo *********************************************
-echo PaW.exe is ready under 'build/'. Press any key to exit.
-pause "You are not expected to understand this."
+echo %prjname%.exe is ready under '%builddir%/'. Press any key to exit.
+pause>NUL

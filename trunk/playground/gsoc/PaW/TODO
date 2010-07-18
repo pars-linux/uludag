@@ -18,8 +18,6 @@ TODO
 
 * installation cleanup
 
-* logging handler for a log file and infobox on installing screen.
-
 * Live CD or ISO detection feature for versions prior to Pardus 2011, prevent
   usage of those Install CDs or Install ISO files.
 

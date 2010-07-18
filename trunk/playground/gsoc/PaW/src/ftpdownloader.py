@@ -3,8 +3,9 @@ import time
 import math
 from PyQt4.QtNetwork import QFtp
 from PyQt4 import QtCore
-from logger import getLogger
-log = getLogger("FTPDownloader")
+
+import logger
+log = logger.getLogger("FTPDownloader")
 
 class FTPDownloader(QFtp):
     '''ISO downloader via ftp protocol specialized for
