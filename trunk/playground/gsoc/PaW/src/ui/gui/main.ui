@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>ui/img/pardus_icon_48_48.ico</normaloff>ui/img/pardus_icon_48_48.ico</iconset>
+    <normaloff>pardus_icon_48_48.ico</normaloff>pardus_icon_48_48.ico</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
