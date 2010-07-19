@@ -44,11 +44,12 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 			performBackup()
 
 	def connectMainSignals(self):
-		self.connect(self.backupButton, SIGNAL("clicked(bool)"), slotPerformBackup)
-		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), slotPerformRestore)
+		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), archiveDatabase)
+		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), self.slotPerformRestore)
 		self.connect(self.monitor, SIGNAL("backupDone"), self.slotUpdateView)
                 self.connect(self.backupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotShowLog)
                 self.connect(self.backupList, SIGNAL("itemSelectionChanged()"), self.slotShowLog)
+                self.connect(self.actionAbout_Qt, SIGNAL("triggered(bool)"),self.slotAboutQt)
 
 	def slotUpdateView(self):
 		#update the backupList view
@@ -81,3 +82,31 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                     else:
                         self.backupLog.setTextColor(Qt.black)
                         self.backupLog.append(i)
+
+        def slotPerformRestore(self):
+                selectionList = self.backupList.selectedItems()
+                if selectionList == []:
+                    self.showRestoreError()
+                else:
+                    #extract the commit id and call restore function
+                    for i in selectionList:
+                        selection = self.commitMap[str(i.text())]
+                        restore(str(selection))
+                    self.showRestoreDone()
+                    
+        def showRestoreError(self):
+                msgBox = QMessageBox()
+                msgBox.setWindowTitle("Restore Error")
+                msgBox.setIcon(QMessageBox.Critical)
+                msgBox.setText("Please select a snapshot from the list to restore!")
+                ret = msgBox.exec_()
+                
+        def showRestoreDone(self):
+                msgBox = QMessageBox()
+                msgBox.setWindowTitle("Restore Complete")
+                msgBox.setIcon(QMessageBox.Information)
+                msgBox.setText("Your configuration files have been restored to selected backup.\nPlease restart your session")
+                ret = msgBox.exec_()
+                
+        def slotAboutQt(self):
+                about = QMessageBox.aboutQt(self)

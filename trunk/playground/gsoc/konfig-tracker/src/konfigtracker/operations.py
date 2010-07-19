@@ -11,7 +11,7 @@ db_path = str(KStandardDirs().localkdedir() + "konfigtracker-db")
 
 # Source path of configuration files
 source_path = str(KStandardDirs().localkdedir() + "share/config")
-restore_path = str(KStandardDirs().localkdedir() + "share")
+restore_path = str(KStandardDirs().localkdedir() + "share/config")
 
 def createDatabase(path):
 	"""
@@ -23,7 +23,7 @@ def createDatabase(path):
 def gitCommit():
 	backupTime = strftime("%a, %d %b %Y %H:%M:%S", localtime())
 	repo = git.Git(db_path)
-	message = "Configuration Backup on : "+ backupTime
+        message = "Configuration Backup on : " + backupTime
 	try:
 		repo.execute(["git","commit","-a","-m",message])
 	except git.errors.GitCommandError:
@@ -53,33 +53,20 @@ def restore(commitId):
 	"""
 	#check whether this commitId is at the head now. If yes, don't perform the restore.
 	repo = git.Git(db_path)
+        srcPath = "/tmp/config"
+        DirUtil.remove_tree(srcPath)
 	repo.execute(["git","read-tree", commitId])
 	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
 	srcPath = "/tmp/config"
-	DirUtil.copy_tree(srcPath, restore_path, update=1)
-
-def restoreParent(commitId):
-	"""
-	Restore to parent of a commit passed
-	"""
-	repo = git.Git(db_path)
-	parent = repo.commits(commitId).parents
-	repo.execute(["git","read-tree",parent])
-	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
-	srcPath = "/tmp/config"
-	DirUtil.copy_tree(srcPath, restore_path, update=1)
+	if DirUtil.copy_tree(srcPath, restore_path, update=1):
+            addToDatabase()
 
 def archiveDatabase(commitId):
 	"""
 	Pack the data at this commit into an archive
 	"""
-	pass
-
-def slotPerformBackup():
-	pass
-
-def slotPerformRestore():
-	pass
+        repo = git.Repo(db_path)
+        
 
 def getCommitMap():
 	"""

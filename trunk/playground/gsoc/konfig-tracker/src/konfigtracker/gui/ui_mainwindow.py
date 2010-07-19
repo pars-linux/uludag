@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Sun Jul 18 02:56:15 2010
+# Created: Mon Jul 19 20:09:45 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -21,23 +21,18 @@ class Ui_MainWindow(object):
         self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtGui.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.horizontalLayout_2 = QtGui.QHBoxLayout(self.frame)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.horizontalLayout = QtGui.QHBoxLayout()
-        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.statusLabel = QtGui.QLabel(self.frame)
+        self.statusLabel.setGeometry(QtCore.QRect(10, 10, 181, 16))
+        self.statusLabel.setObjectName("statusLabel")
         self.backupList = QtGui.QListWidget(self.frame)
+        self.backupList.setGeometry(QtCore.QRect(11, 31, 521, 261))
         self.backupList.setObjectName("backupList")
-        self.horizontalLayout.addWidget(self.backupList)
-        self.verticalLayout = QtGui.QVBoxLayout()
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.backupButton = QtGui.QPushButton(self.frame)
-        self.backupButton.setObjectName("backupButton")
-        self.verticalLayout.addWidget(self.backupButton)
+        self.archiveButton = QtGui.QPushButton(self.frame)
+        self.archiveButton.setGeometry(QtCore.QRect(590, 110, 131, 27))
+        self.archiveButton.setObjectName("archiveButton")
         self.restoreButton = QtGui.QPushButton(self.frame)
+        self.restoreButton.setGeometry(QtCore.QRect(590, 150, 131, 27))
         self.restoreButton.setObjectName("restoreButton")
-        self.verticalLayout.addWidget(self.restoreButton)
-        self.horizontalLayout.addLayout(self.verticalLayout)
-        self.horizontalLayout_2.addLayout(self.horizontalLayout)
         self.frame_2 = QtGui.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(10, 320, 781, 221))
         self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
@@ -48,6 +43,8 @@ class Ui_MainWindow(object):
         self.label.setObjectName("label")
         self.backupLog = QtGui.QTextBrowser(self.centralwidget)
         self.backupLog.setGeometry(QtCore.QRect(20, 350, 761, 181))
+        self.backupLog.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
+        self.backupLog.setAutoFormatting(QtGui.QTextEdit.AutoAll)
         self.backupLog.setObjectName("backupLog")
         self.layoutWidget = QtGui.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 2, 2))
@@ -65,7 +62,7 @@ class Ui_MainWindow(object):
         self.splitter.setObjectName("splitter")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtGui.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 26))
         self.menubar.setObjectName("menubar")
         self.menuFile = QtGui.QMenu(self.menubar)
         self.menuFile.setObjectName("menuFile")
@@ -100,7 +97,6 @@ class Ui_MainWindow(object):
         self.menuFile.addSeparator()
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.actionExit)
-        self.menuOptions.addAction(self.actionBackup_Now)
         self.menuOptions.addAction(self.actionTag_Selected_Backup)
         self.menuOptions.addAction(self.actionArchive_Selected_Backup)
         self.menuRestore.addAction(self.actionRestore_Selected_Backup)
@@ -118,9 +114,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "KonfigTracker - KDE Configuration Monitor", None, QtGui.QApplication.UnicodeUTF8))
-        self.backupButton.setText(QtGui.QApplication.translate("MainWindow", "Backup", None, QtGui.QApplication.UnicodeUTF8))
+        self.statusLabel.setText(QtGui.QApplication.translate("MainWindow", "KonfigTracker Database Status", None, QtGui.QApplication.UnicodeUTF8))
+        self.archiveButton.setText(QtGui.QApplication.translate("MainWindow", "Archive", None, QtGui.QApplication.UnicodeUTF8))
         self.restoreButton.setText(QtGui.QApplication.translate("MainWindow", "Restore", None, QtGui.QApplication.UnicodeUTF8))
-        self.label.setText(QtGui.QApplication.translate("MainWindow", "Backup Description ", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("MainWindow", "Backup Information", None, QtGui.QApplication.UnicodeUTF8))
+        self.backupLog.setToolTip(QtGui.QApplication.translate("MainWindow", "View backup details", None, QtGui.QApplication.UnicodeUTF8))
         self.menuFile.setTitle(QtGui.QApplication.translate("MainWindow", "File", None, QtGui.QApplication.UnicodeUTF8))
         self.menuOptions.setTitle(QtGui.QApplication.translate("MainWindow", "Backup", None, QtGui.QApplication.UnicodeUTF8))
         self.menuRestore.setTitle(QtGui.QApplication.translate("MainWindow", "Restore", None, QtGui.QApplication.UnicodeUTF8))
