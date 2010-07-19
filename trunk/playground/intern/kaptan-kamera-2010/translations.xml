@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>python-v4l2capture</Name>
+        <Summary xml:lang="tr">video4linux2 ile video görüntüsü yakalamaya yarayan kütüphanedir.</Summary>
+        <Description xml:lang="tr">python-v4l2capture, video4linux2 ile videodan görüntü yakalamaya yarayan, kullanımı kolay bir Python uzantısıdır.</Description>
+    </Source>
+</PISI>
+
