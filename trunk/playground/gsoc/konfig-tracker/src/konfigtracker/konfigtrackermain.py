@@ -44,7 +44,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 			performBackup()
 
 	def connectMainSignals(self):
-		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), archiveDatabase)
+		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), self.slotExportDatabase)
 		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), self.slotPerformRestore)
 		self.connect(self.monitor, SIGNAL("backupDone"), self.slotUpdateView)
                 self.connect(self.backupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotShowLog)
@@ -86,7 +86,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
         def slotPerformRestore(self):
                 selectionList = self.backupList.selectedItems()
                 if selectionList == []:
-                    self.showRestoreError()
+                    self.showError()
                 else:
                     #extract the commit id and call restore function
                     for i in selectionList:
@@ -94,11 +94,11 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                         restore(str(selection))
                     self.showRestoreDone()
                     
-        def showRestoreError(self):
+        def showError(self):
                 msgBox = QMessageBox()
-                msgBox.setWindowTitle("Restore Error")
+                msgBox.setWindowTitle("KonfigTracker Error")
                 msgBox.setIcon(QMessageBox.Critical)
-                msgBox.setText("Please select a snapshot from the list to restore!")
+                msgBox.setText("Please select a snapshot from the list!")
                 ret = msgBox.exec_()
                 
         def showRestoreDone(self):
@@ -110,3 +110,17 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                 
         def slotAboutQt(self):
                 about = QMessageBox.aboutQt(self)
+                
+        def slotExportDatabase(self):
+                selectionList = self.backupList.selectedItems()
+                if selectionList == []:
+                    self.showError()
+                else:
+                    #show a QFileDialog for saving
+                    fileName = QFileDialog.getSaveFileName(\
+                                                           self,"Save archive",\
+                                                            QDir.homePath() + "/untitled.tar.gz", \
+                                                           "Archives (*.tar.gz)")
+                    for i in selectionList:
+                        selection = self.commitMap[str(i.text())]
+                        exportDatabase(selection,fileName)
