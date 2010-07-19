@@ -1,5 +1,6 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 from PyKDE4.kdecore import KStandardDirs
+from PyQt4.QtCore import QString
 
 from time import strftime, localtime, asctime 
 import distutils.dir_util as DirUtil
@@ -22,10 +23,9 @@ def createDatabase(path):
 def gitCommit():
 	backupTime = strftime("%a, %d %b %Y %H:%M:%S", localtime())
 	repo = git.Git(db_path)
-	message = "Backup on "+ backupTime
+	message = "Configuration Backup on : "+ backupTime
 	try:
 		repo.execute(["git","commit","-a","-m",message])
-		print message
 	except git.errors.GitCommandError:
 		pass
 
@@ -75,14 +75,6 @@ def archiveDatabase(commitId):
 	"""
 	pass
 
-def slotUpdateView():
-	"""
-	Slot which will return a list of commits. This will be used to update the ui
-	"""
-	repo = git.Repo(db_path)
-	commit_list = repo.commits()
-	print commit_list[0].id
-
 def slotPerformBackup():
 	pass
 
@@ -91,8 +83,17 @@ def slotPerformRestore():
 
 def getCommitMap():
 	"""
-	Get the list of commits from database, form a dictionary of commitid and committed_date
+	Get the list of commits from database, form a dictionary of commitid
+        and committed_date
 	"""
 	repo = git.Repo(db_path)
 	commit_list = repo.commits('master',max_count=100)
-	return dict([(c.id,asctime(c.committed_date)) for c in commit_list])
+	return dict([(c.message,c.id) for c in commit_list])
+
+def getCommitLog(commit):
+        """
+        Return the commit log as a QString
+        """
+        repo = git.Git(db_path)
+        commitLog = repo.execute(["git","show",commit])
+        return QString(commitLog)
