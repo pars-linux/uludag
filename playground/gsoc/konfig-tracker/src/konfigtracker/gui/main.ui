@@ -32,33 +32,55 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QListWidget" name="backupList"/>
-       </item>
-       <item>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <widget class="QPushButton" name="backupButton">
-           <property name="text">
-            <string>Backup</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="restoreButton">
-           <property name="text">
-            <string>Restore</string>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </item>
-    </layout>
+    <widget class="QLabel" name="statusLabel">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>181</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>KonfigTracker Database Status</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="backupList">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>31</y>
+       <width>521</width>
+       <height>261</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="archiveButton">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>110</y>
+       <width>131</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Archive</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="restoreButton">
+     <property name="geometry">
+      <rect>
+       <x>590</x>
+       <y>150</y>
+       <width>131</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Restore</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
@@ -85,7 +107,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Backup Description </string>
+      <string>Backup Information</string>
      </property>
     </widget>
    </widget>
@@ -97,6 +119,15 @@
       <width>761</width>
       <height>181</height>
      </rect>
+    </property>
+    <property name="toolTip">
+     <string>View backup details</string>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="autoFormatting">
+     <set>QTextEdit::AutoAll</set>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
@@ -141,7 +172,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -156,7 +187,6 @@
     <property name="title">
      <string>Backup</string>
     </property>
-    <addaction name="actionBackup_Now"/>
     <addaction name="actionTag_Selected_Backup"/>
     <addaction name="actionArchive_Selected_Backup"/>
    </widget>

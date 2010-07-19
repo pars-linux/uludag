@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 from PyKDE4.kio import KDirWatch
 from operations import *
 
