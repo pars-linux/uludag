@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Mon Jul 19 20:09:45 2010
+# Created: Mon Jul 19 22:18:12 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "KonfigTracker - KDE Configuration Monitor", None, QtGui.QApplication.UnicodeUTF8))
         self.statusLabel.setText(QtGui.QApplication.translate("MainWindow", "KonfigTracker Database Status", None, QtGui.QApplication.UnicodeUTF8))
-        self.archiveButton.setText(QtGui.QApplication.translate("MainWindow", "Archive", None, QtGui.QApplication.UnicodeUTF8))
+        self.archiveButton.setText(QtGui.QApplication.translate("MainWindow", "Export as archive", None, QtGui.QApplication.UnicodeUTF8))
         self.restoreButton.setText(QtGui.QApplication.translate("MainWindow", "Restore", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "Backup Information", None, QtGui.QApplication.UnicodeUTF8))
         self.backupLog.setToolTip(QtGui.QApplication.translate("MainWindow", "View backup details", None, QtGui.QApplication.UnicodeUTF8))

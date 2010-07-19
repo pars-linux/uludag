@@ -61,12 +61,13 @@ def restore(commitId):
 	if DirUtil.copy_tree(srcPath, restore_path, update=1):
             addToDatabase()
 
-def archiveDatabase(commitId):
+def exportDatabase(commitId, savePath):
 	"""
 	Pack the data at this commit into an archive
 	"""
-        repo = git.Repo(db_path)
-        
+        repo = git.Git(db_path)
+        repo.execute(["git", "archive", commitId, "-o", savePath])
+                
 
 def getCommitMap():
 	"""

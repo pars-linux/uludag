@@ -65,7 +65,7 @@
       </rect>
      </property>
      <property name="text">
-      <string>Archive</string>
+      <string>Export as archive</string>
      </property>
     </widget>
     <widget class="QPushButton" name="restoreButton">
