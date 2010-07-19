@@ -127,7 +127,7 @@
      <enum>Qt::ScrollBarAlwaysOff</enum>
     </property>
     <property name="autoFormatting">
-     <set>QTextEdit::AutoAll</set>
+     <set>QTextEdit::AutoNone</set>
     </property>
    </widget>
    <widget class="QWidget" name="layoutWidget">
