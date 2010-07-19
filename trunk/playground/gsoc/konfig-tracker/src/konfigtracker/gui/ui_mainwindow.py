@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Mon Jul 19 22:18:12 2010
+# Created: Mon Jul 19 22:24:42 2010
 #      by: PyQt4 UI code generator 4.7.2
 #
 # WARNING! All changes made in this file will be lost!
@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.backupLog = QtGui.QTextBrowser(self.centralwidget)
         self.backupLog.setGeometry(QtCore.QRect(20, 350, 761, 181))
         self.backupLog.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
-        self.backupLog.setAutoFormatting(QtGui.QTextEdit.AutoAll)
+        self.backupLog.setAutoFormatting(QtGui.QTextEdit.AutoNone)
         self.backupLog.setObjectName("backupLog")
         self.layoutWidget = QtGui.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 2, 2))
