@@ -1,0 +1,34 @@
+--- v4l2capture.c	2010-04-01 10:58:17.000000000 +0300
++++ v4l2capture.c.new	2010-07-20 14:34:48.745037335 +0300
+@@ -142,13 +142,29 @@
+ {
+   ASSERT_OPEN;
+   struct v4l2_capability caps;
++  PyObject *list;
++    
++  list = PyList_New(0);
+ 
+   if(my_ioctl(self->fd, VIDIOC_QUERYCAP, &caps))
+     {
+       return NULL;
+     }
+-
+-  return Py_BuildValue("sss", caps.driver, caps.card, caps.bus_info);
++    
++  if ((caps.capabilities & V4L2_CAP_VIDEO_CAPTURE) > 0)
++    PyList_Append(list, PyString_FromString("capture"));
++  if ((caps.capabilities & V4L2_CAP_VIDEO_OUTPUT) > 0)
++    PyList_Append(list, PyString_FromString("video_output"));
++  if ((caps.capabilities & V4L2_CAP_VIDEO_OVERLAY) > 0)
++    PyList_Append(list, PyString_FromString("video_overlay"));
++  if ((caps.capabilities & V4L2_CAP_AUDIO) > 0)
++    PyList_Append(list, PyString_FromString("audio"));
++  if ((caps.capabilities & V4L2_CAP_TUNER) > 0)
++    PyList_Append(list, PyString_FromString("tuner"));
++  if ((caps.capabilities & V4L2_CAP_RADIO) > 0)
++    PyList_Append(list, PyString_FromString("radio"));
++    
++  return Py_BuildValue("sssO", caps.driver, caps.card, caps.bus_info, list);
+ }
+ 
+ static PyObject *Video_device_set_format(Video_device *self, PyObject *args)

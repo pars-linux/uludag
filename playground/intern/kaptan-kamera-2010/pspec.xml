@@ -17,8 +17,11 @@
         <BuildDependencies>
             <Dependency>libv4l</Dependency>
         </BuildDependencies>
+        <Patches>
+            <Patch level="1">capabilities_support.patch</Patch>
+        </Patches>
     </Source>
-
+    
     <Package>
         <Name>python-v4l2capture</Name>
         <RuntimeDependencies>
