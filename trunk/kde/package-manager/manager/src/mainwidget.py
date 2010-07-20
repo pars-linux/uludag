@@ -27,7 +27,7 @@ from PyQt4.QtCore import SIGNAL
 from context import *
 from context import _time
 
-from ui_mainwidget_kde4 import Ui_MainWidget
+from ui_mainwidget_v3 import Ui_MainWidget
 
 from packageproxy import PackageProxy
 from packagemodel import PackageModel
@@ -97,7 +97,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
-        self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
+        # self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("clicked(bool)"), self.toggleSelectAll)
