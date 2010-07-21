@@ -97,8 +97,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>850</width>
-        <height>557</height>
+        <width>846</width>
+        <height>551</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -223,7 +223,7 @@ QPushButton::flat:pressed{
               </property>
               <item>
                <property name="text">
-                <string>Select</string>
+                <string>Select a camera</string>
                </property>
               </item>
              </widget>

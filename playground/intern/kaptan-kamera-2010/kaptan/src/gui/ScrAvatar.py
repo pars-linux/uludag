@@ -71,6 +71,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.takeAgainButton.hide()
            
     def activateCam(self):
+      # Skip first item
+      if self.ui.comboBox.currentIndex() == 0:
+          return
       self.ui.takeButton.show()
       self.ui.saveButton.hide()
       self.ui.takeAgainButton.hide()
