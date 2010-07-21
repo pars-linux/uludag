@@ -50,10 +50,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
 	    cam = v4l2capture.Video_device(os.path.join("/dev", dev))
 	    cam_driver, cam_card, cam_bus, cam_capabilities = cam.get_info()
 	    cam_str = "%s - %s" % (cam_card, os.path.join("/dev", dev))
-	    
-	    if "capture" in cam_capabilities:
-	      if "radio" not in cam_capabilities or "tuner" not in cam_capabilities:
-		self.ui.comboBox.addItem(cam_str)
+
+	    if "video_capture" in cam_capabilities:
+			if "radio" in cam_capabilities or "tuner" in cam_capabilities:
+				continue
+			self.ui.comboBox.addItem(cam_str)
 	    
 	  #else:
 	  #  self.connect(self.ui.takeButton, QtCore.SIGNAL('clicked()'), self.noDeviceMessage)
