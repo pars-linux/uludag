@@ -104,7 +104,7 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
 
-        for flename in glob.glob("data/*.desktop.in"):
+        for filename in glob.glob("data/*.desktop.in"):
             os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
 
         for filename in glob.glob1("data", "*.desktop"):
