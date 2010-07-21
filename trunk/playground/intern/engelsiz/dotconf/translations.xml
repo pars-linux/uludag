@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>dotconf</Name>
-        <Summary xml:lang="tr">yapılandırma dosyası parse etme kütüphanesi</Summary>
-        <Description xml:lang="tr">Dot.conf basit kullanımlı ve güçlü yapılandırma-dosyası oluşturma kütüphanesi. C dilinde yazılmış. OpenTTS için gerekli.</Description>
-    </Source>
-</PISI>
-
