@@ -68,6 +68,11 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.summaryDialog = SummaryDialog()
         self.connectOperationSignals()
 
+        self.typeFilter.addItem(KIcon("view-refresh"), i18n("Show Installable Packages"))
+        self.typeFilter.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
+        self.typeFilter.addItem(KIcon("list-add"), i18n("Show Upgradable Packages"))
+        self.typeFilter.activated.connect(self.switchState)
+
     def initializeInfoBox(self):
         # An info label to show a proper information,
         # if there is no updates available.

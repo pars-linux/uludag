@@ -8,6 +8,7 @@
       <Action name="showUpgradeAction" />
     </Menu>
   </MenuBar>
+  <!--
   <ToolBar iconSize="16" name="mainToolBar" >
     <text>Main Toolbar</text>
       <Action name="showInstallAction" />
@@ -16,4 +17,5 @@
       <Action name="updateRepoAction" />
       <ActionList name="dynamicActionlist" />
   </ToolBar>
+  -->
 </gui>
