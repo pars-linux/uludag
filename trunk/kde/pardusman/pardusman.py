@@ -56,7 +56,7 @@ def maker(op, project_file):
                     for component in missing_components:
                         if component in project.selected_components:
                             project.selected_components.remove(component)
-                update_repo=False
+                update_repo = False
             if len(missing_packages):
                 print "WARNING: There are missing packages. Removing."
                 if project.package_collections:
@@ -68,7 +68,7 @@ def maker(op, project_file):
                     for package in missing_packages:
                         if package in project.selected_packages:
                             project.selected_packages.remove(package)
-                update_repo=False
+                update_repo = False
             break
         maker.make_repos(project)
 

@@ -84,11 +84,11 @@ def generate_grub_conf(project, kernel, initramfs):
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
 
-    dict = {}
-    dict["kernel"] = kernel
-    dict["initramfs"] = initramfs
-    dict["title"] = project.title
-    dict["exparams"] = project.extra_params or ''
+    grub_dict = {}
+    grub_dict["kernel"] = kernel
+    grub_dict["initramfs"] = initramfs
+    grub_dict["title"] = project.title
+    grub_dict["exparams"] = project.extra_params or ''
 
     path = os.path.join(image_dir, "usr/share/grub/templates")
     dest = os.path.join(iso_dir, "boot/grub")
@@ -96,7 +96,7 @@ def generate_grub_conf(project, kernel, initramfs):
         if name.startswith("menu"):
             data = file(os.path.join(path, name)).read()
             f = file(os.path.join(dest, name), "w")
-            f.write(data % dict)
+            f.write(data % grub_dict)
             f.close()
 
 def setup_grub(project):
@@ -150,7 +150,7 @@ def generate_isolinux_conf(project):
         dict["rescue_template"] = """
 label rescue
     kernel /boot/kernel
-    append initrd=/boot/initrd yali4=rescue splash=silent quiet %(exparams)s
+    append initrd=/boot/initrd yali=rescue splash=silent quiet %(exparams)s
 """ % dict
 
     isolinux_tmpl = """
@@ -219,8 +219,6 @@ def setup_isolinux(project):
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
     repo = project.get_repo()
-    kernel = ""
-    initramfs = ""
 
     # Setup dir
     path = os.path.join(iso_dir, "boot/isolinux")
@@ -262,25 +260,24 @@ def setup_isolinux(project):
 
 def setup_live_kdm(project):
     image_dir = project.image_dir()
-    if "kdebase" in project.all_packages :
-        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
-    elif "kdebase4" in project.all_packages :
-        # FIXME : find a generic way to do this
-        # Heyaa, there's no kdebase4 in 2009, this should be fixed!
-        path = os.path.join(image_dir, "etc/X11/kdm/kdmrc4")
-    lines = []
-    for line in file(path):
-        if line.startswith("#AutoLoginEnable"):
-            lines.append("AutoLoginEnable=true\n")
-        elif line.startswith("#AutoLoginUser"):
-            lines.append("AutoLoginUser=pars\n")
-        elif line.startswith("#ServerTimeout="):
-            lines.append("ServerTimeout=60\n")
-        else:
-            lines.append(line)
-    file(path, "w").write("".join(lines))
+    kdmrc_path = os.path.join(image_dir, "etc/X11/kdm/kdmrc")
+    if os.path.exists(kdmrc_path):
+        lines = []
+        for line in open(kdmrc_path, "r").readlines():
+            if line.startswith("#AutoLoginEnable"):
+                lines.append("AutoLoginEnable=true\n")
+            elif line.startswith("#AutoLoginUser"):
+                lines.append("AutoLoginUser=pars\n")
+            elif line.startswith("#ServerTimeout="):
+                lines.append("ServerTimeout=60\n")
+            else:
+                lines.append(line)
+        open(kdmrc_path, "w").write("".join(lines))
+    else:
+        print "*** %s doesn't exist, setup_live_kdm() returned" % kdmrc_path
 
 def setup_live_policykit_conf(project):
+    #FIXME: This should be ported to polkit-1!
     policykit_conf_tmpl = """<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
 
 <!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
@@ -306,7 +303,7 @@ def setup_live_policykit_conf(project):
 
 def copyCollectionIcon(project):
     image_dir = project.image_dir()
-    destination = os.path.join(image_dir, "usr/share/yali4/data")
+    destination = os.path.join(image_dir, "usr/share/yali/data")
     collectionDir = os.path.join(destination, "index")
     for collection in project.package_collections:
         run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
@@ -314,7 +311,7 @@ def copyCollectionIcon(project):
 def copyPisiIndex(project):
     image_dir = project.image_dir()
     if project.package_collections:
-        destination = os.path.join(image_dir, "usr/share/yali4/data")
+        destination = os.path.join(image_dir, "usr/share/yali/data")
         collectionDir = os.path.join(destination, "index")
         collectionFile = os.path.join(destination, "index/collection.xml")
         run('mkdir %s' % collectionDir)
@@ -324,7 +321,7 @@ def copyPisiIndex(project):
         for collection in project.package_collections:
             source = os.path.join(project.install_repo_dir(), "%s-index.xml.bz2" % collection._id)
             run('cp -PR "%s" "%s"' % (source, collectionDir))
-            run('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
+            run('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir, os.path.basename(source))))
             run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
 
             #print('cp -PR "%s" "%s"' % (source, collectionDir))
@@ -334,7 +331,7 @@ def copyPisiIndex(project):
         copyCollectionIcon(project)
 
     # Copy All Collection Packages index as pisi-index.xml.bz2 for dvd and default cd installation
-    path = os.path.join(image_dir, "usr/share/yali4/data/pisi-index.xml.bz2")
+    path = os.path.join(image_dir, "usr/share/yali/data/pisi-index.xml.bz2")
     repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
 
     run('cp -PR "%s" "%s"' % (repo, path))
@@ -384,7 +381,7 @@ def make_repos(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir(clean=True)
         if project.type == "install":
-            imagedeps = project.all_install_image_packages or repo.full_deps("yali4")
+            imagedeps = project.all_install_image_packages or repo.full_deps("yali")
             xterm_title("Preparing image repo for installation")
         else:
             imagedeps = project.all_packages
@@ -414,14 +411,14 @@ def make_repos(project):
         print "Keyboard Interrupt: make_repo() cancelled."
         sys.exit(1)
 
-def check_file(repo_dir, name, hash):
+def check_file(repo_dir, name, _hash):
     path = os.path.join(repo_dir, name)
     if not os.path.exists(path):
         print "\nPackage missing: %s" % path
         return
     data = file(path).read()
     cur_hash = hashlib.sha1(data).hexdigest()
-    if cur_hash != hash:
+    if cur_hash != _hash:
         print "\nWrong hash: %s" % path
 
 def check_repo_files(project):
@@ -432,7 +429,7 @@ def check_repo_files(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir()
         if project.type == "install":
-            imagedeps = project.all_install_image_packages or repo.full_deps("yali4")
+            imagedeps = project.all_install_image_packages or repo.full_deps("yali")
         else:
             imagedeps = project.all_packages
         i = 0
@@ -478,7 +475,7 @@ def make_image(project):
             if project.all_install_image_packages:
                 install_image_packages = " ".join(project.all_install_image_packages)
             else:
-                install_image_packages = " ".join(repo.full_deps("yali4"))
+                install_image_packages = " ".join(repo.full_deps("yali"))
             run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, install_image_packages))
             if project.plugin_package:
                 plugin_package = project.plugin_package
@@ -514,15 +511,16 @@ def make_image(project):
         chrun("/usr/bin/pisi configure-pending baselayout")
         chrun("/usr/bin/pisi configure-pending")
 
-        # FIXME : find a generic way to do this
-        if "kdebase4" in project.all_packages:
-            # Disable Nepomuk in live CDs
-            if project.type == "live":
+        # Disable Nepomuk in live CDs
+        if project.type == "live":
+            try:
                 os.unlink("%s/usr/kde/4/share/autostart/nepomukserver.desktop" % image_dir)
+            except OSError:
+                pass
 
         if project.type == "install":
             # FIXME: Do not hard code installer name
-            dm_config = "DISPLAY_MANAGER=yali4"
+            dm_config = "DISPLAY_MANAGER=yali"
 
             # Write default display manager config
             image_dir = project.image_dir()
@@ -549,7 +547,7 @@ def make_image(project):
 
         file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
 
-        if project.type != "install" and ("kdebase" in project.all_packages or "kdebase4" in project.all_packages):
+        if project.type != "install" and ("kdebase" in project.all_packages):
             setup_live_kdm(project)
             setup_live_policykit_conf(project)
 
@@ -639,12 +637,3 @@ def make_iso(project):
     except KeyboardInterrupt:
         print "Keyboard Interrupt: make_iso() cancelled."
         sys.exit(1)
-
-
-def make(project):
-    make_image(project)
-    if project.type == "install":
-        make_install_repo(project)
-    make_iso(project)
-    print "ISO is ready!"
-    xterm_title("ISO is ready")
