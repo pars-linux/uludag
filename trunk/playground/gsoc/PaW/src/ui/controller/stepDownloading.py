@@ -127,8 +127,12 @@ class Widget(QtGui.QWidget, StepWidget):
 	    return False
 
     def onSubmit(self):
-	# TODO: submit downloaded ISO path.
-        return False
+	if self.downloaded:
+            self.mainEngine.config.isoPath = self.mainEngine.ftpDownloader.filePath
+            return True
+        else:
+            QtGui.QMessageBox.error(self, 'Error', 'ISO File is not downloaded or the downloaded file is corrupt. Try again.', QtGui.QMessageBox.OK)
+            return False
 
     def nextIndex(self):
-	return 7
+	return 8
