@@ -20,7 +20,7 @@ import traceback
 # PyKDE4 Imports
 from PyKDE4.kdeui import KUniqueApplication, KApplication
 from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
-from mainwindow_kde4 import MainWindow
+from mainwindow import MainWindow
 
 # Package Manager Specific Imports
 import config
