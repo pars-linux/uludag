@@ -1040,7 +1040,7 @@
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
-        <SelectedPackage>yali4</SelectedPackage>
+        <SelectedPackage>yali</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>PolicyKit</Package>
         <Package>PolicyKit-devel</Package>
@@ -1313,7 +1313,7 @@
         <Package>xorg-video-vesa</Package>
         <Package>xorg-video-vmware</Package>
         <Package>xorg-video-voodoo</Package>
-        <Package>yali4</Package>
+        <Package>yali</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
         <Package>zorg</Package>
