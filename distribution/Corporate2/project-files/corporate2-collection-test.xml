@@ -2,7 +2,7 @@
     <Title>DVD-TEST</Title>
     <WorkDir>/tmp/CD-image/iso</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
-    <ExtraParameters>yali4=dvdinstall</ExtraParameters>
+    <ExtraParameters>yali=dvdinstall</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
             <Id>g7IRkDIIw9xhazY</Id>
@@ -1423,7 +1423,7 @@
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
-        <SelectedPackage>yali4</SelectedPackage>
+        <SelectedPackage>yali</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>PyQt</Package>
         <Package>acl</Package>
@@ -1753,7 +1753,7 @@
         <Package>xorg-video-vesa</Package>
         <Package>xorg-video-vmware</Package>
         <Package>xorg-video-voodoo</Package>
-        <Package>yali4</Package>
+        <Package>yali</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
         <Package>zorg</Package>
