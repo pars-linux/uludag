@@ -52,6 +52,7 @@
             <arg name="remotes" type="aa{sv}" direction="out"/>
         </method>
         <method name="setRemote" action_id="tr.org.pardus.comar.net.link.set">
+            <arg name="name" type="s" direction="in"/>
             <arg name="remote" type="s" direction="in"/>
             <annotation name="org.freedesktop.DBus.Method.NoReply" value="true"/>
         </method>
