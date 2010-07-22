@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2010, TUBITAK/UEKAE
+# Copyright (C) 2009, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,8 +12,11 @@
 #
 
 from PyQt4 import QtGui
-from PyQt4 import QtCore
-from PyQt4.QtCore import SIGNAL
+from PyQt4.QtGui import QLabel
+from PyQt4.QtCore import *
+
+from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
 
 from ui_mainwindow import Ui_MainWindow
 
@@ -22,43 +25,56 @@ from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
 
-import helpdialog
 import backend
 import config
+import context
+from context import _time
 
-from context import *
-
-class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
-    def __init__(self, app = None, silence = False):
-        QtGui.QMainWindow.__init__(self)
+class MainWindow(KXmlGuiWindow, Ui_MainWindow):
+    def __init__(self, app = None):
+        KXmlGuiWindow.__init__(self, None)
         self.setupUi(self)
+        self.app = app
         self.iface = backend.pm.Iface()
-        self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
-        self.connect(app, SIGNAL("aboutToQuit()"), self.slotQuit)
-        self.setCentralWidget(MainWidget(self, silence))
+        _time()
+        self.setWindowIcon(KIcon(":/data/package-manager.png"))
+        self.setCentralWidget(MainWidget(self))
+        self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
+        self.initializeStatusBar()
+        self.initializeTray()
+        self.connectMainSignals()
+        _time()
 
-        if not silence:
-            self.settingsDialog = SettingsDialog(self)
-            self.initializeStatusBar()
-            self.initializeTray()
-            self.connectMainSignals()
+    def resizeEvent(self, event):
+        # info label should be resized automatically,
+        # if the mainwindow resized.
+        width = self.width()
+        height = self.statusBar().height() + 4
+        self.statusLabel.resize(QSize(width, height))
+        self.statusLabel.move(0, self.height() - height + 2)#self.width() / 2 - 170, self.height() / 2 - 40)
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.centralWidget().updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
+        self.connect(self.centralWidget(), SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
+        self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
+        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.tray.stop)
+        self.connect(self.centralWidget().operation, SIGNAL("operationCancelled()"), self.tray.stop)
+        self.connect(self.centralWidget().operation, SIGNAL("started(QString)"), self.tray.animate)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
         self.centralWidget().switchState(StateManager.UPGRADE, action=False)
         self.centralWidget().initialize()
+        KApplication.kApplication().updateUserTimestamp()
         self.show()
         self.raise_()
 
@@ -71,10 +87,16 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
-        self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
-        self.statusLabel.setAlignment(QtCore.Qt.AlignCenter)
-        self.statusBar().addWidget(self.statusLabel)
-        self.statusBar().setSizeGripEnabled(True)
+
+        # An info label to show a proper information,
+        # if there is no updates available.
+        self.statusLabel = QLabel(i18n("Currently your basket is empty."), self)
+        self.statusLabel.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
+        self.statusLabel.setStyleSheet("background-color:rgba(0,0,0,220); \
+                                 color:white; \
+                                 border: 1px solid white;")
+        # self.info.hide()
+        self.statusLabel.show()
         self.wheelMovie = QtGui.QMovie(self)
         self.statusLabel.setText(i18n("Currently your basket is empty."))
         self.wheelMovie.setFileName(":/data/wheel.mng")
@@ -82,73 +104,31 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
 
     def initializeActions(self):
-        self.toolBar = QtGui.QToolBar(self)
-        self.toolBar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
-        self.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+        self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
+        KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
+        KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
 
         self.initializeOperationActions()
+        self.setupGUI(KXmlGuiWindow.Default, "/usr/share/package-manager/data/packagemanagerui.rc")
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
-        self.menubar = QtGui.QMenuBar(self)
-
-        self.menuFile = QtGui.QMenu(i18n('File'), self.menubar)
-        self.menuOptions = QtGui.QMenu(i18n('Settings'), self.menubar)
-        self.menuHelp = QtGui.QMenu(i18n('Help'), self.menubar)
-
-        self.quitAppAction = QtGui.QAction(KIcon(('exit', 'application-exit')), i18n("Quit"), self)
-        self.quitAppAction.setShortcut(QtGui.QKeySequence('Ctrl+q'))
-        self.quitAppAction.triggered.connect(self.slotQuit)
-
-        self.helpAppAction = QtGui.QAction(KIcon(('help', 'help-contents')), i18n("Help"), self)
-        self.helpAppAction.setShortcut(QtGui.QKeySequence('F1'))
-        self.helpAppAction.triggered.connect(self.showHelp)
-        self.menuHelp.addAction(self.helpAppAction)
-
-        self.setMenuBar(self.menubar)
-
-        # Action Show Installable Packages
-        self.showInstallAction = QtGui.QAction(KIcon("list-add"),
-                          i18n("Show Installable Packages"), self)
-        self.showInstallAction.setCheckable(True)
+        self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
         self.showInstallAction.setChecked(True)
-        self.showInstallAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.actionCollection().addAction("showInstallAction", self.showInstallAction)
+        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
         actionGroup.addAction(self.showInstallAction)
-        self.toolBar.addAction(self.showInstallAction)
-        self.menuFile.addAction(self.showInstallAction)
 
-        # Action Show Installed Packages
-        self.showRemoveAction = QtGui.QAction(KIcon("list-remove"),
-                          i18n("Show Installed Packages"), self)
-        self.showRemoveAction.setCheckable(True)
-        self.showRemoveAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.REMOVE))
+        self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
+        self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
+        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
         actionGroup.addAction(self.showRemoveAction)
-        self.toolBar.addAction(self.showRemoveAction)
-        self.menuFile.addAction(self.showRemoveAction)
 
-        # Action Show Upgradable Packages
-        self.showUpgradeAction = QtGui.QAction(KIcon("view-refresh"),
-                          i18n("Show Upgradable Packages"), self)
-        self.showUpgradeAction.setCheckable(True)
-        self.showUpgradeAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.UPGRADE))
+        self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
+        self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
+        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         actionGroup.addAction(self.showUpgradeAction)
-        self.toolBar.addAction(self.showUpgradeAction)
-        self.menuFile.addAction(self.showUpgradeAction)
-        self.menuFile.addSeparator()
-        self.menuFile.addAction(self.quitAppAction)
-
-        self.showSettingsAction = QtGui.QAction(KIcon("preferences-system"),
-                          i18n("Package Manager Settings"), self)
-        self.showSettingsAction.triggered.connect(self.showSettingsDialog)
-        self.menuOptions.addAction(self.showSettingsAction)
-
-        self.menubar.addAction(self.menuFile.menuAction())
-        self.menubar.addAction(self.menuOptions.menuAction())
-        self.menubar.addAction(self.menuHelp.menuAction())
-
-    def showSettingsDialog(self):
-        self.settingsDialog.show()
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
@@ -159,24 +139,18 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.statusLabel.setText(text)
 
     def queryClose(self):
-        if config.PMConfig().systemTray():
+        if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
             self.hide()
             return False
         return True
 
-    def showHelp(self):
-        helpDialog = helpdialog.HelpDialog(self, helpdialog.MAINAPP)
-        helpDialog.show()
-
     def queryExit(self):
         if not self.iface.operationInProgress():
-            if self.tray.notification:
-                self.tray.notification.close()
+            if self.tray:
+                del self.tray.notification
             return True
         return False
 
     def slotQuit(self):
         if self.iface.operationInProgress():
             return
-        QtCore.QCoreApplication.quit()
-
