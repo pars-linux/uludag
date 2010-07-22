@@ -326,7 +326,8 @@ class Repository:
                 collect(item)
 
         collect(package_name)
-        if package_name =="yali4":
+        # FIXME: Don't hardcode installer name
+        if package_name =="yali":
             # Not needed deps search for system.base as default at all click!!!
             if self.components.has_key("system.base"):
                 for item in self.components["system.base"]:
