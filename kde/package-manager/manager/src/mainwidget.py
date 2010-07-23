@@ -291,8 +291,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.messageBox.show()
 
         if self.state.state == self.state.UPGRADE:
-            {self.state.INSTALL:self.parent.showInstallAction,
-             self.state.REMOVE :self.parent.showRemoveAction}[self.lastState].setChecked(True)
             self.switchState(self.lastState)
 
     def actionFinished(self, operation):
@@ -339,6 +337,11 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def switchState(self, state, action=True):
         self.searchLine.clear()
+        states = {self.state.INSTALL:(0, self.parent.showInstallAction),
+                  self.state.REMOVE :(1, self.parent.showRemoveAction),
+                  self.state.UPGRADE:(2, self.parent.showUpgradeAction)}
+        states[state][1].setChecked(True)
+        self.stateCombo.setCurrentIndex(states[state][0])
         self.lastState = self.state.state
         self.state.setState(state)
         self._selectedGroups = []
