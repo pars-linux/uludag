@@ -24,6 +24,9 @@ from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import SIGNAL
 
+from PyKDE4.kdeui import KNotification
+from PyKDE4.kdecore import KComponentData
+
 from context import *
 from context import _time
 
@@ -45,15 +48,19 @@ from pmutils import waitCursor
 from pmutils import restoreCursor
 
 class MainWidget(QWidget, Ui_MainWidget):
-    def __init__(self, parent=None, silence = False):
+    def __init__(self, parent = None, silence = False):
         QWidget.__init__(self, parent)
         self.setupUi(self)
         self.parent = parent
         self._selectedGroups = []
         self.state = StateManager(self)
         self.lastState = self.state.state
+
+        # state.silence is using for pm-install module
         self.state.silence = silence
+
         if not silence:
+            # in silence mode we dont need these
             self.searchButton.setIcon(KIcon("edit-find"))
             self.statusUpdater = StatusUpdater()
             self.basket = BasketDialog(self.state)
@@ -63,15 +70,12 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.updateSettings()
             self.actionButton.setIcon(self.state.getActionIcon())
             self.connectMainSignals()
+
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.summaryDialog = SummaryDialog()
-        self.connectOperationSignals()
 
-        self.typeFilter.addItem(KIcon("view-refresh"), i18n("Show Installable Packages"))
-        self.typeFilter.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
-        self.typeFilter.addItem(KIcon("list-add"), i18n("Show Upgradable Packages"))
-        self.typeFilter.activated.connect(self.switchState)
+        self.connectOperationSignals()
 
     def initializeInfoBox(self):
         # An info label to show a proper information,
@@ -102,7 +106,8 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
-        # self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
+        self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
+        self.connect(self.stateCombo, SIGNAL("activated(int)"), self.switchState)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("clicked(bool)"), self.toggleSelectAll)
@@ -315,20 +320,12 @@ class MainWidget(QWidget, Ui_MainWidget):
     def notifyFinished(self):
         if not self.operation.totalPackages:
             return
-        if self.state.silence:
-            Pds.notify(i18n('Package Manager'), self.state.getSummaryInfo(self.operation.totalPackages))
-        elif Pds.session == pds.Kde4:
-            from PyKDE4.kdeui import KNotification
-            from PyKDE4.kdecore import KComponentData
-            KNotification.event("Summary",
-                    self.state.getSummaryInfo(self.operation.totalPackages),
-                    QPixmap(),
-                    None,
-                    KNotification.CloseOnTimeout,
-                    KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
-                    )
-        else:
-            Pds.notify(i18n('Package Manager'), self.state.getSummaryInfo(self.operation.totalPackages))
+        KNotification.event("Summary",
+                self.state.getSummaryInfo(self.operation.totalPackages),
+                QPixmap(),
+                None,
+                KNotification.CloseOnTimeout,
+                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
 
     def showSummary(self):
         self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)

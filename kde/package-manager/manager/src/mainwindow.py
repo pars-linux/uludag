@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -34,47 +34,46 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, app = None):
         KXmlGuiWindow.__init__(self, None)
         self.setupUi(self)
+
         self.app = app
         self.iface = backend.pm.Iface()
-        _time()
+
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
+
         self.setCentralWidget(MainWidget(self))
+        self.sw = self.centralWidget()
+
         self.settingsDialog = SettingsDialog(self)
+
         self.initializeActions()
         self.initializeStatusBar()
         self.initializeTray()
         self.connectMainSignals()
-        _time()
-
-    def resizeEvent(self, event):
-        # info label should be resized automatically,
-        # if the mainwindow resized.
-        width = self.width()
-        height = self.statusBar().height() + 4
-        self.statusLabel.resize(QSize(width, height))
-        self.statusLabel.move(0, self.height() - height + 2)#self.width() / 2 - 170, self.height() / 2 - 40)
 
     def connectMainSignals(self):
-        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
-        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.centralWidget().updateSettings)
+        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.sw.initialize)
+        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.sw.updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
-        self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        self.connect(self.centralWidget(), SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
+        self.connect(self.sw.state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
+        self.connect(self.sw, SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
-        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
-        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.tray.stop)
-        self.connect(self.centralWidget().operation, SIGNAL("operationCancelled()"), self.tray.stop)
-        self.connect(self.centralWidget().operation, SIGNAL("started(QString)"), self.tray.animate)
+        self.connect(self.sw.operation, SIGNAL("finished(QString)"), self.trayAction)
+        self.connect(self.sw.operation, SIGNAL("finished(QString)"), self.tray.stop)
+        self.connect(self.sw.operation, SIGNAL("operationCancelled()"), self.tray.stop)
+        self.connect(self.sw.operation, SIGNAL("started(QString)"), self.tray.animate)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
-        self.centralWidget().switchState(StateManager.UPGRADE, action=False)
-        self.centralWidget().initialize()
+
+        self.sw.switchState(StateManager.UPGRADE, action=False)
+        self.sw.initialize()
+
         KApplication.kApplication().updateUserTimestamp()
+
         self.show()
         self.raise_()
 
@@ -87,27 +86,18 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
-
-        # An info label to show a proper information,
-        # if there is no updates available.
-        self.statusLabel = QLabel(i18n("Currently your basket is empty."), self)
-        self.statusLabel.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
-        self.statusLabel.setStyleSheet("background-color:rgba(0,0,0,220); \
-                                 color:white; \
-                                 border: 1px solid white;")
-        # self.info.hide()
-        self.statusLabel.show()
+        self.statusBar().hide()
         self.wheelMovie = QtGui.QMovie(self)
-        self.statusLabel.setText(i18n("Currently your basket is empty."))
+        self.updateStatusBar('')
         self.wheelMovie.setFileName(":/data/wheel.mng")
-        self.connect(self.centralWidget(), SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
-        self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
+
+        self.connect(self.sw, SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
+        self.connect(self.sw, SIGNAL("updatingStatus()"), self.statusWaiting)
 
     def initializeActions(self):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
         KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
-
         self.initializeOperationActions()
         self.setupGUI(KXmlGuiWindow.Default, "/usr/share/package-manager/data/packagemanagerui.rc")
 
@@ -115,28 +105,36 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         actionGroup = QtGui.QActionGroup(self)
 
         self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
-        self.showInstallAction.setChecked(True)
         self.actionCollection().addAction("showInstallAction", self.showInstallAction)
-        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.INSTALL))
+        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Installable Packages"))
         actionGroup.addAction(self.showInstallAction)
 
         self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
         self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
-        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
+        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.REMOVE))
+        self.sw.stateCombo.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
         actionGroup.addAction(self.showRemoveAction)
 
         self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
         self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
-        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
+        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.UPGRADE))
+        self.sw.stateCombo.addItem(KIcon("list-add"), i18n("Show Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
+        self.showInstallAction.setChecked(True)
+
     def statusWaiting(self):
-        self.statusLabel.setMovie(self.wheelMovie)
+        self.sw.busyIndicator.setMovie(self.wheelMovie)
+        self.sw.statusLabel.setText(i18n('Busy ...'))
+        self.sw.actions.show()
         self.wheelMovie.start()
 
     def updateStatusBar(self, text):
         self.wheelMovie.stop()
-        self.statusLabel.setText(text)
+        self.sw.statusLabel.setText(text)
+        if text == '':
+            self.sw.actions.hide()
 
     def queryClose(self):
         if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
