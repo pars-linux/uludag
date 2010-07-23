@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -65,8 +65,7 @@ class StateManager(QObject):
         return list(self.cached_packages)
 
     def onlyGuiInState(self):
-        pmConfig = config.PMConfig()
-        return pmConfig.showOnlyGuiApp()
+        return config.PMConfig().showOnlyGuiApp()
 
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
@@ -127,7 +126,7 @@ class StateManager(QObject):
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
-            return i18n("Currently your basket is empty.")
+            return i18n('')
 
         text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ", packages, packagesSize)
         if extraPackages:
