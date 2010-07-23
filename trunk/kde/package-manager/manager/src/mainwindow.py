@@ -86,7 +86,9 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
-        self.statusBar().hide()
+        sb = self.statusBar()
+        sb.addPermanentWidget(self.sw.actions, 1)
+
         self.wheelMovie = QtGui.QMovie(self)
         self.updateStatusBar('')
         self.wheelMovie.setFileName(":/data/wheel.mng")
@@ -127,14 +129,16 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def statusWaiting(self):
         self.sw.busyIndicator.setMovie(self.wheelMovie)
         self.sw.statusLabel.setText(i18n('Busy ...'))
-        self.sw.actions.show()
+        self.statusBar().show()
         self.wheelMovie.start()
 
     def updateStatusBar(self, text):
         self.wheelMovie.stop()
         self.sw.statusLabel.setText(text)
         if text == '':
-            self.sw.actions.hide()
+            self.statusBar().hide()
+        else:
+            self.statusBar().show()
 
     def queryClose(self):
         if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
