@@ -116,7 +116,7 @@ class Yali:
                                        yali4.gui.ScrGoodbye              # 13
                                       ]
 
-	    # Live installation procedures
+        # Live installation procedures
         self._screens[YALI_LIVEINSTALL] = [                              # Numbers can be used with -s paramter
                                        yali4.gui.ScrKahyaCheck,          # 00
                                        yali4.gui.ScrWelcome,             # 01

@@ -93,7 +93,7 @@ Have fun!
         self.ui.setupUi(self)
 
         self.timer = QTimer(self)
-	self.timerProgress = QTimer(self)
+    self.timerProgress = QTimer(self)
 
         QObject.connect(self.timer, SIGNAL("timeout()"),self.slotChangePix)
         QObject.connect(self.timerProgress, SIGNAL("timeout()"),self.slotUpdateprogress)
@@ -135,15 +135,15 @@ Have fun!
 
     def slotUpdateprogress(self):
 
-	current_size= int(yali4.sysutils.execWithCapture("du", ["-sc",consts.target_dir]).split()[-2])
-	ctx.debugger.log("Progress: %d / %d" %(current_size, self.total))
-	qevent = InstallEvent(QEvent.User, EventCopy)
-	qevent.setData(current_size)
-	objectSender(qevent)	
+    current_size= int(yali4.sysutils.execWithCapture("du", ["-sc",consts.target_dir]).split()[-2])
+    ctx.debugger.log("Progress: %d / %d" %(current_size, self.total))
+    qevent = InstallEvent(QEvent.User, EventCopy)
+    qevent.setData(current_size)
+    objectSender(qevent)    
 
-	if current_size >= self.total:
+    if current_size >= self.total:
 
-	        self.timerProgress.stop()
+            self.timerProgress.stop()
 
 
     def customEvent(self, qevent):
@@ -158,10 +158,10 @@ Have fun!
         # EventSetProgress
         elif qevent.eventType() == EventSetProgress:
             total = qevent.data()
-	    self.total = total
+        self.total = total
             self.ui.progress.setMaximum(total)
-	    ctx.debugger.log("Progress reporter is running.")
-	    self.timerProgress.start(1000 * 5)
+        ctx.debugger.log("Progress reporter is running.")
+        self.timerProgress.start(1000 * 5)
 
         # EventPackageInstallFinished
         elif qevent.eventType() == EventPackageInstallFinished:
@@ -262,38 +262,38 @@ class LiveInstaller(QThread):
         ctx.debugger.log("LiveInstaller started.")
         QThread.__init__(self)
 
-	self.symlink_dirs = ["bin","sbin","lib","boot","usr","opt","dev","tmp"]
-	self.copy_dirs = ["etc","var","root"]
-	self.empty_dirs = ["mnt","sys","proc","media","home"]
-	self.symlink_basepath = os.readlink("/usr").replace("/usr","")
+    self.symlink_dirs = ["bin","sbin","lib","boot","usr","opt","dev","tmp"]
+    self.copy_dirs = ["etc","var","root"]
+    self.empty_dirs = ["mnt","sys","proc","media","home"]
+    self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
 
 
     def run(self):
-	append_base = lambda x : self.symlink_basepath + "/"+x
+    append_base = lambda x : self.symlink_basepath + "/"+x
         ctx.debugger.log("LiveInstaller is running.")
-	self.copy_dirs.extend(map(append_base,self.symlink_dirs))
+    self.copy_dirs.extend(map(append_base,self.symlink_dirs))
 
 
-	#Calculate total size to be copied
-	
-	total = yali4.sysutils.execWithCapture("du", ["-sc"] + self.copy_dirs).split()[-2]
-	ctx.debugger.log("Calculating total size")
+    #Calculate total size to be copied
+    
+    total = yali4.sysutils.execWithCapture("du", ["-sc"] + self.copy_dirs).split()[-2]
+    ctx.debugger.log("Calculating total size")
 
-	qevent = InstallEvent(QEvent.User, EventSetProgress)
-	qevent.setData(int(total))
-	objectSender(qevent)
+    qevent = InstallEvent(QEvent.User, EventSetProgress)
+    qevent.setData(int(total))
+    objectSender(qevent)
 
-	ctx.yali.mutex.lock()
+    ctx.yali.mutex.lock()
 
-	for dir in self.empty_dirs:
-	    yali4.sysutils.run("mkdir %s/%s" %(consts.target_dir, dir))
+    for dir in self.empty_dirs:
+        yali4.sysutils.run("mkdir %s/%s" %(consts.target_dir, dir))
 
-	for dir in self.copy_dirs:
-	    yali4.sysutils.run("cp -Rp /%s %s" %(dir,consts.target_dir))
+    for dir in self.copy_dirs:
+        yali4.sysutils.run("cp -Rp /%s %s" %(dir,consts.target_dir))
 
-	qevent = InstallEvent(QEvent.User, EventPackageInstallFinished)
-	objectSender(qevent)
+    qevent = InstallEvent(QEvent.User, EventPackageInstallFinished)
+    objectSender(qevent)
 
 
 class InstallEvent(QEvent):
