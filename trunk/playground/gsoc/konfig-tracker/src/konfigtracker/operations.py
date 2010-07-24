@@ -1,6 +1,6 @@
 ﻿# -*- coding: utf-8 -*-
 from PyKDE4.kdecore import KStandardDirs
-from PyQt4.QtCore import QString
+from PyQt4.QtCore import QString, QDir
 
 from time import strftime, localtime, asctime
 import distutils.dir_util as DirUtil
@@ -55,9 +55,11 @@ def restore(commitId):
 	"""
 	#check whether this commitId is at the head now. If yes, don't perform the restore.
 	repo = git.Git(db_path)
+	srcPath = "/tmp/config"
+	if QDir().exists(QString(srcPath)):
+		DirUtil.remove_tree(srcPath,1)
 	repo.execute(["git","read-tree", commitId])
 	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
-	srcPath = "/tmp/config"
 	if DirUtil.copy_tree(srcPath, restore_path, update=1):
 		addToDatabase()
 
