@@ -57,7 +57,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.commitMap = getCommitMap()
                 backup_list = QStringList()
                 for i in self.commitMap:
-                    backup_list.append(QString(i))
+                	backup_list.append(QString(i))
                 #showing the list in view
                 self.backupList.clear()
                 self.backupList.insertItems(0, backup_list)
@@ -67,60 +67,64 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                 commitLog = QString()
                 selected = self.backupList.selectedItems()
                 for i in selected:
-                    selectedCommit = self.commitMap[str(i.text())]
-                    commitLog = getCommitLog(selectedCommit)
-                colorList = commitLog.split('\n')
-                self.backupLog.clear()
+			selectedCommit = self.commitMap[str(i.text())]
+			commitLog = getCommitLog(selectedCommit)
+		colorList = commitLog.split('\n')
+		self.backupLog.clear()
                 # a loop for coloring the text browser
-                for i in colorList:
-                    if i.startsWith('-'):
-                        self.backupLog.setTextColor(Qt.darkRed)
-                        self.backupLog.append(i)
-                    elif i.startsWith('+'):
-                        self.backupLog.setTextColor(Qt.darkGreen)
-                        self.backupLog.append(i)
-                    else:
-                        self.backupLog.setTextColor(Qt.black)
-                        self.backupLog.append(i)
+		for i in colorList:
+			if i.startsWith('-'):
+				self.backupLog.setTextColor(Qt.darkRed)
+				self.backupLog.append(i)
+			elif i.startsWith('+'):
+				self.backupLog.setTextColor(Qt.darkGreen)
+				self.backupLog.append(i)
+			else:
+				self.backupLog.setTextColor(Qt.black)
+				self.backupLog.append(i)
 
-        def slotPerformRestore(self):
-                selectionList = self.backupList.selectedItems()
-                if selectionList == []:
-                    self.showError()
-                else:
-                    #extract the commit id and call restore function
-                    for i in selectionList:
-                        selection = self.commitMap[str(i.text())]
-                        restore(str(selection))
-                    self.showRestoreDone()
+	def slotPerformRestore(self):
+		selectionList = self.backupList.selectedItems()
+		if selectionList == []:
+			self.showError()
+		else:
+			#extract the commit id and call restore function
+			for i in selectionList:
+				selection = self.commitMap[str(i.text())]
+				restore(str(selection))
+			self.showRestoreDone()
                     
-        def showError(self):
-                msgBox = QMessageBox()
-                msgBox.setWindowTitle("KonfigTracker Error")
-                msgBox.setIcon(QMessageBox.Critical)
-                msgBox.setText("Please select a snapshot from the list!")
-                ret = msgBox.exec_()
+	def showError(self):
+		msgBox = QMessageBox()
+		msgBox.setWindowTitle("KonfigTracker Error")
+		msgBox.setIcon(QMessageBox.Critical)
+		msgBox.setText("Please select a snapshot from the list!")
+		ret = msgBox.exec_()
                 
-        def showRestoreDone(self):
-                msgBox = QMessageBox()
-                msgBox.setWindowTitle("Restore Complete")
-                msgBox.setIcon(QMessageBox.Information)
-                msgBox.setText("Your configuration files have been restored to selected backup.\nPlease restart your session")
-                ret = msgBox.exec_()
+	def showRestoreDone(self):
+		msgBox = QMessageBox()
+		msgBox.setWindowTitle("Restore Complete")
+		msgBox.setIcon(QMessageBox.Information)
+		msgBox.setText("Your configuration files have been restored to selected backup.\nPlease restart your session")
+		ret = msgBox.exec_()
                 
-        def slotAboutQt(self):
-                about = QMessageBox.aboutQt(self)
+	def slotAboutQt(self):
+		about = QMessageBox.aboutQt(self)
                 
-        def slotExportDatabase(self):
-                selectionList = self.backupList.selectedItems()
-                if selectionList == []:
-                    self.showError()
-                else:
-                    #show a QFileDialog for saving
-                    fileName = QFileDialog.getSaveFileName(\
-                                                           self,"Save archive",\
-                                                            QDir.homePath() + "/untitled.tar.gz", \
-                                                           "Archives (*.tar.gz)")
-                    for i in selectionList:
-                        selection = self.commitMap[str(i.text())]
-                        exportDatabase(selection,fileName)
+	def slotExportDatabase(self):
+		selectionList = self.backupList.selectedItems()
+		if selectionList == []:
+			self.showError()
+		else:
+			#show a QFileDialog for saving
+			fileName = QFileDialog.getSaveFileName(self,"Save archive", QDir.homePath() + "/untitled.tar.gz", "Archives (*.tar.gz)")
+			for i in selectionList:
+				selection = self.commitMap[str(i.text())]
+				exportDatabase(selection,fileName)
+	
+	def slotTagCommit(self):
+		selectionList = self.backupList.selectedItems()
+		if selectionList == []:
+			self.showError()
+		else:
+			pass
