@@ -2,9 +2,10 @@
 from PyKDE4.kdecore import KStandardDirs
 from PyQt4.QtCore import QString
 
-from time import strftime, localtime, asctime 
+from time import strftime, localtime, asctime
 import distutils.dir_util as DirUtil
-import git,os
+import git
+import os
 
 # Path to konfig-tracker db
 db_path = str(KStandardDirs().localkdedir() + "konfigtracker-db")
@@ -12,6 +13,7 @@ db_path = str(KStandardDirs().localkdedir() + "konfigtracker-db")
 # Source path of configuration files
 source_path = str(KStandardDirs().localkdedir() + "share/config")
 restore_path = str(KStandardDirs().localkdedir() + "share/config")
+
 
 def createDatabase(path):
 	"""
@@ -53,13 +55,11 @@ def restore(commitId):
 	"""
 	#check whether this commitId is at the head now. If yes, don't perform the restore.
 	repo = git.Git(db_path)
-        srcPath = "/tmp/config"
-        DirUtil.remove_tree(srcPath)
 	repo.execute(["git","read-tree", commitId])
 	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
 	srcPath = "/tmp/config"
 	if DirUtil.copy_tree(srcPath, restore_path, update=1):
-            addToDatabase()
+		addToDatabase()
 
 def exportDatabase(commitId, savePath):
 	"""
@@ -79,9 +79,9 @@ def getCommitMap():
 	return dict([(c.message,c.id) for c in commit_list])
 
 def getCommitLog(commit):
-        """
-        Return the commit log as a QString
-        """
-        repo = git.Git(db_path)
-        commitLog = repo.execute(["git","show",commit])
-        return QString(commitLog)
+	"""
+	Return the commit log as a QString
+	"""
+	repo = git.Git(db_path)
+	commitLog = repo.execute(["git","show",commit])
+	return QString(commitLog)
