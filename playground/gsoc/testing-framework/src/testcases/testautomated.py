@@ -29,5 +29,7 @@ class TestAutomated:
         if error:
             self.report.append('Error: {0}'.format(error))
             return 
-        self.report.append('Output: {0}'.format(output.rstrip()))
-        self.report.append('Expected: {0}'.format(self.expected))
+        self.report.append('Output: ')
+        self.report.append('{0}'.format(output.rstrip()))
+        self.report.append('Expected: ')
+        self.report.append('{0}'.format(self.expected))
