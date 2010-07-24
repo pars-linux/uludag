@@ -68,7 +68,7 @@ def exportDatabase(commitId, savePath):
 	Pack the data at this commit into an archive
 	"""
         repo = git.Git(db_path)
-        repo.execute(["git", "archive", commitId, "-o", savePath])
+        repo.execute(["git", "archive", commitId, "-o", str(savePath)])
                 
 
 def getCommitMap():
