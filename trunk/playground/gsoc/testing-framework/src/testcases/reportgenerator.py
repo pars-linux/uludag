@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import os
+import time
 
+from sys import exit
 from datetime import date 
 
  
@@ -34,13 +36,16 @@ class ReportGenerate:
         # Report generation
         output = '\n'.join(self.report)
         todayDate = date.today()
-        # outFilename specifies the file name of the report. 
-        outFilename = 'report-{0}'.format(todayDate)
+        # outFileName specifies the file name of the report. 
+        outFileName = '{0}-{1}'.format(os.path.basename(self.file), todayDate)
         try:
-            outFile = open(outFilename, 'w')
+            # if the file already exists, create a new file using time as the variable
+            if os.path.isfile(os.path.join(os.getcwd(), outFileName)):
+                currentTime = time.strftime('%H:%M:%S')
+                outFileName += '-{0}'.format(currentTime)
+            outFile = open(outFileName, 'w')
             outFile.write(output)
             outFile.close()
         except IOError:
-            print '\nUnable to generate the report file. Failed.'
-        print 'Report saved to: {0}'.format(os.path.join(os.getcwd(), outFilename))
-
+            exit('Error: Unable to generate the report file.')
+        print 'Report saved to: {0}'.format(os.path.join(os.getcwd(), outFileName))

@@ -77,7 +77,7 @@ class XMLParser:
                 gui=self.test_gui,
                 shell=self.test_shell,
                 )[elementText](element, packageList, counter)
-            print colorize('-' * 2, 'bold'), '\n'
+            print colorize('-' * 1, 'bold'), '\n'
             counter += 1
         self.generate_report(totalTestcases)
         
