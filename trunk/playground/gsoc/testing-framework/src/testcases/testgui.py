@@ -47,7 +47,7 @@ class TestGUI:
             totalCounter += 1
             print colorize('Enter your observation of the tests:', 'bold')
         observation = raw_input('> ')
-        self.report.append(observation)
+        self.report.append("User's Observation: {0}".format(observation))
         
     def download_file(self, file):
         """Download a file using wget."""

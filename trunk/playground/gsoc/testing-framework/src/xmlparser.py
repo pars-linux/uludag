@@ -14,6 +14,8 @@ from testcases import testgui
 from testcases import testautomated
 from testcases import testshell
 
+from testcases import reportgenerator
+
 from clcolorize import colorize
 
 FINISH = colorize('\nFinished\n', 'green')
@@ -75,7 +77,7 @@ class XMLParser:
                 gui=self.test_gui,
                 shell=self.test_shell,
                 )[elementText](element, packageList, counter)
-            print colorize('-' * 13, 'bold'), '\n'
+            print colorize('-' * 2, 'bold'), '\n'
             counter += 1
         self.generate_report(totalTestcases)
         
@@ -99,12 +101,12 @@ class XMLParser:
                                                   self.available_packages())
         testgui_install.test_install_main()
         if testgui_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testgui.TestGUI(element, packagelist))
-        # Add the install report to the final report
         self.testreport[counter].report.extend(testgui_install.report)
+        # Add the install report to the final report
         self.testreport[counter].test_gui_main()
         print FINISH
         
@@ -144,7 +146,7 @@ class XMLParser:
                                                   self.available_packages())
         testautomated_install.test_install_main()
         if testautomated_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testautomated.TestAutomated(packagelist,
@@ -172,7 +174,7 @@ class XMLParser:
                                                   self.available_packages())
         testshell_install.test_install_main()
         if testshell_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testshell.TestShell(element, textList))
@@ -231,5 +233,7 @@ class XMLParser:
         return list_available()     # Pisi API
         
     def generate_report(self, totaltests):
-        """Generate a report and write it to a file."""
-        pass
+        """Call the report generator module."""
+        report = reportgenerator.ReportGenerate(totaltests, self.testreport,
+                                                self.xmlfile, self.custompackage)
+        report.main()
