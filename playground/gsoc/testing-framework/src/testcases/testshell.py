@@ -22,8 +22,13 @@ class TestShell:
             print ''.join(self.textlist)
             for text in self.element.getiterator('command'):
                 print colorize(text.text, 'yellow')
-            raw_input('> Press ENTER to continue ')
-            counter += 1
-        print colorize('Enter your observation of the tests:', 'bold')
-        observation = raw_input('> ')
-        self.report.append(observation)
+            # Get the observations
+            print colorize('Enter your observation of the test:', 'bold')
+            observation = raw_input('> ')
+            if not observation == '':
+                self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
+            else:
+                self.report.append('Case {0}: No observation entered.'.format(counter+1))
+            print '\n'
+            counter += 1        
+        
