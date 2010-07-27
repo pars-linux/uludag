@@ -13,13 +13,15 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
+
+from packagemodel import GroupRole
 from packageproxy import PackageProxy
-from packagemodel import PackageModel, GroupRole
+from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
 
 from pmutils import *
-from context import i18n
-import context as ctx
 
 from ui_basketdialog import Ui_BasketDialog
 
@@ -27,19 +29,19 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def __init__(self, state):
         QtGui.QDialog.__init__(self, None)
         self.setupUi(self)
+
         self.state = state
+
         self.initPackageList()
         self.initExtraList()
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
-        # We need to setSelectionMode after setting model for qt-only mode.
-        self.packageList.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
-        self.extraList.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
+        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
     def connectModelSignals(self):
         self.connect(self.packageList.model(),
                 SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                 self.filterExtras)
+
         self.connect(self.packageList.model(),
                 SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                 self.updateTotal)
@@ -48,6 +50,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.disconnect(self.packageList.model(),
                 SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                 self.filterExtras)
+
         self.disconnect(self.packageList.model(),
                 SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
                 self.updateTotal)

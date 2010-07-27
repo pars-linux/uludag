@@ -32,3 +32,4 @@ class StatusUpdater(QThread):
             self.emit(SIGNAL("selectedInfoChanged(int, QString, int, QString)"), packages, packagesSize, extraPackages, extraPackagesSize)
         except Exception, e:
             self.emit(SIGNAL("selectedInfoChanged(QString)"), unicode(e))
+

@@ -26,12 +26,6 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 
 PROJECT = about.appName
-FOR_KDE_4 = False
-
-if 'kde4' in sys.argv:
-    sys.argv.remove('kde4')
-    FOR_KDE_4 = True
-    print 'UI files will be created for KDE 4.. '
 
 def makeDirs(directory):
     if not os.path.exists(directory):
@@ -46,10 +40,7 @@ def update_messages():
     # Collect UI files
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        if FOR_KDE_4:
-            os.system("/usr/kde/4/bin/pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
-        else:
-            os.system("/usr/bin/pyuic4 -o ui/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+        os.system("/usr/kde/4/bin/pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
     # Collect headers for desktop files
     for filename in glob.glob("data/*.desktop.in"):
@@ -99,10 +90,7 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            if FOR_KDE_4:
-                os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
-            else:
-                os.system("/usr/bin/pyuic4 -o build/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+            os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
