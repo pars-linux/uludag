@@ -27,8 +27,6 @@ from tray import Tray
 
 import backend
 import config
-import context
-from context import _time
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, app = None):
@@ -92,6 +90,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.wheelMovie = QtGui.QMovie(self)
         self.updateStatusBar('')
         self.wheelMovie.setFileName(":/data/wheel.mng")
+        self.wheelMovie.start()
 
         self.connect(self.sw, SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
         self.connect(self.sw, SIGNAL("updatingStatus()"), self.statusWaiting)
@@ -128,17 +127,16 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def statusWaiting(self):
         self.sw.busyIndicator.setMovie(self.wheelMovie)
-        self.sw.statusLabel.setText(i18n('Busy ...'))
-        self.statusBar().show()
-        self.wheelMovie.start()
+        self.updateStatusBar(i18n('Calculating dependencies...'), noIcon = True)
 
-    def updateStatusBar(self, text):
-        self.wheelMovie.stop()
+    def updateStatusBar(self, text, noIcon = False):
+        if not noIcon:
+            self.sw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(24, 24))
         self.sw.statusLabel.setText(text)
-        if text == '':
-            self.statusBar().hide()
-        else:
+        if text:
             self.statusBar().show()
+        else:
+            self.statusBar().hide()
 
     def queryClose(self):
         if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
