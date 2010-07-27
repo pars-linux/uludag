@@ -235,5 +235,5 @@ class XMLParser:
     def generate_report(self, totaltests):
         """Call the report generator module."""
         report = reportgenerator.ReportGenerate(totaltests, self.testreport,
-                                                self.xmlfile, self.custompackage)
+                                                self.xmlfile, self.custompackage, self.rootelement)
         report.main()

@@ -42,12 +42,16 @@ class TestGUI:
                     textList.append(element.text)
                 for number, element in enumerate(textList, 1):
                     print colorize('{0}. ', 'bold').format(number), element
-                raw_input('> Press ENTER to continue \n')
+                # Get the observations
+                print colorize('Enter your observation of the test:', 'bold')
+                observation = raw_input('> ')
+                if not observation == '':
+                    self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
+                else:
+                    self.report.append('Case {0}: No observation entered.'.format(counter+1))
+                print '\n'
                 counter += 1
             totalCounter += 1
-            print colorize('Enter your observation of the tests:', 'bold')
-        observation = raw_input('> ')
-        self.report.append("User's Observation: {0}".format(observation))
         
     def download_file(self, file):
         """Download a file using wget."""

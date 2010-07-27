@@ -10,11 +10,12 @@ from datetime import date
  
 class ReportGenerate:
     """class to generate and manage the outputs generated."""
-    def __init__(self, totaltests, testreport, file, custom, report=None):
+    def __init__(self, totaltests, testreport, file, custom, rootelement, report=None):
         self.totaltests = totaltests
         self.testreport = testreport
         self.file = file
         self.custom = custom
+        self.rootelement = rootelement
         self.report = list()
     
     def main(self):
@@ -27,6 +28,9 @@ class ReportGenerate:
         while counter < self.totaltests:
             self.report.append('\n')
             self.report.append('Test {0} / {1}'.format(counter+1, self.totaltests))
+            # Get the type of test
+            testType = self.rootelement[counter].get('test')
+            self.report.append("Type of test: '{0}'".format(testType))
             if self.testreport[counter] is None:
                 self.report.append('Testing was skipped. See output for details.')
                 counter += 1
