@@ -29,9 +29,11 @@ class XMLParser:
         try:
             self.tree = etree.parse(self.xmlfile)
         except etree.XMLSyntaxError, detail:
-            print colorize('Error: The testcase file cannot be executed due to an invalid syntax.', 'red')
+            print colorize('Error: The testcase file cannot be executed ' \
+                           'due to an invalid syntax.', 'red')
             print 'Detail: {0}'.format(detail)
-            print colorize('Solution: Request the testcase author for a new file or fix it manually.', 'green')
+            print colorize('Solution: Request the testcase author ' \
+                           'for a new file or fix it manually.', 'green')
             sys.exit(1)
         self.rootelement = self.tree.getroot()
         self.custompackage = custompackage
@@ -114,7 +116,9 @@ class XMLParser:
         """Call the module for testcase type AUTOMATED."""
         totalPackages = len(packagelist)
         if totalPackages > 1:
-            print colorize("Only a single package can be tested ('{0}' found)", 'green').format(totalPackages)
+            print colorize("Only a single package can be tested" \
+                           " ('{0}' found)", 'green').format(totalPackages)
+            self.testreport.append(None)
             print colorize('Skipping test ...\n', 'red')
             return
         # Parse the testcase and get the <expected> tags. If more than one tag is
@@ -153,11 +157,6 @@ class XMLParser:
             print colorize('No <command> tag found. Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
-        textList = self.testcase_tag_parse(element, 'text')
-        if len(textList) == 0:
-            print colorize('No <text> tag found. Skipping test ...\n', 'red')
-            self.testreport.append(None)
-            return
         testshell_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
                                                   self.available_packages())
@@ -177,7 +176,8 @@ class XMLParser:
         outputFile = os.path.abspath(outfile)
         if os.path.isfile(outputFile):
             while True:
-                choice = raw_input("The file '{0}' exists. Do you wish to overwrite (y / n)? : ".format(outputFile))
+                choice = raw_input("The file '{0}' exists. Do you wish to " \
+                                   "overwrite (y / n)? : ".format(outputFile))
                 if choice in ('y', 'Y', 'yes', 'YES'):
                     break
                 else:
@@ -189,11 +189,14 @@ class XMLParser:
             writeFile.write(output)
             writeFile.close()
         except IOError:
-            print colorize('Error: An error occurred while trying to write the output package file.', 'red')
-            print colorize('Solution: Please ensure that the output file name and path is valid.', 'green')
+            print colorize('Error: An error occurred while trying to write ' \
+                           'the output package file.', 'red')
+            print colorize('Solution: Please ensure that the output ' \
+                           'file name and path is valid.', 'green')
             sys.exit(1)
-        print colorize("The list of packages has been written to: '{0}'", 'green').format(outputFile)
-        sys.exit()
+        print colorize("The list of packages has been written to: " \
+                       "'{0}'", 'green').format(outputFile)
+        sys.exit(1)
     
     def testcase_tag_parse(self, element, tag):
         """Parse the element and get the text in tag."""
@@ -224,5 +227,5 @@ class XMLParser:
     def generate_report(self, totaltests):
         """Call the report generator module."""
         report = reportgenerator.ReportGenerate(totaltests, self.testreport,
-                                                self.xmlfile, self.custompackage, self.rootelement)
+                            self.xmlfile, self.custompackage, self.rootelement)
         report.main()

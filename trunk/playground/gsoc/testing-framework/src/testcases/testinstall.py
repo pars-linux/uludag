@@ -33,7 +33,8 @@ class TestInstall:
         # Install only packages that are in all the available repositories
         packagesNotInRepo = list(set(packagestNotInstalled) - set((self.availablepackages)))
         if packagesNotInRepo:
-            self.report.append("The following packages were not found in the repository: '{0}'".format(', '.join(packagesNotInRepo)))
+            self.report.append('The following packages were not found in the repository: '\
+                               "'{0}'".format(', '.join(packagesNotInRepo)))
        
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
@@ -43,7 +44,8 @@ class TestInstall:
             return
         
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
-        self.report.append("Number of packages to be installed: '{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
+        self.report.append('Number of packages to be installed: ' \
+                           "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
@@ -52,10 +54,12 @@ class TestInstall:
             package = finalPacakges[counter]
             singlePackage = package.split()
             try:
-                print 'Installing packages, please wait ... Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
+                print 'Installing packages, please wait ... ' \
+                'Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
-                self.report.append('Error: To install the packages, run the framework with root privileges')
+                self.report.append('Error: To install the packages, ' \
+                                   'run the framework with root privileges')
                 self.failcode = 0       # for the testcases gui, shell and automated
                 print colorize('Failed: Privilege error. Run as root user.', 'red')
                 return
