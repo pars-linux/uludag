@@ -18,14 +18,17 @@ import signal
 import traceback
 
 # PyKDE4 Imports
-from PyKDE4.kdeui import KUniqueApplication, KApplication
-from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
-from mainwindow import MainWindow
+from PyKDE4.kdeui import KUniqueApplication
+from PyKDE4.kdeui import KApplication
+from PyKDE4.kdecore import KCmdLineArgs
+from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import KCmdLineOptions
 
 # Package Manager Specific Imports
 import config
 from about import aboutData
 from pmlogging import logger
+from mainwindow import MainWindow
 from localedata import setSystemLocale
 
 def handleException(exception, value, tb):

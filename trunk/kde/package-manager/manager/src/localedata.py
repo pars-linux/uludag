@@ -40,7 +40,7 @@ def getAppLocale():
             appLocale = str(appLocale).split(':')[0]
             if locales.has_key(appLocale):
                 return appLocale
-    return None
+    return
 
 def setSystemLocale(justGet = False):
     """
