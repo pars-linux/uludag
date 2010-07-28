@@ -20,12 +20,14 @@ from hede_manager import formMain
 
 import comar
 
+
 class widgetMain(formMain):
     def __init__(self, parent):
         link = comar.Link()
         link.localize()
         self.link = link
-        self.notifier = QSocketNotifier(link.sock.fileno(), QSocketNotifier.Read)
+        self.notifier = QSocketNotifier(link.sock.fileno(),
+                                        QSocketNotifier.Read)
         self.connect(self.notifier, SIGNAL('activated(int)'), self.slotComar)
 
         formMain.__init__(self, parent)

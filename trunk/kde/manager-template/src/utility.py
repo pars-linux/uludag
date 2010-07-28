@@ -17,11 +17,14 @@ from khtml import *
 import locale
 import os
 
+
 def I18N_NOOP(str):
     return str
 
+
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
+
 
 class HelpDialog(QDialog):
     def __init__(self, name, title, parent=None):
