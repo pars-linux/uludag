@@ -23,12 +23,12 @@ class ReportGenerate:
         self.report.append('Pardus Testing Framework')
         self.report.append('Using testcase file: {0}'.format(self.file))
         if self.custom is not None:
-            self.report.append('Custom package parsing using list: {0}'.format(self.custom))
+            self.report.append('Custom package parsing: {0}'.format(', '.join(self.custom)))
         counter = 0
         while counter < self.totaltests:
             self.report.append('\n')
             self.report.append('Test {0} / {1}'.format(counter+1, self.totaltests))
-            # Get the type of test
+            # get the type of test
             testType = self.rootelement[counter].get('test')
             self.report.append("Type of test: '{0}'".format(testType))
             if self.testreport[counter] is None:
@@ -37,7 +37,7 @@ class ReportGenerate:
                 continue
             self.report.extend(self.testreport[counter].report)
             counter += 1
-        # Report generation
+        # report generation
         output = '\n'.join(self.report)
         todayDate = date.today()
         # outFileName specifies the file name of the report. 
