@@ -34,7 +34,8 @@ class TestAutomated:
             self.report.append('-')
             commandCounter = 0
             while commandCounter < totalCommands:
-                self.report.append('Command {0}: {1}'.format(commandCounter+1, commandList[commandCounter]))
+                self.report.append('Command {0}: {1}'.format(commandCounter+1,
+                                                    commandList[commandCounter]))
                 try:
                     runCommand = subprocess.Popen(commandList[commandCounter].split(),
                                                   stdout=subprocess.PIPE,

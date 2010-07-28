@@ -62,7 +62,8 @@ class XMLParser:
             # Based on the type of testcase, call the appropriate one
             elementText = element.get('test')
             # If no package tag is there, move on to the next testcase
-            print "Running test: ", colorize("{0} / {1}", 'bold').format(counter+1, totalTestcases)
+            print "Running test: ", colorize("{0} / {1}", 'bold').format(counter+1,
+                                                                    totalTestcases)
             print 'Type of test: ', colorize('{0}', 'bold').format(elementText)
             packageList = []
             for packageTag in element.getiterator('package'):

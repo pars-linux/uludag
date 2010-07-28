@@ -15,7 +15,8 @@ class TestInstall:
     will check all the available repositories to see whether the package exists.
     After checking all the above, then only it would proceed to call the Pisi API
     to attempt to install the packages."""
-    def __init__(self, packagelist, installedpackages, availablepackages, failcode=None, report=None):
+    def __init__(self, packagelist, installedpackages, availablepackages,
+                                            failcode=None, report=None):
         self.packagelist = packagelist
         self.installedpackages = installedpackages
         self.availablepackages = availablepackages
@@ -25,16 +26,18 @@ class TestInstall:
     def test_install_main(self):
         """Check the conditions and call the Pisi API to install the packages"""
         # Packages in the testcase file but not installed
-        packagestNotInstalled = list(set(self.packagelist) - set(self.installedpackages))
+        packagestNotInstalled = list(set(self.packagelist) -
+                                     set(self.installedpackages))
         if not packagestNotInstalled:
             self.report.append('All the required packages are installed')
             return
        
         # Install only packages that are in all the available repositories
-        packagesNotInRepo = list(set(packagestNotInstalled) - set((self.availablepackages)))
+        packagesNotInRepo = list(set(packagestNotInstalled) -
+                                 set((self.availablepackages)))
         if packagesNotInRepo:
-            self.report.append('The following packages were not found in the repository: '\
-                               "'{0}'".format(', '.join(packagesNotInRepo)))
+            self.report.append('The following packages were not found in ' \
+                        "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
        
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
@@ -45,7 +48,7 @@ class TestInstall:
         
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
-                           "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
+                "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
@@ -64,4 +67,5 @@ class TestInstall:
                 print colorize('Failed: Privilege error. Run as root user.', 'red')
                 return
             counter += 1
-        self.report.append("Finished installing the following packages: '{0}'".format(', '.join(finalPacakges)))
+        self.report.append("Finished installing the following " \
+                           "packages: '{0}'".format(', '.join(finalPacakges)))
