@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27,11 +26,11 @@ msgstr ""
 
 #: src/diskmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
@@ -59,11 +58,11 @@ msgstr ""
 
 #: src/diskmanager/main.py:194
 msgid "All Items"
-msgstr ""
+msgstr "Bütün mahnılar"
 
 #: src/diskmanager/main.py:205
 msgid "Add"
-msgstr ""
+msgstr "Əlavə et"
 
 #: src/diskmanager/main.py:273 src/diskmanager/main.py:283
 #: src/diskmanager/main.py:322
@@ -72,7 +71,7 @@ msgstr ""
 
 #: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar:"
 
 #: ui/ui_edit.py:67
 msgid "Mount Disk Automatically"
@@ -80,15 +79,15 @@ msgstr ""
 
 #: ui/ui_edit.py:68
 msgid "Mount Point:"
-msgstr ""
+msgstr "Bağlama nöqtəsi:"
 
 #: ui/ui_edit.py:69
 msgid "Filesystem Type:"
-msgstr ""
+msgstr "Fayl sistemi növü:"
 
 #: ui/ui_edit.py:70
 msgid "Options:"
-msgstr ""
+msgstr "Seçimlər:"
 
 #: ui/ui_edit.py:71
 msgid "Default Options"
@@ -104,7 +103,7 @@ msgstr ""
 
 #: ui/ui_item.py:71
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: ui/ui_main.py:77
 msgid "Add New"
