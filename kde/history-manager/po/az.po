@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,7 +17,7 @@ msgstr ""
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
-msgstr ""
+msgstr "Ayarlar"
 
 #: .tmp/ui_configure.py:45
 msgid "Startup Load :"
@@ -35,11 +34,11 @@ msgstr ""
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
@@ -90,8 +89,7 @@ msgid "Takeback operation verification"
 msgstr ""
 
 #: .tmp/historymanager/window.py:225
-msgid ""
-"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr ""
 
 #: .tmp/historymanager/window.py:226
@@ -107,9 +105,7 @@ msgid "Start new snapshot"
 msgstr ""
 
 #: .tmp/historymanager/window.py:238
-msgid ""
-"<center>This will take a snapshot of your system.<br>Click Ok when you're "
-"ready.</center>"
+msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
 msgstr ""
 
 #: .tmp/historymanager/window.py:244
