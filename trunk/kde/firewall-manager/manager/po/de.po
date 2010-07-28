@@ -2,7 +2,7 @@
 # Firewall Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Firewall Manager package.
-#
+# 
 # Stefan <sw1976de at googlemail dot com>, 2009.
 msgid ""
 msgstr ""
@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/firewallmanager.desktop.in.h:1
 msgid "An application for managing firewall."
-msgstr ""
+msgstr "Eine Anwendung zur Verwaltung Firewall."
 
 #: data/firewallmanager.desktop.in.h:2 data/kcm_firewallmanager.desktop.in.h:1
 #: src/firewallmanager/about.py:20 src/firewallmanager/about.py:22
@@ -27,9 +27,8 @@ msgid "Firewall Manager"
 msgstr "Firewall"
 
 #: src/firewallmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -40,13 +39,13 @@ msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
 #: src/firewallmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""
 
 #: src/firewallmanager/about.py:33
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: src/firewallmanager/main.py:96
