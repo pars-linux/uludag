@@ -126,21 +126,12 @@ class XMLParser:
             print colorize('No <expected> tag found. Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
-        if len(expectedTextList) == 0:
-            print colorize('Multiple <expected> tags found, using only the first one ...', 'green')
-            self.testreport.append(None)
-            del(expectedTextList[1:])
-        expectedText = ''.join(expectedTextList)
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
         if len(commandTextList) == 0:
             print colorize('No <command> tag found. Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
-        if len(commandTextList) > 1:
-            print colorize('Multiple <command> tags found, using only the first one ...', 'green')
-            del(commandTextList[1:])
-        commandText = ''.join(commandTextList)
         testautomated_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
                                                   self.available_packages())
@@ -149,9 +140,7 @@ class XMLParser:
             print colorize('Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
-        self.testreport.append(testautomated.TestAutomated(packagelist,
-                                                  commandText,
-                                                  expectedText))
+        self.testreport.append(testautomated.TestAutomated(packagelist, element))
         self.testreport[counter].report.extend(testautomated_install.report)
         self.testreport[counter].test_automated_main()
         print FINISH
@@ -177,7 +166,7 @@ class XMLParser:
             print colorize('Skipping test ...\n', 'red')
             self.testreport.append(None)
             return
-        self.testreport.append(testshell.TestShell(element, textList))
+        self.testreport.append(testshell.TestShell(element))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
         print FINISH
