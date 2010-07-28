@@ -22,7 +22,7 @@ msgstr ""
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Yazılım ekle veya kaldır"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/about.py:23 src/about.py:24
@@ -32,24 +32,23 @@ msgstr "Paket Yöneticisi"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "PİSİ paket yöneticisinin grafik ara yüzü"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Paket(ler)i Kaldır"
+msgstr "Paket(ler)i Ekle/Kaldır/Güncelle"
 
 #: src/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Geliştirici"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Geliştirici"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -60,14 +59,14 @@ msgid "First Author"
 msgstr "İlk Geliştirici"
 
 #: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "faik@pardus.org.tr, necmettin.begiter@gmail.com, gokmen@pardus.org.tr"
-
-#: src/about.py:37
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Faik Uygur, Necmettin Begiter, Gökmen Göksel"
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "faik@pardus.org.tr, necmettin.begiter@gmail.com, gokmen@pardus.org.tr"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -418,24 +417,24 @@ msgid "Update"
 msgstr "Güncelle"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Güncellemeler"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Yoksay"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Güncellemeleri Göster"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Yoksay"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
