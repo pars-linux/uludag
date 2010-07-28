@@ -3,7 +3,7 @@
 # Copyright (C) 2009 TUBITAK/UEAKE
 # This file is distributed under the same license as the Service Manager package.
 # Gökmen Göksel <gokmen@pardus.org.tr>
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 msgid ""
 msgstr ""
@@ -25,21 +25,19 @@ msgstr "Dienste"
 
 #: data/servicemanager.desktop.in.h:1
 msgid "An application for managing system services."
-msgstr ""
+msgstr "Eine Anwendung zur Verwaltung System-Dienste."
 
 #: src/servicemanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+
+#: src/servicemanager/about.py:32
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
-
-#: src/servicemanager/about.py:32
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -50,13 +48,13 @@ msgid "COMAR Author"
 msgstr "Autor von COMAR"
 
 #: src/servicemanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""
 
 #: src/servicemanager/about.py:34
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: ui/ui_item.py:103 ui/ui_main.py:56
