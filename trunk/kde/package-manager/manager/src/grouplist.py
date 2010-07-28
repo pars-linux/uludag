@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+import backend
+
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QSize
@@ -22,8 +24,6 @@ from PyQt4.QtGui import QListWidgetItem
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
-
-import backend
 
 from statemanager import StateManager
 
@@ -64,7 +64,8 @@ class GroupList(QListWidget):
         icon = QIcon(KIcon(icon_path).pixmap(KIconLoader.SizeSmallMedium))
         if icon.isNull():
             icon = self.defaultIcon
-        item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
+        item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count),
+                               self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
@@ -80,10 +81,10 @@ class GroupList(QListWidget):
 
     def currentGroup(self):
         if not self.count():
-            return None
+            return
         if self.currentItem():
-           return unicode(self.currentItem().data(Qt.UserRole).toString())
-        return None
+            return unicode(self.currentItem().data(Qt.UserRole).toString())
 
     def groupChanged(self):
         self.emit(SIGNAL("groupChanged()"))
+
