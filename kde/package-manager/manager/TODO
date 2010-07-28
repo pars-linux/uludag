@@ -26,5 +26,6 @@ KDE Integration Tasks:
 
  - Cleanup PDS stuff
  - Use KConfig instead of QSettings
+ - Update localedata.py with KConfig
  - Use KActions widely
  - Cleanup imports
