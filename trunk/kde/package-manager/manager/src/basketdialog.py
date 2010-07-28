@@ -91,13 +91,15 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         restoreCursor()
 
     def updateTotal(self):
-        selectedSize, extraSize = self.model.selectedPackagesSize(), self.model.extraPackagesSize()
+        selectedSize, extraSize = self.model.selectedPackagesSize(), \
+                                  self.model.extraPackagesSize()
         self.totalSize.setText("<b>%s</b>" % humanReadableSize(
-                                                    selectedSize + extraSize))
+                                        selectedSize + extraSize))
         downloadSize = self.model.downloadSize()
         if not downloadSize:
             downloadSize = selectedSize + extraSize
-        self.downloadSize.setText("<b>%s</b>" % humanReadableSize(downloadSize))
+        self.downloadSize.setText("<b>%s</b>" % humanReadableSize(
+                                        downloadSize))
 
     def setActionButton(self):
         self.actionButton.setText(self.state.getActionName())
@@ -122,7 +124,8 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         if self.state.inUpgrade():
             answer = QtGui.QMessageBox.Yes
             actions = self.state.checkUpdateActions(
-                    self.model.selectedPackages() + self.model.extraPackages())
+                self.model.selectedPackages() + self.model.extraPackages()
+            )
             if actions[0]:
                 answer = self.askForActions(actions[0],
                        i18n("You must <b>restart</b> your system for the "
@@ -132,8 +135,8 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                 return
             if actions[1]:
                 answer = self.askForActions(actions[1],
-                       i18n("You must restart following system services for "
-                            "the updated package(s) to take effect:"))
+                    i18n("You must restart following system services for "
+                         "the updated package(s) to take effect:"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
         self.state.operationAction(self.model.selectedPackages())
@@ -154,7 +157,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         try:
             self.filterExtras()
         except Exception, e:
-            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e), 
+            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e),
                     QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
             QTimer.singleShot(0, restoreCursor)
             messageBox.exec_()
