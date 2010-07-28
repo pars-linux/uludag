@@ -107,6 +107,13 @@ msgid ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style=\" font-size:12pt; font-weight:600;\">Disk selection</span></p></body></html>"
 msgstr ""
+" \t\r\n"
+"\r\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style=\" font-size:12pt; font-weight:600;\">Disk selection</span></p></body></html>"
 
 #: yali4/gui/Ui/autopartwidget.py:134
 msgid "&nbsp;"
@@ -131,7 +138,7 @@ msgstr ""
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:80
 msgid "Pardus installed partition"
-msgstr ""
+msgstr "Pardus qurulu bölüm"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:81
 msgid "Selected disk below"
@@ -159,7 +166,7 @@ msgstr ""
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
-msgstr ""
+msgstr "Bağlan"
 
 #: yali4/gui/Ui/datetimewidget.py:91
 msgid "The current time"
