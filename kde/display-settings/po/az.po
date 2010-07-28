@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27,7 +26,7 @@ msgstr ""
 
 #: data/kcm_displaydevices.desktop.in.h:2
 msgid "Devices"
-msgstr ""
+msgstr "Cihazlar"
 
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
@@ -52,7 +51,7 @@ msgstr ""
 
 #: src/displaysettings/about.py:31
 msgid "Fatih Aşıcı"
-msgstr ""
+msgstr "Fatih Aşıcı"
 
 #: src/displaysettings/about.py:31
 msgid "Current Maintainer"
@@ -98,8 +97,7 @@ msgstr ""
 #: src/displaysettings/deviceswidget.py:85
 #: src/displaysettings/screenswidget.py:77
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
 
@@ -111,16 +109,11 @@ msgid "Access denied."
 msgstr ""
 
 #: src/displaysettings/deviceswidget.py:119
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
 msgstr ""
 
 #: src/displaysettings/deviceswidget.py:139
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
 msgstr ""
 
 #: src/displaysettings/deviceswidget.py:144
@@ -152,9 +145,7 @@ msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr ""
 
 #: src/displaysettings/screenswidget.py:175
-msgctxt ""
-"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
-"(LVDS, VGA, etc.)"
+msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
 msgstr ""
 
@@ -204,10 +195,7 @@ msgid "Output Configuration"
 msgstr ""
 
 #: ui/ui_output.py:226
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
 
 #: ui/ui_output.py:227
@@ -259,10 +247,7 @@ msgid "Frequency Ranges"
 msgstr ""
 
 #: ui/ui_output.py:239
-msgid ""
-"If your monitor's dimensions are not correctly detected, fonts and other "
-"visual objects might seem larger or smaller than normal. In order to fix "
-"this problem, you can specify your monitor's dimensions here."
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
 msgstr ""
 
 #: ui/ui_output.py:240
