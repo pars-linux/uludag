@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27,11 +26,11 @@ msgstr ""
 
 #: src/firewallmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/firewallmanager/about.py:32
 msgid "Current Maintainer"
@@ -55,11 +54,11 @@ msgstr ""
 
 #: src/firewallmanager/main.py:200
 msgid "All"
-msgstr ""
+msgstr "Hamısı"
 
 #: src/firewallmanager/main.py:211
 msgid "Action"
-msgstr ""
+msgstr "Fəaliyyət"
 
 #: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
 #: src/firewallmanager/main.py:317
@@ -68,7 +67,7 @@ msgstr ""
 
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -96,7 +95,7 @@ msgstr ""
 
 #: ui/ui_item.py:71
 msgid "Delete"
-msgstr ""
+msgstr "Sil"
 
 #: ui/ui_main.py:77
 msgid "Add New"
