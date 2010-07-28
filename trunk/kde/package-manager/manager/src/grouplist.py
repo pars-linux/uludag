@@ -16,20 +16,25 @@ from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import QVariant
 
+from PyQt4.QtGui import QIcon
 from PyQt4.QtGui import QListWidget
 from PyQt4.QtGui import QListWidgetItem
 
+from PyKDE4.kdeui import *
+from PyKDE4.kdecore import *
+
 import backend
 
-from context import *
 from statemanager import StateManager
 
 class GroupList(QListWidget):
     def __init__(self, parent=None):
         QListWidget.__init__(self, parent)
         self.iface = backend.pm.Iface()
-        self.defaultIcon = KIcon(('applications-other', 'package'), KIconLoader.SizeSmallMedium)
-        self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
+        self.defaultIcon = QIcon(KIcon('applications-other').pixmap(
+                            KIconLoader.SizeSmallMedium))
+        self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"),
+                            self.groupChanged)
 
     def setState(self, state):
         self.state = state
@@ -39,7 +44,8 @@ class GroupList(QListWidget):
             for name in groups:
                 self.createGroupItem(name)
         else:
-            self.createGroupItem('all', (i18n('All'), 'media-optical', len(self.state.packages())))
+            self.createGroupItem('all',
+                    (i18n('All'), 'media-optical', len(self.state.packages())))
         self.sortItems()
         self.moveAllToFirstLine()
         self.setCurrentItem(self.itemAt(0, 0))
@@ -55,7 +61,7 @@ class GroupList(QListWidget):
             localName, icon_path = content[0], content[1]
             package_count = content[2]
 
-        icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
+        icon = QIcon(KIcon(icon_path).pixmap(KIconLoader.SizeSmallMedium))
         if icon.isNull():
             icon = self.defaultIcon
         item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
