@@ -32,6 +32,7 @@ distfiles = """
     help/en/*.html
 """
 
+
 def make_dist():
     distdir = "hede-manager-%s" % version
     list = []
@@ -48,7 +49,8 @@ def make_dist():
             if not os.path.exists(dn):
                 os.mkdir(dn)
         shutil.copy(file_, os.path.join(distdir, file_))
-    os.popen("tar -czf %s %s" % ("hede-manager-" + version + ".tar.gz", distdir))
+    os.popen("tar -czf %s %s" % ("hede-manager-" + version + ".tar.gz",
+                                  distdir))
     shutil.rmtree(distdir)
 
 if "dist" in sys.argv:
@@ -57,13 +59,13 @@ if "dist" in sys.argv:
 
 app_data = [
     'src/hede-manager.py',
-    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/hede_manager.png']),
+    ('/usr/kde/3.5/share/icons/hicolor/128x128/apps',
+        ['src/hede_manager.png']),
     'src/mainview.py',
     'src/hede_manager.ui',
     'src/utility.py',
     'src/hede-manager.desktop',
-    'help'
-]
+    'help']
 
 kdedistutils.setup(
     name="hede-manager",
@@ -71,11 +73,10 @@ kdedistutils.setup(
     author="Developer",
     author_email="user@pardus.org.tr",
     url="http://www.pardus.org.tr/",
-    min_kde_version = "3.5.0",
-    min_qt_version = "3.3.5",
-    license = "GPL",
-    application_data = app_data,
-    executable_links = [('hede-manager','hede-manager.py')],
-    i18n = ('po', ['.']),
-    kcontrol_modules = [ ('src/hede-manager.desktop','src/hede-manager.py')],
-)
+    min_kde_version="3.5.0",
+    min_qt_version="3.3.5",
+    license="GPL",
+    application_data=app_data,
+    executable_links=[('hede-manager', 'hede-manager.py')],
+    i18n=('po', ['.']),
+    kcontrol_modules=[('src/hede-manager.desktop', 'src/hede-manager.py')])

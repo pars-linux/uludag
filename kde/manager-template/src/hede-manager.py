@@ -22,6 +22,7 @@ mod_name = 'Hede Manager'
 mod_app = 'hede-manager'
 mod_version = '0.1'
 
+
 def AboutData():
     return KAboutData(
         mod_app,
@@ -32,8 +33,8 @@ def AboutData():
         '(C) 2005-2006 UEKAE/TÜBİTAK',
         None,
         None,
-        'bugs@pardus.org.tr'
-    )
+        'bugs@pardus.org.tr')
+
 
 def attachMainWidget(self):
     KGlobal.iconLoader().addAppDir(mod_app)
