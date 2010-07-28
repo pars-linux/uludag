@@ -34,6 +34,7 @@ aboutData   = KAboutData(appName, catalog, programName, version,
 # Authors
 aboutData.addAuthor(ki18n("Gökmen Göksel"), ki18n("Developer"))
 aboutData.addAuthor(ki18n("Faik Uygur"), ki18n("First Author"))
-aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"), ki18nc("EMAIL OF TRANSLATORS", "Your emails"))
+aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"),
+                        ki18nc("EMAIL OF TRANSLATORS", "Your emails"))
 aboutData.setProgramIconName(":/data/package-manager.png")
 

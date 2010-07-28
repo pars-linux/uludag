@@ -13,11 +13,12 @@
 from PyQt4.Qt import QVariant
 from PyQt4.Qt import QSettings
 
-defaults = {"SystemTray":False,
-            "UpdateCheck":False,
-            "InstallUpdatesAutomatically":False,
-            "UpdateCheckInterval":60,
-            }
+defaults = {
+            "SystemTray" : False,
+            "UpdateCheck" : False,
+            "InstallUpdatesAutomatically" : False,
+            "UpdateCheckInterval" : 60,
+           }
 
 class Config:
     def __init__(self, organization, product):

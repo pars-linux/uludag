@@ -33,7 +33,9 @@ def _time():
     global last_time, time_counter
     trace = list(traceback.extract_stack())
     diff = time() - start_time
-    print ('%s ::: %s:%s' % (time_counter, trace[-2][0].split('/')[-1], trace[-2][1])), diff, diff - last_time
+    print ('%s ::: %s:%s' % (time_counter,
+                             trace[-2][0].split('/')[-1],
+                             trace[-2][1])), diff, diff - last_time
     last_time = diff
     time_counter += 1
 
