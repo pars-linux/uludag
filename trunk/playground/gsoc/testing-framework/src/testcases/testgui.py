@@ -25,7 +25,8 @@ class TestGUI:
             counter = 0
             while counter < totalCases:
                 print colorize('Case {0} of {1}',
-                               'bold').format(counter+1, totalCases), 'package: {0}'.format(self.packagelist[totalCounter])
+                            'bold').format(counter+1, totalCases), 'package: ' \
+                            '{0}'.format(self.packagelist[totalCounter])
                 downloadList = []
                 for downloadTag in case[counter].getiterator('download'):
                     downloadList.append(downloadTag.text)
@@ -46,10 +47,10 @@ class TestGUI:
                 print colorize('Enter your observation of the test:', 'bold')
                 observation = raw_input('> ')
                 if not observation == '':
-                    self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
+                    self.report.append('Case {0} Observation: {1}'.format(counter+1,
+                                                                        observation))
                 else:
                     self.report.append('Case {0}: No observation entered.'.format(counter+1))
-                print '\n'
                 counter += 1
             totalCounter += 1
         
@@ -57,7 +58,6 @@ class TestGUI:
         """Download a file using wget."""
         totalDownloads = len(file)
         counter = 0
-        print '\nFiles saved to: ', colorize('{0}', 'bold').format(os.getcwd())
         print 'Downloading ...\n', 
         while counter < totalDownloads:
             downloadFile = ['wget'] + ['-m'] + ['-nd'] + file[counter].split()
@@ -65,7 +65,8 @@ class TestGUI:
             startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
             if startwget == 0:
                 print colorize('{0}', 'bold').format(fileName)
-                self.report.append('{0} downloaded to: {1}'.format(fileName, os.getcwd()))
+                self.report.append('{0} downloaded to: {1}'.format(fileName,
+                                                                   os.getcwd()))
             else:
                 print "The file {0} does not exist.".format(''.join(file[counter]))
             counter += 1
