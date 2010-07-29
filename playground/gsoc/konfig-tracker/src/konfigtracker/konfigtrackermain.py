@@ -27,6 +27,8 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		# UI Initializations
 		self.setupUi(self)
 		self.setFixedSize(self.width(), self.height())
+		self.appMenuBar = self.menuBar()
+		self.setKMenuBar()
 		self.app = app
 		self.connectMainSignals()
 		#update the list for setting up the backupList widget
@@ -44,6 +46,40 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 			performBackup()
 		else:
 			performBackup()
+
+	def setKMenuBar(self):
+		
+		#Adding File Menu
+		self.fileMenu = KActionMenu("File", self)
+		self.quitAction = KAction("&Quit", self)
+		self.closeWindowAction = KAction("Close Window", self)
+		self.importAction = KAction("Import Configurations", self)
+		self.exportAction = KAction("Export Configurations", self)
+		self.fileMenu.addAction(self.importAction)
+		self.fileMenu.addAction(self.exportAction)
+		self.separator1 = self.fileMenu.addSeparator()
+		self.fileMenu.addAction(self.closeWindowAction)
+		self.separator2 = self.fileMenu.addSeparator()
+		self.fileMenu.addAction(self.quitAction)
+		self.appMenuBar.addMenu(self.fileMenu.menu())
+		
+		#Backup Menu
+		self.backupMenu = KActionMenu("Backup", self)
+		self.tagSelection = KAction("Tag Selected", self)
+		self.initConfig = KAction("Initialize", self)
+		self.backupMenu.addAction(self.initConfig)
+		self.backupMenu.addAction(self.tagSelection)
+		self.appMenuBar.addMenu(self.backupMenu.menu())
+
+		#Restore Menu
+		self.restoreMenu = KActionMenu("Restore", self)
+		self.restoreSelection = KAction("Selected snapshot", self)
+		self.restoreMenu.addAction(self.restoreSelection)
+		self.appMenuBar.addMenu(self.restoreMenu.menu())
+		
+		#Help Menu
+		self.helpMenu = KHelpMenu(self,"")
+		self.appMenuBar.addMenu(self.helpMenu.menu())
 
 	def connectMainSignals(self):
 		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), self.slotExportDatabase)

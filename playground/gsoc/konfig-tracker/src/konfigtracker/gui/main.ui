@@ -9,8 +9,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>798</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -45,41 +45,77 @@
       <string>KonfigTracker Database Status</string>
      </property>
     </widget>
-    <widget class="QListWidget" name="backupList">
+    <widget class="KListWidget" name="backupList">
      <property name="geometry">
       <rect>
-       <x>11</x>
-       <y>31</y>
+       <x>10</x>
+       <y>30</y>
        <width>521</width>
        <height>261</height>
       </rect>
      </property>
     </widget>
-    <widget class="QPushButton" name="archiveButton">
+    <widget class="KButtonGroup" name="kbuttongroup">
      <property name="geometry">
       <rect>
-       <x>590</x>
-       <y>110</y>
-       <width>131</width>
-       <height>27</height>
+       <x>540</x>
+       <y>30</y>
+       <width>231</width>
+       <height>251</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Export as archive</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="restoreButton">
-     <property name="geometry">
-      <rect>
-       <x>590</x>
-       <y>150</y>
-       <width>131</width>
-       <height>27</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Restore</string>
-     </property>
+     <widget class="KPushButton" name="archiveButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>90</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Export configurations</string>
+      </property>
+     </widget>
+     <widget class="KPushButton" name="restoreButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>50</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Restore</string>
+      </property>
+     </widget>
+     <widget class="KPushButton" name="importButton">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>130</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Import configurations</string>
+      </property>
+     </widget>
+     <widget class="KPushButton" name="backupNow">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>170</y>
+        <width>141</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Backup Now</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QFrame" name="frame_2">
@@ -110,25 +146,16 @@
       <string>Backup Information</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QTextBrowser" name="backupLog">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>350</y>
-      <width>761</width>
-      <height>181</height>
-     </rect>
-    </property>
-    <property name="toolTip">
-     <string>View backup details</string>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="autoFormatting">
-     <set>QTextEdit::AutoNone</set>
-    </property>
+    <widget class="KTextBrowser" name="backupLog">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>761</width>
+       <height>181</height>
+      </rect>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -166,51 +193,6 @@
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuFile">
-    <property name="title">
-     <string>File</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="separator"/>
-    <addaction name="actionExit"/>
-   </widget>
-   <widget class="QMenu" name="menuOptions">
-    <property name="title">
-     <string>Backup</string>
-    </property>
-    <addaction name="actionTag_Selected_Backup"/>
-    <addaction name="actionArchive_Selected_Backup"/>
-   </widget>
-   <widget class="QMenu" name="menuRestore">
-    <property name="title">
-     <string>Restore</string>
-    </property>
-    <addaction name="actionRestore_Selected_Backup"/>
-    <addaction name="actionInitialize"/>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-    <addaction name="actionAbout_Qt"/>
-    <addaction name="actionAbout_KDE"/>
-    <addaction name="actionAbout"/>
-   </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuOptions"/>
-   <addaction name="menuRestore"/>
-   <addaction name="menuHelp"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="actionExit">
    <property name="text">
     <string>Exit</string>
@@ -257,6 +239,29 @@
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KListWidget</class>
+   <extends>QListWidget</extends>
+   <header>klistwidget.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KButtonGroup</class>
+   <extends>QGroupBox</extends>
+   <header>kbuttongroup.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KPushButton</class>
+   <extends>QPushButton</extends>
+   <header>kpushbutton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KTextBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>ktextbrowser.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
