@@ -23,7 +23,7 @@ def createDatabase(path):
 	gitRepo.init()
 
 def gitCommit():
-	backupTime = strftime("%a, %d %b %Y %H:%M:%S", localtime())
+	backupTime = strftime("%d %b %Y %H:%M:%S, %a", localtime())
 	repo = git.Git(db_path)
         message = "Configuration Backup on : " + backupTime
 	try:
@@ -87,3 +87,9 @@ def getCommitLog(commit):
 	repo = git.Git(db_path)
 	commitLog = repo.execute(["git","show",commit])
 	return QString(commitLog)
+
+def getPathMap(commitId):
+	repo = git.Repo(db_path)
+	commit = repo.commit(commitId)
+	diff = repo.commit_diff(commit)
+	return dict([(d.b_path,d) for d in diff])

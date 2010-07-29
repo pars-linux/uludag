@@ -12,6 +12,7 @@ from PyKDE4.kdeui import *
 
 #KonfigTracker Modules
 from monitor import Monitor
+from about import *
 
 #KonfigTracker Gui
 from gui.ui_mainwindow import Ui_MainWindow
@@ -20,26 +21,26 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 
 	def __init__(self,app):
 		KXmlGuiWindow.__init__(self)
+		
 		#Backend Initializations
 		self.InitApplication()
 		self.monitor = Monitor(app)
 		self.monitor.start()
+		
 		# UI Initializations
 		self.setupUi(self)
 		self.setFixedSize(self.width(), self.height())
-		self.appMenuBar = self.menuBar()
-		self.setKMenuBar()
+		self.setMainMenuBar()
 		self.app = app
 		self.connectMainSignals()
+		
 		#update the list for setting up the backupList widget
 		self.commitMap = {}
+		self.pathMap = {}
                 self.slotUpdateView()
+		self.treeView.setHeaderLabel("No snapshots selected")
 
 	def InitApplication(self):
-		""" 
-		If there exist no database in this path, this function will create
-		one, and initialize a git repository there.
-		"""
 		if not os.access(db_path,os.F_OK):
 			os.mkdir(db_path)
 			createDatabase(db_path)
@@ -47,7 +48,8 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		else:
 			performBackup()
 
-	def setKMenuBar(self):
+	def setMainMenuBar(self):
+		self.appMenuBar = self.menuBar()
 		
 		#Adding File Menu
 		self.fileMenu = KActionMenu("File", self)
@@ -55,6 +57,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.closeWindowAction = KAction("Close Window", self)
 		self.importAction = KAction("Import Configurations", self)
 		self.exportAction = KAction("Export Configurations", self)
+		self.exportAction.setEnabled(False)
 		self.fileMenu.addAction(self.importAction)
 		self.fileMenu.addAction(self.exportAction)
 		self.separator1 = self.fileMenu.addSeparator()
@@ -66,6 +69,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		#Backup Menu
 		self.backupMenu = KActionMenu("Backup", self)
 		self.tagSelection = KAction("Tag Selected", self)
+		self.tagSelection.setEnabled(False)
 		self.initConfig = KAction("Initialize", self)
 		self.backupMenu.addAction(self.initConfig)
 		self.backupMenu.addAction(self.tagSelection)
@@ -74,20 +78,57 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		#Restore Menu
 		self.restoreMenu = KActionMenu("Restore", self)
 		self.restoreSelection = KAction("Selected snapshot", self)
+		self.restoreSelection.setEnabled(False)
 		self.restoreMenu.addAction(self.restoreSelection)
 		self.appMenuBar.addMenu(self.restoreMenu.menu())
 		
 		#Help Menu
-		self.helpMenu = KHelpMenu(self,"")
+		self.helpMenu = KHelpMenu(self, aboutData)
 		self.appMenuBar.addMenu(self.helpMenu.menu())
 
 	def connectMainSignals(self):
+		#SIGNALS for pushbuttons
 		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), self.slotExportDatabase)
 		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), self.slotPerformRestore)
+		self.connect(self.importButton, SIGNAL("clicked(bool)"), self.slotImportArchive)
+		self.connect(self.backupNow, SIGNAL("clicked(bool)"), self.slotBackupNow)	
+		
+		#SIGNALS for view items
 		self.connect(self.monitor, SIGNAL("backupDone"), self.slotUpdateView)
-                self.connect(self.backupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotShowLog)
-                self.connect(self.backupList, SIGNAL("itemSelectionChanged()"), self.slotShowLog)
-                self.connect(self.actionAbout_Qt, SIGNAL("triggered(bool)"),self.slotAboutQt)
+                self.connect(self.backupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotUpdateTreeView)
+		self.connect(self.backupList, SIGNAL("itemClicked(QListWidgetItem*)"), self.slotEnableItems)
+                self.connect(self.treeView, SIGNAL("itemSelectionChanged()"), self.slotShowLog)
+
+		#SIGNALS for menu items
+		self.connect(self.restoreSelection, SIGNAL("triggered(bool)"), self.slotPerformRestore)
+
+	def slotEnableItems(self):
+		self.tagSelection.setEnabled(True)
+		self.exportAction.setEnabled(True)
+		self.restoreSelection.setEnabled(True)
+		self.archiveButton.setEnabled(True)
+		self.restoreButton.setEnabled(True)
+
+	def slotImportArchive(self):
+		print "Import"
+
+	def slotBackupNow(self):
+		print "Do Backup now"
+
+	def slotUpdateTreeView(self):
+		#this will update the treeView, which will show the list of files changed.
+		#pathMap will be a dictionary as <path,git.Diff>
+		selected = self.backupList.selectedItems()
+		self.pathMap.clear()
+		for i in selected:
+			selectedCommit = self.commitMap[str(i.text())]
+			self.pathMap = getPathMap(selectedCommit)
+			#adding the commitId as toplevel item of treeView
+			self.treeView.clear()
+			self.treeView.setHeaderLabel(selectedCommit)
+			for j in self.pathMap.keys():
+				item = QTreeWidgetItem(self.treeView)
+				item.setText(0,j)
 
 	def slotUpdateView(self):
 		#update the backupList view
@@ -102,43 +143,36 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                 self.backupList.sortItems(Qt.DescendingOrder)
             
         def slotShowLog(self):
-                commitLog = QString()
-                selected = self.backupList.selectedItems()
+                diffLog = QString()
+                selected = self.treeView.selectedItems()
                 for i in selected:
-			selectedCommit = self.commitMap[str(i.text())]
-			commitLog = getCommitLog(selectedCommit)
-		colorList = commitLog.split('\n')
+			selectedDiff = self.pathMap[str(i.text(0))]
+			#commitLog = getDiff(selectedDiff)
+			diffLog = QString(selectedDiff.diff)
+		colorList = diffLog.split('\n')
 		self.backupLog.clear()
                 # a loop for coloring the text browser
 		for i in colorList:
 			if i.startsWith('-'):
-				self.backupLog.setTextColor(Qt.darkRed)
+				self.backupLog.setTextBackgroundColor(Qt.darkRed)
+				self.backupLog.setTextColor(Qt.white)
 				self.backupLog.append(i)
 			elif i.startsWith('+'):
-				self.backupLog.setTextColor(Qt.darkGreen)
+				self.backupLog.setTextBackgroundColor(Qt.darkGreen)
 				self.backupLog.append(i)
 			else:
 				self.backupLog.setTextColor(Qt.black)
+				self.backupLog.setTextBackgroundColor(Qt.white)
 				self.backupLog.append(i)
 
 	def slotPerformRestore(self):
 		selectionList = self.backupList.selectedItems()
-		if selectionList == []:
-			self.showError()
-		else:
-			#extract the commit id and call restore function
-			for i in selectionList:
-				selection = self.commitMap[str(i.text())]
-				restore(str(selection))
-			self.showRestoreDone()
+		#extract the commit id and call restore function
+		for i in selectionList:
+			selection = self.commitMap[str(i.text())]
+			restore(str(selection))
+		self.showRestoreDone()
                     
-	def showError(self):
-		msgBox = QMessageBox()
-		msgBox.setWindowTitle("KonfigTracker Error")
-		msgBox.setIcon(QMessageBox.Critical)
-		msgBox.setText("Please select a snapshot from the list!")
-		ret = msgBox.exec_()
-                
 	def showRestoreDone(self):
 		msgBox = QMessageBox()
 		msgBox.setWindowTitle("Restore Complete")
@@ -146,23 +180,15 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		msgBox.setText("Your configuration files have been restored to selected backup.\nPlease restart your session")
 		ret = msgBox.exec_()
                 
-	def slotAboutQt(self):
-		about = QMessageBox.aboutQt(self)
-                
 	def slotExportDatabase(self):
 		selectionList = self.backupList.selectedItems()
-		if selectionList == []:
-			self.showError()
-		else:
-			#show a QFileDialog for saving
-			fileName = QFileDialog.getSaveFileName(self,"Save archive", QDir.homePath() + "/untitled.tar.gz", "Archives (*.tar.gz)")
+		#show a QFileDialog for saving
+		fileName = QFileDialog.getSaveFileName(self,"Save archive", QDir.homePath() + "/untitled.tar.gz", "Archives (*.tar.gz)")
+		if not fileName.isEmpty():
 			for i in selectionList:
 				selection = self.commitMap[str(i.text())]
 				exportDatabase(selection,fileName)
 	
 	def slotTagCommit(self):
 		selectionList = self.backupList.selectedItems()
-		if selectionList == []:
-			self.showError()
-		else:
-			pass
+		
