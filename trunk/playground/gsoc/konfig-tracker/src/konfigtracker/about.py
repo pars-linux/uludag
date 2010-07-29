@@ -4,7 +4,7 @@ from PyKDE4.kdecore import *
 
 # Application Data
 appName     = "konfig-tracker"
-programName = ki18n("Konfig Tracker")
+programName = ki18n("KonfigTracker")
 version     = "1.0"
 description = ki18n("Snapshot and monitoring tool for KDE4 Settings")
 license     = KAboutData.License_GPL

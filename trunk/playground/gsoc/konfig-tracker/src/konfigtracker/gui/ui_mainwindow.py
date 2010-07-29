@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Thu Jul 29 19:43:01 2010
+# Created: Fri Jul 30 00:22:09 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setWindowModality(QtCore.Qt.ApplicationModal)
-        MainWindow.resize(798, 573)
+        MainWindow.resize(798, 690)
         self.centralwidget = QtGui.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtGui.QFrame(self.centralwidget)
@@ -31,9 +31,11 @@ class Ui_MainWindow(object):
         self.kbuttongroup.setGeometry(QtCore.QRect(540, 30, 231, 251))
         self.kbuttongroup.setObjectName("kbuttongroup")
         self.archiveButton = KPushButton(self.kbuttongroup)
+        self.archiveButton.setEnabled(False)
         self.archiveButton.setGeometry(QtCore.QRect(50, 90, 141, 31))
         self.archiveButton.setObjectName("archiveButton")
         self.restoreButton = KPushButton(self.kbuttongroup)
+        self.restoreButton.setEnabled(False)
         self.restoreButton.setGeometry(QtCore.QRect(50, 50, 141, 31))
         self.restoreButton.setObjectName("restoreButton")
         self.importButton = KPushButton(self.kbuttongroup)
@@ -43,15 +45,20 @@ class Ui_MainWindow(object):
         self.backupNow.setGeometry(QtCore.QRect(50, 170, 141, 31))
         self.backupNow.setObjectName("backupNow")
         self.frame_2 = QtGui.QFrame(self.centralwidget)
-        self.frame_2.setGeometry(QtCore.QRect(10, 320, 781, 221))
+        self.frame_2.setGeometry(QtCore.QRect(10, 320, 781, 341))
         self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtGui.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
         self.label = QtGui.QLabel(self.frame_2)
         self.label.setGeometry(QtCore.QRect(10, 10, 131, 16))
         self.label.setObjectName("label")
+        self.treeView = QtGui.QTreeWidget(self.frame_2)
+        self.treeView.setGeometry(QtCore.QRect(10, 31, 321, 301))
+        self.treeView.setObjectName("treeView")
+        self.treeView.headerItem().setText(0, "1")
         self.backupLog = KTextBrowser(self.frame_2)
-        self.backupLog.setGeometry(QtCore.QRect(10, 30, 761, 181))
+        self.backupLog.setGeometry(QtCore.QRect(350, 31, 421, 301))
+        self.backupLog.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
         self.backupLog.setObjectName("backupLog")
         self.layoutWidget = QtGui.QWidget(self.centralwidget)
         self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 2, 2))

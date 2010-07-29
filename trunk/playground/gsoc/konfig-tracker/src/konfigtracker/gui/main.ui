@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>798</width>
-    <height>573</height>
+    <height>690</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -65,6 +65,9 @@
       </rect>
      </property>
      <widget class="KPushButton" name="archiveButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -78,6 +81,9 @@
       </property>
      </widget>
      <widget class="KPushButton" name="restoreButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -124,7 +130,7 @@
       <x>10</x>
       <y>320</y>
       <width>781</width>
-      <height>221</height>
+      <height>341</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -146,14 +152,32 @@
       <string>Backup Information</string>
      </property>
     </widget>
-    <widget class="KTextBrowser" name="backupLog">
+    <widget class="QTreeWidget" name="treeView">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>30</y>
-       <width>761</width>
-       <height>181</height>
+       <y>31</y>
+       <width>321</width>
+       <height>301</height>
       </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string notr="true">1</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="KTextBrowser" name="backupLog">
+     <property name="geometry">
+      <rect>
+       <x>350</x>
+       <y>31</y>
+       <width>421</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="verticalScrollBarPolicy">
+      <enum>Qt::ScrollBarAsNeeded</enum>
      </property>
     </widget>
    </widget>
