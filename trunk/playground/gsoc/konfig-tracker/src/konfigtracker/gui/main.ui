@@ -41,8 +41,14 @@
        <height>16</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>KonfigTracker Database Status</string>
+      <string>KonfigTracker Snapshots</string>
      </property>
     </widget>
     <widget class="KListWidget" name="backupList">
@@ -71,7 +77,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>90</y>
+        <y>100</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -87,7 +93,7 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>50</y>
+        <y>60</y>
         <width>141</width>
         <height>31</height>
        </rect>
@@ -100,26 +106,13 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>130</y>
+        <y>140</y>
         <width>141</width>
         <height>31</height>
        </rect>
       </property>
       <property name="text">
        <string>Import configurations</string>
-      </property>
-     </widget>
-     <widget class="KPushButton" name="backupNow">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>170</y>
-        <width>141</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Backup Now</string>
       </property>
      </widget>
     </widget>
@@ -147,6 +140,12 @@
        <width>131</width>
        <height>16</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="text">
       <string>Backup Information</string>
