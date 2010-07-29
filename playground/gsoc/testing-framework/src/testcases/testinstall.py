@@ -43,12 +43,14 @@ class TestInstall:
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
         totalPackages = len(finalPacakges)
         if totalPackages == 0:
-            self.report.append('No packages were installed\n')
+            self.report.append('No packages were installed')
             return
         
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
             "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
+        print 'Installing packages, please wait ... ' \
+                'Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
@@ -57,8 +59,6 @@ class TestInstall:
             package = finalPacakges[counter]
             singlePackage = package.split()
             try:
-                print 'Installing packages, please wait ... ' \
-                'Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
                 self.report.append('Error: To install the packages, ' \

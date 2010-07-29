@@ -69,7 +69,7 @@ class XMLParser:
             for packageTag in element.getiterator('package'):
                 packageList.append(packageTag.text)
             if not packageList:
-                print colorize('Nothing to test. Skipping ...\n', 'red')
+                print colorize('No package to test. Skipping ...\n', 'red')
                 self.testreport.append(None)
                 counter += 1
                 continue
