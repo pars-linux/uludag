@@ -18,7 +18,7 @@ from testcases import reportgenerator
 
 from clcolorize import colorize
 
-FINISH = colorize('\nFinished\n', 'green')
+FINISH = colorize('Finished', 'green')
 
 
 class XMLParser:
@@ -80,7 +80,7 @@ class XMLParser:
                 gui=self.test_gui,
                 shell=self.test_shell,
                 )[elementText](element, packageList, counter)
-            print colorize('-' * 1, 'bold'), '\n'
+            print colorize('-' * 1, 'bold')
             counter += 1
         self.generate_report(totalTestcases)
         
