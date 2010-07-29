@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import subprocess
-import sys
+
 from clcolorize import colorize
 
 
@@ -20,6 +20,7 @@ class TestAutomated:
         case = self.element.xpath('case')
         totalCases = len(case)
         counter = 0
+        print ''
         while counter < totalCases:
             print colorize('Case {0} of {1}', 'bold').format(counter+1, totalCases)
             self.report.append('')
@@ -52,5 +53,6 @@ class TestAutomated:
                 self.report.append('Output: {0}'.format(output.rstrip()))
                 commandCounter += 1
             for expected in case[counter].getiterator('expected'):
-                self.report.append('Expected: {0}'.format(expected.text))            
+                self.report.append('Expected: {0}'.format(expected.text))
+            print ''
             counter += 1

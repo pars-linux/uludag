@@ -18,7 +18,7 @@ class TestGUI:
         """Execute the gui test case and display the commands."""
         case = self.element.xpath('case')
         totalPackages = len(self.packagelist)
-        print '\n'
+        print ''
         totalCases = len(case)
         totalCounter = 0
         while totalCounter < totalPackages:
@@ -52,6 +52,7 @@ class TestGUI:
                 else:
                     self.report.append('Case {0}: No observation entered.'.format(counter+1))
                 counter += 1
+                print ''
             totalCounter += 1
         
     def download_file(self, file):

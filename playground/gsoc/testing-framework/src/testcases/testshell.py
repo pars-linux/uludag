@@ -16,6 +16,7 @@ class TestShell:
         case = self.element.xpath('case')
         totalCases = len(case)
         counter = 0
+        print ''
         while counter < totalCases:
             print colorize('Case {0} of {1}', 'bold').format(counter+1, totalCases)
             for text in case[counter].getiterator('text'):
@@ -29,5 +30,5 @@ class TestShell:
                 self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
             else:
                 self.report.append('Case {0}: No observation entered.'.format(counter+1))
-            print '\n'
+            print ''
             counter += 1
