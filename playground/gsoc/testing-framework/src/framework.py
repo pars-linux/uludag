@@ -17,7 +17,7 @@ def custom_package_parse(infile):
         return [line.rstrip() for line in open(os.path.abspath(infile))]   
     except IOError:
         print colorize("Invalid package input file: \'{0}' " \
-                       "or the file does not exist.", 'red').format(os.path.abspath(infile))
+            "or the file does not exist.", 'red').format(os.path.abspath(infile))
         print colorize("Make sure that the input file "
                        "contains packages seperated by a newline.", 'green')
         sys.exit(1)

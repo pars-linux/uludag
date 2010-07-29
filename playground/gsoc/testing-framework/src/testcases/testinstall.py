@@ -37,7 +37,7 @@ class TestInstall:
                                  set((self.availablepackages)))
         if packagesNotInRepo:
             self.report.append('The following packages were not found in ' \
-                        "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
+                    "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
        
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
@@ -48,7 +48,7 @@ class TestInstall:
         
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
-                "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
+            "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the

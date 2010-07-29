@@ -23,7 +23,8 @@ class ReportGenerate:
         self.report.append('Pardus Testing Framework')
         self.report.append('Using testcase file: {0}'.format(self.file))
         if self.custom is not None:
-            self.report.append('Custom package parsing: {0}'.format(', '.join(self.custom)))
+            self.report.append('Custom package parsing: ' \
+                               '{0}'.format(', '.join(self.custom)))
         counter = 0
         while counter < self.totaltests:
             self.report.append('\n')
@@ -43,7 +44,8 @@ class ReportGenerate:
         # outFileName specifies the file name of the report. 
         outFileName = '{0}-{1}'.format(os.path.basename(self.file), todayDate)
         try:
-            # if the file already exists, create a new file using time as the variable
+            # if the file already exists, create a new file
+            # using time as the variable. Append time to the filename
             if os.path.isfile(os.path.join(os.getcwd(), outFileName)):
                 currentTime = time.strftime('%H:%M:%S')
                 outFileName += '-{0}'.format(currentTime)
