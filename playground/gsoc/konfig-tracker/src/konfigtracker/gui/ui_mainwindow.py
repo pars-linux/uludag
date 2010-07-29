@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'main.ui'
 #
-# Created: Fri Jul 30 00:22:09 2010
+# Created: Fri Jul 30 01:16:16 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -23,6 +23,10 @@ class Ui_MainWindow(object):
         self.frame.setObjectName("frame")
         self.statusLabel = QtGui.QLabel(self.frame)
         self.statusLabel.setGeometry(QtCore.QRect(10, 10, 181, 16))
+        font = QtGui.QFont()
+        font.setWeight(75)
+        font.setBold(True)
+        self.statusLabel.setFont(font)
         self.statusLabel.setObjectName("statusLabel")
         self.backupList = KListWidget(self.frame)
         self.backupList.setGeometry(QtCore.QRect(10, 30, 521, 261))
@@ -32,18 +36,15 @@ class Ui_MainWindow(object):
         self.kbuttongroup.setObjectName("kbuttongroup")
         self.archiveButton = KPushButton(self.kbuttongroup)
         self.archiveButton.setEnabled(False)
-        self.archiveButton.setGeometry(QtCore.QRect(50, 90, 141, 31))
+        self.archiveButton.setGeometry(QtCore.QRect(50, 100, 141, 31))
         self.archiveButton.setObjectName("archiveButton")
         self.restoreButton = KPushButton(self.kbuttongroup)
         self.restoreButton.setEnabled(False)
-        self.restoreButton.setGeometry(QtCore.QRect(50, 50, 141, 31))
+        self.restoreButton.setGeometry(QtCore.QRect(50, 60, 141, 31))
         self.restoreButton.setObjectName("restoreButton")
         self.importButton = KPushButton(self.kbuttongroup)
-        self.importButton.setGeometry(QtCore.QRect(50, 130, 141, 31))
+        self.importButton.setGeometry(QtCore.QRect(50, 140, 141, 31))
         self.importButton.setObjectName("importButton")
-        self.backupNow = KPushButton(self.kbuttongroup)
-        self.backupNow.setGeometry(QtCore.QRect(50, 170, 141, 31))
-        self.backupNow.setObjectName("backupNow")
         self.frame_2 = QtGui.QFrame(self.centralwidget)
         self.frame_2.setGeometry(QtCore.QRect(10, 320, 781, 341))
         self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
@@ -51,6 +52,10 @@ class Ui_MainWindow(object):
         self.frame_2.setObjectName("frame_2")
         self.label = QtGui.QLabel(self.frame_2)
         self.label.setGeometry(QtCore.QRect(10, 10, 131, 16))
+        font = QtGui.QFont()
+        font.setWeight(75)
+        font.setBold(True)
+        self.label.setFont(font)
         self.label.setObjectName("label")
         self.treeView = QtGui.QTreeWidget(self.frame_2)
         self.treeView.setGeometry(QtCore.QRect(10, 31, 321, 301))
@@ -99,11 +104,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QtGui.QApplication.translate("MainWindow", "KonfigTracker - KDE Configuration Monitor", None, QtGui.QApplication.UnicodeUTF8))
-        self.statusLabel.setText(QtGui.QApplication.translate("MainWindow", "KonfigTracker Database Status", None, QtGui.QApplication.UnicodeUTF8))
+        self.statusLabel.setText(QtGui.QApplication.translate("MainWindow", "KonfigTracker Snapshots", None, QtGui.QApplication.UnicodeUTF8))
         self.archiveButton.setText(QtGui.QApplication.translate("MainWindow", "Export configurations", None, QtGui.QApplication.UnicodeUTF8))
         self.restoreButton.setText(QtGui.QApplication.translate("MainWindow", "Restore", None, QtGui.QApplication.UnicodeUTF8))
         self.importButton.setText(QtGui.QApplication.translate("MainWindow", "Import configurations", None, QtGui.QApplication.UnicodeUTF8))
-        self.backupNow.setText(QtGui.QApplication.translate("MainWindow", "Backup Now", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("MainWindow", "Backup Information", None, QtGui.QApplication.UnicodeUTF8))
         self.actionExit.setText(QtGui.QApplication.translate("MainWindow", "Exit", None, QtGui.QApplication.UnicodeUTF8))
         self.actionBackup_Now.setText(QtGui.QApplication.translate("MainWindow", "Backup Now", None, QtGui.QApplication.UnicodeUTF8))

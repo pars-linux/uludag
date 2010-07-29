@@ -91,7 +91,6 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.connect(self.archiveButton, SIGNAL("clicked(bool)"), self.slotExportDatabase)
 		self.connect(self.restoreButton, SIGNAL("clicked(bool)"), self.slotPerformRestore)
 		self.connect(self.importButton, SIGNAL("clicked(bool)"), self.slotImportArchive)
-		self.connect(self.backupNow, SIGNAL("clicked(bool)"), self.slotBackupNow)	
 		
 		#SIGNALS for view items
 		self.connect(self.monitor, SIGNAL("backupDone"), self.slotUpdateView)
@@ -101,6 +100,8 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 
 		#SIGNALS for menu items
 		self.connect(self.restoreSelection, SIGNAL("triggered(bool)"), self.slotPerformRestore)
+		self.connect(self.exportAction, SIGNAL("triggered(bool)"), self.slotExportDatabase)
+		self.connect(self.tagSelection, SIGNAL("triggered(bool)"), self.slotTagCommit)
 
 	def slotEnableItems(self):
 		self.tagSelection.setEnabled(True)
@@ -110,10 +111,8 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.restoreButton.setEnabled(True)
 
 	def slotImportArchive(self):
-		print "Import"
+		print "Import Feature yet to be implemented"
 
-	def slotBackupNow(self):
-		print "Do Backup now"
 
 	def slotUpdateTreeView(self):
 		#this will update the treeView, which will show the list of files changed.
@@ -125,7 +124,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 			self.pathMap = getPathMap(selectedCommit)
 			#adding the commitId as toplevel item of treeView
 			self.treeView.clear()
-			self.treeView.setHeaderLabel(selectedCommit)
+			self.treeView.setHeaderLabel("id: " + selectedCommit)
 			for j in self.pathMap.keys():
 				item = QTreeWidgetItem(self.treeView)
 				item.setText(0,j)
@@ -190,5 +189,4 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 				exportDatabase(selection,fileName)
 	
 	def slotTagCommit(self):
-		selectionList = self.backupList.selectedItems()
-		
+		print "Yet to be implemented"		
