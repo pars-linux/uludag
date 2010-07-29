@@ -16,6 +16,11 @@ class TestGUI:
         
     def test_gui_main(self):
         """Execute the gui test case and display the commands."""
+        downloadList = []
+        for downloadTag in self.element.getiterator('download'):
+            downloadList.append(downloadTag.text)
+        if downloadList:
+            self.download_file(downloadList)    
         case = self.element.xpath('case')
         totalPackages = len(self.packagelist)
         print ''
@@ -23,15 +28,12 @@ class TestGUI:
         totalCounter = 0
         while totalCounter < totalPackages:
             counter = 0
+            self.report.append('Package: {0}'.format(self.packagelist[totalCounter]))
             while counter < totalCases:
                 print colorize('Case {0} of {1}',
-                            'bold').format(counter+1, totalCases), 'package: ' \
-                            '{0}'.format(self.packagelist[totalCounter])
-                downloadList = []
-                for downloadTag in case[counter].getiterator('download'):
-                    downloadList.append(downloadTag.text)
-                if downloadList:
-                    self.download_file(downloadList)    
+                            'bold').format(counter+1, totalCases),
+                print 'package:',
+                print colorize('{0}', 'bold').format(self.packagelist[totalCounter])
                 linkList = []
                 for linkTag in case[counter].getiterator('link'):
                     linkList.append(linkTag.text)
