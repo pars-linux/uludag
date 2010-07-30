@@ -3,7 +3,7 @@
 from PyKDE4.kdecore import *
 
 # Application Data
-appName     = "konfig-tracker"
+appName     = "konfigtracker"
 programName = ki18n("KonfigTracker")
 version     = "1.0"
 description = ki18n("Snapshot and monitoring tool for KDE4 Settings")

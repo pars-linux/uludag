@@ -40,10 +40,10 @@ def update_messages():
 
 	# Collect UI files
 	filelist = []
-	for filename in glob.glob1("konfigtracker/gui/", "*.ui"):
+	for filename in glob.glob1("ui", "*.ui"):
 		print "I am here"
 		print filename
-		os.system("/usr/bin/pyuic4 -o konfigtracker/gui/ui_%s.py konfigtracker/gui/%s.ui" % (filename.split(".")[0], filename))
+		os.system("/usr/bin/pyuic4 -o build/konfigtracker/ui_%s.py ui/%s.ui" % (filename.split(".")[0], filename))
 
 	# Collect headers for desktop files
 	for filename in glob.glob("data/*.desktop.in"):
@@ -117,7 +117,6 @@ class Install(install):
 
 		mime_icons_dir = os.path.join(root_dir, "icons/hicolor")
 		icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
-		mime_dir = os.path.join(root_dir, "mime/packages")
 		locale_dir = os.path.join(root_dir, "locale")
 		apps_dir = os.path.join(root_dir, "applications")
 		project_dir = os.path.join(root_dir, PROJECT)
@@ -126,7 +125,6 @@ class Install(install):
 		print "Making directories..."
 		makeDirs(mime_icons_dir)
 		makeDirs(icon_dir)
-		makeDirs(mime_dir)
 		makeDirs(bin_dir)
 		makeDirs(locale_dir)
 		makeDirs(apps_dir)
@@ -140,13 +138,12 @@ class Install(install):
 
 		shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
 		shutil.copy("data/%s.png" % PROJECT, icon_dir)
-		shutil.copy("data/%s.xml" % PROJECT, mime_dir)
 
 		# Install icons
 		for size in ["16x16", "32x32", "48x48", "64x64"]:
-			mime_size_dir = "%s/%s/mimetypes/" % (mime_icons_dir, size)
-		makeDirs(mime_size_dir)
-		shutil.copy("data/%s-%s.png" % (PROJECT, size), "%s/application-x-pisi.png" % mime_size_dir)
+			mime_size_dir = "%s/%s/apps/" % (mime_icons_dir, size)
+			makeDirs(mime_size_dir)
+			shutil.copy("data/%s-%s.png" % (PROJECT, size), "%s/konfigtracker.png" % mime_size_dir)
 
 		# Install codes
 		print "Installing codes..."
@@ -168,15 +165,12 @@ class Install(install):
 		# Modes
 		print "Changing file modes..."
 		os.chmod(os.path.join(project_dir, "%s.py" % PROJECT), 0755)
-		os.chmod(os.path.join(project_dir, "pm-install.py"), 0755)
 		# Symlink
 		try:
 			if self.root:
 				os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % PROJECT), os.path.join(bin_dir, PROJECT))
-				os.symlink(os.path.join(project_dir.replace(self.root, ""), "pm-install.py"), os.path.join(bin_dir, "pm-install"))
 			else:
 				os.symlink(os.path.join(project_dir, "%s.py" % PROJECT), os.path.join(bin_dir, PROJECT))
-				os.symlink(os.path.join(project_dir, "pm-install.py"), os.path.join(bin_dir, "pm-install"))
 		except OSError:
 			pass
 
