@@ -1,5 +1,5 @@
-Yeni Katkıcı Kabul Politikası
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Nasıl katkıcı olunur?
+~~~~~~~~~~~~~~~~~~~~~
 .. contents:: :depth: 2
 
 .. .. admonition:: Abstract
@@ -12,23 +12,25 @@ Yeni Katkıcı Kabul Politikası
 Bugzilla Katkıcı Adayı Takibi
 =============================
 
-- Bu izleme süreci için "Yeni Katkıcı / New Contributor" ürünü bulunmaktadır.
-- Bu ürün altında "Geliştirici / Developer", "Testçi / Tester" bileşenleri bulunmaktadır.
-- Çeviri başvuruları translate.pardus.org.tr üzerinden yapılmaktadır.
-- Bugzilla izinleri:
-    - Bugzilla'da bulunan "Yeni Katkıcı / New Contributor" ürünü için bir mentor grubu bulunmaktadır.
-    - Bu grubun dışında bulunan kişiler hata açabilecek fakat hata durumunda bir değişiklik yapamayacaktır.
+- Geliştirme veya test alanında katkıcı olabilmek için bu belgeyi takip etmelisiniz.
+- Çevirmenlerin başvuruları `Pardus Çeviri Sitesi <http://translate.pardus.org.tr>`_ üzerinden yapılmaktadır.
+- Bug raporlama ve ayıklama alanında katkı vermek istiyorsanız `http://svn.pardus.org.tr/uludag/trunk/doc/tr/bug_submit_triage`_
+- Belgeleme alanında katkı sağlamak istiyorsanız, `Wiki <http://pardus-wiki.org/>`_ veya `Özgürlük İçin <http://www.ozgurlukicin.com/`_ üzerinden katkı vermeye başlayabilirsiniz.
+- Tasarım alanında katkı sağlamak istiyorsanız, `Geliştirici Listesi <http://liste.pardus.org.tr/mailman/listinfo/gelistirici>`_ üzerinden bize ulaşabilir ve tasarım ile ilgili duvarkağıdı, simge seti, kullanıcı arayüzü gibi bir çok farklı alanda Pardus için hazırlamış olduğunuz tasarımları paylaşabilirsiniz.
 
     ..  image:: mentoring.png
 
 Süreç:
-------
+======
+
+Başvuru İsteğinde Bulunulması
+-----------------------------
+
 #. Başvuran kişi bugs.pardus.org.tr'ye üye olur.
 #. Başvuran kişi "Yeni Katkıcı / New Contributor" ürününde istediği bileşen için hata açar.
 #. Hatanın başlığı "Testçi veya Geliştirici Adaylık Ad Soyad" şeklinde olmalıdır.
 #. Hatanın "Ayrıntılar" kısmı aşağıda bulunan bilgilerin cevaplarını içermelidir:
 
-    #. Başvuran kişinin Adı Soyadı
     #. Daha önce kullandığınız dağıtımlar nelerdir?
     #. Ne zamandır ve hangi seviyede Pardus'u kullanıyorsunuz?
     #. Bir özgür yazılım projesine katkıda bulunmak sizin için ne ifade ediyor?
@@ -43,10 +45,11 @@ Süreç:
 
 #. Başvuru sahibi başvuru sırasında sorulan soruları özensiz bir şekilde cevaplamış ise mentor koordinatorleri tarafından hatası "KARAR VERİLDİ/GEÇERSİZ" olarak işaretlenir ve `Başvuru Red Hazır Yorumu`_ yapılır.
 #. Başvuru sahibi bu aşamada reddedildiğinde; eğer test için başvurmuş ise 3 ay, geliştirme için başvurmuş ise 6 ay sonrasında kendini geliştirdiği takdirde tekrar başvuru yapabilecektir.
-#. Başvuru sahibine ilgili quiz sorularının gönderilmesi:
-    #. Başvuru sahibine quiz soruları gönderilirken hatası mentor listesinde bulunan kişiler ve başvuru sahibi hariç tüm kullanıcılara görünmez hale getirilir.
-    #. Quiz soruları mentor koordinatörleri tarafından `Quiz Gönderme Hazır Yorumu`_ ile gönderilir.
 
+Başvuru Sahibine Quiz Sorularının Gönderilmesi
+----------------------------------------------
+
+#. Quiz soruları mentor koordinatörleri tarafından `Quiz Gönderme Hazır Yorumu`_ ile gönderilir.
 #. Başvuru sahibi soruları çözmeye başladıklarına dair onayı buzilla'ya yorum olarak gönderir.
 #. Onaydan yaklaşık 10 gün içerisinde başvuru sahibi cevaplarını bugzilla'da yoruma ek olarak gönderir.
 #. Eğer başvuru sahibi bu 10 gün içerisinde bugzilla üzerinden ulaşılamıyor ise hatası KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve `Başvuru Red Hazır Yorumu`_ mentor koordinatörleri tarafından yazılır.
@@ -55,38 +58,47 @@ Süreç:
 #. Başvuru sahibi bu aşamada reddedildiğinde; eğer test için başvurmuş ise 3 ay, geliştirme için başvurmuş ise 6 ay sonrasında kendini geliştirdiği takdirde tekrar başvuru yapabilecektir.
 #. Gözden geçirme olumlu sonuçlanmış ise:
     #. Başvuru sahibi testçilik için başvurmuş ise test ekibi üyeliğine kabul edilir ve test listesine yazma onayı verilir. Mentor koordinatörleri tarafından `Testçi Başvuru Kabul Hazır Yorumu`_ yapılır ve hata KARAR VERİLDİ/ONAYLANDI olarak işaretlenir.
-    #. Başvuru sahibi geliştirici olmak için başvurmuş ise:
-        #. Quiz'de bulunan sorular doğrultusunda başvuru sahibinin ilgili olduğu alana göre, başvuru sahibi ile daha yakından ilgilenecek bir mentor atanır.
+    #. Başvuru sahibi geliştirici olmak için başvurmuş ise, bu kişiye bir mentor atanır.
+
+Mentor Atanması
+---------------
+
+#. Quiz'de bulunan sorular doğrultusunda başvuru sahibinin ilgili olduğu alana göre veya alfabetik sıraya göre bir mentor atanır.
             #. Her mentor'un üzerinde en fazla 3 başvuru yapan kişi bulunabilacektir.
-            #. Eğer tüm mentor'lar üzerinde 3 başvuru var ise, yeni başvuru kuyrukta bekleyecek ve kuyrukta bekleyeceğine dair stok yorum mentor koordinatörleri tarafından hataya eklenecektir.
+            #. Eğer tüm mentor'lar üzerinde 3 başvuru var ise, yeni başvuru kuyrukta bekleyecek ve kuyrukta bekleyeceğine dair `Mentor Atama Hazır Yorumu`_ mentor koordinatörleri tarafından hataya eklenecektir.
             #. Menor'un atanma sürecini mentor koordinatörleri takip eder.
                 #. Her mentor üzerinde bulunan başvuru sayısı takibi,
                 #. Mentor atanması için mentor@pardus.org.tr üzerinden uyarı maili gönderilmesi,
             #. Başvuru sahibine bir mentor atandığında, hata üzerinden mentor koordinatörleri tarafından  `Mentor Atama Hazır Yorumu`_ yapılır, anahtar kelimeyi "mentor" olarak işaretler ve hatanın sahibini mentor@pardus.org.tr'den ilgili mentora atar.
 
-        #. Başvuru sahibine mentor tarafından küçük bir iş(ler) verilir. (not: Küçük iş çözülecek bir hata veya yapılacak bir paket olabilir.)
-            #. Başvuru sahibi bu noktadan itibaren çırak olarak adlandırılacaktır.
-            #. Çırağa mentor'un isteğine göre birden fazla iş verilebilir.
-            #. Bu süreç içerisinde çırağa playground için svn izinleri verilir. (playground svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
-            #. SVN izinlerinin verilebilmesi için, mentor tarafından `SVN Hesabı Açma Hazır Yorumu`_  yapılır. Çırak gerekli bilgiyi yorum olarak hataya gönderecektir.
-            #. Bu süre içerisinde yapmış olduğu paketlerin sahibi mentor'u olacaktır.
-        #.  Mentorun belirtmiş olduğu sürede bu verilen küçük işi yerine getiremez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. Mentor çırağın ne kadar süre sonra tekrar başvurabileceğini de yoruma ekler. (playground svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
-        #. Çırak verilen küçük iş(ler)i mentor'un istediği süre içerisinde yerine getirebilmiş ise:
-            #. Çırak "geliştirici adayı" olarak adlandırılacaktır:
+Mentorluk Süreci
+----------------
 
-            Geliştirici adaylığı süreci boyunca:
-                #. Adaylık süresinin bitimi mentoruna bağlıdır.
-                #. Adaylık döneminde yapılan paketlerin sahibi mentor'udur.
-                #. Sürümlerin "stable" izinleri dışında izinleri adaya verilecektir. (svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
-                #. Mentor adayın olgunluğa eriştiğine emin olana kadar takip eder:
-                    #. Adayın yaptığı paketlerin gözden geçirilme sürecine katılır.
-                    #. Adayın süreklilik, doğruluk, kararlılık, iletişim gibi katkıcıda bulunması gereken niteliklere sahip olup olmadığını kontrol eder.
-        #. Başvuru sahibi adaylık sürecini geçemez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. (Verilmiş olan tüm izinler geri alınır.) (svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
-        #. Başvuru sahibi adaylık sürecini geçer ise:
-            #. Mentor adaydan emin olduğunda, mentorluğu bıraktığını bugzilla üzerinden yorum olarak ilan eder ve hatasını KARAR VERİLDİ/ÇÖZÜLDÜ olarak işaretler.
-            #. Geliştirici olarak kabul edilir
-            #. stable dahil tüm svn izinleri verilir.(stable svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
-            #. Adaylık sürecinde yapmış olduğu paketler ve diğer işler mentor'undan adaya devredilir.
+#. Başvuru sahibine mentor tarafından küçük bir iş(ler) verilir. (not: Küçük iş çözülecek bir hata veya yapılacak bir paket olabilir.)
+    #. Başvuru sahibine küçük işlerin zorluğuna göre birden fazla iş verilebilir.
+    #. Bu süreç içerisinde başvuru sahibine playground için svn izinleri verilir. (playground svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+    #. Bu süre içerisinde yapmış olduğu paketlerin sahibi mentor'u olacaktır.
+#. Mentorun belirtmiş olduğu sürede bu verilen küçük işi yerine getiremez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. Mentor çırağın ne kadar süre sonra tekrar başvurabileceğini de yoruma ekler. (playground svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+#. Başvuru sahibi verilen küçük iş(ler)i mentor'un istediği süre içerisinde yerine getirebilmiş ise:
+    #. Başvuru sahibi gelişimini izleme sürecine girer.
+
+Başvuru Sahibi Gelişimini İzleme
+--------------------------------
+#. İzleme sürecinin süresinin bitimi mentoruna bağlıdır.
+#. Bu dönemde yapılan paketlerin sahibi mentor'udur.
+#. Sürümlerin "stable" izinleri dışında izinleri adaya verilecektir. (svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+#. Mentor adayın olgunluğa eriştiğine emin olana kadar takip eder:
+   #. Başvuru sahibinin yaptığı paketlerin gözden geçirilme sürecine katılır.
+   #. Başvuru sahibinin süreklilik, doğruluk, kararlılık, iletişim gibi katkıcıda bulunması gereken niteliklere sahip olup olmadığını kontrol eder.
+#. Başvuru sahibi adaylık sürecini geçemez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. (Verilmiş olan tüm izinler geri alınır.) (svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+#. Başvuru sahibi adaylık sürecini geçer ise:
+   #. Mentor adaydan emin olduğunda, mentorluğu bıraktığını bugzilla üzerinden yorum olarak ilan eder ve hatasını KARAR VERİLDİ/ÇÖZÜLDÜ olarak işaretler.
+        #. Geliştirici olarak kabul edilir
+        #. stable dahil tüm svn izinleri verilir.(stable svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+        #. Adaylık sürecinde yapmış olduğu paketler ve diğer işler mentor'undan adaya devredilir.
+
+Rehberlik Etme Kuralları
+--------------------------
 
 #. Başvuru sahibine bir mentor atanana kadar (bugzillla'yı gözden geçirip, quiz iletme, mentor atama uyarısı verme vb.) mentor koordinatorleri süreci takip eder.
 #. Mentor atandıktan sonra başvuru sahibinin sorumluluğu mentorunda bulunmaktadır ve bugzilla'da gerekli karar yorumlarını mentoru yapacaktır.
@@ -100,10 +112,21 @@ Başvuru Red Hazır Yorumu
 ------------------------
     ::
 
-        Başvuru red hazır yorum:
-            Başvurunuz olumsuz sonuçlanmıştır. Pardus'a katkı vermeye başladığınız ve kendinizi geliştirdiğiniz takdirde yaklaşık x ay sonra tekrar başvuruda bulunabilirsiniz.
-            --
-            Pardus Mentor Koordinatörleri
+        Başvurunuz ilgili ekip tarafından incelenmiş, maalesef sorulara verdiğiniz
+        yanıtlar yeterli bulunmamıştır. Ayrıca başvurunuz hangi alanda Pardus'a katkı verebileceğinizi
+        ölçmemize yardımcı olabilecek örnek bir uygulama kodu, çözümüne katkıda bulunduğunuz bir hata,
+        yama, vb. gibi geçmiş katkı referansları da içermemektedir.
+
+        Unutmayın ki, Pardus'u kullanmak, sorunlarınızı hata takip sistemine bildirmek,
+        listeleri takip edip listelerdeki yardım taleplerini yanıtlamak Pardus'a katkı
+        vermenin en güzel yollarından biridir. Moralinizi bozmayın ve bilgi birikiminizin
+        bizi ikna edecek düzeye geldiğini düşündüğünüzde tekrar başvurmaktan çekinmeyin.
+
+        Bol şanslar.
+        --
+        Pardus Mentor Koordinatörleri
+
+
 
 Quiz Gönderme Hazır Yorumu
 --------------------------
@@ -128,10 +151,9 @@ Testçi Başvuru Kabul Hazır Yorumu
 
     ::
 
-        Testçi Başvuru kabul hazır yorum:
-            Başvurunuz olumlu sonuçlanmıştır,  testçi@pardus.org.tr için gerekli izinleriniz verilmiştir. Pardus'a yapacağınız katkılarda dolayı şimdiden size teşşekür ederiz.  
-            --
-            Pardus Mentor Koordinatörleri
+        Başvurunuz olumlu sonuçlanmıştır,  testçi@pardus.org.tr için gerekli izinleriniz verilmiştir. Pardus'a yapacağınız katkılarda dolayı şimdiden size teşşekür ederiz.  
+        --
+        Pardus Mentor Koordinatörleri
 
 
 Kuyrukta Bekleme Hazır Yorumu
@@ -151,21 +173,15 @@ Mentor Atama Hazır Yorumu
 
     ::
 
-        Göndermiş olduğunuz cevaplar doğrultusunda size x kişisi mentor olarak atanmıştır. http://svn.pardus.org.tr/uludag/trunk/playground/ ve http://svn.pardus.org.tr/pardus/playground/ izinleriniz verilmiştir. Bu aşamada size mentor tarafından küçük iş(ler) verilecektir.
+        Göndermiş olduğunuz cevaplar doğrultusunda size x kişisi mentor olarak atanmıştır.
+
+        SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir [1].
+        Bu çıktıyı gönderdiğinizde http://svn.pardus.org.tr/uludag/trunk/playground/ ve http://svn.pardus.org.tr/pardus/playground/
+        dizinlerine yazma izinleri verilecektir. Bu aşamadan sonra size mentorunuz tarafından küçük görevler verilecektir.
 
         Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
+
+        [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
         --
         Pardus Mentor Koordinatörleri
-
-SVN Hesabı Açma Hazır Yorumu
-----------------------------
-
-    ::
-
-        Merhabalar,
-
-        SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir
-
-        http://developer.pardus.org.tr/newcontributor/creating-svn-account.html
-        Teşekkürler,
 
