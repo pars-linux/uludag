@@ -145,6 +145,9 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                 self.backupList.clear()
                 self.backupList.insertItems(0, backup_list)
                 self.backupList.sortItems(Qt.DescendingOrder)
+
+		#showing a message in tray
+		self.trayItem.showMessage("KonfigTracker - KDE4 Configuration Monitor","KDE4 Configuration changed, Backup done.",self.trayItem.iconName())
             
         def slotShowLog(self):
                 diffLog = QString()

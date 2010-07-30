@@ -16,6 +16,10 @@
   <property name="windowTitle">
    <string>KonfigTracker - KDE Configuration Monitor</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../data/data.qrc">
+    <normaloff>:/data/konfigtracker.png</normaloff>:/data/konfigtracker.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -285,6 +289,8 @@
    <header>ktextbrowser.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../data/data.qrc"/>
+ </resources>
  <connections/>
 </ui>
