@@ -43,16 +43,16 @@ class TestAutomated:
                                                   stderr=subprocess.PIPE)
                 except OSError:
                     self.report.append('Output: Invalid command or invalid option')
-                    commandCounter +=1 
+                    commandCounter += 1 
                     continue
                 output, error = runCommand.communicate()
                 if error:
                     self.report.append('Error: {0}'.format(error.rstrip()))
-                    commandCounter +=1 
+                    commandCounter += 1 
                     continue
                 self.report.append('Output: {0}'.format(output.rstrip()))
                 commandCounter += 1
             for expected in case[counter].getiterator('expected'):
                 self.report.append('Expected: {0}'.format(expected.text))
-            print ''
+            print '... Done'
             counter += 1

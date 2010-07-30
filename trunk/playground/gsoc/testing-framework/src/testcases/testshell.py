@@ -13,6 +13,8 @@ class TestShell:
         
     def test_shell_main(self):
         """Print the text and ask the user to run the commands."""
+        for package in self.element.getiterator('package'):
+            print 'Package:      ', colorize(package.text, 'bold')
         case = self.element.xpath('case')
         totalCases = len(case)
         counter = 0
