@@ -15,7 +15,7 @@ from monitor import Monitor
 from about import *
 
 #KonfigTracker Gui
-from gui.ui_mainwindow import Ui_MainWindow
+from ui_mainwindow import Ui_MainWindow
 
 class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 
