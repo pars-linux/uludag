@@ -13,21 +13,22 @@ class TestShell:
         
     def test_shell_main(self):
         """Print the text and ask the user to run the commands."""
+        packageList = []
         for package in self.element.getiterator('package'):
-            print 'Package:      ', colorize(package.text, 'bold')
+            packageList.append(package.text)
+        print 'Package:      ', colorize(', '.join(packageList), 'bold')
         case = self.element.xpath('case')
         totalCases = len(case)
         counter = 0
         print ''
         while counter < totalCases:
-            print colorize('Case {0} of {1}', 'bold').format(counter+1, totalCases)
+            print 'Case {0} of {1}'.format(counter+1, totalCases)
             for text in case[counter].getiterator('text'):
-                print text.text
+                print colorize(text.text, 'bold')
             for text in case[counter].getiterator('command'):
                 print colorize(text.text, 'yellow')
             # Get the observations
-            print colorize('Enter your observation of the test:', 'bold')
-            observation = raw_input('> ')
+            observation = raw_input('Enter your observation of the test \n> ')
             if not observation == '':
                 self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
             else:

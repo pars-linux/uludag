@@ -22,11 +22,11 @@ class TestAutomated:
         counter = 0
         print ''
         while counter < totalCases:
-            print colorize('Case {0} of {1}', 'bold').format(counter+1, totalCases)
+            print 'Case {0} of {1}'.format(counter+1, totalCases)
             self.report.append('')
             self.report.append('Case {0} of {1}'.format(counter+1, totalCases))
             for text in case[counter].getiterator('text'):
-                print text.text
+                print colorize(text.text, 'bold')
             commandList = []
             for command in case[counter].getiterator('command'):
                 commandList.append(command.text)

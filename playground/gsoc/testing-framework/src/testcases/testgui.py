@@ -30,24 +30,22 @@ class TestGUI:
             counter = 0
             self.report.append('Package: {0}'.format(self.packagelist[totalCounter]))
             while counter < totalCases:
-                print colorize('Case {0} of {1}',
-                            'bold').format(counter+1, totalCases),
+                print 'Case {0} of {1},'.format(counter+1, totalCases),
                 print 'package:',
                 print colorize('{0}', 'bold').format(self.packagelist[totalCounter])
                 linkList = []
                 for linkTag in case[counter].getiterator('link'):
                     linkList.append(linkTag.text)
                 if linkList:
-                    print colorize('Open the following link in your browser: ', 'bold')
-                    print ''.join(linkList)
+                    print 'Open the following link in your browser: '
+                    print colorize("''.join(linkList)", 'bold')
                 textList = []
                 for element in case[counter].getiterator('text'):
                     textList.append(element.text)
                 for number, element in enumerate(textList, 1):
                     print colorize('{0}. ', 'bold').format(number), element
                 # Get the observations
-                print colorize('Enter your observation of the test:', 'bold')
-                observation = raw_input('> ')
+                observation = raw_input('Enter your observation of the test \n> ')
                 if not observation == '':
                     self.report.append('Case {0} Observation: {1}'.format(counter+1,
                                                                         observation))
