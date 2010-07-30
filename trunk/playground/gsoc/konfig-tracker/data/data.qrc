@@ -1,6 +1,7 @@
 <RCC>
 	<qresource prefix="data">
 		<file>tray.png</file>
+		<file>konfigtracker.png</file>
 	</qresource>
 </RCC>
 	
