@@ -1,6 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 #necessary modules
 import os
+import sys
 from operations import *
 
 #Qt modules
@@ -23,6 +24,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		KXmlGuiWindow.__init__(self)
 		
 		#Backend Initializations
+		self.app = app
 		self.InitApplication()
 		self.monitor = Monitor(app)
 		self.monitor.start()
@@ -31,13 +33,13 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.setupUi(self)
 		self.setFixedSize(self.width(), self.height())
 		self.setMainMenuBar()
-		self.app = app
 		self.connectMainSignals()
 
 		#System Tray Settings
-		self.trayItem = KStatusNotifierItem("konfig-tracker",self)
+		self.trayItem = KStatusNotifierItem("konfigtracker",self)
 		self.trayItem.setStandardActionsEnabled(True)
 		self.trayItem.setIconByPixmap(QIcon(":/data/tray.png"))
+		self.trayItem.setToolTip(QIcon(":/data/tray.png"), "KonfigTracker", "Snapshot and monitoring tool for kde4 settings")
 		
 		#update the list for setting up the backupList widget
 		self.commitMap = {}
@@ -58,16 +60,13 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		
 		#Adding File Menu
 		self.fileMenu = KActionMenu("File", self)
-		self.quitAction = KAction("&Quit", self)
-		self.closeWindowAction = KAction("Close Window", self)
+		self.quitAction = KStandardAction.quit(self.app.quit, self.actionCollection())
 		self.importAction = KAction("Import Configurations", self)
 		self.exportAction = KAction("Export Configurations", self)
 		self.exportAction.setEnabled(False)
 		self.fileMenu.addAction(self.importAction)
 		self.fileMenu.addAction(self.exportAction)
 		self.separator1 = self.fileMenu.addSeparator()
-		self.fileMenu.addAction(self.closeWindowAction)
-		self.separator2 = self.fileMenu.addSeparator()
 		self.fileMenu.addAction(self.quitAction)
 		self.appMenuBar.addMenu(self.fileMenu.menu())
 		
@@ -82,7 +81,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 
 		#Restore Menu
 		self.restoreMenu = KActionMenu("Restore", self)
-		self.restoreSelection = KAction("Selected snapshot", self)
+		self.restoreSelection = KAction("To Selected Snapshot", self)
 		self.restoreSelection.setEnabled(False)
 		self.restoreMenu.addAction(self.restoreSelection)
 		self.appMenuBar.addMenu(self.restoreMenu.menu())
@@ -116,8 +115,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.restoreButton.setEnabled(True)
 
 	def slotImportArchive(self):
-		print "Import Feature yet to be implemented"
-
+		pass
 
 	def slotUpdateTreeView(self):
 		#this will update the treeView, which will show the list of files changed.
@@ -147,8 +145,8 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
                 self.backupList.sortItems(Qt.DescendingOrder)
 
 		#showing a message in tray
-		self.trayItem.showMessage("KonfigTracker - KDE4 Configuration Monitor","KDE4 Configuration changed, Backup done.",self.trayItem.iconName())
-            
+		self.trayItem.showMessage("KonfigTracker",backup_list.first(),self.trayItem.iconName())
+      
         def slotShowLog(self):
                 diffLog = QString()
                 selected = self.treeView.selectedItems()
@@ -184,7 +182,7 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		msgBox = QMessageBox()
 		msgBox.setWindowTitle("Restore Complete")
 		msgBox.setIcon(QMessageBox.Information)
-		msgBox.setText("Your configuration files have been restored to selected backup.\nPlease restart your session")
+		msgBox.setText("Your configuration files have been restored to selected snapshot.\nPlease restart your session")
 		ret = msgBox.exec_()
                 
 	def slotExportDatabase(self):
@@ -197,4 +195,4 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 				exportDatabase(selection,fileName)
 	
 	def slotTagCommit(self):
-		print "Yet to be implemented"		
+		pass
