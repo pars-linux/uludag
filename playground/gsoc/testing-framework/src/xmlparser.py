@@ -31,7 +31,7 @@ class XMLParser:
         except etree.XMLSyntaxError, detail:
             print colorize('Error: The testcase file cannot be executed ' \
                            'due to an invalid syntax.', 'red')
-            print 'Detail: {0}'.format(detail)
+            print colorize('Detail: {0}', 'bold').format(detail)
             print colorize('Solution: Request the testcase author ' \
                            'for a new file or fix it manually.', 'green')
             sys.exit(1)
@@ -69,7 +69,8 @@ class XMLParser:
             for packageTag in element.getiterator('package'):
                 packageList.append(packageTag.text)
             if not packageList:
-                print colorize('No package to test. Skipping ...\n', 'red')
+                print colorize('Package testing skipped ...', 'red')
+                print colorize('-', 'bold')
                 self.testreport.append(None)
                 counter += 1
                 continue
@@ -80,7 +81,7 @@ class XMLParser:
                 gui=self.test_gui,
                 shell=self.test_shell,
                 )[elementText](element, packageList, counter)
-            print colorize('-' * 1, 'bold')
+            print colorize('-', 'bold')
             counter += 1
         self.generate_report(totalTestcases)
         
@@ -96,7 +97,7 @@ class XMLParser:
         """Call the module for testcase type GUI."""
         caseList = self.testcase_tag_parse(element, 'case')
         if len(caseList) == 0:
-            print colorize('No <case> tag found. Skipping test ...\n', 'red')
+            print colorize('No <case> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         testgui_install = testinstall.TestInstall(packagelist,
@@ -104,7 +105,7 @@ class XMLParser:
                                                   self.available_packages())
         testgui_install.test_install_main()
         if testgui_install.failcode == 0:
-            print colorize('Skipping test ...\n', 'red')
+            print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testgui.TestGUI(element, packagelist))
@@ -120,7 +121,7 @@ class XMLParser:
             print colorize("Only a single package can be tested" \
                            " ('{0}' found)", 'green').format(totalPackages)
             self.testreport.append(None)
-            print colorize('Skipping test ...\n', 'red')
+            print colorize('Skipping test ...', 'red')
             return
         # Parse the testcase and get the <expected> tags. If more than one tag is
         # found, which can be due to a possible mistake in the testcase file,
@@ -128,13 +129,13 @@ class XMLParser:
         # tag is found, the test will be skipped. 
         expectedTextList = self.testcase_tag_parse(element, 'expected')
         if len(expectedTextList) == 0:
-            print colorize('No <expected> tag found. Skipping test ...\n', 'red')
+            print colorize('No <expected> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
         if len(commandTextList) == 0:
-            print colorize('No <command> tag found. Skipping test ...\n', 'red')
+            print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         testautomated_install = testinstall.TestInstall(packagelist,
@@ -142,7 +143,7 @@ class XMLParser:
                                                   self.available_packages())
         testautomated_install.test_install_main()
         if testautomated_install.failcode == 0:
-            print colorize('Skipping test ...\n', 'red')
+            print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testautomated.TestAutomated(packagelist, element))
@@ -155,7 +156,7 @@ class XMLParser:
         # Just check for the command tag here, don't do anything else!
         commandList = self.testcase_tag_parse(element, 'command')
         if len(commandList) == 0:
-            print colorize('No <command> tag found. Skipping test ...\n', 'red')
+            print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         testshell_install = testinstall.TestInstall(packagelist,
@@ -163,7 +164,7 @@ class XMLParser:
                                                   self.available_packages())
         testshell_install.test_install_main()
         if testshell_install.failcode == 0:
-            print colorize('Skipping test ...\n', 'red')
+            print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testshell.TestShell(element))

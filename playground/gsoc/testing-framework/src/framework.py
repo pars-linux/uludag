@@ -35,7 +35,7 @@ def check_file(file):
         print colorize("Only XML files are supported. The file '{0}' " \
                        "is an invalid testcase file.", 'red').format(file)
         sys.exit(1)
-    print 'Parsing file:  {0}\n'.format(fileAbsolutePath)
+    print "Parsing file:  '{0}'\n".format(fileAbsolutePath)
 
 
 def main():
