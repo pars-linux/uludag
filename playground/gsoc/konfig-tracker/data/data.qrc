@@ -1,0 +1,6 @@
+<RCC>
+	<qresource prefix="data">
+		<file>tray.png</file>
+	</qresource>
+</RCC>
+	

@@ -33,6 +33,11 @@ class KonfigTracker(KXmlGuiWindow, Ui_MainWindow):
 		self.setMainMenuBar()
 		self.app = app
 		self.connectMainSignals()
+
+		#System Tray Settings
+		self.trayItem = KStatusNotifierItem("konfig-tracker",self)
+		self.trayItem.setStandardActionsEnabled(True)
+		self.trayItem.setIconByPixmap(QIcon(":/data/tray.png"))
 		
 		#update the list for setting up the backupList widget
 		self.commitMap = {}
