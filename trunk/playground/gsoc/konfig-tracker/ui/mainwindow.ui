@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>KonfigTracker - KDE Configuration Monitor</string>
+   <string>KonfigTracker - Snapshot and Monitoring Tool for KDE4 Settings</string>
   </property>
   <property name="windowIcon">
    <iconset resource="../data/data.qrc">
