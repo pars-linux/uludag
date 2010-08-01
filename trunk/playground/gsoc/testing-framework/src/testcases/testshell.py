@@ -22,13 +22,13 @@ class TestShell:
         counter = 0
         print ''
         while counter < totalCases:
-            print 'Case {0} of {1}'.format(counter+1, totalCases)
+            print 'Case {0} of {1}:'.format(counter+1, totalCases)
             for text in case[counter].getiterator('text'):
-                print colorize(text.text, 'bold')
+                print text.text
             for text in case[counter].getiterator('command'):
-                print colorize(text.text, 'yellow')
+                print colorize(text.text, 'bold')
             # Get the observations
-            observation = raw_input('Enter your observation of the test \n> ')
+            observation = raw_input('Enter your observations: \n> ')
             if not observation == '':
                 self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
             else:

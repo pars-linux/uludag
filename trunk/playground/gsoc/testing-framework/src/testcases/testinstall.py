@@ -5,9 +5,9 @@ from pisi.api import install
 from pisi.api import list_available
 from pisi.api import calculate_download_size
 
-from clcolorize import colorize
-
 from pisi.errors import PrivilegeError
+
+from clcolorize import colorize
 
 
 class TestInstall:

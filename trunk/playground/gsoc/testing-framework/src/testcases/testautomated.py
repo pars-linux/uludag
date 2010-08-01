@@ -22,7 +22,7 @@ class TestAutomated:
         counter = 0
         print ''
         while counter < totalCases:
-            print 'Case {0} of {1}'.format(counter+1, totalCases)
+            print 'Case {0} of {1}'.format(counter+1, totalCases),
             self.report.append('')
             self.report.append('Case {0} of {1}'.format(counter+1, totalCases))
             for text in case[counter].getiterator('text'):
