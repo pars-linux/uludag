@@ -170,7 +170,7 @@ msgstr "Bağlan"
 
 #: yali4/gui/Ui/datetimewidget.py:91
 msgid "The current time"
-msgstr ""
+msgstr "Cari vaxt"
 
 #: yali4/gui/Ui/datetimewidget.py:92 yali4/gui/Ui/datetimewidget.py:93
 msgid ":"
@@ -178,7 +178,7 @@ msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:94
 msgid "Time Zone"
-msgstr ""
+msgstr "Saat Vahidi"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
