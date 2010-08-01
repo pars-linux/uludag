@@ -30,8 +30,8 @@ class TestGUI:
             counter = 0
             self.report.append('Package: {0}'.format(self.packagelist[totalCounter]))
             while counter < totalCases:
-                print 'Case {0} of {1},'.format(counter+1, totalCases),
-                print 'package:',
+                print 'Case {0} of {1}:'.format(counter+1, totalCases)
+                print 'Package -',
                 print colorize('{0}', 'bold').format(self.packagelist[totalCounter])
                 linkList = []
                 for linkTag in case[counter].getiterator('link'):
@@ -45,7 +45,7 @@ class TestGUI:
                 for number, element in enumerate(textList, 1):
                     print colorize('{0}. ', 'bold').format(number), element
                 # Get the observations
-                observation = raw_input('Enter your observation of the test \n> ')
+                observation = raw_input('Enter your observations: \n> ')
                 if not observation == '':
                     self.report.append('Case {0} Observation: {1}'.format(counter+1,
                                                                         observation))

@@ -3,10 +3,11 @@
 
 import os
 import time
-
 from sys import exit
 from datetime import date 
 
+from clcolorize import colorize
+ 
  
 class ReportGenerate:
     """class to generate and manage the outputs generated."""
@@ -54,4 +55,5 @@ class ReportGenerate:
             outFile.close()
         except IOError:
             exit('Error: Unable to generate the report file.')
-        print 'Report saved to: {0}'.format(os.path.join(os.getcwd(), outFileName))
+        print colorize('Report saved to:', 'bold'),
+        print '{0}'.format(os.path.join(os.getcwd(), outFileName))

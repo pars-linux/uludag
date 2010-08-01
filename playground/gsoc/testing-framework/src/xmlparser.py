@@ -18,8 +18,6 @@ from testcases import reportgenerator
 
 from clcolorize import colorize
 
-FINISH = colorize('Finished', 'green')
-
 
 class XMLParser:
     """The main parser class."""
@@ -81,6 +79,7 @@ class XMLParser:
                 gui=self.test_gui,
                 shell=self.test_shell,
                 )[elementText](element, packageList, counter)
+            print colorize('Finished', 'green')
             print colorize('-', 'bold')
             counter += 1
         self.generate_report(totalTestcases)
@@ -91,7 +90,6 @@ class XMLParser:
                                                 self.installed_packages(),
                                                 self.available_packages()))
         self.testreport[counter].test_install_main()
-        print FINISH
     
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
@@ -112,7 +110,6 @@ class XMLParser:
         self.testreport[counter].report.extend(testgui_install.report)
         # Add the install report to the final report
         self.testreport[counter].test_gui_main()
-        print FINISH
         
     def test_automated(self, element, packagelist, counter):
         """Call the module for testcase type AUTOMATED."""
@@ -149,7 +146,6 @@ class XMLParser:
         self.testreport.append(testautomated.TestAutomated(packagelist, element))
         self.testreport[counter].report.extend(testautomated_install.report)
         self.testreport[counter].test_automated_main()
-        print FINISH
         
     def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
@@ -170,7 +166,6 @@ class XMLParser:
         self.testreport.append(testshell.TestShell(element))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
-        print FINISH
 
     def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""
