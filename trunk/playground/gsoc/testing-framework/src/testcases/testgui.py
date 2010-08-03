@@ -38,7 +38,7 @@ class TestGUI:
                     linkList.append(linkTag.text)
                 if linkList:
                     print 'Open the following link in your browser: '
-                    print colorize("''.join(linkList)", 'bold')
+                    print '{0}'.join(linkList)
                 textList = []
                 for element in case[counter].getiterator('text'):
                     textList.append(element.text)

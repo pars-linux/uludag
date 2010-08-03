@@ -1,13 +1,11 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import os
+import sys
 
 from lxml import etree
     
-TESTCASE = {1: 'install', 2: 'gui', 3: 'shell', 4: 'automated'}
-
 
 class XMLWriter:
     """Create the ElementTree and write the XML file."""
@@ -32,14 +30,14 @@ class XMLWriter:
                 self.write_xml()
                 continue
             # call the appropriate testcase
-            test_choice = TESTCASE[choice]
+            testcase = {1: 'install', 2: 'gui', 3: 'shell', 4: 'automated'}
+            test_choice = testcase[choice]
             dict(
                 install=self.install,
                 gui=self.gui,
                 shell=self.shell,
                 automated=self.automated
             )[test_choice]()
-            print 'Ok'
             print ''
             
     def install(self):
@@ -61,6 +59,7 @@ class XMLWriter:
             packageElt = etree.SubElement(testPacakgeElt, 'package')
             packageElt.text = package_list[counter]
             counter += 1
+        print 'Ok'
     
     def gui(self):
         """Input the packages for the testcase gui."""
@@ -114,6 +113,7 @@ class XMLWriter:
                         self.root_element.remove(guiPackageElt)
                     break
             case_counter += 1
+        print 'Ok'
             
     def shell(self):
         """Input the packages for the testcase shell."""
@@ -160,6 +160,7 @@ class XMLWriter:
                         self.root_element.remove(shellPackageElt)
                     break
             case_counter += 1
+        print 'Ok'
 
     def automated(self):
         """Input the packages for the testcase automated."""
@@ -206,6 +207,7 @@ class XMLWriter:
                         self.root_element.remove(automatedPackageElt)
                     break
             case_counter += 1
+        print 'Ok'
         
     def get_packages(self):
         """Input the list of packages."""
