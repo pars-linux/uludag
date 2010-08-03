@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27,11 +26,14 @@ msgstr ""
 
 #: src/servicemanager/about.py:24
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/servicemanager/about.py:32
 msgid "Gökmen Göksel"
 msgstr ""
+" \t\r\n"
+"\r\n"
+"Gökmen Göksel"
 
 #: src/servicemanager/about.py:32
 msgid "Current Maintainer"
@@ -39,7 +41,7 @@ msgstr ""
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/servicemanager/about.py:33
 msgid "COMAR Author"
