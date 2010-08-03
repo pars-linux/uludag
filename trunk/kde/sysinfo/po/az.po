@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,15 +17,18 @@ msgstr ""
 
 #: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
 msgstr ""
+" \t\r\n"
+"\r\n"
+"%1 MB"
 
 #: src/sysinfo.cpp:88
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: src/sysinfo.cpp:94
 msgid "Not Available"
