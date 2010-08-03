@@ -225,7 +225,7 @@ class XMLWriter:
         """Returns a number after validating it."""
         if boundary is not None:
             input_failure = '\nInvalid choice. Please enter a value between ' \
-                                                    '(1 - {0})\n'.format(boundary)
+                                                  '(1 - {0})\n'.format(boundary)
             while True:
                 try:
                     number = int(raw_input('{0}\n> '.format(text)))
@@ -279,7 +279,10 @@ class XMLWriter:
             break
         try:
             outFile = open(file_path, 'w')
-            self.document_tree.write(outFile, xml_declaration=True, pretty_print=True)
+            self.document_tree.write(outFile,
+                                     xml_declaration=True,
+                                     encoding='utf-8',
+                                     pretty_print=True)
             sys.exit("Testcase XML file saved to: '{0}'".format(file_path))
         except IOError:
             sys.exit('An error was encountered while trying to save the file.')
