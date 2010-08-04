@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -42,12 +42,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -58,14 +58,14 @@ msgid "First Author"
 msgstr "Primo autore"
 
 #: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "edivad95@gmail.com"
-
-#: src/about.py:37
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Davide Siciliano"
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -416,24 +416,24 @@ msgid "Update"
 msgstr "Aggiorna"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Aggiornamenti"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Ignora"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Ignora"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
@@ -498,7 +498,7 @@ msgstr "Cerca"
 
 #: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
 msgid "Action Button for current states action"
-msgstr ""
+msgstr "Pulsante D'Azione per azioni dello stato attuale"
 
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
@@ -563,14 +563,12 @@ msgid "Repository Address"
 msgstr "Indirizzo repository"
 
 #: ui/ui_repodialog.py:59
-#, fuzzy
 msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
 #: ui/ui_repodialog.py:60
-#, fuzzy
 msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #: ui/ui_settingsdialog.py:371
 msgid "Package list"
