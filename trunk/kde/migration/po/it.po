@@ -18,7 +18,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
-msgstr ""
+msgstr "Selezionare le opzioni"
 
 #: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
@@ -284,7 +284,7 @@ msgstr "Utente Selezionato: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:47
 msgid "Options Settings"
-msgstr ""
+msgstr "Le Impostazioni delle opzioni"
 
 #: .tmp/ScrSummary.py:49
 msgid "Option %1 : <b>%2</b>"
