@@ -544,19 +544,16 @@ msgid "Pardus 2009.2 comes preinstalled with the open source desktop environment
 msgstr "Pardus 2009.2 include come Desktop Environment KDE 4.4: Avrai un desktop molto migliore rispetto a prima. Durante l'installazione, potrai scegliere se usare la visualizzazone classica, con file e cartelle, oppure la visualizzazione che usa dei plasmoidi e altri gadget, che consentono di avere un orologio analogico sul desktop, le previsioni del tempo, i tuoi appunti e i tuoi feed RSS, direttamente sul tuo desktop."
 
 #: yali4/gui/descSlide.py:21
-#, fuzzy
 msgid "With the arrival of KDE 4.4, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin."
-msgstr "Con l'arrivo di KDE 4.3, Konqueror è stato sostituito con Dolphin, un nuovo file manager. Dolphin è semplice da usare e aggiunge nuove funzionalità come l'ordinare delle cartelle in vari modi, o come la visualizzaione delle informazioni sulla parte destra della finestra.Per qualunque cosa tu abbia bisogno per visualizzare file e cartelle, c'è Dolphin."
+msgstr "Con l'arrivo di KDE 4.4, Konqueror è stato sostituito con Dolphin, un nuovo file manager. Dolphin è semplice da usare e aggiunge nuove funzionalità come l'ordinare delle cartelle in vari modi, o come la visualizzaione delle informazioni sulla parte destra della finestra.Per qualunque cosa tu abbia bisogno per visualizzare file e cartelle, c'è Dolphin."
 
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid "With Pardus 2009.2, Kpdf is replaced with Okular. Okular supports many file formats and you can view all your files without any additional software, take notes on bookmarks on them."
-msgstr "Con Pardus 2009.1, Kpdf è stato sostituito con Okular, che supporta molti formati,  ti permette di vedere tutti i tuoi files senza nessun altro software addizionale, e consente anche di prendere degli appunti e mettere dei segnalibri su di essi."
+msgstr "Con Pardus 2009.2, Kpdf è stato sostituito con Okular, che supporta molti formati, ti permette di vedere tutti i tuoi files senza nessun altro software addizionale, e consente anche di prendere degli appunti e mettere dei segnalibri su di essi."
 
 #: yali4/gui/descSlide.py:23
-#, fuzzy
 msgid "Pardus includes many genuine technologies aiming for an easier use and management. TASMA has been replaced with System Manager in Pardus 2009.2, but you will still find all these management tools built into the System Manager interface."
-msgstr "Pardus include molte tecnologie pensate per un utilizzo e una gestionesemplice del sistema. In Pardus 2009.1 TASMA è stato sostituito con il Gestore di Sistema, ma puoi ancora trovare gli strumenti di TASMA integrati all'interno  del Gestore di Sistema."
+msgstr "Pardus include molte tecnologie pensate per un utilizzo e una gestionesemplice del sistema. In Pardus 2009.2 TASMA è stato sostituito con il Gestore di Sistema, ma puoi ancora trovare gli strumenti di TASMA integrati all'interno  del Gestore di Sistema."
 
 #: yali4/gui/descSlide.py:24
 msgid "Kaptan (Turkish for 'Captain') is what welcomes you to your Pardus installation. Using Kaptan, you can configure your desktop, changing the taskbar's location, wallpaper and desktop theme, and internet connection settings. Kaptan also allows you to add the Contribution Repository to your package management settings. Even more, Kaptan includes options to set intelligent search and an online Pardus Beginner's Tour."
@@ -571,24 +568,20 @@ msgid "Adding new users, changing boot order, starting or stopping system servic
 msgstr "Aggiungere nuovi utenti, cambiare le impostazioni del boot, avviare o fermare dei servizi di sistema o effettuare un ripristino delle configurazioni non è mai stato così semplice. Per queste operazioni puoi usare i Gestori di Sistema, e puoi anche aggiungere dei widget al tuo desktop per le operazioni chge ripeti spesso."
 
 #: yali4/gui/descSlide.py:27
-#, fuzzy
 msgid "To connect to a wireless or 'wired' network is as easy as choosing a connection profile with Pardus 2009.2. With the network manager's advanced options, you can have different settings (e.g. static IP, a different DNS server) for different connections with the profiles you create. Choosing a different connection profile requires just two clicks."
-msgstr "Con Pardus 2009.1 connettersi a una rete senza fili o cablata è semplice come scegliere un profilo.Con le opzioni avanzate del gestore di rete, puoi avere differenti impostazioni(ad es., IP statico, o un server DNS diverso) per ogni rete,semplicemente creando dei profili. Scegliere un profilo richiede solo due click."
+msgstr "Con Pardus 2009.2 connettersi a una rete senza fili o cablata è semplice come scegliere un profilo.Con le opzioni avanzate del gestore di rete, puoi avere differenti impostazioni(ad es., IP statico, o un server DNS diverso) per ogni rete,semplicemente creando dei profili. Scegliere un profilo richiede solo due click."
 
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid "With Pardus 2009.2, Amarok has not only shed skin, but also changed internally. It provides much more than listening to music. You now have the option to read lyrics and learn about the singer or composer through Wikipedia while listening to a song, or use the intelligent playlist feature to group songs in various manners. As Amarok works seamlessly with most player devices, you can drag and drop songs to your players without the need for any external device drivers."
-msgstr "Con Pardus 2009.1, Amarok è cambiato non solo fuori, ma anche dentro. Adesso puoi anche leggere i testi o ottenere informazioni prese da Wikipedia sul cantante o sul compositore, mentre ascolti la musica, oppure usare una caratteristica che crea delle playlist in diverse maniere. Con Amarok puoi anche copiare la tua musica sul tuo lettore MP3 con un comodo sistema di drag'n drop, senza bisogno di driver."
+msgstr "Con Pardus 2009.2, Amarok è cambiato non solo fuori, ma anche dentro. Adesso puoi anche leggere i testi o ottenere informazioni prese da Wikipedia sul cantante o sul compositore, mentre ascolti la musica, oppure usare una caratteristica che crea delle playlist in diverse maniere. Con Amarok puoi anche copiare la tua musica sul tuo lettore MP3 con un comodo sistema di drag'n drop, senza bisogno di driver."
 
 #: yali4/gui/descSlide.py:29
-#, fuzzy
 msgid "Mozilla Firefox is the preferred browser with its speed, security and flexibility. With its addon support and a *very* rich addon repository, you can add new functionality to Mozilla Firefox. You will find many of the most visited websites along with Pardus-related websites in your bookmarks in its Pardus default installation. Enjoy a fast and secure internet with the new Mozilla Firefox 3.6.3."
-msgstr "Mozilla Firefox è il browser di default con la sua velocità,sicurezza e flessibilità. Grazie al suo supporto per componenti aggiuntivi e un vastissimo repository di add-on, potrai aggiungere svariate funzioni al tuo browser. Con l'installazione standard di Pardus, ai segnalibri verranno aggiunti alcuni siti su Pardus. Goditi una navigazione veloce e sicura con Mozilla Firefox 3.5.7."
+msgstr "Mozilla Firefox è il browser di default con la sua velocità, sicurezza e flessibilità. Grazie al suo supporto per componenti aggiuntivi e un *vastissimo* repositorio di add-on, potrai aggiungere svariate funzioni al tuo browser. Con l'installazione standard di Pardus, ai segnalibri verranno aggiunti alcuni siti su Pardus. Goditi una navigazione veloce e sicura con il nuovo Mozilla Firefox 3.6.3."
 
 #: yali4/gui/descSlide.py:30
-#, fuzzy
 msgid "Connecting to your friends and contacts is really easy and seamlessly integrated into the desktop with Pardus 2009.2. Using Kontact, you can send and receive emails, manage your meetings, create address books, takes notes and follow RSS feeds. Using Kopete, you can connect to popular networks like MSN and GTalk, and chat online with your friends."
-msgstr "Gestire i tuoi contatti in Pardus 2009.1 sarà incredibilmente semplice. Con Kontact potrai inviare e ricevere mail, gestire i tuoi incontri, creare rubriche, prendere note e seguire i tuoi feed RSS preferiti. Con Kopete, inoltre, potrai connetterti ai network più popolari con MSN e GTalk."
+msgstr "Gestire i tuoi contatti in Pardus 2009.2 sarà incredibilmente semplice. Con Kontact potrai inviare e ricevere mail, gestire i tuoi incontri, creare rubriche, prendere note e seguire i tuoi feed RSS preferiti. Con Kopete, inoltre, potrai connetterti ai network più popolari con MSN e GTalk, e chiaccherare online coi tuoi amici."
 
 #: yali4/gui/descSlide.py:31
 msgid "World's leading preferred libre office suite OpenOffice.org brings a word processor, a spreadsheet, a presentation application, database, formula and drawing tools to your desktop for your office needs at home, at your workplace or school. With OpenOffice.org, you can view and edit documents created in other office suites and share your documents with friends and contacts that are using other office applications."
@@ -905,9 +898,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your installation medium"
-msgstr "Controlla il CD"
+msgstr "Controlla il CD di installazione"
 
 #: yali4/gui/ScrCheckCD.py:30
 #, fuzzy
@@ -1332,7 +1324,7 @@ msgstr "Password cambiata."
 
 #: yali4/gui/ScrRescuePassword.py:97
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
 #: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
