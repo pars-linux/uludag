@@ -92,6 +92,9 @@ def generate_configs(cache_dir=None):
 
 
 def build_squash(cache_dir=None):
+    '''
+	Build squashfs image of root filesystem to be used as pardus.img
+    '''
     run("/usr/bin/mksquashfs %s %s/* %s/pardus.img -ef exclude.list -noappend -wildcards" %(" ".join(include_list),os.path.join(cache_dir,"ROOT"),cache_dir))
 
 
@@ -156,6 +159,9 @@ def build_iso(cache_dir):
 
 
 def generate_isolinux_conf(cache_dir):
+   ''' 
+       Create isolinux configs
+   '''
 
     #TODO: Change all hard coding to custom 
     dict = {}
