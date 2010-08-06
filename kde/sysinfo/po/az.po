@@ -112,36 +112,36 @@ msgstr "Kde <b>%1</b> on <b>%2</b>"
 
 #: src/sysinfo.cpp:295
 msgid "Processor"
-msgstr ""
+msgstr "İşləmci"
 
 #: src/sysinfo.cpp:297
 msgid "%1 MHz"
-msgstr ""
+msgstr "%1 MHz"
 
 #: src/sysinfo.cpp:298
 msgid " core"
-msgstr ""
+msgstr "həstə"
 
 #: src/sysinfo.cpp:309
 msgid "Display"
-msgstr ""
+msgstr "Görünüş"
 
 #: src/sysinfo.cpp:540
 msgid "3D Not Supported"
-msgstr ""
+msgstr "3D Dəstəyi Yox"
 
 #: src/sysinfo.cpp:542
 msgid "3D Supported"
-msgstr ""
+msgstr "3D Dəstəyi Var"
 
 #: src/sysinfo.cpp:558
 msgid "Mounted on %1"
-msgstr ""
+msgstr "%1 mövqesinə bağlı"
 
 #: src/sysinfo.cpp:558
 msgid "Not mounted"
-msgstr ""
+msgstr "Bağlı deyil"
 
 #: src/sysinfo.cpp:567
 msgid "%1 free of %2"
-msgstr ""
+msgstr "%2'ın %1'ı boş"
