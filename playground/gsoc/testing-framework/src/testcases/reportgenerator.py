@@ -26,6 +26,11 @@ class ReportGenerate:
         if self.custom is not None:
             self.report.append('Custom package parsing: ' \
                                '{0}'.format(', '.join(self.custom)))
+        testerName = raw_input('Please enter your name/ ID:\n> ')
+        if testerName == '':
+            self.report.append('Tested by: No name/ID was given.')
+        else:
+            self.report.append('Tested by: {0}'.format(testerName))
         counter = 0
         while counter < self.totaltests:
             self.report.append('\n')

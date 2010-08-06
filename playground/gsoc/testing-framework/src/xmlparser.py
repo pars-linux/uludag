@@ -59,13 +59,13 @@ class XMLParser:
             element = self.rootelement[counter]
             # Based on the type of testcase, call the appropriate one
             elementText = element.get('test')
-            # If no package tag is there, move on to the next testcase
             print "Running test: ", colorize("{0} / {1}", 'bold').format(counter+1,
                                                                     totalTestcases)
             print 'Type of test: ', colorize('{0}', 'bold').format(elementText)
             packageList = []
             for packageTag in element.getiterator('package'):
                 packageList.append(packageTag.text)
+            # If no package tag is there, move on to the next testcase
             if not packageList:
                 print colorize('Package testing skipped ...', 'red')
                 print colorize('-', 'bold')
@@ -120,10 +120,6 @@ class XMLParser:
             self.testreport.append(None)
             print colorize('Skipping test ...', 'red')
             return
-        # Parse the testcase and get the <expected> tags. If more than one tag is
-        # found, which can be due to a possible mistake in the testcase file,
-        # ignore all the expected tags but accept the first one. If no <expected>
-        # tag is found, the test will be skipped. 
         expectedTextList = self.testcase_tag_parse(element, 'expected')
         if len(expectedTextList) == 0:
             print colorize('No <expected> tag found. Skipping test ...', 'red')
