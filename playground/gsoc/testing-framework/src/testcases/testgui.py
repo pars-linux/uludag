@@ -19,6 +19,11 @@ class TestGUI:
         """Execute the gui test case and display the commands."""
         case = self.element.xpath('case')
         totalPackages = len(self.packagelist)
+        downloadList = []
+        for downloadTag in self.element.getiterator('download'):
+            downloadList.append(downloadTag.text)
+        if downloadList:
+            self.download_file(downloadList)    
         print ''
         totalCases = len(case)
         totalCounter = 0
@@ -30,11 +35,11 @@ class TestGUI:
                 print 'Case {0} of {1}:'.format(counter+1, totalCases)
                 print 'Package -',
                 print colorize('{0}', 'bold').format(self.packagelist[totalCounter])
-                downloadList = []
-                for downloadTag in case[counter].getiterator('download'):
-                    downloadList.append(downloadTag.text)
-                if downloadList:
-                    self.download_file(downloadList)    
+                filesDownloaded = []
+                for files in case[counter].getiterator('download'):
+                    filesDownloaded.append(files.text)
+                print "Using files: '{0}'".format(', '.join(filesDownloaded))
+                print "In directory: '{0}'".format(os.getcwd())
                 linkList = []
                 for linkTag in case[counter].getiterator('link'):
                     linkList.append(linkTag.text)
@@ -50,20 +55,21 @@ class TestGUI:
                 answer = raw_input('Did the above test run as expected? (y / n): ')
                 if answer in ('y', 'Y', 'yes', 'YES', ''):
                     self.report.append('Case {0} of {1}: Success'.format(counter+1,
-                                                                         totalCases))
+                                                                      totalCases))
                     self.summary.append('Case {0} of {1}: Success'.format(counter+1,
-                                                                         totalCases))
+                                                                      totalCases))
                 else:
                     self.report.append('Case {0} of {1}: Failed'.format(counter+1,
-                                                                        totalCases))
-                    self.summary.append('Case {0} of {1}: '.format(counter+1,
-                                                                         totalCases))
+                                                                      totalCases))
+                    self.summary.append('Case {0} of {1}: Failed'.format(counter+1,
+                                                                      totalCases))
                     observation = raw_input('Enter your observations: \n> ')
                     if not observation == '':
                         self.report.append('\tCase {0} Observation: {1}'.format(counter+1,
                                                                         observation))
                     else:
-                        self.report.append('\tCase {0}: No observation entered.'.format(counter+1))
+                        self.report.append('\tCase {0}: No observation ' \
+                                           'entered.'.format(counter+1))
                 counter += 1
                 print ''
             totalCounter += 1
@@ -74,7 +80,7 @@ class TestGUI:
         counter = 0
         print 'Downloading files, please wait ...'
         while counter < totalDownloads:
-            downloadFile = ['wget'] + ['-m'] + ['-nd'] + file[counter].split()
+            downloadFile = ['wget'] + ['-N'] + file[counter].split()
             fileName = os.path.basename(''.join(file[counter]))
             startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
             if startwget == 0:
@@ -84,5 +90,3 @@ class TestGUI:
             else:
                 print "The file {0} does not exist.".format(''.join(file[counter]))
             counter += 1
-        print ''
-        print 'File(s) downloaded to: ', colorize('{0}', 'bold').format(os.getcwd())
