@@ -40,6 +40,7 @@
         <SelectedPackage>eagle-firmware</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>encfs</SelectedPackage>
+        <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>epson-alc1100</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
@@ -349,6 +350,8 @@
         <Package>eject</Package>
         <Package>enca</Package>
         <Package>encfs</Package>
+        <Package>enchant</Package>
+        <Package>enchant-zemberek</Package>
         <Package>enscript</Package>
         <Package>epson-alc1100</Package>
         <Package>ethtool</Package>
