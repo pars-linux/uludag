@@ -1330,7 +1330,7 @@ msgstr "Amministratore (root)"
 
 #: yali4/gui/ScrRescuePisi.py:40
 msgid "Rescue Mode for Pisi History"
-msgstr ""
+msgstr "Modalità di salvataggio per Storia Pisi "
 
 #: yali4/gui/ScrRescuePisi.py:41
 msgid "You can take back your system ..."
@@ -1352,7 +1352,7 @@ msgstr ""
 
 #: yali4/gui/ScrRescuePisi.py:91
 msgid "There is no connection"
-msgstr ""
+msgstr "Non c'è alcuna connessione"
 
 #: yali4/gui/ScrRescuePisi.py:132
 #, python-format
@@ -1650,7 +1650,7 @@ msgstr "Vuoi continuare?"
 
 #: yali4/gui/YaliDialog.py:154
 msgid "Eject CD"
-msgstr ""
+msgstr "Espellere CD"
 
 #: yali4/gui/YaliDialog.py:180 yali4/gui/YaliDialog.py:197
 msgid "Ok"
@@ -1674,15 +1674,15 @@ msgstr "Mostra aiuto"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Chiudi il Computer"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Riavvia il Computer"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Riavvia YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:181
