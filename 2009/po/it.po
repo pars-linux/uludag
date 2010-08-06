@@ -1162,7 +1162,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Partizionamento Automatico o Manuale..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1189,11 +1188,11 @@ msgstr ""
 "<font size=\"+1\">\n"
 "<p>\n"
 "Pardus può venire installato su diversi tipi di hardware. Puoi installare Pardus\n"
-"su un disco vuoto oppure in una partizione del disco. <b>L'installazione distruggerà automaticamente tutti i dati\n"
+"su un disco vuoto di 4 GB (Si consiglia 10 GB) oppure in una partizione del disco. <b>L'installazione distruggerà automaticamente tutti i dati\n"
 "salvati in precedenza sulle partizioni selezionate. </b>\n"
 "</p>\n"
 "<p>\n"
-"Il partizionamento automatico utilizza l'intero disco fisso per l'installazione di Pardus. In questa \n"
+"Il partizionamento automatico utilizza l'intero disco fisso per l'installazione di Pardus 2009.2. In questa \n"
 "schermata puoi scegliere uno dei tuoi dischi da partizionare automaticamente \n"
 "oppure puoi saltare la schermata e passare al partizionamento manuale.\n"
 "</p>\n"
@@ -1392,7 +1391,7 @@ msgstr "L'ultimo passo prima dell'installazione"
 
 #: yali4/gui/ScrSummary.py:43
 msgid "Summary of your installation..."
-msgstr ""
+msgstr "Sommario della tua installazione"
 
 #: yali4/gui/ScrSummary.py:45
 msgid ""
@@ -1418,7 +1417,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:88
 #, python-format
 msgid "Install starts in: <b>%s seconds</b>"
-msgstr ""
+msgstr "Installazione comincia in: <b>%s secondi</b>"
 
 #: yali4/gui/ScrSummary.py:95
 msgid "Start Installation"
@@ -1659,11 +1658,11 @@ msgstr "Ok"
 
 #: yali4/gui/YaliDialog.py:181
 msgid "Please insert a new CD and then click Ok"
-msgstr ""
+msgstr "Inserisci nuovo CD e poi premi OK"
 
 #: yali4/gui/YaliDialog.py:183
 msgid "Insert New CD"
-msgstr ""
+msgstr "Inserisci nuovo CD"
 
 #: yali4/gui/YaliDialog.py:195
 msgid "Information"
