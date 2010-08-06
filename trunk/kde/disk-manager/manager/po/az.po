@@ -17,12 +17,12 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
+msgstr "Disk hissələri və məzmuna yollarının rəhbərliyi üçün bir tətbiq"
 
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
 msgid "Disk Manager"
-msgstr ""
+msgstr "Disk İdarəçisi"
 
 #: src/diskmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
@@ -34,7 +34,7 @@ msgstr "Bahadır Kandemir"
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Güncəl Baxıcı"
 
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
