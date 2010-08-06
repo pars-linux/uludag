@@ -34,6 +34,7 @@ Testler bölümünden "SuperTuxCard" seçin ve install butonuna basın.
 \begin{verbatim}
  unshield
  minizip
+ gnupg
 \end{verbatim}
 
 \item xz paketi kurulumu sonrası:
@@ -51,7 +52,7 @@ Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açt
 Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturduğunu gözlemleyin.
 \begin{verbatim}
  mkdir test
- tar -cvf test.tar test
+ tar -avf test.tar test
 \end{verbatim}
 
 
@@ -71,6 +72,13 @@ Aşağıda bulunan komutların dosyayı önce sıkıştırıp sonra açtığın�
 
 \section{Crypt alt bileşeni}
 \begin{enumerate}
+\item gnupg paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
+\begin{verbatim}
+gpg --gen-key
+\end{verbatim}
+
 \item johntripper paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
