@@ -9,10 +9,11 @@ from clcolorize import colorize
 
 class TestGUI:
     """class for the testcase gui."""
-    def __init__(self, element, packagelist, report=None):
+    def __init__(self, element, packagelist, report=None, summary=None):
         self.element = element
         self.packagelist = packagelist
         self.report = list()
+        self.summary = list()
         
     def test_gui_main(self):
         """Execute the gui test case and display the commands."""
@@ -24,6 +25,7 @@ class TestGUI:
         while totalCounter < totalPackages:
             counter = 0
             self.report.append('Package: {0}'.format(self.packagelist[totalCounter]))
+            self.summary.append('Package: {0}'.format(self.packagelist[totalCounter]))
             while counter < totalCases:
                 print 'Case {0} of {1}:'.format(counter+1, totalCases)
                 print 'Package -',
@@ -47,9 +49,15 @@ class TestGUI:
                 # Get the observations
                 answer = raw_input('Did the above test run as expected? (y / n): ')
                 if answer in ('y', 'Y', 'yes', 'YES', ''):
-                    self.report.append('Case {0} of {1}: Success'.format(counter+1, totalCases))
+                    self.report.append('Case {0} of {1}: Success'.format(counter+1,
+                                                                         totalCases))
+                    self.summary.append('Case {0} of {1}: Success'.format(counter+1,
+                                                                         totalCases))
                 else:
-                    self.report.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
+                    self.report.append('Case {0} of {1}: Failed'.format(counter+1,
+                                                                        totalCases))
+                    self.summary.append('Case {0} of {1}: Failed'.format(counter+1,
+                                                                         totalCases))
                     observation = raw_input('Enter your observations: \n> ')
                     if not observation == '':
                         self.report.append('\tCase {0} Observation: {1}'.format(counter+1,

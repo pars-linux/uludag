@@ -10,9 +10,10 @@ class TestAutomated:
     """This class will perform an automated test, the purpose of which is to run
     a command, get its output and compare it with the expected output, which is
     already encoded in the testcase file."""
-    def __init__(self, package, element, report=None):
+    def __init__(self, package, element, summary, report=None):
         self.package = package
         self.element = element
+        self.summary = list()
         self.report = list()
 
     def test_automated_main(self):
@@ -54,5 +55,9 @@ class TestAutomated:
                 commandCounter += 1
             for expected in case[counter].getiterator('expected'):
                 self.report.append('Expected: {0}'.format(expected.text))
+                if expected.text in output:
+                    self.summary.append('Success')
+                else:
+                    self.summary.append('Failure')
             print '... Done'
             counter += 1
