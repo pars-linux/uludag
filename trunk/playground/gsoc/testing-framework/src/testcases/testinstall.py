@@ -16,13 +16,13 @@ class TestInstall:
     After checking all the above, then only it would proceed to call the Pisi API
     to attempt to install the packages."""
     def __init__(self, packagelist, installedpackages, availablepackages,
-                                        failcode=None, report=None, summary=None):
+                                        failcode=None, summary=None, report=None):
         self.packagelist = packagelist
         self.installedpackages = installedpackages
         self.availablepackages = availablepackages
         self.failcode = 1
-        self.report = list()
         self.summary = list()
+        self.report = list()
     
     def test_install_main(self):
         """Check the conditions and call the Pisi API to install the packages"""

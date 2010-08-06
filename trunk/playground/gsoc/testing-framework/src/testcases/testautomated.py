@@ -10,7 +10,7 @@ class TestAutomated:
     """This class will perform an automated test, the purpose of which is to run
     a command, get its output and compare it with the expected output, which is
     already encoded in the testcase file."""
-    def __init__(self, package, element, summary, report=None):
+    def __init__(self, package, element, summary=None, report=None):
         self.package = package
         self.element = element
         self.summary = list()
