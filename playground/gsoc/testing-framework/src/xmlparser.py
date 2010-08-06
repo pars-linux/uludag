@@ -3,7 +3,7 @@
 
 import os
 import sys
-
+from datetime import date
 from lxml import etree
 
 from pisi.api import list_installed
@@ -22,6 +22,7 @@ from clcolorize import colorize
 class XMLParser:
     """The main parser class."""
     testreport = list()
+    summary = list()
     def __init__(self, xmlfile, custompackage, tree=None, rootelement=None):
         self.xmlfile = xmlfile
         try:
@@ -83,6 +84,7 @@ class XMLParser:
             print colorize('-', 'bold')
             counter += 1
         self.generate_report(totalTestcases)
+        self.generate_summary(totalTestcases)
         
     def test_install(self, element, packagelist, counter):
         """Call the module for testcase type INSTALL."""
@@ -90,6 +92,7 @@ class XMLParser:
                                                 self.installed_packages(),
                                                 self.available_packages()))
         self.testreport[counter].test_install_main()
+        self.summary.extend(self.testreport[counter].summary)
     
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
@@ -222,3 +225,35 @@ class XMLParser:
         report = reportgenerator.ReportGenerate(totaltests, self.testreport,
                             self.xmlfile, self.custompackage, self.rootelement)
         report.main()
+        
+    def generate_summary(self, totaltests):
+        """Call the summary generator module."""
+        self.summary.append('Pardus Testing Framework')
+        self.summary.append('Using testcase file: {0}'.format(self.xmlfile))
+        if self.custompackage is not None:
+            self.report.append('Custom package parsing: ' \
+                               '{0}'.format(', '.join(self.custompackage))) 
+        summary = list()
+        counter = 0
+        while counter < totaltests:
+            summary.append('Test {0} of {1}: {2}'.format(counter+1, totaltests,
+                                                 ''.join(self.summary[counter])))
+            counter += 1
+        # report generation
+        output = '\n'.join(self.summary)
+        todayDate = date.today()
+        # outFileName specifies the file name of the report. 
+        outFileName = '{0}-{1}'.format(os.path.basename(self.xmlfile), todayDate)
+        try:
+            # if the file already exists, create a new file
+            # using time as the variable. Append time to the filename
+            if os.path.isfile(os.path.join(os.getcwd(), outFileName)):
+                currentTime = time.strftime('%H:%M:%S')
+                outFileName += '-{0}'.format(currentTime)
+            outFile = open(outFileName, 'w')
+            outFile.write(output)
+            outFile.close()
+        except IOError:
+            exit('Error: Unable to generate the summary.')
+        print colorize('Test summary saved to:', 'bold'),
+        print '{0}'.format(os.path.join(os.getcwd(), outFileName))

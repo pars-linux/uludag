@@ -16,12 +16,13 @@ class TestInstall:
     After checking all the above, then only it would proceed to call the Pisi API
     to attempt to install the packages."""
     def __init__(self, packagelist, installedpackages, availablepackages,
-                                            failcode=None, report=None):
+                                        failcode=None, report=None, summary=None):
         self.packagelist = packagelist
         self.installedpackages = installedpackages
         self.availablepackages = availablepackages
         self.failcode = 1
         self.report = list()
+        self.summary = list()
     
     def test_install_main(self):
         """Check the conditions and call the Pisi API to install the packages"""
@@ -44,6 +45,7 @@ class TestInstall:
         totalPackages = len(finalPacakges)
         if totalPackages == 0:
             self.report.append('No packages were installed')
+            self.summary.append('Success')
             return
         
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
@@ -64,6 +66,7 @@ class TestInstall:
                 self.report.append('Error: To install the packages, ' \
                                    'run the framework with root privileges')
                 self.failcode = 0       # for the testcases gui, shell and automated
+                self.summary.append('Fail')
                 print colorize('Failed: Privilege error. Run as root user.', 'red')
                 return
             counter += 1

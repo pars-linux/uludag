@@ -52,10 +52,10 @@ class TestGUI:
                     self.report.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
                     observation = raw_input('Enter your observations: \n> ')
                     if not observation == '':
-                        self.report.append('Case {0} Observation: {1}'.format(counter+1,
+                        self.report.append('\tCase {0} Observation: {1}'.format(counter+1,
                                                                         observation))
                     else:
-                        self.report.append('Case {0}: No observation entered.'.format(counter+1))
+                        self.report.append('\tCase {0}: No observation entered.'.format(counter+1))
                 counter += 1
                 print ''
             totalCounter += 1
