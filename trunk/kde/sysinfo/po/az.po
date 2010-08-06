@@ -32,83 +32,83 @@ msgstr "%1 KB"
 
 #: src/sysinfo.cpp:94
 msgid "Not Available"
-msgstr ""
+msgstr "İstifadə edilə bilər Deyil"
 
 #: src/sysinfo.cpp:141
 msgid "Network is <strong>shutting down</strong>"
-msgstr ""
+msgstr "Şəbəkə əlaqəsi <strong>bağlanılır</strong>"
 
 #: src/sysinfo.cpp:143
 msgid "<strong>Establishing</strong> connection to the network"
-msgstr ""
+msgstr "Şəbəkə əlaqəsi <strong>qurulur</strong>"
 
 #: src/sysinfo.cpp:145
 msgid "You are <strong>online</strong>"
-msgstr ""
+msgstr "<strong>online</strong> vəziyyətdəsiniz"
 
 #: src/sysinfo.cpp:147
 msgid "You are <strong>offline</strong>"
-msgstr ""
+msgstr "<strong>offline</strong> vəziyyətdəsiniz"
 
 #: src/sysinfo.cpp:150
 msgid "Unknown network status"
-msgstr ""
+msgstr "Bilinməyən şəbəkə vəziyyəti"
 
 #: src/sysinfo.cpp:235
 msgid "Looking for hardware information..."
-msgstr ""
+msgstr "Təchizat məlumatları alınır..."
 
 #: src/sysinfo.cpp:237
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/sysinfo.cpp:245
 msgid "Common Folders"
-msgstr ""
+msgstr "Ümumi Klasorlar"
 
 #: src/sysinfo.cpp:246
 msgid "My Home Folder"
-msgstr ""
+msgstr "Ev Klasorum"
 
 #: src/sysinfo.cpp:247
 msgid "Root Folder"
-msgstr ""
+msgstr "Kök Klasor"
 
 #: src/sysinfo.cpp:248
 msgid "Network Folders"
-msgstr ""
+msgstr "Şəbəkə Klasorları"
 
 #: src/sysinfo.cpp:253
 msgid "Network"
-msgstr ""
+msgstr "Şəbəkə"
 
 #: src/sysinfo.cpp:260
 msgid "Memory"
-msgstr ""
+msgstr "Yaddaş"
 
 #: src/sysinfo.cpp:262
 msgid "Ram : %1 free of %2"
-msgstr ""
+msgstr "RAM : %1 / %2 boş"
 
 #: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
-msgstr ""
+msgstr "Mübadilə Sahəsi: %1 / %2 boş"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Mübadilə Sahəsi: İstifadə edilmir"
 
 #: src/sysinfo.cpp:273
 msgid "Disks"
-msgstr ""
+msgstr "Disklər"
 
 #: src/sysinfo.cpp:280
 msgid "Operating System"
-msgstr ""
+msgstr "Əməliyyat sistemi"
 
 #: src/sysinfo.cpp:284
 msgid "Kde <b>%1</b> on <b>%2</b>"
-msgstr ""
+msgstr "Kde <b>%1</b> on <b>%2</b>"
 
 #: src/sysinfo.cpp:295
 msgid "Processor"
