@@ -39,22 +39,24 @@ msgstr ""
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Barış Kutsal"
 
 #: src/diskmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "barish.kutsal@gmail.com"
 
 #: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Bu tətbiqin ehtiyac duyduğu infrastrukturu təqdim edən hər hansı bir paket yox.\n"
+"Lütfən paketlərin quraşdırılma və quruluşlandırmasının düz olub olmadığını kontrol edin."
 
 #: src/diskmanager/main.py:175
 msgid "Mounted at %1"
-msgstr ""
+msgstr "%1 yoluna bağlı"
 
 #: src/diskmanager/main.py:194
 msgid "All Items"
@@ -67,7 +69,7 @@ msgstr "Əlavə et"
 #: src/diskmanager/main.py:273 src/diskmanager/main.py:283
 #: src/diskmanager/main.py:322
 msgid "Access denied."
-msgstr ""
+msgstr "Qadağan olunmuş keçid"
 
 #: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
 msgid "Settings"
@@ -75,7 +77,7 @@ msgstr "Ayarlar:"
 
 #: ui/ui_edit.py:67
 msgid "Mount Disk Automatically"
-msgstr ""
+msgstr "Diski Otomatik Bağla"
 
 #: ui/ui_edit.py:68
 msgid "Mount Point:"
@@ -91,15 +93,15 @@ msgstr "Seçimlər:"
 
 #: ui/ui_edit.py:71
 msgid "Default Options"
-msgstr ""
+msgstr "Fərz edilən Seçənəklə"
 
 #: ui/ui_item.py:69
 msgid "Mount or unmount disk."
-msgstr ""
+msgstr "Diski bağla ya da ayır"
 
 #: ui/ui_item.py:70
 msgid "Edit"
-msgstr ""
+msgstr "Düzəlt"
 
 #: ui/ui_item.py:71
 msgid "Delete"
@@ -107,4 +109,4 @@ msgstr "Sil"
 
 #: ui/ui_main.py:77
 msgid "Add New"
-msgstr ""
+msgstr "Yenini əlavə et"
