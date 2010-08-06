@@ -17,12 +17,12 @@ msgstr ""
 
 #: data/firewallmanager.desktop.in.h:1
 msgid "An application for managing firewall."
-msgstr ""
+msgstr "Təhlükəsizlik divarı idarəçilik vasitəsi"
 
 #: data/firewallmanager.desktop.in.h:2 data/kcm_firewallmanager.desktop.in.h:1
 #: src/firewallmanager/about.py:20 src/firewallmanager/about.py:22
 msgid "Firewall Manager"
-msgstr ""
+msgstr "Təhlükəsizlik Divarı İdarəçisi"
 
 #: src/firewallmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
@@ -34,23 +34,25 @@ msgstr "Bahadır Kandemir"
 
 #: src/firewallmanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Güncəl Baxıcı"
 
 #: src/firewallmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Barış Kutsal"
 
 #: src/firewallmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "barish.kutsal@gmail.com"
 
 #: src/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Bu tətbiqin ehtiyac duyduğu vəsayiti təqdim edən hər hansı bir paket yox.\n"
+"Lütfən paketlərin quraşdırılma və quruluşlandırmasının düz olub olmadığını kontrol edin."
 
 #: src/firewallmanager/main.py:200
 msgid "All"
@@ -63,7 +65,7 @@ msgstr "Fəaliyyət"
 #: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
 #: src/firewallmanager/main.py:317
 msgid "Access denied."
-msgstr ""
+msgstr "Qadağan olunmuş keçid"
 
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
@@ -71,27 +73,27 @@ msgstr "Ayarlar"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
-msgstr ""
+msgstr "Təhlükəsizlik divarı açıldı"
 
 #: src/firewallmanager/service.py:41
 msgid "Stop"
-msgstr ""
+msgstr "Dayandır"
 
 #: src/firewallmanager/service.py:43
 msgid "Firewall is deactivated."
-msgstr ""
+msgstr "Təhlükəsizlik divarı bağlanıldı"
 
 #: src/firewallmanager/service.py:46 ui/ui_service.py:42
 msgid "Start"
-msgstr ""
+msgstr "Başlat"
 
 #: ui/ui_item.py:69
 msgid "Active or deactivate module."
-msgstr ""
+msgstr "Modulu aç ya da bağla"
 
 #: ui/ui_item.py:70
 msgid "Edit"
-msgstr ""
+msgstr "Düzəlt"
 
 #: ui/ui_item.py:71
 msgid "Delete"
@@ -99,4 +101,4 @@ msgstr "Sil"
 
 #: ui/ui_main.py:77
 msgid "Add New"
-msgstr ""
+msgstr "Yenini əlavə et"
