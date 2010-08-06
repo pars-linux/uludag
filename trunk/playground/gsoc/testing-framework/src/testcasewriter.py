@@ -59,7 +59,7 @@ class XMLWriter:
             packageElt = etree.SubElement(testPacakgeElt, 'package')
             packageElt.text = package_list[counter]
             counter += 1
-        print 'Ok'
+        print 'Finished'
     
     def gui(self):
         """Input the packages for the testcase gui."""
@@ -113,7 +113,7 @@ class XMLWriter:
                         self.root_element.remove(guiPackageElt)
                     break
             case_counter += 1
-        print 'Ok'
+        print 'Finished'
             
     def shell(self):
         """Input the packages for the testcase shell."""
@@ -160,7 +160,7 @@ class XMLWriter:
                         self.root_element.remove(shellPackageElt)
                     break
             case_counter += 1
-        print 'Ok'
+        print 'Finished'
 
     def automated(self):
         """Input the packages for the testcase automated."""
@@ -207,7 +207,7 @@ class XMLWriter:
                         self.root_element.remove(automatedPackageElt)
                     break
             case_counter += 1
-        print 'Ok'
+        print 'Finished'
         
     def get_packages(self):
         """Input the list of packages."""

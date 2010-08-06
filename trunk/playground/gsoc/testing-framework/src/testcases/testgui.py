@@ -16,11 +16,6 @@ class TestGUI:
         
     def test_gui_main(self):
         """Execute the gui test case and display the commands."""
-        downloadList = []
-        for downloadTag in self.element.getiterator('download'):
-            downloadList.append(downloadTag.text)
-        if downloadList:
-            self.download_file(downloadList)    
         case = self.element.xpath('case')
         totalPackages = len(self.packagelist)
         print ''
@@ -33,6 +28,11 @@ class TestGUI:
                 print 'Case {0} of {1}:'.format(counter+1, totalCases)
                 print 'Package -',
                 print colorize('{0}', 'bold').format(self.packagelist[totalCounter])
+                downloadList = []
+                for downloadTag in case[counter].getiterator('download'):
+                    downloadList.append(downloadTag.text)
+                if downloadList:
+                    self.download_file(downloadList)    
                 linkList = []
                 for linkTag in case[counter].getiterator('link'):
                     linkList.append(linkTag.text)
@@ -45,12 +45,17 @@ class TestGUI:
                 for number, element in enumerate(textList, 1):
                     print colorize('{0}. ', 'bold').format(number), element
                 # Get the observations
-                observation = raw_input('Enter your observations: \n> ')
-                if not observation == '':
-                    self.report.append('Case {0} Observation: {1}'.format(counter+1,
-                                                                        observation))
+                answer = raw_input('Did the above test run as expected? (y / n): ')
+                if answer in ('y', 'Y', 'yes', 'YES', ''):
+                    self.report.append('Case {0} of {1}: Success'.format(counter+1, totalCases))
                 else:
-                    self.report.append('Case {0}: No observation entered.'.format(counter+1))
+                    self.report.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
+                    observation = raw_input('Enter your observations: \n> ')
+                    if not observation == '':
+                        self.report.append('Case {0} Observation: {1}'.format(counter+1,
+                                                                        observation))
+                    else:
+                        self.report.append('Case {0}: No observation entered.'.format(counter+1))
                 counter += 1
                 print ''
             totalCounter += 1
@@ -59,7 +64,7 @@ class TestGUI:
         """Download a file using wget."""
         totalDownloads = len(file)
         counter = 0
-        print 'Downloading ...\n', 
+        print 'Downloading files, please wait ...'
         while counter < totalDownloads:
             downloadFile = ['wget'] + ['-m'] + ['-nd'] + file[counter].split()
             fileName = os.path.basename(''.join(file[counter]))
@@ -71,4 +76,5 @@ class TestGUI:
             else:
                 print "The file {0} does not exist.".format(''.join(file[counter]))
             counter += 1
+        print ''
         print 'File(s) downloaded to: ', colorize('{0}', 'bold').format(os.getcwd())

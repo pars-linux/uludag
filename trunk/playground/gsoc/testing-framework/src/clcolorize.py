@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This module is based on the ANSI Escape Sequences
+# This module is based on the ANSI escape sequences
 # The Pardus color scheme is used 
 
 COLOR = {

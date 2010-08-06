@@ -28,10 +28,16 @@ class TestShell:
             for text in case[counter].getiterator('command'):
                 print colorize(text.text, 'bold')
             # Get the observations
-            observation = raw_input('Enter your observations: \n> ')
-            if not observation == '':
-                self.report.append('Case {0} Observation: {1}'.format(counter+1, observation))
+            answer = raw_input('Did the above test run as expected? (y / n): ')
+            if answer in ('y', 'Y', 'yes', 'YES', ''):
+                self.report.append('Case {0} of {1}: Success'.format(counter+1, totalCases))
             else:
-                self.report.append('Case {0}: No observation entered.'.format(counter+1))
+                self.report.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
+                observation = raw_input('Enter your observations: \n> ')
+                if not observation == '':
+                    self.report.append('Case {0} Observation: {1}'.format(counter+1,
+                                                                    observation))
+                else:
+                    self.report.append('Case {0}: No observation entered.'.format(counter+1))
             print ''
             counter += 1
