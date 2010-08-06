@@ -143,6 +143,8 @@ def main(filename):
     else:
         cc_address = None
 
+    new_bug["cc"] = cc_address
+
     print ''
     print "Make his bug private? [Y/n]: ",
     answer = sys.stdin.readline()
