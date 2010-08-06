@@ -7,7 +7,7 @@ from clcolorize import colorize
 class TestShell:
     """This class is used to handle the testcase of shell, in which the user is
     told to run a certain command on and note down the output."""
-    def __init__(self, element, summmary, report=None):
+    def __init__(self, element, summmary=None, report=None):
         self.element = element
         self.summary = list()
         self.report = list()

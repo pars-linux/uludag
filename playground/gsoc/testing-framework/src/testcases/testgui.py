@@ -9,11 +9,11 @@ from clcolorize import colorize
 
 class TestGUI:
     """class for the testcase gui."""
-    def __init__(self, element, packagelist, report=None, summary=None):
+    def __init__(self, element, packagelist, summary=None, report=None):
         self.element = element
         self.packagelist = packagelist
-        self.report = list()
         self.summary = list()
+        self.report = list()
         
     def test_gui_main(self):
         """Execute the gui test case and display the commands."""
@@ -56,7 +56,7 @@ class TestGUI:
                 else:
                     self.report.append('Case {0} of {1}: Failed'.format(counter+1,
                                                                         totalCases))
-                    self.summary.append('Case {0} of {1}: Failed'.format(counter+1,
+                    self.summary.append('Case {0} of {1}: '.format(counter+1,
                                                                          totalCases))
                     observation = raw_input('Enter your observations: \n> ')
                     if not observation == '':
