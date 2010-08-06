@@ -11,7 +11,7 @@ from clcolorize import colorize
  
 class ReportGenerate:
     """class to generate and manage the outputs generated."""
-    def __init__(self, totaltests, testreport, file, custom, rootelement, report=None):
+    def __init__(self, totaltests, testreport, file, custom, rootelement, report=None):   
         self.totaltests = totaltests
         self.testreport = testreport
         self.file = file
@@ -25,7 +25,7 @@ class ReportGenerate:
         self.report.append('Using testcase file: {0}'.format(self.file))
         if self.custom is not None:
             self.report.append('Custom package parsing: ' \
-                               '{0}'.format(', '.join(self.custom)))
+                               '{0}'.format(', '.join(self.custom)))          
         testerName = raw_input('Please enter your name/ ID:\n> ')
         if testerName == '':
             self.report.append('Tested by: No name/ID was given.')
