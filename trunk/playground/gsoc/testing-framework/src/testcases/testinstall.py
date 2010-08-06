@@ -64,7 +64,7 @@ class TestInstall:
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
                 self.report.append('Error: To install the packages, ' \
-                                   'run the framework with root privileges')
+                                        'run the framework with root privileges')
                 self.failcode = 0       # for the testcases gui, shell and automated
                 self.summary.append('Fail')
                 print colorize('Failed: Privilege error. Run as root user.', 'red')

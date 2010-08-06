@@ -4,6 +4,7 @@
 import os
 import sys
 from datetime import date
+
 from lxml import etree
 
 from pisi.api import list_installed
@@ -84,10 +85,10 @@ class XMLParser:
             print colorize('-', 'bold')
             counter += 1
         self.generate_report(totalTestcases)
-        self.generate_summary(totalTestcases)
         
     def test_install(self, element, packagelist, counter):
         """Call the module for testcase type INSTALL."""
+        self.summary.append('Test {0}'.format(counter+1))
         self.testreport.append(testinstall.TestInstall(packagelist,
                                                 self.installed_packages(),
                                                 self.available_packages()))
@@ -96,9 +97,11 @@ class XMLParser:
     
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
+        self.summary.append('Test {0}'.format(counter+1))
         caseList = self.testcase_tag_parse(element, 'case')
         if len(caseList) == 0:
             print colorize('No <case> tag found. Skipping test ...', 'red')
+            self.summary.append('Test {0}: Fail'.format(counter))
             self.testreport.append(None)
             return
         testgui_install = testinstall.TestInstall(packagelist,
@@ -108,31 +111,29 @@ class XMLParser:
         if testgui_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}: Fail'.format(counter))
             return
         self.testreport.append(testgui.TestGUI(element, packagelist))
         self.testreport[counter].report.extend(testgui_install.report)
         # Add the install report to the final report
         self.testreport[counter].test_gui_main()
+        self.summary.extend(self.testreport[counter].summary)
         
     def test_automated(self, element, packagelist, counter):
         """Call the module for testcase type AUTOMATED."""
-        totalPackages = len(packagelist)
-        if totalPackages > 1:
-            print colorize("Only a single package can be tested" \
-                           " ('{0}' found)", 'green').format(totalPackages)
-            self.testreport.append(None)
-            print colorize('Skipping test ...', 'red')
-            return
+        self.summary.append('Test {0}'.format(counter+1))
         expectedTextList = self.testcase_tag_parse(element, 'expected')
         if len(expectedTextList) == 0:
             print colorize('No <expected> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}: Fail'.format(counter))
             return
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
         if len(commandTextList) == 0:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}: Fail'.format(counter))
             return
         testautomated_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
@@ -141,18 +142,22 @@ class XMLParser:
         if testautomated_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}: Fail'.format(counter))
             return
         self.testreport.append(testautomated.TestAutomated(packagelist, element))
         self.testreport[counter].report.extend(testautomated_install.report)
         self.testreport[counter].test_automated_main()
+        self.summary.extend(self.testreport[counter].summary)
         
     def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
+        self.summary.append('Test {0}'.format(counter+1))
         # Just check for the command tag here, don't do anything else!
         commandList = self.testcase_tag_parse(element, 'command')
         if len(commandList) == 0:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}'.format(counter))
             return
         testshell_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
@@ -161,10 +166,12 @@ class XMLParser:
         if testshell_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
+            self.summary.append('Test {0}'.format(counter))
             return
         self.testreport.append(testshell.TestShell(element))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
+        self.summary.extend(self.testreport[counter].summary)
 
     def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""
@@ -223,37 +230,5 @@ class XMLParser:
     def generate_report(self, totaltests):
         """Call the report generator module."""
         report = reportgenerator.ReportGenerate(totaltests, self.testreport,
-                            self.xmlfile, self.custompackage, self.rootelement)
+                            self.xmlfile, self.custompackage, self.rootelement, self.summary)
         report.main()
-        
-    def generate_summary(self, totaltests):
-        """Call the summary generator module."""
-        self.summary.append('Pardus Testing Framework')
-        self.summary.append('Using testcase file: {0}'.format(self.xmlfile))
-        if self.custompackage is not None:
-            self.report.append('Custom package parsing: ' \
-                               '{0}'.format(', '.join(self.custompackage))) 
-        summary = list()
-        counter = 0
-        while counter < totaltests:
-            summary.append('Test {0} of {1}: {2}'.format(counter+1, totaltests,
-                                                 ''.join(self.summary[counter])))
-            counter += 1
-        # report generation
-        output = '\n'.join(self.summary)
-        todayDate = date.today()
-        # outFileName specifies the file name of the report. 
-        outFileName = '{0}-{1}'.format(os.path.basename(self.xmlfile), todayDate)
-        try:
-            # if the file already exists, create a new file
-            # using time as the variable. Append time to the filename
-            if os.path.isfile(os.path.join(os.getcwd(), outFileName)):
-                currentTime = time.strftime('%H:%M:%S')
-                outFileName += '-{0}'.format(currentTime)
-            outFile = open(outFileName, 'w')
-            outFile.write(output)
-            outFile.close()
-        except IOError:
-            exit('Error: Unable to generate the summary.')
-        print colorize('Test summary saved to:', 'bold'),
-        print '{0}'.format(os.path.join(os.getcwd(), outFileName))

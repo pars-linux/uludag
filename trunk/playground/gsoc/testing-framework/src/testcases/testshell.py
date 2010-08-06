@@ -7,8 +7,9 @@ from clcolorize import colorize
 class TestShell:
     """This class is used to handle the testcase of shell, in which the user is
     told to run a certain command on and note down the output."""
-    def __init__(self, element, report=None):
+    def __init__(self, element, summmary, report=None):
         self.element = element
+        self.summary = list()
         self.report = list()
         
     def test_shell_main(self):
@@ -31,8 +32,10 @@ class TestShell:
             answer = raw_input('Did the above test run as expected? (y / n): ')
             if answer in ('y', 'Y', 'yes', 'YES', ''):
                 self.report.append('Case {0} of {1}: Success'.format(counter+1, totalCases))
+                self.summary.append('Case {0} of {1}: Success'.format(counter+1, totalCases))
             else:
                 self.report.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
+                self.summary.append('Case {0} of {1}: Failed'.format(counter+1, totalCases))
                 observation = raw_input('Enter your observations: \n> ')
                 if not observation == '':
                     self.report.append('\tCase {0} Observation: {1}'.format(counter+1,
