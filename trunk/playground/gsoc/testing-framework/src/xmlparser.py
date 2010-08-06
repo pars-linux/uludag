@@ -23,7 +23,6 @@ from clcolorize import colorize
 class XMLParser:
     """The main parser class."""
     testreport = list()
-    summary = list()
     def __init__(self, xmlfile, custompackage, tree=None, rootelement=None):
         self.xmlfile = xmlfile
         try:
@@ -63,7 +62,7 @@ class XMLParser:
             elementText = element.get('test')
             print "Running test: ", colorize("{0} / {1}", 'bold').format(counter+1,
                                                                     totalTestcases)
-            print 'Type of test: ', colorize('{0}', 'bold').format(elementText)
+            print 'Type of test:  {0}'.format(elementText)
             packageList = []
             for packageTag in element.getiterator('package'):
                 packageList.append(packageTag.text)
@@ -88,20 +87,16 @@ class XMLParser:
         
     def test_install(self, element, packagelist, counter):
         """Call the module for testcase type INSTALL."""
-        self.summary.append('Test {0}'.format(counter+1))
         self.testreport.append(testinstall.TestInstall(packagelist,
                                                 self.installed_packages(),
                                                 self.available_packages()))
         self.testreport[counter].test_install_main()
-        self.summary.extend(self.testreport[counter].summary)
     
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
-        self.summary.append('Test {0}'.format(counter+1))
         caseList = self.testcase_tag_parse(element, 'case')
         if len(caseList) == 0:
             print colorize('No <case> tag found. Skipping test ...', 'red')
-            self.summary.append('Test {0}: Fail'.format(counter))
             self.testreport.append(None)
             return
         testgui_install = testinstall.TestInstall(packagelist,
@@ -111,29 +106,24 @@ class XMLParser:
         if testgui_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}: Fail'.format(counter))
             return
         self.testreport.append(testgui.TestGUI(element, packagelist))
         self.testreport[counter].report.extend(testgui_install.report)
         # Add the install report to the final report
         self.testreport[counter].test_gui_main()
-        self.summary.extend(self.testreport[counter].summary)
         
     def test_automated(self, element, packagelist, counter):
         """Call the module for testcase type AUTOMATED."""
-        self.summary.append('Test {0}'.format(counter+1))
         expectedTextList = self.testcase_tag_parse(element, 'expected')
         if len(expectedTextList) == 0:
             print colorize('No <expected> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}: Fail'.format(counter))
             return
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
         if len(commandTextList) == 0:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}: Fail'.format(counter))
             return
         testautomated_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
@@ -142,22 +132,18 @@ class XMLParser:
         if testautomated_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}: Fail'.format(counter))
             return
         self.testreport.append(testautomated.TestAutomated(packagelist, element))
         self.testreport[counter].report.extend(testautomated_install.report)
         self.testreport[counter].test_automated_main()
-        self.summary.extend(self.testreport[counter].summary)
         
     def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
-        self.summary.append('Test {0}'.format(counter+1))
         # Just check for the command tag here, don't do anything else!
         commandList = self.testcase_tag_parse(element, 'command')
         if len(commandList) == 0:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}'.format(counter))
             return
         testshell_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
@@ -166,12 +152,10 @@ class XMLParser:
         if testshell_install.failcode == 0:
             print colorize('Skipping test ...', 'red')
             self.testreport.append(None)
-            self.summary.append('Test {0}'.format(counter))
             return
         self.testreport.append(testshell.TestShell(element))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
-        self.summary.extend(self.testreport[counter].summary)
 
     def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""
@@ -230,5 +214,5 @@ class XMLParser:
     def generate_report(self, totaltests):
         """Call the report generator module."""
         report = reportgenerator.ReportGenerate(totaltests, self.testreport,
-                            self.xmlfile, self.custompackage, self.rootelement, self.summary)
+                            self.xmlfile, self.custompackage, self.rootelement)
         report.main()

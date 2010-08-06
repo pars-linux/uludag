@@ -31,6 +31,7 @@ class TestInstall:
                                      set(self.installedpackages))
         if not packagestNotInstalled:
             self.report.append('All the required packages are installed')
+            self.summary.append('Success')
             return
        
         # Install only packages that are in all the available repositories
@@ -66,9 +67,9 @@ class TestInstall:
                 self.report.append('Error: To install the packages, ' \
                                         'run the framework with root privileges')
                 self.failcode = 0       # for the testcases gui, shell and automated
-                self.summary.append('Fail')
                 print colorize('Failed: Privilege error. Run as root user.', 'red')
+                self.summary.append('Fail')
                 return
             counter += 1
         self.report.append("Finished installing the following " \
-                           "packages: '{0}'".format(', '.join(finalPacakges)))
+                            "packages: '{0}'".format(', '.join(finalPacakges)))
