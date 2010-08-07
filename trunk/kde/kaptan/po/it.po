@@ -430,7 +430,7 @@ msgstr "Modello CPU"
 
 #: .tmp/ScrSmolt.py:122
 msgid "CPU Stepping"
-msgstr ""
+msgstr "Revisione del processore"
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Family"
@@ -466,7 +466,7 @@ msgstr "Sistema"
 
 #: .tmp/ScrSmolt.py:131
 msgid "Form Factor"
-msgstr ""
+msgstr "Form Factor"
 
 #: .tmp/ScrSmolt.py:132
 msgid "Kernel"
@@ -482,7 +482,7 @@ msgstr "Politiche SELinux"
 
 #: .tmp/ScrSmolt.py:135
 msgid "SELinux Enforce"
-msgstr ""
+msgstr "SELinux Obbligatorio"
 
 #: .tmp/ScrSmolt.py:148
 msgid "Yes"
