@@ -21,7 +21,7 @@
             <arg name="repository" type="s" direction="in"/>
         </method>
         <method name="setRepositories">
-          <arg name="repositories" type="as" direction="in"/>
+          <arg name="repositories" type="a(ss)" direction="in"/>
         </method>
         <method name="setRepoActivities">
           <arg name="repos" type="a{sb}" direction="in"/>
