@@ -37,7 +37,7 @@ class XMLWriter:
                 gui=self.gui,
                 shell=self.shell,
                 automated=self.automated
-            )[test_choice]()
+                )[test_choice]()
             print ''
             
     def install(self):
@@ -69,6 +69,7 @@ class XMLWriter:
         if total_packages == 0:
             print self.skip_message
             return
+        # there has to be least one case tag in a GUI test case
         cases = self.get_number('How many cases do you want?')
         if cases == 0:
             print 'There has to be at least ONE case in a gui testcase.'
@@ -292,5 +293,5 @@ class XMLWriter:
             
 if __name__ == '__main__':
     print 'Pardus Testing Framework - Testcase Writer\n'
-    testcase_writer = XMLWriter()
-    testcase_writer.main()
+    test_case_writer = XMLWriter()
+    test_case_writer.main()
