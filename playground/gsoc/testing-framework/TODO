@@ -1,0 +1,30 @@
+1.	Implement a GUI layer for the 'gui' testcase
+
+	This should be pretty easy to since the CLI backend is ready and 
+	we have only one testcase which requires a user interface. 
+
+
+2.	Support for passing packages for custom parsing through the command line
+
+	As of now, the framework provides support for custom package parsing
+	through a file (the '-p' switch)
+	
+	We intend to replace the optparse module with argparse (2.7 standard library),
+	that allows for variable arguments to be passed. 
+
+	* Planned
+	
+	framework -f test_file.xml -p package-1 package-2 package-3 ... package-n
+  
+	* Current
+
+	framework -f test_file.xml -p package_file		
+	
+	Where package_file is a file with the contents:
+      
+	package-1
+	package-2	
+	package-3
+	.
+	.
+	package-n
