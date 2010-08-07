@@ -52,7 +52,7 @@ msgstr "Hai completato tutti i passi. Ecco un riassunto dei cambiamenti. Clicca 
 
 #: .tmp/ui_summaryWidget.py:81
 msgid "The following settings will be applied"
-msgstr ""
+msgstr "Le impostazioni seguenti verranno eseguiti"
 
 #: .tmp/ui_kaptanMain.py:304 .tmp/kaptan.desktop.in.h:1
 msgid "Kaptan"
@@ -132,7 +132,7 @@ msgstr "Lancelot è un menù avanzato ed altamente personalizzabile per Pardus. 
 
 #: .tmp/ui_goodbyeWidget.py:410 .tmp/ScrGoodbye.py:26
 msgid "More"
-msgstr ""
+msgstr "Altro"
 
 #: .tmp/ui_goodbyeWidget.py:411
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
@@ -374,7 +374,7 @@ msgstr "Benvenuto"
 
 #: .tmp/ui_welcomeWidget.py:73
 msgid "What is Pardus?"
-msgstr ""
+msgstr "Che cosa è Pardus?"
 
 #: .tmp/ui_welcomeWidget.py:74
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
@@ -418,7 +418,7 @@ msgstr "Piattaforma"
 
 #: .tmp/ScrSmolt.py:119
 msgid "BogoMIPS"
-msgstr ""
+msgstr "BogoMIPS"
 
 #: .tmp/ScrSmolt.py:120
 msgid "CPU Vendor"
@@ -538,7 +538,6 @@ msgid "Welcome to %s"
 msgstr "Benvenuto a %s"
 
 #: .tmp/kaptan.desktop.in.h:2
-#, fuzzy
 msgid "Welcome Wizard"
 msgstr "Benvenuto nel Wizard di Kaptan :)"
 
@@ -579,9 +578,8 @@ msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>D
 msgstr "Scegli lo sfondo che preferisci. Non dimenticare di controllare <b>Impostazioni Desktop</b> per scaricare nuovi sfondi."
 
 #: .tmp/ui_wallpaperWidget.py:128
-#, fuzzy
 msgid "Wallpapers"
-msgstr "Sfondo"
+msgstr "Sfondi"
 
 #: .tmp/ui_wallpaperWidget.py:130
 msgid "Choose wallpaper from file"
