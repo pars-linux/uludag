@@ -1807,7 +1807,7 @@ msgstr "Pencere tipi"
 
 #: src/bin/e_int_border_remember.c:694
 msgid "wildcard matches are allowed"
-msgstr ""
+msgstr "wildcard eşleşme kullanılabilir"
 
 #: src/bin/e_int_border_remember.c:696
 msgid "Transience"
@@ -1896,11 +1896,11 @@ msgstr "Kaldır"
 
 #: src/bin/e_int_config_modules.c:175 src/bin/e_int_config_modules.c:605
 msgid "No modules selected."
-msgstr ""
+msgstr "Modül seçili değil."
 
 #: src/bin/e_int_config_modules.c:603
 msgid "More than one module selected."
-msgstr ""
+msgstr "Birden fazla modül seçili."
 
 #: src/bin/e_int_gadcon_config.c:38
 msgid "Shelf Contents"
@@ -2051,11 +2051,11 @@ msgstr "Pencerelerin rafı kaplamasına izin ver"
 #: src/bin/e_int_shelf_config.c:180
 #, c-format
 msgid "Height (%3.0f pixels)"
-msgstr ""
+msgstr "Yükseklik (%3.0f piksel)"
 
 #: src/bin/e_int_shelf_config.c:183
 msgid "Shrink to Content Width"
-msgstr ""
+msgstr "İçeğin Genişliğine Göre Küçül"
 
 #: src/bin/e_int_shelf_config.c:194
 #: src/modules/conf_fonts/e_int_config_fonts.c:628
@@ -3485,7 +3485,7 @@ msgstr "Renkler"
 #: src/modules/conf_colors/e_int_config_color_classes.c:269
 #, c-format
 msgid "Color class: %s"
-msgstr ""
+msgstr "Renk sınıfı: %s"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:276
 #, c-format
@@ -3772,7 +3772,7 @@ msgstr "Arka plan gezdirme"
 
 #: src/modules/conf_desks/e_int_config_desks.c:304
 msgid "Animation speed"
-msgstr ""
+msgstr "Animasyon hızı"
 
 #: src/modules/conf_desks/e_int_config_desks.c:307
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:164
@@ -3976,7 +3976,7 @@ msgstr ""
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:105
 msgid "Edge Bindings Settings"
-msgstr ""
+msgstr "Kenar Atama Ayarları"
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:258
 #: src/modules/conf_edgebindings/e_mod_main.c:21
@@ -4339,7 +4339,7 @@ msgstr "Simge Teması Ayarları"
 
 #: src/modules/conf_icon_theme/e_int_config_icon_themes.c:260
 msgid "This overrides general theme"
-msgstr ""
+msgstr "Genel temayı bastır"
 
 #: src/modules/conf_icon_theme/e_mod_main.c:22
 msgid "Icon Theme"
@@ -4481,11 +4481,11 @@ msgstr "Lütfen tuş dizisi girin,<br><br>ya da çıkmak için<hilight>Escape</h
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:11
 msgid "Single key"
-msgstr ""
+msgstr "Tek anahtar"
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:94
 msgid "Key Bindings Settings"
-msgstr ""
+msgstr "Tuş Atama Ayarları"
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:224
 #: src/modules/conf_keybindings/e_mod_main.c:21
@@ -4532,9 +4532,8 @@ msgstr "Görüntüle"
 
 #: src/modules/conf_menus/e_int_config_menus.c:105
 #: src/modules/conf_menus/e_int_config_menus.c:300
-#, fuzzy
 msgid "Generic"
-msgstr "Genel Adı"
+msgstr "Genel"
 
 #: src/modules/conf_menus/e_int_config_menus.c:107
 #: src/modules/conf_menus/e_int_config_menus.c:302
@@ -4548,7 +4547,7 @@ msgstr "Sistem Ön Tanımlı"
 
 #: src/modules/conf_menus/e_int_config_menus.c:308
 msgid "Margin"
-msgstr ""
+msgstr "Kenar"
 
 #: src/modules/conf_menus/e_int_config_menus.c:310
 #: src/modules/conf_menus/e_int_config_menus.c:315
@@ -4563,11 +4562,11 @@ msgstr "%2.0f piksel"
 
 #: src/modules/conf_menus/e_int_config_menus.c:313
 msgid "Cursor Margin"
-msgstr ""
+msgstr "İmleş Kenarı"
 
 #: src/modules/conf_menus/e_int_config_menus.c:318
 msgid "Autoscroll"
-msgstr ""
+msgstr "Otomatik kaydırma"
 
 #: src/modules/conf_menus/e_int_config_menus.c:322
 msgid "Menu Scroll Speed"
@@ -4812,7 +4811,7 @@ msgstr "Önbellek temizleme aralığı"
 
 #: src/modules/conf_performance/e_int_config_performance.c:125
 msgid "Font cache size"
-msgstr ""
+msgstr "Yazı tipi önbellek boyutu"
 
 #: src/modules/conf_performance/e_int_config_performance.c:127
 #, c-format
@@ -4821,7 +4820,7 @@ msgstr "%1.1f MB"
 
 #: src/modules/conf_performance/e_int_config_performance.c:131
 msgid "Image cache size"
-msgstr ""
+msgstr "Resim önbellek boyutu"
 
 #: src/modules/conf_performance/e_int_config_performance.c:133
 #, c-format
@@ -4839,7 +4838,7 @@ msgstr "%1.0f dosya"
 
 #: src/modules/conf_performance/e_int_config_performance.c:143
 msgid "Number of Edje collections to cache"
-msgstr ""
+msgstr "Önbelleğe alınacak Edje koleksiyonu sayısı"
 
 #: src/modules/conf_performance/e_int_config_performance.c:145
 #, c-format
@@ -4848,7 +4847,7 @@ msgstr "%1.0f koleksiyon"
 
 #: src/modules/conf_performance/e_int_config_performance.c:149
 msgid "Caches"
-msgstr ""
+msgstr "Önbellekler"
 
 #: src/modules/conf_performance/e_mod_main.c:21
 msgid "Performance"
@@ -4874,7 +4873,7 @@ msgstr "Sıfırla"
 #: src/modules/conf_profiles/e_int_config_profiles.c:268
 #, c-format
 msgid "Selected profile: %s"
-msgstr ""
+msgstr "Seçili profil: %s"
 
 #: src/modules/conf_profiles/e_int_config_profiles.c:304
 #, c-format
@@ -4895,7 +4894,7 @@ msgstr "Profiller"
 
 #: src/modules/conf_scale/e_int_config_scale.c:55
 msgid "Scale Settings"
-msgstr ""
+msgstr "Ölçekleme Ayarları"
 
 #: src/modules/conf_scale/e_int_config_scale.c:99
 msgid "Scale with DPI"
@@ -4978,7 +4977,7 @@ msgstr "Ekran Koruyucu Zamanlayıcı"
 
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:142
 msgid "Initial timeout"
-msgstr ""
+msgstr "Başlangıç zaman aşımı"
 
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:150
 msgid "Alternation timeout"
@@ -5243,7 +5242,7 @@ msgstr "Pencere Gösterimi"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:180
 msgid "Geometry when moving or resizing"
-msgstr ""
+msgstr "Taşırken veya boyutlandırırkenki geometri"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:183
 msgid "Animated shading"
@@ -5251,7 +5250,7 @@ msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:188
 msgid "New Window Placement"
-msgstr ""
+msgstr "Yeni Pencere Yerleşimi"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:190
 #: src/modules/conf_window_display/e_int_config_window_display.c:259
@@ -5276,7 +5275,7 @@ msgstr "Fare ile manüel yerleştir"
 #: src/modules/conf_window_display/e_int_config_window_display.c:202
 #: src/modules/conf_window_display/e_int_config_window_display.c:269
 msgid "Switch to desktop of new window"
-msgstr ""
+msgstr "Yeni pencerenin olduğu masaüstüne geç"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:223
 msgid "Move Geometry"
@@ -5290,7 +5289,7 @@ msgstr "Bilgiyi Göster"
 #: src/modules/conf_window_display/e_int_config_window_display.c:227
 #: src/modules/conf_window_display/e_int_config_window_display.c:236
 msgid "Follows the window"
-msgstr ""
+msgstr "Pencereyi izler"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:233
 msgid "Resize Geometry"
@@ -5298,7 +5297,7 @@ msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:242
 msgid "Border Icon Preference"
-msgstr ""
+msgstr "Kenar Simgesi Tercihi"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:244
 msgid "User defined"
@@ -5306,7 +5305,7 @@ msgstr "Kullanıcı tanımlı"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:246
 msgid "Application provided"
-msgstr ""
+msgstr "Uygulama tarafından sağlanan"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:256
 msgid "Placement"
@@ -5338,7 +5337,7 @@ msgstr "Yavaşlat"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:302
 msgid "Shading"
-msgstr ""
+msgstr "Gölgelendirme"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:54
 msgid "Focus Settings"
@@ -5372,7 +5371,7 @@ msgstr "İşaretçi"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:214
 msgid "Sloppy"
-msgstr ""
+msgstr "Özensiz"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:218
 msgid "New Window Focus"
@@ -5636,7 +5635,7 @@ msgstr ""
 #: src/modules/conf_winlist/e_int_config_winlist.c:280
 #: src/modules/conf_winlist/e_int_config_winlist.c:456
 msgid "Jump to desk"
-msgstr ""
+msgstr "Masaüstüne zıpla"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:418
 msgid "Windows from other desks"
