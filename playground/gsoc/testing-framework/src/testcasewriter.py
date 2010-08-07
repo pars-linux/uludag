@@ -275,7 +275,7 @@ class XMLWriter:
                 print "The file '{0}' already exists.".format(file_path)
                 answer = raw_input('Do you wish to overwrite? ( y / n ): ')
                 if answer in ('y', 'Y', 'yes', 'YES'):
-                        break
+                    break
                 else:
                     continue
             break
