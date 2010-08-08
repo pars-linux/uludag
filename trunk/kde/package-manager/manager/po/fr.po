@@ -370,7 +370,7 @@ msgstr "Des paquets dépendants de ceux que vous avez choisis vont être égalem
 
 #: src/statemanager.py:132
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille totale de <b>%2</b>"
+msgstr "Actuellement, il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille totale de <b>%2</b> "
 
 #: src/statemanager.py:135
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
