@@ -196,7 +196,11 @@ setup(name="yali4",
       ext_modules = [Extension('yali4._sysutils',
                                sources = ['yali4/_sysutils.c'],
                                libraries = ["ext2fs"],
-                               extra_compile_args = ['-Wall'])],
+                               extra_compile_args = ['-Wall']), 
+                     Extension('yali4._rootcopy',
+                               sources = ['yali4/_rootcopy.c'],
+                               extra_compile_args = ['-Wall']),],
+
       cmdclass = {
         'build' : YaliBuild,
         'clean' : YaliClean,
