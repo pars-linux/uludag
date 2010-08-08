@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -26,9 +26,8 @@ msgid "Firewall Manager"
 msgstr "Pare-feu"
 
 #: src/firewallmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE "
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -39,14 +38,14 @@ msgid "Current Maintainer"
 msgstr "Mainteneur actuel"
 
 #: src/firewallmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/firewallmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Votre nom"
+
+#: src/firewallmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Votre courriel"
 
 #: src/firewallmanager/main.py:96
 msgid ""
