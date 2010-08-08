@@ -55,7 +55,6 @@ msgid "First Author"
 msgstr "Premier auteur"
 
 #: src/about.py:37
-#, fuzzy
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Votre nom"
