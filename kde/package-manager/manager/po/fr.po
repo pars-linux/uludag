@@ -374,11 +374,11 @@ msgstr "Actuellement, il y a <b>%1</b> paquet(s) sélectionné(s) pour une taill
 
 #: src/statemanager.py:135
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "avec <b>%1</b> de dépendances pour une taille totale de <b>%2</b>"
+msgstr " avec <b>%1</b> de dépendances inverses pour une taille de <b>%2</b>"
 
 #: src/statemanager.py:137
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "avec <b>%1</b> de dépendances pour une taille totale de <b>%2</b>"
+msgstr " avec <b>%1</b> de dépendances supplémentaires pour une taille de <b>%2</b>"
 
 #: src/statemanager.py:138
 msgid "in your basket."
