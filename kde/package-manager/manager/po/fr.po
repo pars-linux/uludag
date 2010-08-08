@@ -213,7 +213,7 @@ msgstr "%prog paquets_à_installer"
 #: src/progressdialog.py:45
 #, python-format
 msgid "Operation - %1%"
-msgstr "Opération -%1%"
+msgstr "Opération -  %1%"
 
 #: src/progressdialog.py:48
 msgid "configuring"
