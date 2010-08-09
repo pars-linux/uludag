@@ -76,6 +76,9 @@ def maker(op, project_file):
         maker.check_repo_files(project)
     if op == "make" or op == "make-live":
         maker.make_image(project)
+        # Pack excluded to additional.tar.lzma
+        maker.pack_additional(project)
+
     # install-live
     # configure-live
     if op == "make" or op == "pack-live":

@@ -200,16 +200,26 @@ label hardware
         for i in lang_all:
             langdata += "%s\n" % i
 
+	# write default language
+	f = file(os.path.join(iso_dir, "boot/isolinux/lang"), "w")
+	f.write("%s\n" % lang_default)
+	f.close()
 
-        # write default language
-        f = file(os.path.join(iso_dir, "boot/isolinux/lang"), "w")
-        f.write("%s\n" % lang_default)
-        f.close()
+	# write available languages
+	f = file(os.path.join(iso_dir, "boot/isolinux/languages"), "w")
+	f.write(langdata)
+	f.close()
 
-        # write available languages
-        f = file(os.path.join(iso_dir, "boot/isolinux/languages"), "w")
-        f.write(langdata)
-        f.close()
+# Pack excluded directories in squash_image to additional.tar.lzma
+def pack_additional(project):
+    print "Packing additionals from exclude list"
+    exclude_list = get_exclude_list(project)
+    cwd = os.getcwd()
+    os.chdir("%s" %project.image_dir())
+    run("/bin/tar --ignore-failed-read -cJvvf %s %s" %(os.path.join(project.work_dir,"additional.tar.lzma"), " ".join(exclude_list) ), ignore_error=True)
+    os.chdir("%s" %cwd)
+
+
 
 
 def setup_isolinux(project):
@@ -366,7 +376,7 @@ def squash_image(project):
     f.write("\n".join(get_exclude_list(project)))
     f.close()
 
-    mksquashfs_cmd = 'mksquashfs "%s" "%s" -noappend -comp %s -ef "%s"' % (image_dir, image_file, project.squashfs_comp_type, temp.name)
+    mksquashfs_cmd = 'mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name)
     run(mksquashfs_cmd)
 
 #
@@ -601,8 +611,10 @@ def make_iso(project):
         iso_file = project.iso_file(clean=True)
         #image_dir = project.image_dir()
         image_file = project.image_file()
+        additional_file = os.path.join(project.work_dir,"additional.tar.lzma")
 
         os.link(image_file, os.path.join(iso_dir, "pardus.img"))
+        os.link(additional_file, os.path.join(iso_dir,"additional.tar.lzma"))
 
         def copy(src, dest):
             run('cp -PR "%s" "%s"' % (src, os.path.join(iso_dir, dest)))
