@@ -207,45 +207,45 @@ rarian
 Kurulumdan sonra sorunsuz bir şekilde bu uygulamanın açıldığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Edit → İnternet araması yolunu izleyin, karşınıza çıkan pencereden bir arama yapın. Arama sonuçlarının sorunsuz bir şekilde listelendiğini gözlemleyin. Listede bulunan verilerden birini seçin ve ekleyin. Sorunsuz bir şekilde eklendiğini gözlemleyin.
 </LI></UL></LI><LI CLASS="li-enumerate">texi2html paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/bug_report-tr.tex
- # texi2html bug_report-tr.tex
+<PRE CLASS="verbatim"> wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/bug_report-tr.tex
+ texi2html bug_report-tr.tex
 </PRE><P>Sorunsuz bir şekilde bug_report-tr.html dosyasının oluştuğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">wv paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/test_wv.doc
-# wvAbw test_wv.doc deneme.abw                                
-# wvCleanLatex test_wv.doc deneme.tex                            
-# wvConvert  test_wv.doc                              
-# wvDVI   test_wv.doc deneme.dvi                                
-# wvDocBook test_wv.doc deneme.sgml                               
-# wvHtml test_wv.doc deneme.html                                 
-# wvLatex test_wv.doc deneme.tex                                
-# wvMime  test_wv.doc deneme.mime                                
-# wvPDF test_wv.doc deneme.pdf                                  
-# wvPS  test_wv.doc deneme.ps                                  
-# wvRTF test_wv.doc deneme.rtf                                  
-# wvSummary test_wv.doc            
-# wvText   test_wv.doc deneme.txt                               
-# wvVersion  test_wv.doc                             
-# wvWare  test_wv.doc -X deneme.xml                                
-# wvWml test_wv.doc deneme.wml       
+<PRE CLASS="verbatim"> wget http://svn.pardus.org.tr/uludag/trunk/test/2009/testcases/turkish/test_wv.doc
+ wvAbw test_wv.doc deneme.abw                                
+ wvCleanLatex test_wv.doc deneme.tex                            
+ wvConvert  test_wv.doc                              
+ wvDVI   test_wv.doc deneme.dvi                                
+ wvDocBook test_wv.doc deneme.sgml                               
+ wvHtml test_wv.doc deneme.html                                 
+ wvLatex test_wv.doc deneme.tex                                
+ wvMime  test_wv.doc deneme.mime                                
+ wvPDF test_wv.doc deneme.pdf                                  
+ wvPS  test_wv.doc deneme.ps                                  
+ wvRTF test_wv.doc deneme.rtf                                  
+ wvSummary test_wv.doc            
+ wvText   test_wv.doc deneme.txt                               
+ wvVersion  test_wv.doc                             
+ wvWare  test_wv.doc -X deneme.xml                                
+ wvWml test_wv.doc deneme.wml       
 
 </PRE><P>Tüm komutların sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI></OL><!--TOC section Openoffice alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Openoffice alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 imposter paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.sxi
- # imposter test_ooimpress.sxi
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.sxi
+ imposter test_ooimpress.sxi
 </PRE>Yukarıda bulunan sunum dosyalarını imposter uygulaması ile açın ve daha sonra tam Bakış → Tam Ekran yolunu izlyerek sunum dosyalarını tam ekran yapın. Sorunsuz bir şekilde yapılabildiklerini gözlemleyin.</LI><LI CLASS="li-enumerate">mdbtools paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_mdbtools.mdb
-# mdb-ver test_mdbtools.mdb
-# mdb-tables test_mdbtools.mdb
-# mdb-ver test_mdbtools.mdb Client
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_mdbtools.mdb
+ mdb-ver test_mdbtools.mdb
+ mdb-tables test_mdbtools.mdb
+ mdb-ver test_mdbtools.mdb Client
 </PRE><P>Yukarıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">openoffice paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Openoffice Kelime işlemcisi:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.doc
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.odt
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.sxw
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.ott
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.html
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.doc
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.odt
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.sxw
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.ott
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oowriter.html
 </PRE><P>Yukarıda linkleri verilen dosyaların düzgün bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-itemize">Openoffice Sunum:
 <PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.ppt
