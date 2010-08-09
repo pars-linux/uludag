@@ -390,7 +390,7 @@ class EntryEditor:
             description += "\n\n"
 
             description += "SOLUTION\n"
-            description += "========\n\n"
+            description += "========\n\n\n"
 
             description += "REFERENCES\n"
             description += "==========\n"
