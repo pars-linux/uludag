@@ -242,14 +242,23 @@ Uygulamanın kemenüden gdüzgün bir şekilde çalıştığını gözlemleyin.
  qwtplot3d-doc
  qwtplot3d
  qt-devel
- qt-l10n
 \end{verbatim}
+\item qt-l10n paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları çalıştırın ve qt tasarımcının fransızca açıldığını gözlemleyin.
+\begin{verbatim}
+ export LC_ALL=FR_fr
+ designer-qt4
+\end{verbatim}
+
 \item  qt-demos paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun sorunsuz bir şekilde arayüzü açtığını gözlemleyin.
 \begin{verbatim}
  qtdemo
 \end{verbatim}
+
+Açılan pencere üzerinde Desktop $\rightarrow$ System Tray $\rightarrow$ Launch yolunu izleyin ve sistem çekmecesine "kalp" ikonunun yerleştiğini gözlemleyin.
 
 \item qwt ve qwt-qt-designer paketleri kurulumu sonrası:
 
@@ -273,14 +282,14 @@ gnome-mplayer uygulamasını açın ve görsel olarak sorunsuz açıldığını 
  \item qt paketi kurulumu sonrası
 
 \begin{verbatim}
- # sudo pisi it -c system.devel
- # mkdir test
- # cd test
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
- # qmake-qt4 -project
- # qmake-qt4
- # make
- # ./test
+  sudo pisi it -c system.devel
+  mkdir test
+  cd test
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
+  qmake-qt4 -project
+  qmake-qt4
+  make
+  ./test
 \end{verbatim}
 
 "Hello world!" yazan bir pencerenin açıldığını gözlemleyin.
@@ -305,8 +314,8 @@ qt-sql-mysql için Mysql'i servis yöneticisinden başaltınız.
 \end{verbatim}
 qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisiniz. Daha sonra aşağıdaki komutları çalıştırın.
 \begin{verbatim}
- # make
- # ./test
+  make
+  ./test
 \end{verbatim}
 
 Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.

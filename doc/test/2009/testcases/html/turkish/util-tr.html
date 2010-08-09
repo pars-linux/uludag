@@ -57,13 +57,14 @@ phoronix-test-suite paketi kurulumu sonası:<P>Aşağıda bulunan komutu çalı�
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> unshield
  minizip
-</PRE></LI><LI CLASS="li-enumerate">xz paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açtığını gözlemleyin.
+ 
+</PRE></LI><LI CLASS="li-enumerate">cabextract paketi kurulumu sonrası:<P>hardware-tr.pdf wine testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">xz paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> mkidir test
  xz test
  unxz test.xz
 </PRE></LI><LI CLASS="li-enumerate">rar paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> mkdir test
- tar -cvf test.tar test
+ tar -avf test.tar test
 </PRE></LI><LI CLASS="li-enumerate">lrzip paketi kurulumu sonrası:<P>Aşağıda bulunan komutların dosyayı önce sıkıştırıp sonra açtığını gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_lrzip
   lrzip test_lrzip
@@ -71,7 +72,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
   lrzip -d test_lrzip.lrz -O test/
 </PRE></LI></OL><!--TOC section Crypt alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Crypt alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-johntripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
+</P><PRE CLASS="verbatim">gpg --gen-key
+</PRE></LI><LI CLASS="li-enumerate">johntripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> unmask 077
  sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
  sudo john -si mypasswd 

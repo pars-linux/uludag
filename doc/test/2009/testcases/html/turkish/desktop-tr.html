@@ -127,23 +127,30 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir:
 </P><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> qt-doc
+ qt-doc-html
  qt-sql-ibase
  qt-sql-odbc
  qt-sql-postgresql
  qwt-doc
  qwtplot3d-doc
  qwtplot3d
-</PRE></LI><LI CLASS="li-enumerate">qwt ve qwt-qt-designer paketleri kurulumu sonrası:<P>qt-designer uygulamasını açın ve sol tarfta bulunan parçacık kutusuna "Qwt widgets" bölümünün eklendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">PyQwt paketi kurulumu sonrası<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+ qt-devel
+</PRE></LI><LI CLASS="li-enumerate">qt-l10n paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve qt tasarımcının fransızca açıldığını gözlemleyin.
+</P><PRE CLASS="verbatim"> export LC_ALL=FR_fr
+ designer-qt4
+</PRE></LI><LI CLASS="li-enumerate">qt-demos paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde arayüzü açtığını gözlemleyin.
+</P><PRE CLASS="verbatim"> qtdemo
+</PRE><P>Açılan pencere üzerinde Desktop → System Tray → Launch yolunu izleyin ve sistem çekmecesine "kalp" ikonunun yerleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">qwt ve qwt-qt-designer paketleri kurulumu sonrası:<P>qt-designer uygulamasını açın ve sol tarfta bulunan parçacık kutusuna "Qwt widgets" bölümünün eklendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">PyQwt paketi kurulumu sonrası<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> ipython
  import PyQt4
-</PRE></LI><LI CLASS="li-enumerate">gtk-qt-engine paketi kurulumu sonrası<P>desktop-tr.pdf gtk2-demo testini gerçekleştirin.</P><P>gnome-mplayer uygulamasını açın ve görsel olarak sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt paketi kurulumu sonrası<PRE CLASS="verbatim"> # sudo pisi it -c system.devel
- # mkdir test
- # cd test
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
- # qmake-qt4 -project
- # qmake-qt4
- # make
- # ./test
+</PRE></LI><LI CLASS="li-enumerate">gtk-qt-engine paketi kurulumu sonrası<P>desktop-tr.pdf gtk2-demo testini gerçekleştirin.</P><P>gnome-mplayer uygulamasını açın ve görsel olarak sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt paketi kurulumu sonrası<PRE CLASS="verbatim">  sudo pisi it -c system.devel
+  mkdir test
+  cd test
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test.cpp
+  qmake-qt4 -project
+  qmake-qt4
+  make
+  ./test
 </PRE><P>"Hello world!" yazan bir pencerenin açıldığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">qt-designer paketi kurulumu sonrası<P>Menu → Programlar → Geliştirme yolunu izleyerek sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt-linguist paketi kurulumu sonrası<P>Menu → Programlar → Geliştirme yolunu izleyerek sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt-sql-mysql, qt-sql-sqlite paketi kurulumu sonrası<P>qt-sql-mysql için Mysql’i servis yöneticisinden başaltınız.
 </P><PRE CLASS="verbatim"> sudo pisi it -c system.devel
@@ -153,8 +160,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  qmake-qt4 -project
  qmake-qt4 
 </PRE><P>qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisiniz. Daha sonra aşağıdaki komutları çalıştırın.
-</P><PRE CLASS="verbatim"> # make
- # ./test
+</P><PRE CLASS="verbatim">  make
+  ./test
 </PRE><P>Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.</P></LI></OL><!--TOC subsection Gtk-->
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Gtk</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
