@@ -12,7 +12,7 @@
 
 
 # Abstract class for screen widgets
-class ScreenWidget:
+class Screen:
 
     title = ""
     desc = ""
