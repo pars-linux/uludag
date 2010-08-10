@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Tue Aug 10 02:50:22 2010
+# Created: Tue Aug 10 03:31:43 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -81,14 +81,14 @@ class Ui_Dialog(object):
         self.text_observation.setGeometry(QtCore.QRect(11, 531, 569, 70))
         self.text_observation.setObjectName("text_observation")
         self.clear_button = QtGui.QPushButton(Dialog)
-        self.clear_button.setGeometry(QtCore.QRect(20, 601, 64, 25))
+        self.clear_button.setGeometry(QtCore.QRect(20, 610, 64, 25))
         self.clear_button.setObjectName("clear_button")
         self.next_button = QtGui.QPushButton(Dialog)
-        self.next_button.setGeometry(QtCore.QRect(499, 600, 71, 25))
+        self.next_button.setGeometry(QtCore.QRect(499, 609, 71, 25))
         self.next_button.setObjectName("next_button")
         self.quit_button = QtGui.QPushButton(Dialog)
         self.quit_button.setEnabled(False)
-        self.quit_button.setGeometry(QtCore.QRect(420, 600, 71, 25))
+        self.quit_button.setGeometry(QtCore.QRect(420, 609, 71, 25))
         self.quit_button.setObjectName("quit_button")
 
         self.retranslateUi(Dialog)
