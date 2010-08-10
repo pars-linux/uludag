@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Tue Aug 10 07:31:05 2010
+# Created: Tue Aug 10 11:09:35 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,7 +13,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.setEnabled(True)
-        Dialog.resize(601, 631)
+        Dialog.resize(601, 633)
         self.groupBox = QtGui.QGroupBox(Dialog)
         self.groupBox.setGeometry(QtCore.QRect(10, 10, 581, 431))
         palette = QtGui.QPalette()
@@ -30,8 +30,8 @@ class Ui_Dialog(object):
         self.groupBox.setFlat(False)
         self.groupBox.setObjectName("groupBox")
         self.text_edit = QtGui.QTextEdit(self.groupBox)
-        self.text_edit.setEnabled(False)
-        self.text_edit.setGeometry(QtCore.QRect(10, 60, 561, 431))
+        self.text_edit.setEnabled(True)
+        self.text_edit.setGeometry(QtCore.QRect(10, 60, 561, 371))
         font = QtGui.QFont()
         font.setWeight(50)
         font.setBold(False)
@@ -45,6 +45,9 @@ class Ui_Dialog(object):
         font.setBold(True)
         self.package_label.setFont(font)
         self.package_label.setObjectName("package_label")
+        self.type_label = QtGui.QLabel(self.groupBox)
+        self.type_label.setGeometry(QtCore.QRect(10, 40, 57, 16))
+        self.type_label.setObjectName("type_label")
         self.text_observation = QtGui.QPlainTextEdit(Dialog)
         self.text_observation.setGeometry(QtCore.QRect(40, 520, 531, 70))
         self.text_observation.setObjectName("text_observation")
@@ -99,16 +102,19 @@ class Ui_Dialog(object):
         QtCore.QObject.connect(self.quit_button, QtCore.SIGNAL("clicked()"), Dialog.close)
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked(bool)"), self.text_observation.setEnabled)
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked(bool)"), self.label_2.setEnabled)
-        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.text_observation.setDisabled)
-        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.label_2.setDisabled)
+        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.text_observation.setEnabled)
+        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.label_2.setEnabled)
         QtCore.QObject.connect(self.yes_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setDisabled)
-        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setDisabled)
+        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setEnabled)
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setEnabled)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
         Dialog.setTabOrder(self.yes_button, self.no_button)
-        Dialog.setTabOrder(self.no_button, self.text_observation)
+        Dialog.setTabOrder(self.no_button, self.unable_button)
+        Dialog.setTabOrder(self.unable_button, self.text_observation)
         Dialog.setTabOrder(self.text_observation, self.next_button)
         Dialog.setTabOrder(self.next_button, self.clear_button)
+        Dialog.setTabOrder(self.clear_button, self.quit_button)
+        Dialog.setTabOrder(self.quit_button, self.text_edit)
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Pardus Testing Framework", None, QtGui.QApplication.UnicodeUTF8))

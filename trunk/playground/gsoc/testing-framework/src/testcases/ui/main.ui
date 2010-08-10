@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>631</height>
+    <height>633</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -70,14 +70,14 @@
    </property>
    <widget class="QTextEdit" name="text_edit">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>60</y>
       <width>561</width>
-      <height>431</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="font">
@@ -102,6 +102,19 @@
       <weight>75</weight>
       <bold>true</bold>
      </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="type_label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>57</width>
+      <height>16</height>
+     </rect>
     </property>
     <property name="text">
      <string/>
@@ -264,13 +277,23 @@
     </item>
    </layout>
   </widget>
+  <zorder>groupBox</zorder>
+  <zorder>text_observation</zorder>
+  <zorder>clear_button</zorder>
+  <zorder>next_button</zorder>
+  <zorder>quit_button</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <tabstops>
   <tabstop>yes_button</tabstop>
   <tabstop>no_button</tabstop>
+  <tabstop>unable_button</tabstop>
   <tabstop>text_observation</tabstop>
   <tabstop>next_button</tabstop>
   <tabstop>clear_button</tabstop>
+  <tabstop>quit_button</tabstop>
+  <tabstop>text_edit</tabstop>
  </tabstops>
  <resources/>
  <connections>
@@ -281,7 +304,7 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>272</x>
+     <x>318</x>
      <y>481</y>
     </hint>
     <hint type="destinationlabel">
@@ -313,7 +336,7 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>272</x>
+     <x>318</x>
      <y>481</y>
     </hint>
     <hint type="destinationlabel">
@@ -374,7 +397,7 @@
    <sender>unable_button</sender>
    <signal>clicked(bool)</signal>
    <receiver>text_observation</receiver>
-   <slot>setDisabled(bool)</slot>
+   <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>470</x>
@@ -390,11 +413,11 @@
    <sender>unable_button</sender>
    <signal>clicked(bool)</signal>
    <receiver>label_2</receiver>
-   <slot>setDisabled(bool)</slot>
+   <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>482</x>
-     <y>484</y>
+     <x>581</x>
+     <y>481</y>
     </hint>
     <hint type="destinationlabel">
      <x>194</x>
@@ -409,8 +432,8 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>302</x>
-     <y>483</y>
+     <x>318</x>
+     <y>481</y>
     </hint>
     <hint type="destinationlabel">
      <x>72</x>
@@ -422,7 +445,7 @@
    <sender>unable_button</sender>
    <signal>clicked(bool)</signal>
    <receiver>clear_button</receiver>
-   <slot>setDisabled(bool)</slot>
+   <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>519</x>
