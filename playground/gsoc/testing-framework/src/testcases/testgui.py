@@ -13,6 +13,7 @@ from clcolorize import colorize
 
 
 class Main(QtGui.QMainWindow):
+    test_type = 'GUI'
     def __init__(self, element, package_list, check_code=None, case=None,
                             totalCounter=None, totalpackages=None, totalcases=None,
                             summary=None, report=None):
@@ -39,7 +40,8 @@ class Main(QtGui.QMainWindow):
         packageList = 'Packages: {0}'.format(', '.join(package_list))
         for lst in (self.summary, self.report):
             lst.append(packageList)
-            
+        
+        self.ui.type_label.setText(self.test_type)
         self.update_text()
         self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
         
@@ -78,6 +80,7 @@ class Main(QtGui.QMainWindow):
             self.update_text()
             self.ui.text_observation.clear()
         else:
+
             self.ui.next_button.setEnabled(False)
             self.next_package()
     
@@ -109,6 +112,13 @@ class Main(QtGui.QMainWindow):
                               'this test.'.format(self.caseCounter+1, self.totalCases)
             for lst in (self.summary, self.report):
                 lst.append(failure_message)
+            observation = self.ui.text_observation.toPlainText()
+            if observation == '':
+                self.report.append('\tCase {0}: No observation ' \
+                                            'entered.'.format(self.caseCounter+1))
+            else:
+                self.report.append('\tCase {0} Observation: ' \
+                                   '{1}'.format(self.caseCounter+1, observation))    
         if self.ui.no_button.isChecked():
             self.report.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
                                                                 self.totalCases))
