@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>633</height>
+    <height>641</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,7 +22,7 @@
      <x>10</x>
      <y>10</y>
      <width>581</width>
-     <height>431</height>
+     <height>441</height>
     </rect>
    </property>
    <property name="palette">
@@ -75,9 +75,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>60</y>
+      <y>70</y>
       <width>561</width>
-      <height>371</height>
+      <height>361</height>
      </rect>
     </property>
     <property name="font">
@@ -90,9 +90,9 @@
    <widget class="QLabel" name="package_label">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>30</y>
-      <width>171</width>
+      <x>13</x>
+      <y>26</y>
+      <width>231</width>
       <height>20</height>
      </rect>
     </property>
@@ -110,11 +110,14 @@
    <widget class="QLabel" name="type_label">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>57</width>
+      <x>13</x>
+      <y>50</y>
+      <width>121</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
     </property>
     <property name="text">
      <string/>
@@ -122,10 +125,13 @@
    </widget>
   </widget>
   <widget class="QPlainTextEdit" name="text_observation">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>520</y>
+     <y>530</y>
      <width>531</width>
      <height>70</height>
     </rect>
@@ -135,10 +141,13 @@
    </property>
   </widget>
   <widget class="QPushButton" name="clear_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>600</y>
+     <x>50</x>
+     <y>610</y>
      <width>51</width>
      <height>25</height>
     </rect>
@@ -150,14 +159,14 @@
   <widget class="QPushButton" name="next_button">
    <property name="geometry">
     <rect>
-     <x>499</x>
-     <y>600</y>
+     <x>490</x>
+     <y>610</y>
      <width>71</width>
      <height>25</height>
     </rect>
    </property>
    <property name="text">
-    <string>N&amp;ext</string>
+    <string>&amp;Start</string>
    </property>
   </widget>
   <widget class="QPushButton" name="quit_button">
@@ -166,8 +175,8 @@
    </property>
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>600</y>
+     <x>350</x>
+     <y>610</y>
      <width>71</width>
      <height>25</height>
     </rect>
@@ -180,7 +189,7 @@
    <property name="geometry">
     <rect>
      <x>22</x>
-     <y>460</y>
+     <y>470</y>
      <width>561</width>
      <height>51</height>
     </rect>
@@ -195,35 +204,34 @@
     </item>
     <item row="0" column="2">
      <widget class="QRadioButton" name="yes_button">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>&amp;Yes</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
       <property name="checked">
        <bool>false</bool>
       </property>
      </widget>
     </item>
-    <item row="0" column="4">
-     <widget class="QRadioButton" name="no_button">
-      <property name="text">
-       <string>&amp;No</string>
-      </property>
-      <property name="checked">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="6">
+    <item row="0" column="7">
      <widget class="QRadioButton" name="unable_button">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>&amp;Unable to peform this test</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="label_observation">
       <property name="enabled">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="font">
        <font>
@@ -262,7 +270,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="5">
+    <item row="0" column="6">
      <spacer name="horizontalSpacer_3">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -275,19 +283,40 @@
       </property>
      </spacer>
     </item>
+    <item row="0" column="4">
+     <widget class="QRadioButton" name="no_button">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>&amp;No</string>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
-  <zorder>groupBox</zorder>
-  <zorder>text_observation</zorder>
-  <zorder>clear_button</zorder>
-  <zorder>next_button</zorder>
-  <zorder>quit_button</zorder>
-  <zorder>layoutWidget</zorder>
-  <zorder>pushButton</zorder>
+  <widget class="QPushButton" name="save_button">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>610</y>
+     <width>71</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>S&amp;ave</string>
+   </property>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>yes_button</tabstop>
-  <tabstop>no_button</tabstop>
   <tabstop>unable_button</tabstop>
   <tabstop>text_observation</tabstop>
   <tabstop>next_button</tabstop>
@@ -332,7 +361,7 @@
   <connection>
    <sender>yes_button</sender>
    <signal>clicked(bool)</signal>
-   <receiver>label_2</receiver>
+   <receiver>label_observation</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -380,7 +409,7 @@
   <connection>
    <sender>no_button</sender>
    <signal>clicked(bool)</signal>
-   <receiver>label_2</receiver>
+   <receiver>label_observation</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
@@ -412,7 +441,7 @@
   <connection>
    <sender>unable_button</sender>
    <signal>clicked(bool)</signal>
-   <receiver>label_2</receiver>
+   <receiver>label_observation</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

@@ -11,7 +11,7 @@ from clcolorize import colorize
 
 
 class Main(QtGui.QMainWindow):
-    test_type = 'Shell'
+    test_type = 'Shell Test'
     def __init__(self, element, package_list, check_code=None, case=None,
                                             totalCounter=None, totalcases=None,
                                             summary=None, report=None):
@@ -26,9 +26,7 @@ class Main(QtGui.QMainWindow):
         self.element = element
         self.case = self.element.xpath('case')
         self.package_list = package_list
-        
-        self.totalCounter = 0
-        
+                
         self.caseCounter = 0
         self.totalCases = len(self.case)
         
@@ -40,10 +38,12 @@ class Main(QtGui.QMainWindow):
             lst.append(packageList)
         
         self.ui.type_label.setText(self.test_type)
-        self.update_text()    
-        self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
     
+        self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
+        self.connect(self.ui.save_button, QtCore.SIGNAL("clicked()"), self.get_text)
+        
     def update_text(self):
+        self.ui.text_observation.clear()
         self.ui.groupBox.setTitle('Case {0} of {1}'.format(self.caseCounter+1, self.totalCases))
         self.ui.package_label.setText('Packages: {0}'.format(', '.join(self.package_list)))
         # get the text
@@ -52,7 +52,7 @@ class Main(QtGui.QMainWindow):
             textList.append(element.text)
         if textList:
             for number, element in enumerate(textList, 1):
-                self.ui.text_edit.append('{0}. {1}'.format(number, element))
+                self.ui.text_edit.setText('{0}. {1}'.format(number, element))
         # get the commands
         commandList = []
         for element in self.case[self.caseCounter].getiterator('command'):
@@ -60,14 +60,20 @@ class Main(QtGui.QMainWindow):
         if commandList:
             self.ui.text_edit.append('')
             self.ui.text_edit.append('{0}'.format('\n'.join(commandList)))
-        self.get_text()
-        self.caseCounter += 1
-
+            
     def next_case(self):
         if self.caseCounter < self.totalCases:
+            self.ui.next_button.setEnabled(True)
+            self.ui.yes_button.setEnabled(True)
+            self.ui.no_button.setEnabled(True)
+            self.ui.unable_button.setEnabled(True)
+            self.ui.save_button.setEnabled(True)
+            self.ui.next_button.setText('N&ext')
             self.update_text()
-            self.ui.text_observation.clear()
+            self.ui.next_button.setEnabled(False)
         else:
+            self.ui.quit_button.setEnabled(True)
+            self.ui.next_button.setEnabled(False)
             self.ui.next_button.setEnabled(False)
             self.check_code = 1
             self.ui.package_label.setText('')
@@ -78,7 +84,6 @@ class Main(QtGui.QMainWindow):
             self.ui.yes_button.setEnabled(False)
             self.ui.no_button.setEnabled(False)
             self.ui.unable_button.setEnabled(False)
-            self.ui.quit_button.setEnabled(True)
 
     def get_text(self):
         if self.ui.yes_button.isChecked():
@@ -86,7 +91,7 @@ class Main(QtGui.QMainWindow):
                                                                  self.totalCases))
             self.summary.append('Case {0} of {1}: Success'.format(self.caseCounter+1,
                                                                   self.totalCases))
-        if self.ui.unable_button.isChecked():
+        elif self.ui.unable_button.isChecked():
             failure_message = 'Case {0} of {1}: The user was unable to perform ' \
                               'this test.'.format(self.caseCounter+1, self.totalCases)
             for lst in (self.summary, self.report):
@@ -98,7 +103,7 @@ class Main(QtGui.QMainWindow):
             else:
                 self.report.append('\tCase {0} Observation: ' \
                                    '{1}'.format(self.caseCounter+1, observation))
-        if self.ui.no_button.isChecked():
+        elif self.ui.no_button.isChecked():
             self.report.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
                                                                 self.totalCases))
             self.summary.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
@@ -110,7 +115,14 @@ class Main(QtGui.QMainWindow):
             else:
                 self.report.append('\tCase {0} Observation: ' \
                                    '{1}'.format(self.caseCounter+1, observation))
-                
+        else:
+            self.report.append('Case {0} of {1}: No information entered'.format(self.caseCounter+1,
+                                                                self.totalCases))
+            self.summary.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
+                                                                 self.totalCases))
+        self.ui.save_button.setEnabled(False)
+        self.ui.next_button.setEnabled(True)
+        self.caseCounter += 1
                 
 class TestShell:
     """This class is used to handle the testcase of shell, in which the user is
