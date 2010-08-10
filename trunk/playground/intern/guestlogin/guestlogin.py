@@ -26,11 +26,16 @@ def pam_sm_authenticate(pamh, flags, argv):
 folder is /home/%s, Have Fun!" % (username, username)
         return pamh.PAM_SUCCESS
     else:
-        return pamh.PAM_SUCCESS
+        return pamh.PAM_AUTHINFO_UNAVAIL
 
 def pam_sm_setcred(pamh, flags, argv):
-    """ Set Cred. """
-    return pamh.PAM_SUCCESS
+    """ Set Cred.\
+This function sends authinfo_unavail when username isnt like guestX"""
+    if (pamh.get_user(None).find('guest') == -1):
+        return pamh.PAM_AUTHINFO_UNAVAIL
+
+    else:
+        return pamh.PAM_SUCCESS
 
 #def pam_sm_acct_mgmt(pamh, flags, argv):
 #    """ Account Management """

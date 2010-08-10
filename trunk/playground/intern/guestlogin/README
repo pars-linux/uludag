@@ -16,12 +16,17 @@ Edit files in /etc/pam.d/ directory.
 
 For Example: Edit system-auth file for login.
 
+Add this line after pam_env.so line:
+
+auth    [user_unknown=ok]      pam_python.so guestlogin.py
+
+
 After adding pam_python line to the file, file's first lines will be like that:
 
 #%PAM-1.0
 
 auth    required        pam_env.so
-auth    sufficient      pam_python.so guestlogin.py
+auth    [user_unknown=ok]      pam_python.so guestlogin.py
 .
 .
 .
@@ -37,7 +42,7 @@ type control module-path module-arguments.
 
 Our type is auth because we will use it for authentication.
 
-control is sufficient because this file sufficient for authenticate guest account. For other users pam_unix.so will be triggered.
+control is [user_unknown=ok] because this file only triggered when user is unknown for authenticate guest account. For other users pam_unix.so will be triggered.
 
 module-path is pam_python.so and argument is out login file, guestlogin.py.
 
