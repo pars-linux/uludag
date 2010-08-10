@@ -58,6 +58,6 @@ class TestAutomated:
                 if expected.text in output:
                     self.summary.append('Success')
                 else:
-                    self.summary.append('Failure')
+                    self.summary.append('Failed')
             print '... Done'
             counter += 1
