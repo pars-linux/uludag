@@ -13,7 +13,7 @@ from clcolorize import colorize
 
 
 class Main(QtGui.QMainWindow):
-    test_type = 'GUI'
+    test_type = 'GUI Test'
     def __init__(self, element, package_list, check_code=None, case=None,
                             totalCounter=None, totalpackages=None, totalcases=None,
                             summary=None, report=None):
@@ -72,15 +72,14 @@ class Main(QtGui.QMainWindow):
             self.ui.text_edit.append('')
             for number, element in enumerate(textList, 1):
                 self.ui.text_edit.append('{0}. {1}'.format(number, element))
-        self.get_text()
-        self.caseCounter += 1
         
     def next_case(self):
         if self.caseCounter < self.totalCases and self.totalCounter < self.totalPackages:
+            self.get_text()
+            self.caseCounter += 1   
             self.update_text()
             self.ui.text_observation.clear()
         else:
-
             self.ui.next_button.setEnabled(False)
             self.next_package()
     
