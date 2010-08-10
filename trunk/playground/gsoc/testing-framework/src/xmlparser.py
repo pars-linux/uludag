@@ -139,7 +139,6 @@ class XMLParser:
         
     def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
-        # Just check for the command tag here, don't do anything else!
         commandList = self.testcase_tag_parse(element, 'command')
         if len(commandList) == 0:
             print colorize('No <command> tag found. Skipping test ...', 'red')

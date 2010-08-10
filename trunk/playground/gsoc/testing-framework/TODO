@@ -1,10 +1,4 @@
-1.	Implement a GUI layer for the 'gui' testcase
-
-	This should be pretty easy since the CLI backend is ready and we have only
-	one testcase which requires a user interface. 
-
-
-2.	Support for passing packages for custom parsing through the command line
+-	Support for passing packages for custom parsing through the command line
 
 	As of now, the framework provides support for custom package parsing using
 	a file (the '-p' switch). We intend to add another feature that will allow
