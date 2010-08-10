@@ -20,8 +20,9 @@ def pam_sm_authenticate(pamh, flags, argv):
         while "guest" + str(i) in users:
             i = i + 1
         username = "guest%s" % i
-        os.system("useradd %s -d /home/%s" % (username, username))
+        os.system("useradd %s -d /home/%s 2>> /var/log/guestacc.log" % (username, username))
         pamh.user = username
+        os.system("echo 'Added %s user as guest' >> /var/log/guestacc.log" % username)
         print "Your temporary username set as %s and your home \
 folder is /home/%s, Have Fun!" % (username, username)
         return pamh.PAM_SUCCESS
@@ -29,8 +30,7 @@ folder is /home/%s, Have Fun!" % (username, username)
         return pamh.PAM_AUTHINFO_UNAVAIL
 
 def pam_sm_setcred(pamh, flags, argv):
-    """ Set Cred.\
-This function sends authinfo_unavail when username isnt like guestX"""
+    """ Set Cred. """
     if (pamh.get_user(None).find('guest') == -1):
         return pamh.PAM_AUTHINFO_UNAVAIL
 
@@ -41,13 +41,21 @@ This function sends authinfo_unavail when username isnt like guestX"""
 #    """ Account Management """
 #    return pamh.PAM_SUCCESS
 
-#def pam_sm_open_session(pamh, flags, argv):
-#    """ Open Session """
-#    return pamh.PAM_SUCCESS
+def pam_sm_open_session(pamh, flags, argv):
+    """ Open Session """
+    return pamh.PAM_SUCCESS
 
-#def pam_sm_close_session(pamh, flags, argv):
-#    """ Close Session """
-#    return pamh.PAM_SUCCESS
+def pam_sm_close_session(pamh, flags, argv):
+    """ Close Session, if user is guest \
+destroy it but too dangerous"""
+    username = pamh.get_user(None)
+    if (username.find('guest') != -1):
+        os.system("skill -KILL -u %s 2>> /var/log/guestacc.log" % username)
+        os.system("userdel -f %s 2>> /var/log/guestacc.log" % username)
+        os.system("groupdel %s 2>> /var/log/guestacc.log" % username)
+        os.system("rm -rf /home/%s 2>> /var/log/guestacc.log" % username)
+        os.system("echo 'Deleted %s user as guest \n' >> /var/log/guestacc.log" % username)
+    return pamh.PAM_SUCCESS
 
 #def pam_sm_chauthtok(pamh, flags, argv):
 #    """ Chauthtok """
