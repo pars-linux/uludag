@@ -53,7 +53,7 @@ class Main(QtGui.QMainWindow):
             filesDownloaded.append(files.text)
         if filesDownloaded:
             self.ui.text_edit.append("Using files in '{0}':\n".format(os.getcwd()))
-            self.ui.text_edit.append("{0}".format('\n'.join(filesDownloaded)))
+            self.ui.text_edit.append("{0}".format(os.path.basename('\n'.join(filesDownloaded))))
         # get the links
         linkList = []
         for linkTag in self.case[self.caseCounter].getiterator('link'):
