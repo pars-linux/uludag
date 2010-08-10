@@ -75,8 +75,8 @@ class Main(QtGui.QMainWindow):
         
     def next_case(self):
         if self.caseCounter < self.totalCases and self.totalCounter < self.totalPackages:
-            self.ui.text_observation.clear()
             self.update_text()
+            self.ui.text_observation.clear()
         else:
             self.ui.next_button.setEnabled(False)
             self.next_package()
@@ -90,6 +90,7 @@ class Main(QtGui.QMainWindow):
         else:
             self.check_code = 1
             self.ui.package_label.setText('')
+            self.ui.text_observation.setPlainText('')
             self.ui.text_edit.setText('End of package testing. Press FINISH to exit.')
             self.ui.groupBox.setTitle('Finished')
             self.ui.text_observation.setEnabled(False)
@@ -103,7 +104,12 @@ class Main(QtGui.QMainWindow):
                                                                  self.totalCases))
             self.summary.append('Case {0} of {1}: Success'.format(self.caseCounter+1,
                                                                   self.totalCases))
-        else:
+        if self.ui.unable_button.isChecked():
+            failure_message = 'Case {0} of {1}: The user was unable to perform ' \
+                              'this test.'.format(self.caseCounter+1, self.totalCases)
+            for lst in (self.summary, self.report):
+                lst.append(failure_message)
+        if self.ui.no_button.isChecked():
             self.report.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
                                                                 self.totalCases))
             self.summary.append('Case {0} of {1}: Failed'.format(self.caseCounter+1,
