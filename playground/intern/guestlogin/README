@@ -1,0 +1,60 @@
+This is a README file about Guest Account PAM module.
+
+Now, this module give access to guest users. 
+
+REQUIREMENTS:
+-------------
+
+pam_python (http://ace-host.stuart.id.au/russell/files/pam_python/)
+
+INSTALLATION:
+------------
+
+Copy guestlogin.py file to /lib/security. (Actually same directory with pam_python.so)
+
+Edit files in /etc/pam.d/ directory.
+
+For Example: Edit system-auth file for login.
+
+After adding pam_python line to the file, file's first lines will be like that:
+
+#%PAM-1.0
+
+auth    required        pam_env.so
+auth    sufficient      pam_python.so guestlogin.py
+.
+.
+.
+
+
+Important thing is file's syntax and sequence.
+
+Sequence is like pam_env.so, pam_python.so, pam_unix.so.
+
+Syntax is:
+
+type control module-path module-arguments.
+
+Our type is auth because we will use it for authentication.
+
+control is sufficient because this file sufficient for authenticate guest account. For other users pam_unix.so will be triggered.
+
+module-path is pam_python.so and argument is out login file, guestlogin.py.
+
+Next login this module will be triggered and guest accounts can able to login without password or account.
+
+USAGE:
+------
+
+For use, login as guest (case sensitive, all cases are downcase).
+
+This module gives a home directory (in /home/) and a guest username (like guestX where X is an integer).
+
+Have Fun!
+
+TODO:
+-----
+
+After logout, user and user's home directory deletion.
+Guest Privileges.(rw to /home/guestX etc.)
+...
