@@ -18,7 +18,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 import os, sys, subprocess
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.wallpaperWidget import Ui_wallpaperWidget
 from widgets import WallpaperItemWidget
 
@@ -26,7 +26,7 @@ from kaptan.desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = False
 

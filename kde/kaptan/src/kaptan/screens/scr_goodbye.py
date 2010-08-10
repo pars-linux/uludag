@@ -15,14 +15,14 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KGlobal, KConfig
 #from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 import subprocess, sys
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.goodbyeWidget import Ui_goodbyeWidget
 import kaptan.ScrSmolt as smoltWidget
 
 sys.path.append('/usr/kde/4/share/apps/migration/')
 from migration.utils import partition
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     title = ki18n("More")
     desc = ki18n("Congratulations!")
 

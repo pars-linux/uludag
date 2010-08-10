@@ -18,13 +18,13 @@ from PyKDE4.kdecore import ki18n, KConfig
 
 import kaptan.ScrSummary  as summaryWidget
 import kaptan.ScrSummary  as summaryWidget
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.keyboardWidget import Ui_keyboardWidget
 import subprocess
 
 from pardus import localedata
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = False
 
