@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Tue Aug 10 06:52:14 2010
+# Created: Tue Aug 10 07:31:05 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -38,7 +38,7 @@ class Ui_Dialog(object):
         self.text_edit.setFont(font)
         self.text_edit.setObjectName("text_edit")
         self.package_label = QtGui.QLabel(self.groupBox)
-        self.package_label.setGeometry(QtCore.QRect(160, 30, 221, 20))
+        self.package_label.setGeometry(QtCore.QRect(210, 30, 171, 20))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setWeight(75)
