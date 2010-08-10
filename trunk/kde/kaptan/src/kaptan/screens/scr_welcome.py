@@ -16,7 +16,7 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 from PyKDE4.kdecore import i18n
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.welcomeWidget import Ui_welcomeWidget
 
 import subprocess
@@ -26,7 +26,7 @@ def getRelease():
     release, err = p.communicate()
     return unicode(release.replace("\n", ""))
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
 
     title = ki18n("Welcome")
     desc = ki18n("Welcome to %s")

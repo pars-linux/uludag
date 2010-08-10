@@ -16,7 +16,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import QMessageBox
 from PyKDE4.kdecore import ki18n, KConfig
 import subprocess,os, dbus
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.summaryWidget import Ui_summaryWidget
 from PyKDE4 import kdeui
 # import other widgets to get the latest configuration
@@ -30,7 +30,7 @@ import kaptan.ScrSmolt  as smoltWidget
 
 import kaptan.tools as tools
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     title = ki18n("Summary")
     desc = ki18n("Save Your Settings")
 

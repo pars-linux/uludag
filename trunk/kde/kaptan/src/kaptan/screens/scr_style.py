@@ -17,14 +17,14 @@ from PyKDE4 import kdeui
 
 import os, sys, Image, dbus, glob
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.styleWidget import Ui_styleWidget
 from stylewidget import StyleItemWidget
 
 from kaptan.desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = False
     screenSettings["hasChangedDesktopType"] = False

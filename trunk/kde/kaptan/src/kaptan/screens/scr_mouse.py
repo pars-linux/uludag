@@ -15,13 +15,13 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KConfig
 from PyKDE4.kdeui import KGlobalSettings
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.mouseWidget import Ui_mouseWidget
 
 from Xlib import display
 RIGHT_HANDED, LEFT_HANDED = range(2)
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = False
 

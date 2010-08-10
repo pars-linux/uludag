@@ -17,14 +17,14 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 from PyKDE4 import kdecore
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.smoltWidget import Ui_smoltWidget
 
 sys.path.append('/usr/share/smolt/client')
 
 import smolt
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["profileSend"] = False
 

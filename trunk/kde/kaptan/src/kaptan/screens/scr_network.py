@@ -16,10 +16,10 @@ from PyQt4.QtGui import *
 from PyKDE4.kdecore import ki18n
 from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.networkWidget import Ui_networkWidget
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     title = ki18n("Network")
     desc = ki18n("Connect to the Internet")
 

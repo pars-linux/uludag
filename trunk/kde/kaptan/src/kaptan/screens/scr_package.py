@@ -16,7 +16,7 @@ from PyKDE4.kdecore import ki18n, KConfig, KProcess
 
 from PyKDE4 import kdeui
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.packageWidget import Ui_packageWidget
 
 import subprocess
@@ -25,7 +25,7 @@ import comar
 
 isUpdateOn = False
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     title = ki18n("Packages")
     desc = ki18n("Install / Remove Programs")
 

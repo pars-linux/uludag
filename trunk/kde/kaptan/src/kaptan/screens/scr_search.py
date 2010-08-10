@@ -16,11 +16,11 @@ from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
 import dbus
 
-from kaptan.ScreenWidget import ScreenWidget
+from kaptan.screen import Screen
 from kaptan.searchWidget import Ui_searchWidget
 
 
-class Widget(QtGui.QWidget, ScreenWidget):
+class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = True
     # Set title and description for the information widget
