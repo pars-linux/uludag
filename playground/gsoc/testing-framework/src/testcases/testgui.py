@@ -7,6 +7,8 @@ import sys
 
 from PyQt4 import QtCore, QtGui
 
+from interface import Main
+
 
 class TestGUI:
     """class for the testcase gui."""
@@ -25,18 +27,21 @@ class TestGUI:
         if downloadList:
             self.download_file(downloadList)
         # start the graphical user interface now
-        app = QtGui.QApplication(sys.argv)
-        window = Main(self.element, self.packagelist, self.summary, self.report)
-        window.show()
-        app.exec_()
-        
-        if window.checkCode == 1:
-            self.summary = window.summary
-            self.report = window.report
-        else:
-            failMessage = 'No information was entered in the GUI test.'
-            for lst in (self.summary, self.report):
-                lst.append(failMessage)
+        totalPackages = len(self.packagelist)
+        counter = 0
+        while counter < totalPackages:
+            app = QtGui.QApplication(sys.argv)
+            window = Main(self.element, self.packagelist, self.summary, self.report)
+            window.show()
+            app.exec_()
+            if window.checkcode == 1:
+                self.summary.extend(window.summary)
+                self.report.extend(window.report)
+            else:
+                failMessage = 'No information was entered in the GUI test.'
+                for lst in (self.summary, self.report):
+                    lst.extend(failMessage)
+            counter += 1
             
     def download_file(self, file):
         """Download a file using wget."""

@@ -9,7 +9,8 @@ from ui_main import Ui_Dialog
 
 
 class Main(QtGui.QMainWindow):
-    def __init__(self, element, packagelist, checkcode=None, case=None,
+    def __init__(self, element, packagelist, package=None,
+                                             checkcode=None, case=None,
                                              casecounter=None, totalcases=None,
                                              summary=None, report=None):
         QtGui.QMainWindow.__init__(self)
