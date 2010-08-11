@@ -165,14 +165,14 @@ Sunduğum özelliğin gelişmelerini nasıl takip edebilirim?
 Neden bu süreç önemlidir ve önemsemeliyim?
 ----------------------------------------------------
 
-Yeni özellik istekleri başta Pardus olmak üzere tüm dünyayı geliştirecek ve iyileştirecek değişikliklerdir. Geliştiricilerin, kullanıcılar ile iletişime geçişi ve geri dönüş alışı, Pardus'u iyeye götürmek için bir fırsattır.
+Yeni özellik istekleri başta Pardus olmak üzere tüm dünyayı geliştirecek ve iyileştirecek değişikliklerdir. Geliştiricilerin, kullanıcılar ile iletişime geçişi ve geri dönüş alışı, Pardus'u iyiye götürmek için bir fırsattır.
 
 Yeni özellik isteklerinin bu şekilde bir sürece oturtulması, özelliklerin ve durumlarının iyi tanımlanması için önemlidir. Bu süreç öncesindeki zamanlarda son dakikada eklenmek istenen değişiklikler olmuş veya önceliği belirlenmemiş bir çok yeni özellik sürümün tarihinin ötelenmesine neden olmuştur.
 
 Pardus Linux Dağıtımı tahmin edilebilir bir sürüm çizelgesi kullanmayı amaçlamaktadır. Bu doğrultuda yeni özellik istekleri de belirli bir zaman çizelgesine sahiptir. Dönemsel olarak yeni özellik isteklerinin izlenmesi, sürüm çizelgelerinde öngörü yapılabilirliğini arttırmaktadır.
 
 
-Featureların tanımlı olması aşağıda bulunan yararları bereberinde getirmektedir:
+Özelliklerin tanımlı olması aşağıda bulunan yararları bereberinde getirmektedir:
 
    #. Hata takip sistemi üzerinden raporlanan yeni özellikler ile kimin uğraştığı gözlemlenebilmekte ve daha iyiye götürebilmek için iletişim ve önerilere açık olmasını sağlamaktadır.
    #. İlgili ve yardım edebilcek kişiler bulunabilmektedir.
@@ -181,5 +181,5 @@ Featureların tanımlı olması aşağıda bulunan yararları bereberinde getirm
    #. Son anda çıkan surprizler bertaraf edilebilmektedir.
    #. Ne yaptığımız hakkında bilgi verilebilmektedir.
    #. Sürüm notlarının çıkarılması kolaylaşmaktadır. Yapılması gereken FutureFeature anahtarı ve "KARAR VERİLDİ/ ÇÖZÜLDÜ" durumuna sahip olan hataları filtrelemektir.
-   #. Medya ve basın ile ilişkillerde bu bilgilerden yaralanılabilmektedir.
+   #. Medya ve basın ile ilişkilerde bu bilgilerden yaralanılabilmektedir.
 
