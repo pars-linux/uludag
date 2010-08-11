@@ -31,7 +31,8 @@ class TestGUI:
         counter = 0
         while counter < totalPackages:
             app = QtGui.QApplication(sys.argv)
-            window = Main(self.element, self.packagelist, self.summary, self.report)
+            window = Main(self.element, self.packagelist,
+                          self.summary, self.report, self.packagelist[counter])
             window.show()
             app.exec_()
             if window.checkcode == 1:
