@@ -5,7 +5,7 @@ import sys
 
 from PyQt4 import QtCore, QtGui
 
-from testcasegui import Main
+from interface import Main
 
 from clcolorize import colorize
 
