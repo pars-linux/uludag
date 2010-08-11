@@ -9,6 +9,8 @@ from PyQt4 import QtCore, QtGui
 
 from interface import Main
 
+from clcolorize import colorize
+
 
 class TestGUI:
     """class for the testcase gui."""
