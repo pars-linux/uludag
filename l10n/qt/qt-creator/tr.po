@@ -53,7 +53,7 @@ msgstr ""
 
 #: ExtensionSystem::Internal::PluginDetailsView#5
 msgid "Url:"
-msgstr ""
+msgstr "Url:"
 
 #: ExtensionSystem::Internal::PluginDetailsView#6
 msgctxt "ExtensionSystem::Internal::PluginDetailsView#6"
