@@ -41,6 +41,7 @@ class Main(QtGui.QMainWindow):
         for lst in (self.summary, self.report):
             lst.append(packageList)
         
+        
         self.ui.type_label.setText(self.test_type)
         self.update_text()
         self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
