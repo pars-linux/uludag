@@ -23,7 +23,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         procOutput = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         homeDir = procOutput.communicate()[0][:-1]
         os.system("mount -t tmpfs -o mode=700 none %s" % homeDir)
-        os.system("useradd %s  2>> /var/log/guestacc.log" % username)
+        os.system("useradd -M %s  2>> /var/log/guestacc.log" % username)
         os.system("chown %s:%s %s" % (username, username, homeDir))
         os.system("usermod -d %s %s" % (homeDir, username))
         os.system("echo 'Added %s user as guest' >> /var/log/guestacc.log" % username)
