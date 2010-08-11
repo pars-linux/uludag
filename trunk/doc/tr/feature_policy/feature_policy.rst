@@ -17,7 +17,7 @@ Yeni Özellik İstekleri
 Özellik nedir?
 ==============
 
-Özellik geliştirilmekte olan Padus sürümü için elle tutulur bir değişiklik veya geliştirme olarak tanımlanabilir.
+Özellik geliştirilmekte olan Pardus sürümü için elle tutulur bir değişiklik veya geliştirme olarak tanımlanabilir.
 
 Özellikler aşağıda bulunan kavramlar ile somutlaştırılabilir.
     #. Ana geliştiricisi olduğumuz uygulamalar için:
