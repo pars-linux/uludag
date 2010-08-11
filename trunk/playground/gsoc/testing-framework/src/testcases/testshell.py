@@ -5,11 +5,9 @@ import sys
 
 from PyQt4 import QtCore, QtGui
 
-from interface import Main
+from interfaceshell import Main
 
-from clcolorize import colorize
 
-                
 class TestShell:
     """This class is used to handle the testcase of shell, in which the user is
     told to run a certain command on and note down the output."""
@@ -23,11 +21,13 @@ class TestShell:
         packageList = []
         for package in self.element.getiterator('package'):
             packageList.append(package.text)
+        
         app = QtGui.QApplication(sys.argv)
         window = Main(self.element, packageList, self.summary, self.report)
         window.show()
         app.exec_()
-        if window.checkCode:
+        
+        if window.checkcode:
             self.summary = window.summary
             self.report = window.report
         else:

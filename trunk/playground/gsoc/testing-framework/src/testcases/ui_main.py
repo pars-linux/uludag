@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Wed Aug 11 08:56:14 2010
+# Created: Wed Aug 11 10:56:27 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -137,5 +137,5 @@ class Ui_Dialog(object):
         self.unable_button.setText(QtGui.QApplication.translate("Dialog", "&Unable to peform this test", None, QtGui.QApplication.UnicodeUTF8))
         self.label_observation.setText(QtGui.QApplication.translate("Dialog", "Enter your observation: ", None, QtGui.QApplication.UnicodeUTF8))
         self.no_button.setText(QtGui.QApplication.translate("Dialog", "&No", None, QtGui.QApplication.UnicodeUTF8))
-        self.save_button.setText(QtGui.QApplication.translate("Dialog", "S&ave", None, QtGui.QApplication.UnicodeUTF8))
+        self.save_button.setText(QtGui.QApplication.translate("Dialog", "&Save", None, QtGui.QApplication.UnicodeUTF8))
 

@@ -314,7 +314,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>S&amp;ave</string>
+    <string>&amp;Save</string>
    </property>
   </widget>
  </widget>
