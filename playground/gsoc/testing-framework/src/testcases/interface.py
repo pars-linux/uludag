@@ -9,10 +9,10 @@ from ui_main import Ui_Dialog
 
 
 class Main(QtGui.QMainWindow):
-    def __init__(self, element, packagelist, package=None,
+    def __init__(self, element, packagelist, summary=None, report=None,
+                                             package=None,
                                              checkcode=None, case=None,
-                                             casecounter=None, totalcases=None,
-                                             summary=None, report=None):
+                                             casecounter=None, totalcases=None):
         QtGui.QMainWindow.__init__(self)
         
         self.ui = Ui_Dialog()
@@ -31,13 +31,27 @@ class Main(QtGui.QMainWindow):
         self.summary = list()
         self.report = list()
         
-        packages = 'Packages: {0}'.format(', '.join(self.packagelist))
-        for lst in (self.summary, self.report):
-            lst.append(packages)
+        self.package = package
         
-        self.ui.type_label.setText('Shell Test')
+        if self.package is None:
+            self.ui.type_label.setText('Shell Test')
+            packageText = 'Packages: {0}'.format(', '.join(self.packagelist))
+            for lst in (self.summary, self.report):
+                lst.append(packageText)
+            self.ui.text_edit.setText('This is a shell test.')
+            self.ui.text_edit.append("The following packages will be tested: " \
+                                     "{0}".format(', '.join(self.packagelist)))
+            self.ui.text_edit.append("Press 'Start' to begin testing ...")
+        else:
+            self.ui.type_label.setText('GUI Test')
+            singlePackage = 'Package: {0}'.format(self.package)
+            for lst in (self.summary, self.report):
+                lst.append(singlePackage)
+            self.ui.text_edit.setText('This is a GUI test.')
+            self.ui.text_edit.setText("The package '{0}' " \
+                                          "will be tested".format(self.package))
+            self.ui.text_edit.append("Press 'Start' to begin testing ...")
         
-        self.ui.text_edit.setText("Press 'Start' to begin testing ...")
         self.connect(self.ui.next_button,
                      QtCore.SIGNAL("clicked()"),
                      self.next_case)
@@ -49,23 +63,45 @@ class Main(QtGui.QMainWindow):
         self.ui.text_observation.clear()
         self.ui.group_box.setTitle('Case {0} of {1}'.format(self.casecounter+1,
                                                             self.totalcases))
-        self.ui.package_label.setText('Package(s): ' \
-                                      '{0}'.format(', '.join(self.packagelist)))
-        self.ui.text_edit.setText('')
+        if self.package is not None:
+            self.ui.package_label.setText('Package: {0}'.format(self.package))                                          
+            self.ui.text_edit.setText('')
+        else:
+            self.ui.package_label.setText('Package(s): ' \
+                                          '{0}'.format(', '.join(self.packagelist)))
+            self.ui.text_edit.setText('')
+        # parse the gui testcase
+        if self.package is not None:
+            filesDownloaded = []
+            for files in self.case[self.casecounter].getiterator('download'):
+                filesDownloaded.append(files.text)
+            if filesDownloaded:
+                self.ui.text_edit.append("Using files in '{0}':\n".format(os.getcwd()))
+                self.ui.text_edit.append("{0}".format(os.path.basename('\n'.join(filesDownloaded))))
+            # get the links
+            linkList = []
+            for linkTag in self.case[self.casecounter].getiterator('link'):
+                linkList.append(linkTag.text)
+            if linkList:
+                self.ui.text_edit.append('')
+                self.ui.text_edit.append('Open the following link(s) in your browser:')
+                self.ui.text_edit.append('{0}'.format('\n'.join(linkList)))
         # get the text
         textList = []
         for element in self.case[self.casecounter].getiterator('text'):
             textList.append(element.text)
         if textList:
+            self.ui.text_edit.append('')
             for number, element in enumerate(textList, 1):
                 self.ui.text_edit.append('{0}. {1}'.format(number, element))
-        # get the commands
-        commandList = []
-        for element in self.case[self.casecounter].getiterator('command'):
-            commandList.append(element.text)
-        if commandList:
-            self.ui.text_edit.append('')
-            self.ui.text_edit.append('{0}'.format('\n'.join(commandList)))
+        if self.package is None:
+            # get the commands
+            commandList = []
+            for element in self.case[self.casecounter].getiterator('command'):
+                commandList.append(element.text)
+            if commandList:
+                self.ui.text_edit.append('')
+                self.ui.text_edit.append('{0}'.format('\n'.join(commandList)))
             
     def next_case(self):
         if self.casecounter < self.totalcases:
