@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Wed Aug 11 10:56:27 2010
+# Created: Wed Aug 11 13:58:37 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -76,7 +76,7 @@ class Ui_Dialog(object):
         self.yes_button = QtGui.QRadioButton(self.layoutWidget)
         self.yes_button.setEnabled(False)
         self.yes_button.setCheckable(True)
-        self.yes_button.setChecked(False)
+        self.yes_button.setChecked(True)
         self.yes_button.setObjectName("yes_button")
         self.gridLayout.addWidget(self.yes_button, 0, 2, 1, 1)
         self.unable_button = QtGui.QRadioButton(self.layoutWidget)
@@ -119,6 +119,9 @@ class Ui_Dialog(object):
         QtCore.QObject.connect(self.yes_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setDisabled)
         QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setEnabled)
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setEnabled)
+        QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked()"), self.text_observation.setFocus)
+        QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked()"), self.text_observation.setFocus)
+        QtCore.QObject.connect(self.text_edit, QtCore.SIGNAL("textChanged()"), self.yes_button.setFocus)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
         Dialog.setTabOrder(self.yes_button, self.unable_button)
         Dialog.setTabOrder(self.unable_button, self.text_observation)

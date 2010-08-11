@@ -5,7 +5,7 @@ import sys
 
 from PyQt4 import QtCore, QtGui
 
-from interfaceshell import Main
+from interface import Main
 
 
 class TestShell:

@@ -217,7 +217,7 @@
        <bool>true</bool>
       </property>
       <property name="checked">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
      </widget>
     </item>
@@ -336,8 +336,8 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>318</x>
-     <y>481</y>
+     <x>315</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>287</x>
@@ -368,12 +368,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>318</x>
-     <y>481</y>
+     <x>315</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
-     <x>176</x>
-     <y>509</y>
+     <x>177</x>
+     <y>399</y>
     </hint>
    </hints>
   </connection>
@@ -401,7 +401,7 @@
    <hints>
     <hint type="sourcelabel">
      <x>369</x>
-     <y>474</y>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>343</x>
@@ -417,11 +417,11 @@
    <hints>
     <hint type="sourcelabel">
      <x>369</x>
-     <y>474</y>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
-     <x>190</x>
-     <y>509</y>
+     <x>191</x>
+     <y>399</y>
     </hint>
    </hints>
   </connection>
@@ -432,8 +432,8 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>470</x>
-     <y>477</y>
+     <x>571</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>466</x>
@@ -448,12 +448,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>581</x>
-     <y>481</y>
+     <x>571</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
-     <x>194</x>
-     <y>503</y>
+     <x>195</x>
+     <y>399</y>
     </hint>
    </hints>
   </connection>
@@ -464,8 +464,8 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>318</x>
-     <y>481</y>
+     <x>315</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>72</x>
@@ -480,8 +480,8 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>519</x>
-     <y>472</y>
+     <x>571</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>73</x>
@@ -496,12 +496,60 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>376</x>
-     <y>481</y>
+     <x>369</x>
+     <y>371</y>
     </hint>
     <hint type="destinationlabel">
      <x>89</x>
      <y>605</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>unable_button</sender>
+   <signal>clicked()</signal>
+   <receiver>text_observation</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>450</x>
+     <y>361</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>441</x>
+     <y>416</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>no_button</sender>
+   <signal>clicked()</signal>
+   <receiver>text_observation</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>353</x>
+     <y>364</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>359</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>text_edit</sender>
+   <signal>textChanged()</signal>
+   <receiver>yes_button</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>288</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>277</x>
+     <y>365</y>
     </hint>
    </hints>
   </connection>
