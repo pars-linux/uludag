@@ -155,17 +155,16 @@ msgstr "Dizin silinemedi."
 
 #: Phonon::MMF#1
 msgid "Audio Output"
-msgstr ""
+msgstr "Ses Çıkışı"
 
 #: Phonon::MMF#2
 msgid "The audio output device"
-msgstr ""
+msgstr "Ses çıkış aygıtı"
 
 #: Phonon::MMF#3
-#, fuzzy
 msgctxt "Phonon::MMF#3"
 msgid "No error"
-msgstr "Ağ hatası"
+msgstr "Hata yok"
 
 #: Phonon::MMF#4
 #, fuzzy
