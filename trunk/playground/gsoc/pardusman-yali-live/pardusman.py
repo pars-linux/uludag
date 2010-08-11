@@ -74,6 +74,7 @@ def maker(op, project_file):
 
     if op == "check-repo":
         maker.check_repo_files(project)
+
     if op == "make" or op == "make-live":
         maker.make_image(project)
         # Pack excluded to additional.tar.lzma
@@ -85,6 +86,9 @@ def maker(op, project_file):
         maker.squash_image(project)
     if op == "make" or op == "make-iso":
         maker.make_iso(project)
+
+    if op == "pack-extra":
+        maker.pack_additional(project)
 
     end = time.time()
     print "Total time is", end - start, "seconds."

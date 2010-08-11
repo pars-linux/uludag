@@ -213,10 +213,12 @@ label hardware
 # Pack excluded directories in squash_image to additional.tar.lzma
 def pack_additional(project):
     print "Packing additionals from exclude list"
-    exclude_list = get_exclude_list(project)
+    file_list = get_exclude_list(project)
     cwd = os.getcwd()
     os.chdir("%s" %project.image_dir())
-    run("/bin/tar --ignore-failed-read -cJvvf %s %s" %(os.path.join(project.work_dir,"additional.tar.lzma"), " ".join(exclude_list) ), ignore_error=True)
+    for item in file_list:
+        run("/bin/tar -rvf %s %s --ignore-failed-read" %(os.path.join(project.work_dir,"additional.tar"), item), ignore_error=True)
+    run("/usr/bin/lzma %s" %os.path.join(project.work_dir,"additional.tar"))
     os.chdir("%s" %cwd)
 
 
@@ -375,8 +377,11 @@ def squash_image(project):
     f = file(temp.name, "w")
     f.write("\n".join(get_exclude_list(project)))
     f.close()
-
+    
     mksquashfs_cmd = 'mksquashfs "%s" "%s" -noappend -ef "%s"' % (image_dir, image_file, temp.name)
+
+    #mksquashfs_cmd = 'mksquashfs "%s" "%s" -noappend ' % (image_dir, image_file)
+
     run(mksquashfs_cmd)
 
 #
