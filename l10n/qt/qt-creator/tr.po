@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -13,7 +14,7 @@ msgstr ""
 
 #: mainClass#1
 msgid "main"
-msgstr ""
+msgstr "ana"
 
 #: mainClass#2
 msgid "Text1:"
@@ -432,9 +433,7 @@ msgid "entries"
 msgstr ""
 
 #: CodePaster::FileShareProtocolSettingsWidget#5
-msgid ""
-"The fileshare-based paster protocol allows for sharing code snippets using "
-"simple files on a shared network drive. Files are never deleted."
+msgid "The fileshare-based paster protocol allows for sharing code snippets using simple files on a shared network drive. Files are never deleted."
 msgstr ""
 
 #: PasteBinComSettingsWidget#1
@@ -449,11 +448,8 @@ msgstr ""
 #: PasteBinComSettingsWidget#3
 msgid ""
 "<html><head/><body>\n"
-"<p><a href=\"http://pastebin.com\">pastebin.com</a> allows to send posts to "
-"custom subdomains (eg. creator.pastebin.com). Fill in the desired "
-"prefix.</p>\n"
-"<p>Note that the plugin will use this for posting as well as "
-"fetching.</p></body></html>"
+"<p><a href=\"http://pastebin.com\">pastebin.com</a> allows to send posts to custom subdomains (eg. creator.pastebin.com). Fill in the desired prefix.</p>\n"
+"<p>Note that the plugin will use this for posting as well as fetching.</p></body></html>"
 msgstr ""
 
 #: CodePaster::PasteSelectDialog#1
@@ -505,16 +501,11 @@ msgstr ""
 
 #: ViewDialog#7
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
-"html40/strict.dtd\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Sans Serif'; font-"
-"size:9pt;\">&lt;Comment&gt;</span></p></body></html>"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:9pt;\">&lt;Comment&gt;</span></p></body></html>"
 msgstr ""
 
 #: ViewDialog#8
@@ -637,10 +628,7 @@ msgid "Prompt on submit"
 msgstr ""
 
 #: CVS::Internal::SettingsPage#7
-msgid ""
-"When checked, all files touched by a commit will be displayed when clicking "
-"on a revision number in the annotation view (retrieved via commit ID). "
-"Otherwise, only the respective file will be displayed."
+msgid "When checked, all files touched by a commit will be displayed when clicking on a revision number in the annotation view (retrieved via commit ID). Otherwise, only the respective file will be displayed."
 msgstr ""
 
 #: CVS::Internal::SettingsPage#8
@@ -766,9 +754,7 @@ msgid "Use tooltips in main editor while debugging"
 msgstr ""
 
 #: CommonOptionsPage#7
-msgid ""
-"Checking this will populate the source file view automatically but might "
-"slow down debugger startup considerably."
+msgid "Checking this will populate the source file view automatically but might slow down debugger startup considerably."
 msgstr ""
 
 #: CommonOptionsPage#8
@@ -794,11 +780,8 @@ msgstr ""
 #: DebuggingHelperOptionPage#1
 msgid ""
 "<html><head/><body>\n"
-"<p>The debugging helper is only used to produce a nice display of objects of "
-"certain types like QString or std::map in the &quot;Locals and "
-"Watchers&quot; view.</p>\n"
-"<p> It is not strictly necessary for debugging with Qt Creator. "
-"</p></body></html>"
+"<p>The debugging helper is only used to produce a nice display of objects of certain types like QString or std::map in the &quot;Locals and Watchers&quot; view.</p>\n"
+"<p> It is not strictly necessary for debugging with Qt Creator. </p></body></html>"
 msgstr ""
 
 #: DebuggingHelperOptionPage#2
@@ -814,9 +797,7 @@ msgid "Location: "
 msgstr ""
 
 #: DebuggingHelperOptionPage#5
-msgid ""
-"Makes use of Qt Creator's code model to find out if a variable has already "
-"been assigned a value at the point the debugger interrupts."
+msgid "Makes use of Qt Creator's code model to find out if a variable has already been assigned a value at the point the debugger interrupts."
 msgstr ""
 
 #: DebuggingHelperOptionPage#6
@@ -837,9 +818,7 @@ msgid "Environment:"
 msgstr ""
 
 #: GdbOptionsPage#3
-msgid ""
-"This is either empty or points to a file containing gdb commands that will "
-"be executed immediately after gdb starts up."
+msgid "This is either empty or points to a file containing gdb commands that will be executed immediately after gdb starts up."
 msgstr ""
 
 #: GdbOptionsPage#4
@@ -877,11 +856,8 @@ msgstr ""
 
 #: GdbOptionsPage#10
 msgid ""
-"When this option is checked, 'Step Into' compresses several steps into one "
-"in certain situations, leading to 'less noisy' debugging. So will, e.g., the "
-"atomic\n"
-" reference counting code be skipped, and a single 'Step Into' for a signal "
-"emission will end up directly in the slot connected to it."
+"When this option is checked, 'Step Into' compresses several steps into one in certain situations, leading to 'less noisy' debugging. So will, e.g., the atomic\n"
+" reference counting code be skipped, and a single 'Step Into' for a signal emission will end up directly in the slot connected to it."
 msgstr ""
 
 #: GdbOptionsPage#11
@@ -1223,9 +1199,7 @@ msgid "Checkout failed"
 msgstr ""
 
 #: Git::Internal::BranchDialog#13
-msgid ""
-"Would you like to create a local branch '%1' tracking the remote branch '%"
-"2'?"
+msgid "Would you like to create a local branch '%1' tracking the remote branch '%2'?"
 msgstr ""
 
 #: Git::Internal::BranchDialog#14
@@ -1590,10 +1564,7 @@ msgstr ""
 msgid ""
 "<html><body>\n"
 "<p>\n"
-"Add, modify, and remove document filters, which determine the documentation "
-"set displayed in the Help mode.  The attributes are defined in the "
-"documents. Select them to display a set of relevant documentation. Note that "
-"some attributes are defined in several documents.\n"
+"Add, modify, and remove document filters, which determine the documentation set displayed in the Help mode.  The attributes are defined in the documents. Select them to display a set of relevant documentation. Note that some attributes are defined in several documents.\n"
 "</p></body></html>"
 msgstr ""
 
@@ -1721,9 +1692,7 @@ msgid "File types:"
 msgstr ""
 
 #: Locator::Internal::DirectoryFilterOptions#3
-msgid ""
-"Specify file name filters, separated by comma. Filters may contain "
-"wildcards."
+msgid "Specify file name filters, separated by comma. Filters may contain wildcards."
 msgstr ""
 
 #: Locator::Internal::DirectoryFilterOptions#4
@@ -1733,10 +1702,8 @@ msgstr ""
 
 #: Locator::Internal::DirectoryFilterOptions#5
 msgid ""
-"Specify a short word/abbreviation that can be used to restrict completions "
-"to files from this directory tree.\n"
-"To do this, you type this shortcut and a space in the Locator entry field, "
-"and then the word to search for."
+"Specify a short word/abbreviation that can be used to restrict completions to files from this directory tree.\n"
+"To do this, you type this shortcut and a space in the Locator entry field, and then the word to search for."
 msgstr ""
 
 #: Locator::Internal::DirectoryFilterOptions#6
@@ -2148,11 +2115,7 @@ msgid "Use jom instead of nmake"
 msgstr ""
 
 #: ProjectExplorer::Internal::ProjectExplorerSettingsPageUi#11
-msgid ""
-"<i>jom</i> is a drop-in replacement for <i>nmake</i> which distributes the "
-"compilation process to multiple CPU cores. The latest binary is available at "
-"<a href=\"ftp://ftp.qt.nokia.com/jom/\">ftp://ftp.qt.nokia.com/jom/</a>. "
-"Disable it if you experience problems with your builds."
+msgid "<i>jom</i> is a drop-in replacement for <i>nmake</i> which distributes the compilation process to multiple CPU cores. The latest binary is available at <a href=\"ftp://ftp.qt.nokia.com/jom/\">ftp://ftp.qt.nokia.com/jom/</a>. Disable it if you experience problems with your builds."
 msgstr ""
 
 #: ProjectExplorer::Internal::ProjectWelcomePageWidget#1
@@ -2276,9 +2239,7 @@ msgid "&Switch to"
 msgstr ""
 
 #: ProjectExplorer::Internal::SessionDialog#7
-msgid ""
-"<a href=\"qthelp://com.nokia.qtcreator/doc/creator-project-managing-"
-"sessions.html\">What is a Session?</a>"
+msgid "<a href=\"qthelp://com.nokia.qtcreator/doc/creator-project-managing-sessions.html\">What is a Session?</a>"
 msgstr ""
 
 #: ProjectExplorer::Internal::SessionDialog#8
@@ -2401,10 +2362,7 @@ msgstr ""
 
 #: GradientEditor#3
 msgctxt "GradientEditor#3"
-msgid ""
-"This area shows a preview of the gradient being edited. It also allows you "
-"to edit parameters specific to the gradient's type such as start and final "
-"point, radius, etc. by drag & drop."
+msgid "This area shows a preview of the gradient being edited. It also allows you to edit parameters specific to the gradient's type such as start and final point, radius, etc. by drag & drop."
 msgstr ""
 
 #: GradientEditor#4
@@ -2439,11 +2397,7 @@ msgstr ""
 
 #: GradientEditor#10
 msgctxt "GradientEditor#10"
-msgid ""
-"This area allows you to edit gradient stops. Double click on the existing "
-"stop handle to duplicate it. Double click outside of the existing stop "
-"handles to create a new stop. Drag & drop the handle to reposition it. Use "
-"right mouse button to popup context menu with extra actions."
+msgid "This area allows you to edit gradient stops. Double click on the existing stop handle to duplicate it. Double click outside of the existing stop handles to create a new stop. Drag & drop the handle to reposition it. Use right mouse button to popup context menu with extra actions."
 msgstr ""
 
 #: GradientEditor#11
@@ -2713,10 +2667,7 @@ msgstr ""
 
 #: QtGradientEditor#3
 msgctxt "QtGradientEditor#3"
-msgid ""
-"This area shows a preview of the gradient being edited. It also allows you "
-"to edit parameters specific to the gradient's type such as start and final "
-"point, radius, etc. by drag & drop."
+msgid "This area shows a preview of the gradient being edited. It also allows you to edit parameters specific to the gradient's type such as start and final point, radius, etc. by drag & drop."
 msgstr ""
 
 #: QtGradientEditor#4
@@ -2751,11 +2702,7 @@ msgstr ""
 
 #: QtGradientEditor#10
 msgctxt "QtGradientEditor#10"
-msgid ""
-"This area allows you to edit gradient stops. Double click on the existing "
-"stop handle to duplicate it. Double click outside of the existing stop "
-"handles to create a new stop. Drag & drop the handle to reposition it. Use "
-"right mouse button to popup context menu with extra actions."
+msgid "This area allows you to edit gradient stops. Double click on the existing stop handle to duplicate it. Double click outside of the existing stop handles to create a new stop. Drag & drop the handle to reposition it. Use right mouse button to popup context menu with extra actions."
 msgstr ""
 
 #: QtGradientEditor#11
@@ -3332,13 +3279,7 @@ msgid "Copy Project to writable Location?"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#16
-msgid ""
-"<p>The project you are about to open is located in the write-protected "
-"location:</p><blockquote>%1</blockquote><p>Please select a writable location "
-"below and click \"Copy Project and Open\" to open a modifiable copy of the "
-"project or click \"Keep Project and Open\" to open the project in "
-"location.</p><p><b>Note:</b> You will not be able to alter or compile your "
-"project in the current location.</p>"
+msgid "<p>The project you are about to open is located in the write-protected location:</p><blockquote>%1</blockquote><p>Please select a writable location below and click \"Copy Project and Open\" to open a modifiable copy of the project or click \"Keep Project and Open\" to open the project in location.</p><p><b>Note:</b> You will not be able to alter or compile your project in the current location.</p>"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#17
@@ -3388,23 +3329,15 @@ msgid "You can show and hide the side bar using <tt>%1+0<tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#27
-msgid ""
-"You can fine tune the <tt>Find</tt> function by selecting &quot;Whole "
-"Words&quot; or &quot;Case Sensitive&quot;. Simply click on the icons on the "
-"right end of the line edit."
+msgid "You can fine tune the <tt>Find</tt> function by selecting &quot;Whole Words&quot; or &quot;Case Sensitive&quot;. Simply click on the icons on the right end of the line edit."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#28
-msgid ""
-"If you add external libraries to your project, Qt Creator will automatically "
-"offer syntax highlighting and code completion."
+msgid "If you add external libraries to your project, Qt Creator will automatically offer syntax highlighting and code completion."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#29
-msgid ""
-"The code completion is CamelCase-aware. For example, to complete "
-"<tt>namespaceUri</tt> you can just type <tt>nU</tt> and hit "
-"<tt>Ctrl+Space</tt>."
+msgid "The code completion is CamelCase-aware. For example, to complete <tt>namespaceUri</tt> you can just type <tt>nU</tt> and hit <tt>Ctrl+Space</tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#30
@@ -3412,64 +3345,39 @@ msgid "You can force code completion at any time using <tt>Ctrl+Space</tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#31
-msgid ""
-"You can start Qt Creator with a session by calling <tt>qtcreator "
-"&lt;sessionname&gt;</tt>."
+msgid "You can start Qt Creator with a session by calling <tt>qtcreator &lt;sessionname&gt;</tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#32
-msgid ""
-"You can return to edit mode from any other mode at any time by hitting "
-"<tt>Escape</tt>."
+msgid "You can return to edit mode from any other mode at any time by hitting <tt>Escape</tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#33
-msgid ""
-"You can switch between the output pane by hitting <tt>%1+n</tt> where n is "
-"the number denoted on the buttons at the window bottom:<ul><li>1 - Build "
-"Issues</li><li>2 - Search Results</li><li>3 - Application Output</li><li>4 - "
-"Compile Output</li></ul>"
+msgid "You can switch between the output pane by hitting <tt>%1+n</tt> where n is the number denoted on the buttons at the window bottom:<ul><li>1 - Build Issues</li><li>2 - Search Results</li><li>3 - Application Output</li><li>4 - Compile Output</li></ul>"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#34
-msgid ""
-"You can quickly search methods, classes, help and more using the <a "
-"href=\"qthelp://com.nokia.qtcreator/doc/creator-navigation.html\">Locator "
-"bar</a> (<tt>%1+K</tt>)."
+msgid "You can quickly search methods, classes, help and more using the <a href=\"qthelp://com.nokia.qtcreator/doc/creator-navigation.html\">Locator bar</a> (<tt>%1+K</tt>)."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#35
-msgid ""
-"You can add custom build steps in the <a "
-"href=\"qthelp://com.nokia.qtcreator/doc/creator-build-settings.html\">build "
-"settings</a>."
+msgid "You can add custom build steps in the <a href=\"qthelp://com.nokia.qtcreator/doc/creator-build-settings.html\">build settings</a>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#36
-msgid ""
-"Within a session, you can add <a href=\"qthelp://com.nokia.qtcreator/doc"
-"/creator-build-dependencies.html\">dependencies</a> between projects."
+msgid "Within a session, you can add <a href=\"qthelp://com.nokia.qtcreator/doc/creator-build-dependencies.html\">dependencies</a> between projects."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#37
-msgid ""
-"You can set the preferred editor encoding for every project in <tt>Projects "
-"-> Editor Settings -> Default Encoding</tt>."
+msgid "You can set the preferred editor encoding for every project in <tt>Projects -> Editor Settings -> Default Encoding</tt>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#38
-msgid ""
-"You can use Qt Creator with a number of <a "
-"href=\"qthelp://com.nokia.qtcreator/doc/creator-version-"
-"control.html\">revision control systems</a> such as Subversion, Perforce, CVS "
-"and Git."
+msgid "You can use Qt Creator with a number of <a href=\"qthelp://com.nokia.qtcreator/doc/creator-version-control.html\">revision control systems</a> such as Subversion, Perforce, CVS and Git."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GettingStartedWelcomePageWidget#39
-msgid ""
-"In the editor, <tt>F2</tt> follows symbol definition, <tt>Shift+F2</tt> "
-"toggles declaration and definition while <tt>F4</tt> toggles header file and "
-"source file."
+msgid "In the editor, <tt>F2</tt> follows symbol definition, <tt>Shift+F2</tt> toggles declaration and definition while <tt>F4</tt> toggles header file and source file."
 msgstr ""
 
 #: MakeStep#1
@@ -3802,9 +3710,7 @@ msgid "No Qt Version found."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::Qt4ProjectConfigWidget#13
-msgid ""
-"using Qt version: <b>%1</b><br>with tool chain <b>%2</b><br>building in <b>%"
-"3</b>"
+msgid "using Qt version: <b>%1</b><br>with tool chain <b>%2</b><br>building in <b>%3</b>"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::Qt4ProjectConfigWidget#14
@@ -3813,9 +3719,7 @@ msgid "General"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::Qt4ProjectConfigWidget#15
-msgid ""
-"Building in subdirectories of the source directory is not supported by "
-"qmake."
+msgid "Building in subdirectories of the source directory is not supported by qmake."
 msgstr ""
 
 # %1 build directory
@@ -3865,15 +3769,11 @@ msgstr ""
 
 #: Qt4ProjectManager::Internal::QtVersionManager#10
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-"
-"html40/strict.dtd\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; "
-"font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" "
-"color:#ff0000;\">Unable to detect MSVC version.</span></p></body></html>"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff0000;\">Unable to detect MSVC version.</span></p></body></html>"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::QtVersionManager#11
@@ -3975,9 +3875,7 @@ msgid "WizardPage"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::TestWizardPage#2
-msgid ""
-"Specify basic information about the test class for which you want to "
-"generate skeleton source code file."
+msgid "Specify basic information about the test class for which you want to generate skeleton source code file."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::TestWizardPage#3
@@ -4094,9 +3992,7 @@ msgid "Ta&b size:"
 msgstr ""
 
 #: TextEditor::BehaviorSettingsPage#4
-msgid ""
-"Automatically determine based on the nearest indented line (previous line "
-"preferred over next line)"
+msgid "Automatically determine based on the nearest indented line (previous line preferred over next line)"
 msgstr ""
 
 #: TextEditor::BehaviorSettingsPage#5
@@ -4392,10 +4288,7 @@ msgid " characters"
 msgstr ""
 
 #: CommonSettingsPage#3
-msgid ""
-"An executable which is called with the submit message in a temporary file as "
-"first argument. It should return with an exit != 0 and a message on "
-"standard error to indicate failure."
+msgid "An executable which is called with the submit message in a temporary file as first argument. It should return with an exit != 0 and a message on standard error to indicate failure."
 msgstr ""
 
 #: CommonSettingsPage#4
@@ -4413,9 +4306,7 @@ msgid "User/alias configuration file:"
 msgstr ""
 
 #: CommonSettingsPage#7
-msgid ""
-"A simple file containing lines with field names like \"Reviewed-By:\" which "
-"will be added below the submit editor."
+msgid "A simple file containing lines with field names like \"Reviewed-By:\" which will be added below the submit editor."
 msgstr ""
 
 #: CommonSettingsPage#8
@@ -4444,19 +4335,15 @@ msgid "Qt Links"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#5
-msgid ""
-"<b>Forum Nokia</b><br /><font color='gray'>Mobile Application Support</font>"
+msgid "<b>Forum Nokia</b><br /><font color='gray'>Mobile Application Support</font>"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#6
-msgid ""
-"<b>Qt LGPL Support</b><br /><font color='gray'>Buy commercial Qt "
-"support</font>"
+msgid "<b>Qt LGPL Support</b><br /><font color='gray'>Buy commercial Qt support</font>"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#7
-msgid ""
-"<b>Qt Centre</b><br /><font color='gray'>Community based Qt support</font>"
+msgid "<b>Qt Centre</b><br /><font color='gray'>Community based Qt support</font>"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#8
@@ -4464,9 +4351,7 @@ msgid "<b>Qt Home</b><br /><font color='gray'>Qt by Nokia on the web</font>"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#9
-msgid ""
-"<b>Qt Git Hosting</b><br /><font color='gray'>Participate in Qt "
-"development</font>"
+msgid "<b>Qt Git Hosting</b><br /><font color='gray'>Participate in Qt development</font>"
 msgstr ""
 
 #: Welcome::Internal::CommunityWelcomePageWidget#10
@@ -5024,9 +4909,7 @@ msgid "Failed to load core: %1"
 msgstr ""
 
 #: Application#2
-msgid ""
-"Unable to send command line arguments to the already running instance. It "
-"appears to be not responding."
+msgid "Unable to send command line arguments to the already running instance. It appears to be not responding."
 msgstr ""
 
 #: Application#3
@@ -5224,8 +5107,7 @@ msgid "Cannot perform extensionsInitialized because state != Initialized"
 msgstr ""
 
 #: PluginSpec#15
-msgid ""
-"Internal error: have no plugin instance to perform extensionsInitialized"
+msgid "Internal error: have no plugin instance to perform extensionsInitialized"
 msgstr ""
 
 #: ExtensionSystem::PluginView#1
@@ -5584,14 +5466,11 @@ msgid "File Changed"
 msgstr ""
 
 #: Utils::reloadPrompt#2
-msgid ""
-"The unsaved file <i>%1</i> has been changed outside Qt Creator. Do you want "
-"to reload it and discard your changes?"
+msgid "The unsaved file <i>%1</i> has been changed outside Qt Creator. Do you want to reload it and discard your changes?"
 msgstr ""
 
 #: Utils::reloadPrompt#3
-msgid ""
-"The file <i>%1</i> has changed outside Qt Creator. Do you want to reload it?"
+msgid "The file <i>%1</i> has changed outside Qt Creator. Do you want to reload it?"
 msgstr ""
 
 #: Utils::fileDeletedPrompt#1
@@ -5599,9 +5478,7 @@ msgid "File has been removed"
 msgstr ""
 
 #: Utils::fileDeletedPrompt#2
-msgid ""
-"The file %1 has been removed outside Qt Creator. Do you want to save it "
-"under a different name, or close the editor?"
+msgid "The file %1 has been removed outside Qt Creator. Do you want to save it under a different name, or close the editor?"
 msgstr ""
 
 #: Utils::fileDeletedPrompt#3
@@ -5619,11 +5496,7 @@ msgid "Save"
 msgstr ""
 
 #: Utils::UnixTools#1
-msgid ""
-"<table border=1 cellspacing=0 cellpadding=3><tr><th>Variable</th><th>Expands "
-"to</th></tr><tr><td>%d</td><td>directory of current file</td></tr><tr><td>%"
-"f</td><td>file name (with full path)</td></tr><tr><td>%n</td><td>file name "
-"(without path)</td></tr><tr><td>%%</td><td>%</td></tr></table>"
+msgid "<table border=1 cellspacing=0 cellpadding=3><tr><th>Variable</th><th>Expands to</th></tr><tr><td>%d</td><td>directory of current file</td></tr><tr><td>%f</td><td>file name (with full path)</td></tr><tr><td>%n</td><td>file name (without path)</td></tr><tr><td>%%</td><td>%</td></tr></table>"
 msgstr ""
 
 #: Utils::LinearProgressWidget#1
@@ -5816,11 +5689,7 @@ msgid "CMake Wizard"
 msgstr ""
 
 #: CMakeProjectManager::Internal::InSourceBuildPage#1
-msgid ""
-"Qt Creator has detected an <b>in-source-build in %1</b> which prevents "
-"shadow builds. Qt Creator will not allow you to change the build directory. "
-"If you want a shadow build, clean your source directory and re-open the "
-"project."
+msgid "Qt Creator has detected an <b>in-source-build in %1</b> which prevents shadow builds. Qt Creator will not allow you to change the build directory. If you want a shadow build, clean your source directory and re-open the project."
 msgstr ""
 
 #: CMakeProjectManager::Internal::InSourceBuildPage#2
@@ -5833,11 +5702,7 @@ msgid "Please enter the directory in which you want to build your project. "
 msgstr ""
 
 #: CMakeProjectManager::Internal::ShadowBuildPage#2
-msgid ""
-"Please enter the directory in which you want to build your project. Qt "
-"Creator recommends to not use the source directory for building. This "
-"ensures that the source directory remains clean and enables multiple builds "
-"with different settings."
+msgid "Please enter the directory in which you want to build your project. Qt Creator recommends to not use the source directory for building. This ensures that the source directory remains clean and enables multiple builds with different settings."
 msgstr ""
 
 #: CMakeProjectManager::Internal::ShadowBuildPage#3
@@ -5851,9 +5716,7 @@ msgid "Build Location"
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#1
-msgid ""
-"Please specify the path to the cmake executable. No cmake executable was "
-"found in the path."
+msgid "Please specify the path to the cmake executable. No cmake executable was found in the path."
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#2
@@ -5877,39 +5740,23 @@ msgid "Arguments"
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#7
-msgid ""
-"The directory %1 already contains a cbp file, which is recent enough. You "
-"can pass special arguments or change the used toolchain here and rerun "
-"cmake. Or simply finish the wizard directly"
+msgid "The directory %1 already contains a cbp file, which is recent enough. You can pass special arguments or change the used toolchain here and rerun cmake. Or simply finish the wizard directly"
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#8
-msgid ""
-"The directory %1 does not contain a cbp file. Qt Creator needs to create "
-"this file by running cmake. Some projects require command line arguments to "
-"the initial cmake call."
+msgid "The directory %1 does not contain a cbp file. Qt Creator needs to create this file by running cmake. Some projects require command line arguments to the initial cmake call."
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#9
-msgid ""
-"The directory %1 contains an outdated .cbp file. Qt Creator needs to update "
-"this file by running cmake. If you want to add additional command line "
-"arguments, add them below. Note that cmake remembers command line arguments "
-"from the previous runs."
+msgid "The directory %1 contains an outdated .cbp file. Qt Creator needs to update this file by running cmake. If you want to add additional command line arguments, add them below. Note that cmake remembers command line arguments from the previous runs."
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#10
-msgid ""
-"The directory %1 specified in a build-configuration, does not contain a cbp "
-"file. Qt Creator needs to recreate this file, by running cmake. Some "
-"projects require command line arguments to the initial cmake call. Note that "
-"cmake remembers command line arguments from the previous runs."
+msgid "The directory %1 specified in a build-configuration, does not contain a cbp file. Qt Creator needs to recreate this file, by running cmake. Some projects require command line arguments to the initial cmake call. Note that cmake remembers command line arguments from the previous runs."
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#11
-msgid ""
-"Qt Creator needs to run cmake in the new build directory. Some projects "
-"require command line arguments to the initial cmake call."
+msgid "Qt Creator needs to run cmake in the new build directory. Some projects require command line arguments to the initial cmake call."
 msgstr ""
 
 #: CMakeProjectManager::Internal::CMakeRunPage#12
@@ -6426,17 +6273,7 @@ msgid "Cancel"
 msgstr ""
 
 #: Core::EditorManager#56
-msgid ""
-"<table border=1 cellspacing=0 cellpadding=3><tr><th>Variable</th><th>Expands "
-"to</th></tr><tr><td>%f</td><td>file name</td></tr><tr><td>%"
-"l</td><td>current line number</td></tr><tr><td>%c</td><td>current column "
-"number</td></tr><tr><td>%x</td><td>editor's x position on "
-"screen</td></tr><tr><td>%y</td><td>editor's y position on "
-"screen</td></tr><tr><td>%w</td><td>editor's width in "
-"pixels</td></tr><tr><td>%h</td><td>editor's height in "
-"pixels</td></tr><tr><td>%W</td><td>editor's width in "
-"characters</td></tr><tr><td>%H</td><td>editor's height in "
-"characters</td></tr><tr><td>%%</td><td>%</td></tr></table>"
+msgid "<table border=1 cellspacing=0 cellpadding=3><tr><th>Variable</th><th>Expands to</th></tr><tr><td>%f</td><td>file name</td></tr><tr><td>%l</td><td>current line number</td></tr><tr><td>%c</td><td>current column number</td></tr><tr><td>%x</td><td>editor's x position on screen</td></tr><tr><td>%y</td><td>editor's y position on screen</td></tr><tr><td>%w</td><td>editor's width in pixels</td></tr><tr><td>%h</td><td>editor's height in pixels</td></tr><tr><td>%W</td><td>editor's width in characters</td></tr><tr><td>%H</td><td>editor's height in characters</td></tr><tr><td>%%</td><td>%</td></tr></table>"
 msgstr ""
 
 #: Core::Internal::EditorSplitter#1
@@ -6559,8 +6396,7 @@ msgid "Cannot save file"
 msgstr ""
 
 #: Core::FileManager#2
-msgid ""
-"Cannot save changes to '%1'. Do you want to continue and lose your changes?"
+msgid "Cannot save changes to '%1'. Do you want to continue and lose your changes?"
 msgstr ""
 
 #: Core::FileManager#3
@@ -6568,9 +6404,7 @@ msgid "Overwrite?"
 msgstr ""
 
 #: Core::FileManager#4
-msgid ""
-"An item named '%1' already exists at this location. Do you want to overwrite "
-"it?"
+msgid "An item named '%1' already exists at this location. Do you want to overwrite it?"
 msgstr ""
 
 #: Core::FileManager#5
@@ -6962,12 +6796,7 @@ msgid "From revision %1<br/>"
 msgstr ""
 
 #: Core::Internal::VersionDialog#4
-msgid ""
-"<h3>Qt Creator %1 %8</h3>Based on Qt %2 (%3 bit)<br/><br/>Built on %4 at %"
-"5<br /><br/>%9<br/>Copyright 2008-%6 %7. All rights reserved.<br/><br/>The "
-"program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE "
-"WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
-"PURPOSE.<br/>"
+msgid "<h3>Qt Creator %1 %8</h3>Based on Qt %2 (%3 bit)<br/><br/>Built on %4 at %5<br /><br/>%9<br/>Copyright 2008-%6 %7. All rights reserved.<br/><br/>The program is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.<br/>"
 msgstr ""
 
 #: CodePaster::CodePasterProtocol#1
@@ -6991,9 +6820,7 @@ msgid "Server:"
 msgstr ""
 
 #: CodePaster::CodePasterSettingsPage#3
-msgid ""
-"Note: Specify the host name for the CodePaster service without any protocol "
-"prepended (e.g. codepaster.mycompany.com)."
+msgid "Note: Specify the host name for the CodePaster service without any protocol prepended (e.g. codepaster.mycompany.com)."
 msgstr ""
 
 #: CodePaster#1
@@ -7131,9 +6958,7 @@ msgid "C++ Class"
 msgstr ""
 
 #: CppEditor::Internal::CppPlugin#2
-msgid ""
-"Creates a C++ header and a source file for a new class that you can add to a "
-"C++ project."
+msgid "Creates a C++ header and a source file for a new class that you can add to a C++ project."
 msgstr ""
 
 #: CppEditor::Internal::CppPlugin#3
@@ -7691,8 +7516,7 @@ msgid "The process terminated abnormally."
 msgstr ""
 
 #: CVS::Internal::CVSPlugin#55
-msgid ""
-"Could not start cvs '%1'. Please check your settings in the preferences."
+msgid "Could not start cvs '%1'. Please check your settings in the preferences."
 msgstr ""
 
 #: CVS::Internal::CVSPlugin#56
@@ -7907,10 +7731,7 @@ msgid "Version: %1"
 msgstr ""
 
 #: Debugger::Internal::CdbDebugEngine#3
-msgid ""
-"<html>The installed version of the <i>Debugging Tools for Windows</i> (%1) "
-"is rather old. Upgrading to version %2 is recommended for the proper display "
-"of Qt's data types.</html>"
+msgid "<html>The installed version of the <i>Debugging Tools for Windows</i> (%1) is rather old. Upgrading to version %2 is recommended for the proper display of Qt's data types.</html>"
 msgstr ""
 
 #: Debugger::Internal::CdbDebugEngine#4
@@ -8069,10 +7890,7 @@ msgid "Querying dumpers for '%1'/'%2' (%3)"
 msgstr ""
 
 #: Debugger::Internal::CdbOptionsPageWidget#1
-msgid ""
-"<html><body><p>Specify the path to the <a href=\"%1\">Debugging Tools for "
-"Windows</a> (%2) here.</p><p><b>Note:</b> Restarting Qt Creator is required "
-"for these settings to take effect.</p></p></body></html>"
+msgid "<html><body><p>Specify the path to the <a href=\"%1\">Debugging Tools for Windows</a> (%2) here.</p><p><b>Note:</b> Restarting Qt Creator is required for these settings to take effect.</p></p></body></html>"
 msgstr ""
 
 #: Debugger::Internal::CdbOptionsPageWidget#2
@@ -8140,9 +7958,7 @@ msgid "Symbol Server..."
 msgstr ""
 
 #: Debugger::Internal::CdbSymbolPathListEditor#2
-msgid ""
-"Adds the Microsoft symbol server providing symbols for operating system "
-"libraries.Requires specifying a local cache directory."
+msgid "Adds the Microsoft symbol server providing symbols for operating system libraries.Requires specifying a local cache directory."
 msgstr ""
 
 #: Debugger::Internal::CdbSymbolPathListEditor#3
@@ -8208,10 +8024,7 @@ msgid "Operate by Instruction"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#9
-msgid ""
-"This switches the debugger to instruction-wise operation mode. In this mode, "
-"stepping operates on single instructions and the source location view also "
-"shows the disassembled instructions."
+msgid "This switches the debugger to instruction-wise operation mode. In this mode, stepping operates on single instructions and the source location view also shows the disassembled instructions."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#10
@@ -8219,10 +8032,7 @@ msgid "Dereference Pointers Automatically"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#11
-msgid ""
-"This switches the Locals&Watchers view to automatically derefence pointers. "
-"This saves a level in the tree view, but also loses data for the now-missing "
-"intermediate level."
+msgid "This switches the Locals&Watchers view to automatically derefence pointers. This saves a level in the tree view, but also loses data for the now-missing intermediate level."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#12
@@ -8258,10 +8068,7 @@ msgid "Use Code Model"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#20
-msgid ""
-"Selecting this causes the C++ Code Model being asked for variable scope "
-"information. This might result in slightly faster debugger operation but may "
-"fail for optimized code."
+msgid "Selecting this causes the C++ Code Model being asked for variable scope information. This might result in slightly faster debugger operation but may fail for optimized code."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#21
@@ -8278,10 +8085,7 @@ msgid "Use Precise Breakpoints"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#24
-msgid ""
-"Selecting this causes breakpoint synchronization being done after each step. "
-"This results in up-to-date breakpoint information on whether a breakpoint "
-"has been resolved after loading shared libraries, but slows down stepping."
+msgid "Selecting this causes breakpoint synchronization being done after each step. This results in up-to-date breakpoint information on whether a breakpoint has been resolved after loading shared libraries, but slows down stepping."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#25
@@ -8301,10 +8105,7 @@ msgid "Use tooltips in main editor when debugging"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#29
-msgid ""
-"Checking this will enable tooltips for variable values during debugging. "
-"Since this can slow down debugging and does not provide reliable information "
-"as it does not use scope information, it is switched off by default."
+msgid "Checking this will enable tooltips for variable values during debugging. Since this can slow down debugging and does not provide reliable information as it does not use scope information, it is switched off by default."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#30
@@ -8320,8 +8121,7 @@ msgid "Use Tooltips in Breakpoints View When Debugging"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#33
-msgid ""
-"Checking this will enable tooltips in the breakpoints view during debugging."
+msgid "Checking this will enable tooltips in the breakpoints view during debugging."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#34
@@ -8329,9 +8129,7 @@ msgid "Show Address Data in Breakpoints View When Debugging"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#35
-msgid ""
-"Checking this will show a column with address information in the breakpoint "
-"view during debugging."
+msgid "Checking this will show a column with address information in the breakpoint view during debugging."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#36
@@ -8339,9 +8137,7 @@ msgid "Show Address Data in Stack View When Debugging"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#37
-msgid ""
-"Checking this will show a column with address information in the stack view "
-"during debugging."
+msgid "Checking this will show a column with address information in the stack view during debugging."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#38
@@ -8353,10 +8149,7 @@ msgid "Skip Known Frames"
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#40
-msgid ""
-"Selecting this results in well-known but usually not interesting frames "
-"belonging to reference counting and signal emission being skipped while "
-"single-stepping."
+msgid "Selecting this results in well-known but usually not interesting frames belonging to reference counting and signal emission being skipped while single-stepping."
 msgstr ""
 
 #: Debugger::Internal::DebuggerSettings#41
@@ -8398,9 +8191,7 @@ msgid "No memory viewer available"
 msgstr ""
 
 #: Debugger::Internal::MemoryViewAgent#3
-msgid ""
-"The memory contents cannot be shown as no viewer plugin for binary data has "
-"been loaded."
+msgid "The memory contents cannot be shown as no viewer plugin for binary data has been loaded."
 msgstr ""
 
 #: Debugger#1
@@ -8463,28 +8254,19 @@ msgstr ""
 
 #: Debugger#15
 msgctxt "Debugger#15"
-msgid ""
-"The last waitFor...() function timed out. The state of QProcess is "
-"unchanged, and you can try calling waitFor...() again."
+msgid "The last waitFor...() function timed out. The state of QProcess is unchanged, and you can try calling waitFor...() again."
 msgstr ""
 
 #: Debugger#16
-msgid ""
-"An error occurred when attempting to write to the upload process. For "
-"example, the process may not be running, or it may have closed its input "
-"channel."
+msgid "An error occurred when attempting to write to the upload process. For example, the process may not be running, or it may have closed its input channel."
 msgstr ""
 
 #: Debugger#17
-msgid ""
-"An error occurred when attempting to read from the upload process. For "
-"example, the process may not be running."
+msgid "An error occurred when attempting to read from the upload process. For example, the process may not be running."
 msgstr ""
 
 #: Debugger#18
-msgid ""
-"An unknown error in the upload process occurred. This is the default return "
-"value of error()."
+msgid "An unknown error in the upload process occurred. This is the default return value of error()."
 msgstr ""
 
 #: Debugger#19
@@ -8648,9 +8430,7 @@ msgid "Exited"
 msgstr ""
 
 #: Debugger::DebuggerManager#19
-msgid ""
-"Changing breakpoint state requires either a fully running or fully stopped "
-"application."
+msgid "Changing breakpoint state requires either a fully running or fully stopped application."
 msgstr ""
 
 #: Debugger::DebuggerManager#20
@@ -8700,11 +8480,7 @@ msgid "The debugger could not load the debugging helper library."
 msgstr ""
 
 #: Debugger::DebuggerManager#31
-msgid ""
-"The debugging helper is used to nicely format the values of some Qt and "
-"Standard Library data types. It must be compiled for each used Qt version "
-"separately. This can be done in the Qt preferences page by selecting a Qt "
-"installation and clicking on 'Rebuild' in the 'Debugging Helper' row."
+msgid "The debugging helper is used to nicely format the values of some Qt and Standard Library data types. It must be compiled for each used Qt version separately. This can be done in the Qt preferences page by selecting a Qt installation and clicking on 'Rebuild' in the 'Debugging Helper' row."
 msgstr ""
 
 #: Debugger::DebuggerManager#32
@@ -8740,10 +8516,7 @@ msgid ""
 msgstr ""
 
 #: Debugger::Internal::DebuggerListener#2
-msgid ""
-"A debugging session is still in progress. Terminating the session in the "
-"current state (%1) can leave the target in an inconsistent state. Would you "
-"still like to terminate it?"
+msgid "A debugging session is still in progress. Terminating the session in the current state (%1) can leave the target in an inconsistent state. Would you still like to terminate it?"
 msgstr ""
 
 #: Debugger::Internal::DebuggerListener#3
@@ -8949,9 +8722,7 @@ msgid "<no information>"
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#10
-msgid ""
-"The Gdb process failed to start. Either the invoked program '%1' is missing, "
-"or you may have insufficient permissions to invoke the program."
+msgid "The Gdb process failed to start. Either the invoked program '%1' is missing, or you may have insufficient permissions to invoke the program."
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#11
@@ -8960,21 +8731,15 @@ msgstr ""
 
 #: Debugger::Internal::GdbEngine#12
 msgctxt "Debugger::Internal::GdbEngine#12"
-msgid ""
-"The last waitFor...() function timed out. The state of QProcess is "
-"unchanged, and you can try calling waitFor...() again."
+msgid "The last waitFor...() function timed out. The state of QProcess is unchanged, and you can try calling waitFor...() again."
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#13
-msgid ""
-"An error occurred when attempting to write to the Gdb process. For example, "
-"the process may not be running, or it may have closed its input channel."
+msgid "An error occurred when attempting to write to the Gdb process. For example, the process may not be running, or it may have closed its input channel."
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#14
-msgid ""
-"An error occurred when attempting to read from the Gdb process. For example, "
-"the process may not be running."
+msgid "An error occurred when attempting to read from the Gdb process. For example, the process may not be running."
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#15
@@ -9032,9 +8797,7 @@ msgstr ""
 
 #: Debugger::Internal::GdbEngine#28
 msgid ""
-"The gdb process has not responded to a command within %1 seconds. This could "
-"mean it is stuck in an endless loop or taking longer than expected to "
-"perform the operation.\n"
+"The gdb process has not responded to a command within %1 seconds. This could mean it is stuck in an endless loop or taking longer than expected to perform the operation.\n"
 "You can choose between waiting longer or abort debugging."
 msgstr ""
 
@@ -9100,10 +8863,7 @@ msgid "Stopped: \"%1\""
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#44
-msgid ""
-"<p>The inferior stopped because it received a signal from the Operating "
-"System.<p><table><tr><td>Signal name : </td><td>%1</td></tr><tr><td>Signal "
-"meaning : </td><td>%2</td></tr></table>"
+msgid "<p>The inferior stopped because it received a signal from the Operating System.<p><table><tr><td>Signal name : </td><td>%1</td></tr><tr><td>Signal meaning : </td><td>%2</td></tr></table>"
 msgstr ""
 
 # name
@@ -9233,8 +8993,7 @@ msgstr ""
 
 #: Debugger::Internal::GdbEngine#74
 msgid ""
-"In order to load snapshots the debugged process needs to be stopped. "
-"Continuation will not be possible afterwards.\n"
+"In order to load snapshots the debugged process needs to be stopped. Continuation will not be possible afterwards.\n"
 "Do you want to stop the debugged process and load the selected snapshot?"
 msgstr ""
 
@@ -9263,10 +9022,7 @@ msgid "Cannot find debugger initialization script"
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#81
-msgid ""
-"The debugger settings point to a script file at '%1' which is not "
-"accessible. If a script file is not needed, consider clearing that entry to "
-"avoid this warning. "
+msgid "The debugger settings point to a script file at '%1' which is not accessible. If a script file is not needed, consider clearing that entry to avoid this warning. "
 msgstr ""
 
 #: Debugger::Internal::GdbEngine#82
@@ -9381,9 +9137,7 @@ msgid "Unable to acquire a device on '%1'. It appears to be in use."
 msgstr ""
 
 #: Debugger::Internal::TrkGdbAdapter#3
-msgid ""
-"Process started, PID: 0x%1, thread id: 0x%2, code segment: 0x%3, data "
-"segment: 0x%4."
+msgid "Process started, PID: 0x%1, thread id: 0x%2, code segment: 0x%3, data segment: 0x%4."
 msgstr ""
 
 #: Debugger::Internal::TrkGdbAdapter#4
@@ -9650,8 +9404,7 @@ msgstr ""
 
 #: Debugger::Internal::PdbEngine#6
 msgctxt "Debugger::Internal::PdbEngine#6"
-msgid ""
-"Cowardly refusing to evaluate expression '%1' with potential side effects"
+msgid "Cowardly refusing to evaluate expression '%1' with potential side effects"
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#7
@@ -9659,9 +9412,7 @@ msgid "Pdb I/O Error"
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#8
-msgid ""
-"The Pdb process failed to start. Either the invoked program '%1' is missing, "
-"or you may have insufficient permissions to invoke the program."
+msgid "The Pdb process failed to start. Either the invoked program '%1' is missing, or you may have insufficient permissions to invoke the program."
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#9
@@ -9670,21 +9421,15 @@ msgstr ""
 
 #: Debugger::Internal::PdbEngine#10
 msgctxt "Debugger::Internal::PdbEngine#10"
-msgid ""
-"The last waitFor...() function timed out. The state of QProcess is "
-"unchanged, and you can try calling waitFor...() again."
+msgid "The last waitFor...() function timed out. The state of QProcess is unchanged, and you can try calling waitFor...() again."
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#11
-msgid ""
-"An error occurred when attempting to write to the Pdb process. For example, "
-"the process may not be running, or it may have closed its input channel."
+msgid "An error occurred when attempting to write to the Pdb process. For example, the process may not be running, or it may have closed its input channel."
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#12
-msgid ""
-"An error occurred when attempting to read from the Pdb process. For example, "
-"the process may not be running."
+msgid "An error occurred when attempting to read from the Pdb process. For example, the process may not be running."
 msgstr ""
 
 #: Debugger::Internal::PdbEngine#13
@@ -9762,8 +9507,7 @@ msgstr ""
 
 #: Debugger::Internal::ScriptEngine#4
 msgctxt "Debugger::Internal::ScriptEngine#4"
-msgid ""
-"Cowardly refusing to evaluate expression '%1' with potential side effects"
+msgid "Cowardly refusing to evaluate expression '%1' with potential side effects"
 msgstr ""
 
 #: Debugger::Internal::ScriptEngine#5
@@ -10122,9 +9866,7 @@ msgid "Type"
 msgstr ""
 
 #: QtDumperHelper#1
-msgid ""
-"Found an outdated version of the debugging helper library (%1); version %2 "
-"is required."
+msgid "Found an outdated version of the debugging helper library (%1); version %2 is required."
 msgstr ""
 
 #: QtDumperHelper#2
@@ -10264,9 +10006,7 @@ msgid "Qt Designer Form"
 msgstr ""
 
 #: Designer::Internal::FormEditorPlugin#2
-msgid ""
-"Creates a Qt Designer form that you can add to a Qt C++ project. This is "
-"useful if you already have an existing class for the UI business logic."
+msgid "Creates a Qt Designer form that you can add to a Qt C++ project. This is useful if you already have an existing class for the UI business logic."
 msgstr ""
 
 #: Designer::Internal::FormEditorPlugin#3
@@ -10275,10 +10015,7 @@ msgid "Qt Designer Form Class"
 msgstr ""
 
 #: Designer::Internal::FormEditorPlugin#4
-msgid ""
-"Creates a Qt Designer form along with a matching class (C++ header and "
-"source file) for implementation purposes. You can add the form and class to "
-"an existing Qt C++ Project."
+msgid "Creates a Qt Designer form along with a matching class (C++ header and source file) for implementation purposes. You can add the form and class to an existing Qt C++ Project."
 msgstr ""
 
 #: Designer::Internal::FormEditorW#1
@@ -10787,9 +10524,7 @@ msgid "Import Existing Project"
 msgstr ""
 
 #: GenericProjectManager::Internal::GenericProjectWizard#2
-msgid ""
-"Imports existing projects that do not use qmake or CMake. This allows you to "
-"use Qt Creator as a code editor."
+msgid "Imports existing projects that do not use qmake or CMake. This allows you to use Qt Creator as a code editor."
 msgstr ""
 
 #: Git::Internal::RemoteBranchModel#1
@@ -10845,9 +10580,7 @@ msgid "Clone URL:"
 msgstr ""
 
 #: Git::Internal::GitClient#1
-msgid ""
-"Note that the git plugin for QtCreator is not able to interact with the "
-"server so far. Thus, manual ssh-identification etc. will not work."
+msgid "Note that the git plugin for QtCreator is not able to interact with the server so far. Thus, manual ssh-identification etc. will not work."
 msgstr ""
 
 #: Git::Internal::GitClient#2
@@ -11665,9 +11398,7 @@ msgid "Previous"
 msgstr ""
 
 #: Help::Internal::HelpPlugin#30
-msgid ""
-"<html><head><title>No Documentation</title></head><body><br/><center><b>%"
-"1</b><br/>No documentation available.</center></body></html>"
+msgid "<html><head><title>No Documentation</title></head><body><br/><center><b>%1</b><br/>No documentation available.</center></body></html>"
 msgstr ""
 
 #: Help::Internal::HelpPlugin#31
@@ -11695,9 +11426,7 @@ msgid "<title>about:blank</title>"
 msgstr ""
 
 #: HelpViewer#2
-msgid ""
-"<title>Error 404...</title><div align=\"center\"><br><br><h1>The page could "
-"not be found</h1><br><h3>'%1'</h3></div>"
+msgid "<title>Error 404...</title><div align=\"center\"><br><br><h1>The page could not be found</h1><br><h3>'%1'</h3></div>"
 msgstr ""
 
 #: Help::Internal::HelpViewer#1
@@ -12482,9 +12211,7 @@ msgid "Executing: %1\n"
 msgstr ""
 
 #: Perforce::Internal::PerforcePlugin#62
-msgid ""
-"Could not start perforce '%1'. Please check your settings in the "
-"preferences."
+msgid "Could not start perforce '%1'. Please check your settings in the preferences."
 msgstr ""
 
 #: Perforce::Internal::PerforcePlugin#63
@@ -12542,9 +12269,7 @@ msgid "Pending change"
 msgstr ""
 
 #: Perforce::Internal::PerforcePlugin#76
-msgid ""
-"Could not submit the change, because your workspace was out of date. Created "
-"a pending submit instead."
+msgid "Could not submit the change, because your workspace was out of date. Created a pending submit instead."
 msgstr ""
 
 #: Perforce::Internal::PerforcePlugin#77
@@ -12668,16 +12393,11 @@ msgid "Run configuration does not match build configuration"
 msgstr ""
 
 #: ProjectExplorer::Internal::BuildConfigDialog#5
-msgid ""
-"The active build configuration builds a target that cannot be used by the "
-"active run configuration."
+msgid "The active build configuration builds a target that cannot be used by the active run configuration."
 msgstr ""
 
 #: ProjectExplorer::Internal::BuildConfigDialog#6
-msgid ""
-"This can happen if the active build configuration uses the wrong Qt version "
-"and/or tool chain for the active run configuration (for example, running in "
-"Symbian emulator requires building with the WINSCW tool chain)."
+msgid "This can happen if the active build configuration uses the wrong Qt version and/or tool chain for the active run configuration (for example, running in Symbian emulator requires building with the WINSCW tool chain)."
 msgstr ""
 
 #: ProjectExplorer::Internal::BuildConfigDialog#7
@@ -12973,16 +12693,15 @@ msgctxt "ProjectExplorer::CustomExecutableRunConfigurationFactory#1"
 msgid "Custom Executable"
 msgstr ""
 
-# Default short title for custom wizard page to be shown in the progress pane of the wizard.
+# Default short title for custom wizard page to be shown in the progress pane
+# of the wizard.
 #: ProjectExplorer::CustomWizard#1
 msgctxt "ProjectExplorer::CustomWizard#1"
 msgid "Details"
 msgstr ""
 
 #: ProjectExplorer::CustomWizard#2
-msgid ""
-"Creates a C++ plugin that makes it possible to offer extensions that can be "
-"loaded dynamically into applications using the QDeclarativeEngine class."
+msgid "Creates a C++ plugin that makes it possible to offer extensions that can be loaded dynamically into applications using the QDeclarativeEngine class."
 msgstr ""
 
 #: ProjectExplorer::CustomWizard#3
@@ -14579,9 +14298,7 @@ msgid "Script Console"
 msgstr ""
 
 #: Qml::QmlInspector#16
-msgid ""
-"Output of the QML inspector, such as information on connecting to the "
-"server."
+msgid "Output of the QML inspector, such as information on connecting to the server."
 msgstr ""
 
 #: Qml::QmlInspector#17
@@ -14598,15 +14315,12 @@ msgstr ""
 
 #: Qml::QmlInspector#20
 msgid ""
-"No valid run configuration was found for the project %1. Only locally "
-"runnable configurations are supported.\n"
+"No valid run configuration was found for the project %1. Only locally runnable configurations are supported.\n"
 "Please check your project settings."
 msgstr ""
 
 #: Qml::QmlInspector#21
-msgid ""
-"A valid run control was not registered in Qt Creator for this project run "
-"configuration."
+msgid "A valid run control was not registered in Qt Creator for this project run configuration."
 msgstr ""
 
 #: Qml::QmlInspector#22
@@ -14661,11 +14375,7 @@ msgid "Enable experimental Qt Quick Designer?"
 msgstr ""
 
 #: QmlJSEditor::Internal::QmlJSEditorFactory#6
-msgid ""
-"Do you want to enable the experimental Qt Quick Designer? After enabling it, "
-"you can access the visual design capabilities by switching to Design Mode. "
-"This can affect the overall stability of Qt Creator. To disable Qt Quick "
-"Designer again, visit the menu '%1' and disable 'QmlDesigner'."
+msgid "Do you want to enable the experimental Qt Quick Designer? After enabling it, you can access the visual design capabilities by switching to Design Mode. This can affect the overall stability of Qt Creator. To disable Qt Quick Designer again, visit the menu '%1' and disable 'QmlDesigner'."
 msgstr ""
 
 #: QmlJSEditor::Internal::QmlJSEditorFactory#7
@@ -14737,11 +14447,9 @@ msgstr ""
 
 #: QmlProjectManager::Internal::QmlProjectApplicationWizard#2
 msgid ""
-"Creates a QML application project with a single QML file containing the main "
-"view.\n"
+"Creates a QML application project with a single QML file containing the main view.\n"
 "\n"
-"QML application projects are executed by the Qt QML Viewer and do not need "
-"to be built."
+"QML application projects are executed by the Qt QML Viewer and do not need to be built."
 msgstr ""
 
 # qmlproject Template
@@ -14753,8 +14461,7 @@ msgstr ""
 # qmlproject Template
 #: QmlProjectManager::Internal::QmlProjectApplicationWizard#4
 msgctxt "QmlProjectManager::Internal::QmlProjectApplicationWizard#4"
-msgid ""
-"Include .qml, .js, and image files from current directory and subdirectories"
+msgid "Include .qml, .js, and image files from current directory and subdirectories"
 msgstr ""
 
 # qmlproject Template
@@ -14810,8 +14517,7 @@ msgstr ""
 # qmlproject Template
 #: QmlProjectManager::Internal::QmlProjectImportWizard#4
 msgctxt "QmlProjectManager::Internal::QmlProjectImportWizard#4"
-msgid ""
-"Include .qml, .js, and image files from current directory and subdirectories"
+msgid "Include .qml, .js, and image files from current directory and subdirectories"
 msgstr ""
 
 # qmlproject Template
@@ -14904,9 +14610,7 @@ msgid "Creates a Qt Custom Designer Widget or a Custom Widget Collection."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::CustomWidgetWizardDialog#1
-msgid ""
-"This wizard generates a Qt4 Designer Custom Widget or a Qt4 Designer Custom "
-"Widget Collection project."
+msgid "This wizard generates a Qt4 Designer Custom Widget or a Qt4 Designer Custom Widget Collection project."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::CustomWidgetWizardDialog#2
@@ -14922,9 +14626,7 @@ msgid "Cannot open icon file %1."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::PluginGenerator#2
-msgid ""
-"Creating multiple widget libraries (%1, %2) in one project (%3) is not "
-"supported."
+msgid "Creating multiple widget libraries (%1, %2) in one project (%3) is not supported."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::PluginGenerator#3
@@ -14991,8 +14693,7 @@ msgid "qmake"
 msgstr ""
 
 #: Qt4ProjectManager::QMakeStep#2
-msgid ""
-"Configuration is faulty, please check the Build Issues view for details."
+msgid "Configuration is faulty, please check the Build Issues view for details."
 msgstr ""
 
 #: Qt4ProjectManager::QMakeStep#3
@@ -15318,8 +15019,7 @@ msgid "Start Maemo Emulator"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::QemuRuntimeManager#2
-msgid ""
-"Qemu has been shut down, because you removed the corresponding Qt version."
+msgid "Qemu has been shut down, because you removed the corresponding Qt version."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::QemuRuntimeManager#3
@@ -15441,14 +15141,11 @@ msgid "Could not write to file %1 on device: %2"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::S60DeviceRunControlBase#15
-msgid ""
-"Could not close file %1 on device: %2. It will be closed when App TRK is "
-"closed."
+msgid "Could not close file %1 on device: %2. It will be closed when App TRK is closed."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::S60DeviceRunControlBase#16
-msgid ""
-"Could not connect to App TRK on device: %1. Restarting App TRK might help."
+msgid "Could not connect to App TRK on device: %1. Restarting App TRK might help."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::S60DeviceRunControlBase#17
@@ -15655,15 +15352,11 @@ msgid "The Symbian SDK was not found for Qt version %1."
 msgstr ""
 
 #: ProjectExplorer::Internal::S60ProjectChecker#3
-msgid ""
-"The \"Open C/C++ plugin\" is not installed in the Symbian SDK or the Symbian "
-"SDK path is misconfigured for Qt version %1."
+msgid "The \"Open C/C++ plugin\" is not installed in the Symbian SDK or the Symbian SDK path is misconfigured for Qt version %1."
 msgstr ""
 
 #: ProjectExplorer::Internal::S60ProjectChecker#4
-msgid ""
-"The Symbian toolchain does not handle special characters in a project path "
-"well."
+msgid "The Symbian toolchain does not handle special characters in a project path well."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::Qt4BuildConfigurationFactory#1
@@ -15983,10 +15676,7 @@ msgid "Building helpers"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::QtOptionsPageWidget#11
-msgid ""
-"<html><body><table><tr><td>File:</td><td><pre>%"
-"1</pre></td></tr><tr><td>Last&nbsp;modified:</td><td>%"
-"2</td></tr><tr><td>Size:</td><td>%3 Bytes</td></tr></table></body></html>"
+msgid "<html><body><table><tr><td>File:</td><td><pre>%1</pre></td></tr><tr><td>Last&nbsp;modified:</td><td>%2</td></tr><tr><td>Size:</td><td>%3 Bytes</td></tr></table></body></html>"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::QtOptionsPageWidget#12
@@ -16087,9 +15777,7 @@ msgid "Qt version is not properly installed, please run make install"
 msgstr ""
 
 #: QtVersion#4
-msgid ""
-"Could not determine the path to the binaries of the Qt installation, maybe "
-"the qmake path is wrong?"
+msgid "Could not determine the path to the binaries of the Qt installation, maybe the qmake path is wrong?"
 msgstr ""
 
 #: QtVersion#5
@@ -16102,16 +15790,13 @@ msgstr ""
 
 #: Qt4ProjectManager::Internal::ConsoleAppWizard#2
 msgid ""
-"Creates a project containing a single main.cpp file with a stub "
-"implementation.\n"
+"Creates a project containing a single main.cpp file with a stub implementation.\n"
 "\n"
 "Preselects a desktop Qt for building the application if available."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::ConsoleAppWizardDialog#1
-msgid ""
-"This wizard generates a Qt4 console application project. The application "
-"derives from QCoreApplication and does not provide a GUI."
+msgid "This wizard generates a Qt4 console application project. The application derives from QCoreApplication and does not provide a GUI."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::EmptyProjectWizard#1
@@ -16119,15 +15804,11 @@ msgid "Empty Qt Project"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::EmptyProjectWizard#2
-msgid ""
-"Creates a qmake-based project without any files. This allows you to create "
-"an application without any default classes."
+msgid "Creates a qmake-based project without any files. This allows you to create an application without any default classes."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::EmptyProjectWizardDialog#1
-msgid ""
-"This wizard generates an empty Qt4 project. Add files to it later on by "
-"using the other wizards."
+msgid "This wizard generates an empty Qt4 project. Add files to it later on by using the other wizards."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::FilesPage#1
@@ -16135,9 +15816,7 @@ msgid "Class Information"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::FilesPage#2
-msgid ""
-"Specify basic information about the classes for which you want to generate "
-"skeleton source code files."
+msgid "Specify basic information about the classes for which you want to generate skeleton source code files."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GuiAppWizard#1
@@ -16146,8 +15825,7 @@ msgstr ""
 
 #: Qt4ProjectManager::Internal::GuiAppWizard#2
 msgid ""
-"Creates a Qt application for the desktop. Includes a Qt Designer-based main "
-"window.\n"
+"Creates a Qt application for the desktop. Includes a Qt Designer-based main window.\n"
 "\n"
 "Preselects a desktop Qt for building the application if available."
 msgstr ""
@@ -16157,9 +15835,7 @@ msgid "The template file '%1' could not be opened for reading: %2"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GuiAppWizardDialog#1
-msgid ""
-"This wizard generates a Qt4 GUI application project. The application derives "
-"by default from QApplication and includes an empty widget."
+msgid "This wizard generates a Qt4 GUI application project. The application derives by default from QApplication and includes an empty widget."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::GuiAppWizardDialog#2
@@ -16172,11 +15848,7 @@ msgid "C++ Library"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::LibraryWizard#2
-msgid ""
-"Creates a C++ library based on qmake. This can be used to create:<ul><li>a "
-"shared C++ library for use with <tt>QPluginLoader</tt> and runtime "
-"(Plugins)</li><li>a shared or static C++ library for use with another "
-"project at linktime</li></ul>."
+msgid "Creates a C++ library based on qmake. This can be used to create:<ul><li>a shared C++ library for use with <tt>QPluginLoader</tt> and runtime (Plugins)</li><li>a shared or static C++ library for use with another project at linktime</li></ul>."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::LibraryWizardDialog#1
@@ -16211,8 +15883,7 @@ msgstr ""
 
 #: Qt4ProjectManager::Internal::MobileGuiAppWizard#2
 msgid ""
-"Creates a Qt application optimized for mobile devices with a Qt Designer-"
-"based main window.\n"
+"Creates a Qt application optimized for mobile devices with a Qt Designer-based main window.\n"
 "\n"
 "Preselects Qt for Simulator and mobile targets if available"
 msgstr ""
@@ -16222,9 +15893,7 @@ msgid "Select required modules"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::ModulesPage#2
-msgid ""
-"Select the modules you want to include in your project. The recommended "
-"modules for this project are selected by default."
+msgid "Select the modules you want to include in your project. The recommended modules for this project are selected by default."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::BaseQt4ProjectWizardDialog#1
@@ -16242,16 +15911,11 @@ msgid "Qt Unit Test"
 msgstr ""
 
 #: Qt4ProjectManager::Internal::TestWizard#2
-msgid ""
-"Creates a QTestLib-based unit test for a feature or a class. Unit tests "
-"allow you to verify that the code is fit for use and that there are no "
-"regressions."
+msgid "Creates a QTestLib-based unit test for a feature or a class. Unit tests allow you to verify that the code is fit for use and that there are no regressions."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::TestWizardDialog#1
-msgid ""
-"This wizard generates a Qt unit test consisting of a single source file with "
-"a test class."
+msgid "This wizard generates a Qt unit test consisting of a single source file with a test class."
 msgstr ""
 
 #: Qt4ProjectManager::Internal::TestWizardDialog#2
@@ -16440,8 +16104,7 @@ msgid "Snippets"
 msgstr ""
 
 #: Subversion::Internal::CheckoutWizard#1
-msgid ""
-"Checks out a Subversion repository and tries to load the contained project."
+msgid "Checks out a Subversion repository and tries to load the contained project."
 msgstr ""
 
 #: Subversion::Internal::CheckoutWizard#2
@@ -16742,9 +16405,7 @@ msgid "The process terminated abnormally."
 msgstr ""
 
 #: Subversion::Internal::SubversionPlugin#57
-msgid ""
-"Could not start subversion '%1'. Please check your settings in the "
-"preferences."
+msgid "Could not start subversion '%1'. Please check your settings in the preferences."
 msgstr ""
 
 #: Subversion::Internal::SubversionPlugin#58
@@ -16783,9 +16444,7 @@ msgid "Print Document"
 msgstr ""
 
 #: TextEditor::BaseTextEditor#2
-msgid ""
-"<b>Error:</b> Could not decode \"%1\" with \"%2\"-encoding. Editing not "
-"possible."
+msgid "<b>Error:</b> Could not decode \"%1\" with \"%2\"-encoding. Editing not possible."
 msgstr ""
 
 #: TextEditor::BaseTextEditor#3
@@ -17192,9 +16851,7 @@ msgid "Text Editor"
 msgstr ""
 
 #: TextEditor::Internal::TextEditorPlugin#1
-msgid ""
-"Creates a text file. The default file extension is <tt>.txt</tt>. You can "
-"specify a different extension as part of the filename."
+msgid "Creates a text file. The default file extension is <tt>.txt</tt>. You can specify a different extension as part of the filename."
 msgstr ""
 
 #: TextEditor::Internal::TextEditorPlugin#2
@@ -17503,9 +17160,7 @@ msgid "Choose Repository Directory"
 msgstr ""
 
 #: VCSBase::VCSBasePlugin#4
-msgid ""
-"The directory '%1' is already managed by a version control system (%2). "
-"Would you like to specify another directory?"
+msgid "The directory '%1' is already managed by a version control system (%2). Would you like to specify another directory?"
 msgstr ""
 
 #: VCSBase::VCSBasePlugin#5
@@ -17623,9 +17278,7 @@ msgid "Remove"
 msgstr ""
 
 #: BookmarkManager#3
-msgid ""
-"You are going to delete a Folder which will also<br>remove its content. Are "
-"you sure you would like to continue?"
+msgid "You are going to delete a Folder which will also<br>remove its content. Are you sure you would like to continue?"
 msgstr ""
 
 #: BookmarkManager#4
@@ -17683,9 +17336,7 @@ msgid "Abort"
 msgstr ""
 
 #: SharedTools::QrcEditor#7
-msgid ""
-"The file %1 is not in a subdirectory of the resource file. You now have the "
-"option to copy this file to a valid location."
+msgid "The file %1 is not in a subdirectory of the resource file. You now have the option to copy this file to a valid location."
 msgstr ""
 
 #: SharedTools::QrcEditor#8
