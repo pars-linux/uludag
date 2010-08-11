@@ -10,19 +10,19 @@
     <x>0</x>
     <y>0</y>
     <width>601</width>
-    <height>641</height>
+    <height>524</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Pardus Testing Framework</string>
   </property>
-  <widget class="QGroupBox" name="groupBox">
+  <widget class="QGroupBox" name="group_box">
    <property name="geometry">
     <rect>
      <x>10</x>
      <y>10</y>
      <width>581</width>
-     <height>441</height>
+     <height>321</height>
     </rect>
    </property>
    <property name="palette">
@@ -70,14 +70,14 @@
    </property>
    <widget class="QTextEdit" name="text_edit">
     <property name="enabled">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>70</y>
       <width>561</width>
-      <height>361</height>
+      <height>251</height>
      </rect>
     </property>
     <property name="font">
@@ -131,7 +131,7 @@
    <property name="geometry">
     <rect>
      <x>40</x>
-     <y>530</y>
+     <y>410</y>
      <width>531</width>
      <height>70</height>
     </rect>
@@ -147,7 +147,7 @@
    <property name="geometry">
     <rect>
      <x>50</x>
-     <y>610</y>
+     <y>490</y>
      <width>51</width>
      <height>25</height>
     </rect>
@@ -160,7 +160,7 @@
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>610</y>
+     <y>490</y>
      <width>71</width>
      <height>25</height>
     </rect>
@@ -176,7 +176,7 @@
    <property name="geometry">
     <rect>
      <x>350</x>
-     <y>610</y>
+     <y>490</y>
      <width>71</width>
      <height>25</height>
     </rect>
@@ -189,14 +189,17 @@
    <property name="geometry">
     <rect>
      <x>22</x>
-     <y>470</y>
-     <width>561</width>
+     <y>350</y>
+     <width>551</width>
      <height>51</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
      <widget class="QLabel" name="label">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
       <property name="text">
        <string>Did the above test work as expected?</string>
       </property>
@@ -305,7 +308,7 @@
    <property name="geometry">
     <rect>
      <x>420</x>
-     <y>610</y>
+     <y>490</y>
      <width>71</width>
      <height>25</height>
     </rect>

@@ -12,7 +12,7 @@ from clcolorize import colorize
 
 class Main(QtGui.QMainWindow):
     test_type = 'Shell Test'
-    def __init__(self, element, package_list, check_code=None, case=None,
+    def __init__(self, element, package_list, checkCode=None, case=None,
                                             totalCounter=None, totalcases=None,
                                             summary=None, report=None):
         QtGui.QMainWindow.__init__(self)
@@ -21,7 +21,7 @@ class Main(QtGui.QMainWindow):
         self.ui.setupUi(self)
         self.setFixedSize(self.width(), self.height())
         
-        self.check_code = 0
+        self.checkCode = 0
     
         self.element = element
         self.case = self.element.xpath('case')
@@ -38,21 +38,23 @@ class Main(QtGui.QMainWindow):
             lst.append(packageList)
         
         self.ui.type_label.setText(self.test_type)
-    
+        
+        self.ui.text_edit.setText("Press 'Start' to begin testing ...")
         self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
         self.connect(self.ui.save_button, QtCore.SIGNAL("clicked()"), self.get_text)
         
     def update_text(self):
         self.ui.text_observation.clear()
-        self.ui.groupBox.setTitle('Case {0} of {1}'.format(self.caseCounter+1, self.totalCases))
-        self.ui.package_label.setText('Packages: {0}'.format(', '.join(self.package_list)))
+        self.ui.group_box.setTitle('Case {0} of {1}'.format(self.caseCounter+1, self.totalCases))
+        self.ui.package_label.setText('Package(s): {0}'.format(', '.join(self.package_list)))
+        self.ui.text_edit.setText('')
         # get the text
         textList = []
         for element in self.case[self.caseCounter].getiterator('text'):
             textList.append(element.text)
         if textList:
             for number, element in enumerate(textList, 1):
-                self.ui.text_edit.setText('{0}. {1}'.format(number, element))
+                self.ui.text_edit.append('{0}. {1}'.format(number, element))
         # get the commands
         commandList = []
         for element in self.case[self.caseCounter].getiterator('command'):
@@ -64,6 +66,8 @@ class Main(QtGui.QMainWindow):
     def next_case(self):
         if self.caseCounter < self.totalCases:
             self.ui.next_button.setEnabled(True)
+            self.ui.text_edit.setEnabled(True)
+            self.ui.label.setEnabled(True)
             self.ui.yes_button.setEnabled(True)
             self.ui.no_button.setEnabled(True)
             self.ui.unable_button.setEnabled(True)
@@ -73,17 +77,23 @@ class Main(QtGui.QMainWindow):
             self.ui.next_button.setEnabled(False)
         else:
             self.ui.quit_button.setEnabled(True)
+            
+            self.ui.text_observation.setEnabled(False)
+            self.ui.label.setEnabled(False)
+            self.ui.yes_button.setEnabled(False)
+            self.ui.clear_button.setEnabled(False)
+            self.ui.no_button.setEnabled(False)
+            self.ui.label_observation.setEnabled(False)
+            self.ui.unable_button.setEnabled(False)
             self.ui.next_button.setEnabled(False)
             self.ui.next_button.setEnabled(False)
-            self.check_code = 1
+            
+            self.checkCode = 1
+            
             self.ui.package_label.setText('')
             self.ui.text_observation.setPlainText('')
-            self.ui.text_edit.setText('End of package testing. Press FINISH to exit.')
-            self.ui.groupBox.setTitle('Finished')
-            self.ui.text_observation.setEnabled(False)
-            self.ui.yes_button.setEnabled(False)
-            self.ui.no_button.setEnabled(False)
-            self.ui.unable_button.setEnabled(False)
+            self.ui.text_edit.setText("End of package testing. Press 'Finish' to exit.")
+            self.ui.group_box.setTitle('Finished')
 
     def get_text(self):
         if self.ui.yes_button.isChecked():
@@ -124,6 +134,7 @@ class Main(QtGui.QMainWindow):
         self.ui.next_button.setEnabled(True)
         self.caseCounter += 1
                 
+                
 class TestShell:
     """This class is used to handle the testcase of shell, in which the user is
     told to run a certain command on and note down the output."""
@@ -141,7 +152,7 @@ class TestShell:
         window = Main(self.element, packageList, self.summary, self.report)
         window.show()
         app.exec_()
-        if window.check_code == 1:
+        if window.checkCode:
             self.summary = window.summary
             self.report = window.report
         else:
