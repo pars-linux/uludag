@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -12,43 +13,37 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: CloseButton#1
-#, fuzzy
 msgid "Close Tab"
-msgstr "Kapat"
+msgstr "Sekmeyi Kapat"
 
 #: FakeReply#1
 msgid "Fake error !"
 msgstr ""
 
 #: FakeReply#2
-#, fuzzy
 msgctxt "FakeReply#2"
 msgid "Invalid URL"
-msgstr "Geçersiz XML adı."
+msgstr "Geçersiz URL"
 
 #: MAC_APPLICATION_MENU#1
 msgid "Services"
-msgstr ""
+msgstr "Servisler"
 
 #: MAC_APPLICATION_MENU#2
-#, fuzzy
 msgid "Hide %1"
-msgstr "Yaz: %1"
+msgstr ""
 
 #: MAC_APPLICATION_MENU#3
-#, fuzzy
 msgid "Hide Others"
-msgstr "Diğer"
+msgstr "Diğerlerini Gizle"
 
 #: MAC_APPLICATION_MENU#4
-#, fuzzy
 msgid "Show All"
-msgstr "Göster "
+msgstr "Tümünü Göster"
 
 #: MAC_APPLICATION_MENU#5
-#, fuzzy
 msgid "Preferences..."
-msgstr "Tercihler"
+msgstr "Tercihler..."
 
 #: MAC_APPLICATION_MENU#6
 msgid "Quit %1"
@@ -60,32 +55,29 @@ msgstr "%1 Hakkında"
 
 #: Phonon::#1
 msgid "Notifications"
-msgstr ""
+msgstr "Bildirimler"
 
 #: Phonon::#2
 msgctxt "Phonon::#2"
 msgid "Music"
-msgstr ""
+msgstr "Müzik"
 
 #: Phonon::#3
 msgctxt "Phonon::#3"
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: Phonon::#4
-#, fuzzy
 msgid "Communication"
-msgstr "Gönder"
+msgstr "İletişim"
 
 #: Phonon::#5
-#, fuzzy
 msgid "Games"
-msgstr "İsim"
+msgstr "Oyunlar"
 
 #: Phonon::#6
-#, fuzzy
 msgid "Accessibility"
-msgstr "Erişilemez"
+msgstr "Erişilebilirlik"
 
 #: Phonon::AudioOutput#1
 msgid "<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to <b>%2</b>.</html>"
@@ -165,6 +157,44 @@ msgstr "Dizin silinemedi."
 msgid "Audio Output"
 msgstr ""
 
+#: Phonon::MMF#2
+msgid "The audio output device"
+msgstr ""
+
+#: Phonon::MMF#3
+#, fuzzy
+msgctxt "Phonon::MMF#3"
+msgid "No error"
+msgstr "Ağ hatası"
+
+#: Phonon::MMF#4
+#, fuzzy
+msgid "Not found"
+msgstr "Makine bulundu"
+
+#: Phonon::MMF#5
+msgid "Out of memory"
+msgstr ""
+
+#: Phonon::MMF#6
+#, fuzzy
+msgid "Not supported"
+msgstr "Bağlı değil"
+
+#: Phonon::MMF#7
+msgid "Overflow"
+msgstr ""
+
+#: Phonon::MMF#8
+#, fuzzy
+msgid "Underflow"
+msgstr "&Altıçizili"
+
+#: Phonon::MMF#9
+#, fuzzy
+msgid "Already exists"
+msgstr "Dosya var"
+
 #: Phonon::MMF#10
 #, fuzzy
 msgid "Path not found"
@@ -216,10 +246,6 @@ msgstr "Ağ erişilemez durumda"
 msgid "Network communication error"
 msgstr "Ağ hatası"
 
-#: Phonon::MMF#2
-msgid "The audio output device"
-msgstr ""
-
 #: Phonon::MMF#20
 #, fuzzy
 msgid "Streaming not supported"
@@ -266,12 +292,6 @@ msgstr ""
 msgid "Decoder error"
 msgstr "Ağ hatası"
 
-#: Phonon::MMF#3
-#, fuzzy
-msgctxt "Phonon::MMF#3"
-msgid "No error"
-msgstr "Ağ hatası"
-
 #: Phonon::MMF#30
 msgid "Audio or video components could not be played"
 msgstr ""
@@ -284,34 +304,6 @@ msgstr ""
 #, fuzzy
 msgid "Unknown error (%1)"
 msgstr "Bilinmeyen hata"
-
-#: Phonon::MMF#4
-#, fuzzy
-msgid "Not found"
-msgstr "Makine bulundu"
-
-#: Phonon::MMF#5
-msgid "Out of memory"
-msgstr ""
-
-#: Phonon::MMF#6
-#, fuzzy
-msgid "Not supported"
-msgstr "Bağlı değil"
-
-#: Phonon::MMF#7
-msgid "Overflow"
-msgstr ""
-
-#: Phonon::MMF#8
-#, fuzzy
-msgid "Underflow"
-msgstr "&Altıçizili"
-
-#: Phonon::MMF#9
-#, fuzzy
-msgid "Already exists"
-msgstr "Dosya var"
 
 #: Phonon::MMF::AbstractMediaPlayer#1
 msgid "Not ready to play"
@@ -406,10 +398,6 @@ msgstr "End"
 msgid "Decay HF ratio (%)"
 msgstr ""
 
-#: Phonon::MMF::EnvironmentalReverb#10
-msgid "Room level (mB)"
-msgstr ""
-
 #: Phonon::MMF::EnvironmentalReverb#2
 msgid "Decay time (ms)"
 msgstr ""
@@ -440,6 +428,10 @@ msgstr ""
 
 #: Phonon::MMF::EnvironmentalReverb#9
 msgid "Room HF level"
+msgstr ""
+
+#: Phonon::MMF::EnvironmentalReverb#10
+msgid "Room level (mB)"
 msgstr ""
 
 #: Phonon::MMF::MediaObject#1
@@ -518,6 +510,44 @@ msgstr "Sil"
 msgid "Copy or Move a File"
 msgstr "Bir Dosya Kopyala ya da Taşı"
 
+#: Q3FileDialog#2
+msgid "Read: %1"
+msgstr "Oku: %1"
+
+#: Q3FileDialog#3
+msgid "Write: %1"
+msgstr "Yaz: %1"
+
+#: Q3FileDialog#4
+msgctxt "Q3FileDialog#4"
+msgid "Cancel"
+msgstr "İptal"
+
+#: Q3FileDialog#5
+msgctxt "Q3FileDialog#5"
+msgid "All Files (*)"
+msgstr "Tüm Dosyalar"
+
+#: Q3FileDialog#6
+msgctxt "Q3FileDialog#6"
+msgid "Name"
+msgstr "İsim"
+
+#: Q3FileDialog#7
+msgctxt "Q3FileDialog#7"
+msgid "Size"
+msgstr "Boyut"
+
+#: Q3FileDialog#8
+#, fuzzy
+msgctxt "Q3FileDialog#8"
+msgid "Type"
+msgstr "Dosya Türü"
+
+#: Q3FileDialog#9
+msgid "Date"
+msgstr "Tarih"
+
 #: Q3FileDialog#10
 msgid "Attributes"
 msgstr "Nitelikler"
@@ -564,10 +594,6 @@ msgctxt "Q3FileDialog#19"
 msgid "Detail View"
 msgstr "Ayrıntılı Görünüm"
 
-#: Q3FileDialog#2
-msgid "Read: %1"
-msgstr "Oku: %1"
-
 #: Q3FileDialog#20
 msgid "Preview File Info"
 msgstr "Dosya Bilgisini Önizle"
@@ -609,10 +635,6 @@ msgstr "Özel konuma sembolik bağlantı"
 msgctxt "Q3FileDialog#29"
 msgid "File"
 msgstr "Dosya"
-
-#: Q3FileDialog#3
-msgid "Write: %1"
-msgstr "Yaz: %1"
 
 #: Q3FileDialog#30
 msgid "Dir"
@@ -660,11 +682,6 @@ msgstr "Y&eniden Yükle"
 msgid "Sort by &Name"
 msgstr "İs&me Göre Sırala"
 
-#: Q3FileDialog#4
-msgctxt "Q3FileDialog#4"
-msgid "Cancel"
-msgstr "İptal"
-
 #: Q3FileDialog#40
 msgid "Sort by &Size"
 msgstr "B&oyuta Göre Sırala"
@@ -705,11 +722,6 @@ msgstr "%1 konumunu sil"
 #: Q3FileDialog#49
 msgid "<qt>Are you sure you wish to delete %1 \"%2\"?</qt>"
 msgstr "<qt>%1 \"%2\" konumunu silmek istediğinizden emin misiniz?</qt>"
-
-#: Q3FileDialog#5
-msgctxt "Q3FileDialog#5"
-msgid "All Files (*)"
-msgstr "Tüm Dosyalar"
 
 #: Q3FileDialog#50
 msgctxt "Q3FileDialog#50"
@@ -763,11 +775,6 @@ msgstr ""
 "Dosya bulunamadı.\n"
 "Yolu ve dosya adını kontrol edin."
 
-#: Q3FileDialog#6
-msgctxt "Q3FileDialog#6"
-msgid "Name"
-msgstr "İsim"
-
 #: Q3FileDialog#60
 msgctxt "Q3FileDialog#60"
 msgid "All Files (*.*)"
@@ -780,21 +787,6 @@ msgstr "Aç "
 #: Q3FileDialog#62
 msgid "Select a Directory"
 msgstr "Bir Dizin Seç"
-
-#: Q3FileDialog#7
-msgctxt "Q3FileDialog#7"
-msgid "Size"
-msgstr "Boyut"
-
-#: Q3FileDialog#8
-#, fuzzy
-msgctxt "Q3FileDialog#8"
-msgid "Type"
-msgstr "Dosya Türü"
-
-#: Q3FileDialog#9
-msgid "Date"
-msgstr "Tarih"
 
 #: Q3LocalFs#1
 msgid ""
@@ -931,22 +923,6 @@ msgstr "Tümünü Seç"
 msgid "System"
 msgstr "Sistem"
 
-#: Q3TitleBar#10
-msgid "Puts a maximized window back to normal"
-msgstr "Büyütülmüş bir pencereyi önceki haline getirir"
-
-#: Q3TitleBar#11
-msgid "Makes the window full screen"
-msgstr "Pencereyi tam ekran yapar"
-
-#: Q3TitleBar#12
-msgid "Closes the window"
-msgstr "Pencereyi kapatır"
-
-#: Q3TitleBar#13
-msgid "Displays the name of the window and contains controls to manipulate it"
-msgstr "Pencerenin adını gösterir ve pencereyi değiştirebilecek kontrolleri içerir"
-
 #: Q3TitleBar#2
 msgid "Restore up"
 msgstr "Yukarı geri yükle"
@@ -983,6 +959,22 @@ msgstr "Büyütülmüş bir pencereyi önceki haline getirir"
 #: Q3TitleBar#9
 msgid "Moves the window out of the way"
 msgstr "Pencereyi taşır"
+
+#: Q3TitleBar#10
+msgid "Puts a maximized window back to normal"
+msgstr "Büyütülmüş bir pencereyi önceki haline getirir"
+
+#: Q3TitleBar#11
+msgid "Makes the window full screen"
+msgstr "Pencereyi tam ekran yapar"
+
+#: Q3TitleBar#12
+msgid "Closes the window"
+msgstr "Pencereyi kapatır"
+
+#: Q3TitleBar#13
+msgid "Displays the name of the window and contains controls to manipulate it"
+msgstr "Pencerenin adını gösterir ve pencereyi değiştirebilecek kontrolleri içerir"
 
 #: Q3ToolBar#1
 msgid "More..."
@@ -1122,7 +1114,9 @@ msgstr "'%1' çalıştırılabilir dosyası Qt %2 gerektiriyor, sistemde Qt %3 b
 msgid "Incompatible Qt Library Error"
 msgstr "Uyumsuz Qt Kütüphanesi Hatası"
 
-# Translate this string to the string 'LTR' in left-to-right languages or to 'RTL' in right-to-left languages (such as Hebrew and Arabic) to get proper widget layout.
+# Translate this string to the string 'LTR' in left-to-right languages or to
+# 'RTL' in right-to-left languages (such as Hebrew and Arabic) to get proper
+# widget layout.
 #: QApplication#5
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
@@ -1162,14 +1156,6 @@ msgstr "Değiştir"
 msgid "Hu&e:"
 msgstr "T&on:"
 
-#: QColorDialog#10
-msgid "&Custom colors"
-msgstr "&Özel renkler"
-
-#: QColorDialog#11
-msgid "&Add to Custom Colors"
-msgstr "Ö&zel Renkler Ekle"
-
 #: QColorDialog#2
 msgid "&Sat:"
 msgstr "&Doygunluk:"
@@ -1202,6 +1188,14 @@ msgstr "Renk seç"
 #: QColorDialog#9
 msgid "&Basic colors"
 msgstr "&Temel renkler"
+
+#: QColorDialog#10
+msgid "&Custom colors"
+msgstr "&Özel renkler"
+
+#: QColorDialog#11
+msgid "&Add to Custom Colors"
+msgstr "Ö&zel Renkler Ekle"
 
 #: QComboBox#1
 #, fuzzy
@@ -1354,18 +1348,6 @@ msgstr ""
 msgid "Possible anchor loop detected on fill."
 msgstr ""
 
-#: QDeclarativeAnchors#10
-msgid "Cannot specify top, bottom, and vcenter anchors."
-msgstr ""
-
-#: QDeclarativeAnchors#11
-msgid "Baseline anchor cannot be used in conjunction with top, bottom, or vcenter anchors."
-msgstr ""
-
-#: QDeclarativeAnchors#12
-msgid "Cannot anchor a vertical edge to a horizontal edge."
-msgstr ""
-
 #: QDeclarativeAnchors#2
 msgid "Possible anchor loop detected on centerIn."
 msgstr ""
@@ -1398,6 +1380,18 @@ msgstr ""
 msgid "Cannot anchor item to self."
 msgstr ""
 
+#: QDeclarativeAnchors#10
+msgid "Cannot specify top, bottom, and vcenter anchors."
+msgstr ""
+
+#: QDeclarativeAnchors#11
+msgid "Baseline anchor cannot be used in conjunction with top, bottom, or vcenter anchors."
+msgstr ""
+
+#: QDeclarativeAnchors#12
+msgid "Cannot anchor a vertical edge to a horizontal edge."
+msgstr ""
+
 #: QDeclarativeAnimatedImage#1
 msgid "Qt was built without support for QMovie"
 msgstr ""
@@ -1418,6 +1412,39 @@ msgstr ""
 
 #: QDeclarativeCompiler#1
 msgid "Invalid property assignment: \"%1\" is a read-only property"
+msgstr ""
+
+#: QDeclarativeCompiler#2
+msgid "Invalid property assignment: unknown enumeration"
+msgstr ""
+
+#: QDeclarativeCompiler#3
+#, fuzzy
+msgid "Invalid property assignment: string expected"
+msgstr "Geçersiz bir işleme komutu adı."
+
+#: QDeclarativeCompiler#4
+msgid "Invalid property assignment: url expected"
+msgstr ""
+
+#: QDeclarativeCompiler#5
+msgid "Invalid property assignment: unsigned int expected"
+msgstr ""
+
+#: QDeclarativeCompiler#6
+msgid "Invalid property assignment: int expected"
+msgstr ""
+
+#: QDeclarativeCompiler#7
+msgid "Invalid property assignment: number expected"
+msgstr ""
+
+#: QDeclarativeCompiler#8
+msgid "Invalid property assignment: color expected"
+msgstr ""
+
+#: QDeclarativeCompiler#9
+msgid "Invalid property assignment: date expected"
 msgstr ""
 
 #: QDeclarativeCompiler#10
@@ -1458,10 +1485,6 @@ msgstr ""
 
 #: QDeclarativeCompiler#19
 msgid "Component elements may not contain properties other than id"
-msgstr ""
-
-#: QDeclarativeCompiler#2
-msgid "Invalid property assignment: unknown enumeration"
 msgstr ""
 
 #: QDeclarativeCompiler#20
@@ -1505,11 +1528,6 @@ msgstr ""
 msgid "Empty signal assignment"
 msgstr ""
 
-#: QDeclarativeCompiler#3
-#, fuzzy
-msgid "Invalid property assignment: string expected"
-msgstr "Geçersiz bir işleme komutu adı."
-
 #: QDeclarativeCompiler#30
 msgid "Empty property assignment"
 msgstr ""
@@ -1550,10 +1568,6 @@ msgstr ""
 
 #: QDeclarativeCompiler#39
 msgid "Property has already been assigned a value"
-msgstr ""
-
-#: QDeclarativeCompiler#4
-msgid "Invalid property assignment: url expected"
 msgstr ""
 
 #: QDeclarativeCompiler#40
@@ -1598,10 +1612,6 @@ msgstr ""
 msgid "Cannot assign multiple values to a script property"
 msgstr ""
 
-#: QDeclarativeCompiler#5
-msgid "Invalid property assignment: unsigned int expected"
-msgstr ""
-
 #: QDeclarativeCompiler#50
 msgid "Invalid property assignment: script expected"
 msgstr ""
@@ -1640,10 +1650,6 @@ msgstr ""
 
 #: QDeclarativeCompiler#59
 msgid "Illegal signal name"
-msgstr ""
-
-#: QDeclarativeCompiler#6
-msgid "Invalid property assignment: int expected"
 msgstr ""
 
 #: QDeclarativeCompiler#60
@@ -1690,10 +1696,6 @@ msgstr ""
 msgid "IDs must start with a letter or underscore"
 msgstr ""
 
-#: QDeclarativeCompiler#7
-msgid "Invalid property assignment: number expected"
-msgstr ""
-
 #: QDeclarativeCompiler#70
 msgid "IDs must contain only letters, numbers, and underscores"
 msgstr ""
@@ -1716,14 +1718,6 @@ msgstr ""
 
 #: QDeclarativeCompiler#75
 msgid "Invalid alias reference. Unable to find id \"%1\""
-msgstr ""
-
-#: QDeclarativeCompiler#8
-msgid "Invalid property assignment: color expected"
-msgstr ""
-
-#: QDeclarativeCompiler#9
-msgid "Invalid property assignment: date expected"
 msgstr ""
 
 #: QDeclarativeComponent#1
@@ -1805,28 +1799,6 @@ msgstr ""
 msgid "module \"%1\" definition \"%2\" not readable"
 msgstr ""
 
-#: QDeclarativeImportDatabase#10
-#, fuzzy
-msgid "local directory"
-msgstr "Bir Dizin Seç"
-
-#: QDeclarativeImportDatabase#11
-msgid "is ambiguous. Found in %1 and in %2"
-msgstr ""
-
-#: QDeclarativeImportDatabase#12
-msgid "is ambiguous. Found in %1 in version %2.%3 and %4.%5"
-msgstr ""
-
-#: QDeclarativeImportDatabase#13
-msgid "is instantiated recursively"
-msgstr ""
-
-#: QDeclarativeImportDatabase#14
-#, fuzzy
-msgid "is not a type"
-msgstr "Dosya türü:"
-
 #: QDeclarativeImportDatabase#2
 msgid "plugin cannot be loaded for module \"%1\": %2"
 msgstr ""
@@ -1860,6 +1832,28 @@ msgstr ""
 msgid "- nested namespaces not allowed"
 msgstr ""
 
+#: QDeclarativeImportDatabase#10
+#, fuzzy
+msgid "local directory"
+msgstr "Bir Dizin Seç"
+
+#: QDeclarativeImportDatabase#11
+msgid "is ambiguous. Found in %1 and in %2"
+msgstr ""
+
+#: QDeclarativeImportDatabase#12
+msgid "is ambiguous. Found in %1 in version %2.%3 and %4.%5"
+msgstr ""
+
+#: QDeclarativeImportDatabase#13
+msgid "is instantiated recursively"
+msgstr ""
+
+#: QDeclarativeImportDatabase#14
+#, fuzzy
+msgid "is not a type"
+msgstr "Dosya türü:"
+
 #: QDeclarativeKeyNavigationAttached#1
 msgid "KeyNavigation is only available via attached properties"
 msgstr ""
@@ -1870,14 +1864,6 @@ msgstr ""
 
 #: QDeclarativeListModel#1
 msgid "remove: index %1 out of range"
-msgstr ""
-
-#: QDeclarativeListModel#10
-msgid "ListElement: cannot use script for property value"
-msgstr ""
-
-#: QDeclarativeListModel#11
-msgid "ListModel: undefined property '%1'"
 msgstr ""
 
 #: QDeclarativeListModel#2
@@ -1910,6 +1896,14 @@ msgstr ""
 
 #: QDeclarativeListModel#9
 msgid "ListElement: cannot use reserved \"id\" property"
+msgstr ""
+
+#: QDeclarativeListModel#10
+msgid "ListElement: cannot use script for property value"
+msgstr ""
+
+#: QDeclarativeListModel#11
+msgid "ListModel: undefined property '%1'"
 msgstr ""
 
 #: QDeclarativeLoader#1
@@ -1950,6 +1944,40 @@ msgstr "Bir ileti alınamadı"
 
 #: QDeclarativeParser#1
 msgid "Illegal unicode escape sequence"
+msgstr ""
+
+#: QDeclarativeParser#2
+#, fuzzy
+msgid "Illegal character"
+msgstr "Geçersiz XML karakteri."
+
+#: QDeclarativeParser#3
+msgid "Unclosed string at end of line"
+msgstr ""
+
+#: QDeclarativeParser#4
+msgid "Illegal escape squence"
+msgstr ""
+
+#: QDeclarativeParser#5
+#, fuzzy
+msgid "Unclosed comment at end of file"
+msgstr "beklenmeyen dosya sonu"
+
+#: QDeclarativeParser#6
+msgid "Illegal syntax for exponential number"
+msgstr ""
+
+#: QDeclarativeParser#7
+msgid "Identifier cannot start with numeric literal"
+msgstr ""
+
+#: QDeclarativeParser#8
+msgid "Unterminated regular expression literal"
+msgstr ""
+
+#: QDeclarativeParser#9
+msgid "Invalid regular expression flag '%0'"
 msgstr ""
 
 #: QDeclarativeParser#10
@@ -1996,11 +2024,6 @@ msgstr ""
 msgid "Script import qualifiers must be unique."
 msgstr ""
 
-#: QDeclarativeParser#2
-#, fuzzy
-msgid "Illegal character"
-msgstr "Geçersiz XML karakteri."
-
 #: QDeclarativeParser#20
 msgid "Script import requires a qualifier"
 msgstr ""
@@ -2034,35 +2057,6 @@ msgstr "Protokol tipi desteklenmiyor"
 
 #: QDeclarativeParser#27
 msgid "JavaScript declaration outside Script element"
-msgstr ""
-
-#: QDeclarativeParser#3
-msgid "Unclosed string at end of line"
-msgstr ""
-
-#: QDeclarativeParser#4
-msgid "Illegal escape squence"
-msgstr ""
-
-#: QDeclarativeParser#5
-#, fuzzy
-msgid "Unclosed comment at end of file"
-msgstr "beklenmeyen dosya sonu"
-
-#: QDeclarativeParser#6
-msgid "Illegal syntax for exponential number"
-msgstr ""
-
-#: QDeclarativeParser#7
-msgid "Identifier cannot start with numeric literal"
-msgstr ""
-
-#: QDeclarativeParser#8
-msgid "Unterminated regular expression literal"
-msgstr ""
-
-#: QDeclarativeParser#9
-msgid "Invalid regular expression flag '%0'"
 msgstr ""
 
 #: QDeclarativePauseAnimation#1
@@ -2197,6 +2191,54 @@ msgctxt "QDialogButtonBox#1"
 msgid "OK"
 msgstr "Tamam"
 
+#: QDialogButtonBox#2
+#, fuzzy
+msgctxt "QDialogButtonBox#2"
+msgid "&OK"
+msgstr "&Tamam"
+
+#: QDialogButtonBox#3
+#, fuzzy
+msgctxt "QDialogButtonBox#3"
+msgid "&Save"
+msgstr "&Kaydet"
+
+#: QDialogButtonBox#4
+#, fuzzy
+msgctxt "QDialogButtonBox#4"
+msgid "Save"
+msgstr "Kaydet"
+
+#: QDialogButtonBox#5
+#, fuzzy
+msgctxt "QDialogButtonBox#5"
+msgid "Open"
+msgstr "Aç"
+
+#: QDialogButtonBox#6
+#, fuzzy
+msgctxt "QDialogButtonBox#6"
+msgid "&Cancel"
+msgstr "&İptal"
+
+#: QDialogButtonBox#7
+#, fuzzy
+msgctxt "QDialogButtonBox#7"
+msgid "Cancel"
+msgstr "İptal"
+
+#: QDialogButtonBox#8
+#, fuzzy
+msgctxt "QDialogButtonBox#8"
+msgid "&Close"
+msgstr "K&apat"
+
+#: QDialogButtonBox#9
+#, fuzzy
+msgctxt "QDialogButtonBox#9"
+msgid "Close"
+msgstr "Kapat"
+
 #: QDialogButtonBox#10
 #, fuzzy
 msgctxt "QDialogButtonBox#10"
@@ -2247,12 +2289,6 @@ msgstr "&Hayır"
 msgid "N&o to All"
 msgstr "Tümüne &Hayır"
 
-#: QDialogButtonBox#2
-#, fuzzy
-msgctxt "QDialogButtonBox#2"
-msgid "&OK"
-msgstr "&Tamam"
-
 #: QDialogButtonBox#20
 msgid "Save All"
 msgstr "Tümünü Kaydet"
@@ -2274,48 +2310,6 @@ msgstr "Yoksay"
 #: QDialogButtonBox#24
 msgid "Restore Defaults"
 msgstr "Öntanımlılara Dön"
-
-#: QDialogButtonBox#3
-#, fuzzy
-msgctxt "QDialogButtonBox#3"
-msgid "&Save"
-msgstr "&Kaydet"
-
-#: QDialogButtonBox#4
-#, fuzzy
-msgctxt "QDialogButtonBox#4"
-msgid "Save"
-msgstr "Kaydet"
-
-#: QDialogButtonBox#5
-#, fuzzy
-msgctxt "QDialogButtonBox#5"
-msgid "Open"
-msgstr "Aç"
-
-#: QDialogButtonBox#6
-#, fuzzy
-msgctxt "QDialogButtonBox#6"
-msgid "&Cancel"
-msgstr "&İptal"
-
-#: QDialogButtonBox#7
-#, fuzzy
-msgctxt "QDialogButtonBox#7"
-msgid "Cancel"
-msgstr "İptal"
-
-#: QDialogButtonBox#8
-#, fuzzy
-msgctxt "QDialogButtonBox#8"
-msgid "&Close"
-msgstr "K&apat"
-
-#: QDialogButtonBox#9
-#, fuzzy
-msgctxt "QDialogButtonBox#9"
-msgid "Close"
-msgstr "Kapat"
 
 #: QDirModel#1
 msgctxt "QDirModel#1"
@@ -2421,6 +2415,48 @@ msgstr ""
 msgid "Look in:"
 msgstr "Konum:"
 
+#: QFileDialog#2
+#, fuzzy
+msgctxt "QFileDialog#2"
+msgid "Back"
+msgstr "Geri"
+
+#: QFileDialog#3
+#, fuzzy
+msgid "Go back"
+msgstr "Geri Git"
+
+#: QFileDialog#4
+#, fuzzy
+msgctxt "QFileDialog#4"
+msgid "Forward"
+msgstr "İleri"
+
+#: QFileDialog#5
+#, fuzzy
+msgid "Go forward"
+msgstr "İleri"
+
+#: QFileDialog#6
+msgid "Parent Directory"
+msgstr "Üst Dizin"
+
+#: QFileDialog#7
+#, fuzzy
+msgid "Go to the parent directory"
+msgstr "dizin"
+
+#: QFileDialog#8
+#, fuzzy
+msgctxt "QFileDialog#8"
+msgid "Create New Folder"
+msgstr "Yeni Dizin Oluştur"
+
+#: QFileDialog#9
+#, fuzzy
+msgid "Create a New Folder"
+msgstr "Yeni Dizin Oluştur"
+
 #: QFileDialog#10
 #, fuzzy
 msgctxt "QFileDialog#10"
@@ -2472,12 +2508,6 @@ msgstr "Tüm Dosyalar"
 #: QFileDialog#19
 msgid "Show "
 msgstr "Göster "
-
-#: QFileDialog#2
-#, fuzzy
-msgctxt "QFileDialog#2"
-msgid "Back"
-msgstr "Geri"
 
 #: QFileDialog#20
 #, fuzzy
@@ -2534,11 +2564,6 @@ msgstr "Dizinler"
 #: QFileDialog#29
 msgid "&Choose"
 msgstr "Se&ç"
-
-#: QFileDialog#3
-#, fuzzy
-msgid "Go back"
-msgstr "Geri Git"
 
 #: QFileDialog#30
 msgid ""
@@ -2604,12 +2629,6 @@ msgstr "Tüm Dosyalar (*.*)"
 msgid "Remove"
 msgstr "Sil"
 
-#: QFileDialog#4
-#, fuzzy
-msgctxt "QFileDialog#4"
-msgid "Forward"
-msgstr "İleri"
-
 #: QFileDialog#40
 #, fuzzy
 msgctxt "QFileDialog#40"
@@ -2652,68 +2671,9 @@ msgctxt "QFileDialog#47"
 msgid "Unknown"
 msgstr "Bilinmeyen"
 
-#: QFileDialog#5
-#, fuzzy
-msgid "Go forward"
-msgstr "İleri"
-
-#: QFileDialog#6
-msgid "Parent Directory"
-msgstr "Üst Dizin"
-
-#: QFileDialog#7
-#, fuzzy
-msgid "Go to the parent directory"
-msgstr "dizin"
-
-#: QFileDialog#8
-#, fuzzy
-msgctxt "QFileDialog#8"
-msgid "Create New Folder"
-msgstr "Yeni Dizin Oluştur"
-
-#: QFileDialog#9
-#, fuzzy
-msgid "Create a New Folder"
-msgstr "Yeni Dizin Oluştur"
-
 #: QFileSystemModel#1
 msgid "%1 TB"
 msgstr "%1 TB"
-
-# Match OS X Finder
-#: QFileSystemModel#10
-#, fuzzy
-msgctxt "QFileSystemModel#10"
-msgid "Kind"
-msgstr "Tip"
-
-#: QFileSystemModel#11
-#, fuzzy
-msgctxt "QFileSystemModel#11"
-msgid "Type"
-msgstr "Dosya Türü"
-
-#: QFileSystemModel#12
-#, fuzzy
-msgctxt "QFileSystemModel#12"
-msgid "Date Modified"
-msgstr "Değiştirilme Tarihi"
-
-#: QFileSystemModel#13
-#, fuzzy
-msgctxt "QFileSystemModel#13"
-msgid "My Computer"
-msgstr "Bilgisayarım"
-
-#: QFileSystemModel#14
-msgid "Computer"
-msgstr "Kök Dizini"
-
-#: QFileSystemModel#15
-#, fuzzy
-msgid "%1 byte(s)"
-msgstr "%1 bayt"
 
 #: QFileSystemModel#2
 msgid "%1 GB"
@@ -2751,8 +2711,78 @@ msgctxt "QFileSystemModel#9"
 msgid "Size"
 msgstr "Boyut"
 
+# Match OS X Finder
+#: QFileSystemModel#10
+#, fuzzy
+msgctxt "QFileSystemModel#10"
+msgid "Kind"
+msgstr "Tip"
+
+#: QFileSystemModel#11
+#, fuzzy
+msgctxt "QFileSystemModel#11"
+msgid "Type"
+msgstr "Dosya Türü"
+
+#: QFileSystemModel#12
+#, fuzzy
+msgctxt "QFileSystemModel#12"
+msgid "Date Modified"
+msgstr "Değiştirilme Tarihi"
+
+#: QFileSystemModel#13
+#, fuzzy
+msgctxt "QFileSystemModel#13"
+msgid "My Computer"
+msgstr "Bilgisayarım"
+
+#: QFileSystemModel#14
+msgid "Computer"
+msgstr "Kök Dizini"
+
+#: QFileSystemModel#15
+#, fuzzy
+msgid "%1 byte(s)"
+msgstr "%1 bayt"
+
 #: QFontDatabase#1
 msgid "Normal"
+msgstr ""
+
+#: QFontDatabase#2
+msgctxt "QFontDatabase#2"
+msgid "Bold"
+msgstr ""
+
+#: QFontDatabase#3
+msgid "Demi Bold"
+msgstr ""
+
+#: QFontDatabase#4
+#, fuzzy
+msgid "Black"
+msgstr "Geri"
+
+#: QFontDatabase#5
+msgid "Demi"
+msgstr ""
+
+#: QFontDatabase#6
+#, fuzzy
+msgid "Light"
+msgstr "Sağ"
+
+#: QFontDatabase#7
+msgctxt "QFontDatabase#7"
+msgid "Italic"
+msgstr ""
+
+#: QFontDatabase#8
+msgid "Oblique"
+msgstr ""
+
+#: QFontDatabase#9
+msgid "Any"
 msgstr ""
 
 #: QFontDatabase#10
@@ -2796,11 +2826,6 @@ msgstr ""
 msgid "Bengali"
 msgstr ""
 
-#: QFontDatabase#2
-msgctxt "QFontDatabase#2"
-msgid "Bold"
-msgstr ""
-
 #: QFontDatabase#20
 msgid "Gurmukhi"
 msgstr ""
@@ -2839,10 +2864,6 @@ msgstr ""
 
 #: QFontDatabase#29
 msgid "Lao"
-msgstr ""
-
-#: QFontDatabase#3
-msgid "Demi Bold"
 msgstr ""
 
 #: QFontDatabase#30
@@ -2886,11 +2907,6 @@ msgstr ""
 msgid "Symbol"
 msgstr ""
 
-#: QFontDatabase#4
-#, fuzzy
-msgid "Black"
-msgstr "Geri"
-
 #: QFontDatabase#40
 msgid "Ogham"
 msgstr ""
@@ -2903,28 +2919,6 @@ msgstr ""
 #, fuzzy
 msgid "N'Ko"
 msgstr "Hayır"
-
-#: QFontDatabase#5
-msgid "Demi"
-msgstr ""
-
-#: QFontDatabase#6
-#, fuzzy
-msgid "Light"
-msgstr "Sağ"
-
-#: QFontDatabase#7
-msgctxt "QFontDatabase#7"
-msgid "Italic"
-msgstr ""
-
-#: QFontDatabase#8
-msgid "Oblique"
-msgstr ""
-
-#: QFontDatabase#9
-msgid "Any"
-msgstr ""
 
 #: QFontDialog#1
 msgid "Select Font"
@@ -2967,6 +2961,52 @@ msgstr "Ya&zma Sistemi"
 #: QFtp#1
 msgid "Not connected"
 msgstr "Bağlı değil"
+
+#: QFtp#2
+msgctxt "QFtp#2"
+msgid "Host %1 not found"
+msgstr "%1 makinesi bulunamadı"
+
+#: QFtp#3
+msgid "Connection refused to host %1"
+msgstr "%1 makinesine bağlantı reddedildi"
+
+#: QFtp#4
+#, fuzzy
+msgid "Connection timed out to host %1"
+msgstr "%1 makinesine bağlantı reddedildi"
+
+#: QFtp#5
+#, fuzzy
+msgctxt "QFtp#5"
+msgid "Connected to host %1"
+msgstr "%1 makinesine bağlanıldı"
+
+#: QFtp#6
+msgid "Connection refused for data connection"
+msgstr "Veri bağlantısı için bağlantı reddedildi"
+
+#: QFtp#7
+#, fuzzy
+msgctxt "QFtp#7"
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: QFtp#8
+msgid ""
+"Connecting to host failed:\n"
+"%1"
+msgstr ""
+"Makineye bağlantı reddedildi:\n"
+"%1"
+
+#: QFtp#9
+msgid ""
+"Login failed:\n"
+"%1"
+msgstr ""
+"Giriş başarısız:\n"
+"%1"
 
 #: QFtp#10
 msgid ""
@@ -3042,11 +3082,6 @@ msgctxt "QFtp#19"
 msgid "Connection to %1 closed"
 msgstr "%1 makinesine yapılan bağlantı kapatıldı"
 
-#: QFtp#2
-msgctxt "QFtp#2"
-msgid "Host %1 not found"
-msgstr "%1 makinesi bulunamadı"
-
 #: QFtp#20
 #, fuzzy
 msgctxt "QFtp#20"
@@ -3058,47 +3093,6 @@ msgstr "Makine bulundu"
 msgctxt "QFtp#21"
 msgid "Connected to host"
 msgstr "Makineye bağlanıldı"
-
-#: QFtp#3
-msgid "Connection refused to host %1"
-msgstr "%1 makinesine bağlantı reddedildi"
-
-#: QFtp#4
-#, fuzzy
-msgid "Connection timed out to host %1"
-msgstr "%1 makinesine bağlantı reddedildi"
-
-#: QFtp#5
-#, fuzzy
-msgctxt "QFtp#5"
-msgid "Connected to host %1"
-msgstr "%1 makinesine bağlanıldı"
-
-#: QFtp#6
-msgid "Connection refused for data connection"
-msgstr "Veri bağlantısı için bağlantı reddedildi"
-
-#: QFtp#7
-#, fuzzy
-msgctxt "QFtp#7"
-msgid "Unknown error"
-msgstr "Bilinmeyen hata"
-
-#: QFtp#8
-msgid ""
-"Connecting to host failed:\n"
-"%1"
-msgstr ""
-"Makineye bağlantı reddedildi:\n"
-"%1"
-
-#: QFtp#9
-msgid ""
-"Login failed:\n"
-"%1"
-msgstr ""
-"Giriş başarısız:\n"
-"%1"
 
 #: QHostInfo#1
 msgctxt "QHostInfo#1"
@@ -3140,6 +3134,43 @@ msgstr "Bilinmeyen hata"
 #: QHttp#1
 msgid "HTTPS connection requested but SSL support not compiled in"
 msgstr ""
+
+#: QHttp#2
+#, fuzzy
+msgctxt "QHttp#2"
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: QHttp#3
+msgid "Request aborted"
+msgstr "İstek iptal edildi"
+
+#: QHttp#4
+msgid "No server set to connect to"
+msgstr "Bağlanılacak sunucu ayarlanmamış"
+
+#: QHttp#5
+msgid "Wrong content length"
+msgstr "Yanlış içerik uzunluğu"
+
+#: QHttp#6
+msgid "Server closed connection unexpectedly"
+msgstr "Sunucu bağlantıyı beklenmedik şekilde kapattı"
+
+#: QHttp#7
+#, fuzzy
+msgid "Connection refused (or timed out)"
+msgstr "Bağlantıda zamanaşımı"
+
+#: QHttp#8
+#, fuzzy
+msgctxt "QHttp#8"
+msgid "Host %1 not found"
+msgstr "%1 makinesi bulunamadı"
+
+#: QHttp#9
+msgid "HTTP request failed"
+msgstr "HTTP isteği başarısız oldu"
 
 #: QHttp#10
 msgid "Invalid HTTP response header"
@@ -3189,12 +3220,6 @@ msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
 msgid "Host requires authentication"
 msgstr ""
 
-#: QHttp#2
-#, fuzzy
-msgctxt "QHttp#2"
-msgid "Unknown error"
-msgstr "Bilinmeyen hata"
-
 #: QHttp#20
 msgid "Data corrupted"
 msgstr ""
@@ -3236,37 +3261,6 @@ msgstr "Makine bulundu"
 msgctxt "QHttp#27"
 msgid "Connected to host"
 msgstr "Makineye bağlanıldı"
-
-#: QHttp#3
-msgid "Request aborted"
-msgstr "İstek iptal edildi"
-
-#: QHttp#4
-msgid "No server set to connect to"
-msgstr "Bağlanılacak sunucu ayarlanmamış"
-
-#: QHttp#5
-msgid "Wrong content length"
-msgstr "Yanlış içerik uzunluğu"
-
-#: QHttp#6
-msgid "Server closed connection unexpectedly"
-msgstr "Sunucu bağlantıyı beklenmedik şekilde kapattı"
-
-#: QHttp#7
-#, fuzzy
-msgid "Connection refused (or timed out)"
-msgstr "Bağlantıda zamanaşımı"
-
-#: QHttp#8
-#, fuzzy
-msgctxt "QHttp#8"
-msgid "Host %1 not found"
-msgstr "%1 makinesi bulunamadı"
-
-#: QHttp#9
-msgid "HTTP request failed"
-msgstr "HTTP isteği başarısız oldu"
 
 #: QHttpSocketEngine#1
 msgid "Did not receive HTTP response from proxy"
@@ -3336,39 +3330,6 @@ msgstr "İşlem (transaction) geri alınamadı"
 msgid "Unable to create BLOB"
 msgstr "BLOB oluşturulamadı"
 
-#: QIBaseResult#10
-msgid "Could not allocate statement"
-msgstr "İfade yerleştirilemedi"
-
-#: QIBaseResult#11
-msgid "Could not prepare statement"
-msgstr "İfade hazırlanamadı"
-
-#: QIBaseResult#12
-msgid "Could not describe input statement"
-msgstr "Girdi ifadesi tanımlanamadı"
-
-#: QIBaseResult#13
-msgid "Could not describe statement"
-msgstr "İfade tanımlanamadı"
-
-#: QIBaseResult#14
-msgid "Unable to close statement"
-msgstr "İfade kapatılamadı"
-
-#: QIBaseResult#15
-msgctxt "QIBaseResult#15"
-msgid "Unable to execute query"
-msgstr "Sorgu yapılamadı"
-
-#: QIBaseResult#16
-msgid "Could not fetch next item"
-msgstr "Sonraki öge getirilemedi"
-
-#: QIBaseResult#17
-msgid "Could not get statement info"
-msgstr "İfade bilgisi alınamadı"
-
 #: QIBaseResult#2
 msgid "Unable to write BLOB"
 msgstr "BLOB yazılamadı"
@@ -3402,6 +3363,39 @@ msgstr "İşlem (transaction) başlatılamadı"
 msgctxt "QIBaseResult#9"
 msgid "Unable to commit transaction"
 msgstr "İşlem (transaction) yapılamadı"
+
+#: QIBaseResult#10
+msgid "Could not allocate statement"
+msgstr "İfade yerleştirilemedi"
+
+#: QIBaseResult#11
+msgid "Could not prepare statement"
+msgstr "İfade hazırlanamadı"
+
+#: QIBaseResult#12
+msgid "Could not describe input statement"
+msgstr "Girdi ifadesi tanımlanamadı"
+
+#: QIBaseResult#13
+msgid "Could not describe statement"
+msgstr "İfade tanımlanamadı"
+
+#: QIBaseResult#14
+msgid "Unable to close statement"
+msgstr "İfade kapatılamadı"
+
+#: QIBaseResult#15
+msgctxt "QIBaseResult#15"
+msgid "Unable to execute query"
+msgstr "Sorgu yapılamadı"
+
+#: QIBaseResult#16
+msgid "Could not fetch next item"
+msgstr "Sonraki öge getirilemedi"
+
+#: QIBaseResult#17
+msgid "Could not get statement info"
+msgstr "İfade bilgisi alınamadı"
 
 #: QIODevice#1
 msgctxt "QIODevice#1"
@@ -3458,19 +3452,6 @@ msgstr ""
 msgid "Could not mmap '%1': %2"
 msgstr ""
 
-#: QLibrary#10
-msgid "Cannot load library %1: %2"
-msgstr ""
-
-#: QLibrary#11
-msgid "Cannot unload library %1: %2"
-msgstr ""
-
-#: QLibrary#12
-#, fuzzy
-msgid "Cannot resolve symbol \"%1\" in %2: %3"
-msgstr "QLibrary::resolve_sys: \"%1\" sembolü %2 (%3) içerisinde tanımlanmamış"
-
 #: QLibrary#2
 msgid "Plugin verification data mismatch in '%1'"
 msgstr "'%1' içerisindeki eklenti doğrulama verisi uyuşmuyor"
@@ -3503,6 +3484,19 @@ msgstr "'%1' eklentisi uyumsuz Qt kütüphanesi kullanıyor. (Hata ayıklama ve 
 msgctxt "QLibrary#9"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
+
+#: QLibrary#10
+msgid "Cannot load library %1: %2"
+msgstr ""
+
+#: QLibrary#11
+msgid "Cannot unload library %1: %2"
+msgstr ""
+
+#: QLibrary#12
+#, fuzzy
+msgid "Cannot resolve symbol \"%1\" in %2: %3"
+msgstr "QLibrary::resolve_sys: \"%1\" sembolü %2 (%3) içerisinde tanımlanmamış"
 
 #: QLineEdit#1
 msgctxt "QLineEdit#1"
@@ -3563,17 +3557,6 @@ msgstr "Bilinmeyen hata"
 msgid "%1: Connection refused"
 msgstr "Bağlantı reddedildi"
 
-#: QLocalSocket#10
-#, fuzzy
-msgid "%1: Unknown error"
-msgstr "Bilinmeyen hata"
-
-#: QLocalSocket#11
-#, fuzzy
-msgctxt "QLocalSocket#11"
-msgid "%1: Unknown error %2"
-msgstr "Bilinmeyen hata"
-
 #: QLocalSocket#2
 msgid "%1: Remote closed"
 msgstr ""
@@ -3611,6 +3594,17 @@ msgstr "Bağlantıda zamanaşımı"
 msgid "%1: The socket operation is not supported"
 msgstr "Soket işlemi desteklenmiyor"
 
+#: QLocalSocket#10
+#, fuzzy
+msgid "%1: Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: QLocalSocket#11
+#, fuzzy
+msgctxt "QLocalSocket#11"
+msgid "%1: Unknown error %2"
+msgstr "Bilinmeyen hata"
+
 #: QMYSQLDriver#1
 msgid "Unable to open database '"
 msgstr "Veritabanı açılamadı '"
@@ -3638,14 +3632,6 @@ msgstr "İşlem (transaction) geri alınamadı"
 #: QMYSQLResult#1
 msgid "Unable to fetch data"
 msgstr "Veri getirilemedi"
-
-#: QMYSQLResult#10
-msgid "Unable to bind outvalues"
-msgstr ""
-
-#: QMYSQLResult#11
-msgid "Unable to store statement results"
-msgstr "İfade sonuçları kaydedilemedi"
 
 #: QMYSQLResult#2
 msgctxt "QMYSQLResult#2"
@@ -3691,6 +3677,14 @@ msgctxt "QMYSQLResult#9"
 msgid "Unable to execute statement"
 msgstr "İfade çalıştırılamadı"
 
+#: QMYSQLResult#10
+msgid "Unable to bind outvalues"
+msgstr ""
+
+#: QMYSQLResult#11
+msgid "Unable to store statement results"
+msgstr "İfade sonuçları kaydedilemedi"
+
 #: QMdiArea#1
 msgid "(Untitled)"
 msgstr ""
@@ -3699,6 +3693,50 @@ msgstr ""
 #, fuzzy
 msgid "- [%1]"
 msgstr "%1 - [%2]"
+
+#: QMdiSubWindow#2
+#, fuzzy
+msgctxt "QMdiSubWindow#2"
+msgid "%1 - [%2]"
+msgstr "%1 - [%2]"
+
+#: QMdiSubWindow#3
+msgctxt "QMdiSubWindow#3"
+msgid "Minimize"
+msgstr "Küçült"
+
+#: QMdiSubWindow#4
+#, fuzzy
+msgctxt "QMdiSubWindow#4"
+msgid "Maximize"
+msgstr "Büyüt"
+
+#: QMdiSubWindow#5
+#, fuzzy
+msgid "Unshade"
+msgstr "Gölgele&me"
+
+#: QMdiSubWindow#6
+#, fuzzy
+msgid "Shade"
+msgstr "G&ölgele"
+
+#: QMdiSubWindow#7
+#, fuzzy
+msgctxt "QMdiSubWindow#7"
+msgid "Restore Down"
+msgstr "Aşağıya Geri Yükle"
+
+#: QMdiSubWindow#8
+#, fuzzy
+msgid "Restore"
+msgstr "&Geri Yükle"
+
+#: QMdiSubWindow#9
+#, fuzzy
+msgctxt "QMdiSubWindow#9"
+msgid "Close"
+msgstr "Kapat"
 
 #: QMdiSubWindow#10
 #, fuzzy
@@ -3753,50 +3791,6 @@ msgstr "&Herzaman Üstte"
 msgctxt "QMdiSubWindow#18"
 msgid "&Close"
 msgstr "K&apat"
-
-#: QMdiSubWindow#2
-#, fuzzy
-msgctxt "QMdiSubWindow#2"
-msgid "%1 - [%2]"
-msgstr "%1 - [%2]"
-
-#: QMdiSubWindow#3
-msgctxt "QMdiSubWindow#3"
-msgid "Minimize"
-msgstr "Küçült"
-
-#: QMdiSubWindow#4
-#, fuzzy
-msgctxt "QMdiSubWindow#4"
-msgid "Maximize"
-msgstr "Büyüt"
-
-#: QMdiSubWindow#5
-#, fuzzy
-msgid "Unshade"
-msgstr "Gölgele&me"
-
-#: QMdiSubWindow#6
-#, fuzzy
-msgid "Shade"
-msgstr "G&ölgele"
-
-#: QMdiSubWindow#7
-#, fuzzy
-msgctxt "QMdiSubWindow#7"
-msgid "Restore Down"
-msgstr "Aşağıya Geri Yükle"
-
-#: QMdiSubWindow#8
-#, fuzzy
-msgid "Restore"
-msgstr "&Geri Yükle"
-
-#: QMdiSubWindow#9
-#, fuzzy
-msgctxt "QMdiSubWindow#9"
-msgid "Close"
-msgstr "Kapat"
 
 #: QMenu#1
 msgctxt "QMenu#1"
@@ -3867,6 +3861,40 @@ msgstr "Çoklu girdi metodu seçici metin parçacıkları genel menüsünü kull
 msgid "Unable to initialize non-blocking socket"
 msgstr ""
 
+#: QNativeSocketEngine#2
+msgid "Unable to initialize broadcast socket"
+msgstr "Yayın soketi başlatılamadı"
+
+#: QNativeSocketEngine#3
+msgid "Attempt to use IPv6 socket on a platform with no IPv6 support"
+msgstr ""
+
+#: QNativeSocketEngine#4
+msgid "The remote host closed the connection"
+msgstr "Uzak makine bağlantıyı kapattı"
+
+#: QNativeSocketEngine#5
+#, fuzzy
+msgctxt "QNativeSocketEngine#5"
+msgid "Network operation timed out"
+msgstr "Ağ işleminde zamanaşımı"
+
+#: QNativeSocketEngine#6
+msgid "Out of resources"
+msgstr ""
+
+#: QNativeSocketEngine#7
+msgid "Unsupported socket operation"
+msgstr "Desteklenmeyen soket işlemi"
+
+#: QNativeSocketEngine#8
+msgid "Protocol type not supported"
+msgstr "Protokol tipi desteklenmiyor"
+
+#: QNativeSocketEngine#9
+msgid "Invalid socket descriptor"
+msgstr "Geçersiz soket tanımlayıcı"
+
 #: QNativeSocketEngine#10
 msgid "Host unreachable"
 msgstr "Makine erişilemez durumda"
@@ -3915,10 +3943,6 @@ msgstr "Veri paketi göndermek için çok büyük"
 msgid "Unable to send a message"
 msgstr "Bir ileti gönderilemedi"
 
-#: QNativeSocketEngine#2
-msgid "Unable to initialize broadcast socket"
-msgstr "Yayın soketi başlatılamadı"
-
 #: QNativeSocketEngine#20
 msgid "Unable to receive a message"
 msgstr "Bir ileti alınamadı"
@@ -3948,36 +3972,6 @@ msgstr ""
 msgctxt "QNativeSocketEngine#26"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
-
-#: QNativeSocketEngine#3
-msgid "Attempt to use IPv6 socket on a platform with no IPv6 support"
-msgstr ""
-
-#: QNativeSocketEngine#4
-msgid "The remote host closed the connection"
-msgstr "Uzak makine bağlantıyı kapattı"
-
-#: QNativeSocketEngine#5
-#, fuzzy
-msgctxt "QNativeSocketEngine#5"
-msgid "Network operation timed out"
-msgstr "Ağ işleminde zamanaşımı"
-
-#: QNativeSocketEngine#6
-msgid "Out of resources"
-msgstr ""
-
-#: QNativeSocketEngine#7
-msgid "Unsupported socket operation"
-msgstr "Desteklenmeyen soket işlemi"
-
-#: QNativeSocketEngine#8
-msgid "Protocol type not supported"
-msgstr "Protokol tipi desteklenmiyor"
-
-#: QNativeSocketEngine#9
-msgid "Invalid socket descriptor"
-msgstr "Geçersiz soket tanımlayıcı"
 
 #: QNetworkAccessCacheBackend#1
 #, fuzzy
@@ -4334,6 +4328,45 @@ msgctxt "QPageSetupWidget#1"
 msgid "Form"
 msgstr ""
 
+#: QPageSetupWidget#2
+#, fuzzy
+msgid "Paper"
+msgstr "Pause"
+
+#: QPageSetupWidget#3
+msgid "Page size:"
+msgstr "Sayfa boyutu:"
+
+#: QPageSetupWidget#4
+msgid "Width:"
+msgstr ""
+
+#: QPageSetupWidget#5
+#, fuzzy
+msgid "Height:"
+msgstr "Sağ"
+
+#: QPageSetupWidget#6
+msgid "Paper source:"
+msgstr "Sayfa kaynağı:"
+
+#: QPageSetupWidget#7
+#, fuzzy
+msgid "Orientation"
+msgstr "Yön:"
+
+#: QPageSetupWidget#8
+#, fuzzy
+msgctxt "QPageSetupWidget#8"
+msgid "Portrait"
+msgstr "Dikey"
+
+#: QPageSetupWidget#9
+#, fuzzy
+msgctxt "QPageSetupWidget#9"
+msgid "Landscape"
+msgstr "Yatay"
+
 #: QPageSetupWidget#10
 #, fuzzy
 msgid "Reverse landscape"
@@ -4375,48 +4408,9 @@ msgstr ""
 msgid "Inches (in)"
 msgstr ""
 
-#: QPageSetupWidget#2
-#, fuzzy
-msgid "Paper"
-msgstr "Pause"
-
 #: QPageSetupWidget#20
 msgid "Points (pt)"
 msgstr ""
-
-#: QPageSetupWidget#3
-msgid "Page size:"
-msgstr "Sayfa boyutu:"
-
-#: QPageSetupWidget#4
-msgid "Width:"
-msgstr ""
-
-#: QPageSetupWidget#5
-#, fuzzy
-msgid "Height:"
-msgstr "Sağ"
-
-#: QPageSetupWidget#6
-msgid "Paper source:"
-msgstr "Sayfa kaynağı:"
-
-#: QPageSetupWidget#7
-#, fuzzy
-msgid "Orientation"
-msgstr "Yön:"
-
-#: QPageSetupWidget#8
-#, fuzzy
-msgctxt "QPageSetupWidget#8"
-msgid "Portrait"
-msgstr "Dikey"
-
-#: QPageSetupWidget#9
-#, fuzzy
-msgctxt "QPageSetupWidget#9"
-msgid "Landscape"
-msgstr "Yatay"
 
 #: QPluginLoader#1
 msgid "The plugin was not loaded."
@@ -4433,6 +4427,38 @@ msgstr "Bilinmeyen hata"
 msgctxt "QPrintDialog#1"
 msgid "Print"
 msgstr "Yazdır"
+
+#: QPrintDialog#2
+msgid "A0"
+msgstr ""
+
+#: QPrintDialog#3
+msgid "A1"
+msgstr ""
+
+#: QPrintDialog#4
+msgid "A2"
+msgstr ""
+
+#: QPrintDialog#5
+msgid "A3"
+msgstr ""
+
+#: QPrintDialog#6
+msgid "A4"
+msgstr ""
+
+#: QPrintDialog#7
+msgid "A5"
+msgstr ""
+
+#: QPrintDialog#8
+msgid "A6"
+msgstr ""
+
+#: QPrintDialog#9
+msgid "A7"
+msgstr ""
 
 #: QPrintDialog#10
 msgid "A8"
@@ -4472,10 +4498,6 @@ msgstr ""
 
 #: QPrintDialog#19
 msgid "B7"
-msgstr ""
-
-#: QPrintDialog#2
-msgid "A0"
 msgstr ""
 
 #: QPrintDialog#20
@@ -4522,10 +4544,6 @@ msgstr ""
 msgid "Letter"
 msgstr "Sol"
 
-#: QPrintDialog#3
-msgid "A1"
-msgstr ""
-
 #: QPrintDialog#30
 #, fuzzy
 msgid "Tabloid"
@@ -4569,10 +4587,6 @@ msgstr "A3 (297 x 420 mm)"
 msgid "A4 (210 x 297 mm, 8.26 x 11.7 inches)"
 msgstr "A4 (210 x 297 mm, 8.26 x 11.7 inç)"
 
-#: QPrintDialog#4
-msgid "A2"
-msgstr ""
-
 #: QPrintDialog#40
 msgid "A5 (148 x 210 mm)"
 msgstr "A5 (148 x 210 mm)"
@@ -4613,10 +4627,6 @@ msgstr "B3 (353 x 500 mm)"
 msgid "B4 (250 x 353 mm)"
 msgstr "B4 (250 x 353 mm)"
 
-#: QPrintDialog#5
-msgid "A3"
-msgstr ""
-
 #: QPrintDialog#50
 msgid "B5 (176 x 250 mm, 6.93 x 9.84 inches)"
 msgstr "B5 (176 x 250 mm, 6.93 x 9.84 inç)"
@@ -4656,10 +4666,6 @@ msgstr "Yönetimsel (7.5 x 10 inç, 191 x 254 mm)"
 #: QPrintDialog#59
 msgid "Folio (210 x 330 mm)"
 msgstr "Folio (210 x 330 mm)"
-
-#: QPrintDialog#6
-msgid "A4"
-msgstr ""
 
 #: QPrintDialog#60
 msgid "Ledger (432 x 279 mm)"
@@ -4706,10 +4712,6 @@ msgstr "Yazdırma oranı"
 #, fuzzy
 msgid "&Options >>"
 msgstr "Seçenekler"
-
-#: QPrintDialog#7
-msgid "A5"
-msgstr ""
 
 #: QPrintDialog#70
 #, fuzzy
@@ -4768,10 +4770,6 @@ msgstr ""
 "%1 zaten var.\n"
 "Üzerine yazmak ister misiniz?"
 
-#: QPrintDialog#8
-msgid "A6"
-msgstr ""
-
 #: QPrintDialog#80
 msgid "The 'From' value cannot be greater than the 'To' value."
 msgstr ""
@@ -4794,14 +4792,46 @@ msgstr "Takma adlar: %1"
 msgid "unknown"
 msgstr "bilinmeyen"
 
-#: QPrintDialog#9
-msgid "A7"
-msgstr ""
-
 #: QPrintPreviewDialog#1
 #, fuzzy
 msgid "Page Setup"
 msgstr "Sayfa yukarı"
+
+#: QPrintPreviewDialog#2
+#, fuzzy
+msgid "%1%"
+msgstr "F%1"
+
+#: QPrintPreviewDialog#3
+#, fuzzy
+msgid "Print Preview"
+msgstr "Ekran Görüntüsü Al"
+
+#: QPrintPreviewDialog#4
+#, fuzzy
+msgid "Next page"
+msgstr "&İleri >"
+
+#: QPrintPreviewDialog#5
+msgid "Previous page"
+msgstr ""
+
+#: QPrintPreviewDialog#6
+msgid "First page"
+msgstr ""
+
+#: QPrintPreviewDialog#7
+msgid "Last page"
+msgstr ""
+
+#: QPrintPreviewDialog#8
+msgid "Fit width"
+msgstr ""
+
+#: QPrintPreviewDialog#9
+#, fuzzy
+msgid "Fit page"
+msgstr "Yazdırma oranı"
 
 #: QPrintPreviewDialog#10
 #, fuzzy
@@ -4853,11 +4883,6 @@ msgctxt "QPrintPreviewDialog#19"
 msgid "Close"
 msgstr "Kapat"
 
-#: QPrintPreviewDialog#2
-#, fuzzy
-msgid "%1%"
-msgstr "F%1"
-
 #: QPrintPreviewDialog#20
 msgid "Export to PDF"
 msgstr ""
@@ -4865,37 +4890,6 @@ msgstr ""
 #: QPrintPreviewDialog#21
 msgid "Export to PostScript"
 msgstr ""
-
-#: QPrintPreviewDialog#3
-#, fuzzy
-msgid "Print Preview"
-msgstr "Ekran Görüntüsü Al"
-
-#: QPrintPreviewDialog#4
-#, fuzzy
-msgid "Next page"
-msgstr "&İleri >"
-
-#: QPrintPreviewDialog#5
-msgid "Previous page"
-msgstr ""
-
-#: QPrintPreviewDialog#6
-msgid "First page"
-msgstr ""
-
-#: QPrintPreviewDialog#7
-msgid "Last page"
-msgstr ""
-
-#: QPrintPreviewDialog#8
-msgid "Fit width"
-msgstr ""
-
-#: QPrintPreviewDialog#9
-#, fuzzy
-msgid "Fit page"
-msgstr "Yazdırma oranı"
 
 #: QPrintPropertiesWidget#1
 msgctxt "QPrintPropertiesWidget#1"
@@ -4915,6 +4909,44 @@ msgstr ""
 msgctxt "QPrintSettingsOutput#1"
 msgid "Form"
 msgstr ""
+
+#: QPrintSettingsOutput#2
+msgid "Copies"
+msgstr "Kopya"
+
+#: QPrintSettingsOutput#3
+#, fuzzy
+msgctxt "QPrintSettingsOutput#3"
+msgid "Print range"
+msgstr "Yazdırma oranı"
+
+#: QPrintSettingsOutput#4
+#, fuzzy
+msgctxt "QPrintSettingsOutput#4"
+msgid "Print all"
+msgstr "Tümünü yazdır"
+
+#: QPrintSettingsOutput#5
+msgid "Pages from"
+msgstr "Bu sayfadan"
+
+#: QPrintSettingsOutput#6
+msgid "to"
+msgstr "bu sayfaya"
+
+#: QPrintSettingsOutput#7
+#, fuzzy
+msgid "Current Page"
+msgstr "Yazdırma oranı"
+
+#: QPrintSettingsOutput#8
+msgid "Selection"
+msgstr "Seçim"
+
+#: QPrintSettingsOutput#9
+#, fuzzy
+msgid "Output Settings"
+msgstr "Ayarlar"
 
 #: QPrintSettingsOutput#10
 #, fuzzy
@@ -4963,48 +4995,10 @@ msgstr "Tamam"
 msgid "Long side"
 msgstr ""
 
-#: QPrintSettingsOutput#2
-msgid "Copies"
-msgstr "Kopya"
-
 #: QPrintSettingsOutput#20
 #, fuzzy
 msgid "Short side"
 msgstr "B&oyuta Göre Sırala"
-
-#: QPrintSettingsOutput#3
-#, fuzzy
-msgctxt "QPrintSettingsOutput#3"
-msgid "Print range"
-msgstr "Yazdırma oranı"
-
-#: QPrintSettingsOutput#4
-#, fuzzy
-msgctxt "QPrintSettingsOutput#4"
-msgid "Print all"
-msgstr "Tümünü yazdır"
-
-#: QPrintSettingsOutput#5
-msgid "Pages from"
-msgstr "Bu sayfadan"
-
-#: QPrintSettingsOutput#6
-msgid "to"
-msgstr "bu sayfaya"
-
-#: QPrintSettingsOutput#7
-#, fuzzy
-msgid "Current Page"
-msgstr "Yazdırma oranı"
-
-#: QPrintSettingsOutput#8
-msgid "Selection"
-msgstr "Seçim"
-
-#: QPrintSettingsOutput#9
-#, fuzzy
-msgid "Output Settings"
-msgstr "Ayarlar"
 
 #: QPrintWidget#1
 msgctxt "QPrintWidget#1"
@@ -5105,16 +5099,6 @@ msgctxt "QRegExp#1"
 msgid "no error occurred"
 msgstr "hata yok"
 
-#: QRegExp#10
-#, fuzzy
-msgid "invalid interval"
-msgstr "geçersiz sekizlik değer"
-
-#: QRegExp#11
-#, fuzzy
-msgid "invalid category"
-msgstr "Geçersiz XML karakteri."
-
 #: QRegExp#2
 msgid "disabled feature used"
 msgstr "pasifleştirilmiş özellik kullanıldı"
@@ -5146,6 +5130,16 @@ msgstr "beklenmeyen bitiş"
 #: QRegExp#9
 msgid "met internal limit"
 msgstr "iç limite ulaşıldı"
+
+#: QRegExp#10
+#, fuzzy
+msgid "invalid interval"
+msgstr "geçersiz sekizlik değer"
+
+#: QRegExp#11
+#, fuzzy
+msgid "invalid category"
+msgstr "Geçersiz XML karakteri."
 
 #: QSQLite2Driver#1
 #, fuzzy
@@ -5273,6 +5267,45 @@ msgstr "Sil"
 msgid "Go to Line"
 msgstr ""
 
+#: QScriptDebugger#2
+#, fuzzy
+msgid "Line:"
+msgstr "Diz"
+
+#: QScriptDebugger#3
+#, fuzzy
+msgid "Interrupt"
+msgstr "Ekle"
+
+#: QScriptDebugger#4
+#, fuzzy
+msgid "Shift+F5"
+msgstr "Shift"
+
+#: QScriptDebugger#5
+#, fuzzy
+msgctxt "QScriptDebugger#5"
+msgid "Continue"
+msgstr "Devam Et"
+
+#: QScriptDebugger#6
+msgid "F5"
+msgstr ""
+
+#: QScriptDebugger#7
+#, fuzzy
+msgid "Step Into"
+msgstr "Bir düzey &aşağı"
+
+#: QScriptDebugger#8
+#, fuzzy
+msgid "F11"
+msgstr "F%1"
+
+#: QScriptDebugger#9
+msgid "Step Over"
+msgstr ""
+
 #: QScriptDebugger#10
 #, fuzzy
 msgid "F10"
@@ -5318,11 +5351,6 @@ msgstr ""
 msgid "Clear Error Log"
 msgstr ""
 
-#: QScriptDebugger#2
-#, fuzzy
-msgid "Line:"
-msgstr "Diz"
-
 #: QScriptDebugger#20
 msgid "Clear Console"
 msgstr ""
@@ -5362,40 +5390,6 @@ msgstr "Ctrl"
 
 #: QScriptDebugger#28
 msgid "Debug"
-msgstr ""
-
-#: QScriptDebugger#3
-#, fuzzy
-msgid "Interrupt"
-msgstr "Ekle"
-
-#: QScriptDebugger#4
-#, fuzzy
-msgid "Shift+F5"
-msgstr "Shift"
-
-#: QScriptDebugger#5
-#, fuzzy
-msgctxt "QScriptDebugger#5"
-msgid "Continue"
-msgstr "Devam Et"
-
-#: QScriptDebugger#6
-msgid "F5"
-msgstr ""
-
-#: QScriptDebugger#7
-#, fuzzy
-msgid "Step Into"
-msgstr "Bir düzey &aşağı"
-
-#: QScriptDebugger#8
-#, fuzzy
-msgid "F11"
-msgstr "F%1"
-
-#: QScriptDebugger#9
-msgid "Step Over"
 msgstr ""
 
 #: QScriptDebuggerCodeFinderWidget#1
@@ -5475,10 +5469,6 @@ msgstr ""
 msgid "Loaded Scripts"
 msgstr ""
 
-#: QScriptEngineDebugger#10
-msgid "Qt Script Debugger"
-msgstr ""
-
 #: QScriptEngineDebugger#2
 msgid "Breakpoints"
 msgstr ""
@@ -5518,6 +5508,10 @@ msgctxt "QScriptEngineDebugger#9"
 msgid "View"
 msgstr "Liste Görünümü"
 
+#: QScriptEngineDebugger#10
+msgid "Qt Script Debugger"
+msgstr ""
+
 #: QScriptNewBreakpointWidget#1
 #, fuzzy
 msgctxt "QScriptNewBreakpointWidget#1"
@@ -5529,44 +5523,6 @@ msgstr "Kapat"
 msgctxt "QScrollBar#1"
 msgid "Scroll here"
 msgstr "Buraya kaydır"
-
-#: QScrollBar#10
-#, fuzzy
-msgctxt "QScrollBar#10"
-msgid "Scroll left"
-msgstr "Sola kaydır"
-
-#: QScrollBar#11
-#, fuzzy
-msgctxt "QScrollBar#11"
-msgid "Scroll up"
-msgstr "Yukarı kaydır"
-
-#: QScrollBar#12
-#, fuzzy
-msgctxt "QScrollBar#12"
-msgid "Scroll right"
-msgstr "Sağa kaydır"
-
-#: QScrollBar#13
-#, fuzzy
-msgctxt "QScrollBar#13"
-msgid "Scroll down"
-msgstr "Aşağı kaydır"
-
-#: QScrollBar#14
-msgctxt "QScrollBar#14"
-msgid "Line up"
-msgstr "Satır yukarı"
-
-#: QScrollBar#15
-msgctxt "QScrollBar#15"
-msgid "Position"
-msgstr "Konum"
-
-#: QScrollBar#16
-msgid "Line down"
-msgstr "Satır aşağı"
 
 #: QScrollBar#2
 #, fuzzy
@@ -5612,9 +5568,86 @@ msgctxt "QScrollBar#9"
 msgid "Page down"
 msgstr "Sayfa aşağı"
 
+#: QScrollBar#10
+#, fuzzy
+msgctxt "QScrollBar#10"
+msgid "Scroll left"
+msgstr "Sola kaydır"
+
+#: QScrollBar#11
+#, fuzzy
+msgctxt "QScrollBar#11"
+msgid "Scroll up"
+msgstr "Yukarı kaydır"
+
+#: QScrollBar#12
+#, fuzzy
+msgctxt "QScrollBar#12"
+msgid "Scroll right"
+msgstr "Sağa kaydır"
+
+#: QScrollBar#13
+#, fuzzy
+msgctxt "QScrollBar#13"
+msgid "Scroll down"
+msgstr "Aşağı kaydır"
+
+#: QScrollBar#14
+msgctxt "QScrollBar#14"
+msgid "Line up"
+msgstr "Satır yukarı"
+
+#: QScrollBar#15
+msgctxt "QScrollBar#15"
+msgid "Position"
+msgstr "Konum"
+
+#: QScrollBar#16
+msgid "Line down"
+msgstr "Satır aşağı"
+
 #: QSharedMemory#1
 msgid "%1: unable to set key on lock"
 msgstr ""
+
+#: QSharedMemory#2
+msgid "%1: create size is less then 0"
+msgstr ""
+
+#: QSharedMemory#3
+#, fuzzy
+msgid "%1: unable to lock"
+msgstr "Girilemedi"
+
+#: QSharedMemory#4
+#, fuzzy
+msgid "%1: unable to unlock"
+msgstr "Girilemedi"
+
+#: QSharedMemory#5
+#, fuzzy
+msgctxt "QSharedMemory#5"
+msgid "%1: already exists"
+msgstr "Dosya var"
+
+#: QSharedMemory#6
+msgid "%1: doesn't exists"
+msgstr ""
+
+#: QSharedMemory#7
+msgid "%1: invalid size"
+msgstr ""
+
+#: QSharedMemory#8
+msgctxt "QSharedMemory#8"
+msgid "%1: out of resources"
+msgstr ""
+
+#: QSharedMemory#9
+#, fuzzy
+msgctxt "QSharedMemory#9"
+msgid "%1: permission denied"
+msgstr "İzin verilmedi"
 
 #: QSharedMemory#10
 #, fuzzy
@@ -5663,621 +5696,91 @@ msgstr ""
 msgid "%1: size query failed"
 msgstr "HTTP isteği başarısız oldu"
 
-#: QSharedMemory#2
-msgid "%1: create size is less then 0"
-msgstr ""
-
-#: QSharedMemory#3
-#, fuzzy
-msgid "%1: unable to lock"
-msgstr "Girilemedi"
-
-#: QSharedMemory#4
-#, fuzzy
-msgid "%1: unable to unlock"
-msgstr "Girilemedi"
-
-#: QSharedMemory#5
-#, fuzzy
-msgctxt "QSharedMemory#5"
-msgid "%1: already exists"
-msgstr "Dosya var"
-
-#: QSharedMemory#6
-msgid "%1: doesn't exists"
-msgstr ""
-
-#: QSharedMemory#7
-msgid "%1: invalid size"
-msgstr ""
-
-#: QSharedMemory#8
-msgctxt "QSharedMemory#8"
-msgid "%1: out of resources"
-msgstr ""
-
-#: QSharedMemory#9
-#, fuzzy
-msgctxt "QSharedMemory#9"
-msgid "%1: permission denied"
-msgstr "İzin verilmedi"
-
 #: QShortcut#1
 msgid "Space"
 msgstr "Space"
 
+#: QShortcut#2
+msgid "Esc"
+msgstr "Esc"
+
+#: QShortcut#3
+msgid "Tab"
+msgstr "Tab"
+
+#: QShortcut#4
+msgid "Backtab"
+msgstr "Backtab"
+
+#: QShortcut#5
+msgid "Backspace"
+msgstr "Backspace"
+
+#: QShortcut#6
+msgid "Return"
+msgstr "Enter"
+
+#: QShortcut#7
+msgid "Enter"
+msgstr "Enter"
+
+#: QShortcut#8
+msgid "Ins"
+msgstr "Ins"
+
+#: QShortcut#9
+msgid "Del"
+msgstr "Del"
+
 #: QShortcut#10
 msgid "Pause"
 msgstr "Pause"
-
-#: QShortcut#100
-msgid "DOS"
-msgstr ""
-
-#: QShortcut#101
-msgid "Documents"
-msgstr ""
-
-#: QShortcut#102
-msgid "Spreadsheet"
-msgstr ""
-
-#: QShortcut#103
-#, fuzzy
-msgid "Browser"
-msgstr "Gözat"
-
-#: QShortcut#104
-#, fuzzy
-msgid "Game"
-msgstr "İsim"
-
-#: QShortcut#105
-msgid "Go"
-msgstr ""
-
-#: QShortcut#106
-msgid "iTouch"
-msgstr ""
-
-#: QShortcut#107
-msgid "Logoff"
-msgstr ""
-
-#: QShortcut#108
-#, fuzzy
-msgid "Market"
-msgstr "Meta"
-
-#: QShortcut#109
-#, fuzzy
-msgid "Meeting"
-msgstr "Ayarlar"
 
 #: QShortcut#11
 msgctxt "QShortcut#11"
 msgid "Print"
 msgstr "Print"
 
-#: QShortcut#110
-msgid "Keyboard Menu"
-msgstr ""
-
-#: QShortcut#111
-#, fuzzy
-msgid "Menu PB"
-msgstr "Menü"
-
-#: QShortcut#112
-msgid "My Sites"
-msgstr ""
-
-#: QShortcut#113
-msgid "News"
-msgstr ""
-
-#: QShortcut#114
-#, fuzzy
-msgid "Home Office"
-msgstr "Web Sayfası"
-
-#: QShortcut#115
-#, fuzzy
-msgid "Option"
-msgstr "Seçenekler"
-
-#: QShortcut#116
-#, fuzzy
-msgctxt "QShortcut#116"
-msgid "Paste"
-msgstr "Ya&pıştır"
-
-#: QShortcut#117
-#, fuzzy
-msgid "Phone"
-msgstr "Tamam"
-
-#: QShortcut#118
-#, fuzzy
-msgid "Reply"
-msgstr "Yeniden Dene"
-
-#: QShortcut#119
-#, fuzzy
-msgctxt "QShortcut#119"
-msgid "Reload"
-msgstr "Y&eniden Yükle"
-
 #: QShortcut#12
 msgid "SysReq"
 msgstr "SysReq"
-
-#: QShortcut#120
-msgid "Rotate Windows"
-msgstr ""
-
-#: QShortcut#121
-msgid "Rotation PB"
-msgstr ""
-
-#: QShortcut#122
-msgid "Rotation KB"
-msgstr ""
-
-#: QShortcut#123
-#, fuzzy
-msgctxt "QShortcut#123"
-msgid "Save"
-msgstr "Kaydet"
-
-#: QShortcut#124
-msgid "Send"
-msgstr ""
-
-#: QShortcut#125
-msgid "Spellchecker"
-msgstr ""
-
-#: QShortcut#126
-#, fuzzy
-msgid "Split Screen"
-msgstr "Ekran Görüntüsü Al"
-
-#: QShortcut#127
-#, fuzzy
-msgid "Support"
-msgstr "Sırala"
-
-#: QShortcut#128
-msgid "Task Panel"
-msgstr ""
-
-#: QShortcut#129
-msgid "Terminal"
-msgstr ""
 
 #: QShortcut#13
 #, fuzzy
 msgid "Home"
 msgstr "Ev"
 
-#: QShortcut#130
-msgid "Tools"
-msgstr ""
-
-#: QShortcut#131
-msgid "Travel"
-msgstr ""
-
-#: QShortcut#132
-msgctxt "QShortcut#132"
-msgid "Video"
-msgstr ""
-
-#: QShortcut#133
-msgid "Word Processor"
-msgstr ""
-
-#: QShortcut#134
-msgid "XFer"
-msgstr ""
-
-#: QShortcut#135
-msgid "Zoom In"
-msgstr ""
-
-#: QShortcut#136
-msgid "Zoom Out"
-msgstr ""
-
-#: QShortcut#137
-msgid "Away"
-msgstr ""
-
-#: QShortcut#138
-msgid "Messenger"
-msgstr ""
-
-#: QShortcut#139
-msgid "WebCam"
-msgstr ""
-
 #: QShortcut#14
 msgid "End"
 msgstr "End"
-
-#: QShortcut#140
-#, fuzzy
-msgid "Mail Forward"
-msgstr "İleri"
-
-#: QShortcut#141
-#, fuzzy
-msgid "Pictures"
-msgstr "Dizinler"
-
-#: QShortcut#142
-msgctxt "QShortcut#142"
-msgid "Music"
-msgstr ""
-
-#: QShortcut#143
-msgid "Battery"
-msgstr ""
-
-#: QShortcut#144
-msgid "Bluetooth"
-msgstr ""
-
-#: QShortcut#145
-#, fuzzy
-msgid "Wireless"
-msgstr "Bas"
-
-#: QShortcut#146
-msgid "Ultra Wide Band"
-msgstr ""
-
-#: QShortcut#147
-#, fuzzy
-msgid "Audio Forward"
-msgstr "İleri"
-
-#: QShortcut#148
-msgid "Audio Repeat"
-msgstr ""
-
-#: QShortcut#149
-msgid "Audio Random Play"
-msgstr ""
 
 #: QShortcut#15
 msgid "Left"
 msgstr "Sol"
 
-#: QShortcut#150
-msgid "Subtitle"
-msgstr ""
-
-#: QShortcut#151
-msgid "Audio Cycle Track"
-msgstr ""
-
-#: QShortcut#152
-msgid "Time"
-msgstr ""
-
-#: QShortcut#153
-#, fuzzy
-msgctxt "QShortcut#153"
-msgid "Select"
-msgstr "Seç"
-
-#: QShortcut#154
-#, fuzzy
-msgctxt "QShortcut#154"
-msgid "View"
-msgstr "Liste Görünümü"
-
-#: QShortcut#155
-#, fuzzy
-msgid "Top Menu"
-msgstr "Menü"
-
-#: QShortcut#156
-msgid "Suspend"
-msgstr ""
-
-#: QShortcut#157
-msgid "Hibernate"
-msgstr ""
-
-#: QShortcut#158
-msgid "Print Screen"
-msgstr "Ekran Görüntüsü Al"
-
-#: QShortcut#159
-msgid "Page Up"
-msgstr "Sayfa Yukarı"
-
 #: QShortcut#16
 msgid "Up"
 msgstr "Yukarı"
-
-#: QShortcut#160
-msgid "Page Down"
-msgstr "Sayfa Aşağı"
-
-#: QShortcut#161
-msgid "Caps Lock"
-msgstr "Caps Lock"
-
-#: QShortcut#162
-msgid "Num Lock"
-msgstr "Num Lock"
-
-#: QShortcut#163
-msgid "Number Lock"
-msgstr "Number Lock"
-
-#: QShortcut#164
-msgid "Scroll Lock"
-msgstr "Scroll Lock"
-
-#: QShortcut#165
-#, fuzzy
-msgctxt "QShortcut#165"
-msgid "Insert"
-msgstr "Ekle"
-
-#: QShortcut#166
-#, fuzzy
-msgctxt "QShortcut#166"
-msgid "Delete"
-msgstr "Sil"
-
-#: QShortcut#167
-msgid "Escape"
-msgstr "Escape"
-
-#: QShortcut#168
-msgid "System Request"
-msgstr "Sistem İsteği"
-
-#: QShortcut#169
-#, fuzzy
-msgctxt "QShortcut#169"
-msgid "Yes"
-msgstr "Evet"
 
 #: QShortcut#17
 msgid "Right"
 msgstr "Sağ"
 
-#: QShortcut#170
-#, fuzzy
-msgctxt "QShortcut#170"
-msgid "No"
-msgstr "Hayır"
-
-#: QShortcut#171
-msgid "Context1"
-msgstr "Bağlam1"
-
-#: QShortcut#172
-msgid "Context2"
-msgstr "Bağlam2"
-
-#: QShortcut#173
-msgid "Context3"
-msgstr "Bağlam3"
-
-#: QShortcut#174
-msgid "Context4"
-msgstr "Bağlam4"
-
-#: QShortcut#175
-msgid "Call"
-msgstr "Ara"
-
-#: QShortcut#176
-msgid "Hangup"
-msgstr "Aç"
-
-#: QShortcut#177
-msgid "Toggle Call/Hangup"
-msgstr ""
-
-#: QShortcut#178
-msgid "Flip"
-msgstr "Çevir"
-
-#: QShortcut#179
-msgid "Voice Dial"
-msgstr ""
-
 #: QShortcut#18
 msgid "Down"
 msgstr "Aşağı"
-
-#: QShortcut#180
-msgid "Last Number Redial"
-msgstr ""
-
-#: QShortcut#181
-msgid "Camera Shutter"
-msgstr ""
-
-#: QShortcut#182
-msgid "Camera Focus"
-msgstr ""
-
-#: QShortcut#183
-msgid "Kanji"
-msgstr ""
-
-#: QShortcut#184
-msgid "Muhenkan"
-msgstr ""
-
-#: QShortcut#185
-msgid "Henkan"
-msgstr ""
-
-#: QShortcut#186
-msgid "Romaji"
-msgstr ""
-
-#: QShortcut#187
-msgid "Hiragana"
-msgstr ""
-
-#: QShortcut#188
-msgid "Katakana"
-msgstr ""
-
-#: QShortcut#189
-msgid "Hiragana Katakana"
-msgstr ""
 
 #: QShortcut#19
 msgid "PgUp"
 msgstr "PgUp"
 
-#: QShortcut#190
-msgid "Zenkaku"
-msgstr ""
-
-#: QShortcut#191
-#, fuzzy
-msgid "Hankaku"
-msgstr "Aç"
-
-#: QShortcut#192
-msgid "Zenkaku Hankaku"
-msgstr ""
-
-#: QShortcut#193
-msgid "Touroku"
-msgstr ""
-
-#: QShortcut#194
-msgid "Massyo"
-msgstr ""
-
-#: QShortcut#195
-#, fuzzy
-msgid "Kana Lock"
-msgstr "Caps Lock"
-
-#: QShortcut#196
-#, fuzzy
-msgid "Kana Shift"
-msgstr "Shift"
-
-#: QShortcut#197
-#, fuzzy
-msgid "Eisu Shift"
-msgstr "Shift"
-
-#: QShortcut#198
-msgid "Eisu toggle"
-msgstr ""
-
-#: QShortcut#199
-msgid "Code input"
-msgstr ""
-
-#: QShortcut#2
-msgid "Esc"
-msgstr "Esc"
-
 #: QShortcut#20
 msgid "PgDown"
 msgstr "PgDown"
 
-#: QShortcut#200
-msgid "Multiple Candidate"
-msgstr ""
-
-#: QShortcut#201
-msgid "Previous Candidate"
-msgstr ""
-
-#: QShortcut#202
-#, fuzzy
-msgid "Hangul"
-msgstr "Aç"
-
-#: QShortcut#203
-msgid "Hangul Start"
-msgstr ""
-
-#: QShortcut#204
-#, fuzzy
-msgid "Hangul End"
-msgstr "Aç"
-
-#: QShortcut#205
-msgid "Hangul Hanja"
-msgstr ""
-
-#: QShortcut#206
-msgid "Hangul Jamo"
-msgstr ""
-
-#: QShortcut#207
-msgid "Hangul Romaja"
-msgstr ""
-
-#: QShortcut#208
-msgid "Hangul Jeonja"
-msgstr ""
-
-#: QShortcut#209
-msgid "Hangul Banja"
-msgstr ""
-
 #: QShortcut#21
 msgid "CapsLock"
 msgstr "CapsLock"
-
-#: QShortcut#210
-msgid "Hangul PreHanja"
-msgstr ""
-
-#: QShortcut#211
-msgid "Hangul PostHanja"
-msgstr ""
-
-#: QShortcut#212
-#, fuzzy
-msgid "Hangul Special"
-msgstr "Özel konum"
-
-#: QShortcut#213
-msgid "Ctrl"
-msgstr "Ctrl"
-
-#: QShortcut#214
-msgid "Shift"
-msgstr "Shift"
-
-#: QShortcut#215
-msgid "Alt"
-msgstr "Alt"
-
-#: QShortcut#216
-msgid "Meta"
-msgstr "Meta"
-
-#: QShortcut#217
-msgid "+"
-msgstr "+"
-
-#: QShortcut#218
-msgid "F%1"
-msgstr "F%1"
 
 #: QShortcut#22
 msgid "NumLock"
@@ -6318,10 +5821,6 @@ msgstr "Dur"
 msgid "Refresh"
 msgstr "Tazele"
 
-#: QShortcut#3
-msgid "Tab"
-msgstr "Tab"
-
 #: QShortcut#30
 msgid "Volume Down"
 msgstr "Sesi Yükselt"
@@ -6361,10 +5860,6 @@ msgstr "Çokluortam Çal"
 #: QShortcut#39
 msgid "Media Stop"
 msgstr "Çokluortam Dur"
-
-#: QShortcut#4
-msgid "Backtab"
-msgstr "Backtab"
 
 #: QShortcut#40
 msgid "Media Previous"
@@ -6410,10 +5905,6 @@ msgstr "Bekleme Kipine Geç"
 msgid "Open URL"
 msgstr "Adres Aç"
 
-#: QShortcut#5
-msgid "Backspace"
-msgstr "Backspace"
-
 #: QShortcut#50
 msgid "Launch Mail"
 msgstr "E-posta Uygulamasını Aç"
@@ -6454,10 +5945,6 @@ msgstr "Çalıştır (6)"
 msgid "Launch (7)"
 msgstr "Çalıştır (7)"
 
-#: QShortcut#6
-msgid "Return"
-msgstr "Enter"
-
 #: QShortcut#60
 msgid "Launch (8)"
 msgstr "Çalıştır (8)"
@@ -6497,10 +5984,6 @@ msgstr ""
 #: QShortcut#69
 msgid "Monitor Brightness Down"
 msgstr ""
-
-#: QShortcut#7
-msgid "Enter"
-msgstr "Enter"
 
 #: QShortcut#70
 msgid "Keyboard Light On/Off"
@@ -6544,10 +6027,6 @@ msgstr "Ayarla"
 #: QShortcut#79
 msgid "LightBulb"
 msgstr ""
-
-#: QShortcut#8
-msgid "Ins"
-msgstr "Ins"
 
 #: QShortcut#80
 #, fuzzy
@@ -6593,10 +6072,6 @@ msgstr "İleri"
 #: QShortcut#89
 msgid "Application Left"
 msgstr ""
-
-#: QShortcut#9
-msgid "Del"
-msgstr "Del"
 
 #: QShortcut#90
 msgid "Application Right"
@@ -6648,6 +6123,525 @@ msgstr "K&es"
 msgid "Display"
 msgstr ""
 
+#: QShortcut#100
+msgid "DOS"
+msgstr ""
+
+#: QShortcut#101
+msgid "Documents"
+msgstr ""
+
+#: QShortcut#102
+msgid "Spreadsheet"
+msgstr ""
+
+#: QShortcut#103
+#, fuzzy
+msgid "Browser"
+msgstr "Gözat"
+
+#: QShortcut#104
+#, fuzzy
+msgid "Game"
+msgstr "İsim"
+
+#: QShortcut#105
+msgid "Go"
+msgstr ""
+
+#: QShortcut#106
+msgid "iTouch"
+msgstr ""
+
+#: QShortcut#107
+msgid "Logoff"
+msgstr ""
+
+#: QShortcut#108
+#, fuzzy
+msgid "Market"
+msgstr "Meta"
+
+#: QShortcut#109
+#, fuzzy
+msgid "Meeting"
+msgstr "Ayarlar"
+
+#: QShortcut#110
+msgid "Keyboard Menu"
+msgstr ""
+
+#: QShortcut#111
+#, fuzzy
+msgid "Menu PB"
+msgstr "Menü"
+
+#: QShortcut#112
+msgid "My Sites"
+msgstr ""
+
+#: QShortcut#113
+msgid "News"
+msgstr ""
+
+#: QShortcut#114
+#, fuzzy
+msgid "Home Office"
+msgstr "Web Sayfası"
+
+#: QShortcut#115
+#, fuzzy
+msgid "Option"
+msgstr "Seçenekler"
+
+#: QShortcut#116
+#, fuzzy
+msgctxt "QShortcut#116"
+msgid "Paste"
+msgstr "Ya&pıştır"
+
+#: QShortcut#117
+#, fuzzy
+msgid "Phone"
+msgstr "Tamam"
+
+#: QShortcut#118
+#, fuzzy
+msgid "Reply"
+msgstr "Yeniden Dene"
+
+#: QShortcut#119
+#, fuzzy
+msgctxt "QShortcut#119"
+msgid "Reload"
+msgstr "Y&eniden Yükle"
+
+#: QShortcut#120
+msgid "Rotate Windows"
+msgstr ""
+
+#: QShortcut#121
+msgid "Rotation PB"
+msgstr ""
+
+#: QShortcut#122
+msgid "Rotation KB"
+msgstr ""
+
+#: QShortcut#123
+#, fuzzy
+msgctxt "QShortcut#123"
+msgid "Save"
+msgstr "Kaydet"
+
+#: QShortcut#124
+msgid "Send"
+msgstr ""
+
+#: QShortcut#125
+msgid "Spellchecker"
+msgstr ""
+
+#: QShortcut#126
+#, fuzzy
+msgid "Split Screen"
+msgstr "Ekran Görüntüsü Al"
+
+#: QShortcut#127
+#, fuzzy
+msgid "Support"
+msgstr "Sırala"
+
+#: QShortcut#128
+msgid "Task Panel"
+msgstr ""
+
+#: QShortcut#129
+msgid "Terminal"
+msgstr ""
+
+#: QShortcut#130
+msgid "Tools"
+msgstr ""
+
+#: QShortcut#131
+msgid "Travel"
+msgstr ""
+
+#: QShortcut#132
+msgctxt "QShortcut#132"
+msgid "Video"
+msgstr ""
+
+#: QShortcut#133
+msgid "Word Processor"
+msgstr ""
+
+#: QShortcut#134
+msgid "XFer"
+msgstr ""
+
+#: QShortcut#135
+msgid "Zoom In"
+msgstr ""
+
+#: QShortcut#136
+msgid "Zoom Out"
+msgstr ""
+
+#: QShortcut#137
+msgid "Away"
+msgstr ""
+
+#: QShortcut#138
+msgid "Messenger"
+msgstr ""
+
+#: QShortcut#139
+msgid "WebCam"
+msgstr ""
+
+#: QShortcut#140
+#, fuzzy
+msgid "Mail Forward"
+msgstr "İleri"
+
+#: QShortcut#141
+#, fuzzy
+msgid "Pictures"
+msgstr "Dizinler"
+
+#: QShortcut#142
+msgctxt "QShortcut#142"
+msgid "Music"
+msgstr ""
+
+#: QShortcut#143
+msgid "Battery"
+msgstr ""
+
+#: QShortcut#144
+msgid "Bluetooth"
+msgstr ""
+
+#: QShortcut#145
+#, fuzzy
+msgid "Wireless"
+msgstr "Bas"
+
+#: QShortcut#146
+msgid "Ultra Wide Band"
+msgstr ""
+
+#: QShortcut#147
+#, fuzzy
+msgid "Audio Forward"
+msgstr "İleri"
+
+#: QShortcut#148
+msgid "Audio Repeat"
+msgstr ""
+
+#: QShortcut#149
+msgid "Audio Random Play"
+msgstr ""
+
+#: QShortcut#150
+msgid "Subtitle"
+msgstr ""
+
+#: QShortcut#151
+msgid "Audio Cycle Track"
+msgstr ""
+
+#: QShortcut#152
+msgid "Time"
+msgstr ""
+
+#: QShortcut#153
+#, fuzzy
+msgctxt "QShortcut#153"
+msgid "Select"
+msgstr "Seç"
+
+#: QShortcut#154
+#, fuzzy
+msgctxt "QShortcut#154"
+msgid "View"
+msgstr "Liste Görünümü"
+
+#: QShortcut#155
+#, fuzzy
+msgid "Top Menu"
+msgstr "Menü"
+
+#: QShortcut#156
+msgid "Suspend"
+msgstr ""
+
+#: QShortcut#157
+msgid "Hibernate"
+msgstr ""
+
+#: QShortcut#158
+msgid "Print Screen"
+msgstr "Ekran Görüntüsü Al"
+
+#: QShortcut#159
+msgid "Page Up"
+msgstr "Sayfa Yukarı"
+
+#: QShortcut#160
+msgid "Page Down"
+msgstr "Sayfa Aşağı"
+
+#: QShortcut#161
+msgid "Caps Lock"
+msgstr "Caps Lock"
+
+#: QShortcut#162
+msgid "Num Lock"
+msgstr "Num Lock"
+
+#: QShortcut#163
+msgid "Number Lock"
+msgstr "Number Lock"
+
+#: QShortcut#164
+msgid "Scroll Lock"
+msgstr "Scroll Lock"
+
+#: QShortcut#165
+#, fuzzy
+msgctxt "QShortcut#165"
+msgid "Insert"
+msgstr "Ekle"
+
+#: QShortcut#166
+#, fuzzy
+msgctxt "QShortcut#166"
+msgid "Delete"
+msgstr "Sil"
+
+#: QShortcut#167
+msgid "Escape"
+msgstr "Escape"
+
+#: QShortcut#168
+msgid "System Request"
+msgstr "Sistem İsteği"
+
+#: QShortcut#169
+#, fuzzy
+msgctxt "QShortcut#169"
+msgid "Yes"
+msgstr "Evet"
+
+#: QShortcut#170
+#, fuzzy
+msgctxt "QShortcut#170"
+msgid "No"
+msgstr "Hayır"
+
+#: QShortcut#171
+msgid "Context1"
+msgstr "Bağlam1"
+
+#: QShortcut#172
+msgid "Context2"
+msgstr "Bağlam2"
+
+#: QShortcut#173
+msgid "Context3"
+msgstr "Bağlam3"
+
+#: QShortcut#174
+msgid "Context4"
+msgstr "Bağlam4"
+
+#: QShortcut#175
+msgid "Call"
+msgstr "Ara"
+
+#: QShortcut#176
+msgid "Hangup"
+msgstr "Aç"
+
+#: QShortcut#177
+msgid "Toggle Call/Hangup"
+msgstr ""
+
+#: QShortcut#178
+msgid "Flip"
+msgstr "Çevir"
+
+#: QShortcut#179
+msgid "Voice Dial"
+msgstr ""
+
+#: QShortcut#180
+msgid "Last Number Redial"
+msgstr ""
+
+#: QShortcut#181
+msgid "Camera Shutter"
+msgstr ""
+
+#: QShortcut#182
+msgid "Camera Focus"
+msgstr ""
+
+#: QShortcut#183
+msgid "Kanji"
+msgstr ""
+
+#: QShortcut#184
+msgid "Muhenkan"
+msgstr ""
+
+#: QShortcut#185
+msgid "Henkan"
+msgstr ""
+
+#: QShortcut#186
+msgid "Romaji"
+msgstr ""
+
+#: QShortcut#187
+msgid "Hiragana"
+msgstr ""
+
+#: QShortcut#188
+msgid "Katakana"
+msgstr ""
+
+#: QShortcut#189
+msgid "Hiragana Katakana"
+msgstr ""
+
+#: QShortcut#190
+msgid "Zenkaku"
+msgstr ""
+
+#: QShortcut#191
+#, fuzzy
+msgid "Hankaku"
+msgstr "Aç"
+
+#: QShortcut#192
+msgid "Zenkaku Hankaku"
+msgstr ""
+
+#: QShortcut#193
+msgid "Touroku"
+msgstr ""
+
+#: QShortcut#194
+msgid "Massyo"
+msgstr ""
+
+#: QShortcut#195
+#, fuzzy
+msgid "Kana Lock"
+msgstr "Caps Lock"
+
+#: QShortcut#196
+#, fuzzy
+msgid "Kana Shift"
+msgstr "Shift"
+
+#: QShortcut#197
+#, fuzzy
+msgid "Eisu Shift"
+msgstr "Shift"
+
+#: QShortcut#198
+msgid "Eisu toggle"
+msgstr ""
+
+#: QShortcut#199
+msgid "Code input"
+msgstr ""
+
+#: QShortcut#200
+msgid "Multiple Candidate"
+msgstr ""
+
+#: QShortcut#201
+msgid "Previous Candidate"
+msgstr ""
+
+#: QShortcut#202
+#, fuzzy
+msgid "Hangul"
+msgstr "Aç"
+
+#: QShortcut#203
+msgid "Hangul Start"
+msgstr ""
+
+#: QShortcut#204
+#, fuzzy
+msgid "Hangul End"
+msgstr "Aç"
+
+#: QShortcut#205
+msgid "Hangul Hanja"
+msgstr ""
+
+#: QShortcut#206
+msgid "Hangul Jamo"
+msgstr ""
+
+#: QShortcut#207
+msgid "Hangul Romaja"
+msgstr ""
+
+#: QShortcut#208
+msgid "Hangul Jeonja"
+msgstr ""
+
+#: QShortcut#209
+msgid "Hangul Banja"
+msgstr ""
+
+#: QShortcut#210
+msgid "Hangul PreHanja"
+msgstr ""
+
+#: QShortcut#211
+msgid "Hangul PostHanja"
+msgstr ""
+
+#: QShortcut#212
+#, fuzzy
+msgid "Hangul Special"
+msgstr "Özel konum"
+
+#: QShortcut#213
+msgid "Ctrl"
+msgstr "Ctrl"
+
+#: QShortcut#214
+msgid "Shift"
+msgstr "Shift"
+
+#: QShortcut#215
+msgid "Alt"
+msgstr "Alt"
+
+#: QShortcut#216
+msgid "Meta"
+msgstr "Meta"
+
+#: QShortcut#217
+msgid "+"
+msgstr "+"
+
+#: QShortcut#218
+msgid "F%1"
+msgstr "F%1"
+
 #: QSlider#1
 msgctxt "QSlider#1"
 msgid "Page left"
@@ -6677,29 +6671,6 @@ msgstr "Sayfa aşağı"
 #, fuzzy
 msgid "Connection to proxy refused"
 msgstr "Bağlantı reddedildi"
-
-#: QSocks5SocketEngine#10
-msgid "TTL expired"
-msgstr ""
-
-#: QSocks5SocketEngine#11
-msgid "SOCKSv5 command not supported"
-msgstr ""
-
-#: QSocks5SocketEngine#12
-#, fuzzy
-msgid "Address type not supported"
-msgstr "Protokol tipi desteklenmiyor"
-
-#: QSocks5SocketEngine#13
-msgid "Unknown SOCKSv5 proxy error code 0x%1"
-msgstr ""
-
-#: QSocks5SocketEngine#14
-#, fuzzy
-msgctxt "QSocks5SocketEngine#14"
-msgid "Network operation timed out"
-msgstr "Ağ işleminde zamanaşımı"
 
 #: QSocks5SocketEngine#2
 #, fuzzy
@@ -6737,6 +6708,29 @@ msgstr ""
 #: QSocks5SocketEngine#9
 msgid "Connection not allowed by SOCKSv5 server"
 msgstr ""
+
+#: QSocks5SocketEngine#10
+msgid "TTL expired"
+msgstr ""
+
+#: QSocks5SocketEngine#11
+msgid "SOCKSv5 command not supported"
+msgstr ""
+
+#: QSocks5SocketEngine#12
+#, fuzzy
+msgid "Address type not supported"
+msgstr "Protokol tipi desteklenmiyor"
+
+#: QSocks5SocketEngine#13
+msgid "Unknown SOCKSv5 proxy error code 0x%1"
+msgstr ""
+
+#: QSocks5SocketEngine#14
+#, fuzzy
+msgctxt "QSocks5SocketEngine#14"
+msgid "Network operation timed out"
+msgstr "Ağ işleminde zamanaşımı"
 
 #: QSoftKeyManager#1
 msgid "Ok"
@@ -6785,10 +6779,6 @@ msgctxt "QSql#1"
 msgid "Delete"
 msgstr "Sil"
 
-#: QSql#10
-msgid "Cancel your edits?"
-msgstr "Değişiklikleriniz iptal edilsin mi?"
-
 #: QSql#2
 msgid "Delete this record?"
 msgstr "Bu kayıt silinsin mi?"
@@ -6826,11 +6816,47 @@ msgstr "İptal"
 msgid "Confirm"
 msgstr "Doğrula"
 
+#: QSql#10
+msgid "Cancel your edits?"
+msgstr "Değişiklikleriniz iptal edilsin mi?"
+
 #: QSslSocket#1
 #, fuzzy
 msgctxt "QSslSocket#1"
 msgid "No error"
 msgstr "Ağ hatası"
+
+#: QSslSocket#2
+msgid "The issuer certificate could not be found"
+msgstr ""
+
+#: QSslSocket#3
+msgid "The certificate signature could not be decrypted"
+msgstr ""
+
+#: QSslSocket#4
+msgid "The public key in the certificate could not be read"
+msgstr ""
+
+#: QSslSocket#5
+msgid "The signature of the certificate is invalid"
+msgstr ""
+
+#: QSslSocket#6
+msgid "The certificate is not yet valid"
+msgstr ""
+
+#: QSslSocket#7
+msgid "The certificate has expired"
+msgstr ""
+
+#: QSslSocket#8
+msgid "The certificate's notBefore field contains an invalid time"
+msgstr ""
+
+#: QSslSocket#9
+msgid "The certificate's notAfter field contains an invalid time"
+msgstr ""
 
 #: QSslSocket#10
 msgid "The certificate is self-signed, and untrusted"
@@ -6870,10 +6896,6 @@ msgstr ""
 
 #: QSslSocket#19
 msgid "The current candidate issuer certificate was rejected because its subject name did not match the issuer name of the current certificate"
-msgstr ""
-
-#: QSslSocket#2
-msgid "The issuer certificate could not be found"
 msgstr ""
 
 #: QSslSocket#20
@@ -6919,10 +6941,6 @@ msgstr "Yerel gizli anahtar yüklenirken hata, %1"
 msgid "Private key does not certify public key, %1"
 msgstr "Gizli anahtar açık anahtarı sertifikalayamaz, %1"
 
-#: QSslSocket#3
-msgid "The certificate signature could not be decrypted"
-msgstr ""
-
 #: QSslSocket#30
 msgid "Error creating SSL session, %1"
 msgstr "SSL oturumu oluşturma hatası, %1"
@@ -6947,30 +6965,6 @@ msgstr "Okuma hatası: %1"
 #: QSslSocket#35
 msgid "Error during SSL handshake: %1"
 msgstr "SSL tokalaşması sırasında hata: %1"
-
-#: QSslSocket#4
-msgid "The public key in the certificate could not be read"
-msgstr ""
-
-#: QSslSocket#5
-msgid "The signature of the certificate is invalid"
-msgstr ""
-
-#: QSslSocket#6
-msgid "The certificate is not yet valid"
-msgstr ""
-
-#: QSslSocket#7
-msgid "The certificate has expired"
-msgstr ""
-
-#: QSslSocket#8
-msgid "The certificate's notBefore field contains an invalid time"
-msgstr ""
-
-#: QSslSocket#9
-msgid "The certificate's notAfter field contains an invalid time"
-msgstr ""
 
 #: QStateMachine#1
 msgid "Missing initial state in compound state '%1'"
@@ -7123,14 +7117,6 @@ msgstr "Yinele"
 msgid "LRM Left-to-right mark"
 msgstr "LRM Soldan sağa işareti"
 
-#: QUnicodeControlCharacterMenu#10
-msgid "PDF Pop directional formatting"
-msgstr ""
-
-#: QUnicodeControlCharacterMenu#11
-msgid "Insert Unicode control character"
-msgstr "Unicode kontrol karakteri ekle"
-
 #: QUnicodeControlCharacterMenu#2
 #, fuzzy
 msgid "RLM Right-to-left mark"
@@ -7164,6 +7150,14 @@ msgstr ""
 msgid "RLO Start of right-to-left override"
 msgstr ""
 
+#: QUnicodeControlCharacterMenu#10
+msgid "PDF Pop directional formatting"
+msgstr ""
+
+#: QUnicodeControlCharacterMenu#11
+msgid "Insert Unicode control character"
+msgstr "Unicode kontrol karakteri ekle"
+
 #: QWebFrame#1
 #, fuzzy
 msgid "Request cancelled"
@@ -7195,61 +7189,58 @@ msgstr "Dosya var"
 msgid "Redirection limit reached"
 msgstr ""
 
+#: QWebPage#2
+#, fuzzy
+msgid "Bad HTTP request"
+msgstr "HTTP isteği başarısız oldu"
+
+# number of chosen file
+#: QWebPage#3
+#, fuzzy
+msgid "%n file(s)"
+msgstr ""
+"\n"
+"            \n"
+"        "
+
+# default label for Submit buttons in forms on web pages
+#: QWebPage#4
+msgctxt "QWebPage#4"
+msgid "Submit"
+msgstr ""
+
+# Submit (input element) alt text for <input> elements with no alt, title, or
+# value
+#: QWebPage#5
+msgctxt "QWebPage#5"
+msgid "Submit"
+msgstr ""
+
+#: QWebPage#6
+#, fuzzy
+msgctxt "QWebPage#6"
+msgid "Reset"
+msgstr "Sıfırla"
+
+# text that appears at the start of nearly-obsolete web pages in the form of a
+# 'searchable index'
+#: QWebPage#7
+msgid "This is a searchable index. Enter search keywords: "
+msgstr ""
+
+#: QWebPage#8
+#, fuzzy
+msgid "Choose File"
+msgstr "Se&ç"
+
+# text to display in file button used in HTML forms when no file is selected
+#: QWebPage#9
+msgid "No file selected"
+msgstr ""
+
 # Open in New Window context menu item
 #: QWebPage#10
 msgid "Open in New Window"
-msgstr ""
-
-#: QWebPage#100
-#, fuzzy
-msgctxt "QWebPage#100"
-msgid "Page right"
-msgstr "Sayfa sağa"
-
-#: QWebPage#101
-#, fuzzy
-msgctxt "QWebPage#101"
-msgid "Page down"
-msgstr "Sayfa aşağı"
-
-#: QWebPage#102
-#, fuzzy
-msgctxt "QWebPage#102"
-msgid "Scroll left"
-msgstr "Sola kaydır"
-
-#: QWebPage#103
-#, fuzzy
-msgctxt "QWebPage#103"
-msgid "Scroll up"
-msgstr "Yukarı kaydır"
-
-#: QWebPage#104
-#, fuzzy
-msgctxt "QWebPage#104"
-msgid "Scroll right"
-msgstr "Sağa kaydır"
-
-#: QWebPage#105
-#, fuzzy
-msgctxt "QWebPage#105"
-msgid "Scroll down"
-msgstr "Aşağı kaydır"
-
-#: QWebPage#106
-msgid "JavaScript Alert - %1"
-msgstr ""
-
-#: QWebPage#107
-msgid "JavaScript Confirm - %1"
-msgstr ""
-
-#: QWebPage#108
-msgid "JavaScript Prompt - %1"
-msgstr ""
-
-#: QWebPage#109
-msgid "JavaScript Problem - %1"
 msgstr ""
 
 # Download Linked File context menu item
@@ -7257,216 +7248,24 @@ msgstr ""
 msgid "Save Link..."
 msgstr ""
 
-#: QWebPage#110
-msgid "The script on this page appears to have a problem. Do you want to stop the script?"
-msgstr ""
-
-#: QWebPage#111
-msgid "Move the cursor to the next character"
-msgstr ""
-
-#: QWebPage#112
-msgid "Move the cursor to the previous character"
-msgstr ""
-
-#: QWebPage#113
-#, fuzzy
-msgid "Move the cursor to the next word"
-msgstr "Pencereyi taşır"
-
-#: QWebPage#114
-msgid "Move the cursor to the previous word"
-msgstr ""
-
-#: QWebPage#115
-msgid "Move the cursor to the next line"
-msgstr ""
-
-#: QWebPage#116
-msgid "Move the cursor to the previous line"
-msgstr ""
-
-#: QWebPage#117
-msgid "Move the cursor to the start of the line"
-msgstr ""
-
-#: QWebPage#118
-#, fuzzy
-msgid "Move the cursor to the end of the line"
-msgstr "Pencereyi taşır"
-
-#: QWebPage#119
-msgid "Move the cursor to the start of the block"
-msgstr ""
-
 #: QWebPage#12
 #, fuzzy
 msgid "Copy Link"
 msgstr "Bağlantı Konumunu Kopya&la"
-
-#: QWebPage#120
-#, fuzzy
-msgid "Move the cursor to the end of the block"
-msgstr "Pencereyi taşır"
-
-#: QWebPage#121
-#, fuzzy
-msgid "Move the cursor to the start of the document"
-msgstr "XML bildirimi belgenin başlangıcında değil."
-
-#: QWebPage#122
-#, fuzzy
-msgid "Move the cursor to the end of the document"
-msgstr "Tamamlanmamış belge sonu."
-
-#: QWebPage#123
-#, fuzzy
-msgid "Select all"
-msgstr "Tümünü Seç"
-
-#: QWebPage#124
-#, fuzzy
-msgid "Select to the next character"
-msgstr "beklenmeyen karakter"
-
-#: QWebPage#125
-msgid "Select to the previous character"
-msgstr ""
-
-#: QWebPage#126
-#, fuzzy
-msgid "Select to the next word"
-msgstr "Sonraki getirilemedi"
-
-#: QWebPage#127
-msgid "Select to the previous word"
-msgstr ""
-
-#: QWebPage#128
-#, fuzzy
-msgid "Select to the next line"
-msgstr "Sonraki getirilemedi"
-
-#: QWebPage#129
-msgid "Select to the previous line"
-msgstr ""
 
 #: QWebPage#13
 #, fuzzy
 msgid "Open Image"
 msgstr "Aç "
 
-#: QWebPage#130
-msgid "Select to the start of the line"
-msgstr ""
-
-#: QWebPage#131
-msgid "Select to the end of the line"
-msgstr ""
-
-#: QWebPage#132
-msgid "Select to the start of the block"
-msgstr ""
-
-#: QWebPage#133
-msgid "Select to the end of the block"
-msgstr ""
-
-#: QWebPage#134
-#, fuzzy
-msgid "Select to the start of the document"
-msgstr "XML bildirimi belgenin başlangıcında değil."
-
-#: QWebPage#135
-#, fuzzy
-msgid "Select to the end of the document"
-msgstr "Tamamlanmamış belge sonu."
-
-#: QWebPage#136
-#, fuzzy
-msgid "Delete to the start of the word"
-msgstr "Bu kayıt silinsin mi?"
-
-#: QWebPage#137
-msgid "Delete to the end of the word"
-msgstr ""
-
-#: QWebPage#138
-msgid "Insert a new paragraph"
-msgstr ""
-
-#: QWebPage#139
-msgid "Insert a new line"
-msgstr ""
-
 # Download Image context menu item
 #: QWebPage#14
 msgid "Save Image"
 msgstr ""
 
-#: QWebPage#140
-msgid "Paste and Match Style"
-msgstr ""
-
-#: QWebPage#141
-msgid "Remove formatting"
-msgstr ""
-
-#: QWebPage#142
-#, fuzzy
-msgid "Strikethrough"
-msgstr "&Üzeriçizili"
-
-#: QWebPage#143
-msgid "Subscript"
-msgstr ""
-
-#: QWebPage#144
-msgid "Superscript"
-msgstr ""
-
-#: QWebPage#145
-msgid "Insert Bulleted List"
-msgstr ""
-
-#: QWebPage#146
-msgid "Insert Numbered List"
-msgstr ""
-
-#: QWebPage#147
-#, fuzzy
-msgid "Indent"
-msgstr "Ekle"
-
-#: QWebPage#148
-msgid "Outdent"
-msgstr ""
-
-#: QWebPage#149
-#, fuzzy
-msgid "Center"
-msgstr "Enter"
-
 # Copy Link context menu item
 #: QWebPage#15
 msgid "Copy Image"
-msgstr ""
-
-#: QWebPage#150
-msgid "Justify"
-msgstr ""
-
-#: QWebPage#151
-msgid "Align Left"
-msgstr ""
-
-#: QWebPage#152
-#, fuzzy
-msgid "Align Right"
-msgstr "Sağ"
-
-#: QWebPage#153
-msgid "Web Inspector - %2"
 msgstr ""
 
 #: QWebPage#16
@@ -7490,11 +7289,6 @@ msgstr "Geri Git"
 #, fuzzy
 msgid "Go Forward"
 msgstr "İleri"
-
-#: QWebPage#2
-#, fuzzy
-msgid "Bad HTTP request"
-msgstr "HTTP isteği başarısız oldu"
 
 #: QWebPage#20
 #, fuzzy
@@ -7551,15 +7345,6 @@ msgstr ""
 msgid "Open Link"
 msgstr "Aç "
 
-# number of chosen file
-#: QWebPage#3
-#, fuzzy
-msgid "%n file(s)"
-msgstr ""
-"\n"
-"            \n"
-"        "
-
 #: QWebPage#30
 #, fuzzy
 msgctxt "QWebPage#30"
@@ -7613,12 +7398,6 @@ msgctxt "QWebPage#39"
 msgid "Italic"
 msgstr ""
 
-# default label for Submit buttons in forms on web pages
-#: QWebPage#4
-msgctxt "QWebPage#4"
-msgid "Submit"
-msgstr ""
-
 #: QWebPage#40
 #, fuzzy
 msgid "Underline"
@@ -7659,20 +7438,16 @@ msgstr "Sağ gölge"
 msgid "Inspect"
 msgstr "Ekle"
 
-# Label for only item in menu that appears when clicking on the search field image, when no searches have been performed
+# Label for only item in menu that appears when clicking on the search field
+# image, when no searches have been performed
 #: QWebPage#48
 msgid "No recent searches"
 msgstr ""
 
-# label for first item in the menu that appears when clicking on the search field image, used as embedded menu title
+# label for first item in the menu that appears when clicking on the search
+# field image, used as embedded menu title
 #: QWebPage#49
 msgid "Recent searches"
-msgstr ""
-
-# Submit (input element) alt text for <input> elements with no alt, title, or value
-#: QWebPage#5
-msgctxt "QWebPage#5"
-msgid "Submit"
 msgstr ""
 
 # menu item in Recent Searches menu that empties menu's contents
@@ -7726,12 +7501,6 @@ msgstr ""
 msgid "Unmute Button"
 msgstr ""
 
-#: QWebPage#6
-#, fuzzy
-msgctxt "QWebPage#6"
-msgid "Reset"
-msgstr "Sıfırla"
-
 # Media controller element
 #: QWebPage#60
 msgid "Play Button"
@@ -7780,11 +7549,6 @@ msgstr ""
 # Media controller element
 #: QWebPage#69
 msgid "Fullscreen Button"
-msgstr ""
-
-# text that appears at the start of nearly-obsolete web pages in the form of a 'searchable index'
-#: QWebPage#7
-msgid "This is a searchable index. Enter search keywords: "
 msgstr ""
 
 # Media controller element
@@ -7837,11 +7601,6 @@ msgstr ""
 msgid "Movie time scrubber thumb"
 msgstr ""
 
-#: QWebPage#8
-#, fuzzy
-msgid "Choose File"
-msgstr "Se&ç"
-
 #: QWebPage#80
 #, fuzzy
 msgid "Rewind movie"
@@ -7890,11 +7649,6 @@ msgstr ""
 # Media time description
 #: QWebPage#89
 msgid "%1 days %2 hours %3 minutes %4 seconds"
-msgstr ""
-
-# text to display in file button used in HTML forms when no file is selected
-#: QWebPage#9
-msgid "No file selected"
 msgstr ""
 
 # Media time description
@@ -7954,6 +7708,250 @@ msgctxt "QWebPage#99"
 msgid "Page up"
 msgstr "Sayfa yukarı"
 
+#: QWebPage#100
+#, fuzzy
+msgctxt "QWebPage#100"
+msgid "Page right"
+msgstr "Sayfa sağa"
+
+#: QWebPage#101
+#, fuzzy
+msgctxt "QWebPage#101"
+msgid "Page down"
+msgstr "Sayfa aşağı"
+
+#: QWebPage#102
+#, fuzzy
+msgctxt "QWebPage#102"
+msgid "Scroll left"
+msgstr "Sola kaydır"
+
+#: QWebPage#103
+#, fuzzy
+msgctxt "QWebPage#103"
+msgid "Scroll up"
+msgstr "Yukarı kaydır"
+
+#: QWebPage#104
+#, fuzzy
+msgctxt "QWebPage#104"
+msgid "Scroll right"
+msgstr "Sağa kaydır"
+
+#: QWebPage#105
+#, fuzzy
+msgctxt "QWebPage#105"
+msgid "Scroll down"
+msgstr "Aşağı kaydır"
+
+#: QWebPage#106
+msgid "JavaScript Alert - %1"
+msgstr ""
+
+#: QWebPage#107
+msgid "JavaScript Confirm - %1"
+msgstr ""
+
+#: QWebPage#108
+msgid "JavaScript Prompt - %1"
+msgstr ""
+
+#: QWebPage#109
+msgid "JavaScript Problem - %1"
+msgstr ""
+
+#: QWebPage#110
+msgid "The script on this page appears to have a problem. Do you want to stop the script?"
+msgstr ""
+
+#: QWebPage#111
+msgid "Move the cursor to the next character"
+msgstr ""
+
+#: QWebPage#112
+msgid "Move the cursor to the previous character"
+msgstr ""
+
+#: QWebPage#113
+#, fuzzy
+msgid "Move the cursor to the next word"
+msgstr "Pencereyi taşır"
+
+#: QWebPage#114
+msgid "Move the cursor to the previous word"
+msgstr ""
+
+#: QWebPage#115
+msgid "Move the cursor to the next line"
+msgstr ""
+
+#: QWebPage#116
+msgid "Move the cursor to the previous line"
+msgstr ""
+
+#: QWebPage#117
+msgid "Move the cursor to the start of the line"
+msgstr ""
+
+#: QWebPage#118
+#, fuzzy
+msgid "Move the cursor to the end of the line"
+msgstr "Pencereyi taşır"
+
+#: QWebPage#119
+msgid "Move the cursor to the start of the block"
+msgstr ""
+
+#: QWebPage#120
+#, fuzzy
+msgid "Move the cursor to the end of the block"
+msgstr "Pencereyi taşır"
+
+#: QWebPage#121
+#, fuzzy
+msgid "Move the cursor to the start of the document"
+msgstr "XML bildirimi belgenin başlangıcında değil."
+
+#: QWebPage#122
+#, fuzzy
+msgid "Move the cursor to the end of the document"
+msgstr "Tamamlanmamış belge sonu."
+
+#: QWebPage#123
+#, fuzzy
+msgid "Select all"
+msgstr "Tümünü Seç"
+
+#: QWebPage#124
+#, fuzzy
+msgid "Select to the next character"
+msgstr "beklenmeyen karakter"
+
+#: QWebPage#125
+msgid "Select to the previous character"
+msgstr ""
+
+#: QWebPage#126
+#, fuzzy
+msgid "Select to the next word"
+msgstr "Sonraki getirilemedi"
+
+#: QWebPage#127
+msgid "Select to the previous word"
+msgstr ""
+
+#: QWebPage#128
+#, fuzzy
+msgid "Select to the next line"
+msgstr "Sonraki getirilemedi"
+
+#: QWebPage#129
+msgid "Select to the previous line"
+msgstr ""
+
+#: QWebPage#130
+msgid "Select to the start of the line"
+msgstr ""
+
+#: QWebPage#131
+msgid "Select to the end of the line"
+msgstr ""
+
+#: QWebPage#132
+msgid "Select to the start of the block"
+msgstr ""
+
+#: QWebPage#133
+msgid "Select to the end of the block"
+msgstr ""
+
+#: QWebPage#134
+#, fuzzy
+msgid "Select to the start of the document"
+msgstr "XML bildirimi belgenin başlangıcında değil."
+
+#: QWebPage#135
+#, fuzzy
+msgid "Select to the end of the document"
+msgstr "Tamamlanmamış belge sonu."
+
+#: QWebPage#136
+#, fuzzy
+msgid "Delete to the start of the word"
+msgstr "Bu kayıt silinsin mi?"
+
+#: QWebPage#137
+msgid "Delete to the end of the word"
+msgstr ""
+
+#: QWebPage#138
+msgid "Insert a new paragraph"
+msgstr ""
+
+#: QWebPage#139
+msgid "Insert a new line"
+msgstr ""
+
+#: QWebPage#140
+msgid "Paste and Match Style"
+msgstr ""
+
+#: QWebPage#141
+msgid "Remove formatting"
+msgstr ""
+
+#: QWebPage#142
+#, fuzzy
+msgid "Strikethrough"
+msgstr "&Üzeriçizili"
+
+#: QWebPage#143
+msgid "Subscript"
+msgstr ""
+
+#: QWebPage#144
+msgid "Superscript"
+msgstr ""
+
+#: QWebPage#145
+msgid "Insert Bulleted List"
+msgstr ""
+
+#: QWebPage#146
+msgid "Insert Numbered List"
+msgstr ""
+
+#: QWebPage#147
+#, fuzzy
+msgid "Indent"
+msgstr "Ekle"
+
+#: QWebPage#148
+msgid "Outdent"
+msgstr ""
+
+#: QWebPage#149
+#, fuzzy
+msgid "Center"
+msgstr "Enter"
+
+#: QWebPage#150
+msgid "Justify"
+msgstr ""
+
+#: QWebPage#151
+msgid "Align Left"
+msgstr ""
+
+#: QWebPage#152
+#, fuzzy
+msgid "Align Right"
+msgstr "Sağ"
+
+#: QWebPage#153
+msgid "Web Inspector - %2"
+msgstr ""
+
 #: QWhatsThisAction#1
 msgctxt "QWhatsThisAction#1"
 msgid "What's This?"
@@ -7968,18 +7966,6 @@ msgstr "*"
 msgctxt "QWizard#1"
 msgid "Go Back"
 msgstr "Geri Git"
-
-#: QWizard#10
-#, fuzzy
-msgctxt "QWizard#10"
-msgid "Help"
-msgstr "Yardım"
-
-#: QWizard#11
-#, fuzzy
-msgctxt "QWizard#11"
-msgid "&Help"
-msgstr "&Yardım"
 
 #: QWizard#2
 #, fuzzy
@@ -8024,31 +8010,23 @@ msgctxt "QWizard#9"
 msgid "Cancel"
 msgstr "İptal"
 
+#: QWizard#10
+#, fuzzy
+msgctxt "QWizard#10"
+msgid "Help"
+msgstr "Yardım"
+
+#: QWizard#11
+#, fuzzy
+msgctxt "QWizard#11"
+msgid "&Help"
+msgstr "&Yardım"
+
 #: QWorkspace#1
 #, fuzzy
 msgctxt "QWorkspace#1"
 msgid "Close"
 msgstr "Kapat"
-
-#: QWorkspace#10
-#, fuzzy
-msgctxt "QWorkspace#10"
-msgid "Stay on &Top"
-msgstr "&Herzaman Üstte"
-
-#: QWorkspace#11
-msgid "Sh&ade"
-msgstr "G&ölgele"
-
-#: QWorkspace#12
-#, fuzzy
-msgctxt "QWorkspace#12"
-msgid "%1 - [%2]"
-msgstr "%1 - [%2]"
-
-#: QWorkspace#13
-msgid "&Unshade"
-msgstr "Gölgele&me"
 
 #: QWorkspace#2
 #, fuzzy
@@ -8098,10 +8076,62 @@ msgctxt "QWorkspace#9"
 msgid "&Close"
 msgstr "K&apat"
 
+#: QWorkspace#10
+#, fuzzy
+msgctxt "QWorkspace#10"
+msgid "Stay on &Top"
+msgstr "&Herzaman Üstte"
+
+#: QWorkspace#11
+msgid "Sh&ade"
+msgstr "G&ölgele"
+
+#: QWorkspace#12
+#, fuzzy
+msgctxt "QWorkspace#12"
+msgid "%1 - [%2]"
+msgstr "%1 - [%2]"
+
+#: QWorkspace#13
+msgid "&Unshade"
+msgstr "Gölgele&me"
+
 #: QXml#1
 msgctxt "QXml#1"
 msgid "no error occurred"
 msgstr "hata yok"
+
+#: QXml#2
+msgid "error triggered by consumer"
+msgstr "hata tüketici tarafından tetiklendi"
+
+#: QXml#3
+msgid "unexpected end of file"
+msgstr "beklenmeyen dosya sonu"
+
+#: QXml#4
+msgid "more than one document type definition"
+msgstr "birden fazla belge tipi tanımlaması"
+
+#: QXml#5
+msgid "error occurred while parsing element"
+msgstr "Öge ayrıştırılırken hata oluştu"
+
+#: QXml#6
+msgid "tag mismatch"
+msgstr "etiket uyumsuzluğu"
+
+#: QXml#7
+msgid "error occurred while parsing content"
+msgstr "İçerik ayrıştırılırken hata oluştu"
+
+#: QXml#8
+msgid "unexpected character"
+msgstr "beklenmeyen karakter"
+
+#: QXml#9
+msgid "invalid name for processing instruction"
+msgstr "işleme komutu için geçersiz isim"
 
 #: QXml#10
 msgid "version expected while reading the XML declaration"
@@ -8143,10 +8173,6 @@ msgstr "DTD içerisinde genel iç varlık referansılarına (entity) izin verilm
 msgid "external parsed general entity reference not allowed in attribute value"
 msgstr "Nitelik değeri içerisinde ayrıştırılmış genel dış varlık referansılarına (entity) izin verilmez"
 
-#: QXml#2
-msgid "error triggered by consumer"
-msgstr "hata tüketici tarafından tetiklendi"
-
 #: QXml#20
 msgid "external parsed general entity reference not allowed in DTD"
 msgstr "DTD içerisinde ayrıştırılmış genel dış varlık referansılarına (entity) izin verilmez"
@@ -8162,34 +8188,6 @@ msgstr "özyinelemeli varlık referansları (entity)"
 #: QXml#23
 msgid "error in the text declaration of an external entity"
 msgstr "dış varlık referansının (entity) metin bildiriminde hata"
-
-#: QXml#3
-msgid "unexpected end of file"
-msgstr "beklenmeyen dosya sonu"
-
-#: QXml#4
-msgid "more than one document type definition"
-msgstr "birden fazla belge tipi tanımlaması"
-
-#: QXml#5
-msgid "error occurred while parsing element"
-msgstr "Öge ayrıştırılırken hata oluştu"
-
-#: QXml#6
-msgid "tag mismatch"
-msgstr "etiket uyumsuzluğu"
-
-#: QXml#7
-msgid "error occurred while parsing content"
-msgstr "İçerik ayrıştırılırken hata oluştu"
-
-#: QXml#8
-msgid "unexpected character"
-msgstr "beklenmeyen karakter"
-
-#: QXml#9
-msgid "invalid name for processing instruction"
-msgstr "işleme komutu için geçersiz isim"
 
 #: QXmlPatternistCLI#1
 msgid "Warning in %1, at line %2, column %3: %4"
@@ -8216,6 +8214,38 @@ msgstr ""
 #: QXmlStream#1
 msgid "Extra content at end of document."
 msgstr "Belge sonunda fazladan içerik var."
+
+#: QXmlStream#2
+msgid "Invalid entity value."
+msgstr "Geçersiz varlık referansı (entity) değeri."
+
+#: QXmlStream#3
+msgid "Invalid XML character."
+msgstr "Geçersiz XML karakteri."
+
+#: QXmlStream#4
+msgid "Sequence ']]>' not allowed in content."
+msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+
+#: QXmlStream#5
+msgid "Encountered incorrectly encoded content."
+msgstr "Doğru şekilde kodlanmamış içeriğe rastlandı."
+
+#: QXmlStream#6
+msgid "Namespace prefix '%1' not declared"
+msgstr "İsimlendirme öneki '%1' bildirilmedi"
+
+#: QXmlStream#7
+msgid "Illegal namespace declaration."
+msgstr "Geçersiz isimlendirme bildirimi."
+
+#: QXmlStream#8
+msgid "Attribute redefined."
+msgstr "Nitelik yeniden tanımlandı."
+
+#: QXmlStream#9
+msgid "Unexpected character '%1' in public id literal."
+msgstr ""
 
 #: QXmlStream#10
 msgid "Invalid XML version string."
@@ -8257,10 +8287,6 @@ msgstr "Geçersiz belge."
 msgid "Expected "
 msgstr "Beklenen  "
 
-#: QXmlStream#2
-msgid "Invalid entity value."
-msgstr "Geçersiz varlık referansı (entity) değeri."
-
 #: QXmlStream#20
 msgid ", but got '"
 msgstr ", alınan '"
@@ -8301,10 +8327,6 @@ msgstr "Geçersiz bir işleme komutu adı."
 msgid "%1 is an invalid PUBLIC identifier."
 msgstr "%1 geçerisiz bir PUBLIC tanımlayıcı."
 
-#: QXmlStream#3
-msgid "Invalid XML character."
-msgstr "Geçersiz XML karakteri."
-
 #: QXmlStream#30
 msgid "Invalid XML name."
 msgstr "Geçersiz XML adı."
@@ -8329,1372 +8351,17 @@ msgstr " '%1' dış varlık referansının (entity) nitelik değerine referans."
 msgid "Invalid character reference."
 msgstr "Geçersiz karakter referansı."
 
-#: QXmlStream#4
-msgid "Sequence ']]>' not allowed in content."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
-
-#: QXmlStream#5
-msgid "Encountered incorrectly encoded content."
-msgstr "Doğru şekilde kodlanmamış içeriğe rastlandı."
-
-#: QXmlStream#6
-msgid "Namespace prefix '%1' not declared"
-msgstr "İsimlendirme öneki '%1' bildirilmedi"
-
-#: QXmlStream#7
-msgid "Illegal namespace declaration."
-msgstr "Geçersiz isimlendirme bildirimi."
-
-#: QXmlStream#8
-msgid "Attribute redefined."
-msgstr "Nitelik yeniden tanımlandı."
-
-#: QXmlStream#9
-msgid "Unexpected character '%1' in public id literal."
-msgstr ""
-
 #: QtXmlPatterns#1
 #, fuzzy
 msgid "%1 is an unsupported encoding."
 msgstr "%1 geçersiz bir kodlama adıdır."
 
-#: QtXmlPatterns#10
-msgid "Overflow: Can't represent date %1."
-msgstr ""
-
-#: QtXmlPatterns#100
-msgid "Namespace declarations must occur before function, variable, and option declarations."
-msgstr ""
-
-#: QtXmlPatterns#101
-msgid "Module imports must occur before function, variable, and option declarations."
-msgstr ""
-
-#: QtXmlPatterns#102
-msgid "The keyword %1 cannot occur with any other mode name."
-msgstr ""
-
-#: QtXmlPatterns#103
-msgid "The value of attribute %1 must be of type %2, which %3 isn't."
-msgstr ""
-
-#: QtXmlPatterns#104
-msgid "It is not possible to redeclare prefix %1."
-msgstr ""
-
-#: QtXmlPatterns#105
-msgid "The prefix %1 cannot be bound. By default, it is already bound to the namespace %2."
-msgstr ""
-
-#: QtXmlPatterns#106
-msgid "Prefix %1 is already declared in the prolog."
-msgstr ""
-
-#: QtXmlPatterns#107
-msgid "The name of an option must have a prefix. There is no default namespace for options."
-msgstr ""
-
-#: QtXmlPatterns#108
-msgid "The Schema Import feature is not supported, and therefore %1 declarations cannot occur."
-msgstr ""
-
-#: QtXmlPatterns#109
-msgid "The target namespace of a %1 cannot be empty."
-msgstr ""
-
-#: QtXmlPatterns#11
-msgid "Day %1 is invalid for month %2."
-msgstr ""
-
-#: QtXmlPatterns#110
-#, fuzzy
-msgid "The module import feature is not supported"
-msgstr "`%1' protokolü desteklenmiyor"
-
-#: QtXmlPatterns#111
-msgid "A variable with name %1 has already been declared."
-msgstr ""
-
-#: QtXmlPatterns#112
-msgid "No value is available for the external variable with name %1."
-msgstr ""
-
-#: QtXmlPatterns#113
-msgid "A stylesheet function must have a prefixed name."
-msgstr ""
-
-#: QtXmlPatterns#114
-msgid "The namespace for a user defined function cannot be empty (try the predefined prefix %1 which exists for cases like this)"
-msgstr ""
-
-#: QtXmlPatterns#115
-msgid "The namespace %1 is reserved; therefore user defined functions may not use it. Try the predefined prefix %2, which exists for these cases."
-msgstr ""
-
-#: QtXmlPatterns#116
-msgid "The namespace of a user defined function in a library module must be equivalent to the module namespace. In other words, it should be %1 instead of %2"
-msgstr ""
-
-#: QtXmlPatterns#117
-msgid "A function already exists with the signature %1."
-msgstr ""
-
-#: QtXmlPatterns#118
-msgid "No external functions are supported. All supported functions can be used directly, without first declaring them as external"
-msgstr ""
-
-#: QtXmlPatterns#119
-msgid "An argument with name %1 has already been declared. Every argument name must be unique."
-msgstr ""
-
-#: QtXmlPatterns#12
-msgid "Time 24:%1:%2.%3 is invalid. Hour is 24, but minutes, seconds, and milliseconds are not all 0; "
-msgstr ""
-
-#: QtXmlPatterns#120
-msgid "When function %1 is used for matching inside a pattern, the argument must be a variable reference or a string literal."
-msgstr ""
-
-#: QtXmlPatterns#121
-msgid "In an XSL-T pattern, the first argument to function %1 must be a string literal, when used for matching."
-msgstr ""
-
-#: QtXmlPatterns#122
-msgid "In an XSL-T pattern, the first argument to function %1 must be a literal or a variable reference, when used for matching."
-msgstr ""
-
-#: QtXmlPatterns#123
-msgid "In an XSL-T pattern, function %1 cannot have a third argument."
-msgstr ""
-
-#: QtXmlPatterns#124
-msgid "In an XSL-T pattern, only function %1 and %2, not %3, can be used for matching."
-msgstr ""
-
-#: QtXmlPatterns#125
-msgid "In an XSL-T pattern, axis %1 cannot be used, only axis %2 or %3 can."
-msgstr ""
-
-#: QtXmlPatterns#126
-#, fuzzy
-msgid "%1 is an invalid template mode name."
-msgstr "%1 geçersiz bir kodlama adıdır."
-
-#: QtXmlPatterns#127
-msgid "The name of a variable bound in a for-expression must be different from the positional variable. Hence, the two variables named %1 collide."
-msgstr ""
-
-#: QtXmlPatterns#128
-msgid "The Schema Validation Feature is not supported. Hence, %1-expressions may not be used."
-msgstr ""
-
-#: QtXmlPatterns#129
-msgid "None of the pragma expressions are supported. Therefore, a fallback expression must be present"
-msgstr ""
-
-#: QtXmlPatterns#13
-msgid "Time %1:%2:%3.%4 is invalid."
-msgstr ""
-
-#: QtXmlPatterns#130
-msgid "Each name of a template parameter must be unique; %1 is duplicated."
-msgstr ""
-
-#: QtXmlPatterns#131
-msgid "The %1-axis is unsupported in XQuery"
-msgstr ""
-
-#: QtXmlPatterns#132
-msgid "No function with name %1 is available."
-msgstr ""
-
-#: QtXmlPatterns#133
-msgid "The namespace URI cannot be the empty string when binding to a prefix, %1."
-msgstr ""
-
-#: QtXmlPatterns#134
-#, fuzzy
-msgid "%1 is an invalid namespace URI."
-msgstr "%1 geçersiz bir kodlama adıdır."
-
-#: QtXmlPatterns#135
-msgid "It is not possible to bind to the prefix %1"
-msgstr ""
-
-#: QtXmlPatterns#136
-msgid "Namespace %1 can only be bound to %2 (and it is, in either case, pre-declared)."
-msgstr ""
-
-#: QtXmlPatterns#137
-msgid "Prefix %1 can only be bound to %2 (and it is, in either case, pre-declared)."
-msgstr ""
-
-#: QtXmlPatterns#138
-msgid "Two namespace declaration attributes have the same name: %1."
-msgstr ""
-
-#: QtXmlPatterns#139
-msgid "The namespace URI must be a constant and cannot use enclosed expressions."
-msgstr ""
-
-#: QtXmlPatterns#14
-msgid "Overflow: Date can't be represented."
-msgstr ""
-
-#: QtXmlPatterns#140
-msgid "An attribute with name %1 has already appeared on this element."
-msgstr ""
-
-#: QtXmlPatterns#141
-msgid "A direct element constructor is not well-formed. %1 is ended with %2."
-msgstr ""
-
-#: QtXmlPatterns#142
-msgid "The name %1 does not refer to any schema type."
-msgstr ""
-
-#: QtXmlPatterns#143
-msgid "%1 is an complex type. Casting to complex types is not possible. However, casting to atomic types such as %2 works."
-msgstr ""
-
-#: QtXmlPatterns#144
-msgid "%1 is not an atomic type. Casting is only possible to atomic types."
-msgstr ""
-
-#: QtXmlPatterns#145
-#, fuzzy
-msgid "%1 is not a valid name for a processing-instruction."
-msgstr "işleme komutu için geçersiz isim"
-
-#: QtXmlPatterns#146
-msgid "%1 is not in the in-scope attribute declarations. Note that the schema import feature is not supported."
-msgstr ""
-
-#: QtXmlPatterns#147
-msgid "The name of an extension expression must be in a namespace."
-msgstr ""
-
-#: QtXmlPatterns#148
-msgid "Element %1 is not allowed at this location."
-msgstr ""
-
-#: QtXmlPatterns#149
-msgid "Text nodes are not allowed at this location."
-msgstr ""
-
-#: QtXmlPatterns#15
-msgid "At least one component must be present."
-msgstr ""
-
-#: QtXmlPatterns#150
-msgid "Parse error: %1"
-msgstr ""
-
-#: QtXmlPatterns#151
-msgid "The value of the XSL-T version attribute must be a value of type %1, which %2 isn't."
-msgstr ""
-
-#: QtXmlPatterns#152
-msgid "Running an XSL-T 1.0 stylesheet with a 2.0 processor."
-msgstr ""
-
-#: QtXmlPatterns#153
-msgid "Unknown XSL-T attribute %1."
-msgstr ""
-
-#: QtXmlPatterns#154
-msgid "Attribute %1 and %2 are mutually exclusive."
-msgstr ""
-
-#: QtXmlPatterns#155
-msgid "In a simplified stylesheet module, attribute %1 must be present."
-msgstr ""
-
-#: QtXmlPatterns#156
-msgid "If element %1 has no attribute %2, it cannot have attribute %3 or %4."
-msgstr ""
-
-#: QtXmlPatterns#157
-msgid "Element %1 must have at least one of the attributes %2 or %3."
-msgstr ""
-
-#: QtXmlPatterns#158
-msgid "At least one mode must be specified in the %1-attribute on element %2."
-msgstr ""
-
-#: QtXmlPatterns#159
-msgid "Element %1 must come last."
-msgstr ""
-
-#: QtXmlPatterns#16
-msgid "At least one time component must appear after the %1-delimiter."
-msgstr ""
-
-#: QtXmlPatterns#160
-msgid "At least one %1-element must occur before %2."
-msgstr ""
-
-#: QtXmlPatterns#161
-msgid "Only one %1-element can appear."
-msgstr ""
-
-#: QtXmlPatterns#162
-msgid "At least one %1-element must occur inside %2."
-msgstr ""
-
-#: QtXmlPatterns#163
-msgid "When attribute %1 is present on %2, a sequence constructor cannot be used."
-msgstr ""
-
-#: QtXmlPatterns#164
-msgid "Element %1 must have either a %2-attribute or a sequence constructor."
-msgstr ""
-
-#: QtXmlPatterns#165
-msgid "When a parameter is required, a default value cannot be supplied through a %1-attribute or a sequence constructor."
-msgstr ""
-
-#: QtXmlPatterns#166
-msgid "Element %1 cannot have children."
-msgstr ""
-
-#: QtXmlPatterns#167
-msgid "Element %1 cannot have a sequence constructor."
-msgstr ""
-
-#: QtXmlPatterns#168
-msgid "The attribute %1 cannot appear on %2, when it is a child of %3."
-msgstr ""
-
-#: QtXmlPatterns#169
-msgid "A parameter in a function cannot be declared to be a tunnel."
-msgstr ""
-
-#: QtXmlPatterns#17
-msgid "%1 is not a valid value of type %2."
-msgstr ""
-
-#: QtXmlPatterns#170
-msgid "This processor is not Schema-aware and therefore %1 cannot be used."
-msgstr ""
-
-#: QtXmlPatterns#171
-msgid "Top level stylesheet elements must be in a non-null namespace, which %1 isn't."
-msgstr ""
-
-#: QtXmlPatterns#172
-msgid "The value for attribute %1 on element %2 must either be %3 or %4, not %5."
-msgstr ""
-
-#: QtXmlPatterns#173
-msgid "Attribute %1 cannot have the value %2."
-msgstr ""
-
-#: QtXmlPatterns#174
-msgid "The attribute %1 can only appear on the first %2 element."
-msgstr ""
-
-#: QtXmlPatterns#175
-msgid "At least one %1 element must appear as child of %2."
-msgstr ""
-
-#: QtXmlPatterns#176
-msgid "Empty particle cannot be derived from non-empty particle."
-msgstr ""
-
-#: QtXmlPatterns#177
-msgid "Derived particle is missing element %1."
-msgstr ""
-
-#: QtXmlPatterns#178
-msgid "Derived element %1 is missing value constraint as defined in base particle."
-msgstr ""
-
-#: QtXmlPatterns#179
-msgid "Derived element %1 has weaker value constraint than base particle."
-msgstr ""
-
-#: QtXmlPatterns#18
-msgid "When casting to %1 from %2, the source value cannot be %3."
-msgstr ""
-
-#: QtXmlPatterns#180
-msgid "Fixed value constraint of element %1 differs from value constraint in base particle."
-msgstr ""
-
-#: QtXmlPatterns#181
-msgid "Derived element %1 cannot be nillable as base element is not nillable."
-msgstr ""
-
-#: QtXmlPatterns#182
-msgid "Block constraints of derived element %1 must not be more weaker than in the base element."
-msgstr ""
-
-#: QtXmlPatterns#183
-msgid "Simple type of derived element %1 cannot be validly derived from base element."
-msgstr ""
-
-#: QtXmlPatterns#184
-msgid "Complex type of derived element %1 cannot be validly derived from base element."
-msgstr ""
-
-#: QtXmlPatterns#185
-msgid "Element %1 is missing in derived particle."
-msgstr ""
-
-#: QtXmlPatterns#186
-msgid "Element %1 does not match namespace constraint of wildcard in base particle."
-msgstr ""
-
-#: QtXmlPatterns#187
-msgid "Wildcard in derived particle is not a valid subset of wildcard in base particle."
-msgstr ""
-
-#: QtXmlPatterns#188
-msgid "processContent of wildcard in derived particle is weaker than wildcard in base particle."
-msgstr ""
-
-#: QtXmlPatterns#189
-msgid "Derived particle allows content that is not allowed in the base particle."
-msgstr ""
-
-#: QtXmlPatterns#19
-msgid "Integer division (%1) by zero (%2) is undefined."
-msgstr ""
-
-#: QtXmlPatterns#190
-msgid "%1 has inheritance loop in its base type %2."
-msgstr ""
-
-#: QtXmlPatterns#191
-msgid "Circular inheritance of base type %1."
-msgstr ""
-
-#: QtXmlPatterns#192
-msgid "Circular inheritance of union %1."
-msgstr ""
-
-#: QtXmlPatterns#193
-msgid "%1 is not allowed to derive from %2 by restriction as the latter defines it as final."
-msgstr ""
-
-#: QtXmlPatterns#194
-msgid "%1 is not allowed to derive from %2 by extension as the latter defines it as final."
-msgstr ""
-
-#: QtXmlPatterns#195
-msgid "Base type of simple type %1 cannot be complex type %2."
-msgstr ""
-
-#: QtXmlPatterns#196
-msgid "Simple type %1 cannot have direct base type %2."
-msgstr ""
-
-#: QtXmlPatterns#197
-msgid "Simple type %1 is not allowed to have base type %2."
-msgstr ""
-
-#: QtXmlPatterns#198
-msgid "Simple type %1 can only have simple atomic type as base type."
-msgstr ""
-
-#: QtXmlPatterns#199
-msgid "Simple type %1 cannot derive from %2 as the latter defines restriction as final."
-msgstr ""
-
 #: QtXmlPatterns#2
 msgid "%1 contains octets which are disallowed in the requested encoding %2."
 msgstr ""
 
-#: QtXmlPatterns#20
-msgid "Division (%1) by zero (%2) is undefined."
-msgstr ""
-
-#: QtXmlPatterns#200
-msgid "Variety of item type of %1 must be either atomic or union."
-msgstr ""
-
-#: QtXmlPatterns#201
-msgid "Variety of member types of %1 must be atomic."
-msgstr ""
-
-#: QtXmlPatterns#202
-msgid "%1 is not allowed to derive from %2 by list as the latter defines it as final."
-msgstr ""
-
-#: QtXmlPatterns#203
-msgid "Simple type %1 is only allowed to have %2 facet."
-msgstr ""
-
-#: QtXmlPatterns#204
-msgid "Base type of simple type %1 must have variety of type list."
-msgstr ""
-
-#: QtXmlPatterns#205
-msgid "Base type of simple type %1 has defined derivation by restriction as final."
-msgstr ""
-
-#: QtXmlPatterns#206
-msgid "Item type of base type does not match item type of %1."
-msgstr ""
-
-#: QtXmlPatterns#207
-msgid "Simple type %1 contains not allowed facet type %2."
-msgstr ""
-
-#: QtXmlPatterns#208
-msgid "%1 is not allowed to derive from %2 by union as the latter defines it as final."
-msgstr ""
-
-#: QtXmlPatterns#209
-msgid "%1 is not allowed to have any facets."
-msgstr ""
-
-#: QtXmlPatterns#21
-msgid "Modulus division (%1) by zero (%2) is undefined."
-msgstr ""
-
-#: QtXmlPatterns#210
-msgid "Base type %1 of simple type %2 must have variety of union."
-msgstr ""
-
-#: QtXmlPatterns#211
-msgid "Base type %1 of simple type %2 is not allowed to have restriction in %3 attribute."
-msgstr ""
-
-#: QtXmlPatterns#212
-msgid "Member type %1 cannot be derived from member type %2 of %3's base type %4."
-msgstr ""
-
-#: QtXmlPatterns#213
-msgid "Derivation method of %1 must be extension because the base type %2 is a simple type."
-msgstr ""
-
-#: QtXmlPatterns#214
-msgid "Complex type %1 has duplicated element %2 in its content model."
-msgstr ""
-
-#: QtXmlPatterns#215
-msgid "Complex type %1 has non-deterministic content."
-msgstr ""
-
-#: QtXmlPatterns#216
-msgid "Attributes of complex type %1 are not a valid extension of the attributes of base type %2: %3."
-msgstr ""
-
-#: QtXmlPatterns#217
-msgid "Content model of complex type %1 is not a valid extension of content model of %2."
-msgstr ""
-
-#: QtXmlPatterns#218
-msgid "Complex type %1 must have simple content."
-msgstr ""
-
-#: QtXmlPatterns#219
-msgid "Complex type %1 must have the same simple type as its base class %2."
-msgstr ""
-
-#: QtXmlPatterns#22
-msgid "Dividing a value of type %1 by %2 (not-a-number) is not allowed."
-msgstr ""
-
-#: QtXmlPatterns#220
-msgid "Complex type %1 cannot be derived from base type %2%3."
-msgstr ""
-
-#: QtXmlPatterns#221
-msgid "Attributes of complex type %1 are not a valid restriction from the attributes of base type %2: %3."
-msgstr ""
-
-#: QtXmlPatterns#222
-msgid "Complex type %1 with simple content cannot be derived from complex base type %2."
-msgstr ""
-
-#: QtXmlPatterns#223
-msgid "Item type of simple type %1 cannot be a complex type."
-msgstr ""
-
-#: QtXmlPatterns#224
-msgid "Member type of simple type %1 cannot be a complex type."
-msgstr ""
-
-#: QtXmlPatterns#225
-msgid "%1 is not allowed to have a member type with the same name as itself."
-msgstr ""
-
-#: QtXmlPatterns#226
-msgid "%1 facet collides with %2 facet."
-msgstr ""
-
-#: QtXmlPatterns#227
-msgid "%1 facet must have the same value as %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#228
-msgid "%1 facet must be equal or greater than %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#229
-msgid "%1 facet must be less than or equal to %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#23
-msgid "Dividing a value of type %1 by %2 or %3 (plus or minus zero) is not allowed."
-msgstr ""
-
-#: QtXmlPatterns#230
-msgid "%1 facet contains invalid regular expression"
-msgstr ""
-
-#: QtXmlPatterns#231
-msgid "Unknown notation %1 used in %2 facet."
-msgstr ""
-
-#: QtXmlPatterns#232
-msgid "%1 facet contains invalid value %2: %3."
-msgstr ""
-
-#: QtXmlPatterns#233
-msgid "%1 facet cannot be %2 or %3 if %4 facet of base type is %5."
-msgstr ""
-
-#: QtXmlPatterns#234
-msgid "%1 facet cannot be %2 if %3 facet of base type is %4."
-msgstr ""
-
-#: QtXmlPatterns#235
-msgid "%1 facet must be less than or equal to %2 facet."
-msgstr ""
-
-#: QtXmlPatterns#236
-msgid "%1 facet must be less than %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#237
-msgid "%1 facet and %2 facet cannot appear together."
-msgstr ""
-
-#: QtXmlPatterns#238
-msgid "%1 facet must be greater than %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#239
-msgid "%1 facet must be less than %2 facet."
-msgstr ""
-
-#: QtXmlPatterns#24
-msgid "Multiplication of a value of type %1 by %2 or %3 (plus or minus infinity) is not allowed."
-msgstr ""
-
-#: QtXmlPatterns#240
-msgid "%1 facet must be greater than or equal to %2 facet of base type."
-msgstr ""
-
-#: QtXmlPatterns#241
-msgid "Simple type contains not allowed facet %1."
-msgstr ""
-
-#: QtXmlPatterns#242
-msgid "%1, %2, %3, %4, %5 and %6 facets are not allowed when derived by list."
-msgstr ""
-
-#: QtXmlPatterns#243
-msgid "Only %1 and %2 facets are allowed when derived by union."
-msgstr ""
-
-#: QtXmlPatterns#244
-msgid "%1 contains %2 facet with invalid data: %3."
-msgstr ""
-
-#: QtXmlPatterns#245
-msgid "Attribute group %1 contains attribute %2 twice."
-msgstr ""
-
-#: QtXmlPatterns#246
-msgid "Attribute group %1 contains two different attributes that both have types derived from %2."
-msgstr ""
-
-#: QtXmlPatterns#247
-msgid "Attribute group %1 contains attribute %2 that has value constraint but type that inherits from %3."
-msgstr ""
-
-#: QtXmlPatterns#248
-msgid "Complex type %1 contains attribute %2 twice."
-msgstr ""
-
-#: QtXmlPatterns#249
-msgid "Complex type %1 contains two different attributes that both have types derived from %2."
-msgstr ""
-
-#: QtXmlPatterns#25
-msgid "A value of type %1 cannot have an Effective Boolean Value."
-msgstr ""
-
-#: QtXmlPatterns#250
-msgid "Complex type %1 contains attribute %2 that has value constraint but type that inherits from %3."
-msgstr ""
-
-#: QtXmlPatterns#251
-msgid "Element %1 is not allowed to have a value constraint if its base type is complex."
-msgstr ""
-
-#: QtXmlPatterns#252
-msgid "Element %1 is not allowed to have a value constraint if its type is derived from %2."
-msgstr ""
-
-#: QtXmlPatterns#253
-msgid "Value constraint of element %1 is not of elements type: %2."
-msgstr ""
-
-#: QtXmlPatterns#254
-msgid "Element %1 is not allowed to have substitution group affiliation as it is no global element."
-msgstr ""
-
-#: QtXmlPatterns#255
-msgid "Type of element %1 cannot be derived from type of substitution group affiliation."
-msgstr ""
-
-#: QtXmlPatterns#256
-msgid "Value constraint of attribute %1 is not of attributes type: %2."
-msgstr ""
-
-#: QtXmlPatterns#257
-msgid "Attribute %1 has value constraint but has type derived from %2."
-msgstr ""
-
-#: QtXmlPatterns#258
-msgid "%1 attribute in derived complex type must be %2 like in base type."
-msgstr ""
-
-#: QtXmlPatterns#259
-msgid "Attribute %1 in derived complex type must have %2 value constraint like in base type."
-msgstr ""
-
-#: QtXmlPatterns#26
-msgid "Effective Boolean Value cannot be calculated for a sequence containing two or more atomic values."
-msgstr ""
-
-#: QtXmlPatterns#260
-msgid "Attribute %1 in derived complex type must have the same %2 value constraint like in base type."
-msgstr ""
-
-#: QtXmlPatterns#261
-msgid "Attribute %1 in derived complex type must have %2 value constraint."
-msgstr ""
-
-#: QtXmlPatterns#262
-msgid "processContent of base wildcard must be weaker than derived wildcard."
-msgstr ""
-
-#: QtXmlPatterns#263
-msgid "Element %1 exists twice with different types."
-msgstr ""
-
-#: QtXmlPatterns#264
-msgid "Particle contains non-deterministic wildcards."
-msgstr ""
-
-#: QtXmlPatterns#265
-msgid "Base attribute %1 is required but derived attribute is not."
-msgstr ""
-
-#: QtXmlPatterns#266
-msgid "Type of derived attribute %1 cannot be validly derived from type of base attribute."
-msgstr ""
-
-#: QtXmlPatterns#267
-msgid "Value constraint of derived attribute %1 does not match value constraint of base attribute."
-msgstr ""
-
-#: QtXmlPatterns#268
-msgid "Derived attribute %1 does not exist in the base definition."
-msgstr ""
-
-#: QtXmlPatterns#269
-msgid "Derived attribute %1 does not match the wildcard in the base definition."
-msgstr ""
-
-#: QtXmlPatterns#27
-msgid "Value %1 of type %2 exceeds maximum (%3)."
-msgstr ""
-
-#: QtXmlPatterns#270
-msgid "Base attribute %1 is required but missing in derived definition."
-msgstr ""
-
-#: QtXmlPatterns#271
-msgid "Derived definition contains an %1 element that does not exists in the base definition"
-msgstr ""
-
-#: QtXmlPatterns#272
-msgid "Derived wildcard is not a subset of the base wildcard."
-msgstr ""
-
-#: QtXmlPatterns#273
-msgid "%1 of derived wildcard is not a valid restriction of %2 of base wildcard"
-msgstr ""
-
-#: QtXmlPatterns#274
-msgid "Attribute %1 from base type is missing in derived type."
-msgstr ""
-
-#: QtXmlPatterns#275
-msgid "Type of derived attribute %1 differs from type of base attribute."
-msgstr ""
-
-#: QtXmlPatterns#276
-msgid "Base definition contains an %1 element that is missing in the derived definition"
-msgstr ""
-
-#: QtXmlPatterns#277
-msgid "Can not process unknown element %1, expected elements are: %2."
-msgstr ""
-
-#: QtXmlPatterns#278
-msgid "Element %1 is not allowed in this scope, possible elements are: %2."
-msgstr ""
-
-#: QtXmlPatterns#279
-msgid "Child element is missing in that scope, possible child elements are: %1."
-msgstr ""
-
-#: QtXmlPatterns#28
-msgid "Value %1 of type %2 is below minimum (%3)."
-msgstr ""
-
-#: QtXmlPatterns#280
-msgid "Document is not a XML schema."
-msgstr ""
-
-#: QtXmlPatterns#281
-msgid "%1 attribute of %2 element contains invalid content: {%3} is not a value of type %4."
-msgstr ""
-
-#: QtXmlPatterns#282
-msgid "%1 attribute of %2 element contains invalid content: {%3}."
-msgstr ""
-
-#: QtXmlPatterns#283
-msgid "Target namespace %1 of included schema is different from the target namespace %2 as defined by the including schema."
-msgstr ""
-
-#: QtXmlPatterns#284
-msgid "Target namespace %1 of imported schema is different from the target namespace %2 as defined by the importing schema."
-msgstr ""
-
-#: QtXmlPatterns#285
-msgid "%1 element is not allowed to have the same %2 attribute value as the target namespace %3."
-msgstr ""
-
-#: QtXmlPatterns#286
-msgid "%1 element without %2 attribute is not allowed inside schema without target namespace."
-msgstr ""
-
-#: QtXmlPatterns#287
-msgid "%1 element is not allowed inside %2 element if %3 attribute is present."
-msgstr ""
-
-#: QtXmlPatterns#288
-msgid "%1 element has neither %2 attribute nor %3 child element."
-msgstr ""
-
-#: QtXmlPatterns#289
-msgid "%1 element with %2 child element must not have a %3 attribute."
-msgstr ""
-
-#: QtXmlPatterns#29
-msgid "A value of type %1 must contain an even number of digits. The value %2 does not."
-msgstr ""
-
-#: QtXmlPatterns#290
-msgid "%1 attribute of %2 element must be %3 or %4."
-msgstr ""
-
-#: QtXmlPatterns#291
-msgid "%1 attribute of %2 element must have a value of %3."
-msgstr ""
-
-#: QtXmlPatterns#292
-msgid "%1 attribute of %2 element must have a value of %3 or %4."
-msgstr ""
-
-#: QtXmlPatterns#293
-msgid "%1 element must not have %2 and %3 attribute together."
-msgstr ""
-
-#: QtXmlPatterns#294
-msgid "Content of %1 attribute of %2 element must not be from namespace %3."
-msgstr ""
-
-#: QtXmlPatterns#295
-msgid "%1 attribute of %2 element must not be %3."
-msgstr ""
-
-#: QtXmlPatterns#296
-msgid "%1 attribute of %2 element must have the value %3 because the %4 attribute is set."
-msgstr ""
-
-#: QtXmlPatterns#297
-msgid "Specifying use='prohibited' inside an attribute group has no effect."
-msgstr ""
-
-#: QtXmlPatterns#298
-msgid "%1 element must have either %2 or %3 attribute."
-msgstr ""
-
-#: QtXmlPatterns#299
-msgid "%1 element must have either %2 attribute or %3 or %4 as child element."
-msgstr ""
-
 #: QtXmlPatterns#3
 msgid "The codepoint %1, occurring in %2 using encoding %3, is an invalid XML character."
-msgstr ""
-
-#: QtXmlPatterns#30
-msgid "%1 is not valid as a value of type %2."
-msgstr ""
-
-#: QtXmlPatterns#300
-msgid "%1 element requires either %2 or %3 attribute."
-msgstr ""
-
-#: QtXmlPatterns#301
-#, fuzzy
-msgid "Text or entity references not allowed inside %1 element"
-msgstr "DTD içerisinde genel iç varlık referansılarına (entity) izin verilmez"
-
-#: QtXmlPatterns#302
-msgid "%1 attribute of %2 element must contain %3, %4 or a list of URIs."
-msgstr ""
-
-#: QtXmlPatterns#303
-#, fuzzy
-msgid "%1 element is not allowed in this context."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
-
-#: QtXmlPatterns#304
-msgid "%1 attribute of %2 element has larger value than %3 attribute."
-msgstr ""
-
-#: QtXmlPatterns#305
-msgid "Prefix of qualified name %1 is not defined."
-msgstr ""
-
-#: QtXmlPatterns#306
-msgid "%1 attribute of %2 element must either contain %3 or the other values."
-msgstr ""
-
-#: QtXmlPatterns#307
-msgid "Component with ID %1 has been defined previously."
-msgstr ""
-
-#: QtXmlPatterns#308
-msgid "Element %1 already defined."
-msgstr ""
-
-#: QtXmlPatterns#309
-#, fuzzy
-msgid "Attribute %1 already defined."
-msgstr "Nitelik yeniden tanımlandı."
-
-#: QtXmlPatterns#31
-msgid "Ambiguous rule match."
-msgstr ""
-
-#: QtXmlPatterns#310
-msgid "Type %1 already defined."
-msgstr ""
-
-#: QtXmlPatterns#311
-#, fuzzy
-msgid "Attribute group %1 already defined."
-msgstr "Nitelik yeniden tanımlandı."
-
-#: QtXmlPatterns#312
-msgid "Element group %1 already defined."
-msgstr ""
-
-#: QtXmlPatterns#313
-msgid "Notation %1 already defined."
-msgstr ""
-
-#: QtXmlPatterns#314
-msgid "Identity constraint %1 already defined."
-msgstr ""
-
-#: QtXmlPatterns#315
-msgid "Duplicated facets in simple type %1."
-msgstr ""
-
-#: QtXmlPatterns#316
-msgid "%1 references unknown %2 or %3 element %4."
-msgstr ""
-
-#: QtXmlPatterns#317
-msgid "%1 references identity constraint %2 that is no %3 or %4 element."
-msgstr ""
-
-#: QtXmlPatterns#318
-msgid "%1 has a different number of fields from the identity constraint %2 that it references."
-msgstr ""
-
-#: QtXmlPatterns#319
-msgid "Base type %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#32
-msgid "Operator %1 cannot be used on type %2."
-msgstr ""
-
-#: QtXmlPatterns#320
-msgid "Item type %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#321
-msgid "Member type %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#322
-msgid "Type %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#323
-msgid "Base type %1 of complex type cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#324
-msgid "%1 cannot have complex base type that has a %2."
-msgstr ""
-
-#: QtXmlPatterns#325
-msgid "Content model of complex type %1 contains %2 element so it cannot be derived by extension from a non-empty type."
-msgstr ""
-
-#: QtXmlPatterns#326
-msgid "Complex type %1 cannot be derived by extension from %2 as the latter contains %3 element in its content model."
-msgstr ""
-
-#: QtXmlPatterns#327
-msgid "Type of %1 element must be a simple type, %2 is not."
-msgstr ""
-
-#: QtXmlPatterns#328
-msgid "Substitution group %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#329
-msgid "Substitution group %1 has circular definition."
-msgstr ""
-
-#: QtXmlPatterns#33
-msgid "Operator %1 cannot be used on atomic values of type %2 and %3."
-msgstr ""
-
-#: QtXmlPatterns#330
-msgid "Duplicated element names %1 in %2 element."
-msgstr ""
-
-#: QtXmlPatterns#331
-msgid "Reference %1 of %2 element cannot be resolved."
-msgstr ""
-
-#: QtXmlPatterns#332
-msgid "Circular group reference for %1."
-msgstr ""
-
-#: QtXmlPatterns#333
-msgid "%1 element is not allowed in this scope"
-msgstr ""
-
-#: QtXmlPatterns#334
-msgid "%1 element cannot have %2 attribute with value other than %3."
-msgstr ""
-
-#: QtXmlPatterns#335
-msgid "%1 element cannot have %2 attribute with value other than %3 or %4."
-msgstr ""
-
-#: QtXmlPatterns#336
-msgid "%1 or %2 attribute of reference %3 does not match with the attribute declaration %4."
-msgstr ""
-
-#: QtXmlPatterns#337
-msgid "Attribute group %1 has circular reference."
-msgstr ""
-
-#: QtXmlPatterns#338
-msgid "%1 attribute in %2 must have %3 use like in base type %4."
-msgstr ""
-
-#: QtXmlPatterns#339
-msgid "Attribute wildcard of %1 is not a valid restriction of attribute wildcard of base type %2."
-msgstr ""
-
-#: QtXmlPatterns#34
-msgid "The namespace URI in the name for a computed attribute cannot be %1."
-msgstr ""
-
-#: QtXmlPatterns#340
-msgid "%1 has attribute wildcard but its base type %2 has not."
-msgstr ""
-
-#: QtXmlPatterns#341
-msgid "Union of attribute wildcard of type %1 and attribute wildcard of its base type %2 is not expressible."
-msgstr ""
-
-#: QtXmlPatterns#342
-msgid "Enumeration facet contains invalid content: {%1} is not a value of type %2."
-msgstr ""
-
-#: QtXmlPatterns#343
-#, fuzzy
-msgid "Namespace prefix of qualified name %1 is not defined."
-msgstr "İsimlendirme öneki '%1' bildirilmedi"
-
-#: QtXmlPatterns#344
-msgid "%1 element %2 is not a valid restriction of the %3 element it redefines: %4."
-msgstr ""
-
-#: QtXmlPatterns#345
-#, fuzzy
-msgid "%1 is not valid according to %2."
-msgstr "%1 geçersiz bir kodlama adıdır."
-
-#: QtXmlPatterns#346
-msgid "String content does not match the length facet."
-msgstr ""
-
-#: QtXmlPatterns#347
-msgid "String content does not match the minLength facet."
-msgstr ""
-
-#: QtXmlPatterns#348
-msgid "String content does not match the maxLength facet."
-msgstr ""
-
-#: QtXmlPatterns#349
-msgid "String content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#35
-msgid "The name for a computed attribute cannot have the namespace URI %1 with the local name %2."
-msgstr ""
-
-#: QtXmlPatterns#350
-msgid "String content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#351
-msgid "Signed integer content does not match the maxInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#352
-msgid "Signed integer content does not match the maxExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#353
-msgid "Signed integer content does not match the minInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#354
-msgid "Signed integer content does not match the minExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#355
-msgid "Signed integer content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#356
-msgid "Signed integer content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#357
-msgid "Signed integer content does not match in the totalDigits facet."
-msgstr ""
-
-#: QtXmlPatterns#358
-msgid "Unsigned integer content does not match the maxInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#359
-msgid "Unsigned integer content does not match the maxExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#36
-msgid "Type error in cast, expected %1, received %2."
-msgstr ""
-
-#: QtXmlPatterns#360
-msgid "Unsigned integer content does not match the minInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#361
-msgid "Unsigned integer content does not match the minExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#362
-msgid "Unsigned integer content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#363
-msgid "Unsigned integer content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#364
-msgid "Unsigned integer content does not match in the totalDigits facet."
-msgstr ""
-
-#: QtXmlPatterns#365
-msgid "Double content does not match the maxInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#366
-msgid "Double content does not match the maxExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#367
-msgid "Double content does not match the minInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#368
-msgid "Double content does not match the minExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#369
-msgid "Double content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#37
-msgid "When casting to %1 or types derived from it, the source value must be of the same type, or it must be a string literal. Type %2 is not allowed."
-msgstr ""
-
-#: QtXmlPatterns#370
-msgid "Double content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#371
-msgid "Decimal content does not match in the fractionDigits facet."
-msgstr ""
-
-#: QtXmlPatterns#372
-msgid "Decimal content does not match in the totalDigits facet."
-msgstr ""
-
-#: QtXmlPatterns#373
-msgid "Date time content does not match the maxInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#374
-msgid "Date time content does not match the maxExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#375
-msgid "Date time content does not match the minInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#376
-msgid "Date time content does not match the minExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#377
-msgid "Date time content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#378
-msgid "Date time content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#379
-msgid "Duration content does not match the maxInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#38
-msgid "A comment cannot contain %1"
-msgstr ""
-
-#: QtXmlPatterns#380
-msgid "Duration content does not match the maxExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#381
-msgid "Duration content does not match the minInclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#382
-msgid "Duration content does not match the minExclusive facet."
-msgstr ""
-
-#: QtXmlPatterns#383
-msgid "Duration content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#384
-msgid "Duration content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#385
-msgid "Boolean content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#386
-msgid "Binary content does not match the length facet."
-msgstr ""
-
-#: QtXmlPatterns#387
-msgid "Binary content does not match the minLength facet."
-msgstr ""
-
-#: QtXmlPatterns#388
-msgid "Binary content does not match the maxLength facet."
-msgstr ""
-
-#: QtXmlPatterns#389
-msgid "Binary content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#39
-msgid "A comment cannot end with a %1."
-msgstr ""
-
-#: QtXmlPatterns#390
-#, fuzzy
-msgid "Invalid QName content: %1."
-msgstr "Geçersiz belge."
-
-#: QtXmlPatterns#391
-msgid "QName content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#392
-msgid "QName content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#393
-msgid "Notation content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#394
-msgid "List content does not match length facet."
-msgstr ""
-
-#: QtXmlPatterns#395
-msgid "List content does not match minLength facet."
-msgstr ""
-
-#: QtXmlPatterns#396
-msgid "List content does not match maxLength facet."
-msgstr ""
-
-#: QtXmlPatterns#397
-msgid "List content is not listed in the enumeration facet."
-msgstr ""
-
-#: QtXmlPatterns#398
-msgid "List content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#399
-msgid "Union content is not listed in the enumeration facet."
 msgstr ""
 
 #: QtXmlPatterns#4
@@ -9702,253 +8369,168 @@ msgstr ""
 msgid "Network timeout."
 msgstr "Ağ işleminde zamanaşımı"
 
+#: QtXmlPatterns#5
+msgid "Element %1 can't be serialized because it appears outside the document element."
+msgstr ""
+
+#: QtXmlPatterns#6
+msgid "Attribute %1 can't be serialized because it appears at the top level."
+msgstr ""
+
+#: QtXmlPatterns#7
+msgid "Year %1 is invalid because it begins with %2."
+msgstr ""
+
+#: QtXmlPatterns#8
+msgid "Day %1 is outside the range %2..%3."
+msgstr ""
+
+#: QtXmlPatterns#9
+msgid "Month %1 is outside the range %2..%3."
+msgstr ""
+
+#: QtXmlPatterns#10
+msgid "Overflow: Can't represent date %1."
+msgstr ""
+
+#: QtXmlPatterns#11
+msgid "Day %1 is invalid for month %2."
+msgstr ""
+
+#: QtXmlPatterns#12
+msgid "Time 24:%1:%2.%3 is invalid. Hour is 24, but minutes, seconds, and milliseconds are not all 0; "
+msgstr ""
+
+#: QtXmlPatterns#13
+msgid "Time %1:%2:%3.%4 is invalid."
+msgstr ""
+
+#: QtXmlPatterns#14
+msgid "Overflow: Date can't be represented."
+msgstr ""
+
+#: QtXmlPatterns#15
+msgid "At least one component must be present."
+msgstr ""
+
+#: QtXmlPatterns#16
+msgid "At least one time component must appear after the %1-delimiter."
+msgstr ""
+
+#: QtXmlPatterns#17
+msgid "%1 is not a valid value of type %2."
+msgstr ""
+
+#: QtXmlPatterns#18
+msgid "When casting to %1 from %2, the source value cannot be %3."
+msgstr ""
+
+#: QtXmlPatterns#19
+msgid "Integer division (%1) by zero (%2) is undefined."
+msgstr ""
+
+#: QtXmlPatterns#20
+msgid "Division (%1) by zero (%2) is undefined."
+msgstr ""
+
+#: QtXmlPatterns#21
+msgid "Modulus division (%1) by zero (%2) is undefined."
+msgstr ""
+
+#: QtXmlPatterns#22
+msgid "Dividing a value of type %1 by %2 (not-a-number) is not allowed."
+msgstr ""
+
+#: QtXmlPatterns#23
+msgid "Dividing a value of type %1 by %2 or %3 (plus or minus zero) is not allowed."
+msgstr ""
+
+#: QtXmlPatterns#24
+msgid "Multiplication of a value of type %1 by %2 or %3 (plus or minus infinity) is not allowed."
+msgstr ""
+
+#: QtXmlPatterns#25
+msgid "A value of type %1 cannot have an Effective Boolean Value."
+msgstr ""
+
+#: QtXmlPatterns#26
+msgid "Effective Boolean Value cannot be calculated for a sequence containing two or more atomic values."
+msgstr ""
+
+#: QtXmlPatterns#27
+msgid "Value %1 of type %2 exceeds maximum (%3)."
+msgstr ""
+
+#: QtXmlPatterns#28
+msgid "Value %1 of type %2 is below minimum (%3)."
+msgstr ""
+
+#: QtXmlPatterns#29
+msgid "A value of type %1 must contain an even number of digits. The value %2 does not."
+msgstr ""
+
+#: QtXmlPatterns#30
+msgid "%1 is not valid as a value of type %2."
+msgstr ""
+
+#: QtXmlPatterns#31
+msgid "Ambiguous rule match."
+msgstr ""
+
+#: QtXmlPatterns#32
+msgid "Operator %1 cannot be used on type %2."
+msgstr ""
+
+#: QtXmlPatterns#33
+msgid "Operator %1 cannot be used on atomic values of type %2 and %3."
+msgstr ""
+
+#: QtXmlPatterns#34
+msgid "The namespace URI in the name for a computed attribute cannot be %1."
+msgstr ""
+
+#: QtXmlPatterns#35
+msgid "The name for a computed attribute cannot have the namespace URI %1 with the local name %2."
+msgstr ""
+
+#: QtXmlPatterns#36
+msgid "Type error in cast, expected %1, received %2."
+msgstr ""
+
+#: QtXmlPatterns#37
+msgid "When casting to %1 or types derived from it, the source value must be of the same type, or it must be a string literal. Type %2 is not allowed."
+msgstr ""
+
+#: QtXmlPatterns#38
+msgid "A comment cannot contain %1"
+msgstr ""
+
+#: QtXmlPatterns#39
+msgid "A comment cannot end with a %1."
+msgstr ""
+
 #: QtXmlPatterns#40
 msgid "In a namespace constructor, the value for a namespace cannot be an empty string."
-msgstr ""
-
-#: QtXmlPatterns#400
-msgid "Union content does not match pattern facet."
-msgstr ""
-
-#: QtXmlPatterns#401
-msgid "Data of type %1 are not allowed to be empty."
-msgstr ""
-
-#: QtXmlPatterns#402
-msgid "Element %1 is missing child element."
-msgstr ""
-
-#: QtXmlPatterns#403
-msgid "There is one IDREF value with no corresponding ID: %1."
-msgstr ""
-
-#: QtXmlPatterns#404
-msgid "Loaded schema file is invalid."
-msgstr ""
-
-#: QtXmlPatterns#405
-#, fuzzy
-msgid "%1 contains invalid data."
-msgstr "%1 geçersiz bir kodlama adıdır."
-
-#: QtXmlPatterns#406
-msgid "xsi:schemaLocation namespace %1 has already appeared earlier in the instance document."
-msgstr ""
-
-#: QtXmlPatterns#407
-msgid "xsi:noNamespaceSchemaLocation cannot appear after the first no-namespace element or attribute."
-msgstr ""
-
-#: QtXmlPatterns#408
-msgid "No schema defined for validation."
-msgstr ""
-
-#: QtXmlPatterns#409
-msgid "No definition for element %1 available."
 msgstr ""
 
 #: QtXmlPatterns#41
 msgid "The prefix must be a valid %1, which %2 is not."
 msgstr ""
 
-#: QtXmlPatterns#410
-msgid "Specified type %1 is not known to the schema."
-msgstr ""
-
-#: QtXmlPatterns#411
-msgid "Element %1 is not defined in this scope."
-msgstr ""
-
-#: QtXmlPatterns#412
-msgid "Declaration for element %1 does not exist."
-msgstr ""
-
-#: QtXmlPatterns#413
-msgid "Element %1 contains invalid content."
-msgstr ""
-
-#: QtXmlPatterns#414
-msgid "Element %1 is declared as abstract."
-msgstr ""
-
-#: QtXmlPatterns#415
-msgid "Element %1 is not nillable."
-msgstr ""
-
-#: QtXmlPatterns#416
-msgid "Attribute %1 contains invalid data: %2"
-msgstr ""
-
-#: QtXmlPatterns#417
-msgid "Element contains content although it is nillable."
-msgstr ""
-
-#: QtXmlPatterns#418
-msgid "Fixed value constraint not allowed if element is nillable."
-msgstr ""
-
-#: QtXmlPatterns#419
-msgid "Specified type %1 is not validly substitutable with element type %2."
-msgstr ""
-
 #: QtXmlPatterns#42
 msgid "The prefix %1 cannot be bound."
-msgstr ""
-
-#: QtXmlPatterns#420
-msgid "Complex type %1 is not allowed to be abstract."
-msgstr ""
-
-#: QtXmlPatterns#421
-msgid "Element %1 contains not allowed attributes."
-msgstr ""
-
-#: QtXmlPatterns#422
-msgid "Element %1 contains not allowed child element."
-msgstr ""
-
-#: QtXmlPatterns#423
-msgid "Content of element %1 does not match its type definition: %2."
-msgstr ""
-
-#: QtXmlPatterns#424
-msgid "Content of element %1 does not match defined value constraint."
-msgstr ""
-
-#: QtXmlPatterns#425
-#, fuzzy
-msgid "Element %1 contains not allowed child content."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
-
-#: QtXmlPatterns#426
-#, fuzzy
-msgid "Element %1 contains not allowed text content."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
-
-#: QtXmlPatterns#427
-msgid "Element %1 cannot contain other elements, as it has a fixed content."
-msgstr ""
-
-#: QtXmlPatterns#428
-msgid "Element %1 is missing required attribute %2."
-msgstr ""
-
-#: QtXmlPatterns#429
-msgid "Attribute %1 does not match the attribute wildcard."
 msgstr ""
 
 #: QtXmlPatterns#43
 msgid "Only the prefix %1 can be bound to %2 and vice versa."
 msgstr ""
 
-#: QtXmlPatterns#430
-#, fuzzy
-msgid "Declaration for attribute %1 does not exist."
-msgstr "XML bildirimi belgenin başlangıcında değil."
-
-#: QtXmlPatterns#431
-msgid "Element %1 contains two attributes of type %2."
-msgstr ""
-
-#: QtXmlPatterns#432
-msgid "Attribute %1 contains invalid content."
-msgstr ""
-
-#: QtXmlPatterns#433
-msgid "Element %1 contains unknown attribute %2."
-msgstr ""
-
-#: QtXmlPatterns#434
-msgid "Content of attribute %1 does not match its type definition: %2."
-msgstr ""
-
-#: QtXmlPatterns#435
-msgid "Content of attribute %1 does not match defined value constraint."
-msgstr ""
-
-#: QtXmlPatterns#436
-msgid "Non-unique value found for constraint %1."
-msgstr ""
-
-#: QtXmlPatterns#437
-msgid "Key constraint %1 contains absent fields."
-msgstr ""
-
-#: QtXmlPatterns#438
-msgid "Key constraint %1 contains references nillable element %2."
-msgstr ""
-
-#: QtXmlPatterns#439
-msgid "No referenced value found for key reference %1."
-msgstr ""
-
 #: QtXmlPatterns#44
 msgid "An attribute node cannot be a child of a document node. Therefore, the attribute %1 is out of place."
 msgstr ""
 
-#: QtXmlPatterns#440
-msgid "More than one value found for field %1."
-msgstr ""
-
-#: QtXmlPatterns#441
-msgid "Field %1 has no simple type."
-msgstr ""
-
-#: QtXmlPatterns#442
-msgid "ID value '%1' is not unique."
-msgstr ""
-
-#: QtXmlPatterns#443
-msgid "'%1' attribute contains invalid QName content: %2."
-msgstr ""
-
-#: QtXmlPatterns#444
-#, fuzzy
-msgid "empty"
-msgstr "<boş>"
-
-#: QtXmlPatterns#445
-msgid "zero or one"
-msgstr ""
-
-#: QtXmlPatterns#446
-msgid "exactly one"
-msgstr ""
-
-#: QtXmlPatterns#447
-msgid "one or more"
-msgstr ""
-
-#: QtXmlPatterns#448
-msgid "zero or more"
-msgstr ""
-
-#: QtXmlPatterns#449
-msgid "Required type is %1, but %2 was found."
-msgstr ""
-
 #: QtXmlPatterns#45
 msgid "A library module cannot be evaluated directly. It must be imported from a main module."
-msgstr ""
-
-#: QtXmlPatterns#450
-msgid "Promoting %1 to %2 may cause loss of precision."
-msgstr ""
-
-#: QtXmlPatterns#451
-msgid "The focus is undefined."
-msgstr ""
-
-#: QtXmlPatterns#452
-msgid "It's not possible to add attributes after any other kind of node."
-msgstr ""
-
-#: QtXmlPatterns#453
-msgid "An attribute by name %1 has already been created."
-msgstr ""
-
-#: QtXmlPatterns#454
-msgid "Only the Unicode Codepoint Collation is supported(%1). %2 is unsupported."
 msgstr ""
 
 #: QtXmlPatterns#46
@@ -9965,10 +8547,6 @@ msgstr ""
 
 #: QtXmlPatterns#49
 msgid "The target name in a processing instruction cannot be %1 in any combination of upper and lower case. Therefore, %2 is invalid."
-msgstr ""
-
-#: QtXmlPatterns#5
-msgid "Element %1 can't be serialized because it appears outside the document element."
 msgstr ""
 
 #: QtXmlPatterns#50
@@ -10020,10 +8598,6 @@ msgstr ""
 "            \n"
 "        "
 
-#: QtXmlPatterns#6
-msgid "Attribute %1 can't be serialized because it appears at the top level."
-msgstr ""
-
 #: QtXmlPatterns#60
 msgid "The first argument to %1 cannot be of type %2. It must be a numeric type, xs:yearMonthDuration or xs:dayTimeDuration."
 msgstr ""
@@ -10063,10 +8637,6 @@ msgstr ""
 
 #: QtXmlPatterns#69
 msgid "In the replacement string, %1 can only be used to escape itself or %2, not %3"
-msgstr ""
-
-#: QtXmlPatterns#7
-msgid "Year %1 is invalid because it begins with %2."
 msgstr ""
 
 #: QtXmlPatterns#70
@@ -10110,10 +8680,6 @@ msgstr ""
 msgid "%1 cannot be retrieved"
 msgstr ""
 
-#: QtXmlPatterns#8
-msgid "Day %1 is outside the range %2..%3."
-msgstr ""
-
 #: QtXmlPatterns#80
 msgid "The normalization form %1 is unsupported. The supported forms are %2, %3, %4, and %5, and none, i.e. the empty string (no normalization)."
 msgstr ""
@@ -10152,10 +8718,6 @@ msgstr ""
 
 #: QtXmlPatterns#89
 msgid "A construct was encountered which is disallowed in the current language(%1)."
-msgstr ""
-
-#: QtXmlPatterns#9
-msgid "Month %1 is outside the range %2..%3."
 msgstr ""
 
 #: QtXmlPatterns#90
@@ -10197,6 +8759,1442 @@ msgstr ""
 
 #: QtXmlPatterns#99
 msgid "A default namespace declaration must occur before function, variable, and option declarations."
+msgstr ""
+
+#: QtXmlPatterns#100
+msgid "Namespace declarations must occur before function, variable, and option declarations."
+msgstr ""
+
+#: QtXmlPatterns#101
+msgid "Module imports must occur before function, variable, and option declarations."
+msgstr ""
+
+#: QtXmlPatterns#102
+msgid "The keyword %1 cannot occur with any other mode name."
+msgstr ""
+
+#: QtXmlPatterns#103
+msgid "The value of attribute %1 must be of type %2, which %3 isn't."
+msgstr ""
+
+#: QtXmlPatterns#104
+msgid "It is not possible to redeclare prefix %1."
+msgstr ""
+
+#: QtXmlPatterns#105
+msgid "The prefix %1 cannot be bound. By default, it is already bound to the namespace %2."
+msgstr ""
+
+#: QtXmlPatterns#106
+msgid "Prefix %1 is already declared in the prolog."
+msgstr ""
+
+#: QtXmlPatterns#107
+msgid "The name of an option must have a prefix. There is no default namespace for options."
+msgstr ""
+
+#: QtXmlPatterns#108
+msgid "The Schema Import feature is not supported, and therefore %1 declarations cannot occur."
+msgstr ""
+
+#: QtXmlPatterns#109
+msgid "The target namespace of a %1 cannot be empty."
+msgstr ""
+
+#: QtXmlPatterns#110
+#, fuzzy
+msgid "The module import feature is not supported"
+msgstr "`%1' protokolü desteklenmiyor"
+
+#: QtXmlPatterns#111
+msgid "A variable with name %1 has already been declared."
+msgstr ""
+
+#: QtXmlPatterns#112
+msgid "No value is available for the external variable with name %1."
+msgstr ""
+
+#: QtXmlPatterns#113
+msgid "A stylesheet function must have a prefixed name."
+msgstr ""
+
+#: QtXmlPatterns#114
+msgid "The namespace for a user defined function cannot be empty (try the predefined prefix %1 which exists for cases like this)"
+msgstr ""
+
+#: QtXmlPatterns#115
+msgid "The namespace %1 is reserved; therefore user defined functions may not use it. Try the predefined prefix %2, which exists for these cases."
+msgstr ""
+
+#: QtXmlPatterns#116
+msgid "The namespace of a user defined function in a library module must be equivalent to the module namespace. In other words, it should be %1 instead of %2"
+msgstr ""
+
+#: QtXmlPatterns#117
+msgid "A function already exists with the signature %1."
+msgstr ""
+
+#: QtXmlPatterns#118
+msgid "No external functions are supported. All supported functions can be used directly, without first declaring them as external"
+msgstr ""
+
+#: QtXmlPatterns#119
+msgid "An argument with name %1 has already been declared. Every argument name must be unique."
+msgstr ""
+
+#: QtXmlPatterns#120
+msgid "When function %1 is used for matching inside a pattern, the argument must be a variable reference or a string literal."
+msgstr ""
+
+#: QtXmlPatterns#121
+msgid "In an XSL-T pattern, the first argument to function %1 must be a string literal, when used for matching."
+msgstr ""
+
+#: QtXmlPatterns#122
+msgid "In an XSL-T pattern, the first argument to function %1 must be a literal or a variable reference, when used for matching."
+msgstr ""
+
+#: QtXmlPatterns#123
+msgid "In an XSL-T pattern, function %1 cannot have a third argument."
+msgstr ""
+
+#: QtXmlPatterns#124
+msgid "In an XSL-T pattern, only function %1 and %2, not %3, can be used for matching."
+msgstr ""
+
+#: QtXmlPatterns#125
+msgid "In an XSL-T pattern, axis %1 cannot be used, only axis %2 or %3 can."
+msgstr ""
+
+#: QtXmlPatterns#126
+#, fuzzy
+msgid "%1 is an invalid template mode name."
+msgstr "%1 geçersiz bir kodlama adıdır."
+
+#: QtXmlPatterns#127
+msgid "The name of a variable bound in a for-expression must be different from the positional variable. Hence, the two variables named %1 collide."
+msgstr ""
+
+#: QtXmlPatterns#128
+msgid "The Schema Validation Feature is not supported. Hence, %1-expressions may not be used."
+msgstr ""
+
+#: QtXmlPatterns#129
+msgid "None of the pragma expressions are supported. Therefore, a fallback expression must be present"
+msgstr ""
+
+#: QtXmlPatterns#130
+msgid "Each name of a template parameter must be unique; %1 is duplicated."
+msgstr ""
+
+#: QtXmlPatterns#131
+msgid "The %1-axis is unsupported in XQuery"
+msgstr ""
+
+#: QtXmlPatterns#132
+msgid "No function with name %1 is available."
+msgstr ""
+
+#: QtXmlPatterns#133
+msgid "The namespace URI cannot be the empty string when binding to a prefix, %1."
+msgstr ""
+
+#: QtXmlPatterns#134
+#, fuzzy
+msgid "%1 is an invalid namespace URI."
+msgstr "%1 geçersiz bir kodlama adıdır."
+
+#: QtXmlPatterns#135
+msgid "It is not possible to bind to the prefix %1"
+msgstr ""
+
+#: QtXmlPatterns#136
+msgid "Namespace %1 can only be bound to %2 (and it is, in either case, pre-declared)."
+msgstr ""
+
+#: QtXmlPatterns#137
+msgid "Prefix %1 can only be bound to %2 (and it is, in either case, pre-declared)."
+msgstr ""
+
+#: QtXmlPatterns#138
+msgid "Two namespace declaration attributes have the same name: %1."
+msgstr ""
+
+#: QtXmlPatterns#139
+msgid "The namespace URI must be a constant and cannot use enclosed expressions."
+msgstr ""
+
+#: QtXmlPatterns#140
+msgid "An attribute with name %1 has already appeared on this element."
+msgstr ""
+
+#: QtXmlPatterns#141
+msgid "A direct element constructor is not well-formed. %1 is ended with %2."
+msgstr ""
+
+#: QtXmlPatterns#142
+msgid "The name %1 does not refer to any schema type."
+msgstr ""
+
+#: QtXmlPatterns#143
+msgid "%1 is an complex type. Casting to complex types is not possible. However, casting to atomic types such as %2 works."
+msgstr ""
+
+#: QtXmlPatterns#144
+msgid "%1 is not an atomic type. Casting is only possible to atomic types."
+msgstr ""
+
+#: QtXmlPatterns#145
+#, fuzzy
+msgid "%1 is not a valid name for a processing-instruction."
+msgstr "işleme komutu için geçersiz isim"
+
+#: QtXmlPatterns#146
+msgid "%1 is not in the in-scope attribute declarations. Note that the schema import feature is not supported."
+msgstr ""
+
+#: QtXmlPatterns#147
+msgid "The name of an extension expression must be in a namespace."
+msgstr ""
+
+#: QtXmlPatterns#148
+msgid "Element %1 is not allowed at this location."
+msgstr ""
+
+#: QtXmlPatterns#149
+msgid "Text nodes are not allowed at this location."
+msgstr ""
+
+#: QtXmlPatterns#150
+msgid "Parse error: %1"
+msgstr ""
+
+#: QtXmlPatterns#151
+msgid "The value of the XSL-T version attribute must be a value of type %1, which %2 isn't."
+msgstr ""
+
+#: QtXmlPatterns#152
+msgid "Running an XSL-T 1.0 stylesheet with a 2.0 processor."
+msgstr ""
+
+#: QtXmlPatterns#153
+msgid "Unknown XSL-T attribute %1."
+msgstr ""
+
+#: QtXmlPatterns#154
+msgid "Attribute %1 and %2 are mutually exclusive."
+msgstr ""
+
+#: QtXmlPatterns#155
+msgid "In a simplified stylesheet module, attribute %1 must be present."
+msgstr ""
+
+#: QtXmlPatterns#156
+msgid "If element %1 has no attribute %2, it cannot have attribute %3 or %4."
+msgstr ""
+
+#: QtXmlPatterns#157
+msgid "Element %1 must have at least one of the attributes %2 or %3."
+msgstr ""
+
+#: QtXmlPatterns#158
+msgid "At least one mode must be specified in the %1-attribute on element %2."
+msgstr ""
+
+#: QtXmlPatterns#159
+msgid "Element %1 must come last."
+msgstr ""
+
+#: QtXmlPatterns#160
+msgid "At least one %1-element must occur before %2."
+msgstr ""
+
+#: QtXmlPatterns#161
+msgid "Only one %1-element can appear."
+msgstr ""
+
+#: QtXmlPatterns#162
+msgid "At least one %1-element must occur inside %2."
+msgstr ""
+
+#: QtXmlPatterns#163
+msgid "When attribute %1 is present on %2, a sequence constructor cannot be used."
+msgstr ""
+
+#: QtXmlPatterns#164
+msgid "Element %1 must have either a %2-attribute or a sequence constructor."
+msgstr ""
+
+#: QtXmlPatterns#165
+msgid "When a parameter is required, a default value cannot be supplied through a %1-attribute or a sequence constructor."
+msgstr ""
+
+#: QtXmlPatterns#166
+msgid "Element %1 cannot have children."
+msgstr ""
+
+#: QtXmlPatterns#167
+msgid "Element %1 cannot have a sequence constructor."
+msgstr ""
+
+#: QtXmlPatterns#168
+msgid "The attribute %1 cannot appear on %2, when it is a child of %3."
+msgstr ""
+
+#: QtXmlPatterns#169
+msgid "A parameter in a function cannot be declared to be a tunnel."
+msgstr ""
+
+#: QtXmlPatterns#170
+msgid "This processor is not Schema-aware and therefore %1 cannot be used."
+msgstr ""
+
+#: QtXmlPatterns#171
+msgid "Top level stylesheet elements must be in a non-null namespace, which %1 isn't."
+msgstr ""
+
+#: QtXmlPatterns#172
+msgid "The value for attribute %1 on element %2 must either be %3 or %4, not %5."
+msgstr ""
+
+#: QtXmlPatterns#173
+msgid "Attribute %1 cannot have the value %2."
+msgstr ""
+
+#: QtXmlPatterns#174
+msgid "The attribute %1 can only appear on the first %2 element."
+msgstr ""
+
+#: QtXmlPatterns#175
+msgid "At least one %1 element must appear as child of %2."
+msgstr ""
+
+#: QtXmlPatterns#176
+msgid "Empty particle cannot be derived from non-empty particle."
+msgstr ""
+
+#: QtXmlPatterns#177
+msgid "Derived particle is missing element %1."
+msgstr ""
+
+#: QtXmlPatterns#178
+msgid "Derived element %1 is missing value constraint as defined in base particle."
+msgstr ""
+
+#: QtXmlPatterns#179
+msgid "Derived element %1 has weaker value constraint than base particle."
+msgstr ""
+
+#: QtXmlPatterns#180
+msgid "Fixed value constraint of element %1 differs from value constraint in base particle."
+msgstr ""
+
+#: QtXmlPatterns#181
+msgid "Derived element %1 cannot be nillable as base element is not nillable."
+msgstr ""
+
+#: QtXmlPatterns#182
+msgid "Block constraints of derived element %1 must not be more weaker than in the base element."
+msgstr ""
+
+#: QtXmlPatterns#183
+msgid "Simple type of derived element %1 cannot be validly derived from base element."
+msgstr ""
+
+#: QtXmlPatterns#184
+msgid "Complex type of derived element %1 cannot be validly derived from base element."
+msgstr ""
+
+#: QtXmlPatterns#185
+msgid "Element %1 is missing in derived particle."
+msgstr ""
+
+#: QtXmlPatterns#186
+msgid "Element %1 does not match namespace constraint of wildcard in base particle."
+msgstr ""
+
+#: QtXmlPatterns#187
+msgid "Wildcard in derived particle is not a valid subset of wildcard in base particle."
+msgstr ""
+
+#: QtXmlPatterns#188
+msgid "processContent of wildcard in derived particle is weaker than wildcard in base particle."
+msgstr ""
+
+#: QtXmlPatterns#189
+msgid "Derived particle allows content that is not allowed in the base particle."
+msgstr ""
+
+#: QtXmlPatterns#190
+msgid "%1 has inheritance loop in its base type %2."
+msgstr ""
+
+#: QtXmlPatterns#191
+msgid "Circular inheritance of base type %1."
+msgstr ""
+
+#: QtXmlPatterns#192
+msgid "Circular inheritance of union %1."
+msgstr ""
+
+#: QtXmlPatterns#193
+msgid "%1 is not allowed to derive from %2 by restriction as the latter defines it as final."
+msgstr ""
+
+#: QtXmlPatterns#194
+msgid "%1 is not allowed to derive from %2 by extension as the latter defines it as final."
+msgstr ""
+
+#: QtXmlPatterns#195
+msgid "Base type of simple type %1 cannot be complex type %2."
+msgstr ""
+
+#: QtXmlPatterns#196
+msgid "Simple type %1 cannot have direct base type %2."
+msgstr ""
+
+#: QtXmlPatterns#197
+msgid "Simple type %1 is not allowed to have base type %2."
+msgstr ""
+
+#: QtXmlPatterns#198
+msgid "Simple type %1 can only have simple atomic type as base type."
+msgstr ""
+
+#: QtXmlPatterns#199
+msgid "Simple type %1 cannot derive from %2 as the latter defines restriction as final."
+msgstr ""
+
+#: QtXmlPatterns#200
+msgid "Variety of item type of %1 must be either atomic or union."
+msgstr ""
+
+#: QtXmlPatterns#201
+msgid "Variety of member types of %1 must be atomic."
+msgstr ""
+
+#: QtXmlPatterns#202
+msgid "%1 is not allowed to derive from %2 by list as the latter defines it as final."
+msgstr ""
+
+#: QtXmlPatterns#203
+msgid "Simple type %1 is only allowed to have %2 facet."
+msgstr ""
+
+#: QtXmlPatterns#204
+msgid "Base type of simple type %1 must have variety of type list."
+msgstr ""
+
+#: QtXmlPatterns#205
+msgid "Base type of simple type %1 has defined derivation by restriction as final."
+msgstr ""
+
+#: QtXmlPatterns#206
+msgid "Item type of base type does not match item type of %1."
+msgstr ""
+
+#: QtXmlPatterns#207
+msgid "Simple type %1 contains not allowed facet type %2."
+msgstr ""
+
+#: QtXmlPatterns#208
+msgid "%1 is not allowed to derive from %2 by union as the latter defines it as final."
+msgstr ""
+
+#: QtXmlPatterns#209
+msgid "%1 is not allowed to have any facets."
+msgstr ""
+
+#: QtXmlPatterns#210
+msgid "Base type %1 of simple type %2 must have variety of union."
+msgstr ""
+
+#: QtXmlPatterns#211
+msgid "Base type %1 of simple type %2 is not allowed to have restriction in %3 attribute."
+msgstr ""
+
+#: QtXmlPatterns#212
+msgid "Member type %1 cannot be derived from member type %2 of %3's base type %4."
+msgstr ""
+
+#: QtXmlPatterns#213
+msgid "Derivation method of %1 must be extension because the base type %2 is a simple type."
+msgstr ""
+
+#: QtXmlPatterns#214
+msgid "Complex type %1 has duplicated element %2 in its content model."
+msgstr ""
+
+#: QtXmlPatterns#215
+msgid "Complex type %1 has non-deterministic content."
+msgstr ""
+
+#: QtXmlPatterns#216
+msgid "Attributes of complex type %1 are not a valid extension of the attributes of base type %2: %3."
+msgstr ""
+
+#: QtXmlPatterns#217
+msgid "Content model of complex type %1 is not a valid extension of content model of %2."
+msgstr ""
+
+#: QtXmlPatterns#218
+msgid "Complex type %1 must have simple content."
+msgstr ""
+
+#: QtXmlPatterns#219
+msgid "Complex type %1 must have the same simple type as its base class %2."
+msgstr ""
+
+#: QtXmlPatterns#220
+msgid "Complex type %1 cannot be derived from base type %2%3."
+msgstr ""
+
+#: QtXmlPatterns#221
+msgid "Attributes of complex type %1 are not a valid restriction from the attributes of base type %2: %3."
+msgstr ""
+
+#: QtXmlPatterns#222
+msgid "Complex type %1 with simple content cannot be derived from complex base type %2."
+msgstr ""
+
+#: QtXmlPatterns#223
+msgid "Item type of simple type %1 cannot be a complex type."
+msgstr ""
+
+#: QtXmlPatterns#224
+msgid "Member type of simple type %1 cannot be a complex type."
+msgstr ""
+
+#: QtXmlPatterns#225
+msgid "%1 is not allowed to have a member type with the same name as itself."
+msgstr ""
+
+#: QtXmlPatterns#226
+msgid "%1 facet collides with %2 facet."
+msgstr ""
+
+#: QtXmlPatterns#227
+msgid "%1 facet must have the same value as %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#228
+msgid "%1 facet must be equal or greater than %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#229
+msgid "%1 facet must be less than or equal to %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#230
+msgid "%1 facet contains invalid regular expression"
+msgstr ""
+
+#: QtXmlPatterns#231
+msgid "Unknown notation %1 used in %2 facet."
+msgstr ""
+
+#: QtXmlPatterns#232
+msgid "%1 facet contains invalid value %2: %3."
+msgstr ""
+
+#: QtXmlPatterns#233
+msgid "%1 facet cannot be %2 or %3 if %4 facet of base type is %5."
+msgstr ""
+
+#: QtXmlPatterns#234
+msgid "%1 facet cannot be %2 if %3 facet of base type is %4."
+msgstr ""
+
+#: QtXmlPatterns#235
+msgid "%1 facet must be less than or equal to %2 facet."
+msgstr ""
+
+#: QtXmlPatterns#236
+msgid "%1 facet must be less than %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#237
+msgid "%1 facet and %2 facet cannot appear together."
+msgstr ""
+
+#: QtXmlPatterns#238
+msgid "%1 facet must be greater than %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#239
+msgid "%1 facet must be less than %2 facet."
+msgstr ""
+
+#: QtXmlPatterns#240
+msgid "%1 facet must be greater than or equal to %2 facet of base type."
+msgstr ""
+
+#: QtXmlPatterns#241
+msgid "Simple type contains not allowed facet %1."
+msgstr ""
+
+#: QtXmlPatterns#242
+msgid "%1, %2, %3, %4, %5 and %6 facets are not allowed when derived by list."
+msgstr ""
+
+#: QtXmlPatterns#243
+msgid "Only %1 and %2 facets are allowed when derived by union."
+msgstr ""
+
+#: QtXmlPatterns#244
+msgid "%1 contains %2 facet with invalid data: %3."
+msgstr ""
+
+#: QtXmlPatterns#245
+msgid "Attribute group %1 contains attribute %2 twice."
+msgstr ""
+
+#: QtXmlPatterns#246
+msgid "Attribute group %1 contains two different attributes that both have types derived from %2."
+msgstr ""
+
+#: QtXmlPatterns#247
+msgid "Attribute group %1 contains attribute %2 that has value constraint but type that inherits from %3."
+msgstr ""
+
+#: QtXmlPatterns#248
+msgid "Complex type %1 contains attribute %2 twice."
+msgstr ""
+
+#: QtXmlPatterns#249
+msgid "Complex type %1 contains two different attributes that both have types derived from %2."
+msgstr ""
+
+#: QtXmlPatterns#250
+msgid "Complex type %1 contains attribute %2 that has value constraint but type that inherits from %3."
+msgstr ""
+
+#: QtXmlPatterns#251
+msgid "Element %1 is not allowed to have a value constraint if its base type is complex."
+msgstr ""
+
+#: QtXmlPatterns#252
+msgid "Element %1 is not allowed to have a value constraint if its type is derived from %2."
+msgstr ""
+
+#: QtXmlPatterns#253
+msgid "Value constraint of element %1 is not of elements type: %2."
+msgstr ""
+
+#: QtXmlPatterns#254
+msgid "Element %1 is not allowed to have substitution group affiliation as it is no global element."
+msgstr ""
+
+#: QtXmlPatterns#255
+msgid "Type of element %1 cannot be derived from type of substitution group affiliation."
+msgstr ""
+
+#: QtXmlPatterns#256
+msgid "Value constraint of attribute %1 is not of attributes type: %2."
+msgstr ""
+
+#: QtXmlPatterns#257
+msgid "Attribute %1 has value constraint but has type derived from %2."
+msgstr ""
+
+#: QtXmlPatterns#258
+msgid "%1 attribute in derived complex type must be %2 like in base type."
+msgstr ""
+
+#: QtXmlPatterns#259
+msgid "Attribute %1 in derived complex type must have %2 value constraint like in base type."
+msgstr ""
+
+#: QtXmlPatterns#260
+msgid "Attribute %1 in derived complex type must have the same %2 value constraint like in base type."
+msgstr ""
+
+#: QtXmlPatterns#261
+msgid "Attribute %1 in derived complex type must have %2 value constraint."
+msgstr ""
+
+#: QtXmlPatterns#262
+msgid "processContent of base wildcard must be weaker than derived wildcard."
+msgstr ""
+
+#: QtXmlPatterns#263
+msgid "Element %1 exists twice with different types."
+msgstr ""
+
+#: QtXmlPatterns#264
+msgid "Particle contains non-deterministic wildcards."
+msgstr ""
+
+#: QtXmlPatterns#265
+msgid "Base attribute %1 is required but derived attribute is not."
+msgstr ""
+
+#: QtXmlPatterns#266
+msgid "Type of derived attribute %1 cannot be validly derived from type of base attribute."
+msgstr ""
+
+#: QtXmlPatterns#267
+msgid "Value constraint of derived attribute %1 does not match value constraint of base attribute."
+msgstr ""
+
+#: QtXmlPatterns#268
+msgid "Derived attribute %1 does not exist in the base definition."
+msgstr ""
+
+#: QtXmlPatterns#269
+msgid "Derived attribute %1 does not match the wildcard in the base definition."
+msgstr ""
+
+#: QtXmlPatterns#270
+msgid "Base attribute %1 is required but missing in derived definition."
+msgstr ""
+
+#: QtXmlPatterns#271
+msgid "Derived definition contains an %1 element that does not exists in the base definition"
+msgstr ""
+
+#: QtXmlPatterns#272
+msgid "Derived wildcard is not a subset of the base wildcard."
+msgstr ""
+
+#: QtXmlPatterns#273
+msgid "%1 of derived wildcard is not a valid restriction of %2 of base wildcard"
+msgstr ""
+
+#: QtXmlPatterns#274
+msgid "Attribute %1 from base type is missing in derived type."
+msgstr ""
+
+#: QtXmlPatterns#275
+msgid "Type of derived attribute %1 differs from type of base attribute."
+msgstr ""
+
+#: QtXmlPatterns#276
+msgid "Base definition contains an %1 element that is missing in the derived definition"
+msgstr ""
+
+#: QtXmlPatterns#277
+msgid "Can not process unknown element %1, expected elements are: %2."
+msgstr ""
+
+#: QtXmlPatterns#278
+msgid "Element %1 is not allowed in this scope, possible elements are: %2."
+msgstr ""
+
+#: QtXmlPatterns#279
+msgid "Child element is missing in that scope, possible child elements are: %1."
+msgstr ""
+
+#: QtXmlPatterns#280
+msgid "Document is not a XML schema."
+msgstr ""
+
+#: QtXmlPatterns#281
+msgid "%1 attribute of %2 element contains invalid content: {%3} is not a value of type %4."
+msgstr ""
+
+#: QtXmlPatterns#282
+msgid "%1 attribute of %2 element contains invalid content: {%3}."
+msgstr ""
+
+#: QtXmlPatterns#283
+msgid "Target namespace %1 of included schema is different from the target namespace %2 as defined by the including schema."
+msgstr ""
+
+#: QtXmlPatterns#284
+msgid "Target namespace %1 of imported schema is different from the target namespace %2 as defined by the importing schema."
+msgstr ""
+
+#: QtXmlPatterns#285
+msgid "%1 element is not allowed to have the same %2 attribute value as the target namespace %3."
+msgstr ""
+
+#: QtXmlPatterns#286
+msgid "%1 element without %2 attribute is not allowed inside schema without target namespace."
+msgstr ""
+
+#: QtXmlPatterns#287
+msgid "%1 element is not allowed inside %2 element if %3 attribute is present."
+msgstr ""
+
+#: QtXmlPatterns#288
+msgid "%1 element has neither %2 attribute nor %3 child element."
+msgstr ""
+
+#: QtXmlPatterns#289
+msgid "%1 element with %2 child element must not have a %3 attribute."
+msgstr ""
+
+#: QtXmlPatterns#290
+msgid "%1 attribute of %2 element must be %3 or %4."
+msgstr ""
+
+#: QtXmlPatterns#291
+msgid "%1 attribute of %2 element must have a value of %3."
+msgstr ""
+
+#: QtXmlPatterns#292
+msgid "%1 attribute of %2 element must have a value of %3 or %4."
+msgstr ""
+
+#: QtXmlPatterns#293
+msgid "%1 element must not have %2 and %3 attribute together."
+msgstr ""
+
+#: QtXmlPatterns#294
+msgid "Content of %1 attribute of %2 element must not be from namespace %3."
+msgstr ""
+
+#: QtXmlPatterns#295
+msgid "%1 attribute of %2 element must not be %3."
+msgstr ""
+
+#: QtXmlPatterns#296
+msgid "%1 attribute of %2 element must have the value %3 because the %4 attribute is set."
+msgstr ""
+
+#: QtXmlPatterns#297
+msgid "Specifying use='prohibited' inside an attribute group has no effect."
+msgstr ""
+
+#: QtXmlPatterns#298
+msgid "%1 element must have either %2 or %3 attribute."
+msgstr ""
+
+#: QtXmlPatterns#299
+msgid "%1 element must have either %2 attribute or %3 or %4 as child element."
+msgstr ""
+
+#: QtXmlPatterns#300
+msgid "%1 element requires either %2 or %3 attribute."
+msgstr ""
+
+#: QtXmlPatterns#301
+#, fuzzy
+msgid "Text or entity references not allowed inside %1 element"
+msgstr "DTD içerisinde genel iç varlık referansılarına (entity) izin verilmez"
+
+#: QtXmlPatterns#302
+msgid "%1 attribute of %2 element must contain %3, %4 or a list of URIs."
+msgstr ""
+
+#: QtXmlPatterns#303
+#, fuzzy
+msgid "%1 element is not allowed in this context."
+msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+
+#: QtXmlPatterns#304
+msgid "%1 attribute of %2 element has larger value than %3 attribute."
+msgstr ""
+
+#: QtXmlPatterns#305
+msgid "Prefix of qualified name %1 is not defined."
+msgstr ""
+
+#: QtXmlPatterns#306
+msgid "%1 attribute of %2 element must either contain %3 or the other values."
+msgstr ""
+
+#: QtXmlPatterns#307
+msgid "Component with ID %1 has been defined previously."
+msgstr ""
+
+#: QtXmlPatterns#308
+msgid "Element %1 already defined."
+msgstr ""
+
+#: QtXmlPatterns#309
+#, fuzzy
+msgid "Attribute %1 already defined."
+msgstr "Nitelik yeniden tanımlandı."
+
+#: QtXmlPatterns#310
+msgid "Type %1 already defined."
+msgstr ""
+
+#: QtXmlPatterns#311
+#, fuzzy
+msgid "Attribute group %1 already defined."
+msgstr "Nitelik yeniden tanımlandı."
+
+#: QtXmlPatterns#312
+msgid "Element group %1 already defined."
+msgstr ""
+
+#: QtXmlPatterns#313
+msgid "Notation %1 already defined."
+msgstr ""
+
+#: QtXmlPatterns#314
+msgid "Identity constraint %1 already defined."
+msgstr ""
+
+#: QtXmlPatterns#315
+msgid "Duplicated facets in simple type %1."
+msgstr ""
+
+#: QtXmlPatterns#316
+msgid "%1 references unknown %2 or %3 element %4."
+msgstr ""
+
+#: QtXmlPatterns#317
+msgid "%1 references identity constraint %2 that is no %3 or %4 element."
+msgstr ""
+
+#: QtXmlPatterns#318
+msgid "%1 has a different number of fields from the identity constraint %2 that it references."
+msgstr ""
+
+#: QtXmlPatterns#319
+msgid "Base type %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#320
+msgid "Item type %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#321
+msgid "Member type %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#322
+msgid "Type %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#323
+msgid "Base type %1 of complex type cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#324
+msgid "%1 cannot have complex base type that has a %2."
+msgstr ""
+
+#: QtXmlPatterns#325
+msgid "Content model of complex type %1 contains %2 element so it cannot be derived by extension from a non-empty type."
+msgstr ""
+
+#: QtXmlPatterns#326
+msgid "Complex type %1 cannot be derived by extension from %2 as the latter contains %3 element in its content model."
+msgstr ""
+
+#: QtXmlPatterns#327
+msgid "Type of %1 element must be a simple type, %2 is not."
+msgstr ""
+
+#: QtXmlPatterns#328
+msgid "Substitution group %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#329
+msgid "Substitution group %1 has circular definition."
+msgstr ""
+
+#: QtXmlPatterns#330
+msgid "Duplicated element names %1 in %2 element."
+msgstr ""
+
+#: QtXmlPatterns#331
+msgid "Reference %1 of %2 element cannot be resolved."
+msgstr ""
+
+#: QtXmlPatterns#332
+msgid "Circular group reference for %1."
+msgstr ""
+
+#: QtXmlPatterns#333
+msgid "%1 element is not allowed in this scope"
+msgstr ""
+
+#: QtXmlPatterns#334
+msgid "%1 element cannot have %2 attribute with value other than %3."
+msgstr ""
+
+#: QtXmlPatterns#335
+msgid "%1 element cannot have %2 attribute with value other than %3 or %4."
+msgstr ""
+
+#: QtXmlPatterns#336
+msgid "%1 or %2 attribute of reference %3 does not match with the attribute declaration %4."
+msgstr ""
+
+#: QtXmlPatterns#337
+msgid "Attribute group %1 has circular reference."
+msgstr ""
+
+#: QtXmlPatterns#338
+msgid "%1 attribute in %2 must have %3 use like in base type %4."
+msgstr ""
+
+#: QtXmlPatterns#339
+msgid "Attribute wildcard of %1 is not a valid restriction of attribute wildcard of base type %2."
+msgstr ""
+
+#: QtXmlPatterns#340
+msgid "%1 has attribute wildcard but its base type %2 has not."
+msgstr ""
+
+#: QtXmlPatterns#341
+msgid "Union of attribute wildcard of type %1 and attribute wildcard of its base type %2 is not expressible."
+msgstr ""
+
+#: QtXmlPatterns#342
+msgid "Enumeration facet contains invalid content: {%1} is not a value of type %2."
+msgstr ""
+
+#: QtXmlPatterns#343
+#, fuzzy
+msgid "Namespace prefix of qualified name %1 is not defined."
+msgstr "İsimlendirme öneki '%1' bildirilmedi"
+
+#: QtXmlPatterns#344
+msgid "%1 element %2 is not a valid restriction of the %3 element it redefines: %4."
+msgstr ""
+
+#: QtXmlPatterns#345
+#, fuzzy
+msgid "%1 is not valid according to %2."
+msgstr "%1 geçersiz bir kodlama adıdır."
+
+#: QtXmlPatterns#346
+msgid "String content does not match the length facet."
+msgstr ""
+
+#: QtXmlPatterns#347
+msgid "String content does not match the minLength facet."
+msgstr ""
+
+#: QtXmlPatterns#348
+msgid "String content does not match the maxLength facet."
+msgstr ""
+
+#: QtXmlPatterns#349
+msgid "String content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#350
+msgid "String content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#351
+msgid "Signed integer content does not match the maxInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#352
+msgid "Signed integer content does not match the maxExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#353
+msgid "Signed integer content does not match the minInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#354
+msgid "Signed integer content does not match the minExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#355
+msgid "Signed integer content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#356
+msgid "Signed integer content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#357
+msgid "Signed integer content does not match in the totalDigits facet."
+msgstr ""
+
+#: QtXmlPatterns#358
+msgid "Unsigned integer content does not match the maxInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#359
+msgid "Unsigned integer content does not match the maxExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#360
+msgid "Unsigned integer content does not match the minInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#361
+msgid "Unsigned integer content does not match the minExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#362
+msgid "Unsigned integer content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#363
+msgid "Unsigned integer content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#364
+msgid "Unsigned integer content does not match in the totalDigits facet."
+msgstr ""
+
+#: QtXmlPatterns#365
+msgid "Double content does not match the maxInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#366
+msgid "Double content does not match the maxExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#367
+msgid "Double content does not match the minInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#368
+msgid "Double content does not match the minExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#369
+msgid "Double content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#370
+msgid "Double content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#371
+msgid "Decimal content does not match in the fractionDigits facet."
+msgstr ""
+
+#: QtXmlPatterns#372
+msgid "Decimal content does not match in the totalDigits facet."
+msgstr ""
+
+#: QtXmlPatterns#373
+msgid "Date time content does not match the maxInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#374
+msgid "Date time content does not match the maxExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#375
+msgid "Date time content does not match the minInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#376
+msgid "Date time content does not match the minExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#377
+msgid "Date time content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#378
+msgid "Date time content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#379
+msgid "Duration content does not match the maxInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#380
+msgid "Duration content does not match the maxExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#381
+msgid "Duration content does not match the minInclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#382
+msgid "Duration content does not match the minExclusive facet."
+msgstr ""
+
+#: QtXmlPatterns#383
+msgid "Duration content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#384
+msgid "Duration content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#385
+msgid "Boolean content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#386
+msgid "Binary content does not match the length facet."
+msgstr ""
+
+#: QtXmlPatterns#387
+msgid "Binary content does not match the minLength facet."
+msgstr ""
+
+#: QtXmlPatterns#388
+msgid "Binary content does not match the maxLength facet."
+msgstr ""
+
+#: QtXmlPatterns#389
+msgid "Binary content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#390
+#, fuzzy
+msgid "Invalid QName content: %1."
+msgstr "Geçersiz belge."
+
+#: QtXmlPatterns#391
+msgid "QName content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#392
+msgid "QName content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#393
+msgid "Notation content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#394
+msgid "List content does not match length facet."
+msgstr ""
+
+#: QtXmlPatterns#395
+msgid "List content does not match minLength facet."
+msgstr ""
+
+#: QtXmlPatterns#396
+msgid "List content does not match maxLength facet."
+msgstr ""
+
+#: QtXmlPatterns#397
+msgid "List content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#398
+msgid "List content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#399
+msgid "Union content is not listed in the enumeration facet."
+msgstr ""
+
+#: QtXmlPatterns#400
+msgid "Union content does not match pattern facet."
+msgstr ""
+
+#: QtXmlPatterns#401
+msgid "Data of type %1 are not allowed to be empty."
+msgstr ""
+
+#: QtXmlPatterns#402
+msgid "Element %1 is missing child element."
+msgstr ""
+
+#: QtXmlPatterns#403
+msgid "There is one IDREF value with no corresponding ID: %1."
+msgstr ""
+
+#: QtXmlPatterns#404
+msgid "Loaded schema file is invalid."
+msgstr ""
+
+#: QtXmlPatterns#405
+#, fuzzy
+msgid "%1 contains invalid data."
+msgstr "%1 geçersiz bir kodlama adıdır."
+
+#: QtXmlPatterns#406
+msgid "xsi:schemaLocation namespace %1 has already appeared earlier in the instance document."
+msgstr ""
+
+#: QtXmlPatterns#407
+msgid "xsi:noNamespaceSchemaLocation cannot appear after the first no-namespace element or attribute."
+msgstr ""
+
+#: QtXmlPatterns#408
+msgid "No schema defined for validation."
+msgstr ""
+
+#: QtXmlPatterns#409
+msgid "No definition for element %1 available."
+msgstr ""
+
+#: QtXmlPatterns#410
+msgid "Specified type %1 is not known to the schema."
+msgstr ""
+
+#: QtXmlPatterns#411
+msgid "Element %1 is not defined in this scope."
+msgstr ""
+
+#: QtXmlPatterns#412
+msgid "Declaration for element %1 does not exist."
+msgstr ""
+
+#: QtXmlPatterns#413
+msgid "Element %1 contains invalid content."
+msgstr ""
+
+#: QtXmlPatterns#414
+msgid "Element %1 is declared as abstract."
+msgstr ""
+
+#: QtXmlPatterns#415
+msgid "Element %1 is not nillable."
+msgstr ""
+
+#: QtXmlPatterns#416
+msgid "Attribute %1 contains invalid data: %2"
+msgstr ""
+
+#: QtXmlPatterns#417
+msgid "Element contains content although it is nillable."
+msgstr ""
+
+#: QtXmlPatterns#418
+msgid "Fixed value constraint not allowed if element is nillable."
+msgstr ""
+
+#: QtXmlPatterns#419
+msgid "Specified type %1 is not validly substitutable with element type %2."
+msgstr ""
+
+#: QtXmlPatterns#420
+msgid "Complex type %1 is not allowed to be abstract."
+msgstr ""
+
+#: QtXmlPatterns#421
+msgid "Element %1 contains not allowed attributes."
+msgstr ""
+
+#: QtXmlPatterns#422
+msgid "Element %1 contains not allowed child element."
+msgstr ""
+
+#: QtXmlPatterns#423
+msgid "Content of element %1 does not match its type definition: %2."
+msgstr ""
+
+#: QtXmlPatterns#424
+msgid "Content of element %1 does not match defined value constraint."
+msgstr ""
+
+#: QtXmlPatterns#425
+#, fuzzy
+msgid "Element %1 contains not allowed child content."
+msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+
+#: QtXmlPatterns#426
+#, fuzzy
+msgid "Element %1 contains not allowed text content."
+msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+
+#: QtXmlPatterns#427
+msgid "Element %1 cannot contain other elements, as it has a fixed content."
+msgstr ""
+
+#: QtXmlPatterns#428
+msgid "Element %1 is missing required attribute %2."
+msgstr ""
+
+#: QtXmlPatterns#429
+msgid "Attribute %1 does not match the attribute wildcard."
+msgstr ""
+
+#: QtXmlPatterns#430
+#, fuzzy
+msgid "Declaration for attribute %1 does not exist."
+msgstr "XML bildirimi belgenin başlangıcında değil."
+
+#: QtXmlPatterns#431
+msgid "Element %1 contains two attributes of type %2."
+msgstr ""
+
+#: QtXmlPatterns#432
+msgid "Attribute %1 contains invalid content."
+msgstr ""
+
+#: QtXmlPatterns#433
+msgid "Element %1 contains unknown attribute %2."
+msgstr ""
+
+#: QtXmlPatterns#434
+msgid "Content of attribute %1 does not match its type definition: %2."
+msgstr ""
+
+#: QtXmlPatterns#435
+msgid "Content of attribute %1 does not match defined value constraint."
+msgstr ""
+
+#: QtXmlPatterns#436
+msgid "Non-unique value found for constraint %1."
+msgstr ""
+
+#: QtXmlPatterns#437
+msgid "Key constraint %1 contains absent fields."
+msgstr ""
+
+#: QtXmlPatterns#438
+msgid "Key constraint %1 contains references nillable element %2."
+msgstr ""
+
+#: QtXmlPatterns#439
+msgid "No referenced value found for key reference %1."
+msgstr ""
+
+#: QtXmlPatterns#440
+msgid "More than one value found for field %1."
+msgstr ""
+
+#: QtXmlPatterns#441
+msgid "Field %1 has no simple type."
+msgstr ""
+
+#: QtXmlPatterns#442
+msgid "ID value '%1' is not unique."
+msgstr ""
+
+#: QtXmlPatterns#443
+msgid "'%1' attribute contains invalid QName content: %2."
+msgstr ""
+
+#: QtXmlPatterns#444
+#, fuzzy
+msgid "empty"
+msgstr "<boş>"
+
+#: QtXmlPatterns#445
+msgid "zero or one"
+msgstr ""
+
+#: QtXmlPatterns#446
+msgid "exactly one"
+msgstr ""
+
+#: QtXmlPatterns#447
+msgid "one or more"
+msgstr ""
+
+#: QtXmlPatterns#448
+msgid "zero or more"
+msgstr ""
+
+#: QtXmlPatterns#449
+msgid "Required type is %1, but %2 was found."
+msgstr ""
+
+#: QtXmlPatterns#450
+msgid "Promoting %1 to %2 may cause loss of precision."
+msgstr ""
+
+#: QtXmlPatterns#451
+msgid "The focus is undefined."
+msgstr ""
+
+#: QtXmlPatterns#452
+msgid "It's not possible to add attributes after any other kind of node."
+msgstr ""
+
+#: QtXmlPatterns#453
+msgid "An attribute by name %1 has already been created."
+msgstr ""
+
+#: QtXmlPatterns#454
+msgid "Only the Unicode Codepoint Collation is supported(%1). %2 is unsupported."
 msgstr ""
 
 #~ msgid "Invalid XML encoding name."
@@ -10482,12 +10480,10 @@ msgstr ""
 #~ msgid "Date Modified"
 #~ msgstr "Değiştirilme Tarihi"
 
-# All other platforms
 #~ msgctxt "QFileSystemModel#6"
 #~ msgid "Type"
 #~ msgstr "Dosya Türü"
 
-# Match OS X Finder
 #~ msgctxt "QFileSystemModel#5"
 #~ msgid "Kind"
 #~ msgstr "Dosya Türü"
