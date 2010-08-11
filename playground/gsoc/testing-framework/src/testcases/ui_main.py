@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Wed Aug 11 13:58:37 2010
+# Created: Wed Aug 11 15:12:39 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -13,9 +13,9 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.setEnabled(True)
-        Dialog.resize(601, 524)
+        Dialog.resize(601, 603)
         self.group_box = QtGui.QGroupBox(Dialog)
-        self.group_box.setGeometry(QtCore.QRect(10, 10, 581, 321))
+        self.group_box.setGeometry(QtCore.QRect(10, 10, 581, 391))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(20, 19, 18))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -31,7 +31,7 @@ class Ui_Dialog(object):
         self.group_box.setObjectName("group_box")
         self.text_edit = QtGui.QTextEdit(self.group_box)
         self.text_edit.setEnabled(False)
-        self.text_edit.setGeometry(QtCore.QRect(10, 70, 561, 251))
+        self.text_edit.setGeometry(QtCore.QRect(10, 70, 561, 321))
         font = QtGui.QFont()
         font.setWeight(50)
         font.setBold(False)
@@ -51,21 +51,21 @@ class Ui_Dialog(object):
         self.type_label.setObjectName("type_label")
         self.text_observation = QtGui.QPlainTextEdit(Dialog)
         self.text_observation.setEnabled(False)
-        self.text_observation.setGeometry(QtCore.QRect(40, 410, 531, 70))
+        self.text_observation.setGeometry(QtCore.QRect(40, 480, 531, 70))
         self.text_observation.setObjectName("text_observation")
         self.clear_button = QtGui.QPushButton(Dialog)
         self.clear_button.setEnabled(False)
-        self.clear_button.setGeometry(QtCore.QRect(50, 490, 51, 25))
+        self.clear_button.setGeometry(QtCore.QRect(50, 560, 51, 25))
         self.clear_button.setObjectName("clear_button")
         self.next_button = QtGui.QPushButton(Dialog)
-        self.next_button.setGeometry(QtCore.QRect(490, 490, 71, 25))
+        self.next_button.setGeometry(QtCore.QRect(490, 560, 71, 25))
         self.next_button.setObjectName("next_button")
         self.quit_button = QtGui.QPushButton(Dialog)
         self.quit_button.setEnabled(False)
-        self.quit_button.setGeometry(QtCore.QRect(350, 490, 71, 25))
+        self.quit_button.setGeometry(QtCore.QRect(350, 560, 71, 25))
         self.quit_button.setObjectName("quit_button")
         self.layoutWidget = QtGui.QWidget(Dialog)
-        self.layoutWidget.setGeometry(QtCore.QRect(22, 350, 551, 51))
+        self.layoutWidget.setGeometry(QtCore.QRect(22, 420, 551, 51))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout = QtGui.QGridLayout(self.layoutWidget)
         self.gridLayout.setObjectName("gridLayout")
@@ -104,7 +104,7 @@ class Ui_Dialog(object):
         self.gridLayout.addWidget(self.no_button, 0, 4, 1, 1)
         self.save_button = QtGui.QPushButton(Dialog)
         self.save_button.setEnabled(False)
-        self.save_button.setGeometry(QtCore.QRect(420, 490, 71, 25))
+        self.save_button.setGeometry(QtCore.QRect(420, 560, 71, 25))
         self.save_button.setObjectName("save_button")
 
         self.retranslateUi(Dialog)
