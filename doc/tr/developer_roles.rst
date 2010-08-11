@@ -62,14 +62,6 @@ Yazılım Geliştirici:
 #. Yazılımın bakımını yapmak, hataları gidermek ve raporlamak.
 #.  Yazılımın ve (gerekli durumlarda) bağımlısı olduğu diğer paketlerin bakıcılığını üstlenmek.
 
-Lead Developer:
----------------
-#. Analyse, manage and plan all the life cycle of the project
-#. Take into account the new feature requests and prepare a requirement list in consultation with the related developers.
-#. Give timelines of the project in consultation with release manager and product manager.
-#. Organize and coordinate the developers under the project.
-#. Review bugs related to the project and give related severity and priority levels.
-
 Yazılım Ana Geliştirici:
 ------------------------
 

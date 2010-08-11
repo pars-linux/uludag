@@ -36,7 +36,7 @@ katkıcının bir arada, uyum içerisinde çalışabilmesi için gerekli olan ma
 Devamlılık
 **********
 
-Bir katkıcının üzerinde çalıştığı projelerde sürekli olarak çalışabilmeyi göze alması gerekiyor. Burada süreklilik ile ifade edilen 7/24 bir çalışma değil, fakat üzerinde çalışılan konunun devamlılığının sağlanması. Bir işletim sistemi projesinde parçalar birbirleri ile sıkı bir şekilde bağlı olduğu için geliştiricilerin de birbirlerinin hızlarına ayak uydurabilmeleri gerekiyor.
+Bir katkıcının üzerinde çalıştığı projelerde sürekli olarak çalışabilmeyi göze alması gerekiyor. Burada süreklilik ile ifade edilen 7/24 bir çalışma değil, fakat üzerinde çalışılan konunun devamlılığının sağlanması. Bir işletim sistemi projesinde parçalar birbirleri ile sıkı bir şekilde bağlı olduğu için katkıcıların da birbirlerinin hızlarına ayak uydurabilmeleri gerekiyor.
 
 ********
 Doğruluk
