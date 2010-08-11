@@ -23,8 +23,8 @@ Yeni Özellik İstekleri
     #. Ana geliştiricisi olduğumuz uygulamalar için:
         #. Önemli bir kullanılabilirlik değişikliği.(Tema veya stil dışında.)
         #. Kullanıcı gereksinimi olduğunu düşündüğünüz bir geliştirme veya değişiklik.
-    #. Ana geliştiricisisi olmadığımız uygulamalar için:
-        #. İlgili uygulamanın ana geliştirici ile iletişime geçerek, değişiklik veya yenilik isteğinde bulunmak.
+    #. Ana geliştiricisi olmadığımız uygulamalar için:
+        #. İlgili uygulamanın ana geliştiricisi ile iletişime geçerek, değişiklik veya yenilik isteğinde bulunmak.
         #. İlgili uygulamanın katkıcıları ile iletişime geçip, istemiş olduğu yeni özellik için çalışmak
     #. Düzgün bir şekilde geliştirilmediğinde ve eksiklikleri bulunduğunda sürümü öteleyebilecek kadar önemli olmalıdır.
     #. Sürüm notlarına konulabilecek kadar önemli bir özellik olmalıdır.
@@ -45,8 +45,8 @@ Bunun iki yöntemi bulunmaktadır:
 
 Bugzilla aracılığı ile:
 ^^^^^^^^^^^^^^^^^^^^^^^
-    #. bugs.pardus.org.tr üyeliğiniz bulunmalıdır.
-    #. bugs.pardus.org.tr ana sayfasından "Yeni bir Hata Raporla" butonuna basınız.
+    #. hata.pardus.org.tr üyeliğiniz bulunmalıdır.
+    #. hata.pardus.org.tr ana sayfasından "Yeni bir Hata Raporla" butonuna basınız.
     #. Yeni bir özellik eklenmesini istediğiniz uygulamayı seçiniz.
     #. Karşınıza bir raporlama arayüzü çıkacaktır.
     #. Özet bölümü Yeni Özellik X şeklinde bir başlık içermelidir. (X istemiş olduğunuz yeni özellik olacaktır.)
@@ -68,7 +68,7 @@ Bugzilla aracılığı ile:
         #. Pardus'a Katkısı: Bu yeni özellik tamamlandığında Pardus'a nasıl bir katkısı olacak.
    #. "Kategori" bölümünde yeni özelliğin hangi birim ile ilgili olduğunu şeçmelisiniz.
    #. "Şu paket ile ilgili" bölümünde eğer yeni özellik bir paket ile ilgili ise ilgili paketi seçmelisziniz.
-   #. "İligili forum bağlantısı" Varsa ilgili Özgürlük İçin Forumundaki konu adresi yazılmalıdır.
+   #. "İlgili forum bağlantısı" Varsa ilgili Özgürlük İçin Forumundaki konu adresi yazılmalıdır.
    #. "Hata numaraları" Eğer daha önce yeni özellik isteği olarak hata girmiş iseniz, bu hata numaralarını bu alana ekleyebilirsiniz.
    #. Yeni özelliğin ait olduğu birden fazla farklı alan olduğunu düşünüyorsanız etiket bölümünü kullanabilirsiniz.
 
@@ -94,7 +94,7 @@ Yeni Özellik İsteği Şartları
 Süreç
 ^^^^^
 
-#. Yeni özellik isteği http://bugs.pardus.org.tr veya  http://www.ozgurlukicin.com/yenifikir/ üzerinden girilir. bkz. `Katkıda bulunmayacağım yeni bir özelliği nasıl sunabilirim?`_
+#. Yeni özellik isteği http://hata.pardus.org.tr veya  http://www.ozgurlukicin.com/yenifikir/ üzerinden girilir. bkz. `Katkıda bulunmayacağım yeni bir özelliği nasıl sunabilirim?`_
 #. Yeni özellik istekleri Sürüm Camia Temsilcisi veya grubu tarafından gözden geçirilir:
 
     * Yeni özellik isteklerinin girişi için bir son tarih bulunmaktadır, bu son tarih sürüm yöneticisi tarafından belirlenir ve bu tarihten 2 hafta ve 1 hafta öncesinde uyarılar gerekli topluluk iletişim araçlarından gönderilecektir.
@@ -112,7 +112,7 @@ a.Özgürlük İçin -> Beyin kısmından gelen yeni özellik istekleri:
             #. Düzeltme yeni özellik isteği son tarihinden önce düzeltilmiş ise aşağıda bulunan işlemler gerçekleştirilecektir:
 
         #. Eğer rapor eksiksiz ve anlaşılır bir şekilde yazılmış ve `Özellik nedir?`_ kriterlerine uyuyor ise, Sürüm Camia Temsilcisi veya grubu tarafından:
-            - http://bugs.pardus.org.tr adresinden "Distribution Process -> New Feature" ürünü altına yeni bir hata raporu açılır,
+            - http://hata.pardus.org.tr adresinden "Distribution Process -> New Feature" ürünü altına yeni bir hata raporu açılır,
             - Özgürlük İçin -> Beyin'de yapılmış ayrıntılı açıklama bu rapora kopyalanır,
             - "newfeature" önem derecesi ile raporu işaretlenir.
             - Eğer raporlanan yeni özellik birden fazla yeni özeliği içinde barındırıyor ise bu özellikler için ayrı ayrı hatalar açılmalıdır
