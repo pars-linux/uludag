@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Wed Aug 11 15:12:39 2010
+# Created: Wed Aug 11 15:39:47 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -78,11 +78,11 @@ class Ui_Dialog(object):
         self.yes_button.setCheckable(True)
         self.yes_button.setChecked(True)
         self.yes_button.setObjectName("yes_button")
-        self.gridLayout.addWidget(self.yes_button, 0, 2, 1, 1)
+        self.gridLayout.addWidget(self.yes_button, 0, 3, 1, 1)
         self.unable_button = QtGui.QRadioButton(self.layoutWidget)
         self.unable_button.setEnabled(False)
         self.unable_button.setObjectName("unable_button")
-        self.gridLayout.addWidget(self.unable_button, 0, 7, 1, 1)
+        self.gridLayout.addWidget(self.unable_button, 0, 8, 1, 1)
         self.label_observation = QtGui.QLabel(self.layoutWidget)
         self.label_observation.setEnabled(False)
         font = QtGui.QFont()
@@ -92,16 +92,18 @@ class Ui_Dialog(object):
         self.label_observation.setObjectName("label_observation")
         self.gridLayout.addWidget(self.label_observation, 1, 0, 1, 1)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 0, 1, 1, 1)
+        self.gridLayout.addItem(spacerItem, 0, 2, 1, 1)
         spacerItem1 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem1, 0, 3, 1, 1)
+        self.gridLayout.addItem(spacerItem1, 0, 4, 1, 1)
         spacerItem2 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem2, 0, 6, 1, 1)
+        self.gridLayout.addItem(spacerItem2, 0, 7, 1, 1)
         self.no_button = QtGui.QRadioButton(self.layoutWidget)
         self.no_button.setEnabled(False)
         self.no_button.setChecked(False)
         self.no_button.setObjectName("no_button")
-        self.gridLayout.addWidget(self.no_button, 0, 4, 1, 1)
+        self.gridLayout.addWidget(self.no_button, 0, 5, 1, 1)
+        spacerItem3 = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem3, 0, 1, 1, 1)
         self.save_button = QtGui.QPushButton(Dialog)
         self.save_button.setEnabled(False)
         self.save_button.setGeometry(QtCore.QRect(420, 560, 71, 25))
@@ -121,7 +123,7 @@ class Ui_Dialog(object):
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked(bool)"), self.clear_button.setEnabled)
         QtCore.QObject.connect(self.unable_button, QtCore.SIGNAL("clicked()"), self.text_observation.setFocus)
         QtCore.QObject.connect(self.no_button, QtCore.SIGNAL("clicked()"), self.text_observation.setFocus)
-        QtCore.QObject.connect(self.text_edit, QtCore.SIGNAL("textChanged()"), self.yes_button.setFocus)
+        QtCore.QObject.connect(self.text_edit, QtCore.SIGNAL("textChanged()"), self.yes_button.click)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
         Dialog.setTabOrder(self.yes_button, self.unable_button)
         Dialog.setTabOrder(self.unable_button, self.text_observation)

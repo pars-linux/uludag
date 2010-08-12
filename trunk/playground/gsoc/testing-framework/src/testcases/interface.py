@@ -144,7 +144,7 @@ class Main(QtGui.QMainWindow):
                                                             self.totalcases))
         elif self.ui.unable_button.isChecked():
             failure_message = 'Case {0} of {1}: The user was unable to perform ' \
-                        'this test.'.format(self.casecounter+1, self.totalcases)
+                        'this test'.format(self.casecounter+1, self.totalcases)
             for lst in (self.summary, self.report):
                 lst.append(failure_message)
             observation = self.ui.text_observation.toPlainText()
