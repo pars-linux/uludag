@@ -17,6 +17,8 @@ INSTALLATION:
 
 Copy guestlogin.py file to /lib/security. (Actually same directory with pam_python.so)
 
+Copy guestlogin.conf to /etc/security/
+
 Edit files in /etc/pam.d/ directory.
 
 For Example: Edit system-auth file for login.
@@ -44,6 +46,14 @@ session optional        pam_keyinit.so  revoke
 session required        pam_limits.so
 session    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
 session required        pam_unix.so
+
+
+
+If you want to debug add debug end of the pam_python lines.
+
+You should add like that:
+
+auth    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py debug
 
 
 
