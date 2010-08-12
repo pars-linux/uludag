@@ -39,9 +39,8 @@ class Main(QtGui.QMainWindow):
             packageText = 'Packages: {0}'.format(', '.join(self.packagelist))
             for lst in (self.summary, self.report):
                 lst.append(packageText)
-            self.ui.text_edit.setText('This is a shell test.')
             self.ui.text_edit.append("The following packages will be tested: " \
-                                     "{0}".format(', '.join(self.packagelist)))
+                                "<b>{0}</b>".format(', '.join(self.packagelist)))
             self.ui.text_edit.append("Press 'Start' to begin testing ...")
         else:
             # if the test is of gui type
@@ -49,8 +48,7 @@ class Main(QtGui.QMainWindow):
             singlePackage = 'Package: {0}'.format(self.package)
             for lst in (self.summary, self.report):
                 lst.append(singlePackage)
-            self.ui.text_edit.setText('This is a GUI test.')
-            self.ui.text_edit.setText("The package '{0}' " \
+            self.ui.text_edit.append("The package <b>'{0}'</b> " \
                                           "will be tested".format(self.package))
             self.ui.text_edit.append("Press 'Start' to begin testing ...")
         
@@ -66,37 +64,40 @@ class Main(QtGui.QMainWindow):
         self.ui.group_box.setTitle('Case {0} of {1}'.format(self.casecounter+1,
                                                             self.totalcases))
         if self.package is not None:
-            self.ui.package_label.setText('Package: {0}'.format(self.package))                                          
-            self.ui.text_edit.setText('')
-        else:
-            self.ui.package_label.setText('Package(s): ' \
-                                          '{0}'.format(', '.join(self.packagelist)))
-            self.ui.text_edit.setText('')
-        # parse the gui testcase
-        if self.package is not None:
+            self.ui.package_label.setText('Package: {0}'.format(self.package))
+            self.ui.text_edit.clear()
+            # get the list of files that were downloaded
             filesDownloaded = []
             for files in self.case[self.casecounter].getiterator('download'):
                 filesDownloaded.append(files.text)
             if filesDownloaded:
-                self.ui.text_edit.append("Using files in '{0}':\n".format(os.getcwd()))
+                self.ui.text_edit.append("Using files in {0}:\n".format(os.getcwd()))
                 self.ui.text_edit.append("{0}".format(os.path.basename('\n'.join(filesDownloaded))))
-            # get the links
-            linkList = []
-            for linkTag in self.case[self.casecounter].getiterator('link'):
-                linkList.append(linkTag.text)
-            if linkList:
+            # get the text
+            textList = []
+            for text in self.case[self.casecounter].getiterator():
+                if text.text == '\n':
+                    continue
+                if text.tag == 'link':
+                    textList.append("<a href='{0}'>{0}</a>".format(text.text))
+                    continue
+                textList.append(text.text)            
+            if textList:
                 self.ui.text_edit.append('')
-                self.ui.text_edit.append('Open the following link(s) in your browser:')
-                self.ui.text_edit.append('{0}'.format('\n'.join(linkList)))
-        # get the text
-        textList = []
-        for element in self.case[self.casecounter].getiterator('text'):
-            textList.append(element.text)
-        if textList:
-            self.ui.text_edit.append('')
             for number, element in enumerate(textList, 1):
-                self.ui.text_edit.append('{0}. {1}'.format(number, element))
-        if self.package is None:
+                self.ui.text_edit.append('<b>{0}</b>. {1}'.format(number, element))
+        else:
+            self.ui.package_label.setText('Package(s): ' \
+                                      '{0}'.format(', '.join(self.packagelist)))
+            self.ui.text_edit.clear()
+            # get the text
+            textList = []
+            for element in self.case[self.casecounter].getiterator('text'):
+                textList.append(element.text)
+            if textList:
+                self.ui.text_edit.append('')
+                for number, element in enumerate(textList, 1):
+                    self.ui.text_edit.append('<b>{0}</b>. {1}'.format(number, element))
             # get the commands
             commandList = []
             for element in self.case[self.casecounter].getiterator('command'):
