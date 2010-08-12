@@ -29,10 +29,10 @@ class TestGUI:
         if downloadList:
             self.download_file(downloadList)
         # start the graphical user interface now
+        app = QtGui.QApplication(sys.argv)
         totalPackages = len(self.packagelist)
         counter = 0
-        while counter < totalPackages:
-            app = QtGui.QApplication(sys.argv)
+        while counter < totalPackages:            
             window = Main(self.element, self.packagelist,
                           self.summary, self.report, self.packagelist[counter])
             window.show()
