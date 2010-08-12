@@ -76,7 +76,7 @@ class Main(QtGui.QMainWindow):
             # get the text
             textList = []
             for text in self.case[self.casecounter].getiterator():
-                if text.text == '\n':
+                if text.text.strip() == '':
                     continue
                 if text.tag == 'link':
                     textList.append("<a href='{0}'>{0}</a>".format(text.text))
