@@ -193,7 +193,7 @@
     <rect>
      <x>22</x>
      <y>420</y>
-     <width>551</width>
+     <width>555</width>
      <height>51</height>
     </rect>
    </property>
@@ -208,7 +208,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="3">
+    <item row="0" column="5">
      <widget class="QRadioButton" name="yes_button">
       <property name="enabled">
        <bool>false</bool>
@@ -224,7 +224,7 @@
       </property>
      </widget>
     </item>
-    <item row="0" column="8">
+    <item row="0" column="11">
      <widget class="QRadioButton" name="unable_button">
       <property name="enabled">
        <bool>false</bool>
@@ -263,7 +263,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="4">
+    <item row="0" column="6">
      <spacer name="horizontalSpacer_2">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -276,7 +276,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="7">
+    <item row="0" column="10">
      <spacer name="horizontalSpacer_3">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
@@ -289,7 +289,7 @@
       </property>
      </spacer>
     </item>
-    <item row="0" column="5">
+    <item row="0" column="8">
      <widget class="QRadioButton" name="no_button">
       <property name="enabled">
        <bool>false</bool>
@@ -304,6 +304,45 @@
     </item>
     <item row="0" column="1">
      <spacer name="horizontalSpacer_4">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="4">
+     <spacer name="horizontalSpacer_5">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="3">
+     <spacer name="horizontalSpacer_6">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="7">
+     <spacer name="horizontalSpacer_7">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
