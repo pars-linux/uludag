@@ -3,8 +3,10 @@ This is a README file about Guest Account PAM module.
 FEATURES:
 --------
 
+reads guest username, max home directory size, max guest user values from configuration file which is on /etc/security/
 Give access to guest named users.
 create a user named as guestX and a home directory at /tmp/guestX.XXXXXX. Mount as tmpfs.
+All guest users' group is reading from configuration file
 After logout deletes this user and its home directory.
 
 REQUIREMENTS:
@@ -15,7 +17,7 @@ pam_python (http://ace-host.stuart.id.au/russell/files/pam_python/)
 INSTALLATION:
 ------------
 
-Copy guestlogin.py file to /lib/security. (Actually same directory with pam_python.so)
+Copy guestlogin.py file to /lib/security/. (Actually same directory with pam_python.so)
 
 Copy guestlogin.conf to /etc/security/
 

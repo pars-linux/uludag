@@ -20,10 +20,11 @@ def pam_sm_authenticate(pamh, flags, argv):
         password.
     """
 
-    debugging = False
-
-    if (argv[1] == 'debug'):
-        debugging = True
+    try:
+        if (argv[1] == 'debug'):
+            debugging = True
+    except:
+        debugging = False
 
     try:
         config = ConfigParser.ConfigParser()
@@ -31,6 +32,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         guest_name = config.get('guest', 'guestname')
         guest_limit = config.getint('guest', 'guestlimit')
         guest_home_dir_size = config.getint('guest', 'homedirsize')
+        guest_group_name = config.get('guest', 'guestgroup')
 
     except:
         return pamh.PAM_AUTHINFO_UNAVAIL
@@ -53,16 +55,15 @@ def pam_sm_authenticate(pamh, flags, argv):
 
         out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=700 none %s" % (guest_home_dir_size, home_dir)], shell=True)
 
-
         if (debugging):
             log("%s has mounted as tmpfs\n" % home_dir)
 
-        os.system("useradd -M %s" % username)
+        os.system("useradd -M -g %s %s" % (guest_group_name, username))
 
         if (debugging):
             log("%s has been created successfully\n" % username)
 
-        out = subprocess.Popen(["chown %s:%s %s" % (username, username, home_dir)], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out = subprocess.Popen(["chown %s:%s %s" % (username, guest_group_name, home_dir)], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         if (debugging):
             log("%s directory's owner is %s now.\n" % (home_dir, username))
@@ -107,10 +108,11 @@ def pam_sm_close_session(pamh, flags, argv):
     """ Close Session, if user is guest \
 destroy it but it seems quite dangerous"""
 
-    debugging = False
-
-    if (argv[1] == 'debug'):
-        debugging = True
+    try:
+        if (argv[1] == 'debug'):
+            debugging = True
+    except:
+        debugging = False
 
     try:
         config = ConfigParser.ConfigParser()
@@ -126,6 +128,7 @@ destroy it but it seems quite dangerous"""
         username = pamh.get_user(None)
         home_dir = os.path.expanduser("~%s" % username)
         out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True)
+
         if (debugging):
             log("%s's all processes are killed\n" % username)
 
@@ -134,13 +137,10 @@ destroy it but it seems quite dangerous"""
         if (debugging):
             log("%s successfully unmounted\n" % home_dir)
 
-        out = subprocess.Popen(["userdel -f %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        os.system("userdel -f %s" % username)
+
         if (debugging):
             log("user %s has been deleted\n" % username)
-
-        out = subprocess.Popen(["groupdel %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if (debugging):
-            log("group %s has been deleted\n" % username)
 
         os.removedirs(home_dir)
 
