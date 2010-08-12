@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
-# Created: Wed Aug 11 15:39:47 2010
+# Created: Thu Aug 12 10:23:12 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -36,6 +36,7 @@ class Ui_Dialog(object):
         font.setWeight(50)
         font.setBold(False)
         self.text_edit.setFont(font)
+        self.text_edit.setTextInteractionFlags(QtCore.Qt.LinksAccessibleByMouse|QtCore.Qt.TextSelectableByKeyboard|QtCore.Qt.TextSelectableByMouse)
         self.text_edit.setObjectName("text_edit")
         self.package_label = QtGui.QLabel(self.group_box)
         self.package_label.setGeometry(QtCore.QRect(13, 26, 231, 20))
