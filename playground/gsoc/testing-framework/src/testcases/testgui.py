@@ -28,7 +28,7 @@ class TestGUI:
             downloadList.append(downloadTag.text)
         if downloadList:
             self.download_file(downloadList)
-        # start the graphical user interface now
+        # start the graphical user interface 
         app = QtGui.QApplication(sys.argv)
         totalPackages = len(self.packagelist)
         counter = 0

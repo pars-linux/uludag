@@ -10,8 +10,7 @@ from ui_main import Ui_Dialog
 
 
 class Main(QtGui.QMainWindow):
-    def __init__(self, element, packagelist, summary=None, report=None,
-                                             package=None,
+    def __init__(self, element, packagelist, summary=None, report=None, package=None,
                                              checkcode=None, case=None,
                                              casecounter=None, totalcases=None):
         QtGui.QMainWindow.__init__(self)
@@ -19,7 +18,7 @@ class Main(QtGui.QMainWindow):
         self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         self.setFixedSize(self.width(), self.height())
-        
+        # self.checkcode checks for premature exit of the application
         self.checkcode = 0
     
         self.element = element
@@ -35,6 +34,7 @@ class Main(QtGui.QMainWindow):
         self.package = package
         
         if self.package is None:
+            #  if the test is of shell type
             self.ui.type_label.setText('Shell Test')
             packageText = 'Packages: {0}'.format(', '.join(self.packagelist))
             for lst in (self.summary, self.report):
@@ -44,6 +44,7 @@ class Main(QtGui.QMainWindow):
                                      "{0}".format(', '.join(self.packagelist)))
             self.ui.text_edit.append("Press 'Start' to begin testing ...")
         else:
+            # if the test is of gui type
             self.ui.type_label.setText('GUI Test')
             singlePackage = 'Package: {0}'.format(self.package)
             for lst in (self.summary, self.report):
@@ -113,8 +114,10 @@ class Main(QtGui.QMainWindow):
             self.ui.no_button.setEnabled(True)
             self.ui.unable_button.setEnabled(True)
             self.ui.save_button.setEnabled(True)
+            # update the text based on the testcase
             self.ui.next_button.setText('N&ext')
             self.update_text()
+            
             self.ui.next_button.setEnabled(False)
         else:
             self.ui.quit_button.setEnabled(True)
@@ -127,7 +130,7 @@ class Main(QtGui.QMainWindow):
             self.ui.label_observation.setEnabled(False)
             self.ui.unable_button.setEnabled(False)
             self.ui.next_button.setEnabled(False)
-            
+            # set the checkcode to 1 since everything is ok
             self.checkcode = 1
             
             self.ui.package_label.setText('')

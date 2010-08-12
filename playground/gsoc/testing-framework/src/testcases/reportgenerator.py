@@ -44,7 +44,7 @@ class ReportGenerate:
             self.report.append("Type of test: '{0}'".format(testType))
             if self.testreport[counter] is None:
                 self.report.append('Testing was skipped. See output for details')
-                self.summary.append('{0} - Fail'.format(testcaseNumber))
+                self.summary.append('{0} - Skipped'.format(testcaseNumber))
                 counter += 1
                 continue
             self.report.extend(self.testreport[counter].report)
