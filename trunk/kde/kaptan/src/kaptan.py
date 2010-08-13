@@ -2,44 +2,47 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
 from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
 from PyQt4.QtCore import QTimeLine
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
-import kaptan, subprocess, os, dbus
+import os
+import dbus
+import subprocess
 
-from kaptan.kaptanMain import Ui_kaptanUI
-import kaptan.ScrWelcome as welcomeWidget
-import kaptan.ScrMouse as mouseWidget
-import kaptan.ScrNetwork as networkWidget
-import kaptan.ScrWallpaper  as wallpaperWidget
-import kaptan.ScrGoodbye  as goodbyeWidget
-import kaptan.ScrStyle  as styleWidget
-import kaptan.ScrMenu  as menuWidget
-import kaptan.ScrSearch  as searchWidget
-import kaptan.ScrSummary  as summaryWidget
-import kaptan.ScrKeyboard  as keyboardWidget
-import kaptan.ScrPackage as packageWidget
-import kaptan.ScrSmolt as smoltWidget
+from kaptan.screens.ui_kaptan import Ui_kaptan
+import kaptan.screens.scrWelcome as scrWelcome
+import kaptan.screens.scrMouse as scrMouse
+import kaptan.screens.scrNetwork as scrNetwork
+import kaptan.screens.scrWallpaper as scrWallpaper
+import kaptan.screens.scrGoodbye as scrGoodbye
+import kaptan.screens.scrStyle as scrStyle
+import kaptan.screens.scrMenu as scrMenu
+import kaptan.screens.scrSearch as scrSearch
+import kaptan.screens.scrSummary as scrSummary
+import kaptan.screens.scrKeyboard as scrKeyboard
+import kaptan.screens.scrPackage as scrPackage
+import kaptan.screens.scrSmolt as scrSmolt
 
-import kaptan.tools as tools
-
-from kaptan.progressPie import DrawPie
-from kaptan.kaptanMenu import Menu
+from kaptan.tools import tools
+from kaptan.tools.progress_pie import DrawPie
+from kaptan.tools.kaptan_menu import Menu
 
 
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent = None):
 
         QtGui.QWidget.__init__(self, parent)
-        self.ui = Ui_kaptanUI()
+        self.ui = Ui_kaptan()
 
         self.ui.setupUi(self)
+        #self.setStyle(QtGui.QStyleFactory.create('Plastique'))
 
         # Kaptan screen settings
-        self.commonScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget]
-        self.endScreens = [summaryWidget, goodbyeWidget]
+        self.commonScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
+        self.endScreens = [scrSummary, scrGoodbye]
         self.screens = self.appendOtherScreens(self.commonScreens) + self.endScreens
 
         self.screenData = None
@@ -85,16 +88,16 @@ class Kaptan(QtGui.QWidget):
 
         # Append other screens depending on the following cases
         if tools.isLiveCD():
-            screens.append(keyboardWidget)
+            screens.append(scrKeyboard)
 
         else:
             if self.smoltProfileSent():
-                screens.append(packageWidget)
-                screens.append(searchWidget)
+                screens.append(scrPackage)
+                screens.append(scrSearch)
             else:
-                screens.append(searchWidget)
-                screens.append(smoltWidget)
-                screens.append(packageWidget)
+                screens.append(scrSearch)
+                screens.append(scrSmolt)
+                screens.append(scrPackage)
 
         return screens
 
@@ -179,7 +182,6 @@ class Kaptan(QtGui.QWidget):
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
-
 
     # move to id numbered stack
     def stackMove(self, id):

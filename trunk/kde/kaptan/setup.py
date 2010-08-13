@@ -78,13 +78,17 @@ class Build(build):
         print "Copying kde-themes..."
         os.system("cp -R data/kde-themes build/kaptan/")
 
+        #os.system("mkdir build/kaptan/screens/ui")
+
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/kaptan/%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("/usr/kde/4/bin/pykde4uic -o build/kaptan/screens/%s.py ui/%s" % (filename.split(".")[0], filename))
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
             os.system("/usr/bin/pyrcc4 data/%s -o build/kaptan/%s_rc.py" % (filename, filename.split(".")[0]))
+
+        os.system("sed -i 's/kaptan_rc/kaptan.\kaptan_rc/g' build/kaptan/screens/ui_*")
 
 class Install(install):
     def run(self):
