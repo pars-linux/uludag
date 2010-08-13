@@ -11,23 +11,22 @@
 # Please read the COPYING file.
 #
 
+# Qt Stuff
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from uiitem import Ui_ServiceItemWidget
+# Application Stuff
+from kaptan.screens.ui_scrStyleItem import Ui_StyleItemWidget
 
-class WallpaperItemWidget(QtGui.QWidget):
+class StyleItemWidget(QtGui.QWidget):
 
     def __init__(self, title, desc, pic, parent):
         QtGui.QWidget.__init__(self, parent)
 
-        self.ui = Ui_ServiceItemWidget()
+        self.ui = Ui_StyleItemWidget()
         self.ui.setupUi(self)
 
-        self.ui.labelName.setText(title)
-        self.ui.labelDesc.setText("by "+ desc)
+        self.ui.styleName.setText(title)
+        self.ui.styleDesc.setText(desc)
+        self.ui.stylePreview.setPixmap(QtGui.QPixmap(pic))
 
-        try:
-            self.ui.labelStatus.setPixmap(QtGui.QPixmap(pic))
-        except:
-            pass
