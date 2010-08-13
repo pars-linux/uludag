@@ -1,16 +1,18 @@
-# 
+#
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-10 09:39+0300\n"
-"Last-Translator: H. İbrahim Güngör, ibrahim@pardus.org.tr\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2010-08-13 14:19+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: CloseButton#1
 msgid "Close Tab"
@@ -117,7 +119,7 @@ msgstr ""
 
 #: Phonon::Gstreamer::MediaObject#2
 msgid "Missing codec helper script assistant."
-msgstr ""
+msgstr "-"
 
 #: Phonon::Gstreamer::MediaObject#3
 msgid "Plugin codec installation failed for codec: %0"
@@ -128,30 +130,24 @@ msgid "A required codec is missing. You need to install the following codec(s) t
 msgstr ""
 
 #: Phonon::Gstreamer::MediaObject#5
-#, fuzzy
 msgid "Could not open media source."
-msgstr ""
-"Açılamadı\n"
-"%1"
+msgstr "Ortam kaynağı açılamadı."
 
 #: Phonon::Gstreamer::MediaObject#6
-#, fuzzy
 msgid "Invalid source type."
-msgstr "Geçersiz belge."
+msgstr "Geçersiz kaynak türü."
 
 #: Phonon::Gstreamer::MediaObject#7
-#, fuzzy
 msgid "Could not locate media source."
-msgstr "Dizin silinemedi."
+msgstr "Ortam kaynağı bulunamadı."
 
 #: Phonon::Gstreamer::MediaObject#8
 msgid "Could not open audio device. The device is already in use."
-msgstr ""
+msgstr "Ses aygıtı açılamadı. Aygıt zaten kullanımda."
 
 #: Phonon::Gstreamer::MediaObject#9
-#, fuzzy
 msgid "Could not decode media source."
-msgstr "Dizin silinemedi."
+msgstr "Ortam kaynağı tipi algılanamadı."
 
 #: Phonon::MMF#1
 msgid "Audio Output"
@@ -167,310 +163,266 @@ msgid "No error"
 msgstr "Hata yok"
 
 #: Phonon::MMF#4
-#, fuzzy
 msgid "Not found"
-msgstr "Makine bulundu"
+msgstr "Bulunamadı"
 
 #: Phonon::MMF#5
 msgid "Out of memory"
-msgstr ""
+msgstr "Yetersiz bellek"
 
 #: Phonon::MMF#6
-#, fuzzy
 msgid "Not supported"
-msgstr "Bağlı değil"
+msgstr "Desteklenmiyor"
 
 #: Phonon::MMF#7
 msgid "Overflow"
-msgstr ""
+msgstr "Overflow"
 
 #: Phonon::MMF#8
-#, fuzzy
 msgid "Underflow"
-msgstr "&Altıçizili"
+msgstr "Underflow"
 
 #: Phonon::MMF#9
-#, fuzzy
 msgid "Already exists"
-msgstr "Dosya var"
+msgstr "Zaten var"
 
 #: Phonon::MMF#10
-#, fuzzy
 msgid "Path not found"
-msgstr "Makine bulunamadı"
+msgstr "Adres bulunamadı"
 
 #: Phonon::MMF#11
-#, fuzzy
 msgid "In use"
-msgstr "Ins"
+msgstr "Kullanımda"
 
 #: Phonon::MMF#12
 msgid "Not ready"
-msgstr ""
+msgstr "Hazır değil"
 
 #: Phonon::MMF#13
-#, fuzzy
 msgid "Access denied"
-msgstr "İzin verilmedi"
+msgstr "Erişim engellendi"
 
 #: Phonon::MMF#14
-#, fuzzy
 msgid "Could not connect"
-msgstr ""
-"Açılamadı\n"
-"%1"
+msgstr "Bağlanamadı"
 
 #: Phonon::MMF#15
-#, fuzzy
 msgid "Disconnected"
-msgstr "Bağlı değil"
+msgstr "Bağlantı kesildi"
 
 #: Phonon::MMF#16
-#, fuzzy
 msgctxt "Phonon::MMF#16"
 msgid "Permission denied"
 msgstr "İzin verilmedi"
 
 #: Phonon::MMF#17
 msgid "Insufficient bandwidth"
-msgstr ""
+msgstr "Yetersiz bant genişliği"
 
 #: Phonon::MMF#18
-#, fuzzy
 msgid "Network unavailable"
-msgstr "Ağ erişilemez durumda"
+msgstr "Ağ erişilebilir değil"
 
 #: Phonon::MMF#19
-#, fuzzy
 msgid "Network communication error"
-msgstr "Ağ hatası"
+msgstr "Ağ iletişim hatası"
 
 #: Phonon::MMF#20
-#, fuzzy
 msgid "Streaming not supported"
-msgstr "Soket işlemi desteklenmiyor"
+msgstr ""
 
 #: Phonon::MMF#21
 msgid "Server alert"
-msgstr ""
+msgstr "Sunucu uyarısı"
 
 #: Phonon::MMF#22
-#, fuzzy
 msgid "Invalid protocol"
-msgstr "Geçersiz belge."
+msgstr "Geçersiz protokol"
 
 #: Phonon::MMF#23
-#, fuzzy
 msgctxt "Phonon::MMF#23"
 msgid "Invalid URL"
-msgstr "Geçersiz XML adı."
+msgstr "Geçersiz URL"
 
 #: Phonon::MMF#24
 msgid "Multicast error"
-msgstr ""
+msgstr "Multicast hatası"
 
 #: Phonon::MMF#25
 msgid "Proxy server error"
-msgstr ""
+msgstr "Vekil sunucu hatası"
 
 #: Phonon::MMF#26
-#, fuzzy
 msgid "Proxy server not supported"
-msgstr "Protokol tipi desteklenmiyor"
+msgstr "Vekil sunucu desteklenmiyor"
 
 #: Phonon::MMF#27
 msgid "Audio output error"
-msgstr ""
+msgstr "Ses çıkışı hatası"
 
 #: Phonon::MMF#28
 msgid "Video output error"
-msgstr ""
+msgstr "Video çıkışı hatası"
 
 #: Phonon::MMF#29
-#, fuzzy
 msgid "Decoder error"
-msgstr "Ağ hatası"
+msgstr "Kod çözücü hatası"
 
 #: Phonon::MMF#30
 msgid "Audio or video components could not be played"
-msgstr ""
+msgstr "Ses veya video bileşenleri oynatılamadı"
 
 #: Phonon::MMF#31
 msgid "DRM error"
-msgstr ""
+msgstr "DRM hatası"
 
 #: Phonon::MMF#32
-#, fuzzy
 msgid "Unknown error (%1)"
-msgstr "Bilinmeyen hata"
+msgstr "Bilinmeyen hata (%1)"
 
 #: Phonon::MMF::AbstractMediaPlayer#1
 msgid "Not ready to play"
-msgstr ""
+msgstr "Oynatmaya hazır değil"
 
 #: Phonon::MMF::AbstractMediaPlayer#2
-#, fuzzy
 msgid "Error opening file"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr "Dosya açılırken hata oluştu"
 
 #: Phonon::MMF::AbstractMediaPlayer#3
-#, fuzzy
 msgid "Error opening URL"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr "URL açılırken hata oluştu"
 
 #: Phonon::MMF::AbstractMediaPlayer#4
-#, fuzzy
 msgid "Error opening resource"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr "Kaynak açılırken hata oluştu"
 
 #: Phonon::MMF::AbstractMediaPlayer#5
 msgid "Error opening source: resource not opened"
-msgstr ""
+msgstr "Kaynak açılırken hata oluştu: kaynak açılamadı"
 
 #: Phonon::MMF::AbstractMediaPlayer#6
-#, fuzzy
 msgid "Setting volume failed"
-msgstr ""
-"Dosya silme işlemi başarısız oldu:\n"
-"%1"
+msgstr "Ses ayarlama başarısız"
 
 #: Phonon::MMF::AbstractMediaPlayer#7
-#, fuzzy
 msgid "Loading clip failed"
-msgstr ""
-"Dosya gönderme işlemi başarısız oldu:\n"
-"%1"
+msgstr "Klip yükleme başarısız"
 
 #: Phonon::MMF::AbstractMediaPlayer#8
 msgid "Playback complete"
-msgstr ""
+msgstr "Oynatma tamamlandı"
 
 #: Phonon::MMF::AbstractVideoPlayer#1
-#, fuzzy
 msgid "Pause failed"
-msgstr "HTTP isteği başarısız oldu"
+msgstr "Duraklama başarısız"
 
 #: Phonon::MMF::AbstractVideoPlayer#2
-#, fuzzy
 msgid "Seek failed"
-msgstr "dosya"
+msgstr "Arama başarısız"
 
 #: Phonon::MMF::AbstractVideoPlayer#3
-#, fuzzy
 msgctxt "Phonon::MMF::AbstractVideoPlayer#3"
 msgid "Getting position failed"
-msgstr ""
-"Makineye bağlantı reddedildi:\n"
-"%1"
+msgstr "Pozisyon bilgisi alma işlemi başarısız"
 
 #: Phonon::MMF::AbstractVideoPlayer#4
-#, fuzzy
 msgid "Opening clip failed"
-msgstr ""
-"Dosya silme işlemi başarısız oldu:\n"
-"%1"
+msgstr "Klip açma başarısız"
 
 #: Phonon::MMF::AudioEqualizer#1
-#, fuzzy
 msgid "%1 Hz"
-msgstr "%1 TB"
+msgstr "%1 Hz"
 
 #: Phonon::MMF::AudioPlayer#1
-#, fuzzy
 msgctxt "Phonon::MMF::AudioPlayer#1"
 msgid "Getting position failed"
-msgstr ""
-"Makineye bağlantı reddedildi:\n"
-"%1"
+msgstr "Pozisyon bilgisi alma işlemi başarısız"
 
 #: Phonon::MMF::DsaVideoPlayer#1
 msgctxt "Phonon::MMF::DsaVideoPlayer#1"
 msgid "Video display error"
-msgstr ""
+msgstr "Video görüntü hatası"
 
 #: Phonon::MMF::EffectFactory#1
-#, fuzzy
 msgid "Enabled"
-msgstr "End"
+msgstr "Etkin"
 
 #: Phonon::MMF::EnvironmentalReverb#1
 msgid "Decay HF ratio (%)"
-msgstr ""
+msgstr "Decay HF oranı (%)"
 
 #: Phonon::MMF::EnvironmentalReverb#2
 msgid "Decay time (ms)"
-msgstr ""
+msgstr "Decay süresi (ms)"
 
 #: Phonon::MMF::EnvironmentalReverb#3
 msgid "Density (%)"
-msgstr ""
+msgstr "Yoğunluk (%)"
 
 #: Phonon::MMF::EnvironmentalReverb#4
 msgid "Diffusion (%)"
-msgstr ""
+msgstr "Difüzyon (%s)"
 
 #: Phonon::MMF::EnvironmentalReverb#5
 msgid "Reflections delay (ms)"
-msgstr ""
+msgstr "Yansıma gecikmesi (ms)"
 
 #: Phonon::MMF::EnvironmentalReverb#6
 msgid "Reflections level (mB)"
-msgstr ""
+msgstr "Yansıma seviyesi (mB)"
 
 #: Phonon::MMF::EnvironmentalReverb#7
 msgid "Reverb delay (ms)"
-msgstr ""
+msgstr "Reverb gecikmesi (ms)"
 
 #: Phonon::MMF::EnvironmentalReverb#8
 msgid "Reverb level (mB)"
-msgstr ""
+msgstr "Reverb seviyesi (mB)"
 
 #: Phonon::MMF::EnvironmentalReverb#9
 msgid "Room HF level"
-msgstr ""
+msgstr "Room HF seviyesi"
 
 #: Phonon::MMF::EnvironmentalReverb#10
 msgid "Room level (mB)"
-msgstr ""
+msgstr "Room seviyesi (mB)"
 
 #: Phonon::MMF::MediaObject#1
-#, fuzzy
 msgid "Error opening source: type not supported"
-msgstr "Protokol tipi desteklenmiyor"
+msgstr "Kaynak açılırken hata: deskteklenmeyen tür"
 
 #: Phonon::MMF::MediaObject#2
 msgid "Error opening source: resource is compressed"
-msgstr ""
+msgstr "Kaynak açılırken hata: kaynak sıkıştırılmış"
 
 #: Phonon::MMF::MediaObject#3
 msgid "Error opening source: resource not valid"
-msgstr ""
+msgstr "Kaynak açılırken hata: kaynak geçerli değil"
 
 #: Phonon::MMF::MediaObject#4
 msgid "Error opening source: media type could not be determined"
-msgstr ""
+msgstr "Kaynak açılırken hata: ortam türü algılanamadı"
 
 #: Phonon::MMF::StereoWidening#1
 msgid "Level (%)"
-msgstr ""
+msgstr "Seviye (%)"
 
 #: Phonon::MMF::SurfaceVideoPlayer#1
 msgctxt "Phonon::MMF::SurfaceVideoPlayer#1"
 msgid "Video display error"
-msgstr ""
+msgstr "Video görüntü hatası"
 
 #: Phonon::VolumeSlider#1
-#, fuzzy
 msgid "Volume: %1%"
-msgstr "Sesi Alçalt"
+msgstr "Ses: %1%"
 
 #: Phonon::VolumeSlider#2
 msgid "Use this slider to adjust the volume. The leftmost position is 0%, the rightmost is %1%"
-msgstr ""
+msgstr "Sesi ayarlamak için kaydırma çubuğunu kullanın. En sol konum %0, en sağ ise %1% "
 
 #: Phonon::VolumeSlider#3
 msgid "Muted"
-msgstr ""
+msgstr "Sessiz"
 
 #: Q3Accel#1
 msgid "%1, %2 not defined"
@@ -538,10 +490,9 @@ msgid "Size"
 msgstr "Boyut"
 
 #: Q3FileDialog#8
-#, fuzzy
 msgctxt "Q3FileDialog#8"
 msgid "Type"
-msgstr "Dosya Türü"
+msgstr "Tür"
 
 #: Q3FileDialog#9
 msgid "Date"
@@ -630,7 +581,6 @@ msgid "Symlink to Special"
 msgstr "Özel konuma sembolik bağlantı"
 
 #: Q3FileDialog#29
-#, fuzzy
 msgctxt "Q3FileDialog#29"
 msgid "File"
 msgstr "Dosya"
@@ -891,13 +841,11 @@ msgid "&Redo"
 msgstr "&Yinele"
 
 #: Q3TextEdit#3
-#, fuzzy
 msgctxt "Q3TextEdit#3"
 msgid "Cu&t"
 msgstr "K&es"
 
 #: Q3TextEdit#4
-#, fuzzy
 msgctxt "Q3TextEdit#4"
 msgid "&Copy"
 msgstr "&Kopyala"
@@ -908,7 +856,6 @@ msgid "&Paste"
 msgstr "Ya&pıştır"
 
 #: Q3TextEdit#6
-#, fuzzy
 msgctxt "Q3TextEdit#6"
 msgid "Clear"
 msgstr "Temizle"
@@ -936,7 +883,6 @@ msgid "Restore down"
 msgstr "Aşağı geri yükle"
 
 #: Q3TitleBar#5
-#, fuzzy
 msgctxt "Q3TitleBar#5"
 msgid "Maximize"
 msgstr "Büyüt"
@@ -951,9 +897,8 @@ msgid "Contains commands to manipulate the window"
 msgstr "Pencereyi durumunu değiştirmek için gereken komutları içerir"
 
 #: Q3TitleBar#8
-#, fuzzy
 msgid "Puts a minimized window back to normal"
-msgstr "Büyütülmüş bir pencereyi önceki haline getirir"
+msgstr "Küçültülmüş bir pencereyi normal haline getirir"
 
 #: Q3TitleBar#9
 msgid "Moves the window out of the way"
@@ -1026,7 +971,6 @@ msgid "< &Back"
 msgstr "< &Geri"
 
 #: Q3Wizard#3
-#, fuzzy
 msgctxt "Q3Wizard#3"
 msgid "&Next >"
 msgstr "&İleri >"
@@ -1046,25 +990,21 @@ msgid "Socket operation timed out"
 msgstr "Soket işleminde zamanaşımı oluştu"
 
 #: QAbstractSocket#2
-#, fuzzy
 msgctxt "QAbstractSocket#2"
 msgid "Operation on socket is not supported"
-msgstr "`%1' protokolü desteklenmiyor"
+msgstr "Soket işlemi desteklenmiyor"
 
 #: QAbstractSocket#3
-#, fuzzy
 msgctxt "QAbstractSocket#3"
 msgid "Host not found"
 msgstr "Makine bulunamadı"
 
 #: QAbstractSocket#4
-#, fuzzy
 msgctxt "QAbstractSocket#4"
 msgid "Connection refused"
 msgstr "Bağlantı reddedildi"
 
 #: QAbstractSocket#5
-#, fuzzy
 msgctxt "QAbstractSocket#5"
 msgid "Connection timed out"
 msgstr "Bağlantıda zamanaşımı"
@@ -1074,7 +1014,6 @@ msgid "Socket is not connected"
 msgstr "Soket bağlı değil"
 
 #: QAbstractSocket#7
-#, fuzzy
 msgctxt "QAbstractSocket#7"
 msgid "Network unreachable"
 msgstr "Ağ erişilemez durumda"
@@ -1092,7 +1031,6 @@ msgid "Step &down"
 msgstr "Bir düzey &aşağı"
 
 #: QAccessibleButton#1
-#, fuzzy
 msgctxt "QAccessibleButton#1"
 msgid "Press"
 msgstr "Bas"
@@ -1180,7 +1118,6 @@ msgid "A&lpha channel:"
 msgstr "A&lfa kanalı:"
 
 #: QColorDialog#8
-#, fuzzy
 msgid "Select Color"
 msgstr "Renk seç"
 
@@ -1197,19 +1134,16 @@ msgid "&Add to Custom Colors"
 msgstr "Ö&zel Renkler Ekle"
 
 #: QComboBox#1
-#, fuzzy
 msgctxt "QComboBox#1"
 msgid "False"
 msgstr "Yanlış"
 
 #: QComboBox#2
-#, fuzzy
 msgctxt "QComboBox#2"
 msgid "True"
 msgstr "Doğru"
 
 #: QComboBox#3
-#, fuzzy
 msgctxt "QComboBox#3"
 msgid "Open"
 msgstr "Aç"
@@ -1220,46 +1154,43 @@ msgid "Close"
 msgstr "Kapat"
 
 #: QCoreApplication#1
-#, fuzzy
 msgctxt "QCoreApplication#1"
 msgid "%1: already exists"
-msgstr "Dosya var"
+msgstr "%1: zaten var"
 
 # QSystemSemaphore
 #: QCoreApplication#2
 msgctxt "QCoreApplication#2"
 msgid "%1: does not exist"
-msgstr ""
+msgstr "%1: mevcut değil"
 
 # QSystemSemaphore
 #: QCoreApplication#3
 msgctxt "QCoreApplication#3"
 msgid "%1: out of resources"
-msgstr ""
+msgstr "%1: kaynak aşımı"
 
 #: QCoreApplication#4
-#, fuzzy
 msgctxt "QCoreApplication#4"
 msgid "%1: unknown error %2"
-msgstr "Bilinmeyen hata"
+msgstr "%1: bilinmeyen hata %2"
 
 # QSystemSemaphore
 #: QCoreApplication#5
 msgctxt "QCoreApplication#5"
 msgid "%1: key is empty"
-msgstr ""
+msgstr "%1: anahtar boş"
 
 #: QCoreApplication#6
-#, fuzzy
 msgctxt "QCoreApplication#6"
 msgid "%1: unable to make key"
-msgstr "Sorgu oluşturulamadı"
+msgstr "%1: anahtar oluşturulamıyor"
 
 # QSystemSemaphore
 #: QCoreApplication#7
 msgctxt "QCoreApplication#7"
 msgid "%1: ftok failed"
-msgstr ""
+msgstr "%1: ftok başarısız"
 
 #: QDB2Driver#1
 msgctxt "QDB2Driver#1"
@@ -1305,26 +1236,25 @@ msgid "Unable to fetch next"
 msgstr "Sonraki getirilemedi"
 
 #: QDB2Result#6
-#, fuzzy
 msgctxt "QDB2Result#6"
 msgid "Unable to fetch first"
-msgstr "Öncelikle birinci getirilemedi"
+msgstr ""
 
 #: QDateTimeEdit#1
 msgid "AM"
-msgstr "ÖÖ"
+msgstr "AM"
 
 #: QDateTimeEdit#2
 msgid "am"
-msgstr "öö"
+msgstr "am"
 
 #: QDateTimeEdit#3
 msgid "PM"
-msgstr "ÖS"
+msgstr "PM"
 
 #: QDateTimeEdit#4
 msgid "pm"
-msgstr "ös"
+msgstr "pm"
 
 #: QDeclarativeAbstractAnimation#1
 msgid "Cannot animate non-existent property \"%1\""
@@ -1418,82 +1348,80 @@ msgid "Invalid property assignment: unknown enumeration"
 msgstr ""
 
 #: QDeclarativeCompiler#3
-#, fuzzy
 msgid "Invalid property assignment: string expected"
-msgstr "Geçersiz bir işleme komutu adı."
+msgstr "Geçersiz özellik ataması: dizge bekleniyor"
 
 #: QDeclarativeCompiler#4
 msgid "Invalid property assignment: url expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: url bekleniyor"
 
 #: QDeclarativeCompiler#5
 msgid "Invalid property assignment: unsigned int expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: unsigned int bekleniyor"
 
 #: QDeclarativeCompiler#6
 msgid "Invalid property assignment: int expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: int bekleniyor"
 
 #: QDeclarativeCompiler#7
 msgid "Invalid property assignment: number expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: sayı bekleniyor"
 
 #: QDeclarativeCompiler#8
 msgid "Invalid property assignment: color expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: renk bekleniyor"
 
 #: QDeclarativeCompiler#9
 msgid "Invalid property assignment: date expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: tarih bekleniyor"
 
 #: QDeclarativeCompiler#10
 msgid "Invalid property assignment: time expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: zaman bekleniyor"
 
 #: QDeclarativeCompiler#11
 msgid "Invalid property assignment: datetime expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması datetime bekleniyor"
 
 #: QDeclarativeCompiler#12
 msgid "Invalid property assignment: point expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: işaret bekleniyor"
 
 #: QDeclarativeCompiler#13
 msgid "Invalid property assignment: size expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: boyut bekleniyor"
 
 #: QDeclarativeCompiler#14
 msgid "Invalid property assignment: rect expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: rect bekleniyor"
 
 #: QDeclarativeCompiler#15
 msgid "Invalid property assignment: boolean expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: boolean bekleniyor"
 
 #: QDeclarativeCompiler#16
 msgid "Invalid property assignment: 3D vector expected"
-msgstr ""
+msgstr "Geçersiz özellik ataması: 3B vektör bekleniyor"
 
 #: QDeclarativeCompiler#17
 msgid "Invalid property assignment: unsupported type \"%1\""
-msgstr ""
+msgstr "Geçersiz özellik ataması: bilinmeyen tür \"%1\""
 
 #: QDeclarativeCompiler#18
 msgid "Element is not creatable."
-msgstr ""
+msgstr "Element oluşturulabilir değil."
 
 #: QDeclarativeCompiler#19
 msgid "Component elements may not contain properties other than id"
 msgstr ""
 
 #: QDeclarativeCompiler#20
-#, fuzzy
 msgid "Invalid component id specification"
-msgstr "Geçersiz soket tanımlayıcı"
+msgstr ""
 
 #: QDeclarativeCompiler#21
 msgid "id is not unique"
-msgstr ""
+msgstr "id özgün değil"
 
 #: QDeclarativeCompiler#22
 msgid "Invalid component body specification"
@@ -10152,29 +10080,28 @@ msgid "'%1' attribute contains invalid QName content: %2."
 msgstr ""
 
 #: QtXmlPatterns#444
-#, fuzzy
 msgid "empty"
-msgstr "<boş>"
+msgstr "boş"
 
 #: QtXmlPatterns#445
 msgid "zero or one"
-msgstr ""
+msgstr "sıfır veya bir"
 
 #: QtXmlPatterns#446
 msgid "exactly one"
-msgstr ""
+msgstr "tam olarak bir"
 
 #: QtXmlPatterns#447
 msgid "one or more"
-msgstr ""
+msgstr "bir veya daha fazla"
 
 #: QtXmlPatterns#448
 msgid "zero or more"
-msgstr ""
+msgstr "sıfır veya daha fazla"
 
 #: QtXmlPatterns#449
 msgid "Required type is %1, but %2 was found."
-msgstr ""
+msgstr "Gereken tür %1, fakat %2 bulundu."
 
 #: QtXmlPatterns#450
 msgid "Promoting %1 to %2 may cause loss of precision."
