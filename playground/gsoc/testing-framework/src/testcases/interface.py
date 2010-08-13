@@ -68,14 +68,14 @@ class Main(QtGui.QMainWindow):
             self.ui.text_edit.clear()
             # get the list of files that were downloaded
             filesDownloaded = []
-            for files in self.case[self.casecounter].getiterator('download'):
+            for files in self.case[self.casecounter].iter('download'):
                 filesDownloaded.append(files.text)
             if filesDownloaded:
                 self.ui.text_edit.append("Using files in {0}:\n".format(os.getcwd()))
                 self.ui.text_edit.append("{0}".format(os.path.basename('\n'.join(filesDownloaded))))
             # get the text
             textList = []
-            for text in self.case[self.casecounter].getiterator():
+            for text in self.case[self.casecounter].iter():
                 if text.text.strip() == '':
                     continue
                 if text.tag == 'link':
@@ -92,7 +92,7 @@ class Main(QtGui.QMainWindow):
             self.ui.text_edit.clear()
             # get the text
             textList = []
-            for element in self.case[self.casecounter].getiterator('text'):
+            for element in self.case[self.casecounter].iter('text'):
                 textList.append(element.text)
             if textList:
                 self.ui.text_edit.append('')
@@ -100,7 +100,7 @@ class Main(QtGui.QMainWindow):
                     self.ui.text_edit.append('<b>{0}</b>. {1}'.format(number, element))
             # get the commands
             commandList = []
-            for element in self.case[self.casecounter].getiterator('command'):
+            for element in self.case[self.casecounter].iter('command'):
                 commandList.append(element.text)
             if commandList:
                 self.ui.text_edit.append('')

@@ -41,7 +41,7 @@ class XMLParser:
         """The entry point for normal execution."""
         totalTestcases = 0
         # Get the total number of testcases in the file
-        for element in self.tree.getiterator('testcase'):
+        for element in self.tree.iter('testcase'):
                 totalTestcases += 1               
         counter = 0
         # If the -p option is true, parse only the packages present in that file
@@ -50,7 +50,7 @@ class XMLParser:
             customCounter = 0
             while customCounter < totalTestcases:
                 element = self.rootelement[customCounter]
-                for custom in element.getiterator('package'):
+                for custom in element.iter('package'):
                     # if the text is not in the tag, remove the tag
                     if not custom.text in self.custompackage:
                         element.remove(custom)
@@ -64,7 +64,7 @@ class XMLParser:
                                                                     totalTestcases)
             print 'Type of test:  {0}'.format(elementText)
             packageList = []
-            for packageTag in element.getiterator('package'):
+            for packageTag in element.iter('package'):
                 packageList.append(packageTag.text)
             # If no package tag is there, move on to the next testcase
             if not packageList:
@@ -186,19 +186,19 @@ class XMLParser:
     
     def testcase_tag_parse(self, element, tag):
         """Parse the element and get the text in tag."""
-        # Note that this just uses getiterator() to walk through the element,
+        # Note that this just uses iter() method to walk through the element,
         # the actual handling is done in the method that called this method
         # Also note that this is valid ony for the testcases and not for any
         # other method or function. This is to simplify the code.
         tagTextList = []
-        for tagParse in element.getiterator(tag):
+        for tagParse in element.iter(tag):
             tagTextList.append(tagParse.text)
         return tagTextList
     
     def print_package_list(self):
         """Print the list of packages in the XML file."""
         packageList = []
-        for element in self.tree.getiterator('package'):
+        for element in self.tree.iter('package'):
             packageList.append(element.text)
         return packageList
 

@@ -24,7 +24,7 @@ class TestGUI:
         """Execute the gui test case and display the commands."""
         # download the required files
         downloadList = []
-        for downloadTag in self.element.getiterator('download'):
+        for downloadTag in self.element.iter('download'):
             downloadList.append(downloadTag.text)
         if downloadList:
             self.download_file(downloadList)

@@ -19,7 +19,7 @@ class TestShell:
     def test_shell_main(self):
         """Print the text and ask the user to run the commands."""
         packageList = []
-        for package in self.element.getiterator('package'):
+        for package in self.element.iter('package'):
             packageList.append(package.text)
         
         app = QtGui.QApplication(sys.argv)
