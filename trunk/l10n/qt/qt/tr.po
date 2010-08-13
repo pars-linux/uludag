@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 15:05+0300\n"
+"PO-Revision-Date: 2010-08-13 16:26+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1481,9 +1481,8 @@ msgid "Cannot assign to non-existent property \"%1\""
 msgstr ""
 
 #: QDeclarativeCompiler#36
-#, fuzzy
 msgid "Invalid use of namespace"
-msgstr "Geçersiz dosya adı"
+msgstr ""
 
 #: QDeclarativeCompiler#37
 msgid "Not an attached property name"
@@ -1506,9 +1505,8 @@ msgid "Cannot assign a value directly to a grouped property"
 msgstr ""
 
 #: QDeclarativeCompiler#42
-#, fuzzy
 msgid "Invalid property use"
-msgstr "Geçersiz varlık referansı (entity) değeri."
+msgstr ""
 
 #: QDeclarativeCompiler#43
 msgid "Property assignment expected"
@@ -1597,23 +1595,20 @@ msgid "Property value set multiple times"
 msgstr ""
 
 #: QDeclarativeCompiler#64
-#, fuzzy
 msgid "Invalid property nesting"
-msgstr "Geçersiz XML sürüm ifadesi."
+msgstr ""
 
 #: QDeclarativeCompiler#65
 msgid "Cannot override FINAL property"
 msgstr ""
 
 #: QDeclarativeCompiler#66
-#, fuzzy
 msgid "Invalid property type"
-msgstr "Geçersiz varlık referansı (entity) değeri."
+msgstr ""
 
 #: QDeclarativeCompiler#67
-#, fuzzy
 msgid "Invalid empty ID"
-msgstr "Geçersiz varlık referansı (entity) değeri."
+msgstr ""
 
 #: QDeclarativeCompiler#68
 msgid "IDs cannot start with an uppercase letter"
@@ -1648,9 +1643,8 @@ msgid "Invalid alias reference. Unable to find id \"%1\""
 msgstr ""
 
 #: QDeclarativeComponent#1
-#, fuzzy
 msgid "Invalid empty URL"
-msgstr "Geçersiz varlık referansı (entity) değeri."
+msgstr ""
 
 #: QDeclarativeCompositeTypeManager#1
 msgid "Resource %1 unavailable"
@@ -1661,9 +1655,8 @@ msgid "Namespace %1 cannot be used as a type"
 msgstr ""
 
 #: QDeclarativeCompositeTypeManager#3
-#, fuzzy
 msgid "%1 %2"
-msgstr "%1 - [%2]"
+msgstr "%1 %2"
 
 #: QDeclarativeCompositeTypeManager#4
 msgid "Type %1 unavailable"
@@ -1675,28 +1668,24 @@ msgid "Cannot assign to non-existent property \"%1\""
 msgstr ""
 
 #: QDeclarativeConnections#2
-#, fuzzy
 msgid "Connections: nested objects not allowed"
-msgstr "%1 makinesine bağlantı reddedildi"
+msgstr ""
 
 #: QDeclarativeConnections#3
-#, fuzzy
 msgid "Connections: syntax error"
-msgstr "Bağlantıda zamanaşımı"
+msgstr ""
 
 #: QDeclarativeConnections#4
-#, fuzzy
 msgid "Connections: script expected"
-msgstr "Bağlantı reddedildi"
+msgstr ""
 
 #: QDeclarativeEngine#1
 msgid "executeSql called outside transaction()"
 msgstr ""
 
 #: QDeclarativeEngine#2
-#, fuzzy
 msgid "Read-only Transaction"
-msgstr "Salt-okunur"
+msgstr ""
 
 #: QDeclarativeEngine#3
 msgid "Version mismatch: expected %1, found %2"
@@ -1743,9 +1732,8 @@ msgid "module \"%1\" is not installed"
 msgstr ""
 
 #: QDeclarativeImportDatabase#6
-#, fuzzy
 msgid "\"%1\": no such directory"
-msgstr "Böyle bir dosya ya da dizin yok"
+msgstr ""
 
 #: QDeclarativeImportDatabase#7
 msgid "import \"%1\" has no qmldir and no namespace"
@@ -1760,9 +1748,8 @@ msgid "- nested namespaces not allowed"
 msgstr ""
 
 #: QDeclarativeImportDatabase#10
-#, fuzzy
 msgid "local directory"
-msgstr "Bir Dizin Seç"
+msgstr ""
 
 #: QDeclarativeImportDatabase#11
 msgid "is ambiguous. Found in %1 and in %2"
@@ -1777,9 +1764,8 @@ msgid "is instantiated recursively"
 msgstr ""
 
 #: QDeclarativeImportDatabase#14
-#, fuzzy
 msgid "is not a type"
-msgstr "Dosya türü:"
+msgstr ""
 
 #: QDeclarativeKeyNavigationAttached#1
 msgid "KeyNavigation is only available via attached properties"
@@ -1848,10 +1834,9 @@ msgid "Unable to preserve appearance under non-uniform scale"
 msgstr ""
 
 #: QDeclarativeParentAnimation#3
-#, fuzzy
 msgctxt "QDeclarativeParentAnimation#3"
 msgid "Unable to preserve appearance under scale of 0"
-msgstr "Bir ileti alınamadı"
+msgstr ""
 
 #: QDeclarativeParentChange#1
 msgctxt "QDeclarativeParentChange#1"
@@ -1864,19 +1849,17 @@ msgid "Unable to preserve appearance under non-uniform scale"
 msgstr ""
 
 #: QDeclarativeParentChange#3
-#, fuzzy
 msgctxt "QDeclarativeParentChange#3"
 msgid "Unable to preserve appearance under scale of 0"
-msgstr "Bir ileti alınamadı"
+msgstr ""
 
 #: QDeclarativeParser#1
 msgid "Illegal unicode escape sequence"
 msgstr ""
 
 #: QDeclarativeParser#2
-#, fuzzy
 msgid "Illegal character"
-msgstr "Geçersiz XML karakteri."
+msgstr ""
 
 #: QDeclarativeParser#3
 msgid "Unclosed string at end of line"
@@ -1887,9 +1870,8 @@ msgid "Illegal escape squence"
 msgstr ""
 
 #: QDeclarativeParser#5
-#, fuzzy
 msgid "Unclosed comment at end of file"
-msgstr "beklenmeyen dosya sonu"
+msgstr "beklenmeyen dosya "
 
 #: QDeclarativeParser#6
 msgid "Illegal syntax for exponential number"
@@ -1920,14 +1902,12 @@ msgid "Syntax error"
 msgstr ""
 
 #: QDeclarativeParser#13
-#, fuzzy
 msgid "Unexpected token `%1'"
-msgstr "Beklenmeyen '"
+msgstr ""
 
 #: QDeclarativeParser#14
-#, fuzzy
 msgid "Expected token `%1'"
-msgstr "Beklenen  "
+msgstr ""
 
 #: QDeclarativeParser#15
 msgctxt "QDeclarativeParser#15"
@@ -1935,9 +1915,8 @@ msgid "Property value set multiple times"
 msgstr ""
 
 #: QDeclarativeParser#16
-#, fuzzy
 msgid "Expected type name"
-msgstr "Beklenen  "
+msgstr ""
 
 #: QDeclarativeParser#17
 msgid "Invalid import qualifier ID"
@@ -1960,9 +1939,8 @@ msgid "Library import requires a version"
 msgstr ""
 
 #: QDeclarativeParser#22
-#, fuzzy
 msgid "Expected parameter type"
-msgstr "Beklenen karakter verisi."
+msgstr ""
 
 #: QDeclarativeParser#23
 msgid "Invalid property type modifier"
@@ -1973,14 +1951,12 @@ msgid "Unexpected property type modifier"
 msgstr ""
 
 #: QDeclarativeParser#25
-#, fuzzy
 msgid "Expected property type"
-msgstr "Beklenen karakter verisi."
+msgstr ""
 
 #: QDeclarativeParser#26
-#, fuzzy
 msgid "Readonly not yet supported"
-msgstr "Protokol tipi desteklenmiyor"
+msgstr ""
 
 #: QDeclarativeParser#27
 msgid "JavaScript declaration outside Script element"
@@ -1992,9 +1968,8 @@ msgid "Cannot set a duration of < 0"
 msgstr ""
 
 #: QDeclarativePixmap#1
-#, fuzzy
 msgid "Error decoding: %1: %2"
-msgstr "Okuma hatası: %1"
+msgstr ""
 
 #: QDeclarativePixmap#2
 msgid "Failed to get image from provider: %1"
@@ -2361,7 +2336,7 @@ msgstr "Liste Görünümü"
 
 #: QFileDialog#11
 msgid "Change to list view mode"
-msgstr ""
+msgstr "Liste görünümü kipine geç"
 
 #: QFileDialog#12
 msgctxt "QFileDialog#12"
@@ -2634,9 +2609,8 @@ msgid "Demi"
 msgstr ""
 
 #: QFontDatabase#6
-#, fuzzy
 msgid "Light"
-msgstr "Sağ"
+msgstr ""
 
 #: QFontDatabase#7
 msgctxt "QFontDatabase#7"
@@ -2744,9 +2718,8 @@ msgid "Georgian"
 msgstr ""
 
 #: QFontDatabase#33
-#, fuzzy
 msgid "Khmer"
-msgstr "Diğer"
+msgstr ""
 
 #: QFontDatabase#34
 msgid "Simplified Chinese"
@@ -2781,9 +2754,8 @@ msgid "Runic"
 msgstr ""
 
 #: QFontDatabase#42
-#, fuzzy
 msgid "N'Ko"
-msgstr "Hayır"
+msgstr ""
 
 #: QFontDialog#1
 msgid "Select Font"
@@ -2836,12 +2808,10 @@ msgid "Connection refused to host %1"
 msgstr "%1 makinesine bağlantı reddedildi"
 
 #: QFtp#4
-#, fuzzy
 msgid "Connection timed out to host %1"
-msgstr "%1 makinesine bağlantı reddedildi"
+msgstr ""
 
 #: QFtp#5
-#, fuzzy
 msgctxt "QFtp#5"
 msgid "Connected to host %1"
 msgstr "%1 makinesine bağlanıldı"
@@ -2928,13 +2898,11 @@ msgstr ""
 "%1"
 
 #: QFtp#17
-#, fuzzy
 msgctxt "QFtp#17"
 msgid "Connection closed"
 msgstr "Bağlantı kapatıldı"
 
 #: QFtp#18
-#, fuzzy
 msgctxt "QFtp#18"
 msgid "Host %1 found"
 msgstr "%1 makinesi bulundu"
@@ -2950,7 +2918,6 @@ msgid "Host found"
 msgstr "Makine bulundu"
 
 #: QFtp#21
-#, fuzzy
 msgctxt "QFtp#21"
 msgid "Connected to host"
 msgstr "Makineye bağlanıldı"
@@ -2958,7 +2925,7 @@ msgstr "Makineye bağlanıldı"
 #: QHostInfo#1
 msgctxt "QHostInfo#1"
 msgid "No host name given"
-msgstr ""
+msgstr "Makine adı verilmedi"
 
 #: QHostInfo#2
 msgctxt "QHostInfo#2"
@@ -2968,7 +2935,7 @@ msgstr "Bilinmeyen hata"
 #: QHostInfoAgent#1
 msgctxt "QHostInfoAgent#1"
 msgid "No host name given"
-msgstr ""
+msgstr "Makine adı verilmedi"
 
 #: QHostInfoAgent#2
 msgid "Invalid hostname"
@@ -2979,20 +2946,18 @@ msgid "Unknown address type"
 msgstr "Bilinmeyen adres tipi"
 
 #: QHostInfoAgent#4
-#, fuzzy
 msgctxt "QHostInfoAgent#4"
 msgid "Host not found"
 msgstr "Makine bulunamadı"
 
 #: QHostInfoAgent#5
-#, fuzzy
 msgctxt "QHostInfoAgent#5"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
 #: QHttp#1
 msgid "HTTPS connection requested but SSL support not compiled in"
-msgstr ""
+msgstr "HTTPS bağlantısı istenildi fakat SSL desteği açılarak derlenmemiş"
 
 #: QHttp#2
 msgctxt "QHttp#2"
@@ -3016,15 +2981,13 @@ msgid "Server closed connection unexpectedly"
 msgstr "Sunucu bağlantıyı beklenmedik şekilde kapattı"
 
 #: QHttp#7
-#, fuzzy
 msgid "Connection refused (or timed out)"
-msgstr "Bağlantıda zamanaşımı"
+msgstr "Bağlantı reddedildi (veya zaman aşımı)"
 
 #: QHttp#8
-#, fuzzy
 msgctxt "QHttp#8"
 msgid "Host %1 not found"
-msgstr "%1 makinesi bulunamadı"
+msgstr ""
 
 #: QHttp#9
 msgid "HTTP request failed"
@@ -3035,19 +2998,17 @@ msgid "Invalid HTTP response header"
 msgstr "Geçersiz HTTP yanıt başlığı"
 
 #: QHttp#11
-#, fuzzy
 msgid "Unknown authentication method"
-msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+msgstr "Bilinmeyen kimlik doğrulama metodu"
 
 #: QHttp#12
 msgid "Proxy authentication required"
 msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
 
 #: QHttp#13
-#, fuzzy
 msgctxt "QHttp#13"
 msgid "Authentication required"
-msgstr "Kimlik doğrulaması gerekiyor"
+msgstr "Kimlik doğrulama gerekli"
 
 #: QHttp#14
 msgid "Invalid HTTP chunked body"
@@ -3058,19 +3019,16 @@ msgid "Error writing response to device"
 msgstr ""
 
 #: QHttp#16
-#, fuzzy
 msgctxt "QHttp#16"
 msgid "Connection refused"
 msgstr "Bağlantı reddedildi"
 
 #: QHttp#17
-#, fuzzy
 msgctxt "QHttp#17"
 msgid "Connection closed"
 msgstr "Bağlantı kapatıldı"
 
 #: QHttp#18
-#, fuzzy
 msgid "Proxy requires authentication"
 msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
 
@@ -3091,31 +3049,26 @@ msgid "SSL handshake failed"
 msgstr ""
 
 #: QHttp#23
-#, fuzzy
 msgctxt "QHttp#23"
 msgid "Host %1 found"
 msgstr "%1 makinesi bulundu"
 
 #: QHttp#24
-#, fuzzy
 msgctxt "QHttp#24"
 msgid "Connected to host %1"
 msgstr "%1 makinesine bağlanıldı"
 
 #: QHttp#25
-#, fuzzy
 msgctxt "QHttp#25"
 msgid "Connection to %1 closed"
 msgstr "%1 makinesine yapılan bağlantı kapatıldı"
 
 #: QHttp#26
-#, fuzzy
 msgctxt "QHttp#26"
 msgid "Host found"
 msgstr "Makine bulundu"
 
 #: QHttp#27
-#, fuzzy
 msgctxt "QHttp#27"
 msgid "Connected to host"
 msgstr "Makineye bağlanıldı"
@@ -3125,44 +3078,37 @@ msgid "Did not receive HTTP response from proxy"
 msgstr ""
 
 #: QHttpSocketEngine#2
-#, fuzzy
 msgid "Error parsing authentication request from proxy"
-msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+msgstr ""
 
 #: QHttpSocketEngine#3
-#, fuzzy
 msgctxt "QHttpSocketEngine#3"
 msgid "Authentication required"
 msgstr "Kimlik doğrulaması gerekiyor"
 
 #: QHttpSocketEngine#4
-#, fuzzy
 msgid "Proxy denied connection"
-msgstr "Bağlantı açılamadı"
+msgstr ""
 
 #: QHttpSocketEngine#5
 msgid "Error communicating with HTTP proxy"
 msgstr ""
 
 #: QHttpSocketEngine#6
-#, fuzzy
 msgid "Proxy server not found"
-msgstr "Makine bulunamadı"
+msgstr "Vekil sunucu bulunamadı"
 
 #: QHttpSocketEngine#7
-#, fuzzy
 msgid "Proxy connection refused"
-msgstr "Bağlantı reddedildi"
+msgstr "Vekil sunucu bağlantısı reddedildi"
 
 #: QHttpSocketEngine#8
-#, fuzzy
 msgid "Proxy server connection timed out"
-msgstr "Bağlantıda zamanaşımı"
+msgstr "Vekil sunucu bağlantısı zaman aşımı"
 
 #: QHttpSocketEngine#9
-#, fuzzy
 msgid "Proxy connection closed prematurely"
-msgstr "Bağlantı kapatıldı"
+msgstr ""
 
 #: QIBaseDriver#1
 msgctxt "QIBaseDriver#1"
@@ -3298,9 +3244,8 @@ msgid "Mac OS X input method"
 msgstr "Mac OS X girdi metodu"
 
 #: QInputContext#6
-#, fuzzy
 msgid "S60 FEP input method"
-msgstr "Mac OS X girdi metodu"
+msgstr ""
 
 #: QInputDialog#1
 msgid "Enter a value:"
@@ -3352,9 +3297,8 @@ msgid "Cannot unload library %1: %2"
 msgstr ""
 
 #: QLibrary#12
-#, fuzzy
 msgid "Cannot resolve symbol \"%1\" in %2: %3"
-msgstr "QLibrary::resolve_sys: \"%1\" sembolü %2 (%3) içerisinde tanımlanmamış"
+msgstr ""
 
 #: QLineEdit#1
 msgctxt "QLineEdit#1"
@@ -3441,9 +3385,8 @@ msgid "%1: Connection error"
 msgstr "%1: Bağlantı hatası"
 
 #: QLocalSocket#9
-#, fuzzy
 msgid "%1: The socket operation is not supported"
-msgstr "Soket işlemi desteklenmiyor"
+msgstr ""
 
 #: QLocalSocket#10
 msgid "%1: Unknown error"
@@ -3492,39 +3435,33 @@ msgid "Unable to store result"
 msgstr "Sonuç kaydedilemedi"
 
 #: QMYSQLResult#4
-#, fuzzy
 msgid "Unable to execute next query"
-msgstr "Sorgu yapılamadı"
+msgstr ""
 
 #: QMYSQLResult#5
-#, fuzzy
 msgid "Unable to store next result"
-msgstr "Sonuç kaydedilemedi"
+msgstr ""
 
 #: QMYSQLResult#6
-#, fuzzy
 msgctxt "QMYSQLResult#6"
 msgid "Unable to prepare statement"
-msgstr "İfade hazırlanamadı"
+msgstr ""
 
 #: QMYSQLResult#7
-#, fuzzy
 msgctxt "QMYSQLResult#7"
 msgid "Unable to reset statement"
-msgstr "İfade sıfırlanamadı"
+msgstr ""
 
 # QOCIDriver
 #: QMYSQLResult#8
-#, fuzzy
 msgctxt "QMYSQLResult#8"
 msgid "Unable to bind value"
-msgstr "Başlatılamadı"
+msgstr ""
 
 #: QMYSQLResult#9
-#, fuzzy
 msgctxt "QMYSQLResult#9"
 msgid "Unable to execute statement"
-msgstr "İfade çalıştırılamadı"
+msgstr ""
 
 #: QMYSQLResult#10
 msgid "Unable to bind outvalues"
@@ -3701,10 +3638,9 @@ msgid "The remote host closed the connection"
 msgstr "Uzak makine bağlantıyı kapattı"
 
 #: QNativeSocketEngine#5
-#, fuzzy
 msgctxt "QNativeSocketEngine#5"
 msgid "Network operation timed out"
-msgstr "Ağ işleminde zamanaşımı"
+msgstr ""
 
 #: QNativeSocketEngine#6
 msgid "Out of resources"
@@ -3727,25 +3663,21 @@ msgid "Host unreachable"
 msgstr "Makine erişilemez durumda"
 
 #: QNativeSocketEngine#11
-#, fuzzy
 msgctxt "QNativeSocketEngine#11"
 msgid "Network unreachable"
 msgstr "Ağ erişilemez durumda"
 
 #: QNativeSocketEngine#12
-#, fuzzy
 msgctxt "QNativeSocketEngine#12"
 msgid "Permission denied"
 msgstr "İzin verilmedi"
 
 #: QNativeSocketEngine#13
-#, fuzzy
 msgctxt "QNativeSocketEngine#13"
 msgid "Connection timed out"
 msgstr "Bağlantıda zamanaşımı"
 
 #: QNativeSocketEngine#14
-#, fuzzy
 msgctxt "QNativeSocketEngine#14"
 msgid "Connection refused"
 msgstr "Bağlantı reddedildi"
@@ -3795,20 +3727,17 @@ msgid "The proxy type is invalid for this operation"
 msgstr ""
 
 #: QNativeSocketEngine#26
-#, fuzzy
 msgctxt "QNativeSocketEngine#26"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
 #: QNetworkAccessCacheBackend#1
-#, fuzzy
 msgid "Error opening %1"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr ""
 
 #: QNetworkAccessDataBackend#1
-#, fuzzy
 msgid "Operation not supported on %1"
-msgstr "Soket işlemi desteklenmiyor"
+msgstr ""
 
 #: QNetworkAccessDataBackend#2
 msgid "Invalid URI: %1"
@@ -3824,9 +3753,8 @@ msgid "Socket error on %1: %2"
 msgstr ""
 
 #: QNetworkAccessDebugPipeBackend#3
-#, fuzzy
 msgid "Remote host closed the connection prematurely on %1"
-msgstr "Uzak makine bağlantıyı kapattı"
+msgstr ""
 
 #: QNetworkAccessFileBackend#1
 msgid "Request for opening non-local file %1"
@@ -3837,9 +3765,8 @@ msgid "Cannot open %1: Path is a directory"
 msgstr ""
 
 #: QNetworkAccessFileBackend#3
-#, fuzzy
 msgid "Error opening %1: %2"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr ""
 
 #: QNetworkAccessFileBackend#4
 msgctxt "QNetworkAccessFileBackend#4"
@@ -3860,19 +3787,16 @@ msgid "Cannot open %1: is a directory"
 msgstr ""
 
 #: QNetworkAccessFtpBackend#3
-#, fuzzy
 msgid "Logging in to %1 failed: authentication required"
-msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+msgstr ""
 
 #: QNetworkAccessFtpBackend#4
-#, fuzzy
 msgid "Error while downloading %1: %2"
-msgstr "Okuma hatası: %1"
+msgstr ""
 
 #: QNetworkAccessFtpBackend#5
-#, fuzzy
 msgid "Error while uploading %1: %2"
-msgstr "Okuma hatası: %1"
+msgstr ""
 
 #: QNetworkAccessHttpBackend#1
 msgctxt "QNetworkAccessHttpBackend#1"
@@ -3880,42 +3804,36 @@ msgid "No suitable proxy found"
 msgstr ""
 
 #: QNetworkAccessManager#1
-#, fuzzy
 msgid "Network access is disabled."
-msgstr "Ağ erişilemez durumda"
+msgstr ""
 
 #: QNetworkReply#1
-#, fuzzy
 msgid "Error downloading %1 - server replied: %2"
-msgstr "Yerel gizli anahtar yüklenirken hata, %1"
+msgstr ""
 
 #: QNetworkReply#2
 msgid "Protocol \"%1\" is unknown"
 msgstr ""
 
 #: QNetworkReply#3
-#, fuzzy
 msgid "Network session error."
-msgstr "Ağ hatası"
+msgstr ""
 
 #: QNetworkReply#4
 msgid "Temporary network failure."
 msgstr ""
 
 #: QNetworkReplyImpl#1
-#, fuzzy
 msgid "Operation canceled"
-msgstr "Soketsiz işlem"
+msgstr ""
 
 #: QNetworkSession#1
-#, fuzzy
 msgid "Invalid configuration."
-msgstr "Geçersiz belge."
+msgstr ""
 
 #: QNetworkSessionPrivateImpl#1
-#, fuzzy
 msgid "Roaming error"
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 #: QNetworkSessionPrivateImpl#2
 msgid "Session aborted by user or system"
@@ -3926,9 +3844,8 @@ msgid "Unidentified Error"
 msgstr ""
 
 #: QNetworkSessionPrivateImpl#4
-#, fuzzy
 msgid "Unknown session error."
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 #: QNetworkSessionPrivateImpl#5
 msgid "The session was aborted by the user or system."
@@ -3956,22 +3873,19 @@ msgid "Unable to logon"
 msgstr "Girilemedi"
 
 #: QOCIDriver#3
-#, fuzzy
 msgctxt "QOCIDriver#3"
 msgid "Unable to begin transaction"
-msgstr "İşleme (transaction) başlanamadı"
+msgstr ""
 
 #: QOCIDriver#4
-#, fuzzy
 msgctxt "QOCIDriver#4"
 msgid "Unable to commit transaction"
-msgstr "İşlem (transaction) yapılamadı"
+msgstr ""
 
 #: QOCIDriver#5
-#, fuzzy
 msgctxt "QOCIDriver#5"
 msgid "Unable to rollback transaction"
-msgstr "İşlem (transaction) geri alınamadı"
+msgstr ""
 
 #: QOCIResult#1
 msgid "Unable to bind column for batch execute"
@@ -3995,16 +3909,14 @@ msgid "Unable to prepare statement"
 msgstr "İfade hazırlanamadı"
 
 #: QOCIResult#6
-#, fuzzy
 msgid "Unable to get statement type"
-msgstr "İfade sıfırlanamadı"
+msgstr ""
 
 # QOCIDriver
 #: QOCIResult#7
-#, fuzzy
 msgctxt "QOCIResult#7"
 msgid "Unable to bind value"
-msgstr "Başlatılamadı"
+msgstr ""
 
 #: QOCIResult#8
 msgctxt "QOCIResult#8"
@@ -4017,9 +3929,8 @@ msgid "Unable to connect"
 msgstr "Bağlanılamadı"
 
 #: QODBCDriver#2
-#, fuzzy
 msgid "Unable to connect - Driver doesn't support all functionality required"
-msgstr "Bağlanılamadı - Sürücü gereken işlevleri desteklemiyor"
+msgstr ""
 
 #: QODBCDriver#3
 msgid "Unable to disable autocommit"
@@ -4040,58 +3951,50 @@ msgid "Unable to enable autocommit"
 msgstr "Otomatik uygulama etkinleştirilemedi"
 
 #: QODBCResult#1
-#, fuzzy
 msgid "Unable to fetch last"
-msgstr "Veri getirilemedi"
+msgstr ""
 
 #: QODBCResult#2
 msgid "QODBCResult::reset: Unable to set 'SQL_CURSOR_STATIC' as statement attribute. Please check your ODBC driver configuration"
 msgstr "QODBCResult::reset:  'SQL_CURSOR_STATIC' sorgu niteliği olarak ayarlanamadı. Lütfen ODBC sürücü yapılandırmanızı kontrol edin"
 
 #: QODBCResult#3
-#, fuzzy
 msgctxt "QODBCResult#3"
 msgid "Unable to execute statement"
-msgstr "İfade çalıştırılamadı"
+msgstr ""
 
 #: QODBCResult#4
-#, fuzzy
 msgid "Unable to fetch"
-msgstr "Satır getirilemedi"
+msgstr ""
 
 #: QODBCResult#5
-#, fuzzy
 msgctxt "QODBCResult#5"
 msgid "Unable to fetch next"
-msgstr "Sonraki getirilemedi"
+msgstr ""
 
 #: QODBCResult#6
-#, fuzzy
 msgctxt "QODBCResult#6"
 msgid "Unable to fetch first"
-msgstr "Öncelikle birinci getirilemedi"
+msgstr ""
 
 #: QODBCResult#7
-#, fuzzy
 msgid "Unable to fetch previous"
-msgstr "Sonuçlar eşlenemedi"
+msgstr ""
 
 #: QODBCResult#8
-#, fuzzy
 msgctxt "QODBCResult#8"
 msgid "Unable to prepare statement"
-msgstr "İfade hazırlanamadı"
+msgstr ""
 
 # QOCIDriver
 #: QODBCResult#9
-#, fuzzy
 msgctxt "QODBCResult#9"
 msgid "Unable to bind variable"
-msgstr "Başlatılamadı"
+msgstr ""
 
 #: QObject#1
 msgid "PulseAudio Sound Server"
-msgstr ""
+msgstr "Pulseaudio Ses Sunucu"
 
 #: QObject#2
 msgid "\"%1\" duplicates a previous role name and will be disabled."
@@ -4102,13 +4005,11 @@ msgid "invalid query: \"%1\""
 msgstr ""
 
 #: QPPDOptionsModel#1
-#, fuzzy
 msgctxt "QPPDOptionsModel#1"
 msgid "Name"
 msgstr "İsim"
 
 #: QPPDOptionsModel#2
-#, fuzzy
 msgctxt "QPPDOptionsModel#2"
 msgid "Value"
 msgstr "Değer"
@@ -4131,24 +4032,21 @@ msgid "Could not rollback transaction"
 msgstr "İşlem (transaction) geri alınamadı"
 
 #: QPSQLDriver#5
-#, fuzzy
 msgid "Unable to subscribe"
-msgstr "Yazılamadı"
+msgstr ""
 
 #: QPSQLDriver#6
-#, fuzzy
 msgid "Unable to unsubscribe"
-msgstr "Yazılamadı"
+msgstr ""
 
 #: QPSQLResult#1
 msgid "Unable to create query"
 msgstr "Sorgu oluşturulamadı"
 
 #: QPSQLResult#2
-#, fuzzy
 msgctxt "QPSQLResult#2"
 msgid "Unable to prepare statement"
-msgstr "İfade hazırlanamadı"
+msgstr ""
 
 #: QPageSetupWidget#1
 msgctxt "QPageSetupWidget#1"
@@ -4156,48 +4054,42 @@ msgid "Form"
 msgstr ""
 
 #: QPageSetupWidget#2
-#, fuzzy
 msgid "Paper"
-msgstr "Pause"
+msgstr ""
 
 #: QPageSetupWidget#3
 msgid "Page size:"
-msgstr "Sayfa boyutu:"
+msgstr ""
 
 #: QPageSetupWidget#4
 msgid "Width:"
-msgstr ""
+msgstr "Genişlik:"
 
 #: QPageSetupWidget#5
-#, fuzzy
 msgid "Height:"
-msgstr "Sağ"
+msgstr "Yükseklik:"
 
 #: QPageSetupWidget#6
 msgid "Paper source:"
 msgstr "Sayfa kaynağı:"
 
 #: QPageSetupWidget#7
-#, fuzzy
 msgid "Orientation"
-msgstr "Yön:"
+msgstr ""
 
 #: QPageSetupWidget#8
-#, fuzzy
 msgctxt "QPageSetupWidget#8"
 msgid "Portrait"
 msgstr "Dikey"
 
 #: QPageSetupWidget#9
-#, fuzzy
 msgctxt "QPageSetupWidget#9"
 msgid "Landscape"
 msgstr "Yatay"
 
 #: QPageSetupWidget#10
-#, fuzzy
 msgid "Reverse landscape"
-msgstr "Yatay"
+msgstr ""
 
 #: QPageSetupWidget#11
 msgid "Reverse portrait"
@@ -4244,13 +4136,11 @@ msgid "The plugin was not loaded."
 msgstr "Eklenti yüklenmedi."
 
 #: QPluginLoader#2
-#, fuzzy
 msgctxt "QPluginLoader#2"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
 #: QPrintDialog#1
-#, fuzzy
 msgctxt "QPrintDialog#1"
 msgid "Print"
 msgstr "Yazdır"
@@ -4853,9 +4743,8 @@ msgid "Resource error (fork failure): %1"
 msgstr ""
 
 #: QProcess#8
-#, fuzzy
 msgid "Process operation timed out"
-msgstr "Soket işleminde zamanaşımı oluştu"
+msgstr ""
 
 #: QProcess#9
 msgid "Process failed to start: %1"
@@ -4914,20 +4803,17 @@ msgid "met internal limit"
 msgstr "iç limite ulaşıldı"
 
 #: QRegExp#10
-#, fuzzy
 msgid "invalid interval"
-msgstr "geçersiz sekizlik değer"
+msgstr "geçersiz aralık"
 
 #: QRegExp#11
-#, fuzzy
 msgid "invalid category"
-msgstr "Geçersiz XML karakteri."
+msgstr "geçersiz kategori"
 
 #: QSQLite2Driver#1
-#, fuzzy
 msgctxt "QSQLite2Driver#1"
 msgid "Error opening database"
-msgstr "Veritabanı açılırken hata oluştu"
+msgstr ""
 
 #: QSQLite2Driver#2
 msgctxt "QSQLite2Driver#2"
@@ -4940,14 +4826,13 @@ msgid "Unable to commit transaction"
 msgstr "İşlem (transaction) yapılamadı"
 
 #: QSQLite2Driver#4
-#, fuzzy
 msgctxt "QSQLite2Driver#4"
 msgid "Unable to rollback transaction"
-msgstr "İşlem (transaction) geri alınamadı"
+msgstr ""
 
 #: QSQLite2Result#1
 msgid "Unable to fetch results"
-msgstr "Sonuçlar eşlenemedi"
+msgstr ""
 
 #: QSQLite2Result#2
 msgctxt "QSQLite2Result#2"
@@ -4974,10 +4859,9 @@ msgid "Unable to commit transaction"
 msgstr "İşlem (transaction) yapılamadı"
 
 #: QSQLiteDriver#5
-#, fuzzy
 msgctxt "QSQLiteDriver#5"
 msgid "Unable to rollback transaction"
-msgstr "İşlem (transaction) geri alınamadı"
+msgstr ""
 
 #: QSQLiteResult#1
 msgid "Unable to fetch row"
@@ -4988,16 +4872,14 @@ msgid "No query"
 msgstr ""
 
 #: QSQLiteResult#3
-#, fuzzy
 msgctxt "QSQLiteResult#3"
 msgid "Unable to execute statement"
-msgstr "İfade çalıştırılamadı"
+msgstr ""
 
 #: QSQLiteResult#4
-#, fuzzy
 msgctxt "QSQLiteResult#4"
 msgid "Unable to reset statement"
-msgstr "İfade sıfırlanamadı"
+msgstr ""
 
 #: QSQLiteResult#5
 msgid "Unable to bind parameters"
@@ -5012,20 +4894,17 @@ msgid "ID"
 msgstr ""
 
 #: QScriptBreakpointsModel#2
-#, fuzzy
 msgctxt "QScriptBreakpointsModel#2"
 msgid "Location"
 msgstr "Konum"
 
 #: QScriptBreakpointsModel#3
-#, fuzzy
 msgid "Condition"
-msgstr "Devam Et"
+msgstr ""
 
 #: QScriptBreakpointsModel#4
-#, fuzzy
 msgid "Ignore-count"
-msgstr "Yoksay"
+msgstr ""
 
 #: QScriptBreakpointsModel#5
 msgid "Single-shot"
@@ -5040,7 +4919,6 @@ msgid "New"
 msgstr ""
 
 #: QScriptBreakpointsWidget#2
-#, fuzzy
 msgctxt "QScriptBreakpointsWidget#2"
 msgid "Delete"
 msgstr "Sil"
@@ -5050,22 +4928,18 @@ msgid "Go to Line"
 msgstr ""
 
 #: QScriptDebugger#2
-#, fuzzy
 msgid "Line:"
-msgstr "Diz"
+msgstr "Satır:"
 
 #: QScriptDebugger#3
-#, fuzzy
 msgid "Interrupt"
-msgstr "Ekle"
+msgstr ""
 
 #: QScriptDebugger#4
-#, fuzzy
 msgid "Shift+F5"
-msgstr "Shift"
+msgstr "Shift+F5"
 
 #: QScriptDebugger#5
-#, fuzzy
 msgctxt "QScriptDebugger#5"
 msgid "Continue"
 msgstr "Devam Et"
@@ -5075,42 +4949,36 @@ msgid "F5"
 msgstr ""
 
 #: QScriptDebugger#7
-#, fuzzy
 msgid "Step Into"
-msgstr "Bir düzey &aşağı"
+msgstr ""
 
 #: QScriptDebugger#8
-#, fuzzy
 msgid "F11"
-msgstr "F%1"
+msgstr "F11"
 
 #: QScriptDebugger#9
 msgid "Step Over"
 msgstr ""
 
 #: QScriptDebugger#10
-#, fuzzy
 msgid "F10"
-msgstr "F%1"
+msgstr "F10"
 
 #: QScriptDebugger#11
-#, fuzzy
 msgid "Step Out"
-msgstr "Bir düzey &yukarı"
+msgstr ""
 
 #: QScriptDebugger#12
-#, fuzzy
 msgid "Shift+F11"
-msgstr "Shift"
+msgstr "Shift+F11"
 
 #: QScriptDebugger#13
 msgid "Run to Cursor"
 msgstr ""
 
 #: QScriptDebugger#14
-#, fuzzy
 msgid "Ctrl+F10"
-msgstr "Ctrl"
+msgstr "Ctrl+F10"
 
 #: QScriptDebugger#15
 msgid "Run to New Script"
@@ -5244,79 +5112,68 @@ msgid "Breakpoints"
 msgstr ""
 
 #: QScriptEngineDebugger#3
-#, fuzzy
 msgid "Stack"
-msgstr "Geri"
+msgstr ""
 
 #: QScriptEngineDebugger#4
 msgid "Locals"
 msgstr ""
 
 #: QScriptEngineDebugger#5
-#, fuzzy
 msgid "Console"
-msgstr "Kapat"
+msgstr "Konsol"
 
 #: QScriptEngineDebugger#6
 msgid "Debug Output"
 msgstr ""
 
 #: QScriptEngineDebugger#7
-#, fuzzy
 msgid "Error Log"
-msgstr "Hata"
+msgstr "Hata Günlüğü"
 
 #: QScriptEngineDebugger#8
-#, fuzzy
 msgctxt "QScriptEngineDebugger#8"
 msgid "Search"
 msgstr "Ara"
 
 #: QScriptEngineDebugger#9
-#, fuzzy
 msgctxt "QScriptEngineDebugger#9"
 msgid "View"
-msgstr "Liste Görünümü"
+msgstr "Görünüm"
 
 #: QScriptEngineDebugger#10
 msgid "Qt Script Debugger"
 msgstr ""
 
 #: QScriptNewBreakpointWidget#1
-#, fuzzy
 msgctxt "QScriptNewBreakpointWidget#1"
 msgid "Close"
 msgstr "Kapat"
 
 #: QScrollBar#1
-#, fuzzy
 msgctxt "QScrollBar#1"
 msgid "Scroll here"
 msgstr "Buraya kaydır"
 
 #: QScrollBar#2
-#, fuzzy
 msgctxt "QScrollBar#2"
 msgid "Left edge"
-msgstr "Sol gölge"
+msgstr ""
 
 #: QScrollBar#3
-#, fuzzy
 msgctxt "QScrollBar#3"
 msgid "Top"
-msgstr "En Yukarı"
+msgstr "Üst"
 
 #: QScrollBar#4
-#, fuzzy
 msgctxt "QScrollBar#4"
 msgid "Right edge"
-msgstr "Sağ gölge"
+msgstr ""
 
 #: QScrollBar#5
-#, fuzzy
 msgctxt "QScrollBar#5"
 msgid "Bottom"
-msgstr "En Aşağı"
+msgstr "Alt"
 
 #: QScrollBar#6
 msgctxt "QScrollBar#6"
@@ -5339,25 +5196,21 @@ msgid "Page down"
 msgstr "Sayfa aşağı"
 
 #: QScrollBar#10
-#, fuzzy
 msgctxt "QScrollBar#10"
 msgid "Scroll left"
 msgstr "Sola kaydır"
 
 #: QScrollBar#11
-#, fuzzy
 msgctxt "QScrollBar#11"
 msgid "Scroll up"
 msgstr "Yukarı kaydır"
 
 #: QScrollBar#12
-#, fuzzy
 msgctxt "QScrollBar#12"
 msgid "Scroll right"
 msgstr "Sağa kaydır"
 
 #: QScrollBar#13
-#, fuzzy
 msgctxt "QScrollBar#13"
 msgid "Scroll down"
 msgstr "Aşağı kaydır"
@@ -5385,20 +5238,17 @@ msgid "%1: create size is less then 0"
 msgstr ""
 
 #: QSharedMemory#3
-#, fuzzy
 msgid "%1: unable to lock"
-msgstr "Girilemedi"
+msgstr ""
 
 #: QSharedMemory#4
-#, fuzzy
 msgid "%1: unable to unlock"
-msgstr "Girilemedi"
+msgstr ""
 
 #: QSharedMemory#5
-#, fuzzy
 msgctxt "QSharedMemory#5"
 msgid "%1: already exists"
-msgstr "Dosya var"
+msgstr ""
 
 #: QSharedMemory#6
 msgid "%1: doesn't exists"
@@ -5414,26 +5264,23 @@ msgid "%1: out of resources"
 msgstr ""
 
 #: QSharedMemory#9
-#, fuzzy
 msgctxt "QSharedMemory#9"
 msgid "%1: permission denied"
-msgstr "İzin verilmedi"
+msgstr ""
 
 #: QSharedMemory#10
-#, fuzzy
 msgctxt "QSharedMemory#10"
 msgid "%1: unknown error %2"
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 #: QSharedMemory#11
 msgid "%1: key error"
 msgstr ""
 
 #: QSharedMemory#12
-#, fuzzy
 msgctxt "QSharedMemory#12"
 msgid "%1: unable to make key"
-msgstr "Sorgu oluşturulamadı"
+msgstr ""
 
 #: QSharedMemory#13
 msgid "%1: doesn't exist"
@@ -5462,13 +5309,12 @@ msgid "%1: not attached"
 msgstr ""
 
 #: QSharedMemory#19
-#, fuzzy
 msgid "%1: size query failed"
-msgstr "HTTP isteği başarısız oldu"
+msgstr ""
 
 #: QShortcut#1
 msgid "Space"
-msgstr "Space"
+msgstr "Boşluk"
 
 #: QShortcut#2
 msgid "Esc"
@@ -5516,7 +5362,6 @@ msgid "SysReq"
 msgstr "SysReq"
 
 #: QShortcut#13
-#, fuzzy
 msgid "Home"
 msgstr "Ev"
 
@@ -5561,10 +5406,9 @@ msgid "ScrollLock"
 msgstr "ScrollLock"
 
 #: QShortcut#24
-#, fuzzy
 msgctxt "QShortcut#24"
 msgid "Menu"
-msgstr "Menü"
+msgstr "Menu"
 
 #: QShortcut#25
 msgctxt "QShortcut#25"
@@ -5582,10 +5426,9 @@ msgid "Forward"
 msgstr "İleri"
 
 #: QShortcut#28
-#, fuzzy
 msgctxt "QShortcut#28"
 msgid "Stop"
-msgstr "Dur"
+msgstr "Stop"
 
 #: QShortcut#29
 msgid "Refresh"
@@ -5644,14 +5487,12 @@ msgid "Media Record"
 msgstr "Çokluortam Kaydet"
 
 #: QShortcut#43
-#, fuzzy
 msgid "Media Pause"
-msgstr "Çokluortam Çal"
+msgstr ""
 
 #: QShortcut#44
-#, fuzzy
 msgid "Toggle Media Play/Pause"
-msgstr "Çokluortam Çal"
+msgstr ""
 
 #: QShortcut#45
 msgid "Home Page"
@@ -5662,7 +5503,6 @@ msgid "Favorites"
 msgstr "Yer İmleri"
 
 #: QShortcut#47
-#, fuzzy
 msgctxt "QShortcut#47"
 msgid "Search"
 msgstr "Ara"
@@ -5828,9 +5668,8 @@ msgid "Audio Rewind"
 msgstr ""
 
 #: QShortcut#88
-#, fuzzy
 msgid "Back Forward"
-msgstr "İleri"
+msgstr ""
 
 #: QShortcut#89
 msgid "Application Left"
@@ -6045,9 +5884,8 @@ msgid "WebCam"
 msgstr "WebCam"
 
 #: QShortcut#140
-#, fuzzy
 msgid "Mail Forward"
-msgstr "İleri"
+msgstr ""
 
 #: QShortcut#141
 msgid "Pictures"
@@ -6177,7 +6015,6 @@ msgid "No"
 msgstr "Hayır"
 
 #: QShortcut#171
-#, fuzzy
 msgid "Context1"
 msgstr "Bağlam1"
 
@@ -6258,9 +6095,8 @@ msgid "Zenkaku"
 msgstr ""
 
 #: QShortcut#191
-#, fuzzy
 msgid "Hankaku"
-msgstr "Aç"
+msgstr "Hankaku"
 
 #: QShortcut#192
 msgid "Zenkaku Hankaku"
@@ -6275,19 +6111,16 @@ msgid "Massyo"
 msgstr ""
 
 #: QShortcut#195
-#, fuzzy
 msgid "Kana Lock"
-msgstr "Caps Lock"
+msgstr ""
 
 #: QShortcut#196
-#, fuzzy
 msgid "Kana Shift"
-msgstr "Shift"
+msgstr ""
 
 #: QShortcut#197
-#, fuzzy
 msgid "Eisu Shift"
-msgstr "Shift"
+msgstr ""
 
 #: QShortcut#198
 msgid "Eisu toggle"
@@ -6306,18 +6139,16 @@ msgid "Previous Candidate"
 msgstr ""
 
 #: QShortcut#202
-#, fuzzy
 msgid "Hangul"
-msgstr "Aç"
+msgstr ""
 
 #: QShortcut#203
 msgid "Hangul Start"
 msgstr ""
 
 #: QShortcut#204
-#, fuzzy
 msgid "Hangul End"
-msgstr "Aç"
+msgstr ""
 
 #: QShortcut#205
 msgid "Hangul Hanja"
@@ -6348,9 +6179,8 @@ msgid "Hangul PostHanja"
 msgstr ""
 
 #: QShortcut#212
-#, fuzzy
 msgid "Hangul Special"
-msgstr "Özel konum"
+msgstr ""
 
 #: QShortcut#213
 msgid "Ctrl"
@@ -6402,34 +6232,28 @@ msgid "Page down"
 msgstr "Sayfa aşağı"
 
 #: QSocks5SocketEngine#1
-#, fuzzy
 msgid "Connection to proxy refused"
-msgstr "Bağlantı reddedildi"
+msgstr ""
 
 #: QSocks5SocketEngine#2
-#, fuzzy
 msgid "Connection to proxy closed prematurely"
-msgstr "%1 makinesine yapılan bağlantı kapatıldı"
+msgstr ""
 
 #: QSocks5SocketEngine#3
-#, fuzzy
 msgid "Proxy host not found"
-msgstr "Makine bulunamadı"
+msgstr ""
 
 #: QSocks5SocketEngine#4
-#, fuzzy
 msgid "Connection to proxy timed out"
-msgstr "Bağlantıda zamanaşımı"
+msgstr ""
 
 #: QSocks5SocketEngine#5
-#, fuzzy
 msgid "Proxy authentication failed"
-msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+msgstr ""
 
 #: QSocks5SocketEngine#6
-#, fuzzy
 msgid "Proxy authentication failed: %1"
-msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+msgstr ""
 
 #: QSocks5SocketEngine#7
 msgid "SOCKS version 5 protocol error"
@@ -6452,19 +6276,17 @@ msgid "SOCKSv5 command not supported"
 msgstr ""
 
 #: QSocks5SocketEngine#12
-#, fuzzy
 msgid "Address type not supported"
-msgstr "Protokol tipi desteklenmiyor"
+msgstr ""
 
 #: QSocks5SocketEngine#13
 msgid "Unknown SOCKSv5 proxy error code 0x%1"
 msgstr ""
 
 #: QSocks5SocketEngine#14
-#, fuzzy
 msgctxt "QSocks5SocketEngine#14"
 msgid "Network operation timed out"
-msgstr "Ağ işleminde zamanaşımı"
+msgstr ""
 
 #: QSoftKeyManager#1
 msgid "Ok"
@@ -6640,7 +6462,6 @@ msgid "The host name did not match any of the valid hosts for this certificate"
 msgstr ""
 
 #: QSslSocket#23
-#, fuzzy
 msgctxt "QSslSocket#23"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
@@ -6666,9 +6487,8 @@ msgid "Error loading private key, %1"
 msgstr "Yerel gizli anahtar yüklenirken hata, %1"
 
 #: QSslSocket#29
-#, fuzzy
 msgid "Private key does not certify public key, %1"
-msgstr "Gizli anahtar açık anahtarı sertifikalayamaz, %1"
+msgstr ""
 
 #: QSslSocket#30
 msgid "Error creating SSL session, %1"
@@ -6683,9 +6503,8 @@ msgid "Unable to write data: %1"
 msgstr "Veri yazılamadı: %1"
 
 #: QSslSocket#33
-#, fuzzy
 msgid "Unable to decrypt data: %1"
-msgstr "Veri yazılamadı: %1"
+msgstr ""
 
 #: QSslSocket#34
 msgid "Error while reading: %1"
@@ -6708,22 +6527,19 @@ msgid "No common ancestor for targets and source of transition from state '%1'"
 msgstr ""
 
 #: QStateMachine#4
-#, fuzzy
 msgctxt "QStateMachine#4"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
 
 #: QSystemSemaphore#1
-#, fuzzy
 msgctxt "QSystemSemaphore#1"
 msgid "%1: permission denied"
-msgstr "İzin verilmedi"
+msgstr ""
 
 #: QSystemSemaphore#2
-#, fuzzy
 msgctxt "QSystemSemaphore#2"
 msgid "%1: already exists"
-msgstr "Dosya var"
+msgstr ""
 
 #: QSystemSemaphore#3
 msgctxt "QSystemSemaphore#3"
@@ -6736,10 +6552,9 @@ msgid "%1: out of resources"
 msgstr ""
 
 #: QSystemSemaphore#5
-#, fuzzy
 msgctxt "QSystemSemaphore#5"
 msgid "%1: unknown error %2"
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 #: QTDSDriver#1
 msgid "Unable to open connection"
@@ -6758,10 +6573,9 @@ msgid "Scroll Right"
 msgstr "Sağa Kaydır"
 
 #: QTcpServer#1
-#, fuzzy
 msgctxt "QTcpServer#1"
 msgid "Operation on socket is not supported"
-msgstr "`%1' protokolü desteklenmiyor"
+msgstr ""
 
 #: QTextControl#1
 msgctxt "QTextControl#1"
@@ -6803,7 +6617,6 @@ msgid "Select All"
 msgstr "Tümünü Seç"
 
 #: QToolButton#1
-#, fuzzy
 msgctxt "QToolButton#1"
 msgid "Press"
 msgstr "Bas"
@@ -6842,14 +6655,12 @@ msgid "Redo"
 msgstr "Yinele"
 
 #: QUnicodeControlCharacterMenu#1
-#, fuzzy
 msgid "LRM Left-to-right mark"
-msgstr "LRM Soldan sağa işareti"
+msgstr ""
 
 #: QUnicodeControlCharacterMenu#2
-#, fuzzy
 msgid "RLM Right-to-left mark"
-msgstr "RLM Sağdan sola işareti"
+msgstr ""
 
 #: QUnicodeControlCharacterMenu#3
 msgid "ZWJ Zero width joiner"
@@ -6888,14 +6699,12 @@ msgid "Insert Unicode control character"
 msgstr "Unicode kontrol karakteri ekle"
 
 #: QWebFrame#1
-#, fuzzy
 msgid "Request cancelled"
-msgstr "İstek iptal edildi"
+msgstr ""
 
 #: QWebFrame#2
-#, fuzzy
 msgid "Request blocked"
-msgstr "İstek iptal edildi"
+msgstr ""
 
 #: QWebFrame#3
 msgid "Cannot show URL"
@@ -6910,27 +6719,21 @@ msgid "Cannot show mimetype"
 msgstr ""
 
 #: QWebFrame#6
-#, fuzzy
 msgid "File does not exist"
-msgstr "Dosya var"
+msgstr ""
 
 #: QWebPage#1
 msgid "Redirection limit reached"
 msgstr ""
 
 #: QWebPage#2
-#, fuzzy
 msgid "Bad HTTP request"
-msgstr "HTTP isteği başarısız oldu"
+msgstr ""
 
 # number of chosen file
 #: QWebPage#3
-#, fuzzy
 msgid "%n file(s)"
 msgstr ""
-"\n"
-"            \n"
-"        "
 
 # default label for Submit buttons in forms on web pages
 #: QWebPage#4
@@ -7306,9 +7109,8 @@ msgid "Movie time scrubber thumb"
 msgstr ""
 
 #: QWebPage#80
-#, fuzzy
 msgid "Rewind movie"
-msgstr "Sil"
+msgstr ""
 
 # Media controller element
 #: QWebPage#81
@@ -7371,10 +7173,9 @@ msgid "%1 seconds"
 msgstr ""
 
 #: QWebPage#93
-#, fuzzy
 msgctxt "QWebPage#93"
 msgid "Scroll here"
-msgstr "Buraya kaydır"
+msgstr ""
 
 #: QWebPage#94
 msgctxt "QWebPage#94"
@@ -7397,49 +7198,41 @@ msgid "Bottom"
 msgstr "Alt"
 
 #: QWebPage#98
-#, fuzzy
 msgctxt "QWebPage#98"
 msgid "Page left"
-msgstr "Sayfa sola"
+msgstr ""
 
 #: QWebPage#99
-#, fuzzy
 msgctxt "QWebPage#99"
 msgid "Page up"
-msgstr "Sayfa yukarı"
+msgstr ""
 
 #: QWebPage#100
-#, fuzzy
 msgctxt "QWebPage#100"
 msgid "Page right"
-msgstr "Sayfa sağa"
+msgstr ""
 
 #: QWebPage#101
-#, fuzzy
 msgctxt "QWebPage#101"
 msgid "Page down"
-msgstr "Sayfa aşağı"
+msgstr ""
 
 #: QWebPage#102
-#, fuzzy
 msgctxt "QWebPage#102"
 msgid "Scroll left"
 msgstr "Sola kaydır"
 
 #: QWebPage#103
-#, fuzzy
 msgctxt "QWebPage#103"
 msgid "Scroll up"
 msgstr "Yukarı kaydır"
 
 #: QWebPage#104
-#, fuzzy
 msgctxt "QWebPage#104"
 msgid "Scroll right"
 msgstr "Sağa kaydır"
 
 #: QWebPage#105
-#, fuzzy
 msgctxt "QWebPage#105"
 msgid "Scroll down"
 msgstr "Aşağı kaydır"
@@ -7473,9 +7266,8 @@ msgid "Move the cursor to the previous character"
 msgstr ""
 
 #: QWebPage#113
-#, fuzzy
 msgid "Move the cursor to the next word"
-msgstr "Pencereyi taşır"
+msgstr ""
 
 #: QWebPage#114
 msgid "Move the cursor to the previous word"
@@ -7494,56 +7286,48 @@ msgid "Move the cursor to the start of the line"
 msgstr ""
 
 #: QWebPage#118
-#, fuzzy
 msgid "Move the cursor to the end of the line"
-msgstr "Pencereyi taşır"
+msgstr ""
 
 #: QWebPage#119
 msgid "Move the cursor to the start of the block"
 msgstr ""
 
 #: QWebPage#120
-#, fuzzy
 msgid "Move the cursor to the end of the block"
-msgstr "Pencereyi taşır"
+msgstr ""
 
 #: QWebPage#121
-#, fuzzy
 msgid "Move the cursor to the start of the document"
-msgstr "XML bildirimi belgenin başlangıcında değil."
+msgstr ""
 
 #: QWebPage#122
-#, fuzzy
 msgid "Move the cursor to the end of the document"
-msgstr "Tamamlanmamış belge sonu."
+msgstr ""
 
 #: QWebPage#123
-#, fuzzy
 msgid "Select all"
 msgstr "Tümünü Seç"
 
 #: QWebPage#124
-#, fuzzy
 msgid "Select to the next character"
-msgstr "beklenmeyen karakter"
+msgstr ""
 
 #: QWebPage#125
 msgid "Select to the previous character"
 msgstr ""
 
 #: QWebPage#126
-#, fuzzy
 msgid "Select to the next word"
-msgstr "Sonraki getirilemedi"
+msgstr ""
 
 #: QWebPage#127
 msgid "Select to the previous word"
 msgstr ""
 
 #: QWebPage#128
-#, fuzzy
 msgid "Select to the next line"
-msgstr "Sonraki getirilemedi"
+msgstr ""
 
 #: QWebPage#129
 msgid "Select to the previous line"
@@ -7566,19 +7350,16 @@ msgid "Select to the end of the block"
 msgstr ""
 
 #: QWebPage#134
-#, fuzzy
 msgid "Select to the start of the document"
-msgstr "XML bildirimi belgenin başlangıcında değil."
+msgstr ""
 
 #: QWebPage#135
-#, fuzzy
 msgid "Select to the end of the document"
-msgstr "Tamamlanmamış belge sonu."
+msgstr ""
 
 #: QWebPage#136
-#, fuzzy
 msgid "Delete to the start of the word"
-msgstr "Bu kayıt silinsin mi?"
+msgstr "Bu kayıt silinsin mi"
 
 #: QWebPage#137
 msgid "Delete to the end of the word"
@@ -7601,9 +7382,8 @@ msgid "Remove formatting"
 msgstr ""
 
 #: QWebPage#142
-#, fuzzy
 msgid "Strikethrough"
-msgstr "&Üzeriçizili"
+msgstr ""
 
 #: QWebPage#143
 msgid "Subscript"
@@ -7762,9 +7542,8 @@ msgid "Stay on &Top"
 msgstr "&Herzaman Üstte"
 
 #: QWorkspace#11
-#, fuzzy
 msgid "Sh&ade"
-msgstr "G&ölgele"
+msgstr ""
 
 #: QWorkspace#12
 msgctxt "QWorkspace#12"
@@ -7772,9 +7551,8 @@ msgid "%1 - [%2]"
 msgstr "%1 - [%2]"
 
 #: QWorkspace#13
-#, fuzzy
 msgid "&Unshade"
-msgstr "Gölgele&me"
+msgstr ""
 
 #: QXml#1
 msgctxt "QXml#1"
@@ -7874,14 +7652,12 @@ msgid "Warning in %1, at line %2, column %3: %4"
 msgstr ""
 
 #: QXmlPatternistCLI#2
-#, fuzzy
 msgid "Warning in %1: %2"
-msgstr "Uyarı:"
+msgstr ""
 
 #: QXmlPatternistCLI#3
-#, fuzzy
 msgid "Unknown location"
-msgstr "Bilinmeyen hata"
+msgstr ""
 
 #: QXmlPatternistCLI#4
 msgid "Error %1 in %2, at line %3, column %4: %5"
@@ -8032,9 +7808,8 @@ msgid "Invalid character reference."
 msgstr "Geçersiz karakter referansı."
 
 #: QtXmlPatterns#1
-#, fuzzy
 msgid "%1 is an unsupported encoding."
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#2
 msgid "%1 contains octets which are disallowed in the requested encoding %2."
@@ -8045,9 +7820,8 @@ msgid "The codepoint %1, occurring in %2 using encoding %3, is an invalid XML ch
 msgstr ""
 
 #: QtXmlPatterns#4
-#, fuzzy
 msgid "Network timeout."
-msgstr "Ağ işleminde zamanaşımı"
+msgstr ""
 
 #: QtXmlPatterns#5
 msgid "Element %1 can't be serialized because it appears outside the document element."
@@ -8250,9 +8024,8 @@ msgid "No namespace binding exists for the prefix %1 in %2"
 msgstr ""
 
 #: QtXmlPatterns#55
-#, fuzzy
 msgid "%1 is an invalid %2"
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#56
 msgid "The parameter %1 is passed, but no corresponding %2 exists."
@@ -8263,20 +8036,12 @@ msgid "The parameter %1 is required, but no corresponding %2 is supplied."
 msgstr ""
 
 #: QtXmlPatterns#58
-#, fuzzy
 msgid "%1 takes at most %n argument(s). %2 is therefore invalid."
 msgstr ""
-"\n"
-"            \n"
-"        "
 
 #: QtXmlPatterns#59
-#, fuzzy
 msgid "%1 requires at least %n argument(s). %2 is therefore invalid."
 msgstr ""
-"\n"
-"            \n"
-"        "
 
 #: QtXmlPatterns#60
 msgid "The first argument to %1 cannot be of type %2. It must be a numeric type, xs:yearMonthDuration or xs:dayTimeDuration."
@@ -8291,9 +8056,8 @@ msgid "The second argument to %1 cannot be of type %2. It must be of type %3, %4
 msgstr ""
 
 #: QtXmlPatterns#63
-#, fuzzy
 msgid "%1 is not a valid XML 1.0 character."
-msgstr "Geçersiz XML karakteri."
+msgstr ""
 
 #: QtXmlPatterns#64
 msgid "The root node of the second argument to function %1 must be a document node. %2 is not a document node."
@@ -8336,9 +8100,8 @@ msgid "Whitespace characters are removed, except when they appear in character c
 msgstr ""
 
 #: QtXmlPatterns#74
-#, fuzzy
 msgid "%1 is an invalid regular expression pattern: %2"
-msgstr "%1 geçersiz bir işleme komutu adı."
+msgstr ""
 
 #: QtXmlPatterns#75
 msgid "%1 is an invalid flag for regular expressions. Valid flags are:"
@@ -8409,9 +8172,8 @@ msgid "A template with name %1 has already been declared."
 msgstr ""
 
 #: QtXmlPatterns#92
-#, fuzzy
 msgid "%1 is not a valid numeric literal."
-msgstr "'%1' geçerli bir Qt eklentisi değil."
+msgstr ""
 
 #: QtXmlPatterns#93
 msgid "Only one %1 declaration can occur in the query prolog."
@@ -8482,9 +8244,8 @@ msgid "The target namespace of a %1 cannot be empty."
 msgstr ""
 
 #: QtXmlPatterns#110
-#, fuzzy
 msgid "The module import feature is not supported"
-msgstr "`%1' protokolü desteklenmiyor"
+msgstr ""
 
 #: QtXmlPatterns#111
 msgid "A variable with name %1 has already been declared."
@@ -8547,9 +8308,8 @@ msgid "In an XSL-T pattern, axis %1 cannot be used, only axis %2 or %3 can."
 msgstr ""
 
 #: QtXmlPatterns#126
-#, fuzzy
 msgid "%1 is an invalid template mode name."
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#127
 msgid "The name of a variable bound in a for-expression must be different from the positional variable. Hence, the two variables named %1 collide."
@@ -8580,9 +8340,8 @@ msgid "The namespace URI cannot be the empty string when binding to a prefix, %1
 msgstr ""
 
 #: QtXmlPatterns#134
-#, fuzzy
 msgid "%1 is an invalid namespace URI."
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#135
 msgid "It is not possible to bind to the prefix %1"
@@ -8625,9 +8384,8 @@ msgid "%1 is not an atomic type. Casting is only possible to atomic types."
 msgstr ""
 
 #: QtXmlPatterns#145
-#, fuzzy
 msgid "%1 is not a valid name for a processing-instruction."
-msgstr "işleme komutu için geçersiz isim"
+msgstr ""
 
 #: QtXmlPatterns#146
 msgid "%1 is not in the in-scope attribute declarations. Note that the schema import feature is not supported."
@@ -9250,18 +9008,16 @@ msgid "%1 element requires either %2 or %3 attribute."
 msgstr ""
 
 #: QtXmlPatterns#301
-#, fuzzy
 msgid "Text or entity references not allowed inside %1 element"
-msgstr "DTD içerisinde genel iç varlık referansılarına (entity) izin verilmez"
+msgstr ""
 
 #: QtXmlPatterns#302
 msgid "%1 attribute of %2 element must contain %3, %4 or a list of URIs."
 msgstr ""
 
 #: QtXmlPatterns#303
-#, fuzzy
 msgid "%1 element is not allowed in this context."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+msgstr ""
 
 #: QtXmlPatterns#304
 msgid "%1 attribute of %2 element has larger value than %3 attribute."
@@ -9284,18 +9040,16 @@ msgid "Element %1 already defined."
 msgstr ""
 
 #: QtXmlPatterns#309
-#, fuzzy
 msgid "Attribute %1 already defined."
-msgstr "Nitelik yeniden tanımlandı."
+msgstr ""
 
 #: QtXmlPatterns#310
 msgid "Type %1 already defined."
 msgstr ""
 
 #: QtXmlPatterns#311
-#, fuzzy
 msgid "Attribute group %1 already defined."
-msgstr "Nitelik yeniden tanımlandı."
+msgstr ""
 
 #: QtXmlPatterns#312
 msgid "Element group %1 already defined."
@@ -9422,18 +9176,16 @@ msgid "Enumeration facet contains invalid content: {%1} is not a value of type %
 msgstr ""
 
 #: QtXmlPatterns#343
-#, fuzzy
 msgid "Namespace prefix of qualified name %1 is not defined."
-msgstr "İsimlendirme öneki '%1' bildirilmedi"
+msgstr ""
 
 #: QtXmlPatterns#344
 msgid "%1 element %2 is not a valid restriction of the %3 element it redefines: %4."
 msgstr ""
 
 #: QtXmlPatterns#345
-#, fuzzy
 msgid "%1 is not valid according to %2."
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#346
 msgid "String content does not match the length facet."
@@ -9612,9 +9364,8 @@ msgid "Binary content is not listed in the enumeration facet."
 msgstr ""
 
 #: QtXmlPatterns#390
-#, fuzzy
 msgid "Invalid QName content: %1."
-msgstr "Geçersiz belge."
+msgstr ""
 
 #: QtXmlPatterns#391
 msgid "QName content is not listed in the enumeration facet."
@@ -9673,9 +9424,8 @@ msgid "Loaded schema file is invalid."
 msgstr ""
 
 #: QtXmlPatterns#405
-#, fuzzy
 msgid "%1 contains invalid data."
-msgstr "%1 geçersiz bir kodlama adıdır."
+msgstr ""
 
 #: QtXmlPatterns#406
 msgid "xsi:schemaLocation namespace %1 has already appeared earlier in the instance document."
@@ -9754,14 +9504,12 @@ msgid "Content of element %1 does not match defined value constraint."
 msgstr ""
 
 #: QtXmlPatterns#425
-#, fuzzy
 msgid "Element %1 contains not allowed child content."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+msgstr ""
 
 #: QtXmlPatterns#426
-#, fuzzy
 msgid "Element %1 contains not allowed text content."
-msgstr "İçerik içerisinde ']]>' dizisine izin verilmez."
+msgstr ""
 
 #: QtXmlPatterns#427
 msgid "Element %1 cannot contain other elements, as it has a fixed content."
@@ -9776,9 +9524,8 @@ msgid "Attribute %1 does not match the attribute wildcard."
 msgstr ""
 
 #: QtXmlPatterns#430
-#, fuzzy
 msgid "Declaration for attribute %1 does not exist."
-msgstr "XML bildirimi belgenin başlangıcında değil."
+msgstr ""
 
 #: QtXmlPatterns#431
 msgid "Element %1 contains two attributes of type %2."
