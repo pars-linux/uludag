@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 16:26+0300\n"
+"PO-Revision-Date: 2010-08-13 16:48+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3456,7 +3456,7 @@ msgstr ""
 #: QMYSQLResult#8
 msgctxt "QMYSQLResult#8"
 msgid "Unable to bind value"
-msgstr ""
+msgstr "Değer atanamadı"
 
 #: QMYSQLResult#9
 msgctxt "QMYSQLResult#9"
@@ -3916,7 +3916,7 @@ msgstr ""
 #: QOCIResult#7
 msgctxt "QOCIResult#7"
 msgid "Unable to bind value"
-msgstr ""
+msgstr "Değer atanamadı"
 
 #: QOCIResult#8
 msgctxt "QOCIResult#8"
@@ -3990,7 +3990,7 @@ msgstr ""
 #: QODBCResult#9
 msgctxt "QODBCResult#9"
 msgid "Unable to bind variable"
-msgstr ""
+msgstr "Değer atanamadı"
 
 #: QObject#1
 msgid "PulseAudio Sound Server"
@@ -6733,7 +6733,7 @@ msgstr ""
 # number of chosen file
 #: QWebPage#3
 msgid "%n file(s)"
-msgstr ""
+msgstr "%n dosya"
 
 # default label for Submit buttons in forms on web pages
 #: QWebPage#4
@@ -6757,7 +6757,7 @@ msgstr "Sıfırla"
 # 'searchable index'
 #: QWebPage#7
 msgid "This is a searchable index. Enter search keywords: "
-msgstr ""
+msgstr "Bu aranabilir bir indekstir. Anahtar kelimeleri girin: "
 
 #: QWebPage#8
 msgid "Choose File"
@@ -6874,12 +6874,12 @@ msgstr ""
 # menu item title
 #: QWebPage#32
 msgid "Show Spelling and Grammar"
-msgstr ""
+msgstr "Hecelemeyi ve Grameri Göster"
 
 # menu item title
 #: QWebPage#33
 msgid "Hide Spelling and Grammar"
-msgstr ""
+msgstr "Hecelemeyi ve Grameri Gizle"
 
 # Check spelling context menu item
 #: QWebPage#34
@@ -6956,12 +6956,12 @@ msgstr ""
 # field image, used as embedded menu title
 #: QWebPage#49
 msgid "Recent searches"
-msgstr ""
+msgstr "Son aramalar"
 
 # menu item in Recent Searches menu that empties menu's contents
 #: QWebPage#50
 msgid "Clear recent searches"
-msgstr ""
+msgstr "Son aramaları temizle"
 
 # Label text to be used when a plug-in is missing
 #: QWebPage#51
@@ -7135,7 +7135,7 @@ msgstr ""
 # Media controller element
 #: QWebPage#85
 msgid "Play movie in full-screen mode"
-msgstr ""
+msgstr "Filmi tam ekran kipinde oynat"
 
 # Media controller element
 #: QWebPage#86
@@ -7150,32 +7150,32 @@ msgstr ""
 # Media time description
 #: QWebPage#88
 msgid "Indefinite time"
-msgstr ""
+msgstr "Kesin olmayan zaman"
 
 # Media time description
 #: QWebPage#89
 msgid "%1 days %2 hours %3 minutes %4 seconds"
-msgstr ""
+msgstr "%1 gün %2 saat %3 dakika %4 saniye"
 
 # Media time description
 #: QWebPage#90
 msgid "%1 hours %2 minutes %3 seconds"
-msgstr ""
+msgstr "%1 saat %2 dakika %3 saniye"
 
 # Media time description
 #: QWebPage#91
 msgid "%1 minutes %2 seconds"
-msgstr ""
+msgstr "%1 dakika %2 saniye"
 
 # Media time description
 #: QWebPage#92
 msgid "%1 seconds"
-msgstr ""
+msgstr "%1 saniye"
 
 #: QWebPage#93
 msgctxt "QWebPage#93"
 msgid "Scroll here"
-msgstr ""
+msgstr "Buraya kaydır"
 
 #: QWebPage#94
 msgctxt "QWebPage#94"
@@ -7239,7 +7239,7 @@ msgstr "Aşağı kaydır"
 
 #: QWebPage#106
 msgid "JavaScript Alert - %1"
-msgstr ""
+msgstr "JavaScript Uyarısı - %1"
 
 #: QWebPage#107
 msgid "JavaScript Confirm - %1"
@@ -7251,7 +7251,7 @@ msgstr ""
 
 #: QWebPage#109
 msgid "JavaScript Problem - %1"
-msgstr ""
+msgstr "JavaScript Problemi - %1"
 
 #: QWebPage#110
 msgid "The script on this page appears to have a problem. Do you want to stop the script?"
@@ -7367,11 +7367,11 @@ msgstr ""
 
 #: QWebPage#138
 msgid "Insert a new paragraph"
-msgstr ""
+msgstr "Yeni paragraf ekle"
 
 #: QWebPage#139
 msgid "Insert a new line"
-msgstr ""
+msgstr "Yeni satır ekle"
 
 #: QWebPage#140
 msgid "Paste and Match Style"
@@ -7403,11 +7403,11 @@ msgstr ""
 
 #: QWebPage#147
 msgid "Indent"
-msgstr ""
+msgstr "Girinti"
 
 #: QWebPage#148
 msgid "Outdent"
-msgstr ""
+msgstr "Çıkıntı"
 
 #: QWebPage#149
 msgid "Center"
@@ -7543,7 +7543,7 @@ msgstr "&Herzaman Üstte"
 
 #: QWorkspace#11
 msgid "Sh&ade"
-msgstr ""
+msgstr "&Gölgele"
 
 #: QWorkspace#12
 msgctxt "QWorkspace#12"
@@ -7552,7 +7552,7 @@ msgstr "%1 - [%2]"
 
 #: QWorkspace#13
 msgid "&Unshade"
-msgstr ""
+msgstr "&Gölgeleme>"
 
 #: QXml#1
 msgctxt "QXml#1"
@@ -7657,7 +7657,7 @@ msgstr ""
 
 #: QXmlPatternistCLI#3
 msgid "Unknown location"
-msgstr ""
+msgstr "Bilinmeyen konum"
 
 #: QXmlPatternistCLI#4
 msgid "Error %1 in %2, at line %3, column %4: %5"
@@ -7821,7 +7821,7 @@ msgstr ""
 
 #: QtXmlPatterns#4
 msgid "Network timeout."
-msgstr ""
+msgstr "Ağ zaman aşımı."
 
 #: QtXmlPatterns#5
 msgid "Element %1 can't be serialized because it appears outside the document element."
@@ -7957,11 +7957,11 @@ msgstr ""
 
 #: QtXmlPatterns#38
 msgid "A comment cannot contain %1"
-msgstr ""
+msgstr "Yorum %1 içeremez"
 
 #: QtXmlPatterns#39
 msgid "A comment cannot end with a %1."
-msgstr ""
+msgstr "Yorum %1 ile bitemez"
 
 #: QtXmlPatterns#40
 msgid "In a namespace constructor, the value for a namespace cannot be an empty string."
@@ -8069,7 +8069,7 @@ msgstr ""
 
 #: QtXmlPatterns#66
 msgid "%1 was called."
-msgstr ""
+msgstr "%1 çağrıldı"
 
 #: QtXmlPatterns#67
 msgid "%1 must be followed by %2 or %3, not at the end of the replacement string."
