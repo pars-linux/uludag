@@ -71,21 +71,22 @@ class Main(QtGui.QMainWindow):
             for files in self.case[self.casecounter].iter('download'):
                 filesDownloaded.append(files.text)
             if filesDownloaded:
-                self.ui.text_edit.append("Using files in {0}:\n".format(os.getcwd()))
-                self.ui.text_edit.append("{0}".format(os.path.basename('\n'.join(filesDownloaded))))
+                self.ui.text_edit.append("Using files in '{0}'".format(os.getcwd()))
             # get the text
             textList = []
             for text in self.case[self.casecounter].iter():
                 if text.text.strip() == '':
                     continue
                 if text.tag == 'link':
-                    textList.append("<a href='{0}'>{0}</a>".format(text.text))
+                    textList.append('{0}'.format(text.text))
+                    continue
+                if text.tag == 'download':
+                    textList.append('{0}'.format(os.path.basename(text.text)))
                     continue
                 textList.append(text.text)            
             if textList:
                 self.ui.text_edit.append('')
-            for number, element in enumerate(textList, 1):
-                self.ui.text_edit.append('<b>{0}</b>. {1}'.format(number, element))
+            self.ui.text_edit.append('\n'.join(textList))
         else:
             self.ui.package_label.setText('Package(s): ' \
                                       '{0}'.format(', '.join(self.packagelist)))
