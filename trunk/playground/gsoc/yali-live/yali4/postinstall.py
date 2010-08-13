@@ -224,16 +224,25 @@ def migrateXorgConf():
 
 def copyPisiIndex():
     target = os.path.join(ctx.consts.target_dir, "var/lib/pisi/index/%s" % ctx.consts.pardus_repo_name)
+    pisi_index_file = ctx.consts.pisi_index_file
+    pisi_index_file_sum = ctx.consts.pisi_index_file_sum    
 
-    if os.path.exists(ctx.consts.pisi_index_file):
+    if ctx.yali.install_type == YALI_LIVEINSTALL:
+        pisi_index_file = ctx.consts.live_pisi_index_file
+        pisi_index_file_sum = ctx.consts.live_pisi_index_file_sum
+        target = os.path.join("/var/lib/pisi/index/%s" % ctx.consts.pardus_repo_name)
+
+
+    if os.path.exists(pisi_index_file):
         # Copy package index
-        shutil.copy(ctx.consts.pisi_index_file, target)
-        shutil.copy(ctx.consts.pisi_index_file_sum, target)
+        shutil.copy(pisi_index_file, target)
+        if os.path.exists(pisi_index_file_sum):
+            shutil.copy(pisi_index_file_sum, target)
 
         # Extract the index
         import bz2
         pureIndex = file(os.path.join(target,"pisi-index.xml"),"w")
-        pureIndex.write(bz2.decompress(open(ctx.consts.pisi_index_file).read()))
+        pureIndex.write(bz2.decompress(open(pisi_index_file).read()))
         pureIndex.close()
 
         ctx.debugger.log("pisi index files copied.")

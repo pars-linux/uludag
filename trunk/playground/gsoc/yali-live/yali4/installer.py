@@ -567,7 +567,9 @@ class Yali:
         stepsLive = [{"text":_("Generating DBus machine-id..."),"operation":self.generateDBusMachineID},
                      {"text":_("Copying additional install files..."),"operation":self.copyInstalladditional},
                      {"text":_("Copying kernel..."),"operation":self.copyKernelfromLive},
-                     {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs}]
+                     {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs},
+                     {"text":_("Setting Pardus PISI repositories..."),"operation":self.fixPISIRepo},
+                     {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
 
         stepsBase = [{"text":_("Copy Pisi index..."),"operation":yali4.postinstall.copyPisiIndex},
                      {"text":_("Setting misc. package configurations..."),"operation":yali4.postinstall.setPackages},
@@ -582,9 +584,18 @@ class Yali:
       
         if self.install_type == YALI_LIVEINSTALL:
             rootWidget.steps.setOperations(stepsLive)
+        else:
+            rootWidget.steps.setOperations(stepsBase)
 
-        rootWidget.steps.setOperations(stepsBase)
-
+    def fixPISIRepo(self):
+        "Fix PISI repository by changing local url to universal packages repo url"
+        ctx.debugger.log("Setting up Pardus packages repo")
+        real_root = os.open("/", os.O_RDONLY)
+        os.chroot(consts.target_dir)
+        yali4.pisiiface.switchToPardusRepo(ctx.consts.live_repo_name)
+        os.fchdir(real_root)
+        os.chroot(".")
+        os.close(real_root)
 
     def generateInitramfs(self):
         ctx.debugger.log("Generating Initramfs.")
@@ -612,8 +623,10 @@ class Yali:
         install_additional_file = os.path.join(consts.source_dir,'additional.tar.lzma')
 
         if os.path.exists(install_additional_file):
+            ctx.debugger.log("Found additional.tar.lzma")
             os.system("/bin/tar -xJf %s -C %s" %(install_additional_file, consts.target_dir))
-            return True    
+            return True  
+ 
 
 
     def generateDBusMachineID(self):

@@ -103,11 +103,17 @@ class YaliBuild(build):
         cmd.append(py_file_name(ui_file))
         os.system(' '.join(cmd))
 
+    def compile_shortcut(self):
+        shortcut = "gcc desktop/yali-live.c -o desktop/yali-live"
+        os.system(shortcut)
+        os.system("chmod a+s desktop/yali-live") 
+
     def run(self):
         for f in qt_ui_files():
             self.compile_ui(f)
             self.add_gettext_support(f)
         os.system("pyrcc4 yali4/data.qrc -o yali4/data_rc.py")
+        self.compile_shortcut()
         build.run(self)
 
 ##
@@ -151,6 +157,7 @@ class YaliUninstall(Command):
             shutil.rmtree(data_dir)
         os.unlink("/usr/bin/yali4-bin")
         os.unlink("/usr/bin/bindYali.sh")
+        os.unlink("/usr/bin/yali-live")
 
 i18n_domain = "yali4"
 i18n_languages = ["tr",
@@ -192,7 +199,7 @@ setup(name="yali4",
       data_files = [('/usr/share/yali4/slideshow', gui_slidepics()),
                     ('/usr/share/yali4/user_faces', user_faces()),
                     ('/usr/share/yali4/data', data_files())],
-      scripts = ['yali4-bin', 'start-yali4', 'bindYali.sh'],
+      scripts = ['yali4-bin', 'start-yali4', 'bindYali.sh', 'desktop/yali-live'],
       ext_modules = [Extension('yali4._sysutils',
                                sources = ['yali4/_sysutils.c'],
                                libraries = ["ext2fs"],

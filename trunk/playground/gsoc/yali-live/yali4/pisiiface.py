@@ -82,8 +82,14 @@ def addRemoteRepo(name, uri):
         updateRepo(name)
 
 def switchToPardusRepo(repo):
-    removeRepo(repo)
-    addRepo(consts.pardus_repo_name, consts.pardus_repo_uri)
+    if ctx.yali.install_type == YALI_LIVEINSTALL:
+        addRepo(consts.pardus_repo_name, consts.pardus_repo_uri)
+        yali4.postinstall.copyPisiIndex()
+        removeRepo(repo)
+    else:
+        removeRepo(repo)
+        addRepo(consts.pardus_repo_name, consts.pardus_repo_uri)
+
 
 def updateRepo(name=consts.cd_repo_name):
     pisi.api.update_repo(name)
