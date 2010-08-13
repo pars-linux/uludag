@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 14:19+0300\n"
+"PO-Revision-Date: 2010-08-13 14:31+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -2108,7 +2108,6 @@ msgid "Done"
 msgstr "Tamam"
 
 #: QDialog#2
-#, fuzzy
 msgctxt "QDialog#2"
 msgid "What's This?"
 msgstr "Bu nedir?"
@@ -2119,67 +2118,56 @@ msgid "OK"
 msgstr "Tamam"
 
 #: QDialogButtonBox#2
-#, fuzzy
 msgctxt "QDialogButtonBox#2"
 msgid "&OK"
 msgstr "&Tamam"
 
 #: QDialogButtonBox#3
-#, fuzzy
 msgctxt "QDialogButtonBox#3"
 msgid "&Save"
 msgstr "&Kaydet"
 
 #: QDialogButtonBox#4
-#, fuzzy
 msgctxt "QDialogButtonBox#4"
 msgid "Save"
 msgstr "Kaydet"
 
 #: QDialogButtonBox#5
-#, fuzzy
 msgctxt "QDialogButtonBox#5"
 msgid "Open"
 msgstr "Aç"
 
 #: QDialogButtonBox#6
-#, fuzzy
 msgctxt "QDialogButtonBox#6"
 msgid "&Cancel"
 msgstr "&İptal"
 
 #: QDialogButtonBox#7
-#, fuzzy
 msgctxt "QDialogButtonBox#7"
 msgid "Cancel"
 msgstr "İptal"
 
 #: QDialogButtonBox#8
-#, fuzzy
 msgctxt "QDialogButtonBox#8"
 msgid "&Close"
 msgstr "K&apat"
 
 #: QDialogButtonBox#9
-#, fuzzy
 msgctxt "QDialogButtonBox#9"
 msgid "Close"
 msgstr "Kapat"
 
 #: QDialogButtonBox#10
-#, fuzzy
 msgctxt "QDialogButtonBox#10"
 msgid "Apply"
 msgstr "Uygula"
 
 #: QDialogButtonBox#11
-#, fuzzy
 msgctxt "QDialogButtonBox#11"
 msgid "Reset"
 msgstr "Sıfırla"
 
 #: QDialogButtonBox#12
-#, fuzzy
 msgctxt "QDialogButtonBox#12"
 msgid "Help"
 msgstr "Yardım"
@@ -2197,7 +2185,6 @@ msgid "Discard"
 msgstr "Vazgeç"
 
 #: QDialogButtonBox#16
-#, fuzzy
 msgctxt "QDialogButtonBox#16"
 msgid "&Yes"
 msgstr "&Evet"
@@ -2207,7 +2194,6 @@ msgid "Yes to &All"
 msgstr "&Tümüne Evet"
 
 #: QDialogButtonBox#18
-#, fuzzy
 msgctxt "QDialogButtonBox#18"
 msgid "&No"
 msgstr "&Hayır"
@@ -2222,14 +2208,13 @@ msgstr "Tümünü Kaydet"
 
 #: QDialogButtonBox#21
 msgid "Abort"
-msgstr "İptal"
+msgstr "Vazgeç"
 
 #: QDialogButtonBox#22
 msgid "Retry"
 msgstr "Yeniden Dene"
 
 #: QDialogButtonBox#23
-#, fuzzy
 msgctxt "QDialogButtonBox#23"
 msgid "Ignore"
 msgstr "Yoksay"
@@ -2330,9 +2315,8 @@ msgid "Cannot open for output"
 msgstr ""
 
 #: QFile#6
-#, fuzzy
 msgid "Failure to write block"
-msgstr "Yazılamadı"
+msgstr ""
 
 #: QFile#7
 msgid "Cannot create %1 for output"
@@ -2343,24 +2327,20 @@ msgid "Look in:"
 msgstr "Konum:"
 
 #: QFileDialog#2
-#, fuzzy
 msgctxt "QFileDialog#2"
 msgid "Back"
 msgstr "Geri"
 
 #: QFileDialog#3
-#, fuzzy
 msgid "Go back"
 msgstr "Geri Git"
 
 #: QFileDialog#4
-#, fuzzy
 msgctxt "QFileDialog#4"
 msgid "Forward"
 msgstr "İleri"
 
 #: QFileDialog#5
-#, fuzzy
 msgid "Go forward"
 msgstr "İleri"
 
@@ -2369,23 +2349,19 @@ msgid "Parent Directory"
 msgstr "Üst Dizin"
 
 #: QFileDialog#7
-#, fuzzy
 msgid "Go to the parent directory"
-msgstr "dizin"
+msgstr "Üst dizine git"
 
 #: QFileDialog#8
-#, fuzzy
 msgctxt "QFileDialog#8"
 msgid "Create New Folder"
-msgstr "Yeni Dizin Oluştur"
+msgstr "Yeni Klasör Oluştur"
 
 #: QFileDialog#9
-#, fuzzy
 msgid "Create a New Folder"
-msgstr "Yeni Dizin Oluştur"
+msgstr "Yeni Klasör Oluştur"
 
 #: QFileDialog#10
-#, fuzzy
 msgctxt "QFileDialog#10"
 msgid "List View"
 msgstr "Liste Görünümü"
@@ -2395,7 +2371,6 @@ msgid "Change to list view mode"
 msgstr ""
 
 #: QFileDialog#12
-#, fuzzy
 msgctxt "QFileDialog#12"
 msgid "Detail View"
 msgstr "Ayrıntılı Görünüm"
@@ -2409,81 +2384,69 @@ msgid "Files of type:"
 msgstr "Dosya türü:"
 
 #: QFileDialog#15
-#, fuzzy
 msgctxt "QFileDialog#15"
 msgid "Find Directory"
 msgstr "Dizin Bul"
 
 #: QFileDialog#16
-#, fuzzy
 msgctxt "QFileDialog#16"
 msgid "Open"
 msgstr "Aç"
 
 #: QFileDialog#17
-#, fuzzy
 msgctxt "QFileDialog#17"
 msgid "Save As"
 msgstr "Farklı Kaydet"
 
 #: QFileDialog#18
-#, fuzzy
 msgctxt "QFileDialog#18"
 msgid "All Files (*)"
-msgstr "Tüm Dosyalar"
+msgstr "Tüm Dosyalar (*)"
 
 #: QFileDialog#19
 msgid "Show "
 msgstr "Göster "
 
 #: QFileDialog#20
-#, fuzzy
 msgctxt "QFileDialog#20"
 msgid "&Rename"
 msgstr "&Yeniden Adlandır"
 
 #: QFileDialog#21
-#, fuzzy
 msgctxt "QFileDialog#21"
 msgid "&Delete"
 msgstr "&Sil"
 
 #: QFileDialog#22
-#, fuzzy
 msgctxt "QFileDialog#22"
 msgid "Show &hidden files"
 msgstr "Gizli &dosyaları göster"
 
 #: QFileDialog#23
 msgid "&New Folder"
-msgstr "&Yeni Dizin"
+msgstr "&Yeni Klasör"
 
 #: QFileDialog#24
-#, fuzzy
 msgctxt "QFileDialog#24"
 msgid "Directory:"
 msgstr "Dizin:"
 
 #: QFileDialog#25
-#, fuzzy
 msgctxt "QFileDialog#25"
 msgid "File &name:"
 msgstr "Dosya &adı:"
 
 #: QFileDialog#26
-#, fuzzy
 msgctxt "QFileDialog#26"
 msgid "&Open"
 msgstr "&Aç"
 
 #: QFileDialog#27
-#, fuzzy
 msgctxt "QFileDialog#27"
 msgid "&Save"
 msgstr "&Kaydet"
 
 #: QFileDialog#28
-#, fuzzy
 msgctxt "QFileDialog#28"
 msgid "Directories"
 msgstr "Dizinler"
@@ -2521,10 +2484,9 @@ msgstr ""
 "Lütfen verilen ismin doğruluğunu kontrol edin."
 
 #: QFileDialog#33
-#, fuzzy
 msgctxt "QFileDialog#33"
 msgid "New Folder"
-msgstr "Yeni Dizin"
+msgstr "Yeni Klasör"
 
 #: QFileDialog#34
 msgid ""
@@ -2547,53 +2509,45 @@ msgid "Recent Places"
 msgstr ""
 
 #: QFileDialog#38
-#, fuzzy
 msgctxt "QFileDialog#38"
 msgid "All Files (*.*)"
 msgstr "Tüm Dosyalar (*.*)"
 
 #: QFileDialog#39
 msgid "Remove"
-msgstr "Sil"
+msgstr "Kaldır"
 
 #: QFileDialog#40
-#, fuzzy
 msgctxt "QFileDialog#40"
 msgid "My Computer"
 msgstr "Bilgisayarım"
 
 #: QFileDialog#41
 msgid "Drive"
-msgstr "Disk Sürücüsü"
+msgstr "Sürücü"
 
 #: QFileDialog#42
-#, fuzzy
 msgctxt "QFileDialog#42"
 msgid "File"
 msgstr "Dosya"
 
 #: QFileDialog#43
-#, fuzzy
 msgid "File Folder"
-msgstr "Yeni Dizin"
+msgstr "Dosya Klasörü"
 
 #: QFileDialog#44
-#, fuzzy
 msgid "Folder"
-msgstr "Yeni Dizin"
+msgstr "Klasör"
 
 #: QFileDialog#45
-#, fuzzy
 msgid "Alias"
-msgstr "Takma adlar: %1"
+msgstr "Takma ad"
 
 #: QFileDialog#46
-#, fuzzy
 msgid "Shortcut"
-msgstr "Sırala"
+msgstr "Kısayol"
 
 #: QFileDialog#47
-#, fuzzy
 msgctxt "QFileDialog#47"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -2627,68 +2581,60 @@ msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fe
 msgstr "<b>\"%1\" ismi kullanılamaz.</b><p>Başka bir isim kullanmayı deneyin, daha az karakter kullanın ya da noktalama işareti kullanın."
 
 #: QFileSystemModel#8
-#, fuzzy
 msgctxt "QFileSystemModel#8"
 msgid "Name"
 msgstr "İsim"
 
 #: QFileSystemModel#9
-#, fuzzy
 msgctxt "QFileSystemModel#9"
 msgid "Size"
 msgstr "Boyut"
 
 # Match OS X Finder
 #: QFileSystemModel#10
-#, fuzzy
 msgctxt "QFileSystemModel#10"
 msgid "Kind"
 msgstr "Tip"
 
 #: QFileSystemModel#11
-#, fuzzy
 msgctxt "QFileSystemModel#11"
 msgid "Type"
-msgstr "Dosya Türü"
+msgstr "Tür"
 
 #: QFileSystemModel#12
-#, fuzzy
 msgctxt "QFileSystemModel#12"
 msgid "Date Modified"
 msgstr "Değiştirilme Tarihi"
 
 #: QFileSystemModel#13
-#, fuzzy
 msgctxt "QFileSystemModel#13"
 msgid "My Computer"
 msgstr "Bilgisayarım"
 
 #: QFileSystemModel#14
 msgid "Computer"
-msgstr "Kök Dizini"
+msgstr "Bilgisayar"
 
 #: QFileSystemModel#15
-#, fuzzy
 msgid "%1 byte(s)"
 msgstr "%1 bayt"
 
 #: QFontDatabase#1
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: QFontDatabase#2
 msgctxt "QFontDatabase#2"
 msgid "Bold"
-msgstr ""
+msgstr "Kalın"
 
 #: QFontDatabase#3
 msgid "Demi Bold"
 msgstr ""
 
 #: QFontDatabase#4
-#, fuzzy
 msgid "Black"
-msgstr "Geri"
+msgstr "Siyah"
 
 #: QFontDatabase#5
 msgid "Demi"
@@ -2702,7 +2648,7 @@ msgstr "Sağ"
 #: QFontDatabase#7
 msgctxt "QFontDatabase#7"
 msgid "Italic"
-msgstr ""
+msgstr "İtalik"
 
 #: QFontDatabase#8
 msgid "Oblique"
@@ -2714,12 +2660,11 @@ msgstr ""
 
 #: QFontDatabase#10
 msgid "Latin"
-msgstr ""
+msgstr "Latin"
 
 #: QFontDatabase#11
-#, fuzzy
 msgid "Greek"
-msgstr "&Yeşil:"
+msgstr ""
 
 #: QFontDatabase#12
 msgid "Cyrillic"
@@ -2860,7 +2805,6 @@ msgid "Font st&yle"
 msgstr "Yazıtipi B&içemi"
 
 #: QFontDialog#4
-#, fuzzy
 msgctxt "QFontDialog#4"
 msgid "&Size"
 msgstr "&Boyut"
@@ -2914,7 +2858,6 @@ msgid "Connection refused for data connection"
 msgstr "Veri bağlantısı için bağlantı reddedildi"
 
 #: QFtp#7
-#, fuzzy
 msgctxt "QFtp#7"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
@@ -3004,13 +2947,11 @@ msgid "Host %1 found"
 msgstr "%1 makinesi bulundu"
 
 #: QFtp#19
-#, fuzzy
 msgctxt "QFtp#19"
 msgid "Connection to %1 closed"
-msgstr "%1 makinesine yapılan bağlantı kapatıldı"
+msgstr ""
 
 #: QFtp#20
-#, fuzzy
 msgctxt "QFtp#20"
 msgid "Host found"
 msgstr "Makine bulundu"
@@ -3027,7 +2968,6 @@ msgid "No host name given"
 msgstr ""
 
 #: QHostInfo#2
-#, fuzzy
 msgctxt "QHostInfo#2"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
@@ -3038,9 +2978,8 @@ msgid "No host name given"
 msgstr ""
 
 #: QHostInfoAgent#2
-#, fuzzy
 msgid "Invalid hostname"
-msgstr "Geçersiz dosya adı"
+msgstr "Geçersiz makine adı"
 
 #: QHostInfoAgent#3
 msgid "Unknown address type"
@@ -3063,7 +3002,6 @@ msgid "HTTPS connection requested but SSL support not compiled in"
 msgstr ""
 
 #: QHttp#2
-#, fuzzy
 msgctxt "QHttp#2"
 msgid "Unknown error"
 msgstr "Bilinmeyen hata"
@@ -3352,7 +3290,7 @@ msgstr "XIM"
 
 #: QInputContext#2
 msgid "FEP"
-msgstr ""
+msgstr "FEP"
 
 #: QInputContext#3
 msgid "XIM input method"
@@ -3373,7 +3311,7 @@ msgstr "Mac OS X girdi metodu"
 
 #: QInputDialog#1
 msgid "Enter a value:"
-msgstr ""
+msgstr "Bir değer girin:"
 
 #: QLibrary#1
 msgid "Could not mmap '%1': %2"
@@ -3462,59 +3400,52 @@ msgstr "Tümünü Seç"
 
 #: QLocalServer#1
 msgid "%1: Name error"
-msgstr ""
+msgstr "%1: İsim hatası"
 
 #: QLocalServer#2
-#, fuzzy
 msgid "%1: Permission denied"
-msgstr "İzin verilmedi"
+msgstr "%1: İzin verilmedi"
 
 #: QLocalServer#3
 msgid "%1: Address in use"
 msgstr ""
 
 #: QLocalServer#4
-#, fuzzy
 msgctxt "QLocalServer#4"
 msgid "%1: Unknown error %2"
-msgstr "Bilinmeyen hata"
+msgstr "%1: Bilinmeyen hata %2"
 
 #: QLocalSocket#1
-#, fuzzy
 msgid "%1: Connection refused"
-msgstr "Bağlantı reddedildi"
+msgstr "%1: Bağlantı reddedildi"
 
 #: QLocalSocket#2
 msgid "%1: Remote closed"
 msgstr ""
 
 #: QLocalSocket#3
-#, fuzzy
 msgid "%1: Invalid name"
-msgstr "Geçersiz dosya adı"
+msgstr "%1: Geçersiz ad"
 
 #: QLocalSocket#4
 msgid "%1: Socket access error"
-msgstr ""
+msgstr "%1: Soket erişim hatası"
 
 #: QLocalSocket#5
 msgid "%1: Socket resource error"
-msgstr ""
+msgstr "%1: Soket kaynak hatası"
 
 #: QLocalSocket#6
-#, fuzzy
 msgid "%1: Socket operation timed out"
-msgstr "Soket işleminde zamanaşımı oluştu"
+msgstr "%1: Soket işlem zamanaşımı"
 
 #: QLocalSocket#7
-#, fuzzy
 msgid "%1: Datagram too large"
-msgstr "Veri paketi göndermek için çok büyük"
+msgstr "%1: Datagram çok büyük"
 
 #: QLocalSocket#8
-#, fuzzy
 msgid "%1: Connection error"
-msgstr "Bağlantıda zamanaşımı"
+msgstr "%1: Bağlantı hatası"
 
 #: QLocalSocket#9
 #, fuzzy
@@ -3522,15 +3453,13 @@ msgid "%1: The socket operation is not supported"
 msgstr "Soket işlemi desteklenmiyor"
 
 #: QLocalSocket#10
-#, fuzzy
 msgid "%1: Unknown error"
-msgstr "Bilinmeyen hata"
+msgstr "%1: Bilinmeyen hata"
 
 #: QLocalSocket#11
-#, fuzzy
 msgctxt "QLocalSocket#11"
 msgid "%1: Unknown error %2"
-msgstr "Bilinmeyen hata"
+msgstr "%1: Bilinmeyen hata %2"
 
 #: QMYSQLDriver#1
 msgid "Unable to open database '"
@@ -3617,12 +3546,10 @@ msgid "(Untitled)"
 msgstr ""
 
 #: QMdiSubWindow#1
-#, fuzzy
 msgid "- [%1]"
-msgstr "%1 - [%2]"
+msgstr "- [%1]"
 
 #: QMdiSubWindow#2
-#, fuzzy
 msgctxt "QMdiSubWindow#2"
 msgid "%1 - [%2]"
 msgstr "%1 - [%2]"
@@ -3633,88 +3560,73 @@ msgid "Minimize"
 msgstr "Küçült"
 
 #: QMdiSubWindow#4
-#, fuzzy
 msgctxt "QMdiSubWindow#4"
 msgid "Maximize"
 msgstr "Büyüt"
 
 #: QMdiSubWindow#5
-#, fuzzy
 msgid "Unshade"
-msgstr "Gölgele&me"
+msgstr "Gölgeleme"
 
 #: QMdiSubWindow#6
-#, fuzzy
 msgid "Shade"
-msgstr "G&ölgele"
+msgstr "Gölgele"
 
 #: QMdiSubWindow#7
-#, fuzzy
 msgctxt "QMdiSubWindow#7"
 msgid "Restore Down"
-msgstr "Aşağıya Geri Yükle"
+msgstr ""
 
 #: QMdiSubWindow#8
-#, fuzzy
 msgid "Restore"
-msgstr "&Geri Yükle"
+msgstr "Geri Yükle"
 
 #: QMdiSubWindow#9
-#, fuzzy
 msgctxt "QMdiSubWindow#9"
 msgid "Close"
 msgstr "Kapat"
 
 #: QMdiSubWindow#10
-#, fuzzy
 msgctxt "QMdiSubWindow#10"
 msgid "Help"
 msgstr "Yardım"
 
 #: QMdiSubWindow#11
-#, fuzzy
 msgctxt "QMdiSubWindow#11"
 msgid "Menu"
 msgstr "Menü"
 
 #: QMdiSubWindow#12
-#, fuzzy
 msgctxt "QMdiSubWindow#12"
 msgid "&Restore"
 msgstr "&Geri Yükle"
 
 #: QMdiSubWindow#13
-#, fuzzy
 msgctxt "QMdiSubWindow#13"
 msgid "&Move"
 msgstr "&Taşı"
 
 #: QMdiSubWindow#14
-#, fuzzy
 msgctxt "QMdiSubWindow#14"
 msgid "&Size"
 msgstr "&Boyut"
 
 #: QMdiSubWindow#15
-#, fuzzy
 msgctxt "QMdiSubWindow#15"
 msgid "Mi&nimize"
 msgstr "&Küçült"
 
 #: QMdiSubWindow#16
-#, fuzzy
 msgctxt "QMdiSubWindow#16"
 msgid "Ma&ximize"
 msgstr "B&üyüt"
 
 #: QMdiSubWindow#17
-#, fuzzy
 msgctxt "QMdiSubWindow#17"
 msgid "Stay on &Top"
 msgstr "&Herzaman Üstte"
 
 #: QMdiSubWindow#18
-#, fuzzy
 msgctxt "QMdiSubWindow#18"
 msgid "&Close"
 msgstr "K&apat"
@@ -3734,9 +3646,8 @@ msgid "Execute"
 msgstr "Çalıştır"
 
 #: QMenuBar#1
-#, fuzzy
 msgid "Actions"
-msgstr "Seçenekler"
+msgstr "Eylemler"
 
 #: QMessageBox#1
 msgid "Show Details..."
@@ -3747,34 +3658,30 @@ msgid "Hide Details..."
 msgstr "Ayrıntıları Gizle..."
 
 #: QMessageBox#3
-#, fuzzy
 msgctxt "QMessageBox#3"
 msgid "OK"
 msgstr "Tamam"
 
 #: QMessageBox#4
-#, fuzzy
 msgctxt "QMessageBox#4"
 msgid "Help"
 msgstr "Yardım"
 
 #: QMessageBox#5
-#, fuzzy
 msgid "<h3>About Qt</h3><p>This program uses Qt version %1.</p>"
-msgstr "<p>Bu uygulama Qt %1 sürümü kullanmaktadır.</p>"
+msgstr ""
 
 #: QMessageBox#6
 msgid "<p>Qt is a C++ toolkit for cross-platform application development.</p><p>Qt provides single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</p><p>Qt is available under three different licensing options designed to accommodate the needs of our various users.</p><p>Qt licensed under our commercial license agreement is appropriate for development of proprietary/commercial software where you do not want to share any source code with third parties or otherwise cannot comply with the terms of the GNU LGPL version 2.1 or GNU GPL version 3.0.</p><p>Qt licensed under the GNU LGPL version 2.1 is appropriate for the development of Qt applications (proprietary or open source) provided you can comply with the terms and conditions of the GNU LGPL version 2.1.</p><p>Qt licensed under the GNU General Public License version 3.0 is appropriate for the development of Qt applications where you wish to use such applications in combination with software subject to the terms of the GNU GPL version 3.0 or where you are otherwise willing to comply with the terms of the GNU GPL version 3.0.</p><p>Please see <a href=\"http://qt.nokia.com/products/licensing\">qt.nokia.com/products/licensing</a> for an overview of Qt licensing.</p><p>Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a href=\"http://qt.nokia.com/\">qt.nokia.com</a> for more information.</p>"
 msgstr ""
 
 #: QMessageBox#7
-#, fuzzy
 msgid "About Qt"
 msgstr "Qt Hakkında"
 
 #: QMultiInputContext#1
 msgid "Select IM"
-msgstr "Çoklu Girdi Seç"
+msgstr ""
 
 #: QMultiInputContextPlugin#1
 msgid "Multiple input method switcher"
