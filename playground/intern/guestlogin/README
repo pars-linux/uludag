@@ -5,7 +5,7 @@ FEATURES:
 
 reads guest username, max home directory size, max guest user values from configuration file which is on /etc/security/
 Give access to guest named users.
-create a user named as guestX and a home directory at /tmp/guestX.XXXXXX. Mount as tmpfs.
+create a user named as guestX and a home directory at /tmp/guestX.XXXXXX/home. Mount as tmpfs.
 All guest users' group is reading from configuration file
 After logout deletes this user and its home directory.
 
@@ -46,7 +46,7 @@ auth    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]     
 
 session optional        pam_keyinit.so  revoke
 session required        pam_limits.so
-session    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
+session    [success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
 session required        pam_unix.so
 
 

@@ -48,30 +48,39 @@ def pam_sm_authenticate(pamh, flags, argv):
         username = "%s%s" % (guest_name, i)
         pamh.user = username
         out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
         home_dir = out.communicate()[0][:-1]
+
+        if not (os.path.isdir(home_dir)):
+            return pamh.PAM_AUTH_ERR
 
         if (debugging):
             log("%s has been created successful with mktemp.\n" % home_dir)
 
-        out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=700 none %s" % (guest_home_dir_size, home_dir)], shell=True)
+        out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 none %s" % (guest_home_dir_size, home_dir)], shell=True)
+        out.wait()
+
+        if not (os.path.ismount(home_dir)):
+            os.removedirs(home_dir)
+            return pamh.PAM_AUTH_ERR
 
         if (debugging):
             log("%s has mounted as tmpfs\n" % home_dir)
 
-        os.system("useradd -M -g %s %s" % (guest_group_name, username))
+        out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % (home_dir, guest_group_name, username)], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
+
+        try:
+            pwd.getpwnam(username)
+
+        except:
+            out = subprocess.Popen(["umount %s" % home_dir], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            out.wait()
+            os.removedirs(home_dir)
+            return pamh.PAM_AUTH_ERR
 
         if (debugging):
             log("%s has been created successfully\n" % username)
-
-        out = subprocess.Popen(["chown %s:%s %s" % (username, guest_group_name, home_dir)], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-
-        if (debugging):
-            log("%s directory's owner is %s now.\n" % (home_dir, username))
-
-        os.system("usermod -d %s %s" % (home_dir, username))
-
-        if (debugging):
-            log("%s's home directory is %s\n" % (username, home_dir))
 
         return pamh.PAM_SUCCESS
 
@@ -126,18 +135,23 @@ destroy it but it seems quite dangerous"""
 
     if (pamh.get_user(None).find(guest_name) != -1):
         username = pamh.get_user(None)
-        home_dir = os.path.expanduser("~%s" % username)
-        out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True)
+        _home_dir = os.path.expanduser("~%s" % username)
+        home_dir = _home_dir[0:_home_dir.rfind('/')+1]
+        out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
 
         if (debugging):
             log("%s's all processes are killed\n" % username)
 
-        os.system("umount %s" % home_dir)
+
+        out = subprocess.Popen(["umount %s" % home_dir], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
 
         if (debugging):
             log("%s successfully unmounted\n" % home_dir)
 
-        os.system("userdel -f %s" % username)
+        out = subprocess.Popen(["userdel -f %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
 
         if (debugging):
             log("user %s has been deleted\n" % username)
