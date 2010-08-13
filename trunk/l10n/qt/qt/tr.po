@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 14:49+0300\n"
+"PO-Revision-Date: 2010-08-13 15:05+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -33,7 +33,7 @@ msgstr "Servisler"
 
 #: MAC_APPLICATION_MENU#2
 msgid "Hide %1"
-msgstr ""
+msgstr "Gizle: %1"
 
 #: MAC_APPLICATION_MENU#3
 msgid "Hide Others"
@@ -1654,7 +1654,7 @@ msgstr "Geçersiz varlık referansı (entity) değeri."
 
 #: QDeclarativeCompositeTypeManager#1
 msgid "Resource %1 unavailable"
-msgstr ""
+msgstr "&1 Kaynağı erişilebilir değil"
 
 #: QDeclarativeCompositeTypeManager#2
 msgid "Namespace %1 cannot be used as a type"
@@ -1667,7 +1667,7 @@ msgstr "%1 - [%2]"
 
 #: QDeclarativeCompositeTypeManager#4
 msgid "Type %1 unavailable"
-msgstr ""
+msgstr "%1 türü erişilebilir değil"
 
 #: QDeclarativeConnections#1
 msgctxt "QDeclarativeConnections#1"
@@ -2001,11 +2001,8 @@ msgid "Failed to get image from provider: %1"
 msgstr ""
 
 #: QDeclarativePixmap#3
-#, fuzzy
 msgid "Cannot open: %1"
-msgstr ""
-"Açılamadı\n"
-"%1"
+msgstr "Açılamadı: %1"
 
 #: QDeclarativePropertyAnimation#1
 msgctxt "QDeclarativePropertyAnimation#1"
@@ -2026,18 +2023,16 @@ msgid "Cannot assign to read-only property \"%1\""
 msgstr ""
 
 #: QDeclarativeTextInput#1
-#, fuzzy
 msgid "Could not load cursor delegate"
-msgstr "Dizi (array) verisi alınamadı"
+msgstr ""
 
 #: QDeclarativeTextInput#2
 msgid "Could not instantiate cursor delegate"
 msgstr ""
 
 #: QDeclarativeVME#1
-#, fuzzy
 msgid "Unable to create object of type %1"
-msgstr "Sorgu oluşturulamadı"
+msgstr ""
 
 #: QDeclarativeVME#2
 msgid "Cannot assign value %1 to property %2"
@@ -2065,9 +2060,8 @@ msgid "Cannot assign object to interface property"
 msgstr ""
 
 #: QDeclarativeVME#8
-#, fuzzy
 msgid "Unable to create attached object"
-msgstr "İfade hazırlanamadı"
+msgstr ""
 
 #: QDeclarativeVME#9
 msgid "Cannot set properties on %1 as it is null"
@@ -2102,10 +2096,9 @@ msgid "SliderHandle"
 msgstr ""
 
 #: QDialog#1
-#, fuzzy
 msgctxt "QDialog#1"
 msgid "Done"
-msgstr "Tamam"
+msgstr "Bitti"
 
 #: QDialog#2
 msgctxt "QDialog#2"
@@ -2377,7 +2370,7 @@ msgstr "Ayrıntılı Görünüm"
 
 #: QFileDialog#13
 msgid "Change to detail view mode"
-msgstr ""
+msgstr "Ayrıntılı görünüm kipine geç"
 
 #: QFileDialog#14
 msgid "Files of type:"
@@ -5149,53 +5142,45 @@ msgid "&Find in Script..."
 msgstr ""
 
 #: QScriptDebugger#22
-#, fuzzy
 msgid "Ctrl+F"
-msgstr "Ctrl"
+msgstr "Ctrl+F"
 
 #: QScriptDebugger#23
-#, fuzzy
 msgid "Find &Next"
-msgstr "Çokluortam Sonraki"
+msgstr "&Sonrakini Bul"
 
 #: QScriptDebugger#24
 msgid "F3"
-msgstr ""
+msgstr "F3"
 
 #: QScriptDebugger#25
-#, fuzzy
 msgid "Find &Previous"
-msgstr "Çokluortam Önceki"
+msgstr "&Öncekini Bul"
 
 #: QScriptDebugger#26
-#, fuzzy
 msgid "Shift+F3"
-msgstr "Shift"
+msgstr "Shift+F3"
 
 #: QScriptDebugger#27
-#, fuzzy
 msgid "Ctrl+G"
-msgstr "Ctrl"
+msgstr "Ctrl+G"
 
 #: QScriptDebugger#28
 msgid "Debug"
 msgstr ""
 
 #: QScriptDebuggerCodeFinderWidget#1
-#, fuzzy
 msgctxt "QScriptDebuggerCodeFinderWidget#1"
 msgid "Close"
 msgstr "Kapat"
 
 #: QScriptDebuggerCodeFinderWidget#2
-#, fuzzy
 msgid "Previous"
-msgstr "Çokluortam Önceki"
+msgstr "Önceki"
 
 #: QScriptDebuggerCodeFinderWidget#3
-#, fuzzy
 msgid "Next"
-msgstr "&İleri >"
+msgstr "Sonraki"
 
 #: QScriptDebuggerCodeFinderWidget#4
 msgid "Case Sensitive"
@@ -5203,36 +5188,32 @@ msgstr ""
 
 #: QScriptDebuggerCodeFinderWidget#5
 msgid "Whole words"
-msgstr ""
+msgstr "Tüm kelimeler"
 
 #: QScriptDebuggerCodeFinderWidget#6
 msgid "<img src=\":/qt/scripttools/debugging/images/wrap.png\">&nbsp;Search wrapped"
 msgstr ""
 
 #: QScriptDebuggerLocalsModel#1
-#, fuzzy
 msgctxt "QScriptDebuggerLocalsModel#1"
 msgid "Name"
 msgstr "İsim"
 
 #: QScriptDebuggerLocalsModel#2
-#, fuzzy
 msgctxt "QScriptDebuggerLocalsModel#2"
 msgid "Value"
 msgstr "Değer"
 
 #: QScriptDebuggerStackModel#1
 msgid "Level"
-msgstr ""
+msgstr "Seviye"
 
 #: QScriptDebuggerStackModel#2
-#, fuzzy
 msgctxt "QScriptDebuggerStackModel#2"
 msgid "Name"
 msgstr "İsim"
 
 #: QScriptDebuggerStackModel#3
-#, fuzzy
 msgctxt "QScriptDebuggerStackModel#3"
 msgid "Location"
 msgstr "Konum"
@@ -6570,10 +6551,9 @@ msgid "Cancel your edits?"
 msgstr "Değişiklikleriniz iptal edilsin mi?"
 
 #: QSslSocket#1
-#, fuzzy
 msgctxt "QSslSocket#1"
 msgid "No error"
-msgstr "Ağ hatası"
+msgstr "Hata yok"
 
 #: QSslSocket#2
 msgid "The issuer certificate could not be found"
@@ -7397,28 +7377,24 @@ msgid "Scroll here"
 msgstr "Buraya kaydır"
 
 #: QWebPage#94
-#, fuzzy
 msgctxt "QWebPage#94"
 msgid "Left edge"
-msgstr "Sol gölge"
+msgstr "Sol kenar"
 
 #: QWebPage#95
-#, fuzzy
 msgctxt "QWebPage#95"
 msgid "Top"
-msgstr "En Yukarı"
+msgstr "Üst"
 
 #: QWebPage#96
-#, fuzzy
 msgctxt "QWebPage#96"
 msgid "Right edge"
-msgstr "Sağ gölge"
+msgstr "Sağ kenar"
 
 #: QWebPage#97
-#, fuzzy
 msgctxt "QWebPage#97"
 msgid "Bottom"
-msgstr "En Aşağı"
+msgstr "Alt"
 
 #: QWebPage#98
 #, fuzzy
