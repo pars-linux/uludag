@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 14:42+0300\n"
+"PO-Revision-Date: 2010-08-13 14:49+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -6230,7 +6230,7 @@ msgstr "Çevir"
 
 #: QShortcut#179
 msgid "Voice Dial"
-msgstr ""
+msgstr "Sesli Arama"
 
 #: QShortcut#180
 msgid "Last Number Redial"
@@ -6487,28 +6487,24 @@ msgstr "Ağ işleminde zamanaşımı"
 
 #: QSoftKeyManager#1
 msgid "Ok"
-msgstr ""
+msgstr "Tamam"
 
 #: QSoftKeyManager#2
-#, fuzzy
 msgctxt "QSoftKeyManager#2"
 msgid "Select"
 msgstr "Seç"
 
 #: QSoftKeyManager#3
-#, fuzzy
 msgctxt "QSoftKeyManager#3"
 msgid "Done"
-msgstr "Tamam"
+msgstr "Bitti"
 
 #: QSoftKeyManager#4
-#, fuzzy
 msgctxt "QSoftKeyManager#4"
 msgid "Options"
 msgstr "Seçenekler"
 
 #: QSoftKeyManager#5
-#, fuzzy
 msgctxt "QSoftKeyManager#5"
 msgid "Cancel"
 msgstr "İptal"
@@ -6960,17 +6956,16 @@ msgstr ""
 #: QWebPage#4
 msgctxt "QWebPage#4"
 msgid "Submit"
-msgstr ""
+msgstr "Gönder"
 
 # Submit (input element) alt text for <input> elements with no alt, title, or
 # value
 #: QWebPage#5
 msgctxt "QWebPage#5"
 msgid "Submit"
-msgstr ""
+msgstr "Gönder"
 
 #: QWebPage#6
-#, fuzzy
 msgctxt "QWebPage#6"
 msgid "Reset"
 msgstr "Sıfırla"
@@ -6982,90 +6977,79 @@ msgid "This is a searchable index. Enter search keywords: "
 msgstr ""
 
 #: QWebPage#8
-#, fuzzy
 msgid "Choose File"
-msgstr "Se&ç"
+msgstr "Dosya Seç"
 
 # text to display in file button used in HTML forms when no file is selected
 #: QWebPage#9
 msgid "No file selected"
-msgstr ""
+msgstr "Seçili dosya yok"
 
 # Open in New Window context menu item
 #: QWebPage#10
 msgid "Open in New Window"
-msgstr ""
+msgstr "Yeni Pencerede Aç"
 
 # Download Linked File context menu item
 #: QWebPage#11
 msgid "Save Link..."
-msgstr ""
+msgstr "Bağlantıyı Kaydet..."
 
 #: QWebPage#12
-#, fuzzy
 msgid "Copy Link"
-msgstr "Bağlantı Konumunu Kopya&la"
+msgstr "Bağlantıyı Kopyala"
 
 #: QWebPage#13
-#, fuzzy
 msgid "Open Image"
-msgstr "Aç "
+msgstr "Resim Aç"
 
 # Download Image context menu item
 #: QWebPage#14
 msgid "Save Image"
-msgstr ""
+msgstr "Resmi Kaydet"
 
 # Copy Link context menu item
 #: QWebPage#15
 msgid "Copy Image"
-msgstr ""
+msgstr "Resmi Kopyala"
 
 #: QWebPage#16
-#, fuzzy
 msgid "Open Frame"
-msgstr "Aç "
+msgstr ""
 
 #: QWebPage#17
-#, fuzzy
 msgctxt "QWebPage#17"
 msgid "Copy"
-msgstr "&Kopyala"
+msgstr "Kopyala"
 
 #: QWebPage#18
-#, fuzzy
 msgctxt "QWebPage#18"
 msgid "Go Back"
-msgstr "Geri Git"
+msgstr "Geri Dön"
 
 #: QWebPage#19
-#, fuzzy
 msgid "Go Forward"
-msgstr "İleri"
+msgstr "İleri Git"
 
 #: QWebPage#20
-#, fuzzy
 msgctxt "QWebPage#20"
 msgid "Stop"
 msgstr "Dur"
 
 #: QWebPage#21
-#, fuzzy
 msgctxt "QWebPage#21"
 msgid "Reload"
-msgstr "Y&eniden Yükle"
+msgstr "Yeniden Yükle"
 
 #: QWebPage#22
-#, fuzzy
 msgctxt "QWebPage#22"
 msgid "Cut"
-msgstr "K&es"
+msgstr "Kes"
 
 #: QWebPage#23
-#, fuzzy
 msgctxt "QWebPage#23"
 msgid "Paste"
-msgstr "Ya&pıştır"
+msgstr "Yapıştır"
 
 # No Guesses Found context menu item
 #: QWebPage#24
@@ -7073,7 +7057,6 @@ msgid "No Guesses Found"
 msgstr ""
 
 #: QWebPage#25
-#, fuzzy
 msgctxt "QWebPage#25"
 msgid "Ignore"
 msgstr "Yoksay"
@@ -7081,12 +7064,11 @@ msgstr "Yoksay"
 # Learn Spelling context menu item
 #: QWebPage#26
 msgid "Add To Dictionary"
-msgstr ""
+msgstr "Sözlüğe Ekle"
 
 #: QWebPage#27
-#, fuzzy
 msgid "Search The Web"
-msgstr "Ara"
+msgstr ""
 
 # Look Up in Dictionary context menu item
 #: QWebPage#28
@@ -7094,20 +7076,17 @@ msgid "Look Up In Dictionary"
 msgstr ""
 
 #: QWebPage#29
-#, fuzzy
 msgid "Open Link"
-msgstr "Aç "
+msgstr "Bağlantıyı Aç"
 
 #: QWebPage#30
-#, fuzzy
 msgctxt "QWebPage#30"
 msgid "Ignore"
 msgstr "Yoksay"
 
 #: QWebPage#31
-#, fuzzy
 msgid "Spelling"
-msgstr "Ayarlar"
+msgstr ""
 
 # menu item title
 #: QWebPage#32
@@ -7135,61 +7114,54 @@ msgid "Check Grammar With Spelling"
 msgstr ""
 
 #: QWebPage#37
-#, fuzzy
 msgid "Fonts"
-msgstr "&Yazıtipi"
+msgstr "Yazı tipleri"
 
 # Bold context menu item
 #: QWebPage#38
 msgctxt "QWebPage#38"
 msgid "Bold"
-msgstr ""
+msgstr "Kalın"
 
 # Italic context menu item
 #: QWebPage#39
 msgctxt "QWebPage#39"
 msgid "Italic"
-msgstr ""
+msgstr "İtalik"
 
 #: QWebPage#40
-#, fuzzy
 msgid "Underline"
-msgstr "&Altıçizili"
+msgstr "Altı çizili"
 
 # Outline context menu item
 #: QWebPage#41
 msgid "Outline"
-msgstr ""
+msgstr "Üstü çizili"
 
 #: QWebPage#42
-#, fuzzy
 msgid "Direction"
-msgstr "Dizin:"
+msgstr "Yön"
 
 #: QWebPage#43
-#, fuzzy
 msgid "Text Direction"
-msgstr "Üst Dizin"
+msgstr "Metnin Yönü"
 
 #: QWebPage#44
-#, fuzzy
 msgid "Default"
-msgstr "Öntanımlılar"
+msgstr "Öntanımlı"
 
 # Left to Right context menu item
 #: QWebPage#45
 msgid "Left to Right"
-msgstr ""
+msgstr "Soldan Sağa"
 
 #: QWebPage#46
-#, fuzzy
 msgid "Right to Left"
-msgstr "Sağ gölge"
+msgstr "Sağdan Sola"
 
 #: QWebPage#47
-#, fuzzy
 msgid "Inspect"
-msgstr "Ekle"
+msgstr ""
 
 # Label for only item in menu that appears when clicking on the search field
 # image, when no searches have been performed
@@ -7211,10 +7183,9 @@ msgstr ""
 # Label text to be used when a plug-in is missing
 #: QWebPage#51
 msgid "Missing Plug-in"
-msgstr ""
+msgstr "Eksik Eklenti"
 
 #: QWebPage#52
-#, fuzzy
 msgctxt "QWebPage#52"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -7222,12 +7193,12 @@ msgstr "Bilinmeyen"
 # Title string for images
 #: QWebPage#53
 msgid "%1 (%2x%3 pixels)"
-msgstr ""
+msgstr "%1 (%2x%3 piksel)"
 
 # Media controller status message when the media is loading
 #: QWebPage#54
 msgid "Loading..."
-msgstr ""
+msgstr "Yükleniyor..."
 
 # Media controller status message when watching a live broadcast
 #: QWebPage#55
@@ -7237,32 +7208,32 @@ msgstr ""
 # Media controller element
 #: QWebPage#56
 msgid "Audio Element"
-msgstr ""
+msgstr "Ses Elementi"
 
 # Media controller element
 #: QWebPage#57
 msgid "Video Element"
-msgstr ""
+msgstr "Video Elementi"
 
 # Media controller element
 #: QWebPage#58
 msgid "Mute Button"
-msgstr ""
+msgstr "Sesi Kapa Düğmesi"
 
 # Media controller element
 #: QWebPage#59
 msgid "Unmute Button"
-msgstr ""
+msgstr "Sesi Aç Düğmesi"
 
 # Media controller element
 #: QWebPage#60
 msgid "Play Button"
-msgstr ""
+msgstr "Oynat Düğmesi"
 
 # Media controller element
 #: QWebPage#61
 msgid "Pause Button"
-msgstr ""
+msgstr "Duraklat Düğmesi"
 
 # Media controller element
 #: QWebPage#62
@@ -7287,22 +7258,22 @@ msgstr ""
 # Media controller element
 #: QWebPage#66
 msgid "Elapsed Time"
-msgstr ""
+msgstr "Geçen Süre"
 
 # Media controller element
 #: QWebPage#67
 msgid "Remaining Time"
-msgstr ""
+msgstr "Kalan Süre"
 
 # Media controller element
 #: QWebPage#68
 msgid "Status Display"
-msgstr ""
+msgstr "Durum Göstergesi"
 
 # Media controller element
 #: QWebPage#69
 msgid "Fullscreen Button"
-msgstr ""
+msgstr "Tam Ekran Düğmesi"
 
 # Media controller element
 #: QWebPage#70
@@ -7675,18 +7646,16 @@ msgid "Insert Numbered List"
 msgstr ""
 
 #: QWebPage#147
-#, fuzzy
 msgid "Indent"
-msgstr "Ekle"
+msgstr ""
 
 #: QWebPage#148
 msgid "Outdent"
 msgstr ""
 
 #: QWebPage#149
-#, fuzzy
 msgid "Center"
-msgstr "Enter"
+msgstr "Merkez"
 
 #: QWebPage#150
 msgid "Justify"
@@ -7694,12 +7663,11 @@ msgstr ""
 
 #: QWebPage#151
 msgid "Align Left"
-msgstr ""
+msgstr "Sola Yasla"
 
 #: QWebPage#152
-#, fuzzy
 msgid "Align Right"
-msgstr "Sağ"
+msgstr "Sağa Yasla"
 
 #: QWebPage#153
 msgid "Web Inspector - %2"
@@ -7715,30 +7683,25 @@ msgid "*"
 msgstr "*"
 
 #: QWizard#1
-#, fuzzy
 msgctxt "QWizard#1"
 msgid "Go Back"
 msgstr "Geri Git"
 
 #: QWizard#2
-#, fuzzy
 msgctxt "QWizard#2"
 msgid "< &Back"
 msgstr "< &Geri"
 
 #: QWizard#3
-#, fuzzy
 msgctxt "QWizard#3"
 msgid "Continue"
 msgstr "Devam Et"
 
 #: QWizard#4
-#, fuzzy
 msgid "&Next"
-msgstr "&İleri >"
+msgstr "&İleri"
 
 #: QWizard#5
-#, fuzzy
 msgctxt "QWizard#5"
 msgid "&Next >"
 msgstr "&İleri >"
@@ -7748,10 +7711,9 @@ msgid "Commit"
 msgstr "Gönder"
 
 #: QWizard#7
-#, fuzzy
 msgctxt "QWizard#7"
 msgid "Done"
-msgstr "Tamam"
+msgstr "Bitti"
 
 #: QWizard#8
 msgctxt "QWizard#8"
@@ -7764,88 +7726,77 @@ msgid "Cancel"
 msgstr "İptal"
 
 #: QWizard#10
-#, fuzzy
 msgctxt "QWizard#10"
 msgid "Help"
 msgstr "Yardım"
 
 #: QWizard#11
-#, fuzzy
 msgctxt "QWizard#11"
 msgid "&Help"
 msgstr "&Yardım"
 
 #: QWorkspace#1
-#, fuzzy
 msgctxt "QWorkspace#1"
 msgid "Close"
 msgstr "Kapat"
 
 #: QWorkspace#2
-#, fuzzy
 msgctxt "QWorkspace#2"
 msgid "Minimize"
 msgstr "Küçült"
 
 #: QWorkspace#3
-#, fuzzy
 msgctxt "QWorkspace#3"
 msgid "Restore Down"
 msgstr "Aşağıya Geri Yükle"
 
 #: QWorkspace#4
-#, fuzzy
 msgctxt "QWorkspace#4"
 msgid "&Restore"
 msgstr "&Geri Yükle"
 
 #: QWorkspace#5
-#, fuzzy
 msgctxt "QWorkspace#5"
 msgid "&Move"
 msgstr "&Taşı"
 
 #: QWorkspace#6
-#, fuzzy
 msgctxt "QWorkspace#6"
 msgid "&Size"
 msgstr "&Boyut"
 
 #: QWorkspace#7
-#, fuzzy
 msgctxt "QWorkspace#7"
 msgid "Mi&nimize"
 msgstr "&Küçült"
 
 #: QWorkspace#8
-#, fuzzy
 msgctxt "QWorkspace#8"
 msgid "Ma&ximize"
 msgstr "B&üyüt"
 
 #: QWorkspace#9
-#, fuzzy
 msgctxt "QWorkspace#9"
 msgid "&Close"
 msgstr "K&apat"
 
 #: QWorkspace#10
-#, fuzzy
 msgctxt "QWorkspace#10"
 msgid "Stay on &Top"
 msgstr "&Herzaman Üstte"
 
 #: QWorkspace#11
+#, fuzzy
 msgid "Sh&ade"
 msgstr "G&ölgele"
 
 #: QWorkspace#12
-#, fuzzy
 msgctxt "QWorkspace#12"
 msgid "%1 - [%2]"
 msgstr "%1 - [%2]"
 
 #: QWorkspace#13
+#, fuzzy
 msgid "&Unshade"
 msgstr "Gölgele&me"
 
