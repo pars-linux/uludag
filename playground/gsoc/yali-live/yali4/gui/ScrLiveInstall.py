@@ -266,8 +266,6 @@ class LiveInstaller(QThread):
         self.empty_dirs = ["mnt","sys","proc","media","home"]
         self.symlink_basepath = os.readlink("/usr").replace("/usr","")
 
-
-
     def run(self):
         append_base = lambda x : self.symlink_basepath + "/"+x
         ctx.debugger.log("LiveInstaller is running.")

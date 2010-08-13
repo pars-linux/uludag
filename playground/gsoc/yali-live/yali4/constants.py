@@ -116,6 +116,11 @@ consts.dvd_install_param = "dvdinstall"
 consts.pisi_index_file = join(consts.data_dir,"data/pisi-index.xml.bz2")
 consts.pisi_index_file_sum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
 
+# Yali-live index files
+consts.live_repo_name = "pardus-install"
+consts.live_pisi_index_file = join("/var/lib/pisi/index",consts.live_repo_name, "pisi-index.xml.bz2")
+consts.live_pisi_index_file_sum = join("/var/lib/pisi/index",consts.live_repo_name, "pisi-index.xml.bz2.sha1sum")
+
 # pisi collection index file
 consts.pisi_collection_file = join(consts.data_dir, "data/index/collection.xml")
 consts.pisi_collection_dir = join(consts.data_dir, "data/index")
