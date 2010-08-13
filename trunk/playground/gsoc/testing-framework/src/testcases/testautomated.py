@@ -26,10 +26,10 @@ class TestAutomated:
             print 'Case {0} of {1}'.format(counter+1, totalCases),
             self.report.append('')
             self.report.append('Case {0} of {1}'.format(counter+1, totalCases))
-            for text in case[counter].getiterator('text'):
+            for text in case[counter].iter('text'):
                 print colorize(text.text, 'bold')
             commandList = []
-            for command in case[counter].getiterator('command'):
+            for command in case[counter].iter('command'):
                 commandList.append(command.text)
             totalCommands = len(commandList)
             self.report.append('Total Commands: {0}'.format(totalCommands))
@@ -53,7 +53,7 @@ class TestAutomated:
                     continue
                 self.report.append('Output: {0}'.format(output.rstrip()))
                 commandCounter += 1
-            for expected in case[counter].getiterator('expected'):
+            for expected in case[counter].iter('expected'):
                 self.report.append('Expected: {0}'.format(expected.text))
                 if expected.text in output:
                     self.summary.append('Success')
