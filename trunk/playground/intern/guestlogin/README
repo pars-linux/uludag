@@ -3,7 +3,7 @@ This is a README file about Guest Account PAM module.
 FEATURES:
 --------
 
-reads guest username, max home directory size, max guest user values from configuration file which is on /etc/security/
+Reads guest username, max home directory size, max guest user values from configuration file which is on /etc/security/
 Give access to guest named users.
 create a user named as guestX and a home directory at /tmp/guestX.XXXXXX/home. Mount as tmpfs.
 All guest users' group is reading from configuration file
@@ -85,5 +85,3 @@ Have Fun!
 TODO:
 -----
 
-Guest Privileges.
-...

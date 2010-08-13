@@ -9,8 +9,33 @@ import subprocess
 import ConfigParser
 
 def log(text):
+    """ Log Function. """
+
     sys.stdout.write(text)
     sys.stdout.flush()
+
+def auth_return(pamh, level, home_dir=""):
+    """ Return Function. """
+
+    if (level >= 2):
+        os.removedirs(home_dir)
+
+    if (level >= 3):
+        out = subprocess.Popen(["umount %s" % home_dir], shell=True, \
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out.wait()
+
+    if (level == 0):
+        return pamh.PAM_SUCCESS
+
+    if (level == -1):
+        return pamh.PAM_AUTHINFO_UNAVAIL
+
+    if (level == -2):
+        return pamh.PAM_MAXTRIES
+
+    if (level == 1) or (level > 2):
+        return pamh.PAM_AUTH_ERR
 
 def pam_sm_authenticate(pamh, flags, argv):
     """ Authentication Function.
@@ -35,7 +60,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         guest_group_name = config.get('guest', 'guestgroup')
 
     except:
-        return pamh.PAM_AUTHINFO_UNAVAIL
+        return auth_return(pamh, -1)
 
     if (pamh.get_user(None) == guest_name):
         users = [x.pw_name for x in pwd.getpwall()]
@@ -43,49 +68,53 @@ def pam_sm_authenticate(pamh, flags, argv):
         while guest_name + str(i) in users:
             i = i + 1
             if (i > guest_limit):
-                return pamh.PAM_MAXTRIES
+                return auth_return(pamh, -2)
 
         username = "%s%s" % (guest_name, i)
         pamh.user = username
-        out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out.wait()
+        out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], \
+                shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if (out.wait() != 0):
+            return auth_return(pamh, 1)
+
         home_dir = out.communicate()[0][:-1]
 
         if not (os.path.isdir(home_dir)):
-            return pamh.PAM_AUTH_ERR
+            return auth_return(pamh, -2)
 
         if (debugging):
             log("%s has been created successful with mktemp.\n" % home_dir)
 
-        out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 none %s" % (guest_home_dir_size, home_dir)], shell=True)
-        out.wait()
+        out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 \
+                none %s" % (guest_home_dir_size, home_dir)], shell=True)
+        if (out.wait() != 0):
+            return auth_return(pamh, -2)
 
         if not (os.path.ismount(home_dir)):
-            os.removedirs(home_dir)
-            return pamh.PAM_AUTH_ERR
+            return auth_return(pamh, 2, home_dir)
 
         if (debugging):
             log("%s has mounted as tmpfs\n" % home_dir)
 
-        out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % (home_dir, guest_group_name, username)], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        out.wait()
+        out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % (home_dir, \
+                guest_group_name, username)], shell=True, \
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if (out.wait() != 0):
+            return auth_return(pamh, -2)
 
         try:
             pwd.getpwnam(username)
 
         except:
-            out = subprocess.Popen(["umount %s" % home_dir], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            out.wait()
-            os.removedirs(home_dir)
-            return pamh.PAM_AUTH_ERR
+            return auth_return(pamh, 3, home_dir)
 
         if (debugging):
             log("%s has been created successfully\n" % username)
 
-        return pamh.PAM_SUCCESS
+        return auth_return(pamh, 0)
 
     else:
-        return pamh.PAM_AUTHINFO_UNAVAIL
+        return auth_return(pamh, -1)
 
 def pam_sm_setcred(pamh, flags, argv):
     """ Set Cred. """
@@ -94,16 +123,15 @@ def pam_sm_setcred(pamh, flags, argv):
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
-        guest_limit = config.get('guest', 'guestlimit')
 
     except:
-        return pamh.PAM_AUTHINFO_UNAVAIL
+        return auth_return(pamh, -1)
 
     if (pamh.get_user(None).find(guest_name) == -1):
-        return pamh.PAM_AUTHINFO_UNAVAIL
+        return auth_return(pamh, -1)
 
     else:
-        return pamh.PAM_SUCCESS
+        return auth_return(pamh, 0)
 
 #def pam_sm_acct_mgmt(pamh, flags, argv):
 #    """ Account Management """
@@ -111,7 +139,7 @@ def pam_sm_setcred(pamh, flags, argv):
 
 def pam_sm_open_session(pamh, flags, argv):
     """ Open Session """
-    return pamh.PAM_SUCCESS
+    return auth_return(pamh, 0)
 
 def pam_sm_close_session(pamh, flags, argv):
     """ Close Session, if user is guest \
@@ -127,30 +155,31 @@ destroy it but it seems quite dangerous"""
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
-        guest_limit = config.get('guest', 'guestlimit')
 
     except:
-        return pamh.PAM_AUTHINFO_UNAVAIL
-
+        return auth_return(pamh, -1)
 
     if (pamh.get_user(None).find(guest_name) != -1):
         username = pamh.get_user(None)
         _home_dir = os.path.expanduser("~%s" % username)
         home_dir = _home_dir[0:_home_dir.rfind('/')+1]
-        out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True, \
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
         if (debugging):
             log("%s's all processes are killed\n" % username)
 
 
-        out = subprocess.Popen(["umount %s" % home_dir], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out = subprocess.Popen(["umount %s" % home_dir], shell=True, \
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
         if (debugging):
             log("%s successfully unmounted\n" % home_dir)
 
-        out = subprocess.Popen(["userdel -f %s" % username], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        out = subprocess.Popen(["userdel -f %s" % username], shell=True, \
+                stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
         if (debugging):
@@ -161,7 +190,7 @@ destroy it but it seems quite dangerous"""
         if (debugging):
             log("folder %s has been deleted\n" % home_dir)
 
-    return pamh.PAM_SUCCESS
+    return auth_return(pamh, 0)
 
 #def pam_sm_chauthtok(pamh, flags, argv):
 #    """ Chauthtok """
