@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 14:31+0300\n"
+"PO-Revision-Date: 2010-08-13 14:42+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -4264,134 +4264,127 @@ msgstr "Yazdır"
 
 #: QPrintDialog#2
 msgid "A0"
-msgstr ""
+msgstr "A0"
 
 #: QPrintDialog#3
 msgid "A1"
-msgstr ""
+msgstr "A1"
 
 #: QPrintDialog#4
 msgid "A2"
-msgstr ""
+msgstr "A2"
 
 #: QPrintDialog#5
 msgid "A3"
-msgstr ""
+msgstr "A3"
 
 #: QPrintDialog#6
 msgid "A4"
-msgstr ""
+msgstr "A4"
 
 #: QPrintDialog#7
 msgid "A5"
-msgstr ""
+msgstr "A5"
 
 #: QPrintDialog#8
 msgid "A6"
-msgstr ""
+msgstr "A6"
 
 #: QPrintDialog#9
 msgid "A7"
-msgstr ""
+msgstr "A7"
 
 #: QPrintDialog#10
 msgid "A8"
-msgstr ""
+msgstr "A8"
 
 #: QPrintDialog#11
 msgid "A9"
-msgstr ""
+msgstr "A9"
 
 #: QPrintDialog#12
 msgid "B0"
-msgstr ""
+msgstr "B0"
 
 #: QPrintDialog#13
 msgid "B1"
-msgstr ""
+msgstr "B1"
 
 #: QPrintDialog#14
 msgid "B2"
-msgstr ""
+msgstr "B2"
 
 #: QPrintDialog#15
 msgid "B3"
-msgstr ""
+msgstr "B3"
 
 #: QPrintDialog#16
 msgid "B4"
-msgstr ""
+msgstr "B4"
 
 #: QPrintDialog#17
 msgid "B5"
-msgstr ""
+msgstr "B5"
 
 #: QPrintDialog#18
 msgid "B6"
-msgstr ""
+msgstr "B6"
 
 #: QPrintDialog#19
 msgid "B7"
-msgstr ""
+msgstr "B7"
 
 #: QPrintDialog#20
 msgid "B8"
-msgstr ""
+msgstr "B8"
 
 #: QPrintDialog#21
 msgid "B9"
-msgstr ""
+msgstr "B9"
 
 #: QPrintDialog#22
 msgid "B10"
-msgstr ""
+msgstr "B10"
 
 #: QPrintDialog#23
 msgid "C5E"
-msgstr ""
+msgstr "C5E"
 
 #: QPrintDialog#24
 msgid "DLE"
-msgstr ""
+msgstr "DLE"
 
 #: QPrintDialog#25
-#, fuzzy
 msgid "Executive"
-msgstr "Çalıştır"
+msgstr ""
 
 #: QPrintDialog#26
-#, fuzzy
 msgid "Folio"
-msgstr "Çevir"
+msgstr "Folio"
 
 #: QPrintDialog#27
-#, fuzzy
 msgid "Ledger"
-msgstr "Sol gölge"
+msgstr ""
 
 #: QPrintDialog#28
 msgid "Legal"
 msgstr ""
 
 #: QPrintDialog#29
-#, fuzzy
 msgid "Letter"
-msgstr "Sol"
+msgstr ""
 
 #: QPrintDialog#30
-#, fuzzy
 msgid "Tabloid"
-msgstr "Tab"
+msgstr ""
 
 #: QPrintDialog#31
-#, fuzzy
 msgid "US Common #10 Envelope"
-msgstr "US Genel #10 Envelope (105 x 241 mm)"
+msgstr ""
 
 #: QPrintDialog#32
-#, fuzzy
 msgid "Custom"
-msgstr "Özelleştir..."
+msgstr "Özel"
 
 #: QPrintDialog#33
 msgid "File exists"
@@ -4522,7 +4515,6 @@ msgid "US Common #10 Envelope (105 x 241 mm)"
 msgstr "US Genel #10 Envelope (105 x 241 mm)"
 
 #: QPrintDialog#65
-#, fuzzy
 msgctxt "QPrintDialog#65"
 msgid "Print all"
 msgstr "Tümünü yazdır"
@@ -4532,49 +4524,41 @@ msgid "Print selection"
 msgstr "Seçimi yazdır"
 
 #: QPrintDialog#67
-#, fuzzy
 msgctxt "QPrintDialog#67"
 msgid "Print range"
-msgstr "Yazdırma oranı"
+msgstr "Yazdırma aralığı"
 
 #: QPrintDialog#68
-#, fuzzy
 msgid "Print current page"
-msgstr "Yazdırma oranı"
+msgstr "Mevcut sayfayı yazdır"
 
 #: QPrintDialog#69
-#, fuzzy
 msgid "&Options >>"
-msgstr "Seçenekler"
+msgstr "&Seçenekler >>"
 
 #: QPrintDialog#70
-#, fuzzy
 msgid "&Print"
-msgstr "Yazdır"
+msgstr "&Yazdır"
 
 #: QPrintDialog#71
-#, fuzzy
 msgid "&Options <<"
-msgstr "Seçenekler"
+msgstr "&Seçenekler <<"
 
 #: QPrintDialog#72
-#, fuzzy
 msgid "Print to File (PDF)"
-msgstr "Dosyaya yazdır"
+msgstr "Dosyaya Yazdır (PDF)"
 
 #: QPrintDialog#73
-#, fuzzy
 msgid "Print to File (Postscript)"
-msgstr "Dosyaya yazdır"
+msgstr "Dosyaya Yazdır (Postscript)"
 
 #: QPrintDialog#74
 msgid "Local file"
-msgstr ""
+msgstr "Yerel dosya"
 
 #: QPrintDialog#75
-#, fuzzy
 msgid "Write %1 file"
-msgstr "Yaz: %1"
+msgstr ""
 
 #: QPrintDialog#76
 msgid "Print To File ..."
@@ -4609,7 +4593,6 @@ msgid "The 'From' value cannot be greater than the 'To' value."
 msgstr ""
 
 #: QPrintDialog#81
-#, fuzzy
 msgctxt "QPrintDialog#81"
 msgid "OK"
 msgstr "Tamam"
@@ -4627,70 +4610,62 @@ msgid "unknown"
 msgstr "bilinmeyen"
 
 #: QPrintPreviewDialog#1
-#, fuzzy
 msgid "Page Setup"
-msgstr "Sayfa yukarı"
+msgstr "Sayfa Ayarı"
 
 #: QPrintPreviewDialog#2
-#, fuzzy
 msgid "%1%"
-msgstr "F%1"
+msgstr "%1%"
 
 #: QPrintPreviewDialog#3
-#, fuzzy
 msgid "Print Preview"
-msgstr "Ekran Görüntüsü Al"
+msgstr "Yazdırma Önizlemesi"
 
 #: QPrintPreviewDialog#4
-#, fuzzy
 msgid "Next page"
-msgstr "&İleri >"
+msgstr "Sonraki sayfa"
 
 #: QPrintPreviewDialog#5
 msgid "Previous page"
-msgstr ""
+msgstr "Önceki sayfa"
 
 #: QPrintPreviewDialog#6
 msgid "First page"
-msgstr ""
+msgstr "İlk sayfa"
 
 #: QPrintPreviewDialog#7
 msgid "Last page"
-msgstr ""
+msgstr "Son sayfa"
 
 #: QPrintPreviewDialog#8
 msgid "Fit width"
-msgstr ""
+msgstr "Genişliğe sığdır"
 
 #: QPrintPreviewDialog#9
-#, fuzzy
 msgid "Fit page"
-msgstr "Yazdırma oranı"
+msgstr "Sayfaya sığdır"
 
 #: QPrintPreviewDialog#10
-#, fuzzy
 msgid "Zoom in"
-msgstr "Konum:"
+msgstr "Yakınlaştır"
 
 #: QPrintPreviewDialog#11
 msgid "Zoom out"
-msgstr ""
+msgstr "Uzaklaştır"
 
 #: QPrintPreviewDialog#12
-#, fuzzy
 msgctxt "QPrintPreviewDialog#12"
 msgid "Portrait"
-msgstr "Dikey"
+msgstr "Portre"
 
 #: QPrintPreviewDialog#13
-#, fuzzy
 msgctxt "QPrintPreviewDialog#13"
 msgid "Landscape"
-msgstr "Yatay"
+msgstr "Manzara"
 
 #: QPrintPreviewDialog#14
 msgid "Show single page"
-msgstr ""
+msgstr "Tek sayfayı göster"
 
 #: QPrintPreviewDialog#15
 msgid "Show facing pages"
@@ -4698,64 +4673,58 @@ msgstr ""
 
 #: QPrintPreviewDialog#16
 msgid "Show overview of all pages"
-msgstr ""
+msgstr "Tüm sayfaların genel görünümü göster"
 
 #: QPrintPreviewDialog#17
-#, fuzzy
 msgctxt "QPrintPreviewDialog#17"
 msgid "Print"
 msgstr "Yazdır"
 
 #: QPrintPreviewDialog#18
-#, fuzzy
 msgid "Page setup"
-msgstr "Sayfa yukarı"
+msgstr "Sayfa ayarı"
 
 #: QPrintPreviewDialog#19
-#, fuzzy
 msgctxt "QPrintPreviewDialog#19"
 msgid "Close"
 msgstr "Kapat"
 
 #: QPrintPreviewDialog#20
 msgid "Export to PDF"
-msgstr ""
+msgstr "PDF olarak dışa aktar"
 
 #: QPrintPreviewDialog#21
 msgid "Export to PostScript"
-msgstr ""
+msgstr "Postscript olarak dışa aktar"
 
 #: QPrintPropertiesWidget#1
 msgctxt "QPrintPropertiesWidget#1"
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: QPrintPropertiesWidget#2
-#, fuzzy
 msgid "Page"
-msgstr "Sayfa Yukarı"
+msgstr "Sayfa"
 
 #: QPrintPropertiesWidget#3
 msgid "Advanced"
-msgstr ""
+msgstr "Gelişmiş"
 
 #: QPrintSettingsOutput#1
 msgctxt "QPrintSettingsOutput#1"
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: QPrintSettingsOutput#2
 msgid "Copies"
-msgstr "Kopya"
+msgstr "Kopyalar"
 
 #: QPrintSettingsOutput#3
-#, fuzzy
 msgctxt "QPrintSettingsOutput#3"
 msgid "Print range"
-msgstr "Yazdırma oranı"
+msgstr "Yazdırma aralığı"
 
 #: QPrintSettingsOutput#4
-#, fuzzy
 msgctxt "QPrintSettingsOutput#4"
 msgid "Print all"
 msgstr "Tümünü yazdır"
@@ -4769,116 +4738,102 @@ msgid "to"
 msgstr "bu sayfaya"
 
 #: QPrintSettingsOutput#7
-#, fuzzy
 msgid "Current Page"
-msgstr "Yazdırma oranı"
+msgstr "Mevcut Sayfa"
 
 #: QPrintSettingsOutput#8
 msgid "Selection"
 msgstr "Seçim"
 
 #: QPrintSettingsOutput#9
-#, fuzzy
 msgid "Output Settings"
-msgstr "Ayarlar"
+msgstr "Çıktı Seçenekleri"
 
 #: QPrintSettingsOutput#10
-#, fuzzy
 msgid "Copies:"
-msgstr "Kopya"
+msgstr "Kopya:"
 
 #: QPrintSettingsOutput#11
 msgid "Collate"
 msgstr "Harmanla"
 
 #: QPrintSettingsOutput#12
-#, fuzzy
 msgid "Reverse"
-msgstr "Sıfırla"
+msgstr "Ters"
 
 #: QPrintSettingsOutput#13
-#, fuzzy
 msgctxt "QPrintSettingsOutput#13"
 msgid "Options"
 msgstr "Seçenekler"
 
 #: QPrintSettingsOutput#14
 msgid "Color Mode"
-msgstr ""
+msgstr "Renk Kipi"
 
 #: QPrintSettingsOutput#15
-#, fuzzy
 msgid "Color"
-msgstr "Temizle"
+msgstr "Renk"
 
 #: QPrintSettingsOutput#16
 msgid "Grayscale"
-msgstr ""
+msgstr "Gri ölçekli"
 
 #: QPrintSettingsOutput#17
-#, fuzzy
 msgid "Duplex Printing"
-msgstr "Çift taraflı yazdırma"
+msgstr "Duplex Yazdırma"
 
 #: QPrintSettingsOutput#18
-#, fuzzy
 msgid "None"
-msgstr "Tamam"
+msgstr "Hiçbiri"
 
 #: QPrintSettingsOutput#19
 msgid "Long side"
 msgstr ""
 
 #: QPrintSettingsOutput#20
-#, fuzzy
 msgid "Short side"
-msgstr "B&oyuta Göre Sırala"
+msgstr ""
 
 #: QPrintWidget#1
 msgctxt "QPrintWidget#1"
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: QPrintWidget#2
 msgid "Printer"
 msgstr "Yazıcı"
 
 #: QPrintWidget#3
-#, fuzzy
 msgid "&Name:"
-msgstr "İsim"
+msgstr "&İsim"
 
 #: QPrintWidget#4
-#, fuzzy
 msgid "P&roperties"
-msgstr "Özellikler"
+msgstr "&Özellikler"
 
 #: QPrintWidget#5
 msgid "Location:"
-msgstr ""
+msgstr "Konum:"
 
 #: QPrintWidget#6
 msgid "Preview"
-msgstr ""
+msgstr "Önizleme"
 
 #: QPrintWidget#7
-#, fuzzy
 msgid "Type:"
-msgstr "Dosya Türü"
+msgstr "Tür:"
 
 #: QPrintWidget#8
 msgid "Output &file:"
-msgstr ""
+msgstr "Çıktı &dosyası:"
 
 #: QPrintWidget#9
-#, fuzzy
 msgid "..."
-msgstr "Daha Fazlası..."
+msgstr "..."
 
 #: QProcess#1
-#, fuzzy
 msgid "Error reading from process"
-msgstr "SSL oturumu oluşturma hatası, %1"
+msgstr ""
 
 #: QProcess#2
 msgid "Error writing to process"
@@ -5813,68 +5768,63 @@ msgstr "Çalıştır (F)"
 
 #: QShortcut#68
 msgid "Monitor Brightness Up"
-msgstr ""
+msgstr "Ekran Parlaklığını Arttır"
 
 #: QShortcut#69
 msgid "Monitor Brightness Down"
-msgstr ""
+msgstr "Ekran Parlaklığını Azalt"
 
 #: QShortcut#70
 msgid "Keyboard Light On/Off"
-msgstr ""
+msgstr "Klavye Işığını Aç/Kapa"
 
 #: QShortcut#71
 msgid "Keyboard Brightness Up"
-msgstr ""
+msgstr "Klavye Parlaklığını Arttır"
 
 #: QShortcut#72
 msgid "Keyboard Brightness Down"
-msgstr ""
+msgstr "Klavye Parlaklığını Azalt"
 
 #: QShortcut#73
 msgid "Power Off"
-msgstr ""
+msgstr "Kapat"
 
 #: QShortcut#74
-#, fuzzy
 msgid "Wake Up"
-msgstr "Sayfa Yukarı"
+msgstr "Uyan"
 
 #: QShortcut#75
-#, fuzzy
 msgid "Eject"
-msgstr "Efektler"
+msgstr "Çıkar"
 
 #: QShortcut#76
 msgid "Screensaver"
-msgstr ""
+msgstr "Ekran koruyucu"
 
 #: QShortcut#77
 msgid "WWW"
-msgstr ""
+msgstr "WWW"
 
 #: QShortcut#78
-#, fuzzy
 msgid "Sleep"
-msgstr "Ayarla"
+msgstr "Uyu"
 
 #: QShortcut#79
 msgid "LightBulb"
 msgstr ""
 
 #: QShortcut#80
-#, fuzzy
 msgid "Shop"
-msgstr "Dur"
+msgstr ""
 
 #: QShortcut#81
 msgid "History"
-msgstr ""
+msgstr "Geçmiş"
 
 #: QShortcut#82
-#, fuzzy
 msgid "Add Favorite"
-msgstr "Yer İmleri"
+msgstr "Favoriye Ekle"
 
 #: QShortcut#83
 msgid "Hot Links"
@@ -5882,17 +5832,15 @@ msgstr ""
 
 #: QShortcut#84
 msgid "Adjust Brightness"
-msgstr ""
+msgstr "Parlaklığı Ayarla"
 
 #: QShortcut#85
-#, fuzzy
 msgid "Finance"
-msgstr "İptal"
+msgstr "Finans"
 
 #: QShortcut#86
-#, fuzzy
 msgid "Community"
-msgstr "Gönder"
+msgstr "Topluluk"
 
 #: QShortcut#87
 msgid "Audio Rewind"
@@ -5912,147 +5860,130 @@ msgid "Application Right"
 msgstr ""
 
 #: QShortcut#91
-#, fuzzy
 msgid "Book"
-msgstr "En Aşağı"
+msgstr "Kitap"
 
 #: QShortcut#92
 msgid "CD"
-msgstr ""
+msgstr "CD"
 
 #: QShortcut#93
 msgid "Calculator"
-msgstr ""
+msgstr "Hesap makinesi"
 
 #: QShortcut#94
-#, fuzzy
 msgctxt "QShortcut#94"
 msgid "Clear"
 msgstr "Temizle"
 
 #: QShortcut#95
-#, fuzzy
 msgid "Clear Grab"
-msgstr "Temizle"
+msgstr ""
 
 #: QShortcut#96
-#, fuzzy
 msgctxt "QShortcut#96"
 msgid "Close"
 msgstr "Kapat"
 
 #: QShortcut#97
-#, fuzzy
 msgctxt "QShortcut#97"
 msgid "Copy"
-msgstr "&Kopyala"
+msgstr "Kopyala"
 
 #: QShortcut#98
-#, fuzzy
 msgctxt "QShortcut#98"
 msgid "Cut"
-msgstr "K&es"
+msgstr "Kes"
 
 #: QShortcut#99
 msgid "Display"
-msgstr ""
+msgstr "Görüntü"
 
 #: QShortcut#100
 msgid "DOS"
-msgstr ""
+msgstr "DOS"
 
 #: QShortcut#101
 msgid "Documents"
-msgstr ""
+msgstr "Dokümanlar"
 
 #: QShortcut#102
 msgid "Spreadsheet"
 msgstr ""
 
 #: QShortcut#103
-#, fuzzy
 msgid "Browser"
-msgstr "Gözat"
+msgstr "Tarayıcı"
 
 #: QShortcut#104
-#, fuzzy
 msgid "Game"
-msgstr "İsim"
+msgstr "Oyun"
 
 #: QShortcut#105
 msgid "Go"
-msgstr ""
+msgstr "Git"
 
 #: QShortcut#106
 msgid "iTouch"
-msgstr ""
+msgstr "iTouch"
 
 #: QShortcut#107
 msgid "Logoff"
-msgstr ""
+msgstr "Çık"
 
 #: QShortcut#108
-#, fuzzy
 msgid "Market"
-msgstr "Meta"
+msgstr "Market"
 
 #: QShortcut#109
-#, fuzzy
 msgid "Meeting"
-msgstr "Ayarlar"
+msgstr "Buluşma"
 
 #: QShortcut#110
 msgid "Keyboard Menu"
-msgstr ""
+msgstr "Klavye Menüsü"
 
 #: QShortcut#111
-#, fuzzy
 msgid "Menu PB"
-msgstr "Menü"
+msgstr "Menu PB"
 
 #: QShortcut#112
 msgid "My Sites"
-msgstr ""
+msgstr "Sayfalarım"
 
 #: QShortcut#113
 msgid "News"
-msgstr ""
+msgstr "Haberler"
 
 #: QShortcut#114
-#, fuzzy
 msgid "Home Office"
-msgstr "Web Sayfası"
+msgstr "Ev Ofis"
 
 #: QShortcut#115
-#, fuzzy
 msgid "Option"
 msgstr "Seçenekler"
 
 #: QShortcut#116
-#, fuzzy
 msgctxt "QShortcut#116"
 msgid "Paste"
-msgstr "Ya&pıştır"
+msgstr "Yapıştır"
 
 #: QShortcut#117
-#, fuzzy
 msgid "Phone"
-msgstr "Tamam"
+msgstr "Telefon"
 
 #: QShortcut#118
-#, fuzzy
 msgid "Reply"
-msgstr "Yeniden Dene"
+msgstr "Yanıtla"
 
 #: QShortcut#119
-#, fuzzy
 msgctxt "QShortcut#119"
 msgid "Reload"
-msgstr "Y&eniden Yükle"
+msgstr "Yeniden Yükle"
 
 #: QShortcut#120
 msgid "Rotate Windows"
-msgstr ""
+msgstr "Pencereleri Döndür"
 
 #: QShortcut#121
 msgid "Rotation PB"
@@ -6063,69 +5994,66 @@ msgid "Rotation KB"
 msgstr ""
 
 #: QShortcut#123
-#, fuzzy
 msgctxt "QShortcut#123"
 msgid "Save"
 msgstr "Kaydet"
 
 #: QShortcut#124
 msgid "Send"
-msgstr ""
+msgstr "Gönder"
 
 #: QShortcut#125
 msgid "Spellchecker"
-msgstr ""
+msgstr "İmla denetimi"
 
 #: QShortcut#126
-#, fuzzy
 msgid "Split Screen"
-msgstr "Ekran Görüntüsü Al"
+msgstr "Ekranı Böl"
 
 #: QShortcut#127
-#, fuzzy
 msgid "Support"
-msgstr "Sırala"
+msgstr "Destek"
 
 #: QShortcut#128
 msgid "Task Panel"
-msgstr ""
+msgstr "Görev Paneli"
 
 #: QShortcut#129
 msgid "Terminal"
-msgstr ""
+msgstr "Terminal"
 
 #: QShortcut#130
 msgid "Tools"
-msgstr ""
+msgstr "Araçlar"
 
 #: QShortcut#131
 msgid "Travel"
-msgstr ""
+msgstr "Seyahat"
 
 #: QShortcut#132
 msgctxt "QShortcut#132"
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: QShortcut#133
 msgid "Word Processor"
-msgstr ""
+msgstr "Kelime İşlemci"
 
 #: QShortcut#134
 msgid "XFer"
-msgstr ""
+msgstr "XFer"
 
 #: QShortcut#135
 msgid "Zoom In"
-msgstr ""
+msgstr "Yakınlaştır"
 
 #: QShortcut#136
 msgid "Zoom Out"
-msgstr ""
+msgstr "Uzaklaştır"
 
 #: QShortcut#137
 msgid "Away"
-msgstr ""
+msgstr "Uzak"
 
 #: QShortcut#138
 msgid "Messenger"
@@ -6133,7 +6061,7 @@ msgstr ""
 
 #: QShortcut#139
 msgid "WebCam"
-msgstr ""
+msgstr "WebCam"
 
 #: QShortcut#140
 #, fuzzy
@@ -6141,36 +6069,33 @@ msgid "Mail Forward"
 msgstr "İleri"
 
 #: QShortcut#141
-#, fuzzy
 msgid "Pictures"
-msgstr "Dizinler"
+msgstr "Resimler"
 
 #: QShortcut#142
 msgctxt "QShortcut#142"
 msgid "Music"
-msgstr ""
+msgstr "Müzik"
 
 #: QShortcut#143
 msgid "Battery"
-msgstr ""
+msgstr "Pil"
 
 #: QShortcut#144
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: QShortcut#145
-#, fuzzy
 msgid "Wireless"
-msgstr "Bas"
+msgstr "Kablosuz"
 
 #: QShortcut#146
 msgid "Ultra Wide Band"
-msgstr ""
+msgstr "Ultra Geniş Bant"
 
 #: QShortcut#147
-#, fuzzy
 msgid "Audio Forward"
-msgstr "İleri"
+msgstr ""
 
 #: QShortcut#148
 msgid "Audio Repeat"
@@ -6182,7 +6107,7 @@ msgstr ""
 
 #: QShortcut#150
 msgid "Subtitle"
-msgstr ""
+msgstr "Altyazı"
 
 #: QShortcut#151
 msgid "Audio Cycle Track"
@@ -6190,24 +6115,21 @@ msgstr ""
 
 #: QShortcut#152
 msgid "Time"
-msgstr ""
+msgstr "Süre"
 
 #: QShortcut#153
-#, fuzzy
 msgctxt "QShortcut#153"
 msgid "Select"
 msgstr "Seç"
 
 #: QShortcut#154
-#, fuzzy
 msgctxt "QShortcut#154"
 msgid "View"
-msgstr "Liste Görünümü"
+msgstr "Görüntüle"
 
 #: QShortcut#155
-#, fuzzy
 msgid "Top Menu"
-msgstr "Menü"
+msgstr "Üst Menü"
 
 #: QShortcut#156
 msgid "Suspend"
@@ -6246,13 +6168,11 @@ msgid "Scroll Lock"
 msgstr "Scroll Lock"
 
 #: QShortcut#165
-#, fuzzy
 msgctxt "QShortcut#165"
 msgid "Insert"
 msgstr "Ekle"
 
 #: QShortcut#166
-#, fuzzy
 msgctxt "QShortcut#166"
 msgid "Delete"
 msgstr "Sil"
@@ -6266,18 +6186,17 @@ msgid "System Request"
 msgstr "Sistem İsteği"
 
 #: QShortcut#169
-#, fuzzy
 msgctxt "QShortcut#169"
 msgid "Yes"
 msgstr "Evet"
 
 #: QShortcut#170
-#, fuzzy
 msgctxt "QShortcut#170"
 msgid "No"
 msgstr "Hayır"
 
 #: QShortcut#171
+#, fuzzy
 msgid "Context1"
 msgstr "Bağlam1"
 
