@@ -1,1 +1,2 @@
- 
+include *.py
+recursive-include src/ *.py *.ui
