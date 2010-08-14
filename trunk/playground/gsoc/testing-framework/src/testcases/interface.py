@@ -10,6 +10,7 @@ from ui_main import Ui_Dialog
 
 
 class Main(QtGui.QMainWindow):
+    """class for creating a QDialog."""
     def __init__(self, element, packagelist, summary=None, report=None, package=None,
                                              checkcode=None, case=None,
                                              casecounter=None, totalcases=None):
@@ -52,14 +53,11 @@ class Main(QtGui.QMainWindow):
                                           "will be tested".format(self.package))
             self.ui.text_edit.append("Press 'Start' to begin testing ...")
         
-        self.connect(self.ui.next_button,
-                     QtCore.SIGNAL("clicked()"),
-                     self.next_case)
-        self.connect(self.ui.save_button,
-                     QtCore.SIGNAL("clicked()"),
-                     self.get_text)
+        self.connect(self.ui.next_button, QtCore.SIGNAL("clicked()"), self.next_case)
+        self.connect(self.ui.save_button, QtCore.SIGNAL("clicked()"), self.get_text)
         
     def update_text(self):
+        """Update the text by parsing through the case tag."""
         self.ui.text_observation.clear()
         self.ui.group_box.setTitle('Case {0} of {1}'.format(self.casecounter+1,
                                                             self.totalcases))
@@ -108,6 +106,7 @@ class Main(QtGui.QMainWindow):
                 self.ui.text_edit.append('{0}'.format('\n'.join(commandList)))
             
     def next_case(self):
+        """Increment the case counter and display the next case."""
         if self.casecounter < self.totalcases:
             self.ui.next_button.setEnabled(True)
             self.ui.text_edit.setEnabled(True)
@@ -133,8 +132,7 @@ class Main(QtGui.QMainWindow):
             self.ui.unable_button.setEnabled(False)
             self.ui.next_button.setEnabled(False)
             # set the checkcode to 1 since everything is ok
-            self.checkcode = 1
-            
+            self.checkcode = 1            
             self.ui.package_label.setText('')
             self.ui.text_observation.setPlainText('')
             self.ui.text_edit.setText("End of package testing. " \
@@ -142,6 +140,7 @@ class Main(QtGui.QMainWindow):
             self.ui.group_box.setTitle('Finished')
 
     def get_text(self):
+        """Get the observation from the user."""
         if self.ui.yes_button.isChecked():
             self.report.append('Case {0} of {1}: Success'.format(self.casecounter+1,
                                                             self.totalcases))
@@ -177,6 +176,7 @@ class Main(QtGui.QMainWindow):
                                                              self.totalcases))
             self.summary.append('Case {0} of {1}: Failed'.format(self.casecounter+1,
                                                              self.totalcases))
+        # disable everything related to input
         self.ui.text_edit.setEnabled(False)
         self.ui.text_observation.setEnabled(False)
         self.ui.label.setEnabled(False)
