@@ -1,11 +1,4 @@
 -	Support for passing packages for custom parsing through the command line
-
-	As of now, the framework provides support for custom package parsing using
-	a file (the '-p' switch). We intend to add another feature that will allow
-	the user to pass the package list through the command line only. Note that
-	package input through a file will still be supported, but for cases where
-	the number of packages are less, the user can just feed the package list
-	using the command line, instead of creating a file and then passing it. 
 	
 	This will involve replacing the current 'optparse' module with 'argparse',
 	which is included in the Python 2.7 standard library. Since we are initially
@@ -13,11 +6,11 @@
 
 	* Planned
 	
-	framework -f test_file.xml -p package-1 package-2 package-3 ... package-n
+	package-testing -f test_file.xml -p package-1 package-2 package-3 ... package-n
   
 	* Current
 
-	framework -f test_file.xml -p package_file		
+	package-testing -f test_file.xml -p package_file		
 	
 	where package_file is a file with the contents:
       

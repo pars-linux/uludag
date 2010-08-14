@@ -21,7 +21,7 @@ class TestShell:
         packageList = []
         for package in self.element.iter('package'):
             packageList.append(package.text)
-        
+        # start the gui
         app = QtGui.QApplication(sys.argv)
         window = Main(self.element, packageList, self.summary, self.report)
         window.show()

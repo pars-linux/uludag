@@ -13,7 +13,7 @@ lxml 2.2+
 Usage:
 ------
 The input file (specified by the '-f' option) is mandatory.
-Usage: framework.py [options] arguments
+Usage: package-testing [options] arguments
 
 Options:
   -h, --help            show this help message and exit
@@ -47,7 +47,7 @@ P2
 
 Then, pass the '-p' option to the framework:
 
-python framework.py -f <testcase-XML-file> -p <package-input-file>
+package-testing -f <testcase-XML-file> -p <package-input-file>
 
 Note that you can only pass a file with the list of packages as an argument to '-p' and 
 not a list of packages. We will fix this in the future.
@@ -58,7 +58,7 @@ not a list of packages. We will fix this in the future.
 The '-o' option is used to print a list of all the packages present in the testcase input
 file specified by the '-f' switch. 
 
-python framework.py -f <testcase-XML-file> -o <output-package-file>
+package-testing -f <testcase-XML-file> -o <output-package-file>
 
 This will output the list of all the packages in the testcase file to the file specified.
 
