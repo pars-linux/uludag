@@ -1,3 +1,4 @@
 recursive-include *.py
+recursive-include doc/ *.xml
 recursive-include src/ *.ui
 include . AUTHORS COPYING README TODO
