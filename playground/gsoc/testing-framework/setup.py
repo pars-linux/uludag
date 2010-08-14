@@ -52,6 +52,7 @@ def install_dependencies():
     try:
         print "Please wait, installing package 'lxml' ({0:.2f} MB) ...".format(downloadSize)
         pisi.api.install(package_list)
+        print 'Done'
         return 
     except pisi.errors.PrivilegeError:
         sys.exit('Aborting: Please run the script with root privileges.')
