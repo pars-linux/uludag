@@ -6,11 +6,12 @@ import os
 import sys
 
 from distutils.core import setup
-from distutils.command import install
+from distutils.command.install import install
 
 try:
     import pisi.api
     import pisi.errors
+    from pisi.api import calculate_download_size
 except ImportError:
     print 'Unable to import the PiSi API'
     sys.exit('Please ensure that you are running Pardus GNU/ Linux')
@@ -19,37 +20,41 @@ except ImportError:
 class Install(install):
     """Override the standard install to check for dependencies."""
     def run(self):
-        if check_dependencies('lxml') is None:
-            print "Found one missing dependency: 'lxml'"
-            print 'Should I install it for you? (y / n): [y]'
-            if choice in ('y', 'Y', 'yes', 'YES'):
+        if check_dependencies() is None:
+            print 'Missing dependency: lxml'            
+            choice = raw_input('Should I install it for you? (y / n): [y] ')
+            if choice in ('y', 'Y', 'yes', 'YES', ''):
                 install_dependencies()
             else:
-                print 'The required dependencies were not met'
-                sys.exit('Aborting installation')
+                sys.exit('Aborting: The required dependencies were not met.')
+        install.run(self)
 
 
-def check_dependencies(module_name):
+def check_dependencies():
     """Check for the required dependencies for the framework."""
+    package = 'lxml'
     try:
-        __import__(module_name)
+        return __import__(package)
     except ImportError:
         return None
     
 
 def install_dependencies():
     package_list = ['lxml']
+    downloadSize = pisi.api.calculate_download_size(package_list)[0]/(1024.0 * 1024.0)
     try:
+        print "Please wait, installing package 'lxml' ({0:.2f} MB)".format(downloadSize)
         pisi.api.install(package_list)
         return 
     except pisi.errors.PrivilegeError:
-        sys.exit('Please run the script with root privileges')
+        sys.exit('Aborting: Please run the script with root privileges.')
 
 
 if sys.version_info[:2] < (2, 4):
     print "Package Testing Framework requires Python 2.6 or better (but not " \
     "Python 3 yet).\nVersion {0} detected.".format(sys.version_info[:2])
     sys.exit(1)
+        
         
 setup(
       name='Package Tesing Framework',
@@ -61,8 +66,8 @@ setup(
       url='http://www.pardus.org.tr',
       description='A package testing framework for Pardus GNU/ Linux',
       license='GNU GPL',
-      package_dir = {'': 'src'},
-      packages = ['src', 'src.testcases', 'src.testcases.ui', 'doc'],
+      package_dir = {'': ''},
+      packages = ['src', 'src.testcases', 'src.testcases.ui'],
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Console',
