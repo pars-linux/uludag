@@ -10,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: CloseButton#1
 msgid "Close Tab"
@@ -1338,7 +1338,7 @@ msgstr "Bir Davranışa atanan canlandırma değiştirilemez."
 #: QDeclarativeBinding#1
 msgctxt "QDeclarativeBinding#1"
 msgid "Binding loop detected for property \"%1\""
-msgstr "\"%1\" özelliğinde bağlama döngüsü bulundu"
+msgstr "\"%1\" özelliğinde bağlama döngüsü bulundu "
 
 #: QDeclarativeCompiledBindings#1
 msgctxt "QDeclarativeCompiledBindings#1"
@@ -1459,11 +1459,11 @@ msgstr ""
 
 #: QDeclarativeCompiler#29
 msgid "Empty signal assignment"
-msgstr ""
+msgstr "Boş sinyal ataması"
 
 #: QDeclarativeCompiler#30
 msgid "Empty property assignment"
-msgstr ""
+msgstr "Boş özellik ataması"
 
 #: QDeclarativeCompiler#31
 msgid "Attached properties cannot be used here"
