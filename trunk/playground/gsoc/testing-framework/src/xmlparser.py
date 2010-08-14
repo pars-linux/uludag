@@ -5,7 +5,10 @@ import os
 import sys
 from datetime import date
 
-from lxml import etree
+try:
+    from lxml import etree
+except ImportError:
+    sys.exit('Aborting: The lxml library was not found.')
 
 from pisi.api import list_installed
 from pisi.api import list_available
