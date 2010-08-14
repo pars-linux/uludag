@@ -1,4 +1,3 @@
-#
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
@@ -11,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: CloseButton#1
 msgid "Close Tab"
@@ -20,7 +19,7 @@ msgstr "Sekmeyi Kapat"
 
 #: FakeReply#1
 msgid "Fake error !"
-msgstr ""
+msgstr "Sahte hata !"
 
 #: FakeReply#2
 msgctxt "FakeReply#2"
@@ -83,31 +82,35 @@ msgstr "Erişilebilirlik"
 
 #: Phonon::AudioOutput#1
 msgid "<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to <b>%2</b>.</html>"
-msgstr ""
+msgstr "<html>Ses aygıtı <b>%1</b> çalışmıyor.<br/><b>%2</b> aygıtına geri dönülüyor.</html>"
 
 #: Phonon::AudioOutput#2
 msgid "<html>Switching to the audio playback device <b>%1</b><br/>which just became available and has higher preference.</html>"
-msgstr ""
+msgstr "<html>Yeni algılanan ve daha yüksek önceliğe sahip olan </br><b>%1</b> ses aygıtına geçiliyor.</html>"
 
 #: Phonon::AudioOutput#3
 msgid "Revert back to device '%1'"
-msgstr ""
+msgstr "'%1' aygıtına geri dön"
 
 #: Phonon::AudioOutput#4
 msgid "<html>Switching to the audio playback device <b>%1</b><br/>which has higher preference or is specifically configured for this stream.</html>"
-msgstr ""
+msgstr "<html>Daha yüksek önceliğe sahip olan ya da bu akış için özellikle  </br>yapılandırılmış olan <b>%1</b> ses aygıtına geçiliyor.</html>"
 
 #: Phonon::Gstreamer::Backend#1
 msgid ""
 "Warning: You do not seem to have the package gstreamer0.10-plugins-good installed.\n"
 "          Some video features have been disabled."
 msgstr ""
+"Uyarı: gstreamer0.10-plugins-good paketine sahip değilsiniz.\n"
+" Bazı video özellikleri kapatıldı."
 
 #: Phonon::Gstreamer::Backend#2
 msgid ""
 "Warning: You do not seem to have the base GStreamer plugins installed.\n"
 "          All audio and video support has been disabled"
 msgstr ""
+"Uyarı: Temel GStreamer eklentilerine sahip değilsiniz.\n"
+" Tüm ses ve video desteği kapatıldı."
 
 #: Phonon::Gstreamer::MediaObject#1
 msgid ""
@@ -116,6 +119,9 @@ msgid ""
 "Check your GStreamer installation and make sure you \n"
 "have libgstreamer-plugins-base installed."
 msgstr ""
+"Çalma başlatılamıyor. \n"
+"\n"
+"GStreamer kurulumunuzu gözden geçirin ve libgstreamer-plugins-base eklentilerinin kurulu olduğuna emin olun."
 
 #: Phonon::Gstreamer::MediaObject#2
 msgid "Missing codec helper script assistant."
@@ -123,11 +129,11 @@ msgstr "-"
 
 #: Phonon::Gstreamer::MediaObject#3
 msgid "Plugin codec installation failed for codec: %0"
-msgstr ""
+msgstr "Eklenti codec kurulumu bu codec için gerçekleştirilemedi: %0"
 
 #: Phonon::Gstreamer::MediaObject#4
 msgid "A required codec is missing. You need to install the following codec(s) to play this content: %0"
-msgstr ""
+msgstr "Gerekli codec bulunamadı. Bu içeriği oynatabilmek için şu codec(ler)i kurmanız gerekiyor: %0"
 
 #: Phonon::Gstreamer::MediaObject#5
 msgid "Could not open media source."
@@ -229,7 +235,7 @@ msgstr "Ağ iletişim hatası"
 
 #: Phonon::MMF#20
 msgid "Streaming not supported"
-msgstr ""
+msgstr "Akış desteklenmiyor"
 
 #: Phonon::MMF#21
 msgid "Server alert"
@@ -1224,7 +1230,7 @@ msgstr "İfade hazırlanamadı"
 #: QDB2Result#3
 msgctxt "QDB2Result#3"
 msgid "Unable to bind variable"
-msgstr ""
+msgstr "Değişken bağlama işlemi gerçekleştirilemiyor"
 
 #: QDB2Result#4
 msgid "Unable to fetch record %1"
@@ -1238,7 +1244,7 @@ msgstr "Sonraki getirilemedi"
 #: QDB2Result#6
 msgctxt "QDB2Result#6"
 msgid "Unable to fetch first"
-msgstr ""
+msgstr "Çekme işlemi gerçekleştirilemiyor"
 
 #: QDateTimeEdit#1
 msgid "AM"
@@ -1258,32 +1264,32 @@ msgstr "pm"
 
 #: QDeclarativeAbstractAnimation#1
 msgid "Cannot animate non-existent property \"%1\""
-msgstr ""
+msgstr "Mevcut olmayan özellik \"%1\" canlandırılamıyor"
 
 #: QDeclarativeAbstractAnimation#2
 msgid "Cannot animate read-only property \"%1\""
-msgstr ""
+msgstr "Sadece okunabilir özellik \"%1\" canlandırılamıyor"
 
 #: QDeclarativeAbstractAnimation#3
 msgid "Animation is an abstract class"
-msgstr ""
+msgstr "Canlandırma soyut bir sınıf"
 
 #: QDeclarativeAnchorAnimation#1
 msgctxt "QDeclarativeAnchorAnimation#1"
 msgid "Cannot set a duration of < 0"
-msgstr ""
+msgstr "Süre < 0 olarak ayarlanamaz"
 
 #: QDeclarativeAnchors#1
 msgid "Possible anchor loop detected on fill."
-msgstr ""
+msgstr "fill üzerinde muhtemel bir anchor loop belirlendi."
 
 #: QDeclarativeAnchors#2
 msgid "Possible anchor loop detected on centerIn."
-msgstr ""
+msgstr "centerln üzerinde muhtemel bir anchor loop belirlendi."
 
 #: QDeclarativeAnchors#3
 msgid "Cannot anchor to an item that isn't a parent or sibling."
-msgstr ""
+msgstr "Parent ya da sibling olmayan bir ögeye tutturulamıyor"
 
 #: QDeclarativeAnchors#4
 msgid "Possible anchor loop detected on vertical anchor."
