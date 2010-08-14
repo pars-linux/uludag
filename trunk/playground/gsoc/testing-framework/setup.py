@@ -1,12 +1,13 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import glob
 import os
+import subprocess
 import sys
 
 from distutils.core import setup
 from distutils.command.install import install
+from distutils.command.build import build
 
 try:
     import pisi.api
@@ -30,6 +31,12 @@ class Install(install):
         install.run(self)
 
 
+class Build(build):
+    """Override the standard build procedure to compile uic files to py."""
+    print 'Generating the UI files ...'
+    subprocess.call(['/usr/bin/pyuic4', 'src/testcases/ui/main.ui',
+                                    '-o', 'build/lib/src/testcases/ui_main.py'])
+
 def check_dependencies():
     """Check for the required dependencies for the framework."""
     package = 'lxml'
@@ -43,7 +50,7 @@ def install_dependencies():
     package_list = ['lxml']
     downloadSize = pisi.api.calculate_download_size(package_list)[0]/(1024.0 * 1024.0)
     try:
-        print "Please wait, installing package 'lxml' ({0:.2f} MB)".format(downloadSize)
+        print "Please wait, installing package 'lxml' ({0:.2f} MB) ...".format(downloadSize)
         pisi.api.install(package_list)
         return 
     except pisi.errors.PrivilegeError:
@@ -67,7 +74,8 @@ setup(
       description='A package testing framework for Pardus GNU/ Linux',
       license='GNU GPL',
       package_dir = {'': ''},
-      packages = ['src', 'src.testcases', 'src.testcases.ui'],
+      packages = ['src', 'src.testcases', 'src.testcases.ui', 'doc'],
+      package_data = {'src.testcases.ui': ['*.ui'], 'doc': ['*.xml']},
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Console',
@@ -79,5 +87,7 @@ setup(
           'Programming Language :: Python :: 2.6',
           'Topic :: Software Development :: Testing'
           ],
-      cmdclass={'install': Install} 
+      cmdclass={'install': Install,
+                'build': Build
+               } 
      )
