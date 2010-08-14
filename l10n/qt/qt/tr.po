@@ -10,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: CloseButton#1
 msgid "Close Tab"
@@ -125,7 +125,7 @@ msgstr ""
 
 #: Phonon::Gstreamer::MediaObject#2
 msgid "Missing codec helper script assistant."
-msgstr "-"
+msgstr "Eksik codec yardımcı betik asistanı."
 
 #: Phonon::Gstreamer::MediaObject#3
 msgid "Plugin codec installation failed for codec: %0"
@@ -1281,11 +1281,11 @@ msgstr "Süre < 0 olarak ayarlanamaz"
 
 #: QDeclarativeAnchors#1
 msgid "Possible anchor loop detected on fill."
-msgstr "fill üzerinde muhtemel bir anchor loop belirlendi."
+msgstr "fill üzerinde muhtemel bir çapa döngüsü belirlendi."
 
 #: QDeclarativeAnchors#2
 msgid "Possible anchor loop detected on centerIn."
-msgstr "centerln üzerinde muhtemel bir anchor loop belirlendi."
+msgstr "centerln üzerinde muhtemel bir çapa döngüsü belirlendi."
 
 #: QDeclarativeAnchors#3
 msgid "Cannot anchor to an item that isn't a parent or sibling."
@@ -1293,52 +1293,52 @@ msgstr "Parent ya da sibling olmayan bir ögeye tutturulamıyor"
 
 #: QDeclarativeAnchors#4
 msgid "Possible anchor loop detected on vertical anchor."
-msgstr ""
+msgstr "Dikey çapa üzerinde muhtemel bir çapa döngüsü belirlendi."
 
 #: QDeclarativeAnchors#5
 msgid "Possible anchor loop detected on horizontal anchor."
-msgstr ""
+msgstr "Yatay çapa üzerinde muhtemel bir çapa döngüsü belirlendi."
 
 #: QDeclarativeAnchors#6
 msgid "Cannot specify left, right, and hcenter anchors."
-msgstr ""
+msgstr "left, right ve hcenter çapaları belirtilemiyor."
 
 #: QDeclarativeAnchors#7
 msgid "Cannot anchor to a null item."
-msgstr ""
+msgstr "null ögeye tutturulamaz."
 
 #: QDeclarativeAnchors#8
 msgid "Cannot anchor a horizontal edge to a vertical edge."
-msgstr ""
+msgstr "Bir yatay kenar dikey kenara tutturulamaz."
 
 #: QDeclarativeAnchors#9
 msgid "Cannot anchor item to self."
-msgstr ""
+msgstr "Bir öge kendisine tutturulamaz."
 
 #: QDeclarativeAnchors#10
 msgid "Cannot specify top, bottom, and vcenter anchors."
-msgstr ""
+msgstr "top, bottom ve vcenter çapaları belirtilemiyor."
 
 #: QDeclarativeAnchors#11
 msgid "Baseline anchor cannot be used in conjunction with top, bottom, or vcenter anchors."
-msgstr ""
+msgstr "Baseline çapası, top, bottom ya da vcenter çapalarıyla birlikte kullanılamaz."
 
 #: QDeclarativeAnchors#12
 msgid "Cannot anchor a vertical edge to a horizontal edge."
-msgstr ""
+msgstr "Bir dikey kenar yatay kenara tutturulamaz."
 
 #: QDeclarativeAnimatedImage#1
 msgid "Qt was built without support for QMovie"
-msgstr ""
+msgstr "Qt, QMovie desteği olmadan inşa edilmiş"
 
 #: QDeclarativeBehavior#1
 msgid "Cannot change the animation assigned to a Behavior."
-msgstr ""
+msgstr "Bir Davranışa atanan canlandırma değiştirilemez."
 
 #: QDeclarativeBinding#1
 msgctxt "QDeclarativeBinding#1"
 msgid "Binding loop detected for property \"%1\""
-msgstr ""
+msgstr "\"%1\" özelliğinde bağlama döngüsü bulundu"
 
 #: QDeclarativeCompiledBindings#1
 msgctxt "QDeclarativeCompiledBindings#1"
@@ -1347,11 +1347,11 @@ msgstr ""
 
 #: QDeclarativeCompiler#1
 msgid "Invalid property assignment: \"%1\" is a read-only property"
-msgstr ""
+msgstr "Geçersiz özellik ataması: \"%1\" sadece okunabilir özellik"
 
 #: QDeclarativeCompiler#2
 msgid "Invalid property assignment: unknown enumeration"
-msgstr ""
+msgstr "Geçersiz özellik ataması: bilinmeyen sayım listesi"
 
 #: QDeclarativeCompiler#3
 msgid "Invalid property assignment: string expected"
