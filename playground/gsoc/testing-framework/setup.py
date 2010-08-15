@@ -79,7 +79,8 @@ setup(
       packages = ['src', 'src.testcases', 'src.testcases.ui'],
       package_data={
         'src.testcases.ui': ['*.ui'],
-        'doc': ['*.xml']
+        'doc': ['*.xml'],
+        'doc': ['*.html']
         },
       classifiers=[
           'Development Status :: 4 - Beta',

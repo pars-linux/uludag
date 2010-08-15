@@ -1,0 +1,799 @@
+ <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+  <br>
+
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Pardus Package Testing Framework - Introduction</title>
+
+  
+</head><body>
+<h1 style="text-align: center;"><big>Pardus Package Testing Framework<br>
+</big><small style="font-style: italic;"><small style="font-weight: normal;"><small>An Approach to Automated Package
+Distribution Testing<br>
+</small></small></small></h1>
+
+<div style="text-align: center;">
+</div>
+
+<div style="text-align: center;"><big><small>
+A 'Google<span style="font-style: italic;"> Summer of Code</span> 2010'
+Project</small><br>
+<small><small>Release: 1.0.0</small></small><br>
+</big></div>
+
+<big><small><span style="font-weight: bold;"></span></small></big>
+<h3><a name="Table_of_Contents"></a><big><small><span style="font-weight: bold;">Table of Contents</span></small></big></h3>
+
+<ol style="list-style-type: upper-roman;">
+
+  <li><big><small><big><small><a href="#Introduction">Introduction</a></small></big></small></big><br>
+  </li>
+  <li><a href="#II._Usage"><big><small><big><small>Usage<br>
+    </small></big></small></big></a></li>
+  <li><a href="#III._Creating_Test_Cases"><big><small><big><small>Creating
+Test Cases</small></big></small></big></a></li>
+  <ol style="list-style-type: lower-roman;">
+    <li><a href="#Types_of_Test_Cases"><big><small><big><small>Types of
+Tests<br>
+      </small></big></small></big></a></li>
+    <ol style="list-style-type: lower-roman;">
+      <li><a href="#i._install"><big><small><big><small>Install</small></big></small></big></a></li>
+      <li><big><small><big><small><a href="#ii._gui">GUI</a></small></big></small></big></li>
+      <li><big><small><big><small><a href="#iii._shell">Shell</a></small></big></small></big></li>
+      <li><big><small><big><small><a href="#iv._automated">Automated</a><br>
+        </small></big></small></big></li>
+    </ol>
+    <li><a href="#2._The_Test_Case_Writer_Script"><big><small><big><small>The Test Case Writer Script</small></big></small></big></a></li>
+  </ol>
+  
+  <li><a href="#IV._Technical_Information"><big><small><big><small>Technical Information</small></big></small></big></a></li>
+  <li><a href="#V._Try_it_out"><big><small><big><small>Try it out!</small></big></small></big></a></li>
+  <li><big><small><big><small><a href="#VI._Credits">Credits</a><br>
+    </small></big></small></big></li>
+
+</ol>
+
+<big><small><big>
+</big></small></big><br>
+
+<hr style="width: 100%; height: 2px;">
+<h2><a name="Introduction"></a>I. Introduction</h2>
+
+<div style="text-align: justify;">
+Package testing on a Linux distribution involves a series of cumbersome
+processes right from start to finish. When the tester/ developer needs
+some data from the end user's machine, there are a myriad of issues
+involved: <br>
+</div>
+
+<ul style="list-style-type: circle;">
+
+  <li>What data is to be requested? </li>
+  <li>How will the user gather that data?</li>
+  <li>Is it technically feasible for the user to get the information
+the tester needs (different levels of expertise)?</li>
+  <li>How to reduce the effort of gathering data for testing without
+compromising on the quality of the data to be collected? <br>
+  </li>
+  <li>After the user has gathered all the data, how is the data sent
+back to the tester? </li>
+</ul>
+
+With the <span style="font-style: italic;">Pardus Package Testing
+Framework, </span>we intend to counter all the above problems and
+create a standardized package testing architecture for Pardus Linux. <br>
+
+<br>
+
+<div style="text-align: justify;">
+Here is how it works - the software tester/ package maintainer requires
+some information from the end user. To do this, the tester creates a
+test case file which has all the required information on what data is
+to be gathered and how it is to be gathered. The tester then sends this
+file to the user, where the file is parsed and the tests are carried
+out by the framework. The report generated is then sent back to the
+tester - all this is done with the minimum effort of the tester and the
+user without compromising on the effectiveness of the testing.<br>
+</div>
+
+<br>
+
+With the implementation of the framework, we intend to resolve all the
+issues mentioned above:<br>
+
+<ul style="list-style-type: circle;">
+
+  <li>What data is to be requested?<br>
+Specify the package to be tested and other relevant data in the test
+case file.<br>
+    <br>
+  </li>
+  <li>How will the user gather that data?<br>
+No need to guide the user to get the data; let the framework handle
+everything for you!<br>
+    <br>
+  </li>
+  <li>Is it technically feasible for the user to get the information
+the tester needs (different levels of expertise)?<br>
+Again, the framework handles all this effectively. The data it needs is
+gathered without you the user having to do anything about it.<br>
+    <br>
+  </li>
+  <li>How to reduce the effort of gathering data for testing without
+compromising on the quality of the data to be collected? <br>
+    <div style="text-align: justify;">The user just has to give the
+command to run the file which was sent by
+the tester. Rest everything else is handled by the framework thus
+reducing the effort of both the tester and the user, while ensuring
+that the testing is carried out as was expected.<br>
+    </div>
+    <br>
+  </li>
+  <li>After the user has gathered all the data, how is the data sent
+back to the tester?<br>
+The test report is automatically generated and is sent back to the
+tester or a bug report is filed.</li>
+</ul>
+
+For the more visually-oriented among us, <a target="_blank" href="presentation.html">here</a>
+is a presentation which is an introduction to what this project is
+all about.<br>
+
+<br>
+
+<div style="text-align: right;">[ <a href="#Table_of_Contents">Top</a>
+]<br>
+</div>
+
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"></span>
+<h2><a name="II._Usage"></a>II. Usage<br>
+</h2>
+
+<span style="font-weight: bold;">Usage: </span><br>
+
+<br>
+
+python package-testing.py [options] <span style="font-style: italic;">arguments</span><br>
+
+<br>
+
+<span style="font-weight: bold;">Options:</span><br>
+
+<br>
+
+<table style="width: 854px; height: 124px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td><span style="font-weight: bold;">-h</span>,<span style="font-weight: bold;"> --help</span><br>
+      </td>
+      <td style="text-align: justify;"> show this help message and exit</td>
+    </tr>
+    <tr>
+      <td><span style="font-weight: bold;"> -f FILE, --file=FILE<br>
+      </span></td>
+      <td style="text-align: justify;"> specify the input XML testcase
+file for testing (REQUIRED)</td>
+    </tr>
+    <tr>
+      <td><span style="font-weight: bold;"> -p FILE, --packages=FILE</span><br>
+      </td>
+      <td style="text-align: justify;"> specify the input file for
+custom package processing</td>
+    </tr>
+    <tr>
+      <td><span style="font-weight: bold;"> -o FILE, --out=FILE<br>
+      </span></td>
+      <td style="text-align: justify;"> specify the output file to
+print the list of packages in the input XML</td>
+    </tr>
+  </tbody>
+</table>
+
+<br style="font-weight: bold;">
+
+<span style="font-weight: bold;">Options Details:</span><br>
+
+<br>
+
+1.&nbsp;<span style="font-style: italic; font-weight: bold;"> -f : XML
+Testcase Input File</span><br>
+
+<br>
+
+The '-f' option is used to specify the input testcase XML file. This
+option is REQUIRED.<br>
+
+<br>
+
+2.&nbsp;<span style="font-style: italic; font-weight: bold;"> -p :
+Custom Package Processing</span><br>
+
+<br>
+
+<div style="text-align: justify;">The '-p' option is used to specify an
+input file which has a list of the specific packages that you want to
+parse against the testcase input file (specified by the '-f' option).<br>
+<br>
+For example, you want to run the tests only on the packages 'package-1'
+and 'package-2', the tests for which are present in the input testcase
+file. To create a custom package input file, create a new file and
+enter the list of packages, separated by a newline (a whitespace will
+also do), as shown:<br>
+<dl>
+  <dd>package-1</dd>
+  <dd>package-2</dd>
+</dl>
+Then, pass the '-p' option to the framework:<br>
+<dl>
+  <dd>./package-testing.py -f &lt;testcase-XML-file&gt; -p
+&lt;package-input-file&gt;</dd>
+</dl>
+Note that you can only pass a file with the list of packages as an
+argument to '-p' and not a list of packages; we will fix this in the
+future (See TODO)<br>
+</div>
+
+<br>
+
+3.&nbsp;<span style="font-style: italic; font-weight: bold;"> -o :
+Output Package List</span><br>
+
+<br>
+
+<div style="text-align: justify;">The '-o' option is used to print a
+list of all the packages present in the testcase input file specified
+by the '-f' switch. <br>
+<dl>
+  <dd>./package-testing.py -f &lt;testcase-XML-file&gt; -o
+&lt;output-package-file&gt;</dd>
+</dl>
+This will output the list of all the packages in the testcase file to
+the file specified.<br>
+<br>
+*NOTE*: You can either use the '-p' or the '-o' option, but not both.
+The framework will throw up an error but you have been warned!<br>
+<br>
+</div>
+
+<br>
+
+<div style="text-align: right;">[ <a href="help.html#Table_of_Contents">Top</a>
+]<br>
+</div>
+
+<h2><a name="III._Creating_Test_Cases"></a>III. Creating Test Cases</h2>
+
+<h3><a name="Types_of_Test_Cases"></a><big><small><big><small>1. Types of
+Tests<br>
+</small></big></small></big></h3>
+
+In the current release of the project (1.0.0), there are four types of
+tests. <br>
+
+<br>
+
+<table style="width: 734px; height: 124px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="text-align: left;"><span style="font-weight: bold;">install</span><br>
+      </td>
+      <td> For installing packages on the user's machine</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><span style="font-weight: bold;">gui</span><br>
+      </td>
+      <td> For testing packages which have a graphical user interface</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><span style="font-weight: bold;">shell</span><br>
+      </td>
+      <td> For testing packages which are run from the command line</td>
+    </tr>
+    <tr>
+      <td style="text-align: left;"><span style="font-weight: bold;">automated</span><br>
+      </td>
+      <td> For automatic testing of packages which run from the command
+line</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+<div style="text-align: justify;">Also note that a single test case
+file can have more than one type of tests. Theoretically, there is
+no limit on the amount of tests a single file can have. <br>
+</div>
+
+<h4><a name="i._install"></a>i. install</h4>
+
+<div style="text-align: justify;">The <span style="font-style: italic;">install
+</span>test is used for installing packages on the user's machine.
+<br>
+<br>
+Among other uses, this is particularly useful when you want to test a
+package that is not shipped with Pardus but is available in the
+repositories. <br>
+</div>
+
+<br>
+
+A test case XML file representation of an <span style="font-style: italic;">install </span>test is:<br>
+
+<dl>
+
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;testcase
+test="install" lang="en"&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-1&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-2&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-3&lt;/package&gt;</span></small></dd>
+  <dd><small>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; <span style="font-family: Courier New,Courier,monospace;"></span>.</small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-n&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;/testcase&gt;</span></small></dd>
+</dl>
+
+<span style="font-weight: bold;"></span>This will install <span style="font-style: italic;">package-1, package-2, package-3 ...
+package-n</span> on the user's machine.<br>
+
+<br>
+
+<table style="text-align: left; width: 739px; height: 17px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Tag<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Purpose</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><span style="font-weight: bold;">&lt;package&gt;</span><br>
+      </td>
+      <td style="vertical-align: top;">The package to be installed is
+specified by the text in the package tag<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<dl>
+
+</dl>
+
+<ul style="list-style-type: square; text-align: justify;">
+
+  <li>
+    <div style="text-align: left;">Before attempting to install the
+package, the framework first checks whether the package is already
+installed. If it is not, then it goes on to check whether the package
+is available in the repository. If the package is there in the
+repository, then only does it attempt to install it. So if a package is
+not available in the repository, the framework will throw up a missing
+package error.</div>
+  </li>
+  <br>
+  <li>The user should have appropriate permissions for installing the
+package, otherwise a privilege error is thrown and the installation
+fails.<br>
+    <br>
+    <div style="text-align: left;"> </div>
+  </li>
+  <li style="text-align: left;">Also, no actual testing takes
+place in this test; the purpose of this is to install packages so as to
+satisfy dependency requirements or that they can be used for testing by
+another package later.<br>
+    <br>
+  </li>
+  <li style="text-align: left;">This test runs from the command line.</li>
+</ul>
+
+<div style="text-align: center;">-<br>
+</div>
+
+<h4><a name="ii._gui"></a>ii. gui</h4>
+
+The <span style="font-style: italic;">GUI</span> test is to test
+packages that have a graphical user interface. <br>
+
+<br>
+
+The purpose of the <span style="font-style: italic;">GUI</span> test
+is to ask the user to perform and observe
+actions performed on a graphical user interface and then noting the
+outcome. <br>
+
+<br>
+
+A test case XML file representation of a <span style="font-style: italic;">gui </span>test is:<br>
+
+<dl>
+
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;testcase
+test="gui" lang="en"&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-1&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+.</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;text&gt;Text 1&lt;/text&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;download&gt;Download 1&lt;/download&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;link&gt;Link 1&lt;/link&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;/case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+.</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;/testcase&gt;</span></small></dd>
+</dl>
+
+<table style="text-align: left; width: 916px; height: 81px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Tag<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Purpose</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;package&gt;<br>
+      </td>
+      <td style="vertical-align: top;">- The package to be tested is
+specified by the text in the &lt;<span style="font-style: italic;">package&gt;</span>
+tag<br>
+- If the package is not installed, the framework will attempt to
+install it<br>
+&nbsp; (In case installation is unsuccessful, the tests for this
+package will be skipped)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;case&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The <span style="font-style: italic;">&lt;case&gt;</span> text is the root tag
+for the actual testing to be performed<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;text&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The text of the &lt;<span style="font-style: italic;">text</span>&gt; tag is the text that will
+be displayed during testing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;download&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The file specified by the text
+of the &lt;<span style="font-style: italic;">download&gt; </span>tag
+will be downloaded to the current working directory of the script<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;link&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The text of the <span style="font-style: italic;">&lt;link&gt;</span> tag will specify the
+link that is to be opened in a browser.<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+A <span style="font-style: italic;">GUI </span>testcase can have
+multiple packages to be tested. For each package, all the <span style="font-style: italic;">case </span>tags will be executed
+individually. <br>
+
+<br>
+
+So if you have two packages, <span style="font-style: italic;">package-1
+</span>and<span style="font-style: italic;"> </span><span style="font-style: italic;">package-2</span> and both are to be tested
+for the common <span style="font-style: italic;">&lt;case&gt; </span>tags,
+your test case file will read:<br>
+
+<dl>
+
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;package&gt;package-1&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;package&gt;package-2&lt;/package&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">.</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;/case&gt;</span></small></dd>
+</dl>
+
+The &lt;<span style="font-style: italic;">download</span>&gt; tag
+downloads the file specified by the text of tag to the current working
+get directory of the script.<br>
+
+<dl style="font-family: Courier New,Courier,monospace;">
+
+  <dd><small>&lt;download&gt;www.pardus.org.tr/foo.doc&lt;/download&gt;</small></dd>
+</dl>
+
+This will download the file <span style="font-style: italic;">foo.doc</span>
+which can be used for testing. <br>
+
+<br>
+
+The text of the <span style="font-style: italic;">&lt;link&gt; </span>tag
+will be displayed during testing and the user will be asked to open the
+link.<br>
+
+<ul style="list-style-type: square;">
+
+  <li>Each GUI test has to have one <span style="font-style: italic;">&lt;case&gt;</span>
+tag at least. <br>
+    <br>
+  </li>
+  <li>If the package is not installed, the framework will try to
+install it. If that fails, testing will be skipped and the user will be
+notified. <br>
+    <br>
+  </li>
+  <li>The GUI test is run from a GUI window.<br>
+  </li>
+</ul>
+
+<div style="text-align: center;">-<br>
+</div>
+
+<h4><a name="iii._shell"></a>iii. shell<br>
+</h4>
+
+The <span style="font-style: italic;">shell</span> test is to test
+packages that are run from the command line or that are to be tested
+through a command line.<br>
+
+<br>
+
+The purpose of the <span style="font-style: italic;">shell</span> test
+is to ask the user to run some commands
+and note the outcome.<br>
+
+<br>
+
+A test case XML file representation of a <span style="font-style: italic;">shell </span>test is:<br>
+
+<dl>
+
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;testcase
+test="shell" lang="en"&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-1&lt;/package&gt;&nbsp;&nbsp; <br>
+    </span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;text&gt;Text&lt;/text&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;command&gt;Command&lt;/command&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;/case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+.</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;/testcase&gt;</span></small></dd>
+</dl>
+
+<table style="text-align: left; width: 935px; height: 210px;" border="1" cellpadding="2" cellspacing="2">
+
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">Tag<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">Purpose</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;package&gt;<br>
+      </td>
+      <td style="vertical-align: top;">- The package to be tested is
+specified by the text in the &lt;<span style="font-style: italic;">package&gt;</span>
+tag<br>
+- If the package is not installed, the framework will attempt to
+install it<br>
+&nbsp; (In case installation is unsuccessful, the tests for this
+package will be skipped)<br>
+- There is only <span style="font-style: italic;">one </span>package
+per a <span style="font-style: italic;">shell</span> test<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;case&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The <span style="font-style: italic;">&lt;case&gt;</span> text is the root tag
+for the actual testing to be performed<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;text&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The text of the &lt;<span style="font-style: italic;">text</span>&gt; tag is the text that will
+be displayed during testing<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;command&gt;<br>
+      </td>
+      <td style="vertical-align: top;">The text specified by the&nbsp; <span style="font-style: italic;">&lt;command&gt; </span>tag
+will be the commands that the user is expected to run on the shell<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+The <span style="font-style: italic;">GUI </span>and the <span style="font-style: italic;">Shell </span>cases are similar except for:<br>
+
+<ul style="list-style-type: square;">
+
+  <li>The<span style="font-style: italic;"> GUI</span> test is for
+packages that have a GUI and is used exclusively for testing such
+packages. The shell tests is for packages that are run through the
+command line.<br>
+    <br>
+  </li>
+  <li>The <span style="font-style: italic;">GUI</span> test case can
+test
+for multiple packages at once, however the <span style="font-style: italic;">shell</span> test can be used for
+only a single package.</li>
+</ul>
+
+<div style="text-align: center;">-<br>
+</div>
+
+<h4><a name="iv._automated"></a>iv. automated</h4>
+
+The <span style="font-style: italic;">automated</span> test is for
+used for automated testing, i.e. running a command, getting the output,
+comparing it with the expected output and noting the result.<br>
+
+<br>
+
+The purpose of the <span style="font-style: italic;">automated</span>
+test is to fully automate packages that run through the command line
+and produce a fixed and definite output.<br>
+
+<br>
+
+A test case XML file representation of a <span style="font-style: italic;">automted </span>test is:<br>
+
+<dl>
+
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;testcase
+test="automated" lang="en"&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;package&gt;package-1&lt;/package&gt;&nbsp;&nbsp; <br>
+    </span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;command&gt;command&lt;/command&gt;<br>
+    </span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp; &lt;expected&gt;expected-output&lt;/expected&gt;<br>
+    </span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+&lt;/case&gt;</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&nbsp;&nbsp;&nbsp;
+.</span></small></dd>
+  <dd><small><span style="font-family: Courier New,Courier,monospace;">&lt;/testcase&gt;</span></small></dd>
+</dl>
+
+
+<table style="text-align: left; width: 935px; height: 210px;" border="1" cellpadding="2" cellspacing="2">
+
+<tbody>
+<tr>
+<td style="vertical-align: top; text-align: center;">Tag<br>
+</td>
+<td style="vertical-align: top; text-align: center;">Purpose</td>
+</tr>
+<tr>
+<td style="vertical-align: top; font-weight: bold;">&lt;package&gt;<br>
+</td>
+<td style="vertical-align: top;">- The package to be tested is
+specified by the text in the &lt;<span style="font-style: italic;">package&gt;</span>
+tag<br>
+- If the package is not installed, the framework will attempt to
+install it<br>
+&nbsp; (In case installation is unsuccessful, the tests for this
+package will be skipped)<br>
+- There is only <span style="font-style: italic;">one </span>package
+per an <span style="font-style: italic;">automated</span> test<br>
+</td>
+</tr>
+<tr>
+<td style="vertical-align: top; font-weight: bold;">&lt;case&gt;<br>
+</td>
+<td style="vertical-align: top;">The <span style="font-style: italic;">&lt;case&gt;</span> text is the root tag
+for the actual testing to be performed<br>
+</td>
+</tr>
+
+<tr>
+<td style="vertical-align: top; font-weight: bold;">&lt;command&gt;<br>
+</td>
+<td style="vertical-align: top;">The text specified by the&nbsp; <span style="font-style: italic;">&lt;command&gt; </span>tag
+will be the commands that the user is expected to run on the shell<br>
+</td>
+</tr><tr>
+      <td style="vertical-align: top; font-weight: bold;">&lt;expected&gt;</td>
+      <td style="vertical-align: top;">The expected output of the command that is executed by the <span style="font-style: italic;">&lt;command&gt; </span>tag<br>
+      </td>
+    </tr>
+
+</tbody>
+</table>
+<br>
+The output is compared with the expected output, making this test
+completely automated. This is the only test that requires no user
+intervention.<br>
+<h3><a name="2._The_Test_Case_Writer_Script"></a>2. The Test Case Writer Script</h3>
+To enable testers and developers to easily write test case files, the <span style="font-style: italic;">testcasewriter</span>
+script is used. It generates XML files according to the required schema
+and makes it easy for testers and developers to generate test case
+files quickly.<br>
+<br>
+To use the script, just run <span style="font-style: italic;">./testcasewriter.py</span> from the <span style="font-style: italic;">src/ </span>folder and follow the instructions on the screen.<br>
+<br>
+<div style="text-align: right;">[ <a href="help.html#Table_of_Contents">Top</a>
+]<br>
+</div>
+
+<h2><a name="IV._Technical_Information"></a>IV. Technical Information</h2>
+The <span style="font-style: italic;">Package Testing Framework</span> was programmed in <span style="font-style: italic;">Python 2.6</span> and <span style="font-style: italic;">PyQt</span> is used for the graphical user interfaces for the <span style="font-style: italic;">gui </span>and the <span style="font-style: italic;">shell </span>tests. <br>
+<br>
+The XML parsing is handled by the <a href="http://codespeak.net/lxml/" target="_blank"><span style="font-style: italic;">lxml</span></a> library.<br>
+<br>
+Note that the framework runs only on Pardus GNU/ Linux because it makes use of the PiSi (package manager) API. <br>
+<br>
+<div style="text-align: right;">[ <a href="help.html#Table_of_Contents">Top</a>
+]<br>
+</div>
+
+<h2><a name="V._Try_it_out"></a>V. Try it out!</h2>
+To try out the latest developmental build from the SVN:<br>
+<dl>
+  <dd>svn co http://svn.pardus.org.tr/uludag/trunk/playground/gsoc/testing-framework/</dd>
+</dl>
+To install the framework, issue the following command:<br>
+<dl>
+  <dd>python setup.py install <br>
+  </dd>
+</dl>
+Then run the framework with the appropriate <a href="#II._Usage">options.</a><br>
+<br>
+A sample test case XML file can be found in <span style="font-style: italic;">doc/</span> . Try it out!<br>
+<br>
+Requirements:<br>
+<br>
+<span style="font-style: italic;">Python</span> 2.6+<br>
+<span style="font-style: italic;">lxml</span> 2.2+ (Available in the Pardus repository)<br>
+<br>
+<div style="text-align: right;">[ <a href="help.html#Table_of_Contents">Top</a>
+]<br>
+</div>
+
+<h2><a name="VI._Credits"></a>VI. Credits</h2>
+The <span style="font-style: italic;">Pardus Package Testing Framework </span>was written by <a href="http://www.sukhbir.in" target="_blank">Sukhbir Singh</a> as a <a target="_blank" href="http://www.code.google.com/soc/">Google Summer of Code</a> 2010 Project mentored by Semen Cirit.<br>
+<br>
+Semen Cirit &nbsp;&nbsp;&nbsp; &lt; scirit [at] pardus.org.tr &gt;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <br>
+Sukhbir Singh&nbsp;&nbsp;&nbsp; &lt; sukhbir [dot] in [at] gmail.com &gt;&nbsp;&nbsp;&nbsp; <br>
+<br>
+<div style="text-align: right;">[ <a href="help.html#Table_of_Contents">Top</a>
+]<br>
+</div>
+<br>
+
+<div style="text-align: center;"><small><small>Last Modified: 17th August, 2010 b</small><small>y Sukhbir Singh</small></small><br>
+</div>
+
+</body></html>
