@@ -17,7 +17,7 @@ Usage: package-testing [options] arguments
 
 Options:
   -h, --help            show this help message and exit
-  -f FILE, --file=FILE  specify the input XML testcase file for testing
+  -f FILE, --file=FILE  specify the input XML test case file for testing
                         (REQUIRED)
   -p FILE, --packages=FILE
                         specify the input file for custom package processing
@@ -30,16 +30,16 @@ Options Details:
 
 1]. -f : XML Testcase Input File
 
-The '-f' option is used to specify the input testcase XML file. This option is REQUIRED.
+The '-f' option is used to specify the input test case XML file. This option is REQUIRED.
 
 
 2]. -p : Custom Package Processing
 
 The '-p' option is used to specify an input file which has a list of the specific packages
-that you want to parse against the testcase input file (specified by the '-f' option).
+that you want to parse against the test case input file (specified by the '-f' option).
 
 For example, you want to run the tests only on the packages 'P1' and 'P2', the tests for 
-which are present in the input testcase file. To create a custom package input file, 
+which are present in the input test case file. To create a custom package input file, 
 create a new file and enter the list of packages, separated by a newline, as shown:
 
 P1
@@ -47,7 +47,7 @@ P2
 
 Then, pass the '-p' option to the framework:
 
-package-testing -f <testcase-XML-file> -p <package-input-file>
+./package-testing.py -f <test case-XML-file> -p <package-input-file>
 
 Note that you can only pass a file with the list of packages as an argument to '-p' and 
 not a list of packages. We will fix this in the future.
@@ -55,12 +55,12 @@ not a list of packages. We will fix this in the future.
 
 3]. -o : Output Package List
 
-The '-o' option is used to print a list of all the packages present in the testcase input
+The '-o' option is used to print a list of all the packages present in the test case input
 file specified by the '-f' switch. 
 
-package-testing -f <testcase-XML-file> -o <output-package-file>
+./package-testing -f <test case-XML-file> -o <output-package-file>
 
-This will output the list of all the packages in the testcase file to the file specified.
+This will output the list of all the packages in the test case file to the file specified.
 
 *NOTE*: You can either use the '-p' or the '-o' option, but not both.
 The framework will throw up an error, but you have been warned!
