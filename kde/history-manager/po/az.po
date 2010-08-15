@@ -21,16 +21,16 @@ msgstr "Ayarlar"
 
 #: .tmp/ui_configure.py:45
 msgid "Startup Load :"
-msgstr ""
+msgstr "Başlanğıcda Yüklə"
 
 #: .tmp/ui_configure.py:46
 msgid " Operations"
-msgstr ""
+msgstr "Əməliyyat"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr ""
+msgstr "Keçmiş İdarəçisi"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -42,71 +42,71 @@ msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "İndiki Məsulu"
 
 #: .tmp/historymanager/window.py:76
 msgid "%1 Operations Loaded"
-msgstr ""
+msgstr "%1 Əməliyyat Yükləndi"
 
 #: .tmp/historymanager/window.py:118
 msgid "Loading operation details.."
-msgstr ""
+msgstr "Əməliyyat detalları yüklənir.."
 
 #: .tmp/historymanager/window.py:124
 msgid "Details for operation on %1 at %2"
-msgstr ""
+msgstr "%1 saat %2 tarixli əməliyyatın detalları"
 
 #: .tmp/historymanager/window.py:130
 msgid "There are %1 packages in this snapshot."
-msgstr ""
+msgstr "Bu görüntüdə %1 paket var"
 
 #: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
 msgid "Ready .."
-msgstr ""
+msgstr "Hazır .."
 
 #: .tmp/historymanager/window.py:156
 msgid "Loading Operation Plan"
-msgstr ""
+msgstr "Əməliyyat Planı Yüklənir"
 
 #: .tmp/historymanager/window.py:173
 msgid "Configuration files in snapshot:"
-msgstr ""
+msgstr "Görüntüdəki əyar faylları:"
 
 #: .tmp/historymanager/window.py:181
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
-msgstr ""
+msgstr "<br> Bu paket(lər) <b>qurulacaq</b> :<br>"
 
 #: .tmp/historymanager/window.py:186
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
-msgstr ""
+msgstr "<br> Bu paket(lər) <b>qaldırılacaq</b> :<br>"
 
 #: .tmp/historymanager/window.py:192
 msgid "Takeback plan for Operation on %1 at %2"
-msgstr ""
+msgstr "%1 saat %2 tarixli əməliyyatın geri alma planı"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
-msgstr ""
+msgstr "Geri qaytarma əməliyyatını təsdiqləmə"
 
 #: .tmp/historymanager/window.py:225
 msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
-msgstr ""
+msgstr "<center> Sistemin geri alınacağı nöqtə: <b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr ""
+msgstr "\"Əmin deyilsinizsə, Ləğv düyməsinə basıb Geri Qytarma Planına baxın."
 
 #: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
-msgstr ""
+msgstr "%1 nöqtəsinə geri alınır"
 
 #: .tmp/historymanager/window.py:237
 msgid "Start new snapshot"
-msgstr ""
+msgstr "Yeni görüntü al"
 
 #: .tmp/historymanager/window.py:238
 msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
-msgstr ""
+msgstr "<center>Sistemin vəziyyət görüntüsü alınacaq. <br>Hazır olduğunuzda Tamam \"120 \"düyməsinə basın</center>"
 
 #: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
