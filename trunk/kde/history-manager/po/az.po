@@ -191,16 +191,16 @@ msgstr "Etiket:"
 
 #: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
-msgstr ""
+msgstr "Ləğv"
 
 #: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
-msgstr ""
+msgstr "- Pisi Keçmişi Yüklənir"
 
 #: .tmp/ui_mainwindow.py:136
 msgid "%p%"
-msgstr ""
+msgstr "%%p"
 
 #: .tmp/ui_mainwindow.py:138
 msgid "Copy"
-msgstr ""
+msgstr "Kopiyala"
