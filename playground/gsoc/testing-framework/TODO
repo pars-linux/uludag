@@ -6,11 +6,11 @@
 
 	* Planned
 	
-	package-testing -f test_file.xml -p package-1 package-2 package-3 ... package-n
+	./package-testing.py -f test_file.xml -p package-1 package-2 package-3 ... package-n
   
 	* Current
 
-	package-testing -f test_file.xml -p package_file		
+	./package-testing.py -f test_file.xml -p package_file		
 	
 	where package_file is a file with the contents:
       

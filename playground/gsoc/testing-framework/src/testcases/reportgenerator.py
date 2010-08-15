@@ -52,7 +52,7 @@ class ReportGenerate:
                                  '{1}'.format(testcaseNumber,
                                  '\n'.join(self.testreport[counter].summary)))
             for lst in (self.report, self.summary):
-                lst.append('\n')
+                lst.append('--')
             counter += 1
         self.generate_list(self.report, 'report', testerName)
         self.generate_list(self.summary, 'summary', testerName)
@@ -62,7 +62,7 @@ class ReportGenerate:
         output = '\n'.join(writelist)
         fullFileName = os.path.basename(self.file)
         fileName = os.path.splitext(fullFileName)[0]
-        # outFileName specifies the file name of the report. 
+        # outFileName specifies the file name of the report 
         outFileName = '{0}-{1}-{2}'.format(report_type, testername, fileName)
         try:
             # if the file already exists, create a new file

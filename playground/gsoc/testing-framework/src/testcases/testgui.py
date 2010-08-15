@@ -43,7 +43,7 @@ class TestGUI:
             else:
                 failMessage = 'No information was entered in the GUI test.'
                 for lst in (self.summary, self.report):
-                    lst.extend(failMessage)
+                    lst.append(failMessage)
             counter += 1
             
     def download_file(self, file):

@@ -33,9 +33,11 @@ class Install(install):
 
 class Build(build):
     """Override the standard build procedure to compile uic files to py."""
-    print 'Generating the UI files ...'
+    print 'Generating the UI files ...',
     subprocess.call(['/usr/bin/pyuic4', 'src/testcases/ui/main.ui',
                                     '-o', 'build/lib/src/testcases/ui_main.py'])
+    print 'Done'
+
 
 def check_dependencies():
     """Check for the required dependencies for the framework."""
@@ -52,7 +54,6 @@ def install_dependencies():
     try:
         print "Please wait, installing package 'lxml' ({0:.2f} MB) ...".format(downloadSize)
         pisi.api.install(package_list)
-        print 'Done'
         return 
     except pisi.errors.PrivilegeError:
         sys.exit('Aborting: Please run the script with root privileges.')
@@ -65,7 +66,7 @@ if sys.version_info[:2] < (2, 4):
         
         
 setup(
-      name='Package Tesing Framework',
+      name='package-testing',
       version='1.0',
       author='Sukhbir Singh',
       author_email='sukhbir.in@gmail.com',
@@ -75,8 +76,11 @@ setup(
       description='A package testing framework for Pardus GNU/ Linux',
       license='GNU GPL',
       package_dir = {'': ''},
-      packages = ['src', 'src.testcases', 'src.testcases.ui', 'doc'],
-      package_data = {'src.testcases.ui': ['*.ui'], 'doc': ['*.xml']},
+      packages = ['src', 'src.testcases', 'src.testcases.ui'],
+      package_data={
+        'src.testcases.ui': ['*.ui'],
+        'doc': ['*.xml']
+        },
       classifiers=[
           'Development Status :: 4 - Beta',
           'Environment :: Console',
@@ -88,7 +92,8 @@ setup(
           'Programming Language :: Python :: 2.6',
           'Topic :: Software Development :: Testing'
           ],
-      cmdclass={'install': Install,
-                'build': Build
-               } 
+      cmdclass={
+          'install': Install,
+          'build': Build
+        } 
      )
