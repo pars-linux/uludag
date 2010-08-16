@@ -40,6 +40,12 @@ class TestInstall:
         if packagesNotInRepo:
             self.report.append('The following packages were not found in ' \
                     "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
+            
+        if len(packagesNotInRepo) == len(packagestNotInstalled):
+            self.report.append('Unable to install required packages')
+            self.summary.append('Failed')
+            self.failcode = 0
+            return
        
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
