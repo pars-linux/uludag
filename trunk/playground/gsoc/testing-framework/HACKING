@@ -24,7 +24,7 @@
       
 		from myclass import *
 
-	The imports always go at the top of the file. 
+	The imports always go at the top of the file
 
 5.	Avoid using magic numbers
 	If you have to, make sure you write comment the code properly

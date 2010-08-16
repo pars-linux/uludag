@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Pardus Package Testing Framework - An Approach to Automated Package Testing
+# Pardus Package Testing Framework
 # 
 # Copyright (C) 2010, Sukhbir Singh and Semen Cirit
 # Copyright (C) 2005 - 2009, TUBITAK/ UEKAE
@@ -11,7 +11,7 @@
 # Software Foundation; either version 2 of the License, or (at your option) any
 # later version
 # 
-# Please read the COPYING file.
+# Please read the COPYING file
 
 import os
 import sys

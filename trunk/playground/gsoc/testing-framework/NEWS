@@ -1,0 +1,28 @@
+16th August 2010
+----------------
+Beta Release 
+
+Today marks the release of a fully working and stable beta version of the project. 
+We had lots of fun working on developing and improving the software and hope you 
+will enjoy as much using it. Coincidentally, today also happens to be the last 
+working day of Google Summer of Code 2010. The summer passed so quickly!
+
+You can try out the framework by checking it out from the SVN.
+
+Here are some of the changes we made:
+
++	A graphical user interface in PyQt for the 'gui' and 'shell' tests
++	A script that allows you to create testcases easily and quickly!
++	Some parts of the report generation module were written again
++	Speed optimizations, thanks to lxml and the PiSi API
++	The 'automated' test has been improved
+
+-	No more command line interface for 'gui' and 'shell' tests
+	We decided to go ahead with a GUI for these two tests
+
+As always, feel free to send in your suggestions, bugs and love!
+
+A special thanks to Semen Cirit for all the patience she kept and her ideas which 
+were instrumental in the development of this project. Thank you!
+
+- Sukhbir Singh, Semen Cirit
