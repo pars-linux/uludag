@@ -1,0 +1,34 @@
+1.	Follow the Python PEP 8 style guide as much as possible
+
+2.	Read the 'Zen of Python' PEP 20
+
+3.	Naming Convention
+	Functions and Methods: lower_case_with_underscore
+	Variables: mixedCase
+	Instance Variables: lowercase
+
+4.	Imports should be in the following order:
+
+	standard library imports
+	related third party imports
+	local application/ library specific imports
+
+	Yes: 	import os
+		import sys
+
+	No: 	import sys, os 
+  
+	Never:  import os
+		from myclass import MyClass
+		import sys
+
+	The imports always go at the top of the file. 
+
+5.	Avoid using magic numbers
+	If you have to, make sure you write comment the code properly
+
+6.	And finally, if you think you will be able to understand your code
+	two years from now, you are good to go!
+    
+   
+

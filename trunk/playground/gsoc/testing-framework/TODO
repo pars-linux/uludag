@@ -2,7 +2,7 @@
 	
 	This will involve replacing the current 'optparse' module with 'argparse',
 	which is included in the Python 2.7 standard library. Since we are initially
-	targetting Python 2.6+ users, we decided to go ahead with 'optparse' only.
+	targeting Python 2.6+ users, we decided to go ahead with 'optparse' only.
 
 	* Planned
 	

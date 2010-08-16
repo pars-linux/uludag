@@ -8,7 +8,8 @@ from datetime import date
 try:
     from lxml import etree
 except ImportError:
-    sys.exit('Aborting: The lxml library was not found.')
+    print "Error: The 'lxml' library was not found"
+    sys.exit("Please install the package 'lxml to continue")
 
 from pisi.api import list_installed
 from pisi.api import list_available
