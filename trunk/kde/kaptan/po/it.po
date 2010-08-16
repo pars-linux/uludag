@@ -315,7 +315,7 @@ msgstr "Errore"
 
 #: .tmp/ScrSummary.py:123
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-msgstr ""
+msgstr "Riavvio di plasma-desktop è impossibile. Kaptan verrà spento."
 
 #: .tmp/ui_smoltWidget.py:109 .tmp/ScrSmolt.py:31
 msgid "Smolt"
@@ -595,11 +595,11 @@ msgstr "Aggiungi e rimuovi programmi"
 
 #: .tmp/ui_styleitem.py:65
 msgid "styleName"
-msgstr ""
+msgstr "Nome Stile"
 
 #: .tmp/ui_styleitem.py:66
 msgid "styleDesc"
-msgstr ""
+msgstr "Descrizione dello Stile"
 
 #: .tmp/ui_mouseWidget.py:197
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
