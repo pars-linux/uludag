@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -28,10 +27,13 @@ msgstr ""
 #: src/bootmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr ""
+"(c) 2006-2010 TUBITAK/UEKAE \t\r\n"
+"\r\n"
+"(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/bootmanager/about.py:32
 msgid "Current Maintainer"
@@ -94,8 +96,7 @@ msgid "Ramdisk File"
 msgstr ""
 
 #: ui/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
+msgid "File that contains a micro operating system for preloading kernel modules."
 msgstr ""
 
 #: ui/ui_edit.py:142
