@@ -18,24 +18,24 @@ def log(text):
 def auth_return(pamh, level, home_dir=""):
     """ Return Function. """
 
-    if (level >= 2):
-        os.removedirs(home_dir)
+    if level >= 2:
+        shutil.rmtree(home_dir)
 
-    if (level >= 3):
+    if level >= 3:
         out = subprocess.Popen(["umount %s" % home_dir], shell=True, \
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
-    if (level == 0):
+    if level == 0:
         return pamh.PAM_SUCCESS
 
-    if (level == -1):
+    if level == -1:
         return pamh.PAM_AUTHINFO_UNAVAIL
 
-    if (level == -2):
+    if level == -2:
         return pamh.PAM_MAXTRIES
 
-    if (level == 1) or (level > 2):
+    if level == 1 or (level > 2):
         return pamh.PAM_AUTH_ERR
 
 def pam_sm_authenticate(pamh, flags, argv):
@@ -62,46 +62,40 @@ def pam_sm_authenticate(pamh, flags, argv):
     except:
         return auth_return(pamh, -1)
 
-    if (pamh.get_user(None) == guest_name):
+    if pamh.get_user(None) == guest_name:
         users = [x.pw_name for x in pwd.getpwall()]
         i = 1
-        while guest_name + str(i) in users:
+        while "%s%s" % (guest_name, i) in users:
             i = i + 1
             if (i > guest_limit):
                 return auth_return(pamh, -2)
 
         username = "%s%s" % (guest_name, i)
         pamh.user = username
-        #out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], \
-        #        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        #if (out.wait() != 0):
-        #    return auth_return(pamh, 1)
-
-        #home_dir = out.communicate()[0][:-1]
         try:
-            home_dir = tempfile.mkdtemp(prefix='%s.')
+            home_dir = tempfile.mkdtemp(prefix='%s.' % username)
         except IOError:
             # No usable temporary directory name found
             return auth_return(pamh, -2)
 
-        if (debugging):
+        if debugging:
             log("%s has been created successful with mktemp.\n" % home_dir)
 
         out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 \
                 none %s" % (guest_home_dir_size, home_dir)], shell=True)
-        if (out.wait() != 0):
+        if out.wait() != 0:
             return auth_return(pamh, -2)
 
         if not (os.path.ismount(home_dir)):
             return auth_return(pamh, 2, home_dir)
 
-        if (debugging):
+        if debugging:
             log("%s has mounted as tmpfs\n" % home_dir)
 
         out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % (home_dir, \
                 guest_group_name, username)], shell=True, \
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if (out.wait() != 0):
+        if out.wait() != 0:
             return auth_return(pamh, -2)
 
         try:
@@ -110,7 +104,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         except:
             return auth_return(pamh, 3, home_dir)
 
-        if (debugging):
+        if debugging:
             log("%s has been created successfully\n" % username)
 
         return auth_return(pamh, 0)
@@ -129,15 +123,11 @@ def pam_sm_setcred(pamh, flags, argv):
     except:
         return auth_return(pamh, -1)
 
-    if (pamh.get_user(None).find(guest_name) == -1):
+    if pamh.get_user(None).find(guest_name) == -1:
         return auth_return(pamh, -1)
 
     else:
         return auth_return(pamh, 0)
-
-#def pam_sm_acct_mgmt(pamh, flags, argv):
-#    """ Account Management """
-#    return pamh.PAM_SUCCESS
 
 def pam_sm_open_session(pamh, flags, argv):
     """ Open Session """
@@ -161,16 +151,15 @@ destroy it but it seems quite dangerous"""
     except:
         return auth_return(pamh, -1)
 
-    if (pamh.get_user(None).find(guest_name) != -1):
+    if pamh.get_user(None).find(guest_name) != -1:
         username = pamh.get_user(None)
-        # FIXME: use getpwnam
-        _home_dir = os.path.expanduser("~%s" % username)
+        _home_dir = pwd.getpwnam(username).pw_dir
         home_dir = _home_dir[0:_home_dir.rfind('/')+1]
         out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True, \
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
-        if (debugging):
+        if debugging:
             log("%s's all processes are killed\n" % username)
 
 
@@ -178,24 +167,19 @@ destroy it but it seems quite dangerous"""
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
-        if (debugging):
+        if debugging:
             log("%s successfully unmounted\n" % home_dir)
 
         out = subprocess.Popen(["userdel -f %s" % username], shell=True, \
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         out.wait()
 
-        if (debugging):
+        if debugging:
             log("user %s has been deleted\n" % username)
 
-        # FIXME: use shutil.rmtree
-        os.removedirs(home_dir)
+        shutil.rmtree(home_dir)
 
-        if (debugging):
+        if debugging:
             log("folder %s has been deleted\n" % home_dir)
 
     return auth_return(pamh, 0)
-
-#def pam_sm_chauthtok(pamh, flags, argv):
-#    """ Chauthtok """
-#    return pamh.PAM_SUCCESS
