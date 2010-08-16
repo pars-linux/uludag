@@ -21,14 +21,16 @@
 	Never:  import os
 		from myclass import MyClass
 		import sys
+      
+		from myclass import *
 
 	The imports always go at the top of the file. 
 
 5.	Avoid using magic numbers
 	If you have to, make sure you write comment the code properly
 
-6.	And finally, if you think you will be able to understand your code
-	two years from now, you are good to go!
+6.	And finally, if you think you will be able to understand your 
+	code two years from now, you are good to go!
     
    
 
