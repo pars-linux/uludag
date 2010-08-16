@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html><head>
 
+
   <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type"><title>Pardus Package Testing Framework - Introduction</title></head><body><br>
 
 <h1 style="text-align: center;"><big>Pardus Package Testing Framework<br>
@@ -658,7 +659,7 @@ and produce a fixed and definite output.<br>
 
 <br>
 
-A test case XML file representation of a <span style="font-style: italic;">automted </span>test is:<br>
+A test case XML file representation of a <span style="font-style: italic;">automated </span>test is:<br>
 
 <dl>
 
@@ -757,16 +758,26 @@ Note that the framework runs only on Pardus GNU/ Linux because it makes use of t
 <h2><a name="V._Try_it_out"></a>V. Try it out!</h2>
 To try out the latest developmental build from the SVN:<br>
 <dl>
-  <dd>svn co http://svn.pardus.org.tr/uludag/trunk/playground/gsoc/testing-framework/</dd>
+  <dd>$ svn co http://svn.pardus.org.tr/uludag/trunk/playground/gsoc/testing-framework/</dd>
 </dl>
 To install the framework, issue the following command:<br>
 <dl>
-  <dd>python setup.py install <br>
-  </dd>
+  <dd>$ sudo python setup.py install <br>
+</dd>
+</dl>Running <span style="font-style: italic;">install </span>will both build and install the project. In case you only want to build, you can run:<br>
+<dl>
+  <dd>$ python setup.py build</dd>
 </dl>
-Then run the framework with the appropriate <a href="#II._Usage">options.</a><br>
+And then run install later. <br>
 <br>
-A sample test case XML file can be found in <span style="font-style: italic;">doc/</span> . Try it out!<br>
+Creating a source distribution of the project is easy:<br>
+<dl>
+  <dd>$ python setup.py sdist</dd>
+</dl>
+
+Then run the framework with the appropriate <a href="#II._Usage">options.</a> <br>
+<br>
+A sample test case XML file can be found in the <span style="font-style: italic;">doc </span>folder. Try it out!<br>
 <br>
 Requirements:<br>
 <br>

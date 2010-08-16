@@ -40,12 +40,16 @@ class TestInstall:
         if packagesNotInRepo:
             self.report.append('The following packages were not found in ' \
                     "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
-            
+        
+        # if none of the package to be installed was found in the repository
+        # set the failcode to 0 and return. The installation won't continue
         if len(packagesNotInRepo) == len(self.packagelist):
             self.summary.append('Fail')
             self.failcode = 0
             return
         
+        # Modify the package list and remove the packages which are not in the
+        # repository. this is done so 
         self.packagelist = list(set(self.packagelist) - set(packagesNotInRepo))
        
         # Only try installing those packages which are in the repository
@@ -55,7 +59,8 @@ class TestInstall:
             self.report.append('No packages were installed')
             self.summary.append('Success')
             return
-                
+        
+        # Calculate the download size and display it in MB        
         downloadSize = calculate_download_size(finalPackages)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
             "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))

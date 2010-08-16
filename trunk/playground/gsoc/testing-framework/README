@@ -13,7 +13,7 @@ lxml 2.2+
 Usage:
 ------
 The input file (specified by the '-f' option) is mandatory.
-Usage: package-testing [options] arguments
+Usage: package-testing.py [options] arguments
 
 Options:
   -h, --help            show this help message and exit
@@ -58,7 +58,7 @@ not a list of packages. We will fix this in the future.
 The '-o' option is used to print a list of all the packages present in the test case input
 file specified by the '-f' switch. 
 
-./package-testing -f <test case-XML-file> -o <output-package-file>
+./package-testing.py -f <test case-XML-file> -o <output-package-file>
 
 This will output the list of all the packages in the test case file to the file specified.
 
