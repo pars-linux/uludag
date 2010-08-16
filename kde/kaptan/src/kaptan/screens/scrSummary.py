@@ -30,7 +30,7 @@ import kaptan.screens.scrMenu as menuWidget
 import kaptan.screens.scrSearch as searchWidget
 import kaptan.screens.scrSmolt  as smoltWidget
 
-import kaptan.tools as tools
+from kaptan.tools import tools
 
 class Widget(QtGui.QWidget, Screen):
     title = ki18n("Summary")
@@ -88,7 +88,7 @@ class Widget(QtGui.QWidget, Screen):
 
 
         # Search Settings
-        if not tools.tools.isLiveCD():
+        if not tools.isLiveCD():
             content.append(subject %ki18n("Search Settings").toString())
             content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
             content.append(end)
@@ -133,7 +133,7 @@ class Widget(QtGui.QWidget, Screen):
         hasChanged = False
 
         # Search Settings
-        if not tools.tools.isLiveCD():
+        if not tools.isLiveCD():
             if self.searchSettings["hasChanged"]:
                 config = KConfig("nepomukserverrc")
                 group = config.group("Service-nepomukstrigiservice")

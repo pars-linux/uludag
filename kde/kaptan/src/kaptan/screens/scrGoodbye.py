@@ -32,6 +32,9 @@ class Widget(QtGui.QWidget, Screen):
         self.ui = Ui_goodbyeWidget()
         self.ui.setupUi(self)
 
+        self.showHideMigrationLink()
+
+    def showHideMigrationLink(self):
         lang = KGlobal.locale().language()
 
         if lang == "tr":
@@ -46,25 +49,20 @@ class Widget(QtGui.QWidget, Screen):
             self.ui.migrationGroupBox.hide()
             self.ui.label_2.hide()
 
-        self.ui.buttonSystemSettings_2.connect(self.ui.buttonSystemSettings_2, SIGNAL("clicked()"), self.startSmolt)
-        self.ui.buttonMigration.connect(self.ui.buttonMigration, SIGNAL("clicked()"), self.startMigration)
-        self.ui.buttonSystemSettings.connect(self.ui.buttonSystemSettings, SIGNAL("clicked()"), self.startSystemSettings)
-        self.ui.buttonHelpPages.connect(self.ui.buttonHelpPages, SIGNAL("clicked()"), self.startHelpPages)
-
-    def startSystemSettings(self):
+    def on_buttonSystemSettings_clicked(self):
         self.procSettings = QProcess()
         self.procSettings.start("systemsettings")
 
-    def startMigration(self):
+    def on_buttonMigration_clicked(self):
         self.procSettings = QProcess()
         self.procSettings.start("migration")
 
-    def startHelpPages(self):
+    def on_buttonHelpPages_clicked(self):
         self.procSettings = QProcess()
         command = "kfmclient openURL " + self.helpPageUrl
         self.procSettings.start(command)
 
-    def startSmolt(self):
+    def on_buttonSystemSettings_2_clicked(self):
         self.procSettings = QProcess()
         command = "kfmclient openURL " + self.smoltUrl
         self.procSettings.start(command)
