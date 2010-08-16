@@ -1,7 +1,7 @@
 # translation to de (german)
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
@@ -22,7 +22,7 @@ msgstr ""
 
 #: data/bootmanager.desktop.in.h:1
 msgid "An application for managing boot loader."
-msgstr ""
+msgstr "Eine Anwendung zur Verwaltung Bootloader."
 
 #: data/bootmanager.desktop.in.h:2 data/kcm_bootmanager.desktop.in.h:1
 #: src/bootmanager/about.py:20 src/bootmanager/about.py:22
@@ -30,9 +30,8 @@ msgid "Boot Manager"
 msgstr "Boot-Menü"
 
 #: src/bootmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -43,13 +42,13 @@ msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
 #: src/bootmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""
 
 #: src/bootmanager/about.py:33
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: src/bootmanager/main.py:99
