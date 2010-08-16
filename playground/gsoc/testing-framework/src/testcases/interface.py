@@ -117,12 +117,10 @@ class Main(QtGui.QMainWindow):
             self.ui.save_button.setEnabled(True)
             # update the text based on the testcase
             self.ui.next_button.setText('N&ext')
-            self.update_text()
-            
+            self.update_text()            
             self.ui.next_button.setEnabled(False)
         else:
-            self.ui.quit_button.setEnabled(True)
-            
+            self.ui.quit_button.setEnabled(True)            
             self.ui.text_observation.setEnabled(False)
             self.ui.label.setEnabled(False)
             self.ui.yes_button.setEnabled(False)
@@ -184,9 +182,7 @@ class Main(QtGui.QMainWindow):
         self.ui.clear_button.setEnabled(False)
         self.ui.no_button.setEnabled(False)
         self.ui.label_observation.setEnabled(False)
-        self.ui.unable_button.setEnabled(False)
-        
-        self.ui.save_button.setEnabled(False)
-        
+        self.ui.unable_button.setEnabled(False)        
+        self.ui.save_button.setEnabled(False)        
         self.ui.next_button.setEnabled(True)
         self.casecounter += 1
