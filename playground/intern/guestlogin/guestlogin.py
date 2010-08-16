@@ -8,6 +8,7 @@ import sys
 import tempfile
 import subprocess
 import ConfigParser
+import shutil
 
 def log(text):
     """ Log Function. """
