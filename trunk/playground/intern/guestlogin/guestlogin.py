@@ -5,6 +5,7 @@
 import os
 import pwd
 import sys
+import tempfile
 import subprocess
 import ConfigParser
 
@@ -46,9 +47,8 @@ def pam_sm_authenticate(pamh, flags, argv):
     """
 
     try:
-        if (argv[1] == 'debug'):
-            debugging = True
-    except:
+        debugging = (argv[1] == 'debug')
+    except IndexError:
         debugging = False
 
     try:
@@ -72,14 +72,16 @@ def pam_sm_authenticate(pamh, flags, argv):
 
         username = "%s%s" % (guest_name, i)
         pamh.user = username
-        out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], \
-                shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if (out.wait() != 0):
-            return auth_return(pamh, 1)
+        #out = subprocess.Popen(["mktemp -td %s.XXXXXX" % username], \
+        #        shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        #if (out.wait() != 0):
+        #    return auth_return(pamh, 1)
 
-        home_dir = out.communicate()[0][:-1]
-
-        if not (os.path.isdir(home_dir)):
+        #home_dir = out.communicate()[0][:-1]
+        try:
+            home_dir = tempfile.mkdtemp(prefix='%s.')
+        except IOError:
+            # No usable temporary directory name found
             return auth_return(pamh, -2)
 
         if (debugging):
@@ -161,6 +163,7 @@ destroy it but it seems quite dangerous"""
 
     if (pamh.get_user(None).find(guest_name) != -1):
         username = pamh.get_user(None)
+        # FIXME: use getpwnam
         _home_dir = os.path.expanduser("~%s" % username)
         home_dir = _home_dir[0:_home_dir.rfind('/')+1]
         out = subprocess.Popen(["skill -KILL -u %s" % username], shell=True, \
@@ -185,6 +188,7 @@ destroy it but it seems quite dangerous"""
         if (debugging):
             log("user %s has been deleted\n" % username)
 
+        # FIXME: use shutil.rmtree
         os.removedirs(home_dir)
 
         if (debugging):
