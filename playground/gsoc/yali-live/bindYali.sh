@@ -15,6 +15,9 @@ cp -Rp yali4/*.py /yali
 cp -Rp yali4/gui/* /yali/gui
 cp /yali/backup/* /yali/ -Rp
 
+cp desktop/yali-live ~pars/.yali-live
+chmod +xs ~pars/.yali-live
+cp desktop/yali-live-installer.desktop ~pars/Desktop/
 
 #echo build and install
 
