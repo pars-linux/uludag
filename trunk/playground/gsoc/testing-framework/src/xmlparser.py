@@ -107,8 +107,9 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testgui_install.test_install_main()
+        packagelist = testgui_install.packagelist
         if testgui_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Unable to install packages. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testgui.TestGUI(element, packagelist))
@@ -133,8 +134,9 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testautomated_install.test_install_main()
+        packagelist = testautomated_install.packagelist
         if testautomated_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Unable to install packages. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         self.testreport.append(testautomated.TestAutomated(packagelist, element))
@@ -152,11 +154,12 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testshell_install.test_install_main()
+        packagelist = testshell_install.packagelist
         if testshell_install.failcode == 0:
-            print colorize('Skipping test ...', 'red')
+            print colorize('Unable to install packages. Skipping test ...', 'red')
             self.testreport.append(None)
             return
-        self.testreport.append(testshell.TestShell(element))
+        self.testreport.append(testshell.TestShell(element, packagelist))
         self.testreport[counter].report.extend(testshell_install.report)
         self.testreport[counter].test_shell_main()
 

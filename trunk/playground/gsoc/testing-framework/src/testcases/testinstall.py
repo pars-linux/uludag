@@ -41,21 +41,22 @@ class TestInstall:
             self.report.append('The following packages were not found in ' \
                     "the repository: '{0}'".format(', '.join(packagesNotInRepo)))
             
-        if len(packagesNotInRepo) == len(packagestNotInstalled):
-            self.report.append('Unable to install required packages')
-            self.summary.append('Failed')
+        if len(packagesNotInRepo) == len(self.packagelist):
+            self.summary.append('Fail')
             self.failcode = 0
             return
+        
+        self.packagelist = list(set(self.packagelist) - set(packagesNotInRepo))
        
         # Only try installing those packages which are in the repository
-        finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
-        totalPackages = len(finalPacakges)
+        finalPackages = list(set(packagestNotInstalled) - set(packagesNotInRepo))
+        totalPackages = len(finalPackages)
         if totalPackages == 0:
             self.report.append('No packages were installed')
             self.summary.append('Success')
             return
-        
-        downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
+                
+        downloadSize = calculate_download_size(finalPackages)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
             "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
         print 'Installing packages, please wait ... ' \
@@ -65,7 +66,7 @@ class TestInstall:
             # Pisi installs new packages by using a list. However if we pass all the
             # packages as a single list, we don't have much control over the errors.
             # That is why pass a single package as a list here
-            package = finalPacakges[counter]
+            package = finalPackages[counter]
             singlePackage = package.split()
             try:
                 install(singlePackage)
@@ -78,4 +79,5 @@ class TestInstall:
                 return
             counter += 1
         self.report.append("Finished installing the following " \
-                            "packages: '{0}'".format(', '.join(finalPacakges)))
+                            "packages: '{0}'".format(', '.join(finalPackages)))
+        self.summary.append('Success')
