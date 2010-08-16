@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Pardus Package Testing Framework - An Approach to Automated Package Testing
+# 
 # Copyright (C) 2010, Sukhbir Singh and Semen Cirit
 # Copyright (C) 2005 - 2009, TUBITAK/ UEKAE
 # 

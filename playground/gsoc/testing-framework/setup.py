@@ -17,6 +17,12 @@ except ImportError:
     print 'Unable to import the PiSi API'
     sys.exit('Please ensure that you are running Pardus GNU/ Linux')
 
+
+if sys.version_info[:2] < (2, 4):
+    print "Package Testing Framework requires Python 2.6 or better (but not " \
+    "Python 3 yet).\nVersion {0} detected.".format(sys.version_info[:2])
+    sys.exit(1)
+    
     
 class Install(install):
     """Override the standard install to check for dependencies."""
@@ -33,10 +39,12 @@ class Install(install):
 
 class Build(build):
     """Override the standard build procedure to compile uic files to py."""
-    print 'Generating the UI files ...',
-    subprocess.call(['/usr/bin/pyuic4', 'src/testcases/ui/main.ui',
+    def run(self):
+        build.run(self)
+        print 'Generating the UI files ...',
+        subprocess.call(['/usr/bin/pyuic4', 'src/testcases/ui/main.ui',
                                     '-o', 'build/lib/src/testcases/ui_main.py'])
-    print 'Done'
+        print 'Done'
 
 
 def check_dependencies():
@@ -49,6 +57,7 @@ def check_dependencies():
     
 
 def install_dependencies():
+    """Install the lxml library using the PiSi API."""
     package_list = ['lxml']
     downloadSize = pisi.api.calculate_download_size(package_list)[0]/(1024.0 * 1024.0)
     try:
@@ -57,16 +66,10 @@ def install_dependencies():
         return 
     except pisi.errors.PrivilegeError:
         sys.exit('Aborting: Please run the script with root privileges.')
-
-
-if sys.version_info[:2] < (2, 4):
-    print "Package Testing Framework requires Python 2.6 or better (but not " \
-    "Python 3 yet).\nVersion {0} detected.".format(sys.version_info[:2])
-    sys.exit(1)
         
         
 setup(
-      name='package-testing',
+      name='package-testing-framework',
       version='1.0',
       author='Sukhbir Singh',
       author_email='sukhbir.in@gmail.com',
@@ -78,9 +81,7 @@ setup(
       package_dir = {'': ''},
       packages = ['src', 'src.testcases', 'src.testcases.ui'],
       package_data={
-        'src.testcases.ui': ['*.ui'],
-        'doc': ['*.xml'],
-        'doc': ['*.html']
+        'src.testcases.ui': ['*.ui']
         },
       classifiers=[
           'Development Status :: 4 - Beta',

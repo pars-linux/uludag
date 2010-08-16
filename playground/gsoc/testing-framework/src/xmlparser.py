@@ -9,7 +9,7 @@ try:
     from lxml import etree
 except ImportError:
     print "Error: The 'lxml' library was not found"
-    sys.exit("Please install the package 'lxml to continue")
+    sys.exit("Please install the package 'lxml' to continue")
 
 from pisi.api import list_installed
 from pisi.api import list_available
@@ -77,7 +77,7 @@ class XMLParser:
                 self.testreport.append(None)
                 counter += 1
                 continue
-            # one line hack to call the appropriate method
+            # One line hack to call the appropriate method
             dict(
                 install=self.test_install,
                 automated=self.test_automated,
@@ -107,6 +107,7 @@ class XMLParser:
                                                   self.installed_packages(),
                                                   self.available_packages())
         testgui_install.test_install_main()
+        # Get the list of packages to parse
         packagelist = testgui_install.packagelist
         if testgui_install.failcode == 0:
             print colorize('Unable to install packages. Skipping test ...', 'red')
