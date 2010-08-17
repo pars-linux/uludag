@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>perl-TheSchwartz</Name>
+        <Summary xml:lang="tr">DUZELT</Summary>
+        <Description xml:lang="tr">perl-TheSchwartz bir Perl modülüdür.</Description>
+    </Source>
+</PISI>
