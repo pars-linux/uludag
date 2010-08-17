@@ -74,11 +74,13 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def initExtraList(self):
         self.__initList(self.extraList)
+        self.extraList.hideSelectAll()
         self.extraList.model().setSourceModel(PackageModel(self))
         self.extraList.model().sourceModel().setCheckable(False)
 
     def initPackageList(self):
         self.__initList(self.packageList)
+        self.packageList.hideSelectAll()
         self.__updateList(self.packageList, [])
 
     def filterExtras(self):

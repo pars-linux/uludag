@@ -14,12 +14,33 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from context import i18n
 from pmutils import *
 
 class PackageView(QtGui.QTableView):
     def __init__(self, parent=None):
         QtGui.QTableView.__init__(self, parent)
+
+        self.select_all = QtGui.QCheckBox(i18n('Select all packages in this group'), self)
+        self.select_all.resize(parent.width(), 32)
+        self.select_all.move(3,3)
+        self.select_all.setStyleSheet('padding:8px;padding-left:4px;')
+        self.select_all.setAutoFillBackground(True)
+
+        self.needs_select_all = True
         self.showComponents = False
+        self.parent = parent
+
+    def hideSelectAll(self):
+        self.needs_select_all = False
+        self.select_all.hide()
+        self.setViewportMargins(0, 0, 0, 0)
+
+    def resizeEvent(self, event):
+        if self.needs_select_all:
+            self.select_all.resize(self.viewport().width(), 32)
+            self.setViewportMargins(0, 32, 0, 0)
+        QtGui.QTableView(self).resizeEvent(event)
 
     def isIndexHidden(self, index):
         return False
