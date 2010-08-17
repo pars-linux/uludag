@@ -47,8 +47,6 @@ import config
 from pmutils import waitCursor
 from pmutils import restoreCursor
 
-FIRST_ROW_HEIGHT = 32
-
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):
         QWidget.__init__(self, parent)
@@ -112,7 +110,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.stateCombo, SIGNAL("activated(int)"), self.switchState)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
-        self.connect(self.selectAll, SIGNAL("clicked(bool)"), self.toggleSelectAll)
+        self.connect(self.packageList.select_all, SIGNAL("clicked(bool)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(QString)"), lambda message: self.emit(SIGNAL("selectionStatusChanged(QString)"), message))
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
@@ -139,7 +137,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.initializeStatusUpdater()
         self.statusChanged()
         self._selectedGroups = []
-        self.selectAll.setChecked(False)
+        self.packageList.select_all.setChecked(False)
         restoreCursor()
         QTimer.singleShot(1, self.initializeBasket)
 
@@ -232,8 +230,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         waitCursor()
         self.packageList.model().setFilterPackages(packages)
         self.packageList.scrollToTop()
-        self.packageList.setRowHeight(0, FIRST_ROW_HEIGHT)
-        self.selectAll.setChecked(self.groupList.currentGroup() in self._selectedGroups)
+        self.packageList.select_all.setChecked(self.groupList.currentGroup() in self._selectedGroups)
         restoreCursor()
 
     def searchActivated(self):

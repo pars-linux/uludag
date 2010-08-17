@@ -19,11 +19,10 @@ import packagemodel # roles needed
 
 class PackageProxy(QtGui.QSortFilterProxyModel):
 
-    def __init__(self, parent=None, needs_select_all = True):
+    def __init__(self, parent=None):
         QtGui.QSortFilterProxyModel.__init__(self, parent)
         self.__modelCache = {}
         self.__filteredPackages = set()
-        self.__needs_select_all = needs_select_all
 
     def data(self, index, role):
         sourceIndex = self.mapToSource(index)
@@ -51,10 +50,7 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
         return list(self.__filteredPackages)
 
     def setFilterPackages(self, packages):
-        if self.__needs_select_all:
-            self.__filteredPackages = set(['00AA_SELECT_ALL'] + packages)
-        else:
-            self.__filteredPackages = set(packages)
+        self.__filteredPackages = set(packages)
         self.invalidateFilter()
 
     def reset(self):
