@@ -121,9 +121,9 @@ class PackageModel(QAbstractTableModel):
 
     def setPackages(self, packages):
         self.cached_package = None
-        self.packages = packages
-        self.package_selections = [Qt.Unchecked] * len(self.packages)
+        self.packages = ['00AA_SELECT_ALL'] + packages
         self.packages.sort(key=string.lower)
+        self.package_selections = [Qt.Unchecked] * len(self.packages)
         self.reset()
 
     def package(self, index):
