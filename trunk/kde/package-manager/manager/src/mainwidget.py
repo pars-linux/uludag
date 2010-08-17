@@ -47,6 +47,8 @@ import config
 from pmutils import waitCursor
 from pmutils import restoreCursor
 
+FIRST_ROW_HEIGHT = 32
+
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):
         QWidget.__init__(self, parent)
@@ -230,6 +232,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         waitCursor()
         self.packageList.model().setFilterPackages(packages)
         self.packageList.scrollToTop()
+        self.packageList.setRowHeight(0, FIRST_ROW_HEIGHT)
         self.selectAll.setChecked(self.groupList.currentGroup() in self._selectedGroups)
         restoreCursor()
 

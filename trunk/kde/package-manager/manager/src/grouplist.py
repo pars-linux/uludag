@@ -55,7 +55,7 @@ class GroupList(QListWidget):
             group = self.iface.getGroup(name)
             localName, icon_path = unicode(group.localName), group.icon
             package_count = len(self.state.groupPackages(name))
-            if package_count == 0:
+            if package_count <= 0:
                 return
         else:
             localName, icon_path = content[0], content[1]

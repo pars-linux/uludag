@@ -32,6 +32,7 @@ RECT = QRect()
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
 ROW_HEIGHT = 52
+FIRST_ROW_HEIGHT = 32
 ICON_SIZE = 2
 
 class PackageDelegate(QtGui.QItemDelegate):
@@ -83,9 +84,14 @@ class PackageDelegate(QtGui.QItemDelegate):
             if index.column() == 0:
                 self.paintCheckBoxColumn(painter, option, index)
             else:
-                self.paintInfoColumn(painter, option, index)
+                if index.row() == 0:
+                    self.paintSelectAll(painter, option, index)
+                else:
+                    self.paintInfoColumn(painter, option, index)
         else:
-            self.paintInfoColumn(painter, option, index, width_limit = 10)
+            if index.row() > 0:
+                self.paintInfoColumn(painter, option, index, width_limit = 10)
+            return
 
     def paintCheckBoxColumn(self, painter, option, index):
         opt = QtGui.QStyleOptionViewItemV4(option)
@@ -96,8 +102,28 @@ class PackageDelegate(QtGui.QItemDelegate):
         if option.state & QtGui.QStyle.State_MouseOver:
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
-        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 54, 0, -2)
+        height = FIRST_ROW_HEIGHT if index.row() == 0 else ROW_HEIGHT
+        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + height, 0, 0)
         PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+
+    def paintSelectAll(self, painter, option, index, width_limit = 0):
+        left = option.rect.left() + 3
+        top = option.rect.top()
+        width = option.rect.width() - width_limit
+        title = i18n('Select All Packages')
+
+        pixmap = QtGui.QPixmap(option.rect.size())
+        pixmap.fill(Qt.transparent)
+
+        p = QtGui.QPainter(pixmap)
+        p.setRenderHint(QtGui.QPainter.Antialiasing, True)
+        p.translate(-option.rect.topLeft())
+        p.setPen(option.palette.color(QtGui.QPalette.Text))
+        p.setFont(self.boldFont)
+        p.drawText(left, top, width, FIRST_ROW_HEIGHT, Qt.AlignVCenter | Qt.AlignLeft, title)
+        p.end()
+
+        painter.drawPixmap(option.rect.topLeft(), pixmap)
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
@@ -251,10 +277,11 @@ class PackageDelegate(QtGui.QItemDelegate):
 
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
-            toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
-            return model.setData(index, toggled, Qt.CheckStateRole)
+            if index.row() > 0:
+                toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
+                return model.setData(index, toggled, Qt.CheckStateRole)
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
-        if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
+        if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable and index.row() > 0:
             if self.rowAnimator.row == index.row():
                 if self.rowAnimator.hoverLinkFilter.link_rect.contains(event.pos()):
                     url = QUrl(model.data(index, HomepageRole).toString())
@@ -264,11 +291,14 @@ class PackageDelegate(QtGui.QItemDelegate):
         return __event
 
     def sizeHint(self, option, index):
-        if self.rowAnimator.currentRow() == index.row():
+        if self.rowAnimator.currentRow() == index.row() and not index.row() == 0:
             return self.rowAnimator.size()
         else:
             width = ICON_SIZE if index.column() == 0 else 0
-            return QSize(width, ROW_HEIGHT)
+            if index.row() == 0:
+                return QSize(width, FIRST_ROW_HEIGHT)
+            else:
+                return QSize(width, ROW_HEIGHT)
 
     def setAnimatable(self, animatable):
         self.animatable = animatable
