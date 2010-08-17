@@ -6,7 +6,7 @@
 
 from pisi.actionsapi import perlmodules
 from pisi.actionsapi import get
-#from pisi.actionsapi import pisitools
+from pisi.actionsapi import pisitools
 
 WorkDir = "Authen-Radius-%s" % get.srcVERSION()
 
@@ -22,5 +22,5 @@ def check():
 def install():
     perlmodules.install()
 
-    #pisitools.dodoc("Changes", "COPYRIGHT", "README")
+    pisitools.dodoc("Changes", "LICENSE", "MANIFEST", "README")
 
