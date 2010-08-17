@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>perl-Daemon-Generic</Name>
+        <Summary xml:lang="tr">DUZELT</Summary>
+        <Description xml:lang="tr">perl-Daemon-Generic bir Perl modülüdür.</Description>
+    </Source>
+</PISI>
