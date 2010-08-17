@@ -198,7 +198,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.setFont(self.normalDetailFont)
             homepage = self.normalDetailFontFM.elidedText(homepage, Qt.ElideRight, width - self._titleFM['website'])
             rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextSingleLine, homepage)
-            self.rowAnimator.hoverLinkFilter.link_rect = QRect(left + self._titleFM['website'] + 2, position + 2, rect.width(), rect.height())
+            self.rowAnimator.hoverLinkFilter.link_rect = QRect(left + self._titleFM['website'] + 2, position + 2 + 32, rect.width(), rect.height())
 
             p.setPen(option.palette.color(QtGui.QPalette.Link))
             p.drawText(left + self._titleFM['website'], position, width, rect.height(), Qt.TextSingleLine, homepage)
