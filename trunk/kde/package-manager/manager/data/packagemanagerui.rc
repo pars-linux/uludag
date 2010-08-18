@@ -3,6 +3,7 @@
 <gui name="Package Manager" version="0.1">
   <MenuBar>
     <Menu iconSize="16" name="file">
+      <Action name="showAllAction" />
       <Action name="showInstallAction" />
       <Action name="showRemoveAction" />
       <Action name="showUpgradeAction" />
@@ -11,6 +12,7 @@
   <!--
   <ToolBar iconSize="16" name="mainToolBar" >
     <text>Main Toolbar</text>
+      <Action name="showAllAction" />
       <Action name="showInstallAction" />
       <Action name="showRemoveAction" />
       <Action name="showUpgradeAction" />

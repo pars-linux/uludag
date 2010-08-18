@@ -22,11 +22,11 @@ import backend
 
 class StateManager(QObject):
 
-    (INSTALL, REMOVE, UPGRADE) = range(3)
+    (ALL, INSTALL, REMOVE, UPGRADE) = range(4)
 
     def __init__(self, parent=None):
         QObject.__init__(self)
-        self.state = self.INSTALL
+        self.state = self.ALL
         self.silence = False
         self._selected_packages = []
         self.iface = backend.pm.Iface()
@@ -37,8 +37,10 @@ class StateManager(QObject):
         self.reset()
         if self.state == self.REMOVE:
             self.iface.setSource(self.iface.SYSTEM)
-        else:
+        elif self.state == self.INSTALL:
             self.iface.setSource(self.iface.REPO)
+        else:
+            self.iface.setSource(self.iface.ALL)
         self.emit(SIGNAL("repositoriesChanged()"))
 
     def reset(self):
@@ -78,32 +80,38 @@ class StateManager(QObject):
     def getActionName(self):
         return {self.INSTALL:i18n("Install Package(s)"),
                 self.REMOVE :i18n("Remove Package(s)"),
-                self.UPGRADE:i18n("Upgrade Package(s)")}[self.state]
+                self.UPGRADE:i18n("Upgrade Package(s)"),
+                self.ALL    :i18n("Modify Package(s)")}[self.state]
 
     def toBe(self):
         return {self.INSTALL:i18n("installed"),
                 self.REMOVE :i18n("removed"),
-                self.UPGRADE:i18n("upgraded")}[self.state]
+                self.UPGRADE:i18n("upgraded"),
+                self.ALL    :i18n("modified")}[self.state]
 
     def getActionIcon(self):
         return {self.INSTALL:KIcon("list-add"),
                 self.REMOVE :KIcon("list-remove"),
-                self.UPGRADE:KIcon("view-refresh")}[self.state]
+                self.UPGRADE:KIcon("view-refresh"),
+                self.ALL    :KIcon("list-add")}[self.state]
 
     def getSummaryInfo(self, total):
         return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
                 self.REMOVE :i18n("%1 package(s) have been removed succesfully.", total),
-                self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total)}[self.state]
+                self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total),
+                self.ALL    :i18n("%1 package(s) have been modified succesfully.", total)}[self.state]
 
     def getBasketInfo(self):
         return {self.INSTALL:i18n("You have selected the following package(s) to install:"),
                 self.REMOVE :i18n("You have selected the following package(s) to removal:"),
-                self.UPGRADE:i18n("You have selected the following package(s) to upgrade:")}[self.state]
+                self.UPGRADE:i18n("You have selected the following package(s) to upgrade:"),
+                self.ALL    :i18n("You have selected the following package(s) to modify:")}[self.state]
 
     def getBasketExtrasInfo(self):
         return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),
                 self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
-                self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:")}[self.state]
+                self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:"),
+                self.ALL    :i18n("Extra dependencies of the selected package(s) that are also going to be modified:")}[self.state]
 
     def groups(self):
         return self.iface.getGroups()
@@ -121,7 +129,8 @@ class StateManager(QObject):
 
     def stateAction(self):
         return {self.INSTALL:lambda:None,
-                self.REMOVE:lambda:None,
+                self.REMOVE :lambda:None,
+                self.ALL    :lambda:None,
                 self.UPGRADE:self.iface.updateRepositories}[self.state]()
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
@@ -142,8 +151,9 @@ class StateManager(QObject):
         if not silence:
             if self.state is not self.REMOVE and not self.conflictCheckPasses(packages):
                 return
-        return {self.INSTALL:self.iface.installPackages,
-                self.REMOVE:self.iface.removePackages,
+        return {self.ALL    :self.iface.modifyPackages,
+                self.INSTALL:self.iface.installPackages,
+                self.REMOVE :self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
