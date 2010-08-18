@@ -3,29 +3,9 @@ TODO
 
  - Get security updates directly to the basket like system.base packages
    It should be done in Pisi APi
- - Need to check tproxy settings changes from KDE at start
-
-PackageKit Tasks:
------------------
-
-  - Get package list
-  - Get components
-  - Show details of a package
-  - Install a package
-  - Remove a package
-  - Show updatess
-  - Do updates
-  - Search for a package
-  - Get install scenario for given packages
-  - Do update repositories
-  - Get notifications from PackageKit
-  - Show warnings or errors
-
-KDE Integration Tasks:
-----------------------
-
- - Cleanup PDS stuff
- - Use KConfig instead of QSettings
+ - Need to check proxy settings changes from KDE at start
+ - Use KConfig instead of QSettings (tracker #40)
  - Update localedata.py with KConfig
  - Use KActions widely
- - Cleanup imports
+ - Code cleanup like * imports (tracker #41)
+
