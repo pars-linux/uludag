@@ -82,7 +82,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         guest_group = "guests"
         if debugging and pamh.get_user(None) == guest_name:
             log("Unable to read config file at /etc/security/guestlogin.\
-                    conf, using default values.\n")
+conf, using default values.\n")
 
     if pamh.get_user(None) == guest_name:
         users = [x.pw_name for x in pwd.getpwall()]
@@ -92,7 +92,7 @@ def pam_sm_authenticate(pamh, flags, argv):
             if (i > guest_limit):
                 if debugging:
                     log("Guest User limit reached! Unable to create \
-                            another guest user account.\n")
+another guest user account.\n")
                 return auth_return(pamh, -2)
 
         username = "%s%s" % (guest_name, i)
@@ -102,7 +102,7 @@ def pam_sm_authenticate(pamh, flags, argv):
         except KeyError:
             if debugging:
                 log("No group found named as %s, it will be \
-                        created.\n" % guest_group)
+created.\n" % guest_group)
             out = subprocess.Popen(["groupadd %s" % guest_group], \
                     shell=True, stdout=subprocess.PIPE, \
                     stderr=subprocess.PIPE)
@@ -182,7 +182,7 @@ def pam_sm_setcred(pamh, flags, argv):
 
         if debugging and pamh.get_user(None) == guest_name:
             log("Unable to read config file at /etc/security/guestlogin.\
-                    conf, using default values.\n")
+conf, using default values.\n")
 
     if pamh.get_user(None).find(guest_name) == -1:
         return auth_return(pamh, -1)
@@ -214,7 +214,7 @@ destroy it but it seems quite dangerous"""
         guest_name = "guest"
         if debugging and pamh.get_user(None).find(guest_name) != -1:
             log("Unable to read config file at /etc/security/guestlogin.\
-                    conf, using default values.\n")
+conf, using default values.\n")
 
     if pamh.get_user(None).find(guest_name) != -1:
         username = pamh.get_user(None)
