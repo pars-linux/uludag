@@ -1,6 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-""" Guest Account Module for Pardus Linux """
+""" Guest Account PAM Module for Pardus Linux """
 
 import os
 import pwd
