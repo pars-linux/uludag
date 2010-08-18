@@ -36,4 +36,4 @@ auth    sufficient      pam_python.so guestlogin.py debug
 
 Usage
 =====
-After copying required files, login as guest username which is defined in configuration file (username is case sensitive).
+After copying required files, login as guest username which is defined in configuration file (username is case sensitive). Dont give system user's username, module wont work.
