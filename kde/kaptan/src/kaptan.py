@@ -13,22 +13,28 @@ import dbus
 import subprocess
 
 from kaptan.screens.ui_kaptan import Ui_kaptan
-import kaptan.screens.scrWelcome as scrWelcome
-import kaptan.screens.scrMouse as scrMouse
-import kaptan.screens.scrNetwork as scrNetwork
-import kaptan.screens.scrWallpaper as scrWallpaper
-import kaptan.screens.scrGoodbye as scrGoodbye
-import kaptan.screens.scrStyle as scrStyle
-import kaptan.screens.scrMenu as scrMenu
-import kaptan.screens.scrSearch as scrSearch
-import kaptan.screens.scrSummary as scrSummary
-import kaptan.screens.scrKeyboard as scrKeyboard
-import kaptan.screens.scrPackage as scrPackage
-import kaptan.screens.scrSmolt as scrSmolt
 
 from kaptan.tools import tools
 from kaptan.tools.progress_pie import DrawPie
 from kaptan.tools.kaptan_menu import Menu
+
+import glob
+
+def loadScreen(screenName):
+    split = screenName.split('.')
+    screen = __import__(screenName)
+
+    for s in split[1:]:
+        screen = getattr(screen, s)
+
+    return screen
+
+screens = glob.glob("screens/scr*py")
+for screen in screens:
+    print screen
+    screenName = screen.split("/")[-1].split(".")[0]
+    print screenName
+    vars()[screenName] = loadScreen("kaptan.screens." + screenName)
 
 
 class Kaptan(QtGui.QWidget):
@@ -72,6 +78,25 @@ class Kaptan(QtGui.QWidget):
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
         QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+
+
+        def compile_module(self, filename):
+            """
+                Compiles a Python module and returns locals.
+
+                Args:
+                    filename: Path to Python module
+                Returns: Dictionary of local objects
+            """
+            try:
+                locals = globals = {}
+                code = open(filename).read()
+                exec compile(code, "error", "exec") in locals, globals
+            except IOError, e:
+                logging.warning("Module has errors: %s" % filename)
+            except SyntaxError, e:
+                logging.warning("Module has syntax errors: %s" % filename)
+            return locals
 
     def smoltProfileSent(self):
         ''' Do not show smolt screen if profile was already sended.'''
