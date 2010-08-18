@@ -107,7 +107,7 @@ def pam_sm_authenticate(pamh, flags, argv):
             log("%s has been created successful with mktemp.\n" % home_dir)
 
         out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 \
-                none %s" % (guest_home_dir_size, home_dir)], shell=True)
+                -o noexec none %s" % (guest_home_dir_size, home_dir)], shell=True)
         if out.wait() != 0:
             if debugging:
                 log("Unable to mount %s" % home_dir)
