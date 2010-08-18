@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-TheSchwartz</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-TheSchwartz bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">reliable job queue</Summary>
+        <Description xml:lang="tr">TheSchwartz is a reliable job queue system.</Description>
     </Source>
 </PISI>

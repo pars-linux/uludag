@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-Daemon-Generic</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-Daemon-Generic bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">Framework to provide start/stop/reload for a daemon</Summary>
+        <Description xml:lang="tr">Daemon-Generic provides for standard commands that work for as init.d files and as apachectl-like commands.</Description>
     </Source>
 </PISI>

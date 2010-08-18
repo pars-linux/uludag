@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-Data-ObjectDriver</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-Data-ObjectDriver bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">Simple, transparent data interface, with caching</Summary>
+        <Description xml:lang="tr">DataObjectDriver is an object relational mapper, meaning that it maps object-oriented design concepts onto a relational database.</Description>
     </Source>
 </PISI>
