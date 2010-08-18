@@ -57,15 +57,16 @@ def pam_sm_authenticate(pamh, flags, argv):
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
-        if guest_name == None:
+        if guest_name == '':
             guest_name = "guest"
-        guest_limit = config.getint('guest', 'guestlimit')
-        if guest_limit == None:
+        guest_limit = config.get('guest', 'guestlimit')
+        if guest_limit == '':
             guest_limit = 5
-        guest_home_dir_size = config.getint('guest', 'homedirsize')
-        if guest_home_dir_size == None #FIXME: /tmp size control.
+        guest_home_dir_size = config.get('guest', 'homedirsize')
+        if guest_home_dir_size == '':
+            guest_home_dir_size = 300
         guest_group = config.get('guest', 'guestgroup')
-        if guest_group == None:
+        if guest_group == '':
             guest_group = "guests"
 
     except:
@@ -149,7 +150,7 @@ def pam_sm_setcred(pamh, flags, argv):
 
     try:
         debugging = (argv[1] == 'debug')
-    
+
     except IndexError:
         debugging = False
 
@@ -157,6 +158,8 @@ def pam_sm_setcred(pamh, flags, argv):
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
+        if guest_name == '':
+            guest_name = "guest"
 
     except:
         if debugging:
@@ -187,6 +190,8 @@ destroy it but it seems quite dangerous"""
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
+	if guest_name == '':
+	    guest_name = "guest"
 
     except:
         if debugging:
