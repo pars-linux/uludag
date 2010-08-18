@@ -1,87 +1,39 @@
-This is a README file about Guest Account PAM module.
+guestlogin
+==========
+    guestlogin is a PAM module that allow guest users login.
 
-FEATURES:
---------
+    Module creates a new user, mount a tmpdir as tmpfs to /tmp/.
+When logout module deletes guest user from system.
 
-Reads guest username, max home directory size, max guest user values from configuration file which is on /etc/security/
-Give access to guest named users.
-create a user named as guestX and a home directory at /tmp/guestX.XXXXXX/home. Mount as tmpfs.
-All guest users' group is reading from configuration file
-After logout deletes this user and its home directory.
+    Guest username, home directory size, user limit and group name
+are changable from configuration file.
 
-REQUIREMENTS:
--------------
+License
+=======
+GPLv2 (please read the COPYING file)
 
-pam_python (http://ace-host.stuart.id.au/russell/files/pam_python/)
+Dependencies
+============
+pam_python
 
-INSTALLATION:
-------------
-
+Installation
+============
 Copy guestlogin.py file to /lib/security/. (Actually same directory with pam_python.so)
-
 Copy guestlogin.conf to /etc/security/
-
 Edit files in /etc/pam.d/ directory.
-
-For Example: Edit system-auth file for login.
-
-Add this line after pam_env.so line:
+Add this line before pam_unix.so line:
 
 auth    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
 
-and add this line after including "session pam_limits.so" string line
+and add this line after including "session pam_limits.so" line
 
 session    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
 
-
-After adding pam_python line to the file, file's first lines will be like that:
-
-#%PAM-1.0
-
-auth    required        pam_env.so
-auth    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
-.
-.
-.
-
-session optional        pam_keyinit.so  revoke
-session required        pam_limits.so
-session    [success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py
-session required        pam_unix.so
-
-
-
-If you want to debug add debug end of the pam_python lines.
-
+If you want to debug, add debug end of the guestlogin.py lines.
 You should add like that:
 
 auth    [user_unknown=ok success=done new_authtok_reqd=done default=ignore]      pam_python.so guestlogin.py debug
 
-
-
-Important thing is file's syntax and sequence.
-
-Sequence is like pam_env.so, pam_python.so, pam_unix.so.
-
-Syntax is:
-
-type control module-path module-arguments.
-
-Our type is auth because we will use it for authentication.
-
-control is [user_unknown=ok success=done new_authtok_reqd=done default=ignore] because this file only triggered when user is unknown for authenticate guest account. For other users pam_unix.so will be triggered.
-
-module-path is pam_python.so and argument is out login file, guestlogin.py.
-
-Next login this module will be triggered and guest accounts can able to login without password or account.
-
-USAGE:
-------
-
-For use, login as guest (case sensitive, all cases are downcase).
-
-Have Fun!
-
-TODO:
------
-
+Usage
+=====
+After copying required files, login as guest username which is defined in configuration file (username is case sensitive).
