@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-JSON-RPC</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-JSON-RPC bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">Perl implementation of JSON-RPC 1.1 protocol</Summary>
+        <Description xml:lang="tr">JSON-RPC is a stateless and light-weight remote procedure call(RPC) protocol for inter-networking applications over HTTP.</Description>
     </Source>
 </PISI>

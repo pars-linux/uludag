@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-File-Flock</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-File-Flock bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">file locking with flock</Summary>
+        <Description xml:lang="tr">Lock files using the flock() call.</Description>
     </Source>
 </PISI>

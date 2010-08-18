@@ -11,7 +11,7 @@
         <License>GPLv2</License>
         <IsA>library</IsA>
         <Summary>provide simple Radius client facilities</Summary>
-        <Description>The Authen::Radius module provides a simple class that allows you to send/receive Radius requests/responses to/from a Radius server.</Description>
+        <Description>The AuthenRadius module provides a simple class that allows you to send/receive Radius requests/responses to/from a Radius server.</Description>
         <Archive sha1sum="7edc6eb7fab83291cf8492d3e7a9be0d43aed3da" type="targz">mirrors://cpan/authors/id/M/MA/MANOWAR/RadiusPerl-0.17.tar.gz</Archive>
         <BuildDependencies>
             <Dependency versionFrom="5.10.1">perl</Dependency>

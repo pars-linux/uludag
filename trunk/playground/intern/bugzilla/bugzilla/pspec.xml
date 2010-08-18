@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>bugzilla</Name>
+        <Homepage>http://www.pardus.org.tr</Homepage>
+        <Packager>
+            <Name>Utku Uluşahin</Name>
+            <Email>utkuulusahin@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>app:web</IsA>
+        <Summary>Bug-Tracking System</Summary>
+        <Description>Bugzilla allow developers to keep track of outstanding bugs in their product effectively.</Description>
+        <Archive sha1sum="fcbbbbacd0588a1e28ad42fb747f3530bc18977f" type="targz">http://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-3.6.2.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency>perl-CGI</Dependency>
+            <Dependency>perl-Digest-SHA1</Dependency>
+            <Dependency>perl-TimeDate</Dependency>
+            <Dependency>perl-DateTime</Dependency>
+            <Dependency>perl-DateTime-TimeZone</Dependency>
+            <Dependency>perl-DBI</Dependency>
+            <Dependency>perl-Template-Toolkit</Dependency>
+            <Dependency>perl-URI</Dependency>
+            <Dependency>perl-Email-MIME</Dependency>
+            <Dependency>perl-Email-MIME-Encodings</Dependency>
+            <Dependency>perl-Email-Send </Dependency>
+            <Dependency>perl-DBD-mysql</Dependency>
+            <Dependency>postfix</Dependency>
+            <Dependency>mod_perl</Dependency>
+            <Dependency>mysql-server</Dependency>
+            <Dependency>apache</Dependency>
+            <Dependency>perl-GD</Dependency>
+            <Dependency>perl-Chart</Dependency>
+            <Dependency>perl-Template-GD</Dependency>
+            <Dependency>perl-GD-Graph</Dependency>
+            <Dependency>perl-GD-TextUtil</Dependency>
+            <Dependency>perl-XML-Twig</Dependency>
+            <Dependency>perl-MIME-tools </Dependency>
+            <Dependency>perl-libwww</Dependency>
+            <Dependency>perl-PatchReader</Dependency>
+            <Dependency>perl-ldap</Dependency>
+            <Dependency>perl-Authen-SASL</Dependency>
+            <Dependency>perl-RadiusPerl</Dependency>
+            <Dependency>perl-SOAP-Lite</Dependency>
+            <Dependency>perl-JSON-RPC</Dependency>
+            <Dependency>perl-Test-Taint</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-HTML-Scrubber</Dependency>
+            <Dependency>perl-Email-MIME-Attachment-Stripper</Dependency>
+            <Dependency>perl-Email-Reply</Dependency>
+            <Dependency>perl-TheSchwartz</Dependency>
+            <Dependency>perl-Daemon-Generic</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch>assignedto.patch</Patch>
+            <Patch>fallback-to-text-plain-if-octet-stream-detected.patch</Patch>
+            <Patch>diff.patch</Patch>
+            <Patch>test.patch</Patch>
+        </Patches>
+    </Source>
+
+    <Package>
+        <Name>Bugzilla</Name>
+        <RuntimeDependencies>
+            <Dependency>perl-CGI</Dependency>
+            <Dependency>perl-Digest-SHA1</Dependency>
+            <Dependency>perl-TimeDate</Dependency>
+            <Dependency>perl-DateTime</Dependency>
+            <Dependency>perl-DateTime-TimeZone</Dependency>
+            <Dependency>perl-DBI</Dependency>
+            <Dependency>perl-Template-Toolkit</Dependency>
+            <Dependency>perl-URI</Dependency>
+            <Dependency>perl-Email-MIME</Dependency>
+            <Dependency>perl-Email-MIME-Encodings</Dependency>
+            <Dependency>perl-Email-Send </Dependency>
+            <Dependency>perl-DBD-mysql</Dependency>
+            <Dependency>postfix</Dependency>
+            <Dependency>mod_perl</Dependency>
+            <Dependency>mysql-server</Dependency>
+            <Dependency>apache</Dependency>
+            <Dependency>perl-GD</Dependency>
+            <Dependency>perl-Chart</Dependency>
+            <Dependency>perl-Template-GD</Dependency>
+            <Dependency>perl-GD-Graph</Dependency>
+            <Dependency>perl-GD-TextUtil</Dependency>
+            <Dependency>perl-XML-Twig</Dependency>
+            <Dependency>perl-MIME-tools </Dependency>
+            <Dependency>perl-libwww</Dependency>
+            <Dependency>perl-PatchReader</Dependency>
+            <Dependency>perl-ldap</Dependency>
+            <Dependency>perl-Authen-SASL</Dependency>
+            <Dependency>perl-RadiusPerl</Dependency>
+            <Dependency>perl-SOAP-Lite</Dependency>
+            <Dependency>perl-JSON-RPC</Dependency>
+            <Dependency>perl-Test-Taint</Dependency>
+            <Dependency>perl-HTML-Parser</Dependency>
+            <Dependency>perl-HTML-Scrubber</Dependency>
+            <Dependency>perl-Email-MIME-Attachment-Stripper</Dependency>
+            <Dependency>perl-Email-Reply</Dependency>
+            <Dependency>perl-TheSchwartz</Dependency>
+            <Dependency>perl-Daemon-Generic</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="all">/</Path>
+            <!--
+            <Path fileType="config">/etc</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="localedata">/usr/share/locale</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            -->
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2010-08-12</Date>
+            <Version>3.6.2</Version>
+            <Comment>First release.</Comment>
+            <Name>Utku Ulusahin</Name>
+            <Email>utkuulusahin@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+

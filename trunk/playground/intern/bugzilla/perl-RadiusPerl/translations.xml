@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-RadiusPerl</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-RadiusPerl bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">simple Radius client facilitie<summary>
+        <Description xml:lang="tr">The AuthenRadius module provides a simple class that allows you to send/receive Radius requests/responses to/from a Radius server.</Description>
     </Source>
 </PISI>

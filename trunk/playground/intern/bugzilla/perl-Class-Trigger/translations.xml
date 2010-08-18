@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-Class-Trigger</Name>
-        <Summary xml:lang="tr">DUZELT</Summary>
-        <Description xml:lang="tr">perl-Class-Trigger bir Perl modülüdür.</Description>
+        <Summary xml:lang="tr">Mixin to add / call inheritable triggers</Summary>
+        <Description xml:lang="tr">perl-Class-Trigger is a mixin class to add / call triggers (or hooks) that get called at some points you specify.</Description>
     </Source>
 </PISI>
