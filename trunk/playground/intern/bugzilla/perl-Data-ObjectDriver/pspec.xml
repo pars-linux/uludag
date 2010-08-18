@@ -20,6 +20,7 @@
             <Dependency>perl-DBI</Dependency>
             <Dependency>perl-Test-Exception</Dependency>
             <Dependency>perl-Class-Trigger</Dependency>
+            <Dependency>perl-DBD-SQLite</Dependency>
         </BuildDependencies>
     </Source>
 
@@ -31,6 +32,7 @@
             <Dependency>perl-Class-Accessor</Dependency>
             <Dependency>perl-Class-Data-Inheritable</Dependency>
             <Dependency>perl-Class-Trigger</Dependency>
+            <Dependency>perl-DBD-SQLite</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib</Path>

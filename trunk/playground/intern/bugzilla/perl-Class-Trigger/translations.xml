@@ -2,7 +2,7 @@
 <PISI>
     <Source>
         <Name>perl-Class-Trigger</Name>
-        <Summary xml:lang="tr">Mixin to add / call inheritable triggers</Summary>
-        <Description xml:lang="tr">perl-Class-Trigger is a mixin class to add / call triggers (or hooks) that get called at some points you specify.</Description>
+        <Summary xml:lang="en">Mixin to add / call inheritable triggers</Summary>
+        <Description xml:lang="en">perl-Class-Trigger is a mixin class to add / call triggers (or hooks) that get called at some points you specify.</Description>
     </Source>
 </PISI>
