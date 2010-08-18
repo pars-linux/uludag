@@ -49,6 +49,12 @@ def pam_sm_authenticate(pamh, flags, argv):
     """
 
     try:
+        pwd.getpwnam(pamh.get_user(None))
+        return auth_return(pamh, -1)
+    except KeyError:
+        pass
+
+    try:
         debugging = (argv[1] == 'debug')
     except IndexError:
         debugging = False
@@ -69,10 +75,14 @@ def pam_sm_authenticate(pamh, flags, argv):
         if guest_group == '':
             guest_group = "guests"
 
-    except:
-        if debugging:
-            log("Unable to read config file at /etc/security/guestlogin.conf\n")
-        return auth_return(pamh, -1)
+    except ConfigParser.Error:
+        guest_name = "guest"
+        guest_limit = 5
+        guest_home_dir_size = 300
+        guest_group = "guests"
+        if debugging and pamh.get_user(None) == guest_name:
+            log("Unable to read config file at /etc/security/guestlogin.\
+                    conf, using default values.\n")
 
     if pamh.get_user(None) == guest_name:
         users = [x.pw_name for x in pwd.getpwall()]
@@ -81,7 +91,8 @@ def pam_sm_authenticate(pamh, flags, argv):
             i = i + 1
             if (i > guest_limit):
                 if debugging:
-                    log("Guest User limit reached!")
+                    log("Guest User limit reached! Unable to create \
+                            another guest user account.\n")
                 return auth_return(pamh, -2)
 
         username = "%s%s" % (guest_name, i)
@@ -90,8 +101,11 @@ def pam_sm_authenticate(pamh, flags, argv):
             grp.getgrnam(guest_group)
         except KeyError:
             if debugging:
-                log("No group found named as %s, it will be created.\n" % guest_group)
-            out = subprocess.Popen(["groupadd %s" % guest_group], shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                log("No group found named as %s, it will be \
+                        created.\n" % guest_group)
+            out = subprocess.Popen(["groupadd %s" % guest_group], \
+                    shell=True, stdout=subprocess.PIPE, \
+                    stderr=subprocess.PIPE)
             if out.wait() != 0:
                 if debugging:
                     log("Creating group %s has been failed!" % guest_group)
@@ -107,7 +121,8 @@ def pam_sm_authenticate(pamh, flags, argv):
             log("%s has been created successful with mktemp.\n" % home_dir)
 
         out = subprocess.Popen(["mount -t tmpfs -o size=%sm -o mode=711 \
-                -o noexec none %s" % (guest_home_dir_size, home_dir)], shell=True)
+                -o noexec none %s" % (guest_home_dir_size, home_dir)], \
+                shell=True)
         if out.wait() != 0:
             if debugging:
                 log("Unable to mount %s" % home_dir)
@@ -121,8 +136,8 @@ def pam_sm_authenticate(pamh, flags, argv):
         if debugging:
             log("%s has mounted as tmpfs\n" % home_dir)
 
-        out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % (home_dir, \
-                guest_group, username)], shell=True, \
+        out = subprocess.Popen(["useradd -m -d %s/home -g %s %s" % \
+                (home_dir, guest_group, username)], shell=True, \
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if out.wait() != 0:
             if debugging:
@@ -134,7 +149,8 @@ def pam_sm_authenticate(pamh, flags, argv):
 
         except KeyError:
             if debugging:
-                log("User %s not found! Unable to getpwnam(%s)\n" % (username, username))
+                log("User %s not found! Unable to getpwnam(%s)\n" % \
+                        (username, username))
             return auth_return(pamh, 3, home_dir)
 
         if debugging:
@@ -161,10 +177,12 @@ def pam_sm_setcred(pamh, flags, argv):
         if guest_name == '':
             guest_name = "guest"
 
-    except:
-        if debugging:
-            log("Unable to read config file at /etc/security/guestlogin.conf\n")
-        return auth_return(pamh, -1)
+    except ConfigParser.Error:
+        guest_name = "guest"
+
+        if debugging and pamh.get_user(None) == guest_name:
+            log("Unable to read config file at /etc/security/guestlogin.\
+                    conf, using default values.\n")
 
     if pamh.get_user(None).find(guest_name) == -1:
         return auth_return(pamh, -1)
@@ -185,18 +203,18 @@ destroy it but it seems quite dangerous"""
             debugging = True
     except KeyError:
         debugging = False
-
     try:
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
-	if guest_name == '':
-	    guest_name = "guest"
+        if guest_name == '':
+            guest_name = "guest"
 
-    except:
-        if debugging:
-            log("Unable to read config file at /etc/security/guestlogin.conf\n")
-        return auth_return(pamh, -1)
+    except ConfigParser.Error:
+        guest_name = "guest"
+        if debugging and pamh.get_user(None).find(guest_name) != -1:
+            log("Unable to read config file at /etc/security/guestlogin.\
+                    conf, using default values.\n")
 
     if pamh.get_user(None).find(guest_name) != -1:
         username = pamh.get_user(None)
