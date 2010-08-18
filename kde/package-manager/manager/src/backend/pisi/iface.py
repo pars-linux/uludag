@@ -26,9 +26,9 @@ class Singleton(object):
 
 class Iface(Singleton):
 
-    (SYSTEM, REPO) = range(2)
+    (SYSTEM, REPO, ALL) = range(3)
 
-    def __init__(self, source=REPO):
+    def __init__(self, source = ALL):
         if not self.initialized():
             self.source = source
             self.initComar()
@@ -84,6 +84,10 @@ class Iface(Singleton):
         logger.debug("Upgrading packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, timeout=2**16-1)
+
+    def modifyPackages(self, packages):
+        # FIXME
+        pass
 
     def updateRepositories(self):
         logger.debug("Updating repositories...")
@@ -153,8 +157,10 @@ class Iface(Singleton):
     def getPackageList(self):
         if self.source == self.REPO:
             return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
-        else:
+        elif self.source == self.SYSTEM:
             return pisi.api.list_installed()
+        else:
+            return pisi.api.list_installed() + list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
 
     def getUpdates(self):
         lu = set(pisi.api.list_upgradable())
@@ -195,14 +201,22 @@ class Iface(Singleton):
             return self.idb.get_isa_packages(isa)
 
     def getPackage(self, name):
+
         if self.source == self.REPO:
             pkg = self.pdb.get_package(name)
-        else:
+        elif self.source == self.SYSTEM:
             pkg = self.idb.get_package(name)
+        else:
+            if self.pdb.has_package(name):
+                pkg = self.pdb.get_package(name)
+            else:
+                pkg = self.idb.get_package(name)
+
         if self.source == self.REPO and self.idb.has_package(pkg.name):
             pkg.type = self.getUpdateType(pkg)
         else:
             pkg.type = None
+
         return pkg
 
     def getInstalledVersion(self, name):
@@ -281,15 +295,17 @@ class Iface(Singleton):
         print self.link.listRunning()
         return False
 
-    def search(self, terms, packages=None, tryOnce = False):
+    def search(self, terms, packages = None, __tryOnce = False):
         try:
             if self.source == self.REPO and packages:
                 return self.pdb.search_in_packages(packages, terms)
-            else:
+            elif self.source == self.SYSTEM:
                 return self.idb.search_package(terms)
+            else:
+                return self.idb.search_package(terms) + self.pdb.search_package(terms)
         except IOError:
-            if not tryOnce:
+            if not __tryOnce:
                 self.invalidate_db_caches()
-                return self.search(terms, packages, tryOnce = True)
+                return self.search(terms, packages, __tryOnce = True)
             return []
 

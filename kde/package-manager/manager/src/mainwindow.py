@@ -105,10 +105,16 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
+        self.showAllAction = KToggleAction(KIcon("list-add"), i18n("Show All Packages"), self)
+        self.actionCollection().addAction("showAllAction", self.showAllAction)
+        self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.ALL))
+        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show All Packages"))
+        actionGroup.addAction(self.showAllAction)
+
         self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
         self.actionCollection().addAction("showInstallAction", self.showInstallAction)
         self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.INSTALL))
-        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Installable Packages"))
+        self.sw.stateCombo.addItem(KIcon("list-add"), i18n("Show Installable Packages"))
         actionGroup.addAction(self.showInstallAction)
 
         self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
@@ -120,7 +126,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
         self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.UPGRADE))
-        self.sw.stateCombo.addItem(KIcon("list-add"), i18n("Show Upgradable Packages"))
+        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
         self.showInstallAction.setChecked(True)

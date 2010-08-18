@@ -337,9 +337,10 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def switchState(self, state, action=True):
         self.searchLine.clear()
-        states = {self.state.INSTALL:(0, self.parent.showInstallAction),
-                  self.state.REMOVE :(1, self.parent.showRemoveAction),
-                  self.state.UPGRADE:(2, self.parent.showUpgradeAction)}
+        states = {self.state.ALL    :(0, self.parent.showAllAction),
+                  self.state.INSTALL:(1, self.parent.showInstallAction),
+                  self.state.REMOVE :(2, self.parent.showRemoveAction),
+                  self.state.UPGRADE:(3, self.parent.showUpgradeAction)}
         states[state][1].setChecked(True)
         self.stateCombo.setCurrentIndex(states[state][0])
         self.lastState = self.state.state
@@ -348,7 +349,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.setActionButton()
         if action:
             self.state.stateAction()
-
         self.initialize()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
