@@ -12,19 +12,22 @@ PackageList=["dhcp", \
 def CheckPackages():
 
     print "-"*30
-    print "Checking for required packages.\n"
+    print "Checking for required Packages.\n"
     PackageNotFound = False
     for package in PackageList:
+        print "Checking for Package: %s --> " % package,
         try:
             api.list_installed().index(package)
+            print "OK"
         except:
-            print "Missing package: %s" % package
+            print "Not Found"
             PackageNotFound = True
 
     if PackageNotFound:
         print "\nInstall missing packages and try again."
         print "-"*30 + "\n"
-        #TODO: Terminate Script
+        raise SystemExit
+
     else:
         print "Check Successful."
         print "-"*30 + "\n"
