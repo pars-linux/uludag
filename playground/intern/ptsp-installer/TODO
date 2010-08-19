@@ -1,8 +1,8 @@
 Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
-- Check dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages. If isnt installed, terminate script.
++ Check dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages. If isnt installed, terminate script.
 
-- Create a network profile and activate this. If already there is a profile for this, only activate the profile.
+/ Create a network profile and activate this. If already there is a profile for this, only activate the profile.
 
 - Edit /etc/dhcp/dhcpd.conf file. Select correct DHCPD_IFACE (network interface, e.g. eth0), edit this file carefully.
 
@@ -18,6 +18,10 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 - Optimizing Firefox, disable caching pixmaps.
 
-- Start dhcp, tftp, nfs-utils and portmap services.
+/ Start dhcp, tftp, nfs-utils and portmap services.
 
 - Edit /opt/ptsp/etc/pts-client.conf file to set server's ip address. (Use ConfigParser to set this.)Also change ip addresses in dhcpd.conf and system.pa files.
+
+Implemented: +
+Not Implemented: -
+Working on it: /
