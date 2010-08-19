@@ -1,0 +1,24 @@
+Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
+
+- Install dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages to server.
+(installing only ptsp-server is sufficient, others are ptsp-server's dependency.)
+
+- Create a network profile and activate this. If already there is a profile for this, only activate the profile.
+
+- Edit /etc/dhcp/dhcpd.conf file. Select correct DHCPD_IFACE (network interface, e.g. eth0), edit this file carefully.
+
+- Edit /etc/X11/kdm/kdmrc file. Using ConfigParser may make this step too easy. After that warn user to restart X server.
+
+- Edit /etc/exports file.
+
+- Edit /etc/hosts file. Ask how many users will use this system and add according to this.
+
+- Modprobe fuse. It is automaticly loaded since Pardus 2009. So check release name before this step.
+
+- Edit /opt/ptsp/etc/pulse/system.pa file. (Pulseaudio) Do this if user wants. (Ask user for this)
+
+- Optimizing Firefox, disable caching pixmaps.
+
+- Start dhcp, tftp, nfs-utils and portmap services.
+
+- Edit /opt/ptsp/etc/pts-client.conf file to set server's ip address. (Use ConfigParser to set this.)Also change ip addresses in dhcpd.conf and system.pa files.
