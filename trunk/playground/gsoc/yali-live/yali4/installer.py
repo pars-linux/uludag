@@ -624,7 +624,7 @@ class Yali:
 
         if os.path.exists(install_additional_file):
             ctx.debugger.log("Found additional.tar.lzma")
-            os.system("/bin/tar -xJf %s -C %s" %(install_additional_file, consts.target_dir))
+            os.system("/bin/tar -xaf %s -C %s" %(install_additional_file, consts.target_dir))
             return True  
  
 
