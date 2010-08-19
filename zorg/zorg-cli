@@ -94,8 +94,12 @@ if __name__ == "__main__":
         setDriver(opts.driver)
 
     elif opts.keymap:
-        keymap = opts.keymap.split("/", 1)
-        link.Xorg.Display["zorg"].setKeymap(*keymap)
+        if "/" in opts.keymap:
+            layout, variant = opts.keymap.split("/", 1)
+        else:
+            layout, variant = opts.keymap, ""
+
+        link.Xorg.Display["zorg"].setKeymap(layout, variant)
 
     else:
         parser.print_help()
