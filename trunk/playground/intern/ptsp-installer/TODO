@@ -1,7 +1,6 @@
 Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
-- Install dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages to server.
-(installing only ptsp-server is sufficient, others are ptsp-server's dependency.)
+- Check dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages. If isnt installed, terminate script.
 
 - Create a network profile and activate this. If already there is a profile for this, only activate the profile.
 
