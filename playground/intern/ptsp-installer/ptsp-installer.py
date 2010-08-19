@@ -2,12 +2,18 @@
 # -*- coding: utf-8 -*-
 
 from pisi import api
+from comar import service
 
-PackageList=["dhcp", \
-             "tftp", \
-             "ltspfs", \
-             "perl-X11-Protocol", \
-             "ptsp-server"]
+PackageList = ["dhcp", \
+               "tftp", \
+               "ltspfs", \
+               "perl-X11-Protocol", \
+               "ptsp-server"]
+
+ServicesList = ["dhcpd", \
+                "tftpd", \
+                "nfs-utils", \
+                "portmap"]
 
 def CheckPackages():
 
@@ -29,8 +35,33 @@ def CheckPackages():
         raise SystemExit
 
     else:
-        print "Check Successful."
+        print "\nCheck Successful."
         print "-"*30 + "\n"
 
+def StartServices():
+
+    #FIXME: Failed to start services.
+    try:
+        for curservice in ServicesList:
+            if not service.isServiceRunning('%s' % curservice):
+                service.startService('%s' % curservice)
+    except:
+        print "Failed to start %s service" % curservice
+        raise SystemExit
+
+def CreateNetworkProfile(ip, netmask, gateway):
+    #FIXME: Unable to import comar.network
+    pass
+
 if __name__ == "__main__":
+
     CheckPackages()
+
+#    if raw_input("Do you want to create new network profile \
+#or use an existing one[Y/N]: ") == 'Y':
+#        ip = raw_input("Enter Ip Address: ")
+#        netmask = raw_input("Enter Netmask Address: ")
+#        gateway = raw_input("Enter Gateway Address: ")
+#        CreateNetworkProfile(ip, netmask, gateway)
+
+#    StartServices()
