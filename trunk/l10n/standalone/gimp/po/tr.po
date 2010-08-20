@@ -181,9 +181,8 @@ msgid "Context"
 msgstr "Dönüştür"
 
 #: ../app/actions/actions.c:112 ../app/dialogs/dialogs.c:138
-#, fuzzy
 msgid "Cursor Info"
-msgstr "Eğriler"
+msgstr "İmleç Bilgisi"
 
 #: ../app/actions/actions.c:115
 msgid "Debug"
@@ -289,9 +288,8 @@ msgid "QuickMask"
 msgstr "HızlıMaske"
 
 #: ../app/actions/actions.c:178 ../app/dialogs/dialogs.c:194
-#, fuzzy
 msgid "Sample Points"
-msgstr "punto"
+msgstr "Örnek Noktalar"
 
 #: ../app/actions/actions.c:181
 msgid "Select"
@@ -331,14 +329,12 @@ msgid "Brushes Menu"
 msgstr "Fırçalar Menüsü"
 
 #: ../app/actions/brushes-actions.c:47
-#, fuzzy
 msgid "_Open Brush as Image"
-msgstr "Resim _Aç"
+msgstr "Görsel Olarak Fırçayı _Aç"
 
 #: ../app/actions/brushes-actions.c:48
-#, fuzzy
 msgid "Open brush as image"
-msgstr "Resim Aç"
+msgstr "Görsel olarak fırçayı aç"
 
 #: ../app/actions/brushes-actions.c:53
 msgid "_New Brush"
@@ -393,34 +389,28 @@ msgid "Paste the selected buffer"
 msgstr "Seçili tamponu yapıştır"
 
 #: ../app/actions/buffers-actions.c:52
-#, fuzzy
 msgid "Paste Buffer _Into"
-msgstr "İçine Yapıştır"
+msgstr ""
 
 #: ../app/actions/buffers-actions.c:53
-#, fuzzy
 msgid "Paste the selected buffer into the selection"
-msgstr "Katmanı ya da seçimi döndür"
+msgstr "Seçilen tamponu seçenek içine yapıştır"
 
 #: ../app/actions/buffers-actions.c:58
-#, fuzzy
 msgid "Paste Buffer as _New"
-msgstr "Yeniye Yapıştır"
+msgstr "Tamponu _Yeniye Yapıştır"
 
 #: ../app/actions/buffers-actions.c:59
-#, fuzzy
 msgid "Paste the selected buffer as new image"
-msgstr "Seçili filtreleri öntanımlı değerlerine geri al"
+msgstr "Seçili tamponu yeni görsel olarak yapıştır"
 
 #: ../app/actions/buffers-actions.c:64
-#, fuzzy
 msgid "_Delete Buffer"
-msgstr "/T_amponu Sil"
+msgstr "Tamponu _Sil"
 
 #: ../app/actions/buffers-actions.c:65
-#, fuzzy
 msgid "Delete the selected buffer"
-msgstr "Seçili girişi dizinden çıkar"
+msgstr "Seçili tamponu sil"
 
 #: ../app/actions/channels-actions.c:44
 msgid "Channels Menu"
