@@ -1,7 +1,7 @@
 ===============
  Package Names
 ===============
-:Date: $Date: 2010-06-28 11:30:00 +0200 (Mon, 28 Jun 2010) $
+:Date: $Date: 2010-08-20 15:15:00 +0200 (Fri, 20 Aug 2010) $
 
 .. contents::
 
@@ -221,6 +221,15 @@ Example::
 
     kwin-decoration-aurorae
 
+Latex Packages
+==============
+
+Latex packages must have a prefix of "latex-" in their names.
+
+Example::
+
+    latex-mh: Additional LaTeX math tools
+
 NSS Modules
 ===========
 
@@ -240,6 +249,15 @@ is already used by many of the upstream maintainers.
 Example::
 
     pam_ldap: PAM module for LDAP authentication
+
+Pear Packages
+==============
+
+Pear packages must have a prefix of "PEAR-" in their names.
+
+Example::
+
+    PEAR-Net_Socket: Network Socket Interface
 
 Perl Modules
 ============
@@ -288,13 +306,3 @@ TeX packages must have a prefix of "tex-" in their names.
 Example::
 
     tex-basic: TeXLive Essential programs and files
-
-Latex Packages
-==============
-
-Latex packages must have a prefix of "latex-" in their names.
-
-Example::
-
-    latex-mh: Additional LaTeX math tools
-
