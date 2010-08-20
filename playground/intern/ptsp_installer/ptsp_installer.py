@@ -112,21 +112,45 @@ def start_services():
         print "Failed to start %s service" % service
         raise SystemExit
 
-def create_network_profile(ip, netmask, gateway):
-    """ Create a network profile to use. """
-    #FIXME: Unable to import comar.network
-    pass
+def select_network_device():
+    i = 1
+    print "Select a Network Device to use"
+    link = comar.Link()
+    info = link.Network.Link["net_tools"].linkInfo()
+    devices = link.Network.Link["net_tools"].deviceList().values()
+    if len(devices) > 0:
+        print "%s devices" % info["name"]
+        for d in devices:
+            print "[%s]  %s" % (i, d)
+            i=i+1
+    selected_device = input("Device: ")
+    return devices[selected_device-1]
+
+def select_network_profile():
+    """ Show network profile to use. """
+
+    link = comar.Link()
+    device = select_network_device()
+    if device in link.Network.Link["net_tools"].deviceList():
+        for connection in link.Network.Link["net_tools"].connections():
+            info = link.Network.Link["net_tools"].connectionInfo(connection)
+            #TODO: List Network Profiles and Select one of them.
 
 if __name__ == "__main__":
 
     check_packages()
 
-#    if raw_input("Do you want to create new network profile \
-#or use an existing one[Y/N]: ") == 'Y':
-#        ipaddr = raw_input("Enter Ip Address: ")
-#        netmask = raw_input("Enter Netmask Address: ")
-#        gateway = raw_input("Enter Gateway Address: ")
-#        create_network_profile(ipaddr, netmask, gateway)
+    create_profile = raw_input("Do you want to create new network profile \
+or use an existing one[Y/N]: ")
+    if create_profile  == 'Y' or create_profile == 'y':
+        ipaddr = raw_input("Enter Ip Address: ")
+        netmask = raw_input("Enter Netmask Address: ")
+        gateway = raw_input("Enter Gateway Address: ")
+        nameserver = raw_input("Nameserver Address (write 'default' to use \
+default nameservers) : ")
+    elif create_profile == 'N' or create_profile == 'n':
+        select_network_profile()
 
     kdmrc_update()
+
     start_services()
