@@ -2,7 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from pisi import api
-from comar import service
+import comar
+import shutil
 
 PackageList = ["dhcp", \
                "tftp", \
@@ -14,6 +15,28 @@ ServicesList = ["dhcpd", \
                 "tftpd", \
                 "nfs-utils", \
                 "portmap"]
+
+
+import re
+
+def setKey(section, key, value, rc):
+    sectionEscaped = re.escape(section)
+
+    if not re.compile('^%s$' % sectionEscaped, re.MULTILINE).search(rc):
+        print "setKey failed, '%s' section not found in kdmrc." % section
+        return False
+
+    result = re.compile('^%s=(.*)$' % key, re.MULTILINE)
+    if result.search(rc):
+        return result.sub('%s=%s' % (key, value), rc)
+
+    result = re.compile('^#%s=(.*)$' % key, re.MULTILINE)
+    if result.search(rc):
+        return result.sub('%s=%s' % (key, value), rc)
+
+    # If key can not be found, insert key=value right below the section
+    return re.compile('^%s$' % sectionEscaped, re.MULTILINE).sub("%s\n%s=%s" % \
+                                                            (section, key, value), rc)
 
 def CheckPackages():
 
@@ -38,13 +61,40 @@ def CheckPackages():
         print "\nCheck Successful."
         print "-"*30 + "\n"
 
+def KdmrcUpdate():
+
+    KdmrcPath = "/etc/X11/kdm/kdmrc"
+    fp = open(KdmrcPath, "r")
+    import ConfigParser
+    KdmrcConfig = ConfigParser.ConfigParser()
+    KdmrcConfig.readfp(fp)
+    if KdmrcConfig.get("Xdmcp", "Enable") == "true":
+        print "Kdmrc is OK, no need for update this file."
+        return
+
+    shutil.copyfile(KdmrcPath, "%s.orig" % KdmrcPath)
+    KdmrcFile = fp.read()
+    NewKdmrcFile = setKey("[Xdmcp]", "Enable", "true", KdmrcFile)
+    fp.close()
+    if not NewKdmrcFile:
+        print "Error while updating kdmrc file"
+        shutil.copyfile("%s.orig" % KdmrcPath, KdmrcPath)
+        raise SystemExit
+
+    fp = open("/etc/X11/kdm/kdmrc", "w")
+    fp.writelines(NewKdmrcFile)
+    fp.close()
+
+    print "Kdmrc has successfully updated. Please restart X server \
+to apply changes.\n"
+
 def StartServices():
 
-    #FIXME: Failed to start services.
     try:
         for curservice in ServicesList:
-            if not service.isServiceRunning('%s' % curservice):
-                service.startService('%s' % curservice)
+            pass
+            #TODO: Start services, stop it if service is running
+
     except:
         print "Failed to start %s service" % curservice
         raise SystemExit
@@ -65,3 +115,4 @@ if __name__ == "__main__":
 #        CreateNetworkProfile(ip, netmask, gateway)
 
 #    StartServices()
+    KdmrcUpdate()
