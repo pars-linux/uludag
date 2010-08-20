@@ -6,7 +6,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 - Edit /etc/dhcp/dhcpd.conf file. Select correct DHCPD_IFACE (network interface, e.g. eth0), edit this file carefully.
 
-- Edit /etc/X11/kdm/kdmrc file. Using ConfigParser may make this step too easy. After that warn user to restart X server.
++ Edit /etc/X11/kdm/kdmrc file. Warn user to restart X.
 
 - Edit /etc/exports file.
 
