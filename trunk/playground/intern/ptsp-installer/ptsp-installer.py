@@ -11,8 +11,8 @@ PackageList = ["dhcp", \
                "perl-X11-Protocol", \
                "ptsp-server"]
 
-ServicesList = ["dhcpd", \
-                "tftpd", \
+ServicesList = ["dhcp", \
+                "tftp", \
                 "nfs-utils", \
                 "portmap"]
 
@@ -69,7 +69,7 @@ def KdmrcUpdate():
     KdmrcConfig = ConfigParser.ConfigParser()
     KdmrcConfig.readfp(fp)
     if KdmrcConfig.get("Xdmcp", "Enable") == "true":
-        print "Kdmrc is OK, no need for update this file."
+        print "Kdmrc is OK, no need for update this file.\n"
         return
 
     shutil.copyfile(KdmrcPath, "%s.orig" % KdmrcPath)
@@ -90,13 +90,18 @@ to apply changes.\n"
 
 def StartServices():
 
+    link = comar.Link()
     try:
-        for curservice in ServicesList:
-            pass
-            #TODO: Start services, stop it if service is running
+        for service in ServicesList:
+            if link.System.Service[service].info()[2].find("on") != -1 or \
+                    link.System.Service[service].info()[2].find("started") != -1:
+                        link.System.Service[service].stop()
+            link.System.Service[service].start()
+
+            print "Service: %s has successfully started.\n" % service
 
     except:
-        print "Failed to start %s service" % curservice
+        print "Failed to start %s service" % service
         raise SystemExit
 
 def CreateNetworkProfile(ip, netmask, gateway):
@@ -114,5 +119,5 @@ if __name__ == "__main__":
 #        gateway = raw_input("Enter Gateway Address: ")
 #        CreateNetworkProfile(ip, netmask, gateway)
 
-#    StartServices()
     KdmrcUpdate()
+    StartServices()

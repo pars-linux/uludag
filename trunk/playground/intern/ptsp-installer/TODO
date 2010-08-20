@@ -18,7 +18,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 - Optimizing Firefox, disable caching pixmaps.
 
-/ Start dhcp, tftp, nfs-utils and portmap services.
++ Start dhcp, tftp, nfs-utils and portmap services.
 
 - Edit /opt/ptsp/etc/pts-client.conf file to set server's ip address. (Use ConfigParser to set this.)Also change ip addresses in dhcpd.conf and system.pa files.
 
