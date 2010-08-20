@@ -4,7 +4,7 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2001.
 # Alper Ersoy <aersoy@tfz.net>, 2001.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: gimp.gimp-2-0\n"
@@ -33,8 +33,7 @@ msgstr ""
 msgid ""
 "Unable to open a test swap file.\n"
 "\n"
-"To avoid data loss, please check the location and permissions of the swap "
-"directory defined in your Preferences (currently \"%s\")."
+"To avoid data loss, please check the location and permissions of the swap directory defined in your Preferences (currently \"%s\")."
 msgstr ""
 
 #: ../app/app_procs.c:334 ../app/core/gimppalette-import.c:449
@@ -56,89 +55,74 @@ msgid "Be more verbose"
 msgstr "Daha çok bilgi ver"
 
 #: ../app/main.c:131
-#, fuzzy
 msgid "Run without a user interface"
-msgstr "  -i, --no-interface       Kullanıcı arayüzü olmadan çalış.\n"
+msgstr "Kullanıcı arayüzü olmadan çalıştır."
 
 #: ../app/main.c:136
-#, fuzzy
 msgid "Do not load brushes, gradients, patterns, ..."
-msgstr ""
-"  -d, --no-data            Fırçaları, gradyanları, paletleri, desenleri "
-"yükleme.\n"
+msgstr "Fırça, desen ve gradyantları yüklemeyin."
 
 #: ../app/main.c:141
 msgid "Do not load any fonts"
-msgstr ""
+msgstr "Herhangi bir fontu yüklemeyin."
 
 #: ../app/main.c:146
-#, fuzzy
 msgid "Do not show a startup window"
-msgstr "  -s, --no-splash          Açılış penceresini gösterme.\n"
+msgstr "Başlangıç penceresini göstermeyin."
 
 #: ../app/main.c:151
 msgid "Do not use shared memory between GIMP and plugins"
-msgstr ""
+msgstr "GIMP ve eklentileri arasında paylaşımlı bellek kullanmayın."
 
 #: ../app/main.c:156
-#, fuzzy
 msgid "Do not use special CPU acceleration functions"
-msgstr "  --no-xshm                X Shared Memory uzantısını kullanma.\n"
+msgstr "Özel merkezi işlem birimi hızlandırıcı fonksiyonlarını kullanmayın."
 
 #: ../app/main.c:161
-#, fuzzy
 msgid "Use an alternate sessionrc file"
-msgstr "  -g, --gimprc <gimprc>    Alternatif gimprc dosyasını yükle.\n"
+msgstr "Alternatif bir sessionrc dosyası kullanın."
 
 #: ../app/main.c:166
-#, fuzzy
 msgid "Use an alternate user gimprc file"
-msgstr ""
-"  --system-gimprc <gimprc> Alternatif sistem gimprc dosyasını kullan.\n"
+msgstr "Alternatif bir kullanıcı gimprc dosyası kullanın."
 
 #: ../app/main.c:171
-#, fuzzy
 msgid "Use an alternate system gimprc file"
-msgstr ""
-"  --system-gimprc <gimprc> Alternatif sistem gimprc dosyasını kullan.\n"
+msgstr "Alternatif bir sistem gimprc dosyası kullan."
 
 #: ../app/main.c:176
 msgid "Batch command to run (can be used multiple times)"
-msgstr ""
+msgstr "Çalıştırmak için yığın komutu (çoklu kere kullanılabilir.)"
 
 #: ../app/main.c:181
 msgid "The procedure to process batch commands with"
-msgstr ""
+msgstr "Yığın komutunu birlikte işletmek için yöntem"
 
 #: ../app/main.c:186
-#, fuzzy
 msgid "Send messages to console instead of using a dialog"
-msgstr "  -c, --console-messages   Uyarıları pencere yerine konsolda göster.\n"
+msgstr "İleti kullanmak yerine konsola mesaj gönderin."
 
 #. don't translate the mode names (off|on|warn)
 #: ../app/main.c:192
 msgid "PDB compatibility mode (off|on|warn)"
-msgstr ""
+msgstr "PDB uyumluluk modu (kapalı|açık|ikaz durumu)"
 
 #. don't translate the mode names (never|query|always)
 #: ../app/main.c:198
 msgid "Debug in case of a crash (never|query|always)"
-msgstr ""
+msgstr "Kırılma karşılaşılması durumunda hata ayıklama (Hiçbir zaman | sorgulama|daima)"
 
 #: ../app/main.c:203
-#, fuzzy
 msgid "Enable non-fatal debugging signal handlers"
-msgstr ""
-"  --debug-handlers         Hayati olmayan hata ayıklama sinyali "
-"işleyicilerini kullan.\n"
+msgstr "Hayati olmayan hata ayıklama sinyali işleyicilerini kullan."
 
 #: ../app/main.c:208
 msgid "Make all warnings fatal"
-msgstr ""
+msgstr "Tüm uyarıları hayati hata yap."
 
 #: ../app/main.c:213
 msgid "Output a gimprc file with default settings"
-msgstr ""
+msgstr "Ön tanımlı ayalarla bir gimprc dosya çıkışı."
 
 #: ../app/main.c:248 ../app/widgets/gimptoolbox.c:566
 msgid "The GIMP"
@@ -166,12 +150,9 @@ msgstr ""
 #: ../app/sanity.c:211
 #, c-format
 msgid ""
-"The name of the directory holding the GIMP user configuration cannot be "
-"converted to UTF-8: %s\n"
+"The name of the directory holding the GIMP user configuration cannot be converted to UTF-8: %s\n"
 "\n"
-"Your filesystem probably stores files in an encoding other than UTF-8 and "
-"you didn't tell GLib about this. Please set the environment variable "
-"G_FILENAME_ENCODING."
+"Your filesystem probably stores files in an encoding other than UTF-8 and you didn't tell GLib about this. Please set the environment variable G_FILENAME_ENCODING."
 msgstr ""
 
 #. initialize the list of gimp brushes
@@ -768,8 +749,7 @@ msgstr "Nesneyi Sil"
 #: ../app/actions/data-commands.c:219
 #, c-format
 msgid "Are you sure you want to delete '%s' from the list and from disk?"
-msgstr ""
-"\"%s\"yi hem listeden, hem de diskten silmek istediğinize emin misiniz?"
+msgstr "\"%s\"yi hem listeden, hem de diskten silmek istediğinize emin misiniz?"
 
 #: ../app/actions/dialogs-actions.c:38
 msgid "_Dialogs"
@@ -1109,9 +1089,7 @@ msgid "Remove all entries from the document history?"
 msgstr ""
 
 #: ../app/actions/documents-commands.c:235
-msgid ""
-"Clearing the document history will permanently remove all currently listed "
-"entries."
+msgid "Clearing the document history will permanently remove all currently listed entries."
 msgstr ""
 
 #: ../app/actions/drawable-actions.c:45
@@ -1465,9 +1443,7 @@ msgstr ""
 
 #: ../app/actions/file-commands.c:351
 #, fuzzy
-msgid ""
-"By reverting the image to the state saved on disk, you will lose all "
-"changes, including all undo information."
+msgid "By reverting the image to the state saved on disk, you will lose all changes, including all undo information."
 msgstr ""
 "%s, %s olarak geri alınıyor.\n"
 "\n"
@@ -2839,8 +2815,7 @@ msgstr "/Katmanı Sil"
 
 #: ../app/actions/templates-commands.c:247
 #, fuzzy, c-format
-msgid ""
-"Are you sure you want to delete template '%s' from the list and from disk?"
+msgid "Are you sure you want to delete template '%s' from the list and from disk?"
 msgstr ""
 "\"%s\"yi hem listeden hem diskten silmek\n"
 "istediğinize emin misiniz?"
@@ -2962,8 +2937,7 @@ msgstr "Alet Seçeneklerini Sıfırla"
 
 #: ../app/actions/tool-options-commands.c:213
 msgid "Do you really want to reset all tool options to default values?"
-msgstr ""
-"Tüm alet seçeneklerini öntanımlı değerlerine geri almak istiyor musunuz?"
+msgstr "Tüm alet seçeneklerini öntanımlı değerlerine geri almak istiyor musunuz?"
 
 #: ../app/actions/tools-actions.c:47
 msgid "Tools Menu"
@@ -3625,11 +3599,7 @@ msgid "Color erase"
 msgstr "Renk Paleti"
 
 #: ../app/base/tile-swap.c:482
-msgid ""
-"Unable to open swap file. The Gimp has run out of memory and cannot use the "
-"swap file. Some parts of your images may be corrupted. Try to save your work "
-"using different filenames, restart the Gimp and check the location of the "
-"swap directory in your Preferences."
+msgid "Unable to open swap file. The Gimp has run out of memory and cannot use the swap file. Some parts of your images may be corrupted. Try to save your work using different filenames, restart the Gimp and check the location of the swap directory in your Preferences."
 msgstr ""
 
 #: ../app/config/gimpconfig-file.c:66 ../app/core/gimpbrushgenerated.c:254
@@ -3654,9 +3624,7 @@ msgstr "Dosya %s açılamadı: %s"
 
 #: ../app/config/gimpconfig-file.c:130
 #, c-format
-msgid ""
-"There was an error parsing your '%s' file. Default values will be used. A "
-"backup of your configuration has been created at '%s'."
+msgid "There was an error parsing your '%s' file. Default values will be used. A backup of your configuration has been created at '%s'."
 msgstr ""
 
 #: ../app/config/gimprc.c:296 ../app/config/gimprc.c:309
@@ -3672,12 +3640,9 @@ msgstr "'%s' kaydediliyor\n"
 #. Not all strings defined here are used in the user interface
 #. *  (the preferences dialog mainly) and only those that are should
 #. *  be marked for translation.
-#.
+#. 
 #: ../app/config/gimprc-blurbs.h:13
-msgid ""
-"When enabled, an image will become the active image when its image window "
-"receives the focus. This is useful for window managers using \"click to focus"
-"\"."
+msgid "When enabled, an image will become the active image when its image window receives the focus. This is useful for window managers using \"click to focus\"."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:23
@@ -3685,9 +3650,7 @@ msgid "Specifies how the area around the image should be drawn."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:26
-msgid ""
-"Sets the canvas padding color used if the padding mode is set to custom "
-"color."
+msgid "Sets the canvas padding color used if the padding mode is set to custom color."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:33
@@ -3703,15 +3666,11 @@ msgid "Sets the mode of cursor the GIMP will use."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:42
-msgid ""
-"Context-dependent cursors are cool.  They are enabled by default. However, "
-"they require overhead that you may want to do without."
+msgid "Context-dependent cursors are cool.  They are enabled by default. However, they require overhead that you may want to do without."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:50
-msgid ""
-"When enabled, this will ensure that each pixel of an image gets mapped to a "
-"pixel on the screen."
+msgid "When enabled, this will ensure that each pixel of an image gets mapped to a pixel on the screen."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:76
@@ -3719,18 +3678,11 @@ msgid "This is the distance in pixels where Guide and Grid snapping activates."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:80
-msgid ""
-"Tools such as fuzzy-select and bucket fill find regions based on a seed-fill "
-"algorithm.  The seed fill starts at the initially selected pixel and "
-"progresses in all directions until the difference of pixel intensity from "
-"the original is greater than a specified threshold. This value represents "
-"the default threshold."
+msgid "Tools such as fuzzy-select and bucket fill find regions based on a seed-fill algorithm.  The seed fill starts at the initially selected pixel and progresses in all directions until the difference of pixel intensity from the original is greater than a specified threshold. This value represents the default threshold."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:93
-msgid ""
-"The window type hint that is set on dock windows. This may affect the way "
-"your window manager decorates and handles dock windows."
+msgid "The window type hint that is set on dock windows. This may affect the way your window manager decorates and handles dock windows."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:124
@@ -3758,19 +3710,15 @@ msgid "Sets the text to appear in image window titles."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:161
-msgid ""
-"When enabled, this will ensure that the full image is visible after a file "
-"is opened, otherwise it will be displayed with a scale of 1:1."
+msgid "When enabled, this will ensure that the full image is visible after a file is opened, otherwise it will be displayed with a scale of 1:1."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:165
-msgid ""
-"Install a private colormap; might be useful on 8-bit (256 colors) displays."
+msgid "Install a private colormap; might be useful on 8-bit (256 colors) displays."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:168
-msgid ""
-"Sets the level of interpolation used for scaling and other transformations."
+msgid "Sets the level of interpolation used for scaling and other transformations."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:175
@@ -3778,15 +3726,11 @@ msgid "How many recently opened image filenames to keep on the File menu."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:178
-msgid ""
-"Speed of marching ants in the selection outline.  This value is in "
-"milliseconds (less time indicates faster marching)."
+msgid "Speed of marching ants in the selection outline.  This value is in milliseconds (less time indicates faster marching)."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:182
-msgid ""
-"GIMP will warn the user if an attempt is made to create an image that would "
-"take more memory than the size specified here."
+msgid "GIMP will warn the user if an attempt is made to create an image that would take more memory than the size specified here."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:186
@@ -3794,76 +3738,47 @@ msgid "When enabled, GIMP will show mnemonics in menus."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:189
-msgid ""
-"Generally only a concern for 8-bit displays, this sets the minimum number of "
-"system colors allocated for the GIMP."
+msgid "Generally only a concern for 8-bit displays, this sets the minimum number of system colors allocated for the GIMP."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:200
-msgid ""
-"Sets the monitor's horizontal resolution, in dots per inch.  If set to 0, "
-"forces the X server to be queried for both horizontal and vertical "
-"resolution information."
+msgid "Sets the monitor's horizontal resolution, in dots per inch.  If set to 0, forces the X server to be queried for both horizontal and vertical resolution information."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:205
-msgid ""
-"Sets the monitor's vertical resolution, in dots per inch.  If set to 0, "
-"forces the X server to be queried for both horizontal and vertical "
-"resolution information."
+msgid "Sets the monitor's vertical resolution, in dots per inch.  If set to 0, forces the X server to be queried for both horizontal and vertical resolution information."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:210
-msgid ""
-"If enabled, the move tool changes the active layer or path when a layer or "
-"path is being picked. This used to be the default behaviour in older "
-"versions."
+msgid "If enabled, the move tool changes the active layer or path when a layer or path is being picked. This used to be the default behaviour in older versions."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:215
-msgid ""
-"Sets the size of the navigation preview available in the lower right corner "
-"of the image window."
+msgid "Sets the size of the navigation preview available in the lower right corner of the image window."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:219
-msgid ""
-"On multiprocessor machines, if GIMP has been compiled with --enable-mp this "
-"sets how many processors GIMP should use simultaneously."
+msgid "On multiprocessor machines, if GIMP has been compiled with --enable-mp this sets how many processors GIMP should use simultaneously."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:233
-msgid ""
-"When enabled, the X server is queried for the mouse's current position on "
-"each motion event, rather than relying on the position hint.  This means "
-"painting with large brushes should be more accurate, but it may be slower.  "
-"Perversely, on some X servers enabling this option results in faster "
-"painting."
+msgid "When enabled, the X server is queried for the mouse's current position on each motion event, rather than relying on the position hint.  This means painting with large brushes should be more accurate, but it may be slower.  Perversely, on some X servers enabling this option results in faster painting."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:246
-msgid ""
-"Sets whether GIMP should create previews of layers and channels. Previews in "
-"the layers and channels dialog are nice to have but they can slow things "
-"down when working with large images."
+msgid "Sets whether GIMP should create previews of layers and channels. Previews in the layers and channels dialog are nice to have but they can slow things down when working with large images."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:251
-msgid ""
-"Sets the preview size used for layers and channel previews in newly created "
-"dialogs."
+msgid "Sets the preview size used for layers and channel previews in newly created dialogs."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:255
-msgid ""
-"When enabled, the image window will automatically resize itself whenever the "
-"physical image size changes."
+msgid "When enabled, the image window will automatically resize itself whenever the physical image size changes."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:259
-msgid ""
-"When enabled, the image window will automatically resize itself when zooming "
-"into and out of images."
+msgid "When enabled, the image window will automatically resize itself when zooming into and out of images."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:263
@@ -3871,8 +3786,7 @@ msgid "Let GIMP try to restore your last saved session on each startup."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:266
-msgid ""
-"Remember the current tool, pattern, color, and brush across GIMP sessions."
+msgid "Remember the current tool, pattern, color, and brush across GIMP sessions."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:270
@@ -3884,82 +3798,53 @@ msgid "Save the tool options when the GIMP exits."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:279
-msgid ""
-"When enabled, all paint tools will show a preview of the current brush's "
-"outline."
+msgid "When enabled, all paint tools will show a preview of the current brush's outline."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:283
-msgid ""
-"When enabled, dialogs will show a help button that gives access to the "
-"related help page.  Without this button, the help page can still be reached "
-"by pressing F1."
+msgid "When enabled, dialogs will show a help button that gives access to the related help page.  Without this button, the help page can still be reached by pressing F1."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:288
-msgid ""
-"When enabled, the cursor will be shown over the image while using a paint "
-"tool."
+msgid "When enabled, the cursor will be shown over the image while using a paint tool."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:292
-msgid ""
-"When enabled, the menubar is visible by default. This can also be toggled "
-"with the \"View->Show Menubar\" command."
+msgid "When enabled, the menubar is visible by default. This can also be toggled with the \"View->Show Menubar\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:296
-msgid ""
-"When enabled, the rulers are visible by default. This can also be toggled "
-"with the \"View->Show Rulers\" command."
+msgid "When enabled, the rulers are visible by default. This can also be toggled with the \"View->Show Rulers\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:300
-msgid ""
-"When enabled, the scrollbars are visible by default. This can also be "
-"toggled with the \"View->Show Scrollbars\" command."
+msgid "When enabled, the scrollbars are visible by default. This can also be toggled with the \"View->Show Scrollbars\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:304
-msgid ""
-"When enabled, the statusbar is visible by default. This can also be toggled "
-"with the \"View->Show Statusbar\" command."
+msgid "When enabled, the statusbar is visible by default. This can also be toggled with the \"View->Show Statusbar\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:308
-msgid ""
-"When enabled, the selection is visible by default. This can also be toggled "
-"with the \"View->Show Selection\" command."
+msgid "When enabled, the selection is visible by default. This can also be toggled with the \"View->Show Selection\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:312
-msgid ""
-"When enabled, the layer boundary is visible by default. This can also be "
-"toggled with the \"View->Show Layer Boundary\" command."
+msgid "When enabled, the layer boundary is visible by default. This can also be toggled with the \"View->Show Layer Boundary\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:316
-msgid ""
-"When enabled, the guides are visible by default. This can also be toggled "
-"with the \"View->Show Guides\" command."
+msgid "When enabled, the guides are visible by default. This can also be toggled with the \"View->Show Guides\" command."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:320
-msgid ""
-"When enabled, the grid is visible by default. This can also be toggled with "
-"the \"View->Show Grid\" command."
-msgstr ""
-"Eğer etkinleştirilirse kılavuz çizgileri görüntülenir. Bu işlem aynı zamanda "
-"\"Görüntüle - Kılavuzu Göster\" komutuyla da yapılabilir."
+msgid "When enabled, the grid is visible by default. This can also be toggled with the \"View->Show Grid\" command."
+msgstr "Eğer etkinleştirilirse kılavuz çizgileri görüntülenir. Bu işlem aynı zamanda \"Görüntüle - Kılavuzu Göster\" komutuyla da yapılabilir."
 
 #: ../app/config/gimprc-blurbs.h:324
 #, fuzzy
-msgid ""
-"When enabled, the sample points are visible by default. This can also be "
-"toggled with the \"View->Show Sample Points\" command."
-msgstr ""
-"Eğer etkinleştirilirse kılavuz çizgileri görüntülenir. Bu işlem aynı zamanda "
-"\"Görüntüle - Kılavuzu Göster\" komutuyla da yapılabilir."
+msgid "When enabled, the sample points are visible by default. This can also be toggled with the \"View->Show Sample Points\" command."
+msgstr "Eğer etkinleştirilirse kılavuz çizgileri görüntülenir. Bu işlem aynı zamanda \"Görüntüle - Kılavuzu Göster\" komutuyla da yapılabilir."
 
 #: ../app/config/gimprc-blurbs.h:328
 #, fuzzy
@@ -3971,13 +3856,7 @@ msgid "Enable tooltips display."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:334
-msgid ""
-"Sets the swap file location. The GIMP uses a tile based memory allocation "
-"scheme. The swap file is used to quickly and easily swap tiles out to disk "
-"and back in. Be aware that the swap file can easily get very large if the "
-"GIMP is used with large images. Also, things can get horribly slow if the "
-"swap file is created on a directory that is mounted over NFS.  For these "
-"reasons, it may be desirable to put your swap file in \"/tmp\"."
+msgid "Sets the swap file location. The GIMP uses a tile based memory allocation scheme. The swap file is used to quickly and easily swap tiles out to disk and back in. Be aware that the swap file can easily get very large if the GIMP is used with large images. Also, things can get horribly slow if the swap file is created on a directory that is mounted over NFS.  For these reasons, it may be desirable to put your swap file in \"/tmp\"."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:343
@@ -3985,16 +3864,11 @@ msgid "When enabled, menus can be torn off."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:346
-msgid ""
-"When enabled, dock windows (the toolbox and palettes) are set to be "
-"transient to the active image window. Most window managers will keep the "
-"dock windows above the image window then, but it may also have other effects."
+msgid "When enabled, dock windows (the toolbox and palettes) are set to be transient to the active image window. Most window managers will keep the dock windows above the image window then, but it may also have other effects."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:352
-msgid ""
-"When enabled, you can change keyboard shortcuts for menu items by hitting a "
-"key combination while the menu item is highlighted."
+msgid "When enabled, you can change keyboard shortcuts for menu items by hitting a key combination while the menu item is highlighted."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:356
@@ -4006,37 +3880,23 @@ msgid "Restore saved keyboard shortcuts on each GIMP startup."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:362
-msgid ""
-"Sets the temporary storage directory. Files will appear here during the "
-"course of running the GIMP.  Most files will disappear when the GIMP exits, "
-"but some files are likely to remain, so it is best if this directory not be "
-"one that is shared by other users."
+msgid "Sets the temporary storage directory. Files will appear here during the course of running the GIMP.  Most files will disappear when the GIMP exits, but some files are likely to remain, so it is best if this directory not be one that is shared by other users."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:374
-msgid ""
-"Sets the size of the thumbnail shown in the Open dialog. Note that GIMP can "
-"not create thumbnails if layer previews are disabled."
+msgid "Sets the size of the thumbnail shown in the Open dialog. Note that GIMP can not create thumbnails if layer previews are disabled."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:378
-msgid ""
-"The thumbnail in the Open dialog will be automatically updated if the file "
-"being previewed is smaller than the size set here."
+msgid "The thumbnail in the Open dialog will be automatically updated if the file being previewed is smaller than the size set here."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:382
-msgid ""
-"The tile cache is used to make sure the GIMP doesn't thrash tiles between "
-"memory and disk. Setting this value higher will cause the GIMP to use less "
-"swap space, but will also cause the GIMP to use more memory. Conversely, a "
-"smaller cache size causes the GIMP to use more swap space and less memory."
+msgid "The tile cache is used to make sure the GIMP doesn't thrash tiles between memory and disk. Setting this value higher will cause the GIMP to use less swap space, but will also cause the GIMP to use more memory. Conversely, a smaller cache size causes the GIMP to use more swap space and less memory."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:393
-msgid ""
-"The window type hint that is set on the toolbox. This may affect how your "
-"window manager decorates and handles the toolbox window."
+msgid "The window type hint that is set on the toolbox. This may affect how your window manager decorates and handles the toolbox window."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:397
@@ -4048,22 +3908,15 @@ msgid "Sets the size of the checkerboard used to display transparency."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:403
-msgid ""
-"When enabled, the GIMP will not save an image if it has not been changed "
-"since it was opened."
+msgid "When enabled, the GIMP will not save an image if it has not been changed since it was opened."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:407
-msgid ""
-"Sets the minimal number of operations that can be undone. More undo levels "
-"are kept available until the undo-size limit is reached."
+msgid "Sets the minimal number of operations that can be undone. More undo levels are kept available until the undo-size limit is reached."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:411
-msgid ""
-"Sets an upper limit to the memory that is used per image to keep operations "
-"on the undo stack. Regardless of this setting, at least as many undo-levels "
-"as configured can be undone."
+msgid "Sets an upper limit to the memory that is used per image to keep operations on the undo stack. Regardless of this setting, at least as many undo-levels as configured can be undone."
 msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:416
@@ -4076,11 +3929,7 @@ msgstr ""
 
 #: ../app/config/gimprc-blurbs.h:422
 #, c-format
-msgid ""
-"Sets the external web browser to be used.  This can be an absolute path or "
-"the name of an executable to search for in the user's PATH. If the command "
-"contains '%s' it will be replaced with the URL, else the URL will be "
-"appended to the command with a space separating the two."
+msgid "Sets the external web browser to be used.  This can be an absolute path or the name of an executable to search for in the user's PATH. If the command contains '%s' it will be replaced with the URL, else the URL will be appended to the command with a space separating the two."
 msgstr ""
 
 #: ../app/config/gimprc-deserialize.c:135 ../app/core/gimp-modules.c:130
@@ -4780,8 +4629,7 @@ msgstr ""
 
 #: ../app/core/gimpbrush-load.c:408
 #, fuzzy, c-format
-msgid ""
-"Fatal parse error in brush file '%s': unable to decode abr format version %d."
+msgid "Fatal parse error in brush file '%s': unable to decode abr format version %d."
 msgstr "GIMP desen dosyası kesilmiş gibi gözüküyor: \"%s\"."
 
 #: ../app/core/gimpbrush-load.c:425
@@ -5079,8 +4927,7 @@ msgid "The foreground color of the grid."
 msgstr "Önplan"
 
 #: ../app/core/gimpgrid.c:137
-msgid ""
-"The background color of the grid; only used in double dashed line style."
+msgid "The background color of the grid; only used in double dashed line style."
 msgstr ""
 
 #: ../app/core/gimpgrid.c:143
@@ -5092,8 +4939,7 @@ msgid "Vertical spacing of grid lines."
 msgstr ""
 
 #: ../app/core/gimpgrid.c:157
-msgid ""
-"Horizontal offset of the first grid line; this may be a negative number."
+msgid "Horizontal offset of the first grid line; this may be a negative number."
 msgstr ""
 
 #: ../app/core/gimpgrid.c:164
@@ -5173,8 +5019,7 @@ msgstr "Görünen Katmanları Birleştir"
 
 #: ../app/core/gimpimage-merge.c:107
 msgid "Not enough visible layers for a merge. There must be at least two."
-msgstr ""
-"Birleştirme için yeterli sayıda görünür katman yok. En az iki tane olmalı."
+msgstr "Birleştirme için yeterli sayıda görünür katman yok. En az iki tane olmalı."
 
 #: ../app/core/gimpimage-merge.c:142
 msgid "Flatten Image"
@@ -5194,8 +5039,7 @@ msgstr "Görünen Katmanları Birleştir"
 
 #: ../app/core/gimpimage-merge.c:581
 msgid "Not enough visible paths for a merge. There must be at least two."
-msgstr ""
-"Birleştirme için yeterli sayıda görünür katman yok. En az iki tane olmalıdır."
+msgstr "Birleştirme için yeterli sayıda görünür katman yok. En az iki tane olmalıdır."
 
 #: ../app/core/gimpimage-qmask.c:67
 #, fuzzy
@@ -5473,9 +5317,7 @@ msgstr "Yüzen Seçimi Çıpala"
 
 #: ../app/core/gimplayer-floating-sel.c:209
 #, fuzzy
-msgid ""
-"Cannot create a new layer from the floating selection because it belongs to "
-"a layer mask or channel."
+msgid "Cannot create a new layer from the floating selection because it belongs to a layer mask or channel."
 msgstr ""
 "Yüzen seçimden yeni katman oluşturulamıyor\n"
 "çünkü ya bir katman maskesine ya da bir\n"
@@ -5617,9 +5459,7 @@ msgstr ""
 
 #: ../app/core/gimppalette.c:438
 #, fuzzy, c-format
-msgid ""
-"Reading palette file '%s': Invalid number of columns in line %d. Using "
-"default value."
+msgid "Reading palette file '%s': Invalid number of columns in line %d. Using default value."
 msgstr ""
 "'%s' paleti yüklenirken:\n"
 "Okuma hatası (satır %d)"
@@ -5661,8 +5501,7 @@ msgstr "GIMP desen dosyası kesilmiş gibi gözüküyor: \"%s\"."
 
 #: ../app/core/gimppattern.c:331
 #, fuzzy, c-format
-msgid ""
-"Fatal parse error in pattern file '%s': Unknown pattern format version %d."
+msgid "Fatal parse error in pattern file '%s': Unknown pattern format version %d."
 msgstr "GIMP desen dosyası kesilmiş gibi gözüküyor: \"%s\"."
 
 #: ../app/core/gimppattern.c:341
@@ -5724,9 +5563,7 @@ msgid "Floated Layer"
 msgstr "Katmanı Döndür"
 
 #: ../app/core/gimpstrokeoptions.c:151
-msgid ""
-"Convert a mitered join to a bevelled join if the miter would extend to a "
-"distance of more than miter-limit * line-width from the actual join point."
+msgid "Convert a mitered join to a bevelled join if the miter would extend to a distance of more than miter-limit * line-width from the actual join point."
 msgstr ""
 
 #: ../app/core/gimptemplate.c:156
@@ -5961,17 +5798,12 @@ msgid "Enter location (URI):"
 msgstr "Aradeğerleme:"
 
 #: ../app/dialogs/file-save-dialog.c:259 ../app/dialogs/file-save-dialog.c:295
-msgid ""
-"The given filename does not have any known file extension. Please enter a "
-"known file extension or select a file format from the file format list."
+msgid "The given filename does not have any known file extension. Please enter a known file extension or select a file format from the file format list."
 msgstr ""
 
 #. remote URI
 #: ../app/dialogs/file-save-dialog.c:328
-msgid ""
-"Saving remote files needs to determine the file format from the file "
-"extension. Please enter a file extension that matches the selected file "
-"format or enter no file extension at all."
+msgid "Saving remote files needs to determine the file format from the file extension. Please enter a file extension that matches the selected file format or enter no file extension at all."
 msgstr ""
 
 #: ../app/dialogs/file-save-dialog.c:398
@@ -6041,9 +5873,7 @@ msgstr ""
 
 #: ../app/dialogs/image-new-dialog.c:308
 #, c-format
-msgid ""
-"An image of the chosen size will use more memory than what is configured as "
-"\"Maximum Image Size\" in the Preferences dialog (currently %s)."
+msgid "An image of the chosen size will use more memory than what is configured as \"Maximum Image Size\" in the Preferences dialog (currently %s)."
 msgstr ""
 
 #: ../app/dialogs/image-scale-dialog.c:164
@@ -6052,16 +5882,12 @@ msgstr "Ölçeklemeyi Onayla"
 
 #: ../app/dialogs/image-scale-dialog.c:204
 #, c-format
-msgid ""
-"Scaling the image to the chosen size will make it use more memory than what "
-"is configured as \"Maximum Image Size\" in the Preferences dialog (currently "
-"%s)."
+msgid "Scaling the image to the chosen size will make it use more memory than what is configured as \"Maximum Image Size\" in the Preferences dialog (currently %s)."
 msgstr ""
 
 #: ../app/dialogs/image-scale-dialog.c:219
 #, fuzzy
-msgid ""
-"Scaling the image to the chosen size will shrink some layers completely away."
+msgid "Scaling the image to the chosen size will shrink some layers completely away."
 msgstr ""
 "Seçilen resim boyutu bazı\n"
 "katmanları küçülterek yokedecek.\n"
@@ -6337,33 +6163,23 @@ msgid "Configure Keyboard Shortcuts"
 msgstr "Klavye Kısayolları"
 
 #: ../app/dialogs/preferences-dialog.c:547
-msgid ""
-"To edit a shortcut key, click on the corresponding row and type a new "
-"accelerator, or press backspace to clear."
+msgid "To edit a shortcut key, click on the corresponding row and type a new accelerator, or press backspace to clear."
 msgstr ""
 
 #: ../app/dialogs/preferences-dialog.c:594
-msgid ""
-"Your keyboard shortcuts will be reset to default values the next time you "
-"start GIMP."
+msgid "Your keyboard shortcuts will be reset to default values the next time you start GIMP."
 msgstr ""
 
 #: ../app/dialogs/preferences-dialog.c:628
-msgid ""
-"Your window setup will be reset to default values the next time you start "
-"GIMP."
+msgid "Your window setup will be reset to default values the next time you start GIMP."
 msgstr ""
 
 #: ../app/dialogs/preferences-dialog.c:662
-msgid ""
-"Your input device settings will be reset to default values the next time you "
-"start GIMP."
+msgid "Your input device settings will be reset to default values the next time you start GIMP."
 msgstr ""
 
 #: ../app/dialogs/preferences-dialog.c:696
-msgid ""
-"Your tool options will be reset to default values the next time you start "
-"GIMP."
+msgid "Your tool options will be reset to default values the next time you start GIMP."
 msgstr ""
 
 #: ../app/dialogs/preferences-dialog.c:1116
@@ -7196,9 +7012,7 @@ msgid "I_nterpolation:"
 msgstr "_Aradeğerleme:"
 
 #: ../app/dialogs/scale-dialog.c:201
-msgid ""
-"Indexed color layers are always scaled without interpolation. The chosen "
-"interpolation type will affect channels and masks only."
+msgid "Indexed color layers are always scaled without interpolation. The chosen interpolation type will affect channels and masks only."
 msgstr ""
 
 #: ../app/dialogs/stroke-dialog.c:101
@@ -7216,9 +7030,7 @@ msgstr ""
 #: ../app/dialogs/tips-dialog.c:91
 #, fuzzy, c-format
 msgid "There should be a file called '%s'. Please check your installation."
-msgstr ""
-"GIMP ipuçları dosyası bulunamadı. \"%s\" isimli bir dosyanın sistemde "
-"bulunması gerekiyor. Lütfen kurulumu yeniden gözden geçirin."
+msgstr "GIMP ipuçları dosyası bulunamadı. \"%s\" isimli bir dosyanın sistemde bulunması gerekiyor. Lütfen kurulumu yeniden gözden geçirin."
 
 #: ../app/dialogs/tips-dialog.c:97
 msgid "<b>The GIMP tips file could not be parsed!</b>"
@@ -7244,17 +7056,14 @@ msgstr "_Sonraki ipucu"
 #. look for in the gimp-tips.xml file. Please translate the C in it
 #. according to the name of the po file used for gimp-tips.xml.
 #. E.g. for the german translation, that would be "tips-locale:de".
-#.
+#. 
 #: ../app/dialogs/tips-parser.c:165
 msgid "tips-locale:C"
 msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:129
 #, fuzzy
-msgid ""
-"The gimprc is used to store personal preferences that affect GIMP's default "
-"behavior.  Paths to search for brushes, palettes, gradients, patterns, plug-"
-"ins and modules can also configured here."
+msgid "The gimprc is used to store personal preferences that affect GIMP's default behavior.  Paths to search for brushes, palettes, gradients, patterns, plug-ins and modules can also configured here."
 msgstr ""
 "gimprc GIMP'in çalışmasını etkileyecek kişisel\n"
 "ayarların saklanmasında kullanılır.\n"
@@ -7264,20 +7073,14 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:138
 #, fuzzy
-msgid ""
-"GIMP uses an additional gtkrc file so you can configure it to look "
-"differently than other GTK apps."
+msgid "GIMP uses an additional gtkrc file so you can configure it to look differently than other GTK apps."
 msgstr ""
 "GIMP ekstra bir gtkrc dosyası kullanır, böylelikle\n"
 "diğer GTK programlarından farklı görünmesini sağlayabilirsiniz."
 
 #: ../app/dialogs/user-install-dialog.c:144
 #, fuzzy
-msgid ""
-"Plug-ins and extensions are external programs which provide additional "
-"functionality to GIMP.  These programs are searched for at run-time and "
-"information about their functionality is cached in this file.  This file is "
-"intended to be written to by GIMP only, and should not be edited."
+msgid "Plug-ins and extensions are external programs which provide additional functionality to GIMP.  These programs are searched for at run-time and information about their functionality is cached in this file.  This file is intended to be written to by GIMP only, and should not be edited."
 msgstr ""
 "Eklentiler ve uzantılar GIMP tarafından çalıştırılan\n"
 "ve ekstra işlevsellik kazandıran harici yazılımlardır.\n"
@@ -7288,11 +7091,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:154
 #, fuzzy
-msgid ""
-"Key shortcuts can be dynamically redefined. The menurc is a dump of your "
-"configuration so it can. be remembered for the next session.  You may edit "
-"this file if you wish, but it is much easier to define the keys from within "
-"GIMP.  Deleting this file will restore the default shortcuts."
+msgid "Key shortcuts can be dynamically redefined. The menurc is a dump of your configuration so it can. be remembered for the next session.  You may edit this file if you wish, but it is much easier to define the keys from within GIMP.  Deleting this file will restore the default shortcuts."
 msgstr ""
 "Basam tuşlar dinamik olarak GIMP içinde yeniden atanabilir.\n"
 "menurc bu ayarların çıktısıdır böylece bir sonraki oturumda\n"
@@ -7302,28 +7101,19 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:164
 #, fuzzy
-msgid ""
-"The sessionrc is used to store what dialog windows were open the last time "
-"you quit GIMP.  You can configure GIMP to reopen these dialogs at the saved "
-"position."
+msgid "The sessionrc is used to store what dialog windows were open the last time you quit GIMP.  You can configure GIMP to reopen these dialogs at the saved position."
 msgstr ""
 "sessionrc GIMP'ten son cıktığınızda hangi pencerelerin açık\n"
 "olduğunun saklandığı dosyadır. GIMP'i bu pencereleri kaydedilen\n"
 "pozisyonlarda açılmak üzere ayarlayabilirsiniz."
 
 #: ../app/dialogs/user-install-dialog.c:171
-msgid ""
-"This file holds a collection of standard media sizes that serve as image "
-"templates."
+msgid "This file holds a collection of standard media sizes that serve as image templates."
 msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:177
 #, fuzzy
-msgid ""
-"The unitrc is used to store your user units database.  You can define "
-"additional units and use them just like you use the built-in units inches, "
-"millimeters, points and picas.  This file is overwritten each time you quit "
-"the GIMP."
+msgid "The unitrc is used to store your user units database.  You can define additional units and use them just like you use the built-in units inches, millimeters, points and picas.  This file is overwritten each time you quit the GIMP."
 msgstr ""
 "unitrc kullanıcı birimlerinizin saklandığı yerdir. Kendiniz\n"
 "ekstra birimler tanımlayabilir ve tıpkı öntanımlı birimler olan\n"
@@ -7332,9 +7122,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:186
 #, fuzzy
-msgid ""
-"This folder is used to store user defined brushes. GIMP checks this folder "
-"in addition to the system-wide brushes installation."
+msgid "This folder is used to store user defined brushes. GIMP checks this folder in addition to the system-wide brushes installation."
 msgstr ""
 "Burası kullanıcının oluşturduğu fırçaların saklandığı\n"
 "alt dizindir. Öntanımlı gimprc, fırçaları tararken sistem\n"
@@ -7342,11 +7130,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:193
 #, fuzzy
-msgid ""
-"This folder is used to store fonts you only want to be visible in GIMP. GIMP "
-"checks this folder in addition to the system-wide fonts installation. Use "
-"this only if you really want to have fonts available in GIMP only, otherwise "
-"put them in your global font directory."
+msgid "This folder is used to store fonts you only want to be visible in GIMP. GIMP checks this folder in addition to the system-wide fonts installation. Use this only if you really want to have fonts available in GIMP only, otherwise put them in your global font directory."
 msgstr ""
 "Burası kullanıcının belirlediği desenlerin saklandığı\n"
 "bir alt dizindir. Öntanımlı gimprc, desenleri tararken\n"
@@ -7355,9 +7139,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:202
 #, fuzzy
-msgid ""
-"This folder is used to store user defined gradients.  GIMP checks this "
-"folder in addition to the system-wide gradients installation."
+msgid "This folder is used to store user defined gradients.  GIMP checks this folder in addition to the system-wide gradients installation."
 msgstr ""
 "Burası kullanıcının belirlediği gradyanların saklandığı alt\n"
 "dizindir. Öntanımlı gimprc, gradyanları tararken sistem\n"
@@ -7365,9 +7147,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:209
 #, fuzzy
-msgid ""
-"This folder is used to store user defined palettes.  GIMP checks this folder "
-"in addition to the system-wide palettes installation."
+msgid "This folder is used to store user defined palettes.  GIMP checks this folder in addition to the system-wide palettes installation."
 msgstr ""
 "Burası kullanıcının belirlediği desenlerin saklandığı\n"
 "bir alt dizindir. Öntanımlı gimprc, desenleri tararken\n"
@@ -7376,10 +7156,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:216
 #, fuzzy
-msgid ""
-"This folder is used to store user defined patterns.  GIMP checks this folder "
-"in addition to the system-wide patterns installation when searching for "
-"patterns."
+msgid "This folder is used to store user defined patterns.  GIMP checks this folder in addition to the system-wide patterns installation when searching for patterns."
 msgstr ""
 "Burası kullanıcının belirlediği desenlerin saklandığı\n"
 "bir alt dizindir. Öntanımlı gimprc, desenleri tararken\n"
@@ -7388,10 +7165,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:223
 #, fuzzy
-msgid ""
-"This folder is used to store user created, temporary, or otherwise non-"
-"system-supported plug-ins.  GIMP checks this folder in addition to the "
-"system-wide plug-in folder."
+msgid "This folder is used to store user created, temporary, or otherwise non-system-supported plug-ins.  GIMP checks this folder in addition to the system-wide plug-in folder."
 msgstr ""
 "Burası oluşturulan, geciçi veya diğer her türlü sistem\n"
 "dışı eklentilerinin saklanabileceği bir alt dizindir. Öntanımlı\n"
@@ -7400,10 +7174,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:231
 #, fuzzy
-msgid ""
-"This folder is used to store user created, temporary, or otherwise non-"
-"system-supported DLL modules.  GIMP checks this folder in addition to the "
-"system-wide module folder."
+msgid "This folder is used to store user created, temporary, or otherwise non-system-supported DLL modules.  GIMP checks this folder in addition to the system-wide module folder."
 msgstr ""
 "Burası oluşturulan, geciçi veya diğer her türlü sistem\n"
 "dışı DLL modülün saklanabileceği bir alt dizindir.\n"
@@ -7412,11 +7183,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:239
 #, fuzzy
-msgid ""
-"This folder is used to store configuration for user created, temporary, or "
-"otherwise non-system-supported plug-in interpreters.  GIMP checks this "
-"folder in addition to the system-wide GIMP interpreters folder when "
-"searching for plug-in interpreter configuration files."
+msgid "This folder is used to store configuration for user created, temporary, or otherwise non-system-supported plug-in interpreters.  GIMP checks this folder in addition to the system-wide GIMP interpreters folder when searching for plug-in interpreter configuration files."
 msgstr ""
 "Burası oluşturulan, geciçi veya diğer her türlü sistem\n"
 "dışı eklentilerinin saklanabileceği bir alt dizindir. Öntanımlı\n"
@@ -7425,11 +7192,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:249
 #, fuzzy
-msgid ""
-"This folder is used to store user created, temporary, or otherwise non-"
-"system-supported additions to the plug-in environment.  GIMP checks this "
-"folder in addition to the system-wide GIMP environment folder when searching "
-"for plug-in environment modification files."
+msgid "This folder is used to store user created, temporary, or otherwise non-system-supported additions to the plug-in environment.  GIMP checks this folder in addition to the system-wide GIMP environment folder when searching for plug-in environment modification files."
 msgstr ""
 "Burası oluşturulan, geciçi veya diğer her türlü sistem\n"
 "dışı eklentilerin saklanabileceği bir alt dizindir. Öntanımlı\n"
@@ -7438,9 +7201,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:259
 #, fuzzy
-msgid ""
-"This folder is used to store user created and installed scripts.  GIMP "
-"checks this folder in addition to the systemwide scripts folder."
+msgid "This folder is used to store user created and installed scripts.  GIMP checks this folder in addition to the systemwide scripts folder."
 msgstr ""
 "Burası GIMP tarafından kullanıcının oluşturduğu ve kurduğu\n"
 "senaryoların saklamak için kullanılan alt dizindir. Öntanımlı\n"
@@ -7488,8 +7249,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:387
 msgid "Installation successful.  Click \"Continue\" to proceed."
-msgstr ""
-"Kurulum başarıyla tamamlandı. Devam etmek için \"Devam\" düğmesine tıklayın."
+msgstr "Kurulum başarıyla tamamlandı. Devam etmek için \"Devam\" düğmesine tıklayın."
 
 #: ../app/dialogs/user-install-dialog.c:393
 msgid "Installation failed.  Contact system administrator."
@@ -7531,11 +7291,7 @@ msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:797
 #, fuzzy
-msgid ""
-"This program is free software; you can redistribute it and/or modify it "
-"under the terms of the GNU General Public License as published by the Free "
-"Software Foundation; either version 2 of the License, or (at your option) "
-"any later version."
+msgid "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version."
 msgstr ""
 "Bu bir serbest yazılımdır. Bu Yazılın Gnu Gpl Lisansı altında \n"
 "tamamı veya bir bölümü yazarın isim hakları korunmak şartı ile \n"
@@ -7543,19 +7299,12 @@ msgstr ""
 "2. sürümü ve sonrası ile korunmuştur."
 
 #: ../app/dialogs/user-install-dialog.c:803
-msgid ""
-"This program is distributed in the hope that it will be useful, but WITHOUT "
-"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
-"FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for "
-"more details."
+msgid "This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details."
 msgstr ""
 
 #: ../app/dialogs/user-install-dialog.c:809
 #, fuzzy
-msgid ""
-"You should have received a copy of the GNU General Public License along with "
-"this program; if not, write to the Free Software Foundation, Inc., 59 Temple "
-"Place - Suite 330, Boston, MA 02111-1307, USA."
+msgid "You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA."
 msgstr ""
 "GNU Gpl Lisansının bir kopyasını almanız gerekmektedir.\n"
 "Bunun için Aşağıdaki adrese (isteğinizi) yazabilirsiniz\n"
@@ -7597,21 +7346,12 @@ msgstr "Kişisel GIMP dizininizin oluşturulması için \"Devam\"a basın."
 
 #: ../app/dialogs/user-install-dialog.c:913
 #, c-format
-msgid ""
-"For a proper GIMP installation, a folder named '<b>%s</b>' needs to be "
-"created."
-msgstr ""
-"GIMP kurulumu için <b>%s</b> isimli bir alt dizininin oluşturulması "
-"gereklidir."
+msgid "For a proper GIMP installation, a folder named '<b>%s</b>' needs to be created."
+msgstr "GIMP kurulumu için <b>%s</b> isimli bir alt dizininin oluşturulması gereklidir."
 
 #: ../app/dialogs/user-install-dialog.c:920
-msgid ""
-"This folder will contain a number of important files.  Click on one of the "
-"files or folders in the tree to get more information about the selected item."
-msgstr ""
-"Bu alt dizin bir çok önemli dosyayı barındıracaktır. Herhangi bir alt dizin "
-"veya dosya hakkında daha fazla bilgi almak için yandaki ağaçta üzerine "
-"tıklamak yeterlidir."
+msgid "This folder will contain a number of important files.  Click on one of the files or folders in the tree to get more information about the selected item."
+msgstr "Bu alt dizin bir çok önemli dosyayı barındıracaktır. Herhangi bir alt dizin veya dosya hakkında daha fazla bilgi almak için yandaki ağaçta üzerine tıklamak yeterlidir."
 
 #: ../app/dialogs/user-install-dialog.c:1008
 msgid "User Installation Log"
@@ -7630,11 +7370,8 @@ msgid "Click \"Continue\" to accept the settings above."
 msgstr "Yukarıdaki seçenekleri kabul etmek için \"Devam\"a basın."
 
 #: ../app/dialogs/user-install-dialog.c:1022
-msgid ""
-"<b>For optimal GIMP performance, some settings may have to be adjusted.</b>"
-msgstr ""
-"<b>Optimum GIMP perfomansı için bazı ayarların değiştirilmesi gerekebilir.</"
-"b>"
+msgid "<b>For optimal GIMP performance, some settings may have to be adjusted.</b>"
+msgstr "<b>Optimum GIMP perfomansı için bazı ayarların değiştirilmesi gerekebilir.</b>"
 
 #: ../app/dialogs/user-install-dialog.c:1082
 #, c-format
@@ -7652,31 +7389,16 @@ msgid "Cannot create folder '%s': %s"
 msgstr "'%s' dizini oluşturulamadı: %s"
 
 #: ../app/dialogs/user-install-dialog.c:1379
-msgid ""
-"GIMP uses a limited amount of memory to store image data, the so-called "
-"\"Tile Cache\".  You should adjust its size to fit into memory.  Consider "
-"the amount of memory used by other running processes."
-msgstr ""
-"GIMP resim verilerini saklamak için sınırlı miktarda bellek kullanır (Döşeme "
-"Önbelleği). Bilgisayarınızın belleğine sığacak şekilde boyutunu "
-"ayarlamalısınız. Diğer çalışan programlar tarafından kullanılacak bellek "
-"miktarını hesaba katmayı unutmayın."
+msgid "GIMP uses a limited amount of memory to store image data, the so-called \"Tile Cache\".  You should adjust its size to fit into memory.  Consider the amount of memory used by other running processes."
+msgstr "GIMP resim verilerini saklamak için sınırlı miktarda bellek kullanır (Döşeme Önbelleği). Bilgisayarınızın belleğine sığacak şekilde boyutunu ayarlamalısınız. Diğer çalışan programlar tarafından kullanılacak bellek miktarını hesaba katmayı unutmayın."
 
 #: ../app/dialogs/user-install-dialog.c:1392
 msgid "Tile cache size:"
 msgstr "Döşeme önbelleği boyutu:"
 
 #: ../app/dialogs/user-install-dialog.c:1404
-msgid ""
-"All image and undo data which doesn't fit into the Tile Cache will be "
-"written to a swap file.  This file should be located on a local filesystem "
-"with enough free space (several hundred MB). On a UNIX system, you may want "
-"to use the system-wide temp-dir (\"/tmp\" or \"/var/tmp\")."
-msgstr ""
-"Döşeme önbelleğine sığmayan tüm resim ve geri alma verileri bir takas "
-"dosyasında saklanır. Bu dosya yeterince boş yeri (birkaç yüz MB) olan yerel "
-"bir dosyalama sisteminde olmalıdır. UNIX sisteminde, sistemin geçici "
-"dizinini kullanabilirsiniz (\"/tmp\" veya \"/var/tmp\")."
+msgid "All image and undo data which doesn't fit into the Tile Cache will be written to a swap file.  This file should be located on a local filesystem with enough free space (several hundred MB). On a UNIX system, you may want to use the system-wide temp-dir (\"/tmp\" or \"/var/tmp\")."
+msgstr "Döşeme önbelleğine sığmayan tüm resim ve geri alma verileri bir takas dosyasında saklanır. Bu dosya yeterince boş yeri (birkaç yüz MB) olan yerel bir dosyalama sisteminde olmalıdır. UNIX sisteminde, sistemin geçici dizinini kullanabilirsiniz (\"/tmp\" veya \"/var/tmp\")."
 
 #: ../app/dialogs/user-install-dialog.c:1415
 msgid "Select swap dir"
@@ -7778,8 +7500,7 @@ msgstr "%s resmi üzerinde yapılan değişiklikleri kaydetmek istiyor musunuz?"
 #: ../app/display/gimpdisplayshell-close.c:222
 #, c-format
 msgid "If you don't save the image, changes from the last %s will be lost."
-msgstr ""
-"Eğer resmi kaydetmezseniz, son %s içinde yapılan değişiklikler kaybolacaktır."
+msgstr "Eğer resmi kaydetmezseniz, son %s içinde yapılan değişiklikler kaybolacaktır."
 
 #. one second, the time period
 #: ../app/display/gimpdisplayshell-close.c:279
@@ -8073,8 +7794,7 @@ msgstr "Harmanlanıyor..."
 
 #: ../app/pdb/image_cmds.c:3975
 #, fuzzy
-msgid ""
-"Image resolution is out of bounds, using the default resolution instead."
+msgid "Image resolution is out of bounds, using the default resolution instead."
 msgstr ""
 "Resim çözünürlüğü sınırların dışında,\n"
 "yerine öntanımlı çözünürlük kullanılıyor."
@@ -8238,8 +7958,7 @@ msgid ""
 "Plug-In crashed: \"%s\"\n"
 "(%s)\n"
 "\n"
-"The dying Plug-In may have messed up GIMP's internal state. You may want to "
-"save your images and restart GIMP to be on the safe side."
+"The dying Plug-In may have messed up GIMP's internal state. You may want to save your images and restart GIMP to be on the safe side."
 msgstr ""
 "Eklenti çöktü: \"%s\"\n"
 "(%s)\n"
@@ -8269,7 +7988,7 @@ msgstr "Kaynak ayarları"
 
 #. Query any plug-ins that have changed since we last wrote out
 #. *  the pluginrc file.
-#.
+#. 
 #: ../app/plug-in/plug-ins.c:152
 msgid "Querying new Plug-ins"
 msgstr "Yeni eklentiler aranıyor"
@@ -8387,8 +8106,7 @@ msgid ""
 "Problems parsing the text parasite for layer '%s':\n"
 "%s\n"
 "\n"
-"Some text properties may be wrong. Unless you want to edit the text layer, "
-"you don't need to worry about this."
+"Some text properties may be wrong. Unless you want to edit the text layer, you don't need to worry about this."
 msgstr ""
 
 #: ../app/tools/tools-enums.c:25
@@ -9683,14 +9401,11 @@ msgid "_Smudge"
 msgstr "_Lekeleme"
 
 #: ../app/tools/gimptextoptions.c:146
-msgid ""
-"Hinting alters the font outline to produce a crisp bitmap at small sizes"
+msgid "Hinting alters the font outline to produce a crisp bitmap at small sizes"
 msgstr ""
 
 #: ../app/tools/gimptextoptions.c:153
-msgid ""
-"If available, hints from the font are used but you may prefer to always use "
-"the automatic hinter"
+msgid "If available, hints from the font are used but you may prefer to always use the automatic hinter"
 msgstr ""
 
 #: ../app/tools/gimptextoptions.c:178
@@ -9777,9 +9492,7 @@ msgstr "Metin Düzenlemeyi Onayla"
 
 #: ../app/tools/gimptexttool.c:934
 msgid ""
-"The layer you selected is a text layer but it has been modified using other "
-"tools. Editing the layer with the text tool will discard these "
-"modifications.\n"
+"The layer you selected is a text layer but it has been modified using other tools. Editing the layer with the text tool will discard these modifications.\n"
 "\n"
 "You can edit the layer or create a new text layer from its text attributes."
 msgstr ""
@@ -10563,11 +10276,9 @@ msgstr "%s Denetleyicisini Sil?"
 
 #: ../app/widgets/gimpcontrollerlist.c:573
 msgid ""
-"Removing this controller from the list of active controllers will "
-"permanently delete all event mappings you have configured.\n"
+"Removing this controller from the list of active controllers will permanently delete all event mappings you have configured.\n"
 "\n"
-"Selecting \"Disable Controller\" will disable the controller without "
-"removing it."
+"Selecting \"Disable Controller\" will disable the controller without removing it."
 msgstr ""
 
 #: ../app/widgets/gimpcontrollerlist.c:634
@@ -10756,12 +10467,8 @@ msgstr "Tüm Sekmeleri Kapat"
 
 #: ../app/widgets/gimpdock.c:360
 #, c-format
-msgid ""
-"This window has %d tabs open. Closing the window will also close all its "
-"tabs."
-msgstr ""
-"Bu pencerede %d sekme bulunuyor. Pencereyi kapatırsanız tüm sekmeler de "
-"kapatılacaktır."
+msgid "This window has %d tabs open. Closing the window will also close all its tabs."
+msgstr "Bu pencerede %d sekme bulunuyor. Pencereyi kapatırsanız tüm sekmeler de kapatılacaktır."
 
 #: ../app/widgets/gimpdock.c:695
 msgid "You can drop dockable dialogs here."
@@ -10960,8 +10667,7 @@ msgid "Could not find GIMP help browser."
 msgstr "GIMP Yardım Gezgini bulunamadı."
 
 #: ../app/widgets/gimphelp.c:189
-msgid ""
-"The GIMP help browser plug-in appears to be missing from your installation."
+msgid "The GIMP help browser plug-in appears to be missing from your installation."
 msgstr ""
 
 #: ../app/widgets/gimphelp.c:213
@@ -11092,8 +10798,7 @@ msgid "Auto"
 msgstr "Otomatik"
 
 #: ../app/widgets/gimpmenudock.c:202
-msgid ""
-"When enabled the dialog automatically follows the image you are working on."
+msgid "When enabled the dialog automatically follows the image you are working on."
 msgstr ""
 
 #: ../app/widgets/gimpmessagebox.c:462
@@ -11286,12 +10991,8 @@ msgstr ""
 
 #: ../app/widgets/gimptoolbox.c:830
 #, fuzzy
-msgid ""
-"Foreground & background colors.  The black and white squares reset colors.  "
-"The arrows swap colors. Click to open the color selection dialog."
-msgstr ""
-"Önplan & arkaplan renkleri. Siyah ve beyaz kareler renkleri sıfırlar. Oklar "
-"renk yerlerini değiştirir. Renk seçim penceresi için çift tık."
+msgid "Foreground & background colors.  The black and white squares reset colors.  The arrows swap colors. Click to open the color selection dialog."
+msgstr "Önplan & arkaplan renkleri. Siyah ve beyaz kareler renkleri sıfırlar. Oklar renk yerlerini değiştirir. Renk seçim penceresi için çift tık."
 
 #: ../app/widgets/gimptooloptionseditor.c:187
 msgid "Save options to..."
@@ -11359,7 +11060,7 @@ msgstr "Yazıtipi seçim penceresini aç"
 
 #. The format string which is used to display modifier names
 #. *  <Shift>, <Ctrl> and <Alt>
-#.
+#. 
 #: ../app/widgets/gimpwidgets-utils.c:392
 #, c-format
 msgid "<%s>"
@@ -11548,10 +11249,8 @@ msgstr "'%s' dosyası açılamadı"
 #~ msgid "Kee_p Transparency"
 #~ msgstr "Ş_effaflığı Koru"
 
-#, fuzzy
 #~ msgid "Set preserve trans"
 #~ msgstr "Tercihler kaydedilsin mi?"
 
-#, fuzzy
 #~ msgid "Keep transparency"
 #~ msgstr "Şeffaflığı Koru"
