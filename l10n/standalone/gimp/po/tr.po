@@ -243,9 +243,8 @@ msgid "Gradients"
 msgstr "Gradyanlar"
 
 #: ../app/actions/actions.c:151
-#, fuzzy
 msgid "Help"
-msgstr "/_Yardım"
+msgstr "Yardım"
 
 #: ../app/actions/actions.c:154 ../app/pdb/internal_procs.c:150
 #: ../app/tools/tools-enums.c:204
@@ -449,7 +448,7 @@ msgstr "_Yeni Kanal"
 
 #: ../app/actions/channels-actions.c:61
 msgid "New channel with last values"
-msgstr ""
+msgstr "Son değerler ile yeni kanal"
 
 #: ../app/actions/channels-actions.c:66
 msgid "D_uplicate Channel"
@@ -514,7 +513,7 @@ msgstr "Seçime _Ekle"
 
 #: ../app/actions/channels-actions.c:112 ../app/actions/vectors-actions.c:174
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
 #: ../app/actions/channels-actions.c:117 ../app/actions/layers-actions.c:231
 #: ../app/actions/layers-actions.c:254 ../app/actions/vectors-actions.c:179
@@ -550,9 +549,8 @@ msgstr "Kanal Rengini Düzenle"
 
 #: ../app/actions/channels-commands.c:92
 #: ../app/actions/channels-commands.c:125
-#, fuzzy
 msgid "_Fill Opacity:"
-msgstr "Doldurma Saydamsızlığı:"
+msgstr "Saydamsızlığı doldur."
 
 #: ../app/actions/channels-commands.c:118
 #: ../app/actions/channels-commands.c:119
@@ -701,22 +699,19 @@ msgid "S_wap Colors"
 msgstr "Renkleri _Değiştir"
 
 #: ../app/actions/cursor-info-actions.c:40
-#, fuzzy
 msgid "Cursor Info Menu"
-msgstr "Eğriler"
+msgstr "İmleç Bilgi Menüsü"
 
 #: ../app/actions/cursor-info-actions.c:47
 #: ../app/actions/sample-point-editor-actions.c:47
 #: ../app/widgets/gimpcursorview.c:225
-#, fuzzy
 msgid "_Sample Merged"
-msgstr "Birleşimi Örnekle"
+msgstr "Örnek Birleştirildi"
 
 #: ../app/actions/cursor-info-actions.c:48
 #: ../app/actions/sample-point-editor-actions.c:48
-#, fuzzy
 msgid "Sample Merged"
-msgstr "Birleşimi Örnekle"
+msgstr "Örnek Birleştirildi"
 
 #: ../app/actions/data-commands.c:100 ../app/actions/documents-commands.c:331
 #: ../app/actions/file-commands.c:175 ../app/dialogs/file-open-dialog.c:208
@@ -765,7 +760,7 @@ msgstr "_Katmanlar, Kanallar ve Yollar"
 
 #: ../app/actions/dialogs-actions.c:47
 msgid "_Brushes, Patterns & Gradients"
-msgstr ""
+msgstr "Fırçalar, Desenler ve Gradyanlar"
 
 #: ../app/actions/dialogs-actions.c:52
 msgid "_Misc. Stuff"
@@ -816,14 +811,12 @@ msgid "Undo _History"
 msgstr "_Geri Alma Geçmişi"
 
 #: ../app/actions/dialogs-actions.c:115
-#, fuzzy
 msgid "_Cursor"
-msgstr "Eğriler"
+msgstr "İmleç"
 
 #: ../app/actions/dialogs-actions.c:120
-#, fuzzy
 msgid "_Sample Points"
-msgstr "punto"
+msgstr "Örnek noktalar"
 
 #: ../app/actions/dialogs-actions.c:125
 msgid "Colo_rs"
@@ -986,9 +979,8 @@ msgid "St_atus & Text"
 msgstr "_Durum ve Metin"
 
 #: ../app/actions/dockable-actions.c:108
-#, fuzzy
 msgid "Show _Button Bar"
-msgstr "Seçimi Büyüt"
+msgstr "Düğme barını göster"
 
 #: ../app/actions/dockable-actions.c:117
 msgid "View as _List"
@@ -1011,30 +1003,28 @@ msgid "Open the selected entry"
 msgstr "Seçili girdiyi aç"
 
 #: ../app/actions/documents-actions.c:52
-#, fuzzy
 msgid "_Raise or Open Image"
-msgstr "/Resmi Düzleştir"
+msgstr "Resmi aç ya da yükselt"
 
 #: ../app/actions/documents-actions.c:53
 msgid "Raise window if already open"
-msgstr ""
+msgstr "Eğer açıksa pencereyi yükselt "
 
 #: ../app/actions/documents-actions.c:58
 msgid "File Open _Dialog"
-msgstr ""
+msgstr "Açık diyalog dosyası"
 
 #: ../app/actions/documents-actions.c:59
 msgid "Open image dialog"
-msgstr ""
+msgstr "Açık görsel diyaloğu"
 
 #: ../app/actions/documents-actions.c:64
-#, fuzzy
 msgid "Copy Image _Location"
-msgstr "Adres:"
+msgstr "Görsel konumunu kopyala"
 
 #: ../app/actions/documents-actions.c:65
 msgid "Copy image location to clipboard"
-msgstr ""
+msgstr "Görsel konumunu panoya kopyala"
 
 #: ../app/actions/documents-actions.c:70
 msgid "Remove _Entry"
@@ -1045,14 +1035,12 @@ msgid "Remove the selected entry"
 msgstr "Seçili girdiyi sil"
 
 #: ../app/actions/documents-actions.c:76
-#, fuzzy
 msgid "_Clear History"
-msgstr "_Geri Alma Geçmişini Temizle"
+msgstr "Geçmişi temizle"
 
 #: ../app/actions/documents-actions.c:77
-#, fuzzy
 msgid "Clear the entire document history"
-msgstr "Geri Alma Geçmişini Temizle.."
+msgstr "Tüm belge geçmişini temizle"
 
 #: ../app/actions/documents-actions.c:82
 msgid "Recreate _Preview"
@@ -1072,7 +1060,7 @@ msgstr "Tüm önizlemeleri yeniden yükle"
 
 #: ../app/actions/documents-actions.c:94
 msgid "Remove Dangling E_ntries"
-msgstr ""
+msgstr "Askıda kalan girdileri kaldır"
 
 #: ../app/actions/documents-actions.c:95
 #, fuzzy
