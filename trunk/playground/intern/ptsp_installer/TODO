@@ -16,7 +16,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 - Edit /opt/ptsp/etc/pulse/system.pa file. (Pulseaudio) Do this if user wants. (Ask user for this)
 
-- Optimizing Firefox, disable caching pixmaps.
++ Optimizing Firefox, disable caching pixmaps.
 
 + Start dhcp, tftp, nfs-utils and portmap services.
 
