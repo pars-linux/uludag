@@ -19,15 +19,17 @@ SERVICE_LIST = ["dhcp", \
                 "portmap"]
 
 
-import re
 
 def set_key(section, key, value, file_content):
     """ Function to set key in configuration files. """
+
+    import re
+
     section_escaped = re.escape(section)
 
     if not re.compile('^%s$' % section_escaped, re.MULTILINE).\
             search(file_content):
-        print "setKey failed, '%s' section not found in kdmrc." % section
+        print "set_key failed, '%s' section not found in kdmrc." % section
         return False
 
     result = re.compile('^%s=(.*)$' % key, re.MULTILINE)
@@ -71,6 +73,7 @@ def kdmrc_update():
     """ Updates kdmrc file. """
 
     kdmrc_path = "/etc/X11/kdm/kdmrc"
+    shutil.copyfile(kdmrc_path, "%s.orig" % kdmrc_path)
     file_pointer = open(kdmrc_path, "r")
     import ConfigParser
     kdmrc_config = ConfigParser.ConfigParser()
@@ -79,7 +82,7 @@ def kdmrc_update():
         print "Kdmrc is OK, no need for update this file.\n"
         return
 
-    shutil.copyfile(kdmrc_path, "%s.orig" % kdmrc_path)
+    file_pointer.seek(0)
     kdmrc_file = file_pointer.read()
     new_kdmrc_file = set_key("[Xdmcp]", "Enable", "true", kdmrc_file)
     file_pointer.close()
@@ -88,7 +91,7 @@ def kdmrc_update():
         shutil.copyfile("%s.orig" % kdmrc_path, kdmrc_path)
         raise SystemExit
 
-    file_pointer = open("/etc/X11/kdm/kdmrc", "w")
+    file_pointer = open(kdmrc_path, "w")
     file_pointer.writelines(new_kdmrc_file)
     file_pointer.close()
 
@@ -136,9 +139,25 @@ def select_network_profile():
             info = link.Network.Link["net_tools"].connectionInfo(connection)
             #TODO: List Network Profiles and Select one of them.
 
+def firefox_pixmap():
+
+    try:
+        file_pointer = open("/etc/env.d/11MozillaFirefoxPixmap", "w")
+        file_pointer.write("MOZ_DISABLE_IMAGE_OPTIMIZE=1")
+        file_pointer.close()
+        print "Disabled Firefox's Image Optimization.\n"
+
+    except:
+        print "Failed to write Firefox Pixmap file.\n"
+        raise SystemExit
+
 if __name__ == "__main__":
 
     check_packages()
+
+    kdmrc_update()
+
+    firefox_pixmap()
 
     create_profile = raw_input("Do you want to create new network profile \
 or use an existing one[Y/N]: ")
@@ -148,9 +167,8 @@ or use an existing one[Y/N]: ")
         gateway = raw_input("Enter Gateway Address: ")
         nameserver = raw_input("Nameserver Address (write 'default' to use \
 default nameservers) : ")
+
     elif create_profile == 'N' or create_profile == 'n':
         select_network_profile()
-
-    kdmrc_update()
 
     start_services()
