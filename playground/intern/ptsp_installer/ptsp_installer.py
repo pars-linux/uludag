@@ -69,7 +69,7 @@ terminate script. """
         print "\nCheck Successful."
         print "-"*30 + "\n"
 
-def kdmrc_update():
+def update_kdmrc():
     """ Updates kdmrc file. """
 
     kdmrc_path = "/etc/X11/kdm/kdmrc"
@@ -140,6 +140,7 @@ def select_network_profile():
             #TODO: List Network Profiles and Select one of them.
 
 def firefox_pixmap():
+    """ This function disables firefox's image optimization. """
 
     try:
         file_pointer = open("/etc/env.d/11MozillaFirefoxPixmap", "w")
@@ -151,11 +152,33 @@ def firefox_pixmap():
         print "Failed to write Firefox Pixmap file.\n"
         raise SystemExit
 
+def update_exports(server_ip, server_netmask):
+    """ Updates /etc/exports file. """
+
+    try:
+        shutil.copyfile("/etc/exports", "/etc/exports.orig")
+        file_pointer = open("/etc/exports", "a")
+        file_pointer.write("\n#This line is for PTSP server.\n\
+/opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)" % (server_ip, server_netmask))
+        file_pointer.close()
+        print "Updated exports file.\n"
+
+    except:
+        print "Failed to update exports file.\n"
+        raise SystemExit
+
 if __name__ == "__main__":
 
     check_packages()
 
-    kdmrc_update()
+    update_kdmrc()
+
+    #TODO: Get server's ip and netmask from COMAR after
+    #Selecting network profile
+    server_ip = "10.0.0.0"
+    server_netmask = "255.255.255.0"
+
+    update_exports(server_ip, server_netmask)
 
     firefox_pixmap()
 

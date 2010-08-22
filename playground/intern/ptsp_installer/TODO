@@ -8,7 +8,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 + Edit /etc/X11/kdm/kdmrc file. Warn user to restart X.
 
-- Edit /etc/exports file.
++ Edit /etc/exports file.
 
 - Edit /etc/hosts file. Ask how many users will use this system and add according to this.
 
