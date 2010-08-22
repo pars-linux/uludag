@@ -6,6 +6,7 @@
 from pisi import api
 import comar
 import shutil
+import ConfigParser
 
 PACKAGE_LIST = ["dhcp", \
                "tftp", \
@@ -18,6 +19,29 @@ SERVICE_LIST = ["dhcp", \
                 "nfs-utils", \
                 "portmap"]
 
+def set_key_with_spaces(section, key, value, file_content):
+    """ Function to set key in configuration files with spaces. """
+
+    import re
+
+    section_escaped = re.escape(section)
+
+    if not re.compile('^%s$' % section_escaped, re.MULTILINE).\
+            search(file_content):
+        print "set_key failed, '%s' section not found in kdmrc." % section
+        return False
+
+    result = re.compile('^%s = (.*)$' % key, re.MULTILINE)
+    if result.search(file_content):
+        return result.sub('%s = %s' % (key, value), file_content)
+
+    result = re.compile('^#%s = (.*)$' % key, re.MULTILINE)
+    if result.search(file_content):
+        return result.sub('%s = %s' % (key, value), file_content)
+
+    # If key can not be found, insert key=value right below the section
+    return re.compile('^%s$' % section_escaped, re.MULTILINE)\
+            .sub("%s\n%s = %s" % (section, key, value), file_content)
 
 
 def set_key(section, key, value, file_content):
@@ -75,7 +99,6 @@ def update_kdmrc():
     kdmrc_path = "/etc/X11/kdm/kdmrc"
     shutil.copyfile(kdmrc_path, "%s.orig" % kdmrc_path)
     file_pointer = open(kdmrc_path, "r")
-    import ConfigParser
     kdmrc_config = ConfigParser.ConfigParser()
     kdmrc_config.readfp(file_pointer)
     if kdmrc_config.get("Xdmcp", "Enable") == "true":
@@ -87,7 +110,7 @@ def update_kdmrc():
     new_kdmrc_file = set_key("[Xdmcp]", "Enable", "true", kdmrc_file)
     file_pointer.close()
     if not new_kdmrc_file:
-        print "Error while updating kdmrc file"
+        print "Error while updating kdmrc file.\n"
         shutil.copyfile("%s.orig" % kdmrc_path, kdmrc_path)
         raise SystemExit
 
@@ -155,9 +178,11 @@ def firefox_pixmap():
 def update_exports(server_gateway, server_netmask):
     """ Updates /etc/exports file. """
 
+    exports_path = "/etc/exports"
+
     try:
-        shutil.copyfile("/etc/exports", "/etc/exports.orig")
-        file_pointer = open("/etc/exports", "a")
+        shutil.copyfile(exports_path, "%s.orig" % exports_path)
+        file_pointer = open(exports_path, "a")
         file_pointer.write("\n#This line is for PTSP server.\n\
 /opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)" % (server_gateway, server_netmask))
         file_pointer.close()
@@ -170,9 +195,12 @@ def update_exports(server_gateway, server_netmask):
 def update_hosts(server_ip, client_name, number_of_clients):
     """ Updates /etc/hosts file. """
 
+    hosts_path = "/etc/hosts"
+
     try:
-        shutil.copyfile("/etc/hosts", "/etc/hosts.orig")
-        file_pointer = open("/etc/hosts", "a")
+
+        shutil.copyfile(hosts_path, "%s.orig" % hosts_path)
+        file_pointer = open(hosts_path, "a")
         file_pointer.write("\n#This lines are for PTSP server.\n")
 
         ip_mask = server_ip[0:server_ip.rfind(".")]
@@ -187,6 +215,43 @@ def update_hosts(server_ip, client_name, number_of_clients):
 
     except:
         print "Failed to update hosts file.\n"
+        raise SystemExit
+
+def update_pts_client_conf(server_ip):
+    """ Updates /opt/ptsp/etc/pts-client.conf file. """
+
+    pts_client_conf_path = "/opt/ptsp/etc/pts-client.conf"
+
+    try:
+
+        shutil.copyfile(pts_client_conf_path, "%s.orig" % pts_client_conf_path)
+        file_pointer = open(pts_client_conf_path, "r")
+        pts_client_conf = ConfigParser.ConfigParser()
+        pts_client_conf.readfp(file_pointer)
+        if pts_client_conf.get("Server", "XSERVER") == server_ip:
+            print "pts-client.conf is OK, no need for update this file.\n"
+            file_pointer.close()
+            return
+
+        file_pointer.seek(0)
+        pts_client_conf_file = file_pointer.read()
+        new_pts_client_conf_file = set_key_with_spaces("[Server]", "XSERVER", \
+                server_ip, pts_client_conf_file)
+        file_pointer.close()
+
+        if not new_pts_client_conf_file:
+            print "Error while updating pts-client.conf file.\n"
+            shutil.copyfile("%s.orig" % pts_client_conf_path, \
+                    pts_client_conf_path)
+
+        file_pointer = open(pts_client_conf_path, "w")
+        file_pointer.writelines(new_pts_client_conf_file)
+        file_pointer.close()
+
+        print "Updated pts-client.conf file.\n"
+
+    except:
+        print "Failed to update pts-client.conf file.\n"
         raise SystemExit
 
 
@@ -220,6 +285,8 @@ if __name__ == "__main__":
     number_of_clients = input("Please enter number of clients: ")
 
     update_hosts(server_ip, client_name, number_of_clients)
+
+    update_pts_client_conf(server_ip)
 
     firefox_pixmap()
 
