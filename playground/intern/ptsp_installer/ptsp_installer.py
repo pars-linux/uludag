@@ -167,6 +167,29 @@ def update_exports(server_gateway, server_netmask):
         print "Failed to update exports file.\n"
         raise SystemExit
 
+def update_hosts(server_ip, client_name, number_of_clients):
+    """ Updates /etc/hosts file. """
+
+    try:
+        shutil.copyfile("/etc/hosts", "/etc/hosts.orig")
+        file_pointer = open("/etc/hosts", "a")
+        file_pointer.write("\n#This lines are for PTSP server.\n")
+
+        ip_mask = server_ip[0:server_ip.rfind(".")]
+        add_last = int(server_ip[server_ip.rfind(".")+1:]) + 1
+
+        for i in range(number_of_clients):
+            file_pointer.write("%s.%s\t\t\t\t%s%s\n" % (ip_mask, add_last+i, \
+                    client_name, i+1))
+
+        file_pointer.close()
+        print "Updated hosts file.\n"
+
+    except:
+        print "Failed to update hosts file.\n"
+        raise SystemExit
+
+
 if __name__ == "__main__":
 
     check_packages()
@@ -192,6 +215,11 @@ if __name__ == "__main__":
     network_netmask = "255.255.255.0"
 
     update_exports(network_gateway, network_netmask)
+
+    client_name = raw_input("Please enter Client's name: ")
+    number_of_clients = input("Please enter number of clients: ")
+
+    update_hosts(server_ip, client_name, number_of_clients)
 
     firefox_pixmap()
 

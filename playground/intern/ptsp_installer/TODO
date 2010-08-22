@@ -10,7 +10,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 + Edit /etc/exports file.
 
-- Edit /etc/hosts file. Ask how many users will use this system and add according to this.
++ Edit /etc/hosts file. Ask how many users will use this system and add according to this.
 
 - Modprobe fuse. It is automaticly loaded since Pardus 2009. So check release name before this step.
 
