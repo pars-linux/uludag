@@ -152,14 +152,14 @@ def firefox_pixmap():
         print "Failed to write Firefox Pixmap file.\n"
         raise SystemExit
 
-def update_exports(server_ip, server_netmask):
+def update_exports(server_gateway, server_netmask):
     """ Updates /etc/exports file. """
 
     try:
         shutil.copyfile("/etc/exports", "/etc/exports.orig")
         file_pointer = open("/etc/exports", "a")
         file_pointer.write("\n#This line is for PTSP server.\n\
-/opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)" % (server_ip, server_netmask))
+/opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)" % (server_gateway, server_netmask))
         file_pointer.close()
         print "Updated exports file.\n"
 
@@ -171,27 +171,28 @@ if __name__ == "__main__":
 
     check_packages()
 
+#    create_profile = raw_input("Do you want to create new network profile \
+#or use an existing one[Y/N]: ")
+#    if create_profile  == 'Y' or create_profile == 'y':
+#        ipaddr = raw_input("Enter Ip Address: ")
+#        netmask = raw_input("Enter Netmask Address: ")
+#        gateway = raw_input("Enter Gateway Address: ")
+#        nameserver = raw_input("Nameserver Address (write 'default' to use \
+#default nameservers) : ")
+
+#    elif create_profile == 'N' or create_profile == 'n':
+#        select_network_profile()
+
     update_kdmrc()
 
-    #TODO: Get server's ip and netmask from COMAR after
-    #Selecting network profile
-    server_ip = "10.0.0.0"
-    server_netmask = "255.255.255.0"
+    #TODO: Get server_ip, network_gateway and network_netmask
+    #from COMAR after selecting network profie
+    server_ip = "10.0.0.1"
+    network_gateway = "10.0.0.0"
+    network_netmask = "255.255.255.0"
 
-    update_exports(server_ip, server_netmask)
+    update_exports(network_gateway, network_netmask)
 
     firefox_pixmap()
-
-    create_profile = raw_input("Do you want to create new network profile \
-or use an existing one[Y/N]: ")
-    if create_profile  == 'Y' or create_profile == 'y':
-        ipaddr = raw_input("Enter Ip Address: ")
-        netmask = raw_input("Enter Netmask Address: ")
-        gateway = raw_input("Enter Gateway Address: ")
-        nameserver = raw_input("Nameserver Address (write 'default' to use \
-default nameservers) : ")
-
-    elif create_profile == 'N' or create_profile == 'n':
-        select_network_profile()
 
     start_services()
