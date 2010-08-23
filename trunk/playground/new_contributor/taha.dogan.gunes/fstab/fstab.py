@@ -23,16 +23,38 @@ fstab.py - reads and edits /etc/fstab
 class Line(object):
     """
     Line object for fstab, keeps the line in a dictionary.
+
+    Notes:
+        - To create a blank line:
+            >>> line = Line()
+            >>> line.set_fs(string)
+            >>> line.set_mountpoint(string)
+            >>> line.set_type(string)
+            >>> line.set_opts(list)
+            >>> line.set_dump(integer/string)
+            >>> line.set_pass(integer/string)
+            or
+            >>> line.set_values(fs=string,
+                                mountpoint=string,
+                                type=string,
+                                opts=list,
+                                dump=int/str,
+                                passvalue=int/str)
     """
 
-    def __init__(self, line):
+    def __init__(self, line=""):
         """
         line is a normal string from fstab object.
         """
+
         self.line = line
-        self.dict = self.dictBuilder(line)
+        if line is not "":
+            self.dict = self.dict_builder(line)
+        else:
+            self.dict = self.dict_builder("fs mounpoint type default 0 0")
 
     def __getattr__(self, name):
+
         others = ["dump","passvalue"]
         if name in self.dict:
             if name in others:
@@ -46,7 +68,7 @@ class Line(object):
 
         object.__setattr__(self, name, value)
 
-    def dictBuilder(self, line):
+    def dict_builder(self, line):
         """
         making dictionary editable
         """
@@ -85,6 +107,25 @@ class Line(object):
 
         self.dict["passvalue"] = str(value)
 
+    def set_values(self,
+                   fs="fs",
+                   mountpoint="mountpoint",
+                   type="type",
+                   opts=["default"],
+                   dump=0,
+                   passvalue=0):
+
+        self.dict = {}
+        opts = ",".join(opts)
+        line = " ".join([fs,
+                         mountpoint,
+                         type,
+                         opts,
+                         str(dump),
+                         str(passvalue)])
+
+        self.dict = self.dict_builder(line)
+                   
     def return_line(self):
         mylist = [self.dict["fs"],
                   self.dict["mountpoint"],
@@ -105,6 +146,7 @@ class Fstab:
         - To edit a line : fstabobject.lines[x].set_fs(string)
         - To edit a line's options = fstabobject.lines[x].set_opts(list)
     """
+
     def __init__(self, path):
 
         self.path = path
@@ -140,4 +182,5 @@ class Fstab:
         firstlines = "".join([i for i in self.descriptions]) 
         text = "\n".join([lineobj.return_line() for lineobj in self.lines])
         return firstlines+text
+
 
