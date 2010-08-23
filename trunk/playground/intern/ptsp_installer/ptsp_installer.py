@@ -139,28 +139,48 @@ def start_services():
         raise SystemExit
 
 def select_network_device():
+    """ Selects network device. """
+
     i = 1
     print "Select a Network Device to use"
+    dev_list = []
     link = comar.Link()
     info = link.Network.Link["net_tools"].linkInfo()
-    devices = link.Network.Link["net_tools"].deviceList().values()
+    devices = link.Network.Link["net_tools"].deviceList()
     if len(devices) > 0:
         print "%s devices" % info["name"]
-        for d in devices:
-            print "[%s]  %s" % (i, d)
-            i=i+1
+        for dev_id, dev_name in devices.iteritems():
+            dev_list.append(dev_id)
+            print "[%s]  %s" % (i, dev_name)
+            i = i + 1
     selected_device = input("Device: ")
-    return devices[selected_device-1]
+    return dev_list[selected_device-1]
 
 def select_network_profile():
-    """ Show network profile to use. """
-
+    """ Select network profile to use. """
+    i = 1
     link = comar.Link()
     device = select_network_device()
     if device in link.Network.Link["net_tools"].deviceList():
-        for connection in link.Network.Link["net_tools"].connections():
-            info = link.Network.Link["net_tools"].connectionInfo(connection)
+        connection = link.Network.Link["net_tools"].connections()
+        if len(connection) > 0:
+            for profile in connection:
+                profile_info = link.Network.Link["net_tools"].connectionInfo(profile)
+                dev_name = profile_info["device_name"].split(" - ")[0]
+                print "[%s] %s\t-\t%s" % (i, profile, dev_name)
+                i = i + 1
             #TODO: List Network Profiles and Select one of them.
+        network_profile = input("Select a Profile: ")
+
+    set_network_profile_state(network_profile-1, "up")
+
+    return link.Network.Link["net_tools"].connectionInfo(connection[network_profile-1])
+
+def set_network_profile_state(profile_index, state):
+    link = comar.Link()
+    link.Network.Link["net_tools"].setState(link.Network.Link["net_tools"].connections()[profile_index], state)
+    if link.Network.Link["net_tools"].connectionInfo(link.Network.Link["net_tools"].connections()[profile_index])["state"].find("up") != -1:
+        print "Profile %s is up!" % link.Network.Link["net_tools"].connections()[profile_index]
 
 def firefox_pixmap():
     """ This function disables firefox's image optimization. """
@@ -260,6 +280,7 @@ def update_pts_client_conf(server_ip):
 
 def update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
                       number_of_clients):
+    """ Updates /etc/dhcp/dhcpd.conf file. """
 
     dhcpd_conf_path = "/etc/dhcp/dhcpd.conf"
 
@@ -293,30 +314,32 @@ if __name__ == "__main__":
 
     check_packages()
 
-#    create_profile = raw_input("Do you want to create new network profile \
-#or use an existing one[Y/N]: ")
-#    if create_profile  == 'Y' or create_profile == 'y':
-#        ipaddr = raw_input("Enter Ip Address: ")
-#        netmask = raw_input("Enter Netmask Address: ")
-#        gateway = raw_input("Enter Gateway Address: ")
-#        nameserver = raw_input("Nameserver Address (write 'default' to use \
-#default nameservers) : ")
+    create_profile = raw_input("Do you want to create new network profile \
+or use an existing one[Y/N]: ")
+    if create_profile  == 'Y' or create_profile == 'y':
+        ipaddr = raw_input("Enter Ip Address: ")
+        netmask = raw_input("Enter Netmask Address: ")
+        gateway = raw_input("Enter Gateway Address: ")
+        nameserver = raw_input("Nameserver Address (write 'default' to use \
+default nameservers) : ")
 
-#    elif create_profile == 'N' or create_profile == 'n':
-#        select_network_profile()
+    elif create_profile == 'N' or create_profile == 'n':
+        profile_settings = select_network_profile()
+        server_ip = profile_settings["net_address"]
+        network_gateway = profile_settings["net_gateway"]
+        network_netmask = profile_settings["net_mask"]
 
-    #TODO: Get server_ip, network_gateway and network_netmask
-    #from COMAR after selecting network profie
 
-    server_ip = "10.0.0.1"
-    network_gateway = "10.0.0.0"
-    network_netmask = "255.255.255.0"
-    ethernet_hw_address = "F4:CE:46:F2:B8:7C"
+    raise SystemExit
+#    server_ip = "10.0.0.1"
+#    network_gateway = "10.0.0.0"
+#    network_netmask = "255.255.255.0"
 
     client_name = raw_input("Please enter Client's name: ")
     number_of_clients = input("Please enter number of Clients: ")
 
-    update_dhcpd_conf(server_ip, network_gateway, network_netmask, number_of_clients)
+    update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
+            number_of_clients)
 
     update_kdmrc()
 
