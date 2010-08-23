@@ -162,14 +162,14 @@ def select_network_profile():
     link = comar.Link()
     device = select_network_device()
     if device in link.Network.Link["net_tools"].deviceList():
-        connection = link.Network.Link["net_tools"].connections()
-        if len(connection) > 0:
-            for profile in connection:
+        profile_list = link.Network.Link["net_tools"].connections()
+        if len(profile_list) > 0:
+            for profile in profile_list:
                 profile_info = link.Network.Link["net_tools"].connectionInfo(profile)
                 dev_name = profile_info["device_name"].split(" - ")[0]
                 print "[%s] %s\t-\t%s" % (i, profile, dev_name)
                 i = i + 1
-            #TODO: List Network Profiles and Select one of them.
+
         network_profile = input("Select a Profile: ")
 
     set_network_profile_state(network_profile-1, "up")
@@ -177,10 +177,108 @@ def select_network_profile():
     return link.Network.Link["net_tools"].connectionInfo(connection[network_profile-1])
 
 def set_network_profile_state(profile_index, state):
+    """ This function sets network profile state(up or down). """
+
     link = comar.Link()
-    link.Network.Link["net_tools"].setState(link.Network.Link["net_tools"].connections()[profile_index], state)
-    if link.Network.Link["net_tools"].connectionInfo(link.Network.Link["net_tools"].connections()[profile_index])["state"].find("up") != -1:
-        print "Profile %s is up!" % link.Network.Link["net_tools"].connections()[profile_index]
+    profile_list = link.Network.Link["net_tools"].connections()
+
+    link.Network.Link["net_tools"].setState(profile_list[profile_index], state)
+
+    if link.Network.Link["net_tools"].connectionInfo(profile_list[profile_index])["state"].find(state) != -1:
+        print "Profile %s is %s!\n" % (profile_list[profile_index], state)
+
+    else:
+        print "Change state the Profile %s to %s is failed.\n" % (connections_list[profile_index], state)
+
+def create_network_profile():
+    """ Function to create network profile. """
+
+    try:
+        link = comar.Link()
+        profile = None
+        profile_list = link.Network.Link["net_tools"].connections()
+
+        device = select_network_device()
+
+        while not profile:
+            profile = raw_input("Network Profile Name: ")
+            if profile in profile_list:
+                print "There is already a profile named '%s'" % profile
+                profile = None
+
+        if profile == None:
+            raise SystemExit
+
+        print """\
+Select IP Assignment Method:
+[1] Enter an IP address manually
+[2] Automatically obtain an IP Address
+"""
+        ip_selection = input("Method: ")
+        if ip_selection == 1:
+            ip_mode = "manual"
+            server_address = raw_input("Ip Address: ")
+            network_netmask = raw_input("Netmask Address: ")
+            network_gateway = raw_input("Gateway Address: ")
+
+        elif ip_selection == 2:
+            ip_mode = "auto"
+            server_address = ""
+            network_netmask = ""
+            network_gateway = ""
+
+        else:
+            print "Selection Error.\n"
+            raise SystemExit
+
+        print """\
+Select Name server (DNS) assignment method:
+[1] Use default name servers
+[2] Enter an name server address manually
+[3] Automatically obtain from DHCP
+"""
+        dns_selection = input("Method: ")
+
+        if dns_selection == 1:
+            dns_mode = "default"
+            network_dns = ""
+
+        elif dns_selection == 2:
+            dns_mode = "manual"
+            network_dns = raw_input("Enter Dns Address: ")
+
+        elif dns_selection == 3:
+            dns_mode = "auto"
+            network_dns = ""
+
+        else:
+            print "Selection Error.\n"
+            raise SystemExit
+
+        link.Network.Link["net_tools"].setDevice(profile, device)
+
+        link.Network.Link["net_tools"].setAddress(profile, ip_mode, server_address, \
+                network_netmask, network_gateway)
+
+        link.Network.Link["net_tools"].setNameService(profile, dns_mode, network_dns)
+
+        network_profile = 1
+
+        for _profile in profile_list:
+            if link.Network.Link["net_tools"].connectionInfo(_profile) == profile:
+                break
+            network_profile = network_profile + 1
+
+        set_network_profile_state((network_profile-1), "up")
+
+        print "New network profile added successfully.\n"
+
+        return link.Network.Link["net_tools"].connectionInfo(profile_list\
+                [network_profile-1])
+
+    except:
+            print "Add and/or up the new network profile failed.\n"
+            raise SystemExit
 
 def firefox_pixmap():
     """ This function disables firefox's image optimization. """
@@ -314,26 +412,20 @@ if __name__ == "__main__":
 
     check_packages()
 
+    create_network_profile()
+    raise SystemExit
+
     create_profile = raw_input("Do you want to create new network profile \
 or use an existing one[Y/N]: ")
     if create_profile  == 'Y' or create_profile == 'y':
-        ipaddr = raw_input("Enter Ip Address: ")
-        netmask = raw_input("Enter Netmask Address: ")
-        gateway = raw_input("Enter Gateway Address: ")
-        nameserver = raw_input("Nameserver Address (write 'default' to use \
-default nameservers) : ")
+        profile_settings = create_network_profile()
 
     elif create_profile == 'N' or create_profile == 'n':
         profile_settings = select_network_profile()
-        server_ip = profile_settings["net_address"]
-        network_gateway = profile_settings["net_gateway"]
-        network_netmask = profile_settings["net_mask"]
 
-
-    raise SystemExit
-#    server_ip = "10.0.0.1"
-#    network_gateway = "10.0.0.0"
-#    network_netmask = "255.255.255.0"
+    server_ip = profile_settings["net_address"]
+    network_gateway = profile_settings["net_gateway"]
+    network_netmask = profile_settings["net_mask"]
 
     client_name = raw_input("Please enter Client's name: ")
     number_of_clients = input("Please enter number of Clients: ")

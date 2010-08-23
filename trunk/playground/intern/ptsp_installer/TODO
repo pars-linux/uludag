@@ -2,7 +2,7 @@ Based on: http://tr.pardus-wiki.org/NASIL:PTSP document.
 
 + Check dhcp, tftp, ltspfs, perl-X11-Protocol and ptsp-server's pisi packages. If isnt installed, terminate script.
 
-/ Create a network profile and activate this. If already there is a profile for this, only activate the profile.
++ Create a network profile and activate this. If already there is a profile for this, only activate the profile.
 
 +- Edit /etc/dhcp/dhcpd.conf file. Select correct DHCPD_IFACE (network interface, e.g. eth0)
 
