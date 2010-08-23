@@ -90,5 +90,49 @@ class Line:
        return " ".join(mylist)
 
 
+class Fstab:
+    """
+    fstab object for loading and saving.
 
+    Notes:
+        - To delete a line : fstabobject.lines.pop(0)
+        - To add a new line : fstabobject.lines.append(fstab.Line("a b c d e f"))
+        - To edit a line : fstabobject.lines[0].set_fs(string)
+
+    """
+    def __init__(self, path):
+
+        self.path = path
+        self.lines = []
+        self.descriptions = []
+        self.load_lines()
+
+    def load_lines(self):
+        """
+        loads lines from self.path
+        """
+
+        fstabfile = open(self.path,"r")
+        lines = fstabfile.readlines()
+        for line in lines:
+            if line[0] is not "#":
+                lineobj = Line(line)
+                self.lines.append(lineobj)
+            elif line[0] is "#":
+                self.descriptions.append(line)
+
+    def write_lines(self):
+        """
+        writes lines to the given path
+        """
+        fstabfile = open(self.path,"w")
+        fstabfile.write(self.show_lines())
+
+    def show_lines(self):
+        """
+        shows lines, not writes them
+        """
+        firstlines = "".join([i for i in self.descriptions]) + "\n"
+        text = "\n".join([lineobj.return_line() for lineobj in self.lines])
+        return firstlines+text
 
