@@ -60,60 +60,66 @@ class Widget(QtGui.QWidget, Screen):
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)
         self.connect(self.ui.checkReverse, SIGNAL("toggled(bool)"), self.setHandedness)
-        self.connect(self.ui.singleClick, SIGNAL("toggled(bool)"), self.setClickBehaviour)
 
     def str2bool(self, s):
         return bool(eval(s.capitalize()))
 
-    def setClickBehaviour(self):
+    def on_singleClick_clicked(self):
         if self.ui.singleClick.isChecked():
             self.clickBehaviour = "True"
         else:
             self.clickBehaviour = "False"
 
-    def setHandedness(self, item):
-        mapMouse = {}
+    def getMouseMap(self):
+        self.mapMouse = {}
 
         if self.ui.radioButtonRightHand.isChecked():
-            handed = RIGHT_HANDED
+            self.handed = RIGHT_HANDED
 
         else:
-            handed = LEFT_HANDED
+            self.handed = LEFT_HANDED
 
-        mapMouse = display.Display().get_pointer_mapping()
-        num_buttons = len(mapMouse)
+        self.mapMouse = display.Display().get_pointer_mapping()
+        self.num_buttons = len(self.mapMouse)
 
-        if num_buttons == 1:
-            mapMouse[0] = 1
-        elif num_buttons == 2:
-            if handed == RIGHT_HANDED:
-                mapMouse[0], mapMouse[1] = 1, 3
+    def setHandedness(self, item):
+        self.getMouseMap()
+
+        # mouse has 1 button
+        if self.num_buttons == 1:
+            self.mapMouse[0] = 1
+
+        # mouse has 2 buttons
+        elif self.num_buttons == 2:
+            if self.handed == RIGHT_HANDED:
+                self.mapMouse[0], self.mapMouse[1] = 1, 3
             else:
-                mapMouse[0], mapMouse[1] = 3, 1
+                self.mapMouse[0], self.mapMouse[1] = 3, 1
+
+        # mouse has 3 or more buttons
         else:
-            if handed == RIGHT_HANDED:
-                mapMouse[0], mapMouse[2] = 1, 3
+            if self.handed == RIGHT_HANDED:
+                self.mapMouse[0], self.mapMouse[2] = 1, 3
             else:
-                mapMouse[0], mapMouse[2] = 3, 1
+                self.mapMouse[0], self.mapMouse[2] = 3, 1
 
-            if num_buttons >= 5:
-                pos = 0
-                for pos in range(num_buttons):
-                    if mapMouse[pos] == 4 or mapMouse[pos] == 5:
-                        break
+            if self.num_buttons >= 5:
+                # get wheel position
+                for pos in range(0, self.num_buttons):
+                    if self.mapMouse[pos] in (4,5): break
 
-                if pos < num_buttons -1:
+                if pos < self.num_buttons -1:
                     if self.ui.checkReverse.isChecked():
-                        mapMouse[pos], mapMouse[pos + 1] = 5, 4
+                        self.mapMouse[pos], self.mapMouse[pos + 1] = 5, 4
                     else:
-                        mapMouse[pos], mapMouse[pos + 1] = 4, 5
+                        self.mapMouse[pos], self.mapMouse[pos + 1] = 4, 5
 
-        display.Display().set_pointer_mapping(mapMouse)
+        display.Display().set_pointer_mapping(self.mapMouse)
 
         config = KConfig("kcminputrc")
         group = config.group("Mouse")
 
-        if handed == RIGHT_HANDED:
+        if self.handed == RIGHT_HANDED:
             group.writeEntry("MouseButtonMapping", QString("RightHanded"))
             self.__class__.screenSettings["selectedMouse"] = "RightHanded"
         else:
