@@ -19,37 +19,30 @@ SERVICE_LIST = ["dhcp", \
                 "nfs-utils", \
                 "portmap"]
 
-def set_key_with_spaces(section, key, value, file_content):
-    """ Function to set key in configuration files with spaces. """
-
-    import re
-
-    section_escaped = re.escape(section)
-
-    if not re.compile('^%s$' % section_escaped, re.MULTILINE).\
-            search(file_content):
-        print "set_key failed, '%s' section not found in kdmrc." % section
-        return False
-
-    result = re.compile('^%s = (.*)$' % key, re.MULTILINE)
-    if result.search(file_content):
-        return result.sub('%s = %s' % (key, value), file_content)
-
-    result = re.compile('^#%s = (.*)$' % key, re.MULTILINE)
-    if result.search(file_content):
-        return result.sub('%s = %s' % (key, value), file_content)
-
-    # If key can not be found, insert key=value right below the section
-    return re.compile('^%s$' % section_escaped, re.MULTILINE)\
-            .sub("%s\n%s = %s" % (section, key, value), file_content)
-
-
-def set_key(section, key, value, file_content):
+def set_key(section, key, value, file_content, white_spaces="false"):
     """ Function to set key in configuration files. """
 
     import re
 
     section_escaped = re.escape(section)
+
+    if white_spaces:
+        if not re.compile('^%s$' % section_escaped, re.MULTILINE).\
+                search(file_content):
+            print "set_key failed, '%s' section not found in kdmrc." % section
+            return False
+
+        result = re.compile('^%s = (.*)$' % key, re.MULTILINE)
+        if result.search(file_content):
+            return result.sub('%s = %s' % (key, value), file_content)
+
+        result = re.compile('^#%s = (.*)$' % key, re.MULTILINE)
+        if result.search(file_content):
+            return result.sub('%s = %s' % (key, value), file_content)
+
+        # If key can not be found, insert key=value right below the section
+        return re.compile('^%s$' % section_escaped, re.MULTILINE)\
+                .sub("%s\n%s = %s" % (section, key, value), file_content)
 
     if not re.compile('^%s$' % section_escaped, re.MULTILINE).\
             search(file_content):
@@ -235,8 +228,8 @@ def update_pts_client_conf(server_ip):
 
         file_pointer.seek(0)
         pts_client_conf_file = file_pointer.read()
-        new_pts_client_conf_file = set_key_with_spaces("[Server]", "XSERVER", \
-                server_ip, pts_client_conf_file)
+        new_pts_client_conf_file = set_key("[Server]", "XSERVER", \
+                server_ip, pts_client_conf_file, white_spaces="true")
         file_pointer.close()
 
         if not new_pts_client_conf_file:
