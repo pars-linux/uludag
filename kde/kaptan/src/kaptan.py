@@ -8,59 +8,48 @@ from PyKDE4 import kdeui
 from PyQt4.QtCore import QTimeLine
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
-import os
-import dbus
-import subprocess
-
 from kaptan.screens.ui_kaptan import Ui_kaptan
 
 from kaptan.tools import tools
 from kaptan.tools.progress_pie import DrawPie
 from kaptan.tools.kaptan_menu import Menu
 
-import glob
-
-def loadScreen(screenName):
-    split = screenName.split('.')
-    screen = __import__(screenName)
-
-    for s in split[1:]:
-        screen = getattr(screen, s)
-
-    return screen
-
-screens = glob.glob("screens/scr*py")
-for screen in screens:
-    print screen
-    screenName = screen.split("/")[-1].split(".")[0]
-    print screenName
-    vars()[screenName] = loadScreen("kaptan.screens." + screenName)
-
-
 class Kaptan(QtGui.QWidget):
     def __init__(self, parent = None):
-
         QtGui.QWidget.__init__(self, parent)
-        self.ui = Ui_kaptan()
+        self.initializeGlobals()
+        self.initializeUI()
+        self.signalHandler()
 
-        self.ui.setupUi(self)
-        #self.setStyle(QtGui.QStyleFactory.create('Plastique'))
-
-        # Kaptan screen settings
-        self.commonScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
-        self.endScreens = [scrSummary, scrGoodbye]
-        self.screens = self.appendOtherScreens(self.commonScreens) + self.endScreens
-
+    def initializeGlobals(self):
+        ''' initializes global variables '''
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
         self.config = KConfig("kaptanrc")
         self.titles = []
         self.descriptions = []
+        self.screensPath = "kaptan/screens/scr*py"
 
-        # Draw progress pie
-        self.countScreens = len(self.screens)
-        self.pie = DrawPie(self.countScreens, self.ui.labelProgress)
+    def signalHandler(self):
+        ''' connects signals to slots '''
+        QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
+        QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
+        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+        QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+
+    def initializeUI(self):
+        ''' initializes the human interface '''
+        self.ui = Ui_kaptan()
+        self.ui.setupUi(self)
+
+        # load screens
+        tools.loadScreens(self.screensPath, globals())
+
+        # kaptan screen settings
+        self.commonScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
+        self.endScreens = [scrSummary, scrGoodbye]
+        self.screens = self.appendOtherScreens(self.commonScreens) + self.endScreens
 
         # Add screens to StackWidget
         self.createWidgets(self.screens)
@@ -70,43 +59,13 @@ class Kaptan(QtGui.QWidget):
             title = screen.Widget.title.toString()
             self.titles.append(title)
 
+        # draw progress pie
+        self.countScreens = len(self.screens)
+        self.pie = DrawPie(self.countScreens, self.ui.labelProgress)
+
         # Initialize Menu
         self.menu = Menu(self.titles, self.ui.labelMenu)
         self.menu.start()
-
-        QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
-        QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
-        QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
-
-
-        def compile_module(self, filename):
-            """
-                Compiles a Python module and returns locals.
-
-                Args:
-                    filename: Path to Python module
-                Returns: Dictionary of local objects
-            """
-            try:
-                locals = globals = {}
-                code = open(filename).read()
-                exec compile(code, "error", "exec") in locals, globals
-            except IOError, e:
-                logging.warning("Module has errors: %s" % filename)
-            except SyntaxError, e:
-                logging.warning("Module has syntax errors: %s" % filename)
-            return locals
-
-    def smoltProfileSent(self):
-        ''' Do not show smolt screen if profile was already sended.'''
-        smolt_uuid_path = "/etc/smolt/pub-uuid-smolt.pardus.org.tr"
-
-        if os.path.exists(smolt_uuid_path):
-            if os.path.getsize(smolt_uuid_path) > 0:
-                return True
-
-        return False
 
     def appendOtherScreens(self, commonScreens):
         screens = commonScreens
@@ -116,7 +75,7 @@ class Kaptan(QtGui.QWidget):
             screens.append(scrKeyboard)
 
         else:
-            if self.smoltProfileSent():
+            if tools.smoltProfileSent():
                 screens.append(scrPackage)
                 screens.append(scrSearch)
             else:
@@ -137,27 +96,10 @@ class Kaptan(QtGui.QWidget):
                     subg = subgroup.group('Wallpaper')
                     subg_2 = subg.group('image')
                     subg_2.writeEntry("wallpaper", wallpaperWidget.Widget.selectedWallpaper)
-            self.killPlasma()
+            tools.killPlasma()
             QtGui.qApp.quit()
         else:
             QtGui.qApp.quit()
-
-    def killPlasma(self):
-        p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
-        out, err = p.communicate()
-        pidOfPlasma = int(out)
-
-        try:
-            os.kill(pidOfPlasma, 15)
-            self.startPlasma()
-        except OSError, e:
-            print 'WARNING: failed os.kill: %s' % e
-            print "Trying SIGKILL"
-            os.kill(pidOfPlasma, 9)
-            self.startPlasma()
-
-    def startPlasma(self):
-        p = subprocess.Popen(["plasma-desktop"], stdout=subprocess.PIPE)
 
     # returns the id of current stack
     def getCur(self, d):
@@ -287,9 +229,7 @@ if __name__ == "__main__":
     KCmdLineArgs.init(sys.argv, aboutData)
     app =  kdeui.KApplication()
 
-    if not dbus.get_default_main_loop():
-        from dbus.mainloop.qt import DBusQtMainLoop
-        DBusQtMainLoop(set_as_default = True)
+    tools.DBus()
 
     kaptan = Kaptan()
     kaptan.show()
