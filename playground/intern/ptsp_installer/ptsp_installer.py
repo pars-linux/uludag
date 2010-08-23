@@ -89,30 +89,37 @@ terminate script. """
 def update_kdmrc():
     """ Updates kdmrc file. """
 
-    kdmrc_path = "/etc/X11/kdm/kdmrc"
-    shutil.copyfile(kdmrc_path, "%s.orig" % kdmrc_path)
-    file_pointer = open(kdmrc_path, "r")
-    kdmrc_config = ConfigParser.ConfigParser()
-    kdmrc_config.readfp(file_pointer)
-    if kdmrc_config.get("Xdmcp", "Enable") == "true":
-        print "Kdmrc is OK, no need for update this file.\n"
-        return
+    try:
+        kdmrc_path = "/etc/X11/kdm/kdmrc"
+        shutil.copyfile(kdmrc_path, "%s.orig" % kdmrc_path)
+        file_pointer = open(kdmrc_path, "r")
+        kdmrc_config = ConfigParser.ConfigParser()
+        kdmrc_config.readfp(file_pointer)
+        if kdmrc_config.get("Xdmcp", "Enable") == "true":
+            print "Kdmrc is OK, no need for update this file.\n"
+            return
 
-    file_pointer.seek(0)
-    kdmrc_file = file_pointer.read()
-    new_kdmrc_file = set_key("[Xdmcp]", "Enable", "true", kdmrc_file)
-    file_pointer.close()
-    if not new_kdmrc_file:
-        print "Error while updating kdmrc file.\n"
+        file_pointer.seek(0)
+        kdmrc_file = file_pointer.read()
+        new_kdmrc_file = set_key("[Xdmcp]", "Enable", "true", kdmrc_file)
+        file_pointer.close()
+        if not new_kdmrc_file:
+            print "Error while updating kdmrc file.\n"
+            shutil.copyfile("%s.orig" % kdmrc_path, kdmrc_path)
+            raise SystemExit
+
+        file_pointer = open(kdmrc_path, "w")
+        file_pointer.writelines(new_kdmrc_file)
+        file_pointer.close()
+
+        print "Kdmrc has successfully updated. Please restart X server \
+to apply changes.\n"
+
+    except:
+
+        print "Failed to update kdmrc file.\n"
         shutil.copyfile("%s.orig" % kdmrc_path, kdmrc_path)
         raise SystemExit
-
-    file_pointer = open(kdmrc_path, "w")
-    file_pointer.writelines(new_kdmrc_file)
-    file_pointer.close()
-
-    print "Kdmrc has successfully updated. Please restart X server \
-to apply changes.\n"
 
 def start_services():
     """ Start necessary services. """
@@ -183,6 +190,7 @@ def update_exports(server_gateway, server_netmask):
 
     except:
         print "Failed to update exports file.\n"
+        shutil.copyfile("%s.orig" % exports_path, exports_path)
         raise SystemExit
 
 def update_hosts(server_ip, client_name, number_of_clients):
@@ -208,6 +216,7 @@ def update_hosts(server_ip, client_name, number_of_clients):
 
     except:
         print "Failed to update hosts file.\n"
+        shutil.copyfile("%s.orig" % hosts_path, hosts_path)
         raise SystemExit
 
 def update_pts_client_conf(server_ip):
@@ -245,8 +254,40 @@ def update_pts_client_conf(server_ip):
 
     except:
         print "Failed to update pts-client.conf file.\n"
+        shutil.copyfile("%s.orig" % pts_client_conf_path, \
+                pts_client_conf_path)
         raise SystemExit
 
+def update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
+                      number_of_clients):
+
+    dhcpd_conf_path = "/etc/dhcp/dhcpd.conf"
+
+    try:
+
+        shutil.copyfile(dhcpd_conf_path, "%s.orig" % dhcpd_conf_path)
+        file_pointer = open(dhcpd_conf_path, "w")
+        ip_mask = server_ip[0:server_ip.rfind(".")]
+        add_last = int(server_ip[server_ip.rfind(".")+1:]) + 1
+        file_pointer.write("""
+#This lines are for PTSP Server.
+ option root-path      "%s:/opt/ptsp";
+ subnet %s netmask %s {
+     range %s  %s.%s;
+
+     #send this file for pxe file requests
+     filename "/pts/latest-ptsp/pxelinux.0";
+ }
+""" % (server_ip, network_gateway, network_netmask, server_ip, ip_mask, \
+        add_last+number_of_clients))
+        file_pointer.close()
+        print "Updated dhcpd.conf file.\n"
+
+    except:
+
+        print "Failed to update dhcpd.conf file.\n"
+        shutil.copyfile("%s.orig" % dhcpd_conf_path, dhcpd_conf_path)
+        raise SystemExit
 
 if __name__ == "__main__":
 
@@ -264,18 +305,23 @@ if __name__ == "__main__":
 #    elif create_profile == 'N' or create_profile == 'n':
 #        select_network_profile()
 
-    update_kdmrc()
-
     #TODO: Get server_ip, network_gateway and network_netmask
     #from COMAR after selecting network profie
+
     server_ip = "10.0.0.1"
     network_gateway = "10.0.0.0"
     network_netmask = "255.255.255.0"
+    ethernet_hw_address = "F4:CE:46:F2:B8:7C"
+
+    client_name = raw_input("Please enter Client's name: ")
+    number_of_clients = input("Please enter number of Clients: ")
+
+    update_dhcpd_conf(server_ip, network_gateway, network_netmask, number_of_clients)
+
+    update_kdmrc()
 
     update_exports(network_gateway, network_netmask)
 
-    client_name = raw_input("Please enter Client's name: ")
-    number_of_clients = input("Please enter number of clients: ")
 
     update_hosts(server_ip, client_name, number_of_clients)
 
