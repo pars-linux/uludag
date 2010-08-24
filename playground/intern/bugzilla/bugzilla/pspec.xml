@@ -12,7 +12,7 @@
         <IsA>app:web</IsA>
         <Summary>Bug-Tracking System</Summary>
         <Description>Bugzilla allow developers to keep track of outstanding bugs in their product effectively.</Description>
-        <Archive sha1sum="d161b2a8f1681b0d35ef09290f2e847072af1ff6" type="targz">http://cekirdek.pardus.org.tr/~serdar/dist/files/bugzilla-3.6.2.tar.gz</Archive>
+        <Archive sha1sum="16c3279050c80b8e38b6e0331f3382cf47d7b3d9" type="targz">http://cekirdek.pardus.org.tr/~serdar/dist/files/bugzilla-3.6.2.tar.gz</Archive>
         <BuildDependencies>
             <Dependency>perl-Digest-SHA1</Dependency>
             <Dependency>perl-TimeDate</Dependency>
@@ -54,12 +54,13 @@
 
         <Patches>
             <Patch>assignedto.patch</Patch>
+            <Patch>template-en.patch</Patch>
             <Patch>template-tr.patch</Patch>
         </Patches>
         <!--
         <Patches>
-            <Patch>template-en.patch</Patch>
             <Patch>fallback-to-text-plain-if-octet-stream-detected.patch</Patch>
+            <Patch>template-en.patch</Patch>
         </Patches>
         -->
     </Source>
