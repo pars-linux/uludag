@@ -14,7 +14,7 @@ def setup():
     perlmodules.configure()
 
 def build():
-    perlmodules.make()
+    perlmodules.make("raddb_dir=%s/etc/raddb" % get.installDIR())
 
 def check():
     perlmodules.make("test")

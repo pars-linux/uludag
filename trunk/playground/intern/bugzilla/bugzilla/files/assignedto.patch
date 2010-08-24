@@ -1,6 +1,6 @@
---- tr/default/bug/create/create.html.tmpl.orig	2010-03-15 12:12:35.811970170 +0200
-+++ tr/default/bug/create/create.html.tmpl	2010-03-15 12:13:13.118094061 +0200
-@@ -374,7 +374,7 @@
+--- template/en/default/bug/create/create.html.tmpl.orig	2010-08-23 12:09:08.434384569 +0300
++++ template/en/default/bug/create/create.html.tmpl	2010-08-23 12:12:19.779385279 +0300
+@@ -380,7 +380,7 @@
      <td colspan="2">
        [% INCLUDE global/userselect.html.tmpl
           name => "assigned_to"

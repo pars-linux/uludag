@@ -1,5 +1,5 @@
---- a/Bugzilla/Attachment.pm
-+++ b/Bugzilla/Attachment.pm
+--- Bugzilla/Attachment.pm
++++ Bugzilla/Attachment.pm
 @@ -828,6 +828,14 @@ sub create {
                  $cgi->param('ispatch', 1);
                  $cgi->param('contenttype', 'text/plain');

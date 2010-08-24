@@ -3,7 +3,7 @@
 <PISI>
     <Source>
         <Name>bugzilla</Name>
-        <Homepage>http://www.pardus.org.tr</Homepage>
+        <Homepage>http://www.bugzilla.org/</Homepage>
         <Packager>
             <Name>Utku Uluşahin</Name>
             <Email>utkuulusahin@gmail.com</Email>
@@ -12,9 +12,8 @@
         <IsA>app:web</IsA>
         <Summary>Bug-Tracking System</Summary>
         <Description>Bugzilla allow developers to keep track of outstanding bugs in their product effectively.</Description>
-        <Archive sha1sum="fcbbbbacd0588a1e28ad42fb747f3530bc18977f" type="targz">http://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-3.6.2.tar.gz</Archive>
+        <Archive sha1sum="d161b2a8f1681b0d35ef09290f2e847072af1ff6" type="targz">http://cekirdek.pardus.org.tr/~serdar/dist/files/bugzilla-3.6.2.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency>perl-CGI</Dependency>
             <Dependency>perl-Digest-SHA1</Dependency>
             <Dependency>perl-TimeDate</Dependency>
             <Dependency>perl-DateTime</Dependency>
@@ -52,18 +51,22 @@
             <Dependency>perl-TheSchwartz</Dependency>
             <Dependency>perl-Daemon-Generic</Dependency>
         </BuildDependencies>
+
         <Patches>
             <Patch>assignedto.patch</Patch>
-            <Patch>fallback-to-text-plain-if-octet-stream-detected.patch</Patch>
-            <Patch>diff.patch</Patch>
-            <Patch>test.patch</Patch>
+            <Patch>template-tr.patch</Patch>
         </Patches>
+        <!--
+        <Patches>
+            <Patch>template-en.patch</Patch>
+            <Patch>fallback-to-text-plain-if-octet-stream-detected.patch</Patch>
+        </Patches>
+        -->
     </Source>
 
     <Package>
-        <Name>Bugzilla</Name>
+        <Name>bugzilla</Name>
         <RuntimeDependencies>
-            <Dependency>perl-CGI</Dependency>
             <Dependency>perl-Digest-SHA1</Dependency>
             <Dependency>perl-TimeDate</Dependency>
             <Dependency>perl-DateTime</Dependency>
@@ -102,7 +105,7 @@
             <Dependency>perl-Daemon-Generic</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="all">/</Path>
+            <Path fileType="data">/var/www/localhost/htdocs/bugzilla</Path>
             <!--
             <Path fileType="config">/etc</Path>
             <Path fileType="executable">/usr/bin</Path>
