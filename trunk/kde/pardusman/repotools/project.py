@@ -25,14 +25,12 @@ def _(x):
 # FIXME: Python version is hardcoded!
 default_live_exclude_list = """
 lib/rcscripts/
-usr/include/
-usr/lib/python2.6/lib-tk/
-usr/lib/python2.6/idlelib/
-usr/lib/python2.6/bsddb/test/
-usr/lib/python2.6/lib-old/
-usr/lib/python2.6/test/
+usr/lib/python2.7/lib-tk/
+usr/lib/python2.7/idlelib/
+usr/lib/python2.7/bsddb/test/
+usr/lib/python2.7/lib-old/
+usr/lib/python2.7/test/
 usr/lib/klibc/include/
-usr/qt/4/include/
 usr/share/aclocal/
 usr/share/doc/
 usr/share/info/
@@ -51,34 +49,29 @@ var/log/pisi.log
 root/.bash_history
 """
 
-# FIXME: Python and Qt versions are hardcoded!
+# FIXME: Python version is hardcoded!
 default_install_exclude_list = """
 lib/rcscripts/
-usr/include/
 usr/lib/cups/
-usr/lib/python2.6/lib-tk/
-usr/lib/python2.6/idlelib/
-usr/lib/python2.6/distutils/
-usr/lib/python2.6/bsddb/test/
-usr/lib/python2.6/lib-old/
-usr/lib/python2.6/test/
-usr/lib/python2.6/site-packages/PyQt4/QtAssistant.so
-usr/lib/python2.6/site-packages/PyQt4/QtDesigner.so
-usr/lib/python2.6/site-packages/PyQt4/QtHelp.so
-usr/lib/python2.6/site-packages/PyQt4/QtNetwork.so
-usr/lib/python2.6/site-packages/PyQt4/QtOpenGL.so
-usr/lib/python2.6/site-packages/PyQt4/QtScript.so
-usr/lib/python2.6/site-packages/PyQt4/QtSql.so
-usr/lib/python2.6/site-packages/PyQt4/QtTest.so
-usr/lib/python2.6/site-packages/PyQt4/QtWebKit.so
-usr/lib/python2.6/site-packages/PyQt4/QtXml.so
-usr/lib/python2.6/site-packages/PyQt4/QtXmlPatterns.so
+usr/lib/python2.7/lib-tk/
+usr/lib/python2.7/idlelib/
+usr/lib/python2.7/distutils/
+usr/lib/python2.7/bsddb/test/
+usr/lib/python2.7/lib-old/
+usr/lib/python2.7/test/
+usr/lib/python2.7/site-packages/PyQt4/QtAssistant.so
+usr/lib/python2.7/site-packages/PyQt4/QtDesigner.so
+usr/lib/python2.7/site-packages/PyQt4/QtHelp.so
+usr/lib/python2.7/site-packages/PyQt4/QtNetwork.so
+usr/lib/python2.7/site-packages/PyQt4/QtOpenGL.so
+usr/lib/python2.7/site-packages/PyQt4/QtScript.so
+usr/lib/python2.7/site-packages/PyQt4/QtSql.so
+usr/lib/python2.7/site-packages/PyQt4/QtTest.so
+usr/lib/python2.7/site-packages/PyQt4/QtWebKit.so
+usr/lib/python2.7/site-packages/PyQt4/QtXml.so
+usr/lib/python2.7/site-packages/PyQt4/QtXmlPatterns.so
 usr/lib/klibc/include/
 usr/lib/syslinux/
-usr/qt/4/include/
-usr/qt/4/mkspecs/
-usr/qt/4/bin/
-usr/qt/4/templates/
 usr/share/aclocal/
 usr/share/cups/
 usr/share/doc/
@@ -101,8 +94,8 @@ root/.bash_history
 """
 
 default_install_glob_excludes = (
-    ( "usr/lib/python2.6/", "*.pyc" ),
-    ( "usr/lib/python2.6/", "*.pyo" ),
+    ( "usr/lib/python2.7/", "*.pyc" ),
+    ( "usr/lib/python2.7/", "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -111,34 +104,34 @@ default_install_glob_excludes = (
     ( "lib/", "*.la" ),
     ( "var/db/comar/", "__db*" ),
     ( "var/db/comar/", "log.*" ),
-    ( "usr/qt/4/lib/", "libphononexperimental.so*" ),
-    ( "usr/qt/4/lib/", "libphonon.so*" ),
-    ( "usr/qt/4/lib/", "libqca.so*" ),
-    ( "usr/qt/4/lib/", "libQt3Support.so*" ),
-    ( "usr/qt/4/lib/", "libQtAssistantClient.so*" ),
-    ( "usr/qt/4/lib/", "libQtCLucene.so*" ),
-    ( "usr/qt/4/lib/", "libQtDBus.so*" ),
-    ( "usr/qt/4/lib/", "libQtDesignerComponents.so*" ),
-    ( "usr/qt/4/lib/", "libQtDesigner.so*" ),
-    ( "usr/qt/4/lib/", "libQtHelp.so*" ),
-    ( "usr/qt/4/lib/", "libQtMultimedia*" ),
-    ( "usr/qt/4/lib/", "libQtNetwork.so*" ),
-    ( "usr/qt/4/lib/", "libQtOpenGL.so*" ),
-    ( "usr/qt/4/lib/", "libQtScript.so*" ),
-    ( "usr/qt/4/lib/", "libQtScriptTools.so*" ),
-    ( "usr/qt/4/lib/", "libQtSql.so*" ),
-    ( "usr/qt/4/lib/", "libQtTapioca.so*" ),
-    ( "usr/qt/4/lib/", "libQtTelepathyClient.so*" ),
-    ( "usr/qt/4/lib/", "libQtTest.so*" ),
-    ( "usr/qt/4/lib/", "libQtUiTools.so*" ),
-    ( "usr/qt/4/lib/", "libQtWebKit.so*" ),
-    ( "usr/qt/4/lib/", "libQtXmlPatterns.so*" ),
-    ( "usr/qt/4/lib/", "libQtXml.so*" ),
+    ( "usr/lib/", "libphononexperimental.so*" ),
+    ( "usr/lib/", "libphonon.so*" ),
+    ( "usr/lib/", "libqca.so*" ),
+    ( "usr/lib/", "libQt3Support.so*" ),
+    ( "usr/lib/", "libQtAssistantClient.so*" ),
+    ( "usr/lib/", "libQtCLucene.so*" ),
+    ( "usr/lib/", "libQtDBus.so*" ),
+    ( "usr/lib/", "libQtDesignerComponents.so*" ),
+    ( "usr/lib/", "libQtDesigner.so*" ),
+    ( "usr/lib/", "libQtHelp.so*" ),
+    ( "usr/lib/", "libQtMultimedia*" ),
+    ( "usr/lib/", "libQtNetwork.so*" ),
+    ( "usr/lib/", "libQtOpenGL.so*" ),
+    ( "usr/lib/", "libQtScript.so*" ),
+    ( "usr/lib/", "libQtScriptTools.so*" ),
+    ( "usr/lib/", "libQtSql.so*" ),
+    ( "usr/lib/", "libQtTapioca.so*" ),
+    ( "usr/lib/", "libQtTelepathyClient.so*" ),
+    ( "usr/lib/", "libQtTest.so*" ),
+    ( "usr/lib/", "libQtUiTools.so*" ),
+    ( "usr/lib/", "libQtWebKit.so*" ),
+    ( "usr/lib/", "libQtXmlPatterns.so*" ),
+    ( "usr/lib/", "libQtXml.so*" ),
 )
 
 default_live_glob_excludes = (
-    ( "usr/lib/python2.6/", "*.pyc" ),
-    ( "usr/lib/python2.6/", "*.pyo" ),
+    ( "usr/lib/python2.7/", "*.pyc" ),
+    ( "usr/lib/python2.7/", "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
