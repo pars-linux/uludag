@@ -410,38 +410,62 @@ def update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
 
 if __name__ == "__main__":
 
-    check_packages()
+    select = raw_input("Do you want to Check Packages?[Y/N]")
+    if select == 'Y' or select == 'y':
+        check_packages()
 
-    create_network_profile()
-    raise SystemExit
+    select = raw_input("Do you want to make change with your network settings?[Y/N]")
+    if select == 'Y' or select == 'y':
 
-    create_profile = raw_input("Do you want to create new network profile \
-or use an existing one[Y/N]: ")
-    if create_profile  == 'Y' or create_profile == 'y':
-        profile_settings = create_network_profile()
+        create_profile = raw_input("Do you want to create new network profile \
+or use existing one[Y/N]: ")
 
-    elif create_profile == 'N' or create_profile == 'n':
-        profile_settings = select_network_profile()
+        if create_profile  == 'Y' or create_profile == 'y':
+            profile_settings = create_network_profile()
 
-    server_ip = profile_settings["net_address"]
-    network_gateway = profile_settings["net_gateway"]
-    network_netmask = profile_settings["net_mask"]
+        elif create_profile == 'N' or create_profile == 'n':
+            profile_settings = select_network_profile()
 
-    client_name = raw_input("Please enter Client's name: ")
-    number_of_clients = input("Please enter number of Clients: ")
+        server_ip = profile_settings["net_address"]
+        network_gateway = profile_settings["net_gateway"]
+        network_netmask = profile_settings["net_mask"]
 
-    update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
+
+    select = raw_input("Do you want to Update dhcpd.conf?[Y/N]")
+
+    if select == 'Y' or select == 'y':
+        client_name = raw_input("Please enter Client's name: ")
+        number_of_clients = input("Please enter number of Clients: ")
+        update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
             number_of_clients)
 
-    update_kdmrc()
+    select = raw_input("Do you want to Update kdmrc?[Y/N]")
 
-    update_exports(network_gateway, network_netmask)
+    if select == 'Y' or select == 'y':
+        update_kdmrc()
+
+    select = raw_input("Do you want to Update exports?[Y/N]")
+
+    if select == 'Y' or select == 'y':
+        update_exports(network_gateway, network_netmask)
 
 
-    update_hosts(server_ip, client_name, number_of_clients)
+    select = raw_input("Do you want to Update hosts?[Y/N]")
 
-    update_pts_client_conf(server_ip)
+    if select == 'Y' or select == 'y':
+        update_hosts(server_ip, client_name, number_of_clients)
 
-    firefox_pixmap()
+    select = raw_input("Do you want to Update pts-client.conf?[Y/N]")
 
-    start_services()
+    if select == 'Y' or select == 'y':
+        update_pts_client_conf(server_ip)
+
+    select = raw_input("Do you want to Disable Firefox Image Caching?[Y/N]")
+
+    if select == 'Y' or select == 'y':
+        firefox_pixmap()
+
+    select = raw_input("Do you want to start Services?[Y/N]")
+
+    if select == 'Y' or select == 'y':
+        start_services()
