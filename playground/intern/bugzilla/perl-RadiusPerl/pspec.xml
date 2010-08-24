@@ -19,9 +19,11 @@
             <Dependency>perl-Data-Dumper</Dependency>
             <Dependency>perl-Data-HexDump</Dependency>
         </BuildDependencies>
+        <!--
         <Patches>
             <Patch level="0">patch.patch</Patch>
         </Patches>
+        -->
     </Source>
 
     <Package>
