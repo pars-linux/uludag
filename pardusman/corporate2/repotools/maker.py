@@ -470,7 +470,7 @@ def make_image(project):
         run('umount %s/proc' % image_dir, ignore_error=True)
         run('umount %s/sys' % image_dir, ignore_error=True)
         image_dir = project.image_dir(clean=True)
-        run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
+        run('pisi --yes-all -D"%s" ar pardus-install %s --ignore-check' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
             if project.all_install_image_packages:
                 install_image_packages = " ".join(project.all_install_image_packages)
