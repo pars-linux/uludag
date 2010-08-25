@@ -20,7 +20,7 @@ import os, sys, subprocess
 
 from kaptan.screen import Screen
 from kaptan.screens.ui_scrWallpaper import Ui_wallpaperWidget
-from kaptan.screens.scrWallpaperItem import WallpaperItemWidget
+from kaptan.screens.wallpaperItem import WallpaperItemWidget
 
 from kaptan.tools.desktop_parser import DesktopParser
 from ConfigParser import ConfigParser

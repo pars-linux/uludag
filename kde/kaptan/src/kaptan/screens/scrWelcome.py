@@ -18,13 +18,9 @@ from PyKDE4.kdecore import i18n
 
 from kaptan.screen import Screen
 from kaptan.screens.ui_scrWelcome import Ui_welcomeWidget
+from kaptan.tools import tools
 
 import subprocess
-
-def getRelease():
-    p = subprocess.Popen(["lsb_release", "-irs"], stdout=subprocess.PIPE)
-    release, err = p.communicate()
-    return unicode(release.replace("\n", ""))
 
 class Widget(QtGui.QWidget, Screen):
 
@@ -35,7 +31,7 @@ class Widget(QtGui.QWidget, Screen):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
-        Widget.desc = QVariant(unicode(Widget.desc.toString()) % getRelease())
+        Widget.desc = QVariant(unicode(Widget.desc.toString()) % tools.getRelease())
 
     def shown(self):
         pass
