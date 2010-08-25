@@ -40,7 +40,7 @@ def update_messages():
     # Collect UI files
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        os.system("pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
     # Collect headers for desktop files
     for filename in glob.glob("data/*.desktop.in"):
@@ -90,7 +90,7 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
