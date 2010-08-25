@@ -53,16 +53,10 @@
         </BuildDependencies>
 
         <Patches>
-            <Patch>assignedto.patch</Patch>
             <Patch>template-en.patch</Patch>
             <Patch>template-tr.patch</Patch>
+            <!--Patch>assignedto.patch</Patch-->
         </Patches>
-        <!--
-        <Patches>
-            <Patch>fallback-to-text-plain-if-octet-stream-detected.patch</Patch>
-            <Patch>template-en.patch</Patch>
-        </Patches>
-        -->
     </Source>
 
     <Package>
@@ -107,16 +101,14 @@
         </RuntimeDependencies>
         <Files>
             <Path fileType="data">/var/www/localhost/htdocs/bugzilla</Path>
-            <!--
-            <Path fileType="config">/etc</Path>
-            <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="header">/usr/include</Path>
-            <Path fileType="library">/usr/lib</Path>
-            <Path fileType="localedata">/usr/share/locale</Path>
-            <Path fileType="man">/usr/share/man</Path>
             <Path fileType="doc">/usr/share/doc</Path>
-            -->
         </Files>
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/doc/bugzilla/README">README</AdditionalFile>
+        </AdditionalFiles>
+        <Provides>
+            <COMAR script="package.py">System.Package</COMAR>
+        </Provides>
     </Package>
 
     <History>
