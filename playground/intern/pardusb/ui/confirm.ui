@@ -220,5 +220,21 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>confirm_dialog</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>211</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>170</x>
+     <y>229</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>
