@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
 
 from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
@@ -26,14 +27,17 @@ class Kaptan(QtGui.QWidget):
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
-        self.config = KConfig("kaptanrc")
         self.titles = []
         self.descriptions = []
-        self.screensPath = "kaptan/screens/scr*py"
+        self.currentDir = os.path.dirname(os.path.realpath(__file__))
+        self.screensPath = self.currentDir + "/kaptan/screens/scr*py"
+        self.kaptanConfig = KConfig("kaptanrc")
+        self.plasmaConfig = KConfig("plasma-desktop-appletsrc")
 
     def signalHandler(self):
         ''' connects signals to slots '''
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
+        QtCore.QObject.connect(self.ui.buttonApply, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
         QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
@@ -47,9 +51,9 @@ class Kaptan(QtGui.QWidget):
         tools.loadScreens(self.screensPath, globals())
 
         # kaptan screen settings
-        self.commonScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
-        self.endScreens = [scrSummary, scrGoodbye]
-        self.screens = self.appendOtherScreens(self.commonScreens) + self.endScreens
+        self.headScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
+        self.tailScreens = [scrSummary, scrGoodbye]
+        self.screens = self.screenOrganizer(self.headScreens, self.tailScreens)
 
         # Add screens to StackWidget
         self.createWidgets(self.screens)
@@ -67,55 +71,50 @@ class Kaptan(QtGui.QWidget):
         self.menu = Menu(self.titles, self.ui.labelMenu)
         self.menu.start()
 
-    def appendOtherScreens(self, commonScreens):
-        screens = commonScreens
+    def screenOrganizer(self, headScreens, tailScreens):
+        ''' appends unsorted screens to the list '''
+        screens = []
+
+        allScreens = [value for key, value in globals().iteritems() if key.startswith("scr")]
+
+        otherScreens = list((set(allScreens) - set(headScreens)) - set(tailScreens))
+        otherScreens.remove(scrKeyboard)
+        otherScreens.remove(scrSmolt)
+        otherScreens.remove(scrSearch)
+        otherScreens.remove(scrPackage)
+
+        screens.extend(headScreens)
+        screens.extend(otherScreens)
 
         # Append other screens depending on the following cases
         if tools.isLiveCD():
             screens.append(scrKeyboard)
 
         else:
-            if tools.smoltProfileSent():
-                screens.append(scrPackage)
-                screens.append(scrSearch)
-            else:
-                screens.append(scrSearch)
+            if not tools.smoltProfileSent():
                 screens.append(scrSmolt)
-                screens.append(scrPackage)
+
+            screens.append(scrSearch)
+            screens.append(scrPackage)
+
+        screens.extend(tailScreens)
 
         return screens
 
-    def slotFinished(self):
-        if wallpaperWidget.Widget.selectedWallpaper:
-            config =  KConfig("plasma-desktop-appletsrc")
-            group = config.group("Containments")
-            for each in list(group.groupList()):
-                subgroup = group.group(each)
-                subcomponent = subgroup.readEntry('plugin')
-                if subcomponent == 'desktop' or subcomponent == 'folderview':
-                    subg = subgroup.group('Wallpaper')
-                    subg_2 = subg.group('image')
-                    subg_2.writeEntry("wallpaper", wallpaperWidget.Widget.selectedWallpaper)
-            tools.killPlasma()
-            QtGui.qApp.quit()
-        else:
-            QtGui.qApp.quit()
-
-    # returns the id of current stack
     def getCur(self, d):
+        ''' returns the id of current stack '''
         new   = self.ui.mainStack.currentIndex() + d
         total = self.ui.mainStack.count()
         if new < 0: new = 0
         if new > total: new = total
         return new
 
-    # move to id numbered step
     def setCurrent(self, id=None):
-        if id:
-            self.stackMove(id)
+        ''' move to id numbered step '''
+        if id: self.stackMove(id)
 
-    # execute next step
     def slotNext(self,dryRun=False):
+        ''' execute next step '''
         self.menuText = ""
         curIndex = self.ui.mainStack.currentIndex() + 1
 
@@ -132,8 +131,8 @@ class Kaptan(QtGui.QWidget):
             self.stackMove(self.getCur(self.moveInc))
             self.moveInc = 1
 
-    # execute previous step
     def slotBack(self):
+        ''' execute previous step '''
         self.menuText = ""
         curIndex = self.ui.mainStack.currentIndex()
 
@@ -143,15 +142,14 @@ class Kaptan(QtGui.QWidget):
         # animate menu
         self.menu.prev()
 
-
         _w = self.ui.mainStack.currentWidget()
 
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
 
-    # move to id numbered stack
     def stackMove(self, id):
+        ''' move to id numbered stack '''
         if not id == self.ui.mainStack.currentIndex() or id==0:
             self.ui.mainStack.setCurrentIndex(id)
 
@@ -162,20 +160,29 @@ class Kaptan(QtGui.QWidget):
             _w.update()
             _w.shown()
 
-        if self.ui.mainStack.currentIndex() == len(self.screens)-1:
-            self.ui.buttonNext.hide()
-            self.ui.buttonFinish.show()
-        else:
+        if self.ui.mainStack.currentIndex() == len(self.screens) - 3:
             self.ui.buttonNext.show()
+            self.ui.buttonApply.hide()
             self.ui.buttonFinish.hide()
+
+        if self.ui.mainStack.currentIndex() == len(self.screens) - 2:
+            self.ui.buttonNext.hide()
+            self.ui.buttonApply.show()
+            self.ui.buttonFinish.hide()
+
+        if self.ui.mainStack.currentIndex() == len(self.screens) - 1:
+            self.ui.buttonApply.hide()
+            self.ui.buttonFinish.show()
 
         if self.ui.mainStack.currentIndex() == 0:
             self.ui.buttonBack.hide()
+            self.ui.buttonFinish.hide()
+            self.ui.buttonApply.hide()
         else:
             self.ui.buttonBack.show()
 
-    # create all widgets and add inside stack
     def createWidgets(self, screens=[]):
+        ''' create all widgets and add inside stack '''
         self.ui.mainStack.removeWidget(self.ui.page)
         for screen in screens:
             _scr = screen.Widget()
@@ -185,6 +192,7 @@ class Kaptan(QtGui.QWidget):
 
             # Append screens to stack widget
             self.ui.mainStack.addWidget(_scr)
+
 
         self.stackMove(0)
 
@@ -207,20 +215,19 @@ class Kaptan(QtGui.QWidget):
         return self.buttonBack.isEnabled()
 
     def __del__(self):
-        group = self.config.group("General")
+        group = self.kaptanConfig.group("General")
         group.writeEntry("RunOnStart", "False")
 
 if __name__ == "__main__":
-    # About data
     appName     = "kaptan"
     catalog     = ""
     programName = ki18n("kaptan")
-    version     = "4.5"
-    description = ki18n("Kaptan is a welcome wizard for Pardus")
+    version     = "5.0"
+    description = ki18n("Kaptan lets you configure your Pardus workspace at first login")
     license     = KAboutData.License_GPL
     copyright   = ki18n("(c) 2010 Pardus")
     text        = ki18n("none")
-    homePage    = "www.pardus.org.tr"
+    homePage    = "http://developer.pardus.org.tr/projects/kaptan"
     bugEmail    = "renan@pardus.org.tr"
 
     aboutData   = KAboutData(appName,catalog, programName, version, description,
@@ -229,11 +236,11 @@ if __name__ == "__main__":
     KCmdLineArgs.init(sys.argv, aboutData)
     app =  kdeui.KApplication()
 
+    # attach dbus to main loop
     tools.DBus()
 
     kaptan = Kaptan()
     kaptan.show()
-    rect  = QtGui.QDesktopWidget().screenGeometry()
-    kaptan.move(rect.width()/2 - kaptan.width()/2, rect.height()/2 - kaptan.height()/2)
+    tools.centerWindow(kaptan)
     app.exec_()
 
