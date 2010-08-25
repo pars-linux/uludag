@@ -1,24 +1,29 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# 
-#
- 
+
 import sys
-import os
 import hashlib
+import os
+
+if sys.platform == 'win32':
+    platform = 'win32'
+    from wintools import *
+    
+elif sys.platform == 'linux2':
+    platform = 'linux2'
+    from linuxtools import *
 
 from PyQt4 import QtCore, QtGui
 
-from linuxtools import PartitionUtils
-
-from functions import get_disk_info
-from functions import get_iso_size
-from functions import check_size
-
 from ui_main import Ui_Dialog
-from ui_selectdisk import Ui_SelectDialog
-from ui_progressbar import Ui_ProgressDialog
+import ui_selectdisk
+import ui_progressbar
+import ui_confirm
+
+#from releases import *
+
+mbyte = (1024**2)
 
 
 class Start(QtGui.QMainWindow):
@@ -26,125 +31,233 @@ class Start(QtGui.QMainWindow):
 		QtGui.QWidget.__init__(self, parent)
 		self.ui = Ui_Dialog()
 		self.ui.setupUi(self)
-       
-	        #self.button_create_clicked = Create()
 
 		self.connect(self.ui.button_cancel, QtCore.SIGNAL("clicked()"), QtCore.SLOT("close()"))
     
 		QtCore.QObject.connect(self.ui.button_open, QtCore.SIGNAL("clicked()"), self.open_file)
 		QtCore.QObject.connect(self.ui.select_disk, QtCore.SIGNAL("clicked()"), self.select_disk)
                 QtCore.QObject.connect(self.ui.button_create, QtCore.SIGNAL("clicked()"), self.button_create_clicked)
-    
+	             
         @QtCore.pyqtSignature("bool")  
         def open_file(self):
                 #select image file
-		self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"), os.environ["HOME"], "%s (*.iso *.img)" % self.tr("Images"))   
-		
+            if platform == 'linux2':
+                self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"), os.environ["HOME"], "%s (*.iso *.img)" % self.tr("Images"))   
+                
+            elif platform == 'win32':
+                self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"))   # fix it 
+            
                 #will be deleted
-		self.ui.label.setText(self.img_src)
+	    self.ui.label.setText(self.img_src)
     
         @QtCore.pyqtSignature("bool")  
         def select_disk(self):
                 # select portable disk
 		self.sd = selectDisk()
-      
-		#linux tools
-		self.a = PartitionUtils()
-		self.a.detect_removable_drives()
+      		#linux tools
+		if platform == 'linux2':
+                    self.a = PartitionUtils()
+                    self.a.detect_removable_drives()
+                    
+                    for key in  self.a.drives:
+			self.sd.listWidget.insertItem(0,key)
 	        
 		#windows tools
-		# self.a = ??
-		  
-		for key in  self.a.drives:
-			self.sd.listWidget.insertItem(0,key)
-	  		    
+                elif platform == 'win32':
+                    self.a = win32_PartitionUtils()
+                    self.a.win32_detect_removable_drives()
+
+                    for key in self.a.drives:
+                        self.sd.listWidget.insertItem(0,key)		
+	  		    	    
 		self.connect(self.sd.listWidget, QtCore.SIGNAL("itemClicked(QListWidgetItem *)"), self.get_disk_destination)
 		self.sd.exec_()
+		
     
         @QtCore.pyqtSignature("bool")  
-        def get_disk_destination(self, item):
-		self.ui.label_2.setText(item.text())
-		self.disk_dest = item.text()
-	
+        def get_disk_destination(self, item):		
 		#will be deleted
+		self.ui.label_2.setText(item.text())
+		self.disk_dest = str(item.text())
+		
 		print self.a.drives[str(self.disk_dest)]
-		self.ui.label_2.setText(str(self.a.drives[str(self.disk_dest)]['size']))
+		  
+                self.ui.label_2.setText(str(self.a.drives[str(self.disk_dest)]['size']))
+
+	@QtCore.pyqtSignature("bool")
+	def button_create_clicked(self):		  
+		str(self.disk_dest)		
+		self.img_size = os.stat(self.img_src).st_size / mbyte
+		
+		#will be deleted
+		self.ui.label.setText(str(self.img_size))
+
+		if platform == 'linux2':
+                    self.disk_size = (int(self.a.drives[self.disk_dest]['size']) / mbyte)
+                    
+                    if self.a.drives[self.disk_dest]['is_mount'] == '1':
+			  self.a.unmount_device(str(self.disk_dest)) # unmount!
+			  print ("Disk is unmounted by HAL!")
+                    
+                    #self.a.mount_device(self.disk_dest)
+
+                elif platform == 'win32':
+                    self.disk_size = self.a.win32_get_total_size()
+                    print self.disk_size
+
+		if self.a.drives[self.disk_dest]['is_mount'] == '1' :		
+			self.warning_dialog(self.tr("Warning!"), self.tr("Flash disk is Mounted!\nPlease Unmount Disk")) 
+	
+		else:		  
+			if self.img_size > self.disk_size:
+				req_size = ((self.img_size - self.disk_size) / mbyte)
+
+				self.warning_dialog(self.tr("Warning!"), self.tr("There is no enough space on drive!\n%dMB more space is required" % req_size ))
+					
+			else:	
+				self.shasum = self.__check_sum()
+				
+                                self.confirm_dialog =  confirmDialog(self.shasum, self.img_src, self.img_size, self.disk_size, self.disk_dest)
+				
+				if self.confirm_dialog.exec_() == QtGui.QDialog.Accepted: 
+				    self.__burn_image()
+				    				  
+	def warning_dialog(self, title, text):
+		QtGui.QMessageBox.warning(self, title, text, QtGui.QMessageBox.Ok)
+			
+	  
+	def __check_sum(self):
+		self.max_value = int(self.img_size)
+		
+		def close_dialog(): # wtf!
+		  pb.close()
+		  cs.quit()
+
+		pb = progressBar(title = self.tr("Verify sha1sum"), message = self.tr("The integrity of image file is checking..."), max_value = self.max_value)                               			
+                cs = checksumProgress(source = self.img_src)
+
+                QtCore.QObject.connect(cs, QtCore.SIGNAL("incrementProgress()"), pb.incrementProgress)
+		QtCore.QObject.connect(cs, QtCore.SIGNAL("closeProgress()"), close_dialog)
+
+		cs.start()		
+                pb.exec_()
+		cs.wait()  
+		
+		
+		if not cs.checksum():
+		  print "Checksum cannot validated!"
+		else:
+		  return cs.checksum()
+	
+
+	def __burn_image(self):
+	  
+		def close_dialog(): # wtf!
+		    copy_progress_bar.close()
+		    copy_progress.quit()
+		    
+		copy_progress_bar = progressBar(title = self.tr("Copy Progress"), message = self.tr("Copy progress is running..."), max_value = self.max_value )				    
+		copy_progress = copyProgress(img_source = self.img_src, disk_dest = self.disk_dest, img_size = self.img_size) 
+                                    
+                QtCore.QObject.connect(copy_progress, QtCore.SIGNAL("copyIncrementProgress()"), copy_progress_bar.incrementProgress)
+                QtCore.QObject.connect(copy_progress, QtCore.SIGNAL("closeProgress()"), close_dialog)
+                                                   
+                copy_progress.start()
+                copy_progress_bar.exec_()
+                copy_progress.wait()
+                
+		self.warning_dialog(self.tr("USB Image is Ready"), self.tr("USB image is ready. Hayrini Gor!"))
+
+		return True	
+
+class copyProgress(QtCore.QThread):
+    def __init__(self, img_source, disk_dest, img_size):
+    	QtCore.QThread.__init__(self)
+        self.dest = open(disk_dest, "w")        
+        self.src = open(img_source, "r")
+        self.img_size = (img_size * mbyte)
+
+    def run(self):       
+        by = mbyte
+        bytes = 0 
+        
+        print "Copy progress is started!"
+        
+        while bytes <= self.img_size:
+            data = self.src.read(by)
+            self.dest.write(data)
+            bytes += by
+            self.emit(QtCore.SIGNAL("copyIncrementProgress()"))
+
+        print "Copy progress is finished!"
+        self.emit(QtCore.SIGNAL("closeProgress()"))
+        print "CloseProgress() signal is send!!"
+        
+class checksumProgress(QtCore.QThread):
+	def __init__(self, source):
+	      QtCore.QThread.__init__(self)
+	      self.src = source
+	      self.cnt = 0
+	      
+	def run(self): 
+            iso = open(self.src, "rb")
+	  
+            bytes = mbyte
+            sha = hashlib.sha1()
+	    print "Checksum progress is started!"
+	    
+            while bytes:
+		data = iso.read(bytes)
+		sha.update(data)
+		bytes = len(data)
+		self.emit(QtCore.SIGNAL("incrementProgress()"))
+		
+            self.shasum = sha.hexdigest()
+            print "Checksum progress is finished!"
+            self.emit(QtCore.SIGNAL("closeProgress()"))
+	
+	def checksum(self): # return release name etc if exist!
+	    print "Sha1sum of the iso: %s" % self.shasum
+            return self.shasum
+	  
+class progressBar(QtGui.QDialog, ui_progressbar.Ui_Dialog):
+	def __init__(self, title, message, max_value, parent = None):
+		super(progressBar, self).__init__(parent)
+		self.setupUi(self)
+		self.progressBar.setMinimum(0)
+		self.label.setText(message)
+		self.setWindowTitle(title)
+		self.progressBar.setValue(0)
+		self.progressBar.setMaximum(max_value)
+		#print max_value
 	
 	@QtCore.pyqtSignature("bool")
-	def button_create_clicked(self):
-		self.img_size = get_iso_size(str(self.img_src))
-		self.ui.label.setText(str(self.img_size))
-		
-		#self.a.mount_device(self.disk_dest)
-		#self.a.unmount_device(str(self.disk_dest))
-
-		if self.a.drives[str(self.disk_dest)]['is_mount'] == '1' :
-			
-			warningBox = QtGui.QMessageBox()
-			warningBox.setText("Usb disk is mounted!")
-			warningBox.setInformativeText("Please Unmount Disk!")
-			warningBox.setWindowTitle("Warning!")
-			warningBox.exec_()
-				
-		else:
-			
-			self.disk_size = int(self.a.drives[str(self.disk_dest)]['size'])
-			
-			if self.img_size > self.disk_size:
-				req_size = self.img_size - self.disk_size
-				msgBox = QtGu.QmessageBox()
-				msgBox.setWindowTitle("Warning")
-				msgBox.setText("There is no enough space!")
-				msgBox.setInformativeText("%d more space required" % req_size)
-
-			else:
-				check_sum = ProgressCheckSum()
-                                iso_file = open(self.img_src, "r")
-                                iso_sha = hashlib.sha1()
-                                iso_sha.update(iso_file.read())
-
-                                shaBox = QtGui.QMessageBox()
-                                shaBox.setText("Sha1sum of the iso:")
-                                shaBox.setInformativeText("%s" % iso_sha.hexdigest())
-                                shaBox.exec_()
-
-				dest = open(self.disk_dest, 'w')
-				by = 1024
-				bytes = 0
-			
-				print self.disk_dest
-			#	iso_file = open(self.img_src, "r")	
-			#	while bytes <= ((self.img_size)*(1024**2)):
-			#		data = iso_file.read(by)
-			#		dest.write(data)
-			#		bytes+=by
-		
-			#	copyInfo = QtGui.QMessageBox()
-			#	copyInfo.setText("Copy Successed!")
-			#	copyInfo.exec_()
-
-
-class ProgressBar(QtGui.QDialog, Ui_ProgressDialog):
-	def __init__(self, max_value, parent = None):
-		super(ProgressBar, self).__init__(parent)
-		self.setupUi(self)
-		
-		self.progressBar.setMaximum(max_value)
-		
 	def incrementProgress(self):
+			 #print "incrementing value.."
 			 current_value = self.progressBar.value()
 			 self.progressBar.setValue(current_value + 1)
 	
-
-#class ProgressCheckSum(QtCore.Qthread):
-#	def __init_-(self, dialog, source)
-
-class selectDisk(QtGui.QDialog, Ui_SelectDialog):  
+	@QtCore.pyqtSignature("bool")
+	def close_progress(self):
+	      print ("close progressbar!!")
+	      self.progressBar.close()
+	
+class selectDisk(QtGui.QDialog, ui_selectdisk.Ui_Dialog):  
       def __init__(self):
 	      QtGui.QDialog.__init__(self)
 	      self.setupUi(self)
 
-        
+class confirmDialog(QtGui.QDialog, ui_confirm.Ui_Dialog):
+      def __init__(self, sha_sum, img_src, img_size, disk_size, disk_dest):
+	      QtGui.QDialog.__init__(self)
+	      self.setupUi(self)
+	      
+	      self.label_img_path.setText(img_src)
+	      self.label_img_size.setText("%dMB" % img_size)
+	      self.label_release.setText(sha_sum)
+	      self.label_dest_size.setText("%dMB" % disk_size)
+	      self.label_disk_path.setText(disk_dest)
+	     
 if __name__ == "__main__":
     app= QtGui.QApplication(sys.argv)
     myapp = Start()

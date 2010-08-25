@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'confirm.ui'
 #
-# Created: Wed Aug 18 22:33:36 2010
+# Created: Tue Aug 24 11:48:37 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -106,10 +106,11 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         QtCore.QObject.connect(self.cancel_dialog, QtCore.SIGNAL("clicked()"), Dialog.close)
+        QtCore.QObject.connect(self.confirm_dialog, QtCore.SIGNAL("clicked()"), Dialog.accept)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Confirm Dialog", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("Dialog", "Confirming dialog will erase your data on chosen disk path!", None, QtGui.QApplication.UnicodeUTF8))
         self.label_2.setText(QtGui.QApplication.translate("Dialog", "Image Path:", None, QtGui.QApplication.UnicodeUTF8))
         self.label_4.setText(QtGui.QApplication.translate("Dialog", "Image Size:", None, QtGui.QApplication.UnicodeUTF8))
