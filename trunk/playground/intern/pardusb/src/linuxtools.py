@@ -1,11 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# author: Gökmen Görgen
-# license: GPLv3 (Read COPYING file.)
-#
 
 import dbus
+import os
 #import tempfile
 
 class PartitionUtils:
@@ -16,7 +14,6 @@ class PartitionUtils:
 
     def return_drives(self):
         return self.drives
-
 
     def add_device(self, dev, parent = None):
         mount = str(dev.GetProperty("volume.mount_point"))
@@ -59,7 +56,6 @@ class PartitionUtils:
                         if child.GetProperty("block.is_volume"):
                             self.add_device(child, parent = dev)
 
-
         if not len(self.drives):
             return False
 
@@ -67,21 +63,15 @@ class PartitionUtils:
             
             return True
 
-
     def mount_device(self, disk_dest):
         """ Mount our device with Hal if it is not already mounted"""
         device = self.drives[str(disk_dest)]
-        mount_point = '/mnt/pardusb'
+        mount_point = '/mnt/pardusb' # will be fixed!
 
-        if not device['mount']:
-       		if not device['fstype']: 
-        		print ("Filesystem unknown!")
+        device['udi'].Mount(mount_point, device['fstype'], dbus_interface = 'org.freedesktop.org.Hal.Device.Volume')
 
-                device['udi'].Mount(mount_point, device['fstype'], dbus_interface = 'org.freedesktop.org.Hal.Device.Volume')
-
-                device['is_mount'] = True
-                device['mount'] = '/mnt/pardusb' 
-
+        device['is_mount'] = True
+        device['mount'] = '/mnt/pardusb' #!!
                 
     def _get_device(self, udi):
         dev_obj = self.bus.get_object("org.freedesktop.Hal",udi)
@@ -89,18 +79,10 @@ class PartitionUtils:
 
 
     def unmount_device(self, disk_dest):
+      
         device = self.drives[disk_dest]
              
         device['udi'].Unmount([], dbus_interface='org.freedesktop.Hal.Device.Volume')
-        device['is_mount'] = False
+        device['is_mount'] = '0'
         device['mount'] = None
           
-          
-  
-	
-      
-
-
-
-
-

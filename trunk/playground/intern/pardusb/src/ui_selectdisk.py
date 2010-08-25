@@ -9,7 +9,7 @@
 
 from PyQt4 import QtCore, QtGui
 
-class Ui_SelectDialog(object):
+class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(280, 292)
@@ -56,6 +56,6 @@ class Ui_SelectDialog(object):
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
-        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Dialog", None, QtGui.QApplication.UnicodeUTF8))
+        Dialog.setWindowTitle(QtGui.QApplication.translate("Dialog", "Select Disk", None, QtGui.QApplication.UnicodeUTF8))
         self.label.setText(QtGui.QApplication.translate("Dialog", "Available Disks:", None, QtGui.QApplication.UnicodeUTF8))
 
