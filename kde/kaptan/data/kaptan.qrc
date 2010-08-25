@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="raw">
+    <file>pixmap/tab-new-background.png</file>
+    <file>pixmap/view-refresh.png</file>
+    <file>pixmap/document-save.png</file>
+    <file>pixmap/white-arrow-down.gif</file>
+    <file>pixmap/webcamreceive.png</file>
+    <file>pixmap/preferences-desktop-personal.png</file>
     <file>pixmap/applications-internet.png</file>
     <file>pixmap/applications-other.png</file>
     <file>pixmap/arrow-left.png</file>
