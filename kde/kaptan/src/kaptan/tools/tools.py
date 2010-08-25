@@ -5,6 +5,7 @@ import os
 import dbus
 import glob
 import subprocess
+from PyQt4.QtGui import QDesktopWidget
 
 def DBus():
     if not dbus.get_default_main_loop():
@@ -60,3 +61,18 @@ def smoltProfileSent():
 
     return False
 
+def centerWindow(window):
+    rect   = QDesktopWidget().screenGeometry()
+    width  = 0
+    heigth = 0
+
+    if rect.width <= 640: width = 620
+    elif rect.width <= 800: width = 720
+    else: width = 960
+
+    if rect.height <= 480: height = 450
+    elif rect.height <= 600: height = 520
+    else: height = 680
+
+    window.resize(width, height)
+    window.move(rect.width()/2 - window.width()/2, rect.height()/2 - window.height()/2)
