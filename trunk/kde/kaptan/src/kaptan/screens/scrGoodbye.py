@@ -20,7 +20,7 @@ from kaptan.screen import Screen
 from kaptan.screens.ui_scrGoodbye import Ui_goodbyeWidget
 import kaptan.screens.scrSmolt as smoltWidget
 
-sys.path.append('/usr/kde/4/share/apps/migration/')
+sys.path.append('/use/share/kde4/apps/migration/')
 from migration.utils import partition
 
 class Widget(QtGui.QWidget, Screen):
