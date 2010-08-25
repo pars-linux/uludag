@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>330</width>
-    <height>157</height>
+    <width>323</width>
+    <height>95</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QProgressBar" name="progressBar">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>90</y>
-     <width>251</width>
+     <x>10</x>
+     <y>60</y>
+     <width>311</width>
      <height>23</height>
     </rect>
    </property>
@@ -30,13 +30,26 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>30</y>
-     <width>311</width>
-     <height>16</height>
+     <y>10</y>
+     <width>281</width>
+     <height>20</height>
     </rect>
    </property>
    <property name="text">
-    <string>The Checksum of the image file is checking now...</string>
+    <string/>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>40</y>
+     <width>118</width>
+     <height>3</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>

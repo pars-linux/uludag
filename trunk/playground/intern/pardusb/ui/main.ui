@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>373</width>
-    <height>202</height>
+    <width>375</width>
+    <height>192</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>110</horstretch>
+    <verstretch>110</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>mainwindow</string>
@@ -17,85 +23,117 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>0</y>
+     <y>10</y>
      <width>351</width>
-     <height>141</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="title">
     <string>pardUSB</string>
    </property>
-   <widget class="QLabel" name="label">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>40</y>
-      <width>138</width>
-      <height>49</height>
+      <x>10</x>
+      <y>70</y>
+      <width>331</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Select ISO:</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Select USB drive:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>108</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="select_disk">
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
-   <widget class="QPushButton" name="button_open">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>50</y>
-      <width>141</width>
-      <height>24</height>
+      <x>10</x>
+      <y>30</y>
+      <width>331</width>
+      <height>41</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Select</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>80</y>
-      <width>138</width>
-      <height>59</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select USB drive:</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="select_disk">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>90</y>
-      <width>141</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Select</string>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>10</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Select ISO:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>128</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="button_open">
+       <property name="text">
+        <string>Select</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="Line" name="line">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>150</y>
+     <y>110</y>
      <width>351</width>
-     <height>16</height>
+     <height>21</height>
     </rect>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>170</y>
+     <y>140</y>
      <width>341</width>
      <height>27</height>
     </rect>
