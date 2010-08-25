@@ -18,12 +18,12 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "kaptan"
 programName = ki18n("Kaptan")
 modName     = "kaptan"
-version     = "4.5"
+version     = "5.0"
 description = ki18n("Kaptan")
 license     = KAboutData.License_GPL
-copyright   = ki18n("(c) 2005-2009 TUBITAK/UEKAE")
+copyright   = ki18n("(c) 2005-2011 TUBITAK/UEKAE")
 text        = ki18n(" ")
-homePage    = "http://www.pardus.org.tr/eng/projects"
+homePage    = "http://developer.pardus.org.tr/projects/kaptan"
 bugEmail    = "renan@pardus.org.tr"
 catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)

@@ -225,7 +225,7 @@ if __name__ == "__main__":
     version     = "5.0"
     description = ki18n("Kaptan lets you configure your Pardus workspace at first login")
     license     = KAboutData.License_GPL
-    copyright   = ki18n("(c) 2010 Pardus")
+    copyright   = ki18n("(c) 2011 Pardus")
     text        = ki18n("none")
     homePage    = "http://developer.pardus.org.tr/projects/kaptan"
     bugEmail    = "renan@pardus.org.tr"
