@@ -24,11 +24,11 @@ from PyKDE4 import kdeui
 # import other widgets to get the latest configuration
 import kaptan.screens.scrWallpaper as wallpaperWidget
 import kaptan.screens.scrMouse as mouseWidget
-import kaptan.screens.scrWallpaper as wallpaperWidget
 import kaptan.screens.scrStyle as styleWidget
 import kaptan.screens.scrMenu as menuWidget
 import kaptan.screens.scrSearch as searchWidget
 import kaptan.screens.scrSmolt  as smoltWidget
+import kaptan.screens.scrAvatar  as avatarWidget
 
 from kaptan.tools import tools
 
@@ -48,6 +48,7 @@ class Widget(QtGui.QWidget, Screen):
         self.searchSettings = searchWidget.Widget.screenSettings
         self.styleSettings = styleWidget.Widget.screenSettings
         self.smoltSettings = smoltWidget.Widget.screenSettings
+        self.avatarSettings = avatarWidget.Widget.screenSettings
 
         subject = "<p><li><b>%s</b></li><ul>"
         item    = "<li>%s</li>"
@@ -258,7 +259,7 @@ class Widget(QtGui.QWidget, Screen):
                 subgroup = group.group(each)
                 subcomponent = subgroup.readEntry('plugin')
                 if subcomponent == 'panel':
-                    print subcomponent
+                    #print subcomponent
                     subgroup.writeEntry('location', self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["panelPosition"])
 
             configPlasmaApplet.sync()
@@ -283,10 +284,11 @@ class Widget(QtGui.QWidget, Screen):
             arguments = ["-a", "--submitOnly"]
             self.procSettings.startDetached(command, arguments)
 
+        # Avatar Settings
+        if self.avatarSettings["hasChanged"]:
+            hasChanged = True
+
         if hasChanged:
             self.killPlasma()
 
         return True
-
-
-

@@ -55,7 +55,7 @@ class Widget(QtGui.QWidget, Screen):
                 self.ui.radioButtonLeftHand.setChecked(True)
 
         except:
-            print "Initial mouse config file."
+            pass
 
         # set signals
         self.connect(self.ui.radioButtonRightHand, SIGNAL("toggled(bool)"), self.setHandedness)

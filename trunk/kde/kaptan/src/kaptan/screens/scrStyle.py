@@ -19,7 +19,7 @@ import os, sys, Image, dbus, glob
 
 from kaptan.screen import Screen
 from kaptan.screens.ui_scrStyle import Ui_styleWidget
-from kaptan.screens.scrStyleItem import StyleItemWidget
+from kaptan.screens.styleItem import StyleItemWidget
 
 from kaptan.tools.desktop_parser import DesktopParser
 from ConfigParser import ConfigParser
