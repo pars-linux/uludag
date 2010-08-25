@@ -107,7 +107,7 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">#listWidgetKeyboard {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
+          <string notr="true">#listWidgetKeyboard {background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
 color: white;
 
 border: 1px solid rgb(236, 236, 236, 80);
@@ -140,7 +140,7 @@ border: 1px solid rgb(236, 236, 236, 80);
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">color: rgb(234, 225, 228);</string>
+            <string notr="true">color: white;</string>
            </property>
            <property name="text">
             <string>Test Layout</string>
@@ -164,7 +164,11 @@ border: 1px solid rgb(236, 236, 236, 80);
           </spacer>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit"/>
+          <widget class="QLineEdit" name="lineEdit">
+           <property name="styleSheet">
+            <string notr="true">color: rgb(30, 43, 51)</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

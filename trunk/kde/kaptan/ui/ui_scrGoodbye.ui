@@ -114,7 +114,7 @@
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(99, 141, 164, 255), stop:1 rgba(120, 146, 172, 255));
 /*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
 border: 1px solid rgba(255,255,255,50);
 color:white;
@@ -204,7 +204,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(100, 36, 55);</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>My Smolt Page</string>
@@ -232,7 +232,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:#411926;</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>Go to your Smolt page and rate your hardware components.</string>
@@ -298,8 +298,7 @@ border-bottom-right-radius: 4px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
-/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(99, 141, 164, 255), stop:1 rgba(120, 146, 172, 255));
 border: 1px solid rgba(255,255,255,50);
 color:white;
 border-top-left-radius: 4px;
@@ -370,7 +369,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:#411926;</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus.</string>
@@ -428,7 +427,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(100, 36, 55);</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>Migration Wizard</string>
@@ -453,7 +452,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pixmap/kde-windows.png</pixmap>
+               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/kde-windows.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -482,8 +481,7 @@ border-bottom-right-radius: 4px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
-/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(99, 141, 164, 255), stop:1 rgba(120, 146, 172, 255));
 border: 1px solid rgba(255,255,255,50);
 color:white;
 border-top-left-radius: 4px;
@@ -570,7 +568,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:#411926;</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
@@ -612,7 +610,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(100, 36, 55);</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>System Settings</string>
@@ -637,7 +635,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pixmap/preferences-system.png</pixmap>
+               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/preferences-system.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>
@@ -666,8 +664,7 @@ border-bottom-right-radius: 4px;
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
-/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+            <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(99, 141, 164, 255), stop:1 rgba(120, 146, 172, 255));
 border: 1px solid rgba(255,255,255,50);
 color:white;
 border-top-left-radius: 4px;
@@ -730,7 +727,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color:#411926;</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages...</string>
@@ -788,7 +785,7 @@ border-bottom-right-radius: 4px;
                </font>
               </property>
               <property name="styleSheet">
-               <string notr="true">color: rgb(100, 36, 55);</string>
+               <string notr="true">color: rgb(30, 43, 51)</string>
               </property>
               <property name="text">
                <string>Help and Support</string>
@@ -813,7 +810,7 @@ border-bottom-right-radius: 4px;
                <string/>
               </property>
               <property name="pixmap">
-               <pixmap>:/raw/pixmap/system-help.png</pixmap>
+               <pixmap resource="../data/kaptan.qrc">:/raw/pixmap/system-help.png</pixmap>
               </property>
               <property name="scaledContents">
                <bool>false</bool>

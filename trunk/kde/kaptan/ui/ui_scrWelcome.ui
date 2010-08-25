@@ -45,7 +45,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">	color:rgb(234, 225, 228);</string>
+        <string notr="true">color: white;</string>
        </property>
        <property name="text">
         <string>What is Pardus?</string>
