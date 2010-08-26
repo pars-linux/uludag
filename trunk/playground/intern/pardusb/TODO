@@ -1,2 +1,7 @@
-- unmount/mount flash disk
+-! check folder whether there is a shasum file or not, if not warn user and show shasum 
+- mount flash disk with hal after copy progress 
+-! give more information about flash drive and its partitions on listbox
+-! change appereance 
+- add dedeler easter egg*swh*
+
  
