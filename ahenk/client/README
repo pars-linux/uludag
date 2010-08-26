@@ -1,0 +1,3 @@
+Dependencies:
+    Twisted
+    python-ldap

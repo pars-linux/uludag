@@ -1,0 +1,14 @@
+dn: cn=test1, dc=ahenk, dc=pardus, dc=org, dc=tr
+objectClass: top
+objectClass: device
+objectClass: posixAccount
+objectClass: pisiPolicy
+objectClass: pardusComputer
+cn: test1
+uid: test1
+uidNumber: 1000
+gidNumber: 1000
+homeDirectory: /dev/null
+userPassword: {SSHA}a5dGWOAcXGbnxjzVUHMain48QJg2Bbt3
+pisiAutoUpdateMode: full
+pisiAutoUpdateInterval: 30
