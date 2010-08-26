@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="/">
+    <file>icons/settings32.png</file>
+    <file>icons/online8.png</file>
+    <file>icons/partial48.png</file>
+    <file>icons/error48.png</file>
+    <file>icons/online48.png</file>
+    <file>icons/offline48.png</file>
+    <file>icons/computer48.png</file>
+    <file>icons/folder48.png</file>
+    <file>icons/user48.png</file>
+    <file>icons/user32.png</file>
+    <file>icons/save48.png</file>
+    <file>icons/workgroup48.png</file>
+    <file>icons/directoryview32.png</file>
+    <file>icons/find32.png</file>
+    <file>icons/refresh32.png</file>
+    <file>icons/new32.png</file>
+    <file>icons/computer32.png</file>
+    <file>icons/workgroup32.png</file>
+    <file>icons/computer16.png</file>
+    <file>icons/workgroup16.png</file>
+    <file>icons/folder16.png</file>
+    <file>icons/network48.png</file>
+    <file>icons/help48.png</file>
+  </qresource>
+</RCC>
