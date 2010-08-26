@@ -8,5 +8,5 @@ Projects
 ========
 
     server: Ahenk server setup tool
-    client: Ajan, agent for Pardus computers in Ahenk network
-    master: Lider, Ahenk management interface
+    ajan: Agent for Pardus computers in Ahenk network
+    lider: Ahenk management interface
