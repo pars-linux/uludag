@@ -1,5 +1,0 @@
-userPolicy
-    userAuthType: "unix", "ldap" or "activedirectory"
-    userAuthHost: Authentication server for LDAP and AD
-    userAuthDomain: Authentication domain for LDAP and AD
-    userAuthWorkgroup: Authentication workgroup for AD.
