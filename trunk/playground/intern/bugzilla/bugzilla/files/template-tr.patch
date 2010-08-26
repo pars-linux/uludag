@@ -1,6 +1,6 @@
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/auth/login.html.tmpl template/tr/default/account/auth/login.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/auth/login.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/auth/login.html.tmpl	2010-08-24 15:10:12.808138609 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/auth/login.html.tmpl template/tr/default/account/auth/login.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/auth/login.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/auth/login.html.tmpl	2010-08-26 14:33:27.801204377 +0300
 @@ -0,0 +1,122 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -124,9 +124,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/auth/login-small.html.tmpl template/tr/default/account/auth/login-small.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/auth/login-small.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/auth/login-small.html.tmpl	2010-08-24 15:10:12.808138609 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/auth/login-small.html.tmpl template/tr/default/account/auth/login-small.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/auth/login-small.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/auth/login-small.html.tmpl	2010-08-26 14:33:27.801204377 +0300
 @@ -0,0 +1,123 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -251,9 +251,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    <a href="#" onclick="return hide_forgot_form('[% qs_suffix %]')">[x]</a>
 +  </form>
 +</li>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/cancel-token.txt.tmpl template/tr/default/account/cancel-token.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/cancel-token.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/cancel-token.txt.tmpl	2010-08-24 15:10:12.808138609 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/cancel-token.txt.tmpl template/tr/default/account/cancel-token.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/cancel-token.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/cancel-token.txt.tmpl	2010-08-26 14:33:27.801204377 +0300
 @@ -0,0 +1,97 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -352,9 +352,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    Eğer [% terms.Bugzilla %] yönetiminde değilseniz, lütfen bu epostayı [% Param('maintainer') %] ile paylaşın.
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/created.html.tmpl template/tr/default/account/created.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/created.html.tmpl	2010-08-24 15:10:12.809137839 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/created.html.tmpl template/tr/default/account/created.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/created.html.tmpl	2010-08-26 14:33:27.801204377 +0300
 @@ -0,0 +1,39 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -395,9 +395,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %] 
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/create.html.tmpl template/tr/default/account/create.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/create.html.tmpl	2010-08-24 15:10:12.801138200 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/create.html.tmpl template/tr/default/account/create.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/create.html.tmpl	2010-08-26 14:33:27.799204275 +0300
 @@ -0,0 +1,75 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -474,9 +474,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/change-new.txt.tmpl template/tr/default/account/email/change-new.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/change-new.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/email/change-new.txt.tmpl	2010-08-24 15:10:12.805138052 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/email/change-new.txt.tmpl template/tr/default/account/email/change-new.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/email/change-new.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/email/change-new.txt.tmpl	2010-08-26 14:33:27.800204309 +0300
 @@ -0,0 +1,40 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -518,9 +518,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +Eğer bir işlem yapmazsanız, bu istek [% constants.MAX_TOKEN_AGE %] gün sonra (tam olarak [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %]) geçerliliğini yitirecektir.
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/change-old.txt.tmpl template/tr/default/account/email/change-old.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/change-old.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/email/change-old.txt.tmpl	2010-08-24 15:10:12.805138052 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/email/change-old.txt.tmpl template/tr/default/account/email/change-old.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/email/change-old.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/email/change-old.txt.tmpl	2010-08-26 14:33:27.800204309 +0300
 @@ -0,0 +1,43 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -565,9 +565,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
 +
 +Eğer herhangi birşey yapmazsanız ve [%+ newemailaddress %] bu isteği onaylarsa [% constants.MAX_TOKEN_AGE %]  gün sonra (tam olarak [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %]) değişiklik kalıcı hale getirilecektir.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/confirm.html.tmpl template/tr/default/account/email/confirm.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/confirm.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/email/confirm.html.tmpl	2010-08-24 15:10:12.805138052 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/email/confirm.html.tmpl template/tr/default/account/email/confirm.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/email/confirm.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/email/confirm.html.tmpl	2010-08-26 14:33:27.800204309 +0300
 @@ -0,0 +1,48 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -617,9 +617,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/confirm-new.html.tmpl template/tr/default/account/email/confirm-new.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/confirm-new.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/email/confirm-new.html.tmpl	2010-08-24 15:10:12.801138200 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/email/confirm-new.html.tmpl template/tr/default/account/email/confirm-new.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/email/confirm-new.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/email/confirm-new.html.tmpl	2010-08-26 14:33:27.799204275 +0300
 @@ -0,0 +1,73 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -694,9 +694,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/request-new.txt.tmpl template/tr/default/account/email/request-new.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/email/request-new.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/email/request-new.txt.tmpl	2010-08-24 15:10:12.801138200 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/email/request-new.txt.tmpl template/tr/default/account/email/request-new.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/email/request-new.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/email/request-new.txt.tmpl	2010-08-26 14:33:27.799204275 +0300
 @@ -0,0 +1,48 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -746,9 +746,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cancel_new_account
 +
 +Eğer yukarıdaki bağlantılar çalışmıyorsa veya hesabınızla ilgili başka problemler yaşıyorsanız, yönetimle [% Param('maintainer') %] eposta adresinden iletişime geçebilirsiniz.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/password/forgotten-password.txt.tmpl template/tr/default/account/password/forgotten-password.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/password/forgotten-password.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/password/forgotten-password.txt.tmpl	2010-08-24 15:10:12.814177960 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/password/forgotten-password.txt.tmpl template/tr/default/account/password/forgotten-password.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/password/forgotten-password.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/password/forgotten-password.txt.tmpl	2010-08-26 14:33:27.803205390 +0300
 @@ -0,0 +1,37 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -787,9 +787,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlpw
 +
 +Eğer hiçbirşey yapmazsanız [% constants.MAX_TOKEN_AGE %] gün sonra (tam olarak [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z", timezone) %]) işlem iptal olacak veya sisteme başarılı şekilde oturum açtığınız taktirde istek geçersiz hale gelecektir.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/password/set-forgotten-password.html.tmpl template/tr/default/account/password/set-forgotten-password.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/password/set-forgotten-password.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/password/set-forgotten-password.html.tmpl	2010-08-24 15:10:12.817138515 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/password/set-forgotten-password.html.tmpl template/tr/default/account/password/set-forgotten-password.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/password/set-forgotten-password.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/password/set-forgotten-password.html.tmpl	2010-08-26 14:33:27.803205390 +0300
 @@ -0,0 +1,56 @@
 + [%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -847,9 +847,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/account.html.tmpl template/tr/default/account/prefs/account.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/account.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/account.html.tmpl	2010-08-24 15:10:12.813138105 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/account.html.tmpl template/tr/default/account/prefs/account.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/account.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/account.html.tmpl	2010-08-26 14:33:27.802205136 +0300
 @@ -0,0 +1,101 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -952,9 +952,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% Hook.process('field') %]
 +
 +</table>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/email.html.tmpl template/tr/default/account/prefs/email.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/email.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/email.html.tmpl	2010-08-24 15:10:12.813138105 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/email.html.tmpl template/tr/default/account/prefs/email.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/email.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/email.html.tmpl	2010-08-26 14:33:27.802205136 +0300
 @@ -0,0 +1,308 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1264,9 +1264,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<hr>
 +
 +<br>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/permissions.html.tmpl template/tr/default/account/prefs/permissions.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/permissions.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/permissions.html.tmpl	2010-08-24 15:10:12.809137839 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/permissions.html.tmpl template/tr/default/account/prefs/permissions.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/permissions.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/permissions.html.tmpl	2010-08-26 14:33:27.801204377 +0300
 @@ -0,0 +1,91 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1359,9 +1359,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </td>
 +  </tr>
 +</table>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/prefs.html.tmpl template/tr/default/account/prefs/prefs.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/prefs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/prefs.html.tmpl	2010-08-24 15:10:12.814177960 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/prefs.html.tmpl template/tr/default/account/prefs/prefs.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/prefs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/prefs.html.tmpl	2010-08-26 14:33:27.803205390 +0300
 @@ -0,0 +1,112 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1475,9 +1475,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/saved-searches.html.tmpl template/tr/default/account/prefs/saved-searches.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/saved-searches.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/saved-searches.html.tmpl	2010-08-24 15:10:12.814177960 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/saved-searches.html.tmpl template/tr/default/account/prefs/saved-searches.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/saved-searches.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/saved-searches.html.tmpl	2010-08-26 14:33:27.803205390 +0300
 @@ -0,0 +1,212 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1691,9 +1691,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </table>
 +</blockquote>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/settings.html.tmpl template/tr/default/account/prefs/settings.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/prefs/settings.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/prefs/settings.html.tmpl	2010-08-24 15:10:12.813138105 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/settings.html.tmpl template/tr/default/account/prefs/settings.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/prefs/settings.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/prefs/settings.html.tmpl	2010-08-26 14:33:27.802205136 +0300
 @@ -0,0 +1,77 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1772,9 +1772,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </table>
 +[% END %]
 +<br>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/profile-activity.html.tmpl template/tr/default/account/profile-activity.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/account/profile-activity.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/account/profile-activity.html.tmpl	2010-08-24 15:10:12.800138345 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/account/profile-activity.html.tmpl template/tr/default/account/profile-activity.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/account/profile-activity.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/account/profile-activity.html.tmpl	2010-08-26 14:33:27.799204275 +0300
 @@ -0,0 +1,86 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1862,9 +1862,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %] 
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/cancel-create-dupe.html.tmpl template/tr/default/attachment/cancel-create-dupe.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/cancel-create-dupe.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/cancel-create-dupe.html.tmpl	2010-08-24 15:10:12.750138882 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/cancel-create-dupe.html.tmpl template/tr/default/attachment/cancel-create-dupe.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/cancel-create-dupe.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/cancel-create-dupe.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,51 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1917,9 +1917,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/choose.html.tmpl template/tr/default/attachment/choose.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/choose.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/choose.html.tmpl	2010-08-24 15:10:12.727262544 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/choose.html.tmpl template/tr/default/attachment/choose.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/choose.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/choose.html.tmpl	2010-08-26 14:33:27.782206496 +0300
 @@ -0,0 +1,44 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -1965,9 +1965,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/confirm-delete.html.tmpl template/tr/default/attachment/confirm-delete.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/confirm-delete.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/confirm-delete.html.tmpl	2010-08-24 15:10:12.748138241 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/confirm-delete.html.tmpl template/tr/default/attachment/confirm-delete.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/confirm-delete.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/confirm-delete.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,93 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2062,9 +2062,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/content-types.html.tmpl template/tr/default/attachment/content-types.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/content-types.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/content-types.html.tmpl	2010-08-24 15:10:12.747140601 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/content-types.html.tmpl template/tr/default/attachment/content-types.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/content-types.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/content-types.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,28 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2094,9 +2094,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +          <option value="image/jpeg">JPEG resim (image/jpeg)</option>
 +          <option value="image/png">PNG resim (image/png)</option>
 +          <option value="application/octet-stream">ikili dosya (application/octet-stream)</option>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/created.html.tmpl template/tr/default/attachment/created.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/created.html.tmpl	2010-08-24 15:10:12.749138417 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/created.html.tmpl template/tr/default/attachment/created.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/created.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,81 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2179,9 +2179,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS bug/show.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/createformcontents.html.tmpl template/tr/default/attachment/createformcontents.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/createformcontents.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/createformcontents.html.tmpl	2010-08-24 15:10:12.746138730 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/createformcontents.html.tmpl template/tr/default/attachment/createformcontents.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/createformcontents.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/createformcontents.html.tmpl	2010-08-26 14:33:27.783207134 +0300
 @@ -0,0 +1,107 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2290,9 +2290,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </td>
 +</tr>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/create.html.tmpl template/tr/default/attachment/create.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/create.html.tmpl	2010-08-24 15:10:12.747140601 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/create.html.tmpl template/tr/default/attachment/create.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/create.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,129 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2423,9 +2423,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/delete_reason.txt.tmpl template/tr/default/attachment/delete_reason.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/delete_reason.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/delete_reason.txt.tmpl	2010-08-24 15:10:12.749138417 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/delete_reason.txt.tmpl template/tr/default/attachment/delete_reason.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/delete_reason.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/delete_reason.txt.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,32 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2459,9 +2459,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [%+ user.identity %] tarafından silindi
 +
 +Bu eki silmekte kullanılan jeton [% date FILTER time %] tarihinde kullanıldı.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-file.html.tmpl template/tr/default/attachment/diff-file.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-file.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/diff-file.html.tmpl	2010-08-24 15:10:12.748138241 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-file.html.tmpl template/tr/default/attachment/diff-file.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-file.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/diff-file.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,170 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2633,9 +2633,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +</table>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-footer.html.tmpl template/tr/default/attachment/diff-footer.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-footer.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/diff-footer.html.tmpl	2010-08-24 15:10:12.747140601 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-footer.html.tmpl template/tr/default/attachment/diff-footer.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-footer.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/diff-footer.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,32 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2669,9 +2669,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</body>
 +</html>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-header.html.tmpl template/tr/default/attachment/diff-header.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/diff-header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/diff-header.html.tmpl	2010-08-24 15:10:12.750138882 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-header.html.tmpl template/tr/default/attachment/diff-header.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/diff-header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/diff-header.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,149 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -2822,9 +2822,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<input type="checkbox" name="restore_indicator" style="display: none">
 +
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/edit.html.tmpl template/tr/default/attachment/edit.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/edit.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/edit.html.tmpl	2010-08-24 15:10:12.746138730 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/edit.html.tmpl template/tr/default/attachment/edit.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/edit.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/edit.html.tmpl	2010-08-26 14:33:27.783207134 +0300
 @@ -0,0 +1,336 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3162,9 +3162,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<br>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/list.html.tmpl template/tr/default/attachment/list.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/list.html.tmpl	2010-08-24 15:10:12.749138417 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/list.html.tmpl template/tr/default/attachment/list.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/list.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,148 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3314,9 +3314,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </tr>
 +</table>
 +<br>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/midair.html.tmpl template/tr/default/attachment/midair.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/midair.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/midair.html.tmpl	2010-08-24 15:10:12.747140601 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/midair.html.tmpl template/tr/default/attachment/midair.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/midair.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/midair.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,75 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3393,9 +3393,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</ul>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/show-multiple.html.tmpl template/tr/default/attachment/show-multiple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/show-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/show-multiple.html.tmpl	2010-08-24 15:10:12.748138241 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/show-multiple.html.tmpl template/tr/default/attachment/show-multiple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/show-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/show-multiple.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,102 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3499,9 +3499,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/updated.html.tmpl template/tr/default/attachment/updated.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/attachment/updated.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/attachment/updated.html.tmpl	2010-08-24 15:10:12.748138241 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/attachment/updated.html.tmpl template/tr/default/attachment/updated.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/attachment/updated.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/attachment/updated.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,66 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3569,9 +3569,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</dl>
 +
 +[% PROCESS bug/show.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/activity/show.html.tmpl template/tr/default/bug/activity/show.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/activity/show.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/activity/show.html.tmpl	2010-08-24 15:10:12.789138979 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/activity/show.html.tmpl template/tr/default/bug/activity/show.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/activity/show.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/activity/show.html.tmpl	2010-08-26 14:33:27.797205607 +0300
 @@ -0,0 +1,50 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3623,9 +3623,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/activity/table.html.tmpl template/tr/default/bug/activity/table.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/activity/table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/activity/table.html.tmpl	2010-08-24 15:10:12.789138979 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/activity/table.html.tmpl template/tr/default/bug/activity/table.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/activity/table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/activity/table.html.tmpl	2010-08-26 14:33:27.797205607 +0300
 @@ -0,0 +1,119 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3746,9 +3746,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </table>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/choose.html.tmpl template/tr/default/bug/choose.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/choose.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/choose.html.tmpl	2010-08-24 15:10:12.751180362 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/choose.html.tmpl template/tr/default/bug/choose.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/choose.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/choose.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,35 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -3785,9 +3785,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/comments.html.tmpl template/tr/default/bug/comments.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/comments.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/comments.html.tmpl	2010-08-24 15:10:12.780138145 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/comments.html.tmpl template/tr/default/bug/comments.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/comments.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/comments.html.tmpl	2010-08-26 14:33:27.794207041 +0300
 @@ -0,0 +1,230 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -4019,9 +4019,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </div>
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/comment-guided.txt.tmpl template/tr/default/bug/create/comment-guided.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/comment-guided.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/comment-guided.txt.tmpl	2010-08-24 15:10:12.786138928 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/comment-guided.txt.tmpl template/tr/default/bug/create/comment-guided.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/comment-guided.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/comment-guided.txt.tmpl	2010-08-26 14:33:27.796206493 +0300
 @@ -0,0 +1,55 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -4078,10 +4078,10 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[%+ cgi.param("additional_info") %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/comment.txt.tmpl template/tr/default/bug/create/comment.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/comment.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/comment.txt.tmpl	2010-08-24 15:10:12.786138928 +0300
-@@ -0,0 +1,52 @@
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/comment.txt.tmpl template/tr/default/bug/create/comment.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/comment.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/comment.txt.tmpl	2010-08-26 14:33:27.796206493 +0300
+@@ -0,0 +1,32 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
 +  # except in compliance with the License. You may obtain a copy of
@@ -4110,33 +4110,13 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  # from them.
 +  #%]  
 +[% USE Bugzilla %]
-+[% cgi = Bugzilla.cgi %]
++[% Hook.process("form") %]
 +
-+[%+ cgi.param("comment") IF cgi.param("comment") %]
 +
-+[%+ IF cgi.param("reproducible") != "--" -%]
-+Tekrarlanabilirlik: [%+ cgi.param("reproducible") %]
-+[% END %]
-+
-+[% IF !(cgi.param("reproduce_steps").match('^1\.\s*2\.\s*3\.\s*$') || cgi.param("reproduce_steps").match('^\s*$')) %]
-+Tekrarlanması için Gerekli Adımlar:
-+[%+ cgi.param("reproduce_steps") %]
-+[% END %]
-+
-+[% IF cgi.param("actual_results") -%]
-+Güncel Sonuçlar:  
-+[%+ cgi.param("actual_results") %]
-+[% END %]
-+
-+[% IF cgi.param("expected_results") %]
-+Beklenen Sonuçlar:  
-+[%+ cgi.param("expected_results") %]
-+[% END %]
-+
-+[%+ cgi.param("additional_info") %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/confirm-create-dupe.html.tmpl template/tr/default/bug/create/confirm-create-dupe.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/confirm-create-dupe.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/confirm-create-dupe.html.tmpl	2010-08-24 15:10:12.785173847 +0300
++[% Bugzilla.cgi.param("comment") %]
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/confirm-create-dupe.html.tmpl template/tr/default/bug/create/confirm-create-dupe.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/confirm-create-dupe.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/confirm-create-dupe.html.tmpl	2010-08-26 14:33:27.796206493 +0300
 @@ -0,0 +1,58 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -4196,9 +4176,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/created.html.tmpl template/tr/default/bug/create/created.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/created.html.tmpl	2010-08-24 15:10:12.787138303 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/created.html.tmpl template/tr/default/bug/create/created.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/created.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/created.html.tmpl	2010-08-26 14:33:27.796206493 +0300
 @@ -0,0 +1,72 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -4272,10 +4252,10 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<br>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/create-guided.html.tmpl template/tr/default/bug/create/create-guided.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/create-guided.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/create-guided.html.tmpl	2010-08-24 15:10:12.786138928 +0300
-@@ -0,0 +1,514 @@
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/create-guided.html.tmpl template/tr/default/bug/create/create-guided.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/create-guided.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/create-guided.html.tmpl	2010-08-26 14:33:27.796206493 +0300
+@@ -0,0 +1,482 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
 +  # except in compliance with the License. You may obtain a copy of
@@ -4339,38 +4319,6 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    }
 +}
 +</script>
-+
-+[%# Browser sniff to try and reduce the incidence of Netscape 6/7 bugs %]
-+
-+[% IF cgi.user_agent('Netscape(\d)') %]
-+  [% matches = cgi.user_agent().match('Netscape(\d)') %]
-+  <div style="background-color: lightgrey;
-+              border: 1px solid black;
-+              padding: 2px">
-+    <font color="#990000">
-+      <b>
-+        Netscape [% matches.0 %] kullanıyorsunuz.
-+        Bu tarayıcıyla yaşadığınız sorunları 
-+        <a href="http://home.netscape.com/browsers/[% matches.0 %]/feedback/index.html">
-+         Netscape [% matches.0 %] Geribildirim Merkezi</a>'ne raporlayabilirsiniz.
-+      </b>
-+    </font>
-+    Bu form sadece Mozilla web tarayıcısı ve mozilla.org'un diğer ürünleri hakkında [% terms.bug %] raporlamak içindir.
-+    Netscape [% matches.0 %] sürümünde karşılaştığınız [% terms.abugAcc %] bildirmek için önce bu hatayı 
-+    <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilla</a>,
-+    <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefox</a>,
-+<a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-trunk/">Thunderbird</a> veya
-+    <a href="http://ftp.mozilla.org/pub/mozilla.org/camino/nightly/latest/">Camino</a>
-+    'nun güncel bir sürümünde tekrar edebilmeniz gerekir.
-+  </div>
-+[% END %]
-+
-+[% IF cgi.user_agent('Gecko/') %]
-+  [% matches = cgi.user_agent().match('Gecko/(\d+)') %]
-+  
-+[% END %]
-+
-+<!-- @@@ Need UA checking here -->
 +
 +<a name="step1"></a>
 +<h3>Adım 1 / 3 - [% terms.bug %] zaten raporlanmış olabilir mi?</h3>
@@ -4790,10 +4738,10 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [%- END %]
 +  </select>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/create.html.tmpl template/tr/default/bug/create/create.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/create.html.tmpl	2010-08-24 15:10:12.785173847 +0300
-@@ -0,0 +1,825 @@
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/create.html.tmpl template/tr/default/bug/create/create.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/create.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/create.html.tmpl	2010-08-26 14:33:27.796206493 +0300
+@@ -0,0 +1,827 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
 +  # except in compliance with the License. You may obtain a copy of
@@ -4998,27 +4946,29 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +                                     'bz_default_hidden');
 +      </script>
 +    </td>
-+  </tr>
-+
-+  <tr bgcolor="[% tablecolour %]">
-+    <td align="right" valign="top">
-+    <b>Ürün</b>
++    <td colspan="2">
++      (<span class="required_star">*</span> =
++      <span class="required_explanation">Required Field</span>)
 +    </td>
-+    <td valign="top">[% product.name FILTER html %]</td>
-+  </tr>
++   </tr>
 +
-+  [%# We can't use the select block in these two cases for various reasons. %]
-+  <tr>
-+    <td align="right" valign="top">
-+      <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
-+        <b>Bileşen</b>
-+        </a>
-+    </td>
-+    <td valign="top">
-+    <table border="0" cellpadding="0" cellspacing="0">
-+    <tr>
-+    <td valign="top">
-+      <select name="component" onchange="set_assign_to();" size="7">
++   <tr>
++     <th>Ürün:</th>
++     <td width="10%">[% product.name FILTER html %]</td>
++
++     <th>Raportör:</th>
++     <td width="100%">[% user.login FILTER html %]</td>
++   </tr>
++
++   [%# We can't use the select block in these two cases for various reasons. %]
++   <tr>
++      <th class="required">
++        <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
++        Bileşen</a>:
++    </th>
++    <td>
++      <select name="component" onchange="set_assign_to();" size="7"
++              aria-required="true" class="required">
 +        [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
 +        [% IF Param("usemenuforusers") %]
 +          [% assignees_list = user.get_userlist.clone %]
@@ -5619,9 +5569,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +                    visible  => 1})
 +     UNLESS user_found %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/make-template.html.tmpl template/tr/default/bug/create/make-template.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/make-template.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/make-template.html.tmpl	2010-08-24 15:10:12.785173847 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/make-template.html.tmpl template/tr/default/bug/create/make-template.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/make-template.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/make-template.html.tmpl	2010-08-26 14:33:27.796206493 +0300
 @@ -0,0 +1,46 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -5669,9 +5619,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/user-message.html.tmpl template/tr/default/bug/create/user-message.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/create/user-message.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/create/user-message.html.tmpl	2010-08-24 15:10:12.781138585 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/create/user-message.html.tmpl template/tr/default/bug/create/user-message.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/create/user-message.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/create/user-message.html.tmpl	2010-08-26 14:33:27.794207041 +0300
 @@ -0,0 +1,36 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -5709,9 +5659,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<a href="page.cgi?id=bug-writing.html">[% terms.bug %] yazım kılavuzunu</a> okuyun,
 +<a href="duplicates.cgi">en sık raporlanan [% terms.bugs %]</a> listesini kontrol edin ve lütfen eski hatalara
 +<a href="query.cgi">göz gezdirin</a>.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/dependency-graph.html.tmpl template/tr/default/bug/dependency-graph.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/dependency-graph.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/dependency-graph.html.tmpl	2010-08-24 15:10:12.751180362 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/dependency-graph.html.tmpl template/tr/default/bug/dependency-graph.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/dependency-graph.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/dependency-graph.html.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,107 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -5820,9 +5770,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/dependency-tree.html.tmpl template/tr/default/bug/dependency-tree.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/dependency-tree.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/dependency-tree.html.tmpl	2010-08-24 15:10:12.787138303 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/dependency-tree.html.tmpl template/tr/default/bug/dependency-tree.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/dependency-tree.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/dependency-tree.html.tmpl	2010-08-26 14:33:27.796206493 +0300
 @@ -0,0 +1,266 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -6090,9 +6040,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</table>
 +
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/edit.html.tmpl template/tr/default/bug/edit.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/edit.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/edit.html.tmpl	2010-08-24 15:10:12.771138695 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/edit.html.tmpl template/tr/default/bug/edit.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/edit.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/edit.html.tmpl	2010-08-26 14:33:27.790208211 +0300
 @@ -0,0 +1,1166 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7260,9 +7210,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </div>
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/field-events.js.tmpl template/tr/default/bug/field-events.js.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/field-events.js.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/field-events.js.tmpl	2010-08-24 15:10:12.790164980 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/field-events.js.tmpl template/tr/default/bug/field-events.js.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/field-events.js.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/field-events.js.tmpl	2010-08-26 14:33:27.797205607 +0300
 @@ -0,0 +1,40 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7304,9 +7254,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +                  [% legal_value.id FILTER js %]);
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/field.html.tmpl template/tr/default/bug/field.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/field.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/field.html.tmpl	2010-08-24 15:10:12.780138145 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/field.html.tmpl template/tr/default/bug/field.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/field.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/field.html.tmpl	2010-08-26 14:33:27.794207041 +0300
 @@ -0,0 +1,212 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7520,9 +7470,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% value.join(', ') FILTER html %]
 +[% END %]
 +[% '</td>' IF NOT no_tds %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/format_comment.txt.tmpl template/tr/default/bug/format_comment.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/format_comment.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/format_comment.txt.tmpl	2010-08-24 15:10:12.750138882 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/format_comment.txt.tmpl template/tr/default/bug/format_comment.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/format_comment.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/format_comment.txt.tmpl	2010-08-26 14:33:27.784206913 +0300
 @@ -0,0 +1,60 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7584,9 +7534,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%- ELSE -%]
 +X[%- comment.body %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/knob.html.tmpl template/tr/default/bug/knob.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/knob.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/knob.html.tmpl	2010-08-24 15:10:12.771138695 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/knob.html.tmpl template/tr/default/bug/knob.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/knob.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/knob.html.tmpl	2010-08-26 14:33:27.790208211 +0300
 @@ -0,0 +1,154 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7742,9 +7692,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </select>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/navigate.html.tmpl template/tr/default/bug/navigate.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/navigate.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/navigate.html.tmpl	2010-08-24 15:10:12.780138145 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/navigate.html.tmpl template/tr/default/bug/navigate.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/navigate.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/navigate.html.tmpl	2010-08-26 14:33:27.794207041 +0300
 @@ -0,0 +1,85 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7831,9 +7781,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  <i><font color="#777777">Arama sonucu yok</font></i>
 +[% END %]
 +</div>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/bugmail.html.tmpl template/tr/default/bug/process/bugmail.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/bugmail.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/bugmail.html.tmpl	2010-08-24 15:10:12.779138234 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/bugmail.html.tmpl template/tr/default/bug/process/bugmail.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/bugmail.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/bugmail.html.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,74 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7909,9 +7859,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +  </dd>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/confirm-duplicate.html.tmpl template/tr/default/bug/process/confirm-duplicate.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/confirm-duplicate.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/confirm-duplicate.html.tmpl	2010-08-24 15:10:12.775137982 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/confirm-duplicate.html.tmpl template/tr/default/bug/process/confirm-duplicate.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/confirm-duplicate.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/confirm-duplicate.html.tmpl	2010-08-26 14:33:27.791212329 +0300
 @@ -0,0 +1,72 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -7985,9 +7935,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/header.html.tmpl template/tr/default/bug/process/header.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/header.html.tmpl	2010-08-24 15:10:12.778138314 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/header.html.tmpl template/tr/default/bug/process/header.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/header.html.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,49 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8038,9 +7988,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  style_urls = [ "skins/standard/yui/calendar.css", "skins/standard/show_bug.css" ]
 +  doc_section = "bug_page.html"
 +%]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/midair.html.tmpl template/tr/default/bug/process/midair.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/midair.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/midair.html.tmpl	2010-08-24 15:10:12.778138314 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/midair.html.tmpl template/tr/default/bug/process/midair.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/midair.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/midair.html.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,112 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8154,9 +8104,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</ul>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/results.html.tmpl template/tr/default/bug/process/results.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/results.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/results.html.tmpl	2010-08-24 15:10:12.775137982 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/results.html.tmpl template/tr/default/bug/process/results.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/results.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/results.html.tmpl	2010-08-26 14:33:27.791212329 +0300
 @@ -0,0 +1,61 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8219,9 +8169,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% Hook.process("links") %]
 +  </dd>
 +</dl>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/verify-new-product.html.tmpl template/tr/default/bug/process/verify-new-product.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/process/verify-new-product.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/process/verify-new-product.html.tmpl	2010-08-24 15:10:12.779138234 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/process/verify-new-product.html.tmpl template/tr/default/bug/process/verify-new-product.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/process/verify-new-product.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/process/verify-new-product.html.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,201 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8424,9 +8374,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +[% PROCESS global/footer.html.tmpl %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show.html.tmpl template/tr/default/bug/show.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/show.html.tmpl	2010-08-24 15:10:12.790164980 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/show.html.tmpl template/tr/default/bug/show.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/show.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/show.html.tmpl	2010-08-26 14:33:27.797205607 +0300
 @@ -0,0 +1,74 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8502,9 +8452,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<br>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show-multiple.html.tmpl template/tr/default/bug/show-multiple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/show-multiple.html.tmpl	2010-08-24 15:10:12.780138145 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/show-multiple.html.tmpl template/tr/default/bug/show-multiple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/show-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/show-multiple.html.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,367 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -8873,9 +8823,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show.xml.tmpl template/tr/default/bug/show.xml.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/show.xml.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/show.xml.tmpl	2010-08-24 15:10:12.779138234 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/show.xml.tmpl template/tr/default/bug/show.xml.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/show.xml.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/show.xml.tmpl	2010-08-26 14:33:27.793207182 +0300
 @@ -0,0 +1,158 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9035,9 +8985,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +      [%- val FILTER xml %]</[% field %]>
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/summarize-time.html.tmpl template/tr/default/bug/summarize-time.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/summarize-time.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/summarize-time.html.tmpl	2010-08-24 15:10:12.781138585 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/summarize-time.html.tmpl template/tr/default/bug/summarize-time.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/summarize-time.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/summarize-time.html.tmpl	2010-08-26 14:33:27.794207041 +0300
 @@ -0,0 +1,335 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9374,9 +9324,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +//--></script>
 +<hr noshade size=1>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/time.html.tmpl template/tr/default/bug/time.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/time.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/time.html.tmpl	2010-08-24 15:10:12.774139857 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/time.html.tmpl template/tr/default/bug/time.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/time.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/time.html.tmpl	2010-08-26 14:33:27.791212329 +0300
 @@ -0,0 +1,47 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9425,9 +9375,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    0
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/delete-all.html.tmpl template/tr/default/bug/votes/delete-all.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/delete-all.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/votes/delete-all.html.tmpl	2010-08-24 15:10:12.774139857 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/delete-all.html.tmpl template/tr/default/bug/votes/delete-all.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/delete-all.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/votes/delete-all.html.tmpl	2010-08-26 14:33:27.791212329 +0300
 @@ -0,0 +1,51 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9480,9 +9430,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-bug.html.tmpl template/tr/default/bug/votes/list-for-bug.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-bug.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/votes/list-for-bug.html.tmpl	2010-08-24 15:10:12.771138695 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-bug.html.tmpl template/tr/default/bug/votes/list-for-bug.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-bug.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/votes/list-for-bug.html.tmpl	2010-08-26 14:33:27.790208211 +0300
 @@ -0,0 +1,61 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9545,9 +9495,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<p>Toplam oy: [% total %]</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-user.html.tmpl template/tr/default/bug/votes/list-for-user.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-user.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/bug/votes/list-for-user.html.tmpl	2010-08-24 15:10:12.774139857 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-user.html.tmpl template/tr/default/bug/votes/list-for-user.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/bug/votes/list-for-user.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/bug/votes/list-for-user.html.tmpl	2010-08-26 14:33:27.791212329 +0300
 @@ -0,0 +1,183 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9732,9 +9682,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/config.js.tmpl template/tr/default/config.js.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/config.js.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/config.js.tmpl	2010-08-24 15:10:12.918140518 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/config.js.tmpl template/tr/default/config.js.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/config.js.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/config.js.tmpl	2010-08-26 14:33:27.821207498 +0300
 @@ -0,0 +1,142 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -9878,9 +9828,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +var cpts = component;
 +var vers = version;
 +var tms = target_milestone;
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/config.rdf.tmpl template/tr/default/config.rdf.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/config.rdf.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/config.rdf.tmpl	2010-08-24 15:10:12.845587579 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/config.rdf.tmpl template/tr/default/config.rdf.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/config.rdf.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/config.rdf.tmpl	2010-08-26 14:33:27.808206779 +0300
 @@ -0,0 +1,258 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10140,9 +10090,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</bz:installation>
 +
 +</RDF>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/newchangedmail.txt.tmpl template/tr/default/email/newchangedmail.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/newchangedmail.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/email/newchangedmail.txt.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/email/newchangedmail.txt.tmpl template/tr/default/email/newchangedmail.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/email/newchangedmail.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/email/newchangedmail.txt.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,89 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10233,9 +10183,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% terms.Bug %] için oy kullanan veya kullanması istenen birini takip ediyorsunuz.
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/sanitycheck.txt.tmpl template/tr/default/email/sanitycheck.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/sanitycheck.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/email/sanitycheck.txt.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/email/sanitycheck.txt.tmpl template/tr/default/email/sanitycheck.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/email/sanitycheck.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/email/sanitycheck.txt.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,37 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10274,9 +10224,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% output %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/sudo.txt.tmpl template/tr/default/email/sudo.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/sudo.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/email/sudo.txt.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/email/sudo.txt.tmpl template/tr/default/email/sudo.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/email/sudo.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/email/sudo.txt.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,42 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10320,9 +10270,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    Eğer bu eylemin uygunsuz olduğunu düşünüyorsanız, lütfen
 +[%+ Param("maintainer") %] ile iletişime geçin.  Bu özellik hakkında daha fazla bilgiyi
 +<[% urlbase %]page.cgi?id=sudo.html> adresinde bulabilirsiniz.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/votes-removed.txt.tmpl template/tr/default/email/votes-removed.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/votes-removed.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/email/votes-removed.txt.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/email/votes-removed.txt.tmpl template/tr/default/email/votes-removed.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/email/votes-removed.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/email/votes-removed.txt.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,53 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10377,9 +10327,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +[% urlbase %]show_bug.cgi?id=[% bugid %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/whine.txt.tmpl template/tr/default/email/whine.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/email/whine.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/email/whine.txt.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/email/whine.txt.tmpl template/tr/default/email/whine.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/email/whine.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/email/whine.txt.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,67 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10448,9 +10398,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 + [%+ bug.summary %]
 +    -> [% urlbase %]show_bug.cgi?id=[% bug.id %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl template/tr/default/flag/list.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/flag/list.html.tmpl	2010-08-24 15:10:12.831151461 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl template/tr/default/flag/list.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/flag/list.html.tmpl	2010-08-26 14:33:27.807208275 +0300
 @@ -0,0 +1,293 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -10746,9 +10696,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +[% END %]
 \ Dosya sonunda yenisatır yok.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl.orig template/tr/default/flag/list.html.tmpl.orig
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl.orig	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/flag/list.html.tmpl.orig	2010-08-24 15:10:12.831151461 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl.orig template/tr/default/flag/list.html.tmpl.orig
+--- ../bugzilla-3.6.2.orig/template/tr/default/flag/list.html.tmpl.orig	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/flag/list.html.tmpl.orig	2010-08-26 14:33:27.808206779 +0300
 @@ -0,0 +1,292 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11043,9 +10993,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +[% END %]
 \ Dosya sonunda yenisatır yok.
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/banner.html.tmpl template/tr/default/global/banner.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/banner.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/banner.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/banner.html.tmpl template/tr/default/global/banner.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/banner.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/banner.html.tmpl	2010-08-26 14:33:27.818207206 +0300
 @@ -0,0 +1,26 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11073,9 +11023,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +  <div id="banner">
 +  </div>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/choose-classification.html.tmpl template/tr/default/global/choose-classification.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/choose-classification.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/choose-classification.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/choose-classification.html.tmpl template/tr/default/global/choose-classification.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/choose-classification.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/choose-classification.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,64 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11141,9 +11091,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</table>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/choose-product.html.tmpl template/tr/default/global/choose-product.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/choose-product.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/choose-product.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/choose-product.html.tmpl template/tr/default/global/choose-product.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/choose-product.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/choose-product.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,89 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11234,9 +11184,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</table>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/code-error.html.tmpl template/tr/default/global/code-error.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/code-error.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/code-error.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/code-error.html.tmpl template/tr/default/global/code-error.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/code-error.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/code-error.html.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,505 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11743,9 +11693,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/common-links.html.tmpl template/tr/default/global/common-links.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/common-links.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/common-links.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/common-links.html.tmpl template/tr/default/global/common-links.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/common-links.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/common-links.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,118 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11865,9 +11815,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +      </li>
 +    [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/confirm-action.html.tmpl template/tr/default/global/confirm-action.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/confirm-action.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/confirm-action.html.tmpl	2010-08-24 15:10:12.902138236 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/confirm-action.html.tmpl template/tr/default/global/confirm-action.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/confirm-action.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/confirm-action.html.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,54 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -11923,9 +11873,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<p><a href="index.cgi">Hayır, bu değişiklikleri çöpe at</a> (ana sayfaya yönlendirileceksiniz).</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/confirm-user-match.html.tmpl template/tr/default/global/confirm-user-match.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/confirm-user-match.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/confirm-user-match.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/confirm-user-match.html.tmpl template/tr/default/global/confirm-user-match.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/confirm-user-match.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/confirm-user-match.html.tmpl	2010-08-26 14:33:27.818207206 +0300
 @@ -0,0 +1,179 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12106,9 +12056,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/docslinks.html.tmpl template/tr/default/global/docslinks.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/docslinks.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/docslinks.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/docslinks.html.tmpl template/tr/default/global/docslinks.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/docslinks.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/docslinks.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,53 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12163,9 +12113,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </li>
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/field-descs.none.tmpl template/tr/default/global/field-descs.none.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/field-descs.none.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/field-descs.none.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/field-descs.none.tmpl template/tr/default/global/field-descs.none.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/field-descs.none.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/field-descs.none.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,161 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12328,9 +12278,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% MACRO get_resolution(res) GET resolution_descs.$res || res %]
 +
 +[% Hook.process("end") %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/footer.html.tmpl template/tr/default/global/footer.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/footer.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/footer.html.tmpl	2010-08-24 15:10:12.902138236 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/footer.html.tmpl template/tr/default/global/footer.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/footer.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/footer.html.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,49 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12381,9 +12331,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</body>
 +</html>
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/header.html.tmpl template/tr/default/global/header.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/header.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/header.html.tmpl template/tr/default/global/header.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/header.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/header.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,287 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12672,9 +12622,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% IF message %]
 +<div id="message">[% message %]</div>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/help.html.tmpl template/tr/default/global/help.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/help.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/help.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/help.html.tmpl template/tr/default/global/help.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/help.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/help.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,32 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12708,9 +12658,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </script>
 +[% END %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/hidden-fields.html.tmpl template/tr/default/global/hidden-fields.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/hidden-fields.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/hidden-fields.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/hidden-fields.html.tmpl template/tr/default/global/hidden-fields.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/hidden-fields.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/hidden-fields.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,56 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12768,9 +12718,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/initialize.none.tmpl template/tr/default/global/initialize.none.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/initialize.none.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/initialize.none.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/initialize.none.tmpl template/tr/default/global/initialize.none.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/initialize.none.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/initialize.none.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,32 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12804,9 +12754,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  #%]
 +
 +[% USE Hook %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/js-products.html.tmpl template/tr/default/global/js-products.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/js-products.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/js-products.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/js-products.html.tmpl template/tr/default/global/js-products.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/js-products.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/js-products.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,34 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12842,9 +12792,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% n = n+1 %]
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/message.html.tmpl template/tr/default/global/message.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/message.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/message.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/message.html.tmpl template/tr/default/global/message.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/message.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/message.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,43 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -12889,9 +12839,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/messages.html.tmpl template/tr/default/global/messages.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/messages.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/messages.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/messages.html.tmpl template/tr/default/global/messages.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/messages.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/messages.html.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,800 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -13693,9 +13643,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/message.txt.tmpl template/tr/default/global/message.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/message.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/message.txt.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/message.txt.tmpl template/tr/default/global/message.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/message.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/message.txt.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,25 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -13722,9 +13672,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  # can do at the moment. %]
 +[% PROCESS global/messages.html.tmpl %]
 +[% message FILTER txt %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/per-bug-queries.html.tmpl template/tr/default/global/per-bug-queries.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/per-bug-queries.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/per-bug-queries.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/per-bug-queries.html.tmpl template/tr/default/global/per-bug-queries.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/per-bug-queries.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/per-bug-queries.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,104 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -13830,9 +13780,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </li></ul>
 +  </li>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/select-menu.html.tmpl template/tr/default/global/select-menu.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/select-menu.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/select-menu.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/select-menu.html.tmpl template/tr/default/global/select-menu.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/select-menu.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/select-menu.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,64 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -13898,9 +13848,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  [% END %]
 +</select>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/setting-descs.none.tmpl template/tr/default/global/setting-descs.none.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/setting-descs.none.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/setting-descs.none.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/setting-descs.none.tmpl template/tr/default/global/setting-descs.none.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/setting-descs.none.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/setting-descs.none.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,52 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -13954,9 +13904,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +%]
 +
 +[% Hook.process('settings') %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/site-navigation.html.tmpl template/tr/default/global/site-navigation.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/site-navigation.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/site-navigation.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/site-navigation.html.tmpl template/tr/default/global/site-navigation.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/site-navigation.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/site-navigation.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,128 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -14086,9 +14036,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +              href="sanitycheck.cgi">' IF user.in_group('editcomponents') %]
 +  [% END %]  
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/tabs.html.tmpl template/tr/default/global/tabs.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/tabs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/tabs.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/tabs.html.tmpl template/tr/default/global/tabs.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/tabs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/tabs.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,52 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -14142,9 +14092,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </div>
 +
 +</div>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/textarea.html.tmpl template/tr/default/global/textarea.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/textarea.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/textarea.html.tmpl	2010-08-24 15:10:12.902138236 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/textarea.html.tmpl template/tr/default/global/textarea.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/textarea.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/textarea.html.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,48 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -14194,9 +14144,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +          [% IF maxrows && user.settings.zoom_textareas.value == 'on' %]
 +            onFocus="this.rows=[% maxrows FILTER html %]"
 +          [% END %]>[% defaultcontent FILTER html %]</textarea>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/useful-links.html.tmpl template/tr/default/global/useful-links.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/useful-links.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/useful-links.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/useful-links.html.tmpl template/tr/default/global/useful-links.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/useful-links.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/useful-links.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,82 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -14280,9 +14230,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [%# Sections of links to more things users can do on this installation. %]
 +  [% Hook.process("end") %]
 +</ul>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/user-error.html.tmpl template/tr/default/global/user-error.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/user-error.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/user-error.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/user-error.html.tmpl template/tr/default/global/user-error.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/user-error.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/user-error.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,1749 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16033,9 +15983,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% field_descs.$field_name FILTER html %]
 +  [% END %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/user.html.tmpl template/tr/default/global/user.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/user.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/user.html.tmpl	2010-08-24 15:10:12.903138806 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/user.html.tmpl template/tr/default/global/user.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/user.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/user.html.tmpl	2010-08-26 14:33:27.817207548 +0300
 @@ -0,0 +1,39 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16076,9 +16026,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% '</a>' IF user.id %]
 +  [% END %]
 +</span>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/userselect.html.tmpl template/tr/default/global/userselect.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/userselect.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/userselect.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/userselect.html.tmpl template/tr/default/global/userselect.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/userselect.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/userselect.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,76 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16156,9 +16106,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/variables.none.tmpl template/tr/default/global/variables.none.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/global/variables.none.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/global/variables.none.tmpl	2010-08-24 15:10:12.902138236 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/global/variables.none.tmpl template/tr/default/global/variables.none.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/global/variables.none.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/global/variables.none.tmpl	2010-08-26 14:33:27.816211029 +0300
 @@ -0,0 +1,68 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16228,9 +16178,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  }
 +
 +%]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/index.html.tmpl template/tr/default/index.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/index.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/index.html.tmpl	2010-08-24 15:10:12.825138146 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/index.html.tmpl template/tr/default/index.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/index.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/index.html.tmpl	2010-08-26 14:33:27.806206541 +0300
 @@ -0,0 +1,177 @@
 +[%# -*- mode: html -*- %]
 +[%# The contents of this file are subject to the Mozilla Public
@@ -16409,9 +16359,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</div>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/change-columns.html.tmpl template/tr/default/list/change-columns.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/change-columns.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/change-columns.html.tmpl	2010-08-24 15:10:12.817138515 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/change-columns.html.tmpl template/tr/default/list/change-columns.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/change-columns.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/change-columns.html.tmpl	2010-08-26 14:33:27.804204414 +0300
 @@ -0,0 +1,126 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16539,9 +16489,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +[% PROCESS global/footer.html.tmpl %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/edit-multiple.html.tmpl template/tr/default/list/edit-multiple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/edit-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/edit-multiple.html.tmpl	2010-08-24 15:10:12.817138515 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/edit-multiple.html.tmpl template/tr/default/list/edit-multiple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/edit-multiple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/edit-multiple.html.tmpl	2010-08-26 14:33:27.804204414 +0300
 @@ -0,0 +1,416 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -16959,9 +16909,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </script>
 +
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.atom.tmpl template/tr/default/list/list.atom.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.atom.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.atom.tmpl	2010-08-24 15:10:12.817138515 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.atom.tmpl template/tr/default/list/list.atom.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.atom.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.atom.tmpl	2010-08-26 14:33:27.804204414 +0300
 @@ -0,0 +1,102 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17065,9 +17015,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </entry>
 +  [% END %]
 +</feed>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.csv.tmpl template/tr/default/list/list.csv.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.csv.tmpl	2010-08-24 15:10:12.817138515 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.csv.tmpl template/tr/default/list/list.csv.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.csv.tmpl	2010-08-26 14:33:27.804204414 +0300
 @@ -0,0 +1,46 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17115,9 +17065,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.html.tmpl template/tr/default/list/list.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.html.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.html.tmpl template/tr/default/list/list.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.html.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,271 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17390,9 +17340,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%############################################################################%]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.ics.tmpl template/tr/default/list/list.ics.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.ics.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.ics.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.ics.tmpl template/tr/default/list/list.ics.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.ics.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.ics.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,103 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17497,9 +17447,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +  [% summary FILTER ics('SUMMARY') %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.js.tmpl template/tr/default/list/list.js.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.js.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.js.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.js.tmpl template/tr/default/list/list.js.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.js.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.js.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,37 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17538,9 +17488,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +if (window.buglistCallback) {
 +  buglistCallback(bugs);
 +}
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.rdf.tmpl template/tr/default/list/list.rdf.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list.rdf.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list.rdf.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list.rdf.tmpl template/tr/default/list/list.rdf.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list.rdf.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list.rdf.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,56 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17598,9 +17548,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</bz:result>
 +
 +</RDF>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list-simple.html.tmpl template/tr/default/list/list-simple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/list-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/list-simple.html.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/list-simple.html.tmpl template/tr/default/list/list-simple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/list-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/list-simple.html.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,54 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17656,9 +17606,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </body>
 +
 +</html>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/quips.html.tmpl template/tr/default/list/quips.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/quips.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/quips.html.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/quips.html.tmpl template/tr/default/list/quips.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/quips.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/quips.html.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,166 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17826,9 +17776,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/server-push.html.tmpl template/tr/default/list/server-push.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/server-push.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/server-push.html.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/server-push.html.tmpl template/tr/default/list/server-push.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/server-push.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/server-push.html.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,48 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -17878,9 +17828,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +  </body>
 +</html>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/table.html.tmpl template/tr/default/list/table.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/list/table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/list/table.html.tmpl	2010-08-24 15:10:12.821175830 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/list/table.html.tmpl template/tr/default/list/table.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/list/table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/list/table.html.tmpl	2010-08-26 14:33:27.805206197 +0300
 @@ -0,0 +1,265 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -18147,9 +18097,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </tr>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/bug-writing.html.tmpl template/tr/default/pages/bug-writing.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/bug-writing.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/bug-writing.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/bug-writing.html.tmpl template/tr/default/pages/bug-writing.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/bug-writing.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/bug-writing.html.tmpl	2010-08-26 14:33:27.820207914 +0300
 @@ -0,0 +1,146 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -18297,9 +18247,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</blockquote>
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/fields.html.tmpl template/tr/default/pages/fields.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/fields.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/fields.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/fields.html.tmpl template/tr/default/pages/fields.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/fields.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/fields.html.tmpl	2010-08-26 14:33:27.821207498 +0300
 @@ -0,0 +1,284 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -18585,9 +18535,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/linked.html.tmpl template/tr/default/pages/linked.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/linked.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/linked.html.tmpl	2010-08-24 15:10:12.906138201 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/linked.html.tmpl template/tr/default/pages/linked.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/linked.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/linked.html.tmpl	2010-08-26 14:33:27.819207535 +0300
 @@ -0,0 +1,55 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -18644,9 +18594,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +<hr>
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/linkify.html.tmpl template/tr/default/pages/linkify.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/linkify.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/linkify.html.tmpl	2010-08-24 15:10:12.906138201 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/linkify.html.tmpl template/tr/default/pages/linkify.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/linkify.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/linkify.html.tmpl	2010-08-26 14:33:27.819207535 +0300
 @@ -0,0 +1,41 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -18689,9 +18639,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/quicksearchhack.html.tmpl template/tr/default/pages/quicksearchhack.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/quicksearchhack.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/quicksearchhack.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/quicksearchhack.html.tmpl template/tr/default/pages/quicksearchhack.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/quicksearchhack.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/quicksearchhack.html.tmpl	2010-08-26 14:33:27.821207498 +0300
 @@ -0,0 +1,379 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -19072,9 +19022,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/quicksearch.html.tmpl template/tr/default/pages/quicksearch.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/quicksearch.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/quicksearch.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/quicksearch.html.tmpl template/tr/default/pages/quicksearch.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/quicksearch.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/quicksearch.html.tmpl	2010-08-26 14:33:27.820207914 +0300
 @@ -0,0 +1,172 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -19248,9 +19198,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/release-notes.html.tmpl template/tr/default/pages/release-notes.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/release-notes.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/release-notes.html.tmpl	2010-08-24 15:10:12.906138201 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/release-notes.html.tmpl template/tr/default/pages/release-notes.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/release-notes.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/release-notes.html.tmpl	2010-08-26 14:33:27.819207535 +0300
 @@ -0,0 +1,2438 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21690,9 +21640,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +</table>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/sudo.html.tmpl template/tr/default/pages/sudo.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/sudo.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/sudo.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/sudo.html.tmpl template/tr/default/pages/sudo.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/sudo.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/sudo.html.tmpl	2010-08-26 14:33:27.821207498 +0300
 @@ -0,0 +1,54 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21748,9 +21698,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/voting.html.tmpl template/tr/default/pages/voting.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/pages/voting.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/pages/voting.html.tmpl	2010-08-24 15:10:12.917140129 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/pages/voting.html.tmpl template/tr/default/pages/voting.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/pages/voting.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/pages/voting.html.tmpl	2010-08-26 14:33:27.821207498 +0300
 @@ -0,0 +1,53 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21805,9 +21755,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +"votes.cgi?action=show_user">Verdiğim Oylar</a>" bağlantısını kullanarak istediğiniz zaman oylarınıza göz atabilirsiniz.</p>
 +
 +[% INCLUDE global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.csv.tmpl template/tr/default/reports/chart.csv.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/chart.csv.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.csv.tmpl template/tr/default/reports/chart.csv.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/chart.csv.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,44 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21853,9 +21803,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% i = i + 1 %]
 +  
 +[% END %]  
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.html.tmpl template/tr/default/reports/chart.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/chart.html.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.html.tmpl template/tr/default/reports/chart.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/chart.html.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,67 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21924,9 +21874,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</div>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.png.tmpl template/tr/default/reports/chart.png.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/chart.png.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/chart.png.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.png.tmpl template/tr/default/reports/chart.png.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/chart.png.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/chart.png.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,61 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -21989,9 +21939,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  END;
 +-%]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/components.html.tmpl template/tr/default/reports/components.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/components.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/components.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/components.html.tmpl template/tr/default/reports/components.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/components.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/components.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,91 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22084,9 +22034,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </td>
 +  </tr>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/create-chart.html.tmpl template/tr/default/reports/create-chart.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/create-chart.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/create-chart.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/create-chart.html.tmpl template/tr/default/reports/create-chart.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/create-chart.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/create-chart.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,254 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22342,9 +22292,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +[% PROCESS global/footer.html.tmpl %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates.html.tmpl template/tr/default/reports/duplicates.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/duplicates.html.tmpl	2010-08-24 15:10:12.869139013 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates.html.tmpl template/tr/default/reports/duplicates.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/duplicates.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,169 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22515,9 +22465,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</ul>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-simple.html.tmpl template/tr/default/reports/duplicates-simple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/duplicates-simple.html.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-simple.html.tmpl template/tr/default/reports/duplicates-simple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/duplicates-simple.html.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,44 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22563,9 +22513,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </body>
 +
 +</html>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-table.html.tmpl template/tr/default/reports/duplicates-table.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/duplicates-table.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-table.html.tmpl template/tr/default/reports/duplicates-table.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/duplicates-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/duplicates-table.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,146 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22713,9 +22663,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% ELSE %]
 +  <h3>Aynısı olan [% terms.bug %] yok.</h3>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/edit-series.html.tmpl template/tr/default/reports/edit-series.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/edit-series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/edit-series.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/edit-series.html.tmpl template/tr/default/reports/edit-series.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/edit-series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/edit-series.html.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,73 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22790,9 +22740,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</p>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/keywords.html.tmpl template/tr/default/reports/keywords.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/keywords.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/keywords.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/keywords.html.tmpl template/tr/default/reports/keywords.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/keywords.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/keywords.html.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,88 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22882,9 +22832,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/menu.html.tmpl template/tr/default/reports/menu.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/menu.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/menu.html.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/menu.html.tmpl template/tr/default/reports/menu.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/menu.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/menu.html.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,77 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -22963,9 +22913,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% Hook.process('end') %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/old-charts.html.tmpl template/tr/default/reports/old-charts.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/old-charts.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/old-charts.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/old-charts.html.tmpl template/tr/default/reports/old-charts.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/old-charts.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/old-charts.html.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,72 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23039,9 +22989,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</div>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-bar.png.tmpl template/tr/default/reports/report-bar.png.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-bar.png.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-bar.png.tmpl	2010-08-24 15:10:12.869139013 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-bar.png.tmpl template/tr/default/reports/report-bar.png.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-bar.png.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-bar.png.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,87 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23130,9 +23080,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  graph.plot(data.0).png | stdout(1);
 +  END;
 +-%]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report.csv.tmpl template/tr/default/reports/report.csv.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report.csv.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report.csv.tmpl template/tr/default/reports/report.csv.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report.csv.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,25 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23159,9 +23109,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +
 +[% END %]  
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report.html.tmpl template/tr/default/reports/report.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report.html.tmpl template/tr/default/reports/report.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,180 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23343,9 +23293,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</div>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-line.png.tmpl template/tr/default/reports/report-line.png.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-line.png.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-line.png.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-line.png.tmpl template/tr/default/reports/report-line.png.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-line.png.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-line.png.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,90 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23437,9 +23387,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  END;
 +-%]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-pie.png.tmpl template/tr/default/reports/report-pie.png.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-pie.png.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-pie.png.tmpl	2010-08-24 15:10:12.869139013 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-pie.png.tmpl template/tr/default/reports/report-pie.png.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-pie.png.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-pie.png.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,54 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23495,9 +23445,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  graph.plot(data.0).png | stdout(1);
 +  END;
 +-%]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-simple.html.tmpl template/tr/default/reports/report-simple.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-simple.html.tmpl	2010-08-24 15:10:12.857138318 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-simple.html.tmpl template/tr/default/reports/report-simple.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-simple.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-simple.html.tmpl	2010-08-26 14:33:27.809206922 +0300
 @@ -0,0 +1,36 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23535,9 +23485,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +</html>
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-table.csv.tmpl template/tr/default/reports/report-table.csv.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-table.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-table.csv.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-table.csv.tmpl template/tr/default/reports/report-table.csv.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-table.csv.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-table.csv.tmpl	2010-08-26 14:33:27.812208239 +0300
 @@ -0,0 +1,82 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23621,9 +23571,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +  [% disp_value FILTER csv %]
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-table.html.tmpl template/tr/default/reports/report-table.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/report-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/report-table.html.tmpl	2010-08-24 15:10:12.869139013 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/report-table.html.tmpl template/tr/default/reports/report-table.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/report-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/report-table.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,168 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23793,9 +23743,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% END %]
 +  [% disp_value FILTER html FILTER replace('^ $','&nbsp;') %]
 +[% END %] 
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/series-common.html.tmpl template/tr/default/reports/series-common.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/series-common.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/series-common.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/series-common.html.tmpl template/tr/default/reports/series-common.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/series-common.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/series-common.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,119 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -23916,9 +23866,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </select>
 +  </td>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/series.html.tmpl template/tr/default/reports/series.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/reports/series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/reports/series.html.tmpl	2010-08-24 15:10:12.870139788 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/reports/series.html.tmpl template/tr/default/reports/series.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/reports/series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/reports/series.html.tmpl	2010-08-26 14:33:27.811208795 +0300
 @@ -0,0 +1,98 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -24018,9 +23968,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </tr>
 +  </tbody>
 +</table>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/request/email.txt.tmpl template/tr/default/request/email.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/request/email.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/request/email.txt.tmpl	2010-08-24 15:10:12.906138201 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/request/email.txt.tmpl template/tr/default/request/email.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/request/email.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/request/email.txt.tmpl	2010-08-26 14:33:27.818207206 +0300
 @@ -0,0 +1,84 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -24106,9 +24056,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[%- END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/request/queue.html.tmpl template/tr/default/request/queue.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/request/queue.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/request/queue.html.tmpl	2010-08-24 15:10:12.906138201 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/request/queue.html.tmpl template/tr/default/request/queue.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/request/queue.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/request/queue.html.tmpl	2010-08-26 14:33:27.818207206 +0300
 @@ -0,0 +1,202 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -24312,9 +24262,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  [% request.created FILTER time %]
 +[% END %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/boolean-charts.html.tmpl template/tr/default/search/boolean-charts.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/boolean-charts.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/boolean-charts.html.tmpl	2010-08-24 15:10:12.697138670 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/boolean-charts.html.tmpl template/tr/default/search/boolean-charts.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/boolean-charts.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/boolean-charts.html.tmpl	2010-08-26 14:33:27.780206658 +0300
 @@ -0,0 +1,135 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -24451,9 +24401,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +  </table>
 +  <hr>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/form.html.tmpl template/tr/default/search/form.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/form.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/form.html.tmpl	2010-08-24 15:10:12.722262627 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/form.html.tmpl template/tr/default/search/form.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/form.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/form.html.tmpl	2010-08-26 14:33:27.782206496 +0300
 @@ -0,0 +1,630 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25085,9 +25035,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </select>
 +  </td>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/knob.html.tmpl template/tr/default/search/knob.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/knob.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/knob.html.tmpl	2010-08-24 15:10:12.719266770 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/knob.html.tmpl template/tr/default/search/knob.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/knob.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/knob.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,82 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25171,9 +25121,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +      Öntanımlı aramamı sistem varsayılanlarına geri döndür</a>.
 +  </p>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-advanced.html.tmpl template/tr/default/search/search-advanced.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-advanced.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-advanced.html.tmpl	2010-08-24 15:10:12.695264268 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-advanced.html.tmpl template/tr/default/search/search-advanced.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-advanced.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-advanced.html.tmpl	2010-08-26 14:33:27.780206658 +0300
 @@ -0,0 +1,83 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25258,9 +25208,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-create-series.html.tmpl template/tr/default/search/search-create-series.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-create-series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-create-series.html.tmpl	2010-08-24 15:10:12.718266355 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-create-series.html.tmpl template/tr/default/search/search-create-series.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-create-series.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-create-series.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,68 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25330,9 +25280,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-help.html.tmpl template/tr/default/search/search-help.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-help.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-help.html.tmpl	2010-08-24 15:10:12.722262627 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-help.html.tmpl template/tr/default/search/search-help.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-help.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-help.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,118 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25452,9 +25402,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +{ id => "chfieldvalue", 
 +  html => "Belirtilen süre içerisinde yukarıda belirtilen alanının aldığı değer." },   
 +] %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-plugin.xml.tmpl template/tr/default/search/search-plugin.xml.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-plugin.xml.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-plugin.xml.tmpl	2010-08-24 15:10:12.722262627 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-plugin.xml.tmpl template/tr/default/search/search-plugin.xml.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-plugin.xml.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-plugin.xml.tmpl	2010-08-26 14:33:27.782206496 +0300
 @@ -0,0 +1,28 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25484,9 +25434,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +<Url type="text/html" method="GET" template="[% urlbase FILTER xml %]buglist.cgi?quicksearch={searchTerms}"/>
 +</OpenSearchDescription>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-graph.html.tmpl template/tr/default/search/search-report-graph.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-graph.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-report-graph.html.tmpl	2010-08-24 15:10:12.723263432 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-graph.html.tmpl template/tr/default/search/search-report-graph.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-graph.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-report-graph.html.tmpl	2010-08-26 14:33:27.782206496 +0300
 @@ -0,0 +1,141 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25629,9 +25579,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-select.html.tmpl template/tr/default/search/search-report-select.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-select.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-report-select.html.tmpl	2010-08-24 15:10:12.721264631 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-select.html.tmpl template/tr/default/search/search-report-select.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-select.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-report-select.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,55 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25688,9 +25638,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    [% END %]
 +  </select>
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-table.html.tmpl template/tr/default/search/search-report-table.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-report-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-report-table.html.tmpl	2010-08-24 15:10:12.719266770 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-table.html.tmpl template/tr/default/search/search-report-table.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-report-table.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-report-table.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,94 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25786,9 +25736,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</form>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-specific.html.tmpl template/tr/default/search/search-specific.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/search-specific.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/search-specific.html.tmpl	2010-08-24 15:10:12.696160730 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/search-specific.html.tmpl template/tr/default/search/search-specific.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/search-specific.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/search-specific.html.tmpl	2010-08-26 14:33:27.780206658 +0300
 @@ -0,0 +1,126 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25916,9 +25866,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/tabs.html.tmpl template/tr/default/search/tabs.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/tabs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/tabs.html.tmpl	2010-08-24 15:10:12.723263432 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/tabs.html.tmpl template/tr/default/search/tabs.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/tabs.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/tabs.html.tmpl	2010-08-26 14:33:27.782206496 +0300
 @@ -0,0 +1,37 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25957,9 +25907,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% content %]
 +
 +[% END %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/type-select.html.tmpl template/tr/default/search/type-select.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/search/type-select.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/search/type-select.html.tmpl	2010-08-24 15:10:12.721264631 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/search/type-select.html.tmpl template/tr/default/search/type-select.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/search/type-select.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/search/type-select.html.tmpl	2010-08-26 14:33:27.781207442 +0300
 @@ -0,0 +1,29 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -25990,9 +25940,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +        [%- search_descs.$type FILTER html %]</option>
 +  [% END %]
 +</select>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/setup/strings.txt.pl template/tr/default/setup/strings.txt.pl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/setup/strings.txt.pl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/setup/strings.txt.pl	2010-08-24 15:10:12.876137563 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/setup/strings.txt.pl template/tr/default/setup/strings.txt.pl
+--- ../bugzilla-3.6.2.orig/template/tr/default/setup/strings.txt.pl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/setup/strings.txt.pl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,132 @@
 +# The contents of this file are subject to the Mozilla Public
 +# License Version 1.1 (the "License"); you may not use this file
@@ -26126,9 +26076,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +);
 +
 +1;
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/sidebar.xul.tmpl template/tr/default/sidebar.xul.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/sidebar.xul.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/sidebar.xul.tmpl	2010-08-24 15:10:12.825138146 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/sidebar.xul.tmpl template/tr/default/sidebar.xul.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/sidebar.xul.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/sidebar.xul.tmpl	2010-08-26 14:33:27.806206541 +0300
 @@ -0,0 +1,132 @@
 +[%# -*- mode: sgml -*- %]
 +[%# The contents of this file are subject to the Mozilla Public
@@ -26262,9 +26212,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +    </html>
 +  </box>
 +</window>
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/welcome-admin.html.tmpl template/tr/default/welcome-admin.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/welcome-admin.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/welcome-admin.html.tmpl	2010-08-24 15:10:12.877138558 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/welcome-admin.html.tmpl template/tr/default/welcome-admin.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/welcome-admin.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/welcome-admin.html.tmpl	2010-08-26 14:33:27.813206133 +0300
 @@ -0,0 +1,85 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -26351,9 +26301,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</div>
 +
 +[% PROCESS global/footer.html.tmpl %]
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/mail.html.tmpl template/tr/default/whine/mail.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/mail.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/whine/mail.html.tmpl	2010-08-24 15:10:12.790164980 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/whine/mail.html.tmpl template/tr/default/whine/mail.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/whine/mail.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/whine/mail.html.tmpl	2010-08-26 14:33:27.797205607 +0300
 @@ -0,0 +1,92 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -26447,9 +26397,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +</html>
 +
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/mail.txt.tmpl template/tr/default/whine/mail.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/mail.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/whine/mail.txt.tmpl	2010-08-24 15:10:12.793138481 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/whine/mail.txt.tmpl template/tr/default/whine/mail.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/whine/mail.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/whine/mail.txt.tmpl	2010-08-26 14:33:27.798204756 +0300
 @@ -0,0 +1,66 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -26517,9 +26467,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[% END %]
 +
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/multipart-mime.txt.tmpl template/tr/default/whine/multipart-mime.txt.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/multipart-mime.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/whine/multipart-mime.txt.tmpl	2010-08-24 15:10:12.793138481 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/whine/multipart-mime.txt.tmpl template/tr/default/whine/multipart-mime.txt.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/whine/multipart-mime.txt.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/whine/multipart-mime.txt.tmpl	2010-08-26 14:33:27.798204756 +0300
 @@ -0,0 +1,52 @@
 +[%# The contents of this file are subject to the Mozilla Public
 +  # License Version 1.1 (the "License"); you may not use this file
@@ -26573,9 +26523,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +[%+ part.content %]
 +[%+ END %]
 +--[% boundary %]--
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/schedule.html.tmpl template/tr/default/whine/schedule.html.tmpl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/default/whine/schedule.html.tmpl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/default/whine/schedule.html.tmpl	2010-08-24 15:10:12.793138481 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/default/whine/schedule.html.tmpl template/tr/default/whine/schedule.html.tmpl
+--- ../bugzilla-3.6.2.orig/template/tr/default/whine/schedule.html.tmpl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/default/whine/schedule.html.tmpl	2010-08-26 14:33:27.798204756 +0300
 @@ -0,0 +1,425 @@
 +[%# -*- mode: html -*- %]
 +[%# The contents of this file are subject to the Mozilla Public
@@ -27002,9 +26952,9 @@ diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/
 +
 +[%+ END %]
 +
-diff -Nuar --exclude=.svn --exclude=.cvs --exclude=CVS /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/extension/filterexceptions.pl template/tr/extension/filterexceptions.pl
---- /home/pars/workspace/sil/bugzilla-3.6.2.orig/template/tr/extension/filterexceptions.pl	1970-01-01 02:00:00.000000000 +0200
-+++ template/tr/extension/filterexceptions.pl	2010-08-24 15:10:12.920138532 +0300
+diff -Nuar --exclude=.svn --exclude=.cvsignore --exclude=CVS ../bugzilla-3.6.2.orig/template/tr/extension/filterexceptions.pl template/tr/extension/filterexceptions.pl
+--- ../bugzilla-3.6.2.orig/template/tr/extension/filterexceptions.pl	1970-01-01 02:00:00.000000000 +0200
++++ template/tr/extension/filterexceptions.pl	2010-08-26 14:33:27.822206947 +0300
 @@ -0,0 +1,42 @@
 +# -*- Mode: perl; indent-tabs-mode: nil -*-
 +#
