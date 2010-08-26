@@ -2,3 +2,11 @@ Ahenk
 =====
 
 Ahenk (Harmony) is Pardus' remote management framework.
+
+
+Projects
+========
+
+    server: Ahenk server setup tool
+    client: Ajan, agent for Pardus computers in Ahenk network
+    master: Lider, Ahenk management interface
