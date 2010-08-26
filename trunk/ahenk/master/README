@@ -1,0 +1,8 @@
+Usage
+-----
+
+Compile UI and resources:
+    $ make
+
+Run application:
+    $ python main.py
