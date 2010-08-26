@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -16,64 +16,90 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
-msgid "Kaptan"
-msgstr "Kaptan"
+#: .tmp/ui_ui_scrNetwork.py:105
+msgid "Network"
+msgstr "Réseau"
 
-#: .tmp/kaptan.desktop.in.h:2
-msgid "Welcome Wizard"
-msgstr "Assistant de bienvenue"
+#: .tmp/ui_ui_scrNetwork.py:106
+msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+msgstr "Pour créer une nouvelle connexion, cliquez sur <b>Créer un profil</b> et sélectionnez votre carte réseau dans la liste (eth0 en général). Si vous vous connectez en sans-fil, choisissez votre point d'accès. Après l'enregistrement de votre profil, cochez la case correspondante pour établir la connexion."
 
-#: .tmp/ui_ui_kaptan.py:329
-#, fuzzy
-msgid "Welcome to Pardus"
-msgstr "Bienvenue dans %s"
+#: .tmp/ui_ui_scrNetwork.py:107
+msgid "Network Manager (Press Apply to save your settings)"
+msgstr "Gestionnaire de réseau (Appuyez sur Appliquer pour enregistrer vos paramètres)"
 
-#: .tmp/ui_ui_kaptan.py:330
-msgid "Cancel"
-msgstr "Annuler"
+#: .tmp/ui_ui_scrSearch.py:95
+msgid "Search"
+msgstr "Recherche"
 
-#: .tmp/ui_ui_kaptan.py:331
-msgid "Back"
-msgstr "Retour"
+#: .tmp/ui_ui_scrSearch.py:96
+msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
+msgstr "La recherche sur le bureau Strigi indexe les fichiers que vous utilisez fréquemment. Les résultats d'une recherche de fichier en sont considérablement accélérés. Strigi a également la capacité d'effectuer des recherche de fichiers basées sur leurs contenus."
 
-#: .tmp/ui_ui_kaptan.py:332
-msgid "Next"
-msgstr "Suivant"
+#: .tmp/ui_ui_scrSearch.py:97
+msgid "Allow Strigi to index my files"
+msgstr "Permettre à Strigi d'indexer mes fichiers"
 
-#: .tmp/ui_ui_kaptan.py:333
-msgid "Finish"
-msgstr "Terminer"
+#: .tmp/ui_ui_scrSearch.py:98
+msgid "Search Options"
+msgstr "Options de recherche"
 
-#: .tmp/ui_ui_kaptan.py:334
-msgid "Apply Settings"
-msgstr "Appliquer les réglages"
+#: .tmp/ui_ui_scrKeyboard.py:88
+msgid "Keyboard"
+msgstr "Clavier"
 
-#: .tmp/ui_ui_scrAvatar.py:239 .tmp/ui_ui_scrStyleItem.py:65
-#: .tmp/ui_ui_wallpaperItem.py:68
+#: .tmp/ui_ui_scrKeyboard.py:89
+msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
+msgstr "Kaptan sélectionne automatiquement la meilleure disposition de clavier d'après votre langue. Si le choix par défaut ne vous convient pas, vous pouvez en choisir une autre et la tester immédiatement."
+
+#: .tmp/ui_ui_scrKeyboard.py:90
+msgid "Test Layout"
+msgstr "Tester la disposition"
+
+#: .tmp/ui_ui_scrWallpaper.py:126
+msgid "Wallpaper"
+msgstr "Fond d'écran"
+
+#: .tmp/ui_ui_scrWallpaper.py:127
+msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr "Choisissez votre fond d'écran préféré. Allez voir éventuellement dans <b>Configuration du bureau</b> pour en télécharger d'autres."
+
+#: .tmp/ui_ui_scrWallpaper.py:128
+msgid "Wallpapers"
+msgstr "Fonds d'écran"
+
+#: .tmp/ui_ui_scrWallpaper.py:130
+msgid "Choose wallpaper from file"
+msgstr "Choisir un fond d'écran"
+
+#: .tmp/ui_ui_scrWallpaper.py:131
+msgid "Don't change wallpaper"
+msgstr "Ne pas changer le fond d'écran"
+
+#: .tmp/ui_ui_scrSummary.py:79
+msgid "Summary"
+msgstr "Récapitulatif"
+
+#: .tmp/ui_ui_scrSummary.py:80
+msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
+msgstr "Vous avez passé avec succès toutes les étapes. Voici un récapitulatif du paramétrage que vous souhaitez. Cliquez sur <b>Appliquer les réglages</b> pour les enregistrer. Vous voilà fin prêt pour profiter de votre Pardus !"
+
+#: .tmp/ui_ui_scrSummary.py:81
+msgid "The following settings will be applied"
+msgstr "Les paramètres suivants seront appliqués"
+
+#: .tmp/ui_ui_wallpaperItem.py:68 .tmp/ui_ui_scrAvatar.py:239
+#: .tmp/ui_ui_scrStyleItem.py:65
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_ui_scrAvatar.py:240
-msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
-msgstr ""
+#: .tmp/ui_ui_wallpaperItem.py:69
+msgid "wallPaperName"
+msgstr "wallPaperName"
 
-#: .tmp/ui_ui_scrAvatar.py:241
-msgid "Options"
-msgstr ""
-
-#: .tmp/ui_ui_scrAvatar.py:242
-#, fuzzy
-msgid "Choose an image"
-msgstr "Choisir un fond d'écran"
-
-#: .tmp/ui_ui_scrAvatar.py:243
-msgid "Capture"
-msgstr ""
-
-#: .tmp/ui_ui_scrAvatar.py:244
-msgid "Recapture"
-msgstr ""
+#: .tmp/ui_ui_wallpaperItem.py:70
+msgid "wallpaperDesc"
+msgstr "wallpaperDesc"
 
 #: .tmp/ui_ui_scrGoodbye.py:407
 msgid "More"
@@ -116,42 +142,6 @@ msgstr "Aide et assistance"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Communauté d'utilisateurs de Pardus, listes de discussion, canaux IRC, wikis, etc."
 
-#: .tmp/ui_ui_scrKeyboard.py:88
-msgid "Keyboard"
-msgstr "Clavier"
-
-#: .tmp/ui_ui_scrKeyboard.py:89
-msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan sélectionne automatiquement la meilleure disposition de clavier d'après votre langue. Si le choix par défaut ne vous convient pas, vous pouvez en choisir une autre et la tester immédiatement."
-
-#: .tmp/ui_ui_scrKeyboard.py:90
-msgid "Test Layout"
-msgstr "Tester la disposition"
-
-#: .tmp/ui_ui_scrMenu.py:118
-msgid "Menu"
-msgstr "Menu"
-
-#: .tmp/ui_ui_scrMenu.py:119
-msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "Vous pouvez aussi personnaliser votre <b>menu KDE</b> à votre convenance. Choisissez-en un à partir des différents styles suivants."
-
-#: .tmp/ui_ui_scrMenu.py:120
-msgid "Kick-off Menu"
-msgstr "Menu Kick-off"
-
-#: .tmp/ui_ui_scrMenu.py:121
-msgid "Simple Menu"
-msgstr "Menu Simple"
-
-#: .tmp/ui_ui_scrMenu.py:122
-msgid "Lancelot Menu"
-msgstr "Menu Lancelot"
-
-#: .tmp/ui_ui_scrMenu.py:123
-msgid "Sample"
-msgstr "Exemple"
-
 #: .tmp/ui_ui_scrMouse.py:198
 msgid "Mouse"
 msgstr "Souris"
@@ -188,17 +178,41 @@ msgstr "Gaucher"
 msgid "Reverse scrolling"
 msgstr "Défilement inverse"
 
-#: .tmp/ui_ui_scrNetwork.py:105
-msgid "Network"
-msgstr "Réseau"
+#: .tmp/ui_ui_scrStyle.py:164
+msgid "Themes"
+msgstr "Thèmes"
 
-#: .tmp/ui_ui_scrNetwork.py:106
-msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-msgstr "Pour créer une nouvelle connexion, cliquez sur <b>Créer un profil</b> et sélectionnez votre carte réseau dans la liste (eth0 en général). Si vous vous connectez en sans-fil, choisissez votre point d'accès. Après l'enregistrement de votre profil, cochez la case correspondante pour établir la connexion."
+#: .tmp/ui_ui_scrStyle.py:165
+msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
+msgstr "Choisissez votre thème et type de bureau préférés. Personnalisez votre Pardus avec des styles et des thèmes."
 
-#: .tmp/ui_ui_scrNetwork.py:107
-msgid "Network Manager (Press Apply to save your settings)"
-msgstr "Gestionnaire de réseau (Appuyez sur Appliquer pour enregistrer vos paramètres)"
+#: .tmp/ui_ui_scrStyle.py:166
+msgid "KDE Themes"
+msgstr "Thèmes de KDE"
+
+#: .tmp/ui_ui_scrStyle.py:167
+msgid "Desktop Type"
+msgstr "Type de bureau"
+
+#: .tmp/ui_ui_scrStyle.py:168
+msgid "Desktop view (KDE4 Style)"
+msgstr "Vue de bureau (style KDE4)"
+
+#: .tmp/ui_ui_scrStyle.py:169
+msgid "Folder view (KDE3 Style)"
+msgstr "Vue de dossier (style KDE3)"
+
+#: .tmp/ui_ui_scrStyle.py:170
+msgid "Number of Desktops"
+msgstr "Nombre de bureaux"
+
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Assistant de bienvenue"
 
 #: .tmp/ui_ui_scrPackage.py:187
 msgid "Packages"
@@ -235,23 +249,6 @@ msgstr "Mises-à-jour"
 #: .tmp/ui_ui_scrPackage.py:195
 msgid "Repositories"
 msgstr "Dépôts"
-
-#: .tmp/ui_ui_scrSearch.py:95
-msgid "Search"
-msgstr "Recherche"
-
-#: .tmp/ui_ui_scrSearch.py:96
-msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr "La recherche sur le bureau Strigi indexe les fichiers que vous utilisez fréquemment. Les résultats d'une recherche de fichier en sont considérablement accélérés. Strigi a également la capacité d'effectuer des recherche de fichiers basées sur leurs contenus."
-
-#: .tmp/ui_ui_scrSearch.py:97
-msgid "Allow Strigi to index my files"
-msgstr "Permettre à Strigi d'indexer mes fichiers"
-
-#: .tmp/ui_ui_scrSearch.py:98
-#, fuzzy
-msgid "Search Options"
-msgstr "Paramètres de recherche"
 
 #: .tmp/ui_ui_scrSmolt.py:148
 msgid "Smolt"
@@ -291,33 +288,49 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Logging:</span>  Tout le trafic web du serveur smolt de Pardus passe au travers d'un serveur proxy en premier.  C'est le seul endroit où les adreses IP sont enregistrées et conservées 4 semaines à l'issue desquelles elles sont effacées.  Le projet Pardus n'accumule pas des adresses IP dans la base de données du serveur smolt.  Les journeaux (logs) sont privés et non divulgés au public.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Les utilisateurs qui seraient mécontents de cette politique ne doivent pas utiliser smolt.  Ceux qui ont des questions à propos de cette politique sont invités à contacter l'équipe Infrastructure de Pardus à l'adresse admin [at] pardus.org.tr  Souvenez-vous que vous pouvez effacer votre profil à tout moment à l'aide de la commande \"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
-#: .tmp/ui_ui_scrStyle.py:164
-msgid "Themes"
-msgstr "Thèmes"
+#: .tmp/ui_ui_scrAvatar.py:240
+msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
+msgstr "Cet écran vous aide à définir votre <b>avatar</b>. Vous pouvez soit choisir une image à partir d'un fichier, soit vous pouvez capturer une image avec votre appareil photo. Sélectionnez une option dans le menu <b>d'options</b>."
 
-#: .tmp/ui_ui_scrStyle.py:165
-msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
-msgstr "Choisissez votre thème et type de bureau préférés. Personnalisez votre Pardus avec des styles et des thèmes."
+#: .tmp/ui_ui_scrAvatar.py:241
+msgid "Options"
+msgstr "Options"
 
-#: .tmp/ui_ui_scrStyle.py:166
-msgid "KDE Themes"
-msgstr "Thèmes de KDE"
+#: .tmp/ui_ui_scrAvatar.py:242
+msgid "Choose an image"
+msgstr "Choisir une image"
 
-#: .tmp/ui_ui_scrStyle.py:167
-msgid "Desktop Type"
-msgstr "Type de bureau"
+#: .tmp/ui_ui_scrAvatar.py:243
+msgid "Capture"
+msgstr "Capture"
 
-#: .tmp/ui_ui_scrStyle.py:168
-msgid "Desktop view (KDE4 Style)"
-msgstr "Vue de bureau (style KDE4)"
+#: .tmp/ui_ui_scrAvatar.py:244
+msgid "Recapture"
+msgstr "Recapture"
 
-#: .tmp/ui_ui_scrStyle.py:169
-msgid "Folder view (KDE3 Style)"
-msgstr "Vue de dossier (style KDE3)"
+#: .tmp/ui_ui_kaptan.py:329
+msgid "Welcome to Pardus"
+msgstr "Bienvenue dans %s"
 
-#: .tmp/ui_ui_scrStyle.py:170
-msgid "Number of Desktops"
-msgstr "Nombre de bureaux"
+#: .tmp/ui_ui_kaptan.py:330
+msgid "Cancel"
+msgstr "Annuler"
+
+#: .tmp/ui_ui_kaptan.py:331
+msgid "Back"
+msgstr "Retour"
+
+#: .tmp/ui_ui_kaptan.py:332
+msgid "Next"
+msgstr "Suivant"
+
+#: .tmp/ui_ui_kaptan.py:333
+msgid "Finish"
+msgstr "Terminer"
+
+#: .tmp/ui_ui_kaptan.py:334
+msgid "Apply Settings"
+msgstr "Appliquer les réglages"
 
 #: .tmp/ui_ui_scrStyleItem.py:66
 msgid "styleName"
@@ -327,37 +340,29 @@ msgstr "styleName"
 msgid "styleDesc"
 msgstr "styleDesc"
 
-#: .tmp/ui_ui_scrSummary.py:79
-msgid "Summary"
-msgstr "Récapitulatif"
+#: .tmp/ui_ui_scrMenu.py:118
+msgid "Menu"
+msgstr "Menu"
 
-#: .tmp/ui_ui_scrSummary.py:80
-msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
-msgstr "Vous avez passé avec succès toutes les étapes. Voici un récapitulatif du paramétrage que vous souhaitez. Cliquez sur <b>Appliquer les réglages</b> pour les enregistrer. Vous voilà fin prêt pour profiter de votre Pardus !"
+#: .tmp/ui_ui_scrMenu.py:119
+msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
+msgstr "Vous pouvez aussi personnaliser votre <b>menu KDE</b> à votre convenance. Choisissez-en un à partir des différents styles suivants."
 
-#: .tmp/ui_ui_scrSummary.py:81
-msgid "The following settings will be applied"
-msgstr "Les paramètres suivants seront appliqués"
+#: .tmp/ui_ui_scrMenu.py:120
+msgid "Kick-off Menu"
+msgstr "Menu Kick-off"
 
-#: .tmp/ui_ui_scrWallpaper.py:126
-msgid "Wallpaper"
-msgstr "Fond d'écran"
+#: .tmp/ui_ui_scrMenu.py:121
+msgid "Simple Menu"
+msgstr "Menu Simple"
 
-#: .tmp/ui_ui_scrWallpaper.py:127
-msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Choisissez votre fond d'écran préféré. Allez voir éventuellement dans <b>Configuration du bureau</b> pour en télécharger d'autres."
+#: .tmp/ui_ui_scrMenu.py:122
+msgid "Lancelot Menu"
+msgstr "Menu Lancelot"
 
-#: .tmp/ui_ui_scrWallpaper.py:128
-msgid "Wallpapers"
-msgstr "Fonds d'écran"
-
-#: .tmp/ui_ui_scrWallpaper.py:130
-msgid "Choose wallpaper from file"
-msgstr "Choisir un fond d'écran"
-
-#: .tmp/ui_ui_scrWallpaper.py:131
-msgid "Don't change wallpaper"
-msgstr "Ne pas changer le fond d'écran"
+#: .tmp/ui_ui_scrMenu.py:123
+msgid "Sample"
+msgstr "Exemple"
 
 #: .tmp/ui_ui_scrWelcome.py:72
 msgid "Welcome"
@@ -370,14 +375,6 @@ msgstr "Qu'est-ce que Pardus ?"
 #: .tmp/ui_ui_scrWelcome.py:74
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
 msgstr "<b>Pardus</b> est un système d'exploitation fiable, sécurisé, rapide et agréable à utiliser. <br /><br />Avec Pardus, vous pouvez vous connecter à Internet, lire vos courriels, travailler avec vos documents bureautiques, regarder des films, écouter de la musique, développer des applications, jouer à des jeux et plus encore ! <br /><br /><b>Kaptan</b> va vous aider à personnaliser rapidement et facilement votre espace de travail. Cliquez sur <b>suivant</b> pour commencer."
-
-#: .tmp/ui_ui_wallpaperItem.py:69
-msgid "wallPaperName"
-msgstr "wallPaperName"
-
-#: .tmp/ui_ui_wallpaperItem.py:70
-msgid "wallpaperDesc"
-msgstr "wallpaperDesc"
 
 #~ msgid "Kaptan Desktop"
 #~ msgstr "Kaptan"
@@ -942,6 +939,5 @@ msgstr "wallpaperDesc"
 #~ msgid "Keyboard Layout Language"
 #~ msgstr "Disposition du clavier"
 
-#, fuzzy
 #~ msgid "Welcome to Pardus 2011 Alpha 1"
 #~ msgstr "Bienvenue à Pardus 2009.2"
