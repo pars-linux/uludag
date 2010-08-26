@@ -314,7 +314,7 @@ def copyPisiIndex(project):
         destination = os.path.join(image_dir, "usr/share/yali/data")
         collectionDir = os.path.join(destination, "index")
         collectionFile = os.path.join(destination, "index/collection.xml")
-        run('mkdir %s' % collectionDir)
+        run('mkdir -p %s' % collectionDir)
         run('cp -PR "%s" "%s"' % (os.path.join(project.install_repo_dir(), "collection.xml"), collectionDir))
         run('sha1sum "%s" > "%s"' % (collectionFile, "%s.sha1sum" % collectionFile))
 
