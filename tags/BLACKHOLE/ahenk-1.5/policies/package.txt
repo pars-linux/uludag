@@ -1,0 +1,5 @@
+pisiPolicy
+    pisiRepositories: Repository URLs seperated by comma
+    pisiAutoUpdateMode: "off", "security" or "full"
+    pisiAutoUpdateInterval: Update interval in seconds
+    pisiAutoUpdateZone: Time slot to update system, (e.g. 3600-1800 means update system between 01:00 and 05:00)
