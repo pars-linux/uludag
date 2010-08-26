@@ -1,10 +1,10 @@
 <PardusmanProject type="install" media="dvd" compression="gzip">
     <Title>Pardus 2011 Alpha (x86_64)</Title>
-    <WorkDir>/home/gokcen/pardusman-workdir</WorkDir>
+    <WorkDir>/home/gokcen/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>6IVFkmgVFB31</Id>
+            <Id>AVYfxZA22wr5</Id>
             <Icon>/home/gokcen/pardusman/icons/preferences-web-browser-shortcuts.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -57,6 +57,8 @@
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
                 <SelectedComponent>x11.driver</SelectedComponent>
+                <SelectedPackage>PyQt</SelectedPackage>
+                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
                 <SelectedPackage>alsa-lib</SelectedPackage>
                 <SelectedPackage>aria2</SelectedPackage>
@@ -81,10 +83,6 @@
                 <SelectedPackage>htop</SelectedPackage>
                 <SelectedPackage>hunspell-dict-en</SelectedPackage>
                 <SelectedPackage>iw</SelectedPackage>
-                <SelectedPackage>kdebase</SelectedPackage>
-                <SelectedPackage>kdebase-emoticons</SelectedPackage>
-                <SelectedPackage>kdebase-sounds</SelectedPackage>
-                <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kde-l10n-ca</SelectedPackage>
                 <SelectedPackage>kde-l10n-de</SelectedPackage>
                 <SelectedPackage>kde-l10n-es</SelectedPackage>
@@ -96,7 +94,20 @@
                 <SelectedPackage>kde-l10n-sv</SelectedPackage>
                 <SelectedPackage>kde-l10n-tr</SelectedPackage>
                 <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
+                <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
+                <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
+                <SelectedPackage>kdeartwork-icons</SelectedPackage>
+                <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
+                <SelectedPackage>kdeartwork-sounds</SelectedPackage>
+                <SelectedPackage>kdeartwork-styles</SelectedPackage>
+                <SelectedPackage>kdebase</SelectedPackage>
+                <SelectedPackage>kdebase-emoticons</SelectedPackage>
+                <SelectedPackage>kdebase-sounds</SelectedPackage>
+                <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
+                <SelectedPackage>kdenetwork</SelectedPackage>
+                <SelectedPackage>kdepim</SelectedPackage>
+                <SelectedPackage>kdepim-runtime</SelectedPackage>
                 <SelectedPackage>kdm</SelectedPackage>
                 <SelectedPackage>kernel</SelectedPackage>
                 <SelectedPackage>kernel-module-headers</SelectedPackage>
@@ -113,8 +124,6 @@
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
                 <SelectedPackage>polkit-kde_1</SelectedPackage>
                 <SelectedPackage>pulseaudio</SelectedPackage>
-                <SelectedPackage>PyQt</SelectedPackage>
-                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
                 <SelectedPackage>redland-virtuoso</SelectedPackage>
@@ -281,6 +290,7 @@
                 <Package>gperf</Package>
                 <Package>gpgme</Package>
                 <Package>gpm</Package>
+                <Package>grantlee</Package>
                 <Package>grep</Package>
                 <Package>groff</Package>
                 <Package>grub</Package>
@@ -335,6 +345,12 @@
                 <Package>kde-l10n-sv</Package>
                 <Package>kde-l10n-tr</Package>
                 <Package>kde-l10n-tr-doc</Package>
+                <Package>kdeartwork-colorschemes</Package>
+                <Package>kdeartwork-emoticons</Package>
+                <Package>kdeartwork-icons</Package>
+                <Package>kdeartwork-screensavers</Package>
+                <Package>kdeartwork-sounds</Package>
+                <Package>kdeartwork-styles</Package>
                 <Package>kdebase</Package>
                 <Package>kdebase-emoticons</Package>
                 <Package>kdebase-runtime</Package>
@@ -343,6 +359,9 @@
                 <Package>kdebase-workspace</Package>
                 <Package>kdelibs</Package>
                 <Package>kdemultimedia</Package>
+                <Package>kdenetwork</Package>
+                <Package>kdepim</Package>
+                <Package>kdepim-runtime</Package>
                 <Package>kdepimlibs</Package>
                 <Package>kdm</Package>
                 <Package>kernel</Package>
@@ -398,6 +417,8 @@
                 <Package>libcap-ng-devel</Package>
                 <Package>libconfig</Package>
                 <Package>libdaemon</Package>
+                <Package>libdbusmenu-common</Package>
+                <Package>libdbusmenu-glib</Package>
                 <Package>libdbusmenu-qt</Package>
                 <Package>libdc1394</Package>
                 <Package>libdmx</Package>
@@ -411,6 +432,7 @@
                 <Package>libfontenc</Package>
                 <Package>libfreebob</Package>
                 <Package>libftdi</Package>
+                <Package>libgadu</Package>
                 <Package>libgcc</Package>
                 <Package>libgcrypt</Package>
                 <Package>libgfortran</Package>
@@ -423,19 +445,25 @@
                 <Package>libidn</Package>
                 <Package>libidn-devel</Package>
                 <Package>libiec61883</Package>
+                <Package>libindicate</Package>
+                <Package>libindicate-qt</Package>
                 <Package>libiodbc</Package>
                 <Package>libksba</Package>
+                <Package>libktorrent</Package>
                 <Package>libmad</Package>
+                <Package>libmal</Package>
                 <Package>libmatthew-java</Package>
                 <Package>libmng</Package>
                 <Package>libmp4v2</Package>
                 <Package>libmpc</Package>
+                <Package>libmsn</Package>
                 <Package>libnl</Package>
                 <Package>libnotify</Package>
                 <Package>libnut</Package>
                 <Package>libobjc</Package>
                 <Package>libogg</Package>
                 <Package>liboil</Package>
+                <Package>libotr</Package>
                 <Package>libpaper</Package>
                 <Package>libpcap</Package>
                 <Package>libpciaccess</Package>
@@ -467,9 +495,11 @@
                 <Package>libusb-devel</Package>
                 <Package>libusb1</Package>
                 <Package>libuuid</Package>
+                <Package>libv4l</Package>
                 <Package>libva</Package>
                 <Package>libvdpau</Package>
                 <Package>libvisual</Package>
+                <Package>libvncserver</Package>
                 <Package>libvorbis</Package>
                 <Package>libvpx</Package>
                 <Package>libx86</Package>
@@ -491,6 +521,8 @@
                 <Package>man-pages</Package>
                 <Package>mc</Package>
                 <Package>mcpp</Package>
+                <Package>meanwhile</Package>
+                <Package>mediastreamer2</Package>
                 <Package>mercurial</Package>
                 <Package>mesa</Package>
                 <Package>mesa-utils</Package>
@@ -529,6 +561,7 @@
                 <Package>openssl</Package>
                 <Package>openssl-devel</Package>
                 <Package>orbit2</Package>
+                <Package>ortp</Package>
                 <Package>pam</Package>
                 <Package>pango</Package>
                 <Package>pardus-default-settings</Package>
@@ -556,6 +589,7 @@
                 <Package>phonon</Package>
                 <Package>phonon-gstreamer</Package>
                 <Package>piksemel</Package>
+                <Package>pilot-link</Package>
                 <Package>pinentry</Package>
                 <Package>pinentry-qt</Package>
                 <Package>pisi</Package>
@@ -587,6 +621,7 @@
                 <Package>python-pyliblzma</Package>
                 <Package>python-setuptools</Package>
                 <Package>qca2</Package>
+                <Package>qca2-ossl</Package>
                 <Package>qimageblitz</Package>
                 <Package>ql2x00-firmware</Package>
                 <Package>qt</Package>
@@ -640,6 +675,7 @@
                 <Package>tar</Package>
                 <Package>tcp-wrappers</Package>
                 <Package>tcp-wrappers-devel</Package>
+                <Package>telepathy-qt</Package>
                 <Package>texinfo</Package>
                 <Package>tiff</Package>
                 <Package>time</Package>
