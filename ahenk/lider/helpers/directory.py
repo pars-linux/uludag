@@ -59,9 +59,9 @@ class Directory:
 
         try:
             self.conn = ldap.open(self.host)
-            self.conn.simple_bind(self.directory_user, self.password)
+            self.conn.simple_bind_s(self.directory_user, self.password)
             self.is_connected = True
-        except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT):
+        except ldap.LDAPError:
             self.is_connected = False
             raise DirectoryError
 
@@ -75,7 +75,7 @@ class Directory:
 
         try:
             search = self.conn.search_s(self.directory_domain, ldap.SCOPE_BASE, pattern)
-        except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT):
+        except ldap.LDAPError:
             raise DirectoryError
 
         dn, attributes = search[0]
