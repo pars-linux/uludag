@@ -41,6 +41,9 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
 
         # UI events
         self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
+        self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.check_fields)
+        self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.check_fields)
+        self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.check_fields)
 
     def __slot_find_host(self):
         """
@@ -101,3 +104,31 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
             Sets user password.
         """
         self.editPassword.setText(password)
+
+    def check_fields(self, set_focus=False):
+        """
+            Checks fields for errors:
+
+            Returns: True if valid, else False
+        """
+        if not len(self.editDomain.text()):
+            self.labelWarning.setText("Domain name is required.")
+            if set_focus:
+                self.editDomain.setFocus(QtCore.Qt.OtherFocusReason)
+            return False
+        if not len(self.editHost.text()):
+            self.labelWarning.setText("Server address is required.")
+            if set_focus:
+                self.editHost.setFocus(QtCore.Qt.OtherFocusReason)
+            return False
+        if not len(self.editUser.text()):
+            self.labelWarning.setText("User name is required.")
+            if set_focus:
+                self.editUser.setFocus(QtCore.Qt.OtherFocusReason)
+            return False
+        self.labelWarning.setText("")
+        return True
+
+    def accept(self):
+        if self.check_fields(set_focus=True):
+            QtGui.QDialog.accept(self)

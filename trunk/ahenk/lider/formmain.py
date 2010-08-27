@@ -238,6 +238,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             except directory.DirectoryError:
                 self.__update_status("directory", "offline")
                 self.__slot_disconnect()
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
                 return
             try:
                 directory_label = self.directory.get_name()
