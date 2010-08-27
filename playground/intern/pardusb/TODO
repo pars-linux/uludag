@@ -2,6 +2,6 @@
 - mount flash disk with hal after copy progress 
 -! give more information about flash drive and its partitions on listbox
 -! change appereance 
-- add dedeler easter egg*swh*
+- disk is unmounted before checking sha1sum, it must be unmounted after confirming the progress
 
  
