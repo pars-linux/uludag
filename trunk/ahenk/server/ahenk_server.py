@@ -113,10 +113,11 @@ TEMP_JABBER = """{loglevel, 1}.
  ]}.
 {auth_method, ldap}.
 {ldap_servers, ["localhost"]}.
-{ldap_uids, [{"userid", "%%u"}]}.
+{ldap_uids, [{"cn", "%%u"}]}.
 {ldap_base, "%(ldap_domain)s"}.
 {ldap_rootdn, "cn=%(root_account)s, %(ldap_domain)s"}.
 {ldap_password, "%(password)s"}.
+{ldap_filter, "(|(objectClass=pardusComputer)(&(objectClass=organizationalRole)(cn=%(root_account)s)))"}.
 {shaper, normal, {maxrate, 100000}}.
 {shaper, fast, {maxrate, 500000}}.
 {acl, local, {user_regexp, ""}}.
