@@ -370,11 +370,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             dn = "cn=%s,%s" % (name, parent_path)
             properties = {
                 "cn": [name],
-                "objectClass": ["top", "device", "posixAccount", "pardusComputer"],
-                "uid": [name],
-                "uidNumber": ["1"],
-                "gidNumber": ["1"],
-                "homeDirectory": ["/dev/null"],
+                "objectClass": ["top", "device", "pardusComputer"],
                 "userPassword": [password]
             }
             try:
