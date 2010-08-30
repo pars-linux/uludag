@@ -337,17 +337,34 @@ def update_hosts(server_ip, client_name, number_of_clients):
     try:
 
         shutil.copyfile(hosts_path, "%s.orig" % hosts_path)
-        file_pointer = open(hosts_path, "a")
-        file_pointer.write("\n#This lines are for PTSP server.\n")
 
         ip_mask = server_ip[0:server_ip.rfind(".")]
         add_last = int(server_ip[server_ip.rfind(".")+1:]) + 1
 
+        file_pointer = open(hosts_path, "r")
+
+        new_hosts = ""
+        for line in file_pointer.readlines():
+            if line.find("#This lines are for PTSP server.") == -1:
+                ignore_line = False
+                for i in range(number_of_clients):
+                    if line.find("%s.%s" % (ip_mask, add_last+i)) != -1 and \
+                            line.find("%s%s" % (client_name, i+1)) != -1:
+                                ignore_line = True
+                if not ignore_line:
+                    new_hosts = new_hosts + line
+
+        new_hosts = new_hosts +"\n#This lines are for PTSP server.\n"
         for i in range(number_of_clients):
-            file_pointer.write("%s.%s\t\t\t\t%s%s\n" % (ip_mask, add_last+i, \
-                    client_name, i+1))
+            new_hosts = new_hosts + "%s.%s\t\t\t\t%s%s\n" % \
+                    (ip_mask, add_last+i, client_name, i+1)
 
         file_pointer.close()
+
+        file_pointer = open(hosts_path, "w")
+        file_pointer.writelines(new_hosts)
+        file_pointer.close()
+
         print "Updated hosts file.\n"
 
     except:
@@ -448,12 +465,12 @@ or use existing one[Y/N]: ")
         network_gateway = profile_settings["net_gateway"]
         network_netmask = profile_settings["net_mask"]
 
+    client_name = raw_input("Please enter Client's name: ")
+    number_of_clients = input("Please enter number of Clients: ")
 
     select = raw_input("Do you want to Update dhcpd.conf?[Y/N]")
 
     if select == 'Y' or select == 'y':
-        client_name = raw_input("Please enter Client's name: ")
-        number_of_clients = input("Please enter number of Clients: ")
         update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
             number_of_clients)
 
