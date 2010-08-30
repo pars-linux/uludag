@@ -307,8 +307,10 @@ def update_exports(server_gateway, server_netmask):
     try:
         shutil.copyfile(exports_path, "%s.orig" % exports_path)
         file_pointer = open(exports_path, "r")
+        orig_exports = file_pointer.readlines()
+        file_pointer.close()
         new_exports = ""
-        for line in file_pointer.readlines():
+        for line in orig_exports:
             if line.find("%s" % server_gateway) == -1 and \
                 line.find("%s" % server_netmask) == -1 and \
                 line.find("/opt/ptsp") == -1 and \
@@ -316,7 +318,6 @@ def update_exports(server_gateway, server_netmask):
                         new_exports = new_exports + line
         new_exports = new_exports + ("\n#This line is for PTSP server.\n\
 /opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)\n" % (server_gateway, server_netmask))
-        file_pointer.close()
 
         file_pointer = open(exports_path, "w")
         file_pointer.writelines(new_exports)
@@ -342,9 +343,10 @@ def update_hosts(server_ip, client_name, number_of_clients):
         add_last = int(server_ip[server_ip.rfind(".")+1:]) + 1
 
         file_pointer = open(hosts_path, "r")
-
+        orig_hosts = file_pointer.readlines()
+        file_pointer.close()
         new_hosts = ""
-        for line in file_pointer.readlines():
+        for line in orig_hosts:
             if line.find("#This lines are for PTSP server.") == -1:
                 ignore_line = False
                 for i in range(number_of_clients):
@@ -356,10 +358,9 @@ def update_hosts(server_ip, client_name, number_of_clients):
 
         new_hosts = new_hosts +"\n#This lines are for PTSP server.\n"
         for i in range(number_of_clients):
+            #FIXME: Alignment problem
             new_hosts = new_hosts + "%s.%s\t\t\t\t%s%s\n" % \
                     (ip_mask, add_last+i, client_name, i+1)
-
-        file_pointer.close()
 
         file_pointer = open(hosts_path, "w")
         file_pointer.writelines(new_hosts)
