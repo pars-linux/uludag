@@ -20,7 +20,7 @@ from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Welcome")
-    desc = i18n("Welcome to Migration Tool Wizard :)")
+    desc = i18n("Welcome to Migration Tool Wizard")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
