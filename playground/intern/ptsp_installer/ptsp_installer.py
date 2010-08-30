@@ -172,9 +172,12 @@ def select_network_profile():
 
         network_profile = input("Select a Profile: ")
 
-    set_network_profile_state(network_profile-1, "up")
+    try:
+        set_network_profile_state(network_profile-1, "up")
+    except:
+        print "Setting network profile to up failed.\n"
 
-    return link.Network.Link["net_tools"].connectionInfo(connection[network_profile-1])
+    return link.Network.Link["net_tools"].connectionInfo(profile_list[network_profile-1])
 
 def set_network_profile_state(profile_index, state):
     """ This function sets network profile state(up or down). """
@@ -188,7 +191,7 @@ def set_network_profile_state(profile_index, state):
         print "Profile %s is %s!\n" % (profile_list[profile_index], state)
 
     else:
-        print "Change state the Profile %s to %s is failed.\n" % (connections_list[profile_index], state)
+        print "Change state the Profile %s to %s is failed.\n" % (profile_list[profile_index], state)
 
 def create_network_profile():
     """ Function to create network profile. """
@@ -262,14 +265,17 @@ Select Name server (DNS) assignment method:
 
         link.Network.Link["net_tools"].setNameService(profile, dns_mode, network_dns)
 
-        network_profile = 1
+        network_profile = 0
 
         for _profile in profile_list:
             if link.Network.Link["net_tools"].connectionInfo(_profile) == profile:
                 break
             network_profile = network_profile + 1
 
-        set_network_profile_state((network_profile-1), "up")
+        try:
+            set_network_profile_state((network_profile-1), "up")
+        except:
+            print "Activating the new network profile failed.\n"
 
         print "New network profile added successfully.\n"
 
@@ -277,8 +283,8 @@ Select Name server (DNS) assignment method:
                 [network_profile-1])
 
     except:
-            print "Add and/or up the new network profile failed.\n"
-            raise SystemExit
+        print "Creating new network profile failed!\n"
+        raise SystemExit
 
 def firefox_pixmap():
     """ This function disables firefox's image optimization. """
@@ -300,10 +306,22 @@ def update_exports(server_gateway, server_netmask):
 
     try:
         shutil.copyfile(exports_path, "%s.orig" % exports_path)
-        file_pointer = open(exports_path, "a")
-        file_pointer.write("\n#This line is for PTSP server.\n\
-/opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)" % (server_gateway, server_netmask))
+        file_pointer = open(exports_path, "r")
+        new_exports = ""
+        for line in file_pointer.readlines():
+            if line.find("%s" % server_gateway) == -1 and \
+                line.find("%s" % server_netmask) == -1 and \
+                line.find("/opt/ptsp") == -1 and \
+                line != "\n" and line.find("#This line is for PTSP") == -1:
+                        new_exports = new_exports + line
+        new_exports = new_exports + ("\n#This line is for PTSP server.\n\
+/opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)\n" % (server_gateway, server_netmask))
         file_pointer.close()
+
+        file_pointer = open(exports_path, "w")
+        file_pointer.writelines(new_exports)
+        file_pointer.close()
+
         print "Updated exports file.\n"
 
     except:
