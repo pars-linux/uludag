@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>512</width>
-    <height>347</height>
+    <width>516</width>
+    <height>470</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,12 +21,15 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Software Update</string>
+      <string>Policy:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
      </property>
     </widget>
+   </item>
+   <item row="1" column="0">
+    <widget class="QTextEdit" name="textPolicy"/>
    </item>
   </layout>
  </widget>
