@@ -177,7 +177,8 @@ def select_network_profile():
     except:
         print "Setting network profile to up failed.\n"
 
-    return link.Network.Link["net_tools"].connectionInfo(profile_list[network_profile-1])
+    return link.Network.Link["net_tools"].connectionInfo\
+            (profile_list[network_profile-1])
 
 def set_network_profile_state(profile_index, state):
     """ This function sets network profile state(up or down). """
@@ -187,11 +188,13 @@ def set_network_profile_state(profile_index, state):
 
     link.Network.Link["net_tools"].setState(profile_list[profile_index], state)
 
-    if link.Network.Link["net_tools"].connectionInfo(profile_list[profile_index])["state"].find(state) != -1:
+    if link.Network.Link["net_tools"].connectionInfo(profile_list[profile_index])\
+            ["state"].find(state) != -1:
         print "Profile %s is %s!\n" % (profile_list[profile_index], state)
 
     else:
-        print "Change state the Profile %s to %s is failed.\n" % (profile_list[profile_index], state)
+        print "Change state the Profile %s to %s is failed.\n" % \
+                (profile_list[profile_index], state)
 
 def create_network_profile():
     """ Function to create network profile. """
@@ -314,9 +317,10 @@ def update_exports(server_gateway, server_netmask):
             if line.find("%s" % server_gateway) == -1 and \
                 line.find("%s" % server_netmask) == -1 and \
                 line.find("/opt/ptsp") == -1 and \
-                line != "\n" and line.find("#This line is for PTSP") == -1:
+                line != "\n" and \
+                line.find("#This line is for PTSP Server.") == -1:
                         new_exports = new_exports + line
-        new_exports = new_exports + ("\n#This line is for PTSP server.\n\
+        new_exports = new_exports + ("\n#This line is for PTSP Server.\n\
 /opt/ptsp \t\t%s/%s(ro,no_root_squash,sync)\n" % (server_gateway, server_netmask))
 
         file_pointer = open(exports_path, "w")
@@ -347,7 +351,7 @@ def update_hosts(server_ip, client_name, number_of_clients):
         file_pointer.close()
         new_hosts = ""
         for line in orig_hosts:
-            if line.find("#This lines are for PTSP server.") == -1:
+            if line.find("#This lines are for PTSP Server.") == -1:
                 ignore_line = False
                 for i in range(number_of_clients):
                     if line.find("%s.%s" % (ip_mask, add_last+i)) != -1 and \
@@ -356,7 +360,7 @@ def update_hosts(server_ip, client_name, number_of_clients):
                 if not ignore_line:
                     new_hosts = new_hosts + line
 
-        new_hosts = new_hosts +"\n#This lines are for PTSP server.\n"
+        new_hosts = new_hosts +"\n#This lines are for PTSP Server.\n"
         for i in range(number_of_clients):
             #FIXME: Alignment problem
             new_hosts = new_hosts + "%s.%s\t\t\t\t%s%s\n" % \
@@ -421,10 +425,29 @@ def update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
     try:
 
         shutil.copyfile(dhcpd_conf_path, "%s.orig" % dhcpd_conf_path)
-        file_pointer = open(dhcpd_conf_path, "w")
         ip_mask = server_ip[0:server_ip.rfind(".")]
         add_last = int(server_ip[server_ip.rfind(".")+1:]) + 1
-        file_pointer.write("""
+
+        file_pointer = open(dhcpd_conf_path, "r")
+        orig_dhcpd_conf = file_pointer.readlines()
+        file_pointer.close()
+        new_dhcpd_conf = ""
+        paranthesis = False
+        for line in orig_dhcpd_conf:
+            if line.find("#This lines are for PTSP Server.") == -1 and \
+                line.find("%s:/opt/ptsp" % server_ip) == -1:
+                    if line.find("subnet %s netmask %s {" % \
+                        (network_gateway, network_netmask)) == -1:
+                        paranthesis = True
+                        if line.find("%s" % network_netmask) == -1 and \
+                            line.find("%s.%s" % (ip_mask, add_last+\
+                            number_of_clients)) == -1 and \
+                            line.find("#send this file for pxe") == -1 and \
+                            line.find("filename \"/pts/latest-ptsp") == -1:
+                                if line.find("}") == -1 and not paranthesis:
+                                    paranthesis = False
+                                    new_dhcpd_conf = new_dhcpd_conf + line
+        new_dhcpd_conf = new_dhcpd_conf + """
 #This lines are for PTSP Server.
  option root-path      "%s:/opt/ptsp";
  subnet %s netmask %s {
@@ -434,8 +457,12 @@ def update_dhcpd_conf(server_ip, network_gateway, network_netmask, \
      filename "/pts/latest-ptsp/pxelinux.0";
  }
 """ % (server_ip, network_gateway, network_netmask, server_ip, ip_mask, \
-        add_last+number_of_clients))
+        add_last+number_of_clients)
+
+        file_pointer = open(dhcpd_conf_path, "w")
+        file_pointer.writelines(new_dhcpd_conf)
         file_pointer.close()
+
         print "Updated dhcpd.conf file.\n"
 
     except:
