@@ -20,9 +20,6 @@ from kaptan.screen import Screen
 from kaptan.screens.ui_scrGoodbye import Ui_goodbyeWidget
 import kaptan.screens.scrSmolt as smoltWidget
 
-sys.path.append('/use/share/kde4/apps/migration/')
-from migration.utils import partition
-
 class Widget(QtGui.QWidget, Screen):
     title = ki18n("More")
     desc = ki18n("Congratulations!")
@@ -32,11 +29,7 @@ class Widget(QtGui.QWidget, Screen):
         self.ui = Ui_goodbyeWidget()
         self.ui.setupUi(self)
 
-        self.showHideMigrationLink()
-
-    def showHideMigrationLink(self):
         lang = KGlobal.locale().language()
-
         if lang == "tr":
             self.helpPageUrl = "http://www.pardus.org.tr/destek"
         else:
@@ -44,18 +37,9 @@ class Widget(QtGui.QWidget, Screen):
 
         self.smoltUrl = "http://smolt.pardus.org.tr:8090"
 
-        users = partition.allUsers()
-        if not users:
-            self.ui.migrationGroupBox.hide()
-            self.ui.label_2.hide()
-
     def on_buttonSystemSettings_clicked(self):
         self.procSettings = QProcess()
         self.procSettings.start("systemsettings")
-
-    def on_buttonMigration_clicked(self):
-        self.procSettings = QProcess()
-        self.procSettings.start("migration")
 
     def on_buttonHelpPages_clicked(self):
         self.procSettings = QProcess()
