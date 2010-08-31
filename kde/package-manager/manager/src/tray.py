@@ -163,73 +163,36 @@ class PTray:
             self.lastIcon = QtGui.QIcon(overlayImg)
             self.setIcon(self.lastIcon)
 
-if not Pds.session == pds.Kde4:
+from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu
+from PyKDE4.kdecore import KComponentData
 
-    class Tray(QtGui.QSystemTrayIcon, PTray):
-        def __init__(self, parent, iface):
-            QtGui.QSystemTrayIcon.__init__(self, parent)
-            self.appWindow = parent
-            PTray.__init__(self, iface)
+class Tray(KSystemTrayIcon, PTray):
+    def __init__(self, parent, iface):
+        KSystemTrayIcon.__init__(self, parent)
+        self.appWindow = parent
+        PTray.__init__(self, iface)
 
-            self.activated.connect(self.__activated)
+    def initializePopup(self):
+        self.setIcon(self.defaultIcon)
+        self.actionMenu = KActionMenu(i18n("Update"), self)
+        self.populateRepositoryMenu()
+        self.contextMenu().addAction(self.actionMenu)
+        self.contextMenu().addSeparator()
 
-        def __activated(self, reason):
-            if not reason == QtGui.QSystemTrayIcon.Context:
-                if self.appWindow.isVisible():
-                    self.appWindow.hide()
-                else:
-                    self.appWindow.show()
+    def populateRepositoryMenu(self):
+        self.actionMenu.menu().clear()
+        for name, address in self.iface.getRepositories():
+            self._addAction(name, self.actionMenu)
+        self._addAction(i18n("All"), self.actionMenu)
 
-        def initializePopup(self):
-            self.setIcon(self.defaultIcon)
-            self.actionMenu = QtGui.QMenu(i18n("Update"))
-            self.populateRepositoryMenu()
-            self.setContextMenu(self.actionMenu)
-            self.contextMenu().addSeparator()
-            self.contextMenu().addAction(i18n("Quit"), QtGui.qApp.quit)
-
-        def populateRepositoryMenu(self):
-            self.actionMenu.clear()
-            for name, address in self.iface.getRepositories():
-                self._addAction(name, self.actionMenu)
-            self._addAction(i18n("All"), self.actionMenu)
-
-        def showPopup(self):
-            if self._ready_to_popup():
-                self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", self.unread))
-
-else:
-
-    from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu
-    from PyKDE4.kdecore import KComponentData
-
-    class Tray(KSystemTrayIcon, PTray):
-        def __init__(self, parent, iface):
-            KSystemTrayIcon.__init__(self, parent)
-            self.appWindow = parent
-            PTray.__init__(self, iface)
-
-        def initializePopup(self):
-            self.setIcon(self.defaultIcon)
-            self.actionMenu = KActionMenu(i18n("Update"), self)
-            self.populateRepositoryMenu()
-            self.contextMenu().addAction(self.actionMenu)
-            self.contextMenu().addSeparator()
-
-        def populateRepositoryMenu(self):
-            self.actionMenu.menu().clear()
-            for name, address in self.iface.getRepositories():
-                self._addAction(name, self.actionMenu)
-            self._addAction(i18n("All"), self.actionMenu)
-
-        def showPopup(self):
-            if self._ready_to_popup():
-                if self.notification:
-                    del self.notification
-                self.notification = KNotification("Updates")
-                self.notification.setText(i18n("There are <b>%1</b> updates available!", self.unread))
-                self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
-                self.notification.setFlags(KNotification.Persistent)
-                self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-                self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
-                self.notification.sendEvent()
+    def showPopup(self):
+        if self._ready_to_popup():
+            if self.notification:
+                del self.notification
+            self.notification = KNotification("Updates")
+            self.notification.setText(i18n("There are <b>%1</b> updates available!", self.unread))
+            self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
+            self.notification.setFlags(KNotification.Persistent)
+            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+            self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
+            self.notification.sendEvent()

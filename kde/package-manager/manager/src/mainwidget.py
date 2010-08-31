@@ -24,10 +24,12 @@ from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import SIGNAL
 
+from PyKDE4.kdeui import KIcon
+from PyKDE4.kdeui import KIconLoader
 from PyKDE4.kdeui import KNotification
+from PyKDE4.kdecore import i18n
 from PyKDE4.kdecore import KComponentData
 
-from context import *
 from context import _time
 
 from ui_mainwidget_v3 import Ui_MainWidget
@@ -148,7 +150,7 @@ class MainWidget(QWidget, Ui_MainWidget):
                         ['critical', i18n('Critical Updates'), 'security-low']]
 
         for type in UPDATE_TYPES:
-            self.typeCombo.addItem(KIcon(type[2], KIconLoader.SizeSmallMedium), type[1], QVariant(type[0]))
+            self.typeCombo.addItem(KIcon(type[2], 22), type[1], QVariant(type[0]))
 
     def initializeStatusUpdater(self):
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
@@ -193,7 +195,7 @@ class MainWidget(QWidget, Ui_MainWidget):
     def initializeGroupList(self):
         self.groupList.clear()
         self.groupList.setAlternatingRowColors(True)
-        self.groupList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
+        self.groupList.setIconSize(QSize(32, 32))
         self.groupList.setState(self.state)
         self.groupList.addGroups(self.state.groups())
         if self.state.state == self.state.UPGRADE:

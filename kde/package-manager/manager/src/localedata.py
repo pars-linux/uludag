@@ -13,7 +13,6 @@
 import locale
 from os import getenv
 from os import path
-import context as ctx
 
 locales = {
     "tr" : "tr_TR.UTF8",
@@ -26,43 +25,20 @@ locales = {
     "sv" : "sv_SE.UTF-8",
     }
 
-def getKDELocale():
-    """ Get KDE Locale from current user settings """
-    return ctx.Pds.settings('Locale/Language', '').split(':')[0]
-
-def getAppLocale():
-    """ Get App Locale from Application settings """
-    cf = path.join(ctx.Pds.config_path, 'share/config/package-managerrc')
-    if path.exists(cf):
-        cc = ctx.Pds.parse(cf, force=True)
-        appLocale = cc.value('Locale/Language').toString()
-        if appLocale:
-            appLocale = str(appLocale).split(':')[0]
-            if locales.has_key(appLocale):
-                return appLocale
-    return
-
 def setSystemLocale(justGet = False):
     """
      Package-manager uses KDE locale info, pisi.api uses system locale info.
      We need to map KDE locale info to system locale info to make dynamic KDE
      system language changes from Tasma visible to package-manager
     """
-    kdeLocale = getKDELocale()
-    appLocale = getAppLocale()
 
-    if locales.has_key(appLocale):
-        systemlocale = locales[appLocale]
-    elif locales.has_key(kdeLocale):
-        systemlocale = locales[kdeLocale]
+    # POSIX Standard
+    for var in ('LC_ALL', 'LC_CTYPE', 'LANG', 'LANGUAGE'):
+        systemlocale = getenv(var)
+        if systemlocale:
+            break
     else:
-        # POSIX Standard
-        for var in ('LC_ALL', 'LC_CTYPE', 'LANG', 'LANGUAGE'):
-            systemlocale = getenv(var)
-            if systemlocale:
-                break
-        else:
-            systemlocale = locales['en_US']
+        systemlocale = locales['en_US']
 
     if justGet:
         return systemlocale.split('.')[0][:2]
@@ -72,4 +48,3 @@ def setSystemLocale(justGet = False):
     except:
         locale.setlocale(locale.LC_ALL, locales['en_US'])
 
-    ctx.Pds.updatei18n(systemlocale.split('.')[0])

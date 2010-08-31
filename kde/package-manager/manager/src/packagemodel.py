@@ -20,7 +20,7 @@ import backend
 from pmutils import humanReadableSize
 from pmlogging import logger
 
-from context import KIconLoader
+from PyKDE4.kdeui import KIconLoader
 from context import _time
 
 from statemanager import StateManager

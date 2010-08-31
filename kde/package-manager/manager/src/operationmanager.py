@@ -15,8 +15,7 @@ import time
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
 
-import context as ctx
-i18n = ctx.Pds.i18n
+from PyKDE4.kdecore import i18n
 
 from pmutils import humanReadableSize
 from pmlogging import logger

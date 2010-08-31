@@ -18,9 +18,10 @@ from PyQt4.QtCore import *
 from packagemodel import *
 from rowanimator import RowAnimator
 
-from context import *
+from PyKDE4.kdeui import KIcon
+from PyKDE4.kdeui import KIconLoader
+from PyKDE4.kdecore import i18n
 
-DEFAULT_ICON = ('applications-other', 'package')
 DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
@@ -41,14 +42,14 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList)
-        self.defaultIcon = KIcon(DEFAULT_ICON, 32)
+        self.defaultIcon = KIcon('applications-other')
         self.animatable = True
         self._max_height = ROW_HEIGHT
 
         self.types = {'critical':(RED,     i18n('critical')),
                       'security':(DARKRED, i18n('security'))}
 
-        self.font = Pds.settings('font','Sans').split(',')[0]
+        self.font = QtGui.qApp.font().toString().split(',')[0] #Pds.settings('font','Sans').split(',')[0]
 
         self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
         self.boldFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
