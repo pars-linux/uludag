@@ -96,11 +96,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.partOf))
         elif role == Qt.DecorationRole:
             package = self.package(index)
-            icon_path = None
             if package.icon:
-                icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
-            if icon_path and not icon_path.endsWith("unknown.png"):
-                return QVariant(icon_path)
+                return QVariant(package.icon)
         return _variant
 
     def setData(self, index, value, role):

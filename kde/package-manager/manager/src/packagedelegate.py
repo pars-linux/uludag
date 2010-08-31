@@ -42,14 +42,16 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList)
-        self.defaultIcon = KIcon('applications-other')
+        KIconLoader().addExtraDesktopThemes()
+        self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
+                                                               KIconLoader.Desktop, 32))
         self.animatable = True
         self._max_height = ROW_HEIGHT
 
         self.types = {'critical':(RED,     i18n('critical')),
                       'security':(DARKRED, i18n('security'))}
 
-        self.font = QtGui.qApp.font().toString().split(',')[0] #Pds.settings('font','Sans').split(',')[0]
+        self.font = QtGui.qApp.font().toString().split(',')[0]
 
         self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
         self.boldFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
@@ -125,9 +127,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         ptype = str(index.model().data(index, TypeRole).toString())
         installed = index.model().data(index, InstalledRole).toBool()
 
+        # Get Package Icon if exists
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
-            pix = QtGui.QPixmap(icon)#, KIconLoader.Group[2], 32)#, forceCache = True)
+            pix = KIconLoader().loadIcon(icon, KIconLoader.NoGroup, 32, KIconLoader.DefaultState, [], '', True)
             if not pix.isNull():
                 icon = QtGui.QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
             else:
@@ -135,6 +138,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         else:
             icon = self.defaultIcon
 
+        # Paint the Icon
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)

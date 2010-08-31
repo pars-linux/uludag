@@ -9,4 +9,6 @@ TODO
  - Use KActions widely
  - Code cleanup like * imports (tracker #41)
  + Remove PDS dependency
+ - Remove QtWebkit dependency (switch KHandBook)
+ - Find a solution for unknown package icons
 
