@@ -26,7 +26,6 @@ import kaptan.screens.scrWallpaper as wallpaperWidget
 import kaptan.screens.scrMouse as mouseWidget
 import kaptan.screens.scrStyle as styleWidget
 import kaptan.screens.scrMenu as menuWidget
-import kaptan.screens.scrSearch as searchWidget
 import kaptan.screens.scrSmolt  as smoltWidget
 import kaptan.screens.scrAvatar  as avatarWidget
 
@@ -45,7 +44,6 @@ class Widget(QtGui.QWidget, Screen):
         self.wallpaperSettings = wallpaperWidget.Widget.screenSettings
         self.mouseSettings = mouseWidget.Widget.screenSettings
         self.menuSettings = menuWidget.Widget.screenSettings
-        self.searchSettings = searchWidget.Widget.screenSettings
         self.styleSettings = styleWidget.Widget.screenSettings
         self.smoltSettings = smoltWidget.Widget.screenSettings
         self.avatarSettings = avatarWidget.Widget.screenSettings
@@ -87,13 +85,6 @@ class Widget(QtGui.QWidget, Screen):
 
         content.append(end)
 
-
-        # Search Settings
-        if not tools.isLiveCD():
-            content.append(subject %ki18n("Search Settings").toString())
-            content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
-            content.append(end)
-
         # Smolt Settings
         try:
             if self.smoltSettings["summaryMessage"]:
@@ -132,24 +123,6 @@ class Widget(QtGui.QWidget, Screen):
 
     def execute(self):
         hasChanged = False
-
-        # Search Settings
-        if not tools.isLiveCD():
-            if self.searchSettings["hasChanged"]:
-                config = KConfig("nepomukserverrc")
-                group = config.group("Service-nepomukstrigiservice")
-                #group = config.group("Basic Settings")
-                group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
-                #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
-
-                session = dbus.SessionBus()
-
-                try:
-                    proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
-                    proxy.reconfigure()
-                    proxy.enableNepomuk(self.searchSettings["state"])
-                except dbus.DBusException:
-                    pass
 
         # Wallpaper Settings
         if self.wallpaperSettings["hasChanged"]:
