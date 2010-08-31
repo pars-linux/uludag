@@ -86,6 +86,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Directory nodes
         self.item = None
+        self.policy = {}
         self.nodes_cn = {}
         self.nodes_dn = {}
 
@@ -93,8 +94,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.__load_plugins()
 
         # Reset UI
-        self.__update_pluginbar()
-        self.__update_toolbar()
         self.__slot_disconnect()
 
     def closeEvent(self, event):
@@ -182,16 +181,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Popup for plugins
         menu = wrappers.Menu(self)
 
-        # Action slot for switching widgets
-        def switch_widget(x):
-            self.stackedWidget.setCurrentWidget(self.sender().widget)
-            self.__update_pluginbar()
-
         for name, widget_class in plugins.load_plugins().iteritems():
             widget = widget_class()
             self.stackedWidget.addWidget(widget)
-            action = menu.newAction(widget.windowTitle(), widget.windowIcon(), switch_widget)
-            action.widget = widget # switch_widget() needs this
+            action = menu.newAction(widget.windowTitle(), widget.windowIcon(), self.__slot_widget_stack)
+            action.widget = widget # __slot_widget_stack method needs this
 
         self.pushPolicies.setMenu(menu)
 
@@ -233,6 +227,28 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 else:
                     self.nodes_cn[name] = item
                     self.__update_icon(name)
+
+    def __load_policy(self):
+        """
+            Returns policy of selected tree node.
+        """
+        if not self.item:
+            return None
+        try:
+            results = self.directory.search(self.item.dn, scope="base")
+        except directory.DirectoryConnectionError:
+            self.__update_status("directory", "error")
+            self.__slot_disconnect()
+            QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+            return None
+        except directory.DirectoryError:
+            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to get policy.")
+            return None
+        if len(results):
+            dn, attrs = results[0]
+            return attrs
+        else:
+            return {}
 
     # Events
 
@@ -279,6 +295,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.labelTarget.setText(domain_label)
         self.labelTargetDesc.setText(domain_desc)
 
+        # Enable main toolbar
         self.frameTools.setEnabled(True)
 
         # List components
@@ -288,13 +305,17 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Disconnects from both backends and updates UI.
         """
+        # Disconnect from XMPP server
         self.talk.disconnect()
 
+        # Update connection status
         self.__update_status("directory", "offline")
 
+        # Clear network labels
         self.labelTarget.setText("Remote Management Console")
         self.labelTargetDesc.setText("")
 
+        # Disable main toolbar
         self.frameTools.setEnabled(False)
 
         # Clear tree
@@ -440,3 +461,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             item = self.nodes_dn[dn]
             self.treeComputers.scrollToItem(item)
             self.treeComputers.setCurrentItem(item)
+
+
+    def __slot_widget_stack(self, toggled):
+        """
+            Triggered when users activates a policy plugin.
+        """
+        widget = self.sender().widget
+        self.policy = self.__load_policy()
+        if self.policy != None:
+            widget.load_policy(self.policy)
+            self.stackedWidget.setCurrentWidget(widget)
+            self.__update_pluginbar()
