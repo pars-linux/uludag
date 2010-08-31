@@ -27,10 +27,10 @@ from statemanager import StateManager
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
-    ComponentRole, InstalledVersionRole) =\
+    ComponentRole, InstalledVersionRole, InstalledRole) =\
 (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, \
     Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7, \
-    Qt.UserRole+8, Qt.UserRole+9)
+    Qt.UserRole+8, Qt.UserRole+9, Qt.UserRole+10)
 
 _variant = QVariant()
 _unknown_icons = []
@@ -90,6 +90,8 @@ class PackageModel(QAbstractTableModel):
             return _variant
         elif role == HomepageRole:
             return QVariant(unicode(package.source.homepage))
+        elif role == InstalledRole:
+            return QVariant(unicode(package.installed))
         elif role == ComponentRole:
             return QVariant(unicode(package.partOf))
         elif role == Qt.DecorationRole:

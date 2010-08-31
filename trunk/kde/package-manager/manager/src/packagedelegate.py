@@ -74,6 +74,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             self._titleFM[key] = self.boldDetailFontFM.width(value) + ICON_SIZE + 3
 
         self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
+        self._show_installed = True
         self.parent = parent.packageList
 
     def paint(self, painter, option, index):
@@ -88,16 +89,18 @@ class PackageDelegate(QtGui.QItemDelegate):
             self.paintInfoColumn(painter, option, index, width_limit = 10)
 
     def paintCheckBoxColumn(self, painter, option, index):
-        opt = QtGui.QStyleOptionViewItemV4(option)
+        installed = index.model().data(index, InstalledRole).toBool()
+        if installed or self._show_installed:
+            opt = QtGui.QStyleOptionViewItemV4(option)
 
-        buttonStyle = QtGui.QStyleOptionButton()
-        buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
+            buttonStyle = QtGui.QStyleOptionButton()
+            buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
 
-        if option.state & QtGui.QStyle.State_MouseOver:
-            buttonStyle.state |= QtGui.QStyle.State_HasFocus
+            if option.state & QtGui.QStyle.State_MouseOver:
+                buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
-        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
-        PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+            buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
+            PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
@@ -119,6 +122,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         title = index.model().data(index, Qt.DisplayRole).toString()
         summary = index.model().data(index, SummaryRole).toString()
         ptype = str(index.model().data(index, TypeRole).toString())
+        installed = index.model().data(index, InstalledRole).toBool()
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
@@ -252,6 +256,7 @@ class PackageDelegate(QtGui.QItemDelegate):
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
+            self._show_installed = model.data(index, InstalledRole).toBool()
             return model.setData(index, toggled, Qt.CheckStateRole)
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
