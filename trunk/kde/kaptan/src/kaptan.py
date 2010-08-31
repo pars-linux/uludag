@@ -51,7 +51,7 @@ class Kaptan(QtGui.QWidget):
         tools.loadScreens(self.screensPath, globals())
 
         # kaptan screen settings
-        self.headScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper, scrNetwork]
+        self.headScreens = [scrWelcome, scrMouse, scrStyle, scrMenu, scrWallpaper]
         self.tailScreens = [scrSummary, scrGoodbye]
         self.screens = self.screenOrganizer(self.headScreens, self.tailScreens)
 
