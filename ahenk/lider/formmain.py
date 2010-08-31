@@ -93,6 +93,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.__load_plugins()
 
         # Reset UI
+        self.__update_pluginbar()
         self.__update_toolbar()
         self.__slot_disconnect()
 
@@ -160,6 +161,19 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.pushPolicies.setEnabled(False)
             self.pushNew.setEnabled(False)
 
+    def __update_pluginbar(self):
+        """
+            Updates plugin information bar.
+        """
+        if self.stackedWidget.currentIndex() == 0:
+            self.framePlugin.hide()
+        else:
+            widget = self.stackedWidget.currentWidget()
+            self.pixmapPlugin.setPixmap(widget.windowIcon().pixmap(48))
+            self.labelPlugin.setText(widget.windowTitle())
+            self.labelPluginDesc.setText(widget.toolTip())
+            self.framePlugin.show()
+
     def __load_plugins(self):
         """
             Loads plugins
@@ -171,6 +185,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Action slot for switching widgets
         def switch_widget(x):
             self.stackedWidget.setCurrentWidget(self.sender().widget)
+            self.__update_pluginbar()
 
         for name, widget_class in plugins.load_plugins().iteritems():
             widget = widget_class()
@@ -245,6 +260,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             except directory.DirectoryError:
                 self.__update_status("directory", "error")
                 self.__slot_disconnect()
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
                 return
             self.__update_status("directory", "online")
         else:
@@ -281,7 +297,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         self.frameTools.setEnabled(False)
 
+        # Clear tree
         self.treeComputers.clear()
+
+        # Reset selected item
+        self.item = None
+
+        # Update toolbar and plugin information bars
+        self.__update_pluginbar()
+        self.__update_toolbar()
 
     def __slot_talk_state(self, state):
         """
@@ -328,6 +352,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Return to main screen.
         """
         self.stackedWidget.setCurrentIndex(0)
+        self.__update_pluginbar()
 
     def __slot_tree_click(self, item, column):
         """
@@ -367,16 +392,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             password = dialog.get_password()
-            dn = "cn=%s,%s" % (name, parent_path)
-            properties = {
-                "cn": [name],
-                "objectClass": ["top", "device", "pardusComputer"],
-                "userPassword": [password]
-            }
             try:
-                self.directory.add_new(dn, properties)
-            except Exception, e:
-                print e
+                self.directory.add_computer(parent_path, name, password)
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                self.__slot_disconnect()
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
                 return
 
             self.treeComputers.collapseItem(parent_item)
@@ -400,16 +424,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             label = dialog.get_label()
-            dn = "dc=%s,%s" % (name, parent_path)
-            properties = {
-                "dc": [name],
-                "objectClass": ["top", "dcObject", "organization"],
-                "o": [label]
-            }
             try:
-                self.directory.add_new(dn, properties)
+                self.directory.add_folder(parent_path, name, label)
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                self.__slot_disconnect()
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
             except directory.DirectoryError:
-                # TODO: Error message
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
                 return
 
             self.treeComputers.collapseItem(parent_item)
