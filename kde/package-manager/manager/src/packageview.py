@@ -40,7 +40,8 @@ class PackageView(QtGui.QTableView):
         if self.needs_select_all:
             self.select_all.resize(self.viewport().width(), 32)
             self.setViewportMargins(0, 32, 0, 0)
-        QtGui.QTableView(self).resizeEvent(event)
+            self.update()
+        QtGui.QWidget(self).resizeEvent(event)
 
     def isIndexHidden(self, index):
         return False

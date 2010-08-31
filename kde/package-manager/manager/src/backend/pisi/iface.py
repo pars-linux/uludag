@@ -207,10 +207,12 @@ class Iface(Singleton):
         elif self.source == self.SYSTEM:
             pkg = self.idb.get_package(name)
         else:
-            if self.pdb.has_package(name):
-                pkg = self.pdb.get_package(name)
-            else:
+            if self.idb.has_package(name):
                 pkg = self.idb.get_package(name)
+                pkg.installed = True
+            else:
+                pkg = self.pdb.get_package(name)
+                pkg.installed = False
 
         if self.source == self.REPO and self.idb.has_package(pkg.name):
             pkg.type = self.getUpdateType(pkg)
