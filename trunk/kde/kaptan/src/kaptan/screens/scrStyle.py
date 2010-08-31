@@ -47,11 +47,11 @@ class Widget(QtGui.QWidget, Screen):
         defaultDesktopNumber = int(group.readEntry('Number'))
 
         self.ui.spinBoxDesktopNumbers.setValue(defaultDesktopNumber)
-        lst2 = glob.glob1("/use/share/kde4/apps/kaptan/kaptan/kde-themes", "*.style")
+        lst2 = glob.glob1("/usr/share/kde4/apps/kaptan/kaptan/kde-themes", "*.style")
 
         for desktopFiles in lst2:
             parser = DesktopParser()
-            parser.read("/use/share/kde4/apps/kaptan/kaptan/kde-themes/" +str(desktopFiles))
+            parser.read("/usr/share/kde4/apps/kaptan/kaptan/kde-themes/" +str(desktopFiles))
             try:
                 styleName = unicode(parser.get_locale('Style', 'name[%s]'%self.catLang, ''))
             except:
@@ -70,7 +70,7 @@ class Widget(QtGui.QWidget, Screen):
                 colorScheme = unicode(parser.get_locale('Style', 'colorScheme', ''))
                 iconTheme = unicode(parser.get_locale('Style', 'iconTheme', ''))
                 windowDecoration = unicode(parser.get_locale('Style', 'windowDecoration', ''))
-                styleThumb = unicode(os.path.join("/use/share/kde4/apps/kaptan/kaptan/kde-themes/",  parser.get_locale('Style', 'thumbnail','')))
+                styleThumb = unicode(os.path.join("/usr/share/kde4/apps/kaptan/kaptan/kde-themes/",  parser.get_locale('Style', 'thumbnail','')))
 
                 colorDict = {}
                 colorDir = "/usr/share/kde4/apps/color-schemes/"
