@@ -8,4 +8,5 @@ TODO
  - Update localedata.py with KConfig
  - Use KActions widely
  - Code cleanup like * imports (tracker #41)
+ + Remove PDS dependency
 

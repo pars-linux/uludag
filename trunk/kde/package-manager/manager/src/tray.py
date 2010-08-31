@@ -12,9 +12,9 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+from PyKDE4.kdecore import i18n
 
 from pmutils import *
-from context import *
 
 import config
 import backend
