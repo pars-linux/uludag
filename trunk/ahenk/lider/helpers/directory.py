@@ -16,6 +16,12 @@ class DirectoryError(Exception):
     """
     pass
 
+class DirectoryConnectionError(DirectoryError):
+    """
+        Connection error class
+    """
+    pass
+
 class Directory:
     """
         Directory service manager.
@@ -63,7 +69,7 @@ class Directory:
             self.is_connected = True
         except ldap.LDAPError:
             self.is_connected = False
-            raise DirectoryError
+            raise DirectoryConnectionError
 
     def get_name(self):
         """
@@ -76,6 +82,10 @@ class Directory:
         try:
             search = self.conn.search_s(self.directory_domain, ldap.SCOPE_BASE, pattern)
         except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
             raise DirectoryError
 
         dn, attributes = search[0]
@@ -109,7 +119,7 @@ class Directory:
         if not directory:
             directory = self.directory_domain
 
-        results = []
+        items = []
 
         if scope == "base":
             scope = ldap.SCOPE_BASE
@@ -118,12 +128,19 @@ class Directory:
         elif scope == "sub":
             scope = ldap.SCOPE_SUBTREE
 
-        print "Search:", directory
         pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer))"
-        for dn, attributes in self.conn.search_s(directory, scope, pattern, fields):
-            results.append((dn, attributes,))
+        try:
+            results = self.conn.search_s(directory, scope, pattern, fields)
+        except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
+        for dn, attributes in results:
+            items.append((dn, attributes,))
 
-        return results
+        return items
 
     def get_label(self, dn):
         """
@@ -143,3 +160,51 @@ class Directory:
         else:
             label = dn.split(",")[0].split("=")[1]
         return label
+
+    def add_folder(self, parent_dn, name, label):
+        """
+            Adds a new folder under specified DN.
+
+            Arguments:
+                parent_dn: Distinguished name of parent
+                name: Node name
+                label: Node label
+        """
+        dn = "dc=%s,%s" % (name, parent_dn)
+        properties = {
+            "dc": [name],
+            "objectClass": ["top", "dcObject", "organization"],
+            "o": [label]
+        }
+        try:
+            self.add_new(dn, properties)
+        except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def add_computer(self, parent_dn, name, password):
+        """
+            Adds a new computer under specified DN.
+
+            Arguments:
+                parent_dn: Distinguished name of parent
+                name: Node name
+                password: Node password
+        """
+        dn = "cn=%s,%s" % (name, parent_dn)
+        properties = {
+            "cn": [name],
+            "objectClass": ["top", "device", "pardusComputer"],
+            "userPassword": [password]
+        }
+        try:
+            self.add_new(dn, properties)
+        except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
