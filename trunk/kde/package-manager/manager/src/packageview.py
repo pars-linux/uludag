@@ -14,7 +14,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from context import i18n
+from PyKDE4.kdecore import i18n
 from pmutils import *
 
 class PackageView(QtGui.QTableView):
