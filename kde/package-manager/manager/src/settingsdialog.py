@@ -15,7 +15,8 @@ import re
 from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox, QFileDialog
 from PyQt4.QtCore import *
 
-from context import *
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdeui import KIcon
 from os import path
 
 from ui_settingsdialog import Ui_SettingsDialog

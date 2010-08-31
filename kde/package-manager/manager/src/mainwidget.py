@@ -150,7 +150,7 @@ class MainWidget(QWidget, Ui_MainWidget):
                         ['critical', i18n('Critical Updates'), 'security-low']]
 
         for type in UPDATE_TYPES:
-            self.typeCombo.addItem(KIcon(type[2], 22), type[1], QVariant(type[0]))
+            self.typeCombo.addItem(KIcon(type[2]), type[1], QVariant(type[0]))
 
     def initializeStatusUpdater(self):
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
