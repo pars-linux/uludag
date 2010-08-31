@@ -20,8 +20,8 @@ from kaptan.screen import Screen
 from kaptan.screens.ui_scrPackage import Ui_packageWidget
 
 import subprocess
-import pisi
-import comar
+#import pisi.db.repodb
+#import comar
 
 isUpdateOn = False
 
@@ -37,20 +37,23 @@ class Widget(QtGui.QWidget, Screen):
         self.ui = Ui_packageWidget()
         self.ui.setupUi(self)
 
-        self.flagRepo = 0
+        #self.flagRepo = 0
         # set updateTime
         self.ui.updateInterval.setValue(self.updateTime)
 
         # set repo name and address
-        self.repoName = "contrib"
-        self.repoAddress = "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-        self.repoAddress2 = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+        self.ui.groupBoxRepo.hide()
+        self.ui.label_2.hide()
+        #self.repoName = "contrib"
+        #self.repoAddress = "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+        #self.repoAddress2 = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
         # set signals
         self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
         self.ui.checkUpdate.connect(self.ui.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
-        self.ui.checkBoxContrib.connect(self.ui.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
+        #self.ui.checkBoxContrib.connect(self.ui.checkBoxContrib, SIGNAL("toggled(bool)"), self.slotContribRepo)
 
+        """
         # create a db object
         self.repodb = pisi.db.repodb.RepoDB()
         n = 1 # temporary index variable for repo names
@@ -72,7 +75,7 @@ class Widget(QtGui.QWidget, Screen):
                     else:
                         break
                 self.repoName = tmpRepoName
-
+        
     def slotContribRepo(self):
         if self.ui.checkBoxContrib.isChecked():
             if not self.addRepo(self.repoName, self.repoAddress):
@@ -105,6 +108,7 @@ class Widget(QtGui.QWidget, Screen):
             return True
         except:
             return False
+    """
 
     def enableCheckTime(self):
         if self.ui.showTray.isChecked():
