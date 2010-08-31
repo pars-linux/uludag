@@ -1,0 +1,2 @@
+include *.py *.conf
+include README AUTHORS COPYING

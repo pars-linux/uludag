@@ -1,1 +1,0 @@
-- Doesn't work with KDM when AutoLogin is enabled. To solve this apply kdm-pam-fix-for-guestlogin.patch to kdm. (or kdebase-workspace)
