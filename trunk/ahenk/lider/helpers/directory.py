@@ -126,6 +126,14 @@ class Directory:
         return results
 
     def get_label(self, dn):
+        """
+            Returns label of a directory object.
+
+            Arguments:
+                dn: Distinguished name
+            Returns:
+                Object label, or common name.
+        """
         if dn.startswith("dc="):
             dn, attrs = directory.search(directory.directory_domain, ["o"], "base")
             if "o" in attrs:
