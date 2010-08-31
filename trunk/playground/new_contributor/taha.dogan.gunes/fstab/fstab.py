@@ -54,10 +54,16 @@ class Line(object):
             self.dict = self.dict_builder("fs mounpoint type default 0 0")
 
     def __getattr__(self, name):
+        """
+        To use line object like line.fs etc.
+        """
 
-        others = ["dump","passvalue"]
+        others = ["dump",
+                  "passvalue"]
+
         if name in self.dict:
             if name in others:
+
                 return int(self.dict[name])
             else:
                 return self.dict[name]
@@ -65,8 +71,18 @@ class Line(object):
             return AttributeError(name)
 
     def __setattr__(self, name, value):
+        """
+        In other to use normal commands.
+        """
 
         object.__setattr__(self, name, value)
+
+
+    def __str__(self):
+        """
+        Returns a normal string line.
+        """
+        return self.return_line()
 
     def dict_builder(self, line):
         """
@@ -84,27 +100,42 @@ class Line(object):
         return mydict
 
     def set_fs(self, value):
+        """
+        to change fs value
+        """
 
-        self.dict["fs"]= str(value)
+        self.dict["fs"] = str(value)
 
     def set_mountpoint(self, value):
-
+        """
+        to change mountpoint value
+        """
         self.dict["mountpoint"] = str(value)
 
     def set_type(self, value):
-
+        """
+        to change type
+        """
         self.dict["type"] = str(value)
 
     def set_opts(self, listvalue):
-
+        """
+        to change opts but this requires a list
+        """
         self.dict["opts"] = ",".join(listvalue)
 
     def set_dump(self, value):
-
+        """
+        to set dump
+        int or str
+        """
         self.dict["dump"] = str(value)
 
     def set_pass(self, value):
-
+        """
+        to set pass value
+        int or str 
+        """
         self.dict["passvalue"] = str(value)
 
     def set_values(self,
@@ -114,7 +145,10 @@ class Line(object):
                    opts=["default"],
                    dump=0,
                    passvalue=0):
-
+        """
+        This is for setting all values
+        dump and passvalue should be integer
+        """
         self.dict = {}
         opts = ",".join(opts)
         line = " ".join([fs,
@@ -127,6 +161,9 @@ class Line(object):
         self.dict = self.dict_builder(line)
                    
     def return_line(self):
+        """
+        returns line to the __str__
+        """
         mylist = [self.dict["fs"],
                   self.dict["mountpoint"],
                   self.dict["type"],
@@ -136,51 +173,69 @@ class Line(object):
         return " ".join(mylist)
 
 
-class Fstab:
+def write_fstab(lineobj, path="/etc/fstab"):
     """
-    fstab object for loading and saving.
-
-    Notes:
-        - To delete a line : fstabobject.lines.pop(0)
-        - To add a new line : fstabobject.lines.append(fstab.Line("a b c d e f"))
-        - To edit a line : fstabobject.lines[x].set_fs(string)
-        - To edit a line's options = fstabobject.lines[x].set_opts(list)
+    writes with using given 
+    Line object included (or not) in a list
     """
+    text = "\n".join([str(line) for line in lineobj])
+    fstabfile = open(path, 'w')
+    fstabfile.write(text)
 
-    def __init__(self, path):
+def read_fstab(path="/etc/fstab"):
+    """
+    reads it and returns lines 
+    without Line object
+    """
+    fstabfile = open(path, "r")
+    return (fstabfile.read().split("\n"))
 
-        self.path = path
-        self.lines = []
-        self.descriptions = []
-        self.load_lines()
+def get_lines(path="/etc/fstab"):
+    """
+    loads lines from path
+    """
+    returnlist = []
+    lines = read_fstab(path)
+    for line in lines:
+        if line is "":
+            returnlist.append(line)
+        elif line[0] not in ["#",
+                          "\t",
+                          " ",
+                          ]:
+            lineobj = Line(line)
+            returnlist.append(lineobj)
+        else:
+            returnlist.append(line)
+    return (returnlist)
 
-    def load_lines(self):
-        """
-        loads lines from self.path
-        """
+def add_line(line, path="/etc/fstab"):
+    """
+    Add a line to the file
+    """
+    lines = read_fstab(path)
+    lines.append(line)
+    write_fstab(lines)
 
-        fstabfile = open(self.path,"r")
-        lines = fstabfile.readlines()
-        for line in lines:
-            if line[0] is not "#":
-                lineobj = Line(line)
-                self.lines.append(lineobj)
-            elif line[0] is "#":
-                self.descriptions.append(line)
+def del_line(fsvalue="", path="/etc/fstab"):
+    """
+    deletes a line from path with using fs value
+    if deleted=True, if not False
+    """
+    boolean = False
+    lines = get_lines()
+    lineobjs = []
+    for line in lines:
+        if type(line) is not type(""): #to get Line objects
+            lineobjs.append(line)
+    lines = []
+    for line in lineobjs:
+        if line.fs != fsvalue and line.fs[6:] != fsvalue:
+            lines.append(line)
+        else:
+            boolean = True
+    write_fstab(lines, path)
+    return (boolean)
 
-    def write_lines(self):
-        """
-        writes lines to the given path
-        """
-        fstabfile = open(self.path,"w")
-        fstabfile.write(self.show_lines())
-
-    def show_lines(self):
-        """
-        shows lines, not writes them
-        """
-        firstlines = "".join([i for i in self.descriptions]) 
-        text = "\n".join([lineobj.return_line() for lineobj in self.lines])
-        return firstlines+text
 
 
