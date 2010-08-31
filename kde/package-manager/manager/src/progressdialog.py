@@ -13,7 +13,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL
 
-from context import *
+from PyKDE4.kdecore import i18n
 
 from ui_progressdialog import Ui_ProgressDialog
 import backend
