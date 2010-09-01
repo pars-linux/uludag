@@ -29,31 +29,24 @@ class StateManager(QObject):
         QObject.__init__(self)
         self.state = self.ALL
         self.silence = False
-        self._selected_packages = []
         self.iface = backend.pm.Iface()
         self.reset()
-        self.initializePackageLists()
-
-    def initializePackageLists(self):
-        self.__installed_packages = self.iface.getPackageListByType('installed')
-        self.__new_packages = self.iface.getPackageListByType('new')
-        self.cached_packages = self.__installed_packages + self.__new_packages
-
-    def setState(self, state):
-        self.state = state
-        self.reset()
-        if self.state == self.REMOVE:
-            self.iface.setSource(self.iface.SYSTEM)
-        elif self.state == self.INSTALL:
-            self.iface.setSource(self.iface.REPO)
-        else:
-            self.iface.setSource(self.iface.ALL)
-        self.emit(SIGNAL("repositoriesChanged()"))
 
     def reset(self):
         self.cached_packages = None
         self._typeCaches = {}
         self._typeFilter = 'normal'
+        self.initializePackageLists()
+
+    def initializePackageLists(self):
+        self.__installed_packages = self.iface.getInstalledPackages()
+        self.__new_packages = self.iface.getNewPackages()
+        self.__all_packages = self.__installed_packages + self.__new_packages
+
+    def setState(self, state):
+        self.state = state
+        self.reset()
+        self.emit(SIGNAL("repositoriesChanged()"))
 
     def getState(self):
         return self.state
@@ -177,7 +170,7 @@ class StateManager(QObject):
         self.iface.setExceptionHandler(handler)
 
     def conflictCheckPasses(self, packages):
-        (C, D, pkg_conflicts) = self.iface.getConflicts(packages)
+        (C, D, pkg_conflicts) = self.iface.getConflicts(packages, self.state)
 
         conflicts_within = list(D)
         if conflicts_within:
@@ -205,3 +198,4 @@ class StateManager(QObject):
 
     def inUpgrade(self):
         return self.state == self.UPGRADE
+

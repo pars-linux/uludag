@@ -52,9 +52,12 @@ from pmutils import restoreCursor
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):
         QWidget.__init__(self, parent)
+
         self.setupUi(self)
         self.parent = parent
+
         self._selectedGroups = []
+
         self.state = StateManager(self)
         self.lastState = self.state.state
 
@@ -257,10 +260,10 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def actionStarted(self, operation):
-        if self.state.silence:
-            totalPackages = len(self.state._selected_packages)
-            if not any(package.endswith('.pisi') for package in self.state._selected_packages):
-                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
+        #if self.state.silence:
+        #    totalPackages = len(self.state._selected_packages)
+        #    if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+        #        totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
