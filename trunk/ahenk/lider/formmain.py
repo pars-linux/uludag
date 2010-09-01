@@ -96,7 +96,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Reset UI
         self.__update_toolbar()
-        self.frameTools.setEnabled(False)
         self.__slot_debug(False)
 
     def closeEvent(self, event):
@@ -172,6 +171,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Updates status of toolbar.
         """
+        if self.directory.is_connected:
+            self.pushMain.setEnabled(True)
+        else:
+            self.pushMain.setEnabled(False)
         if self.stackedWidget.currentIndex() == 0:
             # Disable unnecessary buttons
             if self.item:
@@ -180,8 +183,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.pushPluginItem.setEnabled(True)
             else:
                 self.pushNew.setEnabled(False)
-                self.pushPluginGlobal.setEnabled(True)
                 self.pushPluginItem.setEnabled(False)
+                if self.directory.is_connected:
+                    self.pushPluginGlobal.setEnabled(True)
+                else:
+                    self.pushPluginGlobal.setEnabled(False)
             # Hide plugin information frame
             self.framePlugin.hide()
         else:
@@ -345,9 +351,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.labelTarget.setText(domain_label)
         self.labelTargetDesc.setText(domain_desc)
 
-        # Enable main toolbar
-        self.frameTools.setEnabled(True)
-
         # List components
         self.__list_items()
 
@@ -355,6 +358,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Disconnects from both backends and updates UI.
         """
+        # Disconnect from directory server
+        self.directory.disconnect()
+
         # Disconnect from XMPP server
         self.talk.disconnect()
 
@@ -365,14 +371,14 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.labelTarget.setText("Remote Management Console")
         self.labelTargetDesc.setText("")
 
-        # Disable main toolbar
-        self.frameTools.setEnabled(False)
-
         # Clear tree
         self.treeComputers.clear()
 
         # Reset selected item
         self.item = None
+
+        # Go to first screen
+        self.__slot_main()
 
         # Update toolbar
         self.__update_toolbar()

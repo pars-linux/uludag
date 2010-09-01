@@ -71,6 +71,16 @@ class Directory:
             self.is_connected = False
             raise DirectoryConnectionError
 
+    def disconnect(self):
+        """
+            Disconnects from server.
+        """
+        self.is_connected = False
+        try:
+            self.conn.unbind_s()
+        except ldap.LDAPError:
+            pass
+
     def get_name(self):
         """
             Gives directory name.
