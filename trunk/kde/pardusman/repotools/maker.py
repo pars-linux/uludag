@@ -287,7 +287,7 @@ ResultActive=yes
 
     # Write PolicyKit.conf
     image_dir = project.image_dir()
-    dest = os.path.join(image_dir, "etc/polkit-1/localauthority/90-mandatory.d/livecd.pkla"
+    dest = os.path.join(image_dir, "etc/polkit-1/localauthority/90-mandatory.d/livecd.pkla")
 
     f = file(dest, "w")
     f.write(policykit_conf_tmpl)
