@@ -277,25 +277,17 @@ def setup_live_kdm(project):
         print "*** %s doesn't exist, setup_live_kdm() returned" % kdmrc_path
 
 def setup_live_policykit_conf(project):
-    #FIXME: This should be ported to polkit-1!
-    policykit_conf_tmpl = """<?xml version="1.0" encoding="UTF-8"?> <!-- -*- XML -*- -->
-
-<!DOCTYPE pkconfig PUBLIC "-//freedesktop//DTD PolicyKit Configuration 1.0//EN"
-"http://hal.freedesktop.org/releases/PolicyKit/1.0/config.dtd">
-
-<!-- See the manual page PolicyKit.conf(5) for file format -->
-
-<config version="0.1">
-    <define_admin_auth group="wheel"/>
-    <match user="pars">
-        <return result="yes"/>
-    </match>
-</config>
+    policykit_conf_tmpl = """[Live CD Rules]
+Identity=unix-user:pars
+Action=*
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
 """
 
     # Write PolicyKit.conf
     image_dir = project.image_dir()
-    dest = os.path.join(image_dir, "etc/PolicyKit/PolicyKit.conf")
+    dest = os.path.join(image_dir, "etc/polkit-1/localauthority/90-mandatory.d/livecd.pkla"
 
     f = file(dest, "w")
     f.write(policykit_conf_tmpl)
