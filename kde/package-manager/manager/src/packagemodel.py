@@ -27,10 +27,8 @@ from statemanager import StateManager
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
-    ComponentRole, InstalledVersionRole, InstalledRole) =\
-(Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, \
-    Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7, \
-    Qt.UserRole+8, Qt.UserRole+9, Qt.UserRole+10)
+    ComponentRole, InstalledVersionRole, InstalledRole) = \
+range(Qt.UserRole, Qt.UserRole + 11)
 
 _variant = QVariant()
 _unknown_icons = []
