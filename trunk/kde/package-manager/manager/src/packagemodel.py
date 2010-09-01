@@ -75,7 +75,7 @@ class PackageModel(QAbstractTableModel):
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
         elif role == TypeRole:
-            return QVariant(unicode(package.type))
+            return QVariant(unicode(package._type))
         elif role == SizeRole:
             return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))
         elif role == VersionRole:
