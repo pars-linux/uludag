@@ -26,6 +26,8 @@ class Singleton(object):
 
 class Iface(Singleton):
 
+    """ Pisi Iface for PM """
+
     (SYSTEM, REPO, ALL) = range(3)
 
     def __init__(self, source = ALL):
@@ -38,22 +40,32 @@ class Iface(Singleton):
         return "link" in self.__dict__
 
     def initComar(self):
+        """ Initialize Comar """
         self.link = comar.Link()
         self.link.setLocale()
         self.link.listenSignals("System.Manager", self.signalHandler)
 
     def initDB(self):
-        self.pdb  = pisi.db.packagedb.PackageDB()
-        self.cdb  = pisi.db.componentdb.ComponentDB()
-        self.idb  = pisi.db.installdb.InstallDB()
-        self.rdb  = pisi.db.repodb.RepoDB()
-        self.gdb  = pisi.db.groupdb.GroupDB()
+        """ DBs provided by Pisi Api """
+        # Not Installed Packages DB
+        self.pdb = pisi.db.packagedb.PackageDB()
+        # Components DB
+        self.cdb = pisi.db.componentdb.ComponentDB()
+        # Installed Packages DB
+        self.idb = pisi.db.installdb.InstallDB()
+        # Repositories DB
+        self.rdb = pisi.db.repodb.RepoDB()
+        # Groups DB
+        self.gdb = pisi.db.groupdb.GroupDB()
+        # Replaced Packages list
         self.replaces = self.pdb.get_replaces()
 
     def setHandler(self, handler):
+        """ Comar Handler """
         self.link.listenSignals("System.Manager", handler)
 
     def setExceptionHandler(self, handler):
+        """ Exception Handler for all exceptions """
         self.exceptionHandler = handler
 
     def invalidate_db_caches(self):
@@ -65,11 +77,13 @@ class Iface(Singleton):
             self.invalidate_db_caches()
 
     def handler(self, package, exception, args):
+        """ Handler just for exceptions """
         if exception:
             logger.debug("Exception caught by COMAR: %s" % exception)
             self.invalidate_db_caches()
             self.exceptionHandler(exception)
 
+    # Actions
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
@@ -135,7 +149,8 @@ class Iface(Singleton):
         self.source = source
 
     def getPackageRequirements(self, packages):
-        """ Returns dict from pisi api
+        """
+            Returns dict from pisi api
             { "systemRestart" : ["kernel", "module-alsa-driver"],
               "serviceRestart": ["mysql-server", "memcached", "postfix"] }
         """
@@ -155,12 +170,14 @@ class Iface(Singleton):
             return None
 
     def getPackageList(self):
-        if self.source == self.REPO:
-            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
-        elif self.source == self.SYSTEM:
+        return pisi.api.list_installed() + list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
+
+    def getPackageListByType(self, _type):
+        if _type == 'installed':
             return pisi.api.list_installed()
-        else:
-            return pisi.api.list_installed() + list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
+        if _type == 'new':
+            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
+        return []
 
     def getUpdates(self):
         lu = set(pisi.api.list_upgradable())
@@ -169,8 +186,11 @@ class Iface(Singleton):
             lu |= set(self.replaces[replaced])
         return lu
 
-    def filterUpdates(self, updates, type):
-        return filter(lambda x: self.getPackage(x).type == type, updates)
+    def filterUpdates(self, updates, _type):
+        return filter(lambda x: self.getPackage(x)._type == _type, updates)
+
+    def filterPackages(self, packages, installed):
+        return filter(lambda x: self.getPackage(x).installed == installed, packages)
 
     def getGroup(self, name):
         return self.gdb.get_group(name)
@@ -195,31 +215,18 @@ class Iface(Singleton):
         return groups.getGroupComponents(name)
 
     def getIsaPackages(self, isa):
-        if self.source == self.REPO:
-            return self.pdb.get_isa_packages(isa)
-        else:
-            return self.idb.get_isa_packages(isa)
+        return self.pdb.get_isa_packages(isa) + self.idb.get_isa_packages(isa)
 
     def getPackage(self, name):
 
-        if self.source == self.REPO:
-            pkg = self.pdb.get_package(name)
-            pkg.installed = False
-        elif self.source == self.SYSTEM:
+        if self.idb.has_package(name):
             pkg = self.idb.get_package(name)
+            pkg._type = self.getUpdateType(pkg)
             pkg.installed = True
         else:
-            if self.idb.has_package(name):
-                pkg = self.idb.get_package(name)
-                pkg.installed = True
-            else:
-                pkg = self.pdb.get_package(name)
-                pkg.installed = False
-
-        if self.source == self.REPO and self.idb.has_package(pkg.name):
-            pkg.type = self.getUpdateType(pkg)
-        else:
-            pkg.type = None
+            pkg = self.pdb.get_package(name)
+            pkg._type = None
+            pkg.installed = False
 
         return pkg
 
@@ -267,10 +274,9 @@ class Iface(Singleton):
 
     def getPackageSize(self, name):
         package = self.getPackage(name)
-        if self.source == self.REPO:
-            return package.packageSize
-        else:
+        if package.installed:
             return package.installedSize
+        return package.packageSize
 
     def getConflicts(self, packages):
         return pisi.api.get_conflicts(packages + self.getExtras(packages))
@@ -301,12 +307,9 @@ class Iface(Singleton):
 
     def search(self, terms, packages = None, __tryOnce = False):
         try:
-            if self.source == self.REPO and packages:
+            if packages:
                 return self.pdb.search_in_packages(packages, terms)
-            elif self.source == self.SYSTEM:
-                return self.idb.search_package(terms)
-            else:
-                return self.idb.search_package(terms) + self.pdb.search_package(terms)
+            return self.idb.search_package(terms) + self.pdb.search_package(terms)
         except IOError:
             if not __tryOnce:
                 self.invalidate_db_caches()

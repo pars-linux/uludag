@@ -32,6 +32,12 @@ class StateManager(QObject):
         self._selected_packages = []
         self.iface = backend.pm.Iface()
         self.reset()
+        self.initializePackageLists()
+
+    def initializePackageLists(self):
+        self.__installed_packages = self.iface.getPackageListByType('installed')
+        self.__new_packages = self.iface.getPackageListByType('new')
+        self.cached_packages = self.__installed_packages + self.__new_packages
 
     def setState(self, state):
         self.state = state
@@ -58,9 +64,16 @@ class StateManager(QObject):
                 self.cached_packages = self.iface.getUpdates()
                 self._typeCaches = {}
             else:
-                self.cached_packages = self.iface.getPackageList()
+                if self.state == self.REMOVE:
+                    self.cached_packages = self.__installed_packages
+                elif self.state == self.INSTALL:
+                    self.cached_packages = self.__new_packages
+                else:
+                    self.cached_packages = self.__installed_packages + self.__new_packages
+
                 if self.onlyGuiInState():
                     self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
+
         if not self._typeFilter == 'normal' and self.state == self.UPGRADE:
             if not self._typeCaches.has_key(self._typeFilter):
                 self._typeCaches[self._typeFilter] = self.iface.filterUpdates(self.cached_packages, self._typeFilter)
