@@ -8,6 +8,10 @@
 # Standard Modules
 import os
 
+# Plugin types
+TYPE_SINGLE = 0
+TYPE_GLOBAL = 1
+
 
 def load_plugins(root="plugins"):
     """
