@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/hint48.png</file>
     <file>icons/settings32.png</file>
     <file>icons/online8.png</file>
     <file>icons/partial48.png</file>
