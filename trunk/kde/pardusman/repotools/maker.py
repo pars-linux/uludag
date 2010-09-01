@@ -506,7 +506,7 @@ def make_image(project):
         # Disable Nepomuk in live CDs
         if project.type == "live":
             try:
-                os.unlink("%s/usr/kde/4/share/autostart/nepomukserver.desktop" % image_dir)
+                os.unlink("%s/usr/share/autostart/nepomukserver.desktop" % image_dir)
             except OSError:
                 pass
 
