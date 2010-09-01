@@ -52,7 +52,7 @@
                     <Description>Base system packages</Description>
                 </Translation>
             </Translations>
-            <PackageSelection repo_uri="http://farm64/pardus/2011/devel/x86_64/pisi-index.xml.bz2">
+            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/x86_64/pisi-index.xml.bz2">
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
