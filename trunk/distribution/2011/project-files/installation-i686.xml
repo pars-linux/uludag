@@ -1,11 +1,11 @@
 <PardusmanProject type="install" media="dvd" compression="gzip">
     <Title>Pardus 2011 Alpha (i686)</Title>
-    <WorkDir>/home/gokcen/pardusman-workdir/32</WorkDir>
-    <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
+    <ReleaseFiles></ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
             <Id>moxHulfaHETN</Id>
-            <Icon>/home/gokcen/pardusman/icons/preferences-web-browser-shortcuts.png</Icon>
+            <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
                     <Title>Base system</Title>
