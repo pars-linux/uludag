@@ -97,6 +97,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Reset UI
         self.__update_toolbar()
         self.frameTools.setEnabled(False)
+        self.__slot_debug(False)
 
     def closeEvent(self, event):
         """
@@ -375,9 +376,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Update toolbar
         self.__update_toolbar()
-
-        # Hide debug console
-        self.__slot_debug(False)
 
     def __slot_talk_state(self, state):
         """
