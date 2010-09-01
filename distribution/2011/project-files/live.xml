@@ -1,7 +1,7 @@
 <PardusmanProject type="live" media="cd" compression="gzip">
     <Title>Pardus 2011 Alpha Live (x86_64)</Title>
-    <WorkDir>/home/gokcen/pardusman-workdir/64</WorkDir>
-    <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
+    <ReleaseFiles></ReleaseFiles>
     <PackageSelection repo_uri="http://farm64/pardus/2011/devel/x86_64/pisi-index.xml.bz2">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
