@@ -121,11 +121,12 @@ class PackageModel(QAbstractTableModel):
         return self._flags
 
     def setPackages(self, packages):
+        self.beginResetModel()
         self.cached_package = None
         self.packages = packages
         self.packages.sort(key=string.lower)
         self.package_selections = [Qt.Unchecked] * len(self.packages)
-        self.reset()
+        self.endResetModel()
 
     def package(self, index):
         if self.cached_package and self.cached_package.name == self.packages[index.row()]:
@@ -183,7 +184,9 @@ class PackageModel(QAbstractTableModel):
             self.package_selections[index] = Qt.Unchecked
 
     def search(self, text):
-        return self.iface.search(text, self.packages)
+        # FIXME
+        # return self.iface.search(text, self.packages)
+        return self.iface.search(text)
 
     def downloadSize(self):
         try:

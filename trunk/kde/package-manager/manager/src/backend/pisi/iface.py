@@ -205,9 +205,6 @@ class Iface(Singleton):
                 pass
         return packages
 
-    def getGroupComponents(self, name):
-        return groups.getGroupComponents(name)
-
     def getIsaPackages(self, isa):
         return self.pdb.get_isa_packages(isa) + self.idb.get_isa_packages(isa)
 

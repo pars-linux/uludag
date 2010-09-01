@@ -70,6 +70,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.statusUpdater = StatusUpdater()
             self.basket = BasketDialog(self.state)
             self.searchUsed = False
+            self.initializeUpdateTypeList()
             self.initializeInfoBox()
             self.initialize()
             self.updateSettings()
@@ -136,7 +137,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         waitCursor()
         self._last_packages = None
         self.state.reset()
-        self.initializeUpdateTypeList()
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeStatusUpdater()
@@ -145,15 +145,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.packageList.select_all.setChecked(False)
         restoreCursor()
         QTimer.singleShot(1, self.initializeBasket)
-
-    def initializeUpdateTypeList(self):
-        self.typeCombo.clear()
-        UPDATE_TYPES = [['normal', i18n('All Updates'), 'system-software-update'],
-                        ['security', i18n('Security Updates'), 'security-medium'],
-                        ['critical', i18n('Critical Updates'), 'security-low']]
-
-        for type in UPDATE_TYPES:
-            self.typeCombo.addItem(KIcon(type[2]), type[1], QVariant(type[0]))
 
     def initializeStatusUpdater(self):
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
@@ -354,7 +345,12 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.setActionButton()
         if action:
             self.state.stateAction()
-        self.initialize()
+        self.state.cached_packages = None
+        self.packageList.setPackages(self.state.packages())
+        self.initializeGroupList()
+        self.initializeStatusUpdater()
+        self.statusChanged()
+        # self.initialize()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
@@ -390,3 +386,13 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.statusUpdater.wait()
         self.basket.show()
         restoreCursor()
+
+    def initializeUpdateTypeList(self):
+        self.typeCombo.clear()
+        UPDATE_TYPES = [['normal', i18n('All Updates'), 'system-software-update'],
+                        ['security', i18n('Security Updates'), 'security-medium'],
+                        ['critical', i18n('Critical Updates'), 'security-low']]
+
+        for type in UPDATE_TYPES:
+            self.typeCombo.addItem(KIcon(type[2]), type[1], QVariant(type[0]))
+

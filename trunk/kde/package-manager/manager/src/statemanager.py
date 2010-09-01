@@ -29,8 +29,8 @@ class StateManager(QObject):
         QObject.__init__(self)
         self.state = self.ALL
         self.silence = False
+        self._group_cache = {}
         self.iface = backend.pm.Iface()
-        self.reset()
 
     def reset(self):
         self.cached_packages = None
@@ -41,6 +41,7 @@ class StateManager(QObject):
     def initializePackageLists(self):
         self.__installed_packages = self.iface.getInstalledPackages()
         self.__new_packages = self.iface.getNewPackages()
+        self.__groups = self.iface.getGroups()
         self.__all_packages = self.__installed_packages + self.__new_packages
 
     def setState(self, state):
@@ -62,11 +63,9 @@ class StateManager(QObject):
                 elif self.state == self.INSTALL:
                     self.cached_packages = self.__new_packages
                 else:
-                    self.cached_packages = self.__installed_packages + self.__new_packages
-
+                    self.cached_packages = self.__all_packages
                 if self.onlyGuiInState():
                     self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
-
         if not self._typeFilter == 'normal' and self.state == self.UPGRADE:
             if not self._typeCaches.has_key(self._typeFilter):
                 self._typeCaches[self._typeFilter] = self.iface.filterUpdates(self.cached_packages, self._typeFilter)
@@ -121,13 +120,19 @@ class StateManager(QObject):
                 self.ALL    :i18n("Extra dependencies of the selected package(s) that are also going to be modified:")}[self.state]
 
     def groups(self):
-        return self.iface.getGroups()
+        return self.__groups
 
     def groupPackages(self, name):
         if name == "all":
+            print len(self.packages())
             return self.packages()
         else:
-            return list(set(self.packages()).intersection(self.iface.getGroupPackages(name)))
+            if self._group_cache.has_key(name):
+                group_packages = self._group_cache[name]
+            else:
+                group_packages = self.iface.getGroupPackages(name)
+                self._group_cache[name] = group_packages
+            return list(set(self.packages()).intersection(group_packages))
 
     def chainAction(self, operation):
         chains = { "System.Manager.setRepositories":lambda:self.emit(SIGNAL("repositoriesChanged()")) }
