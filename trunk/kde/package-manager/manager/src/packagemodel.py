@@ -145,7 +145,7 @@ class PackageModel(QAbstractTableModel):
 
     def extraPackages(self):
         if not self.cached_extras:
-            self.cached_extras = self.iface.getExtras(self.selectedPackages())
+            self.cached_extras = self.iface.getExtras(self.selectedPackages(), self.state)
         return self.cached_extras
 
     def __packagesSize(self, packages):

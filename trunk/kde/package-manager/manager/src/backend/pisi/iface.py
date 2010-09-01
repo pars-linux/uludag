@@ -17,6 +17,7 @@ import comar
 import pisi
 
 from pmlogging import logger
+from statemanager import StateManager
 
 class Singleton(object):
     def __new__(type):
@@ -28,11 +29,8 @@ class Iface(Singleton):
 
     """ Pisi Iface for PM """
 
-    (SYSTEM, REPO, ALL) = range(3)
-
-    def __init__(self, source = ALL):
+    def __init__(self):
         if not self.initialized():
-            self.source = source
             self.initComar()
             self.initDB()
 
@@ -145,9 +143,6 @@ class Iface(Singleton):
             return
         self.link.System.Manager["pisi"].setConfig(category, name, value)
 
-    def setSource(self, source):
-        self.source = source
-
     def getPackageRequirements(self, packages):
         """
             Returns dict from pisi api
@@ -172,12 +167,11 @@ class Iface(Singleton):
     def getPackageList(self):
         return pisi.api.list_installed() + list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
 
-    def getPackageListByType(self, _type):
-        if _type == 'installed':
-            return pisi.api.list_installed()
-        if _type == 'new':
-            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
-        return []
+    def getInstalledPackages(self):
+        return pisi.api.list_installed()
+
+    def getNewPackages(self):
+        return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
 
     def getUpdates(self):
         lu = set(pisi.api.list_upgradable())
@@ -248,10 +242,10 @@ class Iface(Singleton):
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
 
-    def getExtras(self, packages):
+    def getExtras(self, packages, state):
         if not packages:
             return []
-        if self.source == self.REPO:
+        if state == StateManager.INSTALL:
             return self.getDepends(packages)
         else:
             return self.getRequires(packages)
@@ -278,8 +272,8 @@ class Iface(Singleton):
             return package.installedSize
         return package.packageSize
 
-    def getConflicts(self, packages):
-        return pisi.api.get_conflicts(packages + self.getExtras(packages))
+    def getConflicts(self, packages, state):
+        return pisi.api.get_conflicts(packages + self.getExtras(packages, state))
 
     def isRepoActive(self, name):
         return self.rdb.repo_active(name)
