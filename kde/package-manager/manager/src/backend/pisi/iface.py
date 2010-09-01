@@ -34,54 +34,19 @@ class Iface(Singleton):
             self.initComar()
             self.initDB()
 
-    def initialized(self):
-        return "link" in self.__dict__
+    # Std Package Actions ------------------------------------------------->>-
 
-    def initComar(self):
-        """ Initialize Comar """
-        self.link = comar.Link()
-        self.link.setLocale()
-        self.link.listenSignals("System.Manager", self.signalHandler)
+    def getPackage(self, name):
+        if self.idb.has_package(name):
+            pkg = self.idb.get_package(name)
+            pkg._type = self.getUpdateType(pkg)
+            pkg.installed = True
+        else:
+            pkg = self.pdb.get_package(name)
+            pkg._type = None
+            pkg.installed = False
+        return pkg
 
-    def initDB(self):
-        """ DBs provided by Pisi Api """
-        # Not Installed Packages DB
-        self.pdb = pisi.db.packagedb.PackageDB()
-        # Components DB
-        self.cdb = pisi.db.componentdb.ComponentDB()
-        # Installed Packages DB
-        self.idb = pisi.db.installdb.InstallDB()
-        # Repositories DB
-        self.rdb = pisi.db.repodb.RepoDB()
-        # Groups DB
-        self.gdb = pisi.db.groupdb.GroupDB()
-        # Replaced Packages list
-        self.replaces = self.pdb.get_replaces()
-
-    def setHandler(self, handler):
-        """ Comar Handler """
-        self.link.listenSignals("System.Manager", handler)
-
-    def setExceptionHandler(self, handler):
-        """ Exception Handler for all exceptions """
-        self.exceptionHandler = handler
-
-    def invalidate_db_caches(self):
-        pisi.db.invalidate_caches()
-        self.initDB()
-
-    def signalHandler(self, package, signal, args):
-        if signal == "finished":
-            self.invalidate_db_caches()
-
-    def handler(self, package, exception, args):
-        """ Handler just for exceptions """
-        if exception:
-            logger.debug("Exception caught by COMAR: %s" % exception)
-            self.invalidate_db_caches()
-            self.exceptionHandler(exception)
-
-    # Actions
     def installPackages(self, packages):
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
@@ -101,47 +66,9 @@ class Iface(Singleton):
         # FIXME
         pass
 
-    def updateRepositories(self):
-        logger.debug("Updating repositories...")
-        self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
+    # Std Package Actions -------------------------------------------------<<-
 
-    def updateRepository(self, repo):
-        logger.debug("Updating %s..." % repo)
-        self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, timeout=2**16-1)
-
-    def removeRepository(self, repo):
-        logger.debug("Removing repository: %s" % repo)
-        self.link.System.Manager["pisi"].removeRepository(repo, async=self.handler, timeout=2**16-1)
-
-    def clearCache(self, limit):
-        config = self.getConfig()
-        cache_dir = config.get("directories", "cached_packages_dir")
-        logger.debug("Clearing cache %s with limit: %s" % (cache_dir, limit))
-        self.link.System.Manager["pisi"].clearCache(cache_dir, limit)
-
-    def setRepositories(self,  repos):
-        logger.debug("Re-setting repositories: %s" % repos)
-        self.link.System.Manager["pisi"].setRepositories(repos)
-
-    def setRepoActivities(self, repos):
-        logger.debug("Re-setting repo activities: %s" % repos)
-        self.link.System.Manager["pisi"].setRepoActivities(repos)
-
-    def __configChanged(self, category, name, value):
-        config = self.getConfig()
-        return not str(config.get(category, name)) == str(value)
-
-    def setCacheLimit(self, useCache, limit):
-        logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
-        if not self.__configChanged("general", "package_cache", useCache) and not self.__configChanged("general", "package_cache_limit", limit):
-            return
-        self.link.System.Manager["pisi"].setCache(useCache, limit)
-
-    def setConfig(self, category, name, value):
-        logger.debug("Setting config... Category: %s, Name: %s, Value: %s" % (category, name, value))
-        if not self.__configChanged(category, name, value):
-            return
-        self.link.System.Manager["pisi"].setConfig(category, name, value)
+    # Extended Package Actions -------------------------------------------->>-
 
     def getPackageRequirements(self, packages):
         """
@@ -164,62 +91,8 @@ class Iface(Singleton):
         except OSError, e:
             return None
 
-    def getPackageList(self):
-        return pisi.api.list_installed() + list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
-
-    def getInstalledPackages(self):
-        return pisi.api.list_installed()
-
-    def getNewPackages(self):
-        return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
-
-    def getUpdates(self):
-        lu = set(pisi.api.list_upgradable())
-        for replaced in self.replaces.keys():
-            lu.remove(replaced)
-            lu |= set(self.replaces[replaced])
-        return lu
-
-    def filterUpdates(self, updates, _type):
-        return filter(lambda x: self.getPackage(x)._type == _type, updates)
-
-    def filterPackages(self, packages, installed):
-        return filter(lambda x: self.getPackage(x).installed == installed, packages)
-
-    def getGroup(self, name):
-        return self.gdb.get_group(name)
-
-    def getGroups(self):
-        return self.gdb.list_groups()
-
-    def getGroupPackages(self, name):
-        try:
-            components = self.gdb.get_group_components(name)
-        except pisi.db.groupdb.GroupNotFound:
-            components = []
-        packages = []
-        for component in components:
-            try:
-                packages.extend(self.cdb.get_union_packages(component))
-            except Exception:
-                pass
-        return packages
-
     def getIsaPackages(self, isa):
         return self.pdb.get_isa_packages(isa) + self.idb.get_isa_packages(isa)
-
-    def getPackage(self, name):
-
-        if self.idb.has_package(name):
-            pkg = self.idb.get_package(name)
-            pkg._type = self.getUpdateType(pkg)
-            pkg.installed = True
-        else:
-            pkg = self.pdb.get_package(name)
-            pkg._type = None
-            pkg.installed = False
-
-        return pkg
 
     def getInstalledVersion(self, name):
         if self.idb.has_package(name):
@@ -247,15 +120,6 @@ class Iface(Singleton):
         else:
             return self.getRequires(packages)
 
-    def getConfig(self):
-        return pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
-
-    def getRepositories(self):
-        repos = []
-        for repo in pisi.api.list_repos(only_active=False):
-            repos.append((repo, self.rdb.get_repo_url(repo)))
-        return repos
-
     def getUpdateType(self, pkg):
         (version, release, build) = self.idb.get_version(pkg.name)
         for type_name in ("security", "critical"):
@@ -272,12 +136,6 @@ class Iface(Singleton):
     def getConflicts(self, packages, state):
         return pisi.api.get_conflicts(packages + self.getExtras(packages, state))
 
-    def isRepoActive(self, name):
-        return self.rdb.repo_active(name)
-
-    def checkDistributionAndArchitecture(self, repo):
-        return self.rdb.check_distribution(repo) and self.rdb.check_architecture(repo)
-
     def checkUpdateActions(self, packages):
         actions = {'systemRestart':[], 'serviceRestart':[]}
         for package in packages:
@@ -289,12 +147,39 @@ class Iface(Singleton):
                         actions[action].extend(package_actions[action])
         return (set(actions['systemRestart']), set(actions['serviceRestart']))
 
-    def cancel(self):
-        self.link.cancel()
+    # Extended Package Actions --------------------------------------------<<-
 
-    def operationInProgress(self):
-        print self.link.listRunning()
-        return False
+    # Package Lists ------------------------------------------------------->>-
+
+    def getPackageList(self):
+        return self.getInstalledPackages() + self.getNewPackages()
+
+    def getInstalledPackages(self):
+        return pisi.api.list_installed()
+
+    def getNewPackages(self):
+        return list(
+                     set(pisi.api.list_available()) - \
+                     set(pisi.api.list_installed()) - \
+                     set(sum(self.replaces.values(), []))
+                   )
+
+    def getUpdates(self):
+        lu = set(pisi.api.list_upgradable())
+        for replaced in self.replaces.keys():
+            lu.remove(replaced)
+            lu |= set(self.replaces[replaced])
+        return lu
+
+    # Package Lists -------------------------------------------------------<<-
+
+    # Filters ------------------------------------------------------------->>-
+
+    def filterUpdates(self, updates, _type):
+        return filter(lambda x: self.getPackage(x)._type == _type, updates)
+
+    def filterPackages(self, packages, installed):
+        return filter(lambda x: self.getPackage(x).installed == installed, packages)
 
     def search(self, terms, packages = None, __tryOnce = False):
         try:
@@ -307,3 +192,159 @@ class Iface(Singleton):
                 return self.search(terms, packages, __tryOnce = True)
             return []
 
+    # Filters -------------------------------------------------------------<<-
+
+    # Group Operations ---------------------------------------------------->>-
+
+    def getGroup(self, name):
+        return self.gdb.get_group(name)
+
+    def getGroups(self):
+        return self.gdb.list_groups()
+
+    def getGroupPackages(self, name):
+        try:
+            components = self.gdb.get_group_components(name)
+        except pisi.db.groupdb.GroupNotFound:
+            components = []
+        packages = []
+        for component in components:
+            try:
+                packages.extend(self.cdb.get_union_packages(component))
+            except Exception:
+                pass
+        return packages
+
+    # Group Operations ----------------------------------------------------<<-
+
+    # Pisi DB ------------------------------------------------------------->>-
+
+    def initDB(self):
+        """ DBs provided by Pisi Api """
+        # Not Installed Packages DB
+        self.pdb = pisi.db.packagedb.PackageDB()
+        # Components DB
+        self.cdb = pisi.db.componentdb.ComponentDB()
+        # Installed Packages DB
+        self.idb = pisi.db.installdb.InstallDB()
+        # Repositories DB
+        self.rdb = pisi.db.repodb.RepoDB()
+        # Groups DB
+        self.gdb = pisi.db.groupdb.GroupDB()
+        # Replaced Packages list
+        self.replaces = self.pdb.get_replaces()
+
+    def invalidate_db_caches(self):
+        pisi.db.invalidate_caches()
+        self.initDB()
+
+    # Pisi DB -------------------------------------------------------------<<-
+
+    # COMAR Calls --------------------------------------------------------->>-
+
+    def initialized(self):
+        return "link" in self.__dict__
+
+    def initComar(self):
+        """ Initialize Comar """
+        self.link = comar.Link()
+        self.link.setLocale()
+        self.link.listenSignals("System.Manager", self.signalHandler)
+
+    def setHandler(self, handler):
+        """ Comar Handler """
+        self.link.listenSignals("System.Manager", handler)
+
+    def setExceptionHandler(self, handler):
+        """ Exception Handler for all exceptions """
+        self.exceptionHandler = handler
+
+    def signalHandler(self, package, signal, args):
+        if signal == "finished":
+            self.invalidate_db_caches()
+
+    def handler(self, package, exception, args):
+        """ Handler just for exceptions """
+        if exception:
+            logger.debug("Exception caught by COMAR: %s" % exception)
+            self.invalidate_db_caches()
+            self.exceptionHandler(exception)
+
+    def cancel(self):
+        self.link.cancel()
+
+    def operationInProgress(self):
+        if self.link.listRunning():
+            return True
+        return False
+
+    # COMAR Calls ---------------------------------------------------------<<-
+
+    # Std Repository Actions ---------------------------------------------->>-
+
+    def getRepositories(self):
+        repos = []
+        for repo in pisi.api.list_repos(only_active=False):
+            repos.append((repo, self.rdb.get_repo_url(repo)))
+        return repos
+
+    def updateRepositories(self):
+        logger.debug("Updating repositories...")
+        self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
+
+    def updateRepository(self, repo):
+        logger.debug("Updating %s..." % repo)
+        self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, timeout=2**16-1)
+
+    def removeRepository(self, repo):
+        logger.debug("Removing repository: %s" % repo)
+        self.link.System.Manager["pisi"].removeRepository(repo, async=self.handler, timeout=2**16-1)
+
+    def setRepositories(self,  repos):
+        logger.debug("Re-setting repositories: %s" % repos)
+        self.link.System.Manager["pisi"].setRepositories(repos)
+
+    def setRepoActivities(self, repos):
+        logger.debug("Re-setting repo activities: %s" % repos)
+        self.link.System.Manager["pisi"].setRepoActivities(repos)
+
+    def isRepoActive(self, name):
+        return self.rdb.repo_active(name)
+
+    def checkDistributionAndArchitecture(self, repo):
+        return self.rdb.check_distribution(repo) and self.rdb.check_architecture(repo)
+
+    # Std Repository Actions ----------------------------------------------<<-
+
+    # Cache Actions ------------------------------------------------------->>-
+
+    def clearCache(self, limit):
+        config = self.getConfig()
+        cache_dir = config.get("directories", "cached_packages_dir")
+        logger.debug("Clearing cache %s with limit: %s" % (cache_dir, limit))
+        self.link.System.Manager["pisi"].clearCache(cache_dir, limit)
+
+    def setCacheLimit(self, useCache, limit):
+        logger.debug("Use cache: %s - change limit to: %s" % (useCache, limit))
+        if not self.__configChanged("general", "package_cache", useCache) and not self.__configChanged("general", "package_cache_limit", limit):
+            return
+        self.link.System.Manager["pisi"].setCache(useCache, limit)
+
+    # Cache Actions -------------------------------------------------------<<-
+
+    # Config Actions ------------------------------------------------------>>-
+
+    def getConfig(self):
+        return pisi.configfile.ConfigurationFile("/etc/pisi/pisi.conf")
+
+    def __configChanged(self, category, name, value):
+        config = self.getConfig()
+        return not str(config.get(category, name)) == str(value)
+
+    def setConfig(self, category, name, value):
+        logger.debug("Setting config... Category: %s, Name: %s, Value: %s" % (category, name, value))
+        if not self.__configChanged(category, name, value):
+            return
+        self.link.System.Manager["pisi"].setConfig(category, name, value)
+
+    # Config Actions ------------------------------------------------------<<-
