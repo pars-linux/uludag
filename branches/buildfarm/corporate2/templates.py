@@ -112,6 +112,7 @@ Hello,
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
 %(message)s
+
 Happy hacking!
 """
 
