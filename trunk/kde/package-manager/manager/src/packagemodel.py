@@ -182,7 +182,9 @@ class PackageModel(QAbstractTableModel):
             self.package_selections[index] = Qt.Unchecked
 
     def search(self, text):
-        return self.iface.search(text, self.packages)
+        a=self.iface.search(text, self.packages)
+        print a
+        return a
         # return self.iface.search(text)
 
     def downloadSize(self):

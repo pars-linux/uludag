@@ -129,6 +129,11 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
+        self.sw._states = {self.sw.state.ALL    :(0, self.showAllAction),
+                           self.sw.state.INSTALL:(1, self.showInstallAction),
+                           self.sw.state.REMOVE :(2, self.showRemoveAction),
+                           self.sw.state.UPGRADE:(3, self.showUpgradeAction)}
+
         self.showInstallAction.setChecked(True)
 
     def statusWaiting(self):
