@@ -26,7 +26,7 @@ def print_usage():
     print "    softwareUpdateMode str Auto update mode (off, security or full)"
     print
     print "  Valid types:"
-    print "    str, int"
+    print "    str, int, [str], [int]"
     print
 
 def main():
@@ -51,11 +51,16 @@ def main():
             continue
         a_name, a_type, a_desc = line.strip().split(" ", 2)
         fields.append(a_name)
+        a_list = False
+        if a_type.startswith("["):
+            a_list = True
+            a_type = a_type[1:-1]
         text.append("attributetype ( pardusBase:%d.%d" % (oid, index))
         text.append("    NAME '%s'" % a_name)
         text.append("    DESC '%s'" % a_desc)
         text.append("    SYNTAX %s" % TYPES[a_type])
-        text.append("    SINGLE-VALUE")
+        if not a_list:
+            text.append("    SINGLE-VALUE")
         text.append(" )")
         text.append("")
         index += 1
