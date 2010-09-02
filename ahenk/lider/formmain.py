@@ -50,6 +50,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Fine tune UI
         self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
+        self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
         # Popup for connection management
         menu = wrappers.Menu(self)
@@ -58,10 +59,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.pushConnection.setMenu(menu)
 
         # Popup for new items
-        menu = wrappers.Menu(self)
-        menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
-        menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
-        self.pushNew.setMenu(menu)
+        self.menu = wrappers.Menu(self)
+        self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
+        self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
 
         # Backends
         self.talk = talk.Talk()
@@ -80,6 +80,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
+        self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
 
         # Initialize "talk" backend
         self.talk_online = []
@@ -154,17 +155,13 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         if self.status_directory == "offline":
             icon = wrappers.Icon("offline48")
-            self.pushConnection.setText("Not Connected")
         elif self.status_directory == "error":
             icon = wrappers.Icon("error48")
-            self.pushConnection.setText("Error")
         elif self.status_directory == "online":
             if self.status_talk == "online":
                 icon = wrappers.Icon("online48")
-                self.pushConnection.setText("Connected")
             else:
                 icon = wrappers.Icon("partial48")
-                self.pushConnection.setText("Connected")
         self.pushConnection.setIcon(icon)
 
     def __update_toolbar(self):
@@ -178,18 +175,27 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if self.stackedWidget.currentIndex() == 0:
             # Disable unnecessary buttons
             if self.item:
-                self.pushNew.setEnabled(True)
                 self.pushPluginGlobal.setEnabled(True)
                 self.pushPluginItem.setEnabled(True)
             else:
-                self.pushNew.setEnabled(False)
                 self.pushPluginItem.setEnabled(False)
                 if self.directory.is_connected:
                     self.pushPluginGlobal.setEnabled(True)
                 else:
                     self.pushPluginGlobal.setEnabled(False)
-            # Hide plugin information frame
-            self.framePlugin.hide()
+            # Show network information
+            self.pixmapPlugin.setPixmap(self.windowIcon().pixmap(48))
+            if self.directory.is_connected:
+                domain_label = "Network: %s" % self.directory.domain
+                domain_desc = "Connected as %s" % self.directory.user.capitalize()
+                if self.directory_label:
+                    domain_label = "Network: %s" % self.directory_label
+                    domain_desc = "Connected to %s as %s" % (self.directory.domain, self.directory.user.capitalize())
+                self.labelPlugin.setText(domain_label)
+                self.labelPluginDesc.setText(domain_desc)
+            else:
+                self.labelPlugin.setText("Lider")
+                self.labelPluginDesc.setText("")
         else:
             widget = self.stackedWidget.currentWidget()
             # Disable unnecessary buttons
@@ -197,12 +203,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.pushPluginItem.setEnabled(False)
             else:
                 self.pushPluginItem.setEnabled(True)
-            self.pushNew.setEnabled(False)
-            # Show plugin information frame
+            # Show plugin information
             self.pixmapPlugin.setPixmap(widget.windowIcon().pixmap(48))
             self.labelPlugin.setText(widget.windowTitle())
             self.labelPluginDesc.setText(widget.toolTip())
-            self.framePlugin.show()
 
     def __load_plugins(self):
         """
@@ -328,7 +332,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
                 return
             try:
-                directory_label = self.directory.get_name()
+                self.directory_label = self.directory.get_name()
             except directory.DirectoryError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
@@ -342,17 +346,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Connect to XMPP server
         self.talk.connect(self.directory.user, self.directory.domain, self.directory.password)
 
-        # Set labels
-        domain_label = "Network: %s" % self.directory.domain
-        domain_desc = "Connected as %s" % self.directory.user.capitalize()
-        if directory_label:
-            domain_label = "Network: %s" % directory_label
-            domain_desc = "Connected to %s as %s" % (self.directory.domain, self.directory.user.capitalize())
-        self.labelTarget.setText(domain_label)
-        self.labelTargetDesc.setText(domain_desc)
-
         # List components
         self.__list_items()
+
+        # Update toolbar
+        self.__update_toolbar()
 
     def __slot_disconnect(self):
         """
@@ -366,10 +364,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Update connection status
         self.__update_status("directory", "offline")
-
-        # Clear network labels
-        self.labelTarget.setText("Remote Management Console")
-        self.labelTargetDesc.setText("")
 
         # Clear tree
         self.treeComputers.clear()
@@ -457,6 +451,13 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             node = item.takeChild(i)
             del node
 
+    def __slot_tree_menu(self, pos):
+        """
+            Triggered when user right clicks a node.
+        """
+        if self.item:
+            self.menu.exec_(self.treeComputers.mapToGlobal(pos))
+
     def __slot_new_computer(self):
         """
             Triggered when user wants to add a new computer.
@@ -531,6 +532,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.policy = self.__load_policy()
             if self.policy != None:
                 widget.load_policy(self.policy)
+        else:
+            widget.set_directory(self.directory)
+            widget.set_talk(self.talk)
 
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
