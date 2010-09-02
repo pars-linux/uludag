@@ -31,12 +31,15 @@ class StateManager(QObject):
         self.silence = False
         self._group_cache = {}
         self.iface = backend.pm.Iface()
+        self.initializePackageLists()
 
     def reset(self):
         self.cached_packages = None
         self._typeCaches = {}
         self._typeFilter = 'normal'
-        self.initializePackageLists()
+        # FIXME we need to re initialize whole package list
+        # after all package modification actions
+        # self.initializePackageLists()
 
     def initializePackageLists(self):
         self.__installed_packages = self.iface.getInstalledPackages()
@@ -124,7 +127,6 @@ class StateManager(QObject):
 
     def groupPackages(self, name):
         if name == "all":
-            print len(self.packages())
             return self.packages()
         else:
             if self._group_cache.has_key(name):

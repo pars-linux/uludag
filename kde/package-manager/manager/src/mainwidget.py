@@ -333,12 +333,8 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def switchState(self, state, action=True):
         self.searchLine.clear()
-        states = {self.state.ALL    :(0, self.parent.showAllAction),
-                  self.state.INSTALL:(1, self.parent.showInstallAction),
-                  self.state.REMOVE :(2, self.parent.showRemoveAction),
-                  self.state.UPGRADE:(3, self.parent.showUpgradeAction)}
-        states[state][1].setChecked(True)
-        self.stateCombo.setCurrentIndex(states[state][0])
+        self._states[state][1].setChecked(True)
+        self.stateCombo.setCurrentIndex(self._states[state][0])
         self.lastState = self.state.state
         self.state.setState(state)
         self._selectedGroups = []
@@ -346,11 +342,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         if action:
             self.state.stateAction()
         self.state.cached_packages = None
-        self.packageList.setPackages(self.state.packages())
-        self.initializeGroupList()
-        self.initializeStatusUpdater()
-        self.statusChanged()
-        # self.initialize()
+        self.initialize()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
