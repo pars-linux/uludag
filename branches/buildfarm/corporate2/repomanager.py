@@ -19,6 +19,7 @@ from string import find
 
 import config
 import logger
+import qmanager
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
 
@@ -90,14 +91,15 @@ class RepositoryManager:
 # Main program
 
 if __name__ == "__main__":
+
+    qmgr = qmanager.QueueManager()
+
     # Print current workqueue/waitqueue
     print "Current workqueue:\n%s" % ('-'*60)
-    if os.path.exists(os.path.join(config.workDir, "workQueue")):
-        print "\n".join(open("/var/pisi/workQueue", "rb").read().split("\n"))
+    print "\n".join(qmgr.workQueue)
 
     print "\nCurrent waitqueue:\n%s" % ('-'*60)
-    if os.path.exists(os.path.join(config.workDir, "waitQueue")):
-        print "\n".join(open("/var/pisi/waitQueue", "rb").read().split("\n"))
+    print "\n".join(qmgr.waitQueue)
 
     # Create RepositoryManager
     r = RepositoryManager()
@@ -116,16 +118,10 @@ if __name__ == "__main__":
         print "  * %s" % p
 
     if len(updatedPspecFiles + newPspecFiles):
-        queue = []
-        if os.path.exists(os.path.join(config.workDir, "workQueue")):
-            queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
-
         # Filter out the packages that shouldn't be build on this architecture
         candidateQueue = updatedPspecFiles + newPspecFiles
-        queue.extend(filter(lambda x: pisi.ctx.config.values.get('general', 'architecture') not in
+        qmgr.extendWorkQueue(filter(lambda x: pisi.ctx.config.values.get('general', 'architecture') not in
                      pisi.specfile.SpecFile(x).source.excludeArch, candidateQueue))
 
         print "\nThese packages will not be compiled on this architecture:\n%s" % ('-'*60)
-        print "\n".join(list(set(candidateQueue).difference(queue)))
-
-        open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join([l for l in list(set(queue)) if l])+"\n")
+        print "\n".join(list(set(candidateQueue).difference(qmgr.workQueue)))

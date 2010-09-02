@@ -28,10 +28,11 @@ import pisiinterface
 
 from utils import *
 
-
 def buildPackages():
     qmgr = qmanager.QueueManager()
+    qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
     queue = copy.copy(qmgr.workQueue)
+
     packageList = []
     deltaPackageList = []
     isopackages = {}
@@ -53,13 +54,11 @@ def buildPackages():
             os.unlink("/var/run/buildfarm")
             sys.exit(1)
 
-    # Compiling current workqueue
+    # Compiling current workQueue
 
     logger.raw("QUEUE")
-    logger.info("*** Work Queue: %s" % qmgr.workQueue)
-    sortedQueue = qmgr.workQueue[:]
-    sortedQueue.sort()
-    mailer.info("*** I'm starting to compile following packages:\n\n%s" % "\n".join(sortedQueue))
+    logger.info("*** All packages to be compiled : %s" % qmgr.workQueue)
+    mailer.info("*** I'm starting to compile following packages (in the order below):\n\n%s" % "\n".join(queue))
     logger.raw()
 
     for pspec in queue:
