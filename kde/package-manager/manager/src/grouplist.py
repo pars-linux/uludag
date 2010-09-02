@@ -31,7 +31,6 @@ class GroupList(QListWidget):
     def __init__(self, parent=None):
         QListWidget.__init__(self, parent)
         self.iface = backend.pm.Iface()
-        self._cache = {}
         self.defaultIcon = QIcon(KIcon('applications-other').pixmap(
                             KIconLoader.SizeSmallMedium))
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"),
@@ -53,12 +52,7 @@ class GroupList(QListWidget):
 
     def createGroupItem(self, name, content = None):
         if not content:
-            if self._cache.has_key(name):
-                group = self._cache[name]
-            else:
-                group = self.iface.getGroup(name)
-                self._cache[name] = group
-
+            group = self.iface.getGroup(name)
             localName, icon_path = unicode(group.localName), group.icon
             package_count = len(self.state.groupPackages(name))
             if package_count <= 0:
