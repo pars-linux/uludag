@@ -70,7 +70,7 @@ class QueueManager:
                         continue
 
                     if component:
-                        path = "%s/%s/pspec.xml" % (config.localPspecRepo, component.replace(".", "/"))
+                        path = "%s/%s/%s/pspec.xml" % (config.localPspecRepo, component.replace(".", "/"), line)
 
                         if os.path.exists(path):
                             queueName.append(path)
