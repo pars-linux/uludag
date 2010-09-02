@@ -33,6 +33,8 @@ alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
 alias grep="grep --color"
+alias pgrep="pgrep -f"
+alias pkill="pkill -f"
 alias egrep="egrep --color"
 alias fgrep="fgrep --color"
 
