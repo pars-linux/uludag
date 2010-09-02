@@ -111,17 +111,17 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
 
             Returns: True if valid, else False
         """
-        if not len(self.editDomain.text()):
+        if self.editDomain.isModified() and not len(self.editDomain.text()):
             self.labelWarning.setText("Domain name is required.")
             if set_focus:
                 self.editDomain.setFocus(QtCore.Qt.OtherFocusReason)
             return False
-        if not len(self.editHost.text()):
+        if self.editHost.isModified() and not len(self.editHost.text()):
             self.labelWarning.setText("Server address is required.")
             if set_focus:
                 self.editHost.setFocus(QtCore.Qt.OtherFocusReason)
             return False
-        if not len(self.editUser.text()):
+        if self.editUser.isModified() and not len(self.editUser.text()):
             self.labelWarning.setText("User name is required.")
             if set_focus:
                 self.editUser.setFocus(QtCore.Qt.OtherFocusReason)
