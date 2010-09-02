@@ -184,7 +184,8 @@ class Iface(Singleton):
     def search(self, terms, packages = None, __tryOnce = False):
         try:
             if packages:
-                return self.pdb.search_in_packages(packages, terms)
+                _repo_packages = list(set(packages).intersection(self.getNewPackages()))
+                return self.pdb.search_in_packages(_repo_packages, terms) + self.idb.search_package(terms)
             return self.idb.search_package(terms) + self.pdb.search_package(terms)
         except IOError:
             if not __tryOnce:
