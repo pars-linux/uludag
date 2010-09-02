@@ -20,7 +20,19 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSummary):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
 
+        self.directory = None
+        self.talk = None
+
         self.setupUi(self)
 
     def get_type(self):
         return plugins.TYPE_GLOBAL
+
+    def set_directory(self, directory):
+        self.directory = directory
+
+    def set_talk(self, talk):
+        self.talk = talk
+
+    def showEvent(self, event):
+        pass

@@ -77,7 +77,8 @@ class Directory:
         """
         self.is_connected = False
         try:
-            self.conn.unbind_s()
+            if self.conn:
+                self.conn.unbind_s()
         except ldap.LDAPError:
             pass
 
