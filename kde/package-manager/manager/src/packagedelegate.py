@@ -45,6 +45,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         KIconLoader().addExtraDesktopThemes()
         self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
                                                                KIconLoader.Desktop, 32))
+        self.defaultInstalledIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', KIconLoader.Desktop, 32, KIconLoader.DefaultState, ['checkbox']))
         self.animatable = True
         self._max_height = ROW_HEIGHT
 
@@ -77,7 +78,6 @@ class PackageDelegate(QtGui.QItemDelegate):
             self._titleFM[key] = self.boldDetailFontFM.width(value) + ICON_SIZE + 3
 
         self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
-        self._show_installed = True
         self.parent = parent.packageList
 
     def paint(self, painter, option, index):
@@ -92,18 +92,16 @@ class PackageDelegate(QtGui.QItemDelegate):
             self.paintInfoColumn(painter, option, index, width_limit = 10)
 
     def paintCheckBoxColumn(self, painter, option, index):
-        installed = index.model().data(index, InstalledRole).toBool()
-        if installed or self._show_installed:
-            opt = QtGui.QStyleOptionViewItemV4(option)
+        opt = QtGui.QStyleOptionViewItemV4(option)
 
-            buttonStyle = QtGui.QStyleOptionButton()
-            buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
+        buttonStyle = QtGui.QStyleOptionButton()
+        buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
 
-            if option.state & QtGui.QStyle.State_MouseOver:
-                buttonStyle.state |= QtGui.QStyle.State_HasFocus
+        if option.state & QtGui.QStyle.State_MouseOver:
+            buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
-            buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
-            PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
+        PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
@@ -128,15 +126,17 @@ class PackageDelegate(QtGui.QItemDelegate):
         installed = index.model().data(index, InstalledRole).toBool()
 
         # Get Package Icon if exists
-        icon = index.model().data(index, Qt.DecorationRole).toString()
-        if icon:
-            pix = KIconLoader().loadIcon(icon, KIconLoader.NoGroup, 32, KIconLoader.DefaultState, [], '', True)
+        _icon = index.model().data(index, Qt.DecorationRole).toString()
+        icon = None
+
+        if _icon:
+            overlay = ['checkbox'] if installed else []
+            pix = KIconLoader().loadIcon(_icon, KIconLoader.NoGroup, 32, KIconLoader.DefaultState, overlay, '', True)
             if not pix.isNull():
                 icon = QtGui.QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
-            else:
-                icon = self.defaultIcon
-        else:
-            icon = self.defaultIcon
+
+        if not icon:
+            icon = self.defaultIcon if not installed else self.defaultInstalledIcon
 
         # Paint the Icon
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
@@ -261,7 +261,6 @@ class PackageDelegate(QtGui.QItemDelegate):
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
-            self._show_installed = model.data(index, InstalledRole).toBool()
             return model.setData(index, toggled, Qt.CheckStateRole)
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
