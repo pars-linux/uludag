@@ -83,7 +83,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
 
         # Initialize "talk" backend
-        self.talk_online = []
         self.talk.start()
 
         # Directory nodes
@@ -117,7 +116,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         name = name.lower()
         if name in self.nodes_cn:
             if not status:
-                if name in self.talk_online:
+                if name in self.talk.online:
                     status = talk.Online
                 else:
                     status = talk.Offline
@@ -401,7 +400,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         self.__log("XMPP message from: %s" % sender, "talk", "debug")
 
-        self.talk.send_message(str(sender), "You said: %s" % message)
+        if self.stackedWidget.currentIndex() != 0:
+            widget = self.stackedWidget.currentWidget()
+            try:
+                widget.talk_message(str(sender), str(message))
+            except AttributeError:
+                pass
 
     def __slot_talk_status(self, sender, status):
         """
@@ -411,14 +415,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 sender: Sender's JID
                 state: talk.Online or talk.Offline
         """
-        username = str(sender).split("@")[0].lower()
-        if status == talk.Online and username not in self.talk_online:
-            self.talk_online.append(username)
+        sender = str(sender)
+        if status == talk.Online and sender not in self.talk.online:
             self.__log("XMPP user is online: %s" % sender, "talk", "debug")
-        elif status == talk.Offline and username in self.talk_online:
+        elif status == talk.Offline and sender in self.talk.online:
             self.__log("XMPP user is offline: %s" % sender, "talk", "debug")
-            self.talk_online.remove(username)
-        self.__update_icon(username, status)
+        self.__update_icon(sender, status)
 
     def __slot_main(self):
         """
@@ -527,14 +529,26 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when users activates a policy plugin.
         """
         widget = self.sender().widget
+        try:
+            widget.set_item(self.item)
+        except AttributeError:
+            pass
+        try:
+            widget.set_directory(self.directory)
+        except AttributeError:
+            pass
+        try:
+            widget.set_talk(self.talk)
+        except AttributeError:
+            pass
 
         if widget.get_type() == plugins.TYPE_SINGLE:
             self.policy = self.__load_policy()
             if self.policy != None:
-                widget.load_policy(self.policy)
-        else:
-            widget.set_directory(self.directory)
-            widget.set_talk(self.talk)
+                try:
+                    widget.load_policy(self.policy)
+                except AttributeError:
+                    pass
 
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
