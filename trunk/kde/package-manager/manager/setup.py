@@ -116,8 +116,8 @@ class Install(install):
         icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
         mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
-        apps_dir = os.path.join(root_dir, "applications")
-        project_dir = os.path.join(root_dir, PROJECT)
+        apps_dir = os.path.join(root_dir, "applications/kde4")
+        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
 
         # Make directories
         print "Making directories..."
@@ -149,6 +149,7 @@ class Install(install):
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
+
         # Install locales
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
@@ -160,13 +161,16 @@ class Install(install):
         rst2doc('en')
         print "Installing help files..."
         os.system("cp -R help %s/" % project_dir)
+
         # Rename
         print "Renaming application.py..."
         shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
+
         # Modes
         print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % PROJECT), 0755)
         os.chmod(os.path.join(project_dir, "pm-install.py"), 0755)
+
         # Symlink
         try:
             if self.root:
@@ -186,7 +190,7 @@ class Uninstall(Command):
         pass
     def run(self):
         print 'Uninstalling ...'
-        data_dir = '/usr/share/%s' % PROJECT
+        data_dir = '/usr/share/kde4/apps/%s' % PROJECT
         if os.path.exists(data_dir):
             print ' removing: ', data_dir
             shutil.rmtree(data_dir)
