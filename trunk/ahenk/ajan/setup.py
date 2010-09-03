@@ -10,8 +10,8 @@ setup(name='Ajan',
       author_email='bahadir@python.net',
       url='http://www.pardus.org.tr/',
       packages=['ahenk', 'ahenk.agent'],
-      scripts=['ahenk_agent.py'],
+      scripts=['ahenk_agent', 'utils/ahenk_software_update'],
       data_files=[('/var/lib/ahenk-agent/', ['modules/mod_software.py']),
-                  ('/etc', ['etc/ahenk-agent.conf'])
+                  ('/etc/ahenk', ['etc/ahenk-agent.conf']),
                   ]
      )

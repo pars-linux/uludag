@@ -5,7 +5,6 @@
     Ajan utils.
 """
 
-
 import logging
 import os
 from multiprocessing import Process
@@ -104,3 +103,44 @@ def process_modules(options, message, children):
                     proc.start()
                 else:
                     locals["process"](message, dryrun=options.dryrun)
+
+def update_cron(command, schedule=None, username="root", noargs=False, filename="/etc/crontab"):
+    """
+        Updates an crontab record in /etc/crontab file.
+
+        Arguments:
+            command: Command to execute
+            noargs: True if arguments will be ignored while matching commands
+            username: Username to execute command as.
+            filename: Path to crontab file
+
+        Returns True if command was found in /etc/crontab
+    """
+    matched = False
+    lines = []
+
+    if os.path.exists(filename):
+        for line in file(filename):
+            line = line.strip("\n")
+            if not matched:
+                try:
+                    c_min, c_hour, c_day, c_month, c_dayofweek, c_user, c_cmd = line.split(None, 6)
+                except ValueError:
+                    lines.append(line)
+                    continue
+                if (noargs and c_cmd.split()[0] == command.split()[0]) or c_cmd == command:
+                    matched = True
+                    if schedule:
+                        lines.append("%s %s %s" % (schedule, username, command))
+                else:
+                    lines.append(line)
+            else:
+                lines.append(line)
+
+    if not matched and schedule:
+        lines.append("%s %s %s" % (schedule, username, command))
+
+    lines = "\n".join(lines)
+    file(filename, "w").write(lines)
+
+    return matched
