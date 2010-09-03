@@ -251,10 +251,12 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.actionButton.setEnabled(False)
         if self.state.state == self.state.ALL:
             menu = QMenu(self.actionButton)
-            menu.addAction(self.state.getActionIcon(self.state.REMOVE),
-                           self.state.getActionName(self.state.REMOVE))
-            menu.addAction(self.state.getActionIcon(self.state.INSTALL),
-                           self.state.getActionName(self.state.INSTALL))
+            self.__install_action = menu.addAction(self.state.getActionIcon(self.state.INSTALL),
+                                                   self.state.getActionName(self.state.INSTALL),
+                                                   self.showBasket)
+            self.__remove_action = menu.addAction(self.state.getActionIcon(self.state.REMOVE),
+                                                  self.state.getActionName(self.state.REMOVE),
+                                                  self.showBasket)
             self.actionButton.setMenu(menu)
         else:
             self.actionButton.setMenu(QMenu())
@@ -387,7 +389,9 @@ class MainWidget(QWidget, Ui_MainWidget):
     def showBasket(self):
         waitCursor()
         self.statusUpdater.wait()
-        self.basket.show()
+        action = {self.__remove_action:self.state.REMOVE,
+                  self.__install_action:self.state.INSTALL}.get(self.sender(), None)
+        self.basket.show(action)
         restoreCursor()
 
     def initializeUpdateTypeList(self):

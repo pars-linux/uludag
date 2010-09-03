@@ -142,9 +142,10 @@ class PackageModel(QAbstractTableModel):
                     self.cached_selected.append(pkg)
         return self.cached_selected
 
-    def extraPackages(self):
+    def extraPackages(self, state = None):
+        state = self.state if not state else state
         if not self.cached_extras:
-            self.cached_extras = self.iface.getExtras(self.selectedPackages(), self.state)
+            self.cached_extras = self.iface.getExtras(self.selectedPackages(), state)
         return self.cached_extras
 
     def __packagesSize(self, packages):
@@ -158,9 +159,9 @@ class PackageModel(QAbstractTableModel):
             self.cached_selected_size = self.__packagesSize(self.selectedPackages())
         return self.cached_selected_size
 
-    def extraPackagesSize(self):
+    def extraPackagesSize(self, state = None):
         if not self.cached_extras_size < 0:
-            self.cached_extras_size = self.__packagesSize(self.extraPackages())
+            self.cached_extras_size = self.__packagesSize(self.extraPackages(state))
         return self.cached_extras_size
 
     def resetCachedInfos(self):
