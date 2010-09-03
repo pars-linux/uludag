@@ -49,6 +49,7 @@ class Talk(QtCore.QThread):
         self.password = None
         self.connector = None
         self.stream = None
+        self.online = []
 
         # Looping call for checking for shutdown request
         task.LoopingCall(self.__task_shutdown).start(0.5)
@@ -144,7 +145,14 @@ class Talk(QtCore.QThread):
         state = Offline
         if presence.getAttribute("type", "available") == "available":
             state = Online
-        self.emit(QtCore.SIGNAL("userStatusChanged(QString, int)"), QtCore.QString(presence["from"]), state)
+
+        username = str(presence["from"]).split("@")[0].lower()
+        if state == Online and username not in self.online:
+            self.online.append(username)
+        elif state == Offline and username in self.online:
+            self.online.remove(username)
+
+        self.emit(QtCore.SIGNAL("userStatusChanged(QString, int)"), QtCore.QString(username), state)
 
     def __event_message(self, message):
         """
@@ -152,7 +160,8 @@ class Talk(QtCore.QThread):
         """
         for tag in message.elements():
             if tag.name == "body":
-                self.emit(QtCore.SIGNAL("messageFetched(QString, QString)"), QtCore.QString(message["from"]), QtCore.QString(tag.__str__()))
+                username = str(message["from"]).split("@")[0].lower()
+                self.emit(QtCore.SIGNAL("messageFetched(QString, QString)"), QtCore.QString(username), QtCore.QString(tag.__str__()))
                 break
 
     def send_message(self, to, body):
