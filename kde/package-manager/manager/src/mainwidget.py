@@ -148,6 +148,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         QTimer.singleShot(1, self.initializeBasket)
 
     def initializeStatusUpdater(self):
+        self.statusUpdater.calculate_deps = not self.state.state == self.state.ALL
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
 
     def initializeBasket(self):

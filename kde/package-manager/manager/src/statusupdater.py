@@ -19,6 +19,7 @@ class StatusUpdater(QThread):
         QThread.__init__(self)
         self.model = None
         self.needsUpdate = False
+        self.calculate_deps = True
 
     def setModel(self, model):
         self.model = model
@@ -27,8 +28,11 @@ class StatusUpdater(QThread):
         packages = len(self.model.selectedPackages())
         packagesSize = humanize(self.model.selectedPackagesSize())
         try:
-            extraPackages = len(self.model.extraPackages())
-            extraPackagesSize = humanize(self.model.extraPackagesSize())
+            extraPackages = 0
+            extraPackagesSize = ''
+            if self.calculate_deps:
+                extraPackages = len(self.model.extraPackages())
+                extraPackagesSize = humanize(self.model.extraPackagesSize())
             self.emit(SIGNAL("selectedInfoChanged(int, QString, int, QString)"), packages, packagesSize, extraPackages, extraPackagesSize)
         except Exception, e:
             self.emit(SIGNAL("selectedInfoChanged(QString)"), unicode(e))
