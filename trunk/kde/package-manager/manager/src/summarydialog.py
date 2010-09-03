@@ -14,6 +14,9 @@ import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
+from PyKDE4.kdeui import KIconLoader
+from PyKDE4.kdecore import i18n
+
 from ui_summarydialog import Ui_SummaryDialog
 from ui_appitem import Ui_ApplicationItem
 
@@ -22,7 +25,6 @@ from pmutils import *
 import backend
 import localedata
 import desktopparser
-from context import *
 
 class ApplicationItem(QtGui.QListWidgetItem):
     def __init__(self, name, genericName, icon, command, parent=None):
@@ -44,14 +46,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
 
-        self.appIcon.setPixmap(
-                        KIconLoader.load((self.item.icon,
-                                          'applications-other',
-                                          'package')
-                                        ).scaled(QSize(32, 32),
-                                                 Qt.KeepAspectRatio,
-                                                Qt.SmoothTransformation)
-                              )
+        self.appIcon.setPixmap(KIconLoader().loadIcon(self.item.icon, KIconLoader.Desktop, 32))
 
         self.appName.hide()
 
