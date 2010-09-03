@@ -31,7 +31,6 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.setupUi(self)
 
         self.state = state
-
         self.initPackageList()
         self.initExtraList()
 
@@ -85,7 +84,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def filterExtras(self):
         waitCursor()
-        extraPackages = self.model.extraPackages()
+        extraPackages = self.model.extraPackages(self.__action)
         self.extraList.setPackages(extraPackages)
         self.__updateList(self.extraList, extraPackages)
         self.extraList.setVisible(bool(extraPackages))
@@ -94,7 +93,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def updateTotal(self):
         selectedSize, extraSize = self.model.selectedPackagesSize(), \
-                                  self.model.extraPackagesSize()
+                                  self.model.extraPackagesSize(self.__action)
         self.totalSize.setText("<b>%s</b>" % humanReadableSize(
                                         selectedSize + extraSize))
         downloadSize = self.model.downloadSize()
@@ -104,12 +103,12 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                                         downloadSize))
 
     def setActionButton(self):
-        self.actionButton.setText(self.state.getActionName())
-        self.actionButton.setIcon(self.state.getActionIcon())
+        self.actionButton.setText(self.state.getActionName(self.__action))
+        self.actionButton.setIcon(self.state.getActionIcon(self.__action))
 
     def setBasketLabel(self):
-        self.infoLabel.setText(self.state.getBasketInfo())
-        self.extrasLabel.setText(self.state.getBasketExtrasInfo())
+        self.infoLabel.setText(self.state.getBasketInfo(self.__action))
+        self.extrasLabel.setText(self.state.getBasketExtrasInfo(self.__action))
 
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
@@ -141,19 +140,20 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                          "the updated package(s) to take effect:"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
-        self.state.operationAction(self.model.selectedPackages())
+        self.state.operationAction(self.model.selectedPackages(), self.__action)
         self.close()
 
     def showHideDownloadInfo(self):
-        if self.state.inRemove():
+        if self.__action == self.state.REMOVE:
             self.downloadSize.hide()
             self.downloadSizeLabel.hide()
         else:
             self.downloadSize.show()
             self.downloadSizeLabel.show()
 
-    def show(self):
+    def show(self, action = None):
         waitCursor()
+        self.__action = action if action else self.state.state
         self.showHideDownloadInfo()
         self.__updateList(self.packageList, self.model.selectedPackages())
         try:

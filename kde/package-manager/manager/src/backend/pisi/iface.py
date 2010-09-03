@@ -109,6 +109,7 @@ class Iface(Singleton):
         return list(set(deps + base) - set(packages))
 
     def getRequires(self, packages):
+        packages = list(set(packages).intersection(self.getInstalledPackages()))
         revDeps = set(pisi.api.get_remove_order(packages))
         return list(set(revDeps) - set(packages))
 
