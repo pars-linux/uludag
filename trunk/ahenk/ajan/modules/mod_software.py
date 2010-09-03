@@ -48,6 +48,11 @@ def process(message, dryrun=False):
                 set_autoupdate(update_mode, update_schedule, dryrun)
         else:
             set_autoupdate("off", None, dryrun)
+    elif message.type == "command":
+        if message.command == "software packages":
+            logging.info("Software: Listing packages.")
+            packages = ",".join(pisi.api.list_installed())
+            message.reply("software packages:%s" % packages)
 
 def set_repositories(repositories_new, dryrun=False):
     repo_db =  pisi.db.repodb.RepoDB()
