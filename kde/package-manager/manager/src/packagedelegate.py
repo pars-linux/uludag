@@ -27,7 +27,7 @@ WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
 GRAY = QtGui.QColor('gray')
 BLUE = QtGui.QColor('blue')
-
+CHECK_ICON = 'task-complete'
 RECT = QRect()
 
 DETAIL_LINE_OFFSET = 36
@@ -45,7 +45,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         KIconLoader().addExtraDesktopThemes()
         self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
                                                                KIconLoader.Desktop, 32))
-        self.defaultInstalledIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', KIconLoader.Desktop, 32, KIconLoader.DefaultState, ['checkbox']))
+        self.defaultInstalledIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', KIconLoader.Desktop, 32, KIconLoader.DefaultState, [CHECK_ICON]))
         self.animatable = True
         self._max_height = ROW_HEIGHT
 
@@ -130,7 +130,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         icon = None
 
         if _icon:
-            overlay = ['checkbox'] if installed else []
+            overlay = [CHECK_ICON] if installed else []
             pix = KIconLoader().loadIcon(_icon, KIconLoader.NoGroup, 32, KIconLoader.DefaultState, overlay, '', True)
             if not pix.isNull():
                 icon = QtGui.QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
