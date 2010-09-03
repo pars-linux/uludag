@@ -15,6 +15,7 @@ from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
+from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import qApp
 
 from PyQt4.QtCore import Qt
@@ -74,7 +75,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.initializeInfoBox()
             self.initialize()
             self.updateSettings()
-            self.actionButton.setIcon(self.state.getActionIcon())
+            self.setActionButton()
             self.connectMainSignals()
 
         self.operation = OperationManager(self.state)
@@ -247,14 +248,23 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
-        self.actionButton.setText(self.state.getActionName())
+        if self.state.state == self.state.ALL:
+            menu = QMenu(self.actionButton)
+            menu.addAction(self.state.getActionIcon(self.state.REMOVE),
+                           self.state.getActionName(self.state.REMOVE))
+            menu.addAction(self.state.getActionIcon(self.state.INSTALL),
+                           self.state.getActionName(self.state.INSTALL))
+            self.actionButton.setMenu(menu)
+        else:
+            self.actionButton.setMenu(QMenu())
         self.actionButton.setIcon(self.state.getActionIcon())
+        self.actionButton.setText(self.state.getActionName())
 
     def actionStarted(self, operation):
-        #if self.state.silence:
-        #    totalPackages = len(self.state._selected_packages)
-        #    if not any(package.endswith('.pisi') for package in self.state._selected_packages):
-        #        totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
+        if self.state.silence:
+            totalPackages = len(self.state._selected_packages)
+            if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
