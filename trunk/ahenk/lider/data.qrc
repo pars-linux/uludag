@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/preferences32.png</file>
+    <file>icons/screens48.png</file>
     <file>icons/hint48.png</file>
     <file>icons/settings32.png</file>
     <file>icons/online8.png</file>
