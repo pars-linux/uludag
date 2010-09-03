@@ -308,11 +308,11 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Show Network</string>
+              <string>Network Map</string>
              </property>
              <property name="icon">
               <iconset resource="data.qrc">
-               <normaloff>:/icons/workgroup32.png</normaloff>:/icons/workgroup32.png</iconset>
+               <normaloff>:/icons/network48.png</normaloff>:/icons/network48.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -340,11 +340,11 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Policies</string>
+              <string>Utilities</string>
              </property>
              <property name="icon">
               <iconset resource="data.qrc">
-               <normaloff>:/icons/settings32.png</normaloff>:/icons/settings32.png</iconset>
+               <normaloff>:/icons/screens48.png</normaloff>:/icons/screens48.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -376,7 +376,7 @@
              </property>
              <property name="icon">
               <iconset resource="data.qrc">
-               <normaloff>:/icons/settings32.png</normaloff>:/icons/settings32.png</iconset>
+               <normaloff>:/icons/preferences32.png</normaloff>:/icons/preferences32.png</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -404,7 +404,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>Error Console</string>
+              <string>Debug Console</string>
              </property>
              <property name="icon">
               <iconset resource="data.qrc">

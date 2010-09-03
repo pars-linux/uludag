@@ -302,7 +302,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 type_: debug, info, warning, error
         """
         colors = {
-            "debug": "#303030",
+            "debug": "#505050",
             "info": "#000000",
             "warning": "#dc6e00",
             "error": "#ff0000",
