@@ -12,7 +12,7 @@
 #
 
 # Package Manager Version String
-version = "3.0.0_alpha"
+version = "3.0.0_alpha1"
 
 # PyKDE4 Imports
 from PyKDE4.kdecore import ki18n, ki18nc, KAboutData
