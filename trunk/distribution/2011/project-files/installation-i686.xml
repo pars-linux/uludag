@@ -4,7 +4,7 @@
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>JaIECgD7DE2aEL</Id>
+            <Id>EjHP5ntxbf10F</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -131,6 +131,7 @@
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
                 <SelectedPackage>mplayer</SelectedPackage>
                 <SelectedPackage>ntfsprogs</SelectedPackage>
+                <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>pardus-default-settings</SelectedPackage>
                 <SelectedPackage>partitionmanager</SelectedPackage>
                 <SelectedPackage>phonon-gstreamer</SelectedPackage>
@@ -687,6 +688,7 @@
                 <Package>openssl-devel</Package>
                 <Package>orbit2</Package>
                 <Package>ortp</Package>
+                <Package>package-manager</Package>
                 <Package>pam</Package>
                 <Package>pam-devel</Package>
                 <Package>pango</Package>
