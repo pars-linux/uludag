@@ -37,7 +37,7 @@ def handleException(exception, value, tb):
 
     @param exception: exception object
     @param value: exception message
-    @param tb: traceback log 
+    @param tb: traceback log
     """
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
