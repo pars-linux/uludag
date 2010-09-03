@@ -116,9 +116,9 @@ class Iface(Singleton):
     def getExtras(self, packages, state):
         if not packages:
             return []
-        if state == StateManager.INSTALL:
+        if state in (StateManager.INSTALL, StateManager.UPGRADE):
             return self.getDepends(packages)
-        else:
+        elif state == StateManager.REMOVE:
             return self.getRequires(packages)
 
     def getUpdateType(self, pkg):
