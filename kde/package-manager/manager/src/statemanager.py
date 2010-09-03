@@ -31,20 +31,18 @@ class StateManager(QObject):
         self.silence = False
         self._group_cache = {}
         self.iface = backend.pm.Iface()
-        self.initializePackageLists()
+        self.__groups = self.iface.getGroups()
+        self.reset()
 
     def reset(self):
         self.cached_packages = None
         self._typeCaches = {}
         self._typeFilter = 'normal'
-        # FIXME we need to re initialize whole package list
-        # after all package modification actions
-        # self.initializePackageLists()
+        self.initializePackageLists()
 
     def initializePackageLists(self):
         self.__installed_packages = self.iface.getInstalledPackages()
         self.__new_packages = self.iface.getNewPackages()
-        self.__groups = self.iface.getGroups()
         self.__all_packages = self.__installed_packages + self.__new_packages
 
     def setState(self, state):
@@ -86,23 +84,25 @@ class StateManager(QObject):
                 "System.Manager.updateRepository":i18n("Updating Repository"),
                 "System.Manager.updateAllRepositories":i18n("Updating Repository(s)")}[str(action)]
 
-    def getActionName(self):
-        return {self.INSTALL:i18n("Install Package(s)"),
-                self.REMOVE :i18n("Remove Package(s)"),
-                self.UPGRADE:i18n("Upgrade Package(s)"),
-                self.ALL    :i18n("Modify Package(s)")}[self.state]
-
     def toBe(self):
         return {self.INSTALL:i18n("installed"),
                 self.REMOVE :i18n("removed"),
                 self.UPGRADE:i18n("upgraded"),
                 self.ALL    :i18n("modified")}[self.state]
 
-    def getActionIcon(self):
+    def getActionName(self, state = None):
+        state = self.state if not state else state
+        return {self.INSTALL:i18n("Install Package(s)"),
+                self.REMOVE :i18n("Remove Package(s)"),
+                self.UPGRADE:i18n("Upgrade Package(s)"),
+                self.ALL    :i18n("Modify Package(s)")}[state]
+
+    def getActionIcon(self, state = None):
+        state = self.state if not state else state
         return {self.INSTALL:KIcon("list-add"),
                 self.REMOVE :KIcon("list-remove"),
                 self.UPGRADE:KIcon("view-refresh"),
-                self.ALL    :KIcon("list-add")}[self.state]
+                self.ALL    :KIcon("preferences-other")}[state]
 
     def getSummaryInfo(self, total):
         return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
