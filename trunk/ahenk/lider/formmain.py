@@ -422,6 +422,13 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.__log("XMPP user is offline: %s" % sender, "talk", "debug")
         self.__update_icon(sender, status)
 
+        if self.stackedWidget.currentIndex() != 0:
+            widget = self.stackedWidget.currentWidget()
+            try:
+                widget.talk_status(sender, status)
+            except AttributeError:
+                pass
+
     def __slot_main(self):
         """
             Triggered when user clicks main button
