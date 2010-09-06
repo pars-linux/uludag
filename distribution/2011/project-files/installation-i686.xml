@@ -134,8 +134,8 @@
                 <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>pardus-default-settings</SelectedPackage>
                 <SelectedPackage>partitionmanager</SelectedPackage>
-                <SelectedPackage>phonon-gstreamer</SelectedPackage>
-                <SelectedPackage>phonon-xine</SelectedPackage>
+                <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
+                <SelectedPackage>phonon-backend-xine</SelectedPackage>
                 <SelectedPackage>pinentry-qt</SelectedPackage>
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
                 <SelectedPackage>polkit-kde_1</SelectedPackage>
@@ -717,8 +717,8 @@
                 <Package>perl-XML-Parser</Package>
                 <Package>perl-libwww</Package>
                 <Package>phonon</Package>
-                <Package>phonon-gstreamer</Package>
-                <Package>phonon-xine</Package>
+                <Package>phonon-backend-gstreamer</Package>
+                <Package>phonon-backend-xine</Package>
                 <Package>php-cli</Package>
                 <Package>php-common</Package>
                 <Package>piksemel</Package>
