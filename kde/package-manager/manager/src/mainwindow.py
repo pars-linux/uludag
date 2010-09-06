@@ -99,8 +99,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
         KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
+        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
         self.initializeOperationActions()
-        self.setupGUI(KXmlGuiWindow.Default, "/usr/share/kde4/apps/package-manager/data/packagemanagerui.rc")
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
@@ -135,6 +135,9 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
                            self.sw.state.UPGRADE:(3, self.showUpgradeAction)}
 
         self.showInstallAction.setChecked(True)
+
+        # Little time left for the new ui
+        # self.menuBar().setVisible(False)
 
     def statusWaiting(self):
         self.sw.busyIndicator.setMovie(self.wheelMovie)
