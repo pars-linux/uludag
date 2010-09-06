@@ -50,8 +50,8 @@ def maker(op, project_file):
                 if project.package_collections:
                     for component in missing_components:
                         for collection in project.package_collections:
-                            if component in collection.packageSelection.selectedComponents:
-                                collection.packageSelection.selectedComponents.remove(component)
+                            if component in collection.packages.selectedComponents:
+                                collection.packages.selectedComponents.remove(component)
                 else:
                     for component in missing_components:
                         if component in project.selected_components:
@@ -62,8 +62,8 @@ def maker(op, project_file):
                 if project.package_collections:
                     for package in missing_packages:
                         for collection in project.package_collections:
-                            if package in collection.packageSelection.selectedPackages:
-                                collection.packageSelection.selectedPackages.remove(package)
+                            if package in collection.packages.selectedPackages:
+                                collection.packages.selectedPackages.remove(package)
                 else:
                     for package in missing_packages:
                         if package in project.selected_packages:
