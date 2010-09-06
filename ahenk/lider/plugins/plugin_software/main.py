@@ -72,11 +72,19 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        command, reply = message.split(":")
-        print command
+        try:
+            command, reply = message.split(":", 1)
+        except ValueError:
+            return
         if command == "software packages":
             packages = reply.split(",")
             self.textPackages.setPlainText("\n".join(packages))
+
+    def talk_status(self, sender, status):
+        """
+            Main window calls this method when an XMPP status is changed.
+        """
+        pass
 
     def __slot_packages(self):
         """
