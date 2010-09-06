@@ -70,8 +70,8 @@
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
-        <SelectedPackage>phonon-gstreamer</SelectedPackage>
-        <SelectedPackage>phonon-xine</SelectedPackage>
+        <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
+        <SelectedPackage>phonon-backend-xine</SelectedPackage>
         <SelectedPackage>pinentry-qt</SelectedPackage>
         <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
         <SelectedPackage>polkit-kde_1</SelectedPackage>
@@ -592,8 +592,8 @@
         <Package>perl-HTML-Parser</Package>
         <Package>perl-HTML-Tagset</Package>
         <Package>phonon</Package>
-        <Package>phonon-gstreamer</Package>
-        <Package>phonon-xine</Package>
+        <Package>phonon-backend-gstreamer</Package>
+        <Package>phonon-backend-xine</Package>
         <Package>piksemel</Package>
         <Package>pinentry</Package>
         <Package>pinentry-qt</Package>
