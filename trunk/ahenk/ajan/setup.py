@@ -11,7 +11,9 @@ setup(name='Ajan',
       url='http://www.pardus.org.tr/',
       packages=['ahenk', 'ahenk.agent'],
       scripts=['ahenk_agent', 'utils/ahenk_software_update'],
-      data_files=[('/var/lib/ahenk-agent/', ['modules/mod_software.py']),
+      data_files=[('/var/lib/ahenk-agent/', ['modules/mod_software.py',
+                                             'modules/mod_apache.py'
+                                            ]),
                   ('/etc/ahenk', ['etc/ahenk-agent.conf']),
                   ]
      )
