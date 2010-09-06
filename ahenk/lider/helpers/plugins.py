@@ -100,3 +100,9 @@ class PluginWidget(object):
             Main window calls this method when an XMPP message is received.
         """
         pass
+
+    def talk_status(self, sender, status):
+        """
+            Main window calls this method when an XMPP status is changed.
+        """
+        pass
