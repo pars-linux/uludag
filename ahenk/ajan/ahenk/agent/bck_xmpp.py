@@ -34,6 +34,8 @@ def event_session_start(stream):
     stream.addObserver('/message', event_message)
     stream.addObserver('/presence', event_presence)
 
+    logging.debug("Logged in as %s@%s" % (OPTIONS.username, OPTIONS.domain))
+
     prs = xish.domish.Element(('jabber:client','presence'))
     prs.addElement('status').addContent('Online')
     stream.send(prs)
@@ -72,6 +74,7 @@ def event_message(message):
     """
     for tag in message.elements():
         if tag.name == "body":
+            logging.debug("Message received from %s" % message["from"])
             Q_IN.put({"type": "command", "from": message["from"], "command": unicode(tag.__str__())})
             break
 
