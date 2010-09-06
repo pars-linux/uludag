@@ -147,6 +147,8 @@ class Talk(QtCore.QThread):
             state = Online
 
         username = str(presence["from"]).split("@")[0].lower()
+        if username == self.username:
+            return
         if state == Online and username not in self.online:
             self.online.append(username)
         elif state == Offline and username in self.online:
