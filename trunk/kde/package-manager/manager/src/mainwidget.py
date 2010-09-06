@@ -13,7 +13,9 @@
 
 from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
+from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QFontMetrics
 from PyQt4.QtGui import QWidget
 from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import qApp
@@ -67,12 +69,10 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         if not silence:
             # in silence mode we dont need these
-            self.searchButton.setIcon(KIcon("edit-find"))
             self.statusUpdater = StatusUpdater()
             self.basket = BasketDialog(self.state)
-            self.searchUsed = False
+            self.initializeSearchButton()
             self.initializeUpdateTypeList()
-            self.initializeInfoBox()
             self.initialize()
             self.updateSettings()
             self.setActionButton()
@@ -84,28 +84,18 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.connectOperationSignals()
 
-    def initializeInfoBox(self):
-        # An info label to show a proper information,
-        # if there is no updates available.
-        self.info = QLabel(self)
-        self.info.setText(i18n("All Packages are up to date"))
-        self.info.setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.info.setStyleSheet("background-color:rgba(0,0,0,220); \
-                                 color:white; \
-                                 border: 1px solid white; \
-                                 border-top-left-radius: 10px; \
-                                 border-top-right-radius: 10px; \
-                                ")
-        self.info.resize(self.size())
-        self.info.hide()
+        self.__ui_ready = True
 
-    #def resizeEvent(self, event):
-        # info label should be resized automatically,
-        # if the mainwindow resized.
-        #width = self.width()
-        #height = 40
-        #self.info.resize(QSize(width, height))
-        #self.info.move(0,self.height()-height)#self.width() / 2 - 170, self.height() / 2 - 40)
+    def initializeSearchButton(self):
+        self.searchButton = QPushButton(i18n('Search'), self.searchLine)
+        self.searchButton.setIcon(KIcon("edit-find"))
+        self.searchButton.setMaximumWidth(QFontMetrics(qApp.font()).width(i18n('Search')) + 32 )
+        self.searchUsed = False
+
+    def resizeEvent(self, event):
+        if self.__ui_ready:
+            self.searchButton.resize(self.searchButton.width(), self.searchLine.height() - 4)
+            self.searchButton.move(self.searchLine.width() - self.searchButton.width() - 22, 2)
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
@@ -200,15 +190,6 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.typeCombo.hide()
             self.state._typeFilter = 'normal'
         self.groupFilter()
-
-        # Show the info label if there are updates available
-        # otherwise hide it.
-        """
-        if self.state.inUpgrade() and self.groupList.count() == 0:
-            self.info.show()
-        else:
-            self.info.hide()
-        """
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)

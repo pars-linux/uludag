@@ -52,44 +52,18 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="searchButton">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="whatsThis">
-        <string>Search Button</string>
-       </property>
-       <property name="text">
-        <string>Search</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLabel" name="label">
+        <widget class="QToolButton" name="toolButton">
          <property name="text">
-          <string>Sort by :</string>
+          <string>...</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="sortCombo">
-         <item>
-          <property name="text">
-           <string>Popularity</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Download Size</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>Install Size</string>
-          </property>
-         </item>
+         <property name="autoRaise">
+          <bool>false</bool>
+         </property>
+         <property name="arrowType">
+          <enum>Qt::NoArrow</enum>
+         </property>
         </widget>
        </item>
       </layout>
