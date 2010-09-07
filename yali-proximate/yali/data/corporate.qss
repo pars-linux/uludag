@@ -1,12 +1,15 @@
 QWidget#Yali {
-       background-image:url(':/images/background.png');
-       background-repeat: no-repeat;
-       background-position: left top;
-       background-color: #628577;
-       alternate-background-color: gray;
-       selection-background-color: gray;
+      background-image: url(:/gui/pics/bg.png);
+      /*background-repeat: no-repeat;
+      background-position: left top;*/
+      /*background-color: #642437;*/
+      /*alternate-background-color: gray;
+      selection-background-color: gray;*/
+   
+      background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.572, y2:0.688, stop:0 rgba(75, 114, 137, 255), stop:1 rgba(29, 42, 51, 255));
+      padding: 0px;
+      margin: 0px;
 }
-
 QScrollArea#scrollArea {
        background-color: rgba(255, 255, 255, 0);
 }
@@ -25,17 +28,7 @@ QStackedWidget#mainStack {
 */
 
 QTextBrowser#helpContent {
-     border-style: solid;
-     border-width: 2px;
-     border-top-left-radius:12px;
-     border-bottom-left-radius:12px;
-     border-color: #628577;
-     border-right:none;
-     background-color: rgba(255,255,255,30);
-     background-repeat:none;
-     padding:5px;
-     padding-left:12px;
-     padding-top:12px;
+     background-color: rgba(255,255,255,0);
      font: 9px;
 }
 
@@ -54,40 +47,43 @@ QLabel {
 QGroupBox {
         color: #eeeeee;
 }
+///////////////////////////
+QPushButton{
+	padding: 3px 10px 3px 10px;
+	color: white;
+	border:0px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(120, 146, 172, 255), stop:0.0155729 rgba(99, 141, 164, 255), stop:0.538376 rgba(49, 84, 106, 255), stop:1 rgba(51, 72, 91, 255))
 
-QPushButton {
-        color: #628577;
-        border-image: url(:/images/button100x32.png) 3 10 3 10;
-        border-top: 3px transparent;
-        border-bottom: 3px transparent;
-        border-right: 10px transparent;
-        border-left: 10px transparent;
-        icon-size: 18px;
-        height: 18px;
+ /*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(122, 44, 67, 255), stop:0.521739 rgba(182, 103, 126, 255), stop:0.527174 rgba(205, 130, 152, 255), stop:0.983696 rgba(234, 179, 195, 255), stop:1 rgba(255, 200, 216, 255))*/
 }
 
-QPushButton::hover {
-        color: #628577;
-        border-image: url(:/images/button-hover100x32.png) 3 10 3 10;
-        border-top: 3px transparent;
-        border-bottom: 3px transparent;
-        border-right: 10px transparent;
-        border-left: 10px transparent;
-        icon-size: 18px;
-        height: 18px;
+QPushButton::flat:hover{
+	border:1px solid  rgba(34, 49, 60, 100);/* rgba(175, 111, 130, 150);*/
+	border-radius:2px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
+
+
+/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(120, 146, 172, 255), stop:0.0155729 rgba(99, 141, 164, 255), stop:0.538376 rgba(49, 84, 106, 255), stop:1 rgba(51, 72, 91, 255))*/
+
+/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(122, 44, 67, 255), stop:0.521739 rgba(182, 103, 126, 255), stop:0.527174 rgba(205, 130, 152, 255), stop:0.983696 rgba(234, 179, 195, 255), stop:1 rgba(255, 200, 216, 255))*/
 }
 
-QPushButton::pressed {
-        color: #628577;
-        border-image: url(:/images/button-pressed100x32.png) 3 10 3 10;
-        border-top: 3px transparent;
-        border-bottom: 3px transparent;
-        border-right: 10px transparent;
-        border-left: 10px transparent;
-        icon-size: 18px;
-        height: 18px;
+QPushButton::flat{
+	border:1px solid  rgba(34, 49, 60, 100);
+	border-radius:2px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 150), stop:0.398093 rgba(44, 62, 79, 255), stop:0.521739 rgba(36, 61, 76, 255), stop:0.531585 rgba(40, 68, 86, 255), stop:0.983696 rgba(73, 109, 129, 255), stop:1 rgba(89, 108, 127, 255))
+ 
+/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(99, 141, 164, 255), stop:1 rgba(120, 146, 172, 255));*/
 }
 
+QPushButton::flat:pressed{
+	border:1px solid  rgba(34, 49, 60, 100);
+	border-radius:2px;
+	padding: 3px 10px 3px 10px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
+ /*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(71, 25, 39, 255), stop:0.521739 rgba(132, 74, 91, 255), stop:0.527174 rgba(135, 85, 100, 255), stop:0.983696 rgba(164, 125, 137, 255), stop:1 rgba(200, 157, 169, 255));*/
+}
+////////////////////////////////
 QRadioButton {
     color: white;
     spacing: 5px;
@@ -345,6 +341,24 @@ QTreeView::branch:open:has-children:has-siblings  {
          border-image: none;
          image: url(:/images/treeview-branch-open.png);
 }
+
+ /* the subcontrols below are used only in the MenuButtonPopup mode */
+ QToolButton::menu-button {
+     border: 1px solid #bcbbbb;
+     border-top-right-radius: 6px;
+     border-bottom-right-radius: 6px;
+     /* 16px width + 4px for border = 20px allocated above */
+     width: 16px;
+ }
+
+QToolButton::menu-arrow {
+     image: url(:/images/treeview-branch-open.png);
+ }
+
+ QToolButton::menu-arrow:open {
+     top: 1px; left: 1px; /* shift it a bit */
+ }
+
 
 QHeaderView::section {
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
