@@ -63,6 +63,7 @@ class PluginWidget(object):
         self.item = None
         self.directory = None
         self.talk = None
+        self.policy = None
 
     def set_item(self, item):
         """
