@@ -3,6 +3,7 @@
 
 # Standard modules
 import logging
+import simplejson
 import socket
 
 # PiSi
@@ -18,8 +19,9 @@ def process(message, dryrun=False):
             if "apache" in pisi.api.list_installed():
                 link = comar.Link()
                 if str(link.System.Service["apache"].info()[2]) in ("started", "on"):
-                    message.reply("apache info:http://%s/" % socket.gethostname())
+                    args = "http://%s/" % socket.gethostname()
                 else:
-                    message.reply("apache info:yes")
+                    args = True
             else:
-                message.reply("apache info:no")
+                args = False
+            message.reply("apache info:%s" % simplejson.dumps(args))
