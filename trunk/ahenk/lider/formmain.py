@@ -580,7 +580,24 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks apply button.
         """
-        pass
+        if self.stackedWidget.currentIndex() != 0:
+            widget = self.stackedWidget.currentWidget()
+            old_policy = widget.policy
+            try:
+                new_policy = widget.policy
+                new_policy.update(widget.dump_policy())
+            except AttributeError:
+                return
+            try:
+                self.directory.modify(self.item.dn, old_policy, new_policy)
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                # TODO: Disconnect
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify node.")
+                return
 
     def __slot_reset(self):
         """
