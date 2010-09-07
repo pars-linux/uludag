@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/ok32.png</file>
+    <file>icons/star32.png</file>
     <file>icons/apply32.png</file>
     <file>icons/reset32.png</file>
     <file>icons/internet128.png</file>
