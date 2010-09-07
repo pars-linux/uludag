@@ -14,6 +14,7 @@ from plugins.plugin_software.ui_software import Ui_widgetSoftware
 
 # Helper modules
 from helpers import plugins
+from helpers import wrappers
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
@@ -32,7 +33,17 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
 
         self.setupUi(self)
 
+        # Fine tune UI
+        self.listRepositories.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+
+        # Popup for new items
+        self.menu = wrappers.Menu(self)
+        self.menu.newAction("Add Item", wrappers.Icon("add48"), self.__slot_repo_add)
+        self.menu.newAction("Remove Item", wrappers.Icon("remove48"), self.__slot_repo_remove)
+
+        # UI events
         self.connect(self.pushPackages, QtCore.SIGNAL("clicked()"), self.__slot_packages)
+        self.connect(self.listRepositories, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_list_menu)
 
     def showEvent(self, event):
         """
@@ -53,6 +64,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             Main window calls this method when policy is fetched from directory.
             Not required for global widgets.
         """
+        repositories = policy.get("softwareRepositories", [])
+        self.listRepositories.clear()
+        for repo_url in repositories:
+            self.__add_repo_item(repo_url, False, True)
+        """
         text = [
             "softwareRepositories = %s" % policy.get("softwareRepositories", ""),
             "softwareUpdateSchedule = %s" % policy.get("softwareUpdateSchedule", ""),
@@ -60,6 +76,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         ]
         text = "\n".join(text)
         self.textPolicy.setPlainText(text)
+        """
 
     def dump_policy(self):
         """
@@ -93,3 +110,47 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         if self.item and self.talk:
             jid = "%s@%s" % (self.item.name, self.talk.domain)
             self.talk.send_message(jid, "software packages")
+
+    def __slot_list_menu(self, pos):
+        """
+            Triggered when user right clicks a repo item.
+        """
+        #if not self.listRepositories.currentItem():
+        #    pass
+        self.menu.exec_(self.listRepositories.mapToGlobal(pos))
+
+    def __slot_repo_add(self):
+        """
+            Triggered when user wants to add a new repository.
+        """
+        repo_url, ok = QtGui.QInputDialog.getText(self, "Add Repository", "URL:", QtGui.QLineEdit.Normal, "")
+        if ok:
+            self.__add_repo_item(repo_url, False, True)
+
+    def __slot_repo_remove(self):
+        """
+            Triggered when user wants to remove a repository.
+        """
+        item = self.listRepositories.currentItem()
+        if item:
+            self.listRepositories.takeItem(self.listRepositories.currentRow())
+
+    def __add_repo_item(self, url, secure=False, checked=False):
+        """
+            Adds a new item to repository list.
+
+            Arguments:
+                url: Repository URL
+                secure: if repository is signed
+                checked: if repository is enabled
+        """
+        item = QtGui.QListWidgetItem(self.listRepositories)
+        if secure:
+            item.setIcon(wrappers.Icon("locked48"))
+        else:
+            item.setIcon(wrappers.Icon("unlocked48"))
+        if checked:
+            item.setCheckState(QtCore.Qt.Checked)
+        else:
+            item.setCheckState(QtCore.Qt.UnChecked)
+        item.setText(url)
