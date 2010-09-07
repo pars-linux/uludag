@@ -219,3 +219,22 @@ class Directory:
             except ldap.LDAPError:
                 raise DirectoryConnectionError
             raise DirectoryError
+
+    def modify(self, dn, old, new):
+        """
+            Modifies attributes of a node.
+
+            Arguments:
+                dn: Distinguished name
+                old: Old attributes
+                new: New attributes
+        """
+        try:
+            ldif = ldap.modlist.modifyModlist(old, new)
+            self.conn.modify_s(dn, ldif)
+        except ldap.LDAPError, e:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
