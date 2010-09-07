@@ -42,7 +42,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         self.menu.newAction("Remove Item", wrappers.Icon("remove48"), self.__slot_repo_remove)
 
         # UI events
-        self.connect(self.pushPackages, QtCore.SIGNAL("clicked()"), self.__slot_packages)
         self.connect(self.listRepositories, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_list_menu)
 
     def showEvent(self, event):
@@ -64,19 +63,42 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             Main window calls this method when policy is fetched from directory.
             Not required for global widgets.
         """
+        # Repositories
         repositories = policy.get("softwareRepositories", [])
         self.listRepositories.clear()
         for repo_url in repositories:
             self.__add_repo_item(repo_url, False, True)
-        """
-        text = [
-            "softwareRepositories = %s" % policy.get("softwareRepositories", ""),
-            "softwareUpdateSchedule = %s" % policy.get("softwareUpdateSchedule", ""),
-            "softwareUpdateMode = %s" % policy.get("softwareUpdateMode", "off"),
+        # Auto update
+        update_mode = policy.get("softwareUpdateMode", ["off"])[0]
+        if update_mode in ["security", "full"]:
+            self.groupUpdate.setChecked(True)
+            if update_mode == "security":
+                self.checkSecurity.setCheckState(QtCore.Qt.Checked)
+            else:
+                self.checkSecurity.setCheckState(QtCore.Qt.Unchecked)
+        else:
+            self.checkSecurity.setCheckState(QtCore.Qt.Unchecked)
+            self.groupUpdate.setChecked(False)
+        # Schedule
+        day_widgets = [
+            self.checkMonday,
+            self.checkTuesday,
+            self.checkWednesday,
+            self.checkThursday,
+            self.checkFriday,
+            self.checkSaturday,
+            self.checkSunday
         ]
-        text = "\n".join(text)
-        self.textPolicy.setPlainText(text)
-        """
+        for widget in day_widgets:
+            widget.setCheckState(QtCore.Qt.Unchecked)
+
+        schedule = policy.get("softwareUpdateSchedule", [""])[0]
+        c_hour, c_min, c_days = self.__parse_cron(schedule)
+
+        self.timeUpdate.setTime(QtCore.QTime(c_hour, c_min))
+
+        for day in c_days:
+            day_widgets[day].setCheckState(QtCore.Qt.Checked)
 
     def dump_policy(self):
         """
@@ -93,23 +115,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             command, reply = message.split(":", 1)
         except ValueError:
             return
-        if command == "software packages":
-            packages = reply.split(",")
-            self.textPackages.setPlainText("\n".join(packages))
 
     def talk_status(self, sender, status):
         """
             Main window calls this method when an XMPP status is changed.
         """
         pass
-
-    def __slot_packages(self):
-        """
-            Triggered when user clicks 'list packages' button.
-        """
-        if self.item and self.talk:
-            jid = "%s@%s" % (self.item.name, self.talk.domain)
-            self.talk.send_message(jid, "software packages")
 
     def __slot_list_menu(self, pos):
         """
@@ -154,3 +165,37 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         else:
             item.setCheckState(QtCore.Qt.UnChecked)
         item.setText(url)
+
+    def __parse_cron(self, schedule):
+        """
+            Parses a cron date string.
+
+            Arguments:
+                schedule: CRON date
+            Returns:
+                (hour, minute, [days])
+        """
+        try:
+            c_min, c_hour, c_day, c_month, c_dayofweek = schedule.split()
+            c_min = int(c_min)
+            c_hour = int(c_hour)
+        except ValueError:
+            return (0, 0, [])
+        if c_dayofweek == "*":
+            return (c_hour, c_min, [x for x in range(7)])
+        else:
+            days = []
+            for day in c_dayofweek.split(","):
+                if "-" in day:
+                    try:
+                        day = int(day)
+                    except ValueError:
+                        return (0, 0, [])
+                    days.append(day)
+                else:
+                    try:
+                        day = int(day)
+                    except ValueError:
+                        return (0, 0, [])
+                    days.append(day)
+            return (c_hour, c_min, days)
