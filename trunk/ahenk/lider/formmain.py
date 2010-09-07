@@ -81,6 +81,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
+        self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
+        self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
 
         # Initialize "talk" backend
         self.talk.start()
@@ -195,6 +197,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             else:
                 self.labelPlugin.setText("Lider")
                 self.labelPluginDesc.setText("")
+            # Hide button box
+            self.frameButtons.hide()
         else:
             widget = self.stackedWidget.currentWidget()
             # Disable unnecessary buttons
@@ -206,6 +210,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.pixmapPlugin.setPixmap(widget.windowIcon().pixmap(48))
             self.labelPlugin.setText(widget.windowTitle())
             self.labelPluginDesc.setText(widget.toolTip())
+            # Show button box
+            self.frameButtons.show()
 
     def __load_plugins(self):
         """
@@ -552,6 +558,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if widget.get_type() == plugins.TYPE_SINGLE:
             self.policy = self.__load_policy()
             if self.policy != None:
+                widget.policy = self.policy
                 try:
                     widget.load_policy(self.policy)
                 except AttributeError:
@@ -568,3 +575,21 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.textLog.show()
         else:
             self.textLog.hide()
+
+    def __slot_apply(self):
+        """
+            Triggered when user clicks apply button.
+        """
+        pass
+
+    def __slot_reset(self):
+        """
+            Triggered when user clicks reset button.
+        """
+        if self.stackedWidget.currentIndex() != 0:
+            widget = self.stackedWidget.currentWidget()
+            if widget.policy != None:
+                try:
+                    widget.load_policy(widget.policy)
+                except AttributeError:
+                    pass
