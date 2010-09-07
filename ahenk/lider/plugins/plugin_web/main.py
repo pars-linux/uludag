@@ -5,6 +5,9 @@
     Web browser module
 """
 
+# Standard modules
+import simplejson
+
 # Qt4 modules
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -74,12 +77,13 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         try:
             command, reply = message.split(":", 1)
-        except ValueError:
+            reply = simplejson.loads(reply)
+        except (ValueError, simplejson.JSONDecodeError):
             return
         if command == "apache info":
-            if reply == "no":
+            if reply == False:
                 self.webView.setHtml("Web server is not installed.")
-            elif reply == "yes":
+            elif reply == True:
                 self.webView.setHtml("Web server is installed but not running.")
             else:
                 self.webView.setUrl(QtCore.QUrl(reply))
