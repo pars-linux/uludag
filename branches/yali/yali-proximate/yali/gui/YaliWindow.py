@@ -63,9 +63,6 @@ class Widget(QtGui.QWidget):
         # move one step at a time
         self.stepIncrement = 1
 
-        # Show help content by default
-        self.ui.toggleHelp.setText(_("Hide Help"))
-
         # ToolButton Popup Menu
         self.popupMenu = QtGui.QMenu()
         self.shutDownAction = self.popupMenu.addAction(QtGui.QIcon(QtGui.QPixmap(":/images/system-shutdown.png")), _("Turn Off Computer"))
@@ -180,10 +177,8 @@ class Widget(QtGui.QWidget):
     def slotToggleHelp(self):
         if self.ui.helpContent.isVisible():
             self.ui.helpContent.hide()
-            self.ui.toggleHelp.setText(_("Show Help"))
         else:
             self.ui.helpContent.show()
-            self.ui.toggleHelp.setText(_("Hide Help"))
         _w = self.ui.mainStack.currentWidget()
         _w.update()
 
