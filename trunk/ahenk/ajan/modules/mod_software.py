@@ -3,6 +3,7 @@
 
 # Standard modules
 import logging
+import simplejson
 
 # PiSi
 import pisi
@@ -51,7 +52,7 @@ def process(message, dryrun=False):
     elif message.type == "command":
         if message.command == "software packages":
             logging.info("Software: Listing packages.")
-            packages = ",".join(pisi.api.list_installed())
+            packages = simplejson.dumps(pisi.api.list_installed())
             message.reply("software packages:%s" % packages)
 
 def set_repositories(repositories_new, dryrun=False):
