@@ -83,6 +83,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
         self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
+        self.connect(self.pushOK, QtCore.SIGNAL("clicked()"), self.__slot_ok)
 
         # Initialize "talk" backend
         self.talk.start()
@@ -576,9 +577,16 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         else:
             self.textLog.hide()
 
+    def __slot_ok(self):
+        """
+            Triggered when user clicks 'save & close' button.
+        """
+        self.__slot_apply()
+        self.__slot_main()
+
     def __slot_apply(self):
         """
-            Triggered when user clicks apply button.
+            Triggered when user clicks 'save' button.
         """
         if self.stackedWidget.currentIndex() != 0:
             widget = self.stackedWidget.currentWidget()
