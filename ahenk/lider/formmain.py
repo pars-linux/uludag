@@ -598,6 +598,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify node.")
                 return
+            widget.policy = new_policy
 
     def __slot_reset(self):
         """
