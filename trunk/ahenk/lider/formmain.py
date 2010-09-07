@@ -592,8 +592,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             widget = self.stackedWidget.currentWidget()
             old_policy = widget.policy
             try:
-                new_policy = widget.policy
-                new_policy.update(widget.dump_policy())
+                new_policy = widget.policy.copy()
+                for key, value in widget.dump_policy().iteritems():
+                    if key == "objectClass":
+                        new_policy[key].extend(value)
+                    else:
+                        new_policy[key] = value
             except AttributeError:
                 return
             try:
