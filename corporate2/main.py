@@ -33,6 +33,9 @@ def buildPackages():
     qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
     queue = copy.copy(qmgr.workQueue)
 
+    # We'll set home variable just after buidl process to make revdep work right
+    homeDir = os.environ['HOME']
+
     packageList = []
     deltaPackageList = []
     isopackages = {}
@@ -192,6 +195,7 @@ def buildPackages():
 
         finally:
             pisi.close()
+            os.environ['HOME'] = homeDir
 
     logger.raw("QUEUE")
     logger.info("*** Wait Queue: %s" % (qmgr.waitQueue))
