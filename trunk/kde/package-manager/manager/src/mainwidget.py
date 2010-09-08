@@ -11,47 +11,47 @@
 # Please read the COPYING file.
 #
 
+from PyQt4.QtGui import qApp
+from PyQt4.QtGui import QMenu
+from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QWidget
 from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QPushButton
-from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QToolButton
 from PyQt4.QtGui import QFontMetrics
-from PyQt4.QtGui import QWidget
-from PyQt4.QtGui import QMenu
-from PyQt4.QtGui import qApp
 
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QSize
+from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QMutex
-from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QRegExp
-from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import QVariant
 
 from PyKDE4.kdeui import KIcon
 from PyKDE4.kdeui import KIconLoader
 from PyKDE4.kdeui import KNotification
+
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdecore import KComponentData
 
-from context import _time
-
 from ui_mainwidget_v3 import Ui_MainWidget
+
+from config import PMConfig
+from pmutils import waitCursor
+from pmutils import restoreCursor
 
 from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagemodel import GroupRole
-from packagedelegate import PackageDelegate
-from progressdialog import ProgressDialog
 from statemanager import StateManager
-from summarydialog import SummaryDialog
-from operationmanager import OperationManager
 from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
-
-import config
-from pmutils import waitCursor
-from pmutils import restoreCursor
+from summarydialog import SummaryDialog
+from progressdialog import ProgressDialog
+from packagedelegate import PackageDelegate
+from operationmanager import OperationManager
 
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):
@@ -79,7 +79,6 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.initialize()
             self.updateSettings()
             self.setActionButton()
-            self.connectMainSignals()
 
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
@@ -107,7 +106,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
         self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
-        self.connect(self.stateCombo, SIGNAL("activated(int)"), self.switchState)
+        self.connect(self.stateTab, SIGNAL("currentChanged(int)"), self.switchState)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.packageList.select_all, SIGNAL("clicked(bool)"), self.toggleSelectAll)
@@ -160,7 +159,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
     def updateSettings(self):
-        self.packageList.showComponents = config.PMConfig().showComponents()
+        self.packageList.showComponents = PMConfig().showComponents()
         self.packageList.setFocus()
 
     def searchLineChanged(self, text):
@@ -331,7 +330,7 @@ class MainWidget(QWidget, Ui_MainWidget):
     def switchState(self, state, action=True):
         self.searchLine.clear()
         self._states[state][1].setChecked(True)
-        self.stateCombo.setCurrentIndex(self._states[state][0])
+        self.stateTab.setCurrentIndex(self._states[state][0])
         self.lastState = self.state.state
         self.state.setState(state)
         self._selectedGroups = []
