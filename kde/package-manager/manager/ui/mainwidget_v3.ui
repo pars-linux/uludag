@@ -14,10 +14,80 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>1</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QTabWidget" name="stateTab">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>26</height>
+        </size>
+       </property>
+       <property name="tabShape">
+        <enum>QTabWidget::Rounded</enum>
+       </property>
+       <property name="currentIndex">
+        <number>-1</number>
+       </property>
+       <property name="documentMode">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="menuButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="popupMode">
+        <enum>QToolButton::InstantPopup</enum>
+       </property>
+       <property name="autoRaise">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
-      <widget class="QComboBox" name="stateCombo"/>
+      <widget class="KLineEdit" name="searchLine">
+       <property name="whatsThis">
+        <string>Search Bar</string>
+       </property>
+       <property name="clickMessage">
+        <string>Click to search</string>
+       </property>
+       <property name="showClearButton" stdset="0">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QComboBox" name="typeCombo">
@@ -38,39 +108,9 @@
        </property>
       </widget>
      </item>
-     <item>
-      <widget class="KLineEdit" name="searchLine">
-       <property name="whatsThis">
-        <string>Search Bar</string>
-       </property>
-       <property name="clickMessage">
-        <string>Click to search</string>
-       </property>
-       <property name="showClearButton" stdset="0">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QToolButton" name="toolButton">
-         <property name="text">
-          <string>...</string>
-         </property>
-         <property name="autoRaise">
-          <bool>false</bool>
-         </property>
-         <property name="arrowType">
-          <enum>Qt::NoArrow</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
     </layout>
    </item>
-   <item row="1" column="0">
+   <item row="2" column="0">
     <widget class="GroupList" name="groupList">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
@@ -95,7 +135,7 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="1">
+   <item row="2" column="1">
     <widget class="PackageView" name="packageList">
      <property name="minimumSize">
       <size>
@@ -153,19 +193,13 @@
      </attribute>
     </widget>
    </item>
-   <item row="2" column="0" colspan="2">
+   <item row="3" column="0" colspan="2">
     <widget class="QWidget" name="actions" native="true">
      <layout class="QGridLayout" name="gridLayout">
-      <property name="leftMargin">
-       <number>4</number>
-      </property>
-      <property name="topMargin">
+      <property name="verticalSpacing">
        <number>0</number>
       </property>
-      <property name="rightMargin">
-       <number>4</number>
-      </property>
-      <property name="bottomMargin">
+      <property name="margin">
        <number>0</number>
       </property>
       <item row="0" column="0">
@@ -178,14 +212,14 @@
         </property>
         <property name="minimumSize">
          <size>
-          <width>24</width>
-          <height>24</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="maximumSize">
          <size>
-          <width>24</width>
-          <height>24</height>
+          <width>22</width>
+          <height>22</height>
          </size>
         </property>
         <property name="text">
@@ -196,7 +230,7 @@
       <item row="0" column="1">
        <widget class="KSqueezedTextLabel" name="statusLabel">
         <property name="scaledContents">
-         <bool>true</bool>
+         <bool>false</bool>
         </property>
         <property name="indent">
          <number>4</number>

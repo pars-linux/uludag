@@ -12,7 +12,9 @@
 #
 
 from PyQt4 import QtGui
+from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QWidget
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
@@ -39,7 +41,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
 
         self.setCentralWidget(MainWidget(self))
-        self.sw = self.centralWidget()
+        self.cw = self.centralWidget()
 
         self.settingsDialog = SettingsDialog(self)
 
@@ -49,26 +51,27 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connectMainSignals()
 
     def connectMainSignals(self):
-        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.sw.initialize)
-        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.sw.updateSettings)
+        self.cw.connectMainSignals()
+        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.cw.initialize)
+        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.cw.updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
-        self.connect(self.sw.state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        self.connect(self.sw, SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
+        self.connect(self.cw.state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
+        self.connect(self.cw, SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
-        self.connect(self.sw.operation, SIGNAL("finished(QString)"), self.trayAction)
-        self.connect(self.sw.operation, SIGNAL("finished(QString)"), self.tray.stop)
-        self.connect(self.sw.operation, SIGNAL("operationCancelled()"), self.tray.stop)
-        self.connect(self.sw.operation, SIGNAL("started(QString)"), self.tray.animate)
+        self.connect(self.cw.operation, SIGNAL("finished(QString)"), self.trayAction)
+        self.connect(self.cw.operation, SIGNAL("finished(QString)"), self.tray.stop)
+        self.connect(self.cw.operation, SIGNAL("operationCancelled()"), self.tray.stop)
+        self.connect(self.cw.operation, SIGNAL("started(QString)"), self.tray.animate)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
 
-        self.sw.switchState(StateManager.UPGRADE, action=False)
-        self.sw.initialize()
+        self.cw.switchState(StateManager.UPGRADE, action=False)
+        self.cw.initialize()
 
         KApplication.kApplication().updateUserTimestamp()
 
@@ -84,22 +87,22 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
-        sb = self.statusBar()
-        sb.addPermanentWidget(self.sw.actions, 1)
+        self.statusBar().addPermanentWidget(self.cw.actions, 1)
+        self.statusBar().show()
 
         self.wheelMovie = QtGui.QMovie(self)
         self.updateStatusBar('')
         self.wheelMovie.setFileName(":/data/wheel.mng")
         self.wheelMovie.start()
 
-        self.connect(self.sw, SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
-        self.connect(self.sw, SIGNAL("updatingStatus()"), self.statusWaiting)
+        self.connect(self.cw, SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
+        self.connect(self.cw, SIGNAL("updatingStatus()"), self.statusWaiting)
 
     def initializeActions(self):
         self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
         KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
         KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
-        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
+        self.setupGUI(KXmlGuiWindow.Default, "/usr/share/kde4/apps/package-manager/data/packagemanagerui.rc")
         self.initializeOperationActions()
 
     def initializeOperationActions(self):
@@ -107,50 +110,69 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.showAllAction = KToggleAction(KIcon("list-add"), i18n("Show All Packages"), self)
         self.actionCollection().addAction("showAllAction", self.showAllAction)
-        self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.ALL))
-        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show All Packages"))
+        self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.ALL))
+        # self.cw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show All Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("Show All Packages"))
         actionGroup.addAction(self.showAllAction)
 
         self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
         self.actionCollection().addAction("showInstallAction", self.showInstallAction)
-        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.INSTALL))
-        self.sw.stateCombo.addItem(KIcon("list-add"), i18n("Show Installable Packages"))
+        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.INSTALL))
+        # self.cw.stateCombo.addItem(KIcon("list-add"), i18n("Show Installable Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("list-add"), i18n("Show Installable Packages"))
         actionGroup.addAction(self.showInstallAction)
 
         self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
         self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
-        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.REMOVE))
-        self.sw.stateCombo.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
+        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.REMOVE))
+        # self.cw.stateCombo.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("list-remove"), i18n("Show Installed Packages"))
         actionGroup.addAction(self.showRemoveAction)
 
         self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
         self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
-        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.sw.switchState(StateManager.UPGRADE))
-        self.sw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Upgradable Packages"))
+        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.UPGRADE))
+        # self.cw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Upgradable Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("Show Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
-        self.sw._states = {self.sw.state.ALL    :(0, self.showAllAction),
-                           self.sw.state.INSTALL:(1, self.showInstallAction),
-                           self.sw.state.REMOVE :(2, self.showRemoveAction),
-                           self.sw.state.UPGRADE:(3, self.showUpgradeAction)}
+        self.cw.menuButton.setMenu(QMenu('MainMenu', self.cw.menuButton))
+        self.cw.menuButton.setIcon(KIcon('preferences-other'))
+        self.cw.menuButton.menu().clear()
 
-        self.showInstallAction.setChecked(True)
+        self.cw.menuButton.menu().addAction(self.showAllAction)
+        self.cw.menuButton.menu().addAction(self.showInstallAction)
+        self.cw.menuButton.menu().addAction(self.showRemoveAction)
+        self.cw.menuButton.menu().addAction(self.showUpgradeAction)
+        self.cw.menuButton.menu().addSeparator()
+        self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.Preferences)))
+        self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.Help)))
+        self.cw.menuButton.menu().addSeparator()
+        self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.AboutApp)))
+        self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.AboutKDE)))
+        self.cw.menuButton.menu().addSeparator()
+        self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.Quit)))
+
+        self.cw._states = {self.cw.state.ALL    :(0, self.showAllAction),
+                           self.cw.state.INSTALL:(1, self.showInstallAction),
+                           self.cw.state.REMOVE :(2, self.showRemoveAction),
+                           self.cw.state.UPGRADE:(3, self.showUpgradeAction)}
+
+        self.showAllAction.setChecked(True)
 
         # Little time left for the new ui
-        # self.menuBar().setVisible(False)
+        self.menuBar().setVisible(False)
 
     def statusWaiting(self):
-        self.sw.busyIndicator.setMovie(self.wheelMovie)
+        self.cw.busyIndicator.setMovie(self.wheelMovie)
         self.updateStatusBar(i18n('Calculating dependencies...'), noIcon = True)
 
     def updateStatusBar(self, text, noIcon = False):
         if not noIcon:
-            self.sw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(24, 24))
-        self.sw.statusLabel.setText(text)
-        if text:
-            self.statusBar().show()
-        else:
-            self.statusBar().hide()
+            self.cw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(24, 24))
+        if text == '':
+            text = i18n("Currently your basket is empty.")
+        self.cw.statusLabel.setText(text)
 
     def queryClose(self):
         if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
