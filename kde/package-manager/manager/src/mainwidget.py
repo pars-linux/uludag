@@ -23,6 +23,7 @@ from PyQt4.QtGui import qApp
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import QTimer
+from PyQt4.QtCore import QMutex
 from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import SIGNAL
@@ -70,6 +71,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         if not silence:
             # in silence mode we dont need these
             self.statusUpdater = StatusUpdater()
+            self.__searchMutex = QMutex()
             self.basket = BasketDialog(self.state)
             self.initializeSearchButton()
             self.initializeUpdateTypeList()
@@ -162,8 +164,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def searchLineChanged(self, text):
         self.searchButton.setEnabled(bool(text))
-        if text == '' and self.searchUsed:
-            self.searchActivated()
+        QTimer.singleShot(500, lambda:self.searchActivated(justFilter = True))
 
     def statusUpdated(self):
         if self.statusUpdater.needsUpdate:
@@ -206,27 +207,25 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.packageList.resetMoreInfoRow()
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
-        waitCursor()
         self.packageList.model().setFilterPackages(packages)
         self.packageList.scrollToTop()
         self.packageList.select_all.setChecked(self.groupList.currentGroup() in self._selectedGroups)
-        restoreCursor()
 
-    def searchActivated(self):
-        self.packageList.resetMoreInfoRow()
-        waitCursor()
-        searchText  = str(self.searchLine.text()).split()
-        if searchText:
-            sourceModel = self.packageList.model().sourceModel()
-            self.state.cached_packages = sourceModel.search(searchText)
-            self.groupList.lastSelected = None
-            self.searchUsed = True
-        else:
-            self.state.cached_packages = None
-            self.state.packages()
-            self.searchUsed = False
-        self.initializeGroupList()
-        restoreCursor()
+    def searchActivated(self, justFilter = False):
+        if self.__searchMutex.tryLock():
+            self.packageList.resetMoreInfoRow()
+            searchText  = str(self.searchLine.text()).split()
+            if searchText:
+                sourceModel = self.packageList.model().sourceModel()
+                self.state.cached_packages = sourceModel.search(searchText, justFilter)
+                self.groupList.lastSelected = None
+                self.searchUsed = True
+            else:
+                self.state.cached_packages = None
+                self.state.packages()
+                self.searchUsed = False
+            self.initializeGroupList()
+            self.__searchMutex.unlock()
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
