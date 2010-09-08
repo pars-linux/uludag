@@ -84,47 +84,43 @@ class StateManager(QObject):
                 "System.Manager.updateRepository":i18n("Updating Repository"),
                 "System.Manager.updateAllRepositories":i18n("Updating Repository(s)")}[str(action)]
 
-    def toBe(self, state = None):
-        state = self.state if not state else state
+    def toBe(self):
         return {self.INSTALL:i18n("installed"),
                 self.REMOVE :i18n("removed"),
                 self.UPGRADE:i18n("upgraded"),
-                self.ALL    :i18n("modified")}[state]
+                self.ALL    :i18n("modified")}[self.state]
 
     def getActionName(self, state = None):
-        state = self.state if not state else state
+        state = self.state if state == None else state
         return {self.INSTALL:i18n("Install Package(s)"),
                 self.REMOVE :i18n("Remove Package(s)"),
                 self.UPGRADE:i18n("Upgrade Package(s)"),
                 self.ALL    :i18n("Modify Package(s)")}[state]
 
     def getActionIcon(self, state = None):
-        state = self.state if not state else state
+        state = self.state if state == None else state
         return {self.INSTALL:KIcon("list-add"),
                 self.REMOVE :KIcon("list-remove"),
                 self.UPGRADE:KIcon("view-refresh"),
                 self.ALL    :KIcon("preferences-other")}[state]
 
-    def getSummaryInfo(self, total, state = None):
-        state = self.state if not state else state
+    def getSummaryInfo(self, total):
         return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
                 self.REMOVE :i18n("%1 package(s) have been removed succesfully.", total),
                 self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total),
-                self.ALL    :i18n("%1 package(s) have been modified succesfully.", total)}[state]
+                self.ALL    :i18n("%1 package(s) have been modified succesfully.", total)}[self.state]
 
-    def getBasketInfo(self, state = None):
-        state = self.state if not state else state
+    def getBasketInfo(self):
         return {self.INSTALL:i18n("You have selected the following package(s) to install:"),
                 self.REMOVE :i18n("You have selected the following package(s) to removal:"),
                 self.UPGRADE:i18n("You have selected the following package(s) to upgrade:"),
-                self.ALL    :i18n("You have selected the following package(s) to modify:")}[state]
+                self.ALL    :i18n("You have selected the following package(s) to modify:")}[self.state]
 
-    def getBasketExtrasInfo(self, state = None):
-        state = self.state if not state else state
+    def getBasketExtrasInfo(self):
         return {self.INSTALL:i18n("Extra dependencies of the selected package(s) that are also going to be installed:"),
                 self.REMOVE :i18n("Reverse dependencies of the selected package(s) that are also going to be removed:"),
                 self.UPGRADE:i18n("Extra dependencies of the selected package(s) that are also going to be upgraded:"),
-                self.ALL    :i18n("Extra dependencies of the selected package(s) that are also going to be modified:")}[state]
+                self.ALL    :i18n("Extra dependencies of the selected package(s) that are also going to be modified:")}[self.state]
 
     def groups(self):
         return self.__groups
@@ -165,15 +161,14 @@ class StateManager(QObject):
 
         return text
 
-    def operationAction(self, packages, state = None, silence = False):
-        state = self.state if not state else state
+    def operationAction(self, packages, silence = False):
         if not silence:
-            if state is not self.REMOVE and not self.conflictCheckPasses(packages, state):
+            if not self.conflictCheckPasses(packages):
                 return
         return {self.ALL    :self.iface.modifyPackages,
                 self.INSTALL:self.iface.installPackages,
                 self.REMOVE :self.iface.removePackages,
-                self.UPGRADE:self.iface.upgradePackages}[state](packages)
+                self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
         self.iface.setHandler(handler)
@@ -181,9 +176,8 @@ class StateManager(QObject):
     def setExceptionHandler(self, handler):
         self.iface.setExceptionHandler(handler)
 
-    def conflictCheckPasses(self, packages, state):
-        state = self.state if not state else state
-        (C, D, pkg_conflicts) = self.iface.getConflicts(packages, state)
+    def conflictCheckPasses(self, packages):
+        (C, D, pkg_conflicts) = self.iface.getConflicts(packages, self.state)
 
         conflicts_within = list(D)
         if conflicts_within:

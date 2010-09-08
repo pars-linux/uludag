@@ -64,6 +64,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.state = StateManager(self)
         self.lastState = self.state.state
+        self.__go_back_all = False
 
         # state.silence is using for pm-install module
         self.state.silence = silence
@@ -289,6 +290,9 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.notifyFinished()
         if not self.state.silence:
             self.searchLine.clear()
+            if self.__go_back_all:
+                self.state.state = self.state.ALL
+                self.__go_back_all = False
             self.state.reset()
             self.progressDialog.hide()
             if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
@@ -371,7 +375,10 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.statusUpdater.wait()
         action = {self.__remove_action:self.state.REMOVE,
                   self.__install_action:self.state.INSTALL}.get(self.sender(), None)
-        self.basket.show(action)
+        if action:
+            self.__go_back_all = True
+            self.state.state = action
+        self.basket.show()
         restoreCursor()
 
     def initializeUpdateTypeList(self):
