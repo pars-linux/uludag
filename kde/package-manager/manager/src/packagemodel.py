@@ -42,7 +42,7 @@ class PackageModel(QAbstractTableModel):
         self.resetCachedInfos()
         self.cached_package = None
         self.packages = []
-        self.state = parent.state.state
+        self.state = parent.state
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -79,11 +79,11 @@ class PackageModel(QAbstractTableModel):
         elif role == VersionRole:
             return QVariant(unicode(package.version))
         elif role == InstalledVersionRole:
-            if self.state == StateManager.UPGRADE:
+            if self.state.inUpgrade():
                 return QVariant(unicode(self.iface.getInstalledVersion(package.name)))
             return _variant
         elif role == RepositoryRole:
-            if not self.state == StateManager.REMOVE:
+            if not self.state.inRemove():
                 return QVariant(unicode(self.iface.getPackageRepository(package.name)))
             return _variant
         elif role == HomepageRole:
@@ -142,10 +142,9 @@ class PackageModel(QAbstractTableModel):
                     self.cached_selected.append(pkg)
         return self.cached_selected
 
-    def extraPackages(self, state = None):
-        state = self.state if not state else state
+    def extraPackages(self):
         if not self.cached_extras:
-            self.cached_extras = self.iface.getExtras(self.selectedPackages(), state)
+            self.cached_extras = self.iface.getExtras(self.selectedPackages(), self.state.getState())
         return self.cached_extras
 
     def __packagesSize(self, packages):
@@ -159,9 +158,9 @@ class PackageModel(QAbstractTableModel):
             self.cached_selected_size = self.__packagesSize(self.selectedPackages())
         return self.cached_selected_size
 
-    def extraPackagesSize(self, state = None):
+    def extraPackagesSize(self):
         if not self.cached_extras_size < 0:
-            self.cached_extras_size = self.__packagesSize(self.extraPackages(state))
+            self.cached_extras_size = self.__packagesSize(self.extraPackages())
         return self.cached_extras_size
 
     def resetCachedInfos(self):

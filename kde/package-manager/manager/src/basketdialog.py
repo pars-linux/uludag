@@ -84,7 +84,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def filterExtras(self):
         waitCursor()
-        extraPackages = self.model.extraPackages(self.__action)
+        extraPackages = self.model.extraPackages()
         self.extraList.setPackages(extraPackages)
         self.__updateList(self.extraList, extraPackages)
         self.extraList.setVisible(bool(extraPackages))
@@ -93,7 +93,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def updateTotal(self):
         selectedSize, extraSize = self.model.selectedPackagesSize(), \
-                                  self.model.extraPackagesSize(self.__action)
+                                  self.model.extraPackagesSize()
         self.totalSize.setText("<b>%s</b>" % humanReadableSize(
                                         selectedSize + extraSize))
         downloadSize = self.model.downloadSize()
@@ -103,12 +103,12 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                                         downloadSize))
 
     def setActionButton(self):
-        self.actionButton.setText(self.state.getActionName(self.__action))
-        self.actionButton.setIcon(self.state.getActionIcon(self.__action))
+        self.actionButton.setText(self.state.getActionName())
+        self.actionButton.setIcon(self.state.getActionIcon())
 
     def setBasketLabel(self):
-        self.infoLabel.setText(self.state.getBasketInfo(self.__action))
-        self.extrasLabel.setText(self.state.getBasketExtrasInfo(self.__action))
+        self.infoLabel.setText(self.state.getBasketInfo())
+        self.extrasLabel.setText(self.state.getBasketExtrasInfo())
 
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
@@ -140,20 +140,19 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                          "the updated package(s) to take effect:"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
-        self.state.operationAction(self.model.selectedPackages(), self.__action)
+        self.state.operationAction(self.model.selectedPackages())
         self.close()
 
     def showHideDownloadInfo(self):
-        if self.__action == self.state.REMOVE:
+        if self.state.state == self.state.REMOVE:
             self.downloadSize.hide()
             self.downloadSizeLabel.hide()
         else:
             self.downloadSize.show()
             self.downloadSizeLabel.show()
 
-    def show(self, action = None):
+    def show(self):
         waitCursor()
-        self.__action = action if action else self.state.state
         self.showHideDownloadInfo()
         self.__updateList(self.packageList, self.model.selectedPackages())
         try:
