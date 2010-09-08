@@ -335,12 +335,3 @@ R packages must have a prefix of "R-" in their names.
 Example::
 
     R-mathlib: mathlib module for R
-
-TeX Packages
-============
-
-TeX packages must have a prefix of "tex-" in their names.
-
-Example::
-
-    tex-basic: TeXLive Essential programs and files
