@@ -13,6 +13,7 @@
 
 # Qt Stuff
 from PyQt4 import QtGui
+from PyQt4.QtCore import QPoint
 from PyQt4.QtCore import *
 
 from packagemodel import *
@@ -265,7 +266,8 @@ class PackageDelegate(QtGui.QItemDelegate):
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
             if self.rowAnimator.row == index.row():
-                if self.rowAnimator.hoverLinkFilter.link_rect.contains(event.pos()):
+                epos = event.pos()
+                if self.rowAnimator.hoverLinkFilter.link_rect.contains(QPoint(epos.x(), epos.y() + 32)):
                     url = QUrl(model.data(index, HomepageRole).toString())
                     QtGui.QDesktopServices.openUrl(url)
                     return __event
