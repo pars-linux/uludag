@@ -6436,17 +6436,17 @@ msgstr "Dosya: %s"
 #: src/modules/fileman_opinfo/e_mod_main.c:144
 #, c-format
 msgid "From: %s"
-msgstr ""
+msgstr "Kimden: %s"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:151
 #, c-format
 msgid "To: %s"
-msgstr ""
+msgstr "Kime: %s"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:329
 #, c-format
 msgid "Processing %d operation(s)"
-msgstr ""
+msgstr "%d işlem yapılıyor"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:333
 msgid "Filemanager is idle"
@@ -6658,7 +6658,7 @@ msgstr "Masaüstü adlarını göster"
 
 #: src/modules/pager/e_mod_config.c:135 src/modules/pager/e_mod_config.c:217
 msgid "Show popup on desktop change"
-msgstr ""
+msgstr "Masaüstü değişiminde açılır pencere göster"
 
 #: src/modules/pager/e_mod_config.c:138
 msgid "Show popup for urgent windows"
