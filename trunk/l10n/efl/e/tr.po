@@ -15,9 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2010-02-06 04:53+0000\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,50,-1,-1,-1,-1\n"
-"X-Generator: Lokalize 1.0\n"
 
 #: src/bin/e_about.c:17
 msgid "About Enlightenment"
@@ -573,7 +573,7 @@ msgstr "Çık"
 
 #: src/bin/e_actions.c:2935
 msgid "Power Off Now"
-msgstr "Kapat"
+msgstr "Şimdi Kapat"
 
 #: src/bin/e_actions.c:2939
 msgid "Power Off"
@@ -1169,7 +1169,7 @@ msgstr "Dosyayı Yeniden Adlandır"
 
 #: src/bin/e_fm.c:8961 src/bin/e_fm.c:9099
 msgid "Retry"
-msgstr "Yeniden Dene"
+msgstr "Tekrar Dene"
 
 #: src/bin/e_fm.c:8965 src/bin/e_fm.c:9105 src/modules/wizard/page_030.c:85
 msgid "Error"
@@ -1674,7 +1674,7 @@ msgstr "Temel Boyut"
 
 #: src/bin/e_int_border_prop.c:429
 msgid "Resize Steps"
-msgstr "Yeniden Boyutlandırma Adımları"
+msgstr "Boyutlandırma Adımları"
 
 #: src/bin/e_int_border_prop.c:431
 msgid "Aspect Ratio"
