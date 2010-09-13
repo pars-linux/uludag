@@ -231,6 +231,7 @@ class Widget(QtGui.QWidget):
             self.ui.mainStack.setCurrentIndex(id)
             _w = self.ui.mainStack.currentWidget()
             self.ui.screenName.setText(_w.title)
+            print "------- %s " % _w.title
             #self.ui.screenDescription.setText(_w.desc)
             self.ui.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
             self.ui.helpContent.setText(_w.help)

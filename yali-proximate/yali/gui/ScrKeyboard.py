@@ -30,16 +30,14 @@ import yali.context as ctx
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Choose a Keyboard Layout")
     icon = "iconKeyboard"
+    helpSummary = _("")
     help = _("""
-<font size="+2">Keyboard Layout</font>
-<font size="+1">
 <p>
 A keyboard layout is a description of how keys are placed on a keyboard. There are different keyboard layouts in use throughout the world. The one you will want to use, generally depends on the country you live in or the language you use.
 </p>
 <p>
 This screen lets you select the keyboard layout you want to use on Pardus. You can test the selected layout by typing something in the given textbox.
 </p>
-</font>
 """)
 
     def __init__(self, *args):

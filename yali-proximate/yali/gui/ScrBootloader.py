@@ -33,9 +33,8 @@ class DriveItem(QtGui.QListWidgetItem):
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Configure Bootloader")
     icon = "iconBootloader"
+    helpSummary = _("A bootloader is a tiny program that runs when a computer is first powered up.")
     help = _("""
-<font size="+2">Bootloader</font>
-<font size="+1">
 <p>
 A bootloader is a tiny program that runs when a computer is first powered up.
 It is responsible for loading the operating system into memory and then transferring
@@ -49,7 +48,6 @@ to boot any supported operating system by presenting the user with a menu.
 The recommended way to use GRUB is to install it to the beginning of the boot disk.
 You can always choose another installation method if you know what you are doing.
 </p>
-</font>
 """)
 
     def __init__(self, *args):

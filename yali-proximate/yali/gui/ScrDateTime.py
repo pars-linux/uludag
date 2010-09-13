@@ -27,9 +27,8 @@ import yali.localedata
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Adjust Date and Time Settings")
     icon = "iconDate"
+    helpSummary = _("Date and time settings allows you to set the date and time of your computer.")
     help = _("""
-<font size="+2">Date and Time</font>
-<font size="+1">
 <p>Date and time settings allows you to set the date and time of your computer. Generally,
 you will also want to specify a correct timezone for your location in order to benefit
 from automatic daylight saving time adjustments.
@@ -39,7 +38,6 @@ A timezone is a region of the earth that has uniform standard time, usually refe
 local time. By convention, timezones compute their local time as an offset from UTC, the
 Coordinated Universal Time.
 </p>
-</font>
 """)
 
     def __init__(self, *args):

@@ -36,9 +36,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Manual Partitioning')
     desc = _('You can easily configure your partitions...')
     icon = "iconPartition"
+    helpSummary = _("Partition manual summary")
     help = _('''
-<font size="+2">Partitioning your hard disk</font>
-<font size="+1">
 <p>
 In this screen, you can manually partition your disk. You can select 
 existing partitions and resize or delete them. You can create new 
@@ -50,7 +49,6 @@ which means you can revert if you make any unwanted changes or change your confi
 <p>
 Please refer to Pardus Installing and Using Guide for more information
 about disk partitioning.
-</p>
 </font>
 ''')
 

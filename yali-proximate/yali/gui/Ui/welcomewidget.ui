@@ -110,7 +110,7 @@
    <item row="3" column="1" colspan="5">
     <widget class="QLabel" name="disclamer">
      <property name="text">
-      <string>All software produced by TUBITAK/UEKAE is licensed under the terms of GNU General Public License (GPL). In order to install and use Pardus, you must accept the terms of GNU GPL. Do you accept?</string>
+      <string>All software produced by TUBITAK/UEKAE - Pardus is licensed under the terms of GNU General Public License (GPL). In order to install and use Pardus, you must accept the terms of GNU GPL.</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignTop</set>
@@ -157,51 +157,6 @@
      <property name="spacing">
       <number>10</number>
      </property>
-     <item row="1" column="0">
-      <layout class="QHBoxLayout">
-       <property name="spacing">
-        <number>12</number>
-       </property>
-       <item>
-        <widget class="QPushButton" name="gplButton">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::TabFocus</enum>
-         </property>
-         <property name="text">
-          <string>Show GPL License</string>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="rebootButton">
-         <property name="minimumSize">
-          <size>
-           <width>130</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="focusPolicy">
-          <enum>Qt::TabFocus</enum>
-         </property>
-         <property name="text">
-          <string>Restart System</string>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
      <item row="0" column="0">
       <widget class="QGroupBox" name="groupBox">
        <property name="styleSheet">
@@ -212,22 +167,28 @@
        </property>
        <layout class="QHBoxLayout">
         <item>
-         <widget class="QRadioButton" name="accept">
+         <widget class="QPushButton" name="gplButton">
+          <property name="minimumSize">
+           <size>
+            <width>130</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="focusPolicy">
            <enum>Qt::TabFocus</enum>
           </property>
           <property name="text">
-           <string>Yes, I accept.</string>
+           <string>Read GNU GPL</string>
+          </property>
+          <property name="flat">
+           <bool>true</bool>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QRadioButton" name="not_accept">
-          <property name="focusPolicy">
-           <enum>Qt::TabFocus</enum>
-          </property>
+         <widget class="QCheckBox" name="accept">
           <property name="text">
-           <string>No, I don't accept.</string>
+           <string>I understand and accept the terms of GNU GPL</string>
           </property>
          </widget>
         </item>
@@ -272,12 +233,6 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <pixmapfunction>qPixmapFromMimeSource</pixmapfunction>
- <tabstops>
-  <tabstop>accept</tabstop>
-  <tabstop>not_accept</tabstop>
-  <tabstop>gplButton</tabstop>
-  <tabstop>rebootButton</tabstop>
- </tabstops>
  <resources>
   <include location="../../data.qrc"/>
  </resources>
