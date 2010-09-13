@@ -140,8 +140,8 @@
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
                 <SelectedPackage>polkit-kde_1</SelectedPackage>
                 <SelectedPackage>pulseaudio</SelectedPackage>
-                <SelectedPackage>PyQt</SelectedPackage>
-                <SelectedPackage>PyQt-webkit</SelectedPackage>
+                <SelectedPackage>python-qt</SelectedPackage>
+                <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>quassel</SelectedPackage>
@@ -177,8 +177,8 @@
                 <Package>DirectFB</Package>
                 <Package>ModemManager</Package>
                 <Package>NetworkManager</Package>
-                <Package>PyQt</Package>
-                <Package>PyQt-webkit</Package>
+                <Package>python-qt</Package>
+                <Package>python-qt-webkit</Package>
                 <Package>QtCurve-Gtk2</Package>
                 <Package>a52dec</Package>
                 <Package>aalib</Package>
@@ -982,7 +982,7 @@
         <Package>ConsoleKit</Package>
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
-        <Package>PyQt</Package>
+        <Package>python-qt</Package>
         <Package>acl</Package>
         <Package>aic94xx-firmware</Package>
         <Package>alsa-firmware</Package>
