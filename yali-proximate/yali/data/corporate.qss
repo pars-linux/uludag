@@ -1,53 +1,7 @@
-QWidget#Yali {
-      background-image: url(:/gui/pics/bg.png);
-      /*background-repeat: no-repeat;
-      background-position: left top;*/
-      /*background-color: #642437;*/
-      /*alternate-background-color: gray;
-      selection-background-color: gray;*/
-   
-      background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.572, y2:0.688, stop:0 rgba(75, 114, 137, 255), stop:1 rgba(29, 42, 51, 255));
-      padding: 0px;
-      margin: 0px;
-}
-QScrollArea#scrollArea {
-       background-color: rgba(255, 255, 255, 0);
+#screenName {
+  font-size: 14pt;
 }
 
-QWidget#scrollAreaWidgetContents {
-       background-color: rgba(255, 255, 255, 0);
-}
-/*
-QStackedWidget#mainStack {
-     border-style: outset;
-     border-width: 2px;
-     border-radius: 16px;
-     border-color: beige;
-     background-image:url(':/gui/pics/trans.png');
-}
-*/
-
-QTextBrowser#helpContent {
-     background-color: rgba(255,255,255,0);
-     font: 9px;
-}
-
-QDialog {
-        color: #628577;
-        background-image: url(:/images/background-dialog.png);
-        background-repeat: no-repeat;
-        background-position: bottom center;
-        background-color: #394E46;
-}
-
-QLabel {
-        color: #eeeeee;
-}
-
-QGroupBox {
-        color: #eeeeee;
-}
-///////////////////////////
 QPushButton{
 	padding: 3px 10px 3px 10px;
 	color: white;
@@ -83,7 +37,57 @@ QPushButton::flat:pressed{
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
  /*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(71, 25, 39, 255), stop:0.521739 rgba(132, 74, 91, 255), stop:0.527174 rgba(135, 85, 100, 255), stop:0.983696 rgba(164, 125, 137, 255), stop:1 rgba(200, 157, 169, 255));*/
 }
-////////////////////////////////
+
+QWidget#Yali {
+      background-image: url(:/gui/pics/bg.png);
+      /*background-repeat: no-repeat;
+      background-position: left top;*/
+      /*background-color: #642437;*/
+      /*alternate-background-color: gray;
+      selection-background-color: gray;*/
+   
+      background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.572, y2:0.688, stop:0 rgba(75, 114, 137, 255), stop:1 rgba(29, 42, 51, 255));
+      padding: 0px;
+      margin: 0px;
+}
+QScrollArea#scrollArea {
+       background-color: rgba(255, 255, 255, 0);
+}
+
+QWidget#scrollAreaWidgetContents {
+       background-color: rgba(255, 255, 255, 0);
+}
+/*
+QStackedWidget#mainStack {
+     border-style: outset;
+     border-width: 2px;
+     border-radius: 16px;
+     border-color: beige;
+     background-image:url(':/gui/pics/trans.png');
+}
+*/
+
+QTextBrowser#helpContent {
+     background-color: rgba(255,255,255,0);
+     font: 9pt;
+}
+
+QDialog {
+        color: #628577;
+        background-image: url(:/images/background-dialog.png);
+        background-repeat: no-repeat;
+        background-position: bottom center;
+        background-color: #394E46;
+}
+
+QLabel {
+        color: #eeeeee;
+}
+
+QGroupBox {
+        color: #eeeeee;
+}
+
 QRadioButton {
     color: white;
     spacing: 5px;
@@ -465,4 +469,5 @@ QScrollBar::sub-line:horizontal {
 QScrollBar::right-arrow:horizontal { background-image: url(:/images/arrow-right.png); }
 QScrollBar::left-arrow:horizontal { background-image: url(:/images/arrow-left.png); }
 
-QWidget{font:10pt;}
+/*QWidget{font:10pt;}*/
+

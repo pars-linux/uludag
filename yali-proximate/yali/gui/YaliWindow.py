@@ -92,6 +92,10 @@ class Widget(QtGui.QWidget):
         self.terminal = None
         self.tetris = None
 
+        # Hide excerpt widget
+        self.ui.helpContent.hide()
+
+
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton and not self.dontAskCmbAgain:
             if self.cmb == _("left"):
@@ -177,8 +181,10 @@ class Widget(QtGui.QWidget):
     def slotToggleHelp(self):
         if self.ui.helpContent.isVisible():
             self.ui.helpContent.hide()
+            self.ui.helpSummary.show()
         else:
             self.ui.helpContent.show()
+            self.ui.helpSummary.hide()
         _w = self.ui.mainStack.currentWidget()
         _w.update()
 
@@ -228,6 +234,7 @@ class Widget(QtGui.QWidget):
             #self.ui.screenDescription.setText(_w.desc)
             self.ui.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
             self.ui.helpContent.setText(_w.help)
+            self.ui.helpSummary.setText(_w.helpSummary)
             # shown functions contain necessary instructions before
             # showing a stack ( updating gui, disabling some buttons etc. )
             ctx.mainScreen.processEvents()
