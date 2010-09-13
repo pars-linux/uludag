@@ -126,7 +126,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         # Repositories
         repositories = []
         for i in range(self.listRepositories.count()):
-            repo_url = str(self.listRepositories.item(i).text)
+            repo_url = str(self.listRepositories.item(i).text())
             repositories.append(repo_url)
         # New policy
         policy = {
