@@ -181,9 +181,8 @@ class PartitionItem(QtGui.QListWidgetItem):
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Select Partitioning Method")
     icon = "iconPartition"
+    helpSummary = _("Partitioning summary")
     help = _('''
-<font size="+2">Partitioning Method</font>
-<font size="+1">
 <p>
 You can install Pardus if you have an unpartitioned-unused disk space 
 of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. 
@@ -193,7 +192,6 @@ be formatted. Therefore, it is advised to backup your data to avoid future probl
 <p>Auto-partitioning will automatically format the select disk part/partition 
 and install Pardus. If you like, you can do the partitioning manually or make 
 Pardus create a new partition for installation.</p>
-</font>
 ''')
 
     def __init__(self, *args):

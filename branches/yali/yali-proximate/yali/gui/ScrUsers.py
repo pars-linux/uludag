@@ -31,9 +31,8 @@ from yali.gui.YaliDialog import Dialog
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Add Users")
     icon = "iconUser"
+    helpSummary = _("")
     help = _('''
-<font size="+2">System Users</font>
-<font size="+1">
 <p>
 Pardus allows multiple users to share the same computer.
 You can assign management rights to the users you create; you can also
@@ -46,7 +45,6 @@ the user from the list; if you want to delete a user,
 select his/her username from the list and press "Delete Selected User".
 Proceed with the installation after you make your selections.
 </p>
-</font>
 ''')
 
     def __init__(self, *args):

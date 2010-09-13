@@ -28,11 +28,10 @@ from yali.gui.YaliDialog import Dialog
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Check the Integrity of Packages")
     icon = "iconCD"
+    helpSummary = _("A bootloader is a tiny program that runs when a computer is first powered up.")
     help = _("""
-<font size="+2">Package Integrity</font>
-<font size="+1"><p>
 Here you can validate the integrity of the installation packages. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).</p>
-<p>If you are using an optical installation medium, try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</p></font>
+<p>If you are using an optical installation medium, try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</p>
 """)
 
     def __init__(self, *args):
