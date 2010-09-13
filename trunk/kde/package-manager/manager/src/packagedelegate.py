@@ -184,6 +184,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         foregroundColor.setAlpha(255)
         p.setPen(foregroundColor)
 
+        buttonStyle = None
         if self.rowAnimator.currentRow() == index.row():
             description = index.model().data(index, DescriptionRole).toString()
             size = index.model().data(index, SizeRole).toString()
@@ -256,8 +257,19 @@ class PackageDelegate(QtGui.QItemDelegate):
             position += rect.height()
             self.rowAnimator.max_height = position - top + 8
 
+            # Package More info button
+            opt = QtGui.QStyleOptionViewItemV4(option)
+
+            buttonStyle = QtGui.QStyleOptionButton()
+            buttonStyle.text = 'Details'
+
+            buttonStyle.rect = QRect(width - 100, position - 22, 100, 22)
+
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
+        if not self.rowAnimator.running() and buttonStyle:
+            self.rowAnimator.hoverLinkFilter.button_rect = buttonStyle.rect
+            PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
 
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:

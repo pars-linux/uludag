@@ -23,10 +23,15 @@ class HoverLinkFilter(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
         self.link_rect = QRect()
+        self.button_rect = QRect()
         self.parent = parent
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.HoverMove and self.parent.direction == UP:
+            if self.button_rect.contains(event.pos()):
+                obj.state |= QtGui.QStyle.State_HasFocus
+            else:
+                obj.state = QtGui.QStyle.State_None
             if self.link_rect.contains(event.pos()):
                 obj.setCursor(Qt.PointingHandCursor)
             else:
@@ -72,6 +77,7 @@ class RowAnimator(object):
             self.direction = DOWN
             self.height = DEFAULT_HEIGHT
         self.t_view.setRowHeight(self.row, self.height)
+        self.row = None if self.direction == DOWN else self.row
 
     def size(self):
         if self.running():
