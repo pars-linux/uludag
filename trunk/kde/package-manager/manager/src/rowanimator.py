@@ -89,7 +89,7 @@ class RowAnimator(object):
         return QSize(0, self.height)
 
     def setRow(self, row):
-        if self.row != row:
+        if not self.row == row:
             self.reset(row)
 
     def currentRow(self):
