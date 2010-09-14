@@ -1,8 +1,10 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/system-help.png</file>
     <file>gui/pics/preferences-system-time.png</file>
     <file>gui/pics/arrow-left.png</file>
     <file>gui/pics/arrow-right.png</file>
+    <file>gui/pics/media-optical.png</file>
     <file>gui/pics/tick.png</file>
     <file>gui/pics/bg.png</file>
     <file>gui/pics/partscheme-all.png</file>
