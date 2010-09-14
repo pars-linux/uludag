@@ -36,12 +36,13 @@ ICON_PADDING = 0
 ROW_HEIGHT = 52
 ICON_SIZE = 2
 
-class PackageDelegate(QtGui.QItemDelegate):
+class PackageDelegate(QtGui.QStyledItemDelegate):
 
     AppStyle = QtGui.qApp.style
 
     def __init__(self, parent=None):
-        QtGui.QItemDelegate.__init__(self, parent)
+        super(PackageDelegate, self).__init__(parent)
+
         self.rowAnimator = RowAnimator(parent.packageList)
         KIconLoader().addExtraDesktopThemes()
         self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
@@ -83,7 +84,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
     def paint(self, painter, option, index):
         if not index.isValid():
-            return
+            return super(PackageDelegate, self).paint(painter, option, index)
         if index.flags() & Qt.ItemIsUserCheckable:
             if index.column() == 0:
                 self.paintCheckBoxColumn(painter, option, index)
@@ -102,7 +103,9 @@ class PackageDelegate(QtGui.QItemDelegate):
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
+        painter.save()
         PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+        painter.restore()
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
@@ -261,15 +264,19 @@ class PackageDelegate(QtGui.QItemDelegate):
             opt = QtGui.QStyleOptionViewItemV4(option)
 
             buttonStyle = QtGui.QStyleOptionButton()
-            buttonStyle.text = 'Details'
+            if option.state & QtGui.QStyle.State_MouseOver:
+                buttonStyle.state |= QtGui.QStyle.State_HasFocus
+            buttonStyle.text = i18n("Details")
 
             buttonStyle.rect = QRect(width - 100, position - 22, 100, 22)
 
         p.end()
+        painter.save()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
         if not self.rowAnimator.running() and buttonStyle:
             self.rowAnimator.hoverLinkFilter.button_rect = buttonStyle.rect
             PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
+        painter.restore()
 
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
@@ -282,6 +289,9 @@ class PackageDelegate(QtGui.QItemDelegate):
                 if self.rowAnimator.hoverLinkFilter.link_rect.contains(QPoint(epos.x(), epos.y() + 32)):
                     url = QUrl(model.data(index, HomepageRole).toString())
                     QtGui.QDesktopServices.openUrl(url)
+                    return __event
+                elif self.rowAnimator.hoverLinkFilter.button_rect.contains(QPoint(epos.x(), epos.y())):
+                    print "Button Clicked !"
                     return __event
             self.rowAnimator.animate(index.row())
         return __event
