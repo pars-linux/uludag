@@ -48,8 +48,15 @@ If you are using an optical installation medium, try burning the installation im
         if ctx.yali.checkCDStop == True:
             ctx.yali.checkCDStop = False
             self.ui.progressBar.show()
-            self.ui.checkButton.setText(_("Abort"))
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/gui/pics/dialog-error.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.checkButton.setIcon(icon)
+            self.ui.checkButton.setText("")
             ctx.yali.checkCD(self.ui)
         else:
             ctx.yali.checkCDStop = True
+            self.ui.progressBar.show()
+            icon = QtGui.QIcon()
+            icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/gui/pics/task-accepted.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.checkButton.setIcon(icon)
             self.ui.checkButton.setText(_("Validate"))

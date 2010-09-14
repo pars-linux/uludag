@@ -8,7 +8,7 @@ solid rgba(0,0,0,10)
 }
 
 #screenName {
-  font-size: 14pt;
+  font-size: 15pt;
 }
 
 QPushButton{
@@ -36,6 +36,35 @@ QPushButton::flat:pressed{
 	padding: 3px 10px 3px 10px;
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
 }
+
+
+
+#frame QPushButton{
+	padding: 3px 10px 3px 10px;
+	color: white;
+	border:0px;
+	background-color: rgba(0,0,0,0)
+}
+
+#frame QPushButton::flat:hover{
+	border:1px solid  rgba(34, 49, 60, 100);
+	border-radius:2px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
+}
+
+#frame QPushButton::flat{
+	color: white;
+	border:0px;
+	background-color: rgba(0,0,0,0)
+}
+
+#frame QPushButton::flat:pressed{
+	border:1px solid  rgba(34, 49, 60, 100);
+	border-radius:2px;
+	padding: 3px 10px 3px 10px;
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(149, 23, 23, 255), stop:0.0192308 rgba(180, 55, 45, 255), stop:0.521739 rgba(186, 55, 49, 255), stop:0.531585 rgba(204, 66, 60, 255), stop:0.983696 rgba(188, 98, 94, 255), stop:1 rgba(230, 130, 130, 255))
+}
+
 
 #toggleHelp{
 	border:0px;
@@ -72,8 +101,8 @@ QWidget#Yali {
       background-image: url(:/gui/pics/bg.png);
       /*background-repeat: no-repeat;
       background-position: left top;*/
-      /*background-color: #642437;*/
-      /*alternate-background-color: gray;
+      /*background-color: rgb(52, 50, 50);
+      alternate-background-color: gray;
       selection-background-color: gray;*/
    
       background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.572, y2:0.688, stop:0 rgba(75, 114, 137, 255), stop:1 rgba(29, 42, 51, 255));
@@ -402,22 +431,23 @@ QHeaderView::section {
         border: 1px solid #6b6b6b;
 }
 
+
 QProgressBar {
-        border: 1px solid #6b6b6b;
-        border-radius: 3px;
+
+        border-radius: 2px;
         text-align: center;
-        /*color: #628577;*/
+        color: #628577;
 	background-color: white;
         /*background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                         stop: 0 #ffffff, stop: 0.4 #eeeeee, stop: 1 #eeeeee);*/
 }
 
 QProgressBar:chunk {
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-        /*border: 2px solid #628577;
-        border-radius: 2px;*/
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border: 1px solid rgba(255, 255, 255, 50);
+        /*border: 2px solid #628577;*/
+        border-radius: 2px;
 }
-
 
 QScrollArea::corner {
         background-color: rgba(255, 255, 255, 0);
