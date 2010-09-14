@@ -331,6 +331,7 @@ class InformationWindow(QtGui.QWidget):
 
         # Message
         self.label = QtGui.QLabel(self.frame)
+        self.label.setAlignment(Qt.AlignCenter)
         self.horizontalLayout.addWidget(self.label)
 
         self.gridlayout.addWidget(self.frame,0,0,1,1)
@@ -339,7 +340,7 @@ class InformationWindow(QtGui.QWidget):
     def updateMessage(self, message=None, spinner=False):
         self.spinner.setVisible(spinner)
         self.move(ctx.mainScreen.width()/2 - self.width()/2,
-                  ctx.mainScreen.height() - self.height()/2 - 48)
+                  ctx.mainScreen.height() - self.height()/2 - 50)
         if message:
             self.label.setText(message)
         ctx.mainScreen.processEvents()

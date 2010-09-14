@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form1</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
     <number>0</number>
@@ -64,7 +67,7 @@
            </sizepolicy>
           </property>
           <property name="pixmap">
-           <pixmap>../../../../../../../../../../usr/share/icons/oxygen/128x128/devices/media-optical.png</pixmap>
+           <pixmap resource="../../data.qrc">:/gui/pics/media-optical.png</pixmap>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -75,20 +78,30 @@
          </widget>
         </item>
         <item>
-         <layout class="QGridLayout" name="gridLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <property name="spacing">
+           <number>20</number>
+          </property>
           <property name="leftMargin">
            <number>10</number>
           </property>
           <property name="rightMargin">
            <number>10</number>
           </property>
-          <property name="horizontalSpacing">
-           <number>10</number>
-          </property>
-          <property name="verticalSpacing">
-           <number>15</number>
-          </property>
-          <item row="1" column="0" colspan="2">
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QLabel" name="textLabel2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
@@ -101,6 +114,9 @@
               <width>400</width>
               <height>0</height>
              </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">line-height: 17pt</string>
             </property>
             <property name="text">
              <string>Here, you can validate the integrity of the installation packages. Although this is an optional step, we highly recommend to do the validation in order to avoid any possible errors during the installation process.</string>
@@ -116,55 +132,77 @@
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
-           <widget class="QProgressBar" name="progressBar">
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>20</height>
-             </size>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <property name="spacing">
+             <number>10</number>
             </property>
-            <property name="value">
+            <property name="bottomMargin">
              <number>0</number>
             </property>
-           </widget>
+            <item>
+             <widget class="QProgressBar" name="progressBar">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>10</height>
+               </size>
+              </property>
+              <property name="maximum">
+               <number>100</number>
+              </property>
+              <property name="value">
+               <number>0</number>
+              </property>
+              <property name="textVisible">
+               <bool>false</bool>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="textDirection">
+               <enum>QProgressBar::TopToBottom</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="checkButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
+              </property>
+              <property name="text">
+               <string>Validate</string>
+              </property>
+              <property name="icon">
+               <iconset resource="../../data.qrc">
+                <normaloff>:/gui/pics/task-accepted.png</normaloff>:/gui/pics/task-accepted.png</iconset>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item row="4" column="1">
-           <widget class="QPushButton" name="checkButton">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Validate</string>
-            </property>
-            <property name="flat">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="2">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="5" column="0" colspan="2">
+          <item>
            <spacer name="verticalSpacer_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>

@@ -92,8 +92,8 @@ class Widget(QtGui.QWidget):
         self.terminal = None
         self.tetris = None
 
-        # Hide excerpt widget
         self.ui.helpContent.hide()
+        self.ui.helpSummary.hide()
 
 
     def mousePressEvent(self, event):
@@ -181,10 +181,11 @@ class Widget(QtGui.QWidget):
     def slotToggleHelp(self):
         if self.ui.helpContent.isVisible():
             self.ui.helpContent.hide()
-            self.ui.helpSummary.show()
+            self.ui.helpContentFrame.hide()
+            #self.ui.helpSummary.show()
         else:
             self.ui.helpContent.show()
-            self.ui.helpSummary.hide()
+            #self.ui.helpSummary.hide()
         _w = self.ui.mainStack.currentWidget()
         _w.update()
 
