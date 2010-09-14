@@ -300,9 +300,9 @@ class InformationWindow(QtGui.QWidget):
         self.setObjectName("InfoWin")
         self.resize(300,50)
         self.setStyleSheet("""
-            QFrame#frame { border: 1px solid #CCC;
-                           border-radius: 4px;
-                           background-image:url(':/gui/pics/transBlack.png');}
+            QFrame#frame { border: 1px solid rgba(255,255,255,30);
+                           /*border-radius: 4px;*/
+                           background-color: rgba(0,0,0,100);}
 
             QLabel { border:none;
                      color:#FFFFFF;}
@@ -339,7 +339,7 @@ class InformationWindow(QtGui.QWidget):
     def updateMessage(self, message=None, spinner=False):
         self.spinner.setVisible(spinner)
         self.move(ctx.mainScreen.width()/2 - self.width()/2,
-                  ctx.mainScreen.height() - self.height()/2 - 26)
+                  ctx.mainScreen.height() - self.height()/2 - 48)
         if message:
             self.label.setText(message)
         ctx.mainScreen.processEvents()
