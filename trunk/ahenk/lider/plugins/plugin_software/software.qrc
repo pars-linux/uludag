@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/checkbox32.png</file>
+    <file>icons/repository48.png</file>
     <file>icons/add48.png</file>
     <file>icons/remove48.png</file>
     <file>icons/locked48.png</file>

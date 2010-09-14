@@ -123,3 +123,58 @@ class Menu(QtGui.QMenu):
         action = self.addAction(icon, label)
         self.parent.connect(action, QtCore.SIGNAL("triggered(bool)"), slot);
         return action
+
+class Progress:
+    """
+        Progress dialog.
+
+        Usage:
+            progress = Progress(self)
+            progress.started("Message")
+            progress.progress("Loading", 50)
+            progress.progress("Loading", 100)
+            progress.finished()
+    """
+
+    def __init__(self, parent):
+        """
+            Constructor for Progress class.
+
+            Arguments:
+                parent: Parent object
+        """
+        self.parent = parent
+        self.dialog = None
+
+    def started(self, title):
+        """
+            Starts progress dialog.
+
+            Arguments:
+                title: Dialog title
+        """
+        self.dialog = QtGui.QProgressDialog(title, "Stop", 0, 0, self.parent)
+        self.dialog.setCancelButton(None)
+        self.dialog.show()
+        QtCore.QCoreApplication.processEvents(QtCore.QEventLoop.AllEvents)
+
+    def progress(self, msg, percent):
+        """
+            Updates progress percentage.
+
+            Arguments:
+                msg: Dialog message
+                percentage: Progress
+        """
+        self.dialog.setLabelText(msg)
+        if percent < 100:
+            self.dialog.setValue(percent)
+        QtCore.QCoreApplication.processEvents(QtCore.QEventLoop.AllEvents)
+
+    def finished(self):
+        """
+            Closes progress dialog.
+        """
+        if self.dialog:
+            self.dialog.done(0)
+        self.dialog = None

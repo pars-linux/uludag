@@ -12,7 +12,7 @@ from PyQt4 import QtCore
 # Generated UI module
 from ui_formmain import Ui_FormMain
 
-# Connection dialog
+# Dialogs
 from connection import DialogConnection
 from computer import DialogComputer
 from folder import DialogFolder
