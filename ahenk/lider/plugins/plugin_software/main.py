@@ -16,6 +16,9 @@ from plugins.plugin_software.ui_software import Ui_widgetSoftware
 from helpers import plugins
 from helpers import wrappers
 
+# Repository dialog
+from plugins.plugin_software.repository import DialogRepository
+
 
 class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
     """
@@ -54,6 +57,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
 
         # UI events
         self.connect(self.listRepositories, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_list_menu)
+        self.connect(self.listRepositories, QtCore.SIGNAL("itemDoubleClicked(QListWidgetItem*)"), self.__slot_list_click)
 
     def showEvent(self, event):
         """
@@ -77,8 +81,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         # Repositories
         repositories = policy.get("softwareRepositories", [])
         self.listRepositories.clear()
-        for repo_url in repositories:
-            self.__add_repo_item(repo_url, False, True)
+        for repo in repositories:
+            repo_name, repo_url = repo.split()
+            self.__add_repo_item(repo_url, repo_name, False, True)
         # Auto update
         update_mode = policy.get("softwareUpdateMode", ["off"])[0]
         if update_mode in ["security", "full"]:
@@ -126,8 +131,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         # Repositories
         repositories = []
         for i in range(self.listRepositories.count()):
-            repo_url = str(self.listRepositories.item(i).text())
-            repositories.append(repo_url)
+            item = self.listRepositories.item(i)
+            repo_url = item.repo_url
+            repo_name = item.repo_name
+            repositories.append("%s %s" % (repo_name, repo_url))
         # New policy
         policy = {
             "softwareUpdateMode": [update_mode],
@@ -156,17 +163,30 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         """
             Triggered when user right clicks a repo item.
         """
-        #if not self.listRepositories.currentItem():
-        #    pass
         self.menu.exec_(self.listRepositories.mapToGlobal(pos))
+
+    def __slot_list_click(self, item):
+        """
+            Triggered when user double clicks a repo item.
+        """
+        if item:
+            dialog = DialogRepository(self)
+            dialog.set_url(item.repo_url)
+            dialog.set_name(item.repo_name)
+            if dialog.exec_():
+                item.repo_url = dialog.get_url()
+                item.repo_name = dialog.get_name()
+                item.setText("%s - %s" % (item.repo_name, item.repo_url))
 
     def __slot_repo_add(self):
         """
             Triggered when user wants to add a new repository.
         """
-        repo_url, ok = QtGui.QInputDialog.getText(self, "Add Repository", "URL:", QtGui.QLineEdit.Normal, "")
-        if ok:
-            self.__add_repo_item(repo_url, False, True)
+        dialog = DialogRepository(self)
+        if dialog.exec_():
+            repo_url = dialog.get_url()
+            repo_name = dialog.get_name()
+            self.__add_repo_item(repo_url, repo_name, False, True)
 
     def __slot_repo_remove(self):
         """
@@ -176,12 +196,13 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         if item:
             self.listRepositories.takeItem(self.listRepositories.currentRow())
 
-    def __add_repo_item(self, url, secure=False, checked=False):
+    def __add_repo_item(self, url, name, secure=False, checked=False):
         """
             Adds a new item to repository list.
 
             Arguments:
                 url: Repository URL
+                name: Repository name
                 secure: if repository is signed
                 checked: if repository is enabled
         """
@@ -194,7 +215,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             item.setCheckState(QtCore.Qt.Checked)
         else:
             item.setCheckState(QtCore.Qt.UnChecked)
-        item.setText(url)
+        item.setText("%s - %s" % (name, url))
+        item.repo_url = url
+        item.repo_name = name
 
     def __parse_cron(self, schedule):
         """
