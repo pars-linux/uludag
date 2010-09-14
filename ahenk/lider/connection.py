@@ -41,9 +41,9 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
 
         # UI events
         self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
-        self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.check_fields)
-        self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.check_fields)
-        self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.check_fields)
+        self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+        self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+        self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
 
     def __slot_find_host(self):
         """
@@ -105,7 +105,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         """
         self.editPassword.setText(password)
 
-    def check_fields(self, set_focus=False):
+    def __check_fields(self, set_focus=False):
         """
             Checks fields for errors:
 
@@ -130,5 +130,5 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         return True
 
     def accept(self):
-        if self.check_fields(set_focus=True):
+        if self.__check_fields(set_focus=True):
             QtGui.QDialog.accept(self)
