@@ -90,20 +90,26 @@ class Build(build):
     def run(self):
         # Clear all
         os.system("rm -rf build")
+
         # Copy codes
         print "Copying PYs..."
         os.system("cp -R src/ build/")
+
         # Copy icons
         print "Copying Images..."
         os.system("cp -R data/ build/")
-        # Copy compiled UIs and RCs
+
+        print "Generating .desktop files..."
+        for filename in glob.glob("data/*.desktop.in"):
+            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
+
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
             os.system("pykde4uic -o build/bootmanager/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
-            os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
+            os.system("pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
 class Install(install):
     def run(self):
@@ -141,9 +147,6 @@ class Install(install):
 
         # Install desktop files
         print "Installing desktop files..."
-
-        for filename in glob.glob("data/*.desktop.in"):
-            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
 
         shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
         shutil.copy("data/kcm_%s.desktop" % PROJECT, services_dir)
@@ -225,7 +228,7 @@ setup(
       version           = about.version,
       description       = unicode(about.PACKAGE),
       license           = unicode('GPL'),
-      author            = '',
+      author            = "Pardus Developers",
       author_email      = about.bugEmail,
       url               = about.homePage,
       packages          = [''],
