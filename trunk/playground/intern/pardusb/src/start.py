@@ -45,10 +45,10 @@ class Start(QtGui.QMainWindow):
                 self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"), os.environ["HOME"], "%s (*.iso *.img)" % self.tr("Images"))   
                 
             elif platform == 'win32':
-                self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"))   # fix it 
+               self.img_src = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select CD image"))   # fix it 
             
                 #will be deleted
-	    self.ui.label.setText(self.img_src)
+            self.ui.lineEdit.setText(self.img_src)
     
         @QtCore.pyqtSignature("bool")  
         def select_disk(self):
@@ -76,21 +76,17 @@ class Start(QtGui.QMainWindow):
     
         @QtCore.pyqtSignature("bool")  
         def get_disk_destination(self, item):		
-		#will be deleted
-		self.ui.label_2.setText(item.text())
+		self.ui.lineEdit_2.setText(item.text())
 		self.disk_dest = str(item.text())
 		
 		print self.a.drives[str(self.disk_dest)]
 		  
-                self.ui.label_2.setText(str(self.a.drives[str(self.disk_dest)]['size']))
-
+                
 	@QtCore.pyqtSignature("bool")
 	def button_create_clicked(self):		  
 		str(self.disk_dest)		
 		self.img_size = os.stat(self.img_src).st_size / mbyte
 		
-		#will be deleted
-		self.ui.label.setText(str(self.img_size))
 
 		if platform == 'linux2':
                     self.disk_size = (int(self.a.drives[self.disk_dest]['size']) / mbyte)
@@ -99,7 +95,7 @@ class Start(QtGui.QMainWindow):
 			  self.a.unmount_device(str(self.disk_dest)) # unmount!
 			  print ("Disk is unmounted by HAL!")
                     
-                    #self.a.mount_device(self.disk_dest)
+                    #self.a.mount_device(self.disk_dest) 
 
                 elif platform == 'win32':
                     self.disk_size = self.a.win32_get_total_size()
@@ -115,9 +111,12 @@ class Start(QtGui.QMainWindow):
 				self.warning_dialog(self.tr("Warning!"), self.tr("There is no enough space on drive!\n%dMB more space is required" % req_size ))
 					
 			else:	
-				self.shasum = self.__check_sum()
-				
-                                self.confirm_dialog =  confirmDialog(self.shasum, self.img_src, self.img_size, self.disk_size, self.disk_dest)
+                            	reply = QtGui.QMessageBox.question(self, self.tr('Sha1sum Check'), self.tr('Do you want to check integrity of image from sha1sum file?'), QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+                                self.release = ''
+                                if reply == QtGui.QMessageBox.Yes:
+                                   self.release = self.__check_sum()
+                                   
+                                self.confirm_dialog =  confirmDialog(self.release, self.img_src, self.img_size, self.disk_size, self.disk_dest)
 				
 				if self.confirm_dialog.exec_() == QtGui.QDialog.Accepted: 
 				    self.__burn_image()
@@ -125,8 +124,19 @@ class Start(QtGui.QMainWindow):
 	def warning_dialog(self, title, text):
 		QtGui.QMessageBox.warning(self, title, text, QtGui.QMessageBox.Ok)
 			
-	  
 	def __check_sum(self):
+	  
+            	sha_dest =  self.sha_dest = QtGui.QFileDialog.getOpenFileName(self, self.tr("Select Sha1sum File"), os.environ["HOME"], "%s (*.sha1sum)" % self.tr("Sha1sum"))   
+                sha_file = open(sha_dest, 'rb')
+                
+                a =  sha_file.read()
+                data = a.partition(' ')
+                shasum = data[0]
+                print data
+                print "shasum from file: %s" % shasum
+                print "Pardus release: %s" % data[2]
+                release = data[2]
+                           
 		self.max_value = int(self.img_size)
 		
 		def close_dialog(): # wtf!
@@ -146,9 +156,13 @@ class Start(QtGui.QMainWindow):
 		
 		if not cs.checksum():
 		  print "Checksum cannot validated!"
-		else:
-		  return cs.checksum()
-	
+		
+                elif shasum == cs.checksum():
+                    return release
+                
+                elif shasum != cs.checksum():
+                    return "Sha1sum file is different than images shasum!"
+		  
 
 	def __burn_image(self):
 	  
@@ -156,7 +170,7 @@ class Start(QtGui.QMainWindow):
 		    copy_progress_bar.close()
 		    copy_progress.quit()
 		    
-		copy_progress_bar = progressBar(title = self.tr("Copy Progress"), message = self.tr("Copy progress is running..."), max_value = self.max_value )				    
+		copy_progress_bar = progressBar(title = self.tr("Copy Progress"), message = self.tr("Copy progress is running..."), max_value = int(self.img_size) )				    
 		copy_progress = copyProgress(img_source = self.img_src, disk_dest = self.disk_dest, img_size = self.img_size) 
                                     
                 QtCore.QObject.connect(copy_progress, QtCore.SIGNAL("copyIncrementProgress()"), copy_progress_bar.incrementProgress)
