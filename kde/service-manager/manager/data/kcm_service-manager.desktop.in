@@ -8,7 +8,7 @@ X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=service-manager/service-manager.py
 
-X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-System-Settings-Parent-Category=system-administration
 X-KDE-Weight=70
 
 _Name=Service Manager

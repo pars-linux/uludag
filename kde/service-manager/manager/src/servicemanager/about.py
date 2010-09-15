@@ -14,16 +14,18 @@
 # PyKDE4 Stuff
 from PyKDE4.kdecore import KAboutData, ki18n, ki18nc
 
+PACKAGE = "Service Manager"
+
 # Application Data
 appName     = "service-manager"
 modName     = "servicemanager"
-programName = ki18n("Service Manager")
-version     = "2.9.5"
-description = ki18n("Service Manager")
+programName = ki18n(PACKAGE)
+version     = "3.0.0_alpha1"
+description = ki18n(PACKAGE)
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
 text        = ki18n(None)
-homePage    = "http://www.pardus.org.tr/eng/projects"
+homePage    = "http://developer.pardus.org.tr/projects/service-manager"
 bugEmail    = "bugs@pardus.org.tr"
 catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)

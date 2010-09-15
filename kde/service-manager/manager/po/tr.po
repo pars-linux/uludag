@@ -8,107 +8,107 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-25 10:17+0300\n"
+"POT-Creation-Date: 2010-09-15 22:56+0300\n"
 "PO-Revision-Date: 2009-07-15 14:08+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: data/kcm_servicemanager.desktop.in.h:1 data/servicemanager.desktop.in.h:2
-#: src/servicemanager/about.py:20 src/servicemanager/about.py:22
+#: data/kcm_service-manager.desktop.in.h:1 data/service-manager.desktop.in.h:2
 msgid "Service Manager"
 msgstr "Servis Yöneticisi"
 
-#: data/servicemanager.desktop.in.h:1
+#: data/service-manager.desktop.in.h:1
 msgid "An application for managing system services."
 msgstr "Sistem servisleri yönetim uygulaması."
 
-#: src/servicemanager/about.py:24
+#: src/servicemanager/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TÜBİTAK/UEKAE"
 
-#: src/servicemanager/about.py:32
+#: src/servicemanager/about.py:34
 msgid "Current Maintainer"
 msgstr "Şimdiki Geliştirici"
 
-#: src/servicemanager/about.py:32
+#: src/servicemanager/about.py:34
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
 
-#: src/servicemanager/about.py:33
+#: src/servicemanager/about.py:35
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: src/servicemanager/about.py:33
+#: src/servicemanager/about.py:35
 msgid "COMAR Author"
 msgstr "COMAR Yazarı"
 
-#: src/servicemanager/about.py:34
+#: src/servicemanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "gokmen@pardus.org.tr, necmetting.begiter@gmail.com"
 
-#: src/servicemanager/about.py:34
+#: src/servicemanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Gökmen Göksel, Necmettin Begiter"
 
-#: ui/ui_item.py:103 ui/ui_main.py:56
+#: ui/ui_item.py:108 ui/ui_main.py:61
 msgid "Form"
 msgstr "Form"
 
-#: ui/ui_item.py:104
+#: ui/ui_item.py:109
 msgid "serviceName"
 msgstr "servisİsmi"
 
-#: ui/ui_item.py:105
+#: ui/ui_item.py:110
 msgid "serviceDesc"
 msgstr "servisAçıklaması"
 
-#: ui/ui_item.py:106
+#: ui/ui_item.py:111
 msgid "Start service"
 msgstr "Servisi başlat"
 
-#: ui/ui_item.py:107
+#: ui/ui_item.py:112
 msgid "Reload service"
 msgstr "Servisi yeniden başlat"
 
-#: ui/ui_item.py:108
+#: ui/ui_item.py:113
 msgid "Stop service"
 msgstr "Servisi durdur"
 
-#: ui/ui_item.py:109
+#: ui/ui_item.py:114
 msgid "Run on start"
 msgstr "Açılışta çalıştır"
 
-#: ui/ui_main.py:57
+#: ui/ui_main.py:62
 msgid "type service name to search..."
 msgstr "aranacak servis ismini yazın"
 
-#: ui/ui_main.py:58
+#: ui/ui_main.py:63
 msgid "Servers"
 msgstr "Sunucular"
 
-#: ui/ui_main.py:59
+#: ui/ui_main.py:64
 msgid "System Services"
 msgstr "Sistem Servisleri"
 
-#: ui/ui_main.py:60
+#: ui/ui_main.py:65
 msgid "Startup Services"
 msgstr "Açılış Servisleri"
 
-#: ui/ui_main.py:61
+#: ui/ui_main.py:66
 msgid "Running Services"
 msgstr "Çalışan Servisler"
 
-#: ui/ui_main.py:62
+#: ui/ui_main.py:67
 msgid "All Services"
 msgstr "Tüm Servisler"
 
-#: ui/ui_main.py:63
+#: ui/ui_main.py:68
 msgid "Getting service info... %p%"
 msgstr "Servis bilgisi getiriliyor... % %p"
