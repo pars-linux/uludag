@@ -8,7 +8,7 @@ X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=firewall-manager/firewall-manager.py
 
-X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-System-Settings-Parent-Category=network-and-connectivity
 X-KDE-Weight=70
 
 _Name=Firewall Manager
