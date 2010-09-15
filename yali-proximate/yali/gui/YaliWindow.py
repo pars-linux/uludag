@@ -92,8 +92,7 @@ class Widget(QtGui.QWidget):
         self.terminal = None
         self.tetris = None
 
-        self.ui.helpContent.hide()
-        self.ui.helpSummary.hide()
+        self.ui.helpContentFrame.hide()
 
 
     def mousePressEvent(self, event):
@@ -179,13 +178,13 @@ class Widget(QtGui.QWidget):
 
     # show/hide help text
     def slotToggleHelp(self):
-        if self.ui.helpContent.isVisible():
-            self.ui.helpContent.hide()
+        print "1"
+        if self.ui.helpContentFrame.isVisible():
             self.ui.helpContentFrame.hide()
-            #self.ui.helpSummary.show()
+            print "2"
         else:
-            self.ui.helpContent.show()
-            #self.ui.helpSummary.hide()
+            self.ui.helpContentFrame.show()
+            print "3"
         _w = self.ui.mainStack.currentWidget()
         _w.update()
 
@@ -236,7 +235,6 @@ class Widget(QtGui.QWidget):
             #self.ui.screenDescription.setText(_w.desc)
             self.ui.screenIcon.setPixmap(QtGui.QPixmap(":/gui/pics/%s.png" % (_w.icon or "pardus")))
             self.ui.helpContent.setText(_w.help)
-            self.ui.helpSummary.setText(_w.helpSummary)
             # shown functions contain necessary instructions before
             # showing a stack ( updating gui, disabling some buttons etc. )
             ctx.mainScreen.processEvents()

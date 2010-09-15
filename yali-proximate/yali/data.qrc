@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/preferences-system-time-big.png</file>
+    <file>gui/pics/media-optical-small.png</file>
     <file>gui/pics/media-optical.png</file>
+    <file>gui/pics/favorites.png</file>
     <file>gui/pics/dialog-error.png</file>
     <file>gui/pics/task-accepted.png</file>
     <file>gui/pics/task-complete.png</file>

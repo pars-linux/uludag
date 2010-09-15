@@ -26,7 +26,7 @@ import yali.localedata
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Adjust Date and Time Settings")
-    icon = "iconDate"
+    icon = "preferences-system-time"
     helpSummary = _("Date and time settings allows you to set the date and time of your computer.")
     help = _("""
 <p>Date and time settings allows you to set the date and time of your computer. Generally,
@@ -59,20 +59,18 @@ Coordinated Universal Time.
         zoneList.sort()
         for zone in zoneList:
             if zone == ctx.installData.timezone:
-                self.currentZone = QtGui.QListWidgetItem(zone)
-                self.ui.timeZoneList.addItem(self.currentZone)
-            else:
-                self.ui.timeZoneList.addItem(QtGui.QListWidgetItem(zone))
+                self.currentZone = zone
+            self.ui.timeZoneList.addItem(zone)
+
+        self.index = self.ui.timeZoneList.findText(self.currentZone)
 
         # Widget connections
-        self.connect(self.ui.timeHours, SIGNAL("timeChanged(QTime)"),self.timerStop)
-        self.connect(self.ui.timeMinutes, SIGNAL("timeChanged(QTime)"),self.timerStop)
-        self.connect(self.ui.timeSeconds, SIGNAL("timeChanged(QTime)"),self.timerStop)
+        self.connect(self.ui.timeEdit, SIGNAL("timeChanged(QTime)"),self.timerStop)
         self.connect(self.ui.calendarWidget, SIGNAL("selectionChanged()"),self.dateChanged)
         self.connect(self.timer, SIGNAL("timeout()"),self.updateClock)
 
         # Select the timeZone
-        self.ui.timeZoneList.setCurrentItem(self.currentZone)
+        self.ui.timeZoneList.setCurrentIndex(self.index)
         self.timer.start(1000)
 
     def dateChanged(self):
@@ -90,9 +88,7 @@ Coordinated Universal Time.
         cur = QTime.currentTime()
 
         self.fromTimeUpdater = True
-        self.ui.timeHours.setTime(cur)
-        self.ui.timeMinutes.setTime(cur)
-        self.ui.timeSeconds.setTime(cur)
+        self.ui.timeEdit.setTime(cur)
         self.fromTimeUpdater = False
 
     def shown(self):

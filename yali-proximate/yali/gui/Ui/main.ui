@@ -322,7 +322,7 @@ QToolButton::menu-arrow {
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap resource="../../data.qrc">:/gui/pics/media-optical.png</pixmap>
+            <pixmap resource="../../data.qrc">:/gui/pics/media-optical-small.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>false</bool>
@@ -481,25 +481,6 @@ QToolButton::menu-arrow {
                <number>0</number>
               </property>
               <item row="0" column="0">
-               <widget class="QLabel" name="helpSummary">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
                <widget class="QLabel" name="helpContent">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Minimum">

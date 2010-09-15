@@ -236,7 +236,7 @@ class Yali:
 
     def setTimeZone(self, rootWidget):
         # Store time zone selection we will set it in processPending actions.
-        ctx.installData.timezone = rootWidget.timeZoneList.currentItem().text()
+        ctx.installData.timezone = rootWidget.timeZoneList.currentText()
         ctx.logger.debug("Time zone selected as %s " % ctx.installData.timezone)
 
     def storageComplete(self):
