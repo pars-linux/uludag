@@ -4,11 +4,17 @@ all:
 	pyuic4 computer.ui > ui_computer.py
 	pyuic4 folder.ui > ui_folder.py
 	pyrcc4 data.qrc > data_rc.py
-	pyuic4 plugins/plugin_summary/summary.ui > plugins/plugin_summary/ui_summary.py
-	pyrcc4 plugins/plugin_summary/summary.qrc > plugins/plugin_summary/summary_rc.py
+	
+	pyuic4 plugins/plugin_authentication/authentication.ui > plugins/plugin_authentication/ui_authentication.py
+	pyrcc4 plugins/plugin_authentication/authentication.qrc > plugins/plugin_authentication/authentication_rc.py
+	
 	pyuic4 plugins/plugin_software/software.ui > plugins/plugin_software/ui_software.py
 	pyrcc4 plugins/plugin_software/software.qrc > plugins/plugin_software/software_rc.py
 	pyuic4 plugins/plugin_software/repository.ui > plugins/plugin_software/ui_repository.py
+	
+	pyuic4 plugins/plugin_summary/summary.ui > plugins/plugin_summary/ui_summary.py
+	pyrcc4 plugins/plugin_summary/summary.qrc > plugins/plugin_summary/summary_rc.py
+	
 	pyuic4 plugins/plugin_web/web.ui > plugins/plugin_web/ui_web.py
 	pyrcc4 plugins/plugin_web/web.qrc > plugins/plugin_web/web_rc.py
 
