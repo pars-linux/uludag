@@ -53,6 +53,7 @@
                 </Translation>
             </Translations>
             <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml.bz2">
+                <SelectedComponent>desktop.kde.admin</SelectedComponent>
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
@@ -237,6 +238,7 @@
                 <Package>bluez-firmware</Package>
                 <Package>bluez-libs</Package>
                 <Package>boost</Package>
+                <Package>boot-manager</Package>
                 <Package>busybox</Package>
                 <Package>bzip2</Package>
                 <Package>c-ares</Package>
@@ -283,6 +285,7 @@
                 <Package>device-mapper</Package>
                 <Package>device-mapper-event</Package>
                 <Package>device-mapper-static</Package>
+                <Package>dhcp</Package>
                 <Package>dhcpcd</Package>
                 <Package>dialog</Package>
                 <Package>dietlibc</Package>
@@ -318,6 +321,7 @@
                 <Package>file</Package>
                 <Package>findutils</Package>
                 <Package>firefox</Package>
+                <Package>firewall-manager</Package>
                 <Package>flac</Package>
                 <Package>flashplugin</Package>
                 <Package>flex</Package>
@@ -773,6 +777,7 @@
                 <Package>pixman</Package>
                 <Package>pkgconfig</Package>
                 <Package>plasma-applet-networkmanagement</Package>
+                <Package>plasmoid-service-applet</Package>
                 <Package>pm-utils</Package>
                 <Package>podofo</Package>
                 <Package>polkit</Package>
@@ -857,6 +862,7 @@
                 <Package>sdl-gfx</Package>
                 <Package>sdl-image</Package>
                 <Package>sed</Package>
+                <Package>service-manager</Package>
                 <Package>setserial</Package>
                 <Package>sg3_utils</Package>
                 <Package>shadow</Package>
@@ -917,6 +923,7 @@
                 <Package>unzip</Package>
                 <Package>urlgrabber</Package>
                 <Package>usbutils</Package>
+                <Package>user-manager</Package>
                 <Package>utempter</Package>
                 <Package>util-linux</Package>
                 <Package>util-macros</Package>
