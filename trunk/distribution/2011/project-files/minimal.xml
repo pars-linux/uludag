@@ -1,31 +1,39 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.2 Geronticus eremita</Title>
+    <Title>Pardus 2011 Minimal (x86_64)</Title>
     <WorkDir>/tmp/iso</WorkDir>
-    <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
-    <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
+    <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/x86_64/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedPackage>aufs-progs</SelectedPackage>
+        <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <Package>ConsoleKit</Package>
-        <Package>PolicyKit</Package>
+        <Package>ModemManager</Package>
+        <Package>NetworkManager</Package>
         <Package>acl</Package>
+        <Package>alsa-lib</Package>
+        <Package>alternatives</Package>
         <Package>attr</Package>
         <Package>audit</Package>
-        <Package>aufs-progs</Package>
+        <Package>avahi</Package>
+        <Package>avahi-libs</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
-        <Package>bootsplash</Package>
-        <Package>bootsplash-theme-pardus</Package>
+        <Package>bluez</Package>
+        <Package>bluez-libs</Package>
         <Package>bzip2</Package>
+        <Package>cairo</Package>
+        <Package>cdparanoia</Package>
+        <Package>check</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
-        <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
         <Package>cracklib</Package>
+        <Package>cups</Package>
         <Package>curl</Package>
+        <Package>cyrus-sasl</Package>
         <Package>db4</Package>
         <Package>dbus</Package>
         <Package>dbus-glib</Package>
@@ -39,7 +47,8 @@
         <Package>expat</Package>
         <Package>file</Package>
         <Package>findutils</Package>
-        <Package>flex</Package>
+        <Package>flac</Package>
+        <Package>fontconfig</Package>
         <Package>freetype</Package>
         <Package>gawk</Package>
         <Package>gdbm</Package>
@@ -48,79 +57,130 @@
         <Package>gfxtheme-pardus-boot</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glitz</Package>
+        <Package>gnutls</Package>
         <Package>gperf</Package>
         <Package>grep</Package>
         <Package>groff</Package>
         <Package>grub</Package>
+        <Package>gst-plugins-base</Package>
+        <Package>gstreamer</Package>
         <Package>gzip</Package>
-        <Package>hdparm</Package>
+        <Package>iproute2</Package>
+        <Package>iptables</Package>
         <Package>iputils</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
         <Package>kernel</Package>
+        <Package>kernel-firmware</Package>
+        <Package>keyutils</Package>
         <Package>lcms</Package>
         <Package>less</Package>
-        <Package>libICE</Package>
-        <Package>libSM</Package>
         <Package>libX11</Package>
         <Package>libXau</Package>
+        <Package>libXdamage</Package>
         <Package>libXdmcp</Package>
+        <Package>libXext</Package>
+        <Package>libXfixes</Package>
+        <Package>libXft</Package>
+        <Package>libXrender</Package>
+        <Package>libXv</Package>
+        <Package>libXxf86vm</Package>
         <Package>libcap</Package>
+        <Package>libcap-ng</Package>
+        <Package>libdaemon</Package>
+        <Package>libdrm</Package>
+        <Package>libdrm-intel</Package>
+        <Package>libdrm-nouveau</Package>
+        <Package>libdrm-radeon</Package>
+        <Package>libffi</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
         <Package>libgpg-error</Package>
+        <Package>libgudev1</Package>
         <Package>libidn</Package>
-        <Package>libmng</Package>
+        <Package>libnl</Package>
+        <Package>libogg</Package>
+        <Package>liboil</Package>
+        <Package>libpaper</Package>
+        <Package>libpcap</Package>
         <Package>libpcre</Package>
         <Package>libpng</Package>
+        <Package>libsndfile</Package>
         <Package>libssh2</Package>
+        <Package>libtalloc</Package>
+        <Package>libtasn1</Package>
+        <Package>libtdb</Package>
+        <Package>libtheora</Package>
         <Package>libtool-ltdl</Package>
+        <Package>libudev</Package>
         <Package>libusb</Package>
+        <Package>libusb1</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
+        <Package>libvisual</Package>
+        <Package>libvorbis</Package>
         <Package>libxcb</Package>
         <Package>libxml2</Package>
-        <Package>libxslt</Package>
+        <Package>linux-atm</Package>
         <Package>lsb-release</Package>
         <Package>lzma</Package>
+        <Package>lzo</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
-        <Package>memtest86</Package>
+        <Package>mesa</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
+        <Package>mit-kerberos</Package>
         <Package>mkinitramfs</Package>
+        <Package>mobile-broadband-provider-info</Package>
         <Package>module-init-tools</Package>
         <Package>mudur</Package>
         <Package>nano</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>net-tools</Package>
+        <Package>nspr</Package>
+        <Package>nss</Package>
         <Package>nss-mdns</Package>
+        <Package>openjpeg</Package>
+        <Package>openldap-client</Package>
+        <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
         <Package>pam</Package>
+        <Package>pango</Package>
         <Package>pardus-python</Package>
-        <Package>parted</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
         <Package>piksemel</Package>
         <Package>pisi</Package>
+        <Package>pixman</Package>
+        <Package>polkit</Package>
+        <Package>poppler</Package>
+        <Package>poppler-data</Package>
+        <Package>poppler-utils</Package>
         <Package>popt</Package>
+        <Package>ppp</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
         <Package>pycurl</Package>
-        <Package>pyparted</Package>
         <Package>pypolkit</Package>
         <Package>python</Package>
-        <Package>python-fchksum</Package>
+        <Package>python-pyliblzma</Package>
+        <Package>radeon-rlc-firmware</Package>
         <Package>readline</Package>
+        <Package>rsyslog</Package>
         <Package>sed</Package>
+        <Package>setserial</Package>
         <Package>shadow</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>sysvinit</Package>
+        <Package>sysvinit-tools</Package>
         <Package>tar</Package>
         <Package>tcp-wrappers</Package>
         <Package>texinfo</Package>
@@ -135,9 +195,129 @@
         <Package>vixie-cron</Package>
         <Package>which</Package>
         <Package>wireless-tools</Package>
+        <Package>wpa_supplicant</Package>
+        <Package>xcb-util</Package>
+        <Package>xz</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
     </PackageSelection>
+    <InstallImagePackages>
+        <SelectedComponent>hardware.firmware</SelectedComponent>
+        <SelectedPackage>NetworkManager</SelectedPackage>
+        <SelectedPackage>memtest86</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
+        <Package>ModemManager</Package>
+        <Package>NetworkManager</Package>
+        <Package>accessrunner-firmware</Package>
+        <Package>aic94xx-firmware</Package>
+        <Package>alsa-firmware</Package>
+        <Package>alsa-lib</Package>
+        <Package>ar9170-firmware</Package>
+        <Package>atmel-firmware</Package>
+        <Package>avahi</Package>
+        <Package>avahi-libs</Package>
+        <Package>b43-firmware</Package>
+        <Package>b43-fwcutter</Package>
+        <Package>bluez</Package>
+        <Package>bluez-firmware</Package>
+        <Package>bluez-libs</Package>
+        <Package>cairo</Package>
+        <Package>cdparanoia</Package>
+        <Package>check</Package>
+        <Package>cups</Package>
+        <Package>cyrus-sasl</Package>
+        <Package>db4</Package>
+        <Package>dhcpcd</Package>
+        <Package>eagle-firmware</Package>
+        <Package>flac</Package>
+        <Package>fontconfig</Package>
+        <Package>freetype</Package>
+        <Package>fxload</Package>
+        <Package>gdbm</Package>
+        <Package>glitz</Package>
+        <Package>gnutls</Package>
+        <Package>gst-plugins-base</Package>
+        <Package>gstreamer</Package>
+        <Package>iproute2</Package>
+        <Package>iptables</Package>
+        <Package>ipw2100-firmware</Package>
+        <Package>ipw2200-firmware</Package>
+        <Package>iscan-firmware</Package>
+        <Package>iwlwifi1000-ucode</Package>
+        <Package>iwlwifi3945-ucode</Package>
+        <Package>iwlwifi4965-ucode</Package>
+        <Package>iwlwifi5000-ucode</Package>
+        <Package>iwlwifi5150-ucode</Package>
+        <Package>iwlwifi6000-ucode</Package>
+        <Package>iwlwifi6050-ucode</Package>
+        <Package>jpeg</Package>
+        <Package>kernel-firmware</Package>
+        <Package>keyutils</Package>
+        <Package>lcms</Package>
+        <Package>libXdamage</Package>
+        <Package>libXext</Package>
+        <Package>libXfixes</Package>
+        <Package>libXft</Package>
+        <Package>libXrender</Package>
+        <Package>libXv</Package>
+        <Package>libXxf86vm</Package>
+        <Package>libdaemon</Package>
+        <Package>libdrm</Package>
+        <Package>libdrm-intel</Package>
+        <Package>libdrm-nouveau</Package>
+        <Package>libdrm-radeon</Package>
+        <Package>libgcrypt</Package>
+        <Package>libgpg-error</Package>
+        <Package>libnl</Package>
+        <Package>libogg</Package>
+        <Package>liboil</Package>
+        <Package>libpaper</Package>
+        <Package>libpcap</Package>
+        <Package>libpng</Package>
+        <Package>libsndfile</Package>
+        <Package>libtalloc</Package>
+        <Package>libtasn1</Package>
+        <Package>libtdb</Package>
+        <Package>libtheora</Package>
+        <Package>libusb1</Package>
+        <Package>libvisual</Package>
+        <Package>libvorbis</Package>
+        <Package>linux-atm</Package>
+        <Package>lzo</Package>
+        <Package>memtest86</Package>
+        <Package>mesa</Package>
+        <Package>mit-kerberos</Package>
+        <Package>mobile-broadband-provider-info</Package>
+        <Package>mtools</Package>
+        <Package>nspr</Package>
+        <Package>nss</Package>
+        <Package>openjpeg</Package>
+        <Package>openldap-client</Package>
+        <Package>openslp</Package>
+        <Package>pango</Package>
+        <Package>perl</Package>
+        <Package>perl-Crypt-PasswdMD5</Package>
+        <Package>perl-Digest-SHA1</Package>
+        <Package>pixman</Package>
+        <Package>poppler</Package>
+        <Package>poppler-data</Package>
+        <Package>poppler-utils</Package>
+        <Package>ppp</Package>
+        <Package>ql2x00-firmware</Package>
+        <Package>radeon-rlc-firmware</Package>
+        <Package>ralink-firmware</Package>
+        <Package>setserial</Package>
+        <Package>speedtouch-firmware</Package>
+        <Package>syslinux</Package>
+        <Package>tiff</Package>
+        <Package>v4l-conexant-firmware</Package>
+        <Package>v4l-dvb-firmware</Package>
+        <Package>wpa_supplicant</Package>
+        <Package>xcb-util</Package>
+        <Package>zd1201-firmware</Package>
+        <Package>zd1211-firmware</Package>
+        <Package>zlib</Package>
+    </InstallImagePackages>
     <LanguageSelection default_language="tr_TR">
         <Language>tr_TR</Language>
         <Language>en_US</Language>
