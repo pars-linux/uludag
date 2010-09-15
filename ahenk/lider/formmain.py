@@ -5,6 +5,9 @@
     Main window
 """
 
+# Standard modules
+import copy
+
 # Qt4 modules
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -590,10 +593,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         if self.stackedWidget.currentIndex() != 0:
             widget = self.stackedWidget.currentWidget()
-            old_policy = widget.policy
+            old_policy = copy.deepcopy(widget.policy)
+            new_policy = copy.deepcopy(old_policy)
             try:
-                new_policy = widget.policy.copy()
                 for key, value in widget.dump_policy().iteritems():
+                    value = copy.deepcopy(value)
                     if key == "objectClass":
                         new_policy[key].extend(value)
                     else:
