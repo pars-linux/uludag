@@ -134,7 +134,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Adds an item to list.
         """
-        icon = kdeui.KIcon("tux")
+        icon = kdeui.KIcon("drive-harddisk")
         type_ = os_type
 
         # Build widget and widget item
