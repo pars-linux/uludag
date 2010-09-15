@@ -4,7 +4,7 @@
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>2fB0zF54fdL8x</Id>
+            <Id>Gz18TFLwBdr</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -82,6 +82,7 @@
                 <SelectedPackage>glew</SelectedPackage>
                 <SelectedPackage>gst-ffmpeg</SelectedPackage>
                 <SelectedPackage>gtk-engines</SelectedPackage>
+                <SelectedPackage>gtkspell</SelectedPackage>
                 <SelectedPackage>hal</SelectedPackage>
                 <SelectedPackage>htop</SelectedPackage>
                 <SelectedPackage>hunspell-dict-en</SelectedPackage>
@@ -232,6 +233,7 @@
                 <Package>bluez-firmware</Package>
                 <Package>bluez-libs</Package>
                 <Package>boost</Package>
+                <Package>busybox</Package>
                 <Package>bzip2</Package>
                 <Package>c-ares</Package>
                 <Package>cairo</Package>
@@ -327,6 +329,7 @@
                 <Package>gconf</Package>
                 <Package>gd</Package>
                 <Package>gdbm</Package>
+                <Package>gdbm-devel</Package>
                 <Package>gecko-mediaplayer</Package>
                 <Package>gettext</Package>
                 <Package>gettext-devel</Package>
@@ -370,6 +373,7 @@
                 <Package>gstreamer</Package>
                 <Package>gtk-engines</Package>
                 <Package>gtk2</Package>
+                <Package>gtkspell</Package>
                 <Package>gzip</Package>
                 <Package>hal</Package>
                 <Package>hal-info</Package>
@@ -1049,6 +1053,7 @@
         <Package>bluez</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
+        <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>cairo</Package>
         <Package>cdparanoia</Package>
