@@ -27,8 +27,7 @@ from yali.gui.YaliDialog import Dialog
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Check the Integrity of Packages")
-    icon = "media-optical"
-    helpSummary = _("A bootloader is a tiny program that runs when a computer is first powered up.")
+    icon = "media-optical-small"
     help = _("""Here you can validate the integrity of the installation packages. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).
 If you are using an optical installation medium, try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).
 """)
@@ -49,14 +48,16 @@ If you are using an optical installation medium, try burning the installation im
             ctx.yali.checkCDStop = False
             self.ui.progressBar.show()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/gui/pics/dialog-error.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.checkButton.setIcon(icon)
+            icon.addPixmap(QtGui.QPixmap(":/gui/pics/dialog-error.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            self.ui.checkButton.setIcon(icon)
             self.ui.checkButton.setText("")
+            print "clicked1"
             ctx.yali.checkCD(self.ui)
         else:
             ctx.yali.checkCDStop = True
             self.ui.progressBar.show()
             icon = QtGui.QIcon()
-            icon.addPixmap(QtGui.QPixmap(_fromUtf8(":/gui/pics/task-accepted.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-            self.checkButton.setIcon(icon)
+            icon.addPixmap(QtGui.QPixmap(":/gui/pics/task-accepted.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+            print "clicked2"
+            self.ui.checkButton.setIcon(icon)
             self.ui.checkButton.setText(_("Validate"))

@@ -148,6 +148,10 @@
               <property name="text">
                <string>Read GNU GPL</string>
               </property>
+              <property name="icon">
+               <iconset resource="../../data.qrc">
+                <normaloff>:/gui/pics/favorites.png</normaloff>:/gui/pics/favorites.png</iconset>
+              </property>
               <property name="flat">
                <bool>true</bool>
               </property>

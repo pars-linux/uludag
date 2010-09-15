@@ -96,16 +96,6 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="textLabel1">
-            <property name="text">
-             <string>Choose a keyboard layout:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QListWidget" name="keyboard_list">
             <property name="alternatingRowColors">
              <bool>false</bool>
