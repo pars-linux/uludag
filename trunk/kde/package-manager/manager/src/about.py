@@ -12,7 +12,8 @@
 #
 
 # Package Manager Version String
-version = "3.0.0_alpha1"
+version = "3.0.0_alpha2"
+PACKAGE = "Package Manager"
 
 # PyKDE4 Imports
 from PyKDE4.kdecore import ki18n, ki18nc, KAboutData
@@ -20,12 +21,12 @@ from PyKDE4.kdecore import ki18n, ki18nc, KAboutData
 # Application Data
 appName     = "package-manager"
 catalog     = appName
-programName = ki18n("Package Manager")
-description = ki18n("Package Manager")
+programName = ki18n(PACKAGE)
+description = ki18n(PACKAGE)
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
 text        = ki18n(None)
-homePage    = "http://www.pardus.org.tr/eng/projects"
+homePage    = "http://developer.pardus.org.tr/projects/package-manager"
 bugEmail    = "bugs@pardus.org.tr"
 aboutData   = KAboutData(appName, catalog, programName, version,
                          description, license, copyright, text,
