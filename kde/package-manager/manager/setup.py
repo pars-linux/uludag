@@ -34,6 +34,14 @@ def makeDirs(directory):
         except OSError:
             pass
 
+def remove(path):
+    if os.path.exists(path):
+        print ' removing: ', path
+        if os.path.isdir(path):
+            shutil.rmtree(path)
+        else:
+            os.unlink(path)
+
 def update_messages():
     files = tempfile.mkstemp()[1]
 
@@ -66,6 +74,7 @@ def update_messages():
 
     # Update PO files
     for item in glob.glob1("po", "*.po"):
+        print "Updating .. ", item
         os.system("msgmerge --update --no-wrap --sort-by-file po/%s po/%s.pot" % (item, PROJECT))
 
     # Cleanup
@@ -79,22 +88,29 @@ def update_messages():
 
 class Build(build):
     def run(self):
+
         # Clear all
         os.system("rm -rf build")
+
         # Copy codes
         print "Copying PYs..."
         os.system("cp -R src/ build/")
+
         # Copy icons
         print "Copying Images..."
         os.system("cp -R data/ build/")
-        # Copy compiled UIs and RCs
+
+        print "Generating .desktop files..."
+        for filename in glob.glob("data/*.desktop.in"):
+            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
+
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
             os.system("pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
-            os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
+            os.system("pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
 class Install(install):
     def run(self):
@@ -132,9 +148,6 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
 
-        for filename in glob.glob("data/*.desktop.in"):
-            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
-
         shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
         shutil.copy("data/%s.png" % PROJECT, icon_dir)
         shutil.copy("data/packagemanager-helper.desktop", apps_dir)
@@ -159,8 +172,9 @@ class Install(install):
             makeDirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
         rst2doc('en')
-        print "Installing help files..."
-        os.system("cp -R help %s/" % project_dir)
+        if os.path.exists('help'):
+            print "Installing help files..."
+            os.system("cp -R help %s/" % project_dir)
 
         # Rename
         print "Renaming application.py..."
@@ -182,6 +196,7 @@ class Install(install):
         except OSError:
             pass
 
+
 class Uninstall(Command):
     user_options = []
     def initialize_options(self):
@@ -189,15 +204,20 @@ class Uninstall(Command):
     def finalize_options(self):
         pass
     def run(self):
+        root_dir = "/usr/share"
+        bin_dir = "/usr/bin"
+
+        locale_dir = os.path.join(root_dir, "locale")
+        apps_dir = os.path.join(root_dir, "applications/kde4")
+        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+
         print 'Uninstalling ...'
-        data_dir = '/usr/share/kde4/apps/%s' % PROJECT
-        if os.path.exists(data_dir):
-            print ' removing: ', data_dir
-            shutil.rmtree(data_dir)
-        executable = '/usr/bin/%s' % PROJECT
-        if os.path.exists(executable):
-            print ' removing: ', executable
-            os.unlink(executable)
+        remove(project_dir)
+        remove(apps_dir +"/%s.desktop" % PROJECT)
+        for filename in glob.glob1('po', '*.po'):
+            lang = filename.rsplit(".", 1)[0]
+            remove(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+
 
 class Clean(clean):
     def run(self):
@@ -217,11 +237,11 @@ if "update_messages" in sys.argv:
 setup(
       name              = PROJECT,
       version           = about.version,
-      description       = unicode('Package Manager'),
+      description       = unicode(about.PACKAGE),
       license           = unicode('GPL'),
-      author            = '',
-      author_email      = 'bugs@pardus.org.tr',
-      url               = 'http://www.pardus.org.tr/eng/projects',
+      author            = "Pardus Developers",
+      author_email      = about.bugEmail,
+      url               = about.homePage,
       packages          = [''],
       package_dir       = {'': ''},
       data_files        = [],
