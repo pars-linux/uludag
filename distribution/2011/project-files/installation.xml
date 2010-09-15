@@ -1080,6 +1080,7 @@
         <Package>dbus-glib</Package>
         <Package>dbus-python</Package>
         <Package>device-mapper</Package>
+        <Package>device-mapper-event</Package>
         <Package>dhcpcd</Package>
         <Package>diffutils</Package>
         <Package>disktype</Package>
@@ -1216,6 +1217,7 @@
         <Package>libxml2</Package>
         <Package>linux-atm</Package>
         <Package>lsb-release</Package>
+        <Package>lvm2</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>man</Package>

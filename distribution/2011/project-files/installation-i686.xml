@@ -4,7 +4,7 @@
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>wWx6X797vjwet</Id>
+            <Id>SSaYfqFXT7</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -57,6 +57,7 @@
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
                 <SelectedComponent>x11.driver</SelectedComponent>
+                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>acpi</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
                 <SelectedPackage>alsa-lib</SelectedPackage>
@@ -67,8 +68,10 @@
                 <SelectedPackage>cdrtools</SelectedPackage>
                 <SelectedPackage>choqok</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
-                <SelectedPackage>dejavu-fonts</SelectedPackage>
                 <SelectedPackage>d-feet</SelectedPackage>
+                <SelectedPackage>dejavu-fonts</SelectedPackage>
+                <SelectedPackage>device-mapper</SelectedPackage>
+                <SelectedPackage>device-mapper-static</SelectedPackage>
                 <SelectedPackage>droid-fonts</SelectedPackage>
                 <SelectedPackage>dvd+rw-tools</SelectedPackage>
                 <SelectedPackage>enchant-zemberek</SelectedPackage>
@@ -90,6 +93,17 @@
                 <SelectedPackage>k3b</SelectedPackage>
                 <SelectedPackage>k3b-l10n-other</SelectedPackage>
                 <SelectedPackage>kaptan</SelectedPackage>
+                <SelectedPackage>kde-l10n-ca</SelectedPackage>
+                <SelectedPackage>kde-l10n-de</SelectedPackage>
+                <SelectedPackage>kde-l10n-es</SelectedPackage>
+                <SelectedPackage>kde-l10n-fr</SelectedPackage>
+                <SelectedPackage>kde-l10n-it</SelectedPackage>
+                <SelectedPackage>kde-l10n-nl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
+                <SelectedPackage>kde-l10n-sv</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdeadmin</SelectedPackage>
                 <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
                 <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -102,17 +116,6 @@
                 <SelectedPackage>kdebase-sounds</SelectedPackage>
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
-                <SelectedPackage>kde-l10n-ca</SelectedPackage>
-                <SelectedPackage>kde-l10n-de</SelectedPackage>
-                <SelectedPackage>kde-l10n-es</SelectedPackage>
-                <SelectedPackage>kde-l10n-fr</SelectedPackage>
-                <SelectedPackage>kde-l10n-it</SelectedPackage>
-                <SelectedPackage>kde-l10n-nl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
-                <SelectedPackage>kde-l10n-sv</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdepim</SelectedPackage>
@@ -129,6 +132,8 @@
                 <SelectedPackage>lm_sensors</SelectedPackage>
                 <SelectedPackage>lsof</SelectedPackage>
                 <SelectedPackage>ltrace</SelectedPackage>
+                <SelectedPackage>lvm2</SelectedPackage>
+                <SelectedPackage>lvm2-static</SelectedPackage>
                 <SelectedPackage>mc</SelectedPackage>
                 <SelectedPackage>mercurial</SelectedPackage>
                 <SelectedPackage>mesa-utils</SelectedPackage>
@@ -148,7 +153,6 @@
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
-                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>quassel</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
@@ -277,6 +281,8 @@
                 <Package>dbus-python</Package>
                 <Package>dejavu-fonts</Package>
                 <Package>device-mapper</Package>
+                <Package>device-mapper-event</Package>
+                <Package>device-mapper-static</Package>
                 <Package>dhcpcd</Package>
                 <Package>dialog</Package>
                 <Package>dietlibc</Package>
@@ -343,6 +349,7 @@
                 <Package>glib2</Package>
                 <Package>glib2-devel</Package>
                 <Package>glibc</Package>
+                <Package>glibc-devel</Package>
                 <Package>glibmm</Package>
                 <Package>glitz</Package>
                 <Package>glpk</Package>
@@ -657,6 +664,8 @@
                 <Package>lsof</Package>
                 <Package>ltrace</Package>
                 <Package>lua</Package>
+                <Package>lvm2</Package>
+                <Package>lvm2-static</Package>
                 <Package>lzma</Package>
                 <Package>lzo</Package>
                 <Package>m4</Package>
@@ -1072,6 +1081,7 @@
         <Package>dbus-glib</Package>
         <Package>dbus-python</Package>
         <Package>device-mapper</Package>
+        <Package>device-mapper-event</Package>
         <Package>dhcpcd</Package>
         <Package>diffutils</Package>
         <Package>disktype</Package>
@@ -1208,6 +1218,7 @@
         <Package>libxml2</Package>
         <Package>linux-atm</Package>
         <Package>lsb-release</Package>
+        <Package>lvm2</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>man</Package>
