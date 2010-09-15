@@ -177,6 +177,10 @@
              <string>lzma</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>lzo</string>
+            </property>
           </widget>
          </item>
          <item row="7" column="0">
