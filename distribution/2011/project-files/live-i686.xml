@@ -5,8 +5,6 @@
     <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml.bz2">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedPackage>python-qt</SelectedPackage>
-        <SelectedPackage>python-qt-webkit</SelectedPackage>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>alsa-lib</SelectedPackage>
@@ -25,6 +23,7 @@
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
+        <SelectedPackage>gtkspell</SelectedPackage>
         <SelectedPackage>hal</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
         <SelectedPackage>iw</SelectedPackage>
@@ -76,6 +75,8 @@
         <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
         <SelectedPackage>polkit-kde_1</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
+        <SelectedPackage>python-qt</SelectedPackage>
+        <SelectedPackage>python-qt-webkit</SelectedPackage>
         <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>quassel</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
@@ -159,11 +160,10 @@
         <Package>DirectFB</Package>
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
-        <Package>python-qt</Package>
-        <Package>python-qt-webkit</Package>
         <Package>QtCurve-Gtk2</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
+        <Package>accessrunner-firmware</Package>
         <Package>acl</Package>
         <Package>acpid</Package>
         <Package>aic94xx-firmware</Package>
@@ -193,6 +193,7 @@
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
         <Package>boost</Package>
+        <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>cairo</Package>
         <Package>cdparanoia</Package>
@@ -294,6 +295,7 @@
         <Package>gstreamer</Package>
         <Package>gtk-engines</Package>
         <Package>gtk2</Package>
+        <Package>gtkspell</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-info</Package>
@@ -311,6 +313,7 @@
         <Package>iproute2</Package>
         <Package>iptables</Package>
         <Package>iputils</Package>
+        <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
         <Package>iscan-firmware</Package>
         <Package>iso-codes</Package>
@@ -351,6 +354,7 @@
         <Package>kdebase-runtime</Package>
         <Package>kdebase-sounds</Package>
         <Package>kdebase-workspace</Package>
+        <Package>kdeedu-marble</Package>
         <Package>kdegraphics</Package>
         <Package>kdelibs</Package>
         <Package>kdemultimedia</Package>
@@ -500,6 +504,7 @@
         <Package>libunwind</Package>
         <Package>libusb</Package>
         <Package>libusb1</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
         <Package>libv4l</Package>
         <Package>libva</Package>
@@ -624,6 +629,8 @@
         <Package>python-kde</Package>
         <Package>python-mutagen</Package>
         <Package>python-pyliblzma</Package>
+        <Package>python-qt</Package>
+        <Package>python-qt-webkit</Package>
         <Package>python-simplejson</Package>
         <Package>python-tk</Package>
         <Package>python-v4l2capture</Package>
@@ -650,6 +657,7 @@
         <Package>recode</Package>
         <Package>redland</Package>
         <Package>redland-virtuoso</Package>
+        <Package>rsyslog</Package>
         <Package>rtkit</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
@@ -665,12 +673,14 @@
         <Package>shared-desktop-ontologies</Package>
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
         <Package>slf4j</Package>
         <Package>smolt</Package>
         <Package>soprano</Package>
         <Package>soprano-plugin-virtuoso</Package>
         <Package>sox</Package>
+        <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
         <Package>sqlite</Package>
@@ -682,7 +692,6 @@
         <Package>sun-jre</Package>
         <Package>suspend</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>syslinux</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
@@ -811,7 +820,7 @@
         <Package>ConsoleKit</Package>
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
-        <Package>python-qt</Package>
+        <Package>accessrunner-firmware</Package>
         <Package>acl</Package>
         <Package>aic94xx-firmware</Package>
         <Package>alsa-firmware</Package>
@@ -831,6 +840,7 @@
         <Package>bluez</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
+        <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>cairo</Package>
         <Package>cdparanoia</Package>
@@ -894,6 +904,7 @@
         <Package>iproute2</Package>
         <Package>iptables</Package>
         <Package>iputils</Package>
+        <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
         <Package>iscan-firmware</Package>
         <Package>iwlwifi1000-ucode</Package>
@@ -964,6 +975,7 @@
         <Package>libpng</Package>
         <Package>libsndfile</Package>
         <Package>libssh2</Package>
+        <Package>libtalloc</Package>
         <Package>libtasn1</Package>
         <Package>libtdb</Package>
         <Package>libtheora</Package>
@@ -971,6 +983,7 @@
         <Package>libudev</Package>
         <Package>libusb</Package>
         <Package>libusb1</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
         <Package>libva</Package>
         <Package>libvdpau</Package>
@@ -994,6 +1007,8 @@
         <Package>mkinitramfs</Package>
         <Package>mobile-broadband-provider-info</Package>
         <Package>module-init-tools</Package>
+        <Package>module-nvidia-current</Package>
+        <Package>module-nvidia-current-userspace</Package>
         <Package>mtools</Package>
         <Package>mudur</Package>
         <Package>nano</Package>
@@ -1038,6 +1053,7 @@
         <Package>python-pyaspects</Package>
         <Package>python-pyblock</Package>
         <Package>python-pyliblzma</Package>
+        <Package>python-qt</Package>
         <Package>ql2x00-firmware</Package>
         <Package>qt</Package>
         <Package>qtermwidget</Package>
@@ -1045,14 +1061,16 @@
         <Package>ralink-firmware</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
+        <Package>rsyslog</Package>
         <Package>sed</Package>
         <Package>setserial</Package>
         <Package>shadow</Package>
         <Package>sip</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
+        <Package>speedtouch-firmware</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>syslinux</Package>
         <Package>sysvinit</Package>
         <Package>sysvinit-tools</Package>
@@ -1119,6 +1137,7 @@
         <Package>xorg-video-newport</Package>
         <Package>xorg-video-nouveau</Package>
         <Package>xorg-video-nv</Package>
+        <Package>xorg-video-nvidia-current</Package>
         <Package>xorg-video-openchrome</Package>
         <Package>xorg-video-r128</Package>
         <Package>xorg-video-radeon</Package>
