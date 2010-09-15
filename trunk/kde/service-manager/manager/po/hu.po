@@ -2,110 +2,110 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-25 10:17+0300\n"
+"POT-Creation-Date: 2010-09-15 22:56+0300\n"
 "PO-Revision-Date: 2010-06-02 19:08+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/kcm_servicemanager.desktop.in.h:1 data/servicemanager.desktop.in.h:2
-#: src/servicemanager/about.py:20 src/servicemanager/about.py:22
+#: data/kcm_service-manager.desktop.in.h:1 data/service-manager.desktop.in.h:2
 msgid "Service Manager"
 msgstr "Szolgáltatás menedzser"
 
-#: data/servicemanager.desktop.in.h:1
+#: data/service-manager.desktop.in.h:1
 msgid "An application for managing system services."
 msgstr "Egy alkalmazás a rendszerszolgáltatások menedzselésére."
 
-#: src/servicemanager/about.py:24
+#: src/servicemanager/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#: src/servicemanager/about.py:32
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/servicemanager/about.py:32
+#: src/servicemanager/about.py:34
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
-#: src/servicemanager/about.py:33
+#: src/servicemanager/about.py:34
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
+
+#: src/servicemanager/about.py:35
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: src/servicemanager/about.py:33
+#: src/servicemanager/about.py:35
 msgid "COMAR Author"
 msgstr "COMAR szerző"
 
-#: src/servicemanager/about.py:34
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Daniel Kovács"
-
-#: src/servicemanager/about.py:34
+#: src/servicemanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bicskas9323@gmail.com"
 
-#: ui/ui_item.py:103 ui/ui_main.py:56
+#: src/servicemanager/about.py:36
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Daniel Kovács"
+
+#: ui/ui_item.py:108 ui/ui_main.py:61
 msgid "Form"
 msgstr "Forma"
 
-#: ui/ui_item.py:104
+#: ui/ui_item.py:109
 msgid "serviceName"
 msgstr "szolgáltatásNév"
 
-#: ui/ui_item.py:105
+#: ui/ui_item.py:110
 msgid "serviceDesc"
 msgstr "szolgáltatásLeírás"
 
-#: ui/ui_item.py:106
+#: ui/ui_item.py:111
 msgid "Start service"
 msgstr "Szolgáltatás indítása"
 
-#: ui/ui_item.py:107
+#: ui/ui_item.py:112
 msgid "Reload service"
 msgstr "Szolgáltatás újratöltése"
 
-#: ui/ui_item.py:108
+#: ui/ui_item.py:113
 msgid "Stop service"
 msgstr "Szolgáltatás leállítása"
 
-#: ui/ui_item.py:109
+#: ui/ui_item.py:114
 msgid "Run on start"
 msgstr "Futás indulásnál"
 
-#: ui/ui_main.py:57
+#: ui/ui_main.py:62
 msgid "type service name to search..."
 msgstr "gépeld be a szolgáltatás nevét, amit keresel..."
 
-#: ui/ui_main.py:58
+#: ui/ui_main.py:63
 msgid "Servers"
 msgstr "Szerverek"
 
-#: ui/ui_main.py:59
+#: ui/ui_main.py:64
 msgid "System Services"
 msgstr "Rendszerszolgáltatások"
 
-#: ui/ui_main.py:60
+#: ui/ui_main.py:65
 msgid "Startup Services"
 msgstr "Betöltődő szolgáltatások"
 
-#: ui/ui_main.py:61
+#: ui/ui_main.py:66
 msgid "Running Services"
 msgstr "Futó szolgáltatások"
 
-#: ui/ui_main.py:62
+#: ui/ui_main.py:67
 msgid "All Services"
 msgstr "Minde nszolgáltatás"
 
-#: ui/ui_main.py:63
+#: ui/ui_main.py:68
 msgid "Getting service info... %p%"
 msgstr "Információgyűjtés a szolgáltatásról... %p%"
