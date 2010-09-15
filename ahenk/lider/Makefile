@@ -8,6 +8,9 @@ all:
 	pyuic4 plugins/plugin_authentication/authentication.ui > plugins/plugin_authentication/ui_authentication.py
 	pyrcc4 plugins/plugin_authentication/authentication.qrc > plugins/plugin_authentication/authentication_rc.py
 	
+	pyuic4 plugins/plugin_services/services.ui > plugins/plugin_services/ui_services.py
+	pyrcc4 plugins/plugin_services/services.qrc > plugins/plugin_services/services_rc.py
+	
 	pyuic4 plugins/plugin_software/software.ui > plugins/plugin_software/ui_software.py
 	pyrcc4 plugins/plugin_software/software.qrc > plugins/plugin_software/software_rc.py
 	pyuic4 plugins/plugin_software/repository.ui > plugins/plugin_software/ui_repository.py
