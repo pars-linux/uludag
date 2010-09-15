@@ -1,10 +1,10 @@
 <PardusmanProject type="install" media="dvd" compression="gzip">
-    <Title>Pardus 2011 Alpha (i686)</Title>
+    <Title>Pardus 2011 Alpha 2 (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>EjHP5ntxbf10F</Id>
+            <Id>s4aKeZfZIOJsQpF</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -57,6 +57,7 @@
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
                 <SelectedComponent>x11.driver</SelectedComponent>
+                <SelectedPackage>acpi</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
                 <SelectedPackage>alsa-lib</SelectedPackage>
                 <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
@@ -123,7 +124,10 @@
                 <SelectedPackage>kernel</SelectedPackage>
                 <SelectedPackage>kernel-module-headers</SelectedPackage>
                 <SelectedPackage>knetworkmanager</SelectedPackage>
+                <SelectedPackage>krename</SelectedPackage>
                 <SelectedPackage>lm_sensors</SelectedPackage>
+                <SelectedPackage>lsof</SelectedPackage>
+                <SelectedPackage>ltrace</SelectedPackage>
                 <SelectedPackage>mc</SelectedPackage>
                 <SelectedPackage>mercurial</SelectedPackage>
                 <SelectedPackage>mesa-utils</SelectedPackage>
@@ -135,6 +139,7 @@
                 <SelectedPackage>pardus-default-settings</SelectedPackage>
                 <SelectedPackage>partitionmanager</SelectedPackage>
                 <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
+                <SelectedPackage>phonon-backend-vlc</SelectedPackage>
                 <SelectedPackage>phonon-backend-xine</SelectedPackage>
                 <SelectedPackage>pinentry-qt</SelectedPackage>
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
@@ -147,6 +152,7 @@
                 <SelectedPackage>quassel</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
                 <SelectedPackage>redland-virtuoso</SelectedPackage>
+                <SelectedPackage>rekonq</SelectedPackage>
                 <SelectedPackage>rpm2targz</SelectedPackage>
                 <SelectedPackage>samba</SelectedPackage>
                 <SelectedPackage>scim-immodule-gtk</SelectedPackage>
@@ -155,10 +161,12 @@
                 <SelectedPackage>shared-mime-info</SelectedPackage>
                 <SelectedPackage>soprano-plugin-virtuoso</SelectedPackage>
                 <SelectedPackage>startup-notification</SelectedPackage>
+                <SelectedPackage>strace</SelectedPackage>
                 <SelectedPackage>subversion</SelectedPackage>
                 <SelectedPackage>sudo</SelectedPackage>
                 <SelectedPackage>sun-jre</SelectedPackage>
                 <SelectedPackage>suspend</SelectedPackage>
+                <SelectedPackage>synergy</SelectedPackage>
                 <SelectedPackage>tree</SelectedPackage>
                 <SelectedPackage>vim</SelectedPackage>
                 <SelectedPackage>vim-colorschemes</SelectedPackage>
@@ -172,18 +180,19 @@
                 <SelectedPackage>yakuake</SelectedPackage>
                 <SelectedPackage>zemberek</SelectedPackage>
                 <SelectedPackage>zemberek-server</SelectedPackage>
+                <SelectedPackage>zsh</SelectedPackage>
                 <Package>ConsoleKit</Package>
                 <Package>ConsoleKit-devel</Package>
                 <Package>DirectFB</Package>
                 <Package>ModemManager</Package>
                 <Package>NetworkManager</Package>
-                <Package>python-qt</Package>
-                <Package>python-qt-webkit</Package>
                 <Package>QtCurve-Gtk2</Package>
                 <Package>a52dec</Package>
                 <Package>aalib</Package>
+                <Package>accessrunner-firmware</Package>
                 <Package>acl</Package>
                 <Package>acl-devel</Package>
+                <Package>acpi</Package>
                 <Package>acpid</Package>
                 <Package>aic94xx-firmware</Package>
                 <Package>akonadi</Package>
@@ -269,6 +278,7 @@
                 <Package>dhcpcd</Package>
                 <Package>dialog</Package>
                 <Package>dietlibc</Package>
+                <Package>dietlibc-libdevmapper</Package>
                 <Package>diffstat</Package>
                 <Package>diffutils</Package>
                 <Package>disktype</Package>
@@ -303,9 +313,12 @@
                 <Package>flac</Package>
                 <Package>flashplugin</Package>
                 <Package>flex</Package>
+                <Package>fluidsynth</Package>
                 <Package>fontconfig</Package>
                 <Package>freeglut</Package>
                 <Package>freetype</Package>
+                <Package>fribidi</Package>
+                <Package>ftgl</Package>
                 <Package>fuse</Package>
                 <Package>fxload</Package>
                 <Package>gamin</Package>
@@ -378,6 +391,7 @@
                 <Package>iproute2</Package>
                 <Package>iptables</Package>
                 <Package>iputils</Package>
+                <Package>ipw2100-firmware</Package>
                 <Package>ipw2200-firmware</Package>
                 <Package>iscan-firmware</Package>
                 <Package>iso-codes</Package>
@@ -421,6 +435,7 @@
                 <Package>kdebase-wallpapers</Package>
                 <Package>kdebase-workspace</Package>
                 <Package>kdebindings</Package>
+                <Package>kdeedu-marble</Package>
                 <Package>kdegraphics</Package>
                 <Package>kdelibs</Package>
                 <Package>kdemultimedia</Package>
@@ -432,6 +447,7 @@
                 <Package>kdesdk</Package>
                 <Package>kdetoys</Package>
                 <Package>kdeutils</Package>
+                <Package>kdevplatform</Package>
                 <Package>kdm</Package>
                 <Package>kernel</Package>
                 <Package>kernel-firmware</Package>
@@ -441,6 +457,7 @@
                 <Package>klibc</Package>
                 <Package>knetworkmanager</Package>
                 <Package>knetworkmanager-common</Package>
+                <Package>krename</Package>
                 <Package>ladspa-sdk</Package>
                 <Package>lame</Package>
                 <Package>lapack</Package>
@@ -506,6 +523,7 @@
                 <Package>libdrm-nouveau</Package>
                 <Package>libdrm-radeon</Package>
                 <Package>libdv</Package>
+                <Package>libdvbpsi</Package>
                 <Package>libdvdcss</Package>
                 <Package>libdvdnav</Package>
                 <Package>libdvdread</Package>
@@ -558,6 +576,7 @@
                 <Package>libmpeg2</Package>
                 <Package>libmpeg3</Package>
                 <Package>libmsn</Package>
+                <Package>libmtp</Package>
                 <Package>libnl</Package>
                 <Package>libnotify</Package>
                 <Package>libnut</Package>
@@ -573,6 +592,7 @@
                 <Package>libpcre-devel</Package>
                 <Package>libpng</Package>
                 <Package>libpng-devel</Package>
+                <Package>libprojectM</Package>
                 <Package>libproxy</Package>
                 <Package>libqalculate</Package>
                 <Package>libqjson</Package>
@@ -601,9 +621,12 @@
                 <Package>libudev-devel</Package>
                 <Package>libunwind</Package>
                 <Package>libunwind-devel</Package>
+                <Package>libupnp</Package>
                 <Package>libusb</Package>
                 <Package>libusb-devel</Package>
                 <Package>libusb1</Package>
+                <Package>libuser</Package>
+                <Package>libuser-devel</Package>
                 <Package>libuuid</Package>
                 <Package>libv4l</Package>
                 <Package>libva</Package>
@@ -627,6 +650,9 @@
                 <Package>live555</Package>
                 <Package>lm_sensors</Package>
                 <Package>lsb-release</Package>
+                <Package>lsof</Package>
+                <Package>ltrace</Package>
+                <Package>lua</Package>
                 <Package>lzma</Package>
                 <Package>lzo</Package>
                 <Package>m4</Package>
@@ -643,6 +669,7 @@
                 <Package>mesa-utils</Package>
                 <Package>mina-core</Package>
                 <Package>mingetty</Package>
+                <Package>minizip</Package>
                 <Package>miscfiles</Package>
                 <Package>mit-kerberos</Package>
                 <Package>mjpegtools</Package>
@@ -653,6 +680,8 @@
                 <Package>module-broadcom-wl</Package>
                 <Package>module-broadcom-wl-userspace</Package>
                 <Package>module-init-tools</Package>
+                <Package>module-nvidia-current</Package>
+                <Package>module-nvidia-current-userspace</Package>
                 <Package>mpfr</Package>
                 <Package>mpfr-devel</Package>
                 <Package>mpg123</Package>
@@ -667,6 +696,7 @@
                 <Package>nasm</Package>
                 <Package>ncompress</Package>
                 <Package>ncurses</Package>
+                <Package>ncurses-devel</Package>
                 <Package>neon</Package>
                 <Package>net-tools</Package>
                 <Package>netpbm</Package>
@@ -718,6 +748,7 @@
                 <Package>perl-libwww</Package>
                 <Package>phonon</Package>
                 <Package>phonon-backend-gstreamer</Package>
+                <Package>phonon-backend-vlc</Package>
                 <Package>phonon-backend-xine</Package>
                 <Package>php-cli</Package>
                 <Package>php-common</Package>
@@ -730,6 +761,7 @@
                 <Package>pkgconfig</Package>
                 <Package>plasma-applet-networkmanagement</Package>
                 <Package>pm-utils</Package>
+                <Package>podofo</Package>
                 <Package>polkit</Package>
                 <Package>polkit-devel</Package>
                 <Package>polkit-kde_1</Package>
@@ -764,6 +796,8 @@
                 <Package>python-numpy</Package>
                 <Package>python-pygobject</Package>
                 <Package>python-pyliblzma</Package>
+                <Package>python-qt</Package>
+                <Package>python-qt-webkit</Package>
                 <Package>python-setuptools</Package>
                 <Package>python-simplejson</Package>
                 <Package>python-tk</Package>
@@ -790,11 +824,14 @@
                 <Package>rasqal</Package>
                 <Package>rdate</Package>
                 <Package>readline</Package>
+                <Package>readline-devel</Package>
                 <Package>recode</Package>
                 <Package>redland</Package>
                 <Package>redland-virtuoso</Package>
+                <Package>rekonq</Package>
                 <Package>rpm2targz</Package>
                 <Package>rsync</Package>
+                <Package>rsyslog</Package>
                 <Package>rtkit</Package>
                 <Package>ruby</Package>
                 <Package>samba</Package>
@@ -805,6 +842,7 @@
                 <Package>scons</Package>
                 <Package>screen</Package>
                 <Package>sdl-gfx</Package>
+                <Package>sdl-image</Package>
                 <Package>sed</Package>
                 <Package>setserial</Package>
                 <Package>sg3_utils</Package>
@@ -812,17 +850,23 @@
                 <Package>shared-desktop-ontologies</Package>
                 <Package>shared-mime-info</Package>
                 <Package>sip</Package>
+                <Package>skey</Package>
+                <Package>skey-devel</Package>
                 <Package>slang</Package>
+                <Package>slang-devel</Package>
                 <Package>slf4j</Package>
                 <Package>smolt</Package>
                 <Package>soprano</Package>
                 <Package>soprano-plugin-virtuoso</Package>
                 <Package>sox</Package>
+                <Package>speedtouch-firmware</Package>
                 <Package>speex</Package>
                 <Package>spidermonkey</Package>
                 <Package>sqlite</Package>
                 <Package>sqlite-devel</Package>
                 <Package>startup-notification</Package>
+                <Package>stlport</Package>
+                <Package>strace</Package>
                 <Package>strigi</Package>
                 <Package>strigi-common</Package>
                 <Package>strigi-libs</Package>
@@ -831,9 +875,9 @@
                 <Package>sun-jre</Package>
                 <Package>suspend</Package>
                 <Package>swig</Package>
+                <Package>synergy</Package>
                 <Package>sysfsutils</Package>
                 <Package>sysfsutils-devel</Package>
-                <Package>sysklogd</Package>
                 <Package>system-config-printer</Package>
                 <Package>sysvinit</Package>
                 <Package>sysvinit-tools</Package>
@@ -872,6 +916,7 @@
                 <Package>vim-colorschemes</Package>
                 <Package>virtuoso</Package>
                 <Package>vixie-cron</Package>
+                <Package>vlc-libs</Package>
                 <Package>vorbis-tools</Package>
                 <Package>wavpack</Package>
                 <Package>wget</Package>
@@ -930,6 +975,7 @@
                 <Package>xorg-video-newport</Package>
                 <Package>xorg-video-nouveau</Package>
                 <Package>xorg-video-nv</Package>
+                <Package>xorg-video-nvidia-current</Package>
                 <Package>xorg-video-openchrome</Package>
                 <Package>xorg-video-r128</Package>
                 <Package>xorg-video-radeon</Package>
@@ -968,6 +1014,8 @@
                 <Package>zlib</Package>
                 <Package>zlib-devel</Package>
                 <Package>zorg</Package>
+                <Package>zsh</Package>
+                <Package>zvbi</Package>
             </PackageSelection>
         </PackageCollection>
     </PackageCollections>
@@ -982,7 +1030,7 @@
         <Package>ConsoleKit</Package>
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
-        <Package>python-qt</Package>
+        <Package>accessrunner-firmware</Package>
         <Package>acl</Package>
         <Package>aic94xx-firmware</Package>
         <Package>alsa-firmware</Package>
@@ -1065,6 +1113,7 @@
         <Package>iproute2</Package>
         <Package>iptables</Package>
         <Package>iputils</Package>
+        <Package>ipw2100-firmware</Package>
         <Package>ipw2200-firmware</Package>
         <Package>iscan-firmware</Package>
         <Package>iwlwifi1000-ucode</Package>
@@ -1135,6 +1184,7 @@
         <Package>libpng</Package>
         <Package>libsndfile</Package>
         <Package>libssh2</Package>
+        <Package>libtalloc</Package>
         <Package>libtasn1</Package>
         <Package>libtdb</Package>
         <Package>libtheora</Package>
@@ -1142,6 +1192,7 @@
         <Package>libudev</Package>
         <Package>libusb</Package>
         <Package>libusb1</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
         <Package>libva</Package>
         <Package>libvdpau</Package>
@@ -1165,6 +1216,8 @@
         <Package>mkinitramfs</Package>
         <Package>mobile-broadband-provider-info</Package>
         <Package>module-init-tools</Package>
+        <Package>module-nvidia-current</Package>
+        <Package>module-nvidia-current-userspace</Package>
         <Package>mtools</Package>
         <Package>mudur</Package>
         <Package>nano</Package>
@@ -1209,6 +1262,7 @@
         <Package>python-pyaspects</Package>
         <Package>python-pyblock</Package>
         <Package>python-pyliblzma</Package>
+        <Package>python-qt</Package>
         <Package>ql2x00-firmware</Package>
         <Package>qt</Package>
         <Package>qtermwidget</Package>
@@ -1216,14 +1270,16 @@
         <Package>ralink-firmware</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
+        <Package>rsyslog</Package>
         <Package>sed</Package>
         <Package>setserial</Package>
         <Package>shadow</Package>
         <Package>sip</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
+        <Package>speedtouch-firmware</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>syslinux</Package>
         <Package>sysvinit</Package>
         <Package>sysvinit-tools</Package>
@@ -1290,6 +1346,7 @@
         <Package>xorg-video-newport</Package>
         <Package>xorg-video-nouveau</Package>
         <Package>xorg-video-nv</Package>
+        <Package>xorg-video-nvidia-current</Package>
         <Package>xorg-video-openchrome</Package>
         <Package>xorg-video-r128</Package>
         <Package>xorg-video-radeon</Package>
