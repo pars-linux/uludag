@@ -204,12 +204,14 @@ class MainWidget(QWidget, Ui_MainWidget):
                 self.initializeGroupList()
 
     def groupFilter(self):
+        waitCursor()
         self.packageList.resetMoreInfoRow()
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
         self.packageList.model().setFilterPackages(packages)
         self.packageList.scrollToTop()
         self.packageList.select_all.setChecked(self.groupList.currentGroup() in self._selectedGroups)
+        restoreCursor()
 
     def searchActivated(self, justFilter = False):
         if self.__searchMutex.tryLock():
