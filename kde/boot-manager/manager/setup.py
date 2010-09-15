@@ -127,9 +127,6 @@ class Install(install):
             root_dir = "/usr/share"
             bin_dir = "/usr/bin"
 
-        mime_icons_dir = os.path.join(root_dir, "icons/hicolor")
-        icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
-        mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications/kde4")
         services_dir = os.path.join(root_dir, "kde4/services")
@@ -137,19 +134,18 @@ class Install(install):
 
         # Make directories
         print "Making directories..."
-        makeDirs(mime_icons_dir)
-        makeDirs(icon_dir)
-        makeDirs(mime_dir)
         makeDirs(bin_dir)
         makeDirs(locale_dir)
         makeDirs(apps_dir)
         makeDirs(project_dir)
+        makeDirs(services_dir)
 
         # Install desktop files
         print "Installing desktop files..."
 
         shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
         shutil.copy("data/kcm_%s.desktop" % PROJECT, services_dir)
+        shutil.rmtree('build/data')
 
         # Install codes
         print "Installing codes..."
