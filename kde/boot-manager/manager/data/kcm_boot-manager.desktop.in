@@ -8,7 +8,7 @@ X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=boot-manager/boot-manager.py
 
-X-KDE-System-Settings-Parent-Category=computer-administration
+X-KDE-System-Settings-Parent-Category=hardware
 X-KDE-Weight=70
 
 _Name=Boot Manager
