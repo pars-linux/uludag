@@ -14,22 +14,25 @@
 # PyKDE
 from PyKDE4.kdecore import KAboutData, ki18n, ki18nc
 
+PACKAGE = "User Manager"
+
 # Application Data
 appName     = "user-manager"
 modName     = "usermanager"
-programName = ki18n("User Manager")
-version     = "2.9.9"
-description = ki18n("User Manager")
+programName = ki18n(PACKAGE)
+version     = "3.0.0_alpha1"
+description = ki18n(PACKAGE)
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2010 TUBITAK/UEKAE")
 text        = ki18n(None)
-homePage    = "http://www.pardus.org.tr/eng/projects"
+homePage    = "http://developer.pardus.org.tr/projects/user-manager"
 bugEmail    = "bugs@pardus.org.tr"
 catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Author(s)
-aboutData.addAuthor(ki18n("Bahadır Kandemir"), ki18n("Current Maintainer"))
+aboutData.addAuthor(ki18n("Gökmen Göksel"), ki18n("Current Maintainer"))
+aboutData.addAuthor(ki18n("Bahadır Kandemir"), ki18n("First Developer"))
 aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"), ki18nc("EMAIL OF TRANSLATORS", "Your emails"))
 
 # Use this if icon name is different than appName
