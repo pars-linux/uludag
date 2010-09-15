@@ -229,6 +229,8 @@ class Directory:
                 old: Old attributes
                 new: New attributes
         """
+        print ">>>", old
+        print ">>>", new
         try:
             ldif = ldap.modlist.modifyModlist(old, new)
             self.conn.modify_s(dn, ldif)

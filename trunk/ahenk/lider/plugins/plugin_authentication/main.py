@@ -31,7 +31,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
         plugins.PluginWidget.__init__(self)
         QtGui.QWidget.__init__(self, parent)
 
+        # Attach generated UI
         self.setupUi(self)
+
+        # UI events
+        self.connect(self.radioUnix, QtCore.SIGNAL("clicked()"), self.__update_boxes)
+        self.connect(self.radioLDAP, QtCore.SIGNAL("clicked()"), self.__update_boxes)
+        self.connect(self.radioAD, QtCore.SIGNAL("clicked()"), self.__update_boxes)
+
+        # Reset UI
+        self.__update_boxes()
 
     def showEvent(self, event):
         """
@@ -77,3 +86,18 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
             Main window calls this method when an XMPP status is changed.
         """
         pass
+
+    def __update_boxes(self):
+        """
+            Changes visibilities of group boxes according to authentication
+            source selection.
+        """
+        if self.radioUnix.isChecked():
+            self.groupLDAP.hide()
+            self.groupAD.hide()
+        elif self.radioLDAP.isChecked():
+            self.groupLDAP.show()
+            self.groupAD.hide()
+        elif self.radioAD.isChecked():
+            self.groupLDAP.hide()
+            self.groupAD.show()
