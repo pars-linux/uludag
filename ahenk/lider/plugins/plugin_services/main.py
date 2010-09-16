@@ -5,6 +5,9 @@
     Software magement module
 """
 
+# Standard modules
+import simplejson
+
 # Qt4 modules
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -40,7 +43,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Things to do before widget is shown.
         """
-        pass
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_message(jid, "service info")
 
     def get_type(self):
         """
@@ -72,8 +76,14 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
         try:
             command, reply = message.split(":", 1)
-        except ValueError:
+            reply = simplejson.loads(reply)
+        except (ValueError, simplejson.JSONDecodeError):
             return
+        if command == "service info":
+            self.listServices.clear()
+            for name, desc, status in reply:
+                item = QtGui.QListWidgetItem(self.listServices)
+                item.setText("%s - %s" % (name, status))
 
     def talk_status(self, sender, status):
         """
