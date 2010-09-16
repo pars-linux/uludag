@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/applications-other.png</file>
+    <file>gui/pics/input-keyboard.png</file>
+    <file>gui/pics/input-keyboard-big.png</file>
     <file>gui/pics/preferences-system-time-big.png</file>
     <file>gui/pics/media-optical-small.png</file>
     <file>gui/pics/media-optical.png</file>
