@@ -29,7 +29,7 @@ from yali.gui.YaliDialog import Dialog
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Welcome to Pardus 2011 Alpha2")
     # FIXME: Use system's pardus release to gather version info and use it if needed
-    helpSummary = _("Welcome to Pardus that contains many easy-to-use software components.")
+    icon = "applications-other"
     help = _("""
 <p>Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.</p>
 <p>This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.</p>

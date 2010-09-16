@@ -72,9 +72,7 @@
               <property name="currentIndex">
                <number>0</number>
               </property>
-              <widget class="QWidget" name="page">
-               <zorder>headContainer</zorder>
-              </widget>
+              <widget class="QWidget" name="page"/>
              </widget>
             </item>
            </layout>
@@ -89,8 +87,13 @@
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">#menuContainer{
+         <string notr="true">/*#menuContainer{
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(85, 126, 149, 255), stop:1 rgba(120, 146, 172, 255));
+	border-top: 1px solid white
+}*/
+
+#menuContainer{
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
 	border-top: 1px solid white
 }</string>
         </property>
@@ -487,6 +490,11 @@ QToolButton::menu-arrow {
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
                 </property>
                 <property name="text">
                  <string>Welcome to YALI, the Pardus installer. YALI will guide you through the installation process. Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.Welcome to YALI, the Pardus installer. YALI will guide you through the installation process.</string>

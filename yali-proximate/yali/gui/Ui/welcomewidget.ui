@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1032</width>
+    <width>732</width>
     <height>496</height>
    </rect>
   </property>
@@ -103,6 +103,11 @@
           </item>
           <item>
            <widget class="QLabel" name="disclamer">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
             <property name="lineWidth">
              <number>1</number>
             </property>
@@ -142,6 +147,11 @@
                 <height>0</height>
                </size>
               </property>
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
               <property name="focusPolicy">
                <enum>Qt::TabFocus</enum>
               </property>
@@ -159,8 +169,16 @@
             </item>
             <item>
              <widget class="QCheckBox" name="accept">
+              <property name="font">
+               <font>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>I understand and accept the terms of GNU GPL</string>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
               </property>
              </widget>
             </item>

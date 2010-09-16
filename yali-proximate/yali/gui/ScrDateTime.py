@@ -48,6 +48,8 @@ Coordinated Universal Time.
         self.fromTimeUpdater = True
         self.isDateChanged = False
 
+        self.currentZone = ""
+
         for country,data in yali.localedata.locales.items():
             if country == ctx.consts.lang:
                 if data.has_key("timezone"):
@@ -58,19 +60,23 @@ Coordinated Universal Time.
         zoneList = [ x.timeZone for x in zom.getEntries() ]
         zoneList.sort()
         for zone in zoneList:
+            self.prettyZoneName = "%s - %s" % (zone.split("/")[0], zone.split("/")[1])
             if zone == ctx.installData.timezone:
-                self.currentZone = zone
-            self.ui.timeZoneList.addItem(zone)
+                self.currentZone = self.prettyZoneName
+            self.ui.timeZoneList.addItem(self.prettyZoneName, zone)
 
+
+        # Select the timeZone
         self.index = self.ui.timeZoneList.findText(self.currentZone)
+        self.ui.timeZoneList.setCurrentIndex(self.index)
 
         # Widget connections
         self.connect(self.ui.timeEdit, SIGNAL("timeChanged(QTime)"),self.timerStop)
         self.connect(self.ui.calendarWidget, SIGNAL("selectionChanged()"),self.dateChanged)
         self.connect(self.timer, SIGNAL("timeout()"),self.updateClock)
 
-        # Select the timeZone
-        self.ui.timeZoneList.setCurrentIndex(self.index)
+        self.ui.calendarWidget.setDate(QDate.currentDate())
+
         self.timer.start(1000)
 
     def dateChanged(self):
