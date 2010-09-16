@@ -78,11 +78,7 @@ dc: %(dc)s
 
 dn: cn=%(root_account)s, %(domain)s
 objectClass: organizationalRole
-objectClass: posixAccount
-gidNumber: 1
-homeDirectory: /dev/null
-uidNumber: 1
-uid: %(root_account)s
+objectClass: simpleSecurityObject
 cn: %(root_account)s
 userPassword:%(root_password)s"""
 
