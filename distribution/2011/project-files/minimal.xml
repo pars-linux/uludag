@@ -1,4 +1,4 @@
-<PardusmanProject type="install" media="cd" compression="lzma">
+<PardusmanProject type="install" media="cd" compression="lzo">
     <Title>Pardus 2011 Minimal (x86_64)</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>

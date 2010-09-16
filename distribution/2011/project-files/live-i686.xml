@@ -1,4 +1,4 @@
-<PardusmanProject type="live" media="cd" compression="gzip">
+<PardusmanProject type="live" media="cd" compression="lzo">
     <Title>Pardus 2011 Alpha Live (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
