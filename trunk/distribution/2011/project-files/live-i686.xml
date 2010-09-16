@@ -67,6 +67,7 @@
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
+        <SelectedPackage>ntp-client</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
@@ -574,6 +575,7 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntfsprogs</Package>
+        <Package>ntp-client</Package>
         <Package>openal</Package>
         <Package>opencore-amr</Package>
         <Package>openexr</Package>

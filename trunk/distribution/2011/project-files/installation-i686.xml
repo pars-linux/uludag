@@ -4,7 +4,7 @@
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>SSaYfqFXT7</Id>
+            <Id>TDqI7bNe0HfbX</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -141,6 +141,7 @@
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
                 <SelectedPackage>mplayer</SelectedPackage>
                 <SelectedPackage>ntfsprogs</SelectedPackage>
+                <SelectedPackage>ntp-client</SelectedPackage>
                 <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>pardus-default-settings</SelectedPackage>
                 <SelectedPackage>partitionmanager</SelectedPackage>
@@ -774,6 +775,7 @@
                 <Package>nss-mdns</Package>
                 <Package>ntfs_3g</Package>
                 <Package>ntfsprogs</Package>
+                <Package>ntp-client</Package>
                 <Package>openal</Package>
                 <Package>opencore-amr</Package>
                 <Package>openexr</Package>
