@@ -155,6 +155,7 @@
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zemberek</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
+        <SelectedPackage>zorg</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DirectFB</Package>
         <Package>ModemManager</Package>

@@ -186,6 +186,7 @@
                 <SelectedPackage>yakuake</SelectedPackage>
                 <SelectedPackage>zemberek</SelectedPackage>
                 <SelectedPackage>zemberek-server</SelectedPackage>
+                <SelectedPackage>zorg</SelectedPackage>
                 <SelectedPackage>zsh</SelectedPackage>
                 <Package>ConsoleKit</Package>
                 <Package>ConsoleKit-devel</Package>
