@@ -31,7 +31,6 @@ class StateManager(QObject):
         self.silence = False
         self._group_cache = {}
         self.iface = backend.pm.Iface()
-        self.__groups = self.iface.getGroups()
         self.reset()
 
     def reset(self):
@@ -41,6 +40,7 @@ class StateManager(QObject):
         self.initializePackageLists()
 
     def initializePackageLists(self):
+        self.__groups = self.iface.getGroups()
         self.__installed_packages = self.iface.getInstalledPackages()
         self.__new_packages = self.iface.getNewPackages()
         self.__all_packages = self.__installed_packages + self.__new_packages
