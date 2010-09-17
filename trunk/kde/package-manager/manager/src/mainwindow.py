@@ -15,6 +15,9 @@ from PyQt4 import QtGui
 from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
+from PyQt4.QtGui import QShortcut
+from PyQt4.QtGui import QKeySequence
+
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
@@ -52,12 +55,29 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def connectMainSignals(self):
         self.cw.connectMainSignals()
+        self.connect(QShortcut(QKeySequence(Qt.CTRL + Qt.Key_Tab),self),
+                SIGNAL("activated()"), lambda: self.moveTab('next'))
+        self.connect(QShortcut(QKeySequence(Qt.SHIFT + Qt.CTRL + Qt.Key_Tab),self),
+                SIGNAL("activated()"), lambda: self.moveTab('prev'))
+        self.connect(QShortcut(QKeySequence(Qt.CTRL + Qt.Key_F),self),
+                SIGNAL("activated()"), self.cw.searchLine.setFocus)
+        self.connect(QShortcut(QKeySequence(Qt.Key_F3),self),
+                SIGNAL("activated()"), self.cw.searchLine.setFocus)
+
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.cw.initialize)
         self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.cw.updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.cw.state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         self.connect(self.cw, SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
+
+    def moveTab(self, direction):
+        new_index = self.cw.stateTab.currentIndex() - 1
+        if direction == 'next':
+            new_index = self.cw.stateTab.currentIndex() + 1
+        if new_index not in range(self.cw.stateTab.count()):
+            new_index = 0
+        self.cw.stateTab.setCurrentIndex(new_index)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
@@ -169,7 +189,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def updateStatusBar(self, text, noIcon = False):
         if not noIcon:
-            self.cw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(24, 24))
+            self.cw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(22, 22))
         if text == '':
             text = i18n("Currently your basket is empty.")
         self.cw.statusLabel.setText(text)
