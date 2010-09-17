@@ -62,13 +62,16 @@
      <item>
       <widget class="QToolButton" name="menuButton">
        <property name="text">
-        <string/>
+        <string>Settings</string>
        </property>
        <property name="popupMode">
         <enum>QToolButton::InstantPopup</enum>
        </property>
+       <property name="toolButtonStyle">
+        <enum>Qt::ToolButtonTextBesideIcon</enum>
+       </property>
        <property name="autoRaise">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -279,6 +282,15 @@
    <header location="global">grouplist.h</header>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>searchLine</tabstop>
+  <tabstop>typeCombo</tabstop>
+  <tabstop>groupList</tabstop>
+  <tabstop>packageList</tabstop>
+  <tabstop>actionButton</tabstop>
+  <tabstop>menuButton</tabstop>
+  <tabstop>stateTab</tabstop>
+ </tabstops>
  <resources>
   <include location="../data/data.qrc"/>
  </resources>
