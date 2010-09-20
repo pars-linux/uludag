@@ -51,6 +51,9 @@ Aşağıda bulunan komutların hatasız çalıştığını gözlemleyin.
 
 \section{Debug alt bileşeni}
 \begin{enumerate}
+\item cgdb paketi kurulumu sonrası:
+
+"cgdb" komutunu çalıştırım ve yeni bir konsol arayüzünün açıldığını gözlemleyin.
  \item gdb paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın ve gdb-test.c'in derlendiğini ve daha sonra gdb-test ile ilgili gdb'nin bir hata bulduğunu gözlemleyin.
@@ -208,6 +211,12 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
 \section{Environment alt bileşeni}
 \begin{enumerate}
 
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+ \begin{verbatim}
+  kdevelop-devel
+ \end{verbatim}
+
 \item eclipse-binary paketi kurulumu sonrası:
 
 Kmenu'den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.
@@ -224,6 +233,9 @@ Kmenu'den eclipse uygulamasını açın ve Java geliştirme araçlarının eklen
 
 Kmenu'den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)
 
+\item qdevelop paketi kurulumu sonrası:
+
+Kmenuden uygulamayı açın, açılabildiğini gözlemleyin
 
  \item kdevelop paketi kurulumu sonrası: 
 
@@ -289,6 +301,15 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemle
 
 
 \section{Language alt bileşeni}
+
+\subsection{---}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+llvm
+llvm-docs
+llvm-ocaml
+\end{verbatim}
 
 \subsection{Ruby alt bileşeni}
 
@@ -585,6 +606,31 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  python-e_dbus
  python-Genshi-doc
 \end{verbatim}
+
+\item python-opentts paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import opentts
+\end{verbatim}
+
+\item python-speech-dispatcher paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import speechd
+\end{verbatim}
+
+\item python-pyatspi paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pyatspi
+\end{verbatim}
+
 
 \item python-pyliblzma paketi kurulumu sonrası:
 
@@ -1599,5 +1645,7 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
  gcc -o test-r-matlib test-r-matlib.c -lm -lRmath
 \end{verbatim}
 \end{itemize}
+
+
 \end{document}
 

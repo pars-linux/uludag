@@ -89,8 +89,7 @@ gvfs-smb
 desktop-tr.pdf gvfs-common testini gerçekleştirin.
 \end{itemize}
 
-\section{
- and Feel alt Bileşeni}
+\section{Look and Feel alt Bileşeni}
 \begin{itemize}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
@@ -115,7 +114,7 @@ Masaüstüne sağ tıklayın, görünüm ayarlarını seçin. Resim bölümünde
 
 \item icon-theme-oxygen-index ve icon-theme-oxygen-png paketleri kurulumu sonrası: 
 
-Bilgisayarınızı yeniden başlatın ve ikonların düzgün bir şekilde görüntülendiğni gözlemleyin.
+BSistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Simgeler bölümünden oksijen simge setini seçin ve uygula deyin, sorunsuz bir şekilde oksijen simge setinin uygulandığını gözlemleyin.
 
 \item hicolor-icon-theme paketi kurulumu sonrası:
 
@@ -188,6 +187,9 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
  strigi-devel
 \end{verbatim}
 
+\item at-spi2-core paketi kurulumu sonrası:
+
+programming-tr.pdf python-pyatspi testini gerçekleştirin.
 \item strigi paketi kurulumu sonrası: 
 
 Sistem ayarları $\rightarrow$ Gelişmiş $\rightarrow$ Masaüstü araması $\rightarrow$  Strigi masaüstü indeksleyiciyi etkinleştir yolunu izleyin ve uygula butonuna basın. Sorunsuz bir şekilde etkinleştiğini gözlemleyin.
@@ -242,7 +244,13 @@ Uygulamanın kemenüden gdüzgün bir şekilde çalıştığını gözlemleyin.
  qwtplot3d-doc
  qwtplot3d
  qt-devel
+ qoauth-devel
 \end{verbatim}
+
+\item qoauth paketi kurulumu sonrası:
+
+network-tr.pdf choqok testini gerçekleştiriniz.
+
 \item qt-l10n paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın ve qt tasarımcının fransızca açıldığını gözlemleyin.
@@ -420,12 +428,6 @@ Kmenu'den Programlar $\rightarrow$ İnternet $\rightarrow$ Konqueror çalıştı
 
 Kmenu'den Programlar $\rightarrow$ Sistem $\rightarrow$ Konsole çalıştırın ve düzgün çalıştığını gözlemleyin.
 
-Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir şekilde başladığını gözlemleyin.
-
-\begin{verbatim}
- klipper
-\end{verbatim}
-
 \end{enumerate}
 
 \section{Kde4 alt Bileşeni}
@@ -555,20 +557,24 @@ kdebindings
 kdepimlibs-devel
 kdepimlibs
 kdevplatform-devel
+kdepim-runtime
 \end{verbatim}
+\item kdetoys paketi kurulumu sonrası:
+
+kteatime, ktux, amor gibi uygulamarın düzgün bir şekilde çalıştıklarını gözlemleyin.
 \item kdevplatform paketi kurulumu sonrası:
 
 programming-tr.pdf  kdevelop testini gerçekleştirin.
 
 \item kdewebdev paketi kurulumu sonrası:
 \begin{itemize}
- \item quanta uygulamasının sorunsuz çalıştırğını gözlemleyin
+ \item kfilereplace, kimagemapeditor, klinkstatus uygulamasının sorunsuz çalıştığını gözlemleyin
 \end{itemize}
 
 \item kdeutils paketi kurulumu sonrası:
 
 \begin{itemize}
- \item ark uygulamasının sorunsuz çalıştırğını gözlemleyin
+ \item ark uygulamasının sorunsuz çalıştığını gözlemleyin
 
 Aşağıda bulunan sıkıştırılmış dosyanın ark ile açılabildiğini gözlemleyin.
 \begin{verbatim}
@@ -584,7 +590,7 @@ Aşağıda bulunan sıkıştırılmış dosyanın ark ile açılabildiğini göz
  \item umbrello uygulamasının sorunsuz çalıştığını gözlemleyin.
 \end{itemize}
 
-\item kdepim paketi kurulumu sonrası:
+\item kdepim paketi kurulumu sonrası
 \begin{itemize}
  \item Korganizer uygulamasını açın. Olay, Yapılacaklar Öğesi, Günlük ayarlarını yapın ve sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
  \item Knotes ayarlarını yapın ve sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
@@ -611,7 +617,7 @@ Masaüstüne sağ tıklayın ve Masaüstü ayarlarını seçin. Duvarkağıdı o
 
 \item kdeartwork-styles paketi kurulumu sonrası: 
 
-Masaüstüne sağ tıklayın ve Masaüstü ayarlarını seçin. Masaüstü temalarından Heron'u seçin ve temanın değiştiğini gözlemleyin.
+Sistem Ayarları $\rightarrow$ Biçim $\rightarrow$ Çalışma alanı bölümünden Elegance temasını seçin. Ve temanın değiştiğini gözlemleyin.
 
 \item kdeartwork-sounds paketi kurulumu sonrası:
 
@@ -683,7 +689,8 @@ Pardusun ön tanımlı ayarları olan milky ikon temasının, açılış ekranı
 Makinenizi yeniden başlatın, klavyenizin dilinin ve fonksiyon tuşlarının düzgün olduğunu gözlemleyiniz. 
 \item kdebase-emoticons paketi kurulumu sonrası:
 
-Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Emoticon yolunu izleyin ve kde4 için emoticon eklendiğini gözlemleyin.
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Duygu Simgeleri yolunu izleyin ve kde4 için emoticon eklendiğini gözlemleyin.
+
 \item kdebase-sound paketi kurulumu sonrası:
 
 Sistemi yeniden başlatın bitiş ve başlangıç seslerinin çıktığını gözlemleyin.
@@ -730,10 +737,10 @@ F12 tuşuna basıldığında sorunsuz bir şekilde yakuake'nin açıldığını 
 
  \item Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
-# plasmoidviewer nm-applet 
-# klipper
-# krunner
-# kfontview
+ plasmoidviewer nm-applet 
+ klipper
+ krunner
+ kfontview
 \end{verbatim}
 
 \end{itemize}
@@ -793,9 +800,28 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 
 Bilgisayarınız açılırken kullanıcı giriş ekranının sorunsuz açıldığını ve login olabildiğinizi gözlemleyin.
 
+\item kwin-aurorae-style paketi kurulumu sonrası:
+Sistem ayarları $\rightarrow$ Görünüm $\rightarrow$ Pencereler $\rightarrow$ Pencere dekorasyonu bölümündeb Aurorae Dekorayon Temasını seçin ve oturumunuzu kapatıp tekrar açın ve bu temanın sorunsuz bir sekilde yüklendiğini gözlemleyin.
+
 \item  ksplash-pardus-theme paketi kurulumu sonrası:
 
 Bilgisayarınız açılırken KDE açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item  ksplash-pardus-theme-milky paketi kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ Açılış ekranı penceresinden Pardus-Milky açılış ekranın seçin ve uygulayın. Bilgisayarınızı yeniden başlatın ve bilgisayarınızın bu tema ile açıldığını gözlemleyin.
+
+\item colibri paketi kurulumu sonrası:
+
+Sistem Ayarları $\rightarrow$ Bildirimler $\rightarrow$ Colibri Bildirimleri bölümünden bu bildirimi aktifleştirin. (Eğer plasma bildirimleriniz açık durumda ise öncelikle bu bildirimlerinizi kapatmalısınız.Plasma kapatılması: Sistem çekmecesi üzerine sağ tıklayın ve Kendiliğinden Açılan Bildirimler bölümünde bulunan seçenekleri inaktif hale getirin ve tamam butonuna basın.)
+
+Daha sonra konsoldan aşağıda bulunan komutu yazın:
+
+\begin{verbatim}
+ notify-send test-colibri 
+\end{verbatim}
+
+ Bildirimin masaüstüne geldiğini gözlemleyin.
 
  \item  QtCurve-KDE4 paketi kurulumu sonrası:
 
@@ -823,7 +849,7 @@ Programcığı açın ve türkçeden ingilizceye bir çeviri yapmayı deneyin.
 
 Aşağıda bulunan komutu çalıştırın ve kapatma penceresinin açıldığını gözlemleyin.
 \begin{verbatim}
- # kshutdown 
+kshutdown 
 \end{verbatim}
 
  \item kaptan paketi kurulumu sonrası:

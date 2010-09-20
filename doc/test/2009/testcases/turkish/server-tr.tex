@@ -139,24 +139,24 @@ Service yöneticisinden apache servisini başlatın.
 
 Aşağıda bulunan dosyayı /var/log/apache2 altına kopyalayın.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/web/access_log
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/web/access_log
 \end{verbatim}
 
 Aşağıda bulunan komutu çalıştırın ve daha sonra http://localhost/webalizer/ bağlantısına firefox ile bağlanın. Ve apache kullanım grafiklerini gözlemleyin.
 \begin{verbatim}
- # sudo webalizer
+sudo webalizer
 \end{verbatim}
 
 \item apache paketi kurulumu sonrası:
 \begin{itemize}
 \item Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu kullanarak sunucunun başlatılmıl olduğunu gözlemleyin.
 \begin{verbatim}
-# service list
+service list
 \end{verbatim}
 \item Firefox üzerinden http://localhost adresine bağlanın ve sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin. 
 \item Aşağıdaki komutu çalıştırın ve komut çıktısında `Syntax Ok` aldığınzı gözlemleyin.
 \begin{verbatim}
-# apachectl -M 
+apachectl -M 
 \end{verbatim}
 
 \end{itemize}

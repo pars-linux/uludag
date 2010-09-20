@@ -146,20 +146,20 @@ Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde ç
  koffice-devel 
  koffice-filters
  koffice-kchart
+ koffice-kdchart
+ koffice-libs
 \end{verbatim}
 \item koffice-core kurulumu sonrası.
 
 \begin{itemize}
-\item KThesaurus uygulamasını menüden açın ve ilişkisi bulunabilecek bir ingilizce kelime girin. (Çünkü kthearus sadece ingilizce dilini desteklemektedir)
+\item KThesaurus uygulamasının, Kmenü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.
 
-Menü $\rightarrow$ uygulamalar $\rightarrow$ ofis $\rightarrow$ daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.
-
-\item koconverter için:
+\item koconverter uygulaması:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
-# koconverter koconverter_test.html koconverter_test.pdf
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls
-# koconverter koconverter_test.xls koconverter_test.txt
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
+ koconverter koconverter_test.html koconverter_test.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls
+ koconverter koconverter_test.xls koconverter_test.txt
 \end{verbatim}
 
 Çalıştırılan koconverter komutlarının sorunsuz bir şekilde dönüşümü gerçekleştirdiğini gözlemleyin.
@@ -251,6 +251,17 @@ koffice-l10n-zh_TW
  kmymoney-docs
 \end{verbatim}
 
+\item txt2man paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun bir man dosyası ürettiğini gözlemleyin:
+
+\begin{verbatim}
+ txt2man -h 2>&1 | txt2man -T
+\end{verbatim}
+
+\item skrooge paketi kurulumu sonrası:
+
+Kmenu'den uygulamayı çalıştırın ve sorunsuz açıldığını gözlemleyin.
 
 \item fet paketi kurulumu sonrası:
 

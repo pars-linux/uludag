@@ -78,7 +78,38 @@ libpqxx-docs
 xulrunner-devel
 givaro
 givaro-doc
+CImg
+CImg-docs
+libdumbtts-devel
+papyon
+libktorrent-devel
 \end{verbatim}
+\item libdlna paketi kurulumu sonrası:
+
+multimedia-tr.pdf ushare tesitini gerçekleştiriniz.
+
+\item libdumbtts paketi kurulumu sonrası:
+
+programming-tr.pdf python-speech-dispatcher testini gerçekleştirin.
+
+\item xine-lib paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyaları juk ve dragon player ile çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+\end{verbatim}
+
+
+\item glew paketi kurulumu sonrası:
+
+game-tr.pdf supertux testini gerçekleştirin.
+
+\item imlib2 paketi kurulumu sonrası:
+
+multimedia-tr.pdf ffmpeg testini gerçekleştirin.
+
 \item libktorrent paketi kurulumu sonrası:
 
 network-tr.pdf ktorrent testini gerçekleştiriniz.
@@ -179,6 +210,9 @@ Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
  cacademo
 \end{verbatim}
 
+\item opencore-amr paketi kurulumu sonrası:
+
+multimedia-tr.pdf mplayer testini gerçekleştirin.
 
 \item libass paketi kurulumu sonrası:
 
@@ -286,8 +320,8 @@ multimedia-tr.pdf vlc testini gerçekleştirin.
 
 blitztest uygulaması ile aşağıda bulunan resmi açın ve effect testinin sorunsuz bir şekilde gerçekleştiğini gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
- # blitztest
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
+  blitztest
 \end{verbatim}
 
 
@@ -301,10 +335,17 @@ Sistem ayarları $\rightarrow$ Çokluortam $\rightarrow$ Arka uç $\rightarrow$ 
 
 dragon player ve kaffein ile aşağıda bulunan dosyaları çalıştırın ve sesin düzgün bir şekilde çıktığını gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/niceday.asf
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/niceday.asf
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
 \end{verbatim}
+
+\item libkate, gst-plugin-bad paketleri kurulumu sonrası:
+
+Sistem ayarları $\rightarrow$ Çokluortam $\rightarrow$ Arka uç $\rightarrow$ gstreamer seçin. 
+
+amsn paketini kurun ve msn seslerinin sorunsuz bir şekilde çalıştığını gözlemleyin.
+
 
 \item exempi ve yaz paketi kurulumu sonrası:
 
@@ -314,10 +355,10 @@ office-tr.pdf tellico paketi testini gerçekleştiriniz.
 \begin{itemize}
  \item [2008 için] edb paketini kurun. Aşağıda buluna komutların sorunsuz bir şekilde çalıştığını ve sonuç olarak "default" diye bir çıktı döndürdüğünü gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test_edb
- # chmod 755 test_edb
- # ./test_edb
- # edb_ed test.db get /foo/theme str
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/library/test_edb
+  chmod 755 test_edb
+  ./test_edb
+  edb_ed test.db get /foo/theme str
 \end{verbatim}
 \item [2009 için] library-tr.pdf qedje paketi testini gerçekleştiriniz.
 \end{itemize}
@@ -326,12 +367,12 @@ office-tr.pdf tellico paketi testini gerçekleştiriniz.
 
 Aşağıdaki komutu çalıştırdığınızda hata vermeden çalıştığını gözlemleyiniz.
 \begin{verbatim}
-# qedje_viewer
+ qedje_viewer
 \end{verbatim}
 
 \item geoip paketi kurulumu sonrası:
 \begin{verbatim}
-# geoiplookup www.google.com 
+ geoiplookup www.google.com 
 \end{verbatim}
 "GeoIP Country Edition: US, United States" gibi bir sonuç döndürdüğünü gözlemleyin.
 

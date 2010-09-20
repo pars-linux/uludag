@@ -45,7 +45,7 @@ irw
 
 (sadece ati ekran kartı sürücüsü olanlar test edebilecektir.)
  
-Kmenu'den Ati Graphics Adapter Settings'i açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
+Kmenu'den Ati Catalyst Denetim Merkezi'ni açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
 \end{enumerate}
 
 \section{Firmware alt Bileşeni}
@@ -58,6 +58,7 @@ ar9170-firmware
 bluez-firmware
 ql2x00-firmware
 v4l-dvb-firmware
+alsa- firmware
 \end{verbatim}
 \end{enumerate}
 
@@ -148,6 +149,15 @@ Aşağıda bulunan komut ile başlatıldığından emin olun.
 \begin{verbatim}
  acpid
 \end{verbatim}
+
+\item powertop paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ powertop
+\end{verbatim}
+
 \item nut paketi kurulumu sonrası:
 
 Servis yöneticisinden nut servisini başlatın.
@@ -175,8 +185,8 @@ Aşağıda bulunan komutunun voltaj ve cpu fanı gibi bilgileri hatasız bir şe
 
 Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 \begin{verbatim}
-# sane-find-scanner
-# scanimage 
+sane-find-scanner
+scanimage 
 \end{verbatim}
 
 İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
@@ -264,7 +274,7 @@ Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve gör
 \begin{verbatim}
  wine-devel
 \end{verbatim}
-\item virtinst paketi kurulumu sonrası:
+\item virtinst ve virt-viewer paketleri kurulumu sonrası:
 
 Aşağıda buluna  komutu çalıştırın ve sırayla istenen bilgileri girin. Sanal sistemin açıldığını gözlemleyin.
 \begin{verbatim}
@@ -299,7 +309,7 @@ hardware-tr.pdf virtualbox testini gerçekleştiriniz.
  
 Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. Aşağida bulunan iso'yu bu sanal sisteme kurun ve çalıştığını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso
+ wget http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso
 \end{verbatim}
  \item kvm paketi kurulumu sonrası:
 
@@ -506,8 +516,8 @@ USB bellek takarak, bu bellek üzerinden de işlem yapabilirsiniz.
 Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aşağıda bulunan komutları çalıştırın. Düzgün bir şekilde çalıştıklarını gözlemleyin. 
 
 \begin{verbatim}
- # mkreiserfs /dev/<aygıt uzantısı> -f
- # reiserfsck /dev/<aygıt uzantısı>
+ mkreiserfs /dev/<aygıt uzantısı> -f
+ reiserfsck /dev/<aygıt uzantısı>
 \end{verbatim}
 
 \end{enumerate}
@@ -518,8 +528,8 @@ Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aş
  \item Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
  \item Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-# mplayer music.mp3
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ mplayer music.mp3
 \end{verbatim}
 
 \item alsa-tools-gui paketi kurulumu sonrası:
@@ -542,8 +552,27 @@ Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  usb-modeswitch
+libopensync-plugin-irmc
+gammu-devel
 \end{verbatim}
 
+\item gammu paketi kurulumu sonrası
+
+hardware-tr.pdf python-gammu testini gerçekleştiriniz.
+
+\item python-gammu paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ ipython
+ import gammu
+\end{verbatim}
+
+
+\item wammu paketi kurulumu sonrası:
+
+Eğer bilgisayara usb, bluetooth veya IrDA aygıtlarından biri ile bağlanabilen bir telefonunuz var ise wammu uygulamasını açın ve telefonunuzda bulunan bilgilerin bilgisayara aktarılabildiğini gözlemleyin.
 
 \item libopensync-plugin-kdepim paketi kurulumu sonrası:
 
