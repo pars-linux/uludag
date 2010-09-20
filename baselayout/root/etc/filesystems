@@ -4,9 +4,13 @@
 # 'mount -t auto' command.
 #
 
+ext4
+ext3
+ext2
+
 # Uncomment the following line if your modular kernel has vfat
 # support and you want mount to try vfat.
-#vfat
+vfat
 
 # Keep the last '*' intact as it directs mount to use the
 # filesystems list available at /proc/filesystems also.
