@@ -14,8 +14,17 @@
 \begin{document}
 
 \maketitle
-\section{filter alt Bileşeni}
+\section{Filter alt Bileşeni}
 \begin{enumerate}
+\item sabishape paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ su -
+ sabishape start
+ sabishape stop
+\end{verbatim}
+
  \item iproute2 paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun ağ arayüzleri ile ilgili bilgileri listelediğini gözlemleyin. 
@@ -45,7 +54,12 @@ Aşağıda bulunan komut ile servisin başlatıldığından emin olun.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  aircrack-ng
+ hydra
 \end{verbatim}
+\item zenmap paketi kurulumu sonrası:
+
+Kmenu'den uygulamayı açın ve sorunsuz bi şekilde açıldığını gözlemleyin.
+
 \item nikto paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun hata vermeden çalıştığını gözlemleyin.
@@ -133,7 +147,6 @@ Aşağıda bulunan komutu çalıştırın ve paketin example.com adresini gözde
 sudo hping example.com -S -V 
 \end{verbatim}
 
-
  \item dsniff paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun ağı izlediğini gözlemleyin.
@@ -143,7 +156,7 @@ sudo dsniff
 
 \item etherape paketi kurulumu sonrası:
 
-Kmenuden uygulamayı açın ve ağdaki ipleri izlediğini gözlemleyin.
+Kmenuden uygulamayı açın ve ağdaki ip'leri izlediğini gözlemleyin.
 
 \item ettercape paketi kurulumu sonrası:
 
@@ -212,6 +225,11 @@ Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indi
  amsn-plugins
  konversation-docs 
 \end{verbatim}
+
+\item weechat paketi kurulumu sonrası:
+
+Konsole'a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzünğn açıldığını gözlemleyin.
+
 \item kvirc paketi kurulumu sonrası:
 
 Kmenu'den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.
@@ -466,6 +484,10 @@ cd misc
 
 \section{Connection alt Bileşeni}
 \begin{enumerate}
+\item netcf paketi kurulumu sonrası:
+
+ "ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.
+
 \item rfkill paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
@@ -501,6 +523,23 @@ mobile-broadband-provider-info
 
 \end{enumerate}
 
+\section{Fax alt Bileşeni}
+\begin{enumerate}
+ \item efax-gtk paketi kurulumu sonrası:
 
+Kmenu'den efax-gtk uygulamasını açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
+\end{enumerate}
+
+\section{Remoteshell alt Bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+italc-client
+italc-master
+libitalc
+\end{verbatim}
+
+\end{enumerate}
 \end{document}
 

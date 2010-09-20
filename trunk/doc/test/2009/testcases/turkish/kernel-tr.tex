@@ -264,13 +264,13 @@ cat /proc/cpuinfo | grep pae
 \item
 Aşağıdaki komut çıktısı ile listelenen sisteminizde kurulu tüm paketlerin yeni kernele uygun versiyonlarını kurununuz.
 \begin{verbatim}
- # pisi li -c kernel.pae
+pisi li -c kernel.pae
 \end{verbatim}
 
 Eğer daha önce kernel pae kullanmadıysanız yukarıda bulunan komut çıktısı boş dönecektir. Bu durumda aşağıdaki komut çıktısında listelenen paketlerin pae'ye özgü olanlarını sisteminize kurup bu paketler ile ilgili testleri gerçekleştirebilirsiniz. Bu listeye 2.2 bölümünden ulaşabilirsiniz.
 
 \begin{verbatim}
- # pisi li -c kernel.default
+ pisi li -c kernel.default
 \end{verbatim}
 
 
@@ -280,7 +280,7 @@ Eğer daha önce kernel pae kullanmadıysanız yukarıda bulunan komut çıktıs
 
 Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalıştırıp, kullandığınız kernelin grub menüsünde görüntülenen kernel ile aynı olduğunu gözlemleyiniz.
 \begin{verbatim}
- # uname -r 
+ uname -r 
 \end{verbatim}
 
 \item Eğer dizüstü bilgisayar kullanıyorsanız kablonuzu çıkarıp taktığınızda uyarı verdiğini ve pil seviyesinin düzgün bir şekilde görüntülendiğini gözlemleyiniz.

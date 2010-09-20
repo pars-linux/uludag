@@ -38,6 +38,16 @@ programming-tr.pdf python-mlt testini gerçekleştiriniz.
  mpd
 \end{verbatim}
 
+\item ushare paketi kurulumu sonrası:
+
+/etc/ushare.conf dosyası içerisinde USHARE\_DIR değerine gerçerli bir dizin verin.
+
+Servis yöneticisinden ushare sunucusunu başlatın ve sorunsuz bir şekilde başlatıldığını gözlemleyin.
+
+\begin{verbatim}
+ 
+\end{verbatim}
+
 \item mpeg4ip paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
@@ -80,10 +90,35 @@ Menü $\rightarrow$ digikam $\rightarrow$ İçeriye Aktar $\rightarrow$ Facebook
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
 jack-audio-connection-kit 
+jack-audio-connection-kit-docs
 mpc
 ncmpc
 ncmpcpp
+espeak-devel
+flite-devel
+opentts-devel
+speech-dispatcher-devel
 \end{verbatim}
+\item opentts paketi kurulumu sonrası:
+
+programming-tr.pdf python-opentts testini gerçekleştirin.
+
+
+\item flite ve speech-dispatcher paketi kurulumu sonrası:
+
+programming-tr.pdf python-speech-dispatcher testini gerçekleştirin.
+
+\item espeak paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ espeak "This is a test"
+\end{verbatim}
+
+\item solfege paketi kurulumu sonrası:
+
+Kmenu'den solfege uygulamasını açın ve sorusuz açılabildiğini gözlemleyin.
 
 \item ZynAddSubFX paketi kurulumu sonrası:
 
@@ -223,6 +258,15 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir. 
+\begin{verbatim}
+ libvpx
+ libvpx-devel
+\end{verbatim}
+
+\item minitube paketi kurulumu sonrası:
+
+minitube uygulamasını açın ve YouTube'te bulunan bir arama yapın ve sorunsuz bir şekilde bulunduğunu ve izlenebildiğini gözlemleyin.
 \item recordmydesktop paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve bilgisayar üzerinde dosya açma kapama, uygulama açma kapama gibi işlemler yapın. 
@@ -248,7 +292,8 @@ Ctrl+C tuşlarına basın ve videonun encode edilmesini bekleyin. Daha sonra aş
 
 \item gpac paketi kurulumu sonrası:
 
-multimedia-tr.padf x264 testini gerçekleştirin.
+multimedia-tr.pdf x264 testini gerçekleştirin.
+
 \item dvdrip paketi kurulumu sonrası:
 
 Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.
@@ -307,17 +352,14 @@ Daha sonra bu dosyayı mplayer ile çalıştırın ve sorunsuz olarak çalışt�
  mplayer sample.ogg
 \end{verbatim}
 
-
-
-
  \item amrwb ve amrnb paketleri kurulumu sonrası:
 
  multimedia-tr.pdf sox ve mplayer testlerini gerçekleştiriniz.
 
 \item ccd2iso paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/default.img
- # ccd2iso default.img test.iso
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/default.img
+  ccd2iso default.img test.iso
 \end{verbatim}
 
 test.iso dosyasının sorunsuz bir şekilde oluştuğunu gözlemleyin.
@@ -327,13 +369,13 @@ Sorunsuz bir şekilde iso dosyasının oluştuğunu gözlemleyin.
 \begin{itemize}
  \item Aşağıdaki bağlantıda bulunan iso'yu DVD'ye yazdırın. 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 \end{verbatim}
  \item Eğer DVD yeniden yazdırabilir bir DVD ise /dev/dvdrw değil ise /dev/dvd girdilerini kullanarak aşağıdaki bulunan komutu çalıştırın ve sorunsuz bir şekilde DVD'nin yedeklendiğini gözlemleyin.
 \begin{verbatim}
- # dvdbackup -i <girdiyolu> -o <çıktıyolu> -M
+  dvdbackup -i <girdiyolu> -o <çıktıyolu> -M
  Örnek 
- # dvdbackup -i /dev/dvdrw -o /home/pardus/dvd -M
+  dvdbackup -i /dev/dvdrw -o /home/pardus/dvd -M
 \end{verbatim}
  
 \end{itemize}
@@ -341,21 +383,21 @@ Sorunsuz bir şekilde iso dosyasının oluştuğunu gözlemleyin.
 
 Aşağıda bulunan dosyayı indirin:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/default.img
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/default.img
 \end{verbatim}
  
 Komutların sorunsuz bir şeklilde çalıştıklarını gözlemleyin.
 \begin{verbatim}
- # movix-version
- # movix-files
- # movix-conf
- # mkmovixiso default.img --output-file=default.iso
+  movix-version
+  movix-files
+  movix-conf
+  mkmovixiso default.img --output-file=default.iso
 \end{verbatim}
 
 \item ffmpeg2theora paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
- # ffmpeg2theora DVD.mpg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+  ffmpeg2theora DVD.mpg
 \end{verbatim}
 \begin{itemize}
  \item Yukarıda bulunan komutun sorunsuz bir şekilde DVD.ogv dosyasını oluşturduğunu gözlemleyin.
@@ -363,8 +405,8 @@ Komutların sorunsuz bir şeklilde çalıştıklarını gözlemleyin.
 \end{itemize}
 \item ffmpeg2theora paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/lazarus.png
- # icns2png lazarus.icns
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/lazarus.png
+ icns2png lazarus.icns
 \end{verbatim}
 \begin{itemize}
  \item Yukarıda bulunan komutun sorunsuz bir şekilde lazarus.png dosyasını oluşturduğunu gözlemleyin.
@@ -374,7 +416,7 @@ Komutların sorunsuz bir şeklilde çalıştıklarını gözlemleyin.
 \begin{itemize}
  \item Aşağıdaki bağlantıda bulunan ses dosyalarını k3b ile audio CD olarak yazdırın.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
 \end{verbatim}
  \item kaudiocreator uygulamasını çalıştırın:
 
@@ -395,19 +437,19 @@ Uygulamalar $\rightarrow$ Çokluortam $\rightarrow$ mkvmerge GUI uygulamasını 
 
 Aşağıdaki bağlantıda bulunan dosyaları, uygulamayı kullanarak .mkv dosyasına dönüştürün ve mplayer ile bu dosyaların düzgün bir şekilde oluştuklarını gözlemleyin: (Ekle tuşuna basarak ilgili dosyayı ekleyin ve muxing'e başla tuşuna basın.)
 \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
 
 \item mpeg2vidcodec paketi kurulumu sonrası:
 \begin{verbatim}
-  # mkdir flower
-  # cd flower
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flowgard.mpg
-  # mpeg2decode -b flowgard.mpg -f -r -o0 sflowg.%d
-  # cd ..
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flower2.par
-  # mpeg2encode flower2.par flowgard.m2v
-  # mplayer flowgard.m2v
+   mkdir flower
+   cd flower
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flowgard.mpg
+   mpeg2decode -b flowgard.mpg -f -r -o0 sflowg.%d
+   cd ..
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/flower2.par
+   mpeg2encode flower2.par flowgard.m2v
+   mplayer flowgard.m2v
 \end{verbatim}
 
 Yukarıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -415,32 +457,32 @@ Yukarıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 Aşağıdaki komutların düzgün bir şekilde çalıştıklarını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3 
-# ogmmerge music.mp3 -o test.ogg
-# mplayer test.ogg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/music.mp3 
+ ogmmerge music.mp3 -o test.ogg
+ mplayer test.ogg
 \end{verbatim}
 
 \item potrace paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/tepecik_01.pbm 
-# potrace tepecik_01.pbm -o test.png
-# gwenview test.png
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/converter/tepecik_01.pbm 
+ potrace tepecik_01.pbm -o test.png
+ gwenview test.png
 \end{verbatim}
 
 Sorunsuz bir şekilde png dosyasının oluştuğunu ve görüntülenebildiğini gözlemleyin.
 
 \item shntool paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm2.wav
-# shncat 11k16bitpcm.wav
-# shncmp 11k16bitpcm.wav 11k16bitpcm2.wav
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/11k16bitpcm2.wav
+ shncat 11k16bitpcm.wav
+ shncmp 11k16bitpcm.wav 11k16bitpcm2.wav
 \end{verbatim}
 \item shorten paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
- # shorten 11k16bitpcm.wav
- # mplayer 11k16bitpcm.shn
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
+  shorten 11k16bitpcm.wav
+  mplayer 11k16bitpcm.shn
 \end{verbatim}
 
 Sorunsuz bir şekilde .shn uzantılı dosyanın oluştuğunu ve çalıştırılabildiğini  gözlemleyin.
@@ -450,10 +492,10 @@ Sorunsuz bir şekilde .shn uzantılı dosyanın oluştuğunu ve çalıştırıla
  \item hardware-tr.pdf k3b paketini test ediniz.
  \item Aşağıdaki komutları çalıştırın:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/
 Lake_dance_XviD.AVI
-# transcode -i Lake_dance_XviD.AVI -y xvid -o test.avi -k -z
-# mplayer test.avi
+ transcode -i Lake_dance_XviD.AVI -y xvid -o test.avi -k -z
+ mplayer test.avi
 \end{verbatim}
  Oluşan .avi uzantılı dosyanın baş aşağı çalıştığını gözlemleyin.
 \end{itemize}
@@ -464,11 +506,11 @@ Lake_dance_XviD.AVI
  \item hardware-tr.pdf k3b paketini test ediniz.
  \item Aşağıdaki komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
-# vcdimager DVD.mpg
-# vcd-info -b videocd.bin
-# vcdxgen DVD.mpg
-# vcdxminfo -i DVD.mpg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+ vcdimager DVD.mpg
+ vcd-info -b videocd.bin
+ vcdxgen DVD.mpg
+ vcdxminfo -i DVD.mpg
 \end{verbatim}
 
 \end{itemize}
