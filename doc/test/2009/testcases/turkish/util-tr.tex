@@ -34,8 +34,26 @@ Testler bölümünden "SuperTuxCard" seçin ve install butonuna basın.
 \begin{verbatim}
  unshield
  minizip
- 
 \end{verbatim}
+
+\item rpm2targz paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde rpm'i targz2ye dönüştürdüğünü gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/inkscape-0.48.0-2pclos2010.src.rpm
+ rpm2targz inkscape-0.48.0-2pclos2010.src.rpm
+\end{verbatim}
+
+
+\item pbzip2 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun bz2 uzantılı dosyayı oluşturduğunu gözlemleyin:
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+ pbzip2 -b15qk cokluortam.tar
+\end{verbatim}
+
 \item cabextract paketi kurulumu sonrası:
 
 hardware-tr.pdf wine testini gerçekleştiriniz.
@@ -52,10 +70,10 @@ Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açt
 
 \item rar paketi kurulumu sonrası:
 
-Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturduğunu gözlemleyin.
+Aşağıda bulunan komutun sorunsuz bir şekilde test.rar dosyasını oluşturduğunu gözlemleyin.
 \begin{verbatim}
  mkdir test
- tar -avf test.tar test
+ rar a test.rar -ri1 -rv10 -v51200 -m5 test
 \end{verbatim}
 
 
@@ -82,11 +100,10 @@ Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemley
 gpg --gen-key
 \end{verbatim}
 
-\item johntripper paketi kurulumu sonrası:
+\item johntheripper paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
- unmask 077
  sudo unshadow /etc/passwd /etc/shadow > mypasswd
  sudo john -si mypasswd 
 \end{verbatim}
@@ -197,6 +214,12 @@ Aşağıda bulunan komutu çalıştırın ve sistemde çalışan tüm uygulamala
 \begin{verbatim}
  bashdb
 \end{verbatim}
+\item tcsh paketi kurulumu sonrası:
+Aşağıda bulunan komutu çalıştırın ve yeni bir kabuğun açıldığını gözlemleyin.
+
+\begin{verbatim}
+ csh
+\end{verbatim}
 
  \item zsh paketi kurulumu sonrası:
 
@@ -234,6 +257,22 @@ bash: amsn: command not found
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  augeas
+ task
+\end{verbatim}
+\item byobu paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun yeni bir konsol açtığını gözlemleyin:
+
+\begin{verbatim}
+ byobu
+\end{verbatim}
+
+\item tree paketi kurulumu sonrası:
+
+İçinde veri bulunan bir dizin için aşağıdaki komutu çalıştırın ve komutun sorunsuz bir şekilde dizin içeriğini ağaç şeklinde listelediğini gözlemleyin.
+
+\begin{verbatim}
+ tree <dizin adı>
 \end{verbatim}
 
 \item multitail paketi kurulumu sonrası:
@@ -277,7 +316,7 @@ Aşağıda bulunan komutları çalıştırın sorunsuz çalıştıklarını göz
 
 Kmenüden açılabildiğini gözlemleyin.
 
-İki farklı dizine birer dosya kopyalayın ve uygulamaya bu iki farlı dizini ekleyin, kopya dosyalara tıklayıp bul tuşuna basın kopyalamış olduğunuz dosyanın listelenmiş olduğunu gözlemleyin.
+İki farklı dizine birer dosya kopyalayın ve uygulamaya bu iki farklı dizini ekleyin, kopya dosyalara tıklayıp bul tuşuna basın kopyalamış olduğunuz dosyanın listelenmiş olduğunu gözlemleyin.
  \item ltrace paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun hatasız çalıştığını gözlemleyin:

@@ -53,6 +53,7 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  libgomp
  libobjc
  nasm
+ yasm
  patch
  util-macros
  xorg-proto
@@ -61,6 +62,7 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  cmake
  intltool
  scons
+ autoconf
 \end{verbatim}
 \item automake paketi kurulumu sonrası:
 
@@ -104,6 +106,23 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  dbus-glib 
  libtool-ltdl 
  memtest 
+ zlib
+\end{verbatim}
+
+\item grep paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ ps aux | grep firefox
+\end{verbatim}
+
+\item disktype paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ disktype /dev/sda1
 \end{verbatim}
 
 \item iputils paketi kurulumu sonrası:
@@ -252,7 +271,7 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 \end{verbatim}
 
 
-\item comar paketi kurulumu sonrası:
+\item comar ve comar-api paketleri kurulumu sonrası:
 
 desktop-tr.pdf service-manager ve package-manager testlerini gerçekleştiriniz.
 \item python-fchksum paketi kurulumu sonrası:
@@ -352,9 +371,9 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının sorunsuz bir şe
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
- # date
- # pwd
- # uname -a
+  date
+  pwd
+  uname -a
 \end{verbatim}
 
 
@@ -461,11 +480,13 @@ Yukarıda bulunan dosyaları aşağıda bulunan komut ile çalıştırın, dosya
 \end{verbatim}
 
 Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile açılabildiklerini gözlemleyin.
+
 \item pisi paketi kurulumu sonrası:
 \begin{itemize}
  \item package-manager-tr.pdf test aşamalarını gerçekleştiriniz.
  \item history-manager-tr.pdf test aşamalarını gerçekleştiriniz.
 \end{itemize}
+
 \item baselayout paketi kurulumu sonrası:
 \begin{itemize}
  \item Bilgisayarınızı kapatın düzgün bir şekilde kapanabildiğini gözlemleyin.
