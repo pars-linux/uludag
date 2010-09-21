@@ -57,14 +57,18 @@ phoronix-test-suite paketi kurulumu sonası:<P>Aşağıda bulunan komutu çalı�
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> unshield
  minizip
- 
+</PRE></LI><LI CLASS="li-enumerate">rpm2targz paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde rpm’i targz2ye dönüştürdüğünü gözlemleyin.
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/inkscape-0.48.0-2pclos2010.src.rpm
+ rpm2targz inkscape-0.48.0-2pclos2010.src.rpm
+</PRE></LI><LI CLASS="li-enumerate">pbzip2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bz2 uzantılı dosyayı oluşturduğunu gözlemleyin:</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+ pbzip2 -b15qk cokluortam.tar
 </PRE></LI><LI CLASS="li-enumerate">cabextract paketi kurulumu sonrası:<P>hardware-tr.pdf wine testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">xz paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde dosyayı skıştırıp açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> mkidir test
  xz test
  unxz test.xz
-</PRE></LI><LI CLASS="li-enumerate">rar paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde test.tar dosyasını oluşturduğunu gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">rar paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde test.rar dosyasını oluşturduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> mkdir test
- tar -avf test.tar test
+ rar a test.rar -ri1 -rv10 -v51200 -m5 test
 </PRE></LI><LI CLASS="li-enumerate">lrzip paketi kurulumu sonrası:<P>Aşağıda bulunan komutların dosyayı önce sıkıştırıp sonra açtığını gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_lrzip
   lrzip test_lrzip
@@ -74,9 +78,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Crypt alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim">gpg --gen-key
-</PRE></LI><LI CLASS="li-enumerate">johntripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
-</P><PRE CLASS="verbatim"> unmask 077
- sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
+</PRE></LI><LI CLASS="li-enumerate">johntheripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
  sudo john -si mypasswd 
 </PRE></LI><LI CLASS="li-enumerate">mcrypt paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">  mcrypt --list
@@ -117,6 +120,8 @@ Apache ve mysql sunucularını servis yöneticisinden başlatın. Aşağıda bul
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Shell alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> bashdb
+</PRE></LI><LI CLASS="li-enumerate">tcsh paketi kurulumu sonrası:
+Aşağıda bulunan komutu çalıştırın ve yeni bir kabuğun açıldığını gözlemleyin.<PRE CLASS="verbatim"> csh
 </PRE></LI><LI CLASS="li-enumerate">zsh paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve yeni bir kabuğun açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim">  zsh
   0
@@ -131,6 +136,9 @@ bash: amsn: command not found
 </PRE></LI></OL><!--TOC section Misc alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Misc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> augeas
+ task
+</PRE></LI><LI CLASS="li-enumerate">byobu paketi kurulumu sonrası:<P>Aşağıda bulunan komutun yeni bir konsol açtığını gözlemleyin:</P><PRE CLASS="verbatim"> byobu
+</PRE></LI><LI CLASS="li-enumerate">tree paketi kurulumu sonrası:<P>İçinde veri bulunan bir dizin için aşağıdaki komutu çalıştırın ve komutun sorunsuz bir şekilde dizin içeriğini ağaç şeklinde listelediğini gözlemleyin.</P><PRE CLASS="verbatim"> tree &lt;dizin adı&gt;
 </PRE></LI><LI CLASS="li-enumerate">multitail paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">sudo multitail /var/log/comar3/trace.log 
 </PRE></LI><LI CLASS="li-enumerate">strace paketi kurulumu sonrası: <P>Aşağıda bulunan komutununu a2p bin dosyasının sistem çağrılarını, bu çağrılara verilen parametreleri ve dönüş değerlerini gösterdiğini gözlemleyin.
@@ -140,7 +148,7 @@ bash: amsn: command not found
 </PRE></LI><LI CLASS="li-enumerate">puding paketi kurulumu sonrası:<P>Kmenu’den programın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">pax-utils paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın sorunsuz çalıştıklarını gözlemleyin.
 </P><PRE CLASS="verbatim"> scanelf -lqtmyR /
  dumpelf /bin/hostname
-</PRE></LI><LI CLASS="li-enumerate">fslint paketi kurulumu sonrası:<P>Kmenüden açılabildiğini gözlemleyin.</P><P>İki farklı dizine birer dosya kopyalayın ve uygulamaya bu iki farlı dizini ekleyin, kopya dosyalara tıklayıp bul tuşuna basın kopyalamış olduğunuz dosyanın listelenmiş olduğunu gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">fslint paketi kurulumu sonrası:<P>Kmenüden açılabildiğini gözlemleyin.</P><P>İki farklı dizine birer dosya kopyalayın ve uygulamaya bu iki farklı dizini ekleyin, kopya dosyalara tıklayıp bul tuşuna basın kopyalamış olduğunuz dosyanın listelenmiş olduğunu gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">ltrace paketi kurulumu sonrası:<P>Aşağıda bulunan komutun hatasız çalıştığını gözlemleyin:
 </P><PRE CLASS="verbatim"> # ltrace ls
 </PRE></LI><LI CLASS="li-enumerate">elfutils paketi kurulumu sonrası:<P>util-tr.pdf ltrace testini gerçekleştirin.

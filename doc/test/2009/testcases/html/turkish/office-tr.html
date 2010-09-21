@@ -114,12 +114,14 @@ opensp
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> koffice-devel 
  koffice-filters
  koffice-kchart
+ koffice-kdchart
+ koffice-libs
 </PRE></LI><LI CLASS="li-enumerate">koffice-core kurulumu sonrası.<UL CLASS="itemize"><LI CLASS="li-itemize">
-KThesaurus uygulamasını menüden açın ve ilişkisi bulunabilecek bir ingilizce kelime girin. (Çünkü kthearus sadece ingilizce dilini desteklemektedir)<P>Menü → uygulamalar → ofis → daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.</P></LI><LI CLASS="li-itemize">koconverter için:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
-# koconverter koconverter_test.html koconverter_test.pdf
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls
-# koconverter koconverter_test.xls koconverter_test.txt
+KThesaurus uygulamasının, Kmenü → uygulamalar → ofis → daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">koconverter uygulaması:
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
+ koconverter koconverter_test.html koconverter_test.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls
+ koconverter koconverter_test.xls koconverter_test.txt
 </PRE><P>Çalıştırılan koconverter komutlarının sorunsuz bir şekilde dönüşümü gerçekleştirdiğini gözlemleyin.
 </P></LI></UL></LI><LI CLASS="li-enumerate">koffice-karbon paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek Karbon14 uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Bu uygulama ile basit bir çizim yapıp kaydetmeyi deneyin.</P><P>Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-kplato paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek kplato uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-kpresenter paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek kpresenter uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Bu uygulamayı kullanarak slide içerisine bir resim bir text ekleyin, start presentation butonuna basın.</P><P>Sorunsuz bir şekilde bu işlemlerin gerçekleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-krita paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek krita uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Bu uygulama ile basit bir çizim yapıp kaydetmeyi deneyin.</P><P>Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-kspread paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek kspread uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Bu uygulamada basit bir taslak açın, (örneğin öğrenci kartı taslağını), bu taslağa resim eklemeye ve bilgileri değiştirmeye çalışın.</P><P>Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-kword paketi kurulumu sonrası:<P>Menü → uygulamalar → ofis yolunu izleyerek kword uygulamasının sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Bu uygulamada çıkan sayfaya bir resim ekleyin, yazı yazın ve kaydedin.</P><P>Hatasız bir şekilde işlemi gerçekleştirdiğini gözlemleyin.
 </P></LI></OL><!--TOC subsection l10n alt bileşeni-->
@@ -150,7 +152,8 @@ koffice-l10n-zh_TW
  aqbanking
  kmymoney
  kmymoney-docs
-</PRE></LI><LI CLASS="li-enumerate">fet paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">scribus paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
+</PRE></LI><LI CLASS="li-enumerate">txt2man paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir man dosyası ürettiğini gözlemleyin:</P><PRE CLASS="verbatim"> txt2man -h 2&gt;&amp;1 | txt2man -T
+</PRE></LI><LI CLASS="li-enumerate">skrooge paketi kurulumu sonrası:<P>Kmenu’den uygulamayı çalıştırın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">fet paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">scribus paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
  rst2pdf test.rst
  okular test.pdf
 </PRE></LI><LI CLASS="li-enumerate">docutils paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde html formatına dönüştüğünü gözlemleyin.

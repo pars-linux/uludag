@@ -74,6 +74,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  libgomp
  libobjc
  nasm
+ yasm
  patch
  util-macros
  xorg-proto
@@ -82,6 +83,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  cmake
  intltool
  scons
+ autoconf
 </PRE></LI><LI CLASS="li-enumerate">automake paketi kurulumu sonrası:<P>Aşağıda bulunan paketlerin sorunsuz derlendiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo pisi it subversion
  2008 için
@@ -107,6 +109,9 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  dbus-glib 
  libtool-ltdl 
  memtest 
+ zlib
+</PRE></LI><LI CLASS="li-enumerate">grep paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ps aux | grep firefox
+</PRE></LI><LI CLASS="li-enumerate">disktype paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> disktype /dev/sda1
 </PRE></LI><LI CLASS="li-enumerate">iputils paketi kurulumu sonrası:<P>Aşağıda bulunan komut ile ağ paketlerinin gidip gelebildiğini gözlemleyin, çıkmak için CTRL+C tuşlarına basın.
 </P><PRE CLASS="verbatim"> ping 4.2.2.1
 </PRE></LI><LI CLASS="li-enumerate">cpio paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -156,7 +161,7 @@ Panel’de bulunan takviminizin zaman dilimini değiştirin, ve sorunsuz bir şe
 </P></LI><LI CLASS="li-enumerate">dbus-python paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> ipython
  import dbus
-</PRE></LI><LI CLASS="li-enumerate">comar paketi kurulumu sonrası:<P>desktop-tr.pdf service-manager ve package-manager testlerini gerçekleştiriniz.
+</PRE></LI><LI CLASS="li-enumerate">comar ve comar-api paketleri kurulumu sonrası:<P>desktop-tr.pdf service-manager ve package-manager testlerini gerçekleştiriniz.
 </P></LI><LI CLASS="li-enumerate">python-fchksum paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve "Test python-fchksum"’ın crc32’sinin alınabildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> ipython
  import binascii
@@ -192,9 +197,9 @@ Bilgisayarınızı yeniden başlatın ve sisteminizde bulunan fontların sorunsu
 </PRE></LI><LI CLASS="li-enumerate">less paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">pisi info -F python | less 
 </PRE></LI><LI CLASS="li-enumerate">bootsplash-theme-pardus paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın ve açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyiniz.</P></LI><LI CLASS="li-enumerate">coreutils paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # date
- # pwd
- # uname -a
+</P><PRE CLASS="verbatim">  date
+  pwd
+  uname -a
 </PRE></LI><LI CLASS="li-enumerate">python paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 system-tr.pdf pisi testini gerçekleştiriniz.
@@ -244,13 +249,11 @@ Makinenizi yeniden başlatın ve sistemin düzgün bir şekilde açıldığını
 </LI><LI CLASS="li-itemize">Pisi komutlarının düzgün bir şekilde çalıştığını gözlemleyin. </LI></UL></LI><LI CLASS="li-enumerate">tiff paketi kurulumu sonrası:
 <PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/doga.tiff
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/istanbul.tiff
-</PRE><P>Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile açılabildiklerini gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">pisi paketi kurulumu sonrası:
+</PRE><P>Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile açılabildiklerini gözlemleyin.</P></LI><LI CLASS="li-enumerate">pisi paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 package-manager-tr.pdf test aşamalarını gerçekleştiriniz.
 </LI><LI CLASS="li-itemize">history-manager-tr.pdf test aşamalarını gerçekleştiriniz.
-</LI></UL>
-</LI><LI CLASS="li-enumerate">baselayout paketi kurulumu sonrası:
+</LI></UL></LI><LI CLASS="li-enumerate">baselayout paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bilgisayarınızı kapatın düzgün bir şekilde kapanabildiğini gözlemleyin.
 </LI><LI CLASS="li-itemize">Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açılabildiğini gözlemleyin.

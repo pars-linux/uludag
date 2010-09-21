@@ -133,12 +133,12 @@ Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
 </P><PRE CLASS="verbatim">cat /proc/cpuinfo | grep pae 
 </PRE><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">kernel-pae paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıdaki komut çıktısı ile listelenen sisteminizde kurulu tüm paketlerin yeni kernele uygun versiyonlarını kurununuz.
-<PRE CLASS="verbatim"> # pisi li -c kernel.pae
-</PRE><P>Eğer daha önce kernel pae kullanmadıysanız yukarıda bulunan komut çıktısı boş dönecektir. Bu durumda aşağıdaki komut çıktısında listelenen paketlerin pae’ye özgü olanlarını sisteminize kurup bu paketler ile ilgili testleri gerçekleştirebilirsiniz. Bu listeye 2.2 bölümünden ulaşabilirsiniz.</P><PRE CLASS="verbatim"> # pisi li -c kernel.default
+<PRE CLASS="verbatim">pisi li -c kernel.pae
+</PRE><P>Eğer daha önce kernel pae kullanmadıysanız yukarıda bulunan komut çıktısı boş dönecektir. Bu durumda aşağıdaki komut çıktısında listelenen paketlerin pae’ye özgü olanlarını sisteminize kurup bu paketler ile ilgili testleri gerçekleştirebilirsiniz. Bu listeye 2.2 bölümünden ulaşabilirsiniz.</P><PRE CLASS="verbatim"> pisi li -c kernel.default
 </PRE></LI><LI CLASS="li-itemize">Bilgisayarınızı kapatınız ve düzgün bir şekilde kapanabildiğini gözlemleyiniz.
 </LI><LI CLASS="li-itemize">Açılış ekranın görüntüsünün (Arka tarafında Pardus logosu bulunan grub menüsü) Sorunsuz bir şekilde açıldığını gözlemleyiniz.
 </LI><LI CLASS="li-itemize">Bilgisayarınızın yeni kernel ile düzgün bir şekilde açılabildiğini gözlemleyiniz.<P>Bilgisayarınızı açtıktan sonra konsoldan aşağıda bulunan komutu çalıştırıp, kullandığınız kernelin grub menüsünde görüntülenen kernel ile aynı olduğunu gözlemleyiniz.
-</P><PRE CLASS="verbatim"> # uname -r 
+</P><PRE CLASS="verbatim"> uname -r 
 </PRE></LI><LI CLASS="li-itemize">Eğer dizüstü bilgisayar kullanıyorsanız kablonuzu çıkarıp taktığınızda uyarı verdiğini ve pil seviyesinin düzgün bir şekilde görüntülendiğini gözlemleyiniz.
 </LI><LI CLASS="li-itemize">USB bellek takınız ve algılandığını gözlemleyiniz.
 </LI></UL></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketleri Default bileşeni altında bulunan benzer paketlerin test aşamalarını kullanarak test edebilirsiniz.<PRE CLASS="verbatim">2008 için

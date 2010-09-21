@@ -63,7 +63,8 @@ valgrind paketi kurulumu sonrası:<P>Gimp uygulamasının işlem ve hafıza duru
    opreport
   </PRE></LI></OL><!--TOC section Debug alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Debug alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-gdb paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve gdb-test.c’in derlendiğini ve daha sonra gdb-test ile ilgili gdb’nin bir hata bulduğunu gözlemleyin.
+cgdb paketi kurulumu sonrası:<P>"cgdb" komutunu çalıştırım ve yeni bir konsol arayüzünün açıldığını gözlemleyin.
+</P></LI><LI CLASS="li-enumerate">gdb paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve gdb-test.c’in derlendiğini ve daha sonra gdb-test ile ilgili gdb’nin bir hata bulduğunu gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/debug/gdb-test.c
 gcc -g gdb-test.c -o gdb-test
 ./gdb-test
@@ -89,7 +90,7 @@ ctags
 </P><PRE CLASS="verbatim"> ipython
  import translate
 </PRE></LI><LI CLASS="li-enumerate">cdecl paketi kurulumu sonrası:<P>Aşağıda bulunan kopmutun düzgün çalıştığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # cdecl
+</P><PRE CLASS="verbatim">  cdecl
  cdecl&gt; #include &lt;string.h&gt;
 </PRE></LI></OL><!--TOC section vcs alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  vcs alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -142,7 +143,8 @@ tig
    svn add testfile
    svn diff
  </PRE></LI></OL><!--TOC section Environment alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Environment alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">eclipse-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse-cdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-jdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pde-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Environment alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">  kdevelop-devel
+ </PRE></LI><LI CLASS="li-enumerate">eclipse-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse-cdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-jdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pde-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)</P></LI><LI CLASS="li-enumerate">qdevelop paketi kurulumu sonrası:<P>Kmenuden uygulamayı açın, açılabildiğini gözlemleyin</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/environment/test.py
 </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde bir open office uygulaması açın ve yardım dosyasının ilgili dilde olduğunu gözlemleyin.
 <PRE CLASS="verbatim">eric-i18n-cs
@@ -162,8 +164,13 @@ eric-i18n-tr
  a.write("test ipython")
 </PRE></LI><LI CLASS="li-enumerate">drscheme paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qt-creator paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
 </P></LI></OL><!--TOC section Language alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Language alt bileşeni</H2><!--SEC END --><!--TOC subsection Ruby alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc9">8.1</A>  Ruby alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Language alt bileşeni</H2><!--SEC END --><!--TOC subsection —-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc9">8.1</A>  —</H3><!--SEC END --><P>
+Aşağıda bulunan paketler sadece kurulum testine tabidir.</P><PRE CLASS="verbatim">llvm
+llvm-docs
+llvm-ocaml
+</PRE><!--TOC subsection Ruby alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">8.2</A>  Ruby alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 ruby paketi kurulumu sonrası:<PRE CLASS="verbatim">irb --simple-prompt 
 puts "Test Pardus"
 </PRE><P>Yukarıda bulunan komutun aşağıda bulunan çıktıyı döndürdüğünü gözlemleyin.
@@ -171,18 +178,18 @@ puts "Test Pardus"
 =&gt; nil
 </PRE></LI><LI CLASS="li-enumerate">ruby-mode paketi kurulumu sonrası:<P>Emacs uygulamasını açın ALT+x tuşlarına basın ve ruby-mode yazın ENTER tuşuna basın, emacs’in bu mod değişkliğini yaptığını gözlemleyin.
 </P></LI></OL><!--TOC subsection tcl alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">8.2</A>  tcl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  tcl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekranı çıkardığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_tcl.tcl
  wish test_tcl.tcl
 </PRE></LI></OL><!--TOC subsection Php alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
  php test_phpgtk.phpw
 </PRE></LI><LI CLASS="li-enumerate">php-cli, php-common, mod_php paketleri kurulumu sonrası:<P>Servis yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.</P><PRE CLASS="verbatim"> cd /var/www/localhost/htdocs/
  sudo wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test.php 
 </PRE></LI></OL><!--TOC subsection Perl alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Perl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Perl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim"> perl-HTML-Template-Pro
  perl-JSON
@@ -235,32 +242,32 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-Date-Calc paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Date-Calc.tar.gz
 </PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim"># cd Date-Calc
-# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+</P><PRE CLASS="verbatim"> cd Date-Calc
+ /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-Class-ISA paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Class-ISA.tar.gz
 </PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim"># cd Class-ISA
-# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+</P><PRE CLASS="verbatim"> cd Class-ISA
+ /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-Class-Accessor paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Class-Accessor.tar.gz
 </PRE><P>Konsoldan;
 </P><PRE CLASS="verbatim"># cd Class-Accessor
 # /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-IO-Socket-SSL paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IO-Socket-SSL-1.26.tar.gz
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IO-Socket-SSL-1.26.tar.gz
 </PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim"># cd IO-Socket-SSL-1.26/
-# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+</P><PRE CLASS="verbatim"> cd IO-Socket-SSL-1.26/
+ /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">perl-Compress-Zlib paketi kurulumu sonrası:<P>programming-tr.pdf git testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">perl-Email-MIME-Encodings paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Email-MIME-Encodings.t
- # perl Email-MIME-Encodings.t
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Email-MIME-Encodings.t
+ perl Email-MIME-Encodings.t
 </PRE><P>Tüm sonuçların "ok" döndürdüğünü gözlemleyin. </P></LI><LI CLASS="li-enumerate">perl-Email-MIME-Encodings paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
  perl test_perl_Test_Simple.t
 </PRE><P>Tüm sonuçların "ok" döndürdüğünü gözlemleyin. </P></LI></OL><!--TOC subsection Python alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Python alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Python alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> python-docs
  gnome-python-docs
  PyQt-doc
@@ -272,6 +279,84 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
  pyinotify-doc 
  python-e_dbus
  python-Genshi-doc
+ python-EasyGui-docs
+ python-pytables-docs
+ python-mako-docs
+</PRE></LI><LI CLASS="li-enumerate">pyalsaaudio paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import alsaaudio
+</PRE></LI><LI CLASS="li-enumerate">tagpy paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import tagpy
+</PRE></LI><LI CLASS="li-enumerate">python-EasyGui paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import easygui
+</PRE></LI><LI CLASS="li-enumerate">python-SilverCity paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import SilverCity
+</PRE></LI><LI CLASS="li-enumerate">python-biggles paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import biggles
+</PRE></LI><LI CLASS="li-enumerate">python-pp paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import pp
+</PRE></LI><LI CLASS="li-enumerate">python-pyMbus paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import mbus
+</PRE></LI><LI CLASS="li-enumerate">python-cssutils paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import cssutils
+</PRE></LI><LI CLASS="li-enumerate">python-iniparse paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import iniparse
+</PRE></LI><LI CLASS="li-enumerate">python-mailer paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import mailer
+</PRE></LI><LI CLASS="li-enumerate">python-numexpr paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import numexpr
+</PRE></LI><LI CLASS="li-enumerate">python-pytables paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import tables
+</PRE></LI><LI CLASS="li-enumerate">python-eventlet paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import eventlet
+</PRE></LI><LI CLASS="li-enumerate">python-greenlet paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import greenlet
+</PRE></LI><LI CLASS="li-enumerate">python-MarkupSafe paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import markupsafe
+</PRE></LI><LI CLASS="li-enumerate">python-Unidecode paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import unidecode
+</PRE></LI><LI CLASS="li-enumerate">python-decoratortools paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import peak.util.decorators
+</PRE></LI><LI CLASS="li-enumerate">python-paste paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import paste
+</PRE></LI><LI CLASS="li-enumerate">python-turbokid paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import turbokid
+</PRE></LI><LI CLASS="li-enumerate">python-webtest paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import webtest
+</PRE></LI><LI CLASS="li-enumerate">python-opentts paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import opentts
+</PRE></LI><LI CLASS="li-enumerate">python-speech-dispatcher paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import speechd
+</PRE></LI><LI CLASS="li-enumerate">python-pyatspi paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import pyatspi
+</PRE></LI><LI CLASS="li-enumerate">python-v4l2capture paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import v4l2capture
+</PRE></LI><LI CLASS="li-enumerate">PyKDE paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
+ import PyKDE4
 </PRE></LI><LI CLASS="li-enumerate">python-pyliblzma paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import lzma
@@ -438,12 +523,11 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  sudo python setup.py build 
  sudo python setup.py install
 </PRE></LI><LI CLASS="li-enumerate">django-tagging paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> mkdir test
- cd test
- django-admin.py startproject test_django_tagging
- cd test_django_tagging
- ipython
+<PRE CLASS="verbatim"> ipython
  import tagging
+</PRE></LI><LI CLASS="li-enumerate">django-south paketi kurulumu sonrası:
+<PRE CLASS="verbatim"> ipython
+ import south
 </PRE></LI><LI CLASS="li-enumerate">pycha paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
@@ -577,32 +661,32 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import fltk
 </PRE></LI><LI CLASS="li-enumerate">python-turboflot paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import turboflot
 </PRE></LI><LI CLASS="li-enumerate">python-ldap paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import ldap
 </PRE></LI><LI CLASS="li-enumerate">python-iptables paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import iptables
 </PRE></LI><LI CLASS="li-enumerate">numpy paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırdığınızda testlerden ok sonucu döndüğünü gözlemleyin.
-</P><PRE CLASS="verbatim"> # python -c "import numpy;print numpy.test()"
+</P><PRE CLASS="verbatim"> python -c "import numpy;print numpy.test()"
 </PRE></LI><LI CLASS="li-enumerate">sympy paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırdığınızda testlerden ok sonucu döndüğünü gözlemleyin.
 </P><PRE CLASS="verbatim"> # python -c "import sympy;print sympy.test()"
 </PRE></LI><LI CLASS="li-enumerate">scipy paketi kurulumu sonrası:<P>Aşğıda bulunan komutu çalıştırdığınızda &lt;nose.result.TextTestResult run=XXXX errors=0 failures=0&gt; gibi bir çıktı ürettiğini gözlemleyin.
-</P><PRE CLASS="verbatim"> # python -c "import scipy;print scipy.test()"
+</P><PRE CLASS="verbatim"> python -c "import scipy;print scipy.test()"
 </PRE></LI><LI CLASS="li-enumerate">PyXML paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import xml
 </PRE></LI><LI CLASS="li-enumerate">PyX paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import pyx
-</PRE></LI><LI CLASS="li-enumerate">pyNotifier paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</PRE></LI><LI CLASS="li-enumerate">notify-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</P><PRE CLASS="verbatim"> ipython
  import pynotify
 </PRE></LI><LI CLASS="li-enumerate">httplib2 paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import httplib2
 </PRE></LI><LI CLASS="li-enumerate">Django paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
@@ -667,7 +751,7 @@ python/test_python-memcache.py
 </P><PRE CLASS="verbatim"> ipython
  import openid
 </PRE></LI></OL><!--TOC subsection Java alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">8.7</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıdaki paketlerin kurulumu sonrası:
 <PRE CLASS="verbatim"> sun-jre
  sun-jdk
@@ -681,12 +765,12 @@ Aşağıdaki paketlerin kurulumu sonrası:
  java test
 </PRE></LI><LI CLASS="li-enumerate">libmatthew, slf4j paketleri kurulumu sonrası:<P>office-tr.pdf zemberek-openoffice testini gerçekleştirin.
 </P></LI></OL><!--TOC subsection Lisp alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">8.7</A>  Lisp alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">8.8</A>  Lisp alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 clisp paketi kurulumu sonrası: (Warningleri önemsemeyiniz.)<P>Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 </P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/lisp/test_clisp.lisp 
 # clisp -c test_clisp.lisp
 </PRE></LI></OL><!--TOC subsection Dotnet alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">8.8</A>  Dotnet alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc17">8.9</A>  Dotnet alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir
 <PRE CLASS="verbatim">taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib
