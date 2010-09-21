@@ -60,7 +60,7 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemle
 
 \item hmmer, hmmer-doc paketleri kurulumu sonrası:
 
-Aşağıda bulunan komutun seorunsuz bir çıktı ürettiğini gözlemleyin.
+Aşağıda bulunan komutun sorunsuz bir çıktı ürettiğini gözlemleyin.
 \begin{verbatim}
  cd /usr/share/doc/hmmer/tutorial
  sudo hmmbuild globins4.hmm  globins4.sto
@@ -108,6 +108,10 @@ Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 
 \section{Astronomy alt Bileşeni}
 \begin{enumerate}
+\item phoebe-gui ve phoebe-scripter paketleri kurulumu sonrası:
+
+Kmenu'den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.
+
 \item xplanet paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun uzay ile ilgili bir resim ürettiğini gözlemleyin.
@@ -123,7 +127,7 @@ Kmenüden uygulamayı açın ve düzgün bir şekilde açılabildiğini gözleml
 
 \section{Chemistry alt Bileşeni}
 \begin{enumerate}
- \item avogadropaketi kurulumu sonrası:
+ \item avogadro paketi kurulumu sonrası:
 
 Kmenu'den uygulamayı açın, çıkan ekranda bir molekül oluşturmaya ve kaydetmeye çalışın. Sorunsuz bir şekilde molekulün kaydedildiğini ve tekrar açılabildiğini gözlemleyin.
 
@@ -131,10 +135,10 @@ Kmenu'den uygulamayı açın, çıkan ekranda bir molekül oluşturmaya ve kayde
 
 Aşağıda bulunan komutları çalıştırın ve test.smi dosyasında "c1cccc(c1C(=O)O)OC(=O)C·C9H8O4" formülünün yazılmış olduğunu gözlemleyin.
 \begin{verbatim}
- # babel -H sdf
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/aspirin.sdf
- # babel -isdf 'aspirin.sdf' -osmi 'test.smi'
- # vi test.smi
+  babel -H sdf
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/aspirin.sdf
+  babel -isdf 'aspirin.sdf' -osmi 'test.smi'
+  vi test.smi
 \end{verbatim}
 
 \end{enumerate}
@@ -147,9 +151,20 @@ Aşağıda bulunan komutları çalıştırın ve test.smi dosyasında "c1cccc(c1
 \begin{verbatim}
 gnuplot-doc
 pspp-docs
+CGAL
+CGAL-devel
+CGAL-docs
+geomview-devel
+geomview-docs
 \end{verbatim}
 
+\item geomview paketi kurulumu sonası:
+
+Kmenu'den uygulamayı açın ve sorunsuz açıldığını gözlemleyin.
+
 \item gnuplot paketi kurulumu sonrası:
+
+Aşağıda bulunan komnutların sinus grafiğini çizdiğini gözlemleyin.
 
 \begin{verbatim}
  gnuplot
