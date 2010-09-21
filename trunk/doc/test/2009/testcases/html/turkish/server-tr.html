@@ -95,16 +95,16 @@ openldap-client
 openldap-server
 openldap-slurpd
 </PRE></LI><LI CLASS="li-enumerate">webalizer paketi kurulumu sonrası:<P>Service yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan dosyayı /var/log/apache2 altına kopyalayın.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/web/access_log
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/web/access_log
 </PRE><P>Aşağıda bulunan komutu çalıştırın ve daha sonra http://localhost/webalizer/ bağlantısına firefox ile bağlanın. Ve apache kullanım grafiklerini gözlemleyin.
-</P><PRE CLASS="verbatim"> # sudo webalizer
+</P><PRE CLASS="verbatim">sudo webalizer
 </PRE></LI><LI CLASS="li-enumerate">apache paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu kullanarak sunucunun başlatılmıl olduğunu gözlemleyin.
-<PRE CLASS="verbatim"># service list
+<PRE CLASS="verbatim">service list
 </PRE></LI><LI CLASS="li-itemize">Firefox üzerinden http://localhost adresine bağlanın ve sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin. 
 </LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve komut çıktısında ‘Syntax Ok‘ aldığınzı gözlemleyin.
-<PRE CLASS="verbatim"># apachectl -M 
+<PRE CLASS="verbatim">apachectl -M 
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mod_php paketi kurulumu sonrası:<P>util-tr.pdf phpmyadmin testini gerçekleştiriniz.</P></LI></OL><!--TOC section Database alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">virtuoso

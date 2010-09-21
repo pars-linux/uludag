@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea science-tr.tex -->
+<!--HEVEA command line is: hevea science-tr.tex science-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Science Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Plotting alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Plotting alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -64,7 +64,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
  import Bio
-</PRE></LI><LI CLASS="li-enumerate">clustalx paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">hmmer, hmmer-doc paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun seorunsuz bir çıktı ürettiğini gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">clustalx paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">hmmer, hmmer-doc paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir çıktı ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> cd /usr/share/doc/hmmer/tutorial
  sudo hmmbuild globins4.hmm  globins4.sto
 </PRE></LI></OL><!--TOC section Electronics alt Bileşeni-->
@@ -81,21 +81,26 @@ proj
 </P><PRE CLASS="verbatim"> service gpsd status
 </PRE></LI></OL><!--TOC section Astronomy alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Astronomy alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-xplanet paketi kurulumu sonrası:<P>Aşağıda bulunan komutun uzay ile ilgili bir resim ürettiğini gözlemleyin.
+phoebe-gui ve phoebe-scripter paketleri kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">xplanet paketi kurulumu sonrası:<P>Aşağıda bulunan komutun uzay ile ilgili bir resim ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim">wget ftp://ssd.jpl.nasa.gov/pub/eph/export/unix/unxp1900.405
 xplanet -ephemeris unxp1900.405 -light_time -origin uranus -body sun -radius 30 -date 19140503.093000  
 </PRE></LI><LI CLASS="li-enumerate">stellarium paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve düzgün bir şekilde açılabildiğini gözlemleyin. 
 </P></LI></OL><!--TOC section Chemistry alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Chemistry alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-avogadropaketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın, çıkan ekranda bir molekül oluşturmaya ve kaydetmeye çalışın. Sorunsuz bir şekilde molekulün kaydedildiğini ve tekrar açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">openbabel paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve test.smi dosyasında "c1cccc(c1C(=O)O)OC(=O)C·C9H8O4" formülünün yazılmış olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # babel -H sdf
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/aspirin.sdf
- # babel -isdf 'aspirin.sdf' -osmi 'test.smi'
- # vi test.smi
+avogadro paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın, çıkan ekranda bir molekül oluşturmaya ve kaydetmeye çalışın. Sorunsuz bir şekilde molekulün kaydedildiğini ve tekrar açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">openbabel paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve test.smi dosyasında "c1cccc(c1C(=O)O)OC(=O)C·C9H8O4" formülünün yazılmış olduğunu gözlemleyin.
+</P><PRE CLASS="verbatim">  babel -H sdf
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/aspirin.sdf
+  babel -isdf 'aspirin.sdf' -osmi 'test.smi'
+  vi test.smi
 </PRE></LI></OL><!--TOC section Mathematics alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Mathematics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">gnuplot-doc
 pspp-docs
-</PRE></LI><LI CLASS="li-enumerate">gnuplot paketi kurulumu sonrası:<PRE CLASS="verbatim"> gnuplot
+CGAL
+CGAL-devel
+CGAL-docs
+geomview-devel
+geomview-docs
+</PRE></LI><LI CLASS="li-enumerate">geomview paketi kurulumu sonası:<P>Kmenu’den uygulamayı açın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">gnuplot paketi kurulumu sonrası:<P>Aşağıda bulunan komnutların sinus grafiğini çizdiğini gözlemleyin.</P><PRE CLASS="verbatim"> gnuplot
  plot sin(x)
 </PRE></LI><LI CLASS="li-enumerate">pspp paketi kurulumu sonrası:<P>Kmenu’den uygulamanın sorunsuz açıldığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">octave paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.

@@ -60,7 +60,7 @@ lircd
 irw  
 </PRE></LI></OL><!--TOC section Graphics alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Graphics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-ati-control-center paketi kurulumu sonrası:<P>(sadece ati ekran kartı sürücüsü olanlar test edebilecektir.)</P><P>Kmenu’den Ati Graphics Adapter Settings’i açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
+ati-control-center paketi kurulumu sonrası:<P>(sadece ati ekran kartı sürücüsü olanlar test edebilecektir.)</P><P>Kmenu’den Ati Catalyst Denetim Merkezi’ni açın ve ati kartınızı bulabildiğini ve tanıdığını gözlemleyin.
 </P></LI></OL><!--TOC section Firmware alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Firmware alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler kurulum testine tabidir.
@@ -70,6 +70,7 @@ ar9170-firmware
 bluez-firmware
 ql2x00-firmware
 v4l-dvb-firmware
+alsa- firmware
 </PRE></LI></OL><!--TOC section Printer alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Printer alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim">gutenprint 
@@ -98,6 +99,7 @@ Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.</LI><L
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Powermanagement alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> acpid
+</PRE></LI><LI CLASS="li-enumerate">powertop paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> powertop
 </PRE></LI><LI CLASS="li-enumerate">nut paketi kurulumu sonrası:<P>Servis yöneticisinden nut servisini başlatın.</P><P>Aşağıda bulunan komutu çalıştırın ve servisin başlatıldığını gözlemleyin. 
 </P><PRE CLASS="verbatim"> service nut status
 </PRE></LI><LI CLASS="li-enumerate">lm_sensors paketi kurulumu sonrası:<P>hardware-tr.pdf gkrellm testini gerçekleştirin.</P><P>Aşağıda bulunan komutunun voltaj ve cpu fanı gibi bilgileri hatasız bir şekilde listelediğini gözlemleyin.
@@ -105,8 +107,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </PRE></LI></OL><!--TOC section Scanner alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc9">9</A>  Scanner alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 sane-backends paketi kurulumu sonrası:<P>Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
-</P><PRE CLASS="verbatim"># sane-find-scanner
-# scanimage 
+</P><PRE CLASS="verbatim">sane-find-scanner
+scanimage 
 </PRE><P>İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
 İkinci komutun ise düzgün bir şekilde tarama yaptığını ve bir .pnm uzantılı bir resim dosyası ürettiğini gözlemleyin.</P></LI></OL><!--TOC section Optical alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc10">10</A>  Optical alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> k3b-docs
@@ -136,7 +138,7 @@ Aşağıdaki bağlantıda bulunan iso’yu DVD ve CD’ye yazdırın.
 </PRE>Yazdırdığınız CD veya DVD’den video veya müziklerinizi açın, ses ve görüntünün sorunsuz bir şekilde olduğunu gözlemleyin.</LI></UL></LI></OL><!--TOC section Emulator alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Emulator alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> wine-devel
-</PRE></LI><LI CLASS="li-enumerate">virtinst paketi kurulumu sonrası:<P>Aşağıda buluna komutu çalıştırın ve sırayla istenen bilgileri girin. Sanal sistemin açıldığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">virtinst ve virt-viewer paketleri kurulumu sonrası:<P>Aşağıda buluna komutu çalıştırın ve sırayla istenen bilgileri girin. Sanal sistemin açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 virt-install --prompt
 </PRE></LI><LI CLASS="li-enumerate">zsnes paketi kurulumu sonrası:<P>Aşağıda bulunan nintendo oyununu uygulama ile açın ve çalıştırın, sorunsuz bir şekilde çalıştırğını gözlemleyin.
@@ -150,7 +152,7 @@ Düzgün bir şekilde firefox’un kurulduğunu ve açıldığını gözlemleyin
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc12">12</A>  Virtualization alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 libvirt paketi kurulumu sonrası:<P>hardware-tr.pdf virtualbox testini gerçekleştiriniz.
 </P></LI><LI CLASS="li-enumerate">virtualbox, virtualbox-guestadditions, virtualbox-modules ve virt-wrapper paketleri kurulumu sonrası:<P>Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. Aşağida bulunan iso’yu bu sanal sisteme kurun ve çalıştığını gözlemleyin.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~gokmen/Pardus_Minimal_2009.iso
 </PRE></LI><LI CLASS="li-enumerate">kvm paketi kurulumu sonrası:<P>/proc/cpuinfo dosyasından hangi işlemciyi kullandığınızı öğrenin.</P><P>Aşağıda bulunan komutların sorunsuz çalıştığını ve iso’nun boot edildiğini gözlemleyin. (Aynı anda diğer sannallaştırma uygulamalarının çalışmadığından emin olun.) (Eğer kvm-intel veya kvm-amd modulleriniz bulunmamakta ise bu testi gerçekleştiremeyeceksiniz.)</P><PRE CLASS="verbatim"> su -
  modprobe kvm-intel (işlemci intel ise)
  modprobe kvm-amd  (işlemci amd ise)
@@ -220,22 +222,26 @@ hardware-tr.pdf fuse-python testini gerçekleştirin.</LI><LI CLASS="li-enumerat
 </P><PRE CLASS="verbatim"> # su -
  # partimage
 </PRE></LI><LI CLASS="li-enumerate">mountmanager paketi kurulumu sonrası:<P>Uygulamayı kmenuden açın ve daha sonra bir usb stick takın ve mountmanager’a bu aygıtın eklendiğini gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">partitionmanager paketi kurulumu sonrası:<P>Partitionmanager’ı kmenüden açın ve diskinizin küçük bir kısmını bölmeye çelışın sorunsuz bir şekilde bölünebildiğini gözlemleyin.</P><P>USB bellek takarak, bu bellek üzerinden de işlem yapabilirsiniz.</P></LI><LI CLASS="li-enumerate">reiserfsprogs paketi kurulumu sonrası:<P>Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aşağıda bulunan komutları çalıştırın. Düzgün bir şekilde çalıştıklarını gözlemleyin. </P><PRE CLASS="verbatim"> # mkreiserfs /dev/&lt;aygıt uzantısı&gt; -f
- # reiserfsck /dev/&lt;aygıt uzantısı&gt;
+</P></LI><LI CLASS="li-enumerate">partitionmanager paketi kurulumu sonrası:<P>Partitionmanager’ı kmenüden açın ve diskinizin küçük bir kısmını bölmeye çelışın sorunsuz bir şekilde bölünebildiğini gözlemleyin.</P><P>USB bellek takarak, bu bellek üzerinden de işlem yapabilirsiniz.</P></LI><LI CLASS="li-enumerate">reiserfsprogs paketi kurulumu sonrası:<P>Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aşağıda bulunan komutları çalıştırın. Düzgün bir şekilde çalıştıklarını gözlemleyin. </P><PRE CLASS="verbatim"> mkreiserfs /dev/&lt;aygıt uzantısı&gt; -f
+ reiserfsck /dev/&lt;aygıt uzantısı&gt;
 </PRE></LI></OL><!--TOC section Sound alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc17">17</A>  Sound alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 alsa-driver, alsa-headers, alsa-lib, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-# mplayer music.mp3
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ mplayer music.mp3
 </PRE></LI><LI CLASS="li-itemize">alsa-tools-gui paketi kurulumu sonrası:<P>Eğer EchoAudio, Envy24, Hammerfall HDSP, RMedigicontrol ses kartlarından birini kullanıyorsanız bu testi gerçekleştirebilirsiniz.</P><P>Echomixer uygulaması EchoAudio aygıtı için.</P><P>Envy24control uygulaması Envy24 aygıtı için.</P><P>HDSPconf ve HDSPmixer uygulaması Hammerfall HDSP aygıtı için.</P><P>Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 </P></LI></UL></LI></OL><!--TOC section Mobile alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc18">18</A>  Mobile alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> usb-modeswitch
-</PRE></LI><LI CLASS="li-enumerate">libopensync-plugin-kdepim paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kdepim-sync eklentisini listelediğini gözlemleyin.
+libopensync-plugin-irmc
+gammu-devel
+</PRE></LI><LI CLASS="li-enumerate">gammu paketi kurulumu sonrası<P>hardware-tr.pdf python-gammu testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">python-gammu paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import gammu
+</PRE></LI><LI CLASS="li-enumerate">wammu paketi kurulumu sonrası:<P>Eğer bilgisayara usb, bluetooth veya IrDA aygıtlarından biri ile bağlanabilen bir telefonunuz var ise wammu uygulamasını açın ve telefonunuzda bulunan bilgilerin bilgisayara aktarılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">libopensync-plugin-kdepim paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kdepim-sync eklentisini listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> msynctool --listplugins
 </PRE><P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:</P><PRE CLASS="verbatim"> msynctool --addgroup sync2kontact
  msynctool --addmember sync2kontact kdepim-sync
