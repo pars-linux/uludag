@@ -94,6 +94,14 @@ class Widget(QtGui.QWidget):
 
         self.ui.helpContentFrame.hide()
 
+        self.effect = QtGui.QGraphicsOpacityEffect(self)
+        self.ui.mainStack.setGraphicsEffect(self.effect)
+        self.effect.setOpacity(1.0)
+
+        self.anime = QTimer(self)
+        self._mutex = QMutex()
+        self.condition = QWaitCondition()
+        self.connect(self.anime, SIGNAL("timeout()"), self.animate)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton and not self.dontAskCmbAgain:
@@ -218,6 +226,9 @@ class Widget(QtGui.QWidget):
             self.stackMove(self.getCurrent(self.stepIncrement))
             self.stepIncrement = 1
 
+        self.animationType = "fade-out"
+        self.anime.start(100)
+
     # execute previous step
     def slotBack(self):
         widget = self.ui.mainStack.currentWidget()
@@ -228,6 +239,10 @@ class Widget(QtGui.QWidget):
     # move to id numbered stack
     def stackMove(self, id):
         if not id == self.ui.mainStack.currentIndex() or id==0:
+            self.condition.wait(self._mutex)
+            print "--------- mutex %s" % self._mutex
+            self.animationType = "fade-in"
+            self.anime.start(100)
             self.ui.mainStack.setCurrentIndex(id)
             _w = self.ui.mainStack.currentWidget()
             self.ui.screenName.setText(_w.title)
@@ -237,11 +252,25 @@ class Widget(QtGui.QWidget):
             self.ui.helpContent.setText(_w.help)
             # shown functions contain necessary instructions before
             # showing a stack ( updating gui, disabling some buttons etc. )
+
             ctx.mainScreen.processEvents()
             _w.update()
             ctx.mainScreen.processEvents()
             _w.shown()
 
+    def animate(self):
+        if self.animationType == "fade-in":
+            if self.effect.opacity() < 1.0:
+                self.effect.setOpacity(self.effect.opacity() + 0.1)
+            else:
+                self.anime.stop()
+                self._mutex.unlock()
+        if self.animationType == "fade-out":
+            if self.effect.opacity() > 0.0:
+                self.effect.setOpacity(self.effect.opacity() - 0.1)
+            else:
+                self.anime.stop()
+                self._mutex.unlock()
     # create all widgets and add inside stack
     # see runner.py/_all_screens for the list
     def createWidgets(self, screens=[]):
