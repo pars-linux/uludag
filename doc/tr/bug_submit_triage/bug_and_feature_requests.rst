@@ -77,12 +77,33 @@ Hata Raporlandıktan Sonra
     * Eğer raporladığınız hata güncellenmeyen bir sürüme ait ise (EOL) hata ayıklayıcılar yeni sürümde bu hatanın tekrarlanıp tekrarlanmadığını kontrol edecek ve eğer tekrarlanmıyor ise bu hatayı kapatacaktır. 
 
 Hata Tipine Göre Bilgi Toplama
-------------------------------
+==============================
 
 Kurulum hataları için
 ----------------------
-    * Kurulan sistemdeki /var/log/yaliInstall.log dosyasını hata raporuna ekleyin.
+    * Kurulan sistemdeki /var/log/yali.log dosyasını hata raporuna ekleyin.
     * Bölümleme ile ilgili hatalarda disk bölümleme bilgisini rapora ekleyin. Bunun için "fdisk - l" komutunu kullanabilirsiniz. 
+
+YALI log dosyasını alabilmeniz için:
+
+* CTRL+ALT+F1 tuşlarına aynı anda basınız.(Bu komut ile sitem konsoluna geçmiş olmalısınız.)
+* Bilgisayarınıza usb bellek takınız.
+* Usb belleğinizi bilgisayarınıza bağlayınız:.
+
+::
+
+    mount /dev/<your_usb_stick_partition> /mnt/flash
+
+* Yalı için gerekli olan çıktıları /mnt/flash dizinine kopyalayınız.·
+
+::
+
+    cp <output> /mnt/flash
+
+* Bağı manuel bir şekilde kaldırınız.
+::
+
+    umount /dev/<your_usb_stick_partition>
 
 Program Çökmesi:
 ----------------
