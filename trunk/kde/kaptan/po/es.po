@@ -45,7 +45,6 @@ msgid "Allow Strigi to index my files"
 msgstr "Permitir Strigi de crear indice de mis archivos"
 
 #: .tmp/ui_ui_scrSearch.py:98
-#, fuzzy
 msgid "Search Options"
 msgstr "Configuración de la Busqueda"
 
@@ -216,8 +215,9 @@ msgstr "Cantidad de Escritorios"
 # english (for the spanish version at least)
 # favor revisar
 #: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
+#, fuzzy
 msgid "Kaptan"
-msgstr ""
+msgstr "Kaptan"
 
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
@@ -261,7 +261,6 @@ msgid "Repositories"
 msgstr "Repositorios"
 
 #: .tmp/ui_ui_scrSmolt.py:148
-#, fuzzy
 msgid "Smolt"
 msgstr "Smolt"
 
