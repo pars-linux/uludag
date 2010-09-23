@@ -206,6 +206,11 @@ label hardware
         f.write("%s\n" % lang_default)
         f.close()
 
+        # FIXME: this is the default language selection, make it selectable
+        # when this file does not exist, isolinux pops up language menu
+        if os.path.exists(os.path.join(iso_dir, "boot/isolinux/lang")):
+            os.unlink(os.path.join(iso_dir, "boot/isolinux/lang"))
+
         # write available languages
         f = file(os.path.join(iso_dir, "boot/isolinux/languages"), "w")
         f.write(langdata)

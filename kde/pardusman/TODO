@@ -5,3 +5,5 @@
     - pisi
 - repotools package should be reviewed and refactored
 - new media type: package repository (no installer, just packages)
+- make default language selectable (between what it is, and None)
+
