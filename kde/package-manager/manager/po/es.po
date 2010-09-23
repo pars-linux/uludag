@@ -1,7 +1,7 @@
 # translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
@@ -20,7 +20,7 @@ msgstr ""
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Agregar o remover Programas"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/about.py:23 src/about.py:24
@@ -30,24 +30,23 @@ msgstr "Administrador de Paquetes"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "Interfaz gráfico del administrador de paquetes PiSi"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Remover Paquete(s)"
+msgstr "Agregar/Remover/Actualizar Paquetes"
 
 #: src/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr ""
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Desarrollador"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr ""
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Desarrollador"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -58,13 +57,13 @@ msgid "First Author"
 msgstr "Autor inicial"
 
 #: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
 msgstr ""
 
 #: src/about.py:37
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: src/basketdialog.py:114
@@ -102,7 +101,7 @@ msgstr "Mostrar Ventana principal"
 
 #: src/mainwidget.py:75
 msgid "All Packages are up to date"
-msgstr ""
+msgstr "Todos los programas están en su ultima versión"
 
 #: src/mainwidget.py:136
 msgid "All Updates"
@@ -430,24 +429,24 @@ msgid "Update"
 msgstr "Actualizar"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "Hay %1 actualizaciones disponibles!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Actualizaciones"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "Hay %1 actualizaciones disponibles!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Ignorar"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Mostrar actualizaciones"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Ignorar"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
@@ -657,7 +656,7 @@ msgstr "ilimiatado"
 
 #: ui/ui_settingsdialog.py:388
 msgid " Mib"
-msgstr ""
+msgstr "Mb"
 
 #: ui/ui_settingsdialog.py:389
 msgid "Current cache dir:"
