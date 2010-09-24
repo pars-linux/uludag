@@ -4,7 +4,7 @@
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>TDqI7bNe0HfbX</Id>
+            <Id>zTGZMrmsyHGPq5A</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
@@ -57,25 +57,24 @@
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
-                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>acpi</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
                 <SelectedPackage>alsa-lib</SelectedPackage>
                 <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
                 <SelectedPackage>aria2</SelectedPackage>
-                <SelectedPackage>arora</SelectedPackage>
                 <SelectedPackage>bash-completion</SelectedPackage>
                 <SelectedPackage>cdrtools</SelectedPackage>
                 <SelectedPackage>choqok</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
-                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>dejavu-fonts</SelectedPackage>
                 <SelectedPackage>device-mapper</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
+                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>droid-fonts</SelectedPackage>
                 <SelectedPackage>dvd+rw-tools</SelectedPackage>
                 <SelectedPackage>enchant-zemberek</SelectedPackage>
                 <SelectedPackage>ffmpeg</SelectedPackage>
+                <SelectedPackage>filelight</SelectedPackage>
                 <SelectedPackage>firefox</SelectedPackage>
                 <SelectedPackage>flashplugin</SelectedPackage>
                 <SelectedPackage>gecko-mediaplayer</SelectedPackage>
@@ -93,17 +92,7 @@
                 <SelectedPackage>k3b</SelectedPackage>
                 <SelectedPackage>k3b-l10n-other</SelectedPackage>
                 <SelectedPackage>kaptan</SelectedPackage>
-                <SelectedPackage>kde-l10n-ca</SelectedPackage>
-                <SelectedPackage>kde-l10n-de</SelectedPackage>
-                <SelectedPackage>kde-l10n-es</SelectedPackage>
-                <SelectedPackage>kde-l10n-fr</SelectedPackage>
-                <SelectedPackage>kde-l10n-it</SelectedPackage>
-                <SelectedPackage>kde-l10n-nl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
-                <SelectedPackage>kde-l10n-sv</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
+                <SelectedPackage>kaudiocreator</SelectedPackage>
                 <SelectedPackage>kdeadmin</SelectedPackage>
                 <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
                 <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -116,6 +105,17 @@
                 <SelectedPackage>kdebase-sounds</SelectedPackage>
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
+                <SelectedPackage>kde-l10n-ca</SelectedPackage>
+                <SelectedPackage>kde-l10n-de</SelectedPackage>
+                <SelectedPackage>kde-l10n-es</SelectedPackage>
+                <SelectedPackage>kde-l10n-fr</SelectedPackage>
+                <SelectedPackage>kde-l10n-it</SelectedPackage>
+                <SelectedPackage>kde-l10n-nl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
+                <SelectedPackage>kde-l10n-sv</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdepim</SelectedPackage>
@@ -137,11 +137,20 @@
                 <SelectedPackage>mc</SelectedPackage>
                 <SelectedPackage>mercurial</SelectedPackage>
                 <SelectedPackage>mesa-utils</SelectedPackage>
+                <SelectedPackage>microcode-ctl</SelectedPackage>
                 <SelectedPackage>module-alsa-driver</SelectedPackage>
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
                 <SelectedPackage>mplayer</SelectedPackage>
                 <SelectedPackage>ntfsprogs</SelectedPackage>
                 <SelectedPackage>ntp-client</SelectedPackage>
+                <SelectedPackage>openoffice</SelectedPackage>
+                <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
+                <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
+                <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
+                <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
+                <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
+                <SelectedPackage>openoffice-kde</SelectedPackage>
+                <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
                 <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>pardus-default-settings</SelectedPackage>
                 <SelectedPackage>partitionmanager</SelectedPackage>
@@ -151,9 +160,11 @@
                 <SelectedPackage>pinentry-qt</SelectedPackage>
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
                 <SelectedPackage>polkit-kde_1</SelectedPackage>
+                <SelectedPackage>powertop</SelectedPackage>
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
+                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>quassel</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
@@ -236,6 +247,7 @@
                 <SelectedPackage>xterm</SelectedPackage>
                 <SelectedPackage>yakuake</SelectedPackage>
                 <SelectedPackage>zemberek</SelectedPackage>
+                <SelectedPackage>zemberek-openoffice</SelectedPackage>
                 <SelectedPackage>zemberek-server</SelectedPackage>
                 <SelectedPackage>zorg</SelectedPackage>
                 <SelectedPackage>zsh</SelectedPackage>
@@ -252,6 +264,7 @@
                 <Package>acl-devel</Package>
                 <Package>acpi</Package>
                 <Package>acpid</Package>
+                <Package>agg</Package>
                 <Package>aic94xx-firmware</Package>
                 <Package>akonadi</Package>
                 <Package>alsa-firmware</Package>
@@ -263,7 +276,6 @@
                 <Package>apr-util</Package>
                 <Package>ar9170-firmware</Package>
                 <Package>aria2</Package>
-                <Package>arora</Package>
                 <Package>atk</Package>
                 <Package>atmel-firmware</Package>
                 <Package>attica</Package>
@@ -327,6 +339,7 @@
                 <Package>d-feet</Package>
                 <Package>db4</Package>
                 <Package>db4-devel</Package>
+                <Package>db4-java</Package>
                 <Package>dbus</Package>
                 <Package>dbus-devel</Package>
                 <Package>dbus-glib</Package>
@@ -371,6 +384,7 @@
                 <Package>ffmpeg</Package>
                 <Package>fftw3</Package>
                 <Package>file</Package>
+                <Package>filelight</Package>
                 <Package>findutils</Package>
                 <Package>firefox</Package>
                 <Package>firewall-manager</Package>
@@ -433,6 +447,7 @@
                 <Package>gst-ffmpeg</Package>
                 <Package>gst-plugins-base</Package>
                 <Package>gst-plugins-good</Package>
+                <Package>gst-plugins-ugly</Package>
                 <Package>gstreamer</Package>
                 <Package>gtk-engines</Package>
                 <Package>gtk2</Package>
@@ -441,7 +456,9 @@
                 <Package>hal</Package>
                 <Package>hal-info</Package>
                 <Package>hal-libs</Package>
+                <Package>hdf5</Package>
                 <Package>hdparm</Package>
+                <Package>hsqldb-lib</Package>
                 <Package>htop</Package>
                 <Package>hunspell</Package>
                 <Package>hunspell-dict-en</Package>
@@ -476,6 +493,7 @@
                 <Package>k3b</Package>
                 <Package>k3b-l10n-other</Package>
                 <Package>kaptan</Package>
+                <Package>kaudiocreator</Package>
                 <Package>kbd</Package>
                 <Package>kde-l10n-ca</Package>
                 <Package>kde-l10n-de</Package>
@@ -703,6 +721,9 @@
                 <Package>libvorbis</Package>
                 <Package>libvpx</Package>
                 <Package>libwmf</Package>
+                <Package>libwpd</Package>
+                <Package>libwpg</Package>
+                <Package>libwps</Package>
                 <Package>libx86</Package>
                 <Package>libxcb</Package>
                 <Package>libxcb-devel</Package>
@@ -716,6 +737,7 @@
                 <Package>lirc</Package>
                 <Package>live555</Package>
                 <Package>lm_sensors</Package>
+                <Package>lpsolve</Package>
                 <Package>lsb-release</Package>
                 <Package>lsof</Package>
                 <Package>ltrace</Package>
@@ -731,11 +753,14 @@
                 <Package>man-pages</Package>
                 <Package>mc</Package>
                 <Package>mcpp</Package>
+                <Package>mdbtools</Package>
                 <Package>meanwhile</Package>
                 <Package>mediastreamer2</Package>
                 <Package>mercurial</Package>
                 <Package>mesa</Package>
                 <Package>mesa-utils</Package>
+                <Package>microcode-ctl</Package>
+                <Package>microcode-data</Package>
                 <Package>mina-core</Package>
                 <Package>mingetty</Package>
                 <Package>minizip</Package>
@@ -782,6 +807,14 @@
                 <Package>openexr-libs</Package>
                 <Package>openjpeg</Package>
                 <Package>openldap-client</Package>
+                <Package>openoffice</Package>
+                <Package>openoffice-extension-pdfimport</Package>
+                <Package>openoffice-extension-presentation-minimizer</Package>
+                <Package>openoffice-extension-presenter-screen</Package>
+                <Package>openoffice-extension-report-builder</Package>
+                <Package>openoffice-extension-wiki-publisher</Package>
+                <Package>openoffice-kde</Package>
+                <Package>openoffice-langpack-tr</Package>
                 <Package>openslp</Package>
                 <Package>openssh</Package>
                 <Package>openssl</Package>
@@ -844,6 +877,7 @@
                 <Package>popt</Package>
                 <Package>popt-devel</Package>
                 <Package>postgresql-lib</Package>
+                <Package>powertop</Package>
                 <Package>ppl</Package>
                 <Package>ppl-devel</Package>
                 <Package>ppp</Package>
@@ -964,6 +998,7 @@
                 <Package>tiff</Package>
                 <Package>time</Package>
                 <Package>timezone</Package>
+                <Package>tomcat-servlet-api</Package>
                 <Package>transcode</Package>
                 <Package>tree</Package>
                 <Package>tunepimp</Package>
@@ -985,6 +1020,7 @@
                 <Package>vbetool</Package>
                 <Package>vcdimager</Package>
                 <Package>vdpau-video</Package>
+                <Package>vigra</Package>
                 <Package>vim</Package>
                 <Package>vim-colorschemes</Package>
                 <Package>virtuoso</Package>
@@ -1075,6 +1111,7 @@
                 <Package>zd1201-firmware</Package>
                 <Package>zd1211-firmware</Package>
                 <Package>zemberek</Package>
+                <Package>zemberek-openoffice</Package>
                 <Package>zemberek-server</Package>
                 <Package>zip</Package>
                 <Package>zlib</Package>
@@ -1091,6 +1128,7 @@
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
+        <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
         <SelectedPackage>xorg-input-elographics</SelectedPackage>
@@ -1326,6 +1364,8 @@
         <Package>mcpp</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
+        <Package>microcode-ctl</Package>
+        <Package>microcode-data</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
