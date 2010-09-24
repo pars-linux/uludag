@@ -16,6 +16,7 @@
         <SelectedPackage>dejavu-fonts</SelectedPackage>
         <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>ffmpeg</SelectedPackage>
+        <SelectedPackage>filelight</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
@@ -63,11 +64,20 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>mesa-utils</SelectedPackage>
+        <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
+        <SelectedPackage>openoffice</SelectedPackage>
+        <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
+        <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
+        <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
+        <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
+        <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
+        <SelectedPackage>openoffice-kde</SelectedPackage>
+        <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
@@ -75,6 +85,7 @@
         <SelectedPackage>pinentry-qt</SelectedPackage>
         <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
         <SelectedPackage>polkit-kde_1</SelectedPackage>
+        <SelectedPackage>powertop</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
         <SelectedPackage>python-qt</SelectedPackage>
         <SelectedPackage>python-qt-webkit</SelectedPackage>
@@ -156,6 +167,7 @@
         <SelectedPackage>xterm</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zemberek</SelectedPackage>
+        <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>ConsoleKit</Package>
@@ -168,6 +180,7 @@
         <Package>accessrunner-firmware</Package>
         <Package>acl</Package>
         <Package>acpid</Package>
+        <Package>agg</Package>
         <Package>aic94xx-firmware</Package>
         <Package>akonadi</Package>
         <Package>alsa-firmware</Package>
@@ -191,6 +204,7 @@
         <Package>bash</Package>
         <Package>bash-completion</Package>
         <Package>bc</Package>
+        <Package>blas</Package>
         <Package>bluez</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
@@ -220,6 +234,7 @@
         <Package>cursor-theme-oxygen-white</Package>
         <Package>cyrus-sasl</Package>
         <Package>db4</Package>
+        <Package>db4-java</Package>
         <Package>dbus</Package>
         <Package>dbus-glib</Package>
         <Package>dbus-java</Package>
@@ -251,6 +266,7 @@
         <Package>ffmpeg</Package>
         <Package>fftw3</Package>
         <Package>file</Package>
+        <Package>filelight</Package>
         <Package>findutils</Package>
         <Package>firefox</Package>
         <Package>flac</Package>
@@ -294,6 +310,7 @@
         <Package>gst-ffmpeg</Package>
         <Package>gst-plugins-base</Package>
         <Package>gst-plugins-good</Package>
+        <Package>gst-plugins-ugly</Package>
         <Package>gstreamer</Package>
         <Package>gtk-engines</Package>
         <Package>gtk2</Package>
@@ -302,7 +319,9 @@
         <Package>hal</Package>
         <Package>hal-info</Package>
         <Package>hal-libs</Package>
+        <Package>hdf5</Package>
         <Package>hdparm</Package>
+        <Package>hsqldb-lib</Package>
         <Package>hunspell</Package>
         <Package>hunspell-dict-en</Package>
         <Package>icon-theme-hicolor</Package>
@@ -373,6 +392,7 @@
         <Package>knetworkmanager-common</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
+        <Package>lapack</Package>
         <Package>lcms</Package>
         <Package>less</Package>
         <Package>libFS</Package>
@@ -442,6 +462,7 @@
         <Package>libgadu</Package>
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
+        <Package>libgfortran</Package>
         <Package>libgnome-keyring</Package>
         <Package>libgomp</Package>
         <Package>libgpg-error</Package>
@@ -516,6 +537,9 @@
         <Package>libvorbis</Package>
         <Package>libvpx</Package>
         <Package>libwmf</Package>
+        <Package>libwpd</Package>
+        <Package>libwpg</Package>
+        <Package>libwps</Package>
         <Package>libx86</Package>
         <Package>libxcb</Package>
         <Package>libxkbfile</Package>
@@ -527,6 +551,7 @@
         <Package>lirc</Package>
         <Package>live555</Package>
         <Package>lm_sensors</Package>
+        <Package>lpsolve</Package>
         <Package>lsb-release</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
@@ -535,11 +560,14 @@
         <Package>man-pages</Package>
         <Package>mc</Package>
         <Package>mcpp</Package>
+        <Package>mdbtools</Package>
         <Package>meanwhile</Package>
         <Package>mediastreamer2</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>mesa-utils</Package>
+        <Package>microcode-ctl</Package>
+        <Package>microcode-data</Package>
         <Package>mina-core</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
@@ -583,6 +611,14 @@
         <Package>openexr-libs</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
+        <Package>openoffice</Package>
+        <Package>openoffice-extension-pdfimport</Package>
+        <Package>openoffice-extension-presentation-minimizer</Package>
+        <Package>openoffice-extension-presenter-screen</Package>
+        <Package>openoffice-extension-report-builder</Package>
+        <Package>openoffice-extension-wiki-publisher</Package>
+        <Package>openoffice-kde</Package>
+        <Package>openoffice-langpack-tr</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
@@ -619,6 +655,7 @@
         <Package>poppler-qt</Package>
         <Package>poppler-utils</Package>
         <Package>popt</Package>
+        <Package>powertop</Package>
         <Package>ppp</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
@@ -633,6 +670,8 @@
         <Package>python-imaging</Package>
         <Package>python-kde</Package>
         <Package>python-mutagen</Package>
+        <Package>python-nose</Package>
+        <Package>python-numpy</Package>
         <Package>python-pyliblzma</Package>
         <Package>python-qt</Package>
         <Package>python-qt-webkit</Package>
@@ -711,6 +750,7 @@
         <Package>tiff</Package>
         <Package>time</Package>
         <Package>timezone</Package>
+        <Package>tomcat-servlet-api</Package>
         <Package>transcode</Package>
         <Package>tree</Package>
         <Package>tunepimp</Package>
@@ -728,6 +768,7 @@
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vdpau-video</Package>
+        <Package>vigra</Package>
         <Package>vim</Package>
         <Package>virtuoso</Package>
         <Package>vixie-cron</Package>
@@ -810,6 +851,7 @@
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek</Package>
+        <Package>zemberek-openoffice</Package>
         <Package>zemberek-server</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
