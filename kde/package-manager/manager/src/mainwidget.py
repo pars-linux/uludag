@@ -16,6 +16,7 @@ from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
 from PyQt4.QtGui import QPixmap
+from PyQt4.QtGui import QCompleter
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QToolButton
@@ -43,6 +44,7 @@ from pmutils import waitCursor
 from pmutils import restoreCursor
 
 from packageproxy import PackageProxy
+from pdswidgets import PMessageBox
 from packagemodel import PackageModel
 from packagemodel import GroupRole
 from statemanager import StateManager
@@ -72,7 +74,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         if not silence:
             # in silence mode we dont need these
             self.statusUpdater = StatusUpdater()
-            self.__searchMutex = QMutex()
             self.basket = BasketDialog(self.state)
             self.initializeSearchButton()
             self.initializeUpdateTypeList()
@@ -86,6 +87,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.connectOperationSignals()
 
+        self.pdsMessageBox = PMessageBox(self.parent)
         self.__ui_ready = True
 
     def initializeSearchButton(self):
@@ -156,6 +158,9 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.packageList.setItemDelegate(PackageDelegate(self))
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setPackages(self.state.packages())
+        self.completer = QCompleter(self.state.packages(), self)
+        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.searchLine.setCompleter(self.completer)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
     def updateSettings(self):
@@ -164,7 +169,8 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def searchLineChanged(self, text):
         self.searchButton.setEnabled(bool(text))
-        QTimer.singleShot(500, lambda:self.searchActivated(justFilter = True))
+        if text == '':
+            self.searchActivated()
 
     def statusUpdated(self):
         if self.statusUpdater.needsUpdate:
@@ -213,21 +219,21 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.packageList.select_all.setChecked(self.groupList.currentGroup() in self._selectedGroups)
         restoreCursor()
 
-    def searchActivated(self, justFilter = False):
-        if self.__searchMutex.tryLock():
-            self.packageList.resetMoreInfoRow()
-            searchText  = str(self.searchLine.text()).split()
-            if searchText:
-                sourceModel = self.packageList.model().sourceModel()
-                self.state.cached_packages = sourceModel.search(searchText, justFilter)
-                self.groupList.lastSelected = None
-                self.searchUsed = True
-            else:
-                self.state.cached_packages = None
-                self.state.packages()
-                self.searchUsed = False
-            self.initializeGroupList()
-            self.__searchMutex.unlock()
+    def searchActivated(self):
+        self.pdsMessageBox.showMessage("Searching...")
+        qApp.processEvents()
+        searchText = str(self.searchLine.text()).split()
+        if searchText:
+            sourceModel = self.packageList.model().sourceModel()
+            self.state.cached_packages = sourceModel.search(searchText)
+            self.groupList.lastSelected = None
+            self.searchUsed = True
+        else:
+            self.state.cached_packages = None
+            self.state.packages()
+            self.searchUsed = False
+        self.initializeGroupList()
+        self.pdsMessageBox.hideMessage()
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
