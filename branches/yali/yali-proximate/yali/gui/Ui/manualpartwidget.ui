@@ -40,11 +40,6 @@
        </column>
        <column>
         <property name="text">
-         <string>Formattable</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
          <string>Format</string>
         </property>
        </column>

@@ -154,15 +154,10 @@ about disk partitioning.
 
     def addDevice(self, device, item):
         format = device.format
-        if format.formattable:
-            formattable = QtGui.QIcon(":/images/checkbox_checked.png")
-        else:
-            formattable = QtGui.QIcon(":/images/checkbox_unchecked.png")
-
         if not format.exists:
-            formatIcon = QtGui.QIcon(":/images/checkbox_checked.png")
+            formatIcon = QtGui.QIcon(":/images/tick.png")
         else:
-            formatIcon = QtGui.QIcon(":/images/checkbox_unchecked.png")
+            formatIcon = QtGui.QIcon(":/images/dialog-error.png")
 
         mountpoint = getattr(format, "mountpoint", "")
         if mountpoint is None:
@@ -183,7 +178,6 @@ about disk partitioning.
         item.setType(format.name)
         item.setSize("%Ld" % device.size)
         item.setFormat(formatIcon)
-        item.setFormattable(formattable)
 
     def populate(self):
         self.ui.deviceTree.clear()
@@ -379,11 +373,8 @@ class DeviceTreeItem(QtGui.QTreeWidgetItem):
     def setType(self, type):
         self.setText(3, type)
 
-    def setFormattable(self, formattable):
-        self.setIcon(4, formattable)
-
     def setFormat(self, format):
-        self.setIcon(5, format)
+        self.setIcon(4, format)
 
     def setSize(self, size):
-        self.setText(6, size)
+        self.setText(5, size)

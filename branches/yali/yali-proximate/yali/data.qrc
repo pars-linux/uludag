@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/disk-prototype.png</file>
+    <file>gui/pics/drive-harddisk-big.png</file>
+    <file>gui/pics/expand.png</file>
+    <file>gui/pics/collapse.png</file>
     <file>gui/pics/applications-other.png</file>
     <file>gui/pics/input-keyboard.png</file>
     <file>gui/pics/input-keyboard-big.png</file>
