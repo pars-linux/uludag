@@ -76,6 +76,9 @@ class StateManager(QObject):
     def onlyGuiInState(self):
         return config.PMConfig().showOnlyGuiApp()
 
+    def setCachedPackages(self, packages):
+        self.cached_packages = packages
+
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),
                 "System.Manager.removePackage":i18n("Removing Package(s)"),
