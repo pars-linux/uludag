@@ -21,7 +21,7 @@ from PyQt4.QtCore import *
 
 import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget, GUIError
-from yali.gui.Ui.autopartwidget import Ui_AutoPartWidget
+from yali.gui.Ui.driveselectionwidget import Ui_DriveSelectionWidget
 from yali.gui.Ui.partitionshrinkwidget import Ui_PartShrinkWidget
 from yali.storage.partitioning import CLEARPART_TYPE_ALL, CLEARPART_TYPE_LINUX, CLEARPART_TYPE_NONE, doAutoPartition, defaultPartitioning
 from yali.storage.operations import OperationResizeDevice, OperationResizeFormat
@@ -180,9 +180,8 @@ class PartitionItem(QtGui.QListWidgetItem):
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = _("Select Partitioning Method")
+    title = _("Select a Drive to Install Pardus")
     icon = "iconPartition"
-    helpSummary = _("Partitioning summary")
     help = _('''
 <p>
 You can install Pardus if you have an unpartitioned-unused disk space 
@@ -197,20 +196,12 @@ Pardus create a new partition for installation.</p>
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
-        self.ui = Ui_AutoPartWidget()
+        self.ui = Ui_DriveSelectionWidget()
         self.ui.setupUi(self)
         self.storage = ctx.storage
         self.intf = ctx.yali
         self.shrinkOperations = None
         self.clearPartDisks = None
-        self.connect(self.ui.autopartType, SIGNAL("currentRowChanged(int)"), self.typeChanged)
-        """
-        self.connect(self.ui.useAllSpace, SIGNAL("clicked()"), self.typeChanged)
-        self.connect(self.ui.replaceExistingLinux, SIGNAL("clicked()"), self.typeChanged)
-        self.connect(self.ui.shrinkCurrent, SIGNAL("clicked()"), self.typeChanged)
-        self.connect(self.ui.useFreeSpace, SIGNAL("clicked()"), self.typeChanged)
-        self.connect(self.ui.createCustom, SIGNAL("clicked()"), self.typeChanged)
-        """
 
         self.useAllSpace, self.replaceExistingLinux, self.shrinkCurrent, self.useFreeSpace, self.createCustom = range(5)
         #self.connect(self.ui.drives,   SIGNAL("currentItemChanged(QListWidgetItem *, QListWidgetItem * )"),self.slotDeviceChanged)
@@ -218,36 +209,45 @@ Pardus create a new partition for installation.</p>
         #self.ui.drivesLabel.hide()
 
     def typeChanged(self, index):
-        if index == self.shrinkCurrent:
-            shrinkwidget = ShrinkWidget(self)
-            if shrinkwidget.check():
-                self.intf.messageWindow(_("Error"),
-                                        _("No partitions are available to resize.Only physical\n"
-                                          "partitions with specific filesystems can be resized."),
-                                        type="warning", customIcon="error")
-            else:
-                shrinkwidget.show()
-                if shrinkwidget.operations:
-                    self.shrinkOperations = shrinkwidget.operations
+        if index != self.createCustom:
+            self.ui.review.setEnabled(True)
+            if index == self.shrinkCurrent:
+                shrinkwidget = ShrinkWidget(self)
+                if shrinkwidget.check():
+                    self.intf.messageWindow(_("Error"),
+                                            _("No partitions are available to resize.Only physical\n"
+                                              "partitions with specific filesystems can be resized."),
+                                            type="warning", customIcon="error")
                 else:
-                    return False
+                    shrinkwidget.show()
+                    if shrinkwidget.operations:
+                        self.shrinkOperations = shrinkwidget.operations
+                    else:
+                        return False
+        else:
+            self.ui.review.setEnabled(False)
 
         ctx.mainScreen.enableNext()
 
-    def setPartitioningType(self):
-        if self.storage.clearPartType is None or self.storage.clearPartType == CLEARPART_TYPE_LINUX:
-            self.ui.autopartType.setCurrentRow(self.replaceExistingLinux)
-        elif self.storage.clearPartType == CLEARPART_TYPE_NONE:
-            self.ui.autopartType.setCurrentRow(self.useFreeSpace)
-        elif self.storage.clearPartType == CLEARPART_TYPE_ALL:
-            self.ui.autopartType.setCurrentRow(self.useAllSpace)
+    def fillDrives(self):
+        disks = filter(lambda d: not d.format.hidden, self.storage.disks)
+        self.ui.drives.clear()
+
+        for disk in disks:
+            if disk.size >= ctx.consts.min_root_size:
+                drive = DriveItem(self.ui.drives, disk)
+                listItem = DrivesListItem(self.ui.drives, drive)
+                self.ui.drives.setItemWidget(listItem, drive)
+
+        # select the first disk by default
+        self.ui.drives.setCurrentRow(0)
 
     def shown(self):
         self.storage.reset()
         if self.storage.checkNoDisks(self.intf):
             raise GUIError, _("No storage device found.")
         else:
-            self.setPartitioningType()
+            self.fillDrives()
 
     def checkClearPartDisks(self):
         selectedDisks = []
@@ -273,34 +273,3 @@ Pardus create a new partition for installation.</p>
             return True
         else:
             return rc
-
-    def nextCheck(self):
-        if self.checkClearPartDisks():
-            increment = 0
-            if self.ui.autopartType.currentRow() == self.createCustom:
-                increment = 1
-                self.storage.clearPartType = CLEARPART_TYPE_NONE
-            else:
-                if self.ui.autopartType.currentRow() == self.shrinkCurrent:
-                    if self.shrinkOperations:
-                        for operation in self.shrinkOperations:
-                            self.storage.addOperation(operation)
-                        self.storage.clearPartType = CLEARPART_TYPE_NONE
-                elif self.ui.autopartType.currentRow() == self.useAllSpace:
-                    self.storage.clearPartType = CLEARPART_TYPE_ALL
-                elif self.ui.autopartType.currentRow() == self.replaceExistingLinux:
-                    self.storage.clearPartType = CLEARPART_TYPE_LINUX
-                elif self.ui.autopartType.currentRow() == self.useFreeSpace:
-                    self.storage.clearPartType = CLEARPART_TYPE_NONE
-
-                self.storage.doAutoPart = True
-                self.storage.autoPartitionRequests = defaultPartitioning(self.storage, quiet=0)
-                if not self.storage.clearPartDisks:
-                    return False
-
-                return doAutoPartition(self.storage)
-
-            ctx.mainScreen.stepIncrement = increment
-            return True
-
-        return False

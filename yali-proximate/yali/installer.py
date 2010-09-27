@@ -39,6 +39,7 @@ import yali.gui.ScrKeyboard
 import yali.gui.ScrDateTime
 import yali.gui.ScrAdmin
 import yali.gui.ScrUsers
+import yali.gui.ScrDriveSelection
 import yali.gui.ScrPartitionAuto
 import yali.gui.ScrPartitionManual
 import yali.gui.ScrBootloader
@@ -66,6 +67,7 @@ class Yali:
                                        yali.gui.ScrDateTime,            # 04
                                        yali.gui.ScrUsers,               # 05
                                        yali.gui.ScrAdmin,               # 06
+                                       yali.gui.ScrDriveSelection,
                                        yali.gui.ScrPartitionAuto,       # 07
                                        yali.gui.ScrPartitionManual,     # 08
                                        yali.gui.ScrBootloader,          # 09
@@ -82,6 +84,7 @@ class Yali:
                                        yali.gui.ScrDateTime,            # 04
                                        yali.gui.ScrUsers,               # 05
                                        yali.gui.ScrAdmin,               # 06
+                                       yali.gui.ScrDriveSelection,
                                        yali.gui.ScrPartitionAuto,       # 07
                                        yali.gui.ScrPartitionManual,     # 08
                                        yali.gui.ScrBootloader,          # 09
