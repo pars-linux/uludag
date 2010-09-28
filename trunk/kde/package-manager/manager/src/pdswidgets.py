@@ -40,8 +40,8 @@ class PMessageBox(PAbstractBox):
         PAbstractBox.__init__(self, parent)
         self.ui = Ui_MessageBox()
         self.ui.setupUi(self)
-        self.animation = 1
-        self.duration = 100
+        self.animation = 2
+        self.duration = 500
         self.last_msg = None
         self.setStyleSheet(PMessageBox.STYLE)
         self.registerFunction(FINISHED, QtGui.qApp.processEvents)
