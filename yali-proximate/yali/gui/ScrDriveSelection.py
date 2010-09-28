@@ -147,7 +147,7 @@ class DriveItem(QtGui.QWidget):
         self.checkBox = QtGui.QCheckBox(self)
         self.layout.addWidget(self.checkBox)
         self.labelDrive = QtGui.QLabel(self)
-        self.labelDrive.setText("%s on %s - (%s) MB" % (drive.model, drive.name, str(int(drive.size))))
+        self.labelDrive.setText("<b>%s on %s</b> %s GB" % (drive.model, drive.name, str(int(drive.size) / 1024)))
         self.layout.addWidget(self.labelDrive)
         spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
         self.layout.addItem(spacerItem)
