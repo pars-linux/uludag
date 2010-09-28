@@ -26,6 +26,7 @@ from PyKDE4.kdecore import *
 from ui_mainwindow import Ui_MainWindow
 
 from mainwidget import MainWidget
+from pdswidgets import PMessageBox
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
@@ -52,6 +53,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.initializeStatusBar()
         self.initializeTray()
         self.connectMainSignals()
+
+        self.pdsMessageBox = PMessageBox(self)
 
     def connectMainSignals(self):
         self.cw.connectMainSignals()

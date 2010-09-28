@@ -43,8 +43,8 @@ from config import PMConfig
 from pmutils import waitCursor
 from pmutils import restoreCursor
 
-from packageproxy import PackageProxy
 from pdswidgets import PMessageBox
+from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagemodel import GroupRole
 from statemanager import StateManager
@@ -86,8 +86,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.summaryDialog = SummaryDialog()
 
         self.connectOperationSignals()
-
-        self.pdsMessageBox = PMessageBox(self.parent)
+        self.pdsMessageBox = PMessageBox(self.content)
         self.__ui_ready = True
 
     def initializeSearchButton(self):
@@ -220,10 +219,9 @@ class MainWidget(QWidget, Ui_MainWidget):
         restoreCursor()
 
     def searchActivated(self):
-        self.pdsMessageBox.showMessage("Searching...")
-        qApp.processEvents()
         searchText = str(self.searchLine.text()).split()
         if searchText:
+            self.pdsMessageBox.showMessage(i18n("Searching..."), QPixmap(":/data/search.png"))
             sourceModel = self.packageList.model().sourceModel()
             self.state.cached_packages = sourceModel.search(searchText)
             self.groupList.lastSelected = None
@@ -233,7 +231,10 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.state.packages()
             self.searchUsed = False
         self.initializeGroupList()
-        self.pdsMessageBox.hideMessage()
+        if self.state.cached_packages == []:
+            self.pdsMessageBox.showMessage(i18n("No result found."), KIcon("dialog-information").pixmap(32,32))
+        else:
+            self.pdsMessageBox.hideMessage()
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
