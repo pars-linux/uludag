@@ -13,6 +13,7 @@
 
 from PyQt4 import QtCore, QtGui
 from pds.gui import *
+from ui_message import Ui_MessageBox
 
 class PWidgetbox(PAbstractBox):
     def __init__(self, parent, widget):
@@ -30,41 +31,37 @@ class PWidgetbox(PAbstractBox):
 class PMessageBox(PAbstractBox):
 
     # STYLE SHEET
-    STYLE = """background-color:rgba(0,0,0,120);
-               color:white;
-               border: 1px solid #999;
-               border-radius: 4px;"""
-
-    OUT_POS  = MIDRIGHT
+    STYLE = """color:white;font-size:16pt;"""
+    OUT_POS  = MIDCENTER
     IN_POS   = MIDCENTER
     STOP_POS = MIDCENTER
 
-    def __init__(self, parent=None):
+    def __init__(self, parent):
         PAbstractBox.__init__(self, parent)
-        self.label = QtGui.QLabel(self)
-        self.setStyleSheet(PMessageBox.STYLE)
-        self.padding_w = 22
-        self.padding_h = 16
+        self.ui = Ui_MessageBox()
+        self.ui.setupUi(self)
         self.animation = 1
-        self.duration = 400
+        self.duration = 100
         self.last_msg = None
+        self.setStyleSheet(PMessageBox.STYLE)
+        self.registerFunction(FINISHED, QtGui.qApp.processEvents)
         self.enableOverlay()
         self.hide()
 
-    def showMessage(self, message):
-        self.setMessage(message)
+    def showMessage(self, message, icon = None):
+        self.ui.label.setText(message)
+        if icon:
+            self.ui.icon.setPixmap(QtGui.QPixmap(icon))
+            self.ui.icon.show()
+        else:
+            self.ui.icon.hide()
         self.last_msg = self.animate(start = PMessageBox.IN_POS, stop = PMessageBox.STOP_POS)
+        QtGui.qApp.processEvents()
 
     def hideMessage(self):
-        self.animate(start = PMessageBox.STOP_POS,
-                     stop  = PMessageBox.OUT_POS,
-                     start_after = self.last_msg,
-                     direction = OUT)
-
-    def setMessage(self, message):
-        self.label.setText(message)
-        self.label.setAlignment(QtCore.Qt.AlignVCenter)
-        metric = self.label.fontMetrics()
-        self.label.resize(metric.width(message) + self.padding_w, metric.height() + self.padding_h)
-        self.resize(metric.width(message) + self.padding_w, metric.height() + self.padding_h)
+        if self.isVisible():
+            self.animate(start = PMessageBox.STOP_POS,
+                         stop  = PMessageBox.OUT_POS,
+                         start_after = self.last_msg,
+                         direction = OUT)
 
