@@ -23,7 +23,7 @@ import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget, GUIError
 from yali.gui.Ui.driveselectionwidget import Ui_DriveSelectionWidget
 from yali.gui.Ui.partitionshrinkwidget import Ui_PartShrinkWidget
-from yali.gui.Ui.diskItem import Ui_DiskItem
+#from yali.gui.Ui.diskItem import Ui_DiskItem
 from yali.storage.partitioning import CLEARPART_TYPE_ALL, CLEARPART_TYPE_LINUX, CLEARPART_TYPE_NONE, doAutoPartition, defaultPartitioning
 from yali.storage.operations import OperationResizeDevice, OperationResizeFormat
 
