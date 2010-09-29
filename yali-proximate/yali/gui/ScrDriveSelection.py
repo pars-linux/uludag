@@ -238,7 +238,7 @@ Pardus create a new partition for installation.</p>
                     #icon = QtGui.QIcon(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
                     #drive = QtGui.QListWidgetItem(icon, name)
                     #drive.setToolTip("%s %s" % (disk.name,  disk.size))
-                    self.ui.drives.addItem(drive)
+                    #self.ui.drives.addItem(drive)
 
                     #drive = DriveItem(self.ui.drives, disk, name)
                     #self.ui.drives.addItem(listItem)
