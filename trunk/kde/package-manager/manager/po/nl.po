@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 09:42+0300\n"
-"PO-Revision-Date: 2010-06-25 09:26+0200\n"
+"PO-Revision-Date: 2010-09-29 12:19+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -169,15 +169,15 @@ msgstr "Afsluiten"
 
 #: src/mainwindow.py:113 src/mainwindow_kde4.py:118
 msgid "Show Installable Packages"
-msgstr "Toon installeerbare pakketten"
+msgstr "Installeerbare pakketten tonen"
 
 #: src/mainwindow.py:123 src/mainwindow_kde4.py:124
 msgid "Show Installed Packages"
-msgstr "Toon geïnstalleerde pakketten"
+msgstr "Geïnstalleerde pakketten tonen"
 
 #: src/mainwindow.py:132 src/mainwindow_kde4.py:129
 msgid "Show Upgradable Packages"
-msgstr "Toon opwaardeerbare pakketten"
+msgstr "Opwaardeerbare pakketten tonen"
 
 #: src/mainwindow.py:142 ui/ui_settingsdialog.py:370
 msgid "Package Manager Settings"
@@ -622,7 +622,7 @@ msgstr "Pakketlijst"
 
 #: ui/ui_settingsdialog.py:372
 msgid "&Show only desktop applications"
-msgstr "&Toon alleen desktop toepassingen"
+msgstr "Alleen desktop toepassingen &tonen"
 
 #: ui/ui_settingsdialog.py:373
 msgid "Show Component information "
