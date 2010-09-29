@@ -2,6 +2,7 @@
   <qresource prefix="/">
     <file>gui/pics/disk-prototype.png</file>
     <file>gui/pics/drive-harddisk-big.png</file>
+    <file>gui/pics/drive-harddisk.png</file>
     <file>gui/pics/expand.png</file>
     <file>gui/pics/collapse.png</file>
     <file>gui/pics/applications-other.png</file>

@@ -23,6 +23,7 @@ import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget, GUIError
 from yali.gui.Ui.driveselectionwidget import Ui_DriveSelectionWidget
 from yali.gui.Ui.partitionshrinkwidget import Ui_PartShrinkWidget
+from yali.gui.Ui.diskItem import Ui_DiskItem
 from yali.storage.partitioning import CLEARPART_TYPE_ALL, CLEARPART_TYPE_LINUX, CLEARPART_TYPE_NONE, doAutoPartition, defaultPartitioning
 from yali.storage.operations import OperationResizeDevice, OperationResizeFormat
 
@@ -133,24 +134,21 @@ class ShrinkWidget(QtGui.QWidget):
            runResize = False
 
         self.hide()
-
+"""
 class DrivesListItem(QtGui.QListWidgetItem):
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
-        self.setSizeHint(QSize(300, 64))
+        #self.setSizeHint(QSize(100, 150))
 
-class DriveItem(QtGui.QWidget):
-    def __init__(self, parent, drive):
+class DriveItem(QtGui.QWidget, Ui_DiskItem):
+    def __init__(self, parent, drive, name):
         QtGui.QWidget.__init__(self, parent)
-        self.layout = QtGui.QHBoxLayout(self)
-        self.checkBox = QtGui.QCheckBox(self)
-        self.layout.addWidget(self.checkBox)
-        self.labelDrive = QtGui.QLabel(self)
-        self.labelDrive.setText("<b>%s on %s</b> %s GB" % (drive.model, drive.name, str(int(drive.size) / 1024)))
-        self.layout.addWidget(self.labelDrive)
-        spacerItem = QtGui.QSpacerItem(40, 20, QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Minimum)
-        self.layout.addItem(spacerItem)
+
+        self.setupUi(self)
+        self.labelDrive.setText("%s \n%s GB" % (name, str(int(drive.size) / 1024)))
+        self.labelDrive.setToolTip("%s on %s" % (drive.model, drive.name))
+        self.checkBox.hide()
         self.connect(self.checkBox, SIGNAL("stateChanged(int)"), self.stateChanged)
         self.drive = drive
         self.parent = parent
@@ -169,7 +167,7 @@ class DriveItem(QtGui.QWidget):
             else:
                 ctx.mainScreen.disableNext()
 
-
+"""
 
 class PartitionItem(QtGui.QListWidgetItem):
 
@@ -235,9 +233,17 @@ Pardus create a new partition for installation.</p>
 
         for disk in disks:
             if disk.size >= ctx.consts.min_root_size:
-                drive = DriveItem(self.ui.drives, disk)
-                listItem = DrivesListItem(self.ui.drives, drive)
-                self.ui.drives.setItemWidget(listItem, drive)
+                for i in range(3):
+                    name = "Disk %s" % i
+                    #icon = QtGui.QIcon(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
+                    #drive = QtGui.QListWidgetItem(icon, name)
+                    #drive.setToolTip("%s %s" % (disk.name,  disk.size))
+                    self.ui.drives.addItem(drive)
+
+                    #drive = DriveItem(self.ui.drives, disk, name)
+                    #self.ui.drives.addItem(listItem)
+                    #listItem = DrivesListItem(self.ui.drives, drive)
+                    #self.ui.drives.setItemWidget(listItem, drive)
 
         # select the first disk by default
         self.ui.drives.setCurrentRow(0)
