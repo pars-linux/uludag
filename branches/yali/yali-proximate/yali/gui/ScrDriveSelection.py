@@ -23,7 +23,7 @@ import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget, GUIError
 from yali.gui.Ui.driveselectionwidget import Ui_DriveSelectionWidget
 from yali.gui.Ui.partitionshrinkwidget import Ui_PartShrinkWidget
-#from yali.gui.Ui.diskItem import Ui_DiskItem
+from yali.gui.Ui.diskItem import Ui_DiskItem
 from yali.storage.partitioning import CLEARPART_TYPE_ALL, CLEARPART_TYPE_LINUX, CLEARPART_TYPE_NONE, doAutoPartition, defaultPartitioning
 from yali.storage.operations import OperationResizeDevice, OperationResizeFormat
 
@@ -134,40 +134,23 @@ class ShrinkWidget(QtGui.QWidget):
            runResize = False
 
         self.hide()
-"""
+
 class DrivesListItem(QtGui.QListWidgetItem):
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
-        #self.setSizeHint(QSize(100, 150))
+        self.setSizeHint(QSize(widget.width(), widget.height()))
 
 class DriveItem(QtGui.QWidget, Ui_DiskItem):
     def __init__(self, parent, drive, name):
         QtGui.QWidget.__init__(self, parent)
 
         self.setupUi(self)
-        self.labelDrive.setText("%s \n%s GB" % (name, str(int(drive.size) / 1024)))
-        self.labelDrive.setToolTip("%s on %s" % (drive.model, drive.name))
-        self.checkBox.hide()
-        self.connect(self.checkBox, SIGNAL("stateChanged(int)"), self.stateChanged)
-        self.drive = drive
-        self.parent = parent
-
-    def stateChanged(self, state):
-        if state == Qt.Checked:
-            ctx.mainScreen.enableNext()
-        else:
-            selectedDisks = []
-            for index in range(self.parent.count()):
-                if self.checkBox.checkState() == Qt.Checked:
-                    selectedDisks.append(self.ui.drives.item(index).drive.name)
-
-            if len(selectedDisks):
-                ctx.mainScreen.enableNext()
-            else:
-                ctx.mainScreen.disableNext()
-
-"""
+        self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
+        self.labelDrive.setText("%s" % (name))
+        self.labelInfo.setText("%s\n%s GB" % (drive.model, str(int(drive.size) / 1024)))
+        #self.drive = drive
+        #self.parent = parent
 
 class PartitionItem(QtGui.QListWidgetItem):
 
@@ -202,9 +185,28 @@ Pardus create a new partition for installation.</p>
         self.clearPartDisks = None
 
         self.useAllSpace, self.replaceExistingLinux, self.shrinkCurrent, self.useFreeSpace, self.createCustom = range(5)
+        self.connect(self.ui.drives, SIGNAL("itemClicked(QListWidgetItem *)"), self.stateChanged)
         #self.connect(self.ui.drives,   SIGNAL("currentItemChanged(QListWidgetItem *, QListWidgetItem * )"),self.slotDeviceChanged)
         #self.ui.drives.hide()
         #self.ui.drivesLabel.hide()
+
+    def stateChanged(self, state):
+        print "Mete yapar: On clicked#"
+        """
+        if state == Qt.Checked:
+            ctx.mainScreen.enableNext()
+        else:
+            selectedDisks = []
+            for index in range(self.parent.count()):
+                if self.checkBox.checkState() == Qt.Checked:
+                    selectedDisks.append(self.ui.drives.item(index).drive.name)
+
+            if len(selectedDisks):
+                ctx.mainScreen.enableNext()
+            else:
+                ctx.mainScreen.disableNext()
+        """
+
 
     def typeChanged(self, index):
         if index != self.createCustom:
@@ -233,17 +235,20 @@ Pardus create a new partition for installation.</p>
 
         for disk in disks:
             if disk.size >= ctx.consts.min_root_size:
-                for i in range(3):
-                    name = "Disk %s" % i
-                    #icon = QtGui.QIcon(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
-                    #drive = QtGui.QListWidgetItem(icon, name)
-                    #drive.setToolTip("%s %s" % (disk.name,  disk.size))
-                    #self.ui.drives.addItem(drive)
+                #Renan'a sor
+                #for i in range(2):
+                    if len(disks) == 2:
+                        self.ui.drives.setMinimumWidth(300)
+                        self.ui.drives.setMaximumWidth(300)
+                    else:
+                        self.ui.drives.setMinimumWidth(450)
+                        self.ui.drives.setMaximumWidth(450)
 
-                    #drive = DriveItem(self.ui.drives, disk, name)
-                    #self.ui.drives.addItem(listItem)
-                    #listItem = DrivesListItem(self.ui.drives, drive)
-                    #self.ui.drives.setItemWidget(listItem, drive)
+                    name = "Disk %s" % i
+                    drive = DriveItem(self.ui.drives, disk, name)
+                    listItem = DrivesListItem(self.ui.drives, drive)
+                    self.ui.drives.setGridSize(QSize(drive.width(), drive.height()))
+                    self.ui.drives.setItemWidget(listItem, drive)
 
         # select the first disk by default
         self.ui.drives.setCurrentRow(0)
