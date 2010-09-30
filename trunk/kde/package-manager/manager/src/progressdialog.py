@@ -68,10 +68,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.timeRemaining.setText(time)
 
     def updateCompletedInfo(self, completed, total, rate):
-        self.completedInfo.setText(i18n("<p align='center'>%1 / %2, %3</p>", completed, total, rate))
+        self.completedInfo.setText(i18n("%1 / %2, %3", completed, total, rate))
 
     def updateActionLabel(self, action):
-        self.actionLabel.setText("<b>%s</b>" % self.state.getActionCurrent(action))
+        self.actionLabel.setText(self.state.getActionCurrent(action))
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
@@ -80,7 +80,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.cancelButton.setEnabled(False)
 
     def reset(self):
-        self.actionLabel.setText(i18n("<h3>Preparing PiSi...</h3>"))
+        self.actionLabel.setText(i18n("Preparing PiSi..."))
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
         self.completedInfo.setText("")
@@ -94,6 +94,6 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.iface.cancel()
 
     def repoOperationView(self):
-        for widget in [self.statusLabel, self.statusInfo, self.timeLabel, self.timeRemaining]:
+        for widget in [self.statusInfo, self.timeRemaining]:
             widget.setText("")
         self.timeRemaining.hide()
