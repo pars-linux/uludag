@@ -15,33 +15,39 @@ from PyQt4.QtCore import SIGNAL
 
 from PyKDE4.kdecore import i18n
 
-from ui_progressdialog import Ui_ProgressDialog
+from pds.gui import *
+from ui_progressdialog_v4 import Ui_ProgressDialog
 import backend
 
-class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
+class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
+
     def __init__(self, state, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        PAbstractBox.__init__(self, parent)
         self.iface = backend.pm.Iface()
         self.state = state
         self.setupUi(self)
-        self.setModal(True)
-        self.startAnimation()
+        self.animation = 2
+        self.duration = 500
+        self.last_msg = None
+        self.registerFunction(FINISHED, QtGui.qApp.processEvents)
+        self.enableOverlay()
+
+        #self.movie = QtGui.QMovie(":/data/pisianime.mng")
+        #self.animeLabel.setMovie(self.movie)
+
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
-    def show(self):
-        self.movie.start()
-        QtGui.QDialog.show(self)
+    def _show(self):
+        #self.movie.start()
+        self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
 
-    def hide(self):
-        self.movie.stop()
-        QtGui.QDialog.hide(self)
-
-    def startAnimation(self):
-        self.movie = QtGui.QMovie(":/data/pisianime.mng")
-        self.animeLabel.setMovie(self.movie)
+    def _hide(self):
+        #self.movie.stop()
+        self.animate(direction = OUT, dont_animate = True)
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
+        self.percentage.setText(self.progressBar.text())
         self.setWindowTitle(i18n("Operation - %1%", progress))
 
     def updateOperation(self, operation, arg):
@@ -56,7 +62,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
-        self.statusInfo.setText(i18n("%1 / %2 package %3", packageNo, totalPackages, operation))
+        self.statusInfo.setText(i18n("%1 / %2", packageNo, totalPackages))
 
     def updateRemainingTime(self, time):
         self.timeRemaining.setText(time)
@@ -78,9 +84,7 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
         self.completedInfo.setText("")
-        self.statusLabel.setText(i18n("Status:"))
         self.statusInfo.setText(i18n("--  / --"))
-        self.timeLabel.setText(i18n("Time remaining:"))
         self.timeRemaining.setText(i18n("--:--:--"))
         self.timeRemaining.show()
 
