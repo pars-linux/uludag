@@ -139,14 +139,18 @@ class DrivesListItem(QtGui.QListWidgetItem):
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
-        self.setSizeHint(QSize(widget.width(), widget.height()))
+        self.setSizeHint(QSize(widget.width()-20, widget.height()))
 
 class DriveItem(QtGui.QWidget, Ui_DiskItem):
     def __init__(self, parent, drive, name):
         QtGui.QWidget.__init__(self, parent)
-
         self.setupUi(self)
-        self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
+        if drive.removable:
+            self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/drive-removable-media-usb-big.png"))
+        elif drive.name.startswith("mmc"):
+            self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/media-flash-sd-mmc-big.png"))
+        else:
+            self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/drive-harddisk-big.png"))
         self.labelDrive.setText("%s" % (name))
         self.labelInfo.setText("%s\n%s GB" % (drive.model, str(int(drive.size) / 1024)))
         #self.drive = drive
@@ -233,23 +237,23 @@ Pardus create a new partition for installation.</p>
         disks = filter(lambda d: not d.format.hidden, self.storage.disks)
         self.ui.drives.clear()
 
+        count = 0
         for disk in disks:
             if disk.size >= ctx.consts.min_root_size:
-                #Renan'a sor
-                #for i in range(2):
-                    if len(disks) == 2:
-                        self.ui.drives.setMinimumWidth(300)
-                        self.ui.drives.setMaximumWidth(300)
-                    else:
-                        self.ui.drives.setMinimumWidth(450)
-                        self.ui.drives.setMaximumWidth(450)
+                if len(disks) <= 4:
+                    self.ui.drives.setMinimumWidth(150 * len(disks))
+                    self.ui.drives.setMaximumWidth(150 * len(disks))
+                else:
+                    self.ui.drives.setMinimumWidth(600)
+                    self.ui.drives.setMaximumWidth(600)
 
-                    name = "Disk %s" % i
-                    drive = DriveItem(self.ui.drives, disk, name)
-                    listItem = DrivesListItem(self.ui.drives, drive)
-                    self.ui.drives.setGridSize(QSize(drive.width(), drive.height()))
-                    self.ui.drives.setItemWidget(listItem, drive)
+                name = "Disk %s" % count
+                drive = DriveItem(self.ui.drives, disk, name)
+                listItem = DrivesListItem(self.ui.drives, drive)
+                self.ui.drives.setGridSize(QSize(drive.width(), drive.height()))
+                self.ui.drives.setItemWidget(listItem, drive)
 
+            count += 1
         # select the first disk by default
         self.ui.drives.setCurrentRow(0)
 
