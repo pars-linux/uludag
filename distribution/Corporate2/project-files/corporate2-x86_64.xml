@@ -139,6 +139,7 @@
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>pnm2ppa</SelectedPackage>
+        <SelectedPackage>polkit-gnome</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>powertop</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
