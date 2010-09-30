@@ -82,7 +82,8 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.setActionButton()
 
         self.operation = OperationManager(self.state)
-        self.progressDialog = ProgressDialog(self.state)
+        self.progressDialog = ProgressDialog(self.state, self)
+        self.progressDialog.registerResizeFunction(self._resizeEvent)
         self.summaryDialog = SummaryDialog()
 
         self.connectOperationSignals()
@@ -95,7 +96,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.searchButton.setMaximumWidth(QFontMetrics(qApp.font()).width(i18n('Search')) + 32 )
         self.searchUsed = False
 
-    def resizeEvent(self, event):
+    def _resizeEvent(self, event):
         if self.__ui_ready:
             self.searchButton.resize(self.searchButton.width(), self.searchLine.height() - 4)
             self.searchButton.move(self.searchLine.width() - self.searchButton.width() - 22, 2)
@@ -267,11 +268,11 @@ class MainWidget(QWidget, Ui_MainWidget):
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
                 self.progressDialog.repoOperationView()
-            self.progressDialog.show()
+            self.progressDialog._show()
         self.progressDialog.enableCancel()
 
     def exceptionCaught(self, message):
-        self.progressDialog.hide()
+        self.progressDialog._hide()
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
@@ -302,7 +303,7 @@ class MainWidget(QWidget, Ui_MainWidget):
                 self.state.state = self.state.ALL
                 self.__go_back_all = False
             self.state.reset()
-            self.progressDialog.hide()
+            self.progressDialog._hide()
             if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
                 self.emit(SIGNAL("repositoriesUpdated()"))
             self.initialize()
@@ -310,7 +311,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             qApp.exit()
 
     def actionCancelled(self):
-        self.progressDialog.hide()
+        self.progressDialog._hide()
         if self.state.silence:
             qApp.exit()
         else:
