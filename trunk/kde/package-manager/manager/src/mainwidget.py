@@ -233,7 +233,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.searchUsed = False
         self.initializeGroupList()
         if self.state.cached_packages == []:
-            self.pdsMessageBox.showMessage(i18n("No result found."), KIcon("dialog-information").pixmap(32,32))
+            self.pdsMessageBox.showMessage(i18n("No results found."), KIcon("dialog-information").pixmap(32,32))
         else:
             self.pdsMessageBox.hideMessage()
 
