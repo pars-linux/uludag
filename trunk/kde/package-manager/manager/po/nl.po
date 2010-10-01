@@ -1,3 +1,24 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+#: src/statemanager.py:155
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-01 16:27+0300\n"
+"PO-Revision-Date: 2010-10-01 17:16+0200\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
 msgstr "Software toevoegen of verwijderen"
@@ -20,12 +41,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Onwikkelaar"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Onwikkelaar"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -54,12 +75,20 @@ msgid "Update Requirements"
 msgstr "Vereisten voor opwaarderen"
 
 #: src/basketdialog.py:132
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr "<b>Herstart</b> het systeem voor het actief maken van de volgende bijgewerkte pakketversie(s):"
+msgid ""
+"You must <b>restart</b> your system for the updates in the following package"
+"(s) to take effect:"
+msgstr ""
+"<b>Herstart</b> het systeem voor het actief maken van de volgende "
+"bijgewerkte pakketversie(s):"
 
 #: src/basketdialog.py:139
-msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr "Voor het actief maken van de bijgewerkte versies van de geselecteerde pakketten herstart de volgende diensten:"
+msgid ""
+"You must restart following system services for the updated package(s) to "
+"take effect:"
+msgstr ""
+"Voor het actief maken van de bijgewerkte versies van de geselecteerde "
+"pakketten herstart de volgende diensten:"
 
 #: src/basketdialog.py:161 src/mainwidget.py:283 src/mainwidget.py:286
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -84,13 +113,12 @@ msgid "Search"
 msgstr "Zoeken"
 
 #: src/mainwidget.py:225
-#, fuzzy
 msgid "Searching..."
-msgstr "Zoeken"
+msgstr "Zoeken..."
 
 #: src/mainwidget.py:236
 msgid "No results found."
-msgstr ""
+msgstr "Geen resultaten gevonden."
 
 #: src/mainwidget.py:277
 msgid "Network Error"
@@ -109,8 +137,12 @@ msgid "You are not authorized for this operation."
 msgstr "U bent niet gemachtigd om deze handeling uit te voeren."
 
 #: src/mainwidget.py:284
-msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
-msgstr "Pakket niet gevonden. Het kan eventueel opgewaardeerd of verwijderd zijn uit de bron. Ververs de informatie van de softwarebron."
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+"Pakket niet gevonden. Het kan eventueel opgewaardeerd of verwijderd zijn uit "
+"de bron. Ververs de informatie van de softwarebron."
 
 #: src/mainwidget.py:395
 msgid "All Updates"
@@ -125,28 +157,24 @@ msgid "Critical Updates"
 msgstr "Kritieke opwaarderingen"
 
 #: src/mainwindow.py:134 src/mainwindow.py:138
-#, fuzzy
 msgid "All Packages"
-msgstr "Geïnstalleerde pakketten tonen"
+msgstr "Alle pakketten"
 
 #: src/mainwindow.py:141 src/mainwindow.py:145
-#, fuzzy
 msgid "Installable Packages"
-msgstr "Installeerbare pakketten tonen"
+msgstr "Installeerbare pakketten"
 
 #: src/mainwindow.py:148 src/mainwindow.py:152
-#, fuzzy
 msgid "Installed Packages"
-msgstr "Pakket(ten) installeren"
+msgstr "Geïnstalleerde pakketten"
 
 #: src/mainwindow.py:155 src/mainwindow.py:159
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "Opwaardeerbare pakketten tonen"
+msgstr "Opwaardeerbare pakketten"
 
 #: src/mainwindow.py:191
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Afhankelijkheden bepalen..."
 
 #: src/mainwindow.py:197
 msgid "Currently your basket is empty."
@@ -190,7 +218,7 @@ msgstr "Geïnstalleerde versie:"
 
 #: src/packagedelegate.py:269
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
@@ -202,9 +230,8 @@ msgid "%prog packages_to_install"
 msgstr "%prog te_installeren_pakketten"
 
 #: src/progressdialog.py:45
-#, fuzzy
 msgid "<p align='right'>%1 %</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='right'>%1 %</p>"
 
 #: src/progressdialog.py:46
 #, python-format
@@ -229,22 +256,19 @@ msgstr "%1 %2"
 
 #: src/progressdialog.py:61
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 #: src/progressdialog.py:68
-#, fuzzy
 msgid "%1 / %2, %3"
-msgstr "%1 / %2 pakket %3"
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:81 ui/ui_progressdialog_v4.py:168
-#, fuzzy
 msgid "Preparing PiSi..."
-msgstr "<h3>Voorbereiden PiSi...</h3>"
+msgstr "PiSi voorbereiden..."
 
 #: src/progressdialog.py:85
-#, fuzzy
 msgid "-- / --"
-msgstr "--  / --"
+msgstr "-- / --"
 
 #: src/progressdialog.py:90
 msgid "<b>Cancelling operation...</b>"
@@ -267,8 +291,12 @@ msgid "Not a valid repository name"
 msgstr "Geen geldige bronnaam"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Adres van softwarebron dient te eindigen op xml of xml.bz2. <p>Probeer opnieuw.</qt>"
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Adres van softwarebron dient te eindigen op xml of xml.bz2. <p>Probeer "
+"opnieuw.</qt>"
 
 #: src/statemanager.py:83
 msgid "Installing Package(s)"
@@ -308,7 +336,7 @@ msgstr "opgewaardeerd"
 
 #: src/statemanager.py:94
 msgid "modified"
-msgstr ""
+msgstr "gewijzigd"
 
 #: src/statemanager.py:98 ui/ui_basketdialog.py:108
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:142
@@ -325,9 +353,8 @@ msgid "Upgrade Package(s)"
 msgstr "Pakket(ten) opwaarderen"
 
 #: src/statemanager.py:101
-#, fuzzy
 msgid "Modify Package(s)"
-msgstr "Verwijderen van pakket(ten)"
+msgstr "Pakket(ten) wijzigen"
 
 #: src/statemanager.py:111
 msgid "%1 new package(s) have been installed succesfully."
@@ -342,9 +369,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 nieuwe pakket(ten) zijn met succes opgewaardeerd."
 
 #: src/statemanager.py:114
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 nieuwe pakket(ten) zijn met succes verwijderd."
+msgstr "%1 pakket(ten) zijn met succes gewijzigd"
 
 #: src/statemanager.py:117
 msgid "You have selected the following package(s) to install:"
@@ -359,67 +385,70 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "De volgende  pakket(ten) zijn geselecteerd om te upgraden:"
 
 #: src/statemanager.py:120
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "De volgende  pakket(ten) zijn geselecteerd om te verwijderen:"
+msgstr "De volgende  pakket(ten) zijn geselecteerd om te wijzigen:"
 
 #: src/statemanager.py:123 ui/ui_basketdialog.py:105
-msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook geïnstalleerd zullen worden:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
 
 #: src/statemanager.py:124
-msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
-msgstr "Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook verwijderd zullen worden:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook "
+"verwijderd zullen worden:"
 
 #: src/statemanager.py:125
-msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt zullen worden:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
+"zullen worden:"
 
 #: src/statemanager.py:126
-#, fuzzy
-msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt zullen worden:"
-
-# translation of nl.po to Nederlands
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
-#: src/statemanager.py:155
 msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"modified:"
 msgstr ""
-"Project-Id-Version: nl\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 16:27+0300\n"
-"PO-Revision-Date: 2010-09-29 12:19+0200\n"
-"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
-"Language: nl\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Extra afhankelijkheden van de geselecteerde pakket(ten) die ook gewijzigd "
+"worden:"
 
 #: src/statemanager.py:157
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte van <b>%2</b>"
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
+"van <b>%2</b>"
 
 #: src/statemanager.py:160
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</"
+"b>"
 
 #: src/statemanager.py:162
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
 
 #: src/statemanager.py:163
 msgid "in your basket."
 msgstr "in uw mandje."
 
 #: src/statemanager.py:187
-msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten kunnen niet samen geïnstalleerd worden."
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
+"kunnen niet samen geïnstalleerd worden."
 
 #: src/statemanager.py:188 src/statemanager.py:196
 msgid "Conflict Error"
@@ -450,12 +479,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Er zijn <b>%1</b> opwaarderingen beschikbaar!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Negeren"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Opwaarderingen tonen"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Negeren"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -570,17 +599,27 @@ msgstr "Status:"
 
 #: ui/ui_progressdialog.py:161 ui/ui_progressdialog_v3.py:178
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: ui/ui_progressdialog.py:166 ui/ui_progressdialog_v3.py:188
 #: ui/ui_settingsdialog.py:415
@@ -593,19 +632,28 @@ msgid "Alt+C"
 msgstr "Alt+C"
 
 #: ui/ui_progressdialog_v4.py:170
-#, fuzzy
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten in deze groep</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
 
 #: ui/ui_repodialog.py:56
 msgid "Add New Repository"
@@ -716,8 +764,13 @@ msgid "Select..."
 msgstr "Selecteren..."
 
 #: ui/ui_settingsdialog.py:392
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr "Leeg maken van het schijfbuffer zal alle gedownloade software verwijderen. Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw systeem beïnvloeden."
+msgid ""
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
+msgstr ""
+"Leeg maken van het schijfbuffer zal alle gedownloade software verwijderen. "
+"Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw "
+"systeem beïnvloeden."
 
 #: ui/ui_settingsdialog.py:393
 msgid "C&lean disk cache now"
@@ -797,8 +850,12 @@ msgid "Operation Summary"
 msgstr "Samenvatting van bewerking"
 
 #: ui/ui_summarydialog.py:51
-msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande lijst gestart worden of later via het toepassingenmenu."
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande "
+"lijst gestart worden of later via het toepassingenmenu."
 
 #: ui/ui_summarydialog.py:52
 msgid "&Ok"
