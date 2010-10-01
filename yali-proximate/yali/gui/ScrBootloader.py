@@ -59,10 +59,15 @@ You can always choose another installation method if you know what you are doing
         self.device = None
         self.initialDevice = None
 
-        self.connect(self.ui.installMBR, SIGNAL("toggled(bool)"), self.ui.selectDrive.setEnabled)
+        self.connect(self.ui.defaultSettings, SIGNAL("toggled(bool)"), self.hideAdvancedSettings)
+        self.connect(self.ui.advancedSettings, SIGNAL("toggled(bool)"), self.showAdvancedSettings)
+        self.connect(self.ui.installMBR, SIGNAL("toggled(bool)"), self.ui.drives.setEnabled)
         self.connect(self.ui.installPartition, SIGNAL("clicked(bool)"), self.slotDrivesEnabled)
-        self.connect(self.ui.selectDrive, SIGNAL("stateChanged(int)"), self.changeDrivesState)
-        self.connect(self.ui.drives, SIGNAL("currentRowChanged(int)"), self.slotDeviceChanged)
+        #self.connect(self.ui.selectDrive, SIGNAL("stateChanged(int)"), self.changeDrivesState)
+        self.connect(self.ui.drives, SIGNAL("currentIndexChanged(int)"), self.slotDeviceChanged)
+
+        self.ui.advancedSettingsBox.show()
+        self.ui.defaultSettings.setChecked(True)
 
     def shown(self):
         self.fillDrives()
@@ -73,24 +78,32 @@ You can always choose another installation method if you know what you are doing
             ctx.mainScreen.stepIncrement = 2
         return True
 
+    def hideAdvancedSettings(self):
+        self.ui.advancedSettingsBox.hide()
+
+    def showAdvancedSettings(self):
+        self.ui.advancedSettingsBox.show()
+
     def fillDrives(self):
         self.ui.drives.clear()
 
         if not len(self.bootloader.drives):
             raise BootLoaderError, _("No drives found.")
         elif len(self.bootloader.drives) ==  1:
-            self.ui.drives.setDisabled(True)
-            self.ui.selectDrive.setDisabled(True)
+            self.ui.drives.hide()
+            self.ui.selectDrive.hide()
 
         for drive in self.bootloader.drives:
-            DriveItem(self.ui.drives, ctx.storage.devicetree.getDeviceByName(drive))
+            d = ctx.storage.devicetree.getDeviceByName(drive)
+            item = u"%s" % (d.name)
+            self.ui.drives.addItem(item, QVariant(d))
 
     def activateChoices(self):
         for choice, (device, bootType) in self.bootloader.choices.items():
             if choice == BOOT_TYPE_MBR:
-                self.ui.installMBR.setText("%s - %s" % (bootType, device))
+                self.ui.installMBR.setText("The first sector of")
             elif choice == BOOT_TYPE_PARTITION:
-                self.ui.installPartition.setText("%s - %s" % (bootType, device))
+                self.ui.installPartition.setText("The partition where Pardus is installed")
 
         if self.bootloader.choices.has_key(BOOT_TYPE_MBR):
             self.device = self.bootloader.choices[BOOT_TYPE_MBR][0]
@@ -104,15 +117,15 @@ You can always choose another installation method if you know what you are doing
 
     def changeDrivesState(self, state):
         if state == Qt.Checked:
-            self.ui.drives.setEnabled(True)
+            self.ui.drives.show()
             #self.device = self.bootloader.choices[BOOT_TYPE_PARTITION][0]
             for index in range(self.ui.drives.count()):
-                if self.device == self.ui.drives.item(index).drive.name:
+                if self.device == self.ui.drives.itemData(index).toPyObject().name:
                     self.ui.drives.setCurrentRow(index)
         else:
-            self.ui.drives.setEnabled(False)
+            self.ui.drives.show()
             self.device = self.initialDevice
-            self.ui.installMBR.setText("%s - %s" % (boot_type_strings[BOOT_TYPE_MBR], self.device))
+            #self.ui.installMBR.setText("%s - %s" % (boot_type_strings[BOOT_TYPE_MBR], self.device))
 
     def slotDrivesEnabled(self, state):
         self.ui.selectDrive.setChecked(not state)
@@ -120,8 +133,8 @@ You can always choose another installation method if you know what you are doing
         self.ui.drives.setEnabled(not state)
 
     def slotDeviceChanged(self, current):
-        self.device = self.ui.drives.item(current).drive.name
-        self.ui.installMBR.setText("%s - %s" % (boot_type_strings[BOOT_TYPE_MBR], self.device))
+        self.device = self.ui.drives.itemData(current).toPyObject().name
+        #self.ui.installMBR.setText("%s - %s" % (boot_type_strings[BOOT_TYPE_MBR], self.device))
 
     def execute(self):
         self.bootloader.device = self.device

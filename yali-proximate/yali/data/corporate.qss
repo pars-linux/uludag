@@ -26,6 +26,12 @@ QListView {
  }
 
 
+#frame{
+background-color: rgba(0,0,0,100);
+border-top: 1px solid rgba(255,255,255,60);
+border-bottom: 1px solid rgba(255,255,255,60);
+}
+
 
 
 #headContainer{
@@ -635,22 +641,25 @@ QScrollArea::corner {
 QScrollBar:vertical {
         width: 16px;
         margin: 16px 0 16px 0;
-        background-color: rgba(255, 255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
 }
 
 QScrollBar::handle:vertical {
         min-height: 16px;
-        border: 0px;
-        background-color: #323232;
-        border-radius: 0px;
+	background-color: rgba(0,0,0, 100);
+        border: 0px solid rgba(255, 255, 255, 50);
+        /*border: 2px solid #628577;*/
+        border-radius: 3px;
 	padding:3px;
 }
 
 QScrollBar::handle:vertical:hover {
         min-height: 16px;
-        border: 0px solid #808080;
-        background-color:  #323232;
-        border-radius: 0px;
+	background-color: rgba(0,0,0, 100);
+        border: 0px solid rgba(255, 255, 255, 50);
+        /*border: 2px solid #628577;*/
+        border-radius: 3px;
+        /*border-radius: 0px;*/
 }
 
 QScrollBar::add-line:vertical {
@@ -658,7 +667,7 @@ QScrollBar::add-line:vertical {
         height: 16px;
         subcontrol-position: bottom;
         subcontrol-origin: margin;
-background-color: rgba(255, 255, 255, 255)
+	background: transparent;
 }
 
 QScrollBar::sub-line:vertical {
@@ -666,7 +675,7 @@ QScrollBar::sub-line:vertical {
         height: 16px;
         subcontrol-position: top;
         subcontrol-origin: margin;
-        background-color: rgba(255, 255, 255, 255)
+        background: transparent;
 }
 
 QScrollBar::up-arrow:vertical { background-image: url(:/images/arrow-up.png); }
@@ -678,7 +687,7 @@ QScrollBar::down-arrow:vertical { background-image: url(:/images/arrow-down.png)
 QScrollBar:horizontal {
         height: 16px;
         margin: 0 16px 0 16px;
-        background-color: rgba(255, 255, 255, 0);
+        background: transparent;
 }
 
 QScrollBar::handle:horizontal {

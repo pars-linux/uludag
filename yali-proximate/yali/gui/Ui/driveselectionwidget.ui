@@ -47,14 +47,7 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">#frame{
-background-color: rgba(0,0,0,100);
-border-top: 1px solid rgba(255,255,255,60);
-border-bottom: 1px solid rgba(255,255,255,60);
-}
-
-
-QListView {
+      <string notr="true">QListView {
      show-decoration-selected: 1; /* make the selection span the entire width of the view */
  }
 

@@ -189,28 +189,23 @@ Pardus create a new partition for installation.</p>
         self.clearPartDisks = None
 
         self.useAllSpace, self.replaceExistingLinux, self.shrinkCurrent, self.useFreeSpace, self.createCustom = range(5)
-        self.connect(self.ui.drives, SIGNAL("itemClicked(QListWidgetItem *)"), self.stateChanged)
-        #self.connect(self.ui.drives,   SIGNAL("currentItemChanged(QListWidgetItem *, QListWidgetItem * )"),self.slotDeviceChanged)
-        #self.ui.drives.hide()
-        #self.ui.drivesLabel.hide()
+        self.connect(self.ui.drives, SIGNAL("itemSelectionChanged()"), self.stateChanged)
 
-    def stateChanged(self, state):
-        print "Mete yapar: On clicked#"
-        """
-        if state == Qt.Checked:
+    def stateChanged(self):
+        self.selectedDisks = []
+
+        for item in self.ui.drives.selectedItems():
+            self.selectedDisks.append(str(item.statusTip()))
+
+        self.selectedDisks.sort(self.storage.compareDisks)
+        self.storage.clearPartDisks = self.selectedDisks
+
+        if len(self.selectedDisks):
             ctx.mainScreen.enableNext()
         else:
-            selectedDisks = []
-            for index in range(self.parent.count()):
-                if self.checkBox.checkState() == Qt.Checked:
-                    selectedDisks.append(self.ui.drives.item(index).drive.name)
+            ctx.mainScreen.disableNext()
 
-            if len(selectedDisks):
-                ctx.mainScreen.enableNext()
-            else:
-                ctx.mainScreen.disableNext()
-        """
-
+        print self.selectedDisks
 
     def typeChanged(self, index):
         if index != self.createCustom:
@@ -237,9 +232,10 @@ Pardus create a new partition for installation.</p>
         disks = filter(lambda d: not d.format.hidden, self.storage.disks)
         self.ui.drives.clear()
 
-        count = 0
+        count = 1
         for disk in disks:
             if disk.size >= ctx.consts.min_root_size:
+                # GUI Hack
                 if len(disks) <= 4:
                     self.ui.drives.setMinimumWidth(150 * len(disks))
                     self.ui.drives.setMaximumWidth(150 * len(disks))
@@ -250,6 +246,8 @@ Pardus create a new partition for installation.</p>
                 name = "Disk %s" % count
                 drive = DriveItem(self.ui.drives, disk, name)
                 listItem = DrivesListItem(self.ui.drives, drive)
+                listItem.setStatusTip(disk.name)
+                listItem.setToolTip("System Path: %s" % (disk.name))
                 self.ui.drives.setGridSize(QSize(drive.width(), drive.height()))
                 self.ui.drives.setItemWidget(listItem, drive)
 
@@ -265,19 +263,15 @@ Pardus create a new partition for installation.</p>
             self.fillDrives()
 
     def checkClearPartDisks(self):
-        selectedDisks = []
-        for index in range(self.ui.drives.count()):
-            if self.ui.drives.item(index).widget.checkBox.checkState() == Qt.Checked:
-                selectedDisks.append(self.ui.drives.item(index).widget.drive.name)
 
-        if len(selectedDisks) == 0:
+        if len(self.selectedDisks) == 0:
             self.intf.messageWindow(_("Error"),
                                     _("You must select at least one "
                                       "drive to be used for installation."), customIcon="error")
             return False
         else:
-            selectedDisks.sort(self.storage.compareDisks)
-            self.storage.clearPartDisks = selectedDisks
+            self.selectedDisks.sort(self.storage.compareDisks)
+            self.storage.clearPartDisks = self.selectedDisks
             return True
 
     def execute(self):

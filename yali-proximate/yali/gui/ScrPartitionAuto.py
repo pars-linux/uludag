@@ -249,22 +249,6 @@ Pardus create a new partition for installation.</p>
         else:
             self.setPartitioningType()
 
-    def checkClearPartDisks(self):
-        selectedDisks = []
-        for index in range(self.ui.drives.count()):
-            if self.ui.drives.item(index).widget.checkBox.checkState() == Qt.Checked:
-                selectedDisks.append(self.ui.drives.item(index).widget.drive.name)
-
-        if len(selectedDisks) == 0:
-            self.intf.messageWindow(_("Error"),
-                                    _("You must select at least one "
-                                      "drive to be used for installation."), customIcon="error")
-            return False
-        else:
-            selectedDisks.sort(self.storage.compareDisks)
-            self.storage.clearPartDisks = selectedDisks
-            return True
-
     def execute(self):
         rc = self.nextCheck()
         if rc is None:
@@ -275,32 +259,29 @@ Pardus create a new partition for installation.</p>
             return rc
 
     def nextCheck(self):
-        if self.checkClearPartDisks():
-            increment = 0
-            if self.ui.autopartType.currentRow() == self.createCustom:
-                increment = 1
-                self.storage.clearPartType = CLEARPART_TYPE_NONE
-            else:
-                if self.ui.autopartType.currentRow() == self.shrinkCurrent:
-                    if self.shrinkOperations:
-                        for operation in self.shrinkOperations:
-                            self.storage.addOperation(operation)
-                        self.storage.clearPartType = CLEARPART_TYPE_NONE
-                elif self.ui.autopartType.currentRow() == self.useAllSpace:
-                    self.storage.clearPartType = CLEARPART_TYPE_ALL
-                elif self.ui.autopartType.currentRow() == self.replaceExistingLinux:
-                    self.storage.clearPartType = CLEARPART_TYPE_LINUX
-                elif self.ui.autopartType.currentRow() == self.useFreeSpace:
+        increment = 0
+        if self.ui.autopartType.currentRow() == self.createCustom:
+            increment = 1
+            self.storage.clearPartType = CLEARPART_TYPE_NONE
+        else:
+            if self.ui.autopartType.currentRow() == self.shrinkCurrent:
+                if self.shrinkOperations:
+                    for operation in self.shrinkOperations:
+                        self.storage.addOperation(operation)
                     self.storage.clearPartType = CLEARPART_TYPE_NONE
+            elif self.ui.autopartType.currentRow() == self.useAllSpace:
+                self.storage.clearPartType = CLEARPART_TYPE_ALL
+            elif self.ui.autopartType.currentRow() == self.replaceExistingLinux:
+                self.storage.clearPartType = CLEARPART_TYPE_LINUX
+            elif self.ui.autopartType.currentRow() == self.useFreeSpace:
+                self.storage.clearPartType = CLEARPART_TYPE_NONE
 
-                self.storage.doAutoPart = True
-                self.storage.autoPartitionRequests = defaultPartitioning(self.storage, quiet=0)
-                if not self.storage.clearPartDisks:
-                    return False
+            self.storage.doAutoPart = True
+            self.storage.autoPartitionRequests = defaultPartitioning(self.storage, quiet=0)
+            if not self.storage.clearPartDisks:
+                return False
 
-                return doAutoPartition(self.storage)
+            return doAutoPartition(self.storage)
 
-            ctx.mainScreen.stepIncrement = increment
-            return True
-
-        return False
+        ctx.mainScreen.stepIncrement = increment
+        return True

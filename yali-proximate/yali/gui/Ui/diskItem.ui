@@ -76,7 +76,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap resource="../../data.qrc">:/gui/pics/drive-harddisk-big.png</pixmap>
+        <pixmap resource="../../data.qrc">:/gui/pics/drive-removable-media-usb-big.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>
