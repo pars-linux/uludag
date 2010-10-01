@@ -14,10 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#AutoPartWidget{    
-  background-image: url(:/gui/pics/bg.png);
-      background-color: rgb(50, 50, 50);}
-</string>
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
    <property name="horizontalSpacing">
@@ -302,7 +299,6 @@ border:0px
  </widget>
  <resources>
   <include location="../../data.qrc"/>
-  <include location="../../../../../../../../data.qrc"/>
  </resources>
  <connections/>
 </ui>
