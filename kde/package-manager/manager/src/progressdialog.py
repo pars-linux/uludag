@@ -32,22 +32,17 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.registerFunction(FINISHED, QtGui.qApp.processEvents)
         self.enableOverlay()
 
-        #self.movie = QtGui.QMovie(":/data/pisianime.mng")
-        #self.animeLabel.setMovie(self.movie)
-
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def _show(self):
-        #self.movie.start()
         self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
 
     def _hide(self):
-        #self.movie.stop()
         self.animate(direction = OUT, dont_animate = True)
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
-        self.percentage.setText(self.progressBar.text())
+        self.percentage.setText(i18n("<p align='right'>%1 %</p>", progress))
         self.setWindowTitle(i18n("Operation - %1%", progress))
 
     def updateOperation(self, operation, arg):
@@ -59,19 +54,22 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         else:
             operationInfo = i18n('%1 %2', operation, arg)
 
-        self.operationInfo.setText(operationInfo)
+        if not operationInfo == self.operationInfo.text():
+            self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
-        self.statusInfo.setText(i18n("%1 / %2", packageNo, totalPackages))
+        text = i18n("[%1 / %2]", packageNo, totalPackages)
+        self.statusInfo.setText(text)
 
     def updateRemainingTime(self, time):
-        self.timeRemaining.setText(time)
+        self.timeRemaining.setText("<p align='right'>%s</p>" % time)
 
     def updateCompletedInfo(self, completed, total, rate):
-        self.completedInfo.setText(i18n("%1 / %2, %3", completed, total, rate))
+        text = i18n("%1 / %2, %3", completed, total, rate)
+        self.completedInfo.setText(text)
 
     def updateActionLabel(self, action):
-        self.actionLabel.setText(self.state.getActionCurrent(action))
+        self.actionLabel.setText("<i>%s</i>" % self.state.getActionCurrent(action))
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
@@ -84,8 +82,8 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
         self.completedInfo.setText("")
-        self.statusInfo.setText(i18n("--  / --"))
-        self.timeRemaining.setText(i18n("--:--:--"))
+        self.statusInfo.setText(i18n("-- / --"))
+        self.timeRemaining.setText("<p align='right'>--:--:--</p>")
         self.timeRemaining.show()
 
     def cancel(self):
