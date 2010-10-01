@@ -1,3 +1,22 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# 
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: package-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-01 16:27+0300\n"
+"PO-Revision-Date: 2009-12-19 13:28+0100\n"
+"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
+
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
 msgstr "Ajouter ou supprimer des logiciels"
@@ -20,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Développeur"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Développeur"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -84,13 +103,12 @@ msgid "Search"
 msgstr "Rechercher"
 
 #: src/mainwidget.py:225
-#, fuzzy
 msgid "Searching..."
-msgstr "Rechercher"
+msgstr "Recherche..."
 
 #: src/mainwidget.py:236
 msgid "No results found."
-msgstr ""
+msgstr "Aucun résultat trouvé."
 
 #: src/mainwidget.py:277
 msgid "Network Error"
@@ -125,28 +143,24 @@ msgid "Critical Updates"
 msgstr "Mises à jour critiques"
 
 #: src/mainwindow.py:134 src/mainwindow.py:138
-#, fuzzy
 msgid "All Packages"
-msgstr "Afficher les paquets installés"
+msgstr "Tous les paquets"
 
 #: src/mainwindow.py:141 src/mainwindow.py:145
-#, fuzzy
 msgid "Installable Packages"
-msgstr "Afficher les paquets installables"
+msgstr "Les paquets installables"
 
 #: src/mainwindow.py:148 src/mainwindow.py:152
-#, fuzzy
 msgid "Installed Packages"
-msgstr "Installer le(s) paquet(s)"
+msgstr "Les paquets installés"
 
 #: src/mainwindow.py:155 src/mainwindow.py:159
-#, fuzzy
 msgid "Upgradable Packages"
-msgstr "Afficher les mises à jour disponibles"
+msgstr "Les paquets à mettre à jour"
 
 #: src/mainwindow.py:191
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Calcul des dépendances..."
 
 #: src/mainwindow.py:197
 msgid "Currently your basket is empty."
@@ -190,7 +204,7 @@ msgstr "Version installée :"
 
 #: src/packagedelegate.py:269
 msgid "Details"
-msgstr ""
+msgstr "Détails"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
@@ -202,9 +216,8 @@ msgid "%prog packages_to_install"
 msgstr "%prog paquets_à_installer"
 
 #: src/progressdialog.py:45
-#, fuzzy
 msgid "<p align='right'>%1 %</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='right'>%1 %</p>"
 
 #: src/progressdialog.py:46
 #, python-format
@@ -229,22 +242,19 @@ msgstr "%1 %2"
 
 #: src/progressdialog.py:61
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 #: src/progressdialog.py:68
-#, fuzzy
 msgid "%1 / %2, %3"
-msgstr "%1 / %2 paquet %3"
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:81 ui/ui_progressdialog_v4.py:168
-#, fuzzy
 msgid "Preparing PiSi..."
-msgstr "<h3>Préparation de PiSi...</h3>"
+msgstr "Préparation de PiSi..."
 
 #: src/progressdialog.py:85
-#, fuzzy
 msgid "-- / --"
-msgstr "--  / --"
+msgstr "-- / --"
 
 #: src/progressdialog.py:90
 msgid "<b>Cancelling operation...</b>"
@@ -308,7 +318,7 @@ msgstr "mis-à-jour"
 
 #: src/statemanager.py:94
 msgid "modified"
-msgstr ""
+msgstr "modifié"
 
 #: src/statemanager.py:98 ui/ui_basketdialog.py:108
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:142
@@ -325,9 +335,8 @@ msgid "Upgrade Package(s)"
 msgstr "Mettre-à-jour le(s) paquet(s)"
 
 #: src/statemanager.py:101
-#, fuzzy
 msgid "Modify Package(s)"
-msgstr "Désinstallation des paquets"
+msgstr "Modifier les paquets"
 
 #: src/statemanager.py:111
 msgid "%1 new package(s) have been installed succesfully."
@@ -342,9 +351,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 nouveau(x) paquet(s) a(ont) été mis-à-jour avec succès."
 
 #: src/statemanager.py:114
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 nouveau(x) paquet(s) a(ont) été désinstallé(s) avec succès."
+msgstr "%1 paquets ont été modifiés avec succès."
 
 #: src/statemanager.py:117
 msgid "You have selected the following package(s) to install:"
@@ -359,9 +367,8 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Vous avez sélectionné les paquets suivants pour mise à jour :"
 
 #: src/statemanager.py:120
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "Vous avez sélectionné les paquets suivants pour désinstallation :"
+msgstr "Vous avez sélectionné les paquets suivants à modifier :"
 
 #: src/statemanager.py:123 ui/ui_basketdialog.py:105
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
@@ -376,29 +383,8 @@ msgid "Extra dependencies of the selected package(s) that are also going to be u
 msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également mis-à-jour :"
 
 #: src/statemanager.py:126
-#, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également mis-à-jour :"
-
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
-# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
-#: src/statemanager.py:155
-msgid ""
-msgstr ""
-"Project-Id-Version: package-manager\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 16:27+0300\n"
-"PO-Revision-Date: 2009-12-19 13:28+0100\n"
-"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: fr\n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 0.3\n"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également modifiés :"
 
 #: src/statemanager.py:157
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -449,12 +435,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Montrer les mises à jour"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -592,7 +578,6 @@ msgid "Alt+C"
 msgstr "Alt+C"
 
 #: ui/ui_progressdialog_v4.py:170
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -603,8 +588,8 @@ msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les paquets de ce groupe</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
 #: ui/ui_repodialog.py:56
 msgid "Add New Repository"
