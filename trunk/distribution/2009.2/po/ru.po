@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -14,7 +15,7 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:1
 msgctxt "../media-content/release-notes/releasenotes-en.html:1"
 msgid "Release Notes"
-msgstr ""
+msgstr "Информация о релизе"
 
 #: ../media-content/release-notes/releasenotes-en.html:2
 msgctxt "../media-content/release-notes/releasenotes-en.html:2"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:3
 msgid "1. Welcome to Pardus"
-msgstr ""
+msgstr "Добро пожаловать в Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:4
 msgid "Welcome to Pardus 2009.2, another great Pardus release from Pardus developers, translators, artists and documentation writers."
@@ -31,19 +32,19 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:5
 msgid "We kindly invite you to visit"
-msgstr ""
+msgstr "Мы приглашаем Вас посетить"
 
 #: ../media-content/release-notes/releasenotes-en.html:6
 msgid "http://www.pardus.org.tr/eng"
-msgstr ""
+msgstr "http://www.pardus.org.tr/eng"
 
 #: ../media-content/release-notes/releasenotes-en.html:7
 msgid "for more information."
-msgstr ""
+msgstr "для подучения подробной информации"
 
 #: ../media-content/release-notes/releasenotes-en.html:8
 msgid "1.1. What is Pardus"
-msgstr ""
+msgstr "1.1. Что такое Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
 msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
@@ -55,7 +56,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
-msgstr ""
+msgstr "1.2. Как я могу использовать Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
 msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference."
@@ -71,15 +72,16 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:15
 msgid "1.3. Feedback"
-msgstr ""
+msgstr "Обратная связь"
 
 #: ../media-content/release-notes/releasenotes-en.html:16
 msgid "You can use"
-msgstr ""
+msgstr "Вы можете использовать"
 
 #: ../media-content/release-notes/releasenotes-en.html:17
+#, fuzzy
 msgid "http://bugs.pardus.org.tr"
-msgstr ""
+msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
 msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is."
@@ -87,11 +89,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid "2. What is new ?"
-msgstr ""
+msgstr "2. Что нового?"
 
 #: ../media-content/release-notes/releasenotes-en.html:20
 msgid "2.1. Updates in Pardus Technologies"
-msgstr ""
+msgstr "2.1. Обновления  Pardus технологий"
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
