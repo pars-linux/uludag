@@ -151,7 +151,6 @@ msgid "Like other Pardus releases, this new release comes with the theme and nam
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:35
-#, fuzzy
 msgid "2.3. KDE 4 Desktop Enviroment"
 msgstr "2.3. KDE 4 Desktop Environment"
 
@@ -178,7 +177,7 @@ msgstr ", оптимизированный для небольших диспл�
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
-msgstr ""
+msgstr "Pardus имеет встроенный Kosd kded модуль, для более точной настройки яркости, контрасности дисплея,  уровня звука для KDE."
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
@@ -186,11 +185,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:43
 msgid "2.4. Updated Components"
-msgstr ""
+msgstr "2.4. Обновление компонентов"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
 msgid "New release includes many updated packages. Some of the highlights are as follows:"
-msgstr ""
+msgstr "Новый релиз включает много обновленных пакетов. Вот некоторые из них:"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgctxt "../media-content/release-notes/releasenotes-en.html:45"
@@ -226,13 +225,12 @@ msgid "Linux Kernel 2.6.31.13"
 msgstr "Linux Kernel 2.6.31.13"
 
 #: ../media-content/release-notes/releasenotes-en.html:53
-#, fuzzy
 msgid "3. Installation requirements"
 msgstr "3. Требования к установке"
 
 #: ../media-content/release-notes/releasenotes-en.html:54
 msgid "You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
-msgstr ""
+msgstr "Вы можете запустить Pardus на x86 совместимых устройствах. Мы рекомендуем использовать как минимум 512 Мб оперативной памяти (ОЗУ) и 1400 МГц процессор, чтобы получить хорошую скорость работы. Минимальные и рекомендуемые требования к оборудованию для Pardus 2009,2 приведены ниже:"
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "256 MB memory (1GB or more recommended)"
