@@ -190,91 +190,90 @@ msgstr "Запуск Portmap службы для NFS"
 
 #: bin/mudur.py:1021
 msgid "Mounting remote filesystems (CTRL-C stops trying)"
-msgstr ""
+msgstr "Монтирования удаленных файловых систем (CTRL-C прекращает попытки)"
 
 #: bin/mudur.py:1035
 msgid "Mounting skipped with CTRL-C, remote shares will not be accessible!"
-msgstr ""
+msgstr "Монтирование отменено!"
 
 #: bin/mudur.py:1078
 #, python-format
 msgid "Setting up hostname as '%s'"
-msgstr ""
+msgstr "Настройка хоста '%s'"
 
 #: bin/mudur.py:1103
 msgid "Setting disk parameters"
-msgstr ""
+msgstr "Настройка параметров диска"
 
 #: bin/mudur.py:1125
 msgid "Activating swap space"
-msgstr ""
+msgstr "Активация подкачки"
 
 #: bin/mudur.py:1134
 msgid "Deactivating swap space"
-msgstr ""
+msgstr "Отключение подкачки"
 
 #: bin/mudur.py:1143
 msgid "Cleaning up /var"
-msgstr ""
+msgstr "Очистка /var"
 
 #: bin/mudur.py:1154
 msgid "Cleaning up /tmp"
-msgstr ""
+msgstr "Очистка /tmp"
 
 #: bin/mudur.py:1189
 msgid "Setting system clock to hardware clock"
-msgstr ""
+msgstr "Настройка системных часов"
 
 #: bin/mudur.py:1205
 msgid "Failed to adjust systematic drift of the hardware clock"
-msgstr ""
+msgstr "Не удалось настроить систематический drift из аппаратных часов"
 
 #: bin/mudur.py:1209
 msgid "Failed to set system clock to hardware clock"
-msgstr ""
+msgstr "Не удалось установить системные часы"
 
 #: bin/mudur.py:1220
 msgid "Syncing system clock to hardware clock"
-msgstr ""
+msgstr "Синхронизация системных часов"
 
 #: bin/mudur.py:1223
 msgid "Failed to synchronize clocks"
-msgstr ""
+msgstr "Не удалось синхронизировать часы"
 
 #: bin/mudur.py:1250
 msgid "Unmounting filesystems"
-msgstr ""
+msgstr "Отключение файловых систем"
 
 #: bin/mudur.py:1282
 msgid "Remounting remaining filesystems read-only"
-msgstr ""
+msgstr "Перемонтирование остальные файловые системы только для чтения"
 
 #: bin/mudur.py:1298
 msgid "An internal error occured. Please report to the bugs.pardus.org.tr with following information:"
-msgstr ""
+msgstr "Произошла внутренняя ошибка. Пожалуйста сообщите по адресу bugs.pardus.org.tr следующую информацию:"
 
 #: bin/mudur.py:1359
 msgid "Mounting /sys"
-msgstr ""
+msgstr "Монтирование /sys"
 
 #: bin/mudur.py:1373
 msgid "Mounting /dev/pts"
-msgstr ""
+msgstr "Монтирование /dev/pts"
 
 #: bin/mudur.py:1422
 msgid "Setting up localhost"
-msgstr ""
+msgstr "Настройка localhost"
 
 #: bin/mudur.py:1435
 msgid "Updating environment variables"
-msgstr ""
+msgstr "Обновление переменных среды"
 
 #: bin/mudur.py:1456
 msgid "Triggering udev events which are failed during a previous run"
 msgstr "Запуск Udev событий, которые не удалось запустить во время предыдущего запуска"
 
 #: bin/mudur.py:1495
-#, fuzzy
 msgid "Trying to initiate a warm reboot (skipping BIOS with kexec kernel)"
 msgstr "Попытка инициировать теплой перезагрузки (пропуск BIOS с Kexec ядро)"
 
