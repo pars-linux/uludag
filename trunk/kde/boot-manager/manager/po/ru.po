@@ -47,12 +47,12 @@ msgstr "Первый разработчикик"
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ваше имя"
+msgstr "Ясыров Василий (zaG)"
 
 #: src/bootmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Ваш e-mail"
+msgstr "zag@vspu.ru"
 
 #: src/bootmanager/main.py:99
 msgid ""
