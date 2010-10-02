@@ -79,7 +79,6 @@ msgid "You can use"
 msgstr "Вы можете использовать"
 
 #: ../media-content/release-notes/releasenotes-en.html:17
-#, fuzzy
 msgid "http://bugs.pardus.org.tr"
 msgstr "http://bugs.pardus.org.tr"
 
@@ -105,11 +104,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:23
 msgid "A new KDE tool"
-msgstr ""
+msgstr "Новый инструмент KDE"
 
 #: ../media-content/release-notes/releasenotes-en.html:24
 msgid "plasma-runner-pisi"
-msgstr ""
+msgstr "plasma-runner-pisi"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package."
@@ -117,15 +116,16 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "Package Manager"
-msgstr ""
+msgstr "Менеджер Пакетов"
 
 #: ../media-content/release-notes/releasenotes-en.html:27
 msgid "and"
-msgstr ""
+msgstr "и"
 
 #: ../media-content/release-notes/releasenotes-en.html:28
+#, fuzzy
 msgid "PiSi"
-msgstr ""
+msgstr "PiSi"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "have been optimized for better performance and improved stability. PiSi interface has been refactored for easier use. Package Manager went through heavy refactoring and is now using"
@@ -160,9 +160,10 @@ msgid "Default desktop environment is updated to"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:37
+#, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.4"
-msgstr ""
+msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
