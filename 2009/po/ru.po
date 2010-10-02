@@ -271,91 +271,92 @@ msgstr ""
 
 #: bin/mudur.py:1456
 msgid "Triggering udev events which are failed during a previous run"
-msgstr ""
+msgstr "Запуск Udev событий, которые не удалось запустить во время предыдущего запуска"
 
 #: bin/mudur.py:1495
+#, fuzzy
 msgid "Trying to initiate a warm reboot (skipping BIOS with kexec kernel)"
-msgstr ""
+msgstr "Попытка инициировать теплой перезагрузки (пропуск BIOS с Kexec ядро)"
 
 #: bin/service.py:60
 msgid "local"
-msgstr ""
+msgstr "local"
 
 #: bin/service.py:61
 msgid "script"
-msgstr ""
+msgstr "script"
 
 #: bin/service.py:62
 msgid "server"
-msgstr ""
+msgstr "сервер"
 
 #: bin/service.py:74
 msgid "running"
-msgstr ""
+msgstr "работает"
 
 #: bin/service.py:76
 msgid "yes"
-msgstr ""
+msgstr "да"
 
 #: bin/service.py:78
 msgid "conditional"
-msgstr ""
+msgstr "conditional"
 
 #: bin/service.py:101
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 #: bin/service.py:102
 msgid "Service"
-msgstr ""
+msgstr "Служба"
 
 #: bin/service.py:103
 msgid "Autostart"
-msgstr ""
+msgstr "Автостарт"
 
 #: bin/service.py:104
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: bin/service.py:147 bin/service.py:157
 #, python-format
 msgid "Unable to start %s:"
-msgstr ""
+msgstr "Не удается запустить %s:"
 
 #: bin/service.py:170
 #, python-format
 msgid "Unable to stop %s:"
-msgstr ""
+msgstr "Невозможно остановить %s:"
 
 #: bin/service.py:183
 #, python-format
 msgid "Unable to set %s state:"
-msgstr ""
+msgstr "Невозможно установить %s состояние:"
 
 #: bin/service.py:188
 #, python-format
 msgid "Service '%s' will be auto started."
-msgstr ""
+msgstr "Сервис '%s' будет запущенн автоматически."
 
 #: bin/service.py:190
 #, python-format
 msgid "Service '%s' won't be auto started."
-msgstr ""
+msgstr "'%s' Сервис не будет  запущен автоматически."
 
 #: bin/service.py:192
 #, python-format
 msgid "Service '%s' will be started if required."
-msgstr ""
+msgstr "'%s' Служба будет запущен, если требуется."
 
 #: bin/service.py:201
 #, python-format
 msgid "Unable to reload %s:"
-msgstr ""
+msgstr "Невозможно перезапустить %s:"
 
 #: bin/service.py:205
 #, python-format
 msgid "Reloading %s"
-msgstr ""
+msgstr "Перезапуск %s"
 
 #: bin/service.py:259
 msgid "You must be root to use that."
