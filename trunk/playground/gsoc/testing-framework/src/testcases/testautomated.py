@@ -6,7 +6,7 @@ import subprocess
 from clcolorize import colorize
 
 
-class TestAutomated:
+class TestAutomated(object):
     """This class will perform an automated test, the purpose of which is to run
     a command, get its output and compare it with the expected output, which is
     already encoded in the testcase file."""

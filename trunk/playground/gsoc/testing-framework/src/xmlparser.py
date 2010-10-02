@@ -24,7 +24,7 @@ from testcases import reportgenerator
 from clcolorize import colorize
 
 
-class XMLParser:
+class XMLParser(object):
     """The main parser class."""
     testreport = list()
     def __init__(self, xmlfile, custompackage, tree=None, rootelement=None):

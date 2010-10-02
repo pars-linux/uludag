@@ -19,7 +19,7 @@ import sys
 from lxml import etree
     
 
-class XMLWriter:
+class XMLWriter(object):
     """Create the ElementTree and write the XML file."""
     skip_message = 'There has to be at least ONE package in a testcase.\n' \
                    'Please try again ...'
