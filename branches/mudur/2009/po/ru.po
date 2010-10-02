@@ -114,41 +114,40 @@ msgid "/etc/fstab doesn't contain an entry for the root filesystem"
 msgstr "/etc/fstab не содержит записи для корневой файловой системы"
 
 #: bin/mudur.py:887
-#, fuzzy
 msgid "Remounting root filesystem read-only"
 msgstr "Перемонтирование корневая файловая система только для чтения"
 
 #: bin/mudur.py:892
 msgid "Checking root filesystem (full check forced)"
-msgstr ""
+msgstr "Проверка корневой файловой системы (полная проверка принудительно)"
 
 #: bin/mudur.py:898
 msgid "Checking root filesystem"
-msgstr ""
+msgstr "Проверка корневой файловой системы"
 
 #: bin/mudur.py:907
 msgid "Filesystem repaired, but reboot needed!"
-msgstr ""
+msgstr "Файловая система отремонтированы, но перезагрузка необходима!"
 
 #: bin/mudur.py:911
 msgid "Rebooting in 10 seconds..."
-msgstr ""
+msgstr "Перезагрузка через 10 секунд ..."
 
 #: bin/mudur.py:913
 msgid "Rebooting..."
-msgstr ""
+msgstr "Перезагрузка ..."
 
 #: bin/mudur.py:917
 msgid "Filesystem could not be repaired"
-msgstr ""
+msgstr "Файловая система не может быть восстановлен"
 
 #: bin/mudur.py:922
 msgid "Skipping root filesystem check (fstab's passno == 0)"
-msgstr ""
+msgstr "Пропуск проверки корневой файловой системы (fstab's passno == 0)"
 
 #: bin/mudur.py:928
 msgid "Remounting root filesystem read/write"
-msgstr ""
+msgstr "Перемонтирование корневой файловой системы чтения / записи"
 
 #: bin/mudur.py:932
 msgid ""
@@ -159,35 +158,35 @@ msgstr ""
 
 #: bin/mudur.py:944
 msgid "Couldn't synchronize /etc/mtab from /proc/mounts"
-msgstr ""
+msgstr "Не удалось произвести синхронизацию /etc/mtab с /proc/mounts"
 
 #: bin/mudur.py:963
 msgid "Checking all filesystems"
-msgstr ""
+msgstr "Проверка всех файловых систем"
 
 #: bin/mudur.py:967
 msgid "A full fsck has been forced"
-msgstr ""
+msgstr "Полный FSCK был остановлен"
 
 #: bin/mudur.py:985
 msgid "Filesystem errors corrected"
-msgstr ""
+msgstr "Ошибки файловой системы исправлены"
 
 #: bin/mudur.py:987
 msgid "Fsck could not correct all errors, manual repair needed"
-msgstr ""
+msgstr "Fsck не может исправить все ошибки"
 
 #: bin/mudur.py:995
 msgid "Mounting USB filesystem"
-msgstr ""
+msgstr "Монтаж USB файловой системы"
 
 #: bin/mudur.py:998
 msgid "Mounting local filesystems"
-msgstr ""
+msgstr "Монтаж локальных файловых систем"
 
 #: bin/mudur.py:1018
 msgid "Starting portmap service for NFS"
-msgstr ""
+msgstr "Запуск Portmap службы для NFS"
 
 #: bin/mudur.py:1021
 msgid "Mounting remote filesystems (CTRL-C stops trying)"
