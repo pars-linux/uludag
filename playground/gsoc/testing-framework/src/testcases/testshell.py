@@ -8,7 +8,7 @@ from PyQt4 import QtCore, QtGui
 from interface import Main
 
 
-class TestShell:
+class TestShell(object):
     """This class is used to handle the testcase of shell, in which the user is
     told to run a certain command on and note down the output."""
     def __init__(self, element, packagelist, summmary=None, report=None):

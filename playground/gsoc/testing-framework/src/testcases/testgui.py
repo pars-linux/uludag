@@ -12,7 +12,7 @@ from interface import Main
 from clcolorize import colorize
 
 
-class TestGUI:
+class TestGUI(object):
     """class for the testcase gui."""
     def __init__(self, element, packagelist, summary=None, report=None):
         self.element = element

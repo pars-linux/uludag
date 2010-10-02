@@ -10,7 +10,7 @@ from pisi.errors import PrivilegeError
 from clcolorize import colorize
 
 
-class TestInstall:
+class TestInstall(object):
     """This class will first check for packages which are already installed, then
     will check all the available repositories to see whether the package exists.
     After checking all the above, then only it would proceed to call the Pisi API
