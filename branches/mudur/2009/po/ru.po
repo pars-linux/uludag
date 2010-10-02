@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,24 +17,24 @@ msgstr ""
 
 #: bin/mudur.py:207
 msgid "Cannot write mudur.log, read-only file system"
-msgstr ""
+msgstr "Не возможно записать mudur.log, файл только для чтения"
 
 #: bin/mudur.py:363
 msgid "Safe Mode"
-msgstr ""
+msgstr "Безопасный режим"
 
 #: bin/mudur.py:366
 msgid "Cannot find /etc/pardus-release"
-msgstr ""
+msgstr "Не могу найти /etc/pardus-release"
 
 #: bin/mudur.py:458
 msgid "/etc/env.d/03locale cannot be updated"
-msgstr ""
+msgstr "/etc/env.d/03locale не может быть обновлен"
 
 #: bin/mudur.py:485
 #, python-format
 msgid "Could not set unicode mode on tty %d"
-msgstr ""
+msgstr "Не удалось установить режим Юникод на tty %d"
 
 #: bin/mudur.py:552
 #, python-format
@@ -49,11 +48,11 @@ msgstr ""
 
 #: bin/mudur.py:627
 msgid "No network connection, skipping remote mount."
-msgstr ""
+msgstr "Нет подключения к сети"
 
 #: bin/mudur.py:637
 msgid "Cannot connect to DBus, services won't be started"
-msgstr ""
+msgstr "Не удается подключиться к DBus, сервис не будет запущен"
 
 #: bin/mudur.py:658
 #, python-format
@@ -61,28 +60,30 @@ msgid ""
 "Unable to start network:\n"
 "  %s"
 msgstr ""
+"Не удается запустить сеть: :\n"
+" %s"
 
 #: bin/mudur.py:663
 msgid "Cannot start system logger"
-msgstr ""
+msgstr "Не удается запустить службу журналирования системы"
 
 #: bin/mudur.py:666
 msgid "Starting services"
-msgstr ""
+msgstr "Запуск служб"
 
 #: bin/mudur.py:698
 msgid "Stopping services"
-msgstr ""
+msgstr "Остановка служб"
 
 #: bin/mudur.py:718 bin/mudur.py:738 bin/service.py:161 bin/service.py:270
 #, python-format
 msgid "Starting %s"
-msgstr ""
+msgstr "Запуск %s"
 
 #: bin/mudur.py:728 bin/mudur.py:745 bin/service.py:174 bin/service.py:282
 #, python-format
 msgid "Stopping %s"
-msgstr ""
+msgstr "Остановка %s"
 
 #: bin/mudur.py:770
 msgid "Can't move persistent udev rules from /dev/.udev"
@@ -90,19 +91,19 @@ msgstr ""
 
 #: bin/mudur.py:776
 msgid "Mounting /dev"
-msgstr ""
+msgstr "Монтирование /dev"
 
 #: bin/mudur.py:818
 msgid "Starting udev"
-msgstr ""
+msgstr "Запуск udev"
 
 #: bin/mudur.py:832
 msgid "Populating /dev"
-msgstr ""
+msgstr "Запись /dev"
 
 #: bin/mudur.py:867
 msgid "Removing stale lock file /etc/mtab~"
-msgstr ""
+msgstr "Удаление устаревшего файла блокировки /etc/mtab~"
 
 #: bin/mudur.py:870
 msgid "Failed removing stale lock file /etc/mtab~"
@@ -249,9 +250,7 @@ msgid "Remounting remaining filesystems read-only"
 msgstr ""
 
 #: bin/mudur.py:1298
-msgid ""
-"An internal error occured. Please report to the bugs.pardus.org.tr with "
-"following information:"
+msgid "An internal error occured. Please report to the bugs.pardus.org.tr with following information:"
 msgstr ""
 
 #: bin/mudur.py:1359
