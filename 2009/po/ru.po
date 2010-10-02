@@ -24,19 +24,17 @@ msgid "Safe Mode"
 msgstr "Безопасный режим"
 
 #: bin/mudur.py:366
-#, fuzzy
 msgid "Cannot find /etc/pardus-release"
-msgstr "Не могу найти / и т.д. / Pardus-релиз"
+msgstr "Не могу найти /etc/pardus-release"
 
 #: bin/mudur.py:458
-#, fuzzy
 msgid "/etc/env.d/03locale cannot be updated"
-msgstr "/ Etc/env.d/03locale не может быть обновлен"
+msgstr "/etc/env.d/03locale не может быть обновлен"
 
 #: bin/mudur.py:485
-#, python-format, fuzzy
+#, python-format
 msgid "Could not set unicode mode on tty %d"
-msgstr "Не удалось установить режим Юникод на TTY% D"
+msgstr "Не удалось установить режим Юникод на tty %d"
 
 #: bin/mudur.py:552
 #, python-format
@@ -53,77 +51,72 @@ msgid "No network connection, skipping remote mount."
 msgstr "Нет подключения к сети"
 
 #: bin/mudur.py:637
-#, fuzzy
 msgid "Cannot connect to DBus, services won't be started"
-msgstr "Не удается подключиться к DBus, услуг не будет запущен"
+msgstr "Не удается подключиться к DBus, сервис не будет запущен"
 
 #: bin/mudur.py:658
-#, python-format, fuzzy
+#, python-format
 msgid ""
 "Unable to start network:\n"
 "  %s"
-msgstr "Не удается запустить сеть: \\ п% S"
+msgstr ""
+"Не удается запустить сеть: \n"
+" %s"
 
 #: bin/mudur.py:663
-#, fuzzy
 msgid "Cannot start system logger"
 msgstr "Не удается запустить службу журналирования системы"
 
 #: bin/mudur.py:666
-#, fuzzy
 msgid "Starting services"
 msgstr "Запуск служб"
 
 #: bin/mudur.py:698
-#, fuzzy
 msgid "Stopping services"
 msgstr "Остановка служб"
 
 #: bin/mudur.py:718 bin/mudur.py:738 bin/service.py:161 bin/service.py:270
-#, python-format, fuzzy
+#, python-format
 msgid "Starting %s"
-msgstr "Начиная% S"
+msgstr "Запуск %s"
 
 #: bin/mudur.py:728 bin/mudur.py:745 bin/service.py:174 bin/service.py:282
-#, python-format, fuzzy
+#, python-format
 msgid "Stopping %s"
-msgstr "Остановка% S"
+msgstr "Остановка %s"
 
 #: bin/mudur.py:770
 msgid "Can't move persistent udev rules from /dev/.udev"
-msgstr ""
+msgstr "Не могу установить правила udev для   /dev/.udev"
 
 #: bin/mudur.py:776
-#, fuzzy
 msgid "Mounting /dev"
-msgstr "Монтаж / Dev"
+msgstr "Монтирование /dev"
 
 #: bin/mudur.py:818
-#, fuzzy
 msgid "Starting udev"
-msgstr "Начиная Udev"
+msgstr "Запуск udev"
 
 #: bin/mudur.py:832
-#, fuzzy
 msgid "Populating /dev"
-msgstr "Заполнение / Dev"
+msgstr "Запись /dev"
 
 #: bin/mudur.py:867
-#, fuzzy
 msgid "Removing stale lock file /etc/mtab~"
-msgstr "Удаление устаревший файл блокировки / и т.д. / mtab ~"
+msgstr "Удаление устаревшего файла блокировки  /etc/mtab~"
 
 #: bin/mudur.py:870
 msgid "Failed removing stale lock file /etc/mtab~"
-msgstr ""
+msgstr "Не удалось удалить устаревший файл блокировки/etc/mtab~"
 
 #: bin/mudur.py:881
 msgid "/etc/fstab doesn't contain an entry for the root filesystem"
-msgstr ""
+msgstr "/etc/fstab не содержит записи для корневой файловой системы"
 
 #: bin/mudur.py:887
+#, fuzzy
 msgid "Remounting root filesystem read-only"
-msgstr ""
+msgstr "Перемонтирование корневая файловая система только для чтения"
 
 #: bin/mudur.py:892
 msgid "Checking root filesystem (full check forced)"
