@@ -1,0 +1,464 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Kaptan package.
+# zaG  <zag@vspu.ru, 2010 .
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-25 20:43+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Yasirov Vasia zaG <zag@vspu.ru>\n"
+"Language-Team: Russian <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_ui_scrNetwork.py:105
+msgid "Network"
+msgstr "Сеть"
+
+#: .tmp/ui_ui_scrNetwork.py:106
+msgid ""
+"To create a new connection click on <b>Create Profile</b> and select your "
+"adapter from the list. If your connection is wireless then choose and access "
+"point. After saving your profile click the checkbox to establish the "
+"connection."
+msgstr "Для создания нового соединения нажмите <b>Создать Профиль</b> и укажите"
+"ваше устройство из списка."
+
+#: .tmp/ui_ui_scrNetwork.py:107
+msgid "Network Manager (Press Apply to save your settings)"
+msgstr "Менеджер сети (Укажите и сохраните ваши настройки)"
+
+#: .tmp/ui_ui_scrSearch.py:95
+msgid "Search"
+msgstr "Поиск"
+
+#: .tmp/ui_ui_scrSearch.py:96
+msgid ""
+"Strigi Desktop Search indexes your frequently used files. This gives you "
+"very fast file search results. Strigi also can search for files based on "
+"their contents."
+msgstr ""
+
+#: .tmp/ui_ui_scrSearch.py:97
+msgid "Allow Strigi to index my files"
+msgstr "Разрешить Strigi индексировать мои файлы"
+
+#: .tmp/ui_ui_scrSearch.py:98
+msgid "Search Options"
+msgstr "Параметры поиска"
+
+#: .tmp/ui_ui_scrKeyboard.py:88
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: .tmp/ui_ui_scrKeyboard.py:89
+msgid ""
+"Kaptan automatically selects the best keyboard layout according to your "
+"system language. If you want to use another layout other than the default "
+"keyboard layout, you can make your selection and test it instantly."
+msgstr "Капитан сам выбирает нужную раскладку клавиатуры в соответствии с "
+"языком вашей системы. Вы можете указать раскладку в ручную и затем проверить ее."
+
+#: .tmp/ui_ui_scrKeyboard.py:90
+msgid "Test Layout"
+msgstr "Проверка раскладки"
+
+#: .tmp/ui_ui_scrWallpaper.py:126
+msgid "Wallpaper"
+msgstr "Фон"
+
+#: .tmp/ui_ui_scrWallpaper.py:127
+msgid ""
+"Choose your favorite wallpaper for Pardus. Don't forget to check out "
+"<b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr ""
+
+#: .tmp/ui_ui_scrWallpaper.py:128
+msgid "Wallpapers"
+msgstr "Обои"
+
+#: .tmp/ui_ui_scrWallpaper.py:130
+msgid "Choose wallpaper from file"
+msgstr "Выберите картинку"
+
+#: .tmp/ui_ui_scrWallpaper.py:131
+msgid "Don't change wallpaper"
+msgstr "Не менять обои"
+
+#: .tmp/ui_ui_scrSummary.py:79
+msgid "Summary"
+msgstr "Описание"
+
+#: .tmp/ui_ui_scrSummary.py:80
+msgid ""
+"You have successfully finished all steps. Here's a summary of the settings "
+"you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
+"ready to enjoy Pardus!"
+msgstr ""
+
+#: .tmp/ui_ui_scrSummary.py:81
+msgid "The following settings will be applied"
+msgstr "Параметры будут применены"
+
+#: .tmp/ui_ui_wallpaperItem.py:68 .tmp/ui_ui_scrAvatar.py:239
+#: .tmp/ui_ui_scrStyleItem.py:65
+msgid "Form"
+msgstr "Форма"
+
+#: .tmp/ui_ui_wallpaperItem.py:69
+msgid "wallPaperName"
+msgstr "имя картинки"
+
+#: .tmp/ui_ui_wallpaperItem.py:70
+msgid "wallpaperDesc"
+msgstr "положение"
+
+#: .tmp/ui_ui_scrGoodbye.py:407
+msgid "More"
+msgstr "Подробнее"
+
+#: .tmp/ui_ui_scrGoodbye.py:408
+msgid ""
+"<b>Your settings have been applied.</b> Now you can start enjoying Pardus or "
+"you can checkout the following links and applications for more settings or "
+"for help and support. Don't forget to <b>join our community!</b>"
+msgstr ""
+
+#: .tmp/ui_ui_scrGoodbye.py:409 .tmp/ui_ui_scrGoodbye.py:410
+#: .tmp/ui_ui_scrSmolt.py:150
+msgid "My Smolt Page"
+msgstr "Мой Smolt"
+
+#: .tmp/ui_ui_scrGoodbye.py:411
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr "Перейдите на страницу Smolt и проверьте ваши аппаратные средства"
+
+#: .tmp/ui_ui_scrGoodbye.py:412 .tmp/ui_ui_scrGoodbye.py:414
+msgid "Migration Wizard"
+msgstr "Менеджер миграции"
+
+#: .tmp/ui_ui_scrGoodbye.py:413
+msgid ""
+"A wizard to transfer files and settings from existing operating systems (e."
+"g. Windows) to Pardus."
+msgstr "Менеджев поможет перенести файлы, и настройки из другой операционной "
+"системы в Pardus."
+
+#: .tmp/ui_ui_scrGoodbye.py:415 .tmp/ui_ui_scrGoodbye.py:417
+msgid "System Settings"
+msgstr "Системные настройки"
+
+#: .tmp/ui_ui_scrGoodbye.py:416
+msgid ""
+"Configuration tools for Pardus such as the display, firewall, keyboard, user "
+"manager..."
+msgstr "Инструменты настройки для Pardus включают в себя настройку дисплея, экрана "
+"безопасности, клавиатуру, ползователей и многое другое."
+
+#: .tmp/ui_ui_scrGoodbye.py:418 .tmp/ui_ui_scrGoodbye.py:420
+msgid "Help and Support"
+msgstr "Спарвка и поддержка"
+
+#: .tmp/ui_ui_scrGoodbye.py:419
+msgid ""
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
+msgstr "Pardus сообщества, списки рассылки, чаты, вики документы, справка и "
+"страницы поддержки..."
+
+#: .tmp/ui_ui_scrMouse.py:198
+msgid "Mouse"
+msgstr "Мышька"
+
+#: .tmp/ui_ui_scrMouse.py:199
+msgid ""
+"The <b>clicking behavior</b> defines how many times you want to click when "
+"you are opening a file. If you are <b>left handed</b>, you may prefer to "
+"swap the left and right buttons of your pointing device."
+msgstr ""
+
+#: .tmp/ui_ui_scrMouse.py:200
+msgid "Напстройки щелчка"
+msgstr ""
+
+#: .tmp/ui_ui_scrMouse.py:201
+msgid "Single-click to open files and folders"
+msgstr "Одинарный щелчок для открытия файла и папки"
+
+#: .tmp/ui_ui_scrMouse.py:202
+msgid "Dou&ble-click to open files and folders"
+msgstr "Двойной щелчок для открытия файла и папки"
+
+#: .tmp/ui_ui_scrMouse.py:203
+msgid "Button Order"
+msgstr "Кнопка выбора"
+
+#: .tmp/ui_ui_scrMouse.py:204
+msgid "Right Hand"
+msgstr "Для правши"
+
+#: .tmp/ui_ui_scrMouse.py:205
+msgid "Left Hand"
+msgstr "Для левши"
+
+#: .tmp/ui_ui_scrMouse.py:206
+msgid "Reverse scrolling"
+msgstr "Инвертировать прокрутку"
+
+#: .tmp/ui_ui_scrStyle.py:164
+msgid "Themes"
+msgstr "Тема"
+
+#: .tmp/ui_ui_scrStyle.py:165
+msgid ""
+"Choose your favorite theme and desktop type. Customize Pardus with colorful "
+"styles and themes."
+msgstr "Укажите свои любимые темы и типы Рабочего стола"
+
+#: .tmp/ui_ui_scrStyle.py:166
+msgid "KDE Themes"
+msgstr "KDE Темы"
+
+#: .tmp/ui_ui_scrStyle.py:167
+msgid "Desktop Type"
+msgstr "Тип Рабочего стола"
+
+#: .tmp/ui_ui_scrStyle.py:168
+msgid "Desktop view (KDE4 Style)"
+msgstr "KDE4 Style"
+
+#: .tmp/ui_ui_scrStyle.py:169
+msgid "Folder view (KDE3 Style)"
+msgstr "KDE3 Style"
+
+#: .tmp/ui_ui_scrStyle.py:170
+msgid "Number of Desktops"
+msgstr "Номер Рабочего стола"
+
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
+msgid "Kaptan"
+msgstr "Капитан"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Вас приветствует Мастер настройки"
+
+#: .tmp/ui_ui_scrPackage.py:187
+msgid "Packages"
+msgstr "Пакеты"
+
+#: .tmp/ui_ui_scrPackage.py:188
+msgid "Show updates in the system tray"
+msgstr "Показывать обновления на панеле"
+
+#: .tmp/ui_ui_scrPackage.py:189
+msgid "Check updates automatically every"
+msgstr "Проверять обновления автоматически"
+
+#: .tmp/ui_ui_scrPackage.py:190
+msgid " hours"
+msgstr "часы"
+
+#: .tmp/ui_ui_scrPackage.py:191
+msgid "Contrib repository includes extra and handy programs."
+msgstr "Contrib - репозиторий включающий в себя дополнительные программы"
+
+#: .tmp/ui_ui_scrPackage.py:192
+msgid "Add contrib repository"
+msgstr "Добавить contib репозиторий"
+
+#: .tmp/ui_ui_scrPackage.py:193
+msgid ""
+"To install and remove programs to Pardus, use Package-Manager. Package-"
+"Manager also can automatically install the latest updates available. You can "
+"set the period for checking new updates."
+msgstr "Для установки и удаления программ Pardus, использует менеджер пакетов. "
+"Менеджер пакетов может сам проверять и устанавливать обновления. Капитан "
+"позволяет настроить время для проверки обновлений."
+
+#: .tmp/ui_ui_scrPackage.py:194
+msgid "Updates"
+msgstr "Обновления"
+
+#: .tmp/ui_ui_scrPackage.py:195
+msgid "Repositories"
+msgstr "Репозитории"
+
+#: .tmp/ui_ui_scrSmolt.py:148
+msgid "Smolt"
+msgstr "Smolt"
+
+#: .tmp/ui_ui_scrSmolt.py:149
+msgid ""
+"<b>Smolt</b> is a tool that collects the information in the following table "
+"and sends it to us for which lets us improve Pardus according to the user "
+"profile statistics."
+msgstr "<b>Smolt</b> - это агент который собирает информацию о системе и "
+"отправляет ее нам. Это необходимо для того чтобы мы могли улучшить Pardus, "
+"учитывая требования пользователей."
+
+#: .tmp/ui_ui_scrSmolt.py:151
+msgid "&Send my profile"
+msgstr "&Отправить мой профиль"
+
+#: .tmp/ui_ui_scrSmolt.py:152
+msgid "&Privacy policy"
+msgstr "&Политика безопасности"
+
+#: .tmp/ui_ui_scrSmolt.py:153
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Smolt will only send hardware and basic operating system "
+"information to the Pardus smolt server (smoon).  The only tie from the "
+"database to a submitters machine is the UUID.  As long as the submitter does "
+"not give out this UUID the submission is anonymous.  If at any point in time "
+"a user wants to delete their profile from the database they need only run</"
+"span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   The information sent to the smolt database server should be "
+"considered public in that anyone can view the statistics, data and share "
+"machine profiles.  In  many ways smolt is designed to get hardware vendors "
+"and other 3rd parties attention.  As such, not only will this information be "
+"shared with 3rd parties, we will be using smolt as leverage to gain better "
+"support for open source drivers and better support in general.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" "
+"font-size:9pt;\">  In Pardus's smolt install all web traffic goes through a "
+"proxy server first.  This is the only place IP addresses are being logged "
+"and they are kept on that server for a period of 4 weeks at which time log "
+"rotation removes these logs.  The Pardus Project does not aggregate ip "
+"addresses in the smolt database.  These logs are private and will not be "
+"available to the general public.</span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Users unhappy with this policy should simply not use smolt.  "
+"Users with questions about this policy should contact the Pardus "
+"Infrastructure Team at admin [at] pardus.org.tr  Also remember that users "
+"can delete their profiles at any time using &quot;</span><span style=\" font-"
+"size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-"
+"size:9pt;\">&quot;</span></p></body></html>"
+msgstr ""
+
+#: .tmp/ui_ui_scrAvatar.py:240
+msgid ""
+"This screen helps you set your <b>user picture</b>. You can either choose an "
+"image from a file or you can capture an image from your camera. Select an "
+"option from the <b>options</b> menu."
+msgstr "Здесь вы можете настроить <b>аватар</b>. Изображение можно выбрать из "
+"файла или получить с камеры."
+
+#: .tmp/ui_ui_scrAvatar.py:241
+msgid "Options"
+msgstr "Настройки"
+
+#: .tmp/ui_ui_scrAvatar.py:242
+msgid "Выберите изображение"
+msgstr ""
+
+#: .tmp/ui_ui_scrAvatar.py:243
+msgid "Capture"
+msgstr "Картинка"
+
+#: .tmp/ui_ui_scrAvatar.py:244
+msgid "Recapture"
+msgstr ""
+
+#: .tmp/ui_ui_kaptan.py:329
+msgid "Welcome to Pardus"
+msgstr "Добро пожаловать в Pardus"
+
+#: .tmp/ui_ui_kaptan.py:330
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .tmp/ui_ui_kaptan.py:331
+msgid "Back"
+msgstr "Назад"
+
+#: .tmp/ui_ui_kaptan.py:332
+msgid "Next"
+msgstr "Далее"
+
+#: .tmp/ui_ui_kaptan.py:333
+msgid "Finish"
+msgstr "Готово"
+
+#: .tmp/ui_ui_kaptan.py:334
+msgid "Apply Settings"
+msgstr ""
+
+#: .tmp/ui_ui_scrStyleItem.py:66
+msgid "styleName"
+msgstr ""
+
+#: .tmp/ui_ui_scrStyleItem.py:67
+msgid "styleDesc"
+msgstr ""
+
+#: .tmp/ui_ui_scrMenu.py:118
+msgid "Menu"
+msgstr "Меню"
+
+#: .tmp/ui_ui_scrMenu.py:119
+msgid ""
+"You can also customize your <b>KDE menu</b> as you like. Please choose one "
+"from the following styles."
+msgstr "Вы можете изменить вид KDE меню, установив тот который вам нравится"
+
+#: .tmp/ui_ui_scrMenu.py:120
+msgid "Kick-off Menu"
+msgstr ""
+
+#: .tmp/ui_ui_scrMenu.py:121
+msgid "Simple Menu"
+msgstr ""
+
+#: .tmp/ui_ui_scrMenu.py:122
+msgid "Lancelot Menu"
+msgstr ""
+
+#: .tmp/ui_ui_scrMenu.py:123
+msgid "Sample"
+msgstr ""
+
+#: .tmp/ui_ui_scrWelcome.py:72
+msgid "Welcom"
+msgstr "Добро пожаловать"
+
+#: .tmp/ui_ui_scrWelcome.py:73
+msgid "What is Pardus?"
+msgstr "Что такое Pardus?"
+
+#: .tmp/ui_ui_scrWelcome.py:74
+msgid ""
+"<b>Pardus</b> is a reliable, secure, fast and user friendly operating "
+"system. <br /><br />With Pardus, you can connect to the internet, read your "
+"e-mails, work with your office documents, watch movies, play music, develop "
+"applications, play games and much more! <br /><br /><b>Kaptan</b> will help "
+"you personalize your Pardus workspace easily and quickly. Please click "
+"<b>next</b> in order to begin."
+msgstr "<b>Pardus</b> это быстрая, безопасная и дружелюбная операционная "
+"система. <br /><br />Используя Pardus вы можете работать в сети Internet, "
+"читать вашу почту, работать с офисными документами, смотреть видео, "
+"слушать музыку, создавать приложения, играть в игры и делать многое другое"
+"<br /><br /><b>Капитан</b> поможет kturj и просто настроить ваш Pardus"
+"Пожалуйста нажмите <b>далее</b> для начала настройки."
