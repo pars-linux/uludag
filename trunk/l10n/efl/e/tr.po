@@ -1,16 +1,17 @@
 # This file is put in the public domain.
-# 
+#
 # This translator was created/edited with the Elive translation tool
-# 
+#
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2009, 2010.
+# Muhammet Kara <muhammet.k@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: E17\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-06-27 22:09+0900\n"
-"PO-Revision-Date: 2010-08-07 22:08+0300\n"
-"Last-Translator: H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-10-03 01:49+0300\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2398,7 +2399,7 @@ msgstr "Enlightenment açılır pencere sistemini ayarlayamadı."
 
 #: src/bin/e_main.c:790
 msgid "Setup Paths"
-msgstr ""
+msgstr "Yolları Ayarla"
 
 #: src/bin/e_main.c:808
 msgid "Setup System Controls"
@@ -3138,7 +3139,7 @@ msgstr "Kipler"
 
 #: src/modules/conf/e_mod_main.c:483
 msgid "Configuration Panel Configuration Updated"
-msgstr ""
+msgstr "Yapılandırma Paneli Ayarları Güncellendi"
 
 #: src/modules/conf_applications/e_int_config_apps.c:70
 #: src/modules/conf_applications/e_int_config_apps.c:84
@@ -3340,7 +3341,7 @@ msgstr "Menü Ögesi Etkin"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:86
 msgid "Menu Item Disabled"
-msgstr ""
+msgstr "Menü Ögesi Devre Dışı"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:87
 #: src/modules/conf_fonts/e_int_config_fonts.c:67
@@ -3358,7 +3359,7 @@ msgstr "Pencere Listesi Ögesi"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:90
 msgid "Winlist Item Active"
-msgstr ""
+msgstr "Winlist Ögesi Etkin"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:91
 msgid "Winlist Label"
@@ -3370,6 +3371,7 @@ msgid "Winlist Title"
 msgstr "Pencere Listesi Başlığı"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:93
+#, fuzzy
 msgid "Dialog Background Base"
 msgstr ""
 
@@ -3403,7 +3405,7 @@ msgstr "Girdi Metni"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:105
 msgid "Entry Text Disabled"
-msgstr ""
+msgstr "Giriş Metni Etkisiz"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:106
 msgid "Label Text"
@@ -3411,11 +3413,11 @@ msgstr "Etiket Metni"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:107
 msgid "List Item Text Selected"
-msgstr ""
+msgstr "Liste Ögesi Metni Seçildi"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:108
 msgid "List Item Text (Even)"
-msgstr ""
+msgstr "Liste Ögesi Metni (Çift)"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:109
 msgid "List Item Background Base (Even)"
@@ -3423,7 +3425,7 @@ msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:110
 msgid "List Item Text (Odd)"
-msgstr ""
+msgstr "Liste Ögesi Metni (Tek)"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:111
 msgid "List Item Background Base (Odd)"
@@ -3431,7 +3433,7 @@ msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:112
 msgid "List Header Text (Even)"
-msgstr ""
+msgstr "Liste Başlığı Metni (Çift)"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:113
 msgid "List Header Background Base (Even)"
@@ -3439,7 +3441,7 @@ msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:114
 msgid "List Header Text (Odd)"
-msgstr ""
+msgstr "Liste Başlığı Metni (Tek)"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:116
 msgid "List Header Background Base (Odd)"
@@ -3690,7 +3692,7 @@ msgstr "Kullanıcı Duvar Kağıdı"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:307
 msgid "Custom Wallpaper"
-msgstr ""
+msgstr "Kullanıcı Tanımlı Duvar Kağıdı"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:311
 #: src/modules/conf_imc/e_int_config_imc.c:806
@@ -4829,7 +4831,7 @@ msgstr "%1.0f MB"
 
 #: src/modules/conf_performance/e_int_config_performance.c:137
 msgid "Number of Edje files to cache"
-msgstr ""
+msgstr "Önbelleğe alınacak Edje dosyaları sayısı"
 
 #: src/modules/conf_performance/e_int_config_performance.c:139
 #, c-format
@@ -5246,7 +5248,7 @@ msgstr "Taşırken veya boyutlandırırkenki geometri"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:183
 msgid "Animated shading"
-msgstr ""
+msgstr "Hareketli gölgelendirme"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:188
 msgid "New Window Placement"
@@ -5399,7 +5401,7 @@ msgstr "Diğer Ayarlar"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:232
 msgid "Always pass click events to programs"
-msgstr ""
+msgstr "Tıklama olaylarını daima programlara aktar"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:235
 msgid "Click raises the window"
@@ -5411,7 +5413,7 @@ msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:241
 msgid "Refocus last window on desktop switch"
-msgstr ""
+msgstr "Masaüstü geçişinde son pencereye tekrar odakla"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:244
 msgid "Revert focus when it is lost"
@@ -5437,19 +5439,19 @@ msgstr "Direnç"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:125
 msgid "Resist obstacles"
-msgstr ""
+msgstr "Engellere diren"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:128
 msgid "Other windows"
-msgstr ""
+msgstr "Diğer pencereler"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:137
 msgid "Edge of the screen"
-msgstr ""
+msgstr "Ekranın kenarı"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:146
 msgid "Desktop gadgets"
-msgstr ""
+msgstr "Masaüstü araçları"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:161
 msgid "Keyboard move and resize"
@@ -5501,7 +5503,7 @@ msgstr "Çeşitli Seçenekler"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:172
 msgid "Allow manipulation of maximized windows"
-msgstr ""
+msgstr "Büyütülmüş pencerelerin manipülasyonuna izin ver"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:180
 msgid "Adjust windows on shelf hide"
@@ -5957,7 +5959,7 @@ msgstr ""
 
 #: src/modules/everything/evry_config.c:406
 msgid "Minimum characters for search"
-msgstr ""
+msgstr "Arama için asgari karakter sayısı"
 
 #: src/modules/everything/evry_config.c:415
 msgid "Plugin Trigger"
@@ -6294,7 +6296,7 @@ msgstr "Tek Tık Kullan"
 
 #: src/modules/fileman/e_mod_config.c:251
 msgid "Use Alternate Selection Modifiers"
-msgstr ""
+msgstr "Alternatif Seçim Değiştiricileri Kullan"
 
 #: src/modules/fileman/e_mod_config.c:255
 msgid "Show Icon Extension"
