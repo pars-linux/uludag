@@ -123,7 +123,6 @@ msgid "and"
 msgstr "и"
 
 #: ../media-content/release-notes/releasenotes-en.html:28
-#, fuzzy
 msgid "PiSi"
 msgstr "PiSi"
 
@@ -157,10 +156,9 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "Default desktop environment is updated to"
-msgstr ""
+msgstr "По умолчанию окружение рабочего стола обновлено до"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-#, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.4"
 msgstr "KDE 4.4.4"
@@ -171,11 +169,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
-msgstr ""
+msgstr "Режим Netbook"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
-msgstr ""
+msgstr ", оптимизированный для небольших дисплеев."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
@@ -199,32 +197,39 @@ msgid "KDE 4.4.4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:46
+#, fuzzy
 msgid "Qt 4.6.2"
-msgstr ""
+msgstr "Qt 4.6.2"
 
 #: ../media-content/release-notes/releasenotes-en.html:47
+#, fuzzy
 msgid "Python 2.6.5"
-msgstr ""
+msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
+#, fuzzy
 msgid "OpenOffice.org Office Suite 3.2.1.3"
-msgstr ""
+msgstr "OpenOffice.org Office Suite 3.2.1.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
+#, fuzzy
 msgid "Firefox Web Browser 3.6.3"
-msgstr ""
+msgstr "Firefox Web Browser 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
+#, fuzzy
 msgid "Thunderbird 3.0.4"
-msgstr ""
+msgstr "Thunderbird 3.0.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
+#, fuzzy
 msgid "Gimp 2.6.8"
-msgstr ""
+msgstr "Gimp 2.6.8"
 
 #: ../media-content/release-notes/releasenotes-en.html:52
+#, fuzzy
 msgid "Linux Kernel 2.6.31.13"
-msgstr ""
+msgstr "Linux Kernel 2.6.31.13"
 
 #: ../media-content/release-notes/releasenotes-en.html:53
 msgid "3. Installation requirements"
@@ -236,12 +241,12 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "256 MB memory (1GB or more recommended)"
-msgstr ""
+msgstr "256 MB памяти (1GB рекомендуется)"
 
 #: ../media-content/release-notes/releasenotes-en.html:56
 msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
-msgstr ""
+msgstr "процессор 450 MHz Intel or AMD  (1000 MHz рекомендуется)"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
-msgstr ""
+msgstr "Не менее 4 Гб свободного пространства на жестком диске (10 Гб рекомендуется)"
