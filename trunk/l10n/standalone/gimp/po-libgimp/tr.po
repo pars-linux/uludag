@@ -1,32 +1,34 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
+#
 # Fatih Demir <kabalak@gtranslator>, 2001.
 # Alper Ersoy <aersoy@tfz.net>, 2001.
-# 
+# Muhammet Kara <muhammet.k@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: GIMP 1.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2005-02-02 19:54+0100\n"
-"PO-Revision-Date: 2001-07-16 06:51+0300\n"
-"Last-Translator: Alper Ersoy <aersoy@tfz.net>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"PO-Revision-Date: 2010-10-03 02:52+0300\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../libgimp/gimpbrushmenu.c:129
-#, fuzzy
 msgid "Brush Selection"
-msgstr "Birim Seçimi"
+msgstr "Fırça Seçimi"
 
 #: ../libgimp/gimpbrushmenu.c:158 ../libgimp/gimppatternmenu.c:142
 msgid "_Browse..."
-msgstr ""
+msgstr "G_özat..."
 
 #: ../libgimp/gimpexport.c:215 ../libgimp/gimpexport.c:251
-#, fuzzy, c-format
+#, c-format
 msgid "%s can't handle layers"
-msgstr "katmanları desteklemiyor"
+msgstr "%s katmanları desteklemiyor"
 
 #: ../libgimp/gimpexport.c:216 ../libgimp/gimpexport.c:225
 #: ../libgimp/gimpexport.c:234
@@ -34,14 +36,14 @@ msgid "Merge Visible Layers"
 msgstr "Görülen Katmanları Birleştir"
 
 #: ../libgimp/gimpexport.c:224
-#, fuzzy, c-format
+#, c-format
 msgid "%s can't handle layer offsets, size or opacity"
-msgstr "katmanları desteklemiyor"
+msgstr "%s katman konumlarını, boyut ya da ışık geçirmezliği desteklemiyor"
 
 #: ../libgimp/gimpexport.c:233 ../libgimp/gimpexport.c:242
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle layers as animation frames"
-msgstr "katmanları sadece animasyon kareleri olarak kullanabilir"
+msgstr "%s katmanları sadece animasyon kareleri olarak kullanabilir"
 
 #: ../libgimp/gimpexport.c:234 ../libgimp/gimpexport.c:243
 msgid "Save as Animation"
@@ -53,23 +55,23 @@ msgid "Flatten Image"
 msgstr "Resmi Düzleştir"
 
 #: ../libgimp/gimpexport.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "%s can't handle transparency"
-msgstr "şeffaflığı desteklemiyor"
+msgstr "%s şeffaflığı desteklemiyor"
 
 #: ../libgimp/gimpexport.c:269
-#, fuzzy, c-format
+#, c-format
 msgid "%s can't handle layer masks"
-msgstr "katmanları desteklemiyor"
+msgstr "%s katman maskelerini desteklemiyor"
 
 #: ../libgimp/gimpexport.c:270
 msgid "Apply Layer Masks"
-msgstr ""
+msgstr "Katman Maskelerini Uygula"
 
 #: ../libgimp/gimpexport.c:278
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle RGB images"
-msgstr "sadece KYM resimleri destekliyor"
+msgstr "%s sadece KYM resimleri destekliyor"
 
 #: ../libgimp/gimpexport.c:279 ../libgimp/gimpexport.c:317
 #: ../libgimp/gimpexport.c:326
@@ -77,9 +79,9 @@ msgid "Convert to RGB"
 msgstr "KYM'ye çevir"
 
 #: ../libgimp/gimpexport.c:287
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle grayscale images"
-msgstr "sadece griölçekli resimleri destekliyor"
+msgstr "%s sadece griölçekli resimleri destekliyor"
 
 #: ../libgimp/gimpexport.c:288 ../libgimp/gimpexport.c:317
 #: ../libgimp/gimpexport.c:338
@@ -87,9 +89,9 @@ msgid "Convert to Grayscale"
 msgstr "Griölçekliye çevir"
 
 #: ../libgimp/gimpexport.c:296
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle indexed images"
-msgstr "sadece dizinli resimleri destekler"
+msgstr "%s sadece dizinli (indeksli) resimleri destekler"
 
 #: ../libgimp/gimpexport.c:297 ../libgimp/gimpexport.c:326
 #: ../libgimp/gimpexport.c:336
@@ -101,38 +103,37 @@ msgstr ""
 "(Sonuç üzerinde ince ayar için kendiniz çevirin)"
 
 #: ../libgimp/gimpexport.c:306
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle bitmap (two color) indexed images"
-msgstr "sadece KYM veya dizinli resimleri destekler"
+msgstr "%s sadece biteşlem (iki renk) dizinli resimleri destekler"
 
 #: ../libgimp/gimpexport.c:307
-#, fuzzy
 msgid ""
 "Convert to Indexed using bitmap default settings\n"
 "(Do it manually to tune the result)"
 msgstr ""
-"Öntanımlıları kullanarak dizinliye çevir\n"
+"Öntanımlı biteşlem ayarlarını kullanarak dizinliye çevir\n"
 "(Sonuç üzerinde ince ayar için kendiniz çevirin)"
 
 #: ../libgimp/gimpexport.c:316
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle RGB or grayscale images"
-msgstr "sadece KYM veya griölçekli resimleri destekler"
+msgstr "%s sadece KYM veya griölçekli resimleri destekler"
 
 #: ../libgimp/gimpexport.c:325
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle RGB or indexed images"
-msgstr "sadece KYM veya dizinli resimleri destekler"
+msgstr "%s sadece KYM veya dizinli resimleri destekler"
 
 #: ../libgimp/gimpexport.c:335
-#, fuzzy, c-format
+#, c-format
 msgid "%s can only handle grayscale or indexed images"
-msgstr "sadece griölçekli veya dizinli resimleri destekler"
+msgstr "%s sadece griölçekli veya dizinli resimleri destekler"
 
 #: ../libgimp/gimpexport.c:346
-#, fuzzy, c-format
+#, c-format
 msgid "%s needs an alpha channel"
-msgstr "alfa kanalına ihtiyaç duyar"
+msgstr "%s bir alfa kanalına ihtiyaç duyar"
 
 #: ../libgimp/gimpexport.c:347
 msgid "Add Alpha Channel"
@@ -140,33 +141,33 @@ msgstr "Alfa Kanalı Ekle"
 
 #: ../libgimp/gimpexport.c:381
 msgid "Confirm Save"
-msgstr ""
+msgstr "Kaydetmeyi Onayla"
 
 #: ../libgimp/gimpexport.c:387
 msgid "Confirm"
-msgstr ""
+msgstr "Onayla"
 
 #: ../libgimp/gimpexport.c:454
 msgid "Export File"
 msgstr "Dosyayı Dışarı Aktar"
 
 #: ../libgimp/gimpexport.c:458
-#, fuzzy
 msgid "_Ignore"
-msgstr "Görmezden Gel"
+msgstr "Göz ard_ı et"
 
 #: ../libgimp/gimpexport.c:460
-#, fuzzy
 msgid "_Export"
-msgstr "Dışarı Aktar"
+msgstr "Dı_şa Aktar"
 
 #. the headline
 #: ../libgimp/gimpexport.c:482
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Your image should be exported before it can be saved as %s for the following "
 "reasons:"
-msgstr "Resminiz şu sebepler nedeniyle kaydedilmeden önce dışarı aktarılamadı:"
+msgstr ""
+"Resminiz şu sebepler nedeniyle, %s olarak kaydedilmeden önce dışarı "
+"aktarılmalıdır:"
 
 #. the footline
 #: ../libgimp/gimpexport.c:553
@@ -188,52 +189,44 @@ msgid ""
 msgstr ""
 
 #: ../libgimp/gimpfontmenu.c:89
-#, fuzzy
 msgid "Font Selection"
-msgstr "Birim Seçimi"
+msgstr "Yazı Tipi Seçimi"
 
 #: ../libgimp/gimpgradientmenu.c:104
-#, fuzzy
 msgid "Gradient Selection"
-msgstr "Birim Seçimi"
+msgstr "Gradyan Seçimi"
 
 #: ../libgimp/gimpmenu.c:406 ../libgimpwidgets/gimpintstore.c:181
 msgid "(Empty)"
 msgstr ""
 
 #: ../libgimp/gimppalettemenu.c:91
-#, fuzzy
 msgid "Palette Selection"
-msgstr "Birim Seçimi"
+msgstr "Palet Seçimi"
 
 #: ../libgimp/gimppatternmenu.c:113
-#, fuzzy
 msgid "Pattern Selection"
-msgstr "Birim Seçimi"
+msgstr "Desen Seçimi"
 
 #: ../libgimp/gimpunitcache.c:57
 msgid "percent"
 msgstr "yüzdelik"
 
 #: ../libgimpbase/gimpbaseenums.c:26
-#, fuzzy
 msgid "_White (full opacity)"
-msgstr "_Beyaz (Tam Saydamsız)"
+msgstr "_Beyaz (tam saydamsızlık)"
 
 #: ../libgimpbase/gimpbaseenums.c:27
-#, fuzzy
 msgid "_Black (full transparency)"
-msgstr "_Siyah (Tam Şeffaf)"
+msgstr "_Siyah (tam şeffaflık)"
 
 #: ../libgimpbase/gimpbaseenums.c:28
-#, fuzzy
 msgid "Layer's _alpha channel"
-msgstr "_Katmanın Alfa Kanalı"
+msgstr "Katmanın _alfa kanalı"
 
 #: ../libgimpbase/gimpbaseenums.c:29
-#, fuzzy
 msgid "_Transfer layer's alpha channel"
-msgstr "Katmanı_n Alfa Kanalını Transfer Et"
+msgstr "Katmanın alfa kanalını _transfer et"
 
 #: ../libgimpbase/gimpbaseenums.c:30
 msgid "_Selection"
@@ -252,29 +245,24 @@ msgid "FG to BG (HSV)"
 msgstr "Önplandan Arkaplana (RDD)"
 
 #: ../libgimpbase/gimpbaseenums.c:63
-#, fuzzy
 msgid "FG to transparent"
 msgstr "Önplandan Şeffafa"
 
 #: ../libgimpbase/gimpbaseenums.c:64
-#, fuzzy
 msgid "Custom gradient"
-msgstr "Seçilen Gradyan"
+msgstr "Özel gradyan"
 
 #: ../libgimpbase/gimpbaseenums.c:93
-#, fuzzy
 msgid "FG color fill"
-msgstr "Önplan Rengiyle Doldur"
+msgstr "Önplan rengiyle doldur"
 
 #: ../libgimpbase/gimpbaseenums.c:94
-#, fuzzy
 msgid "BG color fill"
-msgstr "Arkaplan Rengiyle Doldur"
+msgstr "Arkaplan rengiyle doldur"
 
 #: ../libgimpbase/gimpbaseenums.c:95
-#, fuzzy
 msgid "Pattern fill"
-msgstr "Desenle Doldur"
+msgstr "Desenle doldur"
 
 #: ../libgimpbase/gimpbaseenums.c:125
 msgid "Add to the current selection"
@@ -357,14 +345,12 @@ msgid "Black Only"
 msgstr "Sadece Siyah"
 
 #: ../libgimpbase/gimpbaseenums.c:261
-#, fuzzy
 msgid "Image source"
-msgstr "Resim Kaynak"
+msgstr "Resim kaynağı"
 
 #: ../libgimpbase/gimpbaseenums.c:262
-#, fuzzy
 msgid "Pattern source"
-msgstr "Desen Kaynak"
+msgstr "Desen kaynağı"
 
 #: ../libgimpbase/gimpbaseenums.c:290
 msgid "Dodge"
@@ -379,9 +365,8 @@ msgid "Linear"
 msgstr "Doğrusal"
 
 #: ../libgimpbase/gimpbaseenums.c:329
-#, fuzzy
 msgid "Bi-linear"
-msgstr "Çift-yönlü"
+msgstr "Çift-doğrusal"
 
 #: ../libgimpbase/gimpbaseenums.c:330
 msgid "Radial"
@@ -392,14 +377,12 @@ msgid "Square"
 msgstr "Kare"
 
 #: ../libgimpbase/gimpbaseenums.c:332
-#, fuzzy
 msgid "Conical (sym)"
-msgstr "Konik (simetrik)"
+msgstr "Konik (sim)"
 
 #: ../libgimpbase/gimpbaseenums.c:333
-#, fuzzy
 msgid "Conical (asym)"
-msgstr "Konik (asimetrik)"
+msgstr "Konik (asim)"
 
 #: ../libgimpbase/gimpbaseenums.c:334
 #, fuzzy
@@ -417,14 +400,12 @@ msgid "Shaped (dimpled)"
 msgstr "Şekil patlatma (gamzeli)"
 
 #: ../libgimpbase/gimpbaseenums.c:337
-#, fuzzy
 msgid "Spiral (cw)"
 msgstr "Spiral (saat yönü)"
 
 #: ../libgimpbase/gimpbaseenums.c:338
-#, fuzzy
 msgid "Spiral (ccw)"
-msgstr "Spiral (saat yönü)"
+msgstr "Spiral (saat yönünün tersi)"
 
 #: ../libgimpbase/gimpbaseenums.c:367
 msgid "Stock ID"
@@ -435,9 +416,8 @@ msgid "Inline pixbuf"
 msgstr ""
 
 #: ../libgimpbase/gimpbaseenums.c:369
-#, fuzzy
 msgid "Image file"
-msgstr "Resim Boyutu"
+msgstr "Resim dosyası"
 
 #: ../libgimpbase/gimpbaseenums.c:398
 msgid "RGB color"
@@ -476,9 +456,8 @@ msgid "Cubic"
 msgstr ""
 
 #: ../libgimpbase/gimpbaseenums.c:470
-#, fuzzy
 msgid "Lanczos (Best)"
-msgstr "Kübik (En iyi)"
+msgstr "Lanczos (En iyi)"
 
 #: ../libgimpbase/gimpbaseenums.c:498
 msgid "Constant"
@@ -493,23 +472,20 @@ msgid "None"
 msgstr "Yok"
 
 #: ../libgimpbase/gimpbaseenums.c:529
-#, fuzzy
 msgid "Sawtooth wave"
-msgstr "Testere Dişleri Dalga"
+msgstr "Testere dişi"
 
 #: ../libgimpbase/gimpbaseenums.c:530
-#, fuzzy
 msgid "Triangular wave"
-msgstr "Üçgensel Dalga"
+msgstr "Üçgensel dalga"
 
 #: ../libgimpbase/gimpbaseenums.c:558
 msgid "Pixels"
-msgstr "Piksel"
+msgstr "Pikseller"
 
 #: ../libgimpbase/gimpbaseenums.c:559
-#, fuzzy
 msgid "Points"
-msgstr "punto"
+msgstr "Noktalar"
 
 #: ../libgimpbase/gimpbaseenums.c:588
 msgid "Shadows"
@@ -524,19 +500,17 @@ msgid "Highlights"
 msgstr "Yüksektonlar"
 
 #: ../libgimpbase/gimpbaseenums.c:618
-#, fuzzy
 msgid "Forward (traditional)"
-msgstr "İleri (Geleneksel)"
+msgstr "İleri (geleneksel)"
 
 #: ../libgimpbase/gimpbaseenums.c:619
-#, fuzzy
 msgid "Backward (corrective)"
-msgstr "Geri (Düzeltici)"
+msgstr "Geri (düzeltici)"
 
 #: ../libgimpbase/gimpmemsize.c:177
-#, fuzzy, c-format
+#, c-format
 msgid "%d Bytes"
-msgstr "Bayt"
+msgstr "%d Bayt"
 
 #: ../libgimpbase/gimpmemsize.c:182
 #, c-format
@@ -564,9 +538,9 @@ msgid "%.1f MB"
 msgstr ""
 
 #: ../libgimpbase/gimpmemsize.c:205
-#, fuzzy, c-format
+#, c-format
 msgid "%d MB"
-msgstr "Bayt"
+msgstr "%d MB"
 
 #: ../libgimpbase/gimpmemsize.c:212
 #, c-format
@@ -579,9 +553,9 @@ msgid "%.1f GB"
 msgstr ""
 
 #: ../libgimpbase/gimpmemsize.c:220
-#, fuzzy, c-format
+#, c-format
 msgid "%d GB"
-msgstr "Bayt"
+msgstr "%d GB"
 
 #: ../libgimpbase/gimputils.c:169 ../libgimpbase/gimputils.c:174
 msgid "(invalid UTF-8 string)"
@@ -604,14 +578,14 @@ msgid "invalid value '%s' for token %s"
 msgstr "Geçersiz seçenek '%s' (anahtar %s)"
 
 #: ../libgimpconfig/gimpconfig-deserialize.c:512
-#, fuzzy, c-format
+#, c-format
 msgid "invalid value '%ld' for token %s"
-msgstr "Geçersiz seçenek '%s' (anahtar %s)"
+msgstr "'%ld' değeri geçersiz (%s anahtarı için)"
 
 #: ../libgimpconfig/gimpconfig-deserialize.c:581
-#, fuzzy, c-format
+#, c-format
 msgid "while parsing token '%s': %s"
-msgstr "Dosya %s acılamadı: %s"
+msgstr "'%s' anahtarı işlenirken: %s"
 
 #: ../libgimpconfig/gimpconfig-iface.c:454
 #: ../libgimpconfig/gimpconfig-iface.c:467 ../libgimpconfig/gimpscanner.c:513
@@ -620,57 +594,61 @@ msgid "fatal parse error"
 msgstr ""
 
 #: ../libgimpconfig/gimpconfig-path.c:349
-#, fuzzy, c-format
+#, c-format
 msgid "Cannot expand ${%s}"
-msgstr "Geriye alınamıyor: %s"
+msgstr "${%s} genişletilemiyor"
 
 #: ../libgimpconfig/gimpconfigwriter.c:134
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create temporary file for '%s': %s"
-msgstr "'%s' palet dosyası açılamıyor: %s"
+msgstr "'%s' için geçici dosya oluşturulamadı: %s"
 
 #: ../libgimpconfig/gimpconfigwriter.c:147
-#, fuzzy, c-format
+#, c-format
 msgid "Could not open '%s' for writing: %s"
-msgstr "'%s' dosyası açılamadı"
+msgstr "'%s' yazma işlemi için açılamadı: %s"
 
 #: ../libgimpconfig/gimpconfigwriter.c:666
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Error writing to temporary file for '%s': %s\n"
 "The original file has not been touched."
-msgstr "Dosya %s acılamadı: %s"
+msgstr ""
+"'%s' için geçici dosyaya yazarken hata oluştu: %s\n"
+"Asıl dosyada bir değişiklik yapılmadı."
 
 #: ../libgimpconfig/gimpconfigwriter.c:674
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "Error writing to temporary file for '%s': %s\n"
 "No file has been created."
-msgstr "Dosya %s acılamadı: %s"
+msgstr ""
+"'%s' için geçici dosyaya yazarken hata oluştu: %s\n"
+"Hiçbir dosya oluşturulmadı."
 
 #: ../libgimpconfig/gimpconfigwriter.c:685
-#, fuzzy, c-format
+#, c-format
 msgid "Error writing to '%s': %s"
-msgstr "taranırken hata oldu: \"%s\"\n"
+msgstr "'%s' e yazılırken bir hata oluştu: %s"
 
 #: ../libgimpconfig/gimpconfigwriter.c:703
-#, fuzzy, c-format
+#, c-format
 msgid "Could not create '%s': %s"
-msgstr "'%s' dosyası açılamadı"
+msgstr "'%s' oluşturulamadı: %s"
 
 #: ../libgimpconfig/gimpscanner.c:100
-#, fuzzy, c-format
+#, c-format
 msgid "Could not open '%s' for reading: %s"
-msgstr "'%s' dosyası açılamadı"
+msgstr "'%s' okuma işlemi için açılamadı: %s"
 
 #: ../libgimpconfig/gimpscanner.c:270
 msgid "invalid UTF-8 string"
 msgstr "Geçersiz UTF-8 dizgesi"
 
 #: ../libgimpconfig/gimpscanner.c:621
-#, fuzzy, c-format
+#, c-format
 msgid "Error while parsing '%s' in line %d: %s"
-msgstr "Dosya %s acılamadı: %s"
+msgstr "'%s' (%d satırında) ayrıştırılırken bir hata oluştu: %s"
 
 #: ../libgimpmodule/gimpmodule.c:177
 #, c-format
@@ -716,14 +694,12 @@ msgid "Could not create thumbnail for %s: %s"
 msgstr ""
 
 #: ../libgimpwidgets/gimpcolorbutton.c:99
-#, fuzzy
 msgid "_Foreground Color"
-msgstr "/Önplan Rengini Kullan"
+msgstr "_Önplan Rengi"
 
 #: ../libgimpwidgets/gimpcolorbutton.c:103
-#, fuzzy
 msgid "_Background Color"
-msgstr "/Arkaplan Rengini Kullan"
+msgstr "_Arkaplan Rengi"
 
 #: ../libgimpwidgets/gimpcolorbutton.c:107
 msgid "Blac_k"
@@ -803,28 +779,24 @@ msgid "Old:"
 msgstr ""
 
 #: ../libgimpwidgets/gimpfileentry.c:351
-#, fuzzy
 msgid "Select Folder"
-msgstr "Dosya Seç"
+msgstr "Klasör Seç"
 
 #: ../libgimpwidgets/gimpfileentry.c:353
 msgid "Select File"
 msgstr "Dosya Seç"
 
 #: ../libgimpwidgets/gimpmemsizeentry.c:232
-#, fuzzy
 msgid "Kilobytes"
 msgstr "Kilobayt"
 
 #: ../libgimpwidgets/gimpmemsizeentry.c:233
-#, fuzzy
 msgid "Megabytes"
 msgstr "Megabayt"
 
 #: ../libgimpwidgets/gimpmemsizeentry.c:234
-#, fuzzy
 msgid "Gigabytes"
-msgstr "Megabayt"
+msgstr "Gigabayt"
 
 #: ../libgimpwidgets/gimppatheditor.c:243
 msgid "Writable"
@@ -854,9 +826,8 @@ msgid "_Preview"
 msgstr "Öniz_leme"
 
 #: ../libgimpwidgets/gimpstock.c:113
-#, fuzzy
 msgid "Anchor"
-msgstr "inç"
+msgstr "Çapa"
 
 #: ../libgimpwidgets/gimpstock.c:114
 msgid "C_enter"
@@ -943,24 +914,23 @@ msgid "Factor"
 msgstr "Etken"
 
 #: ../libgimpwidgets/gimpwidgets.c:1001
-#, fuzzy
 msgid ""
 "Use this value for random number generator seed - this allows you to repeat "
 "a given \"random\" operation"
 msgstr ""
-"Eğer \"Zaman\" düğmesi basılı değilse, bu değeri raslantısal sayı üreticinin "
-"tohumu olarak kullan - bu \"raslantısal\" bir işlemi tekrarlamanızı sağlar"
+"Bu değeri raslantısal sayı üreticinin tohumu olarak kullan - bu verilan "
+"\"raslantısal\" "
+"bir işlemi tekrarlamanızı sağlar"
 
 #: ../libgimpwidgets/gimpwidgets.c:1005
 msgid "_New Seed"
-msgstr ""
+msgstr "Ye_ni Tohum"
 
 #: ../libgimpwidgets/gimpwidgets.c:1018
-#, fuzzy
 msgid "Seed random number generator with a generated random number"
 msgstr ""
-"Raslantısal sayı üreticinin tohumu olarak şu anki zamanı kullan - bu makul "
-"bir raslantısallığı garantiler"
+"Raslantısal sayı üreticinin tohumu olarak, üretilmiş rasgele bir sayıyı "
+"kullan"
 
 #: ../libgimpwidgets/gimpwidgets.c:1022
 msgid "_Randomize"
@@ -1117,3 +1087,5 @@ msgstr ""
 #: ../modules/colorsel_water.c:220
 msgid "Pressure"
 msgstr ""
+
+
