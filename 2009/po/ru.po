@@ -2068,7 +2068,7 @@ msgstr "Файлы пользователя"
 
 #: yali4/partitiontype.py:53
 msgid "as User Files (optional)"
-msgstr ""
+msgstr "User Files (опционально)"
 
 #: yali4/partitiontype.py:56
 #, fuzzy
@@ -2077,7 +2077,7 @@ msgstr "Swap"
 
 #: yali4/partitiontype.py:64
 msgid "as Swap Space (optional)"
-msgstr ""
+msgstr "Swap space (опционально)"
 
 #: yali4/partitiontype.py:67
 msgid "Archive Partition"
@@ -2085,12 +2085,12 @@ msgstr "Архив раздела"
 
 #: yali4/partitiontype.py:82
 msgid "as Storage Area"
-msgstr ""
+msgstr "как Storage Area"
 
 #: yali4/postinstall.py:184
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
-msgstr ""
+msgstr "Создание домашнего каталога пользователя<b>%s</b> "
 
 #: yali4/storage.py:375
 #, python-format
