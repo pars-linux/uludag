@@ -17,4 +17,4 @@ msgstr ""
 
 #: pisirunner.cpp:120
 msgid "Install '%1' containing the application '%2'"
-msgstr "Установить \"% 1\", содержащие '% 2' приложения"
+msgstr "Установить '% 1', содержащее приложение '% 2'"
