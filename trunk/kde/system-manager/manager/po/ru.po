@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,94 +18,90 @@ msgstr ""
 #: data/kcm_systemmanager.desktop.in.h:1 data/systemmanager.desktop.in.h:2
 #: src/systemmanager/about.py:20 src/systemmanager/about.py:22
 msgid "System Manager"
-msgstr ""
+msgstr "Менеджер системы"
 
 #: data/systemmanager.desktop.in.h:1
-msgid ""
-"An application for managing settings like system language, keyboard and "
-"timezone."
-msgstr ""
+msgid "An application for managing settings like system language, keyboard and timezone."
+msgstr "Приложение для управления настройками, такими как язык системы, клавиатуры и часового пояса."
 
 #: src/systemmanager/about.py:24
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/systemmanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Current Maintainer"
 
 #: src/systemmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Yasirov Vasia"
 
 #: src/systemmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "zag@vspu.ru"
 
 #: src/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Нет пакетов, которые обеспечивают основу для этого приложения.\n"
+" Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
 
 #: src/systemmanager/main.py:98
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: ui/ui_main.py:160
 msgid "Language Settings"
-msgstr ""
+msgstr "Настройки языка"
 
 #: ui/ui_main.py:161
 msgid "System Language:"
-msgstr ""
+msgstr "Язык системы:"
 
 #: ui/ui_main.py:162
 msgid "Console Keyboard Layout:"
-msgstr ""
+msgstr "Раскладка клавиатуры для консоли:"
 
 #: ui/ui_main.py:163
-msgid ""
-"Note that these settings do not effect your desktop. Desktop settings can be "
-"changed in 'Regional & Language' module in System Settings."
-msgstr ""
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Обратите внимание, что эти параметры не влияют на рабочий стол. Настройки рабочего стола можут быть изменены в \"Регионы и язык\" в настройках системы."
 
 #: ui/ui_main.py:164
 msgid "Service Settings"
-msgstr ""
+msgstr "Настройка служб"
 
 #: ui/ui_main.py:165
 msgid "First Service to Start:"
-msgstr ""
+msgstr "Первый запуск службы:"
 
 #: ui/ui_main.py:166
-msgid ""
-"Although services are started parallel manner in boot process, users may "
-"want to start a single service before checking dependencies."
-msgstr ""
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Хотя службы запускаются параллельно в процессе загрузки, пользователи могут могут изменить порядок запуска служб."
 
 #: ui/ui_main.py:167
 msgid "Clock Settings"
-msgstr ""
+msgstr "Установка часов"
 
 #: ui/ui_main.py:168
 msgid "Keep the hardware clock in UTC"
-msgstr ""
+msgstr "Настройка аппаратных часов в UTC"
 
 #: ui/ui_main.py:169
 msgid "Normalize systematic drift of the hardware clock"
-msgstr ""
+msgstr "Нормализация систематического обновления из аппаратных часов"
 
 #: ui/ui_main.py:170
 msgid "Console Settings"
-msgstr ""
+msgstr "Настройки консоли"
 
 #: ui/ui_main.py:171
 msgid "Number of Real Consoles:"
-msgstr ""
+msgstr "Число реальных консоли:"
