@@ -155,6 +155,9 @@ msgid ""
 "   You can either login below and manually check your filesytem(s) OR\n"
 "   restart your system, press F3 and select 'FS check' from boot menu\n"
 msgstr ""
+"Корневая файловая система не может быть смонтирована для чтения и записи\n"
+" Вы можете Войти ниже и вручную проверить файловую систему(ы) или\n"
+" перезагрузить систему, нажмите F3 и выберите \"FS проверить\" из меню загрузки\n"
 
 #: bin/mudur.py:944
 msgid "Couldn't synchronize /etc/mtab from /proc/mounts"
