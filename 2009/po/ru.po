@@ -17,24 +17,26 @@ msgstr ""
 
 #: bin/mudur.py:207
 msgid "Cannot write mudur.log, read-only file system"
-msgstr "Не возможно записать mudur.log, файл только для чтения"
+msgstr "Вы не можете написать mudur.log, только для чтения файловой системы"
 
 #: bin/mudur.py:363
 msgid "Safe Mode"
 msgstr "Безопасный режим"
 
 #: bin/mudur.py:366
+#, fuzzy
 msgid "Cannot find /etc/pardus-release"
-msgstr "Не могу найти /etc/pardus-release"
+msgstr "Не могу найти / и т.д. / Pardus-релиз"
 
 #: bin/mudur.py:458
+#, fuzzy
 msgid "/etc/env.d/03locale cannot be updated"
-msgstr "/etc/env.d/03locale не может быть обновлен"
+msgstr "/ Etc/env.d/03locale не может быть обновлен"
 
 #: bin/mudur.py:485
-#, python-format
+#, python-format, fuzzy
 msgid "Could not set unicode mode on tty %d"
-msgstr "Не удалось установить режим Юникод на tty %d"
+msgstr "Не удалось установить режим Юникод на TTY% D"
 
 #: bin/mudur.py:552
 #, python-format
@@ -51,59 +53,65 @@ msgid "No network connection, skipping remote mount."
 msgstr "Нет подключения к сети"
 
 #: bin/mudur.py:637
+#, fuzzy
 msgid "Cannot connect to DBus, services won't be started"
-msgstr "Не удается подключиться к DBus, сервис не будет запущен"
+msgstr "Не удается подключиться к DBus, услуг не будет запущен"
 
 #: bin/mudur.py:658
-#, python-format
+#, python-format, fuzzy
 msgid ""
 "Unable to start network:\n"
 "  %s"
-msgstr ""
-"Не удается запустить сеть: :\n"
-" %s"
+msgstr "Не удается запустить сеть: \\ п% S"
 
 #: bin/mudur.py:663
+#, fuzzy
 msgid "Cannot start system logger"
 msgstr "Не удается запустить службу журналирования системы"
 
 #: bin/mudur.py:666
+#, fuzzy
 msgid "Starting services"
 msgstr "Запуск служб"
 
 #: bin/mudur.py:698
+#, fuzzy
 msgid "Stopping services"
 msgstr "Остановка служб"
 
 #: bin/mudur.py:718 bin/mudur.py:738 bin/service.py:161 bin/service.py:270
-#, python-format
+#, python-format, fuzzy
 msgid "Starting %s"
-msgstr "Запуск %s"
+msgstr "Начиная% S"
 
 #: bin/mudur.py:728 bin/mudur.py:745 bin/service.py:174 bin/service.py:282
-#, python-format
+#, python-format, fuzzy
 msgid "Stopping %s"
-msgstr "Остановка %s"
+msgstr "Остановка% S"
 
 #: bin/mudur.py:770
 msgid "Can't move persistent udev rules from /dev/.udev"
 msgstr ""
 
 #: bin/mudur.py:776
+#, fuzzy
 msgid "Mounting /dev"
-msgstr "Монтирование /dev"
+msgstr "Монтаж / Dev"
 
 #: bin/mudur.py:818
+#, fuzzy
 msgid "Starting udev"
-msgstr "Запуск udev"
+msgstr "Начиная Udev"
 
 #: bin/mudur.py:832
+#, fuzzy
 msgid "Populating /dev"
-msgstr "Запись /dev"
+msgstr "Заполнение / Dev"
 
 #: bin/mudur.py:867
+#, fuzzy
 msgid "Removing stale lock file /etc/mtab~"
-msgstr "Удаление устаревшего файла блокировки /etc/mtab~"
+msgstr "Удаление устаревший файл блокировки / и т.д. / mtab ~"
 
 #: bin/mudur.py:870
 msgid "Failed removing stale lock file /etc/mtab~"
@@ -359,19 +367,19 @@ msgstr ""
 
 #: bin/service.py:259
 msgid "You must be root to use that."
-msgstr ""
+msgstr "Вы должны быть суперпользователем, чтобы использовать его."
 
 #: bin/service.py:278
 msgid "Unable to start DBus"
-msgstr ""
+msgstr "Не удается запустить DBus"
 
 #: bin/service.py:292
 msgid "DBus is not running."
-msgstr ""
+msgstr "DBus не работает."
 
 #: bin/service.py:294
 msgid "DBus is running."
-msgstr ""
+msgstr "DBus работает."
 
 #: bin/service.py:299
 msgid ""
@@ -394,4 +402,4 @@ msgstr ""
 #: bin/service.py:355
 #, python-format
 msgid "No such service: %s"
-msgstr ""
+msgstr "Нет такой службы: %s"
