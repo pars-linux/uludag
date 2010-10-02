@@ -1,7 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -1978,82 +1977,66 @@ msgid "Belgium"
 msgstr "Belgium"
 
 #: yali4/localedata.py:228
-#, fuzzy
 msgid "French"
 msgstr "French"
 
 #: yali4/localedata.py:239
-#, fuzzy
 msgid "Bulgarian"
 msgstr "Bulgarian"
 
 #: yali4/localedata.py:249
-#, fuzzy
 msgid "Slovenian"
 msgstr "Slovenian"
 
 #: yali4/localedata.py:259
-#, fuzzy
 msgid "Croatian"
 msgstr "Croatian"
 
 #: yali4/localedata.py:269
-#, fuzzy
 msgid "German"
 msgstr "German"
 
 #: yali4/localedata.py:280
-#, fuzzy
 msgid "Danish"
 msgstr "Danish"
 
 #: yali4/localedata.py:290
-#, fuzzy
 msgid "Brazilian"
 msgstr "Brazilian"
 
 #: yali4/localedata.py:300
-#, fuzzy
 msgid "Finnish"
 msgstr "Finnish"
 
 #: yali4/localedata.py:310
-#, fuzzy
 msgid "Hungarian"
 msgstr "Hungarian"
 
 #: yali4/localedata.py:320
-#, fuzzy
 msgid "Japanese"
 msgstr "Japanese"
 
 #: yali4/localedata.py:330
-#, fuzzy
 msgid "Malayalam"
 msgstr "Malayalam"
 
 #: yali4/localedata.py:340
-#, fuzzy
 msgid "Swedish"
 msgstr "Swedish"
 
 #: yali4/localedata.py:351
-#, fuzzy
 msgid "Macedonian"
 msgstr "Macedonian"
 
 #: yali4/localedata.py:361
-#, fuzzy
 msgid "Slovak"
 msgstr "Slovak"
 
 #: yali4/localedata.py:371
-#, fuzzy
 msgid "Ukrainian"
 msgstr "Ukrainian"
 
 #: yali4/localedata.py:381
-#, fuzzy
 msgid "Serbian"
 msgstr "Serbian"
 
@@ -2062,7 +2045,6 @@ msgid "unknown"
 msgstr ""
 
 #: yali4/partition.py:206
-#, fuzzy
 msgid "free space"
 msgstr "свободное место"
 
@@ -2083,8 +2065,9 @@ msgid "as User Files (optional)"
 msgstr ""
 
 #: yali4/partitiontype.py:56
+#, fuzzy
 msgid "Swap"
-msgstr ""
+msgstr "Swap"
 
 #: yali4/partitiontype.py:64
 msgid "as Swap Space (optional)"
