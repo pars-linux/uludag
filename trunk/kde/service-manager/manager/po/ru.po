@@ -72,7 +72,7 @@ msgstr "Запуск службы"
 
 #: ui/ui_item.py:112
 msgid "Reload service"
-msgstr "Перезагрузка службы"
+msgstr "Перезагрузк службы"
 
 #: ui/ui_item.py:113
 msgid "Stop service"
@@ -80,7 +80,7 @@ msgstr "Остановка службы"
 
 #: ui/ui_item.py:114
 msgid "Run on start"
-msgstr "Запустить"
+msgstr "Запускать автоматически"
 
 #: ui/ui_main.py:62
 msgid "type service name to search..."
