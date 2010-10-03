@@ -31,6 +31,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.last_msg = None
         self.enableOverlay()
 
+        self._disable_parent_in_shown = True
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def _show(self):
