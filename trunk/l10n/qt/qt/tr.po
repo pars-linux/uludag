@@ -1,12 +1,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Muhammet Kara <muhammet.k@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 09:32+0300\n"
-"PO-Revision-Date: 2010-08-13 16:49+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-10-03 03:42+0300\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1343,7 +1344,7 @@ msgstr "\"%1\" özelliğinde bağlama döngüsü bulundu "
 #: QDeclarativeCompiledBindings#1
 msgctxt "QDeclarativeCompiledBindings#1"
 msgid "Binding loop detected for property \"%1\""
-msgstr ""
+msgstr "\"%1\" özelliğinde bağlama döngüsü bulundu"
 
 #: QDeclarativeCompiler#1
 msgid "Invalid property assignment: \"%1\" is a read-only property"
@@ -1431,31 +1432,31 @@ msgstr "id özgün değil"
 
 #: QDeclarativeCompiler#22
 msgid "Invalid component body specification"
-msgstr ""
+msgstr "Geçersiz bileşen gövdesi belirtimi"
 
 #: QDeclarativeCompiler#23
 msgid "Component objects cannot declare new properties."
-msgstr ""
+msgstr "Bileşen nesneleri yeni özellikler bildiremez."
 
 #: QDeclarativeCompiler#24
 msgid "Component objects cannot declare new signals."
-msgstr ""
+msgstr "Bileşen nesneleri yeni sinyaller bildiremez."
 
 #: QDeclarativeCompiler#25
 msgid "Component objects cannot declare new functions."
-msgstr ""
+msgstr "Bileşen nesneleri yeni işlevler (fonksiyonlar) bildiremez."
 
 #: QDeclarativeCompiler#26
 msgid "Cannot create empty component specification"
-msgstr ""
+msgstr "Boş bileşen belirtimi oluşturulamaz"
 
 #: QDeclarativeCompiler#27
 msgid "Incorrectly specified signal assignment"
-msgstr ""
+msgstr "Yanlış belirtilmiş sinyal ataması"
 
 #: QDeclarativeCompiler#28
 msgid "Cannot assign a value to a signal (expecting a script to be run)"
-msgstr ""
+msgstr "Bir sinyale değer atanamaz (çalıştırılacak bir betik bekleniyor)"
 
 #: QDeclarativeCompiler#29
 msgid "Empty signal assignment"
@@ -1467,32 +1468,32 @@ msgstr "Boş özellik ataması"
 
 #: QDeclarativeCompiler#31
 msgid "Attached properties cannot be used here"
-msgstr ""
+msgstr "İliştirilmiş özellikler burada kullanılamaz"
 
 #: QDeclarativeCompiler#32
 msgid "Non-existent attached object"
-msgstr ""
+msgstr "Var olmayan iliştirilmiş nesne"
 
 #: QDeclarativeCompiler#33
 msgid "Invalid attached object assignment"
-msgstr ""
+msgstr "Geçersiz bir iliştirilmiş nesne ataması"
 
 #: QDeclarativeCompiler#34
 msgid "Cannot assign to non-existent default property"
-msgstr ""
+msgstr "Var olmayan varsayılan özelliğe atama yapılamaz"
 
 #: QDeclarativeCompiler#35
 msgctxt "QDeclarativeCompiler#35"
 msgid "Cannot assign to non-existent property \"%1\""
-msgstr ""
+msgstr "Var olmayan \"%1\" özelliğine atama yapılamaz"
 
 #: QDeclarativeCompiler#36
 msgid "Invalid use of namespace"
-msgstr ""
+msgstr "Geçersiz isim alanı kullanımı"
 
 #: QDeclarativeCompiler#37
 msgid "Not an attached property name"
-msgstr ""
+msgstr "İliştirilmiş bir özellik adı değil"
 
 #: QDeclarativeCompiler#38
 msgid "Invalid use of id property"
@@ -1504,19 +1505,19 @@ msgstr ""
 
 #: QDeclarativeCompiler#40
 msgid "Invalid grouped property access"
-msgstr ""
+msgstr "Geçersiz gruplandırılmış özellik erişimi"
 
 #: QDeclarativeCompiler#41
 msgid "Cannot assign a value directly to a grouped property"
-msgstr ""
+msgstr "Gruplandırılmış bir özelliğe doğrudan bir değer atanamaz"
 
 #: QDeclarativeCompiler#42
 msgid "Invalid property use"
-msgstr ""
+msgstr "Geçersiz özellik kullanımı"
 
 #: QDeclarativeCompiler#43
 msgid "Property assignment expected"
-msgstr ""
+msgstr "Özellik ataması bekleniyor"
 
 #: QDeclarativeCompiler#44
 msgid "Single property assignment expected"
