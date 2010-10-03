@@ -1,17 +1,20 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Fatih Demir <kabalak@gtranslator.org>
-# 
+#
+# Muhammet Kara <muhammet.k@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: GIMP 1.2.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2004-12-28 15:41+0100\n"
-"PO-Revision-Date: 2003-12-31 17:49+0000\n"
-"Last-Translator: Fatih Demir <kabalak@gtranslator.org>\n"
-"Language-Team: Turkish <gnome-turk@gnome.org>\n"
+"PO-Revision-Date: 2010-10-03 03:18+0300\n"
+"Last-Translator: Muhammet Kara <muhammet.k@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: plug-ins/FractalExplorer/Dialogs.c:523 plug-ins/gfig/gfig-dialog.c:283
 #: plug-ins/gflare/gflare.c:891
@@ -536,37 +539,31 @@ msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:331 plug-ins/MapObject/mapobject_ui.c:649
 msgid "Light Settings"
-msgstr ""
+msgstr "Işık Ayarları"
 
 #: plug-ins/Lighting/lighting_ui.c:344
-#, fuzzy
 msgid "Light 1"
-msgstr "Hafif"
+msgstr "Işık 1"
 
 #: plug-ins/Lighting/lighting_ui.c:345
-#, fuzzy
 msgid "Light 2"
-msgstr "Hafif"
+msgstr "Işık 2"
 
 #: plug-ins/Lighting/lighting_ui.c:346
-#, fuzzy
 msgid "Light 3"
-msgstr "Hafif"
+msgstr "Işık 3"
 
 #: plug-ins/Lighting/lighting_ui.c:347
-#, fuzzy
 msgid "Light 4"
-msgstr "Hafif"
+msgstr "Işık 4"
 
 #: plug-ins/Lighting/lighting_ui.c:348
-#, fuzzy
 msgid "Light 5"
-msgstr "Hafif"
+msgstr "Işık 5"
 
 #: plug-ins/Lighting/lighting_ui.c:349
-#, fuzzy
 msgid "Light 6"
-msgstr "Hafif"
+msgstr "Işık 6"
 
 #. row labels
 #: plug-ins/Lighting/lighting_ui.c:358 plug-ins/common/spheredesigner.c:2624
@@ -574,9 +571,8 @@ msgid "Type:"
 msgstr "Tür:"
 
 #: plug-ins/Lighting/lighting_ui.c:363
-#, fuzzy
 msgid "Color:"
-msgstr "_Renk:"
+msgstr "Renk:"
 
 #: plug-ins/Lighting/lighting_ui.c:370
 msgid "Directional"
@@ -591,23 +587,20 @@ msgid "Type of light source to apply"
 msgstr "Uygulanacak ışık kaynağının türü"
 
 #: plug-ins/Lighting/lighting_ui.c:388 plug-ins/MapObject/mapobject_ui.c:679
-#, fuzzy
 msgid "Select lightsource color"
-msgstr "Işık Kaynağı Rengini Seç"
+msgstr "Işık kaynağı rengini seç"
 
 #: plug-ins/Lighting/lighting_ui.c:400 plug-ins/MapObject/mapobject_ui.c:692
 msgid "Set light source color"
-msgstr "Işık kaynağı rengini seçin"
+msgstr "Işık kaynağı rengini ayarlayın"
 
 #: plug-ins/Lighting/lighting_ui.c:408
-#, fuzzy
 msgid "_Intensity:"
-msgstr "Yoğunluk Seviyeleri"
+msgstr "Yoğunluk:"
 
 #: plug-ins/Lighting/lighting_ui.c:414
-#, fuzzy
 msgid "Light intensity"
-msgstr "Işıklandırma Etkileri"
+msgstr "Işık yoğunluğu"
 
 #: plug-ins/Lighting/lighting_ui.c:417 plug-ins/MapObject/mapobject_ui.c:694
 #: plug-ins/MapObject/mapobject_ui.c:1021
@@ -691,41 +684,36 @@ msgid "Light source Z direction in XYZ space"
 msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:502
-#, fuzzy
 msgid "I_solate"
-msgstr "Sil"
+msgstr "Yalıt"
 
 #: plug-ins/Lighting/lighting_ui.c:512
-#, fuzzy
 msgid "Lighting preset:"
-msgstr "Işıklandırma Etkileri"
+msgstr "Işıklandırma önayarı:"
 
 #: plug-ins/Lighting/lighting_ui.c:558
 msgid "Material properties"
 msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:576
-#, fuzzy
 msgid "_Glowing:"
-msgstr "_Ayarlar"
+msgstr "Parlama:"
 
 #: plug-ins/Lighting/lighting_ui.c:592 plug-ins/MapObject/mapobject_ui.c:859
 msgid "Amount of original color to show where no direct light falls"
 msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:605
-#, fuzzy
 msgid "_Bright:"
-msgstr "_Parlaklık:"
+msgstr "Parlaklık:"
 
 #: plug-ins/Lighting/lighting_ui.c:621 plug-ins/MapObject/mapobject_ui.c:888
 msgid "Intensity of original color when lit by a light source"
 msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:634
-#, fuzzy
 msgid "_Shiny:"
-msgstr "_Sinüs"
+msgstr "Pırıltılı:"
 
 #: plug-ins/Lighting/lighting_ui.c:650 plug-ins/MapObject/mapobject_ui.c:960
 msgid "Controls how intense the highlights will be"
@@ -782,9 +770,8 @@ msgid "Cu_rve:"
 msgstr "Eğri:"
 
 #: plug-ins/Lighting/lighting_ui.c:776
-#, fuzzy
 msgid "Ma_ximum height:"
-msgstr "A_zami Yükseklik:"
+msgstr "A_zami yükseklik:"
 
 #: plug-ins/Lighting/lighting_ui.c:786
 msgid "Maximum height for bumps"
@@ -848,14 +835,12 @@ msgid "Enable/disable real time preview of changes"
 msgstr ""
 
 #: plug-ins/Lighting/lighting_ui.c:1044
-#, fuzzy
 msgid "Save Lighting Preset"
-msgstr "Işıklandırma Etkileri"
+msgstr "Işıklandırma Önayarlarını Kaydet"
 
 #: plug-ins/Lighting/lighting_ui.c:1177
-#, fuzzy
 msgid "Load Lighting Preset"
-msgstr "Işıklandırma Etkileri"
+msgstr "Işıklandırma Önayarlarını Yükle"
 
 #: plug-ins/MapObject/mapobject_apply.c:273
 msgid "Map to Plane..."
@@ -889,9 +874,8 @@ msgstr "_Silindir"
 
 #. General options
 #: plug-ins/MapObject/mapobject_ui.c:496
-#, fuzzy
 msgid "General options"
-msgstr "GIF Seçenekleri"
+msgstr "Genel seçenekler"
 
 #: plug-ins/MapObject/mapobject_ui.c:508
 msgid "Map to:"
@@ -918,9 +902,8 @@ msgid "Type of object to map to"
 msgstr ""
 
 #: plug-ins/MapObject/mapobject_ui.c:532
-#, fuzzy
 msgid "Transparent background"
-msgstr "_Şeffaf Arkaplan"
+msgstr "Şeffaf arkaplan"
 
 #: plug-ins/MapObject/mapobject_ui.c:543
 msgid "Make image transparent outside object"
@@ -935,14 +918,12 @@ msgid "Tile source image: useful for infinite planes"
 msgstr ""
 
 #: plug-ins/MapObject/mapobject_ui.c:559
-#, fuzzy
 msgid "Create new image"
-msgstr "_Yeni Resim Oluştur"
+msgstr "Yeni resim oluştur"
 
 #: plug-ins/MapObject/mapobject_ui.c:578
-#, fuzzy
 msgid "Enable _antialiasing"
-msgstr "_Yumuşatma Kullan"
+msgstr "_Yumuşatma kullan"
 
 #: plug-ins/MapObject/mapobject_ui.c:585
 msgid "Enable/disable jagged edges removal (antialiasing)"
@@ -968,29 +949,24 @@ msgid "Stop when pixel differences are smaller than this value"
 msgstr ""
 
 #: plug-ins/MapObject/mapobject_ui.c:658
-#, fuzzy
 msgid "Point light"
-msgstr "Nokta"
+msgstr "Noktasal ışık"
 
 #: plug-ins/MapObject/mapobject_ui.c:659
-#, fuzzy
 msgid "Directional light"
-msgstr "Doğrusal"
+msgstr "Doğrusal ışık"
 
 #: plug-ins/MapObject/mapobject_ui.c:660
-#, fuzzy
 msgid "No light"
-msgstr "Hafif"
+msgstr "Işık yok"
 
 #: plug-ins/MapObject/mapobject_ui.c:674
-#, fuzzy
 msgid "Lightsource type:"
-msgstr "Işı_k Türü:"
+msgstr "Işık kaynağı türü:"
 
 #: plug-ins/MapObject/mapobject_ui.c:684
-#, fuzzy
 msgid "Lightsource color:"
-msgstr "Işık kaynağı rengini seçin"
+msgstr "Işık kaynağı rengi:"
 
 #: plug-ins/MapObject/mapobject_ui.c:749
 msgid "Direction Vector"
@@ -1278,93 +1254,76 @@ msgid "_RLE encoded"
 msgstr ""
 
 #: plug-ins/common/AlienMap2.c:145
-#, fuzzy
 msgid "_Modify red channel"
-msgstr "Kanallar"
+msgstr "Kırmızı kanalı _değiştir"
 
 #: plug-ins/common/AlienMap2.c:145
-#, fuzzy
 msgid "_Modify hue channel"
-msgstr "Kanallar"
+msgstr "Renk kanalını _değiştir"
 
 #: plug-ins/common/AlienMap2.c:146
-#, fuzzy
 msgid "Mo_dify green channel"
-msgstr "Kanallar"
+msgstr "Yeşil kanalı de_ğiştir"
 
 #: plug-ins/common/AlienMap2.c:146
-#, fuzzy
 msgid "Mo_dify saturation channel"
-msgstr "Kanallar"
+msgstr "Doygunluk kanalını de_ğiştir"
 
 #: plug-ins/common/AlienMap2.c:147
-#, fuzzy
 msgid "Mod_ify blue channel"
-msgstr "Kanallar"
+msgstr "Mavi kanalı değ_iştir"
 
 #: plug-ins/common/AlienMap2.c:147
-#, fuzzy
 msgid "Mod_ify luminosity channel"
-msgstr "Kanallar"
+msgstr "Aydınlatırlık kanalını değ_iştir"
 
 #: plug-ins/common/AlienMap2.c:152
-#, fuzzy
 msgid "Red _frequency:"
-msgstr "_Frekanslar"
+msgstr "Kırmızı _frekansı:"
 
 #: plug-ins/common/AlienMap2.c:152
-#, fuzzy
 msgid "Hue _frequency:"
-msgstr "_Frekanslar"
+msgstr "Renk _frekansı:"
 
 #: plug-ins/common/AlienMap2.c:153
-#, fuzzy
 msgid "Green fr_equency:"
-msgstr "_Frekanslar"
+msgstr "Yeşil fr_ekansı:"
 
 #: plug-ins/common/AlienMap2.c:153
-#, fuzzy
 msgid "Saturation fr_equency:"
-msgstr "Konum"
+msgstr "Doygunluk fr_ekansı:"
 
 #: plug-ins/common/AlienMap2.c:154
-#, fuzzy
 msgid "Blue freq_uency:"
-msgstr "_Frekanslar"
+msgstr "Mavi frek_ansı:"
 
 #: plug-ins/common/AlienMap2.c:154
 msgid "Luminosity freq_uency:"
 msgstr ""
 
 #: plug-ins/common/AlienMap2.c:156
-#, fuzzy
 msgid "Red _phaseshift:"
-msgstr "Yapıştır"
+msgstr "Kırmızı _faz kayması:"
 
 #: plug-ins/common/AlienMap2.c:156
-#, fuzzy
 msgid "Hue _phaseshift:"
-msgstr "Yapıştır"
+msgstr "Renk _faz kayması:"
 
 #: plug-ins/common/AlienMap2.c:157
-#, fuzzy
 msgid "Green ph_aseshift:"
-msgstr "Yapıştır"
+msgstr "Yeşil fa_z kayması:"
 
 #: plug-ins/common/AlienMap2.c:157
-#, fuzzy
 msgid "Saturation ph_aseshift:"
-msgstr "Yapıştır"
+msgstr "Doygunluk fa_z kayması:"
 
 #: plug-ins/common/AlienMap2.c:158
-#, fuzzy
 msgid "Blue pha_seshift:"
-msgstr "Yapıştır"
+msgstr "Mavi faz _kayması:"
 
 #: plug-ins/common/AlienMap2.c:158
-#, fuzzy
 msgid "Luminosity pha_seshift:"
-msgstr "Yapıştır"
+msgstr "Aydınlatırlık faz _kayması:"
 
 #: plug-ins/common/AlienMap2.c:193
 msgid "Alien Map _2..."
@@ -1650,48 +1609,41 @@ msgid "Fix seed"
 msgstr ""
 
 #: plug-ins/common/CML_explorer.c:1247
-#, fuzzy
 msgid "Random seed"
-msgstr "Hız:"
+msgstr "Rasgele tohum"
 
 #: plug-ins/common/CML_explorer.c:1289 plug-ins/common/fp.c:663
 #: plug-ins/common/lic.c:669
-#, fuzzy
 msgid "_Hue"
-msgstr "Mavi:"
+msgstr "_Renk"
 
 #: plug-ins/common/CML_explorer.c:1293
-#, fuzzy
 msgid "Sat_uration"
-msgstr "Konum"
+msgstr "Doy_gunluk"
 
 #: plug-ins/common/CML_explorer.c:1297 plug-ins/common/fp.c:671
-#, fuzzy
 msgid "_Value"
-msgstr "Değer"
+msgstr "_Değer"
 
 #: plug-ins/common/CML_explorer.c:1301
 msgid "_Advanced"
 msgstr "_Gelişmiş"
 
 #: plug-ins/common/CML_explorer.c:1316
-#, fuzzy
 msgid "Channel Independent Parameters"
-msgstr "Mandelbrot Parametreleri"
+msgstr "Kanaldan Bağımsız Parametreler"
 
 #: plug-ins/common/CML_explorer.c:1338
 msgid "Initial value:"
 msgstr ""
 
 #: plug-ins/common/CML_explorer.c:1344
-#, fuzzy
 msgid "Zoom scale:"
-msgstr "Büyüklük:"
+msgstr "Yakınlaştırma ölçeği:"
 
 #: plug-ins/common/CML_explorer.c:1353
-#, fuzzy
 msgid "Start offset:"
-msgstr "Açı:"
+msgstr "Başlangıç konumu:"
 
 #: plug-ins/common/CML_explorer.c:1362
 msgid "Seed of Random (only for \"From Seed\" Modes)"
@@ -1722,19 +1674,16 @@ msgid "Copy Settings"
 msgstr ""
 
 #: plug-ins/common/CML_explorer.c:1440
-#, fuzzy
 msgid "Source channel:"
-msgstr "Kanallar"
+msgstr "Kaynak kanalı:"
 
 #: plug-ins/common/CML_explorer.c:1455 plug-ins/common/CML_explorer.c:1503
-#, fuzzy
 msgid "Destination channel:"
-msgstr "Kanallar"
+msgstr "Hedef kanalı:"
 
 #: plug-ins/common/CML_explorer.c:1459
-#, fuzzy
 msgid "Copy parameters"
-msgstr "_Parametreler"
+msgstr "Kopyalama parametreleri"
 
 #: plug-ins/common/CML_explorer.c:1468
 msgid "Selective Load Settings"
@@ -1793,9 +1742,8 @@ msgid "Range low:"
 msgstr ""
 
 #: plug-ins/common/CML_explorer.c:1665
-#, fuzzy
 msgid "Range high:"
-msgstr "Resim _Yüksekliği:"
+msgstr "Aralık yüksekliği:"
 
 #: plug-ins/common/CML_explorer.c:1677
 msgid "Plot a graph of the settings"
@@ -1877,9 +1825,8 @@ msgid "Save as Text"
 msgstr ""
 
 #: plug-ins/common/aa.c:360
-#, fuzzy
 msgid "_Format:"
-msgstr "Yazıtipi:"
+msgstr "_Biçim:"
 
 #: plug-ins/common/align_layers.c:135
 msgid "Align _Visible Layers..."
@@ -1908,9 +1855,8 @@ msgstr ""
 #. "snap to grid" checkbutton at bottom of style frame
 #: plug-ins/common/align_layers.c:420 plug-ins/common/align_layers.c:451
 #: plug-ins/gfig/gfig-dialog.c:495
-#, fuzzy
 msgid "Snap to grid"
-msgstr "Göster"
+msgstr "Izgaraya kenetle"
 
 #: plug-ins/common/align_layers.c:429
 #, fuzzy
