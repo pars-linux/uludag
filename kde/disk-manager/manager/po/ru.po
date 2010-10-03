@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr "Приложение для управления разделами и их монтированием"
+msgstr "Приложение для управления разделами и их монтированием."
 
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
@@ -39,12 +39,12 @@ msgstr "Current Maintainer"
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий"
+msgstr "Ясыров Василий, Семенов Николай"
 
 #: src/diskmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
 #: src/diskmanager/main.py:86
 msgid ""
@@ -60,7 +60,7 @@ msgstr "Смонтирован %1"
 
 #: src/diskmanager/main.py:194
 msgid "All Items"
-msgstr "Все строки"
+msgstr "Все элементы"
 
 #: src/diskmanager/main.py:205
 msgid "Add"
