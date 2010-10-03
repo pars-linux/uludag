@@ -26,10 +26,9 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.iface = backend.pm.Iface()
         self.state = state
         self.setupUi(self)
-        self.animation = 2
-        self.duration = 500
+        self._animation = 2
+        self._duration = 500
         self.last_msg = None
-        self.registerFunction(FINISHED, QtGui.qApp.processEvents)
         self.enableOverlay()
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)

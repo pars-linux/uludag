@@ -15,19 +15,6 @@ from PyQt4 import QtCore, QtGui
 from pds.gui import *
 from ui_message import Ui_MessageBox
 
-class PWidgetbox(PAbstractBox):
-    def __init__(self, parent, widget):
-        PAbstractBox.__init__(self, parent)
-        ui = widget()
-        ui.setupUi(self)
-        self.enableOverlay(True)
-
-    def showAnimated(self):
-        self.animate(start = TOPCENTER, stop = TOPCENTER)
-
-    def hideAnimated(self):
-        self.animate(start = CURRENT, stop = MIDRIGHT, direction = OUT)
-
 class PMessageBox(PAbstractBox):
 
     # STYLE SHEET
@@ -40,11 +27,10 @@ class PMessageBox(PAbstractBox):
         PAbstractBox.__init__(self, parent)
         self.ui = Ui_MessageBox()
         self.ui.setupUi(self)
-        self.animation = 2
-        self.duration = 500
+        self._animation = 2
+        self._duration = 500
         self.last_msg = None
         self.setStyleSheet(PMessageBox.STYLE)
-        self.registerFunction(FINISHED, QtGui.qApp.processEvents)
         self.enableOverlay()
         self.hide()
 
