@@ -60,7 +60,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Нет пакетов, которые являются основной частью для этого приложения.\n"
-" Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
+"Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
 
 #: src/bootmanager/main.py:198
 msgid "All Items"
