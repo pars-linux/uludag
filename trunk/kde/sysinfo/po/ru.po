@@ -53,7 +53,7 @@ msgstr "Неизвестный статус сети"
 
 #: src/sysinfo.cpp:235
 msgid "Looking for hardware information..."
-msgstr "Смотреть информацию об оборудовании ..."
+msgstr "Поиск информации об оборудовании ..."
 
 #: src/sysinfo.cpp:237
 msgid "System"
@@ -133,7 +133,7 @@ msgstr "Поддержка 3D"
 
 #: src/sysinfo.cpp:558
 msgid "Mounted on %1"
-msgstr "Примонтировани 1%"
+msgstr "Примонтировано на 1%"
 
 #: src/sysinfo.cpp:558
 msgid "Not mounted"
