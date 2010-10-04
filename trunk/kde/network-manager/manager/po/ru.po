@@ -72,7 +72,7 @@ msgstr "Без проверки подлинности"
 
 #: src/networkmanager/base.py:554
 msgid "There is already a profile named '%1'."
-msgstr ""
+msgstr "Профиль с именем '%1' уже существует."
 
 #: src/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
@@ -100,24 +100,24 @@ msgstr "Сканирование ..."
 
 #: src/networkmanager/widgets.py:382
 msgid "Disconnected"
-msgstr ""
+msgstr "Отключино"
 
 #: src/networkmanager/widgets.py:387
 #, python-format
 msgid "Connected: %s"
-msgstr ""
+msgstr "Подключено: %s"
 
 #: src/networkmanager/widgets.py:392
 msgid "Connecting"
-msgstr ""
+msgstr "Подключение"
 
 #: src/networkmanager/widgets.py:400
 msgid "Cable or device is unplugged"
-msgstr ""
+msgstr "Кабель или устройство отключено"
 
 #: src/networkmanager/widgets.py:416
 msgid "Access denied"
-msgstr ""
+msgstr "Доступ запрещен"
 
 #: ui/ui_ap.py:56 ui/ui_item.py:111
 msgid "Signal Strength"
@@ -125,47 +125,47 @@ msgstr ""
 
 #: ui/ui_item.py:108
 msgid "Set connection state."
-msgstr ""
+msgstr "Установить статус соединения."
 
 #: ui/ui_item.py:109
 msgid "Edit connection"
-msgstr ""
+msgstr "Изменить соединение"
 
 #: ui/ui_item.py:110
 msgid "Delete connection"
-msgstr ""
+msgstr "Удалить соединение"
 
 #: ui/ui_item.py:112
 msgid "  %p %"
-msgstr ""
+msgstr "  %p %"
 
 #: ui/ui_main.py:342
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: ui/ui_main.py:343
 msgid "Create Profile"
-msgstr ""
+msgstr "Создать профиль"
 
 #: ui/ui_main.py:344 ui/ui_nameserver.py:42
 msgid "Nameserver Settings"
-msgstr ""
+msgstr "Настройки сервера имен"
 
 #: ui/ui_main.py:347
 msgid "Profile Name :"
-msgstr ""
+msgstr "Название профиля:"
 
 #: ui/ui_main.py:348
 msgid "Device : "
-msgstr ""
+msgstr "Устройство:"
 
 #: ui/ui_main.py:349
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: ui/ui_main.py:350
 msgid "Network Settings"
-msgstr ""
+msgstr "Настройки сети"
 
 #: ui/ui_main.py:351
 msgid "Use DHCP"
@@ -237,48 +237,48 @@ msgstr ""
 
 #: ui/ui_nameserver.py:43
 msgid "Machine Name"
-msgstr ""
+msgstr "Имя машины"
 
 #: ui/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Диалог"
 
 #: ui/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Подробнее"
 
 #: ui/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: ui/ui_nmwizard.py:95
 msgid "Device"
-msgstr ""
+msgstr "Устройство"
 
 #: ui/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI:"
 
 #: ui/ui_nmwizard.py:97
 msgid "Device:"
-msgstr ""
+msgstr "Устройство:"
 
 #: ui/ui_nmwizard.py:98
 msgid "Select an operator"
-msgstr ""
+msgstr "Выбор оператора"
 
 #: ui/ui_nmwizard.py:99
 msgid "Operator:"
-msgstr ""
+msgstr "Оператор:"
 
 #: ui/ui_nmwizard.py:100
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: ui/ui_nmwizard.py:101
 msgid "Remember PIN for this connection"
-msgstr ""
+msgstr "ЗапомнитьPIN-код для данного соединения"
 
 #: ui/ui_security.py:35
 msgid "Security Settings"
-msgstr ""
+msgstr "Настройки безопасности"
