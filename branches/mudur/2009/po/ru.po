@@ -37,14 +37,14 @@ msgid "Could not set unicode mode on tty %d"
 msgstr "Не удалось установить режим Юникод на tty %d"
 
 #: bin/mudur.py:552
-#, python-format
+#, python-format, fuzzy
 msgid "Bringing up %s"
-msgstr ""
+msgstr "Bringing up %s"
 
 #: bin/mudur.py:557
-#, python-format
+#, python-format, fuzzy
 msgid "Unable to bring up %s"
-msgstr ""
+msgstr "Unable to bring up %s"
 
 #: bin/mudur.py:627
 msgid "No network connection, skipping remote mount."
@@ -393,6 +393,20 @@ msgid ""
 " -N, --no-color  Don't use color in output\n"
 " -q, --quiet     Don't print replies"
 msgstr ""
+"usage: service [<options>] [<service>] <command>\n"
+"where command is:\n"
+" list     Display service list\n"
+" status   Display service status\n"
+" info     Display service status\n"
+" on       Auto start the service\n"
+" off      Don't auto start the service\n"
+" start    Start the service\n"
+" stop     Stop the service\n"
+" restart  Stop the service, then start again\n"
+" reload   Reload the configuration (if service supports this)\n"
+"and option is:\n"
+" -N, --no-color  Don't use color in output\n"
+" -q, --quiet     Don't print replies"
 
 #: bin/service.py:355
 #, python-format
