@@ -34,8 +34,8 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._disable_parent_in_shown = True
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
-        self.registerFunction(IN, lambda: parent.parent.statusBar().hide())
-        self.registerFunction(OUT, lambda: parent.parent.statusBar().show())
+        self.registerFunction(IN, lambda: parent.statusBar().hide())
+        self.registerFunction(OUT, lambda: parent.statusBar().show())
 
     def _show(self):
         self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
