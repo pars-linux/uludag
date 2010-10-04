@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,84 +11,84 @@ msgstr ""
 "PO-Revision-Date: 2010-10-05 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:2
 msgid "User Manager"
-msgstr ""
+msgstr "Менеджер пользователей"
 
 #: data/user-manager.desktop.in.h:1
 msgid "An application for managing user accounts."
-msgstr ""
+msgstr "Приложение для управления учетными записями пользователей."
 
 #: src/usermanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/usermanager/about.py:34
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Current Maintainer"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/usermanager/about.py:35
 msgid "First Developer"
-msgstr ""
+msgstr "First Developer"
 
 #: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Ясыров Василий"
 
 #: src/usermanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "zag@vspu.ru"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
-msgstr ""
+msgstr "Нужно выбрать по крайней мере одну группу."
 
 #: src/usermanager/edit.py:323
 msgid "Start with typing this user's full name."
-msgstr ""
+msgstr "Начните с ввода полного имени пользователя ."
 
 #: src/usermanager/edit.py:326
 msgid "You should enter a password for this user."
-msgstr ""
+msgstr "Вам необходимо указать пароль для этого пользователя."
 
 #: src/usermanager/edit.py:331
 msgid "Password must be longer."
-msgstr ""
+msgstr "Пароль должен быть длиннее."
 
 #: src/usermanager/edit.py:335
 msgid "Don't use your full name or user name as a password."
-msgstr ""
+msgstr "Не используйте ваше полное имя или имя пользователя в качестве пароля."
 
 #: src/usermanager/edit.py:338
 msgid "Passwords don't match."
-msgstr ""
+msgstr "Пароли  не совпадают."
 
 #: src/usermanager/edit.py:343
 msgid "You must enter a user name."
-msgstr ""
+msgstr "Введите имя пользователя."
 
 #: src/usermanager/edit.py:346
 msgid "This user name is used by another user."
-msgstr ""
+msgstr "Это имя пользователя используется другим пользователем."
 
 #: src/usermanager/edit.py:350
 msgid "User name must not start with a number."
-msgstr ""
+msgstr "Имя пользователя не должно начинатся с цифры."
 
 #: src/usermanager/main.py:94
 msgid ""
@@ -99,7 +98,7 @@ msgstr ""
 
 #: src/usermanager/main.py:195
 msgid "Users"
-msgstr ""
+msgstr "Пользователь"
 
 #: src/usermanager/main.py:196 ui/ui_edituser.py:213
 msgid "Groups"
