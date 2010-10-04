@@ -339,6 +339,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def switchState(self, state, action=True):
         self.searchLine.clear()
+        self.pdsMessageBox.hideMessage()
         self._states[state][1].setChecked(True)
         self.stateTab.setCurrentIndex(self._states[state][0])
         self.lastState = self.state.state
