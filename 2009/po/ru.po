@@ -37,12 +37,12 @@ msgid "Could not set unicode mode on tty %d"
 msgstr "Не удалось установить режим Юникод на tty %d"
 
 #: bin/mudur.py:552
-#, python-format, fuzzy
+#, python-format
 msgid "Bringing up %s"
 msgstr "Bringing up %s"
 
 #: bin/mudur.py:557
-#, python-format, fuzzy
+#, python-format
 msgid "Unable to bring up %s"
 msgstr "Unable to bring up %s"
 
