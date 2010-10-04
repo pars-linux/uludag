@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -19,57 +18,57 @@ msgstr ""
 #: data/kcm_networkmanager.desktop.in.h:1 data/networkmanager.desktop.in.h:2
 #: src/networkmanager/about.py:20 src/networkmanager/about.py:22
 msgid "Network Manager"
-msgstr ""
+msgstr "Менеджер сети"
 
 #: data/networkmanager.desktop.in.h:1
 msgid "An application for managing network connections."
-msgstr ""
+msgstr "Приложение для управления сетевыми подключениями."
 
 #: src/networkmanager/about.py:24
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/networkmanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Current Maintainer"
 
 #: src/networkmanager/about.py:33
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/networkmanager/about.py:33
 msgid "Developer"
-msgstr ""
+msgstr "Разработчики"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Ясыров Василий"
 
 #: src/networkmanager/about.py:34
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "zag@vspu.ru"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
-msgstr ""
+msgstr "Доступные профили"
 
 #: src/networkmanager/base.py:217
 msgid "All Profiles"
-msgstr ""
+msgstr "Все профили"
 
 #: src/networkmanager/base.py:219 src/networkmanager/base.py:221
 msgid "No Device Found"
-msgstr ""
+msgstr "Устройство не найдено"
 
 #: src/networkmanager/base.py:405
 msgid "No Authentication"
-msgstr ""
+msgstr "Без проверки подлинности"
 
 #: src/networkmanager/base.py:554
 msgid "There is already a profile named '%1'."
@@ -81,11 +80,11 @@ msgstr ""
 
 #: src/networkmanager/widgets.py:74
 msgid "Enter PIN"
-msgstr ""
+msgstr "Введите PIN-код"
 
 #: src/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
-msgstr ""
+msgstr "Пожалуйста, введите PIN-код для"
 
 #: src/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
@@ -93,11 +92,11 @@ msgstr ""
 
 #: src/networkmanager/widgets.py:280 ui/ui_main.py:346
 msgid "Refresh"
-msgstr ""
+msgstr "Обновить"
 
 #: src/networkmanager/widgets.py:312 ui/ui_main.py:345
 msgid "Scanning..."
-msgstr ""
+msgstr "Сканирование ..."
 
 #: src/networkmanager/widgets.py:382
 msgid "Disconnected"
