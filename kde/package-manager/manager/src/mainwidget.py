@@ -82,7 +82,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.setActionButton()
 
         self.operation = OperationManager(self.state)
-        self.progressDialog = ProgressDialog(self.state, self)
+        self.progressDialog = ProgressDialog(self.state, self.parent)
         self.progressDialog.registerResizeFunction(self._resizeEvent)
         self.summaryDialog = SummaryDialog()
 
@@ -297,25 +297,26 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.showSummary()
         if operation in ("System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"):
             self.notifyFinished()
-        if not self.state.silence:
-            self.searchLine.clear()
-            if self.__go_back_all:
-                self.state.state = self.state.ALL
-                self.__go_back_all = False
-            self.state.reset()
-            self.progressDialog._hide()
-            if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
-                self.emit(SIGNAL("repositoriesUpdated()"))
-            self.initialize()
-        else:
+        if self.state.silence:
             qApp.exit()
+
+        self.searchLine.clear()
+        if self.__go_back_all:
+            self.state.state = self.state.ALL
+            self.__go_back_all = False
+        self.state.reset()
+        self.progressDialog._hide()
+        if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
+            self.emit(SIGNAL("repositoriesUpdated()"))
+        self.initialize()
 
     def actionCancelled(self):
         self.progressDialog._hide()
+        self.progressDialog.reset()
+        self.__go_back_all = False
         if self.state.silence:
             qApp.exit()
-        else:
-            self.groupFilter()
+        self.groupFilter()
 
     def notifyFinished(self):
         if not self.operation.totalPackages:
