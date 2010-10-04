@@ -26,16 +26,17 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.iface = backend.pm.Iface()
         self.state = state
         self.setupUi(self)
+
+        # PDS Settings
         self._animation = 2
         self._duration = 500
         self.last_msg = None
         self.enableOverlay()
-
         self._disable_parent_in_shown = True
-        self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
-
         self.registerFunction(IN, lambda: parent.statusBar().hide())
         self.registerFunction(OUT, lambda: parent.statusBar().show())
+
+        self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def _show(self):
         self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
