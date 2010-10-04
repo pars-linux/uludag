@@ -95,6 +95,8 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Нет пакетов, которые обеспечивают основу для этого приложения.\n"
+" Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
 
 #: src/usermanager/main.py:195
 msgid "Users"
@@ -203,11 +205,11 @@ msgstr "Запретить пользователя."
 
 #: ui/ui_edituser.py:210
 msgid "Apply this policy to all actions."
-msgstr ""
+msgstr "Примените эту политику ко всем действиям."
 
 #: ui/ui_edituser.py:211
 msgid "Authorizations"
-msgstr ""
+msgstr "Разрешения"
 
 #: ui/ui_edituser.py:212
 msgid "Main Group:"
