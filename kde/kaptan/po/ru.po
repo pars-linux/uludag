@@ -81,7 +81,7 @@ msgstr "Описание"
 
 #: .tmp/ui_ui_scrSummary.py:80
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
-msgstr ""
+msgstr "Вы успешно выполнили все шаги. Вот описание настроек которые вы хотите применить. Нажмите кнопку <b>Применить настройки,</b> чтобы сохранить их. Теперь вы готовы наслаждаться Pardus!"
 
 #: .tmp/ui_ui_scrSummary.py:81
 msgid "The following settings will be applied"
@@ -106,7 +106,7 @@ msgstr "Подробнее"
 
 #: .tmp/ui_ui_scrGoodbye.py:408
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
-msgstr ""
+msgstr "<b>Ваши настройки были применены.</b> Теперь вы можете начать пользоваться Pardus! Ниже приведены для получения помощи и настройки приложений. Не забудьте <b>присоединиться к нашему сообществу!</b>"
 
 #: .tmp/ui_ui_scrGoodbye.py:409 .tmp/ui_ui_scrGoodbye.py:410
 #: .tmp/ui_ui_scrSmolt.py:150
@@ -147,11 +147,11 @@ msgstr "Мышька"
 
 #: .tmp/ui_ui_scrMouse.py:199
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
-msgstr ""
+msgstr "<b>Поведение при щелчке</b> определяет, сколько раз нужно кликнуть для открытия файла или директории. Если вы <b>левша,</b> вы можете поменять левую и правую кнопки местами."
 
 #: .tmp/ui_ui_scrMouse.py:200
 msgid "Напстройки щелчка"
-msgstr ""
+msgstr "Напстройки щелчка"
 
 #: .tmp/ui_ui_scrMouse.py:201
 msgid "Single-click to open files and folders"
