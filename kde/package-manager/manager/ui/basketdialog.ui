@@ -33,7 +33,10 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgba(0,0,0,30);</string>
+      <string notr="true">background-color:rgba(0,0,0,100);</string>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -98,7 +101,10 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background:rgba(0,0,0,30);</string>
+      <string notr="true">background-color:rgba(0,0,0,100);</string>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
