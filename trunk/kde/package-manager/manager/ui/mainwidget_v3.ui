@@ -81,6 +81,13 @@
       </widget>
      </item>
      <item>
+      <widget class="QToolButton" name="searchButton">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QComboBox" name="typeCombo">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

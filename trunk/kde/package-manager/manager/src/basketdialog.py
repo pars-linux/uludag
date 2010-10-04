@@ -174,7 +174,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
             if not answer == QtGui.QMessageBox.Yes:
                 return
         self.state.operationAction(self.model.selectedPackages())
-        self.animate(direction = OUT, dont_animate = True)
+        self._hide()
 
     def showHideDownloadInfo(self):
         if self.state.state == self.state.REMOVE:

@@ -75,7 +75,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             # in silence mode we dont need these
             self.statusUpdater = StatusUpdater()
             self.basket = BasketDialog(self.state, self.parent)
-            self.initializeSearchButton()
+            self.searchButton.setIcon(KIcon("edit-find"))
             self.initializeUpdateTypeList()
             self.initialize()
             self.updateSettings()
@@ -83,23 +83,11 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state, self.parent)
-        self.progressDialog.registerResizeFunction(self._resizeEvent)
         self.summaryDialog = SummaryDialog()
 
         self.connectOperationSignals()
         self.pdsMessageBox = PMessageBox(self.content)
         self.__ui_ready = True
-
-    def initializeSearchButton(self):
-        self.searchButton = QPushButton(i18n('Search'), self.searchLine)
-        self.searchButton.setIcon(KIcon("edit-find"))
-        self.searchButton.setMaximumWidth(QFontMetrics(qApp.font()).width(i18n('Search')) + 32 )
-        self.searchUsed = False
-
-    def _resizeEvent(self, event):
-        if self.__ui_ready:
-            self.searchButton.resize(self.searchButton.width(), self.searchLine.height() - 4)
-            self.searchButton.move(self.searchLine.width() - self.searchButton.width() - 22, 2)
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
