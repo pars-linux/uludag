@@ -213,6 +213,11 @@ class grubConf:
 
 class grub2Conf(grubConf):
 
+    def __init__(self):
+        self.options = {}
+        self.entries = []
+        self.header = []
+        self.index = 0
 
     def __parseLine(self, text, DM):
         newlineDM = False
@@ -232,7 +237,7 @@ class grub2Conf(grubConf):
                     valueIndex = text[(keyIndex+4):].find("=")
                     if 0 <= valueIndex:
                         tmpKey = text[(keyIndex+4):(keyIndex+4+valueIndex)]
-                        tmpValue = text[(keyIndex+valueIndex+5)]
+                        tmpValue = text[(keyIndex+valueIndex+5):]
                     else:
                         tmpKey = text[(keyIndex+4):]
                 else:
@@ -261,60 +266,55 @@ class grub2Conf(grubConf):
                         tmpKey = text[(keyIndex+4):]
 
 
-        return tmpKey, tmpValue, newlineDM
+        return tmpKey.strip('\n'), tmpValue.strip('\n'), newlineDM
 
     def parseConf(self, filename):
         """Parses a grub.cfg file of ubuntu"""
-
-        self.options = {}
-        self.entries = []
-
-        detectedMenuentry = False
-        entry = None
         """ None
             Options
             detected menuentry
             command
             exitiing something """
 
+        detectedMenuentry = False
+        entry = None
+        option = True
+
         key = ""
         value = ""
-        newDM = False
+        newMenuentry = False
 
         for line in file(filename):
             if not line.strip() or line.startswith("#"):
                 continue
 
-            print line
-
-            key, value, newDM  = self.__parseLine(line, detectedMenuentry)
-
-            print "key:",key,"value:",value,"newDM:",newDM
-
-
+            key, value, newMenuentry = self.__parseLine(line, detectedMenuentry)
 
             if not detectedMenuentry:
                 """Before parsing this line, parser is not inside of menuentry block"""
-                if newDM:
+                if newMenuentry:
                     """Just found new menuentry block"""
-                    """key means title of OS, value means options of this OS if there are"""
-
-                    """TODO: create new entry into Entries list"""
+                    """key means title of OS"""
+                    """Create new entry into Entries list"""
+                    entry = grubEntry(key)
+                    self.addEntry(entry)
                 else:
                     """If both key and value are blank string this line is None; otherwise this line has set and key and value are parameters of option"""
                     if 0 != len(key):
                         """Options"""
 
-                        """TODO: add new options"""
+                        """Add new options"""
+                        self.options[key] = value
             else:
                 """Parser was inside of menuentry block"""
-                if newDM:
+                if newMenuentry:
                     """Continuing the menuentry block"""
 
-                    """TODO: add new command to entry which it belong"""
-                else:
-                    """End of menuentry block"""
-                    """Do nothing"""
+                    """Add new command to entry which it belong"""
+                    entry.setCommand(key, value)
+                # else:
+                #     """End of menuentry block"""
+                #     """Do nothing"""
 
 
-            detectedMenuentry = newDM
+            detectedMenuentry = newMenuentry
