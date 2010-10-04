@@ -74,7 +74,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         if not silence:
             # in silence mode we dont need these
             self.statusUpdater = StatusUpdater()
-            self.basket = BasketDialog(self.state)
+            self.basket = BasketDialog(self.state, self.parent)
             self.initializeSearchButton()
             self.initializeUpdateTypeList()
             self.initialize()
@@ -389,7 +389,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         if action:
             self.__go_back_all = True
             self.state.state = action
-        self.basket.show()
+        self.basket._show()
         restoreCursor()
 
     def initializeUpdateTypeList(self):

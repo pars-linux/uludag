@@ -21,20 +21,54 @@ from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
 
+from pds.gui import *
 from pmutils import *
 
 from ui_basketdialog import Ui_BasketDialog
 
-class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
-    def __init__(self, state):
-        QtGui.QDialog.__init__(self, None)
+class BasketDialog(PAbstractBox, Ui_BasketDialog):
+    def __init__(self, state, parent):
+        PAbstractBox.__init__(self, parent)
+        self.state = state
         self.setupUi(self)
 
-        self.state = state
+        # PDS Settings
+        self._animation = 2
+        self._duration = 500
+        self.last_msg = None
+        self.enableOverlay()
+        self._disable_parent_in_shown = True
+        self.registerFunction(IN, lambda: parent.statusBar().hide())
+        self.registerFunction(OUT, lambda: parent.statusBar().show())
+
         self.initPackageList()
         self.initExtraList()
 
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
+        self.actionButton.clicked.connect(self.action)
+        self.cancelButton.clicked.connect(self._hide)
+
+    def _show(self):
+        waitCursor()
+        self.showHideDownloadInfo()
+        self.__updateList(self.packageList, self.model.selectedPackages())
+        try:
+            self.filterExtras()
+        except Exception, e:
+            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e),
+                    QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+            QTimer.singleShot(0, restoreCursor)
+            messageBox.exec_()
+            return
+        self.updateTotal()
+        self.setActionButton()
+        self.setBasketLabel()
+        self.connectModelSignals()
+        QTimer.singleShot(0, restoreCursor)
+        self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
+
+    def _hide(self):
+        self.disconnectModelSignals()
+        self.animate(direction = OUT, dont_animate = True)
 
     def connectModelSignals(self):
         self.connect(self.packageList.model(),
@@ -57,7 +91,6 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
         packageList.setItemDelegate(PackageDelegate(self))
-        packageList.setAlternatingRowColors(True)
         packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         packageList.model().setFilterRole(GroupRole)
         packageList.itemDelegate().setAnimatable(False)
@@ -141,7 +174,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
             if not answer == QtGui.QMessageBox.Yes:
                 return
         self.state.operationAction(self.model.selectedPackages())
-        self.close()
+        self.animate(direction = OUT, dont_animate = True)
 
     def showHideDownloadInfo(self):
         if self.state.state == self.state.REMOVE:
@@ -151,25 +184,4 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
             self.downloadSize.show()
             self.downloadSizeLabel.show()
 
-    def show(self):
-        waitCursor()
-        self.showHideDownloadInfo()
-        self.__updateList(self.packageList, self.model.selectedPackages())
-        try:
-            self.filterExtras()
-        except Exception, e:
-            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e),
-                    QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
-            QTimer.singleShot(0, restoreCursor)
-            messageBox.exec_()
-            return
-        self.updateTotal()
-        self.setActionButton()
-        self.setBasketLabel()
-        self.connectModelSignals()
-        QTimer.singleShot(0, restoreCursor)
-        QtGui.QDialog.exec_(self)
 
-    def reject(self):
-        self.disconnectModelSignals()
-        QtGui.QDialog.reject(self)
