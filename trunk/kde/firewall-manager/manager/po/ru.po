@@ -18,7 +18,7 @@ msgstr ""
 
 #: data/firewall-manager.desktop.in.h:1
 msgid "An application for managing firewall."
-msgstr "Приложения для управления брандмауэром."
+msgstr "Приложение для управления брандмауэром."
 
 #: data/firewall-manager.desktop.in.h:2
 #: data/kcm_firewall-manager.desktop.in.h:1
@@ -48,12 +48,12 @@ msgstr "First Developer"
 #: src/firewallmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий"
+msgstr "Ясыров Василий, Семенов Николай"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
 #: src/firewallmanager/main.py:96
 msgid ""
