@@ -71,15 +71,17 @@
       </tr>
     [% END %]
 
-    <tr>
-      <th>&nbsp;</th>
-      <td>
-        <input type="checkbox" id="Bugzilla_restrictlogin" name="Bugzilla_restrictlogin"
-               checked="checked">
-        <label for="Bugzilla_restrictlogin">Restrict this session to this IP address
-        (using this option improves security)</label>
-      </td>
-    </tr>
+    [% IF Param('loginnetmask') < 32 %]
+      <tr>
+        <th>&nbsp;</th>
+        <td>
+          <input type="checkbox" id="Bugzilla_restrictlogin" name="Bugzilla_restrictlogin"
+                 checked="checked">
+          <label for="Bugzilla_restrictlogin">Bu oturumu bu IP adresi ile sınırlandır
+          (bu seçenek güvenliği artırır)</label>
+        </td>
+      </tr>
+    [% END %]
   </table>
 
   [% PROCESS "global/hidden-fields.html.tmpl"
