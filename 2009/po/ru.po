@@ -17,7 +17,7 @@ msgstr ""
 
 #: bin/mudur.py:207
 msgid "Cannot write mudur.log, read-only file system"
-msgstr "Вы не можете написать mudur.log, только для чтения файловой системы"
+msgstr "Невозможно записать mudur.log, файловой система только для чтения"
 
 #: bin/mudur.py:363
 msgid "Safe Mode"
@@ -107,7 +107,7 @@ msgstr "Удаление устаревшего файла блокировки 
 
 #: bin/mudur.py:870
 msgid "Failed removing stale lock file /etc/mtab~"
-msgstr "Не удалось удалить устаревший файл блокировки/etc/mtab~"
+msgstr "Не удалось удалить устаревший файл блокировки /etc/mtab~"
 
 #: bin/mudur.py:881
 msgid "/etc/fstab doesn't contain an entry for the root filesystem"
@@ -115,7 +115,7 @@ msgstr "/etc/fstab не содержит записи для корневой ф
 
 #: bin/mudur.py:887
 msgid "Remounting root filesystem read-only"
-msgstr "Перемонтирование корневая файловая система только для чтения"
+msgstr "Перемонтирование корневая файловая системы только для чтения"
 
 #: bin/mudur.py:892
 msgid "Checking root filesystem (full check forced)"
@@ -127,7 +127,7 @@ msgstr "Проверка корневой файловой системы"
 
 #: bin/mudur.py:907
 msgid "Filesystem repaired, but reboot needed!"
-msgstr "Файловая система отремонтированы, но перезагрузка необходима!"
+msgstr "Файловая система отремонтирована, но перезагрузка необходима!"
 
 #: bin/mudur.py:911
 msgid "Rebooting in 10 seconds..."
@@ -139,7 +139,7 @@ msgstr "Перезагрузка ..."
 
 #: bin/mudur.py:917
 msgid "Filesystem could not be repaired"
-msgstr "Файловая система не может быть восстановлен"
+msgstr "Файловая система не может быть восстановлена"
 
 #: bin/mudur.py:922
 msgid "Skipping root filesystem check (fstab's passno == 0)"
@@ -147,7 +147,7 @@ msgstr "Пропуск проверки корневой файловой сис
 
 #: bin/mudur.py:928
 msgid "Remounting root filesystem read/write"
-msgstr "Перемонтирование корневой файловой системы чтения / записи"
+msgstr "Перемонтирование корневой файловой системы для чтения / записи"
 
 #: bin/mudur.py:932
 msgid ""
@@ -156,8 +156,8 @@ msgid ""
 "   restart your system, press F3 and select 'FS check' from boot menu\n"
 msgstr ""
 "Корневая файловая система не может быть смонтирована для чтения и записи\n"
-" Вы можете Войти ниже и вручную проверить файловую систему(ы) или\n"
-" перезагрузить систему, нажмите F3 и выберите \"FS проверить\" из меню загрузки\n"
+" Вы можете войти ниже и вручную проверить файловую систему(ы) или\n"
+" перезагрузить систему, нажмите F3 и выберите 'FS check' из меню загрузки\n"
 
 #: bin/mudur.py:944
 msgid "Couldn't synchronize /etc/mtab from /proc/mounts"
@@ -250,7 +250,7 @@ msgstr "Отключение файловых систем"
 
 #: bin/mudur.py:1282
 msgid "Remounting remaining filesystems read-only"
-msgstr "Перемонтирование остальные файловые системы только для чтения"
+msgstr "Перемонтирование остальных файловых систем только для чтения"
 
 #: bin/mudur.py:1298
 msgid "An internal error occured. Please report to the bugs.pardus.org.tr with following information:"
