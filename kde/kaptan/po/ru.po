@@ -61,7 +61,7 @@ msgstr "Фон"
 
 #: .tmp/ui_ui_scrWallpaper.py:127
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Выберите свои любимые обои для Pardus. Не забудьте проверить <b>Параметры рабочего стола</b> для загрузки новых хранителей экрана."
+msgstr "Выберите свои любимые обои для Pardus. Не забудьте проверить <b>Параметры рабочего стола</b> для загрузки новых обоев рабочего стола."
 
 #: .tmp/ui_ui_scrWallpaper.py:128
 msgid "Wallpapers"
@@ -81,7 +81,7 @@ msgstr "Описание"
 
 #: .tmp/ui_ui_scrSummary.py:80
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
-msgstr "Вы успешно выполнили все шаги. Вот описание настроек которые вы хотите применить. Нажмите кнопку <b>Применить настройки,</b> чтобы сохранить их. Теперь вы готовы наслаждаться Pardus!"
+msgstr "Вы успешно выполнили все шаги. Вот описание настроек которые вы хотите применить. Нажмите кнопку <b>Применить настройки</b> чтобы сохранить их. Теперь вы готовы наслаждаться Pardus!"
 
 #: .tmp/ui_ui_scrSummary.py:81
 msgid "The following settings will be applied"
@@ -123,7 +123,7 @@ msgstr "Менеджер миграции"
 
 #: .tmp/ui_ui_scrGoodbye.py:413
 msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-msgstr "Менеджев поможет перенести файлы, и настройки из другой операционной системы в Pardus."
+msgstr "Менеджер поможет перенести файлы и настройки из другой операционной системы в Pardus."
 
 #: .tmp/ui_ui_scrGoodbye.py:415 .tmp/ui_ui_scrGoodbye.py:417
 msgid "System Settings"
@@ -131,11 +131,11 @@ msgstr "Системные настройки"
 
 #: .tmp/ui_ui_scrGoodbye.py:416
 msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
-msgstr "Инструменты настройки для Pardus включают в себя настройку дисплея, экрана безопасности, клавиатуру, ползователей и многое другое."
+msgstr "Инструменты настройки для Pardus включают в себя настройку дисплея, экрана безопасности, клавиатуру, пользователей и многое другое."
 
 #: .tmp/ui_ui_scrGoodbye.py:418 .tmp/ui_ui_scrGoodbye.py:420
 msgid "Help and Support"
-msgstr "Спарвка и поддержка"
+msgstr "Справка и поддержка"
 
 #: .tmp/ui_ui_scrGoodbye.py:419
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
@@ -143,7 +143,7 @@ msgstr "Pardus сообщества, списки рассылки, чаты, в
 
 #: .tmp/ui_ui_scrMouse.py:198
 msgid "Mouse"
-msgstr "Мышька"
+msgstr "Мышка"
 
 #: .tmp/ui_ui_scrMouse.py:199
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
@@ -151,7 +151,7 @@ msgstr "<b>Поведение при щелчке</b> определяет, ск
 
 #: .tmp/ui_ui_scrMouse.py:200
 msgid "Напстройки щелчка"
-msgstr "Напстройки щелчка"
+msgstr "Настройки щелчка"
 
 #: .tmp/ui_ui_scrMouse.py:201
 msgid "Single-click to open files and folders"
@@ -219,7 +219,7 @@ msgstr "Пакеты"
 
 #: .tmp/ui_ui_scrPackage.py:188
 msgid "Show updates in the system tray"
-msgstr "Показывать обновления на панеле"
+msgstr "Показывать обновления на панели"
 
 #: .tmp/ui_ui_scrPackage.py:189
 msgid "Check updates automatically every"
@@ -285,7 +285,7 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   При отправке профиля в базу данных на серверве ведется журнал в котором хранятся IP адреса пользователей Pardus. Отметим что журналы хранятся 4 недели и они не доступня для всеобщего обозрения.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" font-size:9pt;\">  Если вас не устраивает данная политика вы можете просто не использовать Solt.</span></p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Помните что в любое время вы можете удалить свой профиль на сервере Pardus, используя  &quot;</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span></p></body></html>"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Помните, что в любое время вы можете удалить свой профиль на сервере Pardus, используя  &quot;</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span></p></body></html>"
 
 #: .tmp/ui_ui_scrAvatar.py:240
 msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
@@ -345,7 +345,7 @@ msgstr "Меню"
 
 #: .tmp/ui_ui_scrMenu.py:119
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "Вы можете изменить вид KDE меню, установив тот который вам нравится"
+msgstr "Вы можете изменить вид KDE меню, установив тот, который вам нравится."
 
 #: .tmp/ui_ui_scrMenu.py:120
 msgid "Kick-off Menu"
@@ -373,4 +373,4 @@ msgstr "Что такое Pardus?"
 
 #: .tmp/ui_ui_scrWelcome.py:74
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr "<b>Pardus</b> это быстрая, безопасная и дружелюбная операционная система. <br /><br />Используя Pardus вы можете работать в сети Internet, читать вашу почту, работать с офисными документами, смотреть видео, слушать музыку, создавать приложения, играть в игры и делать многое другое<br /><br /><b>Капитан</b> поможет kturj и просто настроить ваш PardusПожалуйста нажмите <b>далее</b> для начала настройки."
+msgstr "<b>Pardus</b> это быстрая, безопасная и дружелюбная операционная система. <br /><br />Используя Pardus вы можете работать в сети Internet, читать вашу почту, работать с офисными документами, смотреть видео, слушать музыку, создавать приложения, играть в игры и делать многое другое<br /><br /><b>Капитан</b> поможет kturj и просто настроить ваш Pardus. Пожалуйста нажмите <b>далее</b> для начала настройки."
