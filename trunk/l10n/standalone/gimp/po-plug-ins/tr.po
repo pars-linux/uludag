@@ -1,6 +1,6 @@
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Fatih Demir <kabalak@gtranslator.org>
-#
+# 
 # Muhammet Kara <muhammet.k@gmail.com>, 2010.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: plug-ins/FractalExplorer/Dialogs.c:523 plug-ins/gfig/gfig-dialog.c:283
 #: plug-ins/gflare/gflare.c:891
@@ -34,7 +34,7 @@ msgstr "Hakkında"
 
 #: plug-ins/FractalExplorer/Dialogs.c:608
 msgid "Realtime Preview"
-msgstr ""
+msgstr "Gerçek Zamanlı Önizleme"
 
 #: plug-ins/FractalExplorer/Dialogs.c:615
 msgid "If you enable this option the preview will be redrawn automatically"
@@ -51,7 +51,7 @@ msgstr ""
 #. Zoom Options
 #: plug-ins/FractalExplorer/Dialogs.c:627 plug-ins/imagemap/imap_popup.c:146
 msgid "Zoom"
-msgstr ""
+msgstr "Yakınlaştır"
 
 #: plug-ins/FractalExplorer/Dialogs.c:655
 msgid "Undo last zoom"
@@ -106,9 +106,7 @@ msgid "ITER:"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:743
-msgid ""
-"Change the iteration value. The higher it is, the more details will be "
-"calculated, which will take more time"
+msgid "Change the iteration value. The higher it is, the more details will be calculated, which will take more time"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:752
@@ -116,9 +114,7 @@ msgid "CX:"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:755
-msgid ""
-"Change the CX value (changes aspect of fractal, active with every fractal "
-"but Mandelbrot and Sierpinski)"
+msgid "Change the CX value (changes aspect of fractal, active with every fractal but Mandelbrot and Sierpinski)"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:764
@@ -126,9 +122,7 @@ msgid "CY:"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:767
-msgid ""
-"Change the CY value (changes aspect of fractal, active with every fractal "
-"but Mandelbrot and Sierpinski)"
+msgid "Change the CY value (changes aspect of fractal, active with every fractal but Mandelbrot and Sierpinski)"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:784
@@ -292,9 +286,7 @@ msgstr ""
 #: plug-ins/FractalExplorer/Dialogs.c:985
 #: plug-ins/FractalExplorer/Dialogs.c:1026
 #: plug-ins/FractalExplorer/Dialogs.c:1067
-msgid ""
-"Use linear mapping instead of any trigonometrical function for this color "
-"channel"
+msgid "Use linear mapping instead of any trigonometrical function for this color channel"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:994
@@ -306,9 +298,7 @@ msgstr ""
 #: plug-ins/FractalExplorer/Dialogs.c:1002
 #: plug-ins/FractalExplorer/Dialogs.c:1043
 #: plug-ins/FractalExplorer/Dialogs.c:1084
-msgid ""
-"If you enable this option higher color values will be swapped with lower "
-"ones and vice versa"
+msgid "If you enable this option higher color values will be swapped with lower ones and vice versa"
 msgstr ""
 
 #. Greenmode radio frame
@@ -333,9 +323,7 @@ msgid "As specified above"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:1110
-msgid ""
-"Create a color-map with the options you specified above (color density/"
-"function). The result is visible in the preview image"
+msgid "Create a color-map with the options you specified above (color density/function). The result is visible in the preview image"
 msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:1120
@@ -1193,9 +1181,8 @@ msgstr ""
 msgid "Unrecognized or invalid BMP compression format."
 msgstr ""
 
-#.
 #. * Create the "background" layer to hold the image...
-#.
+#. 
 #: plug-ins/bmp/bmpread.c:479 plug-ins/common/CEL.c:357
 #: plug-ins/common/CEL.c:360 plug-ins/common/blinds.c:273
 #: plug-ins/common/compose.c:625 plug-ins/common/decompose.c:594
@@ -1660,9 +1647,7 @@ msgstr ""
 #: plug-ins/common/CML_explorer.c:1398
 msgid ""
 "\"Fix seed\" button is an alias of me.\n"
-"The same seed produces the same image, if (1) the widths of images are same "
-"(this is the reason why image on drawable is different from preview), and "
-"(2) all mutation rates equal to zero."
+"The same seed produces the same image, if (1) the widths of images are same (this is the reason why image on drawable is different from preview), and (2) all mutation rates equal to zero."
 msgstr ""
 
 #: plug-ins/common/CML_explorer.c:1406
@@ -2173,9 +2158,7 @@ msgid "_X offset:"
 msgstr "Açı:"
 
 #: plug-ins/common/bumpmap.c:997 plug-ins/common/bumpmap.c:1011
-msgid ""
-"The offset can be adjusted by dragging the preview using the middle mouse "
-"button."
+msgid "The offset can be adjusted by dragging the preview using the middle mouse button."
 msgstr ""
 
 #: plug-ins/common/bumpmap.c:1008 plug-ins/common/postscript.c:3146
@@ -2686,32 +2669,32 @@ msgid "Co_mment:"
 msgstr "_Açıklama:"
 
 #. Use Comment
-#.
+#. 
 #: plug-ins/common/csource.c:675
 #, fuzzy
 msgid "_Save comment to file"
 msgstr "Açıklama"
 
 #. GLib types
-#.
+#. 
 #: plug-ins/common/csource.c:687
 msgid "_Use GLib types (guint8*)"
 msgstr ""
 
 #. Use Macros
-#.
+#. 
 #: plug-ins/common/csource.c:699
 msgid "Us_e macros instead of struct"
 msgstr ""
 
 #. Use RLE
-#.
+#. 
 #: plug-ins/common/csource.c:711
 msgid "Use _1 byte Run-Length-Encoding"
 msgstr ""
 
 #. Alpha
-#.
+#. 
 #: plug-ins/common/csource.c:723
 msgid "Sa_ve alpha channel (RGBA/RGB)"
 msgstr ""
@@ -3122,9 +3105,8 @@ msgstr ""
 msgid "Despeckle"
 msgstr ""
 
-#.
 #. * Filter type controls...
-#.
+#. 
 #: plug-ins/common/despeckle.c:444 plug-ins/gimpressionist/orientmap.c:616
 msgid "Type"
 msgstr "Tip"
@@ -3906,9 +3888,7 @@ msgid "Thank you for choosing GIMP"
 msgstr ""
 
 #: plug-ins/common/gee.c:166
-msgid ""
-"A less-obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / "
-"1998-2000"
+msgid "A less-obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / 1998-2000"
 msgstr ""
 
 #: plug-ins/common/gee_zoom.c:124
@@ -3921,9 +3901,7 @@ msgid "GEE-ZOOM"
 msgstr ""
 
 #: plug-ins/common/gee_zoom.c:199
-msgid ""
-"An obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / "
-"1998-2000"
+msgid "An obsolete creation of Adam D. Moss / adam@gimp.org / adam@foxbox.org / 1998-2000"
 msgstr ""
 
 #: plug-ins/common/gif.c:402 plug-ins/common/gifload.c:143
@@ -3936,21 +3914,17 @@ msgid "Couldn't simply reduce colors further. Saving as opaque."
 msgstr ""
 
 #: plug-ins/common/gif.c:909
-msgid ""
-"The GIF format only supports comments in 7bit ASCII encoding. No comment is "
-"saved."
+msgid "The GIF format only supports comments in 7bit ASCII encoding. No comment is saved."
 msgstr ""
 
 #: plug-ins/common/gif.c:970
-msgid ""
-"Cannot save RGB color images. Convert to indexed color or grayscale first."
+msgid "Cannot save RGB color images. Convert to indexed color or grayscale first."
 msgstr ""
 
 #: plug-ins/common/gif.c:1113
 msgid ""
 "Warning:\n"
-"Transparent color in written file might be incorrect on viewers which don't "
-"support transparency."
+"Transparent color in written file might be incorrect on viewers which don't support transparency."
 msgstr ""
 
 #: plug-ins/common/gif.c:1152
@@ -4059,9 +4033,7 @@ msgstr "Çerçeve %d"
 
 #: plug-ins/common/gifload.c:947
 #, c-format
-msgid ""
-"GIF: Undocumented GIF composite type %d is not handled.  Animation might not "
-"play or re-save perfectly."
+msgid "GIF: Undocumented GIF composite type %d is not handled.  Animation might not play or re-save perfectly."
 msgstr ""
 
 #: plug-ins/common/gih.c:205 plug-ins/common/gih.c:226
@@ -4271,9 +4243,7 @@ msgid "_Generate full HTML document"
 msgstr "_Tam HTML Belgesi Oluştur"
 
 #: plug-ins/common/gtm.c:452
-msgid ""
-"If checked GTM will output a full HTML document with <HTML>, <BODY>, etc. "
-"tags instead of just the table html."
+msgid "If checked GTM will output a full HTML document with <HTML>, <BODY>, etc. tags instead of just the table html."
 msgstr ""
 
 #. HTML Table Creation Options
@@ -4286,9 +4256,7 @@ msgid "_Use cellspan"
 msgstr ""
 
 #: plug-ins/common/gtm.c:479
-msgid ""
-"If checked GTM will replace any rectangular sections of identically colored "
-"blocks with one large cell with ROWSPAN and COLSPAN values."
+msgid "If checked GTM will replace any rectangular sections of identically colored blocks with one large cell with ROWSPAN and COLSPAN values."
 msgstr ""
 
 #: plug-ins/common/gtm.c:488
@@ -4296,10 +4264,7 @@ msgid "Co_mpress TD tags"
 msgstr ""
 
 #: plug-ins/common/gtm.c:494
-msgid ""
-"Checking this tag will cause GTM to leave no whitespace between the TD tags "
-"and the cellcontent.  This is only necessary for pixel level positioning "
-"control."
+msgid "Checking this tag will cause GTM to leave no whitespace between the TD tags and the cellcontent.  This is only necessary for pixel level positioning control."
 msgstr ""
 
 #: plug-ins/common/gtm.c:504
@@ -5653,9 +5618,7 @@ msgid "Unknown color model in PNG file '%s'."
 msgstr ""
 
 #: plug-ins/common/png.c:846
-msgid ""
-"The PNG file specifies an offset that caused the layer to be positioned "
-"outside the image."
+msgid "The PNG file specifies an offset that caused the layer to be positioned outside the image."
 msgstr ""
 
 #: plug-ins/common/png.c:1163
@@ -5819,9 +5782,7 @@ msgid "_Map backwards"
 msgstr ""
 
 #: plug-ins/common/polar.c:653
-msgid ""
-"If checked the mapping will begin at the right side, as opposed to beginning "
-"at the left."
+msgid "If checked the mapping will begin at the right side, as opposed to beginning at the left."
 msgstr ""
 
 #: plug-ins/common/polar.c:664
@@ -5829,9 +5790,7 @@ msgid "Map from _top"
 msgstr ""
 
 #: plug-ins/common/polar.c:670
-msgid ""
-"If unchecked the mapping will put the bottom row in the middle and the top "
-"row on the outside.  If checked it will be the opposite."
+msgid "If unchecked the mapping will put the bottom row in the middle and the top row on the outside.  If checked it will be the opposite."
 msgstr ""
 
 #: plug-ins/common/polar.c:682
@@ -5840,9 +5799,7 @@ msgid "To _polar"
 msgstr "Tepe:"
 
 #: plug-ins/common/polar.c:688
-msgid ""
-"If unchecked the image will be circularly mapped onto a rectangle.  If "
-"checked the image will be mapped onto a circle."
+msgid "If unchecked the image will be circularly mapped onto a rectangle.  If checked the image will be mapped onto a circle."
 msgstr ""
 
 #: plug-ins/common/postscript.c:576 plug-ins/common/postscript.c:662
@@ -5965,9 +5922,7 @@ msgid "_Keep aspect ratio"
 msgstr ""
 
 #: plug-ins/common/postscript.c:3158
-msgid ""
-"When toggled, the resulting image will be scaled to fit into the given size "
-"without changing the aspect ratio."
+msgid "When toggled, the resulting image will be scaled to fit into the given size without changing the aspect ratio."
 msgstr ""
 
 #. Unit
@@ -6016,16 +5971,12 @@ msgstr ""
 
 #: plug-ins/common/psd_save.c:1564
 #, c-format
-msgid ""
-"Unable to save '%s'.  The psd file format does not support images that are "
-"more than 30000 pixels wide or tall."
+msgid "Unable to save '%s'.  The psd file format does not support images that are more than 30000 pixels wide or tall."
 msgstr ""
 
 #: plug-ins/common/psd_save.c:1576
 #, c-format
-msgid ""
-"Unable to save '%s'.  The psd file format does not support images with "
-"layers that are more than 30000 pixels wide or tall."
+msgid "Unable to save '%s'.  The psd file format does not support images with layers that are more than 30000 pixels wide or tall."
 msgstr ""
 
 #: plug-ins/common/psp.c:362
@@ -6492,9 +6443,8 @@ msgstr ""
 msgid "_Sharpen..."
 msgstr "Ekran"
 
-#.
 #. * Let the user know what we're doing...
-#.
+#. 
 #: plug-ins/common/sharpen.c:311
 msgid "Sharpening..."
 msgstr ""
@@ -7229,8 +7179,7 @@ msgid "Import _paths"
 msgstr ""
 
 #: plug-ins/common/svg.c:914
-msgid ""
-"Import path elements of the SVG so they can be used with the GIMP path tool"
+msgid "Import path elements of the SVG so they can be used with the GIMP path tool"
 msgstr ""
 
 #: plug-ins/common/svg.c:927
@@ -7307,9 +7256,7 @@ msgstr ""
 #: plug-ins/common/tiff.c:859
 msgid ""
 "Warning:\n"
-"The image you are loading has 16 bits per channel. GIMP can only handle 8 "
-"bit, so it will be converted for you. Information will be lost because of "
-"this conversion."
+"The image you are loading has 16 bits per channel. GIMP can only handle 8 bit, so it will be converted for you. Information will be lost because of this conversion."
 msgstr ""
 
 #: plug-ins/common/tiff.c:1955
@@ -7436,9 +7383,7 @@ msgid "Saved"
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:94
-msgid ""
-"A unit definition will only be saved before GIMP exits if this column is "
-"checked."
+msgid "A unit definition will only be saved before GIMP exits if this column is checked."
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:96
@@ -7446,8 +7391,7 @@ msgid "ID"
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:96
-msgid ""
-"This string will be used to identify a unit in GIMP's configuration files."
+msgid "This string will be used to identify a unit in GIMP's configuration files."
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:98
@@ -7463,10 +7407,7 @@ msgid "Digits"
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:99
-msgid ""
-"This field is a hint for numerical input fields. It specifies how many "
-"decimal digits the input field should provide to get approximately the same "
-"accuracy as an \"inch\" input field with two decimal digits."
+msgid "This field is a hint for numerical input fields. It specifies how many decimal digits the input field should provide to get approximately the same accuracy as an \"inch\" input field with two decimal digits."
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:104
@@ -7474,9 +7415,7 @@ msgid "Symbol"
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:104
-msgid ""
-"The unit's symbol if it has one (e.g. \"'\" for inches). The unit's "
-"abbreviation is used if doesn't have a symbol."
+msgid "The unit's symbol if it has one (e.g. \"'\" for inches). The unit's abbreviation is used if doesn't have a symbol."
 msgstr ""
 
 #: plug-ins/common/uniteditor.c:107
@@ -7866,11 +7805,10 @@ msgstr "Açı:"
 msgid "Fixed-direction-vector map selection menu"
 msgstr ""
 
-#.
 #. if (display_diff_map) {
 #. gimp_display_new(new_image_id);
 #. }
-#.
+#. 
 #. make sure layer is visible
 #: plug-ins/common/warp.c:1175
 msgid "Smoothing X gradient..."
@@ -7989,7 +7927,7 @@ msgid "Can't get Clipboard data."
 msgstr ""
 
 #. ??? gimp_image_convert_rgb (image_ID);
-#.
+#. 
 #: plug-ins/common/winclipboard.c:587
 msgid "Pasted"
 msgstr ""
@@ -8111,9 +8049,7 @@ msgstr ""
 
 #: plug-ins/common/winprint.c:558
 #, c-format
-msgid ""
-"StretchBlt (hDC, %d, %d, %d, %d, hdcMem, %d, 0, %d, 1, SRCCOPY) failed, "
-"error = %d, y = %d"
+msgid "StretchBlt (hDC, %d, %d, %d, %d, hdcMem, %d, 0, %d, 1, SRCCOPY) failed, error = %d, y = %d"
 msgstr ""
 
 #: plug-ins/common/winprint.c:587
@@ -8187,8 +8123,7 @@ msgstr ""
 #. The image is not black-and-white.
 #: plug-ins/common/xbm.c:960
 msgid ""
-"The image which you are trying to save as an XBM contains more than two "
-"colors.\n"
+"The image which you are trying to save as an XBM contains more than two colors.\n"
 "\n"
 "Please convert it to a black and white (1-bit) indexed image and try again."
 msgstr ""
@@ -8358,12 +8293,11 @@ msgstr ""
 msgid "No matches"
 msgstr ""
 
-#.
 #. *  Scales
-#.
-#.
+#. 
+#. 
 #. *    Scales
-#.
+#. 
 #: plug-ins/dbbrowser/gimpprocview.c:133 plug-ins/gflare/gflare.c:2673
 #: plug-ins/gflare/gflare.c:3503 plug-ins/gflare/gflare.c:3608
 #: plug-ins/gflare/gflare.c:3745
@@ -8854,9 +8788,7 @@ msgid "Copy"
 msgstr "Kopyala"
 
 #: plug-ins/gfig/gfig-dialog.c:1298
-msgid ""
-"Layer background type. Copy causes the previous layer to be copied before "
-"the draw is performed."
+msgid "Layer background type. Copy causes the previous layer to be copied before the draw is performed."
 msgstr ""
 
 #: plug-ins/gfig/gfig-dialog.c:1304
@@ -8978,9 +8910,7 @@ msgid "_Gfig..."
 msgstr ""
 
 #: plug-ins/gfig/gfig.c:726
-msgid ""
-"Error trying to save figure as a parasite: can't attach parasite to "
-"drawable.\n"
+msgid "Error trying to save figure as a parasite: can't attach parasite to drawable.\n"
 msgstr ""
 
 #: plug-ins/gfig/gfig.c:747
@@ -9032,9 +8962,8 @@ msgstr ""
 msgid "Failed to write GFlare file '%s': %s"
 msgstr ""
 
-#.
 #. *    Dialog Shell
-#.
+#. 
 #: plug-ins/gflare/gflare.c:2294
 msgid "GFlare"
 msgstr ""
@@ -9166,9 +9095,8 @@ msgstr ""
 msgid "_General"
 msgstr "Genel"
 
-#.
 #. *  Gradient Menus
-#.
+#. 
 #: plug-ins/gflare/gflare.c:3476 plug-ins/gflare/gflare.c:3579
 #: plug-ins/gflare/gflare.c:3718
 msgid "Gradients"
@@ -9227,9 +9155,8 @@ msgstr ""
 msgid "Probability Gradient:"
 msgstr ""
 
-#.
 #. *    Shape Radio Button Frame
-#.
+#. 
 #: plug-ins/gflare/gflare.c:3799
 msgid "Shape of Second Flares"
 msgstr ""
@@ -9415,8 +9342,7 @@ msgid "Shadow depth:"
 msgstr ""
 
 #: plug-ins/gimpressionist/general.c:243
-msgid ""
-"The depth of the drop shadow, i.e. how far apart from the object it should be"
+msgid "The depth of the drop shadow, i.e. how far apart from the object it should be"
 msgstr ""
 
 #: plug-ins/gimpressionist/general.c:248
@@ -9489,9 +9415,7 @@ msgid "The angle span of the first brush to create"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientation.c:139
-msgid ""
-"Let the value (brightness) of the region determine the direction of the "
-"stroke"
+msgid "Let the value (brightness) of the region determine the direction of the stroke"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientation.c:142
@@ -9500,9 +9424,7 @@ msgid "Radius"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientation.c:143
-msgid ""
-"The distance from the center of the image determines the direction of the "
-"stroke"
+msgid "The distance from the center of the image determines the direction of the stroke"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientation.c:147
@@ -9563,9 +9485,7 @@ msgid "Vectors"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientmap.c:542
-msgid ""
-"The vector-field. Left-click to move selected vector, Right-click to point "
-"it towards mouse, Middle-click to add a new vector."
+msgid "The vector-field. Left-click to move selected vector, Right-click to point it towards mouse, Middle-click to add a new vector."
 msgstr ""
 
 #: plug-ins/gimpressionist/orientmap.c:565
@@ -9624,9 +9544,7 @@ msgid "_Voronoi"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientmap.c:637
-msgid ""
-"Voronoi-mode makes only the vector closest to the given point have any "
-"influence"
+msgid "Voronoi-mode makes only the vector closest to the given point have any influence"
 msgstr ""
 
 #: plug-ins/gimpressionist/orientmap.c:647
@@ -9723,7 +9641,6 @@ msgstr ""
 msgid "Focus the brush strokes around the center of the image"
 msgstr ""
 
-#.
 #. * gimp_filename_to_utf8 () and g_strerror () return temporary strings
 #. * that need not and should not be freed. So this call is OK.
 #. *
@@ -9815,13 +9732,11 @@ msgid "Size:"
 msgstr "Büyüklük:"
 
 #: plug-ins/gimpressionist/size.c:142
-msgid ""
-"Let the value (brightness) of the region determine the size of the stroke"
+msgid "Let the value (brightness) of the region determine the size of the stroke"
 msgstr ""
 
 #: plug-ins/gimpressionist/size.c:146
-msgid ""
-"The distance from the center of the image determines the size of the stroke"
+msgid "The distance from the center of the image determines the size of the stroke"
 msgstr ""
 
 #: plug-ins/gimpressionist/size.c:150
@@ -9857,9 +9772,7 @@ msgid "Smvectors"
 msgstr ""
 
 #: plug-ins/gimpressionist/sizemap.c:415
-msgid ""
-"The smvector-field. Left-click to move selected smvector, Right-click to "
-"point it towards mouse, Middle-click to add a new smvector."
+msgid "The smvector-field. Left-click to move selected smvector, Right-click to point it towards mouse, Middle-click to add a new smvector."
 msgstr ""
 
 #: plug-ins/gimpressionist/sizemap.c:457
@@ -9897,9 +9810,7 @@ msgid "St_rength exp.:"
 msgstr "Sol:"
 
 #: plug-ins/gimpressionist/sizemap.c:525
-msgid ""
-"Voronoi-mode makes only the smvector closest to the given point have any "
-"influence"
+msgid "Voronoi-mode makes only the smvector closest to the given point have any influence"
 msgstr ""
 
 #. don't translate the gimprc entry
@@ -10226,11 +10137,7 @@ msgid "Resulting Guide Bounds: %d,%d to %d,%d (%d areas)"
 msgstr ""
 
 #: plug-ins/imagemap/imap_cmd_guides.c:142
-msgid ""
-"Guides are pre-defined rectangles covering the image. You define them by "
-"their width, height, and spacing from each other. This allows you to rapidly "
-"create the most common image map type - image collection of \"thumbnails\", "
-"suitable for navigation bars."
+msgid "Guides are pre-defined rectangles covering the image. You define them by their width, height, and spacing from each other. This allows you to rapidly create the most common image map type - image collection of \"thumbnails\", suitable for navigation bars."
 msgstr ""
 
 #: plug-ins/imagemap/imap_cmd_guides.c:172
@@ -11073,17 +10980,11 @@ msgid "Density:"
 msgstr ""
 
 #: plug-ins/print/gimp_color_window.c:393
-msgid ""
-"Adjust the density (amount of ink) of the print. Reduce the density if the "
-"ink bleeds through the paper or smears; increase the density if black "
-"regions are not solid."
+msgid "Adjust the density (amount of ink) of the print. Reduce the density if the ink bleeds through the paper or smears; increase the density if black regions are not solid."
 msgstr ""
 
 #: plug-ins/print/gimp_color_window.c:415
-msgid ""
-"Adjust the gamma of the print. Larger values will produce a generally "
-"brighter print, while smaller values will produce a generally darker print. "
-"Black and white will remain the same, unlike with the brightness adjustment."
+msgid "Adjust the gamma of the print. Larger values will produce a generally brighter print, while smaller values will produce a generally darker print. Black and white will remain the same, unlike with the brightness adjustment."
 msgstr ""
 
 #: plug-ins/print/gimp_color_window.c:432
@@ -11095,14 +10996,12 @@ msgid ""
 "Choose the dither algorithm to be used.\n"
 "Adaptive Hybrid usually produces the best all-around quality.\n"
 "Ordered is faster and produces almost as good quality on photographs.\n"
-"Fast and Very Fast are considerably faster, and work well for text and line "
-"art.\n"
+"Fast and Very Fast are considerably faster, and work well for text and line art.\n"
 "Hybrid Floyd-Steinberg generally produces inferior output."
 msgstr ""
 
-#.
 #. * Create the main dialog
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:359
 #, c-format
 msgid "%s -- Print v%s"
@@ -11124,14 +11023,10 @@ msgstr ""
 msgid ""
 "Position the image on the page.\n"
 "Click and drag with the primary button to position the image.\n"
-"Click and drag with the second button to move the image with finer "
-"precision; each unit of motion moves the image one point (1/72\")\n"
-"Click and drag with the third (middle) button to move the image in units of "
-"the image size.\n"
-"Holding down the shift key while clicking and dragging constrains the image "
-"to only horizontal or vertical motion.\n"
-"If you click another button while dragging the mouse, the image will return "
-"to its original position."
+"Click and drag with the second button to move the image with finer precision; each unit of motion moves the image one point (1/72\")\n"
+"Click and drag with the third (middle) button to move the image in units of the image size.\n"
+"Holding down the shift key while clicking and dragging constrains the image to only horizontal or vertical motion.\n"
+"If you click another button while dragging the mouse, the image will return to its original position."
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:481
@@ -11155,9 +11050,7 @@ msgid "Seascape"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:495
-msgid ""
-"Select the orientation: portrait, landscape, upside down, or seascape "
-"(upside down landscape)"
+msgid "Select the orientation: portrait, landscape, upside down, or seascape (upside down landscape)"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:514
@@ -11226,9 +11119,8 @@ msgstr ""
 msgid "Setup Printer"
 msgstr ""
 
-#.
 #. * Printer driver option menu.
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:672
 msgid "Printer Model:"
 msgstr ""
@@ -11237,9 +11129,8 @@ msgstr ""
 msgid "Select your printer model"
 msgstr ""
 
-#.
 #. * PPD file.
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:723
 msgid "PPD File:"
 msgstr ""
@@ -11256,17 +11147,14 @@ msgstr ""
 msgid "Choose the PPD file for your printer"
 msgstr ""
 
-#.
 #. * Print command.
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:758
 msgid "Command:"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:771
-msgid ""
-"Enter the command to print to your printer. Note: Please do not remove the `-"
-"l' or `-oraw' from the command string, or printing will probably fail!"
+msgid "Enter the command to print to your printer. Note: Please do not remove the `-l' or `-oraw' from the command string, or printing will probably fail!"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:781
@@ -11324,40 +11212,32 @@ msgid "Printer Settings"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:916
-msgid ""
-"Select the name of the printer (not the type, or model, of printer) that you "
-"wish to print to"
+msgid "Select the name of the printer (not the type, or model, of printer) that you wish to print to"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:926
 msgid "Printer model:"
 msgstr ""
 
-#.
 #. * Setup printer button
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:937
 msgid "Setup printer..."
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:939
-msgid ""
-"Choose the printer model, PPD file, and command that is used to print to "
-"this printer"
+msgid "Choose the printer model, PPD file, and command that is used to print to this printer"
 msgstr ""
 
-#.
 #. * New printer button
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:954
 #, fuzzy
 msgid "New printer..."
 msgstr "Nokta sil"
 
 #: plug-ins/print/gimp_main_window.c:956
-msgid ""
-"Define a new logical printer. This can be used to name a collection of "
-"settings that you wish to remember for future use."
+msgid "Define a new logical printer. This can be used to name a collection of settings that you wish to remember for future use."
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:977
@@ -11425,9 +11305,7 @@ msgid "Scale by:"
 msgstr "Büyüklük:"
 
 #: plug-ins/print/gimp_main_window.c:1157
-msgid ""
-"Select whether scaling is measured as percent of available page size or "
-"number of output dots per inch"
+msgid "Select whether scaling is measured as percent of available page size or number of output dots per inch"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:1162
@@ -11478,9 +11356,8 @@ msgstr ""
 msgid "Set the base unit of measurement to centimetres"
 msgstr ""
 
-#.
 #. * The "image size" button
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:1274
 msgid ""
 "Use Original\n"
@@ -11527,9 +11404,7 @@ msgid "Photograph"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:1366
-msgid ""
-"Slowest, but most accurate and smoothest color for continuous tone images "
-"and photographs"
+msgid "Slowest, but most accurate and smoothest color for continuous tone images and photographs"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:1389
@@ -11558,16 +11433,14 @@ msgstr ""
 msgid "Print in black and white (no color, and no shades of gray)"
 msgstr ""
 
-#.
 #. *  Color adjust button
-#.
+#. 
 #: plug-ins/print/gimp_main_window.c:1442
 msgid "Adjust output..."
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:1449
-msgid ""
-"Adjust color balance, brightness, contrast, saturation, and dither algorithm"
+msgid "Adjust color balance, brightness, contrast, saturation, and dither algorithm"
 msgstr ""
 
 #: plug-ins/print/gimp_main_window.c:1483
@@ -11695,7 +11568,8 @@ msgstr ""
 msgid "Select all"
 msgstr ""
 
-#. printf("width = %d, height = %d\n",BITMAP_WIDTH(marked),BITMAP_HEIGHT(marked));
+#. printf("width = %d, height =
+#. %d\n",BITMAP_WIDTH(marked),BITMAP_HEIGHT(marked));
 #: plug-ins/sel2path/pxl-outline.c:83
 msgid "Selection to Path..."
 msgstr ""
@@ -11887,97 +11761,75 @@ msgstr ""
 msgid "Error: XJT property file '%s' is empty."
 msgstr ""
 
-#, fuzzy
 #~ msgid "Paint"
 #~ msgstr "Nokta"
 
-#, fuzzy
 #~ msgid "All"
 #~ msgstr "Dosya"
 
-#, fuzzy
 #~ msgid "Clockwise"
 #~ msgstr "Kapat"
 
-#, fuzzy
 #~ msgid "Ifs_Compose..."
 #~ msgstr "Düzenle"
 
-#, fuzzy
 #~ msgid "/Move"
 #~ msgstr "Taşı"
 
-#, fuzzy
 #~ msgid "/Stretch"
 #~ msgstr "Sol:"
 
-#, fuzzy
 #~ msgid "/New"
 #~ msgstr "Yeni"
 
-#, fuzzy
 #~ msgid "/Delete"
 #~ msgstr "Sil"
 
-#, fuzzy
 #~ msgid "/Undo"
 #~ msgstr "Geri al"
 
-#, fuzzy
 #~ msgid "/Redo"
 #~ msgstr "İleri al"
 
-#, fuzzy
 #~ msgid "/Select All"
 #~ msgstr "Hepsini Seç"
 
-#, fuzzy
 #~ msgid "Loading %s:"
 #~ msgstr "Boşluk:"
 
-#, fuzzy
 #~ msgid "Saving %s:"
 #~ msgstr "Boşluk:"
 
-#, fuzzy
 #~ msgid "Number of Sides/Points/Turns:"
 #~ msgstr "_Çerçeve Sayısı:"
 
-#, fuzzy
 #~ msgid "_Do preview"
 #~ msgstr "Önizleme"
 
-#, fuzzy
 #~ msgid "Do pre_view"
 #~ msgstr "Önizleme"
 
-#, fuzzy
 #~ msgid "_Plugin Details"
 #~ msgstr "Azami Derinlik:"
 
 #~ msgid "Name:"
 #~ msgstr "İsim:"
 
-#, fuzzy
 #~ msgid "_Spherical"
 #~ msgstr "Küresel"
 
-#, fuzzy
 #~ msgid "S_inusoidal"
 #~ msgstr "Sinüssel"
 
 #~ msgid "Selection:"
 #~ msgstr "Seçim:"
 
-#, fuzzy
 #~ msgid "E_nable antialiasing"
 #~ msgstr "_Yumuşatma Kullan"
 
-#, fuzzy
 #~ msgid "L_ight yype:"
 #~ msgstr "Işı_k Türü:"
 
-#, fuzzy
 #~ msgid "Lig_ht color:"
 #~ msgstr "Işık _Rengi:"
 
@@ -11990,30 +11842,24 @@ msgstr ""
 #~ msgid "New"
 #~ msgstr "Yeni"
 
-#, fuzzy
 #~ msgid "Reverse line"
 #~ msgstr "Yeniden boyutlandır"
 
-#, fuzzy
 #~ msgid "Scale to image"
 #~ msgstr "Kaydetme seçenekleri"
 
-#, fuzzy
 #~ msgid "Gfig Brush Selection"
 #~ msgstr "Seç"
 
-#, fuzzy
 #~ msgid "Set brush..."
 #~ msgstr "Farklı Kaydet..."
 
 #~ msgid "Add"
 #~ msgstr "Ekle"
 
-#, fuzzy
 #~ msgid "Each selection"
 #~ msgstr "_Seçim"
 
-#, fuzzy
 #~ msgid "All selections"
 #~ msgstr "_Seçim"
 
@@ -12023,37 +11869,30 @@ msgstr ""
 #~ msgid "(none)"
 #~ msgstr "(yok)"
 
-#, fuzzy
 #~ msgid "Save Resolution"
 #~ msgstr "Kaydetme seçenekleri"
 
-#, fuzzy
 #~ msgid "Tile _Height:"
 #~ msgstr "Yükseklik:"
 
-#, fuzzy
 #~ msgid "C_ell Size:"
 #~ msgstr "Büyüklük:"
 
-#, fuzzy
 #~ msgid "Random _Seed:"
 #~ msgstr "Hız:"
 
-#, fuzzy
 #~ msgid "Save _Resolution"
 #~ msgstr "Kaydetme seçenekleri"
 
 #~ msgid "Cos_ine"
 #~ msgstr "_Kosinüs"
 
-#, fuzzy
 #~ msgid "_Spherical Map"
 #~ msgstr "Dikey"
 
 #~ msgid "Milliseconds"
 #~ msgstr "Milisaniye"
 
-#, fuzzy
 #~ msgid "Open SVG"
 #~ msgstr "Aç"
 
@@ -12066,7 +11905,6 @@ msgstr ""
 #~ msgid "About..."
 #~ msgstr "Hakkında..."
 
-#, fuzzy
 #~ msgid "_after"
 #~ msgstr "sonra"
 
@@ -12076,21 +11914,18 @@ msgstr ""
 #~ msgid "Help"
 #~ msgstr "Yardım"
 
-#, fuzzy
 #~ msgid "With _Decorations"
 #~ msgstr "Açıklama:"
 
 #~ msgid "Remove"
 #~ msgstr "Sil"
 
-#, fuzzy
 #~ msgid "Del"
 #~ msgstr "Sil"
 
 #~ msgid "Load"
 #~ msgstr "Yükle"
 
-#, fuzzy
 #~ msgid "_New Unit"
 #~ msgstr "Yeni"
 
@@ -12100,11 +11935,9 @@ msgstr ""
 #~ msgid "Refresh"
 #~ msgstr "Yeniden yükle"
 
-#, fuzzy
 #~ msgid "Image preview"
 #~ msgstr "Önizleme"
 
-#, fuzzy
 #~ msgid "Co_py"
 #~ msgstr "Kopyala"
 
