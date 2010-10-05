@@ -14,7 +14,41 @@
    <string>Basket</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QWidget { color:white; }</string>
+   <string notr="true">QWidget { color:white; }
+QScrollBar:vertical {
+        width: 12px;
+        margin: 16px 0 16px 0;
+        background-color: rgba(255, 255, 255, 0);
+}
+
+QScrollBar::handle:vertical {
+        min-height: 12px;
+        background-color: rgba(255,255,255, 100);
+        border: 0px solid rgba(255, 255, 255, 50);
+        border-radius: 3px;
+        padding:3px;
+}
+QScrollBar::handle:vertical:hover {
+        min-height: 12px;
+        background-color: rgba(255,255,255, 100);                                                                                                                                                                                                  border: 0px solid rgba(255, 255, 255, 50);
+        border-radius: 3px;
+}
+QScrollBar::add-line:vertical {
+        border: 0px;
+        height: 16px;
+        subcontrol-position: bottom;
+        subcontrol-origin: margin;
+        background: transparent;
+}
+QScrollBar::sub-line:vertical {
+        border: 0px;
+        height: 16px;
+        subcontrol-position: top;
+        subcontrol-origin: margin;
+        background: transparent;
+}
+QScrollBar::up-arrow:vertical { background:none; }
+QScrollBar::down-arrow:vertical { background:none; }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0" colspan="5">
@@ -33,13 +67,17 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(0,0,0,100);</string>
+      <string notr="true">background-color:rgba(0,0,0,100);
+border-radius:4px;</string>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
+     </property>
+     <property name="autoScrollMargin">
+      <number>1</number>
      </property>
      <property name="editTriggers">
       <set>QAbstractItemView::NoEditTriggers</set>
@@ -58,6 +96,9 @@
      </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
      </property>
      <property name="showGrid">
       <bool>false</bool>
@@ -101,7 +142,8 @@
       </size>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color:rgba(0,0,0,100);</string>
+      <string notr="true">background-color:rgba(0,0,0,100);
+border-radius:4px;</string>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Plain</enum>
@@ -126,6 +168,9 @@
      </property>
      <property name="selectionBehavior">
       <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <property name="verticalScrollMode">
+      <enum>QAbstractItemView::ScrollPerPixel</enum>
      </property>
      <property name="showGrid">
       <bool>false</bool>
