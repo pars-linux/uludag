@@ -252,6 +252,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             if not self.state.silence:
                 totalPackages = self.packageList.packageCount()
             self.operation.setTotalPackages(totalPackages)
+            self.__go_back_all = True
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
@@ -375,7 +376,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         action = {self.__remove_action:self.state.REMOVE,
                   self.__install_action:self.state.INSTALL}.get(self.sender(), None)
         if action:
-            self.__go_back_all = True
             self.state.state = action
         self.basket._show()
         restoreCursor()
