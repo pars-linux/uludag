@@ -127,44 +127,44 @@ msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:784
 msgid "Load a fractal from file"
-msgstr ""
+msgstr "Dosyadan bir fraktal yükle"
 
 #: plug-ins/FractalExplorer/Dialogs.c:792
 msgid "Reset parameters to default values"
-msgstr ""
+msgstr "Parametreleri varsayılan değerlere sıfırla"
 
 #: plug-ins/FractalExplorer/Dialogs.c:801
 msgid "Save active fractal to file"
-msgstr ""
+msgstr "Etkin fraktalı dosyaya kaydet"
 
 #. Fractal type toggle box
 #: plug-ins/FractalExplorer/Dialogs.c:804
 msgid "Fractal Type"
-msgstr ""
+msgstr "Fraktal Türü"
 
 #: plug-ins/FractalExplorer/Dialogs.c:817
 msgid "Mandelbrot"
-msgstr ""
+msgstr "Mandelbrot"
 
 #: plug-ins/FractalExplorer/Dialogs.c:819
 msgid "Julia"
-msgstr ""
+msgstr "Julia"
 
 #: plug-ins/FractalExplorer/Dialogs.c:821
 msgid "Barnsley 1"
-msgstr ""
+msgstr "Barnsley 1"
 
 #: plug-ins/FractalExplorer/Dialogs.c:823
 msgid "Barnsley 2"
-msgstr ""
+msgstr "Barnsley 2"
 
 #: plug-ins/FractalExplorer/Dialogs.c:825
 msgid "Barnsley 3"
-msgstr ""
+msgstr "Barnsley 3"
 
 #: plug-ins/FractalExplorer/Dialogs.c:827
 msgid "Spider"
-msgstr ""
+msgstr "Örümcek"
 
 #: plug-ins/FractalExplorer/Dialogs.c:829
 msgid "Man'o'war"
@@ -172,11 +172,11 @@ msgstr ""
 
 #: plug-ins/FractalExplorer/Dialogs.c:831
 msgid "Lambda"
-msgstr ""
+msgstr "Lambda"
 
 #: plug-ins/FractalExplorer/Dialogs.c:833
 msgid "Sierpinski"
-msgstr ""
+msgstr "Sierpinski"
 
 #: plug-ins/FractalExplorer/Dialogs.c:879 plug-ins/common/sinus.c:879
 msgid "Co_lors"
@@ -193,7 +193,7 @@ msgstr "Renk sayısı:"
 
 #: plug-ins/FractalExplorer/Dialogs.c:898
 msgid "Change the number of colors in the mapping"
-msgstr ""
+msgstr "Haritalamadaki renk sayısını değiştir"
 
 #: plug-ins/FractalExplorer/Dialogs.c:905
 msgid "Use loglog smoothing"
@@ -206,7 +206,7 @@ msgstr ""
 #. Color Density frame
 #: plug-ins/FractalExplorer/Dialogs.c:916
 msgid "Color Density"
-msgstr ""
+msgstr "Renk Yoğunluğu"
 
 #. These values are translated for the GUI but also used internally
 #. to figure out which button the user pushed, etc.
@@ -218,7 +218,7 @@ msgstr "Kırmızı:"
 
 #: plug-ins/FractalExplorer/Dialogs.c:931
 msgid "Change the intensity of the red channel"
-msgstr ""
+msgstr "Kırmızı kanalın yoğunluğunu değiştir"
 
 #: plug-ins/FractalExplorer/Dialogs.c:938 plug-ins/common/compose.c:129
 #: plug-ins/common/compose.c:139 plug-ins/common/fp.c:218
@@ -227,7 +227,7 @@ msgstr "Yeşil:"
 
 #: plug-ins/FractalExplorer/Dialogs.c:941
 msgid "Change the intensity of the green channel"
-msgstr ""
+msgstr "Yeşil kanalın yoğunluğunu değiştir"
 
 #: plug-ins/FractalExplorer/Dialogs.c:948 plug-ins/common/compose.c:130
 #: plug-ins/common/compose.c:140 plug-ins/common/fp.c:219
