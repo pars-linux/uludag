@@ -91,7 +91,6 @@ You can always choose another installation method if you know what you are doing
             raise BootLoaderError, _("No drives found.")
         elif len(self.bootloader.drives) ==  1:
             self.ui.drives.hide()
-            self.ui.selectDrive.hide()
 
         for drive in self.bootloader.drives:
             d = ctx.storage.devicetree.getDeviceByName(drive)
@@ -128,8 +127,6 @@ You can always choose another installation method if you know what you are doing
             #self.ui.installMBR.setText("%s - %s" % (boot_type_strings[BOOT_TYPE_MBR], self.device))
 
     def slotDrivesEnabled(self, state):
-        self.ui.selectDrive.setChecked(not state)
-        self.ui.selectDrive.setEnabled(not state)
         self.ui.drives.setEnabled(not state)
 
     def slotDeviceChanged(self, current):
