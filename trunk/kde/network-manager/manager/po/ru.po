@@ -76,7 +76,7 @@ msgstr "Профиль с именем '%1' уже существует."
 
 #: src/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
-msgstr ""
+msgstr "Вы действительно хотите удалить профиль %1?"
 
 #: src/networkmanager/widgets.py:74
 msgid "Enter PIN"
@@ -88,7 +88,7 @@ msgstr "Пожалуйста, введите PIN-код для"
 
 #: src/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr ""
+msgstr "Вы ввели неправильный код PIN-код 3 раза"
 
 #: src/networkmanager/widgets.py:280 ui/ui_main.py:346
 msgid "Refresh"
@@ -121,7 +121,7 @@ msgstr "Доступ запрещен"
 
 #: ui/ui_ap.py:56 ui/ui_item.py:111
 msgid "Signal Strength"
-msgstr ""
+msgstr "Сигнал"
 
 #: ui/ui_item.py:108
 msgid "Set connection state."
@@ -169,71 +169,71 @@ msgstr "Настройки сети"
 
 #: ui/ui_main.py:351
 msgid "Use DHCP"
-msgstr ""
+msgstr "Использование DHCP"
 
 #: ui/ui_main.py:352
 msgid "Use Manual Settings"
-msgstr ""
+msgstr "Использовать другие настройки"
 
 #: ui/ui_main.py:353
 msgid "Address :"
-msgstr ""
+msgstr "Адрес:"
 
 #: ui/ui_main.py:354 ui/ui_main.py:357
 msgid "Custom"
-msgstr ""
+msgstr "Подробнее"
 
 #: ui/ui_main.py:355
 msgid "Network Mask :"
-msgstr ""
+msgstr "Маска подсети:"
 
 #: ui/ui_main.py:356
 msgid "Default Gateway :"
-msgstr ""
+msgstr "Шлюз по умолчанию:"
 
 #: ui/ui_main.py:358 ui/ui_nameserver.py:44
 msgid "Name Servers"
-msgstr ""
+msgstr "DNS"
 
 #: ui/ui_main.py:359
 msgid "Default"
-msgstr ""
+msgstr "По умолчанию"
 
 #: ui/ui_main.py:360
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматически"
 
 #: ui/ui_main.py:361
 msgid "Custom :"
-msgstr ""
+msgstr "Пользовательские:"
 
 #: ui/ui_main.py:362
 msgid "Remote"
-msgstr ""
+msgstr "Удаленный"
 
 #: ui/ui_main.py:363
 msgid "Network Name (ESSID) :"
-msgstr ""
+msgstr "Имя сети(ESSID):"
 
 #: ui/ui_main.py:364
 msgid "Scan"
-msgstr ""
+msgstr "Сканировать"
 
 #: ui/ui_main.py:365
 msgid "Security Type :"
-msgstr ""
+msgstr "Тип безопасности:"
 
 #: ui/ui_main.py:366
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: ui/ui_main.py:367
 msgid "Key :"
-msgstr ""
+msgstr "Ключ:"
 
 #: ui/ui_main.py:368
 msgid "Hide Password"
-msgstr ""
+msgstr "Скрыть пароль"
 
 #: ui/ui_nameserver.py:43
 msgid "Machine Name"
