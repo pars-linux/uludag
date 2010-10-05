@@ -225,55 +225,55 @@ msgstr "Операция - %1%"
 
 #: src/progressdialog.py:49
 msgid "configuring"
-msgstr ""
+msgstr "настройка"
 
 #: src/progressdialog.py:49
 msgid "extracting"
-msgstr ""
+msgstr "распаковка"
 
 #: src/progressdialog.py:53
 msgid "Downloading package list of %1"
-msgstr ""
+msgstr "Загрузка списка пакетов %1"
 
 #: src/progressdialog.py:55
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: src/progressdialog.py:61
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 #: src/progressdialog.py:68
 msgid "%1 / %2, %3"
-msgstr ""
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:81 ui/ui_progressdialog_v4.py:168
 msgid "Preparing PiSi..."
-msgstr ""
+msgstr "Подготовка PiSi ..."
 
 #: src/progressdialog.py:85
 msgid "-- / --"
-msgstr ""
+msgstr "-- / --"
 
 #: src/progressdialog.py:90
 msgid "<b>Cancelling operation...</b>"
-msgstr ""
+msgstr "<b>Отмена операции ...</b>"
 
 #: src/settingsdialog.py:152
 msgid "Open Directory"
-msgstr ""
+msgstr "Open Directory"
 
 #: src/settingsdialog.py:161
 msgid "Warning"
-msgstr ""
+msgstr "Предупреждение"
 
 #: src/settingsdialog.py:162
 msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
+msgstr "Все кэшированные пакеты будут удалены. Вы уверены?"
 
 #: src/settingsdialog.py:223
 msgid "Not a valid repository name"
-msgstr ""
+msgstr "Не верное имя репозитория"
 
 #: src/settingsdialog.py:228
 msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
@@ -281,27 +281,27 @@ msgstr ""
 
 #: src/statemanager.py:83
 msgid "Installing Package(s)"
-msgstr ""
+msgstr "Установка пакета (ов)"
 
 #: src/statemanager.py:84
 msgid "Removing Package(s)"
-msgstr ""
+msgstr "Удаление пакета (ов)"
 
 #: src/statemanager.py:85
 msgid "Upgrading Package(s)"
-msgstr ""
+msgstr "Обновление пакета (ов)"
 
 #: src/statemanager.py:86
 msgid "Applying Repository Changes"
-msgstr ""
+msgstr "Применение данных изменения"
 
 #: src/statemanager.py:87
 msgid "Updating Repository"
-msgstr ""
+msgstr "Обновление репозитория"
 
 #: src/statemanager.py:88
 msgid "Updating Repository(s)"
-msgstr ""
+msgstr "Обновление репозитория (ев)"
 
 #: src/statemanager.py:91
 msgid "installed"
@@ -399,7 +399,7 @@ msgstr ""
 
 #: src/statemanager.py:163
 msgid "in your basket."
-msgstr ""
+msgstr "в вашей корзине."
 
 #: src/statemanager.py:187
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
@@ -407,7 +407,7 @@ msgstr ""
 
 #: src/statemanager.py:188 src/statemanager.py:196
 msgid "Conflict Error"
-msgstr ""
+msgstr "Конфликт ошибки"
 
 #: src/statemanager.py:192
 msgid "The following packages conflicts:\n"
@@ -425,7 +425,7 @@ msgstr ""
 
 #: src/tray.py:177
 msgid "Update"
-msgstr ""
+msgstr "Обновление"
 
 #: src/tray.py:193
 msgid "There are <b>%1</b> updates available!"
@@ -433,53 +433,53 @@ msgstr ""
 
 #: src/tray.py:194
 msgid "Show Updates"
-msgstr ""
+msgstr "Показать обновления"
 
 #: src/tray.py:194
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорировать"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
-msgstr ""
+msgstr "Применение"
 
 #: ui/ui_appitem.py:59
 msgid "Web Tarayıcı"
-msgstr ""
+msgstr "Web Tarayıcı"
 
 #: ui/ui_appitem.py:60
 msgid "Firefox"
-msgstr ""
+msgstr "Firefox"
 
 #: ui/ui_basketdialog.py:103
 msgid "Basket"
-msgstr ""
+msgstr "Basket"
 
 #: ui/ui_basketdialog.py:104
 msgid "Selected package(s) for install:"
-msgstr ""
+msgstr "Выбранные пакеты для установки:"
 
 #: ui/ui_basketdialog.py:106
 msgid "Total Size:"
-msgstr ""
+msgstr "Размер:"
 
 #: ui/ui_basketdialog.py:107
 msgid "<b>2.2 MB</b>"
-msgstr ""
+msgstr "<b>2.2 MB</b>"
 
 #: ui/ui_basketdialog.py:109
 msgid "Download Size:"
-msgstr ""
+msgstr "Размер загрузки:"
 
 #: ui/ui_basketdialog.py:110
 msgid "<b>2.0 MB</"
-msgstr ""
+msgstr "<b>2.0 MB</"
 
 #: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:135
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
 #: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:167
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:140
 #: ui/ui_mainwidget_x11.py:77
@@ -494,11 +494,11 @@ msgstr ""
 #: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:138
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
-msgstr ""
+msgstr "Нажмите для поиска"
 
 #: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
 msgid "Search Button"
-msgstr ""
+msgstr "Кнопка поиска"
 
 #: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
 msgid "Action Button for current states action"
@@ -511,7 +511,7 @@ msgstr ""
 #: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:141
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
-msgstr ""
+msgstr "Список пакетов"
 
 #: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:139
 #: ui/ui_mainwidget_x11.py:87
@@ -520,15 +520,15 @@ msgstr ""
 
 #: ui/ui_mainwidget_v3.py:136
 msgid "Settings"
-msgstr ""
+msgstr "Настройки"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
-msgstr ""
+msgstr "Операция"
 
 #: ui/ui_progressdialog.py:155 ui/ui_progressdialog_v3.py:177
 msgid "<h3>Preparing PiSi...</h3>"
-msgstr ""
+msgstr "<h3>Подготовка PiSi...</h3>"
 
 #: ui/ui_progressdialog.py:156 ui/ui_progressdialog_v3.py:183
 msgid "Time remaining:"
@@ -536,19 +536,19 @@ msgstr ""
 
 #: ui/ui_progressdialog.py:157 ui/ui_progressdialog_v3.py:184
 msgid "--  / --"
-msgstr ""
+msgstr "--  / --"
 
 #: ui/ui_progressdialog.py:158 ui/ui_progressdialog_v3.py:185
 msgid "--:--:--"
-msgstr ""
+msgstr "--:--:--"
 
 #: ui/ui_progressdialog.py:159 ui/ui_progressdialog_v3.py:186
 msgid "Operation:"
-msgstr ""
+msgstr "Операция:"
 
 #: ui/ui_progressdialog.py:160 ui/ui_progressdialog_v3.py:187
 msgid "Status:"
-msgstr ""
+msgstr "Статус:"
 
 #: ui/ui_progressdialog.py:161 ui/ui_progressdialog_v3.py:178
 msgid ""
@@ -608,7 +608,7 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:372
 msgid "Package list"
-msgstr ""
+msgstr "Список пакетов"
 
 #: ui/ui_settingsdialog.py:373
 msgid "&Show only desktop applications"
@@ -620,7 +620,7 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:375
 msgid "System tray icon"
-msgstr ""
+msgstr "Значок в системной панели"
 
 #: ui/ui_settingsdialog.py:376
 msgid "Enable system tray icon"
@@ -640,7 +640,7 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:380
 msgid " min"
-msgstr ""
+msgstr "мин"
 
 #: ui/ui_settingsdialog.py:381
 msgid "Install updates automatically"
@@ -668,23 +668,23 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:387
 msgid "Maximum cache size:"
-msgstr ""
+msgstr "Максимальный размер кэша:"
 
 #: ui/ui_settingsdialog.py:388
 msgid "Unlimited"
-msgstr ""
+msgstr "Неограниченный"
 
 #: ui/ui_settingsdialog.py:389
 msgid " Mib"
-msgstr ""
+msgstr "Mib"
 
 #: ui/ui_settingsdialog.py:390
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Текущий каталог кэша:"
 
 #: ui/ui_settingsdialog.py:391
 msgid "Select..."
-msgstr ""
+msgstr "Выберите ..."
 
 #: ui/ui_settingsdialog.py:392
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
