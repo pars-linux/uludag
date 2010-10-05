@@ -27,7 +27,7 @@ msgstr "Менеджер пакетов"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "Pisi Package Manager Графический интерфейс пользователя"
 
 #: data/packagemanager-helper.desktop.in.h:1
 msgid "Add/Remove/Update Packages"
@@ -73,11 +73,11 @@ msgstr "Требования к обновлению"
 
 #: src/basketdialog.py:132
 msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr ""
+msgstr "Вы должны <b>перезагрузить компьютер</b> чтобы обновления  вступили в силу:"
 
 #: src/basketdialog.py:139
 msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr ""
+msgstr "Вы должны перезагрузить компьютер, чтобы обновления вступили в силу:"
 
 #: src/basketdialog.py:161 src/mainwidget.py:283 src/mainwidget.py:286
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -90,7 +90,7 @@ msgstr "Все"
 
 #: src/helpdialog.py:33
 msgid "Package Manager Help"
-msgstr ""
+msgstr "Менеджер пакетов Справка"
 
 #: src/main.py:60
 msgid "Show main window"
@@ -115,7 +115,7 @@ msgstr "Ошибка сети"
 
 #: src/mainwidget.py:278
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Проверьте сетевые подключения и повторите попытку."
 
 #: src/mainwidget.py:280
 msgid "Authorization Error"
@@ -123,11 +123,11 @@ msgstr "Ошибка авторизации"
 
 #: src/mainwidget.py:281
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Вы не авторизованы для этой операции."
 
 #: src/mainwidget.py:284
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
-msgstr ""
+msgstr "Пакет не найден. Он может быть обновлен или удален из базы. Пожалуйста, попробуйте обновить базу информации."
 
 #: src/mainwidget.py:395
 msgid "All Updates"
@@ -171,58 +171,57 @@ msgstr "загрузка"
 
 #: src/packagedelegate.py:54
 msgid "critical"
-msgstr ""
+msgstr "критический"
 
 #: src/packagedelegate.py:55
 msgid "security"
-msgstr ""
+msgstr "безопасный"
 
 #: src/packagedelegate.py:71
-#, fuzzy
 msgid "Description:"
 msgstr "Описание:"
 
 #: src/packagedelegate.py:72
 msgid "Website:"
-msgstr ""
+msgstr "Сайт:"
 
 #: src/packagedelegate.py:73
 msgid "Release:"
-msgstr ""
+msgstr "Релиз:"
 
 #: src/packagedelegate.py:74
 msgid "Repository:"
-msgstr ""
+msgstr "Репозиторий:"
 
 #: src/packagedelegate.py:75
 msgid "Package Size:"
-msgstr ""
+msgstr "Размер пакета:"
 
 #: src/packagedelegate.py:76
 msgid "Installed Version:"
-msgstr ""
+msgstr "Установленная версия:"
 
 #: src/packagedelegate.py:269
 msgid "Details"
-msgstr ""
+msgstr "Подробная информация"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
 msgid "Select all packages in this group"
-msgstr ""
+msgstr "Выберить все пакеты в этой группе"
 
 #: src/pm-install.py:47
 msgid "%prog packages_to_install"
-msgstr ""
+msgstr "%prog packages_to_install"
 
 #: src/progressdialog.py:45
 msgid "<p align='right'>%1 %</p>"
-msgstr ""
+msgstr "<p align='right'>%1 %</p>"
 
 #: src/progressdialog.py:46
 #, python-format
 msgid "Operation - %1%"
-msgstr ""
+msgstr "Операция - %1%"
 
 #: src/progressdialog.py:49
 msgid "configuring"
