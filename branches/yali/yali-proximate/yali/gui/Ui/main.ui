@@ -54,7 +54,7 @@
              <x>0</x>
              <y>0</y>
              <width>739</width>
-             <height>304</height>
+             <height>305</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout">
@@ -91,15 +91,7 @@
          <bool>false</bool>
         </property>
         <property name="styleSheet">
-         <string notr="true">/*#menuContainer{
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696 rgba(85, 126, 149, 255), stop:1 rgba(120, 146, 172, 255));
-	border-top: 1px solid white
-}*/
-
-#menuContainer{
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-	border-top: 1px solid white
-}</string>
+         <string notr="true"/>
         </property>
         <property name="frameShape">
          <enum>QFrame::NoFrame</enum>
@@ -126,50 +118,7 @@
          <item>
           <widget class="QToolButton" name="toolButton">
            <property name="styleSheet">
-            <string notr="true"> QToolButton { /* all types of tool button */
-	border:1px solid  rgba(34, 49, 60, 100);/* rgba(175, 111, 130, 150);*/
-	border-radius:2px;
- background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 150), stop:0.398093 rgba(44, 62, 79, 255), stop:0.521739 rgba(36, 61, 76, 255), stop:0.531585 rgba(40, 68, 86, 255), stop:0.983696 rgba(73, 109, 129, 255), stop:1 rgba(89, 108, 127, 255));
-    padding:1px 0px 1px 5px;
- }
-
- QToolButton[popupMode=&quot;1&quot;] { /* only for MenuButtonPopup */
-     padding-right: 20px; /* make way for the popup button */
- }
-
- QToolButton:hover{
-	border:1px solid  rgba(34, 49, 60, 100);/* rgba(175, 111, 130, 150);*/
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-
-
-/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(120, 146, 172, 255), stop:0.0155729 rgba(99, 141, 164, 255), stop:0.538376 rgba(49, 84, 106, 255), stop:1 rgba(51, 72, 91, 255))*/
-
-/*qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(122, 44, 67, 255), stop:0.521739 rgba(182, 103, 126, 255), stop:0.527174 rgba(205, 130, 152, 255), stop:0.983696 rgba(234, 179, 195, 255), stop:1 rgba(255, 200, 216, 255))*/
-}
-
- QToolButton:pressed {
-     background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-
- }
-
- /* the subcontrols below are used only in the MenuButtonPopup mode */
- QToolButton::menu-button {
-	border:1px solid  rgba(34, 49, 60, 100);/* rgba(175, 111, 130, 150);*/
-	border-radius:2px;
-     border-bottom-right-radius: 6px;
-     /* 16px width + 4px for border = 20px allocated above */
-     width: 16px;
- }
-
-QToolButton::menu-arrow {
-     image: url(:/images/treeview-branch-open.png);
- }
-
- QToolButton::menu-arrow:open {
-     top: 1px; left: 1px; /* shift it a bit */
- }
-</string>
+            <string notr="true"/>
            </property>
            <property name="text">
             <string>...</string>
@@ -297,13 +246,13 @@ QToolButton::menu-arrow {
         </property>
         <layout class="QGridLayout">
          <property name="horizontalSpacing">
-          <number>15</number>
+          <number>10</number>
          </property>
          <property name="verticalSpacing">
           <number>0</number>
          </property>
          <property name="margin">
-          <number>15</number>
+          <number>10</number>
          </property>
          <item row="0" column="0">
           <widget class="QLabel" name="screenIcon">
