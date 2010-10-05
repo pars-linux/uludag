@@ -47,12 +47,12 @@ msgstr "First Developer"
 #: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий"
+msgstr "Ясыров Василий, Семенов Николай"
 
 #: src/usermanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -100,7 +100,7 @@ msgstr ""
 
 #: src/usermanager/main.py:195
 msgid "Users"
-msgstr "Пользователь"
+msgstr "Пользователи"
 
 #: src/usermanager/main.py:196 ui/ui_edituser.py:213
 msgid "Groups"
@@ -189,7 +189,7 @@ msgstr "Shell:"
 
 #: ui/ui_edituser.py:206
 msgid "Give administrator rights."
-msgstr "Права администратора."
+msgstr "Дать права администратора."
 
 #: ui/ui_edituser.py:207
 msgid "Use system settings."
@@ -197,7 +197,7 @@ msgstr "Использовать настройки системы."
 
 #: ui/ui_edituser.py:208
 msgid "Authorize user."
-msgstr "Авторизация пользователей."
+msgstr "Авторизация пользователя."
 
 #: ui/ui_edituser.py:209
 msgid "Deny user."
