@@ -18,7 +18,7 @@ import sys
 import pisi
 
 from buildfarm import logger
-from buildfarm import qmanager
+from buildfarm import queuemanager
 from buildfarm.config import configuration as conf
 
 Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
@@ -90,7 +90,7 @@ class RepositoryManager:
 
 if __name__ == "__main__":
 
-    qmgr = qmanager.QueueManager()
+    qmgr = queuemanager.QueueManager()
 
     # Print current workqueue/waitqueue
     print "Current workqueue:\n%s" % ('-'*60)
