@@ -18,5 +18,6 @@ sed -i -e "s,Q_PROPERTY(bool Default READ default),Q_PROPERTY(bool Default READ 
 sed -i -e "s,inline bool default() const,inline bool getDefault() const," nm-active-connectioninterface.h
 
 # Another manual workarounds should be done
+# 0- Remove org.freedesktop.NetworkManager.Connection.Active interface from introspection/nm-vpn-connection.xml
 # 1- Fix double inclusion guards of qdbusxml2cpp like: NM-ACTIVE_H_12345 -> NM_ACTIVE_H
 # 2- Add last an additional parameter to GetSecrets method in type: const QDBusMessage & message
