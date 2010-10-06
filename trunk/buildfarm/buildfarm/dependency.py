@@ -24,7 +24,7 @@ class DependencyResolver:
         self.oldwd = os.getcwd()
         os.chdir(conf.localpspecrepo)
 
-        # work queue and wait queue may contain same pspecs. 
+        # Work queue and wait queue may contain same pspecs.
         # be sure that every pspec is unique in the pspeclist.
         self.pspeclist = [pspec for pspec in set(pspeclist)]
 
@@ -49,8 +49,8 @@ class DependencyResolver:
         try:
             specFile.read(pspec)
         except:
-            logger.error("%s'de sorun var :(" % pspec)
-            sys.exit(-1)
+            logger.error("Could not read pspec file: %s" % pspec)
+            sys.exit(1)
 
         deps = []
         for package in specFile.source.buildDependencies:
@@ -62,8 +62,8 @@ class DependencyResolver:
         try:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
-            logger.error("%s'de sorun var :(" % pspec)
-            sys.exit(-1)
+            logger.error("Could not read pspec file: %s" % pspec)
+            sys.exit(1)
 
         deps = []
         for package in specFile.packages:
@@ -78,8 +78,8 @@ class DependencyResolver:
         try:
             specFile = pisi.specfile.SpecFile(pspec)
         except:
-            logger.error("%s'de sorun var :(" % pspec)
-            sys.exit(-1)
+            logger.error("Could not read pspec file: %s" % pspec)
+            sys.exit(1)
 
         try:
             return [package.name for package in specFile.packages]
@@ -87,7 +87,7 @@ class DependencyResolver:
             return [""]
 
     def runtimeDepResolver(self):
-        """arranges the order of the pspec's in the pspeclist to satisfy runtime deps"""
+        """Arranges the order of the pspec's in the pspeclist to satisfy runtime deps"""
         clean = True
         for i in range(0, self.pspeccount):
             pspec = self.pspeclist[i]
@@ -100,7 +100,7 @@ class DependencyResolver:
 
 
     def buildDepResolver(self):
-        """arranges the order of the pspec's in the pspeclist to satisfy build deps"""
+        """Arranges the order of the pspec's in the pspeclist to satisfy build deps"""
         clean = True
         for i in range(0, self.pspeccount):
             pspec = self.pspeclist[i]
