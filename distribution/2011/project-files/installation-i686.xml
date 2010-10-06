@@ -863,7 +863,7 @@
                 <Package>pixman</Package>
                 <Package>pkgconfig</Package>
                 <Package>plasma-applet-networkmanagement</Package>
-                <Package>plasmoid-service-applet</Package>
+                <Package>plasma-applet-service-manager</Package>
                 <Package>pm-utils</Package>
                 <Package>podofo</Package>
                 <Package>polkit</Package>
