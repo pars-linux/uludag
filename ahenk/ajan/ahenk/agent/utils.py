@@ -5,6 +5,8 @@
     Ajan utils.
 """
 
+# Standard modules
+import simplejson
 import logging
 import os
 from multiprocessing import Process
@@ -36,10 +38,18 @@ class Command(Message):
         """
         Message.__init__(self, message, q_out)
         self.type = "command"
-        self.command = message["command"]
+        if " " in message["command"]:
+            try:
+                self.command, self.arguments = message["command"].split(" ", 1)
+                self.arguments = simplejson.loads(self.arguments)
+            except:
+                self.type = "invalid-command"
+        else:
+            self.command = message["command"]
+            self.arguments = None
         self.sender = message["from"]
 
-    def reply(self, message):
+    def reply(self, command, arguments=None):
         """
             Replies messages.
 
@@ -47,6 +57,10 @@ class Command(Message):
                 messages: Reply
         """
         if self.q_out:
+            if arguments:
+                message = "%s %s" % (command, simplejson.dumps(arguments))
+            else:
+                message = command
             self.q_out.put({"to": self.sender, "body": message})
 
 class Policy(Message):
