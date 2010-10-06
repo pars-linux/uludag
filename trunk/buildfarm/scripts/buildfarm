@@ -21,11 +21,12 @@ import cPickle
 import traceback
 import cStringIO
 
-from buildfarm import logger, mailer, qmanager, pisiinterface, utils, twit
+from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
 from buildfarm.config import configuration as conf
 
 def buildPackages():
-    qmgr = qmanager.QueueManager()
+    qmgr = queuemanager.QueueManager()
+
     qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
     queue = copy.copy(qmgr.workQueue)
 
