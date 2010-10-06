@@ -101,8 +101,8 @@ if __name__ == "__main__":
     r = RepositoryManager()
 
     # Get updated and newly added pspec list
-    updatedPspecFiles = r.getChanges(type = "U", filter="pspec.xml")
-    newPspecFiles = r.getChanges(type = "A", filter="pspec.xml")
+    updatedPspecFiles = r.getChanges(_type="U", _filter="pspec.xml")
+    newPspecFiles = r.getChanges(_type="A", _filter="pspec.xml")
 
     if not (updatedPspecFiles or newPspecFiles):
         print "\nNo new updates concerning source packages.\nExiting."
