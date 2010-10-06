@@ -1,0 +1,2 @@
+* double inclusion guards NM-ACTIVE_H_12345 -> NM_ACTIVE_h
+* add last parameter to GetSecrets method type: const QDBusMessage & message
