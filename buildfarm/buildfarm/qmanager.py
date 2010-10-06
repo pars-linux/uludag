@@ -16,6 +16,9 @@ import os
 from buildfarm import dependency
 from buildfarm.config import configuration as conf
 
+# PiSi module to get pspec path from package name using component name
+from pisi.db.installdb import InstallDB
+
 class QueueManager:
     def __init__(self):
         self.workQueue = []
@@ -28,12 +31,7 @@ class QueueManager:
         self.workQueue = list(set([s for s in self.workQueue if s]))
         self.waitQueue = list(set([s for s in self.waitQueue if s]))
 
-        if len(self.waitQueue):
-            self.workQueue += self.waitQueue
-            self.waitQueue = []
-        else:
-            self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDeps()
-
+        self.waitQueue = dependency.DependencyResolver(self.waitQueue).resolvDeps()
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
 
     def __del__(self):
@@ -58,8 +56,29 @@ class QueueManager:
 
         for line in queue.readlines():
             if not line.startswith("#"):
-                queueName.append(line.strip("\n"))
+                line = line.strip()
+                if not os.path.exists(line):
+                    #try to guess abosolute path from package name
+                    try:
+                        component = InstallDB().get_package(line).partOf
+                    except:
+                        continue
+
+                    if component:
+                        path = "%s/%s/%s/pspec.xml" % (config.localPspecRepo, component.replace(".", "/"), line)
+
+                        if os.path.exists(path):
+                            queueName.append(path)
+                else:
+                    queueName.append(line)
+
         queue.close()
+
+    def getAllPackages(self, resolved = True):
+        if resolved:
+            return dependency.DependencyResolver(list(set(self.workQueue + self.waitQueue))).resolvDeps()
+        else:
+            list(set(self.workQueue + self.waitQueue))
 
     def removeFromWaitQueue(self, pspec):
         if self.waitQueue.__contains__(pspec):
@@ -70,18 +89,31 @@ class QueueManager:
             self.workQueue.remove(pspec)
 
     def appendToWorkQueue(self, pspec):
-         if not self.workQueue.__contains__(pspec):
+        if not pspec in self.workQueue:
             self.workQueue.append(pspec)
             self.__serialize(self.workQueue, "workQueue")
 
     def appendToWaitQueue(self, pspec):
-         if not self.waitQueue.__contains__(pspec):
+        if not pspec in self.waitQueue:
             self.waitQueue.append(pspec)
             self.__serialize(self.waitQueue, "waitQueue")
+
+    def extendWaitQueue(self, pspecList):
+        self.waitQueue = list(set(self.waitQueue + pspecList))
+        self.__serialize(self.waitQueue, "waitQueue")
+
+    def extendWorkQueue(self, pspecList):
+        self.workQueue = list(set(self.workQueue + pspecList))
+        self.__serialize(self.workQueue, "workQueue")
 
     def transferToWorkQueue(self, pspec):
         self.appendToWorkQueue(pspec)
         self.removeFromWaitQueue(pspec)
+
+    def transferAllPackagesToWorkQueue(self):
+        self.workQueue = list(set(self.workQueue + self.waitQueue))
+        self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
+        self.waitQueue = []
 
     def transferToWaitQueue(self, pspec):
         self.appendToWaitQueue(pspec)
