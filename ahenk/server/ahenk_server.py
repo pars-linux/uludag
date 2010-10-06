@@ -109,9 +109,9 @@ TEMP_JABBER = """{loglevel, 1}.
  ]}.
 {auth_method, ldap}.
 {ldap_servers, ["localhost"]}.
-{ldap_encrypt, tls}.
-{ldap_tls_verify, soft}.
-{ldap_port, 636}.
+%%{ldap_encrypt, tls}.
+%%{ldap_tls_verify, soft}.
+%%{ldap_port, 636}.
 {ldap_uids, [{"cn", "%%u"}]}.
 {ldap_base, "%(ldap_domain)s"}.
 {ldap_rootdn, "cn=%(root_account)s, %(ldap_domain)s"}.
