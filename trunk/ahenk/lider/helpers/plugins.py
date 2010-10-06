@@ -96,7 +96,7 @@ class PluginWidget(object):
         """
         return {}
 
-    def talk_message(self, sender, message):
+    def talk_message(self, sender, command, arguments=None):
         """
             Main window calls this method when an XMPP message is received.
         """

@@ -6,6 +6,7 @@
 """
 
 # Standard modules
+import simplejson
 import time
 
 # Qt4 modules
@@ -34,7 +35,7 @@ class Talk(QtCore.QThread):
 
             # Listen signals:
             self.connect(talk, QtCore.SIGNAL("stateChanged(int)"), self.stateChanged)
-            self.connect(talk, QtCore.SIGNAL("messageFetched(QString, QString)"), self.messageFetched)
+            self.connect(talk, QtCore.SIGNAL("messageFetched(QString, QString, QString)"), self.messageFetched)
             self.connect(talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.userStatusChanged)
     """
     def __init__(self):
@@ -163,7 +164,12 @@ class Talk(QtCore.QThread):
         for tag in message.elements():
             if tag.name == "body":
                 username = str(message["from"]).split("@")[0].lower()
-                self.emit(QtCore.SIGNAL("messageFetched(QString, QString)"), QtCore.QString(username), QtCore.QString(tag.__str__()))
+                try:
+                    command, arguments = tag.__str__().split(" ", 1)
+                except:
+                    command = tag.__str__()
+                    arguments = ""
+                self.emit(QtCore.SIGNAL("messageFetched(QString, QString, QString)"), QtCore.QString(username), QtCore.QString(command), QtCore.QString(arguments))
                 break
 
     def send_message(self, to, body):
@@ -171,7 +177,7 @@ class Talk(QtCore.QThread):
             Sends a message.
 
             Arguments:
-                to: JID of reciepent
+                to: JID of recipient
                 body: Message body
         """
         message = xish.domish.Element(('jabber:client','message'))
@@ -179,6 +185,21 @@ class Talk(QtCore.QThread):
         message["type"] = "chat"
         message.addElement("body", "jabber:client", body)
         self.stream.send(message)
+
+    def send_command(self, to, command, arguments=None):
+        """
+            Replies to an RPC command.
+
+            Arguments:
+                to: JID of recipient
+                command: Command name
+                arguments: Arguments
+        """
+        if arguments:
+            body = "%s %s" % (command, simplejson.dumps(arguments))
+        else:
+            body = command
+        self.send_message(to, body)
 
     def disconnect(self):
         """

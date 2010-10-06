@@ -7,6 +7,7 @@
 
 # Standard modules
 import copy
+import simplejson
 
 # Qt4 modules
 from PyQt4 import QtGui
@@ -76,7 +77,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # UI events
         self.connect(self.talk, QtCore.SIGNAL("stateChanged(int)"), self.__slot_talk_state)
-        self.connect(self.talk, QtCore.SIGNAL("messageFetched(QString, QString)"), self.__slot_talk_message)
+        self.connect(self.talk, QtCore.SIGNAL("messageFetched(QString, QString, QString)"), self.__slot_talk_message)
         self.connect(self.talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.__slot_talk_status)
         self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
@@ -400,20 +401,37 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         elif state == talk.Error:
             self.__update_status("talk", "error")
 
-    def __slot_talk_message(self, sender, message):
+    def __slot_talk_message(self, sender, message, arguments=""):
         """
             Triggered when an XMPP message is received.
 
             Arguments:
                 sender: Sender's JID
-                message: Message content
+                command: Command
+                arguments: Arguments
         """
         self.__log("XMPP message from: %s" % sender, "talk", "debug")
 
         if self.stackedWidget.currentIndex() != 0:
+            sender = unicode(sender)
             widget = self.stackedWidget.currentWidget()
             try:
-                widget.talk_message(str(sender), str(message))
+                if arguments:
+                    arguments = simplejson.loads(unicode(arguments))
+                else:
+                    arguments = None
+            except Exception, e:
+                print e
+                arguments = None
+            print "---------"
+            print sender
+            print message
+            print arguments
+            print "----------"
+            try:
+                widget.talk_message(sender, message, arguments)
+            except Exception, e:
+                print e
             except AttributeError:
                 pass
 
