@@ -40,8 +40,8 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Plain log file: http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log
-Fancy log file: http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html
+Plain log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log
+Fancy log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html
 
 Happy hacking!
 
@@ -89,9 +89,9 @@ Content-Type: text/html;
 </div>
 
 <p>Plain log file:
-<a href="http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log</a><br>
+<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log</a><br>
 Fancy log file:
-<a href="http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html">http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html</a>
+<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html</a>
 
 
 <p>Happy hacking!<br>
