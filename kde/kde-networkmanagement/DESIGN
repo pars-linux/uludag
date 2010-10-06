@@ -1,0 +1,218 @@
+DESIGN
+
+Split system
+
+i) KCModule performs connection configuration
+
+ii) Settings service exists on the system bus and provides information to NetworkManager
+
+iii) Plasmoid gives user feedback i
+      Notifications
+      Status in popup
+    and connection control
+      Calls DBUS methods on manager, passing references to objects supplied by the setings service
+    launches KCModule on request
+
+
+Directory structure of project
+./libs                      Headers shared by all code
+./libs/storage              Storage layer shared library (libknmstorage) for loading and saving NM settings
+./libs/ui                   UI shared library (libknmui) for settings config widgets
+./settings                  (Any source code in this directory is unused)
+./settings/service          Settings service using libknmstorage
+./settings/config           KCM for configuring settings using libknmstorage and libknmui
+./settings/configshell      New connection helper app that shows only a new connection dialog when the user clicks an 
+                            unconfigured network
+./settings/test             (Unused test code, scheduled for merging/moving)
+./tests                     Proof-of-concept code, not proper unit tests yet
+./applet                    Plasmoid sources
+./widgets                   OBSOLETE Components for the plasmoid
+
+
+PLASMOID
+Functions
+* Show current merged connection status
+* Show any in-progress operations
+* List currently appropriate connections
+  * For wireless, when there are no appropriate connections, list networks that are seen
+* Allow activation of appropriate connections
+* Show status of current connections
+* Allow disconnect of active connections
+* Allow user to select flight mode
+* Allow user to select offline mode
+* Allow user to launch configuration interface
+* Show extended connection information
+* Perform notifications
+
+Implementation
+* Plasmoid shows overall system status when in panel, by deciding which interface is most interesting and showing
+  its status
+* On click, popup graphicswidget (instead of context menu) for control
+* Popup contains InterfaceGroups of like interfaces, and auxiliary controls
+** Manage.. button shows KCM
+** Toggle wireless
+** Toggle overall networking
+* InterfaceGroups consist of InterfaceItems and ConnectionItems.  1 InterfaceItem per physical interface.  1 ConnectionItem shown per /appropriate/ connection.
+* "Appropriate" means that the ConnectionItem could be activated at the present time - the network interface is active, and any connection-specific requirements are filled; for example, wireless connections' access points are detected
+* InterfaceGroups hide inappropriate ConnectionItems
+* Subclasses for wireless and serial interfaces exist, and for wireless connections.  These show interface-specific connection information
+* WirelessInterfaceItems maintain a WirelessEnvironment object.  This models the wireless environment visible to that
+  network interface.   Solid::Control::AccessPoints in the same ESSID are grouped into WirelessNetwork objects, since
+  NetworkManager does not do this for us.  WirelessNetwork objects' are managed by the WirelessEnvironment, and users
+  should connect to their deleted() or disappeared() signals to avoid dangling pointers (same behaviour as Solid objects)
+* NetworkManagerSettings objects represent the UserSettings and SystemSettings services, and give access to their connection objects.  Signals indicate when connections are added or removed or if the service itself terminates, and the connection lists in the popup are updated.
+* VPN connections are displayed in an InterfaceGroup without any InterfaceItems.  If only one networkinterface is active, the VPN connection is activated on that interface.  If multiple interfaces are active, the one with the default route is used for the VPN connection.
+
+KCM
+Functions
+* Show currently configured connections
+** show name, type, date of last use
+* Allow import of system connections
+* Add new connection
+** Save connection data to kconfig and kwallet
+* Edit existing connection
+** Read connection data from kconfig and kwallet
+* Delete existing connection
+* Secrets may not be stored at all for extreme security, provide kioskable setting for this
+* Show warning label if NM is not running.
+
+Implementation:
+* List connections by type in main KCM DONE
+  * Store connectionId using KTreeWidgetItem::setData() DONE
+* There is only one KCM plugin; the other widgets are KCMs (to take advantage of KCModule's good KConfigSkeleton integration) but are not loaded as plugins DONE
+* Pass connectionId to connection specific KCM for new or edited connections DONE
+* Connect up non-trivial UI to save settings (esp wireless security, 802.1x and ppp)
+* Connect up wireless security type combo to tabWidget
+* Delete connections deletes config file DONE
+  * and wallet entries
+
+Connection types (as used in nm-applet)
+wired: connection wired 8021x ipv4
+wireless: connection wireless wirelesssecurity ipv4 8021x
+mobilebb:
+  cdma: cdma ppp
+  gsm: gsm ppp
+vpn: connection ipv4 vpn
+dsl: connection dsl wired ppp
+
+Characteristics
+* Use storage layer shared with service.
+
+SERVICE
+Functions
+* Provide service on system dbus containing configured connections
+* Update configured connections following configuration changes
+* Emit NewConnection on dbus as needed
+* Provide dbus settings objects that provide org.freedesktop.NetworkManagerSettings.Connection and org.freedesktop.NetworkManagerSettings.Connection.Secrets
+* Request secrets if required
+* Persist changed secrets to kwallet
+
+Characteristics
+* Lives in kded
+* Watches config file for changes or has simple dbus api with configure() method like kscreensaver
+* Uses storage layer shared with KCM
+** Added connections
+** Updated connections (how? dbus signal? sequence number in config file?)
+** Removed connections (compare list of configured connections with active connections)
+
+Implementation
+* kded module
+* readConfiguration (KConfigToService::init())
+** Read central knetworkmanagerrc for connection IDs - DONE
+** Read connections from apps/knetworkmanager/connections - DONE
+** Read config schemas from apps knetworkmanager/configschema - DONE 
+** per-setting group helper class for complex settings, where needed. DONE for ipv4 config read
+*** How to figure out whether these are needed at runtime? put in shlib to use with kcm, but separate from UI.
+*** ipv4 (really only ipv4 afaics)
+* configure method accessible over dbus DONE
+** calls rereadConfiguration (KConfigToService::update()) DONE
+* GetSecrets. will be received by Connection. emit signal received by NetworkSettings, relayed up ( NetworkSettings knows nothing of storage).  Catch in KConfigToService and ask each configxml for that setting's groups to get secrets?
+
+STORAGE LAYER
+Functions
+
+Characteristics
+Serializer converts between kconfig storage and qvariantmapmaps
+and between kconfig storage and UI contents (like kconfigdialog).
+and kwallet
+
+Uses a .kcfg file to define settings.  Since .kcfg allows multiple groups should be able to define all in one .kcfg file.
+
+Use nested groups in rcfile.
+
+Load kcfg, create in memory representation - ConfigXml
+
+Flag passed to ConfigXml controls whether it should load secrets or skip this (for the dbus service, which should not open the wallet until queried by the NM daemon)
+
+READ
+Open rcfile.
+enumerate connections (top level value).
+For each connection:
+  get ID
+  enumerate settings:
+  For each setting:
+    pass setting to handler
+    enumerate values:
+	For each value:
+	  lookup name(entry) for setting(group) in kcfg
+	  lookup value of entry
+	  lookup type for entry
+	  lookup min, max if present (or if numeric type)
+      pass these to appropriate handler for type
+      if a secret=true entry, create an Item that reads KWallet instead of KConfig
+
+handler settings:
+  map handler: create new qvariantmap, insert it using setting name, set this on the map handler as current map.
+  ui handler: locate child widget called "$name_setting_widget", set it on the ui handler as current widget
+handler values:
+  map handler: insert qvariant into setting's map with name
+  ui handler: locate child widget named "$name_item_widget" and set value, min, max using methods appropriate to widget type 
+
+The UI case is nearly the same as what KConfigXT already does, the difference is that it operates on a top level group only instead of the whole file. We use KConfigDialogManager with a custom KConfigSkeleton (ConfigXml)
+
+All of this is already done, using ConfigXml from Plasma.  Our copy adds support for KWallet and storing byte arrays.
+
+I thought that KConfigDialog only allows a single managed widget but KConfigDialog can handle an arbitrary number of widgets and their children.  Still might have to use the Manager directly to work on a widget in a KCM.
+
+WRITE
+From ui:
+Each Connection type has its own ConnectionPreferences subclass.  ConnectionPreferences in turn subclasses KCModule, so all write operations are carried out in ConnectionPreferences::save() (a reimpl). {
+
+First KCModule::save() is called, which triggers the KConfigDialogManager automatic persistence of changed widgets' contents using ConfigXml
+
+Secondly, each SettingWidget's SettingsInterface::writeConfig() reimplementation is called, which performs any custom save work necessary.
+
+Many settings are too complex (either the UI does not map to the simple widgets supported by KConfigSkeleton, or there is no 1:1 mapping between the contents of the UI and what NetworkManager expects to receive.
+
+To read and write these settings, reimplement SettingsInterface::writeConfig(), access the config group for the widget with KConfigGroup group(configXml()->config(), settingName());  Then use normal KConfigGroup api to save your settings.  The call to KConfig::sync() is done at the end of ConnectionPreferences::save().
+
+ASSESSMENT OF CURRENT STORAGE LAYER
+PROBLEMS
+Interface of connections is too simple and under-elaborated - doing settings map lookups to find out things about a connection is tiresome.  
+Since there is no Connection class, code to interface with the outside world has to be in other classes. 
+Currently we have no place to do custom DBus marshalling of internal connection maps to QVariantMaps which are valid Connections to put on the bus.
+
+NEW STORAGE LAYER
+Statically generate classes representing connection settings.  These are managed by a Connection
+object.
+Per class, have a <classname>Persistence object responsible for reading/writing KConfig and KWallet, and a <classname>Dbus object that marshals to and from dbus a{sa{sv} nested maps.
+The code (all 3 classes per Setting) is generated by a hacked version of kconfig_compiler.
+It is hand edited after generation so the developer can implement non-trivial settings, so the code is not generated at build time, but generated manually, copied into the source tree and committed.
+
+Secrets should be saveable in KWallet or KConfig.  
+KWallet usage should use KWallet's map type instead of individual keys.
+SecretStorageHelper and ConnectionSecretsJob will need modifying
+SSH does writes and reads synchronously.
+SSH is being used in ConfigXml to write secrets individually, and to read secrets there, but read is disabled in the service by passing in false to the ConfigXml ctor.  In the KCM it is enabled so the wallet is access synchronously
+CSJ is being used in settings/service/connection.cpp external to ConfigXml to fetch secrets and then update the (already marshalled maps) from restoreConnection
+
+Consider moving CSJ inside *Persistence and calling Setting-specific converters to do things like key hashing so toSecretsMap() (?) can return a finished set of secrets.
+Add bool secretsLoaded() accessor.  Make $class a QObject, getSecrets/gotSecrets async pair.  Do fetch inside Persistence.  On gotSecrets, actual dbus object can use Dbus to marshal them (including any hashing).
+
+* <Settingname>DBus may be a bad name since it is just a marshaller, not a dbus object itself
+
+MINI TODO
+Move special cases from KConfigToService to ConnectionDbus.
+WPA-EAP Non Peap/TTLS types
+GSM
+
