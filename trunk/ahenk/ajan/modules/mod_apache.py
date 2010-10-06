@@ -3,7 +3,6 @@
 
 # Standard modules
 import logging
-import simplejson
 import socket
 
 # PiSi
@@ -15,7 +14,7 @@ import comar
 
 def process(message, dryrun=False):
     if message.type == "command":
-        if message.command == "apache info":
+        if message.command == "apache.info":
             if "apache" in pisi.api.list_installed():
                 link = comar.Link()
                 if str(link.System.Service["apache"].info()[2]) in ("started", "on"):
@@ -24,4 +23,4 @@ def process(message, dryrun=False):
                     args = True
             else:
                 args = False
-            message.reply("apache info:%s" % simplejson.dumps(args))
+            message.reply("apache.info", args)
