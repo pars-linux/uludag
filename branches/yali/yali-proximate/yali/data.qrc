@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/meeting-participant.png</file>
+    <file>gui/pics/meeting-participant-big.png</file>
     <file>gui/pics/drive-removable-media-usb-big.png</file>
     <file>gui/pics/media-flash-sd-mmc-big.png</file>
     <file>gui/pics/disk-prototype.png</file>

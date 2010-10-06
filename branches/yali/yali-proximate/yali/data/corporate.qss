@@ -76,9 +76,9 @@ QListView {
 
 
 #frame{
-background-color: rgba(0,0,0,100);
+background-color: rgba(0,0,0,100);/*
 border-top: 1px solid rgba(255,255,255,60);
-border-bottom: 1px solid rgba(255,255,255,60);
+border-bottom: 1px solid rgba(255,255,255,60);*/
 }
 
 
