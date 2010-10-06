@@ -12,10 +12,10 @@
 # E-mail message templates for mailer module..
 
 error_message = """\
-From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [%(subjectList)s] %(type)s: %(subject)s
+Subject: [%(subjectID)s] %(type)s: %(subject)s
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="boundary42"
 
@@ -28,7 +28,7 @@ Hello,
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-An error occured while processing the file '%(pspec)s' (maintainer: '%(recipientName)s'). Error log is as follows:
+An error occured while building the package '%(packagename)s' (maintainer: '%(recipientName)s'):
 
 --------------------------------------------------------------------------
 %(message)s
@@ -53,7 +53,7 @@ Content-Type: text/html;
 
 <p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-<p>An error occured while processing the file '<b>%(pspec)s</b>' (maintainer: <b>%(recipientName)s</b>). Error log is as follows:
+<p>An error occured while building the package '<b>%(packagename)s</b>' (maintainer: <b>%(recipientName)s</b>):
 
 <p><div align=center>
     <table bgcolor=black width=100%% cellpadding=10 border=0>
@@ -102,10 +102,10 @@ Fancy log file:
 ## Info
 
 info_message = """\
-From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [%(subjectList)s] %(subject)s
+Subject: [%(subjectID)s] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
@@ -121,9 +121,9 @@ Happy hacking!
 ## Announce
 
 announce_message = """\
-From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
-Subject: [%(subjectList)s] [REPORT] New packages in -testing repository
+Subject: [%(subjectID)s] List of recently built packages
 Content-Type: text/plain;
             charset="utf-8"
 
