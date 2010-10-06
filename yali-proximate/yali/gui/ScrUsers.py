@@ -74,6 +74,7 @@ Proceed with the installation after you make your selections.
 
         # Set disabled the create Button
         self.ui.createButton.setEnabled(False)
+        self.ui.widget.hide()
 
         # Connections
         self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
