@@ -111,7 +111,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     # Print the packages that will be pushed to queue
-    print "\nThe following packages will be pushed to buildfarm's workqueue:\n%s" % ('-'*60)
+    print "\nThe following packages will now be pushed to buildfarm's workqueue:\n%s" % ('-'*60)
     for p in updatedPspecFiles + newPspecFiles:
         print "  * %s" % p
 

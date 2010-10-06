@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -20,6 +20,7 @@ import buildfarm
 # Scripts to install under /usr/bin
 SCRIPTS = ["scripts/%s" % s for s in """\
 buildfarm
+buildfarm-up
 buildfarm-report
 """.split()]
 

@@ -12,4 +12,4 @@
 # Buildfarm version
 __version__ = "2.0"
 
-__all__ = ["config", "dependency", "main", "qmanager", "repomanager"]
+__all__ = ["config", "dependency", "main", "qmanager"]
