@@ -516,11 +516,8 @@ QLineEdit {
 
 QLineEdit:hover {
        color: #333333;
-       background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304, y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 255));
-       border-top: 1px solid gray;
-       border-left: 1px solid gray;
-       border-right: 1px solid gray;
-       border-bottom: 2px solid rgb(170, 39, 39, 255);
+       background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0.9, stop:0 rgba(171, 3, 3, 255), stop:1 rgba(255, 255, 255, 255));
+border: 1px solid gray;
        border-radius: 3px;
 }
 
