@@ -16,3 +16,7 @@ qdbusxml2cpp -m -p nm-vpn-connectioninterface introspection/nm-vpn-connection.xm
 # default name is forbidden as a property name, change it to getDefault
 sed -i -e "s,Q_PROPERTY(bool Default READ default),Q_PROPERTY(bool Default READ getDefault)," nm-active-connectioninterface.h
 sed -i -e "s,inline bool default() const,inline bool getDefault() const," nm-active-connectioninterface.h
+
+# Another manual workaround should be done
+# Fix double inclusion guards of qdbusxml2cpp like: NM-ACTIVE_H_12345 -> NM_ACTIVE_H
+# Add last an additional parameter to GetSecrets method in type: const QDBusMessage & message
