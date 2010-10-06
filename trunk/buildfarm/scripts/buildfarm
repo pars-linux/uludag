@@ -61,7 +61,8 @@ def buildPackages():
 
     logger.raw("QUEUE")
     logger.info("*** All packages to be compiled : %s" % qmgr.workQueue)
-    mailer.info("*** I'm starting to compile following packages (in the order below):\n\n%s" % "\n".join(queue))
+
+    mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(queue))
     logger.raw()
 
     for pspec in queue:

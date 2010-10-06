@@ -15,28 +15,16 @@ import socket
 import smtplib
 
 import pisi.specfile
-import pisi.config
 
 from buildfarm import logger, templates
 from buildfarm.auth import Auth
 from buildfarm.config import configuration as conf
 
-# Authentication stuff
-(username, password) = Auth().get_credentials("Mailer")
-
-# Parse pisi.conf for distribution informations
-pconfig = pisi.config.Config()
-distribution = pconfig.values.general.distribution
-release = pconfig.values.general.distribution_release
-
-# Something like 2009, Corporate2 for e-mail subjects and logs directory
-distID = ("%s %s" % (distribution, release)).replace("Pardus", "").replace(" ", "")
-
 
 class MailerError(Exception):
     pass
 
-def send(message, pspec = "", _type = ""):
+def send(message, pspec = "", _type = "", subject=""):
 
     def wrap(message, length=72):
         return reduce(lambda line, word: "%s%s%s" %
@@ -48,6 +36,16 @@ def send(message, pspec = "", _type = ""):
     if not conf.sendemail:
         logger.info("*** Sending of notification e-mails is turned off.")
         return
+
+
+    # Authentication stuff
+    (username, password) = Auth().get_credentials("Mailer")
+
+    # subjectID: ex: [release/{devel,stable}/arch]
+    subjectID = "%s/%s/%s" % (conf.release.capitalize(),
+                              conf.subrepository,
+                              conf.architecture)
+
 
     recipientsName, recipientsEmail = [], []
     if pspec:
@@ -65,15 +63,16 @@ def send(message, pspec = "", _type = ""):
                                         'ccList'       : ', '.join(conf.cclist),
                                         'mailFrom'     : conf.mailfrom,
                                         'announceAddr' : conf.announceaddr,
-                                        'subject'      : pspec or _type,
+                                        'subject'      : pspec or subject or _type,
                                         'message'      : wrap(message),
                                         'pspec'        : pspec,
                                         'type'         : _type,
                                         'packagename'  : packagename,
-                                        'distribution' : pconfig.values.general.distribution,
-                                        'release'      : pconfig.values.general.distribution_release,
-                                        'logsdir'      : distID,
-                                        'subjectList'  : distID,
+                                        'distribution' : conf.distribution,
+                                        'release'      : conf.release,
+                                        'arch'         : conf.architecture,
+                                        'logsdir'      : subjectID,
+                                        'subjectID'    : subjectID,
                                      }
 
     # timeout value in seconds
@@ -100,11 +99,11 @@ def send(message, pspec = "", _type = ""):
     except smtplib.SMTPRecipientsRefused:
         logger.error("*** Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
 
-def error(message, pspec):
-    send(message, pspec, _type="error")
+def error(message, pspec, subject=""):
+    send(message, pspec, _type="error", subject=subject)
 
-def info(message):
-    send(message, _type="info")
+def info(message, subject=""):
+    send(message, _type="info", subject=subject)
 
-def announce(message):
-    send(message, _type="announce")
+def announce(message, subject=""):
+    send(message, _type="announce", subject=subject)
