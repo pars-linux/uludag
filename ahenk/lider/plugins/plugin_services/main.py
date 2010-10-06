@@ -44,7 +44,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Things to do before widget is shown.
         """
         jid = "%s@%s" % (self.item.name, self.talk.domain)
-        self.talk.send_message(jid, "service info")
+        self.talk.send_command(jid, "service.info")
 
     def get_type(self):
         """
@@ -70,18 +70,14 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         }
         return policy
 
-    def talk_message(self, sender, message):
+    def talk_message(self, sender, command, arguments=None):
         """
             Main window calls this method when an XMPP message is received.
         """
-        try:
-            command, reply = message.split(":", 1)
-            reply = simplejson.loads(reply)
-        except (ValueError, simplejson.JSONDecodeError):
-            return
-        if command == "service info":
+        print command, arguments
+        if command == "service.info":
             self.listServices.clear()
-            for name, desc, status in reply:
+            for name, desc, status in arguments:
                 item = QtGui.QListWidgetItem(self.listServices)
                 item.setText("%s - %s" % (name, status))
 

@@ -71,22 +71,18 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         return {}
 
-    def talk_message(self, sender, message):
+    def talk_message(self, sender, message, arguments=None):
         """
             Main window calls this method when an XMPP message is received.
         """
-        try:
-            command, reply = message.split(":", 1)
-            reply = simplejson.loads(reply)
-        except (ValueError, simplejson.JSONDecodeError):
-            return
-        if command == "apache info":
-            if reply == False:
+        print message, arguments
+        if message == "apache.info":
+            if arguments == False:
                 self.webView.setHtml("Web server is not installed.")
-            elif reply == True:
+            elif arguments == True:
                 self.webView.setHtml("Web server is installed but not running.")
             else:
-                self.webView.setUrl(QtCore.QUrl(reply))
+                self.webView.setUrl(QtCore.QUrl(arguments))
 
     def talk_status(self, sender, status):
         """
@@ -118,4 +114,4 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         else:
             name = str(self.comboComputers.itemText(index))
             jid = "%s@%s" % (name, self.talk.domain)
-            self.talk.send_message(jid, "apache info")
+            self.talk.send_command(jid, "apache.info")

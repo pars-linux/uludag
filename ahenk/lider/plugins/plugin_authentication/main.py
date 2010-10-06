@@ -72,14 +72,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
         }
         return policy
 
-    def talk_message(self, sender, message):
+    def talk_message(self, sender, command, arguments=None):
         """
             Main window calls this method when an XMPP message is received.
         """
-        try:
-            command, reply = message.split(":", 1)
-        except ValueError:
-            return
+        pass
 
     def talk_status(self, sender, status):
         """
