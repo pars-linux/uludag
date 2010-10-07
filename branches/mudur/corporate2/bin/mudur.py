@@ -227,7 +227,6 @@ class Config:
             "lvm"           : False,
             "safe"          : False,
             "forcefsck"     : False,
-            "preload"       : False,
             "head_start"    : "",
             "services"      : "",
         }
@@ -737,23 +736,6 @@ def stop_dbus():
     ui.info(_("Stopping %s") % "DBus")
     run("/sbin/start-stop-daemon", "--stop", "--quiet", "--pidfile", "/var/run/dbus/pid")
 
-###############################
-# Other boot related services #
-###############################
-
-def start_preload():
-    """Starts the Preload service."""
-    if os.path.exists("/sbin/preload") and config.get("preload"):
-        ui.info(_("Starting %s") % "Preload")
-        run("/sbin/start-stop-daemon", "--start", "--quiet", "--pidfile", "/var/run/preload.pid",
-            "--exec", "/usr/bin/ionice", "--", "-c3", "/sbin/preload")
-
-def stop_preload():
-    """Stops the Preload service."""
-    if os.path.exists("/var/run/preload.pid"):
-        ui.info(_("Stopping %s") % "Preload")
-        run("/sbin/start-stop-daemon", "--stop", "--quiet", "--pidfile", "/var/run/preload.pid")
-
 #############################
 # UDEV management functions #
 #############################
@@ -1104,7 +1086,7 @@ def disable_swap():
 
 def cleanup_var():
     ui.info(_("Cleaning up /var"))
-    blacklist = ["utmp", "random-seed", "livemedia", "preload.pid"]
+    blacklist = ["utmp", "random-seed", "livemedia"]
     for root, dirs, files in os.walk("/var/run"):
         for _file in files:
             if _file not in blacklist:
@@ -1194,7 +1176,6 @@ def stop_system():
     if config.get("lxc_guest") != "yes":
         stop_udev()
     stop_dbus()
-    #stop_preload()
     if config.get("lxc_guest") != "yes":
         save_clock()
         disable_swap()
@@ -1336,9 +1317,6 @@ def main():
 
             # Mount root file system
             mount_root_filesystem()
-
-            # Start preload if possible
-            # start_preload()
 
             # Grab persistent rules and udev.log file from /dev
             copy_udev_rules()
