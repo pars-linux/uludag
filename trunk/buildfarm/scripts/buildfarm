@@ -280,6 +280,7 @@ def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPack
     def move_debug_package(package):
         # Move all debug packages into packages-debug/ and clean them
         # from WorkDir.
+        # FIXME: fix message
         logger.info("*** Moving debug package '%s' to packages-debug" % package)
         if os.path.exists(os.path.join(conf.workdir, package)):
             shutil.copy(os.path.join(conf.workdir, package), conf.debugpath)

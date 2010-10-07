@@ -38,21 +38,14 @@ def create_directories():
             except OSError:
                 raise ("Directory '%s' cannot be created." % directory)
 
-def get_pardus_release():
-    if os.path.exists("/etc/pardus-release"):
-        return open("/etc/pardus-release", "r").read().strip()
-
 def get_local_repository_url():
     return os.path.join(conf.repositorydir, conf.release, conf.subrepository)
 
 def get_remote_repository_url():
     return os.path.join(conf.scmrepositorybaseurl, conf.release, conf.subrepository)
 
-def get_build_no(p):
-    return int(p.rstrip(constants.package_suffix).rsplit("-", 3)[3])
-
 def get_package_name(p):
-    return p.rstrip(constants.package_suffix).rsplit("-", 3)[0]
+    return pisi.util.split_package_filename(p)[0]
 
 def get_package_name_from_path(p):
     return os.path.basename(os.path.dirname(p))
@@ -61,8 +54,11 @@ def is_delta_package(p):
     return p.endswith(constants.delta_package_suffix)
 
 def is_debug_package(p):
-    return constants.debug_name_suffix in p
+    package_name = get_package_name(p)
+    return package_name.endswith(constants.debug_package_suffix)
 
+# FIXME:Should be reimplemented with buildnoless pisi
+"""
 def get_delta_packages(path, name, target=None):
     if target and isinstance(target, int):
         # Return delta packages goint to target
@@ -80,4 +76,5 @@ def get_deltas_not_going_to(path, package):
     name = get_package_name(package)
     target_build = get_build_no(package)
     return list(set(get_delta_packages(path, name)).difference(get_delta_packages(path, name, target_build)))
+"""
 
