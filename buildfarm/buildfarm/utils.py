@@ -33,7 +33,7 @@ def create_directories():
     for directory in directories:
         if directory and not os.path.isdir(directory):
             try:
-                os.makedirs(d)
+                os.makedirs(directory)
             except OSError:
                 raise ("Directory '%s' cannot be created." % directory)
 
