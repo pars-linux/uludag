@@ -21,6 +21,8 @@ import cPickle
 import traceback
 import cStringIO
 
+import pisi.context as ctx
+
 from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
 from buildfarm.config import configuration as conf
 
@@ -213,9 +215,7 @@ def build_packages():
 
     # Set index paths
     paths = [conf.binarypath, conf.testpath]
-    if conf.debugsupport:
-        # Enable debugSupport in config to generate an index
-        # for the debug repository.
+    if ctx.config.values.build.generateDebug:
         paths.append(conf.debugpath)
 
     for d in paths:
