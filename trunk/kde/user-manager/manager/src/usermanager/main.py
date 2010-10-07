@@ -232,7 +232,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
                 except Exception, e: # TODO: Named exception should be raised
                     if "Comar.PolicyKit" in e._dbus_error_name:
-                        kdeui.KMessageBox.error(self, i18n("Access denied."))
+                        kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
                     else:
                         kdeui.KMessageBox.error(self, unicode(e))
                     return
