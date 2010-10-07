@@ -38,11 +38,13 @@ def setup_repository():
     remote_url = utils.get_remote_repository_url()
     local_url = utils.get_local_repository_url()
 
-    print "%s will be checked out into %s" % (remote_url, local_url)
-    os.chdir(local_url)
-
     if conf.scm == "svn":
-        os.system("svn checkout %s ." % remote_url)
+        if os.system("svn info %s &> /dev/null" % local_url) > 0:
+            os.chdir(local_url)
+            print "%s will be checked out into %s" % (remote_url, local_url)
+            os.system("svn checkout %s ." % remote_url)
+        else:
+            print "%s is checked out, skipping." % local_url
 
 def check_mail_configuration():
     pass
