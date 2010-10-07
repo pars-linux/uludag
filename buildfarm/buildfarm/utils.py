@@ -28,7 +28,7 @@ def create_directories():
                     conf.outputdir,
                     conf.binarypath,
                     conf.repositorydir,
-                    get_local_pspec_repository(),
+                    get_local_repository_url(),
                   ]
 
     for directory in directories:
