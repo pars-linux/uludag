@@ -15,6 +15,7 @@ import os
 import glob
 
 import pisi.api
+import pisi.config
 from pisi.operations.delta import create_delta_package
 
 from buildfarm import cli, logger, utils
@@ -23,9 +24,13 @@ from buildfarm.config import configuration as conf
 
 class PisiApi:
     def __init__(self, stdout=None, stderr=None, outputDir = conf.workdir):
-        import pisi.config
         self.options = pisi.config.Options()
+
+        # Override these so that pisi searches for .pisi files in the right locations
         self.options.output_dir = outputDir
+        self.options.debug_packages_dir = conf.debugPath
+        self.options.compiled_packages_dir = conf.binaryPath
+
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
         self.options.ignore_package_conflicts = True
@@ -52,8 +57,8 @@ class PisiApi:
     def close(self):
         pisi.api.ctx.ui.prepareLogs()
 
+    """
     def get_previous_build(self, package):
-        """ Returns the previous build with buildno < buildno(package) (nearest) """
         package = package.rstrip(".pisi\n").rsplit("-", 3)
         searchedBuild = int(package[3])-1
         retval = None
@@ -146,6 +151,7 @@ class PisiApi:
         logger.debug("delta() -> deltas_to_install: %s" % deltas_to_install)
 
         return (deltas_to_install, delta_packages, blacklisted_packages)
+    """
 
     def build(self, pspec):
         pspec = os.path.join(utils.get_local_repository_url(), pspec)
