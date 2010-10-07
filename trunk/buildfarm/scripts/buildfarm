@@ -24,7 +24,7 @@ import cStringIO
 from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
 from buildfarm.config import configuration as conf
 
-def buildPackages():
+def build_packages():
     qmgr = queuemanager.QueueManager()
 
     qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
@@ -145,7 +145,7 @@ def buildPackages():
                 # We should remove them here.
                 for p in set(glob.glob1(conf.workdir, "*.pisi")).difference(pisiList):
                     logger.info("*** Removing stale package '%s' from '%s'" % (p, conf.workdir))
-                    removeBinaryPackageFromWorkDir(p)
+                    remove_binary_package_from_workdir(p)
 
                 errmsg = "Error occured for '%s' in BUILD process:\n %s" % (pspec, e)
                 logger.error(errmsg)
@@ -184,10 +184,10 @@ def buildPackages():
                         elif pa in newBinaryPackages:
                             newBinaryPackages.remove(pa)
                         logger.info("*** (Cleanup) Removing %s from %s" % (pa, conf.workdir))
-                        removeBinaryPackageFromWorkDir(pa)
+                        remove_binary_package_from_workdir(pa)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
-                    movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, newDebugPackages)
+                    move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, newDebugPackages)
                     packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
                     deltaPackageList += (map(lambda x: os.path.basename(x), deltaPackages))
 
@@ -231,59 +231,59 @@ def buildPackages():
     # FIXME: Use fcntl.funlock
     os.unlink("/var/run/buildfarm")
 
-def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPackages):
+def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPackages):
 
-    def cleanupStaleDeltaPackages(package):
+    def cleanup_stale_delta_packages(package):
         # Say that 'package' is kernel-2.6.25.20-114.45.pisi
         # We can remove delta packages going to any build < 45 from both
         # packages/ and packages-test/ because we no longer need them.
         for p in utils.get_deltas_not_going_to(conf.binarypath, package):
             logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.binarypath))
-            remove(join(conf.binarypath, p))
+            os.remove(os.path.join(conf.binarypath, p))
 
         for p in utils.get_deltas_not_going_to(conf.testpath, package):
             logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.testpath))
-            remove(join(conf.testpath, p))
+            os.remove(os.path.join(conf.testpath, p))
 
-    def removeOldPackage(package):
+    def remove_old_package(package):
         logger.info("*** Removing old package '%s' from '%s'" % (package, conf.testpath))
-        if exists(join(conf.testpath, package)):
+        if os.path.exists(os.path.join(conf.testpath, package)):
             # If an old build is found in testpath remove it because the test repo is unique.
-            remove(join(conf.testpath, package))
+            os.remove(os.path.join(conf.testpath, package))
 
         # Cleanup workdir
-        if exists(join(conf.workdir, package)):
-            remove(join(conf.workdir, package))
+        if os.path.exists(os.path.join(conf.workdir, package)):
+            os.remove(os.path.join(conf.workdir, package))
 
-    def moveNewPackage(package):
+    def move_new_package(package):
         logger.info("*** Moving new package '%s'" % package)
-        if exists(join(conf.workdir, package)):
-            copy(join(conf.workdir, package), conf.binarypath)
-            copy(join(conf.workdir, package), conf.testpath)
-            remove(join(conf.workdir, package))
+        if os.path.exists(os.path.join(conf.workdir, package)):
+            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
+            shutil.copy(os.path.join(conf.workdir, package), conf.testpath)
+            os.remove(os.path.join(conf.workdir, package))
 
-    def moveUnchangedPackage(package):
+    def move_unchanged_package(package):
         logger.info("*** Moving unchanged package %s'" % package)
-        if exists(join(conf.workdir, package)):
-            copy(join(conf.workdir, package), conf.binarypath)
-            remove(join(conf.workdir, package))
+        if os.path.exists(os.path.join(conf.workdir, package)):
+            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
+            os.remove(os.path.join(conf.workdir, package))
 
-    def moveDeltaPackage(package):
+    def move_delta_package(package):
         # Move all delta packages into packages/ and packages-test/
         # and clean them from workdir.
         logger.info("*** Moving delta package '%s' to both directories" % package)
-        if exists(join(conf.workdir, package)):
-            copy(join(conf.workdir, package), conf.binarypath)
-            copy(join(conf.workdir, package), conf.testpath)
-            remove(join(conf.workdir, package))
+        if os.path.exists(os.path.join(conf.workdir, package)):
+            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
+            shutil.copy(os.path.join(conf.workdir, package), conf.testpath)
+            os.remove(os.path.join(conf.workdir, package))
 
-    def moveDebugPackage(package):
+    def move_debug_package(package):
         # Move all debug packages into packages-debug/ and clean them
         # from WorkDir.
         logger.info("*** Moving debug package '%s' to packages-debug" % package)
-        if exists(join(conf.workdir, package)):
-            copy(join(conf.workdir, package), conf.debugpath)
-            remove(join(conf.workdir, package))
+        if os.path.exists(os.path.join(conf.workdir, package)):
+            shutil.copy(os.path.join(conf.workdir, package), conf.debugpath)
+            os.remove(os.path.join(conf.workdir, package))
 
     # Normalize files to full paths
     try:
@@ -306,50 +306,42 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
     logger.info("*** Delta package(s): %s" % deltaPackages)
     logger.info("*** Debug package(s): %s" % debugPackages)
 
-    exists = os.path.exists
-    join   = os.path.join
-    remove = os.remove
-    copy   = shutil.copy
-
-
     for package in newPackages:
         if package:
             # Move the new binary package to packages/ and packages-test/
-            moveNewPackage(package)
+            move_new_package(package)
 
     for package in oldPackages:
         if package:
             # Remove old binary package from packages-test/
-            removeOldPackage(package)
+            remove_old_package(package)
 
     for package in unchangedPackages:
         if package:
-            moveUnchangedPackage(package)
+            move_unchanged_package(package)
 
     for package in deltaPackages:
         # Move all(3) delta packages to packages/ and packages-test/
         if package:
-            moveDeltaPackage(package)
+            move_delta_package(package)
 
     if deltaPackages:
         for package in newPackages:
             # Remove delta packages going to any build != newPackage's build
             if package:
-                cleanupStaleDeltaPackages(package)
+                cleanup_stale_delta_packages(package)
 
     if debugPackages:
         for package in debugPackages:
             # Move debug packages to packages-debug/
             if package:
-                moveDebugPackage(package)
+                move_debug_package(package)
 
 
 
-def removeBinaryPackageFromWorkDir(package):
-    join   = os.path.join
-    remove = os.remove
+def remove_binary_package_from_workdir(package):
     try:
-        remove(join(conf.workdir, package))
+        os.remove(os.path.join(conf.workdir, package))
     except:
         # Don't fail if we can't remove the files
         pass
@@ -384,4 +376,4 @@ if __name__ == "__main__":
     sys.excepthook = handle_exception
     create_directories()
 
-    buildPackages()
+    build_packages()
