@@ -9,8 +9,8 @@
  * before re-generating it.
  */
 
-#ifndef EXPORTEDCONNECTIONSECRETS_H_1286393511
-#define EXPORTEDCONNECTIONSECRETS_H_1286393511
+#ifndef EXPORTEDCONNECTIONSECRETS_H
+#define EXPORTEDCONNECTIONSECRETS_H
 
 #include <QtCore/QObject>
 #include <QtDBus/QtDBus>

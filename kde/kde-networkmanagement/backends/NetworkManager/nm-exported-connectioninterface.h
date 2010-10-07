@@ -8,8 +8,8 @@
  * Do not edit! All changes made to it will be lost.
  */
 
-#ifndef NM_EXPORTED_CONNECTIONINTERFACE_H_1286393511
-#define NM_EXPORTED_CONNECTIONINTERFACE_H_1286393511
+#ifndef NM_EXPORTED_CONNECTIONINTERFACE_H
+#define NM_EXPORTED_CONNECTIONINTERFACE_H
 
 #include <QtCore/QObject>
 #include <QtCore/QByteArray>
