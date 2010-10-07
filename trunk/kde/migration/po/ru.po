@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,7 +17,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
-msgstr ""
+msgstr "Настройка параметров"
 
 #: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
@@ -39,20 +38,19 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:84
 msgid "Use my old wallpaper"
-msgstr ""
+msgstr "Использовать старые обои"
 
 #: .tmp/ScrOptions.py:85
-msgid ""
-"Copies your old wallpaper to Pardus and sets it as new background image."
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
 msgstr ""
 
 #: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
-msgstr ""
+msgstr "Закладки"
 
 #: .tmp/ScrOptions.py:105
 msgid "Firefox Bookmarks"
-msgstr ""
+msgstr "Firefox Закладки"
 
 #: .tmp/ScrOptions.py:107
 msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
@@ -60,7 +58,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:116
 msgid "Opera Bookmarks"
-msgstr ""
+msgstr "Opera Закладки"
 
 #: .tmp/ScrOptions.py:118
 msgid "Copies your old Opera bookmarks to Firefox under Pardus."
@@ -68,7 +66,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:127
 msgid "Internet Explorer favorites"
-msgstr ""
+msgstr "Internet Explorer избранноe"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
@@ -83,8 +81,7 @@ msgid "Windows Mail accounts"
 msgstr ""
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
-msgid ""
-"Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
 msgstr ""
 
 #: .tmp/ScrOptions.py:160
@@ -226,16 +223,12 @@ msgstr ""
 
 #: .tmp/ScrProgress.py:400
 #, python-format
-msgid ""
-"You don't have permission to write to folder '%s', please choose another "
-"folder!"
+msgid "You don't have permission to write to folder '%s', please choose another folder!"
 msgstr ""
 
 #: .tmp/ScrProgress.py:411
 #, python-format
-msgid ""
-"Total size of files you've selected is %(size)d MB, but you have only %(free)"
-"d MB of free space!"
+msgid "Total size of files you've selected is %(size)d MB, but you have only %(free)d MB of free space!"
 msgstr ""
 
 #: .tmp/ScrProgress.py:425
@@ -343,9 +336,7 @@ msgid "User Profiles"
 msgstr ""
 
 #: .tmp/ScrUser.py:101
-msgid ""
-"There aren't any Microsoft Windows partitions to migrate! Please check your "
-"mounted partitions..."
+msgid "There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."
 msgstr ""
 
 #: .tmp/ScrUser.py:111
@@ -378,17 +369,11 @@ msgstr ""
 
 #: .tmp/ui_summaryWidget.py:55
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
-"</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Your settings will be applied in next screen...</span></p></body></html>"
 msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:45
@@ -429,11 +414,7 @@ msgstr ""
 
 #: .tmp/ui_welcomeWidget.py:45
 msgid ""
-"This application, called Migration Tool, helps you transfer files and "
-"settings from other operating systems to Pardus. Please click Next to "
-"transfer your files. \n"
+"This application, called Migration Tool, helps you transfer files and settings from other operating systems to Pardus. Please click Next to transfer your files. \n"
 "\n"
-"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
-"basic desktop needs; helps you connect to internet, read e-mails, work with "
-"office documents and more!"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
 msgstr ""
