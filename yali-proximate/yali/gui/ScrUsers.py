@@ -24,7 +24,7 @@ from PyQt4.QtCore import *
 from yali.constants import consts
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.Ui.setupuserswidget import Ui_SetupUsersWidget
-from yali.gui.YaliDialog import Dialog
+from yali.gui.YaliDialog import Dialog, InformationWindow
 
 ##
 # Partitioning screen.
@@ -54,14 +54,13 @@ Proceed with the installation after you make your selections.
 
         self.edititemindex = None
 
-        self.ui.pass_error.setVisible(False)
         self.ui.caps_error.setVisible(False)
 
-        self.ui.advancedList.setVisible(False)
-        self.ui.createButton.setVisible(False)
-        self.ui.cancelButton.setVisible(False)
-        self.ui.userIDCheck.setVisible(False)
-        self.ui.userID.setVisible(False)
+        self.timeLine = QTimeLine(400, self)
+        self.timeLine.setFrameRange(0, 220);
+        self.connect(self.timeLine, SIGNAL("frameChanged(int)"), self.animate)
+
+        self.ui.scrollArea.setFixedHeight(0)
 
         self.ui.caps_error.setText(_('Caps Lock is on.'))
 
@@ -74,7 +73,6 @@ Proceed with the installation after you make your selections.
 
         # Set disabled the create Button
         self.ui.createButton.setEnabled(False)
-        self.ui.widget.hide()
 
         # Connections
         self.connect(self.ui.pass1, SIGNAL("textChanged(const QString &)"),
@@ -111,6 +109,8 @@ Proceed with the installation after you make your selections.
         self.userNameChanged = False
         self.usedIDs = []
 
+        #self.info.updateAndShow(_("Starting validation..."))
+
     def shown(self):
         self.ui.cancelButton.hide()
         self.ui.realname.setFocus()
@@ -146,7 +146,7 @@ Proceed with the installation after you make your selections.
         if self.checkUsers():
             self.refill()
             ctx.installData.autoLoginUser = str(self.ui.autoLogin.currentText())
-            if self.ui.createButton.text() == _("Update User"):
+            if self.ui.createButton.text() == _("Update"):
                 return self.slotCreateUser()
             return True
 
@@ -169,11 +169,36 @@ Proceed with the installation after you make your selections.
         self.checkCapsLock()
 
     def showError(self,message):
-        self.ui.pass_error.setText("<center>%s</center>" % message)
-        self.ui.pass_error.setVisible(True)
+        ctx.yali.info.updateAndShow(message)
         self.ui.createButton.setEnabled(False)
 
+    def animate(self, value):
+        self.ui.scrollArea.setFixedHeight(int(value))
+        if self.ui.scrollArea.height() == 0:
+            self.ui.scrollArea.hide()
+        else:
+            self.ui.scrollArea.show()
+
+        if self.ui.scrollArea.height() == 220:
+            self.timeLine.setDirection(1)
+        if self.ui.scrollArea.height() == 0:
+            self.timeLine.setDirection(0)
+
     def slotAdvanced(self):
+
+        if self.ui.scrollArea.isVisible():
+            self.iconPath = ":/gui/pics/expand.png"
+            self.operation = "collapse"
+            self.timeLine.start()
+        else:
+            self.ui.scrollArea.show()
+            self.iconPath = ":/gui/pics/collapse.png"
+            self.operation = "expand"
+            self.timeLine.start()
+
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(self.iconPath), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ui.addMoreUsers.setIcon(icon)
         self.checkUsers()
 
     def slotTextChanged(self):
@@ -191,7 +216,7 @@ Proceed with the installation after you make your selections.
             self.showError(_('Password is too short.'))
             return
         else:
-            self.ui.pass_error.setVisible(False)
+            ctx.yali.info.hide()
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
@@ -255,7 +280,7 @@ Proceed with the installation after you make your selections.
             self.usedIDs.append(uid)
             u.uid = uid
 
-        self.ui.createButton.setText(_("Add User"))
+        self.ui.createButton.setText(_("Add"))
         self.ui.cancelButton.hide()
         updateItem = None
 
@@ -297,7 +322,12 @@ Proceed with the installation after you make your selections.
             self.usedIDs.remove(item.uid)
         self.ui.userList.takeItem(_cur)
         self.ui.autoLogin.removeItem(_cur + 1)
-        self.ui.createButton.setText(_("Add User"))
+        self.ui.createButton.setText(_("Add"))
+
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/gui/pics/list-add.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ui.createButton.setIcon(icon)
+
         self.ui.cancelButton.hide()
         self.checkUsers()
 
@@ -322,7 +352,10 @@ Proceed with the installation after you make your selections.
         self.ui.noPass.setChecked(u.noPass)
 
         self.edititemindex = self.ui.userList.currentRow()
-        self.ui.createButton.setText(_("Update User"))
+        self.ui.createButton.setText(_("Update"))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/gui/pics/tick.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ui.createButton.setIcon(icon)
         self.ui.cancelButton.setVisible(self.ui.createButton.isVisible())
 
     def checkUserFields(self):
@@ -367,7 +400,11 @@ Proceed with the installation after you make your selections.
         if self.ui.cancelButton.isVisible():
             self.ui.cancelButton.setHidden(self.sender() == self.ui.cancelButton)
             self.checkUsers()
-        self.ui.createButton.setText(_("Add User"))
+        self.ui.createButton.setText(_("Add"))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/gui/pics/list-add.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.ui.createButton.setIcon(icon)
+
 
     def slotReturnPressed(self):
         if self.ui.createButton.isEnabled() and self.ui.addMoreUsers.isChecked():
