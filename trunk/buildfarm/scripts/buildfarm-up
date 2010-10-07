@@ -63,14 +63,14 @@ class RepositoryManager:
         # Return the current repository revision
         return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % self.localpspecrepo).read()).group().split(":")[-1].strip())
 
-    def getChanges(self, type="ALL", filter='', exclude=Exclude):
-        data = self.keys.get(type)()
+    def getChanges(self, _type="ALL", _filter='', exclude=Exclude):
+        data = self.keys.get(_type)()
         if not len(exclude):
-            return [x for x in data if x.find(filter) > -1]
+            return [x for x in data if x.find(_filter) > -1]
         else:
             rval = data
             for i in range(0, len(exclude)):
-                rval = [t for t in [x for x in rval if x.find(filter) > -1] if t.find(exclude[i]) == -1]
+                rval = [t for t in [x for x in rval if x.find(_filter) > -1] if t.find(exclude[i]) == -1]
             return rval
 
     def getRevision(self):
