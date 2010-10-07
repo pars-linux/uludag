@@ -21,6 +21,7 @@ import buildfarm
 SCRIPTS = ["scripts/%s" % s for s in """\
 buildfarm
 buildfarm-up
+buildfarm-init
 buildfarm-report
 """.split()]
 
