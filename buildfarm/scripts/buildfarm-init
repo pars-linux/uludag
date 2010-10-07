@@ -1,0 +1,68 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2010 TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# Please read the COPYING file.
+#
+
+import re
+import os
+import sys
+
+from buildfarm.config import configuration as conf
+from buildfarm import utils
+
+CONF_FILE = "/etc/buildfarm/buildfarm.conf"
+
+def check_config():
+    try:
+        print "Name: %s" % conf.name
+        print "Release: %s" % conf.release
+        print "Target architecture: %s" % conf.architecture
+        print "Sub repository: %s" % conf.subrepository
+        print "Repository directory: %s" % conf.repositorydir
+    except KeyError, e:
+        print "Please complete the missing fields in %s." % CONF_FILE
+        return False
+    else:
+        print "Base configuration is OK."
+        return True
+
+def create_initial_directories():
+    pass
+
+def checkout_repository(directory):
+    pass
+
+def setup_repository():
+    remote_url = utils.get_remote_repository_url()
+    local_url = utils.get_local_repository_url()
+
+    print "%s will be checked out into %s" % (remote_url, local_url)
+    print "Checking whether %s exists.. ",
+    if os.path.exists(local_url):
+        print "OK."
+    else:
+        print "NO, creating %s" % local_url
+        os.makedirs(local_url)
+
+    os.chdir(local_url)
+
+    if conf.scm == "svn":
+        os.system("svn co %s ." % remote_url)
+
+def check_mail_configuration():
+    pass
+
+
+if __name__ == "__main__":
+    if check_config():
+        setup_repository()
+
+
