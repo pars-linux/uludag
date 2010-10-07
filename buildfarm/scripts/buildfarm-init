@@ -34,24 +34,11 @@ def check_config():
         print "Base configuration is OK."
         return True
 
-def create_initial_directories():
-    pass
-
-def checkout_repository(directory):
-    pass
-
 def setup_repository():
     remote_url = utils.get_remote_repository_url()
     local_url = utils.get_local_repository_url()
 
     print "%s will be checked out into %s" % (remote_url, local_url)
-    print "Checking whether %s exists.. ",
-    if os.path.exists(local_url):
-        print "OK."
-    else:
-        print "NO, creating %s" % local_url
-        os.makedirs(local_url)
-
     os.chdir(local_url)
 
     if conf.scm == "svn":
@@ -63,6 +50,7 @@ def check_mail_configuration():
 
 if __name__ == "__main__":
     if check_config():
+        utils.create_directories()
         setup_repository()
 
 

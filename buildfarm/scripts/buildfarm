@@ -25,6 +25,14 @@ from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
 from buildfarm.config import configuration as conf
 
 def build_packages():
+    # FIXME: Refactor
+    def remove_binary_package_from_workdir(package):
+        try:
+            os.remove(os.path.join(conf.workdir, package))
+        except:
+            # Don't fail if we can't remove the files
+            pass
+
     qmgr = queuemanager.QueueManager()
 
     qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
@@ -218,7 +226,7 @@ def build_packages():
     for d in paths:
         os.chdir(d)
         logger.info("\n*** Generating repository index in %s:" % d)
-        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % conf.localpspecrepo)
+        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % utils.get_local_repository_url())
         logger.info("*** Repository index generated for %s" % d)
 
     # Go back to the saved directory
@@ -339,28 +347,7 @@ def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPack
 
 
 
-def remove_binary_package_from_workdir(package):
-    try:
-        os.remove(os.path.join(conf.workdir, package))
-    except:
-        # Don't fail if we can't remove the files
-        pass
-
-def create_directories():
-    directories = [conf.workdir,
-                   conf.testpath,
-                   conf.binarypath,
-                   conf.debugpath,
-                   conf.localpspecrepo,
-                   conf.outputdir]
-
-    for d in directories:
-        if d and not os.path.isdir(d):
-            try:
-                os.makedirs(d)
-            except OSError:
-                raise ("Directory '%s' cannot be created, permission problem?" % d)
-
+### Entry point ###
 
 def handle_exception(exception, value, tb):
     s = cStringIO.StringIO()
@@ -374,6 +361,8 @@ def handle_exception(exception, value, tb):
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
-    create_directories()
+
+    # Just to make sure
+    utils.create_directories()
 
     build_packages()

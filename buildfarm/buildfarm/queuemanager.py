@@ -58,7 +58,7 @@ class QueueManager:
             if not line.startswith("#"):
                 line = line.strip()
                 if not os.path.exists(line):
-                    #try to guess abosolute path from package name
+                    # Try to guess absolute path from package name
                     try:
                         component = InstallDB().get_package(line).partOf
                     except:

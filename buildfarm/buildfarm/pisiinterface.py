@@ -148,7 +148,7 @@ class PisiApi:
         return (deltas_to_install, delta_packages, blacklisted_packages)
 
     def build(self, pspec):
-        pspec = os.path.join(conf.localpspecrepo, pspec)
+        pspec = os.path.join(utils.get_local_repository_url(), pspec)
         if not os.path.exists(pspec):
             logger.error("'%s' does not exist!" % pspec)
             raise ("'%s' does not exist!" % pspec)
