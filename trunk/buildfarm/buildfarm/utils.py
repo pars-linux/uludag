@@ -22,14 +22,15 @@ constants = pisi.api.ctx.const
 def create_directories():
     directories = [
                     conf.workdir,
+                    conf.buildfarmdir,
+                    conf.repositorydir,
+                    conf.logdir,
+                    conf.binarypath,
                     conf.testpath,
                     conf.deltapath,
                     conf.debugpath,
-                    conf.outputdir,
-                    conf.binarypath,
-                    conf.buildfarmdir,
-                    conf.repositorydir,
                     get_local_repository_url(),
+                    get_package_log_directory(),
                   ]
 
     for directory in directories:
@@ -45,6 +46,9 @@ def get_local_repository_url():
 def get_remote_repository_url():
     return os.path.join(conf.scmrepositorybaseurl, conf.release, conf.subrepository)
 
+def get_package_log_directory():
+    return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
+
 def get_package_name(p):
     return pisi.util.split_package_filename(p)[0]
 
@@ -56,7 +60,7 @@ def is_delta_package(p):
 
 def is_debug_package(p):
     package_name = get_package_name(p)
-    return package_name.endswith(constants.debug_package_suffix)
+    return package_name.endswith(constants.debug_name_suffix)
 
 # FIXME:Should be reimplemented with buildnoless pisi
 """

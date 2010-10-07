@@ -7,6 +7,8 @@ TODO for buildfarm 2.0
 (+) Grab Pardus version from pisi.conf to be more flexible
 (+) Support for sandbox blacklist
 (+) Make repomanager a separate executable buildfarm-up
+(+) Consolidate buildfarm directories to not conflict with pisi
+
 (-) Use pisi methods if available to avoid redundancy
 (-) Add hooks.d for running a number of hooks after each run
 (-) Support for the removal of obsoleted packages
