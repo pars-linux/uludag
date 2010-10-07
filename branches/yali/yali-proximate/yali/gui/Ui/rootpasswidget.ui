@@ -17,22 +17,6 @@
    <property name="margin">
     <number>0</number>
    </property>
-   <item row="0" column="1">
-    <spacer>
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>30</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="3" column="0">
     <spacer>
      <property name="orientation">
@@ -375,18 +359,43 @@ color:#5A2847;</string>
         </item>
         <item>
          <layout class="QGridLayout">
-          <property name="horizontalSpacing">
+          <property name="spacing">
            <number>0</number>
           </property>
-          <property name="verticalSpacing">
-           <number>10</number>
-          </property>
           <item row="1" column="1">
-           <widget class="QLineEdit" name="pass2">
+           <widget class="QLineEdit" name="pass1">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>200</width>
-              <height>32767</height>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="inputMask">
+             <string/>
+            </property>
+            <property name="echoMode">
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="pass2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>200</width>
+              <height>30</height>
              </size>
             </property>
             <property name="inputMask">
@@ -398,38 +407,28 @@ color:#5A2847;</string>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QLineEdit" name="pass1">
-            <property name="maximumSize">
-             <size>
-              <width>200</width>
-              <height>32767</height>
-             </size>
-            </property>
-            <property name="inputMask">
-             <string/>
-            </property>
-            <property name="echoMode">
-             <enum>QLineEdit::Password</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="textLabel3_2">
-            <property name="text">
-             <string>Confirm password:</string>
-            </property>
-            <property name="wordWrap">
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
            <widget class="QLabel" name="textLabel3">
             <property name="text">
-             <string>Administrator password:</string>
+             <string>Administrator password</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLabel" name="textLabel3_2">
+            <property name="text">
+             <string>Confirm password</string>
+            </property>
+            <property name="wordWrap">
+             <bool>false</bool>
+            </property>
+            <property name="indent">
+             <number>0</number>
             </property>
            </widget>
           </item>
@@ -437,10 +436,13 @@ color:#5A2847;</string>
         </item>
         <item>
          <layout class="QHBoxLayout">
+          <property name="spacing">
+           <number>5</number>
+          </property>
           <item>
            <widget class="QLabel" name="textLabel1_2">
             <property name="text">
-             <string>Hostname:</string>
+             <string>Hostname</string>
             </property>
             <property name="wordWrap">
              <bool>false</bool>
@@ -452,7 +454,13 @@ color:#5A2847;</string>
             <property name="minimumSize">
              <size>
               <width>150</width>
-              <height>0</height>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>30</height>
              </size>
             </property>
             <property name="text">
@@ -482,6 +490,22 @@ color:#5A2847;</string>
    </item>
    <item row="6" column="1">
     <spacer name="spacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>30</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <spacer>
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
