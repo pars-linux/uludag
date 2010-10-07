@@ -49,6 +49,15 @@ def get_remote_repository_url():
 def get_package_log_directory():
     return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
 
+def get_expected_file_name(pspec):
+    from pisi.specfile import SpecFile
+    spec = SpecFile(pspec)
+    last_update = spec.history[0]
+
+    return pisi.util.package_filename(spec.packages[0].name,
+                                      last_update.version,
+                                      last_update.release)
+
 def get_package_name(p):
     return pisi.util.split_package_filename(p)[0]
 
