@@ -16,8 +16,8 @@ import smtplib
 
 import pisi.specfile
 
-from buildfarm import logger, templates
 from buildfarm.auth import Auth
+from buildfarm import logger, templates
 from buildfarm.config import configuration as conf
 
 
@@ -34,7 +34,7 @@ def send(message, pspec = "", _type = "", subject=""):
                       message.split(" "))
 
     if not conf.sendemail:
-        logger.info("*** Sending of notification e-mails is turned off.")
+        logger.info("Sending of notification e-mails is turned off.")
         return
 
 
@@ -81,14 +81,14 @@ def send(message, pspec = "", _type = "", subject=""):
     try:
         session = smtplib.SMTP(conf.smtpserver)
     except:
-        logger.error("*** Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
+        logger.error("Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
         return
 
     if conf.usesmtpauth:
         try:
             session.login(username, password)
         except smtplib.SMTPAuthenticationError:
-            logger.error("*** Failed sending e-mail: Authentication failed.")
+            logger.error("Failed sending e-mail: Authentication failed.")
             return
 
     try:
@@ -97,7 +97,7 @@ def send(message, pspec = "", _type = "", subject=""):
         else:
             session.sendmail(conf.mailfrom, recipientsEmail + conf.cclist, message)
     except smtplib.SMTPRecipientsRefused:
-        logger.error("*** Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
+        logger.error("Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
 
 def error(message, pspec, subject=""):
     send(message, pspec, _type="error", subject=subject)
