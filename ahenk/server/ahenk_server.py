@@ -80,7 +80,8 @@ dn: cn=%(root_account)s, %(domain)s
 objectClass: organizationalRole
 objectClass: simpleSecurityObject
 cn: %(root_account)s
-userPassword:%(root_password)s"""
+userPassword:%(root_password)s
+"""
 
 TEMP_JABBER = """{loglevel, 1}.
 {hosts, ["localhost", "%(domain)s"]}.
