@@ -157,6 +157,7 @@ def build_packages():
                 mailer.error(errmsg, pspec)
             else:
                 try:
+                    # FIXME: Can't this be passed to pisi?
                     # If there exists multiple packages, reorder them in order to
                     # correctly install interdependent packages.
                     if len(packagesToInstall) > 1:
