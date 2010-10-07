@@ -71,10 +71,10 @@ def build_packages():
     logger.raw()
 
     for pspec in queue:
-        packagename = utils.get_package_name_from_path(pspec)
-        build_output = open(os.path.join(conf.outputdir, "%s.txt" % packagename), "w")
+        package_name = utils.get_package_name_from_path(pspec)
+        build_output = open(os.path.join(conf.outputdir, "%s.txt" % package_name), "w")
         logger.raw()
-        log_msg = "Compiling %s (%d/%d)" % (packagename, int(queue.index(pspec)+1), len(queue))
+        log_msg = "Compiling %s (%d/%d)" % (package_name, int(queue.index(pspec)+1), len(queue))
         logger.info("*** %s" % log_msg)
 
         # Twit if possible
