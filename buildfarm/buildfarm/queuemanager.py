@@ -24,8 +24,11 @@ class QueueManager:
         self.workQueue = []
         self.waitQueue = []
 
-        self.__deserialize(self.workQueue, "workQueue")
-        self.__deserialize(self.waitQueue, "waitQueue")
+        self.workQueueFileName = "workqueue"
+        self.waitQueueFileName = "waitqueue"
+
+        self.__deserialize(self.workQueue, self.workQueueFileName)
+        self.__deserialize(self.waitQueue, self.waitQueueFileName)
 
         # Ignore empty lines
         self.workQueue = list(set([s for s in self.workQueue if s]))
@@ -35,12 +38,12 @@ class QueueManager:
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
 
     def __del__(self):
-        self.__serialize(self.waitQueue, "waitQueue")
-        self.__serialize(self.workQueue, "workQueue")
+        self.__serialize(self.waitQueue, self.waitQueueFileName)
+        self.__serialize(self.workQueue, self.workQueueFileName)
 
     def __serialize(self, queueName, fileName):
         try:
-            queue = open(os.path.join(conf.workdir, fileName), "w")
+            queue = open(os.path.join(conf.buildfarmdir, fileName), "w")
         except IOError:
             return
 
@@ -50,7 +53,7 @@ class QueueManager:
 
     def __deserialize(self, queueName, fileName):
         try:
-            queue = open(os.path.join(conf.workdir, fileName), "r")
+            queue = open(os.path.join(conf.buildfarmdir, fileName), "r")
         except IOError:
             return
 
@@ -81,30 +84,30 @@ class QueueManager:
             list(set(self.workQueue + self.waitQueue))
 
     def removeFromWaitQueue(self, pspec):
-        if self.waitQueue.__contains__(pspec):
+        if pspec in self.waitQueue:
             self.waitQueue.remove(pspec)
 
     def removeFromWorkQueue(self, pspec):
-        if self.workQueue.__contains__(pspec):
+        if pspec in self.workQueue:
             self.workQueue.remove(pspec)
 
     def appendToWorkQueue(self, pspec):
-        if not pspec in self.workQueue:
+        if pspec not in self.workQueue:
             self.workQueue.append(pspec)
-            self.__serialize(self.workQueue, "workQueue")
+            self.__serialize(self.workQueue, self.workQueueFileName)
 
     def appendToWaitQueue(self, pspec):
-        if not pspec in self.waitQueue:
+        if pspec not in self.waitQueue:
             self.waitQueue.append(pspec)
-            self.__serialize(self.waitQueue, "waitQueue")
+            self.__serialize(self.waitQueue, self.waitQueueFileName)
 
     def extendWaitQueue(self, pspecList):
         self.waitQueue = list(set(self.waitQueue + pspecList))
-        self.__serialize(self.waitQueue, "waitQueue")
+        self.__serialize(self.waitQueue, self.waitQueueFileName)
 
     def extendWorkQueue(self, pspecList):
         self.workQueue = list(set(self.workQueue + pspecList))
-        self.__serialize(self.workQueue, "workQueue")
+        self.__serialize(self.workQueue, self.workQueueFileName)
 
     def transferToWorkQueue(self, pspec):
         self.appendToWorkQueue(pspec)
