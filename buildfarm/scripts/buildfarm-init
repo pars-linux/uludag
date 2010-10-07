@@ -42,7 +42,7 @@ def setup_repository():
     os.chdir(local_url)
 
     if conf.scm == "svn":
-        os.system("svn co %s ." % remote_url)
+        os.system("svn checkout %s ." % remote_url)
 
 def check_mail_configuration():
     pass
