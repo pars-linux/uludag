@@ -27,6 +27,7 @@ def create_directories():
                     conf.debugpath,
                     conf.outputdir,
                     conf.binarypath,
+                    conf.buildfarmdir,
                     conf.repositorydir,
                     get_local_repository_url(),
                   ]
