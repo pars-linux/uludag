@@ -13,7 +13,7 @@
 
 import os
 
-from buildfarm import dependency
+from buildfarm import dependency, utils
 from buildfarm.config import configuration as conf
 
 # PiSi module to get pspec path from package name using component name
