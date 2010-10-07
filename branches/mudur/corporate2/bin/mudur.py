@@ -219,6 +219,7 @@ class Config:
             "clock"         : "local",
             "clock_adjust"  : "no",
             "tty_number"    : "6",
+            "lxc_guest"     : "no",
             "keymap"        : None,
             "debug"         : True,
             "deprecated"    : True,
@@ -1190,11 +1191,13 @@ def stop_system():
     import shutil
 
     stop_services()
-    stop_udev()
+    if config.get("lxc_guest") != "yes":
+        stop_udev()
     stop_dbus()
     #stop_preload()
-    save_clock()
-    disable_swap()
+    if config.get("lxc_guest") != "yes":
+        save_clock()
+        disable_swap()
 
     def get_fs_entry():
         ents = load_file("/proc/mounts").split("\n")
@@ -1214,12 +1217,13 @@ def stop_system():
     ui.info(_("Unmounting filesystems"))
     # write a reboot record to /var/log/wtmp before unmounting
     run("/sbin/halt", "-w")
-    for dev in get_fs_entry():
-        if run_quiet("/bin/umount", dev[1]) != 0:
-            # kill processes still using this mount
-            run_quiet("/bin/fuser", "-k", "-9", "-m", dev[1])
-            time.sleep(2)
-            run_quiet("/bin/umount", "-f", "-r", dev[1])
+    if config.get("lxc_guest") != "yes":
+        for dev in get_fs_entry():
+            if run_quiet("/bin/umount", dev[1]) != 0:
+                # kill processes still using this mount
+                run_quiet("/bin/fuser", "-k", "-9", "-m", dev[1])
+                time.sleep(2)
+                run_quiet("/bin/umount", "-f", "-r", dev[1])
 
     def remount_ro(force=False):
         ents = load_file("/proc/mounts").split("\n")
@@ -1243,14 +1247,15 @@ def stop_system():
             run_quiet("killall5", "-9")
         return ret
 
-    ui.info(_("Remounting remaining filesystems read-only"))
-    splash.update_progress(0)
+    if config.get("lxc_guest") != "yes":
+        ui.info(_("Remounting remaining filesystems read-only"))
+        splash.update_progress(0)
 
-    # We parse /proc/mounts but use umount, so this have to agree
-    shutil.copy("/proc/mounts", "/etc/mtab")
-    if remount_ro():
+        # We parse /proc/mounts but use umount, so this have to agree
+        shutil.copy("/proc/mounts", "/etc/mtab")
         if remount_ro():
-            remount_ro(True)
+            if remount_ro():
+                remount_ro(True)
 
 ##################
 # Exception hook #
@@ -1298,15 +1303,16 @@ def main():
     ### SYSINIT ###
     if sys.argv[1] == "sysinit":
 
-        # Mount /proc if not mounted (backward-compatibility)
-        if not os.path.exists("/proc/cmdline"):
-            mount("/proc", "-t proc proc /proc")
-            config.parse_kernel_options()
-            load_translations()
+        if config.get("lxc_guest") != "yes":
+            # Mount /proc if not mounted (backward-compatibility)
+            if not os.path.exists("/proc/cmdline"):
+                mount("/proc", "-t proc proc /proc")
+                config.parse_kernel_options()
+                load_translations()
 
-        # Mount sysfs if not mounted (backward-compatibility)
-        if not os.path.exists("/sys/kernel"):
-            mount("/sys", "-t sysfs sysfs /sys")
+                # Mount sysfs if not mounted (backward-compatibility)
+                if not os.path.exists("/sys/kernel"):
+                    mount("/sys", "-t sysfs sysfs /sys")
 
         # This is who we are...
         ui.greet()
@@ -1321,47 +1327,48 @@ def main():
         # only panic messages will be printed
         write_to_file("/proc/sys/kernel/printk", "1")
 
-        # Start udev and event triggering
-        start_udev()
+        if config.get("lxc_guest") != "yes":
+            # Start udev and event triggering
+            start_udev()
 
-        # Check root file system
-        check_root_filesystem()
+            # Check root file system
+            check_root_filesystem()
 
-        # Mount root file system
-        mount_root_filesystem()
+            # Mount root file system
+            mount_root_filesystem()
 
-        # Start preload if possible
-        # start_preload()
+            # Start preload if possible
+            # start_preload()
 
-        # Grab persistent rules and udev.log file from /dev
-        copy_udev_rules()
+            # Grab persistent rules and udev.log file from /dev
+            copy_udev_rules()
+
+            # Load modules manually written in /etc/modules.autoload.d/kernel-x.y
+            autoload_modules()
+
+            # Check all filesystems
+            check_filesystems()
+
+            # Mount local filesystems
+            mount_local_filesystems()
+
+            # Activate swap space
+            enable_swap()
+
+            # Set disk parameters using hdparm
+            set_disk_parameters()
+
+            # Set the clock
+            set_clock()
+
+            # Wait for udev events to finish
+            run("/sbin/udevadm", "settle", "--timeout=60")
 
         # Set hostname
         set_hostname()
 
-        # Load modules manually written in /etc/modules.autoload.d/kernel-x.y
-        autoload_modules()
-
-        # Check all filesystems
-        check_filesystems()
-
-        # Mount local filesystems
-        mount_local_filesystems()
-
-        # Activate swap space
-        enable_swap()
-
-        # Set disk parameters using hdparm
-        set_disk_parameters()
-
-        # Set the clock
-        set_clock()
-
         # Set the system language
         set_system_language()
-
-        # Wait for udev events to finish
-        run("/sbin/udevadm", "settle", "--timeout=60")
 
         # When we exit this runlevel, init will write a boot record to utmp
         write_to_file("/var/run/utmp")
@@ -1408,10 +1415,11 @@ def main():
     elif sys.argv[1] == "default":
         splash.init(75)
 
-        # Trigger only the events which are failed during a previous run
-        if os.path.exists("/dev/.udev/failed"):
-            ui.info(_("Triggering udev events which are failed during a previous run"))
-            run("/sbin/udevadm", "trigger", "--type=failed")
+        if config.get("lxc_guest") != "yes":
+            # Trigger only the events which are failed during a previous run
+            if os.path.exists("/dev/.udev/failed"):
+                ui.info(_("Triggering udev events which are failed during a previous run"))
+                run("/sbin/udevadm", "trigger", "--type=failed")
 
         # Source local.start
         if not config.get("safe") and os.path.exists("/etc/conf.d/local.start"):
