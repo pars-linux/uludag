@@ -17,7 +17,7 @@ import smtplib
 import pisi.specfile
 
 from buildfarm.auth import Auth
-from buildfarm import logger, templates
+from buildfarm import logger, templates, utils
 from buildfarm.config import configuration as conf
 
 
@@ -50,7 +50,7 @@ def send(message, pspec = "", _type = "", subject=""):
     recipientsName, recipientsEmail = [], []
     if pspec:
         specFile = pisi.specfile.SpecFile()
-        specFile.read(os.path.join(conf.localpspecrepo, pspec))
+        specFile.read(os.path.join(utils.get_local_repository_url(), pspec))
         recipientsName.append(specFile.source.packager.name)
         recipientsEmail.append(specFile.source.packager.email)
 

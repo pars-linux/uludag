@@ -15,6 +15,7 @@ import sys
 
 import pisi.specfile
 
+from buildfarm import utils
 from buildfarm import logger
 from buildfarm.config import configuration as conf
 
@@ -22,7 +23,7 @@ class DependencyResolver:
     def __init__(self, pspeclist):
 
         self.oldwd = os.getcwd()
-        os.chdir(conf.localpspecrepo)
+        os.chdir(utils.get_local_repository_url())
 
         # Work queue and wait queue may contain same pspecs.
         # be sure that every pspec is unique in the pspeclist.

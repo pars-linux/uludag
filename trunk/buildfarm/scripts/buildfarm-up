@@ -11,12 +11,13 @@
 # Please read the COPYING file.
 #
 
-import re
 import os
+import re
 import sys
 
 import pisi
 
+from buildfarm import utils
 from buildfarm import logger
 from buildfarm import queuemanager
 from buildfarm.config import configuration as conf
@@ -29,11 +30,13 @@ class RepoError(Exception):
 class RepositoryManager:
     def __init__(self):
 
+        self.localpspecrepo = utils.get_local_repository_url()
+
         def update():
             logger.info("\nUpdating pisi-index* files..")
-            os.system("/usr/bin/svn up %s/pisi-index*" % conf.localpspecrepo)
-            logger.info("\nUpdating local pspec repository '%s'" % (conf.localpspecrepo))
-            f = os.popen("/usr/bin/svn up %s" % conf.localpspecrepo)
+            os.system("/usr/bin/svn up %s/pisi-index*" % self.localpspecrepo)
+            logger.info("\nUpdating local pspec repository '%s'" % (self.localpspecrepo))
+            f = os.popen("/usr/bin/svn up %s" % self.localpspecrepo)
 
             out = [o.split() for o in f.readlines()]
             if f.close():
@@ -58,7 +61,7 @@ class RepositoryManager:
 
     def getCurrentRevision(self):
         # Return the current repository revision
-        return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % conf.localpspecrepo).read()).group().split(":")[-1].strip())
+        return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % self.localpspecrepo).read()).group().split(":")[-1].strip())
 
     def getChanges(self, type="ALL", filter='', exclude=Exclude):
         data = self.keys.get(type)()
