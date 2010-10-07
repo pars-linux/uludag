@@ -52,17 +52,12 @@ def build_packages():
         logger.info("Work Queue is empty...")
         sys.exit(1)
 
-    # FIXME: Use fcntl.flock
-    f = open("/var/run/buildfarm", 'w')
-    f.close()
-
     # Unpickle and load ISO package list here if conf.generatedelta is true.
     if conf.generatedelta:
         try:
             isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
         except:
             logger.error("You have to create packages.db in data/ for delta generation.")
-            os.unlink("/var/run/buildfarm")
             sys.exit(1)
 
     # Compiling current workQueue
@@ -235,9 +230,6 @@ def build_packages():
     # Check packages containing binaries and libraries broken by any package update
     print "\n*** Checking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
-
-    # FIXME: Use fcntl.funlock
-    os.unlink("/var/run/buildfarm")
 
 def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPackages):
 
