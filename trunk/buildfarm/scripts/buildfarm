@@ -40,8 +40,12 @@ def build_packages():
     qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
     queue = copy.copy(qmgr.workQueue)
 
+    if len(queue) == 0:
+        logger.info("Work Queue is empty...")
+        sys.exit(1)
+
     # We'll set home variable just after build process to make revdep work right
-    homeDir = os.environ['HOME']
+    home_dir = os.environ['HOME']
 
     packageList = []
     deltaPackageList = []
@@ -50,9 +54,6 @@ def build_packages():
     # Create Twitter instance
     my_twitter = twit.Twitter()
 
-    if len(queue) == 0:
-        logger.info("Work Queue is empty...")
-        sys.exit(1)
 
     # Unpickle and load ISO package list here if conf.generatedelta is true.
     if conf.generatedelta:
@@ -199,7 +200,7 @@ def build_packages():
 
         finally:
             pisi.close()
-            os.environ['HOME'] = homeDir
+            os.environ['HOME'] = home_dir
 
     logger.raw("QUEUE")
     logger.info("*** Wait Queue: %s" % (qmgr.waitQueue))
@@ -215,15 +216,15 @@ def build_packages():
     current = os.getcwd()
 
     # Set index paths
-    paths = [conf.binarypath, conf.testpath]
+    paths = [utils.get_compiled_packages_directory]
     if ctx.config.values.build.generateDebug:
-        paths.append(conf.debugpath)
+        paths.append(utils.get_debug_packages_directory())
 
-    for d in paths:
-        os.chdir(d)
-        logger.info("\n*** Generating repository index in %s:" % d)
+    for directory in paths:
+        os.chdir(directory)
+        logger.info("\n*** Generating repository index in %s:" % directory)
         os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % utils.get_local_repository_url())
-        logger.info("*** Repository index generated for %s" % d)
+        logger.info("*** Repository index generated for %s" % directory)
 
     # Go back to the saved directory
     os.chdir(current)
@@ -234,57 +235,27 @@ def build_packages():
 
 def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPackages):
 
-    def cleanup_stale_delta_packages(package):
-        # Say that 'package' is kernel-2.6.25.20-114.45.pisi
-        # We can remove delta packages going to any build < 45 from both
-        # packages/ and packages-test/ because we no longer need them.
-        for p in utils.get_deltas_not_going_to(conf.binarypath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.binarypath))
-            os.remove(os.path.join(conf.binarypath, p))
-
-        for p in utils.get_deltas_not_going_to(conf.testpath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.testpath))
-            os.remove(os.path.join(conf.testpath, p))
-
-    def remove_old_package(package):
-        logger.info("*** Removing old package '%s' from '%s'" % (package, conf.testpath))
-        if os.path.exists(os.path.join(conf.testpath, package)):
-            # If an old build is found in testpath remove it because the test repo is unique.
-            os.remove(os.path.join(conf.testpath, package))
-
-        # Cleanup workdir
-        if os.path.exists(os.path.join(conf.workdir, package)):
-            os.remove(os.path.join(conf.workdir, package))
-
     def move_new_package(package):
         logger.info("*** Moving new package '%s'" % package)
+        packages_dir = utils.get_compiled_packages_directory()
         if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
-            shutil.copy(os.path.join(conf.workdir, package), conf.testpath)
+            shutil.copy(os.path.join(conf.workdir, package), packages_dir)
             os.remove(os.path.join(conf.workdir, package))
 
     def move_unchanged_package(package):
         logger.info("*** Moving unchanged package %s'" % package)
+        packages_dir = utils.get_compiled_packages_directory()
         if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
-            os.remove(os.path.join(conf.workdir, package))
-
-    def move_delta_package(package):
-        # Move all delta packages into packages/ and packages-test/
-        # and clean them from workdir.
-        logger.info("*** Moving delta package '%s' to both directories" % package)
-        if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), conf.binarypath)
-            shutil.copy(os.path.join(conf.workdir, package), conf.testpath)
+            shutil.copy(os.path.join(conf.workdir, package), packages_dir)
             os.remove(os.path.join(conf.workdir, package))
 
     def move_debug_package(package):
         # Move all debug packages into packages-debug/ and clean them
         # from WorkDir.
-        # FIXME: fix message
-        logger.info("*** Moving debug package '%s' to packages-debug" % package)
+        debug_dir = utils.get_debug_packages_directory()
+        logger.info("*** Moving debug package '%s' to '%s'" % (package, debug_dir))
         if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), conf.debugpath)
+            shutil.copy(os.path.join(conf.workdir, package), debug_dir)
             os.remove(os.path.join(conf.workdir, package))
 
     # Normalize files to full paths
@@ -313,25 +284,9 @@ def move_packages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPack
             # Move the new binary package to packages/ and packages-test/
             move_new_package(package)
 
-    for package in oldPackages:
-        if package:
-            # Remove old binary package from packages-test/
-            remove_old_package(package)
-
     for package in unchangedPackages:
         if package:
             move_unchanged_package(package)
-
-    for package in deltaPackages:
-        # Move all(3) delta packages to packages/ and packages-test/
-        if package:
-            move_delta_package(package)
-
-    if deltaPackages:
-        for package in newPackages:
-            # Remove delta packages going to any build != newPackage's build
-            if package:
-                cleanup_stale_delta_packages(package)
 
     if debugPackages:
         for package in debugPackages:

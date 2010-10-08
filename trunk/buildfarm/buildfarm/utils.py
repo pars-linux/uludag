@@ -28,9 +28,8 @@ def create_directories():
                     conf.buildfarmdir,
                     conf.repositorydir,
                     conf.logdir,
-                    conf.binarypath,
-                    conf.testpath,
-                    conf.debugpath,
+                    get_compiled_packages_directory(),
+                    get_debug_packages_directory(),
                     get_local_repository_url(),
                     get_package_log_directory(),
                   ]
@@ -50,6 +49,15 @@ def get_remote_repository_url():
 
 def get_package_log_directory():
     return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
+
+def get_debug_packages_directory():
+    return os.path.join(get_compiled_packages_directory(),
+                        "%s-debug" % conf.architecture)
+
+def get_compiled_packages_directory():
+    return os.path.join(conf.binarypath,
+                        conf.release,
+                        conf.subrepository)
 
 def get_expected_file_name(spec):
     last_update = spec.history[0]
