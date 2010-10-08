@@ -28,19 +28,15 @@ class PisiApi:
 
         # Override these so that pisi searches for .pisi files in the right locations
         self.options.output_dir = outputDir
-        self.options.debug_packages_dir = conf.debugPath
-        self.options.compiled_packages_dir = conf.binaryPath
+        self.options.debug_packages_dir = utils.get_debug_packages_directory()
+        self.options.compiled_packages_dir = utils.get_compiled_packages_directory()
 
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
         self.options.ignore_package_conflicts = True
-
-        # Enable debug and verbose
         self.options.debug = True
         self.options.verbose = True
-
         self.options.ignore_check = conf.ignorecheck
-
         self.options.ignore_sandbox = False
 
         # Set API options
@@ -51,8 +47,17 @@ class PisiApi:
 
         pisi.api.set_userinterface(cli.CLI(stdout))
 
-        self.__newBinaryPackages = []
-        self.__oldBinaryPackages = []
+        self.builder = None
+
+    def get_new_packages(self):
+        return self.builder.new_packages
+
+    def get_new_debug_packages(self):
+        return self.builder.new_debug_packages
+
+    def get_delta_package_map(self):
+        # NOTE: Returns a dict
+        return self.builder.delta_map
 
     def close(self):
         pisi.api.ctx.ui.prepareLogs()
@@ -69,13 +74,11 @@ class PisiApi:
             logger.info("Disabling sandbox for %s" % pspec)
             pisi.api.ctx.set_option("ignore_sandbox", True)
 
-        __newBinaryPackages, __oldBinaryPackages = pisi.api.build(pspec)
+        self.builder = pisi.operations.build.Builder(pspec)
+        self.builder.build()
 
-        logger.info("Created package(s): %s" % (__newBinaryPackages))
-        self.__newBinaryPackages += __newBinaryPackages
-        self.__oldBinaryPackages += __oldBinaryPackages
+        logger.info("Created package(s): %s" % self.builder.new_packages)
 
-        return (self.__newBinaryPackages, self.__oldBinaryPackages)
 
     def get_install_order(self, packages):
         """ Get installation order for pisi packages. """
