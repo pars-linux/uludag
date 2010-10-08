@@ -2,7 +2,7 @@ Usage
 -----
 
 Install dependencies:
-    # pisi it python-ldap Twisted
+    # pisi it python-ldap Twisted python-simplejson
 
 Install to system:
     # ./setup.py install
