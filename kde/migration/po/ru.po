@@ -22,7 +22,7 @@ msgstr "Настройка параметров"
 #: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
 msgid "Welcome to Migration Tool Wizard :)"
-msgstr ""
+msgstr "Вас приветствует Мастем Миграции :)"
 
 #: .tmp/ScrOptions.py:61
 msgid "Keep current wallpaper"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:63
 msgid "Don't use wallpaper"
-msgstr ""
+msgstr "Не использовать обои"
 
 #: .tmp/ScrOptions.py:64
 msgid "Does not change your wallpaper."
@@ -74,11 +74,11 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
-msgstr ""
+msgstr "E-Mail and News Аккаунты"
 
 #: .tmp/ScrOptions.py:149
 msgid "Windows Mail accounts"
-msgstr ""
+msgstr "Windows Mail аккаунты"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
 msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
@@ -86,7 +86,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
-msgstr ""
+msgstr "Thunderbird акаунты"
 
 #: .tmp/ScrOptions.py:168
 msgid "Copy e-mail messages from e-mail accounts"
@@ -98,11 +98,11 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
-msgstr ""
+msgstr "Instant Messenger Аккаунты"
 
 #: .tmp/ScrOptions.py:190
 msgid "MSN accounts"
-msgstr ""
+msgstr "MSN аккаунты"
 
 #: .tmp/ScrOptions.py:192
 msgid "Copies your MSN Messenger accounts to Kopete."
@@ -110,7 +110,7 @@ msgstr ""
 
 #: .tmp/ScrOptions.py:201
 msgid "GTalk accounts"
-msgstr ""
+msgstr "GTalk аккаунты"
 
 #: .tmp/ScrOptions.py:203
 msgid "Copies your GTalk accounts to Kopete."
@@ -154,7 +154,7 @@ msgstr ""
 
 #: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
-msgstr ""
+msgstr "Закладки Opera загруженны."
 
 #: .tmp/ScrProgress.py:278
 msgid "Internet Explorer favorites could not be loaded."
@@ -170,43 +170,43 @@ msgstr ""
 
 #: .tmp/ScrProgress.py:305
 msgid "Windows Mail accounts could not be loaded."
-msgstr ""
+msgstr "Windows Mail аккаунты не могут быть загруженны."
 
 #: .tmp/ScrProgress.py:307
 msgid "Windows Mail accounts loaded."
-msgstr ""
+msgstr "Windows Mail аккаунты загруженны."
 
 #: .tmp/ScrProgress.py:318
 msgid "Thunderbird accounts could be loaded."
-msgstr ""
+msgstr "Thunderbird аккаунты не могут быть загруженны."
 
 #: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
-msgstr ""
+msgstr "Thunderbird аккаунты загруженны."
 
 #: .tmp/ScrProgress.py:330
 msgid "MSN accounts could be loaded."
-msgstr ""
+msgstr "MSN аккаунты не могут быть загруженны."
 
 #: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
-msgstr ""
+msgstr "MSN загруженны."
 
 #: .tmp/ScrProgress.py:342
 msgid "GTalk accounts could not be loaded."
-msgstr ""
+msgstr "GTalk аккаунты не могут быть загруженны."
 
 #: .tmp/ScrProgress.py:344
 msgid "GTalk accounts loaded."
-msgstr ""
+msgstr "GTalk аккаунты загруженны."
 
 #: .tmp/ScrProgress.py:353
 msgid "E-Mail Accounts"
-msgstr ""
+msgstr "E-Mail Аккаунты"
 
 #: .tmp/ScrProgress.py:361
 msgid "E-Mail Messages"
-msgstr ""
+msgstr "E-Mail Сообщения"
 
 #: .tmp/ScrProgress.py:369
 msgid "News Accounts"
