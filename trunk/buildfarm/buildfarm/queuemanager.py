@@ -91,6 +91,16 @@ class QueueManager:
         if pspec in self.workQueue:
             self.workQueue.remove(pspec)
 
+    def dump_work_queue(self):
+        if self.workQueue:
+            utils.print_header("List of queued packages:")
+            print "\n".join(self.workQueue)
+
+    def dump_wait_queue(self):
+        if self.waitQueue:
+            utils.print_header("List of previously failed packages:")
+            print "\n".join(self.waitQueue)
+
     def appendToWorkQueue(self, pspec):
         if pspec not in self.workQueue:
             self.workQueue.append(pspec)
@@ -101,11 +111,11 @@ class QueueManager:
             self.waitQueue.append(pspec)
             self.__serialize(self.waitQueue, self.waitQueueFileName)
 
-    def extendWaitQueue(self, pspecList):
+    def extend_wait_queue(self, pspecList):
         self.waitQueue = list(set(self.waitQueue + pspecList))
         self.__serialize(self.waitQueue, self.waitQueueFileName)
 
-    def extendWorkQueue(self, pspecList):
+    def extend_work_queue(self, pspecList):
         self.workQueue = list(set(self.workQueue + pspecList))
         self.__serialize(self.workQueue, self.workQueueFileName)
 

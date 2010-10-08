@@ -12,117 +12,105 @@
 #
 
 import os
-import re
 import sys
+import glob
+import subprocess
 
 import pisi
 
 from buildfarm import utils
-from buildfarm import logger
 from buildfarm import queuemanager
 from buildfarm.config import configuration as conf
 
-Exclude = ["packages", "pisi-index.xml", "README", "TODO", "useful-scripts"]
-
-class RepoError(Exception):
-    pass
-
 class RepositoryManager:
     def __init__(self):
+        self.local_pspec_repo = utils.get_local_repository_url()
 
-        self.localpspecrepo = utils.get_local_repository_url()
+        self.output = []
 
-        def update():
-            logger.info("\nUpdating pisi-index* files..")
-            os.system("/usr/bin/svn up %s/pisi-index*" % self.localpspecrepo)
-            logger.info("\nUpdating local pspec repository '%s'" % (self.localpspecrepo))
-            f = os.popen("/usr/bin/svn up %s" % self.localpspecrepo)
+        self.final_queue = []
+        self.new_packages = []
+        self.updated_packages = []
+        self.same_release_updates = []
+        self.excluded_arch_packages = []
 
-            out = [o.split() for o in f.readlines()]
-            if f.close():
-                logger.error("A problem with SVN occurred.")
-                raise RepoError("A problem with SVN occurred:\n %s" % (out))
-                sys.exit(-1)
-            return out
+        print "\nUpdating repository %s" % (self.local_pspec_repo)
 
-        # __init__ starts here
-        self.keys = {"U": self.getModified, "A": self.getAdded, "D": self.getRemoved, "ALL": self.getAll}
-
-        self.oldRevision = self.getCurrentRevision()
-
-        # Update repository
-        self.output = update()
-
-        if self.getRevision():
-            logger.info("Repository is updated (%d lines extracted): Revision %d." % (len(self.output), self.getRevision()))
+        try:
+            self.output = subprocess.check_output(["svn", "up", self.local_pspec_repo],
+                                                  stderr=subprocess.STDOUT)
+        except CalledProcessError:
+            print "A problem with SVN occurred while updating repository, exiting."
+            sys.exit(1)
         else:
-            logger.error("Repository update failed.")
-            raise RepoError("Repository update failed.")
+            # List of lists
+            self.output = [line.split() for line in self.output.split("\n") if line]
 
-    def getCurrentRevision(self):
-        # Return the current repository revision
-        return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % self.localpspecrepo).read()).group().split(":")[-1].strip())
+    def get_changes(self, commit_type, search_for=""):
+        results = []
+        for line in self.output:
+            if line[0] == commit_type and search_for in line[1]:
+                results.append(line[1])
 
-    def getChanges(self, _type="ALL", _filter='', exclude=Exclude):
-        data = self.keys.get(_type)()
-        if not len(exclude):
-            return [x for x in data if x.find(_filter) > -1]
-        else:
-            rval = data
-            for i in range(0, len(exclude)):
-                rval = [t for t in [x for x in rval if x.find(_filter) > -1] if t.find(exclude[i]) == -1]
-            return rval
+        return results
 
-    def getRevision(self):
-        return int(self.output[-1][self.output[-1].index("revision")+1].strip("."))
+    def manage(self):
+        self.new_packages = self.get_changes("A", "pspec.xml")
+        self.updated_packages = self.get_changes("U", "pspec.xml")
 
-    def getModified(self):
-        return [d[1] for d in self.output if d[0] == "U"]
+        # The is the biggest possible queue
+        self.final_queue.extend(self.new_packages)
+        self.final_queue.extend(self.updated_packages)
 
-    def getAdded(self):
-        return [d[1] for d in self.output if d[0] == "A"]
+        # Now we'll filter out the excludearch and release-stayed-the-same
+        # packages.
 
-    def getRemoved(self):
-        return [d[1] for d in self.output if d[0] == "D"]
+        for pspec in self.final_queue[:]:
+            spec = pisi.specfile.SpecFile(pspec)
+            # First the release check
+            expected_pisi_file = os.path.join(conf.binarypath, \
+                    utils.get_expected_file_name(spec))
+            if os.path.exists(expected_pisi_file):
+                self.final_queue.remove(pspec)
+                self.same_release_updates.append(pspec)
+                # Not incrementing the release will bypass the arch test
+                continue
 
-    def getAll(self):
-        return self.getModified() + self.getRemoved() + self.getAdded()
+            # Now the architecture check
+            if utils.is_arch_excluded(spec):
+                self.final_queue.remove(pspec)
+                self.excluded_arch_packages.append(pspec)
+
+
+    def dump_summary(self):
+        if self.final_queue:
+            utils.print_header("List of packages to be built:")
+            print "\n".join(self.final_queue)
+
+        if self.excluded_arch_packages:
+            utils.print_header("List of ignored packages because of architecture mismatch:")
+            print "\n".join(self.excluded_arch_packages)
+
+        if self.same_release_updates:
+            utils.print_header("List of ignored packages caused by a missing history update:")
+            print "\n".join(self.same_release_updates)
+
 
 
 # Main program
 
 if __name__ == "__main__":
 
-    qmgr = queuemanager.QueueManager()
+    queue_manager = queuemanager.QueueManager()
 
     # Print current workqueue/waitqueue
-    print "Current workqueue:\n%s" % ('-'*60)
-    print "\n".join(qmgr.workQueue)
-
-    print "\nCurrent waitqueue:\n%s" % ('-'*60)
-    print "\n".join(qmgr.waitQueue)
+    queue_manager.dump_work_queue()
+    queue_manager.dump_wait_queue()
 
     # Create RepositoryManager
-    r = RepositoryManager()
+    repository_manager = RepositoryManager()
+    repository_manager.manage()
 
-    # Get updated and newly added pspec list
-    updatedPspecFiles = r.getChanges(_type="U", _filter="pspec.xml")
-    newPspecFiles = r.getChanges(_type="A", _filter="pspec.xml")
+    queue_manager.extend_work_queue(repository_manager.final_queue)
 
-    if not (updatedPspecFiles or newPspecFiles):
-        print "\nNo new updates concerning source packages.\nExiting."
-        sys.exit(0)
-
-    # Print the packages that will be pushed to queue
-    print "\nThe following packages will now be pushed to buildfarm's workqueue:\n%s" % ('-'*60)
-    for p in updatedPspecFiles + newPspecFiles:
-        print "  * %s" % p
-
-    if len(updatedPspecFiles + newPspecFiles):
-        # Filter out the packages that shouldn't be build on this architecture
-        candidateQueue = updatedPspecFiles + newPspecFiles
-        qmgr.extendWorkQueue(filter(lambda x: pisi.ctx.config.values.get('general', 'architecture') not in
-                     pisi.specfile.SpecFile(x).source.excludeArch, candidateQueue))
-
-        print "\nThese packages will not be compiled on this architecture:\n%s" % ('-'*60)
-        print "\n".join(list(set(candidateQueue).difference(qmgr.workQueue)))
+    repository_manager.dump_summary()

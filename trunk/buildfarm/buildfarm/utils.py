@@ -16,11 +16,11 @@ import os
 
 from buildfarm.config import configuration as conf
 
+import pisi.util
 import pisi.context as ctx
-from pisi.specfile import SpecFile
 
 def print_header(msg):
-    print "%s\n%s\n" % (msg, '-'*len(msg))
+    print "\n%s\n%s\n" % (msg, '-'*len(msg))
 
 def create_directories():
     directories = [
@@ -30,7 +30,6 @@ def create_directories():
                     conf.logdir,
                     conf.binarypath,
                     conf.testpath,
-                    conf.deltapath,
                     conf.debugpath,
                     get_local_repository_url(),
                     get_package_log_directory(),
@@ -52,8 +51,7 @@ def get_remote_repository_url():
 def get_package_log_directory():
     return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
 
-def get_expected_file_name(pspec):
-    spec = SpecFile(pspec)
+def get_expected_file_name(spec):
     last_update = spec.history[0]
 
     # e.g. kernel-2.6.32.24-143-p11-x86_64.pisi if the last update's
@@ -72,10 +70,9 @@ def get_package_name_with_component_from_path(p):
     """Returns system/base/gettext instead of /../system/base/gettext/pspec.xml."""
     return os.path.dirname(p).partition("%s/" % get_local_repository_url())
 
-def is_arch_excluded(pspec):
+def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
     on the current architecture."""
-    spec = SpecFile(pspec)
     return ctx.config.values.get("general", "architecture") \
             in spec.source.excludeArch
 
