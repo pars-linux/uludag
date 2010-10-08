@@ -51,13 +51,13 @@ def get_package_log_directory():
     return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
 
 def get_debug_packages_directory():
-    return os.path.join(get_compiled_packages_directory(),
-                        "%s-debug" % conf.architecture)
+    return "%s-debug" % get_compiled_packages_directory()
 
 def get_compiled_packages_directory():
     return os.path.join(conf.binarypath,
                         conf.release,
-                        conf.subrepository)
+                        conf.subrepository,
+                        conf.architecture)
 
 def get_expected_file_name(spec):
     last_update = spec.history[0]
