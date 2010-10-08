@@ -34,4 +34,4 @@ if __name__ == "__main__":
         print "username:%s\npassword:%s" % (user, password)
 
     a = Auth()
-    test(*a.get_credentials('Twitter'))
+    test(*a.get_credentials('Mailer'))
