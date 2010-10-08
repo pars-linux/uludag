@@ -26,13 +26,6 @@ class MailerError(Exception):
 
 def send(message, pspec = "", _type = "", subject=""):
 
-    def wrap(message, length=72):
-        return reduce(lambda line, word: "%s%s%s" %
-                      (line,
-                       [" ", "\n"][(len(line)-line.rfind("\n")-1 + len(word.split("\n",1)[0]) >= length)],
-                       word),
-                      message.split(" "))
-
     if not conf.sendemail:
         logger.info("Sending of notification e-mails is turned off.")
         return
@@ -47,27 +40,26 @@ def send(message, pspec = "", _type = "", subject=""):
                               conf.architecture)
 
 
-    recipientsName, recipientsEmail = [], []
+    recipients_name, recipients_email = [], []
     if pspec:
-        specFile = pisi.specfile.SpecFile()
-        specFile.read(os.path.join(utils.get_local_repository_url(), pspec))
-        recipientsName.append(specFile.source.packager.name)
-        recipientsEmail.append(specFile.source.packager.email)
+        spec = pisi.specfile.SpecFile(os.path.join(utils.get_local_repository_url(), pspec))
+        recipients_name.append(spec.source.packager.name)
+        recipients_email.append(spec.source.packager.email)
 
-    packagename = os.path.basename(os.path.dirname(pspec))
-    last_log = "".join(open(conf.logfile).readlines()[-20:])
+    package_name = os.path.basename(os.path.dirname(pspec))
+    last_log = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name))
     message = templates._all[_type] % {
-                                        'log'          : wrap(last_log),
-                                        'recipientName': " ".join(recipientsName),
-                                        'mailTo'       : ", ".join(recipientsEmail),
+                                        'log'          : "".join(last_log.readlines()[-20:]),
+                                        'recipientName': " ".join(recipients_name),
+                                        'mailTo'       : ", ".join(recipients_email),
                                         'ccList'       : ', '.join(conf.cclist),
                                         'mailFrom'     : conf.mailfrom,
                                         'announceAddr' : conf.announceaddr,
                                         'subject'      : pspec or subject or _type,
-                                        'message'      : wrap(message),
+                                        'message'      : message,
                                         'pspec'        : pspec,
                                         'type'         : _type,
-                                        'packagename'  : packagename,
+                                        'packagename'  : package_name,
                                         'distribution' : conf.name,
                                         'release'      : conf.release,
                                         'arch'         : conf.architecture,
