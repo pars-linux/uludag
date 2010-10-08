@@ -35,19 +35,20 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._disable_parent_in_shown = True
         self.registerFunction(IN, lambda: parent.statusBar().hide())
         self.registerFunction(OUT, lambda: parent.statusBar().show())
-
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
+        self.parent = parent
 
     def _show(self):
         self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
 
     def _hide(self):
         self.animate(direction = OUT, dont_animate = True)
+        self.parent.setWindowTitle(i18n("Package Manager"))
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
         self.percentage.setText(i18n("<p align='right'>%1 %</p>", progress))
-        self.setWindowTitle(i18n("Operation - %1%", progress))
+        self.parent.setWindowTitle(i18n("Operation - %1%", progress))
 
     def updateOperation(self, operation, arg):
         if operation in [i18n("configuring"),  i18n("extracting")]:
