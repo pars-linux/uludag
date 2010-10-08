@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus Corporate 2 Alpha (i686)</Title>
+    <Title>Pardus Corporate 2 Alpha i686</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://packages.pardus.org.tr/corporate2-test/pisi-index.xml.bz2">
@@ -140,7 +140,13 @@
         <SelectedPackage>kde-i18n-sv</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
-        <SelectedPackage>kdeaddons</SelectedPackage>
+        <SelectedPackage>kdeaddons-kaddressbook-plugins</SelectedPackage>
+        <SelectedPackage>kdeaddons-kate-plugins</SelectedPackage>
+        <SelectedPackage>kdeaddons-kfile-plugins</SelectedPackage>
+        <SelectedPackage>kdeaddons-kicker-applets</SelectedPackage>
+        <SelectedPackage>kdeaddons-knewsticker-scripts</SelectedPackage>
+        <SelectedPackage>kdeaddons-konqueror-plugins</SelectedPackage>
+        <SelectedPackage>kdeaddons-renamedlg-plugins</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
@@ -150,8 +156,54 @@
         <SelectedPackage>kdegames-kmines</SelectedPackage>
         <SelectedPackage>kdegames-knetwalk</SelectedPackage>
         <SelectedPackage>kdegames-kpat</SelectedPackage>
-        <SelectedPackage>kdegraphics</SelectedPackage>
-        <SelectedPackage>kdenetwork</SelectedPackage>
+        <SelectedPackage>kdegraphics-core</SelectedPackage>
+        <SelectedPackage>kdegraphics-kcoloredit</SelectedPackage>
+        <SelectedPackage>kdegraphics-kdvi</SelectedPackage>
+        <SelectedPackage>kdegraphics-kfax</SelectedPackage>
+        <SelectedPackage>kdegraphics-kfaxview</SelectedPackage>
+        <SelectedPackage>kdegraphics-kiconedit</SelectedPackage>
+        <SelectedPackage>kdegraphics-kolourpaint</SelectedPackage>
+        <SelectedPackage>kdegraphics-kooka</SelectedPackage>
+        <SelectedPackage>kdegraphics-kpdf</SelectedPackage>
+        <SelectedPackage>kdegraphics-kruler</SelectedPackage>
+        <SelectedPackage>kdegraphics-ksnapshot</SelectedPackage>
+        <SelectedPackage>kdegraphics-kuickshow</SelectedPackage>
+        <SelectedPackage>kdemultimedia-core</SelectedPackage>
+        <SelectedPackage>kdemultimedia-juk</SelectedPackage>
+        <SelectedPackage>kdemultimedia-kaudiocreator</SelectedPackage>
+        <SelectedPackage>kdemultimedia-kmid</SelectedPackage>
+        <SelectedPackage>kdemultimedia-kmix</SelectedPackage>
+        <SelectedPackage>kdemultimedia-kscd</SelectedPackage>
+        <SelectedPackage>kdenetwork-core</SelectedPackage>
+        <SelectedPackage>kdenetwork-kdict</SelectedPackage>
+        <SelectedPackage>kdenetwork-kget</SelectedPackage>
+        <SelectedPackage>kdenetwork-kopete</SelectedPackage>
+        <SelectedPackage>kdenetwork-kppp</SelectedPackage>
+        <SelectedPackage>kdenetwork-krdc</SelectedPackage>
+        <SelectedPackage>kdenetwork-krfb</SelectedPackage>
+        <SelectedPackage>kdenetwork-ktalkd</SelectedPackage>
+        <SelectedPackage>kdepim-core</SelectedPackage>
+        <SelectedPackage>kdepim-kalarm</SelectedPackage>
+        <SelectedPackage>kdepim-karm</SelectedPackage>
+        <SelectedPackage>kdepim-kitchensync</SelectedPackage>
+        <SelectedPackage>kdepim-kmail</SelectedPackage>
+        <SelectedPackage>kdepim-knode</SelectedPackage>
+        <SelectedPackage>kdepim-kontact</SelectedPackage>
+        <SelectedPackage>kdepim-korganizer</SelectedPackage>
+        <SelectedPackage>kdepim-kpilot</SelectedPackage>
+        <SelectedPackage>kdeutils-ark</SelectedPackage>
+        <SelectedPackage>kdeutils-core</SelectedPackage>
+        <SelectedPackage>kdeutils-kcalc</SelectedPackage>
+        <SelectedPackage>kdeutils-kcharselect</SelectedPackage>
+        <SelectedPackage>kdeutils-kdf</SelectedPackage>
+        <SelectedPackage>kdeutils-kedit</SelectedPackage>
+        <SelectedPackage>kdeutils-kfloppy</SelectedPackage>
+        <SelectedPackage>kdeutils-kgpg</SelectedPackage>
+        <SelectedPackage>kdeutils-khexedit</SelectedPackage>
+        <SelectedPackage>kdeutils-kjots</SelectedPackage>
+        <SelectedPackage>kdeutils-kregexpeditor</SelectedPackage>
+        <SelectedPackage>kdeutils-ktimer</SelectedPackage>
+        <SelectedPackage>kdeutils-kwallet</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
@@ -532,10 +584,16 @@
         <Package>kbd</Package>
         <Package>kdebase</Package>
         <Package>kdegames-core</Package>
+        <Package>kdegraphics-core</Package>
         <Package>kdelibs</Package>
-        <Package>kdemultimedia</Package>
-        <Package>kdepim</Package>
-        <Package>kdeutils</Package>
+        <Package>kdemultimedia-core</Package>
+        <Package>kdenetwork-core</Package>
+        <Package>kdenetwork-knewsticker</Package>
+        <Package>kdepim-core</Package>
+        <Package>kdepim-kmail</Package>
+        <Package>kdepim-korganizer</Package>
+        <Package>kdepim-kpilot</Package>
+        <Package>kdeutils-core</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>kernel-firmware</Package>
@@ -635,6 +693,7 @@
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
         <Package>libifp</Package>
+        <Package>libimobiledevice</Package>
         <Package>libiodbc</Package>
         <Package>libkdcraw</Package>
         <Package>libkexif</Package>
@@ -671,6 +730,7 @@
         <Package>libpcap</Package>
         <Package>libpciaccess</Package>
         <Package>libpcre</Package>
+        <Package>libplist</Package>
         <Package>libpng</Package>
         <Package>libproxy</Package>
         <Package>libpst</Package>
@@ -729,6 +789,7 @@
         <Package>man-pages</Package>
         <Package>mcpp</Package>
         <Package>mdbtools</Package>
+        <Package>meanwhile</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>microcode-data</Package>
@@ -761,6 +822,7 @@
         <Package>mudur</Package>
         <Package>musicbrainz</Package>
         <Package>musicbrainz3</Package>
+        <Package>mutagen</Package>
         <Package>mysql-lib</Package>
         <Package>nano</Package>
         <Package>ncompress</Package>
@@ -808,8 +870,6 @@
         <Package>pcsc-lite-openct</Package>
         <Package>pcsc-tools</Package>
         <Package>perl</Package>
-        <Package>perl-IO-Socket-SSL</Package>
-        <Package>perl-Net-SSLeay</Package>
         <Package>perl-XML-Parser</Package>
         <Package>perl-XML-Simple</Package>
         <Package>perl-pcsc</Package>
@@ -867,6 +927,7 @@
         <Package>redland</Package>
         <Package>reportlab</Package>
         <Package>rlog</Package>
+        <Package>rsyslog</Package>
         <Package>ruby</Package>
         <Package>sablotron</Package>
         <Package>samba</Package>
@@ -893,9 +954,9 @@
         <Package>sun-jre</Package>
         <Package>suspend</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>system-config-printer</Package>
         <Package>sysvinit</Package>
+        <Package>sysvinit-tools</Package>
         <Package>taglib</Package>
         <Package>tar</Package>
         <Package>tcl</Package>
@@ -913,6 +974,7 @@
         <Package>unixODBC</Package>
         <Package>unzip</Package>
         <Package>urlgrabber</Package>
+        <Package>usbmuxd</Package>
         <Package>usbutils</Package>
         <Package>user-manager</Package>
         <Package>utempter</Package>
@@ -1223,15 +1285,16 @@
         <Package>ralink-firmware</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
+        <Package>rsyslog</Package>
         <Package>sed</Package>
         <Package>shadow</Package>
         <Package>sip</Package>
         <Package>slang</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
-        <Package>sysklogd</Package>
         <Package>syslinux</Package>
         <Package>sysvinit</Package>
+        <Package>sysvinit-tools</Package>
         <Package>tar</Package>
         <Package>tcp-wrappers</Package>
         <Package>texinfo</Package>
