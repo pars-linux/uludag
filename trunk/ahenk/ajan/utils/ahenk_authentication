@@ -191,7 +191,7 @@ def ldapConfig(host, domain, dryrun=False):
         print "LDAP Configuration:"
         print "    %s" % str(conf_ldap).replace("\n", "\n    ")
     else:
-        file("/etc/security/ldap.conf", "w").write(conf_ldap)
+        file("/etc/ldap.conf", "w").write(conf_ldap)
 
 def domainConfig(host, domain, dryrun=False):
     """
