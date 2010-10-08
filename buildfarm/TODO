@@ -10,7 +10,7 @@ TODO for buildfarm 2.0
 (+) Consolidate buildfarm directories to not conflict with pisi
 
 (-) Use pisi methods if available to avoid redundancy
-(-) in buildfarm-up, merge the available queues and then filter them
+(-) Drop waitqueue
 (-) Add hooks.d for running a number of hooks after each run
 (-) Support for the removal of obsoleted packages
 (-) A Web status page for current status

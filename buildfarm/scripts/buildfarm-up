@@ -26,6 +26,9 @@ class RepositoryManager:
     def __init__(self):
         self.local_pspec_repo = utils.get_local_repository_url()
 
+        self.queue_manager = queuemanager.QueueManager()
+        self.queue_manager.transfer_all_packages_to_work_queue()
+
         self.output = []
 
         self.final_queue = []
@@ -58,9 +61,11 @@ class RepositoryManager:
         self.new_packages = self.get_changes("A", "pspec.xml")
         self.updated_packages = self.get_changes("U", "pspec.xml")
 
-        # The is the biggest possible queue
+        # Generate the biggest possible queue
         self.final_queue.extend(self.new_packages)
         self.final_queue.extend(self.updated_packages)
+        self.final_queue.extend(self.queue_manager.get_work_queue())
+        self.final_queue = list(set(self.final_queue))
 
         # Now we'll filter out the excludearch and release-stayed-the-same
         # packages.
@@ -68,7 +73,7 @@ class RepositoryManager:
         for pspec in self.final_queue[:]:
             spec = pisi.specfile.SpecFile(pspec)
             # First the release check
-            expected_pisi_file = os.path.join(conf.binarypath, \
+            expected_pisi_file = os.path.join(utils.get_compiled_packages_directory(), \
                     utils.get_expected_file_name(spec))
             if os.path.exists(expected_pisi_file):
                 self.final_queue.remove(pspec)
@@ -81,6 +86,8 @@ class RepositoryManager:
                 self.final_queue.remove(pspec)
                 self.excluded_arch_packages.append(pspec)
 
+        # Finally merge back the new queue
+        self.queue_manager.set_work_queue(self.final_queue)
 
     def dump_summary(self):
         if self.final_queue:
@@ -101,16 +108,12 @@ class RepositoryManager:
 
 if __name__ == "__main__":
 
-    queue_manager = queuemanager.QueueManager()
-
-    # Print current workqueue/waitqueue
-    queue_manager.dump_work_queue()
-    queue_manager.dump_wait_queue()
-
     # Create RepositoryManager
     repository_manager = RepositoryManager()
+
+    # Print current workqueue/waitqueue
+    repository_manager.queue_manager.dump_work_queue()
+    repository_manager.queue_manager.dump_wait_queue()
+
     repository_manager.manage()
-
-    queue_manager.extend_work_queue(repository_manager.final_queue)
-
     repository_manager.dump_summary()

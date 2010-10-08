@@ -77,11 +77,17 @@ class QueueManager:
 
         queue.close()
 
-    def getAllPackages(self, resolved = True):
-        if resolved:
-            return dependency.DependencyResolver(list(set(self.workQueue + self.waitQueue))).resolvDeps()
-        else:
-            list(set(self.workQueue + self.waitQueue))
+    def set_work_queue(self, new_work_queue):
+        self.workQueue = new_work_queue[:]
+
+    def set_wait_queue(self, new_wait_queue):
+        self.waitQueue = new_wait_queue[:]
+
+    def get_work_queue(self):
+        return self.workQueue
+
+    def get_wait_queue(self):
+        return self.waitQueue
 
     def removeFromWaitQueue(self, pspec):
         if pspec in self.waitQueue:
@@ -123,7 +129,7 @@ class QueueManager:
         self.appendToWorkQueue(pspec)
         self.removeFromWaitQueue(pspec)
 
-    def transferAllPackagesToWorkQueue(self):
+    def transfer_all_packages_to_work_queue(self):
         self.workQueue = list(set(self.workQueue + self.waitQueue))
         self.workQueue = dependency.DependencyResolver(self.workQueue).resolvDeps()
         self.waitQueue = []

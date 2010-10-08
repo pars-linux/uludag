@@ -37,8 +37,8 @@ def build_packages():
 
     qmgr = queuemanager.QueueManager()
 
-    qmgr.transferAllPackagesToWorkQueue() #move all packages to workQueue for compilation
-    queue = copy.copy(qmgr.workQueue)
+    qmgr.transfer_all_packages_to_work_queue() #move all packages to workQueue for compilation
+    queue = copy.copy(qmgr.get_work_queue())
 
     if len(queue) == 0:
         logger.info("Work Queue is empty...")
@@ -66,7 +66,7 @@ def build_packages():
     # Compiling current workQueue
 
     logger.raw("QUEUE")
-    logger.info(" All packages to be compiled : %s" % qmgr.workQueue)
+    logger.info(" All packages to be compiled : %s" % qmgr.get_work_queue())
 
     mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(queue))
     logger.raw()
@@ -199,9 +199,9 @@ def build_packages():
             os.environ['HOME'] = home_dir
 
     logger.raw("QUEUE")
-    logger.info(" Wait Queue: %s" % (qmgr.waitQueue))
-    if qmgr.waitQueue:
-        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.waitQueue), "\n".join(packageList)))
+    logger.info(" Wait Queue: %s" % (qmgr.get_wait_queue()))
+    if qmgr.get_wait_queue():
+        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.get_wait_queue()), "\n".join(packageList)))
     else:
         mailer.info("Queue finished without a problem!...\n\n\nNew binary packages are:\n\n%s\n\n"
                     "New delta packages are:\n\n%s\n\nnow in repository..." % ("\n".join(packageList), "\n".join(deltaPackageList)))
