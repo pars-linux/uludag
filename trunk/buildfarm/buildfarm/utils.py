@@ -13,11 +13,14 @@
 # Various helper functions for pisi packages
 
 import os
-import glob
-import pisi.api
 
 from buildfarm.config import configuration as conf
-constants = pisi.api.ctx.const
+
+import pisi.context as ctx
+from pisi.specfile import SpecFile
+
+def print_header(msg):
+    print "%s\n%s\n" % (msg, '-'*len(msg))
 
 def create_directories():
     directories = [
@@ -50,10 +53,11 @@ def get_package_log_directory():
     return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
 
 def get_expected_file_name(pspec):
-    from pisi.specfile import SpecFile
     spec = SpecFile(pspec)
     last_update = spec.history[0]
 
+    # e.g. kernel-2.6.32.24-143-p11-x86_64.pisi if the last update's
+    # version is 2.6.32.24 and the release is 143.
     return pisi.util.package_filename(spec.packages[0].name,
                                       last_update.version,
                                       last_update.release)
@@ -64,31 +68,20 @@ def get_package_name(p):
 def get_package_name_from_path(p):
     return os.path.basename(os.path.dirname(p))
 
+def get_package_name_with_component_from_path(p):
+    """Returns system/base/gettext instead of /../system/base/gettext/pspec.xml."""
+    return os.path.dirname(p).partition("%s/" % get_local_repository_url())
+
+def is_arch_excluded(pspec):
+    """Returns True if the given pspec.xml shouldn't be built
+    on the current architecture."""
+    spec = SpecFile(pspec)
+    return ctx.config.values.get("general", "architecture") \
+            in spec.source.excludeArch
+
 def is_delta_package(p):
-    return p.endswith(constants.delta_package_suffix)
+    return p.endswith(ctx.const.delta_package_suffix)
 
 def is_debug_package(p):
     package_name = get_package_name(p)
-    return package_name.endswith(constants.debug_name_suffix)
-
-# FIXME:Should be reimplemented with buildnoless pisi
-"""
-def get_delta_packages(path, name, target=None):
-    if target and isinstance(target, int):
-        # Return delta packages goint to target
-        pattern = "%s-[0-9]*-%d%s" % (name, target, constants.delta_package_suffix)
-    else:
-        # Return all delta packages
-        pattern = "%s-[0-9]*-[0-9]*%s" % constants.delta_package_suffix
-    return glob.glob1(path, pattern)
-
-def get_deltas_not_going_to(path, package):
-    # e.g. package <- kernel-2.6.25.20-114-45.pisi
-    # Returns the list of delta packages in 'path' for 'package' going from any
-    # build to any build other than 45.
-    # return -> ['kernel-41-42-delta.pisi', 'kernel-41-44.delta-pisi', etc]
-    name = get_package_name(package)
-    target_build = get_build_no(package)
-    return list(set(get_delta_packages(path, name)).difference(get_delta_packages(path, name, target_build)))
-"""
-
+    return package_name.endswith(ctx.const.debug_name_suffix)
