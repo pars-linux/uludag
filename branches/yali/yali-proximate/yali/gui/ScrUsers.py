@@ -207,13 +207,13 @@ Proceed with the installation after you make your selections.
 
         if not p1 == '' and (str(p1).lower() == str(self.ui.username.text()).lower() or \
                 str(p1).lower() == str(self.ui.realname.text()).lower()):
-            self.showError(_('Don\'t use your user name or name as a password.'))
+            self.showError(_('Don\'t use your user name or name as a password'))
             return
         elif p2 != p1 and p2:
-            self.showError(_('Passwords do not match.'))
+            self.showError(_('Passwords do not match'))
             return
         elif len(p1) == len(p2) and len(p2) < 4 and not p1=='':
-            self.showError(_('Password is too short.'))
+            self.showError(_('Password is too short'))
             return
         else:
             ctx.yali.info.hide()
