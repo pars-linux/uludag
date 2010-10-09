@@ -184,13 +184,11 @@ class Widget(QtGui.QWidget):
 
     # show/hide help text
     def slotToggleHelp(self):
-        print "1"
+        self.ui.helpContentFrame.setFixedHeight(self.ui.helpContent.height())
         if self.ui.helpContentFrame.isVisible():
             self.ui.helpContentFrame.hide()
-            print "2"
         else:
             self.ui.helpContentFrame.show()
-            print "3"
         _w = self.ui.mainStack.currentWidget()
         _w.update()
 
