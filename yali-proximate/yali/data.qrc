@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/dialog-warning.png</file>
     <file>gui/pics/dialog-cancel.png</file>
     <file>gui/pics/document-edit.png</file>
     <file>gui/pics/draw-eraser.png</file>
