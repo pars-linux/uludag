@@ -169,7 +169,7 @@ Proceed with the installation after you make your selections.
         self.checkCapsLock()
 
     def showError(self,message):
-        ctx.yali.info.updateAndShow(message)
+        ctx.yali.info.updateAndShow(message, type = "error")
         self.ui.createButton.setEnabled(False)
 
     def animate(self, value):
