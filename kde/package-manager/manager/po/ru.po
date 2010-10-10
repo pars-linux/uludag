@@ -577,7 +577,6 @@ msgid "Alt+C"
 msgstr "Alt+O"
 
 #: ui/ui_progressdialog_v4.py:170
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -608,12 +607,10 @@ msgid "Repository Address"
 msgstr "Адрес Репозитория"
 
 #: ui/ui_repodialog.py:60
-#, fuzzy
 msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
 #: ui/ui_repodialog.py:61
-#, fuzzy
 msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
