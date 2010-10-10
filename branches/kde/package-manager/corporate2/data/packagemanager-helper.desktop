@@ -9,6 +9,6 @@ Name[sv]=Pakethanteraren
 Icon=package-manager
 Type=Application
 StartupNotify=False
-MimeType=application/x-pisi
+MimeType=application/x-pisi;
 Exec=pm-install %u
 
