@@ -8,7 +8,7 @@ Comment[es]=Archivo PiSi
 Comment[de]=PiSi-Datei
 Comment[sv]=PiSi-fil
 
-MimeType=application/x-pisi
+MimeType=application/x-pisi;
 Patterns=*.pisi
 Type=MimeType
 Icon=package-manager
