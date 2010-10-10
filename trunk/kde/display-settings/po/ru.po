@@ -30,13 +30,12 @@ msgstr "Устройство"
 
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
-#, fuzzy
 msgid "python display screen video monitor manager"
-msgstr "Python экран видеомонитора менеджер"
+msgstr "Менеджер управления экраном на Python"
 
 #: data/kcm_displaysettings.desktop.in.h:1
 msgid "Resize and rotate displays"
-msgstr ""
+msgstr "Поменять размеры и повернуть экраны"
 
 #: data/kcm_displaysettings.desktop.in.h:2
 msgid "Screens"
@@ -74,7 +73,7 @@ msgstr "Выход по умолчанию"
 
 #: src/displaysettings/device.py:61
 msgid "Laptop Panel"
-msgstr ""
+msgstr "Панель настройки лэптопа"
 
 #: src/displaysettings/device.py:62
 msgid "Analog Output"
@@ -94,6 +93,8 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
+"Нет пакетов, которые предоставляют окружение для этого приложения.\n"
+"Пожалуйста, убедитесь, что пакеты установлены и настроены правильно."
 
 #: src/displaysettings/deviceswidget.py:85
 #: src/displaysettings/screenswidget.py:77
@@ -101,6 +102,8 @@ msgid ""
 "Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
+"Невозможно найти корректную конфигурацию. Установки экрана не будут включены, пока вы не создатиде новую конфигурацию.\n"
+"Вы хотите создать безопасную конфигурацию прямо сейчас?"
 
 #: src/displaysettings/deviceswidget.py:94
 #: src/displaysettings/deviceswidget.py:269
@@ -111,65 +114,66 @@ msgstr "В доступе отказано."
 
 #: src/displaysettings/deviceswidget.py:119
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
+msgstr "<qt>Для повышения производительности вы, возможно, захотите использовать <b>%1</b> драйвер, предоставленный произодителем. Вы хотите использовать этот драйвер?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
-msgstr ""
+msgstr "<qt>Для повышения производительности вы, возможно, захотите использовать <b>%1</b> драйвер, предоставленный производителем. Чтобы использовать его, вы должны установить <b>%2</b> пакет и выбрать <b>%1</b> из настроек видеокарты.</qt>"
 
 #: src/displaysettings/deviceswidget.py:144
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Запустить Менеджер Пакетов"
 
 #: src/displaysettings/deviceswidget.py:259
 msgid "You must restart your X session for the changes to take effect."
-msgstr ""
+msgstr "Вы должны перезапустить X-сессию, для того, чтобы изменения вступили в силу."
 
 #: src/displaysettings/monitorbrowser.py:41
 msgid "Type:"
-msgstr ""
+msgstr "Тип:"
 
 #: src/displaysettings/monitorbrowser.py:42
 msgid "Monitors:"
-msgstr ""
+msgstr "Мониторы:"
 
 #: src/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
-msgstr ""
+msgstr "Установки для Вывода %1"
 
 #: src/displaysettings/outputdialog.py:74
 msgid "Custom Monitor"
-msgstr ""
+msgstr "Настройка монитора"
 
 #: src/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
+msgstr "<qt><i>Нажмите кнопку\"Выбрать...\" для выбора монитора</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
+#, fuzzy
 msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: src/displaysettings/screenswidget.py:193
 #: src/displaysettings/screenswidget.py:268
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 #: src/displaysettings/screenswidget.py:263
 msgid "Output Properties - %1"
-msgstr ""
+msgstr "Свойства вывода - %1"
 
 #: src/displaysettings/screenswidget.py:363
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
+msgstr "Вы должны перезапустить X-сессию, для того, чтобы изменения вступили в силу."
 
 #: ui/ui_devices.py:68
 msgid "Video Card:"
-msgstr ""
+msgstr "Видеокарта:"
 
 #: ui/ui_devices.py:69
 msgid "Card Info"
-msgstr ""
+msgstr "Информация о видеокарте"
 
 #: ui/ui_devices.py:70
 msgid "Configure..."
@@ -185,7 +189,7 @@ msgstr "Просмотр мониторов"
 
 #: ui/ui_monitorbrowser.py:49
 msgid "Vendors:"
-msgstr ""
+msgstr "Производители"
 
 #: ui/ui_monitorbrowser.py:50
 msgid "Models:"
@@ -197,11 +201,11 @@ msgstr "Конфигурация выхода"
 
 #: ui/ui_output.py:226
 msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
+msgstr "Если настройки частоты, которые поддерживаются вашим монитором, не определились, вы можете указать их здесь. Осторожно со значениями, неверное значение может повредить монитор, если он старой модели."
 
 #: ui/ui_output.py:227
 msgid "Specify Ranges"
-msgstr ""
+msgstr "Задать диапазон частот"
 
 #: ui/ui_output.py:228
 msgid "Selection:"
@@ -216,9 +220,8 @@ msgid "Select from vendor/model list"
 msgstr "Выберите фирму/модель"
 
 #: ui/ui_output.py:231
-#, fuzzy
 msgid "Enter ranges manually"
-msgstr "Введите диапазонов вручную"
+msgstr "Введите Диапазон вручную"
 
 #: ui/ui_output.py:232
 msgid "Monitor:"
@@ -250,7 +253,7 @@ msgstr "Диапазоны частот"
 
 #: ui/ui_output.py:239
 msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
-msgstr ""
+msgstr "Если размеры вашего монитора не определилось корректно, шрифты и другие визуальные объекты могут выглядеть больше или меньше, чем должны. Чтобы исправить эту проблему, вы можете указать размеры вручную здесь."
 
 #: ui/ui_output.py:240
 msgid "Specify Display Size"
@@ -262,7 +265,7 @@ msgstr "Размер дисплея:"
 
 #: ui/ui_output.py:242
 msgid "15.4\" Wide Screen"
-msgstr ""
+msgstr "15.4\" Широкий экран"
 
 #: ui/ui_output.py:243
 msgid "Custom"
@@ -294,15 +297,15 @@ msgstr "Выходы"
 
 #: ui/ui_screens.py:85
 msgid "Extend desktop to all displays"
-msgstr ""
+msgstr "Расширить рабочий стол на все дисплеи."
 
 #: ui/ui_screens.py:86
 msgid "Detect Outputs"
-msgstr ""
+msgstr "Определить Вывод"
 
 #: ui/ui_screens.py:87
 msgid "Output Properties"
-msgstr ""
+msgstr "Свойства Вывода"
 
 #: ui/ui_screens.py:88
 msgid "Size:"
@@ -326,11 +329,11 @@ msgstr "Левая (90 градусов)"
 
 #: ui/ui_screens.py:93
 msgid "Upside-Down (180 degrees)"
-msgstr ""
+msgstr "Вверх-Вниз (180 градусов)"
 
 #: ui/ui_screens.py:94
 msgid "Right (270 degrees)"
-msgstr ""
+msgstr "Вправо (270 градусов)"
 
 #: ui/ui_videocard.py:76
 msgid "Video Card Configuration"
@@ -354,7 +357,7 @@ msgstr "Глубина цвета"
 
 #: ui/ui_videocard.py:81
 msgid "Determined by the driver"
-msgstr ""
+msgstr "Задано драйвером"
 
 #: ui/ui_videocard.py:83
 msgid "16 Bit"
