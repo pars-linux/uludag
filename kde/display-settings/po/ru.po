@@ -26,7 +26,7 @@ msgstr "Настройки дисплея"
 
 #: data/kcm_displaydevices.desktop.in.h:2
 msgid "Devices"
-msgstr "Устройство"
+msgstr "Устройства"
 
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
@@ -60,12 +60,12 @@ msgstr "Current Maintainer"
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий"
+msgstr "Ясыров Василий, Семенов Николай"
 
 #: src/displaysettings/about.py:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -138,7 +138,7 @@ msgstr "Мониторы:"
 
 #: src/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
-msgstr "Установки для Вывода %1"
+msgstr "Установки для выхода %1"
 
 #: src/displaysettings/outputdialog.py:74
 msgid "Custom Monitor"
@@ -146,10 +146,9 @@ msgstr "Настройка монитора"
 
 #: src/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr "<qt><i>Нажмите кнопку\"Выбрать...\" для выбора монитора</i></qt>"
+msgstr "<qt><i>Нажмите кнопку \"Выбрать...\" для выбора монитора</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
-#, fuzzy
 msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
@@ -161,7 +160,7 @@ msgstr "Авто"
 
 #: src/displaysettings/screenswidget.py:263
 msgid "Output Properties - %1"
-msgstr "Свойства вывода - %1"
+msgstr "Свойства выхода - %1"
 
 #: src/displaysettings/screenswidget.py:363
 msgid "You must restart your X session for all the changes to take effect."
@@ -301,11 +300,11 @@ msgstr "Расширить рабочий стол на все дисплеи."
 
 #: ui/ui_screens.py:86
 msgid "Detect Outputs"
-msgstr "Определить Вывод"
+msgstr "Определить выход"
 
 #: ui/ui_screens.py:87
 msgid "Output Properties"
-msgstr "Свойства Вывода"
+msgstr "Свойства выхода"
 
 #: ui/ui_screens.py:88
 msgid "Size:"
@@ -345,7 +344,7 @@ msgstr "Видео драйвер"
 
 #: ui/ui_videocard.py:78
 msgid "Use the default driver for the detected card."
-msgstr "Использовать драйвер по умолчанию для видео карты."
+msgstr "Использовать драйвер по умолчанию для видеокарты."
 
 #: ui/ui_videocard.py:79 ui/ui_videocard.py:82
 msgid "Select from the list:"
