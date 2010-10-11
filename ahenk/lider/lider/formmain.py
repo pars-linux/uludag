@@ -14,18 +14,18 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from ui_formmain import Ui_FormMain
+from lider.ui_formmain import Ui_FormMain
 
 # Dialogs
-from connection import DialogConnection
-from computer import DialogComputer
-from folder import DialogFolder
+from lider.connection import DialogConnection
+from lider.computer import DialogComputer
+from lider.folder import DialogFolder
 
 # Helper modules
-from helpers import directory
-from helpers import plugins
-from helpers import talk
-from helpers import wrappers
+from lider.helpers import directory
+from lider.helpers import plugins
+from lider.helpers import talk
+from lider.helpers import wrappers
 
 
 class FormMain(QtGui.QWidget, Ui_FormMain):
