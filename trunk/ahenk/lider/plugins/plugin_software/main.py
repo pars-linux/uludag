@@ -10,14 +10,14 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from plugins.plugin_software.ui_software import Ui_widgetSoftware
+from lider.plugins.plugin_software.ui_software import Ui_widgetSoftware
 
 # Helper modules
-from helpers import plugins
-from helpers import wrappers
+from lider.helpers import plugins
+from lider.helpers import wrappers
 
 # Repository dialog
-from plugins.plugin_software.repository import DialogRepository
+from lider.plugins.plugin_software.repository import DialogRepository
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):

@@ -13,7 +13,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from ui_computer import Ui_dialogComputer
+from lider.ui_computer import Ui_dialogComputer
 
 
 class DialogComputer(QtGui.QDialog, Ui_dialogComputer):

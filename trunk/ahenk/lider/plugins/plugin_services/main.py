@@ -13,11 +13,11 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from plugins.plugin_services.ui_services import Ui_widgetServices
+from lider.plugins.plugin_services.ui_services import Ui_widgetServices
 
 # Helper modules
-from helpers import plugins
-from helpers import wrappers
+from lider.helpers import plugins
+from lider.helpers import wrappers
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):

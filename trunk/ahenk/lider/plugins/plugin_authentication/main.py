@@ -10,11 +10,11 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from plugins.plugin_authentication.ui_authentication import Ui_widgetAuthentication
+from lider.plugins.plugin_authentication.ui_authentication import Ui_widgetAuthentication
 
 # Helper modules
-from helpers import plugins
-from helpers import wrappers
+from lider.helpers import plugins
+from lider.helpers import wrappers
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget):

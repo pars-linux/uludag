@@ -14,10 +14,10 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from ui_repository import Ui_dialogRepository
+from lider.plugins.plugin_software.ui_repository import Ui_dialogRepository
 
 # Helper modules
-from helpers import wrappers
+from lider.helpers import wrappers
 
 
 class DialogRepository(QtGui.QDialog, Ui_dialogRepository):

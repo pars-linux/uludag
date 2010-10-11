@@ -10,7 +10,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from ui_folder import Ui_dialogFolder
+from lider.ui_folder import Ui_dialogFolder
 
 
 class DialogFolder(QtGui.QDialog, Ui_dialogFolder):

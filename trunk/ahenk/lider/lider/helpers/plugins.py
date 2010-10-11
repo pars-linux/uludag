@@ -22,6 +22,7 @@ def load_plugins(root="plugins"):
         Returns: Dictionary containing plugins with names as keys
                  and widget classes as values.
     """
+    root = os.path.realpath(os.path.join(os.path.dirname(__file__), "..", "plugins"))
     plugins = {}
     for plugin_dir in os.listdir(root):
         if not plugin_dir.startswith("plugin_"):

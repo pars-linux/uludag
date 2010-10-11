@@ -1,9 +1,9 @@
 all:
-	pyuic4 formmain.ui > ui_formmain.py
-	pyuic4 connection.ui > ui_connection.py
-	pyuic4 computer.ui > ui_computer.py
-	pyuic4 folder.ui > ui_folder.py
-	pyrcc4 data.qrc > data_rc.py
+	pyuic4 lider/formmain.ui > lider/ui_formmain.py
+	pyuic4 lider/connection.ui > lider/ui_connection.py
+	pyuic4 lider/computer.ui > lider/ui_computer.py
+	pyuic4 lider/folder.ui > lider/ui_folder.py
+	pyrcc4 lider/data.qrc > lider/data_rc.py
 	
 	pyuic4 plugins/plugin_authentication/authentication.ui > plugins/plugin_authentication/ui_authentication.py
 	pyrcc4 plugins/plugin_authentication/authentication.qrc > plugins/plugin_authentication/authentication_rc.py

@@ -10,10 +10,10 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from plugins.plugin_summary.ui_summary import Ui_widgetSummary
+from lider.plugins.plugin_summary.ui_summary import Ui_widgetSummary
 
 # Helper modules
-from helpers import plugins
+from lider.helpers import plugins
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetSummary, plugins.PluginWidget):

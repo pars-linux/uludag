@@ -11,7 +11,7 @@ from PyQt4 import QtCore
 
 
 # Helper modules
-from helpers import decorators
+from lider.helpers import decorators
 
 
 #@decorators.cache
