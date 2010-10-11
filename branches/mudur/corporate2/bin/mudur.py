@@ -240,7 +240,6 @@ class Config:
             "lxc_guest"     : "no",
             "keymap"        : None,
             "debug"         : True,
-            "deprecated"    : True,
             "live"          : False,
             "lvm"           : False,
             "safe"          : False,
@@ -998,11 +997,6 @@ def check_filesystems():
 
 def mount_local_filesystems():
     """Mounts local filesystems and enables swaps if any."""
-
-    # DEPRECATED: /proc/bus/usb is deprecated by /dev/bus/usb, we shouldn't mount it.
-    if not config.get("deprecated") and os.path.exists("/proc/bus/usb") and not os.path.exists("/proc/bus/usb/devices"):
-        ui.info(_("Mounting USB filesystem"))
-        run("/bin/mount", "-t", "usbfs", "usbfs", "/proc/bus/usb")
 
     ui.info(_("Mounting local filesystems"))
     run("/bin/mount", "-at", "noproc,nocifs,nonfs,nonfs4")
