@@ -200,6 +200,10 @@ class StateManager(QObject):
     def checkUpdateActions(self, packages):
         return self.iface.checkUpdateActions(packages)
 
+    def checkRemoveActions(self, packages):
+        important_packages = open(config.DATA_DIR + 'important_packages').read().split('\n')
+        return list(set(important_packages).intersection(packages))
+
     def inInstall(self):
         return self.state == self.INSTALL
 

@@ -33,13 +33,13 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         self.setupUi(self)
 
         # PDS Settings
-        self._animation = 2
+        self._animation = 1
         self._duration = 500
         self.last_msg = None
         self.enableOverlay()
         self._disable_parent_in_shown = True
         self.registerFunction(IN, lambda: parent.statusBar().hide())
-        self.registerFunction(OUT, lambda: parent.statusBar().show())
+        self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
 
         self.initPackageList()
         self.initExtraList()
@@ -64,11 +64,11 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         self.setBasketLabel()
         self.connectModelSignals()
         QTimer.singleShot(0, restoreCursor)
-        self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
+        self.animate(start = BOTCENTER, stop = MIDCENTER)#, dont_animate = True)
 
     def _hide(self):
         self.disconnectModelSignals()
-        self.animate(direction = OUT, dont_animate = True)
+        self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)#, dont_animate = True)
 
     def connectModelSignals(self):
         self.connect(self.packageList.model(),
@@ -146,33 +146,48 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
 
-    def askForActions(self, packages, reason):
+    def askForActions(self, packages, reason, title):
         text = reason + '<br>'
         for package in packages:
             text += '<br> - <b>%s</b>' % package
         text += '<br><br>' + i18n("Do you want to continue ?")
-        return QtGui.QMessageBox.question(self, i18n("Update Requirements"),
+        return QtGui.QMessageBox.question(self, title,
                 text, QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
 
     def action(self):
+
         if self.state.inUpgrade():
             answer = QtGui.QMessageBox.Yes
             actions = self.state.checkUpdateActions(
-                self.model.selectedPackages() + self.model.extraPackages()
-            )
+                self.model.selectedPackages() + self.model.extraPackages())
             if actions[0]:
                 answer = self.askForActions(actions[0],
                        i18n("You must <b>restart</b> your system for the "
                             "updates in the following package(s) to take "
-                            "effect:"))
+                            "effect:"), i18n("Update Requirements"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
             if actions[1]:
                 answer = self.askForActions(actions[1],
                     i18n("You must restart following system services for "
-                         "the updated package(s) to take effect:"))
+                         "the updated package(s) to take effect:"),
+                    i18n("Update Requirements"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
+
+        if self.state.inRemove():
+            answer = QtGui.QMessageBox.Yes
+            actions = self.state.checkRemoveActions(
+                self.model.selectedPackages() + self.model.extraPackages())
+            if actions:
+                answer = self.askForActions(actions,
+                       i18n("Selected packages are considered critical "
+                            "for the system. Removing them may cause your "
+                            "system to be unusable."),
+                       i18n("Removing important packages"))
+            if not answer == QtGui.QMessageBox.Yes:
+                return
+
         self.state.operationAction(self.model.selectedPackages())
         self._hide()
 
