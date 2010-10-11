@@ -10,6 +10,9 @@
 # option) any later version. Please read the COPYING file.
 #
 
+"""
+Pardus booting and initialization system written in Python.
+"""
 
 import os
 import re
@@ -42,20 +45,23 @@ def wait_bus(unix_name, timeout=5, wait=0.1, stream=True):
     while timeout > 0:
         try:
             sock.connect(unix_name)
-            ui.debug("Waited %.2f seconds for '%s'" % (itimeout-timeout, unix_name))
+            logger.debug("Waited %.2f sec for '%s'" % (itimeout-timeout, unix_name))
             return True
-        except:
+        except socket.error:
             timeout -= wait
         time.sleep(wait)
 
-    ui.debug("Waited %.2f seconds for '%s'" % (itimeout-timeout, unix_name))
+    logger.debug("Waited %.2f seconds for '%s'" % (itimeout-timeout, unix_name))
     return False
 
 def load_file(path, ignore_comments=False):
     """Reads the contents of a file and returns it."""
     data = ""
-    with open(path, "r") as _file:
-        data = _file.read()
+    try:
+        with open(path, "r") as _file:
+            data = _file.read()
+    except IOError:
+        return ""
     if ignore_comments:
         data = filter(lambda x: not (x.startswith("#") or x == ""), data)
     return data
@@ -63,8 +69,9 @@ def load_file(path, ignore_comments=False):
 def load_config(path):
     """Reads key=value formatted config files and returns a dictionary."""
     data = {}
-    for key, value in [_line.split("=", 1) for _line in open(path, "r").readlines()
-                       if "=" in _line and not _line.startswith("#")]:
+    for key, value in [_line.split("=", 1) for _line in
+                       open(path, "r").readlines() if "=" in _line
+                       and not _line.startswith("#")]:
         key = key.strip()
         value = value.strip()
         data[key] = value.strip("'").strip('"')
@@ -155,14 +162,18 @@ def get_kernel_option(option):
 
 def capture(*cmd):
     """Captures the output of a command without running a shell."""
-    process = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    process = subprocess.Popen(cmd,
+                               stdout=subprocess.PIPE,
+                               stderr=subprocess.PIPE)
     return process.communicate()
 
 def run_async(cmd, stdout=None, stderr=None):
     """Runs a command in background and redirects the outputs optionally."""
     fstdout = stdout if stdout else "/dev/null"
     fstderr = stderr if stderr else "/dev/null"
-    return subprocess.Popen(cmd, stdout=open(fstdout, "w"), stderr=open(fstderr, "w")).pid
+    return subprocess.Popen(cmd,
+                            stdout=open(fstdout, "w"),
+                            stderr=open(fstderr, "w")).pid
 
 def run(*cmd):
     """Runs a command without running a shell, only output errors."""
@@ -187,12 +198,19 @@ class Logger:
         self.lines = ["\n"]
 
     def log(self, msg):
+        """Logs the given message."""
         stamp = time.strftime("%b %d %H:%M:%S")
         # Strip color characters
         msg = re.sub("(\033.*?m)", "", msg)
         self.lines.append("[%.3f] %s %s\n" % (time.time(), stamp, msg))
 
+    def debug(self, msg):
+        """Log the message if debug is enabled."""
+        if config.get("debug"):
+            self.log(msg)
+
     def flush(self):
+        """Flushes the log buffer."""
         try:
             self.lines.append("\n")
             with open("/var/log/mudur.log", "a") as _file:
@@ -205,7 +223,7 @@ class Logger:
 ################
 
 class Config:
-    """Configuration class which parsing /proc/cmdline to get mudur related options."""
+    """Configuration class which parses /proc/cmdline to get mudur options."""
     def __init__(self):
         self.fstab = None
 
@@ -242,13 +260,15 @@ class Config:
         self.parse_kernel_options()
 
     def parse_kernel_options(self):
+        """Parse mudur= from kernel boot parameters."""
         # We need to mount /proc before accessing kernel options
         # This function is called after that, and finish parsing options
         # We dont print any messages before, cause language is not known
         options = get_kernel_option("mudur")
 
         # Fill in the options
-        self.options["live"] = options.has_key("thin") or os.path.exists("/var/run/pardus/livemedia")
+        self.options["live"] = options.has_key("thin") or \
+                               os.path.exists("/var/run/pardus/livemedia")
 
         for k in [_k for _k in options.keys() if _k not in ("thin")]:
             self.options[k] = options[k] if options[k] else True
@@ -270,14 +290,15 @@ class Config:
             self.options["keymap"] = languages[lang].keymap
 
     def get(self, key):
+        """Custom dictionary getter method."""
         try:
             return self.options[key]
-        except:
+        except KeyError:
             print "Unknown option '%s' requested" % key
             time.sleep(3)
 
     def get_fstab_entry_with_mountpoint(self, mountpoint):
-        """Returns the /etc/fstab entry which corresponds to the given mountpoint."""
+        """Returns /etc/fstab entry corresponding to the given mountpoint."""
         if not self.fstab:
             data = load_file("/etc/fstab", True).split("\n")
             self.fstab = map(lambda x: x.split(), data)
@@ -301,28 +322,33 @@ class Splash:
         self.percent = 0
 
     def init(self, percent, increasing=True):
-        """Initializes bootsplash through /proc/spash."""
-        if config.get("lxc_guest") != "yes" and os.path.exists("/proc/splash"):
+        """Initializes bootsplash through /proc/splash."""
+        if os.path.exists("/proc/splash"):
             self.enabled = get_kernel_option("splash").has_key("silent")
             self.increasing = increasing
             self.percent = percent
 
     def silent(self):
+        """Set silent mode for splash."""
         if self.enabled:
             write_to_file("/proc/splash", "silent\n")
             self.update_progress()
 
     def verbose(self):
+        """Set verbose mode for splash."""
         if self.enabled:
             write_to_file("/proc/splash", "verbose\n")
 
     def update_progress(self, percent=None):
+        """Update the splash progress bar."""
         if self.enabled:
             if percent is not None:
                 self.percent = percent
-            write_to_file("/proc/splash", "show %d" % (int(655.35 * self.percent)))
+            write_to_file("/proc/splash",
+                          "show %d" % (int(655.35 * self.percent)))
 
     def progress(self, delta=3):
+        """Update the splash progress bar by a default delta of 3."""
         if self.enabled:
             if self.increasing:
                 self.update_progress(self.percent + delta)
@@ -334,6 +360,8 @@ class Splash:
 ############
 
 class UI:
+    """User Interface class to settle the console and fonts."""
+
     UNICODE_MAGIC = "\x1b%G"
 
     # constants from linux/kd.h
@@ -358,40 +386,45 @@ class UI:
                        'normal'     : '\x1b[0m'}     # NORMAL
 
     def greet(self):
+        """Dump release information, sets unicode mode."""
         print self.UNICODE_MAGIC
         if os.path.exists("/etc/pardus-release"):
             release = load_file("/etc/pardus-release").rstrip("\n")
             if config.get("safe"):
                 release = "%s (%s)" % (release, _("Safe Mode"))
-            print "\x1b[1m  %s  \x1b[0;36mhttp://www.pardus.org.tr\x1b[0m" % release
+            print "\x1b[1m  %s  \x1b[0;36mhttp://www.pardus.org.tr\x1b[0m" \
+                    % release
         else:
             self.error(_("Cannot find /etc/pardus-release"))
         print
 
     def info(self, msg):
+        """Print the given message and log if debug enabled."""
         if config.get("debug"):
             logger.log(msg)
-        sys.stdout.write(" %s*%s %s\n" % (self.colors['green'], self.colors['normal'], msg.encode("utf-8")))
+        sys.stdout.write(" %s*%s %s\n" % (self.colors['green'],
+                         self.colors['normal'], msg.encode("utf-8")))
         splash.progress()
 
     def warn(self, msg):
+        """Print the given message as a warning and log if debug enabled."""
         splash.verbose()
         logger.log(msg)
-        sys.stdout.write(" %s*%s %s\n" % (self.colors['yellow'], self.colors['normal'], msg.encode("utf-8")))
+        sys.stdout.write(" %s*%s %s\n" % (self.colors['yellow'],
+                         self.colors['normal'], msg.encode("utf-8")))
 
     def error(self, msg):
+        """Print the given message as an error and log if debug enabled."""
         try:
             splash.verbose()
         except IOError:
             pass
         logger.log(msg)
-        sys.stdout.write(" %s*%s %s\n" % (self.colors['red'], self.colors['normal'], msg.encode("utf-8")))
-
-    def debug(self, msg):
-        if config.get("debug"):
-            logger.log(msg)
+        sys.stdout.write(" %s*%s %s\n" % (self.colors['red'],
+                         self.colors['normal'], msg.encode("utf-8")))
 
     def colorize(self, uicolor, msg):
+        """Colorizes the given message."""
         return "%s%s%s" % (self.colors[uicolor], msg, self.colors['normal'])
 
 ##################
@@ -399,11 +432,14 @@ class UI:
 ##################
 
 class Language:
+    """Dummy class to hold language informations."""
+
     def __init__(self, keymap, font, trans, locale):
         self.keymap = keymap
         self.font = font
         self.trans = trans
         self.locale = locale
+
 
 
 ########################################
@@ -479,7 +515,9 @@ def set_unicode_mode():
                 with open("/dev/tty%s" % i, "w") as _file:
                     fcntl.ioctl(_file, UI.KDSKBMODE, UI.K_UNICODE)
                     _file.write(UI.UNICODE_MAGIC)
-                run("/usr/bin/setfont", "-f", language.font, "-m", language.trans, "-C", "/dev/tty%s" %i)
+                    run("/usr/bin/setfont", "-f",
+                            language.font,  "-m",
+                            language.trans, "-C", "/dev/tty%s" %i)
         except:
             ui.error(_("Could not set unicode mode on tty %d") % i)
 
@@ -513,15 +551,17 @@ def fork_handler():
 def manage_service(service, command):
     """Starts/Stops the given service."""
     cmd = ["/bin/service", "--quiet", service, command]
-    ui.debug("%s service %s.." % (command, service))
-    subprocess.Popen(cmd, close_fds=True, preexec_fn=fork_handler, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    ui.debug("%s service %s..done" % (command, service))
+    logger.debug("%s service %s.." % (command, service))
+    subprocess.Popen(cmd, close_fds=True, preexec_fn=fork_handler,
+                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    logger.debug("%s service %s..done" % (command, service))
     splash.progress(1)
 
 def get_service_list(bus, _all=False):
     """Requests and returns the list of system services through COMAR."""
     obj = bus.get_object("tr.org.pardus.comar", "/", introspect=False)
-    services = obj.listModelApplications("System.Service", dbus_interface="tr.org.pardus.comar")
+    services = obj.listModelApplications("System.Service",
+                                         dbus_interface="tr.org.pardus.comar")
     if _all:
         return services
     else:
@@ -532,8 +572,9 @@ def get_service_list(bus, _all=False):
 def start_network():
     """Sets up network connections using Pardus' own network backend if any."""
     try:
-        # This is shipped with NetworkManager, check if NetworkManager is the default
-        if eval(load_config("/etc/conf.d/NetworkManager").get("DEFAULT", "False")):
+        # This is shipped with NetworkManager, check if it is the default
+        if eval(load_config("/etc/conf.d/NetworkManager")\
+                .get("DEFAULT", "False")):
             ui.info(_("Networking backend is set to NetworkManager"))
             return
     except IOError:
@@ -553,76 +594,84 @@ def start_network():
 
     link = comar.Link()
 
-    def interface_up(package, name, info):
+    def interface_up(pkg, name, info):
+        """Brings up the given interface."""
         ifname = info["device_id"].split("_")[-1]
-        ui.info((_("Bringing up %s") + ' (%s)') % (ui.colorize("light", ifname), ui.colorize("cyan", name)))
+        ui.info((_("Bringing up %s") + ' (%s)') % (ui.colorize("light", ifname),
+                ui.colorize("cyan", name)))
         if need_remount:
             try:
-                link.Network.Link[package].setState(name, "up")
+                link.Network.Link[pkg].setState(name, "up")
             except dbus.DBusException:
-                ui.error((_("Unable to bring up %s") + ' (%s)') % (ifname, name))
+                ui.error((_("Unable to bring up %s") + ' (%s)') \
+                        % (ifname, name))
                 return False
         else:
-            link.Network.Link[package].setState(name, "up", quiet=True)
+            link.Network.Link[pkg].setState(name, "up", quiet=True)
         return True
 
-    def interface_down(package, name):
+    def interface_down(pkg, name):
+        """Brings down the given interface."""
         try:
-            link.Network.Link[package].setState(name, "down", quiet=True)
+            link.Network.Link[pkg].setState(name, "down", quiet=True)
         except dbus.DBusException:
             pass
 
-    def get_connections(package):
+    def get_connections(pkg):
+        """Returns a list of connections."""
         connections = {}
         try:
-            for name in link.Network.Link[package].connections():
-                connections[name] = link.Network.Link[package].connectionInfo(name)
+            for con in link.Network.Link[pkg].connections():
+                connections[con] = link.Network.Link[pkg].connectionInfo(con)
         except dbus.DBusException:
             pass
         return connections
 
     try:
-        packages = list(link.Network.Link)
+        pkgs = list(link.Network.Link)
     except dbus.DBusException:
-        packages = []
+        pkgs = []
 
-    for package in packages:
+    for pkg in pkgs:
         try:
-            link_info = link.Network.Link[package].linkInfo()
+            link_info = link.Network.Link[pkg].linkInfo()
         except dbus.DBusException:
             continue
         if link_info["type"] == "net":
-            for name, info in get_connections(package).iteritems():
+            for name, info in get_connections(pkg).iteritems():
                 if info.get("state", "down").startswith("up"):
-                    interface_up(package, name, info)
+                    interface_up(pkg, name, info)
                 else:
-                    interface_down(package, name)
+                    interface_down(pkg, name)
         elif link_info["type"] == "wifi":
             # Scan remote access points
             devices = {}
             try:
-                for device_id in link.Network.Link[package].deviceList():
+                for device_id in link.Network.Link[pkg].deviceList():
                     devices[device_id] = []
-                    for point in link.Network.Link[package].scanRemote(device_id):
+                    for point in link.Network.Link[pkg].scanRemote(device_id):
                         devices[device_id].append(unicode(point["remote"]))
             except dbus.DBusException:
                 continue
             # Try to connect last connected profile
             skip = False
-            for name, info in get_connections(package).iteritems():
-                if info.get("state", "down").startswith("up") and info.get("device_id", None) in devices and info["remote"] in devices[info["device_id"]]:
-                    interface_up(package, name, info)
+            for name, info in get_connections(pkg).iteritems():
+                if info.get("state", "down").startswith("up") \
+                        and info.get("device_id", None) in devices \
+                        and info["remote"] in devices[info["device_id"]]:
+                    interface_up(pkg, name, info)
                     skip = True
                     break
             # There's no last connected profile, try to connect other profiles
             if not skip:
                 # Reset connection states
-                for name, info in get_connections(package).iteritems():
-                    interface_down(package, name)
+                for name, info in get_connections(pkg).iteritems():
+                    interface_down(pkg, name)
                 # Try to connect other profiles
-                for name, info in get_connections(package).iteritems():
-                    if info.get("device_id", None) in devices and info["remote"] in devices[info["device_id"]]:
-                        interface_up(package, name, info)
+                for name, info in get_connections(pkg).iteritems():
+                    if info.get("device_id", None) in devices \
+                            and info["remote"] in devices[info["device_id"]]:
+                        interface_up(pkg, name, info)
                         break
 
     if need_remount:
@@ -710,8 +759,8 @@ def stop_services():
 
 def prune_needs_action_package_list():
     """Clears the lists to hold needsServiceRestart and needsReboot updates."""
-    files = ("/var/lib/pisi/info/needsrestart", "/var/lib/pisi/info/needsreboot")
-    for f in files:
+    for f in ("/var/lib/pisi/info/needsrestart",
+              "/var/lib/pisi/info/needsreboot"):
         if os.path.exists(f):
             os.unlink(f)
 
@@ -755,7 +804,8 @@ def copy_udev_rules():
 
     # Moves any persistent rules from /dev/.udev to /etc/udev/rules.d
     for rule in glob.glob("/dev/.udev/tmp-rules--*"):
-        dest = "/etc/udev/rules.d/%s" % os.path.basename(rule).split("tmp-rules--")[1]
+        dest = "/etc/udev/rules.d/%s" % \
+                os.path.basename(rule).split("tmp-rules--")[1]
         try:
             shutil.move(rule, dest)
         except IOError:
@@ -837,12 +887,13 @@ def check_root_filesystem():
 
         entry = config.get_fstab_entry_with_mountpoint("/")
         if not entry:
-            ui.warn(_("/etc/fstab doesn't contain an entry for the root filesystem"))
+            ui.warn(_("/etc/fstab doesn't contain an entry "
+                "for the root filesystem"))
             return
 
         if config.get("forcefsck") or (len(entry) > 5 and entry[5] != "0"):
 
-            # Remount root filesystem read-only for fsck without writing to mtab (-n)
+            # Remount root filesystem ro for fsck without writing to mtab (-n)
             ui.info(_("Remounting root filesystem read-only"))
             run_quiet("/bin/mount", "-n", "-o", "remount,ro", "/")
 
@@ -860,8 +911,8 @@ def check_root_filesystem():
                 # No errors,just go on
                 pass
             elif ret == 2 or ret == 3:
-                # Actually 2 means that a reboot is required, fsck man page doesn't
-                # mention about 3 but let's leave it as it's harmless.
+                # Actually 2 means that a reboot is required, fsck man page
+                # doesn't mention about 3 but let's leave it as it's harmless.
                 splash.verbose()
                 ui.warn(_("Filesystem repaired, but reboot needed!"))
                 for i in xrange(4):
@@ -989,7 +1040,8 @@ def mount_remote_filesystems(dry_run=False):
             netmounts = next_set
             time.sleep(0.5)
     except KeyboardInterrupt:
-        ui.error(_("Mounting skipped with CTRL-C, remote shares will not be accessible!"))
+        ui.error(_("Mounting skipped with CTRL-C, "
+            "remote shares will not be accessible!"))
         time.sleep(1)
     signal.signal(signal.SIGINT, signal.SIG_IGN)
 
@@ -1039,7 +1091,8 @@ def autoload_modules():
     """Traverses /etc/modules.autoload.d to autoload kernel modules if any."""
     if os.path.exists("/proc/modules"):
         import glob
-        for _file in glob.glob("/etc/modules.autoload.d/kernel-%s*" % config.kernel[0]):
+        for _file in glob.glob("/etc/modules.autoload.d/kernel-%s*" \
+                % config.kernel[0]):
             data = load_file(_file, True).split("\n")
             for module in data:
                 run("/sbin/modprobe", "-q", "-b", module)
@@ -1054,10 +1107,13 @@ def set_disk_parameters():
         ui.info(_("Setting disk parameters"))
         if conf.has_key("all"):
             for name in os.listdir("/sys/block/"):
-                if name.startswith("hd") and len(name) == 3 and not conf.has_key(name):
-                    run_quiet("/sbin/hdparm", "%s" % conf["all"].split(), "/dev/%s" % name)
+                if name.startswith("hd") and \
+                        len(name) == 3 and not conf.has_key(name):
+                    run_quiet("/sbin/hdparm", "%s" % conf["all"].split(),
+                            "/dev/%s" % name)
         for key, value in conf:
             if key != "all":
+                # FIXME: There's a bug here!
                 run_quiet("/sbin/hdparm", "%s" % value.split(), "/dev/%s" % name)
 
 
@@ -1085,8 +1141,9 @@ def disable_swap():
 ##############################
 
 def cleanup_var():
+    """Cleans up /var upon boot."""
     ui.info(_("Cleaning up /var"))
-    blacklist = ["utmp", "random-seed", "livemedia"]
+    blacklist = ["utmp", "random-seed", "livemedia", "preload.pid"]
     for root, dirs, files in os.walk("/var/run"):
         for _file in files:
             if _file not in blacklist:
@@ -1099,6 +1156,7 @@ def cleanup_var():
     prune_needs_action_package_list()
 
 def cleanup_tmp():
+    """Cleans up /tmp upon boot."""
     ui.info(_("Cleaning up /tmp"))
 
     cleanup_list = (
