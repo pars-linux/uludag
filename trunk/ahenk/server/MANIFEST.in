@@ -1,0 +1,3 @@
+include Makefile
+recursive-include schema *.schema
+recursive-include schema_templates *.txt
