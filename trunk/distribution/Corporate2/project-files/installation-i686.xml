@@ -220,6 +220,8 @@
         <SelectedPackage>lvm2</SelectedPackage>
         <SelectedPackage>lvm2-static</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
+        <SelectedPackage>mdadm</SelectedPackage>
+        <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>microcode-data</SelectedPackage>
         <SelectedPackage>min12xxw</SelectedPackage>
