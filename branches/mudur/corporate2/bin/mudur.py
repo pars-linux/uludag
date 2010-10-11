@@ -782,7 +782,8 @@ def start_dbus():
 def stop_dbus():
     """Stops the D-Bus service."""
     ui.info(_("Stopping %s") % "DBus")
-    run("/sbin/start-stop-daemon", "--stop", "--quiet", "--pidfile", "/var/run/dbus/pid")
+    run("/sbin/start-stop-daemon", "--stop", "--quiet",
+            "--pidfile", "/var/run/dbus/pid")
 
 #############################
 # UDEV management functions #
@@ -812,15 +813,6 @@ def copy_udev_rules():
 
 def start_udev():
     """Prepares the startup of udev daemon and starts it."""
-
-    # Mount /dev if not mounted (backward-compatibility)
-    if not os.path.exists("/dev/kmsg"):
-        mount("/dev", "-t tmpfs -o exec,nosuid,mode=0755,size=10M udev /dev")
-
-    # Mount /dev/pts if not mounted (backward-compatibility)
-    if not os.path.exists("/dev/pts/ptmx"):
-        create_directory("/dev/pts")
-        mount("/dev/pts", "-t devpts -o gid=5,mode=0620 devpts /dev/pts")
 
     # When these files are missing, lots of trouble happens
     # so we double check their existence
@@ -1297,7 +1289,8 @@ def stop_system():
 def except_hook(e_type, e_value, e_trace):
     import traceback
     print
-    print _("An internal error occured. Please report to the bugs.pardus.org.tr with following information:").encode("utf-8")
+    print _("An internal error occured. Please report to the bugs.pardus.org.tr"
+            "with following information:").encode("utf-8")
     print
     print e_type, e_value
     traceback.print_tb(e_trace)
@@ -1486,13 +1479,15 @@ def main():
             # Try to reboot using kexec, if kernel supports it.
             kexec_file = "/sys/kernel/kexec_loaded"
 
-            if os.path.exists(kexec_file) and int(open(kexec_file, "r").read().strip()):
-                ui.info(_("Trying to initiate a warm reboot (skipping BIOS with kexec kernel)"))
+            if os.path.exists(kexec_file) \
+                    and int(open(kexec_file, "r").read().strip()):
+                ui.info(_("Trying to initiate a warm reboot "
+                    "(skipping BIOS with kexec kernel)"))
                 run_quiet("/usr/sbin/kexec", "-e")
 
             # Shut down all network interfaces just before halt or reboot,
-            # When halting the system do a poweroff. This is the default when halt is called as powerof
-            # Don't write the wtmp record.
+            # When halting the system do a poweroff. This is the default
+            # when halt is called as powerof. Don't write the wtmp record.
             run("/sbin/reboot", "-idp")
 
             # Force halt or reboot, don't call shutdown
