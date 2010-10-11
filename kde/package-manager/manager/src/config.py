@@ -21,6 +21,7 @@ defaults = {
            }
 
 GROUP = "General"
+DATA_DIR = '/usr/share/kde4/apps/package-manager/data/'
 
 class Config:
     def __init__(self, config):
