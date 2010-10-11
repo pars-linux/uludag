@@ -57,6 +57,7 @@
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedComponent>system.devel</SelectedComponent>
+                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>acpi</SelectedPackage>
                 <SelectedPackage>acpid</SelectedPackage>
                 <SelectedPackage>alsa-lib</SelectedPackage>
@@ -66,10 +67,10 @@
                 <SelectedPackage>cdrtools</SelectedPackage>
                 <SelectedPackage>choqok</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
+                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>dejavu-fonts</SelectedPackage>
                 <SelectedPackage>device-mapper</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
-                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>droid-fonts</SelectedPackage>
                 <SelectedPackage>dvd+rw-tools</SelectedPackage>
                 <SelectedPackage>enchant-zemberek</SelectedPackage>
@@ -93,6 +94,17 @@
                 <SelectedPackage>k3b-l10n-other</SelectedPackage>
                 <SelectedPackage>kaptan</SelectedPackage>
                 <SelectedPackage>kaudiocreator</SelectedPackage>
+                <SelectedPackage>kde-l10n-ca</SelectedPackage>
+                <SelectedPackage>kde-l10n-de</SelectedPackage>
+                <SelectedPackage>kde-l10n-es</SelectedPackage>
+                <SelectedPackage>kde-l10n-fr</SelectedPackage>
+                <SelectedPackage>kde-l10n-it</SelectedPackage>
+                <SelectedPackage>kde-l10n-nl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
+                <SelectedPackage>kde-l10n-sv</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdeadmin</SelectedPackage>
                 <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
                 <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -105,17 +117,6 @@
                 <SelectedPackage>kdebase-sounds</SelectedPackage>
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
-                <SelectedPackage>kde-l10n-ca</SelectedPackage>
-                <SelectedPackage>kde-l10n-de</SelectedPackage>
-                <SelectedPackage>kde-l10n-es</SelectedPackage>
-                <SelectedPackage>kde-l10n-fr</SelectedPackage>
-                <SelectedPackage>kde-l10n-it</SelectedPackage>
-                <SelectedPackage>kde-l10n-nl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
-                <SelectedPackage>kde-l10n-sv</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdepim</SelectedPackage>
@@ -164,7 +165,6 @@
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
-                <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>quassel</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
@@ -187,6 +187,7 @@
                 <SelectedPackage>tree</SelectedPackage>
                 <SelectedPackage>vim</SelectedPackage>
                 <SelectedPackage>vim-colorschemes</SelectedPackage>
+                <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
                 <SelectedPackage>wget</SelectedPackage>
                 <SelectedPackage>wpa_supplicant</SelectedPackage>
                 <SelectedPackage>xdg-user-dirs</SelectedPackage>
@@ -488,6 +489,7 @@
                 <Package>iwlwifi6050-ucode</Package>
                 <Package>jack-audio-connection-kit</Package>
                 <Package>jasper</Package>
+                <Package>jbigkit</Package>
                 <Package>jpeg</Package>
                 <Package>k3b</Package>
                 <Package>k3b-l10n-other</Package>
@@ -639,15 +641,16 @@
                 <Package>libidn-devel</Package>
                 <Package>libiec61883</Package>
                 <Package>libieee1284</Package>
+                <Package>libimobiledevice</Package>
                 <Package>libindicate</Package>
                 <Package>libindicate-qt</Package>
                 <Package>libiodbc</Package>
                 <Package>libkate</Package>
                 <Package>libksba</Package>
                 <Package>libktorrent</Package>
+                <Package>liblazy</Package>
                 <Package>liblqr</Package>
                 <Package>libmad</Package>
-                <Package>libmal</Package>
                 <Package>libmatroska</Package>
                 <Package>libmatthew-java</Package>
                 <Package>libmcrypt</Package>
@@ -674,6 +677,7 @@
                 <Package>libpciaccess</Package>
                 <Package>libpcre</Package>
                 <Package>libpcre-devel</Package>
+                <Package>libplist</Package>
                 <Package>libpng</Package>
                 <Package>libpng-devel</Package>
                 <Package>libprojectM</Package>
@@ -775,6 +779,8 @@
                 <Package>module-init-tools</Package>
                 <Package>module-nvidia-current</Package>
                 <Package>module-nvidia-current-userspace</Package>
+                <Package>module-virtualbox-guest</Package>
+                <Package>module-virtualbox-guest-userspace</Package>
                 <Package>mpfr</Package>
                 <Package>mpfr-devel</Package>
                 <Package>mpg123</Package>
@@ -895,7 +901,6 @@
                 <Package>python-devel</Package>
                 <Package>python-imaging</Package>
                 <Package>python-kde</Package>
-                <Package>python-mutagen</Package>
                 <Package>python-nose</Package>
                 <Package>python-numpy</Package>
                 <Package>python-pygobject</Package>
@@ -1009,6 +1014,7 @@
                 <Package>unsermake</Package>
                 <Package>unzip</Package>
                 <Package>urlgrabber</Package>
+                <Package>usbmuxd</Package>
                 <Package>usbutils</Package>
                 <Package>user-manager</Package>
                 <Package>utempter</Package>
@@ -1022,6 +1028,7 @@
                 <Package>vigra</Package>
                 <Package>vim</Package>
                 <Package>vim-colorschemes</Package>
+                <Package>virtualbox-guest-utils</Package>
                 <Package>virtuoso</Package>
                 <Package>vixie-cron</Package>
                 <Package>vlc-libs</Package>
@@ -1127,6 +1134,7 @@
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
+        <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
         <SelectedPackage>xorg-input-elographics</SelectedPackage>
@@ -1275,6 +1283,7 @@
         <Package>iwlwifi5150-ucode</Package>
         <Package>iwlwifi6000-ucode</Package>
         <Package>iwlwifi6050-ucode</Package>
+        <Package>jbigkit</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
         <Package>kernel</Package>
@@ -1369,6 +1378,8 @@
         <Package>mkinitramfs</Package>
         <Package>mobile-broadband-provider-info</Package>
         <Package>module-init-tools</Package>
+        <Package>module-virtualbox-guest</Package>
+        <Package>module-virtualbox-guest-userspace</Package>
         <Package>mtools</Package>
         <Package>mudur</Package>
         <Package>nano</Package>
@@ -1447,6 +1458,7 @@
         <Package>util-linux</Package>
         <Package>v4l-conexant-firmware</Package>
         <Package>v4l-dvb-firmware</Package>
+        <Package>virtualbox-guest-utils</Package>
         <Package>vixie-cron</Package>
         <Package>which</Package>
         <Package>wireless-tools</Package>

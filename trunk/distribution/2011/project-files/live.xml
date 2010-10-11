@@ -106,6 +106,7 @@
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
+        <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>xdg-user-dirs</SelectedPackage>
@@ -348,6 +349,7 @@
         <Package>iwlwifi6050-ucode</Package>
         <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
+        <Package>jbigkit</Package>
         <Package>jpeg</Package>
         <Package>k3b</Package>
         <Package>k3b-l10n-other</Package>
@@ -475,10 +477,12 @@
         <Package>libidn</Package>
         <Package>libiec61883</Package>
         <Package>libieee1284</Package>
+        <Package>libimobiledevice</Package>
         <Package>libiodbc</Package>
         <Package>libkate</Package>
         <Package>libksba</Package>
         <Package>libktorrent</Package>
+        <Package>liblazy</Package>
         <Package>liblqr</Package>
         <Package>libmad</Package>
         <Package>libmatroska</Package>
@@ -501,6 +505,7 @@
         <Package>libpcap</Package>
         <Package>libpciaccess</Package>
         <Package>libpcre</Package>
+        <Package>libplist</Package>
         <Package>libpng</Package>
         <Package>libproxy</Package>
         <Package>libqalculate</Package>
@@ -582,6 +587,8 @@
         <Package>module-init-tools</Package>
         <Package>module-nvidia-current</Package>
         <Package>module-nvidia-current-userspace</Package>
+        <Package>module-virtualbox-guest</Package>
+        <Package>module-virtualbox-guest-userspace</Package>
         <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
@@ -669,7 +676,6 @@
         <Package>python</Package>
         <Package>python-imaging</Package>
         <Package>python-kde</Package>
-        <Package>python-mutagen</Package>
         <Package>python-nose</Package>
         <Package>python-numpy</Package>
         <Package>python-pyliblzma</Package>
@@ -760,6 +766,7 @@
         <Package>unrar</Package>
         <Package>unzip</Package>
         <Package>urlgrabber</Package>
+        <Package>usbmuxd</Package>
         <Package>usbutils</Package>
         <Package>utempter</Package>
         <Package>util-linux</Package>
@@ -770,6 +777,7 @@
         <Package>vdpau-video</Package>
         <Package>vigra</Package>
         <Package>vim</Package>
+        <Package>virtualbox-guest-utils</Package>
         <Package>virtuoso</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
