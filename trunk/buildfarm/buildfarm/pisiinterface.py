@@ -63,14 +63,14 @@ class PisiApi:
         pisi.api.ctx.ui.prepareLogs()
 
     def build(self, pspec):
-        pspec = os.path.join(utils.get_local_repository_url(), pspec)
         if not os.path.exists(pspec):
             logger.error("'%s' does not exist!" % pspec)
             raise ("'%s' does not exist!" % pspec)
 
         logger.info("BUILD called for %s" % pspec)
 
-        if conf.sandboxblacklist and pspec in conf.sandboxblacklist:
+        if conf.sandboxblacklist and \
+                utils.get_package_name_from_path(pspec) in conf.sandboxblacklist:
             logger.info("Disabling sandbox for %s" % pspec)
             pisi.api.ctx.set_option("ignore_sandbox", True)
 
