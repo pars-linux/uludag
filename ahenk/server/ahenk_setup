@@ -217,7 +217,7 @@ def make_ldap_conf(domain, root_account, root_password):
     root_password = crypt_pass(root_password)
 
     schemas = []
-    for schema in os.listdir("schema"):
+    for schema in os.listdir("/usr/share/ahenk-setup/schema/"):
         if schema.endswith(".schema"):
             schemas.append("include       /etc/openldap/schema/%s" % schema)
 
@@ -372,15 +372,15 @@ def main():
 
     print "Loading LDAP schemas"
     if not options.dryrun:
-        for schema in os.listdir("schema"):
+        for schema in os.listdir("/usr/share/ahenk-setup/schema/"):
             if schema.endswith(".schema"):
-                os.system("cp schema/%s /etc/openldap/schema/%s" % (schema, schema))
+                os.system("cp /usr/share/ahenk-setup/schema/%s /etc/openldap/schema/%s" % (schema, schema))
         print
 
     else:
-        for schema in os.listdir("schema"):
+        for schema in os.listdir("/usr/share/ahenk-setup/schema/"):
             if schema.endswith(".schema"):
-                print "    Installing %s" % schema
+                print "cp /usr/share/ahenk-setup/schema/%s /etc/openldap/schema/%s" % (schema, schema)
         print
 
     print "Starting openldap-server"
