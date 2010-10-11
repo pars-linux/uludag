@@ -1375,9 +1375,6 @@ def main():
         # only panic messages will be printed
         write_to_file("/proc/sys/kernel/printk", "1")
 
-        # Set hostname
-        set_hostname()
-
         # Start udev and event triggering
         start_udev()
 
@@ -1389,6 +1386,9 @@ def main():
 
         # Grab persistent rules and udev.log file from /dev
         copy_udev_rules()
+
+        # Set hostname
+        set_hostname()
 
         # Load modules manually written in /etc/modules.autoload.d/kernel-x.y
         autoload_modules()
