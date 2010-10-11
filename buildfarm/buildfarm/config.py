@@ -39,8 +39,6 @@ class Config(object):
             if value.lower() in ("true", "false"):
                 # the value from ConfigParser is always string, so control it and return bool
                 retval = True if value.lower() == "true" else False
-            elif "," in value:
-                retval = value.split(",")
             return retval
         else:
             # value not found

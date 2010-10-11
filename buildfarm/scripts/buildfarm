@@ -54,15 +54,6 @@ def build_packages():
     # Create Twitter instance
     my_twitter = twit.Twitter()
 
-
-    # Unpickle and load ISO package list here if conf.generatedelta is true.
-    if conf.generatedelta:
-        try:
-            isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
-        except:
-            logger.error("You have to create packages.db in data/ for delta generation.")
-            sys.exit(1)
-
     # Compiling current workQueue
 
     logger.raw("QUEUE")

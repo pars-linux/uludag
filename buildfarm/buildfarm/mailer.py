@@ -41,18 +41,20 @@ def send(message, pspec = "", _type = "", subject=""):
 
 
     recipients_name, recipients_email = [], []
+    package_name = ""
+    last_log = ""
     if pspec:
         spec = pisi.specfile.SpecFile(os.path.join(utils.get_local_repository_url(), pspec))
         recipients_name.append(spec.source.packager.name)
         recipients_email.append(spec.source.packager.email)
+        package_name = os.path.basename(os.path.dirname(pspec))
+        last_log = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name)).read()
 
-    package_name = os.path.basename(os.path.dirname(pspec))
-    last_log = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name))
     message = templates._all[_type] % {
-                                        'log'          : "".join(last_log.readlines()[-20:]),
+                                        'log'          : last_log,
                                         'recipientName': " ".join(recipients_name),
                                         'mailTo'       : ", ".join(recipients_email),
-                                        'ccList'       : ', '.join(conf.cclist),
+                                        'ccList'       : conf.cclist,
                                         'mailFrom'     : conf.mailfrom,
                                         'announceAddr' : conf.announceaddr,
                                         'subject'      : pspec or subject or _type,
@@ -87,7 +89,7 @@ def send(message, pspec = "", _type = "", subject=""):
         if _type == "announce":
             session.sendmail(conf.mailfrom, conf.announceaddr, message)
         else:
-            session.sendmail(conf.mailfrom, recipientsEmail + conf.cclist, message)
+            session.sendmail(conf.mailfrom, recipients_email + conf.cclist.split(","), message)
     except smtplib.SMTPRecipientsRefused:
         logger.error("Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
 
