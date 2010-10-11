@@ -332,7 +332,7 @@ class Splash:
 
     def init(self, percent, increasing=True):
         """Initializes bootsplash through /proc/splash."""
-        if config.get("lxc_guest") != yes and os.path.exists("/proc/splash"):
+        if config.get("lxc_guest") != "yes" and os.path.exists("/proc/splash"):
             self.enabled = get_kernel_option("splash").has_key("silent")
             self.increasing = increasing
             self.percent = percent
