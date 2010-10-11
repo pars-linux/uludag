@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
 from distutils.core import setup
 
 setup(name='ahenk-setup',
@@ -9,6 +10,6 @@ setup(name='ahenk-setup',
       author='Bahadır Kandemir',
       author_email='bahadir@python.net',
       url='http://www.pardus.org.tr/',
-      scripts=['ahenk_schema', 'ahenk_setup'],
-      data_files=[('/usr/share/ahenk-setup/schema', ['schema/ahenk.schema'])]
+      scripts=['ahenk_setup'],
+      data_files=[('/usr/share/ahenk-setup/schema', ['schema/%s' % x for x in os.listdir('schema')])]
      )
