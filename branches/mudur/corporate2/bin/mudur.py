@@ -1129,7 +1129,7 @@ def disable_swap():
 def cleanup_var():
     """Cleans up /var upon boot."""
     ui.info(_("Cleaning up /var"))
-    blacklist = ["utmp", "random-seed", "livemedia", "preload.pid"]
+    blacklist = ["utmp", "random-seed", "livemedia"]
     for root, dirs, files in os.walk("/var/run"):
         for _file in files:
             if _file not in blacklist:
@@ -1229,7 +1229,7 @@ def stop_system():
         ents = map(lambda x: x.split(), ents)
         ents = filter(lambda x: len(x) > 2, ents)
         # not the virtual systems
-        vfs = ["proc", "devpts", "sysfs", "devfs", "tmpfs", "usbfs", "usbdevfs"]
+        vfs = ["proc", "devpts", "sysfs", "devfs", "devtmpfs", "squashfs", "tmpfs", "usbfs", "usbdevfs"]
         ents = filter(lambda x: not x[2] in vfs, ents)
         ents = filter(lambda x: x[0] != "none", ents)
         # not the root stuff
@@ -1328,17 +1328,6 @@ def main():
 
     ### SYSINIT ###
     if sys.argv[1] == "sysinit":
-
-        if config.get("lxc_guest") != "yes":
-            # Mount /proc if not mounted (backward-compatibility)
-            if not os.path.exists("/proc/cmdline"):
-                mount("/proc", "-t proc proc /proc")
-                config.parse_kernel_options()
-                load_translations()
-
-                # Mount sysfs if not mounted (backward-compatibility)
-                if not os.path.exists("/sys/kernel"):
-                    mount("/sys", "-t sysfs sysfs /sys")
 
         # This is who we are...
         ui.greet()
