@@ -18,6 +18,9 @@
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
+        <SelectedPackage>ahenk-agent</SelectedPackage>
+        <SelectedPackage>ahenk-lider</SelectedPackage>
+        <SelectedPackage>ahenk-setup</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
@@ -281,6 +284,7 @@
         <SelectedPackage>powertop</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
+        <SelectedPackage>pyqtermwidget</SelectedPackage>
         <SelectedPackage>ql2x00-firmware</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
@@ -295,10 +299,12 @@
         <SelectedPackage>smb4k</SelectedPackage>
         <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
+        <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>subversion</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>system-config-printer-gtk</SelectedPackage>
         <SelectedPackage>tango-icon-theme</SelectedPackage>
@@ -420,6 +426,7 @@
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>build-docbook-catalog</Package>
+        <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>c-ares</Package>
         <Package>cairo</Package>
@@ -469,10 +476,12 @@
         <Package>e2fsprogs</Package>
         <Package>e3</Package>
         <Package>eggdbus</Package>
+        <Package>ejabberd</Package>
         <Package>eject</Package>
         <Package>enca</Package>
         <Package>enchant</Package>
         <Package>enscript</Package>
+        <Package>erlang</Package>
         <Package>evolution-data-server</Package>
         <Package>exiv2</Package>
         <Package>expat</Package>
@@ -821,6 +830,7 @@
         <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
+        <Package>mtools</Package>
         <Package>mudur</Package>
         <Package>musicbrainz</Package>
         <Package>musicbrainz3</Package>
@@ -851,6 +861,7 @@
         <Package>openexr</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
+        <Package>openldap-server</Package>
         <Package>openobex</Package>
         <Package>openoffice</Package>
         <Package>opensc</Package>
@@ -872,6 +883,10 @@
         <Package>pcsc-lite-openct</Package>
         <Package>pcsc-tools</Package>
         <Package>perl</Package>
+        <Package>perl-Crypt-PasswdMD5</Package>
+        <Package>perl-Digest-Base</Package>
+        <Package>perl-Digest-SHA1</Package>
+        <Package>perl-MIME-Base64</Package>
         <Package>perl-XML-Parser</Package>
         <Package>perl-XML-Simple</Package>
         <Package>perl-pcsc</Package>
@@ -910,6 +925,8 @@
         <Package>python</Package>
         <Package>python-foolscap</Package>
         <Package>python-imaging</Package>
+        <Package>python-ldap</Package>
+        <Package>python-simplejson</Package>
         <Package>python-tk</Package>
         <Package>python-xlib</Package>
         <Package>pyxattr</Package>
@@ -919,6 +936,7 @@
         <Package>qt</Package>
         <Package>qt-webkit</Package>
         <Package>qt3</Package>
+        <Package>qtermwidget</Package>
         <Package>radeon-rlc-firmware</Package>
         <Package>raptor</Package>
         <Package>rarian</Package>
@@ -953,6 +971,7 @@
         <Package>spidermonkey</Package>
         <Package>sqlite</Package>
         <Package>startup-notification</Package>
+        <Package>sun-jdk</Package>
         <Package>sun-jre</Package>
         <Package>suspend</Package>
         <Package>sysfsutils</Package>
@@ -1088,6 +1107,7 @@
         <Package>bc</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
+        <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
