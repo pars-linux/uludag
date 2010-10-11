@@ -66,7 +66,6 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.state = StateManager(self)
         self.lastState = self.state.state
-        self.__go_back_all = False
 
         # state.silence is using for pm-install module
         self.state.silence = silence
@@ -252,7 +251,6 @@ class MainWidget(QWidget, Ui_MainWidget):
             if not self.state.silence:
                 totalPackages = self.packageList.packageCount()
             self.operation.setTotalPackages(totalPackages)
-            self.__go_back_all = True
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
@@ -290,9 +288,6 @@ class MainWidget(QWidget, Ui_MainWidget):
             qApp.exit()
 
         self.searchLine.clear()
-        if self.__go_back_all:
-            self.state.state = self.state.ALL
-            self.__go_back_all = False
         self.state.reset()
         self.progressDialog._hide()
         if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
@@ -302,7 +297,6 @@ class MainWidget(QWidget, Ui_MainWidget):
     def actionCancelled(self):
         self.progressDialog._hide()
         self.progressDialog.reset()
-        self.__go_back_all = False
         if self.state.silence:
             qApp.exit()
         self.groupFilter()
