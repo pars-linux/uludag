@@ -65,7 +65,9 @@ def build_packages():
         package_name_with_component = utils.get_package_name_with_component_from_path(pspec)
         build_output = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name), "w")
         logger.raw()
-        logger.info("Building %s (%d/%d)" % (package_name, int(queue.index(pspec)+1), len(queue)))
+
+        log_msg = "Building %s (%d/%d)" % (package_name, int(queue.index(pspec)+1), len(queue))
+        logger.info(log_msg)
 
         # Twit if possible
         my_twitter.update(log_msg)
