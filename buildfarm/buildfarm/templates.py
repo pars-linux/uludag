@@ -30,11 +30,7 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 
 An error occured while building the package %(packagename)s (maintainer: %(recipientName)s):
 
---------------------------------------------------------------------------
-%(message)s
---------------------------------------------------------------------------
-
-The last 20 lines of the log before the error happens is as follows:
+The last 50 lines of the log before the error happens is as follows:
 
 --------------------------------------------------------------------------
 %(log)s
@@ -53,25 +49,9 @@ Content-Type: text/html;
 
 <p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-<p>An error occured while building the package '<b>%(packagename)s</b>' (maintainer: <b>%(recipientName)s</b>):
+<p>An error occured while building the package <b>%(packagename)s</b> (maintainer: <b>%(recipientName)s</b>):
 
-<p><div align=center>
-    <table bgcolor=black width=100%% cellpadding=10 border=0>
-        <tr>
-            <td bgcolor=orangered><b>Error log</b></td>
-        </tr>
-        <tr>
-            <td bgcolor=ivory>
-                <pre>
-%(message)s
-                </pre>
-            </td>
-        </tr>
-    </table>
-</div>
-
-
-<p>The last 20 lines of the log before the error happens is as follows:
+<p>The last 50 lines of the log before the error happens is as follows:
 
 <p><div align=center>
     <table bgcolor=black width=100%% cellpadding=10 border=0>

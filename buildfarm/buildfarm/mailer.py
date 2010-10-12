@@ -40,17 +40,18 @@ def send(message, pspec = "", _type = "", subject=""):
     recipients_name, recipients_email = [], []
     package_name_with_component = ""
     package_name = ""
-    last_log = ""
+    last_log = []
     if pspec:
         spec = pisi.specfile.SpecFile(os.path.join(utils.get_local_repository_url(), pspec))
         recipients_name.append(spec.source.packager.name)
         recipients_email.append(spec.source.packager.email)
         package_name = os.path.basename(os.path.dirname(pspec))
         package_name_with_component = utils.get_package_name_with_component_from_path(pspec)
-        last_log = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name)).read()
+        last_log = open(os.path.join(utils.get_package_log_directory(), \
+                "%s.txt" % package_name)).read().split("\n")[-50:]
 
     message = templates._all[_type] % {
-                                        'log'          : last_log,
+                                        'log'          : "\n".join(last_log),
                                         'recipientName': " ".join(recipients_name),
                                         'mailTo'       : ", ".join(recipients_email),
                                         'ccList'       : conf.cclist,
