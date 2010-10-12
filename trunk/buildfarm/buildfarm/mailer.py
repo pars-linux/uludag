@@ -38,6 +38,7 @@ def send(message, pspec = "", _type = "", subject=""):
 
 
     recipients_name, recipients_email = [], []
+    package_name_with_component = ""
     package_name = ""
     last_log = ""
     if pspec:
@@ -45,6 +46,7 @@ def send(message, pspec = "", _type = "", subject=""):
         recipients_name.append(spec.source.packager.name)
         recipients_email.append(spec.source.packager.email)
         package_name = os.path.basename(os.path.dirname(pspec))
+        package_name_with_component = utils.get_package_name_with_component_from_path(pspec)
         last_log = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name)).read()
 
     message = templates._all[_type] % {
@@ -54,7 +56,7 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'ccList'       : conf.cclist,
                                         'mailFrom'     : conf.mailfrom,
                                         'announceAddr' : conf.announceaddr,
-                                        'subject'      : pspec or subject or _type,
+                                        'subject'      : package_name_with_component or subject or _type,
                                         'message'      : message,
                                         'pspec'        : pspec,
                                         'type'         : _type,
