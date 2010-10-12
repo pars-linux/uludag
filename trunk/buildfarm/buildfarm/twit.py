@@ -11,10 +11,14 @@
 # Please read the COPYING file.
 
 from buildfarm.auth import Auth
+from buildfarm.config import configuration as conf
 
 class Twitter(object):
     def __init__(self):
         self.api = None
+        self.prefix = "[%s/%s/%s]" % (conf.release.capitalize(),
+                                      conf.subrepository,
+                                      conf.architecture)
         self.auth = Auth()
         try:
             import twitter
@@ -26,7 +30,7 @@ class Twitter(object):
 
     def update(self, msg):
         if self.api:
-            return self.api.PostUpdate(msg)
+            return self.api.PostUpdate("%s %s" % (self.prefix, msg))
 
 
 if __name__ == "__main__":
