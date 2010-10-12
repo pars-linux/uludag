@@ -4,7 +4,7 @@ TODO
  - Get security updates directly to the basket like system.base packages
    It should be done in Pisi APi
  - Need to check proxy settings changes from KDE at start
- - Use KConfig instead of QSettings (tracker #40)
+ + Use KConfig instead of QSettings (tracker #40)
  - Update localedata.py with KConfig
  - Use KActions widely
  - Code cleanup like * imports (tracker #41)

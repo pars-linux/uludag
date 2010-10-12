@@ -59,8 +59,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         else:
             operationInfo = i18n('%1 %2', operation, arg)
 
-        if not operationInfo == self.operationInfo.text():
-            self.operationInfo.setText(operationInfo)
+        self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
         text = i18n("[%1 / %2]", packageNo, totalPackages)
