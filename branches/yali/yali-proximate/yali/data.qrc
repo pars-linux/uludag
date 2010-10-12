@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
     <file>gui/pics/computer.png</file>
     <file>gui/pics/dialog-warning.png</file>

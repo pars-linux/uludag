@@ -366,6 +366,9 @@
               <property name="styleSheet">
                <string notr="true"/>
               </property>
+              <property name="placeholderText">
+               <string>Real Name</string>
+              </property>
              </widget>
             </item>
             <item row="1" column="2">
@@ -381,6 +384,9 @@
                 <width>190</width>
                 <height>30</height>
                </size>
+              </property>
+              <property name="placeholderText">
+               <string>User Name</string>
               </property>
              </widget>
             </item>
@@ -467,6 +473,9 @@
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
               </property>
+              <property name="placeholderText">
+               <string>Password</string>
+              </property>
              </widget>
             </item>
             <item row="1" column="2">
@@ -485,6 +494,9 @@
               </property>
               <property name="echoMode">
                <enum>QLineEdit::Password</enum>
+              </property>
+              <property name="placeholderText">
+               <string>Confirm Password</string>
               </property>
              </widget>
             </item>
