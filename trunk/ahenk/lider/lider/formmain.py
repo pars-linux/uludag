@@ -658,12 +658,14 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             old_policy = copy.deepcopy(widget.policy)
             new_policy = copy.deepcopy(old_policy)
             try:
-                for key, value in widget.dump_policy().iteritems():
-                    value = copy.deepcopy(value)
+                for key, values in widget.dump_policy().iteritems():
+                    values = copy.deepcopy(values)
                     if key == "objectClass":
-                        new_policy[key].extend(value)
+                        for value in values:
+                            if value not in new_policy[key]:
+                                new_policy[key].append(value)
                     else:
-                        new_policy[key] = value
+                        new_policy[key] = values
             except AttributeError:
                 return
             try:
