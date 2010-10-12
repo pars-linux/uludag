@@ -12,6 +12,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import QTimer
 
 from PyKDE4.kdecore import i18n
 
@@ -33,16 +34,18 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.last_msg = None
         self.enableOverlay()
         self._disable_parent_in_shown = True
-        self.registerFunction(IN, lambda: parent.statusBar().hide())
+
+        self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
         self.registerFunction(OUT, lambda: parent.statusBar().show())
+
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
         self.parent = parent
 
     def _show(self):
-        self.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
+        self.animate(start = MIDCENTER, stop = MIDCENTER)
 
     def _hide(self):
-        self.animate(direction = OUT, dont_animate = True)
+        self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)
         self.parent.setWindowTitle(i18n("Package Manager"))
 
     def updateProgress(self, progress):
@@ -93,7 +96,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
     def cancel(self):
         self.actionLabel.setText(i18n("<b>Cancelling operation...</b>"))
         self.disableCancel()
-        self.iface.cancel()
+        QTimer.singleShot(100, self.iface.cancel)
 
     def repoOperationView(self):
         for widget in [self.statusInfo, self.timeRemaining]:

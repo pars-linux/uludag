@@ -1,9 +1,27 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Daniel Kovács <bicskas9323@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: hu\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"PO-Revision-Date: 2010-06-05 17:07+0100\n"
+"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
+"Language-Team: HUNGARIAN <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
 msgstr "Szoftver hozzáadása vagy eltávolítása"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 ui/ui_mainwindow.py:31
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:49
+#: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Csomagkezelő"
 
@@ -45,26 +63,34 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bicskas9323@gmail.com"
 
-#: src/basketdialog.py:120
-msgid "Do you want to continue ?"
-msgstr "Kívánod folytatni?"
-
-#: src/basketdialog.py:121
-msgid "Update Requirements"
-msgstr "Frissítés követelmények"
-
-#: src/basketdialog.py:132
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr "<b>Újra kell indítanod</b> a rendszered, hogy a frissítés a következő csomag(okra) hatással legyen:"
-
-#: src/basketdialog.py:139
-msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr "Újra kell indítanod a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verzióira hatással legyen:"
-
-#: src/basketdialog.py:161 src/mainwidget.py:283 src/mainwidget.py:286
+#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:275
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "PiSi hiba"
+
+#: src/basketdialog.py:154
+msgid "Do you want to continue ?"
+msgstr "Kívánod folytatni?"
+
+#: src/basketdialog.py:166
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
+msgstr "<b>Újra kell indítanod</b> a rendszered, hogy a frissítés a következő csomag(okra) hatással legyen:"
+
+#: src/basketdialog.py:168 src/basketdialog.py:175
+msgid "Update Requirements"
+msgstr "Frissítés követelmények"
+
+#: src/basketdialog.py:173
+msgid "You must restart following system services for the updated package(s) to take effect:"
+msgstr "Újra kell indítanod a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verzióira hatással legyen:"
+
+#: src/basketdialog.py:185
+msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
+msgstr ""
+
+#: src/basketdialog.py:188 src/settingsdialog.py:161
+msgid "Warning"
+msgstr "Figyelem"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -78,49 +104,44 @@ msgstr "Csomagtelepítő segítség"
 msgid "Show main window"
 msgstr "Főablak mutatása"
 
-#: src/mainwidget.py:94 src/mainwidget.py:96 ui/ui_mainwidget_kde4.py:92
-#: ui/ui_mainwidget_x11.py:81
-msgid "Search"
-msgstr "Keresés"
-
-#: src/mainwidget.py:225
+#: src/mainwidget.py:214
 #, fuzzy
 msgid "Searching..."
 msgstr "Keresés"
 
-#: src/mainwidget.py:236
+#: src/mainwidget.py:225
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:266
 msgid "Network Error"
 msgstr "Hálózati hiba"
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:267
 msgid "Please check your network connections and try again."
 msgstr "Kérlek ellenőrizd a hálózati kapcsolatod és próbáld újra."
 
-#: src/mainwidget.py:280
+#: src/mainwidget.py:269
 msgid "Authorization Error"
 msgstr "Hitelesítési hiba"
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:270
 msgid "You are not authorized for this operation."
 msgstr "Nem vagy felhatalmazva ehhez a művelethez."
 
-#: src/mainwidget.py:284
+#: src/mainwidget.py:273
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Csomag nem található. Frissítve vagy eltávolítva a tárolóból. Kérlek próbáld meg frissíteni a tároló adatait."
 
-#: src/mainwidget.py:395
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:396
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Biztonsági frissítés"
 
-#: src/mainwidget.py:397
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Kritikus frissítés"
 
@@ -201,62 +222,58 @@ msgstr "Az összes csomag kiválasztása ebben a csoportban"
 msgid "%prog packages_to_install"
 msgstr "%prog csomag a telepítéshez"
 
-#: src/progressdialog.py:45
+#: src/progressdialog.py:53
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:46
+#: src/progressdialog.py:54
 #, python-format
 msgid "Operation - %1%"
 msgstr "Művelet - %1%"
 
-#: src/progressdialog.py:49
+#: src/progressdialog.py:57
 msgid "configuring"
 msgstr "konfigurálás"
 
-#: src/progressdialog.py:49
+#: src/progressdialog.py:57
 msgid "extracting"
 msgstr "kibontás"
 
-#: src/progressdialog.py:53
+#: src/progressdialog.py:61
 msgid "Downloading package list of %1"
 msgstr "Csomaglista letöltése %1"
 
-#: src/progressdialog.py:55
+#: src/progressdialog.py:63
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:61
+#: src/progressdialog.py:68
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 csomag %3"
 
-#: src/progressdialog.py:81 ui/ui_progressdialog_v4.py:168
+#: src/progressdialog.py:88
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>PiSi előkészítése...</h3>"
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:92
 #, fuzzy
 msgid "-- / --"
 msgstr "--  / --"
 
-#: src/progressdialog.py:90
+#: src/progressdialog.py:97
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Művelet visszavonása...</b>"
 
 #: src/settingsdialog.py:152
 msgid "Open Directory"
 msgstr "Könyvtár megnyitása"
-
-#: src/settingsdialog.py:161
-msgid "Warning"
-msgstr "Figyelem"
 
 #: src/settingsdialog.py:162
 msgid "All the cached packages will be deleted. Are you sure? "
@@ -310,8 +327,8 @@ msgstr "frissített"
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:108
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:142
+#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Csomag(ok) telepítése"
@@ -363,7 +380,7 @@ msgstr "A következő csomag(okat) jelölted ki frissítésre:"
 msgid "You have selected the following package(s) to modify:"
 msgstr "A következő csomag(okat) jelölted ki eltávolításra:"
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:105
+#: src/statemanager.py:123 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "A kiválasztott csomag(ok) extra függőségei is telepítésre kerülnek:"
 
@@ -379,24 +396,6 @@ msgstr "A kiválasztott csomag extra függőségei is frissítésre kerülnek:"
 #, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "A kiválasztott csomag extra függőségei is frissítésre kerülnek:"
-
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#: src/statemanager.py:155
-msgid ""
-msgstr ""
-"Project-Id-Version: hu\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 16:27+0300\n"
-"PO-Revision-Date: 2010-06-05 17:07+0100\n"
-"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
-"Language-Team: HUNGARIAN <LL@li.org>\n"
-"Language: \n"
-"MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
 
 #: src/statemanager.py:157
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -466,47 +465,47 @@ msgstr "Webböngésző"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:103
+#: ui/ui_basketdialog.py:176
 msgid "Basket"
 msgstr "Kosár"
 
-#: ui/ui_basketdialog.py:104
+#: ui/ui_basketdialog.py:177
 msgid "Selected package(s) for install:"
 msgstr "Telepítésre kiválasztott csomag(ok):"
 
-#: ui/ui_basketdialog.py:106
+#: ui/ui_basketdialog.py:179
 msgid "Total Size:"
 msgstr "Teljes méret:"
 
-#: ui/ui_basketdialog.py:107
+#: ui/ui_basketdialog.py:180
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: ui/ui_basketdialog.py:109
+#: ui/ui_basketdialog.py:182
 msgid "Download Size:"
 msgstr "Letöltött méret:"
 
-#: ui/ui_basketdialog.py:110
+#: ui/ui_basketdialog.py:183
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:135
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:153
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
-#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:167
+#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:203
 msgid "Form"
 msgstr "Forma"
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:140
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:158
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr "Kategória panel"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:137
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:155
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr "Keresősáv"
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:138
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:156
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr "Kattints a kereséshez"
@@ -514,6 +513,10 @@ msgstr "Kattints a kereséshez"
 #: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
 msgid "Search Button"
 msgstr "Kereső gomb"
+
+#: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
+msgid "Search"
+msgstr "Keresés"
 
 #: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
 msgid "Action Button for current states action"
@@ -523,17 +526,17 @@ msgstr "Az aktuális művelet állásának megtekintése"
 msgid "Toggler for selection all packages in Package List"
 msgstr "A csomaglista összes csomagjának választása"
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:141
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:159
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr "Csomaglista"
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:139
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:157
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr "Frissítés típusok"
 
-#: ui/ui_mainwidget_v3.py:136
+#: ui/ui_mainwidget_v3.py:154
 msgid "Settings"
 msgstr "Beállítások"
 
@@ -585,24 +588,9 @@ msgid "&Cancel"
 msgstr "&Mégse"
 
 #: ui/ui_progressdialog.py:167 ui/ui_progressdialog_v3.py:189
-#: ui/ui_progressdialog_v4.py:169
+#: ui/ui_progressdialog_v4.py:204
 msgid "Alt+C"
 msgstr "Alt+C"
-
-#: ui/ui_progressdialog_v4.py:170
-#, fuzzy
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
-msgstr ""
-" <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: ui/ui_repodialog.py:56
 msgid "Add New Repository"
@@ -801,29 +789,47 @@ msgstr "Az újonnan telepített alkalmazást elindíthatod duplán kattintva a l
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "All Packages are up to date"
-#~ msgstr "Minden csomag friss"
-
-#~ msgid "File"
-#~ msgstr "Fájl"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "Quit"
-#~ msgstr "Kilépés"
-
-#~ msgid "Updates"
-#~ msgstr "Frissítés"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "%1 frissítés elérhető!"
-
-#~ msgid "installing"
-#~ msgstr "telepítés"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"
 
 #~ msgid "removing"
 #~ msgstr "eltávolítás"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
+#~ msgid "installing"
+#~ msgstr "telepítés"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "%1 frissítés elérhető!"
+
+#~ msgid "Updates"
+#~ msgstr "Frissítés"
+
+#~ msgid "Quit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Help"
+#~ msgstr "Segítség"
+
+#~ msgid "File"
+#~ msgstr "Fájl"
+
+#~ msgid "All Packages are up to date"
+#~ msgstr "Minden csomag friss"
+
+#, fuzzy
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+#~ msgstr ""
+#~ " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Csomag(ok) eltávolítása"

@@ -34,7 +34,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
 
         # PDS Settings
         self._animation = 1
-        self._duration = 500
+        self._duration = 400
         self.last_msg = None
         self.enableOverlay()
         self._disable_parent_in_shown = True
@@ -46,6 +46,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
 
         self.actionButton.clicked.connect(self.action)
         self.cancelButton.clicked.connect(self._hide)
+
 
     def _show(self):
         waitCursor()
@@ -184,7 +185,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Selected packages are considered critical "
                             "for the system. Removing them may cause your "
                             "system to be unusable."),
-                       i18n("Removing important packages"))
+                       i18n("Warning"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
 
