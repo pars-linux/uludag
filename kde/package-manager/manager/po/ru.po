@@ -2,26 +2,27 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-01 16:27+0300\n"
+"POT-Creation-Date: 2010-10-12 14:08+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
 msgstr "Установка и удаление программ"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 ui/ui_mainwindow.py:31
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:49
+#: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Менеджер пакетов"
 
@@ -38,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Разработчики"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -63,26 +64,34 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
-#: src/basketdialog.py:120
-msgid "Do you want to continue ?"
-msgstr "Вы хотите продолжить?"
-
-#: src/basketdialog.py:121
-msgid "Update Requirements"
-msgstr "Требования к обновлению"
-
-#: src/basketdialog.py:132
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr "Вы должны <b>перезагрузить компьютер</b> чтобы обновления  вступили в силу:"
-
-#: src/basketdialog.py:139
-msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr "Вы должны перезагрузить следующие службы, чтобы обновления вступили в силу:"
-
-#: src/basketdialog.py:161 src/mainwidget.py:283 src/mainwidget.py:286
+#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:275
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Ошибка в PiSi"
+
+#: src/basketdialog.py:154
+msgid "Do you want to continue ?"
+msgstr "Вы хотите продолжить?"
+
+#: src/basketdialog.py:166
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
+msgstr "Вы должны <b>перезагрузить компьютер</b> чтобы обновления  вступили в силу:"
+
+#: src/basketdialog.py:168 src/basketdialog.py:175
+msgid "Update Requirements"
+msgstr "Требования к обновлению"
+
+#: src/basketdialog.py:173
+msgid "You must restart following system services for the updated package(s) to take effect:"
+msgstr "Вы должны перезагрузить следующие службы, чтобы обновления вступили в силу:"
+
+#: src/basketdialog.py:185
+msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
+msgstr ""
+
+#: src/basketdialog.py:188 src/settingsdialog.py:161
+msgid "Warning"
+msgstr "Предупреждение"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -96,48 +105,43 @@ msgstr "Менеджер пакетов Справка"
 msgid "Show main window"
 msgstr "Показать главное окно"
 
-#: src/mainwidget.py:94 src/mainwidget.py:96 ui/ui_mainwidget_kde4.py:92
-#: ui/ui_mainwidget_x11.py:81
-msgid "Search"
-msgstr "Поиск"
-
-#: src/mainwidget.py:225
+#: src/mainwidget.py:214
 msgid "Searching..."
 msgstr "Поиск ..."
 
-#: src/mainwidget.py:236
+#: src/mainwidget.py:225
 msgid "No results found."
 msgstr "Ничего не найдено."
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:266
 msgid "Network Error"
 msgstr "Ошибка сети"
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:267
 msgid "Please check your network connections and try again."
 msgstr "Проверьте сетевые подключения и повторите попытку."
 
-#: src/mainwidget.py:280
+#: src/mainwidget.py:269
 msgid "Authorization Error"
 msgstr "Ошибка авторизации"
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:270
 msgid "You are not authorized for this operation."
 msgstr "Вы не авторизованы для этой операции."
 
-#: src/mainwidget.py:284
+#: src/mainwidget.py:273
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Пакет не найден. Он может быть обновлен или удален из базы. Пожалуйста, попробуйте обновить базу информации."
 
-#: src/mainwidget.py:395
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Все обновления"
 
-#: src/mainwidget.py:396
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Обновления безопасности"
 
-#: src/mainwidget.py:397
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Критические обновления"
 
@@ -214,58 +218,54 @@ msgstr "Выберить все пакеты в этой группе"
 msgid "%prog packages_to_install"
 msgstr "%prog packages_to_install"
 
-#: src/progressdialog.py:45
+#: src/progressdialog.py:53
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:46
+#: src/progressdialog.py:54
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операция - %1%"
 
-#: src/progressdialog.py:49
+#: src/progressdialog.py:57
 msgid "configuring"
 msgstr "настройка"
 
-#: src/progressdialog.py:49
+#: src/progressdialog.py:57
 msgid "extracting"
 msgstr "распаковка"
 
-#: src/progressdialog.py:53
+#: src/progressdialog.py:61
 msgid "Downloading package list of %1"
 msgstr "Загрузка списка пакетов %1"
 
-#: src/progressdialog.py:55
+#: src/progressdialog.py:63
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:61
+#: src/progressdialog.py:68
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:75
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:81 ui/ui_progressdialog_v4.py:168
+#: src/progressdialog.py:88
 msgid "Preparing PiSi..."
 msgstr "Подготовка PiSi ..."
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:92
 msgid "-- / --"
 msgstr "-- / --"
 
-#: src/progressdialog.py:90
+#: src/progressdialog.py:97
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Отмена операции ...</b>"
 
 #: src/settingsdialog.py:152
 msgid "Open Directory"
 msgstr "Open Directory"
-
-#: src/settingsdialog.py:161
-msgid "Warning"
-msgstr "Предупреждение"
 
 #: src/settingsdialog.py:162
 msgid "All the cached packages will be deleted. Are you sure? "
@@ -319,8 +319,8 @@ msgstr "обновлено"
 msgid "modified"
 msgstr "изменено"
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:108
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:142
+#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Установить пакет(ы)"
@@ -369,7 +369,7 @@ msgstr "Вы выбрали следующий(е) пакет(ы) для обн�
 msgid "You have selected the following package(s) to modify:"
 msgstr "Вы выбрали следующий(е) пакет(ы) для изменения:"
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:105
+#: src/statemanager.py:123 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Дополнительные зависимости выбранных пакетов также будут установлены:"
 
@@ -434,12 +434,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Доступно <b>%1</b> обновлений!"
 
 #: src/tray.py:194
-msgid "Show Updates"
-msgstr "Показать обновления"
-
-#: src/tray.py:194
 msgid "Ignore"
 msgstr "Игнорировать"
+
+#: src/tray.py:194
+msgid "Show Updates"
+msgstr "Показать обновления"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -453,47 +453,47 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:103
+#: ui/ui_basketdialog.py:176
 msgid "Basket"
 msgstr "Basket"
 
-#: ui/ui_basketdialog.py:104
+#: ui/ui_basketdialog.py:177
 msgid "Selected package(s) for install:"
 msgstr "Выбранные пакеты для установки:"
 
-#: ui/ui_basketdialog.py:106
+#: ui/ui_basketdialog.py:179
 msgid "Total Size:"
 msgstr "Размер:"
 
-#: ui/ui_basketdialog.py:107
+#: ui/ui_basketdialog.py:180
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: ui/ui_basketdialog.py:109
+#: ui/ui_basketdialog.py:182
 msgid "Download Size:"
 msgstr "Размер загрузки:"
 
-#: ui/ui_basketdialog.py:110
+#: ui/ui_basketdialog.py:183
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:135
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:153
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
-#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:167
+#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:203
 msgid "Form"
 msgstr "Форма"
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:140
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:158
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr "Панель категории"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:137
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:155
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr "Строка поиска"
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:138
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:156
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr "Нажмите для поиска"
@@ -501,6 +501,10 @@ msgstr "Нажмите для поиска"
 #: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
 msgid "Search Button"
 msgstr "Кнопка поиска"
+
+#: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
+msgid "Search"
+msgstr "Поиск"
 
 #: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
 msgid "Action Button for current states action"
@@ -510,17 +514,17 @@ msgstr "Кнопка действия для текущего состояния
 msgid "Toggler for selection all packages in Package List"
 msgstr "Переключатель для выбора всех пакетов в Списке пакетов"
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:141
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:159
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr "Список пакетов"
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:139
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:157
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr "Типы обновлений"
 
-#: ui/ui_mainwidget_v3.py:136
+#: ui/ui_mainwidget_v3.py:154
 msgid "Settings"
 msgstr "Настройки"
 
@@ -572,23 +576,9 @@ msgid "&Cancel"
 msgstr "&Отменить"
 
 #: ui/ui_progressdialog.py:167 ui/ui_progressdialog_v3.py:189
-#: ui/ui_progressdialog_v4.py:169
+#: ui/ui_progressdialog_v4.py:204
 msgid "Alt+C"
 msgstr "Alt+O"
-
-#: ui/ui_progressdialog_v4.py:170
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
-msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
 #: ui/ui_repodialog.py:56
 msgid "Add New Repository"
@@ -786,3 +776,20 @@ msgstr "Вы можете запустить новое установленно
 #: ui/ui_summarydialog.py:52
 msgid "&Ok"
 msgstr "О&к"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Удаление пакета (ов)"

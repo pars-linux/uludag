@@ -152,7 +152,7 @@ class StateManager(QObject):
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
-            return i18n('')
+            return ''
 
         text = i18n("Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size ", packages, packagesSize)
         if extraPackages:

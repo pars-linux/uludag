@@ -66,6 +66,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.state = StateManager(self)
         self.lastState = self.state.state
+        self._back_to_all = False
 
         # state.silence is using for pm-install module
         self.state.silence = silence
@@ -126,6 +127,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self._selectedGroups = []
         self.packageList.select_all.setChecked(False)
         restoreCursor()
+        self.searchLine.setFocus(True)
         QTimer.singleShot(1, self.initializeBasket)
 
     def initializeStatusUpdater(self):
@@ -280,18 +282,29 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.switchState(self.lastState)
 
     def actionFinished(self, operation):
+
         if operation == "System.Manager.installPackage":
             self.showSummary()
-        if operation in ("System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"):
+
+        if operation in ("System.Manager.installPackage",
+                         "System.Manager.removePackage",
+                         "System.Manager.updatePackage"):
             self.notifyFinished()
+
         if self.state.silence:
             qApp.exit()
+
+        if operation in ("System.Manager.updateRepository",
+                         "System.Manager.updateAllRepositories"):
+            self.emit(SIGNAL("repositoriesUpdated()"))
 
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog._hide()
-        if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
-            self.emit(SIGNAL("repositoriesUpdated()"))
+
+        if self._back_to_all:
+            self.state.state = self.state.ALL
+
         self.initialize()
 
     def actionCancelled(self):
@@ -299,6 +312,8 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.progressDialog.reset()
         if self.state.silence:
             qApp.exit()
+        if self._back_to_all:
+            self.state.state = self.state.ALL
         self.groupFilter()
 
     def notifyFinished(self):
@@ -324,6 +339,7 @@ class MainWidget(QWidget, Ui_MainWidget):
     def switchState(self, state, action=True):
         self.searchLine.clear()
         self.pdsMessageBox.hideMessage()
+        self._back_to_all = False
         self._states[state][1].setChecked(True)
         self.stateTab.setCurrentIndex(self._states[state][0])
         self.lastState = self.state.state
@@ -365,12 +381,18 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.statusChanged()
 
     def showBasket(self):
+        if self.basket.isVisible():
+            return
+
         waitCursor()
         self.statusUpdater.wait()
         action = {self.__remove_action:self.state.REMOVE,
                   self.__install_action:self.state.INSTALL}.get(self.sender(), None)
         if action:
+            self._back_to_all = True
             self.state.state = action
+        else:
+            self._back_to_all = False
         self.basket._show()
         restoreCursor()
 

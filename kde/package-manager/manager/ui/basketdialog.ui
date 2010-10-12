@@ -95,7 +95,7 @@ border-bottom:1px solid #999;
             <string notr="true">color:rgb(20,20,20);</string>
            </property>
            <property name="text">
-            <string>X</string>
+            <string notr="true">X</string>
            </property>
            <property name="flat">
             <bool>true</bool>
