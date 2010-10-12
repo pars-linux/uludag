@@ -108,7 +108,7 @@ def build_packages():
 
                 errmsg = "Error occured while building %s:\n %s" % (package_name_with_component, e)
                 logger.error(errmsg)
-                mailer.error(errmsg, package_name_with_component)
+                mailer.error(errmsg, pspec)
             else:
                 try:
                     # FIXME: Can't this be passed to pisi?
