@@ -76,7 +76,7 @@ def get_package_name_from_path(p):
 
 def get_package_name_with_component_from_path(p):
     """Returns system/base/gettext instead of /../system/base/gettext/pspec.xml."""
-    return os.path.dirname(p).partition("%s/" % get_local_repository_url())
+    return os.path.dirname(p).partition("%s/" % get_local_repository_url())[-1]
 
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
