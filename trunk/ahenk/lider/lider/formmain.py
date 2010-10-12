@@ -20,6 +20,7 @@ from lider.ui_formmain import Ui_FormMain
 from lider.connection import DialogConnection
 from lider.computer import DialogComputer
 from lider.folder import DialogFolder
+from lider.user import DialogUser
 
 # Helper modules
 from lider.helpers import directory
@@ -66,6 +67,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.menu = wrappers.Menu(self)
         self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
         self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
+        self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
 
         # Backends
         self.talk = talk.Talk()
@@ -82,6 +84,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
+        self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
@@ -260,6 +263,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             name = dn.split(",")[0].split("=")[1]
             label = name
             folder = dn.startswith("dc=")
+            user = dn.startswith("uid=")
 
             if folder and "o" in attrs:
                 label = attrs["o"][0]
@@ -276,6 +280,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 if folder:
                     item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
                     item.setIcon(0, wrappers.Icon("folder48"))
+                elif user:
+                    item.setIcon(0, wrappers.Icon("user48"))
                 else:
                     self.nodes_cn[name] = item
                     self.__update_icon(name)
@@ -472,6 +478,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.item = item
         self.__update_toolbar()
 
+    def __slot_tree_double_click(self, item, column):
+        """
+            Triggered when user double clicks a node.
+        """
+        self.item = item
+
     def __slot_tree_expand(self, item):
         """
             Triggered when user expands a node.
@@ -484,9 +496,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user collapses a node.
         """
-        for i in range(item.childCount()):
-            node = item.takeChild(i)
-            del node
+        item.takeChildren()
 
     def __slot_tree_menu(self, pos):
         """
@@ -518,12 +528,46 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
                 return
             except directory.DirectoryError:
-                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add computer.")
                 return
 
             self.treeComputers.collapseItem(parent_item)
             self.treeComputers.expandItem(parent_item)
             item = self.nodes_cn[name]
+            self.treeComputers.scrollToItem(item)
+            self.treeComputers.setCurrentItem(item)
+
+    def __slot_new_user(self):
+        """
+            Triggered when user wants to add a new user.
+        """
+        if self.item.folder:
+            parent_item = self.item
+        else:
+            parent_item = self.item.parent()
+
+        parent_path = parent_item.dn
+
+        dialog = DialogUser()
+        if dialog.exec_():
+            name = dialog.get_name()
+            password = dialog.get_password()
+            uid = dialog.get_uid()
+            gid = dialog.get_gid()
+            try:
+                dn = self.directory.add_user(parent_path, name, password, uid, gid)
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                # TODO: Disconnect
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add user.")
+                return
+
+            self.treeComputers.collapseItem(parent_item)
+            self.treeComputers.expandItem(parent_item)
+            item = self.nodes_dn[dn]
             self.treeComputers.scrollToItem(item)
             self.treeComputers.setCurrentItem(item)
 

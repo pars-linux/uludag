@@ -3,6 +3,7 @@ all:
 	pyuic4 lider/connection.ui > lider/ui_connection.py
 	pyuic4 lider/computer.ui > lider/ui_computer.py
 	pyuic4 lider/folder.ui > lider/ui_folder.py
+	pyuic4 lider/user.ui > lider/ui_user.py
 	pyrcc4 lider/data.qrc > lider/data_rc.py
 	
 	pyuic4 lider/plugins/plugin_authentication/authentication.ui > lider/plugins/plugin_authentication/ui_authentication.py
