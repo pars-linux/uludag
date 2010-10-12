@@ -348,9 +348,8 @@ msgid "Upgrade Package(s)"
 msgstr "Actualizar Paquetes(s)"
 
 #: src/statemanager.py:101
-#, fuzzy
 msgid "Modify Package(s)"
-msgstr "Removiendo Paquete(s)"
+msgstr "Modificar Paquete(s)"
 
 #: src/statemanager.py:111
 msgid "%1 new package(s) have been installed succesfully."
@@ -365,9 +364,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 paquetes actualizados con éxito."
 
 #: src/statemanager.py:114
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 paquetes removidos con éxito."
+msgstr "%1 paquete(s) modificados con éxito."
 
 #: src/statemanager.py:117
 msgid "You have selected the following package(s) to install:"
@@ -382,9 +380,8 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Paquetes a actualizar:"
 
 #: src/statemanager.py:120
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "Paquetes a remover:"
+msgstr "Los siguientes paquetes están marcados para modificar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
 #: src/statemanager.py:123 ui/ui_basketdialog.py:178
@@ -400,9 +397,8 @@ msgid "Extra dependencies of the selected package(s) that are also going to be u
 msgstr "Dependencias, que se actualizarán también:"
 
 #: src/statemanager.py:126
-#, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Dependencias, que se actualizarán también:"
+msgstr "Dependencias adicionales de los paquetes seleccionados, que también se modificarán:"
 
 #: src/statemanager.py:157
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
