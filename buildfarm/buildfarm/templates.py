@@ -28,7 +28,7 @@ Hello,
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-An error occured while building the package '%(packagename)s' (maintainer: '%(recipientName)s'):
+An error occured while building the package %(packagename)s (maintainer: %(recipientName)s):
 
 --------------------------------------------------------------------------
 %(message)s
