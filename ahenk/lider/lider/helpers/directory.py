@@ -139,7 +139,7 @@ class Directory:
         elif scope == "sub":
             scope = ldap.SCOPE_SUBTREE
 
-        pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer))"
+        pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer)(objectClass=posixAccount))"
         try:
             results = self.conn.search_s(directory, scope, pattern, fields)
         except ldap.LDAPError:
@@ -213,6 +213,35 @@ class Directory:
         }
         try:
             self.add_new(dn, properties)
+        except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def add_user(self, parent_dn, name, password, uid, gid):
+        """
+            Adds a new user under specified DN.
+
+            Arguments:
+                parent_dn: Distinguished name of parent
+                name: Node name
+                password: Node password
+        """
+        dn = "uid=%s,%s" % (name, parent_dn)
+        properties = {
+            "uid": [name],
+            "objectClass": ["top", "account", "posixAccount", "shadowAccount"],
+            "cn": [name],
+            "homeDirectory": ["/home/%s" % name],
+            "uidNumber": [uid],
+            "gidNumber": [gid],
+            "userPassword": [password]
+        }
+        try:
+            self.add_new(dn, properties)
+            return dn
         except ldap.LDAPError:
             try:
                 self.conn.whoami_s()
