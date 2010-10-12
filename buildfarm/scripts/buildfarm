@@ -164,7 +164,7 @@ def build_packages():
 
                     # FIXME: The packages before packagesToInstall[p] are already installed and therefore need to be
                     # uninstalled because p can't be installed.
-                    if utils.isdelta(p) and "no attribute 'old_files'" in str(e):
+                    if utils.is_delta_package(p) and "no attribute 'old_files'" in str(e):
                         logger.info(" %s was probably not installed on the system and the delta installation failed." % utils.get_package_name(p))
                     errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(conf.workdir, p), e)
                     logger.error(errmsg)
