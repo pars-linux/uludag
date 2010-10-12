@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/computer.png</file>
+    <file>gui/pics/computer.png</file>
     <file>gui/pics/dialog-warning.png</file>
     <file>gui/pics/dialog-cancel.png</file>
     <file>gui/pics/caps.png</file>
