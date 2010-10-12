@@ -21,9 +21,6 @@ from buildfarm import logger, templates, utils
 from buildfarm.config import configuration as conf
 
 
-class MailerError(Exception):
-    pass
-
 def send(message, pspec = "", _type = "", subject=""):
 
     if not conf.sendemail:
