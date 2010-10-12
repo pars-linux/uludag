@@ -1,4 +1,4 @@
-TODO for buildfarm 2.0
+TODO for buildfarm 3.0
 -----------------------
 
 (+) Install buildfarm modules into python' sitearch and make them importable
@@ -8,6 +8,8 @@ TODO for buildfarm 2.0
 (+) Support for sandbox blacklist
 (+) Make repomanager a separate executable buildfarm-up
 (+) Consolidate buildfarm directories to not conflict with pisi
+(+) Twit status updates ;)
+(+) Port to the new delta and build-no-less pisi
 
 (-) Use pisi methods if available to avoid redundancy
 (-) Drop waitqueue
@@ -15,6 +17,4 @@ TODO for buildfarm 2.0
 (-) Support for the removal of obsoleted packages
 (-) A Web status page for current status
 (-) Use pisi.api for creating the indexes
-(-) Port to the new delta and build-no-less pisi
-(-) Twit status updates ;)
 (-) Implement locking correctly
