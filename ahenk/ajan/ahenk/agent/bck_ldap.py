@@ -95,6 +95,6 @@ def ldap_go(options, q_in, q_out):
                     logging.debug("New policy: %s" % repr(policy))
                     q_in.put({"type": "policy", "policy": policy})
                 time.sleep(3)
-        except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT):
+        except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT, IndexError):
             logging.warning("LDAP connection failed. Retrying in 3 seconds.")
             time.sleep(3)

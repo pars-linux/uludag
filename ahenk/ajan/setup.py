@@ -14,7 +14,9 @@ setup(name='ahenk-agent',
                'utils/ahenk_software_update',
                'utils/ahenk_authentication'],
       data_files=[('/var/lib/ahenk-agent/', ['modules/mod_software.py',
-                                             'modules/mod_apache.py'
+                                             'modules/mod_apache.py',
+                                             'modules/mod_authentication.py',
+                                             'modules/mod_services.py',
                                             ]),
                   ('/etc/ahenk', ['etc/ahenk-agent.conf']),
                   ]
