@@ -28,8 +28,7 @@ Hello,
 
 This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-An error occured while building the package %(packagename)s (maintainer: %(recipientName)s):
-
+An error occured while building the package %(packagename)s (maintainer: %(recipientName)s).
 The last 50 lines of the log before the error happens is as follows:
 
 --------------------------------------------------------------------------
@@ -49,7 +48,7 @@ Content-Type: text/html;
 
 <p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
 
-<p>An error occured while building the package <b>%(packagename)s</b> (maintainer: <b>%(recipientName)s</b>):
+<p>An error occured while building the package <b>%(packagename)s</b> (maintainer: <b>%(recipientName)s</b>)
 
 <p>The last 50 lines of the log before the error happens is as follows:
 
