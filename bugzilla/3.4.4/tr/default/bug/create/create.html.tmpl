@@ -358,7 +358,7 @@ TUI_hide_default('expert_fields');
       <b><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></b>
   </td>
     <td colspan="2">
-    [% IF product.name == "Review" %]
+    [% IF product.id == 34 %]
      [% INCLUDE global/userselect.html.tmpl
         name => "assigned_to"
         value => user.login
