@@ -51,6 +51,9 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         self.animatable = True
         self._max_height = ROW_HEIGHT
 
+        self._rt_0 = QtGui.QIcon(":/data/star_0.png")
+        self._rt_1 = QtGui.QIcon(":/data/star_1.png")
+
         self.types = {'critical':(RED,     i18n('critical')),
                       'security':(DARKRED, i18n('security'))}
 
@@ -127,6 +130,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         title = index.model().data(index, Qt.DisplayRole).toString()
         summary = index.model().data(index, SummaryRole).toString()
         ptype = str(index.model().data(index, TypeRole).toString())
+        rate = int(index.model().data(index, RateRole).toString())
         installed = index.model().data(index, InstalledRole).toBool()
 
         # Get Package Icon if exists
@@ -144,6 +148,12 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         # Paint the Icon
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
+
+        # Rating Stars
+        for _rt_i in range(5):
+            self._rt_0.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
+        for _rt_i in range(rate):
+            self._rt_1.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         p.setPen(foregroundColor)

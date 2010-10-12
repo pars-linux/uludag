@@ -27,8 +27,9 @@ from statemanager import StateManager
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
-    ComponentRole, InstalledVersionRole, InstalledRole) = \
-range(Qt.UserRole, Qt.UserRole + 11)
+    ComponentRole, InstalledVersionRole, InstalledRole, \
+    RateRole) = \
+range(Qt.UserRole, Qt.UserRole + 12)
 
 _variant = QVariant()
 _unknown_icons = []
@@ -119,6 +120,9 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.installed))
         elif role == ComponentRole:
             return QVariant(unicode(package.partOf))
+        elif role == RateRole:
+            # FIXME Use AppInfo to get ratings
+            return QVariant(4)
         elif role == Qt.DecorationRole:
             package = self.package(index)
             if package.icon:
