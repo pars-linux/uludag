@@ -78,12 +78,11 @@ def send(message, pspec = "", _type = "", subject=""):
         logger.error("Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
         return
 
-    if conf.usesmtpauth:
-        try:
-            session.login(username, password)
-        except smtplib.SMTPAuthenticationError:
-            logger.error("Failed sending e-mail: Authentication failed.")
-            return
+    try:
+        session.login(username, password)
+    except smtplib.SMTPAuthenticationError:
+        logger.error("Failed sending e-mail: Authentication failed.")
+        return
 
     try:
         if _type == "announce":

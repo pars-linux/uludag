@@ -12,11 +12,9 @@
 #
 
 import os
-import glob
 
 import pisi.api
 import pisi.config
-from pisi.operations.delta import create_delta_package
 
 from buildfarm import cli, logger, utils
 from buildfarm.config import configuration as conf
@@ -81,7 +79,7 @@ class PisiApi:
 
 
     def get_install_order(self, packages):
-        """ Get installation order for pisi packages. """
+        """Get installation order for pisi packages."""
         import pisi.pgraph as pgraph
 
         # d_t: dict assigning package names to metadata's
