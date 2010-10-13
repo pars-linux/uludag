@@ -39,16 +39,23 @@ def create_directories():
             try:
                 os.makedirs(directory)
             except OSError:
-                raise ("Directory '%s' cannot be created." % directory)
+                print "Directory %s cannot be created." % directory
 
 def get_local_repository_url():
-    return os.path.join(conf.repositorydir, conf.release, conf.subrepository)
+    return os.path.join(conf.repositorydir,
+                        conf.release,
+                        conf.subrepository)
 
 def get_remote_repository_url():
-    return os.path.join(conf.scmrepositorybaseurl, conf.release, conf.subrepository)
+    return os.path.join(conf.scmrepositorybaseurl,
+                        conf.release,
+                        conf.subrepository)
 
 def get_package_log_directory():
-    return os.path.join(conf.logdir, conf.release, conf.subrepository, conf.architecture)
+    return os.path.join(conf.logdir,
+                        conf.release,
+                        conf.subrepository,
+                        conf.architecture)
 
 def get_debug_packages_directory():
     return "%s-debug" % get_compiled_packages_directory()
@@ -68,15 +75,16 @@ def get_expected_file_name(spec):
                                       last_update.version,
                                       last_update.release)
 
-def get_package_name(p):
-    return pisi.util.split_package_filename(p)[0]
+def get_package_name(pkg):
+    return pisi.util.split_package_filename(pkg)[0]
 
-def get_package_name_from_path(p):
-    return os.path.basename(os.path.dirname(p))
+def get_package_name_from_path(pkg):
+    return os.path.basename(os.path.dirname(pkg))
 
-def get_package_name_with_component_from_path(p):
-    """Returns system/base/gettext instead of /../system/base/gettext/pspec.xml."""
-    return os.path.dirname(p).partition("%s/" % get_local_repository_url())[-1]
+def get_package_name_with_component_from_path(pkg):
+    """Extracts system/base/gettext from full path."""
+    return os.path.dirname(pkg).partition("%s/" % \
+            get_local_repository_url())[-1]
 
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
@@ -84,9 +92,9 @@ def is_arch_excluded(spec):
     return ctx.config.values.get("general", "architecture") \
             in spec.source.excludeArch
 
-def is_delta_package(p):
-    return p.endswith(ctx.const.delta_package_suffix)
+def is_delta_package(pkg):
+    return pkg.endswith(ctx.const.delta_package_suffix)
 
-def is_debug_package(p):
-    package_name = get_package_name(p)
+def is_debug_package(pkg):
+    package_name = get_package_name(pkg)
     return package_name.endswith(ctx.const.debug_name_suffix)
