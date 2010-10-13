@@ -11,15 +11,15 @@
 # Please read the COPYING file.
 #
 
+PKG_TABLE = 'packages'
 DB_SCHEME = """
 
-CREATE TABLE "packages" (
+CREATE TABLE "%s" (
     "id" INTEGER PRIMARY KEY AUTOINCREMENT,
     "name" TEXT NOT NULL,
     "score" INTEGER,
     "nose" INTEGER DEFAULT (' ')
 );
 
-"""
-
+""" % PKG_TABLE
 
