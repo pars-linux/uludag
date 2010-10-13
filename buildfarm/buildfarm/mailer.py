@@ -32,9 +32,9 @@ def send(message, pspec = "", _type = "", subject=""):
     (username, password) = Auth().get_credentials("Mailer")
 
     # subjectID: ex: [release/{devel,stable}/arch]
-    subjectID = "%s/%s/%s" % (conf.release.capitalize(),
-                              conf.subrepository,
-                              conf.architecture)
+    subject_id = "%s/%s/%s" % (conf.release.capitalize(),
+                               conf.subrepository,
+                               conf.architecture)
 
 
     recipients_name, recipients_email = [], []
@@ -65,8 +65,8 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'distribution' : conf.name,
                                         'release'      : conf.release,
                                         'arch'         : conf.architecture,
-                                        'logsdir'      : subjectID,
-                                        'subjectID'    : subjectID,
+                                        'logsdir'      : subject_id,
+                                        'subjectID'    : subject_id,
                                      }
 
     # timeout value in seconds

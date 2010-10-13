@@ -29,15 +29,16 @@ class Config(object):
         self.read()
 
     def read(self):
-        for s in self.configuration.sections():
-            self.__items.update(dict(self.configuration.items(s)))
+        for section in self.configuration.sections():
+            self.__items.update(dict(self.configuration.items(section)))
 
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
         retval = value
         if value:
             if value.lower() in ("true", "false"):
-                # the value from ConfigParser is always string, so control it and return bool
+                # the value from ConfigParser is always string
+                # check it and return bool
                 retval = True if value.lower() == "true" else False
             return retval
         else:
@@ -50,7 +51,6 @@ configuration = Config()
 
 if __name__ == "__main__":
     # Test code
-    c = Config()
-    print c.ignorecheck
-    print c.generatedelta
-    print c.deltablacklist
+    _config = Config()
+    print _config.ignorecheck
+    print _config.release
