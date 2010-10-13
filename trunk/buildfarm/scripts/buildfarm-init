@@ -11,9 +11,7 @@
 # Please read the COPYING file.
 #
 
-import re
 import os
-import sys
 
 from buildfarm.config import configuration as conf
 from buildfarm import utils
@@ -27,7 +25,7 @@ def check_config():
         print "Target architecture: %s" % conf.architecture
         print "Sub repository: %s" % conf.subrepository
         print "Repository directory: %s" % conf.repositorydir
-    except KeyError, e:
+    except KeyError:
         print "Please complete the missing fields in %s." % CONF_FILE
         return False
     else:
