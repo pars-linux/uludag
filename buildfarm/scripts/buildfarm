@@ -128,7 +128,7 @@ def build_packages():
                     # Transfer source package to wait queue in case of an install error
                     qmgr.transferToWaitQueue(pspec)
 
-                    errmsg = "Error occured while installing %s:" % (p, e)
+                    errmsg = "Error occured while installing %s:\n %s" % (p, e)
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
 
