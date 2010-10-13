@@ -44,11 +44,14 @@ class AppInfo:
         """ Create given database """
 
         if not force and os.path.exists(db):
-            return (False, 'DB already created.')
+            self.initializeDB(db)
+            return (False, 'DB already exists.')
 
         if os.path.exists(db+'.backup'):
             os.unlink(db+'.backup')
-        os.rename(db, db+'.backup')
+
+        if os.path.exists(db):
+            os.rename(db, db+'.backup')
 
         self._sq = sqlite3.connect(db)
         self._sq.execute(database.DB_SCHEME)
@@ -63,16 +66,16 @@ class AppInfo:
             self._sq = sqlite3.connect(db)
             return (True, 'DB Initialized sucessfuly.')
 
+        self._sq = None
         return (False, 'No such DB (%s).' % db)
 
-    def _getPackagesFromDB(self):
+    def _getPackagesFromDB(self, fields = '*'):
         """ Internal method to get package list from database """
 
         if not self._sq:
             return (False, 'Initialize a DB first.')
 
-        cursor = self._sq.execute('SELECT name FROM packages')
-        return [str(package[0]) for package in cursor]
+        return self._sq.execute('SELECT %s FROM %s' % (fields, database.PKG_TABLE)).fetchall()
 
     def updatePackageList(self):
         """ Merge packages in database with packages in PMS """
@@ -81,12 +84,27 @@ class AppInfo:
             return (False, 'Initialize a DB first.')
 
         packages_from_pms = self._pm.getPackageList()
-        packages_from_db = self._getPackagesFromDB()
-        new_packages = list(set(packages_from_db).difference(packages_from_db))
+        packages_from_db = [str(x[1]) for x in self._getPackagesFromDB()]
+        new_packages = list(set(packages_from_pms) - set(packages_from_db))
 
         for package in new_packages:
-            self._sq.execute('INSERT INTO packages (name, score, nose) VALUES (?,0,0)', (package,) )
+            self._sq.execute('INSERT INTO %s (name, score, nose) VALUES (?,0,0)' % database.PKG_TABLE, (package,) )
 
         self._sq.commit()
         return (True, '%s package insterted.' % len(new_packages))
+
+    def createRatingDB(self):
+        """ It creates a rating DB from packages DB,
+            to use by Appinfo clients """
+
+        if not self._sq:
+            return (False, 'Initialize a DB first.')
+        return self._getPackagesFromDB()
+
+        # raw = self._sq.execute('SELECT * FROM %s' % database.PKG_TABLE)
+
+a = AppInfo('pisi')
+print a.createDB()
+print a.updatePackageList()
+#print a.createRatingDB()
 
