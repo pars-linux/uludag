@@ -77,9 +77,8 @@ class PisiApi:
 
         logger.info("Created package(s): %s" % self.builder.new_packages)
 
-
+    """
     def get_install_order(self, packages):
-        """Get installation order for pisi packages."""
         import pisi.pgraph as pgraph
 
         # d_t: dict assigning package names to metadata's
@@ -122,11 +121,10 @@ class PisiApi:
         order.reverse()
 
         return [dfn[p] for p in order]
+    """
 
-    def install(self, p):
-        a = []
-        a.append(p)
-        pisi.api.install(a, ignore_file_conflicts=self.options.ignore_file_conflicts,
-                            ignore_package_conflicts=self.options.ignore_package_conflicts,
-                            reinstall=True)
+    def install(self, pkgs):
+        pisi.api.install(pkgs, ignore_file_conflicts=self.options.ignore_file_conflicts,
+                               ignore_package_conflicts=self.options.ignore_package_conflicts,
+                               reinstall=True)
 

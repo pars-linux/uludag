@@ -20,8 +20,10 @@ import traceback
 import cStringIO
 
 import pisi.context as ctx
+import pisi.api
+from pisi.file import File
 
-from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
+from buildfarm import logger, mailer, queuemanager, pisiinterface, utils
 from buildfarm.config import configuration as conf
 
 def build_packages():
@@ -38,9 +40,6 @@ def build_packages():
     home_dir = os.environ["HOME"]
 
     package_list = []
-
-    # Create Twitter instance
-    my_twitter = twit.Twitter()
 
     # Compiling current work queue
 
@@ -59,24 +58,21 @@ def build_packages():
         log_msg = "Building %s (%d/%d)" % (package_name, int(queue.index(pspec)+1), len(queue))
         logger.info(log_msg)
 
-        # Twit if possible
-        my_twitter.update(log_msg)
-
         # This is here because farm captures the build output
-        pisi = pisiinterface.PisiApi(stdout = build_output,
-                                     stderr = build_output,
-                                     outputDir = conf.workdir)
+        pisi_api = pisiinterface.PisiApi(stdout = build_output,
+                                         stderr = build_output,
+                                         outputDir = conf.workdir)
         try:
             try:
                 # Build source package
-                pisi.build(pspec)
+                pisi_api.build(pspec)
 
                 # These lists contain full path to the .pisi files
-                new_binary_packages = pisi.get_new_packages()
-                new_debug_packages = pisi.get_new_debug_packages()
+                new_binary_packages = pisi_api.get_new_packages()
+                new_debug_packages = pisi_api.get_new_debug_packages()
 
                 # Reorder packages before installation
-                packages_to_install = pisi.get_install_order(new_binary_packages)
+                #packages_to_install = pisi_api.get_install_order(new_binary_packages)
 
             except Exception, e:
                 # Transfer source package to wait queue in case of a build error
@@ -92,10 +88,13 @@ def build_packages():
             else:
                 # Build was successful, let's install the packages
                 try:
+                    pisi_api.install(new_binary_packages)
+                    """
                     for pkg in packages_to_install:
                         # Install package
                         logger.info("Installing: %s" % pkg)
-                        pisi.install(pkg)
+                        pisi_api.install(pkg)
+                    """
                 except Exception, e:
                     # Transfer source package to wait queue in case of an install error
                     qmgr.transferToWaitQueue(pspec)
@@ -113,7 +112,7 @@ def build_packages():
                     package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
 
         finally:
-            pisi.close()
+            pisi_api.close()
             os.environ["HOME"] = home_dir
 
     logger.info("Wait Queue: %s" % (qmgr.get_wait_queue()))
@@ -124,25 +123,21 @@ def build_packages():
     logger.raw()
     logger.raw()
 
-    # Save current path
-    current = os.getcwd()
-
     # Set index paths
     paths = [utils.get_compiled_packages_directory()]
     if ctx.config.values.build.generatedebug:
         paths.append(utils.get_debug_packages_directory())
 
     for directory in paths:
-        os.chdir(directory)
-        logger.info("\n Generating repository index in %s:" % directory)
-        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % utils.get_local_repository_url())
-        logger.info(" Repository index generated for %s" % directory)
-
-    # Go back to the saved directory
-    os.chdir(current)
+        logger.info("\nGenerating repository index in %s" % directory)
+        pisi.api.index([utils.get_local_repository_url(), "."],
+                       output_file=os.path.join(directory, "pisi-index.xml"),
+                       skip_sources=True,
+                       skip_signing=True,
+                       compression=File.COMPRESSION_TYPE_XZ)
 
     # Check packages containing binaries and libraries broken by any package update
-    print "\n Checking binary consistency with revdep-rebuild.."
+    print "\nChecking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
 
 def move_packages(new_binary_packages, new_debug_packages):
