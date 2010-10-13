@@ -13,14 +13,12 @@
 
 import os
 import sys
-import glob
 import subprocess
 
 import pisi
 
 from buildfarm import utils
 from buildfarm import queuemanager
-from buildfarm.config import configuration as conf
 
 class RepositoryManager:
     def __init__(self):
@@ -40,9 +38,10 @@ class RepositoryManager:
         print "\nUpdating repository %s" % (self.local_pspec_repo)
 
         try:
-            self.output = subprocess.check_output(["svn", "up", self.local_pspec_repo],
+            self.output = subprocess.check_output(["svn", "up",
+                                                  self.local_pspec_repo],
                                                   stderr=subprocess.STDOUT)
-        except CalledProcessError:
+        except subprocess.CalledProcessError:
             print "A problem with SVN occurred while updating repository, exiting."
             sys.exit(1)
         else:
@@ -71,6 +70,11 @@ class RepositoryManager:
         # packages.
 
         for pspec in self.final_queue[:]:
+            if not os.path.exists(pspec):
+                print "Warning: %s doesn't exist, removing from the queue." % pspec
+                self.final_queue.remove(pspec)
+                continue
+
             spec = pisi.specfile.SpecFile(pspec)
             # First the release check
             expected_pisi_file = os.path.join(utils.get_compiled_packages_directory(), \
