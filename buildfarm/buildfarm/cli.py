@@ -20,20 +20,6 @@ import pisi.context as ctx
 import pisi.ui
 import pisi.util
 
-class Error(pisi.Error):
-    pass
-
-def printu(obj, err = False):
-    if not isinstance(obj, unicode):
-        obj = unicode(obj)
-    if err:
-        out = sys.stderr
-    else:
-        out = sys.stdout
-    out.write(obj.encode('utf-8'))
-    out.flush()
-
-
 class CLI(pisi.ui.UI):
     "Command Line Interface special to buildfarm"
 
@@ -51,48 +37,48 @@ class CLI(pisi.ui.UI):
                          'Display'  : ('gray', '\033[0m', '#CCCCCC'),
                          'Default'  : ('default', '\033[0m', '#CCCCCC')}
 
-        self.colormap = dict([(v,m) for k,v,m in self.outtypes.values()])
+        self.color_map = dict([(v, m) for k, v, m in self.outtypes.values()])
 
-    def prepareLogs(self):
-        txtfile = self.output_file.name
-        htmlfile = txtfile.replace(".txt", ".html")
-        package = os.path.basename(txtfile.split(".txt")[0])
+    def flush_logs(self):
+        text_file = self.output_file.name
+        html_file = text_file.replace(".txt", ".html")
+        package = os.path.basename(text_file.split(".txt")[0])
 
         self.output_file.flush()
-        shutil.copy(txtfile, htmlfile)
+        shutil.copy(text_file, html_file)
 
-        logfile = txtfile.replace(".txt", ".log")
-        tf = open(logfile, "w")
-        for l in open(htmlfile, "r").readlines():
-            l = l.rstrip('\033[0m\n') + '\n'
-            match = re.match("(\033.*?m)(.*)", l)
+        log_file = text_file.replace(".txt", ".log")
+        _file = open(log_file, "w")
+        for line in open(html_file, "r").readlines():
+            line = line.rstrip('\033[0m\n') + '\n'
+            match = re.match("(\033.*?m)(.*)", line)
             if match:
-                tf.write("%s\n" % match.groups()[1])
+                _file.write("%s\n" % match.groups()[1])
             else:
-                tf.write(l)
+                _file.write(line)
 
-        tf.close()
+        _file.close()
 
-        # We now have an HTML file which as ANSI colored text file
-        hf = open("%s.swp" % htmlfile, "w")
-        hf.write("<html><head><title>Build logs for %s</title></head>\n" % package)
-        hf.write("<body style=\"background-color: #000000; color: #CCCCCC; font-family: Monospace\">\n")
-        for l in open(htmlfile, "r").readlines():
-            l = l.rstrip('\033[0m\n') + '\n'
-            match = re.match("(\033.*?m)(.*)", l)
+        # We now have an HTML file which is an ANSI colored text file
+        _file = open("%s.swp" % html_file, "w")
+        _file.write("<html><head><title>Build log for %s</title></head>\n" % package)
+        _file.write("<body style=\"background-color: #000000; color: #CCCCCC; font-family: Monospace\">\n")
+        for line in open(html_file, "r").readlines():
+            line = line.rstrip('\033[0m\n') + '\n'
+            match = re.match("(\033.*?m)(.*)", line)
             if match:
                 match = match.groups()
-                hf.write("<span style=\"color: %s\">%s</span><br />\n" % (self.colormap.get(match[0], '\033[0m'), match[1]))
+                _file.write("<span style=\"color: %s\">%s</span><br />\n" % (self.color_map.get(match[0], '\033[0m'), match[1]))
             else:
-                hf.write("<span>%s</span><br />\n" % l)
+                _file.write("<span>%s</span><br />\n" % line)
 
-        hf.write("\n</body></html>")
-        hf.close()
+        _file.write("\n</body></html>")
+        _file.close()
 
-        shutil.move("%s.swp" % htmlfile, htmlfile)
+        shutil.move("%s.swp" % html_file, html_file)
 
         try:
-            os.unlink(txtfile)
+            os.unlink(text_file)
         except IOError:
             pass
 
@@ -117,7 +103,7 @@ class CLI(pisi.ui.UI):
 
         return result
 
-    def output(self, msg, msgtype=None, err=False, verbose=False, onlyOnScreen=False):
+    def output(self, msg, msgtype=None, err=False, verbose=False, only_on_screen=False):
         if (verbose and self.show_verbose) or (not verbose):
             if type(msg)==type(unicode()):
                 msg = msg.encode('utf-8')
@@ -130,7 +116,7 @@ class CLI(pisi.ui.UI):
             out.write(self.format(msg, msgtype))
             out.flush()
 
-            if not onlyOnScreen:
+            if not only_on_screen:
                 # Output the same stuff to the log file
                 self.output_file.write(self.format(msg, msgtype, colored=True))
                 self.output_file.flush()
@@ -165,9 +151,9 @@ class CLI(pisi.ui.UI):
         msg = unicode(msg)
         prompt = msg + pisi.util.colorize(' (%s)' % "/".join(opts), 'red')
         while True:
-            s = raw_input(prompt.encode('utf-8'))
+            selection = raw_input(prompt.encode('utf-8'))
             for opt in opts:
-                if opt.startswith(s):
+                if opt.startswith(selection):
                     return opt
 
     def confirm(self, msg):
@@ -183,9 +169,9 @@ class CLI(pisi.ui.UI):
             out = '\r%-30.50s (%s)%3d%% %9.2f %s [%s]' % \
                 (ka['filename'], totalsize, ka['percent'],
                  ka['rate'], ka['symbol'], ka['eta'])
-            self.output(out, 'Display', onlyOnScreen=True)
+            self.output(out, 'Display', only_on_screen=True)
         else:
-            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']), 'Display', onlyOnScreen=True)
+            self.output("\r%s (%d%%)" % (ka['info'], ka['percent']), 'Display', only_on_screen=True)
 
         if ka['percent'] == 100:
             self.output(' [complete]\n', 'Display')

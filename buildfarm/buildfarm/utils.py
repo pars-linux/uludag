@@ -89,11 +89,10 @@ def get_package_component_path(pkg):
 
 def delete_pisi_files_from(directory):
     """Deletes all .pisi files found in directory."""
-    for pisi in glob.glob("%s/*%s" % (directory.rstrip("/"),
-                                      ctx.const.package_suffix)):
+    for pisi_file in glob.glob("%s/*%s" % (directory.rstrip("/"),
+                                           ctx.const.package_suffix)):
         try:
-            print pisi
-            os.unlink(pisi)
+            os.unlink(pisi_file)
         except OSError:
             pass
 

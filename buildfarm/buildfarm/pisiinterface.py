@@ -21,11 +21,11 @@ from buildfarm.config import configuration as conf
 
 
 class PisiApi:
-    def __init__(self, stdout=None, stderr=None, outputDir = conf.workdir):
+    def __init__(self, stdout=None, stderr=None, output_dir = conf.workdir):
         self.options = pisi.config.Options()
 
         # Override these so that pisi searches for .pisi files in the right locations
-        self.options.output_dir = outputDir
+        self.options.output_dir = output_dir
         self.options.debug_packages_dir = utils.get_debug_packages_directory()
         self.options.compiled_packages_dir = utils.get_compiled_packages_directory()
 
@@ -54,74 +54,26 @@ class PisiApi:
         return self.builder.new_debug_packages
 
     def get_delta_package_map(self):
-        # NOTE: Returns a dict
+        # Return type is a dictionary
         return self.builder.delta_map
 
     def close(self):
-        pisi.api.ctx.ui.prepareLogs()
+        pisi.api.ctx.ui.flush_logs()
 
     def build(self, pspec):
         if not os.path.exists(pspec):
-            logger.error("'%s' does not exist!" % pspec)
-            raise ("'%s' does not exist!" % pspec)
-
-        logger.info("BUILD called for %s" % pspec)
+            logger.error("'%s' does not exist." % pspec)
 
         if conf.sandboxblacklist and \
                 utils.get_package_name_from_path(pspec) in conf.sandboxblacklist:
             logger.info("Disabling sandbox for %s" % pspec)
             pisi.api.ctx.set_option("ignore_sandbox", True)
 
+        logger.info("Building %s" % pspec)
         self.builder = pisi.operations.build.Builder(pspec)
         self.builder.build()
 
         logger.info("Created package(s): %s" % self.builder.new_packages)
-
-    """
-    def get_install_order(self, packages):
-        import pisi.pgraph as pgraph
-
-        # d_t: dict assigning package names to metadata's
-        d_t = {}
-
-        # dfn: dict assigning package names to package paths
-        dfn = {}
-        for pkg in packages:
-            package = pisi.package.Package(pkg)
-            package.read()
-            name = str(package.metadata.package.name)
-            d_t[name] = package.metadata.package
-            dfn[name] = pkg
-
-        class PackageDB:
-            def get_package(self, key, repo = None):
-                return d_t[str(key)]
-
-        packagedb = PackageDB()
-
-        A = d_t.keys()
-        G_f = pgraph.PGraph(packagedb)
-
-        for x in A:
-            G_f.add_package(x)
-
-        B = A
-        while len(B) > 0:
-            Bp = set()
-            for x in B:
-                pkg = packagedb.get_package(x)
-                for dep in pkg.runtimeDependencies():
-                    if dep.satisfied_by_dict_repo(d_t):
-                        if not dep.package in G_f.vertices():
-                            Bp.add(str(dep.package))
-                        G_f.add_dep(x, dep)
-            B = Bp
-
-        order = G_f.topological_sort()
-        order.reverse()
-
-        return [dfn[p] for p in order]
-    """
 
     def install(self, pkgs):
         pisi.api.install(pkgs, ignore_file_conflicts=self.options.ignore_file_conflicts,
