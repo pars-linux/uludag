@@ -81,7 +81,7 @@ def get_package_name(pkg):
 def get_package_name_from_path(pkg):
     return os.path.basename(os.path.dirname(pkg))
 
-def get_package_name_with_component_from_path(pkg):
+def get_package_component_path(pkg):
     """Extracts system/base/gettext from full path."""
     return os.path.dirname(pkg).partition("%s/" % \
             get_local_repository_url())[-1]

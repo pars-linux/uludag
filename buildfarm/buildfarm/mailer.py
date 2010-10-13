@@ -46,7 +46,7 @@ def send(message, pspec = "", _type = "", subject=""):
         recipients_name.append(spec.source.packager.name)
         recipients_email.append(spec.source.packager.email)
         package_name = os.path.basename(os.path.dirname(pspec))
-        package_name_with_component = utils.get_package_name_with_component_from_path(pspec)
+        package_name_with_component = utils.get_package_component_path(pspec)
         last_log = open(os.path.join(utils.get_package_log_directory(), \
                 "%s.txt" % package_name)).read().split("\n")[-50:]
 

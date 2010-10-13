@@ -61,7 +61,7 @@ def build_packages():
 
     for pspec in queue:
         package_name = utils.get_package_name_from_path(pspec)
-        package_name_with_component = utils.get_package_name_with_component_from_path(pspec)
+        package_name_with_component = utils.get_package_component_path(pspec)
         build_output = open(os.path.join(utils.get_package_log_directory(), "%s.txt" % package_name), "w")
         logger.raw()
 
