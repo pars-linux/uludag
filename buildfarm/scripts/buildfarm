@@ -131,7 +131,7 @@ def build_packages():
     for directory in paths:
         logger.info("\nGenerating repository index in %s" % directory)
         pisi.api.index([utils.get_local_repository_url(), "."],
-                       output_file=os.path.join(directory, "pisi-index.xml"),
+                       output=os.path.join(directory, "pisi-index.xml"),
                        skip_sources=True,
                        skip_signing=True,
                        compression=File.COMPRESSION_TYPE_XZ)
