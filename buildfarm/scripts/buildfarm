@@ -14,7 +14,6 @@ import os
 os.environ["LC_ALL"] = "C"
 
 import sys
-import glob
 import copy
 import shutil
 import traceback
@@ -26,14 +25,6 @@ from buildfarm import logger, mailer, queuemanager, pisiinterface, utils, twit
 from buildfarm.config import configuration as conf
 
 def build_packages():
-    # FIXME: Refactor
-    def remove_binary_package_from_workdir(package):
-        try:
-            os.remove(os.path.join(conf.workdir, package))
-        except:
-            # Don't fail if we can't remove the files
-            pass
-
     qmgr = queuemanager.QueueManager()
 
     qmgr.transfer_all_packages_to_work_queue() #move all packages to workQueue for compilation
@@ -44,14 +35,14 @@ def build_packages():
         sys.exit(1)
 
     # We'll set home variable just after build process to make revdep work right
-    home_dir = os.environ['HOME']
+    home_dir = os.environ["HOME"]
 
-    packageList = []
+    package_list = []
 
     # Create Twitter instance
     my_twitter = twit.Twitter()
 
-    # Compiling current workQueue
+    # Compiling current work queue
 
     logger.raw("QUEUE")
     logger.info(" All packages to be compiled : %s" % qmgr.get_work_queue())
@@ -72,87 +63,64 @@ def build_packages():
         my_twitter.update(log_msg)
 
         # This is here because farm captures the build output
-        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = conf.workdir)
+        pisi = pisiinterface.PisiApi(stdout = build_output,
+                                     stderr = build_output,
+                                     outputDir = conf.workdir)
         try:
             try:
-                # Save current *.pisi file list in /var/pisi for further cleanup
-                pisiList = glob.glob1(conf.workdir, "*.pisi")
-
                 # Build source package
                 pisi.build(pspec)
 
-                # FIXME:
-                newBinaryPackages = pisi.get_new_packages()
+                # These lists contain full path to the .pisi files
+                new_binary_packages = pisi.get_new_packages()
+                new_debug_packages = pisi.get_new_debug_packages()
 
-                # Reduce to filenames
-                newBinaryPackages = map(lambda x: os.path.basename(x), newBinaryPackages)
-
-                # Filter debug packages because we don't need to build delta packages
-                # for debug packages
-                newDebugPackages = pisi.get_new_debug_packages()
-
-                # No delta, install full packages
-                # NOTE: This was in the else block above
-                packagesToInstall = newBinaryPackages[:]
+                # Reorder packages before installation
+                packages_to_install = pisi.get_install_order(new_binary_packages)
 
             except Exception, e:
                 # Transfer source package to wait queue in case of a build error
                 qmgr.transferToWaitQueue(pspec)
 
-                # If somehow some binary packages are built, they'll stay in /var/pisi
-                # We should remove them here.
-                for p in set(glob.glob1(conf.workdir, "*.pisi")).difference(pisiList):
-                    logger.info(" Removing stale package '%s' from '%s'" % (p, conf.workdir))
-                    remove_binary_package_from_workdir(p)
+                # Cleanup possibly built .pisi packages
+                utils.delete_pisi_files_from(conf.workdir)
 
                 errmsg = "Error occured while building %s:\n %s" % (package_name_with_component, e)
                 logger.error(errmsg)
                 mailer.error(errmsg, pspec)
-            else:
-                try:
-                    # FIXME: Can't this be passed to pisi?
-                    # If there exists multiple packages, reorder them in order to
-                    # correctly install interdependent packages.
-                    if len(packagesToInstall) > 1:
-                        # packagesToInstall doesn't contain full paths
-                        logger.info("Reordering packages to satisfy inner runtime dependencies.")
-                        packagesToInstall = pisi.get_install_order(packagesToInstall)
-                        logger.info("Installation order is: %s" % packagesToInstall)
 
-                    for p in packagesToInstall:
+            else:
+                # Build was successful, let's install the packages
+                try:
+                    for pkg in packages_to_install:
                         # Install package
-                        logger.info("Installing: %s" % os.path.join(conf.workdir, p))
-                        pisi.install(os.path.join(conf.workdir, p))
+                        logger.info("Installing: %s" % pkg)
+                        pisi.install(pkg)
                 except Exception, e:
                     # Transfer source package to wait queue in case of an install error
                     qmgr.transferToWaitQueue(pspec)
 
-                    errmsg = "Error occured while installing %s:\n %s" % (p, e)
+                    # Cleanup possibly built .pisi packages
+                    utils.delete_pisi_files_from(conf.workdir)
+
+                    errmsg = "Error occured while installing %s:\n %s" % (os.path.basename(pkg), e)
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
-
-                    # The package should be removed from the related lists and WorkDir in case of an
-                    # installation problem
-                    for pa in newBinaryPackages+newDebugPackages:
-                        if pa in newBinaryPackages:
-                            newBinaryPackages.remove(pa)
-                        logger.info("Removing %s from %s" % (pa, conf.workdir))
-                        remove_binary_package_from_workdir(pa)
                 else:
+                    # Installation was successful
                     qmgr.removeFromWorkQueue(pspec)
-                    move_packages(newBinaryPackages, newDebugPackages)
-                    packageList += (map(lambda x: os.path.basename(x), newBinaryPackages))
+                    move_packages(new_binary_packages, new_debug_packages)
+                    package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
 
         finally:
             pisi.close()
-            os.environ['HOME'] = home_dir
+            os.environ["HOME"] = home_dir
 
-    logger.raw("QUEUE")
     logger.info("Wait Queue: %s" % (qmgr.get_wait_queue()))
     if qmgr.get_wait_queue():
-        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.get_wait_queue()), "\n".join(packageList)))
+        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.get_wait_queue()), "\n".join(package_list)))
     else:
-        mailer.info("Queue finished without a problem.\n\n\nNew binary packages are:\n\n%s\n\n" % ("\n".join(packageList)))
+        mailer.info("Queue finished without a problem.\n\n\nNew binary packages are:\n\n%s\n\n" % ("\n".join(package_list)))
     logger.raw()
     logger.raw()
 
@@ -177,59 +145,35 @@ def build_packages():
     print "\n Checking binary consistency with revdep-rebuild.."
     os.system("/usr/bin/revdep-rebuild --force")
 
-def move_packages(newBinaryPackages, debugPackages):
+def move_packages(new_binary_packages, new_debug_packages):
 
-    def move_new_package(package):
-        logger.info("Moving new package '%s'" % package)
-        packages_dir = utils.get_compiled_packages_directory()
-        if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), packages_dir)
-            os.remove(os.path.join(conf.workdir, package))
+    def move_package(package, target):
+        logger.info("Moving %s into %s" % (package, target))
+        try:
+            shutil.move(os.path.join(conf.workdir, package), target)
+        except shutil.Error:
+            pass
 
-    def move_debug_package(package):
-        # Move all debug packages into packages-debug/ and clean them
-        # from WorkDir.
-        debug_dir = utils.get_debug_packages_directory()
-        logger.info("Moving debug package '%s' to '%s'" % (package, debug_dir))
-        if os.path.exists(os.path.join(conf.workdir, package)):
-            shutil.copy(os.path.join(conf.workdir, package), debug_dir)
-            os.remove(os.path.join(conf.workdir, package))
+    logger.info("New binary package(s): %s" % new_binary_packages)
+    logger.info("New debug package(s): %s" % new_debug_packages)
 
-    # Normalize files to full paths
-    try:
-        newBinaryPackages = set(map(lambda x: os.path.basename(x), newBinaryPackages))
-    except AttributeError:
-        pass
+    for package in new_binary_packages:
+        move_package(package, utils.get_compiled_packages_directory())
 
-    newPackages = set(newBinaryPackages)
-
-    logger.info("New binary package(s): %s" % newPackages)
-    logger.info("Debug package(s): %s" % debugPackages)
-
-    for package in newPackages:
-        if package:
-            # Move the new binary package to packages/ and packages-test/
-            move_new_package(package)
-
-    if debugPackages:
-        for package in debugPackages:
-            # Move debug packages to packages-debug/
-            if package:
-                move_debug_package(package)
-
+    for package in new_debug_packages:
+        move_package(package, utils.get_debug_packages_directory())
 
 
 ### Entry point ###
 
-def handle_exception(exception, value, tb):
-    s = cStringIO.StringIO()
-    traceback.print_tb(tb, file = s)
-    s.seek(0)
+def handle_exception(exception, value, trace_back):
+    string_io = cStringIO.StringIO()
+    traceback.print_tb(trace_back, file = string_io)
+    string_io.seek(0)
 
     logger.error(str(exception))
     logger.error(str(value))
-    logger.error(s.read())
-
+    logger.error(string_io.read())
 
 if __name__ == "__main__":
     sys.excepthook = handle_exception
