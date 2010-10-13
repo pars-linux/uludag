@@ -34,5 +34,5 @@ class Twitter(object):
 
 
 if __name__ == "__main__":
-    t = Twitter()
-    t.update("Test")
+    _twitter = Twitter()
+    _twitter.update("Test")

@@ -21,8 +21,8 @@ class Auth(object):
         self.read()
 
     def read(self):
-        for s in self.configuration.sections():
-            self.data[s] = [k[1] for k in self.configuration.items(s)]
+        for section in self.configuration.sections():
+            self.data[s] = [k[1] for k in self.configuration.items(section)]
 
     def get_credentials(self, section):
         return self.data.get(section, ['', ''])
@@ -33,5 +33,5 @@ if __name__ == "__main__":
     def test(user, password):
         print "username:%s\npassword:%s" % (user, password)
 
-    a = Auth()
-    test(*a.get_credentials('Mailer'))
+    _auth = Auth()
+    test(*_auth.get_credentials('Mailer'))
