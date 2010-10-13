@@ -44,10 +44,6 @@ def setup_repository():
         else:
             print "%s is checked out, skipping." % local_url
 
-def check_mail_configuration():
-    pass
-
-
 if __name__ == "__main__":
     if check_config():
         utils.create_directories()
