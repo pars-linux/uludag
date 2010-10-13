@@ -44,7 +44,7 @@ def build_packages():
     # Compiling current work queue
 
     logger.raw("QUEUE")
-    logger.info(" All packages to be compiled : %s" % qmgr.get_work_queue())
+    logger.info("Starting to compile the following packages:%s" % qmgr.get_work_queue())
 
     mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(queue))
     logger.raw()
@@ -61,59 +61,37 @@ def build_packages():
         # This is here because farm captures the build output
         pisi_api = pisiinterface.PisiApi(stdout = build_output,
                                          stderr = build_output,
-                                         outputDir = conf.workdir)
+                                         output_dir = conf.workdir)
         try:
-            try:
-                # Build source package
-                pisi_api.build(pspec)
+            # First let's build the package
+            pisi_api.build(pspec)
 
-                # These lists contain full path to the .pisi files
-                new_binary_packages = pisi_api.get_new_packages()
-                new_debug_packages = pisi_api.get_new_debug_packages()
+            # These lists contain full path to the .pisi files
+            new_binary_packages = pisi_api.get_new_packages()
+            new_debug_packages = pisi_api.get_new_debug_packages()
 
-                # Reorder packages before installation
-                #packages_to_install = pisi_api.get_install_order(new_binary_packages)
+            # Build was successful, let's install the packages
+            pisi_api.install(new_binary_packages)
 
-            except Exception, e:
-                # Transfer source package to wait queue in case of a build error
-                qmgr.transferToWaitQueue(pspec)
-
-                # Cleanup possibly built .pisi packages
-                utils.delete_pisi_files_from(conf.workdir)
-
-                errmsg = "Error occured while building %s:\n %s" % (package_name_with_component, e)
-                logger.error(errmsg)
-                mailer.error(errmsg, pspec)
-
-            else:
-                # Build was successful, let's install the packages
-                try:
-                    pisi_api.install(new_binary_packages)
-                    """
-                    for pkg in packages_to_install:
-                        # Install package
-                        logger.info("Installing: %s" % pkg)
-                        pisi_api.install(pkg)
-                    """
-                except Exception, e:
-                    # Transfer source package to wait queue in case of an install error
-                    qmgr.transferToWaitQueue(pspec)
-
-                    # Cleanup possibly built .pisi packages
-                    utils.delete_pisi_files_from(conf.workdir)
-
-                    errmsg = "Error occured while installing %s:\n %s" % (os.path.basename(pkg), e)
-                    logger.error(errmsg)
-                    mailer.error(errmsg, pspec)
-                else:
-                    # Installation was successful
-                    qmgr.removeFromWorkQueue(pspec)
-                    move_packages(new_binary_packages, new_debug_packages)
-                    package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
-
-        finally:
+        except Exception, e:
+            # Finalize api to generate logs
             pisi_api.close()
-            os.environ["HOME"] = home_dir
+
+            # Transfer source package to wait queue in case of a build error
+            qmgr.transferToWaitQueue(pspec)
+
+            # Cleanup possibly built .pisi packages
+            utils.delete_pisi_files_from(conf.workdir)
+
+            errmsg = "Error occured while building %s:\n %s" % (package_name_with_component, e)
+            logger.error(errmsg)
+            mailer.error(errmsg, pspec)
+        else:
+            # Installation was successful
+            pisi_api.close()
+            qmgr.removeFromWorkQueue(pspec)
+            move_packages(new_binary_packages, new_debug_packages)
+            package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
 
     logger.info("Wait Queue: %s" % (qmgr.get_wait_queue()))
     if qmgr.get_wait_queue():
@@ -129,15 +107,15 @@ def build_packages():
         paths.append(utils.get_debug_packages_directory())
 
     for directory in paths:
-        logger.info("\nGenerating repository index in %s" % directory)
-        pisi.api.index([utils.get_local_repository_url(), "."],
+        pisi.api.index([utils.get_local_repository_url(), directory],
                        output=os.path.join(directory, "pisi-index.xml"),
                        skip_sources=True,
                        skip_signing=True,
                        compression=File.COMPRESSION_TYPE_XZ)
 
     # Check packages containing binaries and libraries broken by any package update
-    print "\nChecking binary consistency with revdep-rebuild.."
+    print "\nChecking binary consistency with revdep-rebuild"
+    os.environ["HOME"] = home_dir
     os.system("/usr/bin/revdep-rebuild --force")
 
 def move_packages(new_binary_packages, new_debug_packages):

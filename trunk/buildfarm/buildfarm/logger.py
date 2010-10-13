@@ -14,22 +14,21 @@
 import os
 import sys
 import time
-import string
 
 from buildfarm.config import configuration as conf
 
-def findCaller():
-    if string.lower(__file__[-4:]) in [".pyc", ".pyo"]:
-        srcFile = __file__[:-4] + ".py"
+def find_caller():
+    if os.path.splitext(__file__)[1] in [".pyc", ".pyo"]:
+        src_file = "%s.py" % os.path.splitext(__file__)[0]
     else:
-        srcFile = __file__
-    srcFile = os.path.normcase(srcFile)
+        src_file = __file__
+    src_file = os.path.normcase(src_file)
 
     f = sys._getframe().f_back
-    while 1:
-        co = f.f_code
-        filename = os.path.normcase(co.co_filename)
-        if filename == srcFile:
+    while True:
+        code = f.f_code
+        filename = os.path.normcase(code.co_filename)
+        if filename == src_file:
             f = f.f_back
             continue
         return ":".join([os.path.basename(filename), str(f.f_lineno)])
@@ -43,10 +42,14 @@ def __log(level, caller, msg):
     open(conf.logfile, "a").write("%s | %-6.6s | %-16.16s :: %s\n" %(time.asctime(), level, caller, msg))
 
 
-def debug(msg): __log("DEBUG", findCaller(), msg)
+def debug(msg):
+    __log("DEBUG", find_caller(), msg)
 
-def error(msg): __log("ERROR", findCaller(), msg)
+def error(msg):
+    __log("ERROR", find_caller(), msg)
 
-def info(msg): __log("INFO", findCaller(), msg)
+def info(msg):
+    __log("INFO", find_caller(), msg)
 
-def raw(msg = "-- --"): __raw(msg)
+def raw(msg = "-- --"):
+    __raw(msg)

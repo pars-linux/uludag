@@ -48,9 +48,9 @@ def send(message, pspec = "", _type = "", subject=""):
         package_name = os.path.basename(os.path.dirname(pspec))
         package_name_with_component = utils.get_package_component_path(pspec)
         last_log = open(os.path.join(utils.get_package_log_directory(), \
-                "%s.txt" % package_name)).read().split("\n")[-50:]
+                "%s.log" % package_name)).read().split("\n")[-50:]
 
-    message = templates._all[_type] % {
+    message = templates.ALL[_type] % {
                                         'log'          : "\n".join(last_log),
                                         'recipientName': " ".join(recipients_name),
                                         'mailTo'       : ", ".join(recipients_email),

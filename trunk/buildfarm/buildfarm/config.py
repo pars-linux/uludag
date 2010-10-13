@@ -47,10 +47,3 @@ class Config(object):
 
 # Initialize configuration object
 configuration = Config()
-
-
-if __name__ == "__main__":
-    # Test code
-    _config = Config()
-    print _config.ignorecheck
-    print _config.release

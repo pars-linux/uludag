@@ -11,7 +11,7 @@
 
 # E-mail message templates for mailer module..
 
-error_message = """\
+ERROR_MESSAGE = """\
 From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
@@ -26,9 +26,8 @@ Content-Type: text/plain;
 
 Hello,
 
-This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
-
 An error occured while building the package %(packagename)s (maintainer: %(recipientName)s).
+
 The last 50 lines of the log before the error happens is as follows:
 
 --------------------------------------------------------------------------
@@ -44,43 +43,39 @@ Happy hacking!
 Content-Type: text/html;
             charset="utf-8"
 
-<p>Hello,
+<p>Hello,<br>
+An error occured while building the package <b>%(packagename)s</b> (maintainer: <b>%(recipientName)s</b>)<br>
+The last 50 lines of the log before the error happens is as follows:
+</p>
 
-<p>This message is sent from Pardus buildfarm. Please do not reply as it is automatically generated.
-
-<p>An error occured while building the package <b>%(packagename)s</b> (maintainer: <b>%(recipientName)s</b>)
-
-<p>The last 50 lines of the log before the error happens is as follows:
-
-<p><div align=center>
-    <table bgcolor=black width=100%% cellpadding=10 border=0>
+<div>
+    <table cellpadding="5" style="border:1px solid #CCCCCC;">
         <tr>
-            <td bgcolor=orange>cat "<b>Log file</b>" | tail -n 20</td>
+            <td bgcolor="#C1CFF0">Build log for <b>%(packagename)s</b></td>
         </tr>
         <tr>
-            <td bgcolor=ivory>
-                <pre>
-%(log)s
-                </pre>
+            <td bgcolor="#000000">
+                <pre style="color: #FFFFFF;">%(log)s</pre>
             </td>
         </tr>
     </table>
 </div>
 
-<p>Plain log file:
+<p>
+Plain log file:
 <a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log</a><br>
 Fancy log file:
 <a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html</a>
+</p>
 
-
-<p>Happy hacking!<br>
+<br>
 
 --boundary42--
 """
 
 ## Info
 
-info_message = """\
+INFO_MESSAGE = """\
 From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
@@ -99,7 +94,7 @@ Happy hacking!
 
 ## Announce
 
-announce_message = """\
+ANNOUNCE_MESSAGE = """\
 From: %(distribution)s %(release)s %(arch)s Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
 Subject: [%(subjectID)s] List of recently built packages
@@ -116,8 +111,8 @@ Happy hacking!
 """
 
 # Convenience dict
-_all = {
-         'error'     : error_message,
-         'announce'  : announce_message,
-         'info'      : info_message,
+ALL =  {
+         'error'     : ERROR_MESSAGE,
+         'announce'  : ANNOUNCE_MESSAGE,
+         'info'      : INFO_MESSAGE,
        }
