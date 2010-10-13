@@ -22,7 +22,7 @@ class Auth(object):
 
     def read(self):
         for section in self.configuration.sections():
-            self.data[s] = [k[1] for k in self.configuration.items(section)]
+            self.data[section] = [k[1] for k in self.configuration.items(section)]
 
     def get_credentials(self, section):
         return self.data.get(section, ['', ''])
