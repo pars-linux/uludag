@@ -87,12 +87,12 @@ class PisiApi:
 
         # dfn: dict assigning package names to package paths
         dfn = {}
-        for p in packages:
-            package = pisi.package.Package(os.path.join(conf.workdir, p))
+        for pkg in packages:
+            package = pisi.package.Package(pkg)
             package.read()
             name = str(package.metadata.package.name)
             d_t[name] = package.metadata.package
-            dfn[name] = p
+            dfn[name] = pkg
 
         class PackageDB:
             def get_package(self, key, repo = None):
