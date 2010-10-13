@@ -89,7 +89,6 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 
 %(message)s
 
-Happy hacking!
 """
 
 ## Announce
@@ -107,7 +106,6 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 
 %(message)s
 
-Happy hacking!
 """
 
 # Convenience dict
