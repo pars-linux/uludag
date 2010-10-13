@@ -13,6 +13,7 @@
 # Various helper functions for pisi packages
 
 import os
+import glob
 
 from buildfarm.config import configuration as conf
 
@@ -85,6 +86,16 @@ def get_package_component_path(pkg):
     """Extracts system/base/gettext from full path."""
     return os.path.dirname(pkg).partition("%s/" % \
             get_local_repository_url())[-1]
+
+def delete_pisi_files_from(directory):
+    """Deletes all .pisi files found in directory."""
+    for pisi in glob.glob("%s/*%s" % (directory.rstrip("/"),
+                                      ctx.const.package_suffix)):
+        try:
+            print pisi
+            os.unlink(pisi)
+        except OSError:
+            pass
 
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
