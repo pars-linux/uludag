@@ -327,9 +327,9 @@ def copyPisiIndex(project):
 
         copyCollectionIcon(project)
 
-    # Copy All Collection Packages index as pisi-index.xml.bz2 for dvd and default cd installation
-    path = os.path.join(image_dir, "usr/share/yali/data/pisi-index.xml.bz2")
-    repo = os.path.join(project.work_dir, "repo_cache/pisi-index.xml.bz2")
+    # Copy All Collection Packages index as pisi index dvd and default cd installation
+    path = os.path.join(image_dir, "usr/share/yali/data/%s" % os.path.basename(project.repo_uri))
+    repo = os.path.join(project.work_dir, "repo_cache/%s" % os.path.basename(project.repo_uri))
 
     run('cp -PR "%s" "%s"' % (repo, path))
     run('sha1sum "%s" > "%s"' % (repo, "%s.sha1sum" % path))
