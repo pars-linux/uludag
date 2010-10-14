@@ -16,7 +16,7 @@ import sqlite3
 import backends
 import database
 
-class AppInfo:
+class AppInfo(object):
     """ AppInfo
         -------
         Package Management System indepented, package metadata
@@ -30,6 +30,12 @@ class AppInfo:
         - Default database scheme described in database.py
 
     """
+
+    def __getattribute__(self, name):
+        if object.__getattribute__(self, '_sq') or \
+                name in ('createDB', 'initializeDB'):
+            return object.__getattribute__(self, name)
+        return lambda:(False, 'Initialize a DB first')
 
     def __init__(self, pm):
         """ Initialize with given PMS (Package Management System) """
@@ -72,16 +78,10 @@ class AppInfo:
     def _getPackagesFromDB(self, fields = '*'):
         """ Internal method to get package list from database """
 
-        if not self._sq:
-            return (False, 'Initialize a DB first.')
-
         return self._sq.execute('SELECT %s FROM %s' % (fields, database.PKG_TABLE)).fetchall()
 
     def updatePackageList(self):
         """ Merge packages in database with packages in PMS """
-
-        if not self._sq:
-            return (False, 'Initialize a DB first.')
 
         packages_from_pms = self._pm.getPackageList()
         packages_from_db = [str(x[1]) for x in self._getPackagesFromDB()]
@@ -97,8 +97,6 @@ class AppInfo:
         """ It creates a rating DB from packages DB,
             to use by Appinfo clients """
 
-        if not self._sq:
-            return (False, 'Initialize a DB first.')
         return self._getPackagesFromDB()
 
         # raw = self._sq.execute('SELECT * FROM %s' % database.PKG_TABLE)
