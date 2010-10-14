@@ -37,8 +37,6 @@ The last 50 lines of the log before the error happens is as follows:
 Plain log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log
 Fancy log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html
 
-Happy hacking!
-
 --boundary42
 Content-Type: text/html;
             charset="utf-8"
