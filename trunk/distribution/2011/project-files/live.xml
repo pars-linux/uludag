@@ -70,14 +70,14 @@
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
-        <SelectedPackage>openoffice</SelectedPackage>
-        <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
-        <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
-        <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
-        <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
-        <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
-        <SelectedPackage>openoffice-kde</SelectedPackage>
-        <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
+        <SelectedPackage>libreoffice</SelectedPackage>
+        <SelectedPackage>libreoffice-extension-pdfimport</SelectedPackage>
+        <SelectedPackage>libreoffice-extension-presentation-minimizer</SelectedPackage>
+        <SelectedPackage>libreoffice-extension-presenter-screen</SelectedPackage>
+        <SelectedPackage>libreoffice-extension-report-builder</SelectedPackage>
+        <SelectedPackage>libreoffice-extension-wiki-publisher</SelectedPackage>
+        <SelectedPackage>libreoffice-kde</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
@@ -618,14 +618,14 @@
         <Package>openexr-libs</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
-        <Package>openoffice</Package>
-        <Package>openoffice-extension-pdfimport</Package>
-        <Package>openoffice-extension-presentation-minimizer</Package>
-        <Package>openoffice-extension-presenter-screen</Package>
-        <Package>openoffice-extension-report-builder</Package>
-        <Package>openoffice-extension-wiki-publisher</Package>
-        <Package>openoffice-kde</Package>
-        <Package>openoffice-langpack-tr</Package>
+        <Package>libreoffice</Package>
+        <Package>libreoffice-extension-pdfimport</Package>
+        <Package>libreoffice-extension-presentation-minimizer</Package>
+        <Package>libreoffice-extension-presenter-screen</Package>
+        <Package>libreoffice-extension-report-builder</Package>
+        <Package>libreoffice-extension-wiki-publisher</Package>
+        <Package>libreoffice-kde</Package>
+        <Package>libreoffice-langpack-tr</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
