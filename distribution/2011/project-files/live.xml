@@ -59,7 +59,6 @@
         <SelectedPackage>kdeutils</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>knetworkmanager</SelectedPackage>
         <SelectedPackage>lm_sensors</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
@@ -390,8 +389,6 @@
         <Package>kernel</Package>
         <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
-        <Package>knetworkmanager</Package>
-        <Package>knetworkmanager-common</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lapack</Package>
