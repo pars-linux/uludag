@@ -2,7 +2,7 @@
     <Title>Pardus 2011 Alpha 2 Live (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
-    <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
@@ -10,10 +10,14 @@
         <SelectedPackage>alsa-lib</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
+        <SelectedPackage>bluedevil</SelectedPackage>
         <SelectedPackage>cdrtools</SelectedPackage>
         <SelectedPackage>choqok</SelectedPackage>
+        <SelectedPackage>chromium-browser</SelectedPackage>
+        <SelectedPackage>clementine</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>dejavu-fonts</SelectedPackage>
+        <SelectedPackage>djvu-plugin</SelectedPackage>
         <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>ffmpeg</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
@@ -21,14 +25,28 @@
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
         <SelectedPackage>gfxboot</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
+        <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>gimp-i18n-ca</SelectedPackage>
+        <SelectedPackage>gimp-i18n-de</SelectedPackage>
+        <SelectedPackage>gimp-i18n-es</SelectedPackage>
+        <SelectedPackage>gimp-i18n-fr</SelectedPackage>
+        <SelectedPackage>gimp-i18n-hu</SelectedPackage>
+        <SelectedPackage>gimp-i18n-it</SelectedPackage>
+        <SelectedPackage>gimp-i18n-nl</SelectedPackage>
+        <SelectedPackage>gimp-i18n-pl</SelectedPackage>
+        <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>gimp-i18n-sv</SelectedPackage>
+        <SelectedPackage>gimp-i18n-tr</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gtkspell</SelectedPackage>
         <SelectedPackage>hal</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
+        <SelectedPackage>icon-theme-milky-png</SelectedPackage>
         <SelectedPackage>iw</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>k3b-l10n-other</SelectedPackage>
+        <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kde-l10n-ca</SelectedPackage>
         <SelectedPackage>kde-l10n-de</SelectedPackage>
@@ -58,16 +76,8 @@
         <SelectedPackage>kdeutils</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>lm_sensors</SelectedPackage>
-        <SelectedPackage>mc</SelectedPackage>
-        <SelectedPackage>memtest86</SelectedPackage>
-        <SelectedPackage>mesa-utils</SelectedPackage>
-        <SelectedPackage>microcode-ctl</SelectedPackage>
-        <SelectedPackage>module-alsa-driver</SelectedPackage>
-        <SelectedPackage>module-broadcom-wl</SelectedPackage>
-        <SelectedPackage>mplayer</SelectedPackage>
-        <SelectedPackage>ntfsprogs</SelectedPackage>
-        <SelectedPackage>ntp-client</SelectedPackage>
+        <SelectedPackage>kfax</SelectedPackage>
+        <SelectedPackage>kmozillahelper</SelectedPackage>
         <SelectedPackage>libreoffice</SelectedPackage>
         <SelectedPackage>libreoffice-extension-pdfimport</SelectedPackage>
         <SelectedPackage>libreoffice-extension-presentation-minimizer</SelectedPackage>
@@ -75,9 +85,29 @@
         <SelectedPackage>libreoffice-extension-report-builder</SelectedPackage>
         <SelectedPackage>libreoffice-extension-wiki-publisher</SelectedPackage>
         <SelectedPackage>libreoffice-kde</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-de</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-es</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-fr</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-hu</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-it</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-nl</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-pt-BR</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-sv</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
+        <SelectedPackage>lm_sensors</SelectedPackage>
+        <SelectedPackage>mc</SelectedPackage>
+        <SelectedPackage>memtest86</SelectedPackage>
+        <SelectedPackage>mesa-utils</SelectedPackage>
+        <SelectedPackage>microcode-ctl</SelectedPackage>
+        <SelectedPackage>module-alsa-driver</SelectedPackage>
+        <SelectedPackage>module-broadcom-wl</SelectedPackage>
+        <SelectedPackage>module-nvidia173</SelectedPackage>
+        <SelectedPackage>mplayer</SelectedPackage>
+        <SelectedPackage>ntfsprogs</SelectedPackage>
+        <SelectedPackage>ntp-client</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
+        <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
         <SelectedPackage>phonon-backend-xine</SelectedPackage>
         <SelectedPackage>pinentry-qt</SelectedPackage>
@@ -96,6 +126,7 @@
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>shared-desktop-ontologies</SelectedPackage>
         <SelectedPackage>shared-mime-info</SelectedPackage>
+        <SelectedPackage>skanlite</SelectedPackage>
         <SelectedPackage>soprano-plugin-virtuoso</SelectedPackage>
         <SelectedPackage>startup-notification</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
@@ -142,6 +173,7 @@
         <SelectedPackage>xorg-video-nouveau</SelectedPackage>
         <SelectedPackage>xorg-video-nv</SelectedPackage>
         <SelectedPackage>xorg-video-nvidia-current</SelectedPackage>
+        <SelectedPackage>xorg-video-nvidia173</SelectedPackage>
         <SelectedPackage>xorg-video-openchrome</SelectedPackage>
         <SelectedPackage>xorg-video-r128</SelectedPackage>
         <SelectedPackage>xorg-video-radeon</SelectedPackage>
@@ -194,15 +226,18 @@
         <Package>audiofile</Package>
         <Package>audit</Package>
         <Package>avahi</Package>
+        <Package>avahi-compat-libdns_sd</Package>
         <Package>avahi-glib</Package>
         <Package>avahi-libs</Package>
         <Package>b43-firmware</Package>
         <Package>b43-fwcutter</Package>
+        <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bash-completion</Package>
         <Package>bc</Package>
         <Package>blas</Package>
+        <Package>bluedevil</Package>
         <Package>bluez</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez-libs</Package>
@@ -210,12 +245,15 @@
         <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>cairo</Package>
+        <Package>cairomm</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
         <Package>check</Package>
         <Package>chmlib</Package>
         <Package>choqok</Package>
+        <Package>chromium-browser</Package>
+        <Package>clementine</Package>
         <Package>cln</Package>
         <Package>clucene</Package>
         <Package>comar</Package>
@@ -244,7 +282,9 @@
         <Package>diffutils</Package>
         <Package>disktype</Package>
         <Package>djbfft</Package>
+        <Package>djview4</Package>
         <Package>djvu</Package>
+        <Package>djvu-plugin</Package>
         <Package>dmapi</Package>
         <Package>dmidecode</Package>
         <Package>dnsmasq</Package>
@@ -271,6 +311,7 @@
         <Package>fontconfig</Package>
         <Package>freeglut</Package>
         <Package>freetype</Package>
+        <Package>ftgl</Package>
         <Package>fuse</Package>
         <Package>fxload</Package>
         <Package>gamin</Package>
@@ -278,22 +319,39 @@
         <Package>gconf</Package>
         <Package>gd</Package>
         <Package>gdbm</Package>
+        <Package>gdk-pixbuf</Package>
         <Package>gecko-mediaplayer</Package>
+        <Package>gegl</Package>
         <Package>gettext</Package>
         <Package>gfxboot</Package>
         <Package>gfxtheme-pardus-install</Package>
         <Package>ghostscript</Package>
         <Package>giflib</Package>
+        <Package>gimp</Package>
+        <Package>gimp-i18n-ca</Package>
+        <Package>gimp-i18n-de</Package>
+        <Package>gimp-i18n-es</Package>
+        <Package>gimp-i18n-fr</Package>
+        <Package>gimp-i18n-hu</Package>
+        <Package>gimp-i18n-it</Package>
+        <Package>gimp-i18n-nl</Package>
+        <Package>gimp-i18n-pl</Package>
+        <Package>gimp-i18n-pt_BR</Package>
+        <Package>gimp-i18n-sv</Package>
+        <Package>gimp-i18n-tr</Package>
+        <Package>glew</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibmm</Package>
         <Package>glitz</Package>
         <Package>gmp</Package>
+        <Package>gnome-keyring</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnome-vfs</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnupg</Package>
         <Package>gnutls</Package>
+        <Package>gobject-introspection</Package>
         <Package>gpac</Package>
         <Package>gperf</Package>
         <Package>gpgme</Package>
@@ -311,6 +369,7 @@
         <Package>gstreamer</Package>
         <Package>gtk-engines</Package>
         <Package>gtk2</Package>
+        <Package>gtkmm</Package>
         <Package>gtkspell</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
@@ -320,8 +379,17 @@
         <Package>hdparm</Package>
         <Package>hsqldb-lib</Package>
         <Package>hunspell</Package>
+        <Package>hunspell-dict-de</Package>
         <Package>hunspell-dict-en</Package>
+        <Package>hunspell-dict-es</Package>
+        <Package>hunspell-dict-fr</Package>
+        <Package>hunspell-dict-it</Package>
+        <Package>hunspell-dict-nl</Package>
+        <Package>hunspell-dict-pt</Package>
+        <Package>hunspell-dict-sv</Package>
         <Package>icon-theme-hicolor</Package>
+        <Package>icon-theme-milky-index</Package>
+        <Package>icon-theme-milky-png</Package>
         <Package>icon-theme-oxygen-index</Package>
         <Package>icon-theme-oxygen-png</Package>
         <Package>icu4c</Package>
@@ -349,6 +417,7 @@
         <Package>jpeg</Package>
         <Package>k3b</Package>
         <Package>k3b-l10n-other</Package>
+        <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>kbd</Package>
         <Package>kde-l10n-ca</Package>
@@ -386,6 +455,8 @@
         <Package>kernel</Package>
         <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
+        <Package>kfax</Package>
+        <Package>kmozillahelper</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lapack</Package>
@@ -426,7 +497,10 @@
         <Package>libassuan</Package>
         <Package>libasyncns</Package>
         <Package>libavc1394</Package>
+        <Package>libbluedevil</Package>
         <Package>libcaca</Package>
+        <Package>libcanberra</Package>
+        <Package>libcanberra-gtk</Package>
         <Package>libcap</Package>
         <Package>libcap-ng</Package>
         <Package>libcddb</Package>
@@ -448,6 +522,7 @@
         <Package>libdvdnav</Package>
         <Package>libdvdread</Package>
         <Package>libebml</Package>
+        <Package>libevent</Package>
         <Package>libexif</Package>
         <Package>libfame</Package>
         <Package>libffado</Package>
@@ -459,6 +534,8 @@
         <Package>libgcc</Package>
         <Package>libgcrypt</Package>
         <Package>libgfortran</Package>
+        <Package>libglade</Package>
+        <Package>libglademm</Package>
         <Package>libgnome-keyring</Package>
         <Package>libgomp</Package>
         <Package>libgpg-error</Package>
@@ -476,6 +553,7 @@
         <Package>libkate</Package>
         <Package>libksba</Package>
         <Package>libktorrent</Package>
+        <Package>liblastfm</Package>
         <Package>liblazy</Package>
         <Package>liblqr</Package>
         <Package>libmad</Package>
@@ -488,12 +566,14 @@
         <Package>libmpeg2</Package>
         <Package>libmpeg3</Package>
         <Package>libmsn</Package>
+        <Package>libmtp</Package>
         <Package>libnl</Package>
         <Package>libnotify</Package>
         <Package>libnut</Package>
         <Package>libofa</Package>
         <Package>libogg</Package>
         <Package>liboil</Package>
+        <Package>libopenraw</Package>
         <Package>libotr</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
@@ -501,11 +581,29 @@
         <Package>libpcre</Package>
         <Package>libplist</Package>
         <Package>libpng</Package>
+        <Package>libprojectM</Package>
         <Package>libproxy</Package>
         <Package>libqalculate</Package>
         <Package>libqjson</Package>
         <Package>libquicktime</Package>
+        <Package>libqxt</Package>
         <Package>libraw1394</Package>
+        <Package>libreoffice</Package>
+        <Package>libreoffice-extension-pdfimport</Package>
+        <Package>libreoffice-extension-presentation-minimizer</Package>
+        <Package>libreoffice-extension-presenter-screen</Package>
+        <Package>libreoffice-extension-report-builder</Package>
+        <Package>libreoffice-extension-wiki-publisher</Package>
+        <Package>libreoffice-kde</Package>
+        <Package>libreoffice-langpack-de</Package>
+        <Package>libreoffice-langpack-es</Package>
+        <Package>libreoffice-langpack-fr</Package>
+        <Package>libreoffice-langpack-hu</Package>
+        <Package>libreoffice-langpack-it</Package>
+        <Package>libreoffice-langpack-nl</Package>
+        <Package>libreoffice-langpack-pt-BR</Package>
+        <Package>libreoffice-langpack-sv</Package>
+        <Package>libreoffice-langpack-tr</Package>
         <Package>librsvg</Package>
         <Package>libsamplerate</Package>
         <Package>libsdl</Package>
@@ -515,6 +613,7 @@
         <Package>libsoup</Package>
         <Package>libsoup-gnome</Package>
         <Package>libspectre</Package>
+        <Package>libspiro</Package>
         <Package>libssh</Package>
         <Package>libssh2</Package>
         <Package>libtalloc</Package>
@@ -552,6 +651,7 @@
         <Package>lm_sensors</Package>
         <Package>lpsolve</Package>
         <Package>lsb-release</Package>
+        <Package>lua</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madplay</Package>
@@ -569,6 +669,7 @@
         <Package>microcode-data</Package>
         <Package>mina-core</Package>
         <Package>mingetty</Package>
+        <Package>minizip</Package>
         <Package>miscfiles</Package>
         <Package>mit-kerberos</Package>
         <Package>mjpegtools</Package>
@@ -581,6 +682,8 @@
         <Package>module-init-tools</Package>
         <Package>module-nvidia-current</Package>
         <Package>module-nvidia-current-userspace</Package>
+        <Package>module-nvidia173</Package>
+        <Package>module-nvidia173-userspace</Package>
         <Package>module-virtualbox-guest</Package>
         <Package>module-virtualbox-guest-userspace</Package>
         <Package>mpfr</Package>
@@ -612,14 +715,6 @@
         <Package>openexr-libs</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
-        <Package>libreoffice</Package>
-        <Package>libreoffice-extension-pdfimport</Package>
-        <Package>libreoffice-extension-presentation-minimizer</Package>
-        <Package>libreoffice-extension-presenter-screen</Package>
-        <Package>libreoffice-extension-report-builder</Package>
-        <Package>libreoffice-extension-wiki-publisher</Package>
-        <Package>libreoffice-kde</Package>
-        <Package>libreoffice-langpack-tr</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
@@ -627,10 +722,12 @@
         <Package>ortp</Package>
         <Package>pam</Package>
         <Package>pango</Package>
+        <Package>pangomm</Package>
         <Package>pardus-default-settings</Package>
         <Package>pardus-python</Package>
         <Package>parted</Package>
         <Package>partitionmanager</Package>
+        <Package>pavucontrol</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>perl</Package>
@@ -653,6 +750,7 @@
         <Package>polkit-qt_1</Package>
         <Package>poppler</Package>
         <Package>poppler-data</Package>
+        <Package>poppler-glib</Package>
         <Package>poppler-qt</Package>
         <Package>poppler-utils</Package>
         <Package>popt</Package>
@@ -665,13 +763,16 @@
         <Package>pulseaudio-libs</Package>
         <Package>pycups</Package>
         <Package>pycurl</Package>
+        <Package>pygtk</Package>
         <Package>pypolkit</Package>
         <Package>pysmbc</Package>
         <Package>python</Package>
+        <Package>python-cairo</Package>
         <Package>python-imaging</Package>
         <Package>python-kde</Package>
         <Package>python-nose</Package>
         <Package>python-numpy</Package>
+        <Package>python-pygobject</Package>
         <Package>python-pyliblzma</Package>
         <Package>python-qt</Package>
         <Package>python-qt-webkit</Package>
@@ -689,6 +790,7 @@
         <Package>qt-sql-mysql</Package>
         <Package>qt-sql-sqlite</Package>
         <Package>qt-webkit</Package>
+        <Package>qtiocompressor</Package>
         <Package>quassel</Package>
         <Package>quassel-data</Package>
         <Package>qwt</Package>
@@ -703,6 +805,7 @@
         <Package>redland-virtuoso</Package>
         <Package>rsyslog</Package>
         <Package>rtkit</Package>
+        <Package>ruby</Package>
         <Package>samba</Package>
         <Package>sane-backends</Package>
         <Package>schroedinger</Package>
@@ -717,6 +820,7 @@
         <Package>shared-desktop-ontologies</Package>
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
+        <Package>skanlite</Package>
         <Package>skey</Package>
         <Package>slang</Package>
         <Package>slf4j</Package>
@@ -776,6 +880,7 @@
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
+        <Package>webkit-gtk</Package>
         <Package>wget</Package>
         <Package>which</Package>
         <Package>wireless-tools</Package>
@@ -824,6 +929,7 @@
         <Package>xorg-video-nouveau</Package>
         <Package>xorg-video-nv</Package>
         <Package>xorg-video-nvidia-current</Package>
+        <Package>xorg-video-nvidia173</Package>
         <Package>xorg-video-openchrome</Package>
         <Package>xorg-video-r128</Package>
         <Package>xorg-video-radeon</Package>
