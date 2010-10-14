@@ -47,7 +47,7 @@ The last 50 lines of the log before the error happens is as follows:
 </p>
 
 <div>
-    <table cellpadding="5" style="border:1px solid #CCCCCC;">
+    <table cellpadding="5" width="100%%" style="border:1px solid #CCCCCC;">
         <tr>
             <td bgcolor="#C1CFF0">Build log for <b>%(packagename)s</b></td>
         </tr>
