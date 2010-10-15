@@ -33,7 +33,6 @@ usr/lib/python2.7/lib-old/
 usr/lib/python2.7/test/
 usr/lib/klibc/include/
 usr/share/aclocal/
-usr/share/doc/
 usr/share/info/
 usr/share/sip/
 usr/share/man/
