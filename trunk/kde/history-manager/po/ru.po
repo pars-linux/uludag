@@ -57,9 +57,8 @@ msgid "Details for operation on %1 at %2"
 msgstr "Подробная информация  %1 % 2"
 
 #: .tmp/historymanager/window.py:130
-#, fuzzy
 msgid "There are %1 packages in this snapshot."
-msgstr "Есть% 1 пакетов в этот снимок."
+msgstr "Есть%1 пакетов в этот снимок."
 
 #: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
 msgid "Ready .."
@@ -71,93 +70,92 @@ msgstr "Загрузка плана операций"
 
 #: .tmp/historymanager/window.py:173
 msgid "Configuration files in snapshot:"
-msgstr ""
+msgstr "Файлы конфигурации для снимка"
 
 #: .tmp/historymanager/window.py:181
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
-msgstr ""
+msgstr "<br> Эти пакеты будут <b>установлены</b> :<br>"
 
 #: .tmp/historymanager/window.py:186
 msgid "<br> These package(s) will be <b>removed</b> :<br>"
-msgstr ""
+msgstr "<br> Эти пакеты будут <b>удалены</b> :<br>"
 
 #: .tmp/historymanager/window.py:192
 msgid "Takeback plan for Operation on %1 at %2"
-msgstr ""
+msgstr "План восстановления для операции %1 на %2"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
-msgstr ""
+msgstr "Проверка плана"
 
 #: .tmp/historymanager/window.py:225
 msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
-msgstr ""
+msgstr "<center>Это вернет вашу систему назад к : <b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
-msgstr ""
+msgstr "Если вы не уверены, нажмите Отменить и смотрите план восстановления.</center>"
 
 #: .tmp/historymanager/window.py:230
 msgid "Taking back to : %1"
-msgstr ""
+msgstr "Возврат к : %1"
 
 #: .tmp/historymanager/window.py:237
 msgid "Start new snapshot"
-msgstr ""
+msgstr "Начать новый снимок"
 
 #: .tmp/historymanager/window.py:238
 msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
-msgstr ""
+msgstr "<center>Это сделает новый снимок вашей системы.<br>Нажмите ОК, когда будете готовы.</center>"
 
 #: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
-msgstr ""
+msgstr "Создание снимка"
 
 #: .tmp/historymanager/window.py:251
 msgid "Authentication Failed"
-msgstr ""
+msgstr "Проверка аутентификации не удалась"
 
 #: .tmp/historymanager/window.py:258
 msgid "Finished succesfully"
-msgstr ""
+msgstr "Закончено успешно"
 
 #: .tmp/historymanager/window.py:262
 #, python-format
 msgid "Taking Snapshot : <b>%s</b>/100"
-msgstr ""
+msgstr "Создание снимка : <b>%s</b>/100"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Upgrade"
-msgstr ""
+msgstr "Обновление"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Removal"
-msgstr ""
+msgstr "Удаленное"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Emerge"
-msgstr ""
+msgstr "Появление"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Installation"
-msgstr ""
+msgstr "Установка"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Snapshot"
-msgstr ""
+msgstr "Снимок"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Takeback"
-msgstr ""
+msgstr "Возврат"
 
 #: .tmp/historymanager/listitem.py:14
-#, fuzzy
 msgid "Repository Update"
-msgstr "Репозиторий обновления"
+msgstr "Обновление репозитория"
 
 #: .tmp/historymanager/listitem.py:54
 msgid "No: %1   Type: %2"
-msgstr ""
+msgstr "№: %1   Тип: %2"
 
 #: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
@@ -165,11 +163,11 @@ msgstr "Дата Истории - Время/Текст"
 
 #: .tmp/ui_uiitem.py:86
 msgid "No: Type:"
-msgstr "No: Тип:"
+msgstr "№: Тип:"
 
 #: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
-msgstr ""
+msgstr "Возврат к этой точке"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Details"
@@ -181,7 +179,7 @@ msgstr "Показать план операции"
 
 #: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
-msgstr ""
+msgstr "Новый снимок"
 
 #: .tmp/ui_mainwindow.py:131
 msgid "History Settings"
