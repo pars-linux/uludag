@@ -32,9 +32,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     help = _("""
 <font size="+2">Welcome</font>
 <font size="+1"><p>Pardus offers many easy-to-use tools for your desktop. The first of all, is this application which will help you to install Pardus easily.</p>
-<p>After a few steps where you can choose which disk/partition to use, your username/password etc. Pardus will be configure your hardware and be installed.</p>
+<p>After you accept General Public License (GPL), and please read it as it guarantees <strong>your freedom</strong>, you can start installation steps, where you can choose which disk/partition to use, your username/password etc. then Pardus will be configure your hardware and be installed.</p>
 <p>We strongly suggest you to backup your data before starting.</p>
-<p>If you are ready just hit the Next button... Oh wait! Did you <strong>read</strong> and accept the General Public License? Please do it, that's the warranty of your freedom!</p>
 </font>
 """)
 
