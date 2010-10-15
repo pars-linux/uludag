@@ -36,16 +36,20 @@ class AppInfo(object):
     """
 
     def __getattribute__(self, name):
-        if object.__getattribute__(self, '_sq') or \
-                name in ('createDB', 'initializeDB'):
-            return object.__getattribute__(self, name)
-        return lambda:(False, 'Initialize a DB first')
+        if name in object.__getattribute__(self, '_dbcrm'):
+            if not object.__getattribute__(self, '_sq'):
+                return lambda *x:(False, 'Initialize a DB first')
+        return object.__getattribute__(self, name)
 
     def __init__(self, pm):
         """ Initialize with given PMS (Package Management System) """
 
         if not pm in backends.known_pms:
             raise Exception('Selected PMS (%s) is not available yet.' % pm)
+
+        # Database Connection Required Methods
+        # Adding a method to this list, makes it in db connection check
+        self._dbcrm = ['getPackagesFromDB', 'commitDB']
 
         self.config = config.Config()
         self._pm = backends.known_pms[pm]()

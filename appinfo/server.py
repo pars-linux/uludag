@@ -35,8 +35,11 @@ class AppInfoServer(AppInfo):
 
     """
 
-    def __init__(self, pm):
+    def __init__(self, pm = 'pisi'):
         AppInfo.__init__(self, pm)
+        self._dbcrm.extend(['updatePackageList',
+                            'updatePackageScore',
+                            'resetPackageScores'])
 
     def createDB(self, db='appinfo.db', force=False):
         """ Create given database """

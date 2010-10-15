@@ -16,8 +16,8 @@ from client import AppInfoClient
 
 if __name__ == '__main__':
 
-    server = AppInfoServer('pisi')
-    client = AppInfoClient('pisi')
+    server = AppInfoServer()
+    client = AppInfoClient()
 
     print
     print ' - Trying to create db:'
@@ -44,4 +44,21 @@ if __name__ == '__main__':
     print ' - Trying to get score for package "yali":'
     print '   ', client.getPackageScore('yali')
     print
-
+    print ' - Get AppInfo Client dir:'
+    print '   ', client.path
+    print
+    print ' - Remote Server Test'
+    print '   ------------------'
+    print
+    print ' - Trying to set server as "http://cekirdek.pardus.org.tr/~gokmen/":'
+    print '   ', client.setServer('http://cekirdek.pardus.org.tr/~gokmen/')
+    print
+    print ' - Trying to check out DB from server:'
+    print '   ', client.checkOutDB()
+    print
+    print ' - Trying to get score for package "yali":'
+    print '   ', client.getPackageScore('yali')
+    print
+    print ' - Trying to get score for package "package-manager":'
+    print '   ', client.getPackageScore('package-manager')
+    print
