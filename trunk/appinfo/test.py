@@ -11,8 +11,8 @@
 # Please read the COPYING file.
 #
 
-from appinfo import AppInfoServer
-from appinfo import AppInfoClient
+from server import AppInfoServer
+from client import AppInfoClient
 
 if __name__ == '__main__':
 
@@ -44,3 +44,4 @@ if __name__ == '__main__':
     print ' - Trying to get score for package "yali":'
     print '   ', client.getPackageScore('yali')
     print
+
