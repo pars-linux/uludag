@@ -1,0 +1,13 @@
+- Implement an lxc option which will:
+    - Copy the /etc/localtime under the guest rootfs
+    - Symlink /etc/mtab to /proc/mounts
+
+- Add a specified user into the installation
+
+- Install buildfarm optionally
+
+- --network=192.168.3.23:255.255.255.0:192.168.3.1
+
+- -d, --dest-dir
+- -r, --release={2011,corporate2}
+- -a, --architecture={x86_64,i686}
