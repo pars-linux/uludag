@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 # Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
@@ -17,64 +17,90 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
-msgid "Kaptan"
-msgstr "Kaptan"
+#: .tmp/ui_ui_scrNetwork.py:105
+msgid "Network"
+msgstr "Nätverk"
 
-#: .tmp/kaptan.desktop.in.h:2
-msgid "Welcome Wizard"
-msgstr "Välkomstguide"
+#: .tmp/ui_ui_scrNetwork.py:106
+msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+msgstr "För att skapa en ny anslutning klickar du på <b>Skapa profil</b> och välj din adapter ur listan. Om din anslutning är trådlös väljer du också en accesspunkt. Efter det att du har sparat din profil, klicka i kryssrutan för att etablera anslutningen."
 
-#: .tmp/ui_ui_kaptan.py:329
-#, fuzzy
-msgid "Welcome to Pardus"
-msgstr "Välkommen till %s"
+#: .tmp/ui_ui_scrNetwork.py:107
+msgid "Network Manager (Press Apply to save your settings)"
+msgstr "Nätverkshanteraren (Tryck Verkställ för att spara dina inställningar)"
 
-#: .tmp/ui_ui_kaptan.py:330
-msgid "Cancel"
-msgstr "Avbryt"
+#: .tmp/ui_ui_scrSearch.py:95
+msgid "Search"
+msgstr "Sök"
 
-#: .tmp/ui_ui_kaptan.py:331
-msgid "Back"
-msgstr "Bakåt"
+#: .tmp/ui_ui_scrSearch.py:96
+msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
+msgstr "Strigi skrivbordssökning indexerar dina mest använda filer. Det ger dig ett mycket snabbt filsökningsresultat. Strigi kan också söka filer beroende på deras innehåll."
 
-#: .tmp/ui_ui_kaptan.py:332
-msgid "Next"
-msgstr "Nästa"
+#: .tmp/ui_ui_scrSearch.py:97
+msgid "Allow Strigi to index my files"
+msgstr "Tillåt Strigi att indexera mina filer"
 
-#: .tmp/ui_ui_kaptan.py:333
-msgid "Finish"
-msgstr "Avsluta"
+#: .tmp/ui_ui_scrSearch.py:98
+msgid "Search Options"
+msgstr "Sökinställningar"
 
-#: .tmp/ui_ui_kaptan.py:334
-msgid "Apply Settings"
-msgstr "Verkställ"
+#: .tmp/ui_ui_scrKeyboard.py:88
+msgid "Keyboard"
+msgstr "Tangentbord"
 
-#: .tmp/ui_ui_scrAvatar.py:239 .tmp/ui_ui_scrStyleItem.py:65
-#: .tmp/ui_ui_wallpaperItem.py:68
+#: .tmp/ui_ui_scrKeyboard.py:89
+msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
+msgstr "Kaptan väljer automatiskt bästa teckenuppsättning baserat på ditt systemspråk. Om du vill använda en annan kan du göra ditt val och testa det direkt."
+
+#: .tmp/ui_ui_scrKeyboard.py:90
+msgid "Test Layout"
+msgstr "Testa layout"
+
+#: .tmp/ui_ui_scrWallpaper.py:126
+msgid "Wallpaper"
+msgstr "Skrivbordsunderlägg"
+
+#: .tmp/ui_ui_scrWallpaper.py:127
+msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr "Välj ditt favoritskrivbordsunderlägg till Pardus. Kom ihåg att kontrollera <b>Skrivbordsinställningarna</b> för hämtning av nya tuffa bilder."
+
+#: .tmp/ui_ui_scrWallpaper.py:128
+msgid "Wallpapers"
+msgstr "Skrivbordsunderlägg"
+
+#: .tmp/ui_ui_scrWallpaper.py:130
+msgid "Choose wallpaper from file"
+msgstr "Välj skrivbordsunderlägg från en fil"
+
+#: .tmp/ui_ui_scrWallpaper.py:131
+msgid "Don't change wallpaper"
+msgstr "Ändra inte skrivbordsunderlägg"
+
+#: .tmp/ui_ui_scrSummary.py:79
+msgid "Summary"
+msgstr "Sammanställning"
+
+#: .tmp/ui_ui_scrSummary.py:80
+msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
+msgstr "Du har nu framgångsrikt fullföljt alla steg. Här är en sammanställning över de inställningar du valt, klicka <b>Nästa</b> för att spara dem. Du är nu redo för att ha roligt med Pardus."
+
+#: .tmp/ui_ui_scrSummary.py:81
+msgid "The following settings will be applied"
+msgstr "Följande inställningar kommer att tillämpas"
+
+#: .tmp/ui_ui_wallpaperItem.py:68 .tmp/ui_ui_scrAvatar.py:239
+#: .tmp/ui_ui_scrStyleItem.py:65
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_ui_scrAvatar.py:240
-msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
-msgstr ""
+#: .tmp/ui_ui_wallpaperItem.py:69
+msgid "wallPaperName"
+msgstr "wallPaperName"
 
-#: .tmp/ui_ui_scrAvatar.py:241
-msgid "Options"
-msgstr ""
-
-#: .tmp/ui_ui_scrAvatar.py:242
-#, fuzzy
-msgid "Choose an image"
-msgstr "Välj ett skrivbordsunderlägg"
-
-#: .tmp/ui_ui_scrAvatar.py:243
-msgid "Capture"
-msgstr ""
-
-#: .tmp/ui_ui_scrAvatar.py:244
-msgid "Recapture"
-msgstr ""
+#: .tmp/ui_ui_wallpaperItem.py:70
+msgid "wallpaperDesc"
+msgstr "wallpaperDesc"
 
 #: .tmp/ui_ui_scrGoodbye.py:407
 msgid "More"
@@ -117,42 +143,6 @@ msgstr "Hjälp och stöd"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Pardus gemenskap, sändlistor, IRC-kanaler, Wikis och hjälpsidor..."
 
-#: .tmp/ui_ui_scrKeyboard.py:88
-msgid "Keyboard"
-msgstr "Tangentbord"
-
-#: .tmp/ui_ui_scrKeyboard.py:89
-msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan väljer automatiskt bästa teckenuppsättning baserat på ditt systemspråk. Om du vill använda en annan kan du göra ditt val och testa det direkt."
-
-#: .tmp/ui_ui_scrKeyboard.py:90
-msgid "Test Layout"
-msgstr "Testa layout"
-
-#: .tmp/ui_ui_scrMenu.py:118
-msgid "Menu"
-msgstr "Meny"
-
-#: .tmp/ui_ui_scrMenu.py:119
-msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "Du kan också anpassa din <b>KDE-meny</b> som du vill. Välj en av följande stilar."
-
-#: .tmp/ui_ui_scrMenu.py:120
-msgid "Kick-off Menu"
-msgstr "Kick-off-menyn"
-
-#: .tmp/ui_ui_scrMenu.py:121
-msgid "Simple Menu"
-msgstr "Enkel meny"
-
-#: .tmp/ui_ui_scrMenu.py:122
-msgid "Lancelot Menu"
-msgstr "Menyn Lancelot"
-
-#: .tmp/ui_ui_scrMenu.py:123
-msgid "Sample"
-msgstr "Smakprov"
-
 #: .tmp/ui_ui_scrMouse.py:198
 msgid "Mouse"
 msgstr "Mus"
@@ -189,17 +179,41 @@ msgstr "Vänsterhänt"
 msgid "Reverse scrolling"
 msgstr "Omvänd rullningsriktning"
 
-#: .tmp/ui_ui_scrNetwork.py:105
-msgid "Network"
-msgstr "Nätverk"
+#: .tmp/ui_ui_scrStyle.py:164
+msgid "Themes"
+msgstr "Tema"
 
-#: .tmp/ui_ui_scrNetwork.py:106
-msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-msgstr "För att skapa en ny anslutning klickar du på <b>Skapa profil</b> och välj din adapter ur listan. Om din anslutning är trådlös väljer du också en accesspunkt. Efter det att du har sparat din profil, klicka i kryssrutan för att etablera anslutningen."
+#: .tmp/ui_ui_scrStyle.py:165
+msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
+msgstr "Välj ditt favorittema och skrivbordstyp. Anpassa Pardus med färgstarka stilar och teman."
 
-#: .tmp/ui_ui_scrNetwork.py:107
-msgid "Network Manager (Press Apply to save your settings)"
-msgstr "Nätverkshanteraren (Tryck Verkställ för att spara dina inställningar)"
+#: .tmp/ui_ui_scrStyle.py:166
+msgid "KDE Themes"
+msgstr "KDE-teman"
+
+#: .tmp/ui_ui_scrStyle.py:167
+msgid "Desktop Type"
+msgstr "Skrivbordstyp"
+
+#: .tmp/ui_ui_scrStyle.py:168
+msgid "Desktop view (KDE4 Style)"
+msgstr "Skrivbordsvy (KDE4-stil)"
+
+#: .tmp/ui_ui_scrStyle.py:169
+msgid "Folder view (KDE3 Style)"
+msgstr "Katalogvy (KDE3-stil)"
+
+#: .tmp/ui_ui_scrStyle.py:170
+msgid "Number of Desktops"
+msgstr "Antal skrivbord"
+
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_ui_kaptan.py:328
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Välkomstguide"
 
 #: .tmp/ui_ui_scrPackage.py:187
 msgid "Packages"
@@ -236,23 +250,6 @@ msgstr "Uppdateringar"
 #: .tmp/ui_ui_scrPackage.py:195
 msgid "Repositories"
 msgstr "Förråd"
-
-#: .tmp/ui_ui_scrSearch.py:95
-msgid "Search"
-msgstr "Sök"
-
-#: .tmp/ui_ui_scrSearch.py:96
-msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr "Strigi skrivbordssökning indexerar dina mest använda filer. Det ger dig ett mycket snabbt filsökningsresultat. Strigi kan också söka filer beroende på deras innehåll."
-
-#: .tmp/ui_ui_scrSearch.py:97
-msgid "Allow Strigi to index my files"
-msgstr "Tillåt Strigi att indexera mina filer"
-
-#: .tmp/ui_ui_scrSearch.py:98
-#, fuzzy
-msgid "Search Options"
-msgstr "Sökinställningar"
 
 #: .tmp/ui_ui_scrSmolt.py:148
 msgid "Smolt"
@@ -292,33 +289,49 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" font-size:9pt;\">  In Pardus's smolt install all web traffic goes through a proxy server first.  This is the only place IP addresses are being logged and they are kept on that server for a period of 4 weeks at which time log rotation removes these logs.  The Pardus Project does not aggregate ip addresses in the smolt database.  These logs are private and will not be available to the general public.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Users unhappy with this policy should simply not use smolt.  Users with questions about this policy should contact the Pardus Infrastructure Team at admin [at] pardus.org.tr  Also remember that users can delete their profiles at any time using &quot;</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span></p></body></html>"
 
-#: .tmp/ui_ui_scrStyle.py:164
-msgid "Themes"
-msgstr "Tema"
+#: .tmp/ui_ui_scrAvatar.py:240
+msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
+msgstr ""
 
-#: .tmp/ui_ui_scrStyle.py:165
-msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
-msgstr "Välj ditt favorittema och skrivbordstyp. Anpassa Pardus med färgstarka stilar och teman."
+#: .tmp/ui_ui_scrAvatar.py:241
+msgid "Options"
+msgstr ""
 
-#: .tmp/ui_ui_scrStyle.py:166
-msgid "KDE Themes"
-msgstr "KDE-teman"
+#: .tmp/ui_ui_scrAvatar.py:242
+msgid "Choose an image"
+msgstr "Välj en bild"
 
-#: .tmp/ui_ui_scrStyle.py:167
-msgid "Desktop Type"
-msgstr "Skrivbordstyp"
+#: .tmp/ui_ui_scrAvatar.py:243
+msgid "Capture"
+msgstr "Fånga"
 
-#: .tmp/ui_ui_scrStyle.py:168
-msgid "Desktop view (KDE4 Style)"
-msgstr "Skrivbordsvy (KDE4-stil)"
+#: .tmp/ui_ui_scrAvatar.py:244
+msgid "Recapture"
+msgstr "Fånga på nytt"
 
-#: .tmp/ui_ui_scrStyle.py:169
-msgid "Folder view (KDE3 Style)"
-msgstr "Katalogvy (KDE3-stil)"
+#: .tmp/ui_ui_kaptan.py:329
+msgid "Welcome to Pardus"
+msgstr "Välkommen till Pardus"
 
-#: .tmp/ui_ui_scrStyle.py:170
-msgid "Number of Desktops"
-msgstr "Antal skrivbord"
+#: .tmp/ui_ui_kaptan.py:330
+msgid "Cancel"
+msgstr "Avbryt"
+
+#: .tmp/ui_ui_kaptan.py:331
+msgid "Back"
+msgstr "Bakåt"
+
+#: .tmp/ui_ui_kaptan.py:332
+msgid "Next"
+msgstr "Nästa"
+
+#: .tmp/ui_ui_kaptan.py:333
+msgid "Finish"
+msgstr "Avsluta"
+
+#: .tmp/ui_ui_kaptan.py:334
+msgid "Apply Settings"
+msgstr "Verkställ"
 
 #: .tmp/ui_ui_scrStyleItem.py:66
 msgid "styleName"
@@ -328,37 +341,29 @@ msgstr "styleName"
 msgid "styleDesc"
 msgstr "styleDesc"
 
-#: .tmp/ui_ui_scrSummary.py:79
-msgid "Summary"
-msgstr "Sammanställning"
+#: .tmp/ui_ui_scrMenu.py:118
+msgid "Menu"
+msgstr "Meny"
 
-#: .tmp/ui_ui_scrSummary.py:80
-msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
-msgstr "Du har nu framgångsrikt fullföljt alla steg. Här är en sammanställning över de inställningar du valt, klicka <b>Nästa</b> för att spara dem. Du är nu redo för att ha roligt med Pardus."
+#: .tmp/ui_ui_scrMenu.py:119
+msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
+msgstr "Du kan också anpassa din <b>KDE-meny</b> som du vill. Välj en av följande stilar."
 
-#: .tmp/ui_ui_scrSummary.py:81
-msgid "The following settings will be applied"
-msgstr "Följande inställningar kommer att tillämpas"
+#: .tmp/ui_ui_scrMenu.py:120
+msgid "Kick-off Menu"
+msgstr "Kick-off-menyn"
 
-#: .tmp/ui_ui_scrWallpaper.py:126
-msgid "Wallpaper"
-msgstr "Skrivbordsunderlägg"
+#: .tmp/ui_ui_scrMenu.py:121
+msgid "Simple Menu"
+msgstr "Enkel meny"
 
-#: .tmp/ui_ui_scrWallpaper.py:127
-msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Välj ditt favoritskrivbordsunderlägg till Pardus. Kom ihåg att kontrollera <b>Skrivbordsinställningarna</b> för hämtning av nya tuffa bilder."
+#: .tmp/ui_ui_scrMenu.py:122
+msgid "Lancelot Menu"
+msgstr "Menyn Lancelot"
 
-#: .tmp/ui_ui_scrWallpaper.py:128
-msgid "Wallpapers"
-msgstr "Skrivbordsunderlägg"
-
-#: .tmp/ui_ui_scrWallpaper.py:130
-msgid "Choose wallpaper from file"
-msgstr "Välj skrivbordsunderlägg från en fil"
-
-#: .tmp/ui_ui_scrWallpaper.py:131
-msgid "Don't change wallpaper"
-msgstr "Ändra inte skrivbordsunderlägg"
+#: .tmp/ui_ui_scrMenu.py:123
+msgid "Sample"
+msgstr "Smakprov"
 
 #: .tmp/ui_ui_scrWelcome.py:72
 msgid "Welcome"
@@ -371,14 +376,6 @@ msgstr "Vad är Pardus?"
 #: .tmp/ui_ui_scrWelcome.py:74
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
 msgstr "<b>Pardus</b> är ett pålitligt, säkert, snabbt och användarvänligt operativsystem.  <br /><br />Med Pardus kan du enkelt surfa, eposta, använda kontorsprogram, se filmer, spela musik, utveckla program, spela spel och mycket mer! <br /><br /> <b>Kaptan</b> låter dig enkelt och snabbt anpassa Pardus för att möta dina behov. Klicka <b>Nästa</b> för att börja."
-
-#: .tmp/ui_ui_wallpaperItem.py:69
-msgid "wallPaperName"
-msgstr "wallPaperName"
-
-#: .tmp/ui_ui_wallpaperItem.py:70
-msgid "wallpaperDesc"
-msgstr "wallpaperDesc"
 
 #~ msgid "Kaptan Desktop"
 #~ msgstr "Kaptan Skrivbord"
@@ -973,6 +970,5 @@ msgstr "wallpaperDesc"
 #~ msgid "Keyboard Layout Language"
 #~ msgstr "Tangentbordsspråk"
 
-#, fuzzy
 #~ msgid "Welcome to Pardus 2011 Alpha 1"
 #~ msgstr "Välkommen till Pardus 2009.2"
