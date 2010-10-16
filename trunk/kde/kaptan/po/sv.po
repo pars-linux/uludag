@@ -295,7 +295,7 @@ msgstr ""
 
 #: .tmp/ui_ui_scrAvatar.py:241
 msgid "Options"
-msgstr ""
+msgstr "Alternativ"
 
 #: .tmp/ui_ui_scrAvatar.py:242
 msgid "Choose an image"
