@@ -22,27 +22,27 @@ msgstr "Настройка параметров"
 #: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
 msgid "Welcome to Migration Tool Wizard :)"
-msgstr "Вас приветствует Мастем Миграции :)"
+msgstr "Вас приветствует Мастер Миграции :)"
 
 #: .tmp/ScrOptions.py:61
 msgid "Keep current wallpaper"
-msgstr ""
+msgstr "Сохранить текущие обои рабочего стола"
 
 #: .tmp/ScrOptions.py:63
 msgid "Don't use wallpaper"
-msgstr "Не использовать обои"
+msgstr "Не использовать обои рабочего стола"
 
 #: .tmp/ScrOptions.py:64
 msgid "Does not change your wallpaper."
-msgstr ""
+msgstr "Не изменит ваши обои рабочего стола."
 
 #: .tmp/ScrOptions.py:84
 msgid "Use my old wallpaper"
-msgstr "Использовать старые обои"
+msgstr "Использовать старые обои рабочего стола"
 
 #: .tmp/ScrOptions.py:85
 msgid "Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr ""
+msgstr "Копирует ваши старые обои рабочего стола и установит их как новые в Pardus."
 
 #: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
@@ -54,7 +54,7 @@ msgstr "Firefox Закладки"
 
 #: .tmp/ScrOptions.py:107
 msgid "Copies your old Firefox bookmarks to Firefox under Pardus."
-msgstr ""
+msgstr "Копирует ваши закладки Firefox в Firefox в Pardus."
 
 #: .tmp/ScrOptions.py:116
 msgid "Opera Bookmarks"
@@ -62,7 +62,7 @@ msgstr "Opera Закладки"
 
 #: .tmp/ScrOptions.py:118
 msgid "Copies your old Opera bookmarks to Firefox under Pardus."
-msgstr ""
+msgstr "Копирует ваши закладки в Opera и сохранит их как закладки в Firefox в Pardus."
 
 #: .tmp/ScrOptions.py:127
 msgid "Internet Explorer favorites"
@@ -70,7 +70,7 @@ msgstr "Internet Explorer избранноe"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
-msgstr ""
+msgstr "Копирует ваше Избранное в Internet Explorer и сохранит их как закладки в Firefox в Pardus."
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
@@ -82,7 +82,7 @@ msgstr "Windows Mail аккаунты"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
 msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
-msgstr ""
+msgstr "Копирует ваши старые адресные книги и подключения к новостным группам в KMail и KNode."
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
@@ -90,11 +90,11 @@ msgstr "Thunderbird акаунты"
 
 #: .tmp/ScrOptions.py:168
 msgid "Copy e-mail messages from e-mail accounts"
-msgstr ""
+msgstr "Скопировать сообщения электронной почты"
 
 #: .tmp/ScrOptions.py:170
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr ""
+msgstr "Копирует ваши сообщения электронной почты из выбранных."
 
 #: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
@@ -106,7 +106,7 @@ msgstr "MSN аккаунты"
 
 #: .tmp/ScrOptions.py:192
 msgid "Copies your MSN Messenger accounts to Kopete."
-msgstr ""
+msgstr "Копирует ваш аккаунт MSN Messenger в Kopete."
 
 #: .tmp/ScrOptions.py:201
 msgid "GTalk accounts"
@@ -114,43 +114,43 @@ msgstr "GTalk аккаунты"
 
 #: .tmp/ScrOptions.py:203
 msgid "Copies your GTalk accounts to Kopete."
-msgstr ""
+msgstr "Копирует ваш аккаунт GTalk в Kopete."
 
 #: .tmp/ScrProgress.py:38
 msgid "Please wait while applying changes..."
-msgstr ""
+msgstr "Пожалуйста, подождите пока делаются необходимые изменения..."
 
 #: .tmp/ScrProgress.py:48
 msgid "Prepare: "
-msgstr ""
+msgstr "Подготовить:"
 
 #: .tmp/ScrProgress.py:55
 msgid "Apply: "
-msgstr ""
+msgstr "Применить:"
 
 #: .tmp/ScrProgress.py:112
 msgid "Warning!"
-msgstr ""
+msgstr "Предупреждение!"
 
 #: .tmp/ScrProgress.py:205
 msgid "Applying Changes"
-msgstr ""
+msgstr "Применение изменений"
 
 #: .tmp/ScrProgress.py:244
 msgid "Wallpaper"
-msgstr ""
+msgstr "Обои рабочего стола"
 
 #: .tmp/ScrProgress.py:254
 msgid "Firefox bookmarks could not be loaded."
-msgstr ""
+msgstr "Закладки Firefox не могут быть загружены."
 
 #: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
-msgstr ""
+msgstr "Закладки Firefox загружены."
 
 #: .tmp/ScrProgress.py:266
 msgid "Opera bookmarks could not be loaded."
-msgstr ""
+msgstr "Закладки Opera не могут быть загружены."
 
 #: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
@@ -158,15 +158,15 @@ msgstr "Закладки Opera загруженны."
 
 #: .tmp/ScrProgress.py:278
 msgid "Internet Explorer favorites could not be loaded."
-msgstr ""
+msgstr "Избранное Internet Explorer не может быть загружено."
 
 #: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
-msgstr ""
+msgstr "Избранное Internet Explorer загружено."
 
 #: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
-msgstr ""
+msgstr "Firefox запущен. Пожалуйста, закройте его сначала для продолжения..."
 
 #: .tmp/ScrProgress.py:305
 msgid "Windows Mail accounts could not be loaded."
@@ -210,162 +210,162 @@ msgstr "E-Mail Сообщения"
 
 #: .tmp/ScrProgress.py:369
 msgid "News Accounts"
-msgstr ""
+msgstr "Аккаунты новостей"
 
 #: .tmp/ScrProgress.py:389
 msgid "Desktop Links"
-msgstr ""
+msgstr "Ссылки на рабочем столе"
 
 #: .tmp/ScrProgress.py:396
 #, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
-msgstr ""
+msgstr "Папка '%s' не может быть создана, пожалуйста выберете другую папку!"
 
 #: .tmp/ScrProgress.py:400
 #, python-format
 msgid "You don't have permission to write to folder '%s', please choose another folder!"
-msgstr ""
+msgstr "У вас недостаточно прав для записи в папку '%s', пожалуйста выберете другую папку!"
 
 #: .tmp/ScrProgress.py:411
 #, python-format
 msgid "Total size of files you've selected is %(size)d MB, but you have only %(free)d MB of free space!"
-msgstr ""
+msgstr "Суммарный размер выбранных файлов %(size)d Mб, а  у вас только %(free)d Mб свободного места!"
 
 #: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
-msgstr ""
+msgstr "Обои рабочего стола изменены"
 
 #: .tmp/ScrProgress.py:438
 msgid "Bookmarks saved."
-msgstr ""
+msgstr "Закладки сохранены."
 
 #: .tmp/ScrProgress.py:450
 msgid "Mail Accounts saved."
-msgstr ""
+msgstr "Адреса электронной почты сохранены."
 
 #: .tmp/ScrProgress.py:462
 msgid "Accounts saved."
-msgstr ""
+msgstr "Аккаунты сохранены."
 
 #: .tmp/ScrProgress.py:473
 msgid "News Accounts saved."
-msgstr ""
+msgstr "Аккаунты новостей сохранены."
 
 #: .tmp/ScrProgress.py:484
 msgid "Instant Messenger Accounts saved."
-msgstr ""
+msgstr "Аккаунты клиентов обмена мгновенными сообщениями сохранены."
 
 #: .tmp/ScrProgress.py:493
 #, python-format
 msgid "Link '%s' created."
-msgstr ""
+msgstr "Ссылка '%s' создана."
 
 #: .tmp/ScrProgress.py:506
 msgid "Nothing done, because no option selected. You can close the wizard..."
-msgstr ""
+msgstr "Ничего не сделано, потому что ничего не выбрано. Можно закрывать приложение."
 
 #: .tmp/ScrProgress.py:508
 msgid "All operations completed. You can close the wizard..."
-msgstr ""
+msgstr "Все операции выполнены. Можно закрывать приложение."
 
 #: .tmp/ScrSummary.py:25 .tmp/ui_summaryWidget.py:54
 msgid "Summary"
-msgstr ""
+msgstr "Итог"
 
 #: .tmp/ScrSummary.py:42
 msgid "User Settings"
-msgstr ""
+msgstr "Установки пользователя"
 
 #: .tmp/ScrSummary.py:43
 #, python-format
 msgid "Selected User: <b>%s</b>"
-msgstr ""
+msgstr "Выбранный пользователь: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:47
 msgid "Options Settings"
-msgstr ""
+msgstr "Установки настроек"
 
 #: .tmp/ScrSummary.py:49
 msgid "Option %1 : <b>%2</b>"
-msgstr ""
+msgstr "Установка %1 : <b>%2</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
-msgstr ""
+msgstr "Установки места назначения"
 
 #: .tmp/ScrSummary.py:57
 #, python-format
 msgid "Linked Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Прилинкованное место назначения: <b> %s </b>"
 
 #: .tmp/ScrSummary.py:59
 #, python-format
 msgid "Copied Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Скопированное место назначения: <b> %s </b>"
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
-msgstr ""
+msgstr "Выбор файлов"
 
 #: .tmp/ScrUserFiles.py:177
 msgid "My Documents"
-msgstr ""
+msgstr "Мои документы"
 
 #: .tmp/ScrUserFiles.py:178
 msgid "Desktop"
-msgstr ""
+msgstr "Рабочий стол"
 
 #: .tmp/ScrUserFiles.py:179
 msgid "My Music"
-msgstr ""
+msgstr "Моя музыка"
 
 #: .tmp/ScrUserFiles.py:180
 msgid "My Pictures"
-msgstr ""
+msgstr "Мои картинки"
 
 #: .tmp/ScrUserFiles.py:181
 msgid "My Video"
-msgstr ""
+msgstr "Мое видео"
 
 #: .tmp/ScrUser.py:65
 msgid "Selecting User"
-msgstr ""
+msgstr "Выбранный пользователь"
 
 #: .tmp/ScrUser.py:66
 msgid "User Profiles"
-msgstr ""
+msgstr "Профили пользователя"
 
 #: .tmp/ScrUser.py:101
 msgid "There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."
-msgstr ""
+msgstr "У вас нет разделов с Microsoft Windows для миграции! Пожалуйста, проверьте примонтированные разделы..."
 
 #: .tmp/ScrUser.py:111
 msgid "There isn't any selected user on User Selection Window!"
-msgstr ""
+msgstr "Нет ни одного выбранного пользователя в Окне выбора пользователей"
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
-msgstr ""
+msgstr "Добро пожаловать"
 
 #: .tmp/ui_main.py:118
 msgid "Migration Tool"
-msgstr ""
+msgstr "Инструмент для миграции"
 
 #: .tmp/ui_main.py:119
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 #: .tmp/ui_main.py:120
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 #: .tmp/ui_main.py:121
 msgid "Next"
-msgstr ""
+msgstr "Далее"
 
 #: .tmp/ui_main.py:122
 msgid "Finish"
-msgstr ""
+msgstr "Завершить"
 
 #: .tmp/ui_summaryWidget.py:55
 msgid ""
@@ -375,42 +375,47 @@ msgid ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Your settings will be applied in next screen...</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Ваши установки будут использованы на следующей странице...</span></p></body></html>"
 
 #: .tmp/ui_userFilesWidget.py:45
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: .tmp/ui_userFilesWidget.py:46
 msgid "Do Nothing"
-msgstr ""
+msgstr "Ничего не делать"
 
 #: .tmp/ui_userFilesWidget.py:47
 msgid "Put links to my desktop"
-msgstr ""
+msgstr "Поставить ссылки на мой рабочий стол"
 
 #: .tmp/ui_userFilesWidget.py:48
 msgid "Copy files to directory :"
-msgstr ""
+msgstr "Скопировать файлы в директорию:"
 
 #: .tmp/ui_userFilesWidget.py:49
 msgid "~/Desktop"
-msgstr ""
+msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
 msgid "Directory"
-msgstr ""
+msgstr "Директория"
 
 #: .tmp/ui_userFilesWidget.py:51
 msgid "Size"
-msgstr ""
+msgstr "Размер"
 
 #: .tmp/ui_usersItemWidget.py:59
 msgid "Set or unset entry as default boot entry."
-msgstr ""
+msgstr "Поставить или не поставить как загрузку по умолчанию"
 
 #: .tmp/ui_usersWidget.py:36
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 #: .tmp/ui_welcomeWidget.py:45
 msgid ""
@@ -418,3 +423,6 @@ msgid ""
 "\n"
 "Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
 msgstr ""
+"Это приложение, под названием Инструмент для Миграции, поможет вам перенести ваши файлы и настройки с другой операционной системы на Pardus. Пожалуйста, нажмите Далее, чтобы перенести файлы. \n"
+"\n"
+"Pardus - это дистрибутив GNU/Linux, предназначенный для того, чтобы удовлетворять все основные запросы пользователя, он поможет вам создать соединение с интернетом, читать электронную почту, работать с документами и так далее."
