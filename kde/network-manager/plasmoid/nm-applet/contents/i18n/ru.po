@@ -2,8 +2,7 @@
 # Copyright (C) YEAR Pardus
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hede\n"
@@ -19,96 +18,96 @@ msgstr ""
 #: code/widgets/configIconui.py:53 code/widgets/configPopupui.py:37
 #: code/widgets/itemui.py:39 code/widgets/popupui.py:151
 msgid "Form"
-msgstr ""
+msgstr "Форма"
 
 #: code/widgets/configIconui.py:54
 msgid "Show connection status"
-msgstr ""
+msgstr "Показать статус соединения"
 
 #: code/widgets/configIconui.py:55
 msgid "Show traffic lights"
-msgstr ""
+msgstr "Показать трафик"
 
 #: code/widgets/configIconui.py:56
 msgid "Update wifi signal quality"
-msgstr ""
+msgstr "Обновить качество WiFi-сигнала"
 
 #: code/widgets/configIconui.py:57
 msgid "Update Interval :"
-msgstr ""
+msgstr "Обновить интервал:"
 
 #: code/widgets/configIconui.py:58
 msgid " sec."
-msgstr ""
+msgstr "сек."
 
 #: code/widgets/configIconui.py:59
 msgid "Dont poll anything while battery is discharging"
-msgstr ""
+msgstr "Не трогайте ничего, пока батарея разряжается"
 
 #: code/widgets/configPopupui.py:38
 msgid "Show all profiles"
-msgstr ""
+msgstr "Показать все профили"
 
 #: code/widgets/configPopupui.py:39
 msgid "Show selected profiles from list"
-msgstr ""
+msgstr "Показать выбранные профили из списка"
 
 #: code/widgets/itemui.py:40
 msgid "PushButton"
-msgstr ""
+msgstr "Кнопка"
 
 #: code/widgets/notify.py:63
 msgid "Network Manager"
-msgstr ""
+msgstr "Network Manager"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
-msgstr ""
+msgstr "Ethernet"
 
 #: code/widgets/popupui.py:153 code/widgets/popupui.py:155
 msgid "Not connected"
-msgstr ""
+msgstr "Нет соединения"
 
 #: code/widgets/popupui.py:154
 msgid "Wireless"
-msgstr ""
+msgstr "Беспроводное"
 
 #: code/widgets/popupui.py:156
 msgid "No profile defined"
-msgstr ""
+msgstr "Не определен профиль"
 
 #: code/widgets/popupui.py:157 code/main.py:116
 msgid "Open Network Manager"
-msgstr ""
+msgstr "Открыть Network Manager"
 
 #: code/main.py:45
 msgid "Connected"
-msgstr ""
+msgstr "Соединено"
 
 #: code/main.py:48 code/main.py:292 code/main.py:301
 msgid "Disconnected"
-msgstr ""
+msgstr "Разъединено"
 
 #: code/main.py:51
 msgid "Connecting"
-msgstr ""
+msgstr "Соединяется"
 
 #: code/main.py:88
 msgid "Click here to show connections.."
-msgstr ""
+msgstr "Нажмите здесь, чтобы показать соединения"
 
 #: code/main.py:253
 msgid "Unknown"
-msgstr ""
+msgstr "Неизвестно"
 
 #: code/main.py:264
 msgid "Connected to <b>%1</b> %2"
-msgstr ""
+msgstr "Соединено с  <b>%1</b> %2"
 
 #: code/main.py:279
 msgid "Connecting to <b>%1</b> .."
-msgstr ""
+msgstr "Устанавливается соединение с <b>%1</b> .."
 
 #: code/main.py:343
 msgid "Icon Settings"
-msgstr ""
+msgstr "Установки значков"
