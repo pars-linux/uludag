@@ -101,6 +101,8 @@ def process_modules(options, message, children):
     """
         Processes all Python modules' specified method.
 
+        If method is forked, process is added to "children" list.
+
         Args:
             options: Options
             message: Message object
