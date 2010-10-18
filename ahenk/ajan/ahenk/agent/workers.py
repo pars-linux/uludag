@@ -54,11 +54,11 @@ def worker_applier(options, q_in, q_out):
 
             "children" list is filled by process_modules method.
         """
-        try:
-            for proc in children:
+        for proc in children:
+            try:
                 proc.terminate()
-        except (OSError, AttributeError):
-            pass
+            except (OSError, AttributeError):
+                pass
 
     # Register handler for interrupt signals
     signal.signal(signal.SIGINT, signal_handler)
