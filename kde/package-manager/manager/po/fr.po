@@ -332,7 +332,7 @@ msgstr "Désinstaller le(s) paquet(s)"
 
 #: src/statemanager.py:100
 msgid "Upgrade Package(s)"
-msgstr "Mettre-à-jour le(s) paquet(s)"
+msgstr "Mettre à jour les paquets "
 
 #: src/statemanager.py:101
 msgid "Modify Package(s)"
