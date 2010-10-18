@@ -114,7 +114,7 @@ def process_modules(options, message, children):
             locals = compile_module(filename)
             if "process" in locals:
                 if locals.get("forkProcess", False):
-                    proc = Process(target=locals["process"], args=(message,))
+                    proc = Process(target=locals["process"], args=(message, options.dryrun))
                     children.append(proc)
                     proc.start()
                 else:
