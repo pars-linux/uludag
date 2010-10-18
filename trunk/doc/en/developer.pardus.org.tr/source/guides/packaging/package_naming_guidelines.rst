@@ -170,6 +170,17 @@ Example::
 
     cursor-theme-oxygen-zion: Oxygen Zion cursor theme
 
+Django Modules
+==============
+
+The rules for Python packages do not apply for Django modules. These packages
+must have a "django-" prefix in their names.
+
+Example::
+
+    django-tagging:     Tagging module for Django
+
+
 Fonts
 =====
 
@@ -279,14 +290,43 @@ Example::
 Python Modules
 ==============
 
-Python packages must have a prefix of "python-" in their names even if their
-name include "py" sub-string. If the package is for Python3, "python3-" prefix
-must be used instead.
+If the upstream name includes the word "python", the package name is not
+changed.
 
 Examples::
 
-    python-PyQt:        Python bindings for Qt
-    python3-pyliblzma:  Python3 bindings for liblzma
+    dbus-python:            Python bindings for dbus
+    gnome-python-desktop:   Python bindings for GNOME desktop libraries
+
+If the upstream name does not include the word "python" and the project is a
+binding of another library, the library name with the prefix "python-" is
+used as the package name. In this case, the upstream name must be included
+in the package summary and description.
+
+Examples::
+
+    python-gtk:     Python bindings for GTK (pygtk)
+    python-qt:      Python bindings for Qt (PyQt)
+
+When the name does not comply with the rules above, "python-" prefix must be
+added to the upstream name.
+
+Examples::
+
+    python-numpy:       The fundamental package needed for scientific computing
+                        with Python
+    python-FormEncode:  A validation and form generation package for Python
+    python-pyaspects:   Aspect-Oriented development for Python
+
+For modules built for Python3, "python3" must be used instead of the word
+"python".
+
+Examples::
+
+    dbus-python3:           Python3 bindings for dbus
+    gnome-python3-desktop:  Python3 bindings for GNOME desktop libraries
+    python3-liblzma:        Python3 bindings for liblzma (pyliblzma)
+
 
 R Modules
 =========
