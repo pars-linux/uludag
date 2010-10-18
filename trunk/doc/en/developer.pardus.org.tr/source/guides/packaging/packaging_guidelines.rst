@@ -1,0 +1,480 @@
+.. _packaging-guidelines:
+
+Packaging Guidelines
+====================
+
+During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
+
+Please remember that any package that you submit must also conform to the Review Guidelines.
+
+Naming
+------
+
+You should go through the :ref:`package-naming` to ensure that your package is named appropriately.
+
+Binary Package Naming
+---------------------
+
+The proper way to use the Version and Release fields can be found here: :ref:`binary-package-naming`.
+
+Legal
+-----
+
+Legal concerns about Pardus Linux Distribution package licensing can be found below.
+
+Licensing
+^^^^^^^^^
+
+You should review :ref:`licensing-guidelines` to ensure that your package is licensed appropriately.
+
+Proprietary Dependencies for Package
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Some software depends on other software. These dependencies sometimes can be non-free, legally unacceptable, or binary only (with the exception of permissible firmware), then they are not acceptable for the distribution, depending on this the dependent software is also inacceptable.
+
+Pre-built binaries or libraries not allowed
+-------------------------------------------
+
+Every package has a source code and all program binaries and program libraries included in packages must be built from source code.
+
+This is a requirement for the following reasons:
+
+    #. The libraries and binaries that are not built from the source code can be a security concern. The patching of these files is also inacceptable.
+    #. If these packages compiled also from the source code, these compiled ones should be taken, the ancient ones probably are not compatible with security and optimization rules that are produces with Pardus standart flags.
+
+        The above can be helpful in order to say a file is library or binary:
+
+        #. Is it executable? If so, it is probably a program binary.
+        #. Does it contain a .so, ,so.#, or .so.#.#.# extension? If so, it is probably a program library.
+        #. If in doubt, ask the reviewer.
+
+    #. It is not permitted to compile source code has some non-open source part or it needs a propriatary compiler.
+
+If a prebuilt binary in a package you MUST:
+
+    * Write related code in actions.py in order to remove all these pre-built program binaries and program libraries. Examples include, but are not limited to, .class, .dll, .DS_Store, .exe, .jar, .o, .pyc, .pyo, .egg, .so files.
+    * Ask upstream to remove the binaries in their next release.
+
+Exceptions
+^^^^^^^^^^
+
+    * Some binary firmwares can be used, when it meets the `Licensing Guidelines <http://developer.pardus.org.tr/guides/licensing/licensing_guidelines.html#binary-firmware>`_ requirements.
+    * Content binaries (such as .mo, .pdf, .png, .ps files) are not required to be rebuilt from the source code.
+
+Creating a package from scratch
+-------------------------------
+
+When creating a package from scratch, you should follow the instructions of :ref:`howto-create-pisi-packages`. You should put aside your own experiences about packaging and formats and try to conform to this document as much as possible.
+
+
+Modifying Existing Package
+--------------------------
+
+Modification on packages can exist in such situations: updating, bug fixing, renaming/replacing existing packages etc.
+
+
+During Modifications particularly you should take care:
+
+#. Verify that any source and patches is necessary for the package and applicable.
+#. Verify that existing package licence matches with the current license of the software.
+#. Revise the summary and description for typos and oddities. Look `Summary and Description`_
+#. Control that the current software has new dependencies or ignore ancient ones.
+#. Revise that the package use relevant pisi actionsapi instead of pure python api's. (Look :ref:`actionsapi-index`)
+
+Architecture Support
+--------------------
+
+Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture.
+
+Building Packages
+^^^^^^^^^^^^^^^^^
+
+Pardus Linux Distribution has a build system, buildfarm. Buildfarm is automatically build the pacakages. During building of a package automatically, all type of information send to buildfarm@pardus.org.tr list. These package messages send by its release and architecture types.
+
+Type of massages send:
+
+#. When a package is started to compile
+#. When a package succesfully compiled
+#. When a package does not succesfully compile
+
+
+If a package does not succesfully compile, the error output is given as a link in the message.
+
+
+Filesystem Hierarchy
+--------------------
+
+Pardus Linux Distribution follows `Filesystem Hierarchy Standard <http://www.pathname.com/fhs/>`_ in order to define where files should be placed on the system.
+
+Some exeptions can be found such as "libexec". Any information is given about libexec, but Pardus stores programs that are designed primarily to be run by other programs rather than by users. (exp: /usr/libexec on Pardus)
+
+Package Commit Hook
+-------------------
+
+When a wrong format is used in the pspec.xml file, `package SVN commit hook <http://svn.pardus.org.tr/uludag/trunk/scripts/repokit/src/ismail2.py>`_ captures this error and gives the related warning.
+
+
+Some Errors:
+^^^^^^^^^^^^
+invalid version
+bad release number
+invalid date
+package name has invalid char
+out of order release numbers
+this is a duplicate source package of
+this source has duplicate binary package
+package depends on missing package
+
+
+History Comments
+----------------
+
+Every time you make changes, that means whenever you increment a package release, you must add a history comment. (look :ref:`howto-create-pisi-packages`) The repository commit message  also the same with the history comment. This is important because the other developers and also users can follow the changes.
+
+Therefore there are some restrictions while writing history comments
+
+History comments and commit messages:
+#. Should be in English
+#. Should be short and descriptive
+#. Max 80 character long
+#. If a comment has multi-line description, the format like below:
+
+::
+
+    <Comment>
+        General summary:
+        - description 1
+        - description 2
+        .
+        .
+        .
+    </Comment>
+
+#. If your changes closes or affects bugs of our bugzilla or an external bugzilla, the format like below:
+
+::
+
+    <Comment>
+        - description 1
+        - description 2
+        - Fixes bugs (#9021, #9038, #9020, #4113, #9089, #8811, #8361, #9101, #8845, #8123, #6157, #9156, #9083)
+    </Comment>
+
+
+The bug format changes according to bugzilla source:
+
+    - If the bug is in Pardus Bugzilla, the comments about this bug referenced with only "#" and the bug number.
+    - If the bug is in external bugzillas, the comments contains used bug references of relevant bugzillas:
+        - KDE bugs kde#<bugnumber>
+        - Redhat bugs rhbz#<bugnumber>
+        - SUSE bugs bnc#<bugnumber>
+
+Buildtime Dependencies
+----------------------
+
+In package development and testing, please verify that your package is not missing any necessary build dependencies. Having proper build requirements saves the time of all developers and testers as well as autobuild systems because they will not need to search for missing build requirements manually.
+
+Buildtime dependencies is also important to use programs full-featured. For example, an application special support may be excluded because of an absent build dependency.
+
+The best way to find exact buildtime dependencies is to build the package in a proper system. You can use virtual systems in order to manage proper systems.
+
+Runtime Dependencies
+--------------------
+
+Runtime dependencies is important in order a program run properly. You can check your runtime dependencies with `this script <http://svn.pardus.org.tr/uludag/trunk/scripts/checklib2>`_.  You can find proper runtime dependencies, undefined symbols,  if you run it on a proper system.
+
+You can find the usage from :ref:`checklib`.
+
+.. Fix here with new checklib
+.. You can run this script in the package directory as:
+
+.. ::
+
+..    $ ./checklib x.pisi
+
+Strict Dependencies
+-------------------
+
+Strict dependencies can be needed in some cases:
+
+#. If a package needs a exactly specific version "version" attribute is used.
+
+    **Example:**
+    ::
+
+        <Dependency version="3.1.4">module-virtualbox</Dependency>
+
+#. If a package needs one of the below versions of a package "versionTo" attribute is used. It is generally used for conflicting packages.
+
+    **Example:**
+    ::
+
+         <Conflicts>
+         <!-- /usr/kde/4/share/apps/kdevappwizard/templates/qmake_qt4guiapp.tar.bz2 file is common till 3.9.95 -->
+            <Package versionTo="3.9.94">kdevelop</Package>
+         </Conflicts>
+
+#. If a package needs one of the above versions of a package "versionFrom" attribute is used.
+
+    **Example:**
+    ::
+
+        <Dependency versionFrom="1.0.20">alsa-headers</Dependency>
+
+#. Sometimes "versionFrom", "versionTo" or "version" are not enough for strict dependencies, for example a package needs only a patch in order to depend a package while its version can remain the same. At this time we need to use release numbers:
+    #. If a package needs a exactly specific release "release" attribute is used.
+
+         **Example:**
+         ::
+
+             <Dependency release="130">kernel-module-headers-pae</Dependency>
+
+    #. If a package needs one of the below releases of a package "releaseTo" attribute is used. It is generally used for conflicting packages.
+
+        **Example:**
+        ::
+
+            <Conflicts>
+                <Package releaseTo="5">gwenview-i18n</Package>
+            </Conflicts>
+
+
+    #. If a package needs one of the above releases of a package "releaseFrom" attribute is used.
+
+        **Example:**
+        ::
+
+            <Dependency releaseFrom="27">x264</Dependency>
+
+Any Dependency
+--------------
+
+In some cases the dependency of the package can related to the system, in other words due to some hardware differences package can depend different packages. In these type of cases the <AnyDependency> tag is used  for runtime dependencies in pspec.xml.
+
+**Example:** If the system has a pae support the module-pae-kvm package will be installed, if not module-kvm package will be installed.
+
+    ::
+
+     <AnyDependency>
+         <Dependency>module-kvm</Dependency>
+         <Dependency>module-pae-kvm</Dependency>
+     </AnyDependency>
+
+
+Dependencies Excepted
+---------------------
+
+Generally there are no need to include following dependencies as buildtime dependencies because these packages are considered as minimum build environment:
+
+autoconf
+automake
+binutils
+bison
+catbox
+ccache
+chrpath
+cmake
+dietlibc
+diffstat/
+gcc
+gmp
+gnuconfig
+icecream
+intltool
+klibc
+libpthread-stubs
+libsigsegv
+libtool
+m4
+make
+mpfr
+nasm
+patch
+pkgconfig
+quilt
+scons
+swig
+unifdef
+util-macros
+xcb-proto
+xorg-proto
+xtrans
+yacc
+yasm
+
+But any package above may have a dependency in each other.
+
+Summary and Description
+-----------------------
+
+The summary should be a short and concise description of the package. The summary should not include the name of the package.
+
+Description Hints
+^^^^^^^^^^^^^^^^^
+#. The description expands upon summary.
+#. Do not include installation instructions in the description; it is not a manual.
+#. Please make sure that there are no lines in the description longer than 80 characters.
+
+The description and summary should be in English. Please also include in translations.xml file summary and description translations of other languages supported by Pardus that you know.
+
+Taking SHA-1 Hash
+-----------------
+
+In order to verify integrity of packages, `SHA-1 <http://www.w3.org/PICS/DSig/SHA1_1_0.html>`_ hash is used. This has code is added <Archive> tag in pspec.xml.
+
+In order to take the package hash, we need to download the souce code archive of the package and run the below command:
+
+::
+
+    sha1sum source_code_archive
+
+Documentation
+-------------
+
+Any necessary documentation included in the source package, excluded build instructions, INSTALL file, documentations for non-Linux systems etc. API documentations generally are splitted from the package and get name packagename-devel. Or if there's a lot of documentation, they also are splitted to a new package as packagename-doc.
+
+The documentation files is also placed under "/usr/share/doc/packagename". For some packages the documents are placed under "/usr/share/doc/packagename-version" automatically, you should move these files under "/usr/share/doc/packagename".
+
+.. Compiler Flags
+.. --------------
+
+.. Debuginfo packages
+.. ------------------
+
+.. Shared Libraries
+.. ----------------
+
+.. Static Libraries
+.. ----------------
+
+.. Configuration files
+.. -------------------
+
+.. Initscripts
+.. -----------
+
+Desktop files
+-------------
+
+When a package has a GUI application, then it needs to include a .desktop file. While creating a .desktop file,  please pay attention for correct usage of Name, GenericName, Categories.
+
+.desktop File Format
+^^^^^^^^^^^^^^^^^^^^
+If the pacakge does not have its own .desktop file, you need to make your own. You need to create and put it under "files" directory of the pacakage. The name format of the .desktop will be packagename.desktop. The format is like the below:
+
+::
+
+    [Desktop Entry]
+    Encoding=UTF-8
+    Name=gdpc
+    Comment=Show Molecular Simulations
+    Comment[tr]=Moleküler Simulasyonları Gösterir
+    GenericName= Molecular Simulation Showing Tool
+    GenericName[tr]= Moleküler Simulasyon Aracı
+    Exec=gdpc
+    Icon=gdpc.png
+    StartupNotify=false
+    Terminal=false
+    Type=Application
+    Categories=Qt;KDE;Education;Science;
+
+Add icon and .desktop File as a Additional File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The desktop icon and the .desktop file path should be gived in the pacakge. In Pardus packaging format it can be gived as an additional package in pspec.xml file.
+
+::
+
+    <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/pixmaps/gdpc.png">gdpc.png</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/gdpc.desktop">gdpc.desktop</AdditionalFile>
+    </AdditionalFiles>
+
+
+Handling Locale Files
+---------------------
+
+Packages sometimes include translations. If it has translations in source code by default, it does not need to make additional changes in package scripts. If a package has an external translation file, you need to add it as a patch or additional file. If you add as an additional file, you need to put it the source part in pspec.xml.
+
+Parallel make
+-------------
+
+Parallel make is genereally useful to speed up builds. If you want to build your packages with support parallel make, you need to change the "jobs"  parameter as "-j3" of /etc/pisi/pisi.conf file in your system.
+
+Content of a Package
+--------------------
+
+The contents in the package should enhance the user experience. Therefore fonts, themes, clipart, and wallpaper which are freely distributable, and have not offensive, discriminatory, or derogatory content are allowed.
+
+.. Conflicts
+.. ----------
+
+.. Symlinks
+.. --------
+
+
+Renaming/replacing existing packages
+------------------------------------
+
+Sometimes it is necessary to rename or replace an existing package. The new pacage(s) should make the change without user intervention.
+
+If a package is renamed without any functional changes or pacakge(s) replace with an existing package, the necessary changes should be made on relevant files:
+
+
+    * The pacakge(s) that are not been found after the changes, should be tagged with <Obsolete> in distribution.xml file as below:
+
+    ::
+
+        <!--A comment should be gived for package(s) that removed from repository-->
+        <Package>oldpackage</Package>
+
+    ::
+
+        Example:
+          <!-- Replaced by texlive-core  texlive-latex texlive-latexextra texlive-latexrecommended texlive-omega -->
+          <Package>tetex</Package>
+
+    * The new packages' pspec.xml file should include the old package(s) that are renamed or replaced. The format of this change:
+
+    ::
+
+         <Replaces>
+            <Package>oldpackage</Package>
+            .
+            .
+            .
+         </Replaces>
+
+    ::
+
+        Example:
+         <Replaces>
+            <Package>tetex</Package>
+            <Package>tetex-texmf</Package>
+            <Package>tetex-extra</Package>
+         </Replaces>
+
+Package Setup, Post Install, Post and Pre Remove, Cleanup  and Post Cleanup
+---------------------------------------------------------------------------
+
+Some packages need special operation before or after they installed. Pardus handles this situation with COMAR scripts. There are two scripts used for these operations in pisi packages, (package.py and pakhandler.py)
+
+If the operation effects only a specific package, package.py is used. This script settles down /var/db/comar3/scripts/System.Package. When it recieve an operation about that package, it applies the related operation followed in the script.
+
+
+If an operation effects the packages that installed after a specific package, pakhandler.py is used for that package. This script settles down under /var/db/comar3/scripts/System.PackageHandler and search packages for a specific rule and apply the related operation followed in the script.
+
+
+Operation types:
+^^^^^^^^^^^^^^^^
+
+- setupPackage: Execute package handler setup scripts
+- cleanupPackage: Execute package handler cleanup scripts before installation
+- postcleanupPackage: Execute package handler postcleanup scripts after installation
+- postInstall: Execute post-install script of a package after installation
+- preRemove: Execute pre-remove script of a package before installation
+- postRemove: Execute post-remove script of a package after installation
+
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
