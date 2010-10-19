@@ -224,11 +224,12 @@ class Yali:
         self.info.hide()
 
     def setTime(self, rootWidget):
-        self.info.updateAndShow(_("Adjusting time settings..."))
+        self.info.updateAndShow(_("Adjusting time settings"))
         date = rootWidget.calendarWidget.date()
+        time = rootWidget.timeEdit.time()
         args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
-                                              rootWidget.timeHours.time().hour(), rootWidget.timeMinutes.time().minute(),
-                                              date.year(), rootWidget.timeSeconds.time().second())
+                                              time.hour(), time.minute(),
+                                              date.year(), time.second())
 
         # Set current date and time
         ctx.logger.debug("Date/Time setting to %s" % args)
