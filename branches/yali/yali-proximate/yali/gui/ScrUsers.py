@@ -85,6 +85,8 @@ Proceed with the installation after you make your selections.
                      self.slotRealNameChanged)
         self.connect(self.ui.userID, SIGNAL("valueChanged(int)"),
                      self.slotTextChanged)
+        self.connect(self.ui.userIDCheck, SIGNAL("stateChanged(int)"),
+                     self.slotuserIDCheck)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"),
@@ -195,6 +197,12 @@ Proceed with the installation after you make your selections.
             self.timeLine.setDirection(1)
         if self.ui.scrollArea.height() == 0:
             self.timeLine.setDirection(0)
+
+    def slotuserIDCheck(self, state):
+        if state:
+            self.ui.userID.setEnabled(True)
+        else:
+            self.ui.userID.setEnabled(False)
 
     def slotAdvanced(self):
 
