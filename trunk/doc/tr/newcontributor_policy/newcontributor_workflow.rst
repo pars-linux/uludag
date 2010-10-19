@@ -14,11 +14,11 @@ Bugzilla Katkıcı Adayı Takibi
 
 - Geliştirme veya test alanında katkıcı olabilmek için bu belgeyi takip etmelisiniz.
 - Çevirmenlerin başvuruları `Pardus Çeviri Sitesi <http://translate.pardus.org.tr>`_ üzerinden yapılmaktadır.
-- Bug raporlama ve ayıklama alanında katkı vermek istiyorsanız `http://svn.pardus.org.tr/uludag/trunk/doc/tr/bug_submit_triage`_
-- Belgeleme alanında katkı sağlamak istiyorsanız, `Wiki <http://pardus-wiki.org/>`_ veya `Özgürlük İçin <http://www.ozgurlukicin.com/`_ üzerinden katkı vermeye başlayabilirsiniz.
+- Bug raporlama ve ayıklama alanında katkı vermek istiyorsanız `bugzilla <http://svn.pardus.org.tr/uludag/trunk/doc/tr/bug_submit_triage>`_
+- Belgeleme alanında katkı sağlamak istiyorsanız, `Wiki <http://pardus-wiki.org/>`_ veya `Özgürlük İçin <http://www.ozgurlukicin.com/>`_ üzerinden katkı vermeye başlayabilirsiniz.
 - Tasarım alanında katkı sağlamak istiyorsanız, `Geliştirici Listesi <http://liste.pardus.org.tr/mailman/listinfo/gelistirici>`_ üzerinden bize ulaşabilir ve tasarım ile ilgili duvarkağıdı, simge seti, kullanıcı arayüzü gibi bir çok farklı alanda Pardus için hazırlamış olduğunuz tasarımları paylaşabilirsiniz.
 
-    ..  image:: mentoring.png
+    ..  image:: application_process.png
 
 Süreç:
 ======
@@ -93,6 +93,7 @@ Başvuru Sahibi Gelişimini İzleme
 #. Başvuru sahibi adaylık sürecini geçemez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. (Verilmiş olan tüm izinler geri alınır.) (svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
 #. Başvuru sahibi adaylık sürecini geçer ise:
    #. Mentor adaydan emin olduğunda, mentorluğu bıraktığını bugzilla üzerinden yorum olarak ilan eder ve hatasını KARAR VERİLDİ/ÇÖZÜLDÜ olarak işaretler.
+
         #. Geliştirici olarak kabul edilir
         #. stable dahil tüm svn izinleri verilir.(stable svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
         #. Adaylık sürecinde yapmış olduğu paketler ve diğer işler mentor'undan adaya devredilir.
