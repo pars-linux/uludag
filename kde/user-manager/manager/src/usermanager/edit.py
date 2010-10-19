@@ -61,6 +61,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # List of unavailable nicks
         self.nicklist = []
+        
+        #Remove duplicate shells
+        self.comboShell.setDuplicatesEnabled(False)
 
         # Build policy list
         self.buildPolicies()
@@ -84,23 +87,24 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
         self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
+        self.connect(self.pushAdvanced, QtCore.SIGNAL("clicked()"), self.slotOpenAdvanced)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePasswordAgain, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineHomeDir, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
-        self.connect(self.lineShell, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+        self.connect(self.comboShell, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotShellChanged)
 
     def reset(self):
         self.setId(-1)
         self.setUsername("")
         self.setFullname("")
         self.setHomeDir("")
-        self.setShell("")
         self.setPassword()
         self.lineUsername.setEnabled(True)
         self.lineHomeDir.setEnabled(True)
+        self.groupBox_2.setVisible(False)
 
     def buildPolicies(self):
         self.actionItems = {}
@@ -167,10 +171,10 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         return unicode(self.lineHomeDir.text())
 
     def setShell(self, shell):
-        self.lineShell.setText(unicode(shell))
+        str(self.comboShell.itemData(self.comboShell.currentIndex()).toString())
 
     def getShell(self):
-        return unicode(self.lineShell.text())
+        return str(self.comboShell.itemData(self.comboShell.currentIndex()).toString())
 
     def setPassword(self):
         self.linePassword.setText("")
@@ -217,13 +221,14 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         for action_id in self.actionItems:
             item = self.actionItems[action_id]
             item.setType(0)
+        print "\n Authorizations: %s " %authorizations
         for action_id, scope, description, policy_active, negative in authorizations:
             if action_id in self.actionItems:
                 item = self.actionItems[action_id]
                 if scope == negative:
-                    item.setType(-1)
-                elif scope == polkit.SCOPE_ALWAYS:
                     item.setType(1)
+                elif scope == polkit.SCOPE_ALWAYS:
+                    item.setType(-1)
 
     def slotCheckAuto(self, state):
         if state == QtCore.Qt.Checked:
@@ -231,6 +236,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.spinId.setValue(-1)
         else:
             self.spinId.setEnabled(True)
+
+    def slotOpenAdvanced(self):
+        if self.groupBox_2.isVisible():
+            self.groupBox_2.setVisible(False)
+        else:
+            self.groupBox_2.setVisible(True)
 
     def slotAuth(self):
         if self.radioAuthNo.isChecked():
@@ -315,6 +326,17 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                 item.setCheckState(state)
                 return
 
+    def listShells(self):
+        shells = open('/etc/shells','r') 
+        line = shells.readline()
+        while line :
+            line = shells.readline()
+            self.comboShell.addItem(line)
+        shells.close()
+
+    def slotShellChanged(self):
+        index = self.comboShell.currentIndex()
+
     def checkFields(self, *args):
         err = ""
         i18n = kdecore.i18n
@@ -352,11 +374,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         if err:
             self.labelWarning.setText(u"<font color=red>%s</font>" % err)
             self.labelSign.show()
-            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"), 0)
+            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"),0)
+
         else:
             self.labelWarning.setText("")
             self.labelSign.hide()
-            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"), 1)
+            self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"),1)
 
 class EditGroupWidget(QtGui.QWidget, Ui_EditGroupWidget):
     def __init__(self, parent):
