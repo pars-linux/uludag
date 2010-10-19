@@ -22,5 +22,5 @@ Projects
    service-manager/index.rst
    upgrade-manager/index.rst
    sysinfo/index.rst
-   ptps/ptsp-index.rst
+   ptsp/index.rst
 
