@@ -203,6 +203,8 @@ class Yali:
                                              type="custom", customIcon="error",
                                              customButtons=[_("Go Forward"), _("Reboot")],
                                              default=1)
+                break
+
                 if not rc:
                     ctx.mainScreen.enableBack()
                 else:
@@ -210,10 +212,10 @@ class Yali:
 
 
         if not self.checkCDStop:
-            rootWidget.checkLabel.setText(_('<font color="#FFF"><b>Validation succeeded. You can proceed with the installation.</b></font>'))
+            ctx.yali.info.updateAndShow(_('<font color="#FFF"><b>Validation succeeded. You can proceed with the installation.</b></font>'))
             rootWidget.checkButton.setText(_("Validate Integrity"))
         else:
-            rootWidget.checkLabel.setText("")
+            ctx.yali.info.hide()
             rootWidget.progressBar.setValue(0)
 
         yali.pisiiface.removeRepo(ctx.consts.cd_repo_name)
