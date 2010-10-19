@@ -85,6 +85,7 @@ class Interface:
             self.link.User.Manager[self.package].setUser(uid, fullname, homedir, shell, password, groups, async=func)
         else:
             self.link.User.Manager[self.package].setUser(uid, fullname, homedir, shell, password, groups)
+            print " User id : %d" %uid 
 
     def addGroup(self, gid, name, func=None):
         if func:
@@ -101,6 +102,7 @@ class Interface:
     def setGrant(self, uid, action_id, func=None):
         if func:
             self.link.User.Manager[self.package].grantAuthorization(uid, action_id, async=func)
+            print " Grant %s " %action_id
         else:
             return self.link.User.Manager[self.package].grantAuthorization(uid, action_id)
 
@@ -113,5 +115,6 @@ class Interface:
     def setBlock(self, uid, action_id, func=None):
         if func:
             self.link.User.Manager[self.package].blockAuthorization(uid, action_id, async=func)
+            print " Block %s " %action_id
         else:
             return self.link.User.Manager[self.package].blockAuthorization(uid, action_id)

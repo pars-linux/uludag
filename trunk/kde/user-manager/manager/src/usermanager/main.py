@@ -76,10 +76,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.widgetGroupEdit = EditGroupWidget(self.frameWidget)
         layout.addWidget(self.widgetGroupEdit)
 
+        # List user shells
+        self.widgetUserEdit.listShells()
+
         # Signals
         self.connect(self.comboFilter, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotFilterChanged)
         self.connect(self.pushNew, QtCore.SIGNAL("triggered(QAction*)"), self.slotOpenEdit)
         self.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), self.slotSaveEdit)
+        self.connect(self.buttonBox, QtCore.SIGNAL("accepted()"), self.widgetUserEdit.checkFields)
         self.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), self.slotCancelEdit)
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
@@ -227,6 +231,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.widgetGroupEdit.hide()
             # Show user edit
             self.widgetUserEdit.show()
+
             if id_ != None:
                 try:
                     username, fullname, gid, homedir, shell, groups = self.iface.userInfo(id_)
@@ -251,9 +256,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         kdeui.KMessageBox.error(self, unicode(e))
                     return
             else:
-                self.widgetUserEdit.setShell("/bin/bash")
+                authorizations = []
+                self.widgetUserEdit.setShell('/bin/bash')
                 self.widgetUserEdit.setNickList(self.all_users)
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)
+                self.widgetUserEdit.setAuthorizations(authorizations)
+
         else:
             # Reset fields
             self.widgetGroupEdit.reset()
@@ -357,6 +365,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Get item type to add/
         type_ = str(action.data().toString())
         self.showEditBox(None, type_)
+        self.buttonBox.setStandardButtons(QtGui.QDialogButtonBox.Cancel)
 
     def slotCancelEdit(self):
         """
@@ -372,6 +381,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if self.typeEdit == "user":
                 widget = self.widgetUserEdit
                 grant, revoke, block = widget.getAuthorizations()
+                print "Auth-gr : %s" %grant
+                print "Auth-bl : %s" %block
                 if widget.isNew():
                     self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups(), grant, block)
                 else:
@@ -380,13 +391,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     self.iface.setUser(widget.getId(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups())
                     # Revoke
                     for action_id in revoke:
-                        self.iface.setRevoke(widget.getId(), action_id, func=handler)
+                        self.iface.setRevoke(widget.getId(), action_id)
                     # Grant
                     for action_id in grant:
-                        self.iface.setGrant(widget.getId(), action_id, func=handler)
+                        self.iface.setGrant(widget.getId(), action_id)
                     # Block
                     for action_id in block:
-                        self.iface.setBlock(widget.getId(), action_id, func=handler)
+                        self.iface.setBlock(widget.getId(), action_id)
             else:
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())
