@@ -54,15 +54,11 @@ Proceed with the installation after you make your selections.
 
         self.edititemindex = None
 
-        #self.ui.caps_error.setVisible(False)
-
         self.timeLine = QTimeLine(400, self)
         self.timeLine.setFrameRange(0, 220);
         self.connect(self.timeLine, SIGNAL("frameChanged(int)"), self.animate)
 
         self.ui.scrollArea.setFixedHeight(0)
-
-        #self.ui.caps_error.setText(_('Caps Lock is on.'))
 
         # User Icons
         self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")
@@ -170,9 +166,9 @@ Proceed with the installation after you make your selections.
     def setCapsLockIcon(self, child):
         if type(child) == QtGui.QLineEdit:
             if pardus.xorg.capslock.isOn():
-                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 20px}")
+                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 35px; color: #333333;}")
             else:
-                child.setStyleSheet("QLineEdit {background: none; padding-right: 0px}")
+                child.setStyleSheet("QLineEdit {background: none; padding-right: 0px; color: #333333;}")
 
 
     def checkCapsLock(self):
@@ -186,7 +182,7 @@ Proceed with the installation after you make your selections.
 
     def showError(self,message):
         ctx.yali.info.updateAndShow(message, type = "error")
-        self.ui.createButton.setEnabled(False)
+        ctx.mainScreen.disableNext()
 
     def animate(self, value):
         self.ui.scrollArea.setFixedHeight(int(value))
@@ -323,7 +319,7 @@ Proceed with the installation after you make your selections.
         ctx.logger.debug("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
 
         # give focus to realname widget for a new user. #3280
-        self.ui.realname.setFocus()
+        #self.ui.realname.setFocus()
         self.checkUsers()
         self.userNameChanged = False
         return True
