@@ -3,11 +3,12 @@
 Checklib
 ========
 
-Checklib is a script which facilitates developers to find dependencies,
-undefined symbols of packages, etc. I've tried to explain all available
-options, which you can examine below. It has a lot of fine-tuning options
-which allows the user to get the desired output directly. For more info
-please read the options and examples at the end of the page.
+Checklib2 is a script which facilitates developers to find dependencies,
+undefined symbols of packages, etc. It's based on Ozan's checklibs script.
+I've tried to explain all available options, which you can examine below.
+It has a lot of fine-tuning options which allows the user to get the
+desired output directly. For more info please read the options and examples
+at the end of the page.
 
 The usage and founctionality:
 -----------------------------
@@ -116,6 +117,8 @@ pisi files inside the directory specified with -d. That means if a folder
 exist in that directory, the pisi files inside that directory is also checked.
 
 
+Examples:
+--------
 In general, checklib2 can check for two types. It can check for installed
 packages, or it can check for a speficied pisi file.
 Below are several examples for real-world use of checklib2
@@ -159,7 +162,7 @@ Ex::
 
 It checks for clementine and for all installed packages that belongs to tex.tools
 component. We store the results to the file checked_packages.txt, note that -n option
-is used tu supress the colors. That is useful if you want to use piping. When you not
+is used to supress the colors. That is useful if you want to use piping. When you dont
 use the no-color option, all the ASCI color characters coding will be saved too.
 An additional note here should be mentioned. As you see, a pisi file and an installed
 package is checked together. However, that is not recommended! Because the enviroment
