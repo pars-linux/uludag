@@ -142,8 +142,7 @@ class PackageModel(QAbstractTableModel):
             self.resetCachedInfos()
             self.emit(SIGNAL("dataChanged(QModelIndex,QModelIndex)"), index, index)
             return True
-        else:
-            return False
+        return False
 
     def setCheckable(self, checkable):
         if checkable:
