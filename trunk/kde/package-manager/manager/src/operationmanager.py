@@ -37,6 +37,10 @@ class OperationManager(QObject):
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
         self.desktopFiles = []
+        self._operation_signals = {"installing":i18n('installing'),
+                                   "removing":i18n('removing'),
+                                   "extracting":i18n('extracting'),
+                                   "configuring":i18n('configuring')}
 
     def setTotalPackages(self, totalPackages):
         self.totalPackages = totalPackages
@@ -145,7 +149,7 @@ class OperationManager(QObject):
             self.emit(SIGNAL("started(QString)"), args[0])
 
         elif signal in ["installing", "removing", "extracting", "configuring"]:
-            self.emit(SIGNAL("operationChanged(QString, QString)"), i18n(signal), args[0])
+            self.emit(SIGNAL("operationChanged(QString, QString)"), self._operation_signals[signal], args[0])
 
         if signal == "cancelled":
             self.emit(SIGNAL("operationCancelled()"))

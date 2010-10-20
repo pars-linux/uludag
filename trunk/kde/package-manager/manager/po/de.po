@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 14:49+0300\n"
+"POT-Creation-Date: 2010-10-20 23:28+0300\n"
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -179,44 +179,60 @@ msgstr ""
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
-#: src/operationmanager.py:130
+#: src/operationmanager.py:40
+msgid "installing"
+msgstr "wird installiert"
+
+#: src/operationmanager.py:41
+msgid "removing"
+msgstr "wird entfernt"
+
+#: src/operationmanager.py:42 src/progressdialog.py:57
+msgid "extracting"
+msgstr "auspacken"
+
+#: src/operationmanager.py:43 src/progressdialog.py:57
+msgid "configuring"
+msgstr "konfiguriere"
+
+#: src/operationmanager.py:134
 msgid "downloading"
 msgstr "wird heruntergeladen"
 
-#: src/packagedelegate.py:57
+#: src/packagedelegate.py:60
 msgid "critical"
 msgstr "kritisch"
 
-#: src/packagedelegate.py:58
+#: src/packagedelegate.py:61
 msgid "security"
 msgstr "Sicherheit"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Website:"
 msgstr "Webseite"
 
 # geändert in Version, da passender! SW
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Release:"
 msgstr "Version:"
 
-#: src/packagedelegate.py:77
+#: src/packagedelegate.py:80
 msgid "Repository:"
 msgstr "Depot:"
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:81
 msgid "Package Size:"
 msgstr "Paketgrösse:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:82
 msgid "Installed Version:"
 msgstr "Installierte Version:"
 
-#: src/packagedelegate.py:279
+#: src/packagedelegate.py:282
 msgid "Details"
 msgstr ""
 
@@ -238,14 +254,6 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 #, python-format
 msgid "Operation - %1%"
 msgstr "Vorgang - %1%"
-
-#: src/progressdialog.py:57
-msgid "configuring"
-msgstr "konfiguriere"
-
-#: src/progressdialog.py:57
-msgid "extracting"
-msgstr "auspacken"
 
 #: src/progressdialog.py:61
 msgid "Downloading package list of %1"
@@ -297,153 +305,153 @@ msgstr "Keine gültige Depot-Bezeichnung"
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte erneut versuchen.</qt>"
 
-#: src/statemanager.py:83
+#: src/statemanager.py:84
 msgid "Installing Package(s)"
 msgstr "Paket(e) werden installiert"
 
-#: src/statemanager.py:84
+#: src/statemanager.py:85
 msgid "Removing Package(s)"
 msgstr "Paket(e) werden entfernt"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:86
 msgid "Upgrading Package(s)"
 msgstr "Paket(e) werden aktualisiert"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:87
 msgid "Applying Repository Changes"
 msgstr "Änderungen werden vorgenommen"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:88
 msgid "Updating Repository"
 msgstr "Depot wird aktualisiert"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:89
 msgid "Updating Repository(s)"
 msgstr "Depot wird aktualisiert"
 
-#: src/statemanager.py:91
+#: src/statemanager.py:92
 msgid "installed"
 msgstr "installiert"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:93
 msgid "removed"
 msgstr "entfernt"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:94
 msgid "upgraded"
 msgstr "aktualisiert"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:95
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: src/statemanager.py:99 ui/ui_basketdialog.py:181
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Paket(e) installieren"
 
-#: src/statemanager.py:99
+#: src/statemanager.py:100
 msgid "Remove Package(s)"
 msgstr "Paket(e) entfernen"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:101
 msgid "Upgrade Package(s)"
 msgstr "Paket(e) aktualisieren"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:102
 #, fuzzy
 msgid "Modify Package(s)"
 msgstr "Paket(e) werden entfernt"
 
-#: src/statemanager.py:111
+#: src/statemanager.py:112
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 Paket(e) mit Erfolg installiert."
 
-#: src/statemanager.py:112
+#: src/statemanager.py:113
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 neue Paket(e) wurden mit Erfolg entfernt."
 
-#: src/statemanager.py:113
+#: src/statemanager.py:114
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 neue Paket(e) wurden mit Erfolg aktualisiert."
 
-#: src/statemanager.py:114
+#: src/statemanager.py:115
 #, fuzzy
 msgid "%1 package(s) have been modified succesfully."
 msgstr "%1 neue Paket(e) wurden mit Erfolg entfernt."
 
-#: src/statemanager.py:117
+#: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
 msgstr "Ausgewählte Paket(e) sind zu installieren:"
 
-#: src/statemanager.py:118
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
 msgstr "Ausgewählte Paket(e) sind zu entfernen:"
 
-#: src/statemanager.py:119
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 
-#: src/statemanager.py:120
+#: src/statemanager.py:121
 #, fuzzy
 msgid "You have selected the following package(s) to modify:"
 msgstr "Ausgewählte Paket(e) sind zu entfernen:"
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:178
+#: src/statemanager.py:124 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Erforderliche Pakete, die zusätzlich installiert werden:"
 
 # Zweifel - hier is das "reverse" nicht korekt ausgedrückt, ist vielleicht
 # auch nicht so wichtig..
-#: src/statemanager.py:124
+#: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Zu gewähltem Paket abhängige(s) Paket(e), die auch entfernt werden:"
 
-#: src/statemanager.py:125
+#: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
 
-#: src/statemanager.py:126
+#: src/statemanager.py:127
 #, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
 
-#: src/statemanager.py:157
+#: src/statemanager.py:164
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Momentan sind <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
-#: src/statemanager.py:160
+#: src/statemanager.py:167
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> rückwärtig abhängige Pakete mit einer Grösse von <b>%2</b>"
 
-#: src/statemanager.py:162
+#: src/statemanager.py:169
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> zusätzlich abhängige Pakete mit einer Gesamtgrösse von <b>%2</b>"
 
-#: src/statemanager.py:163
+#: src/statemanager.py:170
 msgid "in your basket."
 msgstr "in Ihrem Korb."
 
-#: src/statemanager.py:187
+#: src/statemanager.py:194
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
 
-#: src/statemanager.py:188 src/statemanager.py:196
+#: src/statemanager.py:195 src/statemanager.py:203
 msgid "Conflict Error"
 msgstr "Konfliktfehler"
 
-#: src/statemanager.py:192
+#: src/statemanager.py:199
 msgid "The following packages conflicts:\n"
 msgstr "Es bestehen Konflikte zwischen folgenden Paketen:\n"
 
 # Zweifel - einfach "incompatible" schreiben ?
-#: src/statemanager.py:194
+#: src/statemanager.py:201
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in Konflikt mit: [%2]\n"
 
-#: src/statemanager.py:195
+#: src/statemanager.py:202
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -479,7 +487,7 @@ msgstr "Webbrowser"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:103
 msgid "Basket"
 msgstr "Korb"
 
@@ -804,74 +812,14 @@ msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklic
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Installierte Pakete anzeigen"
+#: ui/ui_webdialog.py:104
+#, fuzzy
+msgid "Package Details"
+msgstr "Paketliste"
 
-#~ msgid "removing"
-#~ msgstr "wird entfernt"
-
-#~ msgid "installing"
-#~ msgstr "wird installiert"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Proxy-Server verwenden"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Max. Bandbreite:"
-
-#~ msgid "Update check"
-#~ msgstr "Updateüberprüfung"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(0 für kein Limit)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cache leeren"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Löschen"
-
-#~ msgid "Maintainer"
-#~ msgstr "Aktueller Betreuer"
-
-#~ msgid "Package Installer"
-#~ msgstr "Paket Installer"
-
-#~ msgid "Installing %1"
-#~ msgstr "%1 wird installiert"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Installer ist schon gestartet"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Paketmarkierungen invertieren"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
-
-#~ msgid "Updates"
-#~ msgstr "Updates"
-
-#~ msgid "Quit"
-#~ msgstr "Verlassen"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-#~ msgid "File"
-#~ msgstr "Datei"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Alle Pakete sind auf dem neuesten Stand!"
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Paket(e) werden entfernt"
 
 #, fuzzy
 #~ msgid ""
@@ -887,6 +835,65 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
-#, fuzzy
-#~ msgid "Removing important packages"
-#~ msgstr "Paket(e) werden entfernt"
+#~ msgid "All Packages are up to date"
+#~ msgstr "Alle Pakete sind auf dem neuesten Stand!"
+
+#~ msgid "File"
+#~ msgstr "Datei"
+
+#~ msgid "Help"
+#~ msgstr "Hilfe"
+
+#~ msgid "Quit"
+#~ msgstr "Verlassen"
+
+#~ msgid "Updates"
+#~ msgstr "Updates"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Paketmarkierungen invertieren"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Installer ist schon gestartet"
+
+#~ msgid "Installing %1"
+#~ msgstr "%1 wird installiert"
+
+#~ msgid "Package Installer"
+#~ msgstr "Paket Installer"
+
+#~ msgid "Maintainer"
+#~ msgstr "Aktueller Betreuer"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Cache leeren"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(0 für kein Limit)"
+
+#~ msgid "Update check"
+#~ msgstr "Updateüberprüfung"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Max. Bandbreite:"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Proxy-Server verwenden"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Installierte Pakete anzeigen"
