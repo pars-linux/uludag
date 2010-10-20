@@ -72,7 +72,7 @@ if __name__ == '__main__':
             init_db = client.initializeLocalDB()
 
         print ' - Trying to initialize Client DB:', init_db[1]
-        if init_db[0] and len(args) > 0:
+        if len(args) > 0:
             print ' - Trying to get score for package "%s":' % args[0], client.getPackageScore(args[0])
     else:
         server.closeAndUpdateSum()
