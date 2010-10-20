@@ -2,6 +2,7 @@
     <Title>Pardus 2011 Beta (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <ExtraParameters>splash</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
             <Id>B6hbCO1cc</Id>
@@ -77,10 +78,10 @@
                 <SelectedPackage>crda</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
+                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>dejavu-fonts</SelectedPackage>
                 <SelectedPackage>device-mapper</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
-                <SelectedPackage>d-feet</SelectedPackage>
                 <SelectedPackage>djvu-plugin</SelectedPackage>
                 <SelectedPackage>droid-fonts</SelectedPackage>
                 <SelectedPackage>dvd+rw-tools</SelectedPackage>
@@ -128,6 +129,18 @@
                 <SelectedPackage>kaffeine</SelectedPackage>
                 <SelectedPackage>kaptan</SelectedPackage>
                 <SelectedPackage>kaudiocreator</SelectedPackage>
+                <SelectedPackage>kde-l10n-ca</SelectedPackage>
+                <SelectedPackage>kde-l10n-de</SelectedPackage>
+                <SelectedPackage>kde-l10n-es</SelectedPackage>
+                <SelectedPackage>kde-l10n-fr</SelectedPackage>
+                <SelectedPackage>kde-l10n-it</SelectedPackage>
+                <SelectedPackage>kde-l10n-nl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pl</SelectedPackage>
+                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
+                <SelectedPackage>kde-l10n-sv</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr</SelectedPackage>
+                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
+                <SelectedPackage>kde-wacom-tablet</SelectedPackage>
                 <SelectedPackage>kdeadmin</SelectedPackage>
                 <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
                 <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -140,17 +153,6 @@
                 <SelectedPackage>kdebase-sounds</SelectedPackage>
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
-                <SelectedPackage>kde-l10n-ca</SelectedPackage>
-                <SelectedPackage>kde-l10n-de</SelectedPackage>
-                <SelectedPackage>kde-l10n-es</SelectedPackage>
-                <SelectedPackage>kde-l10n-fr</SelectedPackage>
-                <SelectedPackage>kde-l10n-it</SelectedPackage>
-                <SelectedPackage>kde-l10n-nl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pl</SelectedPackage>
-                <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
-                <SelectedPackage>kde-l10n-sv</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr</SelectedPackage>
-                <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdenlive</SelectedPackage>
@@ -160,7 +162,6 @@
                 <SelectedPackage>kdesdk</SelectedPackage>
                 <SelectedPackage>kdetoys</SelectedPackage>
                 <SelectedPackage>kdeutils</SelectedPackage>
-                <SelectedPackage>kde-wacom-tablet</SelectedPackage>
                 <SelectedPackage>kdm</SelectedPackage>
                 <SelectedPackage>kdm-theme-pardus</SelectedPackage>
                 <SelectedPackage>kernel</SelectedPackage>
@@ -255,8 +256,8 @@
                 <SelectedPackage>redland-virtuoso</SelectedPackage>
                 <SelectedPackage>reiserfsprogs</SelectedPackage>
                 <SelectedPackage>rekonq</SelectedPackage>
-                <SelectedPackage>rpm2targz</SelectedPackage>
                 <SelectedPackage>rp-pppoe</SelectedPackage>
+                <SelectedPackage>rpm2targz</SelectedPackage>
                 <SelectedPackage>rsync</SelectedPackage>
                 <SelectedPackage>samba</SelectedPackage>
                 <SelectedPackage>scim-immodule-gtk</SelectedPackage>
@@ -327,8 +328,8 @@
                 <SelectedPackage>xorg-video-newport</SelectedPackage>
                 <SelectedPackage>xorg-video-nouveau</SelectedPackage>
                 <SelectedPackage>xorg-video-nv</SelectedPackage>
-                <SelectedPackage>xorg-video-nvidia173</SelectedPackage>
                 <SelectedPackage>xorg-video-nvidia-current</SelectedPackage>
+                <SelectedPackage>xorg-video-nvidia173</SelectedPackage>
                 <SelectedPackage>xorg-video-openchrome</SelectedPackage>
                 <SelectedPackage>xorg-video-r128</SelectedPackage>
                 <SelectedPackage>xorg-video-radeon</SelectedPackage>
@@ -1298,6 +1299,8 @@
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
+        <SelectedPackage>plymouth</SelectedPackage>
+        <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
@@ -1499,6 +1502,7 @@
         <Package>libgpg-error</Package>
         <Package>libgudev1</Package>
         <Package>libidn</Package>
+        <Package>libkms</Package>
         <Package>libmng</Package>
         <Package>libnl</Package>
         <Package>libogg</Package>
@@ -1572,6 +1576,11 @@
         <Package>piksemel</Package>
         <Package>pisi</Package>
         <Package>pixman</Package>
+        <Package>plymouth</Package>
+        <Package>plymouth-core-libs</Package>
+        <Package>plymouth-graphics-libs</Package>
+        <Package>plymouth-plugin-script</Package>
+        <Package>plymouth-theme-pardus</Package>
         <Package>polkit</Package>
         <Package>poppler</Package>
         <Package>poppler-data</Package>
