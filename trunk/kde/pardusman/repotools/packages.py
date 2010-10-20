@@ -213,7 +213,7 @@ class Repository:
             try:
                 import lzma
             except ImportError:
-                print "Install python-pyliblzma package!!!"
+                print "Install python-pyliblzma package, or try a different index format."
                 return
 
             data = open(path).read()
@@ -257,8 +257,18 @@ class Repository:
         indexpath = fetch_uri(self.base_uri, self.cache_dir, self.index_name, None, False)
         if indexpath.endswith(".bz2"):
             import bz2
-            data = file(indexpath).read()
+            data = open(indexpath).read()
             data = bz2.decompress(data)
+            doc_index = piksemel.parseString(data)
+        elif indexpath.endswith(".xz"):
+            try:
+                import lzma
+            except ImportError:
+                print "Install python-pyliblzma package, or try a different index format."
+                return
+
+            data = open(indexpath).read()
+            data = lzma.decompress(data)
             doc_index = piksemel.parseString(data)
         else:
             doc_index = piksemel.parse(indexpath)
