@@ -10,5 +10,5 @@ widgetStyle = oxygen
 colorScheme = Norway
 desktopTheme = slim-glow
 thumbnail = obsidian.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_oxygen

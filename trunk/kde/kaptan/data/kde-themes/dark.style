@@ -10,5 +10,5 @@ widgetStyle = qtcurve
 colorScheme = ObsidianCoast
 desktopTheme = Elegance
 thumbnail = dark.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_oxygen
