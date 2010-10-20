@@ -29,8 +29,8 @@ from appinfo.client import AppInfoClient
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
     ComponentRole, InstalledVersionRole, InstalledRole, \
-    RateRole) = \
-range(Qt.UserRole, Qt.UserRole + 12)
+    RateRole, NameRole) = \
+range(Qt.UserRole, Qt.UserRole + 13)
 
 _variant = QVariant()
 _unknown_icons = []
@@ -128,6 +128,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.partOf))
         elif role == RateRole:
             return QVariant(self.appinfo.getPackageScore(package.name))
+        elif role == NameRole:
+            return QVariant(package.name)
         elif role == Qt.DecorationRole:
             package = self.package(index)
             if package.icon:

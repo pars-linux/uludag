@@ -72,10 +72,10 @@ class RowAnimator(object):
             self.direction = UP
             self.height = self.max_height
             self.timeLine.setDirection(QTimeLine.Backward)
+            self.hoverLinkFilter._init_values()
         else:
             self.direction = DOWN
             self.height = DEFAULT_HEIGHT
-            self.hoverLinkFilter._init_values()
             self.timeLine.setDirection(QTimeLine.Forward)
         self.t_view.setRowHeight(self.row, self.height)
         self.row = None if self.direction == DOWN else self.row
