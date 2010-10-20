@@ -306,10 +306,20 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
                     QtGui.QDesktopServices.openUrl(url)
                     return __event
                 elif self.rowAnimator.hoverLinkFilter.button_rect.contains(epos, True):
-                    self.webDialog.showPage('http://appinfo.pardus.org.tr/?p=%s' % model.data(index, NameRole).toString())
+                    self.showPackageDetails(model, index)
                     return __event
             self.rowAnimator.animate(index.row())
         return __event
+
+    def showPackageDetails(self, model, index):
+
+        def _getter(role):
+            return model.data(index, role).toString()
+
+        name = _getter(NameRole)
+        summary = _getter(SummaryRole)
+        description = _getter(DescriptionRole)
+        self.webDialog.showPackageDetails(name, summary, description)
 
     def sizeHint(self, option, index):
         if self.rowAnimator.currentRow() == index.row() and not index.row() == 0:
