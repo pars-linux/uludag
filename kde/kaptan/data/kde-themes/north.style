@@ -10,5 +10,5 @@ widgetStyle = oxygen
 colorScheme = Steel
 desktopTheme = Aya
 thumbnail = north.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_oxygen

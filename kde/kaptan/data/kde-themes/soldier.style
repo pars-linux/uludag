@@ -10,5 +10,5 @@ widgetStyle = qtCurve
 colorScheme = EveningLilac
 desktopTheme = Aya
 thumbnail = soldier.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_oxygen

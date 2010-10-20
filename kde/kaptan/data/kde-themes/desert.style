@@ -10,5 +10,5 @@ widgetStyle = qtcurve
 colorScheme = Desert
 desktopTheme = slim-glow
 thumbnail = desert.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_plastik

@@ -10,5 +10,5 @@ widgetStyle = oxygen
 colorScheme = CherryBlossom
 desktopTheme = default
 thumbnail = cherry.png
-iconTheme = milky
+iconTheme = oxygen
 windowDecoration = kwin3_oxygen
