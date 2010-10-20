@@ -24,6 +24,7 @@ from PyKDE4.kdeui import KIconLoader
 from context import _time
 
 from statemanager import StateManager
+from appinfo.client import AppInfoClient
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
@@ -62,6 +63,11 @@ class PackageModel(QAbstractTableModel):
         self.cached_package = None
         self.packages = []
         self.state = parent.state
+
+        self.appinfo = AppInfoClient()
+        self.appinfo.setServer('http://appinfo.pardus.org.tr')
+        if not self.appinfo.initializeLocalDB()[0]:
+            self.appinfo.checkOutDB()
 
         # Search Thread Obj
         # FIXME TRY-EXCEPT
@@ -121,8 +127,7 @@ class PackageModel(QAbstractTableModel):
         elif role == ComponentRole:
             return QVariant(unicode(package.partOf))
         elif role == RateRole:
-            # FIXME Use AppInfo to get ratings
-            return QVariant(4)
+            return QVariant(self.appinfo.getPackageScore(package.name))
         elif role == Qt.DecorationRole:
             package = self.package(index)
             if package.icon:
