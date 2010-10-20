@@ -43,12 +43,12 @@ class AppInfoClient(AppInfo):
                             'getPackageScore',
                             'getPackagesFromDB'])
 
-        self.setServer(server)
-
         if not path:
             path = os.path.join(os.getenv('HOME'), '.appinfo')
 
         self.path = path
+
+        self.setServer(server)
 
         # Local files full paths
         self.local_db = os.path.join(self.path, DB_FILE)
@@ -77,6 +77,11 @@ class AppInfoClient(AppInfo):
     def setServer(self, server):
         """ AppInfo Server address """
 
+        if not server:
+            local_server = os.path.join(self.path, 'server')
+            if os.path.exists(local_server):
+                server = open(local_server).read().strip('\n')
+
         if server:
             self.server = server
 
@@ -86,6 +91,8 @@ class AppInfoClient(AppInfo):
 
             self.createSkeleton()
             return True
+
+        self.server = None
 
     def createSkeleton(self, force = False):
         """ Creates skeleton directories for AppInfo Client """
@@ -139,10 +146,17 @@ class AppInfoClient(AppInfo):
                     return (False, 'File is not reachable: %s' % self.remote_db)
 
         if initialize:
-            self.initializeDB(self.local_db)
+            self.initializeLocalDB()
 
         if not is_local_file_old:
             return (True, 'DB is up-to date.')
 
         return (True, 'DB updated succesfully.')
+
+    def initializeLocalDB(self):
+        """ Just a wrapper to initialize local db """
+        if not self.server:
+            return (False, 'No server defined')
+
+        return self.initializeDB(self.local_db)
 
