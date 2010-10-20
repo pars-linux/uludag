@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -179,39 +179,39 @@ msgstr "Sua cesta está atualmente vazia."
 msgid "downloading"
 msgstr "fazendo download"
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr "Descrição:"
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr "Site:"
 
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr "Lançamento:"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr "repositório:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr "Tamanho do Pacote:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr "Versão Instalada:"
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr ""
 
@@ -286,7 +286,8 @@ msgid "Not a valid repository name"
 msgstr "Não é um nome de repositório válido"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+#, fuzzy
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Endereço de repositório deveria terminar com o sufixo xml ou xml.bz2.<p>Por favor tente novamente.</qt>"
 
 #: src/statemanager.py:83

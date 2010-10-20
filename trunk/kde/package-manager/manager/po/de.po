@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -183,40 +183,40 @@ msgstr "Im Augenblick ist Ihr Korb leer."
 msgid "downloading"
 msgstr "wird heruntergeladen"
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr "kritisch"
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr "Sicherheit"
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr "Beschreibung:"
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr "Webseite"
 
 # geändert in Version, da passender! SW
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr "Version:"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr "Depot:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr "Paketgrösse:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr "Installierte Version:"
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr ""
 
@@ -293,7 +293,8 @@ msgid "Not a valid repository name"
 msgstr "Keine gültige Depot-Bezeichnung"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+#, fuzzy
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte erneut versuchen.</qt>"
 
 #: src/statemanager.py:83

@@ -1,20 +1,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 # Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
@@ -41,12 +41,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Utvecklare"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -89,9 +89,7 @@ msgstr "Du måste starta om följande systemtjänster för att uppdateringen ska
 
 #: src/basketdialog.py:185
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr ""
-"Valda paket anses kritiska för systemet.\r\n"
-"Att ta bort dem kan göra ditt system oanvändbart."
+msgstr "Valda paket anses kritiska för systemet.Att ta bort dem kan göra ditt system oanvändbart."
 
 #: src/basketdialog.py:188 src/settingsdialog.py:161
 msgid "Warning"
@@ -177,39 +175,39 @@ msgstr "För närvarande är din korg tom."
 msgid "downloading"
 msgstr "Hämtar"
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr "kritisk"
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr "säkerhet"
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr "Beskrivning:"
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr "Webbplats:"
 
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr "Version:"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr "Förråd:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr "Paketstorlek:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr "Installerad version:"
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr "Detaljer"
 
@@ -280,7 +278,8 @@ msgid "Not a valid repository name"
 msgstr "Ogiltigt förrådsnamn"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+#, fuzzy
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
 
 #: src/statemanager.py:83
@@ -438,12 +437,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
 
 #: src/tray.py:194
-msgid "Show Updates"
-msgstr "Visa uppdateringar"
-
-#: src/tray.py:194
 msgid "Ignore"
 msgstr "Ignorera"
+
+#: src/tray.py:194
+msgid "Show Updates"
+msgstr "Visa uppdateringar"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
