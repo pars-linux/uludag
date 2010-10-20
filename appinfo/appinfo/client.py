@@ -61,8 +61,6 @@ class AppInfoClient(AppInfo):
             return 0
 
         info = self.getPackagesFromDB(condition = "name = '%s'" % package)
-        if info[0] == False:
-            return 0
 
         if info:
             if info[0][2] == 0 and info[0][3] == 0:
