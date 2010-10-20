@@ -16,6 +16,7 @@ from PyQt4.QtGui import QMessageBox
 
 from PyKDE4.kdeui import KIcon
 from PyKDE4.kdecore import i18n
+from appinfo.client import AppInfoClient
 
 from pmlogging import logger
 import config
@@ -144,11 +145,17 @@ class StateManager(QObject):
         if chains.has_key(operation):
             chains[operation]()
 
+    def updateRepoAction(self):
+        self.iface.updateRepositories()
+        if not AppInfoClient().checkOutDB()[0]:
+            AppInfoClient().setServer('http://appinfo.pardus.org.tr')
+            AppInfoClient().checkOutDB()
+
     def stateAction(self):
         return {self.INSTALL:lambda:None,
                 self.REMOVE :lambda:None,
                 self.ALL    :lambda:None,
-                self.UPGRADE:self.iface.updateRepositories}[self.state]()
+                self.UPGRADE:self.updateRepoAction}[self.state]()
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
