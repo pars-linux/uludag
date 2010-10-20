@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 14:49+0300\n"
+"POT-Creation-Date: 2010-10-20 23:28+0300\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -174,43 +174,59 @@ msgstr "Bağımlılıklar hesaplanıyor..."
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
-#: src/operationmanager.py:130
+#: src/operationmanager.py:40
+msgid "installing"
+msgstr "kuruluyor"
+
+#: src/operationmanager.py:41
+msgid "removing"
+msgstr "kaldırılıyor"
+
+#: src/operationmanager.py:42 src/progressdialog.py:57
+msgid "extracting"
+msgstr "çıkarılıyor"
+
+#: src/operationmanager.py:43 src/progressdialog.py:57
+msgid "configuring"
+msgstr "yapılandırılıyor"
+
+#: src/operationmanager.py:134
 msgid "downloading"
 msgstr "indiriliyor"
 
-#: src/packagedelegate.py:57
+#: src/packagedelegate.py:60
 msgid "critical"
 msgstr "kritik"
 
-#: src/packagedelegate.py:58
+#: src/packagedelegate.py:61
 msgid "security"
 msgstr "güvenlik"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Website:"
 msgstr "Web Sayfası:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Release:"
 msgstr "Sürüm:"
 
-#: src/packagedelegate.py:77
+#: src/packagedelegate.py:80
 msgid "Repository:"
 msgstr "Depo:"
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:81
 msgid "Package Size:"
 msgstr "Paket Boyutu:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:82
 msgid "Installed Version:"
 msgstr "Kurulu Sürüm:"
 
-#: src/packagedelegate.py:279
+#: src/packagedelegate.py:282
 msgid "Details"
 msgstr "Detaylar"
 
@@ -231,14 +247,6 @@ msgstr "<p align='right'>% %1</p>"
 #, python-format
 msgid "Operation - %1%"
 msgstr "İşlem - %%1"
-
-#: src/progressdialog.py:57
-msgid "configuring"
-msgstr "yapılandırılıyor"
-
-#: src/progressdialog.py:57
-msgid "extracting"
-msgstr "çıkarılıyor"
 
 #: src/progressdialog.py:61
 msgid "Downloading package list of %1"
@@ -284,145 +292,145 @@ msgstr "Geçerli bir depo ismi değil"
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Depo adresleri xml,xml.bz2 veya uzantısı ile bitmelidir.<p>Lütfen tekrar deneyin.</qt>"
 
-#: src/statemanager.py:83
+#: src/statemanager.py:84
 msgid "Installing Package(s)"
 msgstr "Paket(ler) Kuruluyor"
 
-#: src/statemanager.py:84
+#: src/statemanager.py:85
 msgid "Removing Package(s)"
 msgstr "Paket(ler) Kaldırılıyor"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:86
 msgid "Upgrading Package(s)"
 msgstr "Paket(ler) Güncelleniyor"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:87
 msgid "Applying Repository Changes"
 msgstr "Depo Değişiklikleri Uygulanıyor"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:88
 msgid "Updating Repository"
 msgstr "Depo Güncelleniyor"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:89
 msgid "Updating Repository(s)"
 msgstr "Depo(lar) Güncelleniyor"
 
-#: src/statemanager.py:91
+#: src/statemanager.py:92
 msgid "installed"
 msgstr "kuruldu"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:93
 msgid "removed"
 msgstr "kaldırıldı"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:94
 msgid "upgraded"
 msgstr "güncellendi"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:95
 msgid "modified"
 msgstr "değiştirildi"
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: src/statemanager.py:99 ui/ui_basketdialog.py:181
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
 
-#: src/statemanager.py:99
+#: src/statemanager.py:100
 msgid "Remove Package(s)"
 msgstr "Paket(ler)i Kaldır"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:101
 msgid "Upgrade Package(s)"
 msgstr "Paket(ler)i Güncelle"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:102
 msgid "Modify Package(s)"
 msgstr "İşlemi Seç"
 
-#: src/statemanager.py:111
+#: src/statemanager.py:112
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 yeni paket başarılı şekilde kuruldu."
 
-#: src/statemanager.py:112
+#: src/statemanager.py:113
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 paket başarılı şekilde kaldırıldı."
 
-#: src/statemanager.py:113
+#: src/statemanager.py:114
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 paket başarılı şekilde güncellendi."
 
-#: src/statemanager.py:114
+#: src/statemanager.py:115
 msgid "%1 package(s) have been modified succesfully."
 msgstr "%1 paket başarılı şekilde değiştirildi."
 
-#: src/statemanager.py:117
+#: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
 msgstr "Aşağıdaki paket(ler)i kurmak üzere seçtiniz:"
 
-#: src/statemanager.py:118
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
 msgstr "Aşağıdaki paket(ler)i kaldırmak üzere seçtiniz:"
 
-#: src/statemanager.py:119
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
 
-#: src/statemanager.py:120
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to modify:"
 msgstr "Aşağıdaki paket(ler)i kaldırmak/kurmak üzere seçtiniz:"
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:178
+#: src/statemanager.py:124 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
-#: src/statemanager.py:124
+#: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Seçili paket(ler)in ayrıca kaldırılacak olan ters bağımlılıkları:"
 
-#: src/statemanager.py:125
+#: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
 
-#: src/statemanager.py:126
+#: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Seçili paket(ler)in ayrıca kurulacak/kaldırılacak olan ek bağımlılıkları:"
 
-#: src/statemanager.py:157
+#: src/statemanager.py:164
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Şu an sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: src/statemanager.py:160
+#: src/statemanager.py:167
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ters bağımlılık "
 
-#: src/statemanager.py:162
+#: src/statemanager.py:169
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ek bağımlılık "
 
-#: src/statemanager.py:163
+#: src/statemanager.py:170
 msgid "in your basket."
 msgstr "bulunuyor."
 
-#: src/statemanager.py:187
+#: src/statemanager.py:194
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
-#: src/statemanager.py:188 src/statemanager.py:196
+#: src/statemanager.py:195 src/statemanager.py:203
 msgid "Conflict Error"
 msgstr "Çakışma Hatası"
 
-#: src/statemanager.py:192
+#: src/statemanager.py:199
 msgid "The following packages conflicts:\n"
 msgstr "Aşağıdaki paketler çakışıyor:\n"
 
-#: src/statemanager.py:194
+#: src/statemanager.py:201
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 %2 ile çakışıyor\n"
 
-#: src/statemanager.py:195
+#: src/statemanager.py:202
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -458,7 +466,7 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:103
 msgid "Basket"
 msgstr "Sepet"
 
@@ -782,95 +790,12 @@ msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya da
 msgid "&Ok"
 msgstr "&Tamam"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Kurulu Paketleri Göster"
+#: ui/ui_webdialog.py:104
+msgid "Package Details"
+msgstr "Paket Detayı"
 
-#~ msgid "removing"
-#~ msgstr "kaldırılıyor"
-
-#~ msgid "installing"
-#~ msgstr "kuruluyor"
-
-#~ msgid "Cancel"
-#~ msgstr "İptal"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 yeni paket başarı ile kuruldu."
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Paket seçimlerini tersine çevir"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Kurucusu zaten çalışıyor!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Installing %1"
-#~ msgstr "%1 kuruluyor"
-
-#~ msgid "Package Installer"
-#~ msgstr "Paket Kurucusu"
-
-#~ msgid "Maintainer"
-#~ msgstr "Bakıcı"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
-
-#~ msgid "Ok"
-#~ msgstr "Tamam"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Önbelleği Temizle"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
-
-#~ msgid "Update check"
-#~ msgstr "Güncelleme kontrolü"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bant genişliği sınırı:"
-
-#~ msgid "Summary"
-#~ msgstr "Özet"
-
-#~ msgid "%p%"
-#~ msgstr "%%p"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketlerin kurulumu tamamlandı"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "%1 başarılı bir şekilde kuruldu"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Vekil sunucu kullan"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
-
-#~ msgid "Updates"
-#~ msgstr "Güncellemeler"
-
-#~ msgid "Quit"
-#~ msgstr "Çıkış"
-
-#~ msgid "Help"
-#~ msgstr "Yardım"
-
-#~ msgid "File"
-#~ msgstr "Dosya"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Tüm Paketler güncel"
+#~ msgid "Removing important packages"
+#~ msgstr "Paket(ler) Kaldırılıyor"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -885,5 +810,86 @@ msgstr "&Tamam"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "Removing important packages"
-#~ msgstr "Paket(ler) Kaldırılıyor"
+#~ msgid "All Packages are up to date"
+#~ msgstr "Tüm Paketler güncel"
+
+#~ msgid "File"
+#~ msgstr "Dosya"
+
+#~ msgid "Help"
+#~ msgstr "Yardım"
+
+#~ msgid "Quit"
+#~ msgstr "Çıkış"
+
+#~ msgid "Updates"
+#~ msgstr "Güncellemeler"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Vekil sunucu kullan"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
+
+#~ msgid "%p%"
+#~ msgstr "%%p"
+
+#~ msgid "Summary"
+#~ msgstr "Özet"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
+
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Önbelleği Temizle"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Tamam"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Maintainer"
+#~ msgstr "Bakıcı"
+
+#~ msgid "Package Installer"
+#~ msgstr "Paket Kurucusu"
+
+#~ msgid "Installing %1"
+#~ msgstr "%1 kuruluyor"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Kurucusu zaten çalışıyor!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Paket seçimlerini tersine çevir"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 yeni paket başarı ile kuruldu."
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Kurulu Paketleri Göster"

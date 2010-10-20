@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 14:49+0300\n"
+"POT-Creation-Date: 2010-10-20 23:28+0300\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -174,43 +174,61 @@ msgstr ""
 msgid "Currently your basket is empty."
 msgstr "Тренутно Ваша корпа је празна."
 
-#: src/operationmanager.py:130
+#: src/operationmanager.py:40
+#, fuzzy
+msgid "installing"
+msgstr "инсталирано"
+
+#: src/operationmanager.py:41
+#, fuzzy
+msgid "removing"
+msgstr "уклоњено"
+
+#: src/operationmanager.py:42 src/progressdialog.py:57
+msgid "extracting"
+msgstr "отпакивање"
+
+#: src/operationmanager.py:43 src/progressdialog.py:57
+msgid "configuring"
+msgstr "конфигурисање"
+
+#: src/operationmanager.py:134
 msgid "downloading"
 msgstr "преузимање"
 
-#: src/packagedelegate.py:57
+#: src/packagedelegate.py:60
 msgid "critical"
 msgstr "критично"
 
-#: src/packagedelegate.py:58
+#: src/packagedelegate.py:61
 msgid "security"
 msgstr "сигурност"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Description:"
 msgstr "Опис:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Website:"
 msgstr "Веб страница:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Release:"
 msgstr "Издање:"
 
-#: src/packagedelegate.py:77
+#: src/packagedelegate.py:80
 msgid "Repository:"
 msgstr "Репозиторијум:"
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:81
 msgid "Package Size:"
 msgstr "Величина пакета:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:82
 msgid "Installed Version:"
 msgstr "Инсталирана верзија:"
 
-#: src/packagedelegate.py:279
+#: src/packagedelegate.py:282
 msgid "Details"
 msgstr ""
 
@@ -232,14 +250,6 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операција - %1%"
-
-#: src/progressdialog.py:57
-msgid "configuring"
-msgstr "конфигурисање"
-
-#: src/progressdialog.py:57
-msgid "extracting"
-msgstr "отпакивање"
 
 #: src/progressdialog.py:61
 msgid "Downloading package list of %1"
@@ -289,146 +299,146 @@ msgstr "Не важечи назив репозиторијума"
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса репозиторијума би требала да се заврши са xml или xml.bz2 наставком.<p>Молимо покушајте поново.</qt>"
 
-#: src/statemanager.py:83
+#: src/statemanager.py:84
 msgid "Installing Package(s)"
 msgstr "Инсталирање пакета"
 
-#: src/statemanager.py:84
+#: src/statemanager.py:85
 msgid "Removing Package(s)"
 msgstr "Уклањање пакета"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:86
 msgid "Upgrading Package(s)"
 msgstr "Надограђивање пакета"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:87
 msgid "Applying Repository Changes"
 msgstr "Примењивање промена на репозиторијуму"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:88
 msgid "Updating Repository"
 msgstr "Ажурирање репозиторијума"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:89
 msgid "Updating Repository(s)"
 msgstr "Ажурирање репозиторијума"
 
-#: src/statemanager.py:91
+#: src/statemanager.py:92
 msgid "installed"
 msgstr "инсталирано"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:93
 msgid "removed"
 msgstr "уклоњено"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:94
 msgid "upgraded"
 msgstr "надограђено"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:95
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: src/statemanager.py:99 ui/ui_basketdialog.py:181
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Инсталирај пакет(е)"
 
-#: src/statemanager.py:99
+#: src/statemanager.py:100
 msgid "Remove Package(s)"
 msgstr "Уклони пакет(е)"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:101
 msgid "Upgrade Package(s)"
 msgstr "Надогради пакет(е)"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:102
 #, fuzzy
 msgid "Modify Package(s)"
 msgstr "Уклањање пакета"
 
-#: src/statemanager.py:111
+#: src/statemanager.py:112
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: src/statemanager.py:112
+#: src/statemanager.py:113
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: src/statemanager.py:113
+#: src/statemanager.py:114
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: src/statemanager.py:114
+#: src/statemanager.py:115
 msgid "%1 package(s) have been modified succesfully."
 msgstr ""
 
-#: src/statemanager.py:117
+#: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: src/statemanager.py:118
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: src/statemanager.py:119
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: src/statemanager.py:120
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to modify:"
 msgstr ""
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:178
+#: src/statemanager.py:124 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr ""
 
-#: src/statemanager.py:124
+#: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr ""
 
-#: src/statemanager.py:125
+#: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr ""
 
-#: src/statemanager.py:126
+#: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr ""
 
-#: src/statemanager.py:157
+#: src/statemanager.py:164
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:160
+#: src/statemanager.py:167
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:162
+#: src/statemanager.py:169
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:163
+#: src/statemanager.py:170
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:187
+#: src/statemanager.py:194
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr ""
 
-#: src/statemanager.py:188 src/statemanager.py:196
+#: src/statemanager.py:195 src/statemanager.py:203
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:192
+#: src/statemanager.py:199
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:194
+#: src/statemanager.py:201
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:195
+#: src/statemanager.py:202
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -462,7 +472,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:176
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:103
 msgid "Basket"
 msgstr ""
 
@@ -781,21 +791,26 @@ msgstr ""
 msgid "&Ok"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
-
-#~ msgid "Quit"
-#~ msgstr "Прекид"
-
-#~ msgid "Help"
-#~ msgstr "Помоћ"
-
-#~ msgid "File"
-#~ msgstr "Фајл"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Сви пакети су ажурирани"
+#: ui/ui_webdialog.py:104
+#, fuzzy
+msgid "Package Details"
+msgstr "Величина пакета:"
 
 #, fuzzy
 #~ msgid "Removing important packages"
 #~ msgstr "Уклањање пакета"
+
+#~ msgid "All Packages are up to date"
+#~ msgstr "Сви пакети су ажурирани"
+
+#~ msgid "File"
+#~ msgstr "Фајл"
+
+#~ msgid "Help"
+#~ msgstr "Помоћ"
+
+#~ msgid "Quit"
+#~ msgstr "Прекид"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 14:49+0300\n"
+"POT-Creation-Date: 2010-10-20 23:28+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,43 +169,59 @@ msgstr ""
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: src/operationmanager.py:130
+#: src/operationmanager.py:40
+msgid "installing"
+msgstr ""
+
+#: src/operationmanager.py:41
+msgid "removing"
+msgstr ""
+
+#: src/operationmanager.py:42 src/progressdialog.py:57
+msgid "extracting"
+msgstr ""
+
+#: src/operationmanager.py:43 src/progressdialog.py:57
+msgid "configuring"
+msgstr ""
+
+#: src/operationmanager.py:134
 msgid "downloading"
 msgstr ""
 
-#: src/packagedelegate.py:57
+#: src/packagedelegate.py:60
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:58
+#: src/packagedelegate.py:61
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Description:"
 msgstr ""
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Website:"
 msgstr ""
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Release:"
 msgstr ""
 
-#: src/packagedelegate.py:77
+#: src/packagedelegate.py:80
 msgid "Repository:"
 msgstr ""
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:81
 msgid "Package Size:"
 msgstr ""
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:82
 msgid "Installed Version:"
 msgstr ""
 
-#: src/packagedelegate.py:279
+#: src/packagedelegate.py:282
 msgid "Details"
 msgstr ""
 
@@ -225,14 +241,6 @@ msgstr ""
 #: src/progressdialog.py:54
 #, python-format
 msgid "Operation - %1%"
-msgstr ""
-
-#: src/progressdialog.py:57
-msgid "configuring"
-msgstr ""
-
-#: src/progressdialog.py:57
-msgid "extracting"
 msgstr ""
 
 #: src/progressdialog.py:61
@@ -279,145 +287,145 @@ msgstr ""
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr ""
 
-#: src/statemanager.py:83
+#: src/statemanager.py:84
 msgid "Installing Package(s)"
 msgstr ""
 
-#: src/statemanager.py:84
+#: src/statemanager.py:85
 msgid "Removing Package(s)"
 msgstr ""
 
-#: src/statemanager.py:85
+#: src/statemanager.py:86
 msgid "Upgrading Package(s)"
 msgstr ""
 
-#: src/statemanager.py:86
+#: src/statemanager.py:87
 msgid "Applying Repository Changes"
 msgstr ""
 
-#: src/statemanager.py:87
+#: src/statemanager.py:88
 msgid "Updating Repository"
 msgstr ""
 
-#: src/statemanager.py:88
+#: src/statemanager.py:89
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: src/statemanager.py:91
+#: src/statemanager.py:92
 msgid "installed"
 msgstr ""
 
-#: src/statemanager.py:92
+#: src/statemanager.py:93
 msgid "removed"
 msgstr ""
 
-#: src/statemanager.py:93
+#: src/statemanager.py:94
 msgid "upgraded"
 msgstr ""
 
-#: src/statemanager.py:94
+#: src/statemanager.py:95
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:98 ui/ui_basketdialog.py:181
+#: src/statemanager.py:99 ui/ui_basketdialog.py:181
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr ""
 
-#: src/statemanager.py:99
+#: src/statemanager.py:100
 msgid "Remove Package(s)"
 msgstr ""
 
-#: src/statemanager.py:100
+#: src/statemanager.py:101
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: src/statemanager.py:101
+#: src/statemanager.py:102
 msgid "Modify Package(s)"
 msgstr ""
 
-#: src/statemanager.py:111
+#: src/statemanager.py:112
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: src/statemanager.py:112
+#: src/statemanager.py:113
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: src/statemanager.py:113
+#: src/statemanager.py:114
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: src/statemanager.py:114
+#: src/statemanager.py:115
 msgid "%1 package(s) have been modified succesfully."
 msgstr ""
 
-#: src/statemanager.py:117
+#: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: src/statemanager.py:118
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: src/statemanager.py:119
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: src/statemanager.py:120
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to modify:"
 msgstr ""
 
-#: src/statemanager.py:123 ui/ui_basketdialog.py:178
+#: src/statemanager.py:124 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr ""
 
-#: src/statemanager.py:124
+#: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr ""
 
-#: src/statemanager.py:125
+#: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr ""
 
-#: src/statemanager.py:126
+#: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr ""
 
-#: src/statemanager.py:157
+#: src/statemanager.py:164
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:160
+#: src/statemanager.py:167
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:162
+#: src/statemanager.py:169
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:163
+#: src/statemanager.py:170
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:187
+#: src/statemanager.py:194
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr ""
 
-#: src/statemanager.py:188 src/statemanager.py:196
+#: src/statemanager.py:195 src/statemanager.py:203
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:192
+#: src/statemanager.py:199
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:194
+#: src/statemanager.py:201
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:195
+#: src/statemanager.py:202
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -451,7 +459,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:176
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:103
 msgid "Basket"
 msgstr ""
 
@@ -768,4 +776,8 @@ msgstr ""
 
 #: ui/ui_summarydialog.py:52
 msgid "&Ok"
+msgstr ""
+
+#: ui/ui_webdialog.py:104
+msgid "Package Details"
 msgstr ""
