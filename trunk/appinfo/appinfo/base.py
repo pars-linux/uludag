@@ -59,13 +59,23 @@ class AppInfo(object):
     def initializeDB(self, db='appinfo.db', force = False):
         """ Initialize given database """
 
+        def _check_table():
+            return (u'packages',) in [x for x in \
+                    self._sq.execute("SELECT name FROM sqlite_master "\
+                                     "WHERE type IN ('table','view') "\
+                                     "AND name NOT LIKE 'sqlite_%'")]
+
         if os.path.exists(db) or force:
             self._sq = sqlite3.connect(db)
-            self._db = db
-            return (True, 'DB Initialized sucessfuly.')
+            if _check_table():
+                self._db = db
+                return (True, 'DB Initialized sucessfuly.')
+            else:
+                self._sq = None
+                self._db = None
+                return (False, 'DB Initialized but tables are corrupted.')
 
         self._sq = None
-
         return (False, 'No such DB (%s).' % db)
 
     def getPackagesFromDB(self, fields = '*', condition = ''):
@@ -77,7 +87,7 @@ class AppInfo(object):
             return self._sq.execute('SELECT %s FROM %s%s' % \
                     (fields, database.PKG_TABLE, condition)).fetchall()
         except:
-            return None
+            return (False)
 
     def commitDB(self):
         """ Commit changes to DB """
