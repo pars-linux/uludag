@@ -43,7 +43,6 @@ class Widget(QtGui.QWidget, Screen):
         self.ui = Ui_Form()
         self.ui.setupUi(self)
 
-        self.drawCrop = DrawCropMask(self.ui.camGoruntu)
         self.camActive = False
 
         Widget.desc = QVariant(unicode(ki18n("Create your user picture").toString()))
@@ -78,6 +77,7 @@ class Widget(QtGui.QWidget, Screen):
             self.activateCam()
 
     def activateCam(self):
+        self.drawCrop = DrawCropMask(self.ui.camGoruntu)
         self.camActive = True
         self.ui.takeButton.show()
         self.ui.takeAgainButton.hide()
