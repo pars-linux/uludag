@@ -42,11 +42,11 @@ class HelpDialog(QDialog):
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
             self.htmlPart.setSource(
-                    QUrl("/usr/share/package-manager/help/%s/%s" %
+                    QUrl("/usr/share/kde4/apps/package-manager/help/%s/%s" %
                         (locale, help_files[help])))
 
         else:
             self.htmlPart.setSource(
-                    QUrl("/usr/share/package-manager/help/en/%s" %
+                    QUrl("/usr/share/kde4/apps/package-manager/help/en/%s" %
                         help_files[help]))
 
