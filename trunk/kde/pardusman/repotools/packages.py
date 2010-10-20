@@ -206,8 +206,18 @@ class Repository:
         path = fetch_uri(self.base_uri, self.cache_dir, self.index_name, console, update_repo)
         if path.endswith(".bz2"):
             import bz2
-            data = file(path).read()
+            data = open(path).read()
             data = bz2.decompress(data)
+            doc = piksemel.parseString(data)
+        elif path.endswith(".xz"):
+            try:
+                import lzma
+            except ImportError:
+                print "Install python-pyliblzma package!!!"
+                return
+
+            data = open(path).read()
+            data = lzma.decompress(data)
             doc = piksemel.parseString(data)
         else:
             doc = piksemel.parse(path)
