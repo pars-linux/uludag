@@ -16,9 +16,9 @@ import os
 import sqlite3
 
 # AppInfo Libs
-import config
-import backends
-import database
+from appinfo import config
+from appinfo import backends
+from appinfo import database
 
 class AppInfo(object):
     """ AppInfo
