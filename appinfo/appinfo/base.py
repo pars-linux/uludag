@@ -73,9 +73,11 @@ class AppInfo(object):
 
         if condition:
             condition = ' WHERE %s' % condition
-
-        return self._sq.execute('SELECT %s FROM %s%s' % \
-                (fields, database.PKG_TABLE, condition)).fetchall()
+        try:
+            return self._sq.execute('SELECT %s FROM %s%s' % \
+                    (fields, database.PKG_TABLE, condition)).fetchall()
+        except:
+            return None
 
     def commitDB(self):
         """ Commit changes to DB """
