@@ -11,6 +11,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.clean import clean
 from distutils.command.sdist import sdist
+from distutils.command.install import install
 from distutils.sysconfig import get_python_lib
 
 PROJECT = 'appinfo'
@@ -46,6 +47,15 @@ class Uninstall(Command):
             print ' removing: ', project_dir
             shutil.rmtree(project_dir)
 
+class Install(install):
+    def run(self):
+        install.run(self)
+        root_dir = '/usr/bin'
+        if self.root:
+            root_dir = "%s/usr/bin" % self.root
+        shutil.move('%s/%s.py' % (root_dir, PROJECT), '%s/%s' % (root_dir, PROJECT))
+
+
 setup(name=PROJECT,
       version='0.1',
       description='Appinfo: Metadata information for packages',
@@ -55,10 +65,12 @@ setup(name=PROJECT,
       author='Gökmen Göksel',
       author_email='gokmen@pardus.org.tr',
       url='http://developer.pardus.org.tr',
-      packages=[PROJECT],
+      packages=[PROJECT, '%s.backends' % PROJECT],
       data_files = [(plp(), ['AUTHORS', 'README', 'COPYING', 'HELP'])],
+      scripts = ['appinfo.py'],
       cmdclass = {
-          'uninstall':Uninstall,
-          'clean'    :Clean,
-          }
+                  'install': Install,
+                  'uninstall':Uninstall,
+                  'clean'    :Clean,
+                 }
      )
