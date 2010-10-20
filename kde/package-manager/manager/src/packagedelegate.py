@@ -23,6 +23,8 @@ from PyKDE4.kdeui import KIcon
 from PyKDE4.kdeui import KIconLoader
 from PyKDE4.kdecore import i18n
 
+from webdialog import WebDialog
+
 DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
@@ -42,6 +44,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
     def __init__(self, parent=None):
         super(PackageDelegate, self).__init__(parent)
+        self.webDialog = WebDialog(parent.parent)
 
         self.rowAnimator = RowAnimator(parent.packageList)
         KIconLoader().addExtraDesktopThemes()
@@ -282,10 +285,12 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         p.end()
         painter.save()
-        painter.drawPixmap(option.rect.topLeft(), pixmap)
+
         if not self.rowAnimator.running() and buttonStyle:
-            self.rowAnimator.hoverLinkFilter.button_rect = buttonStyle.rect
             PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
+            self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
+
+        painter.drawPixmap(option.rect.topLeft(), pixmap)
         painter.restore()
 
     def editorEvent(self, event, model, option, index):
@@ -300,8 +305,8 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
                     url = QUrl(model.data(index, HomepageRole).toString())
                     QtGui.QDesktopServices.openUrl(url)
                     return __event
-                elif self.rowAnimator.hoverLinkFilter.button_rect.contains(QPoint(epos.x(), epos.y())):
-                    print "Button Clicked !"
+                elif self.rowAnimator.hoverLinkFilter.button_rect.contains(epos, True):
+                    self.webDialog.showPage('http://appinfo.pardus.org.tr/?p=%s' % model.data(index, NameRole).toString())
                     return __event
             self.rowAnimator.animate(index.row())
         return __event

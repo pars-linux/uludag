@@ -31,7 +31,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         PAbstractBox.__init__(self, parent)
         self.state = state
         self.setupUi(self)
-
+        self.parent = parent
         # PDS Settings
         self._animation = 1
         self._duration = 400
