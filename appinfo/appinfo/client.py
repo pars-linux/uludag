@@ -40,7 +40,6 @@ class AppInfoClient(AppInfo):
     def __init__(self, pm = 'pisi', server = None, path = None):
         AppInfo.__init__(self, pm)
         self._dbcrm.extend(['getPackageId',
-                            'getPackageScore',
                             'getPackagesFromDB'])
 
         if not path:
@@ -58,7 +57,13 @@ class AppInfoClient(AppInfo):
         """ Returns given package calculated score:
             Where score = score / nose """
 
+        if not self._sq:
+            return 0
+
         info = self.getPackagesFromDB(condition = "name = '%s'" % package)
+        if info[0] == False:
+            return 0
+
         if info:
             if info[0][2] == 0 and info[0][3] == 0:
                 return 0
