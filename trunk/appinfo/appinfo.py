@@ -13,8 +13,8 @@
 
 import sys
 
-from server import AppInfoServer
-from client import AppInfoClient
+from appinfo.server import AppInfoServer
+from appinfo.client import AppInfoClient
 
 from optparse import OptionParser
 
@@ -54,9 +54,10 @@ if __name__ == '__main__':
         print ' - Trying to update package "%s" score:' % args[0], server.updatePackageScore(args[0], int(args[1]))[1]
 
     if readonly:
-        print ' - Trying to initialize Client DB:', client.initializeDB(options.filename)[1]
-        print ' - Trying to get score for package "%s":' % args[0], client.getPackageScore(args[0])
+        init_db = client.initializeDB(options.filename)
+        print ' - Trying to initialize Client DB:', init_db[1]
+        if init_db[0] and len(args) > 0:
+            print ' - Trying to get score for package "%s":' % args[0], client.getPackageScore(args[0])
     else:
         server.closeAndUpdateSum()
-    print ' Done.'
 

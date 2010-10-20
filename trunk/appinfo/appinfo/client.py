@@ -20,7 +20,7 @@ import shutil
 import urlgrabber
 
 # AppInfo Base Object
-from base import AppInfo
+from appinfo.base import AppInfo
 
 DB_FILE = 'appinfo.db'
 DB_FILE_SUM = DB_FILE + '.md5'

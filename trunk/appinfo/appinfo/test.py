@@ -11,8 +11,8 @@
 # Please read the COPYING file.
 #
 
-from server import AppInfoServer
-from client import AppInfoClient
+from appinfo.server import AppInfoServer
+from appinfo.client import AppInfoClient
 
 if __name__ == '__main__':
 

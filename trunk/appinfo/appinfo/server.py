@@ -16,10 +16,10 @@ import os
 import sqlite3
 
 # AppInfo Libs
-import database
+from appinfo import database
 
 # AppInfo Base Object
-from base import AppInfo
+from appinfo.base import AppInfo
 
 class AppInfoServer(AppInfo):
     """ AppInfoServer
