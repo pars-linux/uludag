@@ -2,6 +2,7 @@
     <Title>Pardus 2011 Beta Live (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <ExtraParameters>splash</ExtraParameters>
     <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml.xz">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
@@ -149,21 +150,7 @@
         <SelectedPackage>pinentry-qt</SelectedPackage>
         <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
-        <SelectedPackage>plymouth-graphics-libs</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-fade-throbber</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-label</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-script</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-space-flares</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-throbgress</SelectedPackage>
-        <SelectedPackage>plymouth-plugin-two-step</SelectedPackage>
-        <SelectedPackage>plymouth-renderer-x11</SelectedPackage>
-        <SelectedPackage>plymouth-theme-charge</SelectedPackage>
-        <SelectedPackage>plymouth-theme-fade-in</SelectedPackage>
         <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
-        <SelectedPackage>plymouth-theme-script</SelectedPackage>
-        <SelectedPackage>plymouth-theme-solar</SelectedPackage>
-        <SelectedPackage>plymouth-theme-spinfinity</SelectedPackage>
-        <SelectedPackage>plymouth-utils</SelectedPackage>
         <SelectedPackage>pmtools</SelectedPackage>
         <SelectedPackage>polkit-kde_1</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
@@ -870,20 +857,8 @@
         <Package>plymouth</Package>
         <Package>plymouth-core-libs</Package>
         <Package>plymouth-graphics-libs</Package>
-        <Package>plymouth-plugin-fade-throbber</Package>
-        <Package>plymouth-plugin-label</Package>
         <Package>plymouth-plugin-script</Package>
-        <Package>plymouth-plugin-space-flares</Package>
-        <Package>plymouth-plugin-throbgress</Package>
-        <Package>plymouth-plugin-two-step</Package>
-        <Package>plymouth-renderer-x11</Package>
-        <Package>plymouth-theme-charge</Package>
-        <Package>plymouth-theme-fade-in</Package>
         <Package>plymouth-theme-pardus</Package>
-        <Package>plymouth-theme-script</Package>
-        <Package>plymouth-theme-solar</Package>
-        <Package>plymouth-theme-spinfinity</Package>
-        <Package>plymouth-utils</Package>
         <Package>pm-utils</Package>
         <Package>pmtools</Package>
         <Package>pnm2ppa</Package>
