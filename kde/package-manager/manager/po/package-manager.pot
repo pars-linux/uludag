@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,39 +182,39 @@ msgstr ""
 msgid "downloading"
 msgstr ""
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr ""
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr ""
 
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr ""
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr ""
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr ""
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr ""
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr ""
 
@@ -286,8 +286,8 @@ msgstr ""
 
 #: src/settingsdialog.py:228
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please "
+"try again.</qt>"
 msgstr ""
 
 #: src/statemanager.py:83

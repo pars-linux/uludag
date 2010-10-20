@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -183,39 +183,39 @@ msgstr "Din kurv er i øjeblikket tom."
 msgid "downloading"
 msgstr "downloader"
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr "Beskrivelse:"
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr ""
 
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr "Udgivelse:"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr "Pakkearkiv:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr "Pakke størrelse:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr ""
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr ""
 
@@ -292,7 +292,8 @@ msgid "Not a valid repository name"
 msgstr "Navn på pakkearkiv"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+#, fuzzy
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Adressen på pakkearkivet skal have et xml or xml.bz2 suffix.<p>Prøv venligst igen.</qt>"
 
 #: src/statemanager.py:83

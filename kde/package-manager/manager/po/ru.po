@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-12 14:08+0300\n"
+"POT-Creation-Date: 2010-10-20 14:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -39,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Разработчики"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -173,39 +173,39 @@ msgstr "В настоящее время Ваша корзина пуста."
 msgid "downloading"
 msgstr "загрузка"
 
-#: src/packagedelegate.py:54
+#: src/packagedelegate.py:57
 msgid "critical"
 msgstr "критический"
 
-#: src/packagedelegate.py:55
+#: src/packagedelegate.py:58
 msgid "security"
 msgstr "безопасный"
 
-#: src/packagedelegate.py:71
+#: src/packagedelegate.py:74
 msgid "Description:"
 msgstr "Описание:"
 
-#: src/packagedelegate.py:72
+#: src/packagedelegate.py:75
 msgid "Website:"
 msgstr "Сайт:"
 
-#: src/packagedelegate.py:73
+#: src/packagedelegate.py:76
 msgid "Release:"
 msgstr "Релиз:"
 
-#: src/packagedelegate.py:74
+#: src/packagedelegate.py:77
 msgid "Repository:"
 msgstr "Репозиторий:"
 
-#: src/packagedelegate.py:75
+#: src/packagedelegate.py:78
 msgid "Package Size:"
 msgstr "Размер пакета:"
 
-#: src/packagedelegate.py:76
+#: src/packagedelegate.py:79
 msgid "Installed Version:"
 msgstr "Установленная версия:"
 
-#: src/packagedelegate.py:269
+#: src/packagedelegate.py:279
 msgid "Details"
 msgstr "Подробная информация"
 
@@ -276,7 +276,8 @@ msgid "Not a valid repository name"
 msgstr "Не верное имя репозитория"
 
 #: src/settingsdialog.py:228
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+#, fuzzy
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адресс репозитория должен оканчиваться суффиксом xml или xml.bz2.<p>Пожалуйста, попробуйте еще раз.</qt>"
 
 #: src/statemanager.py:83
@@ -434,12 +435,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Доступно <b>%1</b> обновлений!"
 
 #: src/tray.py:194
-msgid "Show Updates"
-msgstr "Показать обновления"
-
-#: src/tray.py:194
 msgid "Ignore"
 msgstr "Игнорировать"
+
+#: src/tray.py:194
+msgid "Show Updates"
+msgstr "Показать обновления"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
