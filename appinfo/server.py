@@ -57,7 +57,6 @@ class AppInfoServer(AppInfo):
         self.initializeDB(db, force = True)
         self._sq.execute(database.DB_SCHEME)
         self.commitDB()
-
         return (True, 'DB created sucessfuly.')
 
     def updatePackageList(self):
@@ -107,4 +106,10 @@ class AppInfoServer(AppInfo):
 
         return (True, 'All scores reset.')
 
+
+    def closeAndUpdateSum(self):
+        """ It closes the db and updates db sum file """
+        if self._sq:
+            self._sq.close()
+            os.system('md5sum %s > %s.md5' % (self._db, self._db))
 
