@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Développeur"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Développeur"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -443,12 +443,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Montrer les mises à jour"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -787,9 +787,8 @@ msgid "&Ok"
 msgstr "&Ok"
 
 #: ui/ui_webdialog.py:104
-#, fuzzy
 msgid "Package Details"
-msgstr "Liste des paquets"
+msgstr "Détails des paquets"
 
 #~ msgid "Removing important packages"
 #~ msgstr "Désinstallation des paquets"
