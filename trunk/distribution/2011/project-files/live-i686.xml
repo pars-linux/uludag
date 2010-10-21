@@ -49,6 +49,17 @@
         <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>gimp-i18n-sv</SelectedPackage>
         <SelectedPackage>gimp-i18n-tr</SelectedPackage>
+        <SelectedPackage>glibc-locales-ca</SelectedPackage>
+        <SelectedPackage>glibc-locales-de</SelectedPackage>
+        <SelectedPackage>glibc-locales-es</SelectedPackage>
+        <SelectedPackage>glibc-locales-fr</SelectedPackage>
+        <SelectedPackage>glibc-locales-hu</SelectedPackage>
+        <SelectedPackage>glibc-locales-it</SelectedPackage>
+        <SelectedPackage>glibc-locales-nl</SelectedPackage>
+        <SelectedPackage>glibc-locales-pl</SelectedPackage>
+        <SelectedPackage>glibc-locales-pt</SelectedPackage>
+        <SelectedPackage>glibc-locales-ru</SelectedPackage>
+        <SelectedPackage>glibc-locales-sv</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
@@ -422,6 +433,17 @@
         <Package>gimp-i18n-tr</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
+        <Package>glibc-locales-ca</Package>
+        <Package>glibc-locales-de</Package>
+        <Package>glibc-locales-es</Package>
+        <Package>glibc-locales-fr</Package>
+        <Package>glibc-locales-hu</Package>
+        <Package>glibc-locales-it</Package>
+        <Package>glibc-locales-nl</Package>
+        <Package>glibc-locales-pl</Package>
+        <Package>glibc-locales-pt</Package>
+        <Package>glibc-locales-ru</Package>
+        <Package>glibc-locales-sv</Package>
         <Package>glibmm</Package>
         <Package>glitz</Package>
         <Package>gmp</Package>
