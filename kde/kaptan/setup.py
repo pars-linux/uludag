@@ -30,7 +30,7 @@ def update_messages():
 
     # Collect UI files
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        os.system("pykde4uic -o .tmp/%s.py ui/%s" % (filename.split(".")[0], filename))
 
     # Collect Python files
     for filename in glob.glob1("src/kaptan", "*.py"):
@@ -58,7 +58,7 @@ def update_messages():
             os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
-    os.system("rm -rf .tmp")
+    #os.system("rm -rf .tmp")
 
 def makeDirs(dir):
     try:
@@ -79,6 +79,7 @@ class Build(build):
         os.system("cp -R data/kde-themes build/kaptan/")
 
         #os.system("mkdir build/kaptan/screens/ui")
+        update_messages()
 
         # Copy compiled UIs and RCs
         print "Generating UIs..."
