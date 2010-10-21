@@ -30,7 +30,7 @@ from yali.gui.YaliDialog import Dialog, InformationWindow
 # Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Add Users")
-    icon = "iconUser"
+    icon = "system-users-small"
     helpSummary = _("")
     help = _('''
 <p>

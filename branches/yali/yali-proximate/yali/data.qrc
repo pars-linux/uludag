@@ -1,5 +1,8 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/system-users-small.png</file>
+    <file>gui/pics/meeting-participant-small.png</file>
+    <file>gui/pics/drive-harddisk-small.png</file>
     <file>gui/pics/caps.png</file>
     <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
