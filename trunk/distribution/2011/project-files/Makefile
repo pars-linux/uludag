@@ -1,10 +1,10 @@
 PM=${HOME}/pardusman/pardusman.py
 
-all: all-install all-live
+all: install live
 
-all-live: live64 live32
+live: live64 live32
 
-all-install: install64 install32
+install: install64 install32
 
 install64:
 	${PM} make installation.xml
