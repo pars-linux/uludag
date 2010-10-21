@@ -182,7 +182,7 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         """
             Component selection fires this function.
         """
-        print new.text(0), "selected"
+        pass
 
     def slotClickComponent(self, item):
         """
@@ -190,6 +190,7 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         """
         if item.isChecked():
             if item.component not in self.components:
+                print item.text(0), "selected"
                 self.components.append(item.component)
                 self.updatePackages()
         else:
@@ -201,7 +202,7 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         """
             Package selection fires this function.
         """
-        print new.text(0), "selected"
+        pass
 
     def slotClickPackage(self, item):
         """
@@ -209,6 +210,7 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
         """
         if item.isChecked():
             if item.package.name not in self.packages:
+                print item.text(0), "selected"
                 self.packages.append(item.package.name)
                 self.updatePackages()
         else:
