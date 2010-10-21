@@ -39,7 +39,7 @@ from yali.storage.storageBackendHelpers import doDeleteDevice, doClearPartitione
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _('Manual Partitioning')
     desc = _('You can easily configure your partitions...')
-    icon = "iconPartition"
+    icon = "drive-harddisk-small"
     helpSummary = _("Partition manual summary")
     help = _('''
 <p>

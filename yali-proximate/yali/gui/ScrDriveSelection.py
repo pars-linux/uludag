@@ -166,7 +166,7 @@ class PartitionItem(QtGui.QListWidgetItem):
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Select a Drive to Install Pardus")
-    icon = "iconPartition"
+    icon = "drive-harddisk-small"
     help = _('''
 <p>
 You can install Pardus if you have an unpartitioned-unused disk space 

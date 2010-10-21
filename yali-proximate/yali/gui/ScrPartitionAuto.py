@@ -29,7 +29,7 @@ useAllSpace, replaceExistingLinux, shrinkCurrent, useFreeSpace, createCustom = r
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Select Partitioning Method")
-    icon = "iconPartition"
+    icon = "drive-harddisk-small"
     helpSummary = _("Partitioning summary")
     help = _('''
 <p>
