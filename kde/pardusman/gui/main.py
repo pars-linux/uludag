@@ -315,6 +315,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         if not self.checkProject():
             return
+        self.updateProject()
         self.updateRepo()
 
     def slotMakeImage(self):
