@@ -3,6 +3,12 @@
 How to be a Contributor?
 ========================
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.2
+
 ******************************
 Applicant Tracking on Bugzilla
 ******************************
@@ -237,6 +243,3 @@ Assigning Mentor Stock Response
         -- 
         Pardus Mentoring Coordinators
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
