@@ -43,16 +43,18 @@ Application Request
 
 Sending Quiz to Applicant
 -------------------------
-#. The mentoring coordinators send quiz as an attachment with `Quiz Sending Stock Response`_.
+#. The mentoring coordinators send quiz as an attachment with `Quiz Sending Stock Response`_ and give the `QUIZSEND <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
 #. The applicant sends an approval, that he/she starts the quiz.
 #. After 10 days of the approval, the applicant commits his/her answers as an attachment to the bug.
 #. If the applicant is not responsive in these 10 days, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
-#. If the applicant is responsive and has send the answers in 10 days, the answers will be reviewed by mentors and review comments will be given on bugzilla.
+#. If the applicant is responsive and has send the answers in 10 days:
+    #. Mentoring coordinators give `ANSWERREC <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
+    #. The answers will be reviewed by mentors and review comments will be given on bugzilla.
 #. If the quiz review is negative, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 #. If the quiz review is positive:
-    #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED. 
-    #. If the applicant is applied as a developer, a mentor is assigned to him/her.
+    #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
+    #. If the applicant is applied as a developer, a mentor is assigned to him/her and mentor coordinators give `MENTORASSIGNED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
 
 
 Assigning Mentor
