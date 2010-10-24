@@ -25,3 +25,5 @@
 - -d, --dest-dir
 - -r, --release={2011,corporate2}
 - -a, --architecture={x86_64,i686}
+
+- It is better to write this script so that it can be run with lxc-create -t template
