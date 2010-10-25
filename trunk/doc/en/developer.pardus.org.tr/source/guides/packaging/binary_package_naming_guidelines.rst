@@ -3,6 +3,12 @@
 Binary Package Naming
 ---------------------
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.2
+
 The binary packages in Pardus Linux Distribution have .pisi extention. The pacakges with this format has a specific format. Generally between every unit, '-' character exist.
 
 Version Number
@@ -47,32 +53,30 @@ Example: ::
         gimp-2.6.8-26-4
         texlive-0.0_20080816-5-9
 
-.. Distribution Abbreviation
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^
+Distribution Abbreviation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. Beside the build number, the relevant distribution abbreviation exists. This abbreviation is important in order to determine for which Pardus Linux Distribution the package is built.
+Beside the build number, the relevant distribution abbreviation exists. This abbreviation is important in order to determine for which Pardus Linux Distribution the package is built.
 
-.. ::
+::
 
-..     packagename-versionno-releaseno-buildno-distabbr
+    packagename-versionno-releaseno-buildno-distabbr
 
-.. Example:    ::
+Example:    ::
 
-..        gimp-2.6.8-26-4-p11
-..        texlive-0.0_20080816-5-9-pel2
+       gimp-2.6.8-26-4-p11
+       texlive-0.0_20080816-5-9-p11
 
-.. Architecture Abbreviation
-.. ^^^^^^^^^^^^^^^^^^^^^^^^^
+Architecture Abbreviation
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. Beside the distribution abbreviation, architecture abbreviation exists. This abbreviation is important in order to determine the package build architecture.
+Beside the distribution abbreviation, architecture abbreviation exists. This abbreviation is important in order to determine the package build architecture.
 
-.. ::
+::
 
-..    packagename-versionno-releaseno-buildno-distabbr-archabbr
+   packagename-versionno-releaseno-buildno-distabbr-archabbr
 
-.. Example:::
+Example:::
 
-..            gimp-2.6.8-26-4-p11-i686
-..            texlive-0.0_20080816-5-9-pel2-x86_64
-
-
+           gimp-2.6.8-26-4-p11-i686
+           texlive-0.0_20080816-5-9-p11-x86_64

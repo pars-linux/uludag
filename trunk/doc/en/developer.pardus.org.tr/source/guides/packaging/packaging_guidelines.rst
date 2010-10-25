@@ -3,6 +3,12 @@
 Packaging Guidelines
 ====================
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.2
+
 During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
 
 Please remember that any package that you submit must also conform to the Review Guidelines.
@@ -185,13 +191,6 @@ Runtime dependencies is important in order a program run properly. You can check
 
 You can find the usage from :ref:`checklib`.
 
-.. Fix here with new checklib
-.. You can run this script in the package directory as:
-
-.. ::
-
-..    $ ./checklib x.pisi
-
 Strict Dependencies
 -------------------
 
@@ -245,6 +244,16 @@ Strict dependencies can be needed in some cases:
         ::
 
             <Dependency releaseFrom="27">x264</Dependency>
+
+
+#. If more than one package are produced from same source (same pspec.xml) and some of the packages in that source depend each other. Pardus use value "current" for the strict release or version tags, in order to automatically assign the release or version number of the needed package.
+
+    **Example:**
+    ::
+
+        <Dependency release="current">freetype</Dependency>
+        <Dependency version="current">git</Dependency>
+
 
 Any Dependency
 --------------
@@ -475,6 +484,3 @@ Operation types:
 - preRemove: Execute pre-remove script of a package before installation
 - postRemove: Execute post-remove script of a package after installation
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
