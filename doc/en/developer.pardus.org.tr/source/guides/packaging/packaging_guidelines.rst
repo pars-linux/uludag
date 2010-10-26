@@ -90,12 +90,12 @@ During Modifications particularly you should take care:
 Architecture Support
 --------------------
 
-Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture.
+Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture. If the package could not be compile for a specific architecture it should be specified in `pspec.xml file <http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags>`_.
 
 Building Packages
 ^^^^^^^^^^^^^^^^^
 
-Pardus Linux Distribution has a build system, buildfarm. Buildfarm is automatically build the pacakages. During building of a package automatically, all type of information send to buildfarm@pardus.org.tr list. These package messages send by its release and architecture types.
+Pardus Linux Distribution has a build system, buildfarm. Buildfarm is automatically build the packages. During building of a package automatically, all type of information send to buildfarm@pardus.org.tr list. These package messages send by its release and architecture types.
 
 Type of massages send:
 
@@ -275,41 +275,43 @@ Dependencies Excepted
 
 Generally there are no need to include following dependencies as buildtime dependencies because these packages are considered as minimum build environment:
 
-autoconf
-automake
-binutils
-bison
-catbox
-ccache
-chrpath
-cmake
-dietlibc
-diffstat/
-gcc
-gmp
-gnuconfig
-icecream
-intltool
-klibc
-libpthread-stubs
-libsigsegv
-libtool
-m4
-make
-mpfr
-nasm
-patch
-pkgconfig
-quilt
-scons
-swig
-unifdef
-util-macros
-xcb-proto
-xorg-proto
-xtrans
-yacc
-yasm
+::
+
+    autoconf
+    automake
+    binutils
+    bison
+    catbox
+    ccache
+    chrpath
+    cmake
+    dietlibc
+    diffstat
+    gcc
+    gmp
+    gnuconfig
+    icecream
+    intltool
+    klibc
+    libpthread-stubs
+    libsigsegv
+    libtool
+    m4
+    make
+    mpfr
+    nasm
+    patch
+    pkgconfig
+    quilt
+    scons
+    swig
+    unifdef
+    util-macros
+    xcb-proto
+    xorg-proto
+    xtrans
+    yacc
+    yasm
 
 But any package above may have a dependency in each other.
 
@@ -325,6 +327,11 @@ Description Hints
 #. Please make sure that there are no lines in the description longer than 80 characters.
 
 The description and summary should be in English. Please also include in translations.xml file summary and description translations of other languages supported by Pardus that you know.
+
+Code Legibility
+---------------
+
+The packages source code must be legible. The package reviewer can simply read the codes.
 
 Taking SHA-1 Hash
 -----------------
@@ -418,8 +425,10 @@ The contents in the package should enhance the user experience. Therefore fonts,
 .. Conflicts
 .. ----------
 
-.. Symlinks
-.. --------
+Symlinks
+--------
+
+When you want to easily access folders and files from different folders without maintaining duplicate copies, the symbolic links can be used.
 
 
 Renaming/replacing existing packages
