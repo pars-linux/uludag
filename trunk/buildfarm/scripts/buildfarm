@@ -43,10 +43,13 @@ def build_packages():
 
     # Compiling current work queue
 
-    logger.raw("QUEUE")
-    logger.info("Starting to compile the following packages:%s" % qmgr.get_work_queue())
+    # Use a/b/pspec.xml instead of full path in e-mails
+    stripped_queue = [get_package_component_path(pkg) for pkg in queue]
 
-    mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(queue))
+    logger.raw("QUEUE")
+    logger.info("Starting to compile the following packages:%s" % stripped_queue)
+
+    mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(stripped_queue))
     logger.raw()
 
     for pspec in queue:
