@@ -1,2 +1,2 @@
 [General]
-BrowserApplication[$e]=mozillafirefox.desktop
+BrowserApplication[$e]=!firefox
