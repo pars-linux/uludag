@@ -3,6 +3,12 @@
 How to Create Pisi Packages
 ===========================
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.2
+
 Creating Package
 ----------------
 
@@ -65,6 +71,7 @@ command under package named directory.
             <Name></Name>
             <Email></Email>
         </Packager>
+        <ExcludeArch></ExcludeArch>
         <License>GPLv2</License>
         <Icon></Icon>
         <IsA></IsA>
@@ -229,6 +236,7 @@ Different pspec.xml File Tags
     #. **<Name>:** The name of the package is added here. It must follow the :ref:`package-naming`. This should be match with the <Name> part of <Package> tag.
     #. **<Homepage>:** The project page of the package is added here.
     #. **<Packager>:** The packager name is added <Name>, and email is added to <Email> part.
+    #. **<ExcludeArch>:** When a package could not be compiled for a specific architecture it should be added to pspec.xml file with this tag.
     #. **<License>:** The pacakge license type is added here. See :ref:`licensing-guidelines`.
     #. **<Icon>:** If a package has a gui part, the icon name should be added this part.
     #. **<IsA>:** This tag is used in order to give the types of the software which the the package includes. One then more IsA type can be used, if it is relevant.
@@ -392,7 +400,7 @@ this file.
         </Source>
     </PISI>
 
-Different pspec.xml File Tags
+Different translations.xml File Tags
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. **<Name>:** The name of the package should be added here.
@@ -401,6 +409,3 @@ Different pspec.xml File Tags
 
 See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#summary-and-description>`_.
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
