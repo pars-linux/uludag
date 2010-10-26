@@ -63,7 +63,7 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'type'         : _type,
                                         'packagename'  : package_name,
                                         'distribution' : conf.name,
-                                        'release'      : conf.release,
+                                        'release'      : conf.release.capitalize(),
                                         'arch'         : conf.architecture,
                                         'logsdir'      : subject_id,
                                         'subjectID'    : subject_id,
