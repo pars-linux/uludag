@@ -360,10 +360,15 @@ class Partition(Device):
 
         self._bootable = self.getFlag(parted.PARTITION_BOOT)
 
-    def create(self):
+    def create(self, intf=None):
         """ Create the device. """
         if self.exists:
             raise PartitionError("device already exists", self.name)
+
+        w = None
+        if intf:
+            w = intf.progressWindow(_("Creating device %s") % (self.path,))
+
 
         try:
             self.createParents()
@@ -373,10 +378,10 @@ class Partition(Device):
 
             try:
                 self.disk.format.commit()
-            except DiskLabelCommitError:
+            except DiskLabelCommitError, msg:
                 part = self.disk.format.partedDisk.getPartitionByPath(self.path)
                 self.disk.format.removePartition(part)
-                raise
+                raise PartitionError, msg
 
             if not self.isExtended:
                 # Ensure old metadata which lived in freespace so did not get
@@ -390,6 +395,9 @@ class Partition(Device):
             self.exists = True
             self._currentSize = self.partedPartition.getSize()
             self.setup()
+        finally:
+            if w:
+                w.pop()
 
     def _computeResize(self, partition):
         # compute new size for partition
@@ -406,7 +414,7 @@ class Partition(Device):
 
         return (constraint, newGeometry)
 
-    def resize(self):
+    def resize(self, intf=None):
         """ Resize the device.
 
             self.targetSize must be set to the new size.
@@ -445,10 +453,10 @@ class Partition(Device):
         self.disk.originalFormat.removePartition(self.partedPartition)
         try:
             self.disk.originalFormat.commit()
-        except DiskLabelCommitError:
+        except DiskLabelCommitError, msg:
             self.disk.originalFormat.addPartition(self.partedPartition)
             self.partedPartition = self.disk.originalFormat.partedDisk.getPartitionByPath(self.path)
-            raise
+            raise PartitionError, msg
 
         self.exists = False
 

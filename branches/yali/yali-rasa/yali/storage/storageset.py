@@ -14,6 +14,7 @@ from devices import *
 from devicetree import DeviceTree
 from devices.directorydevice import DirectoryDevice
 from devices.filedevice import FileDevice
+from devices.opticaldevice import OpticalDevice
 from devices.nodevice import NoDevice
 from devices.device import DeviceError
 from formats import getFormat
@@ -423,6 +424,10 @@ class StorageSet(object):
         for device in devices:
             # why the hell do we put swap in the fstab, anyway?
             if not device.format.mountable and device.format.type != "swap":
+                continue
+
+            # Don't write out lines for optical devices, either.
+            if isinstance(device, OpticalDevice):
                 continue
 
             fstype = getattr(device.format, "mountType", device.format.type)
