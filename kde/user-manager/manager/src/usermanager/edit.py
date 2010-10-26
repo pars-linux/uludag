@@ -221,7 +221,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         for action_id in self.actionItems:
             item = self.actionItems[action_id]
             item.setType(0)
-        print "\n Authorizations: %s " %authorizations
+        #print "\n Authorizations: %s " %authorizations
         for action_id, scope, description, policy_active, negative in authorizations:
             if action_id in self.actionItems:
                 item = self.actionItems[action_id]
