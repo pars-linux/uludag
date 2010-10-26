@@ -381,8 +381,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if self.typeEdit == "user":
                 widget = self.widgetUserEdit
                 grant, revoke, block = widget.getAuthorizations()
-                print "Auth-gr : %s" %grant
-                print "Auth-bl : %s" %block
+                #print "Auth-gr : %s" %grant
+                #print "Auth-bl : %s" %block
                 if widget.isNew():
                     self.iface.addUser(widget.getId(), widget.getUsername(), widget.getFullname(), widget.getHomeDir(), widget.getShell(), widget.getPassword(), widget.getGroups(), grant, block)
                 else:
