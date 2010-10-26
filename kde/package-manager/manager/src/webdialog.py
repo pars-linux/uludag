@@ -19,7 +19,7 @@ from PyKDE4.kdecore import *
 from pds.gui import *
 from pmutils import *
 
-from ui_webdialog_v2 import Ui_WebDialog
+from ui_webdialog import Ui_WebDialog
 
 class WebDialog(PAbstractBox, Ui_WebDialog):
     def __init__(self, parent):
@@ -39,7 +39,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
     def showPage(self, addr):
         self.webView.load(QUrl(addr))
-        self.animate(start = MIDRIGHT, stop = MIDCENTER)
+        self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def _sync_template(self, package, summary, description):
         def _replace(key, value):
@@ -54,8 +54,8 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
         self.webView.loadFinished.connect(lambda: self._sync_template(\
                 package, summary, description))
-        self.animate(start = MIDRIGHT, stop = MIDCENTER)
+        self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def _hide(self):
-        self.animate(start = MIDCENTER, stop = MIDLEFT, direction = OUT)
+        self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
 
