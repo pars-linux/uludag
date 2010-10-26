@@ -24,7 +24,7 @@ import backend
 
 class StateManager(QObject):
 
-    (ALL, INSTALL, REMOVE, UPGRADE) = range(4)
+    (ALL, INSTALL, REMOVE, UPGRADE, HISTORY) = range(5)
 
     def __init__(self, parent=None):
         QObject.__init__(self)

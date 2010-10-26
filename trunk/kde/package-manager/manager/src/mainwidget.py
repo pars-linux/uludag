@@ -341,15 +341,20 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.pdsMessageBox.hideMessage()
         self._back_to_all = False
         self._states[state][1].setChecked(True)
-        self.stateTab.setCurrentIndex(self._states[state][0])
         self.lastState = self.state.state
         self.state.setState(state)
         self._selectedGroups = []
-        self.setActionButton()
-        if action:
-            self.state.stateAction()
-        self.state.cached_packages = None
-        self.initialize()
+        if not state == self.state.HISTORY:
+            self.setActionButton()
+            if action:
+                self.state.stateAction()
+            self.state.cached_packages = None
+            self.initialize()
+            self.contentHistory.hide()
+            self.content.show()
+        else:
+            self.contentHistory.show()
+            self.content.hide()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
