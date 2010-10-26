@@ -105,7 +105,7 @@ class Widget(QtGui.QWidget, Screen):
 
         if self.ui.stackedWidget.currentIndex() == 0:
             self.ui.stackedWidget.setCurrentIndex(1)
-            self.ui.privacyButton.setText(kdecore.i18n("&Back"))
+            self.ui.privacyButton.setText(kdecore.i18n("&Host Information"))
         else:
             self.ui.stackedWidget.setCurrentIndex(0)
             self.ui.privacyButton.setText(kdecore.i18n("&Privacy policy"))
