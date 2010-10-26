@@ -159,15 +159,24 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
+        self.showHistoryAction = KToggleAction(KIcon("view-refresh"), i18n("History"), self)
+        self.actionCollection().addAction("showHistoryAction", self.showHistoryAction)
+        self.connect(self.showHistoryAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.HISTORY))
+        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("History"))
+        actionGroup.addAction(self.showHistoryAction)
+
         self.cw.menuButton.setMenu(QMenu('MainMenu', self.cw.menuButton))
         self.cw.menuButton.setIcon(KIcon('preferences-other'))
         self.cw.menuButton.menu().clear()
+
+        self.cw.contentHistory.hide()
 
         # self.cw.menuButton.menu().addAction(self.showAllAction)
         # self.cw.menuButton.menu().addAction(self.showInstallAction)
         # self.cw.menuButton.menu().addAction(self.showRemoveAction)
         # self.cw.menuButton.menu().addAction(self.showUpgradeAction)
         # self.cw.menuButton.menu().addSeparator()
+
         self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.Preferences)))
         self.cw.menuButton.menu().addAction(self.actionCollection().action(KStandardAction.name(KStandardAction.Help)))
         self.cw.menuButton.menu().addSeparator()
@@ -179,7 +188,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.cw._states = {self.cw.state.ALL    :(0, self.showAllAction),
                            self.cw.state.INSTALL:(1, self.showInstallAction),
                            self.cw.state.REMOVE :(2, self.showRemoveAction),
-                           self.cw.state.UPGRADE:(3, self.showUpgradeAction)}
+                           self.cw.state.UPGRADE:(3, self.showUpgradeAction),
+                           self.cw.state.HISTORY:(4, self.showHistoryAction)}
 
         self.showAllAction.setChecked(True)
 
