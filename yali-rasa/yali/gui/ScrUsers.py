@@ -10,24 +10,21 @@
 # Please read the COPYING file.
 #
 
+import os
 import gettext
+import pardus.xorg
+
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
-import os
-import yali.users
-import pardus.xorg
-import yali.context as ctx
-
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from yali.constants import consts
+
+import yali.users
+import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.Ui.setupuserswidget import Ui_SetupUsersWidget
-from yali.gui.YaliDialog import Dialog, InformationWindow
 
-##
-# Partitioning screen.
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Add Users")
     icon = "iconUser"
@@ -60,8 +57,6 @@ Proceed with the installation after you make your selections.
 
         self.ui.scrollArea.setFixedHeight(0)
 
-        #self.ui.caps_error.setText(_('Caps Lock is on.'))
-
         # User Icons
         self.normalUserIcon = QtGui.QPixmap(":/gui/pics/user_normal.png")
         self.superUserIcon = QtGui.QPixmap(":/gui/pics/user_root.png")
@@ -87,6 +82,8 @@ Proceed with the installation after you make your selections.
                      self.slotRealNameChanged)
         self.connect(self.ui.userID, SIGNAL("valueChanged(int)"),
                      self.slotTextChanged)
+        self.connect(self.ui.userIDCheck, SIGNAL("stateChanged(int)"),
+                     self.slotuserIDCheck)
         self.connect(self.ui.createButton, SIGNAL("clicked()"),
                      self.slotCreateUser)
         self.connect(self.ui.cancelButton, SIGNAL("clicked()"),
@@ -116,7 +113,7 @@ Proceed with the installation after you make your selections.
         self.userNameChanged = False
         self.usedIDs = []
 
-        #self.info.updateAndShow(_("Starting validation..."))
+        #self.info.update(_("Starting validation..."))
 
     def shown(self):
         self.ui.cancelButton.hide()
@@ -168,9 +165,9 @@ Proceed with the installation after you make your selections.
     def setCapsLockIcon(self, child):
         if type(child) == QtGui.QLineEdit:
             if pardus.xorg.capslock.isOn():
-                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 42px}")
+                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 35px; color: #333333;}")
             else:
-                child.setStyleSheet("QLineEdit {background: none; padding-right: 0px}")
+                child.setStyleSheet("QLineEdit {background: none; padding-right: 0px; color: #333333;}")
 
 
     def checkCapsLock(self):
@@ -182,9 +179,9 @@ Proceed with the installation after you make your selections.
     def keyReleaseEvent(self, e):
         self.checkCapsLock()
 
-    def showError(self,message):
-        ctx.yali.info.updateAndShow(message, type = "error")
-        self.ui.createButton.setEnabled(False)
+    def showError(self, message):
+        ctx.interface.informationWindow.update(message, type="error")
+        ctx.mainScreen.disableNext()
 
     def animate(self, value):
         self.ui.scrollArea.setFixedHeight(int(value))
@@ -197,6 +194,12 @@ Proceed with the installation after you make your selections.
             self.timeLine.setDirection(1)
         if self.ui.scrollArea.height() == 0:
             self.timeLine.setDirection(0)
+
+    def slotuserIDCheck(self, state):
+        if state:
+            self.ui.userID.setEnabled(True)
+        else:
+            self.ui.userID.setEnabled(False)
 
     def slotAdvanced(self):
 
@@ -230,7 +233,7 @@ Proceed with the installation after you make your selections.
             self.showError(_('Password is too short'))
             return
         else:
-            ctx.yali.info.hide()
+            ctx.interface.informationWindow.hide()
 
         if self.ui.username.text() and p1 and p2:
             self.ui.createButton.setEnabled(True)
@@ -321,7 +324,7 @@ Proceed with the installation after you make your selections.
         ctx.logger.debug("slotCreateUser :: user groups are %s" % str(','.join(u.groups)))
 
         # give focus to realname widget for a new user. #3280
-        self.ui.realname.setFocus()
+        #self.ui.realname.setFocus()
         self.checkUsers()
         self.userNameChanged = False
         return True

@@ -13,8 +13,7 @@ from yali.storage.library import raid
 from yali.storage.library import lvm
 from yali.storage.formats import device_formats, get_default_filesystem_type
 
-defaultMountPoints = ['/', '/boot', '/home', '/tmp',
-                      '/usr', '/var', '/usr/local', '/opt']
+defaultMountPoints = ['/', '/boot', '/home', '/tmp', '/var', '/opt']
 
 class DriveItem(QtGui.QListWidgetItem):
     def __init__(self, parent, drive):
@@ -77,6 +76,28 @@ class PhysicalVolumeItem(QtGui.QWidget):
         #Update spaces not only if physical volume unchecked
         self.widget.updateSpaces()
 
+def fillResizablePartitions(widget, storage):
+    biggest = -1
+    i = -1
+    for partition in storage.partitions:
+        if not partition.exists:
+            continue
+
+        if partition.resizable and partition.format.resizable:
+            entry = u"%s (%s, %d MB)" % (partition.name, partition.format.name, math.floor(partition.format.size))
+            widget.addItem(entry, partition)
+
+            i += 1
+            if biggest == -1:
+                biggest = i
+            else:
+                current = widget.itemData(biggest).toPyObject()
+                if partition.format.targetSize > current.format.targetSize:
+                    biggest = i
+
+    if biggest > -1:
+        widget.setCurrentIndex(biggest)
+
 def createShrinkablePartitionMenu(parent, storage):
 
     partitionsCombo = QtGui.QComboBox(parent)
@@ -119,6 +140,10 @@ def fillMountpointMenu(widget, request, excludes=[]):
 
         if not (mnt in mountpoints) and (mnt[0] =="/"):
             mountpoints.append(mnt)
+
+    if (request.format.type or request.format.migrate) and \
+            request.format.mountable and request.format.mountpoint:
+        mountpoints.append(request.format.mountpoint)
 
     map(widget.addItem, mountpoints)
 

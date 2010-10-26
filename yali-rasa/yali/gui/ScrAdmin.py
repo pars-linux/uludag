@@ -10,19 +10,19 @@
 # Please read the COPYING file.
 #
 
+import pardus.xorg
 import gettext
+
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
 
+from PyQt4 import QtCore
 from PyQt4 import QtGui
-from PyQt4.QtCore import *
 
+import yali.util
+import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.Ui.rootpasswidget import Ui_RootPassWidget
-import yali.users
-import yali.sysutils
-import yali.context as ctx
-import pardus.xorg
 
 ##
 # Root password widget
@@ -52,6 +52,7 @@ You can also define a hostname for your computer. A hostname is an identifier as
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_RootPassWidget()
         self.ui.setupUi(self)
+        self.intf = ctx.interface
 
         self.host_valid = True
         self.pass_valid = False
@@ -64,6 +65,12 @@ You can also define a hostname for your computer. A hostname is an identifier as
                      self.slotReturnPressed)
         self.connect(self.ui.hostname, SIGNAL("textChanged(const QString &)"),
                      self.slotHostnameChanged)
+
+    def update(self):
+        if self.host_valid and self.pass_valid:
+            ctx.mainScreen.enableNext()
+        else:
+            ctx.mainScreen.disableNext()
 
     def shown(self):
         if ctx.installData.hostName:
@@ -79,24 +86,36 @@ You can also define a hostname for your computer. A hostname is an identifier as
             self.ui.pass1.setText(ctx.installData.rootPassword)
             self.ui.pass2.setText(ctx.installData.rootPassword)
 
-        self.setNext()
+        self.update()
         self.checkCapsLock()
         self.ui.pass1.setFocus()
 
     def execute(self):
         ctx.installData.rootPassword = unicode(self.ui.pass1.text())
         ctx.installData.hostName = unicode(self.ui.hostname.text())
+
+        ctx.storage.reset()
+        if ctx.storage.checkNoDisks(self.intf):
+            sys.exit(0)
+        else:
+            disks = filter(lambda d: not d.format.hidden, ctx.storage.disks)
+            if len(disks) == 1:
+                ctx.storage.clearPartDisks = [disks[0].name]
+                ctx.mainScreen.stepIncrement = 2
+            else:
+                ctx.mainScreen.stepIncrement = 1
+
         return True
 
     def setCapsLockIcon(self, child):
         if type(child) == QtGui.QLineEdit:
             if pardus.xorg.capslock.isOn():
-                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 42px}")
+                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 35px}")
             else:
                 child.setStyleSheet("QLineEdit {background: none; padding-right: 0px}")
 
     def checkCapsLock(self):
-        for child in self.ui.frame_2.children():
+        for child in self.ui.groupBox.children():
             self.setCapsLockIcon(child)
 
     def keyReleaseEvent(self, e):
@@ -109,52 +128,46 @@ You can also define a hostname for your computer. A hostname is an identifier as
 
         if p1 == p2 and p1:
             if len(p1)<4:
-                ctx.yali.info.updateAndShow(_('Password is too short.'), type = "error")
+                self.intf.informationWindow.update(_('Password is too short.'), type="error")
                 self.pass_valid = False
             else:
-                ctx.yali.info.hide()
+                self.intf.informationWindow.hide()
                 self.pass_valid = True
         else:
             self.pass_valid = False
             if p2:
-                ctx.yali.info.updateAndShow(_('Passwords do not match.'), type = "error")
+                self.intf.informationWindow.update(_('Passwords do not match.'), type="error")
         if str(p1).lower()=="root" or str(p2).lower()=="root":
             self.pass_valid = False
             if p2:
-                ctx.yali.info.updateAndShow(_('Do not use your username as your password.'), type = "error")
+                self.intf.informationWindow.update(_('Do not use your username as your password.'), type="error")
+
         if self.pass_valid:
-            ctx.yali.info.hide()
+            self.intf.informationWindow.hide()
 
-        self.setNext()
+        self.update()
 
-    ##
-    # check hostname validity
-    def slotHostnameChanged(self, string):
-        if len(string) > 64:
+    def slotHostnameChanged(self, hostname):
+        if len(hostname) > 64:
             self.host_valid = False
-            ctx.yali.info.updateAndShow(_('Hostname cannot be longer than 64 characters.'), type = "error")
-            self.setNext()
+            self.intf.informationWindow.update(_('Hostname cannot be longer than 64 characters.'), type="error")
+            self.update()
             return
 
 
-        if not string.toAscii():
+        if not hostname.toAscii():
             self.host_valid = False
-            self.setNext()
+            self.update()
             return
 
-        self.host_valid = yali.sysutils.isTextValid(string.toAscii())
+        self.host_valid = yali.util.is_text_valid(hostname.toAscii())
 
         if not self.host_valid:
-            ctx.yali.info.updateAndShow(_('Hostname contains invalid characters.'), type = "error")
+            self.intf.informationWindow.update(_('Hostname contains invalid characters.'), type="error")
         else:
-            ctx.yali.info.hide()
-        self.setNext()
+            self.intf.informationWindow.hide()
+        self.update()
 
-    def setNext(self):
-        if self.host_valid and self.pass_valid:
-            ctx.mainScreen.enableNext()
-        else:
-            ctx.mainScreen.disableNext()
 
     def slotReturnPressed(self):
         if ctx.mainScreen.isNextEnabled():

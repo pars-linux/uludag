@@ -103,11 +103,9 @@ about disk partitioning.
     def activateButtons(self, item, index):
         if item:
             if isinstance(item.device, Device) and not isinstance(item.device, parted.partition.Partition):
-                self.ui.newButton.setEnabled(False)
                 self.ui.editButton.setEnabled(True)
                 self.ui.deleteButton.setEnabled(True)
             else:
-                self.ui.newButton.setEnabled(True)
                 self.ui.editButton.setEnabled(False)
                 self.ui.deleteButton.setEnabled(False)
 
@@ -133,9 +131,10 @@ about disk partitioning.
 
             comments = "\n\n".join(warnings)
             rc = self.intf.detailedMessageWindow(_("Partitioning Warnings"),
-                                                  detailed, comments, type="yesno")
-            if rc != 1:
-                return True
+                                                  detailed, comments, type="custom",
+                                                  customButtons=[_("Ok"), _("Cancel")], default=1)
+            if rc == 1:
+                return False
 
         formatWarnings = getPreExistFormatWarnings(self.storage)
         if formatWarnings:
@@ -157,14 +156,16 @@ about disk partitioning.
 
 
     def backCheck(self):
-        rc = self.intf.messageWindow(_("Warning"), _("All Changes that you made will be removed"), type="question")
-        if rc:
+        rc = self.intf.messageWindow(_("Warning"), _("All Changes that you made will be removed"),
+                                      type="custom", customIcon="question",
+                                      customButtons=[_("Ok"), _("Cancel")], default=1)
+        if not rc:
             self.storage.reset()
             return True
         return False
 
     def setupMenu(self):
-        self.menu = QtGui.QMenu()
+        self.menu = QtGui.QMenu("New")
         self.standardDevices = self.menu.addMenu(_("Standard"))
         self.lvmDevices = self.menu.addMenu(_("LVM"))
         self.raidDevices = self.menu.addMenu(_("RAID"))
@@ -189,7 +190,6 @@ about disk partitioning.
         self.createRaidArray.setVisible(False)
 
         self.ui.newButton.setMenu(self.menu)
-        self.ui.newButton.setDefaultAction(self.createPartition)
 
     def addDevice(self, device, item):
         if device.format.hidden:
@@ -301,7 +301,8 @@ about disk partitioning.
                     if not device and not partition.type & parted.PARTITION_FREESPACE:
                         ctx.logger.debug("can't find partition %s in device tree" % partName)
 
-                    if partition.getSize(unit="MB") <= 1:
+                    # Force partitions tree item not to be less than 12 MB
+                    if partition.getSize(unit="MB") <= 12.0:
                         if not partition.active or not partition.getFlag(parted.PARTITION_BOOT):
                             partition = partition.nextPartition()
                             continue
@@ -319,7 +320,11 @@ about disk partitioning.
                         partitionItem = DeviceTreeItem(extendedItem)
 
                     else:
-                        partitionItem = DeviceTreeItem(diskItem)
+                        # Free space item
+                        if partition.type & parted.PARTITION_LOGICAL:
+                            partitionItem = DeviceTreeItem(extendedItem)
+                        else:
+                            partitionItem = DeviceTreeItem(diskItem)
 
 
                     if device and not device.isExtended:

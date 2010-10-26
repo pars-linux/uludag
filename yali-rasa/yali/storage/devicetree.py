@@ -25,6 +25,7 @@ from devices.dmraidarray import DMRaidArray
 from devices.raidarray import RaidArray
 from devices.logicalvolume import LogicalVolume
 from devices.disk import Disk
+from devices.opticaldevice import OpticalDevice
 from devices.partition import Partition
 from library.devicemapper import DeviceMapperError
 from formats.disklabel import InvalidDiskLabelError, DiskLabelCommitError
@@ -35,8 +36,10 @@ class DeviceTreeError(yali.Error):
     pass
 
 class DeviceTree(object):
-    def __init__(self, ignored=[], exclusive=[], type=CLEARPART_TYPE_NONE,
+    def __init__(self, intf=None, ignored=[], exclusive=[], type=CLEARPART_TYPE_NONE,
                  clear=[],zeroMbr=None, reinitializeDisks=None, protected=[]):
+
+        self.intf = intf
         self._devices = []
         self.operations = []
         self.exclusiveDisks = exclusive
@@ -444,12 +447,12 @@ class DeviceTree(object):
             ctx.logger.info("executing operation: %s" % operation)
             if not dryRun:
                 try:
-                    operation.execute()
+                    operation.execute(intf=self.intf)
                 except DiskLabelCommitError:
                     # it's likely that a previous format destroy operation
                     # triggered setup of an lvm or md device.
                     self.teardownAll()
-                    operation.execute()
+                    operation.execute(intf=self.intf)
 
                 udev_settle()
                 for device in self._devices:
@@ -982,6 +985,19 @@ class DeviceTree(object):
         self._addDevice(device)
         return device
 
+    def addOpticalDevice(self, info):
+        # XXX should this be RemovableDevice instead?
+        #
+        # Looks like if it has ID_INSTANCE=0:1 we can ignore it.
+        device = OpticalDevice(udev_device_get_name(info),
+                               major=udev_device_get_major(info),
+                               minor=udev_device_get_minor(info),
+                               sysfsPath=udev_device_get_sysfs_path(info),
+                               vendor=udev_device_get_vendor(info),
+                               model=udev_device_get_model(info))
+        self._addDevice(device)
+        return device
+
     def addDevice(self, info):
         name = udev_device_get_name(info)
         uuid = udev_device_get_uuid(info)
@@ -1010,6 +1026,10 @@ class DeviceTree(object):
                 device = self.getDeviceByUUID(uuid)
             if device is None:
                 device = self.addRaidArray(info)
+        elif udev_device_is_cdrom(info):
+            ctx.logger.debug("%s is a cdrom" % name)
+            if device is None:
+                device = self.addOpticalDevice(info)
         elif udev_device_is_biosraid_member(info) and udev_device_is_disk(info):
             ctx.logger.debug("%s is part of a biosraid" % name)
             if device is None:

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import copy
+import parted
 import gettext
 __trans = gettext.translation('yali', fallback=True)
 _ = __trans.ugettext
@@ -40,7 +41,7 @@ class PartitionEditor:
 
         self.dialog = Dialog(title, closeButton=False)
         self.dialog.addWidget(PartitionWidget(self, origrequest, isNew, restricts))
-        self.dialog.resize(QSize(450, 200))
+        self.dialog.resize(QSize(0,0))
 
     def run(self):
         if self.dialog is None:
@@ -127,7 +128,7 @@ class PartitionEditor:
                     request.req_grow = None
                     request.req_max_size = 0
                     request.req_primary = primary
-                    request.req_disks = [disk.name]
+                    request.req_disks = [disk]
 
                 operations.append(OperationCreateFormat(usedev, format))
 
@@ -203,6 +204,10 @@ class PartitionWidget(QtGui.QWidget, Ui_PartitionWidget):
         self.parent = parent
         self.origrequest = request
         self.isNew = isNew
+
+        if not self.origrequest.exists:
+            if self.parent.partedPartition and self.parent.partedPartition.type & parted.PARTITION_LOGICAL:
+                self.primaryCheck.hide()
 
         # Mount Point entry
         storageGuiHelpers.fillMountpointMenu(self.mountpointMenu, self.origrequest)

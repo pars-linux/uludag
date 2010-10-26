@@ -50,7 +50,7 @@ class windowTitle(QtGui.QFrame):
         self.dragPosition = None
         self.mainwidget = self.parent()
         self.setStyleSheet("""
-            QFrame#windowTitle {background-color:#628577;color:#FFF;}
+            QFrame#windowTitle {background-color:#222222;color:#FFF;}
         """)
 
         # Initial position to top left
@@ -119,7 +119,7 @@ class Dialog(QtGui.QDialog):
                   ctx.mainScreen.height()/2 - self.height()/2)
 
     def exec_(self):
-        self.setCentered()
+        QTimer.singleShot(100, self.setCentered)
         return QtGui.QDialog.exec_(self)
 
 class MessageWindow:
@@ -162,6 +162,8 @@ class MessageWindow:
             icon = "info"
 
         self.msgBox.setText(text)
+        if detailed:
+            self.msgBox.setDetailedText(unicode(longText))
 
         if self.doCustom:
             button = None
@@ -183,12 +185,8 @@ class MessageWindow:
 
         self.msgBox.setDefaultButton(default)
 
-        self.dialog = Dialog(_(title), self.msgBox, closeButton = False, isDialog = True, icon=icon)
-        if detailed:
-            self.details = QtGui.QTextBrowser()
-            self.details.setText(unicode(longText))
-            self.dialog.layout.addWidget(self.details)
-        self.dialog.resize(QSize(200, 120))
+        self.dialog = Dialog(_(title), self.msgBox, closeButton=False, isDialog=True, icon=icon)
+        self.dialog.resize(QSize(0,0))
         if run:
             self.run(destroyAfterRun)
 
@@ -196,9 +194,9 @@ class MessageWindow:
         self.rc = self.dialog.exec_()
         if self.msgBox.clickedButton():
             if not self.doCustom:
-                if self.msgBox.clickedButton().text() in [_("OK"), _("YES")]:
+                if self.msgBox.clickedButton().text() in [_("Ok"), _("Yes")]:
                     self.rc = 1
-                elif self.msgBox.clickedButton().text() in [_("CANCEL"), _("NO")]:
+                elif self.msgBox.clickedButton().text() in [_("Cancel"), _("No")]:
                     self.rc = 0
             else:
                 if self.msgBox.clickedButton().text() in self.customButtons:
@@ -296,10 +294,9 @@ def InfoDialog(text, button=None, title=None, icon="info"):
 
 class InformationWindow(QtGui.QWidget):
 
-    def __init__(self, message):
+    def __init__(self):
         QtGui.QWidget.__init__(self, ctx.mainScreen)
         self.setObjectName("InfoWin")
-        #self.resize(300,50)
         self.setSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Expanding)
         self.setFixedHeight(50)
         self.setMaximumWidth(800)
@@ -345,44 +342,13 @@ class InformationWindow(QtGui.QWidget):
         self.horizontalLayout.addWidget(self.label)
 
         self.gridlayout.addWidget(self.frame,0,0,1,1)
-        self.updateMessage(message)
 
-    def updateMessage(self, message=None, spinner=False, **kwargs):
-        if "type" in kwargs.keys():
-            type = kwargs["type"]
+    def update(self, message, type=None, spinner=False):
+        fontMetric = self.label.fontMetrics()
+        textWidth = fontMetric.width(message)
+
+        if type:
             self.icon.show()
-
-            if type == "error":
-                self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/dialog-error.png"))
-                self.setStyleSheet("""
-                    QFrame#frame {background-color: rgba(255,0,0,100);}
-                    QLabel {background-color: rgb(0,0,0)}
-                    """)
-
-            elif type == "warning":
-                self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/dialog-warning.png"))
-                self.setStyleSheet(" QFrame#frame {background-color: rgba(255,255,0,100);} ")
-
-        else:
-            self.icon.hide()
-            self.setStyleSheet(" QFrame#frame {background-color: rgba(0,0,0,100);} ")
-
-        self.spinner.setVisible(spinner)
-        self.move(ctx.mainScreen.width()/2 - self.width()/2,
-                  ctx.mainScreen.height() - self.height()/2 - 50)
-        if message:
-            self.label.setText(message)
-
-        ctx.mainScreen.processEvents()
-
-    def updateAndShow(self, message=None, spinner=False, **kwargs):
-        fm = self.label.fontMetrics()
-        textWidth = fm.width(message)
-
-        if "type" in kwargs.keys():
-            type = kwargs["type"]
-            self.icon.show()
-
             if type == "error":
                 self.icon.setPixmap(QtGui.QPixmap(":/gui/pics/dialog-error.png"))
                 self.setStyleSheet(" QFrame#frame {background-color: rgba(255,0,0,100);} ")
@@ -405,16 +371,77 @@ class InformationWindow(QtGui.QWidget):
                   ctx.mainScreen.height() - self.height()/2 - 50)
 
         self.show()
-        ctx.mainScreen.processEvents()
 
+    def refresh(self):
+        ctx.mainScreen.processEvents()
 
     def show(self):
         QtGui.QWidget.show(self)
-        ctx.mainScreen.processEvents()
+        self.refresh()
 
     def hide(self):
         QtGui.QWidget.hide(self)
+        self.refresh()
+
+class ProgressWindow(QtGui.QWidget):
+    def __init__(self, message):
+        QtGui.QWidget.__init__(self, ctx.mainScreen)
+        self.setObjectName("InfoWin")
+        self.resize(300,50)
+        self.setStyleSheet("""
+            QFrame#frame { border: 1px solid rgba(255,255,255,30);
+                           /*border-radius: 4px;*/
+                           background-color: rgba(255,0,0,100);}
+
+            QLabel { border:none;
+                     color:#FFFFFF;}
+
+            QProgressBar { border: 1px solid white;}
+
+            QProgressBar::chunk { background-color: #F1610D;
+                                  width: 0.5px;}
+        """)
+
+        self.gridlayout = QtGui.QGridLayout(self)
+        self.frame = QtGui.QFrame(self)
+        self.frame.setObjectName("frame")
+        self.horizontalLayout = QtGui.QHBoxLayout(self.frame)
+        self.horizontalLayout.setContentsMargins(6, 0, 0, 0)
+
+        # Spinner
+        self.spinner = QtGui.QLabel(self.frame)
+        self.spinner.setMinimumSize(QSize(16, 16))
+        self.spinner.setMaximumSize(QSize(16, 16))
+        self.spinner.setIndent(6)
+        self.movie = QtGui.QMovie(':/images/working.mng')
+        self.spinner.setMovie(self.movie)
+        self.movie.start()
+        self.horizontalLayout.addWidget(self.spinner)
+
+        # Message
+        self.label = QtGui.QLabel(self.frame)
+        self.horizontalLayout.addWidget(self.label)
+        self.gridlayout.addWidget(self.frame,0,0,1,1)
+
+        self.update(message)
+
+    def update(self, message):
+        self.spinner.setVisible(True)
+        self.move(ctx.mainScreen.width()/2 - self.width()/2,
+                  ctx.mainScreen.height() - self.height()/2 - 50)
+        self.label.setText(message)
+        self.show()
+
+    def refresh(self):
         ctx.mainScreen.processEvents()
+
+    def show(self):
+        QtGui.QWidget.show(self)
+        self.refresh()
+
+    def pop(self):
+        QtGui.QWidget.hide(self)
+        self.refresh()
 
 
 
