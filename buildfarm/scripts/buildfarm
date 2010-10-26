@@ -44,12 +44,12 @@ def build_packages():
     # Compiling current work queue
 
     # Use a/b/pspec.xml instead of full path in e-mails
-    stripped_queue = [get_package_component_path(pkg) for pkg in queue]
+    stripped_work_queue = [utils.get_package_component_path(pkg) for pkg in queue]
 
     logger.raw("QUEUE")
-    logger.info("Starting to compile the following packages:%s" % stripped_queue)
+    logger.info("Starting to compile the following packages:%s" % stripped_work_queue)
 
-    mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(stripped_queue))
+    mailer.info("I'm starting to compile packages in the following order:\n\n%s" % "\n".join(stripped_work_queue))
     logger.raw()
 
     for pspec in queue:
@@ -96,9 +96,12 @@ def build_packages():
             move_packages(new_binary_packages, new_debug_packages)
             package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
 
-    logger.info("Wait Queue: %s" % (qmgr.get_wait_queue()))
-    if qmgr.get_wait_queue():
-        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(qmgr.get_wait_queue()), "\n".join(package_list)))
+    # Use a/b/pspec.xml instead of full path in e-mails
+    stripped_wait_queue = [utils.get_package_component_path(pkg) for pkg in qmgr.get_wait_queue()]
+
+    if stripped_wait_queue:
+        logger.info("Wait Queue: %s" % stripped_wait_queue)
+        mailer.info("Queue finished with problems and those packages couldn't be compiled:\n\n%s\n\n\nNew binary packages are;\n\n%s\n\nnow in repository" % ("\n".join(stripped_wait_queue), "\n".join(package_list)))
     else:
         mailer.info("Queue finished without a problem.\n\n\nNew binary packages are:\n\n%s\n\n" % ("\n".join(package_list)))
     logger.raw()
