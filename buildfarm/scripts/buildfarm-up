@@ -37,13 +37,14 @@ class RepositoryManager:
 
         print "\nUpdating repository %s" % (self.local_pspec_repo)
 
-        try:
-            self.output = subprocess.check_output(["svn", "up",
-                                                  self.local_pspec_repo],
-                                                  stderr=subprocess.STDOUT)
-        except subprocess.CalledProcessError:
+        process = subprocess.Popen(["svn", "up", self.local_pspec_repo],
+                                   stdout=subprocess.PIPE,
+                                   stderr=subprocess.STDOUT)
+        self.output = process.communicate()[0]
+
+        if process.returncode != 0:
             print "A problem with SVN occurred while updating repository, exiting."
-            sys.exit(1)
+            sys.exit(process.returncode)
         else:
             # List of lists
             self.output = [line.split() for line in self.output.split("\n") if line]
