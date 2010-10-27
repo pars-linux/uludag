@@ -1,7 +1,7 @@
 # /etc/mailcap file for Pardus
-# Copyright 2007 TUBITAK/UEKAE
+# Copyright 2007-2010 TUBITAK/UEKAE
 #
-# Released under GPL v2
+# Released under GPLv2
 
 application/x-pisi; pm-install '%s'; -n "$DISPLAY"
 application/gzip; ark '%s'; -n "$DISPLAY"
@@ -55,8 +55,8 @@ application/x-excel; oocalc '%s'; -n "$DISPLAY"
 application/vnd.ms-excel; oocalc '%s'; -n "$DISPLAY"
 
 # PDF and PS & DVI
-application/pdf; kpdf '%s'; -n "$DISPLAY"
-application/x-pdf; kpdf '%s'; -n "$DISPLAY"
+application/pdf; okular '%s'; -n "$DISPLAY"
+application/x-pdf; okular '%s'; -n "$DISPLAY"
 application/postscript; ghostview '%s'; -n "$DISPLAY"
 application/x-dvi; ghostview '%s'; -n "$DISPLAY"
 
@@ -102,7 +102,7 @@ application/chm; kchmviewer '%s'; -n "$DISPLAY"
 application/x-chm; kchmviewer '%s'; -n "$DISPLAY"
 
 # Po files
-text/x-pofile; kbabel '%s'; -n "$DISPLAY"
+text/x-pofile; lokalize '%s'; -n "$DISPLAY"
 
 # Bittorrent
 application/x-bittorrent; ktorrent '%s'; -n "$DISPLAY"
