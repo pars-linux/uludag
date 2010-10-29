@@ -35,7 +35,7 @@ msgstr "Gökmen Göksel"
 
 #: src/firewallmanager/about.py:34
 msgid "Current Maintainer"
-msgstr "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: src/firewallmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -43,17 +43,17 @@ msgstr "Bahadır Kandemir"
 
 #: src/firewallmanager/about.py:35
 msgid "First Developer"
-msgstr "First Developer"
+msgstr "Первый разработчик"
 
 #: src/firewallmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: src/firewallmanager/main.py:96
 msgid ""
