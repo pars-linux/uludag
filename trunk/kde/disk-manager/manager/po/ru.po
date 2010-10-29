@@ -34,17 +34,17 @@ msgstr "Bahadır Kandemir"
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
 
 #: src/diskmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: src/diskmanager/main.py:86
 msgid ""
