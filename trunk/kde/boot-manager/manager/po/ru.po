@@ -34,7 +34,7 @@ msgstr "Gökmen Göksel"
 
 #: src/bootmanager/about.py:34
 msgid "Current Maintainer"
-msgstr "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: src/bootmanager/about.py:35
 msgid "Bahadır Kandemir"
