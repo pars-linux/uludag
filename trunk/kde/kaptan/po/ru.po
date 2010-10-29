@@ -23,23 +23,23 @@ msgstr "Kaptan"
 
 #: .tmp/ui_kaptan.py:358
 msgid "Welcome to Pardus"
-msgstr "Welkom bij Pardus"
+msgstr "Добро пожаловать в Pardus"
 
 #: .tmp/ui_kaptan.py:359
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr "Отмена"
 
 #: .tmp/ui_kaptan.py:360
 msgid "Back"
-msgstr "Terug"
+msgstr "Назад"
 
 #: .tmp/ui_kaptan.py:361
 msgid "Next"
-msgstr "Volgende"
+msgstr "Вперед"
 
 #: .tmp/ui_kaptan.py:362
 msgid "Finish"
-msgstr "Voltooien"
+msgstr "Закончить"
 
 #: .tmp/ui_kaptan.py:363
 msgid "Apply Settings"
@@ -47,35 +47,35 @@ msgstr "Instellingen toepassen"
 
 #: .tmp/ui_scrStyle.py:169
 msgid "Themes"
-msgstr "Thema's"
+msgstr "Темы"
 
 #: .tmp/ui_scrStyle.py:170
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
-msgstr "Selecteer uw favoriete thema en type bureaublad. Pas Pardus aan met kleurrijke stijlen en thema's."
+msgstr "Выберите вашу любимую тему оформления и тип рабочего стола. Настройте Pardus с цветовыми схемами и темами."
 
 #: .tmp/ui_scrStyle.py:171
 msgid "KDE Themes"
-msgstr "KDE-thema's"
+msgstr "KDE темы"
 
 #: .tmp/ui_scrStyle.py:172
 msgid "Desktop Type"
-msgstr "Type bureaublad"
+msgstr "Тип рабочего стола"
 
 #: .tmp/ui_scrStyle.py:173
 msgid "Desktop view (KDE4 Style)"
-msgstr "Bureaublad-weergave (KDE4-stijl)"
+msgstr "Desktop (стиль KDE4)"
 
 #: .tmp/ui_scrStyle.py:174
 msgid "Folder view (KDE3 Style)"
-msgstr "Mapweergave (KDE3-stijl)"
+msgstr "Просмотр папки (KDE3-stijl)"
 
 #: .tmp/ui_scrStyle.py:175
 msgid "Number of Desktops"
-msgstr "Aantal bureaubladen"
+msgstr "Число рабочих столов"
 
 #: .tmp/ui_scrSummary.py:85
 msgid "Summary"
-msgstr "Samenvatting"
+msgstr "Суммарно"
 
 #: .tmp/ui_scrSummary.py:86
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
@@ -88,7 +88,7 @@ msgstr "De volgende instellingen zullen toegepast worden"
 #: .tmp/ui_scrAvatar.py:247 .tmp/ui_wallpaperItem.py:72
 #: .tmp/ui_scrStyleItem.py:69
 msgid "Form"
-msgstr "Formulier"
+msgstr "Форма"
 
 #: .tmp/ui_scrAvatar.py:248
 msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
