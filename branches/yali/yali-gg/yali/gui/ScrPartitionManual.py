@@ -74,6 +74,11 @@ about disk partitioning.
         self.connect(self.ui.deviceTree, SIGNAL("itemClicked(QTreeWidgetItem *, int)"), self.activateButtons)
         self.connect(self.menu, SIGNAL("triggered(QAction*)"), self.createDevice)
 
+        self.ui.deviceTree.hide()
+
+        self.ui.GGdeviceTree = Group(self)
+        self.ui.verticalLayout.addWidget(self.ui.GGdeviceTree)
+
     def shown(self):
         checkForSwapNoMatch(self.intf, self.storage)
         self.populate()
@@ -191,7 +196,7 @@ about disk partitioning.
 
         self.ui.newButton.setMenu(self.menu)
 
-    def addDevice(self, device, item):
+    def addDevice(self, device, item, GGitem = None):
         if device.format.hidden:
             return
 
@@ -230,6 +235,11 @@ about disk partitioning.
         label = getattr(format, "label", "")
         if label is None:
             label = ""
+
+        if GGitem:
+            GGitem.setText(name)
+            GGitem._setSize(int(device.size))
+            GGitem.setFSType(format.name)
 
         item.setDevice(device)
         item.setName(name)
@@ -285,6 +295,7 @@ about disk partitioning.
         drivesItem.setName(_("Hard Drives"))
         for disk in disks:
             diskItem = DeviceTreeItem(drivesItem)
+            GGdiskItem = self.ui.GGdeviceTree.addBlock("%s - %s" % (disk.model, disk.name))
             diskItem.setName("%s - %s" % (disk.model, disk.name))
             #self.ui.deviceTree.expandItem(diskItem)
             if disk.partitioned:
@@ -314,21 +325,26 @@ about disk partitioning.
                         extendedItem = partItem = DeviceTreeItem(diskItem)
                         partitionItem = extendedItem
 
+                        GGextendedItem = GGpartItem = GGdiskItem.addPartition(Partition(GGdiskItem))
+                        GGpartitionItem = GGextendedItem
+
                     elif device and device.isLogical:
                         if not extendedItem:
                             raise RuntimeError, _("Crossed logical partition before extended")
                         partitionItem = DeviceTreeItem(extendedItem)
+                        GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
 
                     else:
                         # Free space item
                         if partition.type & parted.PARTITION_LOGICAL:
                             partitionItem = DeviceTreeItem(extendedItem)
+                            GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
                         else:
                             partitionItem = DeviceTreeItem(diskItem)
-
+                            GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
 
                     if device and not device.isExtended:
-                        self.addDevice(device, partitionItem)
+                        self.addDevice(device, partitionItem, GGpartitionItem)
                     else:
                         # either extended or freespace
                         if partition.type & parted.PARTITION_FREESPACE:
@@ -695,3 +711,192 @@ class DeviceTreeItem(QtGui.QTreeWidgetItem):
 
     def setSize(self, size):
         self.setText(5, size)
+
+
+### NEW PARTITION WIDGET ###
+
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QPoint
+from PyQt4.QtCore import QRect
+from PyQt4.QtCore import QSize
+from PyQt4.QtCore import QTimer
+from PyQt4.QtCore import QMimeData
+
+from PyQt4.QtGui import QGroupBox
+from PyQt4.QtGui import QDrag
+from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QWidget
+from PyQt4.QtGui import QSizePolicy
+from PyQt4.QtGui import QPushButton
+from PyQt4.QtGui import QHBoxLayout, QVBoxLayout
+
+VERTICAL, HORIZONTAL = range(2)
+SHARED = 'QLabel{border:1px solid #585858;border-radius:4px;};'
+BUTTON = 'border:1px solid rgba(0,0,0,120);border-radius:4px;'
+
+STYLES = {"free":'background-color:rgba(0,0,0,80); border:2px solid #585858;',
+          "ext4":'background-color:#008080;',
+          "swap":'background-color:#008000;color:white;',
+          "hfs+":'background-color:pink;color:black;'}
+
+DRAG_STYLE = 'background-color:rgba(0,0,0,0);color:rgba(0,0,0,0);border:1px dotted #555;'
+
+class Partition(QLabel):
+    def __init__(self, parent, title = 'Free Space', fs_type = "free", size = 0):
+        QLabel.__init__(self, parent)
+        self.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.setSizePolicy(QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred))
+
+        self.parent = parent
+
+        self.setFSType(fs_type)
+        self.setText(title)
+        self._setSize(size)
+
+        self.editButton = QPushButton('Edit', self)
+        self.editButton.setStyleSheet(BUTTON)
+        self.deleteButton = QPushButton('Del', self)
+        self.deleteButton.setStyleSheet(BUTTON)
+
+        self.editButton.clicked.connect(self.editButtonClicked)
+        self.deleteButton.clicked.connect(self.deleteButtonClicked)
+
+        QTimer.singleShot(0, self.leaveEvent)
+
+    def setFSType(self, fs_type):
+        self._fs_type = fs_type
+        self.setStyleSheet(STYLES[fs_type])
+
+    def _setSize(self, size):
+        self._size = size
+        self.setToolTip('Size: %s MB' % size)
+        self.parent._updateSize()
+
+    def editButtonClicked(self):
+        print "Edit clicked on ", self.text()
+
+    def deleteButtonClicked(self):
+        self.parent.deletePartition(self)
+        print "Delete clicked on ", self.text()
+
+    def enterEvent(self, event):
+        if not self._fs_type == 'free':
+            self.setMinimumWidth(self.editButton.width() + self.deleteButton.width() + 6)
+            self.editButton.move(self.width() - self.editButton.width() - 2,
+                                 self.height() / 2 - self.editButton.height() / 2)
+            self.deleteButton.move(self.editButton.pos().x() - self.deleteButton.width() - 2,
+                                 self.height() / 2 - self.deleteButton.height() / 2)
+            self.editButton.show()
+            self.deleteButton.show()
+
+    def leaveEvent(self, event=None):
+        self.editButton.hide()
+        self.deleteButton.hide()
+        self.setMinimumWidth(60)
+
+class Block(QGroupBox):
+
+    def __init__(self, parent, name, size = 0, layout = HORIZONTAL):
+        QGroupBox.__init__(self, name, parent)
+
+        if layout == HORIZONTAL:
+            self.layout = QHBoxLayout(self)
+        else:
+            self.layout = QVBoxLayout(self)
+
+        self._name = name
+        self._layout = layout
+        self._size = size
+        self._used_size = 0
+        self._partitions = []
+        self._accepted_blocks = []
+
+    def setBlockSize(self, size):
+        self._size = size
+
+    def addPartition(self, partition, index = None):
+
+        if index == None:
+            index = len(self._partitions)
+
+        self._partitions.insert(index, partition)
+
+        """
+        if partition._fs_type == FREE and not partition._size:
+            size = self._size - self._used_size
+            partition._setSize(size)
+        """
+
+        self._used_size += partition._size
+
+        self.layout.insertWidget(index, partition)
+        self._updateSize()
+        return partition
+
+    def setBlockAsFree(self):
+        freePartition = Partition(self, 'free', 'free', self._size)
+        self.addPartition(freePartition, 0)
+
+    def deleteAllPartitions(self):
+        self._used_size = 0
+        for partition in self._partitions:
+            partition.hide()
+            self.layout.removeWidget(partition)
+        self._partitions = []
+
+    def deletePartition(self, partition, fillFree = False):
+        if fillFree:
+            pin = self._partitions.index(partition)
+            newFreePartition = Partition(self, 'free', 'free', partition._size)
+            self.addPartition(newFreePartition, pin)
+
+        self._partitions.remove(partition)
+        self.layout.removeWidget(partition)
+        self._used_size -= partition._size
+        partition.hide()
+        del partition
+
+        if all(partition._fs_type == 'free' for partition in self._partitions):
+            self.deleteAllPartitions()
+            self.setBlockAsFree()
+
+        for i in range(len(self._partitions) - 1):
+            if self._partitions[i]._fs_type == 'free' and self._partitions[i+1]._fs_type == 'free':
+                newFreePartition = Partition(self, 'free', 'free', self._partitions[i]._size + self._partitions[i+1]._size)
+                self.deletePartition(self._partitions[i])
+                self.deletePartition(self._partitions[i])
+                self.addPartition(newFreePartition, i)
+                break
+
+        self._updateSize()
+
+    def updatePartition(self, oP, sP):
+        oldIndex = self._partitions.index(oP)
+        newPartition = Partition(self, sP.text(), sP._fs_type, sP._size)
+        newFreePartition = Partition(self, 'free', 'free', oP._size - sP._size)
+        self.addPartition(newPartition, oldIndex)
+        self.addPartition(newFreePartition, oldIndex + 1)
+        self.deletePartition(oP)
+
+    def _updateSize(self):
+        for i in range(len(self._partitions)):
+            self.layout.setStretch(i, self._partitions[i]._size)
+
+class Group(QWidget):
+
+    def __init__(self, parent = None):
+        QWidget.__init__(self, parent)
+
+        self.setStyleSheet(SHARED)
+        self.layout = QVBoxLayout(self)
+        self._disks = []
+
+    def addBlock(self, name, size = None):
+        disk = Block(self, name, size)
+        self.layout.addWidget(disk)
+        self._disks.append(disk)
+        return disk
+
+    def getBlock(self, index):
+        return self._disks[index]
+
