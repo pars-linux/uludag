@@ -42,17 +42,17 @@ msgstr "Bahadır Kandemir"
 
 #: src/bootmanager/about.py:35
 msgid "First Developer"
-msgstr "Первый разработчикик"
+msgstr "Первый разработчик"
 
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий (zaG), Семенов Николай (Tribunal)"
+msgstr "Ясыров Василий (zaG), Семенов Николай (Tribunal), Щербаков Александр (neocrust)"
 
 #: src/bootmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
