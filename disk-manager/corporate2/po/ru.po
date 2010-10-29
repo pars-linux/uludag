@@ -2,7 +2,7 @@
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk-Manager package.
-#
+# 
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -21,50 +21,46 @@ msgstr ""
 
 #: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
 msgid "Disk Manager"
-msgstr "Festplatten-Manager"
+msgstr "Менеджер дисков"
 
 #: src/disk-manager.py:293
 msgid "Disk Manager is already running!"
-msgstr "Festplatten-Manager wird bereits ausgeführt!"
+msgstr "Менеджер дисков уже запущен!"
 
 #: src/diskform.py:83 src/diskform.py:110
 msgid "Disks"
-msgstr "Festplatten"
+msgstr "Диски"
 
 #: src/diskform.py:84 src/diskform.py:111
 msgid "Partitions"
-msgstr "Partitionen"
+msgstr "Разделы"
 
 #: src/diskform.py:105
-#, fuzzy
 msgid "Mount Automatically"
-msgstr "Festplatten automatisch finden"
+msgstr "Автоматическое монтирование"
 
 #: src/diskform.py:106
 msgid "File System Type :"
-msgstr "Dateisystem-Format:"
+msgstr "Тип файловой системы:"
 
 #: src/diskform.py:107
 msgid "Mount Point :"
-msgstr "Mount-Punkt:"
+msgstr "Точка монтирования:"
 
 #: src/diskform.py:108
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: src/diskform.py:109
 msgid "Additional Options :"
-msgstr "Zusätzliche Optionen :"
+msgstr "Дополнительные параметры :"
 
-#, fuzzy
 #~ msgid "Mount point is missing"
 #~ msgstr "Mount-Punkt:"
 
-#, fuzzy
 #~ msgid "Mount point does not exist"
 #~ msgstr "Mount-Punkt:"
 
-#, fuzzy
 #~ msgid "Add Missing Disks Automatically"
 #~ msgstr "Festplatten automatisch finden"
 
@@ -75,9 +71,7 @@ msgstr "Zusätzliche Optionen :"
 #~ msgstr "Standard-Optionen laden"
 
 #~ msgid "To update disk changes the manager must run as root"
-#~ msgstr ""
-#~ "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als "
-#~ "root ausgeführt werden"
+#~ msgstr "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als root ausgeführt werden"
 
 #~ msgid "User not in disk group !"
 #~ msgstr "Benutzer ist nicht in der Festplatten-Gruppe!"
