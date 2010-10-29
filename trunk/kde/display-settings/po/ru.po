@@ -55,17 +55,17 @@ msgstr "Fatih Aşıcı"
 
 #: src/displaysettings/about.py:31
 msgid "Current Maintainer"
-msgstr "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
 
 #: src/displaysettings/about.py:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -102,7 +102,7 @@ msgid ""
 "Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Невозможно найти корректную конфигурацию. Установки экрана не будут включены, пока вы не создатиде новую конфигурацию.\n"
+"Невозможно найти корректную конфигурацию. Установки экрана не будут включены, пока вы не создадите новую конфигурацию.\n"
 "Вы хотите создать безопасную конфигурацию прямо сейчас?"
 
 #: src/displaysettings/deviceswidget.py:94
@@ -114,7 +114,7 @@ msgstr "В доступе отказано."
 
 #: src/displaysettings/deviceswidget.py:119
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr "<qt>Для повышения производительности вы, возможно, захотите использовать <b>%1</b> драйвер, предоставленный произодителем. Вы хотите использовать этот драйвер?</p></qt>"
+msgstr "<qt>Для повышения производительности вы, возможно, захотите использовать <b>%1</b> драйвер, предоставленный производителем. Вы хотите использовать этот драйвер?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
@@ -192,7 +192,7 @@ msgstr "Производители"
 
 #: ui/ui_monitorbrowser.py:50
 msgid "Models:"
-msgstr "Models:"
+msgstr "Модели:"
 
 #: ui/ui_output.py:225
 msgid "Output Configuration"
