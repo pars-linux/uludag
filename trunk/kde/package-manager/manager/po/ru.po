@@ -57,12 +57,12 @@ msgstr "First Author"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:275
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
