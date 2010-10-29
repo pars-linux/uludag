@@ -134,6 +134,7 @@
         <SelectedPackage>libreoffice-langpack-pt-BR</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-sv</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
+        <SelectedPackage>libreoffice-python</SelectedPackage>
         <SelectedPackage>libvisual-plugins</SelectedPackage>
         <SelectedPackage>lm_sensors</SelectedPackage>
         <SelectedPackage>logrotate</SelectedPackage>
