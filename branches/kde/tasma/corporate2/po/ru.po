@@ -1,7 +1,7 @@
 # translation of de.po to Deutsch
 # translation of de.po to
 # This file is put in the public domain.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
@@ -20,7 +20,7 @@ msgstr ""
 
 #: modules/tasmatv/tuners-db.cpp:173 modules/tasmatv/cards-db.cpp:99
 msgid "Other"
-msgstr "Andere"
+msgstr "Другое"
 
 #: modules/tasmatv/tvconfigui.moc.cpp:34 modules/tasmatv/tvconfigui.moc.cpp:42
 msgid "TvConfigUI"
@@ -30,40 +30,40 @@ msgstr "TVConfigUI"
 #: rc.cpp:9 rc.cpp:30
 #, no-c-format
 msgid "Model"
-msgstr "Model"
+msgstr "Модель"
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:145
 #: rc.cpp:12 rc.cpp:27
 #, no-c-format
 msgid "Manufacturer"
-msgstr "Hersteller"
+msgstr "Производитель"
 
 #: modules/tasmatv/tvconfigui.cpp:139 modules/tasmatv/tvconfigui.cpp:141
 #: modules/tasmatv/tvconfigui.cpp:144 modules/tasmatv/tvconfigui.cpp:148
 #: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
 #, no-c-format
 msgid "New Item"
-msgstr "Neues Element"
+msgstr "Новый элемент"
 
 #: modules/tasmatv/tvconfigui.cpp:142 rc.cpp:6
 #, no-c-format
 msgid "Tv Card"
-msgstr "TV-Karte"
+msgstr "ТВ-карта"
 
 #: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
 #, no-c-format
 msgid "Tuner"
-msgstr "Empfänger"
+msgstr "Тюнер"
 
 #: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:39
 #, no-c-format
 msgid "Addons"
-msgstr "Erweiterungen"
+msgstr "Дополнения"
 
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:42
 #, no-c-format
 msgid "Radio Card"
-msgstr "Radio-Karte"
+msgstr "Радио-карта"
 
 #: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:45
 #, no-c-format
@@ -73,7 +73,7 @@ msgstr "Phasengekoppelter Regelkreis (PLL)"
 #: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
 #, no-c-format
 msgid "Do not use PLL"
-msgstr "PLL nicht verwenden"
+msgstr "Не использует PLL"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:51
 #, no-c-format
@@ -87,7 +87,7 @@ msgstr "35 Mhz Crystal"
 
 #: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
 msgid "TASMA Tv Card Configuration Module"
-msgstr "TASMA TV-Karte-Konfigurationsmodul"
+msgstr "Конфигурационный модуль ТВ-карты TASMA"
 
 #: modules/tasmatv/tasmatv.cpp:42
 msgid "(c) 2005-2006, TUBITAK - UEKAE"
@@ -95,19 +95,19 @@ msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
 msgid "Current Maintainer"
-msgstr "Aktueller Leiter des Programms"
+msgstr "Текущий сопровождающий"
 
 #: modules/tasmatv/tasmatv.cpp:81
 msgid "Tv card configuration module for TASMA."
-msgstr "TV-Karten-Konfigurationsmodul für TASMA"
+msgstr "Конфигурационный модуль ТВ-карты TASMA"
 
 #: src/main.cpp:62
 msgid "TASMA - Pardus Configuration Center"
-msgstr "TASMA - Pardus-Konfigurationscenter"
+msgstr "TASMA - Pardus- Центр конфигурации"
 
 #: src/main.cpp:63
 msgid "Pardus Configuration Center"
-msgstr "Pardus Konfigurationscenter"
+msgstr "Центр конфигурации Pardus"
 
 #: src/main.cpp:64
 msgid "(c) 2005-2007, TUBITAK - UEKAE"
@@ -115,109 +115,93 @@ msgstr "(c) 2005-2007, TUBITAK - UEKAE"
 
 #: src/main.cpp:66
 msgid "Developer"
-msgstr "Entwickler"
+msgstr "Разработчик"
 
 #: src/main.cpp:67
 msgid "Old Maintainer & Original Author"
-msgstr "Vorheriger Leiter & ursprünglicher Autor"
+msgstr "Предыдущий сопровождающий & Автор"
 
 #: src/main.cpp:68
 msgid "Module Developers"
-msgstr "Modul-Entwickler"
+msgstr "Разработчики модуля"
 
 #: src/main.cpp:68
 msgid "KDE Developers"
-msgstr "KDE-Entwickler"
+msgstr "KDE-разработчики"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:38
 msgid "PiSi Package Info"
-msgstr "PiSi-Paket-Info"
+msgstr "Информация о пакете PiSi"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:42
 msgid "Name"
-msgstr "Name"
+msgstr "Имя"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:44
 msgid "Description"
-msgstr "Beschreibung"
+msgstr "Описание"
 
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:45
 msgid "Size"
-msgstr "Grösse"
+msgstr "Размер"
 
 #: src/tmoduleview.cpp:73
 msgid "&Back"
-msgstr "&Zurück"
+msgstr "&Назад"
 
 #: src/tmoduleview.cpp:83
 msgid "&Reset"
-msgstr "&Zurücksetzen"
+msgstr "&Сброс"
 
 #: src/tmoduleview.cpp:86
 msgid "&Administrator Mode"
-msgstr "&Administrator-Modus"
+msgstr "&Режим администратора"
 
 #: src/tmoduleview.cpp:150
 msgid "<big>Loading...</big>"
-msgstr "<big>Am laden...</big>"
+msgstr "<big>Загрузка...</big>"
 
 #: src/aboutview.cpp:68
 msgid "Configuration Center"
-msgstr "Konfigurationscenter"
+msgstr "Центр конфигурации"
 
 #: src/aboutview.cpp:86
 msgid "Welcome to TASMA"
-msgstr "Willkommen zu TASMA"
+msgstr "Добро пожаловать в TASMA"
 
 #: src/aboutview.cpp:88
-msgid ""
-"TASMA is a configuration application for Pardus Operating System. You can "
-"tweak the systems default configuration settings by using the modules "
-"presented in TASMA. "
-msgstr ""
-"TASMA ist eine Konfigurationsanwendung für das Pardus-Betriebssystem. Durch "
-"die Verwendung der Module, die in TASMA aufgeführt werden, können Sie die "
-"Systemvoreinstellungen optimieren."
+msgid "TASMA is a configuration application for Pardus Operating System. You can tweak the systems default configuration settings by using the modules presented in TASMA. "
+msgstr "TASMA - это приложение конфигурации для операционной системы Pardus. Вы можете настраивать изначальную системную конфигурацию используя модули, представленные TASMA."
 
 #: src/aboutview.cpp:99
-msgid ""
-"For a better understanding modules are grouped by categories. You can "
-"activate a category by selecting a category from the left. After activating "
-"a category its contents will be shown as icons in the right panel. You can "
-"start a configuration module by clicking (or double clicking) its icon."
-msgstr ""
-"Für eine bessere Verständigung wurden die Module in Katogerien gruppiert. "
-"Sie können eine Kategorie aktivieren indem Sie eine Kategorie aus dem linken "
-"Bereich auswählen. Nachdem Sie eine Kategorie aktiviert haben, wird dessen "
-"Inhalt als Ikon in der rechten Leiste angezeigt. Sie können ein "
-"Konfigurationsmodul durch anklicken (oder durch einem Doppelklick) des "
-"jeweiligen Ikons starten."
+msgid "For a better understanding modules are grouped by categories. You can activate a category by selecting a category from the left. After activating a category its contents will be shown as icons in the right panel. You can start a configuration module by clicking (or double clicking) its icon."
+msgstr "Для лучшего восприятия, модули сгрупированны по категориям. Вы можете активировать категорию выбрав её слева. После активации категории, её содержимое будет показано на правой панели в виде значков. Вы можете запустить конфигурационный модуль кликнув (возможно, дважды) по соответствующему ему значку."
 
 #: src/tasmamainwin.cpp:83
 msgid "&Show Extra Modules"
-msgstr "Extra-Module an&zeigen"
+msgstr "&Показать экстра-модули"
 
 #: src/tasmamainwin.cpp:86
 msgid "About Current Module"
-msgstr "Über das aktuelle Modul"
+msgstr "О модуле"
 
 #: src/tasmamainwin.cpp:89
 msgid "Displays Information About Current Module"
-msgstr "Zeigt Informationen über das akutelle Modul an"
+msgstr "Показать информацию о текущем модуле"
 
 #: _translatorinfo.cpp:1
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Mustafa Ölcerman"
+msgstr "Щербаков Александр"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "m.oelcerman@pardus-linux.de"
+msgstr "neocrust@gmail.com"
 
 #: rc.cpp:3
 #, no-c-format
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr "Настройки"
