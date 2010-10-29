@@ -650,7 +650,7 @@ msgstr "Интервал проверки:"
 
 #: ui/ui_settingsdialog.py:380
 msgid " min"
-msgstr "мин"
+msgstr " мин"
 
 #: ui/ui_settingsdialog.py:381
 msgid "Install updates automatically"
@@ -662,7 +662,7 @@ msgstr "Граница ширины канала"
 
 #: ui/ui_settingsdialog.py:383
 msgid " kb/s"
-msgstr "кб/с"
+msgstr " кб/с"
 
 #: ui/ui_settingsdialog.py:384
 msgid "Use bandwidth limit :"
@@ -686,7 +686,7 @@ msgstr "Неограниченный"
 
 #: ui/ui_settingsdialog.py:389
 msgid " Mib"
-msgstr "Mib"
+msgstr " Mib"
 
 #: ui/ui_settingsdialog.py:390
 msgid "Current cache dir:"
