@@ -42,7 +42,7 @@ msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: .tmp/historymanager/window.py:76
 msgid "%1 Operations Loaded"
