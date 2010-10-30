@@ -78,8 +78,10 @@ about disk partitioning.
 
         self.ui.GGdeviceTree = BlockGroup(self, _("Hard Drives"))
         self.ui.verticalLayout.addWidget(self.ui.GGdeviceTree)
+
         self.ui.GGVdeviceTree = BlockGroup(self, _("Volume Groups"))
         self.ui.verticalLayout.addWidget(self.ui.GGVdeviceTree)
+
         self.ui.GGRdeviceTree = BlockGroup(self, _("Raid Arrays"))
         self.ui.verticalLayout.addWidget(self.ui.GGRdeviceTree)
 
@@ -242,9 +244,12 @@ about disk partitioning.
 
         if GGitem:
             try:
-                GGitem.setText(name)
-                GGitem._setSize(int(device.size))
+                GGitem.setName(name)
+                GGitem.setDetails('%s - %s (%s)' % (label, mountpoint,
+                    format.name))
+                GGitem.setSize(int(device.size))
                 GGitem.setFSType(format.name)
+                GGitem.setDevice(device)
                 print ">>> Added, ", name, int(device.size), format.name
             except:
                 print ">>> Failed, ", name, mountpoint, label, format.name
@@ -276,19 +281,19 @@ about disk partitioning.
                 volumeGroupItem.setType("")
                 for lv in vg.lvs:
                     logicalVolumeItem = DeviceTreeItem(volumeGroupItem)
-                    GGlogicalVolumeItem = GGvolumeGroupItem.addPartition(Partition(GGvolumeGroupItem))
+                    GGlogicalVolumeItem = GGvolumeGroupItem.addPartition()#Partition(GGvolumeGroupItem))
                     self.addDevice(lv, logicalVolumeItem, GGlogicalVolumeItem)
 
                 # We add a row for the VG free space.
                 if vg.freeSpace > 0:
                     freeLogicalVolumeItem = DeviceTreeItem(volumeGroupItem)
-                    GGfreeLogicalVolumeItem = GGvolumeGroupItem.addPartition(Partition(GGvolumeGroupItem))
+                    GGfreeLogicalVolumeItem = GGvolumeGroupItem.addPartition()#Partition(GGvolumeGroupItem))
 
                     freeLogicalVolumeItem.setName(_("Free"))
-                    GGfreeLogicalVolumeItem.setText(_("Free"))
+                    GGfreeLogicalVolumeItem.setName(_("Free"))
 
                     freeLogicalVolumeItem.setSize("%Ld" % vg.freeSpace)
-                    GGfreeLogicalVolumeItem._setSize(int(vg.freeSpace))
+                    GGfreeLogicalVolumeItem.setSize(int(vg.freeSpace))
                     freeLogicalVolumeItem.setDevice(None)
                     freeLogicalVolumeItem.setMountpoint("")
 
@@ -344,23 +349,23 @@ about disk partitioning.
                         extendedItem = partItem = DeviceTreeItem(diskItem)
                         partitionItem = extendedItem
 
-                        GGextendedItem = GGpartItem = GGdiskItem.addPartition(Partition(GGdiskItem))
+                        GGextendedItem = GGpartItem = GGdiskItem.addPartition()#Partition(GGdiskItem))
                         GGpartitionItem = GGextendedItem
 
                     elif device and device.isLogical:
                         if not extendedItem:
                             raise RuntimeError, _("Crossed logical partition before extended")
                         partitionItem = DeviceTreeItem(extendedItem)
-                        GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
+                        GGpartitionItem = GGdiskItem.addPartition()#Partition(GGdiskItem))
 
                     else:
                         # Free space item
                         if partition.type & parted.PARTITION_LOGICAL:
                             partitionItem = DeviceTreeItem(extendedItem)
-                            GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
+                            GGpartitionItem = GGdiskItem.addPartition()#Partition(GGdiskItem))
                         else:
                             partitionItem = DeviceTreeItem(diskItem)
-                            GGpartitionItem = GGdiskItem.addPartition(Partition(GGdiskItem))
+                            GGpartitionItem = GGdiskItem.addPartition()#Partition(GGdiskItem))
 
                     if device and not device.isExtended:
                         self.addDevice(device, partitionItem, GGpartitionItem)
@@ -374,7 +379,7 @@ about disk partitioning.
                             deviceName = device.name
                             deviceType = _("Extended")
 
-                        GGpartitionItem.setText(deviceName)
+                        GGpartitionItem.setName(deviceName)
                         GGpartitionItem.setFSType("free")
 
                         partitionItem.setName(deviceName)
@@ -385,7 +390,7 @@ about disk partitioning.
                         else:
                             size = "%Ld" % (size)
                         partitionItem.setSize(size)
-                        GGpartitionItem._setSize(int(size))
+                        GGpartitionItem.setSize(int(size))
                         partitionItem.setDevice(device)
 
                     partition = partition.nextPartition()
@@ -689,7 +694,11 @@ about disk partitioning.
         partitionEditor.destroy()
 
     def deleteDevice(self):
-        device = self.getCurrentDevice()
+        if self.sender() == self.ui.deleteButton:
+            device = self.getCurrentDevice()
+        else:
+            device = self.sender().device
+
         if device:
             if device.partitioned:
                 if doClearPartitionedDevice(self.intf, self.storage, device):
@@ -750,6 +759,7 @@ from PyQt4.QtCore import QRect
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QMimeData
+from PyQt4.QtCore import SIGNAL
 
 from PyQt4.QtGui import QGroupBox
 from PyQt4.QtGui import QDrag
@@ -765,7 +775,7 @@ VERTICAL, HORIZONTAL = range(2)
 SHARED = '#Partition{ border:1px solid #585858;border-radius:4px;}'
 BUTTON = 'border:1px solid rgba(0,0,0,120);border-radius:4px;'
 
-STYLES = {"free":'background-color:rgba(0,0,0,80); border:2px solid #585858;',
+STYLES = {"free":'background-color:rgba(0,0,0,80);',
           "ext4":'background-color:#008080;',
           "swap":'background-color:#008000;color:white;',
           "hfs+":'background-color:pink;color:black;'}
@@ -778,10 +788,11 @@ class Partition(QWidget, Ui_PartitionItem):
         self.ui = Ui_PartitionItem()
         self.ui.setupUi(self)
         self.parent = parent
+        self.device = None
 
         self.setFSType(fs_type)
-        self.setText(title)
-        self._setSize(size)
+        self.setName(title)
+        self.setSize(size)
 
         self.ui.editButton.setStyleSheet(BUTTON)
         self.ui.deleteButton.setStyleSheet(BUTTON)
@@ -789,29 +800,38 @@ class Partition(QWidget, Ui_PartitionItem):
         self.ui.editButton.clicked.connect(self.editButtonClicked)
         self.ui.deleteButton.clicked.connect(self.deleteButtonClicked)
 
+        # Shame on me.
+        self.connect(self, SIGNAL("deleteButtonClicked"), self.parent.parent.parent.deleteDevice)
+
         QTimer.singleShot(0, self.leaveEvent)
 
-    def setText(self, text):
+    def setDevice(self, device):
+        self.device = device
+
+    def setName(self, text):
         self.ui.title.setText(text)
 
-    def text(self):
+    def setDetails(self, details):
+        self.ui.comment.setText(details)
+
+    def name(self):
         return self.ui.title.text()
 
     def setFSType(self, fs_type):
         self._fs_type = fs_type
         self.ui.Partition.setStyleSheet(STYLES.get(fs_type, UNKNOWN_STYLE))
 
-    def _setSize(self, size):
+    def setSize(self, size):
         self._size = size
         self.setToolTip('Size: %s MB' % size)
         self.parent._updateSize()
 
     def editButtonClicked(self):
-        print "Edit clicked on ", self.text()
+        print "Edit clicked on ", self.name()
 
     def deleteButtonClicked(self):
-        self.parent.deletePartition(self)
-        print "Delete clicked on ", self.text()
+        self.emit(SIGNAL("deleteButtonClicked"), True)
+        print "Delete clicked on ", self.name()
 
     def enterEvent(self, event):
         if not self._fs_type == 'free':
@@ -826,80 +846,31 @@ class Partition(QWidget, Ui_PartitionItem):
 
 class Block(QGroupBox):
 
-    def __init__(self, parent, name, size = 0, layout = HORIZONTAL):
+    def __init__(self, parent, name, size = 0):
         QGroupBox.__init__(self, name, parent)
-
-        if layout == HORIZONTAL:
-            self.layout = QHBoxLayout(self)
-        else:
-            self.layout = QVBoxLayout(self)
+        self.layout = QHBoxLayout(self)
+        self.parent = parent
 
         self._name = name
-        self._layout = layout
         self._size = size
-        self._used_size = 0
         self._partitions = []
-        self._accepted_blocks = []
 
     def setBlockSize(self, size):
         self._size = size
 
-    def addPartition(self, partition, index = None):
+    def addPartition(self, partition = None, index = None):
+
+        if not partition:
+            partition = Partition(self)
 
         if index == None:
             index = len(self._partitions)
 
         self._partitions.insert(index, partition)
-        self._used_size += partition._size
         self.layout.insertWidget(index, partition)
         self._updateSize()
 
         return partition
-
-    def setBlockAsFree(self):
-        freePartition = Partition(self, 'free', 'free', self._size)
-        self.addPartition(freePartition, 0)
-
-    def deleteAllPartitions(self):
-        self._used_size = 0
-        for partition in self._partitions:
-            partition.hide()
-            self.layout.removeWidget(partition)
-        self._partitions = []
-
-    def deletePartition(self, partition, fillFree = False):
-        if fillFree:
-            pin = self._partitions.index(partition)
-            newFreePartition = Partition(self, 'free', 'free', partition._size)
-            self.addPartition(newFreePartition, pin)
-
-        self._partitions.remove(partition)
-        self.layout.removeWidget(partition)
-        self._used_size -= partition._size
-        partition.hide()
-        del partition
-
-        if all(partition._fs_type == 'free' for partition in self._partitions):
-            self.deleteAllPartitions()
-            self.setBlockAsFree()
-
-        for i in range(len(self._partitions) - 1):
-            if self._partitions[i]._fs_type == 'free' and self._partitions[i+1]._fs_type == 'free':
-                newFreePartition = Partition(self, 'free', 'free', self._partitions[i]._size + self._partitions[i+1]._size)
-                self.deletePartition(self._partitions[i])
-                self.deletePartition(self._partitions[i])
-                self.addPartition(newFreePartition, i)
-                break
-
-        self._updateSize()
-
-    def updatePartition(self, oP, sP):
-        oldIndex = self._partitions.index(oP)
-        newPartition = Partition(self, sP.text(), sP._fs_type, sP._size)
-        newFreePartition = Partition(self, 'free', 'free', oP._size - sP._size)
-        self.addPartition(newPartition, oldIndex)
-        self.addPartition(newFreePartition, oldIndex + 1)
-        self.deletePartition(oP)
 
     def _updateSize(self):
         for i in range(len(self._partitions)):
@@ -910,6 +881,7 @@ class BlockGroup(QGroupBox):
     def __init__(self, parent = None, name = 'Block Group'):
         QGroupBox.__init__(self, name, parent)
 
+        self.parent = parent
         self.setStyleSheet(SHARED)
         self.layout = QVBoxLayout(self)
         self._disks = []
