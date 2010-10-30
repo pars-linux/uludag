@@ -759,8 +759,10 @@ from PyQt4.QtGui import QSizePolicy
 from PyQt4.QtGui import QPushButton
 from PyQt4.QtGui import QHBoxLayout, QVBoxLayout
 
+from yali.gui.Ui.partitionitem import Ui_PartitionItem
+
 VERTICAL, HORIZONTAL = range(2)
-SHARED = 'QLabel{border:1px solid #585858;border-radius:4px;};'
+SHARED = '#Partition{ border:1px solid #585858;border-radius:4px;}'
 BUTTON = 'border:1px solid rgba(0,0,0,120);border-radius:4px;'
 
 STYLES = {"free":'background-color:rgba(0,0,0,80); border:2px solid #585858;',
@@ -770,34 +772,34 @@ STYLES = {"free":'background-color:rgba(0,0,0,80); border:2px solid #585858;',
 
 UNKNOWN_STYLE = 'background-color:lightyellow;color:black;'
 
-DRAG_STYLE = 'background-color:rgba(0,0,0,0);color:rgba(0,0,0,0);border:1px dotted #555;'
-
-class Partition(QLabel):
+class Partition(QWidget, Ui_PartitionItem):
     def __init__(self, parent, title = 'Free Space', fs_type = "free", size = 0):
-        QLabel.__init__(self, parent)
-        self.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
-        self.setSizePolicy(QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred))
-
+        QWidget.__init__(self, parent)
+        self.ui = Ui_PartitionItem()
+        self.ui.setupUi(self)
         self.parent = parent
 
         self.setFSType(fs_type)
         self.setText(title)
         self._setSize(size)
 
-        self.editButton = QPushButton('Edit', self)
-        self.editButton.setStyleSheet(BUTTON)
-        self.deleteButton = QPushButton('Del', self)
-        self.deleteButton.setStyleSheet(BUTTON)
+        self.ui.editButton.setStyleSheet(BUTTON)
+        self.ui.deleteButton.setStyleSheet(BUTTON)
 
-        self.editButton.clicked.connect(self.editButtonClicked)
-        self.deleteButton.clicked.connect(self.deleteButtonClicked)
+        self.ui.editButton.clicked.connect(self.editButtonClicked)
+        self.ui.deleteButton.clicked.connect(self.deleteButtonClicked)
 
         QTimer.singleShot(0, self.leaveEvent)
 
+    def setText(self, text):
+        self.ui.title.setText(text)
+
+    def text(self):
+        return self.ui.title.text()
+
     def setFSType(self, fs_type):
         self._fs_type = fs_type
-
-        self.setStyleSheet(STYLES.get(fs_type, UNKNOWN_STYLE))
+        self.ui.Partition.setStyleSheet(STYLES.get(fs_type, UNKNOWN_STYLE))
 
     def _setSize(self, size):
         self._size = size
@@ -813,17 +815,13 @@ class Partition(QLabel):
 
     def enterEvent(self, event):
         if not self._fs_type == 'free':
-            self.setMinimumWidth(self.editButton.width() + self.deleteButton.width() + 6)
-            self.editButton.move(self.width() - self.editButton.width() - 2,
-                                 self.height() / 2 - self.editButton.height() / 2)
-            self.deleteButton.move(self.editButton.pos().x() - self.deleteButton.width() - 2,
-                                 self.height() / 2 - self.deleteButton.height() / 2)
-            self.editButton.show()
-            self.deleteButton.show()
+            self.ui.editButton.show()
+            self.ui.deleteButton.show()
+            self.setMinimumWidth(200)
 
     def leaveEvent(self, event=None):
-        self.editButton.hide()
-        self.deleteButton.hide()
+        self.ui.editButton.hide()
+        self.ui.deleteButton.hide()
         self.setMinimumWidth(60)
 
 class Block(QGroupBox):
