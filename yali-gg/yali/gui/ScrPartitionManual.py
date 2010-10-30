@@ -76,8 +76,12 @@ about disk partitioning.
 
         # self.ui.deviceTree.hide()
 
-        self.ui.GGdeviceTree = Group(self)
+        self.ui.GGdeviceTree = BlockGroup(self, _("Hard Drives"))
         self.ui.verticalLayout.addWidget(self.ui.GGdeviceTree)
+        self.ui.GGVdeviceTree = BlockGroup(self, _("Volume Groups"))
+        self.ui.verticalLayout.addWidget(self.ui.GGVdeviceTree)
+        self.ui.GGRdeviceTree = BlockGroup(self, _("Raid Arrays"))
+        self.ui.verticalLayout.addWidget(self.ui.GGRdeviceTree)
 
     def shown(self):
         checkForSwapNoMatch(self.intf, self.storage)
@@ -237,10 +241,13 @@ about disk partitioning.
             label = ""
 
         if GGitem:
-            GGitem.setText(name)
-            GGitem._setSize(int(device.size))
-            GGitem.setFSType(format.name)
-            print ">>> Added, ", name, int(device.size), format.name
+            try:
+                GGitem.setText(name)
+                GGitem._setSize(int(device.size))
+                GGitem.setFSType(format.name)
+                print ">>> Added, ", name, int(device.size), format.name
+            except:
+                print ">>> Failed, ", name, mountpoint, label, format.name
 
         item.setDevice(device)
         item.setName(name)
@@ -254,6 +261,8 @@ about disk partitioning.
         # Clear device tree
         self.ui.deviceTree.clear()
         self.ui.GGdeviceTree.clear()
+        self.ui.GGVdeviceTree.clear()
+        self.ui.GGRdeviceTree.clear()
 
         # first do LVM
         vgs = self.storage.vgs
@@ -262,17 +271,24 @@ about disk partitioning.
             volumeGroupsItem.setName(_("Volume Groups"))
             for vg in vgs:
                 volumeGroupItem = DeviceTreeItem(volumeGroupsItem)
-                self.addDevice(vg, volumeGroupItem)
+                GGvolumeGroupItem = self.ui.GGVdeviceTree.addBlock("VV")
+                self.addDevice(vg, volumeGroupItem, GGvolumeGroupItem)
                 volumeGroupItem.setType("")
                 for lv in vg.lvs:
                     logicalVolumeItem = DeviceTreeItem(volumeGroupItem)
-                    self.addDevice(lv, logicalVolumeItem)
+                    GGlogicalVolumeItem = GGvolumeGroupItem.addPartition(Partition(GGvolumeGroupItem))
+                    self.addDevice(lv, logicalVolumeItem, GGlogicalVolumeItem)
 
                 # We add a row for the VG free space.
                 if vg.freeSpace > 0:
                     freeLogicalVolumeItem = DeviceTreeItem(volumeGroupItem)
+                    GGfreeLogicalVolumeItem = GGvolumeGroupItem.addPartition(Partition(GGvolumeGroupItem))
+
                     freeLogicalVolumeItem.setName(_("Free"))
+                    GGfreeLogicalVolumeItem.setText(_("Free"))
+
                     freeLogicalVolumeItem.setSize("%Ld" % vg.freeSpace)
+                    GGfreeLogicalVolumeItem._setSize(int(vg.freeSpace))
                     freeLogicalVolumeItem.setDevice(None)
                     freeLogicalVolumeItem.setMountpoint("")
 
@@ -282,8 +298,9 @@ about disk partitioning.
             raidArraysItem = DeviceTreeItem(self.ui.deviceTree)
             raidArraysItem.setName(_("Raid Arrays"))
             for array in raidarrays:
+                GGraidArrayItem = self.ui.GGRdeviceTree.addBlock("XX")
                 raidArrayItem = DeviceTreeItem(raidArraysItem)
-                self.addDevice(array, raidArrayItem)
+                self.addDevice(array, raidArrayItem, GGraidArrayItem)
 
         # now normal partitions
         disks = self.storage.partitioned
@@ -386,6 +403,8 @@ about disk partitioning.
         ctx.logger.debug("refresh: justRedraw=%s" % justRedraw)
         self.ui.deviceTree.clear()
         self.ui.GGdeviceTree.clear()
+        self.ui.GGVdeviceTree.clear()
+        self.ui.GGRdeviceTree.clear()
         if justRedraw:
             rc = 0
         else:
@@ -691,6 +710,8 @@ about disk partitioning.
         self.storage.reset()
         self.ui.deviceTree.clear()
         self.ui.GGdeviceTree.clear()
+        self.ui.GGVdeviceTree.clear()
+        self.ui.GGRdeviceTree.clear()
         self.refresh(justRedraw=True)
 
 
@@ -747,6 +768,8 @@ STYLES = {"free":'background-color:rgba(0,0,0,80); border:2px solid #585858;',
           "swap":'background-color:#008000;color:white;',
           "hfs+":'background-color:pink;color:black;'}
 
+UNKNOWN_STYLE = 'background-color:lightyellow;color:black;'
+
 DRAG_STYLE = 'background-color:rgba(0,0,0,0);color:rgba(0,0,0,0);border:1px dotted #555;'
 
 class Partition(QLabel):
@@ -773,7 +796,8 @@ class Partition(QLabel):
 
     def setFSType(self, fs_type):
         self._fs_type = fs_type
-        self.setStyleSheet(STYLES[fs_type])
+
+        self.setStyleSheet(STYLES.get(fs_type, UNKNOWN_STYLE))
 
     def _setSize(self, size):
         self._size = size
@@ -883,25 +907,28 @@ class Block(QGroupBox):
         for i in range(len(self._partitions)):
             self.layout.setStretch(i, self._partitions[i]._size)
 
-class Group(QWidget):
+class BlockGroup(QGroupBox):
 
-    def __init__(self, parent = None):
-        QWidget.__init__(self, parent)
+    def __init__(self, parent = None, name = 'Block Group'):
+        QGroupBox.__init__(self, name, parent)
 
         self.setStyleSheet(SHARED)
         self.layout = QVBoxLayout(self)
         self._disks = []
+        self.hide()
 
     def clear(self):
         for disk in self._disks:
             disk.hide()
             self.layout.removeWidget(disk)
         self._disks = []
+        self.hide()
 
     def addBlock(self, name, size = None):
         disk = Block(self, name, size)
         self.layout.addWidget(disk)
         self._disks.append(disk)
+        self.show()
         return disk
 
     def getBlock(self, index):
