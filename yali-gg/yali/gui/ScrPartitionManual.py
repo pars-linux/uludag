@@ -74,7 +74,7 @@ about disk partitioning.
         self.connect(self.ui.deviceTree, SIGNAL("itemClicked(QTreeWidgetItem *, int)"), self.activateButtons)
         self.connect(self.menu, SIGNAL("triggered(QAction*)"), self.createDevice)
 
-        self.ui.deviceTree.hide()
+        # self.ui.deviceTree.hide()
 
         self.ui.GGdeviceTree = Group(self)
         self.ui.verticalLayout.addWidget(self.ui.GGdeviceTree)
@@ -240,6 +240,7 @@ about disk partitioning.
             GGitem.setText(name)
             GGitem._setSize(int(device.size))
             GGitem.setFSType(format.name)
+            print ">>> Added, ", name, int(device.size), format.name
 
         item.setDevice(device)
         item.setName(name)
@@ -252,6 +253,7 @@ about disk partitioning.
     def populate(self):
         # Clear device tree
         self.ui.deviceTree.clear()
+        self.ui.GGdeviceTree.clear()
 
         # first do LVM
         vgs = self.storage.vgs
@@ -355,6 +357,9 @@ about disk partitioning.
                             deviceName = device.name
                             deviceType = _("Extended")
 
+                        GGpartitionItem.setText(deviceName)
+                        GGpartitionItem.setFSType("free")
+
                         partitionItem.setName(deviceName)
                         partitionItem.setType(deviceType)
                         size = partition.getSize(unit="MB")
@@ -363,6 +368,7 @@ about disk partitioning.
                         else:
                             size = "%Ld" % (size)
                         partitionItem.setSize(size)
+                        GGpartitionItem._setSize(int(size))
                         partitionItem.setDevice(device)
 
                     partition = partition.nextPartition()
@@ -379,6 +385,7 @@ about disk partitioning.
     def refresh(self, justRedraw=None):
         ctx.logger.debug("refresh: justRedraw=%s" % justRedraw)
         self.ui.deviceTree.clear()
+        self.ui.GGdeviceTree.clear()
         if justRedraw:
             rc = 0
         else:
@@ -683,6 +690,7 @@ about disk partitioning.
             return
         self.storage.reset()
         self.ui.deviceTree.clear()
+        self.ui.GGdeviceTree.clear()
         self.refresh(justRedraw=True)
 
 
@@ -820,17 +828,10 @@ class Block(QGroupBox):
             index = len(self._partitions)
 
         self._partitions.insert(index, partition)
-
-        """
-        if partition._fs_type == FREE and not partition._size:
-            size = self._size - self._used_size
-            partition._setSize(size)
-        """
-
         self._used_size += partition._size
-
         self.layout.insertWidget(index, partition)
         self._updateSize()
+
         return partition
 
     def setBlockAsFree(self):
@@ -889,6 +890,12 @@ class Group(QWidget):
 
         self.setStyleSheet(SHARED)
         self.layout = QVBoxLayout(self)
+        self._disks = []
+
+    def clear(self):
+        for disk in self._disks:
+            disk.hide()
+            self.layout.removeWidget(disk)
         self._disks = []
 
     def addBlock(self, name, size = None):
