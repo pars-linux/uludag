@@ -134,6 +134,13 @@
          </spacer>
         </item>
         <item>
+         <widget class="QPushButton" name="useButton">
+          <property name="text">
+           <string>Use</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QPushButton" name="editButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
