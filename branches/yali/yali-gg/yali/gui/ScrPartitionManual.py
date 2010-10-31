@@ -75,6 +75,7 @@ about disk partitioning.
         self.connect(self.menu, SIGNAL("triggered(QAction*)"), self.createDevice)
 
         # self.ui.deviceTree.hide()
+        self._active_device = None
 
         self.ui.GGdeviceTree = BlockGroup(self, _("Hard Drives"))
         self.ui.verticalLayout.addWidget(self.ui.GGdeviceTree)
@@ -392,6 +393,7 @@ about disk partitioning.
                         partitionItem.setSize(size)
                         GGpartitionItem.setSize(int(size))
                         partitionItem.setDevice(device)
+                        GGpartitionItem.setDevice(device)
 
                     partition = partition.nextPartition()
             else:
@@ -508,7 +510,12 @@ about disk partitioning.
             self.createRaidArray.setVisible(True)
 
     def createDevice(self, action):
-        device = self.getCurrentDevice()
+
+        if self._active_device:
+            device = self._active_device
+            self._active_device = None
+        else:
+            device = self.getCurrentDevice()
 
         if isinstance(device, parted.partition.Partition):
             if action == self.createRaidMember:
@@ -538,7 +545,11 @@ about disk partitioning.
 
 
     def editDevice(self, *args):
-        device = self.getCurrentDevice()
+        if self.sender() == self.ui.editButton:
+            device = self.getCurrentDevice()
+        else:
+            device = self.sender().device
+
         if device and not isinstance(device, parted.partition.Partition):
             reason = self.storage.deviceImmutable(device, ignoreProtected=True)
 
@@ -763,6 +774,7 @@ from PyQt4.QtCore import SIGNAL
 
 from PyQt4.QtGui import QGroupBox
 from PyQt4.QtGui import QDrag
+from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
 from PyQt4.QtGui import QSizePolicy
@@ -794,14 +806,16 @@ class Partition(QWidget, Ui_PartitionItem):
         self.setName(title)
         self.setSize(size)
 
+        self.ui.useButton.setStyleSheet(BUTTON)
         self.ui.editButton.setStyleSheet(BUTTON)
         self.ui.deleteButton.setStyleSheet(BUTTON)
 
-        self.ui.editButton.clicked.connect(self.editButtonClicked)
-        self.ui.deleteButton.clicked.connect(self.deleteButtonClicked)
-
         # Shame on me.
+        self.ui.deleteButton.clicked.connect(lambda: self.emit(SIGNAL("deleteButtonClicked"), True))
+        self.ui.editButton.clicked.connect(lambda: self.emit(SIGNAL("editButtonClicked"), True))
+
         self.connect(self, SIGNAL("deleteButtonClicked"), self.parent.parent.parent.deleteDevice)
+        self.connect(self, SIGNAL("editButtonClicked"), self.parent.parent.parent.editDevice)
 
         QTimer.singleShot(0, self.leaveEvent)
 
@@ -826,20 +840,20 @@ class Partition(QWidget, Ui_PartitionItem):
         self.setToolTip('Size: %s MB' % size)
         self.parent._updateSize()
 
-    def editButtonClicked(self):
-        print "Edit clicked on ", self.name()
-
-    def deleteButtonClicked(self):
-        self.emit(SIGNAL("deleteButtonClicked"), True)
-        print "Delete clicked on ", self.name()
-
     def enterEvent(self, event):
         if not self._fs_type == 'free':
             self.ui.editButton.show()
             self.ui.deleteButton.show()
             self.setMinimumWidth(200)
+        elif self._fs_type == 'free':
+            self.ui.useButton.show()
+            self.ui.useButton.setMenu(self.parent.parent.parent.menu)
+            self.parent.parent.parent._active_device = self.device
 
     def leaveEvent(self, event=None):
+        if self._fs_type == 'free':
+            self.ui.useButton.setMenu(QMenu())
+        self.ui.useButton.hide()
         self.ui.editButton.hide()
         self.ui.deleteButton.hide()
         self.setMinimumWidth(60)
