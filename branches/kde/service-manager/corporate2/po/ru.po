@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -22,74 +22,74 @@ msgstr ""
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
 msgid "Service Manager"
-msgstr "Dienste-Manager"
+msgstr "Менеджер сервисов"
 
 #: src/service-manager.py:81
 msgid "Service Manager is already started!"
-msgstr "Dienste-Manager wird bereits ausgeführt!"
+msgstr "Менеджер сервисов уже запущен!"
 
 #: src/sm_mainview.py:126
 msgid "Unable to connect to DBus."
-msgstr "Verbindung zum DBus nicht möglich."
+msgstr "Невозможно подключиться к DBus."
 
 #: src/sm_mainview.py:126
 msgid "DBus Error"
-msgstr "DBus-Fehler"
+msgstr "Ошибка DBus"
 
 #: src/sm_mainview.py:139
 msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
+msgstr "У вас нет прав для данной операции."
 
 #: src/sm_mainview.py:168
 msgid "D-Bus Error"
-msgstr "D-Bus-Fehler"
+msgstr "Ошибка D-Bus"
 
 #: src/sm_mainview.py:172
 msgid "COMAR Error"
-msgstr "COMAR-Fehler"
+msgstr "Ошибка COMAR"
 
 #: src/sm_mainview.py:242 src/service_manager.py:127
 msgid "Select a service from list."
-msgstr "Wählen Sie ein Dienst aus der Liste aus."
+msgstr "Выберите сервис из списка."
 
 #: src/sm_mainview.py:249
 msgid "Clear Search"
-msgstr "Suche leeren"
+msgstr "Очистить поиск"
 
 #: src/sm_mainview.py:250 src/service_manager.py:129
 #: src/service_manager.py:131
 msgid "Start"
-msgstr "Starten"
+msgstr "Старт"
 
 #: src/sm_mainview.py:252
 msgid "Restart"
-msgstr "Neustarten"
+msgstr "Рестарт"
 
 #: src/sm_mainview.py:257
 #, python-format
 msgid "%s is running."
-msgstr "%s ist gestartet."
+msgstr "%s запущен."
 
 #: src/sm_mainview.py:260
 #, python-format
 msgid "%s is not running."
-msgstr "%s ist angehalten."
+msgstr "%s не запущен."
 
 #: src/sm_mainview.py:334
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
 msgstr ""
-"Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
-"Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
+"Если вы остановите этот сервис, то могут возникнуть проблемы.\n"
+"Вы действительно хотите остановить этот сервис?"
 
 #: src/sm_mainview.py:338
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
 msgstr ""
-"Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
-"Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
+"Если вы отключите этот сервис, то могут возникнуть проблемы.\n"
+"Вы действительно хотите продолжить?"
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
@@ -97,31 +97,31 @@ msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
 msgid "Service"
-msgstr "Dienst"
+msgstr "Сервис"
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
-msgstr "Automatisch starten"
+msgstr "Запускать при запуске системы"
 
 #: src/service_manager.py:89 src/service_manager.py:137
 msgid "Package"
-msgstr "Paket"
+msgstr "Пакет"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
-msgstr "Automatisch starten"
+msgstr "Запускать при запуске системы"
 
 #: src/service_manager.py:126
 msgid "Don't run on startup."
-msgstr "Nicht automatisch starten."
+msgstr "Не запускать при запуске системы"
 
 #: src/service_manager.py:139
 msgid "Reset Search"
-msgstr "Suche Leeren"
+msgstr "Сброс поиска"
 
 #: src/service_manager.py:140
 msgid "Search:"
-msgstr "Suche:"
+msgstr "Поиск:"
 
 #: src/service_manager.py:141
 msgid "&List servers only."
