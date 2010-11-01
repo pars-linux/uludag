@@ -238,7 +238,7 @@ class MainWidget(QWidget, Ui_MainWidget):
                                                   self.showBasket)
             self.actionButton.setMenu(menu)
         else:
-            self.actionButton.setMenu(QMenu())
+            self.actionButton.setMenu(None)
         self.actionButton.setIcon(self.state.getActionIcon())
         self.actionButton.setText(self.state.getActionName())
 
