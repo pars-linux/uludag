@@ -244,16 +244,14 @@ about disk partitioning.
             label = ""
 
         if GGitem:
-            try:
-                GGitem.setName(name)
+            GGitem.setName(name)
+            if isinstance(GGitem, Partition):
                 GGitem.setDetails('%s - %s (%s)' % (label, mountpoint,
                     format.name))
                 GGitem.setSize(int(device.size))
                 GGitem.setFSType(format.name)
                 GGitem.setDevice(device)
                 print ">>> Added, ", name, int(device.size), format.name
-            except:
-                print ">>> Failed, ", name, mountpoint, label, format.name
 
         item.setDevice(device)
         item.setName(name)
@@ -868,6 +866,10 @@ class Block(QGroupBox):
         self._name = name
         self._size = size
         self._partitions = []
+
+    def setName(self, name):
+        self._name = name
+        self.setTitle(self._name)
 
     def setBlockSize(self, size):
         self._size = size
