@@ -350,11 +350,11 @@ class MainWidget(QWidget, Ui_MainWidget):
                 self.state.stateAction()
             self.state.cached_packages = None
             self.initialize()
-            self.contentHistory.hide()
-            self.content.show()
-        else:
-            self.contentHistory.show()
-            self.content.hide()
+            # self.contentHistory.hide()
+            # self.content.show()
+        # else:
+            # self.contentHistory.show()
+            # self.content.hide()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
