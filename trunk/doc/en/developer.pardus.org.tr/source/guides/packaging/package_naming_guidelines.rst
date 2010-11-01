@@ -4,6 +4,12 @@
  Package Naming Guideline
 =========================
 
+**Last Modified Date:** |today|
+
+:Author: Fatih Aşıcı
+
+:Version: 0.1
+
 This document describes the package naming rules used in Pardus repositories.
 If you think these guidelines are not sufficient to choose a name for your
 package, please ask on developer mail lists.
@@ -337,9 +343,6 @@ Example::
 
     R-mathlib: mathlib module for R
 
-**Last Modified Date:** |today|
-
-:Author: Fatih Aşıcı
 
 .. TeX Packages
 .. ============

@@ -7,7 +7,7 @@ Packaging Guidelines
 
 :Author: Semen Cirit
 
-:Version: 0.2
+:Version: 0.3
 
 During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
 
@@ -347,9 +347,17 @@ In order to take the package hash, we need to download the souce code archive of
 Documentation
 -------------
 
-Any necessary documentation included in the source package, excluded build instructions, INSTALL file, documentations for non-Linux systems etc. API documentations generally are splitted from the package and get name packagename-devel. Or if there's a lot of documentation, they also are splitted to a new package as packagename-doc.
+Any necessary documentation included in the source package, excluded build instructions, INSTALL file, documentations for non-Linux systems etc. API documentations generally are splitted from the package and get name packagename-devel. Or they also are splitted to a new package as packagename-doc.
 
 The documentation files is also placed under "/usr/share/doc/packagename". For some packages the documents are placed under "/usr/share/doc/packagename-version" automatically, you should move these files under "/usr/share/doc/packagename".
+
+
+Devel Packages
+--------------
+
+If the software has some files solely for development, those files should be put in a packagename-devel subpackage. The header files and unversioned shared libraries should be in packagename-devel package.
+
+The pkgconfig files generally used for developement, so they should be included in a packagename-devel package. But for example if the base package is a developement tool it can be included in base package.
 
 .. Compiler Flags
 .. --------------
@@ -360,8 +368,18 @@ The documentation files is also placed under "/usr/share/doc/packagename". For s
 .. Shared Libraries
 .. ----------------
 
-.. Static Libraries
-.. ----------------
+Static Libraries
+----------------
+
+The static libraries should not be included in packages, but they may have some exceptions. The applications that links against static libraries should as far as possible link against shared versions by configuring with --disable-static.
+
+.la libtool archives  should not be included in packages. Packages that produce .la files while building with --disable-static configuration parameter, thay may need to be removed from the packages after build. ın some circumstances programs may need these files and it is not possible to remove them. This should be fixed in the source code of the program.
+
+
+Duplication of system libraries
+-------------------------------
+
+A local copy of the library that already exists on the system should not be included or build against by a package. The package should be patched to use the system libraries. The security and high priority bugs related to system libraries can directly be fixed thanks to this. Some packages may be granted an exception to this. (Please contact with `developer mail list <http://liste.pardus.org.tr/mailman/listinfo/gelistirici>`_ for further questions.)
 
 .. Configuration files
 .. -------------------
