@@ -134,36 +134,32 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.showAllAction = KToggleAction(KIcon("list-add"), i18n("All Packages"), self)
         self.actionCollection().addAction("showAllAction", self.showAllAction)
         self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.ALL))
-        # self.cw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show All Packages"))
         self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("All Packages"))
         actionGroup.addAction(self.showAllAction)
 
         self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Installable Packages"), self)
         self.actionCollection().addAction("showInstallAction", self.showInstallAction)
         self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.INSTALL))
-        # self.cw.stateCombo.addItem(KIcon("list-add"), i18n("Show Installable Packages"))
         self.cw.stateTab.addTab(QWidget(), KIcon("list-add"), i18n("Installable Packages"))
         actionGroup.addAction(self.showInstallAction)
 
         self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Installed Packages"), self)
         self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
         self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.REMOVE))
-        # self.cw.stateCombo.addItem(KIcon("list-remove"), i18n("Show Installed Packages"))
         self.cw.stateTab.addTab(QWidget(), KIcon("list-remove"), i18n("Installed Packages"))
         actionGroup.addAction(self.showRemoveAction)
 
         self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Upgradable Packages"), self)
         self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.UPGRADE))
-        # self.cw.stateCombo.addItem(KIcon("view-refresh"), i18n("Show Upgradable Packages"))
         self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("Upgradable Packages"))
         actionGroup.addAction(self.showUpgradeAction)
 
-        self.showHistoryAction = KToggleAction(KIcon("view-refresh"), i18n("History"), self)
-        self.actionCollection().addAction("showHistoryAction", self.showHistoryAction)
-        self.connect(self.showHistoryAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.HISTORY))
-        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("History"))
-        actionGroup.addAction(self.showHistoryAction)
+        # self.showHistoryAction = KToggleAction(KIcon("view-refresh"), i18n("History"), self)
+        # self.actionCollection().addAction("showHistoryAction", self.showHistoryAction)
+        # self.connect(self.showHistoryAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.HISTORY))
+        # self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("History"))
+        # actionGroup.addAction(self.showHistoryAction)
 
         self.cw.menuButton.setMenu(QMenu('MainMenu', self.cw.menuButton))
         self.cw.menuButton.setIcon(KIcon('preferences-other'))
@@ -188,8 +184,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.cw._states = {self.cw.state.ALL    :(0, self.showAllAction),
                            self.cw.state.INSTALL:(1, self.showInstallAction),
                            self.cw.state.REMOVE :(2, self.showRemoveAction),
-                           self.cw.state.UPGRADE:(3, self.showUpgradeAction),
-                           self.cw.state.HISTORY:(4, self.showHistoryAction)}
+                           self.cw.state.UPGRADE:(3, self.showUpgradeAction)}
+        #                  self.cw.state.HISTORY:(4, self.showHistoryAction)}
 
         self.showAllAction.setChecked(True)
 
