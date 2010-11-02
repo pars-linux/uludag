@@ -87,7 +87,7 @@ msgstr "<big><b>Должен ли я удалить этого пользова�
 
 #: browser.py:148
 msgid "Delete User"
-msgstr "Удаление пользователя"
+msgstr "Удаление пользователя "
 
 #: browser.py:149
 msgid "Delete user and files"
@@ -256,7 +256,7 @@ msgstr "Вы удаляете себя из системной группы \"wh
 
 #: useredit.py:544
 msgid "Important Group Change"
-msgstr "Важное изменение группы"
+msgstr "Важное изменение группы "
 
 #: useredit.py:551
 msgid "Changing user information..."
