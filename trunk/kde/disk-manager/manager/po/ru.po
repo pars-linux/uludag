@@ -69,7 +69,7 @@ msgstr "Добавить"
 #: src/diskmanager/main.py:273 src/diskmanager/main.py:283
 #: src/diskmanager/main.py:322
 msgid "Access denied."
-msgstr "Отказано в доступе."
+msgstr "Доступ запрещен."
 
 #: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
 msgid "Settings"
