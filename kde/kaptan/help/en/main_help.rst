@@ -3,9 +3,9 @@ Kaptan
 
 **Kaptan** is a wizard that helps user to customize desktop enviroment after 
 installing Pardus. While Kaptan is giving some information about Pardus, it also 
-sets basic configures such as internet connection, wall paper and so on.
+sets basic configures such as internet connection, wallpaper and so on.
 
-Mause
+Mouse
 -----
 
 You may set one or double click to open files with  **Click Mode**.
@@ -29,7 +29,7 @@ Wall Paper
 
 The menu that helps you to select which wall paper you want to set your desktop.
 
-With **Browse Wall Paper** button, you can select wall paper from personal files.
+With **Browse WallPaper** button, you can select wall paper from personal files.
 
 Search
 ------
