@@ -59,7 +59,7 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Нет пакетов, которые являются основной частью для этого приложения.\n"
+"Нет пакетов, которые являются базовой частью для этого приложения.\n"
 "Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
 
 #: src/bootmanager/main.py:198
