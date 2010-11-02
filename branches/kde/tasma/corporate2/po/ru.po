@@ -30,35 +30,35 @@ msgstr "TVConfigUI"
 #: rc.cpp:9 rc.cpp:30
 #, no-c-format
 msgid "Model"
-msgstr "Модель"
+msgstr "Модель "
 
 #: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:145
 #: rc.cpp:12 rc.cpp:27
 #, no-c-format
 msgid "Manufacturer"
-msgstr "Производитель"
+msgstr "Производитель "
 
 #: modules/tasmatv/tvconfigui.cpp:139 modules/tasmatv/tvconfigui.cpp:141
 #: modules/tasmatv/tvconfigui.cpp:144 modules/tasmatv/tvconfigui.cpp:148
 #: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
 #, no-c-format
 msgid "New Item"
-msgstr "Новый элемент"
+msgstr "Новый элемент "
 
 #: modules/tasmatv/tvconfigui.cpp:142 rc.cpp:6
 #, no-c-format
 msgid "Tv Card"
-msgstr "ТВ-карта"
+msgstr "ТВ-карта "
 
 #: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
 #, no-c-format
 msgid "Tuner"
-msgstr "Тюнер"
+msgstr "Тюнер "
 
 #: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:39
 #, no-c-format
 msgid "Addons"
-msgstr "Дополнения"
+msgstr "Дополнения "
 
 #: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:42
 #, no-c-format
@@ -193,13 +193,13 @@ msgstr "Показать информацию о текущем модуле"
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Щербаков Александр"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
 
 #: _translatorinfo.cpp:3
 msgid ""
 "_: EMAIL OF TRANSLATORS\n"
 "Your emails"
-msgstr "neocrust@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 
 #: rc.cpp:3
 #, no-c-format
