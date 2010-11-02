@@ -49,7 +49,7 @@ msgstr "Точка монтирования:"
 
 #: src/diskform.py:108
 msgid "Reset"
-msgstr "Сброс"
+msgstr "Сброс "
 
 #: src/diskform.py:109
 msgid "Additional Options :"
