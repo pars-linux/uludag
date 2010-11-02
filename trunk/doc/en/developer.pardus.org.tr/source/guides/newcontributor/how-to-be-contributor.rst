@@ -49,39 +49,40 @@ Application Request
 
 Sending Quiz to Applicant
 -------------------------
-#. The mentoring coordinators send quiz as an attachment with `Quiz Sending Stock Response`_ and give the `QUIZSEND <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
+#. The mentoring coordinators send quiz as an attachment with `Quiz Sending Stock Response`_.
 #. The applicant sends an approval, that he/she starts the quiz.
 #. After 10 days of the approval, the applicant commits his/her answers as an attachment to the bug.
 #. If the applicant is not responsive in these 10 days, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
-#. If the applicant is responsive and has send the answers in 10 days:
-    #. Mentoring coordinators give `ANSWERREC <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
-    #. The answers will be reviewed by mentors and review comments will be given on bugzilla.
+#. If the applicant is responsive and has send the answers in 10 days, the answers will be reviewed by mentors and review comments will be given on bugzilla.
 #. If the quiz review is negative, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 #. If the quiz review is positive:
-    #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
-    #. If the applicant is applied as a developer, a mentor is assigned to him/her and mentor coordinators give `MENTORASSIGNED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
+    #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED. 
+    #. If the applicant is applied as a developer, a mentor is assigned to him/her.
 
 
 Assigning Mentor
 ----------------
-#. A mentor is assigned related to applicant responses or in alphabetical order.
+#. The applicant choose a job from `Junior Jobs <http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED>`_ and give this junior job id on his/her new contributor report as a bug comment.
+    #. The mentor will assign according to this job.
+    #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. The coordinator will also reassign the bug to related applicant mentor.
+    #. At this stage playground svn permissions will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
+#. The mentor coordinators will track:
+    #. The number of applicant on mentor.
+    #. Send ping mails to mentor@pardus.org.tr in order to assign mentor to an applicant.
+
+But there are some constraints about assigning:
     #. One mentor has maximum 3 applicants
     #. If all mentors has 3 applicants, the newest applicant should have to wait in the queue. It will be announced by mentoring coordinators with a `Waiting in the Queue Stock Response`_ comment.
-    #. The mentor coordinators will track:
-        #. The number of applicant on mentor.
-        #. Send ping mails to mentor@pardus.org.tr in order to assign mentor to an applicant.
-    #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. The coordinator will also reassign the bug to related applicant mentor.
 
 Mentoring Process
 -----------------
-#. The mentor will give applicant some junior jobs. (The junior job can be a bug or package.) (see  :ref:`newcontributor-mentors`)
-    #. Related to junior jobs difficulty, one more jobs can be given to applicant.
-    #. At this stage playground svn permissions will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
+#. Assigned mentor will keep an eye on applicant (see  :ref:`newcontributor-mentors`)
+    #. Give warnings on applicant bug report.
+    #. Related to junior jobs difficulty, one more job can be demanded from the applicant. (Mentor can guide applicant to find one more job.)
     #. The owner of the packages that applicant has done will be his/her mentor.
 #. If the applicant might not have achieved to finish the applicant job until the deadline, his/her bug will be closed with status RESOLVED/INVALID by the mentor and related comment will be given. Mentor can also add the reapply time to the comment. (Reapply time is depended to mentor related to applicant performance)(The mentor will send and an email to sys. Admin for removing permissions.)
-#. If applicant has finished his/her jobs in time:
-    #. The applicant is enters applicant progress observation period.
+#. If applicant has finished his/her jobs in time the applicant is enters applicant progress observation period.
 
 Applicant Progress Observation
 ------------------------------
