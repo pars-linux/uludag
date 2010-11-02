@@ -67,7 +67,7 @@ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
 #: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:275
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
-msgstr "Ошибка в PiSi"
+msgstr "Ошибка в PiSi "
 
 #: src/basketdialog.py:154
 msgid "Do you want to continue ?"
