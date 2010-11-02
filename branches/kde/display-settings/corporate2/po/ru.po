@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -16,112 +16,90 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:181
 msgid "Display Settings"
-msgstr "Bildschirm Einstellungen"
+msgstr "Настройки дисплея"
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
-msgstr "Das Modul Bildschirmeinstellungen ist schon gestartet !"
+msgstr "Модуль настройки дисплея уже запущен!"
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
-msgstr "Standartausgang"
+msgstr "Выход по умолчанию"
 
 #: code/displaysettings/device.py:63
 msgid "Laptop Panel"
-msgstr "Notebook Bildschirm"
+msgstr "Панель настройки лэптопа"
 
 #: code/displaysettings/device.py:64
 msgid "Analog Output"
-msgstr "Analoger Ausgang"
+msgstr "Аналоговый выход"
 
 #: code/displaysettings/device.py:65
 msgid "Digital Output"
-msgstr "Digitaler Ausgang"
+msgstr "Цифровой выход"
 
 #: code/displaysettings/device.py:66
 msgid "TV Output"
-msgstr "TV Ausgang"
+msgstr "TV выход"
 
 #: code/displaysettings/outputdialog.py:35
 msgid "Settings for Output %1"
-msgstr "Konfiguration für Ausgang %1"
+msgstr "Настройки для выхода %1"
 
 #: code/displaysettings/outputdialog.py:63
 msgid "Custom Monitor"
-msgstr "Benutzerdefinierter Monitor"
+msgstr "Настройка монитора"
 
 #: code/displaysettings/outputdialog.py:67
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
-"<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</"
-"i></qt>"
+msgstr "<qt><i>Нажмите кнопку \"Выбрать...\" для выбора монитора</i></qt>"
 
 #: code/displaysettings/mainwidget.py:97
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
-"Es sind keine Pakete installiert / vorhanden, um für diese Application eine "
-"grafische Oberfläche zu bieten.\n"
-"Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert "
-"wurden."
+"Нет пакетов, которые предоставляют окружение для этого приложения.\n"
+"Пожалуйста, убедитесь, что пакеты установлены и настроены правильно."
 
 #: code/displaysettings/mainwidget.py:104
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Keine gültige Konfiguration gefunden. Bildschirmeinstellungen können erst "
-"aktiviert werden, wenn Sie eine neue Konfiguration erstellen.\n"
-"Möchten Sie gerne jetzt eine Konfiguration mit sicheren Werten erstellen ?"
+"Невозможно найти корректную конфигурацию. Установки экрана не будут включены, пока вы не создадите новую конфигурацию.\n"
+"Вы хотите создать безопасную конфигурацию прямо сейчас?"
 
 #: code/displaysettings/mainwidget.py:113
 #: code/displaysettings/mainwidget.py:539
 msgid "Access denied."
-msgstr "Zugriff verweigert."
+msgstr "Доступ запрещен."
 
 #: code/displaysettings/mainwidget.py:195
-msgid ""
-"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
-"(LVDS, VGA, etc.)"
-msgstr ""
-"Erscheint in Menüs, Listen, etc. %1 = Ausgangstyp, %2 = Ausgangsname (LVDS, "
-"VGA, etc.)"
+msgid "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
+msgstr "Erscheint in Menüs, Listen, etc. %1 = Ausgangstyp, %2 = Ausgangsname (LVDS, VGA, etc.)"
 
 #: code/displaysettings/mainwidget.py:213
 #: code/displaysettings/mainwidget.py:316
 msgid "Auto"
-msgstr ""
+msgstr "Авто"
 
 #: code/displaysettings/mainwidget.py:312
 msgid "Output Properties - %1"
 msgstr "Konfiguration des Ausgangs - %1"
 
 #: code/displaysettings/mainwidget.py:396
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
-"verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen "
-"Treiber verwenden?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen Treiber verwenden?</p></qt>"
 
 #: code/displaysettings/mainwidget.py:412
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
-"verwenden, welcher vom Hardwarehersteller angeboten wird. Um diesen zu "
-"nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%"
-"1</b> bei den Grafikkartenoptionen aus.</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher vom Hardwarehersteller angeboten wird. Um diesen zu nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%1</b> bei den Grafikkartenoptionen aus.</qt>"
 
 #: code/displaysettings/mainwidget.py:417
 msgid "Start Package Manager"
@@ -129,25 +107,23 @@ msgstr "Starte Paket Manager"
 
 #: code/displaysettings/mainwidget.py:530
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
-"Sie müssen Ihre grafische (\"X\"-) Session neu starten um alle Änderungen zu "
-"übernehmen."
+msgstr "Sie müssen Ihre grafische (\"X\"-) Session neu starten um alle Änderungen zu übernehmen."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
-msgstr "Einstellungen ändern"
+msgstr "Редактировать значение"
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
-msgstr "Typ:"
+msgstr "Тип:"
 
 #: code/displaysettings/monitorbrowser.py:39
 msgid "Monitors:"
-msgstr "Monitore:"
+msgstr "Мониторы:"
 
 #: ui/mainview.py:182
 msgid "Outputs"
-msgstr "Ausgänge"
+msgstr "Выходы"
 
 #: ui/mainview.py:183
 msgid "Extend desktop to all displays"
@@ -258,17 +234,11 @@ msgid "Output Configuration"
 msgstr "Ausgangskonfiguration"
 
 #: ui/output.py:161
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
-"Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht "
-"erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie "
-"besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren "
-"Monitor beschädigen können, besonders bei älteren Modellen."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren Monitor beschädigen können, besonders bei älteren Modellen."
 
-# Zweifel: ist eigenlich nicht richtig übersetzt, kann aber trotzdem richtig passend sein. Müsste den Zusammenhang/Bildschirm dazu sehen..
+# Zweifel: ist eigenlich nicht richtig übersetzt, kann aber trotzdem richtig
+# passend sein. Müsste den Zusammenhang/Bildschirm dazu sehen..
 #: ui/output.py:162
 msgid "Specify Ranges"
 msgstr "Spezifiziere Frequenzen"
@@ -347,15 +317,8 @@ msgstr "Modelle:"
 #~ msgid "Current Maintainer"
 #~ msgstr "Aktueller Betreuer"
 
-#~ msgid ""
-#~ "If your monitor's dimensions are not correctly detected, fonts and other "
-#~ "visual objects might seem larger or smaller than normal. In order to fix "
-#~ "this problem, you can specify your monitor's dimensions here."
-#~ msgstr ""
-#~ "Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, "
-#~ "könnten Schriftarten und andere visuelle Objekte größer oder kleiner als "
-#~ "normal erscheinen. Sie können dieses Problem lösen, indem sie hier die "
-#~ "Größe Ihres Monitors angeben."
+#~ msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+#~ msgstr "Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, könnten Schriftarten und andere visuelle Objekte größer oder kleiner als normal erscheinen. Sie können dieses Problem lösen, indem sie hier die Größe Ihres Monitors angeben."
 
 #~ msgid "Specify Display Size"
 #~ msgstr "Geben Sie die Displaygröße an"
