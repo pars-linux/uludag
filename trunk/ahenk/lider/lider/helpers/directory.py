@@ -267,3 +267,13 @@ class Directory:
             except ldap.LDAPError:
                 raise DirectoryConnectionError
             raise DirectoryError
+
+    @staticmethod
+    def make_password(password):
+        import os
+        salt = os.urandom(4)
+        import hashlib
+        sha = hashlib.sha1(password)
+        sha.update(salt)
+        import base64
+        return '{SSHA}' + base64.urlsafe_b64encode(sha.digest() + salt)

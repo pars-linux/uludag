@@ -5,9 +5,6 @@
     Computer dialog
 """
 
-# Standard mdodules
-import subprocess
-
 # Qt4 modules
 from PyQt4 import QtGui
 from PyQt4 import QtCore
@@ -49,9 +46,11 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         """
             Returns password.
         """
+        from lider.helpers.directory import Directory
         password = str(self.editPassword.text())
-        process = subprocess.Popen(["slappasswd", "-n", "-s", password], stdout=subprocess.PIPE)
-        return process.communicate()[0]
+        salted = Directory.make_password(password)
+        print salted
+        return salted
 
     def set_name(self, user):
         """
