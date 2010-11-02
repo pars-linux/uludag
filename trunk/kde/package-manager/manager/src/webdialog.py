@@ -37,6 +37,11 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self._as = 'http://appinfo.pardus.org.tr'
         self.cancelButton.clicked.connect(self._hide)
 
+        # Hide Scrollbars and context menu in webview
+        self.webView.setContextMenuPolicy(Qt.NoContextMenu)
+        self.webView.page().mainFrame().setScrollBarPolicy(Qt.Vertical, Qt.ScrollBarAlwaysOff)
+        self.webView.page().mainFrame().setScrollBarPolicy(Qt.Horizontal, Qt.ScrollBarAlwaysOff)
+
     def showPage(self, addr):
         self.webView.load(QUrl(addr))
         self.animate(start = BOTCENTER, stop = MIDCENTER)
