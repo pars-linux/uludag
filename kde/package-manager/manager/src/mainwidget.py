@@ -246,6 +246,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             totalPackages = len(self.state._selected_packages)
             if not any(package.endswith('.pisi') for package in self.state._selected_packages):
                 totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
+            self.parent.show()
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
@@ -277,18 +278,24 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
         self.messageBox.show()
 
+        if self.state.silence:
+            qApp.exit()
+
         if self.state.state == self.state.UPGRADE:
             self.switchState(self.lastState)
 
     def actionFinished(self, operation):
-        has_summary = False
-        if operation == "System.Manager.installPackage":
-            has_summary = self.showSummary()
+        if self.state.silence:
+            self.parent.hide()
 
         if operation in ("System.Manager.installPackage",
                          "System.Manager.removePackage",
                          "System.Manager.updatePackage"):
             self.notifyFinished()
+
+        has_summary = False
+        if operation == "System.Manager.installPackage":
+            has_summary = self.showSummary()
 
         if not has_summary and self.state.silence:
             qApp.exit()
