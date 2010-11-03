@@ -1,7 +1,11 @@
 .. _security-team:
 
-Security Team
-=============
+Security Process
+================
+
+:Author: Eren Türkay, Semen Cirit
+:Last Modified Date: |today|
+:Version: 0.2
 
 Pardus Security team follow and close the security vulnerabilities of open source
 projects which are included in Pardus repositories. While doing this, it works in
@@ -245,9 +249,10 @@ You can find the details with running "./bin/check-todo-issues --help" and
 you can look the `data/CVE/list <http://svn.pardus.org.tr/uludag/trunk/bugspy/security/data/CVE/list>`_
 format.
 
+You can track PLSA's from security `website <http://security.pardus.org.tr/`_ and
+`rss <http://security.pardus.org.tr/en/rss/>`_. You can also get an account from
+`security mail list <http://liste.pardus.org.tr/mailman/listinfo/pardus-security>`_.
+
 .. _file-sec-bug: http://svn.pardus.org.tr/uludag/trunk/bugspy/bin/file-sec-bug.py
 .. _check-todo-issues: http://svn.pardus.org.tr/uludag/trunk/bugspy/security/data/CVE/list
 
-:Author: Eren Türkay, Semen Cirit
-:Last Modified Date: |today|
-:Version: 0.1
