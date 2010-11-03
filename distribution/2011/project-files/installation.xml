@@ -179,6 +179,8 @@
                 <SelectedPackage>kernel-module-headers</SelectedPackage>
                 <SelectedPackage>kfax</SelectedPackage>
                 <SelectedPackage>kmozillahelper</SelectedPackage>
+                <SelectedPackage>konqueror-plugins</SelectedPackage>
+                <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
                 <SelectedPackage>krename</SelectedPackage>
                 <SelectedPackage>ksplash-theme-pardus</SelectedPackage>
                 <SelectedPackage>ktorrent</SelectedPackage>
