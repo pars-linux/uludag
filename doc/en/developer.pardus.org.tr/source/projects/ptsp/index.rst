@@ -10,10 +10,12 @@ PTSP
 Although some other variations of terminal server projects exist out there in the community, the main reason of creating **PTSP** is to ease the management of the packages which are used to create rootfs. For instance LTSP_ is another distribution that is used on the thin-client machines. It has its own packaging system with a Perl_ based management tool. The created rootfs by ltsp admin tool is not Pardus. Updating the packages,
 and keeping up with the distribution is not an easy task. The management and configuration scripts are hacky. With Pisi_, Mudur_, Coolplug_, Zorg_ and COMAR_ tools Pardus has all the infrastructure to create an automatically bootable rootfs with its own packages.
 
-F (Pardus Terminal Server Projecteaturel
+Features
+--------
 --------
 
 Source Code
+-----------
 -----------
 
 You can `browse <http://websvn.pardus.org.tr/uludag/trunk/ptsp/>`_
@@ -26,21 +28,62 @@ $ svn co https://svn.pardus.org.tr/uludag/trunk/ptsp
 
 Requirements
 ------------
+------------
 
+Client-side Requirements
+------------------------
+
+Following packages will be working on the thin-clients and must be installed to the rootfs:
+
+* **lbuscd**: lbus thin client daemon.
+
+* **ltspfsd**: ltspfs daemon.
+
+* **ptsp-client**: Contains remote X connection service and udev rules for the client rootfs.
+
+Server-side Requirements
+------------------------
+
+Following packages will be working on the terminal server and must be installed to the server:
+
+* **lbussd**: lbus server daemon.
+
+* **ltspfs**: Fuse file system.
+
+* **ptsp-server**: Contains kernel and initramfs which will be served over tftp, ptsp-client-rootfs, lbussd daemon.
+
+Installation
+------------
+------------
+
+Creating Rootfs
+---------------
+
+Preparing Server
+----------------
+
+Running Server
+--------------
 
 Bugs
+----
 ----
 
 Developed by
 ------------
+------------
+
+* Metin Akdere <metin_at_pardus.org.tr>
+    Maintainer
 
 * Faik Uygur <faik_at_pardus.org.tr>
     First Developer
 
 License
 -------
+-------
 
-Package Manager is distributed under the terms of the `GNU General Public License (GPL), Version 2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`_.
+PTSP is distributed under the terms of the `GNU General Public License (GPL), Version 2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`_.
 
 .. _COMAR: https://svn.pardus.org.tr/uludag/trunk/comar/
 .. _Coolplug: https://svn.pardus.org.tr/uludag/trunk/coolplug/
