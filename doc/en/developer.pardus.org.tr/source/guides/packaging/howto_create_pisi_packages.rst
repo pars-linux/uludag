@@ -7,38 +7,18 @@ How to Create Pisi Packages
 
 :Author: Semen Cirit
 
-:Version: 0.2
+:Version: 0.3
 
 Creating Package
 ----------------
 
-This document is specifically about creating pspec.xml files. But it also
-mentions about building pisi packages. In order to see basic dynamics of a
-packaging please see: :ref:`packaging-guidelines`.
-and :ref:`package-naming`.
+This document is specifically about creating pspec.xml files. In order to see 
+basic dynamics of a packaging please see: :ref:`packaging-guidelines`,
+:ref:`package-naming`, and :ref:`building-pisi-package`
+
 This document briefly explains different pieces of pspec.xml and explain them specifically.
 
 If you want to make packages and be a Pardus Package Maintainer please follow :ref:`how-to-be-contributor`.
-
-Building PiSi Packages
-----------------------
-To create a PiSi package, basicly you will need to create pspec.xml,
-`Creating translations.xml`_ and :ref:`actionsapi-index`.
-files. The pspec.xml file provides information about the software being
-packaged. The actions.py file includes the scripts in order to build the
-package. The translations.xml file has the summary and description translations
-for different languages supported for the related release.
-
-Additionaly some other directories can be needed in order to build a package:
-`comar <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#package-setup-post-install-post-and-pre-remove-cleanup-and-post-cleanup>`_
-and files directory (see AdditionalFiles in this page).
-
-After preparing the package you can build it with below command:
-(You can look for the parameters given with "pisi help")
-
-::
-
-    pisi bi pspec.xml -vd
 
 Creating pspec.xml
 ------------------

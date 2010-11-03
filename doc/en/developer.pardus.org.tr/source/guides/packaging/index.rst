@@ -8,6 +8,7 @@ Packaging
 
     packaging_guidelines.rst
     howto_create_pisi_packages.rst
+    howto_build_pisi_package.rst
     actionsapi/index.rst
     package_naming_guidelines.rst
     binary_package_naming_guidelines.rst
