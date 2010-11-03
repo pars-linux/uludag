@@ -5,9 +5,12 @@ Disk Manager
 
 :Author: Mehmet Özdemir
 
-Disk Manager is a Pardus GUI application used for managing /etc/fstab file.
-It provides an easy interface to set storage devices' mount settings. These
-settings are used at the system startup.
+Disk Manager is a Pardus GUI application used for managing automatic mount 
+operations for your disks. It provides an easy interface to configure. You 
+do configure how your disk partitions will be initialized at system startup. 
+Disks are integrated into system's file system with this configuration. So 
+that you do not have to mount your disks manually again and again. Disk 
+Manager also allows you to mount or unmount your disk partitions.
 
 Features
 --------
@@ -56,9 +59,9 @@ Developed by
 
 Fstab Module Authors:
 
-*A.Murat EREN <meren [at] pardus.org.tr>
+* A.Murat EREN <meren [at] pardus.org.tr>
 
-*Onur KÜÇÜK <onur [at] pardus.org.tr>
+* Onur KÜÇÜK <onur [at] pardus.org.tr>
 
 License
 -------
