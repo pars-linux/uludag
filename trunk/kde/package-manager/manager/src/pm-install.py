@@ -17,6 +17,7 @@ import traceback
 import context as ctx
 
 from PyQt4 import QtGui
+from PyQt4.QtGui import QDesktopWidget
 from PyQt4.QtCore import *
 
 import dbus
@@ -26,9 +27,11 @@ from pmlogging import logger
 import config
 import signal
 
-from PyKDE4.kdeui import KApplication
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdecore import KCmdLineArgs
+from PyKDE4.kdeui import KUniqueApplication
+
+from mainwindow import MainWindow
 from about import aboutData
 
 def handleException(exception, value, tb):
@@ -54,15 +57,19 @@ if __name__ == '__main__':
     usage = unicode(i18n("%prog packages_to_install"))
     parser = OptionParser(usage=usage)
     args = filter(lambda x: not x.startswith('-'), sys.argv[1:])
+
     if len(sys.argv) > 1:
 
-        from mainwindow import MainWindow
+        aboutData.setAppName("pm-install")
         KCmdLineArgs.init([], aboutData)
-        app = KApplication()
 
+        app = KUniqueApplication(True, True)
         setSystemLocale()
+
         manager = MainWindow(silence = True)
-        manager.show()
+        manager.statusBar().hide()
+        manager.resize(QSize(600, 90))
+        manager.move(QDesktopWidget().screenGeometry(manager).center() - manager.rect().center())
 
         cw = manager.centralWidget()
         cw.state.state = cw.state.INSTALL
