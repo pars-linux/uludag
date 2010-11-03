@@ -71,15 +71,14 @@ class MainWidget(QWidget, Ui_MainWidget):
         # state.silence is using for pm-install module
         self.state.silence = silence
 
-        if not silence:
-            # in silence mode we dont need these
-            self.statusUpdater = StatusUpdater()
-            self.basket = BasketDialog(self.state, self.parent)
-            self.searchButton.setIcon(KIcon("edit-find"))
-            self.initializeUpdateTypeList()
-            self.initialize()
-            self.updateSettings()
-            self.setActionButton()
+        # in silence mode we dont need these
+        self.statusUpdater = StatusUpdater()
+        self.basket = BasketDialog(self.state, self.parent)
+        self.searchButton.setIcon(KIcon("edit-find"))
+        self.initializeUpdateTypeList()
+        self.initialize()
+        self.updateSettings()
+        self.setActionButton()
 
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state, self.parent)
@@ -126,9 +125,9 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.statusChanged()
         self._selectedGroups = []
         self.packageList.select_all.setChecked(False)
+        self.initializeBasket()
         restoreCursor()
         self.searchLine.setFocus(True)
-        QTimer.singleShot(1, self.initializeBasket)
 
     def initializeStatusUpdater(self):
         self.statusUpdater.calculate_deps = not self.state.state == self.state.ALL
@@ -246,7 +245,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         if self.state.silence:
             totalPackages = len(self.state._selected_packages)
             if not any(package.endswith('.pisi') for package in self.state._selected_packages):
-                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
+                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
@@ -385,19 +384,22 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.statusChanged()
 
-    def showBasket(self):
+    def showBasket(self, action = None):
         if self.basket.isVisible():
             return
 
         waitCursor()
         self.statusUpdater.wait()
-        action = {self.__remove_action:self.state.REMOVE,
-                  self.__install_action:self.state.INSTALL}.get(self.sender(), None)
-        if action:
-            self._back_to_all = True
-            self.state.state = action
-        else:
-            self._back_to_all = False
+
+        if not action:
+            action = {self.__remove_action:self.state.REMOVE,
+                      self.__install_action:self.state.INSTALL}.get(self.sender(), None)
+            if action:
+                self._back_to_all = True
+                self.state.state = action
+            else:
+                self._back_to_all = False
+
         self.basket._show()
         restoreCursor()
 

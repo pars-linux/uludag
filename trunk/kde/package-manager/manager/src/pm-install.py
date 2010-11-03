@@ -26,12 +26,19 @@ from pmlogging import logger
 import config
 import signal
 
-if ctx.Pds.session == ctx.pds.Kde4:
-    from PyKDE4.kdeui import KApplication
-    from PyKDE4.kdecore import KCmdLineArgs
-    from about import aboutData
+from PyKDE4.kdeui import KApplication
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import KCmdLineArgs
+from about import aboutData
 
 def handleException(exception, value, tb):
+    """
+    Exception Handler
+
+    @param exception: exception object
+    @param value: exception message
+    @param tb: traceback log
+    """
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 if __name__ == '__main__':
@@ -44,26 +51,23 @@ if __name__ == '__main__':
 
     from optparse import OptionParser
 
-    usage = ctx.Pds.i18n("%prog packages_to_install")
+    usage = unicode(i18n("%prog packages_to_install"))
     parser = OptionParser(usage=usage)
     args = filter(lambda x: not x.startswith('-'), sys.argv[1:])
     if len(sys.argv) > 1:
 
         from mainwindow import MainWindow
-        if ctx.Pds.session == ctx.pds.Kde4:
-            KCmdLineArgs.init([], aboutData)
-            app = KApplication()
-        else:
-            app = QtGui.QApplication(sys.argv)
-            font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
-            app.setFont(QtGui.QFont(font[0], int(font[1])))
+        KCmdLineArgs.init([], aboutData)
+        app = KApplication()
 
         setSystemLocale()
-        manager = MainWindow(app, silence = True)
+        manager = MainWindow(silence = True)
+        manager.show()
 
-        manager.centralWidget().state._selected_packages = args
-        manager.centralWidget().state.operationAction(args, silence = True)
-        manager.centralWidget().progressDialog.show()
+        cw = manager.centralWidget()
+        cw.state.state = cw.state.INSTALL
+        cw.state._selected_packages = args
+        cw.state.operationAction(cw.state._selected_packages, silence = True)
 
         sys.excepthook = handleException
         ctx._time()
