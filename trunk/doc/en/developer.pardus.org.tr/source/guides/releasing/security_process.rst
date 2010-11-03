@@ -249,7 +249,7 @@ You can find the details with running "./bin/check-todo-issues --help" and
 you can look the `data/CVE/list <http://svn.pardus.org.tr/uludag/trunk/bugspy/security/data/CVE/list>`_
 format.
 
-You can track PLSA's from security `website <http://security.pardus.org.tr/`_ and
+You can track PLSA's from security `website <http://security.pardus.org.tr/>`_ and
 `rss <http://security.pardus.org.tr/en/rss/>`_. You can also get an account from
 `security mail list <http://liste.pardus.org.tr/mailman/listinfo/pardus-security>`_.
 
