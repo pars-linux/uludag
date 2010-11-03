@@ -12,6 +12,7 @@
 
 import os
 from PyQt4 import QtGui
+from PyQt4.QtGui import qApp
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import KIconLoader
@@ -60,11 +61,13 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         os.popen('%s&' % self.item.command)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent = None, silence = False):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
         self.lang = localedata.setSystemLocale(justGet = True)
+        self.closeButton.clicked.connect(self._reject)
+        self.silence = silence
 
     def setDesktopFiles(self, desktopFiles):
         self.appList.clear()
@@ -96,3 +99,12 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
 
     def hasApplication(self):
         return bool(self.appList.count())
+
+    def closeEvent(self, event):
+        self._reject()
+
+    def _reject(self):
+        if self.silence:
+            qApp.exit()
+        self.reject()
+
