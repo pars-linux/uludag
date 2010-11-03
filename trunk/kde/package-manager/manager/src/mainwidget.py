@@ -82,7 +82,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state, self.parent)
-        self.summaryDialog = SummaryDialog()
+        self.summaryDialog = SummaryDialog(silence = silence)
 
         self.connectOperationSignals()
         self.pdsMessageBox = PMessageBox(self.content)
@@ -281,30 +281,31 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.switchState(self.lastState)
 
     def actionFinished(self, operation):
-
+        has_summary = False
         if operation == "System.Manager.installPackage":
-            self.showSummary()
+            has_summary = self.showSummary()
 
         if operation in ("System.Manager.installPackage",
                          "System.Manager.removePackage",
                          "System.Manager.updatePackage"):
             self.notifyFinished()
 
-        if self.state.silence:
+        if not has_summary and self.state.silence:
             qApp.exit()
 
-        if operation in ("System.Manager.updateRepository",
-                         "System.Manager.updateAllRepositories"):
-            self.emit(SIGNAL("repositoriesUpdated()"))
+        if not self.state.silence:
+            if operation in ("System.Manager.updateRepository",
+                             "System.Manager.updateAllRepositories"):
+                self.emit(SIGNAL("repositoriesUpdated()"))
 
-        self.searchLine.clear()
-        self.state.reset()
-        self.progressDialog._hide()
+            self.searchLine.clear()
+            self.state.reset()
+            self.progressDialog._hide()
 
-        if self._back_to_all:
-            self.state.state = self.state.ALL
+            if self._back_to_all:
+                self.state.state = self.state.ALL
 
-        self.initialize()
+            self.initialize()
 
     def actionCancelled(self):
         self.progressDialog._hide()
@@ -329,6 +330,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
         if self.summaryDialog.hasApplication():
             self.summaryDialog.show()
+            return True
 
     def setActionEnabled(self):
         enabled = self.packageList.isSelected()

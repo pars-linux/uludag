@@ -71,22 +71,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>closeButton</sender>
-   <signal>clicked()</signal>
-   <receiver>SummaryDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>326</x>
-     <y>351</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>280</x>
-     <y>339</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
