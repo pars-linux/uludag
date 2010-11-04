@@ -25,7 +25,9 @@ from PyQt4.QtGui import QFontMetrics
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import SLOT
 from PyQt4.QtCore import QTimer
+from PyQt4.QtCore import QThread
 from PyQt4.QtCore import QMutex
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import QVariant
@@ -55,6 +57,28 @@ from progressdialog import ProgressDialog
 from packagedelegate import PackageDelegate
 from operationmanager import OperationManager
 
+class PThread(QThread):
+    def __init__(self, parent, action, callback, args=[], kwargs={}):
+        QThread.__init__(self,parent)
+        parent.connect(self, SIGNAL("finished()"), callback)
+
+        self.action = action
+        self.args = args
+        self.kwargs = kwargs
+        self.data = None
+
+    def run(self):
+        try:
+            self.data = self.action(*self.args, **self.kwargs)
+        finally:
+            self.connect(self.parent(), SIGNAL("cleanUp()"), SLOT("deleteLater()"))
+
+    def cleanUp(self):
+        self.deleteLater()
+
+    def get(self):
+        return self.data
+
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):
         QWidget.__init__(self, parent)
@@ -71,7 +95,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         # state.silence is using for pm-install module
         self.state.silence = silence
 
-        # in silence mode we dont need these
         self.statusUpdater = StatusUpdater()
         self.basket = BasketDialog(self.state, self.parent)
         self.searchButton.setIcon(KIcon("edit-find"))
@@ -86,7 +109,6 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.connectOperationSignals()
         self.pdsMessageBox = PMessageBox(self.content)
-        self.__ui_ready = True
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
@@ -210,20 +232,26 @@ class MainWidget(QWidget, Ui_MainWidget):
     def searchActivated(self):
         searchText = str(self.searchLine.text()).split()
         if searchText:
-            self.pdsMessageBox.showMessage(i18n("Searching..."), QPixmap(":/data/search.png"))
-            sourceModel = self.packageList.model().sourceModel()
-            self.state.cached_packages = sourceModel.search(searchText)
+            self.pdsMessageBox.showMessage(i18n("Searching..."), busy = True)
             self.groupList.lastSelected = None
+            _searchThread = PThread(self, self.startSearch, self.searchFinished, searchText)
+            _searchThread.run()
             self.searchUsed = True
         else:
             self.state.cached_packages = None
             self.state.packages()
             self.searchUsed = False
+
+    def searchFinished(self):
         self.initializeGroupList()
         if self.state.cached_packages == []:
             self.pdsMessageBox.showMessage(i18n("No results found."), KIcon("dialog-information").pixmap(32,32))
         else:
             self.pdsMessageBox.hideMessage()
+
+    def startSearch(self, searchText):
+        sourceModel = self.packageList.model().sourceModel()
+        self.state.cached_packages = sourceModel.search(searchText)
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
