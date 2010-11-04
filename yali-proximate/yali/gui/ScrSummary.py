@@ -29,7 +29,7 @@ from yali.storage.partitioning import CLEARPART_TYPE_ALL, CLEARPART_TYPE_LINUX, 
 from yali.storage.bootloader import BOOT_TYPE_NONE
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Summary")
-    #icon = "iconKeyboard"
+    icon = "accessories-text-editor"
     helpSummary = _("")
     help = _('''
 <p>
