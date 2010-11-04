@@ -115,7 +115,6 @@
         <SelectedPackage>module-syntekdriver</SelectedPackage>
         <SelectedPackage>module-uvcvideo</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
-        <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>notification-daemon</SelectedPackage>
         <SelectedPackage>nss_ldap</SelectedPackage>
@@ -229,7 +228,7 @@
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
-        <SelectedPackage>yakuake3</SelectedPackage>
+        <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
@@ -722,7 +721,6 @@
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
         <Package>netpbm</Package>
-        <Package>network-manager</Package>
         <Package>nfs-utils</Package>
         <Package>normalize</Package>
         <Package>notification-daemon</Package>
@@ -981,7 +979,7 @@
         <Package>xscreensaver</Package>
         <Package>xulrunner</Package>
         <Package>xvid</Package>
-        <Package>yakuake3</Package>
+        <Package>yakuake</Package>
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek</Package>

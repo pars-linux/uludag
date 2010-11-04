@@ -246,7 +246,6 @@
         <SelectedPackage>module-syntekdriver</SelectedPackage>
         <SelectedPackage>module-uvcvideo</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
-        <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>network-manager-applet</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>notification-daemon</SelectedPackage>
@@ -377,7 +376,7 @@
         <SelectedPackage>xorg-video-vesa</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
-        <SelectedPackage>yakuake3</SelectedPackage>
+        <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
@@ -844,7 +843,6 @@
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
         <Package>netpbm</Package>
-        <Package>network-manager</Package>
         <Package>newt</Package>
         <Package>normalize</Package>
         <Package>notify-python</Package>
