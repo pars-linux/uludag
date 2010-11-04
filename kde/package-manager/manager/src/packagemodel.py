@@ -35,24 +35,6 @@ range(Qt.UserRole, Qt.UserRole + 13)
 _variant = QVariant()
 _unknown_icons = []
 
-class SearchThread(QThread):
-    def __init__(self, parent):
-        QThread.__init__(self, parent)
-        self.iface = parent.iface
-        self.last_result = []
-
-    def __del__(self):
-        self.wait()
-
-    def search(self, packages, criteria):
-        self.packages = packages
-        self.criteria = criteria
-        self.start()
-
-    def run(self):
-        self.last_result = list(set(self.iface.search(self.criteria, self.packages)).intersection(self.packages))
-        print self.last_result
-
 class PackageModel(QAbstractTableModel):
 
     def __init__(self, parent=None):
@@ -68,15 +50,6 @@ class PackageModel(QAbstractTableModel):
         self.appinfo.setServer('http://appinfo.pardus.org.tr')
         if not self.appinfo.initializeLocalDB()[0]:
             self.appinfo.checkOutDB()
-
-        # Search Thread Obj
-        # FIXME TRY-EXCEPT
-        self.searchThread = SearchThread(self)
-        try:
-            self.searchThread.finished.connect(lambda: parent.state.setCachedPackages(self.searchThread.last_result))
-            self.searchThread.finished.connect(parent.initializeGroupList)
-        except:
-            pass
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -222,14 +195,7 @@ class PackageModel(QAbstractTableModel):
             self.package_selections[index] = Qt.Unchecked
 
     def search(self, text):
-        # FIXME When instant search available from Pisi Api, we will use it.
-        # packages = []
-        # for word in text:
-        #     packages += filter(lambda x: word in x, self.packages)
-        # packages = list(set(packages))
         return list(set(self.iface.search(text, self.packages)).intersection(self.packages))
-        # self.searchThread.search(self.packages, text)
-        # return packages
 
     def downloadSize(self):
         try:

@@ -28,7 +28,6 @@ from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import SLOT
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QThread
-from PyQt4.QtCore import QMutex
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import QVariant
 
