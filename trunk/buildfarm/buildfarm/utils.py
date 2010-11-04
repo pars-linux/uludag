@@ -96,6 +96,12 @@ def delete_pisi_files_from(directory):
         except OSError:
             pass
 
+def remove_obsoleted_packages():
+    """Removes obsoleted packages from the system."""
+    s_index = pisi.index.Index("%s/pisi-index.xml" % utils.get_local_repository_url())
+    for obsolete in s_index.distribution.obsoletes:
+        pisi.api.remove(obsolete.package)
+
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
     on the current architecture."""
