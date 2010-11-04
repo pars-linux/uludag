@@ -28,7 +28,7 @@ import pardus.xorg
 # Root password widget
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Choose an Administrator Password and a Hostname")
-    icon = "meeting-participant-small"
+    icon = "meeting-participant"
     helpSummary = _("""Your password must be easy to remember but strong enough to resist possible attacks.
     You can use capital and lower-case letters, numbers and punctuation marks in your password.""")
     help = _("""
