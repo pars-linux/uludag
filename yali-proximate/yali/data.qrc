@@ -1,8 +1,17 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/kafa.png</file>
+    <file>gui/pics/partitionmanager.png</file>
+    <file>gui/pics/partitionmanager-big.png</file>
+    <file>gui/pics/accessories-text-editor.png</file>
+    <file>gui/pics/utilities-terminal.png</file>
+    <file>gui/pics/drive-harddisk.png</file>
+    <file>gui/pics/meeting-participant.png</file>
     <file>gui/pics/system-users-small.png</file>
-    <file>gui/pics/meeting-participant-small.png</file>
-    <file>gui/pics/drive-harddisk-small.png</file>
+    <file>gui/pics/utilities-terminal-big.png</file>
+    <file>gui/pics/utilities-terminal.png</file>
+    <file>gui/pics/logo-on-black.png</file>
+    <file>gui/pics/logo_on_black.png</file>
     <file>gui/pics/caps.png</file>
     <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
