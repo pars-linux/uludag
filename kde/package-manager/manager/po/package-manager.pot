@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-20 23:28+0300\n"
+"POT-Creation-Date: 2010-11-04 15:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgid "Add or Remove Software"
 msgstr ""
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:49
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr ""
@@ -65,7 +65,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:275
+#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr ""
@@ -112,11 +112,11 @@ msgstr ""
 msgid "Show main window"
 msgstr ""
 
-#: src/mainwidget.py:214
+#: src/mainwidget.py:213
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:225
+#: src/mainwidget.py:224
 msgid "No results found."
 msgstr ""
 
@@ -137,44 +137,45 @@ msgid "You are not authorized for this operation."
 msgstr ""
 
 #: src/mainwidget.py:273
+#, python-format
 msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
+"Package <b>%s</b> not found in repositories.<br>It may be upgraded or "
+"removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/mainwidget.py:401
+#: src/mainwidget.py:413
 msgid "All Updates"
 msgstr ""
 
-#: src/mainwidget.py:402
+#: src/mainwidget.py:414
 msgid "Security Updates"
 msgstr ""
 
-#: src/mainwidget.py:403
+#: src/mainwidget.py:415
 msgid "Critical Updates"
 msgstr ""
 
-#: src/mainwindow.py:134 src/mainwindow.py:138
+#: src/mainwindow.py:134 src/mainwindow.py:137
 msgid "All Packages"
 msgstr ""
 
-#: src/mainwindow.py:141 src/mainwindow.py:145
+#: src/mainwindow.py:140 src/mainwindow.py:143
 msgid "Installable Packages"
 msgstr ""
 
-#: src/mainwindow.py:148 src/mainwindow.py:152
+#: src/mainwindow.py:146 src/mainwindow.py:149
 msgid "Installed Packages"
 msgstr ""
 
-#: src/mainwindow.py:155 src/mainwindow.py:159
+#: src/mainwindow.py:152 src/mainwindow.py:155
 msgid "Upgradable Packages"
 msgstr ""
 
-#: src/mainwindow.py:191
+#: src/mainwindow.py:197
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:197
+#: src/mainwindow.py:203
 msgid "Currently your basket is empty."
 msgstr ""
 
@@ -186,15 +187,15 @@ msgstr ""
 msgid "removing"
 msgstr ""
 
-#: src/operationmanager.py:42 src/progressdialog.py:57
+#: src/operationmanager.py:42 src/progressdialog.py:73
 msgid "extracting"
 msgstr ""
 
-#: src/operationmanager.py:43 src/progressdialog.py:57
+#: src/operationmanager.py:43 src/progressdialog.py:73
 msgid "configuring"
 msgstr ""
 
-#: src/operationmanager.py:134
+#: src/operationmanager.py:133
 msgid "downloading"
 msgstr ""
 
@@ -239,44 +240,40 @@ msgstr ""
 msgid "Select all packages in this group"
 msgstr ""
 
-#: src/pm-install.py:47
+#: src/pm-install.py:57
 msgid "%prog packages_to_install"
 msgstr ""
 
-#: src/progressdialog.py:53
+#: src/progressdialog.py:69
 msgid "<p align='right'>%1 %</p>"
 msgstr ""
 
-#: src/progressdialog.py:54
+#: src/progressdialog.py:70
 #, python-format
 msgid "Operation - %1%"
 msgstr ""
 
-#: src/progressdialog.py:61
+#: src/progressdialog.py:77
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/progressdialog.py:63
+#: src/progressdialog.py:79
 msgid "%1 %2"
 msgstr ""
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:84
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:91
 msgid "%1 / %2, %3"
 msgstr ""
 
-#: src/progressdialog.py:88
+#: src/progressdialog.py:113
 msgid "Preparing PiSi..."
 msgstr ""
 
-#: src/progressdialog.py:92
-msgid "-- / --"
-msgstr ""
-
-#: src/progressdialog.py:97
+#: src/progressdialog.py:124
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
@@ -339,7 +336,7 @@ msgid "modified"
 msgstr ""
 
 #: src/statemanager.py:99 ui/ui_basketdialog.py:181
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:160
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:183
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr ""
@@ -481,7 +478,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:103
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr ""
 
@@ -505,23 +502,23 @@ msgstr ""
 msgid "<b>2.0 MB</"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:153
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:175
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
-#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:203
+#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:189
 msgid "Form"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:158
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:180
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:155
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:177
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:156
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:178
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr ""
@@ -542,18 +539,22 @@ msgstr ""
 msgid "Toggler for selection all packages in Package List"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:159
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:181
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:157
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:179
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:154
+#: ui/ui_mainwidget_v3.py:176
 msgid "Settings"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:182
+msgid "History KCM will be here."
 msgstr ""
 
 #: ui/ui_progressdialog.py:154
@@ -604,7 +605,7 @@ msgid "&Cancel"
 msgstr ""
 
 #: ui/ui_progressdialog.py:167 ui/ui_progressdialog_v3.py:189
-#: ui/ui_progressdialog_v4.py:204
+#: ui/ui_progressdialog_v4.py:190
 msgid "Alt+C"
 msgstr ""
 
@@ -795,20 +796,28 @@ msgstr ""
 msgid "&OK"
 msgstr ""
 
-#: ui/ui_summarydialog.py:50
+#: ui/ui_summarydialog.py:49
 msgid "Operation Summary"
 msgstr ""
 
-#: ui/ui_summarydialog.py:51
+#: ui/ui_summarydialog.py:50
 msgid ""
 "You can start the new installed application by double-clicking on the list "
 "below or later from the applications menu."
 msgstr ""
 
-#: ui/ui_summarydialog.py:52
+#: ui/ui_summarydialog.py:51
 msgid "&Ok"
 msgstr ""
 
-#: ui/ui_webdialog.py:104
+#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
 msgid "Package Details"
+msgstr ""
+
+#: ui/ui_webdialog.py:153
+msgid "Package Files"
+msgstr ""
+
+#: ui/ui_webdialog_v2.py:72
+msgid "Close"
 msgstr ""
