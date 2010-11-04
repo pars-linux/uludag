@@ -168,7 +168,7 @@ to discover the features and the innovations offered by this new Pardus release.
     def slotChangePix(self):
         slide = self.iter_pics.next()
         self.ui.pix.setPixmap(slide["pic"])
-        self.ui.desc.setText(slide["desc"])
+        #self.ui.desc.setText(slide["desc"])
 
     def packageInstallFinished(self):
 
