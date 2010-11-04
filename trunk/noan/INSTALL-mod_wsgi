@@ -33,6 +33,9 @@ Install
 - Create the database cache
     $ ./manage.py createcachetable querytable 
 
+- Checkout the review repository
+    $ svn co http://svn.pardus.org.tr/pardus/playground/review/
+
 - Create 01_django_vhost.conf under /etc/apache2/vhosts.d:
     <VirtualHost *:80>
     ServerName fully-hosted-domain-name
@@ -69,7 +72,9 @@ Install
     $ ./import_repo.py /home/oguz/django-projects/noan/ http://svn.pardus.org.tr/pardus/2008/stable/ http://packages.pardus.org.tr/pardus-2008/ http://packages.pardus.org.tr/pardus-2008-test/
 
     $ ./import_repo.py /home/oguz/django-projects/noan/ http://svn.pardus.org.tr/pardus/2009/stable/ http://packages.pardus.org.tr/pardus-2009/ http://packages.pardus.org.tr/pardus-2009-test/
+    $ ./import_repo.py -t review /home/oguz/django/noan /local/path/to/review/dir
 
 Update
 ======
+- Update the review directory with svn up command
 - Rerun the import scripts
