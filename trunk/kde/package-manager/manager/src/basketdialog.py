@@ -190,7 +190,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                 return
 
         self.state.operationAction(self.model.selectedPackages())
-        self._hide()
+        # self._hide()
 
     def showHideDownloadInfo(self):
         if self.state.state == self.state.REMOVE:
