@@ -1,8 +1,8 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus Corporate 2 Alpha 2</Title>
+    <Title>Pardus Corporate 2 Alpha 3</Title>
     <WorkDir>/tmp/CD-image/iso</WorkDir>
-    <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
-    <PackageSelection repo_uri="http://buildfarm/corporate2-test/pisi-index.xml.bz2">
+    <ReleaseFiles>/home/ozan/distribution/Corporate2/media-content</ReleaseFiles>
+    <PackageSelection repo_uri="http://192.168.3.140/pardus/corporate2/devel/i686/pisi-index.xml.bz2">
         <SelectedComponent>hardware.smartcard</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>ModemManager</SelectedPackage>
