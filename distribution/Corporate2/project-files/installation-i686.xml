@@ -285,6 +285,7 @@
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
         <SelectedPackage>pyqtermwidget</SelectedPackage>
+        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>ql2x00-firmware</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
@@ -316,6 +317,7 @@
         <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
         <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
+        <SelectedPackage>virt-manager</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>wireless-regdb</SelectedPackage>
@@ -411,8 +413,11 @@
         <Package>attr</Package>
         <Package>audiofile</Package>
         <Package>audit</Package>
+        <Package>augeas</Package>
         <Package>avahi</Package>
+        <Package>avahi-compat-libdns_sd</Package>
         <Package>avahi-glib</Package>
+        <Package>avahi-libs</Package>
         <Package>avahi-qt3</Package>
         <Package>babl</Package>
         <Package>baselayout</Package>
@@ -422,9 +427,9 @@
         <Package>blas</Package>
         <Package>bluez</Package>
         <Package>boost</Package>
-        <Package>boot-manager</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
+        <Package>bridge-utils</Package>
         <Package>build-docbook-catalog</Package>
         <Package>busybox</Package>
         <Package>bzip2</Package>
@@ -459,11 +464,9 @@
         <Package>dcraw</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
-        <Package>dhcp</Package>
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
-        <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>djbfft</Package>
         <Package>djvu</Package>
@@ -481,7 +484,59 @@
         <Package>enca</Package>
         <Package>enchant</Package>
         <Package>enscript</Package>
-        <Package>erlang</Package>
+        <Package>erlang-appmon</Package>
+        <Package>erlang-asn1</Package>
+        <Package>erlang-base</Package>
+        <Package>erlang-common_test</Package>
+        <Package>erlang-compiler</Package>
+        <Package>erlang-cosEvent</Package>
+        <Package>erlang-cosEventDomain</Package>
+        <Package>erlang-cosFileTransfer</Package>
+        <Package>erlang-cosNotification</Package>
+        <Package>erlang-cosProperty</Package>
+        <Package>erlang-cosTime</Package>
+        <Package>erlang-cosTransactions</Package>
+        <Package>erlang-crypto</Package>
+        <Package>erlang-debugger</Package>
+        <Package>erlang-dialyzer</Package>
+        <Package>erlang-docbuilder</Package>
+        <Package>erlang-edoc</Package>
+        <Package>erlang-erl_docgen</Package>
+        <Package>erlang-erl_interface</Package>
+        <Package>erlang-et</Package>
+        <Package>erlang-eunit</Package>
+        <Package>erlang-gs</Package>
+        <Package>erlang-hipe</Package>
+        <Package>erlang-ic</Package>
+        <Package>erlang-inets</Package>
+        <Package>erlang-inviso</Package>
+        <Package>erlang-jinterface</Package>
+        <Package>erlang-megaco</Package>
+        <Package>erlang-mnesia</Package>
+        <Package>erlang-observer</Package>
+        <Package>erlang-odbc</Package>
+        <Package>erlang-orber</Package>
+        <Package>erlang-os_mon</Package>
+        <Package>erlang-otp_mibs</Package>
+        <Package>erlang-parsetools</Package>
+        <Package>erlang-percept</Package>
+        <Package>erlang-pman</Package>
+        <Package>erlang-public_key</Package>
+        <Package>erlang-reltool</Package>
+        <Package>erlang-runtime_tools</Package>
+        <Package>erlang-snmp</Package>
+        <Package>erlang-ssh</Package>
+        <Package>erlang-ssl</Package>
+        <Package>erlang-suite</Package>
+        <Package>erlang-syntax_tools</Package>
+        <Package>erlang-test_server</Package>
+        <Package>erlang-toolbar</Package>
+        <Package>erlang-tools</Package>
+        <Package>erlang-tv</Package>
+        <Package>erlang-typer</Package>
+        <Package>erlang-webtool</Package>
+        <Package>erlang-wx</Package>
+        <Package>erlang-xmerl</Package>
         <Package>evolution-data-server</Package>
         <Package>exiv2</Package>
         <Package>expat</Package>
@@ -491,7 +546,6 @@
         <Package>fftw3</Package>
         <Package>file</Package>
         <Package>findutils</Package>
-        <Package>firewall-config</Package>
         <Package>flac</Package>
         <Package>fontconfig</Package>
         <Package>foomatic-db</Package>
@@ -525,6 +579,7 @@
         <Package>gnome-keyring</Package>
         <Package>gnome-mime-data</Package>
         <Package>gnome-mplayer</Package>
+        <Package>gnome-python</Package>
         <Package>gnome-vfs</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnupg</Package>
@@ -545,6 +600,7 @@
         <Package>gst-plugins-good</Package>
         <Package>gst-plugins-ugly</Package>
         <Package>gstreamer</Package>
+        <Package>gtk-vnc</Package>
         <Package>gtk2</Package>
         <Package>gtkhtml3</Package>
         <Package>gtkimageview</Package>
@@ -611,6 +667,7 @@
         <Package>keyutils</Package>
         <Package>kio-to-local</Package>
         <Package>kipi-plugins</Package>
+        <Package>kvm</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lapack</Package>
@@ -645,6 +702,7 @@
         <Package>libXvMC</Package>
         <Package>libXxf86dga</Package>
         <Package>libXxf86vm</Package>
+        <Package>libaio</Package>
         <Package>libao</Package>
         <Package>libarchive</Package>
         <Package>libart_lgpl</Package>
@@ -766,10 +824,12 @@
         <Package>libunique</Package>
         <Package>libusb</Package>
         <Package>libusb1</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
         <Package>libv4l</Package>
         <Package>libva</Package>
         <Package>libvdpau</Package>
+        <Package>libvirt</Package>
         <Package>libvisual</Package>
         <Package>libvisual-plugins</Package>
         <Package>libvorbis</Package>
@@ -793,6 +853,7 @@
         <Package>lpsolve</Package>
         <Package>lsb-release</Package>
         <Package>lua</Package>
+        <Package>lvm2</Package>
         <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madplay</Package>
@@ -815,6 +876,7 @@
         <Package>module-broadcom-wl-userspace</Package>
         <Package>module-gspca-userspace</Package>
         <Package>module-init-tools</Package>
+        <Package>module-kvm</Package>
         <Package>module-kvm-userspace</Package>
         <Package>module-lenovo-sl-laptop-userspace</Package>
         <Package>module-microdia-userspace</Package>
@@ -842,8 +904,11 @@
         <Package>neon</Package>
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
+        <Package>netcat</Package>
+        <Package>netcf</Package>
         <Package>netpbm</Package>
         <Package>newt</Package>
+        <Package>nfs-utils</Package>
         <Package>normalize</Package>
         <Package>notify-python</Package>
         <Package>nspr</Package>
@@ -851,6 +916,7 @@
         <Package>nss-mdns</Package>
         <Package>ntfs_3g</Package>
         <Package>ntp-client</Package>
+        <Package>numactl</Package>
         <Package>numpy</Package>
         <Package>obex-data-server</Package>
         <Package>obexftp</Package>
@@ -870,12 +936,12 @@
         <Package>openvpn</Package>
         <Package>orbit2</Package>
         <Package>p7zip</Package>
-        <Package>package-manager</Package>
         <Package>pam</Package>
         <Package>pango</Package>
         <Package>pangomm</Package>
         <Package>pardus-desktop-services</Package>
         <Package>pardus-python</Package>
+        <Package>parted</Package>
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>pcsc-lite</Package>
@@ -919,18 +985,21 @@
         <Package>pygtk</Package>
         <Package>pylibacl</Package>
         <Package>pyopenssl</Package>
+        <Package>pyorbit</Package>
         <Package>pypolkit</Package>
         <Package>pysmbc</Package>
         <Package>python</Package>
         <Package>python-foolscap</Package>
         <Package>python-imaging</Package>
         <Package>python-ldap</Package>
+        <Package>python-pyliblzma</Package>
         <Package>python-simplejson</Package>
         <Package>python-tk</Package>
         <Package>python-xlib</Package>
         <Package>pyxattr</Package>
         <Package>qca</Package>
         <Package>qca-tls</Package>
+        <Package>qemu</Package>
         <Package>qscintilla</Package>
         <Package>qt</Package>
         <Package>qt-webkit</Package>
@@ -955,7 +1024,6 @@
         <Package>screen</Package>
         <Package>sdl-gfx</Package>
         <Package>sed</Package>
-        <Package>service-manager</Package>
         <Package>setserial</Package>
         <Package>setuptools</Package>
         <Package>sg3_utils</Package>
@@ -963,6 +1031,7 @@
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
         <Package>sip</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
         <Package>slf4j</Package>
         <Package>sox</Package>
@@ -970,7 +1039,6 @@
         <Package>spidermonkey</Package>
         <Package>sqlite</Package>
         <Package>startup-notification</Package>
-        <Package>sun-jdk</Package>
         <Package>sun-jre</Package>
         <Package>suspend</Package>
         <Package>sysfsutils</Package>
@@ -996,21 +1064,23 @@
         <Package>urlgrabber</Package>
         <Package>usbmuxd</Package>
         <Package>usbutils</Package>
-        <Package>user-manager</Package>
         <Package>utempter</Package>
         <Package>util-linux</Package>
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vigra</Package>
+        <Package>virtinst</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
         <Package>vpnc</Package>
+        <Package>vte</Package>
         <Package>wavpack</Package>
         <Package>which</Package>
         <Package>wireless-regdb</Package>
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
         <Package>wxGTK</Package>
+        <Package>x11-ssh-askpass</Package>
         <Package>x264</Package>
         <Package>xcb-util</Package>
         <Package>xdg-user-dirs</Package>
@@ -1026,6 +1096,8 @@
         <Package>xscreensaver</Package>
         <Package>xulrunner</Package>
         <Package>xvid</Package>
+        <Package>xz</Package>
+        <Package>yajl</Package>
         <Package>yelp</Package>
         <Package>zemberek</Package>
         <Package>zemberek-server</Package>
@@ -1100,6 +1172,7 @@
         <Package>attr</Package>
         <Package>audit</Package>
         <Package>avahi</Package>
+        <Package>avahi-libs</Package>
         <Package>b43-firmware</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
@@ -1235,6 +1308,7 @@
         <Package>libtasn1</Package>
         <Package>libtool-ltdl</Package>
         <Package>libusb</Package>
+        <Package>libuser</Package>
         <Package>libuuid</Package>
         <Package>libx86</Package>
         <Package>libxcb</Package>
@@ -1300,6 +1374,7 @@
         <Package>python</Package>
         <Package>python-decorator</Package>
         <Package>python-pyblock</Package>
+        <Package>python-pyliblzma</Package>
         <Package>qt</Package>
         <Package>qtermwidget</Package>
         <Package>radeon-rlc-firmware</Package>
@@ -1310,6 +1385,7 @@
         <Package>sed</Package>
         <Package>shadow</Package>
         <Package>sip</Package>
+        <Package>skey</Package>
         <Package>slang</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
@@ -1380,6 +1456,7 @@
         <Package>xorg-video-vesa</Package>
         <Package>xorg-video-vmware</Package>
         <Package>xorg-video-voodoo</Package>
+        <Package>xz</Package>
         <Package>yali</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
