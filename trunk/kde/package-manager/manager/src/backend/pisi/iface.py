@@ -52,6 +52,11 @@ class Iface(Singleton):
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
 
+    def reinstallPackages(self, packages):
+        logger.debug("Re-Installing packages: %s" % packages)
+        packages = string.join(packages,",")
+        self.link.System.Manager["pisi"].reinstallPackage(packages, async=self.handler, timeout=2**16-1)
+
     def removePackages(self, packages):
         logger.debug("Removing packages: %s" % packages)
         packages = string.join(packages,",")
