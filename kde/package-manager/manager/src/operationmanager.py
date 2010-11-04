@@ -72,8 +72,6 @@ class OperationManager(QObject):
         else:
             self.curPkgDownloaded = int(pkgDownSize)
 
-        if self.state.silence:
-           self.totalSize = pkgTotalSize
         completed = humanReadableSize(self.totalDownloaded + self.curPkgDownloaded, ".2")
         total = humanReadableSize(self.totalSize, ".2")
 
@@ -86,6 +84,7 @@ class OperationManager(QObject):
         except ZeroDivisionError:
             percent = 100
 
+        percent = min(100, percent)
         self.emit(SIGNAL("progress(int)"), percent)
 
     def updatePackageProgress(self):
