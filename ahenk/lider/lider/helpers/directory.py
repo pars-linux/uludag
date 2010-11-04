@@ -276,4 +276,4 @@ class Directory:
         sha = hashlib.sha1(password)
         sha.update(salt)
         import base64
-        return '{SSHA}' + base64.urlsafe_b64encode(sha.digest() + salt)
+        return '{SSHA}' + base64.encodestring(sha.digest() + salt)
