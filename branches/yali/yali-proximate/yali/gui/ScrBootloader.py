@@ -20,25 +20,7 @@ from PyQt4.QtCore import *
 import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
-from yali.gui.Ui.bootitem import Ui_BootItem
 from yali.storage.bootloader import BOOT_TYPE_NONE, BOOT_TYPE_PARTITION, BOOT_TYPE_MBR, BOOT_TYPE_RAID, BootLoaderError, boot_type_strings
-
-class DrivesListItem(QtGui.QListWidgetItem):
-    def __init__(self, parent, widget):
-        QtGui.QListWidgetItem.__init__(self, parent)
-        self.widget = widget
-        self.setSizeHint(QSize(widget.width()-20, widget.height()))
-
-class DriveItem(QtGui.QWidget, Ui_BootItem):
-    def __init__(self, parent, drive, name):
-        QtGui.QWidget.__init__(self, parent)
-        self.setupUi(self)
-
-        #self.labelDrive.setText("%s" % (name))
-        #self.labelInfo.setText("%s\n%s GB" % (drive.model, str(int(drive.size) / 1024)))
-        #self.drive = drive
-        #self.parent = parent
-
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Configure Bootloader")
