@@ -45,14 +45,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
             self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
 
     def _show(self):
+        self.animate(start = MIDCENTER if self.state.silence else TOPCENTER, stop = MIDCENTER)
+
         if self.parent.centralWidget().basket.isVisible():
             self.parent.centralWidget().basket._hide()
-
-        start_pos = TOPCENTER
-        if self.state.silence:
-            start_pos = MIDCENTER
-
-        self.animate(start = start_pos, stop = MIDCENTER)
 
     def _hide(self):
         self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)
