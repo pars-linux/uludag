@@ -1,8 +1,8 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>PardusCorporate2-Preview-x86_64[seruhatto]</Title>
-    <WorkDir>/home/buildfarm/workdir</WorkDir>
-    <ReleaseFiles>/home/buildfarm/workdir/mkiso</ReleaseFiles>
-    <PackageSelection repo_uri="http://x86-64.comu.edu.tr/pisi-index.xml.bz2">
+    <Title>Pardus Corporate 2 Alpha 3 x86_64</Title>
+    <WorkDir>/tmp/pardusman-workdir/x86_64</WorkDir>
+    <ReleaseFiles>/home/ozan/distribution/Corporate2/media-content</ReleaseFiles>
+    <PackageSelection repo_uri="http://192.168.3.141/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
         <SelectedComponent>hardware.smartcard</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
