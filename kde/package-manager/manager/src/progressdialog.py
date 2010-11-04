@@ -30,7 +30,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.state = state
         self.setupUi(self)
 
-        self.busy = QProgressIndicator(self, "white" if state.silence else "black")
+        self.busy = QProgressIndicator(self, "black" if state.silence else "white")
         self.busy.setMinimumSize(QSize(48, 48))
         self.mainLayout.addWidget(self.busy)
 
@@ -56,7 +56,9 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._last_action = ''
 
     def _show(self):
-        self.animate(start = MIDCENTER if self.state.silence else TOPCENTER, stop = MIDCENTER)
+        start_pos = MIDCENTER if self.state.silence or \
+                                 not self.parent.centralWidget().basket.isVisible() else TOPCENTER
+        self.animate(start = start_pos, stop = MIDCENTER)
         if self.parent.centralWidget().basket.isVisible():
             self.parent.centralWidget().basket._hide()
 
@@ -65,6 +67,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.parent.setWindowTitle(i18n("Package Manager"))
 
     def updateProgress(self, progress):
+        self.busy.stopAnimation()
+        self.busy.hide()
+        self.widget.show()
+
         self.progressBar.setValue(progress)
         self.percentage.setText(i18n("<p align='right'>%1 %</p>", progress))
         self.parent.setWindowTitle(i18n("Operation - %1%", progress))
@@ -92,10 +98,6 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.completedInfo.setText(text)
 
     def updateActionLabel(self, action):
-        self.busy.stopAnimation()
-        self.busy.hide()
-        self.widget.show()
-
         self.actionLabel.setText("<i>%s</i>" % self.state.getActionCurrent(action))
         self._last_action = self.actionLabel.toPlainText()
 
@@ -106,7 +108,6 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.cancelButton.setEnabled(False)
 
     def reset(self):
-
         self.widget.hide()
         self.busy.show()
 
