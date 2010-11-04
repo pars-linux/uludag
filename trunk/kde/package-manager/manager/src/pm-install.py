@@ -68,7 +68,7 @@ if __name__ == '__main__':
 
         manager = MainWindow(silence = True)
         manager.statusBar().hide()
-        manager.resize(QSize(600, 90))
+        manager.resize(QSize(540, 80))
         manager.move(QDesktopWidget().screenGeometry(manager).center() - manager.rect().center())
 
         cw = manager.centralWidget()

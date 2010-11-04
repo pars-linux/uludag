@@ -32,7 +32,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._animation = 2
         self._duration = 500
         self.last_msg = None
-        self.enableOverlay()
+        self.enableOverlay(use_style = not state.silence)
         self._disable_parent_in_shown = True
 
         self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
@@ -40,6 +40,9 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
         self.parent = parent
+
+        if not state.silence:
+            self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
 
     def _show(self):
         self.animate(start = MIDCENTER, stop = MIDCENTER)
