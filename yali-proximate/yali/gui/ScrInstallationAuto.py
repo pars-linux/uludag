@@ -32,7 +32,7 @@ from yali.gui.Ui.autoinstallationlistitemwidget import Ui_AutoInstallationListIt
 # Installation Choice Widget
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Choose a Package Collection")
-    icon = "iconPartition"
+    icon = "partitionmanager"
     helpSummary = _("Choose a Package Collection")
     help = _('''
 <p>
