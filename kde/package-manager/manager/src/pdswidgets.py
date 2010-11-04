@@ -13,6 +13,7 @@
 
 from PyQt4 import QtCore, QtGui
 from pds.gui import *
+from pds.qprogressindicator import QProgressIndicator
 from ui_message import Ui_MessageBox
 
 class PMessageBox(PAbstractBox):
@@ -27,6 +28,11 @@ class PMessageBox(PAbstractBox):
         PAbstractBox.__init__(self, parent)
         self.ui = Ui_MessageBox()
         self.ui.setupUi(self)
+
+        self.busy = QProgressIndicator(self, "white")
+        self.busy.setMinimumSize(QtCore.QSize(32, 32))
+        self.ui.mainLayout.insertWidget(1, self.busy)
+
         self._animation = 2
         self._duration = 500
         self.last_msg = None
@@ -34,13 +40,20 @@ class PMessageBox(PAbstractBox):
         self.enableOverlay()
         self.hide()
 
-    def showMessage(self, message, icon = None):
+    def showMessage(self, message, icon = None, busy = False):
         self.ui.label.setText(message)
-        if icon:
-            self.ui.icon.setPixmap(QtGui.QPixmap(icon))
-            self.ui.icon.show()
-        else:
+
+        if busy:
+            self.busy.startAnimation()
             self.ui.icon.hide()
+        else:
+            if icon:
+                self.ui.icon.setPixmap(QtGui.QPixmap(icon))
+                self.ui.icon.show()
+            else:
+                self.ui.icon.hide()
+            self.busy.stopAnimation()
+
         self.last_msg = self.animate(start = PMessageBox.IN_POS, stop = PMessageBox.STOP_POS)
         QtGui.qApp.processEvents()
 
