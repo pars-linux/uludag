@@ -168,9 +168,17 @@ Proceed with the installation after you make your selections.
     def setCapsLockIcon(self, child):
         if type(child) == QtGui.QLineEdit:
             if pardus.xorg.capslock.isOn():
-                child.setStyleSheet("QLineEdit {background: url(:/gui/pics/caps.png) no-repeat right;\npadding-right: 35px; color: #333333;}")
+                child.setStyleSheet("""QLineEdit {
+                        background-image: url(:/gui/pics/caps.png);
+                        background-repeat: no-repeat;
+                        background-position: right;
+                        padding-right: 35px;
+                        }""")
             else:
-                child.setStyleSheet("QLineEdit {background: none; padding-right: 0px; color: #333333;}")
+                child.setStyleSheet("""QLineEdit {
+                        background-image: none;
+                        padding-right: 0px;
+                        }""")
 
 
     def checkCapsLock(self):
