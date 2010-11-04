@@ -74,6 +74,14 @@ if __name__ == '__main__':
         cw = manager.centralWidget()
         cw.state.state = cw.state.INSTALL
         cw.state._selected_packages = args
+
+        if not any(package.endswith('.pisi') for package in cw.state._selected_packages):
+            available_packages = cw.state.packages()
+            for package in cw.state._selected_packages:
+                if package not in available_packages:
+                    cw.exceptionCaught("HTTP Error 404", package)
+                    sys.exit()
+
         cw.state.operationAction(cw.state._selected_packages, silence = True)
 
         sys.excepthook = handleException

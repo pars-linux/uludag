@@ -260,7 +260,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.progressDialog._show()
         self.progressDialog.enableCancel()
 
-    def exceptionCaught(self, message):
+    def exceptionCaught(self, message, package = ''):
         self.progressDialog._hide()
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
@@ -270,7 +270,9 @@ class MainWidget(QWidget, Ui_MainWidget):
             errorMessage = i18n("You are not authorized for this operation.")
         elif "HTTP Error 404" in message:
             errorTitle = i18n("Pisi Error")
-            errorMessage = i18n("Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations.")
+            errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
+                                "It may be upgraded or removed from the repository.<br>"\
+                                "Please try upgrading repository informations." % package)
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
