@@ -332,7 +332,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.summaryDialog.showSummary()
 
         if not self.summaryDialog.hasApplication() and self.state.silence:
-            qApp.exit()
+            QTimer.singleShot(1000, qApp.exit)
 
         if not self.state.silence:
             if operation in ("System.Manager.updateRepository",
