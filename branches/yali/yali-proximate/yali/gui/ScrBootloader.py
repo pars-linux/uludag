@@ -20,12 +20,29 @@ from PyQt4.QtCore import *
 import yali.context as ctx
 from yali.gui.ScreenWidget import ScreenWidget
 from yali.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
+from yali.gui.Ui.bootitem import Ui_BootItem
 from yali.storage.bootloader import BOOT_TYPE_NONE, BOOT_TYPE_PARTITION, BOOT_TYPE_MBR, BOOT_TYPE_RAID, BootLoaderError, boot_type_strings
+
+class DrivesListItem(QtGui.QListWidgetItem):
+    def __init__(self, parent, widget):
+        QtGui.QListWidgetItem.__init__(self, parent)
+        self.widget = widget
+        self.setSizeHint(QSize(widget.width()-20, widget.height()))
+
+class DriveItem(QtGui.QWidget, Ui_BootItem):
+    def __init__(self, parent, drive, name):
+        QtGui.QWidget.__init__(self, parent)
+        self.setupUi(self)
+
+        #self.labelDrive.setText("%s" % (name))
+        #self.labelInfo.setText("%s\n%s GB" % (drive.model, str(int(drive.size) / 1024)))
+        #self.drive = drive
+        #self.parent = parent
 
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = _("Configure Bootloader")
-    icon = "iconBootloader"
+    icon = "utilities-terminal"
     helpSummary = _("A bootloader is a tiny program that runs when a computer is first powered up.")
     help = _("""
 <p>
@@ -54,13 +71,9 @@ You can always choose another installation method if you know what you are doing
         self.bootDisk = None
         self.bootPartition = None
 
-        self.connect(self.ui.defaultSettings, SIGNAL("toggled(bool)"), self.showDefaultSettings)
         self.connect(self.ui.noInstall, SIGNAL("toggled(bool)"), self.deactivateBootloader)
         self.connect(self.ui.installPartition, SIGNAL("toggled(bool)"), self.activateInstallPartition)
         self.connect(self.ui.drives, SIGNAL("currentIndexChanged(int)"), self.currentDeviceChanged)
-
-        self.ui.advancedSettingsBox.show()
-        self.ui.defaultSettings.setChecked(True)
 
     def fillDrives(self):
         self.ui.drives.clear()
@@ -88,13 +101,6 @@ You can always choose another installation method if you know what you are doing
             self.bootloader.bootType = BOOT_TYPE_MBR
 
         return True
-
-    def showDefaultSettings(self, state):
-        if state:
-            self.device = self.default
-            self.ui.advancedSettingsBox.hide()
-        else:
-            self.ui.advancedSettingsBox.show()
 
     def activateChoices(self):
         for choice, (device, bootType) in self.bootloader.choices.items():
