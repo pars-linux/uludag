@@ -103,6 +103,12 @@
           </item>
           <item>
            <widget class="QLabel" name="disclamer">
+            <property name="minimumSize">
+             <size>
+              <width>430</width>
+              <height>0</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>10</pointsize>
@@ -134,7 +140,7 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout">
             <property name="spacing">
-             <number>20</number>
+             <number>0</number>
             </property>
             <property name="bottomMargin">
              <number>0</number>
@@ -145,6 +151,12 @@
                <size>
                 <width>130</width>
                 <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>130</width>
+                <height>16777215</height>
                </size>
               </property>
               <property name="font">
@@ -163,16 +175,62 @@
                 <normaloff>:/gui/pics/favorites.png</normaloff>:/gui/pics/favorites.png</iconset>
               </property>
               <property name="flat">
-               <bool>true</bool>
+               <bool>false</bool>
               </property>
              </widget>
             </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>20</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
             <item>
              <widget class="QCheckBox" name="accept">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <pointsize>10</pointsize>
                </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QCheckBox {
+        spacing: 5px;
+        color: white;
+}
+
+QCheckBox::indicator {
+        width: 16px;
+        height: 16px;
+}
+
+QCheckBox::indicator:unchecked {
+        image: url(:/images/checkbox_unchecked.png);
+}
+
+QCheckBox::indicator:unchecked:hover {
+        image: url(:/images/checkbox_unchecked_hover.png);
+}
+
+
+QCheckBox::indicator:checked {
+	image: url(:/gui/pics/task-complete.png);
+        /*image: url(:/images/gui/pics/task-accepted.png);*/
+}
+
+QCheckBox::indicator:checked:hover {
+	image: url(:/gui/pics/task-complete.png);
+}
+</string>
               </property>
               <property name="text">
                <string>I understand and accept the terms of GNU GPL</string>
