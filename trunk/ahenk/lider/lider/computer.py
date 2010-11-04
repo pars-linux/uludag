@@ -49,7 +49,6 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         from lider.helpers.directory import Directory
         password = str(self.editPassword.text())
         salted = Directory.make_password(password)
-        print salted
         return salted
 
     def set_name(self, user):
