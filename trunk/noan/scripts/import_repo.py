@@ -123,26 +123,31 @@ def updateDB(path_source, path_stable, path_test, options):
             #send_mail(MAIL_SUBJECT % data, MAIL_BODY % data, 'no-reply@pardus.org.tr', [email])
         return user
 
-    def parseSourceIndex(_index):
-        try:
-            distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
-        except ValueError:
-            distroName = _index.distribution.sourceName
-            distroRelease = _index.distribution.version
-        print '  Distribution: %s-%s' % (distroName, distroRelease)
+    def parseSourceIndex(_index, review=False):
+        if not review:
+            try:
+                distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+            except ValueError:
+                distroName = _index.distribution.sourceName
+                distroRelease = _index.distribution.version
+            print '  Distribution: %s-%s' % (distroName, distroRelease)
 
-        # repo name
-        try:
-            if _index.distribution.sourceName.find(" ") != -1:
-                binaryName = _index.distribution.sourceName.split()[1]
-            else:
-                binaryName = _index.distribution.sourceName.split('-', 1)[1]
-        except IndexError:
-            if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
-            else: binaryName = 'Pardus'
-        if binaryName == 'Contrib': repoType = 'contrib'
-        elif binaryName == 'Corporate': repoType = 'corporate'
-        else: repoType = 'stable'
+            # repo name
+            try:
+                if _index.distribution.sourceName.find(" ") != -1:
+                    binaryName = _index.distribution.sourceName.split()[1]
+                else:
+                    binaryName = _index.distribution.sourceName.split('-', 1)[1]
+            except IndexError:
+                if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
+                else: binaryName = 'Pardus'
+            if binaryName == 'Contrib': repoType = 'contrib'
+            elif binaryName == 'Corporate': repoType = 'corporate'
+            else: repoType = 'stable'
+        else:
+            distroName = "Pardus"
+            distroRelease = "Playground"
+            repoType = "review"
 
         # Add distribution to database
         try:
@@ -151,14 +156,21 @@ def updateDB(path_source, path_stable, path_test, options):
             distribution = Distribution(name=distroName, release=distroRelease, type=repoType)
             distribution.save()
 
-        def importSpec(pspec):
+        def importSpec(pspec, local_uri=None):
             # Add or update developer
             maintained_by = createUser(pspec.source.packager.email, pspec.source.packager.name)
             
             # Create the source package information
             part_of = pspec.source.partOf
-            source_uri = pspec.source.sourceURI
+            if not local_uri:
+                source_uri = pspec.source.sourceURI
+            else:
+                index = local_uri.find("review")
+                source_uri = local_uri[index:]
+            print '     Source URI: %s' % source_uri
+
             home_page = pspec.source.homepage
+            print '     Homepage: %s' % home_page
             source_info = SourcePackageDetail.objects.create(part_of=part_of, source_uri=source_uri, home_page=home_page)
             for is_a in pspec.source.isA:
                 print '     IsA: %s' % is_a
@@ -181,10 +193,11 @@ def updateDB(path_source, path_stable, path_test, options):
             try:
                 source = Source.objects.get(name=pspec.source.name, distribution=distribution)
                 source.maintained_by = maintained_by
-                if source.info == source_info: source.info.delete()
-                else: source.info.sourcepackagedetail = source_info
+                source.info.sourcepackagedetail = source_info
                 source.save()
-            except Source.DoesNotExist:
+            except:
+                if 'source' in locals():
+                    source.delete()
                 source = Source(name=pspec.source.name, distribution=distribution, maintained_by=maintained_by, info=source_info)
                 source.save()
             print '  Source: %s' % source.name
@@ -249,8 +262,12 @@ def updateDB(path_source, path_stable, path_test, options):
             if up_count > 0:
                 print '    New Updates: %s' % up_count
 
-        for pspec in _index.specs:
-            importSpec(pspec)
+        if not review:
+            for pspec in _index.specs:
+                importSpec(pspec)
+        else:
+            pspec = pisi.specfile.SpecFile(_index)
+            importSpec(pspec, local_uri=_index)
 
     def parseBinaryIndex(_index, _type):
         if _type == 'test':
@@ -378,11 +395,15 @@ def updateDB(path_source, path_stable, path_test, options):
                 bin.linked_binary.add(dep)
 
     # Indexes
-    print "Fetching source index..."
-    index_source = fetchIndex(path_source)
+    if options.type != "review":
+        print "Fetching source index..."
+        index_source = fetchIndex(path_source)
 
-    print "Fetching stable (binary) index..."
-    index_stable = fetchIndex(path_stable)
+    if path_stable:
+        print "Fetching stable (binary) index..."
+        index_stable = fetchIndex(path_stable)
+    else:
+        index_stable = None
 
     if path_test:
         print "Fetching test (binary) index..."
@@ -392,18 +413,35 @@ def updateDB(path_source, path_stable, path_test, options):
 
     # Parse source indes
     print "Parsing source index..."
-    parseSourceIndex(index_source)
+    if options.type == "review":
+        # start traversing reviwe svn directory structure
+        print "Traversing the review svn directory..."
+        for root, dirs, files in os.walk(path_source):
+            if "pspec.xml" in files:
+                for f in files:
+                    if f == "pspec.xml":
+                        pspec_path = os.path.join(root, "pspec.xml")
+                        print "Parsing %s " % pspec_path
+                        parseSourceIndex(pspec_path, review=True)
+    else:
+        parseSourceIndex(index_source)
+
     # Parse test (binary) index for new packages
     if index_test:
         parseBinaryIndex(index_test, "test")
-    # Parse stable (binary) index for released packages
-    parseBinaryIndex(index_stable, "stable")
+    if index_stable:
+        # Parse stable (binary) index for released packages
+        parseBinaryIndex(index_stable, "stable")
 
 
 def main():
     usage = "usage: %prog [options] path/to/noan http://url.to/source-repo http://url.to/stable-repo [http://url.to/test-repo]"
     parser = optparse.OptionParser(usage=usage)
-
+    parser.add_option("-t", "--type",
+                      action="store",
+                      dest="type",
+                      type="string",
+                      help="Review path will be traversed")
     (options, args) = parser.parse_args()
 
     if len(args) == 4:
@@ -411,6 +449,9 @@ def main():
     elif len(args) == 3:
         path_noan, path_source, path_stable = args
         path_test = None
+    elif len(args) == 2:
+        path_noan, path_source = args
+        path_stable, path_test = None, None
     else:
         parser.error("Incorrect number of arguments")
 

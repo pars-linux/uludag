@@ -73,9 +73,9 @@ class SourcePackageDetail(models.Model):
         summary: Summary of the source package description, ForeignKey
         description: Description of the package, ForeignKey
     """
-    part_of = models.CharField(max_length=64, blank=True)
-    source_uri = models.CharField(max_length=150, blank=True)
-    home_page = models.CharField(max_length=150, blank=True)
+    part_of = models.CharField(max_length=64, blank=True, null=True)
+    source_uri = models.CharField(max_length=150, blank=True, null=True)
+    home_page = models.CharField(max_length=150, blank=True, null=True)
 
     class Meta:
         verbose_name = _('package detail')
@@ -112,7 +112,9 @@ class Source(models.Model):
             suffix = 'pardus'
         else: suffix = 'pardus'
 
-        if self.distribution.type != 'corporate':
+        if self.distribution.type == 'review':
+            url = "/".join([base_url, suffix, self.distribution.release.lower(), self.info.source_uri])
+        elif self.distribution.type != 'corporate':
             url = "/".join([base_url, suffix, self.distribution.release, self.distribution.type, self.info.source_uri])
         else: 
             postfix = self.distribution.type + self.distribution.release
