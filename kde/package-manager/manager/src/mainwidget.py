@@ -276,7 +276,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             errorMessage = message
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-        self.messageBox.show()
+        self.messageBox.exec_()
 
         if self.state.silence:
             qApp.exit()
@@ -293,11 +293,11 @@ class MainWidget(QWidget, Ui_MainWidget):
                          "System.Manager.updatePackage"):
             self.notifyFinished()
 
-        has_summary = False
         if operation == "System.Manager.installPackage":
-            has_summary = self.showSummary()
+            self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
+            self.summaryDialog.showSummary()
 
-        if not has_summary and self.state.silence:
+        if not self.summaryDialog.hasApplication() and self.state.silence:
             qApp.exit()
 
         if not self.state.silence:
@@ -332,12 +332,6 @@ class MainWidget(QWidget, Ui_MainWidget):
                 None,
                 KNotification.CloseOnTimeout,
                 KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
-
-    def showSummary(self):
-        self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
-        if self.summaryDialog.hasApplication():
-            self.summaryDialog.show()
-            return True
 
     def setActionEnabled(self):
         enabled = self.packageList.isSelected()

@@ -108,3 +108,7 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
             qApp.exit()
         self.reject()
 
+    def showSummary(self):
+        if self.hasApplication():
+            self.show()
+
