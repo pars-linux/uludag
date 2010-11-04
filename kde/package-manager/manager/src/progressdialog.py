@@ -13,10 +13,12 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QTimer
+from PyQt4.QtCore import QSize
 
 from PyKDE4.kdecore import i18n
 
 from pds.gui import *
+from pds.qprogressindicator import QProgressIndicator
 from ui_progressdialog_v4 import Ui_ProgressDialog
 import backend
 
@@ -28,6 +30,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.state = state
         self.setupUi(self)
 
+        self.busy = QProgressIndicator(self, "white" if state.silence else "black")
+        self.busy.setMinimumSize(QSize(48, 48))
+        self.mainLayout.addWidget(self.busy)
+
         # PDS Settings
         self._animation = 2
         self._duration = 500
@@ -36,7 +42,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._disable_parent_in_shown = True
 
         self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
+        self.registerFunction(FINISHED, self.busy.startAnimation)
+
         self.registerFunction(OUT, lambda: parent.statusBar().show())
+        self.registerFunction(OUT, self.busy.stopAnimation)
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
         self.parent = parent
@@ -44,9 +53,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         if not state.silence:
             self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
 
+        self._last_action = ''
+
     def _show(self):
         self.animate(start = MIDCENTER if self.state.silence else TOPCENTER, stop = MIDCENTER)
-
         if self.parent.centralWidget().basket.isVisible():
             self.parent.centralWidget().basket._hide()
 
@@ -72,7 +82,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
 
     def updateStatus(self, packageNo, totalPackages, operation):
         text = i18n("[%1 / %2]", packageNo, totalPackages)
-        self.statusInfo.setText(text)
+        self.actionLabel.setText("%s %s" % (text, self._last_action))
 
     def updateRemainingTime(self, time):
         self.timeRemaining.setText("<p align='right'>%s</p>" % time)
@@ -82,7 +92,12 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.completedInfo.setText(text)
 
     def updateActionLabel(self, action):
+        self.busy.stopAnimation()
+        self.busy.hide()
+        self.widget.show()
+
         self.actionLabel.setText("<i>%s</i>" % self.state.getActionCurrent(action))
+        self._last_action = self.actionLabel.toPlainText()
 
     def enableCancel(self):
         self.cancelButton.setEnabled(True)
@@ -91,20 +106,25 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.cancelButton.setEnabled(False)
 
     def reset(self):
+
+        self.widget.hide()
+        self.busy.show()
+
         self.actionLabel.setText(i18n("Preparing PiSi..."))
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
         self.completedInfo.setText("")
-        self.statusInfo.setText(i18n("-- / --"))
         self.timeRemaining.setText("<p align='right'>--:--:--</p>")
         self.timeRemaining.show()
 
     def cancel(self):
+        self.widget.hide()
+        self.busy.show()
+
         self.actionLabel.setText(i18n("<b>Cancelling operation...</b>"))
         self.disableCancel()
         QTimer.singleShot(100, self.iface.cancel)
 
     def repoOperationView(self):
-        for widget in [self.statusInfo, self.timeRemaining]:
-            widget.setText("")
+        self.timeRemaining.setText("")
         self.timeRemaining.hide()
