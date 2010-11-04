@@ -60,11 +60,13 @@ from operationmanager import OperationManager
 class PThread(QThread):
     def __init__(self, parent, action, callback, args=[], kwargs={}):
         QThread.__init__(self,parent)
+
         parent.connect(self, SIGNAL("finished()"), callback)
 
         self.action = action
         self.args = args
         self.kwargs = kwargs
+        self.callback = callback
         self.data = None
 
     def run(self):
@@ -94,6 +96,9 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         # state.silence is using for pm-install module
         self.state.silence = silence
+
+        # Search Thread
+        self._searchThread = PThread(self, self.startSearch, self.searchFinished)
 
         self.statusUpdater = StatusUpdater()
         self.basket = BasketDialog(self.state, self.parent)
@@ -230,26 +235,26 @@ class MainWidget(QWidget, Ui_MainWidget):
         restoreCursor()
 
     def searchActivated(self):
-        searchText = str(self.searchLine.text()).split()
-        if searchText:
+        if not self.searchLine.text() == '':
             self.pdsMessageBox.showMessage(i18n("Searching..."), busy = True)
             self.groupList.lastSelected = None
-            _searchThread = PThread(self, self.startSearch, self.searchFinished, searchText)
-            _searchThread.run()
+            self._searchThread.start()
             self.searchUsed = True
         else:
             self.state.cached_packages = None
             self.state.packages()
             self.searchUsed = False
+            self.searchFinished()
 
     def searchFinished(self):
-        self.initializeGroupList()
         if self.state.cached_packages == []:
             self.pdsMessageBox.showMessage(i18n("No results found."), KIcon("dialog-information").pixmap(32,32))
         else:
             self.pdsMessageBox.hideMessage()
+        self.initializeGroupList()
 
-    def startSearch(self, searchText):
+    def startSearch(self):
+        searchText = unicode(self.searchLine.text()).split()
         sourceModel = self.packageList.model().sourceModel()
         self.state.cached_packages = sourceModel.search(searchText)
 
