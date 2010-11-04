@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Développeur"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Développeur"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -131,9 +131,9 @@ msgid "You are not authorized for this operation."
 msgstr "Vous n'êtes pas autorisé à faire cette opération."
 
 #: src/mainwidget.py:273
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Paquet introuvable. Il peut être mis à jour ou supprimé du dépôt. Essayez de mettre à jour les informations du dépôt."
+msgstr "Paquet <b>%s</b> introuvable. Il peut être mis à jour ou supprimé du dépôt. <br>Essayez de mettre à jour les informations du dépôt."
 
 #: src/mainwidget.py:413
 msgid "All Updates"
@@ -440,12 +440,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Montrer les mises à jour"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -536,7 +536,7 @@ msgstr "Paramètres"
 
 #: ui/ui_mainwidget_v3.py:182
 msgid "History KCM will be here."
-msgstr ""
+msgstr "L'historique de KCM sera ici."
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -792,13 +792,12 @@ msgid "Package Details"
 msgstr "Détails des paquets"
 
 #: ui/ui_webdialog.py:153
-#, fuzzy
 msgid "Package Files"
-msgstr "Liste des paquets"
+msgstr " Fichiers des paquets"
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
-msgstr ""
+msgstr "Fermer"
 
 #~ msgid "Show Installed Packages"
 #~ msgstr "Afficher les paquets installés"
