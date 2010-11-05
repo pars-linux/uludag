@@ -189,8 +189,22 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
             if not answer == QtGui.QMessageBox.Yes:
                 return
 
-        self.state.operationAction(self.model.selectedPackages())
-        # self._hide()
+        reinstall = False
+        if self.state.inInstall():
+            answer = QtGui.QMessageBox.Yes
+            actions = self.state.checkInstallActions(
+                self.model.selectedPackages() + self.model.extraPackages())
+            if actions:
+                answer = self.askForActions(actions,
+                       i18n("Selected packages are already installed "
+                            "If you continue, packages will be reinstalled"),
+                       i18n("Already Installed Packages"))
+            if not answer == QtGui.QMessageBox.Yes:
+                return
+            if actions:
+                reinstall = True
+
+        self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall)
 
     def showHideDownloadInfo(self):
         if self.state.state == self.state.REMOVE:
