@@ -20,6 +20,7 @@ from pds.gui import *
 from pmutils import *
 
 from ui_webdialog import Ui_WebDialog
+from pds.qprogressindicator import QProgressIndicator
 
 class WebDialog(PAbstractBox, Ui_WebDialog):
     def __init__(self, parent):
@@ -42,25 +43,58 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.page().mainFrame().setScrollBarPolicy(Qt.Vertical, Qt.ScrollBarAlwaysOff)
         self.webView.page().mainFrame().setScrollBarPolicy(Qt.Horizontal, Qt.ScrollBarAlwaysOff)
 
+        self.tabWidget.removeTab(0)
+
+        self.busy = QProgressIndicator(self, "white")
+        self.busy.setMaximumSize(QSize(48, 48))
+        self.webLayout.addWidget(self.busy)
+        self.busy.hide()
+
+        self.noconnection.hide()
+
     def showPage(self, addr):
         self.webView.load(QUrl(addr))
         self.animate(start = BOTCENTER, stop = MIDCENTER)
 
-    def _sync_template(self, package, summary, description):
+    def _sync_template(self, status, package, summary, description):
         def _replace(key, value):
             self.webView.page().mainFrame().evaluateJavaScript(\
                     '%s.innerHTML="%s";' % (key, value))
-        _replace('title', package)
-        _replace('summary', summary)
-        _replace('description', description)
 
-    def showPackageDetails(self, package, summary='', description=''):
+        self.busy.hide()
+        self.busy.stopAnimation()
+
+        if status:
+            _replace('title', package)
+            _replace('summary', summary)
+            _replace('description', description)
+            self.webView.show()
+            self.noconnection.hide()
+        else:
+            self.noconnection.show()
+            self.webView.hide()
+
+    def showPackageDetails(self, package, summary='', description='', files=[]):
         self.packageName.setText(package)
+
+        self.webView.hide()
+        self.busy.show()
+        self.busy.startAnimation()
+
         self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
-        self.webView.loadFinished.connect(lambda: self._sync_template(\
-                package, summary, description))
+        self.webView.loadFinished.connect(lambda x: \
+                self._sync_template(x, package, summary, description))
+
+        self.tabWidget.insertTab(0, self.filesList, i18n('Package Files'))
+        if files:
+            print files
+        else:
+            self.tabWidget.removeTab(0)
+
         self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def _hide(self):
+        self.busy.stopAnimation()
+        self.webView.loadFinished.disconnect()
         self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
 
