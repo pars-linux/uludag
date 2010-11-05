@@ -319,7 +319,8 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         name = _getter(NameRole)
         summary = _getter(SummaryRole)
         description = _getter(DescriptionRole)
-        self.webDialog.showPackageDetails(name, summary, description)
+        installed = model.data(index, InstalledRole).toBool()
+        self.webDialog.showPackageDetails(name, installed, summary, description)
 
     def sizeHint(self, option, index):
         if self.rowAnimator.currentRow() == index.row() and not index.row() == 0:

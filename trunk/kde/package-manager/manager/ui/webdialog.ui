@@ -169,15 +169,25 @@ QTabBar::tab:!selected {
             <enum>QTabWidget::South</enum>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <widget class="QWidget" name="packageFiles">
             <attribute name="title">
              <string>Package Files</string>
             </attribute>
             <layout class="QGridLayout" name="gridLayout_5">
-             <item row="0" column="0">
+             <property name="margin">
+              <number>8</number>
+             </property>
+             <item row="1" column="0">
               <widget class="QListWidget" name="filesList"/>
+             </item>
+             <item row="0" column="0">
+              <widget class="KListWidgetSearchLine" name="filterLine">
+               <property name="clickMessage">
+                <string>Type to filter files</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -231,6 +241,16 @@ Please check your network connection</string>
   </layout>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KListWidgetSearchLine</class>
+   <extends>KLineEdit</extends>
+   <header>klistwidgetsearchline.h</header>
+  </customwidget>
   <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>
