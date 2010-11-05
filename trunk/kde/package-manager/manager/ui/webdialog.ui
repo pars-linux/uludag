@@ -210,7 +210,8 @@ QTabBar::tab:!selected {
                 <string notr="true">color:white;</string>
                </property>
                <property name="text">
-                <string>No Internet Connection available</string>
+                <string>AppInfo Server is not reachable
+Please check your network connection</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
