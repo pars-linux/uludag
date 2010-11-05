@@ -171,10 +171,14 @@ class StateManager(QObject):
 
         return text
 
-    def operationAction(self, packages, silence = False):
+    def operationAction(self, packages, silence = False, reinstall = False):
         if not silence:
             if not self.conflictCheckPasses(packages):
                 return
+
+        if reinstall:
+            return self.iface.reinstallPackages(packages)
+
         return {self.ALL    :self.iface.modifyPackages,
                 self.INSTALL:self.iface.installPackages,
                 self.REMOVE :self.iface.removePackages,
@@ -206,6 +210,9 @@ class StateManager(QObject):
 
     def checkUpdateActions(self, packages):
         return self.iface.checkUpdateActions(packages)
+
+    def checkInstallActions(self, packages):
+        return filter(lambda x: x in self.__installed_packages, packages)
 
     def checkRemoveActions(self, packages):
         important_packages = open(config.DATA_DIR + 'important_packages').read().split('\n')
