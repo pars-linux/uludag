@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-04 15:47+0200\n"
+"POT-Creation-Date: 2010-11-05 08:27+0200\n"
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -21,7 +21,7 @@ msgid "Add or Remove Software"
 msgstr ""
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Gerenciador de Pacotes"
@@ -65,7 +65,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
+#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Erro do PiSi"
@@ -106,45 +106,45 @@ msgstr "Ajuda do Gerenciador de Pacote"
 msgid "Show main window"
 msgstr "Mostrar tela principal"
 
-#: src/mainwidget.py:213
+#: src/mainwidget.py:238
 #, fuzzy
 msgid "Searching..."
 msgstr "Buscar"
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:250
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:266
+#: src/mainwidget.py:298
 msgid "Network Error"
 msgstr "Erro de Conectividade de Rede"
 
-#: src/mainwidget.py:267
+#: src/mainwidget.py:299
 msgid "Please check your network connections and try again."
 msgstr "Por favor cheque as conexões de rede e tente novamente."
 
-#: src/mainwidget.py:269
+#: src/mainwidget.py:301
 msgid "Authorization Error"
 msgstr "Erro de Autorização"
 
-#: src/mainwidget.py:270
+#: src/mainwidget.py:302
 msgid "You are not authorized for this operation."
 msgstr "Você não está autorizado para executar essa operação."
 
-#: src/mainwidget.py:273
+#: src/mainwidget.py:305
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Pacote não encontrado. Ele pode ter sido atualizado ou removido do repositório. Por favor tente atualizar as informações do repositório."
 
-#: src/mainwidget.py:413
+#: src/mainwidget.py:445
 msgid "All Updates"
 msgstr "Todas as Atualizações"
 
-#: src/mainwidget.py:414
+#: src/mainwidget.py:446
 msgid "Security Updates"
 msgstr "Atualizações de Segurança"
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:447
 msgid "Critical Updates"
 msgstr "Atualizações Críticas"
 
@@ -184,11 +184,11 @@ msgstr "instalando"
 msgid "removing"
 msgstr "removendo"
 
-#: src/operationmanager.py:42 src/progressdialog.py:73
+#: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
 msgstr "extraindo"
 
-#: src/operationmanager.py:43 src/progressdialog.py:73
+#: src/operationmanager.py:43 src/progressdialog.py:79
 msgid "configuring"
 msgstr "configurando"
 
@@ -241,39 +241,39 @@ msgstr "Selecione todos os pacotes nesse grupo"
 msgid "%prog packages_to_install"
 msgstr ""
 
-#: src/progressdialog.py:69
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Operação - %1%"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Fazendo download da lista de pacotes de %1"
 
-#: src/progressdialog.py:79
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:91
+#: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 pacote %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Preparando o PiSi...</h3>"
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Cancelando a operação...</b>"
 
@@ -460,6 +460,11 @@ msgstr "Ignorar"
 msgid "Show Updates"
 msgstr "Exibir Atualizações"
 
+#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#, fuzzy
+msgid "Package Files"
+msgstr "Lista de pacote"
+
 #: ui/ui_appitem.py:58
 msgid "Application"
 msgstr "Aplicativos"
@@ -472,7 +477,7 @@ msgstr "Navegadores da Internet"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Cesta"
 
@@ -807,55 +812,29 @@ msgstr "Você pode iniciar a nova aplicação instalado com um clique duplo na l
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
+#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
 #, fuzzy
 msgid "Package Details"
 msgstr "Lista de pacote"
 
-#: ui/ui_webdialog.py:153
+#: ui/ui_webdialog.py:163
 #, fuzzy
-msgid "Package Files"
-msgstr "Lista de pacote"
+msgid ""
+"AppInfo Server is not reachable\n"
+"Please check your network connection"
+msgstr "Por favor cheque as conexões de rede e tente novamente."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mostrar Pacotes Instalados"
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Usar servidor de proxy"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Finalizou com sucesso a instalação de %1"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Summary"
-#~ msgstr "Resumo"
-
-#~ msgid "Updates"
-#~ msgstr "Atualizações"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Existem %1 atualizações disponíveis!"
-
-#~ msgid "Quit"
-#~ msgstr "Sair"
-
-#~ msgid "Help"
-#~ msgstr "Ajuda"
-
-#~ msgid "File"
-#~ msgstr "Arquivo"
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Removendo Pacote(s)"
 
 #, fuzzy
 #~ msgid ""
@@ -871,10 +850,38 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#, fuzzy
-#~ msgid "Removing important packages"
-#~ msgstr "Removendo Pacote(s)"
+#~ msgid "File"
+#~ msgstr "Arquivo"
 
-#, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Help"
+#~ msgstr "Ajuda"
+
+#~ msgid "Quit"
+#~ msgstr "Sair"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Existem %1 atualizações disponíveis!"
+
+#~ msgid "Updates"
+#~ msgstr "Atualizações"
+
+#~ msgid "Summary"
+#~ msgstr "Resumo"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Finalizou com sucesso a instalação de %1"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usar servidor de proxy"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mostrar Pacotes Instalados"

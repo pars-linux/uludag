@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-04 15:47+0200\n"
+"POT-Creation-Date: 2010-11-05 08:27+0200\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -22,7 +22,7 @@ msgid "Add or Remove Software"
 msgstr ""
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Pakke håndtering"
@@ -67,7 +67,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
+#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
@@ -108,47 +108,47 @@ msgstr "Pakke håndtering hjælp"
 msgid "Show main window"
 msgstr "Vis hoved vinduet"
 
-#: src/mainwidget.py:213
+#: src/mainwidget.py:238
 #, fuzzy
 msgid "Searching..."
 msgstr "Søg"
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:250
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:266
+#: src/mainwidget.py:298
 msgid "Network Error"
 msgstr "Netværks fejl"
 
-#: src/mainwidget.py:267
+#: src/mainwidget.py:299
 msgid "Please check your network connections and try again."
 msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
-#: src/mainwidget.py:269
+#: src/mainwidget.py:301
 msgid "Authorization Error"
 msgstr "Godkendelses fejl"
 
-#: src/mainwidget.py:270
+#: src/mainwidget.py:302
 msgid "You are not authorized for this operation."
 msgstr "Du har ikke rettigheder til at foretage denne handling"
 
-#: src/mainwidget.py:273
+#: src/mainwidget.py:305
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/mainwidget.py:413
+#: src/mainwidget.py:445
 #, fuzzy
 msgid "All Updates"
 msgstr "Opdater"
 
-#: src/mainwidget.py:414
+#: src/mainwidget.py:446
 #, fuzzy
 msgid "Security Updates"
 msgstr "VIs opdateringer"
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:447
 msgid "Critical Updates"
 msgstr ""
 
@@ -188,11 +188,11 @@ msgstr "installerer"
 msgid "removing"
 msgstr "fjerner"
 
-#: src/operationmanager.py:42 src/progressdialog.py:73
+#: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
 msgstr "udpakker"
 
-#: src/operationmanager.py:43 src/progressdialog.py:73
+#: src/operationmanager.py:43 src/progressdialog.py:79
 msgid "configuring"
 msgstr "konfigurerer"
 
@@ -246,39 +246,39 @@ msgstr "Vælg alle pakker i denne gruppe"
 msgid "%prog packages_to_install"
 msgstr "Pakker til installation"
 
-#: src/progressdialog.py:69
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:76
 #, fuzzy, python-format
 msgid "Operation - %1%"
 msgstr "Handling"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Downloader pakkeliste af %1"
 
-#: src/progressdialog.py:79
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:91
+#: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 pakke %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Forbereder PiSi...</h3>"
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Fortryder handling...</b>"
 
@@ -471,6 +471,11 @@ msgstr "Ignorer"
 msgid "Show Updates"
 msgstr "VIs opdateringer"
 
+#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#, fuzzy
+msgid "Package Files"
+msgstr "Pakke størrelse:"
+
 #: ui/ui_appitem.py:58
 msgid "Application"
 msgstr "Program"
@@ -483,7 +488,7 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Kurv"
 
@@ -829,86 +834,29 @@ msgstr "Du kan starte det installerede program ved at dobbeltklikke på det i li
 msgid "&Ok"
 msgstr "&OK"
 
-#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
+#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
 #, fuzzy
 msgid "Package Details"
 msgstr "Pakke størrelse:"
 
-#: ui/ui_webdialog.py:153
+#: ui/ui_webdialog.py:163
 #, fuzzy
-msgid "Package Files"
-msgstr "Pakke størrelse:"
+msgid ""
+"AppInfo Server is not reachable\n"
+"Please check your network connection"
+msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Vis installerede pakker"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
 #, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Ryd mellemlager"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
-
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
-
-#, fuzzy
-#~ msgid "Updates"
-#~ msgstr "Opdater"
-
-#, fuzzy
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
-
-#, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Hjælp"
+#~ msgid "Removing important packages"
+#~ msgstr "Fjerner pakke(r)"
 
 #, fuzzy
 #~ msgid ""
@@ -925,9 +873,68 @@ msgstr ""
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
 #, fuzzy
-#~ msgid "Removing important packages"
-#~ msgstr "Fjerner pakke(r)"
+#~ msgid "Help"
+#~ msgstr "&Hjælp"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
+
+#, fuzzy
+#~ msgid "Updates"
+#~ msgstr "Opdater"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
+
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Ryd mellemlager"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
+
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Vis installerede pakker"

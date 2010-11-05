@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-04 15:47+0200\n"
+"POT-Creation-Date: 2010-11-05 08:27+0200\n"
 "PO-Revision-Date: 2010-06-05 17:07+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgid "Add or Remove Software"
 msgstr "Szoftver hozzáadása vagy eltávolítása"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Csomagkezelő"
@@ -63,7 +63,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bicskas9323@gmail.com"
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
+#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "PiSi hiba"
@@ -104,45 +104,45 @@ msgstr "Csomagtelepítő segítség"
 msgid "Show main window"
 msgstr "Főablak mutatása"
 
-#: src/mainwidget.py:213
+#: src/mainwidget.py:238
 #, fuzzy
 msgid "Searching..."
 msgstr "Keresés"
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:250
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:266
+#: src/mainwidget.py:298
 msgid "Network Error"
 msgstr "Hálózati hiba"
 
-#: src/mainwidget.py:267
+#: src/mainwidget.py:299
 msgid "Please check your network connections and try again."
 msgstr "Kérlek ellenőrizd a hálózati kapcsolatod és próbáld újra."
 
-#: src/mainwidget.py:269
+#: src/mainwidget.py:301
 msgid "Authorization Error"
 msgstr "Hitelesítési hiba"
 
-#: src/mainwidget.py:270
+#: src/mainwidget.py:302
 msgid "You are not authorized for this operation."
 msgstr "Nem vagy felhatalmazva ehhez a művelethez."
 
-#: src/mainwidget.py:273
+#: src/mainwidget.py:305
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Csomag nem található. Frissítve vagy eltávolítva a tárolóból. Kérlek próbáld meg frissíteni a tároló adatait."
 
-#: src/mainwidget.py:413
+#: src/mainwidget.py:445
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:414
+#: src/mainwidget.py:446
 msgid "Security Updates"
 msgstr "Biztonsági frissítés"
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:447
 msgid "Critical Updates"
 msgstr "Kritikus frissítés"
 
@@ -182,11 +182,11 @@ msgstr "telepítés"
 msgid "removing"
 msgstr "eltávolítás"
 
-#: src/operationmanager.py:42 src/progressdialog.py:73
+#: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
 msgstr "kibontás"
 
-#: src/operationmanager.py:43 src/progressdialog.py:73
+#: src/operationmanager.py:43 src/progressdialog.py:79
 msgid "configuring"
 msgstr "konfigurálás"
 
@@ -239,39 +239,39 @@ msgstr "Az összes csomag kiválasztása ebben a csoportban"
 msgid "%prog packages_to_install"
 msgstr "%prog csomag a telepítéshez"
 
-#: src/progressdialog.py:69
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Művelet - %1%"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Csomaglista letöltése %1"
 
-#: src/progressdialog.py:79
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:91
+#: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 csomag %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>PiSi előkészítése...</h3>"
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Művelet visszavonása...</b>"
 
@@ -458,6 +458,11 @@ msgstr "Mellőz"
 msgid "Show Updates"
 msgstr "Mutasd a frissítéseket"
 
+#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#, fuzzy
+msgid "Package Files"
+msgstr "Csomaglista"
+
 #: ui/ui_appitem.py:58
 msgid "Application"
 msgstr "Alkalmazás"
@@ -470,7 +475,7 @@ msgstr "Webböngésző"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Kosár"
 
@@ -798,40 +803,29 @@ msgstr "Az újonnan telepített alkalmazást elindíthatod duplán kattintva a l
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
+#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
 #, fuzzy
 msgid "Package Details"
 msgstr "Csomaglista"
 
-#: ui/ui_webdialog.py:153
+#: ui/ui_webdialog.py:163
 #, fuzzy
-msgid "Package Files"
-msgstr "Csomaglista"
+msgid ""
+"AppInfo Server is not reachable\n"
+"Please check your network connection"
+msgstr "Kérlek ellenőrizd a hálózati kapcsolatod és próbáld újra."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
-#~ msgid "There are %1 updates available!"
-#~ msgstr "%1 frissítés elérhető!"
-
-#~ msgid "Updates"
-#~ msgstr "Frissítés"
-
-#~ msgid "Quit"
-#~ msgstr "Kilépés"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "File"
-#~ msgstr "Fájl"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Minden csomag friss"
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Csomag(ok) eltávolítása"
 
 #, fuzzy
 #~ msgid ""
@@ -847,10 +841,23 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#, fuzzy
-#~ msgid "Removing important packages"
-#~ msgstr "Csomag(ok) eltávolítása"
+#~ msgid "All Packages are up to date"
+#~ msgstr "Minden csomag friss"
 
-#, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "File"
+#~ msgstr "Fájl"
+
+#~ msgid "Help"
+#~ msgstr "Segítség"
+
+#~ msgid "Quit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Updates"
+#~ msgstr "Frissítés"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "%1 frissítés elérhető!"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"

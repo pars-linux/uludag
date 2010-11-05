@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-04 15:47+0200\n"
+"POT-Creation-Date: 2010-11-05 08:27+0200\n"
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -25,7 +25,7 @@ msgid "Add or Remove Software"
 msgstr "Aggiungi e rimuovi software"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Gestore di Pacchetti"
@@ -68,7 +68,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "edivad95@gmail.com"
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
+#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
@@ -109,45 +109,45 @@ msgstr "Guida del Gestore Pacchetti"
 msgid "Show main window"
 msgstr "Mostra finestra principale"
 
-#: src/mainwidget.py:213
+#: src/mainwidget.py:238
 #, fuzzy
 msgid "Searching..."
 msgstr "Cerca"
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:250
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:266
+#: src/mainwidget.py:298
 msgid "Network Error"
 msgstr "Errore di rete"
 
-#: src/mainwidget.py:267
+#: src/mainwidget.py:299
 msgid "Please check your network connections and try again."
 msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
-#: src/mainwidget.py:269
+#: src/mainwidget.py:301
 msgid "Authorization Error"
 msgstr "Errore di autorizzazione"
 
-#: src/mainwidget.py:270
+#: src/mainwidget.py:302
 msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
-#: src/mainwidget.py:273
+#: src/mainwidget.py:305
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. Prova ad aggiornare le informazioni sui repository."
 
-#: src/mainwidget.py:413
+#: src/mainwidget.py:445
 msgid "All Updates"
 msgstr "Tutti gli aggiornamenti"
 
-#: src/mainwidget.py:414
+#: src/mainwidget.py:446
 msgid "Security Updates"
 msgstr "Aggiornamenti di sicurezza"
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:447
 msgid "Critical Updates"
 msgstr "Aggiornamenti critici"
 
@@ -187,11 +187,11 @@ msgstr "installazione in corso"
 msgid "removing"
 msgstr "rimozione in corso"
 
-#: src/operationmanager.py:42 src/progressdialog.py:73
+#: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
 msgstr "estrazione"
 
-#: src/operationmanager.py:43 src/progressdialog.py:73
+#: src/operationmanager.py:43 src/progressdialog.py:79
 msgid "configuring"
 msgstr "configurazione"
 
@@ -244,39 +244,39 @@ msgstr "Seleziona tutti i pacchetti di questo gruppo."
 msgid "%prog packages_to_install"
 msgstr "%prog pacchetti_da_installare"
 
-#: src/progressdialog.py:69
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Operazione - %1%"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Download lista pacchetti di %1"
 
-#: src/progressdialog.py:79
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:91
+#: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 pacchetto %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Preparazione PiSi...</h3>"
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Annullamento operazione...</b>"
 
@@ -463,6 +463,11 @@ msgstr "Ignora"
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
 
+#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#, fuzzy
+msgid "Package Files"
+msgstr "Lista pacchetti"
+
 #: ui/ui_appitem.py:58
 msgid "Application"
 msgstr "Applicazione"
@@ -475,7 +480,7 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Cestino"
 
@@ -805,97 +810,29 @@ msgstr "Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
+#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
 #, fuzzy
 msgid "Package Details"
 msgstr "Lista pacchetti"
 
-#: ui/ui_webdialog.py:153
+#: ui/ui_webdialog.py:163
 #, fuzzy
-msgid "Package Files"
-msgstr "Lista pacchetti"
+msgid ""
+"AppInfo Server is not reachable\n"
+"Please check your network connection"
+msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mostra pacchetti installati"
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Cancel"
-#~ msgstr "A&nnulla"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nuovi pacchetti installati con successo."
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Inverti selezione pacchetti"
-
-#~ msgid "pm-install"
-#~ msgstr "installato"
-
-#~ msgid "Installing %1"
-#~ msgstr "installazione in corso"
-
-#~ msgid "Package Installer"
-#~ msgstr "Gestore di Pacchetti"
-
-#~ msgid "Maintainer"
-#~ msgstr "Maintainer"
-
-#~ msgid "Delete"
-#~ msgstr "Elimina"
-
-#~ msgid "Ok"
-#~ msgstr "&Ok"
-
-#~ msgid "Clear Cache"
-#~ msgstr " Pulisci cache"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(usa 0 per non imporre nessun limite)"
-
-#~ msgid "Update check"
-#~ msgstr "Controllo aggiornamenti"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Limite di banda:"
-
-#~ msgid "Summary"
-#~ msgstr "Sommario"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "I pacchetti sono stati installati con successo"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installazione di %1 completata con successo"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Usa proxy"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
-
-#~ msgid "Updates"
-#~ msgstr "Aggiornamenti"
-
-#~ msgid "Quit"
-#~ msgstr "Esci"
-
-#~ msgid "Help"
-#~ msgstr "Aiuto"
-
-#~ msgid "File"
-#~ msgstr "File"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Tutti i pacchetti sono aggiornati."
+#, fuzzy
+#~ msgid "Removing important packages"
+#~ msgstr "Rimozione pacchetto/i"
 
 #, fuzzy
 #~ msgid ""
@@ -911,10 +848,80 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i pacchetti in questo gruppo</p></body></html>"
 
-#, fuzzy
-#~ msgid "Removing important packages"
-#~ msgstr "Rimozione pacchetto/i"
+#~ msgid "All Packages are up to date"
+#~ msgstr "Tutti i pacchetti sono aggiornati."
 
-#, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "File"
+#~ msgstr "File"
+
+#~ msgid "Help"
+#~ msgstr "Aiuto"
+
+#~ msgid "Quit"
+#~ msgstr "Esci"
+
+#~ msgid "Updates"
+#~ msgstr "Aggiornamenti"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usa proxy"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installazione di %1 completata con successo"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "I pacchetti sono stati installati con successo"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sommario"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite di banda:"
+
+#~ msgid "Update check"
+#~ msgstr "Controllo aggiornamenti"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(usa 0 per non imporre nessun limite)"
+
+#~ msgid "Clear Cache"
+#~ msgstr " Pulisci cache"
+
+#~ msgid "Ok"
+#~ msgstr "&Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Maintainer"
+#~ msgstr "Maintainer"
+
+#~ msgid "Package Installer"
+#~ msgstr "Gestore di Pacchetti"
+
+#~ msgid "Installing %1"
+#~ msgstr "installazione in corso"
+
+#~ msgid "pm-install"
+#~ msgstr "installato"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Inverti selezione pacchetti"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nuovi pacchetti installati con successo."
+
+#~ msgid "Cancel"
+#~ msgstr "A&nnulla"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mostra pacchetti installati"

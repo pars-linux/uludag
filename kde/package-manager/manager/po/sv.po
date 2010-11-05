@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-04 15:47+0200\n"
+"POT-Creation-Date: 2010-11-05 08:27+0200\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -23,7 +23,7 @@ msgid "Add or Remove Software"
 msgstr "Lägg till eller ta bort program"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:65
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Pakethanteraren"
@@ -66,7 +66,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "patrik@trixon.se"
 
-#: src/basketdialog.py:58 src/mainwidget.py:272 src/mainwidget.py:277
+#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi-fel"
@@ -107,44 +107,44 @@ msgstr "Handbok Pakethanteraren"
 msgid "Show main window"
 msgstr "Visa huvudfönster"
 
-#: src/mainwidget.py:213
+#: src/mainwidget.py:238
 msgid "Searching..."
 msgstr "Söker..."
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:250
 msgid "No results found."
 msgstr "Inga träffar."
 
-#: src/mainwidget.py:266
+#: src/mainwidget.py:298
 msgid "Network Error"
 msgstr "Nätverksfel"
 
-#: src/mainwidget.py:267
+#: src/mainwidget.py:299
 msgid "Please check your network connections and try again."
 msgstr "Kontrollera din nätverksanslutning och försök igen."
 
-#: src/mainwidget.py:269
+#: src/mainwidget.py:301
 msgid "Authorization Error"
 msgstr "Auktoriseringsfel"
 
-#: src/mainwidget.py:270
+#: src/mainwidget.py:302
 msgid "You are not authorized for this operation."
 msgstr "Du har inte behörighet till den här åtgärden."
 
-#: src/mainwidget.py:273
+#: src/mainwidget.py:305
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paketet finns ej. Det kan vara uppdaterat i, eller borttaget ur, förrådet. Försök att uppdatera förrådsinformationen."
 
-#: src/mainwidget.py:413
+#: src/mainwidget.py:445
 msgid "All Updates"
 msgstr "Alla uppdateringar"
 
-#: src/mainwidget.py:414
+#: src/mainwidget.py:446
 msgid "Security Updates"
 msgstr "Säkerhetsuppdateringar"
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:447
 msgid "Critical Updates"
 msgstr "Kritiska uppdateringar"
 
@@ -180,11 +180,11 @@ msgstr "Installerar"
 msgid "removing"
 msgstr "Tar bort"
 
-#: src/operationmanager.py:42 src/progressdialog.py:73
+#: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
 msgstr "Packar upp"
 
-#: src/operationmanager.py:43 src/progressdialog.py:73
+#: src/operationmanager.py:43 src/progressdialog.py:79
 msgid "configuring"
 msgstr "Konfigurerar"
 
@@ -237,36 +237,36 @@ msgstr "Välj alla paket i den här gruppen"
 msgid "%prog packages_to_install"
 msgstr "%prog paket att installera"
 
-#: src/progressdialog.py:69
+#: src/progressdialog.py:75
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Åtgärd - %1%"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Hämtar paketlista för %1"
 
-#: src/progressdialog.py:79
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:91
+#: src/progressdialog.py:97
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 msgid "Preparing PiSi..."
 msgstr "Förbereder PiSi..."
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Avbryter åtgärd...</b>"
 
@@ -449,6 +449,11 @@ msgstr "Ignorera"
 msgid "Show Updates"
 msgstr "Visa uppdateringar"
 
+#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#, fuzzy
+msgid "Package Files"
+msgstr "Paketlista"
+
 #: ui/ui_appitem.py:58
 msgid "Application"
 msgstr "Program"
@@ -461,7 +466,7 @@ msgstr "Webbläsare"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:151 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Korg"
 
@@ -789,103 +794,27 @@ msgstr "Du kan starta det nyinstallerade programmet genom att dubbelklicka på d
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:152 ui/ui_webdialog.py:154
+#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
 #, fuzzy
 msgid "Package Details"
 msgstr "Paketlista"
 
-#: ui/ui_webdialog.py:153
+#: ui/ui_webdialog.py:163
 #, fuzzy
-msgid "Package Files"
-msgstr "Paketlista"
+msgid ""
+"AppInfo Server is not reachable\n"
+"Please check your network connection"
+msgstr "Kontrollera din nätverksanslutning och försök igen."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Visa installerade paket"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
-
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cachetömning"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
-
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
-
-#~ msgid "Updates"
-#~ msgstr "Uppdateringar"
-
-#~ msgid "Quit"
-#~ msgstr "Avsluta"
-
-#~ msgid "Help"
-#~ msgstr "Hjälp"
-
-#~ msgid "File"
-#~ msgstr "Arkiv"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Alla paket är uppdaterade"
+#~ msgid "Removing important packages"
+#~ msgstr "Tar bort paket"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -900,8 +829,86 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "Removing important packages"
-#~ msgstr "Tar bort paket"
+#~ msgid "All Packages are up to date"
+#~ msgstr "Alla paket är uppdaterade"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "File"
+#~ msgstr "Arkiv"
+
+#~ msgid "Help"
+#~ msgstr "Hjälp"
+
+#~ msgid "Quit"
+#~ msgstr "Avsluta"
+
+#~ msgid "Updates"
+#~ msgstr "Uppdateringar"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
+
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
+
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Cachetömning"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
+
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
+
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Visa installerade paket"
