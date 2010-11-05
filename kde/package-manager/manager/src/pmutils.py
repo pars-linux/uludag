@@ -17,6 +17,34 @@ import unicodedata
 from PyQt4 import QtGui
 from PyQt4.QtCore import Qt, QEventLoop
 
+from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import SLOT
+from PyQt4.QtCore import QThread
+
+class PThread(QThread):
+    def __init__(self, parent, action, callback, args=[], kwargs={}):
+        QThread.__init__(self,parent)
+
+        parent.connect(self, SIGNAL("finished()"), callback)
+
+        self.action = action
+        self.args = args
+        self.kwargs = kwargs
+        self.callback = callback
+        self.data = None
+
+    def run(self):
+        try:
+            self.data = self.action(*self.args, **self.kwargs)
+        finally:
+            self.connect(self.parent(), SIGNAL("cleanUp()"), SLOT("deleteLater()"))
+
+    def cleanUp(self):
+        self.deleteLater()
+
+    def get(self):
+        return self.data
+
 def waitCursor():
     QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
 

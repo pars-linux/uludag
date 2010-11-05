@@ -25,9 +25,7 @@ from PyQt4.QtGui import QFontMetrics
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import SIGNAL
-from PyQt4.QtCore import SLOT
 from PyQt4.QtCore import QTimer
-from PyQt4.QtCore import QThread
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import QVariant
 
@@ -41,6 +39,8 @@ from PyKDE4.kdecore import KComponentData
 from ui_mainwidget_v3 import Ui_MainWidget
 
 from config import PMConfig
+
+from pmutils import PThread
 from pmutils import waitCursor
 from pmutils import restoreCursor
 
@@ -55,30 +55,6 @@ from summarydialog import SummaryDialog
 from progressdialog import ProgressDialog
 from packagedelegate import PackageDelegate
 from operationmanager import OperationManager
-
-class PThread(QThread):
-    def __init__(self, parent, action, callback, args=[], kwargs={}):
-        QThread.__init__(self,parent)
-
-        parent.connect(self, SIGNAL("finished()"), callback)
-
-        self.action = action
-        self.args = args
-        self.kwargs = kwargs
-        self.callback = callback
-        self.data = None
-
-    def run(self):
-        try:
-            self.data = self.action(*self.args, **self.kwargs)
-        finally:
-            self.connect(self.parent(), SIGNAL("cleanUp()"), SLOT("deleteLater()"))
-
-    def cleanUp(self):
-        self.deleteLater()
-
-    def get(self):
-        return self.data
 
 class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent = None, silence = False):

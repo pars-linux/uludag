@@ -153,6 +153,11 @@ class Iface(Singleton):
                         actions[action].extend(package_actions[action])
         return (set(actions['systemRestart']), set(actions['serviceRestart']))
 
+    def getPackageFiles(self, package):
+        if self.idb.has_package(package):
+            return ['/'+x.path for x in self.idb.get_files(package).list]
+        return []
+
     # Extended Package Actions --------------------------------------------<<-
 
     # Package Lists ------------------------------------------------------->>-

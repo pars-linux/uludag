@@ -27,6 +27,8 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         PAbstractBox.__init__(self, parent)
         self.setupUi(self)
 
+        self.iface = parent.iface
+
         # PDS Settings
         self._animation = 1
         self._duration = 400
@@ -50,11 +52,24 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webLayout.addWidget(self.busy)
         self.busy.hide()
 
+        self._filesThread = PThread(self, self.getFiles, self.getFilesFinished)
+        self.filterLine.setListWidget(self.filesList)
         self.noconnection.hide()
 
     def showPage(self, addr):
         self.webView.load(QUrl(addr))
         self.animate(start = BOTCENTER, stop = MIDCENTER)
+
+    def getFiles(self):
+        return self.iface.getPackageFiles(str(self.packageName.text()))
+
+    def getFilesFinished(self):
+        self.filesList.addItems(self._filesThread.get())
+
+    def _tabSwitched(self, index):
+        if index == 0 and self.tabWidget.count() > 1:
+            if self.filesList.count() == 0:
+                self._filesThread.start()
 
     def _sync_template(self, status, package, summary, description):
         def _replace(key, value):
@@ -74,9 +89,10 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             self.noconnection.show()
             self.webView.hide()
 
-    def showPackageDetails(self, package, summary='', description='', files=[]):
+    def showPackageDetails(self, package, installed, summary='', description=''):
         self.packageName.setText(package)
 
+        self.filesList.clear()
         self.webView.hide()
         self.busy.show()
         self.busy.startAnimation()
@@ -85,11 +101,12 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.loadFinished.connect(lambda x: \
                 self._sync_template(x, package, summary, description))
 
-        self.tabWidget.insertTab(0, self.filesList, i18n('Package Files'))
-        if files:
-            print files
-        else:
+        self.tabWidget.insertTab(0, self.packageFiles, i18n('Package Files'))
+        self.tabWidget.currentChanged.connect(self._tabSwitched)
+
+        if not installed:
             self.tabWidget.removeTab(0)
+            self.tabWidget.currentChanged.disconnect(self._tabSwitched)
 
         self.animate(start = BOTCENTER, stop = MIDCENTER)
 
