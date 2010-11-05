@@ -177,7 +177,7 @@ QTabBar::tab:!selected {
             </attribute>
             <layout class="QGridLayout" name="gridLayout_5">
              <item row="0" column="0">
-              <widget class="QTreeView" name="treeView"/>
+              <widget class="QListWidget" name="filesList"/>
              </item>
             </layout>
            </widget>
@@ -185,8 +185,8 @@ QTabBar::tab:!selected {
             <attribute name="title">
              <string>Package Details</string>
             </attribute>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <item row="0" column="0">
+            <layout class="QGridLayout" name="webLayout">
+             <item row="1" column="0">
               <widget class="QWebView" name="webView">
                <property name="styleSheet">
                 <string notr="true">background:rgba(0,0,0,0);</string>
@@ -195,6 +195,25 @@ QTabBar::tab:!selected {
                 <url>
                  <string>about:blank</string>
                 </url>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="noconnection">
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color:white;</string>
+               </property>
+               <property name="text">
+                <string>No Internet Connection available</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
