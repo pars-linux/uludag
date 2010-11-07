@@ -63,6 +63,9 @@ if __name__ == '__main__':
     # Create a unique KDE Application
     app = KUniqueApplication(True, True)
 
+    # Use raster to make it faster
+    app.setGraphicsSystem('raster')
+
     # Set system Locale, we may not need it anymore
     # It should set just before MainWindow call
     setSystemLocale()
