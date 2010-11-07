@@ -45,16 +45,27 @@ class RowAnimator(object):
         self.direction = DOWN
         self.row = None
         self.lastrow = None
-        self.timeLine = QTimeLine(300)
         self.t_view = updater
-
-        QObject.connect(self.timeLine, SIGNAL("frameChanged(int)"), self.updateSize)
-        QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
-
+        self.initTimeLine()
         self.hoverLinkFilter = HoverLinkFilter(self)
         self.t_view.installEventFilter(self.hoverLinkFilter)
 
-    def animate(self, row):
+    def initTimeLine(self):
+        self.timeLine = QTimeLine(300)
+        QObject.connect(self.timeLine, SIGNAL("frameChanged(int)"), self.updateSize)
+        QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
+        self.timeLine.setDirection(QTimeLine.Backward)
+
+    def animate(self, row, reverseOld = False):
+        if self.row >= 0:
+            if not self.row == row:
+                self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
+                self.timeLine.start()
+                QObject.connect(self.timeLine, SIGNAL("finished()"), lambda: self.animate(row, True))
+                if not reverseOld:
+                    return
+
+        self.initTimeLine()
         self.setRow(row)
         self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
         self.timeLine.start()
