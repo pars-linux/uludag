@@ -38,10 +38,6 @@ Requirements
 * PyKDE
 * PolicyKit
 
-Tasks
------
-
-* `Open tasks <http://192.168.3.125:3000/projects/user-manager/issues?set_filter=1&tracker_id=4>`_
 
 Bugs
 ----
@@ -49,6 +45,11 @@ Bugs
 * `Normal Priority Bug Reports <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=normal&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kullan%C4%B1c%C4%B1%20Y%C3%B6neticisi%20%2F%20User%20Manager>`_
 * `Wish Reports <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=low&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kullan%C4%B1c%C4%B1%20Y%C3%B6neticisi%20%2F%20User%20Manager>`_
 * `Feature Requests <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=newfeature&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kullan%C4%B1c%C4%B1%20Y%C3%B6neticisi%20%2F%20User%20Manager>`_
+
+Tasks
+-----
+
+* `Open tasks <http://proje.pardus.org.tr:50030/projects/user-manager/issues?set_filter=1&tracker_id=4>`_
 
 Developed by
 ------------

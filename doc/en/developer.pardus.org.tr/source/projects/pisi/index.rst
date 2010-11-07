@@ -24,12 +24,9 @@ Some of its distinctive features:
 Contribute
 ==========
 
-.. toctree::
-
-    ../../guides/packaging/index.rst
+In order to contribute pisi please follow :ref:`how-to-be-contributor`.
 
 Download
 ========
 
-Latest stable release is `2.1.2 <http://cekirdek.pardus.org.tr/~faik/archives/pisi-2.1.2.tar.bz2>`_. 
 You can also fetch code from `SVN repository <http://svn.pardus.org.tr/uludag/trunk/pisi>`_.

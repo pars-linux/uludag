@@ -14,7 +14,10 @@ Download
 Latest stable release is `2.0.5 <http://cekirdek.pardus.org.tr/~bahadir/comar/comar-2.0.5.tar.bz2>`_. 
 You can also fetch code from `SVN repository <http://svn.pardus.org.tr/uludag/trunk/comar/comar/>`_.
 
-COMAR also has a development release, and can be downloaded from `development branch <http://svn.pardus.org.tr/uludag/branches/comar-3.0/>`_.
+COMAR also has a development release, and can be downloaded from `development branch <http://svn.pardus.org.tr/uludag/branches/comar/>`_.
+
+COMAR Services
+==============
 
 .. highlightlang:: python
 

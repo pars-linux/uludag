@@ -51,7 +51,7 @@ Requirements
 Tasks
 -----
 
-* `Open tasks <http://192.168.3.125:3000/projects/pm/issues?set_filter=1&tracker_id=4>`_
+* `Open tasks <http://proje.pardus.org.tr:50030/projects/pm/issues?set_filter=1&tracker_id=4>`_
 
 Bugs
 ----
