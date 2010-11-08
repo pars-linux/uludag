@@ -30,7 +30,7 @@ Requirements
 ------------
 ------------
 
-Client-side Requirements
+Client-side Packages
 ------------------------
 
 Following packages will be working on the thin-clients and must be installed to the rootfs:
@@ -41,7 +41,7 @@ Following packages will be working on the thin-clients and must be installed to 
 
 * **ptsp-client**: Contains remote X connection service and udev rules for the client rootfs.
 
-Server-side Requirements
+Server-side Packages
 ------------------------
 
 Following packages will be working on the terminal server and must be installed to the server:
@@ -56,8 +56,41 @@ Installation
 ------------
 ------------
 
+Creating a working PTSP workspace consists of three main steps:
+
+* Creating the rootfs which is a scaled-down version of the distrubition
+
+* Preparing the server in order to serve thin clients
+
+* Starting-up the server
+
+
+
 Creating Rootfs
 ---------------
+
+Rootfs will contain system.base component which includes minimal system environment, x11.driver
+component to have a working graphical workspace and kernel as usual. After
+creating the rootfs, we are archiving it in *"tar.bz2"* format and this will be
+the source archive of our ptsp-server package.
+
+Rootfs is created with the help of a script called *"build-client.py"*, placed at the root of
+`http://svn.pardus.org.tr/uludag/trunk/ptsp
+<http://websvn.pardus.org.tr/uludag/trunk/ptsp/>`_ Addition to this script,
+required packages listed above also live under this URL. 
+
+Following is an example for creating a rootfs in the current working directory, using Corporate2 packages repo ::
+    #python build-client.py -o ptsp-client-rootfs/ -r http://paketler.pardus.org.tr/corporate2/pisi-index.xml.bz2
+
+List of options for creating rootfs::
+    Usage: build-client.py [option ...]
+    
+    Following options are available:                                                                                                                                        
+
+    -h, --help            display this help and exit                                                                                                                        
+    -o, --output          create the ptsp client rootfs into the given output path                                                                                          
+    -r, --repository      ptsp client rootfs packages will be installed from this repository                                                                                
+    -a, --additional      install the given additional packages to ptsp client rootfs 
 
 Preparing Server
 ----------------
