@@ -57,7 +57,10 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.noconnection.hide()
 
     def showPage(self, addr):
-        self.webView.load(QUrl(addr))
+        if isPmOnline():
+            self.webView.load(QUrl(addr))
+        else:
+            self._sync_template(status = False)
         self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def getFiles(self):
@@ -71,7 +74,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             if self.filesList.count() == 0:
                 self._filesThread.start()
 
-    def _sync_template(self, status, package, summary, description):
+    def _sync_template(self, status, package = '', summary = '', description = ''):
         def _replace(key, value):
             self.webView.page().mainFrame().evaluateJavaScript(\
                     '%s.innerHTML="%s";' % (key, value))
@@ -93,13 +96,16 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.packageName.setText(package)
 
         self.filesList.clear()
-        self.webView.hide()
-        self.busy.show()
-        self.busy.startAnimation()
-
-        self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
         self.webView.loadFinished.connect(lambda x: \
                 self._sync_template(x, package, summary, description))
+        if isPmOnline():
+            self.webView.hide()
+            self.busy.show()
+            self.busy.startAnimation()
+
+            self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
+        else:
+            self._sync_template(status = False)
 
         self.tabWidget.insertTab(0, self.packageFiles, i18n('Package Files'))
         self.tabWidget.currentChanged.connect(self._tabSwitched)
