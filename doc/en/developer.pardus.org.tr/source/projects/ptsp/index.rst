@@ -126,11 +126,12 @@ $ svn co https://svn.pardus.org.tr/uludag/trunk/ptsp
 Developed by
 ------------
 
+**Curent Developers**
 * Metin Akdere <metin_at_pardus.org.tr>
-    Maintainer
+
+**Previous Developers & Contributors**
 
 * Faik Uygur <faik_at_pardus.org.tr>
-    Retired Developer
 
 License
 -------
