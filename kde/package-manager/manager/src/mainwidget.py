@@ -67,7 +67,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.state = StateManager(self)
         self.lastState = self.state.state
-        self._back_to_all = False
+        self.currentState = None
 
         # state.silence is using for pm-install module
         self.state.silence = silence
@@ -318,10 +318,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.searchLine.clear()
             self.state.reset()
             self.progressDialog._hide()
-
-            if self._back_to_all:
-                self.state.state = self.state.ALL
-
+            self.switchState(self.currentState)
             self.initialize()
 
     def actionCancelled(self):
@@ -329,8 +326,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.progressDialog.reset()
         if self.state.silence:
             qApp.exit()
-        if self._back_to_all:
-            self.state.state = self.state.ALL
+        self.switchState(self.currentState)
         self.groupFilter()
 
     def notifyFinished(self):
@@ -351,10 +347,10 @@ class MainWidget(QWidget, Ui_MainWidget):
     def switchState(self, state, action=True):
         self.searchLine.clear()
         self.pdsMessageBox.hideMessage()
-        self._back_to_all = False
         self._states[state][1].setChecked(True)
         self.lastState = self.state.state
         self.state.setState(state)
+        self.currentState = state
         self._selectedGroups = []
         if not state == self.state.HISTORY:
             self.setActionButton()
@@ -397,21 +393,19 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         self.statusChanged()
 
-    def showBasket(self, action = None):
+    def showBasket(self):
+
         if self.basket.isVisible():
             return
 
         waitCursor()
         self.statusUpdater.wait()
 
-        if not action:
+        if self.currentState == self.state.ALL:
             action = {self.__remove_action:self.state.REMOVE,
                       self.__install_action:self.state.INSTALL}.get(self.sender(), self.state.INSTALL)
             if action:
-                self._back_to_all = True
                 self.state.state = action
-            else:
-                self._back_to_all = False
 
         self.basket._show()
         restoreCursor()

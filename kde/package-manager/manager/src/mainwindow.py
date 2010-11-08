@@ -59,6 +59,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connectMainSignals()
 
         self.pdsMessageBox = PMessageBox(self)
+        self.cw.switchState(self.cw.lastState)
 
     def connectMainSignals(self):
         self.cw.connectMainSignals()

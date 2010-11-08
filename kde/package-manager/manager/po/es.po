@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 10:50+0200\n"
+"POT-Creation-Date: 2010-11-08 16:40+0200\n"
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -67,61 +67,71 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/basketdialog.py:58 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:54 ui/ui_basketdialog.py:185
+#, fuzzy
+msgid "Clear Basket"
+msgstr "Vaciar cache"
+
+#: src/basketdialog.py:55
+#, fuzzy
+msgid "Do you want to clear all selections ?"
+msgstr "Desea continuar ?"
+
+#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Error Pisi"
 
-#: src/basketdialog.py:153
+#: src/basketdialog.py:164
 msgid "Do you want to continue ?"
 msgstr "Desea continuar ?"
 
-#: src/basketdialog.py:166
+#: src/basketdialog.py:177
 #, fuzzy
 msgid "You must restart your system for the updates to take effect"
 msgstr "Debe <b>reiniciar</b> el sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
 
-#: src/basketdialog.py:168 src/basketdialog.py:176
+#: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
 msgstr "Requisitos para la actualización"
 
-#: src/basketdialog.py:169
+#: src/basketdialog.py:180
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:185
 #, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Debe reiniciar los siguientes servicios del sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
 
-#: src/basketdialog.py:177
+#: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:187
+#: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Los paquetes seleccionados están considerados imprescindibles para el sistema. Al remover dichos paquetes el sistema podría dejar de funcionar."
 
-#: src/basketdialog.py:190 src/settingsdialog.py:161
+#: src/basketdialog.py:201 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Alerta"
 
-#: src/basketdialog.py:191
+#: src/basketdialog.py:202
 #, fuzzy
 msgid "Critical Packages"
 msgstr "Removiendo Paquete(s)"
 
-#: src/basketdialog.py:202
+#: src/basketdialog.py:213
 #, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
 
-#: src/basketdialog.py:204
+#: src/basketdialog.py:215
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Paquetes instalados"
 
-#: src/basketdialog.py:205 src/mainwindow.py:146 src/mainwindow.py:149
+#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
 msgid "Installed Packages"
 msgstr "Paquetes instalados"
 
@@ -133,7 +143,7 @@ msgstr "Todos"
 msgid "Package Manager Help"
 msgstr "Ayuda del Administrador de Paquetes"
 
-#: src/main.py:60
+#: src/main.py:66
 msgid "Show main window"
 msgstr "Mostrar Ventana principal"
 
@@ -166,19 +176,19 @@ msgstr "No tiene los permisos para esta operación."
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paquete no encontrado. Puede ser que el paquete fue actualizado o removido del repositorio. Por favor intente actualizar sus informaciones del contenido de los repositorios."
 
-#: src/mainwidget.py:421
+#: src/mainwidget.py:415
 msgid "All Updates"
 msgstr "Todas las actualizaciones"
 
-#: src/mainwidget.py:422
+#: src/mainwidget.py:416
 msgid "Security Updates"
 msgstr "Actualizaciones de seguridad"
 
-#: src/mainwidget.py:423
+#: src/mainwidget.py:417
 msgid "Critical Updates"
 msgstr "Actualizaciones críticas"
 
-#: src/mainwindow.py:134 src/mainwindow.py:137
+#: src/mainwindow.py:137 src/mainwindow.py:140
 msgid "All Packages"
 msgstr "Todos los paquetes"
 
@@ -186,19 +196,19 @@ msgstr "Todos los paquetes"
 # maybe here we shoud speak about programs or applications ? the fact that it
 # is a "package" is a tecnical detail.. well there are also those "auxiliar"
 # libraries..
-#: src/mainwindow.py:140 src/mainwindow.py:143
+#: src/mainwindow.py:143 src/mainwindow.py:146
 msgid "Installable Packages"
 msgstr "Paquetes a instalar"
 
-#: src/mainwindow.py:152 src/mainwindow.py:155
+#: src/mainwindow.py:155 src/mainwindow.py:158
 msgid "Upgradable Packages"
 msgstr "Paquetes a actualizar"
 
-#: src/mainwindow.py:197
+#: src/mainwindow.py:201
 msgid "Calculating dependencies..."
 msgstr "Calculando dependencias..."
 
-#: src/mainwindow.py:203
+#: src/mainwindow.py:205
 msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
@@ -364,8 +374,8 @@ msgstr "actualizado"
 msgid "modified"
 msgstr "modificado"
 
-#: src/statemanager.py:100 ui/ui_basketdialog.py:181
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:183
+#: src/statemanager.py:100 ui/ui_basketdialog.py:186
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Instalar Paquete(s)"
@@ -415,7 +425,7 @@ msgid "You have selected the following package(s) to modify:"
 msgstr "Los siguientes paquetes están marcados para modificar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
-#: src/statemanager.py:125 ui/ui_basketdialog.py:178
+#: src/statemanager.py:125 ui/ui_basketdialog.py:182
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Dependencias adicionales a instalar:"
 
@@ -509,49 +519,49 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Carrito"
 
-#: ui/ui_basketdialog.py:177
+#: ui/ui_basketdialog.py:181
 msgid "Selected package(s) for install:"
 msgstr "Paquetes a instalar:"
 
-#: ui/ui_basketdialog.py:179
+#: ui/ui_basketdialog.py:183
 msgid "Total Size:"
 msgstr "Tamaño Total:"
 
-#: ui/ui_basketdialog.py:180
+#: ui/ui_basketdialog.py:184
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: ui/ui_basketdialog.py:182
+#: ui/ui_basketdialog.py:187
 msgid "Download Size:"
 msgstr "Tamaño de descarga:"
 
 # is here a problem in english ? the closing tag seems to be defect !!
-#: ui/ui_basketdialog.py:183
+#: ui/ui_basketdialog.py:188
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</b>"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:176
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:178
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
 #: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:189
 msgid "Form"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:181
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:183
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr "Panel de categorías"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:178
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:180
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr "Barra de búsqueda"
 
 # i translated as "Write here to search", i think this is the idea
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:179
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:181
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr "Escriba aquí para buscar"
@@ -573,19 +583,29 @@ msgid "Toggler for selection all packages in Package List"
 msgstr "Invertir selección de paquetes en la lista"
 
 # i shortened this, it does not fit otherwise
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:182
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:184
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr "Lista de paquetes"
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:180
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:182
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr "Tipos de actualizaciones"
 
-#: ui/ui_mainwidget_v3.py:177
+#: ui/ui_mainwidget_v3.py:179
 msgid "Settings"
 msgstr "Configuración"
+
+#: ui/ui_mainwidget_v3.py:185
+#, fuzzy
+msgid "Show Basket"
+msgstr "Carrito"
+
+#: ui/ui_mainwidget_v3.py:186
+#, fuzzy
+msgid "Check for Updates"
+msgstr "Mostrar actualizaciones"
 
 # translated as "progress information", i see this string is the title of the
 # progress info window..
@@ -880,9 +900,6 @@ msgstr ""
 
 #~ msgid "(use 0 for no limit)"
 #~ msgstr "(use 0 para indicar \"ilimitado\")"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Vaciar cache"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"
