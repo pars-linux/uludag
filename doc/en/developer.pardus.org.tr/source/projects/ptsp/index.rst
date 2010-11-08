@@ -82,12 +82,67 @@ List of options for creating rootfs::
 Preparing Server
 ----------------
 
----
+First of all install *"dhcp"*, *"tftp"*, *"perl-X11-Protocol"*, *"ptsp-server"* packages on the server. As all these packages are dependent on *"ptsp-server"*, installing only this will cause all others to be installed. After installing required packages, apply following settings on the server:
 
+[#first]_ **Configuring DHCP Server**
+    
+    With *"dhcp"* package, you will be running your own dhcp server. In order to distribute IP addresses for your clients, removing comments in the **/etc/dhcp/dhcpd.conf** file and then starting your dhcp service with "*service dhcpd start*" command will be enough for now on. If you have two network cards ("*ie. two ethernet cards; one for the internet , the other for the LAN*"), you must tell dhcp service on which interface it must be listening for dhcp requests by assigning the name of the interface to the **DHCPD_IFACE** in the **/etc/conf.d/dhcpd** configuration file.
+
+[#second]_ **Configuring Display Manager**
+
+    Programs that seem to run on thin clients actually don't run on the clients; they run on the server completely and only their output is sent to the clients over Xdmcp protocol which uses UDP port 177. On the server we must enable Xdmcp request-listening by changing *"[Xdmcp]"* section to *"Enable=true"*. X session must be restarted for these changes to take place.
+
+[#third]_ **Configuring NFS Server**
+
+    Clients mount their rootfs which we have created earlier over NFS. In order to achieve this, we define the directory which will be exported in the **/etc/exports** file. Add the following line to your own configuration (Notice that after ip block definiton we don't leave any whitespaces which may cause your settings to be unrecognized.)::
+
+    /opt/ptsp       10.0.0.0/255.255.255.0(ro, no_root_squash)
+
+[#fourth]_ **Editing /etc/hosts File**
+
+    For every IP address obtained by thin clients from the DHCP server, a hostname must be defined in the **/etc/hosts** file on the server, in order to make USB devices work on thin clients. Moreover, hostnames that will be assigned to the clients together with the range of IP addresses defined in **/etc/dhcp/dhcpd.conf** must be added here ("*ie. /etc/dhcp/dhcpd.conf: range 10.0.0.2 -  10.0.0.10"*). On the client-side no extra operation is necessary; they add automatically their own IP address and hostname couple. An example for **/etc/hosts** file on the server::
+        
+        10.0.0.2        thin2
+        10.0.0.3        thin3
+        10.0.0.4        thin4
+        10.0.0.5        thin5
+
+[#fifth]_ **Loading Fuse Kernel Module**
+
+    On the server **fuse** kernel module must be loaded. In order to load, type "*modprobe fuse*" on the command line. If you wish this to be done everytime your server boots, add **fuse** to the end of **/etc/modules.autoload.d/kernel-2.6** file.
+
+    - Note : Since Pardus-2009 release **fuse** module comes automatically loaded, you don't need to this if you use 2009 or newer version of Pardus.
+
+[#sixth]_ **Setting Up Sound Server**
+
+    With the help of **pulseaudio** package, we are able to have a working sound system on the clients. Actually, multimedia program runs on the server and with **pulseaudio**, sound output of the program is sent to thin client over the network, so it is possible to hear sound output as we are running the program locally on thin client.
+
+    Open **/opt/ptsp/etc/pulse/system.pa** configuration file and remove comments in the following lines::
+
+        [...]
+        load-module module-esound-protocol-tcp
+        load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;10.0.0.0/16
+        load-module module-zeroconf-publish
+        [...]
+
+[#seventh]_ **Don't Let Firefox Cache PixMaps**
+
+   Especially on thin clients which lack high memory, when user browse the web pages that contain too many or relatively big-sized images with Firefox, we could come up with situations like alll of X sessions are terminated. The reason of that is Firefox which runs on the server tries to cache images on the X and this causes thin client memory be stuck with this. As a result, this circumstance leads to call of *"OOM killer"* and on the client X process is killed by thin client kernel. Related sources with the bug:
+
+   * http://www.francisrobichaud.com/index.php/2008/07/08/optimizing-mozilla-and-pixmap-management-in-x
+
+   * https://bugzilla.mozilla.org/show_bug.cgi?id=296818
+   
+   In order to prevent this to happen, type following comman command on the server::
+
+   $echo "MOZ_DISABLE_IMAGE_OPTIMIZE=1" > /etc/env.d/11MozillaFirefoxPixmap
+
+
+    
 Running Server
 --------------
 
----
+
 
 Features
 --------
