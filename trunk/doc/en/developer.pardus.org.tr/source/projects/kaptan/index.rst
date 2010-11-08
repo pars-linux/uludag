@@ -5,12 +5,14 @@ Kaptan (Desktop Greeter)
 
 :Author: Çağlar Kilimci
 
-**Kaptan** is a wizard that helps user to customize desktop enviroment after installing Pardus. While Kaptan is giving some information about Pardus, it also sets basic configures such as internet connection, wall paper and so on.
+**Kaptan** is a wizard that helps user to customize desktop enviroment after
+installing Pardus. While Kaptan is giving some information about Pardus, it also
+sets basic configures such as internet connection, wall paper and so on.
 
 Features
 --------
 
-* Mause configuration
+* Mouse configuration
 * Theme and KDE Menu selection
 * Setting wall paper
 * Asking user to search with Strigi
@@ -19,7 +21,8 @@ Features
 
 Source Code
 -----------
-You can `browse <http://svn.pardus.org.tr/uludag/trunk/kde/kaptan/>`_ source code from WebSVN_.
+You can `browse <http://svn.pardus.org.tr/uludag/trunk/kde/kaptan/>`_ source code
+from WebSVN_.
 
 Or you can gwt the current version from Pardus SVN using following command::
 
@@ -38,21 +41,28 @@ Bugs
 
 .. Links to bugzilla for following titles
 
-* `Normal Priority Bug Reports <http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&order=Importance&bug_severity=normal&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&component=kaptan&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&product=Kaptan%20Masa%C3%BCst%C3%BC%20Y%C3%B6neticisi%20%2F%20Desktop%20Manager>`_
-* `Wish Reports <http://bugs.pardus.org.tr/request.cgi>`_
-* `Feature Requests <http://bugs.pardus.org.tr/request.cgi>`_
+* `Normal Priority Bug Reports <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=normal&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kaptan%20Masa%C3%BCst%C3%BC%20Y%C3%B6neticisi%20%2F%20Desktop%20Manager>`_
+
+* `Wish Reports <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=low&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kaptan%20Masa%C3%BCst%C3%BC%20Y%C3%B6neticisi%20%2F%20Desktop%20Manager>`_
+
+* `Feature Requests <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=newfeature&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=Kaptan%20Masa%C3%BCst%C3%BC%20Y%C3%B6neticisi%20%2F%20Desktop%20Manager>`_
+
+Tasks
+-----
+
+* `Open Tasks <http://192.168.3.125:3000/projects/kaptan/issues?set_filter=1&tracker_id=4>`_
 
 Developed by
 ------------
 
 **Current Developer**
-* Renan Cakirerk <renan at pardus org tr> 
+* Renan Cakirerk <renan at pardus org tr>
 
 **Previous Developers & Contributors**
-* Pınar Yanardağ <pinar at pardus org tr> 
-* Gökmen Göksel <gokmen at pardus org tr> 
-* Gökçen Eraslan <gokcen at pardus org tr> 
-* Onur Küçük <onur at pardus org tr> 
+* Pınar Yanardağ <pinar at pardus org tr>
+* Gökmen Göksel <gokmen at pardus org tr>
+* Gökçen Eraslan <gokcen at pardus org tr>
+* Onur Küçük <onur at pardus org tr>
 
 **Smolt Screen**
 * Fethican Coşkuner <fethicanc at gmail com>
