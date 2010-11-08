@@ -318,7 +318,8 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.searchLine.clear()
             self.state.reset()
             self.progressDialog._hide()
-            self.switchState(self.currentState)
+            if not self.currentState == self.state.UPGRADE:
+                self.switchState(self.currentState)
             self.initialize()
 
     def actionCancelled(self):
