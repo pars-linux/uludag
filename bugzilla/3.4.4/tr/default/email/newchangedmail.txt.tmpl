@@ -55,7 +55,7 @@ X-Bugzilla-Changed-Fields: [% changedfields %]
 [% END %]
 
 -- [%# Protect the trailing space of the signature marker %]
-Configure [% terms.bug %]mail: [% urlbase %]userprefs.cgi?tab=email
+[% terms.bug %] e-postalarını yapılandır: [% urlbase %]userprefs.cgi?tab=email
 ------- Bu epostayı almanızın nedeni: -------
 [% FOREACH relationship = reasons %]
   [% SWITCH relationship %]
