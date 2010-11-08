@@ -27,22 +27,22 @@ To: [% email %]
 Subject: [% terms.Bugzilla %]: hesap oluşturmayı onayla
 X-Bugzilla-Type: admin
 
-[%+ terms.Bugzilla %] sizin eposta adresinizle ([% email %]) bir hesap oluşturulması yönünde bir istek aldı.
+[%+ terms.Bugzilla %] sizin e-posta adresinizle ([% email %]) bir hesap oluşturulması yönünde bir istek aldı.
 
-Bu eposta adresini kullanarak bir hesap oluşturma işlemine devam etmek için, [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] olana kadar aşağıdaki bağlantıya giriniz:
+Bu e-posta adresini kullanarak bir hesap oluşturma işlemine devam etmek için, [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] olana kadar aşağıdaki bağlantıya giriniz:
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=request_new_account
 
-Eğer bu epostayı [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] geçtikten sonra aldıysanız veya farklı bir eposta adresi kullanarak hesap oluşturmak istiyorsanız, şu adresi kullanarak hesap oluşturma işlemine yeniden başlayabilirsiniz:
+Eğer bu e-postayı [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] geçtikten sonra aldıysanız veya farklı bir e-posta adresi kullanarak hesap oluşturmak istiyorsanız, şu adresi kullanarak hesap oluşturma işlemine yeniden başlayabilirsiniz:
 
 [%+ urlbase %]createaccount.cgi
 
 [% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
-+GİZLİLİK BİLDİRİMİ: [% terms.Bugzilla %] açık bir [% terms.bug %] takip sistemidir. Çoğu [% terms.bugs %] kaydındaki etkinlik ve bilgiler (eposta adresleri dahil) halkın erişimine açık olacaktır. Ana eposta hesabınıza spam eposta gelmesini engellemek adına ikinci bir eposta hesabı veya Gmail, Yahoo, Hotmail vb ücretsiz bir web eposta servisi kullanmanızı tavsiye ederiz.
++GİZLİLİK BİLDİRİMİ: [% terms.Bugzilla %] açık bir [% terms.bug %] takip sistemidir. Çoğu [% terms.bugs %] kaydındaki etkinlik ve bilgiler (e-posta adresleri dahil) halkın erişimine açık olacaktır. Ana e-posta hesabınıza spam e-posta gelmesini engellemek adına ikinci bir e-posta hesabı veya Gmail, Yahoo, Hotmail vb ücretsiz bir web e-posta servisi kullanmanızı tavsiye ederiz.
 [% END %]
 
 Eğer bir hesap oluşturmak istemiyorsanız veya bu istek yanlışlıkla yapıldıysa aşağıdaki bağlantıya girin (veya hiçbirşey yapmayın, zaman dolunca istek otomatik olarak geçerliliğini yitirecektir):
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cancel_new_account
 
-Eğer yukarıdaki bağlantılar çalışmıyorsa veya hesabınızla ilgili başka problemler yaşıyorsanız, yönetimle [% Param('maintainer') %] eposta adresinden iletişime geçebilirsiniz.
+Eğer yukarıdaki bağlantılar çalışmıyorsa veya hesabınızla ilgili başka problemler yaşıyorsanız, yönetimle [% Param('maintainer') %] e-posta adresinden iletişime geçebilirsiniz.

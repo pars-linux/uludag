@@ -69,7 +69,7 @@
     [% IF login_change_date %]
       [% IF new_login_name %]
         <tr>
-          <th align="right">Beklemedeki eposta adresi:</th>
+          <th align="right">Beklemedeki e-posta adresi:</th>
           <td>[% new_login_name FILTER html %]</td>
         </tr>
         <tr>
@@ -78,7 +78,7 @@
         </tr>
       [% ELSE %]
         <tr>
-          <th align="right">Onaylanmış eposta adresi:</th>
+          <th align="right">Onaylanmış e-posta adresi:</th>
           <td>[% user.login FILTER html %]</td>
         </tr>
         <tr>
@@ -88,7 +88,7 @@
       [% END %]
     [% ELSE %]
       <tr>
-        <th align="right">Yeni eposta adresi:</th>
+        <th align="right">Yeni e-posta adresi:</th>
         <td>
           <input size="35" name="new_login_name">
         </td>

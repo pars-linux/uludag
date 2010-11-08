@@ -29,7 +29,7 @@ X-Bugzilla-Type: admin
 
 [% remoteaddress %] adresinden bir istek iptal edildi..
 
-Eğer bunu isteyen siz değilseniz, ya birisi [% terms.Bugzilla %] hesabınızı kırmaya çalışıyor, ya da yanlışlıkla sizin eposta adresinizi yazdı.
+Eğer bunu isteyen siz değilseniz, ya birisi [% terms.Bugzilla %] hesabınızı kırmaya çalışıyor, ya da yanlışlıkla sizin e-posta adresinizi yazdı.
 
 Eğer hesabınızı kırmaya çalıştıklarını düşünüyorsanız, aşağıdaki bilgiyi gözden geçirin ve [% Param('maintainer') %] ile paylaşın.
 
@@ -57,13 +57,13 @@ Eğer hesabınızı kırmaya çalıştıklarını düşünüyorsanız, aşağıd
     [% email %] hesabı zaten var.
 
   [% ELSIF cancelaction == 'email_change_canceled' %]
-    [% old_email %] hesabının eposta adresini [% new_email %] olarak değiştirme isteği iptal edildi.
+    [% old_email %] hesabının e-posta adresini [% new_email %] olarak değiştirme isteği iptal edildi.
 
   [% ELSIF cancelaction == 'email_change_canceled_reinstated' %]
-    Hesabınızın eposta adresini [% new_email %] olarak değiştirme isteği iptal edildi. Eski hesap ayarlarınız kullanılacak.
+    Hesabınızın e-posta adresini [% new_email %] olarak değiştirme isteği iptal edildi. Eski hesap ayarlarınız kullanılacak.
 
   [% ELSIF cancelaction == 'emailold_change_canceled' %]
-    Hesabınızın eposta adresini [% new_email %] olarak değiştirme isteği iptal edildi.
+    Hesabınızın e-posta adresini [% new_email %] olarak değiştirme isteği iptal edildi.
 
   [% ELSIF cancelaction == 'password_change_canceled' %]
     İptal istediniz.
@@ -78,10 +78,10 @@ Eğer hesabınızı kırmaya çalıştıklarını düşünüyorsanız, aşağıd
     Jetonu parolayı değiştirmek için kullanmaya kalktınız.
 
   [% ELSIF cancelaction == 'wrong_token_for_cancelling_email_change' %]
-    Jetonu eposta adresi değiştirme isteğini iptal etmek için kullanmaya kalktınız.
+    Jetonu e-posta adresi değiştirme isteğini iptal etmek için kullanmaya kalktınız.
 
   [% ELSIF cancelaction == 'wrong_token_for_confirming_email_change' %]
-    Jetonu eposta adresi değiştirme işlemini onaylamak için kullanmaya kalktınız.
+    Jetonu e-posta adresi değiştirme işlemini onaylamak için kullanmaya kalktınız.
 
   [% ELSIF cancelaction == 'wrong_token_for_creating_account' %]
     Jetonu bir kullanıcı hesabı oluşturmak için kullanmaya kalktınız.
@@ -92,6 +92,6 @@ Eğer hesabınızı kırmaya çalıştıklarını düşünüyorsanız, aşağıd
 
     [% terms.Bugzilla %] jeton iptali işlevini yanlış kullanıyorsunuz. '[% cancelaction %]' dizgesini gönderdiniz ama doğru kullanım bir takı göndermek ve o takıyı cancel-token.txt.tmpl dosyasında tanımlamaktır.
 
-    Eğer [% terms.Bugzilla %] yönetiminde değilseniz, lütfen bu epostayı [% Param('maintainer') %] ile paylaşın.
+    Eğer [% terms.Bugzilla %] yönetiminde değilseniz, lütfen bu e-postayı [% Param('maintainer') %] ile paylaşın.
   [% END %]
 [% END %]
