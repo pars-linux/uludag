@@ -142,6 +142,15 @@ First of all install *"dhcp"*, *"tftp"*, *"perl-X11-Protocol"*, *"ptsp-server"* 
 Running Server
 --------------
 
+- Before we run the server, make sure **ptsp-server** and **dhcp server** has the 10.0.0.1 IP address.
+
+- Our thin clients connect to the X server using *"SERVER*" parameter in *"/opt/ptsp/etc/pts-client.conf"* (which is client-rootfs), so if you plan to change your server's IP address, consider changing here as well. Also, apply the same changes in the **pulseaudio** config file to make it broadcast to the relevant network.
+
+
+- Till now, we have been working on configuring our thin client workspace environment. Now, everything is ready and lets start running our server and make clients boot:
+
+    * Start **dhcp**, **tftp**, **portmap** and **nfs_utils** services by typing *"service <service_name> start"*
+
 
 
 Features
