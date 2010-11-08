@@ -17,6 +17,9 @@ import dbus
 import signal
 import traceback
 
+# PyQt4 Imports
+from PyQt4.QtGui import QApplication
+
 # PyKDE4 Imports
 from PyKDE4.kdeui import KUniqueApplication
 from PyKDE4.kdeui import KApplication
@@ -52,6 +55,9 @@ if __name__ == '__main__':
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
+    # Use raster to make it faster
+    QApplication.setGraphicsSystem('raster')
+
     # Initialize Command Line arguments from sys.argv
     KCmdLineArgs.init(sys.argv, aboutData)
 
@@ -62,9 +68,6 @@ if __name__ == '__main__':
 
     # Create a unique KDE Application
     app = KUniqueApplication(True, True)
-
-    # Use raster to make it faster
-    app.setGraphicsSystem('raster')
 
     # Set system Locale, we may not need it anymore
     # It should set just before MainWindow call
