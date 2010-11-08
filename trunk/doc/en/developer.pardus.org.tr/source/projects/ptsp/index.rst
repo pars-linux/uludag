@@ -67,7 +67,8 @@ Rootfs is created with the help of a script called *"build-client.py"*, placed a
 required packages listed above also live under this URL. 
 
 Following is an example for creating a rootfs in the current working directory, using Corporate2 packages repo ::
-    #python build-client.py -o ptsp-client-rootfs/ -r http://paketler.pardus.org.tr/corporate2/pisi-index.xml.bz2
+
+#python build-client.py -o ptsp-client-rootfs/ -r http://paketler.pardus.org.tr/corporate2/pisi-index.xml.bz2
 
 List of options for creating rootfs::
 
@@ -204,11 +205,11 @@ License
 PTSP is distributed under the terms of the
 `GNU General Public License (GPL), Version 2 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>`_.
 
-.. _COMAR: https://svn.pardus.org.tr/uludag/trunk/comar/
+.. _COMAR: http://developer.pardus.org.tr/projects/comar/
 .. _Coolplug: https://svn.pardus.org.tr/uludag/trunk/coolplug/
 .. _LTSP: http://www.ltsp.org/
 .. _Mudur: https://svn.pardus.org.tr/uludag/trunk/mudur/
-.. _Pisi: http://developer.pardus.org.tr/pisi/
+.. _Pisi: http://developer.pardus.org.tr/projects/pisi/
 .. _Python: http://www.python.org/
 .. _Perl: http://www.perl.org/
 .. _WebSVN: http://websvn.pardus.org.tr/uludag/trunk/ptsp/
