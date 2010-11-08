@@ -22,7 +22,7 @@ SCRIPTS = ["scripts/%s" % s for s in """\
 buildfarm
 buildfarm-up
 buildfarm-init
-buildfarm-missing-packges
+buildfarm-missing-packages
 """.split()]
 
 # Call distutils.setup
