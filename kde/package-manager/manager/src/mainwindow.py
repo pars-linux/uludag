@@ -29,6 +29,7 @@ from mainwidget import MainWidget
 from pdswidgets import PMessageBox
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
+from pds.qprogressindicator import QProgressIndicator
 from tray import Tray
 
 import backend
@@ -41,6 +42,9 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.app = app
         self.iface = backend.pm.Iface()
+
+        self.busy = QProgressIndicator(self)
+        self.busy.setFixedSize(QSize(20, 20))
 
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
 
@@ -110,13 +114,11 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
+        self.cw.mainLayout.insertWidget(0, self.busy)
         self.statusBar().addPermanentWidget(self.cw.actions, 1)
         self.statusBar().show()
 
-        self.wheelMovie = QtGui.QMovie(self)
         self.updateStatusBar('')
-        self.wheelMovie.setFileName(":/data/wheel.mng")
-        self.wheelMovie.start()
 
         self.connect(self.cw, SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
         self.connect(self.cw, SIGNAL("updatingStatus()"), self.statusWaiting)
@@ -188,19 +190,29 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         #                  self.cw.state.HISTORY:(4, self.showHistoryAction)}
 
         self.showAllAction.setChecked(True)
+        self.cw.checkUpdatesButton.hide()
+        self.cw.showBasketButton.clicked.connect(self.cw.showBasket)
 
         # Little time left for the new ui
         self.menuBar().setVisible(False)
 
     def statusWaiting(self):
-        self.cw.busyIndicator.setMovie(self.wheelMovie)
-        self.updateStatusBar(i18n('Calculating dependencies...'), noIcon = True)
+        self.updateStatusBar(i18n('Calculating dependencies...'), busy = True)
 
-    def updateStatusBar(self, text, noIcon = False):
-        if not noIcon:
-            self.cw.busyIndicator.setPixmap(KIcon("help-hint").pixmap(22, 22))
+    def updateStatusBar(self, text, busy = False):
         if text == '':
             text = i18n("Currently your basket is empty.")
+            self.busy.hide()
+            self.cw.showBasketButton.hide()
+        else:
+            self.cw.showBasketButton.show()
+
+        if busy:
+            self.busy.busy()
+            self.cw.showBasketButton.hide()
+        else:
+            self.busy.hide()
+
         self.cw.statusLabel.setText(text)
 
     def queryClose(self):

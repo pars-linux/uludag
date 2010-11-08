@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>719</width>
-    <height>462</height>
+    <width>731</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -246,21 +246,43 @@
        <height>25</height>
       </size>
      </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="verticalSpacing">
-       <number>0</number>
-      </property>
+     <layout class="QHBoxLayout" name="mainLayout">
       <property name="margin">
        <number>0</number>
       </property>
-      <item row="0" column="2">
-       <widget class="KPushButton" name="actionButton">
+      <item>
+       <widget class="QPushButton" name="showBasketButton">
+        <property name="minimumSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+        <property name="toolTip">
+         <string>Show Basket</string>
+        </property>
         <property name="text">
-         <string>Install Package(s)</string>
+         <string notr="true"/>
+        </property>
+        <property name="icon">
+         <iconset resource="../data/data.qrc">
+          <normaloff>:/data/slide_up.png</normaloff>:/data/slide_up.png</iconset>
+        </property>
+        <property name="shortcut">
+         <string>F7</string>
+        </property>
+        <property name="flat">
+         <bool>true</bool>
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item>
        <widget class="QTextBrowser" name="statusLabel">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -301,28 +323,17 @@ p, li { white-space: pre-wrap; }
         </property>
        </widget>
       </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="busyIndicator">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>22</width>
-          <height>22</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>22</width>
-          <height>22</height>
-         </size>
-        </property>
+      <item>
+       <widget class="QPushButton" name="checkUpdatesButton">
         <property name="text">
-         <string/>
+         <string>Check for Updates</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="KPushButton" name="actionButton">
+        <property name="text">
+         <string>Install Package(s)</string>
         </property>
        </widget>
       </item>
