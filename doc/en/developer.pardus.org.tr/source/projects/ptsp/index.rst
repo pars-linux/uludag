@@ -127,6 +127,7 @@ Developed by
 ------------
 
 **Curent Developers**
+
 * Metin Akdere <metin_at_pardus.org.tr>
 
 **Previous Developers & Contributors**

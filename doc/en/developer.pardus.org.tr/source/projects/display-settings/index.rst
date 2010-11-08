@@ -3,11 +3,12 @@
 Display Settings
 ~~~~~~~~~~~~~~~~
 
-:Author: Gökhan Özbulak 
+:Author: Gökhan Özbulak
 
-**Display Settings** is a configuration module located under **System** section of **Tasma** menu to provide 
-access to display related settings. This module doesn't only allow users to view and change the 
-basic display settings such as display size, refresh rate and rotation but also helps managing multiple display 
+**Display Settings** is a configuration module located under **System** section
+of **Tasma** menu to provide access to display related settings. This module
+doesn't only allow users to view and change the basic display settings such as
+display size, refresh rate and rotation but also helps managing multiple display
 devices recognized by the system.
 
 Features
@@ -52,14 +53,19 @@ Bugs
 Developed by
 ------------
 
+**Current Developers**
+
 * Fatih Aşıcı <fatih_at_pardus.org.tr>
   Lead Developer
+
+* Gökhan Özkan <gokhan_at_pardus.org.tr>
+  Graphical Designer
+
+**Previous Developers & Contributors**
 
 * Pınar Yanardağ <pinar_at_pardus.org.tr>
   Developer
 
-* Gökhan Özkan <gokhan_at_pardus.org.tr>
-  Graphical Designer
 
 License
 -------
