@@ -28,6 +28,7 @@ import backend
 
 class SettingsTab(QObject):
     def __init__(self, settings):
+        QObject.__init__(self)
         self.settings = settings
         self.config = config.PMConfig()
         self.iface = backend.pm.Iface()
