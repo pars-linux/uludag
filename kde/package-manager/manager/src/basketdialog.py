@@ -147,13 +147,13 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
 
-    def askForActions(self, packages, reason, title):
-        text = reason + '<br>'
-        for package in packages:
-            text += '<br> - <b>%s</b>' % package
-        text += '<br><br>' + i18n("Do you want to continue ?")
-        return QtGui.QMessageBox.question(self, title,
-                text, QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+    def askForActions(self, packages, reason, title, details_title):
+        msgbox = QtGui.QMessageBox()
+        msgbox.setText('<b>%s</b>' % reason)
+        msgbox.setInformativeText(i18n("Do you want to continue ?"))
+        msgbox.setDetailedText(details_title + '\n' + '-'*60 + '\n  - ' + '\n  - '.join(packages))
+        msgbox.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        return msgbox.exec_()
 
     def action(self):
 
@@ -163,16 +163,18 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                 self.model.selectedPackages() + self.model.extraPackages())
             if actions[0]:
                 answer = self.askForActions(actions[0],
-                       i18n("You must <b>restart</b> your system for the "
-                            "updates in the following package(s) to take "
-                            "effect:"), i18n("Update Requirements"))
+                       i18n("You must restart your system for the "
+                            "updates to take effect"),
+                       i18n("Update Requirements"),
+                       i18n("Packages Require System Restart"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
             if actions[1]:
                 answer = self.askForActions(actions[1],
-                    i18n("You must restart following system services for "
-                         "the updated package(s) to take effect:"),
-                    i18n("Update Requirements"))
+                       i18n("You must restart related system services for "
+                            "the updated package(s) to take effect"),
+                       i18n("Update Requirements"),
+                       i18n("Packages Require Service Restart"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
 
@@ -185,7 +187,8 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Selected packages are considered critical "
                             "for the system. Removing them may cause your "
                             "system to be unusable."),
-                       i18n("Warning"))
+                       i18n("Warning"),
+                       i18n("Critical Packages"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
 
@@ -196,9 +199,10 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                 self.model.selectedPackages() + self.model.extraPackages())
             if actions:
                 answer = self.askForActions(actions,
-                       i18n("Selected packages are already installed "
-                            "If you continue, packages will be reinstalled"),
-                       i18n("Already Installed Packages"))
+                       i18n("Selected packages are already installed.<br>"
+                            "If you continue, the packages will be reinstalled"),
+                       i18n("Already Installed Packages"),
+                       i18n("Installed Packages"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
             if actions:

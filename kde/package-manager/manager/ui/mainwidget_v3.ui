@@ -220,7 +220,7 @@
         <item>
          <widget class="QLabel" name="label">
           <property name="text">
-           <string>History KCM will be here.</string>
+           <string notr="true">History KCM will be here.</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
