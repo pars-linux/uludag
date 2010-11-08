@@ -265,8 +265,8 @@ class grub2Conf(grubConf):
                     else:
                         tmpKey = text[(keyIndex+4):]
 
+        return (str(tmpKey)).strip('\n'), (str(tmpValue)).strip('\n'), newlineDM
 
-        return tmpKey.strip('\n'), tmpValue.strip('\n'), newlineDM
 
     def parseConf(self, filename):
         """Parses a grub.cfg file of ubuntu"""
