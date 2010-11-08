@@ -406,7 +406,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         if not action:
             action = {self.__remove_action:self.state.REMOVE,
-                      self.__install_action:self.state.INSTALL}.get(self.sender(), None)
+                      self.__install_action:self.state.INSTALL}.get(self.sender(), self.state.INSTALL)
             if action:
                 self._back_to_all = True
                 self.state.state = action

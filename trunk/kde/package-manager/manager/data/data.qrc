@@ -1,5 +1,6 @@
 <RCC>
-  <qresource prefix="data" >
+  <qresource prefix="data">
+    <file>slide_up.png</file>
     <file>package-manager.png</file>
     <file>tray-count.png</file>
     <file>tray-zero.png</file>
