@@ -98,8 +98,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
 
-        self.cw.switchState(StateManager.UPGRADE, action=False)
-        self.cw.initialize()
+        self.cw.switchState(StateManager.UPGRADE)
 
         KApplication.kApplication().updateUserTimestamp()
 
