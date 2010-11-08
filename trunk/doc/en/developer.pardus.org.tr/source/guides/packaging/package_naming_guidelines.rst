@@ -228,6 +228,15 @@ Example::
     module-alsa:        ALSA kernel modules (kernel objects)
     module-alsa-common: udev and modprobe.conf files needed by ALSA drivers
 
+KDE Thumbnailers
+================
+
+KDE thumbnailer packages must have a name prefixed with "kde-thumbnailer-".
+
+Example::
+
+    kde-thumbnailer-ffmpeg
+
 KWin Decorations
 ================
 
