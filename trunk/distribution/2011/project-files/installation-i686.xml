@@ -161,8 +161,12 @@
                 <SelectedPackage>kdeartwork-styles</SelectedPackage>
                 <SelectedPackage>kdebase</SelectedPackage>
                 <SelectedPackage>kdebase-emoticons</SelectedPackage>
+                <SelectedPackage>kdebase-runtime</SelectedPackage>
+                <SelectedPackage>kdebase-runtime-doc</SelectedPackage>
                 <SelectedPackage>kdebase-sounds</SelectedPackage>
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
+                <SelectedPackage>kdebase-workspace</SelectedPackage>
+                <SelectedPackage>kdebase-workspace-doc</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
                 <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
