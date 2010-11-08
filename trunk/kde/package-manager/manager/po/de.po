@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 10:50+0200\n"
+"POT-Creation-Date: 2010-11-08 16:40+0200\n"
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -68,61 +68,71 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/basketdialog.py:58 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:54 ui/ui_basketdialog.py:185
+#, fuzzy
+msgid "Clear Basket"
+msgstr "Cache leeren"
+
+#: src/basketdialog.py:55
+#, fuzzy
+msgid "Do you want to clear all selections ?"
+msgstr "Möchten Sie fortfahren ?"
+
+#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi Fehler"
 
-#: src/basketdialog.py:153
+#: src/basketdialog.py:164
 msgid "Do you want to continue ?"
 msgstr "Möchten Sie fortfahren ?"
 
-#: src/basketdialog.py:166
+#: src/basketdialog.py:177
 #, fuzzy
 msgid "You must restart your system for the updates to take effect"
 msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden aktualisierten Pakete Wirkung zeigen:"
 
-#: src/basketdialog.py:168 src/basketdialog.py:176
+#: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
 msgstr "Update Anforderungen"
 
-#: src/basketdialog.py:169
+#: src/basketdialog.py:180
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:185
 #, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Sie müssen die folgenden System-Dienste <b>neu starten</b>, damit diese Wirkung zeigen:"
 
-#: src/basketdialog.py:177
+#: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:187
+#: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:190 src/settingsdialog.py:161
+#: src/basketdialog.py:201 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Warnung"
 
-#: src/basketdialog.py:191
+#: src/basketdialog.py:202
 #, fuzzy
 msgid "Critical Packages"
 msgstr "Paket(e) werden entfernt"
 
-#: src/basketdialog.py:202
+#: src/basketdialog.py:213
 #, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
 
-#: src/basketdialog.py:204
+#: src/basketdialog.py:215
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Paket(e) installieren"
 
-#: src/basketdialog.py:205 src/mainwindow.py:146 src/mainwindow.py:149
+#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Paket(e) installieren"
@@ -136,7 +146,7 @@ msgstr "Alle"
 msgid "Package Manager Help"
 msgstr "Hilfe des Paket Managers"
 
-#: src/main.py:60
+#: src/main.py:66
 msgid "Show main window"
 msgstr "Hauptfenster zeigen"
 
@@ -170,38 +180,38 @@ msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paket nicht gefunden. Möglicherweise ist es im Depot aktualisiert oder entfernt worden. Bitte versuchen Sie die Depot-Information zu aktualisieren."
 
-#: src/mainwidget.py:421
+#: src/mainwidget.py:415
 msgid "All Updates"
 msgstr "Alle Aktualisierungen"
 
-#: src/mainwidget.py:422
+#: src/mainwidget.py:416
 msgid "Security Updates"
 msgstr "Sicherheitsupdates"
 
-#: src/mainwidget.py:423
+#: src/mainwidget.py:417
 msgid "Critical Updates"
 msgstr "Kritische Updates"
 
-#: src/mainwindow.py:134 src/mainwindow.py:137
+#: src/mainwindow.py:137 src/mainwindow.py:140
 #, fuzzy
 msgid "All Packages"
 msgstr "Installierte Pakete anzeigen"
 
-#: src/mainwindow.py:140 src/mainwindow.py:143
+#: src/mainwindow.py:143 src/mainwindow.py:146
 #, fuzzy
 msgid "Installable Packages"
 msgstr "Neue Pakete anzeigen"
 
-#: src/mainwindow.py:152 src/mainwindow.py:155
+#: src/mainwindow.py:155 src/mainwindow.py:158
 #, fuzzy
 msgid "Upgradable Packages"
 msgstr "Upgrades anzeigen"
 
-#: src/mainwindow.py:197
+#: src/mainwindow.py:201
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:203
+#: src/mainwindow.py:205
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
@@ -366,8 +376,8 @@ msgstr "aktualisiert"
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:100 ui/ui_basketdialog.py:181
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:183
+#: src/statemanager.py:100 ui/ui_basketdialog.py:186
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Paket(e) installieren"
@@ -419,7 +429,7 @@ msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 msgid "You have selected the following package(s) to modify:"
 msgstr "Ausgewählte Paket(e) sind zu entfernen:"
 
-#: src/statemanager.py:125 ui/ui_basketdialog.py:178
+#: src/statemanager.py:125 ui/ui_basketdialog.py:182
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Erforderliche Pakete, die zusätzlich installiert werden:"
 
@@ -513,48 +523,48 @@ msgstr "Webbrowser"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Korb"
 
-#: ui/ui_basketdialog.py:177
+#: ui/ui_basketdialog.py:181
 msgid "Selected package(s) for install:"
 msgstr "Ausgewählte Pakete zur Installation:"
 
-#: ui/ui_basketdialog.py:179
+#: ui/ui_basketdialog.py:183
 msgid "Total Size:"
 msgstr "Gesamtgrösse:"
 
-#: ui/ui_basketdialog.py:180
+#: ui/ui_basketdialog.py:184
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
 # Zweifel..
-#: ui/ui_basketdialog.py:182
+#: ui/ui_basketdialog.py:187
 msgid "Download Size:"
 msgstr "Download Grösse:"
 
-#: ui/ui_basketdialog.py:183
+#: ui/ui_basketdialog.py:188
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:176
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:178
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
 #: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:189
 msgid "Form"
 msgstr "Form"
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:181
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:183
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr "Kategoriefeld"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:178
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:180
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr "Suchleiste"
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:179
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:181
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr "Geben Sie Ihre Suche ein"
@@ -575,19 +585,29 @@ msgstr "Aktionsknopf für den Status aktueller Vorgänge "
 msgid "Toggler for selection all packages in Package List"
 msgstr "Umschalter für die Auswahl aller Pakete in der Paketliste"
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:182
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:184
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr "Paketliste"
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:180
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:182
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr "Updatemöglichkeiten"
 
-#: ui/ui_mainwidget_v3.py:177
+#: ui/ui_mainwidget_v3.py:179
 msgid "Settings"
 msgstr "Einstellungen"
+
+#: ui/ui_mainwidget_v3.py:185
+#, fuzzy
+msgid "Show Basket"
+msgstr "Korb"
+
+#: ui/ui_mainwidget_v3.py:186
+#, fuzzy
+msgid "Check for Updates"
+msgstr "Updates anzeigen"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -878,9 +898,6 @@ msgstr ""
 
 #~ msgid "(use 0 for no limit)"
 #~ msgstr "(0 für kein Limit)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cache leeren"
 
 #~ msgid "Ok"
 #~ msgstr "Ok"

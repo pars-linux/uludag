@@ -275,7 +275,7 @@
           <normaloff>:/data/slide_up.png</normaloff>:/data/slide_up.png</iconset>
         </property>
         <property name="shortcut">
-         <string>F7</string>
+         <string notr="true">F7</string>
         </property>
         <property name="flat">
          <bool>true</bool>

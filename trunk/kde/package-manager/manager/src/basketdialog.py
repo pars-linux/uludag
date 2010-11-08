@@ -47,6 +47,17 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         self.actionButton.clicked.connect(self.action)
         self.cancelButton.clicked.connect(self._hide)
 
+        self.clearButton.clicked.connect(self.clearSelections)
+        self.clearButton.setIcon(KIcon("trash-empty"))
+
+    def clearSelections(self):
+        sure = QtGui.QMessageBox.question(self, i18n("Clear Basket"),
+                                                i18n("Do you want to clear all selections ?"),
+                                                QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        if sure == QtGui.QMessageBox.Yes:
+            self._hide()
+            self.state.state = self.parent.cw.currentState
+            self.parent.cw.initialize()
 
     def _show(self):
         waitCursor()
@@ -65,11 +76,11 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         self.setBasketLabel()
         self.connectModelSignals()
         QTimer.singleShot(0, restoreCursor)
-        self.animate(start = BOTCENTER, stop = MIDCENTER)#, dont_animate = True)
+        self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def _hide(self):
         self.disconnectModelSignals()
-        self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)#, dont_animate = True)
+        self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
 
     def connectModelSignals(self):
         self.connect(self.packageList.model(),
