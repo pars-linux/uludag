@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 16:40+0200\n"
+"POT-Creation-Date: 2010-11-09 00:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr ""
 
-#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr ""
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Already Installed Packages"
 msgstr ""
 
-#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
+#: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 msgid "Installed Packages"
 msgstr ""
 
@@ -144,66 +144,70 @@ msgstr ""
 msgid "Show main window"
 msgstr ""
 
-#: src/mainwidget.py:214
+#: src/mainwidget.py:137
+msgid "All packages are up to date"
+msgstr ""
+
+#: src/mainwidget.py:224
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:226
+#: src/mainwidget.py:236
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:274
+#: src/mainwidget.py:291
 msgid "Network Error"
 msgstr ""
 
-#: src/mainwidget.py:275
+#: src/mainwidget.py:292
 msgid "Please check your network connections and try again."
 msgstr ""
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:294
 msgid "Authorization Error"
 msgstr ""
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:295
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:298
 #, python-format
 msgid ""
 "Package <b>%s</b> not found in repositories.<br>It may be upgraded or "
 "removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:437
 msgid "All Updates"
 msgstr ""
 
-#: src/mainwidget.py:416
+#: src/mainwidget.py:438
 msgid "Security Updates"
 msgstr ""
 
-#: src/mainwidget.py:417
+#: src/mainwidget.py:439
 msgid "Critical Updates"
 msgstr ""
 
-#: src/mainwindow.py:137 src/mainwindow.py:140
+#: src/mainwindow.py:136 src/mainwindow.py:139
 msgid "All Packages"
 msgstr ""
 
-#: src/mainwindow.py:143 src/mainwindow.py:146
+#: src/mainwindow.py:142 src/mainwindow.py:145
 msgid "Installable Packages"
 msgstr ""
 
-#: src/mainwindow.py:155 src/mainwindow.py:158
+#: src/mainwindow.py:154 src/mainwindow.py:157
 msgid "Upgradable Packages"
 msgstr ""
 
-#: src/mainwindow.py:201
+#: src/mainwindow.py:200
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:205
+#: src/mainwindow.py:204
 msgid "Currently your basket is empty."
 msgstr ""
 
@@ -437,42 +441,42 @@ msgid ""
 "modified:"
 msgstr ""
 
-#: src/statemanager.py:165
+#: src/statemanager.py:159
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:168
+#: src/statemanager.py:162
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:170
+#: src/statemanager.py:164
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:171
+#: src/statemanager.py:165
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:199
+#: src/statemanager.py:193
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: src/statemanager.py:200 src/statemanager.py:208
+#: src/statemanager.py:194 src/statemanager.py:202
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:204
+#: src/statemanager.py:198
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:206
+#: src/statemanager.py:200
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:207
+#: src/statemanager.py:201
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -494,7 +498,7 @@ msgstr ""
 msgid "Ignore"
 msgstr ""
 
-#: src/webdialog.py:104 ui/ui_webdialog.py:167
+#: src/webdialog.py:104 ui/ui_webdialog.py:169
 msgid "Package Files"
 msgstr ""
 
@@ -510,7 +514,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr ""
 
@@ -846,15 +850,15 @@ msgstr ""
 msgid "&Ok"
 msgstr ""
 
-#: ui/ui_webdialog.py:165 ui/ui_webdialog.py:170
+#: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
 msgid "Package Details"
 msgstr ""
 
-#: ui/ui_webdialog.py:166
+#: ui/ui_webdialog.py:168
 msgid "Type to filter files"
 msgstr ""
 
-#: ui/ui_webdialog.py:168
+#: ui/ui_webdialog.py:170
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"

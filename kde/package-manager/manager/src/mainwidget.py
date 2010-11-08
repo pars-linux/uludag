@@ -42,6 +42,7 @@ from config import PMConfig
 
 from pmutils import PThread
 from pmutils import waitCursor
+from pmutils import isPmOnline
 from pmutils import restoreCursor
 
 from pdswidgets import PMessageBox
@@ -68,6 +69,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.lastState = self.state.state
         self.currentState = None
+        self._updatesCheckedOnce = False
 
         # state.silence is using for pm-install module
         self.state.silence = silence
@@ -92,6 +94,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
+        self.connect(self.checkUpdatesButton, SIGNAL("clicked()"), self.updateRepoAction)
         self.connect(self.searchButton, SIGNAL("clicked()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
@@ -128,8 +131,11 @@ class MainWidget(QWidget, Ui_MainWidget):
         self._selectedGroups = []
         self.packageList.select_all.setChecked(False)
         self.initializeBasket()
-        restoreCursor()
         self.searchLine.setFocus(True)
+        if self.currentState == self.state.UPGRADE:
+            if self.groupList.count() == 0:
+                QTimer.singleShot(0, lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date")))
+        restoreCursor()
 
     def initializeStatusUpdater(self):
         self.statusUpdater.calculate_deps = not self.state.state == self.state.ALL
@@ -210,6 +216,10 @@ class MainWidget(QWidget, Ui_MainWidget):
         restoreCursor()
 
     def searchActivated(self):
+        if self.currentState == self.state.UPGRADE:
+            if self.groupList.count() == 0:
+                return
+
         if not self.searchLine.text() == '':
             self.pdsMessageBox.showMessage(i18n("Searching..."), busy = True)
             self.groupList.lastSelected = None
@@ -256,6 +266,7 @@ class MainWidget(QWidget, Ui_MainWidget):
                 totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
             self.parent.show()
 
+        self.pdsMessageBox.hideMessage()
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             if not self.state.silence:
@@ -267,6 +278,12 @@ class MainWidget(QWidget, Ui_MainWidget):
                 self.progressDialog.repoOperationView()
             self.progressDialog._show()
         self.progressDialog.enableCancel()
+
+    def updateRepoAction(self):
+        if not isPmOnline():
+            self.exceptionCaught('Socket Error')
+        else:
+            self.state.updateRepoAction()
 
     def exceptionCaught(self, message, package = ''):
         self.progressDialog._hide()
@@ -290,9 +307,6 @@ class MainWidget(QWidget, Ui_MainWidget):
 
         if self.state.silence:
             qApp.exit()
-
-        if self.state.state == self.state.UPGRADE:
-            self.switchState(self.lastState)
 
     def actionFinished(self, operation):
         if self.state.silence:
@@ -345,7 +359,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.actionButton.setEnabled(enabled)
         self.basket.setActionEnabled(enabled)
 
-    def switchState(self, state, action=True):
+    def switchState(self, state):
         self.searchLine.clear()
         self.pdsMessageBox.hideMessage()
         self._states[state][1].setChecked(True)
@@ -355,9 +369,16 @@ class MainWidget(QWidget, Ui_MainWidget):
         self._selectedGroups = []
         if not state == self.state.HISTORY:
             self.setActionButton()
-            if action:
-                self.state.stateAction()
             self.state.cached_packages = None
+            if state == self.state.UPGRADE:
+                self.checkUpdatesButton.show()
+                if not self._updatesCheckedOnce:
+                    if isPmOnline():
+                        self.state.updateRepoAction()
+                        self._updatesCheckedOnce = True
+                        return
+            else:
+                self.checkUpdatesButton.hide()
             self.initialize()
             # self.contentHistory.hide()
             # self.content.show()

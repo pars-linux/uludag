@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 16:40+0200\n"
+"POT-Creation-Date: 2010-11-09 00:25+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
@@ -127,7 +127,7 @@ msgstr ""
 msgid "Already Installed Packages"
 msgstr "Инсталирај пакет(е)"
 
-#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
+#: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Инсталирај пакет(е)"
@@ -144,67 +144,72 @@ msgstr "Помоћ за менаџер пакета"
 msgid "Show main window"
 msgstr "Прикажи главни прозор"
 
-#: src/mainwidget.py:214
+#: src/mainwidget.py:137
+#, fuzzy
+msgid "All packages are up to date"
+msgstr "Сви пакети су ажурирани"
+
+#: src/mainwidget.py:224
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:226
+#: src/mainwidget.py:236
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:274
+#: src/mainwidget.py:291
 msgid "Network Error"
 msgstr "Мрежна грешка"
 
-#: src/mainwidget.py:275
+#: src/mainwidget.py:292
 msgid "Please check your network connections and try again."
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:294
 msgid "Authorization Error"
 msgstr "Грешка у вези овлашћења"
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:295
 msgid "You are not authorized for this operation."
 msgstr "Нисте овлашћени за ову операцију."
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:298
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:437
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:416
+#: src/mainwidget.py:438
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:417
+#: src/mainwidget.py:439
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
-#: src/mainwindow.py:137 src/mainwindow.py:140
+#: src/mainwindow.py:136 src/mainwindow.py:139
 #, fuzzy
 msgid "All Packages"
 msgstr "Прикажи инсталиране пакете"
 
-#: src/mainwindow.py:143 src/mainwindow.py:146
+#: src/mainwindow.py:142 src/mainwindow.py:145
 #, fuzzy
 msgid "Installable Packages"
 msgstr "Прокажи пакете који могу да се инсталирају"
 
-#: src/mainwindow.py:155 src/mainwindow.py:158
+#: src/mainwindow.py:154 src/mainwindow.py:157
 #, fuzzy
 msgid "Upgradable Packages"
 msgstr "Прикажи пакете који могу да се ажурирају"
 
-#: src/mainwindow.py:201
+#: src/mainwindow.py:200
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:205
+#: src/mainwindow.py:204
 msgid "Currently your basket is empty."
 msgstr "Тренутно Ваша корпа је празна."
 
@@ -435,39 +440,39 @@ msgstr ""
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr ""
 
-#: src/statemanager.py:165
+#: src/statemanager.py:159
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:168
+#: src/statemanager.py:162
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:170
+#: src/statemanager.py:164
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:171
+#: src/statemanager.py:165
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:199
+#: src/statemanager.py:193
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr ""
 
-#: src/statemanager.py:200 src/statemanager.py:208
+#: src/statemanager.py:194 src/statemanager.py:202
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:204
+#: src/statemanager.py:198
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:206
+#: src/statemanager.py:200
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:207
+#: src/statemanager.py:201
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -489,7 +494,7 @@ msgstr ""
 msgid "Show Updates"
 msgstr ""
 
-#: src/webdialog.py:104 ui/ui_webdialog.py:167
+#: src/webdialog.py:104 ui/ui_webdialog.py:169
 #, fuzzy
 msgid "Package Files"
 msgstr "Величина пакета:"
@@ -506,7 +511,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr ""
 
@@ -834,16 +839,16 @@ msgstr ""
 msgid "&Ok"
 msgstr ""
 
-#: ui/ui_webdialog.py:165 ui/ui_webdialog.py:170
+#: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
 #, fuzzy
 msgid "Package Details"
 msgstr "Величина пакета:"
 
-#: ui/ui_webdialog.py:166
+#: ui/ui_webdialog.py:168
 msgid "Type to filter files"
 msgstr ""
 
-#: ui/ui_webdialog.py:168
+#: ui/ui_webdialog.py:170
 #, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
@@ -854,27 +859,24 @@ msgstr "Молимо Вас проверите мрежну конекцију �
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
-
-#~ msgid "Quit"
-#~ msgstr "Прекид"
-
-#~ msgid "Help"
-#~ msgstr "Помоћ"
-
-#~ msgid "File"
-#~ msgstr "Фајл"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Сви пакети су ажурирани"
-
-#, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
-
 #, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
 #~ msgstr "Инсталирај пакет(е)"
+
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
+
+#~ msgid "File"
+#~ msgstr "Фајл"
+
+#~ msgid "Help"
+#~ msgstr "Помоћ"
+
+#~ msgid "Quit"
+#~ msgstr "Прекид"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 16:40+0200\n"
+"POT-Creation-Date: 2010-11-09 00:25+0200\n"
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "Cache leeren"
 msgid "Do you want to clear all selections ?"
 msgstr "Möchten Sie fortfahren ?"
 
-#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi Fehler"
@@ -132,7 +132,7 @@ msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete k�
 msgid "Already Installed Packages"
 msgstr "Paket(e) installieren"
 
-#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
+#: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Paket(e) installieren"
@@ -150,68 +150,73 @@ msgstr "Hilfe des Paket Managers"
 msgid "Show main window"
 msgstr "Hauptfenster zeigen"
 
-#: src/mainwidget.py:214
+#: src/mainwidget.py:137
+#, fuzzy
+msgid "All packages are up to date"
+msgstr "Alle Pakete sind auf dem neuesten Stand!"
+
+#: src/mainwidget.py:224
 #, fuzzy
 msgid "Searching..."
 msgstr "Suche"
 
-#: src/mainwidget.py:226
+#: src/mainwidget.py:236
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:274
+#: src/mainwidget.py:291
 msgid "Network Error"
 msgstr "Netzwerkfehler"
 
-#: src/mainwidget.py:275
+#: src/mainwidget.py:292
 msgid "Please check your network connections and try again."
 msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:294
 msgid "Authorization Error"
 msgstr "Authorisationsfehler"
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:295
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:298
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paket nicht gefunden. Möglicherweise ist es im Depot aktualisiert oder entfernt worden. Bitte versuchen Sie die Depot-Information zu aktualisieren."
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:437
 msgid "All Updates"
 msgstr "Alle Aktualisierungen"
 
-#: src/mainwidget.py:416
+#: src/mainwidget.py:438
 msgid "Security Updates"
 msgstr "Sicherheitsupdates"
 
-#: src/mainwidget.py:417
+#: src/mainwidget.py:439
 msgid "Critical Updates"
 msgstr "Kritische Updates"
 
-#: src/mainwindow.py:137 src/mainwindow.py:140
+#: src/mainwindow.py:136 src/mainwindow.py:139
 #, fuzzy
 msgid "All Packages"
 msgstr "Installierte Pakete anzeigen"
 
-#: src/mainwindow.py:143 src/mainwindow.py:146
+#: src/mainwindow.py:142 src/mainwindow.py:145
 #, fuzzy
 msgid "Installable Packages"
 msgstr "Neue Pakete anzeigen"
 
-#: src/mainwindow.py:155 src/mainwindow.py:158
+#: src/mainwindow.py:154 src/mainwindow.py:157
 #, fuzzy
 msgid "Upgradable Packages"
 msgstr "Upgrades anzeigen"
 
-#: src/mainwindow.py:201
+#: src/mainwindow.py:200
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:205
+#: src/mainwindow.py:204
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
@@ -448,41 +453,41 @@ msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert w
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
 
-#: src/statemanager.py:165
+#: src/statemanager.py:159
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Momentan sind <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
-#: src/statemanager.py:168
+#: src/statemanager.py:162
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> rückwärtig abhängige Pakete mit einer Grösse von <b>%2</b>"
 
-#: src/statemanager.py:170
+#: src/statemanager.py:164
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "und <b>%1</b> zusätzlich abhängige Pakete mit einer Gesamtgrösse von <b>%2</b>"
 
-#: src/statemanager.py:171
+#: src/statemanager.py:165
 msgid "in your basket."
 msgstr "in Ihrem Korb."
 
-#: src/statemanager.py:199
+#: src/statemanager.py:193
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
 
-#: src/statemanager.py:200 src/statemanager.py:208
+#: src/statemanager.py:194 src/statemanager.py:202
 msgid "Conflict Error"
 msgstr "Konfliktfehler"
 
-#: src/statemanager.py:204
+#: src/statemanager.py:198
 msgid "The following packages conflicts:\n"
 msgstr "Es bestehen Konflikte zwischen folgenden Paketen:\n"
 
 # Zweifel - einfach "incompatible" schreiben ?
-#: src/statemanager.py:206
+#: src/statemanager.py:200
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 in Konflikt mit: [%2]\n"
 
-#: src/statemanager.py:207
+#: src/statemanager.py:201
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -506,7 +511,7 @@ msgstr "Ignoriere"
 msgid "Show Updates"
 msgstr "Updates anzeigen"
 
-#: src/webdialog.py:104 ui/ui_webdialog.py:167
+#: src/webdialog.py:104 ui/ui_webdialog.py:169
 #, fuzzy
 msgid "Package Files"
 msgstr "Paketliste"
@@ -523,7 +528,7 @@ msgstr "Webbrowser"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Korb"
 
@@ -858,16 +863,16 @@ msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklic
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:165 ui/ui_webdialog.py:170
+#: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
 #, fuzzy
 msgid "Package Details"
 msgstr "Paketliste"
 
-#: ui/ui_webdialog.py:166
+#: ui/ui_webdialog.py:168
 msgid "Type to filter files"
 msgstr ""
 
-#: ui/ui_webdialog.py:168
+#: ui/ui_webdialog.py:170
 #, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
@@ -878,65 +883,15 @@ msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einm
 msgid "Close"
 msgstr ""
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Installierte Pakete anzeigen"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Paket(e) installieren"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Proxy-Server verwenden"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Max. Bandbreite:"
-
-#~ msgid "Update check"
-#~ msgstr "Updateüberprüfung"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(0 für kein Limit)"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Löschen"
-
-#~ msgid "Maintainer"
-#~ msgstr "Aktueller Betreuer"
-
-#~ msgid "Package Installer"
-#~ msgstr "Paket Installer"
-
-#~ msgid "Installing %1"
-#~ msgstr "%1 wird installiert"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Installer ist schon gestartet"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Paketmarkierungen invertieren"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
-
-#~ msgid "Updates"
-#~ msgstr "Updates"
-
-#~ msgid "Quit"
-#~ msgstr "Verlassen"
-
-#~ msgid "Help"
-#~ msgstr "Hilfe"
-
-#~ msgid "File"
-#~ msgstr "Datei"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Alle Pakete sind auf dem neuesten Stand!"
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
 #, fuzzy
 #~ msgid ""
@@ -952,12 +907,59 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
-#, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "File"
+#~ msgstr "Datei"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Paket(e) installieren"
+#~ msgid "Help"
+#~ msgstr "Hilfe"
+
+#~ msgid "Quit"
+#~ msgstr "Verlassen"
+
+#~ msgid "Updates"
+#~ msgstr "Updates"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Paketmarkierungen invertieren"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Installer ist schon gestartet"
+
+#~ msgid "Installing %1"
+#~ msgstr "%1 wird installiert"
+
+#~ msgid "Package Installer"
+#~ msgstr "Paket Installer"
+
+#~ msgid "Maintainer"
+#~ msgstr "Aktueller Betreuer"
+
+#~ msgid "Delete"
+#~ msgstr "Löschen"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(0 für kein Limit)"
+
+#~ msgid "Update check"
+#~ msgstr "Updateüberprüfung"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Max. Bandbreite:"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Proxy-Server verwenden"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Installierte Pakete anzeigen"

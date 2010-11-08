@@ -152,12 +152,6 @@ class StateManager(QObject):
             AppInfoClient().setServer('http://appinfo.pardus.org.tr')
             AppInfoClient().checkOutDB()
 
-    def stateAction(self):
-        return {self.INSTALL:lambda:None,
-                self.REMOVE :lambda:None,
-                self.ALL    :lambda:None,
-                self.UPGRADE:self.updateRepoAction}[self.state]()
-
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
             return ''

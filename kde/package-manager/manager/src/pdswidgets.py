@@ -61,6 +61,6 @@ class PMessageBox(PAbstractBox):
         if self.isVisible():
             self.animate(start = PMessageBox.STOP_POS,
                          stop  = PMessageBox.OUT_POS,
-                         start_after = self.last_msg,
-                         direction = OUT)
+                         direction = OUT,
+                         dont_animate = True)
 

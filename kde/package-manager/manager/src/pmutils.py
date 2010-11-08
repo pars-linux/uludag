@@ -21,6 +21,8 @@ from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import SLOT
 from PyQt4.QtCore import QThread
 
+from PyKDE4.solid import Solid
+
 class PThread(QThread):
     def __init__(self, parent, action, callback, args=[], kwargs={}):
         QThread.__init__(self,parent)
@@ -56,6 +58,9 @@ def restoreCursor():
 
 def processEvents():
     QtGui.QApplication.processEvents()
+
+def isPmOnline():
+    return Solid.Networking.status() == Solid.Networking.Connected
 
 def humanReadableSize(size, precision=".1"):
     symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0

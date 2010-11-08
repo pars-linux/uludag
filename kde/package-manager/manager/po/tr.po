@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-08 16:40+0200\n"
+"POT-Creation-Date: 2010-11-09 00:25+0200\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -77,7 +77,7 @@ msgstr "Sepeti Boşalt"
 msgid "Do you want to clear all selections ?"
 msgstr "Tüm seçimlerinizi temizlemek istiyor musunuz ?"
 
-#: src/basketdialog.py:69 src/mainwidget.py:280 src/mainwidget.py:285
+#: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
@@ -126,7 +126,7 @@ msgstr "Seçtiğiniz paketler daha önce sisteme kurulmuş.<br>Eğer devam eders
 msgid "Already Installed Packages"
 msgstr "Daha Önce Kurulmuş Paketler"
 
-#: src/basketdialog.py:216 src/mainwindow.py:149 src/mainwindow.py:152
+#: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 msgid "Installed Packages"
 msgstr "Kurulu Paketler"
 
@@ -142,64 +142,68 @@ msgstr "Paket Yöneticisi Yardım"
 msgid "Show main window"
 msgstr "Ana pencereyi göster"
 
-#: src/mainwidget.py:214
+#: src/mainwidget.py:137
+msgid "All packages are up to date"
+msgstr "Tüm Paketler güncel"
+
+#: src/mainwidget.py:224
 msgid "Searching..."
 msgstr "Aranıyor..."
 
-#: src/mainwidget.py:226
+#: src/mainwidget.py:236
 msgid "No results found."
 msgstr "Sonuç bulunamadı."
 
-#: src/mainwidget.py:274
+#: src/mainwidget.py:291
 msgid "Network Error"
 msgstr "Ağ Hatası"
 
-#: src/mainwidget.py:275
+#: src/mainwidget.py:292
 msgid "Please check your network connections and try again."
 msgstr "Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
-#: src/mainwidget.py:277
+#: src/mainwidget.py:294
 msgid "Authorization Error"
 msgstr "Yetkilendirme Hatası"
 
-#: src/mainwidget.py:278
+#: src/mainwidget.py:295
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
-#: src/mainwidget.py:281
+#: src/mainwidget.py:298
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paket <b>%s</b> bulunamadı.<br>Depoda güncellenmiş veya depodan kaldırılmış olabilir.<br>Lütfen depo bilgilerini güncellemeyi deneyin."
 
-#: src/mainwidget.py:415
+#: src/mainwidget.py:437
 msgid "All Updates"
 msgstr "Tüm Güncellemeler"
 
-#: src/mainwidget.py:416
+#: src/mainwidget.py:438
 msgid "Security Updates"
 msgstr "Güvenlik Güncellemeleri"
 
-#: src/mainwidget.py:417
+#: src/mainwidget.py:439
 msgid "Critical Updates"
 msgstr "Kritik Güncellemeler"
 
-#: src/mainwindow.py:137 src/mainwindow.py:140
+#: src/mainwindow.py:136 src/mainwindow.py:139
 msgid "All Packages"
 msgstr "Tüm Paketler"
 
-#: src/mainwindow.py:143 src/mainwindow.py:146
+#: src/mainwindow.py:142 src/mainwindow.py:145
 msgid "Installable Packages"
 msgstr "Kurulabilir Paketler"
 
-#: src/mainwindow.py:155 src/mainwindow.py:158
+#: src/mainwindow.py:154 src/mainwindow.py:157
 msgid "Upgradable Packages"
 msgstr "Güncellemeler"
 
-#: src/mainwindow.py:201
+#: src/mainwindow.py:200
 msgid "Calculating dependencies..."
 msgstr "Bağımlılıklar hesaplanıyor..."
 
-#: src/mainwindow.py:205
+#: src/mainwindow.py:204
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
@@ -423,39 +427,39 @@ msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Seçili paket(ler)in ayrıca kurulacak/kaldırılacak olan ek bağımlılıkları:"
 
-#: src/statemanager.py:165
+#: src/statemanager.py:159
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Şu an sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
-#: src/statemanager.py:168
+#: src/statemanager.py:162
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ters bağımlılık "
 
-#: src/statemanager.py:170
+#: src/statemanager.py:164
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "ile toplam <b>%2</b> boyutunda <b>%1</b> ek bağımlılık "
 
-#: src/statemanager.py:171
+#: src/statemanager.py:165
 msgid "in your basket."
 msgstr "bulunuyor."
 
-#: src/statemanager.py:199
+#: src/statemanager.py:193
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
-#: src/statemanager.py:200 src/statemanager.py:208
+#: src/statemanager.py:194 src/statemanager.py:202
 msgid "Conflict Error"
 msgstr "Çakışma Hatası"
 
-#: src/statemanager.py:204
+#: src/statemanager.py:198
 msgid "The following packages conflicts:\n"
 msgstr "Aşağıdaki paketler çakışıyor:\n"
 
-#: src/statemanager.py:206
+#: src/statemanager.py:200
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 %2 ile çakışıyor\n"
 
-#: src/statemanager.py:207
+#: src/statemanager.py:201
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -479,7 +483,7 @@ msgstr "Yoksay"
 msgid "Show Updates"
 msgstr "Güncellemeleri Göster"
 
-#: src/webdialog.py:104 ui/ui_webdialog.py:167
+#: src/webdialog.py:104 ui/ui_webdialog.py:169
 msgid "Package Files"
 msgstr "Paket Dosyaları"
 
@@ -495,7 +499,7 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Sepet"
 
@@ -827,15 +831,15 @@ msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya da
 msgid "&Ok"
 msgstr "&Tamam"
 
-#: ui/ui_webdialog.py:165 ui/ui_webdialog.py:170
+#: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
 msgid "Package Details"
 msgstr "Paket Detayı"
 
-#: ui/ui_webdialog.py:166
+#: ui/ui_webdialog.py:168
 msgid "Type to filter files"
 msgstr "Hızlı arama"
 
-#: ui/ui_webdialog.py:168
+#: ui/ui_webdialog.py:170
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
@@ -847,86 +851,15 @@ msgstr ""
 msgid "Close"
 msgstr "Kapat"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Kurulu Paketleri Göster"
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Kurulu Paketler\n"
+#~ "\n"
 
-#~ msgid "Cancel"
-#~ msgstr "İptal"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 yeni paket başarı ile kuruldu."
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Paket seçimlerini tersine çevir"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Kurucusu zaten çalışıyor!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Installing %1"
-#~ msgstr "%1 kuruluyor"
-
-#~ msgid "Package Installer"
-#~ msgstr "Paket Kurucusu"
-
-#~ msgid "Maintainer"
-#~ msgstr "Bakıcı"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
-
-#~ msgid "Ok"
-#~ msgstr "Tamam"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
-
-#~ msgid "Update check"
-#~ msgstr "Güncelleme kontrolü"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bant genişliği sınırı:"
-
-#~ msgid "Summary"
-#~ msgstr "Özet"
-
-#~ msgid "%p%"
-#~ msgstr "%%p"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketlerin kurulumu tamamlandı"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "%1 başarılı bir şekilde kuruldu"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Vekil sunucu kullan"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
-
-#~ msgid "Updates"
-#~ msgstr "Güncellemeler"
-
-#~ msgid "Quit"
-#~ msgstr "Çıkış"
-
-#~ msgid "Help"
-#~ msgstr "Yardım"
-
-#~ msgid "File"
-#~ msgstr "Dosya"
-
-#~ msgid "All Packages are up to date"
-#~ msgstr "Tüm Paketler güncel"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -941,12 +874,80 @@ msgstr "Kapat"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "File"
+#~ msgstr "Dosya"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Kurulu Paketler\n"
-#~ "\n"
+#~ msgid "Help"
+#~ msgstr "Yardım"
+
+#~ msgid "Quit"
+#~ msgstr "Çıkış"
+
+#~ msgid "Updates"
+#~ msgstr "Güncellemeler"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Vekil sunucu kullan"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
+
+#~ msgid "%p%"
+#~ msgstr "%%p"
+
+#~ msgid "Summary"
+#~ msgstr "Özet"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
+
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Tamam"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Maintainer"
+#~ msgstr "Bakıcı"
+
+#~ msgid "Package Installer"
+#~ msgstr "Paket Kurucusu"
+
+#~ msgid "Installing %1"
+#~ msgstr "%1 kuruluyor"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Kurucusu zaten çalışıyor!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Paket seçimlerini tersine çevir"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 yeni paket başarı ile kuruldu."
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Kurulu Paketleri Göster"
