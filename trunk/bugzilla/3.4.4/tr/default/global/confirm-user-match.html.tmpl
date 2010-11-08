@@ -55,10 +55,10 @@
 
   <p>
     [% IF matchmultiple %]
-      [% terms.Bugzilla %] önceki sayfada girdiğiniz isimlerin ve/veya eposta adreslerinin en az biri için net bir eşleştirme yapmayı başaramadı. 
+      [% terms.Bugzilla %] önceki sayfada girdiğiniz isimlerin ve/veya e-posta adreslerinin en az biri için net bir eşleştirme yapmayı başaramadı. 
       <br>Lütfen aşağıdan olası eşleştirmelerin listelerini seçin,
     [% ELSE %]
-      [% terms.Bugzilla %] ne zaman bir isim veya kısmî bir eposta adresi girseniz sizden onay isteyecek şekilde yapılandırılmış durumda.
+      [% terms.Bugzilla %] ne zaman bir isim veya kısmî bir e-posta adresi girseniz sizden onay isteyecek şekilde yapılandırılmış durumda.
       <br>Aşağıda, girdiğiniz isim ve adresleri ve eşleşen hesapları görebilirsiniz.
       Lütfen doğru olduklarını onaylayın,
     [% END %]
@@ -67,8 +67,8 @@
 [% ELSE %]
   [% PROCESS global/header.html.tmpl title="Eşleştirme Başarısız Oldu" %]
   <p>
-    [% terms.Bugzilla %] girdiğiniz isim ve/veya eposta adreslerinin en az biri için herhangi bir eşleştirme yapamadı.<br>
-    Lütfen geri gidin ve başka isimler veya eposta adresleri deneyin.
+    [% terms.Bugzilla %] girdiğiniz isim ve/veya e-posta adreslerinin en az biri için herhangi bir eşleştirme yapamadı.<br>
+    Lütfen geri gidin ve başka isimler veya e-posta adresleri deneyin.
   </p>
 [% END %]
 
@@ -96,7 +96,7 @@
                     <font color="#FF0000">
                       birden fazla kullanıcıyla eşleşiyor.
                     </font>
-                    Lütfen geri gidip daha belirgin isim veya eposta adresleriyle deneyin.
+                    Lütfen geri gidip daha belirgin isim veya e-posta adresleriyle deneyin.
                   [% ELSE %]
                     [% IF query.value.status == 'trunc' %]
                       en fazla [% query.value.users.size %] adet eşleme olabilir ve bu durumda daha fazla kullanıcıyla eşleşti:<br>

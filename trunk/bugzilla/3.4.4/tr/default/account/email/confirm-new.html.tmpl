@@ -20,13 +20,13 @@
   # expiration_ts: expiration date of the token.
   #%]
 
-[% title = BLOCK %]'[% email FILTER html %]' eposta adresiyle yeni bir kullanıcı hesabı oluştur[% END %]
+[% title = BLOCK %]'[% email FILTER html %]' e-posta adresiyle yeni bir kullanıcı hesabı oluştur[% END %]
 [% PROCESS "global/header.html.tmpl"
            title = title
            onload = "document.forms['confirm_account_form'].realname.focus();" %]
 
 <div>
-  Hesabınızı oluşturmak için, aşağıdaki forma bir parola girmelisiniz. Yaptığınız değişikliklerle birlikte eposta adresiniz ve gerçek adınız (eğer girerseniz) gösterilecektir.
+  Hesabınızı oluşturmak için, aşağıdaki forma bir parola girmelisiniz. Yaptığınız değişikliklerle birlikte e-posta adresiniz ve gerçek adınız (eğer girerseniz) gösterilecektir.
 </div>
 
 <form id="confirm_account_form" method="post" action="token.cgi">
@@ -61,7 +61,7 @@
 </p>
 
 <p>
-Eğer bu eposta adresini kullanarak bir hesap oluşturmak istemiyorsanız aşağıdaki <i>İptal Et</i> düğmesine basarsanız hakkınızdaki bilgiler sistemden silinecektir.
+Eğer bu e-posta adresini kullanarak bir hesap oluşturmak istemiyorsanız aşağıdaki <i>İptal Et</i> düğmesine basarsanız hakkınızdaki bilgiler sistemden silinecektir.
 </p>
 
 <form id="cancel_account_form" method="post" action="token.cgi">

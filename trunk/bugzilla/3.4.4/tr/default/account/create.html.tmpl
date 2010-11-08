@@ -39,20 +39,20 @@
 <p>
   Bir [% terms.Bugzilla %] hesabı oluşturmak için tek yapmanız gereken
 [% IF Param('emailsuffix') == '' %]
-  geçerli bir eposta adresi
+  geçerli bir e-posta adresi
 [% ELSE %]
-    [% Param('emailsuffix') %] ile birleştirildiğinde size ait bir eposta adresi oluşturan bir hesap adı
+    [% Param('emailsuffix') %] ile birleştirildiğinde size ait bir e-posta adresi oluşturan bir hesap adı
 [% END %]
 
 girmektir.
- Hesabınızın oluşturulması işlemini onaylamak için bu adrese bir eposta göndereceğiz.
+ Hesabınızın oluşturulması işlemini onaylamak için bu adrese bir e-posta göndereceğiz.
  <b>Epostayı alana kadar oturum açamazsınız.</b>
  Eposta makul bir sürede gelmezse, bu [% terms.Bugzilla %] kurulumunun bakımcısına <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> adresinden ulaşabilirsiniz.
 </p>
 
 [% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
 <p>
-<b>GİZLİLİK NOTU:</b> [% terms.Bugzilla %] açık bir [% terms.bug %] takip sistemidir. Eposta adresleri de dahil [% terms.bugs %]daki bir çok işlem başkaları tarafından görülebilir. Asıl eposta adresinize spam eposta gelmesini engellemek için Gmail, Yahoo, Hotmail veya benzeri bir web eposta servisi ya da ikinci bir eposta hesabı kullanmanızı <b>öneririz</b>.
+<b>GİZLİLİK NOTU:</b> [% terms.Bugzilla %] açık bir [% terms.bug %] takip sistemidir. Eposta adresleri de dahil [% terms.bugs %]daki bir çok işlem başkaları tarafından görülebilir. Asıl e-posta adresinize spam e-posta gelmesini engellemek için Gmail, Yahoo, Hotmail veya benzeri bir web e-posta servisi ya da ikinci bir e-posta hesabı kullanmanızı <b>öneririz</b>.
 </p>
 [% END %]
 

@@ -49,8 +49,8 @@
 
   [% ELSIF error == "auth_invalid_email" %]
   [% title = "Geçersiz Eposta Adresi" %]
-  Hesabınızı oluşturmaya veya güncellemeye çalışırken aldığımız eposta adresi (<b>[% addr FILTER html %]</b>)
-  geçerli eposta adresi testlerimizden geçemedi.
+  Hesabınızı oluşturmaya veya güncellemeye çalışırken aldığımız e-posta adresi (<b>[% addr FILTER html %]</b>)
+  geçerli e-posta adresi testlerimizden geçemedi.
 
     [% IF default %]
     Geçerli bir adreste sadece bir tane '@' olabilir ve '@' işaretinden sonra en az bir '.' olmalıdır.
@@ -119,11 +119,11 @@
     Her çerezin bir değeri olmalıdır.
 
   [% ELSIF error == "env_no_email" %]
-  [% terms.Bugzilla %] çevreden bir eposta adresi alamadı.
+  [% terms.Bugzilla %] çevreden bir e-posta adresi alamadı.
     [% IF Param("auth_env_email") %]
     Bu, '[% Param("auth_env_email") FILTER html %]' çevre değişkeninin ya boş olduğu ya da olmadığı anlamına gelir.
     [% ELSE %]
-      "auth_env_email" parametresine kullanıcının eposta adresini içerecek olan çevre değişkeninin adını yazmalısınız.
+      "auth_env_email" parametresine kullanıcının e-posta adresini içerecek olan çevre değişkeninin adını yazmalısınız.
     [% END %]
 
   [% ELSIF error == "extension_invalid" %]
@@ -290,7 +290,7 @@
 
   [% ELSIF error == "mail_send_error" %]
    '[% mail.header('From') FILTER html %]' adresinden
-   '[% mail.header('To') FILTER html %]' adresine eposta gönderilemedi:
+   '[% mail.header('To') FILTER html %]' adresine e-posta gönderilemedi:
     [% msg FILTER html %]
 
   [% ELSIF error == "missing_bug_id" %]
