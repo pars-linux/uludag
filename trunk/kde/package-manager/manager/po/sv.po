@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-05 08:27+0200\n"
+"POT-Creation-Date: 2010-11-08 10:50+0200\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -66,34 +66,63 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "patrik@trixon.se"
 
-#: src/basketdialog.py:58 src/mainwidget.py:304 src/mainwidget.py:309
+#: src/basketdialog.py:58 src/mainwidget.py:280 src/mainwidget.py:285
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Pisi-fel"
 
-#: src/basketdialog.py:154
+#: src/basketdialog.py:153
 msgid "Do you want to continue ?"
 msgstr "Vill du fortsätta?"
 
 #: src/basketdialog.py:166
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
+#, fuzzy
+msgid "You must restart your system for the updates to take effect"
 msgstr "Du måste <b>starta om</b> ditt system för att uppdatering av följande paket skall träda i kraft:"
 
-#: src/basketdialog.py:168 src/basketdialog.py:175
+#: src/basketdialog.py:168 src/basketdialog.py:176
 msgid "Update Requirements"
 msgstr "Uppdateringskrav"
 
-#: src/basketdialog.py:173
-msgid "You must restart following system services for the updated package(s) to take effect:"
+#: src/basketdialog.py:169
+msgid "Packages Require System Restart"
+msgstr ""
+
+#: src/basketdialog.py:174
+#, fuzzy
+msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Du måste starta om följande systemtjänster för att uppdateringen skall träda i kraft:"
 
-#: src/basketdialog.py:185
+#: src/basketdialog.py:177
+msgid "Packages Require Service Restart"
+msgstr ""
+
+#: src/basketdialog.py:187
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Valda paket anses kritiska för systemet.Att ta bort dem kan göra ditt system oanvändbart."
 
-#: src/basketdialog.py:188 src/settingsdialog.py:161
+#: src/basketdialog.py:190 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Varning"
+
+#: src/basketdialog.py:191
+#, fuzzy
+msgid "Critical Packages"
+msgstr "Tar bort paket"
+
+#: src/basketdialog.py:202
+#, fuzzy
+msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
+msgstr "Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte installeras tillsammans."
+
+#: src/basketdialog.py:204
+#, fuzzy
+msgid "Already Installed Packages"
+msgstr "Installerade paket"
+
+#: src/basketdialog.py:205 src/mainwindow.py:146 src/mainwindow.py:149
+msgid "Installed Packages"
+msgstr "Installerade paket"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -107,44 +136,44 @@ msgstr "Handbok Pakethanteraren"
 msgid "Show main window"
 msgstr "Visa huvudfönster"
 
-#: src/mainwidget.py:238
+#: src/mainwidget.py:214
 msgid "Searching..."
 msgstr "Söker..."
 
-#: src/mainwidget.py:250
+#: src/mainwidget.py:226
 msgid "No results found."
 msgstr "Inga träffar."
 
-#: src/mainwidget.py:298
+#: src/mainwidget.py:274
 msgid "Network Error"
 msgstr "Nätverksfel"
 
-#: src/mainwidget.py:299
+#: src/mainwidget.py:275
 msgid "Please check your network connections and try again."
 msgstr "Kontrollera din nätverksanslutning och försök igen."
 
-#: src/mainwidget.py:301
+#: src/mainwidget.py:277
 msgid "Authorization Error"
 msgstr "Auktoriseringsfel"
 
-#: src/mainwidget.py:302
+#: src/mainwidget.py:278
 msgid "You are not authorized for this operation."
 msgstr "Du har inte behörighet till den här åtgärden."
 
-#: src/mainwidget.py:305
+#: src/mainwidget.py:281
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paketet finns ej. Det kan vara uppdaterat i, eller borttaget ur, förrådet. Försök att uppdatera förrådsinformationen."
 
-#: src/mainwidget.py:445
+#: src/mainwidget.py:421
 msgid "All Updates"
 msgstr "Alla uppdateringar"
 
-#: src/mainwidget.py:446
+#: src/mainwidget.py:422
 msgid "Security Updates"
 msgstr "Säkerhetsuppdateringar"
 
-#: src/mainwidget.py:447
+#: src/mainwidget.py:423
 msgid "Critical Updates"
 msgstr "Kritiska uppdateringar"
 
@@ -155,10 +184,6 @@ msgstr "Alla paket"
 #: src/mainwindow.py:140 src/mainwindow.py:143
 msgid "Installable Packages"
 msgstr "Installerbara paket"
-
-#: src/mainwindow.py:146 src/mainwindow.py:149
-msgid "Installed Packages"
-msgstr "Installerade paket"
 
 #: src/mainwindow.py:152 src/mainwindow.py:155
 msgid "Upgradable Packages"
@@ -287,145 +312,145 @@ msgstr "Ogiltigt förrådsnamn"
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
 
-#: src/statemanager.py:84
+#: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
 msgstr "Installerar paket"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:86
 msgid "Removing Package(s)"
 msgstr "Tar bort paket"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:87
 msgid "Upgrading Package(s)"
 msgstr "Uppdaterar paket"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:88
 msgid "Applying Repository Changes"
 msgstr "Tillämpar förrådsändringar"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:89
 msgid "Updating Repository"
 msgstr "Uppdaterar förråd"
 
-#: src/statemanager.py:89
+#: src/statemanager.py:90
 msgid "Updating Repository(s)"
 msgstr "Uppdaterar förråd"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:93
 msgid "installed"
 msgstr "installerade"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:94
 msgid "removed"
 msgstr "borttagna"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:95
 msgid "upgraded"
 msgstr "uppdaterade"
 
-#: src/statemanager.py:95
+#: src/statemanager.py:96
 msgid "modified"
 msgstr "ändrad"
 
-#: src/statemanager.py:99 ui/ui_basketdialog.py:181
+#: src/statemanager.py:100 ui/ui_basketdialog.py:181
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:183
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
 msgstr "Installera paket"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:101
 msgid "Remove Package(s)"
 msgstr "Ta bort paket"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:102
 msgid "Upgrade Package(s)"
 msgstr "Uppdatera paket"
 
-#: src/statemanager.py:102
+#: src/statemanager.py:103
 msgid "Modify Package(s)"
 msgstr "Ändrade paket"
 
-#: src/statemanager.py:112
+#: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 paket har installerats framgångsrikt."
 
-#: src/statemanager.py:113
+#: src/statemanager.py:114
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 paket har tagits bort."
 
-#: src/statemanager.py:114
+#: src/statemanager.py:115
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 paket har uppdaterats."
 
-#: src/statemanager.py:115
+#: src/statemanager.py:116
 msgid "%1 package(s) have been modified succesfully."
 msgstr "%1 paket har ändrats framgångsrikt."
 
-#: src/statemanager.py:118
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to install:"
 msgstr "Du har markerat följande paket för installation:"
 
-#: src/statemanager.py:119
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to removal:"
 msgstr "Du har markerat följande paket för borttagning:"
 
-#: src/statemanager.py:120
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Du har markerat följande paket för uppdatering:"
 
-#: src/statemanager.py:121
+#: src/statemanager.py:122
 msgid "You have selected the following package(s) to modify:"
 msgstr "Du har markerat följande paket för ändring:"
 
-#: src/statemanager.py:124 ui/ui_basketdialog.py:178
+#: src/statemanager.py:125 ui/ui_basketdialog.py:178
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Extra beroenden för valda paket som också kommer att installeras:"
 
-#: src/statemanager.py:125
+#: src/statemanager.py:126
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Omvända beroenden för markerade paket kommer också att tas bort:"
 
-#: src/statemanager.py:126
+#: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Extra beroenden för markerade paket som också kommer att uppdateras:"
 
-#: src/statemanager.py:127
+#: src/statemanager.py:128
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Extra beroenden för markerade paket som också kommer att ändras:"
 
-#: src/statemanager.py:164
+#: src/statemanager.py:165
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "För närvarande är <b>%1</b> paket valda om <b>%2</b> "
 
-#: src/statemanager.py:167
+#: src/statemanager.py:168
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> omvända beroenden om <b>%2</b> "
 
-#: src/statemanager.py:169
+#: src/statemanager.py:170
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> extra beroenden om <b>%2</b> "
 
-#: src/statemanager.py:170
+#: src/statemanager.py:171
 msgid "in your basket."
 msgstr "i din korg."
 
-#: src/statemanager.py:194
+#: src/statemanager.py:199
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte installeras tillsammans."
 
-#: src/statemanager.py:195 src/statemanager.py:203
+#: src/statemanager.py:200 src/statemanager.py:208
 msgid "Conflict Error"
 msgstr "Konfliktfel"
 
-#: src/statemanager.py:199
+#: src/statemanager.py:204
 msgid "The following packages conflicts:\n"
 msgstr "Följande paket står i konflikt:\n"
 
-#: src/statemanager.py:201
+#: src/statemanager.py:206
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 i konflikt med: [%2]\n"
 
-#: src/statemanager.py:202
+#: src/statemanager.py:207
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -449,7 +474,7 @@ msgstr "Ignorera"
 msgid "Show Updates"
 msgstr "Visa uppdateringar"
 
-#: src/webdialog.py:88 ui/ui_webdialog.py:162
+#: src/webdialog.py:104 ui/ui_webdialog.py:167
 #, fuzzy
 msgid "Package Files"
 msgstr "Paketlista"
@@ -466,7 +491,7 @@ msgstr "Webbläsare"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:160 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:176 ui/ui_webdialog.py:164 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr "Korg"
 
@@ -490,23 +515,23 @@ msgstr "Hämtningsstorlek:"
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:175
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:176
 #: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
 #: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:189
 msgid "Form"
 msgstr "Form"
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:180
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:181
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
 msgstr "Kategoripanel"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:177
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:178
 #: ui/ui_mainwidget_x11.py:78
 msgid "Search Bar"
 msgstr "Sökfält"
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:178
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:179
 #: ui/ui_mainwidget_x11.py:79
 msgid "Click to search"
 msgstr "Sök"
@@ -527,23 +552,19 @@ msgstr "Åtgärdsknapp"
 msgid "Toggler for selection all packages in Package List"
 msgstr "Växlare för paketval"
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:181
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:182
 #: ui/ui_mainwidget_x11.py:86
 msgid "Package List"
 msgstr "Paketlista"
 
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:179
+#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:180
 #: ui/ui_mainwidget_x11.py:87
 msgid "Update Types"
 msgstr "Uppdateringstyper"
 
-#: ui/ui_mainwidget_v3.py:176
+#: ui/ui_mainwidget_v3.py:177
 msgid "Settings"
 msgstr "Inställningar"
-
-#: ui/ui_mainwidget_v3.py:182
-msgid "History KCM will be here."
-msgstr ""
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -794,12 +815,16 @@ msgstr "Du kan starta det nyinstallerade programmet genom att dubbelklicka på d
 msgid "&Ok"
 msgstr "&Ok"
 
-#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:165
+#: ui/ui_webdialog.py:165 ui/ui_webdialog.py:170
 #, fuzzy
 msgid "Package Details"
 msgstr "Paketlista"
 
-#: ui/ui_webdialog.py:163
+#: ui/ui_webdialog.py:166
+msgid "Type to filter files"
+msgstr ""
+
+#: ui/ui_webdialog.py:168
 #, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
@@ -810,11 +835,89 @@ msgstr "Kontrollera din nätverksanslutning och försök igen."
 msgid "Close"
 msgstr ""
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Visa installerade paket"
 
-#~ msgid "Removing important packages"
-#~ msgstr "Tar bort paket"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
+
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Cachetömning"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
+
+#~ msgid "Updates"
+#~ msgstr "Uppdateringar"
+
+#~ msgid "Quit"
+#~ msgstr "Avsluta"
+
+#~ msgid "Help"
+#~ msgstr "Hjälp"
+
+#~ msgid "File"
+#~ msgstr "Arkiv"
+
+#~ msgid "All Packages are up to date"
+#~ msgstr "Alla paket är uppdaterade"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -829,86 +932,11 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "All Packages are up to date"
-#~ msgstr "Alla paket är uppdaterade"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "File"
-#~ msgstr "Arkiv"
-
-#~ msgid "Help"
-#~ msgstr "Hjälp"
-
-#~ msgid "Quit"
-#~ msgstr "Avsluta"
-
-#~ msgid "Updates"
-#~ msgstr "Uppdateringar"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
-
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
-
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cachetömning"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
-
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Visa installerade paket"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installerade paket"
