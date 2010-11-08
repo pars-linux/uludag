@@ -57,6 +57,8 @@ class RowAnimator(object):
         self.timeLine.setDirection(QTimeLine.Backward)
 
     def animate(self, row, reverseOld = False):
+        if self.timeLine.state() == QTimeLine.Running:
+            return
         if self.row >= 0:
             if not self.row == row:
                 self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
