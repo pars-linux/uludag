@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="dvd" compression="gzip">
     <Title>DVD-TEST</Title>
     <WorkDir>/tmp/CD-image/iso</WorkDir>
-    <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
+    <ReleaseFiles>~/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>yali=dvdinstall</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
