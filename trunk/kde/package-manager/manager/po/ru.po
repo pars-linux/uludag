@@ -139,7 +139,6 @@ msgid "Show main window"
 msgstr "Показать главное окно"
 
 #: src/mainwidget.py:137
-#, fuzzy
 msgid "All packages are up to date"
 msgstr "Все пакеты в курсе"
 
