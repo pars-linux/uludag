@@ -1,6 +1,6 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
     <Title>Pardus Corporate 2 Alpha 3 x86_64</Title>
-    <WorkDir>/tmp/pardusman-workdir/x86_64</WorkDir>
+    <WorkDir>/tmp/iso/x86_64</WorkDir>
     <ReleaseFiles>/home/ozan/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash=silent</ExtraParameters>
     <PackageSelection repo_uri="http://192.168.3.141/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
