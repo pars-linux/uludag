@@ -13,8 +13,9 @@
 
 import os
 import re
-import piksemel
 import hashlib
+import platform
+import piksemel
 
 import packages
 from repotools.packages import PackageCollection, PackageSet
@@ -23,14 +24,16 @@ from repotools.packages import PackageCollection, PackageSet
 def _(x):
     return x
 
-# FIXME: Python version is hardcoded!
+# Find out python version
+python_dict = {'python_ver' : ".".join(platform.python_version_tuple()[0:2])}
+
 default_live_exclude_list = """
 lib/rcscripts/
-usr/lib/python2.7/lib-tk/
-usr/lib/python2.7/idlelib/
-usr/lib/python2.7/bsddb/test/
-usr/lib/python2.7/lib-old/
-usr/lib/python2.7/test/
+usr/lib/python%(python_ver)s/lib-tk/
+usr/lib/python%(python_ver)s/idlelib/
+usr/lib/python%(python_ver)s/bsddb/test/
+usr/lib/python%(python_ver)s/lib-old/
+usr/lib/python%(python_ver)s/test/
 usr/lib/klibc/include/
 usr/share/aclocal/
 usr/share/info/
@@ -47,29 +50,28 @@ tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
 root/.bash_history
-"""
+""" % python_dict
 
-# FIXME: Python version is hardcoded!
 default_install_exclude_list = """
 lib/rcscripts/
 usr/lib/cups/
-usr/lib/python2.7/lib-tk/
-usr/lib/python2.7/idlelib/
-usr/lib/python2.7/distutils/
-usr/lib/python2.7/bsddb/test/
-usr/lib/python2.7/lib-old/
-usr/lib/python2.7/test/
-usr/lib/python2.7/site-packages/PyQt4/QtAssistant.so
-usr/lib/python2.7/site-packages/PyQt4/QtDesigner.so
-usr/lib/python2.7/site-packages/PyQt4/QtHelp.so
-usr/lib/python2.7/site-packages/PyQt4/QtNetwork.so
-usr/lib/python2.7/site-packages/PyQt4/QtOpenGL.so
-usr/lib/python2.7/site-packages/PyQt4/QtScript.so
-usr/lib/python2.7/site-packages/PyQt4/QtSql.so
-usr/lib/python2.7/site-packages/PyQt4/QtTest.so
-usr/lib/python2.7/site-packages/PyQt4/QtWebKit.so
-usr/lib/python2.7/site-packages/PyQt4/QtXml.so
-usr/lib/python2.7/site-packages/PyQt4/QtXmlPatterns.so
+usr/lib/python%(python_ver)s/lib-tk/
+usr/lib/python%(python_ver)s/idlelib/
+usr/lib/python%(python_ver)s/distutils/
+usr/lib/python%(python_ver)s/bsddb/test/
+usr/lib/python%(python_ver)s/lib-old/
+usr/lib/python%(python_ver)s/test/
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtAssistant.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtDesigner.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtHelp.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtNetwork.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtOpenGL.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtScript.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtSql.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtTest.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtWebKit.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtXml.so
+usr/lib/python%(python_ver)s/site-packages/PyQt4/QtXmlPatterns.so
 usr/lib/klibc/include/
 usr/lib/syslinux/
 usr/share/aclocal/
@@ -91,11 +93,11 @@ tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
 root/.bash_history
-"""
+""" % python_dict
 
 default_install_glob_excludes = (
-    ( "usr/lib/python2.7/", "*.pyc" ),
-    ( "usr/lib/python2.7/", "*.pyo" ),
+    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyc" ),
+    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -130,8 +132,8 @@ default_install_glob_excludes = (
 )
 
 default_live_glob_excludes = (
-    ( "usr/lib/python2.7/", "*.pyc" ),
-    ( "usr/lib/python2.7/", "*.pyo" ),
+    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyc" ),
+    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -229,7 +231,6 @@ class Project:
         self.work_dir = doc.getTagData("WorkDir")
         if not self.work_dir:
             self.work_dir = ""
-
 
         def __packageSelection(node):
             # Fill in the packages
