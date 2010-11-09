@@ -26,7 +26,7 @@ def _(x):
 
 # Find out python version
 python_dict = { 'python_ver' : ".".join(platform.python_version_tuple()[0:2]),
-                'qt_dir'     : "%s" % os.popen("pkg-config QtCore --variable").read().lstrip("/"),
+                'qt_dir'     : "%s" % os.popen("pkg-config QtCore --variable=prefix").read().lstrip("/"),
               }
 
 default_live_exclude_list = """
@@ -447,6 +447,7 @@ class Project:
         else:
             temp = default_live_exclude_list.split()
             _glob_exclude(temp, default_live_glob_excludes)
+        print "\n".join(temp)
         return temp
 
     def _get_dir(self, name, clean=False):
