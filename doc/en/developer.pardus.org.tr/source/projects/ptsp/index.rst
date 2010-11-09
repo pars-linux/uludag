@@ -83,7 +83,7 @@ List of options for creating rootfs::
 Preparing Server
 ----------------
 
-First of all install *"dhcp"*, *"tftp"*, *"perl-X11-Protocol"*, *"ptsp-server"* packages on the server. As all these packages are dependent on *"ptsp-server"*, installing only this will cause all others to be installed. After installing required packages, apply following settings on the server:
+First of all install *"dhcp"*, *"tftp"*, *"perl-X11-Protocol"*, *"xdg-user-dirs"*, *"ptsp-server"* packages on the server. As all these packages are dependent on *"ptsp-server"*, installing only this will cause all others to be installed. After installing required packages, apply following settings on the server:
 
 [#first]_ **Configuring DHCP Server**
     
@@ -157,12 +157,16 @@ Running Server
 Features
 --------
 
----
+* Easy to set up a thin client workspace environment.
+
+* Lowered management load.
 
 Requirements
 ------------
 
----
+* On the server, you need to install *"dhcp"*, *"tftp"*, *"ltspfs"*, *"perl-X11-Protocol"*, *"xdg-user-dirs"* and *"ptsp-server"* packages. As *"ptsp-server"* package depends rest of all, installing just that package will be enough.
+
+* On thin clients you don't need to install any extra software. In your BIOS settings, just setup your thin clients to boot from LAN (default they might be so).
 
 Bugs
 ----
