@@ -98,7 +98,6 @@ msgid "You must restart related system services for the updated package(s) to ta
 msgstr "Вы должны перезагрузить следующие службы, чтобы обновления вступили в силу:"
 
 #: src/basketdialog.py:188
-#, fuzzy
 msgid "Packages Require Service Restart"
 msgstr "Пакеты требуют перезапуска службы"
 
@@ -111,12 +110,10 @@ msgid "Warning"
 msgstr "Предупреждение"
 
 #: src/basketdialog.py:202
-#, fuzzy
 msgid "Critical Packages"
 msgstr "Удаление пакета (ов)"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Выбранные пакеты [%1] конфликтуют друг с другом. Они не могут быть установлены вместе."
 
