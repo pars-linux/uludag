@@ -192,6 +192,9 @@
                 <SelectedPackage>ktorrent</SelectedPackage>
                 <SelectedPackage>kwin-crystal-style</SelectedPackage>
                 <SelectedPackage>liberation-fonts</SelectedPackage>
+                <SelectedPackage>libkcddb</SelectedPackage>
+                <SelectedPackage>libkaudiocd</SelectedPackage>
+                <SelectedPackage>libkcompactdisc</SelectedPackage>
                 <SelectedPackage>libreoffice</SelectedPackage>
                 <SelectedPackage>libreoffice-extension-pdfimport</SelectedPackage>
                 <SelectedPackage>libreoffice-extension-presentation-minimizer</SelectedPackage>
