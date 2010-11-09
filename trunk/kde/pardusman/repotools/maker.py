@@ -606,7 +606,8 @@ def make_iso(project):
             run('rm -rf "%s/.svn"' % os.path.join(iso_dir, dest))
 
         if project.release_files:
-            path = project.release_files
+            # Allow ~ usage in project xml files
+            path = os.path.expanduser(project.release_files)
             for name in os.listdir(path):
                 if name != ".svn":
                     copy(os.path.join(path, name), name)

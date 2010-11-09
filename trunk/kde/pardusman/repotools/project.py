@@ -25,7 +25,9 @@ def _(x):
     return x
 
 # Find out python version
-python_dict = {'python_ver' : ".".join(platform.python_version_tuple()[0:2])}
+python_dict = { 'python_ver' : ".".join(platform.python_version_tuple()[0:2]),
+                'qt_dir'     : "%s" % os.popen("pkg-config QtCore --variable").read().lstrip("/"),
+              }
 
 default_live_exclude_list = """
 lib/rcscripts/
@@ -106,29 +108,29 @@ default_install_glob_excludes = (
     ( "lib/", "*.la" ),
     ( "var/db/comar/", "__db*" ),
     ( "var/db/comar/", "log.*" ),
-    ( "usr/lib/", "libphononexperimental.so*" ),
-    ( "usr/lib/", "libphonon.so*" ),
-    ( "usr/lib/", "libqca.so*" ),
-    ( "usr/lib/", "libQt3Support.so*" ),
-    ( "usr/lib/", "libQtAssistantClient.so*" ),
-    ( "usr/lib/", "libQtCLucene.so*" ),
-    ( "usr/lib/", "libQtDBus.so*" ),
-    ( "usr/lib/", "libQtDesignerComponents.so*" ),
-    ( "usr/lib/", "libQtDesigner.so*" ),
-    ( "usr/lib/", "libQtHelp.so*" ),
-    ( "usr/lib/", "libQtMultimedia*" ),
-    ( "usr/lib/", "libQtNetwork.so*" ),
-    ( "usr/lib/", "libQtOpenGL.so*" ),
-    ( "usr/lib/", "libQtScript.so*" ),
-    ( "usr/lib/", "libQtScriptTools.so*" ),
-    ( "usr/lib/", "libQtSql.so*" ),
-    ( "usr/lib/", "libQtTapioca.so*" ),
-    ( "usr/lib/", "libQtTelepathyClient.so*" ),
-    ( "usr/lib/", "libQtTest.so*" ),
-    ( "usr/lib/", "libQtUiTools.so*" ),
-    ( "usr/lib/", "libQtWebKit.so*" ),
-    ( "usr/lib/", "libQtXmlPatterns.so*" ),
-    ( "usr/lib/", "libQtXml.so*" ),
+    ( "%(qt_dir)s/lib/", "libphononexperimental.so*" ),
+    ( "%(qt_dir)s/lib/", "libphonon.so*" ),
+    ( "%(qt_dir)s/lib/", "libqca.so*" ),
+    ( "%(qt_dir)s/lib/", "libQt3Support.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtAssistantClient.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtCLucene.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtDBus.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtDesignerComponents.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtDesigner.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtHelp.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtMultimedia*" ),
+    ( "%(qt_dir)s/lib/", "libQtNetwork.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtOpenGL.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtScript.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtScriptTools.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtSql.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtTapioca.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtTelepathyClient.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtTest.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtUiTools.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtWebKit.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtXmlPatterns.so*" ),
+    ( "%(qt_dir)s/lib/", "libQtXml.so*" ),
 )
 
 default_live_glob_excludes = (
@@ -224,7 +226,6 @@ class Project:
             self.plugin_package = ""
         if not self.release_files:
             self.release_files = doc.getTagData("ReleaseFiles")
-            #self.release_files = ""
         self.extra_params = doc.getTagData("ExtraParameters")
         if not self.extra_params:
             self.extra_params = ""
