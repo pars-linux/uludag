@@ -166,9 +166,9 @@ msgid "You are not authorized for this operation."
 msgstr "Вы не авторизованы для этой операции."
 
 #: src/mainwidget.py:298
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Пакет не найден. Он может быть обновлен или удален из базы. Пожалуйста, попробуйте обновить базу информации."
+msgstr "Пакет <b>%s</b>  не найден в репозитории. <br> Это могут быть обновлены или удалены из хранилища. <br> Пожалуйста, попробуйте обновить хранилище информации."
 
 #: src/mainwidget.py:437
 msgid "All Updates"
