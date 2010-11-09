@@ -116,6 +116,9 @@
         <SelectedPackage>ksplash-theme-pardus</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>kwin-crystal-style</SelectedPackage>
+        <SelectedPackage>libkcddb</SelectedPackage>
+        <SelectedPackage>libkaudiocd</SelectedPackage>
+        <SelectedPackage>libkcompactdisc</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>libreoffice</SelectedPackage>
         <SelectedPackage>libreoffice-extension-pdfimport</SelectedPackage>
