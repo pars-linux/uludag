@@ -481,7 +481,6 @@ msgid "Ignore"
 msgstr "Игнорировать"
 
 #: src/webdialog.py:104 ui/ui_webdialog.py:169
-#, fuzzy
 msgid "Package Files"
 msgstr "Список пакетов"
 
@@ -573,12 +572,10 @@ msgid "Settings"
 msgstr "Настройки"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
 msgstr "Basket"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
 msgstr "Показать обновления"
 
@@ -836,19 +833,16 @@ msgid "Package Details"
 msgstr "Список пакетов"
 
 #: ui/ui_webdialog.py:168
-#, fuzzy
 msgid "Type to filter files"
 msgstr "По типу файлов"
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
 msgstr "Проверьте сетевые подключения и повторите попытку."
 
 #: ui/ui_webdialog_v2.py:72
-#, fuzzy
 msgid "Close"
 msgstr "Закрыть"
 
