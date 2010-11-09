@@ -13,7 +13,7 @@
 
 import context as ctx
 
-version = "2.2.4"
+version = "2.2.5"
 
 if ctx.Pds.session == ctx.pds.Kde4:
     from PyKDE4.kdecore import ki18n, KAboutData

@@ -79,11 +79,6 @@
        <string/>
       </property>
      </item>
-     <item>
-      <property name="text">
-       <string>http://packages.pardus.org.tr/pardus/corporate2/stable/x86_64/pisi-index.xml.xz</string>
-      </property>
-     </item>
     </widget>
    </item>
   </layout>
