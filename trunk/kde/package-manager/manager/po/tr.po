@@ -144,7 +144,7 @@ msgstr "Ana pencereyi göster"
 
 #: src/mainwidget.py:137
 msgid "All packages are up to date"
-msgstr "Tüm Paketler güncel"
+msgstr "Tüm paketler güncel"
 
 #: src/mainwidget.py:224
 msgid "Searching..."
