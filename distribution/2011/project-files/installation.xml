@@ -167,8 +167,8 @@
                 <SelectedPackage>kdebase-wallpapers</SelectedPackage>
                 <SelectedPackage>kdebase-workspace</SelectedPackage>
                 <SelectedPackage>kdebase-workspace-doc</SelectedPackage>
+                <SelectedPackage>kdeedu-marble</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
-                <SelectedPackage>kdemultimedia</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdenlive</SelectedPackage>
                 <SelectedPackage>kdepim</SelectedPackage>
@@ -183,8 +183,10 @@
                 <SelectedPackage>kernel-module-headers</SelectedPackage>
                 <SelectedPackage>kfax</SelectedPackage>
                 <SelectedPackage>kmozillahelper</SelectedPackage>
+                <SelectedPackage>kmix</SelectedPackage>
                 <SelectedPackage>konqueror-plugins</SelectedPackage>
                 <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
+                <SelectedPackage>kde-thumbnailer-ffmpeg</SelectedPackage>
                 <SelectedPackage>krename</SelectedPackage>
                 <SelectedPackage>ksplash-theme-pardus</SelectedPackage>
                 <SelectedPackage>ktorrent</SelectedPackage>
@@ -809,6 +811,9 @@
                 <Package>libindicate-qt</Package>
                 <Package>libiodbc</Package>
                 <Package>libkate</Package>
+                <Package>libkcddb</Package>
+                <Package>libkaudiocd</Package>
+                <Package>libkcompactdisc</Package>
                 <Package>libkms</Package>
                 <Package>libksba</Package>
                 <Package>libktorrent</Package>

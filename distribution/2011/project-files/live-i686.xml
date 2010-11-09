@@ -88,6 +88,7 @@
         <SelectedPackage>kde-l10n-sv</SelectedPackage>
         <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
+        <SelectedPackage>kde-thumbnailer-ffmpeg</SelectedPackage>
         <SelectedPackage>kde-wacom-tablet</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
@@ -100,7 +101,6 @@
         <SelectedPackage>kdebase-sounds</SelectedPackage>
         <SelectedPackage>kdebase-wallpapers</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
-        <SelectedPackage>kdemultimedia</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdenlive</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
@@ -111,6 +111,7 @@
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>kfax</SelectedPackage>
         <SelectedPackage>kmozillahelper</SelectedPackage>
+        <SelectedPackage>kmix</SelectedPackage>
         <SelectedPackage>konqueror-plugins</SelectedPackage>
         <SelectedPackage>ksplash-theme-pardus</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
@@ -671,6 +672,9 @@
         <Package>libimobiledevice</Package>
         <Package>libiodbc</Package>
         <Package>libkate</Package>
+        <Package>libkcddb</Package>
+        <Package>libkaudiocd</Package>
+        <Package>libkcompactdisc</Package>
         <Package>libkms</Package>
         <Package>libksba</Package>
         <Package>libktorrent</Package>
