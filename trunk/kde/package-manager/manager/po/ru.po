@@ -118,7 +118,6 @@ msgid "Selected packages are already installed.<br>If you continue, the packages
 msgstr "Выбранные пакеты [%1] конфликтуют друг с другом. Они не могут быть установлены вместе."
 
 #: src/basketdialog.py:215
-#, fuzzy
 msgid "Already Installed Packages"
 msgstr "Установленные пакеты"
 
