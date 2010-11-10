@@ -8,6 +8,8 @@
 # Standard modules
 import copy
 import simplejson
+import sys
+import traceback
 
 # Qt4 modules
 from PyQt4 import QtGui
@@ -343,6 +345,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             try:
                 self.directory.connect(dialog.get_host(), dialog.get_domain(), dialog.get_user(), dialog.get_password())
             except directory.DirectoryError:
+                traceback.print_exc()
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to connect to %s" % dialog.get_host())
@@ -427,17 +430,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 else:
                     arguments = None
             except Exception, e:
-                print e
                 arguments = None
-            print "---------"
-            print sender
-            print message
-            print arguments
-            print "----------"
             try:
                 widget.talk_message(sender, message, arguments)
             except Exception, e:
-                print e
+                pass
             except AttributeError:
                 pass
 
