@@ -38,6 +38,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
 
         self.connect(self.pushRefresh, QtCore.SIGNAL("clicked()"), self.__slot_refresh)
         self.connect(self.comboComputers, QtCore.SIGNAL("activated(int)"), self.__slot_select)
+        self.connect(self.comboServices, QtCore.SIGNAL("activated(int)"), self.__slot_select2)
 
     def showEvent(self, event):
         """
@@ -75,14 +76,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        print message, arguments
         if message == "apache.info":
-            if arguments == False:
-                self.webView.setHtml("Web server is not installed.")
-            elif arguments == True:
-                self.webView.setHtml("Web server is installed but not running.")
-            else:
-                self.webView.setUrl(QtCore.QUrl(arguments))
+            self.comboServices.clear()
+            self.comboServices.addItem("Select...")
+            for name, url in arguments.iteritems():
+                self.comboServices.addItem(name, QtCore.QVariant(url))
 
     def talk_status(self, sender, status):
         """
@@ -111,7 +109,19 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
         if index == 0:
             self.webView.setHtml("")
+            self.comboServices.clear()
+            self.comboServices.addItem("Select...")
         else:
             name = str(self.comboComputers.itemText(index))
             jid = "%s@%s" % (name, self.talk.domain)
             self.talk.send_command(jid, "apache.info")
+
+    def __slot_select2(self, index):
+        """
+            Triggered when users selects a computer.
+        """
+        if index == 0:
+            self.webView.setHtml("")
+        else:
+            url = self.comboServices.itemData(index).toString()
+            self.webView.setUrl(QtCore.QUrl(url))

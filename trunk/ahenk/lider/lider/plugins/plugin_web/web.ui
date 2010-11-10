@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Web Browser</string>
+   <string>Remote Web Services</string>
   </property>
   <property name="windowIcon">
    <iconset resource="web.qrc">
@@ -33,7 +33,7 @@
      </item>
     </widget>
    </item>
-   <item row="0" column="1">
+   <item row="0" column="2">
     <widget class="QPushButton" name="pushRefresh">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
@@ -46,13 +46,28 @@
      </property>
     </widget>
    </item>
-   <item row="1" column="0" colspan="2">
+   <item row="1" column="0" colspan="3">
     <widget class="QWebView" name="webView">
      <property name="url">
       <url>
        <string>about:blank</string>
       </url>
      </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="comboServices">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <item>
+      <property name="text">
+       <string>Select...</string>
+      </property>
+     </item>
     </widget>
    </item>
   </layout>
