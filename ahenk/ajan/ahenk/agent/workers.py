@@ -5,7 +5,6 @@
 """
 
 import logging
-from multiprocessing import Array
 import signal
 
 from ahenk.agent import bck_ldap
