@@ -291,6 +291,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
 
         painter.drawPixmap(option.rect.topLeft(), pixmap)
+        del pixmap
         painter.restore()
 
     def editorEvent(self, event, model, option, index):
