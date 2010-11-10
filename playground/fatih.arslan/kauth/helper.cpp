@@ -1,5 +1,8 @@
 #include "helper.h"
 #include <iostream>
+#include <QStringList>
+#include <QFile>
+#include <QDebug>
 
 ActionReply Helper::createReply(int code, const QVariantMap *returnData)
 {
@@ -19,14 +22,26 @@ ActionReply Helper::createReply(int code, const QVariantMap *returnData)
 }
 
 
-bool Helper::writeKeyboard(const QString &variants, const QString &layouts)
+bool Helper::writeKeyboard(const QString &layouts, const QString &variants)
 {
-    QString hede;
-    QString hodo;
+    QFile file("/etc/X11/xorg.conf.d/00-configured-keymap.conf");
 
-    hede = variants;
-    hodo = layouts;
+    qDebug() << layouts;
+    qDebug() << variants;
 
+    if (!file.exists()) {
+        qDebug() << "The file does not exist";
+        return 0;
+    }
+    // It exists, open it
+    if( !file.open( QIODevice::ReadOnly ) )
+    {
+        qDebug() << "Failed to open.";
+        return 0;
+    }
+
+    // It opened, now we need to close it
+    file.close();
 
     return true;
 }
@@ -35,10 +50,10 @@ ActionReply Helper::managekeyboard(QVariantMap args)
 {
     int code = 0;
 
-    QString a = args.value("layout").toString();
-    QString b = args.value("variant").toString();
+    QString layouts = args.value("layouts").toString();
+    QString variants = args.value("variants").toString();
 
-    writeKeyboard(a,b);
+    writeKeyboard(layouts,variants);
     return createReply(code);
 }
 

@@ -164,11 +164,16 @@ void KeyboardConfig::saveSystemWide()
     }*/
 
     QVariantMap helperargs;
-    QString a = "Fatih";
-    QString b = "Arslan";
-    helperargs["layout"] = a;
-    helperargs["variant"] = b;
+    QStringList layoutList;
+    QStringList variantList;
 
+    foreach(const LayoutUnit& layoutUnit, layouts) {
+    	layoutList.append(layoutUnit.layout);
+    	variantList.append(layoutUnit.variant);
+    }
+
+    helperargs["layouts"] = layoutList.join(LIST_SEPARATOR);
+    helperargs["variants"] = variantList.join(LIST_SEPARATOR);
 
     executeLayoutAction(helperargs);
 }
