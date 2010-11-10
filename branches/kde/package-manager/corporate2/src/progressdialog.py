@@ -11,11 +11,13 @@
 # Please read the COPYING file
 
 from PyQt4 import QtGui
+from PyQt4.QtCore import QSize
 from PyQt4.QtCore import SIGNAL
 
 from context import *
 
 from ui_progressdialog import Ui_ProgressDialog
+from pds.qprogressindicator import QProgressIndicator
 import backend
 
 class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
@@ -25,20 +27,20 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.state = state
         self.setupUi(self)
         self.setModal(True)
-        self.startAnimation()
+
+        self.busy = QProgressIndicator(self)
+        self.busy.setFixedSize(QSize(22, 22))
+        self.titleLayout.addWidget(self.busy)
+
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def show(self):
-        self.movie.start()
+        self.busy.busy()
         QtGui.QDialog.show(self)
 
     def hide(self):
-        self.movie.stop()
+        self.busy.hide()
         QtGui.QDialog.hide(self)
-
-    def startAnimation(self):
-        self.movie = QtGui.QMovie(":/data/pisianime.mng")
-        self.animeLabel.setMovie(self.movie)
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
@@ -56,7 +58,10 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.operationInfo.setText(operationInfo)
 
     def updateStatus(self, packageNo, totalPackages, operation):
-        self.statusInfo.setText(i18n("%1 / %2 package %3", packageNo, totalPackages, operation))
+        if packageNo > 0:
+            self.statusInfo.setText(i18n("%1 / %2 package %3", packageNo, totalPackages, operation))
+        else:
+            self.statusInfo.setText('')
 
     def updateRemainingTime(self, time):
         self.timeRemaining.setText(time)
@@ -78,7 +83,6 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.progressBar.setValue(0)
         self.operationInfo.setText("")
         self.completedInfo.setText("")
-        self.statusLabel.setText(i18n("Status:"))
         self.statusInfo.setText(i18n("--  / --"))
         self.timeLabel.setText(i18n("Time remaining:"))
         self.timeRemaining.setText(i18n("--:--:--"))
@@ -90,6 +94,6 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.iface.cancel()
 
     def repoOperationView(self):
-        for widget in [self.statusLabel, self.statusInfo, self.timeLabel, self.timeRemaining]:
+        for widget in [self.statusInfo, self.timeLabel, self.timeRemaining]:
             widget.setText("")
         self.timeRemaining.hide()
