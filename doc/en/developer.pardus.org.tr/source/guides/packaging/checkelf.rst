@@ -1,14 +1,15 @@
-.. _checklib:
+.. _checkelf:
 
-Checklib
+checkelf
 ========
 
-Checklib2 is a script which facilitates developers to find dependencies,
-undefined symbols of packages, etc. It's based on Ozan's checklibs script.
+Checkelf is a script which facilitates developers to find dependencies,
+undefined symbols of packages, etc. It's based on Ozan's checklib's script.
 I've tried to explain all available options, which you can examine below.
 It has a lot of fine-tuning options which allows the user to get the
 desired output directly. For more info please read the options and examples
 at the end of the page.
+
 
 The usage and founctionality:
 -----------------------------
@@ -34,7 +35,7 @@ only this options, all other result options are damped.
 This option is used in order to show the relation between dependencies
 in a fancy table. The table has three colums, first one shows the written
 dependencies that are written in the pspec.xml. The second colums shows
-the dependencies which checklib2 has found; these dependencies must be added.
+the dependencies which checkelf has found; these dependencies must be added.
 The third column is just a difference from the first and second columd.
 It shows dependencies that sould be added to pspec.xml. It shows only this
 option, all other options are damped.
@@ -66,7 +67,7 @@ component.
 
 Example:
 
-$ checklib2 -c tex.addon
+$ checkelf -c tex.addon
 
 ::
 
@@ -88,7 +89,7 @@ print out all the results to the display which might be useless to read. Using
 
 Examle:
 
-$ checklib2 -a -n > results.txt
+$ checkelf -a -n > results.txt
 
 ::
 
@@ -99,6 +100,14 @@ the color characters will be ignored. Thus the output will be clear.
 
 ::
 
+    -l, --plain-list
+
+This option shows a simplified output. It doesn prettify anything, it 
+justs outputs a plain list of packages. If you want to examine your pacakges
+via grep,awk,etc your should use this option
+
+::
+
     -d, --directory <directory>
 
 This option let you specify a folder to check for pisi files inside that 
@@ -106,7 +115,7 @@ directory
 
 Example:
 
-checklib -d tempdir/
+checkelf -d tempdir/
 
 ::
 
@@ -119,36 +128,36 @@ exist in that directory, the pisi files inside that directory is also checked.
 
 Examples:
 --------
-In general, checklib2 can check for two types. It can check for installed
+In general, checkelf can check for two types. It can check for installed
 packages, or it can check for a speficied pisi file.
-Below are several examples for real-world use of checklib2
+Below are several examples for real-world use of checkelf
 
 Ex::
 
-    $ checklib2 gcc chromium-browser
+    $ checkelf gcc chromium-browser
 
 The installed packages gcc and chromium-browser are checked. Because no options
-are specified, checklibs automatically enables -u, -f, -t options
+are specified, checkelfs automatically enables -u, -f, -t options
 
 Ex::
 
-    $ checklib2 Publican-2.1-1.pisi -s -m -n
+    $ checkelf Publican-2.1-1.pisi -s -m -n
 
 In the above example you can list all system.base related dependencies, only the
 missing dependencies of Publican pisi package colorless.
 
 Ex::
 
-    $ checklib2
+    $ checkelf
 
-If checklib2 is executed standalone, it will be check for all pisi files
+If checkelf is executed standalone, it will be check for all pisi files
 in the directory where it has been executed. If the command is executed without
 any parameter the -u, -f, -m paramaters take into account by default.
 
 
 Ex::
 
-    $ checklib2 -d -r tempdir/ foo-4.31.pisi -u
+    $ checkelf -d -r tempdir/ foo-4.31.pisi -u
 
 All pisi files inside the tempdir will be checked, if any other folder with other
 pisi files exist, these are checked too. Additional to the folder, the package
@@ -158,7 +167,7 @@ are not showed
 
 Ex::
 
-    $ checklib2 clementine-0.5.3-3.pisi -c tex.tools -n > checked_packages.txt
+    $ checkelf clementine-0.5.3-3.pisi -c tex.tools -n > checked_packages.txt
 
 It checks for clementine and for all installed packages that belongs to tex.tools
 component. We store the results to the file checked_packages.txt, note that -n option
