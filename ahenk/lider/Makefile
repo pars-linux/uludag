@@ -9,6 +9,9 @@ all:
 	pyuic4 lider/plugins/plugin_authentication/authentication.ui > lider/plugins/plugin_authentication/ui_authentication.py
 	pyrcc4 lider/plugins/plugin_authentication/authentication.qrc > lider/plugins/plugin_authentication/authentication_rc.py
 	
+	pyuic4 lider/plugins/plugin_firewall/firewall.ui > lider/plugins/plugin_firewall/ui_firewall.py
+	pyrcc4 lider/plugins/plugin_firewall/firewall.qrc > lider/plugins/plugin_firewall/firewall_rc.py
+	
 	pyuic4 lider/plugins/plugin_services/services.ui > lider/plugins/plugin_services/ui_services.py
 	pyrcc4 lider/plugins/plugin_services/services.qrc > lider/plugins/plugin_services/services_rc.py
 	
