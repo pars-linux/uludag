@@ -22,8 +22,12 @@ MAX_HEIGHT = DEFAULT_HEIGHT * 3
 class HoverLinkFilter(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
-        self.link_rect = QRect()
         self.parent = parent
+        self._init_values()
+
+    def _init_values(self):
+        self.link_rect = QRect()
+        self.button_rect = QRect()
 
     def eventFilter(self, obj, event):
         if event.type() == QEvent.HoverMove and self.parent.direction == UP:
@@ -41,23 +45,35 @@ class RowAnimator(object):
         self.direction = DOWN
         self.row = None
         self.lastrow = None
-        self.timeLine = QTimeLine(250)
-        self.timeLine.setUpdateInterval(40)
         self.t_view = updater
-
-        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), self.size)
-        QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
-
+        self.initTimeLine()
         self.hoverLinkFilter = HoverLinkFilter(self)
         self.t_view.installEventFilter(self.hoverLinkFilter)
 
-    def animate(self, row):
+    def initTimeLine(self):
+        self.timeLine = QTimeLine(300)
+        QObject.connect(self.timeLine, SIGNAL("frameChanged(int)"), self.updateSize)
+        QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
+        self.timeLine.setDirection(QTimeLine.Backward)
+
+    def animate(self, row, reverseOld = False):
+        if self.timeLine.state() == QTimeLine.Running:
+            return
+        if self.row >= 0:
+            if not self.row == row:
+                self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
+                self.timeLine.start()
+                QObject.connect(self.timeLine, SIGNAL("finished()"), lambda: self.animate(row, True))
+                if not reverseOld:
+                    return
+
+        self.initTimeLine()
         self.setRow(row)
+        self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
         self.timeLine.start()
 
     def reset(self, row=None):
-        self.timeLine.stop()
-        self.timeLine.setCurrentTime(0)
+        self.timeLine.setDirection(QTimeLine.Forward)
         self.height = DEFAULT_HEIGHT
         if self.row >= 0:
             self.t_view.setRowHeight(self.row, self.height)
@@ -68,18 +84,20 @@ class RowAnimator(object):
         if self.direction == DOWN:
             self.direction = UP
             self.height = self.max_height
+            self.timeLine.setDirection(QTimeLine.Backward)
+            self.hoverLinkFilter._init_values()
         else:
             self.direction = DOWN
             self.height = DEFAULT_HEIGHT
+            self.timeLine.setDirection(QTimeLine.Forward)
         self.t_view.setRowHeight(self.row, self.height)
+        self.row = None if self.direction == DOWN else self.row
 
     def size(self):
-        if self.running():
-            self.updateSize()
         return QSize(0, self.height)
 
     def setRow(self, row):
-        if self.row != row:
+        if not self.row == row:
             self.reset(row)
 
     def currentRow(self):
@@ -88,13 +106,15 @@ class RowAnimator(object):
     def running(self):
         return self.timeLine.state() == QTimeLine.Running
 
-    def updateSize(self):
+    def updateSize(self, size):
         if self.direction == DOWN:
-            self.height += 25
+            self.height = size
             if self.height > self.max_height:
                 self.height = self.max_height
         else:
-            self.height -= 25
+            self.height = size
             if self.height < DEFAULT_HEIGHT:
                 self.height = DEFAULT_HEIGHT
+        self.timeLine.setFrameRange(DEFAULT_HEIGHT, self.max_height)
         self.t_view.setRowHeight(self.row, self.height)
+
