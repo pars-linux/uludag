@@ -56,3 +56,6 @@ class PackageProxy(QtGui.QSortFilterProxyModel):
     def reset(self):
         self.__modelCache = {}
         QtGui.QSortFilterProxyModel.reset(self)
+
+    def resetModelCache(self):
+        self.sourceModel().initPhase()

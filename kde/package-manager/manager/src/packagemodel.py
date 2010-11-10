@@ -41,15 +41,18 @@ class PackageModel(QAbstractTableModel):
         QAbstractTableModel.__init__(self, parent)
         self.iface = backend.pm.Iface()
         self._flags = Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsUserCheckable
-        self.resetCachedInfos()
-        self.cached_package = None
-        self.packages = []
+        self.initPhase()
+
         self.state = parent.state
 
         self.appinfo = AppInfoClient()
         self.appinfo.setServer('http://appinfo.pardus.org.tr')
         if not self.appinfo.initializeLocalDB()[0]:
             self.appinfo.checkOutDB()
+
+    def initPhase(self):
+        self.resetCachedInfos()
+        self.packages = []
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -130,7 +133,7 @@ class PackageModel(QAbstractTableModel):
 
     def setPackages(self, packages):
         self.beginResetModel()
-        self.cached_package = None
+        self.initPhase()
         self.packages = packages
         self.packages.sort(key=string.lower)
         self.package_selections = [Qt.Unchecked] * len(self.packages)

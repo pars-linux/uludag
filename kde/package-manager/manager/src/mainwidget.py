@@ -69,6 +69,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.lastState = self.state.state
         self.currentState = None
+        self.completer = None
         self._updatesCheckedOnce = False
 
         # state.silence is using for pm-install module
@@ -81,6 +82,15 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.basket = BasketDialog(self.state, self.parent)
         self.searchButton.setIcon(KIcon("edit-find"))
         self.initializeUpdateTypeList()
+
+        model = PackageModel(self)
+        proxy = PackageProxy(self)
+        proxy.setSourceModel(model)
+        self.packageList.setModel(proxy)
+        self.packageList.setItemDelegate(PackageDelegate(self))
+        self.packageList.setColumnWidth(0, 32)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
+
         self.initialize()
         self.updateSettings()
         self.setActionButton()
@@ -123,7 +133,6 @@ class MainWidget(QWidget, Ui_MainWidget):
     def initialize(self):
         waitCursor()
         self._last_packages = None
-        self.state.reset()
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeStatusUpdater()
@@ -147,17 +156,16 @@ class MainWidget(QWidget, Ui_MainWidget):
         restoreCursor()
 
     def initializePackageList(self):
-        model = PackageModel(self)
-        proxy = PackageProxy(self)
-        proxy.setSourceModel(model)
-        self.packageList.setModel(proxy)
-        self.packageList.setItemDelegate(PackageDelegate(self))
-        self.packageList.setColumnWidth(0, 32)
+        self.packageList.model().reset()
         self.packageList.setPackages(self.state.packages())
+
+        if self.completer:
+            self.completer.deleteLater()
+            del self.completer
+
         self.completer = QCompleter(self.state.packages(), self)
         self.completer.setCaseSensitivity(Qt.CaseInsensitive)
         self.searchLine.setCompleter(self.completer)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
     def updateSettings(self):
         self.packageList.showComponents = PMConfig().showComponents()
