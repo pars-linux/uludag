@@ -2,6 +2,7 @@
 #include <iostream>
 #include <QStringList>
 #include <QFile>
+#include <QTextStream>
 #include <QDebug>
 
 ActionReply Helper::createReply(int code, const QVariantMap *returnData)
@@ -24,23 +25,44 @@ ActionReply Helper::createReply(int code, const QVariantMap *returnData)
 
 bool Helper::writeKeyboard(const QString &layouts, const QString &variants)
 {
-    QFile file("/etc/X11/xorg.conf.d/00-configured-keymap.conf");
+    QString xorgFile = "/etc/X11/xorg.conf.d/00-configured-keymap.conf";
 
-    qDebug() << layouts;
-    qDebug() << variants;
-
-    if (!file.exists()) {
-        qDebug() << "The file does not exist";
-        return 0;
-    }
-    // It exists, open it
-    if( !file.open( QIODevice::ReadOnly ) )
-    {
+    // open file to read
+    QFile file(xorgFile);
+    if( !file.open( QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Failed to open.";
-        return 0;
+        return false;
     }
 
-    // It opened, now we need to close it
+    // store file content and change layout and variant options
+    // changed content is stored in fields
+    QTextStream in(&file);
+    QStringList fields;
+    while(!in.atEnd()) {
+        QString line = in.readLine();
+        if (line.contains("xkb_layout")) {
+            QString newLine = "\tOption\t\"xkb_layout\"\t\"" + layouts + "\"";
+            fields << newLine;
+        }
+        else if (line.contains("xkb_variant")) {
+            QString newLine = "\tOption\t\"xkb_variant\"\t\"" + variants + "\"";
+            fields << newLine;
+        }
+        else
+            fields << line;
+    }
+    file.close();
+
+    // open file to write
+    if( !file.open( QIODevice::WriteOnly | QIODevice::Text)) {
+        qDebug() << "Failed to write.";
+        return false;
+    }
+
+    // content of fields is saved to the new file
+    QTextStream out(&file);
+    for (int i = 0; i < fields.size() ; i++)
+        out << fields.at(i) << "\n";
     file.close();
 
     return true;
