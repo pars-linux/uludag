@@ -16,7 +16,17 @@ def get_services():
         services[filename] = data.strip()
     return services
 
-def process(message, dryrun=False):
+def process(message, options):
+    """
+        Policy/command processor.
+
+        Arguments:
+            message: Message object
+            options: Options
+    """
+
+    dryrun = options.dryrun
+
     if message.type == "command":
         if message.command == "apache.info":
             args = get_services()

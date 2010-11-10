@@ -114,11 +114,11 @@ def process_modules(options, message, children):
             locals = compile_module(filename)
             if "process" in locals:
                 if locals.get("forkProcess", False):
-                    proc = Process(target=locals["process"], args=(message, options.dryrun))
+                    proc = Process(target=locals["process"], args=(message, options))
                     children.append(proc)
                     proc.start()
                 else:
-                    locals["process"](message, dryrun=options.dryrun)
+                    locals["process"](message, options)
 
 def update_cron(command, schedule=None, username="root", noargs=False, filename="/etc/crontab"):
     """

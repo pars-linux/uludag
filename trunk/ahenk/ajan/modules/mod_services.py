@@ -8,7 +8,17 @@ import logging
 import comar
 
 
-def process(message, dryrun=False):
+def process(message, options):
+    """
+        Policy/command processor.
+
+        Arguments:
+            message: Message object
+            options: Options
+    """
+
+    dryrun = options.dryrun
+
     if message.type == "command":
         if message.command == "service.info":
             link = comar.Link()

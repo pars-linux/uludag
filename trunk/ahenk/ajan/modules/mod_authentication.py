@@ -8,14 +8,17 @@ import logging
 from ahenk.agent import utils
 
 
-def process(message, dryrun=False):
+def process(message, options):
     """
         Policy/command processor.
 
         Arguments:
             message: Message object
-            dryrun: True, if "do nothing, just say" mode is on
+            options: Options
     """
+
+    dryrun = options.dryrun
+
     if message.type == "policy":
         if "authenticationType" in message.policy:
             authenticationType = message.policy.get("authenticationType", ["unix"])[0]
