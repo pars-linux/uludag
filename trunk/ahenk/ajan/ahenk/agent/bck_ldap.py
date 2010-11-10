@@ -121,9 +121,10 @@ def ldap_go(options, q_in, q_out):
                 updated, policy = fetch_policy(conn, options, domain, pattern)
                 if updated:
                     logging.info("LDAP policy was updated.")
-                    logging.debug("New policy: %s" % repr(policy))
+                    policy_repr = dict(zip(policy.keys(), ['...' for x in range(len(policy))]))
+                    logging.debug("New policy: %s" % policy_repr)
                     q_in.put({"type": "policy", "policy": policy})
-                time.sleep(3)
+                time.sleep(options.interval)
         except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT, IndexError):
             logging.warning("LDAP connection failed. Retrying in 3 seconds.")
             time.sleep(3)
