@@ -20,6 +20,7 @@ from ui_mainwindow import Ui_MainWindow
 from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
+from pds.qprogressindicator import QProgressIndicator
 from tray import Tray
 
 import helpdialog
@@ -73,11 +74,17 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
         self.statusLabel.setAlignment(QtCore.Qt.AlignCenter)
+
+        self.busy = QProgressIndicator(self.statusBar())
+        self.busy.setFixedSize(QtCore.QSize(20, 20))
+        self.busy.hide()
+
+        self.statusBar().addWidget(self.busy)
         self.statusBar().addWidget(self.statusLabel)
         self.statusBar().setSizeGripEnabled(True)
-        self.wheelMovie = QtGui.QMovie(self)
+
         self.statusLabel.setText(i18n("Currently your basket is empty."))
-        self.wheelMovie.setFileName(":/data/wheel.mng")
+
         self.connect(self.centralWidget(), SIGNAL("selectionStatusChanged(QString)"), self.updateStatusBar)
         self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
 
@@ -151,12 +158,13 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.settingsDialog.show()
 
     def statusWaiting(self):
-        self.statusLabel.setMovie(self.wheelMovie)
-        self.wheelMovie.start()
+        self.statusLabel.hide()
+        self.busy.busy()
 
     def updateStatusBar(self, text):
-        self.wheelMovie.stop()
         self.statusLabel.setText(text)
+        self.statusLabel.show()
+        self.busy.hide()
 
     def queryClose(self):
         if config.PMConfig().systemTray():
