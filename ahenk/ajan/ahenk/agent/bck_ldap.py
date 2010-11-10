@@ -70,7 +70,7 @@ def fetch_policy(conn, options, domain, pattern):
         Returns:
             True or False
     """
-    policy_file = os.path.join(options.policydir, options.username)
+    policy_file = os.path.join(options.policydir, "policy_" + options.username)
     timestamp_file = policy_file + '.ts'
     timestamp_old = ''
     update_required = False
@@ -104,7 +104,7 @@ def ldap_go(options, q_in, q_out):
     """
     # Load last fetched policy
     logging.info("Loading last fetched policy.")
-    filename = os.path.join(options.policydir, options.username)
+    filename = os.path.join(options.policydir, "policy_", options.username)
     if os.path.exists(filename):
         policy = load_ldif(filename)
         if policy:
