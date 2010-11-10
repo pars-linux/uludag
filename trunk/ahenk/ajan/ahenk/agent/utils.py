@@ -57,7 +57,7 @@ class Command(Message):
                 messages: Reply
         """
         if self.q_out:
-            if arguments:
+            if arguments != None:
                 message = "%s %s" % (command, simplejson.dumps(arguments))
             else:
                 message = command
