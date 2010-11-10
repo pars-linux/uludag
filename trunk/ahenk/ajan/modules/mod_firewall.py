@@ -26,6 +26,7 @@ def enable_firewall(rules, options):
         link.System.Service['iptables'].setState('on')
 
     if rules:
+        rules = rules.split(":")[1]
         rules = base64.decodestring(rules)
         rules = bz2.decompress(rules)
 
