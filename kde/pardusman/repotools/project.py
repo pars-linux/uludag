@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009, TUBITAK/UEKAE
+# Copyright (C) 2005-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -25,17 +25,19 @@ def _(x):
     return x
 
 # Find out python version
-python_dict = { 'python_ver' : ".".join(platform.python_version_tuple()[0:2]),
-                'qt_dir'     : "%s" % os.popen("pkg-config QtCore --variable=prefix").read().lstrip("/"),
-              }
+PYTHON_VER = ".".join(platform.python_version_tuple()[0:2])
+
+QT_PREFIX = "usr"
+if os.path.exists("/usr/qt/4/lib/libQtCore.so"):
+    QT_PREFIX += "/qt/4"
 
 default_live_exclude_list = """
 lib/rcscripts/
-usr/lib/python%(python_ver)s/lib-tk/
-usr/lib/python%(python_ver)s/idlelib/
-usr/lib/python%(python_ver)s/bsddb/test/
-usr/lib/python%(python_ver)s/lib-old/
-usr/lib/python%(python_ver)s/test/
+usr/lib/python%s/lib-tk/
+usr/lib/python%s/idlelib/
+usr/lib/python%s/bsddb/test/
+usr/lib/python%s/lib-old/
+usr/lib/python%s/test/
 usr/lib/klibc/include/
 usr/share/aclocal/
 usr/share/info/
@@ -52,28 +54,28 @@ tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
 root/.bash_history
-""" % python_dict
+""" % ((PYTHON_VER,)*5)
 
 default_install_exclude_list = """
 lib/rcscripts/
 usr/lib/cups/
-usr/lib/python%(python_ver)s/lib-tk/
-usr/lib/python%(python_ver)s/idlelib/
-usr/lib/python%(python_ver)s/distutils/
-usr/lib/python%(python_ver)s/bsddb/test/
-usr/lib/python%(python_ver)s/lib-old/
-usr/lib/python%(python_ver)s/test/
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtAssistant.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtDesigner.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtHelp.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtNetwork.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtOpenGL.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtScript.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtSql.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtTest.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtWebKit.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtXml.so
-usr/lib/python%(python_ver)s/site-packages/PyQt4/QtXmlPatterns.so
+usr/lib/python%s/distutils/
+usr/lib/python%s/lib-tk/
+usr/lib/python%s/idlelib/
+usr/lib/python%s/bsddb/test/
+usr/lib/python%s/lib-old/
+usr/lib/python%s/test/
+usr/lib/python%s/site-packages/PyQt4/QtAssistant.so
+usr/lib/python%s/site-packages/PyQt4/QtDesigner.so
+usr/lib/python%s/site-packages/PyQt4/QtHelp.so
+usr/lib/python%s/site-packages/PyQt4/QtNetwork.so
+usr/lib/python%s/site-packages/PyQt4/QtOpenGL.so
+usr/lib/python%s/site-packages/PyQt4/QtScript.so
+usr/lib/python%s/site-packages/PyQt4/QtSql.so
+usr/lib/python%s/site-packages/PyQt4/QtTest.so
+usr/lib/python%s/site-packages/PyQt4/QtWebKit.so
+usr/lib/python%s/site-packages/PyQt4/QtXml.so
+usr/lib/python%s/site-packages/PyQt4/QtXmlPatterns.so
 usr/lib/klibc/include/
 usr/lib/syslinux/
 usr/share/aclocal/
@@ -95,11 +97,11 @@ tmp/pisi-root/
 var/log/comar.log
 var/log/pisi.log
 root/.bash_history
-""" % python_dict
+""" % ((PYTHON_VER,)*17)
 
 default_install_glob_excludes = (
-    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyc" ),
-    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyo" ),
+    ( "usr/lib/python%s/" % PYTHON_VER, "*.pyc" ),
+    ( "usr/lib/python%s/" % PYTHON_VER, "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -108,34 +110,34 @@ default_install_glob_excludes = (
     ( "lib/", "*.la" ),
     ( "var/db/comar/", "__db*" ),
     ( "var/db/comar/", "log.*" ),
-    ( "%(qt_dir)s/lib/", "libphononexperimental.so*" ),
-    ( "%(qt_dir)s/lib/", "libphonon.so*" ),
-    ( "%(qt_dir)s/lib/", "libqca.so*" ),
-    ( "%(qt_dir)s/lib/", "libQt3Support.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtAssistantClient.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtCLucene.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtDBus.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtDesignerComponents.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtDesigner.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtHelp.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtMultimedia*" ),
-    ( "%(qt_dir)s/lib/", "libQtNetwork.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtOpenGL.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtScript.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtScriptTools.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtSql.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtTapioca.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtTelepathyClient.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtTest.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtUiTools.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtWebKit.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtXmlPatterns.so*" ),
-    ( "%(qt_dir)s/lib/", "libQtXml.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libphononexperimental.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libphonon.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libqca.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQt3Support.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtAssistantClient.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtCLucene.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtDBus.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtDesignerComponents.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtDesigner.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtHelp.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtMultimedia*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtNetwork.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtOpenGL.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtScript.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtScriptTools.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtSql.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtTapioca.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtTelepathyClient.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtTest.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtUiTools.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtWebKit.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtXmlPatterns.so*" ),
+    ( "%s/lib/" % QT_PREFIX, "libQtXml.so*" ),
 )
 
 default_live_glob_excludes = (
-    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyc" ),
-    ( "usr/lib/python%s/" % python_dict['python_ver'], "*.pyo" ),
+    ( "usr/lib/python%s/" % PYTHON_VER, "*.pyc" ),
+    ( "usr/lib/python%s/" % PYTHON_VER, "*.pyo" ),
     ( "usr/lib/pardus/", "*.pyc" ),
     ( "usr/lib/pardus/", "*.pyo" ),
     ( "usr/lib/", "*.a" ),
@@ -447,7 +449,6 @@ class Project:
         else:
             temp = default_live_exclude_list.split()
             _glob_exclude(temp, default_live_glob_excludes)
-        print "\n".join(temp)
         return temp
 
     def _get_dir(self, name, clean=False):
