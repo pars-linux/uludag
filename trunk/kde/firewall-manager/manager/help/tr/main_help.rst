@@ -7,28 +7,30 @@ Güvenlik Duvarı Yöneticisi
 Güvenlik Duvarının Başlatılması
 -------------------------------
 
-Eğer sisteminizdeki Güvenlik Duvarı çalışır halde değil ise üst kısımda bulunan 'Güvenlik Duvarını Aç' butonuna tıklayarak güvenlik duvarını çalışır hale getirebilirsiniz. Çalışır hale gelen güvenlik duvarı kayıtlı olan kuralları uygular. Eğer bir süreç yasaklanmış bir portu kullanarak iletişim kurmak isterse bu sistem tarafından engellenecektir. Benzer şekilde dışarıdaki bir sistemden gelen bağlantılar da engellenecektir.
+Eğer sisteminizdeki Güvenlik Duvarı çalışır halde değil ise üst kısımda bulunan 'Başlat' butonuna tıklayarak güvenlik duvarını çalışır hale getirebilirsiniz. Çalışır hale gelen güvenlik duvarı kayıtlı olan kuralları uygular. Eğer bir süreç yasaklanmış bir portu kullanarak iletişim kurmak isterse bu sistem tarafından engellenecektir. Benzer şekilde dışarıdaki bir sistemden gelen bağlantılar da engellenecektir.
 
 
 Güvenlik Duvarının Durdurulması
 -------------------------------
 
-Eğer sisteminizdeki Güvenlik Duvarı çalışır halde ise Güvenlik 'Duvarını Durdur' butonuna tıklayarak durdurabilirsiniz. Durdurulan güvenlik duvarı herhangi bir kuralı uygulamayacaktır.
+Eğer sisteminizdeki Güvenlik Duvarı çalışır halde ise 'Durdur' butonuna tıklayarak durdurabilirsiniz. Durdurulan güvenlik duvarı herhangi bir kuralı uygulamayacaktır.
 
 
 Gelen Bağlantı Kurallarının Düzenlenmesi
 ----------------------------------------
 
 Sisteminize yapılacak olan bağlantılarla ilgili kurallar burada ele alınır. **Güvenlik Duvarı Yöneticisi** gelen tüm bağlantılar için ön tanımlı olarak reddetme kuralı koymuştur. Burada engellemenin dışında kalacak yani izin verilecek portları belirleriz. 
-'Gelen Bağlantılar' sekmesini seçin. Güvenlik Duvarı Yöneticisi bazı servis isimlerini listeler. Bu listeden seçtiğiniz servis ile ilgili olan port üzerinden sistemdeki ilgili sürece yapılacak bağlantılar kabul edilecektir. Bir servise (servisin kullandığı porta) izin vermek için servis adının yanındaki kutuyu işaretleyiniz. Verilen izni geri almak için kutudaki işareti kaldırın.
-
-Not: Gelen bağlantı kuralı eklemek için Güvenlik Duvarı çalışır halde olmalıdır. Yapılan ayarların etkin hale gelmesi için alttaki 'Uygula' butonuna tıklayınız.
+'Gelen Bağlantıları Engelle' ögesinin sağındaki ayar butonuna tıklayın. Eğer önceden bazı portlar eklemişseniz Güvenlik Duvarı Yöneticisi bunları listeler, eklememişseniz liste boş olacaktır. 'Ekle', 'Kaldır' butonlarını kullanarak izin verilecek portları düzenleyebilirsiniz. Bu listede olan portlar üzerinden sistemdeki ilgili sürece yapılacak bağlantılar kabul edilecektir. İzin verilecek portların denetlenme sırasını değiştirmek için 'Yukarı Taşı', 'Aşağı Taşı' butonlarını kullanın.
 
 
 Giden Bağlantı Kurallarının Düzenlenmesi
 ----------------------------------------
 
 Sisteminizin yapacağı bağlantılarla ilgili kurallar burada ele alınır. Eğer sisteminiz burada tanımladığınız kurallarda bulunan portlarla bağlantı açmaya çalışırsa engellenecektir. 
-'Giden Bağlantılar' sekmesini seçin. Sisteminize yeni bir kuralı eklemek için '+' butonuna tıklayın. Gelen pencereye tek bir port için kural tanımlamak istiyorsanız o portu yazın ve 'Tamam' butonuna tıklayın. Bir aralık için kural tanımlamak istiyorsanız portlar arasına '-' koyarak yazın ve 'Tamam' butonuna tıklayın. Tanımladığınız kuralı iptal etmek için kuralın yanındaki kutudaki işareti kaldırın.
+'Giden Bağlantıları Engelle' ögesinin sağındaki ayar butonuna tıklayın. Eğer önceden belirlemiş olduğunuz kurallar varsa listede gözükecektir, yoksa yasaklı port yok demektir. 'Ekle' ve 'Kaldır' butonlarını kullanarak yeni yasaklanacak port numaraları ekleyebilirsininz. Eklediğiniz portların denetim sırasının değişmesini sağlamak için 'Yukarı Taşı', 'Aşağı Taşı' butonlarını kullanın.
 
-Not: Giden bağlantı kuralı eklemek için Güvenlik Duvarı çalışır halde olmalıdır. Yapılan ayarların etkin hale gelmesi için alttaki 'Uygula' butonuna tıklayınız.
+
+Bilgisayarın Ağ Geçidi Olarak Kullanılması
+------------------------------------------
+
+Listede ikinci sırada bulunan 'Internet Paylaşımı' adlı öge ile yerel ağınızdaki bilgisayarın sizin bilgisayarınız üzerinden internete bağlanmasının ayrlarını yapabilirsiniz. Bu ayarı yapmak için liste ögesinin sağında bulunan ayar butonuna tıklayın. Açılan ayar penceresindeki listelerden ilki internete bağlandığınız ağ arayüzüdür, ikincisi ise bilgisayarınız üzerinden internete bağlanmak isteyen bilgisayarın bağlandığı arayüzdür.

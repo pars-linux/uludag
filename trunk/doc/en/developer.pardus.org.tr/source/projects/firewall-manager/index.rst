@@ -18,6 +18,7 @@ Features
 * Editing Outgoing Connection Rules
 	- Adding an outgoing rule
 	- Deleting an outgoing rule
+* Using Your Computer As A Gateway
 
 Source Code
 -----------
