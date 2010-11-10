@@ -10,7 +10,7 @@ class Helper : public QObject
         ActionReply managekeyboard(QVariantMap args);
 
     private:
-        bool writeKeyboard(const QString &variants, const QString &layouts);
+        bool writeKeyboard(const QString &layouts, const QString &variants);
         ActionReply createReply(int code, const QVariantMap *returnData = 0);
 
 };
