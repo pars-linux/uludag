@@ -222,6 +222,7 @@
                 <SelectedPackage>lvm2-static</SelectedPackage>
                 <SelectedPackage>mc</SelectedPackage>
                 <SelectedPackage>mdadm</SelectedPackage>
+                <SelectedPackage>mdadm-static</SelectedPackage>
                 <SelectedPackage>mercurial</SelectedPackage>
                 <SelectedPackage>mesa-utils</SelectedPackage>
                 <SelectedPackage>microcode-ctl</SelectedPackage>
