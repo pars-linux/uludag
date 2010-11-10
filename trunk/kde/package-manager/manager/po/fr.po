@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Développeur"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Développeur"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -66,14 +66,12 @@ msgid "Your emails"
 msgstr "Votre courriel"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:185
-#, fuzzy
 msgid "Clear Basket"
-msgstr "Effacer le cache"
+msgstr "Vider le panier"
 
 #: src/basketdialog.py:55
-#, fuzzy
 msgid "Do you want to clear all selections ?"
-msgstr "Voulez-vous continuer?"
+msgstr "Voulez-vous effacer toutes les sélections ?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -85,9 +83,8 @@ msgid "Do you want to continue ?"
 msgstr "Voulez-vous continuer?"
 
 #: src/basketdialog.py:177
-#, fuzzy
 msgid "You must restart your system for the updates to take effect"
-msgstr "Vous devez <b>redémarrer</b> votre système pour que les versions à jour des paquets suivants prennent effet :"
+msgstr "Vous devez redémarrer votre système pour la prise d'effet des mises à jour."
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -95,16 +92,15 @@ msgstr "Requis par la mise à jour"
 
 #: src/basketdialog.py:180
 msgid "Packages Require System Restart"
-msgstr ""
+msgstr "Les paquets requièrent le redémarrage du système."
 
 #: src/basketdialog.py:185
-#, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Vous devez redémarrer les services du système suivants  afin que les versions mises à jour des paquets sélectionnés prennent effet :"
+msgstr "Vous devez redémarrer les services associés du système  pour la prise d'effet des mises à jour."
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
-msgstr ""
+msgstr "Les paquets requièrent le redémarrage du service"
 
 #: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
@@ -115,19 +111,16 @@ msgid "Warning"
 msgstr "Attention"
 
 #: src/basketdialog.py:202
-#, fuzzy
 msgid "Critical Packages"
-msgstr "Désinstallation des paquets"
+msgstr "Paquets décisifs"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Les paquets sélectionnés [%1] sont en conflit les uns avec les autres. Ils ne peuvent être installés ensemble."
+msgstr "Les paquets sélectionnés sont déjà installés.<br> Si vous continuez, les paquets vont être réinstallés"
 
 #: src/basketdialog.py:215
-#, fuzzy
 msgid "Already Installed Packages"
-msgstr "Les paquets installés"
+msgstr "Paquets déjà installés"
 
 #: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 msgid "Installed Packages"
@@ -146,7 +139,6 @@ msgid "Show main window"
 msgstr "Montrer la fenêtre principale"
 
 #: src/mainwidget.py:137
-#, fuzzy
 msgid "All packages are up to date"
 msgstr "Tous les paquets sont à jour"
 
@@ -480,12 +472,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Il y a <b>%1</b> mises à jour disponibles !"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorer"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Montrer les mises à jour"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorer"
 
 #: src/webdialog.py:104 ui/ui_webdialog.py:169
 msgid "Package Files"
@@ -579,14 +571,12 @@ msgid "Settings"
 msgstr "Paramètres"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
-msgstr "Panier"
+msgstr "Voir le panier"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
-msgstr "Montrer les mises à jour"
+msgstr "Rechercher des mises à jour"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -843,7 +833,7 @@ msgstr "Détails des paquets"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
-msgstr ""
+msgstr "Tapez pour filtrer les fichiers"
 
 #: ui/ui_webdialog.py:170
 msgid ""
@@ -857,7 +847,6 @@ msgstr ""
 msgid "Close"
 msgstr "Fermer"
 
-#, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
