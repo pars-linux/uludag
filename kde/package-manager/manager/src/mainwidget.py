@@ -40,7 +40,8 @@ from ui_mainwidget_v3 import Ui_MainWidget
 
 from config import PMConfig
 
-from pmutils import PThread
+from pds.thread import PThread
+
 from pmutils import waitCursor
 from pmutils import isPmOnline
 from pmutils import restoreCursor
