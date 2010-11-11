@@ -38,5 +38,6 @@ setup(name="yali-theme-pardus",
       author="Pardus Developers",
       author_email="yali@pardus.org.tr",
       url="http://www.pardus.org.tr/eng/yali/",
+      data_files=[("/%s" % THEME_DIR, ["style.qss"])],
       cmdclass = {'build': Build,
                   'install': Install})
