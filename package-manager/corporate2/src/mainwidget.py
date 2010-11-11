@@ -32,8 +32,14 @@ from operationmanager import OperationManager
 from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
 
+from pds.thread import PThread
+from pds.gui import *
+
 from pmutils import *
 import config
+
+STYLE = """color:white;
+           font-size:16pt;"""
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None, silence = False):
@@ -50,6 +56,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.basket = BasketDialog(self.state)
             self.searchUsed = False
             self.initializeInfoBox()
+            self._searchThread = PThread(self, self.startSearch, self.searchFinished)
             self.initialize()
             self.updateSettings()
             self.actionButton.setIcon(self.state.getActionIcon())
@@ -62,21 +69,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initializeInfoBox(self):
         # An info label to show a proper information,
         # if there is no updates available.
-        self.info = QtGui.QLabel(self)
-        self.info.setText(i18n("All Packages are up to date"))
-        self.info.setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
-        self.info.setStyleSheet("background-color:rgba(0,0,0,220); \
-                                 color:white; \
-                                 border: 1px solid white; \
-                                 border-radius: 10px; \
-                                ")
-        self.info.resize(QSize(340, 80))
-        self.info.hide()
-
-    def resizeEvent(self, event):
-        # info label should be resized automatically,
-        # if the mainwindow resized.
-        self.info.move(self.width() / 2 - 170, self.height() / 2 - 40)
+        self.info = PMessageBox(self.content)
+        self.info.setStyleSheet(STYLE)
+        self.info.setMessage(i18n("All Packages are up to date"))
+        self.info.enableOverlay()
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
@@ -116,6 +112,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self._selectedGroups = []
         self.selectAll.setChecked(False)
         restoreCursor()
+
+        # Show the info label if there are updates available
+        # otherwise hide it.
+        if self.state.inUpgrade():
+            if self.groupList.count() == 0:
+                self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
+
         QTimer.singleShot(1, self.initializeBasket)
 
     def initializeUpdateTypeList(self):
@@ -180,13 +183,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.state._typeFilter = 'normal'
         self.groupFilter()
 
-        # Show the info label if there are updates available
-        # otherwise hide it.
-        if self.state.inUpgrade() and self.groupList.count() == 0:
-            self.info.show()
-        else:
-            self.info.hide()
-
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
         self.packageList.model().setFilterRegExp(QRegExp(unicode(text), Qt.CaseInsensitive, QRegExp.FixedString))
@@ -208,21 +204,37 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.selectAll.setChecked(self.groupList.currentGroup() in self._selectedGroups)
         restoreCursor()
 
+    def startSearch(self):
+        searchText = unicode(self.searchLine.text()).split()
+        sourceModel = self.packageList.model().sourceModel()
+        self.state.cached_packages = sourceModel.search(searchText)
+
     def searchActivated(self):
-        self.packageList.resetMoreInfoRow()
-        waitCursor()
-        searchText  = str(self.searchLine.text()).split()
-        if searchText:
-            sourceModel = self.packageList.model().sourceModel()
-            self.state.cached_packages = sourceModel.search(searchText)
+        if self.state.inUpgrade():
+            if self.groupList.count() == 0 and not self.searchUsed:
+                return
+
+        if not self.searchLine.text() == '':
+            self.info.busy.busy()
+            self.info.setMessage(i18n("Searching..."))
+            self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
+            QtGui.qApp.processEvents()
             self.groupList.lastSelected = None
+            self._searchThread.start()
             self.searchUsed = True
         else:
             self.state.cached_packages = None
             self.state.packages()
             self.searchUsed = False
+            self.searchFinished()
+
+    def searchFinished(self):
+        if self.state.cached_packages == []:
+            self.info.setMessage(i18n("No results found."))
+            self.info.busy.hide()
+        else:
+            self.info.animate(direction = OUT, dont_animate = True)
         self.initializeGroupList()
-        restoreCursor()
 
     def setActionButton(self):
         self.actionButton.setEnabled(False)
@@ -235,6 +247,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if not any(package.endswith('.pisi') for package in self.state._selected_packages):
                 totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
 
+        if self.info.isVisible():
+            self.info.animate(direction = OUT, dont_animate = True)
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             if not self.state.silence:
@@ -321,6 +335,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.basket.setActionEnabled(enabled)
 
     def switchState(self, state, action=True):
+        if self.info.isVisible():
+            self.info.animate(direction = OUT, dont_animate = True)
         self.searchLine.clear()
         self.lastState = self.state.state
         self.state.setState(state)
