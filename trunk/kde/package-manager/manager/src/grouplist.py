@@ -48,7 +48,7 @@ class GroupList(QListWidget):
                     (i18n('All'), 'media-optical', len(self.state.packages())))
         self.sortItems()
         self.moveAllToFirstLine()
-        self.setCurrentItem(self.itemAt(0, 0))
+        self.setCurrentItem(self.item(0))
 
     def createGroupItem(self, name, content = None):
         if not content:
