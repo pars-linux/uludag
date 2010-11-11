@@ -13,7 +13,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from lider.plugins.plugin_web.ui_web import Ui_widgetWeb
+from ui_web import Ui_widgetWeb
 
 # Helper modules
 from lider.helpers import plugins
