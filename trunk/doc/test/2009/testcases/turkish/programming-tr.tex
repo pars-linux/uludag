@@ -124,6 +124,34 @@ git-svn
 gitweb
 \end{verbatim}
 
+\item cvs paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları sırası ile çalıştırın:
+\begin{verbatim}
+ cvs -d ~/cvsroot init
+ export CVSROOT=$HOME/cvsroot
+ export CVSEDITOR=emacs
+ source ~/.bash_profile
+\end{verbatim}
+
+Daha sonra aşağıda bulunan dosyayı indirin:
+\begin{verbatim}
+ wget http://mrsrl.stanford.edu/~brian/cvstutorial/cvsexample.tar
+\end{verbatim}
+
+Aşağıda bulunan komutları sırası ile çalıştırın ve "ls" komutu sonrası cvsexample dizinin tekrar oluştuğunu gözlemleyin.
+\begin{verbatim}
+ mkdir cvsexample2
+ cp -rf cvsexample/* cvsexample2/
+ rm -rf cvsexample/* 
+ cd ~/cvsexample
+ cvs import -m "dir structure" cvsexample yourname start 
+ cd ..
+ rm -r cvsexample 
+ cvs checkout cvsexample 
+ ls
+\end{verbatim}
+
 \item bzr paketi kurulumu sonrası:
 \begin{verbatim}
  bzr init test
