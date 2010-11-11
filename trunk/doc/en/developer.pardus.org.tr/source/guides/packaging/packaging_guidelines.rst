@@ -187,9 +187,9 @@ The best way to find exact buildtime dependencies is to build the package in a p
 Runtime Dependencies
 --------------------
 
-Runtime dependencies is important in order a program run properly. You can check your runtime dependencies with `this script <http://svn.pardus.org.tr/uludag/trunk/scripts/checklib2>`_.  You can find proper runtime dependencies, undefined symbols,  if you run it on a proper system.
+Runtime dependencies is important in order a program run properly. You can check your runtime dependencies with `this script <http://svn.pardus.org.tr/uludag/trunk/scripts/checkelf>`_.  You can find proper runtime dependencies, undefined symbols,  if you run it on a proper system.
 
-You can find the usage from :ref:`checklib`.
+You can find the usage from :ref:`checkelf`.
 
 Strict Dependencies
 -------------------
