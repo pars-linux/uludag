@@ -66,6 +66,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.summaryDialog = SummaryDialog()
         self.connectOperationSignals()
 
+        self.searchLine.setFocus()
+
     def initializeInfoBox(self):
         # An info label to show a proper information,
         # if there is no updates available.
@@ -111,14 +113,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self._selectedGroups = []
         self.selectAll.setChecked(False)
         restoreCursor()
-
-        # Show the info label if there are updates available
-        # otherwise hide it.
-        if self.state.inUpgrade():
-            if self.groupList.count() == 0:
-                self.info.setMessage(i18n("All Packages are up to date"))
-                self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
-
         QTimer.singleShot(1, self.initializeBasket)
 
     def initializeUpdateTypeList(self):
@@ -211,17 +205,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def searchActivated(self):
         if self.state.inUpgrade():
-            if self.groupList.count() == 0 and not self.searchUsed:
+            if self.groupList.count() == 0:
                 return
 
         if not self.searchLine.text() == '':
             self.info.busy.busy()
+            self.info.icon.hide()
             self.info.setMessage(i18n("Searching..."))
             self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
             QtGui.qApp.processEvents()
             self.groupList.lastSelected = None
-            self._searchThread.start()
             self.searchUsed = True
+            self._searchThread.start()
         else:
             self.state.cached_packages = None
             self.state.packages()
@@ -230,8 +225,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def searchFinished(self):
         if self.state.cached_packages == []:
-            self.info.setMessage(i18n("No results found."))
             self.info.busy.hide()
+            self.info.setIcon(KIcon("ktip"))
+            self.info.setMessage(i18n("No results found."))
         else:
             self.info.animate(direction = OUT, dont_animate = True)
         self.initializeGroupList()
@@ -296,6 +292,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
                 self.emit(SIGNAL("repositoriesUpdated()"))
             self.initialize()
+            # Show the info label if there are updates available
+            # otherwise hide it.
+            if self.state.inUpgrade():
+                if self.groupList.count() == 0:
+                    self.info.busy.hide()
+                    self.info.setIcon(KIcon("adept_commit"))
+                    self.info.setMessage(i18n("All Packages are up to date"))
+                    self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
         else:
             QtGui.qApp.exit()
 
@@ -338,7 +342,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if self.info.isVisible():
             self.info.animate(direction = OUT, dont_animate = True)
         self.searchLine.clear()
-        self.lastState = self.state.state
+        if not state == self.state.state:
+            self.lastState = self.state.state
         self.state.setState(state)
         self._selectedGroups = []
         self.setActionButton()
