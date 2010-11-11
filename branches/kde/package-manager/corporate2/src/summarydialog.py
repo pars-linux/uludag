@@ -44,13 +44,14 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
 
+        icon = KIconLoader.load(self.item.icon)
+        if icon.isNull():
+            icon = KIconLoader.load(('applications-other', 'package'))
+
         self.appIcon.setPixmap(
-                        KIconLoader.load((self.item.icon,
-                                          'applications-other',
-                                          'package')
-                                        ).scaled(QSize(32, 32),
-                                                 Qt.KeepAspectRatio,
-                                                Qt.SmoothTransformation)
+                               icon.scaled(QSize(32, 32),
+                               Qt.KeepAspectRatio,
+                               Qt.SmoothTransformation)
                               )
 
         self.appName.hide()

@@ -46,8 +46,8 @@ class GroupList(QtGui.QListWidget):
             if package_count == 0:
                 return
         else:
-            localName, icon_path = content[0], content[1] #unicode(i18('All')), 'media-optical'
-            package_count = content[2] #len(self.state.packages())
+            localName, icon_path = content[0], content[1]
+            package_count = content[2]
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
