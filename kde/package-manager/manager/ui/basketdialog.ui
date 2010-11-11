@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>446</width>
-    <height>436</height>
+    <width>518</width>
+    <height>476</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -107,7 +107,7 @@ border-bottom:1px solid #999;
       </item>
       <item row="1" column="0">
        <widget class="QWidget" name="widget_2" native="true">
-        <layout class="QGridLayout" name="gridLayout">
+        <layout class="QGridLayout" name="gridLayout" columnstretch="0,1,2">
          <item row="0" column="0" colspan="3">
           <widget class="PackageView" name="packageList">
            <property name="minimumSize">

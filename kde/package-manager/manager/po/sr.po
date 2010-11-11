@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-09 00:25+0200\n"
+"POT-Creation-Date: 2010-11-11 11:15+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -65,7 +65,7 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Kurucity@aim.com"
 
-#: src/basketdialog.py:54 ui/ui_basketdialog.py:185
+#: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/basketdialog.py:69 src/mainwidget.py:297 src/mainwidget.py:302
+#: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
@@ -144,49 +144,49 @@ msgstr "Помоћ за менаџер пакета"
 msgid "Show main window"
 msgstr "Прикажи главни прозор"
 
-#: src/mainwidget.py:137
+#: src/mainwidget.py:147
 #, fuzzy
 msgid "All packages are up to date"
 msgstr "Сви пакети су ажурирани"
 
-#: src/mainwidget.py:224
+#: src/mainwidget.py:233
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:236
+#: src/mainwidget.py:245
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:291
+#: src/mainwidget.py:300
 msgid "Network Error"
 msgstr "Мрежна грешка"
 
-#: src/mainwidget.py:292
+#: src/mainwidget.py:301
 msgid "Please check your network connections and try again."
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
-#: src/mainwidget.py:294
+#: src/mainwidget.py:303
 msgid "Authorization Error"
 msgstr "Грешка у вези овлашћења"
 
-#: src/mainwidget.py:295
+#: src/mainwidget.py:304
 msgid "You are not authorized for this operation."
 msgstr "Нисте овлашћени за ову операцију."
 
-#: src/mainwidget.py:298
+#: src/mainwidget.py:307
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
 
-#: src/mainwidget.py:437
+#: src/mainwidget.py:446
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:438
+#: src/mainwidget.py:447
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:439
+#: src/mainwidget.py:448
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
@@ -202,14 +202,14 @@ msgstr "Прокажи пакете који могу да се инсталир
 
 #: src/mainwindow.py:154 src/mainwindow.py:157
 #, fuzzy
-msgid "Upgradable Packages"
-msgstr "Прикажи пакете који могу да се ажурирају"
+msgid "Updates"
+msgstr "Све исправке"
 
-#: src/mainwindow.py:200
+#: src/mainwindow.py:201
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:204
+#: src/mainwindow.py:205
 msgid "Currently your basket is empty."
 msgstr "Тренутно Ваша корпа је празна."
 
@@ -373,7 +373,7 @@ msgstr "надограђено"
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:100 ui/ui_basketdialog.py:186
+#: src/statemanager.py:100 ui/ui_basketdialog.py:188
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
@@ -388,9 +388,8 @@ msgid "Upgrade Package(s)"
 msgstr "Надогради пакет(е)"
 
 #: src/statemanager.py:103
-#, fuzzy
-msgid "Modify Package(s)"
-msgstr "Уклањање пакета"
+msgid "Select Operation"
+msgstr ""
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
@@ -424,7 +423,7 @@ msgstr ""
 msgid "You have selected the following package(s) to modify:"
 msgstr ""
 
-#: src/statemanager.py:125 ui/ui_basketdialog.py:182
+#: src/statemanager.py:125 ui/ui_basketdialog.py:184
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr ""
 
@@ -494,7 +493,7 @@ msgstr ""
 msgid "Show Updates"
 msgstr ""
 
-#: src/webdialog.py:104 ui/ui_webdialog.py:169
+#: src/webdialog.py:110 ui/ui_webdialog.py:169
 #, fuzzy
 msgid "Package Files"
 msgstr "Величина пакета:"
@@ -511,27 +510,27 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:180 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:182 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
 msgstr ""
 
-#: ui/ui_basketdialog.py:181
+#: ui/ui_basketdialog.py:183
 msgid "Selected package(s) for install:"
 msgstr ""
 
-#: ui/ui_basketdialog.py:183
+#: ui/ui_basketdialog.py:185
 msgid "Total Size:"
 msgstr ""
 
-#: ui/ui_basketdialog.py:184
+#: ui/ui_basketdialog.py:186
 msgid "<b>2.2 MB</b>"
 msgstr ""
 
-#: ui/ui_basketdialog.py:187
+#: ui/ui_basketdialog.py:189
 msgid "Download Size:"
 msgstr ""
 
-#: ui/ui_basketdialog.py:188
+#: ui/ui_basketdialog.py:190
 msgid "<b>2.0 MB</"
 msgstr ""
 
@@ -633,7 +632,7 @@ msgid ""
 msgstr ""
 
 #: ui/ui_progressdialog.py:166 ui/ui_progressdialog_v3.py:188
-#: ui/ui_settingsdialog.py:415
+#: ui/ui_settingsdialog.py:370
 msgid "&Cancel"
 msgstr ""
 
@@ -642,189 +641,181 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: ui/ui_repodialog.py:56
+#: ui/ui_repodialog.py:54
 msgid "Add New Repository"
 msgstr ""
 
-#: ui/ui_repodialog.py:57
+#: ui/ui_repodialog.py:55
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
-#: ui/ui_repodialog.py:58 ui/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:394
 msgid "Repository Name"
 msgstr ""
 
-#: ui/ui_repodialog.py:59 ui/ui_settingsdialog.py:396
+#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:395
 msgid "Repository Address"
 msgstr ""
 
-#: ui/ui_repodialog.py:60
-msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-msgstr ""
-
-#: ui/ui_repodialog.py:61
-msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:371
+#: ui/ui_settingsdialog.py:367
 msgid "Package Manager Settings"
 msgstr "Подешавања"
 
-#: ui/ui_settingsdialog.py:372
-msgid "Package list"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:373
-msgid "&Show only desktop applications"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:374
-msgid "Show Component information "
-msgstr ""
-
-#: ui/ui_settingsdialog.py:375
-msgid "System tray icon"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:376
-msgid "Enable system tray icon"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:377
-msgid "Hide system tray if there is no update."
-msgstr ""
-
-#: ui/ui_settingsdialog.py:378
-msgid "Enable &periodic update check"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:379
-msgid "Check interval :"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:380
-msgid " min"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:381
-msgid "Install updates automatically"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:382
-msgid "Bandwidth limit"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:383
-msgid " kb/s"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:384
-msgid "Use bandwidth limit :"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:385
-msgid "&General Settings"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:386
-msgid "&Use hard disk cache for downloaded software"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:387
-msgid "Maximum cache size:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:388
-msgid "Unlimited"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:389
-msgid " Mib"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:390
-msgid "Current cache dir:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:391
-msgid "Select..."
-msgstr ""
-
-#: ui/ui_settingsdialog.py:392
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr ""
-
-#: ui/ui_settingsdialog.py:393
-msgid "C&lean disk cache now"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:394
-msgid "C&ache"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:397
-msgid "&Add New Repository"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:398
-msgid "Remove Repository"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:399
-msgid "Move &Up"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:400
-msgid "Move &Down"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:401
-msgid "&Repositories"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:402
-msgid "HTTP proxy server:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:403 ui/ui_settingsdialog.py:406
-#: ui/ui_settingsdialog.py:408
-msgid "Port:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:404
-msgid "Use this proxy server for all protocols"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:405
-msgid "HTTPS proxy server:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:407
-msgid "FTP proxy server:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:409
-msgid "No proxy server"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:410
-msgid "Use manual settings"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:411
-msgid "Use Desktop Enviorenment's settings"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:412
-msgid "&Proxy"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:413
+#: ui/ui_settingsdialog.py:368
 msgid "&Help"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:414
+#: ui/ui_settingsdialog.py:369
 msgid "&OK"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:371
+msgid "Package list"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:372
+msgid "&Show only desktop applications"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:373
+msgid "Show Component information "
+msgstr ""
+
+#: ui/ui_settingsdialog.py:374
+msgid "System tray icon"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:375
+msgid "Enable system tray icon"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:376
+msgid "Hide system tray if there is no update."
+msgstr ""
+
+#: ui/ui_settingsdialog.py:377
+msgid "Enable &periodic update check"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:378
+msgid "Check interval :"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:379
+msgid " min"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:380
+msgid "Install updates automatically"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:381
+msgid "Bandwidth limit"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:382
+msgid " kb/s"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:383
+msgid "Use bandwidth limit :"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:384
+msgid "&General Settings"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:385
+msgid "&Use hard disk cache for downloaded software"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:386
+msgid "Maximum cache size:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:387
+msgid "Unlimited"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:388
+msgid " Mib"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:389
+msgid "Current cache dir:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:390
+msgid "Select..."
+msgstr ""
+
+#: ui/ui_settingsdialog.py:391
+msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
+msgstr ""
+
+#: ui/ui_settingsdialog.py:392
+msgid "C&lean disk cache now"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:393
+msgid "C&ache"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:396
+msgid "&Add New Repository"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:397
+msgid "Remove Repository"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:398
+msgid "Move &Up"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:399
+msgid "Move &Down"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:400
+msgid "&Repositories"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:401
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
+#: ui/ui_settingsdialog.py:407
+msgid "Port:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:403
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:404
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:406
+msgid "FTP proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:408
+msgid "No proxy server"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:409
+msgid "Use manual settings"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:410
+msgid "Use Desktop Enviorenment's settings"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:411
+msgid "&Proxy"
 msgstr ""
 
 #: ui/ui_summarydialog.py:49
@@ -859,6 +850,22 @@ msgstr "Молимо Вас проверите мрежну конекцију �
 msgid "Close"
 msgstr ""
 
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"
+
+#~ msgid "Quit"
+#~ msgstr "Прекид"
+
+#~ msgid "Help"
+#~ msgstr "Помоћ"
+
+#~ msgid "File"
+#~ msgstr "Фајл"
+
+#, fuzzy
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
+
 #, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
@@ -866,17 +873,9 @@ msgstr ""
 #~ msgstr "Инсталирај пакет(е)"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Уклањање пакета"
 
-#~ msgid "File"
-#~ msgstr "Фајл"
-
-#~ msgid "Help"
-#~ msgstr "Помоћ"
-
-#~ msgid "Quit"
-#~ msgstr "Прекид"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Прикажи пакете који могу да се ажурирају"

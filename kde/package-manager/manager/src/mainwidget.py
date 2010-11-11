@@ -143,7 +143,8 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.searchLine.setFocus(True)
         if self.currentState == self.state.UPGRADE:
             if self.groupList.count() == 0:
-                QTimer.singleShot(0, lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date")))
+                QTimer.singleShot(0, \
+                lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date"), icon = "games-endturn"))
         restoreCursor()
 
     def initializeStatusUpdater(self):
@@ -241,7 +242,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def searchFinished(self):
         if self.state.cached_packages == []:
-            self.pdsMessageBox.showMessage(i18n("No results found."), KIcon("dialog-information").pixmap(32,32))
+            self.pdsMessageBox.showMessage(i18n("No results found."), "dialog-information")
         else:
             self.pdsMessageBox.hideMessage()
         self.initializeGroupList()
