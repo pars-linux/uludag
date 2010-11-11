@@ -61,7 +61,7 @@ ActionReply Helper::managekeyboard(QVariantMap args)
     QString layouts = args.value("layouts").toString();
     QString variants = args.value("variants").toString();
 
-    writeKeyboard(layouts,variants);
+    code = (writeKeyboard(layouts,variants) ? 0 : WriteKeyboardError);
     return createReply(code);
 }
 

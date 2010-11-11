@@ -1,4 +1,5 @@
 #include <kauth.h>
+#define WriteKeyboardError 1
 
 using namespace KAuth;
 
