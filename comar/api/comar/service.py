@@ -18,7 +18,6 @@ import subprocess
 import fcntl
 import termios
 import pwd
-import grp
 import signal
 import time
 import shlex
@@ -186,32 +185,6 @@ def _findProcesses(command=None, user=None, name=None):
         return pids
     return None
 
-def _changeUID(chuid):
-    """Change to this chuid (user:group)"""
-    c_user = chuid
-    c_group = None
-    if ":" in c_user:
-        c_user, c_group = c_user.split(":", 1)
-    cpw = pwd.getpwnam(c_user)
-    c_uid = cpw.pw_uid
-    if c_group:
-        cgr = grp.getgrnam(c_group)
-        c_gid = cgr.gr_gid
-    else:
-        c_gid = cpw.pw_gid
-        c_group = grp.getgrgid(cpw.pw_gid).gr_name
-
-    c_groups = []
-    for item in grp.getgrall():
-        if c_user in item.gr_mem:
-            c_groups.append(item.gr_gid)
-    if c_gid not in c_groups:
-        c_groups.append(c_gid)
-
-    os.setgid(c_gid)
-    os.setgroups(c_groups)
-    os.setuid(c_uid)
-
 # Service control API
 
 def startService(command, args=None, pidfile=None, makepid=False, nice=None, detach=False, chuid=None, donotify=False):
@@ -274,7 +247,7 @@ def startService(command, args=None, pidfile=None, makepid=False, nice=None, det
         if makepid and pidfile:
             file(pidfile, "w").write("%d\n" % os.getpid())
         if chuid:
-            _changeUID(chuid)
+            changeUID(chuid)
 
     popen = subprocess.Popen(cmd, close_fds=True, preexec_fn=fork_handler, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     if detach:
@@ -321,7 +294,7 @@ def stopService(pidfile=None, command=None, args=None, chuid=None, user=None, na
             cmd.extend(args)
 
         if chuid:
-            _changeUID(chuid)
+            changeUID(chuid)
 
         popen = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         ret = execReply(popen.wait())
