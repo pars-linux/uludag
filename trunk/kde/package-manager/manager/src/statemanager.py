@@ -100,13 +100,13 @@ class StateManager(QObject):
         return {self.INSTALL:i18n("Install Package(s)"),
                 self.REMOVE :i18n("Remove Package(s)"),
                 self.UPGRADE:i18n("Upgrade Package(s)"),
-                self.ALL    :i18n("Modify Package(s)")}[state]
+                self.ALL    :i18n("Select Operation")}[state]
 
     def getActionIcon(self, state = None):
         state = self.state if state == None else state
         return {self.INSTALL:KIcon("list-add"),
                 self.REMOVE :KIcon("list-remove"),
-                self.UPGRADE:KIcon("view-refresh"),
+                self.UPGRADE:KIcon("system-software-update"),
                 self.ALL    :KIcon("preferences-other")}[state]
 
     def getSummaryInfo(self, total):

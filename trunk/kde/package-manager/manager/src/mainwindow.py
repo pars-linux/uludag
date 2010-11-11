@@ -133,10 +133,10 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
-        self.showAllAction = KToggleAction(KIcon("list-add"), i18n("All Packages"), self)
+        self.showAllAction = KToggleAction(KIcon("applications-other"), i18n("All Packages"), self)
         self.actionCollection().addAction("showAllAction", self.showAllAction)
         self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.ALL))
-        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("All Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("applications-other"), i18n("All Packages"))
         actionGroup.addAction(self.showAllAction)
 
         self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Installable Packages"), self)
@@ -151,10 +151,10 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.cw.stateTab.addTab(QWidget(), KIcon("list-remove"), i18n("Installed Packages"))
         actionGroup.addAction(self.showRemoveAction)
 
-        self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Upgradable Packages"), self)
+        self.showUpgradeAction = KToggleAction(KIcon("system-software-update"), i18n("Updates"), self)
         self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.UPGRADE))
-        self.cw.stateTab.addTab(QWidget(), KIcon("view-refresh"), i18n("Upgradable Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon("system-software-update"), i18n("Updates"))
         actionGroup.addAction(self.showUpgradeAction)
 
         # self.showHistoryAction = KToggleAction(KIcon("view-refresh"), i18n("History"), self)
@@ -191,6 +191,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.showAllAction.setChecked(True)
         self.cw.checkUpdatesButton.hide()
+        self.cw.checkUpdatesButton.setIcon(KIcon('view-refresh'))
         self.cw.showBasketButton.clicked.connect(self.cw.showBasket)
 
         # Little time left for the new ui
