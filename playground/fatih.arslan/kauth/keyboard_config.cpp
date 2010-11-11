@@ -23,6 +23,8 @@
 #include <ksharedconfig.h>
 #include <kconfiggroup.h>
 #include <kdebug.h>
+#include <QMessageBox>
+#include <QDebug>
 
 
 static const char* SWITCHING_POLICIES[] = {"Global", "Desktop", "WinClass", "Window", NULL };
@@ -33,16 +35,6 @@ static const char* DEFAULT_MODEL = "pc104";
 static const QString CONFIG_FILENAME("kxkbrc");
 static const QString CONFIG_GROUPNAME("Layout");
 
-static int executeLayoutAction(const QVariantMap &helperargs)
-{
-    KAuth::Action action("org.kde.kcontrol.kcmkeyboard.managekeyboard");
-    action.setHelperID("org.kde.kcontrol.kcmkeyboard");
-    action.setArguments(helperargs);
-
-    KAuth::ActionReply reply = action.execute();
-
-    return 0;
-}
 
 static int findStringIndex(const char* strings[], const QString& toFind, int defaultIndex)
 {
@@ -156,12 +148,11 @@ void KeyboardConfig::save()
 	config.sync();
 }
 
-void KeyboardConfig::saveSystemWide()
+int KeyboardConfig::saveSystemWide()
 {
-    /*QStringList layoutStrings;
-    foreach(const LayoutUnit& layoutUnit, layouts) {
-       layoutStrings.append(layoutUnit.toString());
-    }*/
+
+    KAuth::Action action("org.kde.kcontrol.kcmkeyboard.managekeyboard");
+    action.setHelperID("org.kde.kcontrol.kcmkeyboard");
 
     QVariantMap helperargs;
     QStringList layoutList;
@@ -175,5 +166,8 @@ void KeyboardConfig::saveSystemWide()
     helperargs["layouts"] = layoutList.join(LIST_SEPARATOR);
     helperargs["variants"] = variantList.join(LIST_SEPARATOR);
 
-    executeLayoutAction(helperargs);
+    action.setArguments(helperargs);
+
+    KAuth::ActionReply reply = action.execute();
+    return reply.errorCode();
 }
