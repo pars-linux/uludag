@@ -7,7 +7,7 @@ How to Create Pisi Packages
 
 :Author: Semen Cirit
 
-:Version: 0.3
+:Version: 0.4
 
 Creating Package
 ----------------
@@ -105,6 +105,12 @@ command under package named directory.
             <Date>YYYY-MM-DD</Date>
             <Version></Version>
             <Comment>First release.</Comment>
+            <Requires>
+                <Action>reverseDependencyUpdate</Action>
+                <Action package="">reverseDependencyUpdate</Action>
+                <Action package="">systemRestart</Action>
+                <Action package="">serviceRestart</Action>
+            </Requires>
             <Name></Name>
             <Email></Email>
         </Update>
@@ -326,7 +332,7 @@ Different pspec.xml File Tags
 
         **group:** This attribute is used to specify file group. The "groups" command will list the groups of the current owner.
 
-        Each file should be added with the below format:
+        Each file should be added like the below format:
         ::
 
             <AdditionalFile owner="mpd" group="audio" permission="0640" target="/etc/mpd.conf">mpd.conf</AdditionalFile>
@@ -345,6 +351,20 @@ Different pspec.xml File Tags
         #. **<Date>:** This part is used for adding the time that the change done. The format should be "YYYY-MM-DD"
         #. **<Version>:** The version of the package should be written there. See `link <http://developer.pardus.org.tr/guides/packaging/binary_package_naming_guidelines.html#version-number>`_
         #. **<Comment>:** The description of the change should be added here. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#history-comments>`_
+        #. **<Requires>:** There are three type actions can be applied for the package.
+            - reverseDependencyUpdate: This action should be used, when the package are installed, the packages that are dependent to this package should be updated::
+
+                <Action package="module-fglrx-userspace">reverseDependencyUpdate</Action>
+                <Action>reverseDependencyUpdate</Action>
+            - systemRestart: This action should be used, when the package are installed, system needs restart::
+
+                <Action package="module-pae-nvidia-current">systemRestart</Action>
+                <Action>systemRestart</Action>
+            - serviceRestart: This action should be used, when the package are installed, a specific service needs to restart::
+
+                <Action package="dhcp">serviceRestart</Action>
+                <Action>systemRestart</Action>
+
         #. **<Name>:** The name of the package maintainer that make the change should be added here.
         #. **<Email>:** The email of the package maintainer that make the change should be added here.
 
