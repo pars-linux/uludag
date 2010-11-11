@@ -9,11 +9,13 @@
 # option) any later version. Please read the COPYING file.
 #
 
-import os
 import fcntl
-import time
+import grp
+import os
+import pwd
 import socket
 import subprocess
+import time
 
 class execReply(int):
     def __init__(self, value):
@@ -37,8 +39,11 @@ def synchronized(func):
     h.myfunc = func
     return h.handler
 
-def run(*cmd):
+def run(*cmd, **settings):
     """Run a command without running a shell"""
+    if "chuid" in settings:
+        changeUID(settings["chuid"])
+
     command = []
     if len(cmd) == 1:
         if isinstance(cmd[0], basestring):
@@ -95,3 +100,29 @@ class FileLock:
 
     def unlock(self):
         fcntl.flock(self.fd, fcntl.LOCK_UN)
+
+def changeUID(chuid):
+    """Change to this chuid (user:group)"""
+    c_user = chuid
+    c_group = None
+    if ":" in c_user:
+        c_user, c_group = c_user.split(":", 1)
+    cpw = pwd.getpwnam(c_user)
+    c_uid = cpw.pw_uid
+    if c_group:
+        cgr = grp.getgrnam(c_group)
+        c_gid = cgr.gr_gid
+    else:
+        c_gid = cpw.pw_gid
+        c_group = grp.getgrgid(cpw.pw_gid).gr_name
+
+    c_groups = []
+    for item in grp.getgrall():
+        if c_user in item.gr_mem:
+            c_groups.append(item.gr_gid)
+    if c_gid not in c_groups:
+        c_groups.append(c_gid)
+
+    os.setgid(c_gid)
+    os.setgroups(c_groups)
+    os.setuid(c_uid)
