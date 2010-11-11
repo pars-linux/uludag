@@ -14,7 +14,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from lider.plugins.plugin_software.ui_repository import Ui_dialogRepository
+from ui_repository import Ui_dialogRepository
 
 # Helper modules
 from lider.helpers import wrappers

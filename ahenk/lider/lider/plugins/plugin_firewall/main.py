@@ -16,7 +16,7 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from lider.plugins.plugin_firewall.ui_firewall import Ui_widgetFirewall
+from ui_firewall import Ui_widgetFirewall
 
 # Helper modules
 from lider.helpers import plugins
