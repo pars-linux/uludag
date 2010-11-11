@@ -23,6 +23,7 @@
 #include <kaboutdata.h>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
+#include <kmessagebox.h>
 
 #include <QtDBus/QDBusMessage>
 #include <QtDBus/QDBusConnection>
@@ -113,8 +114,14 @@ void KCMKeyboard::save()
 	QDBusMessage message = QDBusMessage::createSignal(KEYBOARD_DBUS_OBJECT_PATH, KEYBOARD_DBUS_SERVICE_NAME, KEYBOARD_DBUS_CONFIG_RELOAD_MESSAGE);
     QDBusConnection::sessionBus().send(message);
 
-    if (systemWide->isChecked())
-        keyboardConfig->saveSystemWide();
+    if (systemWide->isChecked()) {
+        int replyErrorCode = keyboardConfig->saveSystemWide();
+        if (replyErrorCode != 0)
+            KMessageBox::error(this, i18n("KAuth returned an error code: %1", replyErrorCode));
+    };
+
+
+
 
 //    initializeKeyboardSettings();
 }

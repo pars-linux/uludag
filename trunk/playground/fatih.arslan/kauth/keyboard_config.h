@@ -65,7 +65,7 @@ public:
 	void setDefaults();
 	void load();
 	void save();
-    void saveSystemWide();
+    int saveSystemWide();
 };
 
 #endif /* KEYBOARD_CONFIG_H_ */
