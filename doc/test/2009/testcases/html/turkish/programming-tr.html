@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea programming-tr.tex programming-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/programming-tr.tex programming-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -102,6 +102,23 @@ git-emacs
 git-gui
 git-svn
 gitweb
+</PRE></LI><LI CLASS="li-enumerate">cvs paketi kurulumu sonrası:<P>Aşağıda bulunan komutları sırası ile çalıştırın:
+</P><PRE CLASS="verbatim"> cvs -d ~/cvsroot init
+ export CVSROOT=$HOME/cvsroot
+ export CVSEDITOR=emacs
+ source ~/.bash_profile
+</PRE><P>Daha sonra aşağıda bulunan dosyayı indirin:
+</P><PRE CLASS="verbatim"> wget http://mrsrl.stanford.edu/~brian/cvstutorial/cvsexample.tar
+</PRE><P>Aşağıda bulunan komutları sırası ile çalıştırın ve "ls" komutu sonrası cvsexample dizinin tekrar oluştuğunu gözlemleyin.
+</P><PRE CLASS="verbatim"> mkdir cvsexample2
+ cp -rf cvsexample/* cvsexample2/
+ rm -rf cvsexample/* 
+ cd ~/cvsexample
+ cvs import -m "dir structure" cvsexample yourname start 
+ cd ..
+ rm -r cvsexample 
+ cvs checkout cvsexample 
+ ls
 </PRE></LI><LI CLASS="li-enumerate">bzr paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> bzr init test
  bzr branch test test2
