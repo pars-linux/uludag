@@ -141,7 +141,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         proxy.setSourceModel(model)
         self.packageList.setModel(proxy)
         self.packageList.setItemDelegate(PackageDelegate(self))
-        self.packageList.setColumnWidth(0, 32)
+        self.packageList.setColumnWidth(0, 22)
         self.packageList.setPackages(self.state.packages())
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
