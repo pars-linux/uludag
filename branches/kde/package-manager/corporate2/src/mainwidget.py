@@ -71,7 +71,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # if there is no updates available.
         self.info = PMessageBox(self.content)
         self.info.setStyleSheet(STYLE)
-        self.info.setMessage(i18n("All Packages are up to date"))
         self.info.enableOverlay()
 
     def connectMainSignals(self):
@@ -117,6 +116,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # otherwise hide it.
         if self.state.inUpgrade():
             if self.groupList.count() == 0:
+                self.info.setMessage(i18n("All Packages are up to date"))
                 self.info.animate(start = MIDCENTER, stop = MIDCENTER, dont_animate = True)
 
         QTimer.singleShot(1, self.initializeBasket)
