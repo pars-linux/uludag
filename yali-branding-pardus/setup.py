@@ -12,6 +12,7 @@
 import os
 import glob
 from distutils.core import setup
+from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
@@ -23,14 +24,6 @@ class Build(build):
         build.run(self)
 
         self.mkpath(self.build_base)
-
-        os.chdir("po")
-        self.spawn(["intltool-update", "--gettext-package=yali-branding-pardus", "-p"])
-        for po_file in glob.glob("*.po"):
-            lang, ext = os.path.splitext(po_file)
-            self.spawn(["intltool-update", "--gettext-package=yali-branding-pardus", "--dist", "-o", po_file, lang])
-
-        os.chdir("..")
 
         for in_file in IN_FILES:
             name, ext = os.path.splitext(in_file)
@@ -44,6 +37,25 @@ class Install(install):
         self.copy_file("build/release.xml", os.path.join(self.root or "/", BRANDING_DIR))
 
 
+class UpdatePO(Command):
+    description = "Update po files"
+    user_options = []
+
+    def initialize_options(self):
+        pass
+
+    def finalize_options(self):
+        pass
+
+    def run(self):
+        os.chdir("po")
+        self.spawn(["intltool-update", "--gettext-package=yali-branding-pardus", "-p"])
+        for po_file in glob.glob("*.po"):
+            lang, ext = os.path.splitext(po_file)
+            self.spawn(["intltool-update", "--gettext-package=yali-branding-pardus", "--dist", "-o", po_file, lang])
+
+        os.chdir("..")
+
 setup(name="yali-branding-pardus",
       version= "2011.0",
       description="Pardus branding files for YALI (Yet Another Linux Installer)",
@@ -53,4 +65,5 @@ setup(name="yali-branding-pardus",
       url="http://www.pardus.org.tr/eng/yali/",
       data_files=[("/%s/slideshow" % BRANDING_DIR, glob.glob("slideshow/*.png"))],
       cmdclass = {'build': Build,
-                  'install': Install})
+                  'install': Install,
+                  'update_po': UpdatePO})
