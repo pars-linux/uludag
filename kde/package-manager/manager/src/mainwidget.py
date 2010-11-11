@@ -225,7 +225,7 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def searchActivated(self):
         if self.currentState == self.state.UPGRADE:
-            if self.groupList.count() == 0:
+            if self.groupList.count() == 0 and not self.searchUsed:
                 return
 
         if not self.searchLine.text() == '':
