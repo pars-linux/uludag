@@ -132,7 +132,9 @@ class MainWidget(QWidget, Ui_MainWidget):
 
     def initialize(self):
         waitCursor()
+        self.searchLine.clear()
         self._last_packages = None
+        self.state.reset()
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeStatusUpdater()
@@ -369,7 +371,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.basket.setActionEnabled(enabled)
 
     def switchState(self, state):
-        self.searchLine.clear()
         self.pdsMessageBox.hideMessage()
         self._states[state][1].setChecked(True)
         self.lastState = self.state.state
