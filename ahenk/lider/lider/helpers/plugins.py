@@ -7,6 +7,7 @@
 
 # Standard Modules
 import os
+import sys
 
 # Plugin types
 TYPE_SINGLE = 0
@@ -42,14 +43,23 @@ def import_plugin(filename):
             filename: Path to Python file
         Returns: Dictionary containing globals
     """
+    pathname = os.path.dirname(filename)
+    sys.path.insert(0, pathname)
+    locals = globals = {}
     try:
-        locals = globals = {}
         code = open(filename).read()
-        exec compile(code, "error", "exec") in locals, globals
+        exec compile(code, filename, "exec") in locals, globals
     except IOError, e:
         print "Unable to read plugin (%s): %s" % (filename, e)
     except SyntaxError, e:
         print "SyntaxError in plugin (%s): %s" % (filename, e)
+    except Exception, e:
+        print "Error in plugin (%s): %s" % (filename, e)
+    finally:
+        try:
+            sys.path.remove(pathname)
+        except ValueError:
+            pass
     return locals
 
 
