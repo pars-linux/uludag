@@ -174,7 +174,6 @@
                 <SelectedPackage>kdepim</SelectedPackage>
                 <SelectedPackage>kdepim-runtime</SelectedPackage>
                 <SelectedPackage>kdeplasma-addons</SelectedPackage>
-                <SelectedPackage>kdesdk</SelectedPackage>
                 <SelectedPackage>kdetoys</SelectedPackage>
                 <SelectedPackage>kdeutils</SelectedPackage>
                 <SelectedPackage>kdm</SelectedPackage>
@@ -698,7 +697,6 @@
                 <Package>kdepim-runtime</Package>
                 <Package>kdepimlibs</Package>
                 <Package>kdeplasma-addons</Package>
-                <Package>kdesdk</Package>
                 <Package>kdetoys</Package>
                 <Package>kdeutils</Package>
                 <Package>kdevplatform</Package>
