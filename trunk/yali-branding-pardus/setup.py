@@ -16,7 +16,6 @@ from distutils.command.build import build
 from distutils.command.install import install
 
 BRANDING_DIR = "usr/share/yali/branding/pardus"
-
 IN_FILES = ("release.xml.in",)
 
 class Build(build):
@@ -24,7 +23,6 @@ class Build(build):
         build.run(self)
 
         self.mkpath(self.build_base)
-        #self.spawn(["rcc", "-binary", "data.qrc", "-o", "%s/data.rcc" % self.build_base])
 
         os.chdir("po")
         self.spawn(["intltool-update", "--gettext-package=yali-branding-pardus", "-p"])
@@ -43,7 +41,7 @@ class Install(install):
     def run(self):
         install.run(self)
 
-        #self.copy_file("build/data.rcc", os.path.join(self.root or "/", BRANDING_DIR))
+        self.copy_file("build/release.xml", os.path.join(self.root or "/", BRANDING_DIR))
 
 
 setup(name="yali-branding-pardus",
@@ -53,6 +51,6 @@ setup(name="yali-branding-pardus",
       author="Pardus Developers",
       author_email="yali@pardus.org.tr",
       url="http://www.pardus.org.tr/eng/yali/",
-      #data_files=[("/%s" % BRANDING_DIR, ["style.qss"])],
+      data_files=[("/%s/slideshow" % BRANDING_DIR, glob.glob("slideshow/*.png"))],
       cmdclass = {'build': Build,
                   'install': Install})
