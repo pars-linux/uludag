@@ -36,6 +36,10 @@ def send(message, pspec = "", _type = "", subject=""):
                                conf.subrepository,
                                conf.architecture)
 
+    logs_dir = "%s/%s/%s" % (conf.release,
+                             conf.subrepository,
+                             conf.architecture)
+
 
     recipients_name, recipients_email = [], []
     package_name_with_component = ""
@@ -65,7 +69,7 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'distribution' : conf.name,
                                         'release'      : conf.release.capitalize(),
                                         'arch'         : conf.architecture,
-                                        'logsdir'      : subject_id,
+                                        'logsdir'      : logs_dir,
                                         'subjectID'    : subject_id,
                                      }
 
