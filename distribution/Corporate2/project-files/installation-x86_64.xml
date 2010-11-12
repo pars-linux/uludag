@@ -35,6 +35,8 @@
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>b43-fwcutter</SelectedPackage>
+        <SelectedPackage>bash-completion</SelectedPackage>
+        <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>blueman</SelectedPackage>
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
@@ -227,7 +229,6 @@
         <SelectedPackage>mdadm</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
-        <SelectedPackage>microcode-data</SelectedPackage>
         <SelectedPackage>min12xxw</SelectedPackage>
         <SelectedPackage>mobile-broadband-provider-info</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
@@ -420,8 +421,10 @@
         <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
+        <Package>bash-completion</Package>
         <Package>bc</Package>
         <Package>bctango-icon-theme</Package>
+        <Package>bind-tools</Package>
         <Package>blas</Package>
         <Package>bluez</Package>
         <Package>boost</Package>
@@ -862,7 +865,6 @@
         <Package>meanwhile</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
-        <Package>microcode-data</Package>
         <Package>mina-core</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
