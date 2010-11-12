@@ -9,3 +9,4 @@ Releasing
    end_of_life.rst
    security_process.rst
    repository_concepts/index.rst
+   bootstrapping.rst
