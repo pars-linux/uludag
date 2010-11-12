@@ -18,6 +18,7 @@ from PyKDE4.kdecore import *
 
 from pds.gui import *
 from pmutils import *
+from pds.thread import PThread
 
 from ui_webdialog import Ui_WebDialog
 from pds.qprogressindicator import QProgressIndicator
