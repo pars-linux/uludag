@@ -20,6 +20,23 @@ from lider.helpers import plugins
 from lider.helpers import wrappers
 
 
+class serviceItem(QTableWidgetItem):
+    def __init__(self, parent=None, package='', type='server', state=False, autostart=False, description=''):
+        QTableWidgetItem.__init__(self, parent)
+
+        self.package = package
+        self.type = type
+        self.state = state
+        self.autostart = autostart
+        self.description = unicode(description)
+
+        self.setText(1, self.description)
+        self.setText(2, self.state)
+        self.setText(3, self.autostart)
+
+        self.setVisible(False)
+      
+
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
     """
         Software management UI.
@@ -78,8 +95,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         if command == "service.info":
             self.listServices.clear()
             for name, desc, status in arguments:
-                item = QtGui.QListWidgetItem(self.listServices)
-                item.setText("%s - %s" % (name, status))
+                #item =QtGui.QListTableItem(self.listServices)
+                item = self.serviceItem
+                #item.setText("%s - %s" % (name, status))
+
 
     def talk_status(self, sender, status):
         """
