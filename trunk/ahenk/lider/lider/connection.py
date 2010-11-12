@@ -15,6 +15,9 @@ from PyQt4 import QtCore
 # Generated UI module
 from lider.ui_connection import Ui_dialogConnection
 
+# Helper modules
+from lider.helpers import profile
+
 
 class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
     """
@@ -44,6 +47,21 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+
+        # Get connection profiles
+        self.__get_profiles()
+
+    def __get_profiles(self):
+        """
+            Gets connection profiles.
+        """
+        last_profile = profile.Profile()
+
+        if last_profile.is_set():
+            self.editDomain.setText(last_profile.get_domain())
+            self.editHost.setText(last_profile.get_address())
+            self.editUser.setText(last_profile.get_username())
+            self.editPassword.setFocus()
 
     def __slot_find_host(self):
         """
@@ -130,5 +148,8 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         return True
 
     def accept(self):
+        new_profile = profile.Profile(self.editDomain.text(), self.editHost.text(), self.editUser.text())
+        new_profile.save()
+
         if self.__check_fields(set_focus=True):
             QtGui.QDialog.accept(self)
