@@ -4,9 +4,9 @@ import sys
 import piksemel
 
 if len(sys.argv) != 3:
-    print "Usage: \n"
-          "%(name)s FILE --screens\n"
-          "%(name)s FILE --slideshows\n"
+    print "Usage: \n"\
+          "%(name)s FILE --screens\n"\
+          "%(name)s FILE --slideshows\n"\
           "%(name)s --help" % {"name": sys.argv[0]}
 else:
     doc = piksemel.parse(sys.argv[1])
