@@ -205,7 +205,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def searchActivated(self):
         if self.state.inUpgrade():
-            if self.groupList.count() == 0:
+            if self.groupList.count() == 0 and not self.searchUsed:
                 return
 
         if not self.searchLine.text() == '':
@@ -342,6 +342,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if self.info.isVisible():
             self.info.animate(direction = OUT, dont_animate = True)
         self.searchLine.clear()
+        self.searchUsed = False
         if not state == self.state.state:
             self.lastState = self.state.state
         self.state.setState(state)
