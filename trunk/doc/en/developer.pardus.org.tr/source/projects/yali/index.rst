@@ -50,28 +50,46 @@ Bugs
 
 * `Feature Requests <http://bugs.pardus.org.tr/buglist.cgi?bug_severity=newfeature&classification=Pardus%20Teknolojileri%20%2F%20Pardus%20Technologies&query_format=advanced&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&product=YALI%20Kurulum%20Y%C3%B6neticisi%20%2F%20Installation%20Manager>`_
 
+Tasks
+-----
+
+* `Open Tasks <http://proje.pardus.org.tr:50030/projects/yali>`_
+
 Developed by
 ------------
 
-**Current Maintainer**
+**Current Developer**
+
 * Mete Alpaslan <mete [at] pardus.org.tr>
 
-**Other Developers**
-* A. Murat Eren <meren [at] pardus.org.tr>
+**Contributors**
+
+* Murat Eren <meren [at] pardus.org.tr>
+
 * Barış Metin <baris [at] pardus.org.tr>
+
 * Gökmen GÖKSEL <gokmen [at] pardus.org.tr>
+
 * Gürer Özen <gurer [at] pardus.org.tr>
-* H. İbrahim Güngör <ibrahim [at] pardus.org.tr>
+
+* Halil İbrahim Güngör <ibrahim [at] pardus.org.tr>
+
 * Onur Küçük <onur [at] pardus.org.tr>
+
 * Renan Çakırerk <renan [at] pardus.org.tr>
 
 **Graphics**
+
 * Banu Ünal <banu [at] pardus.org.tr>
+
 * Gökhan Özkan <gokhan [at] pardus.org.tr>
+
 * Renan Çakırerk <renan [at] pardus.org.tr>
+
 * Umut Pulat <umut [at] pardus.org.tr>
 
 **QTermWidget Author for QConsole**
+
 * e_k@users.sourceforge.net
 
 
