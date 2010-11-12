@@ -1,0 +1,454 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Antoon Tolboom <atolboo@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-18 17:16+0300\n"
+"PO-Revision-Date: 07/12/09 14:06\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: src/ldapview.py:95
+msgid "Select..."
+msgstr "Selecteren..."
+
+#: src/ldapview.py:118
+msgid "New Item"
+msgstr "Nieuw item"
+
+#: src/ldapview.py:143
+msgid "Up"
+msgstr "Omhoog"
+
+#: src/ldapview.py:147
+msgid "Down"
+msgstr "Omlaag"
+
+#: src/ldapview.py:217
+msgid "Edit List"
+msgstr "Lijst bewerken"
+
+#: src/mainwindow.py:48
+msgid "Computers"
+msgstr "Computers"
+
+#: src/mainwindow.py:51
+msgid "Units"
+msgstr "Eenheden"
+
+#: src/mainwindow.py:54
+msgid "Users"
+msgstr "Gebruikers"
+
+#: src/mainwindow.py:57
+msgid "Groups"
+msgstr "Groepen"
+
+#: src/mainwindow.py:68
+msgid "Critical Error"
+msgstr "Kritieke fout"
+
+#: src/mainwindow.py:74
+msgid "Unable to complete operation:"
+msgstr "Kan bewerking niet voltooien:"
+
+#: src/lider.py:25
+msgid "Pardus Management Console"
+msgstr "Pardusbeheeer console"
+
+#: src/ldapmodel.py:17 src/ldapmodel.py:64
+msgid "Computer"
+msgstr "Computer"
+
+#: src/ldapmodel.py:19
+msgid "Memory"
+msgstr "Geheugen"
+
+#: src/ldapmodel.py:20 src/ldapmodel.py:37 src/ldapmodel.py:38
+msgid "Services"
+msgstr "Diensten"
+
+#: src/ldapmodel.py:20 src/ldapmodel.py:37 src/ldapmodel.py:38
+msgid "Service"
+msgstr "Dienst"
+
+#: src/ldapmodel.py:26 src/ldapmodel.py:50
+msgid "Policy"
+msgstr "Beleid"
+
+#: src/ldapmodel.py:30
+msgid "Update Mode"
+msgstr "Bijwerkenmodus"
+
+#: src/ldapmodel.py:30 src/ldapmodel.py:31 src/ldapmodel.py:32
+#: src/ldapmodel.py:33 src/ldapmodel.py:34 src/ldapmodel.py:35
+msgid "PISI"
+msgstr "PISI"
+
+#: src/ldapmodel.py:30
+msgid "Security Only"
+msgstr "Alleen veiligheid"
+
+#: src/ldapmodel.py:30
+msgid "Full"
+msgstr "Volledig"
+
+#: src/ldapmodel.py:31
+msgid "Interval"
+msgstr "Interval"
+
+#: src/ldapmodel.py:32
+msgid "Update Between"
+msgstr "Bijwerken tussen"
+
+#: src/ldapmodel.py:33
+msgid "Repositories"
+msgstr "Bronnen"
+
+#: src/ldapmodel.py:33
+msgid "Repo Name"
+msgstr "Bronnaam"
+
+#: src/ldapmodel.py:33
+msgid "URL"
+msgstr "URL-adres"
+
+#: src/ldapmodel.py:34
+msgid "Wanted Packages"
+msgstr "Gewenste pakketten"
+
+#: src/ldapmodel.py:34 src/ldapmodel.py:35
+msgid "Package"
+msgstr "Pakket"
+
+#: src/ldapmodel.py:35
+msgid "Unwanted Packages"
+msgstr "Ongewenste pakketten"
+
+#: src/ldapmodel.py:37
+msgid "Wanted Services"
+msgstr "Gewenste diensten"
+
+#: src/ldapmodel.py:38
+msgid "Unwanted Services"
+msgstr "Ongewenste diensten"
+
+#: src/ldapmodel.py:40
+msgid "User Source"
+msgstr "Gebruikerbron"
+
+#: src/ldapmodel.py:40 src/ldapmodel.py:41 src/ldapmodel.py:42
+#: src/ldapmodel.py:43 src/ldapmodel.py:44
+msgid "COMAR"
+msgstr "COMAR"
+
+#: src/ldapmodel.py:40
+msgid "Local"
+msgstr "Lokaal"
+
+#: src/ldapmodel.py:40
+msgid "LDAP"
+msgstr "LDAP"
+
+#: src/ldapmodel.py:41
+msgid "Search Scope"
+msgstr "Zoekbereik"
+
+#: src/ldapmodel.py:41
+msgid "Base"
+msgstr "Base"
+
+#: src/ldapmodel.py:41
+msgid "One Level"
+msgstr "Een niveau"
+
+#: src/ldapmodel.py:41
+msgid "Subtree"
+msgstr "Subboom"
+
+#: src/ldapmodel.py:42
+msgid "Database URI"
+msgstr "Database URI-adres"
+
+#: src/ldapmodel.py:43
+msgid "Base DN"
+msgstr "Base DN"
+
+#: src/ldapmodel.py:44
+msgid "User Filter"
+msgstr "Gebruikerfilter"
+
+#: src/ldapmodel.py:55
+msgid "Directory"
+msgstr "Map"
+
+#: src/ldapmodel.py:58
+msgid "Label"
+msgstr "Label"
+
+#: src/ldapmodel.py:59 src/ldapmodel.py:67 src/ldapmodel.py:77
+#: src/ldapmodel.py:91 src/ldapmodel.py:101 src/browser.py:377
+msgid "Description"
+msgstr "Beschrijving"
+
+#: src/ldapmodel.py:69
+msgid "Member of"
+msgstr "Lid van"
+
+#: src/ldapmodel.py:74
+msgid "Unit"
+msgstr "Eenheid"
+
+#: src/ldapmodel.py:82
+msgid "User"
+msgstr "Gebruiker"
+
+#: src/ldapmodel.py:85
+msgid "Real Name"
+msgstr "Volledige naam:"
+
+#: src/ldapmodel.py:86
+msgid "Password"
+msgstr "Wachtwoord"
+
+#: src/ldapmodel.py:87
+msgid "Shell"
+msgstr "Shell"
+
+#: src/ldapmodel.py:88
+msgid "Home"
+msgstr "Home"
+
+#: src/ldapmodel.py:89
+msgid "User ID"
+msgstr "Gebruikers-id"
+
+#: src/ldapmodel.py:90 src/ldapmodel.py:99
+msgid "Group ID"
+msgstr "Groep-id"
+
+#: src/ldapmodel.py:96
+msgid "Group"
+msgstr "Groep"
+
+#: src/ldapmodel.py:100
+msgid "Members"
+msgstr "Leden"
+
+#: src/ldapmodel.py:100
+msgid "Username"
+msgstr "Gebruikersnaam"
+
+#: src/dialogs.py:26 src/dialogs.py:146
+msgid "%1 Properties"
+msgstr "%1-eigenschappen"
+
+#: src/dialogs.py:28
+msgid "Add New Domain"
+msgstr "Nieuw domein toevoegen"
+
+#: src/dialogs.py:38
+msgid "Label:"
+msgstr "Label:"
+
+#: src/dialogs.py:43
+msgid "Directory server:"
+msgstr "Mapserver:"
+
+#: src/dialogs.py:48
+msgid "Base DN:"
+msgstr "Base DN:"
+
+#: src/dialogs.py:53
+msgid "Bind DN:"
+msgstr "Bind DN:"
+
+#: src/dialogs.py:58
+msgid "Bind Password:"
+msgstr "Bind-wachtwoord:"
+
+#: src/dialogs.py:105
+msgid "Domain label is required"
+msgstr "Domeinlabel is vereist"
+
+#: src/dialogs.py:107
+msgid "Hostname is required"
+msgstr "Hostnaam is vereist"
+
+#: src/dialogs.py:109
+msgid "Base DN is required"
+msgstr "Base DN is vereist"
+
+#: src/dialogs.py:144
+msgid "%1 Information"
+msgstr "%1-informatie"
+
+#: src/dialogs.py:148
+msgid "New %1"
+msgstr "Nieuw %1"
+
+#: src/dialogs.py:161
+msgid "Enable %1"
+msgstr "%1 inschakelen"
+
+#: src/dialogs.py:174
+msgid "DN:"
+msgstr "DN:"
+
+#: src/dialogs.py:176
+msgid "Parent DN:"
+msgstr "Bovenliggende DN:"
+
+#: src/dialogs.py:185 src/search.py:34
+msgid "Name:"
+msgstr "Naam:"
+
+#: src/dialogs.py:274
+msgid "Name is required"
+msgstr "Naam is vereist"
+
+#: src/dialogs.py:280
+msgid "%1 is required"
+msgstr "%1 is vereist"
+
+#: src/browser.py:36
+msgid "&New Domain"
+msgstr "&Nieuw domein"
+
+#: src/browser.py:39 src/browser.py:49
+msgid "&New Directory"
+msgstr "&Nieuwe map"
+
+#: src/browser.py:46
+msgid "&Search"
+msgstr "&Zoeken"
+
+#: src/browser.py:53
+msgid "&Refresh"
+msgstr "Ve&rversen"
+
+#: src/browser.py:55
+msgid "&Properties"
+msgstr "Eigenscha&ppen"
+
+#: src/browser.py:124
+msgid "Unable to connect to LDAP server."
+msgstr "Kan niet met LDAP-server verbinden."
+
+#: src/browser.py:130
+msgid "You can add new domain by right clicking panel on left."
+msgstr "Voor toevoegen nieuw domein, rechtsklik op linkerkant van paneel."
+
+#: src/browser.py:151
+msgid "Remove directory?"
+msgstr "Map verwijderen?"
+
+#: src/browser.py:151 src/browser.py:166 src/browser.py:546
+msgid "Are you sure you want to remove '%1' ?"
+msgstr "Werkelijk '%1' verwijderen?"
+
+#: src/browser.py:151 src/browser.py:546 src/browser.py:550 src/browser.py:553
+msgid "This is not undoable. Are you sure you want to continue?"
+msgstr "Dit kan niet ongedaan gemaakt worden. Werkelijk doorgaan?"
+
+#: src/browser.py:166
+msgid "Remove domain?"
+msgstr "Domein verwijderen?"
+
+#: src/browser.py:190
+msgid "Computers (%1)"
+msgstr "Computers (%1)"
+
+#: src/browser.py:191
+msgid "Units (%1)"
+msgstr "Eenheden (%1)"
+
+#: src/browser.py:192
+msgid "Users (%1)"
+msgstr "Gebruikers (%1)"
+
+#: src/browser.py:193
+msgid "Groups (%1)"
+msgstr "Groepen (%1)"
+
+#: src/browser.py:235
+msgid "<strong>%1</strong><br>Host: %2"
+msgstr "<strong>%1</strong><br>Host: %2"
+
+#: src/browser.py:376
+msgid "Name"
+msgstr "Naam"
+
+#: src/browser.py:387
+msgid "&New"
+msgstr "&Nieuw"
+
+#: src/browser.py:391
+msgid "&Information"
+msgstr "&Informatie"
+
+#: src/browser.py:392
+msgid "&Policy"
+msgstr "&Beleid"
+
+#: src/browser.py:393
+msgid "&Configuration"
+msgstr "&Configuratie"
+
+#: src/browser.py:546
+msgid "Remove object?"
+msgstr "Object verwijderen?"
+
+#: src/browser.py:550 src/browser.py:553
+msgid "Remove objects?"
+msgstr "Objecten verwijderen?"
+
+#: src/browser.py:550
+msgid ""
+"Are you sure you want to remove these objects?\n"
+"%1"
+msgstr ""
+"Werkelijk deze objecten verwijderen?\n"
+"%1"
+
+#: src/browser.py:553
+msgid "Are you sure you want to remove %1 objects?"
+msgstr "Werkelijk %1 objecten verwijderen?"
+
+#: src/browser.py:569
+msgid ""
+"Unable to delete these objects:\n"
+"%1"
+msgstr ""
+"Kan deze objecten niet verwijderen:\n"
+"%1"
+
+#: src/browser.py:572
+msgid "Removed %1 objects."
+msgstr "%1 objecten verwijderd."
+
+#: src/domain.py:143
+msgid "Not a valid Connection instance."
+msgstr "Geen geldige verbinding."
+
+#: src/domain.py:181
+msgid "Domain configuration file is missing."
+msgstr "Domein-configuratiebestand ontbreekt."
+
+#: src/domain.py:185
+msgid "Domain configuration file has syntax errors."
+msgstr "Domein configuratiebestand bevat syntaxisfouten."
+
+#: src/search.py:24 src/search.py:40
+msgid "Search"
+msgstr "Zoeken"
+
