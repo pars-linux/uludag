@@ -175,6 +175,7 @@
         <SelectedPackage>powertop</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
+        <SelectedPackage>python-guestlogin</SelectedPackage>
         <SelectedPackage>python-qt</SelectedPackage>
         <SelectedPackage>python-qt-webkit</SelectedPackage>
         <SelectedPackage>qt-l10n</SelectedPackage>
