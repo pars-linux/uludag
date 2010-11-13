@@ -273,7 +273,8 @@
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
-                <SelectedPackage>quassel</SelectedPackage>
+                <SelectedPackage>konversation</SelectedPackage>
+                <SelectedPackage>konversation-docs</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
                 <SelectedPackage>rdesktop</SelectedPackage>
                 <SelectedPackage>redland-virtuoso</SelectedPackage>
@@ -1116,8 +1117,6 @@
                 <Package>qt-sql-sqlite</Package>
                 <Package>qt-webkit</Package>
                 <Package>qtscriptgenerator</Package>
-                <Package>quassel</Package>
-                <Package>quassel-data</Package>
                 <Package>qwt</Package>
                 <Package>radeon-rlc-firmware</Package>
                 <Package>ralink-firmware</Package>
