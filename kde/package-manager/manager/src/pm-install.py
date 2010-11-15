@@ -82,7 +82,9 @@ if __name__ == '__main__':
                     cw.exceptionCaught("HTTP Error 404", package)
                     sys.exit()
 
-        cw.state.operationAction(cw.state._selected_packages, silence = True)
+        state = cw.state.operationAction(cw.state._selected_packages, silence = True)
+        if state == False:
+            sys.exit()
 
         sys.excepthook = handleException
         ctx._time()

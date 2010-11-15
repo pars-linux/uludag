@@ -43,7 +43,7 @@ from config import PMConfig
 from pds.thread import PThread
 
 from pmutils import waitCursor
-from pmutils import isPmOnline
+from pmutils import network_available
 from pmutils import restoreCursor
 
 from pdswidgets import PMessageBox
@@ -292,7 +292,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.progressDialog.enableCancel()
 
     def updateRepoAction(self):
-        if not isPmOnline():
+        if not network_available():
             self.exceptionCaught('Socket Error')
         else:
             self.state.updateRepoAction()
@@ -384,10 +384,7 @@ class MainWidget(QWidget, Ui_MainWidget):
             if state == self.state.UPGRADE:
                 self.checkUpdatesButton.show()
                 if not self._updatesCheckedOnce:
-                    if isPmOnline():
-                        self.state.updateRepoAction()
-                        self._updatesCheckedOnce = True
-                        return
+                    self._updatesCheckedOnce = self.state.updateRepoAction(silence = True)
             else:
                 self.checkUpdatesButton.hide()
             self.initialize()
