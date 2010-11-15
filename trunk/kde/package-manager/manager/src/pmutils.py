@@ -12,6 +12,7 @@
 #
 
 import sys
+import urllib
 import unicodedata
 
 from PyQt4 import QtGui
@@ -31,8 +32,16 @@ def restoreCursor():
 def processEvents():
     QtGui.QApplication.processEvents()
 
-def isPmOnline():
+def isSolidOnline():
     return Solid.Networking.status() == Solid.Networking.Connected
+
+def network_available():
+    try:
+        urllib.urlopen('http://packages.pardus.org.tr')
+    except:
+        return False
+    finally:
+        return True
 
 def humanReadableSize(size, precision=".1"):
     symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0

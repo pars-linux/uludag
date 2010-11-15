@@ -58,7 +58,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.noconnection.hide()
 
     def showPage(self, addr):
-        if isPmOnline():
+        if network_available():
             self.webView.load(QUrl(addr))
         else:
             self._sync_template(status = False)
@@ -99,7 +99,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.filesList.clear()
         self.webView.loadFinished.connect(lambda x: \
                 self._sync_template(x, package, summary, description))
-        if isPmOnline():
+        if network_available():
             self.webView.hide()
             self.busy.show()
             self.busy.startAnimation()

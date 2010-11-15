@@ -18,6 +18,7 @@ from PyKDE4.kdeui import KIcon
 from PyKDE4.kdecore import i18n
 from appinfo.client import AppInfoClient
 
+from pmutils import network_available
 from pmlogging import logger
 import config
 import backend
@@ -146,11 +147,19 @@ class StateManager(QObject):
         if chains.has_key(operation):
             chains[operation]()
 
-    def updateRepoAction(self):
+    def updateRepoAction(self, silence = False):
+        if not network_available():
+            if not silence:
+                self.showFailMessage()
+            return False
+
         self.iface.updateRepositories()
+
         if not AppInfoClient().checkOutDB()[0]:
             AppInfoClient().setServer('http://appinfo.pardus.org.tr')
             AppInfoClient().checkOutDB()
+
+        return True
 
     def statusText(self, packages, packagesSize, extraPackages, extraPackagesSize):
         if not packages:
@@ -167,9 +176,14 @@ class StateManager(QObject):
         return text
 
     def operationAction(self, packages, silence = False, reinstall = False):
+
+        if not network_available() and not self.state == self.REMOVE:
+            self.showFailMessage()
+            return False
+
         if not silence:
             if not self.conflictCheckPasses(packages):
-                return
+                return False
 
         if reinstall:
             return self.iface.reinstallPackages(packages)
@@ -221,4 +235,10 @@ class StateManager(QObject):
 
     def inUpgrade(self):
         return self.state == self.UPGRADE
+
+    def showFailMessage(self):
+        QMessageBox.critical(None,
+                             i18n("Network Error"),
+                             i18n("Please check your network connections and try again."),
+                             QMessageBox.Ok)
 
