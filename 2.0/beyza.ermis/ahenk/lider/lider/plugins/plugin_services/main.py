@@ -19,23 +19,8 @@ from ui_services import Ui_widgetServices
 from lider.helpers import plugins
 from lider.helpers import wrappers
 
-
-class serviceItem(QTableWidgetItem):
-    def __init__(self, parent=None, package='', type='server', state=False, autostart=False, description=''):
-        QTableWidgetItem.__init__(self, parent)
-
-        self.package = package
-        self.type = type
-        self.state = state
-        self.autostart = autostart
-        self.description = unicode(description)
-
-        self.setText(1, self.description)
-        self.setText(2, self.state)
-        self.setText(3, self.autostart)
-
-        self.setVisible(False)
-      
+# COMAR
+import comar
 
 class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
     """
@@ -50,11 +35,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
         plugins.PluginWidget.__init__(self)
         QtGui.QWidget.__init__(self, parent)
+       
+        self.link = comar.Link()
 
         # Attach generated UI
         self.setupUi(self)
 
         # UI events
+        self.connect(self.pushStart, QtCore.SIGNAL("clicked()"), self.__slot_start_service)
+        self.connect(self.pushStop, QtCore.SIGNAL("clicked()"), self.__slot_stop_service)
+
 
     def showEvent(self, event):
         """
@@ -62,6 +52,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
         jid = "%s@%s" % (self.item.name, self.talk.domain)
         self.talk.send_command(jid, "service.info")
+
 
     def get_type(self):
         """
@@ -87,21 +78,75 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         }
         return policy
 
+ 
     def talk_message(self, sender, command, arguments=None):
         """
             Main window calls this method when an XMPP message is received.
         """
         print command, arguments
         if command == "service.info":
-            self.listServices.clear()
+            self.tableWidget.clear()
+            row = 0
             for name, desc, status in arguments:
-                #item =QtGui.QListTableItem(self.listServices)
-                item = self.serviceItem
-                #item.setText("%s - %s" % (name, status))
+                row = row+1
+            
+            self.tableWidget.setRowCount(row)
 
+            index = 0;
+            for name, desc, status in arguments:
+                nameItem = QtGui.QTableWidgetItem(str(name))
+                self.tableWidget.setItem(index, 0, nameItem)
+
+                statusItem = QtGui.QTableWidgetItem(str(status))
+                self.tableWidget.setItem(index, 1, statusItem)
+
+                if status in ['started', 'stopped', 'on']:
+                    autoItem = QtGui.QTableWidgetItem("Yes")
+                    self.tableWidget.setItem(index, 2, autoItem)
+                elif status in ['conditional_started', 'conditional_stopped']:
+                    autoItem = QtGui.QTableWidgetItem("Conditional")
+                    self.tableWidget.setItem(index, 2, autoItem)
+                else:
+                    autoItem = QtGui.QTableWidgetItem("No")
+                    self.tableWidget.setItem(index, 2, autoItem)
+                
+                descItem = QtGui.QTableWidgetItem(str(desc))
+                self.tableWidget.setItem(index, 3, descItem)
+
+                index = index+1
 
     def talk_status(self, sender, status):
         """
             Main window calls this method when an XMPP status is changed.
         """
         pass
+
+  
+    def __slot_start_service(self):
+        """
+            This method is called when the start button clicked to start the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        self.pushStart.setEnabled(False)
+        self.link.System.Service[str(item[0].text())].start()
+
+
+    def __slot_stop_service(self):
+        """
+            This method is called when the stop button clicked to stop the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        if item[0].type != 'server' and not self.confirmStop():
+            return
+        self.pushStop.setEnabled(False)
+        self.link.System.Service[str(item[0].text())].stop()
+
+    def confirmStop(self):
+        msg = str('If you stop this service, you may have problems.\nAre you sure you want to stop this service?')
+        reply = QtGui.QMessageBox.question(self, str('Warning'), msg,  QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
+
+        if reply == QtGui.QMessageBox.Yes:
+            self.link.System.Service[str(item[0].text())].stop()
+        else:
+            pass
+
