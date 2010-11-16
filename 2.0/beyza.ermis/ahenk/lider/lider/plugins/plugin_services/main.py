@@ -100,7 +100,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
                 statusItem = QtGui.QTableWidgetItem(str(status))
                 self.tableWidget.setItem(index, 1, statusItem)
 
-                if status in ['started', 'stopped', 'on']:
+                if status in ['stopped', 'on']:
                     autoItem = QtGui.QTableWidgetItem("Yes")
                     self.tableWidget.setItem(index, 2, autoItem)
                 elif status in ['conditional_started', 'conditional_stopped']:
