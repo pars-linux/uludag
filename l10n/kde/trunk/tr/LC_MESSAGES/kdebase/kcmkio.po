@@ -931,7 +931,7 @@ msgstr "&Listeyi Yeniden Yükle"
 #. i18n: ectx: property (title), widget (QGroupBox, gbDetails)
 #: rc.cpp:194
 msgid "Details"
-msgstr "Çerez ayrıntıları"
+msgstr "Ayrıntılar"
 
 #. i18n: file: kcookiesmanagementdlg.ui:111
 #. i18n: ectx: property (text), widget (QLabel, lbName)
