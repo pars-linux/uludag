@@ -193,7 +193,7 @@ msgstr "Показать информацию о текущем модуле"
 msgid ""
 "_: NAME OF TRANSLATORS\n"
 "Your names"
-msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр "
 
 #: _translatorinfo.cpp:3
 msgid ""
