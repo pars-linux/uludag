@@ -31,7 +31,7 @@ msgstr "&lt;p&gt;Les réglages des date et heure vous permettent de définir la 
 
 #: ../release.xml.in.h:4
 msgid "&lt;p&gt;Here you can see your install options before installation starts.&lt;/p&gt;"
-msgstr ""
+msgstr "&lt;p&gt;Ici vous pouvez voir vos options d'installation avant le début de l'installation.&lt;/p&gt;"
 
 #: ../release.xml.in.h:5
 msgid "&lt;p&gt;In this screen, you can manually partition your disk. You can select existing partitions and resize or delete them. You can create new partition(s) in the empty parts, make Pardus use them for system files, users&apos; home directories, swap space or general use. The changes that you make will not be applied until you go on with the installation, which means you can revert if you make any unwanted changes or change your configuration.&lt;/p&gt;&lt;p&gt;Please refer to Pardus Installing and Using Guide for more informationabout disk partitioning.&lt;/font&gt;"
@@ -75,23 +75,23 @@ msgstr ""
 
 #: ../release.xml.in.h:15
 msgid "Adjust Date and Time Settings"
-msgstr ""
+msgstr "Réglage des paramètres de date et d'heure"
 
 #: ../release.xml.in.h:16
 msgid "Check the Integrity of Packages"
-msgstr ""
+msgstr "Vérifier l'intégrité des paquets"
 
 #: ../release.xml.in.h:17
 msgid "Choose a Keyboard Layout"
-msgstr ""
+msgstr "Choisir un clavier"
 
 #: ../release.xml.in.h:18
 msgid "Choose an Administrator Password and a Hostname"
-msgstr ""
+msgstr "Choisissez un mot de passe administrateur (root) et un nom d'hôte"
 
 #: ../release.xml.in.h:19
 msgid "Configure Bootloader"
-msgstr ""
+msgstr "Configurer le chargeur de démarrage"
 
 #: ../release.xml.in.h:20
 msgid "Connecting to your friends and contacts is really easy and seamlessly integrated into the desktop with Pardus 2011. Using Kontact, you can send and receive emails, manage your meetings, create address books, takes notes and follow RSS feeds. Using Kopete, you can connect to popular networks like MSN and GTalk, and chat online with your friends."
@@ -103,7 +103,7 @@ msgstr ""
 
 #: ../release.xml.in.h:22
 msgid "Goodbye"
-msgstr ""
+msgstr "Au revoir"
 
 #: ../release.xml.in.h:23
 msgid "Hello, there. The easiest-ever install tool YALI has begun Pardus installation. It is now time to relax and learn about some of the features of Pardus 2011 while it is being installed."
