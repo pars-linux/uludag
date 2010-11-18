@@ -1,7 +1,0 @@
-Known Bugs
--------------
-
-- dbus.exceptions.DBusException: tr.org.pardus.comar.Comar.PolicyKit: tr.org.pardus.comar.net.link.getauth
-    Click 'Edit' for a Wireless profile. PolicyKit will ask you to enter your password to show the profile
-    details. Click 'Cancel'. You'll get that exception and the Edit button will stay clicked, UI is broken.
-- Available Profiles is added per backend/device, this should be fixed.

@@ -1,7 +1,0 @@
-Network Manager
----------------
-
-Network Manager is a handy tool to manage all ethernet, wireless and modem
-settings. It's designed to be useful in mind, easily connecting to a
-desired network point in a matter of seconds. The application is written using
-Python and Qt libraries.

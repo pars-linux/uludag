@@ -1,6 +1,0 @@
-(-) Wireless problems
-(-) Setting the 2nd DNS is not possible (Reported)
-
-BUGS:
- * When there's a 3G connection, nm.connections() throws an exception
- * network -C fails when there's an activating connection

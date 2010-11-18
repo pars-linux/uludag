@@ -1,5 +1,0 @@
-To build and install zpspell just use the following commands:
-
-cmake .
-make
-make install

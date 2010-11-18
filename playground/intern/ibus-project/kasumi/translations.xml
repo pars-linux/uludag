@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>kasumi</Name>
-        <Summary xml:lang="tr">Anthy sözlüğü yönetimsel aracı</Summary>
-        <Description xml:lang="tr">Kasumi, Anthy için bir sözlük yönetimsel aracıdır.</Description>
-    </Source>
-</PISI>
-

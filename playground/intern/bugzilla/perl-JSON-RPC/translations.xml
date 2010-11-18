@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-JSON-RPC</Name>
-        <Summary xml:lang="tr">JSON-RPC 1.1 protokolünün uygulama modülü</Summary>
-        <Description xml:lang="en">JSON-RPC is a stateless and light-weight remote procedure call(RPC) protocol for inter-networking applications over HTTP.</Description>
-    </Source>
-</PISI>

@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-File-Slurp</Name>
-        <Summary xml:lang="tr">Dosya kilitlemeye yarayan perl modülü</Summary>
-        <Description xml:lang="en">Lock files using the flock() call.</Description>
-    </Source>
-</PISI>

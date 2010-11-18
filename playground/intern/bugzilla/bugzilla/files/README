@@ -1,8 +1,0 @@
-Bugzilla is a Bug-Tracking System. It allows individual or groups of developers to keep track of outstanding bugs in their product effectively.
-
-In order to use Bugzilla, you will first need to configure it for your environment. The first step to add a new database server user for Bugzilla to use.You then need to ensure the values in the localconfig are accurate for your environment. The only two values you need to change are $db_driver and $db_pass, respectively the type of the database and the password for the user you will create for your data base.
-
-Once this is done, you may need to modify default settings for your database to ensure it accepts Bugzilla data properly. Please see http://www.bugzilla.org/docs/3.6/en/html/configuration.html for specifics of database setting modifications.
-
-Lastly, simply re-run checksetup.pl.It reconfirms that all the modules are present, and notices the altered localconfig file, which it assumes you have edited to your satisfaction. It compiles the UI templates, connects to the database using the 'bugs' user you created and the password you defined, and creates the 'bugs' database and the tables therein.After that, it asks for details of an administrator account.
-

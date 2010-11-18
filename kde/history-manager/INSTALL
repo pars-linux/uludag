@@ -1,6 +1,0 @@
-INSTALL
--------
-To install history-manager, type:
-
-$ sudo python setup.py install
-

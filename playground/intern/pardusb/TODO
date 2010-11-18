@@ -1,5 +1,0 @@
--! give more information about flash drive and its partitions on listbox
--! change appereance 
-- disk is unmounted before checking sha1sum, it must be unmounted after confirming the progress
-
- 

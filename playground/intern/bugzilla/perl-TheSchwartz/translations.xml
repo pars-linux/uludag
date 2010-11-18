@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-TheSchwartz</Name>
-        <Summary xml:lang="tr">Güvenilir görev kuyruğu</Summary>
-        <Description xml:lang="en">TheSchwartz is a reliable job queue system.</Description>
-    </Source>
-</PISI>

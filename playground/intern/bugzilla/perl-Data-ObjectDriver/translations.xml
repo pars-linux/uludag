@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-Data-ObjectDriver</Name>
-        <Summary xml:lang="tr">Basit şeffaf (transparent) veri arayüzü modülü</Summary>
-        <Description xml:lang="en">DataObjectDriver is an object relational mapper, meaning that it maps object-oriented design concepts onto a relational database.</Description>
-    </Source>
-</PISI>

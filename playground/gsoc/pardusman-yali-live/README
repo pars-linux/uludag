@@ -1,9 +1,0 @@
-Pardusman - Pardus ISO Creator
-==============================
-
-Requirements
-------------
- - cdrtools
- - syslinux
- - squashfs-tools
- - pyqtermwidget (Required for GUI)

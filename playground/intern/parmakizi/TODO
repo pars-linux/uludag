@@ -1,6 +1,0 @@
-////-libfprint parmak izi kayıt yeri  bizim istediğimiz dizine çekilecek  //tamam gibi.Test edilmedi data.c ->static void storage_setup(void) dosyası düzenlendi
--pyfprint ile yeni değişiklikler sınanacak
--comar kayıt işlemini pyfprint kullanarak yapacak
--pam fprint parmak izini bizim dizinimizden okuyacak
--/etc/pam.d dosyaları düzenlenecek(only fingerprint possible) değilse parola
--parmakizi image dosyası mümkünse libfprint tarafından istediğimiz yere yazdırılacak/okutulacak

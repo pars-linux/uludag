@@ -1,5 +1,0 @@
-# name type description
-
-softwareRepositories [str] Comma seperated list of package repositories
-softwareUpdateSchedule str Auto update schedule in CRON format
-softwareUpdateMode str Auto update mode (off, security or full)

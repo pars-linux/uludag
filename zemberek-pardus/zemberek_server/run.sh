@@ -1,1 +1,0 @@
-java -jar -Xverify:none -Xms12m -Xmx14m zemberek_server-0.5.jar

@@ -1,4 +1,0 @@
-include AUTHORS ChangeLog COPYING INSTALL README
-recursive-include data *
-recursive-include ui *
-

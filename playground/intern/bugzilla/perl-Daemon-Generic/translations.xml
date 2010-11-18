@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-Daemon-Generic</Name>
-        <Summary xml:lang="tr">Daemon başlatmak/durdurmak/yeniden yüklemek için kullanılan çatı</Summary>
-        <Description xml:lang="en">Daemon-Generic provides for standard commands that work for as init.d files and as apachectl-like commands.</Description>
-    </Source>
-</PISI>

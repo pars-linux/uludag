@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>brltty</Name>
-        <Summary xml:lang="tr">BRLTTY, Linux/Unix sistem konsollarına braille kullanıcı erişimi sağlar.</Summary>
-        <Description xml:lang="tr">BRLTTY, görme engelli kullanıcı için Linux/Unix konsoluna (metin modunda), yenilenebilir braille ekranı ile erişim sağlayan bir arka plan işlemidir. Braille ekran sürücüleri kullanır ve tam bir ekran görüntüleme işlevi sağlar.</Description>
-    </Source>
-</PISI>
-

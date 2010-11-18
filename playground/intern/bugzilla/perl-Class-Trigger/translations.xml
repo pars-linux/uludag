@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-Class-Trigger</Name>
-        <Summary xml:lang="en">Mixin to add / call inheritable triggers</Summary>
-        <Description xml:lang="en">perl-Class-Trigger is a mixin class to add / call triggers (or hooks) that get called at some points you specify.</Description>
-    </Source>
-</PISI>

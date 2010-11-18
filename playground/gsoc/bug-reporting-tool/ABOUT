@@ -1,6 +1,0 @@
-GSOC 2009
-
-Title:      Bug Reporting Tool for KDE4
-Student:    Caio Nascimento
-Mentor:     Pinar Yanardag
-Abstract:   A KDE 4 application to help non-technical users diagnose and report bugs and issues. This application will provide the following: a Bug Report assistant with automatic inclusion of command dumps and configuration files and a GUI front-end for crash reporting on Bugzilla.

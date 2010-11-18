@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# Update all the po files from the pspecs.
-# Usage: update-all-languages <path_to_devel>
-
-for i in $(<../LANGUAGES); do
-    echo "Processing $i language."
-    ./pspec2po update $1 $i ../po/$i.po
-done
