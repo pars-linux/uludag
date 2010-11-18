@@ -159,15 +159,15 @@ msgstr ""
 
 #: ../release.xml.in.h:36
 msgid "Select Partitioning Method"
-msgstr ""
+msgstr "Choisissez la méthode de partitionnement"
 
 #: ../release.xml.in.h:37
 msgid "Select a Drive to Install Pardus"
-msgstr ""
+msgstr "Sélectionnez le disque dur où installer Pardus"
 
 #: ../release.xml.in.h:38
 msgid "Summary"
-msgstr ""
+msgstr "Récapitulatif"
 
 #: ../release.xml.in.h:39
 msgid "To connect to a wireless or &apos;wired&apos; network is as easy as choosing a connection profile with Pardus 2011. With the network manager&apos;s advanced options, you can have different settings (e.g. static IP, a different DNS server) for different connections with the profiles you create. Choosing a different connection profile requires just two clicks."
@@ -179,7 +179,7 @@ msgstr ""
 
 #: ../release.xml.in.h:41
 msgid "Welcome to Pardus Pardus"
-msgstr ""
+msgstr "Bienvenue sur Pardus"
 
 #: ../release.xml.in.h:42
 msgid "With Pardus 2011, Amarok has not only shed skin, but also changed internally. It provides much more than listening to music. You now have the option to read lyrics and learn about the singer or composer through Wikipedia while listening to a song, or use the intelligent playlist feature to group songs in various manners. As Amarok works seamlessly with most player devices, you can drag and drop songs to your players without the need for any external device drivers."
