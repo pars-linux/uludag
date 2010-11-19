@@ -21,7 +21,7 @@ msgstr "Настройки Брандмауэра"
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr ""
+msgstr "<b><font size=\"+1\">Брандмауэр запущен</font></b>"
 
 #: src/firewall.py:192
 msgid "&Stop"
