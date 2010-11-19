@@ -167,4 +167,4 @@ msgstr "Служба передачи файлов"
 
 #: src/rules.py:31
 msgid "Desktop Sharing"
-msgstr ""
+msgstr "Доступ к рабочему столу"
