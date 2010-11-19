@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,23 +17,23 @@ msgstr ""
 
 #: browser.py:51
 msgid "Name:"
-msgstr ""
+msgstr "Имя:"
 
 #: browser.py:58 connection.py:269
 msgid "Authentication"
-msgstr ""
+msgstr "Аутентификация"
 
 #: browser.py:61 connection.py:507
 msgid "Address:"
-msgstr ""
+msgstr "Адрес:"
 
 #: browser.py:64 connection.py:548
 msgid "Automatic"
-msgstr ""
+msgstr "Автоматически"
 
 #: browser.py:71
 msgid "Mod:"
-msgstr ""
+msgstr "Mod:"
 
 #: browser.py:100
 msgid "Turn on/off connection"
@@ -42,11 +41,11 @@ msgstr ""
 
 #: browser.py:113
 msgid "Configure connection"
-msgstr ""
+msgstr "Настроить соединение"
 
 #: browser.py:116
 msgid "Delete connection"
-msgstr ""
+msgstr "Удалить соединение"
 
 #: browser.py:138
 #, python-format
@@ -58,15 +57,15 @@ msgstr ""
 
 #: browser.py:139
 msgid "Delete connection?"
-msgstr ""
+msgstr "Удалить соединение?"
 
 #: browser.py:226
 msgid "No device!"
-msgstr ""
+msgstr "Нет устройства!"
 
 #: browser.py:405 network-applet.py:587
 msgid "New connection"
-msgstr ""
+msgstr "Новое соединение"
 
 #: browser.py:410 nameconf.py:28
 msgid "Name Service Settings"
@@ -86,7 +85,7 @@ msgstr ""
 
 #: nameconf.py:35
 msgid "Computer"
-msgstr ""
+msgstr "Компьютер"
 
 #: nameconf.py:41
 msgid "Host name:"
@@ -118,21 +117,16 @@ msgstr ""
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
 
 #: comariface.py:190
@@ -176,9 +170,7 @@ msgid "DHCP Server Error"
 msgstr ""
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
+msgid "The interfaces that you have selected must be different to share internet connection"
 msgstr ""
 
 #: connsharing.py:156
@@ -212,9 +204,7 @@ msgid "Network manager module is already started!"
 msgstr ""
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
 msgstr ""
 
 #: newconn.py:26
@@ -386,9 +376,7 @@ msgid "Configure network connection"
 msgstr ""
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
 msgstr ""
 
 #: autoswitch.py:79
