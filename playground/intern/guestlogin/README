@@ -26,21 +26,21 @@ python setup.py install
 OR
 
 Copy guestlogin.py file to /lib/security/. (Actually same directory with pam_python.so)
-Copy guestlogin.conf to /etc/security/
-
+Copy guestlogin.conf to /etc/security/.
+Copy pam.d/guestlogin to /etc/pam.d/. (where pam include files goes)
 ---
 
 Edit necessary files in /etc/pam.d/ directory. (e.g. system-auth file for general login in Pardus)
 Add this line before pam_unix.so line:
 
-auth    sufficient      pam_python.so guestlogin.py
+auth    include         guestlogin
 
 and add this line after including "session pam_limits.so" line
 
-session     sufficient      pam_python.so guestlogin.py
+session     include      guestlogin
 
 If you want to debug, add debug end of the guestlogin.py lines.
-You should add like that:
+You should add like that into guestlogin file which goes to pam.d/:
 
 auth    sufficient      pam_python.so guestlogin.py debug
 
