@@ -99,7 +99,7 @@ msgstr ""
 #: src/firewall-config.py:176
 #, python-format
 msgid "Ports: %s"
-msgstr ""
+msgstr "Порты: %s"
 
 #: src/firewall-config.py:259
 msgid "&Stop Firewall"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: src/firewall-config.py:267
 msgid "&Start Firewall"
-msgstr ""
+msgstr "&Вкл. Брандмауэр"
 
 #: src/firewall-config.py:268
 msgid "<b><font size='+1'>Firewall is not running</font></b>"
