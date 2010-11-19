@@ -33,7 +33,7 @@ msgstr "Alt+S"
 
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
+msgstr "Нажмите здесь, чтобы остановить брандмауэр и разрешить все входящие соединения."
 
 #: src/firewall.py:196
 msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
@@ -77,7 +77,7 @@ msgstr "Граффическая оболочка Pardus Брандмауэра 
 
 #: src/firewall-config.py:57
 msgid "GUI Design & Usability"
-msgstr ""
+msgstr "GUI Design & Usability"
 
 #: src/firewall-config.py:58
 msgid "Help with IPTables"
@@ -90,7 +90,7 @@ msgstr ""
 #: src/firewall-config.py:82
 #, python-format
 msgid "Reject all outgoing connection through ports %s"
-msgstr ""
+msgstr "Отклонить все исходящие соединения через порты %s"
 
 #: src/firewall-config.py:113
 msgid "Invalid port range."
@@ -111,7 +111,7 @@ msgstr "<b><font size='+1'>Брандмауэр включен</font></b>"
 
 #: src/firewall-config.py:262
 msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
-msgstr ""
+msgstr "Нажмите здесь, чтобы остановить брандмауэр и разрешить все входящие и исходящие соединения."
 
 #: src/firewall-config.py:267
 msgid "&Start Firewall"
@@ -123,7 +123,7 @@ msgstr "<b><font size='+1'>Брандмауэр не включен</font></b>"
 
 #: src/firewall-config.py:270
 msgid "Click here to start the firewall and allow connections only to specified services."
-msgstr ""
+msgstr "Нажмите здесь, чтобы включить брандмауэр и разрешить соединения только указанным сервисам."
 
 #: src/firewall-config.py:384
 msgid "Pardus Firewall Interface is already running!"
