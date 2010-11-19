@@ -211,7 +211,7 @@ msgstr "Aus der Liste auswählen:"
 
 #: ui/videocard.py:106
 msgid "radeon"
-msgstr ""
+msgstr "radeon"
 
 #: ui/videocard.py:107
 msgid "Color Depth"
@@ -223,11 +223,11 @@ msgstr "Vom Treiber vorgegeben"
 
 #: ui/videocard.py:111
 msgid "16 Bit"
-msgstr ""
+msgstr "16 Bit"
 
 #: ui/videocard.py:112
 msgid "24 Bit"
-msgstr ""
+msgstr "24 Bit"
 
 #: ui/output.py:160
 msgid "Output Configuration"
@@ -245,11 +245,11 @@ msgstr "Spezifiziere Frequenzen"
 
 #: ui/output.py:163
 msgid "Horizontal sync:"
-msgstr ""
+msgstr "Горизонтальная синхронизация::"
 
 #: ui/output.py:164
 msgid "Monitor 800x600"
-msgstr ""
+msgstr "Monitor 800x600"
 
 #: ui/output.py:165
 msgid "Choose..."
@@ -269,15 +269,15 @@ msgstr "Geben Sie die Frequenzen manuell ein"
 
 #: ui/output.py:170 ui/output.py:172
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ui/output.py:171
 msgid "kHz"
-msgstr ""
+msgstr "kHz"
 
 #: ui/output.py:173
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: ui/output.py:174
 msgid "Selection:"
@@ -285,11 +285,11 @@ msgstr "Auswahl:"
 
 #: ui/output.py:175
 msgid "Vertical refresh:"
-msgstr ""
+msgstr "Обновление по вертикали:"
 
 #: ui/output.py:176
 msgid "Monitor:"
-msgstr ""
+msgstr "Монитор:"
 
 #: ui/output.py:177
 msgid "Frequency Ranges"
