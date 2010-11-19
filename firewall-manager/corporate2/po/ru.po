@@ -127,7 +127,7 @@ msgstr ""
 
 #: src/firewall-config.py:384
 msgid "Pardus Firewall Interface is already running!"
-msgstr ""
+msgstr "Интерфейфс Pardus Брандмауэр уже запущен!"
 
 #: src/dialog.py:64
 msgid "New Rule"
@@ -155,7 +155,7 @@ msgstr "Служба удаленного подключения"
 
 #: src/rules.py:19
 msgid "Windows file sharing service"
-msgstr ""
+msgstr "Сервис доступа к ресурсом Windows"
 
 #: src/rules.py:23
 msgid "Internet relay chat service"
