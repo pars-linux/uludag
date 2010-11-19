@@ -94,7 +94,7 @@ msgstr ""
 
 #: src/firewall-config.py:113
 msgid "Invalid port range."
-msgstr ""
+msgstr "Неверный диапазон портов."
 
 #: src/firewall-config.py:176
 #, python-format
@@ -135,7 +135,7 @@ msgstr "Новое правило"
 
 #: src/dialog.py:65
 msgid "Port Range"
-msgstr ""
+msgstr "Диапазон портов"
 
 #: src/dialog.py:66
 msgid "Example: 100-200,300"
@@ -143,7 +143,7 @@ msgstr "Пример: 100-200,300"
 
 #: src/rules.py:7
 msgid "Mail services"
-msgstr ""
+msgstr "Почтовая служба"
 
 #: src/rules.py:11
 msgid "Web services"
