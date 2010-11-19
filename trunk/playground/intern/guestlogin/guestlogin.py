@@ -62,6 +62,9 @@ def pam_sm_authenticate(pamh, flags, argv):
     try:
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
+        guest_enabled = config.get('guest', 'enabled')
+        if guest_enabled == '':
+            guest_enabled = "true"
         guest_name = config.get('guest', 'guestname')
         if guest_name == '':
             guest_name = "guest"
@@ -76,6 +79,7 @@ def pam_sm_authenticate(pamh, flags, argv):
             guest_group = "guests"
 
     except ConfigParser.Error:
+        guest_enabled = "true"
         guest_name = "guest"
         guest_limit = 5
         guest_home_dir_size = 300
@@ -83,6 +87,9 @@ def pam_sm_authenticate(pamh, flags, argv):
         if debugging and pamh.get_user(None) == guest_name:
             log("Unable to read config file at /etc/security/guestlogin.\
 conf, using default values.\n")
+
+    if guest_enabled == "false":
+        return auth_return(pamh, 1)
 
     if pamh.get_user(None) == guest_name:
         users = [x.pw_name for x in pwd.getpwall()]
@@ -173,16 +180,23 @@ def pam_sm_setcred(pamh, flags, argv):
     try:
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
+        guest_enabled = config.get('guest', 'enabled')
+        if guest_enabled == '':
+            guest_enabled = "true"
         guest_name = config.get('guest', 'guestname')
         if guest_name == '':
             guest_name = "guest"
 
     except ConfigParser.Error:
+        guest_enabled = "true"
         guest_name = "guest"
 
         if debugging and pamh.get_user(None) == guest_name:
             log("Unable to read config file at /etc/security/guestlogin.\
 conf, using default values.\n")
+
+    if guest_enabled == "false":
+        return auth_return(pamh, 1)
 
     if pamh.get_user(None).find(guest_name) == -1:
         return auth_return(pamh, -1)
@@ -207,14 +221,21 @@ destroy it but it seems quite dangerous"""
         config = ConfigParser.ConfigParser()
         config.read('/etc/security/guestlogin.conf')
         guest_name = config.get('guest', 'guestname')
+        guest_enabled = config.get('guest', 'enabled')
+        if guest_enabled == '':
+            guest_enabled = 'true'
         if guest_name == '':
             guest_name = "guest"
 
     except ConfigParser.Error:
+        guest_enabled = "true"
         guest_name = "guest"
         if debugging and pamh.get_user(None).find(guest_name) != -1:
             log("Unable to read config file at /etc/security/guestlogin.\
 conf, using default values.\n")
+
+    if guest_enabled == 'false':
+        return auth_return(pamh, 1)
 
     if pamh.get_user(None).find(guest_name) != -1:
         username = pamh.get_user(None)
