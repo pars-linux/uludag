@@ -187,12 +187,12 @@ msgstr "Avec Pardus 2011, Amarok a non seulement fait peau neuve, mais a aussi c
 
 #: ../release.xml.in.h:43
 msgid "With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file formats and you can view all your files without any additional software, take notes on bookmarks on them."
-msgstr ""
+msgstr "Avec Pardus 2011, Kpdf est remplacé par Okular. Okular supporte plusieurs formats de fichier et vous pouvez visualiser tous vos fichiers sans aucun logiciel supplémentaire, prendre des notes sur eux ou faire des marque-pages."
 
 #: ../release.xml.in.h:44
 msgid "With the arrival of KDE 4.2, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin."
-msgstr ""
+msgstr "Avec l'arrivée de KDE 4.2, Konqueror est remplacé par un nouveau gestionnaire de fichiers très talentueux, Dolphin. Dolphin est facile à utiliser, et quand il s'agit d'affichager des dossiers, il vous permet de les trier de différentes manières, d'ajouter des fonctionnalités comme le regroupement et l'affichage d'informations détaillées sur place. Tout ce dont vous pourriez avoir besoin à propos des dossiers, vous l'avez avec Dolphin."
 
 #: ../release.xml.in.h:45
 msgid "World&apos;s leading preferred libre office suite OpenOffice.org brings a word processor, a spreadsheet, a presentation application, database, formula and drawing tools to your desktop for your office needs at home, at your workplace or school. With OpenOffice.org, you can view and edit documents created in other office suites and share your documents with friends and contacts that are using other office applications."
-msgstr ""
+msgstr "La suite bureautique de référence LibreOffice (ex-OpenOffice.org) apporte un traitement de texte, un tableur, une application de présentation, les bases de données, les formules mathématiques et les outils de dessin, sur votre bureau, au travail ou à l'école. Avec LibreOffice, vous pouvez afficher et modifier des documents créés dans d'autres suites bureautiques et partager vos documents avec vos amis et contacts qui utilisent d'autres applications bureautiques."
