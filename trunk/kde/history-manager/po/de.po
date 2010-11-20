@@ -213,7 +213,7 @@ msgstr "- Lade PiSi History"
 
 #: .tmp/ui_mainwindow.py:136
 msgid "%p%"
-msgstr "%p%"
+msgstr ""
 
 # Kopie oder kopiere?
 #: .tmp/ui_mainwindow.py:138
