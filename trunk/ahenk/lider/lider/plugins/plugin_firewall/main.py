@@ -46,6 +46,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         # UI events
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), self.__slot_edit)
+        self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
 
     def showEvent(self, event):
         """
@@ -71,12 +72,19 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         firewallRules = policy.get("firewallRules", [""])[0]
         try:
-            firewallRules = firewallRules.split(":")[0]
-            firewallRules = base64.decodestring(firewallRules)
-            firewallRules = bz2.decompress(firewallRules)
-        except:
-            firewallRules = ""
-        self.rules_xml = firewallRules
+            rules_xml, rules_compiled = firewallRules.split(":")
+
+            rules_xml = base64.decodestring(rules_xml)
+            rules_xml = bz2.decompress(rules_xml)
+
+            rules_compiled = base64.decodestring(rules_compiled)
+            rules_compiled = bz2.decompress(rules_compiled)
+        except Exception, e:
+            rules_xml = ""
+            rules_compiled = ""
+
+        self.rules_xml = rules_xml
+        self.rules_compiled = rules_compiled
 
     def dump_policy(self):
         """
@@ -126,10 +134,34 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
             fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())
         fp.close()
 
-        os.system("/usr/bin/fwbuilder -q -f %s" % name)
-        os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh Firewall" % (name, name))
+        self.labelFirewall.setText("")
+
+        ret = os.system("/usr/bin/fwbuilder -q -f %s" % name)
+        if ret != 0:
+            return
+
+        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh Firewall" % (name, name))
+        if ret != 0:
+            self.labelFirewall.setText("Unable to compile firewall rules.")
+            return
 
         self.rules_xml = file(name).read()
         self.rules_compiled = file(name + ".sh").read()
 
-        self.editRules.setPlainText(self.rules_compiled)
+    def __slot_reset(self):
+        """
+            Triggered when user clicks 'Reset Rules' button.
+        """
+        fp = tempfile.NamedTemporaryFile(delete=False)
+        name = fp.name
+        fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())
+        fp.close()
+
+        self.labelFirewall.setText("")
+
+        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh Firewall" % (name, name))
+        if ret != 0:
+            return
+
+        self.rules_xml = file(name).read()
+        self.rules_compiled = file(name + ".sh").read()
