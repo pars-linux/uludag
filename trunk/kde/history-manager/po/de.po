@@ -41,11 +41,11 @@ msgstr "Systemwiederherstellung"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr "İşbaran Akçayır"
+msgstr ""
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
