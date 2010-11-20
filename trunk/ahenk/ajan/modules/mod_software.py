@@ -56,20 +56,30 @@ def process(message, options):
             logging.info("Software: Listing packages.")
             packages = pisi.api.list_installed()
             message.reply("software.packages", packages)
+        elif message.command == "software.repositories":
+            logging.info("Software: Listing repositories.")
+            repositories = get_repositories()
+            message.reply("software.repositories", repositories)
+
+def get_repositories():
+    repo_db =  pisi.db.repodb.RepoDB()
+    repositories = []
+    for repo_url in repo_db.list_repo_urls():
+        repo_name = db.get_repo_by_url(repo_url)
+        repositories.append((repo_name, repo_url))
+    return repositories
 
 def set_repositories(repositories_new, dryrun=False):
-    repo_db =  pisi.db.repodb.RepoDB()
-    repositories_now = repo_db.list_repo_urls()
+    repositories_now = get_repositories()
     if repositories_now != repositories_new:
         logging.info("Software: Setting new repositories.")
         if not dryrun:
             # Remove all repositories
-            for repo_url in repositories_now:
-                repo_name = db.get_repo_by_url(repo_url)
+            for repo_name, repo_url in repositories_now:
                 pisi.api.remove_repo(repo_name)
             # Add new repositories
-            for repo_url in repositories_new:
-                pisi.api.add_repo(repo_url)
+            for repo_name, repo_url in repositories_new:
+                pisi.api.add_repo(repo_name, repo_url)
 
 def set_autoupdate(mode, crondate=None, dryrun=False):
     if mode == "off" or not crondate:
