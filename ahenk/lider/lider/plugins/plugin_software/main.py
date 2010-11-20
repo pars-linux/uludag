@@ -63,7 +63,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         """
             Things to do before widget is shown.
         """
-        pass
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "software.repositories")
 
     def get_type(self):
         """
@@ -148,7 +149,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        pass
+        print command, arguments
+        if command == "software.repositories":
+            for repo_name, repo_url in arguments:
+                self.__add_repo_item(repo_url, repo_name, False, True)
 
     def talk_status(self, sender, status):
         """
