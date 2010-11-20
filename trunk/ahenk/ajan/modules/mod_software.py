@@ -65,7 +65,7 @@ def get_repositories():
     repo_db =  pisi.db.repodb.RepoDB()
     repositories = []
     for repo_url in repo_db.list_repo_urls():
-        repo_name = db.get_repo_by_url(repo_url)
+        repo_name = repo_db.get_repo_by_url(repo_url)
         repositories.append((repo_name, repo_url))
     return repositories
 
