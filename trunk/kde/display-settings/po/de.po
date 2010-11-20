@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -35,11 +35,11 @@ msgstr "Grafikkarte"
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
 msgid "python display screen video monitor manager"
-msgstr "python grafik monitor video manager"
+msgstr ""
 
 #: data/kcm_displaysettings.desktop.in.h:1
 msgid "Resize and rotate displays"
-msgstr "Auflösung und Orientierung des Schirms"
+msgstr "Auflösung und Orientierung der Anzeige"
 
 #: data/kcm_displaysettings.desktop.in.h:2
 msgid "Screens"
@@ -47,30 +47,29 @@ msgstr "Bildschirme"
 
 #: src/displaysettings/about.py:21
 msgid "Display Configuration Tool"
-msgstr "Bildschirmeinstellungen konfigurieren"
+msgstr "Bildschirmeinstellung konfigurieren"
 
 #: src/displaysettings/about.py:23
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
+
+#: src/displaysettings/about.py:31
+msgid "Fatih Aşıcı"
+msgstr ""
 
 #: src/displaysettings/about.py:31
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: src/displaysettings/about.py:31
-msgid "Fatih Aşıcı"
-msgstr "Fatih Aşıc"
+#: src/displaysettings/about.py:32
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Stefan Wilhelm"
 
 #: src/displaysettings/about.py:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-
-#: src/displaysettings/about.py:32
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr ""
+msgstr "sw@pardususer.de"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -243,7 +242,7 @@ msgstr "Horizontal Sync:"
 
 #: ui/ui_output.py:235
 msgid "kHz"
-msgstr "kHz"
+msgstr ""
 
 #: ui/ui_output.py:236
 msgid "Vertical refresh:"
@@ -251,7 +250,7 @@ msgstr "Vertikale Wiederholrate:"
 
 #: ui/ui_output.py:237
 msgid "Hz"
-msgstr "Hz"
+msgstr ""
 
 #: ui/ui_output.py:238
 msgid "Frequency Ranges"
@@ -283,7 +282,7 @@ msgstr "Breite:"
 
 #: ui/ui_output.py:245 ui/ui_output.py:247
 msgid " mm"
-msgstr "mm"
+msgstr ""
 
 #: ui/ui_output.py:246
 msgid "Height:"
@@ -367,8 +366,8 @@ msgstr "Vom Treiber vorgegeben"
 
 #: ui/ui_videocard.py:83
 msgid "16 Bit"
-msgstr "16 Bit"
+msgstr ""
 
 #: ui/ui_videocard.py:84
 msgid "24 Bit"
-msgstr "24 Bit"
+msgstr ""
