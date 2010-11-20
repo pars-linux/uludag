@@ -38,6 +38,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         self.setupUi(self)
 
         # UI events
+        self.connect(self.pushStart, QtCore.SIGNAL("clicked()"), self.__slot_start_service)
+        self.connect(self.pushStop, QtCore.SIGNAL("clicked()"), self.__slot_stop_service)
+
+        # Package index
+        self.package_index = {}
 
     def showEvent(self, event):
         """
@@ -74,15 +79,56 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP message is received.
         """
-        print command, arguments
         if command == "service.info":
-            self.listServices.clear()
+            self.tableWidget.setRowCount(len(arguments))
+
+            index = 0
+
             for name, desc, status in arguments:
-                item = QtGui.QListWidgetItem(self.listServices)
-                item.setText("%s - %s" % (name, status))
+                item_description = QtGui.QTableWidgetItem(str(desc))
+                self.tableWidget.setItem(index, 0, item_description)
+
+                item_name = QtGui.QTableWidgetItem(str(name))
+                self.tableWidget.setItem(index, 3, item_name)
+
+                if status in ['started', 'on', 'conditional_started']:
+                    item_status = QtGui.QTableWidgetItem("Running")
+                else:
+                    item_status = QtGui.QTableWidgetItem("Stopped")
+                self.tableWidget.setItem(index, 1, item_status)
+
+                if status in ['stopped', 'on']:
+                    item_autostart = QtGui.QTableWidgetItem("Yes")
+                elif status in ['conditional_started', 'conditional_stopped']:
+                    item_autostart = QtGui.QTableWidgetItem("Conditional")
+                else:
+                    item_autostart = QtGui.QTableWidgetItem("No")
+                self.tableWidget.setItem(index, 2, item_autostart)
+
+                index += 1
 
     def talk_status(self, sender, status):
         """
             Main window calls this method when an XMPP status is changed.
         """
         pass
+
+    def __slot_start_service(self):
+        """
+            This method is called when the start button clicked to start the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        item_name = str(item[3].text())
+
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "service.start", [item_name])
+
+    def __slot_stop_service(self):
+        """
+            This method is called when the stop button clicked to stop the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        item_name = str(item[3].text())
+
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "service.stop", [item_name])
