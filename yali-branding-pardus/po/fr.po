@@ -51,7 +51,7 @@ msgstr "&lt;p&gt;YALI est en train d'installer Pardus sur votre ordinateur. Cett
 
 #: ../release.xml.in.h:9
 msgid "&lt;p&gt;You can install Pardus if you have an unpartitioned-unused disk space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or partition selected for installation will automatically be formatted. Therefore, it is advised to backup your data to avoid future problems.&lt;/p&gt;&lt;p&gt;Auto-partitioning will automatically format the select disk part/partition and install Pardus. If you like, you can do the partitioning manually or make Pardus create a new partition for installation.&lt;/p&gt;"
-msgstr ""
+msgstr "&lt;p&gt;Vous pouvez installer Pardus si vous avez un espace disque non partitionné/non utilisé de 4Go (10 Go recommandé) ou un disque entier inutilisé/non partitionné. La zone de disque ou partition sélectionnée pour l'installation sera automatiquement formatée. Par conséquent, il est conseillé de sauvegarder vos données afin d'éviter des problèmes futurs.&lt;/p&gt;&lt;p&gt; L'auto-partitionnement formatera automatiquement la partition ou le disque sélectionné et installera Pardus. Si vous le souhaitez, vous pouvez faire le partitionnement manuellement ou faire créer à Pardus une nouvelle partition pour l'installation.&lt;/p&gt;"
 
 #: ../release.xml.in.h:10
 msgid "&lt;p&gt;You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;/p&gt;&lt;P&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?&lt;/p&gt;"
