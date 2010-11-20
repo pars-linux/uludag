@@ -43,7 +43,7 @@ msgstr "&lt;p&gt;Pardus permet à plusieurs utilisateurs de partager le même or
 
 #: ../release.xml.in.h:7
 msgid "&lt;p&gt;Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.&lt;/p&gt;&lt;p&gt;This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.&lt;/p&gt;&lt;p&gt;You can start the installation process (and step in on a free world) by pressing the Next button.&lt;/p&gt;"
-msgstr ""
+msgstr "&lt;p&gt; Bienvenue à Pardus qui contient de nombreux composants logiciels faciles d'utilisation. Vous pouvez faire tout ce dont vous avez besoin pour, notamment, mais sans s'y limiter, la connexion à Internet, la création de documents, le jeu vidéo, la musique en utilisant Pardus.&lt;/p&gt;&lt;p&gt; Cette application va vous aider avec l'installation de Pardus sur votre ordinateur en quelques étapes faciles et puis faire ce qui est nécessaire pour identifier et configurer votre matériel. Nous vous conseillons de sauvegarder vos données avant de commencer l'installation.&lt;/p&gt;&lt;p&gt; Vous pouvez commencer le processus d'installation (et faire un pas dans un monde libre) en appuyant sur le bouton Suivant.&lt;/p&gt;"
 
 #: ../release.xml.in.h:8
 msgid "&lt;p&gt;YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;/p&gt;&lt;p&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;/p&gt;&lt;p&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release.&lt;/p&gt;"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: ../release.xml.in.h:25
 msgid "Installing Pardus"
-msgstr ""
+msgstr "Installation de Pardus"
 
 #: ../release.xml.in.h:26
 msgid "It is possible to install hundreds of software found in Pardus&apos; package repositories with a single click. Using the Package Manager, you can install PiSi packages with the click of a button, not having to deal with screen after screen of detailed configuration options. After package installations, all you need to do is to start the applications. It is all that easy!"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: ../release.xml.in.h:29
 msgid "Manual Partitioning"
-msgstr ""
+msgstr "Partitionnement manuel"
 
 #: ../release.xml.in.h:30
 msgid "Mozilla Firefox is the preferred browser with its speed, security and flexibility. With its addon support and a *very* rich addon repository, you can add new functionality to Mozilla Firefox. You will find many of the most visited websites along with Pardus-related websites in your bookmarks in its Pardus default installation. Enjoy a fast and secure internet with the new Mozilla Firefox 3.5."
