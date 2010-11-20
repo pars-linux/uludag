@@ -63,7 +63,7 @@ msgstr "&lt;p&gt;Vous devez définir un mot de passe pour l'utilisateur &quot;ro
 
 #: ../release.xml.in.h:12
 msgid "A keyboard layout is a description of how keys are placed on a keyboard. There are different keyboard layouts in use throughout the world. The one you will want to use, generally depends on the country you live in or the language you use.This screen lets you select the keyboard layout you want to use on Pardus. You can test the selected layout by typing something in the given textbox."
-msgstr ""
+msgstr "Une disposition de clavier est une description de la façon dont les touches sont placées sur un clavier. Il existe différentes dispositions de clavier selon les pays et les langues. Cet écran vous permet de sélectionner la configuration du clavier que vous voulez utiliser sur Pardus. Vous pouvez tester la configuration choisie en tapant quelque chose dans le champ donné."
 
 #: ../release.xml.in.h:13
 msgid "Add Users"
