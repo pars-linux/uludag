@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
+msgstr "Mounten von Partitonen & Datenträgern ins Dateisystem"
 
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
@@ -25,27 +25,26 @@ msgid "Disk Manager"
 msgstr "Datenträgerverwaltung"
 
 #: src/diskmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
 
 #: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
+msgstr ""
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
 #: src/diskmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Stefan Wilhelm"
+
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sw@pardususer.de"
 
 #: src/diskmanager/main.py:86
 msgid ""
