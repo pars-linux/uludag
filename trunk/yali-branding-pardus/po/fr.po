@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-18 22:01+0000\n"
+"POT-Creation-Date: 2010-11-20 18:02+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "&lt;p&gt;Dans cet écran, vous pouvez partitionner manuellement votre di
 
 #: ../release.xml.in.h:6
 msgid "&lt;p&gt;Pardus allows multiple users to share the same computer.You can assign management rights to the users you create; you can alsoconfigure permissions to users for various operations through User Manager.&lt;/p&gt;&lt;p&gt;To create a new user, fill in the form and press the &quot;Create User&quot; button.If you want a user to be automatically logged in to the system, select the user from the list; if you want to delete a user, select his/her username from the list and press &quot;Delete Selected User&quot;.Proceed with the installation after you make your selections.&lt;/p&gt;"
-msgstr ""
+msgstr "&lt;p&gt;Pardus permet à plusieurs utilisateurs de partager le même ordinateur. Vous pouvez attribuer des droits différents pour les différentes opérations à chacun des utilisateurs que vous créez, à travers le Gestionnaire des utilisateurs.&lt;/p&gt;&lt;p&gt; Pour créer un nouvel utilisateur, veuillez remplir le formulaire et cliquer sur \"Créer un utilisateur\". Si vous voulez qu'un utilisateur soit automatiquement connecté au système, sélectionnez l'utilisateur dans la liste. Si vous souhaitez supprimer un utilisateur, sélectionnez son nom d'utilisateur dans la liste et cliquez sur \"Supprimer l'utilisateur sélectionné\". Procédez à l'installation une fois que vous avez fini vos sélections.&lt;/p&gt;"
 
 #: ../release.xml.in.h:7
 msgid "&lt;p&gt;Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.&lt;/p&gt;&lt;p&gt;This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.&lt;/p&gt;&lt;p&gt;You can start the installation process (and step in on a free world) by pressing the Next button.&lt;/p&gt;"
