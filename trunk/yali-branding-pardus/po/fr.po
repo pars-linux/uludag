@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-20 18:02+0000\n"
+"POT-Creation-Date: 2010-11-20 19:02+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -71,7 +71,7 @@ msgstr "Kullanıcıları Ekle"
 
 #: ../release.xml.in.h:14
 msgid "Adding new users, changing boot order, starting or stopping system services or rolling your system configuration back to a previous state has never been easier. You can use the system managers for that and you can even add to your desktop as widgets managers that you use frequently."
-msgstr ""
+msgstr "L'ajout de nouveaux utilisateurs, la modification de l'ordre d'amorçage, le démarrage ou l'arrêt des services du système ou le retour à un état antérieur de votre système n'ont jamais été aussi facile. Vous pouvez utiliser les différents gestionnaires du système pour cela et vous pouvez même ajouter à votre bureau, en tant que plasmoïdes, ceux que vous utilisez fréquemment."
 
 #: ../release.xml.in.h:15
 msgid "Adjust Date and Time Settings"
@@ -95,11 +95,11 @@ msgstr "Configurer le chargeur de démarrage"
 
 #: ../release.xml.in.h:20
 msgid "Connecting to your friends and contacts is really easy and seamlessly integrated into the desktop with Pardus 2011. Using Kontact, you can send and receive emails, manage your meetings, create address books, takes notes and follow RSS feeds. Using Kopete, you can connect to popular networks like MSN and GTalk, and chat online with your friends."
-msgstr ""
+msgstr "La connexion à vos amis et contacts est vraiment facile et parfaitement intégrée au bureau de Pardus 2011. Avec Kontact, vous pouvez envoyer et recevoir des courriels, gérer vos réunions, créer des carnets d'adresses, prendre des notes et suivre les flux RSS. Avec Kopete, vous pouvez vous connecter à des réseaux populaires comme MSN et GTalk, et clavarder en ligne avec vos amis."
 
 #: ../release.xml.in.h:21
 msgid "Gimp is an advanced image editing software. Allowing creation and editing of common graphics and image file formats, it has abilities that professional graphics artists and designers need and an ability to integrate new filters easily with its addon system."
-msgstr ""
+msgstr "Gimp est un logiciel de retouche d'image avancé. Permettant la création et la modification des formats de fichiers image communs, il offre les capacités dont les artistes professionnels du graphisme et les concepteurs ont besoin et a la capacité d'intégrer de nouveaux filtres facilement avec son système de greffons."
 
 #: ../release.xml.in.h:22
 msgid "Goodbye"
@@ -107,11 +107,11 @@ msgstr "Au revoir"
 
 #: ../release.xml.in.h:23
 msgid "Hello, there. The easiest-ever install tool YALI has begun Pardus installation. It is now time to relax and learn about some of the features of Pardus 2011 while it is being installed."
-msgstr ""
+msgstr "Bonjour. L'installeur YALI a commencé l'installation de Pardus. Il est maintenant temps de se détendre et se renseigner sur certaines des fonctionnalités de Pardus 2011 pendant l'installation."
 
 #: ../release.xml.in.h:24
 msgid "Here you can validate the integrity of the installation packages. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage). If you are using an optical installation medium, try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
-msgstr ""
+msgstr "Ici, vous pouvez valider l'intégrité des paquets d'installation. Une validation qui échoue est généralement le signe d'un support d'installation défectueux (DVD ou clef USB). Si vous utilisez un support d'installation optique, essayez de graver l'image d'installation en utilisant le mode DAO (Disc-at-once), à une vitesse inférieure (4x)."
 
 #: ../release.xml.in.h:25
 msgid "Installing Pardus"
@@ -119,7 +119,7 @@ msgstr "Installation de Pardus"
 
 #: ../release.xml.in.h:26
 msgid "It is possible to install hundreds of software found in Pardus&apos; package repositories with a single click. Using the Package Manager, you can install PiSi packages with the click of a button, not having to deal with screen after screen of detailed configuration options. After package installations, all you need to do is to start the applications. It is all that easy!"
-msgstr ""
+msgstr "Il est possible d'installer des centaines de logiciels qui se trouvent dans les dépôts de paquets de Pardus, d'un simple clic. Avec le gestionnaire de paquets, vous pouvez installer des paquets PiSi en un clic, sans avoir plusieurs écrans de configuration à passer. Après l'installation des paquets, tout ce que vous avez à faire est de démarrer les applications. C'est aussi facile que ça !"
 
 #: ../release.xml.in.h:27
 msgid "Kahya is working"
@@ -127,7 +127,7 @@ msgstr "Kahya travaille"
 
 #: ../release.xml.in.h:28
 msgid "Kaptan (Turkish for &apos;Captain&apos;) is what welcomes you to your Pardus installation. Using Kaptan, you can configure your desktop, changing the taskbar&apos;s location, wallpaper and desktop theme, and internet connection settings. Kaptan also allows you to add the Contribution Repository to your package management settings."
-msgstr ""
+msgstr "Kaptan (en turc, «capitaine») est ce qui vous accueille à votre installation de Pardus. Kaptan vous permet de configurer votre ordinateur de bureau, changer l'emplacement de la barre des tâches, le papier peint et le thème de bureau, et les paramètres de connexion internet. Kaptan vous permet également d'ajouter le dépôt \"Contrib\" à vos paramètres de gestion des paquets."
 
 #: ../release.xml.in.h:29
 msgid "Manual Partitioning"
@@ -135,27 +135,27 @@ msgstr "Partitionnement manuel"
 
 #: ../release.xml.in.h:30
 msgid "Mozilla Firefox is the preferred browser with its speed, security and flexibility. With its addon support and a *very* rich addon repository, you can add new functionality to Mozilla Firefox. You will find many of the most visited websites along with Pardus-related websites in your bookmarks in its Pardus default installation. Enjoy a fast and secure internet with the new Mozilla Firefox 3.5."
-msgstr ""
+msgstr "Mozilla Firefox est le navigateur préféré avec sa vitesse, sécurité et flexibilité. Avec son *très* riche catalogue de plugins, vous pouvez ajouter de nouvelles fonctionnalités à Mozilla Firefox. Vous trouverez de nombreux sites les plus visités dans vos signets par défaut. Profitez d'un Internet rapide et sécurisé, avec le nouveau Mozilla Firefox 3.5."
 
 #: ../release.xml.in.h:31
 msgid "Pardus 2011 comes preinstalled with the open source desktop environment KDE 4.2. You will have a much better desktop experience compared to what you have seen so far. Following the installation, you can choose to use the classical desktop view that includes icons to your files and folders, or you can have any number of the preinstalled plasma widgets on your desktop and add interesting functionality to your view. You can have an analog clock on your desktop; even more, you can have a real-time weather report, your notes and RSS feeds right on your desktop."
-msgstr ""
+msgstr "Pardus 2011 est préinstallé avec l'environnement de bureau open source KDE 4.2. Vous aurez une expérience de bureau meilleure que celle que vous avez connu jusqu'à présent. Après l'installation, vous pouvez choisir d'utiliser la vue de bureau classique, qui comprend des icônes pour vos fichiers et dossiers, ou vous pouvez avoir n'importe quel nombre de plasmoïdes préinstallés sur votre bureau et ajouter des fonctionnalités intéressantes à votre vue. Par exemple, vous pouvez avoir une horloge analogique sur votre bureau ou un bulletin météo en temps réel, vos notes, ou encore les flux RSS directement sur votre bureau."
 
 #: ../release.xml.in.h:32
 msgid "Pardus 2011 is a Linux distribution that everybody can easily install and use. With Pardus 2011, you can do anything that you could otherwise do with other operating systems. With its fast, secure and stable infrastructure, Pardus opens the path to software libre."
-msgstr ""
+msgstr "Pardus 2011 est une distribution Linux que tout le monde peut facilement installer et utiliser. Avec Pardus 2011, vous pouvez faire tout ce que vous pourriez faire avec d'autres systèmes d'exploitation. Avec sa rapidité, une infrastructure sécuritaire et stable, Pardus ouvre la voie du logiciel libre."
 
 #: ../release.xml.in.h:33
 msgid "Pardus 2011 is set to support most hardware right away. At the end of the installation, when you start with Pardus, the graphics card and sound hardware of your computer will be auto-detected , and the network devices will be prepared for connections, whether it be wireless or &apos;wired&apos;. Adding a printer to your sistem is also really easy. All you need to do is plug the printer in, and it is set. Pardus will install the correct driver and set everything accordingly right away."
-msgstr ""
+msgstr "Pardus 2011 gère la plupart du matériel tout de suite. À la fin de l'installation, lorsque vous démarrez avec Pardus, la carte graphique et carte son de votre ordinateur seront détectés automatiquement, et la carte réseau sera prête pour les connexions, que ce soit sans fil ou «branché». L'ajout d'une imprimante à votre système est également très facile. Tout ce que vous avez à faire est de brancher l'imprimante. Pardus va installer le pilote approprié et vous pourrez imprimer tout de suite."
 
 #: ../release.xml.in.h:34
 msgid "Pardus includes many genuine technologies aiming for an easier use and management. TASMA has been replaced with System Manager in Pardus 2011, but you will still find all these management tools built into the System Manager interface."
-msgstr ""
+msgstr "Pardus comporte de nombreuses technologies visant à faciliter l'utilisation et la gestion. Tasma a été remplacé par le Gestionnaire système dans Pardus 2011, mais vous pourrez toujours trouver tous ces outils de gestion intégrée à l'interface du gestionnaire du système."
 
 #: ../release.xml.in.h:35
 msgid "Pardus, along with the preinstalled games, has many games in its repositories, allowing hours of fun with various kinds of games available through the package manager."
-msgstr ""
+msgstr "Pardus, en plus des jeux pré-installés, a beaucoup de jeux dans ses dépôts, ce qui permet des heures de plaisir avec différents types de jeux disponibles via le gestionnaire de paquets."
 
 #: ../release.xml.in.h:36
 msgid "Select Partitioning Method"
@@ -171,11 +171,11 @@ msgstr "Récapitulatif"
 
 #: ../release.xml.in.h:39
 msgid "To connect to a wireless or &apos;wired&apos; network is as easy as choosing a connection profile with Pardus 2011. With the network manager&apos;s advanced options, you can have different settings (e.g. static IP, a different DNS server) for different connections with the profiles you create. Choosing a different connection profile requires just two clicks."
-msgstr ""
+msgstr "Se connecter à un réseau sans fil ou «branché» du réseau est aussi facile que de choisir un profil de connexion avec Pardus 2011. Avec les options avancées du gestionnaire de réseau, vous pouvez avoir des paramètres différents (par exemple, IP statique, un autre serveur DNS) pour les connexions avec les différents profils que vous créez. Le changement de profil de connexion se fait en deux clics."
 
 #: ../release.xml.in.h:40
 msgid "We have a support portal to help improve your Pardus experience and help with problems you encounter. In the Özgürlükİçin portal, where content is developed by volunteer contributors, you will find guides, package and game introductions. If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com"
-msgstr ""
+msgstr "L'équipe de www.pardus-fr.org tâchera de répondre au mieux à vos questions et de vous porter assistance en cas de problème. Inscrivez-vous sur le forum."
 
 #: ../release.xml.in.h:41
 msgid "Welcome to Pardus Pardus"
@@ -183,7 +183,7 @@ msgstr "Bienvenue sur Pardus"
 
 #: ../release.xml.in.h:42
 msgid "With Pardus 2011, Amarok has not only shed skin, but also changed internally. It provides much more than listening to music. You now have the option to read lyrics and learn about the singer or composer through Wikipedia while listening to a song, or use the intelligent playlist feature to group songs in various manners. As Amarok works seamlessly with most player devices, you can drag and drop songs to your players without the need for any external device drivers."
-msgstr ""
+msgstr "Avec Pardus 2011, Amarok a non seulement fait peau neuve, mais a aussi changé l'intérieur. Il permet beaucoup plus qu'écouter de la musique. Vous avez maintenant la possibilité de lire les paroles et en apprendre davantage sur le chanteur ou compositeur à travers Wikipedia tout en écoutant une chanson, ou utiliser la fonction de liste de lecture intelligente des chansons pour les grouper de diverses manières. Comme Amarok fonctionne parfaitement avec la plupart des lecteurs mp3, vous pouvez faire glisser et déposez les morceaux, sans besoin d'installer des pilotes de périphériques externes."
 
 #: ../release.xml.in.h:43
 msgid "With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file formats and you can view all your files without any additional software, take notes on bookmarks on them."
