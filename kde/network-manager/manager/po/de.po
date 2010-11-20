@@ -2,7 +2,7 @@
 # Network Manager.
 # Copyright (C) 2009, TUBITAK/UEKAE
 # This file is distributed under the same license as the Network-Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -27,39 +27,37 @@ msgstr "Netzwerkverbindungen"
 
 #: data/networkmanager.desktop.in.h:1
 msgid "An application for managing network connections."
-msgstr ""
+msgstr "Netzwerkverbindungen verwalten."
 
 #: src/networkmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
 
 #: src/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
+msgstr ""
 
 #: src/networkmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
 #: src/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Entwickler"
+msgid "Gökmen Göksel"
+msgstr ""
 
 #: src/networkmanager/about.py:33
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
-
-#: src/networkmanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "Developer"
+msgstr "Entwickler"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Stefan Wilhelm"
+
+#: src/networkmanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sw@pardususer.de"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
@@ -79,7 +77,7 @@ msgstr "Ohne Authentifizierung"
 
 #: src/networkmanager/base.py:554
 msgid "There is already a profile named '%1'."
-msgstr ""
+msgstr "Es existiert bereits ein Profil mit dem Namen '%1'."
 
 #: src/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
@@ -144,11 +142,11 @@ msgstr "Verbindung löschen"
 
 #: ui/ui_item.py:112
 msgid "  %p %"
-msgstr "  %p %"
+msgstr ""
 
 #: ui/ui_main.py:342
 msgid "Form"
-msgstr "Form"
+msgstr ""
 
 #: ui/ui_main.py:343
 msgid "Create Profile"
@@ -250,7 +248,7 @@ msgstr "Computername"
 
 #: ui/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr "Dialog"
+msgstr ""
 
 #: ui/ui_nmwizard.py:93
 msgid "Details"
@@ -258,7 +256,7 @@ msgstr "Details"
 
 #: ui/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr "IMEI"
+msgstr ""
 
 #: ui/ui_nmwizard.py:95
 msgid "Device"
@@ -266,7 +264,7 @@ msgstr "Gerät"
 
 #: ui/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr "IMEI:"
+msgstr ""
 
 #: ui/ui_nmwizard.py:97
 msgid "Device:"
