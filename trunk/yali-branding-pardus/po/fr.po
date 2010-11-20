@@ -55,7 +55,7 @@ msgstr "&lt;p&gt;Vous pouvez installer Pardus si vous avez un espace disque non 
 
 #: ../release.xml.in.h:10
 msgid "&lt;p&gt;You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;/p&gt;&lt;P&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?&lt;/p&gt;"
-msgstr ""
+msgstr "&lt;p&gt;Vous avez réussi à installer Pardus sur votre ordinateur. Après le redémarrage de votre ordinateur, vous pouvez enfin profiter pleinement des avantages de Pardus. &lt;/p&gt;&lt;P&gt;Cliquez sur Suivant pour continuer. NB : Vous vous souvenez de votre mot de passe, n&apos;est-ce pas ?&lt;/p&gt;"
 
 #: ../release.xml.in.h:11
 msgid "&lt;p&gt;You need to define a password for the &quot;root&quot; user which is the conventional nameof the user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;/p&gt;&lt;p&gt;Your password must be easy to remember but strong enough to resist possible attacks.You can use capital and lower-case letters, numbers and punctuation marks in your password.&lt;/p&gt;&lt;p&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname.&lt;/p&gt;"
