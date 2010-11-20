@@ -159,7 +159,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Benutzer denen diese Politik nicht gefällt, können sich an das Pardus Infrastructure Team wenden an: admin [at] pardus.org.tr. Ausserdem gibt es jederzeit die Möglichkeit sein Profil zu löschen mit dem Befehl\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/kaptan.desktop.in.h:2
-#, fuzzy
 msgid "Welcome Wizard"
 msgstr "Willkommen beim Assistenten Kaptan :)"
 
