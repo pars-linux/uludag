@@ -95,7 +95,7 @@ msgstr "Einstellung der Uhr"
 
 #: ui/ui_main.py:168
 msgid "Keep the hardware clock in UTC"
-msgstr "Die Hardware-Uhr ist auf UTC eingestellt"
+msgstr "Die Hardware-Uhr auf UTC eingestellt lassen"
 
 #: ui/ui_main.py:169
 msgid "Normalize systematic drift of the hardware clock"
