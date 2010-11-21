@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
@@ -43,12 +43,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Entwickler"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Entwickler"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -61,22 +61,20 @@ msgstr "Erster Autor"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Stefan Wilhelm"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "sw@pardususer.de"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
-#, fuzzy
 msgid "Clear Basket"
-msgstr "Cache leeren"
+msgstr "Auswahl zurücksetzen"
 
 #: src/basketdialog.py:55
-#, fuzzy
 msgid "Do you want to clear all selections ?"
-msgstr "Möchten Sie fortfahren ?"
+msgstr "Möchten Sie die Auswahl zurücksetzen?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -88,9 +86,8 @@ msgid "Do you want to continue ?"
 msgstr "Möchten Sie fortfahren ?"
 
 #: src/basketdialog.py:177
-#, fuzzy
 msgid "You must restart your system for the updates to take effect"
-msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden aktualisierten Pakete Wirkung zeigen:"
+msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden Aktualisierungen Wirkung zeigen"
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -98,44 +95,39 @@ msgstr "Update Anforderungen"
 
 #: src/basketdialog.py:180
 msgid "Packages Require System Restart"
-msgstr ""
+msgstr "Paket(e) benötigen Neustart des Systems"
 
 #: src/basketdialog.py:185
-#, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Sie müssen die folgenden System-Dienste <b>neu starten</b>, damit diese Wirkung zeigen:"
+msgstr "Sie müssen abhängige System-Dienste neu starten, damit die aktualisierten Pakete Wirkung zeigen"
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
-msgstr ""
+msgstr "Paket(e) benötigen Dienst-Neustart"
 
 #: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr ""
+msgstr "Die ausgewählten Pakete sind möglicherweise notwendig für das System. Ein entfernen dieser kann das System unbenutzbar machen."
 
 #: src/basketdialog.py:201 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Warnung"
 
 #: src/basketdialog.py:202
-#, fuzzy
 msgid "Critical Packages"
-msgstr "Paket(e) werden entfernt"
+msgstr "Kritische Pakete"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
+msgstr "Die ausgewählten Pakete sind schon installiert. <br>Falls Sie fortfahren, wird das Paket neu installiert"
 
 #: src/basketdialog.py:215
-#, fuzzy
 msgid "Already Installed Packages"
-msgstr "Paket(e) installieren"
+msgstr "Bereits installierte Pakete"
 
 #: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
-#, fuzzy
 msgid "Installed Packages"
-msgstr "Paket(e) installieren"
+msgstr "Installierte Pakete"
 
 # Zweifel - habe hier Gesamt gelöscht, und Alle hineingeschrieben (kh)
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
@@ -151,18 +143,16 @@ msgid "Show main window"
 msgstr "Hauptfenster zeigen"
 
 #: src/mainwidget.py:147
-#, fuzzy
 msgid "All packages are up to date"
 msgstr "Alle Pakete sind auf dem neuesten Stand!"
 
 #: src/mainwidget.py:233
-#, fuzzy
 msgid "Searching..."
-msgstr "Suche"
+msgstr "Suche..."
 
 #: src/mainwidget.py:245
 msgid "No results found."
-msgstr ""
+msgstr "Suche nicht erfolgreich."
 
 #: src/mainwidget.py:300
 msgid "Network Error"
@@ -181,9 +171,9 @@ msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 
 #: src/mainwidget.py:307
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Paket nicht gefunden. Möglicherweise ist es im Depot aktualisiert oder entfernt worden. Bitte versuchen Sie die Depot-Information zu aktualisieren."
+msgstr "Paket <b>%s</b> nicht in den Depots gefunden. <br>Möglicherweise ist es aktualisiert oder aus dem Depot entfernt worden.<br> Bitte versuchen Sie die Depot-Informationen zu aktualisieren."
 
 #: src/mainwidget.py:446
 msgid "All Updates"
@@ -198,14 +188,12 @@ msgid "Critical Updates"
 msgstr "Kritische Updates"
 
 #: src/mainwindow.py:136 src/mainwindow.py:139
-#, fuzzy
 msgid "All Packages"
-msgstr "Installierte Pakete anzeigen"
+msgstr "Alle Pakete"
 
 #: src/mainwindow.py:142 src/mainwindow.py:145
-#, fuzzy
 msgid "Installable Packages"
-msgstr "Neue Pakete anzeigen"
+msgstr "Installierbare Pakete"
 
 #: src/mainwindow.py:154 src/mainwindow.py:157
 msgid "Updates"
@@ -213,7 +201,7 @@ msgstr "Updates"
 
 #: src/mainwindow.py:201
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Berechne Abhängigkeiten..."
 
 #: src/mainwindow.py:205
 msgid "Currently your basket is empty."
@@ -286,9 +274,8 @@ msgid "%prog packages_to_install"
 msgstr "%prog Pakete zu installieren"
 
 #: src/progressdialog.py:75
-#, fuzzy
 msgid "<p align='right'>%1 %</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
 
 #: src/progressdialog.py:76
 #, python-format
@@ -310,14 +297,12 @@ msgstr ""
 # could You put a comment with an example string, maybe in foreign language it
 # sounds better when inverting some positions ?
 #: src/progressdialog.py:97
-#, fuzzy
 msgid "%1 / %2, %3"
-msgstr "Paket %1 / %2: %3"
+msgstr ""
 
 #: src/progressdialog.py:114
-#, fuzzy
 msgid "Preparing PiSi..."
-msgstr "<h3>Vorbereitung PiSi...</h3>"
+msgstr "Bereite PiSi vor..."
 
 #: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
@@ -336,9 +321,8 @@ msgid "Not a valid repository name"
 msgstr "Keine gültige Depot-Bezeichnung"
 
 #: src/settingsdialog.py:228
-#, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte erneut versuchen.</qt>"
+msgstr "<qt>Die Adresse des Depots sollte mit xml, xml.bz2 oder mit xz enden. <p>Bitte erneut versuchen.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -378,7 +362,7 @@ msgstr "aktualisiert"
 
 #: src/statemanager.py:96
 msgid "modified"
-msgstr ""
+msgstr "modifiziert"
 
 #: src/statemanager.py:100 ui/ui_basketdialog.py:188
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
@@ -395,9 +379,8 @@ msgid "Upgrade Package(s)"
 msgstr "Paket(e) aktualisieren"
 
 #: src/statemanager.py:103
-#, fuzzy
 msgid "Select Operation"
-msgstr "Vorgang"
+msgstr "Vorgang auswählen"
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
@@ -412,9 +395,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 neue Paket(e) wurden mit Erfolg aktualisiert."
 
 #: src/statemanager.py:116
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 neue Paket(e) wurden mit Erfolg entfernt."
+msgstr "%1 Paket(e) wurden mit Erfolg modifiziert."
 
 #: src/statemanager.py:119
 msgid "You have selected the following package(s) to install:"
@@ -429,9 +411,8 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 
 #: src/statemanager.py:122
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "Ausgewählte Paket(e) sind zu entfernen:"
+msgstr "Folgende Paket(e) wurden ausgewählt:"
 
 #: src/statemanager.py:125 ui/ui_basketdialog.py:184
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
@@ -448,9 +429,8 @@ msgid "Extra dependencies of the selected package(s) that are also going to be u
 msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
 
 #: src/statemanager.py:128
-#, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
+msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert bzw. installiert werden:"
 
 #: src/statemanager.py:159
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -503,15 +483,14 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignoriere"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Updates anzeigen"
 
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignoriere"
+
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
-#, fuzzy
 msgid "Package Files"
 msgstr "Paketliste"
 
@@ -604,14 +583,12 @@ msgid "Settings"
 msgstr "Einstellungen"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
-msgstr "Korb"
+msgstr "Korb anzeigen"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
-msgstr "Updates anzeigen"
+msgstr "Auf Updates überprüfen"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -855,24 +832,24 @@ msgid "&Ok"
 msgstr "&Ok"
 
 #: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
-#, fuzzy
 msgid "Package Details"
-msgstr "Paketliste"
+msgstr "Paket Details"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
-msgstr ""
+msgstr "Dateien filtern"
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
-msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
+msgstr ""
+"Der AppInfo Server ist nicht erreichbar\n"
+"Bitte prüfen Sie Ihre Netzwerkverbindung"
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
-msgstr ""
+msgstr "Schließen"
 
 #~ msgid "Show Installed Packages"
 #~ msgstr "Installierte Pakete anzeigen"
@@ -928,7 +905,6 @@ msgstr ""
 #~ msgid "File"
 #~ msgstr "Datei"
 
-#, fuzzy
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -942,11 +918,9 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
-#, fuzzy
 #~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
@@ -958,10 +932,8 @@ msgstr ""
 #~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 #~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#, fuzzy
 #~ msgid "Modify Package(s)"
 #~ msgstr "Paket(e) werden entfernt"
 
-#, fuzzy
 #~ msgid "Upgradable Packages"
 #~ msgstr "Upgrades anzeigen"
