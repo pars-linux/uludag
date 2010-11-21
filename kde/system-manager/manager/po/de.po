@@ -2,7 +2,7 @@
 # System Manager.
 # Copyright (C) 2009 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the System Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 msgid ""
@@ -25,30 +25,29 @@ msgstr "Grundeinstellungen"
 
 #: data/systemmanager.desktop.in.h:1
 msgid "An application for managing settings like system language, keyboard and timezone."
-msgstr ""
+msgstr "Systemsprache, Tastaturlayout, Zeitzone und weitere Einstellungen."
 
 #: src/systemmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr ""
 
 #: src/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
+msgstr ""
 
 #: src/systemmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
 #: src/systemmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/systemmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Stefan Wilhelm"
+
+#: src/systemmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "sw@pardususer.de"
 
 #: src/systemmanager/main.py:70
 msgid ""
@@ -96,7 +95,7 @@ msgstr "Einstellung der Uhr"
 
 #: ui/ui_main.py:168
 msgid "Keep the hardware clock in UTC"
-msgstr "Die Hardware-clock ist auf UTC eingestellt"
+msgstr "Die Hardware-Uhr ist auf UTC eingestellt"
 
 #: ui/ui_main.py:169
 msgid "Normalize systematic drift of the hardware clock"
@@ -104,7 +103,7 @@ msgstr "Systematische Zeitdrift der Hardware-Uhr ausgleichen"
 
 #: ui/ui_main.py:170
 msgid "Console Settings"
-msgstr "Einstellungen"
+msgstr "Einstellungen der Konsole"
 
 #: ui/ui_main.py:171
 msgid "Number of Real Consoles:"
