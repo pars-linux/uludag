@@ -23,15 +23,15 @@ msgstr ""
 
 #: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
-msgstr "%1 GB"
+msgstr ""
 
 #: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
-msgstr "%1 MB"
+msgstr ""
 
 #: src/sysinfo.cpp:88
 msgid "%1 KB"
-msgstr "%1 KB"
+msgstr ""
 
 #: src/sysinfo.cpp:94
 msgid "Not Available"
@@ -63,7 +63,7 @@ msgstr "Suche nach Hardwareinformation..."
 
 #: src/sysinfo.cpp:237
 msgid "System"
-msgstr "System"
+msgstr ""
 
 #: src/sysinfo.cpp:245
 msgid "Common Folders"
@@ -121,7 +121,7 @@ msgstr "Prozessor (CPU)"
 
 #: src/sysinfo.cpp:297
 msgid "%1 MHz"
-msgstr "%1 MHz"
+msgstr ""
 
 #: src/sysinfo.cpp:298
 msgid " core"
