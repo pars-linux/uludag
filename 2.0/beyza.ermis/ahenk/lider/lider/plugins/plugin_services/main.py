@@ -44,6 +44,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         # UI events
         self.connect(self.pushStart, QtCore.SIGNAL("clicked()"), self.__slot_start_service)
         self.connect(self.pushStop, QtCore.SIGNAL("clicked()"), self.__slot_stop_service)
+        self.connect(self.lineSearch, QtCore.SIGNAL('textChanged(const QString &)'), self.__slotSearch)
 
 
     def showEvent(self, event):
@@ -150,3 +151,14 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         else:
             pass
 
+    
+    def __slotSearch(self, text):
+        index = 0
+        found = ''
+        while index < self.tableWidget.rowCount():
+            item = self.tableWidget.item(index, 0)
+            index = index+1
+            if(item.text() == self.lineSearch.text()):
+                found = item.text()
+                item.setSelected(True) 
+                print "Found %s " %found
