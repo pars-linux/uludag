@@ -1,14 +1,24 @@
-TODO
-~~~~
 
- - Get security updates directly to the basket like system.base packages
-   It should be done in Pisi APi
- - Need to check proxy settings changes from KDE at start
- + Use KConfig instead of QSettings (tracker #40)
- - Update localedata.py with KConfig
- - Use KActions widely
- - Code cleanup like * imports (tracker #41)
- + Remove PDS dependency
- - Remove QtWebkit dependency (switch KHandBook)
- - Find a solution for unknown package icons
+ - Supports  ---------------------------------------------------------------------
+
+ -  #125 (New): Help documents need to be updated for new interface.
+
+ - Tasks  ------------------------------------------------------------------------
+
+ -  #262 (New): Show updates screen improvements
+ -  #261 (New): System Tray issues
+
+ - Features  ---------------------------------------------------------------------
+
+ -  #295 (New): Get security updates directly to the basket like system.base packages
+ -  #24 (New): Support offline package management
+ -  #23 (New): PM-Install Improvements
+ -  #20 (New): Show repository changelogs with updates
+ -  #18 (New): Basket Dialog Improvements
+ -  #17 (New): Conflict Package Dialog Improvements
+
+ - Bugs  -------------------------------------------------------------------------
+
+ -  #16 (New): Keyboard Support
+ -  #15 (New): Error Window in the background blocks mainwindow.
 
