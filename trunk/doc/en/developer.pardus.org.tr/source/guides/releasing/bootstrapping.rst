@@ -3,6 +3,10 @@
 Bootstrapping
 ~~~~~~~~~~~~~
 
+:Author: Onur Küçük, Neslihan Şirin
+:Date: |Today|
+:Version: 1.0
+
 This document contains the bootstrap steps and methods carried out on the 32/64-bit processor architecture for Pardus 2011 release. Some compilers and libraries such as gcc and glibc requires themselves. To compile and generate executables of these compilers and libraries we had to use older version of these tools with special parameters.
 
 Bootstrap Steps
@@ -308,4 +312,7 @@ Resources
 
 - Linux man pages
 - `Building a GNU/Linux ARM Toolchain <http://frank.harvard.edu/~coldwell/toolchain/>`_
-- `Pardus CFLAGS <http://tr.pardus-wiki.org/NASIL:Bayraklar_donanm%C4%B1%C5%9F_cafcafl%C4%B1>`_
+- `CFLAGS <http://en.gentoo-wiki.com/wiki/CFLAGS>`_
+- `Compilation Optimization Guide <http://www.gentoo.org/doc/en/gcc-optimization.xml>`_
+- `D_FORTIFY_SOURCE=2 <https://wiki.ubuntu.com/CompilerFlags#-D_FORTIFY_SOURCE=2>`_
+- `Options for Code Generation Conventions <http://gcc.gnu.org/onlinedocs/gcc/Code-Gen-Options.html>`_
