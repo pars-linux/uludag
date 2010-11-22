@@ -246,11 +246,12 @@ class widgetMain(formMain):
 
     def slotOff(self):
         item = self.listServices.selectedItem()
-        if item.type != 'server' and not self.confirmOff():
-            self.radioAutoRun.setChecked(True)
-            self.radioNoAutoRun.setChecked(False)
-            return
-        self.link.System.Service[item.package].setState("off")
+        if item.autostart:
+            if item.type != 'server' and not self.confirmOff():
+                self.radioAutoRun.setChecked(True)
+                self.radioNoAutoRun.setChecked(False)
+                return
+            self.link.System.Service[item.package].setState("off")
 
     def slotSearch(self, text):
         item = self.listServices.firstChild()
