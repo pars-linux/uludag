@@ -12,6 +12,7 @@ Packaging
     actionsapi/index.rst
     package_naming_guidelines.rst
     binary_package_naming_guidelines.rst
+    package_components.rst
     package-review-process.rst
     reviewing_guidelines.rst
 

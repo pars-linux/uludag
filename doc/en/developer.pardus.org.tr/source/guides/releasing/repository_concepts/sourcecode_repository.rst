@@ -60,9 +60,7 @@ But some exceptions can also be exist, if you are not sure please ask Pardus
 `devel list`_.
 
 These two folders also has a specific folder tree. In this tree, the folders are
-named with Pardus package components.
-
-.. componentler için yazı yazılacak ve buraya link verilecek.
+named with Pardus `package components`_.
 
 playground Folder
 -----------------
@@ -156,3 +154,4 @@ pages.
 .. _external projects source repository: http://svn.pardus.org.tr/projeler/
 .. _oi source repository: http://svn.pardus.org.tr/oi/
 .. _web source repository: http://svn.pardus.org.tr/web/
+.. _package components: http://developer.pardus.org.tr/guides/packaging/package_components.html
