@@ -18,7 +18,7 @@ def process(message, options):
     """
 
     dryrun = options.dryrun
-
+  
     if message.type == "command":
         if message.command == "service.info":
             link = comar.Link()
