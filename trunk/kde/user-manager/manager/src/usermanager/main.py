@@ -251,6 +251,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     else:
                         kdeui.KMessageBox.error(self, unicode(e))
                     return
+                self.widgetUserEdit._new = False
                 self.widgetUserEdit.setId(id_)
                 self.widgetUserEdit.setUsername(username)
                 self.widgetUserEdit.setFullname(fullname)
@@ -267,6 +268,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     return
             else:
                 authorizations = []
+                self.widgetUserEdit._new = True
                 self.widgetUserEdit.setShell('/bin/bash')
                 self.widgetUserEdit.setNickList(self.all_users)
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)
@@ -413,7 +415,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 widget = self.widgetGroupEdit
                 self.iface.addGroup(widget.getId(), widget.getGroupname())
         except Exception, e: # TODO: Named exception should be raised
-            if "Comar.PolicyKit" in e._dbus_error_name:
+            if "Comar.PolicyKit" in e:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:
                 kdeui.KMessageBox.error(self, unicode(e))

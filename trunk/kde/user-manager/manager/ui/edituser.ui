@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>515</width>
-    <height>448</height>
+    <height>460</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -35,11 +35,11 @@
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="0">
         <widget class="QTreeWidget" name="treeAuthorizations">
-         <property name="rootIsDecorated">
-          <bool>false</bool>
-         </property>
          <property name="headerHidden">
           <bool>true</bool>
+         </property>
+         <property name="columnCount">
+          <number>1</number>
          </property>
          <column>
           <property name="text">
