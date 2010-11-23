@@ -11,6 +11,9 @@
 # Please read the COPYING file.
 #
 
+# Python
+import os
+
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
@@ -62,7 +65,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         # List of unavailable nicks
         self.nicklist = []
 
-        #Remove duplicate shells
+        # Remove duplicate shells
         self.comboShell.setDuplicatesEnabled(False)
 
         # Build policy list
@@ -328,7 +331,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         shells = open('/etc/shells').readlines()
         for shell in shells:
             if not shell.lstrip(' ').startswith('#'):
-                self.comboShell.addItem(shell.rstrip('\n'))
+                shell = shell.rstrip('\n')
+                if os.path.exists(shell):
+                    self.comboShell.addItem(shell)
 
     def slotShellChanged(self):
         index = self.comboShell.currentIndex()
