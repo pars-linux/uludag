@@ -91,6 +91,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
         self.connect(self.widgetOptions, QtCore.SIGNAL("timeoutChanged(int)"), self.slotTimeoutChanged)
 
+    def hiddenListWorkaround(self):
+        """
+            Workaround for hidden list items
+        """
+        size = self.size()
+        size += QtCore.QSize(1,1)
+        self.resize(size)
+        size -= QtCore.QSize(1,1)
+        QtCore.QTimer.singleShot(1, lambda: self.resize(size))
+
     def checkBackend(self):
         """
             Check if there are packages that provide required backend.
@@ -281,6 +291,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 self.listItems.setItemHidden(widgetItem, True)
 
+        self.hiddenListWorkaround()
+
     def slotItemState(self, state):
         """
             Item state changed.
@@ -359,6 +371,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             self.frameEdit.setMaximumHeight(ANIM_TARGET)
             self.frameList.setMaximumHeight(ANIM_DEFAULT)
+            self.hiddenListWorkaround()
 
     def slotButtonStatusChanged(self, status):
         if status:
