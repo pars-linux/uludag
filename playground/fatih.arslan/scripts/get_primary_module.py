@@ -17,7 +17,7 @@ def get_kernel_module_package(kernel_flavor, name):
     if kernel_flavor == "pae":
         config = gzip.open("/proc/config.gz").read()
         for option in config:
-            if "X86_PAE" in option:
+            if "X86_PAE=y" in option:
                 return "module-pae-%s" % name
             else:
                 return "module-%s" % name
