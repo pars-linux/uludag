@@ -1,8 +1,9 @@
 TODO
 ----
 
- - List shells
+ - Show a pretty list for policies
  - Filter
- - Fix GUI flickering
- - Fix .desktop file issue
 
+ + List shells
+ + Fix GUI flickering
+ + Fix .desktop file issue
