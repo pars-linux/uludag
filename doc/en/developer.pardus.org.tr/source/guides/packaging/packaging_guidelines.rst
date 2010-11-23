@@ -7,7 +7,7 @@ Packaging Guidelines
 
 :Author: Semen Cirit
 
-:Version: 0.3
+:Version: 0.4
 
 During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
 
@@ -64,7 +64,7 @@ If a prebuilt binary in a package you MUST:
 Exceptions
 ^^^^^^^^^^
 
-    * Some binary firmwares can be used, when it meets the `Licensing Guidelines <http://developer.pardus.org.tr/guides/licensing/licensing_guidelines.html#binary-firmware>`_ requirements.
+    * Some binary firmwares can be used, when it meets the `Licensing Guidelines`_ requirements.
     * Content binaries (such as .mo, .pdf, .png, .ps files) are not required to be rebuilt from the source code.
 
 Creating a package from scratch
@@ -90,7 +90,7 @@ During Modifications particularly you should take care:
 Architecture Support
 --------------------
 
-Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture. If the package could not be compile for a specific architecture it should be specified in `pspec.xml file <http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags>`_.
+Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture. If the package could not be compile for a specific architecture it should be specified in `pspec.xml file`_.
 
 Building Packages
 ^^^^^^^^^^^^^^^^^
@@ -110,14 +110,14 @@ If a package does not succesfully compile, the error output is given as a link i
 Filesystem Hierarchy
 --------------------
 
-Pardus Linux Distribution follows `Filesystem Hierarchy Standard <http://www.pathname.com/fhs/>`_ in order to define where files should be placed on the system.
+Pardus Linux Distribution follows `Filesystem Hierarchy Standard`_ in order to define where files should be placed on the system.
 
 Some exeptions can be found such as "libexec". Any information is given about libexec, but Pardus stores programs that are designed primarily to be run by other programs rather than by users. (exp: /usr/libexec on Pardus)
 
 Package Commit Hook
 -------------------
 
-When a wrong format is used in the pspec.xml file, `package SVN commit hook <http://svn.pardus.org.tr/uludag/trunk/scripts/repokit/src/ismail2.py>`_ captures this error and gives the related warning.
+When a wrong format is used in the pspec.xml file, `package SVN commit hook`_ captures this error and gives the related warning.
 
 
 Some Errors:
@@ -187,7 +187,7 @@ The best way to find exact buildtime dependencies is to build the package in a p
 Runtime Dependencies
 --------------------
 
-Runtime dependencies is important in order a program run properly. You can check your runtime dependencies with `this script <http://svn.pardus.org.tr/uludag/trunk/scripts/checkelf>`_.  You can find proper runtime dependencies, undefined symbols,  if you run it on a proper system.
+Runtime dependencies is important in order a program run properly. You can check your runtime dependencies with `checkelf script`_.  You can find proper runtime dependencies, undefined symbols,  if you run it on a proper system.
 
 You can find the usage from :ref:`checkelf`.
 
@@ -336,7 +336,7 @@ The packages source code must be legible. The package reviewer can simply read t
 Taking SHA-1 Hash
 -----------------
 
-In order to verify integrity of packages, `SHA-1 <http://www.w3.org/PICS/DSig/SHA1_1_0.html>`_ hash is used. This has code is added <Archive> tag in pspec.xml.
+In order to verify integrity of packages, `SHA-1`_ hash is used. This has code is added <Archive> tag in pspec.xml.
 
 In order to take the package hash, we need to download the souce code archive of the package and run the below command:
 
@@ -369,8 +369,16 @@ Debug packages
 
 Debug packages are very usefull in order to track a problem, because they have special symbols to generate `stack traces`_. Therefore exact line number of the source file where things went wrong can be seen simply. There exist compiler CFLAGS_ and LDFLAGS_ on Pardus.
 
-.. Shared Libraries
-.. ----------------
+Shared Libraries
+----------------
+
+Shared libraries are libraries that are loaded by programs when they start. When a shared library is installed properly, all programs that start afterwards automatically use the new shared library. The approach used by Linux permits you to:
+
+    * update libraries and still support programs that want to use older, non-backward-compatible versions of those libraries
+    * override specific libraries or even specific functions in a library when executing a particular program
+    * do all this while programs are running using existing libraries
+
+Whenever possible (and feasible), Pardus Packages containing libraries should build them as shared libraries.
 
 Static Libraries
 ----------------
@@ -383,7 +391,7 @@ The static libraries should not be included in packages, but they may have some 
 Duplication of system libraries
 -------------------------------
 
-A local copy of the library that already exists on the system should not be included or build against by a package. The package should be patched to use the system libraries. The security and high priority bugs related to system libraries can directly be fixed thanks to this. Some packages may be granted an exception to this. (Please contact with `developer mail list <http://liste.pardus.org.tr/mailman/listinfo/gelistirici>`_ for further questions.)
+A local copy of the library that already exists on the system should not be included or build against by a package. The package should be patched to use the system libraries. The security and high priority bugs related to system libraries can directly be fixed thanks to this. Some packages may be granted an exception to this. (Please contact with `developer mail list`_ for further questions.)
 
 .. Configuration files
 .. -------------------
@@ -442,10 +450,21 @@ Parallel make is genereally useful to speed up builds. If you want to build your
 Content of a Package
 --------------------
 
-The contents in the package should enhance the user experience. Therefore fonts, themes, clipart, and wallpaper which are freely distributable, and have not offensive, discriminatory, or derogatory content are allowed.
+The contents in the package should enhance the user experience. Therefore fonts, themes, clipart, and wallpaper etc., which are freely distributable, and have not offensive, discriminatory, or derogatory content are allowed.
 
-.. Conflicts
-.. ----------
+Conflicting Packages
+--------------------
+
+Pardus packages should avoid conflicting with each other and as a Pardus package maintainer, we try to make both packages will install and run. But this is not always possible, so we let the user to decide which package to enable when they install the new package.
+
+Therefore  <`Conflicts`_> tag is used, for the conflicting packages. And dependencies should not be confused with the conflicts. If the software links to the libraries of another package or the software does not function properly without another package, it must use <`Dependency`_> instead of <`Conflicts`_> to mark that dependency.
+
+
+Conflicting Files
+-----------------
+
+There are many types of files which can conflict between different packages. Most of the problems can be resolved using <`Conflicts`_>. But some other cases can also be used for specific files without using <`Conflicts`_> tag. Some file names can be renamed, symbolic links can be used etc.
+
 
 Symlinks
 --------
@@ -518,3 +537,12 @@ Operation types:
 .. _stack traces: http://developer.pardus.org.tr/guides/bugtracking/stack_traces.html
 .. _CFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#c-compiler-flags-cflags
 .. _LDFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#linker-flags-ldflags
+.. _Licensing Guidelines: http://developer.pardus.org.tr/guides/licensing/licensing_guidelines.html#binary-firmware
+.. _pspec.xml file: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
+.. _Filesystem Hierarchy Standard: http://www.pathname.com/fhs/
+.. _package SVN commit hook: http://svn.pardus.org.tr/uludag/trunk/scripts/repokit/src/ismail2.py
+.. _checkelf script: http://svn.pardus.org.tr/uludag/trunk/scripts/checkelf
+.. _SHA-1: http://www.w3.org/PICS/DSig/SHA1_1_0.html
+.. _developer mail list: http://liste.pardus.org.tr/mailman/listinfo/gelistirici
+.. _Conflicts: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
+.. _Dependency: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
