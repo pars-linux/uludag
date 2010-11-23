@@ -96,9 +96,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.linePasswordAgain, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineHomeDir, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
-        self.connect(self.comboShell, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotShellChanged)
 
         self.advancedGroup.hide()
+        self.available_shells = []
 
     def reset(self):
         self.setId(-1)
@@ -110,6 +110,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.lineHomeDir.setEnabled(True)
         self.pushAdvanced.setChecked(False)
         self.advancedGroup.hide()
+        self.comboShell.clear()
+        self.comboShell.addItems(self.available_shells)
 
     def buildPolicies(self):
         self.actionItems = {}
@@ -176,10 +178,15 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         return unicode(self.lineHomeDir.text())
 
     def setShell(self, shell):
-        str(self.comboShell.itemData(self.comboShell.currentIndex()).toString())
+        shell_index = self.comboShell.findText(shell)
+        if shell_index >= 0:
+            self.comboShell.setCurrentIndex(shell_index)
+        else:
+            self.comboShell.insertItem(0, shell)
+            self.comboShell.setCurrentIndex(0)
 
     def getShell(self):
-        return str(self.comboShell.itemData(self.comboShell.currentIndex()).toString())
+        return str(self.comboShell.currentText())
 
     def setPassword(self):
         self.linePassword.setText("")
@@ -333,10 +340,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             if not shell.lstrip(' ').startswith('#'):
                 shell = shell.rstrip('\n')
                 if os.path.exists(shell):
-                    self.comboShell.addItem(shell)
-
-    def slotShellChanged(self):
-        index = self.comboShell.currentIndex()
+                    self.available_shells.append(shell)
 
     def checkFields(self, *args):
         err = ""
