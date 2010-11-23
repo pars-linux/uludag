@@ -61,7 +61,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # List of unavailable nicks
         self.nicklist = []
-        
+
         #Remove duplicate shells
         self.comboShell.setDuplicatesEnabled(False)
 
@@ -87,7 +87,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.radioAuthYes, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyChanged)
         self.connect(self.checkAdmin, QtCore.SIGNAL("stateChanged(int)"), self.slotAdmin)
         self.connect(self.pushAuth, QtCore.SIGNAL("clicked()"), self.slotAuth)
-        self.connect(self.pushAdvanced, QtCore.SIGNAL("clicked()"), self.slotOpenAdvanced)
 
         self.connect(self.lineFullname, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.linePassword, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
@@ -95,6 +94,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineHomeDir, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.comboShell, QtCore.SIGNAL("currentIndexChanged(int)"), self.slotShellChanged)
+
+        self.advancedGroup.hide()
 
     def reset(self):
         self.setId(-1)
@@ -104,7 +105,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.setPassword()
         self.lineUsername.setEnabled(True)
         self.lineHomeDir.setEnabled(True)
-        self.groupBox_2.setVisible(False)
+        self.pushAdvanced.setChecked(False)
+        self.advancedGroup.hide()
 
     def buildPolicies(self):
         self.actionItems = {}
@@ -229,6 +231,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                     item.setType(1)
                 elif scope == polkit.SCOPE_ALWAYS:
                     item.setType(-1)
+        self.slotPolicySelected(self.treeAuthorizations.currentItem())
 
     def slotCheckAuto(self, state):
         if state == QtCore.Qt.Checked:
@@ -236,12 +239,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.spinId.setValue(-1)
         else:
             self.spinId.setEnabled(True)
-
-    def slotOpenAdvanced(self):
-        if self.groupBox_2.isVisible():
-            self.groupBox_2.setVisible(False)
-        else:
-            self.groupBox_2.setVisible(True)
 
     def slotAuth(self):
         if self.radioAuthNo.isChecked():
@@ -290,9 +287,10 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             if item.text() == "wheel":
                 self.checkAdmin.setCheckState(QtCore.Qt.Checked)
 
-    def slotPolicySelected(self, item, previous):
+    def slotPolicySelected(self, item, previous = None):
         if not item:
             return
+        self.authGroup.setEnabled(True)
         self.radioAuthNo.setChecked(item.getType() == -1)
         self.radioAuthDefault.setChecked(item.getType() == 0)
         self.radioAuthYes.setChecked(item.getType() == 1)
@@ -327,12 +325,10 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                 return
 
     def listShells(self):
-        shells = open('/etc/shells','r') 
-        line = shells.readline()
-        while line :
-            line = shells.readline()
-            self.comboShell.addItem(line)
-        shells.close()
+        shells = open('/etc/shells').readlines()
+        for shell in shells:
+            if not shell.lstrip(' ').startswith('#'):
+                self.comboShell.addItem(shell.rstrip('\n'))
 
     def slotShellChanged(self):
         index = self.comboShell.currentIndex()
