@@ -3,6 +3,9 @@
 Stack Traces
 ============
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.2
 
 What is Stack Trace(Backtrace)?
 -------------------------------
@@ -43,8 +46,9 @@ When a program compiled with its debug symbols, additional informations added. T
 What are debug packages and how do I access them?
 -------------------------------------------------
 
-Pardus has debug packages of each normal package. These pacakges are compiled automatically with specific debug symbols. Therefore you can easily install the debug package of the buggy software. You should install debug package which is suitable with its normal package version. In order to install and use the debug packages, you should use related Pardus release test repository (exp: http://packages.pardus.org.tr/pardus-2009-test/). After adding the test repository and updating your system, you can add the related debug repository (ex: http://packages.pardus.org.tr/pardus-2009-debug/) and install the buggy application debug package.
+Pardus has debug packages of each normal package. These packages are compiled automatically with specific debug symbols. Therefore you can easily install the debug package of the buggy software. You should install debug package which is suitable with its normal package version. In order to install and use the debug packages, you should use a Pardus release repository and related debug repository and install the buggy application debug package.
 
+Our repositories can be found `from there <http://packages.pardus.org.tr/pardus/>`_.
 
  Example ::
 
@@ -52,14 +56,13 @@ Pardus has debug packages of each normal package. These pacakges are compiled au
 
         [test@computer ~] $ pisi info amarok
         Installed package:
-        Name: amarok, version 2.3.0, revision 38, build 20
-
+        Name: amarok, version: 2.3.2, release: 43
 
 Every package has a debug package and you can easily install it like below:
 
 For amarok::
 
-    sudo pisi it http://packages.pardus.org.tr/pardus-2009-debug/amarok-dbginfo-2.3.0.90-40-16.pisi
+    sudo pisi it http://packages.pardus.org.tr/pardus/2011/devel/x86_64-debug/amarok-dbginfo-2.3.2-43-p11-x86_64.pisi
 
 
 Using GDB to create stack trace:
@@ -94,7 +97,4 @@ If any of them work, write "bt" command to GDB prompt.
 
 These commands will create an output, these outputs are the stack trace. Copy this output to a file and quit GDB.
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
 
