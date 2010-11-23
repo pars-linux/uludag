@@ -112,35 +112,53 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.advancedGroup.hide()
         self.comboShell.clear()
         self.comboShell.addItems(self.available_shells)
+        for index in xrange(self.treeAuthorizations.topLevelItemCount()):
+            self.treeAuthorizations.collapseItem(self.treeAuthorizations.topLevelItem(index))
 
     def buildPolicies(self):
         self.actionItems = {}
+        self._vendors = []
         for action_id in polkit.action_list():
-            if action_id.startswith("tr.org.pardus.comar."):
-                info = polkit.action_info(action_id)
-                item = PolicyItem(self.treeAuthorizations, unicode(info["description"]), action_id)
-                self.actionItems[action_id] = item
+            info = polkit.action_info(action_id)
+
+            if info['vendor'] == '':
+                info['vendor'] = 'Other'
+
+            if info['vendor'] not in self._vendors:
+                parent_item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
+                parent_item.setText(0, unicode(info['vendor']))
+                self._vendors.append(info['vendor'])
+            else:
+                for i in range(self.treeAuthorizations.topLevelItemCount()):
+                    if self.treeAuthorizations.topLevelItem(i).text(0) == info['vendor']:
+                        parent_item = self.treeAuthorizations.topLevelItem(i)
+
+            item = PolicyItem(parent_item, unicode(info["description"]), action_id)
+            self.actionItems[action_id] = item
 
     def getAuthorizations(self):
         grant = []
         revoke = []
         block = []
         for index in xrange(self.treeAuthorizations.topLevelItemCount()):
-            item = self.treeAuthorizations.topLevelItem(index)
-            if item.getType() == -1:
-                block.append(item.getAction())
-            elif item.getType() == 0:
-                revoke.append(item.getAction())
-            elif item.getType() == 1:
-                grant.append(item.getAction())
+            tl_item = self.treeAuthorizations.topLevelItem(index)
+            for child_index in xrange(tl_item.childCount()):
+                item = tl_item.child(child_index)
+                if item.getType() == -1:
+                    block.append(item.getAction())
+                elif item.getType() == 0:
+                    revoke.append(item.getAction())
+                elif item.getType() == 1:
+                    grant.append(item.getAction())
+
         return grant, revoke, block
 
     def isNew(self):
-        return self.spinId.isEnabled() or self.checkAutoId.isVisible()
+        return self._new
 
     def getId(self):
-        if self.checkAutoId.checkState() == QtCore.Qt.Checked:
-            return -1
+        if self.checkAutoId.isChecked():
+            return int(-1)
         return int(self.spinId.value())
 
     def setId(self, id):
@@ -258,8 +276,10 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         elif self.radioAuthYes.isChecked():
             type_ = 1
         for index in xrange(self.treeAuthorizations.topLevelItemCount()):
-            item = self.treeAuthorizations.topLevelItem(index)
-            item.setType(type_)
+            tl_item = self.treeAuthorizations.topLevelItem(index)
+            for child_index in xrange(tl_item.childCount()):
+                item = tl_item.child(child_index)
+                item.setType(type_)
 
     def slotFullnameChanged(self, name):
         if self.lineUsername.isEnabled() and not self.lineUsername.isModified():
@@ -300,10 +320,13 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def slotPolicySelected(self, item, previous = None):
         if not item:
             return
-        self.authGroup.setEnabled(True)
-        self.radioAuthNo.setChecked(item.getType() == -1)
-        self.radioAuthDefault.setChecked(item.getType() == 0)
-        self.radioAuthYes.setChecked(item.getType() == 1)
+        try:
+            self.authGroup.setEnabled(True)
+            self.radioAuthNo.setChecked(item.getType() == -1)
+            self.radioAuthDefault.setChecked(item.getType() == 0)
+            self.radioAuthYes.setChecked(item.getType() == 1)
+        except:
+            self.authGroup.setEnabled(False)
 
     def slotPolicyChanged(self, state):
         item = self.treeAuthorizations.currentItem()
@@ -354,6 +377,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         if not err:
             pw = unicode(self.linePassword.text())
+
+            # After removing the length check from COMAR backend we need to remove these
             if pw != "" and len(pw) < 4:
                 err = i18n("Password must be longer.")
 
