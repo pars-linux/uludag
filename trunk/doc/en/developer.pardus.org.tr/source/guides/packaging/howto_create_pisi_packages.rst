@@ -7,7 +7,7 @@ How to Create Pisi Packages
 
 :Author: Semen Cirit
 
-:Version: 0.4
+:Version: 0.5
 
 Creating Package
 ----------------
@@ -305,7 +305,7 @@ Different pspec.xml File Tags
     #. **<Name>:** The name of the package is added here. It must follow the :ref:`package-naming`. This should be match with the <Name> part of <Source> tag.
     #. **<RuntimeDependencies>:** This part is used in order to list packages which is required when the program runs. In order to find runtime dependencies please `see <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#runtime-dependencies>`_. You need to add all dependencies in a different <Dependency> tag. You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details.
     #. **<AnyDependency>:** This part is used when the package can have more than one dependency for a specific work. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#any-dependency>`_.
-    #. **<Conflicts>:** This part is used for the packages that conflict with the prapared package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_
+    #. **<Conflicts>:** This part is used for the packages that conflict with the prapared package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#conflicting-packages>`_
 
     #. **<Replaces>:** The packages that will be replaced with this package, will be added to this part. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#renaming-replacing-existing-packages>`_
 
