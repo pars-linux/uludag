@@ -63,7 +63,7 @@ Requesting Team Membership
      translate Pardus to a language that you want. Just click the "Join This
      Team" button at the language page that you want to join. If you filled the
      needed information on your Transifex account page and done the steps
-     above, the language coordinator will approve you membership request and
+     above, the language coordinator will approve your membership request and
      you'll be able to ready to translate.
 
 **********************************
