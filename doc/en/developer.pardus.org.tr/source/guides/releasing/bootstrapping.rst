@@ -4,7 +4,7 @@ Bootstrapping
 ~~~~~~~~~~~~~
 
 :Author: Onur Küçük, Neslihan Şirin
-:Date: |Today|
+:Date: |today|
 :Version: 1.0
 
 This document contains the bootstrap steps and methods carried out on the 32/64-bit processor architecture for Pardus 2011 release. Some compilers and libraries such as gcc and glibc requires themselves. To compile and generate executables of these compilers and libraries we had to use older version of these tools with special parameters.
@@ -66,9 +66,9 @@ The flags used by GCC and GNU Library C to manage some properties of the system 
   It ensures gcc to skip frame pointer maintenance, which, in turn, helps the code be smaller and faster. Also it empties a register for following uses. 
 **-fstack-protector**
   It changes position of the variables on the bulk, and prevents the variables used as buffer store from affecting the other variables in case of overrunning. It places a protection variable onto which a random value is appointed before function returning address. Upon completion of the function, this variable is checked to understand whether there is overrunning or not. Running of the program is stopped if there is a change. In this case, misuse of the memory overrunning errors which change the function returning address.
-**-march=<mimari>**
+**-march=<architecture>**
   It ensures gcc to do optimization for certain architecture. If you design software for yourself only, you can specify the architecture on which the software is to work and use all properties of such architecture. 
-**-mtune=<mimari>**
+**-mtune=<architecture>**
   The –mcpu in former versions of gcc is similar to -march flag and has the same options. Besides, -mtune does not distort conformity with former architectures. Desired results can be achieved by means of using -mtune and -march flags together.
 **-pipe**
   It prevents gcc from generating temporary files while compiling. Instead, improvement at the time of compiling by directly transferring data to another function.  

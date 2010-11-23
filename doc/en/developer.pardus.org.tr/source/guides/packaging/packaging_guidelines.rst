@@ -359,11 +359,15 @@ If the software has some files solely for development, those files should be put
 
 The pkgconfig files generally used for developement, so they should be included in a packagename-devel package. But for example if the base package is a developement tool it can be included in base package.
 
-.. Compiler Flags
-.. --------------
+Compiler Flags
+--------------
 
-.. Debuginfo packages
-.. ------------------
+Package configuration need applicable compiler flags are set in order to be built. During the package build these flags are used for optimization, linking, security, small register usage, specific architectures etc. You can see 
+
+Debug packages
+--------------
+
+Debug packages are very usefull in order to track a problem, because they have special symbols to generate `stack traces`_. Therefore exact line number of the source file where things went wrong can be seen simply. There exist compiler CFLAGS_ and LDFLAGS_ on Pardus.
 
 .. Shared Libraries
 .. ----------------
@@ -511,3 +515,6 @@ Operation types:
 - preRemove: Execute pre-remove script of a package before installation
 - postRemove: Execute post-remove script of a package after installation
 
+.. _stack traces: http://developer.pardus.org.tr/guides/bugtracking/stack_traces.html
+.. _CFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#c-compiler-flags-cflags
+.. _LDFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#linker-flags-ldflags

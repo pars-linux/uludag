@@ -4,7 +4,7 @@ Package Components
 ==================
 
 :Author: Semen Cirit
-:Date: |Today|
+:Date: |today|
 :Version: 1.0
 
 The packages are categorized by both their development characteristics and
