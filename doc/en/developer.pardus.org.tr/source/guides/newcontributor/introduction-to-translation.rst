@@ -8,7 +8,7 @@ Subscribing to the Mailing List
 *******************************
 
    - Pardus uses Transifex to help translators keep track of translation
-     projects. Please register yourself to Transifex at
+     projects. Register yourself to Transifex at
      http://translate.pardus.org.tr. Please, do not forget to update your
      Transifex account page. It's mandatory to fill the Name and Surname
      informations. These informations are going to be shown in commit log.
