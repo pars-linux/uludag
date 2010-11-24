@@ -1,5 +1,11 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/bootloader.png</file>
+    <file>gui/pics/bootloader-big.png</file>
+    <file>gui/pics/summary.png</file>
+    <file>gui/pics/summary-big.png</file>
+    <file>gui/pics/partitionmanager.png</file>
+    <file>gui/pics/partitionmanager-big.png</file>
     <file>gui/pics/caps.png</file>
     <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
@@ -8,7 +14,6 @@
     <file>gui/pics/document-edit.png</file>
     <file>gui/pics/draw-eraser.png</file>
     <file>gui/pics/list-add.png</file>
-    <file>gui/pics/meeting-participant.png</file>
     <file>gui/pics/meeting-participant-big.png</file>
     <file>gui/pics/drive-removable-media-usb-big.png</file>
     <file>gui/pics/media-flash-sd-mmc-big.png</file>
