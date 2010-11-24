@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -61,11 +61,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr "Debe reiniciar los siguientes servicios del sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Error Pisi"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "descargando"
 
@@ -294,9 +294,9 @@ msgstr "Se eliminarán todos los paquetes almacenados del cache. Está seguro ?"
 msgid "Not a valid repository name"
 msgstr "Nombre de Repositorio no válido"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2.<p>Por favor intente de nuevo.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Dirección del repositorio debe tener una terminación xml, xml.bz2 o xml.xz.<p>Por favor intente de nuevo.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -752,35 +752,23 @@ msgstr "Puede ejecutar los programas recientemente instalados con un doble-clic 
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Usar servidor proxy"
+#~ msgid "Status:"
+#~ msgstr "Estado:"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Instalación de %1 terminado con éxito"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertir seleción de paquetes"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Instalación terminada con éxito"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Instalador de Paquetes ya se está ejecutando !"
 
-#~ msgid "Summary"
-#~ msgstr "Resumen"
+#~ msgid "Installing %1"
+#~ msgstr "Instalando %1"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Ancho de banda máximo:"
+#~ msgid "Package Installer"
+#~ msgstr "Instalador de Paquetes"
 
-#~ msgid "Update check"
-#~ msgstr "Comprobar actualizaciones"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(use 0 para indicar \"ilimitado\")"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Vaciar cache"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Eliminar"
+#~ msgid "Maintainer"
+#~ msgstr "Mantenedor"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -795,20 +783,32 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los paquetes de éste grupo</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Mantenedor"
+#~ msgid "Delete"
+#~ msgstr "Eliminar"
 
-#~ msgid "Package Installer"
-#~ msgstr "Instalador de Paquetes"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Instalando %1"
+#~ msgid "Clear Cache"
+#~ msgstr "Vaciar cache"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Instalador de Paquetes ya se está ejecutando !"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(use 0 para indicar \"ilimitado\")"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertir seleción de paquetes"
+#~ msgid "Update check"
+#~ msgstr "Comprobar actualizaciones"
 
-#~ msgid "Status:"
-#~ msgstr "Estado:"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Ancho de banda máximo:"
+
+#~ msgid "Summary"
+#~ msgstr "Resumen"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Instalación terminada con éxito"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Instalación de %1 terminado con éxito"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usar servidor proxy"

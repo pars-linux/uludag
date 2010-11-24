@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -63,11 +63,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr "Seçili güncellemelerin geçerli olabilmesi için aşağıdaki sistem servislerini yeniden başlatmanız gerekiyor:"
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -285,9 +285,9 @@ msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz? "
 msgid "Not a valid repository name"
 msgstr "Geçerli bir depo ismi değil"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar deneyin.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Depo adresleri xml, xml.bz2 veya xml.xz uzantısı ile bitmelidir.<p>Lütfen tekrar deneyin.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -734,44 +734,38 @@ msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya da
 msgid "&Ok"
 msgstr "&Tamam"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Status:"
+#~ msgstr "Durum:"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Vekil sunucu kullan"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "%1 başarılı bir şekilde kuruldu"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketlerin kurulumu tamamlandı"
+#~ msgid "Cancel"
+#~ msgstr "İptal"
 
-#~ msgid "%p%"
-#~ msgstr "%%p"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 yeni paket başarı ile kuruldu."
 
-#~ msgid "Summary"
-#~ msgstr "Özet"
+#~ msgid "Reverse package selections"
+#~ msgstr "Paket seçimlerini tersine çevir"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bant genişliği sınırı:"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Kurucusu zaten çalışıyor!"
 
-#~ msgid "Update check"
-#~ msgstr "Güncelleme kontrolü"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+#~ msgid "Installing %1"
+#~ msgstr "%1 kuruluyor"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Önbelleği Temizle"
+#~ msgid "Package Installer"
+#~ msgstr "Paket Kurucusu"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Tamam"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
+#~ msgid "Maintainer"
+#~ msgstr "Bakıcı"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -786,35 +780,41 @@ msgstr "&Tamam"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm paketleri seç</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Bakıcı"
+#~ msgid "Delete"
+#~ msgstr "Sil"
 
-#~ msgid "Package Installer"
-#~ msgstr "Paket Kurucusu"
+#~ msgid "Ok"
+#~ msgstr "Tamam"
 
-#~ msgid "Installing %1"
-#~ msgstr "%1 kuruluyor"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "Clear Cache"
+#~ msgstr "Önbelleği Temizle"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Kurucusu zaten çalışıyor!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Paket seçimlerini tersine çevir"
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 yeni paket başarı ile kuruldu."
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
 
-#~ msgid "Cancel"
-#~ msgstr "İptal"
+#~ msgid "Summary"
+#~ msgstr "Özet"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "%p%"
+#~ msgstr "%%p"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
 
-#~ msgid "Status:"
-#~ msgstr "Durum:"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Vekil sunucu kullan"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"

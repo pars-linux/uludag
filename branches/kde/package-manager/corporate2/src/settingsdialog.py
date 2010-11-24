@@ -221,10 +221,12 @@ class RepositorySettings(SettingsTab):
                                 i18n("Pisi Error"),
                                 i18n("Not a valid repository name"))
             return
-        if not repoAddress.endsWith("xml") and not repoAddress.endsWith("xml.bz2"):
+        if not repoAddress.endsWith("xml") and \
+                not repoAddress.endsWith("xml.xz") and \
+                not repoAddress.endsWith("xml.bz2"):
             QMessageBox.warning(self.settings,
                                 i18n("Pisi Error"),
-                                i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'))
+                                i18n('<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>'))
             return
         self.__insertRow(repoName, repoAddress)
         self.markChanged()

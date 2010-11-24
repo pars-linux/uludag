@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgstr ""
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 #: .tmp/mainwidget.py:269 .tmp/mainwidget.py:272 .tmp/basketdialog.py:154
 msgid "Pisi Error"
 msgstr ""
@@ -37,10 +37,10 @@ msgstr ""
 msgid "Not a valid repository name"
 msgstr ""
 
-#: .tmp/settingsdialog.py:227
+#: .tmp/settingsdialog.py:229
 msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
+"<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix."
+"<p>Please try again.</qt>"
 msgstr ""
 
 #: .tmp/mainwidget.py:120
@@ -626,7 +626,7 @@ msgstr ""
 msgid "&OK"
 msgstr ""
 
-#: .tmp/operationmanager.py:130 .tmp/commontext.py:15
+#: .tmp/operationmanager.py:133 .tmp/commontext.py:15
 msgid "downloading"
 msgstr ""
 
