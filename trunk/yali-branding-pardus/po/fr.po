@@ -23,7 +23,7 @@ msgstr "&lt;p&gt; Aide &lt;/p&gt;"
 
 #: ../release.xml.in.h:2
 msgid "&lt;p&gt;A bootloader is a tiny program that runs when a computer is first powered up.It is responsible for loading the operating system into memory and then transferringthe control to it.&lt;/p&gt;&lt;p&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows youto boot any supported operating system by presenting the user with a menu.&lt;/p&gt;&lt;p&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk.You can always choose another installation method if you know what you are doing.&lt;/p&gt;"
-msgstr "&lt;p&gt;Un chargeur de démarrage (bootloader) est un petit programme lancé à l'allumage du PC. Il charge le système d'exploitation en mémoire et lui passe le relai.&lt;/p&gt;&lt;p&gt;Pardus utilise GRUB (GRand Unified Bootloader) comme chargeur de démarrage. GRUB permet de choisir son système d'exploitation (Linux, Windows) dans un menu.&lt;/p&gt;&lt;p&gt;Il est recommandé d'installer GRUB au début du disque dur. Vous pouvez l'installer ailleurs si vous  savez ce que vous faîtes.&lt;/p&gt;"
+msgstr "&lt;p&gt;Un chargeur de démarrage (bootloader) est un petit programme lancé à l'allumage du PC. Il charge le système d'exploitation en mémoire et lui passe le relais.&lt;/p&gt;&lt;p&gt;Pardus utilise GRUB (GRand Unified Bootloader) comme chargeur de démarrage. GRUB permet de choisir son système d'exploitation (Linux, Windows) dans un menu.&lt;/p&gt;&lt;p&gt;Il est recommandé d'installer GRUB au début du disque dur. Vous pouvez l'installer ailleurs si vous  savez ce que vous faîtes.&lt;/p&gt;"
 
 #: ../release.xml.in.h:3
 msgid "&lt;p&gt;Date and time settings allows you to set the date and time of your computer. Generally,you will also want to specify a correct timezone for your location in order to benefit from automatic daylight saving time adjustments.&lt;/p&gt;&lt;p&gt;A timezone is a region of the earth that has uniform standard time, usually referred as thelocal time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time.&lt;/p&gt;"
@@ -67,7 +67,7 @@ msgstr "Une disposition de clavier est une description de la façon dont les tou
 
 #: ../release.xml.in.h:13
 msgid "Add Users"
-msgstr "Kullanıcıları Ekle"
+msgstr "Ajouter des utilisateurs"
 
 #: ../release.xml.in.h:14
 msgid "Adding new users, changing boot order, starting or stopping system services or rolling your system configuration back to a previous state has never been easier. You can use the system managers for that and you can even add to your desktop as widgets managers that you use frequently."
