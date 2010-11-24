@@ -3,6 +3,10 @@
 Rules for a correct Subversion usage
 ====================================
 
+:Author: Ozan Çağlayan, Semen Cirit
+:Date: |today|
+:Version: 0.1
+
 Subversion repository is a common place shared by all developers. In order to
 work together developers should be using the repository efficiently, properly
 and in an organized way.
@@ -120,3 +124,9 @@ Perform atomic updates
 Commit all the modifications related to a particular improvement/update at once.
 Subversion lets you commit more than one file at a time. Other developers might be
 confused because of seperate commits and they can miss the improvements you made.
+
+Resources
+---------
+
+* `Commit Messages <http://who-t.blogspot.com/2009/12/on-commit-messages.html>`_
+
