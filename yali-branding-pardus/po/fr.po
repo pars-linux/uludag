@@ -127,7 +127,7 @@ msgstr "Kahya travaille"
 
 #: ../release.xml.in.h:28
 msgid "Kaptan (Turkish for &apos;Captain&apos;) is what welcomes you to your Pardus installation. Using Kaptan, you can configure your desktop, changing the taskbar&apos;s location, wallpaper and desktop theme, and internet connection settings. Kaptan also allows you to add the Contribution Repository to your package management settings."
-msgstr "Kaptan (en turc, «capitaine») est ce qui vous accueille à votre installation de Pardus. Kaptan vous permet de configurer votre ordinateur de bureau, changer l'emplacement de la barre des tâches, le papier peint et le thème de bureau, et les paramètres de connexion internet. Kaptan vous permet également d'ajouter le dépôt \"Contrib\" à vos paramètres de gestion des paquets."
+msgstr "Kaptan (en turc, «capitaine») est ce qui vous accueille à votre installation de Pardus. Kaptan vous permet de configurer votre ordinateur de bureau, changer l'emplacement de la barre des tâches, le papier peint et le thème de bureau, et les paramètres de connexion internet. Kaptan vous permet également d'ajouter le dépôt Contrib à vos paramètres de gestion des paquets."
 
 #: ../release.xml.in.h:29
 msgid "License Agreement"
