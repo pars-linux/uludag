@@ -133,7 +133,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         title = index.model().data(index, Qt.DisplayRole).toString()
         summary = index.model().data(index, SummaryRole).toString()
         ptype = str(index.model().data(index, TypeRole).toString())
-        rate = int(index.model().data(index, RateRole).toString())
+        rate = int(index.model().data(index, RateRole).toInt()[0])
         installed = index.model().data(index, InstalledRole).toBool()
 
         # Get Package Icon if exists
