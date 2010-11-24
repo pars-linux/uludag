@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -60,11 +60,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr "Du måste starta om följande systemtjänster för att uppdateringen skall träda i kraft:"
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Pisi-fel"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "Hämtar"
 
@@ -283,9 +283,9 @@ msgstr "Alla cachade paket kommer att raderas. Är du säker?"
 msgid "Not a valid repository name"
 msgstr "Ogiltigt förrådsnamn"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Förrådsadresser måste sluta på xml, xmlz.bz2 eller xml.xz.<p>Försök igen.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -732,44 +732,38 @@ msgstr "Du kan starta det nyinstallerade programmet genom att dubbelklicka på d
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Status:"
+#~ msgstr "Status:"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
 
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
 
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Cachetömning"
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -784,35 +778,41 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "Clear Cache"
+#~ msgstr "Cachetömning"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
 
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "%p%"
+#~ msgstr "%p%"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
 
-#~ msgid "Status:"
-#~ msgstr "Status:"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"

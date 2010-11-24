@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -60,11 +60,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr ""
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "downloader"
 
@@ -290,9 +290,9 @@ msgstr "Alle de mellemlagrede pakker vil blive sletter. Er du sikker?"
 msgid "Not a valid repository name"
 msgstr "Navn på pakkearkiv"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Adressen på pakkearkivet skal have et xml or xml.bz2 suffix.<p>Prøv venligst igen.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Adressen på pakkearkivet skal have et xml, xml.bz2 or xml.xz suffix.<p>Prøv venligst igen.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -761,39 +761,34 @@ msgstr "Du kan starte det installerede program ved at dobbeltklikke på det i li
 msgid "&Ok"
 msgstr "&OK"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
+#~ msgid "Status:"
+#~ msgstr "Status:"
 
 #, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Ryd mellemlager"
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
 
-#~ msgid "Ok"
-#~ msgstr "OK"
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
 
-#~ msgid "Delete"
-#~ msgstr "Slet"
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -808,31 +803,36 @@ msgstr "&OK"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
+#~ msgid "Delete"
+#~ msgstr "Slet"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
+#~ msgid "Ok"
+#~ msgstr "OK"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
+#~ msgid "Clear Cache"
+#~ msgstr "Ryd mellemlager"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
 
 #, fuzzy
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
 
-#~ msgid "Status:"
-#~ msgstr "Status:"
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"

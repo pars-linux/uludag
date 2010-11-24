@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -62,11 +62,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti selezionati abbiano efetto:"
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "download in corso"
 
@@ -286,9 +286,9 @@ msgstr "Tutti i pacchetti nella cache verranno eliminati. Sei sicuro?"
 msgid "Not a valid repository name"
 msgstr "Nome repository non valido"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2.<p>Prova di nuovo.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>L'indirizzo del repository deve finire con il suffisso xml, xml.bz2 o xml.xz.<p>Prova di nuovo.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -737,26 +737,52 @@ msgstr "Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Cancel"
-#~ msgstr "A&nnulla"
+#~ msgid "Status:"
+#~ msgstr "Stato:"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nuovi pacchetti installati con successo."
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Inverti selezione pacchetti"
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "pm-install"
-#~ msgstr "installato"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
-#~ msgid "Installing %1"
-#~ msgstr "installazione in corso"
+#~ msgid "Use proxy server"
+#~ msgstr "Usa proxy"
 
-#~ msgid "Package Installer"
-#~ msgstr "Gestore di Pacchetti"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installazione di %1 completata con successo"
 
-#~ msgid "Maintainer"
-#~ msgstr "Maintainer"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "I pacchetti sono stati installati con successo"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sommario"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite di banda:"
+
+#~ msgid "Update check"
+#~ msgstr "Controllo aggiornamenti"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(usa 0 per non imporre nessun limite)"
+
+#~ msgid "Clear Cache"
+#~ msgstr " Pulisci cache"
+
+#~ msgid "Ok"
+#~ msgstr "&Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -771,49 +797,23 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i pacchetti in questo gruppo</p></body></html>"
 
-#~ msgid "Delete"
-#~ msgstr "Elimina"
+#~ msgid "Maintainer"
+#~ msgstr "Maintainer"
 
-#~ msgid "Ok"
-#~ msgstr "&Ok"
+#~ msgid "Package Installer"
+#~ msgstr "Gestore di Pacchetti"
 
-#~ msgid "Clear Cache"
-#~ msgstr " Pulisci cache"
+#~ msgid "Installing %1"
+#~ msgstr "installazione in corso"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(usa 0 per non imporre nessun limite)"
+#~ msgid "pm-install"
+#~ msgstr "installato"
 
-#~ msgid "Update check"
-#~ msgstr "Controllo aggiornamenti"
+#~ msgid "Reverse package selections"
+#~ msgstr "Inverti selezione pacchetti"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Limite di banda:"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nuovi pacchetti installati con successo."
 
-#~ msgid "Summary"
-#~ msgstr "Sommario"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "I pacchetti sono stati installati con successo"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installazione di %1 completata con successo"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Usa proxy"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-
-#~ msgid "Status:"
-#~ msgstr "Stato:"
+#~ msgid "Cancel"
+#~ msgstr "A&nnulla"

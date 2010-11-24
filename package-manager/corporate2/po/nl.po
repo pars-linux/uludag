@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-12 00:43+0200\n"
+"POT-Creation-Date: 2010-11-24 21:56+0200\n"
 "PO-Revision-Date: 2010-06-11 16:14+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -60,11 +60,11 @@ msgid "You must restart following system services for the updated package(s) to 
 msgstr "Voor het actief maken van de bijgewerkte versies van de geselecteerde pakketten herstart de volgende diensten:"
 
 #: .tmp/basketdialog.py:154 .tmp/mainwidget.py:269 .tmp/mainwidget.py:272
-#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:226
+#: .tmp/settingsdialog.py:221 .tmp/settingsdialog.py:228
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:133
 msgid "downloading"
 msgstr "downloaden"
 
@@ -283,9 +283,9 @@ msgstr "Alle gebufferde pakketten worden verwijderd. Bent u zeker? "
 msgid "Not a valid repository name"
 msgstr "Geen geldige bronnaam"
 
-#: .tmp/settingsdialog.py:227
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Adres van softwarebron dient te eindigen op xml of xml.bz2. <p>Probeer opnieuw.</qt>"
+#: .tmp/settingsdialog.py:229
+msgid "<qt>Repository address should end with xml, xml.bz2 or xml.xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Adres van softwarebron dient te eindigen op xml, xml.bz2 of xml.xz. <p>Probeer opnieuw.</qt>"
 
 #: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
@@ -732,44 +732,32 @@ msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaan
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "opvullen-links:15px;"
+#~ msgid "Status:"
+#~ msgstr "Status:"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Gebruik proxyserver"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installatie van %1 is gelukt"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
+#~ msgid "Reverse package selections"
+#~ msgstr "Keer pakketselectie om"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakket-installeerder is reeds gestart!"
 
-#~ msgid "Summary"
-#~ msgstr "Samenvatting"
+#~ msgid "pm-install"
+#~ msgstr "pm-installeer"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bandbreedtelimiet:"
+#~ msgid "Installing %1"
+#~ msgstr "Installeren van %1"
 
-#~ msgid "Update check"
-#~ msgstr "Opwaaderingen controleren"
+#~ msgid "Package Installer"
+#~ msgstr "Pakket-installeerder"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(gebruik 0 voor geen limiet)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Buffer wissen"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Verwijderen"
+#~ msgid "Maintainer"
+#~ msgstr "Onderhouder"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -784,29 +772,41 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten in deze groep</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Onderhouder"
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakket-installeerder"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installeren van %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installeer"
+#~ msgid "Clear Cache"
+#~ msgstr "Buffer wissen"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakket-installeerder is reeds gestart!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(gebruik 0 voor geen limiet)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Keer pakketselectie om"
+#~ msgid "Update check"
+#~ msgstr "Opwaaderingen controleren"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bandbreedtelimiet:"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Summary"
+#~ msgstr "Samenvatting"
 
-#~ msgid "Status:"
-#~ msgstr "Status:"
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installatie van %1 is gelukt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Gebruik proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "opvullen-links:15px;"
