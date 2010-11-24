@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-23 14:56+0200\n"
+"POT-Creation-Date: 2010-11-24 20:35+0200\n"
 "PO-Revision-Date: 2010-11-22 17:34+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -352,10 +352,14 @@ msgstr ""
 "Repository (installatiebron) aan pakketbeheer toevoegen."
 
 #: ../release.xml.in.h:29
+msgid "License Agreement"
+msgstr ""
+
+#: ../release.xml.in.h:30
 msgid "Manual Partitioning"
 msgstr "Handmatig partitioneren"
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:31
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -371,7 +375,7 @@ msgstr ""
 "websites. Geniet van een snel en veilig internetgebruik met de nieuwe "
 "Mozilla Firefox 3.5."
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid ""
 "Pardus 2011 comes preinstalled with the open source desktop environment KDE "
 "4.2. You will have a much better desktop experience compared to what you "
@@ -391,7 +395,7 @@ msgstr ""
 "bureaublad plaatsen en ook een real-time weerrapport, uw notities en RSS-"
 "feeds ."
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:33
 msgid ""
 "Pardus 2011 is a Linux distribution that everybody can easily install and "
 "use. With Pardus 2011, you can do anything that you could otherwise do with "
@@ -403,7 +407,7 @@ msgstr ""
 "andere besturingsystemen kunt doen. Met zijn snelle, veilige en stabiele "
 "infrastructuur opent Pardus de weg naar software vrijheid."
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:34
 msgid ""
 "Pardus 2011 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -420,7 +424,7 @@ msgstr ""
 "maken. Het toevoegen van een printer is heel eenvoudig. Aansluiten en "
 "configureren in Pardus is meestal voldoende."
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:35
 msgid ""
 "Pardus includes many genuine technologies aiming for an easier use and "
 "management. TASMA has been replaced with System Manager in Pardus 2011, but "
@@ -431,7 +435,7 @@ msgstr ""
 "TASMA is vervangen door Systeeminstellingen in Pardus 2011, maar u kunt nog "
 "steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:36
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
@@ -441,19 +445,19 @@ msgstr ""
 "softwarebronnen en voorziet in vele uren vermaak met de verschillende "
 "soorten spellen die door Pakketbeheer beschikbaar zijn."
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:37
 msgid "Select Partitioning Method"
 msgstr "Partitiemethode selecteren"
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:38
 msgid "Select a Drive to Install Pardus"
 msgstr "Selecteer een schijf om Pardus op te installeren"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:39
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:40
 msgid ""
 "To connect to a wireless or &apos;wired&apos; network is as easy as choosing "
 "a connection profile with Pardus 2011. With the network manager&apos;s "
@@ -468,7 +472,7 @@ msgstr ""
 "van het aanmaken van profielen. Het kiezen van een ander netwerkprofiel "
 "gebeurt met twee muisklikken."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:41
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the Özgürlükİçin portal, where content is "
@@ -483,12 +487,12 @@ msgstr ""
 "gebruiker die de Turkse taal kunnen lezen is er voor ondersteuning ook nog "
 "www.ozgurlukicin.com"
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:42
 #, fuzzy
 msgid "Welcome to Pardus"
 msgstr "Welkom bij Pardus"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:43
 msgid ""
 "With Pardus 2011, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -506,7 +510,7 @@ msgstr ""
 "gebruiken. Daar Amarok ook naadloos samenwerkt met de meeste spelers, is het "
 "mogelijk om liedjes d.m.v. verslepen in de afspeellijst te plaatsen."
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:44
 msgid ""
 "With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file "
 "formats and you can view all your files without any additional software, "
@@ -516,7 +520,7 @@ msgstr ""
 "bestandformaten en maakt het mogelijk om alle bestanden te bekijken zonder "
 "additionele software en notities van bladwijzers maken."
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:45
 msgid ""
 "With the arrival of KDE 4.2, Konqueror is replaced with a new and very "
 "talented file manager, Dolphin. Dolphin is easy to use, and when it comes to "
@@ -531,7 +535,7 @@ msgstr ""
 "gedetailleerde informatie. Bijna alles wat u voor mapweergave nodig heeft, "
 "is mogelijk met Dolphin."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:46
 msgid ""
 "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
 "word processor, a spreadsheet, a presentation application, database, formula "
