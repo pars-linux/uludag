@@ -250,57 +250,18 @@ QTimeEdit::down-button:hover {
 QPushButton{
 	padding: 3px 10px 3px 10px;
 	color: white;
-	border:0px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(120, 146, 172, 255), stop:0.0155729 rgba(99, 141, 164, 255), stop:0.538376 rgba(49, 84, 106, 255), stop:1 rgba(51, 72, 91, 255))*/
-}
-
-QPushButton::flat:hover{
-	border:1px solid  rgba(34, 49, 60, 100);
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-}
-
-QPushButton::flat{
 	border:1px solid  rgba(34, 49, 60, 100);
 	border-radius:2px;
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-	/*
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 150), stop:0.398093 rgba(44, 62, 79, 255), stop:0.521739 rgba(36, 61, 76, 255), stop:0.531585 rgba(40, 68, 86, 255), stop:0.983696 rgba(73, 109, 129, 255), stop:1 rgba(89, 108, 127, 255))
-	*/
 }
 
-QPushButton::flat:pressed{
-	border:1px solid  rgba(34, 49, 60, 100);
-	border-radius:2px;
-	padding: 3px 10px 3px 10px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-}
-
-#frame QPushButton::default{
-	padding: 3px 10px 3px 10px;
-	color: white;
-	border:0px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-	/*background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(120, 146, 172, 255), stop:0.0155729 rgba(99, 141, 164, 255), stop:0.538376 rgba(49, 84, 106, 255), stop:1 rgba(51, 72, 91, 255))*/
-}
-
-#frame QPushButton::default:hover{
+QPushButton:hover{
 	border:1px solid  rgba(34, 49, 60, 100);
 	border-radius:2px;
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
 }
 
-#frame QPushButton::default{
-	border:1px solid  rgba(34, 49, 60, 100);
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
-	/*
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(26, 38, 45, 150), stop:0.398093 rgba(44, 62, 79, 255), stop:0.521739 rgba(36, 61, 76, 255), stop:0.531585 rgba(40, 68, 86, 255), stop:0.983696 rgba(73, 109, 129, 255), stop:1 rgba(89, 108, 127, 255))
-	*/
-}
-
-#frame QPushButton::default:pressed{
+QPushButton:pressed{
 	border:1px solid  rgba(34, 49, 60, 100);
 	border-radius:2px;
 	padding: 3px 10px 3px 10px;
@@ -309,25 +270,7 @@ QPushButton::flat:pressed{
 
 
 
-#frame QPushButton::flat{
-	padding: 3px 10px 3px 10px;
-	color: white;
-	border:0px;
-	background-color: rgba(0,0,0,0)
-}
 
-#frame QPushButton::flat:hover{
-	border:1px solid  rgba(34, 49, 60, 100);
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
-}
-
-#frame QPushButton::flat:pressed{
-	border:1px solid  rgba(34, 49, 60, 100);
-	border-radius:2px;
-	padding: 3px 10px 3px 10px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(149, 23, 23, 255), stop:0.0192308 rgba(180, 55, 45, 255), stop:0.521739 rgba(186, 55, 49, 255), stop:0.531585 rgba(204, 66, 60, 255), stop:0.983696 rgba(188, 98, 94, 255), stop:1 rgba(230, 130, 130, 255))
-}
 
 
 #toggleHelp{
