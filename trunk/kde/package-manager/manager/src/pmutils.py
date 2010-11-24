@@ -40,8 +40,7 @@ def network_available():
         urllib.urlopen('http://packages.pardus.org.tr')
     except:
         return False
-    finally:
-        return True
+    return True
 
 def humanReadableSize(size, precision=".1"):
     symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
