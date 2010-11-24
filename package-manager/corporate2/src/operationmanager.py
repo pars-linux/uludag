@@ -62,6 +62,9 @@ class OperationManager(QObject):
         else:
             self.rate = "%s %s" % (rate, symbol)
 
+        if self.totalPackages == 0:
+            self.totalSize = pkgTotalSize
+
         if pkgDownSize == pkgTotalSize:
             self.totalDownloaded += int(pkgTotalSize)
             self.curPkgDownloaded = 0
