@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-23 14:56+0200\n"
+"POT-Creation-Date: 2010-11-24 20:35+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -235,10 +235,14 @@ msgid ""
 msgstr ""
 
 #: ../release.xml.in.h:29
-msgid "Manual Partitioning"
+msgid "License Agreement"
 msgstr ""
 
 #: ../release.xml.in.h:30
+msgid "Manual Partitioning"
+msgstr ""
+
+#: ../release.xml.in.h:31
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -248,7 +252,7 @@ msgid ""
 "Mozilla Firefox 3.5."
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid ""
 "Pardus 2011 comes preinstalled with the open source desktop environment KDE "
 "4.2. You will have a much better desktop experience compared to what you "
@@ -260,7 +264,7 @@ msgid ""
 "and RSS feeds right on your desktop."
 msgstr ""
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:33
 msgid ""
 "Pardus 2011 is a Linux distribution that everybody can easily install and "
 "use. With Pardus 2011, you can do anything that you could otherwise do with "
@@ -268,7 +272,7 @@ msgid ""
 "Pardus opens the path to software libre."
 msgstr ""
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:34
 msgid ""
 "Pardus 2011 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -279,7 +283,7 @@ msgid ""
 "correct driver and set everything accordingly right away."
 msgstr ""
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:35
 msgid ""
 "Pardus includes many genuine technologies aiming for an easier use and "
 "management. TASMA has been replaced with System Manager in Pardus 2011, but "
@@ -287,26 +291,26 @@ msgid ""
 "interface."
 msgstr ""
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:36
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
 "through the package manager."
 msgstr ""
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:37
 msgid "Select Partitioning Method"
 msgstr ""
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:38
 msgid "Select a Drive to Install Pardus"
 msgstr ""
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:39
 msgid "Summary"
 msgstr ""
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:40
 msgid ""
 "To connect to a wireless or &apos;wired&apos; network is as easy as choosing "
 "a connection profile with Pardus 2011. With the network manager&apos;s "
@@ -315,7 +319,7 @@ msgid ""
 "create. Choosing a different connection profile requires just two clicks."
 msgstr ""
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:41
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the Özgürlükİçin portal, where content is "
@@ -325,11 +329,11 @@ msgid ""
 "be www.ozgurlukicin.com"
 msgstr ""
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:42
 msgid "Welcome to Pardus"
 msgstr ""
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:43
 msgid ""
 "With Pardus 2011, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -340,14 +344,14 @@ msgid ""
 "for any external device drivers."
 msgstr ""
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:44
 msgid ""
 "With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file "
 "formats and you can view all your files without any additional software, "
 "take notes on bookmarks on them."
 msgstr ""
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:45
 msgid ""
 "With the arrival of KDE 4.2, Konqueror is replaced with a new and very "
 "talented file manager, Dolphin. Dolphin is easy to use, and when it comes to "
@@ -356,7 +360,7 @@ msgid ""
 "Anything you may need on viewing folders, you have it with Dolphin."
 msgstr ""
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:46
 msgid ""
 "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
 "word processor, a spreadsheet, a presentation application, database, formula "
