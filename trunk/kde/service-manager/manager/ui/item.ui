@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>560</width>
+    <width>638</width>
     <height>48</height>
    </rect>
   </property>
@@ -132,6 +132,13 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="4">
+      <widget class="QCheckBox" name="checkStart">
+       <property name="text">
+        <string>Run on start</string>
+       </property>
+      </widget>
+     </item>
      <item row="0" column="2">
       <widget class="QPushButton" name="buttonStop">
        <property name="sizePolicy">
@@ -159,9 +166,24 @@
       </widget>
      </item>
      <item row="0" column="3">
-      <widget class="QCheckBox" name="checkStart">
+      <widget class="QPushButton" name="buttonInfo">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>36</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>More Information</string>
+       </property>
        <property name="text">
-        <string>Run on start</string>
+        <string/>
        </property>
       </widget>
      </item>

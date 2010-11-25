@@ -17,9 +17,13 @@ from PyQt4.QtCore import *
 
 # KDE Stuff
 from PyKDE4 import kdeui
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import KGlobal
 
 # Application Stuff
 from servicemanager.ui_item import Ui_ServiceItemWidget
+from servicemanager.ui_info import Ui_InfoWidget
+from pds.gui import *
 import time
 
 class ServiceItem(QtGui.QListWidgetItem):
@@ -44,17 +48,21 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonStart.setIcon(kdeui.KIcon("media-playback-start"))
         self.ui.buttonStop.setIcon(kdeui.KIcon("media-playback-stop"))
         self.ui.buttonReload.setIcon(kdeui.KIcon("view-refresh"))
+        self.ui.buttonInfo.setIcon(kdeui.KIcon("dialog-information"))
 
         self.toggled = False
         self.iface = parent.iface
         self.item = item
         self.package = package
+        self.info = ServiceItemInfo(self)
+
         self.type = None
         self.desc = None
         self.connect(self.ui.buttonStart, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonStop, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.buttonReload, SIGNAL("clicked()"), self.setService)
         self.connect(self.ui.checkStart, SIGNAL("clicked()"), self.setService)
+        self.connect(self.ui.buttonInfo, SIGNAL("clicked()"), self.info.showDescription)
 
     def updateService(self, data, firstRun):
         self.type, self.desc, serviceState = data
@@ -108,5 +116,46 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonStart.setVisible(toggle)
         self.ui.buttonReload.setVisible(toggle)
         self.ui.buttonStop.setVisible(toggle)
+        self.ui.buttonInfo.setVisible(toggle)
         self.ui.checkStart.setVisible(toggle)
+
+import pisi
+def getDescription(service):
+    try:
+        # TODO add a package map for known services
+        service = service.replace('_','-')
+        lang = str(KGlobal.locale().language())
+        desc = pisi.api.info_name(service)[0].package.description
+        if desc.has_key(lang):
+            return unicode(desc[lang])
+        return unicode(desc['en'])
+    except Exception, msg:
+        # print "ERROR:", msg
+        return i18n('Service information is not available')
+
+class ServiceItemInfo(PAbstractBox):
+
+    def __init__(self, parent):
+        PAbstractBox.__init__(self, parent)
+        self.ui = Ui_InfoWidget()
+        self.ui.setupUi(self)
+        self.ui.buttonHide.clicked.connect(self.hideDescription)
+        self.ui.buttonHide.setIcon(kdeui.KIcon("dialog-close"))
+        self._animation = 2
+        self._duration = 500
+
+        self.enableOverlay()
+        self.hide()
+
+    def showDescription(self):
+        self.resize(self.parentWidget().size())
+        self.ui.description.setText(getDescription(self.parentWidget().package))
+        self.animate(start = MIDLEFT, stop = MIDCENTER)
+        QtGui.qApp.processEvents()
+
+    def hideDescription(self):
+        if self.isVisible():
+            self.animate(start = MIDCENTER,
+                         stop  = MIDRIGHT,
+                         direction = OUT)
 
