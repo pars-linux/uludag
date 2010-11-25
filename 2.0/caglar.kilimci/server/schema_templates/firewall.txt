@@ -1,4 +1,0 @@
-# name type description
-
-firewallState str Firewall state (on/off)
-firewallRules str IPTables rules
