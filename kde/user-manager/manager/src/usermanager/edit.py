@@ -21,6 +21,7 @@ from PyQt4 import QtGui
 # PyKDE
 from PyKDE4 import kdeui
 from PyKDE4 import kdecore
+from PyKDE4.kdecore import i18n
 
 # UI
 from usermanager.ui_edituser import Ui_EditUserWidget
@@ -32,6 +33,14 @@ from usermanager.utility import nickGuess
 # PolicyKit
 import polkit
 
+categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations"), "system-users"),
+              "org.freedesktop.network-manager-settings": (i18n("Network settings"), "networkmanager"),
+              "tr.org.pardus.comar.system.manager": (i18n("Package operations"), "applications-other"),
+              "tr.org.pardus.comar.system.service": (i18n("Service operations"), "services"),
+              "tr.org.pardus.comar.time": (i18n("Date/time operations"), "clock"),
+              "tr.org.pardus.comar.boot.modules": (i18n("Kernel module operations"), "utilities-terminal"),
+              "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
+              "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display")}
 
 class PolicyItem(QtGui.QTreeWidgetItem):
     def __init__(self, parent, text, action_id):
@@ -118,23 +127,19 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def buildPolicies(self):
         self.actionItems = {}
         self._vendors = []
-        for action_id in polkit.action_list():
-            info = polkit.action_info(action_id)
 
-            if info['vendor'] == '':
-                info['vendor'] = 'Other'
+        # do not show policies require policy type yes or no, only the ones require auth_* type
+        allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
-            if info['vendor'] not in self._vendors:
-                parent_item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
-                parent_item.setText(0, unicode(info['vendor']))
-                self._vendors.append(info['vendor'])
-            else:
-                for i in range(self.treeAuthorizations.topLevelItemCount()):
-                    if self.treeAuthorizations.topLevelItem(i).text(0) == info['vendor']:
-                        parent_item = self.treeAuthorizations.topLevelItem(i)
-
-            item = PolicyItem(parent_item, unicode(info["description"]), action_id)
-            self.actionItems[action_id] = item
+        for category in categories.keys():
+            parent_item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
+            parent_item.setIcon(0, kdeui.KIcon(categories[category][1]))
+            parent_item.setText(0, unicode(categories[category][0]))
+            catactions = filter(lambda x: x.startswith(category), allActions)
+            for action_id in catactions:
+                info = polkit.action_info(action_id)
+                item = PolicyItem(parent_item, unicode(info["description"]), action_id)
+                self.actionItems[action_id] = item
 
     def getAuthorizations(self):
         grant = []
@@ -251,7 +256,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         for action_id in self.actionItems:
             item = self.actionItems[action_id]
             item.setType(0)
-        #print "\n Authorizations: %s " %authorizations
+        # print "\n Authorizations: %s " %authorizations
         for action_id, scope, description, policy_active, negative in authorizations:
             if action_id in self.actionItems:
                 item = self.actionItems[action_id]
@@ -293,7 +298,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
     def checkLastItem(self):
         if self.comboMainGroup.count() == 1:
-            kdeui.KMessageBox.error(self, kdecore.i18n("There has to be at least one group selected."))
+            kdeui.KMessageBox.error(self, i18n("There has to be at least one group selected."))
             return False
         return True
 
@@ -367,7 +372,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
     def checkFields(self, *args):
         err = ""
-        i18n = kdecore.i18n
 
         if self.lineFullname.text() == "" and self.lineUsername.text() == "":
             err = i18n("Start with typing this user's full name.")
