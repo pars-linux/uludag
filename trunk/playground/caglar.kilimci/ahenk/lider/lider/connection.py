@@ -17,6 +17,7 @@ from lider.ui_connection import Ui_dialogConnection
 
 # Helper modules
 from lider.helpers import profile
+from lider.helpers import profilereader
 
 
 class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
@@ -48,20 +49,28 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
 
-        # Get connection profiles
-        self.__get_profiles()
+        # Create Profile Reader to list of profiles
+        reader = profilereader.ProfileReader()
+        if reader.is_file_exists():
+            profiles = reader.read()
 
-    def __get_profiles(self):
-        """
-            Gets connection profiles.
-        """
-        last_profile = profile.Profile()
+            # Set last profile
+            last_profile = reader.get_last_profile()
+            self.__set_last_profile(last_profile)
 
-        if last_profile.is_set():
+            # Fill the profiles
+            self.__fill_profiles(profiles)
+
+    def __set_last_profile(self, last_profile):
+        if not (None == last_profile):
             self.set_domain(last_profile.get_domain())
             self.set_host(last_profile.get_address())
             self.set_user(last_profile.get_username())
             self.editPassword.setFocus()
+
+    def __fill_profiles(self, profiles):
+        if not len(profiles):
+            pass
 
     def __slot_find_host(self):
         """
