@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 22:56+0300\n"
+"POT-Creation-Date: 2010-11-26 16:11+0200\n"
 "PO-Revision-Date: 2010-06-02 19:08+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -54,33 +54,61 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Daniel Kovács"
 
-#: ui/ui_item.py:108 ui/ui_main.py:61
+#: src/servicemanager/base.py:96
+msgid "Authentication Error"
+msgstr ""
+
+#: src/servicemanager/base.py:97
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/servicemanager/base.py:99
+msgid "Error"
+msgstr ""
+
+#: src/servicemanager/base.py:100
+msgid "An exception occured."
+msgstr ""
+
+#: src/servicemanager/widgets.py:171 ui/ui_info.py:52
+msgid "Service information is not available"
+msgstr ""
+
+#: ui/ui_info.py:51 ui/ui_item.py:124 ui/ui_main.py:61
 msgid "Form"
 msgstr "Forma"
 
-#: ui/ui_item.py:109
+#: ui/ui_info.py:53
+msgid "Hide Information"
+msgstr ""
+
+#: ui/ui_item.py:125
 msgid "serviceName"
 msgstr "szolgáltatásNév"
 
-#: ui/ui_item.py:110
+#: ui/ui_item.py:126
 msgid "serviceDesc"
 msgstr "szolgáltatásLeírás"
 
-#: ui/ui_item.py:111
+#: ui/ui_item.py:127
 msgid "Start service"
 msgstr "Szolgáltatás indítása"
 
-#: ui/ui_item.py:112
+#: ui/ui_item.py:128
 msgid "Reload service"
 msgstr "Szolgáltatás újratöltése"
 
-#: ui/ui_item.py:113
+#: ui/ui_item.py:129
+msgid "Run on start"
+msgstr "Futás indulásnál"
+
+#: ui/ui_item.py:130
 msgid "Stop service"
 msgstr "Szolgáltatás leállítása"
 
-#: ui/ui_item.py:114
-msgid "Run on start"
-msgstr "Futás indulásnál"
+#: ui/ui_item.py:131
+msgid "More Information"
+msgstr ""
 
 #: ui/ui_main.py:62
 msgid "type service name to search..."
