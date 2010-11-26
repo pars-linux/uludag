@@ -24,6 +24,7 @@ from PyKDE4.kdecore import KGlobal
 from servicemanager.ui_item import Ui_ServiceItemWidget
 from servicemanager.ui_info import Ui_InfoWidget
 from pds.gui import *
+from pds.qprogressindicator import QProgressIndicator
 import time
 
 class ServiceItem(QtGui.QListWidgetItem):
@@ -41,6 +42,12 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
 
+        self.busy = QProgressIndicator(self)
+        self.busy.setMinimumSize(QtCore.QSize(32, 32))
+        self.ui.mainLayout.insertWidget(0, self.busy)
+        self.ui.spacer.hide()
+        self.busy.hide()
+
         self.ui.labelName.setText(package)
 
         self.toggleButtons()
@@ -51,6 +58,7 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonInfo.setIcon(kdeui.KIcon("dialog-information"))
 
         self.toggled = False
+        self.root = parent
         self.iface = parent.iface
         self.item = item
         self.package = package
@@ -80,7 +88,12 @@ class ServiceItemWidget(QtGui.QWidget):
         else:
             self.running = False
             icon = 'flag-black'
+
+        self.ui.buttonStop.setEnabled(self.running)
+        self.ui.buttonReload.setEnabled(self.running)
+
         self.ui.labelStatus.setPixmap(kdeui.KIcon(icon).pixmap(32, 32))
+        self.showStatus()
         self.runningAtStart = False
         if state in ('on', 'stopped'):
             self.runningAtStart = True
@@ -91,6 +104,8 @@ class ServiceItemWidget(QtGui.QWidget):
 
     def setService(self):
         try:
+            self.showBusy()
+            last_state = not self.ui.checkStart.isChecked()
             if self.sender() == self.ui.buttonStart:
                 self.iface.start(self.package)
             elif self.sender() == self.ui.buttonStop:
@@ -99,8 +114,20 @@ class ServiceItemWidget(QtGui.QWidget):
                 self.iface.restart(self.package)
             elif self.sender() == self.ui.checkStart:
                 self.iface.setEnable(self.package, self.ui.checkStart.isChecked())
-        except Exception, e:
-            print e
+        except Exception, msg:
+            self.showStatus()
+            self.ui.checkStart.setChecked(last_state)
+            self.root.showFail(msg)
+
+    def showStatus(self):
+        self.busy.hide()
+        self.ui.spacer.hide()
+        self.ui.labelStatus.show()
+
+    def showBusy(self):
+        self.busy.busy()
+        self.ui.spacer.show()
+        self.ui.labelStatus.hide()
 
     def enterEvent(self, event):
         if not self.toggled:
