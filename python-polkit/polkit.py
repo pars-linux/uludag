@@ -108,23 +108,21 @@ def auth_list_all():
     for title in cp.sections():
         if not title.startswith("user:"):
             continue
-        # UID
+        # UID and Action ID
         try:
             _uid = pwd.getpwnam(title.split(":")[1]).pw_uid
+            _action_id = title.split(":")[2]
         except KeyError:
             continue
 
-        for action_id in cp.get(title, "Action").split(":"):
-            if not action_id:
-                continue
-            auth = {
-                "action_id": action_id,
-                "uid": _uid,
-                "type": 3,
-                "scope": 0,
-                "negative": cp.get(title, "ResultAny") == "no",
-            }
-            authorizations.append(auth)
+        auth = {
+            "action_id": _action_id,
+            "uid": _uid,
+            "type": 3,
+            "scope": 0,
+            "negative": cp.get(title, "ResultAny") == "no",
+        }
+        authorizations.append(auth)
 
     return authorizations
 
@@ -151,23 +149,20 @@ def auth_add(action_id, auth_type, uid, pid=None):
     cp.optionxform = str
     cp.read(DB_FILE)
 
-    if "user:%s:allow" % user in cp.sections():
-        actions = cp.get("user:%s:allow" % user, "Action").split(":")
-        if action_id not in actions:
-            actions.append(action_id)
-        cp.set("user:%s:allow" % user, "Action", ":".join(actions))
-    else:
-        actions = [action_id]
-        cp.add_section("user:%s:allow" % user)
-        cp.set("user:%s:allow" % user, "Action", ":".join(actions))
-        cp.set("user:%s:allow" % user, "Identity", "unix-user:%s" % user)
-        cp.set("user:%s:allow" % user, "ResultAny", "yes")
-        cp.set("user:%s:allow" % user, "ResultInactive", "yes")
-        cp.set("user:%s:allow" % user, "ResultActive", "yes")
+    title = "user:%s:%s" % (user, action_id)
+
+    if title in cp.sections():
+        cp.remove_section(title)
+
+    cp.add_section(title)
+    cp.set(title, "Action", action_id)
+    cp.set(title, "Identity", "unix-user:%s" % user)
+    cp.set(title, "ResultAny", "yes")
+    cp.set(title, "ResultInactive", "yes")
+    cp.set(title, "ResultActive", "yes")
 
     with open(DB_FILE, "w") as configfile:
         cp.write(configfile)
-
 
 def auth_revoke_all(uid):
     """
@@ -185,7 +180,7 @@ def auth_revoke_all(uid):
 
     sections = cp.sections()
     for title in sections:
-        if title == "user:%s:allow" % user or title == "user:%s:deny" % user:
+        if title.startswith("user:%s:" % user):
             cp.remove_section(title)
 
     with open(DB_FILE, "w") as configfile:
@@ -211,11 +206,8 @@ def auth_revoke(uid, action_id):
 
     sections = cp.sections()
     for title in sections:
-        if title == "user:%s:allow" % user or title == "user:%s:deny" % user:
-            actions = cp.get(title, "Action").split(":")
-            if action_id in actions:
-                actions.remove(action_id)
-                cp.set(title, "Action", ":".join(actions))
+        if title == "user:%s:%s" % (user, action_id):
+            cp.remove_section(title)
 
     with open(DB_FILE, "w") as configfile:
         cp.write(configfile)
@@ -239,19 +231,17 @@ def auth_block(uid, action_id):
     cp.optionxform = str
     cp.read(DB_FILE)
 
-    if "user:%s:deny" % user in cp.sections():
-        actions = cp.get("user:%s:deny" % user, "Action").split(":")
-        if action_id not in actions:
-            actions.append(action_id)
-        cp.set("user:%s:deny" % user, "Action", ":".join(actions))
-    else:
-        actions = [action_id]
-        cp.add_section("user:%s:deny" % user)
-        cp.set("user:%s:deny" % user, "Action", ":".join(actions))
-        cp.set("user:%s:deny" % user, "Identity", "unix-user:%s" % user)
-        cp.set("user:%s:deny" % user, "ResultAny", "no")
-        cp.set("user:%s:deny" % user, "ResultInactive", "no")
-        cp.set("user:%s:deny" % user, "ResultActive", "no")
+    title = "user:%s:%s" % (user, action_id)
+
+    if title in cp.sections():
+        cp.remove_section(title)
+
+    cp.add_section(title)
+    cp.set(title, "Action", action_id)
+    cp.set(title, "Identity", "unix-user:%s" % user)
+    cp.set(title, "ResultAny", "no")
+    cp.set(title, "ResultInactive", "no")
+    cp.set(title, "ResultActive", "no")
 
     with open(DB_FILE, "w") as configfile:
         cp.write(configfile)
