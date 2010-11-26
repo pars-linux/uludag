@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-11-26 16:11+0200\n"
-"PO-Revision-Date: 2010-06-30 11:24+0200\n"
+"PO-Revision-Date: 2010-11-26 16:49+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -31,12 +31,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/servicemanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
-
-#: src/servicemanager/about.py:34
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/servicemanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
 
 #: src/servicemanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -47,34 +47,34 @@ msgid "COMAR Author"
 msgstr "COMAR-auteur"
 
 #: src/servicemanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "atolboo@gmail.com"
-
-#: src/servicemanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Antoon Tolboom"
 
+#: src/servicemanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
+
 #: src/servicemanager/base.py:96
 msgid "Authentication Error"
-msgstr ""
+msgstr "Authenticatiefout"
 
 #: src/servicemanager/base.py:97
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "U bent niet geautoriseerd voor deze bewerking."
 
 #: src/servicemanager/base.py:99
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: src/servicemanager/base.py:100
 msgid "An exception occured."
-msgstr ""
+msgstr "Onbehandelde fout opgetreden."
 
 #: src/servicemanager/widgets.py:171 ui/ui_info.py:52
 msgid "Service information is not available"
-msgstr ""
+msgstr "Dienstinformatie is niet aanwezig"
 
 #: ui/ui_info.py:51 ui/ui_item.py:124 ui/ui_main.py:61
 msgid "Form"
@@ -82,7 +82,7 @@ msgstr "Form"
 
 #: ui/ui_info.py:53
 msgid "Hide Information"
-msgstr ""
+msgstr "Informatie verbergen"
 
 #: ui/ui_item.py:125
 msgid "serviceName"
@@ -110,7 +110,7 @@ msgstr "Dienst stoppen"
 
 #: ui/ui_item.py:131
 msgid "More Information"
-msgstr ""
+msgstr "Meer informatie"
 
 #: ui/ui_main.py:62
 msgid "type service name to search..."
@@ -139,3 +139,4 @@ msgstr "Alle diensten"
 #: ui/ui_main.py:68
 msgid "Getting service info... %p%"
 msgstr "Dienstinformatie wordt opgehaald... %p%"
+
