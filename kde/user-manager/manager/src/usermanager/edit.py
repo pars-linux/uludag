@@ -34,12 +34,13 @@ from usermanager.utility import nickGuess
 import polkit
 
 categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations"), "system-users"),
-              "org.freedesktop.network-manager-settings": (i18n("Network settings"), "networkmanager"),
-              "tr.org.pardus.comar.system.manager": (i18n("Package operations"), "applications-other"),
+              "org.freedesktop.network-manager-settings|org.freedesktop.ModemManager": (i18n("Network settings"), "networkmanager"),
+              "tr.org.pardus.comar.system.manager|org.kde.fontinst": (i18n("Package operations"), "applications-other"),
               "tr.org.pardus.comar.system.service": (i18n("Service operations"), "services"),
-              "tr.org.pardus.comar.time": (i18n("Date/time operations"), "clock"),
-              "tr.org.pardus.comar.boot.modules": (i18n("Kernel module operations"), "utilities-terminal"),
+              "tr.org.pardus.comar.time|org.kde.kcontrol.kcmclock": (i18n("Date/time operations"), "clock"),
+              "tr.org.pardus.comar.boot.modules|org.kde.ksysguard": (i18n("Kernel/Process operations"), "utilities-terminal"),
               "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
+              "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
               "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display")}
 
 class PolicyItem(QtGui.QTreeWidgetItem):
@@ -130,16 +131,16 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         # do not show policies require policy type yes or no, only the ones require auth_* type
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
-
-        for category in categories.keys():
+        for _category in categories.keys():
             parent_item = QtGui.QTreeWidgetItem(self.treeAuthorizations)
-            parent_item.setIcon(0, kdeui.KIcon(categories[category][1]))
-            parent_item.setText(0, unicode(categories[category][0]))
-            catactions = filter(lambda x: x.startswith(category), allActions)
-            for action_id in catactions:
-                info = polkit.action_info(action_id)
-                item = PolicyItem(parent_item, unicode(info["description"]), action_id)
-                self.actionItems[action_id] = item
+            parent_item.setIcon(0, kdeui.KIcon(categories[_category][1]))
+            parent_item.setText(0, unicode(categories[_category][0]))
+            for category in _category.split('|'):
+                catactions = filter(lambda x: x.startswith(category), allActions)
+                for action_id in catactions:
+                    info = polkit.action_info(action_id)
+                    item = PolicyItem(parent_item, unicode(info["description"]), action_id)
+                    self.actionItems[action_id] = item
 
     def getAuthorizations(self):
         grant = []
