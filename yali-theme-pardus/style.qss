@@ -18,6 +18,7 @@ QSlider::handle:horizontal {
 }
 
  QToolButton {
+    color: white;
 	border:1px solid  rgba(34, 49, 60, 100);
 	border-radius:2px;
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
@@ -89,12 +90,14 @@ background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0
  }
 
 
-
-
-
-
 QListView {
-     show-decoration-selected: 1; /* make the selection span the entire width of the view */
+       show-decoration-selected: 1; /* make the selection span the entire width of the view */
+       color: #444444;
+       background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304, y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 220));
+       border-bottom-left-radius: 3px;
+       border-bottom-right-radius: 3px;
+       font-size: 14px;
+       font-weight: bold;
  }
 
  QListView::item:alternate {
@@ -102,23 +105,25 @@ QListView {
  }
 
  QListView::item:selected {
-     border: 1px solid #6a6ea9;
+     /*border: 1px solid #6a6ea9;*/
  }
 
  QListView::item:selected:!active {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #ABAFE5, stop: 1 #8588B2);
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
  }
 
  QListView::item:selected:active {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #6a6ea9, stop: 1 #888dd9);
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
  }
 
  QListView::item:hover {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 200), stop:0.521739 rgba(166, 35, 29, 200), stop:0.531585 rgba(184, 46, 40, 200), stop:0.983696 rgba(168, 78, 74, 200), stop:1 rgba(210, 110, 110, 200));
+        border: 1px solid rgba(255, 255, 255, 50); border-radius: 3px; color:white
  }
+
+
 
 
 #frame{
@@ -240,6 +245,60 @@ QPushButton:pressed{
 
 
 
+QSpinBox {
+       color: #333333;
+       background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304, y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 255));
+       border-radius: 3px;
+
+        padding-right: 15px; /* make room for the arrows */
+        border: 1px solid #6b6b6b;
+        border-radius: 3px;
+        selection-background-color: gray;
+}
+
+QSpinBox:hover {
+
+}
+
+QSpinBox::up-button {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.503057 rgba(62, 62, 62, 255));
+        border-top-right-radius: 3px;
+        subcontrol-origin: border;
+        subcontrol-position: top right; /* position at the top right corner */
+        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+        border-image: url(:/images/arrow-up.png);
+}
+
+QSpinBox::up-button:hover {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border-top-right-radius: 3px;
+        subcontrol-origin: border;
+        subcontrol-position: top right; /* position at the top right corner */
+        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+        border-image: url(:/images/arrow-up.png);
+}
+
+QSpinBox::down-button {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+        border-bottom-right-radius: 3px;
+        subcontrol-origin: border;
+        subcontrol-position: bottom right; /* position at the top right corner */
+        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+        border-image: url(:/images/arrow-down.png);
+}
+
+QSpinBox::down-button:hover {
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+        border-bottom-right-radius: 3px;
+        subcontrol-origin: border;
+        subcontrol-position: bottom right; /* position at the top right corner */
+        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
+        border-image: url(:/images/arrow-down.png);
+}
+
+
+
+
 #toggleHelp{
 	border:0px;
 	background-color: rgba(0,0,0,0)
@@ -344,13 +403,13 @@ QRadioButton::indicator::checked:hover {
 }
 
 QCheckBox {
-        spacing: 5px;
+        /*spacing: 5px;*/
         color: white;
 }
 
 QCheckBox::indicator {
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
 }
 
 QCheckBox::indicator:unchecked {
@@ -654,64 +713,12 @@ QLineEdit:disabled {/*
        border-radius: 2px
 }
 
-QSpinBox {
-        color: #628577;
-        padding-right: 15px; /* make room for the arrows */
-        border: 1px solid #6b6b6b;
-        border-radius: 4px;
-        background: #eeeeee;
-        selection-background-color: gray;
-}
 
-QSpinBox:hover {
-        color: #628577;
-        padding-right: 15px; /* make room for the arrows */
-        border: 1px solid #808080;
-        border-radius: 4px;
-        background: #eeeeee;
-        selection-background-color: gray;
-}
 
-QSpinBox::up-button {
-        subcontrol-origin: border;
-        subcontrol-position: top right; /* position at the top right corner */
-        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png) 1;
-        border-width: 1px;
-}
 
-QSpinBox::up-button:hover {
-        background: #000000;
-        background-color: #000000;
-        border-radius: 4px;
-        subcontrol-origin: border;
-        subcontrol-position: top right; /* position at the top right corner */
-        width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
-        border-image: url(:/images/arrow-up.png) 1;
-        border-width: 1px;
-}
 
-QSpinBox::down-button {
-        subcontrol-origin: border;
-        subcontrol-position: bottom right; /* position at bottom right corner */
-        width: 16px;
-        border-image: url(:/images/arrow-down.png) 1;
-        border-width: 1px;
-        border-top-width: 0;
-}
 
-QSpinBox::down-button:hover {
-        background: #000000;
-        border-radius: 4px;
-        subcontrol-origin: border;
-        subcontrol-position: bottom right; /* position at bottom right corner */
-        width: 16px;
-        border-image: url(:/images/arrow-down.png) 1;
-        border-width: 1px;
-        border-top-width: 0;
-}
-
-QTextEdit, QListView {
+QTextEdit {
         /*color: #eeeeee;*/
         /*background-color: #628577;*/
         border: 1px solid #6b6b6b;
@@ -719,6 +726,7 @@ QTextEdit, QListView {
         alternate-background-color: #222222;
         selection-background-color: gray;
 }
+
 
 QTreeView {
         /*color: #628577;*/
@@ -776,35 +784,29 @@ QScrollArea::corner {
 
 
 
-
-
 QScrollBar:vertical {
-        width: 16px;
-        margin: 16px 0 16px 0;
+        width: 13px;
+        margin: 3px 3px 3px 3px;
         background-color: rgba(255, 255, 255, 0);
 }
 
 QScrollBar::handle:vertical {
         min-height: 16px;
-	background-color: rgba(0,0,0, 100);
-        border: 0px solid rgba(255, 255, 255, 50);
-        /*border: 2px solid #628577;*/
+	background-color: rgba(0,0,0, 150);
+        border: 1px solid rgb(150, 150, 150);
         border-radius: 3px;
 	padding:3px;
 }
 
 QScrollBar::handle:vertical:hover {
         min-height: 16px;
-	background-color: rgba(0,0,0, 100);
-        border: 0px solid rgba(255, 255, 255, 50);
-        /*border: 2px solid #628577;*/
+	background-color: rgba(50,50,50, 150);
         border-radius: 3px;
-        /*border-radius: 0px;*/
 }
 
 QScrollBar::add-line:vertical {
         border: 0px;
-        height: 16px;
+        height: 0px;
         subcontrol-position: bottom;
         subcontrol-origin: margin;
 	background: transparent;
@@ -812,52 +814,45 @@ QScrollBar::add-line:vertical {
 
 QScrollBar::sub-line:vertical {
         border: 0px;
-        height: 16px;
+        height: 0px;
         subcontrol-position: top;
         subcontrol-origin: margin;
         background: transparent;
 }
 
-QScrollBar::up-arrow:vertical { background-image: url(:/images/arrow-up.png); }
-QScrollBar::down-arrow:vertical { background-image: url(:/images/arrow-down.png); }
-
 
 
 
 QScrollBar:horizontal {
-        height: 16px;
-        margin: 0 16px 0 16px;
+        height: 13px;
+        margin: 3px 3px 3px 3px;
         background: transparent;
 }
 
 QScrollBar::handle:horizontal {
         min-width: 16px;
-        border: 2px solid #6b6b6b;
-        background-color:  #323232;
-        /*border-radius: 3px;*/
+	background-color: rgba(0,0,0, 150);
+        border: 1px solid rgb(150, 150, 150);
+        border-radius: 3px;
 }
 
 QScrollBar::handle:horizontal:hover {
         min-width: 16px;
-        border: 2px solid #808080;;
-        background-color:  #323232;
-        /*border-radius: 3px;*/
+	background-color: rgba(50,50,50, 150);
+        border-radius: 3px;
 }
 
 QScrollBar::add-line:horizontal {
         border: none;
         background: transparent;
-        width: 16px;
+        width: 0px;
         subcontrol-position: right;
         subcontrol-origin: margin;
 }
 
 QScrollBar::sub-line:horizontal {
         border: none;
-        width: 16px;
+        width: 0px;
         subcontrol-position: left;
         subcontrol-origin: margin;
 }
-
-QScrollBar::right-arrow:horizontal { background-image: url(:/images/arrow-right.png); }
-QScrollBar::left-arrow:horizontal { background-image: url(:/images/arrow-left.png); }
