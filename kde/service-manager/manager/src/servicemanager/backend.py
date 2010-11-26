@@ -44,7 +44,7 @@ class ServiceIface:
 
     def setEnable(self, service, state):
         states = {True:'on', False:'off'}
-        self.link.System.Service[service].setState(states[state])
+        self.link.System.Service[service].setState(states[state], async = self.handler)
 
     def info(self, service):
         return self.link.System.Service[service].info()

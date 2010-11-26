@@ -145,5 +145,6 @@ class MainManager(QtGui.QWidget):
         if exception:
             if package in self.widgets:
                 self.widgets[package].showStatus()
+                self.widgets[package].switchToOld()
             self.showFail(exception)
 
