@@ -17,7 +17,7 @@ class Profile:
         Base class for connection profile.
 
         Usage:
-            last_profile = Profile()
+            profile = Profile()
 
             or
 
@@ -38,19 +38,6 @@ class Profile:
         self.address = address
         self.username = username
 
-        if not os.path.exists(PROFILE_FILE):
-            return
-
-        with file(PROFILE_FILE) as config_file:
-            for line in config_file:
-                line = line.strip()
-                if line.startswith("domain="):
-                    self.domain = line.split("=", 1)[1]
-                elif line.startswith("address="):
-                    self.address = line.split("=", 1)[1]
-                elif line.startswith("username="):
-                    self.username = line.split("=", 1)[1]
-
     def is_set(self):
         """
             Return true if one of the properties set
@@ -65,17 +52,35 @@ class Profile:
         """
         return self.domain
 
+    def set_domain(self, domain):
+        """
+            Sets domain.
+        """
+        self.domain = domain
+
     def get_address(self):
         """
             Returns ip address.
         """
         return self.address
 
+    def set_address(self, address):
+        """
+            Sets ip address.
+        """
+        self.address = address
+
     def get_username(self):
         """
             Returns username.
         """
         return self.username
+
+    def set_username(self, username):
+        """
+            Sets username.
+        """
+        self.username = username
 
     def save(self):
         """
