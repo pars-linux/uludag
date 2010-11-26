@@ -40,6 +40,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         # UI events
         self.connect(self.pushStart, QtCore.SIGNAL("clicked()"), self.__slot_start_service)
         self.connect(self.pushStop, QtCore.SIGNAL("clicked()"), self.__slot_stop_service)
+        self.connect(self.radioAutoRun, QtCore.SIGNAL("clicked()"), self.__slot_on)
+        self.connect(self.radioNoAutoRun, QtCore.SIGNAL("clicked()"), self.__slot_off)
+        self.connect(self.tableWidget, QtCore.SIGNAL("itemSelectionChanged()"), self.__slot_selection_changed)
 
         # Package index
         self.package_index = {}
@@ -99,10 +102,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
 
                 if status in ['stopped', 'on']:
                     item_autostart = QtGui.QTableWidgetItem("Yes")
+                    self.radioAutoRun.setChecked(True)
                 elif status in ['conditional_started', 'conditional_stopped']:
                     item_autostart = QtGui.QTableWidgetItem("Conditional")
                 else:
                     item_autostart = QtGui.QTableWidgetItem("No")
+                    self.radioNoAutoRun.setChecked(True)
                 self.tableWidget.setItem(index, 2, item_autostart)
 
                 index += 1
@@ -112,7 +117,34 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Main window calls this method when an XMPP status is changed.
         """
         pass
+    
+    def update_item_status(self, item):
+        """
+            Main window calls this method when the table widget item selection is changed.
+        """
+        self.radioAutoRun.setEnabled(False)
+        self.radioNoAutoRun.setEnabled(False)
 
+        info = []
+
+        if not item:
+            return
+
+        if item[2].text() == "Yes" or item[2].text() == "Conditional":
+            print "-----yes -------"
+            self.radioAutoRun.setEnabled(True)
+            self.radioNoAutoRun.setEnabled(True)
+            self.radioAutoRun.setChecked(True)
+
+        else: 
+            print "------no--------"
+            self.radioAutoRun.setEnabled(True)
+            self.radioNoAutoRun.setEnabled(True)
+            self.radioNoAutoRun.setChecked(True)
+
+        #print item[3].text()
+
+       
     def __slot_start_service(self):
         """
             This method is called when the start button clicked to start the selected service
@@ -123,12 +155,40 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         jid = "%s@%s" % (self.item.name, self.talk.domain)
         self.talk.send_command(jid, "service.start", [item_name])
 
+
     def __slot_stop_service(self):
         """
             This method is called when the stop button clicked to stop the selected service
         """
         item = self.tableWidget.selectedItems()
         item_name = str(item[3].text())
-
+       
         jid = "%s@%s" % (self.item.name, self.talk.domain)
         self.talk.send_command(jid, "service.stop", [item_name])
+
+
+    def __slot_on(self):
+        """
+            This method is called when the autostart is enabled for the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        item_name = str(item[3].text())
+
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "service.state_on", [item_name])
+
+
+    def __slot_off(self):
+        """
+            This method is called when the autostart is disabled for the selected service
+        """
+        item = self.tableWidget.selectedItems()
+        item_name = str(item[3].text())
+
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "service.state_off", [item_name])
+
+    def __slot_selection_changed(self):
+        item = self.tableWidget.selectedItems()
+        self.update_item_status(item)
+
