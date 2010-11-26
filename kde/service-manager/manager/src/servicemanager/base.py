@@ -65,6 +65,16 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.lineSearch, SIGNAL("textChanged(QString)"), self.doSearch)
         self.connect(self.ui.filterBox, SIGNAL("currentIndexChanged(int)"), self.filterServices)
 
+    def hiddenListWorkaround(self):
+        """
+            Workaround for hidden list items
+        """
+        size = self.size()
+        size += QSize(1,1)
+        self.resize(size)
+        size -= QSize(1,1)
+        QTimer.singleShot(1, lambda: self.resize(size))
+
     def doSearch(self, text):
         for service in self.services:
             if service.find(text) >= 0 or unicode(self.widgets[service].desc).lower().find(unicode(text).lower()) >= 0:
@@ -73,6 +83,8 @@ class MainManager(QtGui.QWidget):
                 self.widgets[service].item.setHidden(True)
         if text == '':
             self.filterServices(self.ui.filterBox.currentIndex())
+
+        self.hiddenListWorkaround()
 
     def isLocal(self, service):
         return self.widgets[service].type == 'local'
@@ -119,11 +131,13 @@ class MainManager(QtGui.QWidget):
             elif filterBy == AllServices:
                 self.widgets[service].item.setHidden(False)
 
+        self.hiddenListWorkaround()
+
     def handleServices(self, package, exception, results):
         # Handle request and fill the listServices in the ui
         if not exception:
             self.widgets[package].updateService(results, True)
-            self.infoCount+=1
+            self.infoCount += 1
             self.ui.progress.setValue(self.ui.progress.value() + self.piece)
             if self.infoCount == len(self.services):
                 self.ui.progress.hide()
