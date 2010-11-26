@@ -100,12 +100,13 @@ class ServiceItemWidget(QtGui.QWidget):
         elif state in ('off', 'started', 'conditional_started'):
             self.runningAtStart = False
         self.ui.checkStart.setChecked(self.runningAtStart)
+        self._last_state = self.ui.checkStart.isChecked()
         # print self.package, state
 
     def setService(self):
         try:
             self.showBusy()
-            last_state = not self.ui.checkStart.isChecked()
+            self._last_state = not self.ui.checkStart.isChecked()
             if self.sender() == self.ui.buttonStart:
                 self.iface.start(self.package)
             elif self.sender() == self.ui.buttonStop:
@@ -116,8 +117,10 @@ class ServiceItemWidget(QtGui.QWidget):
                 self.iface.setEnable(self.package, self.ui.checkStart.isChecked())
         except Exception, msg:
             self.showStatus()
-            self.ui.checkStart.setChecked(last_state)
             self.root.showFail(msg)
+
+    def switchToOld(self):
+        self.ui.checkStart.setChecked(self._last_state)
 
     def showStatus(self):
         self.busy.hide()
