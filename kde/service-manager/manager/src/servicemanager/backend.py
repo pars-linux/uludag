@@ -16,10 +16,11 @@ import comar
 class ServiceIface:
     """ Service Interface """
 
-    def __init__(self):
+    def __init__(self, handler):
         self.link = comar.Link()
         self.link.setLocale()
         self.link.useAgent()
+        self.handler = handler
 
     def services(self, func=None):
         if func:
@@ -47,9 +48,6 @@ class ServiceIface:
 
     def info(self, service):
         return self.link.System.Service[service].info()
-
-    def handler(self, *args):
-        pass
 
     def listen(self, func):
         self.link.listenSignals("System.Service", func)

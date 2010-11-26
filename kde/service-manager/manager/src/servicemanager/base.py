@@ -17,6 +17,7 @@ import comar
 
 # Qt Stuff
 from PyQt4 import QtGui
+from PyQt4.QtGui import QMessageBox
 from PyQt4.QtCore import *
 
 # PyKDE4 Stuff
@@ -42,7 +43,7 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(parent)
 
         # Call Comar
-        self.iface = ServiceIface()
+        self.iface = ServiceIface(self.exceptionHandler)
         self.widgets = {}
 
         # Fill service list
@@ -75,6 +76,22 @@ class MainManager(QtGui.QWidget):
 
     def isLocal(self, service):
         return self.widgets[service].type == 'local'
+
+    def showFail(self, exception):
+
+        exception = unicode(exception)
+        if exception.startswith('tr.org.pardus.comar.Comar.PolicyKit'):
+            errorTitle = i18n("Authentication Error")
+            errorMessage = i18n("You are not authorized for this operation.")
+        else:
+            errorTitle = i18n("Error")
+            errorMessage = i18n("An exception occured.")
+        messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
+
+        if not exception.startswith('tr.org.pardus.comar.Comar.PolicyKit'):
+            messageBox.setDetailedText(unicode(exception))
+
+        messageBox.exec_()
 
     def filterServices(self, filterBy):
         Servers, SystemServices, StartupServices, RunningServices, AllServices = range(5)
@@ -124,4 +141,9 @@ class MainManager(QtGui.QWidget):
         self.filterServices(self.ui.filterBox.currentIndex())
         self.doSearch(self.ui.lineSearch.text())
 
+    def exceptionHandler(self, package, exception, args):
+        if exception:
+            if package in self.widgets:
+                self.widgets[package].showStatus()
+            self.showFail(exception)
 
