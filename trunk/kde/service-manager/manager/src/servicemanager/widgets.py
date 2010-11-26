@@ -23,9 +23,17 @@ from PyKDE4.kdecore import KGlobal
 # Application Stuff
 from servicemanager.ui_item import Ui_ServiceItemWidget
 from servicemanager.ui_info import Ui_InfoWidget
+
+# PDS Stuff
 from pds.gui import *
 from pds.qprogressindicator import QProgressIndicator
+
+# Python Stuff
 import time
+import textwrap
+
+# Pisi Stuff
+import pisi
 
 class ServiceItem(QtGui.QListWidgetItem):
 
@@ -149,7 +157,6 @@ class ServiceItemWidget(QtGui.QWidget):
         self.ui.buttonInfo.setVisible(toggle)
         self.ui.checkStart.setVisible(toggle)
 
-import pisi
 def getDescription(service):
     try:
         # TODO add a package map for known services
@@ -167,10 +174,12 @@ class ServiceItemInfo(PAbstractBox):
 
     def __init__(self, parent):
         PAbstractBox.__init__(self, parent)
+
         self.ui = Ui_InfoWidget()
         self.ui.setupUi(self)
         self.ui.buttonHide.clicked.connect(self.hideDescription)
         self.ui.buttonHide.setIcon(kdeui.KIcon("dialog-close"))
+
         self._animation = 2
         self._duration = 500
 
@@ -179,7 +188,9 @@ class ServiceItemInfo(PAbstractBox):
 
     def showDescription(self):
         self.resize(self.parentWidget().size())
-        self.ui.description.setText(getDescription(self.parentWidget().package))
+        desc = getDescription(self.parentWidget().package)
+        self.ui.description.setText(desc)
+        self.ui.description.setToolTip('\n'.join(textwrap.wrap(desc)))
         self.animate(start = MIDLEFT, stop = MIDCENTER)
         QtGui.qApp.processEvents()
 
