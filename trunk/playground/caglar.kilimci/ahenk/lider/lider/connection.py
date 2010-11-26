@@ -49,7 +49,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
 
         # Get connection profiles
-        # self.__get_profiles()
+        self.__get_profiles()
 
     def __get_profiles(self):
         """
@@ -58,9 +58,9 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         last_profile = profile.Profile()
 
         if last_profile.is_set():
-            # self.editDomain.setText(last_profile.get_domain())
-            self.editHost.setText(last_profile.get_address())
-            self.editUser.setText(last_profile.get_username())
+            self.set_domain(last_profile.get_domain())
+            self.set_host(last_profile.get_address())
+            self.set_user(last_profile.get_username())
             self.editPassword.setFocus()
 
     def __slot_find_host(self):
