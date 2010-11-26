@@ -35,7 +35,7 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">color:white;</string>
+      <string notr="true">QLabel#description { color:white; }</string>
      </property>
      <property name="text">
       <string>Service information is not available</string>
