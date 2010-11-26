@@ -24,14 +24,14 @@
       <string/>
      </property>
      <layout class="QGridLayout" name="gridLayout_8">
-      <item row="2" column="0">
+      <item row="1" column="0">
        <widget class="QPushButton" name="pushStart">
         <property name="text">
          <string>Start</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
+      <item row="1" column="2">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -44,7 +44,7 @@
         </property>
        </spacer>
       </item>
-      <item row="2" column="1">
+      <item row="1" column="1">
        <widget class="QPushButton" name="pushStop">
         <property name="text">
          <string>Stop</string>
@@ -157,20 +157,6 @@
           <string>Package Name</string>
          </property>
         </column>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QRadioButton" name="radioAutoRun">
-        <property name="text">
-         <string>Run on Startup.</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QRadioButton" name="radioNoAutoRun">
-        <property name="text">
-         <string>Don't run on startup.</string>
-        </property>
        </widget>
       </item>
      </layout>
