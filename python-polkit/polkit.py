@@ -105,6 +105,8 @@ def auth_list_all():
     cp.optionxform = str
     cp.read(DB_FILE)
 
+    actions = action_list()
+
     for title in cp.sections():
         if not title.startswith("user:"):
             continue
@@ -113,6 +115,9 @@ def auth_list_all():
             _uid = pwd.getpwnam(title.split(":")[1]).pw_uid
             _action_id = title.split(":")[2]
         except KeyError:
+            continue
+
+        if _action_id not in actions:
             continue
 
         auth = {
