@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: boot-manager Pardus 2009\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-15 16:31+0300\n"
-"PO-Revision-Date: 2010-11-26 12:51+0100\n"
+"PO-Revision-Date: 2010-11-26 13:02+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: HUNGARIAN\n"
 "MIME-Version: 1.0\n"
@@ -50,12 +50,12 @@ msgstr "Vezető fejlesztő"
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Az Ön neve"
+msgstr "Daniel Kovács, Attila Siposs"
 
 #: src/bootmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Email címe"
+msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
