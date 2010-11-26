@@ -2,34 +2,36 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: hu\n"
+"Project-Id-Version: boot-manager Pardus 2009\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-15 16:31+0300\n"
-"PO-Revision-Date: 2010-06-01 18:48+0100\n"
-"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
-"Language-Team: HUNGARIAN <LL@li.org>\n"
+"PO-Revision-Date: 2010-11-26 12:51+0100\n"
+"Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
+"Language-Team: HUNGARIAN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
+"X-Poedit-Language: Hungarian\n"
+"X-Poedit-Country: HUNGARY\n"
 
 #: data/boot-manager.desktop.in.h:1
 msgid "An application for managing boot loader."
-msgstr "Egy alkalmazás a boot loader menedzselésére."
+msgstr "Alkalmazás a rendszertöltő kezeléséhez"
 
-#: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
+#: data/boot-manager.desktop.in.h:2
+#: data/kcm_boot-manager.desktop.in.h:1
 msgid "Boot Manager"
-msgstr "Boot menedzser"
+msgstr "Rendszerindítás kezelő"
 
 #: src/bootmanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:34
-#, fuzzy
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
 
@@ -48,12 +50,12 @@ msgstr "Vezető fejlesztő"
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Daniel Kovács"
+msgstr "Az Ön neve"
 
 #: src/bootmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "bicskas9323@gmail.com"
+msgstr "Email címe"
 
 #: src/bootmanager/main.py:99
 msgid ""
@@ -69,7 +71,7 @@ msgstr "Minden elem"
 
 #: src/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
-msgstr "Biztosan törölni akarod '%1'?"
+msgstr "Biztosan törölni akarja ezt: '%1'?"
 
 #: src/bootmanager/main.py:337
 msgid "Access denied."
@@ -81,7 +83,7 @@ msgstr "Cím"
 
 #: ui/ui_edit.py:140
 msgid "Name of the boot entry to be shown at the boot menu."
-msgstr "A boot-bejegyzés neve a boot-menüben található."
+msgstr "Bejegyzés neve az indító menüben."
 
 #: ui/ui_edit.py:141
 msgid "Disk"
@@ -89,7 +91,7 @@ msgstr "Lemez"
 
 #: ui/ui_edit.py:142
 msgid "Disk that contains operating system."
-msgstr "A lemez, amely tartalmazza az operációs rendszert."
+msgstr "Operációs rendszert tartalmazó lemez."
 
 #: ui/ui_edit.py:143
 msgid "Kernel"
@@ -105,19 +107,19 @@ msgstr "Ramdisk fájl"
 
 #: ui/ui_edit.py:146
 msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "A fájl, amely tartalmazza a mikro-operációs rendszert a betöltött kernel-moduloknak."
+msgstr "A fájl, amely egy mikro-operációs rendszert tartalmaz a kernel-modulok előtöltéséhez."
 
 #: ui/ui_edit.py:147
 msgid "Boot Options"
-msgstr "Boot opciók"
+msgstr "Indítási opciók"
 
 #: ui/ui_edit.py:148
 msgid "Boot options for operating system."
-msgstr "Boot opciók az operációs rendszer részére."
+msgstr "Indítási opciók az operációs rendszer részére."
 
 #: ui/ui_item.py:74
 msgid "Set or unset entry as default boot entry."
-msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
+msgstr "Bejegyzés alapértelmezettként történő beállítása."
 
 #: ui/ui_item.py:75
 msgid "Edit"
@@ -137,3 +139,4 @@ msgstr "Boot menü várakozási ideje:"
 
 #~ msgid " "
 #~ msgstr " "
+
