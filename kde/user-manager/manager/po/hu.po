@@ -1,40 +1,42 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <bicskas9323@gmail.com>, 2010.
 #
+# FIRST AUTHOR <bicskas9323@gmail.com>, 2010.
+# Attila Siposs <sipiatti@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-15 21:45+0300\n"
-"PO-Revision-Date: 2010-06-02 12:52+0100\n"
-"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
-"Language-Team: HUNGARIAN <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2010-11-27 22:30+0100\n"
+"Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
+"Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:2
 msgid "User Manager"
-msgstr "Felhasználó menedzser"
+msgstr "Felhasználó Kezelő"
 
 #: data/user-manager.desktop.in.h:1
 msgid "An application for managing user accounts."
-msgstr "Egy alkalmazás a felhasználói profilok menedzselésére."
+msgstr "Felhasználói profilok kezelése"
 
 #: src/usermanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Aktuális karbantartó"
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/usermanager/about.py:34
-msgid "Gökmen Göksel"
-msgstr ""
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -42,17 +44,17 @@ msgstr "Bahadır Kandemir"
 
 #: src/usermanager/about.py:35
 msgid "First Developer"
-msgstr ""
-
-#: src/usermanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "bicskas9323@gmail.com"
+msgstr "Fejlesztést megkezdte"
 
 #: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Daniel Kovács"
+msgstr "Daniel Kovács, Attila Siposs"
+
+#: src/usermanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -60,27 +62,27 @@ msgstr "Legalább egy csoportot ki kell választani."
 
 #: src/usermanager/edit.py:323
 msgid "Start with typing this user's full name."
-msgstr "A felhasználó teljes nevének begépelésével kezd."
+msgstr "Kezdje a felhasználó teljes nevének begépelésével."
 
 #: src/usermanager/edit.py:326
 msgid "You should enter a password for this user."
-msgstr "Add meg a jelszavát ennek a felhasználónak."
+msgstr "Addjon meg egy jelszót a felhasználónak."
 
 #: src/usermanager/edit.py:331
 msgid "Password must be longer."
-msgstr "A jelszónak hosszabbnak kell lennie."
+msgstr "A jelszó túl rövid."
 
 #: src/usermanager/edit.py:335
 msgid "Don't use your full name or user name as a password."
-msgstr "Ne használd jelszónak a teljes nevedet, vagy a felhasználónevedet."
+msgstr "Ne használja jelszónak a teljes nevét vagy a felhasználónevét."
 
 #: src/usermanager/edit.py:338
 msgid "Passwords don't match."
-msgstr "A jelszó nem egyezik."
+msgstr "A jelszavak nem egyeznek."
 
 #: src/usermanager/edit.py:343
 msgid "You must enter a user name."
-msgstr "Meg kell adnod a felhasználónevet."
+msgstr "Meg kell adnia egy felhasználónevet."
 
 #: src/usermanager/edit.py:346
 msgid "This user name is used by another user."
@@ -95,8 +97,9 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
-"Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+"Az alkalmazáshoz szükséges háttércsomag(ok) nem található(k). \n"
+"Ellenőrizze, hogy a szükséges csomagok telepítésre kerültek, és "
+"megfelelően be vannak állítva."
 
 #: src/usermanager/main.py:195
 msgid "Users"
@@ -129,19 +132,22 @@ msgstr "Hozzáférés megtagadva."
 
 #: src/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr "Nem törölhet a <b>%1</b>. Ez a felhasználó jelenleg be van jelentkezve."
+msgstr ""
+"<b>%1</b> nem törölhető. Ez a felhasználó jelenleg be van jelentkezve."
 
 #: src/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
-msgstr "Biztosan törölni szetnéd ezt a felhasználót '%1' (%2)?"
+msgstr "Biztosan törölni szetné ezt a felhasználót '%1' (%2)?"
 
 #: src/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
-msgstr "A felhasználói fájlok is el lesznek távolítva. (Ez hosszabb időt vehet igénybe.)"
+msgstr ""
+"A felhasználói fájljai is törlődjenek. (Ez hosszabb időt vehet "
+"igénybe.)"
 
 #: src/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
-msgstr "Valóban törölni szeretnéd ezt a csoportot '%1'?"
+msgstr "Valóban törölni szeretné a '%1' csoportot?"
 
 #: ui/ui_editgroup.py:86
 msgid "Group Information"
@@ -149,15 +155,15 @@ msgstr "Csoport információ"
 
 #: ui/ui_editgroup.py:87
 msgid "Group Name:"
-msgstr "Csoport név:"
+msgstr "Csoport neve:"
 
 #: ui/ui_editgroup.py:88 ui/ui_edituser.py:201
 msgid "No.:"
-msgstr "No.:"
+msgstr "Sorszám:"
 
 #: ui/ui_editgroup.py:89 ui/ui_edituser.py:202
 msgid "Auto"
-msgstr "Auto"
+msgstr "Automatikus"
 
 #: ui/ui_edituser.py:197
 msgid "User Information"
@@ -181,11 +187,11 @@ msgstr "Felhasználónév:"
 
 #: ui/ui_edituser.py:204
 msgid "Home Directory:"
-msgstr "Home könyvtár:"
+msgstr "Kezdő könyvtár (Home):"
 
 #: ui/ui_edituser.py:205
 msgid "Shell:"
-msgstr "Héj:"
+msgstr "Parancshéj:"
 
 #: ui/ui_edituser.py:206
 msgid "Give administrator rights."
@@ -193,23 +199,23 @@ msgstr "Adminisztrátori jogok megadása."
 
 #: ui/ui_edituser.py:207
 msgid "Use system settings."
-msgstr "Rendszerbeállítások használata."
+msgstr "Rendszerbeállítások szerint"
 
 #: ui/ui_edituser.py:208
 msgid "Authorize user."
-msgstr "Felhasználó engedélyzése."
+msgstr "Engedélyzés"
 
 #: ui/ui_edituser.py:209
 msgid "Deny user."
-msgstr "Felhasználó tiltása."
+msgstr "Tiltás"
 
 #: ui/ui_edituser.py:210
 msgid "Apply this policy to all actions."
-msgstr "Ezen lehetőség elfogadása minden művelethez."
+msgstr "Beállítás alkalmazása minden művelethez"
 
 #: ui/ui_edituser.py:211
 msgid "Authorizations"
-msgstr "Felhatalmazások"
+msgstr "Jogosultságok"
 
 #: ui/ui_edituser.py:212
 msgid "Main Group:"
@@ -225,7 +231,7 @@ msgstr "Törlés"
 
 #: ui/ui_main.py:82
 msgid "Add New"
-msgstr "Új hozzáadása"
+msgstr "Új felhasználó"
 
 #~ msgid " "
 #~ msgstr " "
