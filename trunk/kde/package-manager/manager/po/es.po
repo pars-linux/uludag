@@ -1,7 +1,7 @@
 # translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -42,12 +42,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr ""
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Desarrollador"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr ""
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Desarrollador"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -60,22 +60,20 @@ msgstr "Autor inicial"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Su nombre"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Su email"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
-#, fuzzy
 msgid "Clear Basket"
-msgstr "Vaciar cache"
+msgstr ""
 
 #: src/basketdialog.py:55
-#, fuzzy
 msgid "Do you want to clear all selections ?"
-msgstr "Desea continuar ?"
+msgstr "Desea desmarcar todas las selecciones ?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -87,9 +85,8 @@ msgid "Do you want to continue ?"
 msgstr "Desea continuar ?"
 
 #: src/basketdialog.py:177
-#, fuzzy
 msgid "You must restart your system for the updates to take effect"
-msgstr "Debe <b>reiniciar</b> el sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
+msgstr "Debe rebootear la computadora para que las actualizaciones tengan efecto"
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -97,16 +94,15 @@ msgstr "Requisitos para la actualización"
 
 #: src/basketdialog.py:180
 msgid "Packages Require System Restart"
-msgstr ""
+msgstr "Paquetes Requiren Reboot"
 
 #: src/basketdialog.py:185
-#, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Debe reiniciar los siguientes servicios del sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
+msgstr "Debe reiniciar servicios del sistema relacionados para que las actualizaciones tengan efecto"
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
-msgstr ""
+msgstr "Paquetes Requieren Reinicio de Servicios"
 
 #: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
@@ -117,19 +113,16 @@ msgid "Warning"
 msgstr "Alerta"
 
 #: src/basketdialog.py:202
-#, fuzzy
 msgid "Critical Packages"
-msgstr "Removiendo Paquete(s)"
+msgstr "Paquetes Críticos"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
+msgstr "Los paquetes seleccionados ya están instalados.<br>Si continúa los paquetes se volveran a instalar"
 
 #: src/basketdialog.py:215
-#, fuzzy
 msgid "Already Installed Packages"
-msgstr "Paquetes instalados"
+msgstr "Paquetes ya instalados"
 
 #: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 msgid "Installed Packages"
@@ -148,9 +141,8 @@ msgid "Show main window"
 msgstr "Mostrar Ventana principal"
 
 #: src/mainwidget.py:147
-#, fuzzy
 msgid "All packages are up to date"
-msgstr "Todos los programas están en su ultima versión"
+msgstr "Todos los programas están al día"
 
 #: src/mainwidget.py:233
 msgid "Searching..."
@@ -177,9 +169,9 @@ msgid "You are not authorized for this operation."
 msgstr "No tiene los permisos para esta operación."
 
 #: src/mainwidget.py:307
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Paquete no encontrado. Puede ser que el paquete fue actualizado o removido del repositorio. Por favor intente actualizar sus informaciones del contenido de los repositorios."
+msgstr "Paquete <b>%s</b> no encontrado en los repositorios.<br>Puede ser que se actualizó o fue removido del repositorio.<br>Por favor intente recargar las informaciones de los repositorios."
 
 #: src/mainwidget.py:446
 msgid "All Updates"
@@ -334,9 +326,8 @@ msgid "Not a valid repository name"
 msgstr "Nombre de Repositorio no válido"
 
 #: src/settingsdialog.py:228
-#, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2.<p>Por favor intente de nuevo.</qt>"
+msgstr "<qt>Dirección de repositorio debería terminar con xml, xml.bz2 o xz.<p>Por favor intente de nuevo.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -396,9 +387,8 @@ msgstr "Actualizar Paquetes(s)"
 # translated as "progress information", i see this string is the title of the
 # progress info window..
 #: src/statemanager.py:103
-#, fuzzy
 msgid "Select Operation"
-msgstr "Información del Progreso"
+msgstr "Seleccionar Operación"
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
@@ -501,12 +491,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorar"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Mostrar actualizaciones"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorar"
 
 # i shortened this, it does not fit otherwise
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
@@ -947,7 +937,6 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los paquetes de éste grupo</p></body></html>"
 
-#, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
