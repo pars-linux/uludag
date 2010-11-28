@@ -865,7 +865,7 @@ msgstr "Por favor verifique su conexión de red y luego intente de nuevo."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
-msgstr ""
+msgstr "Cerrar"
 
 #~ msgid "Show Installed Packages"
 #~ msgstr "Mostrar Paquetes instalados"
