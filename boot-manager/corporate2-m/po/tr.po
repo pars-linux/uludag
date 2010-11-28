@@ -1,0 +1,190 @@
+# Boot Manager.
+# Copyright (C) 2007, TÜBİTAK/UEKAE
+# This file is distributed under the same license as the package.
+# Bahadır Kandemir <bahadir@pardus.org.tr>.
+#
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: boot-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"PO-Revision-Date: 2009-07-14 12:36+0300\n"
+"Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/bm_mainview.py:36
+msgid "New Entry"
+msgstr "Yeni Ekle"
+
+#: src/bm_mainview.py:41
+msgid "Unused Kernels"
+msgstr "Kullanılmayan Çekirdekler"
+
+#: src/bm_mainview.py:61
+msgid "Remember last booted entry."
+msgstr "Son açılan kaydı, bir sonraki açılışta hatırla."
+
+#: src/bm_mainview.py:68
+msgid "Timeout:"
+msgstr "Bekleme Süresi:"
+
+#: src/bm_mainview.py:153
+msgid "Title:"
+msgstr "Başlık:"
+
+#: src/bm_mainview.py:161
+msgid "System:"
+msgstr "Sistem:"
+
+#: src/bm_mainview.py:171
+msgid "Root (or UUID):"
+msgstr "Root (veya UUID):"
+
+#: src/bm_mainview.py:180
+msgid "Kernel:"
+msgstr "Çekirdek:"
+
+#: src/bm_mainview.py:189
+msgid "Kernel Parameters:"
+msgstr "Çekirdek Parametreleri:"
+
+#: src/bm_mainview.py:198
+msgid "Initial Ramdisk:"
+msgstr "Açılış Ramdisk:"
+
+#: src/bm_mainview.py:207
+msgid "Set as default boot entry."
+msgstr "Öntanımlı açılış kaydı olarak ata."
+
+#: src/bm_mainview.py:285
+msgid "There must be at least one Pardus entry."
+msgstr "En az bir Pardus girdisi olmalı."
+
+#: src/bm_mainview.py:285
+msgid "Access Denied"
+msgstr "Erişim Reddedildi"
+
+#: src/bm_mainview.py:287
+msgid "Are you sure you want to remove this entry from the boot loader?"
+msgstr "Bu kaydı önyükleyici listesinden kaldırmak istediğinize emin misiniz?"
+
+#: src/bm_mainview.py:287
+msgid "Delete Entry"
+msgstr "Kaydı Sil"
+
+#: src/bm_mainview.py:293
+msgid ""
+"This is a Pardus kernel entry.\n"
+"Do you want to uninstall it from the system?"
+msgstr ""
+"Bu bir Pardus çekirdek girdisi.\n"
+"Sistemden tamamen kaldırmak ister misiniz?"
+
+#: src/bm_mainview.py:293 src/bm_mainview.py:476
+msgid "Uninstall Kernel"
+msgstr "Çekirdeği Sistemden Kaldır"
+
+#: src/bm_mainview.py:376
+msgid "Failed"
+msgstr "Başarısız"
+
+#: src/bm_mainview.py:401
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
+msgstr ""
+"Bu çekirdekler sisteminizde kurulu ancak önyükleyici listesinde bulunmuyor:"
+
+#: src/bm_mainview.py:410
+msgid "Add Boot Entry"
+msgstr "Açılış Girdisi Ekle"
+
+#: src/bm_mainview.py:415
+msgid "Uninstall"
+msgstr "Sistemden Kaldır"
+
+#: src/bm_mainview.py:423
+msgid "Ok"
+msgstr "Tamam"
+
+#: src/bm_mainview.py:476
+msgid "Do you want to uninstall selected kernel(s) from the system?"
+msgstr "Seçilen çekirdek(ler)i sistemden kaldırmak istiyor musunuz?"
+
+#: src/bm_mainview.py:548
+msgid "Unable to connect to DBus."
+msgstr "DBus'a bağlanılamadı."
+
+#: src/bm_mainview.py:548
+msgid "DBus Error"
+msgstr "DBus Hatası"
+
+#: src/bm_mainview.py:569 src/bm_mainview.py:596
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapma yetkiniz yok."
+
+#: src/bm_mainview.py:575
+msgid "Waiting DBus..."
+msgstr "DBus bekleniyor..."
+
+#: src/bm_mainview.py:575
+msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+msgstr ""
+"DBus bağlantısı beklenmedik bir şekilde sonlandı, yeniden bağlanmaya "
+"çalışıyor..."
+
+#: src/bm_mainview.py:591
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"DBus'a bağlanılamadı! Eğer DBus servisi çalışmıyorsa konsolda root "
+"kullanıcısı olarak 'service dbus start' komutunu deneyebilirsiniz."
+
+#: src/bm_mainview.py:599
+msgid "COMAR Error"
+msgstr "COMAR Hatası"
+
+#: src/bm_mainview.py:613
+msgid "Bootloader configuration changed by another application."
+msgstr "Önyükleyici ayarları başka bir uygulama tarafından değiştirildi."
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Açılış Yöneticisi"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Geliştirici ve Şimdiki Sorumlu"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Boot.Loader modeline katkılar."
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "Açılış Yöneticisi zaten çalışıyor!"
+
+#: src/ui_elements.py:92
+msgid "Edit entry"
+msgstr "Kaydı düzenle"
+
+#: src/ui_elements.py:96
+msgid "Delete entry"
+msgstr "Kaydı sil"
+
+#~ msgid "Root:"
+#~ msgstr "Kök Sürücü:"
+
+#, fuzzy
+#~ msgid "Uninstall Kernel(s)"
+#~ msgstr "Çekirdeği Sistemden Kaldır"
+
+#~ msgid "Unused kernels:"
+#~ msgstr "Kullanılmayan çekirdekler:"
