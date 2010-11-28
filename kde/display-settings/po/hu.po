@@ -1,19 +1,21 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+#
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+# Attila Siposs <sipiatti@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:34+0300\n"
-"PO-Revision-Date: 2010-06-01 17:02+0100\n"
-"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
-"Language-Team: HUNGARIAN <LL@li.org>\n"
+"PO-Revision-Date: 2010-11-28 11:31+0100\n"
+"Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
+"Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
 msgid "Configure display devices"
@@ -31,11 +33,11 @@ msgstr "Eszközök"
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
 msgid "python display screen video monitor manager"
-msgstr "Python kijelző képernyő videó monitor menedzser"
+msgstr "Python alapú képernyőkezelő alkalmazás"
 
 #: data/kcm_displaysettings.desktop.in.h:1
 msgid "Resize and rotate displays"
-msgstr "Kijelző forgatása és átméretezése"
+msgstr "Kijelzők forgatása és átméretezése"
 
 #: data/kcm_displaysettings.desktop.in.h:2
 msgid "Screens"
@@ -60,12 +62,12 @@ msgstr "Aktuális karbantartó"
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Daniel Kovács"
+msgstr "Daniel Kovács, Attila Siposs"
 
 #: src/displaysettings/about.py:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "bicskas9323@gmail.com"
+msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -73,7 +75,7 @@ msgstr "Alapértelmezett kimenet"
 
 #: src/displaysettings/device.py:61
 msgid "Laptop Panel"
-msgstr "Laptop panel"
+msgstr "Laptop képernyő"
 
 #: src/displaysettings/device.py:62
 msgid "Analog Output"
@@ -92,14 +94,18 @@ msgstr "TV kimenet"
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
-msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+msgstr ""
+"Az alkalmazáshoz szükséges háttércsomag(ok) nem található(k). \n"
+"Ellenőrizze, hogy a szükséges csomagok telepítésre kerültek, és megfelelően be vannak állítva."
 
 #: src/displaysettings/deviceswidget.py:85
 #: src/displaysettings/screenswidget.py:77
 msgid ""
 "Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
-msgstr "Nem található érvényes beállítás. A kijelző beállításai nem elérhetőek, amíg nem konfigurálod újra. Szeretnéd most beállítani biztonságosan?"
+msgstr ""
+"Nem található érvényes beállítás. A kijelző beállítások nem lépnek életbe, amíg nem konfigurálja újra.\n"
+"Szeretne egy biztonsági beállítást létrehozni?"
 
 #: src/displaysettings/deviceswidget.py:94
 #: src/displaysettings/deviceswidget.py:269
@@ -110,11 +116,11 @@ msgstr "Hozzáférés megtagadva."
 
 #: src/displaysettings/deviceswidget.py:119
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr "<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd gyártójától. Szeretnéd ezt a meghajtót használni?</p></qt>"
+msgstr "<qt>A legjobb teljesítményhez használja a <b>%1</b> meghajtót az eszköz gyártójától. Szeretné ezt a meghajtót használni?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
-msgstr "<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd gyártójától. Ahhoz, hogy használni tudd, fel kell telepítened a <b>%2</b> csomagot és válaszd ki <b>%1</b> a videokártya opciók közül."
+msgstr "<qt>A legjobb teljesítményhez használhatja a <b>%1</b> meghajtót az eszköz gyártójától. Ehhez fel kell telepíteni a <b>%2</b> csomagot és beállítani a <b>%1</b> meghajtót a videokártyához."
 
 #: src/displaysettings/deviceswidget.py:144
 msgid "Start Package Manager"
@@ -122,7 +128,7 @@ msgstr "Csomagkezelő indítása"
 
 #: src/displaysettings/deviceswidget.py:259
 msgid "You must restart your X session for the changes to take effect."
-msgstr "Újra kell indítanod az X-szervert, hogy a beállításod érvénybe lépjen."
+msgstr "Újra kell indítani a grafikus felületet a beállítások érvénybe léptetéséhez."
 
 #: src/displaysettings/monitorbrowser.py:41
 msgid "Type:"
@@ -134,7 +140,7 @@ msgstr "Monitorok:"
 
 #: src/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
-msgstr "A kiement beállításai %1"
+msgstr "%1 beállításai"
 
 #: src/displaysettings/outputdialog.py:74
 msgid "Custom Monitor"
@@ -142,7 +148,7 @@ msgstr "Egyedi monitor"
 
 #: src/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr "<qt><i>Kattints a \"Válassz...\" gombra a monitor kiválasztásához</i></qt>"
+msgstr "<qt><i>Kattintson a \"Kiválasztás...\" gombra a monitor kiválasztásához</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
 msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
@@ -160,7 +166,7 @@ msgstr "Kimeneti tulajdonságok - %1"
 
 #: src/displaysettings/screenswidget.py:363
 msgid "You must restart your X session for all the changes to take effect."
-msgstr "Újra kell indítanod az X-szervert, hogy a beállításod érvénybe lépjen."
+msgstr "Újra kell indítani a grafikus felületet a beállítások érvénybe léptetéséhez."
 
 #: ui/ui_devices.py:68
 msgid "Video Card:"
@@ -192,15 +198,15 @@ msgstr "Modellek:"
 
 #: ui/ui_output.py:225
 msgid "Output Configuration"
-msgstr "Kimenet beállítás"
+msgstr "Kimenet beállításai"
 
 #: ui/ui_output.py:226
 msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
-msgstr "Ha nem észlelhető a monitorod támogatott frissítési frekvenciája, akkor itt meg tudod adni a helyes értéket. Óvatosan a számokkal, ha túl nagy értéket adsz meg, előfordulhat, hogy fizikailag sérül a kijelződ, főleg ha régi gyártmányról van szó."
+msgstr "Ha valamiért a monitor által támogatott frissítési frekvenciák nem ismerhetők fel, itt tudja őket megadni. Legyen körültekintő, helytelen értékek beállítása, különösen régi modelleknél, akár a monitor tönkremenetelét is okozhatják."
 
 #: ui/ui_output.py:227
 msgid "Specify Ranges"
-msgstr "Tartomány meghatározás"
+msgstr "Frissítési frekvenciák megadása"
 
 #: ui/ui_output.py:228
 msgid "Selection:"
@@ -208,7 +214,7 @@ msgstr "Választás:"
 
 #: ui/ui_output.py:229
 msgid "Select a standard monitor"
-msgstr "Hagyományos monitor választása"
+msgstr "Szabványos monitor választása"
 
 #: ui/ui_output.py:230
 msgid "Select from vendor/model list"
@@ -216,7 +222,7 @@ msgstr "Monitor választása gyártó/model szerint"
 
 #: ui/ui_output.py:231
 msgid "Enter ranges manually"
-msgstr "Tartomány kézi megadása"
+msgstr "Tartományok kézi megadása"
 
 #: ui/ui_output.py:232
 msgid "Monitor:"
@@ -224,11 +230,11 @@ msgstr "Monitor:"
 
 #: ui/ui_output.py:233
 msgid "Choose..."
-msgstr "Válassz..."
+msgstr "Kiválasztás..."
 
 #: ui/ui_output.py:234
 msgid "Horizontal sync:"
-msgstr "Horizontális szinkron:"
+msgstr "Vízszintes frissítési frekvencia:"
 
 #: ui/ui_output.py:235
 msgid "kHz"
@@ -236,7 +242,7 @@ msgstr "kHz"
 
 #: ui/ui_output.py:236
 msgid "Vertical refresh:"
-msgstr "Vertikális frissítés"
+msgstr "Függőleges frissítési frekvencia:"
 
 #: ui/ui_output.py:237
 msgid "Hz"
@@ -244,23 +250,23 @@ msgstr "Hz"
 
 #: ui/ui_output.py:238
 msgid "Frequency Ranges"
-msgstr "Frekvencia tartomány"
+msgstr "Frekvencia tartományok"
 
 #: ui/ui_output.py:239
 msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
-msgstr "Ha a monitorod síkja nincs helyesen észlelve, akkor előfordulhat, hogy a betűk és a többi vizuális objektum kisebbnek, vagy nagyobbnak tűnik a normálisnál. Ezt a problémát itt tudod megoldani, a monitor helyes értékeinek beállításával."
+msgstr "Ha a monitor méretei nem észlelhetők megfelelően, a betűtípusok és más elemek a normálisnál nagyobbnak vagy kisebbnek tűnhetnek. A probléma megszűntetéséhez adja meg a kijelző méreteit."
 
 #: ui/ui_output.py:240
 msgid "Specify Display Size"
-msgstr "Kijelző méretének meghatározása"
+msgstr "Kijelző méretének megadása"
 
 #: ui/ui_output.py:241
 msgid "Display size:"
-msgstr "Kijelző méret:"
+msgstr "Kijelző mérete:"
 
 #: ui/ui_output.py:242
 msgid "15.4\" Wide Screen"
-msgstr "15.4\" Szélesvásznú kijelző"
+msgstr "15.4\" szélesvásznú kijelző"
 
 #: ui/ui_output.py:243
 msgid "Custom"
@@ -280,15 +286,15 @@ msgstr "Magasság:"
 
 #: ui/ui_output.py:248
 msgid "Dimensions"
-msgstr "Dimenziók"
+msgstr "Méretek"
 
 #: ui/ui_output.py:249
 msgid "Ignore this output"
-msgstr "Ezen kimenet mellőzése"
+msgstr "Kimenet figyelmen kívül hagyása"
 
 #: ui/ui_screens.py:84
 msgid "Outputs"
-msgstr "Kimenet"
+msgstr "Kimenetek"
 
 #: ui/ui_screens.py:85
 msgid "Extend desktop to all displays"
@@ -296,11 +302,11 @@ msgstr "Asztal kiterjesztése az összes kijelzőre"
 
 #: ui/ui_screens.py:86
 msgid "Detect Outputs"
-msgstr "Kimenet észlelése"
+msgstr "Kimenetek érzékelése"
 
 #: ui/ui_screens.py:87
 msgid "Output Properties"
-msgstr "Kimenet tulajdonsága"
+msgstr "Kimenet tulajdonságai"
 
 #: ui/ui_screens.py:88
 msgid "Size:"
@@ -312,27 +318,27 @@ msgstr "Frissítési frekvencia:"
 
 #: ui/ui_screens.py:90
 msgid "Rotation:"
-msgstr "Forgatás:"
+msgstr "Elforgatás:"
 
 #: ui/ui_screens.py:91
 msgid "No Rotation"
-msgstr "Nincs forgatás"
+msgstr "Nincs elforgatás"
 
 #: ui/ui_screens.py:92
 msgid "Left (90 degrees)"
-msgstr "Bal (90 fok)"
+msgstr "Balra (90 fok)"
 
 #: ui/ui_screens.py:93
 msgid "Upside-Down (180 degrees)"
-msgstr "Felfordítva (180 fok)"
+msgstr "Fejjel lefelé (180 fok)"
 
 #: ui/ui_screens.py:94
 msgid "Right (270 degrees)"
-msgstr "Jobb (270 fok)"
+msgstr "Jobbra (270 fok)"
 
 #: ui/ui_videocard.py:76
 msgid "Video Card Configuration"
-msgstr "Videokártya konfigurálás"
+msgstr "Videokártya konfigurálása"
 
 #: ui/ui_videocard.py:77
 msgid "Video Driver"
@@ -340,11 +346,11 @@ msgstr "Grafikus meghajtó"
 
 #: ui/ui_videocard.py:78
 msgid "Use the default driver for the detected card."
-msgstr "Az alapértelemezett meghajtó használata az észlelt kártyánál."
+msgstr "Az észlet videokártya alapértelemezett meghajtójának használata."
 
 #: ui/ui_videocard.py:79 ui/ui_videocard.py:82
 msgid "Select from the list:"
-msgstr "Válassz a listából:"
+msgstr "Válasszon a listából:"
 
 #: ui/ui_videocard.py:80
 msgid "Color Depth"
@@ -352,7 +358,7 @@ msgstr "Színmélység"
 
 #: ui/ui_videocard.py:81
 msgid "Determined by the driver"
-msgstr "A meghajtó által determinálva"
+msgstr "A meghajtó által meghatározva"
 
 #: ui/ui_videocard.py:83
 msgid "16 Bit"
@@ -361,3 +367,4 @@ msgstr "16 Bit"
 #: ui/ui_videocard.py:84
 msgid "24 Bit"
 msgstr "24 Bit"
+
