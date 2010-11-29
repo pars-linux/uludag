@@ -112,8 +112,8 @@ class CallHandler:
 
     def __getAuthIface(self):
         try:
-            obj = self.busSes.get_object("org.freedesktop.PolicyKit.AuthenticationAgent", "/")
-            return dbus.Interface(obj, "org.freedesktop.PolicyKit.AuthenticationAgent")
+            obj = self.busSys.get_object("org.freedesktop.PolicyKit1", "/org/freedesktop/PolicyKit1/Authority")
+            return dbus.Interface(obj, "org.freedesktop.PolicyKit1.Authority")
         except dbus.DBusException, e:
             for func, args in self.handleDBusError.iteritems():
                 args = list(args)
@@ -122,10 +122,14 @@ class CallHandler:
 
     def __obtainAuth(self):
         iface = self.__getAuthIface()
-        iface.ObtainAuthorization(self.action, self.window, os.getpid(), reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError, timeout=2**16-1)
+        subject = ('system-bus-name', {'name' : self.busSys.get_unique_name()})
+        details = {}
+        flags = 4
+        cancellation_id = ''
+        iface.CheckAuthorization(subject, self.action, details, flags, cancellation_id, reply_handler=self.__handleAuthReply, error_handler=self.__handleAuthError, timeout=2**16-1)
 
     def __handleAuthReply(self, granted):
-        if granted:
+        if granted[0] == 1:
             self.__call()
         else:
             for func, args in self.handleCancel.iteritems():
