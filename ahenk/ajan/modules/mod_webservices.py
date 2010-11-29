@@ -12,7 +12,12 @@ def get_services():
         return {}
     services = {}
     for filename in os.listdir(SERVICE_DIR):
-        data = file(os.path.join(SERVICE_DIR, filename)).read()
+        if filename.startswith("."):
+            continue
+        try:
+            data = file(os.path.join(SERVICE_DIR, filename)).read()
+        except:
+            continue
         services[filename] = data.strip()
     return services
 
