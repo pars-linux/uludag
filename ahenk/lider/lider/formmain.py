@@ -90,9 +90,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
-        self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
+        self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
-        self.connect(self.pushOK, QtCore.SIGNAL("clicked()"), self.__slot_ok)
+        self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
 
         # Initialize "talk" backend
         self.talk.start()
@@ -619,6 +619,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             pass
 
         if widget.get_type() == plugins.TYPE_SINGLE:
+            if self.item and self.item.name in self.talk.online:
+                self.pushApply.show()
+            else:
+                self.pushApply.hide()
             self.policy = self.__load_policy()
             if self.policy != None:
                 widget.policy = self.policy
@@ -639,14 +643,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         else:
             self.textLog.hide()
 
-    def __slot_ok(self):
+    def __slot_apply(self):
         """
             Triggered when user clicks 'save & close' button.
         """
-        self.__slot_apply()
-        self.__slot_main()
+        self.__slot_save()
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "ahenk.force_update")
 
-    def __slot_apply(self):
+    def __slot_save(self):
         """
             Triggered when user clicks 'save' button.
         """
