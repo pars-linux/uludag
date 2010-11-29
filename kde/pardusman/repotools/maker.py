@@ -146,6 +146,7 @@ def generate_isolinux_conf(project):
     lang_default = project.default_language
     lang_all = project.selected_languages
 
+    #Rescue mode is is not ready yet, #14887, removed rescue_template from isolinux_tmpl
     if project.type != "live":
         dict["rescue_template"] = """
 label rescue
@@ -162,8 +163,6 @@ ui gfxboot.com /boot/isolinux/init
 label pardus
     kernel /boot/kernel
     append initrd=/boot/initrd quiet %(exparams)s
-
-%(rescue_template)s
 
 label harddisk
     localboot 0x80
