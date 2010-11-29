@@ -500,9 +500,8 @@ msgstr "Ignorar"
 
 # i shortened this, it does not fit otherwise
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
-#, fuzzy
 msgid "Package Files"
-msgstr "Lista de paquetes"
+msgstr "Archivos de Paquetes"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -596,14 +595,12 @@ msgid "Settings"
 msgstr "Configuración"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
-msgstr "Carrito"
+msgstr "Mostrar Carrito"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
-msgstr "Mostrar actualizaciones"
+msgstr "Comprobar Actualizaciones"
 
 # translated as "progress information", i see this string is the title of the
 # progress info window..
@@ -848,20 +845,20 @@ msgstr "&Ok"
 
 # i shortened this, it does not fit otherwise
 #: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
-#, fuzzy
 msgid "Package Details"
-msgstr "Lista de paquetes"
+msgstr "Detalles de Paquetes"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
-msgstr ""
+msgstr "Escriba para filtrar los archivos"
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
-msgstr "Por favor verifique su conexión de red y luego intente de nuevo."
+msgstr ""
+"Servidor AppInfo no está accesible\n"
+"Por favor verifique su conexión de red"
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
