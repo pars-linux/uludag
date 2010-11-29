@@ -79,7 +79,7 @@ def worker_applier(options, q_in, q_out, q_ldap):
         else:
             message = utils.Message(msg, q_out)
 
-        if message.type == "command" and message.command == "Ahenk.ForceUpdate":
+        if message.type == "command" and message.command == "ahenk.force_update":
             q_ldap.put(True)
             continue
 
