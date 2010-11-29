@@ -113,6 +113,18 @@ def startDependencies(*services):
         except:
             pass
 
+def stopDependencies(*services):
+    """Stop dependencies.
+
+    Arguments are service names.
+    """
+    for service in services:
+        try:
+            call(service, "System.Service", "stop")
+        except:
+            pass
+
+
 # Service control utilities
 
 def _getPid(pidfile):
