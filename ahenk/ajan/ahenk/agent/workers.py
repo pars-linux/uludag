@@ -12,7 +12,7 @@ from ahenk.agent import bck_xmpp
 from ahenk.agent import utils
 
 
-def worker_ldap(options, q_in, q_out):
+def worker_ldap(options, q_in, q_out, q_ldap):
     """
         LDAP interface for fetching policies.
     """
@@ -23,7 +23,7 @@ def worker_ldap(options, q_in, q_out):
     signal.signal(signal.SIGINT, signal.SIG_IGN)
 
     # Start LDAP client event lop
-    bck_ldap.ldap_go(options, q_in, q_out)
+    bck_ldap.ldap_go(options, q_in, q_out, q_ldap)
 
 
 def worker_xmpp(options, q_in, q_out):
@@ -40,7 +40,7 @@ def worker_xmpp(options, q_in, q_out):
     bck_xmpp.xmpp_go(options, q_in, q_out)
 
 
-def worker_applier(options, q_in, q_out):
+def worker_applier(options, q_in, q_out, q_ldap):
     """
         Worker that does all the dirty job.
     """
@@ -69,7 +69,7 @@ def worker_applier(options, q_in, q_out):
         try:
             msg = q_in.get()
         except IOError:
-            return
+            continue
         if msg["type"] == "command":
             message = utils.Command(msg, q_out)
         elif msg["type"] == "policy":
@@ -78,6 +78,10 @@ def worker_applier(options, q_in, q_out):
             message = utils.Policy(msg, True)
         else:
             message = utils.Message(msg, q_out)
+
+        if message.type == "command" and message.command == "Ahenk.ForceUpdate":
+            q_ldap.put(True)
+            continue
 
         # Pass message to all Ahenk modules
         utils.process_modules(options, message, children)

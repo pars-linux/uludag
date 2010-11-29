@@ -41,14 +41,15 @@ class Agent(daemon.Daemon):
         # Message queues
         q_in = multiprocessing.Queue()
         q_out = multiprocessing.Queue()
+        q_ldap = multiprocessing.Queue()
 
         # Worker processes
         proc_ldap = multiprocessing.Process(target=workers.worker_ldap,
-                                            args=(self.options, q_in, q_out, ))
+                                            args=(self.options, q_in, q_out, q_ldap))
         proc_xmpp = multiprocessing.Process(target=workers.worker_xmpp,
-                                            args=(self.options, q_in, q_out, ))
+                                            args=(self.options, q_in, q_out))
         proc_applier = multiprocessing.Process(target=workers.worker_applier,
-                                               args=(self.options, q_in, q_out, ))
+                                               args=(self.options, q_in, q_out, q_ldap))
 
         # Signal handler
         def signal_handler(signum, frame):
