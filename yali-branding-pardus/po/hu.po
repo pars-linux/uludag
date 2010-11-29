@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-29 06:06+0000\n"
+"POT-Creation-Date: 2010-11-29 19:02+0000\n"
 "PO-Revision-Date: 2010-11-29 13:43+0100\n"
 "Last-Translator: Zoltan Siposs <zoltan.siposs@gmail.com>\n"
 "Language-Team: HUNGARIAN <pardus-translators@pardus.org.tr>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Hungarian\n"
-"X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: HUNGARY\n"
 
 #: ../release.xml.in.h:1
 msgid "&lt;p&gt; Some help messages &lt;/p&gt;"
@@ -24,7 +24,7 @@ msgstr "&lt;p&gt; Egy kis segítség&lt;/p&gt;"
 
 #: ../release.xml.in.h:2
 msgid "&lt;p&gt;A bootloader is a tiny program that runs when a computer is first powered up.It is responsible for loading the operating system into memory and then transferringthe control to it.&lt;/p&gt;&lt;p&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows youto boot any supported operating system by presenting the user with a menu.&lt;/p&gt;&lt;p&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk.You can always choose another installation method if you know what you are doing.&lt;/p&gt;"
-msgstr "A bootloader (rendszerbetöltő) egy apró program, mely a számítógép bekapcsolása után először indul el. Feladata, hogy betöltse az operációs rendszert a memóriába, majd átadja neki a vezérlés.&lt;/p&gt;&lt;p&gt;A Pardus a GRUB-ot (GRand Unified Bootloader) használja, mint alapértelmezett rendszerbetöltőt. A GRUB segítségével egy menübő bármelyik támogatott operációs rendszert be tudja tölteni.&lt;/p&gt;&lt;p&gt;Javasolt a GROB-ot a rendszerindító lemez elejére telepíteni. Választhat más telepítési módot is, ha tudja mit tesz.&lt;/p&gt;"
+msgstr "A bootloader (rendszerbetöltő) egy apró program, mely a számítógép bekapcsolása után először indul el. Feladata, hogy betöltse az operációs rendszert a memóriába, majd átadja neki a vezérlés.&lt;/p&gt;&lt;p&gt;A Pardus a GRUB-ot (GRand Unified Bootloader) használja, mint alapértelmezett rendszerbetöltőt. A GRUB segítségével egy menüből bármelyik támogatott operációs rendszert be tudja tölteni.&lt;/p&gt;&lt;p&gt;Javasolt a GROB-ot a rendszerindító lemez elejére telepíteni. Választhat más telepítési módot is, ha tudja mit tesz.&lt;/p&gt;"
 
 #: ../release.xml.in.h:3
 msgid "&lt;p&gt;Date and time settings allows you to set the date and time of your computer. Generally,you will also want to specify a correct timezone for your location in order to benefit from automatic daylight saving time adjustments.&lt;/p&gt;&lt;p&gt;A timezone is a region of the earth that has uniform standard time, usually referred as thelocal time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time.&lt;/p&gt;"
@@ -201,4 +201,3 @@ msgstr "A KDE 4.2 óta a Konquerort felváltotta az új és sokoldalú fájlkeze
 #: ../release.xml.in.h:46
 msgid "World&apos;s leading preferred libre office suite OpenOffice.org brings a word processor, a spreadsheet, a presentation application, database, formula and drawing tools to your desktop for your office needs at home, at your workplace or school. With OpenOffice.org, you can view and edit documents created in other office suites and share your documents with friends and contacts that are using other office applications."
 msgstr "A világ vezető szabad irodai programcsomagja az OpenOffoce.org szövegszerkesztőt, táblázatkezelőt, prezentáció készítőt, adatbázist, függvény szerkesztőt és rajzoló programot kínál otthonra, a munkahelyre és az iskolába. Az OpenOffice.org segítségével Ön olyan dokumnetumokat is olvashat és szerkeszthet, melyek más irodai programokkal készültek, megoszthatja a dokumentumait olyan ismerőseivel, akik más alkalmazásokkal dolgoznak."
-
