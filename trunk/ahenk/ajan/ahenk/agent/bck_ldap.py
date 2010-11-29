@@ -14,6 +14,9 @@ import StringIO
 import Queue
 
 
+TIMEOUT = 5
+
+
 def get_ldif(value):
     """
         Converts a policy object to LDIF string.
@@ -112,11 +115,19 @@ def ldap_go(options, q_in, q_out, q_ldap):
             q_in.put({"type": "policy init", "policy": policy})
 
     domain = "dc=" + options.domain.replace(".", ", dc=")
-    username = "cn=%s, %s" % (options.username, domain)
     while True:
         try:
             conn = ldap.open(options.hostname)
+
+            pattern = "(cn=%s)" % options.username
+            search = conn.search_s(domain, ldap.SCOPE_SUBTREE, pattern, ['cn'])
+            if len(search):
+                username = search[0][0]
+            else:
+                raise ldap.NO_SUCH_OBJECT
+
             conn.simple_bind(username, options.password)
+
             while True:
                 pattern = "(cn=%s)" % options.username
                 updated, policy = fetch_policy(conn, options, domain, pattern)
@@ -131,5 +142,5 @@ def ldap_go(options, q_in, q_out, q_ldap):
                 except (Queue.Empty, IOError):
                     continue
         except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT, IndexError):
-            logging.warning("LDAP connection failed. Retrying in 3 seconds.")
-            time.sleep(3)
+            logging.warning("LDAP connection failed. Retrying in %d seconds." % TIMEOUT)
+            time.sleep(TIMEOUT)
