@@ -566,8 +566,7 @@ class widgetMain(QWidget):
         return ch
 
     def cancelError(self):
-        message = i18n("You are not authorized for this operation.")
-        KMessageBox.sorry(None, message, i18n("Error"))
+        self.widgetEditEntry.buttonOK.setEnabled(True)
 
     def busError(self, exception):
         if self.dia:
