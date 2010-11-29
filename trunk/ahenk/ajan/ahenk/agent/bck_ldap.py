@@ -11,6 +11,7 @@ import logging
 import os
 import time
 import StringIO
+import Queue
 
 
 def get_ldif(value):
@@ -98,7 +99,7 @@ def fetch_policy(conn, options, domain, pattern):
 
     return False, {}
 
-def ldap_go(options, q_in, q_out):
+def ldap_go(options, q_in, q_out, q_ldap):
     """
         Main event loop for LDAP worker
     """
@@ -124,7 +125,11 @@ def ldap_go(options, q_in, q_out):
                     policy_repr = dict(zip(policy.keys(), ['...' for x in range(len(policy))]))
                     logging.debug("New policy: %s" % policy_repr)
                     q_in.put({"type": "policy", "policy": policy})
-                time.sleep(options.interval)
+                try:
+                    logging.debug("Checking policy...")
+                    q_ldap.get(timeout=options.interval)
+                except (Queue.Empty, IOError):
+                    continue
         except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT, IndexError):
             logging.warning("LDAP connection failed. Retrying in 3 seconds.")
             time.sleep(3)

@@ -95,6 +95,8 @@ def compile_module(filename):
         logging.warning("Module has errors: %s" % filename)
     except SyntaxError, e:
         logging.warning("Module has syntax errors: %s" % filename)
+    except Exception, e:
+        logging.warning("Module has errors: %s" % filename)
     return locals
 
 def process_modules(options, message, children):
