@@ -1000,7 +1000,7 @@ def check_filesystems():
 
 @skip_for_lxc_guests
 def mount_local_filesystems():
-    """Mounts local filesystems and enables swaps if any."""
+    """Mounts local filesystems."""
 
     ui.info(_("Mounting local filesystems"))
     run("/bin/mount", "-at", "noproc,nocifs,nonfs,nonfs4")
@@ -1021,8 +1021,8 @@ def mount_remote_filesystems(dry_run=False):
 
     fs_types = map(lambda x: x[2], netmounts)
     if "nfs" in fs_types or "nfs4" in fs_types:
-        ui.info(_("Starting portmap service for NFS"))
-        start_services(["portmap"])
+        # Start rpcbind
+        start_services(["rpcbind"])
 
     ui.info(_("Mounting remote filesystems (CTRL-C stops trying)"))
     try:
