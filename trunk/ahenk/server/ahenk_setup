@@ -67,7 +67,7 @@ access to *
        by self write
        by dn.exact="cn=%(root_account)s, %(domain)s" write
        by users read
-       by * none
+       by * read
 """
 
 TEMP_LDIF = """dn: %(domain)s
