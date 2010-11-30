@@ -18,7 +18,7 @@ from lider.ui_connection import Ui_dialogConnection
 # Helper modules
 from lider.helpers import profile
 from lider.helpers import profilereader
-
+from lider.helpers import profilewriter
 
 class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
     """
@@ -69,7 +69,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
             self.editPassword.setFocus()
 
     def __fill_profiles(self, profiles):
-        if not len(profiles):
+        if len(profiles):
             pass
 
     def __slot_find_host(self):
@@ -158,8 +158,14 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         return True
 
     def accept(self):
-        new_profile = profile.Profile(self.comboDomain.currentText(), self.editHost.text(), self.editUser.text())
-        new_profile.save()
+        last_profile = profile.Profile(self.comboDomain.currentText(),
+                self.editHost.text(),
+                self.editUser.text())
+
+        # Create Profile Writer to save last connected profile to the top of recent profiles
+        writer = profilewriter.ProfileWriter()
+        writer.save_as_last_profile(last_profile)
+
 
         if self.__check_fields(set_focus=True):
             QtGui.QDialog.accept(self)
