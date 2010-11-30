@@ -153,6 +153,27 @@ class Directory:
 
         return items
 
+    def get_parent_paths(self, dn):
+        """
+            Returns a list of parent paths of the DN.
+
+            Args:
+                dn: Distinguished name
+            Returns:
+                List of parents, and self.
+        """
+        paths = []
+
+        dn_parts = dn.split(",")
+        for index in range(len(dn_parts)):
+            part = ",".join(dn_parts[index:])
+            if len(dn_parts) - index == self.directory_domain.count(","):
+                break
+            paths.append(part)
+        paths.reverse()
+
+        return paths
+
     def get_label(self, dn):
         """
             Returns label of a directory object.
@@ -264,9 +285,9 @@ class Directory:
         except ldap.LDAPError, e:
             try:
                 self.conn.whoami_s()
-            except ldap.LDAPError:
-                raise DirectoryConnectionError
-            raise DirectoryError
+            except ldap.LDAPError, e:
+                raise DirectoryConnectionError, e
+            raise DirectoryError, e
 
     @staticmethod
     def make_password(password):

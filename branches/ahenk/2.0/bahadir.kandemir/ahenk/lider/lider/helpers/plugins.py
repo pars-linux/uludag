@@ -6,6 +6,7 @@
 """
 
 # Standard Modules
+import copy
 import os
 import sys
 
@@ -75,6 +76,8 @@ class PluginWidget(object):
         self.directory = None
         self.talk = None
         self.policy = None
+        self.classes = []
+        self.policy_match = False
 
     def set_item(self, item):
         """
@@ -94,6 +97,38 @@ class PluginWidget(object):
             Sets XMPP link.
         """
         self.talk = talk
+
+    def get_classes(self):
+        """
+            Returns a list of policy class names.
+        """
+        return []
+
+    def mod_policy(self, remove=False):
+        """
+            ...
+        """
+        policy_now = {}
+        policy_new = {}
+
+        classes_now = copy.deepcopy(self.policy["objectClass"])
+        classes_new = []
+
+        for key, values in self.dump_policy().iteritems():
+            if remove:
+                if key in policy_now:
+                    policy_new[key] = []
+            else:
+                policy_new[key] = copy.deepcopy(values)
+            if key in self.policy:
+                policy_now[key] = copy.deepcopy(self.policy[key])
+
+        if remove:
+            classes_new = list(set(classes_now) - set(self.get_classes()))
+        else:
+            classes_new = list(set(classes_now).union(self.get_classes()))
+
+        return classes_now, policy_now, classes_new, policy_new
 
     def load_policy(self, policy):
         """
