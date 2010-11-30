@@ -23,6 +23,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetTree):
     """
         Network tree UI
     """
+
+    selectedItem = QtCore.pyqtSignal()
+
     def __init__(self, parent=None):
         """
             Constructor for main window.
@@ -36,7 +39,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetTree):
         self.setupUi(self)
 
         # UI events
-        #
+        self.connect(self.treeNetwork, QtCore.SIGNAL('itemDoubleClicked(QTreeWidgetItem*, int)'), self.__slot_item_clicked)
 
         # UI initialization
         #
@@ -54,3 +57,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetTree):
         from minitree import WidgetMiniTree
         widget = WidgetMiniTree(parent)
         return widget
+
+    def __slot_item_clicked(self, item, column):
+        """
+            Triggered when user clicks an item.
+        """
+        self.selectedItem.emit()
