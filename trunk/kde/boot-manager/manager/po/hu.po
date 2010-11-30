@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager Pardus 2009\n"
@@ -22,8 +22,7 @@ msgstr ""
 msgid "An application for managing boot loader."
 msgstr "Alkalmazás a rendszertöltő kezeléséhez"
 
-#: data/boot-manager.desktop.in.h:2
-#: data/kcm_boot-manager.desktop.in.h:1
+#: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Rendszerindítás kezelő"
 
@@ -107,7 +106,7 @@ msgstr "Ramdisk fájl"
 
 #: ui/ui_edit.py:146
 msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "A fájl, amely egy mikro-operációs rendszert tartalmaz a kernel-modulok előtöltéséhez."
+msgstr "A fájl, amely egy mikro operációs rendszert tartalmaz a kernel-modulok előtöltéséhez."
 
 #: ui/ui_edit.py:147
 msgid "Boot Options"
@@ -115,7 +114,7 @@ msgstr "Indítási opciók"
 
 #: ui/ui_edit.py:148
 msgid "Boot options for operating system."
-msgstr "Indítási opciók az operációs rendszer részére."
+msgstr "Az operációs rendszer indítási opciói"
 
 #: ui/ui_item.py:74
 msgid "Set or unset entry as default boot entry."
@@ -139,4 +138,3 @@ msgstr "Boot menü várakozási ideje:"
 
 #~ msgid " "
 #~ msgstr " "
-
