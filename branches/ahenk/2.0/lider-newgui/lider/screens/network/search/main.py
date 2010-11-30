@@ -54,13 +54,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSearch):
         """
             Generates mini version on the fly for embedding into Node screen.
         """
-        widget = QtGui.QListWidget(parent)
-
-        item_0 = QtGui.QListWidgetItem(widget)
-        item_0.setText("Item 0")
-        item_1 = QtGui.QListWidgetItem(widget)
-        item_1.setText("Item 1")
-
+        from minisearch import WidgetMiniSearch
+        widget = WidgetMiniSearch(parent)
         return widget
 
     def __slot_item_clicked(self, item):
