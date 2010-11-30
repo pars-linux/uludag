@@ -88,12 +88,10 @@ class Profile:
         """
         lines = []
 
-        if len(self.domain) != 0:
-            lines.append("domain=%s" % self.domain)
-        if len(self.address) !=0:
-            lines.append("address=%s" % self.address)
-        if len(self.username) != 0:
-            lines.append("username=%s" % self.username)
+        lines.append("domain=%s" % self.domain)
+        lines.append("address=%s" % self.address)
+        lines.append("username=%s" % self.username)
+        lines.append("-")
 
         file_content = "\n".join(lines)
 
