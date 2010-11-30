@@ -1,10 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""
-    Connection profile manager
-"""
-
 # Standard modules
 import os
 
@@ -38,13 +34,20 @@ class Profile:
         self.address = address
         self.username = username
 
-    def is_set(self):
+    def __eq__(self, tmp_profile):
         """
-            Return true if one of the properties set
+            Operator for equality, "=="
         """
-        if len(self.domain) or len(self.address) or len(self.username):
+        if type(self) != type(tmp_profile):
+            return False
+
+        if tmp_profile.get_domain() == self.domain and \
+                tmp_profile.get_address() == self.address and \
+                tmp_profile.get_username() == self.username:
             return True
+
         return False
+
 
     def get_domain(self):
         """
@@ -81,18 +84,3 @@ class Profile:
             Sets username.
         """
         self.username = username
-
-    def save(self):
-        """
-            Saves the exist information to the file.
-        """
-        lines = []
-
-        lines.append("domain=%s" % self.domain)
-        lines.append("address=%s" % self.address)
-        lines.append("username=%s" % self.username)
-        lines.append("-")
-
-        file_content = "\n".join(lines)
-
-        file(PROFILE_FILE, "w").write(file_content)
