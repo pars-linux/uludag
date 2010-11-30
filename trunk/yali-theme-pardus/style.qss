@@ -3,6 +3,16 @@
 	border-top: 1px solid white
 }
 
+#helpContentFrame {
+    background-color:rgba(0,0,0,180);
+    border-bottom-left-radius:3px;
+    border-bottom-right-radius:3px;
+}
+
+QWidget#scrollAreaWidgetContents {
+       background-color: rgba(255, 255, 255, 0);
+}
+
 QSlider::groove:horizontal {
     height: 12px;
     background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #FFFFFF);
@@ -330,29 +340,16 @@ QSpinBox::down-button:hover {
 }
 
 
-QWidget#Yali {
+#Yali {
       background-image: url(:/gui/pics/bg.png);
       background-color: rgb(50, 50, 50);
-      /*background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:0.572, y2:0.688, stop:0 rgba(75, 114, 137, 255), stop:1 rgba(29, 42, 51, 255));*/
       padding: 0px;
       margin: 0px;
 }
-QScrollArea#scrollArea {
-       background-color: rgba(255, 255, 255, 0);
-}
 
-QWidget#scrollAreaWidgetContents {
+QScrollArea#mainContent {
        background-color: rgba(255, 255, 255, 0);
 }
-/*
-QStackedWidget#mainStack {
-     border-style: outset;
-     border-width: 2px;
-     border-radius: 16px;
-     border-color: beige;
-     background-image:url(':/gui/pics/trans.png');
-}
-*/
 
 QTextBrowser#helpContent {
      background-color: rgba(255,255,255,0);
