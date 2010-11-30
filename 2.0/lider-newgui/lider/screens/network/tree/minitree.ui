@@ -18,39 +18,6 @@
     <number>0</number>
    </property>
    <item row="0" column="0">
-    <widget class="QTreeWidget" name="treeNetwork">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-       <horstretch>0</horstretch>
-       <verstretch>1</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="headerHidden">
-      <bool>true</bool>
-     </property>
-     <column>
-      <property name="text">
-       <string>Path</string>
-      </property>
-     </column>
-     <item>
-      <property name="text">
-       <string>Pardus</string>
-      </property>
-      <item>
-       <property name="text">
-        <string>Servers</string>
-       </property>
-       <item>
-        <property name="text">
-         <string>2009 Farm</string>
-        </property>
-       </item>
-      </item>
-     </item>
-    </widget>
-   </item>
-   <item row="1" column="0">
     <widget class="QTreeWidget" name="treeNetwork_2">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
