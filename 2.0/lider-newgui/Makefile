@@ -10,6 +10,7 @@ all:
 	pyuic4 lider/screens/network/tree/minitree.ui > lider/screens/network/tree/ui_minitree.py
 	
 	pyuic4 lider/screens/network/search/search.ui > lider/screens/network/search/ui_search.py
+	pyuic4 lider/screens/network/search/minisearch.ui > lider/screens/network/search/ui_minisearch.py
 	
 	pyuic4 lider/screens/node/software/software.ui > lider/screens/node/software/ui_software.py
 	pyuic4 lider/screens/node/authentication/authentication.ui > lider/screens/node/authentication/ui_authentication.py
