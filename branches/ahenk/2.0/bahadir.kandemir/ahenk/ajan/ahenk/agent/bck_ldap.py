@@ -62,7 +62,28 @@ def load_ldif(filename):
     parser.parse()
     return parser.comp
 
-def fetch_policy(conn, options, domain, pattern):
+def parent_paths(dn, domain):
+    """
+        Returns a list of parent paths of the DN.
+
+        Args:
+            dn: Distinguished name
+        Returns:
+            List of parents, and self.
+    """
+    paths = []
+
+    dn_parts = dn.split(",")
+    for index in range(len(dn_parts)):
+        part = ",".join(dn_parts[index:])
+        if len(dn_parts) - index == domain.count(","):
+            break
+        paths.append(part)
+    paths.reverse()
+
+    return paths
+
+def fetch_policy(conn, options, domain, dn):
     """
         Fetches a policy if necessary.
 
@@ -70,35 +91,49 @@ def fetch_policy(conn, options, domain, pattern):
             conn: LDAP connection object
             options: Options
             domain: Domain name
-            pattern: Search pattern
+            dn: Distinguished name
         Returns:
-            True or False
+            True or False, and policy object
     """
+
     policy_file = os.path.join(options.policydir, "policy_" + options.username)
     timestamp_file = policy_file + '.ts'
     timestamp_old = ''
+    timestamp_new = ''
+    policy_new = {}
     update_required = False
 
     if os.path.exists(timestamp_file):
         timestamp_old = file(timestamp_file).read().strip()
-
-    if not timestamp_old:
-        update_required = True
-
-    search = conn.search_s(domain, ldap.SCOPE_SUBTREE, pattern, ['modifyTimestamp'])
-    if len(search):
-        attrs = search[0][1]
-        timestamp_new = attrs['modifyTimestamp'][0]
-        if timestamp_new != timestamp_old:
+        try:
+            timestamp_old = int(timestamp_old)
+        except ValueError:
             update_required = True
 
-    if update_required:
-        search = conn.search_s(domain, ldap.SCOPE_SUBTREE, pattern)
+    paths = parent_paths(dn, domain)
+
+    timestamps = []
+    for path in paths:
+        search = conn.search_s(path, ldap.SCOPE_BASE, attrlist=['modifyTimestamp'])
         if len(search):
             attrs = search[0][1]
-            file(timestamp_file, 'w').write(timestamp_new)
-            file(policy_file, 'w').write(get_ldif(attrs))
-            return True, attrs
+            timestamp = int(attrs['modifyTimestamp'][0][:-1])
+            timestamps.append(timestamp)
+
+    timestamp_new = max(timestamps)
+    if timestamp_new != timestamp_old:
+        update_required = True
+
+    if update_required:
+        for path in paths:
+            search = conn.search_s(path, ldap.SCOPE_BASE)
+            if len(search):
+                attrs = search[0][1]
+                policy_new.update(attrs)
+
+        file(timestamp_file, 'w').write(str(timestamp_new))
+        file(policy_file, 'w').write(get_ldif(policy_new))
+        return True, policy_new
 
     return False, {}
 
@@ -122,18 +157,19 @@ def ldap_go(options, q_in, q_out, q_ldap):
             pattern = "(cn=%s)" % options.username
             search = conn.search_s(domain, ldap.SCOPE_SUBTREE, pattern, ['cn'])
             if len(search):
-                username = search[0][0]
+                dn = search[0][0]
             else:
                 raise ldap.NO_SUCH_OBJECT
 
-            conn.simple_bind(username, options.password)
+            conn.simple_bind(dn, options.password)
+            logging.debug("Logged in as %s" % dn)
 
             while True:
-                pattern = "(cn=%s)" % options.username
-                updated, policy = fetch_policy(conn, options, domain, pattern)
+                updated, policy = fetch_policy(conn, options, domain, dn)
                 if updated:
                     logging.info("LDAP policy was updated.")
                     policy_repr = dict(zip(policy.keys(), ['...' for x in range(len(policy))]))
+                    #policy_repr = policy
                     logging.debug("New policy: %s" % policy_repr)
                     q_in.put({"type": "policy", "policy": policy})
                 try:
