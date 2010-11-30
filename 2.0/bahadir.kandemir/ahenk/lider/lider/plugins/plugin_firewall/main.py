@@ -62,6 +62,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
         return plugins.TYPE_SINGLE
 
+    def get_classes(self):
+        """
+            Returns a list of policy class names.
+        """
+        return ["firewallPolicy"]
+
     def load_policy(self, policy):
         """
             Main window calls this method when policy is fetched from directory.
@@ -106,7 +112,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         policy = {
             "firewallState": [firewallState],
             "firewallRules": [firewallRules],
-            "objectClass": ["firewallPolicy"]
         }
         return policy
 

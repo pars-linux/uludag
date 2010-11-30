@@ -63,8 +63,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
         """
             Things to do before widget is shown.
         """
-        jid = "%s@%s" % (self.item.name, self.talk.domain)
-        self.talk.send_command(jid, "software.repositories")
+        #jid = "%s@%s" % (self.item.name, self.talk.domain)
+        #self.talk.send_command(jid, "software.repositories")
+        pass
 
     def get_type(self):
         """
@@ -73,6 +74,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             Should return TYPE_GLOBAL or TYPE_SINGLE
         """
         return plugins.TYPE_SINGLE
+
+    def get_classes(self):
+        """
+            Returns a list of policy class names.
+        """
+        return ["softwarePolicy"]
 
     def load_policy(self, policy):
         """
@@ -141,7 +148,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSoftware, plugins.PluginWidget):
             "softwareUpdateMode": [update_mode],
             "softwareUpdateSchedule": [update_schedule],
             "softwareRepositories": repositories,
-            "objectClass": ["softwarePolicy"]
         }
         return policy
 

@@ -56,6 +56,12 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
         """
         return plugins.TYPE_SINGLE
 
+    def get_classes(self):
+        """
+            Returns a list of policy class names.
+        """
+        return ["authenticationPolicy"]
+
     def load_policy(self, policy):
         """
             Main window calls this method when policy is fetched from directory.
@@ -105,7 +111,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetAuthentication, plugins.PluginWidget)
             "authenticationHostLDAP": [authenticationHostLDAP],
             "authenticationDomainAD": [authenticationDomainAD],
             "authenticationHostAD": [authenticationHostAD],
-            "objectClass": ["authenticationPolicy"]
         }
         return policy
 

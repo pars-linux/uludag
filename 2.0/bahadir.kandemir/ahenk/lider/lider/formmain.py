@@ -179,6 +179,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Updates status of toolbar.
         """
+        self.framePolicyInherit.hide()
         if self.directory.is_connected:
             self.pushMain.setEnabled(True)
         else:
@@ -605,6 +606,33 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when users activates a policy plugin.
         """
         widget = self.sender().widget
+
+        paths = self.directory.get_parent_paths(self.item.dn)
+        self_path = paths[-1]
+        classes = {}
+        for path in paths:
+            search = self.directory.search(path, ["objectClass"], "base")
+            if len(search):
+                classes[path] = []
+                for oclass in search[0][1]["objectClass"]:
+                    if oclass.endswith("Policy"):
+                        classes[path].append(oclass)
+
+        policy_match = False
+        policy_inherit = True
+
+        widget_classes = widget.get_classes()
+        self_policies = classes[self_path]
+
+        for path, policies in classes.iteritems():
+            if self_path == path:
+                continue
+            if len(set(widget_classes).intersection(set(policies))) > 0:
+                policy_match = True
+                if len(set(self_policies).intersection(set(widget_classes))) > 0:
+                    policy_inherit = False
+                break
+
         try:
             widget.set_item(self.item)
         except AttributeError:
@@ -634,6 +662,16 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
 
+        if policy_match:
+            widget.policy_match = True
+            self.framePolicyInherit.show()
+            if policy_inherit:
+                self.radioPolicyInherit.setChecked(True)
+            else:
+                self.radioPolicyNoInherit.setChecked(True)
+        else:
+            widget.policy_match = False
+
     def __slot_debug(self, state):
         """
             Triggered when user toggles debug button.
@@ -647,9 +685,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks 'save & close' button.
         """
-        self.__slot_save()
-        jid = "%s@%s" % (self.item.name, self.talk.domain)
-        self.talk.send_command(jid, "ahenk.force_update")
+        if self.__slot_save():
+            jid = "%s@%s" % (self.item.name, self.talk.domain)
+            self.talk.send_command(jid, "ahenk.force_update")
 
     def __slot_save(self):
         """
@@ -657,30 +695,35 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         if self.stackedWidget.currentIndex() != 0:
             widget = self.stackedWidget.currentWidget()
-            old_policy = copy.deepcopy(widget.policy)
-            new_policy = copy.deepcopy(old_policy)
+
+            remove = False
+            if widget.policy_match:
+                if self.radioPolicyInherit.isChecked():
+                    remove = True
+
+            classes_now, policy_now, classes_new, policy_new = widget.mod_policy(remove=remove)
+
             try:
-                for key, values in widget.dump_policy().iteritems():
-                    values = copy.deepcopy(values)
-                    if key == "objectClass":
-                        for value in values:
-                            if value not in new_policy[key]:
-                                new_policy[key].append(value)
-                    else:
-                        new_policy[key] = values
-            except AttributeError:
-                return
-            try:
-                self.directory.modify(self.item.dn, old_policy, new_policy)
-            except directory.DirectoryConnectionError:
+                if remove:
+                    self.directory.modify(self.item.dn, policy_now, policy_new)
+                    self.directory.modify(self.item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                else:
+                    self.directory.modify(self.item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                    self.directory.modify(self.item.dn, policy_now, policy_new)
+            except directory.DirectoryConnectionError, e:
+                print e
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
-                return
-            except directory.DirectoryError:
+                return False
+            except directory.DirectoryError, e:
+                print e
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify node.")
-                return
-            widget.policy = new_policy
+                return False
+            widget.policy = self.__load_policy()
+            return True
+
+        return False
 
     def __slot_reset(self):
         """
