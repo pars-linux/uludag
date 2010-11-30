@@ -23,6 +23,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetConnection):
     """
         Connection UI.
     """
+
+    connected = QtCore.pyqtSignal()
+
     def __init__(self, parent=None):
         """
             Constructor for main window.
@@ -36,7 +39,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetConnection):
         self.setupUi(self)
 
         # UI events
-        #
+        self.connect(self.pushConnect, QtCore.SIGNAL("clicked()"), self.__slot_connect)
 
         # UI initialization
         #
@@ -46,3 +49,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetConnection):
             Things to do before widget is shown.
         """
         pass
+
+    def __slot_connect(self):
+        """
+            Triggered when user clicks "Connect" button
+        """
+        self.connected.emit()

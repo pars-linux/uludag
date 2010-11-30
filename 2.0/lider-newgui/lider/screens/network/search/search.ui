@@ -28,7 +28,7 @@
     </widget>
    </item>
    <item row="1" column="0" colspan="2">
-    <widget class="QListWidget" name="listWidget">
+    <widget class="QListWidget" name="listNetwork">
      <item>
       <property name="text">
        <string>Yeni Öge</string>

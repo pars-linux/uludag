@@ -23,6 +23,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSearch):
     """
         Search UI
     """
+
+    selectedItem = QtCore.pyqtSignal()
+
     def __init__(self, parent=None):
         """
             Constructor for main window.
@@ -36,7 +39,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSearch):
         self.setupUi(self)
 
         # UI events
-        #
+        self.connect(self.listNetwork, QtCore.SIGNAL('itemDoubleClicked(QListWidgetItem*)'), self.__slot_item_clicked)
 
         # UI initialization
         #
@@ -59,3 +62,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetSearch):
         item_1.setText("Item 1")
 
         return widget
+
+    def __slot_item_clicked(self, item):
+        """
+            Triggered when user clicks an item.
+        """
+        self.selectedItem.emit()

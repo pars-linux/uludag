@@ -93,6 +93,13 @@
        </property>
       </widget>
      </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="pushConnect">
+       <property name="text">
+        <string>Connect</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item row="1" column="1">
