@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-27 09:04+0000\n"
+"POT-Creation-Date: 2010-12-01 12:03+0200\n"
 "PO-Revision-Date: 2010-11-27 10:13+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -114,6 +114,20 @@ msgstr ""
 
 #: ../release.xml.in.h:7
 msgid ""
+"&lt;p&gt;Pardus is a free and open source operating system that contains "
+"globally known projects such as Linux kernel, GNU tools, Mozilla Firefox, "
+"LibreOffice etc. besides many easy-to-use tools for a comfortable yet high "
+"performance experience. &lt;p&gt;The softwares included in this installation "
+"medium, are offered with a number of licenses. Tübitak prefers the GNU "
+"Public License (GPL version 2) for its own tools, which is the most common "
+"license for the selected components as well. You can read all the license "
+"texts in this screen by pressing on the license names or from our website."
+"&lt;/p&gt; &lt;p&gt;You have to accept the terms to install Pardus on your "
+"computer.&lt;/p&gt;"
+msgstr ""
+
+#: ../release.xml.in.h:8
+msgid ""
 "&lt;p&gt;Welcome to Pardus that contains many easy-to-use software "
 "components. You can do everything you need to, including, but not limited "
 "to, connecting to the Internet, creating documents, playing games, listening "
@@ -134,7 +148,7 @@ msgstr ""
 "&lt;/p&gt;&lt;p&gt;U kunt het installatieproces beginnen (en de vrije wereld "
 "binnenstappen) door op Volgende te klikken.&lt;/p&gt;"
 
-#: ../release.xml.in.h:8
+#: ../release.xml.in.h:9
 msgid ""
 "&lt;p&gt;YALI is now installing Pardus on your computer. This operation "
 "takes approximately 20-30 minutes depending on your computer&apos;s hardware."
@@ -151,7 +165,7 @@ msgstr ""
 "bijzondere eigenschappen van Pardus, uw \n"
 "nieuwe besturingssysteem, zal laten zien.&lt;/p&gt;"
 
-#: ../release.xml.in.h:9
+#: ../release.xml.in.h:10
 msgid ""
 "&lt;p&gt;You can install Pardus if you have an unpartitioned-unused disk "
 "space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk "
@@ -171,7 +185,7 @@ msgstr ""
 "Indien gewenst, kunt u het partitioneren handmatig doen of Pardus een nieuwe "
 "partitie voor installatie laten maken.&lt;/p&gt;"
 
-#: ../release.xml.in.h:10
+#: ../release.xml.in.h:11
 msgid ""
 "&lt;p&gt;You have successfully installed Pardus on your computer. After "
 "restarting your computer, you can finally enjoy the full benefits of Pardus."
@@ -183,7 +197,7 @@ msgstr ""
 "Pardus.&lt;/p&gt;&lt;P&gt;Klik op Volgende om verder te gaan. U weet uw "
 "wachtwoord toch nog wel?&lt;/p&gt;"
 
-#: ../release.xml.in.h:11
+#: ../release.xml.in.h:12
 msgid ""
 "&lt;p&gt;You need to define a password for the &quot;root&quot; user which "
 "is the conventional nameof the user who has all rights and permissions (to "
@@ -206,7 +220,7 @@ msgstr ""
 "weergegeven en daarom wordt het instellen van een  unieke naam aanbevolen."
 "&lt;/p&gt;"
 
-#: ../release.xml.in.h:12
+#: ../release.xml.in.h:13
 msgid ""
 "A keyboard layout is a description of how keys are placed on a keyboard. "
 "There are different keyboard layouts in use throughout the world. The one "
@@ -222,11 +236,11 @@ msgstr ""
 "gebruikt gaat worden. De geselecteerde indeling kan in het tekstveld getest "
 "worden."
 
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:14
 msgid "Add Users"
 msgstr "Gebruikers toevoegen"
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:15
 msgid ""
 "Adding new users, changing boot order, starting or stopping system services "
 "or rolling your system configuration back to a previous state has never been "
@@ -239,13 +253,9 @@ msgstr ""
 "Computerbeheer en bij veelvuldig gebruik ook als widget op het bureaublad te "
 "plaatsen."
 
-#: ../release.xml.in.h:15
+#: ../release.xml.in.h:16
 msgid "Adjust Date and Time Settings"
 msgstr "Datum- en tijdinstellingen aanpassen"
-
-#: ../release.xml.in.h:16
-msgid "Check the Integrity of Packages"
-msgstr "Integriteit van pakketten controleren"
 
 #: ../release.xml.in.h:17
 msgid "Choose a Keyboard Layout"
@@ -276,6 +286,32 @@ msgstr ""
 
 #: ../release.xml.in.h:21
 msgid ""
+"Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set "
+"of features where you will be surprised with the talents of a simple file "
+"manager.&lt;p&gt;You can divide any Dolphin window by columns to organize "
+"your files by comparing... You can utilize any KDE application as they can "
+"work in Dolpin embedded. Thus you can edit an image file in your file "
+"manager with the full features of Gwenview, the image viewer or preview a "
+"video in the optional optional and customizable Information panel.&lt;/p&gt;"
+"&lt;p&gt;&lt;/p&gt;"
+msgstr ""
+
+#: ../release.xml.in.h:22
+msgid ""
+"Dolphin learned a lot from the web experience. Tabbed browsing, folder "
+"addresses as breadcrumbs, tagging files so they can be listed by tags "
+"besides traditional folder structure and powerful network transparency.&lt;"
+"p&gt;Any place on the local network or web can be integrated into your file "
+"system easily by Dolphin. So you can reach remote addresses as if they are "
+"on your disk.&lt;/p&gt;"
+msgstr ""
+
+#: ../release.xml.in.h:23
+msgid "Double check your installation medium"
+msgstr ""
+
+#: ../release.xml.in.h:24
+msgid ""
 "Gimp is an advanced image editing software. Allowing creation and editing of "
 "common graphics and image file formats, it has abilities that professional "
 "graphics artists and designers need and an ability to integrate new filters "
@@ -286,27 +322,30 @@ msgstr ""
 "bestandformaten te bewerken, en heeft ongekende mogelijkheden voor zowel "
 "professionele grafische artiesten als voor ontwerpers en de gewone gebruiker."
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:25
 msgid "Goodbye"
 msgstr "Tot ziens"
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:26
 msgid ""
-"Hello, there. The easiest-ever install tool YALI has begun Pardus "
-"installation. It is now time to relax and learn about some of the features "
-"of Pardus 2011 while it is being installed."
+"If you are a part of a local network, you can reach to the other systems "
+"from the Network link on Dolphin. Pardus will list all the shared places "
+"automatically.&lt;p&gt;Easy? There&apos;s more... If you are connected by "
+"cable your network will be automatically configured. If you prefer wireless "
+"connection, you will see a list of available networks when you click on the "
+"wireless icon.&lt;/p&gt;&lt;p&gt;Do you have a local printer? Plug it to "
+"your system and it will be configured automatically as well. All you do is "
+"printing out your document.&lt;/p&gt;"
 msgstr ""
-"Hallo. Het installatiegereedschap YALI is gestart met de installatie van "
-"Pardus. Het is nu tijd om achterover te leunen en enkele eigenschappen van "
-"Pardus 2011 tijdens de installatie te bewonderen."
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:27
+#, fuzzy
 msgid ""
-"Here you can validate the integrity of the installation packages. A failed "
-"validation usually is a sign of a badly mastered installation medium (CD, "
-"DVD or USB storage). If you are using an optical installation medium, try "
-"burning the installation image using DAO (Disc-at-once) mode, at a lower "
-"speed (4x for DVD, 8-12x for CD)."
+"In this step, you may validate the integrity of installation packages. A "
+"failed validation usually is a sign of a badly mastered installation medium "
+"(CD, DVD or USB storage).&lt;p&gt;If you are using an optical medium (i.e. "
+"CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, "
+"at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 "Hier kan de integriteit van de installatiepakketten gecontroleerd worden. "
 "Een mislukte controle komt meestal door een fout op het installatiemedium "
@@ -314,52 +353,50 @@ msgstr ""
 "probeer DAO (Disc-at-once) modus te gebruiken en op een lagere snelheid (4x "
 "voor DVD, 8-12x voor CD)."
 
-#: ../release.xml.in.h:25
+#: ../release.xml.in.h:28
 msgid "Installing Pardus"
 msgstr "Bezig met installeren van Pardus"
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:29
 msgid ""
-"It is possible to install hundreds of software found in Pardus&apos; package "
-"repositories with a single click. Using the Package Manager, you can install "
-"PiSi packages with the click of a button, not having to deal with screen "
-"after screen of detailed configuration options. After package installations, "
-"all you need to do is to start the applications. It is all that easy!"
+"It is difficult to summarize what you can do with Kontact. Basically all "
+"personal information tasks, calendars, e-mails, RSS news, addresses are "
+"fully integrated into Kontact. You can even link your address book to Kopete "
+"to use with your IM accounts such as msn, jabber or GoogleTalk. So you can "
+"see if the sender of a e-mail is online.&lt;p&gt;You can create sticky notes "
+"for your desktop from your tasks or vice-verca by simply dragging them.&lt;/"
+"p&gt;"
 msgstr ""
-"Met een paar muisklikken is het mogelijk om zeer veel programma's vanuit de "
-"softwarebronnen van Pardus te installeren. Door gebruik te maken van "
-"Pakketbeheer is het mogelijk om met enkele muisklikken PiSi-pakketten te "
-"installeren zonder door verschillende optieschermen lastig te worden "
-"gevallen. Na het installeren van het pakket is het alleen noodzakelijk om "
-"deze te starten. Zo eenvoudig is dat!"
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:30
+msgid ""
+"KDE is the stage of the production, where all the audience see the glamorous "
+"show with hundreds, even thousands of programs for every need in all levels. "
+"For end-users and daily needs or the corporates with integrated, high "
+"performance yet easy-to-use solutions. KDE is the desktop environment of "
+"Pardus, where all the softwares and tools are laid."
+msgstr ""
+
+#: ../release.xml.in.h:31
 msgid "Kahya is working"
 msgstr "Kahya is bezig"
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:32
 msgid ""
-"Kaptan (Turkish for &apos;Captain&apos;) is what welcomes you to your Pardus "
-"installation. Using Kaptan, you can configure your desktop, changing the "
-"taskbar&apos;s location, wallpaper and desktop theme, and internet "
-"connection settings. Kaptan also allows you to add the Contribution "
-"Repository to your package management settings."
+"LibreOffice gives a stable, fast and free office experience while all your "
+"software and documents will be compatible with the rest of major suites. As "
+"the roots of the LibreOffice lies in years long open source office "
+"experience, even the first stable release is much powerful and competetive "
+"with Writer for text documents, Calc for spreadsheets, Impress for "
+"presentations.&lt;p&gt;Pardus packs this great office suite with a number of "
+"enhancements and plug-ins for a better experience.&lt;/p&gt;"
 msgstr ""
-"Kaptan (Turks voor &apos;Kapitein&apos;) verwelkomt u na de eerste start van "
-"Pardus.Door middel van Kaptan kunt u uw desktop instellen, locatie van "
-"taakbalken wijzigen, achtergrondafbeeldingen en desktop thema, en "
-"instellingen voor internetverbinding. In Kaptan kunt u ook de Contribution "
-"Repository (installatiebron) aan pakketbeheer toevoegen."
 
-#: ../release.xml.in.h:29
-msgid "License Agreement"
-msgstr "Licentieovereenkomst"
-
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:33
 msgid "Manual Partitioning"
 msgstr "Handmatig partitioneren"
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:34
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -375,39 +412,7 @@ msgstr ""
 "websites. Geniet van een snel en veilig internetgebruik met de nieuwe "
 "Mozilla Firefox 3.5."
 
-#: ../release.xml.in.h:32
-msgid ""
-"Pardus 2011 comes preinstalled with the open source desktop environment KDE "
-"4.2. You will have a much better desktop experience compared to what you "
-"have seen so far. Following the installation, you can choose to use the "
-"classical desktop view that includes icons to your files and folders, or you "
-"can have any number of the preinstalled plasma widgets on your desktop and "
-"add interesting functionality to your view. You can have an analog clock on "
-"your desktop; even more, you can have a real-time weather report, your notes "
-"and RSS feeds right on your desktop."
-msgstr ""
-"Pardus 2011 wordt geïnstalleerd met de open-source desktop omgeving KDE 4.2. "
-"Dit geeft een veel betere desktop ervaring dan dat u tot nu toe ervaren "
-"heeft. Aansluitend aan de installatie kunt u kiezen voor het gebruik van de "
-"klassieke desktop weergave met pictogrammen naar uw bestanden, of u kunt "
-"beschikken over de voorgeïnstalleerde Plasma widgets op het bureaublad en "
-"interessante functionaliteit toevoegen. U kunt een analoge klok op het "
-"bureaublad plaatsen en ook een real-time weerrapport, uw notities en RSS-"
-"feeds ."
-
-#: ../release.xml.in.h:33
-msgid ""
-"Pardus 2011 is a Linux distribution that everybody can easily install and "
-"use. With Pardus 2011, you can do anything that you could otherwise do with "
-"other operating systems. With its fast, secure and stable infrastructure, "
-"Pardus opens the path to software libre."
-msgstr ""
-"Pardus 2011 is een Linux-distributie die iedereen gemakkelijk kan "
-"installeren en gebruiken. Met Pardus 2011 kunt u hetzelfde doen dat u met "
-"andere besturingsystemen kunt doen. Met zijn snelle, veilige en stabiele "
-"infrastructuur opent Pardus de weg naar software vrijheid."
-
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:35
 msgid ""
 "Pardus 2011 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -424,18 +429,29 @@ msgstr ""
 "maken. Het toevoegen van een printer is heel eenvoudig. Aansluiten en "
 "configureren in Pardus is meestal voldoende."
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
+#, no-c-format
 msgid ""
-"Pardus includes many genuine technologies aiming for an easier use and "
-"management. TASMA has been replaced with System Manager in Pardus 2011, but "
-"you will still find all these management tools built into the System Manager "
-"interface."
+"Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
+"browser. Firefox offers great customization options as well as a secure and "
+"safe browsing experience. &lt;p&gt;The Mozilla Team uses the 100% Organic "
+"Software term trying to show how the community creates the product. Add-ons, "
+"including a fully personalization feature with Personas help you to have "
+"your very own browser, both visually and capability.&lt;/p&gt;&lt;p&gt;"
+"Pardus also offers other free browsers including Chromium, Konqueror or even "
+"Opera.&lt;/p&gt;"
 msgstr ""
-"Pardus bevat vele technologieën voor een gemakkelijker gebruik en beheer. "
-"TASMA is vervangen door Systeeminstellingen in Pardus 2011, maar u kunt nog "
-"steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
+msgid ""
+"Pardus experience may be summarized as a bright and powerful parade of free "
+"and open source softwares. You will meet some of the old friends, such as "
+"Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus "
+"developers&apos; choices to tailor them for your system. While the "
+"installation goes on, you may see some of these features..."
+msgstr ""
+
+#: ../release.xml.in.h:39
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
@@ -445,19 +461,19 @@ msgstr ""
 "softwarebronnen en voorziet in vele uren vermaak met de verschillende "
 "soorten spellen die door Pakketbeheer beschikbaar zijn."
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:40
 msgid "Select Partitioning Method"
 msgstr "Partitiemethode selecteren"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:41
 msgid "Select a Drive to Install Pardus"
 msgstr "Selecteer een schijf om Pardus op te installeren"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:42
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:43
 msgid ""
 "To connect to a wireless or &apos;wired&apos; network is as easy as choosing "
 "a connection profile with Pardus 2011. With the network manager&apos;s "
@@ -472,7 +488,7 @@ msgstr ""
 "van het aanmaken van profielen. Het kiezen van een ander netwerkprofiel "
 "gebeurt met twee muisklikken."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:44
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the Özgürlükİçin portal, where content is "
@@ -487,11 +503,11 @@ msgstr ""
 "gebruiker die de Turkse taal kunnen lezen is er voor ondersteuning ook nog "
 "www.ozgurlukicin.com"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:45
 msgid "Welcome to Pardus"
 msgstr "Welkom bij Pardus"
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:46
 msgid ""
 "With Pardus 2011, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -509,32 +525,7 @@ msgstr ""
 "gebruiken. Daar Amarok ook naadloos samenwerkt met de meeste spelers, is het "
 "mogelijk om liedjes d.m.v. verslepen in de afspeellijst te plaatsen."
 
-#: ../release.xml.in.h:44
-msgid ""
-"With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file "
-"formats and you can view all your files without any additional software, "
-"take notes on bookmarks on them."
-msgstr ""
-"Met Pardus 2011 is Kpdf vervangen door Okular. Okular ondersteunt vele "
-"bestandformaten en maakt het mogelijk om alle bestanden te bekijken zonder "
-"additionele software en notities van bladwijzers maken."
-
-#: ../release.xml.in.h:45
-msgid ""
-"With the arrival of KDE 4.2, Konqueror is replaced with a new and very "
-"talented file manager, Dolphin. Dolphin is easy to use, and when it comes to "
-"viewing folders, it allows you to sort them in various ways, adding "
-"functionality like grouping and detailed information right on the spot. "
-"Anything you may need on viewing folders, you have it with Dolphin."
-msgstr ""
-"Met de komst van KDE 4.2 is Konqueror vervangen door een nieuwe "
-"getalenteerde Dolphin bestandbeheerder.Dolphin is gemakkelijk te gebruiken, "
-"en aangaand het bekijken van mappen, staat het u toe om deze op verschillend "
-"manieren te sorteren, functionaliteit toevoegen zoals groeperen en "
-"gedetailleerde informatie. Bijna alles wat u voor mapweergave nodig heeft, "
-"is mogelijk met Dolphin."
-
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:47
 msgid ""
 "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
 "word processor, a spreadsheet, a presentation application, database, formula "
@@ -549,3 +540,108 @@ msgstr ""
 "Openoffice.org kunt u documenten bekijken en bewerken en met vrienden delen "
 "die een andere office aanbieder gebruiken of daarmee gemaakt zijn."
 
+#~ msgid "Check the Integrity of Packages"
+#~ msgstr "Integriteit van pakketten controleren"
+
+#~ msgid ""
+#~ "Hello, there. The easiest-ever install tool YALI has begun Pardus "
+#~ "installation. It is now time to relax and learn about some of the "
+#~ "features of Pardus 2011 while it is being installed."
+#~ msgstr ""
+#~ "Hallo. Het installatiegereedschap YALI is gestart met de installatie van "
+#~ "Pardus. Het is nu tijd om achterover te leunen en enkele eigenschappen "
+#~ "van Pardus 2011 tijdens de installatie te bewonderen."
+
+#~ msgid ""
+#~ "It is possible to install hundreds of software found in Pardus&apos; "
+#~ "package repositories with a single click. Using the Package Manager, you "
+#~ "can install PiSi packages with the click of a button, not having to deal "
+#~ "with screen after screen of detailed configuration options. After package "
+#~ "installations, all you need to do is to start the applications. It is all "
+#~ "that easy!"
+#~ msgstr ""
+#~ "Met een paar muisklikken is het mogelijk om zeer veel programma's vanuit "
+#~ "de softwarebronnen van Pardus te installeren. Door gebruik te maken van "
+#~ "Pakketbeheer is het mogelijk om met enkele muisklikken PiSi-pakketten te "
+#~ "installeren zonder door verschillende optieschermen lastig te worden "
+#~ "gevallen. Na het installeren van het pakket is het alleen noodzakelijk om "
+#~ "deze te starten. Zo eenvoudig is dat!"
+
+#~ msgid ""
+#~ "Kaptan (Turkish for &apos;Captain&apos;) is what welcomes you to your "
+#~ "Pardus installation. Using Kaptan, you can configure your desktop, "
+#~ "changing the taskbar&apos;s location, wallpaper and desktop theme, and "
+#~ "internet connection settings. Kaptan also allows you to add the "
+#~ "Contribution Repository to your package management settings."
+#~ msgstr ""
+#~ "Kaptan (Turks voor &apos;Kapitein&apos;) verwelkomt u na de eerste start "
+#~ "van Pardus.Door middel van Kaptan kunt u uw desktop instellen, locatie "
+#~ "van taakbalken wijzigen, achtergrondafbeeldingen en desktop thema, en "
+#~ "instellingen voor internetverbinding. In Kaptan kunt u ook de "
+#~ "Contribution Repository (installatiebron) aan pakketbeheer toevoegen."
+
+#~ msgid "License Agreement"
+#~ msgstr "Licentieovereenkomst"
+
+#~ msgid ""
+#~ "Pardus 2011 comes preinstalled with the open source desktop environment "
+#~ "KDE 4.2. You will have a much better desktop experience compared to what "
+#~ "you have seen so far. Following the installation, you can choose to use "
+#~ "the classical desktop view that includes icons to your files and folders, "
+#~ "or you can have any number of the preinstalled plasma widgets on your "
+#~ "desktop and add interesting functionality to your view. You can have an "
+#~ "analog clock on your desktop; even more, you can have a real-time weather "
+#~ "report, your notes and RSS feeds right on your desktop."
+#~ msgstr ""
+#~ "Pardus 2011 wordt geïnstalleerd met de open-source desktop omgeving KDE "
+#~ "4.2. Dit geeft een veel betere desktop ervaring dan dat u tot nu toe "
+#~ "ervaren heeft. Aansluitend aan de installatie kunt u kiezen voor het "
+#~ "gebruik van de klassieke desktop weergave met pictogrammen naar uw "
+#~ "bestanden, of u kunt beschikken over de voorgeïnstalleerde Plasma widgets "
+#~ "op het bureaublad en interessante functionaliteit toevoegen. U kunt een "
+#~ "analoge klok op het bureaublad plaatsen en ook een real-time weerrapport, "
+#~ "uw notities en RSS-feeds ."
+
+#~ msgid ""
+#~ "Pardus 2011 is a Linux distribution that everybody can easily install and "
+#~ "use. With Pardus 2011, you can do anything that you could otherwise do "
+#~ "with other operating systems. With its fast, secure and stable "
+#~ "infrastructure, Pardus opens the path to software libre."
+#~ msgstr ""
+#~ "Pardus 2011 is een Linux-distributie die iedereen gemakkelijk kan "
+#~ "installeren en gebruiken. Met Pardus 2011 kunt u hetzelfde doen dat u met "
+#~ "andere besturingsystemen kunt doen. Met zijn snelle, veilige en stabiele "
+#~ "infrastructuur opent Pardus de weg naar software vrijheid."
+
+#~ msgid ""
+#~ "Pardus includes many genuine technologies aiming for an easier use and "
+#~ "management. TASMA has been replaced with System Manager in Pardus 2011, "
+#~ "but you will still find all these management tools built into the System "
+#~ "Manager interface."
+#~ msgstr ""
+#~ "Pardus bevat vele technologieën voor een gemakkelijker gebruik en beheer. "
+#~ "TASMA is vervangen door Systeeminstellingen in Pardus 2011, maar u kunt "
+#~ "nog steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
+
+#~ msgid ""
+#~ "With Pardus 2011, Kpdf is replaced with Okular. Okular supports many file "
+#~ "formats and you can view all your files without any additional software, "
+#~ "take notes on bookmarks on them."
+#~ msgstr ""
+#~ "Met Pardus 2011 is Kpdf vervangen door Okular. Okular ondersteunt vele "
+#~ "bestandformaten en maakt het mogelijk om alle bestanden te bekijken "
+#~ "zonder additionele software en notities van bladwijzers maken."
+
+#~ msgid ""
+#~ "With the arrival of KDE 4.2, Konqueror is replaced with a new and very "
+#~ "talented file manager, Dolphin. Dolphin is easy to use, and when it comes "
+#~ "to viewing folders, it allows you to sort them in various ways, adding "
+#~ "functionality like grouping and detailed information right on the spot. "
+#~ "Anything you may need on viewing folders, you have it with Dolphin."
+#~ msgstr ""
+#~ "Met de komst van KDE 4.2 is Konqueror vervangen door een nieuwe "
+#~ "getalenteerde Dolphin bestandbeheerder.Dolphin is gemakkelijk te "
+#~ "gebruiken, en aangaand het bekijken van mappen, staat het u toe om deze "
+#~ "op verschillend manieren te sorteren, functionaliteit toevoegen zoals "
+#~ "groeperen en gedetailleerde informatie. Bijna alles wat u voor "
+#~ "mapweergave nodig heeft, is mogelijk met Dolphin."
