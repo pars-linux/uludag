@@ -168,7 +168,7 @@ def getDescription(service):
         return unicode(desc['en'])
     except Exception, msg:
         # print "ERROR:", msg
-        return i18n('Service information is not available')
+        return unicode(i18n('Service information is not available'))
 
 class ServiceItemInfo(PAbstractBox):
 
