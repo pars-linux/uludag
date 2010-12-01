@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="/">
     <file>gui/pics/user-group-delete.png</file>
+    <file>gui/pics/bg.glass.png</file>
     <file>gui/pics/user-group-new.png</file>
     <file>gui/pics/user-group-properties.png</file>
     <file>gui/pics/bootloader.png</file>
