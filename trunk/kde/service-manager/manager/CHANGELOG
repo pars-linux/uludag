@@ -1,0 +1,378 @@
+2010-11-28 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-26 gokmen.goksel
+         * - Just colorize label itself 
+
+2010-11-26 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-26 gokmen.goksel
+         * - Update po, add AUTHORS 
+
+2010-11-26 gokmen.goksel
+         * - Workaround for hidden list items 
+
+2010-11-26 gokmen.goksel
+         * - Show descriptions in tooltip
+         * - Wrap long tooltips to 70 character by using textwrap module
+
+2010-11-26 gokmen.goksel
+         * - Call setState async 
+
+2010-11-26 gokmen.goksel
+         * - Show error dialog when exception occured or authentication failed
+         * - Store last state and go back if exception occured
+         * - Show busy indicator while waiting the service state
+
+2010-11-26 gokmen.goksel
+         * update todo 
+
+2010-11-25 gokmen.goksel
+         * Show service descriptions from service package
+         * Bug fixed at http://bugs.pardus.org.tr/13379
+
+2010-11-25 gokmen.goksel
+         * add missing help 
+
+2010-11-23 gokmen.goksel
+         * 33333 
+
+2010-11-23 gokmen.goksel
+         * Use kcm_ prefix for kcm modules
+         * Bug fixed at http://bugs.pardus.org.tr/15175
+
+2010-11-21 transifex
+         * l10n: Updated German (de) translation to 78% (Stefan Wilhelm)
+         * New status: 18 messages complete with 0 fuzzies and 5 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-10 mehmet.ozdemir
+         * service manager help document added.
+
+2010-10-03 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-02 transifex
+         * l10n: New Russian translation (Yasirov Vasiliy)
+         * New status: 0 messages complete with 0 fuzzies and 23 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-22 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 73% (Klemens Häckel)
+         * New status: 17 messages complete with 0 fuzzies and 6 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-15 gokmen.goksel
+         * add TODO 
+
+2010-09-15 gokmen.goksel
+         * Service Manager v3.0.0_alpha1, ready for 2011 
+
+2010-08-08 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-08-06 transifex
+         * l10n: Updated Azerbaijani (az) translation to 100% (Barış Kutsal)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-08-03 transifex
+         * l10n: Updated Azerbaijani (az) translation to 13% (Kaan Akşit)
+         * New status: 3 messages complete with 0 fuzzies and 20 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-08-03 transifex
+         * l10n: Initial of Azerbaijani translation (Kaan Akşit)
+         * New status: 0 messages complete with 0 fuzzies and 23 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-28 transifex
+         * l10n: Updated German (de) translation to 91% (Kaan Akşit)
+         * New status: 21 messages complete with 0 fuzzies and 2 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-05 ozan.caglayan
+         * Fix code/ remnants
+
+2010-06-30 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Italian (it) translation to 69% (Davide Siciliano)
+         * New status: 16 messages complete with 2 fuzzies and 5 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 23 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 ozan.caglayan
+         * Update messages
+
+2010-06-25 ozan.caglayan
+         * Rename code/ to src/
+         * Sync setup.py
+         * Add translator credits to strings
+
+2010-06-13 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 21 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-13 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 21 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-13 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 21 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-11 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 21 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-11 igungor
+         * update messages
+
+2010-06-11 igungor
+         * use intltool to extract and merge the translatable strings in desktop files
+
+2010-06-10 igungor
+         * fix warning
+
+2010-06-03 bahadir.kandemir
+         * New release
+
+2010-06-02 transifex
+         * l10n: First version. (Daniel Kovács)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-30 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-28 transifex
+         * l10n: Updated German (de) translation to 100% (Andreas Jürgens)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-15 transifex
+         * l10n: Adding translations for Brazilian Portuguese (Diogo Lima)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-11 transifex
+         * l10n: Updated German (de) translation to 85% (Kaan Akşit)
+         * New status: 17 messages complete with 0 fuzzies and 3 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-01-15 semen.cirit
+         * Service  manager titles translate to french.
+
+2010-01-13 bahadir.kandemir
+         * New releae
+
+2010-01-12 klemens
+         * some german and spanish updates to simplify the names of the special pardus tools in the menu and the KDE control panel 
+         * (i think so at least), according to feedback also from some other german translation members..
+
+2009-10-27 fatih
+         * Rename kde4 to kde
+
+2009-09-08 peter.lyberth
+         * Completede danish translation
+
+2009-08-19 philippe.svetoslavsky
+         * French translation added.
+
+2009-07-25 ozan.caglayan
+         * Patch from Antoon Tolboom to improve Dutch translations in the desktop files
+
+2009-07-16 bahadir.kandemir
+         * New release
+
+2009-07-16 bahadir.kandemir
+         * Restart service, don't reload
+
+2009-07-15 necmettin
+         * Turkish translation updates
+
+2009-07-14 bahadir.kandemir
+         * New release
+
+2009-07-14 ozan.caglayan
+         * Add Turkish translations to kcm desktop files
+
+2009-07-10 gokmen.goksel
+         * repeat search after state change 
+
+2009-07-09 bahadir.kandemir
+         * New release
+
+2009-07-04 patrik
+         * Swedish translation
+
+2009-07-04 edivad
+         * added it translation
+
+2009-06-30 wpmhia
+         * Dutch translations from Antoon!
+
+2009-06-28 klemens
+         * spanish and german language strings in several kde4 *.desktop files..
+
+2009-06-28 klemens
+         * new german language file for service-manager, and some additions in 
+         * sysinfo language file
+
+2009-06-27 patrik
+         * Update translations
+
+2009-06-27 necmettin
+         * Turkish translation updates
+
+2009-06-26 gokcen.eraslan
+         * Fix icons of managers: Use KAboutData.setProgramIconName if icon name is different than appName. Also fix menu location of PM, it should be in System like other managers.
+
+2009-06-04 bahadir.kandemir
+         * Use PK GUI
+
+2009-06-03 bahadir.kandemir
+         * Set Icon
+
+2009-05-27 bahadir.kandemir
+         * New layout
+
+2009-05-19 gokcen.eraslan
+         * Check if there is another dbus mainloop before creating a new one. This fixes crash but, we still can't run 2 python kcmodules sequentially.
+
+2009-05-14 klemens
+         * new spanish translation files (kh) starting..
+
+2009-05-11 gokmen.goksel
+         * Po updates
+         * Ui and About Data updates
+         * Ready for new release 
+
+2009-05-11 gokmen.goksel
+         * Filtering feature added with various filter method
+         * Some ui fixes
+
+2009-05-10 bahadir.kandemir
+         * Localize strings
+
+2009-05-09 gokmen.goksel
+         * Use .py, SystemSettings can not load the module without the extension ..
+
+2009-05-08 gokmen.goksel
+         * Merge setup.py from Network Manager 
+
+2009-04-03 gokmen.goksel
+         * Search also in descriptions, special request of Onur ;) 
+
+2009-04-03 gokmen.goksel
+         * Service filter added
+         * Hide local services when just show servers selected
+
+2009-04-03 gokmen.goksel
+         * Update UI
+         * Update PO
+         * Use hidden checkbox for service start status..
+         * Use progressbar to show getting service info process..
+
+2009-04-02 gokmen.goksel
+         * Fill list and then update their status
+         * Use checkbox for autostart state
+
+2009-04-02 gokmen.goksel
+         * Provide basic operations from backend.py
+         * Use backend.py with widgets for predefined operations
+
+2009-04-02 gokmen.goksel
+         * Split modules, add license.. 
+
+2009-03-30 gokmen.goksel
+         * update ui,po ...
+
+2009-03-30 gokmen.goksel
+         * use instertCatalog method from KGlobal.locale()
+         * pass if exception occurs when creating same symlink..
+
+2009-03-29 gokmen.goksel
+         * remove .. 
+
+2009-03-29 gokmen.goksel
+         * use build dir for temp files
+         * skip build section, put them into install
+         * use symlink instead of hardlink
+         * make symlink for main.py
+
+2009-03-25 gokmen.goksel
+         * check before creating dirs, use a link for system settings module ..
+
+2009-03-25 gokmen.goksel
+         * Huge changes, not finished ..
+
+2009-02-19 gokmen.goksel
+         * moved from branches, all kde4 work will be under it ..
+
+2009-02-12 gokmen.goksel
+         * it is very important to check if there is an active mainloop
+         * before creating a new one, it may cause to crash plasma itself
+
+2009-01-20 gokmen.goksel
+         * much better name for work ..
+
+2009-01-20 gokmen.goksel
+         * much better name for work ..
+
+2008-12-03 gokmen.goksel
+         * Fixed MakeFile 
+         * Added Plasmoid (Python) for System Services Yay !
+
+2008-11-19 gokmen.goksel
+         * typo :) 
+
+2008-11-18 gokmen.goksel
+         * New UI design ..
+
+2008-11-17 gokmen.goksel
+         * A KDE4 oriented design ..
+
