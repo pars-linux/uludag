@@ -607,31 +607,32 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         widget = self.sender().widget
 
-        paths = self.directory.get_parent_paths(self.item.dn)
-        self_path = paths[-1]
-        classes = {}
-        for path in paths:
-            search = self.directory.search(path, ["objectClass"], "base")
-            if len(search):
-                classes[path] = []
-                for oclass in search[0][1]["objectClass"]:
-                    if oclass.endswith("Policy"):
-                        classes[path].append(oclass)
-
         policy_match = False
         policy_inherit = True
 
-        widget_classes = widget.get_classes()
-        self_policies = classes[self_path]
+        if widget.get_type() == plugins.TYPE_SINGLE:
+            paths = self.directory.get_parent_paths(self.item.dn)
+            self_path = paths[-1]
+            classes = {}
+            for path in paths:
+                search = self.directory.search(path, ["objectClass"], "base")
+                if len(search):
+                    classes[path] = []
+                    for oclass in search[0][1]["objectClass"]:
+                        if oclass.endswith("Policy"):
+                            classes[path].append(oclass)
 
-        for path, policies in classes.iteritems():
-            if self_path == path:
-                continue
-            if len(set(widget_classes).intersection(set(policies))) > 0:
-                policy_match = True
-                if len(set(self_policies).intersection(set(widget_classes))) > 0:
-                    policy_inherit = False
-                break
+            widget_classes = widget.get_classes()
+            self_policies = classes[self_path]
+
+            for path, policies in classes.iteritems():
+                if self_path == path:
+                    continue
+                if len(set(widget_classes).intersection(set(policies))) > 0:
+                    policy_match = True
+                    if len(set(self_policies).intersection(set(widget_classes))) > 0:
+                        policy_inherit = False
+                    break
 
         try:
             widget.set_item(self.item)
