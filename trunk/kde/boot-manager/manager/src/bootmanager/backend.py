@@ -65,6 +65,7 @@ class Interface:
             self.link.Boot.Loader[self.package].setOption(option, value)
 
     def removeEntry(self, index, title, uninstall=False, func=None):
+        index = int(index)
         if func:
             self.link.Boot.Loader[self.package].removeEntry(index, title, uninstall, async=func)
         else:
