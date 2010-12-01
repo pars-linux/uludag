@@ -759,7 +759,7 @@ QProgressBar {
 
         border-radius: 2px;
         text-align: center;
-        color: #628577;
+        color: #222222;
 	background-color: white;
         /*background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                         stop: 0 #ffffff, stop: 0.4 #eeeeee, stop: 1 #eeeeee);*/
