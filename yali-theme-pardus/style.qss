@@ -107,7 +107,6 @@ QListView {
        border-bottom-left-radius: 3px;
        border-bottom-right-radius: 3px;
        font-size: 14px;
-       font-weight: bold;
  }
 
  QListView::item:alternate {
@@ -785,8 +784,6 @@ QScrollArea::corner {
 	border: 0px;
         /*border-radius: 3px;*/
 }
-
-
 
 
 QScrollBar:vertical {
