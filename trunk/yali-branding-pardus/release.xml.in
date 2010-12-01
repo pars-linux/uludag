@@ -109,18 +109,16 @@
         </slideshow>
         <slideshow>
             <picture>04</picture>
-            <_description>KDE is the stage of the production, where all the audience see the    glamorous show with hundreds, even thousands of programs for every need in all levels. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. KDE is the desktop environment of Pardus, where all the softwares and tools are laid.
-        </_description>
+            <_description>KDE is the stage of the production, where all the audience see the    glamorous show with hundreds, even thousands of programs for every need in all levels. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. KDE is the desktop environment of Pardus, where all the softwares and tools are laid.</_description>
         </slideshow>
         <slideshow>
             <picture>05</picture>
-            <_description>Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set of features where you will be surprised with the talents of a simple file manager.&lt;p&gt;You can divide any Dolphin window by columns to organize your files by comparing... You can utilize any KDE application as they can work in Dolpin embedded. Thus you can edit an image file in your file manager with the full features of Gwenview, the image viewer or preview a video in the optional optional and customizable Information panel.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</_description>
+            <_description>Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set of features where you may be surprised with the talents of a simple file manager. &lt;p&gt;You can divide any Dolphin window by columns to organize your files by comparing... You can utilize any KDE application as they can work in Dolpin embedded. Thus you can edit an image file in your file manager with the full features of Gwenview, the image viewer or preview a video in the optional optional and customizable Information panel.&lt;/p&gt;&lt;p&gt;&lt;/p&gt;</_description>
         </slideshow>
         <slideshow>
             <picture>06</picture>
             <_description>Dolphin learned a lot from the web experience. Tabbed browsing, folder addresses as breadcrumbs, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;p&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk.&lt;/p&gt;</_description>
         </slideshow>
-        <slideshow>
         <slideshow>
             <picture>07</picture>
             <_description>If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;p&gt;Easy? There&apos;s more... If you are connected by cable your network will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;/p&gt;&lt;p&gt;Do you have a local printer? Plug it to your system and it will be configured automatically as well. All you do is printing out your document.&lt;/p&gt; </_description>
@@ -130,11 +128,11 @@
         </slideshow>
         <slideshow>
             <picture>09</picture>
-            <_description>Adding new users, changing boot order, starting or stopping system services or rolling your system configuration back to a previous state has never been easier. You can use the system managers for that and you can even add to your desktop as widgets managers that you use frequently.</_description>
+            <_description>So many features are waiting to be found. Even more, many softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is easier than ever to add these new applications to your system. &lt;p&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones with a few clicks. You can reach it from the menu of your choice, which you may decide just after install with the help of Kaptan!&lt;/p&gt; </_description>
         </slideshow>
         <slideshow>
             <picture>10</picture>
-            <_description>To connect to a wireless or &apos;wired&apos; network is as easy as choosing a connection profile with Pardus 2011. With the network manager&apos;s advanced options, you can have different settings (e.g. static IP, a different DNS server) for different connections with the profiles you create. Choosing a different connection profile requires just two clicks.</_description>
+            <_description>Kaptan is an end-user configuration assistant. It helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;p&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name Kaptan. Application launcher can be called with its default shortcut Alt-F2.&lt;/p&gt;</_description>
         </slideshow>
         <slideshow>
             <picture>11</picture>
