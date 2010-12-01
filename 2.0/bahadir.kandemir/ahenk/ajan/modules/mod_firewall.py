@@ -58,10 +58,9 @@ def process(message, options):
     dryrun = options.dryrun
 
     if message.type == "policy":
-        if "firewallState" in message.policy:
-            firewallState = message.policy.get("firewallState", ["off"])[0]
-            firewallRules = message.policy.get("firewallRules", [""])[0]
-            if firewallState == "on":
-                enable_firewall(firewallRules, options)
-            elif firewallState == "off":
-                disable_firewall(options)
+        firewallState = message.policy.get("firewallState", ["off"])[0]
+        firewallRules = message.policy.get("firewallRules", [""])[0]
+        if firewallState == "on":
+            enable_firewall(firewallRules, options)
+        elif firewallState == "off":
+            disable_firewall(options)
