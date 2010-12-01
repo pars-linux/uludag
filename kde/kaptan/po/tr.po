@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-21 10:32+0300\n"
+"POT-Creation-Date: 2010-12-02 01:21+0200\n"
 "PO-Revision-Date: 2010-05-20 22:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -53,8 +53,8 @@ msgstr "Bitir"
 msgid "Apply Settings"
 msgstr "Ayarları Uygula"
 
-#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
-#: .tmp/ui_wallpaperItem.py:72
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:70
+#: .tmp/ui_wallpaperItem.py:73
 msgid "Form"
 msgstr "Form"
 
@@ -86,7 +86,7 @@ msgstr "Diğer"
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>Ayarlarınız kaydedildi.</b> Artık Pardus'un tadını çıkarmaya başlayabilirsiniz. Daha detaylı ayarlar veya yardım ve destek için aşağıdaki program ve linkleri inceleyebilirsiniz. <b>Topluluğumuza üye olmayı unutmayın!</b>"
 
-#: .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrSmolt.py:155
+#: .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrSmolt.py:156
 msgid "My Smolt Page"
 msgstr "Smolt Sayfam"
 
@@ -146,75 +146,75 @@ msgstr "Lancelot Menü"
 msgid "Sample"
 msgstr "Örnek"
 
-#: .tmp/ui_scrMouse.py:202
+#: .tmp/ui_scrMouse.py:203
 msgid "Mouse"
 msgstr "Fare"
 
-#: .tmp/ui_scrMouse.py:203
+#: .tmp/ui_scrMouse.py:204
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
 msgstr "<b>Tıklama Biçimi</b> dosya açarken simgelere kaç kere tıklamanız gerektiğini belirlemenize yardımcı olur. Eğer <b>sol elinizi</b> kullanıyorsanız, fare butonlarının yerini değiştirerek farenizi daha rahat kullanabilirsiniz."
 
-#: .tmp/ui_scrMouse.py:204
+#: .tmp/ui_scrMouse.py:205
 msgid "Clicking Behaviour"
 msgstr "Tıklama Biçimi"
 
-#: .tmp/ui_scrMouse.py:205
+#: .tmp/ui_scrMouse.py:206
 msgid "Single-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için tek tıkla"
 
-#: .tmp/ui_scrMouse.py:206
+#: .tmp/ui_scrMouse.py:207
 msgid "Dou&ble-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için &çift tıkla"
 
-#: .tmp/ui_scrMouse.py:207
+#: .tmp/ui_scrMouse.py:208
 msgid "Button Order"
 msgstr "Düğme Sırası"
 
-#: .tmp/ui_scrMouse.py:208
+#: .tmp/ui_scrMouse.py:209
 msgid "Right Hand"
 msgstr "Sağ El"
 
-#: .tmp/ui_scrMouse.py:209
+#: .tmp/ui_scrMouse.py:210
 msgid "Left Hand"
 msgstr "Sol El"
 
-#: .tmp/ui_scrMouse.py:210
+#: .tmp/ui_scrMouse.py:211
 msgid "Reverse scrolling"
 msgstr "Tekerlek ters kaydırsın"
 
-#: .tmp/ui_scrPackage.py:190
+#: .tmp/ui_scrPackage.py:191
 msgid "Packages"
 msgstr "Paketler"
 
-#: .tmp/ui_scrPackage.py:191
+#: .tmp/ui_scrPackage.py:192
 msgid "Show updates in the system tray"
 msgstr "Güncellemeleri sistem tepsisinde göster"
 
-#: .tmp/ui_scrPackage.py:192
+#: .tmp/ui_scrPackage.py:193
 msgid "Check updates automatically every"
 msgstr "Güncellemeleri kontrol etme sıklığı"
 
-#: .tmp/ui_scrPackage.py:193
+#: .tmp/ui_scrPackage.py:194
 msgid " hours"
 msgstr " saat"
 
-#: .tmp/ui_scrPackage.py:194
+#: .tmp/ui_scrPackage.py:195
 msgid "Contrib repository includes extra and handy programs."
 msgstr "Katkı deposu kullanışlı ek programlar içerir."
 
-#: .tmp/ui_scrPackage.py:195
+#: .tmp/ui_scrPackage.py:196
 msgid "Add contrib repository"
 msgstr "Katkı deposunu ekle"
 
-#: .tmp/ui_scrPackage.py:196
+#: .tmp/ui_scrPackage.py:197
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
 msgstr "Pardus'ta program yükleyip silme işlemleri <b>Paket Yöneticisi</b> tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi otomatik olarak güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol etme sıklığını belirleyebilirsiniz."
 
-#: .tmp/ui_scrPackage.py:197
+#: .tmp/ui_scrPackage.py:198
 msgid "Updates"
 msgstr "Güncellemeler"
 
-#: .tmp/ui_scrPackage.py:198
+#: .tmp/ui_scrPackage.py:199
 msgid "Repositories"
 msgstr "Depolar"
 
@@ -234,23 +234,23 @@ msgstr "Strigi, aramalarımda yardımcı olsun"
 msgid "Search Options"
 msgstr "Arama Ayarları"
 
-#: .tmp/ui_scrSmolt.py:153
+#: .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
 msgstr "Smolt"
 
-#: .tmp/ui_scrSmolt.py:154
+#: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt,</b> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizlere göndererek  istatistikler doğrultusunda Pardus'u geliştirmemize katkıda bulunur."
 
-#: .tmp/ui_scrSmolt.py:156
+#: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
 msgstr "Donanım Bilgisini &Gönder"
 
-#: .tmp/ui_scrSmolt.py:157
+#: .tmp/ui_scrSmolt.py:158
 msgid "&Privacy policy"
 msgstr "Gizlilik &Politikası"
 
-#: .tmp/ui_scrSmolt.py:158
+#: .tmp/ui_scrSmolt.py:159
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -273,39 +273,51 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Günlükleme:</span>  Pardus'un smolt kurulumunda tüm Internet trafiği önce bir vekil sunucudan geçer. Bu vekil sunucu IP adreslerini günlüğüne kaydeder ve arşivler. Pardus Projesi IP adreslerini smolt veritabanında tutmaz. Bu günlükler gizlidir ve halka açık değildir.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Bu politikadan hoşnut olmayan kullanıcıların smolt'u kullanmaması yeterli olacaktır. Bu politika hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle admin [at] pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla profillerini istedikleri zaman silebilirler.</p></body></html>"
 
-#: .tmp/ui_scrStyle.py:169
+#: .tmp/ui_scrStyle.py:236
 msgid "Themes"
 msgstr "Temalar"
 
-#: .tmp/ui_scrStyle.py:170
+#: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
 msgstr "Favori temanızı ve masaüstü tipini seçip, Pardus'u renkli stil ve temalarla kişiselleştirebilirsiniz."
 
-#: .tmp/ui_scrStyle.py:171
+#: .tmp/ui_scrStyle.py:238
 msgid "KDE Themes"
 msgstr "KDE Temaları"
 
-#: .tmp/ui_scrStyle.py:172
+#: .tmp/ui_scrStyle.py:239
+msgid "Icons"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:242
+msgid "Oxygen - The official icon set of KDE"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:243
+msgid "Milky - The official icon set of Pardus"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:245
 msgid "Desktop Type"
 msgstr "Masaüstü Tipi"
 
-#: .tmp/ui_scrStyle.py:173
+#: .tmp/ui_scrStyle.py:246
 msgid "Desktop view (KDE4 Style)"
 msgstr "Masaüstü görünümü (KDE4 Stili)"
 
-#: .tmp/ui_scrStyle.py:174
+#: .tmp/ui_scrStyle.py:247
 msgid "Folder view (KDE3 Style)"
 msgstr "Klasör görünümü (KDE3 Stili)"
 
-#: .tmp/ui_scrStyle.py:175
+#: .tmp/ui_scrStyle.py:248
 msgid "Number of Desktops"
 msgstr "Masaüstü Sayısı"
 
-#: .tmp/ui_scrStyleItem.py:70
+#: .tmp/ui_scrStyleItem.py:71
 msgid "styleName"
 msgstr "biçemİsmi"
 
-#: .tmp/ui_scrStyleItem.py:71
+#: .tmp/ui_scrStyleItem.py:72
 msgid "styleDesc"
 msgstr "biçemAçıklaması"
 
@@ -353,25 +365,25 @@ msgstr "Pardus nedir?"
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
 msgstr "<b>Pardus</b> güvenilir, hızlı ve kullanıcı dostu bir işletim sistemidir. <br /><br />Pardus ile Internet'e bağlanabilir, e-postalarınızı okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha fazlasını yapabilirsiniz!<br /><br /><b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve kolayca kişiselleştirmenize yardımcı olan bir uygulamadır. Lütfen başlamak için <b>İleri</b>'ye tıklayın."
 
-#: .tmp/ui_wallpaperItem.py:73
+#: .tmp/ui_wallpaperItem.py:74
 msgid "wallPaperName"
 msgstr "duvarkağıdıİsmi"
 
-#: .tmp/ui_wallpaperItem.py:74
+#: .tmp/ui_wallpaperItem.py:75
 msgid "wallpaperDesc"
 msgstr "duvarkağıdıAçıklaması"
 
-#~ msgid "Migration Wizard"
-#~ msgstr "Göç Sihirbazı"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
-
-#~ msgid "Network"
-#~ msgstr "Ağ"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
 
 #~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
 #~ msgstr "Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu işaretleyip Internet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip şifrenizi girmeyi unutmayın."
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
+#~ msgid "Network"
+#~ msgstr "Ağ"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Göç Sihirbazı"
