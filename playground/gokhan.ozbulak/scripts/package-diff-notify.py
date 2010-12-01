@@ -8,21 +8,32 @@ import lzma
 import urllib2
 import piksemel
 import pisi
+import smtplib
+from email.mime.text import MIMEText
 
 ''' URLs of Repositories  '''
 repoList = {"http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2",
             "http://svn.pardus.org.tr/pardus/2011/devel/pisi-index.xml.bz2",
             "http://svn.pardus.org.tr/pardus/corporate2/devel/pisi-index.xml.bz2"}
 
-''' Ordered list of distributions  that are iterated '''
-''' It will be used to specify which distribution the repos entry such as #package, #patch is for  '''
-distroList = []
 
 ''' Details about packages  '''
-''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_name,packager_mail]]},..} '''
+''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
 repos = {}
 
 options = {"uc":False, "nm":False, "r":False, "sc":False}
+
+''' This stores packager list maintaining same package in different distributions  '''
+conflictList=[]
+
+''' Modify here if necessary '''
+reportFile = "report"
+contentHeader = "Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t***PACKAGES***"
+contentFooter = "You are getting this e-mail because you have packages in our repositories. If you think you shouldn't receive this e-mail please contact with ..."
+mailSender = "gozbulak@pardus.org.tr"
+mailSenderPwd = "type_pwd_here"
+mailSubject = "Package Summary"
+mailServer = "mail.pardus.org.tr"
 
 def printHelp(detail=False, retVal=-1):
     print "This is a notifier script. Usage:"
@@ -70,10 +81,12 @@ def processCmdLine():
             ''' In cache, only .bz2 and .xz files are considered for now  '''
             for root, dirs, files in os.walk(os.getcwd()):
                 for name in files:
-                    if name.endswith(".bz2") or name.endswith(".xz")
+                    if name.endswith(".bz2") or name.endswith(".xz"):
                         repoListTemp.append(name)
-        repoList = []
-        repoList.extend(repoListTemp)
+                        print repoListTemp
+        elif repoListTemp:
+            repoList = []
+            repoList.extend(repoListTemp)
 
 ''' This function checks if the package given as parameter is in the conflict list '''
 def isPackageInConflictList(currentPackage):
@@ -85,6 +98,9 @@ def isPackageInConflictList(currentPackage):
 
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
+    ''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
+    distroList = []
+
     pisiIndex = pisi.index.Index()
     for order, repo in enumerate(repoList):
         if options["uc"]:
@@ -112,21 +128,76 @@ def fetchRepos():
                 repos[spec.source.packager.name] = {}
             if not repos[spec.source.packager.name].has_key(spec.source.name):
                 repos[spec.source.packager.name][spec.source.name] = [[], [], [], [], []]
+            else:
+                repos[spec.source.packager.name][spec.source.name][4].append()
 
             repos[spec.source.packager.name][spec.source.name][0].append([spec.history[0].release, spec.history[0].version])
             repos[spec.source.packager.name][spec.source.name][1].append(len(spec.packages))
             repos[spec.source.packager.name][spec.source.name][2].append(len(spec.source.patches))
             repos[spec.source.packager.name][spec.source.name][3].append(distroList[order])
-            repos[spec.source.packager.name][spec.source.name][4].append(spec.source.packager.email)
+            if not spec.source.packager.mail in repos[spec.source.packager.name][spec.source.name][4]:
+                repos[spec.source.packager.name][spec.source.name][4].append(spec.source.packager.email)
 
             ''' We may have multiple packagers as owner of the same package residing on different repositories '''
             ''' In that case, we need to mark the package as conflict and be aware of it while sending mail to the packager '''
             if not isPackageInConflictList(spec.source.name):
                 conflictList.append(spec.source.name)
 
-''' This function analyzes "repos" structure and send e-mail to the packagers if their package(s) are out-of-sync between different repositories '''
-def analyzeRepos():
-    # Analze repos structure and send e-mail if necessary
+''' This function returns a string including status info about all packages of a packager  '''
+def prepareContentBody(packager):
+    # THIS IS GONNA CHANGE
+    content = ""
+    for packager in repos.keys():
+        for package in repos[packager].keys():
+            content = "%s\n (%s-%s) -> %s" %(content, packager, package, repos[packager][package])
+
+    return content,repos[packager][package][4][0]
+
+''' This function gathers all e-mail addresses a packager specifies in his/her packages '''
+def prepareRecevierMailList(packager):
+    mailList = []
+
+    for package in repos[packager].key():
+        for mail in repos[packager][package][4]:
+            if not mail in mailList:
+                mailList.append(mail)
+
+    return ",".join(mailList)
+
+''' This function sends mail to the recipient whose details are passed  '''
+def sendMail(receiver, contentBody):
+    msg = MIMEText("%s\n%s\n%s" % (contentHeader, contentBody.encode("utf-8"), contentFooter))
+    ''' Envelope Information, just to show the e-mail correctly in recipient inbox and not to be marked as spam '''
+    msg["Subject"] = mailSubject
+    msg["From"] = mailSender
+    msg["To"] = receiver
+
+    try:
+        if receiver == "gozbulak@pardus.org.tr":
+            smtp = smtplib.SMTP(mailServer)
+            smtp.ehlo()
+            smtp.starttls()
+            smtp.ehlo()
+            smtp.login(mailSender, mailSenderPwd)
+            smtp.sendmail(mailSender, receiver, msg.as_string())
+            smtp.quit()
+    except Exception:
+        return -1
+
+''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
+def traverseRepos():
+    ''' Open report file if report option is set  '''
+    if options["r"]:
+        fp = open(reportFile, "w")
+    for packager in repos.keys():
+        contentBody = prepareContentBody(packager)
+
+        if not options["nm"]:
+            receiverMailList = prepareReceiverMailList(packager)
+            if sendMail(receiverMailList, contentBody):
+                print "Send mail to %s failed." % mailReceiver
+        if options["r"]:
+            fp.write(contentBody)
 
 if __name__ == "__main__":
 
@@ -134,4 +205,4 @@ if __name__ == "__main__":
         processCmdLine()
 
     fetchRepos()
-    analyzeRepos()
+    traverseRepos()
