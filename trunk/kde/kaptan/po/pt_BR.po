@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-21 10:32+0300\n"
+"POT-Creation-Date: 2010-12-02 01:21+0200\n"
 "PO-Revision-Date: 2010-05-15 23:37-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -51,8 +51,8 @@ msgstr "Finalizar"
 msgid "Apply Settings"
 msgstr "Aplicar Configurações"
 
-#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
-#: .tmp/ui_wallpaperItem.py:72
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:70
+#: .tmp/ui_wallpaperItem.py:73
 msgid "Form"
 msgstr "Form"
 
@@ -85,7 +85,7 @@ msgstr "Mais"
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>Suas opções foram aplicadas.</b> Agora você pode começar a usar o Pardus ou você pode checar os seguintes atalhos e aplicativos para mais opções ou para ajuda e suporte. Não esqueça de <b>se juntar a comunidade!</b>"
 
-#: .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrSmolt.py:155
+#: .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrSmolt.py:156
 msgid "My Smolt Page"
 msgstr "Minha Página do Smolt"
 
@@ -146,75 +146,75 @@ msgstr "Menu Lancelot"
 msgid "Sample"
 msgstr "Exemplo"
 
-#: .tmp/ui_scrMouse.py:202
+#: .tmp/ui_scrMouse.py:203
 msgid "Mouse"
 msgstr "Mouse"
 
-#: .tmp/ui_scrMouse.py:203
+#: .tmp/ui_scrMouse.py:204
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
 msgstr "O <b>comportamento de clique</b> define quantas vezes você quer clicar quando quiser abrir um arquivo. Se você é <b>canhoto</b>, você pode preferir inverter os botões esquerdo e direito do seu dispositivo de cursor."
 
-#: .tmp/ui_scrMouse.py:204
+#: .tmp/ui_scrMouse.py:205
 msgid "Clicking Behaviour"
 msgstr "Comportamento de Clique"
 
-#: .tmp/ui_scrMouse.py:205
+#: .tmp/ui_scrMouse.py:206
 msgid "Single-click to open files and folders"
 msgstr "Clique único para abrir arquivos e pastas"
 
-#: .tmp/ui_scrMouse.py:206
+#: .tmp/ui_scrMouse.py:207
 msgid "Dou&ble-click to open files and folders"
 msgstr "Clique &duplo para abrir arquivos e pastas"
 
-#: .tmp/ui_scrMouse.py:207
+#: .tmp/ui_scrMouse.py:208
 msgid "Button Order"
 msgstr "Ordem dos Butões"
 
-#: .tmp/ui_scrMouse.py:208
+#: .tmp/ui_scrMouse.py:209
 msgid "Right Hand"
 msgstr "Destro"
 
-#: .tmp/ui_scrMouse.py:209
+#: .tmp/ui_scrMouse.py:210
 msgid "Left Hand"
 msgstr "Canhoto"
 
-#: .tmp/ui_scrMouse.py:210
+#: .tmp/ui_scrMouse.py:211
 msgid "Reverse scrolling"
 msgstr "Scroll invertido"
 
-#: .tmp/ui_scrPackage.py:190
+#: .tmp/ui_scrPackage.py:191
 msgid "Packages"
 msgstr "Pacotes"
 
-#: .tmp/ui_scrPackage.py:191
+#: .tmp/ui_scrPackage.py:192
 msgid "Show updates in the system tray"
 msgstr "Exibis as atualizações no ícone da bandeja do sistema"
 
-#: .tmp/ui_scrPackage.py:192
+#: .tmp/ui_scrPackage.py:193
 msgid "Check updates automatically every"
 msgstr "Procurar por atualizações automaticamente a cada"
 
-#: .tmp/ui_scrPackage.py:193
+#: .tmp/ui_scrPackage.py:194
 msgid " hours"
 msgstr " horas"
 
-#: .tmp/ui_scrPackage.py:194
+#: .tmp/ui_scrPackage.py:195
 msgid "Contrib repository includes extra and handy programs."
 msgstr "Repositório de Contribuições inclui programas úteis e extras."
 
-#: .tmp/ui_scrPackage.py:195
+#: .tmp/ui_scrPackage.py:196
 msgid "Add contrib repository"
 msgstr "Adicionar repositório de contribuições"
 
-#: .tmp/ui_scrPackage.py:196
+#: .tmp/ui_scrPackage.py:197
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
 msgstr "Para instalar e remover programas no Pardus, use o Gerenciador de Pacote. O Gerenciador de Pacote também pode instalar as últimas atualizações disponíveis automaticamente. Você pode configurar o período para checar por novas atualizações."
 
-#: .tmp/ui_scrPackage.py:197
+#: .tmp/ui_scrPackage.py:198
 msgid "Updates"
 msgstr "Atualizações"
 
-#: .tmp/ui_scrPackage.py:198
+#: .tmp/ui_scrPackage.py:199
 msgid "Repositories"
 msgstr "Repositórios"
 
@@ -235,23 +235,23 @@ msgstr "Permitir que o Strigi indexe os seus arquivos"
 msgid "Search Options"
 msgstr "Configurações de Busca"
 
-#: .tmp/ui_scrSmolt.py:153
+#: .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
 msgstr "Smolt"
 
-#: .tmp/ui_scrSmolt.py:154
+#: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> é uma ferramenta que coleta a informação nas seguintes tabelas e as enviam para nós as quais permitem que melhoremos o Pardus de acordo com as estatísticas do perfil do usuário."
 
-#: .tmp/ui_scrSmolt.py:156
+#: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
 msgstr "&Enviar meu perfil"
 
-#: .tmp/ui_scrSmolt.py:157
+#: .tmp/ui_scrSmolt.py:158
 msgid "&Privacy policy"
 msgstr "&Política de Privacidade"
 
-#: .tmp/ui_scrSmolt.py:158
+#: .tmp/ui_scrSmolt.py:159
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -274,40 +274,52 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" font-size:9pt;\">  Na instalação do smolt do Pardus todo o tráfego de rede vai para o servidor de proxy primário. Este é o único local onde os endereços de IP estarão sendo logados e eles dão mantidos nesse servidor por um período de 4 semanas até o horário da rotação do log remover esses logs. O Projeto Pardus não agrega endereços de IP à base de dados do smolt. Esses logs são privados e não estarão disponíveis para o público em geral.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Usuários não contentes com esta política deveriam simplesmente não usar o smolt. Usuários com questões sobre essa política deveriam contactar o Time de InfraEstrutura do Pardus em admin [arroba] pardus.org.tr . Também lembramos que os usuários podem deletar os seus perfis a qualquer momento usando \"</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">\"</span></p></body></html>"
 
-#: .tmp/ui_scrStyle.py:169
+#: .tmp/ui_scrStyle.py:236
 msgid "Themes"
 msgstr "Temas"
 
-#: .tmp/ui_scrStyle.py:170
+#: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
 msgstr "Selecione seu tema favorito e o tipo de área de trabalho. Personalize o Pardus com estilos e temas coloridos"
 
-#: .tmp/ui_scrStyle.py:171
+#: .tmp/ui_scrStyle.py:238
 #, fuzzy
 msgid "KDE Themes"
 msgstr "Temas"
 
-#: .tmp/ui_scrStyle.py:172
+#: .tmp/ui_scrStyle.py:239
+msgid "Icons"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:242
+msgid "Oxygen - The official icon set of KDE"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:243
+msgid "Milky - The official icon set of Pardus"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:245
 msgid "Desktop Type"
 msgstr "Tipo da Área de Trabalho"
 
-#: .tmp/ui_scrStyle.py:173
+#: .tmp/ui_scrStyle.py:246
 msgid "Desktop view (KDE4 Style)"
 msgstr "Vista da Área de Trabalho (Estilo KDE4)"
 
-#: .tmp/ui_scrStyle.py:174
+#: .tmp/ui_scrStyle.py:247
 msgid "Folder view (KDE3 Style)"
 msgstr "Vista de Pasta (Estilo KDE3)"
 
-#: .tmp/ui_scrStyle.py:175
+#: .tmp/ui_scrStyle.py:248
 msgid "Number of Desktops"
 msgstr "Número de Áreas de Trabalho"
 
-#: .tmp/ui_scrStyleItem.py:70
+#: .tmp/ui_scrStyleItem.py:71
 msgid "styleName"
 msgstr "styleName"
 
-#: .tmp/ui_scrStyleItem.py:71
+#: .tmp/ui_scrStyleItem.py:72
 msgid "styleDesc"
 msgstr "styleDesc"
 
@@ -356,315 +368,315 @@ msgstr ""
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
 msgstr "<b>Pardus</b> é um sustema operacional confiável, segura, rápido e fácil de usar. <br /><br />Com o Pardus, você pode se conectar à Internet, ler o seus emails, trabalhar com documentos de escritório, assistir a filmes, tocar músicas, desenvolver aplicativos, jogar jogos e muito mais! <br /><br />O <b>Kaptan</b> ajudará você a personalizar a sua área de trabalho do Pardus de forma rápida e fácil. Por favor clique em <b>Próximo</b> para iniciar."
 
-#: .tmp/ui_wallpaperItem.py:73
+#: .tmp/ui_wallpaperItem.py:74
 msgid "wallPaperName"
 msgstr "wallPaperName"
 
-#: .tmp/ui_wallpaperItem.py:74
+#: .tmp/ui_wallpaperItem.py:75
 msgid "wallpaperDesc"
 msgstr "wallpaperDesc"
 
-#~ msgid "Migration Wizard"
-#~ msgstr "Assistente de Migração"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Um assistente para transferir arquivos e configurações dos sistemas operacionais existentes (ex. Windows) para o Pardus."
-
-#~ msgid "Network"
-#~ msgstr "Rede"
-
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Para criar uma nova conexão clique em <b>Criar Perfil</b> e você seleciona o seu adaptador pela lista. Se a sua conexão é uma rede sem fio então escolha o ponto de acesso. Depois de salvar o seu perfil, clique no quadro de seleção para estabelecer a conexão."
-
-#~ msgid "Kaptan Desktop"
-#~ msgstr "Área de Trabalho do Kaptan"
-
 #, fuzzy
-#~ msgid "Welcome to Kaptan 2009.2"
-#~ msgstr "Bem Vindo ao Kaptan"
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Bem Vindo ao Pardus 2009.2"
 
-#~ msgid "Insert some catchy title about keyboards.."
-#~ msgstr "Inserir um título cativante sobre teclados.."
+#~ msgid "Congratulations!"
+#~ msgstr "Parabéns!"
 
-#~ msgid "Select your keyboard layout"
-#~ msgstr "Selecionar o layout do seu teclado"
+#~ msgid "Keyboard Layout Language"
+#~ msgstr "Língua do Layout do Teclado"
 
-#~ msgid "Some catchy title about styles"
-#~ msgstr "Algum título cativante sobre estilos"
+#~ msgid "Choose a Menu Style"
+#~ msgstr "Selecionar um Estilo de Menu"
 
-#~ msgid "Some catchy description about styles"
-#~ msgstr "Algum descrição cativante sobre estilos"
+#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+#~ msgstr "O menu Kick-Off é o menu padrão do Pardus.<br><br>Os atalhos dos programas são facilmente acessados e bem organizados."
 
-#~ msgid "Configure your mouse"
-#~ msgstr "Configure o seu mouse"
+#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+#~ msgstr "O menu Simples é o estilo de menu antigo do KDE 3.<br><br>Ele é um menu bem leve e por isso é recomendado para computadores mais lentos."
 
-#~ msgid "Network Manager"
-#~ msgstr "Gerenciador de Rede"
+#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+#~ msgstr "O Lancelot é um menu avançado e altamente customizável para o Pardus.<br><br>Os atalhos dos programas são facilmente acessados e bem organizados."
 
-#~ msgid "Package Manager"
-#~ msgstr "Gerenciador de Pacote"
+#~ msgid "Setup Mouse Behavior"
+#~ msgstr "Configurar Comportamento de Mouse"
 
-#~ msgid "Configure package manager settings"
-#~ msgstr "Configure as opções do gerenciador de pacote"
+#~ msgid "Left Handed"
+#~ msgstr "Canhoto"
 
-#~ msgid "Some catchy title about desktop search"
-#~ msgstr "Algum título cativante sobre a busca na área de trabalho"
+#~ msgid "Right Handed"
+#~ msgstr "Destro"
 
-#~ msgid "Some catchy description desktop search"
-#~ msgstr "Alguma descrição cativante sobre a busca na área de trabalho"
+#~ msgid "Double Click"
+#~ msgstr "Clique Duplo"
 
-#~ msgid "Smolt Description"
-#~ msgstr "Descrição do Smolt"
+#~ msgid "Single Click "
+#~ msgstr "Clique Simples"
 
-#~ msgid "Insert some catchy title about wallpapers.."
-#~ msgstr "Inserir algum título cativante sobre papéis de parede.."
+#~ msgid "Connect to the Internet"
+#~ msgstr "Conectar com a Internet"
 
-#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
-#~ msgstr "Maravilhosos, maneiros, ótimos papéis de parede! \\m/"
+#~ msgid "Install / Remove Programs"
+#~ msgstr "Instalar / Remover Programas"
 
-#~ msgid ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Fácil Busca na Área de Trabalho"
 
-#~ msgid "Menu Styles"
-#~ msgstr "Estilos de Menu"
+#~ msgid "On"
+#~ msgstr "Ligado"
 
-#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
-#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
+#~ msgid "Off"
+#~ msgstr "Desligado"
 
-#~ msgid ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
+#~ msgid "Help Pardus Improve!"
+#~ msgstr "Ajude a Melhorar o Pardus"
 
-#~ msgid ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
-#~ msgstr ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
+#~ msgid "Label"
+#~ msgstr "Etiqueta"
 
-#~ msgid ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
-#~ msgstr ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+#~ msgid "Data"
+#~ msgstr "Dados"
 
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "color: rgb(100, 36, 55);"
+#~ msgid "&Back"
+#~ msgstr "&Voltar"
 
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "color:rgb(95, 34, 52)"
+#~ msgid "UUID"
+#~ msgstr "UUID"
 
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "color: rgb(234, 225, 228);"
-
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "color: rgb(95, 34, 52);"
-
-#~ msgid "color: #642437;"
-#~ msgstr "color: #642437;"
-
-#~ msgid "Send my profile: <b>%s</b>"
-#~ msgstr "Enviar o meu perfil: <b>%s</b>"
-
-#~ msgid "Smolt Settings"
-#~ msgstr "Configurações do Smolt"
-
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Busca na área de trabalho: <b>%s</b>"
-
-#~ msgid "Selected Style: <b>%s</b>"
-#~ msgstr "Estilo selecionado: <b>%s</b>"
-
-#~ msgid "You haven't selected any style."
-#~ msgstr "Você não selecionou nenhum estilo."
-
-#~ msgid "Style Settings"
-#~ msgstr "Configurações de Estilo"
-
-#~ msgid "Selected Wallpaper: <b>%s</b>"
-#~ msgstr "Papel de Parede selecionado: <b>%s</b>"
-
-#~ msgid "You haven't selected any wallpaper."
-#~ msgstr "Você não selecionou nenhum papel de parede."
-
-#~ msgid "Wallpaper Settings"
-#~ msgstr "Configurações do Papel de Parede"
-
-#~ msgid "Selected Menu: <b>%s</b>"
-#~ msgstr "Menu selecionado: <b>%s</b>"
-
-#~ msgid "Menu Settings"
-#~ msgstr "Configurações do Menu"
-
-#~ msgid "Selected clicking behaviour: <b>%s</b>"
-#~ msgstr "Comportamento do clique selecionado: <b>%s</b>"
-
-#~ msgid "Selected Mouse configuration: <b>%s</b>"
-#~ msgstr "Configuração do mouse selecionada <b>%s</b>"
-
-#~ msgid "Mouse Settings"
-#~ msgstr "Configurações do Mouse"
-
-#~ msgid "Save Your Settings"
-#~ msgstr "Salvar Suas Configurações"
-
-#~ msgid "Customize Your Desktop"
-#~ msgstr "Personalize Sua Área de Trabalho"
-
-#~ msgid "No"
-#~ msgstr "Não"
-
-#~ msgid "Yes"
-#~ msgstr "Sim"
-
-#~ msgid "SELinux Enforce"
-#~ msgstr "SELinux Forçado"
-
-#~ msgid "SELinux Policy"
-#~ msgstr "Política do SELinux"
-
-#~ msgid "SELinux Enabled"
-#~ msgstr "SELinux Habilitado"
-
-#~ msgid "Kernel"
-#~ msgstr "Kernel"
-
-#~ msgid "Form Factor"
-#~ msgstr "Form Factor"
-
-#~ msgid "System"
-#~ msgstr "Sistema"
-
-#~ msgid "Vendor"
-#~ msgstr "Vendedor"
-
-#~ msgid "System Swap"
-#~ msgstr "Área de Troca (swap) do Sistema"
-
-#~ msgid "System Memory"
-#~ msgstr "Memória do Sistema"
-
-#~ msgid "CPU Speed"
-#~ msgstr "Velocidade do Processador"
-
-#~ msgid "Number of CPUs"
-#~ msgstr "Número de Processadores"
-
-#, fuzzy
-#~ msgid "CPU Model Num"
-#~ msgstr "Modelo do Processador"
-
-#~ msgid "CPU Model"
-#~ msgstr "Modelo do Processador"
-
-#~ msgid "CPU Vendor"
-#~ msgstr "Vendedor do Processador"
-
-#~ msgid "BogoMIPS"
-#~ msgstr "BogoMIPS"
-
-#~ msgid "Platform"
-#~ msgstr "Plataforma"
-
-#~ msgid "Language"
-#~ msgstr "Língua"
+#~ msgid "OS"
+#~ msgstr "SO"
 
 #, fuzzy
 #~ msgid "Default Run Level"
 #~ msgstr "Nível de execução padrão"
 
-#~ msgid "OS"
-#~ msgstr "SO"
+#~ msgid "Language"
+#~ msgstr "Língua"
 
-#~ msgid "UUID"
-#~ msgstr "UUID"
+#~ msgid "Platform"
+#~ msgstr "Plataforma"
 
-#~ msgid "&Back"
-#~ msgstr "&Voltar"
+#~ msgid "BogoMIPS"
+#~ msgstr "BogoMIPS"
 
-#~ msgid "Data"
-#~ msgstr "Dados"
+#~ msgid "CPU Vendor"
+#~ msgstr "Vendedor do Processador"
 
-#~ msgid "Label"
-#~ msgstr "Etiqueta"
-
-#~ msgid "Help Pardus Improve!"
-#~ msgstr "Ajude a Melhorar o Pardus"
-
-#~ msgid "Off"
-#~ msgstr "Desligado"
-
-#~ msgid "On"
-#~ msgstr "Ligado"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Fácil Busca na Área de Trabalho"
-
-#~ msgid "Install / Remove Programs"
-#~ msgstr "Instalar / Remover Programas"
-
-#~ msgid "Connect to the Internet"
-#~ msgstr "Conectar com a Internet"
-
-#~ msgid "Single Click "
-#~ msgstr "Clique Simples"
-
-#~ msgid "Double Click"
-#~ msgstr "Clique Duplo"
-
-#~ msgid "Right Handed"
-#~ msgstr "Destro"
-
-#~ msgid "Left Handed"
-#~ msgstr "Canhoto"
-
-#~ msgid "Setup Mouse Behavior"
-#~ msgstr "Configurar Comportamento de Mouse"
-
-#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "O Lancelot é um menu avançado e altamente customizável para o Pardus.<br><br>Os atalhos dos programas são facilmente acessados e bem organizados."
-
-#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-#~ msgstr "O menu Simples é o estilo de menu antigo do KDE 3.<br><br>Ele é um menu bem leve e por isso é recomendado para computadores mais lentos."
-
-#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "O menu Kick-Off é o menu padrão do Pardus.<br><br>Os atalhos dos programas são facilmente acessados e bem organizados."
-
-#~ msgid "Choose a Menu Style"
-#~ msgstr "Selecionar um Estilo de Menu"
-
-#~ msgid "Keyboard Layout Language"
-#~ msgstr "Língua do Layout do Teclado"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Parabéns!"
+#~ msgid "CPU Model"
+#~ msgstr "Modelo do Processador"
 
 #, fuzzy
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Bem Vindo ao Pardus 2009.2"
+#~ msgid "CPU Model Num"
+#~ msgstr "Modelo do Processador"
+
+#~ msgid "Number of CPUs"
+#~ msgstr "Número de Processadores"
+
+#~ msgid "CPU Speed"
+#~ msgstr "Velocidade do Processador"
+
+#~ msgid "System Memory"
+#~ msgstr "Memória do Sistema"
+
+#~ msgid "System Swap"
+#~ msgstr "Área de Troca (swap) do Sistema"
+
+#~ msgid "Vendor"
+#~ msgstr "Vendedor"
+
+#~ msgid "System"
+#~ msgstr "Sistema"
+
+#~ msgid "Form Factor"
+#~ msgstr "Form Factor"
+
+#~ msgid "Kernel"
+#~ msgstr "Kernel"
+
+#~ msgid "SELinux Enabled"
+#~ msgstr "SELinux Habilitado"
+
+#~ msgid "SELinux Policy"
+#~ msgstr "Política do SELinux"
+
+#~ msgid "SELinux Enforce"
+#~ msgstr "SELinux Forçado"
+
+#~ msgid "Yes"
+#~ msgstr "Sim"
+
+#~ msgid "No"
+#~ msgstr "Não"
+
+#~ msgid "Customize Your Desktop"
+#~ msgstr "Personalize Sua Área de Trabalho"
+
+#~ msgid "Save Your Settings"
+#~ msgstr "Salvar Suas Configurações"
+
+#~ msgid "Mouse Settings"
+#~ msgstr "Configurações do Mouse"
+
+#~ msgid "Selected Mouse configuration: <b>%s</b>"
+#~ msgstr "Configuração do mouse selecionada <b>%s</b>"
+
+#~ msgid "Selected clicking behaviour: <b>%s</b>"
+#~ msgstr "Comportamento do clique selecionado: <b>%s</b>"
+
+#~ msgid "Menu Settings"
+#~ msgstr "Configurações do Menu"
+
+#~ msgid "Selected Menu: <b>%s</b>"
+#~ msgstr "Menu selecionado: <b>%s</b>"
+
+#~ msgid "Wallpaper Settings"
+#~ msgstr "Configurações do Papel de Parede"
+
+#~ msgid "You haven't selected any wallpaper."
+#~ msgstr "Você não selecionou nenhum papel de parede."
+
+#~ msgid "Selected Wallpaper: <b>%s</b>"
+#~ msgstr "Papel de Parede selecionado: <b>%s</b>"
+
+#~ msgid "Style Settings"
+#~ msgstr "Configurações de Estilo"
+
+#~ msgid "You haven't selected any style."
+#~ msgstr "Você não selecionou nenhum estilo."
+
+#~ msgid "Selected Style: <b>%s</b>"
+#~ msgstr "Estilo selecionado: <b>%s</b>"
+
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Busca na área de trabalho: <b>%s</b>"
+
+#~ msgid "Smolt Settings"
+#~ msgstr "Configurações do Smolt"
+
+#~ msgid "Send my profile: <b>%s</b>"
+#~ msgstr "Enviar o meu perfil: <b>%s</b>"
+
+#~ msgid "color: #642437;"
+#~ msgstr "color: #642437;"
+
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "color: rgb(95, 34, 52);"
+
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "color: rgb(234, 225, 228);"
+
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "color:rgb(95, 34, 52)"
+
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "color: rgb(100, 36, 55);"
+
+#~ msgid ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+#~ msgstr ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+
+#~ msgid ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+#~ msgstr ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+
+#~ msgid ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+
+#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
+#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
+
+#~ msgid "Menu Styles"
+#~ msgstr "Estilos de Menu"
+
+#~ msgid ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+
+#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
+#~ msgstr "Maravilhosos, maneiros, ótimos papéis de parede! \\m/"
+
+#~ msgid "Insert some catchy title about wallpapers.."
+#~ msgstr "Inserir algum título cativante sobre papéis de parede.."
+
+#~ msgid "Smolt Description"
+#~ msgstr "Descrição do Smolt"
+
+#~ msgid "Some catchy description desktop search"
+#~ msgstr "Alguma descrição cativante sobre a busca na área de trabalho"
+
+#~ msgid "Some catchy title about desktop search"
+#~ msgstr "Algum título cativante sobre a busca na área de trabalho"
+
+#~ msgid "Configure package manager settings"
+#~ msgstr "Configure as opções do gerenciador de pacote"
+
+#~ msgid "Package Manager"
+#~ msgstr "Gerenciador de Pacote"
+
+#~ msgid "Network Manager"
+#~ msgstr "Gerenciador de Rede"
+
+#~ msgid "Configure your mouse"
+#~ msgstr "Configure o seu mouse"
+
+#~ msgid "Some catchy description about styles"
+#~ msgstr "Algum descrição cativante sobre estilos"
+
+#~ msgid "Some catchy title about styles"
+#~ msgstr "Algum título cativante sobre estilos"
+
+#~ msgid "Select your keyboard layout"
+#~ msgstr "Selecionar o layout do seu teclado"
+
+#~ msgid "Insert some catchy title about keyboards.."
+#~ msgstr "Inserir um título cativante sobre teclados.."
+
+#, fuzzy
+#~ msgid "Welcome to Kaptan 2009.2"
+#~ msgstr "Bem Vindo ao Kaptan"
+
+#~ msgid "Kaptan Desktop"
+#~ msgstr "Área de Trabalho do Kaptan"
+
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Para criar uma nova conexão clique em <b>Criar Perfil</b> e você seleciona o seu adaptador pela lista. Se a sua conexão é uma rede sem fio então escolha o ponto de acesso. Depois de salvar o seu perfil, clique no quadro de seleção para estabelecer a conexão."
+
+#~ msgid "Network"
+#~ msgstr "Rede"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Um assistente para transferir arquivos e configurações dos sistemas operacionais existentes (ex. Windows) para o Pardus."
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Assistente de Migração"

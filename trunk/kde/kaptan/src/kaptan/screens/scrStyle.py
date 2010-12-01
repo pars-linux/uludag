@@ -27,6 +27,9 @@ from ConfigParser import ConfigParser
 class Widget(QtGui.QWidget, Screen):
     screenSettings = {}
     screenSettings["hasChanged"] = False
+    screenSettings["iconChanged"] = False
+    screenSettings["iconTheme"] = ""
+    screenSettings["styleChanged"] = False
     screenSettings["hasChangedDesktopType"] = False
     screenSettings["hasChangedDesktopNumber"] = False
 
@@ -68,7 +71,11 @@ class Widget(QtGui.QWidget, Screen):
                 widgetStyle = unicode(parser.get_locale('Style', 'widgetStyle', ''))
                 desktopTheme = unicode(parser.get_locale('Style', 'desktopTheme', ''))
                 colorScheme = unicode(parser.get_locale('Style', 'colorScheme', ''))
-                iconTheme = unicode(parser.get_locale('Style', 'iconTheme', ''))
+
+                self.iconTheme =  unicode(self.ui.listIcon.selectedItems()[0].text())
+                self.iconTheme = str(self.iconTheme.split()[0]).lower()
+                self.__class__.screenSettings["iconTheme"] = self.iconTheme
+
                 windowDecoration = unicode(parser.get_locale('Style', 'windowDecoration', ''))
                 styleThumb = unicode(os.path.join("/usr/share/kde4/apps/kaptan/kaptan/kde-themes/",  parser.get_locale('Style', 'thumbnail','')))
 
@@ -94,7 +101,7 @@ class Widget(QtGui.QWidget, Screen):
                         "widgetStyle": widgetStyle, 
                         "colorScheme": colorDict, 
                         "desktopTheme": desktopTheme, 
-                        "iconTheme": iconTheme, 
+                        "iconTheme": self.iconTheme, 
                         "windowDecoration": windowDecoration, 
                         "panelPosition": panelPosition
                         }
@@ -108,6 +115,7 @@ class Widget(QtGui.QWidget, Screen):
                 print "Warning! Invalid syntax in ", desktopFiles
 
         self.ui.listStyles.connect(self.ui.listStyles, SIGNAL("itemSelectionChanged()"), self.setStyle)
+        self.ui.listIcon.connect(self.ui.listIcon, SIGNAL("itemClicked(QListWidgetItem *)"), self.setIcon)
         self.ui.comboBoxDesktopType.connect(self.ui.comboBoxDesktopType, SIGNAL("activated(const QString &)"), self.setDesktopType)
         self.ui.spinBoxDesktopNumbers.connect(self.ui.spinBoxDesktopNumbers, SIGNAL("valueChanged(const QString &)"), self.addDesktop)
         #self.ui.previewButton.connect(self.ui.previewButton, SIGNAL("clicked()"), self.previewStyle)
@@ -143,9 +151,21 @@ class Widget(QtGui.QWidget, Screen):
         styleName =  str(self.ui.listStyles.currentItem().statusTip())
         self.__class__.screenSettings["summaryMessage"] = unicode(styleName)
         self.__class__.screenSettings["hasChanged"] = True
+        self.__class__.screenSettings["styleChanged"] = True
 
         self.__class__.screenSettings["styleDetails"] = self.styleDetails
         self.__class__.screenSettings["styleName"] = styleName
+
+    def setIcon(self):
+        print "icon item pressed"
+        self.__class__.screenSettings["hasChanged"] = True
+        self.iconTheme =  unicode(self.ui.listIcon.selectedItems()[0].text())
+        self.iconTheme = str(self.iconTheme.split()[0]).lower()
+
+        self.__class__.screenSettings["iconTheme"] = self.iconTheme
+        self.__class__.screenSettings["summaryMessage"] = unicode(self.iconTheme)
+        self.__class__.screenSettings["iconChanged"] = True
+
 
     def shown(self):
         pass
