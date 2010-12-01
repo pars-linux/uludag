@@ -5,7 +5,7 @@ import os
 from distutils.core import setup
 
 setup(name='ahenk-setup',
-      version='1.9.9',
+      version='1.9.20',
       description='Setup tools for for Ahenk Remote Management Framework',
       author='Bahadır Kandemir',
       author_email='bahadir@python.net',
