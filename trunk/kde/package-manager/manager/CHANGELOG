@@ -1,0 +1,394 @@
+2010-11-29 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 92% (Klemens Häckel)
+         * New status: 182 messages complete with 1 fuzzy and 13 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 89% (Klemens Häckel)
+         * New status: 176 messages complete with 6 fuzzies and 14 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 89% (Klemens Häckel)
+         * New status: 175 messages complete with 6 fuzzies and 15 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-26 gokmen.goksel
+         * - Set minimum size
+         * Bug fixed at http://bugs.pardus.org.tr/15352
+
+2010-11-24 gokmen.goksel
+         * Paranoia 
+
+2010-11-24 gokmen.goksel
+         * Fix updating repo progress, thanks to Hakan. 
+
+2010-11-24 gokmen.goksel
+         * Fix network check 
+
+2010-11-22 gokmen.goksel
+         * Sync TODO with redmine 
+
+2010-11-21 transifex
+         * l10n: Updated German (de) translation to 97% (Stefan Wilhelm)
+         * New status: 192 messages complete with 0 fuzzies and 4 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-16 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-15 gokmen.goksel
+         * Use network_check where available in package-manager.. Thanks to urllib gods.. 
+
+2010-11-13 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-12 gokmen.goksel
+         * dont forget to import 
+
+2010-11-11 gokmen.goksel
+         * Use pds.thread 
+
+2010-11-11 gokmen.goksel
+         * Fix empty basket issues 
+
+2010-11-11 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-11 gokmen.goksel
+         * Icon, Po, UI updates ~ all cosmetic. 
+
+2010-11-11 gokmen.goksel
+         * Fix search in updates 
+
+2010-11-10 gokmen.goksel
+         * Fix memory leak, deleteLater is your friend. 
+
+2010-11-10 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 198 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 gokmen.goksel
+         * Fix default package repos 
+
+2010-11-09 gokmen.goksel
+         * Fix version string 
+
+2010-11-09 gokmen.goksel
+         * Fix settings dialog UI, kudos to ibrahim 
+
+2010-11-09 gokmen.goksel
+         * typo 
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 198 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 99% (Yasirov Vasiliy)
+         * New status: 197 messages complete with 1 fuzzy and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
+         * New status: 196 messages complete with 2 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
+         * New status: 195 messages complete with 3 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 95% (Yasirov Vasiliy)
+         * New status: 189 messages complete with 9 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 93% (Yasirov Vasiliy)
+         * New status: 186 messages complete with 12 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 91% (Yasirov Vasiliy)
+         * New status: 181 messages complete with 17 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 gokmen.goksel
+         * Check connection status before trying to get package details from AppInfo server 
+
+2010-11-08 gokmen.goksel
+         * Solid Networking check added
+         * Show proper message about updates
+         * Check for updates button added
+         * Just once update repo when user switched to updates
+         * After this user should click the check for updates button
+
+2010-11-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 197 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 gokmen.goksel
+         * fix state status, and css 
+
+2010-11-08 gokmen.goksel
+         * Clear basket option
+         * v 3.0 Beta \o/
+
+2010-11-08 gokmen.goksel
+         * Show busy indicator and basket popup button 
+
+2010-11-08 gokmen.goksel
+         * Qt Assistant: 'Warning: This function is only effective before the QApplication constructor is called.' 
+
+2010-11-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 gokmen.goksel
+         * Fix Message Boxes, update po 
+
+2010-11-08 gokmen.goksel
+         * If its already running dont do it :) 
+
+2010-11-07 gokmen.goksel
+         * Much better animation ;) 
+
+2010-11-07 gokmen.goksel
+         * Use raster default, it is faster.
+
+2010-11-05 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 gokmen.goksel
+         * Reinstall Package option
+         * (If already installed package selected to install, PM will ask you ! 5th.Nov.)
+         * Bug fixed at http://bugs.pardus.org.tr/8545
+
+2010-11-05 gokmen.goksel
+         * Show Package Files (if installed)
+         * Fix Sip issues
+         * Show Details
+         * Bug fixed at http://bugs.pardus.org.tr/1537
+         * Bug fixed at http://bugs.pardus.org.tr/14400
+         * Bug fixed at http://bugs.pardus.org.tr/14172
+         * Bug fixed at http://bugs.pardus.org.tr/13840
+         * Bug fixed at http://bugs.pardus.org.tr/13544
+         * These are duplicate..
+         * Bug fixed at http://bugs.pardus.org.tr/15004
+         * Bug fixed at http://bugs.pardus.org.tr/15021
+         * Bug fixed at http://bugs.pardus.org.tr/15024
+         * Bug fixed at http://bugs.pardus.org.tr/15043
+
+2010-11-05 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 gokmen.goksel
+         * Po update 
+
+2010-11-05 gokmen.goksel
+         * Show busy indicator while package details loading.. 
+
+2010-11-04 gokmen.goksel
+         * Make enough time to show notifications 
+
+2010-11-04 gokmen.goksel
+         * remove old stuff 
+
+2010-11-04 gokmen.goksel
+         * Search is now threaded. 
+
+2010-11-04 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 gokmen.goksel
+         * Threaded search support, not finished. 
+
+2010-11-04 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 gokmen.goksel
+         * Po update 
+
+2010-11-04 gokmen.goksel
+         * Show QProgressIndicator until pisi is ready 
+
+2010-11-04 gokmen.goksel
+         * make it small 
+
+2010-11-04 gokmen.goksel
+         * Much better layout change 
+
+2010-11-04 gokmen.goksel
+         * add re-install method 
+
+2010-11-04 gokmen.goksel
+         * Check package existence before starting the operation 
+
+2010-11-04 gokmen.goksel
+         * fix percentage 
+
+2010-11-04 gokmen.goksel
+         * Progress should look standalone while pm-install running 
+
+2010-11-04 gokmen.goksel
+         * Fix layout stretch 
+
+2010-11-03 gokmen.goksel
+         * just show mainwindow when there is a progress 
+
+2010-11-03 gokmen.goksel
+         * If there is summary to show, do not exit directly 
+
+2010-11-03 gokmen.goksel
+         * oldway of pm-install 
+
+2010-11-02 gokmen.goksel
+         * cosmetic 
+
+2010-11-02 gokmen.goksel
+         * Disable scrollbars, disable contextmenu, ui changes 
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-01 gokmen.goksel
+         * Hide history tab for now 
+
+2010-11-01 gokmen.goksel
+         * I love sip, a bit. 
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-26 gokmen.goksel
+         * make details dialog similar to basket dialog 
+
+2010-10-26 gokmen.goksel
+         * Add history tab for future release 
+
+2010-10-23 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-21 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-21 gokmen.goksel
+         * i forgot to add important_packages file 
+
+2010-10-21 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 gokmen.goksel
+         * paranoia 
+
+2010-10-20 gokmen.goksel
+         * Update package details page with given package information 
+
+2010-10-20 gokmen.goksel
+         * fix help document paths 
+
+2010-10-20 gokmen.goksel
+         * Po update, operation translation fixed 
+
+2010-10-20 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 gokmen.goksel
+         * Web UI for AppInfo is done. 
+
+2010-10-20 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 gokmen.goksel
+         * update appinfo db in repo update action 
+
+2010-10-20 gokmen.goksel
+         * Po update 
+
+2010-10-20 gokmen.goksel
+         * Integrate with AppInfo for score information, alpha3 release 
+
+2010-10-18 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-16 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-15 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-13 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 90% (Klemens Häckel)
+         * New status: 164 messages complete with 1 fuzzy and 17 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 87% (Klemens Häckel)
+         * New status: 160 messages complete with 5 fuzzies and 17 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 gokmen.goksel
+         * Add stars, stars everywhere, Luke I'm your father. 
+
+2010-10-12 gokmen.goksel
+         * Revert last for packagedelegate.py , we need this for selecting packages when descriptions toggled 
+
