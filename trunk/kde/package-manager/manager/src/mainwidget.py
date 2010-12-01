@@ -148,6 +148,9 @@ class MainWidget(QWidget, Ui_MainWidget):
             if self.groupList.count() == 0:
                 QTimer.singleShot(0, \
                 lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date"), icon = "games-endturn"))
+        if self.groupList.count() > 0:
+            if self.state.inUpgrade():
+                self.pdsMessageBox.hideMessage(force = True)
         restoreCursor()
 
     def initializeStatusUpdater(self):
