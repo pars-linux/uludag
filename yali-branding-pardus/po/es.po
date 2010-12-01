@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 12:03+0200\n"
+"POT-Creation-Date: 2010-12-01 22:39+0200\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -18,19 +18,16 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
-msgid "&lt;p&gt; Some help messages &lt;/p&gt;"
-msgstr "&lt;p&gt; Mensajes de Ayuda &lt;/p&gt;"
-
-#: ../release.xml.in.h:2
+#, fuzzy
 msgid ""
-"&lt;p&gt;A bootloader is a tiny program that runs when a computer is first "
-"powered up.It is responsible for loading the operating system into memory "
-"and then transferringthe control to it.&lt;/p&gt;&lt;p&gt;Pardus uses GRUB "
-"(GRand Unified Bootloader) as the default bootloader. GRUB allows youto boot "
-"any supported operating system by presenting the user with a menu.&lt;/p&gt;"
-"&lt;p&gt;The recommended way to use GRUB is to install it to the beginning "
-"of the boot disk.You can always choose another installation method if you "
-"know what you are doing.&lt;/p&gt;"
+"A bootloader is a tiny program that runs when a computer is first powered up."
+"It is responsible for loading the operating system into memory and then "
+"transferringthe control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand "
+"Unified Bootloader) as the default bootloader. GRUB allows youto boot any "
+"supported operating system by presenting the user with a menu.&lt;br&gt;&lt;"
+"br&gt;The recommended way to use GRUB is to install it to the beginning of "
+"the boot disk.You can always choose another installation method if you know "
+"what you are doing."
 msgstr ""
 "&lt;p&gt;Un cargador de arranque (bootloader) es un programa pequeño que se "
 "ejecuta al encender la computadra. Se encarga de transferir el sistema "
@@ -42,180 +39,7 @@ msgstr ""
 "Puede elegir otro método de instalación, si sabe lo que está haciendo.&lt;/"
 "p&gt;"
 
-#: ../release.xml.in.h:3
-msgid ""
-"&lt;p&gt;Date and time settings allows you to set the date and time of your "
-"computer. Generally,you will also want to specify a correct timezone for "
-"your location in order to benefit from automatic daylight saving time "
-"adjustments.&lt;/p&gt;&lt;p&gt;A timezone is a region of the earth that has "
-"uniform standard time, usually referred as thelocal time. By convention, "
-"timezones compute their local time as an offset from UTC, the Coordinated "
-"Universal Time.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;En la configuración de Fecha y hora se determina la fecha y hora de "
-"la computadora. Generalmente se determina además la zona horaria, lo que "
-"posibilita el ajuste automático de la hora, teniendo en cuenta al horario de "
-"verano e invierno.&lt;/p&gt;&lt;p&gt;Una zona horaria es una región de la "
-"tierra, donde rige la misma hora, generalmente denominado tiempo local. Por "
-"convencion se calcula la hora local como diferencia (retraso o adelanto) a "
-"la hora coordinada universal (UTC).&lt;/p&gt;"
-
-#: ../release.xml.in.h:4
-msgid ""
-"&lt;p&gt;Here you can see your install options before installation starts."
-"&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;Aqui puede ver las opciones de instalación antes de comenzar el "
-"proceso de instalación.&lt;/p&gt;"
-
-#: ../release.xml.in.h:5
-msgid ""
-"&lt;p&gt;In this screen, you can manually partition your disk. You can "
-"select existing partitions and resize or delete them. You can create new "
-"partition(s) in the empty parts, make Pardus use them for system files, "
-"users&apos; home directories, swap space or general use. The changes that "
-"you make will not be applied until you go on with the installation, which "
-"means you can revert if you make any unwanted changes or change your "
-"configuration.&lt;/p&gt;&lt;p&gt;Please refer to Pardus Installing and Using "
-"Guide for more informationabout disk partitioning.&lt;/font&gt;"
-msgstr ""
-"&lt;p&gt;Aqui puede particionar el disco manualmente. Puede seleccionar "
-"particiones existentes y redimensionar o eliminarlos. En partes libres puede "
-"crear nuevas particiones y asignarle en Pardus el uso para archivos del "
-"sistema, datos de usuarios (home), espacio de intercambio de memoria (swap), "
-"o almacenamiento en general. Los cambios cambios se aplicarán no antes de "
-"comenzar la instalación, lo que le da la posibilidad de deshacer o volver a "
-"establecer la configuración.&lt;/p&gt;&lt;p&gt;Por favor consulte la "
-"documentación de instalación por más información sobre particionamiento de "
-"discos.&lt;/font&gt;"
-
-#: ../release.xml.in.h:6
-msgid ""
-"&lt;p&gt;Pardus allows multiple users to share the same computer.You can "
-"assign management rights to the users you create; you can alsoconfigure "
-"permissions to users for various operations through User Manager.&lt;/p&gt;"
-"&lt;p&gt;To create a new user, fill in the form and press the &quot;Create "
-"User&quot; button.If you want a user to be automatically logged in to the "
-"system, select the user from the list; if you want to delete a user, select "
-"his/her username from the list and press &quot;Delete Selected User&quot;."
-"Proceed with the installation after you make your selections.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;Pardus permite que varios usuarios comparten la misma computadora. "
-"Puede asignar privilegios de administrador a los usuarios nuevos. En el "
-"Administrador de Usuarios puede establecer permisos para varias operaciones."
-"&lt;/p&gt;&lt;p&gt; Para crear un usuario complete el formulario y presione "
-"&quot;Crear usuario&quot;. Se desea que un usuario determinado se loguée "
-"automáticamente en el sistema puede seleccionarle de la lista. Si desea "
-"eliminar un usuario, puede seleccionarlo y presionar &quot;Eliminar usuario "
-"seleccionado&quot;. Proceda con la instalación luego de completar los datos."
-"&lt;/p&gt;"
-
-#: ../release.xml.in.h:7
-msgid ""
-"&lt;p&gt;Pardus is a free and open source operating system that contains "
-"globally known projects such as Linux kernel, GNU tools, Mozilla Firefox, "
-"LibreOffice etc. besides many easy-to-use tools for a comfortable yet high "
-"performance experience. &lt;p&gt;The softwares included in this installation "
-"medium, are offered with a number of licenses. Tübitak prefers the GNU "
-"Public License (GPL version 2) for its own tools, which is the most common "
-"license for the selected components as well. You can read all the license "
-"texts in this screen by pressing on the license names or from our website."
-"&lt;/p&gt; &lt;p&gt;You have to accept the terms to install Pardus on your "
-"computer.&lt;/p&gt;"
-msgstr ""
-
-#: ../release.xml.in.h:8
-msgid ""
-"&lt;p&gt;Welcome to Pardus that contains many easy-to-use software "
-"components. You can do everything you need to, including, but not limited "
-"to, connecting to the Internet, creating documents, playing games, listening "
-"to music using Pardus.&lt;/p&gt;&lt;p&gt;This application will help you with "
-"the installation of Pardus to your computer in few and easy steps and then "
-"do what is necessary to identify and configure your hardware. We advise you "
-"to backup your data in your disk(s) before starting with the installation."
-"&lt;/p&gt;&lt;p&gt;You can start the installation process (and step in on a "
-"free world) by pressing the Next button.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt; Bienvenido a Pardus. Pardus contiene muchos componentes de "
-"software de utilización fácil. Con Pardus puede hacer todo lo que necesita, "
-"por ejemplo cnectarse a internet, crear documentos, jugar, escuchar musica."
-"&lt;/p&gt;&lt;p&gt; El presente programa le guiará con la instalación de "
-"Pardus en su computadora de manera fácil y sencilla, y posteriormente "
-"detectará y configurará el hardware. Le consejamos realizar un backup de los "
-"datos de sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;p&gt; "
-"Puede empezar el proceso de instalación (y hacer un paso al mundo libre) "
-"presionando el botón Siguiente.&lt;/p&gt;"
-
-#: ../release.xml.in.h:9
-msgid ""
-"&lt;p&gt;YALI is now installing Pardus on your computer. This operation "
-"takes approximately 20-30 minutes depending on your computer&apos;s hardware."
-"&lt;/p&gt;&lt;p&gt;Note that the installation from a USB storage will be "
-"much faster than an optical medium (CD/DVD).&lt;/p&gt;&lt;p&gt;Now, sit back "
-"and enjoy the installation during which you will be able to discover the "
-"features and the innovations offered by this new Pardus release.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;YALI ahora está instalando Pardus en su computadora. Este proceso "
-"puede tardar 20-30 minutos dependiendo de su computadora. &lt;/p&gt;&lt;"
-"p&gt; Tenga en cuenta que la instalación desde un pendrive USB será más "
-"rápida que desde un medio óptico (CD/DVD).&lt;/p&gt;&lt;p&gt; Ahora relájese "
-"y disfrute la instalación, mientras descrubra las funcionalidades e "
-"inovaciones ofrecidos por ésta nueva versión de Pardus.&lt;/p&gt;"
-
-#: ../release.xml.in.h:10
-msgid ""
-"&lt;p&gt;You can install Pardus if you have an unpartitioned-unused disk "
-"space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk "
-"area or partition selected for installation will automatically be formatted. "
-"Therefore, it is advised to backup your data to avoid future problems.&lt;/"
-"p&gt;&lt;p&gt;Auto-partitioning will automatically format the select disk "
-"part/partition and install Pardus. If you like, you can do the partitioning "
-"manually or make Pardus create a new partition for installation.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;Puede realizar la instalación de Pardus si dispone de una partición "
-"libre con un espacio 4GB (10 GB recomendado) o un disco entero. Durante la "
-"instalación se formateará automáticamente el disco o la partición "
-"seleccionado para el sistema. Por lo tanto es aconsejable realizar un backup "
-"de los datos para evitar problemas.&lt;/p&gt;&lt;p&gt; Particionamiento "
-"automático formateará automaticamente el disco/partición seleccionado e "
-"instalará Pardus. Si lo desea puede realizar particionamiento manual o dejar "
-"que Pardus crée una nueva partición .&lt;/p&gt;"
-
-#: ../release.xml.in.h:11
-msgid ""
-"&lt;p&gt;You have successfully installed Pardus on your computer. After "
-"restarting your computer, you can finally enjoy the full benefits of Pardus."
-"&lt;/p&gt;&lt;P&gt;Click Next to proceed. One note: You remember your "
-"password, don&apos;t you?&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;Usted ha instalado exitosamente Pardus en su computadora. Luego de "
-"reiniciar su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;"
-"&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, "
-"verdad ?&lt;/p&gt;"
-
-#: ../release.xml.in.h:12
-msgid ""
-"&lt;p&gt;You need to define a password for the &quot;root&quot; user which "
-"is the conventional nameof the user who has all rights and permissions (to "
-"all files and programs) in all modes (single or multi-user).&lt;/p&gt;&lt;"
-"p&gt;Your password must be easy to remember but strong enough to resist "
-"possible attacks.You can use capital and lower-case letters, numbers and "
-"punctuation marks in your password.&lt;/p&gt;&lt;p&gt;You can also define a "
-"hostname for your computer. A hostname is an identifier assigned to your "
-"computer. As your computer will be recognized with this name in the local "
-"network, it is recommended to select a descriptive hostname.&lt;/p&gt;"
-msgstr ""
-"&lt;p&gt;Debe definir una contraseña para el usuario &quot;root&quot; que es "
-"el nombre convencional para el usuario con privilegios totales (sobre "
-"archivos y programas) en todos modos del sistema (multi-usuario o single). "
-"&lt;/p&gt;&lt;p&gt; Debe elegir una contraseña fácil de recordar, pero "
-"suficientemente fuerte para prevenir ataques. Puede utilizar en la "
-"contraseña letras en mayúsculas o minúsculas, números y símbolos de "
-"puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host "
-"para su computadora. El nombre de host es un identificador de la computadora "
-"en la red local. Se recomienda elegir un nombre descriptivo.&lt;/p&gt;"
-
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:2
 msgid ""
 "A keyboard layout is a description of how keys are placed on a keyboard. "
 "There are different keyboard layouts in use throughout the world. The one "
@@ -231,40 +55,27 @@ msgstr ""
 "desea usar en Pardus. Puede escribir algo en el campo de texto para probar "
 "la disposición del teclado elegido."
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:3
 msgid "Add Users"
 msgstr "Añadir Usuarios"
 
-#: ../release.xml.in.h:15
-msgid ""
-"Adding new users, changing boot order, starting or stopping system services "
-"or rolling your system configuration back to a previous state has never been "
-"easier. You can use the system managers for that and you can even add to "
-"your desktop as widgets managers that you use frequently."
-msgstr ""
-"Nunca fue más fácil añadir usuarios, modificando orden de arranque, detener "
-"o iniciar servicios del sistema, o restaurando un estado del sistema "
-"anterior. Puede usar los asistentes de administración para esta tarea, e "
-"incluso puede añadir widgets al escritorio con acceso directo a los "
-"asistentes que usa frecuentemente."
-
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:4
 msgid "Adjust Date and Time Settings"
 msgstr "Configurar Fecha y Hora"
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:5
 msgid "Choose a Keyboard Layout"
 msgstr "Elegir Teclado"
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:6
 msgid "Choose an Administrator Password and a Hostname"
 msgstr "Establecer Contraseña de Administrador y Nombre de la Máquina"
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:7
 msgid "Configure Bootloader"
 msgstr "Configurar Cargador de Arranque"
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:8
 msgid ""
 "Connecting to your friends and contacts is really easy and seamlessly "
 "integrated into the desktop with Pardus 2011. Using Kontact, you can send "
@@ -279,33 +90,64 @@ msgstr ""
 "conectarse a redes populares de mensajería como MSN y GTalk y chatear con "
 "los amigos en línea."
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:9
+#, fuzzy
+msgid ""
+"Date and time settings allows you to set the date and time of your computer. "
+"Generally,you will also want to specify a correct timezone for your location "
+"in order to benefit from automatic daylight saving time adjustments.&lt;"
+"br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform "
+"standard time, usually referred as thelocal time. By convention, timezones "
+"compute their local time as an offset from UTC, the Coordinated Universal "
+"Time."
+msgstr ""
+"&lt;p&gt;En la configuración de Fecha y hora se determina la fecha y hora de "
+"la computadora. Generalmente se determina además la zona horaria, lo que "
+"posibilita el ajuste automático de la hora, teniendo en cuenta al horario de "
+"verano e invierno.&lt;/p&gt;&lt;p&gt;Una zona horaria es una región de la "
+"tierra, donde rige la misma hora, generalmente denominado tiempo local. Por "
+"convencion se calcula la hora local como diferencia (retraso o adelanto) a "
+"la hora coordinada universal (UTC).&lt;/p&gt;"
+
+#: ../release.xml.in.h:10
 msgid ""
 "Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set "
-"of features where you will be surprised with the talents of a simple file "
-"manager.&lt;p&gt;You can divide any Dolphin window by columns to organize "
-"your files by comparing... You can utilize any KDE application as they can "
-"work in Dolpin embedded. Thus you can edit an image file in your file "
-"manager with the full features of Gwenview, the image viewer or preview a "
-"video in the optional optional and customizable Information panel.&lt;/p&gt;"
-"&lt;p&gt;&lt;/p&gt;"
+"of features where you may be surprised with the talents of a simple file "
+"manager. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by columns to "
+"organize your files by comparing... You can utilize any KDE application as "
+"they can work in Dolpin embedded. Thus you can edit an image file in your "
+"file manager with the full features of Gwenview, the image viewer or preview "
+"a video in the optional optional and customizable Information panel.&lt;"
+"br&gt;&lt;br&gt;"
 msgstr ""
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:11
 msgid ""
 "Dolphin learned a lot from the web experience. Tabbed browsing, folder "
 "addresses as breadcrumbs, tagging files so they can be listed by tags "
 "besides traditional folder structure and powerful network transparency.&lt;"
-"p&gt;Any place on the local network or web can be integrated into your file "
-"system easily by Dolphin. So you can reach remote addresses as if they are "
-"on your disk.&lt;/p&gt;"
+"br&gt;&lt;br&gt;Any place on the local network or web can be integrated into "
+"your file system easily by Dolphin. So you can reach remote addresses as if "
+"they are on your disk."
 msgstr ""
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:12
 msgid "Double check your installation medium"
 msgstr ""
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:13
+msgid ""
+"Get in touch with your contacts is so easy with Kontact. Kontact is a "
+"seamless integration of a bunch of applications, to achieve a software to "
+"rule all communication and organization tasks. Calendars, e-mails, RSS news, "
+"addresses are altogether. You can even link your address book to Kopete to "
+"use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see "
+"if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create "
+"sticky notes for your desktop from your tasks or vice-versa by simply "
+"dragging them."
+msgstr ""
+
+#: ../release.xml.in.h:14
 msgid ""
 "Gimp is an advanced image editing software. Allowing creation and editing of "
 "common graphics and image file formats, it has abilities that professional "
@@ -318,30 +160,59 @@ msgstr ""
 "posibilidad de integrar filtros adicionales con su sistema de móludos "
 "agregados."
 
-#: ../release.xml.in.h:25
+#: ../release.xml.in.h:15
 msgid "Goodbye"
 msgstr "Adios"
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:16
+#, fuzzy
+msgid "Here you can see your install options before installation starts."
+msgstr ""
+"&lt;p&gt;Aqui puede ver las opciones de instalación antes de comenzar el "
+"proceso de instalación.&lt;/p&gt;"
+
+#: ../release.xml.in.h:17
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
-"automatically.&lt;p&gt;Easy? There&apos;s more... If you are connected by "
-"cable your network will be automatically configured. If you prefer wireless "
-"connection, you will see a list of available networks when you click on the "
-"wireless icon.&lt;/p&gt;&lt;p&gt;Do you have a local printer? Plug it to "
-"your system and it will be configured automatically as well. All you do is "
-"printing out your document.&lt;/p&gt;"
+"automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you are "
+"connected by cable your network will be automatically configured. If you "
+"prefer wireless connection, you will see a list of available networks when "
+"you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local "
+"printer? Plug it to your system and it will be configured automatically as "
+"well. All you do is printing out your document."
 msgstr ""
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:18
+#, fuzzy
+msgid ""
+"In this screen, you can manually partition your disk. You can select "
+"existing partitions and resize or delete them. You can create new partition"
+"(s) in the empty parts, make Pardus use them for system files, users&apos; "
+"home directories, swap space or general use. The changes that you make will "
+"not be applied until you go on with the installation, which means you can "
+"revert if you make any unwanted changes or change your configuration.&lt;"
+"br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more "
+"informationabout disk partitioning.&lt;/font&gt;"
+msgstr ""
+"&lt;p&gt;Aqui puede particionar el disco manualmente. Puede seleccionar "
+"particiones existentes y redimensionar o eliminarlos. En partes libres puede "
+"crear nuevas particiones y asignarle en Pardus el uso para archivos del "
+"sistema, datos de usuarios (home), espacio de intercambio de memoria (swap), "
+"o almacenamiento en general. Los cambios cambios se aplicarán no antes de "
+"comenzar la instalación, lo que le da la posibilidad de deshacer o volver a "
+"establecer la configuración.&lt;/p&gt;&lt;p&gt;Por favor consulte la "
+"documentación de instalación por más información sobre particionamiento de "
+"discos.&lt;/font&gt;"
+
+#: ../release.xml.in.h:19
 #, fuzzy
 msgid ""
 "In this step, you may validate the integrity of installation packages. A "
 "failed validation usually is a sign of a badly mastered installation medium "
-"(CD, DVD or USB storage).&lt;p&gt;If you are using an optical medium (i.e. "
-"CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, "
-"at a lower speed (4x for DVD, 8-12x for CD)."
+"(CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical "
+"medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-"
+"once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 "Aquí puede validar la integridad de los paquetes de instalación. Cuando una "
 "validación termina con error, quiere decir generalmente que el medio de "
@@ -349,22 +220,11 @@ msgstr ""
 "medio óptico, intente volver a grabarlo usando el modo DAO (Disc-at-once), "
 "con una velocidad baja (4x para DVD, 8-12x para CD)."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:20
 msgid "Installing Pardus"
 msgstr "Instalando Pardus"
 
-#: ../release.xml.in.h:29
-msgid ""
-"It is difficult to summarize what you can do with Kontact. Basically all "
-"personal information tasks, calendars, e-mails, RSS news, addresses are "
-"fully integrated into Kontact. You can even link your address book to Kopete "
-"to use with your IM accounts such as msn, jabber or GoogleTalk. So you can "
-"see if the sender of a e-mail is online.&lt;p&gt;You can create sticky notes "
-"for your desktop from your tasks or vice-verca by simply dragging them.&lt;/"
-"p&gt;"
-msgstr ""
-
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:21
 msgid ""
 "KDE is the stage of the production, where all the audience see the glamorous "
 "show with hundreds, even thousands of programs for every need in all levels. "
@@ -373,26 +233,38 @@ msgid ""
 "Pardus, where all the softwares and tools are laid."
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:22
 msgid "Kahya is working"
 msgstr "Kahya se está ejecutando"
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:23
+msgid ""
+"Kaptan is an end-user configuration assistant. It helps you to customize "
+"your system upon your preferences. Dou you prefer using your mouse with "
+"single click? Are you left-handed? Do you want to change the color-scheme of "
+"the desktop? A number of personalization options are offered in Kaptan. "
+"Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
+"If you want to use Kaptan all over again sometime, you can call it from the "
+"application launcher by its name Kaptan. Application launcher can be called "
+"with its default shortcut Alt-F2."
+msgstr ""
+
+#: ../release.xml.in.h:24
 msgid ""
 "LibreOffice gives a stable, fast and free office experience while all your "
 "software and documents will be compatible with the rest of major suites. As "
 "the roots of the LibreOffice lies in years long open source office "
 "experience, even the first stable release is much powerful and competetive "
 "with Writer for text documents, Calc for spreadsheets, Impress for "
-"presentations.&lt;p&gt;Pardus packs this great office suite with a number of "
-"enhancements and plug-ins for a better experience.&lt;/p&gt;"
+"presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with "
+"a number of enhancements and plug-ins for a better experience."
 msgstr ""
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:25
 msgid "Manual Partitioning"
 msgstr "Particionamiento Manual"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:26
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -408,7 +280,7 @@ msgstr ""
 "relacionados con Pardus en su barra de marcadores favoritos. Disfrute una "
 "experiencia en internet rápida y segura con el nuevo Mozilla Firefox."
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:27
 msgid ""
 "Pardus 2011 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -426,20 +298,42 @@ msgstr ""
 "Pardus se encarga al instante de instalar el controlador correspondiente y "
 "realizar las configuraciones necesarias."
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:29
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
 "browser. Firefox offers great customization options as well as a secure and "
-"safe browsing experience. &lt;p&gt;The Mozilla Team uses the 100% Organic "
-"Software term trying to show how the community creates the product. Add-ons, "
-"including a fully personalization feature with Personas help you to have "
-"your very own browser, both visually and capability.&lt;/p&gt;&lt;p&gt;"
+"safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% "
+"Organic Software term trying to show how the community creates the product. "
+"Add-ons, including a fully personalization feature with Personas help you to "
+"have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;"
 "Pardus also offers other free browsers including Chromium, Konqueror or even "
-"Opera.&lt;/p&gt;"
+"Opera."
 msgstr ""
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:30
+#, fuzzy
+msgid ""
+"Pardus allows multiple users to share the same computer.You can assign "
+"management rights to the users you create; you can alsoconfigure permissions "
+"to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To "
+"create a new user, fill in the form and press the &quot;Create User&quot; "
+"button.If you want a user to be automatically logged in to the system, "
+"select the user from the list; if you want to delete a user, select his/her "
+"username from the list and press &quot;Delete Selected User&quot;.Proceed "
+"with the installation after you make your selections."
+msgstr ""
+"&lt;p&gt;Pardus permite que varios usuarios comparten la misma computadora. "
+"Puede asignar privilegios de administrador a los usuarios nuevos. En el "
+"Administrador de Usuarios puede establecer permisos para varias operaciones."
+"&lt;/p&gt;&lt;p&gt; Para crear un usuario complete el formulario y presione "
+"&quot;Crear usuario&quot;. Se desea que un usuario determinado se loguée "
+"automáticamente en el sistema puede seleccionarle de la lista. Si desea "
+"eliminar un usuario, puede seleccionarlo y presionar &quot;Eliminar usuario "
+"seleccionado&quot;. Proceda con la instalación luego de completar los datos."
+"&lt;/p&gt;"
+
+#: ../release.xml.in.h:31
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -448,7 +342,30 @@ msgid ""
 "installation goes on, you may see some of these features..."
 msgstr ""
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:32
+msgid ""
+"Pardus have many other in-house developed user friendly manager tools such "
+"as User Manager, Boot Manager, Firewall Manager, History Manager, Service "
+"Manager to administrate Pardus easier. All the managers can be used "
+"individually as well as from the System Settings, a single application for "
+"all administrative and configuration tasks."
+msgstr ""
+
+#: ../release.xml.in.h:33
+msgid ""
+"Pardus is a free and open source operating system that contains globally "
+"known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice "
+"etc. besides many easy-to-use tools for a comfortable yet high performance "
+"experience. &lt;br&gt;&lt;br&gt;The softwares included in this installation "
+"medium, are offered with a number of licenses. Tübitak prefers the GNU "
+"Public License (GPL version 2) for its own tools, which is the most common "
+"license for the selected components as well. You can read all the license "
+"texts in this screen by pressing on the license names or from our website. "
+"&lt;br&gt;&lt;br&gt;You have to accept the terms to install Pardus on your "
+"computer."
+msgstr ""
+
+#: ../release.xml.in.h:34
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
@@ -458,33 +375,37 @@ msgstr ""
 "repositorios, posibilitando así muchas horas de diversión con varios tipos "
 "de juegos, a su alcance a través del admininistrador de paquetes."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:35
 msgid "Select Partitioning Method"
 msgstr "Selección de Método de Particionamiento"
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:36
 msgid "Select a Drive to Install Pardus"
 msgstr "Selección de disco para la instalación de Pardus"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:37
+msgid ""
+"So many features are waiting to be found. Even more, many softwares, "
+"libraries and tools are not included in the installation medium to save "
+"space. However with Pardus&apos;s package management system PiSi and its "
+"user friendly interface Package Manager, it is easier than ever to add these "
+"new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will "
+"help you to keep your system up-to-date, remove the components that you "
+"never use or add new ones with a few clicks. You can reach it from the menu "
+"of your choice, which you may decide just after install with the help of "
+"Kaptan!"
+msgstr ""
+
+#: ../release.xml.in.h:38
+#, fuzzy
+msgid "Some help messages"
+msgstr "&lt;p&gt; Mensajes de Ayuda &lt;/p&gt;"
+
+#: ../release.xml.in.h:39
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../release.xml.in.h:43
-msgid ""
-"To connect to a wireless or &apos;wired&apos; network is as easy as choosing "
-"a connection profile with Pardus 2011. With the network manager&apos;s "
-"advanced options, you can have different settings (e.g. static IP, a "
-"different DNS server) for different connections with the profiles you "
-"create. Choosing a different connection profile requires just two clicks."
-msgstr ""
-"Conectarse con Pardus 2011 a una red inalambrica o cableada es tán fácil "
-"como elegir un perfil de conexión. Con las opciones avanzados del "
-"administrador de red puede guardar conexiones con varios parámetros de "
-"configuración (ej. IP estático, servidor DNS diferente) en perfiles. Lugo "
-"puede cambiar a un perfil diferente sencillamente con dos clics."
-
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:40
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the Özgürlükİçin portal, where content is "
@@ -500,30 +421,34 @@ msgstr ""
 "esperamos en el foro. Si necesita soporte o si desea dar apoyo, debería como "
 "punto de partida al sitio www.ozgurlukicin.com."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:41
 msgid "Welcome to Pardus"
 msgstr "Bienvenido a Pardus"
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:42
+#, fuzzy
 msgid ""
-"With Pardus 2011, Amarok has not only shed skin, but also changed "
-"internally. It provides much more than listening to music. You now have the "
-"option to read lyrics and learn about the singer or composer through "
-"Wikipedia while listening to a song, or use the intelligent playlist feature "
-"to group songs in various manners. As Amarok works seamlessly with most "
-"player devices, you can drag and drop songs to your players without the need "
-"for any external device drivers."
+"Welcome to Pardus that contains many easy-to-use software components. You "
+"can do everything you need to, including, but not limited to, connecting to "
+"the Internet, creating documents, playing games, listening to music using "
+"Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
+"installation of Pardus to your computer in few and easy steps and then do "
+"what is necessary to identify and configure your hardware. We advise you to "
+"backup your data in your disk(s) before starting with the installation.&lt;"
+"br&gt;&lt;br&gt;You can start the installation process (and step in on a "
+"free world) by pressing the Next button."
 msgstr ""
-"Con Pardus 2011 Amarok no solamente cambió su apariencia, sino tambien tuvo "
-"muchos cambios internos. Ahora dispone de opciones de leer lyrics y puede "
-"informarse sobre el cantante o compositos a través de la Wikipedia mientras "
-"escucha una canción, o puede utilizar las características de la lista "
-"inteligente, para agrupar canciones de varias maneras. Ya que Amarok "
-"reconoce la mayoría de reproductores de musica, puede sencillamente "
-"arrastrar y soltar canciones a sus reproductores sin necesidad de instalar "
-"controladores adicionales para sus dispositivos externos."
+"&lt;p&gt; Bienvenido a Pardus. Pardus contiene muchos componentes de "
+"software de utilización fácil. Con Pardus puede hacer todo lo que necesita, "
+"por ejemplo cnectarse a internet, crear documentos, jugar, escuchar musica."
+"&lt;/p&gt;&lt;p&gt; El presente programa le guiará con la instalación de "
+"Pardus en su computadora de manera fácil y sencilla, y posteriormente "
+"detectará y configurará el hardware. Le consejamos realizar un backup de los "
+"datos de sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;p&gt; "
+"Puede empezar el proceso de instalación (y hacer un paso al mundo libre) "
+"presionando el botón Siguiente.&lt;/p&gt;"
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:43
 msgid ""
 "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
 "word processor, a spreadsheet, a presentation application, database, formula "
@@ -538,6 +463,124 @@ msgstr ""
 "dibujos. Con OpenOffice.org puede ambién abrir y modificar documentos "
 "creados por otros programas de office, y compartir sus documentos con amigos "
 "y contactos que estén usando otro aplicación de office."
+
+#: ../release.xml.in.h:44
+#, fuzzy
+msgid ""
+"YALI is now installing Pardus on your computer. This operation takes "
+"approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
+"br&gt;&lt;br&gt;Note that the installation from a USB storage will be much "
+"faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and "
+"enjoy the installation during which you will be able to discover the "
+"features and the innovations offered by this new Pardus release."
+msgstr ""
+"&lt;p&gt;YALI ahora está instalando Pardus en su computadora. Este proceso "
+"puede tardar 20-30 minutos dependiendo de su computadora. &lt;/p&gt;&lt;"
+"p&gt; Tenga en cuenta que la instalación desde un pendrive USB será más "
+"rápida que desde un medio óptico (CD/DVD).&lt;/p&gt;&lt;p&gt; Ahora relájese "
+"y disfrute la instalación, mientras descrubra las funcionalidades e "
+"inovaciones ofrecidos por ésta nueva versión de Pardus.&lt;/p&gt;"
+
+#: ../release.xml.in.h:45
+#, fuzzy
+msgid ""
+"You can install Pardus if you have an unpartitioned-unused disk space of "
+"4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or "
+"partition selected for installation will automatically be formatted. "
+"Therefore, it is advised to backup your data to avoid future problems.&lt;"
+"br&gt;&lt;br&gt;Auto-partitioning will automatically format the select disk "
+"part/partition and install Pardus. If you like, you can do the partitioning "
+"manually or make Pardus create a new partition for installation."
+msgstr ""
+"&lt;p&gt;Puede realizar la instalación de Pardus si dispone de una partición "
+"libre con un espacio 4GB (10 GB recomendado) o un disco entero. Durante la "
+"instalación se formateará automáticamente el disco o la partición "
+"seleccionado para el sistema. Por lo tanto es aconsejable realizar un backup "
+"de los datos para evitar problemas.&lt;/p&gt;&lt;p&gt; Particionamiento "
+"automático formateará automaticamente el disco/partición seleccionado e "
+"instalará Pardus. Si lo desea puede realizar particionamiento manual o dejar "
+"que Pardus crée una nueva partición .&lt;/p&gt;"
+
+#: ../release.xml.in.h:46
+#, fuzzy
+msgid ""
+"You have successfully installed Pardus on your computer. After restarting "
+"your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
+"&lt;br&gt;Click Next to proceed. One note: You remember your password, "
+"don&apos;t you?"
+msgstr ""
+"&lt;p&gt;Usted ha instalado exitosamente Pardus en su computadora. Luego de "
+"reiniciar su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;"
+"&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, "
+"verdad ?&lt;/p&gt;"
+
+#: ../release.xml.in.h:47
+#, fuzzy
+msgid ""
+"You need to define a password for the &quot;root&quot; user which is the "
+"conventional nameof the user who has all rights and permissions (to all "
+"files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;"
+"Your password must be easy to remember but strong enough to resist possible "
+"attacks.You can use capital and lower-case letters, numbers and punctuation "
+"marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname "
+"for your computer. A hostname is an identifier assigned to your computer. As "
+"your computer will be recognized with this name in the local network, it is "
+"recommended to select a descriptive hostname."
+msgstr ""
+"&lt;p&gt;Debe definir una contraseña para el usuario &quot;root&quot; que es "
+"el nombre convencional para el usuario con privilegios totales (sobre "
+"archivos y programas) en todos modos del sistema (multi-usuario o single). "
+"&lt;/p&gt;&lt;p&gt; Debe elegir una contraseña fácil de recordar, pero "
+"suficientemente fuerte para prevenir ataques. Puede utilizar en la "
+"contraseña letras en mayúsculas o minúsculas, números y símbolos de "
+"puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host "
+"para su computadora. El nombre de host es un identificador de la computadora "
+"en la red local. Se recomienda elegir un nombre descriptivo.&lt;/p&gt;"
+
+#~ msgid ""
+#~ "Adding new users, changing boot order, starting or stopping system "
+#~ "services or rolling your system configuration back to a previous state "
+#~ "has never been easier. You can use the system managers for that and you "
+#~ "can even add to your desktop as widgets managers that you use frequently."
+#~ msgstr ""
+#~ "Nunca fue más fácil añadir usuarios, modificando orden de arranque, "
+#~ "detener o iniciar servicios del sistema, o restaurando un estado del "
+#~ "sistema anterior. Puede usar los asistentes de administración para esta "
+#~ "tarea, e incluso puede añadir widgets al escritorio con acceso directo a "
+#~ "los asistentes que usa frecuentemente."
+
+#~ msgid ""
+#~ "To connect to a wireless or &apos;wired&apos; network is as easy as "
+#~ "choosing a connection profile with Pardus 2011. With the network "
+#~ "manager&apos;s advanced options, you can have different settings (e.g. "
+#~ "static IP, a different DNS server) for different connections with the "
+#~ "profiles you create. Choosing a different connection profile requires "
+#~ "just two clicks."
+#~ msgstr ""
+#~ "Conectarse con Pardus 2011 a una red inalambrica o cableada es tán fácil "
+#~ "como elegir un perfil de conexión. Con las opciones avanzados del "
+#~ "administrador de red puede guardar conexiones con varios parámetros de "
+#~ "configuración (ej. IP estático, servidor DNS diferente) en perfiles. Lugo "
+#~ "puede cambiar a un perfil diferente sencillamente con dos clics."
+
+#~ msgid ""
+#~ "With Pardus 2011, Amarok has not only shed skin, but also changed "
+#~ "internally. It provides much more than listening to music. You now have "
+#~ "the option to read lyrics and learn about the singer or composer through "
+#~ "Wikipedia while listening to a song, or use the intelligent playlist "
+#~ "feature to group songs in various manners. As Amarok works seamlessly "
+#~ "with most player devices, you can drag and drop songs to your players "
+#~ "without the need for any external device drivers."
+#~ msgstr ""
+#~ "Con Pardus 2011 Amarok no solamente cambió su apariencia, sino tambien "
+#~ "tuvo muchos cambios internos. Ahora dispone de opciones de leer lyrics y "
+#~ "puede informarse sobre el cantante o compositos a través de la Wikipedia "
+#~ "mientras escucha una canción, o puede utilizar las características de la "
+#~ "lista inteligente, para agrupar canciones de varias maneras. Ya que "
+#~ "Amarok reconoce la mayoría de reproductores de musica, puede "
+#~ "sencillamente arrastrar y soltar canciones a sus reproductores sin "
+#~ "necesidad de instalar controladores adicionales para sus dispositivos "
+#~ "externos."
 
 #~ msgid "Check the Integrity of Packages"
 #~ msgstr "Verificar Integridad de los Paquetes"
