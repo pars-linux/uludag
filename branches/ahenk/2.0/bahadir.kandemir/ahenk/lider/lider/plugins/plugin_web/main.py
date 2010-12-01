@@ -34,11 +34,24 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         plugins.PluginWidget.__init__(self)
         QtGui.QWidget.__init__(self, parent)
 
+        # Attach generated UI
         self.setupUi(self)
 
+        # Fine tune UI
+        self.pushBack.setEnabled(False)
+        self.pushForward.setEnabled(False)
+        self.pushReload.setEnabled(False)
+        self.pushPrint.setEnabled(False)
+
+        # UI events
         self.connect(self.pushRefresh, QtCore.SIGNAL("clicked()"), self.__slot_refresh)
         self.connect(self.comboComputers, QtCore.SIGNAL("activated(int)"), self.__slot_select)
         self.connect(self.comboServices, QtCore.SIGNAL("activated(int)"), self.__slot_select2)
+        self.connect(self.webView, QtCore.SIGNAL("loadFinished(bool)"), self.__slot_web_loaded)
+        self.connect(self.pushBack, QtCore.SIGNAL("clicked()"), self.__slot_web_back)
+        self.connect(self.pushForward, QtCore.SIGNAL("clicked()"), self.__slot_web_forward)
+        self.connect(self.pushReload, QtCore.SIGNAL("clicked()"), self.__slot_web_reload)
+        self.connect(self.pushPrint, QtCore.SIGNAL("clicked()"), self.__slot_web_print)
 
     def showEvent(self, event):
         """
@@ -101,7 +114,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
             Triggered when users clicks refresh button.
         """
-        self.webView.reload()
+        index = self.comboComputers.currentIndex()
+        self.__slot_select(index)
 
     def __slot_select(self, index):
         """
@@ -125,3 +139,38 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         else:
             url = self.comboServices.itemData(index).toString()
             self.webView.setUrl(QtCore.QUrl(url))
+
+    def __slot_web_loaded(self, ok):
+        """
+            Triggered when web browser finishes loading.
+        """
+        history = self.webView.history()
+        self.pushBack.setEnabled(history.canGoBack())
+        self.pushForward.setEnabled(history.canGoForward())
+        self.pushReload.setEnabled(True)
+        self.pushPrint.setEnabled(True)
+
+    def __slot_web_back(self):
+        """
+            Triggered when user clicks "Back" button.
+        """
+        self.webView.back()
+
+    def __slot_web_forward(self):
+        """
+            Triggered when user clicks "Forward" button.
+        """
+        self.webView.forward()
+
+    def __slot_web_reload(self):
+        """
+            Triggered when user clicks "Reload" button.
+        """
+        self.webView.stop()
+        self.webView.reload()
+
+    def __slot_web_print(self):
+        """
+            Triggered when user clicks "Print" button.
+        """
+        pass
