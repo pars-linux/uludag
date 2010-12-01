@@ -9,6 +9,9 @@
 import base64
 import bz2
 import os
+import re
+import signal
+import subprocess
 import tempfile
 
 # Qt4 modules
@@ -77,17 +80,21 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         self.groupFirewall.setChecked(firewallState == "on")
 
         firewallRules = policy.get("firewallRules", [""])[0]
-        try:
-            rules_xml, rules_compiled = firewallRules.split(":")
 
-            rules_xml = base64.decodestring(rules_xml)
-            rules_xml = bz2.decompress(rules_xml)
+        rules_xml = ""
+        rules_compiled = ""
 
-            rules_compiled = base64.decodestring(rules_compiled)
-            rules_compiled = bz2.decompress(rules_compiled)
-        except Exception, e:
-            rules_xml = ""
-            rules_compiled = ""
+        if len(firewallRules):
+            try:
+                rules_xml, rules_compiled = firewallRules.split(":")
+
+                rules_xml = base64.decodestring(rules_xml)
+                rules_xml = bz2.decompress(rules_xml)
+
+                rules_compiled = base64.decodestring(rules_compiled)
+                rules_compiled = bz2.decompress(rules_compiled)
+            except Exception:
+                pass
 
         self.rules_xml = rules_xml
         self.rules_compiled = rules_compiled
@@ -141,11 +148,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         self.labelFirewall.setText("")
 
-        ret = os.system("/usr/bin/fwbuilder -q -f %s" % name)
-        if ret != 0:
-            return
+        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
+        while True:
+            if "delayedQuit" in process.stderr.readline():
+                os.kill(process.pid, signal.SIGINT)
+                break
 
-        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh Firewall" % (name, name))
+        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
+
+        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh %s" % (name, name, fw_name))
         if ret != 0:
             self.labelFirewall.setText("Unable to compile firewall rules.")
             return
@@ -164,7 +175,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         self.labelFirewall.setText("")
 
-        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh Firewall" % (name, name))
+        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
+
+        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh %s" % (name, name, fw_name))
         if ret != 0:
             return
 
