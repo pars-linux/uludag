@@ -61,8 +61,8 @@ class PMessageBox(PAbstractBox):
         self.last_msg = self.animate(start = PMessageBox.IN_POS, stop = PMessageBox.STOP_POS)
         QtGui.qApp.processEvents()
 
-    def hideMessage(self):
-        if self.isVisible():
+    def hideMessage(self, force = False):
+        if self.isVisible() or force:
             self.animate(start = PMessageBox.STOP_POS,
                          stop  = PMessageBox.OUT_POS,
                          direction = OUT,
