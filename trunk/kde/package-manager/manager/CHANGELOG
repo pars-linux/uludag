@@ -1,3 +1,10 @@
+2010-12-01 gokmen.goksel
+         * - Hide message box even mainwindow is not visible
+         * Bug fixed at http://bugs.pardus.org.tr/15283
+
+2010-12-01 gokmen.goksel
+         * Beta 2 
+
 2010-11-29 transifex
          * l10n: Updated Spanish (Castilian) (es) translation to 92% (Klemens Häckel)
          * New status: 182 messages complete with 1 fuzzy and 13 untranslated.
@@ -385,10 +392,4 @@
          * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
          * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-12 gokmen.goksel
-         * Add stars, stars everywhere, Luke I'm your father. 
-
-2010-10-12 gokmen.goksel
-         * Revert last for packagedelegate.py , we need this for selecting packages when descriptions toggled 
 
