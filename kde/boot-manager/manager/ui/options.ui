@@ -28,16 +28,19 @@
     </spacer>
    </item>
    <item>
-    <widget class="QLabel" name="label">
+    <widget class="QCheckBox" name="checkBox">
      <property name="text">
       <string>Boot menu display time:</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
      </property>
     </widget>
    </item>
    <item>
     <widget class="QSpinBox" name="spinTimeout">
      <property name="minimum">
-      <number>1</number>
+      <number>0</number>
      </property>
      <property name="maximum">
       <number>60</number>
@@ -47,12 +50,29 @@
    <item>
     <widget class="QPushButton" name="pushApply">
      <property name="text">
-      <string/>
+      <string>Apply</string>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>checkBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>spinTimeout</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>280</x>
+     <y>14</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>427</x>
+     <y>17</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

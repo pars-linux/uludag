@@ -36,10 +36,11 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
 
 
 class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
-    def __init__(self, parent, id_, title="", description="", type_=None, icon=None, state=None):
-        QtGui.QWidget.__init__(self, parent)
+    def __init__(self, parent, parent_widget, id_, title="", description="", type_=None, icon=None, state=None):
+        QtGui.QWidget.__init__(self, parent_widget)
         self.setupUi(self)
 
+        self.parent = parent
         self.id = id_
         self.type = type_
 
@@ -60,9 +61,14 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.pushDelete.setIcon(KIcon("edit-delete"))
 
         # Signals
-        self.connect(self.checkState, QtCore.SIGNAL("stateChanged(int)"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), self.checkState.checkState()))
+        self.connect(self.checkState, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), 0))
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
         self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("deleteClicked()")))
+
+        self.pushUp.clicked.connect(lambda: self.parent.showEditBox(self.id, self.type, True))
+        self.pushDown.clicked.connect(lambda: self.parent.showEditBox(self.id, self.type, True))
+        self.pushUp.clicked.connect(lambda: self.parent.slotSaveEdit(int(self.getId()) - 1))
+        self.pushDown.clicked.connect(lambda: self.parent.slotSaveEdit(int(self.getId()) + 1))
 
     def mouseDoubleClickEvent(self, event):
         self.pushEdit.animateClick(100)
@@ -92,11 +98,7 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         return self.checkState.checkState()
 
     def setState(self, state):
-        if state == True:
-            state = QtCore.Qt.Checked
-        elif state == False:
-            state = QtCore.Qt.Unchecked
-        return self.checkState.setCheckState(state)
+        self.checkState.setChecked(state)
 
     def hideEdit(self):
         self.pushEdit.hide()
