@@ -410,7 +410,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
             self.labelWarning.setText(u"<font color=red>%s</font>" % err)
             self.labelSign.show()
             self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"),0)
-
         else:
             self.labelWarning.setText("")
             self.labelSign.hide()
@@ -422,6 +421,10 @@ class EditGroupWidget(QtGui.QWidget, Ui_EditGroupWidget):
         self.setupUi(self)
 
         self.connect(self.checkAutoId, QtCore.SIGNAL("stateChanged(int)"), self.slotCheckAuto)
+        self.connect(self.lineGroupname, QtCore.SIGNAL("textEdited(const QString&)"), self.slotGroupnameChanged)
+
+    def slotGroupnameChanged(self, name):
+        self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"),1)
 
     def reset(self):
         self.setId(-1)
@@ -455,3 +458,4 @@ class EditGroupWidget(QtGui.QWidget, Ui_EditGroupWidget):
             self.spinId.setValue(-1)
         else:
             self.spinId.setEnabled(True)
+
