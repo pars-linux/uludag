@@ -173,4 +173,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
             Triggered when user clicks "Print" button.
         """
-        pass
+        dialog = QtGui.QPrintDialog(self)
+        dialog.exec_()
+        printer = dialog.printer()
+        self.webView.print_(printer)
