@@ -2,7 +2,7 @@
     <Title>Pardus 2011 Minimal (x86_64)</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
-    <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/x86_64/pisi-index.xml.bz2">
+    <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/x86_64/pisi-index.xml.xz">
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
