@@ -20,11 +20,6 @@ def enable_firewall(rules, options):
 
     script_path = os.path.join(options.policydir, "firewall.sh")
 
-    if not dryrun:
-        link = comar.Link()
-        link.System.Service['iptables'].start()
-        link.System.Service['iptables'].setState('on')
-
     if rules:
         rules = rules.split(":")[1]
         rules = base64.decodestring(rules)
@@ -35,6 +30,7 @@ def enable_firewall(rules, options):
         fp.close()
 
         if not dryrun:
+            os.system("/bin/bash %s stop" % script_path)
             os.system("/bin/bash %s start" % script_path)
 
         logging.info("Firewall: IPTables service is running.")
@@ -47,10 +43,6 @@ def disable_firewall(options):
     if not dryrun:
         if os.path.exists(script_path):
             os.system("/bin/bash %s stop" % script_path)
-
-        link = comar.Link()
-        link.System.Service['iptables'].stop()
-        link.System.Service['iptables'].setState('off')
 
     logging.info("Firewall: IPTables service is not running.")
 
