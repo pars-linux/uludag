@@ -1,3 +1,6 @@
+2010-12-01 gokmen.goksel
+         * - Fix add group screen 
+
 2010-11-27 transifex
          * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
          * New status: 51 messages complete with 0 fuzzies and 0 untranslated.
@@ -368,7 +371,4 @@
 
 2009-06-26 bahadir.kandemir
          * Don't hardcode application icons
-
-2009-06-26 gokcen.eraslan
-         * Fix icons of managers: Use KAboutData.setProgramIconName if icon name is different than appName. Also fix menu location of PM, it should be in System like other managers.
 
