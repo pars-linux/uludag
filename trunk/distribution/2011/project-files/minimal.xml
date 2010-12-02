@@ -57,9 +57,15 @@
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedPackage>NetworkManager</SelectedPackage>
+                <SelectedPackage>device-mapper</SelectedPackage>
+                <SelectedPackage>device-mapper-static</SelectedPackage>
                 <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
                 <SelectedPackage>kernel</SelectedPackage>
+                <SelectedPackage>lvm2</SelectedPackage>
+                <SelectedPackage>lvm2-static</SelectedPackage>
                 <SelectedPackage>mc</SelectedPackage>
+                <SelectedPackage>mdadm</SelectedPackage>
+                <SelectedPackage>mdadm-static</SelectedPackage>
                 <SelectedPackage>memtest86</SelectedPackage>
                 <SelectedPackage>module-alsa-driver</SelectedPackage>
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
