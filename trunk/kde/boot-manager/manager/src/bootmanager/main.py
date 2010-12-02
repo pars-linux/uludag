@@ -132,7 +132,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Makes an item widget having given properties.
         """
-        widget = ItemWidget(self, self.listItems, id_, title, description, type_, icon, state)
+        widget = ItemWidget(self.listItems, id_, title, description, type_, icon, state)
 
         self.connect(widget, QtCore.SIGNAL("stateChanged(int)"), self.slotItemState)
         self.connect(widget, QtCore.SIGNAL("editClicked()"), self.slotItemEdit)
@@ -224,28 +224,25 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             action_user.setData(QtCore.QVariant(unicode(name)))
             menu.addAction(action_user)
 
-    def showEditBox(self, id_, type_=None, just_initialize = False):
+    def showEditBox(self, id_, type_=None):
         """
             Shows edit box.
         """
-        if not just_initialize:
-            self.widgetEdit.show()
-
+        self.widgetEdit.show()
         self.widgetEdit.reset()
 
         self.widgetEdit.setType(type_)
 
-        if not just_initialize:
-            if type_ in self.systems:
-                fields = self.systems[type_][1] + self.systems[type_][2]
-                if "root" not in fields:
-                    self.widgetEdit.hideDisk()
-                if "kernel" not in fields:
-                    self.widgetEdit.hideKernel()
-                if "initrd" not in fields:
-                    self.widgetEdit.hideRamdisk()
-                if "options" not in fields:
-                    self.widgetEdit.hideOptions()
+        if type_ in self.systems:
+            fields = self.systems[type_][1] + self.systems[type_][2]
+            if "root" not in fields:
+                self.widgetEdit.hideDisk()
+            if "kernel" not in fields:
+                self.widgetEdit.hideKernel()
+            if "initrd" not in fields:
+                self.widgetEdit.hideRamdisk()
+            if "options" not in fields:
+                self.widgetEdit.hideOptions()
 
         if id_ != None:
             entry = None
@@ -265,13 +262,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if "options" in entry:
                 self.widgetEdit.setOptions(entry["options"])
 
-        if not just_initialize:
-            if self.animationLast == ANIM_HIDE:
-                self.animationLast = ANIM_SHOW
-                # Set range
-                self.animator.setFrameRange(ANIM_TARGET, self.height() - ANIM_TARGET)
-                # Go go go!
-                self.animator.start()
+        if self.animationLast == ANIM_HIDE:
+            self.animationLast = ANIM_SHOW
+            # Set range
+            self.animator.setFrameRange(ANIM_TARGET, self.height() - ANIM_TARGET)
+            # Go go go!
+            self.animator.start()
 
     def hideEditBox(self):
         """
@@ -338,7 +334,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         self.hideEditBox()
 
-    def slotSaveEdit(self, id=None):
+    def slotSaveEdit(self):
         """ 
             Save clicked on edit box, save item details then show item list.
         """
@@ -347,15 +343,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if widget.isNew():
                 self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", -1)
             else:
-                _id = id if id else widget.getId()
-                self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", _id)
+                self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", widget.getId())
         except Exception, e: # TODO: Named exception should be raised
-            try:
-                if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
-                else:
-                    kdeui.KMessageBox.error(self, unicode(e))
-            except:
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
                 kdeui.KMessageBox.error(self, unicode(e))
             return
         # Hide edit box
