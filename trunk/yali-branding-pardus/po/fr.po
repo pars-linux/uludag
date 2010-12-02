@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 22:39+0200\n"
+"POT-Creation-Date: 2010-12-02 13:56+0200\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -243,8 +243,8 @@ msgid ""
 "the desktop? A number of personalization options are offered in Kaptan. "
 "Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
 "If you want to use Kaptan all over again sometime, you can call it from the "
-"application launcher by its name Kaptan. Application launcher can be called "
-"with its default shortcut Alt-F2."
+"application launcher by its name kaptan. Application launcher can be called "
+"with its default shortcut Alt+F2."
 msgstr ""
 
 #: ../release.xml.in.h:24
@@ -263,13 +263,14 @@ msgid "Manual Partitioning"
 msgstr "Partitionnement manuel"
 
 #: ../release.xml.in.h:26
+#, fuzzy
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
 "can add new functionality to Mozilla Firefox. You will find many of the most "
 "visited websites along with Pardus-related websites in your bookmarks in its "
 "Pardus default installation. Enjoy a fast and secure internet with the new "
-"Mozilla Firefox 3.5."
+"Mozilla Firefox 4."
 msgstr ""
 "Mozilla Firefox est le navigateur préféré avec sa vitesse, sécurité et "
 "flexibilité. Avec son *très* riche catalogue de plugins, vous pouvez ajouter "
@@ -444,23 +445,6 @@ msgstr ""
 "dans un monde libre) en appuyant sur le bouton Suivant.&lt;/p&gt;"
 
 #: ../release.xml.in.h:43
-msgid ""
-"World&apos;s leading preferred libre office suite OpenOffice.org brings a "
-"word processor, a spreadsheet, a presentation application, database, formula "
-"and drawing tools to your desktop for your office needs at home, at your "
-"workplace or school. With OpenOffice.org, you can view and edit documents "
-"created in other office suites and share your documents with friends and "
-"contacts that are using other office applications."
-msgstr ""
-"La suite bureautique de référence LibreOffice (ex-OpenOffice.org) apporte un "
-"traitement de texte, un tableur, une application de présentation, les bases "
-"de données, les formules mathématiques et les outils de dessin, sur votre "
-"bureau, au travail ou à l'école. Avec LibreOffice, vous pouvez afficher et "
-"modifier des documents créés dans d'autres suites bureautiques et partager "
-"vos documents avec vos amis et contacts qui utilisent d'autres applications "
-"bureautiques."
-
-#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
@@ -478,7 +462,7 @@ msgstr ""
 "cours de laquelle vous pourrez découvrir les caractéristiques et les "
 "innovations offertes par cette nouvelle version de Pardus.&lt;/p&gt;"
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "You can install Pardus if you have an unpartitioned-unused disk space of "
@@ -499,7 +483,7 @@ msgstr ""
 "pouvez faire le partitionnement manuellement ou faire créer à Pardus une "
 "nouvelle partition pour l'installation.&lt;/p&gt;"
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:45
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -512,7 +496,7 @@ msgstr ""
 "avantages de Pardus. &lt;/p&gt;&lt;P&gt;Cliquez sur Suivant pour continuer. "
 "NB : Vous vous souvenez de votre mot de passe, n&apos;est-ce pas ?&lt;/p&gt;"
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:46
 #, fuzzy
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
@@ -536,6 +520,22 @@ msgstr ""
 "identifiant pour votre ordinateur. Comme votre ordinateur sera reconnu avec "
 "ce nom dans le réseau local, il est recommandé de choisir un nom d'hôte "
 "descriptif.&lt;/p&gt;"
+
+#~ msgid ""
+#~ "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
+#~ "word processor, a spreadsheet, a presentation application, database, "
+#~ "formula and drawing tools to your desktop for your office needs at home, "
+#~ "at your workplace or school. With OpenOffice.org, you can view and edit "
+#~ "documents created in other office suites and share your documents with "
+#~ "friends and contacts that are using other office applications."
+#~ msgstr ""
+#~ "La suite bureautique de référence LibreOffice (ex-OpenOffice.org) apporte "
+#~ "un traitement de texte, un tableur, une application de présentation, les "
+#~ "bases de données, les formules mathématiques et les outils de dessin, sur "
+#~ "votre bureau, au travail ou à l'école. Avec LibreOffice, vous pouvez "
+#~ "afficher et modifier des documents créés dans d'autres suites "
+#~ "bureautiques et partager vos documents avec vos amis et contacts qui "
+#~ "utilisent d'autres applications bureautiques."
 
 #~ msgid ""
 #~ "Adding new users, changing boot order, starting or stopping system "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 22:39+0200\n"
+"POT-Creation-Date: 2010-12-02 13:56+0200\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -245,8 +245,8 @@ msgid ""
 "the desktop? A number of personalization options are offered in Kaptan. "
 "Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
 "If you want to use Kaptan all over again sometime, you can call it from the "
-"application launcher by its name Kaptan. Application launcher can be called "
-"with its default shortcut Alt-F2."
+"application launcher by its name kaptan. Application launcher can be called "
+"with its default shortcut Alt+F2."
 msgstr ""
 
 #: ../release.xml.in.h:24
@@ -265,13 +265,14 @@ msgid "Manual Partitioning"
 msgstr "Particionamiento Manual"
 
 #: ../release.xml.in.h:26
+#, fuzzy
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
 "can add new functionality to Mozilla Firefox. You will find many of the most "
 "visited websites along with Pardus-related websites in your bookmarks in its "
 "Pardus default installation. Enjoy a fast and secure internet with the new "
-"Mozilla Firefox 3.5."
+"Mozilla Firefox 4."
 msgstr ""
 "Mozilla Firefox es el navegador preferido, por su velocidad, seguridad y "
 "flexibilidad. Con su mecanismo y un repositorio *muy* amplio de agregados, "
@@ -449,22 +450,6 @@ msgstr ""
 "presionando el botón Siguiente.&lt;/p&gt;"
 
 #: ../release.xml.in.h:43
-msgid ""
-"World&apos;s leading preferred libre office suite OpenOffice.org brings a "
-"word processor, a spreadsheet, a presentation application, database, formula "
-"and drawing tools to your desktop for your office needs at home, at your "
-"workplace or school. With OpenOffice.org, you can view and edit documents "
-"created in other office suites and share your documents with friends and "
-"contacts that are using other office applications."
-msgstr ""
-"La suite ofimatica OpenOffice.org, preferida mundialmente, le brinda para su "
-"trabajo, el colegio o su uso particular, programas como procesador de texto, "
-"hoja de cálculo, presentación, base de datos, herramientas de fórmulas y "
-"dibujos. Con OpenOffice.org puede ambién abrir y modificar documentos "
-"creados por otros programas de office, y compartir sus documentos con amigos "
-"y contactos que estén usando otro aplicación de office."
-
-#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
@@ -481,7 +466,7 @@ msgstr ""
 "y disfrute la instalación, mientras descrubra las funcionalidades e "
 "inovaciones ofrecidos por ésta nueva versión de Pardus.&lt;/p&gt;"
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "You can install Pardus if you have an unpartitioned-unused disk space of "
@@ -501,7 +486,7 @@ msgstr ""
 "instalará Pardus. Si lo desea puede realizar particionamiento manual o dejar "
 "que Pardus crée una nueva partición .&lt;/p&gt;"
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:45
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -514,7 +499,7 @@ msgstr ""
 "&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, "
 "verdad ?&lt;/p&gt;"
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:46
 #, fuzzy
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
@@ -536,6 +521,22 @@ msgstr ""
 "puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host "
 "para su computadora. El nombre de host es un identificador de la computadora "
 "en la red local. Se recomienda elegir un nombre descriptivo.&lt;/p&gt;"
+
+#~ msgid ""
+#~ "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
+#~ "word processor, a spreadsheet, a presentation application, database, "
+#~ "formula and drawing tools to your desktop for your office needs at home, "
+#~ "at your workplace or school. With OpenOffice.org, you can view and edit "
+#~ "documents created in other office suites and share your documents with "
+#~ "friends and contacts that are using other office applications."
+#~ msgstr ""
+#~ "La suite ofimatica OpenOffice.org, preferida mundialmente, le brinda para "
+#~ "su trabajo, el colegio o su uso particular, programas como procesador de "
+#~ "texto, hoja de cálculo, presentación, base de datos, herramientas de "
+#~ "fórmulas y dibujos. Con OpenOffice.org puede ambién abrir y modificar "
+#~ "documentos creados por otros programas de office, y compartir sus "
+#~ "documentos con amigos y contactos que estén usando otro aplicación de "
+#~ "office."
 
 #~ msgid ""
 #~ "Adding new users, changing boot order, starting or stopping system "

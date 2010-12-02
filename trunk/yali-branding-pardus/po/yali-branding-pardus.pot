@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 22:39+0200\n"
+"POT-Creation-Date: 2010-12-02 13:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -191,8 +191,8 @@ msgid ""
 "the desktop? A number of personalization options are offered in Kaptan. "
 "Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
 "If you want to use Kaptan all over again sometime, you can call it from the "
-"application launcher by its name Kaptan. Application launcher can be called "
-"with its default shortcut Alt-F2."
+"application launcher by its name kaptan. Application launcher can be called "
+"with its default shortcut Alt+F2."
 msgstr ""
 
 #: ../release.xml.in.h:24
@@ -217,7 +217,7 @@ msgid ""
 "can add new functionality to Mozilla Firefox. You will find many of the most "
 "visited websites along with Pardus-related websites in your bookmarks in its "
 "Pardus default installation. Enjoy a fast and secure internet with the new "
-"Mozilla Firefox 3.5."
+"Mozilla Firefox 4."
 msgstr ""
 
 #: ../release.xml.in.h:27
@@ -353,16 +353,6 @@ msgstr ""
 
 #: ../release.xml.in.h:43
 msgid ""
-"World&apos;s leading preferred libre office suite OpenOffice.org brings a "
-"word processor, a spreadsheet, a presentation application, database, formula "
-"and drawing tools to your desktop for your office needs at home, at your "
-"workplace or school. With OpenOffice.org, you can view and edit documents "
-"created in other office suites and share your documents with friends and "
-"contacts that are using other office applications."
-msgstr ""
-
-#: ../release.xml.in.h:44
-msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
 "br&gt;&lt;br&gt;Note that the installation from a USB storage will be much "
@@ -371,7 +361,7 @@ msgid ""
 "features and the innovations offered by this new Pardus release."
 msgstr ""
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:44
 msgid ""
 "You can install Pardus if you have an unpartitioned-unused disk space of "
 "4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or "
@@ -382,7 +372,7 @@ msgid ""
 "manually or make Pardus create a new partition for installation."
 msgstr ""
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:45
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -390,7 +380,7 @@ msgid ""
 "don&apos;t you?"
 msgstr ""
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:46
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
 "conventional nameof the user who has all rights and permissions (to all "
