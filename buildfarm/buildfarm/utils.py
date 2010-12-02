@@ -23,6 +23,17 @@ import pisi.context as ctx
 def print_header(msg):
     print "\n%s\n%s\n" % (msg, '-'*len(msg))
 
+def is_there_free_space():
+    """Returns the free space in the device."""
+    _stat = os.statvfs(get_compiled_packages_directory())
+    free_space =_stat.f_bfree * _stat.f_bsize
+
+    # Check if the
+    print "Free space: %s GB" % (free_space/(1024*1024*1024.0))
+
+    # Return True if the free space >= 5GB
+    return free_space >= (5*1024*1024*1024)
+
 def create_directories():
     directories = [
                     conf.workdir,
