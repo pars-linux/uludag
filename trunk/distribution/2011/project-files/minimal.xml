@@ -1,7 +1,7 @@
 <PardusmanProject type="install" media="cd" compression="gzip">
     <Title>Minimal x86_64</Title>
     <WorkDir>/tmp/pardusman-workdir/minimal-64/</WorkDir>
-    <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
+    <ReleaseFiles>../distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
@@ -340,7 +340,6 @@
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-core-libs</SelectedPackage>
-        <SelectedPackage>plymouth-devel</SelectedPackage>
         <SelectedPackage>plymouth-graphics-libs</SelectedPackage>
         <SelectedPackage>plymouth-plugin-fade-throbber</SelectedPackage>
         <SelectedPackage>plymouth-plugin-label</SelectedPackage>
@@ -357,6 +356,57 @@
         <SelectedPackage>plymouth-theme-spinfinity</SelectedPackage>
         <SelectedPackage>plymouth-utils</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
+        <SelectedPackage>xorg-input-acecad</SelectedPackage>
+        <SelectedPackage>xorg-input-aiptek</SelectedPackage>
+        <SelectedPackage>xorg-input-elographics</SelectedPackage>
+        <SelectedPackage>xorg-input-evdev</SelectedPackage>
+        <SelectedPackage>xorg-input-fpit</SelectedPackage>
+        <SelectedPackage>xorg-input-hyperpen</SelectedPackage>
+        <SelectedPackage>xorg-input-joystick</SelectedPackage>
+        <SelectedPackage>xorg-input-kbd</SelectedPackage>
+        <SelectedPackage>xorg-input-mouse</SelectedPackage>
+        <SelectedPackage>xorg-input-mutouch</SelectedPackage>
+        <SelectedPackage>xorg-input-penmount</SelectedPackage>
+        <SelectedPackage>xorg-input-synaptics</SelectedPackage>
+        <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
+        <SelectedPackage>xorg-input-void</SelectedPackage>
+        <SelectedPackage>xorg-input-wacom</SelectedPackage>
+        <SelectedPackage>xorg-video-apm</SelectedPackage>
+        <SelectedPackage>xorg-video-ark</SelectedPackage>
+        <SelectedPackage>xorg-video-ast</SelectedPackage>
+        <SelectedPackage>xorg-video-chips</SelectedPackage>
+        <SelectedPackage>xorg-video-cirrus</SelectedPackage>
+        <SelectedPackage>xorg-video-dummy</SelectedPackage>
+        <SelectedPackage>xorg-video-fbdev</SelectedPackage>
+        <SelectedPackage>xorg-video-glint</SelectedPackage>
+        <SelectedPackage>xorg-video-i128</SelectedPackage>
+        <SelectedPackage>xorg-video-i740</SelectedPackage>
+        <SelectedPackage>xorg-video-intel</SelectedPackage>
+        <SelectedPackage>xorg-video-mach64</SelectedPackage>
+        <SelectedPackage>xorg-video-mga</SelectedPackage>
+        <SelectedPackage>xorg-video-neomagic</SelectedPackage>
+        <SelectedPackage>xorg-video-newport</SelectedPackage>
+        <SelectedPackage>xorg-video-nouveau</SelectedPackage>
+        <SelectedPackage>xorg-video-nv</SelectedPackage>
+        <SelectedPackage>xorg-video-openchrome</SelectedPackage>
+        <SelectedPackage>xorg-video-r128</SelectedPackage>
+        <SelectedPackage>xorg-video-radeon</SelectedPackage>
+        <SelectedPackage>xorg-video-rendition</SelectedPackage>
+        <SelectedPackage>xorg-video-s3</SelectedPackage>
+        <SelectedPackage>xorg-video-s3virge</SelectedPackage>
+        <SelectedPackage>xorg-video-savage</SelectedPackage>
+        <SelectedPackage>xorg-video-siliconmotion</SelectedPackage>
+        <SelectedPackage>xorg-video-sis</SelectedPackage>
+        <SelectedPackage>xorg-video-sisimedia</SelectedPackage>
+        <SelectedPackage>xorg-video-sisusb</SelectedPackage>
+        <SelectedPackage>xorg-video-tdfx</SelectedPackage>
+        <SelectedPackage>xorg-video-tga</SelectedPackage>
+        <SelectedPackage>xorg-video-trident</SelectedPackage>
+        <SelectedPackage>xorg-video-tseng</SelectedPackage>
+        <SelectedPackage>xorg-video-v4l</SelectedPackage>
+        <SelectedPackage>xorg-video-vesa</SelectedPackage>
+        <SelectedPackage>xorg-video-vmware</SelectedPackage>
+        <SelectedPackage>xorg-video-voodoo</SelectedPackage>
         <SelectedPackage>yali</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>ModemManager</Package>
@@ -481,6 +531,7 @@
         <Package>libXt</Package>
         <Package>libXtst</Package>
         <Package>libXv</Package>
+        <Package>libXvMC</Package>
         <Package>libXxf86dga</Package>
         <Package>libXxf86vm</Package>
         <Package>libcap</Package>
@@ -506,6 +557,7 @@
         <Package>liboil</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
+        <Package>libpciaccess</Package>
         <Package>libpcre</Package>
         <Package>libpng</Package>
         <Package>libsndfile</Package>
@@ -533,9 +585,9 @@
         <Package>man</Package>
         <Package>man-pages</Package>
         <Package>mc</Package>
-        <Package>memtest86</Package>
         <Package>mcpp</Package>
         <Package>mdadm</Package>
+        <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
@@ -577,7 +629,6 @@
         <Package>pixman</Package>
         <Package>plymouth</Package>
         <Package>plymouth-core-libs</Package>
-        <Package>plymouth-devel</Package>
         <Package>plymouth-graphics-libs</Package>
         <Package>plymouth-plugin-fade-throbber</Package>
         <Package>plymouth-plugin-label</Package>
@@ -649,7 +700,61 @@
         <Package>xdm</Package>
         <Package>xfsprogs</Package>
         <Package>xinit</Package>
+        <Package>xkeyboard-config</Package>
         <Package>xorg-app</Package>
+        <Package>xorg-input-acecad</Package>
+        <Package>xorg-input-aiptek</Package>
+        <Package>xorg-input-elographics</Package>
+        <Package>xorg-input-evdev</Package>
+        <Package>xorg-input-fpit</Package>
+        <Package>xorg-input-hyperpen</Package>
+        <Package>xorg-input-joystick</Package>
+        <Package>xorg-input-kbd</Package>
+        <Package>xorg-input-mouse</Package>
+        <Package>xorg-input-mutouch</Package>
+        <Package>xorg-input-penmount</Package>
+        <Package>xorg-input-synaptics</Package>
+        <Package>xorg-input-vmmouse</Package>
+        <Package>xorg-input-void</Package>
+        <Package>xorg-input-wacom</Package>
+        <Package>xorg-server</Package>
+        <Package>xorg-server-common</Package>
+        <Package>xorg-video-apm</Package>
+        <Package>xorg-video-ark</Package>
+        <Package>xorg-video-ast</Package>
+        <Package>xorg-video-chips</Package>
+        <Package>xorg-video-cirrus</Package>
+        <Package>xorg-video-dummy</Package>
+        <Package>xorg-video-fbdev</Package>
+        <Package>xorg-video-glint</Package>
+        <Package>xorg-video-i128</Package>
+        <Package>xorg-video-i740</Package>
+        <Package>xorg-video-intel</Package>
+        <Package>xorg-video-mach64</Package>
+        <Package>xorg-video-mga</Package>
+        <Package>xorg-video-neomagic</Package>
+        <Package>xorg-video-newport</Package>
+        <Package>xorg-video-nouveau</Package>
+        <Package>xorg-video-nv</Package>
+        <Package>xorg-video-openchrome</Package>
+        <Package>xorg-video-r128</Package>
+        <Package>xorg-video-radeon</Package>
+        <Package>xorg-video-rendition</Package>
+        <Package>xorg-video-s3</Package>
+        <Package>xorg-video-s3virge</Package>
+        <Package>xorg-video-savage</Package>
+        <Package>xorg-video-siliconmotion</Package>
+        <Package>xorg-video-sis</Package>
+        <Package>xorg-video-sisimedia</Package>
+        <Package>xorg-video-sisusb</Package>
+        <Package>xorg-video-tdfx</Package>
+        <Package>xorg-video-tga</Package>
+        <Package>xorg-video-trident</Package>
+        <Package>xorg-video-tseng</Package>
+        <Package>xorg-video-v4l</Package>
+        <Package>xorg-video-vesa</Package>
+        <Package>xorg-video-vmware</Package>
+        <Package>xorg-video-voodoo</Package>
         <Package>xz</Package>
         <Package>yali</Package>
         <Package>yali-branding-pardus</Package>
