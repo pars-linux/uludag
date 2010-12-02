@@ -155,6 +155,7 @@
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>netkit-ftp</SelectedPackage>
+        <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
         <SelectedPackage>nvidia-settings</SelectedPackage>
