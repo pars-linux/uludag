@@ -44,33 +44,45 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.setupUi(self)
 
         # UI events
-        self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
-        self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+        #self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
+        #self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+        self.connect(self.comboDomain, QtCore.SIGNAL("currentIndexChanged(int)"), self.__set_profile)
 
         # Create Profile Reader to list of profiles
         reader = profilereader.ProfileReader()
+        self.profiles = []
         if reader.is_file_exists():
-            profiles = reader.read()
-
-            # Set last profile
-            last_profile = reader.get_last_profile()
-            self.__set_last_profile(last_profile)
+            self.profiles = reader.read()
 
             # Fill the profiles
-            self.__fill_profiles(profiles)
+            self.__fill_profiles()
 
-    def __set_last_profile(self, last_profile):
-        if not (None == last_profile):
-            self.set_domain(last_profile.get_domain())
-            self.set_host(last_profile.get_address())
-            self.set_user(last_profile.get_username())
+            # Set last profile which is 0th place of profile list
+            self.__set_profile(0)
+
+    def __set_profile(self, index):
+        """
+            Sets connection details with index of combo box
+
+            Arguments:
+                index: Last changed index of combo box
+        """
+        if len(self.profiles)>=0 and len(self.profiles)>=index and index>=0:
+            self.set_domain(self.profiles[index].get_domain())
+            self.set_host(self.profiles[index].get_address())
+            self.set_user(self.profiles[index].get_username())
             self.editPassword.setFocus()
 
-    def __fill_profiles(self, profiles):
-        if len(profiles):
-            pass
+    def __fill_profiles(self):
+        """
+            Adds profile names into combo box
+        """
+        if len(self.profiles):
+            for index in range(0, len(self.profiles)):
+                self.comboDomain.addItem(self.profiles[index].get_domain())
+        pass
 
     def __slot_find_host(self):
         """
