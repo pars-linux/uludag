@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 22:39+0200\n"
+"POT-Creation-Date: 2010-12-02 13:56+0200\n"
 "PO-Revision-Date: 2010-11-27 10:13+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -245,8 +245,8 @@ msgid ""
 "the desktop? A number of personalization options are offered in Kaptan. "
 "Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
 "If you want to use Kaptan all over again sometime, you can call it from the "
-"application launcher by its name Kaptan. Application launcher can be called "
-"with its default shortcut Alt-F2."
+"application launcher by its name kaptan. Application launcher can be called "
+"with its default shortcut Alt+F2."
 msgstr ""
 
 #: ../release.xml.in.h:24
@@ -265,13 +265,14 @@ msgid "Manual Partitioning"
 msgstr "Handmatig partitioneren"
 
 #: ../release.xml.in.h:26
+#, fuzzy
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
 "can add new functionality to Mozilla Firefox. You will find many of the most "
 "visited websites along with Pardus-related websites in your bookmarks in its "
 "Pardus default installation. Enjoy a fast and secure internet with the new "
-"Mozilla Firefox 3.5."
+"Mozilla Firefox 4."
 msgstr ""
 "Mozilla Firefox is de geprefereerde browser met zijn snelheid, veiligheid en "
 "flexibiliteit. Met zijn Add-ons geeft het veel ondersteuning en kan je veel "
@@ -448,21 +449,6 @@ msgstr ""
 "binnenstappen) door op Volgende te klikken.&lt;/p&gt;"
 
 #: ../release.xml.in.h:43
-msgid ""
-"World&apos;s leading preferred libre office suite OpenOffice.org brings a "
-"word processor, a spreadsheet, a presentation application, database, formula "
-"and drawing tools to your desktop for your office needs at home, at your "
-"workplace or school. With OpenOffice.org, you can view and edit documents "
-"created in other office suites and share your documents with friends and "
-"contacts that are using other office applications."
-msgstr ""
-"De in de wereld leidende aanbieder van office producten OpenOffice.org "
-"voorziet in een tekstbewerker, rekenblad en presentatie applicatie, formule "
-"en tekengereedschappen voor thuisgebruik, op de werkplek of op school. Met "
-"Openoffice.org kunt u documenten bekijken en bewerken en met vrienden delen "
-"die een andere office aanbieder gebruiken of daarmee gemaakt zijn."
-
-#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
@@ -480,7 +466,7 @@ msgstr ""
 "bijzondere eigenschappen van Pardus, uw \n"
 "nieuwe besturingssysteem, zal laten zien.&lt;/p&gt;"
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "You can install Pardus if you have an unpartitioned-unused disk space of "
@@ -501,7 +487,7 @@ msgstr ""
 "Indien gewenst, kunt u het partitioneren handmatig doen of Pardus een nieuwe "
 "partitie voor installatie laten maken.&lt;/p&gt;"
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:45
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -514,7 +500,7 @@ msgstr ""
 "Pardus.&lt;/p&gt;&lt;P&gt;Klik op Volgende om verder te gaan. U weet uw "
 "wachtwoord toch nog wel?&lt;/p&gt;"
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:46
 #, fuzzy
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
@@ -537,6 +523,21 @@ msgstr ""
 "computer opgeven. Met de hostnaam wordt deze computer in het lokale netwerk "
 "weergegeven en daarom wordt het instellen van een  unieke naam aanbevolen."
 "&lt;/p&gt;"
+
+#~ msgid ""
+#~ "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
+#~ "word processor, a spreadsheet, a presentation application, database, "
+#~ "formula and drawing tools to your desktop for your office needs at home, "
+#~ "at your workplace or school. With OpenOffice.org, you can view and edit "
+#~ "documents created in other office suites and share your documents with "
+#~ "friends and contacts that are using other office applications."
+#~ msgstr ""
+#~ "De in de wereld leidende aanbieder van office producten OpenOffice.org "
+#~ "voorziet in een tekstbewerker, rekenblad en presentatie applicatie, "
+#~ "formule en tekengereedschappen voor thuisgebruik, op de werkplek of op "
+#~ "school. Met Openoffice.org kunt u documenten bekijken en bewerken en met "
+#~ "vrienden delen die een andere office aanbieder gebruiken of daarmee "
+#~ "gemaakt zijn."
 
 #~ msgid ""
 #~ "Adding new users, changing boot order, starting or stopping system "
