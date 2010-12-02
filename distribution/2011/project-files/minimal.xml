@@ -60,7 +60,7 @@
                 <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
                 <SelectedPackage>kernel</SelectedPackage>
                 <SelectedPackage>mc</SelectedPackage>
-                <SelectedPackage>memtest</SelectedPackage>
+                <SelectedPackage>memtest86</SelectedPackage>
                 <SelectedPackage>module-alsa-driver</SelectedPackage>
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
                 <SelectedPackage>plymouth</SelectedPackage>
@@ -228,7 +228,7 @@
                 <Package>man</Package>
                 <Package>man-pages</Package>
                 <Package>mc</Package>
-                <Package>memtest</Package>
+                <Package>memtest86</Package>
                 <Package>mesa</Package>
                 <Package>mingetty</Package>
                 <Package>miscfiles</Package>
@@ -335,7 +335,7 @@
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
-        <SelectedPackage>memtest</SelectedPackage>
+        <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
@@ -533,7 +533,7 @@
         <Package>man</Package>
         <Package>man-pages</Package>
         <Package>mc</Package>
-        <Package>memtest</Package>
+        <Package>memtest86</Package>
         <Package>mcpp</Package>
         <Package>mdadm</Package>
         <Package>mesa</Package>
