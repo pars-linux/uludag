@@ -194,10 +194,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Checks if item matches selected filter.
         """
-        filter = str(self.comboFilter.itemData(self.comboFilter.currentIndex()).toString())
-        if filter != "all":
-            if filter != item.getType():
-                return False
+        if self.comboFilter.currentIndex() == 0:
+            return True
+
+        filter = str(self.comboFilter.currentText()).lower()
+        if filter != item.getType():
+            return False
+
         return True
 
     def buildFilter(self):
