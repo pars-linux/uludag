@@ -88,14 +88,6 @@ def processCmdLine():
             repoList = []
             repoList.extend(repoListTemp)
 
-''' This function checks if the package given as parameter is in the conflict list '''
-def isPackageInConflictList(currentPackage):
-    for package in conflictList:
-        if package == currentPackage:
-            return True
-
-    return False
-
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
     ''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
@@ -140,7 +132,7 @@ def fetchRepos():
 
             ''' We may have multiple packagers as owner of the same package residing on different repositories '''
             ''' In that case, we need to mark the package as conflict and be aware of it while sending mail to the packager '''
-            if not isPackageInConflictList(spec.source.name):
+            if not spec.source.name in conflictList:
                 conflictList.append(spec.source.name)
 
 ''' This function returns a string including status info about all packages of a packager  '''
