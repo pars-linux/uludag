@@ -6,14 +6,24 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>529</width>
-    <height>48</height>
+    <width>418</width>
+    <height>52</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string notr="true">ItemWidget</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QCheckBox" name="checkState">
+     <property name="toolTip">
+      <string>Set or unset entry as default boot entry.</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="1">
     <widget class="QLabel" name="labelIcon">
      <property name="minimumSize">
@@ -72,7 +82,7 @@
      </item>
     </layout>
    </item>
-   <item row="0" column="5">
+   <item row="0" column="3">
     <widget class="QPushButton" name="pushEdit">
      <property name="toolTip">
       <string>Edit</string>
@@ -82,7 +92,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="6">
+   <item row="0" column="4">
     <widget class="QPushButton" name="pushDelete">
      <property name="toolTip">
       <string>Delete</string>
@@ -92,30 +102,10 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QRadioButton" name="checkState">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="4">
-    <widget class="QPushButton" name="pushUp">
-     <property name="text">
-      <string>Down</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="3">
-    <widget class="QPushButton" name="pushDown">
-     <property name="text">
-      <string>Up</string>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <tabstops>
+  <tabstop>checkState</tabstop>
   <tabstop>pushEdit</tabstop>
   <tabstop>pushDelete</tabstop>
  </tabstops>
