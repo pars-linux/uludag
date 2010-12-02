@@ -14,23 +14,25 @@ import os
 import re
 import sys
 import time
+import locale
 
 # QT & KDE Modules
 from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
+from khtml import *
 
 # UI
 import firewall
 import dialog
+import editdialog
 
 # DBus
 import comar
 import dbus
 import dbus.mainloop.qt3
 
-from handler import CallHandler
 
 # Rules
 import rules
@@ -74,13 +76,39 @@ if standalone:
 else:
     programbase = KCModule
 
-
-class AdvancedRuleCheckBox(QCheckBox):
-    def __init__(self, parent=None, name=None, ports=''):
-        QCheckBox.__init__(self, parent, name)
+class FWListViewItem(QListViewItem):
+    def __init__(self, parent, after=None, label='', ports='', isDefault=False, isRunning=False):
+        QListViewItem.__init__(self, parent, after, label)
         self.ports = ports
-        msg = i18n('Reject all outgoing connection through ports %s')
-        self.setText(msg.replace('%s', ports.replace(':', '-')))
+        self.isDefault = isDefault
+        self.isRunning = isRunning
+
+    def paintCell(self, p, cg, column, width, align):
+        cg = QColorGroup(cg)
+        if self.isDefault:
+            pp = p.font()
+            pp.setWeight(QFont.Bold)
+            p.setFont(pp)
+            QListViewItem.paintCell(self, p, cg, column, width,align)
+        else:
+            QListViewItem.paintCell(self, p, cg, column, width,align)
+
+class HelpDialog(QDialog):
+    def __init__(self, name, title, parent=None):
+        QDialog.__init__(self, parent)
+        self.setCaption(title)
+        self.layout = QGridLayout(self)
+        self.htmlPart = KHTMLPart(self)
+        self.resize(500, 600)
+        self.layout.addWidget(self.htmlPart.view(), 1, 1)
+
+        lang = locale.setlocale(locale.LC_MESSAGES)
+        if "_" in lang:
+            lang = lang.split("_", 1)[0]
+        url = locate("data", "%s/help/%s/main_help.html" % (name, lang))
+        if not os.path.exists(url):
+            url = locate("data", "%s/help/en/main_help.html" % name)
+        self.htmlPart.openURL(KURL(url))
 
 def checkPortFormat(ports):
     '''Check multiport format'''
@@ -96,7 +124,7 @@ def checkPortFormat(ports):
     return True
 
 class dialogRule(dialog.dialogRule):
-    def __init__(self, parent=None, name=None):
+    def __init__(self, parent=None, name=None, caption=i18n("Firewall Configuration"), ports=''):
         dialog.dialogRule.__init__(self, parent, name)
 
         self.connect(self.pushCancel, SIGNAL('clicked()'), self, SLOT('reject()'))
@@ -105,6 +133,9 @@ class dialogRule(dialog.dialogRule):
         # Load icons for buttons
         self.pushCancel.setIconSet(loadIconSet('cancel', group=KIcon.Small))
         self.pushOK.setIconSet(loadIconSet('ok', group=KIcon.Small))
+
+        self.linePorts.setText(ports.replace(':', '-'))
+        self.setCaption(caption)
 
     def accept(self):
         if checkPortFormat(str(self.linePorts.text())):
@@ -120,7 +151,6 @@ class dialogRule(dialog.dialogRule):
             return ports
         else:
             return False
-
 
 class MainApplication(programbase):
     def __init__(self, parent=None, name=None):
@@ -156,34 +186,15 @@ class MainApplication(programbase):
         if not standalone:
             mainwidget.groupButtons.hide()
 
-        # Tab 1 - Incoming Connections
-        self.incoming = []
-        mainwidget.frameIncoming.setColumnLayout(0, Qt.Vertical)
-        frameIncomingLayout = QVBoxLayout(mainwidget.frameIncoming.layout())
-        frameIncomingLayout.setAlignment(Qt.AlignTop)
-
-        # Tab 2 - Advanced
-        self.advanced = []
-        mainwidget.frameAdvanced.setColumnLayout(0, Qt.Vertical)
-        mainwidget.frameAdvancedLayout = QVBoxLayout(mainwidget.frameAdvanced.layout())
-        mainwidget.frameAdvancedLayout.setAlignment(Qt.AlignTop)
-
-        # Populate checkboxes
-        for key, (name, ports) in rules.filter.iteritems():
-            if key.startswith('in'):
-                chk = QCheckBox(mainwidget.frameIncoming, key)
-                chk.setText(i18n(name))
-                QToolTip.add(chk, unicode(i18n("Ports: %s")) % ports)
-                frameIncomingLayout.addWidget(chk)
-                self.incoming.append(chk)
-                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
-
         # Icons
         self.setIcon(loadIcon('firewall_config', size=48))
         mainwidget.pixmapFW.setPixmap(loadIcon('firewall_config', size=48))
         mainwidget.pixmapIncoming.setPixmap(loadIcon('server.png', size=48))
         mainwidget.pixmapAdvanced.setPixmap(loadIcon('gear.png', size=48))
         mainwidget.pushNewRule.setPixmap(loadIcon('add.png', size=32))
+        mainwidget.deleteRule.setPixmap(loadIcon('cancel.png', size=32))
+        mainwidget.editRule.setPixmap(loadIcon('configure.png', size=32))
+        mainwidget.startStop.setPixmap(loadIcon('player_play.png', size=32))
 
         mainwidget.pushOk.setIconSet(loadIconSet('ok', group=KIcon.Small))
         mainwidget.pushCancel.setIconSet(loadIconSet('cancel', group=KIcon.Small))
@@ -202,9 +213,21 @@ class MainApplication(programbase):
         self.connect(mainwidget.pushOk, SIGNAL('clicked()'), self.slotOk)
         self.connect(mainwidget.pushApply, SIGNAL('clicked()'), self.slotApply)
         self.connect(mainwidget.pushNewRule, SIGNAL('clicked()'), self.slotDialog)
+        self.connect(mainwidget.deleteRule, SIGNAL('clicked()'), self.slotDelete)
+        self.connect(mainwidget.editRule, SIGNAL('clicked()'), self.slotEdit)
+        self.connect(mainwidget.startStop, SIGNAL('clicked()'), self.slotStartStop)
+        self.connect(mainwidget.pushHelp, SIGNAL('clicked()'), self.slotHelp)
+        self.connect(mainwidget.outgoingRuleList, SIGNAL('selectionChanged()'), self.slotUpdateRuleListState)
+        self.connect(mainwidget.incomingRuleList, SIGNAL('selectionChanged()'), self.slotUpdateRuleListState)
 
         # Init
         self.getState()
+
+        # List initialization
+        mainwidget.outgoingRuleList.header().hide()
+        mainwidget.outgoingRuleList.setSorting(-1)
+        mainwidget.incomingRuleList.header().hide()
+        mainwidget.incomingRuleList.setSorting(-1)
 
     def handleSignals(self, package, signal, args):
         pass
@@ -225,33 +248,70 @@ class MainApplication(programbase):
             self.setState(self.state)
         self.link.Network.Firewall["iptables"].getState(async=handleState)
 
+    def handleList(self, list, ports):
+        """
+        Takes a qlistview and a port list. Firstly, adds defualt ports to the given list. Then iterates over 
+        the port list and if a port value in the list belongs a default service port, which is defined by firewall-config,
+        sets its running status and icon. Otherwise, adds a qlistviewitem for that port to the given qlistview.
+        """
+        list.clear()
+        runningList = {}
+        for _key, (_name, _ports) in rules.filter.iteritems():
+            msg = i18n(_name) + " [ " + unicode(i18n("Ports: %s")) % _ports + " ]"
+            lvi = FWListViewItem(list, None, msg, _ports, True)
+            lvi.setPixmap(0, loadIcon('applications-other.png', size=24));
+            runningList[_key] = lvi
+        for port in ports:
+            key = self.checkDefault(port)
+            if not key == '':
+                # this is default item, just edit
+                lvi = runningList[key]
+                if not lvi.isRunning:
+                    lvi.setPixmap(0, loadIcon('gear.png', size=24))
+                    lvi.isRunning = True
+            else:
+                # add custom item to end of the list
+                self.addItemToRuleList(list, port)
+
+
     def getRules(self):
+        # Note: If the firewall is running at the start this function executes two times.
+        # So that in the handleList method, list is cleared at first.
         def handleIncoming(package, exception, args):
             if exception:
                 return
             ports = args[0].get("port_exceptions", "").split()
-            for checkbox in self.incoming:
-                if not set(rules.filter[checkbox.name()][1].split()) - set(ports):
-                    checkbox.setChecked(True)
-                else:
-                    checkbox.setChecked(False)
+            self.handleList(mainwidget.incomingRuleList, ports)
         self.link.Network.Firewall["iptables"].getModuleParameters("block_incoming", async=handleIncoming)
 
         def handleOutgoing(package, exception, args):
             if exception:
                 return
-            ports = args[0].get("port_exceptions", "").split()
-            for chk in self.advanced:
-                chk.close(True)
-            self.advanced = []
-            for port in ports:
-                chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, ports=port)
-                chk.setChecked(True)
-                mainwidget.frameAdvancedLayout.addWidget(chk)
-                self.advanced.append(chk)
-                chk.show()
-                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
+            ports = args[0].get("port_exceptions", "").split() 
+            self.handleList(mainwidget.outgoingRuleList, ports)
         self.link.Network.Firewall["iptables"].getModuleParameters("block_outgoing", async=handleOutgoing)
+
+    def addItemToRuleList(self, list, port):
+        """
+        Adds a list view item to end of the given list with port value
+        """
+        if list == mainwidget.incomingRuleList:
+            msg = i18n('Allow all incoming connection through port(s) %s')
+        else:
+            msg = i18n('Reject all outgoing connection through port(s) %s')
+        msg = msg.replace('%s', port.replace(':', '-'))
+        lvi = FWListViewItem(list, list.lastItem(), msg, port)
+        lvi.setPixmap(0, loadIcon('gear.png', size=24));
+
+    def checkDefault(self, ports):
+        """
+        Checks the given ports if they are default or not.
+        If finds a default port returns the key name of it such as 'inMail'
+        """
+        for _key, (_name, _ports) in rules.filter.iteritems():
+            if _key.startswith('in') and not _ports.find(ports) == -1:
+                return _key
+        return ''
 
     def setState(self, state):
         self.state = state
@@ -272,13 +332,21 @@ class MainApplication(programbase):
 
     def updateRules(self):
         if self.state == 'on':
-            mainwidget.frameIncoming.setEnabled(True)
-            mainwidget.frameAdvanced.setEnabled(True)
+            mainwidget.outgoingRuleList.setEnabled(True)
             mainwidget.pushNewRule.setEnabled(True)
+            mainwidget.deleteRule.setEnabled(False)
+            mainwidget.editRule.setEnabled(False)
+            mainwidget.startStop.setEnabled(False)
+            mainwidget.incomingRuleList.setEnabled(True)
         else:
-            mainwidget.frameIncoming.setEnabled(False)
-            mainwidget.frameAdvanced.setEnabled(False)
+            mainwidget.outgoingRuleList.setEnabled(False)
+            mainwidget.outgoingRuleList.clear()
             mainwidget.pushNewRule.setEnabled(False)
+            mainwidget.deleteRule.setEnabled(False)
+            mainwidget.editRule.setEnabled(False)
+            mainwidget.startStop.setEnabled(False)
+            mainwidget.incomingRuleList.setEnabled(False)
+            mainwidget.incomingRuleList.clear()
 
     def slotStatus(self):
         mainwidget.pushStatus.setEnabled(False)
@@ -314,38 +382,162 @@ class MainApplication(programbase):
     def slotApply(self):
         self.saveAll()
 
+    def slotEdit(self):
+        """
+        Executes when an edit button clicked. Firstly decides which list will be used and shows an
+        edit dialog to the user. Stores the changed value in the list if the user changes something.
+        """
+        if mainwidget.tabWidget.currentPageIndex() == 0:
+            list = mainwidget.incomingRuleList
+        else:
+            list = mainwidget.outgoingRuleList
+        item = list.selectedItem()
+        if item:
+            dialog = dialogRule(mainwidget, caption=i18n("Edit Rule"), ports=item.ports)
+            ports = dialog.exec_loop()
+            if ports: # if the user clicks cancel loop returns boolean-false
+                item.ports = str(ports)
+                if list == mainwidget.incomingRuleList:
+                    msg = i18n('Allow all incoming connection through port(s) %s')
+                else:
+                    msg = i18n('Reject all outgoing connection through port(s) %s')
+                msg = msg.replace('%s', ports.replace(':', '-'))
+                item.setText(0, msg)
+                KMessageBox.information(self, i18n("Changes are written but will not be saved until you aplly them."))
+                if not standalone:
+                    self.changed()
+
     def slotDialog(self):
-        dialog = dialogRule(mainwidget)
+        dialog = dialogRule(mainwidget, caption=i18n("New Rule"), ports='')
         ports = dialog.exec_loop()
         if ports:
             ports = str(ports)
-            chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, ports=ports)
-            chk.setChecked(True)
-            mainwidget.frameAdvancedLayout.addWidget(chk)
-            self.advanced.append(chk)
-            chk.show()
+            if mainwidget.tabWidget.currentPageIndex() == 0:
+                list = mainwidget.incomingRuleList
+            else:
+                list = mainwidget.outgoingRuleList
+            item = self.checkExistence(list, ports)
+            if not item:
+                self.addItemToRuleList(list, ports)
+                if not standalone:
+                    self.changed()
+            else:
+                list.setSelected(item, True)
+                KMessageBox.sorry(self, i18n('Port is already in list.'), i18n('Error'))
+
+    def checkExistence(self, list, ports):
+        """
+        Checks wheter the given port is in the given list.
+        """
+        it = QListViewItemIterator(list)
+        item = it.current()
+        while item:
+            if item.ports == ports:
+                return item
+            it += 1
+            item = it.current()
+        return None
+
+    def slotDelete(self):
+        """
+        Removes the selected item from the list. List is determined from the sender widget.
+        """
+        if mainwidget.tabWidget.currentPageIndex() == 0:
+            list = mainwidget.incomingRuleList
+        else:
+            list = mainwidget.outgoingRuleList
+        item = list.selectedItem()
+        if item:
+            list.takeItem(item)
+            KMessageBox.information(self, i18n("Changes are written but will not be saved until you aplly them."))
             if not standalone:
                 self.changed()
-            self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
+
+    def slotStartStop(self):
+        """
+        Gets the selected default port from the list and starts or stops them according to their running status.
+        """
+        if mainwidget.tabWidget.currentPageIndex() == 0:
+            list = mainwidget.incomingRuleList
+        else:
+            list = mainwidget.outgoingRuleList
+        item = list.selectedItem()
+        if not item.isRunning:
+            item.isRunning = True
+            mainwidget.startStop.setPixmap(loadIcon('player_stop.png', size=32))
+            item.setPixmap(0, loadIcon('gear.png', size=24));
+        else:
+            item.isRunning = False
+            mainwidget.startStop.setPixmap(loadIcon('player_play.png', size=32))
+            item.setPixmap(0, loadIcon('applications-other.png', size=24));
+        if not standalone:
+            self.changed()
+        KMessageBox.information(self, i18n("Changes are written but will not be saved until you aplly them."))
+
+    def slotUpdateRuleListState(self):
+        """
+        Triggered when outgoing rule list's selection changed. Determines the buttons' status wheter they are enabled.
+        Default ports can't be edited or deleted but they can be started or stopped. Custom ports can be
+        edited or removed.
+        """
+        if mainwidget.tabWidget.currentPageIndex() == 0:
+            item = mainwidget.incomingRuleList.selectedItem()
+        else:
+            item = mainwidget.outgoingRuleList.selectedItem()
+        if item:
+            if item.isDefault:
+                mainwidget.deleteRule.setEnabled(False)
+                mainwidget.editRule.setEnabled(False)
+                mainwidget.startStop.setEnabled(True)
+                if item.isRunning:
+                    mainwidget.startStop.setPixmap(loadIcon('player_stop.png', size=32))
+                else:
+                    mainwidget.startStop.setPixmap(loadIcon('player_play.png', size=32))
+            else:
+                mainwidget.deleteRule.setEnabled(True)
+                mainwidget.editRule.setEnabled(True)
+                mainwidget.startStop.setEnabled(False)
+        else:
+            mainwidget.deleteRule.setEnabled(False)
+            mainwidget.editRule.setEnabled(False)
+            mainwidget.startStop.setEnabled(False)
+
+    def slotHelp(self):
+        help = HelpDialog("firewall-config", i18n("Firewall Manager Help"), self)
+        help.show()
 
     def setRule(self, table, rule):
         rule = '-t %s %s' % (table, rule)
         self.link.Net.Filter["iptables"].setRule(rule)
 
-    def saveAll(self):
-        # Tab 1 - Incoming Connections
+    def listPorts(self, list):
+        """
+        Stores the port values of the qlistitems in a python list for the given qlistview and returns this python port list.
+        """
         ports = []
-        for checkbox in self.incoming:
-            if checkbox.isChecked():
-                ports.extend(rules.filter[checkbox.name()][1].split(","))
-        self.link.Network.Firewall["iptables"].setModuleParameters("block_incoming", {"port_exceptions": " ".join(ports)})
+        it = QListViewItemIterator(list)
+        item = it.current()
+        while item:
+            if item.isDefault:
+                if item.isRunning:
+                    ports.append(item.ports)
+            else:
+                ports.append(item.ports)
+            it += 1
+            item = it.current()
+        return ports
 
-        # Tab 2 - Advanced
-        ports = []
-        for checkbox in self.advanced:
-            if checkbox.isChecked():
-                ports.append(checkbox.ports)
-        self.link.Network.Firewall["iptables"].setModuleParameters("block_outgoing", {"port_exceptions": " ".join(ports)})
+    def saveAll(self):
+        try:
+            # Tab 1 - Incoming Connections
+            ports = self.listPorts(mainwidget.incomingRuleList)
+            self.link.Network.Firewall["iptables"].setModuleParameters("block_incoming", {"port_exceptions": " ".join(ports)})
+
+            # Tab 2 - Advanced
+            ports = self.listPorts(mainwidget.outgoingRuleList)
+            self.link.Network.Firewall["iptables"].setModuleParameters("block_outgoing", {"port_exceptions": " ".join(ports)})
+        except:
+            pass
 
     def __del__(self):
         pass

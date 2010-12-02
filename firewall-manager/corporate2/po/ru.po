@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-26 14:33+0300\n"
+"POT-Creation-Date: 2010-12-01 23:33+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,147 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/firewall.py:188 src/firewall-config.py:133
-msgid "Firewall Configuration"
-msgstr "Настройки Брандмауэра"
-
-#: src/firewall.py:191
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr "<b><font size=\"+1\">Брандмауэр запущен</font></b>"
-
-#: src/firewall.py:192
-msgid "&Stop"
-msgstr "&Стоп"
-
-#: src/firewall.py:193
-msgid "Alt+S"
-msgstr "Alt+S"
-
-#: src/firewall.py:194
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr "Нажмите здесь, чтобы остановить брандмауэр и разрешить все входящие соединения."
-
-#: src/firewall.py:196
-msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
-msgstr ""
-
-#: src/firewall.py:197
-msgid "Incoming Connections"
-msgstr "Входящие соединения"
-
-#: src/firewall.py:198
-msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
-msgstr ""
-
-#: src/firewall.py:201
-msgid "Outgoing Connections"
-msgstr "Исходящие соединения"
-
-#: src/firewall.py:204
-msgid "Alt+H"
-msgstr "Alt+H"
-
-#: src/firewall.py:206
-msgid "Alt+A"
-msgstr "Alt+A"
-
-#: src/firewall.py:207
-msgid "&Ok"
-msgstr "&Ok"
-
-#: src/firewall.py:208
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: src/firewall.py:210
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#: src/firewall-config.py:41
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Граффическая оболочка Pardus Брандмауэра "
-
-#: src/firewall-config.py:57
-msgid "GUI Design & Usability"
-msgstr "GUI Design & Usability"
-
-#: src/firewall-config.py:58
-msgid "Help with IPTables"
-msgstr "Справка для IPTables"
-
-#: src/firewall-config.py:59
-msgid "Help with KDE stuff"
-msgstr ""
-
-#: src/firewall-config.py:82
-#, python-format
-msgid "Reject all outgoing connection through ports %s"
-msgstr "Отклонить все исходящие соединения через порты %s"
-
-#: src/firewall-config.py:113
-msgid "Invalid port range."
-msgstr "Неверный диапазон портов."
-
-#: src/firewall-config.py:176
-#, python-format
-msgid "Ports: %s"
-msgstr "Порты: %s"
-
-#: src/firewall-config.py:259
-msgid "&Stop Firewall"
-msgstr "&Выкл Брандмауэр"
-
-#: src/firewall-config.py:260
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>Брандмауэр включен</font></b>"
-
-#: src/firewall-config.py:262
-msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
-msgstr "Нажмите здесь, чтобы остановить брандмауэр и разрешить все входящие и исходящие соединения."
-
-#: src/firewall-config.py:267
-msgid "&Start Firewall"
-msgstr "&Вкл. Брандмауэр"
-
-#: src/firewall-config.py:268
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr "<b><font size='+1'>Брандмауэр не включен</font></b>"
-
-#: src/firewall-config.py:270
-msgid "Click here to start the firewall and allow connections only to specified services."
-msgstr "Нажмите здесь, чтобы включить брандмауэр и разрешить соединения только указанным сервисам."
-
-#: src/firewall-config.py:384
-msgid "Pardus Firewall Interface is already running!"
-msgstr "Интерфейфс Pardus Брандмауэр уже запущен!"
-
-#: src/dialog.py:64
-msgid "New Rule"
-msgstr "Новое правило"
-
-#: src/dialog.py:65
-msgid "Port Range"
-msgstr "Диапазон портов"
-
-#: src/dialog.py:66
-msgid "Example: 100-200,300"
-msgstr "Пример: 100-200,300"
-
 #: src/rules.py:7
 msgid "Mail services"
-msgstr "Почтовая служба"
+msgstr ""
 
 #: src/rules.py:11
 msgid "Web services"
-msgstr "Веб-службы"
+msgstr "-"
 
 #: src/rules.py:15
 msgid "Remote login service"
-msgstr "Служба удаленного подключения"
+msgstr "  "
 
 #: src/rules.py:19
 msgid "Windows file sharing service"
-msgstr "Сервис доступа к ресурсом Windows"
+msgstr ""
 
 #: src/rules.py:23
 msgid "Internet relay chat service"
@@ -163,8 +37,170 @@ msgstr ""
 
 #: src/rules.py:27
 msgid "File transfer service"
-msgstr "Служба передачи файлов"
+msgstr "  "
 
 #: src/rules.py:31
 msgid "Desktop Sharing"
-msgstr "Доступ к рабочему столу"
+msgstr ""
+
+#: src/dialog.py:64 src/firewall-config.py:427
+msgid "New Rule"
+msgstr ""
+
+#: src/dialog.py:65
+msgid "Port Range"
+msgstr ""
+
+#: src/dialog.py:66
+msgid "Example: 100-200,300"
+msgstr ""
+
+#: src/firewall-config.py:43
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "  Pardus  "
+
+#: src/firewall-config.py:59
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/firewall-config.py:60
+msgid "Help with IPTables"
+msgstr "  IPTables"
+
+#: src/firewall-config.py:61
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:127 src/firewall-config.py:163 src/firewall.py:240
+msgid "Firewall Configuration"
+msgstr " "
+
+#: src/firewall-config.py:144
+msgid "Invalid port range."
+msgstr ""
+
+#: src/firewall-config.py:268
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:307 src/firewall-config.py:417
+#, python-format
+msgid "Allow all incoming connection through port(s) %s"
+msgstr ""
+
+#: src/firewall-config.py:309 src/firewall-config.py:419
+#, python-format
+msgid "Reject all outgoing connection through port(s) %s"
+msgstr ""
+
+#: src/firewall-config.py:327
+msgid "&Stop Firewall"
+msgstr ""
+
+#: src/firewall-config.py:328
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:330
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+
+#: src/firewall-config.py:335
+msgid "&Start Firewall"
+msgstr ""
+
+#: src/firewall-config.py:336
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:338
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+
+#: src/firewall-config.py:412
+msgid "Edit Rule"
+msgstr ""
+
+#: src/firewall-config.py:422 src/firewall-config.py:468
+#: src/firewall-config.py:493
+msgid "Changes are written but will not be saved until you aplly them."
+msgstr ""
+
+#: src/firewall-config.py:442
+msgid "Port is already in list."
+msgstr ""
+
+#: src/firewall-config.py:546
+msgid "Firewall Manager Help"
+msgstr ""
+
+#: src/firewall-config.py:616
+msgid "Pardus Firewall Interface is already running!"
+msgstr ""
+
+#: src/firewall.py:130 src/firewall.py:187 src/firewall.py:251
+#: src/firewall.py:258
+msgid "Rule"
+msgstr ""
+
+#: src/firewall.py:242
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr ""
+
+#: src/firewall.py:243
+msgid "&Stop"
+msgstr "&"
+
+#: src/firewall.py:244
+msgid "Alt+S"
+msgstr "Alt+S"
+
+#: src/firewall.py:245
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+
+#: src/firewall.py:246
+msgid ""
+"All incoming connections are <b>rejected</b> by default. If you want to "
+"allow other computers to access services on this computer, check the service "
+"below:"
+msgstr ""
+
+#: src/firewall.py:252
+msgid "Incoming Connections"
+msgstr " "
+
+#: src/firewall.py:253
+msgid ""
+"In this tab, you can create your own firewall rules. Use '+' button to "
+"create rules, and uncheck rules from list to remove them."
+msgstr ""
+
+#: src/firewall.py:259
+msgid "Outgoing Connections"
+msgstr " "
+
+#: src/firewall.py:262
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:264
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: src/firewall.py:265
+msgid "&Ok"
+msgstr "&Ok"
+
+#: src/firewall.py:266
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: src/firewall.py:268
+msgid "Alt+C"
+msgstr "Alt+C"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-26 14:33+0300\n"
+"POT-Creation-Date: 2010-12-01 23:33+0200\n"
 "PO-Revision-Date: 2009-07-14 12:58+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -17,152 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: src/firewall.py:188 src/firewall-config.py:133
-msgid "Firewall Configuration"
-msgstr "Güvenlik Duvarı Yapılandırması"
-
-#: src/firewall.py:191
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr "<b><font size=\"+1\">Güvenlik duvarı açık</font></b>"
-
-#: src/firewall.py:192
-msgid "&Stop"
-msgstr "&Durdur"
-
-#: src/firewall.py:193
-msgid "Alt+S"
-msgstr "Alt+D"
-
-#: src/firewall.py:194
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-"Güvenlik duvarını kapatmak ve gelen bağlantılara izin vermek için buraya "
-"tıklayın"
-
-#: src/firewall.py:196
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Gelen tüm bağlantılar, varsayılan olarak <b>reddedilir</b>. Eğer diğer "
-"bilgisayarların, bu bilgisayardaki servislere erişmesine izin vermek "
-"istiyorsanız, aşağıdan servisi işaretleyin:"
-
-#: src/firewall.py:197
-msgid "Incoming Connections"
-msgstr "Gelen Bağlantılar"
-
-#: src/firewall.py:198
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-"Bu sekmede, kendi kurallarınızı oluşturabilirsiniz. Kural oluşturmak için "
-"'+' düğmesini kullanın, kural silmek için kutucuklardaki işareti kaldırın."
-
-#: src/firewall.py:201
-msgid "Outgoing Connections"
-msgstr "Giden Bağlantılar"
-
-#: src/firewall.py:204
-msgid "Alt+H"
-msgstr "Alt+K"
-
-#: src/firewall.py:206
-msgid "Alt+A"
-msgstr "Alt+E"
-
-#: src/firewall.py:207
-msgid "&Ok"
-msgstr "&Tamam"
-
-#: src/firewall.py:208
-msgid "Alt+O"
-msgstr "Alt+T"
-
-#: src/firewall.py:210
-msgid "Alt+C"
-msgstr "Alt+İ"
-
-#: src/firewall-config.py:41
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Pardus Güvenlik Duvarı Kullanıcı Grafik Arabirimi"
-
-#: src/firewall-config.py:57
-msgid "GUI Design & Usability"
-msgstr "KGA Tasarımı ve Kullanılabilirlik"
-
-#: src/firewall-config.py:58
-msgid "Help with IPTables"
-msgstr "IPTables Yardımı"
-
-#: src/firewall-config.py:59
-msgid "Help with KDE stuff"
-msgstr "KDE Yardımı"
-
-#: src/firewall-config.py:82
-#, python-format
-msgid "Reject all outgoing connection through ports %s"
-msgstr "%s portlarına giden bağlantıları reddet"
-
-#: src/firewall-config.py:113
-msgid "Invalid port range."
-msgstr "Geçersiz port aralığı."
-
-#: src/firewall-config.py:176
-#, python-format
-msgid "Ports: %s"
-msgstr "Portlar: %s"
-
-#: src/firewall-config.py:259
-msgid "&Stop Firewall"
-msgstr "Güvenlik &Duvarını Durdur"
-
-#: src/firewall-config.py:260
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>Güvenlik duvarı açık</font></b>"
-
-#: src/firewall-config.py:262
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Güvenlik duvarını kapatmak ve gelen/giden tüm bağlantılara izin vermek için "
-"tıklayın."
-
-#: src/firewall-config.py:267
-msgid "&Start Firewall"
-msgstr "Güvenlik Duvarını &Aç"
-
-#: src/firewall-config.py:268
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr "<b><font size='+1'>Güvenlik duvarı kapalı</font></b>"
-
-#: src/firewall-config.py:270
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Güvenlik duvarını açmak ve sadece belirlenen servislere erişime izin vermek "
-"için tıklayın."
-
-#: src/firewall-config.py:384
-msgid "Pardus Firewall Interface is already running!"
-msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor."
-
-#: src/dialog.py:64
-msgid "New Rule"
-msgstr "Yeni Kural"
-
-#: src/dialog.py:65
-msgid "Port Range"
-msgstr "Port Aralığı"
-
-#: src/dialog.py:66
-msgid "Example: 100-200,300"
-msgstr "Örnek: 100-200,300"
 
 #: src/rules.py:7
 msgid "Mail services"
@@ -192,8 +46,182 @@ msgstr "Dosya transfer servisi"
 msgid "Desktop Sharing"
 msgstr "Masaüstü Paylaşımı"
 
-#~ msgid "Accept all incoming connection through ports %s"
-#~ msgstr "%s portlarına gelen bağlantılara izin ver"
+#: src/dialog.py:64 src/firewall-config.py:427
+msgid "New Rule"
+msgstr "Yeni Kural"
+
+#: src/dialog.py:65
+msgid "Port Range"
+msgstr "Port Aralığı"
+
+#: src/dialog.py:66
+msgid "Example: 100-200,300"
+msgstr "Örnek: 100-200,300"
+
+#: src/firewall-config.py:43
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus Güvenlik Duvarı Kullanıcı Grafik Arabirimi"
+
+#: src/firewall-config.py:59
+msgid "GUI Design & Usability"
+msgstr "KGA Tasarımı ve Kullanılabilirlik"
+
+#: src/firewall-config.py:60
+msgid "Help with IPTables"
+msgstr "IPTables Yardımı"
+
+#: src/firewall-config.py:61
+msgid "Help with KDE stuff"
+msgstr "KDE Yardımı"
+
+#: src/firewall-config.py:127 src/firewall-config.py:163 src/firewall.py:240
+msgid "Firewall Configuration"
+msgstr "Güvenlik Duvarı Yapılandırması"
+
+#: src/firewall-config.py:144
+msgid "Invalid port range."
+msgstr "Geçersiz port aralığı."
+
+#: src/firewall-config.py:268
+#, python-format
+msgid "Ports: %s"
+msgstr "Portlar: %s"
+
+#: src/firewall-config.py:307 src/firewall-config.py:417
+#, python-format
+msgid "Allow all incoming connection through port(s) %s"
+msgstr "%s port(lar)ına gelen bağlantılara izin ver"
+
+#: src/firewall-config.py:309 src/firewall-config.py:419
+#, python-format
+msgid "Reject all outgoing connection through port(s) %s"
+msgstr "%s port(lar)ına giden bağlantıları reddet"
+
+#: src/firewall-config.py:327
+msgid "&Stop Firewall"
+msgstr "Güvenlik &Duvarını Durdur"
+
+#: src/firewall-config.py:328
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr "<b><font size='+1'>Güvenlik duvarı açık</font></b>"
+
+#: src/firewall-config.py:330
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Güvenlik duvarını kapatmak ve gelen/giden tüm bağlantılara izin vermek için "
+"tıklayın."
+
+#: src/firewall-config.py:335
+msgid "&Start Firewall"
+msgstr "Güvenlik Duvarını &Aç"
+
+#: src/firewall-config.py:336
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr "<b><font size='+1'>Güvenlik duvarı kapalı</font></b>"
+
+#: src/firewall-config.py:338
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Güvenlik duvarını açmak ve sadece belirlenen servislere erişime izin vermek "
+"için tıklayın."
+
+#: src/firewall-config.py:412
+msgid "Edit Rule"
+msgstr "Kural Düzenle"
+
+#: src/firewall-config.py:422 src/firewall-config.py:468
+#: src/firewall-config.py:493
+msgid "Changes are written but will not be saved until you aplly them."
+msgstr "Değişikler yazıldı ancak uygulanıncaya kadar kaydedilmeyecek."
+
+#: src/firewall-config.py:442
+msgid "Port is already in list."
+msgstr "Port zaten listede var."
+
+#: src/firewall-config.py:546
+msgid "Firewall Manager Help"
+msgstr "Güvenlik Duvarı Yöneticisi Yardım"
+
+#: src/firewall-config.py:616
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus Güvenlik Duvarı Arabirimi zaten çalışıyor."
+
+#: src/firewall.py:130 src/firewall.py:187 src/firewall.py:251
+#: src/firewall.py:258
+#, fuzzy
+msgid "Rule"
+msgstr "Yeni Kural"
+
+#: src/firewall.py:242
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Güvenlik duvarı açık</font></b>"
+
+#: src/firewall.py:243
+msgid "&Stop"
+msgstr "&Durdur"
+
+#: src/firewall.py:244
+msgid "Alt+S"
+msgstr "Alt+D"
+
+#: src/firewall.py:245
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr ""
+"Güvenlik duvarını kapatmak ve gelen bağlantılara izin vermek için buraya "
+"tıklayın"
+
+#: src/firewall.py:246
+msgid ""
+"All incoming connections are <b>rejected</b> by default. If you want to "
+"allow other computers to access services on this computer, check the service "
+"below:"
+msgstr ""
+"Gelen tüm bağlantılar, varsayılan olarak <b>reddedilir</b>. Eğer diğer "
+"bilgisayarların, bu bilgisayardaki servislere erişmesine izin vermek "
+"istiyorsanız, aşağıdan servisi işaretleyin:"
+
+#: src/firewall.py:252
+msgid "Incoming Connections"
+msgstr "Gelen Bağlantılar"
+
+#: src/firewall.py:253
+msgid ""
+"In this tab, you can create your own firewall rules. Use '+' button to "
+"create rules, and uncheck rules from list to remove them."
+msgstr ""
+"Bu sekmede, kendi kurallarınızı oluşturabilirsiniz. Kural oluşturmak için "
+"'+' düğmesini kullanın, kural silmek için kutucuklardaki işareti kaldırın."
+
+#: src/firewall.py:259
+msgid "Outgoing Connections"
+msgstr "Giden Bağlantılar"
+
+#: src/firewall.py:262
+msgid "Alt+H"
+msgstr "Alt+K"
+
+#: src/firewall.py:264
+msgid "Alt+A"
+msgstr "Alt+E"
+
+#: src/firewall.py:265
+msgid "&Ok"
+msgstr "&Tamam"
+
+#: src/firewall.py:266
+msgid "Alt+O"
+msgstr "Alt+T"
+
+#: src/firewall.py:268
+msgid "Alt+C"
+msgstr "Alt+İ"
+
+#~ msgid "Reject all outgoing connection through ports %s"
+#~ msgstr "%s portlarına giden bağlantıları reddet"
 
 #~ msgid "Reject all incoming connection through ports %s"
 #~ msgstr "%s portlarına gelen bağlantıları reddet"
