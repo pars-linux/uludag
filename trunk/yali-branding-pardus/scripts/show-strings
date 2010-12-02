@@ -27,7 +27,7 @@ else:
         slideshows = doc.getTag("slideshows")
         if slideshows:
             for slideshow in slideshows.tags("slideshow"):
-                slideshow_icon = slideshow.getTagData("icon")
+                slideshow_icon = slideshow.getTagData("picture")
                 slideshow_description = slideshow.getTagData("_description")
                 print "Icon:%s" % slideshow_icon
                 print "Description:%s\n" % slideshow_description
