@@ -2,7 +2,7 @@
     <Title>Minimal x86_64</Title>
     <WorkDir>/tmp/pardusman-workdir/minimal-64/</WorkDir>
     <ReleaseFiles>../distribution/2011/media-content</ReleaseFiles>
-    <ExtraParameters>splash</ExtraParameters>
+    <ExtraParameters>splash yali=default</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
             <Id>DURSUNAMCA5</Id>
