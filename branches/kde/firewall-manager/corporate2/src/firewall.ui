@@ -197,12 +197,32 @@
         </widget>
         <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>buttonsLayout</cstring>
+                <cstring>layout10</cstring>
             </property>
             <hbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
+                <widget class="QPushButton">
+                    <property name="name">
+                        <cstring>pushHelp</cstring>
+                    </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>100</width>
+                            <height>23</height>
+                        </size>
+                    </property>
+                    <property name="autoMask">
+                        <bool>false</bool>
+                    </property>
+                    <property name="text">
+                        <string>&amp;Help</string>
+                    </property>
+                    <property name="accel">
+                        <string>Alt+H</string>
+                    </property>
+                </widget>
                 <spacer>
                     <property name="name">
                         <cstring>spacer4</cstring>
@@ -215,7 +235,7 @@
                     </property>
                     <property name="sizeHint">
                         <size>
-                            <width>340</width>
+                            <width>250</width>
                             <height>20</height>
                         </size>
                     </property>
@@ -554,26 +574,6 @@
                         <property name="name">
                             <cstring>unnamed</cstring>
                         </property>
-                        <widget class="QPushButton">
-                            <property name="name">
-                                <cstring>pushHelp</cstring>
-                            </property>
-                            <property name="minimumSize">
-                                <size>
-                                    <width>100</width>
-                                    <height>23</height>
-                                </size>
-                            </property>
-                            <property name="autoMask">
-                                <bool>false</bool>
-                            </property>
-                            <property name="text">
-                                <string>&amp;Help</string>
-                            </property>
-                            <property name="accel">
-                                <string>Alt+H</string>
-                            </property>
-                        </widget>
                         <spacer>
                             <property name="name">
                                 <cstring>spacer10</cstring>
