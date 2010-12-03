@@ -44,13 +44,6 @@
      </property>
     </widget>
    </item>
-   <item>
-    <widget class="QPushButton" name="pushApply">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
   </layout>
  </widget>
  <resources/>
