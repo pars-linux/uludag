@@ -21,17 +21,19 @@ repoList = {"http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2",
 ''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
 repos = {}
 
-options = {"uc":False, "nm":False, "r":False, "sc":False}
+options = {"uc":False, "nm":False, "r":False, "sc":False, "cc": False}
 
 ''' This stores packager list maintaining same package in different distributions  '''
-conflictList=[]
+''' Structure : { package_name -> [packager_mail1,..,packager_mailX]}  '''
+conflictList = {}
 
 ''' Modify here if necessary '''
 reportFile = "report"
-contentHeader = "Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t***PACKAGES***"
+contentHeader = "Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t\t\t***PACKAGES***\n"
+contentHeader = "%s|%-50s|%-20s|%-10s|%-10s|%-5s|%-5s|%-100s|" %(contentHeader, "Package", "Distro", "Release no", "Version no", "#Pack", "#Patch", "Is there conflict?")
 contentFooter = "You are getting this e-mail because you have packages in our repositories. If you think you shouldn't receive this e-mail please contact with ..."
 mailSender = "gozbulak@pardus.org.tr"
-mailSenderPwd = "type_pwd_here"
+mailSenderPwd = "pwd"
 mailSubject = "Package Summary"
 mailServer = "mail.pardus.org.tr"
 
@@ -59,6 +61,7 @@ def processCmdLine():
             elif option == "nomail": options["nm"] = True
             elif option == "report": options["r"] = True
             elif option == "splitcheck": options["sc"] = True
+            elif option == "conflictcheck": options["cc"] = True
             else:
                 printHelp(True)
         elif arg.startswith("-"):
@@ -120,58 +123,90 @@ def fetchRepos():
                 repos[spec.source.packager.name] = {}
             if not repos[spec.source.packager.name].has_key(spec.source.name):
                 repos[spec.source.packager.name][spec.source.name] = [[], [], [], [], []]
-            else:
-                repos[spec.source.packager.name][spec.source.name][4].append()
 
             repos[spec.source.packager.name][spec.source.name][0].append([spec.history[0].release, spec.history[0].version])
             repos[spec.source.packager.name][spec.source.name][1].append(len(spec.packages))
             repos[spec.source.packager.name][spec.source.name][2].append(len(spec.source.patches))
             repos[spec.source.packager.name][spec.source.name][3].append(distroList[order])
-            if not spec.source.packager.mail in repos[spec.source.packager.name][spec.source.name][4]:
+            if not spec.source.packager.email in repos[spec.source.packager.name][spec.source.name][4]:
                 repos[spec.source.packager.name][spec.source.name][4].append(spec.source.packager.email)
 
             ''' We may have multiple packagers as owner of the same package residing on different repositories '''
-            ''' In that case, we need to mark the package as conflict and be aware of it while sending mail to the packager '''
-            if not spec.source.name in conflictList:
-                conflictList.append(spec.source.name)
+            ''' In that case, we need to mark the package as in conflict and be aware of it while sending mail to the packager '''
+            if conflictList.has_key(spec.source.name):
+                if not spec.source.packager.email in conflictList[spec.source.name]:
+                    conflictList[spec.source.name].append(spec.source.packager.email)
+            else:
+                conflictList[spec.source.name] = [spec.source.packager.email]
 
 ''' This function returns a string including status info about all packages of a packager  '''
 def prepareContentBody(packager):
-    # THIS IS GONNA CHANGE
-    content = ""
-    for packager in repos.keys():
-        for package in repos[packager].keys():
-            content = "%s\n (%s-%s) -> %s" %(content, packager, package, repos[packager][package])
+    content = "|%s|\n" %(200 * "-")
+    for package in repos[packager].keys():
+        for order, distro in enumerate(repos[packager][package][3]):
+            ''' To prevent repeatation for package name and conflict check comment '''
+            if order == 0:
+                content = "%s|%-50s|" %(content, package)
 
-    return content,repos[packager][package][4][0]
+                ''' Conflict check  '''
+                if options["cc"]:
+                    conflictComment = "No"
+                    ''' Check if  there are  multiple packagers maintaining the same package'''
+                    if len(conflictList[package]) > 1:
+                        ''' Packager may have more than one e-mail addresses  '''
+                        for mail in repos[packager][package][4]:
+                            if mail in conflictList[package]:
+                                ''' Excluding packagers own mail address without breaking conflict list '''
+                                conflictComment = "Yes, please contact with %s" %(list(conflictList[package]).remove(mail))
+                                break
+                else:
+                    conflictComment = "N/A"
+            else:
+                content = "%s|%-50s|" % (content, " ")
+                conflictComment = ""
+
+            ''' Adding a new entry for the package as below '''
+            '''Package_name | Distro_name | Release_no | Version_no | #Package | #Patch | Is there conflict? '''
+            content = "%s%-20s|%-10s|%-10s|%-5s|%-5s|%-50s\n" %(content,
+                                                                distro,
+                                                                repos[packager][package][0][order][0],
+                                                                repos[packager][package][0][order][1],
+                                                                repos[packager][package][1][order],
+                                                                repos[packager][package][2][order],
+                                                                conflictComment)
+
+        content = "%s|%s|\n" %(content, (200 * "-"))
+
+    return content
 
 ''' This function gathers all e-mail addresses a packager specifies in his/her packages '''
-def prepareRecevierMailList(packager):
+def prepareReceiverMailList(packager):
     mailList = []
 
-    for package in repos[packager].key():
+    for package in repos[packager].keys():
         for mail in repos[packager][package][4]:
             if not mail in mailList:
                 mailList.append(mail)
 
-    return ",".join(mailList)
+    return mailList
 
 ''' This function sends mail to the recipient whose details are passed  '''
-def sendMail(receiver, contentBody):
+def sendMail(receiverList, contentBody):
     msg = MIMEText("%s\n%s\n%s" % (contentHeader, contentBody.encode("utf-8"), contentFooter))
     ''' Envelope Information, just to show the e-mail correctly in recipient inbox and not to be marked as spam '''
     msg["Subject"] = mailSubject
     msg["From"] = mailSender
-    msg["To"] = receiver
 
     try:
-        if receiver == "gozbulak@pardus.org.tr":
+        for receiver in receiverList:
+          if receiver == "metin@pardus.org.tr" or receiver == "metinakdere@gmail.com":
             smtp = smtplib.SMTP(mailServer)
+            msg["To"] = receiver
             smtp.ehlo()
             smtp.starttls()
             smtp.ehlo()
             smtp.login(mailSender, mailSenderPwd)
-            smtp.sendmail(mailSender, receiver, msg.as_string())
+            smtp.sendmail(mailSender, "gozbulak@pardus.org.tr", msg.as_string())
             smtp.quit()
     except Exception:
         return -1
@@ -187,7 +222,7 @@ def traverseRepos():
         if not options["nm"]:
             receiverMailList = prepareReceiverMailList(packager)
             if sendMail(receiverMailList, contentBody):
-                print "Send mail to %s failed." % mailReceiver
+                print "Send mail to %s failed." % receiverMailList
         if options["r"]:
             fp.write(contentBody)
 
