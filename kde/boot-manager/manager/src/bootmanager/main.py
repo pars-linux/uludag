@@ -60,6 +60,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Backend
         self.iface = Interface()
         self.iface.listenSignals(self.signalHandler)
+        self._refresh_items = True
 
         # Fail if no packages provide backend
         self.checkBackend()
@@ -89,7 +90,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.buttonBox, QtCore.SIGNAL("rejected()"), self.slotCancelEdit)
         self.connect(self.animator, QtCore.SIGNAL("frameChanged(int)"), self.slotAnimate)
         self.connect(self.animator, QtCore.SIGNAL("finished()"), self.slotAnimationFinished)
-        self.connect(self.widgetOptions, QtCore.SIGNAL("timeoutChanged(int)"), self.slotTimeoutChanged)
 
     def hiddenListWorkaround(self):
         """
@@ -164,31 +164,34 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         # Options
         self.options = self.iface.getOptions()
-        self.widgetOptions.setTimeout(self.options.get("timeout", "0"))
+        self.widgetOptions.setTimeout(self.options.get("timeout", "1"))
 
-        # Clear list
-        self.clearItemList()
-        self.systems = self.iface.getSystems()
-        self.entries = []
+        if self._refresh_items:
+            # Clear list
+            self.clearItemList()
+            self.systems = self.iface.getSystems()
+            self.entries = []
 
-        def handleList(package, exception, args):
-            if exception:
-                pass
-                # TODO: Handle exception
-            else:
-                self.entries = args[0]
-                for index, entry in enumerate(self.entries):
-                    if "root" in entry:
-                        root = entry["root"]
-                    elif "uuid" in entry:
-                        root = getDiskByUUID(entry["uuid"])
-                    else:
-                        root = ""
-                    default = False
-                    if self.options.get("default", "0") == str(index):
-                        default = True
-                    self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
-        self.iface.getEntries(func=handleList)
+            def handleList(package, exception, args):
+                if exception:
+                    pass
+                    # TODO: Handle exception
+                else:
+                    self.entries = args[0]
+                    for index, entry in enumerate(self.entries):
+                        if "root" in entry:
+                            root = entry["root"]
+                        elif "uuid" in entry:
+                            root = getDiskByUUID(entry["uuid"])
+                        else:
+                            root = ""
+                        default = False
+                        if self.options.get("default", "0") == str(index):
+                            default = True
+                        self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
+            self.iface.getEntries(func=handleList)
+
+        self._refresh_items = True
 
     def itemMatchesFilter(self, item):
         """
@@ -388,6 +391,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetOptions.setTimeout(self.options["timeout"])
             else:
                 self.options["timeout"] = timeout
+
+        # No need to refresh all items, we just changed the timeout
+        self._refresh_items = False
+
         self.iface.setOption("timeout", str(timeout), func=handler)
 
     def signalHandler(self, package, signal, args):

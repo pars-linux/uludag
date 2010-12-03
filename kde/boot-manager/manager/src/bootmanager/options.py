@@ -22,18 +22,16 @@ from PyKDE4 import kdecore
 # UI
 from bootmanager.ui_options import Ui_OptionsWidget
 
-
 class OptionsWidget(QtGui.QWidget, Ui_OptionsWidget):
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-
-        self.pushApply.setIcon(kdeui.KIcon("dialog-ok-apply"))
-
-        self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("timeoutChanged(int)"), self.spinTimeout.value()))
+        self.spinTimeout.valueChanged.connect(parent.slotTimeoutChanged)
 
     def getTimeout(self):
         return self.spinTimeout.value()
 
     def setTimeout(self, timeout):
+        self.spinTimeout.blockSignals(True)
         self.spinTimeout.setValue(int(timeout))
+        self.spinTimeout.blockSignals(False)
