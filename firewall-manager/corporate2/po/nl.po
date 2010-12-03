@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-01 23:33+0200\n"
-"PO-Revision-Date: 2010-05-27 22:21+0200\n"
+"PO-Revision-Date: 2010-12-03 13:53+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -91,14 +91,14 @@ msgid "Ports: %s"
 msgstr "Poorten: %s"
 
 #: src/firewall-config.py:307 src/firewall-config.py:417
-#, fuzzy, python-format
+#, python-format
 msgid "Allow all incoming connection through port(s) %s"
-msgstr "Accepteer alle binnenkomende verbindingen door poorten %s"
+msgstr "Accepteer alle binnenkomende verbindingen door poort(en) %s"
 
 #: src/firewall-config.py:309 src/firewall-config.py:419
-#, fuzzy, python-format
+#, python-format
 msgid "Reject all outgoing connection through port(s) %s"
-msgstr "Keur alle uitgaande verbindingen af door poorten %s"
+msgstr "Verwerp alle uitgaande verbindingen af door poort(en) %s"
 
 #: src/firewall-config.py:327
 msgid "&Stop Firewall"
@@ -134,20 +134,21 @@ msgstr ""
 
 #: src/firewall-config.py:412
 msgid "Edit Rule"
-msgstr ""
+msgstr "Regels bewerken"
 
 #: src/firewall-config.py:422 src/firewall-config.py:468
 #: src/firewall-config.py:493
 msgid "Changes are written but will not be saved until you aplly them."
 msgstr ""
+"Wijzigingen worden bewaard maar niet opgeslagen voordat ze toegepast worden."
 
 #: src/firewall-config.py:442
 msgid "Port is already in list."
-msgstr ""
+msgstr "Poort is reeds in de lijst."
 
 #: src/firewall-config.py:546
 msgid "Firewall Manager Help"
-msgstr ""
+msgstr "Help firewallbeheer"
 
 #: src/firewall-config.py:616
 msgid "Pardus Firewall Interface is already running!"
@@ -155,9 +156,8 @@ msgstr "Pardus firewall interface is al actief!"
 
 #: src/firewall.py:130 src/firewall.py:187 src/firewall.py:251
 #: src/firewall.py:258
-#, fuzzy
 msgid "Rule"
-msgstr "Nieuwe regel"
+msgstr "Regel"
 
 #: src/firewall.py:242
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
