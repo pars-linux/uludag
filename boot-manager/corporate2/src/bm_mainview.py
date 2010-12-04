@@ -520,23 +520,20 @@ class widgetMain(QWidget):
         self.entries = []
         self.options = {}
         self.systems = {}
-        self.screens = []
+        self.screens = {}
 
         layout = QGridLayout(self, 1, 1, 0, 0)
         self.stack = QWidgetStack(self)
         layout.addWidget(self.stack, 0, 0)
 
         self.widgetEntries = widgetEntryList(self)
-        self.stack.addWidget(self.widgetEntries)
-        self.screens.append("Entries")
+        self.screens["Entries"] = self.stack.addWidget(self.widgetEntries)
 
         self.widgetEditEntry = widgetEditEntry(self)
-        self.stack.addWidget(self.widgetEditEntry)
-        self.screens.append("EditEntry")
+        self.screens["EditEntry"] = self.stack.addWidget(self.widgetEditEntry)
 
         self.widgetUnused = widgetUnused(self)
-        self.stack.addWidget(self.widgetUnused)
-        self.screens.append("Unused")
+        self.screens["Unused"] = self.stack.addWidget(self.widgetUnused)
 
         self.setup()
 
@@ -615,8 +612,7 @@ class widgetMain(QWidget):
                     self.widgetUnused.listUnused()
 
     def showScreen(self, label):
-        screen = self.screens.index(label)
-        self.stack.raiseWidget(screen)
+        self.stack.raiseWidget(self.screens[label])
 
     def queryOptions(self):
         def handler(options):
