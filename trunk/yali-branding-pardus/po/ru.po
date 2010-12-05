@@ -47,16 +47,15 @@ msgstr "Настройка загрузчика"
 
 #: ../release.xml.in.h:8
 msgid "Connecting to your friends and contacts is really easy and seamlessly integrated into the desktop with Pardus 2011. Using Kontact, you can send and receive emails, manage your meetings, create address books, takes notes and follow RSS feeds. Using Kopete, you can connect to popular networks like MSN and GTalk, and chat online with your friends."
-msgstr ""
+msgstr "Связывайтесь с Вашими друзьями и контактами без лишних усилий, используя интегрированные в Pardus 2011 приложения.  Используя Kontact, Вы можете отправлять и принимать электронные письма, управлять Вашими встречами и заданиями, создавать адресную книгу, оставлять заметки и читать RSS-ленты. Используя Kopete, Вы можете пользоваться популярными сервисами обмена сообщениями, таких как MSN и GTalk, и общаться онлайн с Вашими друзьями."
 
 #: ../release.xml.in.h:9
-#, fuzzy
 msgid "Date and time settings allows you to set the date and time of your computer. Generally,you will also want to specify a correct timezone for your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as thelocal time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
-msgstr "&lt;p&gt;Установки даты и времения позволят вам установить дату и время на вашем комьютере. Также, вы скорее всего захотите установить часовой пояс для того, чтобы переключаться на летнее время автоматически, сохраняя ваши настройки.&lt;/p&gt;&lt;p&gt;Часовой пояс - это область на земле, для которой установлено время, обычно обозначаемое как местное время. После установки часовой пояс позволит вам рассчитать время относительно UTC, Скоординированного Универсального Времени.&lt;/p&gt;"
+msgstr "&lt;p&gt;Установки даты и времени позволят вам установить дату и время на вашем компьютере. Также, вы скорее всего захотите установить часовой пояс для того, чтобы переключаться на летнее время автоматически, сохраняя ваши настройки.&lt;/p&gt;&lt;p&gt;Часовой пояс - это область на земле, для которой установлено время, обычно обозначаемое как местное время. После установки часовой пояс позволит вам рассчитать время относительно UTC, Скоординированного Универсального Времени.&lt;/p&gt;"
 
 #: ../release.xml.in.h:10
 msgid "Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set of features where you may be surprised with the talents of a simple file manager. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by columns to organize your files by comparing... You can utilize any KDE application as they can work in Dolpin embedded. Thus you can edit an image file in your file manager with the full features of Gwenview, the image viewer or preview a video in the optional optional and customizable Information panel.&lt;br&gt;&lt;br&gt;"
-msgstr ""
+msgstr "Dolphin - это файловый менеджер рабочей среды KDE, используемый в Pardus. Dolphin предоставляет огромный набор функций и возможностей, Вы удивитесь талантам этого файлового менеджера. &lt;br&gt;&lt;br&gt;Вы можете разделить любое окно Dolphin по столбцам чтобы организовать свои файлы путем сравнения... Вы можете использовать любое приложение KDE как встроенное в Dolphin. Например, Вы можете редактировать изображения в Вашем файловом менеджере, полноценно используя Gwenview, просматривать изображения или использовать опциональный предварительный просмотр видео-файлов."
 
 #: ../release.xml.in.h:11
 msgid "Dolphin learned a lot from the web experience. Tabbed browsing, folder addresses as breadcrumbs, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
