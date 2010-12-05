@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-05 19:01+0000\n"
+"POT-Creation-Date: 2010-12-05 20:02+0000\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -99,7 +99,7 @@ msgstr "Instalando Pardus"
 
 #: ../release.xml.in.h:21
 msgid "KDE is the stage of the production, where all the audience see the glamorous show with hundreds, even thousands of programs for every need in all levels. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. KDE is the desktop environment of Pardus, where all the softwares and tools are laid."
-msgstr ""
+msgstr "KDE es el estado de producción, para todas las audiencias, y brinde una demostracion de cientos o miles de programas para todo tipo de necesidades o niveles de experiencia. Para los usuarios particulares y sus necesidades diarios, o para empresas, que requieren soluciones de alta performance, integrados pero fácil de usar. KDE es el entorno de escritorio de Pardus, que alberga todos los software y herramientas."
 
 #: ../release.xml.in.h:22
 msgid "Kahya is working"
@@ -140,11 +140,11 @@ msgstr "La experiencia con Pardus se puede describir como un desfile de esplendo
 
 #: ../release.xml.in.h:32
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, History Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
-msgstr ""
+msgstr "Pardus tiene muchas herramientas desarolladas en casa para brindar una fácil administración, como por ejemplo para administrar usuarios, arranque, cortafuegos, puntos de restauración históricos, servicios. Todas las herramientas se pueden uilizar individualmente o también desde el centro de configuración del sistema, una sola aplicación que integra las herramientas para todas las tareas de administración y configuración."
 
 #: ../release.xml.in.h:33
 msgid "Pardus is a free and open source operating system that contains globally known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice etc. besides many easy-to-use tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;The softwares included in this installation medium, are offered with a number of licenses. Tübitak prefers the GNU Public License (GPL version 2) for its own tools, which is the most common license for the selected components as well. You can read all the license texts in this screen by pressing on the license names or from our website. &lt;br&gt;&lt;br&gt;You have to accept the terms to install Pardus on your computer."
-msgstr ""
+msgstr "Pardus es un sistema operativo libre y de código abierto, que contiene varios proyectos renombrados mundialmente como por ejemplo el kernel Linux, las herramientas GNU, Mozilla Firefox, LibreOffice etc. además muchas herramientas fáciles de usar, para brindar una experiencia tanto confortable como de máximo rendimiento. &lt;br&gt;&lt;br&gt;Los software incluídos en el presente medio de instalación se presentan en sus diferentes versiones de licencia. Tübitak prefiere la licencia pública GNU (GPL version 2) para sus propias herramientas, que también es la licencia más común de los componentes seleccionados. Puede leer todos los textos de las licencias en esta pantalla, seleccionando el nombre de la licencia o ingresando en nuestro sitio web. &lt;br&gt;&lt;br&gt;Debe aceptar los términos al instalar Pardus en su computadora."
 
 #: ../release.xml.in.h:34
 msgid "Pardus, along with the preinstalled games, has many games in its repositories, allowing hours of fun with various kinds of games available through the package manager."
@@ -160,7 +160,7 @@ msgstr "Selección de disco para la instalación de Pardus"
 
 #: ../release.xml.in.h:37
 msgid "So many features are waiting to be found. Even more, many softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is easier than ever to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones with a few clicks. You can reach it from the menu of your choice, which you may decide just after install with the help of Kaptan!"
-msgstr ""
+msgstr "Hay tantas características a descubrir. Existen muchos más de software, librarías y herramientas que no se incluyeron en el medio de instalación para ahorrar espacio. Sin embargo con el sistema de paquetes de Pardus llamado PiSi y con su amigable interfaz de administración, el administrador de paquetes, es más fácil que nunca de agregar estos programas nuevos a su sistema. &lt;br&gt;&lt;br&gt;Administrador de Paquetes le ayudará mantener actualizado su sistema, remover paquetes que nunca utiliza, o agregar nuevos con pocos clics. Puede accederlo desde el menú del sistema, el cual puede utilizar en una de sus versiones según su elección en el asistente Kaptan!"
 
 #: ../release.xml.in.h:38
 msgid "Some help messages"
