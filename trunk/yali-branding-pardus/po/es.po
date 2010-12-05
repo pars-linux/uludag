@@ -163,9 +163,8 @@ msgid "So many features are waiting to be found. Even more, many softwares, libr
 msgstr ""
 
 #: ../release.xml.in.h:38
-#, fuzzy
 msgid "Some help messages"
-msgstr "&lt;p&gt; Mensajes de Ayuda &lt;/p&gt;"
+msgstr "Mensajes de Ayuda "
 
 #: ../release.xml.in.h:39
 msgid "Summary"
@@ -180,29 +179,24 @@ msgid "Welcome to Pardus"
 msgstr "Bienvenido a Pardus"
 
 #: ../release.xml.in.h:42
-#, fuzzy
 msgid "Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.&lt;br&gt;&lt;br&gt;You can start the installation process (and step in on a free world) by pressing the Next button."
-msgstr "&lt;p&gt; Bienvenido a Pardus. Pardus contiene muchos componentes de software de utilización fácil. Con Pardus puede hacer todo lo que necesita, por ejemplo cnectarse a internet, crear documentos, jugar, escuchar musica.&lt;/p&gt;&lt;p&gt; El presente programa le guiará con la instalación de Pardus en su computadora de manera fácil y sencilla, y posteriormente detectará y configurará el hardware. Le consejamos realizar un backup de los datos de sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;p&gt; Puede empezar el proceso de instalación (y hacer un paso al mundo libre) presionando el botón Siguiente.&lt;/p&gt;"
+msgstr "Bienvenido a Pardus. Pardus contiene muchos componentes de software de utilización fácil. Con Pardus puede hacer todo lo que necesita, por ejemplo cnectarse a internet, crear documentos, jugar, escuchar musica.&lt;/p&gt;&lt;p&gt; El presente programa le guiará con la instalación de Pardus en su computadora de manera fácil y sencilla, y posteriormente detectará y configurará el hardware. Le consejamos realizar un backup de los datos de sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;p&gt; Puede empezar el proceso de instalación (y hacer un paso al mundo libre) presionando el botón Siguiente."
 
 #: ../release.xml.in.h:43
-#, fuzzy
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
-msgstr "&lt;p&gt;YALI ahora está instalando Pardus en su computadora. Este proceso puede tardar 20-30 minutos dependiendo de su computadora. &lt;/p&gt;&lt;p&gt; Tenga en cuenta que la instalación desde un pendrive USB será más rápida que desde un medio óptico (CD/DVD).&lt;/p&gt;&lt;p&gt; Ahora relájese y disfrute la instalación, mientras descrubra las funcionalidades e inovaciones ofrecidos por ésta nueva versión de Pardus.&lt;/p&gt;"
+msgstr "YALI ahora está instalando Pardus en su computadora. Este proceso puede tardar 20-30 minutos dependiendo de su computadora. &lt;/p&gt;&lt;p&gt; Tenga en cuenta que la instalación desde un pendrive USB será más rápida que desde un medio óptico (CD/DVD).&lt;/p&gt;&lt;p&gt; Ahora relájese y disfrute la instalación, mientras descrubra las funcionalidades e inovaciones ofrecidos por ésta nueva versión de Pardus."
 
 #: ../release.xml.in.h:44
-#, fuzzy
 msgid "You can install Pardus if you have an unpartitioned-unused disk space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or partition selected for installation will automatically be formatted. Therefore, it is advised to backup your data to avoid future problems.&lt;br&gt;&lt;br&gt;Auto-partitioning will automatically format the select disk part/partition and install Pardus. If you like, you can do the partitioning manually or make Pardus create a new partition for installation."
-msgstr "&lt;p&gt;Puede realizar la instalación de Pardus si dispone de una partición libre con un espacio 4GB (10 GB recomendado) o un disco entero. Durante la instalación se formateará automáticamente el disco o la partición seleccionado para el sistema. Por lo tanto es aconsejable realizar un backup de los datos para evitar problemas.&lt;/p&gt;&lt;p&gt; Particionamiento automático formateará automaticamente el disco/partición seleccionado e instalará Pardus. Si lo desea puede realizar particionamiento manual o dejar que Pardus crée una nueva partición .&lt;/p&gt;"
+msgstr "Puede realizar la instalación de Pardus si dispone de una partición libre con un espacio 4GB (10 GB recomendado) o un disco entero. Durante la instalación se formateará automáticamente el disco o la partición seleccionado para el sistema. Por lo tanto es aconsejable realizar un backup de los datos para evitar problemas.&lt;/p&gt;&lt;p&gt; Particionamiento automático formateará automaticamente el disco/partición seleccionado e instalará Pardus. Si lo desea puede realizar particionamiento manual o dejar que Pardus crée una nueva partición ."
 
 #: ../release.xml.in.h:45
-#, fuzzy
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr "&lt;p&gt;Usted ha instalado exitosamente Pardus en su computadora. Luego de reiniciar su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, verdad ?&lt;/p&gt;"
+msgstr "Usted ha instalado exitosamente Pardus en su computadora. Luego de reiniciar su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, verdad ?"
 
 #: ../release.xml.in.h:46
-#, fuzzy
 msgid "You need to define a password for the &quot;root&quot; user which is the conventional nameof the user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks.You can use capital and lower-case letters, numbers and punctuation marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr "&lt;p&gt;Debe definir una contraseña para el usuario &quot;root&quot; que es el nombre convencional para el usuario con privilegios totales (sobre archivos y programas) en todos modos del sistema (multi-usuario o single). &lt;/p&gt;&lt;p&gt; Debe elegir una contraseña fácil de recordar, pero suficientemente fuerte para prevenir ataques. Puede utilizar en la contraseña letras en mayúsculas o minúsculas, números y símbolos de puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host para su computadora. El nombre de host es un identificador de la computadora en la red local. Se recomienda elegir un nombre descriptivo.&lt;/p&gt;"
+msgstr "Debe definir una contraseña para el usuario &quot;root&quot; que es el nombre convencional para el usuario con privilegios totales (sobre archivos y programas) en todos modos del sistema (multi-usuario o single). &lt;/p&gt;&lt;p&gt; Debe elegir una contraseña fácil de recordar, pero suficientemente fuerte para prevenir ataques. Puede utilizar en la contraseña letras en mayúsculas o minúsculas, números y símbolos de puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host para su computadora. El nombre de host es un identificador de la computadora en la red local. Se recomienda elegir un nombre descriptivo."
 
 #~ msgid "World&apos;s leading preferred libre office suite OpenOffice.org brings a word processor, a spreadsheet, a presentation application, database, formula and drawing tools to your desktop for your office needs at home, at your workplace or school. With OpenOffice.org, you can view and edit documents created in other office suites and share your documents with friends and contacts that are using other office applications."
 #~ msgstr "La suite ofimatica OpenOffice.org, preferida mundialmente, le brinda para su trabajo, el colegio o su uso particular, programas como procesador de texto, hoja de cálculo, presentación, base de datos, herramientas de fórmulas y dibujos. Con OpenOffice.org puede ambién abrir y modificar documentos creados por otros programas de office, y compartir sus documentos con amigos y contactos que estén usando otro aplicación de office."
