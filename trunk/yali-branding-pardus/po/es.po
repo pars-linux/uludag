@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-05 00:01+0000\n"
+"POT-Creation-Date: 2010-12-05 16:01+0000\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -59,15 +59,15 @@ msgstr "Dolphin es el explorador de archivos en KDE y por lo tanto en Pardus. Do
 
 #: ../release.xml.in.h:11
 msgid "Dolphin learned a lot from the web experience. Tabbed browsing, folder addresses as breadcrumbs, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
-msgstr ""
+msgstr "Dolphin aprendió un montón de la experiencia de la web. Navegación con pestañas, diressiones de carpetas en forma de breadcrumb, clasificación de archivos con tags para agruparlos por tags al lado de la estructura tradicional de carpetas y una poderosa transparencia de la red.&lt;br&gt;&lt;br&gt;Con Dolphin se puede integrar fácilmente al sistema de archivos cualquier ubicación de la red local o de internet. De tál manera puede acceder a direcciones remotas como si fueran directorios del disco local."
 
 #: ../release.xml.in.h:12
 msgid "Double check your installation medium"
-msgstr ""
+msgstr "Verifique su medio de instalación"
 
 #: ../release.xml.in.h:13
 msgid "Get in touch with your contacts is so easy with Kontact. Kontact is a seamless integration of a bunch of applications, to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice-versa by simply dragging them."
-msgstr ""
+msgstr "Mantenerse en contacto con sus contactos es muy fácil con Kontact. Kontact brinde un conjunto de aplicaciones integradas para brindar en un software todas  las funcionalidades necesarias para tareas de comunicación y de organización. Calendarios, e-mails, noticias RSS, direcciones, todos en un sólo lugar. incluso puede enlazar su libreta de direcciones con Kopete para usarlo con cuentas de mensajería como MSN, jabber o GoogleTalk. Puede ver si el remitente de un e-mail está en-línea.&lt;br&gt;&lt;br&gt;Puede colocar notas recordatorios (sticky notes) en su escritorio con las tareas, sencillamente arrastrandolos, o vice versa."
 
 #: ../release.xml.in.h:14
 msgid "Gimp is an advanced image editing software. Allowing creation and editing of common graphics and image file formats, it has abilities that professional graphics artists and designers need and an ability to integrate new filters easily with its addon system."
@@ -83,7 +83,7 @@ msgstr "Aquí puede ver las opciones de instalación antes del comienzo de la in
 
 #: ../release.xml.in.h:17
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you are connected by cable your network will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it to your system and it will be configured automatically as well. All you do is printing out your document."
-msgstr ""
+msgstr "Si está en una red local, puede acceder a los demás sistemas de la red desde Dolphin. Pardus listará automáticamente todos los directorios compartidos.&lt;br&gt;&lt;br&gt;Fácil verdad? Y hay más... Si tiene una conexión por cable a su red local, se configurará automáticamente. Si prefiere una conexión inalambrica, podrá ver una lista de redes disponibles al presionar el ícono inalambrico.&lt;br&gt;&lt;br&gt;Tiene una impresora local? Conéctela a su sistema y se configurará automáticamente. Todo lo que necesita hacer es simplemente imprimir sus documentos."
 
 #: ../release.xml.in.h:18
 msgid "In this screen, you can manually partition your disk. You can select existing partitions and resize or delete them. You can create new partition(s) in the empty parts, make Pardus use them for system files, users&apos; home directories, swap space or general use. The changes that you make will not be applied until you go on with the installation, which means you can revert if you make any unwanted changes or change your configuration.&lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more informationabout disk partitioning.&lt;/font&gt;"
@@ -107,11 +107,11 @@ msgstr "Kahya se está ejecutando"
 
 #: ../release.xml.in.h:23
 msgid "Kaptan is an end-user configuration assistant. It helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. Application launcher can be called with its default shortcut Alt+F2."
-msgstr ""
+msgstr "Kaptan es un asistente de configuración final del escritorio. Le ayuda personalizar su sistema según sus preferencias. Prefiere usar el ratón con un sencillo clic ? Es zurdo ? Desea cambiar el esquema de colores del escritorio ? Kaptan le ofrece algunas opciones de personalización. Cuando ingresa en el sistema por primera vez Kaptan se ejecutará automáticamente. &lt;br&gt;&lt;br&gt;Si posteriormente desea usar Kaptan de nuevo puede ejecutarlo accediendolo desde la línea de comando con el nombre kaptan. Se puede iniciar la línea de comando (Application launcher) con las teclas Alt+F2."
 
 #: ../release.xml.in.h:24
 msgid "LibreOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. As the roots of the LibreOffice lies in years long open source office experience, even the first stable release is much powerful and competetive with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
-msgstr ""
+msgstr "LibreOffice le daa una experiencia estable, rápida y libre para la oficina, dejando todos sus documentos compatibles con la mayoria de otros suites de software de office. Ya que LibreOffice tiene una base de experiencia de office de muchos años, incluso la primera versión estable es mucho más potente y competitivo, incluyendo Writer para documentos de texto, Calc para hojas de cálculo, Impress para presentaciones.&lt;br&gt;&lt;br&gt;En Pardus viene este paquete estupendo de office con una serie de mejoras y agregados para una mejor experiencia aún."
 
 #: ../release.xml.in.h:25
 msgid "Manual Partitioning"
@@ -128,7 +128,7 @@ msgstr "Pardus 2011 está preparado para reconocer automáticamente la mayoría 
 #: ../release.xml.in.h:29
 #, no-c-format
 msgid "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet browser. Firefox offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, including a fully personalization feature with Personas help you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus also offers other free browsers including Chromium, Konqueror or even Opera."
-msgstr ""
+msgstr "Pardus 2011 viene con Firefox 4, el navegador de internet libre más popular. Firefox brinda muchas opciones para personalizar y además es una experiencia de navegación segura. &lt;br&gt;&lt;br&gt;El equipo de Mozilla utiliza el término 100% Organic Software para mostrar como el producto se desarrolla a través de la comunidad. Con agregados, y carcterísticas de personalización con &lt;Personas&gt; puede tener un navegador muy personal, tanto por su aspecto visual, como en sus caracteristicas.&lt;br&gt;&lt;br&gt;Pardus además ofrece otros navegadores libres, incluyendo Chromium, Konqueror o incluso Opera."
 
 #: ../release.xml.in.h:30
 msgid "Pardus allows multiple users to share the same computer.You can assign management rights to the users you create; you can alsoconfigure permissions to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To create a new user, fill in the form and press the &quot;Create User&quot; button.If you want a user to be automatically logged in to the system, select the user from the list; if you want to delete a user, select his/her username from the list and press &quot;Delete Selected User&quot;.Proceed with the installation after you make your selections."
@@ -136,7 +136,7 @@ msgstr "Pardus permite que varios usuarios comparten la misma computadora. Puede
 
 #: ../release.xml.in.h:31
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
-msgstr ""
+msgstr "La experiencia con Pardus se puede describir como un desfile de esplendor y poder de software libre y abierto. Econtrará algunos de sus antiguos amigos como Mozilla Firefox o LibreOffice. Puede que están algo modificados por los desarrolladores de Pardus para integrarlos mejor con el sistema. Mientras avanza el proceso de instalación puede ver algunas de las características..."
 
 #: ../release.xml.in.h:32
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, History Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
