@@ -170,7 +170,7 @@ msgstr "&lt;p&gt; Некоторые справочные сообщения &lt
 
 #: ../release.xml.in.h:39
 msgid "Summary"
-msgstr ""
+msgstr "Суммарно"
 
 #: ../release.xml.in.h:40
 msgid "We have a support portal to help improve your Pardus experience and help with problems you encounter. In the Özgürlükİçin portal, where content is developed by volunteer contributors, you will find guides, package and game introductions. If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com"
@@ -194,7 +194,7 @@ msgstr ""
 
 #: ../release.xml.in.h:45
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Нажмите Далее для перезагрузки. Примечание: Вы запомнили Ваш пароль, не так ли? "
 
 #: ../release.xml.in.h:46
 msgid "You need to define a password for the &quot;root&quot; user which is the conventional nameof the user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks.You can use capital and lower-case letters, numbers and punctuation marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
