@@ -149,7 +149,7 @@ msgstr ""
 
 #: ../release.xml.in.h:34
 msgid "Pardus, along with the preinstalled games, has many games in its repositories, allowing hours of fun with various kinds of games available through the package manager."
-msgstr ""
+msgstr "Pardus, включая в себя несколько предустановленных игр, имеет большое количество игр в своих репозиториях, а это часы веселья с самыми разнообразными играми, которые можно легко установить прямо из пакетного менеджера."
 
 #: ../release.xml.in.h:35
 msgid "Select Partitioning Method"
