@@ -17,10 +17,12 @@ from PyQt4 import QtGui
 from ui_main import Ui_windowMain
 
 # Screens
-from screens.local.connection import main as screen_connection
-from screens.local.help import main as screen_help
+from screens.connection.bookmarks import main as screen_bookmarks
 from screens.network.tree import main as screen_tree
 from screens.network.search import main as screen_search
+from screens.misc.help import main as screen_help
+from screens.misc.about import main as screen_about
+from screens.misc.logs import main as screen_logs
 
 # Helper modules
 #
@@ -55,12 +57,20 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
 
         # Screens
         # Connection
-        self.widget_connection = screen_connection.WidgetModule(self.stackLocal)
-        self.stackLocal.addWidget(self.widget_connection)
+        self.widget_connection = screen_bookmarks.WidgetModule(self.stackConnection)
+        self.stackConnection.addWidget(self.widget_connection)
 
         # Help
-        self.widget_help = screen_help.WidgetModule(self.stackLocal)
-        self.stackLocal.addWidget(self.widget_help)
+        self.widget_help = screen_help.WidgetModule(self.stackMisc)
+        self.stackMisc.addWidget(self.widget_help)
+
+        # About
+        self.widget_about = screen_about.WidgetModule(self.stackMisc)
+        self.stackMisc.addWidget(self.widget_about)
+
+        # Logs
+        self.widget_logs = screen_logs.WidgetModule(self.stackMisc)
+        self.stackMisc.addWidget(self.widget_logs)
 
         # Network Tree
         self.widget_tree = screen_tree.WidgetModule(self.stackNetwork)
@@ -80,18 +90,16 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
         self.__init_log()
 
         # UI events
-        self.connect(self.states['login'], QtCore.SIGNAL('entered()'), self.__slot_state_login)
-        self.connect(self.states['network'], QtCore.SIGNAL('entered()'), self.__slot_state_network)
-        self.connect(self.states['node'], QtCore.SIGNAL('entered()'), self.__slot_state_node)
-        self.connect(self.states['help'], QtCore.SIGNAL('entered()'), self.__slot_state_help)
-        
         self.connect(self.stackScreens, QtCore.SIGNAL('currentChanged(int)'), self.__slot_screen_changed)
-        self.connect(self.pushNetwork, QtCore.SIGNAL('clicked()'), self.__slot_network_tree)
-        self.connect(self.pushSearch, QtCore.SIGNAL('clicked()'), self.__slot_network_search)
+        self.connect(self.actionNetwork, QtCore.SIGNAL('triggered(bool)'), self.__slot_network_tree)
+        self.connect(self.actionSearch, QtCore.SIGNAL('triggered(bool)'), self.__slot_network_search)
+        self.connect(self.actionLogs, QtCore.SIGNAL('triggered(bool)'), self.__slot_logs)
+        self.connect(self.actionHelp, QtCore.SIGNAL('triggered(bool)'), self.__slot_help)
+        self.connect(self.actionAbout, QtCore.SIGNAL('triggered(bool)'), self.__slot_about)
 
         # Developer tools
         if '--dev' not in sys.argv[1:]:
-            self.groupDeveloper.hide()
+            self.frameDeveloper.hide()
 
     def closeEvent(self, event):
         """
@@ -120,14 +128,14 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
         """
         # States
         self.states = {
-            'login': QtCore.QState(),
+            'connection': QtCore.QState(),
             'network': QtCore.QState(),
             'node': QtCore.QState(),
-            'help': QtCore.QState(),
+            'misc': QtCore.QState(),
         }
 
         # Login -> Network transition
-        self.states['login'].addTransition(self.widget_connection, QtCore.SIGNAL('connected()'), self.states['network'])
+        self.states['connection'].addTransition(self.widget_connection, QtCore.SIGNAL('connected()'), self.states['network'])
 
         # Network -> Node transition
         self.states['network'].addTransition(self.widget_tree, QtCore.SIGNAL('selectedItem()'), self.states['node'])
@@ -135,29 +143,35 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
 
         # * -> Login transition
         for key in self.states:
-            if key != 'login':
-                self.states[key].addTransition(self.pushConnect, QtCore.SIGNAL('clicked()'), self.states['login'])
+            if key != 'connection':
+                self.states[key].addTransition(self.actionConnection, QtCore.SIGNAL('triggered(bool)'), self.states['connection'])
 
-        # * -> Help transition
+        # * -> Misc transition
         for key in self.states:
-            if key != 'help':
-                self.states[key].addTransition(self.pushHelp, QtCore.SIGNAL('clicked()'), self.states['help'])
+            if key != 'misc':
+                self.states[key].addTransition(self.actionLogs, QtCore.SIGNAL('triggered(bool)'), self.states['misc'])
+                self.states[key].addTransition(self.actionHelp, QtCore.SIGNAL('triggered(bool)'), self.states['misc'])
+                self.states[key].addTransition(self.actionAbout, QtCore.SIGNAL('triggered(bool)'), self.states['misc'])
 
         # * -> Network transition
         for key in self.states:
             if key != 'network':
-                self.states[key].addTransition(self.pushNetwork, QtCore.SIGNAL('clicked()'), self.states['network'])
-                self.states[key].addTransition(self.pushSearch, QtCore.SIGNAL('clicked()'), self.states['network'])
+                self.states[key].addTransition(self.actionNetwork, QtCore.SIGNAL('triggered(bool)'), self.states['network'])
+                self.states[key].addTransition(self.actionSearch, QtCore.SIGNAL('triggered(bool)'), self.states['network'])
         self.states['node'].addTransition(self.pushNodeExit, QtCore.SIGNAL('clicked()'), self.states['network'])
 
-        # Machine
+        # Main machine
         self.machine = QtCore.QStateMachine()
-
         for name, state in self.states.iteritems():
             self.machine.addState(state)
-
-        self.machine.setInitialState(self.states['login'])
+        self.machine.setInitialState(self.states['connection'])
         self.machine.start()
+
+        # Events
+        self.connect(self.states['connection'], QtCore.SIGNAL('entered()'), self.__slot_state_connection)
+        self.connect(self.states['network'], QtCore.SIGNAL('entered()'), self.__slot_state_network)
+        self.connect(self.states['node'], QtCore.SIGNAL('entered()'), self.__slot_state_node)
+        self.connect(self.states['misc'], QtCore.SIGNAL('entered()'), self.__slot_state_misc)
 
     def __load_screens(self):
         """
@@ -189,19 +203,16 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
             mini_widget = net_widget.get_mini(self.stackMiniNetwork)
             self.stackMiniNetwork.addWidget(mini_widget)
 
-    def __slot_state_login(self):
+    def __slot_state_connection(self):
         """
-            Triggered when state is "login"
+            Triggered when state is "connection"
         """
         # Jump to first screen
         self.stackScreens.setCurrentIndex(0)
 
-        # Show login interface
-        self.stackLocal.setCurrentIndex(0)
-
         # Disable network buttons
-        self.pushNetwork.setEnabled(False)
-        self.pushSearch.setEnabled(False)
+        self.actionNetwork.setEnabled(False)
+        self.actionSearch.setEnabled(False)
 
     def __slot_state_network(self):
         """
@@ -211,8 +222,8 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
         self.stackScreens.setCurrentIndex(1)
 
         # Enable network buttons
-        self.pushNetwork.setEnabled(True)
-        self.pushSearch.setEnabled(True)
+        self.actionNetwork.setEnabled(True)
+        self.actionSearch.setEnabled(True)
 
     def __slot_state_node(self):
         """
@@ -230,26 +241,44 @@ class WindowMain(QtGui.QMainWindow, Ui_windowMain):
             item.setExpanded(True)
             item = item.child(0)
 
-    def __slot_state_help(self):
+    def __slot_state_misc(self):
         """
-            Triggered when state is "help"
+            Triggered when state is "misc"
         """
         # Jump to first screen
-        self.stackScreens.setCurrentIndex(0)
+        self.stackScreens.setCurrentIndex(3)
 
-        # Show help interface
-        self.stackLocal.setCurrentIndex(1)
-
-    def __slot_network_tree(self):
+    def __slot_network_tree(self, checked=False):
         """
             Triggered when user clicks "Network" button.
         """
         # Show network tree interface
         self.stackNetwork.setCurrentIndex(0)
 
-    def __slot_network_search(self):
+    def __slot_network_search(self, checked=False):
         """
             Triggered when user clicks "Search" button.
         """
         # Show search interface
         self.stackNetwork.setCurrentIndex(1)
+
+    def __slot_help(self, checked=False):
+        """
+            Triggered when user clicks "Help" button.
+        """
+        # Show help interface
+        self.stackMisc.setCurrentIndex(0)
+
+    def __slot_about(self, checked=False):
+        """
+            Triggered when user clicks "About" button.
+        """
+        # Show about interface
+        self.stackMisc.setCurrentIndex(1)
+
+    def __slot_logs(self, checked=False):
+        """
+            Triggered when user clicks "Logs" button.
+        """
+        # Show logs interface
+        self.stackMisc.setCurrentIndex(2)

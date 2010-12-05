@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>907</width>
-    <height>765</height>
+    <width>841</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,13 +18,14 @@
     <normaloff>:/icons/network48.png</normaloff>:/icons/network48.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">#pushNodePurge {
-	color: #A00;
-	font-weight: bold;
+   <string notr="true">QMainWindow, #centralWidget, QStatusBar, QToolBar {
+	background: #eee;
 }
 
-#pushNodeUndo {
-	color: #A00;
+#frameToolbar, #frameNetwork, #frameNode, #frameMiniNetwork, #frame, #framePolicyInherit, #frameDeveloper {
+	border: 1px solid #bbb;
+	border-radius: 5px;
+	background: #eee;
 }
 
 QStackedWidget {
@@ -32,63 +33,10 @@ QStackedWidget {
 	padding: 0px;
 }</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
+  <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <widget class="QFrame" name="frameToolbar">
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_9">
-       <item row="0" column="0">
-        <widget class="QPushButton" name="pushConnect">
-         <property name="text">
-          <string>Connect</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="0" column="3">
-        <widget class="QPushButton" name="pushHelp">
-         <property name="text">
-          <string>Help</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QPushButton" name="pushNetwork">
-         <property name="text">
-          <string>Network</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QPushButton" name="pushSearch">
-         <property name="text">
-          <string>Search</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QFrame" name="groupDeveloper">
+    <item row="1" column="0">
+     <widget class="QFrame" name="frameDeveloper">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -108,7 +56,7 @@ QStackedWidget {
       </layout>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QStackedWidget" name="stackScreens">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -122,13 +70,13 @@ QStackedWidget {
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="pageLocal">
+      <widget class="QWidget" name="pageConnection">
        <layout class="QGridLayout" name="gridLayout_5">
         <property name="margin">
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackLocal">
+         <widget class="QStackedWidget" name="stackConnection">
           <property name="currentIndex">
            <number>-1</number>
           </property>
@@ -152,7 +100,7 @@ QStackedWidget {
          <number>0</number>
         </property>
         <item row="0" column="0" rowspan="4">
-         <widget class="QFrame" name="frame_2">
+         <widget class="QFrame" name="frameMiniNetwork">
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -422,11 +370,107 @@ QStackedWidget {
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="pageMisc">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QStackedWidget" name="stackMisc"/>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </item>
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionConnection"/>
+   <addaction name="separator"/>
+   <addaction name="actionNetwork"/>
+   <addaction name="actionSearch"/>
+   <addaction name="separator"/>
+   <addaction name="actionLogs"/>
+   <addaction name="separator"/>
+   <addaction name="actionHelp"/>
+   <addaction name="actionAbout"/>
+  </widget>
+  <action name="actionConnection">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/connect48.png</normaloff>:/data/connect48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Connection</string>
+   </property>
+  </action>
+  <action name="actionHelp">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/help48png</normaloff>:/data/help48png</iconset>
+   </property>
+   <property name="text">
+    <string>Help</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/about48.png</normaloff>:/data/about48.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionSearch">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/find48.png</normaloff>:/data/find48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionNetwork">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/repository48.png</normaloff>:/data/repository48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Network</string>
+   </property>
+  </action>
+  <action name="actionLogs">
+   <property name="icon">
+    <iconset resource="data.qrc">
+     <normaloff>:/data/hint48.png</normaloff>:/data/hint48.png</iconset>
+   </property>
+   <property name="text">
+    <string>Logs</string>
+   </property>
+   <property name="toolTip">
+    <string>Logs</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="data.qrc"/>

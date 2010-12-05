@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-    Help
+    Logs
 """
 
 # Standard modules
@@ -13,15 +13,15 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 # Generated UI module
-from ui_help import Ui_widgetHelp
+from ui_logs import Ui_widgetLogs
 
 # Helper modules
 #
 
 
-class WidgetModule(QtGui.QWidget, Ui_widgetHelp):
+class WidgetModule(QtGui.QWidget, Ui_widgetLogs):
     """
-        Connection UI.
+        Logs UI.
     """
     def __init__(self, parent=None):
         """

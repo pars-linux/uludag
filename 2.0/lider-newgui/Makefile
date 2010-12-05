@@ -3,8 +3,11 @@ all:
 	
 	pyuic4 lider/main.ui > lider/ui_main.py
 	
-	pyuic4 lider/screens/local/connection/connection.ui > lider/screens/local/connection/ui_connection.py
-	pyuic4 lider/screens/local/help/help.ui > lider/screens/local/help/ui_help.py
+	pyuic4 lider/screens/connection/bookmarks/connection.ui > lider/screens/connection/bookmarks/ui_connection.py
+	
+	pyuic4 lider/screens/misc/logs/logs.ui > lider/screens/misc/logs/ui_logs.py
+	pyuic4 lider/screens/misc/help/help.ui > lider/screens/misc/help/ui_help.py
+	pyuic4 lider/screens/misc/about/about.ui > lider/screens/misc/about/ui_about.py
 	
 	pyuic4 lider/screens/network/tree/tree.ui > lider/screens/network/tree/ui_tree.py
 	pyuic4 lider/screens/network/tree/minitree.ui > lider/screens/network/tree/ui_minitree.py
