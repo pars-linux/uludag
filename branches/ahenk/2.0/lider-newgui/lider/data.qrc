@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="/">
+    <file>data/hint48.png</file>
+    <file>data/repository48.png</file>
+    <file>data/find48.png</file>
+    <file>data/help48png</file>
+    <file>data/about48.png</file>
+    <file>data/connect48.png</file>
+    <file>data/wired48.png</file>
     <file>data/trash48.png</file>
     <file>data/undo48.png</file>
     <file>data/save48.png</file>
