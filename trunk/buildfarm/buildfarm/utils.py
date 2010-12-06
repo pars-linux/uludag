@@ -80,6 +80,7 @@ def get_compiled_packages_directory():
                         conf.subrepository,
                         conf.architecture)
 
+
 def get_expected_file_name(spec):
     last_update = spec.history[0]
 
@@ -88,6 +89,14 @@ def get_expected_file_name(spec):
     return pisi.util.package_filename(spec.packages[0].name,
                                       last_update.version,
                                       last_update.release)
+
+def get_package_logfile_name(pkg):
+    spec = pisi.specfile.SpecFile(pkg)
+    last_update = spec.history[0]
+    return os.path.join(get_package_log_directory(),
+                        "%s-%s-%s.txt" % (get_package_name(pkg),
+                                          last_update.version,
+                                          last_update.release))
 
 def get_package_name(pkg):
     return pisi.util.split_package_filename(pkg)[0]
