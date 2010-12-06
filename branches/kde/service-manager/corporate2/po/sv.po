@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-09 16:37+0300\n"
+"POT-Creation-Date: 2010-12-06 15:16+0200\n"
 "PO-Revision-Date: 2008-09-04 18:29+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -26,54 +26,34 @@ msgstr "Tjänstehanteraren"
 msgid "Service Manager is already started!"
 msgstr "Tjänstehanteraren körs redan!"
 
-#: src/sm_mainview.py:126
-msgid "Unable to connect to DBus."
-msgstr "Kan inte ansluta till D-Bus."
-
-#: src/sm_mainview.py:126
-msgid "DBus Error"
-msgstr "D-Bus-fel"
-
-#: src/sm_mainview.py:139
-msgid "You are not authorized for this operation."
-msgstr "Du är inte behörig för den här åtgärden."
-
-#: src/sm_mainview.py:168
-msgid "D-Bus Error"
-msgstr "D-Bus-fel"
-
-#: src/sm_mainview.py:172
-msgid "COMAR Error"
-msgstr "COMAR-fel"
-
-#: src/sm_mainview.py:242 src/service_manager.py:127
+#: src/sm_mainview.py:171 src/service_manager.py:127
 msgid "Select a service from list."
 msgstr "Välj en tjänst i listan."
 
-#: src/sm_mainview.py:249
+#: src/sm_mainview.py:178
 msgid "Clear Search"
 msgstr "Återställ snabbsökning"
 
-#: src/sm_mainview.py:250 src/service_manager.py:129
+#: src/sm_mainview.py:179 src/service_manager.py:129
 #: src/service_manager.py:131
 msgid "Start"
 msgstr "Starta"
 
-#: src/sm_mainview.py:252
+#: src/sm_mainview.py:181
 msgid "Restart"
 msgstr "Starta om"
 
-#: src/sm_mainview.py:257
+#: src/sm_mainview.py:186
 #, python-format
 msgid "%s is running."
 msgstr "%s körs."
 
-#: src/sm_mainview.py:260
+#: src/sm_mainview.py:189
 #, python-format
 msgid "%s is not running."
 msgstr "%s körs inte."
 
-#: src/sm_mainview.py:334
+#: src/sm_mainview.py:264
 msgid ""
 "If you stop this service, you may have problems.\n"
 "Are you sure you want to stop this service?"
@@ -81,13 +61,24 @@ msgstr ""
 "Om du stoppar den här tjänsten kan du få problem.\n"
 "Är du säker på att du vill stoppa den här tjänsten?"
 
-#: src/sm_mainview.py:338
+#: src/sm_mainview.py:268
 msgid ""
 "If you disable this service, you may have problems.\n"
 "Are you sure you want to do this?"
 msgstr ""
 "Om du inaktiverar den här tjänsten kan du få problem.\n"
 "Är du säker på att du vill göra det?"
+
+#: src/backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "Du är inte behörig för den här åtgärden."
+
+#: src/backend.py:48
+#, python-format
+msgid ""
+"An error occured:\n"
+"%s"
+msgstr ""
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
@@ -125,7 +116,17 @@ msgstr "Sök:"
 msgid "&List servers only."
 msgstr "&Visa enbart servrar."
 
-#: src/service_manager.py:142
-msgid "Alt+L"
-msgstr "Alt+L"
+#~ msgid "Unable to connect to DBus."
+#~ msgstr "Kan inte ansluta till D-Bus."
 
+#~ msgid "DBus Error"
+#~ msgstr "D-Bus-fel"
+
+#~ msgid "D-Bus Error"
+#~ msgstr "D-Bus-fel"
+
+#~ msgid "COMAR Error"
+#~ msgstr "COMAR-fel"
+
+#~ msgid "Alt+L"
+#~ msgstr "Alt+L"

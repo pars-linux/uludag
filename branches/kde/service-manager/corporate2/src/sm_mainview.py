@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006,2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -74,9 +74,10 @@ class widgetMain(formMain):
 
         self.editSearch.setFocus()
 
+        self.listServices.setResizeMode(QListView.LastColumn)
         self.listServices.setSorting(1)
         self.listServices.setColumnText(0, '')
-        self.listServices.setColumnWidth(0, 22)
+        self.listServices.setColumnWidth(0, 21)
         self.listServices.setColumnWidthMode(0, QListView.Manual)
 
         self.buttonClearSearch.setIconSet(getIconSet('locationbar_erase', 16))
@@ -111,7 +112,7 @@ class widgetMain(formMain):
         self.connect(self.listServices, SIGNAL('doubleClicked(QListViewItem*)'), self.slotDoubleClicked)
 
     def handleSignals(self, script, signal, args):
-        print 'COMAR:', script, signal, args
+        # print 'COMAR:', script, signal, args
         if signal == "Changed":
             package, state = args
             item = self.findItem(package)
