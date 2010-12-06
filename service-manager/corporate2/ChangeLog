@@ -1,2 +1,32 @@
-2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
-	* setup.py, service-manager.py:	Update version to 2.0.3
+2010-12-06 gokmen.goksel
+         * - Show proper message box when error ocured
+         * - Fix size issue of services list
+         * - Update PO
+         * - Fix copyright headers
+
+2010-12-06 gokmen.goksel
+         * - No need this 
+
+2010-12-06 gokmen.goksel
+         * - No need a restart method 
+
+2010-12-06 gokmen.goksel
+         * - Use backend file instead of embedding the main code, smart way. 
+
+2010-11-22 gokmen.goksel
+         * Dont ask for stopped services
+         * Bug fixed at http://bugs.pardus.org.tr/8676
+
+2010-11-01 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 25 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-01 transifex
+         * l10n: Adding Russian translation (Alexander Total)
+         * New status: 25 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2009-11-17 bahadir.kandemir
+         * SM for Corporate 2.0
+
