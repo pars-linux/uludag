@@ -34,7 +34,8 @@ mailSenderPwd = "pwd_here"
 mailSubject = "Package Summary"
 mailServer = "mail.pardus.org.tr"
 contentHeader = "Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t\t\t***PACKAGES***\n"
-contentHeader = "%s|%-50s|%-20s|%-10s|%-10s|%-5s|%-5s|%-100s|" %(contentHeader, "Package", "Distro", "Release no", "Version no", "#Pack", "#Patch", "Is there conflict?")
+columns = "|%-50s|%-30s|%-10s|%-20s|%-10s|%-10s|%-100s|" %("Package", "Distro", "Release no", "Version no", "#Package", "#Patch", "Is there conflict?")
+contentHeader = "%s%s" %("Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t\t\t***PACKAGES***\n", columns)
 contentFooter = "You are getting this e-mail because you have packages in our repositories. If you think you shouldn't receive this e-mail please contact with %s" %(mailSender)
 
 def printHelp(detail=False, retVal=-1):
@@ -125,7 +126,7 @@ def fetchRepos():
         pisiIndex.decode(doc, [])
 
         ''' Populate distroList in order of iteration done for repositories  '''
-        distroList.append(pisiIndex.distribution.version)
+        distroList.append("%s %s" %(pisiIndex.distribution.sourceName, pisiIndex.distribution.version))
 
         ''' Update "repos" structure with current spec info '''
         for spec in pisiIndex.specs:
@@ -153,7 +154,7 @@ def fetchRepos():
 
 ''' This function returns a string including status info about all packages of a packager  '''
 def prepareContentBody(packager):
-    content = "|%s|\n" %(200 * "-")
+    content = "|%s|\n" %(230 * "-")
     for package in repos[packager].keys():
         for order, distro in enumerate(repos[packager][package][3]):
             ''' To prevent repeatation for package name and conflict check comment '''
@@ -180,8 +181,8 @@ def prepareContentBody(packager):
                 conflictComment = ""
 
             ''' Adding a new entry for the package as below '''
-            '''Package_name | Distro_name | Release_no | Version_no | #Package | #Patch | Is there conflict? '''
-            content = "%s%-20s|%-10s|%-10s|%-5s|%-5s|%-50s|\n" %(content,
+            '''  Distro_name | Release_no | Version_no | #Package | #Patch | Is there conflict? '''
+            content = "%s%-30s|%-10s|%-20s|%-10s|%-10s|%-100s|\n" %(content,
                                                                 distro,
                                                                 repos[packager][package][0][order][0],
                                                                 repos[packager][package][0][order][1],
@@ -189,7 +190,7 @@ def prepareContentBody(packager):
                                                                 repos[packager][package][2][order],
                                                                 conflictComment)
 
-        content = "%s|%s|\n" %(content, (200 * "-"))
+        content = "%s|%s|\n" %(content, (230 * "-"))
 
     return content
 
@@ -211,16 +212,17 @@ def sendMail(receiverList, contentBody):
     msg["Subject"] = mailSubject
     msg["From"] = mailSender
 
-    #try:
-    for receiver in receiverList:
-        smtp = smtplib.SMTP(mailServer)
-        msg["To"] = receiver
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.ehlo()
-        smtp.login(mailSender, mailSenderPwd)
-        smtp.sendmail(mailSender, receiver, msg.as_string())
-        smtp.quit()
+    try:
+        for receiver in receiverList:
+            if receiver == "x@pardus.org.tr":
+                smtp = smtplib.SMTP(mailServer)
+                msg["To"] = receiver
+                smtp.ehlo()
+                smtp.starttls()
+                smtp.ehlo()
+                smtp.login(mailSender, mailSenderPwd)
+                smtp.sendmail(mailSender, "gozbulak@pardus.org.tr", msg.as_string())
+                smtp.quit()
     except Exception:
         return -1
 
@@ -229,6 +231,7 @@ def traverseRepos():
     ''' Open report file if report option is set  '''
     if options["r"]:
         fp = open(reportFile, "w")
+        fp.write("%s\n" %(columns))
     for packager in repos.keys():
         contentBody = prepareContentBody(packager)
 
@@ -237,7 +240,7 @@ def traverseRepos():
             if sendMail(receiverMailList, contentBody):
                 print "Send mail to %s failed." % receiverMailList
         if options["r"]:
-            fp.write(contentBody)
+            fp.write("%s\n%s" %(packager, contentBody.encode("utf-8")))
 
 if __name__ == "__main__":
 
