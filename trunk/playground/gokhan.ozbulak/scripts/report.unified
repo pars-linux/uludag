@@ -1,0 +1,24 @@
+cfitsio
+-------
+ Packager:
+    2009: Gokhan Ozbulak <a@b.com.tr>
+    2011: Gokcen Eraslan <b@c.com.tr>
+    Corporate 2: Gokhan Ozbulak
+ Version:
+    2009: 3.4
+    2011: 3.2
+    Corporate 2: 2.0
+ Number of patches: Different
+ Subpackages: cfitsio,cfitsio-devel
+
+kernel
+------
+
+..
+..
+
+udev
+----
+
+..
+..
