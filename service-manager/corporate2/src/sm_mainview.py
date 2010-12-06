@@ -225,9 +225,10 @@ class widgetMain(formMain):
 
     def slotRestart(self):
         item = self.listServices.selectedItem()
-        if self.backend.restart(item.package):
-           self.buttonStop.setEnabled(False)
-           self.buttonRestart.setEnabled(False)
+        if self.backend.stop(item.package):
+            self.backend.start(item.package)
+            self.buttonStop.setEnabled(False)
+            self.buttonRestart.setEnabled(False)
 
     def slotOn(self):
         item = self.listServices.selectedItem()
