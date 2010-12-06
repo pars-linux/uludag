@@ -38,13 +38,6 @@ class Backend:
     def stop(self, service, async = None):
         return self.run(self.link.System.Service[service].stop, async)
 
-    def restart(self, service, async = None):
-        def handler(package, exception, args):
-            if exception:
-                return
-            self.start(service, async)
-        return self.stop(service, async = handler)
-
     def set_state(self, service, state):
         return self.run(lambda:self.link.System.Service[service].setState(state))
 
