@@ -157,6 +157,10 @@ def handle_exception(exception, value, trace_back):
 if __name__ == "__main__":
     sys.excepthook = handle_exception
 
+    # Check for available disk space, fail if any
+    if not is_there_free_space():
+        print "Error: There's no sufficient disk space, exiting."
+
     # Just to make sure
     utils.create_directories()
 
