@@ -14,13 +14,10 @@ from kdecore import *
 from kdeui import *
 
 from sm_utility import *
+from backend import Backend
 
 import kdedesigner
 from service_manager import formMain
-
-import comar
-import dbus
-
 
 class serviceItem(KListViewItem):
     def __init__(self, parent=None, package='', type='server', state=False, autostart=False, description=''):
@@ -69,14 +66,11 @@ class serviceItem(KListViewItem):
         else:
             return QListViewItem.compare(self, other, col, asc)
 
-
 class widgetMain(formMain):
     def __init__(self, parent):
         formMain.__init__(self, parent)
 
-        self.link = comar.Link()
-        self.link.setLocale()
-        self.link.listenSignals("System.Service", self.handleSignals)
+        self.backend = Backend(self)
 
         self.editSearch.setFocus()
 
@@ -117,6 +111,7 @@ class widgetMain(formMain):
         self.connect(self.listServices, SIGNAL('doubleClicked(QListViewItem*)'), self.slotDoubleClicked)
 
     def handleSignals(self, script, signal, args):
+        print 'COMAR:', script, signal, args
         if signal == "Changed":
             package, state = args
             item = self.findItem(package)
@@ -133,22 +128,20 @@ class widgetMain(formMain):
                     item.setAutoStart(autostart)
             # item is new, add to list
             if not item:
-                self.link.System.Service[package].info(async=self.addServiceItem)
+                self.backend.info(package, async = self.addServiceItem)
 
     # start or stop service when the item is double clicked
     def slotDoubleClicked(self, item):
         # if it's not started
         if not item.state:
-            ch = self.callHandler(item.package, "System.Service", "start", "tr.org.pardus.comar.system.service.set")
-            ch.call()
+            self.backend.start(item.package)
         else:
-            ch = self.callHandler(item.package, "System.Service", "stop", "tr.org.pardus.comar.system.service.set")
-            ch.call()
+            self.backend.stop(item.package)
 
     def populateList(self):
-        packages = list(self.link.System.Service)
+        packages = self.backend.services()
         for package in packages:
-            self.link.System.Service[package].info(async=self.addServiceItem)
+            self.backend.info(package, async = self.addServiceItem)
 
     def findItem(self, package):
         item = self.listServices.firstChild()
@@ -219,30 +212,28 @@ class widgetMain(formMain):
 
     def slotStart(self):
         item = self.listServices.selectedItem()
-        self.buttonStart.setEnabled(False)
-        self.link.System.Service[item.package].start()
+        if self.backend.start(item.package):
+           self.buttonStart.setEnabled(False)
 
     def slotStop(self):
         item = self.listServices.selectedItem()
         if item.type != 'server' and not self.confirmStop():
             return
-        self.buttonStop.setEnabled(False)
-        self.buttonRestart.setEnabled(False)
-        self.link.System.Service[item.package].stop()
+        if self.backend.stop(item.package):
+            self.buttonStop.setEnabled(False)
+            self.buttonRestart.setEnabled(False)
 
     def slotRestart(self):
         item = self.listServices.selectedItem()
-        self.buttonStop.setEnabled(False)
-        self.buttonRestart.setEnabled(False)
-        def handler(package, exception, args):
-            if exception:
-                return
-            self.link.System.Service[item.package].start()
-        self.link.System.Service[item.package].stop(async=handler)
+        if self.backend.restart(item.package):
+           self.buttonStop.setEnabled(False)
+           self.buttonRestart.setEnabled(False)
 
     def slotOn(self):
         item = self.listServices.selectedItem()
-        self.link.System.Service[item.package].setState("on")
+        state = self.backend.set_state(item.package, "on")
+        self.radioAutoRun.setChecked(state)
+        self.radioNoAutoRun.setChecked(not state)
 
     def slotOff(self):
         item = self.listServices.selectedItem()
@@ -251,7 +242,9 @@ class widgetMain(formMain):
                 self.radioAutoRun.setChecked(True)
                 self.radioNoAutoRun.setChecked(False)
                 return
-            self.link.System.Service[item.package].setState("off")
+            state = self.backend.set_state(item.package, "off")
+            self.radioAutoRun.setChecked(not state)
+            self.radioNoAutoRun.setChecked(state)
 
     def slotSearch(self, text):
         item = self.listServices.firstChild()
