@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-05 21:03+0000\n"
+"POT-Creation-Date: 2010-12-06 12:02+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -17,9 +17,8 @@ msgstr ""
 "Language: ru\n"
 
 #: ../release.xml.in.h:1
-#, fuzzy
 msgid "A bootloader is a tiny program that runs when a computer is first powered up.It is responsible for loading the operating system into memory and then transferringthe control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows youto boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk.You can always choose another installation method if you know what you are doing."
-msgstr "&lt;p&gt; загрузчик крошечная программа, которая запускается, когда компьютер первом включении up.It отвечает за загрузку операционной системы в памяти, а затем transferringthe управление. &lt;/ P&gt; Pardus использует GRUB ( системный загрузчик) в качестве загрузчика по умолчанию. GRUB позволяет youto загрузки любой поддерживаемой операционной системы, предоставляет пользователю меню. &lt;/ P&gt; рекомендуется использовать GRUB необходимо установить его в начале загрузки disk.You всегда можно выбрать другой способ установки Если вы знаете, что вы делаете. &lt;/ P&gt;"
+msgstr "&lt;p&gt; загрузчик крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt; Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
 
 #: ../release.xml.in.h:2
 msgid "A keyboard layout is a description of how keys are placed on a keyboard. There are different keyboard layouts in use throughout the world. The one you will want to use, generally depends on the country you live in or the language you use.This screen lets you select the keyboard layout you want to use on Pardus. You can test the selected layout by typing something in the given textbox."
