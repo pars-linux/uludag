@@ -10,6 +10,6 @@
 # Please read the COPYING file.
 
 # Buildfarm version
-__version__ = "2.0"
+__version__ = "3.0"
 
 __all__ = ["config", "dependency", "main", "queuemanager"]
