@@ -12,9 +12,11 @@ import smtplib
 from email.mime.text import MIMEText
 
 ''' URLs of Repositories  '''
-repoList = {"http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2",
-            "http://svn.pardus.org.tr/pardus/2011/devel/pisi-index.xml.bz2",
-            "http://svn.pardus.org.tr/pardus/corporate2/devel/pisi-index.xml.bz2"}
+repoList = (
+                "http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2",
+                "http://svn.pardus.org.tr/pardus/2011/devel/pisi-index.xml.bz2",
+                "http://svn.pardus.org.tr/pardus/corporate2/devel/pisi-index.xml.bz2",
+           )
 
 
 ''' Details about packages  '''
