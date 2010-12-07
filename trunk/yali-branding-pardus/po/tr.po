@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-07 07:02+0000\n"
+"POT-Creation-Date: 2010-12-07 12:01+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -178,9 +178,8 @@ msgid "You have successfully installed Pardus on your computer. After restarting
 msgstr "Pardus'u bilgisayarınıza başarıyla kurdunuz. Bilgisayarınızı yeniden başlattıktan sonra, Pardus'un tüm imkanlarından faydalanmanın keyfini süreceksiniz.&lt;br&gt;&lt;br&gt;Devam etmek için Sonraki seçeneğine tıklayınız. Önemli not: Şifrenizi hatırlıyorsunuz, değil&mi?&lt;br&gt;"
 
 #: ../release.xml.in.h:42
-#, fuzzy
 msgid "You may have questions or need help... Özgürlükİçin community portal is there for you. The portal is for all users to meet and share their skills and experience. You can also find guides, introductionary articles about applications and games. &lt;br&gt;If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com"
-msgstr "Pardus tecrübenizi geliştirmede size yardımcı olacak ve yaşadığınız sorunları çözmekte sizin sorunlarınıza çözümler sunacak bir destek portalımız bulunmaktadır. Özgürlük İçin portalı, gönüllü katkıcılar tarafından desteklenen ve geliştirilen  ve çeşitli rehberler, paket ve oyun tanıtımları gibi içeriklere sahiptir. Eğer bir sorun yaşıyorsanız ve sorularınız varsa, forum sizi bekliyor. Eğer desteğe ihtiyacınız varsa veya siz destek vermek istiyorsanız, ilk durağınız www.ozgurlukicin.com olmalıdır."
+msgstr "Pardus'la ilgili sorularınız, yardım ihtiyacınız olabilir... Özgürlükİçin portalı sizi bekliyor. Portal her seviyeden kullanıcının bir araya geldiği ve deneyimlerini, birikimlerini paylaştığı bir alan. Bunların yanında kılavuzlar, uygulamaları, oyunları tanıtan yazılar da bulabilirsiniz.&lt;br&gt;Soracaklarınız için forumdan da yararlanmanız mümkün. eğer herhangi bir desteğe ihtiyacınız var ya da yeni kullanıcılarla kendi deneyimlerinizi paylaşmak isterseniz mutlaka www.ozgurlukicin.com adresine uğramalısınız."
 
 #: ../release.xml.in.h:43
 msgid "You need to define a password for the &quot;root&quot; user which is the conventional nameof the user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks.You can use capital and lower-case letters, numbers and punctuation marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
