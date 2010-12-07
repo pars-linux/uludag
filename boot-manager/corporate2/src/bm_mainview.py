@@ -462,15 +462,12 @@ class widgetUnused(QWidget):
         self.parent.widgetEditEntry.newEntry()
 
         version = str(self.listKernels.currentText())
-        root = getRoot()
         self.parent.widgetEditEntry.editTitle.setText(version)
-        self.parent.widgetEditEntry.editRoot.setText(root)
         if version.endswith("-dom0"):
             self.parent.widgetEditEntry.listSystem.setCurrentText("Xen")
         else:
             self.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
         self.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
-        self.parent.widgetEditEntry.editOptions.setText("root=%s" % root)
 
     def slotRemove(self):
         confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
