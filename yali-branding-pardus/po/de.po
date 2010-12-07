@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 13:56+0200\n"
+"POT-Creation-Date: 2010-12-07 16:06+0200\n"
 "PO-Revision-Date: 2010-11-24 16:14+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <de@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: ../release.xml.in.h:1
 msgid ""
@@ -47,25 +47,26 @@ msgid "Adjust Date and Time Settings"
 msgstr "Datum und Zeit einstellen"
 
 #: ../release.xml.in.h:5
+msgid ""
+"Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
+"a number of multimedia editors and a massive file format and codec support "
+"out of box. &lt;br&gt;You can edit your images with Gimp, create your "
+"homemade movies with Kdenlive, organise your music albums in catalogs with "
+"Amarok and image albums with Digikam, burn your CD and DVDs using K3B, "
+"backup your audio collection in Pardus..."
+msgstr ""
+
+#: ../release.xml.in.h:6
 msgid "Choose a Keyboard Layout"
 msgstr "Wählen Sie eine Tastenbelegung"
 
-#: ../release.xml.in.h:6
+#: ../release.xml.in.h:7
 msgid "Choose an Administrator Password and a Hostname"
 msgstr "Wählen Sie ein Administratorpasswort und einen Hostnamen"
 
-#: ../release.xml.in.h:7
+#: ../release.xml.in.h:8
 msgid "Configure Bootloader"
 msgstr "Konfiguriere den Boot-Loader"
-
-#: ../release.xml.in.h:8
-msgid ""
-"Connecting to your friends and contacts is really easy and seamlessly "
-"integrated into the desktop with Pardus 2011. Using Kontact, you can send "
-"and receive emails, manage your meetings, create address books, takes notes "
-"and follow RSS feeds. Using Kopete, you can connect to popular networks like "
-"MSN and GTalk, and chat online with your friends."
-msgstr ""
 
 #: ../release.xml.in.h:9
 msgid ""
@@ -80,24 +81,27 @@ msgstr ""
 
 #: ../release.xml.in.h:10
 msgid ""
-"Dolphin is the file manager of KDE and so Pardus. Dolphin gives a great set "
-"of features where you may be surprised with the talents of a simple file "
-"manager. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by columns to "
-"organize your files by comparing... You can utilize any KDE application as "
-"they can work in Dolpin embedded. Thus you can edit an image file in your "
-"file manager with the full features of Gwenview, the image viewer or preview "
-"a video in the optional optional and customizable Information panel.&lt;"
-"br&gt;&lt;br&gt;"
+"Do you have a habit of customization? Kaptan is there for you. Kaptan is an "
+"end-user configuration assistant which helps you to customize your system "
+"upon your preferences. Dou you prefer using your mouse with single click? "
+"Are you left-handed? Do you want to change the color-scheme of the desktop? "
+"A number of personalization options are offered in Kaptan. Kaptan will be "
+"automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to "
+"use Kaptan all over again sometime, you can call it from the application "
+"launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be "
+"called with its default shortcut Alt+F2 and it offers a number of basic "
+"functions as well, try it at home!"
 msgstr ""
 
 #: ../release.xml.in.h:11
 msgid ""
-"Dolphin learned a lot from the web experience. Tabbed browsing, folder "
-"addresses as breadcrumbs, tagging files so they can be listed by tags "
-"besides traditional folder structure and powerful network transparency.&lt;"
-"br&gt;&lt;br&gt;Any place on the local network or web can be integrated into "
-"your file system easily by Dolphin. So you can reach remote addresses as if "
-"they are on your disk."
+"Dolphin is the file manager of KDE and so Pardus. It gives a great set of "
+"features where it becomes surprising that a simple file manager may have so "
+"many features. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by "
+"columns to organize your files by comparing... Or you can utilize any KDE "
+"application as they can work in Dolpin embedded. Thus you can edit an image "
+"file in your file manager with the full features of Gwenview, the image "
+"viewer or preview a video in the optional and customizable Information panel."
 msgstr ""
 
 #: ../release.xml.in.h:12
@@ -106,52 +110,38 @@ msgstr ""
 
 #: ../release.xml.in.h:13
 msgid ""
-"Get in touch with your contacts is so easy with Kontact. Kontact is a "
-"seamless integration of a bunch of applications, to achieve a software to "
-"rule all communication and organization tasks. Calendars, e-mails, RSS news, "
-"addresses are altogether. You can even link your address book to Kopete to "
-"use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see "
-"if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create "
-"sticky notes for your desktop from your tasks or vice-versa by simply "
-"dragging them."
+"Fun is a serious matter... Everyone has the right to relax for a moment with "
+"the help of a sudoku puzzle or a simple game. Pardus has some little, "
+"enjoying games in the installation medium, however the real domain is "
+"waiting you online. If you are a gamer, you should check out the games "
+"section in Package Manager to explore hundreds of free games including "
+"simulators, online team building FPS&apos;s, old school arcades etc..."
 msgstr ""
 
 #: ../release.xml.in.h:14
-msgid ""
-"Gimp is an advanced image editing software. Allowing creation and editing of "
-"common graphics and image file formats, it has abilities that professional "
-"graphics artists and designers need and an ability to integrate new filters "
-"easily with its addon system."
-msgstr ""
-"Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm, welches die "
-"Bearbeitung aller gängigen Bildformate ermöglicht. Es hat einen großen "
-"Funktionsumfang und erfüllt somit die Anforderungen professioneller Künstler "
-"und Designer."
-
-#: ../release.xml.in.h:15
 msgid "Goodbye"
 msgstr "Auf Wiedersehen"
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:15
 #, fuzzy
 msgid "Here you can see your install options before installation starts."
 msgstr ""
 "&lt;p&gt;Hier können Sie einige Installationsoptionen sehen, bevor die "
 "Installation startet.&lt;/p&gt;"
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:16
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
-"automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you are "
-"connected by cable your network will be automatically configured. If you "
-"prefer wireless connection, you will see a list of available networks when "
-"you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local "
-"printer? Plug it to your system and it will be configured automatically as "
-"well. All you do is printing out your document."
+"automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer "
+"using wired connections, all you have to do is plugging, then it will be "
+"automatically configured. If you prefer wireless connection, you will see a "
+"list of available networks when you click on the wireless icon.&lt;br&gt;&lt;"
+"br&gt;Do you have a local printer? Plug it and it will be configured "
+"automatically as well. All you do is printing out your document."
 msgstr ""
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:17
 msgid ""
 "In this screen, you can manually partition your disk. You can select "
 "existing partitions and resize or delete them. You can create new partition"
@@ -163,7 +153,7 @@ msgid ""
 "informationabout disk partitioning.&lt;/font&gt;"
 msgstr ""
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:18
 #, fuzzy
 msgid ""
 "In this step, you may validate the integrity of installation packages. A "
@@ -176,14 +166,14 @@ msgstr ""
 "fehlerhafte Überprüfung ist normalerweise ein Ergebnis eines schlechten "
 "Installationsmediums (CD, DVD oder USB Speichergerät). Falls Sie ein "
 "optisches Installationsmedium verwenden, versuchen Sie die Brennmethode DAO "
-"(Disc-at-once) bei einer niedrigen Brenngeschwindigkeit (4x für DVD und "
-"8-12x für CD)."
+"(Disc-at-once) bei einer niedrigen Brenngeschwindigkeit (4x für DVD und 8-"
+"12x für CD)."
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:19
 msgid "Installing Pardus"
 msgstr "Installiere Pardus"
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:20
 msgid ""
 "KDE is the stage of the production, where all the audience see the glamorous "
 "show with hundreds, even thousands of programs for every need in all levels. "
@@ -192,76 +182,39 @@ msgid ""
 "Pardus, where all the softwares and tools are laid."
 msgstr ""
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:21
 msgid "Kahya is working"
 msgstr "Kahya arbeitet"
 
+#: ../release.xml.in.h:22
+msgid ""
+"Kontact, allows you to get in touch with your contact easier than ever. "
+"Kontact is a seamless integration of a number of applications to achieve a "
+"software to rule all communication and organization tasks. Calendars, e-"
+"mails, RSS news, addresses are altogether. You can even link your address "
+"book to Kopete to use with your IM accounts such as MSN, jabber or "
+"GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;"
+"br&gt;You can create sticky notes for your desktop from your tasks or vice-"
+"versa by simply dragging them."
+msgstr ""
+
 #: ../release.xml.in.h:23
 msgid ""
-"Kaptan is an end-user configuration assistant. It helps you to customize "
-"your system upon your preferences. Dou you prefer using your mouse with "
-"single click? Are you left-handed? Do you want to change the color-scheme of "
-"the desktop? A number of personalization options are offered in Kaptan. "
-"Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;"
-"If you want to use Kaptan all over again sometime, you can call it from the "
-"application launcher by its name kaptan. Application launcher can be called "
-"with its default shortcut Alt+F2."
+"Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
+"gives a stable, fast and free office experience while all your software and "
+"documents will be compatible with the rest of major suites. As the roots of "
+"the LibreOffice lies in years long open source office experience, even the "
+"first stable release is much powerful and competetive with Writer for text "
+"documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;"
+"br&gt;Pardus packs this great office suite with a number of enhancements and "
+"plug-ins for a better experience."
 msgstr ""
 
 #: ../release.xml.in.h:24
-msgid ""
-"LibreOffice gives a stable, fast and free office experience while all your "
-"software and documents will be compatible with the rest of major suites. As "
-"the roots of the LibreOffice lies in years long open source office "
-"experience, even the first stable release is much powerful and competetive "
-"with Writer for text documents, Calc for spreadsheets, Impress for "
-"presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with "
-"a number of enhancements and plug-ins for a better experience."
-msgstr ""
-
-#: ../release.xml.in.h:25
 msgid "Manual Partitioning"
 msgstr "Manuelle Partitionierung"
 
 #: ../release.xml.in.h:26
-#, fuzzy
-msgid ""
-"Mozilla Firefox is the preferred browser with its speed, security and "
-"flexibility. With its addon support and a *very* rich addon repository, you "
-"can add new functionality to Mozilla Firefox. You will find many of the most "
-"visited websites along with Pardus-related websites in your bookmarks in its "
-"Pardus default installation. Enjoy a fast and secure internet with the new "
-"Mozilla Firefox 4."
-msgstr ""
-"Mozilla Firefox ist wegen seiner Schnelligkeit, Sicherheit und Flexibilität "
-"der bevorzugte Webbrowser bei Pardus. Durch den Addon-Support und einer "
-"*SEHR* reichen Auswahl von Plugins, können Sie die Funktionalität von "
-"Mozilla Firefox leicht erweitern. Viele populäre Webseiten und auch Pardus-"
-"bezogene Webseiten sind schon in den Lesezeichen bei der "
-"Standardinstallation in Pardus enthalten. Geniessen Sie ein schnelles und "
-"sicheres Internet mit Mozilla Firefox 3.6.3."
-
-#: ../release.xml.in.h:27
-msgid ""
-"Pardus 2011 is set to support most hardware right away. At the end of the "
-"installation, when you start with Pardus, the graphics card and sound "
-"hardware of your computer will be auto-detected , and the network devices "
-"will be prepared for connections, whether it be wireless or &apos;"
-"wired&apos;. Adding a printer to your sistem is also really easy. All you "
-"need to do is plug the printer in, and it is set. Pardus will install the "
-"correct driver and set everything accordingly right away."
-msgstr ""
-"Nachdem die Installation erfolgreich abgeschlossen wurde, wird nach einem "
-"Reboot die Grafik- und die Soundkarte automatisch erkannt und eingerichtet. "
-"Zudem wird die verbaute Hardware wird für die Verbindung mit dem Netzwerk "
-"vorbereitet. Dabei ist es ganz egal, ob Sie sich über Funk oder über Kabel "
-"mit dem Netzwerk verbinden wollen. Sofern der Drucker von Pardus oder CUPS "
-"unterstützt wird, ist die Installation sehr einfach. Alles was Sie tun "
-"müssen ist, den Drucker anzuschließen und einzuschalten. Pardus wird "
-"daraufhin den korrekten Treiber installieren und alle nötigen Einstellungen "
-"tätigen."
-
-#: ../release.xml.in.h:29
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -274,7 +227,7 @@ msgid ""
 "Opera."
 msgstr ""
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:27
 msgid ""
 "Pardus allows multiple users to share the same computer.You can assign "
 "management rights to the users you create; you can alsoconfigure permissions "
@@ -286,7 +239,7 @@ msgid ""
 "with the installation after you make your selections."
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -295,16 +248,16 @@ msgid ""
 "installation goes on, you may see some of these features..."
 msgstr ""
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:29
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
-"as User Manager, Boot Manager, Firewall Manager, History Manager, Service "
-"Manager to administrate Pardus easier. All the managers can be used "
-"individually as well as from the System Settings, a single application for "
-"all administrative and configuration tasks."
+"as User Manager, Boot Manager, Firewall Manager, Service Manager to "
+"administrate Pardus easier. All the managers can be used individually as "
+"well as from the System Settings, a single application for all "
+"administrative and configuration tasks."
 msgstr ""
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus is a free and open source operating system that contains globally "
 "known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice "
@@ -318,70 +271,41 @@ msgid ""
 "computer."
 msgstr ""
 
-#: ../release.xml.in.h:34
-msgid ""
-"Pardus, along with the preinstalled games, has many games in its "
-"repositories, allowing hours of fun with various kinds of games available "
-"through the package manager."
-msgstr ""
-"Neben den vorinstallierten Spielen hat man bei Pardus die Möglichkeit mit "
-"Hilfe des Paket-Managers weitere facettenreiche Spiele dem System "
-"hinzuzufügen, die viele Stunden Spaß bereiten können."
-
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
 msgstr "Art der Partitionierung wählen"
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:32
 msgid "Select a Drive to Install Pardus"
 msgstr "Ein Laufwerk zur Installation auswählen"
 
-#: ../release.xml.in.h:37
-msgid ""
-"So many features are waiting to be found. Even more, many softwares, "
-"libraries and tools are not included in the installation medium to save "
-"space. However with Pardus&apos;s package management system PiSi and its "
-"user friendly interface Package Manager, it is easier than ever to add these "
-"new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will "
-"help you to keep your system up-to-date, remove the components that you "
-"never use or add new ones with a few clicks. You can reach it from the menu "
-"of your choice, which you may decide just after install with the help of "
-"Kaptan!"
-msgstr ""
-
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:33
 #, fuzzy
 msgid "Some help messages"
 msgstr "&lt;p&gt; Einige Hilfetexte &lt;/p&gt;"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:34
 msgid "Summary"
 msgstr "Zusammenfassung"
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:35
 msgid ""
-"We have a support portal to help improve your Pardus experience and help "
-"with problems you encounter. In the Özgürlükİçin portal, where content is "
-"developed by volunteer contributors, you will find guides, package and game "
-"introductions. If you happen to have any questions, the forum is waiting for "
-"you. If you need support, or if you want to support, your first stop should "
-"be www.ozgurlukicin.com"
+"There are a lot of features waiting to be explored. Thousands of softwares, "
+"libraries and tools are not included in the installation medium to save "
+"space. However with Pardus&apos;s package management system PiSi and its "
+"user friendly interface Package Manager, it is onle a few clicks to add "
+"these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager "
+"will help you to keep your system up-to-date, remove the components that you "
+"never use or add new ones. You can reach Package Manager from the menu of "
+"your choice, Kick-off, classic menu or Lancelot that you can choose with the "
+"help of Kaptan in your very first boot."
 msgstr ""
-"Für türkisch sprechende Anwender haben wir haben ein Support Portal "
-"eingerichtet, das Ihnen für Pardus zur Seite steht und Hilfestellung leisten "
-"kann, falls Sie ein Problem haben. Im Portal 'Özgürlükİçin', das von "
-"Freiwilligen betrieben wird, finden Sie Anleitungen, und Informationen zu "
-"Programmen und Spielen. Falls Sie eine Frage haben, steht Ihnen ein Forum "
-"zur Verfügung. Wenn Sie Hilfe benötigen, oder wenn Sie anderen helfen "
-"möchten, sollte Ihr erster Anlaufpunkt www.ozgurlukicin.com sein. Für nicht "
-"türkisch sprechende Anwender gibt es weitere unabhängige Portale, die leicht "
-"im Internet zu finden sind."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:36
 msgid "Welcome to Pardus"
 msgstr "Willkommen bei Pardus"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:37
 msgid ""
 "Welcome to Pardus that contains many easy-to-use software components. You "
 "can do everything you need to, including, but not limited to, connecting to "
@@ -394,7 +318,18 @@ msgid ""
 "free world) by pressing the Next button."
 msgstr ""
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:38
+msgid ""
+"When using Dolphin, you may see that it learned a lot from the web "
+"experience. Dolphin offers web-like features suh as tabbed browsing, folder "
+"addresses in breadcrumbs form, tagging files so they can be listed by tags "
+"besides traditional folder structure and powerful network transparency.&lt;"
+"br&gt;&lt;br&gt;Any place on the local network or web can be integrated into "
+"your file system easily by Dolphin. So you can reach remote addresses as if "
+"they are on your disk."
+msgstr ""
+
+#: ../release.xml.in.h:39
 #, fuzzy
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
@@ -412,7 +347,7 @@ msgstr ""
 "Installationsprozess. Während der Installation werden Ihnen die Innovationen "
 "und gebotenen Funktionen dieser neuen Pardus Version präsentiert.&lt;/p&gt;"
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:40
 #, fuzzy
 msgid ""
 "You can install Pardus if you have an unpartitioned-unused disk space of "
@@ -431,7 +366,7 @@ msgstr ""
 "part/partition and install Pardus. If you like, you can do the partitioning "
 "manually or make Pardus create a new partition for installation.&lt;/p&gt;"
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:41
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -439,7 +374,27 @@ msgid ""
 "don&apos;t you?"
 msgstr ""
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:42
+#, fuzzy
+msgid ""
+"You may have questions or need help... Özgürlükİçin community portal is "
+"there for you. The portal is for all users to meet and share their skills "
+"and experience. You can also find guides, introductionary articles about "
+"applications and games. &lt;br&gt;If you happen to have any questions, the "
+"forum is waiting for you. If you need support, or if you want to support, "
+"your first stop should be www.ozgurlukicin.com"
+msgstr ""
+"Für türkisch sprechende Anwender haben wir haben ein Support Portal "
+"eingerichtet, das Ihnen für Pardus zur Seite steht und Hilfestellung leisten "
+"kann, falls Sie ein Problem haben. Im Portal 'Özgürlükİçin', das von "
+"Freiwilligen betrieben wird, finden Sie Anleitungen, und Informationen zu "
+"Programmen und Spielen. Falls Sie eine Frage haben, steht Ihnen ein Forum "
+"zur Verfügung. Wenn Sie Hilfe benötigen, oder wenn Sie anderen helfen "
+"möchten, sollte Ihr erster Anlaufpunkt www.ozgurlukicin.com sein. Für nicht "
+"türkisch sprechende Anwender gibt es weitere unabhängige Portale, die leicht "
+"im Internet zu finden sind."
+
+#: ../release.xml.in.h:43
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
 "conventional nameof the user who has all rights and permissions (to all "
@@ -451,6 +406,62 @@ msgid ""
 "your computer will be recognized with this name in the local network, it is "
 "recommended to select a descriptive hostname."
 msgstr ""
+
+#~ msgid ""
+#~ "Gimp is an advanced image editing software. Allowing creation and editing "
+#~ "of common graphics and image file formats, it has abilities that "
+#~ "professional graphics artists and designers need and an ability to "
+#~ "integrate new filters easily with its addon system."
+#~ msgstr ""
+#~ "Gimp ist ein leistungsstarkes Bildbearbeitungsprogramm, welches die "
+#~ "Bearbeitung aller gängigen Bildformate ermöglicht. Es hat einen großen "
+#~ "Funktionsumfang und erfüllt somit die Anforderungen professioneller "
+#~ "Künstler und Designer."
+
+#, fuzzy
+#~ msgid ""
+#~ "Mozilla Firefox is the preferred browser with its speed, security and "
+#~ "flexibility. With its addon support and a *very* rich addon repository, "
+#~ "you can add new functionality to Mozilla Firefox. You will find many of "
+#~ "the most visited websites along with Pardus-related websites in your "
+#~ "bookmarks in its Pardus default installation. Enjoy a fast and secure "
+#~ "internet with the new Mozilla Firefox 4."
+#~ msgstr ""
+#~ "Mozilla Firefox ist wegen seiner Schnelligkeit, Sicherheit und "
+#~ "Flexibilität der bevorzugte Webbrowser bei Pardus. Durch den Addon-"
+#~ "Support und einer *SEHR* reichen Auswahl von Plugins, können Sie die "
+#~ "Funktionalität von Mozilla Firefox leicht erweitern. Viele populäre "
+#~ "Webseiten und auch Pardus-bezogene Webseiten sind schon in den "
+#~ "Lesezeichen bei der Standardinstallation in Pardus enthalten. Geniessen "
+#~ "Sie ein schnelles und sicheres Internet mit Mozilla Firefox 3.6.3."
+
+#~ msgid ""
+#~ "Pardus 2011 is set to support most hardware right away. At the end of the "
+#~ "installation, when you start with Pardus, the graphics card and sound "
+#~ "hardware of your computer will be auto-detected , and the network devices "
+#~ "will be prepared for connections, whether it be wireless or &apos;"
+#~ "wired&apos;. Adding a printer to your sistem is also really easy. All you "
+#~ "need to do is plug the printer in, and it is set. Pardus will install the "
+#~ "correct driver and set everything accordingly right away."
+#~ msgstr ""
+#~ "Nachdem die Installation erfolgreich abgeschlossen wurde, wird nach einem "
+#~ "Reboot die Grafik- und die Soundkarte automatisch erkannt und "
+#~ "eingerichtet. Zudem wird die verbaute Hardware wird für die Verbindung "
+#~ "mit dem Netzwerk vorbereitet. Dabei ist es ganz egal, ob Sie sich über "
+#~ "Funk oder über Kabel mit dem Netzwerk verbinden wollen. Sofern der "
+#~ "Drucker von Pardus oder CUPS unterstützt wird, ist die Installation sehr "
+#~ "einfach. Alles was Sie tun müssen ist, den Drucker anzuschließen und "
+#~ "einzuschalten. Pardus wird daraufhin den korrekten Treiber installieren "
+#~ "und alle nötigen Einstellungen tätigen."
+
+#~ msgid ""
+#~ "Pardus, along with the preinstalled games, has many games in its "
+#~ "repositories, allowing hours of fun with various kinds of games available "
+#~ "through the package manager."
+#~ msgstr ""
+#~ "Neben den vorinstallierten Spielen hat man bei Pardus die Möglichkeit mit "
+#~ "Hilfe des Paket-Managers weitere facettenreiche Spiele dem System "
+#~ "hinzuzufügen, die viele Stunden Spaß bereiten können."
 
 #~ msgid ""
 #~ "World&apos;s leading preferred libre office suite OpenOffice.org brings a "
