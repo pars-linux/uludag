@@ -8,8 +8,8 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>279</width>
-            <height>136</height>
+            <width>280</width>
+            <height>161</height>
         </rect>
     </property>
     <property name="sizePolicy">
@@ -41,18 +41,39 @@
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
-                <widget class="QLineEdit" row="0" column="0">
+                <widget class="QLayoutWidget" row="0" column="0">
                     <property name="name">
-                        <cstring>linePorts</cstring>
+                        <cstring>layout1</cstring>
                     </property>
-                </widget>
-                <widget class="QLabel" row="1" column="0" rowspan="1" colspan="2">
-                    <property name="name">
-                        <cstring>textLabel1</cstring>
-                    </property>
-                    <property name="text">
-                        <string>Example: 100-200,300</string>
-                    </property>
+                    <vbox>
+                        <property name="name">
+                            <cstring>unnamed</cstring>
+                        </property>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>infoLabel</cstring>
+                            </property>
+                            <property name="text">
+                                <string>information</string>
+                            </property>
+                            <property name="alignment">
+                                <set>WordBreak|AlignVCenter</set>
+                            </property>
+                        </widget>
+                        <widget class="QLineEdit">
+                            <property name="name">
+                                <cstring>linePorts</cstring>
+                            </property>
+                        </widget>
+                        <widget class="QLabel">
+                            <property name="name">
+                                <cstring>textLabel1</cstring>
+                            </property>
+                            <property name="text">
+                                <string>Example: 100-200,300</string>
+                            </property>
+                        </widget>
+                    </vbox>
                 </widget>
             </grid>
         </widget>
