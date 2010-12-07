@@ -240,7 +240,7 @@ class MainApplication(programbase):
                 except:
                     self.inev.delete(item)
             else:
-                KMessageBox.information(self, i18n("%s already in list!" % ports))
+                KMessageBox.information(self, unicode(i18n("%s already in list!")) % ports)
 
     def slotAddOutgoing(self):
         if self.filterCombo.currentItem() == 0:
@@ -255,7 +255,7 @@ class MainApplication(programbase):
                 except:
                     self.inev.delete(item)
             else:
-                KMessageBox.information(self, i18n("%s already in list!" % ports))
+                KMessageBox.information(self, unicode(i18n("%s already in list!")) % ports)
 
     def listIncomingRules(self):
         pass
