@@ -6,19 +6,19 @@
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
+# Antoon Tolboom <atolboo@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-06 15:16+0200\n"
-"PO-Revision-Date: 2008-06-15 17:31+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2010-12-07 12:14+0100\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: src/service-manager.py:33 src/service-manager.py:88
@@ -83,6 +83,8 @@ msgid ""
 "An error occured:\n"
 "%s"
 msgstr ""
+"Een fout is opgetreden:\n"
+"%s"
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
