@@ -16,29 +16,23 @@
         <SelectedPackage>PyQt-webkit</SelectedPackage>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
-        <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>ahenk-agent</SelectedPackage>
         <SelectedPackage>ahenk-lider</SelectedPackage>
         <SelectedPackage>ahenk-setup</SelectedPackage>
-        <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
         <SelectedPackage>alsa-tools</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
-        <SelectedPackage>ar9170-firmware</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>arrayprobe</SelectedPackage>
-        <SelectedPackage>atmel-firmware</SelectedPackage>
-        <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>b43-fwcutter</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>blueman</SelectedPackage>
-        <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
         <SelectedPackage>boot-manager</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
@@ -56,7 +50,6 @@
         <SelectedPackage>display-settings</SelectedPackage>
         <SelectedPackage>dosfstools</SelectedPackage>
         <SelectedPackage>droid-fonts</SelectedPackage>
-        <SelectedPackage>eagle-firmware</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>encfs</SelectedPackage>
         <SelectedPackage>enchant-zemberek</SelectedPackage>
@@ -110,18 +103,9 @@
         <SelectedPackage>htop</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
         <SelectedPackage>ifplugd</SelectedPackage>
-        <SelectedPackage>ipw2100-firmware</SelectedPackage>
-        <SelectedPackage>ipw2200-firmware</SelectedPackage>
         <SelectedPackage>ipython</SelectedPackage>
         <SelectedPackage>irqbalance</SelectedPackage>
-        <SelectedPackage>iscan-firmware</SelectedPackage>
         <SelectedPackage>iw</SelectedPackage>
-        <SelectedPackage>iwlwifi1000-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi5000-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi6000-ucode</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>k3b-l10n-ca</SelectedPackage>
         <SelectedPackage>k3b-l10n-de</SelectedPackage>
@@ -211,7 +195,6 @@
         <SelectedPackage>kdeutils-ktimer</SelectedPackage>
         <SelectedPackage>kdeutils-kwallet</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>latencytop</SelectedPackage>
@@ -287,8 +270,6 @@
         <SelectedPackage>pulseaudio</SelectedPackage>
         <SelectedPackage>pyqtermwidget</SelectedPackage>
         <SelectedPackage>python-networkmanager</SelectedPackage>
-        <SelectedPackage>ql2x00-firmware</SelectedPackage>
-        <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rdiff-backup</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
@@ -299,7 +280,6 @@
         <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>smartmontools</SelectedPackage>
         <SelectedPackage>smb4k</SelectedPackage>
-        <SelectedPackage>speedtouch-firmware</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>squashfs-tools</SelectedPackage>
         <SelectedPackage>subversion</SelectedPackage>
@@ -315,8 +295,6 @@
         <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
-        <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
-        <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>virt-manager</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
@@ -380,8 +358,6 @@
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
-        <SelectedPackage>zd1201-firmware</SelectedPackage>
-        <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
@@ -666,7 +642,6 @@
         <Package>kdeutils-core</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
-        <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
         <Package>kio-to-local</Package>
         <Package>kipi-plugins</Package>
@@ -1007,7 +982,6 @@
         <Package>qt-webkit</Package>
         <Package>qt3</Package>
         <Package>qtermwidget</Package>
-        <Package>radeon-rlc-firmware</Package>
         <Package>raptor</Package>
         <Package>rarian</Package>
         <Package>rasqal</Package>
@@ -1109,21 +1083,9 @@
     </PackageSelection>
     <InstallImagePackages>
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedPackage>ar9170-firmware</SelectedPackage>
-        <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>device-mapper-static</SelectedPackage>
-        <SelectedPackage>ipw2100-firmware</SelectedPackage>
-        <SelectedPackage>ipw2200-firmware</SelectedPackage>
-        <SelectedPackage>iwlwifi1000-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi5000-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
-        <SelectedPackage>iwlwifi6000-ucode</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>lvm2-static</SelectedPackage>
-        <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-evdev</SelectedPackage>
         <SelectedPackage>xorg-input-synaptics</SelectedPackage>
@@ -1170,12 +1132,10 @@
         <Package>PyQt</Package>
         <Package>acl</Package>
         <Package>alternatives</Package>
-        <Package>ar9170-firmware</Package>
         <Package>attr</Package>
         <Package>audit</Package>
         <Package>avahi</Package>
         <Package>avahi-libs</Package>
-        <Package>b43-firmware</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
@@ -1245,18 +1205,9 @@
         <Package>hal-info</Package>
         <Package>hdparm</Package>
         <Package>iputils</Package>
-        <Package>ipw2100-firmware</Package>
-        <Package>ipw2200-firmware</Package>
-        <Package>iwlwifi1000-ucode</Package>
-        <Package>iwlwifi3945-ucode</Package>
-        <Package>iwlwifi4965-ucode</Package>
-        <Package>iwlwifi5000-ucode</Package>
-        <Package>iwlwifi5150-ucode</Package>
-        <Package>iwlwifi6000-ucode</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
         <Package>kernel</Package>
-        <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
         <Package>lcms</Package>
         <Package>less</Package>
@@ -1379,8 +1330,6 @@
         <Package>python-pyliblzma</Package>
         <Package>qt</Package>
         <Package>qtermwidget</Package>
-        <Package>radeon-rlc-firmware</Package>
-        <Package>ralink-firmware</Package>
         <Package>readline</Package>
         <Package>reiserfsprogs</Package>
         <Package>rsyslog</Package>
