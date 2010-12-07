@@ -40,7 +40,7 @@ class EntryView(QScrollView):
         self.entries = []
 
     def add(self, editWidget, index, title, description, pardus, os_data):
-        e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data)
+        e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data, self)
         self.entries.append(e)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
@@ -65,7 +65,7 @@ class EntryView(QScrollView):
             self.resizeContents(width, th)
 
 class Entry(QWidget):
-    def __init__(self, parent, editWidget, index, title, description, pardus, os_data):
+    def __init__(self, parent, editWidget, index, title, description, pardus, os_data, view):
         QWidget.__init__(self, parent)
         self.editWidget = editWidget
 
@@ -74,6 +74,7 @@ class Entry(QWidget):
         self.description = description
         self.pardus = pardus
         self.os_data = os_data
+        self.view = view
 
         if self.pardus:
             os_type = "pardus"
@@ -102,7 +103,10 @@ class Entry(QWidget):
         self.editWidget.editEntry(self.os_data)
 
     def slotDelete(self):
-        self.editWidget.deleteEntry(self.index, self.title)
+        if not len(self.view.entries) == 1:
+            self.editWidget.deleteEntry(self.index, self.title)
+        else:
+            KMessageBox.error(self, i18n("This is the last entry, you cannot delete it!"))
 
     def paintEvent(self, event):
         paint = QPainter(self)
