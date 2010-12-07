@@ -88,9 +88,9 @@ class AdvancedRuleCheckBox(QCheckBox):
                     self.msg = unicode(i18n("Allowing all outgoing connections to %s.")) % message
             self.msg2 = unicode(i18n("Ports: %s")) % self.ports.replace(' ', ', ').replace(':', '-')
         elif self.isIncoming:
-            self.msg = unicode(i18n('Allow all incoming connection through ports %s.')) % self.ports
+            self.msg = unicode(i18n('Allow all incoming connection through ports %s.')) % self.ports.replace(':', '-')
         else:
-            self.msg = unicode(i18n('Reject all outgoing connection through ports %s.')) % self.ports
+            self.msg = unicode(i18n('Reject all outgoing connection through ports %s.')) % self.ports.replace(':', '-')
 
 
     def setIsRunning(self, run):
