@@ -8,13 +8,129 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 23:33+0200\n"
+"POT-Creation-Date: 2010-12-07 09:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/dialog.py:64 src/firewall-config.py:162 src/firewall-config.py:403
+msgid "New Rule"
+msgstr ""
+
+#: src/dialog.py:65
+msgid "Port Range"
+msgstr ""
+
+#: src/dialog.py:66
+msgid "Example: 100-200,300"
+msgstr ""
+
+#: src/utils.py:46 src/utils.py:116
+msgid "Edit Rule"
+msgstr ""
+
+#: src/utils.py:50
+msgid "Delete Rule"
+msgstr ""
+
+#: src/utils.py:54
+msgid "Start/Stop Rule"
+msgstr ""
+
+#: src/utils.py:80
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/utils.py:82
+#, python-format
+msgid "Allow all incoming connection through ports %s"
+msgstr ""
+
+#: src/utils.py:84
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr ""
+
+#: src/utils.py:301
+msgid "Invalid port range."
+msgstr ""
+
+#: src/firewall-config.py:41
+msgid "Pardus Firewall Graphical User Interface"
+msgstr ""
+
+#: src/firewall-config.py:57
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/firewall-config.py:58
+msgid "Help with IPTables"
+msgstr ""
+
+#: src/firewall-config.py:59
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:85
+msgid "Firewall Configuration"
+msgstr ""
+
+#: src/firewall-config.py:158
+msgid "Incoming Rule"
+msgstr ""
+
+#: src/firewall-config.py:159
+msgid "Outgoing Rule"
+msgstr ""
+
+#: src/firewall-config.py:170
+msgid "Incoming Connections"
+msgstr ""
+
+#: src/firewall-config.py:171
+msgid "Outgoing Connections"
+msgstr ""
+
+#: src/firewall-config.py:243 src/firewall-config.py:258
+#, python-format
+msgid "%s already in list!"
+msgstr ""
+
+#: src/firewall-config.py:277
+msgid "Firewall Manager Help"
+msgstr ""
+
+#: src/firewall-config.py:341
+msgid "&Stop"
+msgstr ""
+
+#: src/firewall-config.py:343
+msgid "Firewall is running"
+msgstr ""
+
+#: src/firewall-config.py:345
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+
+#: src/firewall-config.py:352
+msgid "Firewall is not running"
+msgstr ""
+
+#: src/firewall-config.py:354
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+
+#: src/firewall-config.py:471
+msgid "Pardus Firewall Interface is already running!"
+msgstr ""
 
 #: src/rules.py:7
 msgid "Mail services"
@@ -42,166 +158,4 @@ msgstr ""
 
 #: src/rules.py:31
 msgid "Desktop Sharing"
-msgstr ""
-
-#: src/dialog.py:64 src/firewall-config.py:427
-msgid "New Rule"
-msgstr ""
-
-#: src/dialog.py:65
-msgid "Port Range"
-msgstr ""
-
-#: src/dialog.py:66
-msgid "Example: 100-200,300"
-msgstr ""
-
-#: src/firewall-config.py:43
-msgid "Pardus Firewall Graphical User Interface"
-msgstr ""
-
-#: src/firewall-config.py:59
-msgid "GUI Design & Usability"
-msgstr ""
-
-#: src/firewall-config.py:60
-msgid "Help with IPTables"
-msgstr ""
-
-#: src/firewall-config.py:61
-msgid "Help with KDE stuff"
-msgstr ""
-
-#: src/firewall-config.py:127 src/firewall-config.py:163 src/firewall.py:240
-msgid "Firewall Configuration"
-msgstr ""
-
-#: src/firewall-config.py:144
-msgid "Invalid port range."
-msgstr ""
-
-#: src/firewall-config.py:268
-#, python-format
-msgid "Ports: %s"
-msgstr ""
-
-#: src/firewall-config.py:307 src/firewall-config.py:417
-#, python-format
-msgid "Allow all incoming connection through port(s) %s"
-msgstr ""
-
-#: src/firewall-config.py:309 src/firewall-config.py:419
-#, python-format
-msgid "Reject all outgoing connection through port(s) %s"
-msgstr ""
-
-#: src/firewall-config.py:327
-msgid "&Stop Firewall"
-msgstr ""
-
-#: src/firewall-config.py:328
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr ""
-
-#: src/firewall-config.py:330
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-
-#: src/firewall-config.py:335
-msgid "&Start Firewall"
-msgstr ""
-
-#: src/firewall-config.py:336
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr ""
-
-#: src/firewall-config.py:338
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-
-#: src/firewall-config.py:412
-msgid "Edit Rule"
-msgstr ""
-
-#: src/firewall-config.py:422 src/firewall-config.py:468
-#: src/firewall-config.py:493
-msgid "Changes are written but will not be saved until you aplly them."
-msgstr ""
-
-#: src/firewall-config.py:442
-msgid "Port is already in list."
-msgstr ""
-
-#: src/firewall-config.py:546
-msgid "Firewall Manager Help"
-msgstr ""
-
-#: src/firewall-config.py:616
-msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-
-#: src/firewall.py:130 src/firewall.py:187 src/firewall.py:251
-#: src/firewall.py:258
-msgid "Rule"
-msgstr ""
-
-#: src/firewall.py:242
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr ""
-
-#: src/firewall.py:243
-msgid "&Stop"
-msgstr ""
-
-#: src/firewall.py:244
-msgid "Alt+S"
-msgstr ""
-
-#: src/firewall.py:245
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-
-#: src/firewall.py:246
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-
-#: src/firewall.py:252
-msgid "Incoming Connections"
-msgstr ""
-
-#: src/firewall.py:253
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-
-#: src/firewall.py:259
-msgid "Outgoing Connections"
-msgstr ""
-
-#: src/firewall.py:262
-msgid "Alt+H"
-msgstr ""
-
-#: src/firewall.py:264
-msgid "Alt+A"
-msgstr ""
-
-#: src/firewall.py:265
-msgid "&Ok"
-msgstr ""
-
-#: src/firewall.py:266
-msgid "Alt+O"
-msgstr ""
-
-#: src/firewall.py:268
-msgid "Alt+C"
 msgstr ""

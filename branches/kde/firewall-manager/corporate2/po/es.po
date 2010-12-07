@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-01 23:33+0200\n"
+"POT-Creation-Date: 2010-12-07 09:42+0200\n"
 "PO-Revision-Date: 2007-07-15 19:42-0400\n"
 "Last-Translator: \n"
 "Language-Team: <es@li.org>\n"
@@ -16,6 +16,132 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/dialog.py:64 src/firewall-config.py:162 src/firewall-config.py:403
+msgid "New Rule"
+msgstr "Nueva Regla"
+
+#: src/dialog.py:65
+msgid "Port Range"
+msgstr "Rango de Puertos"
+
+#: src/dialog.py:66
+msgid "Example: 100-200,300"
+msgstr "Ejemplo: 100-200,300"
+
+#: src/utils.py:46 src/utils.py:116
+msgid "Edit Rule"
+msgstr ""
+
+#: src/utils.py:50
+#, fuzzy
+msgid "Delete Rule"
+msgstr "Nueva Regla"
+
+#: src/utils.py:54
+msgid "Start/Stop Rule"
+msgstr ""
+
+#: src/utils.py:80
+#, python-format
+msgid "Ports: %s"
+msgstr "Puertos: %s"
+
+#: src/utils.py:82
+#, fuzzy, python-format
+msgid "Allow all incoming connection through ports %s"
+msgstr "Aceptar todas las conexiones entrantes por puertos %s"
+
+#: src/utils.py:84
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr "Rechazar todas las conexiones salientes por puertos %s"
+
+#: src/utils.py:301
+msgid "Invalid port range."
+msgstr "Rango de puertos inválido."
+
+#: src/firewall-config.py:41
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Interfaz gráfico del Cortafuegos Pardus"
+
+#: src/firewall-config.py:57
+msgid "GUI Design & Usability"
+msgstr "Diseño del Interfaz gráfico & Usabilidad"
+
+#: src/firewall-config.py:58
+msgid "Help with IPTables"
+msgstr "Ayuda con IPtables"
+
+#: src/firewall-config.py:59
+msgid "Help with KDE stuff"
+msgstr "Ayuda con KDE"
+
+#: src/firewall-config.py:85
+msgid "Firewall Configuration"
+msgstr "Configuración de Cortafuegos"
+
+#: src/firewall-config.py:158
+#, fuzzy
+msgid "Incoming Rule"
+msgstr "Entrante"
+
+#: src/firewall-config.py:159
+#, fuzzy
+msgid "Outgoing Rule"
+msgstr "Saliente"
+
+#: src/firewall-config.py:170
+msgid "Incoming Connections"
+msgstr "Conexiones entrantes"
+
+#: src/firewall-config.py:171
+msgid "Outgoing Connections"
+msgstr "Conexiones salientes"
+
+#: src/firewall-config.py:243 src/firewall-config.py:258
+#, python-format
+msgid "%s already in list!"
+msgstr ""
+
+#: src/firewall-config.py:277
+msgid "Firewall Manager Help"
+msgstr ""
+
+#: src/firewall-config.py:341
+msgid "&Stop"
+msgstr "&Detener"
+
+#: src/firewall-config.py:343
+#, fuzzy
+msgid "Firewall is running"
+msgstr "Configuración de Cortafuegos"
+
+#: src/firewall-config.py:345
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Presione aquí para detener el cortafuegos y permitir toda clase de "
+"conexiones entrantes y salientes."
+
+#: src/firewall-config.py:352
+#, fuzzy
+msgid "Firewall is not running"
+msgstr "<b><font size='+1'>Cortafuegos está desactivado</font></b>"
+
+#: src/firewall-config.py:354
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Presione aquí para activar el cortafuegos y permitir conexiones solamente a "
+"servicios especificados."
+
+#: src/firewall-config.py:471
+msgid "Pardus Firewall Interface is already running!"
+msgstr ""
+"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/rules.py:7
 msgid "Mail services"
@@ -50,184 +176,66 @@ msgstr "Servicios de transferencia de archivos FTP"
 msgid "Desktop Sharing"
 msgstr "Escritorio compartido"
 
-#: src/dialog.py:64 src/firewall-config.py:427
-msgid "New Rule"
-msgstr "Nueva Regla"
-
-#: src/dialog.py:65
-msgid "Port Range"
-msgstr "Rango de Puertos"
-
-#: src/dialog.py:66
-msgid "Example: 100-200,300"
-msgstr "Ejemplo: 100-200,300"
-
-#: src/firewall-config.py:43
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Interfaz gráfico del Cortafuegos Pardus"
-
-#: src/firewall-config.py:59
-msgid "GUI Design & Usability"
-msgstr "Diseño del Interfaz gráfico & Usabilidad"
-
-#: src/firewall-config.py:60
-msgid "Help with IPTables"
-msgstr "Ayuda con IPtables"
-
-#: src/firewall-config.py:61
-msgid "Help with KDE stuff"
-msgstr "Ayuda con KDE"
-
-#: src/firewall-config.py:127 src/firewall-config.py:163 src/firewall.py:240
-msgid "Firewall Configuration"
-msgstr "Configuración de Cortafuegos"
-
-#: src/firewall-config.py:144
-msgid "Invalid port range."
-msgstr "Rango de puertos inválido."
-
-#: src/firewall-config.py:268
-#, python-format
-msgid "Ports: %s"
-msgstr "Puertos: %s"
-
-#: src/firewall-config.py:307 src/firewall-config.py:417
-#, fuzzy, python-format
-msgid "Allow all incoming connection through port(s) %s"
-msgstr "Aceptar todas las conexiones entrantes por puertos %s"
-
-#: src/firewall-config.py:309 src/firewall-config.py:419
-#, fuzzy, python-format
-msgid "Reject all outgoing connection through port(s) %s"
-msgstr "Rechazar todas las conexiones salientes por puertos %s"
-
-#: src/firewall-config.py:327
-msgid "&Stop Firewall"
-msgstr "&Detener Cortafuegos"
-
-#: src/firewall-config.py:328
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>Cortafuegos está activo</font></b>"
-
-#: src/firewall-config.py:330
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Presione aquí para detener el cortafuegos y permitir toda clase de "
-"conexiones entrantes y salientes."
-
-#: src/firewall-config.py:335
-msgid "&Start Firewall"
-msgstr "&Iniciar Cortafuegos"
-
-#: src/firewall-config.py:336
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr "<b><font size='+1'>Cortafuegos está desactivado</font></b>"
-
-#: src/firewall-config.py:338
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Presione aquí para activar el cortafuegos y permitir conexiones solamente a "
-"servicios especificados."
-
-#: src/firewall-config.py:412
-msgid "Edit Rule"
-msgstr ""
-
-#: src/firewall-config.py:422 src/firewall-config.py:468
-#: src/firewall-config.py:493
-msgid "Changes are written but will not be saved until you aplly them."
-msgstr ""
-
-#: src/firewall-config.py:442
-msgid "Port is already in list."
-msgstr ""
-
-#: src/firewall-config.py:546
-msgid "Firewall Manager Help"
-msgstr ""
-
-#: src/firewall-config.py:616
-msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
-
-#: src/firewall.py:130 src/firewall.py:187 src/firewall.py:251
-#: src/firewall.py:258
 #, fuzzy
-msgid "Rule"
-msgstr "Nueva Regla"
+#~ msgid "Reject all outgoing connection through port(s) %s"
+#~ msgstr "Rechazar todas las conexiones salientes por puertos %s"
 
-#: src/firewall.py:242
-msgid "<b><font size=\"+1\">Firewall is running</font></b>"
-msgstr "<b><font size=\"+1\">Cortafuegos está activado</font></b>"
+#~ msgid "&Stop Firewall"
+#~ msgstr "&Detener Cortafuegos"
 
-#: src/firewall.py:243
-msgid "&Stop"
-msgstr "&Detener"
+#~ msgid "<b><font size='+1'>Firewall is running</font></b>"
+#~ msgstr "<b><font size='+1'>Cortafuegos está activo</font></b>"
 
-#: src/firewall.py:244
-msgid "Alt+S"
-msgstr "Alt+S"
+#~ msgid "&Start Firewall"
+#~ msgstr "&Iniciar Cortafuegos"
+
+#, fuzzy
+#~ msgid "Rule"
+#~ msgstr "Nueva Regla"
+
+#~ msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+#~ msgstr "<b><font size=\"+1\">Cortafuegos está activado</font></b>"
+
+#~ msgid "Alt+S"
+#~ msgstr "Alt+S"
 
 # shouldn't it be as above: "allow all incoming AND OUTGOING connections." ??
-#: src/firewall.py:245
-msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-"Presione aquí para detener el cortafuegos y permitir toda clase de "
-"conexiones entrantes."
+#~ msgid "Click here to stop the firewall and allow all incoming connections."
+#~ msgstr ""
+#~ "Presione aquí para detener el cortafuegos y permitir toda clase de "
+#~ "conexiones entrantes."
 
-#: src/firewall.py:246
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
-"permitir que otras computadoras puedan acceder a servicios locales aquí, "
-"marque el servicio abajo:"
+#~ msgid ""
+#~ "All incoming connections are <b>rejected</b> by default. If you want to "
+#~ "allow other computers to access services on this computer, check the "
+#~ "service below:"
+#~ msgstr ""
+#~ "Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
+#~ "permitir que otras computadoras puedan acceder a servicios locales aquí, "
+#~ "marque el servicio abajo:"
 
-#: src/firewall.py:252
-msgid "Incoming Connections"
-msgstr "Conexiones entrantes"
+#~ msgid ""
+#~ "In this tab, you can create your own firewall rules. Use '+' button to "
+#~ "create rules, and uncheck rules from list to remove them."
+#~ msgstr ""
+#~ "En esta pestaña puede crear sus propias reglas de cortafuegos. Use el "
+#~ "botón '+' para crear reglas, y desmarque reglas de la lista para "
+#~ "removerlas."
 
-#: src/firewall.py:253
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-"En esta pestaña puede crear sus propias reglas de cortafuegos. Use el botón "
-"'+' para crear reglas, y desmarque reglas de la lista para removerlas."
+#~ msgid "Alt+H"
+#~ msgstr "Alt+H"
 
-#: src/firewall.py:259
-msgid "Outgoing Connections"
-msgstr "Conexiones salientes"
+#~ msgid "Alt+A"
+#~ msgstr "Alt+A"
 
-#: src/firewall.py:262
-msgid "Alt+H"
-msgstr "Alt+H"
+#~ msgid "&Ok"
+#~ msgstr "&Ok"
 
-#: src/firewall.py:264
-msgid "Alt+A"
-msgstr "Alt+A"
+#~ msgid "Alt+O"
+#~ msgstr "Alt+O"
 
-#: src/firewall.py:265
-msgid "&Ok"
-msgstr "&Ok"
-
-#: src/firewall.py:266
-msgid "Alt+O"
-msgstr "Alt+O"
-
-#: src/firewall.py:268
-msgid "Alt+C"
-msgstr "Alt+C"
-
-#~ msgid "Reject all outgoing connection through ports %s"
-#~ msgstr "Rechazar todas las conexiones salientes por puertos %s"
+#~ msgid "Alt+C"
+#~ msgstr "Alt+C"
 
 #~ msgid "Reject all incoming connection through ports %s"
 #~ msgstr "Rechazar todas las conexiones entrantes por puertos %s"
@@ -248,12 +256,6 @@ msgstr "Alt+C"
 
 #~ msgid "Connections"
 #~ msgstr "Conexiones"
-
-#~ msgid "Incoming"
-#~ msgstr "Entrante"
-
-#~ msgid "Outgoing"
-#~ msgstr "Saliente"
 
 #~ msgid "TCP"
 #~ msgstr "TCP"
