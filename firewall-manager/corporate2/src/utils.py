@@ -37,6 +37,7 @@ class AdvancedRuleCheckBox(QCheckBox):
         self.isIncoming = isIncoming
         self.fwconfig = fwconfig
         self.entryView = entryView
+        self.serviceName = ""
         if isDefault:
             self.serviceName = message
 
@@ -56,20 +57,17 @@ class AdvancedRuleCheckBox(QCheckBox):
 
         if self.isDefault:
             self.icon = QImage(locate("data", "firewall-config/default.png"))
-            self.pushDelete.setEnabled(False)
-            self.pushEdit.setEnabled(False)
+            self.pushDelete.hide()
+            self.pushEdit.hide()
         else:
             self.icon = QImage(locate("data", "firewall-config/user-defined.png"))
             self.iconState = QImage(locate("data", "firewall-config/apply.png"))
-            self.pushStart.setEnabled(False)
+            self.pushStart.hide()
         self.iconState = QImage(locate("data", "firewall-config/apply.png"))
-        self.iconState2 = QImage(locate("data", "firewall-config/no.png"))
         self.icon.smoothScale(32, 32)
         self.icon = QPixmap(self.icon)
         self.iconState.smoothScale(16, 16)
         self.iconState = QPixmap(self.iconState)
-        self.iconState2.smoothScale(16, 16)
-        self.iconState2 = QPixmap(self.iconState2)
 
         self.fillColor = KGlobalSettings.baseColor()
         self.installEventFilter(self)
@@ -77,16 +75,28 @@ class AdvancedRuleCheckBox(QCheckBox):
 
     def updateMessage(self, message=""):
         if self.isDefault:
-            self.msg = i18n(message) + " [ " + unicode(i18n("Ports: %s")) % self.ports + " ]"
+            message = unicode(i18n(message))
+            if self.isRunning:
+                if self.isIncoming:
+                    self.msg = unicode(i18n("Allow all incoming connections to %s.")) % message
+                else:
+                    self.msg = unicode(i18n("Reject all outgoing connections to %s.")) % message
+            else:
+                if self.isIncoming:
+                    self.msg = unicode(i18n("Rejecting all incoming connections to %s.")) % message
+                else:
+                    self.msg = unicode(i18n("Allowing all outgoing connections to %s.")) % message
+            self.msg2 = unicode(i18n("Ports: %s")) % self.ports.replace(' ', ', ').replace(':', '-')
         elif self.isIncoming:
-            self.msg = unicode(i18n('Allow all incoming connection through ports %s')) % self.ports
+            self.msg = unicode(i18n('Allow all incoming connection through ports %s.')) % self.ports
         else:
-            self.msg = unicode(i18n('Reject all outgoing connection through ports %s')) % self.ports
+            self.msg = unicode(i18n('Reject all outgoing connection through ports %s.')) % self.ports
 
 
     def setIsRunning(self, run):
         self.isRunning = run
         self.pushStart.setIconSet(getIconSet(self.getStartIcon(), KIcon.Small))
+        self.updateMessage(self.serviceName)
         self.show()
 
     def eventFilter(self,target,event):
@@ -102,9 +112,11 @@ class AdvancedRuleCheckBox(QCheckBox):
         if not self.isEnabled():
             return
         if b:
-            self.pushEdit.show()
-            self.pushStart.show()
-            self.pushDelete.show()
+            if self.isDefault:
+                self.pushStart.show()
+            else:
+                self.pushEdit.show()
+                self.pushDelete.show()
             self.repaint()
         else:
             self.pushEdit.hide()
@@ -113,7 +125,11 @@ class AdvancedRuleCheckBox(QCheckBox):
             self.repaint()
 
     def slotEdit(self):
-        dialog = dialogRule(self, title=i18n("Edit Rule"), ports=self.ports)
+        if self.isIncoming:
+            desc = unicode(i18n("Write ports or port ranges that you want to ALLOW for incoming connections."))
+        else:
+            desc = unicode(i18n("Write ports or port ranges that you want to BLOCK for outgoing connections."))
+        dialog = dialogRule(self, title=i18n("Edit Rule"), ports=self.ports, description=desc)
         ports = dialog.exec_loop()
         oldPorts = self.ports
         if ports:
@@ -132,6 +148,7 @@ class AdvancedRuleCheckBox(QCheckBox):
         self.update()
         try:
             self.fwconfig.saveAll()
+            self.updateMessage(self.serviceName)
         except:
             self.isRunning = not self.isRunning
             self.pushStart.setIconSet(getIconSet(self.getStartIcon(), KIcon.Small))
@@ -145,12 +162,14 @@ class AdvancedRuleCheckBox(QCheckBox):
 
     def slotDelete(self):
         # fixme: store index and put the same old place
+        self.hide()
         self.entryView.entries.remove(self)
         try:
             self.fwconfig.saveAll()
             self.fwconfig.refreshView()
         except:
             self.entryView.entries.append(self)
+            self.show()
 
     def paintEvent(self, event):
 
@@ -166,24 +185,31 @@ class AdvancedRuleCheckBox(QCheckBox):
 
         if self.isRunning:
             dip = dip + self.icon.height() - self.iconState.height()
-            paint.drawPixmap(24, dip, self.iconState)
+            paint.drawPixmap(30, dip, self.iconState)
+
+        oldFont = paint.font()
+        font = QFont(oldFont)
+        font.setItalic(True)
+        font.setPointSize(10)
+
+        paint.setFont(oldFont)
+        fm = QFontMetrics(oldFont)
+        if self.isDefault:
+            paint.drawText(12 + self.icon.width() + 6, fm.ascent() + 2, unicode(self.msg))
+            paint.setFont(font)
+            paint.drawText(12 + self.icon.width() + 6, fm.ascent() + 18, unicode(self.msg2))
+            paint.setFont(oldFont)
         else:
-            dip = dip + self.icon.height() - self.iconState2.height()
-            paint.drawPixmap(24, dip, self.iconState2)
-
-        font = paint.font()
-        font.setPointSize(font.pointSize() + 1)
-        font.setBold(True)
-
-        fm = QFontMetrics(font)
-        paint.drawText(12 + self.icon.width() + 6, fm.ascent() + 9, unicode(self.msg))
+            paint.drawText(12 + self.icon.width() + 6, fm.ascent() + 9, unicode(self.msg))
 
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
-        self.pushStart.setGeometry(w - self.pushStart.myWidth - 6 - 6 - self.pushStart.myWidth - 3 - self.pushEdit.myWidth - 3, 5, self.pushStart.myWidth, self.pushStart.myHeight)
-        self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 5, self.pushEdit.myWidth, self.pushEdit.myHeight)
-        self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 5, self.pushDelete.myWidth, self.pushDelete.myHeight)
+        if self.isDefault:
+            self.pushStart.setGeometry(w - self.pushStart.myWidth - 6 - 6, 5, self.pushStart.myWidth, self.pushStart.myHeight)
+        else:
+            self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 5, self.pushEdit.myWidth, self.pushEdit.myHeight)
+            self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 5, self.pushDelete.myWidth, self.pushDelete.myHeight)
         return QWidget.resizeEvent(self, event)
 
     def sizeHint(self):
@@ -221,9 +247,9 @@ class EntryView(QScrollView):
         for e in self.entries:
             if e.isDefault:
                 if e.isRunning:
-                    ports.append(e.ports.replace(':', ' '))
+                    ports.append(e.ports)
             else:
-                ports.append(e.ports.replace(':', ' '))
+                ports.append(e.ports)
         return ports
 
     def add(self, name="", ports="", index=0, isDefault=False, isRunning=False, isIncoming=False, message=None, fwconfig=None):
@@ -281,7 +307,7 @@ class HelpDialog(QDialog):
         self.htmlPart.openURL(KURL(url))
 
 class dialogRule(dialog.dialogRule):
-    def __init__(self, parent=None, name=None, title="", ports=""):
+    def __init__(self, parent=None, name=None, title="", ports="", description=""):
         dialog.dialogRule.__init__(self, parent, name)
 
         self.connect(self.pushCancel, SIGNAL('clicked()'), self, SLOT('reject()'))
@@ -293,6 +319,7 @@ class dialogRule(dialog.dialogRule):
 
         self.setCaption(title)
         self.linePorts.setText(ports.replace(':', '-'))
+        self.infoLabel.setText(description)
 
     def accept(self):
         if checkPortFormat(str(self.linePorts.text())):
@@ -311,6 +338,7 @@ class dialogRule(dialog.dialogRule):
 
 def checkPortFormat(ports):
     '''Check multiport format'''
+    ports = ports.replace(' ', '')
     if ports.count(',') + ports.count('-') > 15:
         return False
     for port in ports.split(','):

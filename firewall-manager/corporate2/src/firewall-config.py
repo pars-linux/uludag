@@ -119,6 +119,7 @@ class MainApplication(programbase):
         self.headGroup.setColumnLayout(0,Qt.Vertical)
         self.headGroup.layout().setSpacing(6)
         self.headGroup.layout().setMargin(11)
+        self.headGroup.setFrameShape(QButtonGroup.NoFrame)
 
         self.sl = QHBoxLayout(self.headGroup.layout())
         self.sl.setAlignment(Qt.AlignTop)
@@ -151,8 +152,14 @@ class MainApplication(programbase):
         self.headlayout.addWidget(self.pushStatus)
         self.pushStatus.setSizePolicy(QSizePolicy(QSizePolicy.Fixed,QSizePolicy.Preferred,0,0,self.pushStatus.sizePolicy().hasHeightForWidth()))
 
+        self.hrline = QFrame(self,"hrline")
+        self.hrline.setFrameShape(QFrame.HLine)
+        self.hrline.setFrameShadow(QFrame.Sunken)
+        self.hrline.setFrameShape(QFrame.HLine)
+        mainLayout.addMultiCellWidget(self.hrline, 1, 1, 0, 3)
+
         self.toplayout = QHBoxLayout(None, 0, 6, "qtbox")
-        mainLayout.addMultiCell(self.toplayout, 1, 1, 0, 3)
+        mainLayout.addMultiCell(self.toplayout, 2, 2, 0, 3)
 
         self.rulePopup = QPopupMenu(self)
         self.rulePopup.insertItem(i18n("Incoming Rule"), self.slotAddIncoming)
@@ -174,10 +181,10 @@ class MainApplication(programbase):
 
         self.inev = EntryView(self)
         self.inev.setEnabled(True)
-        mainLayout.addMultiCellWidget(self.inev, 2, 2, 0, 3)
+        mainLayout.addMultiCellWidget(self.inev, 3, 3, 0, 3)
 
         self.bottomlayout = QHBoxLayout(None, 0, 6, "qtbox")
-        mainLayout.addMultiCell(self.bottomlayout, 3, 3, 0, 3)
+        mainLayout.addMultiCell(self.bottomlayout, 4, 4, 0, 3)
 
         self.pushHelp = QPushButton(self, "pushHelp")
         self.bottomlayout.addWidget(self.pushHelp)
@@ -231,12 +238,13 @@ class MainApplication(programbase):
         if self.filterCombo.currentItem() == 1:
             self.filterCombo.setCurrentItem(0)
             self.getIncomingRules()
-        ports = self.askPorts()
+        ports = self.askPorts(unicode(i18n("Write ports or port ranges that you want to ALLOW for incoming connections.")))
         if ports:
             if not self.inev.checkItem(ports):
                 item = self.inev.add("", ports, -1, False, True, True, "", self)
                 try:
                     self.saveAll()
+                    self.refreshView()
                 except:
                     self.inev.delete(item)
             else:
@@ -246,12 +254,13 @@ class MainApplication(programbase):
         if self.filterCombo.currentItem() == 0:
             self.filterCombo.setCurrentItem(1)
             self.getOutgoingRules()
-        ports = self.askPorts()
+        ports = self.askPorts(unicode(i18n("Write ports or port ranges that you want to BLOCK for outgoing connections.")))
         if ports:
             if not self.inev.checkItem(ports):
                 item = self.inev.add("", ports, -1, False, True, False, "", self)
                 try:
                     self.saveAll()
+                    self.refreshView()
                 except:
                     self.inev.delete(item)
             else:
@@ -399,13 +408,14 @@ class MainApplication(programbase):
     def slotApply(self):
         self.saveAll()
 
-    def askPorts(self):
-        dialog = dialogRule(self, title=i18n("New Rule"))
+    def askPorts(self, description):
+        dialog = dialogRule(self, title=i18n("New Rule"), description=description)
         ports = dialog.exec_loop()
         if ports:
             ports = str(ports)
             if not standalone:
                 self.changed()
+            ports = ports.replace(',', ' ')
             return ports
         return None
 
