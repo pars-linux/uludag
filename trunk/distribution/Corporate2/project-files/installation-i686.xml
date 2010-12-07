@@ -1,9 +1,10 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
     <Title>Pardus Corporate 2 Alpha 3 i686</Title>
     <WorkDir>/tmp/iso/i686</WorkDir>
-    <ReleaseFiles>~/distribution/Corporate2/media-content</ReleaseFiles>
+    <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash=silent</ExtraParameters>
     <PackageSelection repo_uri="http://192.168.3.140/pardus/corporate2/devel/i686/pisi-index.xml.xz">
+        <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>hardware.smartcard</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>ModemManager</SelectedPackage>
@@ -369,6 +370,7 @@
         <Package>PyKDE3</Package>
         <Package>PyKDEeXtensions</Package>
         <Package>PyQt</Package>
+        <Package>PyQt-webkit</Package>
         <Package>PyQt3</Package>
         <Package>Pygments</Package>
         <Package>Twisted</Package>
@@ -379,32 +381,38 @@
         <Package>acpid</Package>
         <Package>agg</Package>
         <Package>akode</Package>
+        <Package>alsa-firmware</Package>
         <Package>alsa-lib</Package>
         <Package>alsa-utils</Package>
         <Package>alternatives</Package>
         <Package>apr</Package>
         <Package>apr-util</Package>
+        <Package>ar9170-firmware</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>atk</Package>
+        <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audiofile</Package>
         <Package>audit</Package>
         <Package>augeas</Package>
         <Package>avahi</Package>
+        <Package>avahi-autoipd</Package>
         <Package>avahi-compat-libdns_sd</Package>
         <Package>avahi-glib</Package>
         <Package>avahi-libs</Package>
         <Package>avahi-qt3</Package>
+        <Package>b43-firmware</Package>
+        <Package>b43-fwcutter</Package>
         <Package>babl</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
-        <Package>bash-completion</Package>
         <Package>bc</Package>
         <Package>bctango-icon-theme</Package>
-        <Package>bind-tools</Package>
+        <Package>bind-libs</Package>
         <Package>blas</Package>
         <Package>bluez</Package>
+        <Package>bluez-firmware</Package>
         <Package>boost</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
@@ -422,7 +430,6 @@
         <Package>check</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
-        <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
         <Package>cracklib</Package>
@@ -462,6 +469,7 @@
         <Package>eject</Package>
         <Package>enca</Package>
         <Package>enchant</Package>
+        <Package>engine_pkcs11</Package>
         <Package>enscript</Package>
         <Package>erlang-appmon</Package>
         <Package>erlang-asn1</Package>
@@ -527,12 +535,14 @@
         <Package>findutils</Package>
         <Package>flac</Package>
         <Package>fontconfig</Package>
+        <Package>foo2zjs-firmware</Package>
         <Package>foomatic-db</Package>
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-filters</Package>
         <Package>freetts</Package>
         <Package>freetype</Package>
         <Package>fuse</Package>
+        <Package>fxload</Package>
         <Package>gawk</Package>
         <Package>gconf</Package>
         <Package>gconfmm</Package>
@@ -619,6 +629,7 @@
         <Package>iproute2</Package>
         <Package>iptables</Package>
         <Package>iputils</Package>
+        <Package>iscan-firmware</Package>
         <Package>iso-codes</Package>
         <Package>iw</Package>
         <Package>jack-audio-connection-kit</Package>
@@ -733,6 +744,7 @@
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
         <Package>libgsf</Package>
+        <Package>libgssglue</Package>
         <Package>libgweather</Package>
         <Package>libical</Package>
         <Package>libid3tag</Package>
@@ -773,6 +785,7 @@
         <Package>libopenraw</Package>
         <Package>libopensync</Package>
         <Package>libp11</Package>
+        <Package>libp11-devel</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
         <Package>libpciaccess</Package>
@@ -798,6 +811,7 @@
         <Package>libtasn1</Package>
         <Package>libtdb</Package>
         <Package>libtheora</Package>
+        <Package>libtirpc</Package>
         <Package>libtool-ltdl</Package>
         <Package>libunique</Package>
         <Package>libusb</Package>
@@ -825,6 +839,7 @@
         <Package>libxslt</Package>
         <Package>libytnef</Package>
         <Package>linux-atm</Package>
+        <Package>linux-firmware</Package>
         <Package>lirc</Package>
         <Package>live555</Package>
         <Package>lpc10</Package>
@@ -832,7 +847,6 @@
         <Package>lsb-release</Package>
         <Package>lua</Package>
         <Package>lvm2</Package>
-        <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>madplay</Package>
         <Package>man</Package>
@@ -845,7 +859,7 @@
         <Package>mina-core</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
-        <Package>mit-kerberos</Package>
+        <Package>mit-kerberos-libs</Package>
         <Package>mjpegtools</Package>
         <Package>mkinitramfs</Package>
         <Package>mobile-broadband-provider-info</Package>
@@ -907,6 +921,7 @@
         <Package>openobex</Package>
         <Package>openoffice</Package>
         <Package>opensc</Package>
+        <Package>opensc-devel</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
@@ -922,6 +937,7 @@
         <Package>pciutils</Package>
         <Package>pcmciautils</Package>
         <Package>pcsc-lite</Package>
+        <Package>pcsc-lite-devel</Package>
         <Package>pcsc-lite-openct</Package>
         <Package>pcsc-tools</Package>
         <Package>perl</Package>
@@ -947,7 +963,6 @@
         <Package>poppler-glib</Package>
         <Package>poppler-qt3</Package>
         <Package>popt</Package>
-        <Package>portmap</Package>
         <Package>postgresql-lib</Package>
         <Package>ppp</Package>
         <Package>procps</Package>
@@ -989,8 +1004,8 @@
         <Package>readline</Package>
         <Package>recode</Package>
         <Package>redland</Package>
-        <Package>reportlab</Package>
         <Package>rlog</Package>
+        <Package>rpcbind</Package>
         <Package>rsyslog</Package>
         <Package>ruby</Package>
         <Package>sablotron</Package>
@@ -1011,6 +1026,7 @@
         <Package>slang</Package>
         <Package>slf4j</Package>
         <Package>sox</Package>
+        <Package>speedtouch-firmware</Package>
         <Package>speex</Package>
         <Package>spidermonkey</Package>
         <Package>sqlite</Package>
@@ -1042,6 +1058,7 @@
         <Package>usbutils</Package>
         <Package>utempter</Package>
         <Package>util-linux</Package>
+        <Package>v86d</Package>
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vigra</Package>
@@ -1082,10 +1099,12 @@
         <Package>zorg</Package>
     </PackageSelection>
     <InstallImagePackages>
+        <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>device-mapper-static</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>lvm2-static</SelectedPackage>
+        <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-evdev</SelectedPackage>
         <SelectedPackage>xorg-input-synaptics</SelectedPackage>
@@ -1131,21 +1150,26 @@
         <Package>ConsoleKit</Package>
         <Package>PyQt</Package>
         <Package>acl</Package>
+        <Package>alsa-firmware</Package>
         <Package>alternatives</Package>
+        <Package>ar9170-firmware</Package>
+        <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audit</Package>
         <Package>avahi</Package>
         <Package>avahi-libs</Package>
+        <Package>b43-firmware</Package>
+        <Package>b43-fwcutter</Package>
         <Package>baselayout</Package>
         <Package>bash</Package>
         <Package>bc</Package>
+        <Package>bluez-firmware</Package>
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
-        <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
         <Package>cracklib</Package>
@@ -1158,7 +1182,6 @@
         <Package>dbus-glib</Package>
         <Package>dbus-python</Package>
         <Package>device-mapper</Package>
-        <Package>device-mapper-static</Package>
         <Package>dhcpcd</Package>
         <Package>diffutils</Package>
         <Package>disktype</Package>
@@ -1175,8 +1198,10 @@
         <Package>file</Package>
         <Package>findutils</Package>
         <Package>fontconfig</Package>
+        <Package>foo2zjs-firmware</Package>
         <Package>freetype</Package>
         <Package>fuse</Package>
+        <Package>fxload</Package>
         <Package>gawk</Package>
         <Package>gdbm</Package>
         <Package>gettext</Package>
@@ -1205,6 +1230,7 @@
         <Package>hal-info</Package>
         <Package>hdparm</Package>
         <Package>iputils</Package>
+        <Package>iscan-firmware</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
         <Package>kernel</Package>
@@ -1268,10 +1294,9 @@
         <Package>libxkbfile</Package>
         <Package>libxml2</Package>
         <Package>libxslt</Package>
+        <Package>linux-firmware</Package>
         <Package>lsb-release</Package>
         <Package>lvm2</Package>
-        <Package>lvm2-static</Package>
-        <Package>lzma</Package>
         <Package>lzo</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
@@ -1280,7 +1305,7 @@
         <Package>mesa</Package>
         <Package>mingetty</Package>
         <Package>miscfiles</Package>
-        <Package>mit-kerberos</Package>
+        <Package>mit-kerberos-libs</Package>
         <Package>mkinitramfs</Package>
         <Package>module-init-tools</Package>
         <Package>module-virtualbox-guest</Package>
@@ -1338,6 +1363,7 @@
         <Package>sip</Package>
         <Package>skey</Package>
         <Package>slang</Package>
+        <Package>speedtouch-firmware</Package>
         <Package>sqlite</Package>
         <Package>sysfsutils</Package>
         <Package>syslinux</Package>
@@ -1354,8 +1380,8 @@
         <Package>urlgrabber</Package>
         <Package>usbutils</Package>
         <Package>util-linux</Package>
+        <Package>v86d</Package>
         <Package>vbetool</Package>
-        <Package>virtualbox-guest-utils</Package>
         <Package>vixie-cron</Package>
         <Package>which</Package>
         <Package>wireless-tools</Package>
@@ -1365,50 +1391,9 @@
         <Package>xinit</Package>
         <Package>xkeyboard-config</Package>
         <Package>xorg-app</Package>
-        <Package>xorg-input-evdev</Package>
-        <Package>xorg-input-synaptics</Package>
-        <Package>xorg-input-vmmouse</Package>
         <Package>xorg-server</Package>
         <Package>xorg-server-common</Package>
-        <Package>xorg-video-apm</Package>
-        <Package>xorg-video-ark</Package>
-        <Package>xorg-video-ast</Package>
-        <Package>xorg-video-chips</Package>
-        <Package>xorg-video-cirrus</Package>
-        <Package>xorg-video-fbdev</Package>
-        <Package>xorg-video-geode</Package>
-        <Package>xorg-video-glint</Package>
-        <Package>xorg-video-i128</Package>
-        <Package>xorg-video-i740</Package>
-        <Package>xorg-video-intel</Package>
-        <Package>xorg-video-mach64</Package>
-        <Package>xorg-video-mga</Package>
-        <Package>xorg-video-neomagic</Package>
-        <Package>xorg-video-newport</Package>
-        <Package>xorg-video-nouveau</Package>
-        <Package>xorg-video-nv</Package>
-        <Package>xorg-video-openchrome</Package>
-        <Package>xorg-video-r128</Package>
-        <Package>xorg-video-radeon</Package>
-        <Package>xorg-video-radeonhd</Package>
-        <Package>xorg-video-rendition</Package>
-        <Package>xorg-video-s3</Package>
-        <Package>xorg-video-s3virge</Package>
-        <Package>xorg-video-savage</Package>
-        <Package>xorg-video-siliconmotion</Package>
-        <Package>xorg-video-sis</Package>
-        <Package>xorg-video-sisimedia</Package>
-        <Package>xorg-video-sisusb</Package>
-        <Package>xorg-video-tdfx</Package>
-        <Package>xorg-video-tga</Package>
-        <Package>xorg-video-trident</Package>
-        <Package>xorg-video-tseng</Package>
-        <Package>xorg-video-v4l</Package>
-        <Package>xorg-video-vesa</Package>
-        <Package>xorg-video-vmware</Package>
-        <Package>xorg-video-voodoo</Package>
         <Package>xz</Package>
-        <Package>yali</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
         <Package>zorg</Package>
