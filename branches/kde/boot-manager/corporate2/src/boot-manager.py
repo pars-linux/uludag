@@ -23,7 +23,7 @@ import dbus
 
 mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
-mod_version = '1.0.3'
+mod_version = '1.1.0'
 
 def AboutData():
     about_data = KAboutData(
@@ -32,12 +32,14 @@ def AboutData():
         mod_version,
         I18N_NOOP('Boot Manager'),
         KAboutData.License_GPL,
-        '(C) 2006-2007 UEKAE/TÜBİTAK',
+        '(C) 2006-2010 UEKAE/TÜBİTAK',
         None,
         None,
         'bugs@pardus.org.tr'
     )
-    about_data.addAuthor("Bahadır Kandemir", I18N_NOOP("Developer and Current Maintainer"), "bahadir@pardus.org.tr")
+    about_data.addAuthor("Bahadır Kandemir", I18N_NOOP("Developer"), "bahadir@pardus.org.tr")
+    about_data.addAuthor("Mehmet Özdemir", I18N_NOOP("Developer"), "mehmet@pardus.org.tr")
+    about_data.addAuthor("Gökmen Göksel", I18N_NOOP("Developer"), "gokmen@pardus.org.tr")
     about_data.addAuthor("Fred Gansevles", I18N_NOOP("Contributions to Boot.Loader model."), "fred@gansevles.net")
     return about_data
 

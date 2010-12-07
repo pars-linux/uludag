@@ -1,5 +1,308 @@
-2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
-	* setup.py:	Version bump to 1.0.2
+2010-12-07 mehmet.ozdemir
+         * buttons were enabled after job completion.
 
-2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
-	* CHANGELOG, INSTALL, TODO, README:	Update README and add three new files.
+2010-12-07 mehmet.ozdemir
+         * Dont remove the last entry in boot manager.
+
+2010-12-07 mehmet.ozdemir
+         * undefined method call is removed.
+
+2010-12-04 mehmet.ozdemir
+         * Lost widget id's are fixed and now New, Edit, Unused buttons are working while boot-manager runs in tasma.
+
+2010-11-29 mehmet.ozdemir
+         * Merged with original code.
+         * I think this commit fixes the bug 12698. (Enabling save button after cancelling authenticetion problem.)
+         * Comment added to http://bugs.pardus.org.tr/12698
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 37 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Adding Russian translate (Alexander Total)
+         * New status: 37 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-14 bahadir.kandemir
+         * Minimum boot timeout set to 1
+         * Bug fixed at http://bugs.pardus.org.tr/9720
+
+2010-06-02 bahadir.kandemir
+         * New release
+
+2010-05-16 transifex
+         * l10n: Updated Italian (it) translation to 100% (Davide Siciliano)
+         * New status: 37 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-03-30 sdalgic
+         * typo: remove duplicate line
+
+2010-01-11 klemens
+         * some german language updates for corporate edition
+
+2010-01-11 bahadir.kandemir
+         * New release
+
+2010-01-10 patrik
+         * Swedish translations.
+
+2010-01-04 bahadir.kandemir
+         * Fixed authentication not working while removing unused kernels.
+
+2009-10-27 fatih
+         * Move 2008 branch of boot-manager
+
+2009-09-02 philippe.svetoslavsky
+         * minor french translation modifications
+
+2009-07-14 necmettin
+         * Turkish translation updates
+
+2009-06-29 necmettin
+         * Turkish translation updates
+
+2009-06-21 edivad
+         * Translated almost all lines. --Edivad
+
+2009-06-08 wpmhia
+         * Dutch translations
+
+2009-05-13 klemens
+         * some spanish language additions and revision (kh)
+
+2009-05-12 ozan.caglayan
+         * Update messages
+
+2009-05-12 ozan.caglayan
+         * Don't fail if user enters UUID instead of full device path, change label message
+
+2009-04-08 klemens
+         * spanish language revision, 
+         * plus new spanish file for kde4/history-manager
+         * (i found problems opening the tr.po files with Kbabel of kde4/network and service- manager !!)
+         * kh
+
+2009-04-05 wpmhia
+         * Dutch translations
+
+2009-03-30 ozan.caglayan
+         * - Don't register comarError for all errors causing duplicate error messages (#9256).
+         * Bug fixed at http://bugs.pardus.org.tr/9256
+
+2009-03-30 ozan.caglayan
+         * Fix a misleading message in boot-manager.
+         * Comment added to http://bugs.pardus.org.tr/8140
+
+2009-03-30 ozan.caglayan
+         * - Update copyright dates,
+         * - Clear bad whitespaces,
+         * - Use Boot.Loader model for uuid support.
+         * Will fix #8689, #9473 when completed.
+
+2008-09-12 pinar
+         * Version bump to 1.0.2
+
+2008-09-11 pinar
+         * Update README and add three new files.
+
+2008-09-10 necmettin
+         * add some Swedish translations, thanks to Patrick
+
+2008-09-04 ozan.caglayan
+         * Enable disabled buttons in widgetUnused
+
+2008-09-02 ozan.caglayan
+         * fix another bug caused by a non re-enabled widget after a bad authentication attempt
+
+2008-09-01 pinar
+         * update version
+
+2008-08-31 ozan.caglayan
+         * Don't let the spinbox grab the focus, it's annoying. Thanks to Pınar
+
+2008-08-31 ozan.caglayan
+         * Fix #7779, remove trailing spaces
+
+2008-08-31 ozan.caglayan
+         * fix trailing spaces
+
+2008-08-31 ozan.caglayan
+         * Set icon
+
+2008-07-08 faik
+         * Revert !
+
+2008-07-08 fatma
+         * initial commit of boot-manager 2
+
+2008-06-27 gokcen.eraslan
+         * Fix block handling
+
+2008-06-26 riklaunim
+         * Updated Polish translation for boot-manager
+
+2008-06-19 pinar
+         * ObtaionAuth.. should have timeout too
+
+2008-06-18 pinar
+         * fix syntax problem
+
+2008-06-18 gokcen.eraslan
+         * Increase timeout, prevent problems arises from waiting longer than 25 seconds
+
+2008-06-17 mustafaoe
+         * German transl. updated
+
+2008-06-17 mustafaoe
+         * German transl. updated
+
+2008-06-10 klemens
+         * some new changes for some spanish language files (kh)
+
+2008-06-09 pinar
+         * update messages
+
+2008-06-09 pinar
+         * authorization error message
+
+2008-06-09 pinar
+         * no mainview file anymore.
+
+2008-05-27 bahadir.kandemir
+         * moved to trunk
+
+2008-05-13 bahadir.kandemir
+         * don't attach to mainloop twice
+
+2008-05-06 bahadir.kandemir
+         * set mainloop in embedded mode
+
+2008-04-22 gokcen.eraslan
+         * use desktop-neutral policykit agent instead of policykit-gnome
+
+2008-04-04 bahadir.kandemir
+         * 1.0.0
+
+2008-03-17 bahadir.kandemir
+         * show error dialog
+
+2008-01-25 bahadir.kandemir
+         * Disable QSpinBox valueChanged() signal before getting options from grub.conf
+         * setValue() fires valueChanged(), anc valueChanged() slot calls COMAR, which is an unnecessary operation.
+         * Reset CheckBox and SpinBox if user cancels PK authentication
+
+2008-01-22 bahadir.kandemir
+         * remove debug code
+
+2008-01-22 caglar
+         * new scripts lives in branches/comar-dbus/tests/scripts
+
+2008-01-22 caglar
+         * install i
+
+2008-01-22 pinar
+         * forget to add handler
+
+2008-01-22 pinar
+         * all work has done by bahadir :P
+
+2008-01-22 pinar
+         * revert last commit
+
+2008-01-22 pinar
+         * all work has done by bahadir :)
+
+2008-01-07 pinar
+         * tooltip implementation for iconview due to #1236
+
+2007-11-17 mustafaoe
+         * german update
+
+2007-11-12 klenje
+         * Updated Italian translation
+
+2007-10-19 amine
+         * i18n update.
+
+2007-10-01 klemens
+         * some updates of spanish language files (kh)
+
+2007-09-20 bahadir.kandemir
+         * Be sure to update entry list after remove operation.
+
+2007-09-20 bahadir.kandemir
+         * 0.3.3
+         * - Allow removing more than one unused kernel from system
+
+2007-08-13 bahadir.kandemir
+         * listUnused() returns empty string when no unsed kernel present
+
+2007-08-12 bahadir.kandemir
+         * Bug fixed at http://bugs.pardus.org.tr/6213
+
+2007-07-19 riklaunim
+         * Polish support for mudur
+
+2007-07-11 klenje
+         * Added Italian translation
+
+2007-07-10 amine
+         * i18n update.
+
+2007-07-10 mustafaoe
+         * German update
+
+2007-07-10 mustafaoe
+         * German updates
+
+2007-07-09 klemens
+         * updated spanish language file
+
+2007-07-09 bahadir.kandemir
+         * What happened to 0.3.2?
+
+2007-07-09 bahadir.kandemir
+         * bump
+
+2007-07-09 bahadir.kandemir
+         * update messages
+
+2007-07-09 bahadir.kandemir
+         * description
+
+2007-07-09 bahadir.kandemir
+         * Hide spinTimeout widget in limited access mode
+
+2007-07-09 bahadir.kandemir
+         * fix typo
+
+2007-07-02 amine
+         * i18n update and typo corrections for fr.
+
+2007-07-01 riklaunim
+         * added first part of Polish translations
+
+2007-06-30 klemens
+         * revision of spanish language files because of changes and additions in some tasma modules
+
+2007-06-29 bahadir.kandemir
+         * Bump
+
+2007-06-29 bahadir.kandemir
+         * Update messages
+
+2007-06-29 bahadir.kandemir
+         * Allow removing unused kernels from system
+
+2007-06-29 bahadir.kandemir
+         * Allow uninstalling unused kernel entries
+
+2007-06-24 klemens
+         * spanish translation and fixes for changed messages
+
+2007-06-22 bahadir.kandemir
+         * Upcoming release
+
