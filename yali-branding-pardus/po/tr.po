@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-07 12:01+0000\n"
+"POT-Creation-Date: 2010-12-07 13:03+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -66,15 +66,15 @@ msgstr "Kurulum ortamınızı bir kez daha denetleyin."
 
 #: ../release.xml.in.h:13
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
-msgstr "Eğlence ciddi bir iştir... Herkes bir sudoku çözmek ya da basit bir oyunla bir kaç dakika dinlenme hakkına sahip olmalıdır. Pardus ufak tefek ama eğlenceli programları kurulum sırasında sunar. Ama asıl eğlence sizi İnternet depolarında bekliyor. Eğer oyun meraklısıysanız, Paket Yöneticisini açıp oyunlar bölümünde keşfedilmeyi bekleyen, simülatörlerin, takım halinde oynanan FPS'lerin, klasik bilgisayar oyunlarının yer aldığı yüzlerce oyuna mutlaka göz atın."
+msgstr "Eğlence ciddi bir iştir... Herkes bir sudoku çözme ya da basit bir oyunla bir kaç dakika dinlenme hakkına sahip olmalıdır. Pardus ufak tefek ama eğlenceli programları kurulum sırasında sunar. Ama asıl eğlence sizi İnternet depolarında bekliyor. Eğer oyun meraklısıysanız, Paket Yöneticisini açıp oyunlar bölümünde keşfedilmeyi bekleyen, simülatörlerin, takım halinde oynanan FPS'lerin, klasik bilgisayar oyunlarının yer aldığı yüzlerce oyuna mutlaka göz atın."
 
 #: ../release.xml.in.h:14
 msgid "Goodbye"
-msgstr "Hoşçakalın"
+msgstr "Hoşça kalın"
 
 #: ../release.xml.in.h:15
 msgid "Here you can see your install options before installation starts."
-msgstr "Burada kurulum başlamadan önceki kurulum seçeneklerini görebilirsiniz."
+msgstr "Kuruluma geçmeden önce tercihlerinizi topluca gözden geçirebilirsiniz."
 
 #: ../release.xml.in.h:16
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
