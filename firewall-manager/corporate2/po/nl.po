@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-07 09:42+0200\n"
-"PO-Revision-Date: 2010-12-03 13:53+0100\n"
+"PO-Revision-Date: 2010-12-07 12:23+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -38,13 +38,12 @@ msgid "Edit Rule"
 msgstr "Regels bewerken"
 
 #: src/utils.py:50
-#, fuzzy
 msgid "Delete Rule"
-msgstr "Nieuwe regel"
+msgstr "Regel verwijderen"
 
 #: src/utils.py:54
 msgid "Start/Stop Rule"
-msgstr ""
+msgstr "Regel starten/stoppen"
 
 #: src/utils.py:80
 #, python-format
@@ -52,9 +51,9 @@ msgid "Ports: %s"
 msgstr "Poorten: %s"
 
 #: src/utils.py:82
-#, fuzzy, python-format
+#, python-format
 msgid "Allow all incoming connection through ports %s"
-msgstr "Accepteer alle binnenkomende verbindingen door poort(en) %s"
+msgstr "Alle binnenkomende verbindingen door poort %s toestaan"
 
 #: src/utils.py:84
 #, python-format
@@ -86,14 +85,12 @@ msgid "Firewall Configuration"
 msgstr "Firewall configuratie"
 
 #: src/firewall-config.py:158
-#, fuzzy
 msgid "Incoming Rule"
-msgstr "Binnenkomend"
+msgstr "Binnenkomende regel"
 
 #: src/firewall-config.py:159
-#, fuzzy
 msgid "Outgoing Rule"
-msgstr "Uitgaand"
+msgstr "Uitgaande regel"
 
 #: src/firewall-config.py:170
 msgid "Incoming Connections"
@@ -104,9 +101,9 @@ msgid "Outgoing Connections"
 msgstr "Uitgaande verbindingen"
 
 #: src/firewall-config.py:243 src/firewall-config.py:258
-#, fuzzy, python-format
+#, python-format
 msgid "%s already in list!"
-msgstr "Poort is reeds in de lijst."
+msgstr "%s is reeds in de lijst!"
 
 #: src/firewall-config.py:277
 msgid "Firewall Manager Help"
@@ -117,9 +114,8 @@ msgid "&Stop"
 msgstr "&Stop"
 
 #: src/firewall-config.py:343
-#, fuzzy
 msgid "Firewall is running"
-msgstr "Firewall configuratie"
+msgstr "Firewall is actief"
 
 #: src/firewall-config.py:345
 msgid ""
@@ -130,9 +126,8 @@ msgstr ""
 "verbindingen toe te staan."
 
 #: src/firewall-config.py:352
-#, fuzzy
 msgid "Firewall is not running"
-msgstr "<b><font size='+1'>Firewall is niet actief</font></b>"
+msgstr "Firewall is niet actief"
 
 #: src/firewall-config.py:354
 msgid ""
