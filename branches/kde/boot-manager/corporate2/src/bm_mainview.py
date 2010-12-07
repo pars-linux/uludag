@@ -469,6 +469,9 @@ class widgetUnused(QWidget):
             self.parent.widgetEditEntry.listSystem.setCurrentText("Linux")
         self.parent.widgetEditEntry.editKernel.setText("/boot/kernel-%s" % version)
 
+        self.buttonAdd.setEnabled(True)
+        self.buttonRemove.setEnabled(True)
+
     def slotRemove(self):
         confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
         if confirm == KMessageBox.Yes:

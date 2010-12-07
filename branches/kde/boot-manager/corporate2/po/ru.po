@@ -3,7 +3,7 @@
 # translation of boot-manager.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"POT-Creation-Date: 2010-12-07 13:09+0200\n"
 "PO-Revision-Date: 2010-01-11 19:58-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -21,6 +21,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Менеджер загрузки"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Разработчик и текущий сопровождающий"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Contributions to Boot.Loader model."
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "Менеджер загрузки уже запущен!"
+
+#: src/ui_elements.py:93
+msgid "Edit entry"
+msgstr "Редактировать запись"
+
+#: src/ui_elements.py:97
+msgid "Delete entry"
+msgstr "Удалить запись"
+
+#: src/ui_elements.py:109
+msgid "This is the last entry, you cannot delete it!"
+msgstr ""
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -90,7 +118,7 @@ msgstr ""
 "Это загрузочная запись Pardus.\n"
 "Вы хотите удалить её из системы?"
 
-#: src/bm_mainview.py:293 src/bm_mainview.py:476
+#: src/bm_mainview.py:293 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Удаление ядра"
 
@@ -99,7 +127,9 @@ msgid "Failed"
 msgstr "Неудачно"
 
 #: src/bm_mainview.py:401
-msgid "These kernels are installed in the system but doesn't exist in boot loader list:"
+msgid ""
+"These kernels are installed in the system but doesn't exist in boot loader "
+"list:"
 msgstr "Эти ядра установлены в системе, но отсутствуют в списке загрузчика:"
 
 #: src/bm_mainview.py:410
@@ -114,65 +144,45 @@ msgstr "Удаление"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:476
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Вы хотите удалить выбранное ядро(а) из системы?"
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "Unable to connect to DBus."
 msgstr "Не удалось подключиться к DBus."
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "DBus Error"
 msgstr "Ошибка DBus"
 
-#: src/bm_mainview.py:569 src/bm_mainview.py:596
-msgid "You are not authorized for this operation."
-msgstr "У вас нет прав для данной операции."
-
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Waiting DBus..."
 msgstr "Ожидание DBus..."
 
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr "Подключение к DBus неожиданно закрыто, попытка переподключения..."
 
-#: src/bm_mainview.py:591
-msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
-msgstr "Не удается подключиться к DBus! Если он не запущен вы должны запустить его командой 'service dbus start'  в консоли администратора."
+#: src/bm_mainview.py:584
+msgid ""
+"Cannot connect to the DBus! If it is not running you should start it with "
+"the 'service dbus start' command in a root console."
+msgstr ""
+"Не удается подключиться к DBus! Если он не запущен вы должны запустить его "
+"командой 'service dbus start'  в консоли администратора."
 
-#: src/bm_mainview.py:599
+#: src/bm_mainview.py:589
+msgid "You are not authorized for this operation."
+msgstr "У вас нет прав для данной операции."
+
+#: src/bm_mainview.py:592
 msgid "COMAR Error"
 msgstr "Ошибка COMAR"
 
-#: src/bm_mainview.py:613
+#: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
 msgstr "Настройка загрузчика изменена другим приложением."
-
-#: src/boot-manager.py:33 src/boot-manager.py:92
-msgid "Boot Manager"
-msgstr "Менеджер загрузки"
-
-#: src/boot-manager.py:40
-msgid "Developer and Current Maintainer"
-msgstr "Разработчик и текущий сопровождающий"
-
-#: src/boot-manager.py:41
-msgid "Contributions to Boot.Loader model."
-msgstr "Contributions to Boot.Loader model."
-
-#: src/boot-manager.py:84
-msgid "Boot Manager is already started!"
-msgstr "Менеджер загрузки уже запущен!"
-
-#: src/ui_elements.py:92
-msgid "Edit entry"
-msgstr "Редактировать запись"
-
-#: src/ui_elements.py:96
-msgid "Delete entry"
-msgstr "Удалить запись"
 
 #~ msgid "Root:"
 #~ msgstr "Wurzel:"

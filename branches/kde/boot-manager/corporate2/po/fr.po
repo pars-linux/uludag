@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"POT-Creation-Date: 2010-12-07 13:09+0200\n"
 "PO-Revision-Date: 2009-09-02 21:44+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -17,6 +17,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Gestionnaire de démarrage"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Développeur et responsable de la maintenance actuel"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Contributions au modèle du Boot.Loader"
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "Le gestionnaire de démarrage est déjà lancé!"
+
+#: src/ui_elements.py:93
+msgid "Edit entry"
+msgstr "Modifier l'entrée"
+
+#: src/ui_elements.py:97
+msgid "Delete entry"
+msgstr "Supprimer l'entrée"
+
+#: src/ui_elements.py:109
+msgid "This is the last entry, you cannot delete it!"
+msgstr ""
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -88,7 +116,7 @@ msgstr ""
 "Ceci est une entrée de noyau Pardus.\n"
 "Voulez vous la désinstaller du système?"
 
-#: src/bm_mainview.py:293 src/bm_mainview.py:476
+#: src/bm_mainview.py:293 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Desinstaller le noyau"
 
@@ -116,74 +144,49 @@ msgstr "Désinstaller"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:476
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Voulez vous désinstaller le(s) noyau(x) sélectionné(s) du système ?"
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "Unable to connect to DBus."
 msgstr "Impossible à connecter à DBus."
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "DBus Error"
 msgstr "Erreur de DBus"
 
-#: src/bm_mainview.py:569 src/bm_mainview.py:596
-msgid "You are not authorized for this operation."
-msgstr "Vous n'êtes pas autorisé pour cette opération."
-
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Waiting DBus..."
 msgstr "En attendant DBus..."
 
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 "La connexion à DBus s'est coupée de façon innattendue. Essai de "
 "reconnexion..."
 
-#: src/bm_mainview.py:591
+#: src/bm_mainview.py:584
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
 "Impossible de se connecter à DBus ! S'il n'est pas lancé, démarrez-le avec "
-"la commande 'service dbus start' dans un terminal en tant "
-"qu'administrateur."
+"la commande 'service dbus start' dans un terminal en tant qu'administrateur."
 
-#: src/bm_mainview.py:599
+#: src/bm_mainview.py:589
+msgid "You are not authorized for this operation."
+msgstr "Vous n'êtes pas autorisé pour cette opération."
+
+#: src/bm_mainview.py:592
 msgid "COMAR Error"
 msgstr "Erreur de COMAR"
 
-#: src/bm_mainview.py:613
+#: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
 msgstr ""
 "Configuration du chargeur de démarrage est modifiée par une autre "
 "application."
-
-#: src/boot-manager.py:33 src/boot-manager.py:92
-msgid "Boot Manager"
-msgstr "Gestionnaire de démarrage"
-
-#: src/boot-manager.py:40
-msgid "Developer and Current Maintainer"
-msgstr "Développeur et responsable de la maintenance actuel"
-
-#: src/boot-manager.py:41
-msgid "Contributions to Boot.Loader model."
-msgstr "Contributions au modèle du Boot.Loader"
-
-#: src/boot-manager.py:84
-msgid "Boot Manager is already started!"
-msgstr "Le gestionnaire de démarrage est déjà lancé!"
-
-#: src/ui_elements.py:92
-msgid "Edit entry"
-msgstr "Modifier l'entrée"
-
-#: src/ui_elements.py:96
-msgid "Delete entry"
-msgstr "Supprimer l'entrée"
 
 #~ msgid "Root:"
 #~ msgstr "Root (Racine):"

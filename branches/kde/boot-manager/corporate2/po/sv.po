@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"POT-Creation-Date: 2010-12-07 13:09+0200\n"
 "PO-Revision-Date: 2010-01-10 12:08+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,6 +16,34 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Starthanteraren"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Utvecklare och aktuell underhållare"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Bidrag till Boot.Loader."
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "Starthanteraren körs redan!"
+
+#: src/ui_elements.py:93
+msgid "Edit entry"
+msgstr "Redigera post"
+
+#: src/ui_elements.py:97
+msgid "Delete entry"
+msgstr "Ta port post"
+
+#: src/ui_elements.py:109
+msgid "This is the last entry, you cannot delete it!"
+msgstr ""
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -85,7 +113,7 @@ msgstr ""
 "Den här är en kärna för Pardus.\n"
 "Vill du avinstallera den från systemet?"
 
-#: src/bm_mainview.py:293 src/bm_mainview.py:476
+#: src/bm_mainview.py:293 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Avinstallera kärna"
 
@@ -111,32 +139,28 @@ msgstr "Avinstallera"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:476
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Vill du avinstallera valda kärnor från systemet?"
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "Unable to connect to DBus."
 msgstr "Kan inte ansluta till D-Bus."
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "DBus Error"
 msgstr "D-Bus-fel"
 
-#: src/bm_mainview.py:569 src/bm_mainview.py:596
-msgid "You are not authorized for this operation."
-msgstr "Du är inte behörig för denna åtgärd."
-
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Waiting DBus..."
 msgstr "Väntar på D-Bus..."
 
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
 
-#: src/bm_mainview.py:591
+#: src/bm_mainview.py:584
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
@@ -144,37 +168,17 @@ msgstr ""
 "Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med 'service "
 "dbus start' som root i terminalen."
 
-#: src/bm_mainview.py:599
+#: src/bm_mainview.py:589
+msgid "You are not authorized for this operation."
+msgstr "Du är inte behörig för denna åtgärd."
+
+#: src/bm_mainview.py:592
 msgid "COMAR Error"
 msgstr "COMAR-fel"
 
-#: src/bm_mainview.py:613
+#: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
 msgstr "Starthanterarens inställningar har ändrats av ett annat program."
-
-#: src/boot-manager.py:33 src/boot-manager.py:92
-msgid "Boot Manager"
-msgstr "Starthanteraren"
-
-#: src/boot-manager.py:40
-msgid "Developer and Current Maintainer"
-msgstr "Utvecklare och aktuell underhållare"
-
-#: src/boot-manager.py:41
-msgid "Contributions to Boot.Loader model."
-msgstr "Bidrag till Boot.Loader."
-
-#: src/boot-manager.py:84
-msgid "Boot Manager is already started!"
-msgstr "Starthanteraren körs redan!"
-
-#: src/ui_elements.py:92
-msgid "Edit entry"
-msgstr "Redigera post"
-
-#: src/ui_elements.py:96
-msgid "Delete entry"
-msgstr "Ta port post"
 
 #~ msgid "Root:"
 #~ msgstr "Root:"
