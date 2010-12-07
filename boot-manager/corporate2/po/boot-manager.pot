@@ -8,13 +8,41 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"POT-Creation-Date: 2010-12-07 13:09+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr ""
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr ""
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr ""
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr ""
+
+#: src/ui_elements.py:93
+msgid "Edit entry"
+msgstr ""
+
+#: src/ui_elements.py:97
+msgid "Delete entry"
+msgstr ""
+
+#: src/ui_elements.py:109
+msgid "This is the last entry, you cannot delete it!"
+msgstr ""
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -82,7 +110,7 @@ msgid ""
 "Do you want to uninstall it from the system?"
 msgstr ""
 
-#: src/bm_mainview.py:293 src/bm_mainview.py:476
+#: src/bm_mainview.py:293 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr ""
 
@@ -108,64 +136,40 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: src/bm_mainview.py:476
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr ""
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "Unable to connect to DBus."
 msgstr ""
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "DBus Error"
 msgstr ""
 
-#: src/bm_mainview.py:569 src/bm_mainview.py:596
-msgid "You are not authorized for this operation."
-msgstr ""
-
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Waiting DBus..."
 msgstr ""
 
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr ""
 
-#: src/bm_mainview.py:591
+#: src/bm_mainview.py:584
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
 msgstr ""
 
-#: src/bm_mainview.py:599
+#: src/bm_mainview.py:589
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/bm_mainview.py:592
 msgid "COMAR Error"
 msgstr ""
 
-#: src/bm_mainview.py:613
+#: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
-msgstr ""
-
-#: src/boot-manager.py:33 src/boot-manager.py:92
-msgid "Boot Manager"
-msgstr ""
-
-#: src/boot-manager.py:40
-msgid "Developer and Current Maintainer"
-msgstr ""
-
-#: src/boot-manager.py:41
-msgid "Contributions to Boot.Loader model."
-msgstr ""
-
-#: src/boot-manager.py:84
-msgid "Boot Manager is already started!"
-msgstr ""
-
-#: src/ui_elements.py:92
-msgid "Edit entry"
-msgstr ""
-
-#: src/ui_elements.py:96
-msgid "Delete entry"
 msgstr ""

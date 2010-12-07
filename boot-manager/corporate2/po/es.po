@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-12 16:30+0300\n"
+"POT-Creation-Date: 2010-12-07 13:09+0200\n"
 "PO-Revision-Date: 2009-05-12 20:25-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -20,6 +20,34 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/boot-manager.py:33 src/boot-manager.py:92
+msgid "Boot Manager"
+msgstr "Administrador de Arranque"
+
+#: src/boot-manager.py:40
+msgid "Developer and Current Maintainer"
+msgstr "Desarrollador y Mantenedor actual"
+
+#: src/boot-manager.py:41
+msgid "Contributions to Boot.Loader model."
+msgstr "Contribuciones al concepto del Cargador de Arranque."
+
+#: src/boot-manager.py:84
+msgid "Boot Manager is already started!"
+msgstr "El administrador de arranque ya se está ejecutando !"
+
+#: src/ui_elements.py:93
+msgid "Edit entry"
+msgstr "Editar entrada"
+
+#: src/ui_elements.py:97
+msgid "Delete entry"
+msgstr "Eliminar entrada"
+
+#: src/ui_elements.py:109
+msgid "This is the last entry, you cannot delete it!"
+msgstr ""
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -89,7 +117,7 @@ msgstr ""
 "Esto es una entrada de núcleo (kenel) de Pardus.\n"
 "Desea desinstalarlo del sistema ?"
 
-#: src/bm_mainview.py:293 src/bm_mainview.py:476
+#: src/bm_mainview.py:293 src/bm_mainview.py:473
 msgid "Uninstall Kernel"
 msgstr "Desinstalar núcleo"
 
@@ -117,31 +145,27 @@ msgstr "Desinstalar"
 msgid "Ok"
 msgstr "Ok"
 
-#: src/bm_mainview.py:476
+#: src/bm_mainview.py:473
 msgid "Do you want to uninstall selected kernel(s) from the system?"
 msgstr "Desea desinstalar los núcleos (kernel) seleccionados del sistema ?"
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "Unable to connect to DBus."
 msgstr "No posible conectar a DBus"
 
-#: src/bm_mainview.py:548
+#: src/bm_mainview.py:542
 msgid "DBus Error"
 msgstr "Error DBus"
 
-#: src/bm_mainview.py:569 src/bm_mainview.py:596
-msgid "You are not authorized for this operation."
-msgstr "No tiene permisos para esta operación."
-
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Waiting DBus..."
 msgstr "Esperando DBus..."
 
-#: src/bm_mainview.py:575
+#: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr "Desconexión inesperada con DBus, intentando reconectar..."
 
-#: src/bm_mainview.py:591
+#: src/bm_mainview.py:584
 msgid ""
 "Cannot connect to the DBus! If it is not running you should start it with "
 "the 'service dbus start' command in a root console."
@@ -149,35 +173,14 @@ msgstr ""
 "No posible conectar con DBus! Si no se está ejecutando lo debería iniciar "
 "con el comando 'service dbus start' desde una consola de root."
 
-#: src/bm_mainview.py:599
+#: src/bm_mainview.py:589
+msgid "You are not authorized for this operation."
+msgstr "No tiene permisos para esta operación."
+
+#: src/bm_mainview.py:592
 msgid "COMAR Error"
 msgstr "Error Comar"
 
-#: src/bm_mainview.py:613
+#: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
 msgstr "La configuración de arranque fue modificada por otro programa."
-
-#: src/boot-manager.py:33 src/boot-manager.py:92
-msgid "Boot Manager"
-msgstr "Administrador de Arranque"
-
-#: src/boot-manager.py:40
-msgid "Developer and Current Maintainer"
-msgstr "Desarrollador y Mantenedor actual"
-
-#: src/boot-manager.py:41
-msgid "Contributions to Boot.Loader model."
-msgstr "Contribuciones al concepto del Cargador de Arranque."
-
-#: src/boot-manager.py:84
-msgid "Boot Manager is already started!"
-msgstr "El administrador de arranque ya se está ejecutando !"
-
-#: src/ui_elements.py:92
-msgid "Edit entry"
-msgstr "Editar entrada"
-
-#: src/ui_elements.py:96
-msgid "Delete entry"
-msgstr "Eliminar entrada"
-
