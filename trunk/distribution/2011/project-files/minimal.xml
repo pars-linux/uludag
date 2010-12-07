@@ -1,6 +1,6 @@
 <PardusmanProject type="install" media="cd" compression="gzip">
     <Title>Minimal x86_64</Title>
-    <WorkDir>/tmp/pardusman-workdir/minimal-64/</WorkDir>
+    <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>../distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters>splash yali=default xorg=off</ExtraParameters> 
     <!-- xorg=off is a workaround for mudur to close the plymouth -->
@@ -54,7 +54,7 @@
                     <Description>Base system packages</Description>
                 </Translation>
             </Translations>
-            <PackageSelection repo_uri="http://buildfarm/pardus/2011/devel/x86_64/pisi-index.xml.xz">
+            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/x86_64/pisi-index.xml.xz">
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedPackage>NetworkManager</SelectedPackage>
