@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>841</width>
-    <height>662</height>
+    <width>694</width>
+    <height>544</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,31 +31,11 @@
 QStackedWidget {
 	border: 0px;
 	padding: 0px;
-}</string>
+}
+</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="1" column="0">
-     <widget class="QFrame" name="frameDeveloper">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-        <horstretch>0</horstretch>
-        <verstretch>1</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QGridLayout" name="gridLayout_3">
-       <item row="0" column="0" colspan="2">
-        <widget class="QListWidget" name="listLog"/>
-       </item>
-      </layout>
-     </widget>
-    </item>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackScreens">
       <property name="sizePolicy">
@@ -70,17 +50,13 @@ QStackedWidget {
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="pageConnection">
-       <layout class="QGridLayout" name="gridLayout_5">
+      <widget class="QWidget" name="pageMisc">
+       <layout class="QGridLayout" name="gridLayout_9">
         <property name="margin">
          <number>0</number>
         </property>
         <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackConnection">
-          <property name="currentIndex">
-           <number>-1</number>
-          </property>
-         </widget>
+         <widget class="QStackedWidget" name="stackMisc"/>
         </item>
        </layout>
       </widget>
@@ -367,16 +343,6 @@ QStackedWidget {
            </item>
           </layout>
          </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="pageMisc">
-       <layout class="QGridLayout" name="gridLayout_9">
-        <property name="margin">
-         <number>0</number>
-        </property>
-        <item row="0" column="0">
-         <widget class="QStackedWidget" name="stackMisc"/>
         </item>
        </layout>
       </widget>
