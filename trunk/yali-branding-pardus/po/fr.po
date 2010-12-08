@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-07 16:07+0200\n"
+"POT-Creation-Date: 2010-12-08 16:26+0200\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -18,15 +18,16 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
+#, fuzzy
 msgid ""
-"A bootloader is a tiny program that runs when a computer is first powered up."
-"It is responsible for loading the operating system into memory and then "
-"transferringthe control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand "
-"Unified Bootloader) as the default bootloader. GRUB allows youto boot any "
+"A bootloader is a tiny program that runs when a computer is first powered "
+"up. It is responsible for loading the operating system into memory and then "
+"transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand "
+"Unified Bootloader) as the default bootloader. GRUB allows you to boot any "
 "supported operating system by presenting the user with a menu.&lt;br&gt;&lt;"
 "br&gt;The recommended way to use GRUB is to install it to the beginning of "
-"the boot disk.You can always choose another installation method if you know "
-"what you are doing."
+"the boot disk, which is set by Default settings. You can choose Advanced "
+"settings for a custom installation if you know what you are doing."
 msgstr ""
 "Un chargeur de démarrage (bootloader) est un petit programme lancé à "
 "l'allumage du PC. Il charge le système d'exploitation en mémoire et lui "
@@ -37,13 +38,13 @@ msgstr ""
 "ailleurs si vous  savez ce que vous faîtes."
 
 #: ../release.xml.in.h:2
+#, fuzzy
 msgid ""
-"A keyboard layout is a description of how keys are placed on a keyboard. "
-"There are different keyboard layouts in use throughout the world. The one "
-"you will want to use, generally depends on the country you live in or the "
-"language you use.This screen lets you select the keyboard layout you want to "
-"use on Pardus. You can test the selected layout by typing something in the "
-"given textbox."
+"A keyboard layout sets the arrangement of keys on the keyboard. There are "
+"different keyboard layouts in use throughout the world. You may want to use "
+"a different layout then your keyboard&apos;s physical layout or to be sure "
+"that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the "
+"selected layout by typing in the given textbox."
 msgstr ""
 "Une disposition de clavier est une description de la façon dont les touches "
 "sont placées sur un clavier. Il existe différentes dispositions de clavier "
@@ -70,26 +71,27 @@ msgid ""
 msgstr ""
 
 #: ../release.xml.in.h:6
-msgid "Choose a Keyboard Layout"
-msgstr "Choisir un clavier"
-
-#: ../release.xml.in.h:7
 msgid "Choose an Administrator Password and a Hostname"
 msgstr "Choisissez un mot de passe administrateur (root) et un nom d'hôte"
+
+#: ../release.xml.in.h:7
+#, fuzzy
+msgid "Choose your keyboard layout"
+msgstr "Choisir un clavier"
 
 #: ../release.xml.in.h:8
 msgid "Configure Bootloader"
 msgstr "Configurer le chargeur de démarrage"
 
 #: ../release.xml.in.h:9
+#, fuzzy
 msgid ""
 "Date and time settings allows you to set the date and time of your computer. "
-"Generally,you will also want to specify a correct timezone for your location "
-"in order to benefit from automatic daylight saving time adjustments.&lt;"
-"br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform "
-"standard time, usually referred as thelocal time. By convention, timezones "
-"compute their local time as an offset from UTC, the Coordinated Universal "
-"Time."
+"You may also want to specify a correct timezone upon your location in order "
+"to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;"
+"br&gt;A timezone is a region of the earth that has uniform standard time, "
+"usually referred as the local time. By convention, timezones compute their "
+"local time as an offset from UTC, the Coordinated Universal Time."
 msgstr ""
 "Les réglages de la date et de l'heure vous permettent de définir la date et "
 "l'heure de votre ordinateur. Généralement, vous souhaitez aussi souhaitez "
@@ -144,7 +146,8 @@ msgstr "Au revoir"
 
 #: ../release.xml.in.h:15
 #, fuzzy
-msgid "Here you can see your install options before installation starts."
+msgid ""
+"Here you can review your options before the installation process starts."
 msgstr ""
 "&lt;p&gt;Ici vous pouvez voir vos options d'installation avant le début de "
 "l'installation.&lt;/p&gt;"
@@ -185,38 +188,25 @@ msgstr ""
 "pardus-fr.org pour plus d'informations sur le partitionnement.&lt;/font&gt;"
 
 #: ../release.xml.in.h:18
-#, fuzzy
-msgid ""
-"In this step, you may validate the integrity of installation packages. A "
-"failed validation usually is a sign of a badly mastered installation medium "
-"(CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical "
-"medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-"
-"once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
-msgstr ""
-"Ici, vous pouvez valider l'intégrité des paquets d'installation. Une "
-"validation qui échoue est généralement le signe d'un support d'installation "
-"défectueux (DVD ou clef USB). Si vous utilisez un support d'installation "
-"optique, essayez de graver l'image d'installation en utilisant le mode DAO "
-"(Disc-at-once), à une vitesse inférieure (4x)."
-
-#: ../release.xml.in.h:19
 msgid "Installing Pardus"
 msgstr "Installation de Pardus"
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:19
 msgid ""
-"KDE is the stage of the production, where all the audience see the glamorous "
-"show with hundreds, even thousands of programs for every need in all levels. "
-"For end-users and daily needs or the corporates with integrated, high "
-"performance yet easy-to-use solutions. KDE is the desktop environment of "
-"Pardus, where all the softwares and tools are laid."
+"KDE is the desktop choice of Pardus, a software collection for desktop use "
+"with hundreds, even thousands of programs targeting different purposes. For "
+"end-users and daily needs or the corporates with integrated, high "
+"performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-"
+"house tools are written KDE friendly as well, so it is strongly recommended. "
+"However, there are different alternatives such as Enlightenment or Xfce both "
+"suggest lightweight, faster yet less feature-rich desktop experience."
 msgstr ""
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:20
 msgid "Kahya is working"
 msgstr "Kahya travaille"
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:21
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
 "Kontact is a seamless integration of a number of applications to achieve a "
@@ -224,11 +214,11 @@ msgid ""
 "mails, RSS news, addresses are altogether. You can even link your address "
 "book to Kopete to use with your IM accounts such as MSN, jabber or "
 "GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;"
-"br&gt;You can create sticky notes for your desktop from your tasks or vice-"
+"br&gt;You can create sticky notes for your desktop from your tasks or vice "
 "versa by simply dragging them."
 msgstr ""
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:22
 msgid ""
 "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
 "gives a stable, fast and free office experience while all your software and "
@@ -240,11 +230,11 @@ msgid ""
 "plug-ins for a better experience."
 msgstr ""
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:23
 msgid "Manual Partitioning"
 msgstr "Partitionnement manuel"
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:25
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -257,7 +247,7 @@ msgid ""
 "Opera."
 msgstr ""
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:26
 #, fuzzy
 msgid ""
 "Pardus allows multiple users to share the same computer.You can assign "
@@ -280,7 +270,7 @@ msgstr ""
 "la liste et cliquez sur \"Supprimer l'utilisateur sélectionné\". Procédez à "
 "l'installation une fois que vous avez fini vos sélections.&lt;/p&gt;"
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:27
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -289,7 +279,7 @@ msgid ""
 "installation goes on, you may see some of these features..."
 msgstr ""
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -298,38 +288,38 @@ msgid ""
 "administrative and configuration tasks."
 msgstr ""
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:29
 msgid ""
-"Pardus is a free and open source operating system that contains globally "
+"Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice "
-"etc. besides many easy-to-use tools for a comfortable yet high performance "
-"experience. &lt;br&gt;&lt;br&gt;The softwares included in this installation "
-"medium, are offered with a number of licenses. Tübitak prefers the GNU "
-"Public License (GPL version 2) for its own tools, which is the most common "
-"license for the selected components as well. You can read all the license "
-"texts in this screen by pressing on the license names or from our website. "
-"&lt;br&gt;&lt;br&gt;You have to accept the terms to install Pardus on your "
-"computer."
+"etc. and easy-to-use special tools for a comfortable yet high performance "
+"experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed "
+"with GNU Public License (GPL version 2), which is also the most common "
+"license for the selected components. However there are softwares included in "
+"this installation medium which have different licenses. You can read all the "
+"license texts in this screen in a new tiny window or find all of them on our "
+"website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install "
+"Pardus on your computer."
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:30
 msgid "Select Partitioning Method"
 msgstr "Choisissez la méthode de partitionnement"
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:31
 msgid "Select a Drive to Install Pardus"
 msgstr "Sélectionnez le disque dur où installer Pardus"
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:32
 #, fuzzy
 msgid "Some help messages"
 msgstr "&lt;p&gt; Aide &lt;/p&gt;"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:33
 msgid "Summary"
 msgstr "Récapitulatif"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:34
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -341,6 +331,22 @@ msgid ""
 "your choice, Kick-off, classic menu or Lancelot that you can choose with the "
 "help of Kaptan in your very first boot."
 msgstr ""
+
+#: ../release.xml.in.h:35
+#, fuzzy
+msgid ""
+"Validate action, checks if the packages in the medium are consistent in "
+"Pardus you may validate the integrity of installation packages. A failed "
+"validation usually is a sign of a badly mastered installation medium (CD, "
+"DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium "
+"(i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) "
+"mode, at a lower speed (4x for DVD, 8-12x for CD)."
+msgstr ""
+"Ici, vous pouvez valider l'intégrité des paquets d'installation. Une "
+"validation qui échoue est généralement le signe d'un support d'installation "
+"défectueux (DVD ou clef USB). Si vous utilisez un support d'installation "
+"optique, essayez de graver l'image d'installation en utilisant le mode DAO "
+"(Disc-at-once), à une vitesse inférieure (4x)."
 
 #: ../release.xml.in.h:36
 msgid "Welcome to Pardus"
@@ -382,6 +388,21 @@ msgid ""
 msgstr ""
 
 #: ../release.xml.in.h:39
+msgid ""
+"When you select \"Use All Space\", Pardus will format your disk and create "
+"four partitions for system, user space, boot and swap files using LVM "
+"(Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed "
+"system with an adequate disk space, you can use the \"Shrink Current System"
+"\" option to resize the first partition and install Pardus in the created "
+"free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-"
+"unused space (10 GBs recommended), you can choose the \"Use Free Space\" "
+"option, so Pardus will create the necessary partitions described below.&lt;"
+"br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual "
+"partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid "
+"future problems."
+msgstr ""
+
+#: ../release.xml.in.h:40
 #, fuzzy
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
@@ -398,27 +419,6 @@ msgstr ""
 "p&gt;&lt;p&gt; Maintenant, asseyez-vous et profitez de l'installation au "
 "cours de laquelle vous pourrez découvrir les caractéristiques et les "
 "innovations offertes par cette nouvelle version de Pardus.&lt;/p&gt;"
-
-#: ../release.xml.in.h:40
-#, fuzzy
-msgid ""
-"You can install Pardus if you have an unpartitioned-unused disk space of "
-"4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or "
-"partition selected for installation will automatically be formatted. "
-"Therefore, it is advised to backup your data to avoid future problems.&lt;"
-"br&gt;&lt;br&gt;Auto-partitioning will automatically format the select disk "
-"part/partition and install Pardus. If you like, you can do the partitioning "
-"manually or make Pardus create a new partition for installation."
-msgstr ""
-"&lt;p&gt;Vous pouvez installer Pardus si vous avez un espace disque non "
-"partitionné/non utilisé de 4Go (10 Go recommandé) ou un disque entier "
-"inutilisé/non partitionné. La zone de disque ou partition sélectionnée pour "
-"l'installation sera automatiquement formatée. Par conséquent, il est "
-"conseillé de sauvegarder vos données afin d'éviter des problèmes futurs.&lt;/"
-"p&gt;&lt;p&gt; L'auto-partitionnement formatera automatiquement la partition "
-"ou le disque sélectionné et installera Pardus. Si vous le souhaitez, vous "
-"pouvez faire le partitionnement manuellement ou faire créer à Pardus une "
-"nouvelle partition pour l'installation.&lt;/p&gt;"
 
 #: ../release.xml.in.h:41
 #, fuzzy
@@ -450,7 +450,7 @@ msgstr ""
 #, fuzzy
 msgid ""
 "You need to define a password for the &quot;root&quot; user which is the "
-"conventional nameof the user who has all rights and permissions (to all "
+"conventional name of the user who has all rights and permissions (to all "
 "files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;"
 "Your password must be easy to remember but strong enough to resist possible "
 "attacks.You can use capital and lower-case letters, numbers and punctuation "
@@ -470,6 +470,35 @@ msgstr ""
 "identifiant pour votre ordinateur. Comme votre ordinateur sera reconnu avec "
 "ce nom dans le réseau local, il est recommandé de choisir un nom d'hôte "
 "descriptif.&lt;/p&gt;"
+
+#: ../release.xml.in.h:44
+msgid ""
+"You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
+"install Pardus (10 GBs recommended though). Please select the disk you want "
+"to use for installation. In the next step, you will be able to choose "
+"between different partitioning options."
+msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "You can install Pardus if you have an unpartitioned-unused disk space of "
+#~ "4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area "
+#~ "or partition selected for installation will automatically be formatted. "
+#~ "Therefore, it is advised to backup your data to avoid future problems.&lt;"
+#~ "br&gt;&lt;br&gt;Auto-partitioning will automatically format the select "
+#~ "disk part/partition and install Pardus. If you like, you can do the "
+#~ "partitioning manually or make Pardus create a new partition for "
+#~ "installation."
+#~ msgstr ""
+#~ "&lt;p&gt;Vous pouvez installer Pardus si vous avez un espace disque non "
+#~ "partitionné/non utilisé de 4Go (10 Go recommandé) ou un disque entier "
+#~ "inutilisé/non partitionné. La zone de disque ou partition sélectionnée "
+#~ "pour l'installation sera automatiquement formatée. Par conséquent, il est "
+#~ "conseillé de sauvegarder vos données afin d'éviter des problèmes futurs."
+#~ "&lt;/p&gt;&lt;p&gt; L'auto-partitionnement formatera automatiquement la "
+#~ "partition ou le disque sélectionné et installera Pardus. Si vous le "
+#~ "souhaitez, vous pouvez faire le partitionnement manuellement ou faire "
+#~ "créer à Pardus une nouvelle partition pour l'installation.&lt;/p&gt;"
 
 #~ msgid ""
 #~ "Connecting to your friends and contacts is really easy and seamlessly "
