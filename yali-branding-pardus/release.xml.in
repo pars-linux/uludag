@@ -37,7 +37,7 @@
             <name>timeSetup</name>
             <_title>Adjust Date and Time Settings</_title>
             <icon>preferences-system-time</icon>
-            <_help>Date and time settings allows you to set the date and time of your computer. Generally,you will also want to specify a correct timezone for your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time.</_help>
+            <_help>Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time.</_help>
         </screen>
         <screen>
             <name>accounts</name>
@@ -55,13 +55,13 @@
             <name>driveSelection</name>
             <_title>Select a Drive to Install Pardus</_title>
             <icon>drive-harddisk</icon>
-            <_help>You can install Pardus if you have an unpartitioned-unused disk space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or partition selected for installation will automatically be formatted. Therefore, it is advised to backup your data to avoid future problems.&lt;br&gt;&lt;br&gt;Auto-partitioning will automatically format the select disk part/partition and install Pardus. If you like, you can do the partitioning manually or make Pardus create a new partition for installation.</_help>
+            <_help>You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options.</_help>
         </screen>
         <screen>
             <name>automaticPartitioning</name>
             <_title>Select Partitioning Method</_title>
             <icon>partitionmanager</icon>
-            <_help>You can install Pardus if you have an unpartitioned-unused disk space of 4GBs (10 GBs recommended) or an unused-unpartitioned disk. The disk area or partition selected for installation will automatically be formatted. Therefore, it is advised to backup your data to avoid future problems.&lt;br&gt;&lt;br&gt;Auto-partitioning will automatically format the select disk part/partition and install Pardus. If you like, you can do the partitioning manually or make Pardus create a new partition for installation.</_help>
+            <_help>When you select "Use All Space", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the "Shrink Current System" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the "Use Free Space" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose "Create Custom Layout" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems.</_help>
         </screen>
         <screen>
             <name>manualPartitioning</name>
@@ -73,13 +73,13 @@
             <name>bootloadersetup</name>
             <_title>Configure Bootloader</_title>
             <icon>bootloader</icon>
-            <_help>A bootloader is a tiny program that runs when a computer is first powered up.It is responsible for loading the operating system into memory and then transferringthe control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows youto boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk.You can always choose another installation method if you know what you are doing.</_help>
+            <_help>A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing.</_help>
         </screen>
         <screen>
             <name>summary</name>
             <_title>Summary</_title>
             <icon>summary</icon>
-            <_help>Here you can see your install options before installation starts.</_help>
+            <_help>Here you can review your options before the installation process starts.</_help>
         </screen>
         <screen>
             <name>packageInstallation</name>
