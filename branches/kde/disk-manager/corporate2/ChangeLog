@@ -20,6 +20,11 @@
 2010-11-16 mehmet.ozdemir
          * diskform maximize problem fixed
 
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 9 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
 2010-11-01 mehmet.ozdemir
          * getDeviceByLabel added again
 
@@ -37,4 +42,315 @@
 
 2010-10-29 mehmet.ozdemir
          * clean code for dm
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 9 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Adding Russian translation (Alexander Total)
+         * New status: 7 messages complete with 1 fuzzy and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-02 bahadir.kandemir
+         * New release
+
+2010-05-16 transifex
+         * l10n: Updated Italian (it) translation to 100% (Davide Siciliano)
+         * New status: 9 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-03-09 ozan.caglayan
+         * Sync versions
+
+2010-03-09 ozan.caglayan
+         * Pff, still old 2007 stuff in here.. 
+
+2010-03-09 ozan.caglayan
+         * Don't fail if no default is given in disk-manager
+
+2010-03-09 ozan.caglayan
+         * Don't bolden the text
+
+2010-03-09 ozan.caglayan
+         * Branch corporate2
+
+2010-03-09 ozan.caglayan
+         * Remove unused imports part 2
+
+2010-03-09 ozan.caglayan
+         * Reorder imports, drop unused ones, add ext4 support (wtf)..
+
+2009-10-27 fatih
+         * Move 2008 branch of disk-manager
+
+2009-06-29 necmettin
+         * Turkish translation updates
+
+2009-04-05 wpmhia
+         * Dutch translations
+
+2009-02-14 bahadir.kandemir
+         * new release
+
+2009-02-09 bahadir.kandemir
+         * update messages
+
+2009-02-09 bahadir.kandemir
+         * Auto fill options
+
+2009-01-30 bahadir.kandemir
+         * new release
+
+2009-01-30 bahadir.kandemir
+         * Attach DBus event loop to main loop
+
+2009-01-30 bahadir.kandemir
+         * update messages
+
+2009-01-29 ozan.caglayan
+         * - Update messages,
+         * - Update French translation.
+
+2009-01-29 bahadir.kandemir
+         * fix typo
+
+2009-01-29 bahadir.kandemir
+         * Remove unnecessary code
+
+2009-01-29 bahadir.kandemir
+         * Disable frame, don't hide
+
+2009-01-29 klemens
+         * some minor spanish language revision (kh) - 
+         * the specific names of the TASMA tools in the release note
+
+2009-01-28 klemens
+         * spanish language update and additions (kh)
+
+2009-01-28 patrik
+         * New Swedish translation
+
+2009-01-28 bahadir.kandemir
+         * Cleanup
+
+2009-01-28 bahadir.kandemir
+         * Hide unnecessary button
+
+2009-01-28 bahadir.kandemir
+         * update messages
+
+2009-01-28 bahadir.kandemir
+         * DM 2.0.0 is ready to ship
+
+2009-01-28 bahadir.kandemir
+         * Changeset 4
+         * - Add and remove disks
+
+2009-01-27 bahadir.kandemir
+         * Changeset 3
+         * - Don't use checkboxes
+         * - Fix crash bug
+
+2009-01-27 bahadir.kandemir
+         * Changeset 2, FS type and options
+
+2009-01-27 bahadir.kandemir
+         * DM COMARized, first changeset.
+         * Remember to register Disk.Manager script first:
+         * # hav register mudur Disk.Manager /path/to/pardus/devel/system/base/mudur/comar/disk.py
+         * DM COMAR script is not completed yet, PiSi will not register it for you.
+
+2008-06-15 klemens
+         * some spanish language update, to clarify disk-manager is in fact 
+         * only an editor for FSTAB - defining the mounted partitions (kh)
+         * observation: in Pardus 2008rc1 Disk-manager is not visible in TASMA 
+
+2008-05-27 bahadir.kandemir
+         * getDevices() method
+
+2008-05-27 bahadir.kandemir
+         * start porting comar script
+
+2008-04-08 pinar
+         * remove help due to fix embedding problem x(
+
+2008-03-28 pinar
+         * no need for comar
+
+2008-01-07 pinar
+         * tooltip implementation for iconview due to #1236
+
+2007-12-31 mustafaoe
+         * German translation added (help file)
+
+2007-12-06 gokcen.eraslan
+         * qmessagebox2kmessagebox
+
+2007-11-17 mustafaoe
+         * german updat
+
+2007-11-14 riklaunim
+         * updated Polish translations
+
+2007-09-27 onur
+         * correct filesystem type for macbooks, a.k.a. hfsplus fix
+
+2007-09-17 isbaran
+         * return values
+
+2007-09-17 isbaran
+         * comar script.
+         * burda dursun
+
+2007-08-24 gokmen.goksel
+         * isbaran is an Author now ;p
+
+2007-08-23 isbaran
+         * add help support for other languages
+
+2007-08-23 isbaran
+         * added help files
+
+2007-07-11 klenje
+         * Updated Italian translation
+
+2007-07-10 mustafaoe
+         * German update
+
+2007-07-09 bahadir.kandemir
+         * bump
+
+2007-07-02 amine
+         * i18n update and typo corrections for fr.
+
+2007-07-01 riklaunim
+         * added first part of Polish translations
+
+2007-06-24 klemens
+         * spanish translation and fixes for changed messages
+
+2007-06-20 gokmen.goksel
+         * po update..
+
+2007-06-17 klemens
+         * tasma spanish help files checked again (kh)
+
+2007-06-16 caglar
+         * standartlara uyalım #2
+
+2007-06-12 wpmhia
+         * Dutch help support
+
+2007-06-03 wpmhia
+         * Added dutch support
+
+2007-05-29 gokmen.goksel
+         * oops wrong version number. 1.4 ;)
+
+2007-05-29 gokmen.goksel
+         * Version Bump, 1.3
+
+2007-05-29 gokmen.goksel
+         * set as fixed
+
+2007-05-29 gokmen.goksel
+         * linux-swap is not anymore.. it is linux-swap(new) now..
+
+2007-05-27 klemens
+         * some checking again of typos and better spanish for tasma files
+
+2007-05-19 cartman
+         * nobarrier corrupts data
+
+2007-05-17 klemens
+         * some proofreading and additions of spanish language files
+
+2007-05-07 gokmen.goksel
+         * gereksiz saçma fonksiyon
+
+2007-05-07 gokmen.goksel
+         * gürer'in python gibi kod yazma semineri sonrası ..
+
+2007-04-25 klenje
+         * Updated Italian translation
+
+2007-04-24 klenje
+         * Italian translation
+
+2007-04-22 klemens
+         * some proofreading in the spanish language file of TASMA
+
+2007-03-28 pau
+         * Corrected some typos
+
+2007-03-25 pau
+         * Corrected emails addresses in ca.po
+
+2007-03-23 pau
+         * 1st Catalan translation of disk-manager.pot
+
+2007-03-12 pedro.leite
+         * Updated .desktop pt_BR translations;
+
+2007-03-11 amine
+         * help i18n for fr.
+
+2007-03-11 amine
+         * i18n for fr.
+
+2007-03-10 amine
+         * i18n for fr.
+
+2007-03-08 gokmen.goksel
+         * moodi is tempPartition, a little gift for Baris
+
+2007-03-08 gokmen.goksel
+         * partition mountbylabel too
+
+2007-03-08 gokmen.goksel
+         * Now works well :)
+
+2007-03-07 klenje
+         * Italian translation
+
+2007-03-05 gokmen.goksel
+         * bibik
+
+2007-03-05 caglar
+         * update-fstab uses that shit
+
+2007-03-05 gokmen.goksel
+         * shake your ass baby :) disk-manager now supports shit of by-label prop.
+
+2007-03-05 gokmen.goksel
+         * araking from update-fstab
+
+2007-03-04 klemens
+         * added some spanish help files for tasma/diskmanager, tasma/package manager (kh)
+
+2007-03-01 gorkem
+         * templates for it + fr
+
+2007-02-20 pedro.leite
+         * Language-Team header updated from Brazillian to Brazilian;
+
+2007-02-19 gokmen.goksel
+         * correct warning when fstab corrupted.
+
+2007-02-19 gokmen.goksel
+         * disk-manager v 1.2
+
+2007-02-19 gokmen.goksel
+         * PO update ..
+
+2007-02-19 pedro.leite
+         * Updated pt_BR translation files (included information about mailing list);
+         * disk-manager fully translated to pt_BR;
+         * kio_sysinfo fully translated to pt_BR;
+         * repokit almost translated to pt_BR;
+
+2007-02-18 meren
+         * fstab içerisinde syntax hatası varsa disk-manager çakılmasın..
 
