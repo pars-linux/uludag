@@ -12,7 +12,7 @@
             <_title>Welcome to Pardus</_title>
             <icon>applications-other</icon>
             <_help>Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. 
-&lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. 
+&lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website.
 &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer.</_help>
        </screen>
        <screen>
@@ -109,7 +109,7 @@
         </slideshow>
         <slideshow>
             <picture>kde</picture>
-            <_description>KDE 3 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE from the beginning you can see how this knowledge reflects on a powerful desktop environment. You will find a software collection, covering both enterprise and personal aspects. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, which creates a highly integrated work space for administration of the system. </_description>
+            <_description>KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE from the beginning you can see how this knowledge reflects on a powerful desktop environment. You will find a software collection, covering both enterprise and personal aspects. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, which creates a highly integrated work space for administration of the system. </_description>
         </slideshow>
         <slideshow>
             <picture>dolphin</picture>
@@ -139,17 +139,5 @@
             <picture>tasma</picture>
             <_description>Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks.</_description>
         </slideshow>
-        <!--<slideshow>
-            <picture>gimp</picture>
-            <_description>Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus...</_description>
-        </slideshow>
-        <slideshow>
-            <picture>games</picture>
-            <_description>Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc...</_description>
-        </slideshow>
-        <slideshow>
-            <picture>ozgurlukicin</picture>
-            <_description>You may have questions or need help... Özgürlükİçin community portal is there for you. The portal is for all users to meet and share their skills and experience. You can also find guides, introductionary articles about applications and games. &lt;br&gt;If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com</_description>
-        </slideshow>-->
     </slideshows>
 </Release>
