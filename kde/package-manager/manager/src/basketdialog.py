@@ -206,8 +206,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         reinstall = False
         if self.state.inInstall():
             answer = QtGui.QMessageBox.Yes
-            actions = self.state.checkInstallActions(
-                self.model.selectedPackages() + self.model.extraPackages())
+            actions = self.state.checkInstallActions(self.model.selectedPackages())
             if actions:
                 answer = self.askForActions(actions,
                        i18n("Selected packages are already installed.<br>"
