@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005,2006 TUBITAK/UEKAE
+# Copyright (C) 2005-2006,2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "2.0.7"
+version = "2.1.0"
 
 distfiles = """
     AUTHORS
@@ -58,8 +58,8 @@ if "dist" in sys.argv:
 kdedistutils.setup(
     name="firewall-config",
     version=version,
-    author="Bahadır Kandemir",
-    author_email="bahadir@pardus.org.tr",
+    author="Pardus Developers",
+    author_email="gokmen@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
