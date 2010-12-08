@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/corporate.png</file>
+    <file>gui/pics/corporate2.png</file>
     <file>gui/pics/kafa.png</file>
     <file>gui/pics/partitionmanager.png</file>
     <file>gui/pics/partitionmanager-big.png</file>
