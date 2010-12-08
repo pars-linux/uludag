@@ -43,36 +43,36 @@ fun dialog_setup()
     local.box;
     local.lock;
     local.entry;
-    
+
     box.image = Image("box.png");
     lock.image = Image("lock.png");
     entry.image = Image("entry.png");
-    
+
     box.sprite = Sprite(box.image);
     box.x = Window.GetX() + Window.GetWidth()  / 2 - box.image.GetWidth ()/2;
     box.y = Window.GetY() + Window.GetHeight() / 2 - box.image.GetHeight()/2;
     box.z = 10000;
     box.sprite.SetPosition(box.x, box.y, box.z);
-    
+
     lock.sprite = Sprite(lock.image);
     lock.x = box.x + box.image.GetWidth()/2 - (lock.image.GetWidth() + entry.image.GetWidth()) / 2;
     lock.y = box.y + box.image.GetHeight()/2 - lock.image.GetHeight()/2;
     lock.z = box.z + 1;
     lock.sprite.SetPosition(lock.x, lock.y, lock.z);
-    
+
     entry.sprite = Sprite(entry.image);
     entry.x = lock.x + lock.image.GetWidth();
     entry.y = box.y + box.image.GetHeight()/2 - entry.image.GetHeight()/2;
     entry.z = box.z + 1;
     entry.sprite.SetPosition(entry.x, entry.y, entry.z);
-    
+
     global.dialog.box = box;
     global.dialog.lock = lock;
     global.dialog.entry = entry;
     global.dialog.bullet_image = Image("bullet.png");
     dialog_opacity (1);
   }
-    
+
 fun dialog_opacity(opacity)
   {
     dialog.box.sprite.SetOpacity (opacity);
@@ -95,9 +95,9 @@ fun display_password_callback (prompt, bullets)
   {
     global.status = "password";
     if (!global.dialog)
-	dialog_setup();
+    dialog_setup();
     else
-	dialog_opacity(1);
+    dialog_opacity(1);
     for (index = 0; dialog.bullet[index] || index < bullets; index++)
       {
         if (!dialog.bullet[index])
