@@ -1,10 +1,9 @@
 # Pardus boot theme script derived from the basic script
 
 # Corporate 2 colors
-Window.SetBackgroundTopColor(0.270, 0.368, 0.290);
-
-# Gradient to black
-Window.SetBackgroundBottomColor(0, 0, 0);
+Window.SetBackgroundTopColor(0.196, 0.295, 0.201);
+# Gradient to the same color
+Window.SetBackgroundBottomColor(0.196, 0.295, 0.201);
 
 logo.image = Image("special://logo");
 logo.sprite = Sprite(logo.image);
@@ -18,7 +17,7 @@ fun refresh_callback ()
     if (status == "normal")
       {
         logo.opacity_angle += ((2 * 3.14) / 50) * 0.5;  # 0.5 HZ
-        min_opacity = 0.5;
+        min_opacity = 0.3;
         opacity = (Math.Cos(logo.opacity_angle) + 1) / 2;
         opacity *= 1 - min_opacity;
         opacity += min_opacity;
