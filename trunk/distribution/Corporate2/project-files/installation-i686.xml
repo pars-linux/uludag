@@ -387,7 +387,6 @@
         <Package>alternatives</Package>
         <Package>apr</Package>
         <Package>apr-util</Package>
-        <Package>ar9170-firmware</Package>
         <Package>artwork</Package>
         <Package>aspell</Package>
         <Package>atk</Package>
@@ -1152,7 +1151,6 @@
         <Package>acl</Package>
         <Package>alsa-firmware</Package>
         <Package>alternatives</Package>
-        <Package>ar9170-firmware</Package>
         <Package>atmel-firmware</Package>
         <Package>attr</Package>
         <Package>audit</Package>
