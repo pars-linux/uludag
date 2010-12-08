@@ -1,9 +1,9 @@
 # Pardus boot theme script derived from the basic script
 
 # Corporate 2 colors
-Window.SetBackgroundTopColor(0.196, 0.295, 0.201);
+Window.SetBackgroundTopColor(0.173, 0.247, 0.239);
 # Gradient to the same color
-Window.SetBackgroundBottomColor(0.196, 0.295, 0.201);
+Window.SetBackgroundBottomColor(0.173, 0.247, 0.239);
 
 logo.image = Image("special://logo");
 logo.sprite = Sprite(logo.image);
