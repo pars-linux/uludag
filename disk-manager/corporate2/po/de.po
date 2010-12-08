@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-09 08:43+0200\n"
+"POT-Creation-Date: 2010-12-08 12:25+0200\n"
 "PO-Revision-Date: 2007-11-17 02:04+0200\n"
 "Last-Translator: Mustafa Ölcerman <mmoelcerman@googlemail.com>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -19,40 +19,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
+#: src/disk-manager.py:77 src/disk-manager.py:482 src/diskform.py:104
 msgid "Disk Manager"
 msgstr "Festplatten-Manager"
 
-#: src/disk-manager.py:293
+#: src/disk-manager.py:329
+#, fuzzy
+msgid "Unmount"
+msgstr "Mount-Punkt"
+
+#: src/disk-manager.py:344 src/diskform.py:112
+#, fuzzy
+msgid "Mount"
+msgstr "Mount-Punkt"
+
+#: src/disk-manager.py:383
+msgid ""
+"Changes saved but system couldn't mount it because it has been already "
+"mounted another point"
+msgstr ""
+
+#: src/disk-manager.py:392
+msgid ""
+"Removing this partition from auto mount list can cause some boot problems.\n"
+"Do you want to continue?"
+msgstr ""
+
+#: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
 msgstr "Festplatten-Manager wird bereits ausgeführt!"
 
-#: src/diskform.py:83 src/diskform.py:110
+#: src/diskform.py:29 src/diskform.py:105
 msgid "Disks"
 msgstr "Festplatten"
 
-#: src/diskform.py:84 src/diskform.py:111
+#: src/diskform.py:30 src/diskform.py:106
 msgid "Partitions"
 msgstr "Partitionen"
 
-#: src/diskform.py:105
+#: src/diskform.py:107
 #, fuzzy
 msgid "Mount Automatically"
 msgstr "Festplatten automatisch finden"
 
-#: src/diskform.py:106
+#: src/diskform.py:108
 msgid "File System Type :"
 msgstr "Dateisystem-Format:"
 
-#: src/diskform.py:107
+#: src/diskform.py:109
 msgid "Mount Point :"
 msgstr "Mount-Punkt:"
 
-#: src/diskform.py:108
+#: src/diskform.py:110
 msgid "Reset"
 msgstr ""
 
-#: src/diskform.py:109
+#: src/diskform.py:111
 msgid "Additional Options :"
 msgstr "Zusätzliche Optionen :"
 
@@ -93,9 +115,6 @@ msgstr "Zusätzliche Optionen :"
 
 #~ msgid "%s for %s failure !!"
 #~ msgstr "%s für %s fehlen !!"
-
-#~ msgid "Mount Point"
-#~ msgstr "Mount-Punkt"
 
 #~ msgid "File System Type"
 #~ msgstr "Dateisystem-Format"

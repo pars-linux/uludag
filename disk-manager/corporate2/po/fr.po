@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-09 08:43+0200\n"
+"POT-Creation-Date: 2010-12-08 12:25+0200\n"
 "PO-Revision-Date: 2009-01-29 08:54+0200\n"
 "Last-Translator: Ozan Caglayan <ozan@pardus.org.tr>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -17,39 +17,61 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
+#: src/disk-manager.py:77 src/disk-manager.py:482 src/diskform.py:104
 msgid "Disk Manager"
 msgstr "Gestionnaire des disques durs"
 
-#: src/disk-manager.py:293
+#: src/disk-manager.py:329
+#, fuzzy
+msgid "Unmount"
+msgstr "Point de montage"
+
+#: src/disk-manager.py:344 src/diskform.py:112
+#, fuzzy
+msgid "Mount"
+msgstr "Point de montage"
+
+#: src/disk-manager.py:383
+msgid ""
+"Changes saved but system couldn't mount it because it has been already "
+"mounted another point"
+msgstr ""
+
+#: src/disk-manager.py:392
+msgid ""
+"Removing this partition from auto mount list can cause some boot problems.\n"
+"Do you want to continue?"
+msgstr ""
+
+#: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
 msgstr "Le gestionnaire de disques durs est déjà en cours d'exécution!"
 
-#: src/diskform.py:83 src/diskform.py:110
+#: src/diskform.py:29 src/diskform.py:105
 msgid "Disks"
 msgstr "Disques dur"
 
-#: src/diskform.py:84 src/diskform.py:111
+#: src/diskform.py:30 src/diskform.py:106
 msgid "Partitions"
 msgstr "Partitions"
 
-#: src/diskform.py:105
+#: src/diskform.py:107
 msgid "Mount Automatically"
 msgstr "Monter automatiquement"
 
-#: src/diskform.py:106
+#: src/diskform.py:108
 msgid "File System Type :"
 msgstr "Type de système de fichier :"
 
-#: src/diskform.py:107
+#: src/diskform.py:109
 msgid "Mount Point :"
 msgstr "Point de montage :"
 
-#: src/diskform.py:108
+#: src/diskform.py:110
 msgid "Reset"
 msgstr "Réinitialiser"
 
-#: src/diskform.py:109
+#: src/diskform.py:111
 msgid "Additional Options :"
 msgstr "Options supplémentaires :"
 
@@ -88,9 +110,6 @@ msgstr "Options supplémentaires :"
 
 #~ msgid "%s for %s failure !!"
 #~ msgstr "%s pour %s échec !!"
-
-#~ msgid "Mount Point"
-#~ msgstr "Point de montage"
 
 #~ msgid "File System Type"
 #~ msgstr "Type de système de fichier"

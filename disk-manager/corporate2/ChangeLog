@@ -1,0 +1,40 @@
+2010-12-08 gokmen.goksel
+         * - fix fs type for lvm member 
+
+2010-12-08 mehmet.ozdemir
+         * entry information is now more user friendly.
+         * lvm check is added.
+
+2010-12-08 mehmet.ozdemir
+         * trying to remove entry for '/boot' directory gives a warning.
+
+2010-12-07 mehmet.ozdemir
+         * hide/show property was added for detail frame.
+
+2010-12-06 mehmet.ozdemir
+         * missing root disk removal control is added.
+
+2010-12-06 mehmet.ozdemir
+         * a missing control iss added.
+
+2010-11-16 mehmet.ozdemir
+         * diskform maximize problem fixed
+
+2010-11-01 mehmet.ozdemir
+         * getDeviceByLabel added again
+
+2010-11-01 mehmet.ozdemir
+         * diff revision number added
+
+2010-11-01 mehmet.ozdemir
+         * do not send labels to disk-manager III
+
+2010-11-01 mehmet.ozdemir
+         * do not send labels to disk-manager from mudur
+
+2010-10-30 mehmet.ozdemir
+         * Comment lines added.
+
+2010-10-29 mehmet.ozdemir
+         * clean code for dm
+

@@ -17,7 +17,7 @@ import shutil
 
 import kdedistutils
 
-version = "2.1.2"
+version = "2.1.3"
 
 distfiles = """
     AUTHORS
@@ -60,8 +60,8 @@ if "dist" in sys.argv:
 kdedistutils.setup(
     name="disk-manager",
     version=version,
-    author="Gökmen GÖKSEL",
-    author_email="gokmen@pardus.org.tr",
+    author="Pardus Developers",
+    author_email="info@pardus.org.tr",
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
