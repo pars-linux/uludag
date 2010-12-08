@@ -2,7 +2,7 @@
     <Title>Pardus Corporate 2 Beta i686</Title>
     <WorkDir>/tmp/iso/i686</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
-    <ExtraParameters>splash=silent</ExtraParameters>
+    <ExtraParameters>splash</ExtraParameters>
     <PackageSelection repo_uri="http://192.168.3.140/pardus/corporate2/devel/i686/pisi-index.xml.xz">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>hardware.smartcard</SelectedComponent>
@@ -436,8 +436,6 @@
         <Package>bogofilter</Package>
         <Package>boost</Package>
         <Package>boot-manager</Package>
-        <Package>bootsplash</Package>
-        <Package>bootsplash-theme-pardus</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
         <Package>build-docbook-catalog</Package>
@@ -1474,8 +1472,6 @@
         <Package>bash</Package>
         <Package>bc</Package>
         <Package>bluez-firmware</Package>
-        <Package>bootsplash</Package>
-        <Package>bootsplash-theme-pardus</Package>
         <Package>busybox</Package>
         <Package>bzip2</Package>
         <Package>comar</Package>
