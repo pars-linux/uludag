@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-09 08:43+0200\n"
+"POT-Creation-Date: 2010-12-08 12:25+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,38 +16,58 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
+#: src/disk-manager.py:77 src/disk-manager.py:482 src/diskform.py:104
 msgid "Disk Manager"
 msgstr ""
 
-#: src/disk-manager.py:293
+#: src/disk-manager.py:329
+msgid "Unmount"
+msgstr ""
+
+#: src/disk-manager.py:344 src/diskform.py:112
+msgid "Mount"
+msgstr ""
+
+#: src/disk-manager.py:383
+msgid ""
+"Changes saved but system couldn't mount it because it has been already "
+"mounted another point"
+msgstr ""
+
+#: src/disk-manager.py:392
+msgid ""
+"Removing this partition from auto mount list can cause some boot problems.\n"
+"Do you want to continue?"
+msgstr ""
+
+#: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
 msgstr ""
 
-#: src/diskform.py:83 src/diskform.py:110
+#: src/diskform.py:29 src/diskform.py:105
 msgid "Disks"
 msgstr ""
 
-#: src/diskform.py:84 src/diskform.py:111
+#: src/diskform.py:30 src/diskform.py:106
 msgid "Partitions"
 msgstr ""
 
-#: src/diskform.py:105
+#: src/diskform.py:107
 msgid "Mount Automatically"
 msgstr ""
 
-#: src/diskform.py:106
+#: src/diskform.py:108
 msgid "File System Type :"
 msgstr ""
 
-#: src/diskform.py:107
+#: src/diskform.py:109
 msgid "Mount Point :"
 msgstr ""
 
-#: src/diskform.py:108
+#: src/diskform.py:110
 msgid "Reset"
 msgstr ""
 
-#: src/diskform.py:109
+#: src/diskform.py:111
 msgid "Additional Options :"
 msgstr ""

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-02-09 08:43+0200\n"
+"POT-Creation-Date: 2010-12-08 12:25+0200\n"
 "PO-Revision-Date: 2009-04-05 19:50+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -22,39 +22,58 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
+#: src/disk-manager.py:77 src/disk-manager.py:482 src/diskform.py:104
 msgid "Disk Manager"
 msgstr "Schijfbeheer"
 
-#: src/disk-manager.py:293
+#: src/disk-manager.py:329
+msgid "Unmount"
+msgstr ""
+
+#: src/disk-manager.py:344 src/diskform.py:112
+msgid "Mount"
+msgstr ""
+
+#: src/disk-manager.py:383
+msgid ""
+"Changes saved but system couldn't mount it because it has been already "
+"mounted another point"
+msgstr ""
+
+#: src/disk-manager.py:392
+msgid ""
+"Removing this partition from auto mount list can cause some boot problems.\n"
+"Do you want to continue?"
+msgstr ""
+
+#: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
 msgstr "Schijfbeheer is al actief!"
 
-#: src/diskform.py:83 src/diskform.py:110
+#: src/diskform.py:29 src/diskform.py:105
 msgid "Disks"
 msgstr "Schijven"
 
-#: src/diskform.py:84 src/diskform.py:111
+#: src/diskform.py:30 src/diskform.py:106
 msgid "Partitions"
 msgstr "Partities"
 
-#: src/diskform.py:105
+#: src/diskform.py:107
 msgid "Mount Automatically"
 msgstr "Automatisch aankoppelen"
 
-#: src/diskform.py:106
+#: src/diskform.py:108
 msgid "File System Type :"
 msgstr "Bestandssysteem type:"
 
-#: src/diskform.py:107
+#: src/diskform.py:109
 msgid "Mount Point :"
 msgstr "Aankoppelpunt:"
 
-#: src/diskform.py:108
+#: src/diskform.py:110
 msgid "Reset"
 msgstr "Reset"
 
-#: src/diskform.py:109
+#: src/diskform.py:111
 msgid "Additional Options :"
 msgstr "Aanvullende opties:"
-
