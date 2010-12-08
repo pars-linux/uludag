@@ -1,18 +1,345 @@
-2009-01-06 Pınar Yanardağ <pinar@pardus.org.tr>
-	* src/firewall-config.py, setup.py:	update version to 2.0.4
-	* po/de.po: fix bug#8644
+2010-12-07 mehmet.ozdemir
+         * an output mistake was fixed.
 
-2008-09-29 Pınar Yanardağ <pinar@pardus.org.tr>
-	* src/firewall-config.py, setup.py:	update version.
+2010-12-07 mehmet.ozdemir
+         * description was added to new rule and edit rule dialogs.
+         * disabled buttons were hidden.
+         * more description were added to rules.
+         * a minor port validation check bug was fixed.
 
-2008-09-28 Ozan Çağlayan <ozan@pardus.org.tr>
-	* src/firewall-config.py: add new method loadIconSet()
-	for being able to fix the issue of missing icons.
-	Fixes #8141.
-	(MainApplication.__init__): Use loadIconSet() to set icons
-	for Apply, OK, Cancel and Help buttons.
-	(dialogRule.__init__): Use loadIconSet() to set icons
-	for OK and Cancel buttons in rules dialog.
+2010-12-07 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 34 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
 
-2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
-	* Changelog, INSTALL, TODO, COPYING:	Add new files.
+2010-12-07 mehmet.ozdemir
+         * some translation fixes are made.
+
+2010-12-07 mehmet.ozdemir
+         * firewall-config's gui is updated.
+
+2010-12-06 transifex
+         * l10n: Updated Turkish (tr) translation to 100% (Ayhan Yalçınsoy)
+         * New status: 44 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-03 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 44 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-03 mehmet.ozdemir
+         * Help button did not appear when firewall-config was run in Tasma. I changed position of the Help button.
+
+2010-12-02 mehmet.ozdemir
+         * Moved pardus playground to uludag branches.
+         * Firewall-config is changed.
+         * Delete, edit, start/stop operations were added, add operation was ordered.
+         * Turkish and English help documents were added.
+         * I think this commit fixes the bug 15018.
+         * Comment added to http://bugs.pardus.org.tr/15018
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 89% (Yasirov Vasiliy)
+         * New status: 34 messages complete with 0 fuzzies and 4 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 76% (Yasirov Vasiliy)
+         * New status: 29 messages complete with 0 fuzzies and 9 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 73% (Yasirov Vasiliy)
+         * New status: 28 messages complete with 0 fuzzies and 10 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 68% (Yasirov Vasiliy)
+         * New status: 26 messages complete with 0 fuzzies and 12 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 60% (Yasirov Vasiliy)
+         * New status: 23 messages complete with 0 fuzzies and 15 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 47% (Yasirov Vasiliy)
+         * New status: 18 messages complete with 0 fuzzies and 20 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-19 transifex
+         * l10n: Updated Russian (ru) translation to 42% (Yasirov Vasiliy)
+         * New status: 16 messages complete with 0 fuzzies and 22 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 39% (Yasirov Vasiliy)
+         * New status: 15 messages complete with 0 fuzzies and 23 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-02 transifex
+         * l10n: New Russian translation (Yasirov Vasiliy)
+         * New status: 0 messages complete with 0 fuzzies and 38 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Italian (it) translation to 100% (Davide Siciliano)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-02 bahadir.kandemir
+         * New release
+
+2010-05-29 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 100% (Klemens Häckel)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-28 bahadir.kandemir
+         * New release
+
+2010-05-27 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-26 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-26 bahadir.kandemir
+         * Advanced -> Outgoing Connections
+
+2010-04-11 transifex
+         * l10n: Updated French (fr) translation to 100%
+         * User: Philippe Svetoslavsky
+         * New status: 51 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-04-05 translator
+         * l10n: Updated Polish (pl) translation to 98%
+         * User: Bahadır Kandemir
+         * New status: 50 messages complete with 1 fuzzy and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-01-08 bahadir.kandemir
+         * New release
+
+2010-01-07 bahadir.kandemir
+         * Cosmetic
+
+2010-01-07 bahadir.kandemir
+         * Corporate 2.0 Release, Initial commit
+
+2009-10-27 fatih
+         * move 2008 branch of firewall-manager
+
+2009-10-27 fatih
+         * Ops move tasma back
+
+2009-10-27 fatih
+         * move tasma into kde
+
+2009-07-14 necmettin
+         * Turkish translation updates
+
+2009-01-14 bahadir.kandemir
+         * Ignore rules not created by FC.
+         * Bug fixed at http://bugs.pardus.org.tr/9033
+
+2009-01-06 pinar
+         * update version and changelog
+
+2008-11-14 selim_ok
+         * Thanks for your bug report. Translation has been fixed in SVN. This fix take effect with the next release of Tasma. 	* Bug fixed at http://bugs.pardus.org.tr/8644
+
+2008-09-29 pinar
+         * update version
+
+2008-09-28 ozan.caglayan
+         * - Fixes the issue of missing PushButton icons reported by #8141.
+         * Comment added to http://bugs.pardus.org.tr/8141
+
+2008-09-28 ozan.caglayan
+         * Fix name
+
+2008-09-12 pinar
+         * add new files and version bump
+
+2008-09-10 necmettin
+         * add some Swedish translations, thanks to Patrick
+
+2008-09-05 pinar
+         * Swedish language support, translated by Patrik Karlsson
+
+2008-07-12 bahadir.kandemir
+         * Auto start iptables service - Patch from Furkan Duman
+         * This is real one.
+
+2008-07-12 bahadir.kandemir
+         * revert, this was my patch
+
+2008-07-12 bahadir.kandemir
+         * Auto start iptables service - Patch from Furkan Duman
+         * Welcome back :)
+
+2008-06-27 gokcen.eraslan
+         * Fix block handling
+
+2008-06-19 faik
+         * ObtaionAuth.. should have timeout too
+
+2008-06-18 pinar
+         * fix syntax problem
+
+2008-06-18 gokcen.eraslan
+         * Increase timeout, prevent problems arises from waiting longer than 25 seconds
+
+2008-06-09 pinar
+         * autorization message
+
+2008-05-27 bahadir.kandemir
+         * moved to trunk
+
+2008-05-22 pinar
+         * embedded firewall-config for tasma
+
+2008-05-13 bahadir.kandemir
+         * apply embed patch
+
+2008-05-12 bahadir.kandemir
+         * new release
+
+2008-05-12 bahadir.kandemir
+         * set profile before starting iptables
+
+2008-04-22 gokcen.eraslan
+         * use desktop-neutral policykit agent instead of policykit-gnome
+
+2008-04-04 bahadir.kandemir
+         * remove debug code
+         * get rules if state is on
+
+2008-04-01 bahadir.kandemir
+         * add handler.py
+
+2008-03-25 bahadir.kandemir
+         * Ported to 2.0
+
+2008-03-17 bahadir.kandemir
+         * Step 1: getProfile, getState, getRules methods
+
+2008-03-17 bahadir.kandemir
+         * Porting to 2.0, initial commit
+
+2008-01-22 pinar
+         * revert firewall changes
+
+2008-01-22 pinar
+         * revert last commit
+
+2007-12-06 gokcen.eraslan
+         * qmessagebox2kmessagebox
+
+2007-11-17 mustafaoe
+         * german update
+
+2007-11-14 riklaunim
+         * updated Polish translations
+
+2007-11-12 klenje
+         * Updated Italian translation
+
+2007-07-18 klemens
+         * some spanish language cleanup, in yali some string formating check
+
+2007-07-15 amine
+         * i18n update.
+
+2007-07-12 bahadir.kandemir
+         * update messages
+
+2007-07-12 bahadir.kandemir
+         * Desktop sharing application ports. Thanks to Fred Gansevles
+
+2007-07-11 klenje
+         * Updated Italian translation
+
+2007-07-10 mustafaoe
+         * German update
+
+2007-07-10 mustafaoe
+         * German update
+
+2007-07-02 amine
+         * i18n update and typo corrections for fr.
+
+2007-07-01 riklaunim
+         * fixed errors in few Polish translations
+
+2007-07-01 riklaunim
+         * added first part of Polish translations
+
+2007-06-30 klemens
+         * revision of spanish language files because of changes and additions in some tasma modules
+
+2007-06-25 bahadir.kandemir
+         * Update messages
+
+2007-06-25 bahadir.kandemir
+         * 1.6.6 coming
+
+2007-06-25 bahadir.kandemir
+         * Bug fixed at http://bugs.pardus.org.tr/4225
+
+2007-06-19 mustafaoe
+         * german update
+
+2007-06-03 wpmhia
+         * Dutch support
+
+2007-06-03 wpmhia
+         * Pardus firewall dutch po is updated!
+
+2007-05-30 amine
+         * i18n update.
+
+2007-05-27 klemens
+         * some checking again of typos and better spanish for tasma files
+
+2007-05-26 bahadir.kandemir
+         * update messages
+
+2007-05-26 bahadir.kandemir
+         * 1.6.5
+
+2007-05-26 bahadir.kandemir
+         * Comment added to http://bugs.pardus.org.tr/5766
+
+2007-05-17 klemens
+         * some proofreading and additions of spanish language files
+
+2007-04-30 bahadir.kandemir
+         * update messages
+
+2007-04-30 bahadir.kandemir
+         * Hide controls in guest mode
+
+2007-04-22 klemens
+         * some proofreading in the spanish language file of TASMA
+
+2007-04-04 bahadir.kandemir
+         * New release
+
+2007-04-04 bahadir.kandemir
+         * Kozmetik
+
+2007-04-04 bahadir.kandemir
+         * Cosmetic
+
+2007-03-25 pau
+         * Corrected emails addresses in ca.po
+

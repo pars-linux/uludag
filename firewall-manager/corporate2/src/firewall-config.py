@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -39,7 +39,7 @@ def I18N_NOOP(str):
     return str
 
 description = I18N_NOOP('Pardus Firewall Graphical User Interface')
-version = '2.0.7'
+version = '2.1.0'
 
 def AboutData():
     global version, description
@@ -49,11 +49,12 @@ def AboutData():
                             version,
                             description,
                             KAboutData.License_GPL,
-                            '(C) 2006 UEKAE/TÜBİTAK',
+                            '(C) 2006-2010 UEKAE/TÜBİTAK',
                             None, None,
-                            'bahadir@pardus.org.tr')
+                            'info@pardus.org.tr')
 
     about_data.addAuthor('Bahadır Kandemir', None, 'bahadir@pardus.org.tr')
+    about_data.addAuthor('Mehmet Özdemir', None, 'mehmet@pardus.org.tr')
     about_data.addCredit('Görkem Çetin', I18N_NOOP('GUI Design & Usability'), 'gorkem@pardus.org.tr')
     about_data.addCredit('İsmail Dönmez', I18N_NOOP('Help with IPTables'), 'ismail@pardus.org.tr')
     about_data.addCredit('Gürer Özen', I18N_NOOP('Help with KDE stuff'), 'gurer@pardus.org.tr')
