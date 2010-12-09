@@ -20,7 +20,7 @@ from PyKDE4.kdecore import KAboutData, ki18n, ki18nc
 appName     = "boot-manager"
 modName     = "bootmanager"
 programName = ki18n(PACKAGE)
-version     = "3.0.0_alpha2"
+version     = "3.0.0_beta1"
 description = ki18n(PACKAGE)
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2006-2010 TUBITAK/UEKAE")

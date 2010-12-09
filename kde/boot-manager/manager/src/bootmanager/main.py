@@ -40,6 +40,12 @@ from bootmanager.edit import EditWidget
 # Options widget
 from bootmanager.options import OptionsWidget
 
+from pardus.diskutils import getPartitions
+
+PARTITIONS = getPartitions()
+
+def getSuggestion(fstypes):
+    return filter(lambda x: PARTITIONS[x]['fstype'] in fstypes, PARTITIONS)
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -236,7 +242,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         self.widgetEdit.show()
         self.widgetEdit.reset()
-
         self.widgetEdit.setType(type_)
 
         if type_ in self.systems:
@@ -250,7 +255,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             if "options" not in fields:
                 self.widgetEdit.hideOptions()
 
-        if id_ != None:
+        # Edit Entry
+        if not id_ == None:
             entry = None
             for e in self.entries:
                 if e["index"] == id_:
@@ -267,6 +273,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetEdit.setRamdisk(entry["initrd"])
             if "options" in entry:
                 self.widgetEdit.setOptions(entry["options"])
+        # New Entry
+        else:
+            suggestions = []
+            if type_ == 'windows':
+                suggestions = getSuggestion(('vfat', 'ntfs'))
+            elif type_ == 'linux':
+                suggestions = getSuggestion(('ext4', 'ext3', 'ext2'))
+            # Insert partition suggestions for selected type
+            self.widgetEdit.setDisk(suggestions)
 
         if self.animationLast == ANIM_HIDE:
             self.animationLast = ANIM_SHOW
@@ -341,7 +356,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.hideEditBox()
 
     def slotSaveEdit(self):
-        """ 
+        """
             Save clicked on edit box, save item details then show item list.
         """
         try:
@@ -350,7 +365,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", -1)
             else:
                 self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", widget.getId())
-        except Exception, e: # TODO: Named exception should be raised
+        except Exception, e:
             if "Comar.PolicyKit" in e._dbus_error_name:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
             else:

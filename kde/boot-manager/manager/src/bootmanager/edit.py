@@ -95,10 +95,15 @@ class EditWidget(QtGui.QWidget, Ui_EditWidget):
         return unicode(self.lineTitle.text())
 
     def setDisk(self, disk):
-        self.lineDisk.setText(unicode(disk))
+        self.lineDisk.clear()
+        if type(disk) == list:
+            self.lineDisk.addItem('')
+            self.lineDisk.addItems(disk)
+        else:
+            self.lineDisk.addItem(unicode(disk))
 
     def getDisk(self):
-        return unicode(self.lineDisk.text())
+        return unicode(self.lineDisk.currentText())
 
     def setKernel(self, kernel):
         self.lineKernel.setText(unicode(kernel))
