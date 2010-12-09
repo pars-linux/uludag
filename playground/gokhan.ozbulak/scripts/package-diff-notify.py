@@ -149,66 +149,74 @@ def fetchRepos():
             else:
                 conflictList[spec.source.name] = [spec.source.packager.name]
 
-''' This function creates a repo entry whose structure is specified below for given repo, say 2009 or 2011  '''
-''' repoEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch]  '''
-def createRepoEntry(packager, package, repo):
-    order = repos[packager][package][3].index(repo)
-    repoEntry = [
+''' This function creates a summary entry whose structure is specified below for given repo, say 2009 or 2011  '''
+''' summaryEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch] '''
+def createSummaryEntry(packager, package, distro):
+    summaryEntry = []
+    order = repos[packager][package][3].index(distro)
+    summaryEntry = [
                     packager,
                     repos[packager][package][4],
                     repos[packager][package][0][order][0],
                     repos[packager][package][0][order][1],
                     repos[packager][package][1][order],
-                    repos[packager][package][2][order]                                                                                                                                                                                                              ]
-    return repoEntry
+                    repos[packager][package][2][order]
+                    ]
+
+    return summaryEntry
 
 ''' This function compares list items addressed with index argument and returns false if difference is detected  '''
 def isListContentSame(summaryList, index):
-    for i in summaryList:
-        for j in summaryList:
-            if not i[index] == j[index]:
+    for distro in summaryList.keys():
+        for dstr in summaryList.keys():
+            if not summaryList[distro][index] == summaryList[dstr][index]:
                 return "Different"
 
     return "Same"
 
 ''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
-def createStanza(summaryList):
-    sectionList = ("Email", "Packager(s)", "Release(s)", "Version(s)", "Number of patch", "Number of Package")
+def createStanza(summaryList, conflict):
+    sectionList = ("Email", "Packager(s)", "Release(s)", "Version(s)", "Number of Package", "Number of Patch")
     content = ""
 
     ''' Indexing to traverse summaryList as in sectionList manner  '''
     for i in range(6):
         tmpContent = ""; comment = ""; incomplete = False
         ''' İgnoring the first item in sectionList, because will handle it in nex iteration  '''
-        if i == 0: break
+        if i == 0: continue
         for distro in distroList:
-            if summaryList[distro]:
+            if summaryList.has_key(distro):
                 if i == 1:
-                    tmpContent = "%s\n\t%s: %s %s" %(tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
+                    tmpContent = "%s    %-30s: %-30s %s\n" %(tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
                 else:
-                    tmpContent = "%s\n\t%s: %s" %(tmpContent, distro, summaryList[distro][i])
+                    tmpContent = "%s    %-30s: %s\n" %(tmpContent, distro, summaryList[distro][i])
             else:
                 incomplete = True
         if incomplete:
             comment = "%s %s " %(comment, "Incomplete")
+        if conflict:
+            comment = "%s %s " %(comment, "Conflict")
         comment = "%s %s " %(comment, isListContentSame(summaryList, i))
+        content = "%s %s: [%s]\n%s" %(content, sectionList[i], comment, tmpContent)
 
     return content
 
+''' This function generates status info about all packages of the given packager '''
 def prepareContentBody(packager):
     content = ""
+
     for package in repos[packager].keys():
-        summaryList = []
-        repoEntry = []
+        summaryList = {}
+        isConflict = False
         for distro in distroList:
             if distro in repos[packager][package][3]:
-                repoEntry = createRepoEntry(packager, package, distro)
+                summaryList[distro] = createSummaryEntry(packager, package, distro)
             elif len(conflictList[package]) > 1:
+                isConflict = True
                 for pckgr in conflictList[package]:
                     if distro in repos[pckgr][package][3]:
-                        repoEntry = createRepoEntry(pckgr, package, distro)
-            summaryList.append(repoEntry)
-        content = "%s\n\n%s\n%s\n%s" %(content, package, len(package) * "-", createStanza(summaryList))
+                        summaryList[distro] = createSummaryEntry(pckgr, package, distro)
+        content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList, isConflict))
 
     return content
 
@@ -272,7 +280,7 @@ def sendMail(receiverList, contentBody):
 
     try:
         for receiver in receiverList:
-            if receiver == "farslan@pardus.org.tr":
+            if receiver == "x@pardus.org.tr":
                 smtp = smtplib.SMTP(mailServer)
                 msg["To"] = receiver
                 smtp.ehlo()
@@ -287,18 +295,17 @@ def sendMail(receiverList, contentBody):
 ''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
 def traverseRepos():
     ''' Open report file if report option is set  '''
-    if options["r"]:
-        fp = open(reportFile, "w")
-        fp.write("%s\n" %(columns))
     for packager in repos.keys():
         contentBody = prepareContentBody(packager)
 
         if not options["nm"]:
             receiverMailList = prepareReceiverMailList(packager)
             if sendMail(receiverMailList, contentBody):
-                print "Send mail to %s failed." % receiverMailList
+                print "Send mail to %s failed." %(receiverMailList)
+
         if options["r"]:
-            fp.write("%s\n%s" %(packager, contentBody.encode("utf-8")))
+            fp = open(packager, "w")
+            fp.write("%s" %(contentBody))
 
 if __name__ == "__main__":
 
