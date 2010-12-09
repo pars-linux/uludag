@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-08 20:03+0000\n"
+"POT-Creation-Date: 2010-12-09 16:12+0200\n"
 "PO-Revision-Date: 2010-12-08 22:31+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -113,16 +113,16 @@ msgid ""
 "called with its default shortcut Alt+F2 and it offers a number of basic "
 "functions as well, try it at home!"
 msgstr ""
-"Wilt u het systeem aanpassen? Kaptan is er voor u. Kaptan is de "
-"configuratie-assistent voor de gebruiker. Het is behulpzaam bij het "
-"instellen van het systeem naar uw wensen. Heeft het bedienen van de muis "
-"door een enkele klik de voorkeur? Bent u linkshandig? Het kleurenschema van "
-"het bureaublad veranderen? Een aantal opties worden door Kaptan aangeboden. "
-"Kaptan wordt automatisch bij de eerste keer inloggen opgestart. "
-"&lt;br&gt;&lt;br&gt;Indien het gewenst is om Kaptan opnieuw te gebruiken, "
-"kan deze d.m.v. de commandostarter en de naam kaptan opgestart worden. "
-"&lt;br&gt;De commandostarter is te bereiken door de sneltoetsen Alt+F2 en "
-"bidt daarnaast een aantal ander mogelijkheden."
+"Wilt u het systeem aanpassen? Kaptan is er voor u. Kaptan is de configuratie-"
+"assistent voor de gebruiker. Het is behulpzaam bij het instellen van het "
+"systeem naar uw wensen. Heeft het bedienen van de muis door een enkele klik "
+"de voorkeur? Bent u linkshandig? Het kleurenschema van het bureaublad "
+"veranderen? Een aantal opties worden door Kaptan aangeboden. Kaptan wordt "
+"automatisch bij de eerste keer inloggen opgestart. &lt;br&gt;&lt;br&gt;"
+"Indien het gewenst is om Kaptan opnieuw te gebruiken, kan deze d.m.v. de "
+"commandostarter en de naam kaptan opgestart worden. &lt;br&gt;De "
+"commandostarter is te bereiken door de sneltoetsen Alt+F2 en bidt daarnaast "
+"een aantal ander mogelijkheden."
 
 #: ../release.xml.in.h:11
 msgid ""
@@ -162,13 +162,17 @@ msgid "Goodbye"
 msgstr "Tot ziens"
 
 #: ../release.xml.in.h:15
+msgid "Help will be included when Kahya implentation is complete."
+msgstr ""
+
+#: ../release.xml.in.h:16
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr ""
 "Hier worden de opties van de installatie getoond voordat de installatie "
 "begint."
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:17
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -189,7 +193,7 @@ msgstr ""
 "het systeem en deze zal ook automatisch geconfigureerd worden. Alleen het "
 "printen van de documenten is nodig."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:18
 msgid ""
 "In this screen, you can manually partition your disk. You can select "
 "existing partitions and resize or delete them. You can create new partition"
@@ -211,11 +215,11 @@ msgstr ""
 "br&gt;Voor meer informatie over schijfindeling zie de installatie- en "
 "gebruikershandleiding van Pardus.&lt;/font&gt;"
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:19
 msgid "Installing Pardus"
 msgstr "Bezig met installeren van Pardus"
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:20
 msgid ""
 "KDE is the desktop choice of Pardus, a software collection for desktop use "
 "with hundreds, even thousands of programs targeting different purposes. For "
@@ -226,11 +230,11 @@ msgid ""
 "suggest lightweight, faster yet less feature-rich desktop experience."
 msgstr ""
 
-#: ../release.xml.in.h:20
-msgid "Kahya is working"
-msgstr "Kahya is bezig"
-
 #: ../release.xml.in.h:21
+msgid "Kahya"
+msgstr ""
+
+#: ../release.xml.in.h:22
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
 "Kontact is a seamless integration of a number of applications to achieve a "
@@ -251,7 +255,7 @@ msgstr ""
 "notities van uw taken op het bureaublad aan te maken of deze daar naar toe "
 "te slepen."
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:23
 msgid ""
 "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
 "gives a stable, fast and free office experience while all your software and "
@@ -265,18 +269,30 @@ msgstr ""
 "Op zoek naar een oplossing voor kantoortoepassingen? LibreOffice is onze "
 "suggestie! LibreOffice geeft een stabiele, snelle en vrije kantoorervaring "
 "terwijl alle software en documenten compatibel blijven met alle andere "
-"belangrijke aanbieders. Daar de bron van LibreOffice van jarenlange "
-"open-source office-ervaring afkomstig is, is de eerste stabiele uitgave veel "
+"belangrijke aanbieders. Daar de bron van LibreOffice van jarenlange open-"
+"source office-ervaring afkomstig is, is de eerste stabiele uitgave veel "
 "krachtiger en concurrerend met Writer voor tekstdocumenten, Calc voor "
 "rekenbladen en Impress voor presentaties.&lt;br&gt;&lt;br&gt;Pardus levert "
 "dit geweldige officepakket met een aantal verbeteringen en toevoegingen voor "
 "een betere ervaring."
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:24
 msgid "Manual Partitioning"
 msgstr "Handmatig partitioneren"
 
 #: ../release.xml.in.h:25
+msgid ""
+"Multiple users can share the same computer safely with Pardus. An "
+"administrator account will be set automatically (which is root). You can add "
+"new users in this screen. The first user will be granted administrative "
+"authorization if you don't revoke them. Revoking administrative rights, "
+"custom user ID setting, and a few other options can be accessed from "
+"Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user "
+"accounts, you can call User Manager in the System Settings after "
+"installation."
+msgstr ""
+
+#: ../release.xml.in.h:27
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -297,28 +313,7 @@ msgstr ""
 "als capaciteit.&lt;br&gt;&lt;br&gt;Pardus biedt ook andere vrije browsers "
 "aan inclusief Chromium, Konqueror of zelfs Opera."
 
-#: ../release.xml.in.h:26
-msgid ""
-"Pardus allows multiple users to share the same computer.You can assign "
-"management rights to the users you create; you can alsoconfigure permissions "
-"to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To "
-"create a new user, fill in the form and press the &quot;Create User&quot; "
-"button.If you want a user to be automatically logged in to the system, "
-"select the user from the list; if you want to delete a user, select his/her "
-"username from the list and press &quot;Delete Selected User&quot;.Proceed "
-"with the installation after you make your selections."
-msgstr ""
-"Pardus maakt het mogelijk om meerdere gebruikers dezelfde computer te laten "
-"delen. U kunt beheersrechten toestaan aan de gebruikers die u aanmaakt; en u "
-"kunt ook in Gebruikersbeheer toestemming geven aan gebruikers om "
-"verschillende handelingen te verrichten.&lt;br&gt;&lt;br&gt;Om een nieuwe "
-"gebruiker aan te maken, vul het formulier in en klik op &quot;Gebruiker "
-"toevoegen&quot;. Indien u een gebruiker automatisch wilt laten inloggen, "
-"selecteer deze gebruiker in de lijst; als u een gebruiker wilt verwijderen, "
-"selecteer de naam in de lijst en klik op &quot;Verwijder geselecteerde "
-"gebruiker&quot;. Ga door met de installatie na het maken van uw keuze."
-
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -333,7 +328,7 @@ msgstr ""
 "aangepast zijn. Tijdens de installatie worden enkele van de kenmerken "
 "getoond..."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:29
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -347,7 +342,7 @@ msgstr ""
 "beheerders kunnen individueel gestart worden en ook vanuit Systeembeheer, "
 "een enkele toepassing voor alle administratieve en instellingentaken."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice "
@@ -368,21 +363,17 @@ msgstr ""
 "voorkeur voor GNU Publieke Licentie (GPL versie 2) voor eigengemaakte "
 "hulpmiddelen en is ook de meest algemene licentie voor de geselecteerde "
 "componenten. Alle licentieteksten zijn in dit scherm te lezen na het "
-"selecteren van de licentienamen of op onze eigen website. "
-"&lt;br&gt;&lt;br&gt;Het is nodig om deze voorwaarden te accepteren om Pardus "
-"op de computer te installeren."
+"selecteren van de licentienamen of op onze eigen website. &lt;br&gt;&lt;"
+"br&gt;Het is nodig om deze voorwaarden te accepteren om Pardus op de "
+"computer te installeren."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
 msgstr "Partitiemethode selecteren"
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid "Select a Drive to Install Pardus"
 msgstr "Selecteer een schijf om Pardus op te installeren"
-
-#: ../release.xml.in.h:32
-msgid "Some help messages"
-msgstr "Enkele helpberichten"
 
 #: ../release.xml.in.h:33
 msgid "Summary"
@@ -412,46 +403,29 @@ msgstr ""
 "behulp van Kaptan na de eerste start."
 
 #: ../release.xml.in.h:35
+#, fuzzy
 msgid ""
-"Validate action, checks if the packages in the medium are consistent in "
-"Pardus you may validate the integrity of installation packages. A failed "
-"validation usually is a sign of a badly mastered installation medium (CD, "
-"DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium "
-"(i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) "
-"mode, at a lower speed (4x for DVD, 8-12x for CD)."
+"Validation checks if the packages in the medium are consistent with the "
+"repository by file verification method. A failed validation usually is a "
+"sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;"
+"br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try "
+"burning the installation image using DAO (Disc-at-once) mode, at a lower "
+"speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 "Validatie controleert de pakketten op het medium op fouten. Hier kan de "
 "integriteit van de installatiepakketten gecontroleerd worden. Een mislukte "
-"controle komt meestal door een fout op het installatiemedium (CD, DVD of "
-"USB-opslag).&lt;br&gt;&lt;br&gt;Bij het maken van een optisch "
-"installatiemedium (CD/DVD), probeer DAO (Disc-at-once) modus te gebruiken en "
-"op een lagere snelheid (4x voor DVD, 8-12x voor CD)."
+"controle komt meestal door een fout op het installatiemedium (CD, DVD of USB-"
+"opslag).&lt;br&gt;&lt;br&gt;Bij het maken van een optisch installatiemedium "
+"(CD/DVD), probeer DAO (Disc-at-once) modus te gebruiken en op een lagere "
+"snelheid (4x voor DVD, 8-12x voor CD)."
 
 #: ../release.xml.in.h:36
-msgid "Welcome to Pardus"
-msgstr "Welkom bij Pardus"
+msgid "Welcome back..."
+msgstr ""
 
 #: ../release.xml.in.h:37
-msgid ""
-"Welcome to Pardus that contains many easy-to-use software components. You "
-"can do everything you need to, including, but not limited to, connecting to "
-"the Internet, creating documents, playing games, listening to music using "
-"Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
-"installation of Pardus to your computer in few and easy steps and then do "
-"what is necessary to identify and configure your hardware. We advise you to "
-"backup your data in your disk(s) before starting with the installation.&lt;"
-"br&gt;&lt;br&gt;You can start the installation process (and step in on a "
-"free world) by pressing the Next button."
-msgstr ""
-"Welkom bij Pardus  met veel gemakkelijk te gebruiken software. U kunt "
-"hiermee werkelijk alles doen inclusief (maar niet beperkt tot) gebruikmaken "
-"van het internet, creëren van documenten, spelletjes spelen, en muziek "
-"luisteren met Pardus.&lt;br&gt;&lt;br&gt;Deze toepassing zal u in enkele "
-"makkelijke stappen helpen met de installatie van Pardus  op uw computer en "
-"zal al het noodzakelijke doen om uw hardware te identificeren. Wij raden u "
-"aan uw gegevens op te slaan voor we beginnen met de installatie.&lt;br&gt;"
-"&lt;br&gt;U kunt het installatieproces beginnen (en de vrije wereld "
-"binnenstappen) door op Volgende te klikken."
+msgid "Welcome to Pardus"
+msgstr "Welkom bij Pardus"
 
 #: ../release.xml.in.h:38
 msgid ""
@@ -526,22 +500,24 @@ msgid ""
 msgstr ""
 "Er is een portaal voor ondersteuning en hulp bij de installatie en het "
 "gebruik van Pardus. Dit portaal is te vinden op www.pardus-linux.nl/ en in "
-"de Wiki (http://pardus-wiki.org/) is meer informatie te vinden. "
-"&lt;br&gt;Indien u vragen heeft, is het forum de plaats waar u deze kan "
-"stellen. Voor de gebruiker die de Turkse taal kunnen lezen is er voor "
-"ondersteuning ook nog www.ozgurlukicin.com"
+"de Wiki (http://pardus-wiki.org/) is meer informatie te vinden. &lt;br&gt;"
+"Indien u vragen heeft, is het forum de plaats waar u deze kan stellen. Voor "
+"de gebruiker die de Turkse taal kunnen lezen is er voor ondersteuning ook "
+"nog www.ozgurlukicin.com"
 
 #: ../release.xml.in.h:43
+#, fuzzy
 msgid ""
-"You need to define a password for the &quot;root&quot; user which is the "
-"conventional name of the user who has all rights and permissions (to all "
-"files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;"
-"Your password must be easy to remember but strong enough to resist possible "
-"attacks.You can use capital and lower-case letters, numbers and punctuation "
-"marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname "
-"for your computer. A hostname is an identifier assigned to your computer. As "
-"your computer will be recognized with this name in the local network, it is "
-"recommended to select a descriptive hostname."
+"You need to set the &quot;root&quot; account password. &quot;root&quot; is "
+"the conventional name of the administrator user who has all rights and "
+"permissions (to all files and programs) in all modes (single or multi-user)."
+"&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough "
+"to resist possible attacks. You can use capital and lower-case letters, "
+"numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can "
+"also define a hostname for your computer. A hostname is an identifier "
+"assigned to your computer. As your computer will be recognized with this "
+"name in the local network, it is recommended to select a descriptive "
+"hostname."
 msgstr ""
 "U dient een wachtwoord in te stellen voor de &quot; root&quot; gebruiker, "
 "dit is de gebruikelijke naam van de gebruiker die alle rechten en "
@@ -560,6 +536,63 @@ msgid ""
 "to use for installation. In the next step, you will be able to choose "
 "between different partitioning options."
 msgstr ""
+
+#: ../release.xml.in.h:45
+msgid ""
+"You've installed and booted Pardus successfully... Just a few clicks left... "
+"Pardus supports multiple users on the same system. So you need to create at "
+"least one user and set the system wide configurations. So you will be able "
+"to login and enjoy Pardus..."
+msgstr ""
+
+#~ msgid "Kahya is working"
+#~ msgstr "Kahya is bezig"
+
+#~ msgid ""
+#~ "Pardus allows multiple users to share the same computer.You can assign "
+#~ "management rights to the users you create; you can alsoconfigure "
+#~ "permissions to users for various operations through User Manager.&lt;"
+#~ "br&gt;&lt;br&gt;To create a new user, fill in the form and press the "
+#~ "&quot;Create User&quot; button.If you want a user to be automatically "
+#~ "logged in to the system, select the user from the list; if you want to "
+#~ "delete a user, select his/her username from the list and press &quot;"
+#~ "Delete Selected User&quot;.Proceed with the installation after you make "
+#~ "your selections."
+#~ msgstr ""
+#~ "Pardus maakt het mogelijk om meerdere gebruikers dezelfde computer te "
+#~ "laten delen. U kunt beheersrechten toestaan aan de gebruikers die u "
+#~ "aanmaakt; en u kunt ook in Gebruikersbeheer toestemming geven aan "
+#~ "gebruikers om verschillende handelingen te verrichten.&lt;br&gt;&lt;br&gt;"
+#~ "Om een nieuwe gebruiker aan te maken, vul het formulier in en klik op "
+#~ "&quot;Gebruiker toevoegen&quot;. Indien u een gebruiker automatisch wilt "
+#~ "laten inloggen, selecteer deze gebruiker in de lijst; als u een gebruiker "
+#~ "wilt verwijderen, selecteer de naam in de lijst en klik op &quot;"
+#~ "Verwijder geselecteerde gebruiker&quot;. Ga door met de installatie na "
+#~ "het maken van uw keuze."
+
+#~ msgid "Some help messages"
+#~ msgstr "Enkele helpberichten"
+
+#~ msgid ""
+#~ "Welcome to Pardus that contains many easy-to-use software components. You "
+#~ "can do everything you need to, including, but not limited to, connecting "
+#~ "to the Internet, creating documents, playing games, listening to music "
+#~ "using Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
+#~ "installation of Pardus to your computer in few and easy steps and then do "
+#~ "what is necessary to identify and configure your hardware. We advise you "
+#~ "to backup your data in your disk(s) before starting with the installation."
+#~ "&lt;br&gt;&lt;br&gt;You can start the installation process (and step in "
+#~ "on a free world) by pressing the Next button."
+#~ msgstr ""
+#~ "Welkom bij Pardus  met veel gemakkelijk te gebruiken software. U kunt "
+#~ "hiermee werkelijk alles doen inclusief (maar niet beperkt tot) "
+#~ "gebruikmaken van het internet, creëren van documenten, spelletjes spelen, "
+#~ "en muziek luisteren met Pardus.&lt;br&gt;&lt;br&gt;Deze toepassing zal u "
+#~ "in enkele makkelijke stappen helpen met de installatie van Pardus  op uw "
+#~ "computer en zal al het noodzakelijke doen om uw hardware te "
+#~ "identificeren. Wij raden u aan uw gegevens op te slaan voor we beginnen "
+#~ "met de installatie.&lt;br&gt;&lt;br&gt;U kunt het installatieproces "
+#~ "beginnen (en de vrije wereld binnenstappen) door op Volgende te klikken."
 
 #~ msgid ""
 #~ "KDE is the stage of the production, where all the audience see the "
