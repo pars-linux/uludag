@@ -49,9 +49,8 @@ msgid "Configure Bootloader"
 msgstr "Önyükleyiciyi Yapılandırın"
 
 #: ../release.xml.in.h:9
-#, fuzzy
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
-msgstr "Tarih ve saat ayarları bilgisayarınızın tarih ve saatinizi ayarlamanıza izin verir. Genellikle, otomatik olarak gün ışığından tasarruf edebilmek için bölgenizin doğru zaman dilimini ayarlayabileceğiniz bir seçim yapmak isteyebilirsiniz.&lt;br&gt;&lt;br&gt;Bir zaman bölgesi bir örnek standart zamana sahip olan bir ülkedir ve bu yer genellikle yerel zaman bölgesi olarak belirtilir. Adet olduğu üzere, zaman ayarları kendi yerel zamanını hesaplayarak UTC ile senkronize biçimde oluşturulur."
+msgstr "Tarih ve saat ayarları bilgisayarınızın tarih ve saatini ayarlamanızı sağlar. Yaz saati/kış saati uygulamalarında saatinizin otomatik olarak ayarlanması için doğru zaman dilimini de seçmelisiniz. &lt;br&gt;&lt;br&gt;Zaman dilimleri, bölgesel olarak belirlenmiş standart zaman ayarları sunar ve genellikle yerel saat olarak anılır. Adet olduğu üzere, zaman ayarları kendi yerel zamanını hesaplayarak UTC ile eş zamanlı biçimde oluşturulur."
 
 #: ../release.xml.in.h:10
 msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
@@ -95,11 +94,11 @@ msgstr "Pardus kuruluyor"
 
 #: ../release.xml.in.h:20
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
-msgstr ""
+msgstr "Pardus masaüstü için değişik amaçlara yönelik yüzlerce, binlerce programdan oluşan bir yazılım koleksiyonu olan KDE'yi tercih ediyor. KDE son kullanıcıların gündelik ihtiyaçlarından, kurumsal entegre çözümlere kadar yüksek performanslı ve kolay kullanılır çözümler sunuyor.&lt;br&gt;&lt;br&gt;Pardus tarafından geliştirilen araçların da KDE uyumlu yazılması nedeniyle, bu masaüstü ortamını kullanmanız önerilir. Bununla birlikte, daha hafif ve hızlı ama daha özellik sunan Xfce, Enlightenment gibi alternatifler de kullanabilirsiniz."
 
 #: ../release.xml.in.h:21
 msgid "Kahya"
-msgstr ""
+msgstr "Kahya"
 
 #: ../release.xml.in.h:22
 #, fuzzy
@@ -185,9 +184,8 @@ msgid "You may have questions or need help... Özgürlükİçin community portal
 msgstr "Pardus'la ilgili sorularınız, yardıma ihtiyacınız olabilir... Özgürlükİçin portalı sizi bekliyor. Portal her seviyeden kullanıcının bir araya geldiği ve deneyimlerini, birikimlerini paylaştığı bir alan. Bunların yanında kılavuzlar, uygulamaları, oyunları tanıtan yazılar da bulabilirsiniz.&lt;br&gt;Soracaklarınız için forumdan da yararlanmanız mümkün. eğer herhangi bir desteğe ihtiyacınız var ya da yeni kullanıcılarla kendi deneyimlerinizi paylaşmak isterseniz mutlaka www.ozgurlukicin.com adresine uğramalısınız."
 
 #: ../release.xml.in.h:43
-#, fuzzy
 msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr "Şu anda &quot;root&quot; kullanıcısı için bir şifre belirlemeniz gerekmektedir, root kullanıcısının tüm dosyalar ve programlar için tam yetkili hak ve izinlere sahip olacağını ve bu yetkilerin tüm kipleri (tek kullanıcı veya çok kullanıcı) kapsayacağına dikkatinizi çekeriz.&lt;br&gt;&lt;br&gt;Şifreniz olası saldırılara karşı dirence sahip olan hem hatırlaması kolay fakat yeterince güçlü olmalıdır. Şifrenizde büyük ve küçük harfler, numaralar ve noktalama işaretleri kullanabilirsiniz.&lt;br&gt;&lt;br&gt;Ayrıca bilgisayarınız için bir bilgisayar adı belirleyebilirsiniz. Sunucu adı bilgisayarınıza atanmış bir tanımlayıcıdır. Yerel ağda bu adla tanınacağınız için, size özel bir tanımlayıcı bilgisayar adı oluşturmanızı tavsiye ederiz."
+msgstr "Yönetici haklarına sahip kullanıcı geleneksel olarak &quot;root&quot; ismiyle çağrılır. Bu kullanıcı için bir parola belirlemeniz gerekmektedir, root kullanıcısının her dosya ve program için tam yetkili hak ve izinlere sahip olacağına ve bu yetkilerin tüm kipleri (tek kullanıcı veya çok kullanıcı) kapsayacağına dikkatinizi çekeriz. &lt;br&gt;&lt;br&gt;Parolanız olası saldırılar açısından karmaşık ama hatırlayabileceğiniz kadar kolay olmalıdır. Parolanızda büyük ve küçük harfleri, numaraları ve noktalama işaretlerini kullanabilirsiniz. &lt;br&gt;&lt;br&gt;Bu ekranda ayrıca bilgisayarınız için bir isim belirleyebilirsiniz. Bu isim bilgisayarınızı ağ üzerinde tanımlayacağı için, görevi ya da kullanıcısını tarif eden bir isim öneririz."
 
 #: ../release.xml.in.h:44
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
