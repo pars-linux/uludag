@@ -15,3 +15,4 @@ New Contributors
    faq-about-translations.rst
    newcontributor_mentors.rst
    developer_roles.rst
+   tester_roles.rst
