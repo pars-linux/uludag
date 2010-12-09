@@ -23,11 +23,14 @@ repoList = (
 ''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
 repos = {}
 
-options = {"uc":False, "nm":False, "r":False, "cc": False}
+options = {"uc":False, "nm":False, "r":False}
 
 ''' This stores packager list maintaining same package in different distributions  '''
-''' Structure : { package_name -> [packager_mail1,..,packager_mailX]}  '''
+''' Structure : { package_name -> [packager_name1,..,packager_nameX]}  '''
 conflictList = {}
+
+''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
+distroList = []
 
 ''' Modify here if necessary '''
 reportFile = "report"
@@ -51,12 +54,10 @@ def printHelp(detail=False, retVal=-1):
               "\t%-20s%-50s\n" %("--usecache", "Use the cached pisi index files compressed as 'xz' or 'bz2' format. Use without <repoURL>"),\
               "\t%-20s%-50s\n" %("--nomail", "Prevent the util from sending e-mail to packagers"),\
               "\t%-20s%-50s\n" %("--report", "Dump the output into a file named 'report'"),\
-              "\t%-20s%-50s\n\n" %("--conflictcheck", "Check whether or not a package is maintained by different packagers"),\
               "\t%-20s%-50s\n" %("-h", "Short option for 'help'"),\
               "\t%-20s%-50s\n" %("-uc", "Short option for 'usecache'"),\
               "\t%-20s%-50s\n" %("-nm", "Short option for 'nomail'"),\
               "\t%-20s%-50s\n" %("-r", "Short option for 'report'"),\
-              "\t%-20s%-50s\n" %("-cc", "Short option for 'conflictcheck'")
 
     sys.exit(retVal)
 
@@ -74,7 +75,6 @@ def processCmdLine():
             if option == "usecache": options["uc"] = True
             elif option == "nomail": options["nm"] = True
             elif option == "report": options["r"] = True
-            elif option == "conflictcheck": options["cc"] = True
             else:
                 printHelp(True)
         elif arg.startswith("-"):
@@ -106,9 +106,6 @@ def processCmdLine():
 
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
-    ''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
-    distroList = []
-
     pisiIndex = pisi.index.Index()
     for order, repo in enumerate(repoList):
         if options["uc"]:
@@ -146,16 +143,78 @@ def fetchRepos():
 
             ''' We may have multiple packagers as owner of the same package residing on different repositories '''
             ''' In that case, we need to mark the package as in conflict and be aware of it while sending mail to the packager '''
-            ''' Guarding the code not to do extra redundant computation  '''
-            if options["cc"]:
-                if conflictList.has_key(spec.source.name):
-                    if not spec.source.packager.email in conflictList[spec.source.name]:
-                        conflictList[spec.source.name].append(spec.source.packager.email)
-                else:
-                    conflictList[spec.source.name] = [spec.source.packager.email]
+            if conflictList.has_key(spec.source.name):
+                if not spec.source.packager.name in conflictList[spec.source.name]:
+                    conflictList[spec.source.name].append(spec.source.packager.name)
+            else:
+                conflictList[spec.source.name] = [spec.source.packager.name]
 
-''' This function returns a string including status info about all packages of a packager  '''
+''' This function creates a repo entry whose structure is specified below for given repo, say 2009 or 2011  '''
+''' repoEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch]  '''
+def createRepoEntry(packager, package, repo):
+    order = repos[packager][package][3].index(repo)
+    repoEntry = [
+                    packager,
+                    repos[packager][package][4],
+                    repos[packager][package][0][order][0],
+                    repos[packager][package][0][order][1],
+                    repos[packager][package][1][order],
+                    repos[packager][package][2][order]                                                                                                                                                                                                              ]
+    return repoEntry
+
+''' This function compares list items addressed with index argument and returns false if difference is detected  '''
+def isListContentSame(summaryList, index):
+    for i in summaryList:
+        for j in summaryList:
+            if not i[index] == j[index]:
+                return "Different"
+
+    return "Same"
+
+''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
+def createStanza(summaryList):
+    sectionList = ("Email", "Packager(s)", "Release(s)", "Version(s)", "Number of patch", "Number of Package")
+    content = ""
+
+    ''' Indexing to traverse summaryList as in sectionList manner  '''
+    for i in range(6):
+        tmpContent = ""; comment = ""; incomplete = False
+        ''' İgnoring the first item in sectionList, because will handle it in nex iteration  '''
+        if i == 0: break
+        for distro in distroList:
+            if summaryList[distro]:
+                if i == 1:
+                    tmpContent = "%s\n\t%s: %s %s" %(tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
+                else:
+                    tmpContent = "%s\n\t%s: %s" %(tmpContent, distro, summaryList[distro][i])
+            else:
+                incomplete = True
+        if incomplete:
+            comment = "%s %s " %(comment, "Incomplete")
+        comment = "%s %s " %(comment, isListContentSame(summaryList, i))
+
+    return content
+
 def prepareContentBody(packager):
+    content = ""
+    for package in repos[packager].keys():
+        summaryList = []
+        repoEntry = []
+        for distro in distroList:
+            if distro in repos[packager][package][3]:
+                repoEntry = createRepoEntry(packager, package, distro)
+            elif len(conflictList[package]) > 1:
+                for pckgr in conflictList[package]:
+                    if distro in repos[pckgr][package][3]:
+                        repoEntry = createRepoEntry(pckgr, package, distro)
+            summaryList.append(repoEntry)
+        content = "%s\n\n%s\n%s\n%s" %(content, package, len(package) * "-", createStanza(summaryList))
+
+    return content
+
+# Remove this later
+''' This function returns a string including status info about all packages of a packager  '''
+def suppressprepareContentBody(packager):
     content = "|%s|\n" %(230 * "-")
     for package in repos[packager].keys():
         for order, distro in enumerate(repos[packager][package][3]):
@@ -164,20 +223,17 @@ def prepareContentBody(packager):
                 content = "%s|%-50s|" %(content, package)
 
                 ''' Conflict check  '''
-                if options["cc"]:
-                    conflictComment = "No"
-                    ''' Check if  there are  multiple packagers maintaining the same package'''
-                    if len(conflictList[package]) > 1:
-                        ''' Packager may have more than one e-mail address  '''
-                        tmpConflictList = list(conflictList[package])
-                        for mail in repos[packager][package][4]:
-                            if mail in conflictList[package]:
-                                ''' Excluding packagers' own mail addresses without breaking conflict list '''
-                                tmpConflictList.remove(mail)
-                        if len(tmpConflictList) > 1:
-                            conflictComment = "Yes, please contact with %s" %(tmpConflictList)
-                else:
-                    conflictComment = "N/A"
+                conflictComment = "No"
+                ''' Check if  there are  multiple packagers maintaining the same package'''
+                if len(conflictList[package]) > 1:
+                    ''' Packager may have more than one e-mail address  '''
+                    tmpConflictList = list(conflictList[package])
+                    for mail in repos[packager][package][4]:
+                        if mail in conflictList[package]:
+                            ''' Excluding packagers' own mail addresses without breaking conflict list '''
+                            tmpConflictList.remove(mail)
+                    if len(tmpConflictList) > 1:
+                        conflictComment = "Yes, please contact with %s" %(tmpConflictList)
             else:
                 content = "%s|%-50s|" % (content, " ")
                 conflictComment = ""
@@ -216,7 +272,7 @@ def sendMail(receiverList, contentBody):
 
     try:
         for receiver in receiverList:
-            if receiver == "x@pardus.org.tr":
+            if receiver == "farslan@pardus.org.tr":
                 smtp = smtplib.SMTP(mailServer)
                 msg["To"] = receiver
                 smtp.ehlo()
