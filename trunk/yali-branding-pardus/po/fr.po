@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: ../release.xml.in.h:1
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
@@ -66,7 +66,6 @@ msgid "Dolphin is the file manager of KDE and so Pardus. It gives a great set of
 msgstr "Dolphin est le gestionnaire de fichiers de KDE et ainsi de Pardus. Il donne un grand ensemble de fonctionnalités, où elle devient surprenant qu'un simple gestionnaire de fichiers peut avoir de nombreuses fonctionnalités. &lt;br&gt; Vous pouvez diviser une fenêtre Dolphin par des colonnes d'organiser vos fichiers en comparant ... Ou vous pouvez utiliser n'importe quelle application KDE, car ils peuvent travailler dans Dolpin embarqués. Ainsi, vous pouvez éditer un fichier image dans votre gestionnaire de fichiers avec toutes les fonctionnalités de Gwenview, le visualiseur d'images ou de prévisualiser une vidéo dans le panneau d'information facultative et personnalisable."
 
 #: ../release.xml.in.h:12
-#, fuzzy
 msgid "Double check your installation medium"
 msgstr "Vérifiez votre support d'installation"
 
@@ -173,7 +172,7 @@ msgstr "Ici, vous pouvez valider l'intégrité des paquets d'installation. Une v
 
 #: ../release.xml.in.h:36
 msgid "Welcome back..."
-msgstr ""
+msgstr "De retour..."
 
 #: ../release.xml.in.h:37
 msgid "Welcome to Pardus"
@@ -205,12 +204,14 @@ msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; i
 msgstr "&lt;p&gt;Vous devez définir un mot de passe pour l'utilisateur &quot;root&quot; qui est le nom conventionnel de l'utilisateur qui a tous les droits et autorisations (sur tous les fichiers et programmes) dans tous les modes (simple ou multi-utilisateurs). &lt;/p&gt;&lt;p&gt; Votre mot de passe doit être facile à retenir, mais assez fort pour résister aux attaques. Il est recommandé d'utiliser les lettres majuscules et minuscules, chiffres et signes de ponctuation dans votre mot de passe. &lt;/p&gt;&lt;p&gt;Vous pouvez également définir un nom pour votre ordinateur. Un nom est un identifiant pour votre ordinateur. Comme votre ordinateur sera reconnu avec ce nom dans le réseau local, il est recommandé de choisir un nom d'hôte descriptif.&lt;/p&gt;"
 
 #: ../release.xml.in.h:44
+#, fuzzy
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
-msgstr ""
+msgstr "Vous aurez besoin d'au moins 4GBs d'espace disque non partitionné-utilisé ou d'un disque pour installer Pardus (10 Go recommandé). S'il vous plaît sélectionnez le disque que vous souhaitez utiliser pour l'installation. Dans l'étape suivante, vous pourrez choisir entre différentes options de partitionnement."
 
 #: ../release.xml.in.h:45
+#, fuzzy
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr ""
+msgstr "Vous avez installé et démarré avec succès Pardus ... En quelques clics gauche ... Pardus supporte plusieurs utilisateurs sur le même système. Donc, vous devez créer au moins un utilisateur et de configurer le système configurations de large. Ainsi, vous pourrez vous connecter et profiter Pardus ..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya travaille"
