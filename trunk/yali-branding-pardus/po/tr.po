@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-09 14:13+0000\n"
+"POT-Creation-Date: 2010-12-09 20:04+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -191,7 +191,7 @@ msgstr ""
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr ""
+msgstr "Pardus'u başarıyla kurdunuz ve sistemi yeniden başlattınız...Sadece birkaç tıklama daha kaldı...Pardus, aynı sistemde birden fazla kullanıcı oluşturma imkanı verir. En az bir adet kullanıcı oluşturmak ve tüm sistem ayarlarını yapmalısınız. Böylece Pardus'ta oturum açarak taze sistemin tadını çıkarabilirsiniz..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya çalışıyor"
