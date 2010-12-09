@@ -35,7 +35,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
     icon = "iconPartition"
     helpSummary = _("Choose a Package Collection")
     help = _('''
-<p>
+<p>Pardus offers various applications, libraries and tools. You can install and try these alternatives through the package manager whenever you want. In this step, you can briefly choose a collection of the offered alternatives, so the installation will be completed upon your request and 
 </p>
 ''')
 

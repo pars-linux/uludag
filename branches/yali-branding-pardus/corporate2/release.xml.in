@@ -25,7 +25,7 @@
             <name>mediaCheck</name>
             <_title>Double check your installation medium</_title>
             <icon>media-optical-small</icon>
-            <_help>Validate action, checks if the packages in the medium are consistent in Pardus you may validate the integrity of installation packages. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</_help>
+            <_help>Validation checks if the packages in the medium are consistent with the repository by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</_help>
         </screen>
         <screen>
             <name>keyboardSetup</name>

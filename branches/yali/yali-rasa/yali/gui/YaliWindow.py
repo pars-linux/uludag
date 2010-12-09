@@ -139,17 +139,17 @@ class Widget(QtGui.QWidget):
     def slotMenu(self, action):
         if action == self.shutDownAction:
             reply = QuestionDialog(_("Warning"),
-                                   _("Are you sure you want to shut down your computer now?"))
+                                   _("Do you want to shut down your computer now?"))
             if reply == "yes":
                 yali.util.shutdown()
         elif action == self.rebootAction:
             reply = QuestionDialog(_("Warning"),
-                                   _("Are you sure you want to restart your computer now?"))
+                                   _("Do you want to restart your computer now?"))
             if reply == "yes":
                 yali.util.reboot()
         else:
             reply = QuestionDialog(_("Warning"),
-                                   _("Are you sure you want to restart the YALI installer now?"))
+                                   _("Do you want to restart the YALI installer now?"))
             if reply == "yes":
                 os.execv("/usr/bin/yali-bin", sys.argv)
 
