@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>382</height>
+    <height>292</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -40,18 +40,18 @@
         <property name="text">
          <string>Title</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>4</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineTitle"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_6">
-        <property name="text">
+       <widget class="QLineEdit" name="lineTitle">
+        <property name="placeholderText">
          <string>Name of the boot entry to be shown at the boot menu.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -78,17 +78,23 @@
         <property name="text">
          <string>Disk</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>4</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineDisk"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Disk that contains operating system.</string>
+       <widget class="QComboBox" name="lineDisk">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
-        <property name="wordWrap">
+        <property name="editable">
          <bool>true</bool>
         </property>
        </widget>
@@ -116,18 +122,18 @@
         <property name="text">
          <string>Kernel</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>4</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineKernel"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
+       <widget class="QLineEdit" name="lineKernel">
+        <property name="placeholderText">
          <string>Operating system kernel.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -154,18 +160,18 @@
         <property name="text">
          <string>Ramdisk File</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>4</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineRamdisk"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
+       <widget class="QLineEdit" name="lineRamdisk">
+        <property name="placeholderText">
          <string>File that contains a micro operating system for preloading kernel modules.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -192,18 +198,18 @@
         <property name="text">
          <string>Boot Options</string>
         </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+        <property name="margin">
+         <number>4</number>
+        </property>
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineOptions"/>
-      </item>
-      <item row="1" column="1">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
+       <widget class="QLineEdit" name="lineOptions">
+        <property name="placeholderText">
          <string>Boot options for operating system.</string>
-        </property>
-        <property name="wordWrap">
-         <bool>true</bool>
         </property>
        </widget>
       </item>
