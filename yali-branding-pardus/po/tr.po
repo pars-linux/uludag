@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-08 16:26+0200\n"
+"POT-Creation-Date: 2010-12-09 16:12+0200\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -177,12 +177,16 @@ msgid "Goodbye"
 msgstr "Hoşça kalın"
 
 #: ../release.xml.in.h:15
+msgid "Help will be included when Kahya implentation is complete."
+msgstr ""
+
+#: ../release.xml.in.h:16
 #, fuzzy
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr "Kuruluma geçmeden önce tercihlerinizi topluca gözden geçirebilirsiniz."
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:17
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -203,7 +207,7 @@ msgstr ""
 "ayarlanmasına yeter. Bundan sonra tek yapmanız gereken belgenizi yazdırmak "
 "olacaktır."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:18
 msgid ""
 "In this screen, you can manually partition your disk. You can select "
 "existing partitions and resize or delete them. You can create new partition"
@@ -225,11 +229,11 @@ msgstr ""
 "daha fazla bilgi için lütfen Pardus Kurulum ve Kullanım Kılavuzu'na göz "
 "atınız.&lt;/font&gt;"
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:19
 msgid "Installing Pardus"
 msgstr "Pardus kuruluyor"
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:20
 msgid ""
 "KDE is the desktop choice of Pardus, a software collection for desktop use "
 "with hundreds, even thousands of programs targeting different purposes. For "
@@ -240,11 +244,11 @@ msgid ""
 "suggest lightweight, faster yet less feature-rich desktop experience."
 msgstr ""
 
-#: ../release.xml.in.h:20
-msgid "Kahya is working"
-msgstr "Kahya çalışıyor"
-
 #: ../release.xml.in.h:21
+msgid "Kahya"
+msgstr ""
+
+#: ../release.xml.in.h:22
 #, fuzzy
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
@@ -266,7 +270,7 @@ msgstr ""
 "belirten notları masaüstüne sürükleyerek yapışkan notlara çevirebilir, ya da "
 "notlarınızı Kontact'a sürükleyip görevler atayabilirsiniz."
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:23
 msgid ""
 "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
 "gives a stable, fast and free office experience while all your software and "
@@ -286,11 +290,23 @@ msgstr ""
 "&lt;br&gt;&lt;br&gt;Pardus'da paketlerken bir dizi iyileştirme ve eklentiyi "
 "de dahil ederek, deneyiminizi daha da iyi hale getirmeyi hedefledik."
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:24
 msgid "Manual Partitioning"
 msgstr "Elle Biçimlendirme"
 
 #: ../release.xml.in.h:25
+msgid ""
+"Multiple users can share the same computer safely with Pardus. An "
+"administrator account will be set automatically (which is root). You can add "
+"new users in this screen. The first user will be granted administrative "
+"authorization if you don't revoke them. Revoking administrative rights, "
+"custom user ID setting, and a few other options can be accessed from "
+"Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user "
+"accounts, you can call User Manager in the System Settings after "
+"installation."
+msgstr ""
+
+#: ../release.xml.in.h:27
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -312,28 +328,7 @@ msgstr ""
 "olarak Chromium, Konqueror, hatta Opera gibi kullanımı özgür tarayıcılar da "
 "bulunur."
 
-#: ../release.xml.in.h:26
-msgid ""
-"Pardus allows multiple users to share the same computer.You can assign "
-"management rights to the users you create; you can alsoconfigure permissions "
-"to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To "
-"create a new user, fill in the form and press the &quot;Create User&quot; "
-"button.If you want a user to be automatically logged in to the system, "
-"select the user from the list; if you want to delete a user, select his/her "
-"username from the list and press &quot;Delete Selected User&quot;.Proceed "
-"with the installation after you make your selections."
-msgstr ""
-"Pardus birden fazla kullanıcının aynı bilgisayarı paylaşmasına olanak "
-"tanımaktadır.Oluşturduğunuz kullanıcılara yönetim hakları atayabilir; ayrıca "
-"Kullanıcı Yöneticisi ile farklı işlemler için kullanıcıların izinlerini "
-"yapılandırabilirsiniz.&lt;br&gt;&lt;br&gt;Yeni bir kullanıcı oluşturmak "
-"için, formu doldurun ve &quot;Kullanıcı Oluştur&quot; düğmesine basınız.Eğer "
-"bir kullanıcının sisteme otomatik olarak girmesini istiyorsanız, bu "
-"kullanıcıyı listeden seçiniz; eğer bir kullanıcıyı silmek istiyorsanız, "
-"kullanıcı adını listeden seçiniz ve &quot;Seçilmiş Kullanıcıyı Sil&quot; "
-"şıkkına basınız.Seçimlerinizi yaptıktan sonra kuruluma devam ediniz."
-
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -348,7 +343,7 @@ msgstr ""
 "değiştiklerini söylemek mümkün. Kurulum sırasında bu tür özelliklere göz "
 "atabilirsiniz..."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:29
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -362,7 +357,7 @@ msgstr ""
 "yönetim ve yapılandırma araçlarıyla birlikte Sistem Ayarları altında "
 "bulabilirsiniz."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:30
 #, fuzzy
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
@@ -387,17 +382,13 @@ msgstr ""
 "&lt;br&gt;Pardus'u bilgisayarınıza kurmak için koşulları kabul etmeniz "
 "gerekmektedir."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
 msgstr "Bölümleme Yöntemini Seçiniz"
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid "Select a Drive to Install Pardus"
 msgstr "Pardus'un kurulacağı Sürücüyü Seçiniz"
-
-#: ../release.xml.in.h:32
-msgid "Some help messages"
-msgstr "Bazı yardım iletileri"
 
 #: ../release.xml.in.h:33
 msgid "Summary"
@@ -427,12 +418,12 @@ msgstr ""
 #: ../release.xml.in.h:35
 #, fuzzy
 msgid ""
-"Validate action, checks if the packages in the medium are consistent in "
-"Pardus you may validate the integrity of installation packages. A failed "
-"validation usually is a sign of a badly mastered installation medium (CD, "
-"DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium "
-"(i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) "
-"mode, at a lower speed (4x for DVD, 8-12x for CD)."
+"Validation checks if the packages in the medium are consistent with the "
+"repository by file verification method. A failed validation usually is a "
+"sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;"
+"br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try "
+"burning the installation image using DAO (Disc-at-once) mode, at a lower "
+"speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 "Buradan kurulacak paketlerin doğruluğunu denetleyebilirsiniz. Başarısız bir "
 "doğrulama bozuk bir kurulum ortamının (CD, DVD veya USB yükleme aygıtı) "
@@ -441,30 +432,12 @@ msgstr ""
 "hızda (DVD için 4x, CD için 8-12x hızında) yazmayı deneyin."
 
 #: ../release.xml.in.h:36
-msgid "Welcome to Pardus"
-msgstr "Pardus'a Hoş Geldiniz"
+msgid "Welcome back..."
+msgstr ""
 
 #: ../release.xml.in.h:37
-msgid ""
-"Welcome to Pardus that contains many easy-to-use software components. You "
-"can do everything you need to, including, but not limited to, connecting to "
-"the Internet, creating documents, playing games, listening to music using "
-"Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
-"installation of Pardus to your computer in few and easy steps and then do "
-"what is necessary to identify and configure your hardware. We advise you to "
-"backup your data in your disk(s) before starting with the installation.&lt;"
-"br&gt;&lt;br&gt;You can start the installation process (and step in on a "
-"free world) by pressing the Next button."
-msgstr ""
-"Kolay kullanılan birçok yazılımı içeren Pardus'a hoş geldiniz. Pardus "
-"kullanarak İnternet'e bağlanmak, belgeler  oluşturmak, oyunlar oynamak, "
-"müzik dinlemek gibi temel kullanımlardan tutun da ihtiyacınız olan pek çok "
-"uygulamayı çalıştırabilirsiniz.&lt;br&gt;&lt;br&gt;Bu uygulama size "
-"bilgisayarınıza Pardus'u bir kaç kolay adımda kurmanıza yardımcı olacak ve "
-"donanımınızın tanınmasını ve yapılandırılması için gerekenleri yapacaktır. "
-"Kuruluma başlamadan önce disk(ler)inizdeki verilerinizi yedeklemenizi "
-"öneririz.&lt;be&gt;&lt;br&gt;Kuruluma başlamak (ve özgür dünyaya ilk "
-"adımınızı atmak için) için Sonraki düğmesine tıklayabilirsiniz."
+msgid "Welcome to Pardus"
+msgstr "Pardus'a Hoş Geldiniz"
 
 #: ../release.xml.in.h:38
 msgid ""
@@ -546,15 +519,16 @@ msgstr ""
 #: ../release.xml.in.h:43
 #, fuzzy
 msgid ""
-"You need to define a password for the &quot;root&quot; user which is the "
-"conventional name of the user who has all rights and permissions (to all "
-"files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;"
-"Your password must be easy to remember but strong enough to resist possible "
-"attacks.You can use capital and lower-case letters, numbers and punctuation "
-"marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname "
-"for your computer. A hostname is an identifier assigned to your computer. As "
-"your computer will be recognized with this name in the local network, it is "
-"recommended to select a descriptive hostname."
+"You need to set the &quot;root&quot; account password. &quot;root&quot; is "
+"the conventional name of the administrator user who has all rights and "
+"permissions (to all files and programs) in all modes (single or multi-user)."
+"&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough "
+"to resist possible attacks. You can use capital and lower-case letters, "
+"numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can "
+"also define a hostname for your computer. A hostname is an identifier "
+"assigned to your computer. As your computer will be recognized with this "
+"name in the local network, it is recommended to select a descriptive "
+"hostname."
 msgstr ""
 "Şu anda &quot;root&quot; kullanıcısı için bir şifre belirlemeniz "
 "gerekmektedir, root kullanıcısının tüm dosyalar ve programlar için tam "
@@ -575,6 +549,64 @@ msgid ""
 "to use for installation. In the next step, you will be able to choose "
 "between different partitioning options."
 msgstr ""
+
+#: ../release.xml.in.h:45
+msgid ""
+"You've installed and booted Pardus successfully... Just a few clicks left... "
+"Pardus supports multiple users on the same system. So you need to create at "
+"least one user and set the system wide configurations. So you will be able "
+"to login and enjoy Pardus..."
+msgstr ""
+
+#~ msgid "Kahya is working"
+#~ msgstr "Kahya çalışıyor"
+
+#~ msgid ""
+#~ "Pardus allows multiple users to share the same computer.You can assign "
+#~ "management rights to the users you create; you can alsoconfigure "
+#~ "permissions to users for various operations through User Manager.&lt;"
+#~ "br&gt;&lt;br&gt;To create a new user, fill in the form and press the "
+#~ "&quot;Create User&quot; button.If you want a user to be automatically "
+#~ "logged in to the system, select the user from the list; if you want to "
+#~ "delete a user, select his/her username from the list and press &quot;"
+#~ "Delete Selected User&quot;.Proceed with the installation after you make "
+#~ "your selections."
+#~ msgstr ""
+#~ "Pardus birden fazla kullanıcının aynı bilgisayarı paylaşmasına olanak "
+#~ "tanımaktadır.Oluşturduğunuz kullanıcılara yönetim hakları atayabilir; "
+#~ "ayrıca Kullanıcı Yöneticisi ile farklı işlemler için kullanıcıların "
+#~ "izinlerini yapılandırabilirsiniz.&lt;br&gt;&lt;br&gt;Yeni bir kullanıcı "
+#~ "oluşturmak için, formu doldurun ve &quot;Kullanıcı Oluştur&quot; "
+#~ "düğmesine basınız.Eğer bir kullanıcının sisteme otomatik olarak girmesini "
+#~ "istiyorsanız, bu kullanıcıyı listeden seçiniz; eğer bir kullanıcıyı "
+#~ "silmek istiyorsanız, kullanıcı adını listeden seçiniz ve &quot;Seçilmiş "
+#~ "Kullanıcıyı Sil&quot; şıkkına basınız.Seçimlerinizi yaptıktan sonra "
+#~ "kuruluma devam ediniz."
+
+#~ msgid "Some help messages"
+#~ msgstr "Bazı yardım iletileri"
+
+#~ msgid ""
+#~ "Welcome to Pardus that contains many easy-to-use software components. You "
+#~ "can do everything you need to, including, but not limited to, connecting "
+#~ "to the Internet, creating documents, playing games, listening to music "
+#~ "using Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
+#~ "installation of Pardus to your computer in few and easy steps and then do "
+#~ "what is necessary to identify and configure your hardware. We advise you "
+#~ "to backup your data in your disk(s) before starting with the installation."
+#~ "&lt;br&gt;&lt;br&gt;You can start the installation process (and step in "
+#~ "on a free world) by pressing the Next button."
+#~ msgstr ""
+#~ "Kolay kullanılan birçok yazılımı içeren Pardus'a hoş geldiniz. Pardus "
+#~ "kullanarak İnternet'e bağlanmak, belgeler  oluşturmak, oyunlar oynamak, "
+#~ "müzik dinlemek gibi temel kullanımlardan tutun da ihtiyacınız olan pek "
+#~ "çok uygulamayı çalıştırabilirsiniz.&lt;br&gt;&lt;br&gt;Bu uygulama size "
+#~ "bilgisayarınıza Pardus'u bir kaç kolay adımda kurmanıza yardımcı olacak "
+#~ "ve donanımınızın tanınmasını ve yapılandırılması için gerekenleri "
+#~ "yapacaktır. Kuruluma başlamadan önce disk(ler)inizdeki verilerinizi "
+#~ "yedeklemenizi öneririz.&lt;be&gt;&lt;br&gt;Kuruluma başlamak (ve özgür "
+#~ "dünyaya ilk adımınızı atmak için) için Sonraki düğmesine "
+#~ "tıklayabilirsiniz."
 
 #~ msgid ""
 #~ "KDE is the stage of the production, where all the audience see the "
