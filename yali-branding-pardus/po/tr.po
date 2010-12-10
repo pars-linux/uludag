@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 07:07+0000\n"
+"POT-Creation-Date: 2010-12-10 08:03+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../release.xml.in.h:1
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
-msgstr "Önyükleyici, bilgisayar açıldığında çalışan ve işletim sistemini bilgisayarın hafızasına yükleyerek kontrolü onaa aktaran minik bir yazılımdır.&lt;br&gt;&lt;br&gt;Pardus ön tanımlı olarak GRUB (GRand Unified Bootloader) önyükleyiciyi kullanır. GRUB, bilgisayar açıldığında desteklenen işletim sistemlerini ve açılış seçeneklerini seçebileceğiniz bir menü sunar. &lt;br&gt;&lt;br&gt; Tavsiye edilen kurulum şekli, açılış diskinin ilk bölümüne kurulmasıdır. Eğer ne yaptığınızı biliyorsanız &quot;Gelişmiş Seçenekler&quot; ile farklı kurulum yöntemlerinden birini her zaman seçebilirsiniz."
+msgstr "Önyükleyici, bilgisayar açıldığında çalışan ve işletim sistemini bilgisayarın hafızasına yükleyerek kontrolü ona aktaran minik bir yazılımdır. &lt;br&gt;&lt;br&gt;Pardus ön tanımlı olarak GRUB (GRand Unified Bootloader) önyükleyiciyi kullanır. GRUB, bilgisayar açıldığında desteklenen işletim sistemlerini ve bunlara ait açılış seçeneklerini bir menü ile sunar. &lt;br&gt;&lt;br&gt; GRUB için tavsiye edilen yöntem, açılış diskinin ilk bölümüne kurulmasıdır. Eğer ne yaptığınızı biliyorsanız &quot;Gelişmiş Seçenekler&quot; ile farklı kurulum yöntemlerinden birini de her zaman seçebilirsiniz."
 
 #: ../release.xml.in.h:2
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
