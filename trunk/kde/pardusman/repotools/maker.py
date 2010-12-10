@@ -532,7 +532,7 @@ def make_image(project):
 
         obj.setUser(0, "", "", "", "pardus", "", dbus_interface="tr.org.pardus.comar.User.Manager")
         if project.type != "install":
-            obj.addUser(1000, "pars", "Panter Pardus", "/home/pars", "/bin/bash", "pardus", ["wheel", "users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"], [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
+            obj.addUser(1000, "pars", "Panter Pardus", "/home/pars", "/bin/bash", "pardus", ["wheel", "users", "lp", "lpadmin", "cdrom", "floppy", "disk", "audio", "video", "power", "dialout"], [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
 
         chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
 
