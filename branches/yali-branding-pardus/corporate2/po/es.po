@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 09:39+0200\n"
+"POT-Creation-Date: 2010-12-10 10:40+0200\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -126,6 +126,10 @@ msgid "Goodbye"
 msgstr "Adios"
 
 #: ../release.xml.in.h:12
+msgid "Help will be included when Kahya implentation is complete."
+msgstr ""
+
+#: ../release.xml.in.h:13
 #, fuzzy
 msgid ""
 "Here you can review your options before the installation process starts."
@@ -133,7 +137,7 @@ msgstr ""
 "Aquí puede ver las opciones de instalación antes del comienzo de la "
 "instalación."
 
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:14
 #, fuzzy
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
@@ -154,7 +158,7 @@ msgstr ""
 "Conéctela a su sistema y se configurará automáticamente. Todo lo que "
 "necesita hacer es simplemente imprimir sus documentos."
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:15
 msgid ""
 "In this screen, you can manually partition your disk. You can select "
 "existing partitions and resize or delete them. You can create new partition"
@@ -174,11 +178,15 @@ msgstr ""
 "la configuración.&lt;/p&gt;&lt;p&gt;Por favor consulte la documentación de "
 "instalación por más información sobre particionamiento de discos."
 
-#: ../release.xml.in.h:15
+#: ../release.xml.in.h:16
+msgid "Initial Settings"
+msgstr ""
+
+#: ../release.xml.in.h:17
 msgid "Installing Pardus"
 msgstr "Instalando Pardus"
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:18
 msgid ""
 "KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE "
 "from the beginning you can see how this knowledge reflects on a powerful "
@@ -188,11 +196,11 @@ msgid ""
 "work space for administration of the system."
 msgstr ""
 
-#: ../release.xml.in.h:17
-msgid "Kahya is working"
-msgstr "Kahya se está ejecutando"
+#: ../release.xml.in.h:19
+msgid "Kahya"
+msgstr ""
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:20
 #, fuzzy
 msgid ""
 "Konqueror, carries the web experience into desktop. You can use many web-"
@@ -210,7 +218,7 @@ msgstr ""
 "cualquier ubicación de la red local o de internet. De tál manera puede "
 "acceder a direcciones remotas como si fueran directorios del disco local."
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:21
 #, fuzzy
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
@@ -232,7 +240,7 @@ msgstr ""
 "notas recordatorios (sticky notes) en su escritorio con las tareas, "
 "sencillamente arrastrandolos, o vice versa."
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:22
 #, fuzzy
 msgid ""
 "Looking for a production suite? Our suggestion is OpenOffice! OpenOffice "
@@ -252,11 +260,11 @@ msgstr ""
 "viene este paquete estupendo de office con una serie de mejoras y agregados "
 "para una mejor experiencia aún."
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:23
 msgid "Manual Partitioning"
 msgstr "Particionamiento Manual"
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:24
 msgid ""
 "Most of the users need a talented file manager for every day use. Konqueror "
 "is a great solution for integration of every day tasks. &lt;br&gt;&lt;br&gt;"
@@ -265,7 +273,19 @@ msgid ""
 "with archive files etc."
 msgstr ""
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:25
+msgid ""
+"Multiple users can share the same computer safely with Pardus. An "
+"administrator account will be set automatically (which is root). You can add "
+"new users in this screen. The first user will be granted administrative "
+"authorization if you don't revoke them. Revoking administrative rights, "
+"custom user ID setting, and a few other options can be accessed from "
+"Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user "
+"accounts, you can call User Manager in the System Settings after "
+"installation."
+msgstr ""
+
+#: ../release.xml.in.h:27
 #, fuzzy, no-c-format
 msgid ""
 "Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high "
@@ -287,7 +307,7 @@ msgstr ""
 "además ofrece otros navegadores libres, incluyendo Chromium, Konqueror o "
 "incluso Opera."
 
-#: ../release.xml.in.h:25
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
 "with a long term support. You can still enjoy the powerful parade of all "
@@ -296,27 +316,7 @@ msgid ""
 "these features..."
 msgstr ""
 
-#: ../release.xml.in.h:26
-msgid ""
-"Pardus allows multiple users to share the same computer.You can assign "
-"management rights to the users you create; you can alsoconfigure permissions "
-"to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To "
-"create a new user, fill in the form and press the &quot;Create User&quot; "
-"button.If you want a user to be automatically logged in to the system, "
-"select the user from the list; if you want to delete a user, select his/her "
-"username from the list and press &quot;Delete Selected User&quot;.Proceed "
-"with the installation after you make your selections."
-msgstr ""
-"Pardus permite que varios usuarios comparten la misma computadora. Puede "
-"asignar privilegios de administrador a los usuarios nuevos. En el "
-"Administrador de Usuarios puede establecer permisos para varias operaciones."
-"&lt;/p&gt;&lt;p&gt; Para crear un usuario complete el formulario y presione "
-"&quot;Crear usuario&quot;. Se desea que un usuario determinado se loguée "
-"automáticamente en el sistema puede seleccionarle de la lista. Si desea "
-"eliminar un usuario, puede seleccionarlo y presionar &quot;Eliminar usuario "
-"seleccionado&quot;. Proceda con la instalación luego de completar los datos."
-
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:29
 #, fuzzy
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
@@ -332,7 +332,7 @@ msgstr ""
 "configuración del sistema, una sola aplicación que integra las herramientas "
 "para todas las tareas de administración y configuración."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:30
 #, fuzzy
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
@@ -359,23 +359,19 @@ msgstr ""
 "nuestro sitio web. &lt;br&gt;&lt;br&gt;Debe aceptar los términos al instalar "
 "Pardus en su computadora."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
 msgstr "Selección de Método de Particionamiento"
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:32
 msgid "Select a Drive to Install Pardus"
 msgstr "Selección de disco para la instalación de Pardus"
 
-#: ../release.xml.in.h:31
-msgid "Some help messages"
-msgstr "Mensajes de Ayuda "
-
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:33
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:34
 #, fuzzy
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
@@ -398,7 +394,7 @@ msgstr ""
 "con pocos clics. Puede accederlo desde el menú del sistema, el cual puede "
 "utilizar en una de sus versiones según su elección en el asistente Kaptan!"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:35
 #, fuzzy
 msgid ""
 "Validation checks if the packages in the medium are consistent with the "
@@ -414,31 +410,9 @@ msgstr ""
 "está utilizando un medio óptico, intente volver a grabarlo usando el modo "
 "DAO (Disc-at-once), con una velocidad más baja (4x para DVD, 8-12x para CD)."
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:36
 msgid "Welcome to Pardus"
 msgstr "Bienvenido a Pardus"
-
-#: ../release.xml.in.h:36
-msgid ""
-"Welcome to Pardus that contains many easy-to-use software components. You "
-"can do everything you need to, including, but not limited to, connecting to "
-"the Internet, creating documents, playing games, listening to music using "
-"Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
-"installation of Pardus to your computer in few and easy steps and then do "
-"what is necessary to identify and configure your hardware. We advise you to "
-"backup your data in your disk(s) before starting with the installation.&lt;"
-"br&gt;&lt;br&gt;You can start the installation process (and step in on a "
-"free world) by pressing the Next button."
-msgstr ""
-"Bienvenido a Pardus. Pardus contiene muchos componentes de software de "
-"utilización fácil. Con Pardus puede hacer todo lo que necesita, por ejemplo "
-"cnectarse a internet, crear documentos, jugar, escuchar musica.&lt;/p&gt;&lt;"
-"p&gt; El presente programa le guiará con la instalación de Pardus en su "
-"computadora de manera fácil y sencilla, y posteriormente detectará y "
-"configurará el hardware. Le consejamos realizar un backup de los datos de "
-"sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;p&gt; Puede "
-"empezar el proceso de instalación (y hacer un paso al mundo libre) "
-"presionando el botón Siguiente."
 
 #: ../release.xml.in.h:37
 msgid ""
@@ -485,15 +459,16 @@ msgstr ""
 #: ../release.xml.in.h:40
 #, fuzzy
 msgid ""
-"You need to define a password for the &quot;root&quot; user which is the "
-"conventional name of the user who has all rights and permissions (to all "
-"files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;"
-"Your password must be easy to remember but strong enough to resist possible "
-"attacks.You can use capital and lower-case letters, numbers and punctuation "
-"marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname "
-"for your computer. A hostname is an identifier assigned to your computer. As "
-"your computer will be recognized with this name in the local network, it is "
-"recommended to select a descriptive hostname."
+"You need to set the &quot;root&quot; account password. &quot;root&quot; is "
+"the conventional name of the administrator user who has all rights and "
+"permissions (to all files and programs) in all modes (single or multi-user)."
+"&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough "
+"to resist possible attacks. You can use capital and lower-case letters, "
+"numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can "
+"also define a hostname for your computer. A hostname is an identifier "
+"assigned to your computer. As your computer will be recognized with this "
+"name in the local network, it is recommended to select a descriptive "
+"hostname."
 msgstr ""
 "Debe definir una contraseña para el usuario &quot;root&quot; que es el "
 "nombre convencional para el usuario con privilegios totales (sobre archivos "
@@ -512,6 +487,62 @@ msgid ""
 "to use for installation. In the next step, you will be able to choose "
 "between different partitioning options."
 msgstr ""
+
+#: ../release.xml.in.h:42
+msgid ""
+"You've installed and booted Pardus successfully... Just a few clicks left... "
+"Pardus supports multiple users on the same system. So you need to create at "
+"least one user and set the system wide configurations. So you will be able "
+"to login and enjoy Pardus..."
+msgstr ""
+
+#~ msgid "Kahya is working"
+#~ msgstr "Kahya se está ejecutando"
+
+#~ msgid ""
+#~ "Pardus allows multiple users to share the same computer.You can assign "
+#~ "management rights to the users you create; you can alsoconfigure "
+#~ "permissions to users for various operations through User Manager.&lt;"
+#~ "br&gt;&lt;br&gt;To create a new user, fill in the form and press the "
+#~ "&quot;Create User&quot; button.If you want a user to be automatically "
+#~ "logged in to the system, select the user from the list; if you want to "
+#~ "delete a user, select his/her username from the list and press &quot;"
+#~ "Delete Selected User&quot;.Proceed with the installation after you make "
+#~ "your selections."
+#~ msgstr ""
+#~ "Pardus permite que varios usuarios comparten la misma computadora. Puede "
+#~ "asignar privilegios de administrador a los usuarios nuevos. En el "
+#~ "Administrador de Usuarios puede establecer permisos para varias "
+#~ "operaciones.&lt;/p&gt;&lt;p&gt; Para crear un usuario complete el "
+#~ "formulario y presione &quot;Crear usuario&quot;. Se desea que un usuario "
+#~ "determinado se loguée automáticamente en el sistema puede seleccionarle "
+#~ "de la lista. Si desea eliminar un usuario, puede seleccionarlo y "
+#~ "presionar &quot;Eliminar usuario seleccionado&quot;. Proceda con la "
+#~ "instalación luego de completar los datos."
+
+#~ msgid "Some help messages"
+#~ msgstr "Mensajes de Ayuda "
+
+#~ msgid ""
+#~ "Welcome to Pardus that contains many easy-to-use software components. You "
+#~ "can do everything you need to, including, but not limited to, connecting "
+#~ "to the Internet, creating documents, playing games, listening to music "
+#~ "using Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the "
+#~ "installation of Pardus to your computer in few and easy steps and then do "
+#~ "what is necessary to identify and configure your hardware. We advise you "
+#~ "to backup your data in your disk(s) before starting with the installation."
+#~ "&lt;br&gt;&lt;br&gt;You can start the installation process (and step in "
+#~ "on a free world) by pressing the Next button."
+#~ msgstr ""
+#~ "Bienvenido a Pardus. Pardus contiene muchos componentes de software de "
+#~ "utilización fácil. Con Pardus puede hacer todo lo que necesita, por "
+#~ "ejemplo cnectarse a internet, crear documentos, jugar, escuchar musica."
+#~ "&lt;/p&gt;&lt;p&gt; El presente programa le guiará con la instalación de "
+#~ "Pardus en su computadora de manera fácil y sencilla, y posteriormente "
+#~ "detectará y configurará el hardware. Le consejamos realizar un backup de "
+#~ "los datos de sus discos antes de avanzar con la instalación.&lt;/p&gt;&lt;"
+#~ "p&gt; Puede empezar el proceso de instalación (y hacer un paso al mundo "
+#~ "libre) presionando el botón Siguiente."
 
 #, fuzzy
 #~ msgid ""
