@@ -10,6 +10,7 @@ import piksemel
 import pisi
 import smtplib
 from email.mime.text import MIMEText
+from optparse import OptionParser
 
 ''' URLs of Repositories  '''
 repoList = (
@@ -23,7 +24,7 @@ repoList = (
 ''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
 repos = {}
 
-options = {"uc":False, "nm":False, "r":False}
+options = None
 
 ''' This stores packager list maintaining same package in different distributions  '''
 ''' Structure : { package_name -> [packager_name1,..,packager_nameX]}  '''
@@ -43,7 +44,8 @@ columns = "|%-50s|%-30s|%-10s|%-20s|%-10s|%-10s|%-100s|" %("Package", "Distro", 
 contentHeader = "%s%s" %("Here is a summary about your packages reside on different repositories.\nPlease, take action based on summary column below.\n\n\t\t\t\t\t***PACKAGES***\n", columns)
 contentFooter = "You are getting this e-mail because you have packages in our repositories. If you think you shouldn't receive this e-mail please contact with %s" %(mailSender)
 
-def printHelp(detail=False, retVal=-1):
+# Remove this later
+def suppressprintHelp(detail=False, retVal=-1):
     print "This is a notifier script to give detailed info to packagers about their packages.\nUsage:\n"\
           "\tpackage-diff-notify [options] [<repoURL1> <repoURL2> ... <repoURLx>]\n"
 
@@ -61,7 +63,8 @@ def printHelp(detail=False, retVal=-1):
 
     sys.exit(retVal)
 
-def processCmdLine():
+# Remove this later
+def suppressprocessCmdLine():
     global repoList, options
     repoListTemp = []
 
@@ -104,11 +107,47 @@ def processCmdLine():
             repoList = []
             repoList.extend(repoListTemp)
 
+def processCmdLine():
+    global options
+    args = []
+
+    ''' Initialization option parser object '''
+    usageStr = "Usage: package-diff-notify [options] [repoURL [repoURL ...]]"
+    desStr = "This is a notifier script to give detailed info to packagers about their packages."
+    epiStr = "repoURL:\t  compressed pisi-index file path in URL format as xz or bz2"
+    tmp = "Use 'xz' or 'bz2' files."
+
+    parser = OptionParser(prog = "package-diff-notify", version = "%prog 1.0", usage = usageStr, description = desStr, epilog = epiStr)
+    parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
+    parser.add_option("-n", "--nomail", dest = "nomail", action = "store_true", default = False, help = "prevent the util from sending e-mail to packagers")
+    parser.add_option("-r", "--report", dest = "report", action = "store_true", default = False, help = "dump the output into separate files")
+
+    ''' Parsing the command line '''
+    (options, args) = parser.parse_args()
+
+    if options.uselocal and args:
+        parser.print_help()
+        return -1
+    else:
+        if options.uselocal:
+            repoList = []
+            ''' In cwd, only .bz2 and .xz files are considered for now  '''
+            for root, dirs, files in os.walk(os.getcwd()):
+                for name in files:
+                    if name.endswith(".bz2") or name.endswith(".xz"):
+                        repoList.append(name)
+            if not repoList:
+                parser.print_help()
+                return -1
+        elif args:
+            repoList = args
+
+
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
     pisiIndex = pisi.index.Index()
     for order, repo in enumerate(repoList):
-        if options["uc"]:
+        if options.uselocal:
             ''' Use the local index files '''
             if repo.endswith(".bz2"):
                 decompressedIndex = bz2.decompress(file(repo).read())
@@ -298,19 +337,19 @@ def traverseRepos():
     for packager in repos.keys():
         contentBody = prepareContentBody(packager)
 
-        if not options["nm"]:
+        if not options.nomail:
             receiverMailList = prepareReceiverMailList(packager)
             if sendMail(receiverMailList, contentBody):
                 print "Send mail to %s failed." %(receiverMailList)
 
-        if options["r"]:
+        if options.report:
             fp = open(packager, "w")
             fp.write("%s" %(contentBody))
 
-if __name__ == "__main__":
-
-    if len(sys.argv) > 1:
-        processCmdLine()
-
+def main():
+    if processCmdLine(): return -1
     fetchRepos()
     traverseRepos()
+
+if __name__ == "__main__":
+    sys.exit(main())
