@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/bootloader.png</file>
+    <file>gui/pics/bootloader-big.png</file>
+    <file>gui/pics/summary.png</file>
+    <file>gui/pics/summary-big.png</file>
     <file>gui/pics/corporate.png</file>
     <file>gui/pics/corporate2.png</file>
     <file>gui/pics/kafa.png</file>
