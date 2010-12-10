@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-09 20:04+0000\n"
+"POT-Creation-Date: 2010-12-10 07:07+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -114,7 +114,7 @@ msgstr "Elle Biçimlendirme"
 
 #: ../release.xml.in.h:25
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
-msgstr ""
+msgstr "Pardus birden çok kullanıcının aynı bilgisayarı güvenle kullanmasını sağlar. Yönetici hesabı (ki ismi root olur) otomatik olarak ayarlanacak. Siz de bu ekranı kullanarak yeni kullanıcı ekleyebilirsiniz. İlk eklenen kullanıcı, aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. Bu yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi basit seçeneklere Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; Kurulumdan sonra kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem Ayarlarında Kullanıcı Yöneticisini bulabilirsiniz."
 
 #: ../release.xml.in.h:27
 #, no-c-format
@@ -187,7 +187,7 @@ msgstr "Yönetici haklarına sahip kullanıcı geleneksel olarak &quot;root&quot
 
 #: ../release.xml.in.h:44
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
-msgstr ""
+msgstr "Pardus kurmak için bölünlenmemiş-kullanılmayan en az 4GB boş alana ya da diske ihtiyacınız var (10GB ve üzeri daha iyi sonuç verir). Lütfen kurulumu gerçekleştireceğiniz diski seçin. Sonraki adımda bölümlendirme konusunda değişik seçeneklerden yararlanabileceksiniz."
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
