@@ -327,6 +327,10 @@ def copyPisiIndex(project):
         copyCollectionIcon(project)
 
     # Copy All Collection Packages index as pisi index dvd and default cd installation
+    yali_data_dir = os.path.join(image_dir, "usr/share/yali/data")
+    if not os.path.exists(yali_data_dir):
+        print "Creating data directory for YALI..."
+        run('mkdir -p %s' % yali_data_dir)
     path = os.path.join(image_dir, "usr/share/yali/data/%s" % os.path.basename(project.repo_uri))
     repo = os.path.join(project.work_dir, "repo_cache/%s" % os.path.basename(project.repo_uri))
 
@@ -466,7 +470,7 @@ def make_image(project):
         run('umount %s/proc' % image_dir, ignore_error=True)
         run('umount %s/sys' % image_dir, ignore_error=True)
         image_dir = project.image_dir(clean=True)
-        run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
+        run('pisi --yes-all -D"%s" ar pardus-install %s --ignore-check' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
             if project.all_install_image_packages:
                 install_image_packages = " ".join(project.all_install_image_packages)
