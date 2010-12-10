@@ -3,9 +3,9 @@
     <screens>
         <screen>
             <name>kahya</name>
-            <_title>Kahya is working</_title>
+            <_title>Kahya</_title>
             <icon></icon>
-            <_help> Some help messages </_help>
+            <_help> Help will be included when Kahya implentation is complete. </_help>
         </screen>
         <screen>
             <name>license</name>
@@ -17,9 +17,9 @@
        </screen>
        <screen>
             <name>welcome</name>
-            <_title>Welcome to Pardus</_title>
+            <_title>Initial Settings</_title>
             <icon>applications-other</icon>
-            <_help>Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.&lt;br&gt;&lt;br&gt;This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.&lt;br&gt;&lt;br&gt;You can start the installation process (and step in on a free world) by pressing the Next button.</_help>
+            <_help>You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus...</_help>
         </screen>
         <screen>
             <name>mediaCheck</name>
@@ -43,13 +43,13 @@
             <name>accounts</name>
             <_title>Add Users</_title>
             <icon>users</icon>
-            <_help>Pardus allows multiple users to share the same computer.You can assign management rights to the users you create; you can alsoconfigure permissions to users for various operations through User Manager.&lt;br&gt;&lt;br&gt;To create a new user, fill in the form and press the &quot;Create User&quot; button.If you want a user to be automatically logged in to the system, select the user from the list; if you want to delete a user, select his/her username from the list and press &quot;Delete Selected User&quot;.Proceed with the installation after you make your selections.</_help>
+            <_help>Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't  revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation.</_help>
         </screen>
         <screen>
             <name>admin</name>
             <_title>Choose an Administrator Password and a Hostname</_title>
             <icon>admin</icon>
-            <_help>You need to define a password for the &quot;root&quot; user which is the conventional name of the user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks.You can use capital and lower-case letters, numbers and punctuation marks in your password.&lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname.</_help>
+            <_help>You need to set the &quot;root&quot; account password. &quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname.</_help>
         </screen>
         <screen>
             <name>driveSelection</name>
