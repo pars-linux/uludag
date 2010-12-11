@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: E17\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
 "POT-Creation-Date: 2010-10-03 18:09+0900\n"
-"PO-Revision-Date: 2010-02-18 15:21+0200\n"
+"PO-Revision-Date: 2010-12-11 09:32+0200\n"
 "Last-Translator: H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -6189,9 +6189,8 @@ msgstr "Sistem Kontrolü Tamam"
 #: src/modules/everything-aspell/e_mod_main.c:462
 #: src/modules/everything-aspell/e_mod_main.c:595
 #: src/modules/everything-aspell/e_mod_main.c:614
-#, fuzzy
 msgid "Everything Aspell"
-msgstr "Her şey"
+msgstr ""
 
 #: src/modules/everything-aspell/e_mod_main.c:481
 msgid "Spell checker"
@@ -6219,9 +6218,8 @@ msgid "Copy To ..."
 msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1392
-#, fuzzy
 msgid "Move To ..."
-msgstr "Daha çok..."
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1397
 msgid "Move to Trash"
@@ -6236,57 +6234,47 @@ msgid "Sort by Date"
 msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1410
-#, fuzzy
 msgid "Sort by Name"
-msgstr "Şimdi Sırala"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1442
 #: src/modules/everything-files/e_mod_main.c:1451
-#, fuzzy
 msgid "Recent Files"
-msgstr "Dosyayı Yeniden Adlandır"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1528
 #: src/modules/everything-files/e_mod_main.c:1659
 #: src/modules/everything-files/e_mod_main.c:1680
-#, fuzzy
 msgid "Everything Files"
-msgstr "Her şey"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1551
-#, fuzzy
 msgid "Show home directory"
-msgstr "Üst Dizine Git"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1555
-#, fuzzy
 msgid "Show recent files"
-msgstr "Gizli Dosyaları Göster"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1559
-#, fuzzy
 msgid "Search recent files"
-msgstr "Arama Dizinleri"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1563
-#, fuzzy
 msgid "Search cached files"
-msgstr "Arama Yolu Ayarları"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1567
-#, fuzzy
 msgid "Cache visited directories"
-msgstr "Kullanıcı Tanımlı Dizinler"
+msgstr ""
 
 #: src/modules/everything-files/e_mod_main.c:1571
-#, fuzzy
 msgid "Clear cache"
-msgstr "Temizle"
+msgstr ""
 
 #: src/modules/everything-settings/e_mod_main.c:194
-#, fuzzy
 msgid "Show Dialog"
-msgstr "Diyaloglar"
+msgstr ""
 
 #: src/modules/everything-windows/e_mod_main.c:428
 msgid "Switch to Window"
@@ -6519,9 +6507,8 @@ msgid "Available Gadgets"
 msgstr "Mevcut Araçlar"
 
 #: src/modules/gadman/e_mod_config.c:139
-#, fuzzy
 msgid "Mode"
-msgstr "Kipler"
+msgstr ""
 
 #: src/modules/gadman/e_mod_config.c:144 src/modules/gadman/e_mod_config.c:176
 msgid "Custom Image"
@@ -6590,29 +6577,24 @@ msgid "Previous Window"
 msgstr "Önceki Pencere"
 
 #: src/modules/winlist/e_mod_main.c:38 src/modules/winlist/e_mod_main.c:67
-#, fuzzy
 msgid "Next window of same class"
-msgstr "Pencere adı ve sınıfı"
+msgstr ""
 
 #: src/modules/winlist/e_mod_main.c:41 src/modules/winlist/e_mod_main.c:65
-#, fuzzy
 msgid "Previous window of same class"
-msgstr "Önceki Pencere"
+msgstr ""
 
 #: src/modules/winlist/e_mod_main.c:43 src/modules/winlist/e_mod_main.c:68
-#, fuzzy
 msgid "Window on the Left"
-msgstr "Farenin altındaki Pencere"
+msgstr ""
 
 #: src/modules/winlist/e_mod_main.c:45 src/modules/winlist/e_mod_main.c:69
-#, fuzzy
 msgid "Window Down"
-msgstr "Pencere Kimliği"
+msgstr ""
 
 #: src/modules/winlist/e_mod_main.c:47 src/modules/winlist/e_mod_main.c:70
-#, fuzzy
 msgid "Window Up"
-msgstr "Pencere tipi"
+msgstr ""
 
 #: src/modules/winlist/e_mod_main.c:49 src/modules/winlist/e_mod_main.c:71
 #, fuzzy
@@ -6677,9 +6659,8 @@ msgid "Properties"
 msgstr "Özellikler"
 
 #: src/modules/ibar/e_mod_main.c:813
-#, fuzzy
 msgid "Create new Icon"
-msgstr "Yeni Simge Oluştur"
+msgstr ""
 
 #: src/modules/ibox/e_mod_config.c:48
 msgid "IBox Settings"
@@ -6800,14 +6781,12 @@ msgid "Urgent popup sticks on screen"
 msgstr ""
 
 #: src/modules/pager/e_mod_config.c:260
-#, fuzzy
 msgid "Urgent popup speed"
-msgstr "Açılır hızı"
+msgstr ""
 
 #: src/modules/pager/e_mod_config.c:271
-#, fuzzy
 msgid "Urgent Windows"
-msgstr "Sonraki Pencere"
+msgstr ""
 
 #: src/modules/pager/e_mod_config.c:326 src/modules/pager/e_mod_config.c:331
 #: src/modules/pager/e_mod_config.c:335
@@ -6824,9 +6803,8 @@ msgid "Please press a mouse button<br>Press <hilight>Escape</hilight> to abort.<
 msgstr ""
 
 #: src/modules/pager/e_mod_config.c:415
-#, fuzzy
 msgid "Attention"
-msgstr "Dikkat"
+msgstr ""
 
 #: src/modules/pager/e_mod_config.c:416
 msgid "You cannot use the right mouse button in the<br>shelf for this as it is already taken by internal<br>code for context menus.<br>This button only works in the popup."
@@ -6853,9 +6831,8 @@ msgid "Popup Desk Down"
 msgstr ""
 
 #: src/modules/pager/e_mod_main.c:2831 src/modules/pager/e_mod_main.c:2870
-#, fuzzy
 msgid "Popup Desk Next"
-msgstr "Açılır hızı"
+msgstr ""
 
 #: src/modules/pager/e_mod_main.c:2833 src/modules/pager/e_mod_main.c:2871
 msgid "Popup Desk Previous"
@@ -6882,7 +6859,6 @@ msgid "Sensors"
 msgstr "Algılayıcılar"
 
 #: src/modules/temperature/e_mod_config.c:200
-#, fuzzy
 msgid "Celsius"
 msgstr "Celsius"
 
@@ -6923,7 +6899,6 @@ msgid "Low Temperature"
 msgstr "Düşük Sıcaklık"
 
 #: src/modules/temperature/e_mod_config.c:241
-#, fuzzy
 msgid "Temperatures"
 msgstr "Sıcaklık"
 
@@ -7200,24 +7175,20 @@ msgid "failure"
 msgstr "başarısız"
 
 #: src/modules/connman/e_mod_main.c:1780
-#, fuzzy
 msgid "enabled"
-msgstr "Aktif"
+msgstr "etkin"
 
 #: src/modules/connman/e_mod_main.c:1781
-#, fuzzy
 msgid "available"
-msgstr "Mevcut boşluğu doldur"
+msgstr "mevcut"
 
 #: src/modules/connman/e_mod_main.c:1782
-#, fuzzy
 msgid "connected"
-msgstr "Bağlı değil"
+msgstr "bağlı"
 
 #: src/modules/connman/e_mod_main.c:1783
-#, fuzzy
 msgid "offline"
-msgstr "Çevrimdışı"
+msgstr "çevrimdışı"
 
 #: src/modules/systray/e_mod_main.c:891
 msgid "Another systray exists"
