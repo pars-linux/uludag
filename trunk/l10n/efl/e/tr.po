@@ -1,7 +1,7 @@
 # This file is put in the public domain.
-#
+# 
 # This translator was created/edited with the Elive translation tool
-#
+# 
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -14,11 +14,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: tr\n"
 "X-Launchpad-Export-Date: 2010-02-06 04:53+0000\n"
+"Language: tr\n"
 "X-Generator: Lokalize 1.0\n"
-"X-Poedit-Bookmarks: -1,-1,-1,-1,-1,50,-1,-1,-1,-1\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Bookmarks: -1,-1,-1,-1,-1,50,-1,-1,-1,-1\n"
 
 #: src/bin/e_about.c:14
 msgid "About Enlightenment"
@@ -46,15 +46,7 @@ msgid "Enlightenment"
 msgstr "Enlightenment"
 
 #: src/bin/e_about.c:23
-msgid ""
-"Copyright &copy; 1999-2010, by the Enlightenment Development Team.<br><br>We "
-"hope you enjoy using this software as much as we enjoyed writing it."
-"<br><br>This software is provided as-is with no explicit or implied "
-"warranty. This software is governed by licensing conditions, so please see "
-"the COPYING and COPYING-PLAIN licence files installed on your system."
-"<br><br>Enlightenment is under <hilight>HEAVY DEVELOPMENT</hilight> and it "
-"is not stable. Many features are incomplete or even non-existent yet and may "
-"have many bugs. You have been <hilight>WARNED!</hilight>"
+msgid "Copyright &copy; 1999-2010, by the Enlightenment Development Team.<br><br>We hope you enjoy using this software as much as we enjoyed writing it.<br><br>This software is provided as-is with no explicit or implied warranty. This software is governed by licensing conditions, so please see the COPYING and COPYING-PLAIN licence files installed on your system.<br><br>Enlightenment is under <hilight>HEAVY DEVELOPMENT</hilight> and it is not stable. Many features are incomplete or even non-existent yet and may have many bugs. You have been <hilight>WARNED!</hilight>"
 msgstr ""
 
 #: src/bin/e_about.c:47
@@ -63,13 +55,8 @@ msgstr "<title>Takım<title>"
 
 #: src/bin/e_actions.c:366
 #, fuzzy, c-format
-msgid ""
-"You are about to kill %s.<br><br>Please keep in mind that all data from this "
-"window<br>which has not yet been saved will be lost!<br><br>Are you sure you "
-"want to kill this window?"
-msgstr ""
-"%s sonlandırmak üzeresiniz.<br><br>Bu penceredeki,<br>Kaydedilmemiş tüm veri "
-"kaybolacak!<br><br>Sonlandırmak İstediğinizden emin misiniz?"
+msgid "You are about to kill %s.<br><br>Please keep in mind that all data from this window<br>which has not yet been saved will be lost!<br><br>Are you sure you want to kill this window?"
+msgstr "%s sonlandırmak üzeresiniz.<br><br>Bu penceredeki,<br>Kaydedilmemiş tüm veri kaybolacak!<br><br>Sonlandırmak İstediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:378
 msgid "Are you sure you want to kill this window?"
@@ -96,11 +83,8 @@ msgid "Are you sure you want to exit?"
 msgstr "Çıkmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:1833
-msgid ""
-"You requested to exit Enlightenment.<br><br>Are you sure you want to exit?"
-msgstr ""
-"Enlightenment 'tan çıkmak istediniz.<br><br>Çıkmak istediğinizden emin "
-"misiniz?"
+msgid "You requested to exit Enlightenment.<br><br>Are you sure you want to exit?"
+msgstr "Enlightenment 'tan çıkmak istediniz.<br><br>Çıkmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:1928
 msgid "Are you sure you want to log out?"
@@ -108,17 +92,14 @@ msgstr "Oturumu Kapatmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:1930
 msgid "You are about to log out.<br><br>Are you sure you want to do this?"
-msgstr ""
-"Oturumu kapatmak üzeresiniz<br><br>Bunu yapmak istediğinizden emin misiniz?"
+msgstr "Oturumu kapatmak üzeresiniz<br><br>Bunu yapmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:1991 src/bin/e_actions.c:2117
 msgid "Are you sure you want to turn off?"
 msgstr "Kapatmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:1993
-msgid ""
-"You requested to turn off your Computer.<br><br>Are you sure you want to "
-"shut down?"
+msgid "You requested to turn off your Computer.<br><br>Are you sure you want to shut down?"
 msgstr "Bilgisayarınızı kapatmak istediniz.<br><br>Emin misiniz?"
 
 #: src/bin/e_actions.c:2054
@@ -126,32 +107,20 @@ msgid "Are you sure you want to reboot?"
 msgstr "Yeniden başlatmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:2056
-msgid ""
-"You requested to reboot your Computer.<br><br>Are you sure you want to "
-"restart it?"
-msgstr ""
-"Bilgisayarınızı yeniden başlatmak istediniz.<br><br>Bilgisayarı yeniden "
-"başlatmak istediğinize emin misiniz?"
+msgid "You requested to reboot your Computer.<br><br>Are you sure you want to restart it?"
+msgstr "Bilgisayarınızı yeniden başlatmak istediniz.<br><br>Bilgisayarı yeniden başlatmak istediğinize emin misiniz?"
 
 #: src/bin/e_actions.c:2119
-msgid ""
-"You requested to suspend your Computer.<br><br>Are you sure you want to "
-"suspend?"
-msgstr ""
-"Bilgisayarınızı askıya almak istediniz.<br><br>Askıya almak istediğinizden "
-"emin misiniz?"
+msgid "You requested to suspend your Computer.<br><br>Are you sure you want to suspend?"
+msgstr "Bilgisayarınızı askıya almak istediniz.<br><br>Askıya almak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:2180
 msgid "Are you sure you want to hibernate?"
 msgstr "Uyku kipine geçmek istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:2182
-msgid ""
-"You requested to hibernate your Computer.<br><br>Are you sure you want to "
-"suspend to disk?"
-msgstr ""
-"Bilgisayarınızı uyku kipine almak istediniz<br><br>Diske askıya almak "
-"istediğinizden emin misiniz?"
+msgid "You requested to hibernate your Computer.<br><br>Are you sure you want to suspend to disk?"
+msgstr "Bilgisayarınızı uyku kipine almak istediniz<br><br>Diske askıya almak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:2578 src/bin/e_actions.c:2589 src/bin/e_actions.c:2608
 #: src/bin/e_actions.c:2613 src/bin/e_actions.c:2618 src/bin/e_actions.c:2623
@@ -639,19 +608,16 @@ msgid "Delayed Action"
 msgstr "Ertelenmiş Eylem"
 
 #: src/bin/e_actions.c:2982 src/bin/e_actions.c:2986
-#, fuzzy
 msgid "Acpi"
-msgstr "Eylem"
+msgstr "Acpi"
 
 #: src/bin/e_actions.c:2982
-#, fuzzy
 msgid "Dim Screen"
-msgstr "Bu Ekran"
+msgstr ""
 
 #: src/bin/e_actions.c:2986
-#, fuzzy
 msgid "Undim Screen"
-msgstr "Bu Ekran"
+msgstr ""
 
 #: src/bin/e_bg.c:50
 msgid "Set As Background"
@@ -694,23 +660,11 @@ msgid "Cancel"
 msgstr "İptal"
 
 #: src/bin/e_config.c:933 src/bin/e_config.c:966
-msgid ""
-"Settings data needed upgrading. Your old settings have<br>been wiped and a "
-"new set of defaults initialized. This<br>will happen regularly during "
-"development, so don't report a<br>bug. This simply means Enlightenment needs "
-"new settings<br>data by default for usable functionality that your "
-"old<br>settings simply lack. This new set of defaults will fix<br>that by "
-"adding it in. You can re-configure things now to your<br>liking. Sorry for "
-"the hiccup in your settings.<br>"
+msgid "Settings data needed upgrading. Your old settings have<br>been wiped and a new set of defaults initialized. This<br>will happen regularly during development, so don't report a<br>bug. This simply means Enlightenment needs new settings<br>data by default for usable functionality that your old<br>settings simply lack. This new set of defaults will fix<br>that by adding it in. You can re-configure things now to your<br>liking. Sorry for the hiccup in your settings.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:950
-msgid ""
-"Your settings are NEWER than Enlightenment. This is very<br>strange. This "
-"should not happen unless you downgraded<br>Enlightenment or copied the "
-"settings from a place where<br>a newer version of Enlightenment was running. "
-"This is bad and<br>as a precaution your settings have been now restored "
-"to<br>defaults. Sorry for the inconvenience.<br>"
+msgid "Your settings are NEWER than Enlightenment. This is very<br>strange. This should not happen unless you downgraded<br>Enlightenment or copied the settings from a place where<br>a newer version of Enlightenment was running. This is bad and<br>as a precaution your settings have been now restored to<br>defaults. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2002
@@ -719,46 +673,27 @@ msgstr "Ayarlar Yükseltildi"
 
 #: src/bin/e_config.c:2025
 #, c-format
-msgid ""
-"An error occurred while saving Enlightenment's<br>settings to disk. The "
-"error could not be<br>deterimined.<br><br>The file where the error occurred "
-"was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
+msgid "An error occurred while saving Enlightenment's<br>settings to disk. The error could not be<br>deterimined.<br><br>The file where the error occurred was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2036
 #, c-format
-msgid ""
-"Enlightenment's settings files are too big<br>for the file system they are "
-"being saved to.<br>This error is very strange as the files should<br>be "
-"extremely small. Please check the settings<br>for your home directory."
-"<br><br>The file where the error occurred was:<br>%s<br><br>This file has "
-"been deleted to avoid corrupt data.<br>"
+msgid "Enlightenment's settings files are too big<br>for the file system they are being saved to.<br>This error is very strange as the files should<br>be extremely small. Please check the settings<br>for your home directory.<br><br>The file where the error occurred was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2049
 #, c-format
-msgid ""
-"An output error occurred when writing the settings<br>files for "
-"Enlightenment. Your disk is having troubles<br>and possibly needs "
-"replacement.<br><br>The file where the error occurred was:<br>%s<br><br>This "
-"file has been deleted to avoid corrupt data.<br>"
+msgid "An output error occurred when writing the settings<br>files for Enlightenment. Your disk is having troubles<br>and possibly needs replacement.<br><br>The file where the error occurred was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2060
 #, c-format
-msgid ""
-"Enlightenment cannot write its settings file<br>because it ran out of space "
-"to write the file.<br>You have either run out of disk space or have<br>gone "
-"over your quota limit.<br><br>The file where the error occurred was:<br>%"
-"s<br><br>This file has been deleted to avoid corrupt data.<br>"
+msgid "Enlightenment cannot write its settings file<br>because it ran out of space to write the file.<br>You have either run out of disk space or have<br>gone over your quota limit.<br><br>The file where the error occurred was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2072
 #, c-format
-msgid ""
-"Enlightenment unexpectedly had the settings file<br>it was writing closed on "
-"it. This is very unusual.<br><br>The file where the error occurred was:<br>%"
-"s<br><br>This file has been deleted to avoid corrupt data.<br>"
+msgid "Enlightenment unexpectedly had the settings file<br>it was writing closed on it. This is very unusual.<br><br>The file where the error occurred was:<br>%s<br><br>This file has been deleted to avoid corrupt data.<br>"
 msgstr ""
 
 #: src/bin/e_config.c:2097
@@ -809,8 +744,7 @@ msgid "Error - no PAM support"
 msgstr "Hata- PAM desteği yok"
 
 #: src/bin/e_desklock.c:251
-msgid ""
-"No PAM support was built into Enlightenment, so<br>desk locking is disabled."
+msgid "No PAM support was built into Enlightenment, so<br>desk locking is disabled."
 msgstr "PAM desteği bulunamadı, <br>masaüstü kilitleme iptal edildi."
 
 #: src/bin/e_desklock.c:315
@@ -818,9 +752,7 @@ msgid "Lock Failed"
 msgstr "Kilitleme Başarısız Oldu"
 
 #: src/bin/e_desklock.c:316
-msgid ""
-"Locking the desktop failed because some application<br>has grabbed either "
-"the keyboard or the mouse or both<br>and their grab is unable to be broken."
+msgid "Locking the desktop failed because some application<br>has grabbed either the keyboard or the mouse or both<br>and their grab is unable to be broken."
 msgstr ""
 
 #: src/bin/e_desklock.c:401
@@ -833,28 +765,16 @@ msgstr "Yetkilendirme Sistem Hatası"
 
 #: src/bin/e_desklock.c:741
 #, c-format
-msgid ""
-"Authentication via PAM had errors setting up the<br>authentication session. "
-"The error code was <hilight>%i</hilight>.<br>This is bad and should not be "
-"happening. Please report this bug."
-msgstr ""
-"PAM ile yetkilendirme, yetkilendirme oturumunu <br>ayarlarken hata verdi. "
-"Hata kodu <hilight>%i</hilight>.<br>Bu kötü oldu ve böyle olmamalıydı. "
-"Lütfen bu hatayı bildirin."
+msgid "Authentication via PAM had errors setting up the<br>authentication session. The error code was <hilight>%i</hilight>.<br>This is bad and should not be happening. Please report this bug."
+msgstr "PAM ile yetkilendirme, yetkilendirme oturumunu <br>ayarlarken hata verdi. Hata kodu <hilight>%i</hilight>.<br>Bu kötü oldu ve böyle olmamalıydı. Lütfen bu hatayı bildirin."
 
 #: src/bin/e_desklock.c:1069 src/bin/e_screensaver.c:96
 msgid "Activate Presentation Mode?"
 msgstr "Sunum Kipi Etkinleştirilsin mi?"
 
 #: src/bin/e_desklock.c:1072
-msgid ""
-"You unlocked desktop too fast.<br><br>Would you like to enable "
-"<b>presentation</b> mode and temporarily disable screen saver, lock and "
-"power saving?"
-msgstr ""
-"Masaüstü kilidini çok hızlı açtınız.<br><br><b>Sunum kipini</b> "
-"etkinleştirip, ekran koruyucu, kilit ve güç koruma kiplerinin geçici olarak "
-"etkisiz kılınmasını ister misiniz?"
+msgid "You unlocked desktop too fast.<br><br>Would you like to enable <b>presentation</b> mode and temporarily disable screen saver, lock and power saving?"
+msgstr "Masaüstü kilidini çok hızlı açtınız.<br><br><b>Sunum kipini</b> etkinleştirip, ekran koruyucu, kilit ve güç koruma kiplerinin geçici olarak etkisiz kılınmasını ister misiniz?"
 
 #: src/bin/e_desklock.c:1082 src/bin/e_screensaver.c:109
 msgid "No, but increase timeout"
@@ -869,12 +789,7 @@ msgid "Incomplete Window Properties"
 msgstr "Tamamlanmamış Pencere Özellikleri"
 
 #: src/bin/e_eap_editor.c:175
-msgid ""
-"The window you are creating an icon for<br>does not contain window name and "
-"class<br>properties, so the needed properties for<br>the icon so that it "
-"will be used for this<br>window cannot be guessed. You will need to<br>use "
-"the window title instead. This will only<br>work if the window title is the "
-"same at<br>the time the window starts up, and does not<br>change."
+msgid "The window you are creating an icon for<br>does not contain window name and class<br>properties, so the needed properties for<br>the icon so that it will be used for this<br>window cannot be guessed. You will need to<br>use the window title instead. This will only<br>work if the window title is the same at<br>the time the window starts up, and does not<br>change."
 msgstr ""
 
 #: src/bin/e_eap_editor.c:230
@@ -893,8 +808,9 @@ msgid "Comment"
 msgstr "Yorum"
 
 #: src/bin/e_eap_editor.c:707
+#, fuzzy
 msgid "URL"
-msgstr ""
+msgstr "URL"
 
 #: src/bin/e_eap_editor.c:729 src/bin/e_eap_editor.c:738
 #: src/bin/e_fm_prop.c:394 src/modules/conf_fonts/e_int_config_fonts.c:93
@@ -999,12 +915,8 @@ msgstr "Uygulama Yürütme Hatası"
 
 #: src/bin/e_exec.c:354
 #, c-format
-msgid ""
-"Enlightenment was unable to run the application:<br><br>%s<br><br>The "
-"application failed to start."
-msgstr ""
-"Enlightenment uygulamayı çalıştıramadı:<br><br>%s<br><br>Uygulama "
-"çalıştırılamadı."
+msgid "Enlightenment was unable to run the application:<br><br>%s<br><br>The application failed to start."
+msgstr "Enlightenment uygulamayı çalıştıramadı:<br><br>%s<br><br>Uygulama çalıştırılamadı."
 
 #: src/bin/e_exec.c:458
 msgid "Application Execution Error"
@@ -1071,8 +983,7 @@ msgid "%s was interrupted by the signal number %i."
 msgstr "%s %i sinyal numarası tarafından durduruldu."
 
 #: src/bin/e_exec.c:572
-msgid ""
-"***The remaining output has been truncated. Save the output to view.***\n"
+msgid "***The remaining output has been truncated. Save the output to view.***\n"
 msgstr "***Kalan çıktı kesilmiş. Çıktıyı görünüme kaydet.***\n"
 
 #: src/bin/e_exec.c:634 src/bin/e_exec.c:708 src/bin/e_exec.c:715
@@ -1201,9 +1112,8 @@ msgid "Eject"
 msgstr "Çıkarma"
 
 #: src/bin/e_fm.c:8087
-#, fuzzy
 msgid "Application Properties"
-msgstr "Uygulamanın İkonunu Kullan "
+msgstr "Uygulama Özellikleri"
 
 #: src/bin/e_fm.c:8093 src/bin/e_fm_prop.c:105
 msgid "File Properties"
@@ -1317,12 +1227,8 @@ msgstr ""
 
 #: src/bin/e_fm.c:9302
 #, c-format
-msgid ""
-"Are you sure you want to delete<br>the %d selected files in:<br><hilight>%s</"
-"hilight> ?"
-msgstr ""
-"<hilight>%2$s</hilight> içerisindeki<br>%1$d dosyayı<br>silmek istediğinize "
-"emin misiniz?"
+msgid "Are you sure you want to delete<br>the %d selected files in:<br><hilight>%s</hilight> ?"
+msgstr "<hilight>%2$s</hilight> içerisindeki<br>%1$d dosyayı<br>silmek istediğinize emin misiniz?"
 
 #: src/bin/e_fm_dbus.c:180
 #, c-format
@@ -1435,19 +1341,16 @@ msgid "Select an Image"
 msgstr "Resim Seç"
 
 #: src/bin/e_gadcon.c:1329
-#, fuzzy
 msgid "Move to"
-msgstr "Metni Taşı"
+msgstr "Taşı"
 
 #: src/bin/e_gadcon.c:1354 src/modules/gadman/e_mod_gadman.c:709
-#, fuzzy
 msgid "Begin move/resize"
-msgstr "Aracı oynat/yeniden boyutlandır"
+msgstr "Taşı/boyutlandır"
 
 #: src/bin/e_gadcon.c:1360
-#, fuzzy
 msgid "Resizeable"
-msgstr "Boyutlandır"
+msgstr "Boyutlandırılabilir"
 
 #: src/bin/e_gadcon.c:1367
 msgid "Automatically scroll contents"
@@ -1501,10 +1404,8 @@ msgid "Protect this window from me accidentally changing it"
 msgstr "Bu pencereyi benim yanlışlıkla değiştirmemden koru"
 
 #: src/bin/e_int_border_locks.c:287
-msgid ""
-"Protect this window from being accidentally closed because it is important"
-msgstr ""
-"Bu pencereyi benim yanlışlıkla kapatmamdan koru çünkü bu pencere önemli"
+msgid "Protect this window from being accidentally closed because it is important"
+msgstr "Bu pencereyi benim yanlışlıkla kapatmamdan koru çünkü bu pencere önemli"
 
 #: src/bin/e_int_border_locks.c:289
 msgid "Do not allow the border to change on this window"
@@ -1853,17 +1754,7 @@ msgid "Window properties are not a unique match"
 msgstr "Pencere özellikleri özgün bir eşleşme değil"
 
 #: src/bin/e_int_border_remember.c:307
-msgid ""
-"You are trying to ask Enlightenment to remember to apply<br>properties (such "
-"as size, location, border style etc.) to<br>a window that <hilight>does not "
-"have unique properties</hilight>.<br><br>This means it shares Name/Class, "
-"Transience, Role etc. properties<br>with more than 1 other window on the "
-"screen and remembering<br>properties for this window will apply to all other "
-"windows<br>that match these properties.<br><br>This is just a warning in "
-"case you did not intend this to happen.<br>If you did, simply press "
-"<hilight>Apply</hilight> or <hilight>OK</hilight> buttons<br>and your "
-"settings will be accepted. Press <hilight>Cancel</hilight> if you<br>are not "
-"sure and nothing will be affected."
+msgid "You are trying to ask Enlightenment to remember to apply<br>properties (such as size, location, border style etc.) to<br>a window that <hilight>does not have unique properties</hilight>.<br><br>This means it shares Name/Class, Transience, Role etc. properties<br>with more than 1 other window on the screen and remembering<br>properties for this window will apply to all other windows<br>that match these properties.<br><br>This is just a warning in case you did not intend this to happen.<br>If you did, simply press <hilight>Apply</hilight> or <hilight>OK</hilight> buttons<br>and your settings will be accepted. Press <hilight>Cancel</hilight> if you<br>are not sure and nothing will be affected."
 msgstr ""
 
 #: src/bin/e_int_border_remember.c:512
@@ -1871,11 +1762,7 @@ msgid "No match properties set"
 msgstr "Özellikler setine uygun eşleşme yok"
 
 #: src/bin/e_int_border_remember.c:515
-msgid ""
-"You are trying to ask Enlightenment to remember to apply<br>properties (such "
-"as size, location, border style etc.) to<br>a window <hilight>without "
-"specifying how to remember it</hilight>.<br><br>You must specify at least 1 "
-"way of remembering this window."
+msgid "You are trying to ask Enlightenment to remember to apply<br>properties (such as size, location, border style etc.) to<br>a window <hilight>without specifying how to remember it</hilight>.<br><br>You must specify at least 1 way of remembering this window."
 msgstr ""
 
 #: src/bin/e_int_border_remember.c:611
@@ -1896,9 +1783,8 @@ msgstr "Boyut, Konum ve Kilitler"
 
 #: src/bin/e_int_border_remember.c:619 src/modules/conf/e_mod_main.c:245
 #: src/modules/everything/evry_plug_aggregator.c:333
-#, fuzzy
 msgid "All"
-msgstr "İzin Ver"
+msgstr "Hepsi"
 
 #: src/bin/e_int_border_remember.c:632
 msgid "Remember using"
@@ -1994,32 +1880,28 @@ msgstr "Raf"
 
 #: src/bin/e_int_config_modules.c:64 src/modules/everything/e_mod_main.c:80
 #: src/modules/everything/e_mod_main.c:196
-#, fuzzy
 msgid "Everything Launcher"
-msgstr "Her şey"
+msgstr "Everything Başlatıcı"
 
 #: src/bin/e_int_config_modules.c:96
 msgid "Module Settings"
 msgstr "Modül Ayarları"
 
 #: src/bin/e_int_config_modules.c:160
-#, fuzzy
 msgid "Load"
-msgstr "Yerel"
+msgstr "Yükle"
 
 #: src/bin/e_int_config_modules.c:165
-#, fuzzy
 msgid "Unload"
-msgstr "Modülü Kaldır"
+msgstr "Kaldır"
 
 #: src/bin/e_int_config_modules.c:173 src/bin/e_int_config_modules.c:603
-#, fuzzy
 msgid "No modules selected."
-msgstr "Yerel Seçildi"
+msgstr "Seçili modül yok."
 
 #: src/bin/e_int_config_modules.c:601
 msgid "More than one module selected."
-msgstr ""
+msgstr "Birden fazla modül seçili."
 
 #: src/bin/e_int_gadcon_config.c:38
 msgid "Shelf Contents"
@@ -2051,15 +1933,8 @@ msgid "Input Method Error"
 msgstr "Girdi Metodu Hatası"
 
 #: src/bin/e_intl.c:360
-msgid ""
-"Error starting the input method executable<br><br>please make sure that your "
-"input<br>method configuration is correct and<br>that your "
-"configuration's<br>executable is in your PATH<br>"
-msgstr ""
-"Girdi metodu çalıştırılabilir dosyası başlatılırken hata "
-"oluştu<br><br>Lütfen girdi metodu yapılandırmanızın<br>doğru olduğuna "
-"ve<br>yapılandırmadaki çalıştırılabilir dosyasının<br> yolunun PATH "
-"içerisinde tanımlı olduğundan emin olun<br>"
+msgid "Error starting the input method executable<br><br>please make sure that your input<br>method configuration is correct and<br>that your configuration's<br>executable is in your PATH<br>"
+msgstr "Girdi metodu çalıştırılabilir dosyası başlatılırken hata oluştu<br><br>Lütfen girdi metodu yapılandırmanızın<br>doğru olduğuna ve<br>yapılandırmadaki çalıştırılabilir dosyasının<br> yolunun PATH içerisinde tanımlı olduğundan emin olun<br>"
 
 #: src/bin/e_int_menus.c:99
 msgid "Main"
@@ -2170,14 +2045,13 @@ msgid "Allow windows to overlap the shelf"
 msgstr "Pencerelerin rafı kaplamasına izin ver"
 
 #: src/bin/e_int_shelf_config.c:179
-#, fuzzy, c-format
+#, c-format
 msgid "Height (%3.0f pixels)"
-msgstr "%3.0f piksel"
+msgstr "Yükseklik (%3.0f piksel)"
 
 #: src/bin/e_int_shelf_config.c:182
-#, fuzzy
 msgid "Shrink to Content Width"
-msgstr "İçeriğin Boyutuna Göre Küçült"
+msgstr "İçeriğin Genişliğine Göre Küçült"
 
 #: src/bin/e_int_shelf_config.c:193
 #: src/modules/conf_fonts/e_int_config_fonts.c:625
@@ -2257,11 +2131,9 @@ msgid ""
 "\t\tgiven the geometry. Add as many as you like. They all\n"
 "\t\treplace the real xinerama screens, if any. This can\n"
 "\t\tbe used to simulate xinerama.\n"
-"\t\tEG: -fake-xinerama-screen 800x600+0+0 -fake-xinerama-screen 800x600+800"
-"+0\n"
+"\t\tEG: -fake-xinerama-screen 800x600+0+0 -fake-xinerama-screen 800x600+800+0\n"
 "\t-profile CONF_PROFILE\n"
-"\t\tUse the configuration profile CONF_PROFILE instead of the user selected "
-"default or just \"default\".\n"
+"\t\tUse the configuration profile CONF_PROFILE instead of the user selected default or just \"default\".\n"
 "\t-good\n"
 "\t\tBe good.\n"
 "\t-evil\n"
@@ -2355,13 +2227,10 @@ msgstr ""
 "Bu olmamalıydı."
 
 #: src/bin/e_main.c:505
-#, fuzzy
 msgid ""
 "Enlightenment cannot setup randr wrapping.\n"
 "This should not happen."
 msgstr ""
-"Enlightenment Xinerama paketleme işlemini ayarlayamadı.\n"
-"Bu olmamalıydı."
 
 #: src/bin/e_main.c:526
 msgid ""
@@ -2474,8 +2343,7 @@ msgid ""
 "Enlightenment found Evas can't load JPEG files. Check Evas has JPEG\n"
 "loader support.\n"
 msgstr ""
-"Enlightenment Evas'ın JPEG dosyalarını yükleyemediğini algıladı. Evas'ın "
-"JPEG\n"
+"Enlightenment Evas'ın JPEG dosyalarını yükleyemediğini algıladı. Evas'ın JPEG\n"
 "yükleme desteğini olduğunu kontrol edin.\n"
 
 #: src/bin/e_main.c:730
@@ -2488,18 +2356,15 @@ msgstr ""
 
 #: src/bin/e_main.c:741
 msgid ""
-"Enlightenment found Evas can't load the 'Sans' font. Check Evas has "
-"fontconfig\n"
+"Enlightenment found Evas can't load the 'Sans' font. Check Evas has fontconfig\n"
 "support and system fontconfig defines a 'Sans' font.\n"
 msgstr ""
-"Enlightenment Evas'ın 'Sans' yazı tipini yükleyemediğini algıladı. Evas'ın "
-"fontconfig\n"
-"desteği olduğunu ve fontconfig'in 'Sans' yazı tipini tanımladığını kontrol "
-"edin.\n"
+"Enlightenment Evas'ın 'Sans' yazı tipini yükleyemediğini algıladı. Evas'ın fontconfig\n"
+"desteği olduğunu ve fontconfig'in 'Sans' yazı tipini tanımladığını kontrol edin.\n"
 
 #: src/bin/e_main.c:751
 msgid "Check SVG Support"
-msgstr ""
+msgstr "SVG Desteğini Kontrol Et"
 
 #: src/bin/e_main.c:781
 msgid "Setup Screens"
@@ -2538,9 +2403,8 @@ msgid "Enlightenment cannot set up its popup system."
 msgstr "Enlightenment açılır pencere sistemini ayarlayamadı."
 
 #: src/bin/e_main.c:829
-#, fuzzy
 msgid "Setup Paths"
-msgstr "Yollar Ayarlanıyor"
+msgstr "Yolları Ayarla"
 
 #: src/bin/e_main.c:846
 msgid "Setup System Controls"
@@ -2631,9 +2495,8 @@ msgid "Enlightenment cannot set up its gadget control system."
 msgstr "Enlightenment araç kontrol sistemini ayarlayamadı."
 
 #: src/bin/e_main.c:968
-#, fuzzy
 msgid "Setup ACPI"
-msgstr "DPMS Ayarla"
+msgstr "ACPI Ayarla"
 
 #: src/bin/e_main.c:975
 msgid "Setup DPMS"
@@ -2644,7 +2507,6 @@ msgid "Enlightenment cannot configure the DPMS settings."
 msgstr "Enlightenment DPMS ayarlarını yapılandıramadı."
 
 #: src/bin/e_main.c:984
-#, fuzzy
 msgid "Setup Powersave modes"
 msgstr "Güç Koruma Kiplerini Ayarla"
 
@@ -2707,10 +2569,7 @@ msgstr "Modülleri Yükle"
 
 #: src/bin/e_main.c:1079
 #, c-format
-msgid ""
-"Enlightenment crashed early on start and has<br>been restarted. There was an "
-"error loading<br>module named: %s. This module has been disabled<br>and will "
-"not be loaded."
+msgid "Enlightenment crashed early on start and has<br>been restarted. There was an error loading<br>module named: %s. This module has been disabled<br>and will not be loaded."
 msgstr ""
 
 #: src/bin/e_main.c:1084 src/bin/e_main.c:1101
@@ -2719,26 +2578,15 @@ msgstr "Enlightenment açılamadan çöktü ve yeniden başlatıldı"
 
 #: src/bin/e_main.c:1085
 #, c-format
-msgid ""
-"Enlightenment crashed early on start and has been restarted.<br>There was an "
-"error loading module named: %s<br><br>This module has been disabled and will "
-"not be loaded."
+msgid "Enlightenment crashed early on start and has been restarted.<br>There was an error loading module named: %s<br><br>This module has been disabled and will not be loaded."
 msgstr ""
 
 #: src/bin/e_main.c:1094
-msgid ""
-"Enlightenment crashed early on start and has<br>been restarted. All modules "
-"have been disabled<br>and will not be loaded to help remove any "
-"problem<br>modules from your configuration. The module<br>configuration "
-"dialog should let you select your<br>modules again."
+msgid "Enlightenment crashed early on start and has<br>been restarted. All modules have been disabled<br>and will not be loaded to help remove any problem<br>modules from your configuration. The module<br>configuration dialog should let you select your<br>modules again."
 msgstr ""
 
 #: src/bin/e_main.c:1102
-msgid ""
-"Enlightenment crashed early on start and has been restarted.<br>All modules "
-"have been disabled and will not be loaded to help<br>remove any problem "
-"modules from your configuration.<br><br>The module configuration dialog "
-"should let you select your<br>modules again."
+msgid "Enlightenment crashed early on start and has been restarted.<br>All modules have been disabled and will not be loaded to help<br>remove any problem modules from your configuration.<br><br>The module configuration dialog should let you select your<br>modules again."
 msgstr ""
 
 #: src/bin/e_main.c:1131
@@ -2756,9 +2604,7 @@ msgstr "Modülleri Yükle"
 
 #: src/bin/e_module.c:129
 #, c-format
-msgid ""
-"There was an error loading module named: %s<br>No module named %s could be "
-"found in the<br>module search directories.<br>"
+msgid "There was an error loading module named: %s<br>No module named %s could be found in the<br>module search directories.<br>"
 msgstr ""
 
 #: src/bin/e_module.c:132 src/bin/e_module.c:145 src/bin/e_module.c:163
@@ -2767,12 +2613,8 @@ msgstr "Modül yükleme hatası"
 
 #: src/bin/e_module.c:140 src/bin/e_module.c:157
 #, c-format
-msgid ""
-"There was an error loading module named: %s<br>The full path to this module "
-"is:<br>%s<br>The error reported was:<br>%s<br>"
-msgstr ""
-"Şu isimli modül yüklenirken hata oluştu: %s<br>Bu modülün tam yolu: <br>%"
-"s<br>Bildirilen hata şuydu:<br>%s<br>"
+msgid "There was an error loading module named: %s<br>The full path to this module is:<br>%s<br>The error reported was:<br>%s<br>"
+msgstr "Şu isimli modül yüklenirken hata oluştu: %s<br>Bu modülün tam yolu: <br>%s<br>Bildirilen hata şuydu:<br>%s<br>"
 
 #: src/bin/e_module.c:162
 msgid "Module does not contain all needed functions"
@@ -2780,13 +2622,8 @@ msgstr "Modül tüm gereken fonksiyonları içermiyor"
 
 #: src/bin/e_module.c:177
 #, c-format
-msgid ""
-"Module API Error<br>Error initializing Module: %s<br>It requires a minimum "
-"module API version of: %i.<br>The module API advertized by Enlightenment is: "
-"%i.<br>"
-msgstr ""
-"Modül API hatası<br>Modül başlatılırken hata: %s<br>Asgari modül API sürümü "
-"gerekiyor: %i.<br>Enlightenment tarafından önerilen modül API sürümü: %i.<br>"
+msgid "Module API Error<br>Error initializing Module: %s<br>It requires a minimum module API version of: %i.<br>The module API advertized by Enlightenment is: %i.<br>"
+msgstr "Modül API hatası<br>Modül başlatılırken hata: %s<br>Asgari modül API sürümü gerekiyor: %i.<br>Enlightenment tarafından önerilen modül API sürümü: %i.<br>"
 
 #: src/bin/e_module.c:182
 #, c-format
@@ -2798,14 +2635,8 @@ msgid "Would you like to unload this module?<br>"
 msgstr "Bu modülü çıkarmak istiyor musunuz?<br>"
 
 #: src/bin/e_screensaver.c:99
-msgid ""
-"You disabled screensaver too fast.<br><br>Would you like to enable "
-"<b>presentation</b> mode and temporarily disable screen saver, lock and "
-"power saving?"
-msgstr ""
-"Ekran koruyucuyu çok hızlı etkisiz kıldınız.<br><br><b>Sunum kipini</b> "
-"etkinleştirmek ve ekran koruyucuyu, kilidi ve güç koruma kipini geçici "
-"olarak kapatmak istiyor musunuz?"
+msgid "You disabled screensaver too fast.<br><br>Would you like to enable <b>presentation</b> mode and temporarily disable screen saver, lock and power saving?"
+msgstr "Ekran koruyucuyu çok hızlı etkisiz kıldınız.<br><br><b>Sunum kipini</b> etkinleştirmek ve ekran koruyucuyu, kilidi ve güç koruma kipini geçici olarak kapatmak istiyor musunuz?"
 
 #: src/bin/e_shelf.c:163
 msgid "Shelf #"
@@ -2816,25 +2647,20 @@ msgid "Are you sure you want to delete this shelf?"
 msgstr "Bu rafı silmek istediğinizden emin misiniz?"
 
 #: src/bin/e_shelf.c:1297
-msgid ""
-"You requested to delete this shelf.<br><br>Are you sure you want to delete "
-"it?"
+msgid "You requested to delete this shelf.<br><br>Are you sure you want to delete it?"
 msgstr "Bu rafı silmek istediniz.<br><..."
 
 #: src/bin/e_shelf.c:1670
-#, fuzzy
 msgid "Stop Moving/Resizing Gadgets"
-msgstr "Nesneleri Taşımayı/Boyutlandırmayı Durdur"
+msgstr "Araçları Taşımayı/Boyutlandırmayı Durdur"
 
 #: src/bin/e_shelf.c:1672
-#, fuzzy
 msgid "Begin Moving/Resizing Gadgets"
-msgstr "Nesneleri Taşımaya/Boyutlandırmaya Başla"
+msgstr "Araçları Taşımayı/Boyutlandırmayı Başlat"
 
 #: src/bin/e_shelf.c:1680 src/modules/ibar/e_mod_main.c:824
-#, fuzzy
 msgid "Contents"
-msgstr "Yorum"
+msgstr "İçerik"
 
 #: src/bin/e_startup.c:63
 msgid "Starting"
@@ -2850,14 +2676,9 @@ msgid "System Check Done"
 msgstr "Sistem Kontrolü Tamam"
 
 #: src/bin/e_sys.c:305
-#, fuzzy, c-format
-msgid ""
-"Logout is taking too long.<br>Some applications refuse to close.<br>Do you "
-"want to finish the logout<br>anyway without closing these<br>applications "
-"first?<br><br>Auto logout in %d seconds."
+#, c-format
+msgid "Logout is taking too long.<br>Some applications refuse to close.<br>Do you want to finish the logout<br>anyway without closing these<br>applications first?<br><br>Auto logout in %d seconds."
 msgstr ""
-"Oturumu kapatma çok uzun sürüyor. Bazı<br>uygulamalar kapanmayı reddediyor."
-"<br>Oturumu bu uygulamaları kapatmadan<br>bitirmeyi istiyor musunuz?"
 
 #: src/bin/e_sys.c:366
 msgid "Logout problems"
@@ -2888,44 +2709,24 @@ msgid "Enlightenment is busy with another request"
 msgstr "Enlightenment başka bir istekle meşgul"
 
 #: src/bin/e_sys.c:444
-msgid ""
-"Logging out.<br>You cannot perform other system actions<br>once a logout has "
-"begun."
-msgstr ""
-"Oturum kapatılıyor.<br>Oturum kapatma işlemi başladığında<br>sistem "
-"işlemlerini gerçekleştiremezsiniz."
+msgid "Logging out.<br>You cannot perform other system actions<br>once a logout has begun."
+msgstr "Oturum kapatılıyor.<br>Oturum kapatma işlemi başladığında<br>sistem işlemlerini gerçekleştiremezsiniz."
 
 #: src/bin/e_sys.c:452
-msgid ""
-"Powering off.<br>You cannot do any other system actions<br>once a shutdown "
-"has been started."
-msgstr ""
-"Kapatılıyor.<br>Kapatma işlemi başladığında<br>sistem işlemlerini "
-"gerçekleştiremezsiniz."
+msgid "Powering off.<br>You cannot do any other system actions<br>once a shutdown has been started."
+msgstr "Kapatılıyor.<br>Kapatma işlemi başladığında<br>sistem işlemlerini gerçekleştiremezsiniz."
 
 #: src/bin/e_sys.c:459
-msgid ""
-"Resetting.<br>You cannot do any other system actions<br>once a reboot has "
-"begun."
-msgstr ""
-"Yeniden başlatılıyor.<br>Yeniden başlatma işlemi başladığında<br>sistem "
-"işlemlerini gerçekleştiremezsiniz."
+msgid "Resetting.<br>You cannot do any other system actions<br>once a reboot has begun."
+msgstr "Yeniden başlatılıyor.<br>Yeniden başlatma işlemi başladığında<br>sistem işlemlerini gerçekleştiremezsiniz."
 
 #: src/bin/e_sys.c:466
-msgid ""
-"Suspending.<br>Until suspend is complete you cannot perform<br>any other "
-"system actions."
-msgstr ""
-"Askıya alınıyor.<br>Askıya alma işlemi bitene kadar<br>sistem işlemlerini "
-"gerçekleştiremezsiniz."
+msgid "Suspending.<br>Until suspend is complete you cannot perform<br>any other system actions."
+msgstr "Askıya alınıyor.<br>Askıya alma işlemi bitene kadar<br>sistem işlemlerini gerçekleştiremezsiniz."
 
 #: src/bin/e_sys.c:473
-msgid ""
-"Hibernating.<br>You cannot perform an other system actions<br>until this is "
-"complete."
-msgstr ""
-"Uykuya alınıyor.<br>Uykuya alma işlemi bitene kadar<br>sistem işlemlerini "
-"gerçekleştiremezsiniz."
+msgid "Hibernating.<br>You cannot perform an other system actions<br>until this is complete."
+msgstr "Uykuya alınıyor.<br>Uykuya alma işlemi bitene kadar<br>sistem işlemlerini gerçekleştiremezsiniz."
 
 #: src/bin/e_sys.c:480 src/bin/e_sys.c:526
 msgid "EEK! This should not happen"
@@ -3004,14 +2805,8 @@ msgid "Cannot exit - immortal windows."
 msgstr "Çıkamıyor - Ölümsüz Pencereler."
 
 #: src/bin/e_utils.c:280
-msgid ""
-"Some windows are left still around with the Lifespan lock enabled. This "
-"means<br>that Enlightenment will not allow itself to exit until these "
-"windows have<br>been closed or have the lifespan lock removed.<br>"
-msgstr ""
-"Bazı pencereler Lifespan lock aktif olarak bırakılmış. Bu "
-"nedenle<br>Enlightenment bu pencereler<br>kapatılana ya da Lifespan lock "
-"kaldırılana kadar çıkmaya izin vermeyecek.<br>"
+msgid "Some windows are left still around with the Lifespan lock enabled. This means<br>that Enlightenment will not allow itself to exit until these windows have<br>been closed or have the lifespan lock removed.<br>"
+msgstr "Bazı pencereler Lifespan lock aktif olarak bırakılmış. Bu nedenle<br>Enlightenment bu pencereler<br>kapatılana ya da Lifespan lock kaldırılana kadar çıkmaya izin vermeyecek.<br>"
 
 #: src/bin/e_utils.c:855
 #, c-format
@@ -3131,28 +2926,16 @@ msgid "%3.0f%%"
 msgstr "%3.0f%%"
 
 #: src/bin/e_utils.c:1507
-msgid ""
-"Configuration data needed upgrading. Your old configuration<br> has been "
-"wiped and a new set of defaults initialized. This<br>will happen regularly "
-"during development, so don't report a<br>bug. This simply means the module "
-"needs new configuration<br>data by default for usable functionality that "
-"your old<br>configuration simply lacks. This new set of defaults will "
-"fix<br>that by adding it in. You can re-configure things now to "
-"your<br>liking. Sorry for the inconvenience.<br>"
+msgid "Configuration data needed upgrading. Your old configuration<br> has been wiped and a new set of defaults initialized. This<br>will happen regularly during development, so don't report a<br>bug. This simply means the module needs new configuration<br>data by default for usable functionality that your old<br>configuration simply lacks. This new set of defaults will fix<br>that by adding it in. You can re-configure things now to your<br>liking. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/bin/e_utils.c:1520 src/bin/e_utils.c:1544
-#, fuzzy, c-format
+#, c-format
 msgid "%s Configuration Updated"
-msgstr "yapılandırma"
+msgstr "%s Yapılandırması Güncellendi"
 
 #: src/bin/e_utils.c:1533
-msgid ""
-"Your module configuration is NEWER than the module version. This is "
-"very<br>strange. This should not happen unless you downgraded<br>the module "
-"or copied the configuration from a place where<br>a newer version of the "
-"module was running. This is bad and<br>as a precaution your configuration "
-"has been now restored to<br>defaults. Sorry for the inconvenience.<br>"
+msgid "Your module configuration is NEWER than the module version. This is very<br>strange. This should not happen unless you downgraded<br>the module or copied the configuration from a place where<br>a newer version of the module was running. This is bad and<br>as a precaution your configuration has been now restored to<br>defaults. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/bin/e_widget_config_list.c:60
@@ -3245,9 +3028,8 @@ msgid "Polling"
 msgstr "Taranıyor"
 
 #: src/modules/battery/e_mod_config.c:218
-#, fuzzy
 msgid "Show low battery alert"
-msgstr "Pil zayıfken uyarı göster"
+msgstr "Pil zayıf uyarısı göster"
 
 #: src/modules/battery/e_mod_config.c:222
 msgid "Alert when at:"
@@ -3292,12 +3074,11 @@ msgstr "Dahili"
 #: src/modules/battery/e_mod_config.c:258
 #: src/modules/temperature/e_mod_config.c:248
 msgid "udev"
-msgstr ""
+msgstr "udev"
 
 #: src/modules/battery/e_mod_config.c:261
-#, fuzzy
 msgid "Fuzzy Mode"
-msgstr "Bulanık"
+msgstr "Bulanık Kip"
 
 #: src/modules/battery/e_mod_config.c:265
 #: src/modules/fileman/e_mod_config.c:284
@@ -3344,29 +3125,15 @@ msgid "Settings Panel"
 msgstr "Ayarlar Paneli"
 
 #: src/modules/conf/e_mod_main.c:277
-#, fuzzy
 msgid "Configuration Panel"
-msgstr "yapılandırma"
+msgstr "Yapılandırma Paneli"
 
 #: src/modules/conf/e_mod_main.c:295
-msgid ""
-"Configuration Panel Module Configuration data needed upgrading. Your old "
-"configuration<br> has been wiped and a new set of defaults initialized. "
-"This<br>will happen regularly during development, so don't report a<br>bug. "
-"This simply means the module needs new configuration<br>data by default for "
-"usable functionality that your old<br>configuration simply lacks. This new "
-"set of defaults will fix<br>that by adding it in. You can re-configure "
-"things now to your<br>liking. Sorry for the inconvenience.<br>"
+msgid "Configuration Panel Module Configuration data needed upgrading. Your old configuration<br> has been wiped and a new set of defaults initialized. This<br>will happen regularly during development, so don't report a<br>bug. This simply means the module needs new configuration<br>data by default for usable functionality that your old<br>configuration simply lacks. This new set of defaults will fix<br>that by adding it in. You can re-configure things now to your<br>liking. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/modules/conf/e_mod_main.c:312
-msgid ""
-"Your Configuration Panel Module configuration is NEWER than the module "
-"version. This is very<br>strange. This should not happen unless you "
-"downgraded<br>the module or copied the configuration from a place where<br>a "
-"newer version of the module was running. This is bad and<br>as a precaution "
-"your configuration has been now restored to<br>defaults. Sorry for the "
-"inconvenience.<br>"
+msgid "Your Configuration Panel Module configuration is NEWER than the module version. This is very<br>strange. This should not happen unless you downgraded<br>the module or copied the configuration from a place where<br>a newer version of the module was running. This is bad and<br>as a precaution your configuration has been now restored to<br>defaults. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/modules/conf/e_mod_main.c:443
@@ -3402,14 +3169,12 @@ msgid "Restart Applications"
 msgstr "Uygulamaları Yeniden Başlat"
 
 #: src/modules/conf_applications/e_int_config_apps.c:215
-#, fuzzy
 msgid "Selection"
-msgstr "Birini seç"
+msgstr "Seçim"
 
 #: src/modules/conf_applications/e_int_config_apps.c:231
-#, fuzzy
 msgid "Order"
-msgstr "Çerçeve"
+msgstr "Sıralama"
 
 #: src/modules/conf_applications/e_mod_main.c:18
 msgid "Apps"
@@ -3478,9 +3243,8 @@ msgid "Include windows from other screens"
 msgstr "Diğer ekranlardaki pencereleri içer"
 
 #: src/modules/conf_clientlist/e_int_config_clientlist.c:110
-#, fuzzy
 msgid "Seperate Groups By"
-msgstr "Grupları Ayrıştır"
+msgstr ""
 
 #: src/modules/conf_clientlist/e_int_config_clientlist.c:114
 msgid "Using separator bars"
@@ -3491,7 +3255,6 @@ msgid "Using menus"
 msgstr "Menü kullanarak"
 
 #: src/modules/conf_clientlist/e_int_config_clientlist.c:121
-#, fuzzy
 msgid "Grouping"
 msgstr "Grupla"
 
@@ -3674,18 +3437,16 @@ msgid "List Item Text Selected"
 msgstr "Liste Ögesi Metni"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:105
-#, fuzzy
 msgid "List Item Text (Even)"
-msgstr "Liste Ögesi Metni"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:106
 msgid "List Item Background Base (Even)"
 msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:107
-#, fuzzy
 msgid "List Item Text (Odd)"
-msgstr "Liste Ögesi Metni"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:108
 msgid "List Item Background Base (Odd)"
@@ -3701,9 +3462,8 @@ msgid "List Header Background Base (Even)"
 msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:111
-#, fuzzy
 msgid "List Header Text (Odd)"
-msgstr "Liste Başlığı"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:113
 msgid "List Header Background Base (Odd)"
@@ -3726,9 +3486,8 @@ msgid "Slider Text Disabled"
 msgstr "Kaydırıcı Metni Etkisiz"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:118
-#, fuzzy
 msgid "Frame Background Base"
-msgstr "Arka Planlar"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:119
 msgid "Scroller Frame Background Base"
@@ -3748,24 +3507,24 @@ msgid "Colors"
 msgstr "Renkler"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:266
-#, fuzzy, c-format
+#, c-format
 msgid "Color class: %s"
-msgstr "Renk Sınıfları"
+msgstr "Renk Sınıfı: %s"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:273
-#, fuzzy, c-format
+#, c-format
 msgid "Selected %u mixed colors classes"
-msgstr "Renk Sınıflarını Ayarla"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:276
-#, fuzzy, c-format
+#, c-format
 msgid "Selected %u unset colors classes"
-msgstr "Renk Sınıflarını Ayarla"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:279
-#, fuzzy, c-format
+#, c-format
 msgid "Selected %u uniform colors classes"
-msgstr "Renk Sınıflarını Ayarla"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:283
 #: src/modules/conf_colors/e_int_config_color_classes.c:542
@@ -3773,19 +3532,16 @@ msgid "No selected color class"
 msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:545
-#, fuzzy
 msgid "Custom colors"
-msgstr "Özel Renk"
+msgstr "Özel Renkker"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:551
-#, fuzzy
 msgid "Object:"
-msgstr "Çıkarma"
+msgstr "Nesne:"
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:557
-#, fuzzy
 msgid "Outline:"
-msgstr "Çevrimdışı"
+msgstr ""
 
 #: src/modules/conf_colors/e_int_config_color_classes.c:563
 #, fuzzy
@@ -3892,9 +3648,8 @@ msgid "Show on current screen"
 msgstr "Mevcut ekranın bölgesinde göster"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:233
-#, fuzzy
 msgid "Show on screen #:"
-msgstr "# Numaralı ekran bölgesinde göster:"
+msgstr ""
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:239
 #: src/modules/conf_desks/e_int_config_desks.c:229
@@ -3914,12 +3669,10 @@ msgid "%1.0f"
 msgstr "%1.0f"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:243
-#, fuzzy
 msgid "Login Box"
-msgstr "Giriş Kutusu Ayarları"
+msgstr "Giriş Kutusu"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:248
-#, fuzzy
 msgid "Lock after X screensaver activates"
 msgstr "X ekran koruyucu etkinleşince kilitle"
 
@@ -3958,9 +3711,8 @@ msgstr "Eğer daha önce etkinliği kaldırılmışsa"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:284
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:173
-#, fuzzy
 msgid "Presentation Mode"
-msgstr "Sunum Kipine Gir"
+msgstr "Sunum Kipi"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:291
 #: src/modules/gadman/e_mod_config.c:141
@@ -3972,9 +3724,8 @@ msgid "Theme Wallpaper"
 msgstr "Tema Duvar Kağıdı"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:297
-#, fuzzy
 msgid "Current Wallpaper"
-msgstr "Masaüstü Duvar Kağıdı"
+msgstr "Mevcut Duvarkâğıdı"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:311
 #: src/modules/conf_wallpaper/e_mod_main.c:23
@@ -4036,9 +3787,8 @@ msgid "Background panning"
 msgstr "Arka plan gezdirme"
 
 #: src/modules/conf_desks/e_int_config_desks.c:301
-#, fuzzy
 msgid "Animation speed"
-msgstr "Boşta"
+msgstr ""
 
 #: src/modules/conf_desks/e_int_config_desks.c:304
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:168
@@ -4054,9 +3804,9 @@ msgstr "%.2f X-ekseni pan faktörü"
 
 #: src/modules/conf_desks/e_int_config_desks.c:313
 #: src/modules/conf_desks/e_int_config_desks.c:322
-#, fuzzy, c-format
+#, c-format
 msgid "%.2f"
-msgstr "%1.2f"
+msgstr "%.2f"
 
 #: src/modules/conf_desks/e_int_config_desks.c:319
 #, fuzzy
@@ -4119,47 +3869,23 @@ msgstr "Diyaloglar"
 
 #: src/modules/conf_display/e_int_config_display.c:136
 #, c-format
-msgid ""
-"Does this look OK? <hilight>Save</hilight> if it does, or Restore if not."
-"<br>If you do not press a button, the old resolution of<br>%dx%d at %d Hz "
-"will be restored in %d seconds."
-msgstr ""
-"Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri "
-"Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%"
-"d %d Hz<br> %d saniye  sonran geri yüklenecek."
+msgid "Does this look OK? <hilight>Save</hilight> if it does, or Restore if not.<br>If you do not press a button, the old resolution of<br>%dx%d at %d Hz will be restored in %d seconds."
+msgstr "Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%d %d Hz<br> %d saniye  sonran geri yüklenecek."
 
 #: src/modules/conf_display/e_int_config_display.c:143
 #, c-format
-msgid ""
-"Does this look OK? <hilight>Save</hilight> if it does, or Restore if not."
-"<br>If you do not press a button, the old resolution of<br>%dx%d will be "
-"restored in %d seconds."
-msgstr ""
-"Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri "
-"Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%"
-"d<br> %d saniye  sonran geri yüklenecek."
+msgid "Does this look OK? <hilight>Save</hilight> if it does, or Restore if not.<br>If you do not press a button, the old resolution of<br>%dx%d will be restored in %d seconds."
+msgstr "Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%d<br> %d saniye  sonran geri yüklenecek."
 
 #: src/modules/conf_display/e_int_config_display.c:153
 #, c-format
-msgid ""
-"Does this look OK? <hilight>Save</hilight> if it does, or Restore if not."
-"<br>If you do not press a button, the old resolution of<br>%dx%d at %d Hz "
-"will be restored <hilight>IMMEDIATELY</hilight>."
-msgstr ""
-"Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri "
-"Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%"
-"d %d Hz <hilight>ANINDA</hilight> geri yüklenecek."
+msgid "Does this look OK? <hilight>Save</hilight> if it does, or Restore if not.<br>If you do not press a button, the old resolution of<br>%dx%d at %d Hz will be restored <hilight>IMMEDIATELY</hilight>."
+msgstr "Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%d %d Hz <hilight>ANINDA</hilight> geri yüklenecek."
 
 #: src/modules/conf_display/e_int_config_display.c:160
 #, c-format
-msgid ""
-"Does this look OK? <hilight>Save</hilight> if it does, or Restore if not."
-"<br>If you do not press a button, the old resolution of<br>%dx%d will be "
-"restored <hilight>IMMEDIATELY</hilight>."
-msgstr ""
-"Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri "
-"Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%"
-"d <hilight>ANINDA</hilight> geri yüklenecek."
+msgid "Does this look OK? <hilight>Save</hilight> if it does, or Restore if not.<br>If you do not press a button, the old resolution of<br>%dx%d will be restored <hilight>IMMEDIATELY</hilight>."
+msgstr "Tamam gibi görünüyor mu? Evetse <hilight>Kaydet</hilight>, değilse Geri Yükle düğmesine basın.<br>Bir düğmeye basmazsanız, eski çözünürlük olan %dx%d <hilight>ANINDA</hilight> geri yüklenecek."
 
 #: src/modules/conf_display/e_int_config_display.c:197
 msgid "Resolution change"
@@ -4202,12 +3928,7 @@ msgid "Missing Features"
 msgstr "Eksik Özellikler"
 
 #: src/modules/conf_display/e_int_config_display.c:677
-msgid ""
-"Your X Display Server is missing support for<br>the <hilight>XRandR</"
-"hilight> (X Resize and Rotate) extension.<br>You cannot change screen "
-"resolutions without<br>the support of this extension. It could also "
-"be<br>that at the time <hilight>ecore</hilight> was built, there<br>was no "
-"XRandR support detected."
+msgid "Your X Display Server is missing support for<br>the <hilight>XRandR</hilight> (X Resize and Rotate) extension.<br>You cannot change screen resolutions without<br>the support of this extension. It could also be<br>that at the time <hilight>ecore</hilight> was built, there<br>was no XRandR support detected."
 msgstr ""
 
 #: src/modules/conf_display/e_int_config_display.c:689
@@ -4215,12 +3936,7 @@ msgid "No Refresh Rates Found"
 msgstr "Yenileme Oranları Bulunamadı"
 
 #: src/modules/conf_display/e_int_config_display.c:690
-msgid ""
-"No refresh rates were reported by your X Display Server.<br>If you are "
-"running a nested X Display Server, then<br>this is to be expected. However, "
-"if you are not, then<br>the current refresh rate will be used when "
-"setting<br>the resolution, which may cause <hilight>damage</hilight> to your "
-"screen."
+msgid "No refresh rates were reported by your X Display Server.<br>If you are running a nested X Display Server, then<br>this is to be expected. However, if you are not, then<br>the current refresh rate will be used when setting<br>the resolution, which may cause <hilight>damage</hilight> to your screen."
 msgstr ""
 
 #: src/modules/conf_display/e_mod_main.c:20
@@ -4273,10 +3989,7 @@ msgid "<None>"
 msgstr "<Yok>"
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:4
-msgid ""
-"Please select an edge,<br>or click <hilight>Close</hilight> to abort."
-"<br><br>You can either specify a delay of this<br> action using the slider, "
-"or make it<br>respond to edge clicks:"
+msgid "Please select an edge,<br>or click <hilight>Close</hilight> to abort.<br><br>You can either specify a delay of this<br> action using the slider, or make it<br>respond to edge clicks:"
 msgstr ""
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:102
@@ -4358,12 +4071,8 @@ msgstr "Kenar Kısayolu Hatası"
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:1175
 #, c-format
-msgid ""
-"The binding key sequence, that you choose, is already used by <br><hilight>%"
-"s</hilight> action.<br>Please choose another binding edge sequence."
-msgstr ""
-"Seçtiğiniz kısayol tuş dizisi, zaten <br><hilight>%s </hilight> eylemi "
-"tarafından kullanılıyor.<br>Lütfen farklı bir kısayol tuşu dizisi seçin."
+msgid "The binding key sequence, that you choose, is already used by <br><hilight>%s</hilight> action.<br>Please choose another binding edge sequence."
+msgstr "Seçtiğiniz kısayol tuş dizisi, zaten <br><hilight>%s </hilight> eylemi tarafından kullanılıyor.<br>Lütfen farklı bir kısayol tuşu dizisi seçin."
 
 #: src/modules/conf_edgebindings/e_int_config_edgebindings.c:1312
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:1302
@@ -4415,14 +4124,8 @@ msgid "Enable Composite Support ?"
 msgstr "Kompozit Desteği Etkinleştirilsin mi?"
 
 #: src/modules/conf_engine/e_int_config_engine.c:140
-msgid ""
-"You have chosen to enable composite support,<br>but your current screen does "
-"not support composite.<br><br>Are you sure you wish to enable composite "
-"support ?"
-msgstr ""
-"Kompozit desteğini etkinleştirmeyi seçtiniz,<br>fakat mevcut ekranınız "
-"kompozit desteklemiyor.<br><br>Kompozit desteğini yine de açmak istiyor "
-"musunuz?"
+msgid "You have chosen to enable composite support,<br>but your current screen does not support composite.<br><br>Are you sure you wish to enable composite support ?"
+msgstr "Kompozit desteğini etkinleştirmeyi seçtiniz,<br>fakat mevcut ekranınız kompozit desteklemiyor.<br><br>Kompozit desteğini yine de açmak istiyor musunuz?"
 
 #: src/modules/conf_engine/e_mod_main.c:19
 msgid "Engine"
@@ -4655,9 +4358,8 @@ msgid "Icon Theme Settings"
 msgstr "Simge Teması Ayarları"
 
 #: src/modules/conf_icon_theme/e_int_config_icon_themes.c:264
-#, fuzzy
 msgid "This overrides general theme"
-msgstr "Simge teması genel temayı bastırır"
+msgstr ""
 
 #: src/modules/conf_icon_theme/e_mod_main.c:19
 msgid "Icon Theme"
@@ -4716,19 +4418,12 @@ msgid "Input Method Config Import Error"
 msgstr ""
 
 #: src/modules/conf_imc/e_int_config_imc_import.c:284
-msgid ""
-"Enlightenment was unable to import the configuration.<br><br>Are you sure "
-"this is really a valid configuration?"
-msgstr ""
-"Enlightenment yapılandırmayı içe aktaramadı.<br><br>Bunun geçerli bir "
-"yapılandırma olduğundan emin misiniz?"
+msgid "Enlightenment was unable to import the configuration.<br><br>Are you sure this is really a valid configuration?"
+msgstr "Enlightenment yapılandırmayı içe aktaramadı.<br><br>Bunun geçerli bir yapılandırma olduğundan emin misiniz?"
 
 #: src/modules/conf_imc/e_int_config_imc_import.c:300
-msgid ""
-"Enlightenment was unable to import the configuration<br>due to a copy error."
-msgstr ""
-"Enlightenment kopyalama hatası nedeniyle yapılandırma<br>dosyasını içe "
-"aktaramadı."
+msgid "Enlightenment was unable to import the configuration<br>due to a copy error."
+msgstr "Enlightenment kopyalama hatası nedeniyle yapılandırma<br>dosyasını içe aktaramadı."
 
 #: src/modules/conf_imc/e_mod_main.c:17 src/modules/conf_intl/e_mod_main.c:17
 #: src/modules/everything-aspell/e_mod_main.c:500
@@ -4801,16 +4496,12 @@ msgid "Locale"
 msgstr "Yerel"
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:4
-msgid ""
-"Please press key sequence,<br><br>or <hilight>Escape</hilight> to abort."
-msgstr ""
-"Lütfen tuş dizisi girin,<br><br>ya da çıkmak için<hilight>Escape</hilight> "
-"tuşuna basın."
+msgid "Please press key sequence,<br><br>or <hilight>Escape</hilight> to abort."
+msgstr "Lütfen tuş dizisi girin,<br><br>ya da çıkmak için<hilight>Escape</hilight> tuşuna basın."
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:8
-#, fuzzy
 msgid "Single key"
-msgstr "Tek Tık Kullan"
+msgstr ""
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:91
 #, fuzzy
@@ -4832,12 +4523,8 @@ msgstr "Kısayol Tuşu Hatası"
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:1148
 #, c-format
-msgid ""
-"The binding key sequence, that you choose, is already used by <br><hilight>%"
-"s</hilight> action.<br>Please choose another binding key sequence."
-msgstr ""
-"Girdiğiniz kısayol tuşu dizisi, <hilight>%s</hilight> eylemi "
-"için<br>kullanılıyor. Lütfen farklı bir kısayol tuşu dizisi girin."
+msgid "The binding key sequence, that you choose, is already used by <br><hilight>%s</hilight> action.<br>Please choose another binding key sequence."
+msgstr "Girdiğiniz kısayol tuşu dizisi, <hilight>%s</hilight> eylemi için<br>kullanılıyor. Lütfen farklı bir kısayol tuşu dizisi girin."
 
 #: src/modules/conf_menus/e_int_config_menus.c:43
 #: src/modules/conf_menus/e_mod_main.c:18
@@ -4871,9 +4558,8 @@ msgstr "Genel Adı"
 
 #: src/modules/conf_menus/e_int_config_menus.c:107
 #: src/modules/conf_menus/e_int_config_menus.c:302
-#, fuzzy
 msgid "Comments"
-msgstr "Yorum"
+msgstr "Yorumlar"
 
 #: src/modules/conf_menus/e_int_config_menus.c:214
 #: src/modules/wizard/page_030.c:121
@@ -4881,7 +4567,6 @@ msgid "System Default"
 msgstr "Sistem Ön Tanımlı"
 
 #: src/modules/conf_menus/e_int_config_menus.c:308
-#, fuzzy
 msgid "Margin"
 msgstr "Ana"
 
@@ -4897,9 +4582,8 @@ msgid "%2.0f pixels"
 msgstr "%2.0f piksel"
 
 #: src/modules/conf_menus/e_int_config_menus.c:313
-#, fuzzy
 msgid "Cursor Margin"
-msgstr "Otomatik Kaydırma Kenarlığı"
+msgstr ""
 
 #: src/modules/conf_menus/e_int_config_menus.c:318
 #, fuzzy
@@ -4930,17 +4614,16 @@ msgid "Click Drag Timeout"
 msgstr "Tıkla Sürükle Zaman Aşımı"
 
 #: src/modules/conf_menus/e_int_config_menus.c:334
-#, fuzzy, c-format
+#, c-format
 msgid "%2.2f sec"
-msgstr "%1.2f sn"
+msgstr "%2.2f sn"
 
 #: src/modules/conf_menus/e_int_config_menus.c:337
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:204
 #: src/modules/conf_window_focus/e_int_config_focus.c:262
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:186
-#, fuzzy
 msgid "Miscellaneous"
-msgstr "Çeşitli Seçenekler"
+msgstr "Çeşitli"
 
 #: src/modules/conf_mime/e_int_config_mime.c:61
 #: src/modules/conf_mime/e_mod_main.c:19
@@ -4989,9 +4672,8 @@ msgid "Select an Edje file"
 msgstr "Edj Dosyası Seç"
 
 #: src/modules/conf_mime/e_int_config_mime_edit.c:292
-#, fuzzy
 msgid "Select an image"
-msgstr "Resim Seç"
+msgstr "Resim seç"
 
 #: src/modules/conf_mime/e_mod_main.c:17
 #: src/modules/everything-files/e_mod_main.c:1425
@@ -5002,10 +4684,7 @@ msgid "Files"
 msgstr "Dosyalar"
 
 #: src/modules/conf_mousebindings/e_int_config_mousebindings.c:7
-msgid ""
-"Please hold any modifier you want<br>and press any button on your mouse,<br> "
-"or roll a wheel, to assign mouse binding.<br>Press <hilight>Escape</"
-"highlight> to abort."
+msgid "Please hold any modifier you want<br>and press any button on your mouse,<br> or roll a wheel, to assign mouse binding.<br>Press <hilight>Escape</highlight> to abort."
 msgstr ""
 
 #: src/modules/conf_mousebindings/e_int_config_mousebindings.c:112
@@ -5061,7 +4740,7 @@ msgstr "İmleci Göster"
 
 #: src/modules/conf_mouse_cursor/e_int_config_cursor.c:150
 msgid "X"
-msgstr ""
+msgstr "X"
 
 #: src/modules/conf_mouse_cursor/e_int_config_cursor.c:160
 msgid "Idle effects"
@@ -5153,14 +4832,12 @@ msgid "%1.0f fps"
 msgstr "%1.0f fps"
 
 #: src/modules/conf_performance/e_int_config_performance.c:109
-#, fuzzy
 msgid "Applications priority"
-msgstr "Uygulama Önceliği"
+msgstr ""
 
 #: src/modules/conf_performance/e_int_config_performance.c:119
-#, fuzzy
 msgid "Cache flush interval"
-msgstr "Önbellek Temizleme Aralığı"
+msgstr ""
 
 #: src/modules/conf_performance/e_int_config_performance.c:125
 msgid "Font cache size"
@@ -5181,9 +4858,8 @@ msgid "%1.0f MB"
 msgstr "%1.0f MB"
 
 #: src/modules/conf_performance/e_int_config_performance.c:137
-#, fuzzy
 msgid "Caches"
-msgstr "İptal"
+msgstr ""
 
 #: src/modules/conf_performance/e_int_config_performance.c:141
 #, fuzzy
@@ -5196,9 +4872,8 @@ msgid "%1.0f files"
 msgstr "%1.0f dosya"
 
 #: src/modules/conf_performance/e_int_config_performance.c:147
-#, fuzzy
 msgid "Number of Edje collections to cache"
-msgstr "Ön Belleğe Alınacak Edje Koleksiyon Sayısı"
+msgstr ""
 
 #: src/modules/conf_performance/e_int_config_performance.c:149
 #, c-format
@@ -5206,9 +4881,8 @@ msgid "%1.0f collections"
 msgstr "%1.0f koleksiyon"
 
 #: src/modules/conf_performance/e_int_config_performance.c:152
-#, fuzzy
 msgid "Edje Cache"
-msgstr "İptal"
+msgstr ""
 
 #: src/modules/conf_performance/e_mod_main.c:18
 msgid "Performance"
@@ -5388,12 +5062,8 @@ msgstr "Ayarlar"
 
 #: src/modules/conf_shelves/e_int_config_shelf.c:276
 #, c-format
-msgid ""
-"You requested to delete \"%s\".<br><br>Are you sure you want to delete this "
-"shelf?"
-msgstr ""
-"\"%s\" rafını silmek istediniz.<br><br>Bu rafı silmek istediğinizden emin "
-"misiniz?"
+msgid "You requested to delete \"%s\".<br><br>Are you sure you want to delete this shelf?"
+msgstr "\"%s\" rafını silmek istediniz.<br><br>Bu rafı silmek istediğinizden emin misiniz?"
 
 #: src/modules/conf_startup/e_int_config_startup.c:38
 msgid "Startup Settings"
@@ -5442,12 +5112,8 @@ msgid "Theme Import Error"
 msgstr "Tema İçe Aktarma Hatası"
 
 #: src/modules/conf_theme/e_int_config_theme_import.c:285
-msgid ""
-"Enlightenment was unable to import the theme.<br><br>Are you sure this is "
-"really a valid theme?"
-msgstr ""
-"Enlightenment temayı içe aktaramadı.<br><br>Bunun geçerli bir tema olduğuna "
-"emin misiniz?"
+msgid "Enlightenment was unable to import the theme.<br><br>Are you sure this is really a valid theme?"
+msgstr "Enlightenment temayı içe aktaramadı.<br><br>Bunun geçerli bir tema olduğuna emin misiniz?"
 
 #: src/modules/conf_theme/e_int_config_theme_import.c:294
 msgid "Enlightenment was unable to import the theme<br>due to a copy error."
@@ -5530,8 +5196,7 @@ msgid "Picture Import Error"
 msgstr "Resim İçe Aktarma Hatası"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:629
-msgid ""
-"Enlightenment was unable to import the picture<br>due to conversion errors."
+msgid "Enlightenment was unable to import the picture<br>due to conversion errors."
 msgstr "Enlightenment çevrim hataları nedeniyle<br>resmi içe aktaramadı."
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:716
@@ -5543,20 +5208,13 @@ msgstr "Duvar Kağıdı İçe Aktarma Hatası"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:717
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:809
-msgid ""
-"Enlightenment was unable to import the wallpaper<br>due to a copy error."
-msgstr ""
-"Enlightenment bir kopyalama hatası nedeniyle<br>duvar kağıdını içe "
-"aktaramadı."
+msgid "Enlightenment was unable to import the wallpaper<br>due to a copy error."
+msgstr "Enlightenment bir kopyalama hatası nedeniyle<br>duvar kağıdını içe aktaramadı."
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:727
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_import.c:819
-msgid ""
-"Enlightenment was unable to import the wallpaper.<br><br>Are you sure this "
-"is a valid wallpaper?"
-msgstr ""
-"Enlightenment duvar kağıdını içe aktaramadı.<br><br>Bu duvar kağıdının "
-"geçerli olduğundan emin misiniz?"
+msgid "Enlightenment was unable to import the wallpaper.<br><br>Are you sure this is a valid wallpaper?"
+msgstr "Enlightenment duvar kağıdını içe aktaramadı.<br><br>Bu duvar kağıdının geçerli olduğundan emin misiniz?"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:162
 msgid "By"
@@ -5571,9 +5229,8 @@ msgid "Exchange wallpapers"
 msgstr "Exchange duvar kağıtları"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:235
-#, fuzzy
 msgid "Download"
-msgstr "Modülü Kaldır"
+msgstr "İndir"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:254
 msgid "Getting data, please wait..."
@@ -5593,9 +5250,8 @@ msgid "Window Display"
 msgstr "Pencere Gösterimi"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:125
-#, fuzzy
 msgid "Move Geometry"
-msgstr "Pencere Hareket Geometrisi"
+msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:126
 #: src/modules/conf_window_display/e_int_config_window_display.c:137
@@ -5604,34 +5260,28 @@ msgstr "Bilgiyi Göster"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:129
 #: src/modules/conf_window_display/e_int_config_window_display.c:140
-#, fuzzy
 msgid "Follows the window"
-msgstr "Pencere kapatılıyor"
+msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:136
-#, fuzzy
 msgid "Resize Geometry"
-msgstr "Pencere Boyutlandırma Geometrisi"
+msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:152
-#, fuzzy
 msgid "User defined"
-msgstr "Kullanıcı Tanımlı İkonu Kullan"
+msgstr "Kullanıcı tanımlı"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:154
-#, fuzzy
 msgid "Application provided"
-msgstr "Uygulamanın İkonunu Kullan "
+msgstr "Uygulamanın sağladığı"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:156
-#, fuzzy
 msgid "Border Icon"
-msgstr "Çerçeve"
+msgstr "Çerçeve simgesi"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:161
-#, fuzzy
 msgid "Placement"
-msgstr "Akıllı Yerleşim"
+msgstr "Yerleşim"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:163
 msgid "Smart Placement"
@@ -5650,28 +5300,24 @@ msgid "Place manually with the mouse"
 msgstr "Fare ile manüel yerleştir"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:176
-#, fuzzy
 msgid "Switch to desktop of new window"
-msgstr "Otomatik olarak yeni pencerenin olduğu masaüstüne geç"
+msgstr "Yeni pencerenin olduğu masaüstüne geç"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:179
-#, fuzzy
 msgid "New Windows"
 msgstr "Pencerelerin Altında"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:184
-#, fuzzy
 msgid "Animate"
-msgstr "Boşta"
+msgstr ""
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:195
 msgid "Linear"
 msgstr "Doğrusal"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:199
-#, fuzzy
 msgid "Accelerate, then decelerate"
-msgstr "Düzgün hızlandırma ve yavaşlatma"
+msgstr "Hızlandır, sonra yavaşlat"
 
 #: src/modules/conf_window_display/e_int_config_window_display.c:204
 msgid "Accelerate"
@@ -5732,14 +5378,12 @@ msgid "All windows"
 msgstr "Pencereler"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:224
-#, fuzzy
 msgid "Only dialogs"
-msgstr "Diyaloglar"
+msgstr "Sadece diyaloglar"
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:226
-#, fuzzy
 msgid "Only dialogs with focused parent"
-msgstr "Sadece yeni diyaloglar odaklanır"
+msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:230
 #: src/modules/conf_winlist/e_int_config_winlist.c:214
@@ -5755,19 +5399,16 @@ msgid "Always pass click events to programs"
 msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:239
-#, fuzzy
 msgid "Click raises the window"
-msgstr "Pencere kapatılıyor"
+msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:242
-#, fuzzy
 msgid "Click focuses the window"
-msgstr "Pencereleri odaklamak için tıkla"
+msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:245
-#, fuzzy
 msgid "Refocus last window on desktop switch"
-msgstr "Masaüstü değişince son odaklanan pencereyi yeniden odakla"
+msgstr ""
 
 #: src/modules/conf_window_focus/e_int_config_focus.c:248
 #, fuzzy
@@ -5789,24 +5430,20 @@ msgid "Window Geometry"
 msgstr "Pencere Geometrisi"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:130
-#, fuzzy
 msgid "Resist obstacles"
-msgstr "Direnç"
+msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:132
-#, fuzzy
 msgid "Other windows"
-msgstr "Dahili Pencereler"
+msgstr "Diğer pencereler"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:141
-#, fuzzy
 msgid "Edge of the screen"
-msgstr "Ekran kenarlarına olan direnç:"
+msgstr "Ekranın kenarları"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:150
-#, fuzzy
 msgid "Desktop gadgets"
-msgstr "Masaüstü Adı"
+msgstr "Masaüstü araçları"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:161
 msgid "Resistance"
@@ -5817,28 +5454,24 @@ msgid "Automatically accept changes after:"
 msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:171
-#, fuzzy
 msgid "Move by"
-msgstr "Taşı"
+msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:176
-#, fuzzy
 msgid "Resize by"
-msgstr "Boyutlandır"
+msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:181
-#, fuzzy
 msgid "Keyboard"
-msgstr "Klavye Kısayolu"
+msgstr "Klavye"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:187
 msgid "Limit resize to useful geometry"
 msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_geometry.c:190
-#, fuzzy
 msgid "Move after resize"
-msgstr "Yeniden boyutlandırılabilir"
+msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:44
 #: src/modules/conf_window_manipulation/e_mod_main.c:20
@@ -5876,18 +5509,16 @@ msgid "Both"
 msgstr "İkisi"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:167
-#, fuzzy
 msgid "Direction"
-msgstr "Birini seç"
+msgstr "Yön"
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:180
 msgid "Allow manipulation of maximized windows"
 msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_maxpolicy.c:183
-#, fuzzy
 msgid "Adjust windows on shelf hide"
-msgstr "Raf otomatik gizlenmesinde pencereleri otomatik oynat/boyutlandır"
+msgstr ""
 
 #: src/modules/conf_window_manipulation/e_int_config_window_stacking.c:49
 #: src/modules/conf_window_manipulation/e_mod_main.c:19
@@ -6014,9 +5645,8 @@ msgid "Uncover"
 msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:220
-#, fuzzy
 msgid "Warp mouse while selecting"
-msgstr "Pencereyi seçerken odakla"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:224
 msgid "Warp mouse at end"
@@ -6027,14 +5657,12 @@ msgid "Jump to desk"
 msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:230
-#, fuzzy
 msgid "Selecting"
-msgstr "Birini seç"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:234
-#, fuzzy
 msgid "Warp speed"
-msgstr "Açılır hızı"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:238
 #: src/modules/conf_winlist/e_int_config_winlist.c:251
@@ -6047,14 +5675,12 @@ msgid "%1.2f"
 msgstr "%1.2f"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:242
-#, fuzzy
 msgid "Scroll Animation"
-msgstr "Kaydırmayı Canlandır"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:247
-#, fuzzy
 msgid "Scroll speed"
-msgstr "Kaydırma Hızı"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:256
 #: src/modules/gadman/e_mod_config.c:159
@@ -6062,9 +5688,8 @@ msgid "Animations"
 msgstr "Boşta"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:260
-#, fuzzy
 msgid "Minimum width"
-msgstr "Asgari Genişlik"
+msgstr "Asgari genişlik"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:262
 #: src/modules/conf_winlist/e_int_config_winlist.c:269
@@ -6075,40 +5700,33 @@ msgid "%4.0f"
 msgstr "%4.0f"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:267
-#, fuzzy
 msgid "Maximum width"
-msgstr "Azami Genişlik"
+msgstr "Azami genişlik"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:273
-#, fuzzy
 msgid "Minimum height"
-msgstr "Asgari Yükseklik"
+msgstr "Asgari yükseklik"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:280
-#, fuzzy
 msgid "Maximum height"
-msgstr "Azami Yükseklik"
+msgstr "Azami yükseklik"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:286
 #: src/modules/everything/evry_config.c:597
-#, fuzzy
 msgid "Geometry"
-msgstr "Pencere Geometrisi"
+msgstr "Geometri"
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:290
-#, fuzzy
 msgid "Horizontal alignment"
-msgstr "Yatay"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:295
-#, fuzzy
 msgid "Vertical alignment"
-msgstr "Dikey"
+msgstr ""
 
 #: src/modules/conf_winlist/e_int_config_winlist.c:300
-#, fuzzy
 msgid "Alignment"
-msgstr "Enlightenment"
+msgstr ""
 
 #: src/modules/cpufreq/e_mod_main.c:132
 msgid "Cpufreq"
@@ -6185,24 +5803,15 @@ msgid "Powersaving behavior"
 msgstr "Güç koruma davranışı"
 
 #: src/modules/cpufreq/e_mod_main.c:388
-msgid ""
-"There was an error trying to set the<br>cpu frequency governor via the "
-"module's<br>setfreq utility."
+msgid "There was an error trying to set the<br>cpu frequency governor via the module's<br>setfreq utility."
 msgstr ""
 
 #: src/modules/cpufreq/e_mod_main.c:416
-msgid ""
-"Your kernel does not support setting the<br>CPU frequency at all. You may be "
-"missing<br>Kernel modules or features, or your CPU<br>simply does not "
-"support this feature."
-msgstr ""
-"Çekirdeğiniz işlemci frekansını desteklemiyor.<br> Çekirdek modülleri ya da "
-"özellikleri eksik<br>ya da işlemciniz bu özelliği desteklemiyor."
+msgid "Your kernel does not support setting the<br>CPU frequency at all. You may be missing<br>Kernel modules or features, or your CPU<br>simply does not support this feature."
+msgstr "Çekirdeğiniz işlemci frekansını desteklemiyor.<br> Çekirdek modülleri ya da özellikleri eksik<br>ya da işlemciniz bu özelliği desteklemiyor."
 
 #: src/modules/cpufreq/e_mod_main.c:442
-msgid ""
-"There was an error trying to set the<br>cpu frequency setting via the "
-"module's<br>setfreq utility."
+msgid "There was an error trying to set the<br>cpu frequency setting via the module's<br>setfreq utility."
 msgstr ""
 
 #: src/modules/dropshadow/e_mod_config.c:39
@@ -6303,19 +5912,16 @@ msgstr "Gölge"
 
 #: src/modules/everything/e_mod_main.c:81
 #: src/modules/everything/e_mod_main.c:197
-#, fuzzy
 msgid "Show Everything Dialog"
-msgstr "Her şeyin Altında"
+msgstr "Everything diyalogunu göster"
 
 #: src/modules/everything/e_mod_main.c:92
-#, fuzzy
 msgid "Everything Configuration"
-msgstr "yapılandırma"
+msgstr "Everything Yapılandırması"
 
 #: src/modules/everything/e_mod_main.c:386
-#, fuzzy
 msgid "Everything Module"
-msgstr "Her şey"
+msgstr "Everythin modülü"
 
 #: src/modules/everything/e_mod_main.c:563
 #, fuzzy
@@ -6512,24 +6118,7 @@ msgid "Copy to Clipboard"
 msgstr ""
 
 #: src/modules/everything/evry_view_help.c:67
-msgid ""
-"  Ok, here comes the explanation of <hilight>everything</hilight>...<br>  "
-"Just type a few letters of the thing you are looking for. <br>  Use cursor "
-"<hilight>&lt;up/down&gt;</hilight> to choose from the list of things.<br>  "
-"Press  <hilight>&lt;tab&gt;</hilight> to select an action, then press  "
-"<hilight>&lt;return&gt;</hilight>.<br> This page will not show up next time "
-"you run <hilight>everything</hilight>.<br>    <hilight>&lt;Esc&gt;</hilight> "
-"close this Dialog<br>    <hilight>&lt;?&gt;</hilight> show this page<br>    "
-"<hilight>&lt;return&gt;</hilight> run action<br>    <hilight>&lt;ctrl"
-"+return&gt;</hilight> run action and continue<br>    <hilight>&lt;tab&gt;</"
-"hilight> toggle between selectors<br>    <hilight>&lt;ctrl+tab&gt;</hilight> "
-"complete input (depends on plugin)<br>    <hilight>&lt;ctrl+'x'&gt;</"
-"hilight> jump to plugin beginning with 'x'<br>    <hilight>&lt;ctrl+left/"
-"right&gt;</hilight> cycle through plugins<br>    <hilight>&lt;ctrl+up/"
-"down&gt;</hilight> go to first/last item<br>    <hilight>&lt;ctrl+1&gt;</"
-"hilight> toggle view modes (exit this page ;)<br>    <hilight>&lt;ctrl+2&gt;"
-"</hilight> toggle list view modes<br>    <hilight>&lt;ctrl+3&gt;</hilight> "
-"toggle thumb view modes"
+msgid "  Ok, here comes the explanation of <hilight>everything</hilight>...<br>  Just type a few letters of the thing you are looking for. <br>  Use cursor <hilight>&lt;up/down&gt;</hilight> to choose from the list of things.<br>  Press  <hilight>&lt;tab&gt;</hilight> to select an action, then press  <hilight>&lt;return&gt;</hilight>.<br> This page will not show up next time you run <hilight>everything</hilight>.<br>    <hilight>&lt;Esc&gt;</hilight> close this Dialog<br>    <hilight>&lt;?&gt;</hilight> show this page<br>    <hilight>&lt;return&gt;</hilight> run action<br>    <hilight>&lt;ctrl+return&gt;</hilight> run action and continue<br>    <hilight>&lt;tab&gt;</hilight> toggle between selectors<br>    <hilight>&lt;ctrl+tab&gt;</hilight> complete input (depends on plugin)<br>    <hilight>&lt;ctrl+'x'&gt;</hilight> jump to plugin beginning with 'x'<br>    <hilight>&lt;ctrl+left/right&gt;</hilight> cycle through plugins<br>    <hilight>&lt;ctrl+up/down&gt;</hilight> go to first/last item<br>    <hilight>&lt;ctrl+1&gt;</hilight> toggle view modes (exit this page ;)<br>    <hilight>&lt;ctrl+2&gt;</hilight> toggle list view modes<br>    <hilight>&lt;ctrl+3&gt;</hilight> toggle thumb view modes"
 msgstr ""
 
 #: src/modules/everything-apps/e_mod_main.c:959
@@ -6717,24 +6306,11 @@ msgid "Root"
 msgstr "Kök"
 
 #: src/modules/fileman/e_mod_main.c:440
-msgid ""
-"Fileman Module Settings data needed upgrading. Your old configuration<br>has "
-"been wiped and a new set of defaults initialized. This<br>will happen "
-"regularly during development, so don't report a<br>bug. This simply means "
-"Fileman module needs new configuration<br>data by default for usable "
-"functionality that your old<br>configuration simply lacks. This new set of "
-"defaults will fix<br>that by adding it in. You can re-configure things now "
-"to your<br>liking. Sorry for the hiccup in your configuration.<br>"
+msgid "Fileman Module Settings data needed upgrading. Your old configuration<br>has been wiped and a new set of defaults initialized. This<br>will happen regularly during development, so don't report a<br>bug. This simply means Fileman module needs new configuration<br>data by default for usable functionality that your old<br>configuration simply lacks. This new set of defaults will fix<br>that by adding it in. You can re-configure things now to your<br>liking. Sorry for the hiccup in your configuration.<br>"
 msgstr ""
 
 #: src/modules/fileman/e_mod_main.c:453
-msgid ""
-"Your Fileman Module configuration is NEWER than Fileman Module version. This "
-"is very<br>strange. This should not happen unless you downgraded<br>the "
-"Fileman Module or copied the configuration from a place where<br>a newer "
-"version of the Fileman Module was running. This is bad and<br>as a "
-"precaution your configuration has been now restored to<br>defaults. Sorry "
-"for the inconvenience.<br>"
+msgid "Your Fileman Module configuration is NEWER than Fileman Module version. This is very<br>strange. This should not happen unless you downgraded<br>the Fileman Module or copied the configuration from a place where<br>a newer version of the Fileman Module was running. This is bad and<br>as a precaution your configuration has been now restored to<br>defaults. Sorry for the inconvenience.<br>"
 msgstr ""
 
 #: src/modules/fileman/e_mod_main.c:522
@@ -7085,9 +6661,7 @@ msgstr "Yeni kaynak için bir isim girin:"
 
 #: src/modules/ibar/e_mod_config.c:179
 #, c-format
-msgid ""
-"You requested to delete \"%s\".<br><br>Are you sure you want to delete this "
-"bar source?"
+msgid "You requested to delete \"%s\".<br><br>Are you sure you want to delete this bar source?"
 msgstr ""
 
 #: src/modules/ibar/e_mod_config.c:183
@@ -7246,9 +6820,7 @@ msgid "Pager Button Grab"
 msgstr ""
 
 #: src/modules/pager/e_mod_config.c:360
-msgid ""
-"Please press a mouse button<br>Press <hilight>Escape</hilight> to abort."
-"<br>Or <hilight>Del</hilight> to reset the button."
+msgid "Please press a mouse button<br>Press <hilight>Escape</hilight> to abort.<br>Or <hilight>Del</hilight> to reset the button."
 msgstr ""
 
 #: src/modules/pager/e_mod_config.c:415
@@ -7257,10 +6829,7 @@ msgid "Attention"
 msgstr "Dikkat"
 
 #: src/modules/pager/e_mod_config.c:416
-msgid ""
-"You cannot use the right mouse button in the<br>shelf for this as it is "
-"already taken by internal<br>code for context menus.<br>This button only "
-"works in the popup."
+msgid "You cannot use the right mouse button in the<br>shelf for this as it is already taken by internal<br>code for context menus.<br>This button only works in the popup."
 msgstr ""
 
 #: src/modules/pager/e_mod_main.c:2816
@@ -7379,14 +6948,8 @@ msgid "Profile"
 msgstr "Profil"
 
 #: src/modules/wizard/page_030.c:88
-msgid ""
-"No menu files were<br>found on your system.<br>Please see "
-"the<br>documentation on<br>www.enlightenment.org<br>for more details "
-"on<br>how to get your<br>application menus<br>working."
-msgstr ""
-"Sisteminizde hiç<br>menü dosyası bulunamadı.<br>Uygulama menüsünün<br>nasıl "
-"çalışacağı hakkındaki<br> detayları öğrenmek için <br>www.enlightenment."
-"org<br>adresindeki belgeyi<br>okuyun."
+msgid "No menu files were<br>found on your system.<br>Please see the<br>documentation on<br>www.enlightenment.org<br>for more details on<br>how to get your<br>application menus<br>working."
+msgstr "Sisteminizde hiç<br>menü dosyası bulunamadı.<br>Uygulama menüsünün<br>nasıl çalışacağı hakkındaki<br> detayları öğrenmek için <br>www.enlightenment.org<br>adresindeki belgeyi<br>okuyun."
 
 #: src/modules/wizard/page_030.c:104
 msgid "Select application menu"
@@ -7521,12 +7084,8 @@ msgid "Controls"
 msgstr "Kontroller"
 
 #: src/modules/mixer/e_mod_main.c:1127
-msgid ""
-"Mixer Module Settings data changed.<br>Your old configuration has been "
-"replaced with new default.<br>Sorry for the inconvenience."
-msgstr ""
-"Karıştırıcı Modülü Ayarlarının verileri değişti.<br>Eski yapılandırmanız "
-"yenisiyle değiştirildi.<br>Rahatsızlık için özür dilerim."
+msgid "Mixer Module Settings data changed.<br>Your old configuration has been replaced with new default.<br>Sorry for the inconvenience."
+msgstr "Karıştırıcı Modülü Ayarlarının verileri değişti.<br>Eski yapılandırmanız yenisiyle değiştirildi.<br>Rahatsızlık için özür dilerim."
 
 #: src/modules/connman/e_mod_main.c:83 src/modules/connman/e_mod_main.c:110
 #: src/modules/connman/e_mod_main.c:970 src/modules/connman/e_mod_main.c:1701
@@ -7547,11 +7106,8 @@ msgstr "ConnMan şifreye ihtiyaç duyuyor"
 
 #: src/modules/connman/e_mod_main.c:241
 #, c-format
-msgid ""
-"Connection Manager needs your passphrase for <br>the service <hilight>%s</"
-"hilight>"
-msgstr ""
-"Bağlantı Yöneticisi için <br><hilight>%s</hilight>servis şifreniz gerekli "
+msgid "Connection Manager needs your passphrase for <br>the service <hilight>%s</hilight>"
+msgstr "Bağlantı Yöneticisi için <br><hilight>%s</hilight>servis şifreniz gerekli "
 
 #: src/modules/connman/e_mod_main.c:265
 msgid "Show passphrase as clear text"
@@ -7669,9 +7225,7 @@ msgstr "Başka bir sistem çekmecesi mevcut"
 
 #: src/modules/systray/e_mod_main.c:892
 msgid "There can be only one systray gadget and another one already exists."
-msgstr ""
-"Sadece bir tane sistem çekmecesi aracı olabilir ve şu anda bir tanesi zaten "
-"mevcut."
+msgstr "Sadece bir tane sistem çekmecesi aracı olabilir ve şu anda bir tanesi zaten mevcut."
 
 #: src/modules/systray/e_mod_main.c:1094
 msgid "Systray"
@@ -7710,7 +7264,6 @@ msgstr "Sistem Çekmecesi"
 #~ msgid "Lock when Enlightenment starts"
 #~ msgstr "Enlightenment başlayınca kilitle"
 
-#, fuzzy
 #~ msgid "Screen Lock Timers"
 #~ msgstr "Ekran Kilidi"
 
@@ -7720,14 +7273,12 @@ msgstr "Sistem Çekmecesi"
 #~ msgid "User Wallpaper"
 #~ msgstr "Kullanıcı Duvar Kağıdı"
 
-#, fuzzy
 #~ msgid "Directory up"
 #~ msgstr "Yeni Dizin"
 
 #~ msgid "Enter Presentation Mode"
 #~ msgstr "Sunum Kipine Gir"
 
-#, fuzzy
 #~ msgid "Screensaver Timer"
 #~ msgstr "Ekran Koruyucu Zamanlayıcı(ları)"
 
@@ -7761,21 +7312,15 @@ msgstr "Sistem Çekmecesi"
 #~ msgid "For some reason, Enlightenment was unable to create a gradient."
 #~ msgstr "Enlightenment bir sebepten dolayı gradyan oluşturamadı."
 
-#, fuzzy
 #~ msgid "Geometry when moving or resizing"
-#~ msgstr ""
-#~ "Pencereyi yeniden boyutlandırırken veya taşırken geometri bilgilerini "
-#~ "göster"
+#~ msgstr "Pencereyi yeniden boyutlandırırken veya taşırken geometri bilgilerini göster"
 
-#, fuzzy
 #~ msgid "Animated shading"
 #~ msgstr "Hareketli değişim"
 
-#, fuzzy
 #~ msgid "New Window Placement"
 #~ msgstr "Otomatik Yeni Pencere Yerleşimi"
 
-#, fuzzy
 #~ msgid "Border Icon Preference"
 #~ msgstr "Simge Tercihleri"
 
@@ -7788,11 +7333,9 @@ msgstr "Sistem Çekmecesi"
 #~ msgid "Miscellaneous Options"
 #~ msgstr "Çeşitli Seçenekler"
 
-#, fuzzy
 #~ msgid "From other desks"
 #~ msgstr "Diğer masaüstlerindeki pencereleri göster"
 
-#, fuzzy
 #~ msgid "From other screens"
 #~ msgstr "Dİğer ekranlardaki pencereleri göster"
 
@@ -7817,22 +7360,18 @@ msgstr "Sistem Çekmecesi"
 #~ msgid "Use custom screenlock"
 #~ msgstr "Özel ekran kilidi kullan"
 
-#, fuzzy
 #~ msgid "UPower"
 #~ msgstr "Alta Gönder"
 
-#, fuzzy
 #~ msgid "Show %s Plugin"
 #~ msgstr "Fare üzerine gelince göster"
 
 #~ msgid "Everything"
 #~ msgstr "Her şey"
 
-#, fuzzy
 #~ msgid "Show Executables"
 #~ msgstr "Çalıştırılabilir"
 
-#, fuzzy
 #~ msgid "Set as Wallpaper"
 #~ msgstr "Duvar Kağıdını Ayarla"
 
