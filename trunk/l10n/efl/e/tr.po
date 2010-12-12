@@ -6035,7 +6035,7 @@ msgstr ""
 
 #: src/modules/everything/evry_plug_clipboard.c:33
 msgid "Copy to Clipboard"
-msgstr ""
+msgstr "Panoya Kopyala"
 
 #: src/modules/everything/evry_view_help.c:67
 msgid "  Ok, here comes the explanation of <hilight>everything</hilight>...<br>  Just type a few letters of the thing you are looking for. <br>  Use cursor <hilight>&lt;up/down&gt;</hilight> to choose from the list of things.<br>  Press  <hilight>&lt;tab&gt;</hilight> to select an action, then press  <hilight>&lt;return&gt;</hilight>.<br> This page will not show up next time you run <hilight>everything</hilight>.<br>    <hilight>&lt;Esc&gt;</hilight> close this Dialog<br>    <hilight>&lt;?&gt;</hilight> show this page<br>    <hilight>&lt;return&gt;</hilight> run action<br>    <hilight>&lt;ctrl+return&gt;</hilight> run action and continue<br>    <hilight>&lt;tab&gt;</hilight> toggle between selectors<br>    <hilight>&lt;ctrl+tab&gt;</hilight> complete input (depends on plugin)<br>    <hilight>&lt;ctrl+'x'&gt;</hilight> jump to plugin beginning with 'x'<br>    <hilight>&lt;ctrl+left/right&gt;</hilight> cycle through plugins<br>    <hilight>&lt;ctrl+up/down&gt;</hilight> go to first/last item<br>    <hilight>&lt;ctrl+1&gt;</hilight> toggle view modes (exit this page ;)<br>    <hilight>&lt;ctrl+2&gt;</hilight> toggle list view modes<br>    <hilight>&lt;ctrl+3&gt;</hilight> toggle thumb view modes"
@@ -6047,23 +6047,23 @@ msgstr "Exebuf"
 
 #: src/modules/everything-apps/e_mod_main.c:976
 msgid "Open With..."
-msgstr ""
+msgstr "Şununla Aç..."
 
 #: src/modules/everything-apps/e_mod_main.c:990
 msgid "Open File..."
-msgstr ""
+msgstr "Dosya Aç..."
 
 #: src/modules/everything-apps/e_mod_main.c:1004
 msgid "Edit Application Entry"
-msgstr ""
+msgstr "Uygulama Girdisi Düzenle"
 
 #: src/modules/everything-apps/e_mod_main.c:1011
 msgid "New Application Entry"
-msgstr ""
+msgstr "Yeni Uygulama Girdisi"
 
 #: src/modules/everything-apps/e_mod_main.c:1018
 msgid "Run with Sudo"
-msgstr ""
+msgstr "Sudo ile çalıştır"
 
 #: src/modules/everything-apps/e_mod_main.c:1024
 #: src/modules/fileman/e_fwin.c:1502 src/modules/fileman/e_fwin.c:1821
@@ -6072,47 +6072,47 @@ msgstr "Şununla Aç..."
 
 #: src/modules/everything-apps/e_mod_main.c:1031
 msgid "Open Terminal here"
-msgstr ""
+msgstr "Burada uçbirim aç"
 
 #: src/modules/everything-apps/e_mod_main.c:1096
 #: src/modules/everything-apps/e_mod_main.c:1221
 #: src/modules/everything-apps/e_mod_main.c:1240
 msgid "Everything Applications"
-msgstr ""
+msgstr "Everything Uygulamalar"
 
 #: src/modules/everything-apps/e_mod_main.c:1129
 msgid "Commands"
-msgstr ""
+msgstr "Komutlar"
 
 #: src/modules/everything-apps/e_mod_main.c:1130
 msgid "Terminal Command"
-msgstr ""
+msgstr "Uçbirim Komutu"
 
 #: src/modules/everything-apps/e_mod_main.c:1135
 msgid "Sudo GUI"
-msgstr ""
+msgstr "Sudo GUI"
 
 #: src/modules/everything-aspell/e_mod_main.c:398
 msgid "Spell Checker"
-msgstr ""
+msgstr "Yazım Denetimi"
 
 #: src/modules/everything-aspell/e_mod_main.c:462
 #: src/modules/everything-aspell/e_mod_main.c:595
 #: src/modules/everything-aspell/e_mod_main.c:614
 msgid "Everything Aspell"
-msgstr ""
+msgstr "Everything Aspell"
 
 #: src/modules/everything-aspell/e_mod_main.c:481
 msgid "Spell checker"
-msgstr ""
+msgstr "Yazım denetimi"
 
 #: src/modules/everything-aspell/e_mod_main.c:484
 msgid "Aspell"
-msgstr ""
+msgstr "Aspell"
 
 #: src/modules/everything-aspell/e_mod_main.c:487
 msgid "Hunspell"
-msgstr ""
+msgstr "Hunspell"
 
 #: src/modules/everything-aspell/e_mod_main.c:494
 #: src/modules/fileman/e_fwin.c:1899
@@ -6121,74 +6121,74 @@ msgstr "Özel Komut"
 
 #: src/modules/everything-calc/e_mod_main.c:237
 msgid "Calculator"
-msgstr ""
+msgstr "Hesap makinesi"
 
 #: src/modules/everything-files/e_mod_main.c:1387
 msgid "Copy To ..."
-msgstr ""
+msgstr "Kopyala ..."
 
 #: src/modules/everything-files/e_mod_main.c:1392
 msgid "Move To ..."
-msgstr ""
+msgstr "Taşı ..."
 
 #: src/modules/everything-files/e_mod_main.c:1397
 msgid "Move to Trash"
-msgstr ""
+msgstr "Çöpe Taşı"
 
 #: src/modules/everything-files/e_mod_main.c:1401
 msgid "Open Folder (EFM)"
-msgstr ""
+msgstr "Klasörü Aç (EFM)"
 
 #: src/modules/everything-files/e_mod_main.c:1405
 msgid "Sort by Date"
-msgstr ""
+msgstr "Tarihe Göre Sırala"
 
 #: src/modules/everything-files/e_mod_main.c:1410
 msgid "Sort by Name"
-msgstr ""
+msgstr "İsme Göre Sırala"
 
 #: src/modules/everything-files/e_mod_main.c:1442
 #: src/modules/everything-files/e_mod_main.c:1451
 msgid "Recent Files"
-msgstr ""
+msgstr "Yeni Dosyalar"
 
 #: src/modules/everything-files/e_mod_main.c:1528
 #: src/modules/everything-files/e_mod_main.c:1659
 #: src/modules/everything-files/e_mod_main.c:1680
 msgid "Everything Files"
-msgstr ""
+msgstr "Everything Dosyalar"
 
 #: src/modules/everything-files/e_mod_main.c:1551
 msgid "Show home directory"
-msgstr ""
+msgstr "Ev dizinini göster"
 
 #: src/modules/everything-files/e_mod_main.c:1555
 msgid "Show recent files"
-msgstr ""
+msgstr "Yeni dosyaları göster"
 
 #: src/modules/everything-files/e_mod_main.c:1559
 msgid "Search recent files"
-msgstr ""
+msgstr "Yeni dosyaları ara"
 
 #: src/modules/everything-files/e_mod_main.c:1563
 msgid "Search cached files"
-msgstr ""
+msgstr "Önbellekteki dosyaları ara"
 
 #: src/modules/everything-files/e_mod_main.c:1567
 msgid "Cache visited directories"
-msgstr ""
+msgstr "Girilen dizinleri önbelleğe al"
 
 #: src/modules/everything-files/e_mod_main.c:1571
 msgid "Clear cache"
-msgstr ""
+msgstr "Önbelleği temizle"
 
 #: src/modules/everything-settings/e_mod_main.c:194
 msgid "Show Dialog"
-msgstr ""
+msgstr "Dİyalog Göster"
 
 #: src/modules/everything-windows/e_mod_main.c:428
 msgid "Switch to Window"
-msgstr ""
+msgstr "Pencereye Geç"
 
 #: src/modules/everything-windows/e_mod_main.c:443
 msgid "Toggle Fullscreen"
@@ -6269,7 +6269,7 @@ msgstr "Davranış"
 
 #: src/modules/fileman/e_mod_config.c:271
 msgid "Show UDisks icons on desktop"
-msgstr ""
+msgstr "UDisks simgelerini masaüstünde göster"
 
 #: src/modules/fileman/e_mod_config.c:273
 msgid "Show HAL icons on desktop"
@@ -6277,7 +6277,7 @@ msgstr "Masaüstünde HAL simgelerini göster"
 
 #: src/modules/fileman/e_mod_config.c:277
 msgid "Mount volumes on insert"
-msgstr ""
+msgstr "Disk takıldığında bağla"
 
 #: src/modules/fileman/e_mod_config.c:280
 msgid "Open filemanager on mount"
@@ -6386,17 +6386,17 @@ msgstr "Dosya: %s"
 #: src/modules/fileman_opinfo/e_mod_main.c:139
 #, c-format
 msgid "From: %s"
-msgstr ""
+msgstr "Kimden: %s"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:146
 #, c-format
 msgid "To: %s"
-msgstr ""
+msgstr "Kime: %s"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:324
 #, c-format
 msgid "Processing %d operation(s)"
-msgstr ""
+msgstr "%d işlem yapılıyor"
 
 #: src/modules/fileman_opinfo/e_mod_main.c:328
 msgid "Filemanager is idle"
@@ -6416,7 +6416,7 @@ msgstr "Mevcut Araçlar"
 
 #: src/modules/gadman/e_mod_config.c:139
 msgid "Mode"
-msgstr ""
+msgstr "Kip"
 
 #: src/modules/gadman/e_mod_config.c:144 src/modules/gadman/e_mod_config.c:176
 msgid "Custom Image"
@@ -6442,7 +6442,7 @@ msgstr "Araçlar"
 
 #: src/modules/gadman/e_mod_config.c:235
 msgid "Background Options"
-msgstr ""
+msgstr "Arkaplan Seçenekleri"
 
 #: src/modules/gadman/e_mod_gadman.c:740
 msgid "Free"
@@ -6566,7 +6566,7 @@ msgstr "Özellikler"
 
 #: src/modules/ibar/e_mod_main.c:813
 msgid "Create new Icon"
-msgstr ""
+msgstr "Yeni simge oluştur"
 
 #: src/modules/ibox/e_mod_config.c:48
 msgid "IBox Settings"
@@ -6710,7 +6710,7 @@ msgstr ""
 
 #: src/modules/pager/e_mod_config.c:415
 msgid "Attention"
-msgstr ""
+msgstr "Uyarı"
 
 #: src/modules/pager/e_mod_config.c:416
 msgid "You cannot use the right mouse button in the<br>shelf for this as it is already taken by internal<br>code for context menus.<br>This button only works in the popup."
