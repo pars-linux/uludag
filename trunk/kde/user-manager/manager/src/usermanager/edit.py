@@ -42,6 +42,7 @@ categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations")
               "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
               "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
               "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display")}
+              #TODO add org.kde.kcontrol.kcmkeyboard service written by farslan to a suitable place
 
 class PolicyItem(QtGui.QTreeWidgetItem):
     def __init__(self, parent, text, action_id):
