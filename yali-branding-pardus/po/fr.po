@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-11 21:01+0000\n"
+"POT-Creation-Date: 2010-12-12 20:02+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -50,9 +50,8 @@ msgid "Configure Bootloader"
 msgstr "Configurer le chargeur de démarrage"
 
 #: ../release.xml.in.h:9
-#, fuzzy
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
-msgstr "Les réglages de la date et de l'heure vous permettent de définir la date et l'heure de votre ordinateur. Généralement, vous souhaitez aussi souhaitez spécifier votre fuseau horaire afin de bénéficier des passages automatiques aux heures d'été et d'hiver.&lt;/p&gt;&lt;p&gt;Un fuseau horaire est une région de la Terre qui a un temps uniforme, généralement appelé le temps local. Par convention, les fuseaux horaires calculent leurs heures locales comme un décalage par rapport au temps universel coordonné (UTC)."
+msgstr "Ici vous pouvez régler la date et de l'heure de votre ordinateur. Généralement, vous souhaitez aussi spécifier votre fuseau horaire afin de bénéficier des passages automatiques aux heures d'été et d'hiver.&lt;br&gt;&lt;br&gt;Un fuseau horaire est une région de la Terre qui a un temps uniforme, généralement appelé le temps local. Par convention, les fuseaux horaires calculent leurs heures locales comme un décalage par rapport au temps universel coordonné (UTC)."
 
 #: ../release.xml.in.h:10
 #, fuzzy
