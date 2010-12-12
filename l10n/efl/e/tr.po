@@ -15,9 +15,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2010-02-06 04:53+0000\n"
 "Language: tr\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Bookmarks: -1,-1,-1,-1,-1,50,-1,-1,-1,-1\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: src/bin/e_about.c:14
 msgid "About Enlightenment"
@@ -3601,27 +3601,27 @@ msgstr "Ekran Kilidi Ayarları"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:206
 msgid "Lock on Startup"
-msgstr ""
+msgstr "Açılışta Kilitle"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:209
 msgid "Lock on Suspend"
-msgstr ""
+msgstr "Askıya Alınca Kilitle"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:213
 msgid "Custom Screenlock Command"
-msgstr ""
+msgstr "Ekran Kilitleme Komutu"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:217
 msgid "Locking"
-msgstr ""
+msgstr "Kilitleme"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:223
 msgid "Show on all screens"
-msgstr ""
+msgstr "Tüm ekranlarda göster"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:228
 msgid "Show on current screen"
-msgstr ""
+msgstr "Mevcut ekranda göster"
 
 #: src/modules/conf_desklock/e_int_config_desklock.c:233
 msgid "Show on screen #:"
@@ -4331,7 +4331,7 @@ msgstr "Simge Teması Ayarları"
 
 #: src/modules/conf_icon_theme/e_int_config_icon_themes.c:264
 msgid "This overrides general theme"
-msgstr ""
+msgstr "Genel temayı geçersiz kıl"
 
 #: src/modules/conf_icon_theme/e_mod_main.c:19
 msgid "Icon Theme"
@@ -4473,7 +4473,7 @@ msgstr "Lütfen tuş dizisi girin,<br><br>ya da çıkmak için<hilight>Escape</h
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:8
 msgid "Single key"
-msgstr ""
+msgstr "Tek tuş"
 
 #: src/modules/conf_keybindings/e_int_config_keybindings.c:91
 msgid "Key Bindings Settings"
@@ -4825,7 +4825,7 @@ msgstr "%1.0f MB"
 
 #: src/modules/conf_performance/e_int_config_performance.c:137
 msgid "Caches"
-msgstr ""
+msgstr "Önbellek"
 
 #: src/modules/conf_performance/e_int_config_performance.c:141
 msgid "Number of Edje files to cache"
@@ -4894,7 +4894,7 @@ msgstr "Profiller"
 
 #: src/modules/conf_scale/e_int_config_scale.c:55
 msgid "Scale Settings"
-msgstr ""
+msgstr "Ölçekleme Ayarları"
 
 #: src/modules/conf_scale/e_int_config_scale.c:99
 msgid "Scale with DPI"
@@ -4978,7 +4978,7 @@ msgstr "Ekran Koruyucu"
 
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:143
 msgid "Initial timeout"
-msgstr ""
+msgstr "Zaman aşımı"
 
 #: src/modules/conf_screensaver/e_int_config_screensaver.c:150
 msgid "Alternation timeout"
@@ -5183,7 +5183,7 @@ msgstr ""
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:198
 msgid "Error getting data !"
-msgstr ""
+msgstr "Veri alınırken hata !"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:233
 msgid "Exchange wallpapers"
@@ -5195,11 +5195,11 @@ msgstr "İndir"
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:254
 msgid "Getting data, please wait..."
-msgstr ""
+msgstr "Veri alınıyor, lütfen bekleyin..."
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:266
 msgid "Select a background from the list."
-msgstr ""
+msgstr "Listeden bir arkaplan seçin."
 
 #: src/modules/conf_wallpaper/e_int_config_wallpaper_web.c:281
 msgid "Error: can't start the request."
@@ -5871,15 +5871,15 @@ msgstr "Everythin modülü"
 
 #: src/modules/everything/e_mod_main.c:563
 msgid "Run Everything"
-msgstr ""
+msgstr "Everything Çalıştır"
 
 #: src/modules/everything/evry_config.c:79
 msgid "Everything Settings"
-msgstr ""
+msgstr "Everything Ayarları"
 
 #: src/modules/everything/evry_config.c:362
 msgid "Available Plugins"
-msgstr ""
+msgstr "Kullanılabilir Eklentiler"
 
 #: src/modules/everything/evry_config.c:368
 msgid "Move Up"
@@ -5907,11 +5907,11 @@ msgstr ""
 
 #: src/modules/everything/evry_config.c:406
 msgid "Minimum characters for search"
-msgstr ""
+msgstr "Aramada kullanılacak asgari karakter"
 
 #: src/modules/everything/evry_config.c:415
 msgid "Plugin Trigger"
-msgstr ""
+msgstr "Eklenti Tetikleyici"
 
 #: src/modules/everything/evry_config.c:416
 msgid "Default is plugin name"
@@ -5919,11 +5919,11 @@ msgstr ""
 
 #: src/modules/everything/evry_config.c:423
 msgid "Search only when triggered"
-msgstr ""
+msgstr "Sadece tetiklendiğinde ara"
 
 #: src/modules/everything/evry_config.c:430
 msgid "Plugin View"
-msgstr ""
+msgstr "Eklenti Görünümü"
 
 #: src/modules/everything/evry_config.c:440
 #: src/modules/everything/evry_config.c:491
@@ -5932,7 +5932,7 @@ msgstr "Ayrıntılı"
 
 #: src/modules/everything/evry_config.c:466
 msgid "Hide input when inactive"
-msgstr ""
+msgstr "Etkin değilken girdiyi gizle"
 
 #: src/modules/everything/evry_config.c:470
 msgid "Hide list"
@@ -5940,15 +5940,15 @@ msgstr "Listeyi gizle"
 
 #: src/modules/everything/evry_config.c:474
 msgid "Quick Navigation"
-msgstr ""
+msgstr "Hızlı Gezinme"
 
 #: src/modules/everything/evry_config.c:480
 msgid "Emacs style (ALT + n,p,f,b,m,i)"
-msgstr ""
+msgstr "Emacs stili (ALT + n,p,f,b,m,i)"
 
 #: src/modules/everything/evry_config.c:482
 msgid "Vi style (ALT + h,j,k,l,n,p,m,i)"
-msgstr ""
+msgstr "Vi stili (ALT + h,j,k,l,n,p,m,i)"
 
 #: src/modules/everything/evry_config.c:487
 msgid "Default View"
@@ -5964,36 +5964,36 @@ msgstr ""
 
 #: src/modules/everything/evry_config.c:508
 msgid "Sorting"
-msgstr ""
+msgstr "Sıralama"
 
 #: src/modules/everything/evry_config.c:510
 msgid "By usage"
-msgstr ""
+msgstr "Kullanıma göre"
 
 #: src/modules/everything/evry_config.c:513
 msgid "Most used"
-msgstr ""
+msgstr "En çok kullanılan"
 
 #: src/modules/everything/evry_config.c:516
 msgid "Last used"
-msgstr ""
+msgstr "En son kullanılan"
 
 #: src/modules/everything/evry_config.c:530
 msgid "Subject Plugins"
-msgstr ""
+msgstr "Konu Eklentileri"
 
 #: src/modules/everything/evry_config.c:534
 msgid "Action Plugins"
-msgstr ""
+msgstr "Eylem Eklentileri"
 
 #: src/modules/everything/evry_config.c:538
 msgid "Object Plugins"
-msgstr ""
+msgstr "Nesne Eklentileri"
 
 #: src/modules/everything/evry_config.c:541
 #: src/modules/everything/evry_config.c:743
 msgid "Plugins"
-msgstr ""
+msgstr "Eklentiler"
 
 #: src/modules/everything/evry_config.c:548
 msgid "Popup Size"
@@ -6019,7 +6019,7 @@ msgstr ""
 
 #: src/modules/everything/evry_config.c:638
 msgid "Everything Collection"
-msgstr ""
+msgstr "Everything Koleksiyonu"
 
 #: src/modules/everything/evry_plug_actions.c:172
 msgid "Actions"
@@ -6031,7 +6031,7 @@ msgstr "Öğeler"
 
 #: src/modules/everything/evry_plug_aggregator.c:345
 msgid "No plugins loaded"
-msgstr ""
+msgstr "Eklenti yüklenmemiş"
 
 #: src/modules/everything/evry_plug_clipboard.c:33
 msgid "Copy to Clipboard"
