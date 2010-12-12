@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27,7 +28,6 @@ msgid "Unable to launch external application.\n"
 msgstr "Web tarayıcı çalıştırılamadı.\n"
 
 #: AboutLabel#3
-#, fuzzy
 msgctxt "AboutLabel#3"
 msgid "OK"
 msgstr "Tamam"
@@ -36,13 +36,9 @@ msgstr "Tamam"
 msgid "Error registering documentation file '%1': %2"
 msgstr ""
 
-#: Assistant#10
-msgid "Cannot load sqlite database driver!"
-msgstr ""
-
 #: Assistant#2
 msgid "Error: %1"
-msgstr ""
+msgstr "Hata: %1"
 
 #: Assistant#3
 msgid ""
@@ -82,15 +78,17 @@ msgstr ""
 msgid "Error reading collection file '%1': %2"
 msgstr ""
 
+#: Assistant#10
+msgid "Cannot load sqlite database driver!"
+msgstr ""
+
 #: BookmarkDialog#1
-#, fuzzy
 msgid "Add Bookmark"
-msgstr "&Yer İmi Ekle"
+msgstr "Yer İmi Ekle"
 
 #: BookmarkDialog#2
-#, fuzzy
 msgid "Bookmark:"
-msgstr "&Yer İmleri"
+msgstr "Yer İmleri"
 
 #: BookmarkDialog#3
 msgid "Add in Folder:"
@@ -98,43 +96,26 @@ msgstr ""
 
 #: BookmarkDialog#4
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: BookmarkDialog#5
 msgid "New Folder"
-msgstr ""
+msgstr "Yeni Dizin"
 
 #: BookmarkDialog#6
 msgctxt "BookmarkDialog#6"
 msgid "Rename Folder"
-msgstr ""
+msgstr "Dizini Yeniden Adlandır"
 
 #: BookmarkManager#1
 #, fuzzy
 msgid "Untitled"
 msgstr "Başlıksız"
 
-#: BookmarkManager#10
-msgctxt "BookmarkManager#10"
-msgid "Show Bookmark in New Tab"
-msgstr ""
-
-#: BookmarkManager#11
-#, fuzzy
-msgctxt "BookmarkManager#11"
-msgid "Delete Bookmark"
-msgstr "Yer İmini Sil"
-
-#: BookmarkManager#12
-#, fuzzy
-msgctxt "BookmarkManager#12"
-msgid "Rename Bookmark"
-msgstr "Yer İmini Sil"
-
 #: BookmarkManager#2
 msgctxt "BookmarkManager#2"
 msgid "Remove"
-msgstr ""
+msgstr "Yeniden Adlandır"
 
 #: BookmarkManager#3
 msgid "You are going to delete a Folder, this will also<br>remove it's content. Are you sure to continue?"
@@ -156,10 +137,9 @@ msgid "Ctrl+D"
 msgstr "Ctrl+T"
 
 #: BookmarkManager#7
-#, fuzzy
 msgctxt "BookmarkManager#7"
 msgid "Delete Folder"
-msgstr "Yer İmini Sil"
+msgstr "Dizini Sil"
 
 #: BookmarkManager#8
 msgctxt "BookmarkManager#8"
@@ -167,31 +147,76 @@ msgid "Rename Folder"
 msgstr ""
 
 #: BookmarkManager#9
-#, fuzzy
 msgctxt "BookmarkManager#9"
 msgid "Show Bookmark"
-msgstr "&Yer İmleri"
+msgstr "Yer imini göster"
+
+#: BookmarkManager#10
+msgctxt "BookmarkManager#10"
+msgid "Show Bookmark in New Tab"
+msgstr "Yer imini Yeni Sekmede Göster"
+
+#: BookmarkManager#11
+msgctxt "BookmarkManager#11"
+msgid "Delete Bookmark"
+msgstr "Yer İmini Sil"
+
+#: BookmarkManager#12
+msgctxt "BookmarkManager#12"
+msgid "Rename Bookmark"
+msgstr "Yer İmini Yeniden Adlandır"
 
 #: BookmarkManagerWidget#1
-#, fuzzy
 msgid "Manage Bookmarks"
-msgstr "&Yer İmleri"
+msgstr "Yer imlerini düzenle"
+
+#: BookmarkManagerWidget#2
+msgid "Search:"
+msgstr "Ara"
+
+#: BookmarkManagerWidget#3
+msgctxt "BookmarkManagerWidget#3"
+msgid "Remove"
+msgstr ""
+
+#: BookmarkManagerWidget#4
+msgid "Import and Backup"
+msgstr "İçeri Aktar ve Yedekle"
+
+#: BookmarkManagerWidget#5
+#, fuzzy
+msgctxt "BookmarkManagerWidget#5"
+msgid "OK"
+msgstr "Tamam"
+
+#: BookmarkManagerWidget#6
+msgid "Import..."
+msgstr "İçeri Aktar..."
+
+#: BookmarkManagerWidget#7
+msgid "Export..."
+msgstr "Dışarı Aktar..."
+
+#: BookmarkManagerWidget#8
+msgid "Open File"
+msgstr "Dosyay Aç"
+
+#: BookmarkManagerWidget#9
+msgid "Files (*.xbel)"
+msgstr ""
 
 #: BookmarkManagerWidget#10
-#, fuzzy
 msgid "Save File"
-msgstr "Sayfayı Kaydet"
+msgstr "Dosyayı Kaydet"
 
 #: BookmarkManagerWidget#11
-#, fuzzy
 msgctxt "BookmarkManagerWidget#11"
 msgid "Qt Assistant"
-msgstr "Qt Belge Tarayıcı"
+msgstr "Qt Assistant"
 
 #: BookmarkManagerWidget#12
-#, fuzzy
 msgid "Unable to save bookmarks."
-msgstr "Yer İmini Sil"
+msgstr "Yer İmleri kaydedilemiyor"
 
 #: BookmarkManagerWidget#13
 msgid "You are goingto delete a Folder, this will also<br> remove it's content. Are you sure to continue?"
@@ -231,73 +256,32 @@ msgctxt "BookmarkManagerWidget#19"
 msgid "Rename Bookmark"
 msgstr "Yer İmini Sil"
 
-#: BookmarkManagerWidget#2
-#, fuzzy
-msgid "Search:"
-msgstr "&Ara"
-
-#: BookmarkManagerWidget#3
-msgctxt "BookmarkManagerWidget#3"
-msgid "Remove"
-msgstr ""
-
-#: BookmarkManagerWidget#4
-msgid "Import and Backup"
-msgstr ""
-
-#: BookmarkManagerWidget#5
-#, fuzzy
-msgctxt "BookmarkManagerWidget#5"
-msgid "OK"
-msgstr "Tamam"
-
-#: BookmarkManagerWidget#6
-msgid "Import..."
-msgstr ""
-
-#: BookmarkManagerWidget#7
-#, fuzzy
-msgid "Export..."
-msgstr "Hata..."
-
-#: BookmarkManagerWidget#8
-msgid "Open File"
-msgstr ""
-
-#: BookmarkManagerWidget#9
-msgid "Files (*.xbel)"
-msgstr ""
-
 #: BookmarkModel#1
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: BookmarkModel#2
 msgid "Address"
-msgstr ""
+msgstr "Adres"
 
 #: BookmarkModel#3
-#, fuzzy
 msgid "Bookmarks Menu"
-msgstr "&Yer İmleri"
+msgstr "Yer İmleri Menüsü"
 
 #: BookmarkWidget#1
-#, fuzzy
 msgctxt "BookmarkWidget#1"
 msgid "Bookmarks"
-msgstr "&Yer İmleri"
+msgstr "Yer İmleri"
 
 #: BookmarkWidget#2
-#, fuzzy
 msgctxt "BookmarkWidget#2"
 msgid "Filter:"
-msgstr "&Dosya"
+msgstr "Filtre"
 
 #: BookmarkWidget#3
-#, fuzzy
 msgctxt "BookmarkWidget#3"
 msgid "Add"
-msgstr "Sekme Ekle"
+msgstr "Ekle"
 
 #: BookmarkWidget#4
 msgctxt "BookmarkWidget#4"
@@ -305,9 +289,8 @@ msgid "Remove"
 msgstr ""
 
 #: CentralWidget#1
-#, fuzzy
 msgid "Add new page"
-msgstr "Sayfa Ekle"
+msgstr "Yeni sayfa ekle"
 
 #: CentralWidget#2
 #, fuzzy
@@ -352,19 +335,6 @@ msgstr "&Ara"
 msgid "Unknown option: %1"
 msgstr ""
 
-#: CmdLineParser#10
-msgid "Missing filter argument."
-msgstr ""
-
-#: CmdLineParser#11
-#, fuzzy
-msgid "Error"
-msgstr "Hata..."
-
-#: CmdLineParser#12
-msgid "Notice"
-msgstr ""
-
 #: CmdLineParser#2
 #, fuzzy
 msgid "The collection file '%1' does not exist."
@@ -398,6 +368,19 @@ msgstr ""
 
 #: CmdLineParser#9
 msgid "Missing help file."
+msgstr ""
+
+#: CmdLineParser#10
+msgid "Missing filter argument."
+msgstr ""
+
+#: CmdLineParser#11
+#, fuzzy
+msgid "Error"
+msgstr "Hata..."
+
+#: CmdLineParser#12
+msgid "Notice"
 msgstr ""
 
 #: ContentWindow#1
@@ -502,6 +485,41 @@ msgstr "Bağlantıyı Yeni Sekmede Aç"
 msgid "Install Documentation"
 msgstr ""
 
+#: InstallDialog#2
+msgid "Available Documentation:"
+msgstr ""
+
+#: InstallDialog#3
+msgid "Install"
+msgstr ""
+
+#: InstallDialog#4
+msgctxt "InstallDialog#4"
+msgid "Cancel"
+msgstr ""
+
+#: InstallDialog#5
+#, fuzzy
+msgid "Close"
+msgstr "&Kapat"
+
+#: InstallDialog#6
+msgid "Installation Path:"
+msgstr ""
+
+#: InstallDialog#7
+#, fuzzy
+msgid "..."
+msgstr "..."
+
+#: InstallDialog#8
+msgid "Downloading documentation info..."
+msgstr ""
+
+#: InstallDialog#9
+msgid "Download canceled."
+msgstr ""
+
 #: InstallDialog#10
 #, fuzzy
 msgid "Done."
@@ -544,45 +562,49 @@ msgid ""
 "%1"
 msgstr ""
 
-#: InstallDialog#2
-msgid "Available Documentation:"
-msgstr ""
-
-#: InstallDialog#3
-msgid "Install"
-msgstr ""
-
-#: InstallDialog#4
-msgctxt "InstallDialog#4"
-msgid "Cancel"
-msgstr ""
-
-#: InstallDialog#5
-#, fuzzy
-msgid "Close"
-msgstr "&Kapat"
-
-#: InstallDialog#6
-msgid "Installation Path:"
-msgstr ""
-
-#: InstallDialog#7
-#, fuzzy
-msgid "..."
-msgstr "..."
-
-#: InstallDialog#8
-msgid "Downloading documentation info..."
-msgstr ""
-
-#: InstallDialog#9
-msgid "Download canceled."
-msgstr ""
-
 #: MainWindow#1
 #, fuzzy
 msgid "Index"
 msgstr "İ&ndeks"
+
+#: MainWindow#2
+#, fuzzy
+msgid "Contents"
+msgstr "İç&indekiler"
+
+#: MainWindow#3
+#, fuzzy
+msgctxt "MainWindow#3"
+msgid "Bookmarks"
+msgstr "&Yer İmleri"
+
+#: MainWindow#4
+#, fuzzy
+msgctxt "MainWindow#4"
+msgid "Qt Assistant"
+msgstr "Qt Belge Tarayıcı"
+
+#: MainWindow#5
+msgid "Looking for Qt Documentation..."
+msgstr ""
+
+#: MainWindow#6
+msgid "&File"
+msgstr "&Dosya"
+
+#: MainWindow#7
+#, fuzzy
+msgid "New &Tab"
+msgstr "Yeni Sekme"
+
+#: MainWindow#8
+msgid "Page Set&up..."
+msgstr ""
+
+#: MainWindow#9
+#, fuzzy
+msgid "Print Preview..."
+msgstr "&Yazdır..."
 
 #: MainWindow#10
 msgid "&Print..."
@@ -626,11 +648,6 @@ msgstr "Sonrakini &Bul"
 #: MainWindow#19
 msgid "Find &Previous"
 msgstr "Öncekini B&ul"
-
-#: MainWindow#2
-#, fuzzy
-msgid "Contents"
-msgstr "İç&indekiler"
 
 #: MainWindow#20
 #, fuzzy
@@ -676,12 +693,6 @@ msgctxt "MainWindow#29"
 msgid "Search"
 msgstr "&Ara"
 
-#: MainWindow#3
-#, fuzzy
-msgctxt "MainWindow#3"
-msgid "Bookmarks"
-msgstr "&Yer İmleri"
-
 #: MainWindow#30
 msgid "ALT+S"
 msgstr ""
@@ -723,12 +734,6 @@ msgstr "Sonraki Sekme"
 #: MainWindow#39
 msgid "Ctrl+Alt+Right"
 msgstr "Ctrl+Alt+Right"
-
-#: MainWindow#4
-#, fuzzy
-msgctxt "MainWindow#4"
-msgid "Qt Assistant"
-msgstr "Qt Belge Tarayıcı"
 
 #: MainWindow#40
 #, fuzzy
@@ -773,10 +778,6 @@ msgstr "Küçült"
 msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
-#: MainWindow#5
-msgid "Looking for Qt Documentation..."
-msgstr ""
-
 #: MainWindow#50
 #, fuzzy
 msgid "Toolbars"
@@ -816,24 +817,6 @@ msgstr ""
 #: MainWindow#58
 msgid "Could not register file '%1': %2"
 msgstr ""
-
-#: MainWindow#6
-msgid "&File"
-msgstr "&Dosya"
-
-#: MainWindow#7
-#, fuzzy
-msgid "New &Tab"
-msgstr "Yeni Sekme"
-
-#: MainWindow#8
-msgid "Page Set&up..."
-msgstr ""
-
-#: MainWindow#9
-#, fuzzy
-msgid "Print Preview..."
-msgstr "&Yazdır..."
 
 #: PreferencesDialog#1
 msgid "Add Documentation"
@@ -877,6 +860,44 @@ msgstr "Özelleştirilmiş ayarları kullan"
 #: PreferencesDialogClass#1
 msgid "Preferences"
 msgstr ""
+
+#: PreferencesDialogClass#2
+#, fuzzy
+msgid "Fonts"
+msgstr "Yazıtipi"
+
+#: PreferencesDialogClass#3
+#, fuzzy
+msgid "Font settings:"
+msgstr "Yazıtipi Ayarları"
+
+#: PreferencesDialogClass#4
+msgid "Browser"
+msgstr "Tarayıcı"
+
+#: PreferencesDialogClass#5
+msgid "Application"
+msgstr "Uygulama"
+
+#: PreferencesDialogClass#6
+#, fuzzy
+msgid "Filters"
+msgstr "&Dosya"
+
+#: PreferencesDialogClass#7
+#, fuzzy
+msgctxt "PreferencesDialogClass#7"
+msgid "Filter:"
+msgstr "&Dosya"
+
+#: PreferencesDialogClass#8
+msgid "Attributes:"
+msgstr ""
+
+#: PreferencesDialogClass#9
+#, fuzzy
+msgid "1"
+msgstr "F1"
 
 #: PreferencesDialogClass#10
 #, fuzzy
@@ -922,11 +943,6 @@ msgstr ""
 msgid "Show my tabs from last session"
 msgstr ""
 
-#: PreferencesDialogClass#2
-#, fuzzy
-msgid "Fonts"
-msgstr "Yazıtipi"
-
 #: PreferencesDialogClass#20
 #, fuzzy
 msgid "Homepage"
@@ -944,39 +960,6 @@ msgstr "Sayfayı Kaydet"
 #: PreferencesDialogClass#23
 msgid "Restore to default"
 msgstr ""
-
-#: PreferencesDialogClass#3
-#, fuzzy
-msgid "Font settings:"
-msgstr "Yazıtipi Ayarları"
-
-#: PreferencesDialogClass#4
-msgid "Browser"
-msgstr "Tarayıcı"
-
-#: PreferencesDialogClass#5
-msgid "Application"
-msgstr "Uygulama"
-
-#: PreferencesDialogClass#6
-#, fuzzy
-msgid "Filters"
-msgstr "&Dosya"
-
-#: PreferencesDialogClass#7
-#, fuzzy
-msgctxt "PreferencesDialogClass#7"
-msgid "Filter:"
-msgstr "&Dosya"
-
-#: PreferencesDialogClass#8
-msgid "Attributes:"
-msgstr ""
-
-#: PreferencesDialogClass#9
-#, fuzzy
-msgid "1"
-msgstr "F1"
 
 #: RemoteControl#1
 msgid "Debugging Remote Control"
