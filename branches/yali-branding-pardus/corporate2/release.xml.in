@@ -11,13 +11,13 @@
             <name>license</name>
             <_title>Welcome to Pardus</_title>
             <icon>applications-other</icon>
-            <_help>Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, GNU tools, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. 
+            <_help>Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. 
 &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website.
 &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer.</_help>
        </screen>
        <screen>
             <name>welcome</name>
-            <_title>Initial Settings</_title>
+            <_title>Welcome back... </_title>
             <icon>applications-other</icon>
             <_help>You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus...</_help>
         </screen>
@@ -25,13 +25,13 @@
             <name>mediaCheck</name>
             <_title>Double check your installation medium</_title>
             <icon>media-optical-small</icon>
-            <_help>Validation checks if the packages in the medium are consistent with the repository by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</_help>
+            <_help>Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD).</_help>
         </screen>
         <screen>
             <name>keyboardSetup</name>
             <_title>Choose your keyboard layout</_title>
             <icon>input-keyboard</icon>
-            <_help>A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox.</_help>
+            <_help>A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox.</_help>
         </screen>
         <screen>
             <name>timeSetup</name>
@@ -43,7 +43,7 @@
             <name>accounts</name>
             <_title>Add Users</_title>
             <icon>users</icon>
-            <_help>Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't  revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation.</_help>
+            <_help>Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't  revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation.</_help>
         </screen>
         <screen>
             <name>admin</name>
@@ -73,7 +73,7 @@
             <name>bootloadersetup</name>
             <_title>Configure Bootloader</_title>
             <icon>bootloader</icon>
-            <_help>A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing.</_help>
+            <_help>A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing.</_help>
         </screen>
         <screen>
             <name>summary</name>
