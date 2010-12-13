@@ -83,6 +83,9 @@ class Widget(PackageWidget, ScreenWidget):
         # for case insensitive parser
         config.optionxform = str
 
+        if not os.path.exists(os.path.expanduser('~/.config/Pardus')):
+            os.mkdir(os.path.expanduser('~/.config/Pardus'))
+
         if not os.path.exists('~/.config/Pardus/Package-Manager.conf'):
             config.add_section("General")
 
