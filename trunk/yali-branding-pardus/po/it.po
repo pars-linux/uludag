@@ -30,7 +30,7 @@ msgstr "Aggiungi Utenti"
 
 #: ../release.xml.in.h:4
 msgid "Adjust Date and Time Settings"
-msgstr "Regolare le Impostazioni di Data e Tempo"
+msgstr "Regolare le impostazioni di Data e Tempo"
 
 #: ../release.xml.in.h:5
 msgid "Choose an Administrator Password and a Hostname"
@@ -42,7 +42,7 @@ msgstr "Scegli il layout di tastiera"
 
 #: ../release.xml.in.h:7
 msgid "Configure Bootloader"
-msgstr ""
+msgstr "Configura Bootloader"
 
 #: ../release.xml.in.h:8
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
@@ -62,7 +62,7 @@ msgstr "Arrivederci"
 
 #: ../release.xml.in.h:12
 msgid "Help will be included when Kahya implentation is complete."
-msgstr "Aiuto sarà incluso quando implentazione di Kahya è completa."
+msgstr "Aiuto sarà incluso quando implementazione di Kahya è completa."
 
 #: ../release.xml.in.h:13
 msgid "Here you can review your options before the installation process starts."
