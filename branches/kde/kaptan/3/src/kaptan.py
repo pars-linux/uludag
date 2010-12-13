@@ -29,7 +29,7 @@ import screens.ScrWelcome as ScrWelcome
 import screens.ScrWallpaper as ScrWallpaper
 import screens.ScrPackage as ScrPackage
 import screens.ScrMouse as ScrMouse
-import screens.ScrNetwork as ScrNetwork
+#import screens.ScrNetwork as ScrNetwork
 import screens.ScrPanel as ScrPanel
 import screens.ScrKeyboard as ScrKeyboard
 import screens.ScrGoodbye as ScrGoodbye
@@ -71,7 +71,7 @@ if isLiveCD():
                  ScrPanel,
                  ScrMultiple,
                  ScrWallpaper,
-                 ScrNetwork,
+                 #ScrNetwork,
                  ScrGoodbye]
 else:
     #set avaiable screens
@@ -80,7 +80,7 @@ else:
                      ScrPanel,
                      ScrMultiple,
                      ScrWallpaper,
-                     ScrNetwork,
+                     #ScrNetwork,
                      ScrPackage,
                      ScrGoodbye]
 
