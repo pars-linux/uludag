@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-13 09:05+0000\n"
+"POT-Creation-Date: 2010-12-13 10:14+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -63,7 +63,7 @@ msgstr "KDE'nin ve dolayısıyla Pardus'un dosya yöneticisi Dolphin'le tanış�
 
 #: ../release.xml.in.h:12
 msgid "Double check your installation medium"
-msgstr "Kurulum ortamınızı bir kez daha denetleyin."
+msgstr "Kurulum ortamınızı bir kez daha denetleyin"
 
 #: ../release.xml.in.h:13
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
