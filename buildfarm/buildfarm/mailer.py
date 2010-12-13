@@ -11,7 +11,6 @@
 # Please read the COPYING file.
 
 import os
-import socket
 import smtplib
 
 import pisi.specfile
@@ -73,12 +72,9 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'subjectID'    : subject_id,
                                      }
 
-    # timeout value in seconds
-    socket.setdefaulttimeout(10)
-
     try:
-        session = smtplib.SMTP(conf.smtpserver)
-    except:
+        session = smtplib.SMTP(conf.smtpserver, timeout=10)
+    except smtplib.SMTPConnectError:
         logger.error("Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
         return
 
@@ -93,8 +89,8 @@ def send(message, pspec = "", _type = "", subject=""):
             session.sendmail(conf.mailfrom, conf.announceaddr, message)
         else:
             session.sendmail(conf.mailfrom, recipients_email + conf.cclist.split(","), message)
-    except smtplib.SMTPRecipientsRefused:
-        logger.error("Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
+    except smtplib.SMTPException:
+        logger.error("Failed sending e-mail: sendmail() raised an exception.")
 
 def error(message, pspec, subject=""):
     send(message, pspec, _type="error", subject=subject)
