@@ -1,21 +1,21 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 16:19+0300\n"
+"POT-Creation-Date: 2010-09-15 16:31+0300\n"
 "PO-Revision-Date: 2010-04-03 13:01+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
@@ -32,12 +32,14 @@ msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Manutentore corrente"
-
-#: src/bootmanager/about.py:34
 msgid "Gökmen Göksel"
 msgstr ""
+"\r\n"
+"Gökmen Göksel"
+
+#: src/bootmanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Manutentore corrente"
 
 #: src/bootmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -46,16 +48,18 @@ msgstr "Bahadır Kandemir"
 #: src/bootmanager/about.py:35
 msgid "First Developer"
 msgstr ""
-
-#: src/bootmanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "edivad95@gmail.com"
+"\r\n"
+"Il primo Sviluppatore"
 
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Davide Siciliano"
+
+#: src/bootmanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
