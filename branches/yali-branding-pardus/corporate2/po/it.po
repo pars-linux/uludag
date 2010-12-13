@@ -151,11 +151,11 @@ msgstr ""
 
 #: ../release.xml.in.h:35
 msgid "Welcome back..."
-msgstr ""
+msgstr "Bentornato ..."
 
 #: ../release.xml.in.h:36
 msgid "Welcome to Pardus"
-msgstr ""
+msgstr "Benvenuti a Pardus"
 
 #: ../release.xml.in.h:37
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
@@ -163,7 +163,7 @@ msgstr ""
 
 #: ../release.xml.in.h:38
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
-msgstr ""
+msgstr "YALI ora sta installando al tuo computer. Questo operazione dura circa 20-30 minuti a seconda la sua computer e hardware. Prende in considerazione che installazione tramite una chiave USB sarà molto più veloce rispetto ad una media ottica.&lt;br&gt;&lt;br&gt;Ora puo' accomodarsi e goddete la presentazione delle caratteristiche e le innovazioni di Pardus offerte in questa nuova release."
 
 #: ../release.xml.in.h:39
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
