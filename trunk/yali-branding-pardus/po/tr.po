@@ -114,9 +114,8 @@ msgid "Manual Partitioning"
 msgstr "Elle Biçimlendirme"
 
 #: ../release.xml.in.h:25
-#, fuzzy
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
-msgstr "Pardus birden çok kullanıcının aynı bilgisayarı güvenle kullanmasını sağlar. Yönetici hesabı (ki ismi root olur) otomatik olarak ayarlanacak. Siz de bu ekranı kullanarak yeni kullanıcı ekleyebilirsiniz. İlk eklenen kullanıcı, aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. Bu yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi basit seçeneklere Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; Kurulumdan sonra kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem Ayarlarında Kullanıcı Yöneticisini bulabilirsiniz."
+msgstr "Pardus birden çok kullanıcının aynı bilgisayarı güvenle kullanmasını sağlar. Yönetici hesabı, &quot;root&quot; kullanıcı adıyla otomatik olarak ayarlanacak. Siz de bu ekranı kullanarak yeni kullanıcı ekleyebilirsiniz. İlk eklenen kullanıcı, aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. Bu yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi basit seçeneklere Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; Kurulumdan sonra kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem Ayarlarında Kullanıcı Yöneticisini bulabilirsiniz."
 
 #: ../release.xml.in.h:27
 #, no-c-format
@@ -132,9 +131,8 @@ msgid "Pardus have many other in-house developed user friendly manager tools suc
 msgstr "Pardus projesinde sistem yönetimine yönelik kullanım kolaylığı sağlamak için Kullanıcı Yöneticisi, Açılış Yöneticisi, Güvenlik Duvarı Yöneticisi, Servis Yöneticisi gibi çeşitli araçlar geliştiriliyor. Tüm bunları bir arada, diğer yönetim ve yapılandırma araçlarıyla birlikte Sistem Ayarları altında bulabilirsiniz."
 
 #: ../release.xml.in.h:30
-#, fuzzy
 msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of TÜBİTAK are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the license terms to install Pardus on your computer."
-msgstr "Pardus, Linux çekirdeği, GNU araçları, Mozilla Firefox, LibreOffice gibi küresel olarak bilinen projeleri bünyesinde barındıran ve böylece kolay kullanılan araçlarla yüksek performans deneyimi yaşanmasına olanak tanıyan özgür ve açık kaynak bir işletim sistemidir. &lt;br&gt;&lt;br&gt;Bu kurulum medyasında yer alan yazılımlar, farklı lisanslar ile sunulmaktadır. Tübitak, kendi araçları dolayısıyla en çok kullanılan lisanslama modeli olan GNU Kamu Lisansı (GPL sürüm 2) kullanmayı tercih etmektedir. Lisans metnini lisans adlarına tıklayarak veya web sayfamızdan okuyabilirsiniz. &lt;br&gt;&lt;br&gt;Pardus'u bilgisayarınıza kurmak için koşulları kabul etmeniz gerekmektedir."
+msgstr "Pardus, Linux çekirdeği, GNU projesi ürünleri, Mozilla Firefox, LibreOffice gibi küresel olarak bilinen projeleri bünyesinde barındıran ve böylece kolay kullanılan araçlarla yüksek performans deneyimi yaşanmasına olanak tanıyan özgür ve açık kaynak bir işletim sistemidir. &lt;br&gt;&lt;br&gt;Bu kurulum medyasında yer alan yazılımlar, farklı lisanslar ile sunulmaktadır. Tübitak, kendi araçları dolayısıyla en çok kullanılan lisanslama modeli olan GNU Kamu Lisansı (GPL sürüm 2) kullanmayı tercih etmektedir. Lisans metnini lisans adlarına tıklayarak veya web sayfamızdan okuyabilirsiniz. &lt;br&gt;&lt;br&gt;Pardus'u bilgisayarınıza kurmak için koşulları kabul etmeniz gerekmektedir."
 
 #: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
@@ -158,9 +156,8 @@ msgid "Validation is comparing the packages in the medium with the original ones
 msgstr "Onaylama işlemi, kurulum medyasında yer alan paketlerin, depoda yer alan paketlerden farklı olup olmadıklarını, dosya doğrulama yöntemiyle kontrol eder. Onay alınamayan durumlar, genellikle kurulum medyasının üretiminde bir problem olduğunun göstergesidir. (CD, DVD ya da USB depolama aygıtı). &lt;br&gt;&lt;br&gt;Eğer optik bir medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda(DVD için 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde basmayı deneyebilirsiniz."
 
 #: ../release.xml.in.h:36
-#, fuzzy
 msgid "Welcome back"
-msgstr "Tekrar hoş geldiniz..."
+msgstr "Tekrar hoş geldiniz"
 
 #: ../release.xml.in.h:37
 msgid "Welcome to Pardus"
