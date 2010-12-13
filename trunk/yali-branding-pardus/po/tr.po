@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 08:03+0000\n"
+"POT-Creation-Date: 2010-12-13 09:05+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -17,20 +17,21 @@ msgstr ""
 "Language: \n"
 
 #: ../release.xml.in.h:1
-msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
+msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
 msgstr "Önyükleyici, bilgisayar açıldığında çalışan ve işletim sistemini bilgisayarın hafızasına yükleyerek kontrolü ona aktaran minik bir yazılımdır. &lt;br&gt;&lt;br&gt;Pardus ön tanımlı olarak GRUB (GRand Unified Bootloader) önyükleyiciyi kullanır. GRUB, bilgisayar açıldığında desteklenen işletim sistemlerini ve bunlara ait açılış seçeneklerini bir menü ile sunar. &lt;br&gt;&lt;br&gt; GRUB için tavsiye edilen yöntem, açılış diskinin ilk bölümüne kurulmasıdır. Eğer ne yaptığınızı biliyorsanız &quot;Gelişmiş Seçenekler&quot; ile farklı kurulum yöntemlerinden birini de her zaman seçebilirsiniz."
 
 #: ../release.xml.in.h:2
-msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
+#, fuzzy
+msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
 msgstr "Klavye düzeni, klavyede üzerindeki tuşların nasıl yerleştirildiğinin göstergesidir. Dünyada kullanılan farklı klavye yapıları bulunmaktadır. Kullanmak isteyeceğiniz klavye, yaşadığınız ülke ve konuştuğunuz dil ile doğru orantılıdır. Bu ekran size Pardus'ta kullanmak istediğiniz klavye yapısını seçme olanağını tanımaktadır. Metin kutusuna bir şeyler yazarak seçtiğiniz klavye yapısını deneyebilirsiniz."
 
 #: ../release.xml.in.h:3
 msgid "Add Users"
-msgstr "Kullanıcıları Ekle"
+msgstr "Kullanıcı İşlemleri"
 
 #: ../release.xml.in.h:4
 msgid "Adjust Date and Time Settings"
-msgstr "Tarih ve Zaman Ayarlarını Değiştirin"
+msgstr "Tarih ve Zaman Ayarları"
 
 #: ../release.xml.in.h:5
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
@@ -38,11 +39,11 @@ msgstr "Kullanıma hazır, yeni stüdyonuzu deneyin! Pardus çoklu ortam için d
 
 #: ../release.xml.in.h:6
 msgid "Choose an Administrator Password and a Hostname"
-msgstr "Yönetici Şifresi ve Makine Adı Seçin"
+msgstr "Yönetici Şifresi ve Makine Adı"
 
 #: ../release.xml.in.h:7
 msgid "Choose your keyboard layout"
-msgstr "Klavye Düzeni Seçimi"
+msgstr "Klavye Düzeni"
 
 #: ../release.xml.in.h:8
 msgid "Configure Bootloader"
@@ -73,8 +74,8 @@ msgid "Goodbye"
 msgstr "Hoşça kalın"
 
 #: ../release.xml.in.h:15
-msgid "Help will be included when Kahya implentation is complete."
-msgstr "Kahya uygulaması Yalı'nın bir parçası haline geldiğinde burada yardım metni olacak."
+msgid "Help will be included when Kahya implentation is complete"
+msgstr "Kahya uygulaması Yalı'ya eklendiğinde bu bölümde yardım metni yer alacak."
 
 #: ../release.xml.in.h:16
 msgid "Here you can review your options before the installation process starts."
@@ -113,7 +114,8 @@ msgid "Manual Partitioning"
 msgstr "Elle Biçimlendirme"
 
 #: ../release.xml.in.h:25
-msgid "Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
+#, fuzzy
+msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
 msgstr "Pardus birden çok kullanıcının aynı bilgisayarı güvenle kullanmasını sağlar. Yönetici hesabı (ki ismi root olur) otomatik olarak ayarlanacak. Siz de bu ekranı kullanarak yeni kullanıcı ekleyebilirsiniz. İlk eklenen kullanıcı, aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. Bu yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi basit seçeneklere Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; Kurulumdan sonra kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem Ayarlarında Kullanıcı Yöneticisini bulabilirsiniz."
 
 #: ../release.xml.in.h:27
@@ -130,7 +132,8 @@ msgid "Pardus have many other in-house developed user friendly manager tools suc
 msgstr "Pardus projesinde sistem yönetimine yönelik kullanım kolaylığı sağlamak için Kullanıcı Yöneticisi, Açılış Yöneticisi, Güvenlik Duvarı Yöneticisi, Servis Yöneticisi gibi çeşitli araçlar geliştiriliyor. Tüm bunları bir arada, diğer yönetim ve yapılandırma araçlarıyla birlikte Sistem Ayarları altında bulabilirsiniz."
 
 #: ../release.xml.in.h:30
-msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer."
+#, fuzzy
+msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of TÜBİTAK are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the license terms to install Pardus on your computer."
 msgstr "Pardus, Linux çekirdeği, GNU araçları, Mozilla Firefox, LibreOffice gibi küresel olarak bilinen projeleri bünyesinde barındıran ve böylece kolay kullanılan araçlarla yüksek performans deneyimi yaşanmasına olanak tanıyan özgür ve açık kaynak bir işletim sistemidir. &lt;br&gt;&lt;br&gt;Bu kurulum medyasında yer alan yazılımlar, farklı lisanslar ile sunulmaktadır. Tübitak, kendi araçları dolayısıyla en çok kullanılan lisanslama modeli olan GNU Kamu Lisansı (GPL sürüm 2) kullanmayı tercih etmektedir. Lisans metnini lisans adlarına tıklayarak veya web sayfamızdan okuyabilirsiniz. &lt;br&gt;&lt;br&gt;Pardus'u bilgisayarınıza kurmak için koşulları kabul etmeniz gerekmektedir."
 
 #: ../release.xml.in.h:31
@@ -150,11 +153,13 @@ msgid "There are a lot of features waiting to be explored. Thousands of software
 msgstr "Pek çok özellik keşfedilmeyi bekliyor. Hatta bu kurulum medyasına sığmadığı için konmamış binlerce yazılım, kütüphane ve araç var. Sisteminize yeni uygulamalar eklemek, Pardus&apos;un paket yönetimi sistemi PiSi ve onun kullanıcı dostu Paket Yöneticisi ile artık çok daha kolay.&lt;br&gt;&lt;br&gt;Paket Yöneticisi birkaç tıklama ile sisteminizi güncel tutmanıza, hiç kullanmadığınız bileşenleri kaldırmanıza veya yenilerini eklemeniz için size yardımcı olacaktır. Kurulumdan sonra Kaptan'ın yardımıyla ona tercih ettiğiniz menüden ulaşabilirsiniz. "
 
 #: ../release.xml.in.h:35
-msgid "Validation checks if the packages in the medium are consistent with the repository by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
+#, fuzzy
+msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr "Onaylama işlemi, kurulum medyasında yer alan paketlerin, depoda yer alan paketlerden farklı olup olmadıklarını, dosya doğrulama yöntemiyle kontrol eder. Onay alınamayan durumlar, genellikle kurulum medyasının üretiminde bir problem olduğunun göstergesidir. (CD, DVD ya da USB depolama aygıtı). &lt;br&gt;&lt;br&gt;Eğer optik bir medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda(DVD için 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde basmayı deneyebilirsiniz."
 
 #: ../release.xml.in.h:36
-msgid "Welcome back..."
+#, fuzzy
+msgid "Welcome back"
 msgstr "Tekrar hoş geldiniz..."
 
 #: ../release.xml.in.h:37
