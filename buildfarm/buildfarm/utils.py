@@ -94,7 +94,7 @@ def get_package_logfile_name(pkg):
     spec = pisi.specfile.SpecFile(pkg)
     last_update = spec.history[0]
     return os.path.join(get_package_log_directory(),
-                        "%s-%s-%s.txt" % (get_package_name(pkg),
+                        "%s-%s-%s.txt" % (get_package_name_from_path(pkg),
                                           last_update.version,
                                           last_update.release))
 
