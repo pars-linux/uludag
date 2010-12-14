@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>292</height>
+    <height>293</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -131,8 +131,8 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineKernel">
-        <property name="placeholderText">
+       <widget class="KUrlRequester" name="lineKernel">
+        <property name="clickMessage">
          <string>Operating system kernel.</string>
         </property>
        </widget>
@@ -169,8 +169,8 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <widget class="QLineEdit" name="lineRamdisk">
-        <property name="placeholderText">
+       <widget class="KUrlRequester" name="lineRamdisk">
+        <property name="clickMessage">
          <string>File that contains a micro operating system for preloading kernel modules.</string>
         </property>
        </widget>
@@ -231,11 +231,16 @@
    </item>
   </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>KUrlRequester</class>
+   <extends>QFrame</extends>
+   <header>kurlrequester.h</header>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>lineTitle</tabstop>
   <tabstop>lineDisk</tabstop>
-  <tabstop>lineKernel</tabstop>
-  <tabstop>lineRamdisk</tabstop>
   <tabstop>lineOptions</tabstop>
  </tabstops>
  <resources/>
