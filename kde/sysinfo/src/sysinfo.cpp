@@ -440,15 +440,17 @@ void kio_sysinfoProtocol::cpuInfo()
     }
 
     // Use Solid to get Processor Information
-    QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor, QString());
-    if ( list.size() == 0 ) {
-        m_info[CPU_CORES] = readFromFile( "/proc/cpuinfo", "cpu cores", ":" );
-        m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":");
-    } else {
-        Solid::Device device = list[0];
-        m_info[CPU_CORES] = list.size();
-        m_info[CPU_MODEL] = device.product();
-    }
+    // Ignore Solid for 2011
+    //
+    // QList<Solid::Device> list = Solid::Device::listFromType(Solid::DeviceInterface::Processor, QString());
+    // if ( list.size() == 0 ) {
+    m_info[CPU_CORES] = int(readFromFile( "/proc/cpuinfo", "processor", ":", true ).toInt()) + 1;
+    m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":" );
+    // } else {
+    //     Solid::Device device = list[0];
+    //     m_info[CPU_CORES] = list.size();
+    //     m_info[CPU_MODEL] = device.product();
+    // }
 }
 
 #include <GL/glx.h>
