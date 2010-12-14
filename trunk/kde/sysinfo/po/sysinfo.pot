@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-14 14:45+0200\n"
+"POT-Creation-Date: 2010-12-14 13:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -124,22 +125,22 @@ msgstr ""
 msgid "Display"
 msgstr ""
 
-#: src/sysinfo.cpp:540
+#: src/sysinfo.cpp:542
 msgid "3D Not Supported"
 msgstr ""
 
-#: src/sysinfo.cpp:542
+#: src/sysinfo.cpp:544
 msgid "3D Supported"
 msgstr ""
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:567
+#: src/sysinfo.cpp:569
 msgid "%1 free of %2"
 msgstr ""

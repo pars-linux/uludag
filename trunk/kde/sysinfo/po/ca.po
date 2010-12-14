@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-14 14:45+0200\n"
+"POT-Creation-Date: 2010-12-14 13:08+0200\n"
 "PO-Revision-Date: 2007-03-15 14:43+0100\n"
 "Last-Translator: espe <ehumet@idisc.es>\n"
 "Language-Team: Catalan\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -131,25 +132,25 @@ msgstr ""
 msgid "Display"
 msgstr "Mostra informació"
 
-#: src/sysinfo.cpp:540
+#: src/sysinfo.cpp:542
 #, fuzzy
 msgid "3D Not Supported"
 msgstr "%1 (sense compatibilitat amb 3D)"
 
-#: src/sysinfo.cpp:542
+#: src/sysinfo.cpp:544
 #, fuzzy
 msgid "3D Supported"
 msgstr "%1 (compatibilitat amb 3D)"
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:567
+#: src/sysinfo.cpp:569
 msgid "%1 free of %2"
 msgstr ""
 

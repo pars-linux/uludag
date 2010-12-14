@@ -16,10 +16,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-14 14:45+0200\n"
+"POT-Creation-Date: 2010-12-14 13:08+0200\n"
 "PO-Revision-Date: 14/01/10 13:59\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -142,23 +143,22 @@ msgstr " kern"
 msgid "Display"
 msgstr "Beeldscherm"
 
-#: src/sysinfo.cpp:540
+#: src/sysinfo.cpp:542
 msgid "3D Not Supported"
 msgstr "3D wordt niet ondersteund"
 
-#: src/sysinfo.cpp:542
+#: src/sysinfo.cpp:544
 msgid "3D Supported"
 msgstr "3D wordt ondersteund"
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Mounted on %1"
 msgstr "Aangekoppeld aan %1"
 
-#: src/sysinfo.cpp:558
+#: src/sysinfo.cpp:560
 msgid "Not mounted"
 msgstr "Niet aangekoppeld"
 
-#: src/sysinfo.cpp:567
+#: src/sysinfo.cpp:569
 msgid "%1 free of %2"
 msgstr "%1 vrij van %2"
-
