@@ -82,6 +82,19 @@ class SourcePackageDetail(models.Model):
         verbose_name_plural = _('package details')
 
 
+class ReviewInfo(models.Model):
+    """
+        Database model to keep the traversed time for a path.
+        Current time information will be used to detect removed directories from review area so the source and related information will be removed from the db
+    """
+    check_time = models.DateTimeField(verbose_name=_('traverse time of review path'), blank=True)
+    status = models.BooleanField(verbose_name=_('status of the path checked: a review or not'), default=False)
+    
+    class Meta:
+        verbose_name = _('review check time')
+        verbose_name_plural = _('review details')
+
+
 class Source(models.Model):
     """
         Database model for sources in repository.
@@ -94,7 +107,11 @@ class Source(models.Model):
     name = models.CharField(max_length=64, verbose_name=_('name'))
     distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
+    class Meta:
+        verbose_name = _('package detail')
+        verbose_name_plural = _('package details')
     info = models.ForeignKey(SourcePackageDetail, verbose_name=_('source package details'))
+    review = models.ForeignKey(ReviewInfo, verbose_name=_('traversed time of the review source package'))
 
     def __unicode__(self):
         return u'%s (%s)' % (self.name, self.distribution)

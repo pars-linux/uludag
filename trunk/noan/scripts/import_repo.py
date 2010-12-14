@@ -8,6 +8,7 @@ import random
 import string
 import sys
 import urllib2
+import datetime
 
 try:
     import pisi
@@ -96,7 +97,7 @@ def fetchIndex(target, tmp="/tmp"):
 def updateDB(path_source, path_stable, path_test, options):
     from django.core.mail import send_mail
     from django.contrib.auth.models import User
-    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces, SourcePackageDetail, IsA, License, Summary, Description, BinaryPackageDetail
+    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces, SourcePackageDetail, IsA, License, Summary, Description, BinaryPackageDetail, ReviewInfo
     from noan.profile.models import Profile
 
     def createUser(email, name):
@@ -123,7 +124,7 @@ def updateDB(path_source, path_stable, path_test, options):
             #send_mail(MAIL_SUBJECT % data, MAIL_BODY % data, 'no-reply@pardus.org.tr', [email])
         return user
 
-    def parseSourceIndex(_index, review=False):
+    def parseSourceIndex(_index, review=False, traverse_time=False):
         if not review:
             try:
                 distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
@@ -159,7 +160,7 @@ def updateDB(path_source, path_stable, path_test, options):
         def importSpec(pspec, local_uri=None):
             # Add or update developer
             maintained_by = createUser(pspec.source.packager.email, pspec.source.packager.name)
-            
+            review_flag = False
             # Create the source package information
             part_of = pspec.source.partOf
             if not local_uri:
@@ -167,6 +168,7 @@ def updateDB(path_source, path_stable, path_test, options):
             else:
                 index = local_uri.find("review")
                 source_uri = local_uri[index:]
+                review_flag = True
             print '     Source URI: %s' % source_uri
 
             home_page = pspec.source.homepage
@@ -193,14 +195,18 @@ def updateDB(path_source, path_stable, path_test, options):
             try:
                 source = Source.objects.get(name=pspec.source.name, distribution=distribution)
                 source.maintained_by = maintained_by
-                source.info.sourcepackagedetail = source_info
-                source.save()
-            except:
-                if 'source' in locals():
-                    source.delete()
+                source.info = source_info
+            except Source.DoesNotExist:
                 source = Source(name=pspec.source.name, distribution=distribution, maintained_by=maintained_by, info=source_info)
-                source.save()
             print '  Source: %s' % source.name
+
+            # Save the traverse time of the review path for the next check
+            if review_flag:
+                review = ReviewInfo.objects.create(check_time=traverse_time,status=True)
+            else:
+                review = ReviewInfo.objects.create(status=False)
+            source.review = review
+            source.save()
 
             # Update build dependencies
             for dep in BuildDependency.objects.filter(source=source):
@@ -394,6 +400,27 @@ def updateDB(path_source, path_stable, path_test, options):
             for dep in dependencies:
                 bin.linked_binary.add(dep)
 
+
+    def removeDeletedReview(traverse_time):
+        sources = Source.objects.filter(review__status = True).exclude(review__check_time = traverse_time)
+        for source in sources:
+            #print "Deleting distribution information"
+            #source.distribution.delete()
+            #print "Deleting maintainer information"
+            #source.maintained_by.delete()
+            print "Deleting source details"
+            source.info.delete()
+            print "Deleting review details"
+            source.review.delete()
+            # delete also packages if any exist
+            print "Deleting package information"
+            packages = source.package_set.all()
+            for package in packages:
+                package.delete()
+            print "Deleting source itself"
+            source.delete()
+
+
     # Indexes
     if options.type != "review":
         print "Fetching source index..."
@@ -414,6 +441,7 @@ def updateDB(path_source, path_stable, path_test, options):
     # Parse source indes
     print "Parsing source index..."
     if options.type == "review":
+        current_time = datetime.datetime.now()
         # start traversing reviwe svn directory structure
         print "Traversing the review svn directory..."
         for root, dirs, files in os.walk(path_source):
@@ -422,7 +450,8 @@ def updateDB(path_source, path_stable, path_test, options):
                     if f == "pspec.xml":
                         pspec_path = os.path.join(root, "pspec.xml")
                         print "Parsing %s " % pspec_path
-                        parseSourceIndex(pspec_path, review=True)
+                        parseSourceIndex(pspec_path, review=True, traverse_time=current_time)
+        removeDeletedReview(traverse_time=current_time)
     else:
         parseSourceIndex(index_source)
 
