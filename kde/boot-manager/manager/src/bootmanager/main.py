@@ -195,6 +195,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         if self.options.get("default", "0") == str(index):
                             default = True
                         self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
+
+                    if self.listItems.count() == 1:
+                        self.listItems.itemWidget(self.listItems.item(0)).pushDelete.hide()
+
             self.iface.getEntries(func=handleList)
 
         self._refresh_items = True
@@ -277,7 +281,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             suggestions = []
             if type_ == 'windows':
-                suggestions = getSuggestion(('vfat', 'ntfs'))
+                suggestions = getSuggestion(('vfat', 'ntfs-3g'))
             elif type_ == 'linux':
                 suggestions = getSuggestion(('ext4', 'ext3', 'ext2'))
             # Insert partition suggestions for selected type
