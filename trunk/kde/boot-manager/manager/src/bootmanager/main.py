@@ -371,9 +371,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", widget.getId())
         except Exception, e:
             if "Comar.PolicyKit" in e._dbus_error_name:
-                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                message = kdecore.i18n('Access denied.')
+            elif unicode(e).startswith('tr.org.pardus.comar.Exception:'):
+                message = unicode(e).lstrip('tr.org.pardus.comar.Exception: ')
             else:
-                kdeui.KMessageBox.error(self, unicode(e))
+                message = unicode(e)
+            kdeui.KMessageBox.error(self, message)
+
             return
         # Hide edit box
         self.hideEditBox()
