@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-14 10:00+0000\n"
-"PO-Revision-Date: 2010-12-05 15:03+0200\n"
+"PO-Revision-Date: 2010-12-14 13:44+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Tarih ve Zaman Ayarlarını Değiştirin"
 
 #: ../release.xml.in.h:5
 msgid "Choose an Administrator Password and a Hostname"
-msgstr "Yönetici Şifresi ve Makine Adı Seçin"
+msgstr "Yönetici Parolası ve Makine Adı Seçin"
 
 #: ../release.xml.in.h:6
 msgid "Choose your keyboard layout"
@@ -170,12 +170,12 @@ msgstr "YALI şu anda Pardus'u bilgisayarınıza kurmaya başladı. Bu işlem bi
 
 #: ../release.xml.in.h:39
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr "Pardus'u bilgisayarınıza başarıyla kurdunuz. Bilgisayarınızı yeniden başlattıktan sonra, Pardus'un tüm imkanlarından faydalanmanın keyfini süreceksiniz.&lt;br&gt;&lt;br&gt;Devam etmek için Sonraki seçeneğine tıklayınız. Önemli not: Şifrenizi hatırlıyorsunuz, değil&mi?&lt;br&gt;"
+msgstr "Pardus'u bilgisayarınıza başarıyla kurdunuz. Bilgisayarınızı yeniden başlattıktan sonra, Pardus'un tüm imkanlarından faydalanmanın keyfini süreceksiniz.&lt;br&gt;&lt;br&gt;Devam etmek için Sonraki seçeneğine tıklayınız. Önemli not: Parolanızı hatırlıyorsunuz, değil&mi?&lt;br&gt;"
 
 #: ../release.xml.in.h:40
 #, fuzzy
 msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr "Şu anda &quot;root&quot; kullanıcısı için bir şifre belirlemeniz gerekmektedir, root kullanıcısının tüm dosyalar ve programlar için tam yetkili hak ve izinlere sahip olacağını ve bu yetkilerin tüm kipleri (tek kullanıcı veya çok kullanıcı) kapsayacağına dikkatinizi çekeriz.&lt;br&gt;&lt;br&gt;Şifreniz olası saldırılara karşı dirence sahip olan hem hatırlaması kolay fakat yeterince güçlü olmalıdır. Şifrenizde büyük ve küçük harfler, numaralar ve noktalama işaretleri kullanabilirsiniz.&lt;br&gt;&lt;br&gt;Ayrıca bilgisayarınız için bir bilgisayar adı belirleyebilirsiniz. Sunucu adı bilgisayarınıza atanmış bir tanımlayıcıdır. Yerel ağda bu adla tanınacağınız için, size özel bir tanımlayıcı bilgisayar adı oluşturmanızı tavsiye ederiz."
+msgstr "Şu anda &quot;root&quot; kullanıcısı için bir parola belirlemeniz gerekmektedir, root kullanıcısının tüm dosyalar ve programlar için tam yetkili hak ve izinlere sahip olacağını ve bu yetkilerin tüm kipleri (tek kullanıcı veya çok kullanıcı) kapsayacağına dikkatinizi çekeriz.&lt;br&gt;&lt;br&gt;Parolanız olası saldırılara karşı dirence sahip olan hem hatırlaması kolay fakat yeterince güçlü olmalıdır. Parolanızda büyük ve küçük harfler, numaralar ve noktalama işaretleri kullanabilirsiniz.&lt;br&gt;&lt;br&gt;Ayrıca bilgisayarınız için bir bilgisayar adı belirleyebilirsiniz. Sunucu adı bilgisayarınıza atanmış bir tanımlayıcıdır. Yerel ağda bu adla tanınacağınız için, size özel bir tanımlayıcı bilgisayar adı oluşturmanızı tavsiye ederiz."
 
 #: ../release.xml.in.h:41
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
