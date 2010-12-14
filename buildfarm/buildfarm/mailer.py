@@ -53,10 +53,10 @@ def send(message, pspec = "", _type = "", subject=""):
         package_name_with_component = utils.get_package_component_path(pspec)
 
         logfile = os.path.join(utils.get_package_log_directory(),
-                               get_package_logfile_name(pspec))
+                               utils.get_package_logfile_name(pspec))
+        logfilename = os.path.splitext(os.path.basename(logfile))[0]
 
-        last_log = open(os.path.join(utils.get_package_log_directory(), \
-                        "%s.log" % get_package_logfile_name(pspec))).read().split("\n")[-50:]
+        last_log = open(logfile.replace(".txt", ".log")).read().split("\n")[-50:]
 
     message = templates.ALL[_type] % {
                                         'log'          : "\n".join(last_log),
@@ -70,7 +70,7 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'pspec'        : pspec,
                                         'type'         : _type,
                                         'packagename'  : package_name,
-                                        'logfilename'  : logfile,
+                                        'logfilename'  : logfilename,
                                         'distribution' : conf.name,
                                         'release'      : conf.release.capitalize(),
                                         'arch'         : conf.architecture,
