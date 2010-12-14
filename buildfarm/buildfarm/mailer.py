@@ -41,6 +41,7 @@ def send(message, pspec = "", _type = "", subject=""):
 
 
     recipients_name, recipients_email = [], []
+    logfilename = ""
     package_name_with_component = ""
     package_name = ""
     last_log = []
