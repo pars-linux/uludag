@@ -34,6 +34,10 @@ conflictList = {}
 ''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
 distroList = []
 
+''' This is mapping of obsolete package to the new package '''
+''' Structure : {obsolete_package -> new_package}  '''
+obsoleteList = {}
+
 ''' Modify here if necessary '''
 reportFile = "report"
 mailSender = "sender_name_here"
@@ -100,6 +104,19 @@ def processCmdLine():
         elif args:
             repoList = args
 
+''' This function detects if the package is replaces with other package-obsolete package- and moves the packagers of obsolete package into new package '''
+def handleReplaces(spec):
+    ''' We're just interested in the sub-package that has same name with the source name, ignoring other sub-packages if any '''
+    for package in spec.packages:
+        if package == spec.source.name:
+            if package.replaces:
+                if not obsoleteList.has_key(package.replaces.name):
+                    obsoleteList[package.replaces.name] = spec.source.name
+                    ''' Move obsolete package as new package in conflictList '''
+                    tmpPackagerList = conflictList[package.replaces.name]
+                    del conflictList[package.replaces.name]
+                    conflictList[spec.source.name].extend(tmpPackagerList)
+
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
     pisiIndex = pisi.index.Index()
@@ -143,12 +160,26 @@ def fetchRepos():
                 if not spec.source.packager.name in conflictList[spec.source.name]:
                     conflictList[spec.source.name].append(spec.source.packager.name)
             else:
-                conflictList[spec.source.name] = [spec.source.packager.name]
+                if obsoleteList.has_key(spec.source.name):
+                    ''' This control flow is redundant actually,if we have package in obsoleteList then new package should have already been exist in conflictList '''
+                    ''' The flow is here not to lose the track of code '''
+                    if conflictList.has_key(obsoleteList[spec.source.name]):
+                        if not spec.source.packager.name in conflictList[obsoleteList[spec.source.name]]:
+                            conflictList[obsoleteList[spec.source.name]].append(spec.source.packager.name)
+                else:
+                    conflictList[spec.source.name] = [spec.source.packager.name]
+
+            ''' Replaces check and handling '''
+            handleReplaces(spec)
 
 ''' This function creates a summary entry whose structure is specified below for given repo, say 2009 or 2011  '''
 ''' summaryEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch] '''
 def createSummaryEntry(packager, package, distro):
-    order = repos[packager][package][3].index(distro)
+    if repos[packager][package]:
+        order = repos[packager][package][3].index(distro)
+
+
+
     summaryEntry = [
                     packager,
                     repos[packager][package][4],
@@ -206,11 +237,31 @@ def prepareContentBody(packager):
         for distro in distroList:
             if distro in repos[packager][package][3]:
                 summaryList[distro] = createSummaryEntry(packager, package, distro)
-            elif len(conflictList[package]) > 1:
-                isConflict = True
-                for pckgr in conflictList[package]:
-                    if distro in repos[pckgr][package][3]:
+            elif conflictList.has_key(package):
+                if len(conflictList[package]) > 1:
+                    isConflict = True
+                    for pckgr in conflictList[package]:
+                        if distro in repos[pckgr][package][3]:
+                            summaryList[distro] = createSummaryEntry(pckgr, package, distro)
+                            break
+                    ''' Merging obsolete package to summaryList '''
+                    if obsoleteList.has_key(package):
+                        for pckgr in conflictList[obsoleteList[package]]:
+                            if distro in repos[pckgr][obsoleteList[package]]:
+                                summaryList[distro] = createSummaryEntry(pckgr, obsoleteList[package], distro)
+            elif obsoleteList.has_key(package):
+                for pckgr in conflictList[obsoleteList[package]]:
+                    if distro in repos[pckgr][package]:
                         summaryList[distro] = createSummaryEntry(pckgr, package, distro)
+                        break
+            else:
+                ''' This is new package, must consider obsolete package '''
+                for obsolete, new in obsoleteList.items():
+                    if new == package:
+                        for pckgr in conflictList[new]:
+                            if distro in repos[pckgr][obsolete]:
+                                summaryList[distro] = createSummaryEntry[pckgr, obsolete ,distro]
+                ''' Searching for the packagers who maintain the obsolete package '''
         content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList, isConflict))
 
     return content
