@@ -44,8 +44,8 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.setupUi(self)
 
         # UI events
-        #self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
-        #self.connect(self.comboDomain, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+        self.connect(self.comboDomain, QtCore.SIGNAL("editTextChanged(QString)"), self.__slot_find_host)
+        self.connect(self.comboDomain, QtCore.SIGNAL("editTextChanged(QString)"), self.__check_fields)
         self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.comboDomain, QtCore.SIGNAL("currentIndexChanged(int)"), self.__set_profile)
