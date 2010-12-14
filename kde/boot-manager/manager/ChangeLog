@@ -1,3 +1,37 @@
+2010-12-14 gokmen.goksel
+         * - Strip comar exceptions, just show message
+         * - Update TODO
+
+2010-12-14 gokmen.goksel
+         * - Use KUrlRequester instead of QLineEdit which is more humanized :)
+
+2010-12-14 gokmen.goksel
+         * - If there is just one entry, hide the delete button
+         * - We use ntfs-3g, not ntfs
+
+2010-12-13 transifex
+         * l10n: Updated Italian (it) translation to 100% (Ali Işıngör)
+         * New status: 28 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-09 gokmen.goksel
+         * - Ready for beta1
+         * - Suggestion support added for new entries
+         * - Some of ui bugs fixed
+         * - TODO list updated
+         * Bug fixed at http://bugs.pardus.org.tr/10098
+
+2010-12-03 gokmen.goksel
+         * - No need to refresh all items when just timeout changed
+         * - No need an apply button
+         * Bug fixed at http://bugs.pardus.org.tr/13386
+
+2010-12-02 gokmen.goksel
+         * - add help docs 
+
+2010-12-02 gokmen.goksel
+         * - Add ChangeLog, alpha2 
+
 2010-12-02 gokmen.goksel
          * - Fix filtering 
 
@@ -364,28 +398,4 @@
 
 2009-07-01 sw
          * german translation of de.po
-
-2009-07-01 atolboo
-         * Dutch language update for kde4/boot-manager
-
-2009-07-01 klemens
-         * some spanish language additions 
-
-2009-06-30 wpmhia
-         * Dutch translations from Antoon!
-
-2009-06-30 patrik
-         * Swedish translation
-
-2009-06-30 bahadir.kandemir
-         * Updating translations
-
-2009-06-29 sw
-         * german translation of de.po for boot-manager (some little changes)
-
-2009-06-29 bahadir.kandemir
-         * Bug fixed at http://bugs.pardus.org.tr/10120
-
-2009-06-28 klemens
-         * spanish and german language strings in several kde4 *.desktop files..
 
