@@ -108,32 +108,37 @@ class File:
 
         pisi.util.ensure_dirs(transfer_dir)
 
+        # Check file integrity before saving?
+        check_integrity = sha1sum or sign
+
+        origfile = pisi.util.join_path(transfer_dir, uri.filename())
+
         if sha1sum:
             sha1filename = File.download(pisi.uri.URI(uri.get_uri() + '.sha1sum'), transfer_dir)
             sha1f = file(sha1filename)
             newsha1 = sha1f.read().split("\n")[0]
 
         if uri.is_remote_file() or copylocal:
-            localfile = pisi.util.join_path(transfer_dir, uri.filename())
+            tmpfile = check_integrity and uri.filename() + ctx.const.temporary_suffix
+            localfile = pisi.util.join_path(transfer_dir, tmpfile or uri.filename())
 
             # TODO: code to use old .sha1sum file, is this a necessary optimization?
             #oldsha1fn = localfile + '.sha1sum'
             #if os.exists(oldsha1fn):
                 #oldsha1 = file(oldsha1fn).readlines()[0]
-            if sha1sum and os.path.exists(localfile):
-                oldsha1 = pisi.util.sha1_file(localfile)
+            if sha1sum and os.path.exists(origfile):
+                oldsha1 = pisi.util.sha1_file(origfile)
                 if (newsha1 == oldsha1):
                     # early terminate, we already got it ;)
-                    raise AlreadyHaveException(uri, localfile)
+                    raise AlreadyHaveException(uri, origfile)
 
             if uri.is_remote_file():
                 ctx.ui.info(_("Fetching %s") % uri.get_uri(), verbose=True)
-                pisi.fetcher.fetch_url(uri, transfer_dir, ctx.ui.Progress)
+                pisi.fetcher.fetch_url(uri, transfer_dir, ctx.ui.Progress, tmpfile)
             else:
-                # copy to transfer dir,
-                localfile = pisi.util.join_path(transfer_dir, uri.filename())
+                # copy to transfer dir
                 ctx.ui.info(_("Copying %s to transfer dir") % uri.get_uri(), verbose=True)
-                shutil.copy(uri.get_uri(), transfer_dir)
+                shutil.copy(uri.get_uri(), localfile)
         else:
             localfile = uri.get_uri() #TODO: use a special function here?
             if not os.path.exists(localfile):
@@ -143,9 +148,26 @@ class File:
                 localfile = pisi.util.join_path(transfer_dir, os.path.basename(localfile))
                 shutil.copy(oldfn, localfile)
 
+        def clean_temporary():
+            temp_files = []
+            if sha1sum:
+                temp_files.append(sha1filename)
+            if check_integrity:
+                temp_files.append(localfile)
+            for filename in temp_files:
+                try:
+                    os.unlink(filename)
+                except OSError:
+                    pass
+
         if sha1sum:
             if (pisi.util.sha1_file(localfile) != newsha1):
+                clean_temporary()
                 raise Error(_("File integrity of %s compromised.") % uri)
+
+        if check_integrity:
+            shutil.move(localfile, origfile)
+            localfile = origfile
 
         localfile = File.decompress(localfile, compress)
 
