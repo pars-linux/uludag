@@ -23,7 +23,6 @@ msgid "Options"
 msgstr "Opzioni"
 
 #: .tmp/ui_configure.py:45
-#, fuzzy
 msgid "Startup Load :"
 msgstr "Avvio di carico :"
 
@@ -163,7 +162,7 @@ msgstr "Numero: %1  Tipo: %2"
 
 #: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
-msgstr ""
+msgstr "Data di Storia - Tempo / Etichetta"
 
 #: .tmp/ui_uiitem.py:86
 msgid "No: Type:"
