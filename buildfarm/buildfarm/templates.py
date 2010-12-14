@@ -34,8 +34,8 @@ The last 50 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Plain log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log
-Fancy log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html
+Plain log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.log
+Fancy log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.html
 
 --boundary42
 Content-Type: text/html;
@@ -61,9 +61,9 @@ The last 50 lines of the log before the error happens is as follows:
 
 <p>
 Plain log file:
-<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log</a><br>
+<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.log">http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.log</a><br>
 Fancy log file:
-<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html">http://packages.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html</a>
+<a href="http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.html">http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.html</a>
 </p>
 
 <br>
