@@ -102,9 +102,8 @@ msgid "Kahya"
 msgstr "Kahya"
 
 #: ../release.xml.in.h:22
-#, fuzzy
 msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
-msgstr "Mantenerse en contacto con sus contactos es muy fácil con Kontact. Kontact brinde un conjunto de aplicaciones integradas para brindar en un software todas  las funcionalidades necesarias para tareas de comunicación y de organización. Calendarios, e-mails, noticias RSS, direcciones, todos en un sólo lugar. incluso puede enlazar su libreta de direcciones con Kopete para usarlo con cuentas de mensajería como MSN, jabber o GoogleTalk. Puede ver si el remitente de un e-mail está en-línea.&lt;br&gt;&lt;br&gt;Puede colocar notas recordatorios (sticky notes) en su escritorio con las tareas, sencillamente arrastrandolos, o vice versa."
+msgstr "Kontact le permite mantenerse en contacto con sus contactos más fácil que nunca. Kontact es un conjunto de aplicaciones integradas para brindar en un software todas las funcionalidades necesarias para tareas de comunicación y de organización. Calendarios, e-mails, noticias RSS, direcciones, todos en un sólo lugar. incluso puede enlazar su libreta de direcciones con Kopete para usarlo con cuentas de mensajería como MSN, jabber o GoogleTalk. Puede ver si el remitente de un e-mail está en-línea.&lt;br&gt;&lt;br&gt;Puede colocar notas recordatorios (sticky notes) en su escritorio con las tareas, sencillamente arrastrandolos, o vice versa."
 
 #: ../release.xml.in.h:23
 msgid "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. As the roots of the LibreOffice lies in years long open source office experience, even the first stable release is much powerful and competetive with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
@@ -116,7 +115,7 @@ msgstr "Particionamiento Manual"
 
 #: ../release.xml.in.h:25
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
-msgstr ""
+msgstr "Varios usuarios pueden compartir la compartir una sola computadora de manera segura con Pardus. Automáticamente se crea una cuenta de usuario &quot;root&quot;. En esta pantalla puede agregar nuevos usuarios. El primer usuario tendrá privilegios administrativos, si no se lo suspende. Suspender privilegios administrativos, ID de usuario personalizado, y algunas opciones más se acceden desde el menú avanzado. &lt;br&gt;&lt;br&gt; Si necesita administrar cuentas de usuarios, puede ejecutar el administrador de usuarios en el centro de configuración del sistema luego de la instalación."
 
 #: ../release.xml.in.h:27
 #, no-c-format
@@ -132,9 +131,8 @@ msgid "Pardus have many other in-house developed user friendly manager tools suc
 msgstr "Pardus tiene muchas herramientas desarolladas en casa para brindar una administración amigable y fácil, como por ejemplo para administrar usuarios, arranque, cortafuegos, servicios. Todas las herramientas se pueden uilizar individualmente o también desde el centro de configuración del sistema, una sola aplicación que integra las herramientas para todas las tareas de administración y configuración."
 
 #: ../release.xml.in.h:30
-#, fuzzy
 msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of TÜBİTAK are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the license terms to install Pardus on your computer."
-msgstr "Pardus es un sistema operativo libre y de código abierto, que contiene varios proyectos renombrados mundialmente como por ejemplo el kernel Linux, las herramientas GNU, Mozilla Firefox, LibreOffice etc. además muchas herramientas fáciles de usar, para brindar una experiencia tanto confortable como de máximo rendimiento. &lt;br&gt;&lt;br&gt;Los software incluídos en el presente medio de instalación se presentan en sus diferentes versiones de licencia. Tübitak prefiere la licencia pública GNU (GPL version 2) para sus propias herramientas, que también es la licencia más común de los componentes seleccionados. Puede leer todos los textos de las licencias en esta pantalla, seleccionando el nombre de la licencia o ingresando en nuestro sitio web. &lt;br&gt;&lt;br&gt;Debe aceptar los términos al instalar Pardus en su computadora."
+msgstr "Pardus es un sistema operativo libre y de código abierto, que contiene varios proyectos renombrados mundialmente como por ejemplo el kernel Linux, las herramientas GNU, Mozilla Firefox, LibreOffice etc. además muchas herramientas fáciles de usar, para brindar una experiencia tanto confortable como de máximo rendimiento. &lt;br&gt;&lt;br&gt;Los software propios de TÜBİTAK se distribuyen bajo la licencia pública GNU (GPL version 2), que también es la licencia más común de los componentes seleccionados. Sin embargo también hay software incluídos en el medio de insyalación, con licencias diferentes. Puede leer todos los textos de las licencias en esta pantalla o ingresando en nuestro sitio web. &lt;br&gt;&lt;br&gt;Debe aceptar los términos al instalar Pardus en su computadora."
 
 #: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
@@ -149,18 +147,16 @@ msgid "Summary"
 msgstr "Resumen"
 
 #: ../release.xml.in.h:34
-#, fuzzy
 msgid "There are a lot of features waiting to be explored. Thousands of softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is onle a few clicks to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones. You can reach Package Manager from the menu of your choice, Kick-off, classic menu or Lancelot that you can choose with the help of Kaptan in your very first boot."
-msgstr "Hay tantas características a descubrir. Existen muchos más de software, librarías y herramientas que no se incluyeron en el medio de instalación para ahorrar espacio. Sin embargo con el sistema de paquetes de Pardus llamado PiSi y con su amigable interfaz de administración, el administrador de paquetes, es más fácil que nunca de agregar estos programas nuevos a su sistema. &lt;br&gt;&lt;br&gt;Administrador de Paquetes le ayudará mantener actualizado su sistema, remover paquetes que nunca utiliza, o agregar nuevos con pocos clics. Puede accederlo desde el menú del sistema, el cual puede utilizar en una de sus versiones según su elección en el asistente Kaptan!"
+msgstr "Hay tantas características a descubrir. Miles de software, librarías y herramientas no se incluyeron en el medio de instalación para ahorrar espacio. Sin embargo con el administrador de paquetes de Pardus llamado PiSi y con su amigable interfaz de administración, es más fácil que nunca de agregar estos programas nuevos a su sistema. &lt;br&gt;&lt;br&gt;Administrador de Paquetes le ayudará mantener actualizado su sistema, remover paquetes que nunca utiliza, o agregar nuevos. Puede accederlo desde el menú del sistema, el cual puede utilizar en una de sus versiones, que puede elegir en el prier arranque con la ayuda del asistente Kaptan!"
 
 #: ../release.xml.in.h:35
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr "En la validación se comparan los paquetes en el medio con los originales usando la verificación de la integridad de archivos. Cuando una validación arroja errores, quiere decir generalmente que el medio de instalación está mal grabado (CD/DVD o USB Pendrive). &lt;br&gt;&lt;br&gt;Si está utilizando un medio óptico, intente volver a grabarlo usando el modo DAO (Disc-at-once), con una velocidad más baja (4x para DVD, 8-12x para CD)."
 
 #: ../release.xml.in.h:36
-#, fuzzy
 msgid "Welcome back"
-msgstr "Bienvenido a Pardus"
+msgstr "Bienvenido de nuevo"
 
 #: ../release.xml.in.h:37
 msgid "Welcome to Pardus"
@@ -195,7 +191,7 @@ msgstr "Debe definir una contraseña para el usuario &quot;root&quot; que es el 
 
 #: ../release.xml.in.h:44
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
-msgstr ""
+msgstr "Se requiere al menos 4GBs de espacio sin particionar en disco, o un disco entero para la instalación de Pardus (recomendado 10GB). Por favor seleccione el disco que desea utilizar para la instalación. En el siguiente paso podrá elegir entre las opciones de particionamiento."
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
