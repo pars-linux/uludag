@@ -6,17 +6,37 @@ import sys
 import glob
 import gzip
 import pisi
+import shutil
 import platform
 
 kernel_version = platform.uname()[2]
 
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
-grub_file = "/boot/grub/grub.conf"
 
-packages_a = {"nvidia-current": ("xorg-video-nvidia-current", "nvidia-settings")}
-packages_b = {"fglrx": ("foo", "foo2")}
-packages_c = {"foo": ("boo", "boo1", "boo3")}
+grub_file = "/boot/grub/grub.conf"
+grub_new = "/boot/grub/grub.conf.new"
+grub_back = "/boot/grub/grub.conf.back"
+
+fglrx = {"fglrx": ("module-fglrx",
+                    "module-fglrx-userspace",
+                    "xorg-video-fglrx",
+                    "ati-control-center")}
+
+nvidia_current = {"nvidia-current": ("module-nvidia-current",
+                                 "module-nvidia-current-userspace",
+                                 "xorg-video-nvidia-current",
+                                 "nvidia-settings")}
+
+nvidia96 = {"nvidia96": ("module-nvidia96",
+                           "module-nvidia96-userspace",
+                           "xorg-video-nvidia96",
+                           "nvidia-settings")}
+
+nvidia173 = {"nvidia173": ("module-nvidia173",
+                            "module-nvidia173-userspace",
+                            "xorg-video-nvidia173",
+                            "nvidia-settings")}
 
 def edit_grub(driver_name):
     if driver_name == "nvidia-current":
@@ -26,31 +46,38 @@ def edit_grub(driver_name):
     else:
         os_driver = False
 
-    grub_back = open("deneme", "w")
+    grub_tmp = open(grub_new, "w")
     with open(grub_file) as grub:
         for line in grub:
             if "kernel" in line and kernel_version in line:
-                kernel_parameters = line.split()
-                for param in kernel_parameters:
-                    if "blacklist" in param or not os_driver:
-                        print "Grub.conf is already configured"
-                        grub_back.write(line)
-                        break
-                    elif os_driver:
-                        kernel_parameters.append(" blacklist=%s " % os_driver)
-                        new_kernel_line = "".join(kernel_parameters)
-                        grub_back.write(new_kernel_line)
-                        print "The parameter \"blacklist=%s\" is added to Grub.conf" % os_driver
-                        break
+                if "blacklist" in line or not os_driver:
+                    print "Grub.conf is already configured"
+                    configured = False
+                    grub_tmp.write(line)
+                elif os_driver:
+                    kernel_parameters = line.split()
+                    kernel_parameters.append("blacklist=%s \n" % os_driver)
+                    new_kernel_line = " ".join(kernel_parameters)
+                    grub_tmp.write(new_kernel_line)
+                    configured = True
+                    print "The parameter \"blacklist=%s\" is added to Grub.conf" % os_driver
             else:
-                grub_back.write(line)
-    grub_back.close()
+                grub_tmp.write(line)
+    grub_tmp.close()
+
+    #Replace the new grub file with the old one, create also a backup file
+    if configured:
+        shutil.copy2(grub_file, grub_back)
+        print "Backup of grub file is created: /boot/grub/grub.conf.back"
+
+        shutil.copy2(grub_new, grub_file)
+        print "New grub file is created: /boot/grub/grub.conf"
 
 def resolve_intersections(driver_name):
     obsolote = []
     needed = []
 
-    packages_dicts = [packages_a, packages_b, packages_c]
+    packages_dicts = [nvidia_current, nvidia96, nvidia173, fglrx]
     for package in packages_dicts:
         for driver, module in package.items():
             if driver_name != driver:
