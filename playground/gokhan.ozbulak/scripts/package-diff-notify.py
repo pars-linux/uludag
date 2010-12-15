@@ -82,6 +82,8 @@ def processCmdLine():
     parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
     parser.add_option("-n", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
     parser.add_option("-r", "--report", dest = "report", action = "store_true", default = False, help = "dump the output into separate files")
+    parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
+    parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about specified package(s) only")
 
     ''' Parse the command line '''
     (options, args) = parser.parse_args()
@@ -222,47 +224,66 @@ def createStanza(summaryList):
 
     return content
 
+def isSummaryListEmpty(summaryList):
+    for item in summaryList.values():
+        if len(item) > 0:
+            return False
+
+    return True
+
 ''' This function generates status info about all packages of the given packager '''
 def prepareContentBody(packager):
     content = ""
     packageHistory = []
 
-    for package in repos[packager].keys():
+    if options.package:
+        packageList = options.package.split(",")
+    else:
+        packageList = repos[packager].keys()
+
+    for package in packageList:
         ''' No need to replicate same info for obsolete package in content '''
+        ''' Must consider as reversible '''
         if obsoleteList.has_key(package):
             if obsoleteList[package] in packageHistory:
                 continue
+        for item in packageHistory:
+            if obsoleteList.has_key(item):
+                if obsoleteList[item] == package:
+                    continue
 
         summaryList = {}
         for distro in distroList:
-            if distro in repos[packager][package][3]:
-                summaryList[distro] = createSummaryEntry(packager, package, distro)
-            else:
-                if obsoleteList.has_key(package):
-                    pck = obsoleteList[package]
+            if repos[packager].has_key(package):
+                if distro in repos[packager][package][3]:
+                    summaryList[distro] = createSummaryEntry(packager, package, distro)
                 else:
-                    pck = package
+                    if obsoleteList.has_key(package):
+                        pck = obsoleteList[package]
+                    else:
+                        pck = package
 
-                for pckgr in conflictList[pck]:
-                    if repos[pckgr].has_key(pck):
-                        if distro in repos[pckgr][pck][3]:
-                            summaryList[distro] = createSummaryEntry(pckgr, pck, distro)
-                    if obsoleteList.has_key(package) and repos[pckgr].has_key(package):
-                        if distro in repos[pckgr][package][3]:
-                            summaryList[distro] = createSummaryEntry(pckgr, package, distro)
+                    for pckgr in conflictList[pck]:
+                        if repos[pckgr].has_key(pck):
+                            if distro in repos[pckgr][pck][3]:
+                                summaryList[distro] = createSummaryEntry(pckgr, pck, distro)
+                        if obsoleteList.has_key(package) and repos[pckgr].has_key(package):
+                            if distro in repos[pckgr][package][3]:
+                                summaryList[distro] = createSummaryEntry(pckgr, package, distro)
 
-                ''' Look for obsolete packages if no new package in distro '''
-                for obsolete, new in obsoleteList.items():
-                    ''' There may be more than one replace, no break '''
-                    ''' {openoffice -> libreoffice}, {openoffice3 -> libreoffice} etc. '''
-                    if new == package:
-                        if conflictList.has_key(new):
-                            for pckgr in conflictList[new]:
-                                if repos[pckgr].has_key(obsolete):
-                                    if distro in repos[pckgr][obsolete][3]:
-                                        summaryList[distro] = createSummaryEntry(pckgr, obsolete ,distro)
-        packageHistory.append(package)
-        content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList))
+                    ''' Look for obsolete packages if no new package in distro '''
+                    for obsolete, new in obsoleteList.items():
+                        ''' There may be more than one replace, no break '''
+                        ''' {openoffice -> libreoffice}, {openoffice3 -> libreoffice} etc. '''
+                        if new == package:
+                            if conflictList.has_key(new):
+                                for pckgr in conflictList[new]:
+                                    if repos[pckgr].has_key(obsolete):
+                                        if distro in repos[pckgr][obsolete][3]:
+                                            summaryList[distro] = createSummaryEntry(pckgr, obsolete ,distro)
+        if not isSummaryListEmpty(summaryList):
+            packageHistory.append(package)
+            content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList))
 
     return content
 
@@ -309,7 +330,12 @@ def sendMail(receiverList, contentBody):
 
 ''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
 def traverseRepos():
-    for packager in repos.keys():
+    if options.packager:
+        packagerList = options.packager.split(",")
+    else:
+        packagerList = repos.keys()
+
+    for packager in packagerList:
         contentBody = prepareContentBody(packager)
 
         if options.mail:
