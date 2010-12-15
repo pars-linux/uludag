@@ -16,30 +16,23 @@ grub_file = "/boot/grub/grub.conf"
 grub_new = "/boot/grub/grub.conf.new"
 grub_back = "/boot/grub/grub.conf.back"
 kernel_file = "/etc/kernel/kernel"
+kernel_file_pae = "/etc/kernel/kernel-pae"
 
-fglrx = {"fglrx": ("module-fglrx",
-                   "module-pae-fglrx",
-                   "module-fglrx-userspace",
+fglrx = {"fglrx": ["module-fglrx-userspace",
                    "xorg-video-fglrx",
-                   "ati-control-center")}
+                   "ati-control-center"]}
 
-nvidia_current = {"nvidia-current": ("module-nvidia-current",
-                                     "module-pae-nvidia-current"
-                                     "module-nvidia-current-userspace",
+nvidia_current = {"nvidia-current": ["module-nvidia-current-userspace",
                                      "xorg-video-nvidia-current",
-                                     "nvidia-settings")}
+                                     "nvidia-settings"]}
 
-nvidia96 = {"nvidia96": ("module-nvidia96",
-                         "module-pae-nvidia96",
-                         "module-nvidia96-userspace",
+nvidia96 = {"nvidia96": ["module-nvidia96-userspace",
                          "xorg-video-nvidia96",
-                         "nvidia-settings")}
+                         "nvidia-settings"]}
 
-nvidia173 = {"nvidia173": ("module-nvidia173",
-                           "module-pae-nvidia173",
-                           "module-nvidia173-userspace",
+nvidia173 = {"nvidia173": ["module-nvidia173-userspace",
                            "xorg-video-nvidia173",
-                           "nvidia-settings")}
+                           "nvidia-settings"]}
 
 def edit_grub(driver_name):
     if driver_name == "nvidia-current":
@@ -49,12 +42,9 @@ def edit_grub(driver_name):
     else:
         os_driver = False
 
-    # Get the current used kernel version
-    with open(kernel_file) as kernel:
-        for line in kernel:
-            kernel_version = line
+    kernel_version = get_kernel_flavor()
 
-    # Create a new grub file
+    # Get the current used kernel versio    # Create a new grub file
     # Do not change the file if blacklist= .. is already available
     grub_tmp = open(grub_new, "w")
     with open(grub_file) as grub:
@@ -83,13 +73,26 @@ def edit_grub(driver_name):
         shutil.copy2(grub_new, grub_file)
         print "New grub file is created: /boot/grub/grub.conf"
 
+def get_kernel_flavor():
+    if os.path.exists(kernel_file_pae):
+        with open(kernel_file_pae) as kernel:
+            for line in kernel:
+                return line
+    else:
+        with open(kernel_file) as kernel:
+            for line in kernel:
+                return line
+
 def resolve_intersections(driver_name):
     obsolote = []
     needed = []
+    module_name = get_kernel_module_package(driver_name)
 
     packages_dicts = [nvidia_current, nvidia96, nvidia173, fglrx]
     for package in packages_dicts:
         for driver, module in package.items():
+            module.append(module_name)
+            package[driver] = module
             if driver_name != driver:
                 obsolote.append(package)
             else:
@@ -97,9 +100,11 @@ def resolve_intersections(driver_name):
 
     return (needed, obsolote)
 
-def get_kernel_module_package(kernel_flavor, name):
+def get_kernel_module_package(name):
     '''Get the appropirate module for the specified kernel'''
-    if kernel_flavor == "pae":
+    kernel_flavor = get_kernel_flavor()
+
+    if "pae" in kernel_flavor:
         config = gzip.open("/proc/config.gz").read()
         for option in config:
             if "X86_PAE=y" in option:
@@ -125,12 +130,10 @@ def get_primary_driver():
 
 if __name__ == '__main__':
     driver_name = get_primary_driver()
-    module_name = get_kernel_module_package(None, driver_name)
     needed, obsolote = resolve_intersections(driver_name)
 
     print
     print "The package name of the driver is     : %s" % driver_name
-    print "The main module for thşs driver is    : %s" % module_name
     print
     print "Packages that should be installed : %s" % needed
     print "Packages that should be removed   : %s" % obsolote
