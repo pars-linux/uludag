@@ -73,19 +73,11 @@ def edit_grub(driver_name):
         shutil.copy2(grub_new, grub_file)
         print "New grub file is created: /boot/grub/grub.conf"
 
-def get_kernel_flavor():
-    if os.path.exists(kernel_file_pae):
-        with open(kernel_file_pae) as kernel:
-            for line in kernel:
-                return line
-    else:
-        with open(kernel_file) as kernel:
-            for line in kernel:
-                return line
-
-def resolve_intersections(driver_name):
+def resolve_intersections():
     obsolote = []
     needed = []
+
+    driver_name = get_primary_driver()
     module_name = get_kernel_module_package(driver_name)
 
     packages_dicts = [nvidia_current, nvidia96, nvidia173, fglrx]
@@ -114,6 +106,17 @@ def get_kernel_module_package(name):
     else:
         return "module-%s" % name
 
+def get_kernel_flavor():
+    ''' Get kernel version '''
+    if os.path.exists(kernel_file_pae):
+        with open(kernel_file_pae) as kernel:
+            for line in kernel:
+                return line
+    else:
+        with open(kernel_file) as kernel:
+            for line in kernel:
+                return line
+
 def get_primary_driver():
     '''Get driver name for the working primary device'''
     for boot_vga in glob.glob("%s/*/boot_vga" % sysdir):
@@ -129,8 +132,7 @@ def get_primary_driver():
     return driver_name
 
 if __name__ == '__main__':
-    driver_name = get_primary_driver()
-    needed, obsolote = resolve_intersections(driver_name)
+    needed, obsolote = resolve_intersections()
 
     print
     print "The package name of the driver is     : %s" % driver_name
