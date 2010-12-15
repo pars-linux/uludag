@@ -7,9 +7,7 @@ import glob
 import gzip
 import pisi
 import shutil
-import platform
 
-kernel_version = platform.uname()[2]
 
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
@@ -17,26 +15,31 @@ driversDB = "/usr/share/X11/DriversDB"
 grub_file = "/boot/grub/grub.conf"
 grub_new = "/boot/grub/grub.conf.new"
 grub_back = "/boot/grub/grub.conf.back"
+kernel_file = "/etc/kernel/kernel"
 
 fglrx = {"fglrx": ("module-fglrx",
-                    "module-fglrx-userspace",
-                    "xorg-video-fglrx",
-                    "ati-control-center")}
+                   "module-pae-fglrx",
+                   "module-fglrx-userspace",
+                   "xorg-video-fglrx",
+                   "ati-control-center")}
 
 nvidia_current = {"nvidia-current": ("module-nvidia-current",
-                                 "module-nvidia-current-userspace",
-                                 "xorg-video-nvidia-current",
-                                 "nvidia-settings")}
+                                     "module-pae-nvidia-current"
+                                     "module-nvidia-current-userspace",
+                                     "xorg-video-nvidia-current",
+                                     "nvidia-settings")}
 
 nvidia96 = {"nvidia96": ("module-nvidia96",
-                           "module-nvidia96-userspace",
-                           "xorg-video-nvidia96",
-                           "nvidia-settings")}
+                         "module-pae-nvidia96",
+                         "module-nvidia96-userspace",
+                         "xorg-video-nvidia96",
+                         "nvidia-settings")}
 
 nvidia173 = {"nvidia173": ("module-nvidia173",
-                            "module-nvidia173-userspace",
-                            "xorg-video-nvidia173",
-                            "nvidia-settings")}
+                           "module-pae-nvidia173",
+                           "module-nvidia173-userspace",
+                           "xorg-video-nvidia173",
+                           "nvidia-settings")}
 
 def edit_grub(driver_name):
     if driver_name == "nvidia-current":
@@ -46,6 +49,13 @@ def edit_grub(driver_name):
     else:
         os_driver = False
 
+    # Get the current used kernel version
+    with open(kernel_file) as kernel:
+        for line in kernel:
+            kernel_version = line
+
+    # Create a new grub file
+    # Do not change the file if blacklist= .. is already available
     grub_tmp = open(grub_new, "w")
     with open(grub_file) as grub:
         for line in grub:
@@ -119,11 +129,11 @@ if __name__ == '__main__':
     needed, obsolote = resolve_intersections(driver_name)
 
     print
-    print "Your driver name is              : %s" % driver_name
-    print "The module for this driver is    : %s" % module_name
+    print "The package name of the driver is     : %s" % driver_name
+    print "The main module for thşs driver is    : %s" % module_name
     print
-    print "Packages that shoul be installed : %s" % needed
-    print "Packages that shoul be removed   : %s" % obsolote
+    print "Packages that should be installed : %s" % needed
+    print "Packages that should be removed   : %s" % obsolote
     print
 
     edit_grub(driver_name)
