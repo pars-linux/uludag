@@ -80,7 +80,7 @@ def processCmdLine():
 
     parser = OptionParser(prog = "package-diff-notify", version = "%prog 1.0", usage = usageStr, description = desStr, epilog = epiStr)
     parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
-    parser.add_option("-n", "--nomail", dest = "nomail", action = "store_true", default = False, help = "prevent the util from sending e-mail to packagers")
+    parser.add_option("-n", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
     parser.add_option("-r", "--report", dest = "report", action = "store_true", default = False, help = "dump the output into separate files")
 
     ''' Parse the command line '''
@@ -108,14 +108,17 @@ def processCmdLine():
 def handleReplaces(spec):
     ''' We're just interested in the sub-package that has same name with the source name, ignoring other sub-packages if any '''
     for package in spec.packages:
-        if package == spec.source.name:
-            if package.replaces:
-                if not obsoleteList.has_key(package.replaces.name):
-                    obsoleteList[package.replaces.name] = spec.source.name
+        if package.name == spec.source.name:
+            for replace in package.replaces:
+                if not obsoleteList.has_key(replace.package):
+                    obsoleteList[replace.package] = spec.source.name
                     ''' Move obsolete package as new package in conflictList '''
-                    tmpPackagerList = conflictList[package.replaces.name]
-                    del conflictList[package.replaces.name]
-                    conflictList[spec.source.name].extend(tmpPackagerList)
+                    if conflictList.has_key(replace.package):
+                        tmpPackagerList = conflictList[replace.package]
+                        del conflictList[replace.package]
+                        for tmpPackager in tmpPackagerList:
+                            if not tmpPackager in conflictList[spec.source.name]:
+                                conflictList[spec.source.name].append(tmpPackager)
 
 ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
@@ -175,18 +178,16 @@ def fetchRepos():
 ''' This function creates a summary entry whose structure is specified below for given repo, say 2009 or 2011  '''
 ''' summaryEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch] '''
 def createSummaryEntry(packager, package, distro):
-    if repos[packager][package]:
-        order = repos[packager][package][3].index(distro)
-
-
+    order = repos[packager][package][3].index(distro)
 
     summaryEntry = [
+                    package,
                     packager,
                     repos[packager][package][4],
                     repos[packager][package][0][order][0],
                     repos[packager][package][0][order][1],
                     repos[packager][package][1][order],
-                    repos[packager][package][2][order]
+                    repos[packager][package][2][order],
                     ]
 
     return summaryEntry
@@ -201,27 +202,21 @@ def isListContentSame(summaryList, index):
     return "Same"
 
 ''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
-def createStanza(summaryList, conflict):
-    sectionList = ("Email", "Packager(s)", "Release(s)", "Version(s)", "Number of Package", "Number of Patch")
+def createStanza(summaryList):
+    sectionList = ("Package Names", "Email", "Packager(s)", "Release(s)", "Version(s)", "Number of Sub-Package", "Number of Patch")
     content = ""
 
     ''' Indexing to traverse summaryList as in sectionList manner  '''
-    for i in range(6):
-        tmpContent = ""; comment = ""; incomplete = False
-        ''' İgnoring the first item in sectionList, because will handle it in nex iteration  '''
-        if i == 0: continue
+    for i in range(7):
+        tmpContent = ""; comment = "";
+        ''' Ignoring the first item in sectionList, because will handle it in next iteration  '''
+        if i == 1: continue
         for distro in distroList:
             if summaryList.has_key(distro):
-                if i == 1:
+                if i == 2:
                     tmpContent = "%s    %-30s: %-30s %s\n" %(tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
                 else:
                     tmpContent = "%s    %-30s: %s\n" %(tmpContent, distro, summaryList[distro][i])
-            else:
-                incomplete = True
-        if incomplete:
-            comment = "%s %s " %(comment, "Incomplete")
-        if conflict:
-            comment = "%s %s " %(comment, "Conflict")
         comment = "%s %s " %(comment, isListContentSame(summaryList, i))
         content = "%s %s: [%s]\n%s" %(content, sectionList[i], comment, tmpContent)
 
@@ -230,39 +225,44 @@ def createStanza(summaryList, conflict):
 ''' This function generates status info about all packages of the given packager '''
 def prepareContentBody(packager):
     content = ""
+    packageHistory = []
 
     for package in repos[packager].keys():
+        ''' No need to replicate same info for obsolete package in content '''
+        if obsoleteList.has_key(package):
+            if obsoleteList[package] in packageHistory:
+                continue
+
         summaryList = {}
-        isConflict = False
         for distro in distroList:
             if distro in repos[packager][package][3]:
                 summaryList[distro] = createSummaryEntry(packager, package, distro)
-            elif conflictList.has_key(package):
-                if len(conflictList[package]) > 1:
-                    isConflict = True
-                    for pckgr in conflictList[package]:
+            else:
+                if obsoleteList.has_key(package):
+                    pck = obsoleteList[package]
+                else:
+                    pck = package
+
+                for pckgr in conflictList[pck]:
+                    if repos[pckgr].has_key(pck):
+                        if distro in repos[pckgr][pck][3]:
+                            summaryList[distro] = createSummaryEntry(pckgr, pck, distro)
+                    if obsoleteList.has_key(package) and repos[pckgr].has_key(package):
                         if distro in repos[pckgr][package][3]:
                             summaryList[distro] = createSummaryEntry(pckgr, package, distro)
-                            break
-                    ''' Merging obsolete package to summaryList '''
-                    if obsoleteList.has_key(package):
-                        for pckgr in conflictList[obsoleteList[package]]:
-                            if distro in repos[pckgr][obsoleteList[package]]:
-                                summaryList[distro] = createSummaryEntry(pckgr, obsoleteList[package], distro)
-            elif obsoleteList.has_key(package):
-                for pckgr in conflictList[obsoleteList[package]]:
-                    if distro in repos[pckgr][package]:
-                        summaryList[distro] = createSummaryEntry(pckgr, package, distro)
-                        break
-            else:
-                ''' This is new package, must consider obsolete package '''
+
+                ''' Look for obsolete packages if no new package in distro '''
                 for obsolete, new in obsoleteList.items():
+                    ''' There may be more than one replace, no break '''
+                    ''' {openoffice -> libreoffice}, {openoffice3 -> libreoffice} etc. '''
                     if new == package:
-                        for pckgr in conflictList[new]:
-                            if distro in repos[pckgr][obsolete]:
-                                summaryList[distro] = createSummaryEntry[pckgr, obsolete ,distro]
-                ''' Searching for the packagers who maintain the obsolete package '''
-        content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList, isConflict))
+                        if conflictList.has_key(new):
+                            for pckgr in conflictList[new]:
+                                if repos[pckgr].has_key(obsolete):
+                                    if distro in repos[pckgr][obsolete][3]:
+                                        summaryList[distro] = createSummaryEntry(pckgr, obsolete ,distro)
+        packageHistory.append(package)
+        content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList))
 
     return content
 
@@ -312,7 +312,7 @@ def traverseRepos():
     for packager in repos.keys():
         contentBody = prepareContentBody(packager)
 
-        if not options.nomail:
+        if options.mail:
             receiverMailList = prepareReceiverMailList(packager)
             if sendMail(receiverMailList, contentBody):
                 return -1
