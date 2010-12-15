@@ -18,21 +18,26 @@ grub_back = "/boot/grub/grub.conf.back"
 kernel_file = "/etc/kernel/kernel"
 kernel_file_pae = "/etc/kernel/kernel-pae"
 
-fglrx = {"fglrx": ["module-fglrx-userspace",
-                   "xorg-video-fglrx",
-                   "ati-control-center"]}
-
-nvidia_current = {"nvidia-current": ["module-nvidia-current-userspace",
-                                     "xorg-video-nvidia-current",
-                                     "nvidia-settings"]}
-
-nvidia96 = {"nvidia96": ["module-nvidia96-userspace",
-                         "xorg-video-nvidia96",
-                         "nvidia-settings"]}
-
-nvidia173 = {"nvidia173": ["module-nvidia173-userspace",
-                           "xorg-video-nvidia173",
-                           "nvidia-settings"]}
+driver_packages = {"fglrx": ["module-fglrx",
+                             "module-pae-fglrx",
+                             "module-fglrx-userspace",
+                             "xorg-video-fglrx",
+                             "ati-control-center"] ,
+                   "nvidia-current": ["module-nvidia-current",
+                                      "module-pae-nvidia-current",
+                                      "module-nvidia-current-userspace",
+                                      "xorg-video-nvidia-current",
+                                      "nvidia-settings"] ,
+                   "nvidia96": ["module-nvidia96",
+                                "module-pae-nvidia96",
+                                "module-nvidia96-userspace",
+                                "xorg-video-nvidia96",
+                                "nvidia-settings"],
+                   "nvidia173": ["module-nvidia173",
+                                 "module-pae-nvidia173",
+                                 "module-nvidia173-userspace",
+                                 "xorg-video-nvidia173",
+                                 "nvidia-settings"]}
 
 def edit_grub(driver_name):
     if driver_name == "nvidia-current":
@@ -42,7 +47,7 @@ def edit_grub(driver_name):
     else:
         os_driver = False
 
-    kernel_version = get_kernel_flavor()
+    kernel_list = get_kernel_flavors()
 
     # Get the current used kernel versio    # Create a new grub file
     # Do not change the file if blacklist= .. is already available
@@ -73,49 +78,45 @@ def edit_grub(driver_name):
         shutil.copy2(grub_new, grub_file)
         print "New grub file is created: /boot/grub/grub.conf"
 
-def resolve_intersections():
-    obsolote = []
-    needed = []
-
+def needed_module():
+    module_to_install ={}
     driver_name = get_primary_driver()
-    module_name = get_kernel_module_package(driver_name)
+    kernel_list = get_kernel_module_package(driver_name)
 
-    packages_dicts = [nvidia_current, nvidia96, nvidia173, fglrx]
-    for package in packages_dicts:
-        for driver, module in package.items():
-            module.append(module_name)
-            package[driver] = module
-            if driver_name != driver:
-                obsolote.append(package)
-            else:
-                needed.append(package)
+    kernel_flavors = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
+                            driver_packages[driver_name])
 
-    return (needed, obsolote)
+    need_to_install = list(set(driver_packages[driver_name]) - (set(kernel_flavors)- set(kernel_list)))
+    module_to_install[driver_name]  = need_to_install
 
-def get_kernel_module_package(name):
+    return module_to_install
+
+def get_kernel_module_package(driver_name):
     '''Get the appropirate module for the specified kernel'''
-    kernel_flavor = get_kernel_flavor()
+    kernel_flavor = get_kernel_flavors()
 
-    if "pae" in kernel_flavor:
-        config = gzip.open("/proc/config.gz").read()
-        for option in config:
-            if "X86_PAE=y" in option:
-                return "module-pae-%s" % name
-            else:
-                return "module-%s" % name
-    else:
-        return "module-%s" % name
+    kernel_list=[]
+    for kernel_name, kernel_version in kernel_flavor.items():
+        tmp, sep, suffix = kernel_name.partition("-")
+        if suffix:
+            kernel_list.append("module-%s-%s" % (suffix, driver_name))
+        else:
+            kernel_list.append("module-%s" % driver_name)
 
-def get_kernel_flavor():
+    return kernel_list
+
+def get_kernel_flavors(param=False):
     ''' Get kernel version '''
-    if os.path.exists(kernel_file_pae):
-        with open(kernel_file_pae) as kernel:
-            for line in kernel:
-                return line
+    kernel_dict = {}
+
+    if not param:
+        for kernel_file in glob.glob("/etc/kernel/*"):
+            kernel_name = os.path.basename(kernel_file)
+            kernel_dict[kernel_name] = open(kernel_file).read()
     else:
-        with open(kernel_file) as kernel:
-            for line in kernel:
-                return line
+        kernel_dict[param] = "2.6.36.1-147"
+
+    return kernel_dict
 
 def get_primary_driver():
     '''Get driver name for the working primary device'''
@@ -132,14 +133,14 @@ def get_primary_driver():
     return driver_name
 
 if __name__ == '__main__':
-    needed, obsolote = resolve_intersections()
+    driver_name = get_primary_driver()
+    needed = needed_module()
 
     print
-    print "The package name of the driver is     : %s" % driver_name
+    print "Packages that should be added                : %s" % needed
     print
-    print "Packages that should be installed : %s" % needed
-    print "Packages that should be removed   : %s" % obsolote
+    print "Packages that should be removed from list    : %s" % driver_packages
     print
 
-    edit_grub(driver_name)
+#    edit_grub(driver_name)
 
