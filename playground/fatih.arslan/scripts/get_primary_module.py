@@ -8,7 +8,18 @@ import gzip
 import pisi
 import shutil
 
+# This scripts automatically detects the brand of a graphic card
+# After detecting, it simply returns a list which contains modules
+# that should be added/installed. These modules are mostly based on
+# proprietary graphic card drivers.
+# This script also has a extra function that modify grub.conf to
+# reflect the changes of the installed modules. It does append a
+# "blacklist=..." string to the end of kernel line in grub.conf. Due
+# to one will able to use the proprietary drivers like nvidia-current
+# or fglrx
 
+
+# System files and directories
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
 
@@ -18,6 +29,8 @@ grub_back = "/boot/grub/grub.conf.back"
 kernel_file = "/etc/kernel/kernel"
 kernel_file_pae = "/etc/kernel/kernel-pae"
 
+# This dict contains all module sthat should be removed first
+# After that we add only modules that we need
 driver_packages = {"fglrx": ["module-fglrx",
                              "module-pae-fglrx",
                              "module-fglrx-userspace",
@@ -40,6 +53,7 @@ driver_packages = {"fglrx": ["module-fglrx",
                                  "nvidia-settings"]}
 
 def edit_grub(driver_name):
+    '''Edit grub file to enable the use of propretiary graphic card drivers'''
     if driver_name == "nvidia-current":
         os_driver = "nouveau"
     elif driver_name == "fglrx":
@@ -48,8 +62,10 @@ def edit_grub(driver_name):
         os_driver = False
 
     kernel_list = get_kernel_flavors()
+    kernel_version = kernel_list["kernel"] # This one should change
 
-    # Get the current used kernel versio    # Create a new grub file
+    # Get the current used kernel version
+    # Create a new grub file
     # Do not change the file if blacklist= .. is already available
     grub_tmp = open(grub_new, "w")
     with open(grub_file) as grub:
@@ -79,13 +95,20 @@ def edit_grub(driver_name):
         print "New grub file is created: /boot/grub/grub.conf"
 
 def needed_module():
+    '''Filter modules that should be addded'''
     module_to_install ={}
     driver_name = get_primary_driver()
     kernel_list = get_kernel_module_package(driver_name)
 
+    # List only kernel_flavors, we assume that a kernel flavor begins with "module-" and ends with "-userspace"
     kernel_flavors = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
                             driver_packages[driver_name])
 
+    # Kernel_list contains currently used kernel modules
+    # Kernel_flavors contains predefined kernel modules
+    # driver_package[driver_name] contains all modules 
+    # All modules should be stay nontouched, but remove kernels in kernel_flavors that are not in kernel_list
+    # (hence we are not using them)
     need_to_install = list(set(driver_packages[driver_name]) - (set(kernel_flavors)- set(kernel_list)))
     module_to_install[driver_name]  = need_to_install
 
@@ -114,6 +137,8 @@ def get_kernel_flavors(param=False):
             kernel_name = os.path.basename(kernel_file)
             kernel_dict[kernel_name] = open(kernel_file).read()
     else:
+        # We might want to give custom parameters
+        # The below on is just an example
         kernel_dict[param] = "2.6.36.1-147"
 
     return kernel_dict
@@ -137,10 +162,9 @@ if __name__ == '__main__':
     needed = needed_module()
 
     print
-    print "Packages that should be added                : %s" % needed
+    print "Packages that should be added to list        : %s" % needed
     print
     print "Packages that should be removed from list    : %s" % driver_packages
     print
-
-#    edit_grub(driver_name)
+    edit_grub(driver_name)
 
