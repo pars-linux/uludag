@@ -3,6 +3,7 @@
 
 # Standard modules
 import os
+from exceptions import Exception
 
 # Helper modules
 import profile
@@ -40,20 +41,28 @@ class ProfileReader:
             Returns:
                 self.profiles: Profile objects list that it has been used
         """
-        with file(PROFILE_FILE) as config_file:
-            for line in config_file:
-                line = line.strip()
-                if line.startswith("domain="):
-                    tmp_profile = profile.Profile()
-                    tmp_profile.set_domain(line.split("=", 1)[1])
-                    line = config_file.next().strip()
-                    if line.startswith("address="):
-                        tmp_profile.set_address(line.split("=", 1)[1])
+
+        try:
+            with file(PROFILE_FILE) as config_file:
+                for line in config_file:
+                    line = line.strip()
+                    if line.startswith("domain="):
+                        tmp_profile = profile.Profile()
+                        tmp_profile.set_domain(line.split("=", 1)[1])
                         line = config_file.next().strip()
-                        if line.startswith("username="):
-                            tmp_profile.set_username(line.split("=", 1)[1])
-                            self.profiles.append(tmp_profile)
-                            config_file.next()
+                        if line.startswith("address="):
+                            tmp_profile.set_address(line.split("=", 1)[1])
+                            line = config_file.next().strip()
+                            if line.startswith("username="):
+                                tmp_profile.set_username(line.split("=", 1)[1])
+                                self.profiles.append(tmp_profile)
+                                config_file.next()
+        except Exception:
+            print "Error occured: Configure file is corrupted."
+            if len(self.profiles):
+                print "%d profiles saved." % len(self.profiles)
+
+            os.remove(PROFILE_FILE)
 
         return self.profiles
 
