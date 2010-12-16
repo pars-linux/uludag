@@ -13,10 +13,11 @@ from email.mime.text import MIMEText
 from optparse import OptionParser
 
 ''' URLs of Repositories  '''
+''' It is recommended to define repoList as from newest repo to oldest one '''
 repoList = (
-                "http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2",
                 "http://svn.pardus.org.tr/pardus/2011/devel/pisi-index.xml.bz2",
                 "http://svn.pardus.org.tr/pardus/corporate2/devel/pisi-index.xml.bz2",
+                "http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2"
            )
 
 
@@ -80,7 +81,7 @@ def processCmdLine():
 
     parser = OptionParser(prog = "package-diff-notify", version = "%prog 1.0", usage = usageStr, description = desStr, epilog = epiStr)
     parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
-    parser.add_option("-n", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
+    parser.add_option("-m", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
     parser.add_option("-r", "--report", dest = "report", action = "store_true", default = False, help = "dump the output into separate files")
     parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
     parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about specified package(s) only")
@@ -317,14 +318,13 @@ def sendMail(receiverList, contentBody):
         return -1
 
     for receiver in receiverList:
-        if receiver == "x@pardus.org.tr":
-            msg = mailTemplate %(mailSender, mailSenderUsr, receiver, contentBody, mailSenderUsr)
-            print "Sending e-mail to %s..." %(receiver),
-            try:
-                session.sendmail(mailSenderUsr, receiver, msg)
-                print "[OK]"
-            except:
-                print "[FAILED]"
+        msg = mailTemplate %(mailSender, mailSenderUsr, receiver, contentBody, mailSenderUsr)
+        print "Sending e-mail to %s..." %(receiver),
+        try:
+            session.sendmail(mailSenderUsr, "gozbulak@pardus.org.tr", msg)
+            print "[OK]"
+        except:
+            print "[FAILED]"
 
     session.quit()
 
