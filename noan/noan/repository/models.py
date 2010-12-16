@@ -87,7 +87,7 @@ class ReviewInfo(models.Model):
         Database model to keep the traversed time for a path.
         Current time information will be used to detect removed directories from review area so the source and related information will be removed from the db
     """
-    check_time = models.DateTimeField(verbose_name=_('traverse time of review path'), blank=True)
+    check_time = models.DateTimeField(verbose_name=_('traverse time of review path'), blank=True, null=True)
     status = models.BooleanField(verbose_name=_('status of the path checked: a review or not'), default=False)
     
     class Meta:
