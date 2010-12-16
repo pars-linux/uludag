@@ -23,6 +23,7 @@ repoList = (
 
 ''' Details about packages  '''
 ''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
+RELEASES, NRPACKAGES, NRPATCHES, DISTROS, MAILS = range(5)
 repos = {}
 
 ''' Option parser object '''
@@ -56,18 +57,14 @@ Content-Type: text/plain; charset="utf-8"
 Dear Pardus contributor,
 
 Here is a summary about your packages reside on our Pardus repositories. Please, take action
-based on comments next to package name. Comments and their explanations are as follows:
-    Incomplete: This is shown if the package doesn't exist in one of the repositories at least.
-    Conflict:   This is shown if the package is maintained by more than one packager in diferent repositories.
-    Same:       This is shown if no difference among package attributes such as version number or number of patches applied
-                in different repositories.
-    Different:  This is opposite of comment 'Same'.
+based on the report below:
 -----------------------------------------------------------
 
 %s
 
 -----------------------------------------------------------
-You're getting this e-mail because you have packages in our repositories. If you think you shouldn't receive such e-mail, please contact with %s
+You're getting this e-mail because you have packages in our repositories.
+If you think you shouldn't receive such e-mail, please contact with %s
 """
 
 def processCmdLine():
@@ -80,11 +77,12 @@ def processCmdLine():
     epiStr = "repoURL:\t  compressed pisi-index file path in URL format as xz or bz2"
 
     parser = OptionParser(prog = "package-diff-notify", version = "%prog 1.0", usage = usageStr, description = desStr, epilog = epiStr)
+
     parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
     parser.add_option("-m", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
     parser.add_option("-r", "--report", dest = "report", action = "store_true", default = False, help = "dump the output into separate files")
     parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
-    parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about specified package(s) only")
+    parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about the specified packager only")
 
     ''' Parse the command line '''
     (options, args) = parser.parse_args()
@@ -92,22 +90,24 @@ def processCmdLine():
     ''' Process the command line  '''
     if options.uselocal and args:
         parser.print_help()
-        return -1
+        return False
     else:
         if options.uselocal:
             repoList = []
-            ''' In cwd, only .bz2 and .xz files are considered for now  '''
+            # In cwd, only .bz2 and .xz files are considered for now
             for root, dirs, files in os.walk(os.getcwd()):
                 for name in files:
                     if name.endswith(".bz2") or name.endswith(".xz"):
                         repoList.append(name)
             if not repoList:
                 parser.print_help()
-                return -1
+                return False
         elif args:
             repoList = args
 
-''' This function detects if the package is replaces with other package-obsolete package- and moves the packagers of obsolete package into new package '''
+    return True
+
+''' This function detects if the package is replaced with other package-obsolete package- and moves the packagers of obsolete package into new package '''
 def handleReplaces(spec):
     ''' We're just interested in the sub-package that has same name with the source name, ignoring other sub-packages if any '''
     for package in spec.packages:
@@ -115,25 +115,25 @@ def handleReplaces(spec):
             for replace in package.replaces:
                 if not obsoleteList.has_key(replace.package):
                     obsoleteList[replace.package] = spec.source.name
-                    ''' Move obsolete package as new package in conflictList '''
+                    # Move obsolete package as new package in conflictList
                     if conflictList.has_key(replace.package):
                         tmpPackagerList = conflictList[replace.package]
                         del conflictList[replace.package]
                         for tmpPackager in tmpPackagerList:
-                            if not tmpPackager in conflictList[spec.source.name]:
+                            if tmpPackager not in conflictList[spec.source.name]:
                                 conflictList[spec.source.name].append(tmpPackager)
 
-''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
 def fetchRepos():
+    ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
     pisiIndex = pisi.index.Index()
     for order, repo in enumerate(repoList):
         if options.uselocal:
-            ''' Use the local index files '''
+            # Use the local index files
             if repo.endswith(".bz2"):
-                decompressedIndex = bz2.decompress(file(repo).read())
+                decompressedIndex = bz2.decompress(open(repo, "r").read())
             else:
-                ''' Must be .xz  '''
-                decompressedIndex = lzma.decompress(file(repo).read())
+                # Must be .xz
+                decompressedIndex = lzma.decompress(open(repo, "r").read())
         else:
             ''' Use the remote index files '''
             if repo.endswith(".bz2"):
@@ -143,10 +143,10 @@ def fetchRepos():
         doc = piksemel.parseString(decompressedIndex)
         pisiIndex.decode(doc, [])
 
-        ''' Populate distroList in order of iteration done for repositories  '''
+        # Populate distroList in order of iteration done for repositories
         distroList.append("%s %s" %(pisiIndex.distribution.sourceName, pisiIndex.distribution.version))
 
-        ''' Update "repos" structure with current spec info '''
+        # Update "repos" structure with current spec info
         for spec in pisiIndex.specs:
             if not repos.has_key(spec.source.packager.name):
                 repos[spec.source.packager.name] = {}
@@ -195,39 +195,29 @@ def createSummaryEntry(packager, package, distro):
 
     return summaryEntry
 
-''' This function compares list items addressed with index argument and returns false if difference is detected  '''
-def isListContentSame(summaryList, index):
-    for distro in summaryList.keys():
-        for dstr in summaryList.keys():
-            if not summaryList[distro][index] == summaryList[dstr][index]:
-                return "Different"
-
-    return "Same"
-
 ''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
 def createStanza(summaryList):
-    sectionList = ("Package Names", "Email", "Packager(s)", "Release(s)", "Version(s)", "Number of Sub-Package", "Number of Patch")
+    sectionList = ("Package Names", "Email", "Packager", "Release", "Version", "Number of Sub-Package", "Number of Patches")
     content = ""
 
-    ''' Indexing to traverse summaryList as in sectionList manner  '''
-    for i in range(7):
-        tmpContent = ""; comment = "";
-        ''' Ignoring the first item in sectionList, because will handle it in next iteration  '''
+    # Indexing to traverse summaryList as in sectionList manner
+    for i in range(len(sectionList)):
+        tmpContent = ""
+        # Ignoring the first item in sectionList, because will handle it in next iteration
         if i == 1: continue
         for distro in distroList:
             if summaryList.has_key(distro):
-                if i == 2:
-                    tmpContent = "%s    %-30s: %-30s %s\n" %(tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
-                else:
-                    tmpContent = "%s    %-30s: %s\n" %(tmpContent, distro, summaryList[distro][i])
-        comment = "%s %s " %(comment, isListContentSame(summaryList, i))
-        content = "%s %s: [%s]\n%s" %(content, sectionList[i], comment, tmpContent)
+                #if i == 2:
+                #    tmpContent = "%s    %-30s: %-30s %s\n" % (tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
+                #else:
+                tmpContent += "    %-30s: %s\n" % (distro, summaryList[distro][i-1])
+        content += " %s:\n%s" % (sectionList[i], tmpContent)
 
     return content
 
 def isSummaryListEmpty(summaryList):
     for item in summaryList.values():
-        if len(item) > 0:
+        if item:
             return False
 
     return True
@@ -292,9 +282,9 @@ def prepareContentBody(packager):
 def prepareReceiverMailList(packager):
     mailList = []
 
-    for package in repos[packager].keys():
-        for mail in repos[packager][package][4]:
-            if not mail in mailList:
+    for package, info in repos[packager].items():
+        for mail in info[MAILS]:
+            if mail not in mailList:
                 mailList.append(mail)
 
     return mailList
@@ -303,35 +293,36 @@ def prepareReceiverMailList(packager):
 def sendMail(receiverList, contentBody):
     if not mailSenderUsr or not mailSenderPwd or not mailServer:
         print "No enough information for connecting and authenticating to SMTP server."
-        return -1
+        return False
 
     try:
         session = smtplib.SMTP(mailServer)
     except:
         print "Opening socket to SMTP server failed"
-        return -1
+        return False
 
     try:
         session.login(mailSenderUsr, mailSenderPwd)
     except:
         print "Authentication to SMTP server failed. Please, check your credentials."
-        return -1
+        return False
 
     for receiver in receiverList:
-        msg = mailTemplate %(mailSender, mailSenderUsr, receiver, contentBody, mailSenderUsr)
-        print "Sending e-mail to %s..." %(receiver),
+        msg = mailTemplate % (mailSender, mailSenderUsr, receiver, contentBody, mailSenderUsr)
+        print "Sending e-mail to %s ..." % receiver,
         try:
             session.sendmail(mailSenderUsr, "gozbulak@pardus.org.tr", msg)
-            print "[OK]"
+            print "OK"
         except:
-            print "[FAILED]"
+            print "FAILED"
 
     session.quit()
+    return True
 
-''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
 def traverseRepos():
+    ''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
     if options.packager:
-        packagerList = options.packager.split(",")
+        packagerList = options.packager
     else:
         packagerList = repos.keys()
 
@@ -340,17 +331,21 @@ def traverseRepos():
 
         if options.mail:
             receiverMailList = prepareReceiverMailList(packager)
-            if sendMail(receiverMailList, contentBody):
-                return -1
+            if not sendMail(receiverMailList, contentBody):
+                return False
 
         if options.report:
-            fp = open("_".join(packager.split(" ")), "w")
-            fp.write("%s" %(contentBody))
+            fp = open("_".join(packager.split()), "w")
+            fp.write("%s" % contentBody)
+
+    return True
 
 def main():
-    if processCmdLine(): return -1
+    if not processCmdLine():
+        return 1
     fetchRepos()
-    if traverseRepos(): return -1
+    if not traverseRepos():
+        return 1
 
 if __name__ == "__main__":
     sys.exit(main())
