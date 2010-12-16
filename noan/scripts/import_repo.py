@@ -326,18 +326,19 @@ def updateDB(path_source, path_stable, path_test, options):
             binary_info = BinaryPackageDetail.objects.create(architecture=pisi_package.architecture, installed_size=int(pisi_package.installedSize), package_size=int(pisi_package.packageSize), package_hash=pisi_package.packageHash)
 
             update = updates[0]
+            release = pisi_package.history[0].release
             try:
-                binary = Binary.objects.get(no=pisi_package.build, package=package)
+                binary = Binary.objects.get(no=release, package=package)
                 if binary.info == binary_info: binary_info.delete()
                 else: binary.info = binary_info
                 if _type == 'stable' and binary.resolution == 'pending':
                     binary.resolution = 'released'
                     binary.save()
-                    print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
+                    print '  Marking %s-%s as %s' % (package.name, release, binary.resolution)
             except Binary.DoesNotExist:
-                binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution, info=binary_info)
+                binary = Binary(no=release, package=package, update=update, resolution=resolution, info=binary_info)
                 binary.save()
-                print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
+                print '  Marking %s-%s as %s' % (package.name, release, binary.resolution)
             print '     Architecture: %s' % (binary.info.architecture)
             print '     Installed Size: %s' % (binary.info.installed_size)
             print '     Package Size: %s' % (binary.info.package_size)

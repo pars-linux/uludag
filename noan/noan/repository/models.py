@@ -408,7 +408,7 @@ class Binary(models.Model):
         info: BinaryPackageDetail
     """
 
-    no = models.IntegerField(verbose_name=_('build no'))
+    no = models.IntegerField(verbose_name=_('release no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
     info = models.ForeignKey(BinaryPackageDetail, verbose_name=_('binary package details'))
