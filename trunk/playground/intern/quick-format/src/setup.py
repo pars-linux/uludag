@@ -60,8 +60,8 @@ class Build(build):
         for filename in glob.glob1("ui", "*.ui"):
             os.system("pykde4uic -o build/%s/ui_%s.py ui/%s" % (about.modName, filename.split(".")[0], filename))
         #print "Generating RCs..."
-        #for filename in glob.glob1("data", "*.qrc"):
-        #    os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
+        for filename in glob.glob1("data", "*.qrc"):
+            os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
 class Install(install):
     def run(self):
@@ -94,11 +94,11 @@ class Install(install):
 
         # Install rc file
         print "Installing resource file"
-        #os.system("pyrcc4 resources/data.qrc > %s/data_rc.py" % project_dir)
+        os.system("pyrcc4 data/images.qrc > %s/data_rc.py" % project_dir)
 
         # Install pics
         print "Installing pics..."
-        #os.system("cp -R resources/pics %s" % project_dir)
+        os.system("cp -R data/images %s" % project_dir)
         #os.system("cp -R resources/icons %s" % project_dir)
 
         # Install locales
