@@ -1,5 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+
+
+# PANDA - Pardus Alternative Driver Administration
+#
 # This scripts automatically detects the brand of a graphic card
 # After detecting, it simply returns a list which contains modules
 # that should be added/installed. These modules are mostly based on
@@ -101,14 +105,15 @@ def get_all_driver_packages():
 
     return driver_packages
 
-def get_needed_driver_packages(kernel_param=None):
+def get_needed_driver_packages(kernel_flavors=None):
     '''Filter modules that should be addded'''
     driver_name = get_primary_driver()
     driver_packages = get_all_driver_packages()
-    kernel_list = get_kernel_module_package(kernel_param)
 
-    # List only kernel_flavors, we assume that a kernel flavor begins with "module-" and ends with "-userspace"
-    kernel_flavors = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
+    needed_module_packages = get_kernel_module_packages(kernel_flavors)
+
+    # List only kernel_flavors, we assume that a kernel flavor begins with "module-" and does not end with "-userspace"
+    module_packages = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
                             driver_packages[driver_name])
 
     # Kernel_list contains currently used kernel modules
@@ -116,42 +121,37 @@ def get_needed_driver_packages(kernel_param=None):
     # driver_package[driver_name] contains all modules 
     # All modules should be stay nontouched, but remove kernels in kernel_flavors that are not in kernel_list
     # (hence we are not using them)
-    need_to_install = list(set(driver_packages[driver_name]) - (set(kernel_flavors)- set(kernel_list)))
+    need_to_install = list(set(driver_packages[driver_name]) - (set(module_packages)- set(needed_module_packages)))
 
     return need_to_install
 
-def get_kernel_module_package(kernel_param=None):
+def get_kernel_module_packages(kernel_list=None):
     '''Get the appropirate module for the specified kernel'''
     driver_name = get_primary_driver()
-    kernel_flavor = get_kernel_flavors(kernel_param=None)
 
-    kernel_list=[]
-    if isinstance(kernel_flavor, dict):
-        kernel_iter = kernel_flavor.keys()
-    else:
-        kernel_iter = kernel_flavor
+    if not kernel_list:
+        kernel_flavor = get_kernel_flavors()
+        kernel_list = kernel_flavor.keys()
 
-    for kernel_name in kernel_iter:
+    module_packages = []
+    for kernel_name in kernel_list:
         tmp, sep, suffix = kernel_name.partition("-")
         if suffix:
-            kernel_list.append("module-%s-%s" % (suffix, driver_name))
+            module_packages.append("module-%s-%s" % (suffix, driver_name))
         else:
-            kernel_list.append("module-%s" % driver_name)
+            module_packages.append("module-%s" % driver_name)
 
-    return kernel_list
+    return module_packages
 
-def get_kernel_flavors(kernel_param=None):
+def get_kernel_flavors():
     ''' Get kernel version '''
     kernel_dict = {}
 
-    if kernel_param is None:
-        for kernel_file in glob.glob("/etc/kernel/*"):
-            kernel_name = os.path.basename(kernel_file)
-            kernel_dict[kernel_name] = open(kernel_file).read()
-        return kernel_dict
-    else:
-        # We might want to give custom parameters
-        return kernel_param
+    for kernel_file in glob.glob("/etc/kernel/*"):
+        kernel_name = os.path.basename(kernel_file)
+        kernel_dict[kernel_name] = open(kernel_file).read()
+
+    return kernel_dict
 
 def get_primary_driver():
     '''Get driver name for the working primary device'''
@@ -168,7 +168,7 @@ def get_primary_driver():
     return driver_name
 
 if __name__ == '__main__':
-
-    print "You have to import this module"
+    kernel_test_list = ["kernel-pae"]
+    print get_needed_driver_packages(kernel_test_list)
 
 
