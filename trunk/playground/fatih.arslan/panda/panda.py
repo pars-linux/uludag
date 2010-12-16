@@ -1,13 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
-import os
-import sys
-import glob
-import gzip
-import pisi
-import shutil
-
 # This scripts automatically detects the brand of a graphic card
 # After detecting, it simply returns a list which contains modules
 # that should be added/installed. These modules are mostly based on
@@ -19,6 +11,13 @@ import shutil
 # or fglrx
 
 
+import os
+import sys
+import glob
+import gzip
+import pisi
+import shutil
+
 # System files and directories
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
@@ -29,38 +28,21 @@ grub_back = "/boot/grub/grub.conf.back"
 kernel_file = "/etc/kernel/kernel"
 kernel_file_pae = "/etc/kernel/kernel-pae"
 
-# This dict contains all module sthat should be removed first
-# After that we add only modules that we need
-driver_packages = {"fglrx": ["module-fglrx",
-                             "module-pae-fglrx",
-                             "module-fglrx-userspace",
-                             "xorg-video-fglrx",
-                             "ati-control-center"] ,
-                   "nvidia-current": ["module-nvidia-current",
-                                      "module-pae-nvidia-current",
-                                      "module-nvidia-current-userspace",
-                                      "xorg-video-nvidia-current",
-                                      "nvidia-settings"] ,
-                   "nvidia96": ["module-nvidia96",
-                                "module-pae-nvidia96",
-                                "module-nvidia96-userspace",
-                                "xorg-video-nvidia96",
-                                "nvidia-settings"],
-                   "nvidia173": ["module-nvidia173",
-                                 "module-pae-nvidia173",
-                                 "module-nvidia173-userspace",
-                                 "xorg-video-nvidia173",
-                                 "nvidia-settings"]}
+def get_blacklisted_packages():
+    driver_name = get_primary_driver()
 
-def edit_grub(driver_name):
-    '''Edit grub file to enable the use of propretiary graphic card drivers'''
-    if driver_name == "nvidia-current":
-        os_driver = "nouveau"
-    elif driver_name == "fglrx":
-        os_driver = "radeon"
+    for driver in ["nvidia-current", "nvidia96", "nvidia173"]:
+        if driver_name == driver:
+            return "blacklist=nouveau"
+
+    if driver_name == "fglrx":
+        return "blacklist=radeon"
     else:
-        os_driver = False
+        return None
 
+def update_grub_entries():
+    '''Edit grub file to enable the use of propretiary graphic card drivers'''
+    os_driver = get_blacklisted_packages()
     kernel_list = get_kernel_flavors()
     kernel_version = kernel_list["kernel"] # This one should change
 
@@ -94,11 +76,36 @@ def edit_grub(driver_name):
         shutil.copy2(grub_new, grub_file)
         print "New grub file is created: /boot/grub/grub.conf"
 
-def needed_module():
+def get_all_driver_packages():
+    '''This dict contains all module sthat should be removed first'''
+    driver_packages = {"fglrx": ["module-fglrx",
+                                 "module-pae-fglrx",
+                                 "module-fglrx-userspace",
+                                 "xorg-video-fglrx",
+                                 "ati-control-center"] ,
+                       "nvidia-current": ["module-nvidia-current",
+                                          "module-pae-nvidia-current",
+                                          "module-nvidia-current-userspace",
+                                          "xorg-video-nvidia-current",
+                                          "nvidia-settings"] ,
+                       "nvidia96": ["module-nvidia96",
+                                    "module-pae-nvidia96",
+                                    "module-nvidia96-userspace",
+                                    "xorg-video-nvidia96",
+                                    "nvidia-settings"],
+                       "nvidia173": ["module-nvidia173",
+                                     "module-pae-nvidia173",
+                                     "module-nvidia173-userspace",
+                                     "xorg-video-nvidia173",
+                                     "nvidia-settings"]}
+
+    return driver_packages
+
+def get_needed_driver_packages(kernel_param=None):
     '''Filter modules that should be addded'''
-    module_to_install ={}
     driver_name = get_primary_driver()
-    kernel_list = get_kernel_module_package(driver_name)
+    driver_packages = get_all_driver_packages()
+    kernel_list = get_kernel_module_package(kernel_param)
 
     # List only kernel_flavors, we assume that a kernel flavor begins with "module-" and ends with "-userspace"
     kernel_flavors = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
@@ -110,16 +117,21 @@ def needed_module():
     # All modules should be stay nontouched, but remove kernels in kernel_flavors that are not in kernel_list
     # (hence we are not using them)
     need_to_install = list(set(driver_packages[driver_name]) - (set(kernel_flavors)- set(kernel_list)))
-    module_to_install[driver_name]  = need_to_install
 
-    return module_to_install
+    return need_to_install
 
-def get_kernel_module_package(driver_name):
+def get_kernel_module_package(kernel_param=None):
     '''Get the appropirate module for the specified kernel'''
-    kernel_flavor = get_kernel_flavors()
+    driver_name = get_primary_driver()
+    kernel_flavor = get_kernel_flavors(kernel_param=None)
 
     kernel_list=[]
-    for kernel_name, kernel_version in kernel_flavor.items():
+    if isinstance(kernel_flavor, dict):
+        kernel_iter = kernel_flavor.keys()
+    else:
+        kernel_iter = kernel_flavor
+
+    for kernel_name in kernel_iter:
         tmp, sep, suffix = kernel_name.partition("-")
         if suffix:
             kernel_list.append("module-%s-%s" % (suffix, driver_name))
@@ -128,20 +140,18 @@ def get_kernel_module_package(driver_name):
 
     return kernel_list
 
-def get_kernel_flavors(param=False):
+def get_kernel_flavors(kernel_param=None):
     ''' Get kernel version '''
     kernel_dict = {}
 
-    if not param:
+    if kernel_param is None:
         for kernel_file in glob.glob("/etc/kernel/*"):
             kernel_name = os.path.basename(kernel_file)
             kernel_dict[kernel_name] = open(kernel_file).read()
+        return kernel_dict
     else:
         # We might want to give custom parameters
-        # The below on is just an example
-        kernel_dict[param] = "2.6.36.1-147"
-
-    return kernel_dict
+        return kernel_param
 
 def get_primary_driver():
     '''Get driver name for the working primary device'''
@@ -158,13 +168,7 @@ def get_primary_driver():
     return driver_name
 
 if __name__ == '__main__':
-    driver_name = get_primary_driver()
-    needed = needed_module()
 
-    print
-    print "Packages that should be added to list        : %s" % needed
-    print
-    print "Packages that should be removed from list    : %s" % driver_packages
-    print
-    edit_grub(driver_name)
+    print "You have to import this module"
+
 
