@@ -69,7 +69,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
             Arguments:
                 index: Last changed index of combo box
         """
-        if len(self.profiles)>=0 and len(self.profiles)>=index and index>=0:
+        if len(self.profiles)>0 and len(self.profiles)>=index and index>=0:
             self.set_domain(self.profiles[index].get_domain())
             self.set_host(self.profiles[index].get_address())
             self.set_user(self.profiles[index].get_username())
