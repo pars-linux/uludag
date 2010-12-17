@@ -183,14 +183,12 @@ msgid "Critical Updates"
 msgstr "Atualizações Críticas"
 
 #: src/mainwindow.py:136 src/mainwindow.py:139
-#, fuzzy
 msgid "All Packages"
-msgstr "Mostrar Pacotes Instalados"
+msgstr "Todos os Pacotes"
 
 #: src/mainwindow.py:142 src/mainwindow.py:145
-#, fuzzy
 msgid "Installable Packages"
-msgstr "Mostrar Pacotes Instaláveis"
+msgstr "Pacotes Instaláveis"
 
 #: src/mainwindow.py:154 src/mainwindow.py:157
 msgid "Updates"
@@ -198,7 +196,7 @@ msgstr "Atualizações"
 
 #: src/mainwindow.py:201
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Calculando dependências..."
 
 #: src/mainwindow.py:205
 msgid "Currently your basket is empty."
@@ -226,11 +224,11 @@ msgstr "fazendo download"
 
 #: src/packagedelegate.py:60
 msgid "critical"
-msgstr ""
+msgstr "critico"
 
 #: src/packagedelegate.py:61
 msgid "security"
-msgstr ""
+msgstr "segurança"
 
 #: src/packagedelegate.py:77
 msgid "Description:"
@@ -258,7 +256,7 @@ msgstr "Versão Instalada:"
 
 #: src/packagedelegate.py:282
 msgid "Details"
-msgstr ""
+msgstr "Detalhes"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
@@ -266,13 +264,14 @@ msgid "Select all packages in this group"
 msgstr "Selecione todos os pacotes nesse grupo"
 
 #: src/pm-install.py:57
+#, fuzzy
 msgid "%prog packages_to_install"
-msgstr ""
+msgstr "%prog packages_to_install"
 
 #: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
-msgstr "<p align='center'>%1 / %2, %3</p>"
+msgstr "<p align='right'>%1 %</p>"
 
 #: src/progressdialog.py:76
 #, python-format
@@ -288,18 +287,18 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: src/progressdialog.py:90
+#, fuzzy
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 #: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
-msgstr "%1 / %2 pacote %3"
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:114
-#, fuzzy
 msgid "Preparing PiSi..."
-msgstr "<h3>Preparando o PiSi...</h3>"
+msgstr "Preparando o PiSi..."
 
 #: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
@@ -318,9 +317,8 @@ msgid "Not a valid repository name"
 msgstr "Não é um nome de repositório válido"
 
 #: src/settingsdialog.py:228
-#, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>Endereço de repositório deveria terminar com o sufixo xml ou xml.bz2.<p>Por favor tente novamente.</qt>"
+msgstr "<qt>Endereço de repositório deveria terminar com o sufixo xml, xml.bz2. ou xz<p>Por favor tente novamente.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -360,7 +358,7 @@ msgstr "atualizado"
 
 #: src/statemanager.py:96
 msgid "modified"
-msgstr ""
+msgstr "modificado"
 
 #: src/statemanager.py:100 ui/ui_basketdialog.py:188
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
@@ -377,9 +375,8 @@ msgid "Upgrade Package(s)"
 msgstr "Atualizando Pacote(s)"
 
 #: src/statemanager.py:103
-#, fuzzy
 msgid "Select Operation"
-msgstr "Operações"
+msgstr "Selecione Operação"
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
@@ -394,9 +391,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 pacote(s) foi(ram) atualizado(s) com sucesso."
 
 #: src/statemanager.py:116
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 pacote(s) foi(ram) removido(s) com sucesso."
+msgstr "%1 pacote(s) modificado(s) com sucesso."
 
 #: src/statemanager.py:119
 msgid "You have selected the following package(s) to install:"
@@ -411,9 +407,8 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Você selecionou o(s) seguinte(s) pacote(s) para atualização:"
 
 #: src/statemanager.py:122
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "Você selecionou o(s) seguinte(s) pacote(s) para remover:"
+msgstr "Você selecionou o(s) seguinte(s) pacote(s) para modificar:"
 
 #: src/statemanager.py:125 ui/ui_basketdialog.py:184
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
@@ -428,7 +423,6 @@ msgid "Extra dependencies of the selected package(s) that are also going to be u
 msgstr "Dependências extras para o(s) pacote(s) selecionado(s) que também serão atualizadas:"
 
 #: src/statemanager.py:128
-#, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Dependências extras para o(s) pacote(s) selecionado(s) que também serão atualizadas:"
 
@@ -489,9 +483,8 @@ msgid "Ignore"
 msgstr "Ignorar"
 
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
-#, fuzzy
 msgid "Package Files"
-msgstr "Lista de pacote"
+msgstr "Arquivos do Pacote"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -538,13 +531,12 @@ msgstr "Form"
 #: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:183
 #: ui/ui_mainwidget_x11.py:77
 msgid "Category Panel"
-msgstr ""
+msgstr "Painel de Categorias"
 
 #: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:180
 #: ui/ui_mainwidget_x11.py:78
-#, fuzzy
 msgid "Search Bar"
-msgstr "Buscar"
+msgstr "Barra de Busca"
 
 #: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:181
 #: ui/ui_mainwidget_x11.py:79
