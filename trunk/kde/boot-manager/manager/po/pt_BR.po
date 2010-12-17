@@ -1,41 +1,40 @@
 # Translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Diogo Lima <diogo.urb@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 16:19+0300\n"
+"POT-Creation-Date: 2010-09-15 16:31+0300\n"
 "PO-Revision-Date: 2010-05-15 19:36-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 
 #: data/boot-manager.desktop.in.h:1
 msgid "An application for managing boot loader."
-msgstr ""
+msgstr "Um aplicativo para gerenciar o carregador de boot."
 
 #: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Gerenciador de Inicialização"
 
 #: src/bootmanager/about.py:26
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Mantenedor Atual"
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/bootmanager/about.py:34
-msgid "Gökmen Göksel"
-msgstr ""
+msgid "Current Maintainer"
+msgstr "Mantenedor Atual"
 
 #: src/bootmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -43,17 +42,17 @@ msgstr "Bahadır Kandemir"
 
 #: src/bootmanager/about.py:35
 msgid "First Developer"
-msgstr ""
-
-#: src/bootmanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgstr "Primeiro Desenvolvedor"
 
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Seus nomes"
+
+#: src/bootmanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Seus emails"
 
 #: src/bootmanager/main.py:99
 msgid ""
