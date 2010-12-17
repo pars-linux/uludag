@@ -251,10 +251,14 @@ def prepareContentBody(packager):
         if obsoleteDict.has_key(package):
             if obsoleteDict[package] in packageHistory:
                 continue
+        omitPackage = False
         for item in packageHistory:
             if obsoleteDict.has_key(item):
                 if obsoleteDict[item] == package:
-                    continue
+                    omitPackage = True
+                    break
+
+        if omitPackage: continue
 
         summaryDict = {}
         for distro in distroList:
