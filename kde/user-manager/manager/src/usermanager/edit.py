@@ -34,15 +34,15 @@ from usermanager.utility import nickGuess
 import polkit
 
 categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations"), "system-users"),
-              "org.freedesktop.network-manager-settings|org.freedesktop.ModemManager": (i18n("Network settings"), "networkmanager"),
               "tr.org.pardus.comar.system.manager|org.kde.fontinst": (i18n("Package operations"), "applications-other"),
               "tr.org.pardus.comar.system.service": (i18n("Service operations"), "services"),
               "tr.org.pardus.comar.time|org.kde.kcontrol.kcmclock": (i18n("Date/time operations"), "clock"),
               "tr.org.pardus.comar.boot.modules|org.kde.ksysguard": (i18n("Kernel/Process operations"), "utilities-terminal"),
               "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
+              "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display"),
+              "org.freedesktop.network-manager-settings|org.freedesktop.ModemManager": (i18n("Network settings"), "networkmanager"),
               "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
-              "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display")}
-              #TODO add org.kde.kcontrol.kcmkeyboard service written by farslan to a suitable place
+              "org.kde.kcontrol.kcmkeyboard": (i18n("Keyboard settings"), "input-keyboard")}
 
 class PolicyItem(QtGui.QTreeWidgetItem):
     def __init__(self, parent, text, action_id):
@@ -107,6 +107,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.connect(self.linePasswordAgain, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineUsername, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
         self.connect(self.lineHomeDir, QtCore.SIGNAL("textEdited(const QString&)"), self.checkFields)
+
+        self.filterAuthorizations.setTreeWidget(self.treeAuthorizations)
+        self.filterGroups.setListWidget(self.listGroups)
 
         self.advancedGroup.hide()
         self.available_shells = []
