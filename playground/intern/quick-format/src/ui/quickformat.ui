@@ -134,12 +134,12 @@
            </font>
           </property>
           <property name="text">
-           <string>Partition Name</string>
+           <string>Volume Name</string>
           </property>
          </widget>
         </item>
         <item row="1" column="0">
-         <widget class="QComboBox" name="deviceName">
+         <widget class="QComboBox" name="volumeName">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
             <horstretch>0</horstretch>
