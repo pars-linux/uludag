@@ -49,7 +49,7 @@ class QuickFormat(QtGui.QWidget):
         self.ui = Ui_QuickFormat()
         self.ui.setupUi(self)
 
-        self.initSignals()
+        self.__initSignals__()
 
         self.ui.deviceName.setModel(self.ui.listWidget.model())
         self.ui.deviceName.setView(self.ui.listWidget)
@@ -57,12 +57,13 @@ class QuickFormat(QtGui.QWidget):
         self.generateVolumeList()
         self.generateFileSystemList()
 
-    def setInfo(self):
+    def setInfo(self, num):
+        print num
         self.ui.volumeLabel.setText(self.ui.deviceName.currentText())
         #self.ui.icon.setIcon(self.ui.deviceName)
 
 
-    def initSignals(self):
+    def __initSignals__(self):
         QtCore.QObject.connect(self.ui.deviceName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.setInfo)
         """
         QtCore.QObject.connect(self.ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
@@ -88,6 +89,58 @@ class QuickFormat(QtGui.QWidget):
         for fs in self.sortedFileSystems:
             self.ui.fileSystem.addItem(fs)
 
+    def filterFileSystem(self, fileSystem):
+        if fileSystem!="" \
+                and not str(fileSystem).startswith("iso") \
+                and not str(fileSystem).startswith("swap"):
+            return True
+
+    def getVolumes(self):
+        volumes = []
+
+        # Get volumes
+        for volume in Solid.Device.listFromType(Solid.StorageDrive.StorageVolume):
+            # Apply filter
+            if self.filterFileSystem(self.getVolumeFileSystem(volume)):
+                volumes.append(volume)
+        return volumes
+
+    def getVolumeIcon(self, icon):
+        iconPath = ":/images/images/" + str(icon) + ".png"
+        return QtGui.QPixmap(iconPath)
+
+    def getVolumeName(self, volume):
+        return volume.product()
+
+    def getVolumePath(self, volume):
+        return volume.asDeviceInterface(Solid.Block.Block).device()
+
+    def getVolumeFileSystem(self, volume):
+        return volume.asDeviceInterface(Solid.StorageVolume.StorageVolume).fsType()
+
+    def getDiskName(self, volume):
+        """ returns the disk name that the volume resides on """
+        return volume.parent().product()
+
+    def addVolumeToList(self, volume):
+        diskName = self.getDiskName(volume)
+        volumeName = self.getVolumeName(volume)
+        volumePath = self.getVolumePath(volume)
+        volumeFileSystem = self.getVolumeFileSystem(volume)
+        volumeIcon = self.getVolumeIcon(volume.icon())
+
+        # Create custom widget
+        widget = QuickFormatItem(diskName, volumePath, volumeName, volumeFileSystem, volumeIcon, self.ui.listWidget)
+
+        # Create list widget item
+        item = QtGui.QListWidgetItem(volumePath , self.ui.listWidget)
+
+        # Set the list widget item's interior to our custom widget and append to list
+        # list widget item <-> custom widget
+        self.ui.listWidget.setItemWidget(item, widget)
+
+        item.setSizeHint(QSize(200,70))
+
 
     def generateVolumeList(self):
         selectedIndex = 0
@@ -95,33 +148,20 @@ class QuickFormat(QtGui.QWidget):
 
         volumeList.clear()
 
-        volumes = Solid.Device.listFromType(Solid.StorageDrive.StorageVolume)
+        volumes = self.getVolumes()
 
         for volume in volumes:
-            volumeName = volume.product()
-            volumePath = volume.asDeviceInterface(Solid.Block.Block).device()
-            volumeFsType = volume.asDeviceInterface(Solid.StorageVolume.StorageVolume).fsType()
+            self.addVolumeToList(volume)
 
-            if volumeFsType!="" and not str(volumeFsType).startswith("iso")and not str(volumeFsType).startswith("swap"):
-                comboboxItem = volumeName + " (" + volumePath + ") " + volumeFsType
+            """
+            if volumePath == self.volumePathArg:
+                selectedIndex = currentIndex
 
-                iconPath = ":/images/images/" + str(volume.icon()) + ".png"
-                icon = QtGui.QPixmap(iconPath)
+            # append volumeList
+            volumeList[currentIndex] = volumePath
+            currentIndex += 1
+            """
 
-                widget = QuickFormatItem(volume.parent().product(), volumePath, volumeName, volumeFsType, icon, self.ui.listWidget)
-                item = QtGui.QListWidgetItem(volumePath , self.ui.listWidget)
-                self.ui.listWidget.setItemWidget(item, widget)
-
-                #print icon
-                item.setSizeHint(QSize(200,70))
-
-                if volumePath == self.volumePathArg:
-                    selectedIndex = currentIndex
-
-                # append volumeList
-                volumeList[currentIndex] = volumePath
-
-                currentIndex += 1
 
         # select the appropriate volume from list
         self.ui.deviceName.setCurrentIndex(selectedIndex)
