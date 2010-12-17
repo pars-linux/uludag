@@ -2,12 +2,12 @@
 Exec=kcmshell4 kcm_boot-manager
 Icon=computer
 Type=Service
-X-KDE-ServiceTypes=KCModule
+ServiceTypes=KCModule
 
+X-KDE-FactoryName=bootmanager
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=boot-manager/boot-manager.py
-
 X-KDE-System-Settings-Parent-Category=hardware
 X-KDE-Weight=70
 

@@ -2,12 +2,12 @@
 Exec=kcmshell4 kcm_firewall-manager
 Icon=security-high
 Type=Service
-X-KDE-ServiceTypes=KCModule
+ServiceTypes=KCModule
 
+X-KDE-FactoryName=firewallmanager
 X-KDE-Library=kpythonpluginfactory
 X-KDE-ParentApp=kcontrol
 X-KDE-PluginKeyword=firewall-manager/firewall-manager.py
-
 X-KDE-System-Settings-Parent-Category=network-and-connectivity
 X-KDE-Weight=70
 
