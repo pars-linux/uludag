@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from PyQt4 import QtCore, QtGui
-from PyQt4.QtCore import *
+from PyQt4.QtCore import QSize, SIGNAL, QThread
 
 from PyKDE4.kdecore import i18n
 from PyKDE4.solid import Solid
@@ -62,13 +62,13 @@ class QuickFormat(QtGui.QWidget):
             self.volumePathArg = sys.argv[1]
 
     def __initSignals__(self):
-        self.connect(self.ui.volumeName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.set_info)
+        self.connect(self.ui.volumeName, SIGNAL("currentIndexChanged(QString)"), self.set_info)
         """
-        QtCore.QObject.connect(self.ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
-        QtCore.QObject.connect(self.ui.btn_cancel, QtCore.SIGNAL("clicked()"), self.exit)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_started()"), self.format_started)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_successful()"), self.format_successful)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_failed()"), self.format_failed)
+        QObject.connect(self.ui.btn_format, SIGNAL("clicked()"), formatter.start)
+        QObject.connect(self.ui.btn_cancel, SIGNAL("clicked()"), self.exit)
+        QObject.connect(formatter, SIGNAL("format_started()"), self.format_started)
+        QObject.connect(formatter, SIGNAL("format_successful()"), self.format_successful)
+        QObject.connect(formatter, SIGNAL("format_failed()"), self.format_failed)
         """
 
     def set_info(self, num):
@@ -195,9 +195,9 @@ class QuickFormat(QtGui.QWidget):
         self.ui.btn_cancel.setText("Close")
 
 
-class Formatter(QtCore.QThread):
+class Formatter(QThread):
     def __init__(self):
-        QtCore.QThread.__init__(self)
+        QThread.__init__(self)
 
     def run(self):
         self.volumeToFormat = str(volumeList[self.ui.volumeName.currentIndex()])
