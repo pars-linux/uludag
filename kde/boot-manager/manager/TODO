@@ -1,18 +1,12 @@
 
- - Features  ---------------------------------------------------------------------
-
- ! These are depended to COMAR backend which is hard to modify, so I will fix them
-   after 2011 release:
+ 3.0.1 Plans:
+ ------------
 
  -  #331 (New): Support for ordering entries
  -  #330 (New): Add auto fill feature for new installed operating systems
  -  #329 (New): UUID support (partially done)
  -  #327 (New): Editing support for extended grub.conf
 
- +  #300 (New): Boot manager maintenance for corporate2 will be made
-
- - Bugs  -------------------------------------------------------------------------
-
- +  #328 (New): Boot Manager should raise an error dialog for unacceptable entries
- +  #326 (New): If there is one entry left in the list default item should be 0
+ Ps. These are depended to COMAR backend which is hard to modify, so I will fix them
+     after 2011 release:
 
