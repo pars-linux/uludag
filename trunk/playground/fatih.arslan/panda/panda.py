@@ -118,7 +118,7 @@ class Panda():
         self.driver_packages = {"fglrx": ["module-fglrx",
                                      "module-pae-fglrx",
                                      "module-fglrx-userspace",
-                                     "xorg-video-fglrx"]
+                                     "xorg-video-fglrx"],
                            "nvidia-current": ["module-nvidia-current",
                                               "module-pae-nvidia-current",
                                               "module-nvidia-current-userspace",
