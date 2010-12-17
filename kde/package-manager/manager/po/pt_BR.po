@@ -1,7 +1,7 @@
 # Translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Diogo Lima <diogo.urb@gmail.com>, 2010.
 msgid ""
 msgstr ""
@@ -11,14 +11,14 @@ msgstr ""
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
-"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Adicionar ou Remover Software"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
@@ -28,24 +28,23 @@ msgstr "Gerenciador de Pacotes"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "Interface Gráfica de Usuário do Gerenciador de Pacotes PiSi"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Removendo Pacote(s)"
+msgstr "Adicionar/Remover/Atualizar Pacotes"
 
 #: src/about.py:27
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Desenvolvedor"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Desenvolvedor"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -58,22 +57,20 @@ msgstr "Primeiro Autor"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Seus nomes"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Seus emails"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
-#, fuzzy
 msgid "Clear Basket"
-msgstr "Cesta"
+msgstr "Limpar Cesta"
 
 #: src/basketdialog.py:55
-#, fuzzy
 msgid "Do you want to clear all selections ?"
-msgstr "Você quer continuar ?"
+msgstr "Você deseja limpar todas as seleções ?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -85,9 +82,8 @@ msgid "Do you want to continue ?"
 msgstr "Você quer continuar ?"
 
 #: src/basketdialog.py:177
-#, fuzzy
 msgid "You must restart your system for the updates to take effect"
-msgstr "Você deve <b>reinicializar</b> o seu sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
+msgstr "Você deve <b>reinicializar</b> o seu sistema para que a atualização tenha efeito:"
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -95,44 +91,39 @@ msgstr "Atualizar Requerimentos"
 
 #: src/basketdialog.py:180
 msgid "Packages Require System Restart"
-msgstr ""
+msgstr "Pacote requer reinicialização do sistema"
 
 #: src/basketdialog.py:185
-#, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Você deve reinicializar os seguintes serviços de sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
+msgstr "Você deve reinicializar os seguintes serviços de sistema para que as atualizações dos pacotes tenham efeito:"
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
-msgstr ""
+msgstr "Pacote requer reinicialização de serviço"
 
 #: src/basketdialog.py:198
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr ""
+msgstr "O pacote selecionado é considerado crítico para o sistema, Remove-lo pode deixar seu sistema instável"
 
 #: src/basketdialog.py:201 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Aviso"
 
 #: src/basketdialog.py:202
-#, fuzzy
 msgid "Critical Packages"
-msgstr "Removendo Pacote(s)"
+msgstr "Pacotes Críticos"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Pacotes selecionados [%1] estão em conflito uns com os outros. Esses pacotes não podem ser instalados juntos."
+msgstr "Os pacotes já estão instalados.<br> Se continuar, os pacotes serão reinstalados"
 
 #: src/basketdialog.py:215
-#, fuzzy
 msgid "Already Installed Packages"
-msgstr "Instalar Pacote(s)"
+msgstr "Pacote(s) já instalado(s)"
 
 #: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
-#, fuzzy
 msgid "Installed Packages"
-msgstr "Instalar Pacote(s)"
+msgstr "Pacote(s) Instalado(s)"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -148,16 +139,15 @@ msgstr "Mostrar tela principal"
 
 #: src/mainwidget.py:147
 msgid "All packages are up to date"
-msgstr ""
+msgstr "Todos os pacotes estão atualizados"
 
 #: src/mainwidget.py:233
-#, fuzzy
 msgid "Searching..."
-msgstr "Buscar"
+msgstr "Buscando..."
 
 #: src/mainwidget.py:245
 msgid "No results found."
-msgstr ""
+msgstr "Sem resultados encontrados"
 
 #: src/mainwidget.py:300
 msgid "Network Error"
@@ -176,9 +166,9 @@ msgid "You are not authorized for this operation."
 msgstr "Você não está autorizado para executar essa operação."
 
 #: src/mainwidget.py:307
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Pacote não encontrado. Ele pode ter sido atualizado ou removido do repositório. Por favor tente atualizar as informações do repositório."
+msgstr "Pacote <b>%s</b> não encontrado no(s) repositório(s).<br>Ele pode ter sido atualizado ou removido do(s) repositório(s).<br>Por Favor tente atualizar as informações dos repositórios"
 
 #: src/mainwidget.py:446
 msgid "All Updates"
@@ -491,12 +481,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Existem <b>%1</b> atualizações disponíveis!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorar"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Exibir Atualizações"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorar"
 
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
 #, fuzzy
@@ -562,9 +552,8 @@ msgid "Click to search"
 msgstr "Clique para Buscar"
 
 #: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
-#, fuzzy
 msgid "Search Button"
-msgstr "Buscar"
+msgstr "Botão de Busca"
 
 #: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
 msgid "Search"
@@ -572,37 +561,33 @@ msgstr "Buscar"
 
 #: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
 msgid "Action Button for current states action"
-msgstr ""
+msgstr "Botão de ação para a ação atual"
 
 #: ui/ui_mainwidget_kde4.py:95 ui/ui_mainwidget_x11.py:84
 msgid "Toggler for selection all packages in Package List"
-msgstr ""
+msgstr "Chave para selecionar todos os pacotes na Lista de Pacotes"
 
 #: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:184
 #: ui/ui_mainwidget_x11.py:86
-#, fuzzy
 msgid "Package List"
-msgstr "Lista de pacote"
+msgstr "Lista de Pacotes"
 
 #: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:182
 #: ui/ui_mainwidget_x11.py:87
-#, fuzzy
 msgid "Update Types"
-msgstr "Atualizações"
+msgstr "Tipos de Atualizações"
 
 #: ui/ui_mainwidget_v3.py:179
 msgid "Settings"
 msgstr "Configurações"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
-msgstr "Cesta"
+msgstr "Mostrar Cesta"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
-msgstr "Exibir Atualizações"
+msgstr "Verificar por atualizações"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -822,13 +807,12 @@ msgid "No proxy server"
 msgstr "Nenhum servidor de proxy"
 
 #: ui/ui_settingsdialog.py:409
-#, fuzzy
 msgid "Use manual settings"
-msgstr "&Configurações Padrões"
+msgstr "Usar configurações manuais"
 
 #: ui/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Usar configurações do Ambiente do Desktop"
 
 #: ui/ui_settingsdialog.py:411
 msgid "&Proxy"
@@ -847,24 +831,24 @@ msgid "&Ok"
 msgstr "&Ok"
 
 #: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
-#, fuzzy
 msgid "Package Details"
-msgstr "Lista de pacote"
+msgstr "Detalhes do Pacote"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
-msgstr ""
+msgstr "Digite para filtrar arquivos"
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
-msgstr "Por favor cheque as conexões de rede e tente novamente."
+msgstr ""
+"Servidor do AppInfo não está disponível\n"
+"Por favor verifique sua conexão de internet"
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
-msgstr ""
+msgstr "Fechar"
 
 #~ msgid "Show Installed Packages"
 #~ msgstr "Mostrar Pacotes Instalados"
@@ -899,7 +883,6 @@ msgstr ""
 #~ msgid "File"
 #~ msgstr "Arquivo"
 
-#, fuzzy
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -913,28 +896,22 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#, fuzzy
 #~ msgid "-- / --"
 #~ msgstr "-- / --"
 
-#, fuzzy
 #~ msgid ""
 #~ "Installed Packages\n"
 #~ "\n"
 #~ msgstr "Instalar Pacote(s)"
 
-#, fuzzy
 #~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 #~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#, fuzzy
 #~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 #~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#, fuzzy
 #~ msgid "Modify Package(s)"
 #~ msgstr "Removendo Pacote(s)"
 
-#, fuzzy
 #~ msgid "Upgradable Packages"
 #~ msgstr "Mostrar Pacotes Atualizáveis"
