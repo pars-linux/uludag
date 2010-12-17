@@ -21,20 +21,21 @@ import sys, os
 
 volumeList = {'':''}
 
-fileSystems = { "Ext4":"ext4",
-                "Ext3":"ext3",
-                "Ext2":"ext2",
-                "FAT 16/32":"vfat",
+fileSystems = { "ext4":"ext4",
+                "ext3":"ext3",
+                "ext2":"ext2",
+                "FAT32":"vfat",
                 "NTFS":"ntfs"}
 
 class QuickFormatItem(Ui_Form, QtGui.QWidget):
-    def __init__(self, name, path, label, format, parent = None):
+    def __init__(self, name, path, label, format, icon, parent = None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.name.setText(name)
         self.label.setText(label)
         self.path.setText(path)
-        self.format.setText(format)
+        self.format.setText("(" + format + ")")
+        self.icon.setPixmap(icon)
 
 class QuickFormat(QtGui.QWidget):
     def __init__(self, parent = None):
@@ -104,12 +105,12 @@ class QuickFormat(QtGui.QWidget):
             if volumeFsType!="" and not str(volumeFsType).startswith("iso")and not str(volumeFsType).startswith("swap"):
                 comboboxItem = volumeName + " (" + volumePath + ") " + volumeFsType
 
-                widget = QuickFormatItem(volume.parent().product(), volumePath, volumeName, volumeFsType, self.ui.listWidget)
+                iconPath = ":/images/images/" + str(volume.icon()) + ".png"
+                icon = QtGui.QPixmap(iconPath)
+
+                widget = QuickFormatItem(volume.parent().product(), volumePath, volumeName, volumeFsType, icon, self.ui.listWidget)
                 item = QtGui.QListWidgetItem(volumePath , self.ui.listWidget)
                 self.ui.listWidget.setItemWidget(item, widget)
-
-                #icon = "/images/images/" + str(volume.icon()) + ".png"
-                #self.ui.icon.setPixmap(QtGui.QPixmap(icon))
 
                 #print icon
                 item.setSizeHint(QSize(200,70))

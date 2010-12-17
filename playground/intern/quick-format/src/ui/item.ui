@@ -54,14 +54,17 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <property name="spacing">
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="horizontalSpacing">
+       <number>10</number>
+      </property>
+      <property name="verticalSpacing">
        <number>0</number>
       </property>
       <property name="margin">
        <number>10</number>
       </property>
-      <item>
+      <item row="0" column="1">
        <widget class="QLabel" name="name">
         <property name="font">
          <font>
@@ -70,11 +73,11 @@
          </font>
         </property>
         <property name="text">
-         <string>Fujitsu USB Storage Device asfasfas</string>
+         <string>Brand USB Storage Device</string>
         </property>
        </widget>
       </item>
-      <item>
+      <item row="1" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <property name="spacing">
          <number>0</number>
@@ -109,7 +112,7 @@
         </item>
        </layout>
       </item>
-      <item>
+      <item row="2" column="1">
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
          <widget class="QLabel" name="format">
@@ -148,7 +151,7 @@
            </font>
           </property>
           <property name="text">
-           <string>sda1</string>
+           <string>sdaX</string>
           </property>
          </widget>
         </item>
@@ -167,11 +170,38 @@
         </item>
        </layout>
       </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="icon">
+        <property name="minimumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>48</width>
+          <height>48</height>
+         </size>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap resource="../data/images.qrc">:/images/images/media-flash-sd-mmc.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../data/images.qrc"/>
+ </resources>
  <connections/>
 </ui>
