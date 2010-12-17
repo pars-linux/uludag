@@ -1,8 +1,16 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#
+# Copyright (C) 2010 TUBITAK/UEKAE
+#
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
 
 import sys
 import os
+import string
 import bz2
 import lzma
 import urllib2
@@ -12,8 +20,8 @@ import smtplib
 from email.mime.text import MIMEText
 from optparse import OptionParser
 
-''' URLs of Repositories  '''
-''' It is recommended to define repoList as from newest repo to oldest one '''
+# URLs of Repositories
+# It is recommended to define repoList as from newest repo to oldest one
 repoList = (
                 "http://svn.pardus.org.tr/pardus/2011/devel/pisi-index.xml.bz2",
                 "http://svn.pardus.org.tr/pardus/corporate2/devel/pisi-index.xml.bz2",
@@ -21,27 +29,26 @@ repoList = (
            )
 
 
-''' Details about packages  '''
-''' Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..} '''
-RELEASES, NRPACKAGES, NRPATCHES, DISTROS, MAILS = range(5)
+# Details about packages
+# Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..}
 repos = {}
+RELEASES, NRPACKAGES, NRPATCHES, DISTROS, MAILS = range(5)
 
-''' Option parser object '''
+# Option parser object
 options = None
 
-''' This stores packager list maintaining same package in different distributions  '''
-''' Structure : { package_name -> [packager_name1,..,packager_nameX]}  '''
-conflictList = {}
+# This stores packager list maintaining same package in different distributions  '''
+# Structure : { package_name -> [packager_name1,..,packager_nameX]}  '''
+conflictDict = {}
 
-''' distroList is used to specify which distribution the repos entry such as #package, #patch is for  '''
+# distroList is used to specify which distribution the repos entry such as #package, #patch is for
 distroList = []
 
-''' This is mapping of obsolete package to the new package '''
-''' Structure : {obsolete_package -> new_package}  '''
-obsoleteList = {}
+# This is mapping of obsolete package to the new package
+# Structure : {obsolete_package -> new_package}
+obsoleteDict = {}
 
-''' Modify here if necessary '''
-reportFile = "report"
+# Modify here if necessary
 mailSender = "sender_name_here"
 mailSenderUsr = "sender@pardus.org.tr"
 mailSenderPwd = "pwd_here"
@@ -71,7 +78,7 @@ def processCmdLine():
     global options
     args = []
 
-    ''' Initialization of option parser object '''
+    # Initialization of option parser object
     usageStr = "Usage: package-diff-notify [options] [repoURL [repoURL ...]]"
     desStr = "This is a notifier script to give detailed info to packagers about their packages."
     epiStr = "repoURL:\t  compressed pisi-index file path in URL format as xz or bz2"
@@ -84,10 +91,10 @@ def processCmdLine():
     parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
     parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about the specified packager only")
 
-    ''' Parse the command line '''
+    # Parse the command line
     (options, args) = parser.parse_args()
 
-    ''' Process the command line  '''
+    # Process the command line
     if options.uselocal and args:
         parser.print_help()
         return False
@@ -107,24 +114,26 @@ def processCmdLine():
 
     return True
 
-''' This function detects if the package is replaced with other package-obsolete package- and moves the packagers of obsolete package into new package '''
 def handleReplaces(spec):
-    ''' We're just interested in the sub-package that has same name with the source name, ignoring other sub-packages if any '''
+    ''' This function detects if the package is replaced with other package-obsolete package- and moves the packagers of obsolete package into new package '''
+
+    # We're just interested in the sub-package that has same name with the source name, ignoring other sub-packages if any
     for package in spec.packages:
         if package.name == spec.source.name:
             for replace in package.replaces:
-                if not obsoleteList.has_key(replace.package):
-                    obsoleteList[replace.package] = spec.source.name
-                    # Move obsolete package as new package in conflictList
-                    if conflictList.has_key(replace.package):
-                        tmpPackagerList = conflictList[replace.package]
-                        del conflictList[replace.package]
+                if not obsoleteDict.has_key(replace.package):
+                    obsoleteDict[replace.package] = spec.source.name
+                    # Move obsolete package as new package in conflictDict
+                    if conflictDict.has_key(replace.package):
+                        tmpPackagerList = conflictDict[replace.package]
+                        del conflictDict[replace.package]
                         for tmpPackager in tmpPackagerList:
-                            if tmpPackager not in conflictList[spec.source.name]:
-                                conflictList[spec.source.name].append(tmpPackager)
+                            if tmpPackager not in conflictDict[spec.source.name]:
+                                conflictDict[spec.source.name].append(tmpPackager)
 
 def fetchRepos():
     ''' This function reads source pisi index file as remote or local and constructs "repos" structure based on this file '''
+
     pisiIndex = pisi.index.Index()
     for order, repo in enumerate(repoList):
         if options.uselocal:
@@ -135,7 +144,7 @@ def fetchRepos():
                 # Must be .xz
                 decompressedIndex = lzma.decompress(open(repo, "r").read())
         else:
-            ''' Use the remote index files '''
+            # Use the remote index files
             if repo.endswith(".bz2"):
                 decompressedIndex = bz2.decompress(urllib2.urlopen(repo).read())
             else:
@@ -153,133 +162,138 @@ def fetchRepos():
             if not repos[spec.source.packager.name].has_key(spec.source.name):
                 repos[spec.source.packager.name][spec.source.name] = [[], [], [], [], []]
 
-            repos[spec.source.packager.name][spec.source.name][0].append([spec.history[0].release, spec.history[0].version])
-            repos[spec.source.packager.name][spec.source.name][1].append(len(spec.packages))
-            repos[spec.source.packager.name][spec.source.name][2].append(len(spec.source.patches))
-            repos[spec.source.packager.name][spec.source.name][3].append(distroList[order])
-            if not spec.source.packager.email in repos[spec.source.packager.name][spec.source.name][4]:
-                repos[spec.source.packager.name][spec.source.name][4].append(spec.source.packager.email)
+            repos[spec.source.packager.name][spec.source.name][RELEASES].append([spec.history[0].release, spec.history[0].version])
+            repos[spec.source.packager.name][spec.source.name][NRPACKAGES].append(len(spec.packages))
+            repos[spec.source.packager.name][spec.source.name][NRPATCHES].append(len(spec.source.patches))
+            repos[spec.source.packager.name][spec.source.name][DISTROS].append(distroList[order])
+            if spec.source.packager.email not in repos[spec.source.packager.name][spec.source.name][MAILS]:
+                repos[spec.source.packager.name][spec.source.name][MAILS].append(spec.source.packager.email)
 
-            ''' We may have multiple packagers as owner of the same package residing on different repositories '''
-            ''' In that case, we need to mark the package as in conflict and be aware of it while sending mail to the packager '''
-            if conflictList.has_key(spec.source.name):
-                if not spec.source.packager.name in conflictList[spec.source.name]:
-                    conflictList[spec.source.name].append(spec.source.packager.name)
+            # We may have multiple packagers as owner of the same package residing on different repositories
+            # In that case, we need to mark the package as in conflict and be aware of it while sending mail to the packager
+            if conflictDict.has_key(spec.source.name):
+                if spec.source.packager.name not in conflictDict[spec.source.name]:
+                    conflictDict[spec.source.name].append(spec.source.packager.name)
             else:
-                if obsoleteList.has_key(spec.source.name):
-                    ''' This control flow is redundant actually,if we have package in obsoleteList then new package should have already been exist in conflictList '''
-                    ''' The flow is here not to lose the track of code '''
-                    if conflictList.has_key(obsoleteList[spec.source.name]):
-                        if not spec.source.packager.name in conflictList[obsoleteList[spec.source.name]]:
-                            conflictList[obsoleteList[spec.source.name]].append(spec.source.packager.name)
+                if obsoleteDict.has_key(spec.source.name):
+                    # This control flow is redundant actually,if we have package in obsoleteDict then new package should have already been exist in conflictDict
+                    # The flow is here not to lose the track of code
+                    if conflictDict.has_key(obsoleteDict[spec.source.name]):
+                        if spec.source.packager.name not in conflictDict[obsoleteDict[spec.source.name]]:
+                            conflictDict[obsoleteDict[spec.source.name]].append(spec.source.packager.name)
                 else:
-                    conflictList[spec.source.name] = [spec.source.packager.name]
+                    conflictDict[spec.source.name] = [spec.source.packager.name]
 
-            ''' Replaces check and handling '''
+            # Replaces check and handling
             handleReplaces(spec)
 
-''' This function creates a summary entry whose structure is specified below for given repo, say 2009 or 2011  '''
-''' summaryEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch] '''
 def createSummaryEntry(packager, package, distro):
-    order = repos[packager][package][3].index(distro)
+    ''' This function creates a summary entry whose structure is specified below for given repo, say 2009 or 2011 '''
 
+    order = repos[packager][package][DISTROS].index(distro)
+
+    # summaryEntry = [packager_name, packager_mail, release_no, version_no, #package, #patch]
     summaryEntry = [
                     package,
                     packager,
-                    repos[packager][package][4],
-                    repos[packager][package][0][order][0],
-                    repos[packager][package][0][order][1],
-                    repos[packager][package][1][order],
-                    repos[packager][package][2][order],
+                    repos[packager][package][MAILS],
+                    repos[packager][package][RELEASES][order][0],
+                    repos[packager][package][RELEASES][order][1],
+                    repos[packager][package][NRPACKAGES][order],
+                    repos[packager][package][NRPATCHES][order],
                     ]
 
     return summaryEntry
 
-''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
-def createStanza(summaryList):
-    sectionList = ("Package Names", "Email", "Packager", "Release", "Version", "Number of Sub-Package", "Number of Patches")
+def createStanza(summaryDict):
+    ''' This function create a stanza for each package. It includes details about a package exist in different distributions  '''
+
+    sectionList = ("Package Names", "Packager", "Email", "Release", "Version", "Number of Sub-Package", "Number of Patches")
     content = ""
 
-    # Indexing to traverse summaryList as in sectionList manner
-    for i in range(len(sectionList)):
+    # Indexing to traverse summaryDict as in sectionList manner
+    for order, section in enumerate(sectionList):
         tmpContent = ""
-        # Ignoring the first item in sectionList, because will handle it in next iteration
-        if i == 1: continue
+        # Ignoring the Email item in sectionList, because handled it in previous iteration
+        if section == "Email": continue
         for distro in distroList:
-            if summaryList.has_key(distro):
-                #if i == 2:
-                #    tmpContent = "%s    %-30s: %-30s %s\n" % (tmpContent, distro, summaryList[distro][i - 1], summaryList[distro][i])
-                #else:
-                tmpContent += "    %-30s: %s\n" % (distro, summaryList[distro][i-1])
-        content += " %s:\n%s" % (sectionList[i], tmpContent)
+            if summaryDict.has_key(distro):
+                if section == "Packager":
+                    tmpContent = "%s    %-30s: %s <%s>\n" % (tmpContent, distro, summaryDict[distro][order], ",".join(summaryDict[distro][order + 1]))
+                else:
+                    tmpContent += "    %-30s: %s\n" % (distro, summaryDict[distro][order])
+        content += " %s:\n%s" % (sectionList[order], tmpContent)
 
     return content
 
-def isSummaryListEmpty(summaryList):
-    for item in summaryList.values():
+def isSummaryDictEmpty(summaryDict):
+    for item in summaryDict.values():
         if item:
             return False
 
     return True
 
-''' This function generates status info about all packages of the given packager '''
 def prepareContentBody(packager):
+    ''' This function generates status info about all packages of the given packager '''
+
     content = ""
     packageHistory = []
 
     if options.package:
-        packageList = options.package.split(",")
+        # Trim input coming from cmd line
+        packageList = map(string.strip, options.package.split(","))
     else:
         packageList = repos[packager].keys()
 
     for package in packageList:
-        ''' No need to replicate same info for obsolete package in content '''
-        ''' Must consider as reversible '''
-        if obsoleteList.has_key(package):
-            if obsoleteList[package] in packageHistory:
+        # No need to replicate same info for obsolete package in content
+        # Must consider as reversible
+        if obsoleteDict.has_key(package):
+            if obsoleteDict[package] in packageHistory:
                 continue
         for item in packageHistory:
-            if obsoleteList.has_key(item):
-                if obsoleteList[item] == package:
+            if obsoleteDict.has_key(item):
+                if obsoleteDict[item] == package:
                     continue
 
-        summaryList = {}
+        summaryDict = {}
         for distro in distroList:
             if repos[packager].has_key(package):
                 if distro in repos[packager][package][3]:
-                    summaryList[distro] = createSummaryEntry(packager, package, distro)
+                    summaryDict[distro] = createSummaryEntry(packager, package, distro)
                 else:
-                    if obsoleteList.has_key(package):
-                        pck = obsoleteList[package]
+                    if obsoleteDict.has_key(package):
+                        pck = obsoleteDict[package]
                     else:
                         pck = package
 
-                    for pckgr in conflictList[pck]:
+                    for pckgr in conflictDict[pck]:
                         if repos[pckgr].has_key(pck):
-                            if distro in repos[pckgr][pck][3]:
-                                summaryList[distro] = createSummaryEntry(pckgr, pck, distro)
-                        if obsoleteList.has_key(package) and repos[pckgr].has_key(package):
-                            if distro in repos[pckgr][package][3]:
-                                summaryList[distro] = createSummaryEntry(pckgr, package, distro)
+                            if distro in repos[pckgr][pck][DISTROS]:
+                                summaryDict[distro] = createSummaryEntry(pckgr, pck, distro)
+                        if obsoleteDict.has_key(package) and repos[pckgr].has_key(package):
+                            if distro in repos[pckgr][package][DISTROS]:
+                                summaryDict[distro] = createSummaryEntry(pckgr, package, distro)
 
-                    ''' Look for obsolete packages if no new package in distro '''
-                    for obsolete, new in obsoleteList.items():
-                        ''' There may be more than one replace, no break '''
-                        ''' {openoffice -> libreoffice}, {openoffice3 -> libreoffice} etc. '''
+                    # Look for obsolete packages if no new package in distro
+                    for obsolete, new in obsoleteDict.items():
+                        # There may be more than one replace, no break
+                        # {openoffice -> libreoffice}, {openoffice3 -> libreoffice} etc.
                         if new == package:
-                            if conflictList.has_key(new):
-                                for pckgr in conflictList[new]:
+                            if conflictDict.has_key(new):
+                                for pckgr in conflictDict[new]:
                                     if repos[pckgr].has_key(obsolete):
-                                        if distro in repos[pckgr][obsolete][3]:
-                                            summaryList[distro] = createSummaryEntry(pckgr, obsolete ,distro)
-        if not isSummaryListEmpty(summaryList):
+                                        if distro in repos[pckgr][obsolete][DISTROS]:
+                                            summaryDict[distro] = createSummaryEntry(pckgr, obsolete ,distro)
+        if not isSummaryDictEmpty(summaryDict):
             packageHistory.append(package)
-            content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryList))
+            content = "%s%s\n%s\n%s\n\n" %(content, package, len(package) * "-", createStanza(summaryDict))
 
     return content
 
-''' This function gathers all e-mail addresses a packager specifies in his/her packages '''
 def prepareReceiverMailList(packager):
+    ''' This function gathers all e-mail addresses a packager specifies in his/her packages '''
+
     mailList = []
 
     for package, info in repos[packager].items():
@@ -289,21 +303,22 @@ def prepareReceiverMailList(packager):
 
     return mailList
 
-''' This function sends mail to the recipient whose details are passed  '''
 def sendMail(receiverList, contentBody):
+    ''' This function sends mail to the recipient whose details are passed  '''
+
     if not mailSenderUsr or not mailSenderPwd or not mailServer:
         print "No enough information for connecting and authenticating to SMTP server."
         return False
 
     try:
         session = smtplib.SMTP(mailServer)
-    except:
+    except smtplib.SMTPConnectError:
         print "Opening socket to SMTP server failed"
         return False
 
     try:
         session.login(mailSenderUsr, mailSenderPwd)
-    except:
+    except smtplib.SMTPAuthenticationError:
         print "Authentication to SMTP server failed. Please, check your credentials."
         return False
 
@@ -311,18 +326,21 @@ def sendMail(receiverList, contentBody):
         msg = mailTemplate % (mailSender, mailSenderUsr, receiver, contentBody, mailSenderUsr)
         print "Sending e-mail to %s ..." % receiver,
         try:
-            session.sendmail(mailSenderUsr, "gozbulak@pardus.org.tr", msg)
+            session.sendmail(mailSenderUsr, receiver, msg)
             print "OK"
-        except:
+        except (smtplib.SMTPSenderRefused, smtplib.SMTPDataError):
             print "FAILED"
 
     session.quit()
+
     return True
 
 def traverseRepos():
     ''' This function traverses "repos" structure to send e-mail to the packagers about their package(s) status and generate a report if necessary '''
+
     if options.packager:
-        packagerList = options.packager
+        # Call unicode to match the cmd line string with key data of repos structure
+        packagerList = [unicode(options.packager.strip())]
     else:
         packagerList = repos.keys()
 
@@ -346,6 +364,8 @@ def main():
     fetchRepos()
     if not traverseRepos():
         return 1
+
+    return 0
 
 if __name__ == "__main__":
     sys.exit(main())
