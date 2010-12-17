@@ -33,17 +33,6 @@ from usermanager.utility import nickGuess
 # PolicyKit
 import polkit
 
-categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations"), "system-users"),
-              "tr.org.pardus.comar.system.manager|org.kde.fontinst": (i18n("Package operations"), "applications-other"),
-              "tr.org.pardus.comar.system.service": (i18n("Service operations"), "services"),
-              "tr.org.pardus.comar.time|org.kde.kcontrol.kcmclock": (i18n("Date/time operations"), "clock"),
-              "tr.org.pardus.comar.boot.modules|org.kde.ksysguard": (i18n("Kernel/Process operations"), "utilities-terminal"),
-              "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
-              "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display"),
-              "org.freedesktop.network-manager-settings|org.freedesktop.ModemManager": (i18n("Network settings"), "networkmanager"),
-              "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
-              "org.kde.kcontrol.kcmkeyboard": (i18n("Keyboard settings"), "input-keyboard")}
-
 class PolicyItem(QtGui.QTreeWidgetItem):
     def __init__(self, parent, text, action_id):
         QtGui.QTreeWidgetItem.__init__(self, parent)
@@ -132,6 +121,17 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
     def buildPolicies(self):
         self.actionItems = {}
         self._vendors = []
+
+        categories = {"tr.org.pardus.comar.user.manager": (i18n("User/group operations"), "system-users"),
+                      "tr.org.pardus.comar.system.manager|org.kde.fontinst": (i18n("Package operations"), "applications-other"),
+                      "tr.org.pardus.comar.system.service": (i18n("Service operations"), "services"),
+                      "tr.org.pardus.comar.time|org.kde.kcontrol.kcmclock": (i18n("Date/time operations"), "clock"),
+                      "tr.org.pardus.comar.boot.modules|org.kde.ksysguard": (i18n("Kernel/Process operations"), "utilities-terminal"),
+                      "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
+                      "tr.org.pardus.comar.xorg": (i18n("Screen settings"), "video-display"),
+                      "org.freedesktop.network-manager-settings|org.freedesktop.ModemManager": (i18n("Network settings"), "networkmanager"),
+                      "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
+                      "org.kde.kcontrol.kcmkeyboard": (i18n("Keyboard settings"), "input-keyboard")}
 
         # do not show policies require policy type yes or no, only the ones require auth_* type
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
