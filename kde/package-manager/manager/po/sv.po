@@ -116,9 +116,8 @@ msgid "Critical Packages"
 msgstr "Kritiska paket"
 
 #: src/basketdialog.py:213
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Valda paket [%1] står i konflikt med varandra. Dessa paket kan inte installeras tillsammans."
+msgstr "Valda paket är redan installerade.<br>Om du fortsätter kommer paketen att ominstalleras."
 
 #: src/basketdialog.py:215
 msgid "Already Installed Packages"
@@ -169,9 +168,9 @@ msgid "You are not authorized for this operation."
 msgstr "Du har inte behörighet till den här åtgärden."
 
 #: src/mainwidget.py:307
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Paketet finns ej. Det kan vara uppdaterat i, eller borttaget ur, förrådet. Försök att uppdatera förrådsinformationen."
+msgstr "Paketet <b>%s</b> finns ej i förråden.<br>Det kan vara uppdaterat i, eller borttaget ur, förrådet.<br>Försök att uppdatera förrådsinformationen."
 
 #: src/mainwidget.py:446
 msgid "All Updates"
@@ -316,9 +315,8 @@ msgid "Not a valid repository name"
 msgstr "Ogiltigt förrådsnamn"
 
 #: src/settingsdialog.py:228
-#, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
+msgstr "<qt>Förrådsadresser måste sluta på xml, xml.bz2  eller xz.<p>Försök igen.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -831,11 +829,12 @@ msgid "Type to filter files"
 msgstr "Skriv för att filtrera filer"
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
-msgstr "Kontrollera din nätverksanslutning och försök igen."
+msgstr ""
+"AppInfo-servern är inte tillgänglig\n"
+"Kontrollera din nätverksanslutning."
 
 #: ui/ui_webdialog_v2.py:72
 msgid "Close"
