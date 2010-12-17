@@ -21,9 +21,9 @@ import sys, os
 
 volumeList = {'':''}
 
-fileSystems = { "ext4":"ext4",
-                "ext3":"ext3",
-                "ext2":"ext2",
+fileSystems = { "Ext4":"ext4",
+                "Ext3":"ext3",
+                "Ext2":"ext2",
                 "FAT32":"vfat",
                 "NTFS":"ntfs"}
 
@@ -52,6 +52,7 @@ class QuickFormat(QtGui.QWidget):
         self.generate_file_system_list()
 
     def __setCustomWidgets__(self):
+        self.ui.listWidget = QtGui.QListWidget(self)
         self.ui.volumeName.setModel(self.ui.listWidget.model())
         self.ui.volumeName.setView(self.ui.listWidget)
 
@@ -71,9 +72,28 @@ class QuickFormat(QtGui.QWidget):
         QObject.connect(formatter, SIGNAL("format_failed()"), self.format_failed)
         """
 
+    def find_key(self, dic, val):
+        """return the key of dictionary dic given the value"""
+        return [k for k, v in dic.iteritems() if v == val][0]
+
     def set_info(self, num):
-        self.ui.volumeLabel.setText(self.ui.volumeName.currentText())
-        #self.ui.icon.setIcon(self.ui.volumeName)
+        """ Displays the selected volume info on main screen """
+        currentIndex = self.ui.volumeName.currentIndex()
+        item = self.ui.listWidget.item(currentIndex)
+        volumeItem = self.ui.listWidget.itemWidget(item)
+
+        label = volumeItem.label.text()
+        icon = volumeItem.icon.pixmap()
+        fileSystem = str(volumeItem.format.text()).strip("()")
+
+        # find fileSystem index from list
+        fsIndex = self.ui.fileSystem.findText(self.find_key(fileSystems, fileSystem))
+
+        # select fileSystem type
+        self.ui.fileSystem.setCurrentIndex(fsIndex)
+
+        self.ui.volumeLabel.setText(label)
+        self.ui.icon.setPixmap(icon)
 
     def generate_file_system_list(self):
         # Temporary sapce for file system list
@@ -122,20 +142,29 @@ class QuickFormat(QtGui.QWidget):
 
     def get_disk_name(self, volume):
         """ returns the disk name that the volume resides on """
-        return volume.parent().product()
+        return "%s %s" % (volume.parent().vendor(), volume.parent().product())
+
+    def prepare_selection_text(self, diskName, volumePath, volumeName):
+        if volumeName != "":
+            return "%s (%s)" % (volumeName, volumePath)
+
+        return "%s (%s)" % (diskName, volumePath)
 
     def add_volume_to_list(self, volume):
-        diskName = self.get_disk_name(volume)
-        volumeName = self.get_volume_name(volume)
-        volumePath = self.get_volume_path(volume)
-        volumeFileSystem = self.get_volume_file_system(volume)
-        volumeIcon = self.get_volume_icon(volume.icon())
+        volumeInfo = {}
+        volumeInfo["disk_name"] = self.get_disk_name(volume)
+        volumeInfo["volume_name"] = self.get_volume_name(volume)
+        volumeInfo["volume_path"] = self.get_volume_path(volume)
+        volumeInfo["volume_file_system"] = self.get_volume_file_system(volume)
+        volumeInfo["volume_icon"] = self.get_volume_icon(volume.icon())
 
         # Create custom widget
-        widget = VolumeItem(diskName, volumePath, volumeName, volumeFileSystem, volumeIcon, self.ui.listWidget)
+        widget = VolumeItem(volumeInfo["disk_name"], volumeInfo["volume_path"], volumeInfo["volume_name"], volumeInfo["volume_file_system"], volumeInfo["volume_icon"], self.ui.listWidget)
 
         # Create list widget item
-        item = QtGui.QListWidgetItem(volumePath , self.ui.listWidget)
+        # First parameter is the text shown on the combobox when a selection is made
+        selectionText = self.prepare_selection_text(volumeInfo["disk_name"], volumeInfo["volume_path"], volumeInfo["volume_name"])
+        item = QtGui.QListWidgetItem(selectionText, self.ui.listWidget)
 
         # Set the list widget item's interior to our custom widget and append to list
         # list widget item <-> custom widget
@@ -194,7 +223,7 @@ class QuickFormat(QtGui.QWidget):
         self.ui.btn_format.setDisabled(False)
         self.ui.btn_cancel.setText("Close")
 
-
+"""
 class Formatter(QThread):
     def __init__(self):
         QThread.__init__(self)
@@ -264,23 +293,14 @@ class Formatter(QThread):
         ### TODO:
         ### if output contains these words emmit signal
         ### errorWords = ["error", "Error", "cannot", "Cannot"] ...
+"""
 
-###if __name__ == "__main__":
-app = QtGui.QApplication(sys.argv)
-quick_format = QuickFormat()
-quick_format.show()
+if __name__ == "__main__":
+    app = QtGui.QApplication(sys.argv)
+    quick_format = QuickFormat()
+    quick_format.show()
 
-
-#self.ui.progressBar.setMaximum(1)
-#self.ui.progressBar.setValue(0)
-#self.ui.lbl_progress.setText("")
-
-#quickFormat = QuickFormat()
-#diskTools = DiskTools()
-#formatter = Formatter()
-#MainWindow.show()
-
-app.exec_()
+    app.exec_()
 
 
 
