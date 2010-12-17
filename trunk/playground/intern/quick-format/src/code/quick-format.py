@@ -13,7 +13,7 @@ from time import time
 from quickformat.ui_quickformat import Ui_QuickFormat
 from quickformat.diskTools import DiskTools
 
-from quickformat.ui_item import Ui_Form
+from quickformat.ui_volumeitem import Ui_VolumeItem
 
 import sys, os
 
@@ -27,7 +27,7 @@ fileSystems = { "ext4":"ext4",
                 "FAT32":"vfat",
                 "NTFS":"ntfs"}
 
-class QuickFormatItem(Ui_Form, QtGui.QWidget):
+class VolumeItem(Ui_VolumeItem, QtGui.QWidget):
     def __init__(self, name, path, label, format, icon, parent = None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
@@ -41,30 +41,28 @@ class QuickFormat(QtGui.QWidget):
     def __init__(self, parent = None):
         QtGui.QWidget.__init__(self, parent)
 
+        self.ui = Ui_QuickFormat()
+        self.ui.setupUi(self)
+
+        self.__initSignals__()
+        self.__setCustomWidgets__()
+        self.__processArgs__()
+
+        self.generateVolumeList()
+        self.generateFileSystemList()
+
+    def __setCustomWidgets__(self):
+        self.ui.volumeName.setModel(self.ui.listWidget.model())
+        self.ui.volumeName.setView(self.ui.listWidget)
+
+    def __processArgs__(self):
         self.volumePathArg = ""
 
         if len(sys.argv) == 2:
             self.volumePathArg = sys.argv[1]
 
-        self.ui = Ui_QuickFormat()
-        self.ui.setupUi(self)
-
-        self.__initSignals__()
-
-        self.ui.deviceName.setModel(self.ui.listWidget.model())
-        self.ui.deviceName.setView(self.ui.listWidget)
-
-        self.generateVolumeList()
-        self.generateFileSystemList()
-
-    def setInfo(self, num):
-        print num
-        self.ui.volumeLabel.setText(self.ui.deviceName.currentText())
-        #self.ui.icon.setIcon(self.ui.deviceName)
-
-
     def __initSignals__(self):
-        QtCore.QObject.connect(self.ui.deviceName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.setInfo)
+        self.connect(self.ui.volumeName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.setInfo)
         """
         QtCore.QObject.connect(self.ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
         QtCore.QObject.connect(self.ui.btn_cancel, QtCore.SIGNAL("clicked()"), self.exit)
@@ -72,6 +70,10 @@ class QuickFormat(QtGui.QWidget):
         QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), self.formatSuccessful)
         QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), self.formatFailed)
         """
+
+    def setInfo(self, num):
+        self.ui.volumeLabel.setText(self.ui.volumeName.currentText())
+        #self.ui.icon.setIcon(self.ui.volumeName)
 
     def generateFileSystemList(self):
         # Temporary sapce for file system list
@@ -130,7 +132,7 @@ class QuickFormat(QtGui.QWidget):
         volumeIcon = self.getVolumeIcon(volume.icon())
 
         # Create custom widget
-        widget = QuickFormatItem(diskName, volumePath, volumeName, volumeFileSystem, volumeIcon, self.ui.listWidget)
+        widget = VolumeItem(diskName, volumePath, volumeName, volumeFileSystem, volumeIcon, self.ui.listWidget)
 
         # Create list widget item
         item = QtGui.QListWidgetItem(volumePath , self.ui.listWidget)
@@ -164,7 +166,7 @@ class QuickFormat(QtGui.QWidget):
 
 
         # select the appropriate volume from list
-        self.ui.deviceName.setCurrentIndex(selectedIndex)
+        self.ui.volumeName.setCurrentIndex(selectedIndex)
 
 
     def formatStarted(self):
@@ -198,7 +200,7 @@ class Formatter(QtCore.QThread):
         QtCore.QThread.__init__(self)
 
     def run(self):
-        self.volumeToFormat = str(volumeList[self.ui.deviceName.currentIndex()])
+        self.volumeToFormat = str(volumeList[self.ui.volumeName.currentIndex()])
 
         self.fs = fileSystems[str(self.ui.fileSystem.currentText())]
 
