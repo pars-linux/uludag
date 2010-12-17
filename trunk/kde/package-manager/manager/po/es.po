@@ -69,7 +69,7 @@ msgstr "Su email"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
-msgstr ""
+msgstr "Vaciar Cesta"
 
 #: src/basketdialog.py:55
 msgid "Do you want to clear all selections ?"
@@ -301,9 +301,8 @@ msgstr ""
 # could You put a comment with an example string, maybe in foreign language it
 # sounds better when inverting some positions ?
 #: src/progressdialog.py:97
-#, fuzzy
 msgid "%1 / %2, %3"
-msgstr "%1 / %2, %3"
+msgstr ""
 
 #: src/progressdialog.py:114
 msgid "Preparing PiSi..."
