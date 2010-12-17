@@ -48,8 +48,8 @@ class QuickFormat(QtGui.QWidget):
         self.__setCustomWidgets__()
         self.__processArgs__()
 
-        self.generateVolumeList()
-        self.generateFileSystemList()
+        self.generate_volume_list()
+        self.generate_file_system_list()
 
     def __setCustomWidgets__(self):
         self.ui.volumeName.setModel(self.ui.listWidget.model())
@@ -62,20 +62,20 @@ class QuickFormat(QtGui.QWidget):
             self.volumePathArg = sys.argv[1]
 
     def __initSignals__(self):
-        self.connect(self.ui.volumeName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.setInfo)
+        self.connect(self.ui.volumeName, QtCore.SIGNAL("currentIndexChanged(QString)"), self.set_info)
         """
         QtCore.QObject.connect(self.ui.btn_format, QtCore.SIGNAL("clicked()"), formatter.start)
         QtCore.QObject.connect(self.ui.btn_cancel, QtCore.SIGNAL("clicked()"), self.exit)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatStarted()"), self.formatStarted)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatSuccessful()"), self.formatSuccessful)
-        QtCore.QObject.connect(formatter, QtCore.SIGNAL("formatFailed()"), self.formatFailed)
+        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_started()"), self.format_started)
+        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_successful()"), self.format_successful)
+        QtCore.QObject.connect(formatter, QtCore.SIGNAL("format_failed()"), self.format_failed)
         """
 
-    def setInfo(self, num):
+    def set_info(self, num):
         self.ui.volumeLabel.setText(self.ui.volumeName.currentText())
         #self.ui.icon.setIcon(self.ui.volumeName)
 
-    def generateFileSystemList(self):
+    def generate_file_system_list(self):
         # Temporary sapce for file system list
         self.tempFileSystems = []
 
@@ -91,45 +91,45 @@ class QuickFormat(QtGui.QWidget):
         for fs in self.sortedFileSystems:
             self.ui.fileSystem.addItem(fs)
 
-    def filterFileSystem(self, fileSystem):
+    def filter_file_system(self, fileSystem):
         if fileSystem!="" \
                 and not str(fileSystem).startswith("iso") \
                 and not str(fileSystem).startswith("swap"):
             return True
 
-    def getVolumes(self):
+    def get_volumes(self):
         volumes = []
 
         # Get volumes
         for volume in Solid.Device.listFromType(Solid.StorageDrive.StorageVolume):
             # Apply filter
-            if self.filterFileSystem(self.getVolumeFileSystem(volume)):
+            if self.filter_file_system(self.get_volume_file_system(volume)):
                 volumes.append(volume)
         return volumes
 
-    def getVolumeIcon(self, icon):
+    def get_volume_icon(self, icon):
         iconPath = ":/images/images/" + str(icon) + ".png"
         return QtGui.QPixmap(iconPath)
 
-    def getVolumeName(self, volume):
+    def get_volume_name(self, volume):
         return volume.product()
 
-    def getVolumePath(self, volume):
+    def get_volume_path(self, volume):
         return volume.asDeviceInterface(Solid.Block.Block).device()
 
-    def getVolumeFileSystem(self, volume):
+    def get_volume_file_system(self, volume):
         return volume.asDeviceInterface(Solid.StorageVolume.StorageVolume).fsType()
 
-    def getDiskName(self, volume):
+    def get_disk_name(self, volume):
         """ returns the disk name that the volume resides on """
         return volume.parent().product()
 
-    def addVolumeToList(self, volume):
-        diskName = self.getDiskName(volume)
-        volumeName = self.getVolumeName(volume)
-        volumePath = self.getVolumePath(volume)
-        volumeFileSystem = self.getVolumeFileSystem(volume)
-        volumeIcon = self.getVolumeIcon(volume.icon())
+    def add_volume_to_list(self, volume):
+        diskName = self.get_disk_name(volume)
+        volumeName = self.get_volume_name(volume)
+        volumePath = self.get_volume_path(volume)
+        volumeFileSystem = self.get_volume_file_system(volume)
+        volumeIcon = self.get_volume_icon(volume.icon())
 
         # Create custom widget
         widget = VolumeItem(diskName, volumePath, volumeName, volumeFileSystem, volumeIcon, self.ui.listWidget)
@@ -144,16 +144,16 @@ class QuickFormat(QtGui.QWidget):
         item.setSizeHint(QSize(200,70))
 
 
-    def generateVolumeList(self):
+    def generate_volume_list(self):
         selectedIndex = 0
         currentIndex = 0
 
         volumeList.clear()
 
-        volumes = self.getVolumes()
+        volumes = self.get_volumes()
 
         for volume in volumes:
-            self.addVolumeToList(volume)
+            self.add_volume_to_list(volume)
 
             """
             if volumePath == self.volumePathArg:
@@ -169,14 +169,14 @@ class QuickFormat(QtGui.QWidget):
         self.ui.volumeName.setCurrentIndex(selectedIndex)
 
 
-    def formatStarted(self):
+    def format_started(self):
         self.ui.btn_format.setDisabled(True)
         """
         self.ui.progressBar.setMaximum(0)
         self.ui.lbl_progress.setText(i18n("Please wait while formatting..."))
         """
 
-    def formatSuccessful(self):
+    def format_successful(self):
         """
         self.ui.progressBar.setMaximum(1)
         self.ui.progressBar.setValue(1)
@@ -185,7 +185,7 @@ class QuickFormat(QtGui.QWidget):
         self.ui.btn_format.setDisabled(False)
         self.ui.btn_cancel.setText("Close")
 
-    def formatFailed(self):
+    def format_failed(self):
         """
         self.ui.progressBar.setMaximum(1)
         self.ui.progressBar.setValue(0)
@@ -204,9 +204,9 @@ class Formatter(QtCore.QThread):
 
         self.fs = fileSystems[str(self.ui.fileSystem.currentText())]
 
-        self.emit(SIGNAL("formatStarted()"))
+        self.emit(SIGNAL("format_started()"))
 
-        self.formatted = self.formatDisk()
+        self.formatted = self.format_disk()
 
         try:
             diskTools.refreshPartitionTable(self.volumeToFormat[:8])
@@ -214,19 +214,19 @@ class Formatter(QtCore.QThread):
             print "ERROR: Cannot refresh partition"
 
         if self.formatted==False:
-            self.emit(SIGNAL("formatFailed()"))
+            self.emit(SIGNAL("format_failed()"))
         else:
-            self.emit(SIGNAL("formatSuccessful()"))
+            self.emit(SIGNAL("format_successful()"))
 
 
-    def isDeviceMounted(self, volumePath):
+    def is_device_mounted(self, volumePath):
         for mountPoint in diskTools.mountList():
             if self.volumeToFormat == mountPoint[0]:
                 return True
 
-    def formatDisk(self):
+    def format_disk(self):
         # If device is mounted then unmount
-        if self.isDeviceMounted(self.volumeToFormat) == True:
+        if self.is_device_mounted(self.volumeToFormat) == True:
             try:
                 diskTools.umount(str(self.volumeToFormat))
             except:
