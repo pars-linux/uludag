@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2010-01-01 22:13+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <pardus-translators@pardus.org.tr>\n"
-"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -30,12 +30,12 @@ msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Mainteneur actuel"
-
-#: src/usermanager/about.py:34
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/usermanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -46,57 +46,54 @@ msgid "First Developer"
 msgstr "Premier développeur"
 
 #: src/usermanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "Votre courriel"
-
-#: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Votre nom"
 
+#: src/usermanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Votre courriel"
+
 #: src/usermanager/edit.py:36
-#, fuzzy
 msgid "User/group operations"
-msgstr "Information sur l'utilisateur"
+msgstr "Opérations utilisateur/groupe"
 
 #: src/usermanager/edit.py:37
 msgid "Package operations"
-msgstr ""
+msgstr "Opérations sur les paquets "
 
 #: src/usermanager/edit.py:38
 msgid "Service operations"
-msgstr ""
+msgstr "Opérations sur les services"
 
 #: src/usermanager/edit.py:39
 msgid "Date/time operations"
-msgstr ""
+msgstr "Opérations de date/heure"
 
 #: src/usermanager/edit.py:40
 msgid "Kernel/Process operations"
-msgstr ""
+msgstr "Opérations Kernel/processus"
 
 #: src/usermanager/edit.py:41
 msgid "Bootloader settings"
-msgstr ""
+msgstr "Paramètres du chargeur de démarrage"
 
 #: src/usermanager/edit.py:42
-#, fuzzy
 msgid "Screen settings"
-msgstr "Utiliser les paramètres du système."
+msgstr "Paramètres de l'écran"
 
 #: src/usermanager/edit.py:43
-#, fuzzy
 msgid "Network settings"
-msgstr "Utiliser les paramètres du système."
+msgstr "Paramètres du réseau"
 
 #: src/usermanager/edit.py:44
 msgid "Login Manager settings"
-msgstr ""
+msgstr "Paramètres du gestionnaire de connexion"
 
 #: src/usermanager/edit.py:45
 msgid "Keyboard settings"
-msgstr ""
+msgstr "Paramètres du clavier"
 
 #: src/usermanager/edit.py:306
 msgid "There has to be at least one group selected."
@@ -232,42 +229,36 @@ msgid "Shell:"
 msgstr "Shell :"
 
 #: ui/ui_edituser.py:235
-#, fuzzy
 msgid "Give administrator rights"
-msgstr "Donner les droits de l'administrateur."
+msgstr "Donner les droits d'administrateur"
 
 #: ui/ui_edituser.py:236
-#, fuzzy
 msgid "User Id:"
-msgstr "Utilisateurs"
+msgstr "Id utilisateur :"
 
 #: ui/ui_edituser.py:238
 msgid "Advanced"
-msgstr ""
+msgstr "Avancé"
 
 #: ui/ui_edituser.py:239
-#, fuzzy
 msgid "Apply this policy to all actions"
-msgstr "Appliquer cette politique à toutes les actions."
+msgstr "Appliquer cette politique à toutes les actions"
 
 #: ui/ui_edituser.py:240
-#, fuzzy
 msgid "Use system settings"
-msgstr "Utiliser les paramètres du système."
+msgstr "Utiliser les paramètres du système"
 
 #: ui/ui_edituser.py:241
-#, fuzzy
 msgid "Authorize user"
-msgstr "Autoriser à l'utilisateur."
+msgstr "Autoriser à l'utilisateur"
 
 #: ui/ui_edituser.py:242
-#, fuzzy
 msgid "Deny user"
-msgstr "Refuser à l'utilisateur."
+msgstr "Refuser à l'utilisateur"
 
 #: ui/ui_edituser.py:243 ui/ui_edituser.py:246
 msgid "Start typing to filter"
-msgstr ""
+msgstr "Commencez à taper pour filtrer"
 
 #: ui/ui_edituser.py:244
 msgid "Authorizations"
