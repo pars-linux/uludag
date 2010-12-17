@@ -71,9 +71,9 @@ class MainManager(QtGui.QWidget):
         """
         size = self.size()
         size += QSize(1,1)
-        self.resize(size)
-        size -= QSize(1,1)
         QTimer.singleShot(1, lambda: self.resize(size))
+        size -= QSize(1,1)
+        QTimer.singleShot(5, lambda: self.resize(size))
 
     def doSearch(self, text):
         for service in self.services:
