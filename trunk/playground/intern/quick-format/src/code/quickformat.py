@@ -34,7 +34,7 @@ class VolumeItem(Ui_VolumeItem, QtGui.QWidget):
         self.name.setText(name)
         self.label.setText(label)
         self.path.setText(path)
-        self.format.setText("(" + format + ")")
+        self.format.setText("(%s)" % format)
         self.icon.setPixmap(icon)
 
 class QuickFormat(QtGui.QWidget):
@@ -44,26 +44,33 @@ class QuickFormat(QtGui.QWidget):
         self.ui = Ui_QuickFormat()
         self.ui.setupUi(self)
 
-        self.__initSignals__()
-        self.__setCustomWidgets__()
-        self.__processArgs__()
+        self.__init_signals__()
+        self.__set_custom_widgets__()
+        self.__process_args__()
 
         self.generate_volume_list()
         self.generate_file_system_list()
 
-    def __setCustomWidgets__(self):
+        self.__initial_selection__()
+
+    def __initial_selection__(self):
+        self.ui.volumeName.setCurrentIndex(0)
+        self.set_info()
+
+
+    def __set_custom_widgets__(self):
         self.ui.listWidget = QtGui.QListWidget(self)
         self.ui.volumeName.setModel(self.ui.listWidget.model())
         self.ui.volumeName.setView(self.ui.listWidget)
 
-    def __processArgs__(self):
+    def __process_args__(self):
         self.volumePathArg = ""
 
         if len(sys.argv) == 2:
             self.volumePathArg = sys.argv[1]
 
-    def __initSignals__(self):
-        self.connect(self.ui.volumeName, SIGNAL("currentIndexChanged(QString)"), self.set_info)
+    def __init_signals__(self):
+        self.connect(self.ui.volumeName, SIGNAL("activated(int)"), self.set_info)
         """
         QObject.connect(self.ui.btn_format, SIGNAL("clicked()"), formatter.start)
         QObject.connect(self.ui.btn_cancel, SIGNAL("clicked()"), self.exit)
@@ -76,7 +83,7 @@ class QuickFormat(QtGui.QWidget):
         """return the key of dictionary dic given the value"""
         return [k for k, v in dic.iteritems() if v == val][0]
 
-    def set_info(self, num):
+    def set_info(self):
         """ Displays the selected volume info on main screen """
         currentIndex = self.ui.volumeName.currentIndex()
         item = self.ui.listWidget.item(currentIndex)
