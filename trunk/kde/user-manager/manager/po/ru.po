@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 21:45+0300\n"
+"POT-Creation-Date: 2010-12-17 18:44+0200\n"
 "PO-Revision-Date: 2010-10-05 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:2
 msgid "User Manager"
@@ -29,12 +29,12 @@ msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/usermanager/about.py:34
 msgid "Current Maintainer"
 msgstr "Current Maintainer"
+
+#: src/usermanager/about.py:34
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -45,52 +45,95 @@ msgid "First Developer"
 msgstr "First Developer"
 
 #: src/usermanager/about.py:36
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай"
-
-#: src/usermanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
-#: src/usermanager/edit.py:258
+#: src/usermanager/about.py:36
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ясыров Василий, Семенов Николай"
+
+#: src/usermanager/edit.py:36
+#, fuzzy
+msgid "User/group operations"
+msgstr "Информация о пользователе"
+
+#: src/usermanager/edit.py:37
+msgid "Package operations"
+msgstr ""
+
+#: src/usermanager/edit.py:38
+msgid "Service operations"
+msgstr ""
+
+#: src/usermanager/edit.py:39
+msgid "Date/time operations"
+msgstr ""
+
+#: src/usermanager/edit.py:40
+msgid "Kernel/Process operations"
+msgstr ""
+
+#: src/usermanager/edit.py:41
+msgid "Bootloader settings"
+msgstr ""
+
+#: src/usermanager/edit.py:42
+#, fuzzy
+msgid "Screen settings"
+msgstr "Использовать настройки системы."
+
+#: src/usermanager/edit.py:43
+#, fuzzy
+msgid "Network settings"
+msgstr "Использовать настройки системы."
+
+#: src/usermanager/edit.py:44
+msgid "Login Manager settings"
+msgstr ""
+
+#: src/usermanager/edit.py:45
+msgid "Keyboard settings"
+msgstr ""
+
+#: src/usermanager/edit.py:306
 msgid "There has to be at least one group selected."
 msgstr "Нужно выбрать по крайней мере одну группу."
 
-#: src/usermanager/edit.py:323
+#: src/usermanager/edit.py:382
 msgid "Start with typing this user's full name."
 msgstr "Начните с ввода полного имени пользователя ."
 
-#: src/usermanager/edit.py:326
+#: src/usermanager/edit.py:385
 msgid "You should enter a password for this user."
 msgstr "Вам необходимо указать пароль для этого пользователя."
 
-#: src/usermanager/edit.py:331
+#: src/usermanager/edit.py:392
 msgid "Password must be longer."
 msgstr "Пароль должен быть длиннее."
 
-#: src/usermanager/edit.py:335
+#: src/usermanager/edit.py:396
 msgid "Don't use your full name or user name as a password."
 msgstr "Не используйте ваше полное имя или имя пользователя в качестве пароля."
 
-#: src/usermanager/edit.py:338
+#: src/usermanager/edit.py:399
 msgid "Passwords don't match."
 msgstr "Пароли  не совпадают."
 
-#: src/usermanager/edit.py:343
+#: src/usermanager/edit.py:404
 msgid "You must enter a user name."
 msgstr "Введите имя пользователя."
 
-#: src/usermanager/edit.py:346
+#: src/usermanager/edit.py:407
 msgid "This user name is used by another user."
 msgstr "Это имя пользователя используется другим пользователем."
 
-#: src/usermanager/edit.py:350
+#: src/usermanager/edit.py:411
 msgid "User name must not start with a number."
 msgstr "Имя пользователя не должно начинатся с цифры."
 
-#: src/usermanager/main.py:94
+#: src/usermanager/main.py:108
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -98,48 +141,48 @@ msgstr ""
 "Нет пакетов, которые обеспечивают основу для этого приложения.\n"
 " Пожалуйста, убедитесь, что пакеты были установлены и настроены правильно."
 
-#: src/usermanager/main.py:195
+#: src/usermanager/main.py:209
 msgid "Users"
 msgstr "Пользователи"
 
-#: src/usermanager/main.py:196 ui/ui_edituser.py:213
+#: src/usermanager/main.py:210 ui/ui_edituser.py:247
 msgid "Groups"
 msgstr "Группы"
 
-#: src/usermanager/main.py:197
+#: src/usermanager/main.py:211
 msgid "All Users"
 msgstr "Все пользователи"
 
-#: src/usermanager/main.py:198
+#: src/usermanager/main.py:212
 msgid "All Groups"
 msgstr "Все группы"
 
-#: src/usermanager/main.py:209
+#: src/usermanager/main.py:223
 msgid "Add User"
 msgstr "Добавить пользователя"
 
-#: src/usermanager/main.py:214
+#: src/usermanager/main.py:228
 msgid "Add Group"
 msgstr "Добавить группу"
 
-#: src/usermanager/main.py:235 src/usermanager/main.py:249
-#: src/usermanager/main.py:395
+#: src/usermanager/main.py:250 src/usermanager/main.py:265
+#: src/usermanager/main.py:419
 msgid "Access denied."
 msgstr "Доступ запрещен"
 
-#: src/usermanager/main.py:320
+#: src/usermanager/main.py:341
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
 msgstr "Невозможно удалить <b>%1</b>. пользователь сейчас активен."
 
-#: src/usermanager/main.py:324
+#: src/usermanager/main.py:345
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "Вы хотите удалить '%1' пользователь (%2)?"
 
-#: src/usermanager/main.py:325
+#: src/usermanager/main.py:346
 msgid "Also remove user files. (This may take long.)"
 msgstr "Удалить файлы пользователя. (Это может занять некоторое время.)"
 
-#: src/usermanager/main.py:333
+#: src/usermanager/main.py:354
 msgid "Do you want to delete group '%1'?"
 msgstr "Вы хотите удалить группу '%1' ?"
 
@@ -151,67 +194,85 @@ msgstr "Информация о группе"
 msgid "Group Name:"
 msgstr "Имя группы:"
 
-#: ui/ui_editgroup.py:88 ui/ui_edituser.py:201
+#: ui/ui_editgroup.py:88
 msgid "No.:"
 msgstr "№:"
 
-#: ui/ui_editgroup.py:89 ui/ui_edituser.py:202
+#: ui/ui_editgroup.py:89 ui/ui_edituser.py:237
 msgid "Auto"
 msgstr "Авто"
 
-#: ui/ui_edituser.py:197
+#: ui/ui_edituser.py:228
 msgid "User Information"
 msgstr "Информация о пользователе"
 
-#: ui/ui_edituser.py:198
+#: ui/ui_edituser.py:229
 msgid "Full Name:"
 msgstr "Полное имя:"
 
-#: ui/ui_edituser.py:199
+#: ui/ui_edituser.py:230
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ui/ui_edituser.py:200
+#: ui/ui_edituser.py:231
 msgid "Password (Again):"
 msgstr "Пароль (Еще раз):"
 
-#: ui/ui_edituser.py:203
+#: ui/ui_edituser.py:232
 msgid "Username:"
 msgstr "Имя пользователя:"
 
-#: ui/ui_edituser.py:204
+#: ui/ui_edituser.py:233
 msgid "Home Directory:"
 msgstr "Домашняя директория:"
 
-#: ui/ui_edituser.py:205
+#: ui/ui_edituser.py:234
 msgid "Shell:"
 msgstr "Shell:"
 
-#: ui/ui_edituser.py:206
-msgid "Give administrator rights."
+#: ui/ui_edituser.py:235
+#, fuzzy
+msgid "Give administrator rights"
 msgstr "Дать права администратора."
 
-#: ui/ui_edituser.py:207
-msgid "Use system settings."
-msgstr "Использовать настройки системы."
+#: ui/ui_edituser.py:236
+#, fuzzy
+msgid "User Id:"
+msgstr "Пользователи"
 
-#: ui/ui_edituser.py:208
-msgid "Authorize user."
-msgstr "Авторизация пользователя."
+#: ui/ui_edituser.py:238
+msgid "Advanced"
+msgstr ""
 
-#: ui/ui_edituser.py:209
-msgid "Deny user."
-msgstr "Запретить пользователя."
-
-#: ui/ui_edituser.py:210
-msgid "Apply this policy to all actions."
+#: ui/ui_edituser.py:239
+#, fuzzy
+msgid "Apply this policy to all actions"
 msgstr "Примените эту политику ко всем действиям."
 
-#: ui/ui_edituser.py:211
+#: ui/ui_edituser.py:240
+#, fuzzy
+msgid "Use system settings"
+msgstr "Использовать настройки системы."
+
+#: ui/ui_edituser.py:241
+#, fuzzy
+msgid "Authorize user"
+msgstr "Авторизация пользователя."
+
+#: ui/ui_edituser.py:242
+#, fuzzy
+msgid "Deny user"
+msgstr "Запретить пользователя."
+
+#: ui/ui_edituser.py:243 ui/ui_edituser.py:246
+msgid "Start typing to filter"
+msgstr ""
+
+#: ui/ui_edituser.py:244
 msgid "Authorizations"
 msgstr "Разрешения"
 
-#: ui/ui_edituser.py:212
+#: ui/ui_edituser.py:245
 msgid "Main Group:"
 msgstr "Основная группа:"
 

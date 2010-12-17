@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager 2.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 21:45+0300\n"
+"POT-Creation-Date: 2010-12-17 18:44+0200\n"
 "PO-Revision-Date: 2009-07-15 14:21+0300\n"
-"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n" 
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -59,43 +59,83 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Bahadır Kandemir, Necmettin Begiter, Renan Çakırerk, Gökmen Göksel"
 
-#: src/usermanager/edit.py:258
+#: src/usermanager/edit.py:36
+msgid "User/group operations"
+msgstr "Kullanıcı/Grup işlemleri"
+
+#: src/usermanager/edit.py:37
+msgid "Package operations"
+msgstr "Paket işlemleri"
+
+#: src/usermanager/edit.py:38
+msgid "Service operations"
+msgstr "Service işlemleri"
+
+#: src/usermanager/edit.py:39
+msgid "Date/time operations"
+msgstr "Tarih/saat işlemleri"
+
+#: src/usermanager/edit.py:40
+msgid "Kernel/Process operations"
+msgstr "Çekirdek/Süreç işlemleri"
+
+#: src/usermanager/edit.py:41
+msgid "Bootloader settings"
+msgstr "Açılış Yöneticisi ayarları"
+
+#: src/usermanager/edit.py:42
+msgid "Screen settings"
+msgstr "Ekran ayarları"
+
+#: src/usermanager/edit.py:43
+msgid "Network settings"
+msgstr "Ağ ayarları"
+
+#: src/usermanager/edit.py:44
+msgid "Login Manager settings"
+msgstr "Giriş Yöneticisi ayarları"
+
+#: src/usermanager/edit.py:45
+msgid "Keyboard settings"
+msgstr "Klavye ayarları"
+
+#: src/usermanager/edit.py:306
 msgid "There has to be at least one group selected."
 msgstr "En az bir grup seçili olmalı."
 
-#: src/usermanager/edit.py:323
+#: src/usermanager/edit.py:382
 msgid "Start with typing this user's full name."
 msgstr "Kullanıcının tam adını yazarak başlayın."
 
-#: src/usermanager/edit.py:326
+#: src/usermanager/edit.py:385
 msgid "You should enter a password for this user."
 msgstr "Kullanıcı için parola girmelisiniz."
 
-#: src/usermanager/edit.py:331
+#: src/usermanager/edit.py:392
 msgid "Password must be longer."
 msgstr "Parola daha uzun olmalı."
 
-#: src/usermanager/edit.py:335
+#: src/usermanager/edit.py:396
 msgid "Don't use your full name or user name as a password."
 msgstr "Adınızı ya da kullanıcı adınızı parola olarak kullanmayın."
 
-#: src/usermanager/edit.py:338
+#: src/usermanager/edit.py:399
 msgid "Passwords don't match."
 msgstr "Parolalar uyuşmuyor."
 
-#: src/usermanager/edit.py:343
+#: src/usermanager/edit.py:404
 msgid "You must enter a user name."
 msgstr "Kullanıcı adı girmelisiniz."
 
-#: src/usermanager/edit.py:346
+#: src/usermanager/edit.py:407
 msgid "This user name is used by another user."
 msgstr "Bu kullanıcı adı başkası tarafından kullanılıyor."
 
-#: src/usermanager/edit.py:350
+#: src/usermanager/edit.py:411
 msgid "User name must not start with a number."
 msgstr "Kullanıcı adı rakam ile başlayamaz."
 
-#: src/usermanager/main.py:94
+#: src/usermanager/main.py:108
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -103,48 +143,48 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin düzgün bir şekilde kurulu ve ayarlı olduğundan emin olun."
 
-#: src/usermanager/main.py:195
+#: src/usermanager/main.py:209
 msgid "Users"
 msgstr "Kullanıcılar"
 
-#: src/usermanager/main.py:196 ui/ui_edituser.py:213
+#: src/usermanager/main.py:210 ui/ui_edituser.py:247
 msgid "Groups"
 msgstr "Gruplar"
 
-#: src/usermanager/main.py:197
+#: src/usermanager/main.py:211
 msgid "All Users"
 msgstr "Tüm Kullanıcılar"
 
-#: src/usermanager/main.py:198
+#: src/usermanager/main.py:212
 msgid "All Groups"
 msgstr "Tüm Gruplar"
 
-#: src/usermanager/main.py:209
+#: src/usermanager/main.py:223
 msgid "Add User"
 msgstr "Kullanıcı Ekle"
 
-#: src/usermanager/main.py:214
+#: src/usermanager/main.py:228
 msgid "Add Group"
 msgstr "Grup Ekle"
 
-#: src/usermanager/main.py:235 src/usermanager/main.py:249
-#: src/usermanager/main.py:395
+#: src/usermanager/main.py:250 src/usermanager/main.py:265
+#: src/usermanager/main.py:419
 msgid "Access denied."
 msgstr "Erişim reddedildi."
 
-#: src/usermanager/main.py:320
+#: src/usermanager/main.py:341
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
 msgstr "<b>%1</b> kullanıcısı silinemiyor. Kullanıcı şu anda sisteme giriş yapmış."
 
-#: src/usermanager/main.py:324
+#: src/usermanager/main.py:345
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "'%1' (%2) kullanıcısı silinsin mi?"
 
-#: src/usermanager/main.py:325
+#: src/usermanager/main.py:346
 msgid "Also remove user files. (This may take long.)"
 msgstr "Kullanıcı dosyalarını da sil. (Bu uzun sürebilir.)"
 
-#: src/usermanager/main.py:333
+#: src/usermanager/main.py:354
 msgid "Do you want to delete group '%1'?"
 msgstr "'%1' grubu silinsin mi?"
 
@@ -156,67 +196,79 @@ msgstr "Grup Bilgisi"
 msgid "Group Name:"
 msgstr "Grup İsmi:"
 
-#: ui/ui_editgroup.py:88 ui/ui_edituser.py:201
+#: ui/ui_editgroup.py:88
 msgid "No.:"
 msgstr "No.:"
 
-#: ui/ui_editgroup.py:89 ui/ui_edituser.py:202
+#: ui/ui_editgroup.py:89 ui/ui_edituser.py:237
 msgid "Auto"
 msgstr "Otomatik"
 
-#: ui/ui_edituser.py:197
+#: ui/ui_edituser.py:228
 msgid "User Information"
 msgstr "Kullanıcı Bilgisi"
 
-#: ui/ui_edituser.py:198
+#: ui/ui_edituser.py:229
 msgid "Full Name:"
 msgstr "Tam İsim:"
 
-#: ui/ui_edituser.py:199
+#: ui/ui_edituser.py:230
 msgid "Password:"
 msgstr "Parola:"
 
-#: ui/ui_edituser.py:200
+#: ui/ui_edituser.py:231
 msgid "Password (Again):"
 msgstr "Parola (Tekrar):"
 
-#: ui/ui_edituser.py:203
+#: ui/ui_edituser.py:232
 msgid "Username:"
 msgstr "Kullanıcı Adı:"
 
-#: ui/ui_edituser.py:204
+#: ui/ui_edituser.py:233
 msgid "Home Directory:"
 msgstr "Ev Dizini:"
 
-#: ui/ui_edituser.py:205
+#: ui/ui_edituser.py:234
 msgid "Shell:"
 msgstr "Kabuk:"
 
-#: ui/ui_edituser.py:206
-msgid "Give administrator rights."
-msgstr "Yönetici hakları ver."
+#: ui/ui_edituser.py:235
+msgid "Give administrator rights"
+msgstr "Yönetici hakları ver"
 
-#: ui/ui_edituser.py:207
-msgid "Use system settings."
-msgstr "Sistem ayarlarını kullan."
+#: ui/ui_edituser.py:236
+msgid "User Id:"
+msgstr "Kullanıcı No:"
 
-#: ui/ui_edituser.py:208
-msgid "Authorize user."
-msgstr "Kullanıcıyı yetkilendir."
+#: ui/ui_edituser.py:238
+msgid "Advanced"
+msgstr "Gelişmiş"
 
-#: ui/ui_edituser.py:209
-msgid "Deny user."
-msgstr "Kullanıcıya izin verme."
+#: ui/ui_edituser.py:239
+msgid "Apply this policy to all actions"
+msgstr "Bu politikayı tüm eylemlere uygula"
 
-#: ui/ui_edituser.py:210
-msgid "Apply this policy to all actions."
-msgstr "Bu politikayı tüm eylemlere uygula."
+#: ui/ui_edituser.py:240
+msgid "Use system settings"
+msgstr "Sistem ayarlarını kullan"
 
-#: ui/ui_edituser.py:211
+#: ui/ui_edituser.py:241
+msgid "Authorize user"
+msgstr "Kullanıcıyı yetkilendir"
+
+#: ui/ui_edituser.py:242
+msgid "Deny user"
+msgstr "Kullanıcıya izin verme"
+
+#: ui/ui_edituser.py:243 ui/ui_edituser.py:246
+msgid "Start typing to filter"
+msgstr "Filtrele"
+
+#: ui/ui_edituser.py:244
 msgid "Authorizations"
 msgstr "Yetkiler"
 
-#: ui/ui_edituser.py:212
+#: ui/ui_edituser.py:245
 msgid "Main Group:"
 msgstr "Ana Grup:"
 
@@ -232,8 +284,8 @@ msgstr "Sil"
 msgid "Add New"
 msgstr "Yeni Ekle"
 
-#~ msgid " "
-#~ msgstr " "
-
 #~ msgid "<b>%1</b> is currently logged on. You cannot delete a logged on user."
 #~ msgstr "<b>%1</b> kullanıcısı şu anda sisteme giriş yapmış durumda.  olan kullanıcıları silemezsiniz."
+
+#~ msgid " "
+#~ msgstr " "

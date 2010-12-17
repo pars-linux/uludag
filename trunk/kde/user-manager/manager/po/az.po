@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 21:45+0300\n"
+"POT-Creation-Date: 2010-12-17 18:44+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,90 +54,130 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: src/usermanager/edit.py:258
+#: src/usermanager/edit.py:36
+msgid "User/group operations"
+msgstr ""
+
+#: src/usermanager/edit.py:37
+msgid "Package operations"
+msgstr ""
+
+#: src/usermanager/edit.py:38
+msgid "Service operations"
+msgstr ""
+
+#: src/usermanager/edit.py:39
+msgid "Date/time operations"
+msgstr ""
+
+#: src/usermanager/edit.py:40
+msgid "Kernel/Process operations"
+msgstr ""
+
+#: src/usermanager/edit.py:41
+msgid "Bootloader settings"
+msgstr ""
+
+#: src/usermanager/edit.py:42
+msgid "Screen settings"
+msgstr ""
+
+#: src/usermanager/edit.py:43
+msgid "Network settings"
+msgstr ""
+
+#: src/usermanager/edit.py:44
+msgid "Login Manager settings"
+msgstr ""
+
+#: src/usermanager/edit.py:45
+msgid "Keyboard settings"
+msgstr ""
+
+#: src/usermanager/edit.py:306
 msgid "There has to be at least one group selected."
 msgstr ""
 
-#: src/usermanager/edit.py:323
+#: src/usermanager/edit.py:382
 msgid "Start with typing this user's full name."
 msgstr ""
 
-#: src/usermanager/edit.py:326
+#: src/usermanager/edit.py:385
 msgid "You should enter a password for this user."
 msgstr ""
 
-#: src/usermanager/edit.py:331
+#: src/usermanager/edit.py:392
 msgid "Password must be longer."
 msgstr ""
 
-#: src/usermanager/edit.py:335
+#: src/usermanager/edit.py:396
 msgid "Don't use your full name or user name as a password."
 msgstr ""
 
-#: src/usermanager/edit.py:338
+#: src/usermanager/edit.py:399
 msgid "Passwords don't match."
 msgstr ""
 
-#: src/usermanager/edit.py:343
+#: src/usermanager/edit.py:404
 msgid "You must enter a user name."
 msgstr ""
 
-#: src/usermanager/edit.py:346
+#: src/usermanager/edit.py:407
 msgid "This user name is used by another user."
 msgstr ""
 
-#: src/usermanager/edit.py:350
+#: src/usermanager/edit.py:411
 msgid "User name must not start with a number."
 msgstr ""
 
-#: src/usermanager/main.py:94
+#: src/usermanager/main.py:108
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 
-#: src/usermanager/main.py:195
+#: src/usermanager/main.py:209
 msgid "Users"
 msgstr ""
 
-#: src/usermanager/main.py:196 ui/ui_edituser.py:213
+#: src/usermanager/main.py:210 ui/ui_edituser.py:247
 msgid "Groups"
 msgstr ""
 
-#: src/usermanager/main.py:197
+#: src/usermanager/main.py:211
 msgid "All Users"
 msgstr ""
 
-#: src/usermanager/main.py:198
+#: src/usermanager/main.py:212
 msgid "All Groups"
 msgstr ""
 
-#: src/usermanager/main.py:209
+#: src/usermanager/main.py:223
 msgid "Add User"
 msgstr ""
 
-#: src/usermanager/main.py:214
+#: src/usermanager/main.py:228
 msgid "Add Group"
 msgstr ""
 
-#: src/usermanager/main.py:235 src/usermanager/main.py:249
-#: src/usermanager/main.py:395
+#: src/usermanager/main.py:250 src/usermanager/main.py:265
+#: src/usermanager/main.py:419
 msgid "Access denied."
 msgstr ""
 
-#: src/usermanager/main.py:320
+#: src/usermanager/main.py:341
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
 msgstr ""
 
-#: src/usermanager/main.py:324
+#: src/usermanager/main.py:345
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr ""
 
-#: src/usermanager/main.py:325
+#: src/usermanager/main.py:346
 msgid "Also remove user files. (This may take long.)"
 msgstr ""
 
-#: src/usermanager/main.py:333
+#: src/usermanager/main.py:354
 msgid "Do you want to delete group '%1'?"
 msgstr ""
 
@@ -149,67 +189,79 @@ msgstr ""
 msgid "Group Name:"
 msgstr ""
 
-#: ui/ui_editgroup.py:88 ui/ui_edituser.py:201
+#: ui/ui_editgroup.py:88
 msgid "No.:"
 msgstr ""
 
-#: ui/ui_editgroup.py:89 ui/ui_edituser.py:202
+#: ui/ui_editgroup.py:89 ui/ui_edituser.py:237
 msgid "Auto"
 msgstr ""
 
-#: ui/ui_edituser.py:197
+#: ui/ui_edituser.py:228
 msgid "User Information"
 msgstr ""
 
-#: ui/ui_edituser.py:198
+#: ui/ui_edituser.py:229
 msgid "Full Name:"
 msgstr ""
 
-#: ui/ui_edituser.py:199
+#: ui/ui_edituser.py:230
 msgid "Password:"
 msgstr ""
 
-#: ui/ui_edituser.py:200
+#: ui/ui_edituser.py:231
 msgid "Password (Again):"
 msgstr ""
 
-#: ui/ui_edituser.py:203
+#: ui/ui_edituser.py:232
 msgid "Username:"
 msgstr ""
 
-#: ui/ui_edituser.py:204
+#: ui/ui_edituser.py:233
 msgid "Home Directory:"
 msgstr ""
 
-#: ui/ui_edituser.py:205
+#: ui/ui_edituser.py:234
 msgid "Shell:"
 msgstr ""
 
-#: ui/ui_edituser.py:206
-msgid "Give administrator rights."
+#: ui/ui_edituser.py:235
+msgid "Give administrator rights"
 msgstr ""
 
-#: ui/ui_edituser.py:207
-msgid "Use system settings."
+#: ui/ui_edituser.py:236
+msgid "User Id:"
 msgstr ""
 
-#: ui/ui_edituser.py:208
-msgid "Authorize user."
+#: ui/ui_edituser.py:238
+msgid "Advanced"
 msgstr ""
 
-#: ui/ui_edituser.py:209
-msgid "Deny user."
+#: ui/ui_edituser.py:239
+msgid "Apply this policy to all actions"
 msgstr ""
 
-#: ui/ui_edituser.py:210
-msgid "Apply this policy to all actions."
+#: ui/ui_edituser.py:240
+msgid "Use system settings"
 msgstr ""
 
-#: ui/ui_edituser.py:211
+#: ui/ui_edituser.py:241
+msgid "Authorize user"
+msgstr ""
+
+#: ui/ui_edituser.py:242
+msgid "Deny user"
+msgstr ""
+
+#: ui/ui_edituser.py:243 ui/ui_edituser.py:246
+msgid "Start typing to filter"
+msgstr ""
+
+#: ui/ui_edituser.py:244
 msgid "Authorizations"
 msgstr ""
 
-#: ui/ui_edituser.py:212
+#: ui/ui_edituser.py:245
 msgid "Main Group:"
 msgstr ""
 
