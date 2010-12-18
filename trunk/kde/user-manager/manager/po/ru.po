@@ -56,23 +56,23 @@ msgstr "zag@vspu.ru, tribunal2000@gmail.com"
 
 #: src/usermanager/edit.py:36
 msgid "User/group operations"
-msgstr ""
+msgstr "Настройки, связанные с пользователями и группами"
 
 #: src/usermanager/edit.py:37
 msgid "Package operations"
-msgstr ""
+msgstr "Настройки пакетов"
 
 #: src/usermanager/edit.py:38
 msgid "Service operations"
-msgstr ""
+msgstr "Настройки служб"
 
 #: src/usermanager/edit.py:39
 msgid "Date/time operations"
-msgstr ""
+msgstr "Настройки Даты/Времени"
 
 #: src/usermanager/edit.py:40
 msgid "Kernel/Process operations"
-msgstr ""
+msgstr "Настройки Ядра/Процессов"
 
 #: src/usermanager/edit.py:41
 msgid "Bootloader settings"
@@ -87,7 +87,6 @@ msgid "Network settings"
 msgstr "Настройки сети"
 
 #: src/usermanager/edit.py:44
-#, fuzzy
 msgid "Login Manager settings"
 msgstr "Настройки менеджера входа в систему"
 
@@ -229,7 +228,6 @@ msgid "Shell:"
 msgstr "Shell:"
 
 #: ui/ui_edituser.py:235
-#, fuzzy
 msgid "Give administrator rights"
 msgstr "Установить права администратора"
 
@@ -239,30 +237,25 @@ msgstr "ID пользователя:"
 
 #: ui/ui_edituser.py:238
 msgid "Advanced"
-msgstr ""
+msgstr "Дополнительно"
 
 #: ui/ui_edituser.py:239
-#, fuzzy
 msgid "Apply this policy to all actions"
 msgstr "Примените эту политику ко всем действиям."
 
 #: ui/ui_edituser.py:240
-#, fuzzy
 msgid "Use system settings"
 msgstr "Использовать настройки системы."
 
 #: ui/ui_edituser.py:241
-#, fuzzy
 msgid "Authorize user"
 msgstr "Авторизация пользователя."
 
 #: ui/ui_edituser.py:242
-#, fuzzy
 msgid "Deny user"
 msgstr "Запретить пользователя."
 
 #: ui/ui_edituser.py:243 ui/ui_edituser.py:246
-#, fuzzy
 msgid "Start typing to filter"
 msgstr "Начните писать для фильтрации"
 
