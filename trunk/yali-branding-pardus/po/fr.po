@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-12 20:02+0000\n"
+"POT-Creation-Date: 2010-12-18 22:01+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
-msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
+msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
 msgstr "Un chargeur de démarrage (bootloader) est un petit programme lancé à l'allumage du PC. Il charge le système d'exploitation en mémoire et lui passe le relais.&lt;br&gt;&lt;br&gt;Pardus utilise GRUB (GRand Unified Bootloader) comme chargeur de démarrage. GRUB permet de choisir son système d'exploitation (Linux, Windows) à partir d'un menu présenté au démarrage.&lt;br&gt;&lt;br&gt;Il est recommandé d'installer GRUB au début du disque dur. Vous pouvez l'installer ailleurs si vous  savez ce que vous faîtes."
 
 #: ../release.xml.in.h:2
-msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
+msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
 msgstr "Une disposition de clavier est une description de la façon dont les touches sont placées sur un clavier. Il existe différentes dispositions de clavier selon les pays et les langues. Cet écran vous permet de sélectionner la configuration du clavier que vous voulez utiliser sur Pardus.&lt;br&gt;&lt;br&gt; Vous pouvez tester la configuration choisie en tapant quelque chose dans le champ donné."
 
 #: ../release.xml.in.h:3
@@ -78,7 +78,7 @@ msgstr "Au revoir"
 
 #: ../release.xml.in.h:15
 #, fuzzy
-msgid "Help will be included when Kahya implentation is complete."
+msgid "Help will be included when Kahya implentation is complete"
 msgstr "Aide sera inclus lorsque implentation Kahya est terminée."
 
 #: ../release.xml.in.h:16
@@ -123,7 +123,7 @@ msgstr "Partitionnement manuel"
 
 #: ../release.xml.in.h:25
 #, fuzzy
-msgid "Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
+msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
 msgstr "Plusieurs utilisateurs peuvent partager le même ordinateur en toute sécurité avec Pardus. Un compte administrateur sera automatiquement réglée (qui est la racine). Vous pouvez ajouter de nouveaux utilisateurs dans cet écran. Le premier utilisateur sera accordé une autorisation administrative si vous n'avez pas les révoquer. Révocation des droits d'administration, de réglages personnalisés de l'ID utilisateur, et quelques autres options sont accessibles dans le menu Avancé. &lt;br&gt; Si vous avez besoin pour administrer les comptes d'utilisateur, vous pouvez appeler le Gestionnaire des utilisateurs dans les paramètres système après l'installation."
 
 #: ../release.xml.in.h:27
@@ -142,7 +142,7 @@ msgstr ""
 
 #: ../release.xml.in.h:30
 #, fuzzy
-msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer."
+msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of TÜBİTAK are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the license terms to install Pardus on your computer."
 msgstr "Pardus est un système libre et open source exploitation qui contient de nombreux projets bien connus tels que le noyau Linux, les outils GNU, Mozilla Firefox, etc LibreOffice et facile à utiliser des outils spéciaux pour une expérience confortable et de haute performance. &lt;br&gt; produits à l'interne de Tübitak sont sous licence GNU avec Public License (GPL version 2), qui est aussi la licence la plus commune pour les composants sélectionnés. Cependant, il existe des logiciels inclus dans ce support d'installation qui ont des licences différentes. Vous pouvez lire tous les textes de licence dans cet écran dans une nouvelle fenêtre minuscule ou de les trouver tous sur notre site Web. &lt;br&gt; Vous devez accepter toutes les conditions pour installer Pardus sur votre ordinateur."
 
 #: ../release.xml.in.h:31
@@ -163,12 +163,11 @@ msgid "There are a lot of features waiting to be explored. Thousands of software
 msgstr "Il ya beaucoup de fonctionnalités à découvrir. Des milliers de logiciels, les bibliothèques et les outils ne sont pas inclus dans l'installation à moyen et à économiser de l'espace. Cependant, avec Pardus système de gestion des paquets PiSi et son interface conviviale Package Manager, il est onle de quelques clics pour ajouter ces nouvelles applications sur votre système. &lt;br&gt; Package Manager vous aidera à garder votre système à jour, supprimer les composants que vous n'utilisez jamais ou en ajouter de nouvelles. Vous pouvez rejoindre le Gestionnaire de package à partir du menu de votre choix, Kick-off, le menu classique ou Lancelot que vous pouvez choisir avec l'aide de Kaptan dans votre tout premier démarrage."
 
 #: ../release.xml.in.h:35
-#, fuzzy
-msgid "Validation checks if the packages in the medium are consistent with the repository by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
+msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr "Ici, vous pouvez valider l'intégrité des paquets d'installation. Une validation qui échoue est généralement le signe d'un support d'installation défectueux (DVD ou clef USB). Si vous utilisez un support d'installation optique, essayez de graver l'image d'installation en utilisant le mode DAO (Disc-at-once), à une vitesse inférieure (4x)."
 
 #: ../release.xml.in.h:36
-msgid "Welcome back..."
+msgid "Welcome back"
 msgstr "De retour..."
 
 #: ../release.xml.in.h:37
