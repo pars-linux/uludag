@@ -200,14 +200,12 @@ msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; i
 msgstr "&lt;p&gt;Vous devez définir un mot de passe pour l'utilisateur &quot;root&quot; qui est le nom conventionnel de l'utilisateur qui a tous les droits et autorisations (sur tous les fichiers et programmes) dans tous les modes (simple ou multi-utilisateurs). &lt;/p&gt;&lt;p&gt; Votre mot de passe doit être facile à retenir, mais assez fort pour résister aux attaques. Il est recommandé d'utiliser les lettres majuscules et minuscules, chiffres et signes de ponctuation dans votre mot de passe. &lt;/p&gt;&lt;p&gt;Vous pouvez également définir un nom pour votre ordinateur. Un nom est un identifiant pour votre ordinateur. Comme votre ordinateur sera reconnu avec ce nom dans le réseau local, il est recommandé de choisir un nom d'hôte descriptif.&lt;/p&gt;"
 
 #: ../release.xml.in.h:44
-#, fuzzy
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
-msgstr "Vous aurez besoin d'au moins 4GBs d'espace disque non partitionné-utilisé ou d'un disque pour installer Pardus (10 Go recommandé). S'il vous plaît sélectionnez le disque que vous souhaitez utiliser pour l'installation. Dans l'étape suivante, vous pourrez choisir entre différentes options de partitionnement."
+msgstr "Vous aurez besoin d'au moins 4 Go d'espace disque non partitionné-non utilisé ou d'un disque pour installer Pardus (10 Go recommandé). Sélectionnez le disque que vous souhaitez utiliser pour l'installation. Dans l'étape suivante, vous pourrez choisir entre différentes options de partitionnement."
 
 #: ../release.xml.in.h:45
-#, fuzzy
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr "Vous avez installé et démarré avec succès Pardus ... En quelques clics gauche ... Pardus supporte plusieurs utilisateurs sur le même système. Donc, vous devez créer au moins un utilisateur et de configurer le système configurations de large. Ainsi, vous pourrez vous connecter et profiter Pardus ..."
+msgstr "Vous avez installé Pardus avec succès ... Plus que quelques clics... Pardus gère plusieurs utilisateurs sur le même système. Vous devez créer au moins un utilisateur et configurer le système. Après quoi vous pourrez enfin vous connecter et profiter de Pardus..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya travaille"
