@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-14 00:01+0000\n"
+"POT-Creation-Date: 2010-12-18 13:02+0000\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -163,13 +163,12 @@ msgid "Welcome to Pardus"
 msgstr "Bienvenido a Pardus"
 
 #: ../release.xml.in.h:38
-#, fuzzy
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
-msgstr "Dolphin aprendió un montón de la experiencia de la web. Navegación con pestañas, diressiones de carpetas en forma de breadcrumb, clasificación de archivos con tags para agruparlos por tags al lado de la estructura tradicional de carpetas y una poderosa transparencia de la red.&lt;br&gt;&lt;br&gt;Con Dolphin se puede integrar fácilmente al sistema de archivos cualquier ubicación de la red local o de internet. De tál manera puede acceder a direcciones remotas como si fueran directorios del disco local."
+msgstr "Cuando use Dolphin puede ver que aprendió un montón de funciones de la experiencia con la web. Dolphin brinda funciones similar a la navegación web tal como navegación con pestañas, direcciones de carpetas en forma de breadcrumb, clasificación de archivos con tags para agruparlos por tags aparte de la estructura tradicional de carpetas y una transparencia potente de la red.&lt;br&gt;&lt;br&gt;Con Dolphin se puede integrar fácilmente al sistema de archivos cualquier ubicación de la red local o de internet. De tál manera puede acceder a direcciones remotas como si fueran directorios del disco local."
 
 #: ../release.xml.in.h:39
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr ""
+msgstr "Al elegir \"Usar todo el espacio\" Pardus formateará el disco y se creerán 4 particiones para el sistema, datos de los usuarios, arranque y espacio de intercambio (swap) usando LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; Si se encuentra otro sistema instalado con suficiente espacio libre, puede utilizar la opción \"Reducir Sistema Existente\" para redimensionar la primera partición e instalar Pardus en el espacio ganado. &lt;br&gt;&lt;br&gt; Si tiene al menos 4GBs de espacio no particionado (recomendado 10 GB), puede utilizar la opción \"Usar Espacio Disponible\" donde Pardus va a crear las particiones requeridos mencionados.&lt;br&gt;&lt;br&gt; Puede elegir \"Crear Disposición Personaliada\" para particionar manualmente.&lt;br&gt;&lt;br&gt; Asegurese de tener una copia de respaldo de su sistema, para evitar eventuales problemas."
 
 #: ../release.xml.in.h:40
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
@@ -180,14 +179,12 @@ msgid "You have successfully installed Pardus on your computer. After restarting
 msgstr "Usted ha instalado exitosamente Pardus en su computadora. Luego de reiniciar su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;&lt;P&gt;Presione Siguiente para continuar. Nota : Recuerda su contraseña, verdad ?"
 
 #: ../release.xml.in.h:42
-#, fuzzy
 msgid "You may have questions or need help... Özgürlükİçin community portal is there for you. The portal is for all users to meet and share their skills and experience. You can also find guides, introductionary articles about applications and games. &lt;br&gt;If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com"
-msgstr "Está a su disposicion un portal de soporte ofreciendo ayuda, para una mejor experiencia con Pardus y resolver problemas que pueda encontrar. El en portal Özgürlükİçin, con contenido de contribuyentes vuluntarios, encontrará manuales, paquetes y descripciones de juegos. Si tiene alguna pregunta, le esperamos en el foro. Si necesita soporte o si desea dar apoyo, debería como punto de partida al sitio www.ozgurlukicin.com."
+msgstr "Tiene alguna pregunta o necesita ayuda .... ? El portal de la comunidad Özgürlükİçin le está esperando. El portal es un sitio donde todos los usuarios pueden encontrarse y compartir sus conocimientos y experiencias. Puede encontrar tutoriales, articulos introductorios sobre programas y juegos. &lt;br&gt;Si tiene alguna pregunta puede recurrir al foro. Si busca soporte o si puede brindar soporte su primer punto de referencia debería ser www.ozgurlukicin.com"
 
 #: ../release.xml.in.h:43
-#, fuzzy
 msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr "Debe definir una contraseña para el usuario &quot;root&quot; que es el nombre convencional para el usuario con privilegios totales (sobre archivos y programas) en todos modos del sistema (multi-usuario o single). &lt;/p&gt;&lt;p&gt; Debe elegir una contraseña fácil de recordar, pero suficientemente fuerte para prevenir ataques. Puede utilizar en la contraseña letras en mayúsculas o minúsculas, números y símbolos de puntuación. &lt;/p&gt;&lt;p&gt;Además puede establecer un nombre de host para su computadora. El nombre de host es un identificador de la computadora en la red local. Se recomienda elegir un nombre descriptivo."
+msgstr "Debe establecer una contraseña para el usuario &quot;root&quot;. &quot;root&quot; es el nombre convencional del usuario administrador, que tiene privilegios totales sobre archivos y programas, en todos los modos de ejecución del sistema (mono- o multi-usuario).&lt;br&gt;&lt;br&gt;La contraseña debe ser fácil de recordar, pero sufientemente fuerte para resistir posibles ataques. Puede utilizar para la contraseña letras en minúsculas y mayusculas, números y símbolos de puntuación. &lt;br&gt;&lt;br&gt;Además puede establecer un nombre de maquina (hostname). El nombre de maquina identifica a su computadora. Ya que este nombre le identifica a la computadora en la red, se recomienda elegir un nombre descriptivo."
 
 #: ../release.xml.in.h:44
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
@@ -195,7 +192,7 @@ msgstr "Se requiere al menos 4GBs de espacio sin particionar en disco, o un disc
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr ""
+msgstr "Acaba de instalar exitosamente Pardus y lo está arrancando por primera vez... Solo algunos clics más... Pardus soporta mutilples usuarios en el mismo sistema. Por lo tanto debe crear al menos una cuenta de usuario y establecer una configuración global del sistema. Entonces podrá ingresar al sistema y disfrutar Pardus..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya se está ejecutando"
