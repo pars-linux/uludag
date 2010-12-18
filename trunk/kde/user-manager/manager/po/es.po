@@ -243,39 +243,34 @@ msgid "Give administrator rights"
 msgstr "Con derechos administrativos"
 
 #: ui/ui_edituser.py:236
-#, fuzzy
 msgid "User Id:"
-msgstr "Usuarios"
+msgstr "Id de usuario:"
 
 #: ui/ui_edituser.py:238
 msgid "Advanced"
-msgstr ""
+msgstr "Avanzado"
 
 #: ui/ui_edituser.py:239
-#, fuzzy
 msgid "Apply this policy to all actions"
-msgstr "Aplicar ésta política a todas acciones."
+msgstr "Aplicar ésta política a todas las acciones"
 
 # favor revisar, creo que debería ser cofiguración, valores preestablecidos o
 # similar
 #: ui/ui_edituser.py:240
-#, fuzzy
 msgid "Use system settings"
-msgstr "Usar configuración del sistema."
+msgstr "Usar configuración del sistema"
 
 #: ui/ui_edituser.py:241
-#, fuzzy
 msgid "Authorize user"
-msgstr "Autorizar usuario."
+msgstr "Autorizar usuario"
 
 #: ui/ui_edituser.py:242
-#, fuzzy
 msgid "Deny user"
-msgstr "Denegar usuario."
+msgstr "Denegar usuario"
 
 #: ui/ui_edituser.py:243 ui/ui_edituser.py:246
 msgid "Start typing to filter"
-msgstr ""
+msgstr "Escriba para buscar"
 
 #: ui/ui_edituser.py:244
 msgid "Authorizations"
