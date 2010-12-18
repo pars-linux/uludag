@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 16:01+0000\n"
+"POT-Creation-Date: 2010-12-18 01:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -17,11 +17,13 @@ msgstr ""
 "Language: ru\n"
 
 #: ../release.xml.in.h:1
-msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
+#, fuzzy
+msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
 msgstr "Загрузчик крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt;Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
 
 #: ../release.xml.in.h:2
-msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
+#, fuzzy
+msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
 msgstr "Раскладка клавиатуры - это описание того, как расположены клавиши на клавиатуре. По всему миру используются различные раскладки клавиатуры. Та, которая нужна Вам, как правило завит от страны проживания или используемого Вами языка. Данный диалог позволит Вам выбрать раскладку клавиатуры, которую Вы хотите использовать в Pardus. Вы можете проверить выбранную раскладку, набрав что-нибудь в специальном поле ввода."
 
 #: ../release.xml.in.h:3
@@ -74,7 +76,7 @@ msgid "Goodbye"
 msgstr "До свидания"
 
 #: ../release.xml.in.h:15
-msgid "Help will be included when Kahya implentation is complete."
+msgid "Help will be included when Kahya implentation is complete"
 msgstr ""
 
 #: ../release.xml.in.h:16
@@ -98,8 +100,9 @@ msgid "KDE is the desktop choice of Pardus, a software collection for desktop us
 msgstr ""
 
 #: ../release.xml.in.h:21
+#, fuzzy
 msgid "Kahya"
-msgstr ""
+msgstr "Kahya"
 
 #: ../release.xml.in.h:22
 msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
@@ -114,7 +117,7 @@ msgid "Manual Partitioning"
 msgstr "Разметка вручную"
 
 #: ../release.xml.in.h:25
-msgid "Multiple users can share the same computer safely with Pardus. An administrator account will be set automatically (which is root). You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
+msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
 msgstr ""
 
 #: ../release.xml.in.h:27
@@ -131,7 +134,7 @@ msgid "Pardus have many other in-house developed user friendly manager tools suc
 msgstr ""
 
 #: ../release.xml.in.h:30
-msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, GNU tools, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer."
+msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of TÜBİTAK are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the license terms to install Pardus on your computer."
 msgstr ""
 
 #: ../release.xml.in.h:31
@@ -151,12 +154,13 @@ msgid "There are a lot of features waiting to be explored. Thousands of software
 msgstr ""
 
 #: ../release.xml.in.h:35
-msgid "Validation checks if the packages in the medium are consistent with the repository by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
+msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 
 #: ../release.xml.in.h:36
-msgid "Welcome back..."
-msgstr ""
+#, fuzzy
+msgid "Welcome back"
+msgstr "Добро пожаловать"
 
 #: ../release.xml.in.h:37
 msgid "Welcome to Pardus"
