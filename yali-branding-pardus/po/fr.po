@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-18 22:01+0000\n"
+"POT-Creation-Date: 2010-12-18 23:01+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -54,9 +54,8 @@ msgid "Date and time settings allows you to set the date and time of your comput
 msgstr "Ici vous pouvez régler la date et de l'heure de votre ordinateur. Généralement, vous souhaitez aussi spécifier votre fuseau horaire afin de bénéficier des passages automatiques aux heures d'été et d'hiver.&lt;br&gt;&lt;br&gt;Un fuseau horaire est une région de la Terre qui a un temps uniforme, généralement appelé le temps local. Par convention, les fuseaux horaires calculent leurs heures locales comme un décalage par rapport au temps universel coordonné (UTC)."
 
 #: ../release.xml.in.h:10
-#, fuzzy
 msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
-msgstr "Avez-vous l'habitude de personnalisation? Kaptan est là pour vous. Kaptan est un assistant de configuration de l'utilisateur final qui vous aide à personnaliser votre système à vos préférences. Dou vous préférez utiliser votre souris avec le clic unique? Êtes-vous gaucher? Voulez-vous changer la couleur-régime du bureau? Un certain nombre d'options de personnalisation sont offertes dans Kaptan. Kaptan sera exécuté automatiquement lorsque vous vous connectez d'abord. &lt;br&gt; Si vous souhaitez utiliser Kaptan une fois de plus un certain temps, vous pouvez l'appeler depuis le lanceur d'application par son nom Kaptan. &lt;br&gt; Astuce: un lanceur d'application peut être appelée avec le raccourci Alt + F2 par défaut et il offre un certain nombre de fonctions de base, ainsi, essayer à la maison!"
+msgstr "Kaptan est un assistant de configuration qui vous aide à personnaliser votre système selon vos goûts. Préférez-vous utiliser votre souris avec un clic unique ? Êtes-vous gaucher ? Voulez-vous changer le schéma de couleurs du bureau ? Un certain nombre d'options de personnalisation sont offertes dans Kaptan. Kaptan sera exécuté automatiquement à la première connexion. &lt;br&gt;&lt;br&gtSi vous souhaitez le relancer pour modifier vos préférences, vous pouvez l'appeler depuis le lanceur d'application par son nom. &lt;br&gt; Astuce : le lanceur d'application peut être appelée avec le raccourci Alt + F2 par défaut et il offre un certain nombre de fonctions de base, essayez-le !"
 
 #: ../release.xml.in.h:11
 #, fuzzy
@@ -137,8 +136,9 @@ msgid "Pardus experience may be summarized as a bright and powerful parade of fr
 msgstr "Pardus expérience peut se résumer comme une parade lumineuse et puissante de logiciels libres et open source. Vous rencontrerez quelques-uns des vieux amis, tels que Mozilla Firefox ou LibreOffice. Ils pourraient être un peu changé avec les choix des développeurs de Pardus de les adapter à votre système. Bien que l'installation se passe, vous pouvez voir certaines de ces fonctionnalités ..."
 
 #: ../release.xml.in.h:29
+#, fuzzy
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
-msgstr ""
+msgstr "Pardus ont beaucoup d'autres, développé en interne des outils utilisateur du gestionnaire convivial tels que le Gestionnaire des utilisateurs, Boot Manager, Firewall Manager, Service Manager pour gérer plus facilement Pardus. Tous les gestionnaires peuvent être utilisés individuellement, ainsi que dans les paramètres du système, une application unique pour toutes les tâches administratives et de la configuration."
 
 #: ../release.xml.in.h:30
 #, fuzzy
@@ -175,12 +175,14 @@ msgid "Welcome to Pardus"
 msgstr "Bienvenue sur Pardus"
 
 #: ../release.xml.in.h:38
+#, fuzzy
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
-msgstr ""
+msgstr "Lors de l'utilisation des dauphins, vous pouvez voir qu'il a beaucoup appris de l'expérience Web. Dolphin offre des fonctionnalités Web comme suh comme la navigation par onglets, les adresses dossier sous forme de chapelure, de marquage des fichiers afin qu'ils puissent être mis en vente par tags ailleurs la structure des dossiers traditionnels et de la transparence réseau puissant. &lt;br&gt; Tout endroit sur le réseau local ou web peut être intégré dans votre système de fichiers facilement par Dolphin. Ainsi, vous pouvez rejoindre les adresses distantes comme si elles étaient sur votre disque."
 
 #: ../release.xml.in.h:39
+#, fuzzy
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr ""
+msgstr "Lorsque vous sélectionnez \\ \"utiliser tout l'espace \", Pardus formater votre disque et de créer quatre partitions pour le système, l'espace utilisateur, démarrage et les fichiers de swap en utilisant LVM (Logical Volume Manager). &lt;br&gt; Si il ya un autre système installé avec un espace disque suffisant, vous pouvez utiliser le \\ \"Shrink actuel System \" option de redimensionnement de la première partition et installer Pardus dans l'espace créé libre. &lt;br&gt; Si vous avez au moins 4GBs d'espace non partitionné-utilisé (10 Go recommandé), vous pouvez choisir le \\ \"Utiliser l'espace libre \" option, si Pardus créer les partitions nécessaires décrits ci-dessous. &lt; &gt; br &lt;br&gt; Vous pouvez choisir \\ \"Create Custom Layout \" pour le partitionnement manuel. &lt;br&gt; Il est conseillé de sauvegarder vos données pour éviter des problèmes futurs."
 
 #: ../release.xml.in.h:40
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
