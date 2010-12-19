@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-19 14:02+0000\n"
+"POT-Creation-Date: 2010-12-19 23:01+0000\n"
 "PO-Revision-Date: 2010-12-13 19:36+0000\n"
 "Last-Translator: Ali Işıngör <ali@artistanbulptr.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 
 #: ../release.xml.in.h:1
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
-msgstr ""
+msgstr "Bootloader è un piccolo programma che viene eseguito quando un computer viene acceso. È responsabile del caricamento del sistema operativo nella memoria e poi trasferisce il controllo all'utente. &lt;br&gt;&lt;br&gt;Pardus usa GRUB (GRand Unified Bootloader) come il bootloader predefinito. GRUB permette di avviare qualsiasi sistema operativo supportato presentandogli all'utente in un menu.&lt;br&gt;&lt;br&gt;Il metodo raccomandato per usare GRUB è quello di installare all'inizio del disco di avvio, che è fissato dalle impostazioni predefiniti. È possibile scegliere le impostazioni avanzate per una installazione personalizzata se si sa cosa sta facendo."
 
 #: ../release.xml.in.h:2
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr ""
+msgstr "Un layout di tastiera imposta la disposizione dei tasti sulla tastiera. Ci sono diversi layout di tastiera in uso in tutto il mondo. Se volete, questo schermo vi permette di usare un layout di tastiera differente del paese di permanenza. È possibile verificare il formato selezionato, digitando nella casella di testo dato."
 
 #: ../release.xml.in.h:3
 msgid "Add Users"
