@@ -78,7 +78,7 @@ msgstr "Aiuto sarà incluso quando implementazione di Kahya è completa"
 
 #: ../release.xml.in.h:16
 msgid "Here you can review your options before the installation process starts."
-msgstr ""
+msgstr "Qui è possibile rivedere le opzioni prima dell'avvio dell'installazione."
 
 #: ../release.xml.in.h:17
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
@@ -154,9 +154,8 @@ msgid "Validation is comparing the packages in the medium with the original ones
 msgstr ""
 
 #: ../release.xml.in.h:36
-#, fuzzy
 msgid "Welcome back"
-msgstr "Bentornato ..."
+msgstr "Bentornato"
 
 #: ../release.xml.in.h:37
 msgid "Welcome to Pardus"
