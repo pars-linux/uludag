@@ -30,7 +30,6 @@ def exportFlags():
     sysroot = values.general.destinationdirectory
 
     os.environ['HOST'] =  values.build.host
-    os.environ['CPPFLAGS'] = "%s isystem%s" % (values.build.cppflags, sysroot)
     os.environ['CFLAGS'] = values.build.cflags
     os.environ['CXXFLAGS'] = values.build.cxxflags
     os.environ['LDFLAGS'] = values.build.ldflags
@@ -48,7 +47,7 @@ def exportFlags():
         os.environ['BUILD']     = os.popen('gcc -dumpmachine').read().strip()
         os.environ['ARCH']      = values.general.architecture
 
-        os.environ['CPPFLAGS']  = "-isystem%s/usr/include" % sysroot
+        os.environ['CPPFLAGS']  = "%s -isystem%s/usr/include" % (values.build.cppflags, sysroot)
         os.environ['CFLAGS']   += " -I%s/usr/include" % sysroot
         os.environ['CXXFLAGS'] += " -I%s/usr/include" % sysroot
         os.environ['LDFLAGS']  += " -L%(sysroot)s/lib -Wl,-rpath-link,%(sysroot)s/lib \
