@@ -24,7 +24,6 @@
 #include "kcmodule.h"
 
 class QCheckBox;
-class QPushButton;
 
 class PandaConfig : public KCModule
 {
@@ -38,8 +37,7 @@ class PandaConfig : public KCModule
   void defaults();
 
  private:
-  QPushButton  *m_testButton;
-  QCheckBox    *m_useBell;
+  QCheckBox    *driverSettings;
 };
 
 #endif
