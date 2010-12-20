@@ -45,8 +45,8 @@ Testing Shipping Release
 ------------------------
 
 Before each Pardus release shipped, an acceptance test should be done by Pardus
-Test Team. In this acceptance tests the testers should be sure the blocker bugs
-are closed and the openned issues are fixed for the related Pardus release.
+Test Team. In this acceptance tests the testers should be sure the release blocker
+bugs are closed and the openned issues are fixed for the related Pardus release.
 
 
 Desktop and installation validation tests should also be done.
