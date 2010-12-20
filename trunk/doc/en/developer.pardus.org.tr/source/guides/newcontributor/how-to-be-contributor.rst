@@ -60,13 +60,13 @@ Sending Quiz to Applicant
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 #. If the quiz review is positive:
     #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
-    #. If the applicant is applied as a developer, a mentor is assigned to him/her and mentor coordinators give `MENTORASSIGNED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report.
+    #. If the applicant is applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report and sends `Quiz Approved Stock Response` to the quiz is approved..
 
 
 Assigning Mentor
 ----------------
 #. The applicant choose a job from `Junior Jobs <http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED>`_ and give this junior job id on his/her new contributor report as a bug comment.
-    #. The mentor will assign according to this job.
+    #. The mentor will assign according to this job. `MENTORASSIGNED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword is added to the report.
     #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. The coordinator will also reassign the bug to related applicant mentor.
     #. At this stage playground svn permissions will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
 #. The mentor coordinators will track:
@@ -215,34 +215,64 @@ Waiting in the Queue Stock Response
         -
         Pardus Mentor Koordinatörleri
 
-Assigning Mentor Stock Response
--------------------------------
+
+
+Quiz Approved Stock Response
+-----------------------------
 
     ::
 
-        Göndermiş olduğunuz cevaplar doğrultusunda size x kişisi mentor olarak atanmıştır.
+        (Quiz'i kontrol eden kişi, sorular ile ilgili yorumlarını yazar ve gerekli istek ve beklentilerini
+        bildirir ve daha sonra aşağıda bulunan bilgileri yoruma ekler)
 
-        SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir [1].
-        Bu çıktıyı gönderdiğinizde http://svn.pardus.org.tr/uludag/trunk/playground/ ve http://svn.pardus.org.tr/pardus/playground/
-        dizinlerine yazma izinleri verilecektir. Bu aşamadan sonra size mentorunuz tarafından küçük görevler verilecektir.
-
-        Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
+        Bu aşamadan sonra bugzilla'da bulunan junior job'lardan[2] istediğiniz birini seçip bug id'sini
+        yoruma ekleyiniz.
 
         [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
-        --
-        Pardus Mentor Koordinatörleri
+        [2] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
+
     ::
 
-        Related to your responses, x is assigned you as a mentor. 
+        (The mentor that had controled the quiz responses, give his/her explanation and declare his/her desire and expectation.
+        Then add the below information to bug comment)
 
-        In order to creating an svn account, you have to send the output that is mentioned below link [1].
-        When you send this output, the write permissions for http://svn.pardus.org.tr/uludag/trunk/playground/
-        and http://svn.pardus.org.tr/pardus/playground/ directories will be given. During this period, your mentor will give you junior jobs.
+        After this period you have choose a junior job [2] and send its bug id to this buf report as a comment.
 
         Regards,
 
         [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
+        [2] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
 
-        -- 
-        Pardus Mentoring Coordinators
+
+Assigning Mentor Stock Response
+-------------------------------
+
+::
+    Seçmiş olduğunuz iş doğrultusunda size x kişisi mentor olarak atanmıştır.
+
+    SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir [1].
+    Bu çıktıyı gönderdiğinizde http://svn.pardus.org.tr/uludag/trunk/playground/ ve http://svn.pardus.org.tr/pardus/playground/
+    dizinlerine yazma izinleri verilecektir.
+
+    Bu aşamadan sonra seçmiş olduğunuz işi gerçeklemeye başlayabilirsiniz. Gerekli gördüğünüz durumlarda mentor'unuz ile
+     iletişime geçmekten çekinmeyiniz.
+
+    Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
+
+    [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
+
+::
+    Related to your responses, x is assigned you as a mentor.
+
+    In order to creating an svn account, you have to send the output that is mentioned below link [1].
+    When you send this output, the write permissions for http://svn.pardus.org.tr/uludag/trunk/playground/
+    and http://svn.pardus.org.tr/pardus/playground/ directories will be given.
+
+    After this period you can start to implement the choosed junior job. If you need , please do not hasitate to
+    communicate with your mentor.
+
+    Regards,
+
+    [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
+
 
