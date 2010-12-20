@@ -51,12 +51,12 @@ msgstr "Desarrollado inicialmente por"
 #: src/firewallmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Klemens Häckel"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "click3d (at) linuxmail.org"
 
 # favor revisar, "provide backend" ??
 #: src/firewallmanager/main.py:96
