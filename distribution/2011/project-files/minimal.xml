@@ -342,6 +342,7 @@
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
+        <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
