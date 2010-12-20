@@ -29,7 +29,10 @@
    <bool>false</bool>
   </property>
   <property name="styleSheet">
-   <string notr="true">#frame{background-color: white}
+   <string notr="true">#VolumeItem QLabel {
+        color: #222222;
+}
+#frame{background-color: white}
 #frame:hover{background-color: qlineargradient(spread:pad, x1:0.519597, y1:1, x2:0.518067, y2:0, stop:0 rgba(189, 189, 189, 255), stop:1 rgba(225, 225, 225, 255))}
 </string>
   </property>
