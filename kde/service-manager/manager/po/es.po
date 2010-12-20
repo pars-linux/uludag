@@ -55,7 +55,7 @@ msgstr "Klemens Häckel"
 #: src/servicemanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "click3d@linuxmail.org"
+msgstr "click3d (at) linuxmail.org"
 
 #: src/servicemanager/base.py:96
 msgid "Authentication Error"
