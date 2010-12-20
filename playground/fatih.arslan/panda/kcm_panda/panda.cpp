@@ -28,8 +28,10 @@
 #include <QFormLayout>
 #include <QBoxLayout>
 #include <QGroupBox>
+#include <QLabel>
 
 #include <kcmodule.h>
+
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kconfig.h>
@@ -45,6 +47,7 @@
 #include <QX11Info>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
+
 
 
 
@@ -78,10 +81,13 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   box->setLayout(form);
   layout->addWidget(box);
 
-  title = new QLabel( i18n("&Make a copy of grub .. EXAMPLE" ), box );
+  QLabel *title = new QLabel( i18n("Make a copy of grub .. EXAMPLE" ), box );
   title->setWhatsThis( i18n("Click on question button, hover on the \"title\" Qlabel, this text will displ."));
 
   form->addRow(title);
+
+  QCheckBox *driverSettings = new QCheckBox("Save settings system &wide");
+  form->addRow(driverSettings);
 
   KAboutData *about =
     new KAboutData(I18N_NOOP("kcmpanda"), 0, ki18n("KDE Panda Control Module"),
@@ -104,39 +110,10 @@ void PandaConfig::load()
 
 void PandaConfig::save()
 {
-  XKeyboardControl kbd;
-  XGetKeyboardControl(QX11Info::display(), &kbd);
-
-  KConfig _config("kcmbellrc", KConfig::NoGlobals);
-  KConfigGroup config(&_config, "General");
-  config.writeEntry("Volume",bellVolume);
-  config.writeEntry("Pitch",bellPitch);
-  config.writeEntry("Duration",bellDuration);
-
-  config.sync();
-
-  KConfig _cfg("kdeglobals", KConfig::NoGlobals);
-  KConfigGroup cfg(&_cfg, "General");
-  cfg.writeEntry("UseSystemBell", m_useBell->isChecked());
-  cfg.sync();
-
-  if (!m_useBell->isChecked())
-  {
-    KConfig config("kaccessrc");
-
-    KConfigGroup group = config.group("Bell");
-    group.writeEntry("SystemBell", false);
-    group.writeEntry("ArtsBell", false);
-    group.writeEntry("VisibleBell", false);
-  }
 }
 
 
 void PandaConfig::defaults()
 {
-  m_volume->setValue(100);
-  m_pitch->setValue(800);
-  m_duration->setValue(100);
-  m_useBell->setChecked( false );
 }
 
