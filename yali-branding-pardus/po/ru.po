@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-18 10:02+0000\n"
+"POT-Creation-Date: 2010-12-20 14:02+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -17,14 +17,12 @@ msgstr ""
 "Language: ru\n"
 
 #: ../release.xml.in.h:1
-#, fuzzy
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
 msgstr "Загрузчик крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt;Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
 
 #: ../release.xml.in.h:2
-#, fuzzy
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr "Раскладка клавиатуры - это описание того, как расположены клавиши на клавиатуре. По всему миру используются различные раскладки клавиатуры. Та, которая нужна Вам, как правило завит от страны проживания или используемого Вами языка. Данный диалог позволит Вам выбрать раскладку клавиатуры, которую Вы хотите использовать в Pardus. Вы можете проверить выбранную раскладку, набрав что-нибудь в специальном поле ввода."
+msgstr "Раскладка клавиатуры - это описание того, как расположены клавиши на клавиатуре. По всему миру используются различные раскладки клавиатуры. Та, которая нужна Вам, как правило завит от страны проживания или используемого Вами языка. Данный диалог позволит Вам выбрать раскладку клавиатуры, которую Вы хотите использовать в Pardus.&lt;br&gt;&lt;br&gt;Вы можете проверить выбранную раскладку, набрав что-нибудь в специальном поле ввода."
 
 #: ../release.xml.in.h:3
 msgid "Add Users"
@@ -51,9 +49,8 @@ msgid "Configure Bootloader"
 msgstr "Настройка загрузчика"
 
 #: ../release.xml.in.h:9
-#, fuzzy
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
-msgstr "Установки даты и времени позволят вам установить дату и время на вашем компьютере. Также, вы скорее всего захотите установить часовой пояс для того, чтобы переключаться на летнее время автоматически, сохраняя ваши настройки.&lt;br&gt;&lt;br&gt;Часовой пояс - это область на земле, для которой установлено время, обычно обозначаемое как местное время. После установки часовой пояс позволит вам рассчитать время относительно UTC, Скоординированного Универсального Времени."
+msgstr "Установки даты и времени позволят вам установить дату и время на вашем компьютере. Также, вы скорее всего захотите установить правильный часовой пояс для того, чтобы переключаться на летнее время автоматически, сохраняя ваши настройки.&lt;br&gt;&lt;br&gt;Часовой пояс - это область на земле, для которой установлено время, обычно обозначаемое как местное время. После установки часовой пояс позволит вам рассчитать время относительно UTC, Скоординированного Универсального Времени."
 
 #: ../release.xml.in.h:10
 msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
@@ -157,7 +154,6 @@ msgid "Validation is comparing the packages in the medium with the original ones
 msgstr ""
 
 #: ../release.xml.in.h:36
-#, fuzzy
 msgid "Welcome back"
 msgstr "Добро пожаловать"
 
@@ -191,11 +187,11 @@ msgstr ""
 
 #: ../release.xml.in.h:44
 msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
-msgstr ""
+msgstr "Вам понадобится по крайней мере 4гб из не разбитого не используемого дискового пространства или на диске для установки Pardus (рекомендуется 10гб). Пожалуйста, выберите диск, который вы хотите использовать для установки. На следующем этапе, вы сможете выбирать различные варианты разметки."
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr ""
+msgstr "Вы установили и загрузили Pardus успешно ... Всего несколько кликов осталось... Pardus поддерживает работу нескольких пользователей в одной системе. Так что вам нужно создать хотя бы одного пользователя и настроить общесистемную конфигурацию. Таким образом, чтобы наслаждаться Pardus ..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya работает"
