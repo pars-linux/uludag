@@ -19,22 +19,18 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
+#include <QCheckBox>
+#include <QPushButton>
+#include <QLabel>
 
 //Added by qt3to4:
 #include <QVBoxLayout>
 #include <QFormLayout>
 #include <QBoxLayout>
 #include <QGroupBox>
-#include <QLabel>
-#include <QCheckBox>
-#include <QPushButton>
-#include <QGLContext>
-#include <QGLWidget>
 
 
 #include <kcmodule.h>
-
-
 #include <kaboutdata.h>
 #include <kapplication.h>
 #include <kconfig.h>
@@ -149,23 +145,22 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   // Current Driver Information
   QGroupBox *top_box = new QGroupBox(i18n("Current Driver Information"), this );
-  QVBoxLayout *layout_info = new QVBoxLayout();
-  top_box->setLayout(layout_info);
+  QFormLayout *form_info = new QFormLayout();
+  top_box->setLayout(form_info);
   layout->addWidget(top_box);
 
-  // Get and set opengl
   QLabel *vendor_title = new QLabel(top_box);
   vendor_title->setText(gli.glVendor);
-  layout_info->addWidget(vendor_title);
 
-  QLabel *renderer_title = new QLabel( i18n("Renderer %s", gli.glRenderer), top_box );
+  QLabel *renderer_title = new QLabel(top_box);
   renderer_title->setText(gli.glRenderer);
-  layout_info->addWidget(renderer_title);
 
   QLabel *version_title = new QLabel(top_box);
   version_title->setText(gli.glVersion);
-  layout_info->addWidget(version_title);
 
+  form_info->addRow(i18n("&Vendor:"), vendor_title);
+  form_info->addRow(i18n("&Renderer:"), renderer_title);
+  form_info->addRow(i18n("&Version:"), version_title);
 
   // Driver Settings
   QGroupBox *bottom_box = new QGroupBox(i18n("Driver Settings"), this );
