@@ -536,6 +536,10 @@ Lake_dance_XviD.AVI
  imagemagick-doc
  tuxpaint-doc 
 \end{verbatim}
+\item mypaint paketi kurulumu sonrası:
+
+Uygulamayı açın ve fırçaların birkaçını kullanarak çizim yapmayı deneyin, yapabildiğinizi gözlemleyin.
+
 \item autopano-sift-C paketi kuruluu sonrası:
 
 multimedia-tr.pdf hugin testini gerçekleştirin.
@@ -862,8 +866,8 @@ multimedia-tr.pdf dvd-slideshow ve kdenlive testini gerçekleştiriniz.
  \item avidemux ve avidemux-qt paketleri kurulumu sonrası:
 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
 VCD_extensions.mpeg
 \end{verbatim}
 Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go $\rightarrow$ Play/Stop düymesine basın ve açtığınız videonun ses ve görüntü bakımından sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -871,10 +875,10 @@ Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go $\rightarrow$ Play/S
 
 video.mpeg dosyasının sorunsuz bir şekilde oluşmuş olduğunu gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" 
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+  avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" 
 --output-format MPEG --quit 
- # mplayer video.mpeg
+  mplayer video.mpeg
 \end{verbatim}
 
 \end{enumerate}

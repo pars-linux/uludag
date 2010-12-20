@@ -269,7 +269,7 @@ Aşağıda bulunan paketler kurulum testine tabidir
  gimp-ufraw-plugin
  imagemagick-doc
  tuxpaint-doc 
-</PRE></LI><LI CLASS="li-enumerate">autopano-sift-C paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">enblend paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hugin paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test-hugin.zip
+</PRE></LI><LI CLASS="li-enumerate">mypaint paketi kurulumu sonrası:<P>Uygulamayı açın ve fırçaların birkaçını kullanarak çizim yapmayı deneyin, yapabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">autopano-sift-C paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">enblend paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hugin paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test-hugin.zip
 </PRE></LI><LI CLASS="li-enumerate">tesseract paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde text dosyasının oluştuğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_tesseract.tif
  tesseract test_tesseract.tif test_tesseract
@@ -409,15 +409,15 @@ dvd-slideshow image.txt
 mplayer image.vob 
 </PRE></LI><LI CLASS="li-enumerate">kdenlive paketi kurulumu sonrası:<P>Kdenlive uygulamasını açın ve Projeler → Klip ekle yolunu izleyerek aşağıda bulunan dosyayı ekleyin ve çalıştırın sesinin ve görüntüsünün sorunsuz olduğunu gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
-</PRE></LI><LI CLASS="li-enumerate">kiconedit paketi kurulumu sonrası:<P>Menüden uygulamayı açın, Dosya → Aç yolunu izleyerek /usr/kde/4/share/apps/amarok/icons/hicolor/16x16/actions/ dizini altından bir ikonu açın ve düzgün bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">dvdauthor paketi kurulumu sonrası:<P>multimedia-tr.pdf dvd-slideshow ve kdenlive testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux-common paketi kurulumu sonrası:<P>multimedia-tr.pdf avidemux testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux ve avidemux-qt paketleri kurulumu sonrası:<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
+</PRE></LI><LI CLASS="li-enumerate">kiconedit paketi kurulumu sonrası:<P>Menüden uygulamayı açın, Dosya → Aç yolunu izleyerek /usr/kde/4/share/apps/amarok/icons/hicolor/16x16/actions/ dizini altından bir ikonu açın ve düzgün bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">dvdauthor paketi kurulumu sonrası:<P>multimedia-tr.pdf dvd-slideshow ve kdenlive testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux-common paketi kurulumu sonrası:<P>multimedia-tr.pdf avidemux testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux ve avidemux-qt paketleri kurulumu sonrası:<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
 VCD_extensions.mpeg
 </PRE><P>Yukarıda bulunan dosyaları ilgili uygulama ile açın. Go → Play/Stop düymesine basın ve açtığınız videonun ses ve görüntü bakımından sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">avidemux-cli paketi kurulumu sonrası:<P>video.mpeg dosyasının sorunsuz bir şekilde oluşmuş olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
- # avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" 
+</P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+  avidemux2_cli --force-alt-h264 --load "Lake_dance_XviD.AVI" --save "video.mpeg" 
 --output-format MPEG --quit 
- # mplayer video.mpeg
+  mplayer video.mpeg
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
