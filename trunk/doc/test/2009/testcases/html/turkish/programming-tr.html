@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/programming-tr.tex programming-tr -->
+<!--HEVEA command line is: hevea programming-tr.tex programming-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -86,6 +86,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 mcpp
 translate-toolkit-docs
 ctags
+clearsilver
+clearsilver-devel
+lemon
 </PRE></LI><LI CLASS="li-enumerate">translate-toolkit paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import translate
@@ -102,6 +105,7 @@ git-emacs
 git-gui
 git-svn
 gitweb
+gitosis
 </PRE></LI><LI CLASS="li-enumerate">cvs paketi kurulumu sonrası:<P>Aşağıda bulunan komutları sırası ile çalıştırın:
 </P><PRE CLASS="verbatim"> cvs -d ~/cvsroot init
  export CVSROOT=$HOME/cvsroot
@@ -188,7 +192,9 @@ llvm-docs
 llvm-ocaml
 </PRE><!--TOC subsection Ruby alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">8.2</A>  Ruby alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-ruby paketi kurulumu sonrası:<PRE CLASS="verbatim">irb --simple-prompt 
+Aşağıdaki paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">ruby-redland
+</PRE></LI><LI CLASS="li-enumerate">ruby paketi kurulumu sonrası:<PRE CLASS="verbatim">irb --simple-prompt 
 puts "Test Pardus"
 </PRE><P>Yukarıda bulunan komutun aşağıda bulunan çıktıyı döndürdüğünü gözlemleyin.
 </P><PRE CLASS="verbatim">Test Pardus
@@ -200,7 +206,9 @@ tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekr
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_tcl.tcl
  wish test_tcl.tcl
 </PRE></LI></OL><!--TOC subsection Php alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıdaki paketler sadece kurulum testine tabidir
+<PRE CLASS="verbatim"> php-redland
+</PRE></LI><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
  php test_phpgtk.phpw
 </PRE></LI><LI CLASS="li-enumerate">php-cli, php-common, mod_php paketleri kurulumu sonrası:<P>Servis yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.</P><PRE CLASS="verbatim"> cd /var/www/localhost/htdocs/
@@ -299,6 +307,54 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
  python-EasyGui-docs
  python-pytables-docs
  python-mako-docs
+ python-clamav
+ python-kaa-display
+ python-kaa-imlib2
+ python-kaa-metadata
+ python-rapyd 
+ scientificpython-devel
+ scientificpython-docs
+
+</PRE></LI><LI CLASS="li-enumerate">scientificpython paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import Scientific
+</PRE></LI><LI CLASS="li-enumerate">python-tk_happy paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import tk_happy
+</PRE></LI><LI CLASS="li-enumerate">python-zsi paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import ZSI
+</PRE></LI><LI CLASS="li-enumerate">python-rpy paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import rpy2
+</PRE></LI><LI CLASS="li-enumerate">python-redland paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import Redland
+</PRE></LI><LI CLASS="li-enumerate">python-pmw paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import Pmv
+</PRE></LI><LI CLASS="li-enumerate">python-pyRXP paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import pyRXP
+</PRE></LI><LI CLASS="li-enumerate">python-pyquante paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import PyQuante
+</PRE></LI><LI CLASS="li-enumerate">python-pygtksourceview paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import gtksourceview2
+</PRE></LI><LI CLASS="li-enumerate">python-pygtkglext paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import gtk
+</PRE></LI><LI CLASS="li-enumerate">python-nltk paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import nltk
+</PRE></LI><LI CLASS="li-enumerate">python-logbook paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import logbook
+</PRE></LI><LI CLASS="li-enumerate">python-musicbrainz2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import musicbrainz2
+</PRE></LI><LI CLASS="li-enumerate">python-PyODE paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import ode
+</PRE></LI><LI CLASS="li-enumerate">python-PyYAML paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import yaml
+</PRE></LI><LI CLASS="li-enumerate">python-flickrapi paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import flickrapi
+</PRE></LI><LI CLASS="li-enumerate">python-gameobjects paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import gameobjects
+</PRE></LI><LI CLASS="li-enumerate">python-irclib paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import irclib
+</PRE></LI><LI CLASS="li-enumerate">python-kaa-base paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import kaa
+</PRE></LI><LI CLASS="li-enumerate">pigment-python paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import pgm
 </PRE></LI><LI CLASS="li-enumerate">pyalsaaudio paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import alsaaudio
@@ -539,12 +595,24 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  cd manager
  sudo python setup.py build 
  sudo python setup.py install
+</PRE></LI><LI CLASS="li-enumerate">django-contact-form paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import contact_form
+</PRE></LI><LI CLASS="li-enumerate">django-notification paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import notification
+</PRE></LI><LI CLASS="li-enumerate">django-pagination paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import pagination
+</PRE></LI><LI CLASS="li-enumerate">django-piston paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import piston
+</PRE></LI><LI CLASS="li-enumerate">django-profile paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import profile
 </PRE></LI><LI CLASS="li-enumerate">django-tagging paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> ipython
  import tagging
 </PRE></LI><LI CLASS="li-enumerate">django-south paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> ipython
  import south
+</PRE></LI><LI CLASS="li-enumerate">django-sorting paketi kurulumu sonrası:<PRE CLASS="verbatim"> ipython
+ import django_sorting
 </PRE></LI><LI CLASS="li-enumerate">pycha paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
