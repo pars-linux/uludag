@@ -2,7 +2,7 @@
 # Disk Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 msgid ""
@@ -20,10 +20,11 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
+msgstr "Un programa para administrar particiones y sus puntos de montage"
 
 # favor revisar, porque la idea es:
-# administrar puntos de montaje para particiones, discos y medios de almacenamiento - pero en lenguaje sencillo
+# administrar puntos de montaje para particiones, discos y medios de
+# almacenamiento - pero en lenguaje sencillo
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
 msgid "Disk Manager"
@@ -42,14 +43,14 @@ msgid "Current Maintainer"
 msgstr "Mantenedor actual"
 
 #: src/diskmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Klemens Häckel"
+
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "click3d (at) linuxmail.org"
 
 #: src/diskmanager/main.py:86
 msgid ""
@@ -80,7 +81,8 @@ msgstr "Acceso denegado."
 msgid "Settings"
 msgstr "Configuración"
 
-# favor revisar contexto, "disco" deberia ser más generico - como partición, medio extraíble, recurso compartido en la red, etc
+# favor revisar contexto, "disco" deberia ser más generico - como partición,
+# medio extraíble, recurso compartido en la red, etc
 #: ui/ui_edit.py:67
 msgid "Mount Disk Automatically"
 msgstr "Montar unidad automáticamente"
