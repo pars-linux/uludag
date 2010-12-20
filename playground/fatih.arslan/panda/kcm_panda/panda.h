@@ -37,7 +37,8 @@ class PandaConfig : public KCModule
   void defaults();
 
  private:
-  QCheckBox    *driverSettings;
+  QCheckBox    *osDriver;
+  QCheckBox    *vendorDriver;
 };
 
 #endif

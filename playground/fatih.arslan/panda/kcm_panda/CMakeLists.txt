@@ -10,6 +10,7 @@ kde4_add_plugin(kcm_panda ${kcm_panda_PART_SRCS})
 
 
 target_link_libraries(kcm_panda  ${KDE4_KDEUI_LIBS} ${QT_QTGUI_LIBRARY} ${X11_X11_LIB})
+target_link_libraries(kcm_panda ${OPENGL_gl_LIBRARY} ${OPENGL_glu_LIBRARY})
 
 install(TARGETS kcm_panda  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
