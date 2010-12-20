@@ -19,7 +19,7 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include <QCheckBox>
+#include <QRadioButton>
 #include <QPushButton>
 #include <QLabel>
 
@@ -149,29 +149,39 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   top_box->setLayout(form_info);
   layout->addWidget(top_box);
 
+  // Add empty string
+  QLabel *empty_str = new QLabel("", top_box);
+  form_info->addRow(QString(), empty_str);
+
   QLabel *vendor_title = new QLabel(top_box);
   vendor_title->setText(gli.glVendor);
+  vendor_title->setIndent(10);
 
   QLabel *renderer_title = new QLabel(top_box);
   renderer_title->setText(gli.glRenderer);
+  renderer_title->setIndent(10);
 
   QLabel *version_title = new QLabel(top_box);
   version_title->setText(gli.glVersion);
+  version_title->setIndent(10);
 
-  form_info->addRow(i18n("&Vendor:"), vendor_title);
-  form_info->addRow(i18n("&Renderer:"), renderer_title);
-  form_info->addRow(i18n("&Version:"), version_title);
+  form_info->addRow(i18n("Vendor:"), vendor_title);
+  form_info->addRow(i18n("Renderer:"), renderer_title);
+  form_info->addRow(i18n("Version:"), version_title);
+
+  form_info->setLabelAlignment(Qt::AlignLeft);
+  form_info->setFormAlignment(Qt::AlignHCenter);
 
   // Driver Settings
-  QGroupBox *bottom_box = new QGroupBox(i18n("Driver Settings"), this );
+  QGroupBox *bottom_box = new QGroupBox(i18n("Driver Preferencies"), this );
   QVBoxLayout *layout_settings = new QVBoxLayout();
   bottom_box->setLayout(layout_settings);
   layout->addWidget(bottom_box);
 
-  QCheckBox *osDriver = new QCheckBox("Use Open Source Driver ... EXAMPLE");
+  QRadioButton *osDriver = new QRadioButton("Use Open Source Driver ... EXAMPLE");
   layout_settings->addWidget(osDriver);
 
-  QCheckBox *vendorDriver = new QCheckBox("Use Driver from the Vendor itself ... EXAMPLE");
+  QRadioButton *vendorDriver = new QRadioButton("Use Driver from the Vendor itself ... EXAMPLE");
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
