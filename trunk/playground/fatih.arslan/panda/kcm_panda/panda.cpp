@@ -19,9 +19,6 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include <QCheckBox>
-#include <QPushButton>
-
 
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -29,8 +26,14 @@
 #include <QBoxLayout>
 #include <QGroupBox>
 #include <QLabel>
+#include <QCheckBox>
+#include <QPushButton>
+#include <QGLContext>
+#include <QGLWidget>
+
 
 #include <kcmodule.h>
+
 
 #include <kaboutdata.h>
 #include <kapplication.h>
@@ -39,31 +42,35 @@
 #include <knotification.h>
 #include <klocale.h>
 #include <knuminput.h>
+#include <kdebug.h>
 
-#include "panda.h"
-#include "panda.moc"
 
+// X11 includes
 #include <X11/Xlib.h>
+#include <X11/Xutil.h>
+
+// OpenGL includes
+#include <GL/gl.h>
+#include <GL/glext.h>
+#include <GL/glx.h>
+
+
 #include <QX11Info>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
 
-
+#include "panda.h"
+#include "panda.moc"
 
 
 K_PLUGIN_FACTORY(PandaConfigFactory, registerPlugin<PandaConfig>();)
 K_EXPORT_PLUGIN(PandaConfigFactory("kcmpanda"))
 
 
-
 extern "C"
 {
   KDE_EXPORT void kcminit_panda()
   {
-    XKeyboardState kbd;
-    XKeyboardControl kbdc;
-
-    XGetKeyboardControl(QX11Info::display(), &kbd);
 
     KConfig _config( "kcmpandarc", KConfig::NoGlobals  );
     KConfigGroup config(&_config, "General");
@@ -73,21 +80,79 @@ extern "C"
 PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     KCModule(PandaConfigFactory::componentData(), parent, args)
 {
+  GLXContext ctx;
+  char *displayName = NULL;
+  int scrnum = 0;
+
+  const int attribSingle[] = {
+    GLX_RGBA,
+    GLX_RED_SIZE, 1,
+    GLX_GREEN_SIZE, 1,
+    GLX_BLUE_SIZE, 1,
+    None };
+  const int attribDouble[] = {
+    GLX_RGBA,
+    GLX_RED_SIZE, 1,
+    GLX_GREEN_SIZE, 1,
+    GLX_BLUE_SIZE, 1,
+    GLX_DOUBLEBUFFER,
+    None };
+
+  Display *dpy = XOpenDisplay(displayName);
+  XVisualInfo *visinfo;
+
+  visinfo = glXChooseVisual(dpy, scrnum, const_cast<int*>(attribSingle));
+  if (!visinfo) {
+     visinfo = glXChooseVisual(dpy, scrnum, const_cast<int*>(attribDouble));
+     if (!visinfo) {
+       kDebug() << "Error: couldn't find RGB GLX visual\n";
+       return ;
+     }
+  }
+
+  ctx = glXCreateContext( dpy, visinfo, NULL, false);
+
+  const char *vendor = (const char *) glGetString(GL_VENDOR);
+  const char *renderer = (const char *) glGetString(GL_RENDERER);
+  const char *version = (const char *) glGetString(GL_VERSION);
+
+  QString VENDOR_q(vendor);
+  QString RENDERER_q (renderer);
+  QString VERSION_q(version);
+
   QBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
 
-  QGroupBox *box = new QGroupBox(i18n("Panda Settings"), this );
-  QFormLayout *form = new QFormLayout();
-  box->setLayout(form);
-  layout->addWidget(box);
+  // Current Driver Information
+  QGroupBox *top_box = new QGroupBox(i18n("Current Driver Information"), this );
+  QVBoxLayout *layout_info = new QVBoxLayout();
+  top_box->setLayout(layout_info);
+  layout->addWidget(top_box);
 
-  QLabel *title = new QLabel( i18n("Make a copy of grub .. EXAMPLE" ), box );
-  title->setWhatsThis( i18n("Click on question button, hover on the \"title\" Qlabel, this text will displ."));
+  // Get and set opengl
+  QLabel *vendor_title = new QLabel(top_box);
+  vendor_title->setText(VENDOR_q);
+  layout_info->addWidget(vendor_title);
 
-  form->addRow(title);
+  QLabel *renderer_title = new QLabel( i18n("Renderer %s", RENDERER_q), top_box );
+  layout_info->addWidget(renderer_title);
 
-  QCheckBox *driverSettings = new QCheckBox("Save settings system &wide");
-  form->addRow(driverSettings);
+  QLabel *version_title = new QLabel(top_box);
+  vendor_title->setText(VERSION_q);
+  layout_info->addWidget(version_title);
+
+
+  // Driver Settings
+  QGroupBox *bottom_box = new QGroupBox(i18n("Driver Settings"), this );
+  QVBoxLayout *layout_settings = new QVBoxLayout();
+  bottom_box->setLayout(layout_settings);
+  layout->addWidget(bottom_box);
+
+  QCheckBox *osDriver = new QCheckBox("Use Open Source Driver ... EXAMPLE");
+  layout_settings->addWidget(osDriver);
+
+  QCheckBox *vendorDriver = new QCheckBox("Use Driver from the Vendor itself ... EXAMPLE");
+  layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
     new KAboutData(I18N_NOOP("kcmpanda"), 0, ki18n("KDE Panda Control Module"),
