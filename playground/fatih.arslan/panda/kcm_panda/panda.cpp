@@ -55,6 +55,8 @@
 #include <GL/glx.h>
 
 
+
+
 #include <QX11Info>
 #include <kpluginfactory.h>
 #include <kpluginloader.h>
@@ -62,6 +64,11 @@
 #include "panda.h"
 #include "panda.moc"
 
+static struct glinfo {
+      const char *glVendor;
+      const char *glRenderer;
+      const char *glVersion;
+} gli;
 
 K_PLUGIN_FACTORY(PandaConfigFactory, registerPlugin<PandaConfig>();)
 K_EXPORT_PLUGIN(PandaConfigFactory("kcmpanda"))
@@ -99,7 +106,12 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     None };
 
   Display *dpy = XOpenDisplay(displayName);
+  unsigned long mask;
   XVisualInfo *visinfo;
+  Window root, win;
+  XSetWindowAttributes attr;
+
+  root = DefaultRootWindow(dpy);
 
   visinfo = glXChooseVisual(dpy, scrnum, const_cast<int*>(attribSingle));
   if (!visinfo) {
@@ -110,15 +122,27 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
      }
   }
 
-  ctx = glXCreateContext( dpy, visinfo, NULL, false);
+  attr.colormap = XCreateColormap(dpy, root, visinfo->visual, AllocNone);
+  attr.event_mask = StructureNotifyMask | ExposureMask;
+  mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
+  win = XCreateWindow(dpy, root, 0, 0, 600, 600, 0, visinfo->depth, InputOutput, visinfo->visual, mask, &attr);
 
-  const char *vendor = (const char *) glGetString(GL_VENDOR);
-  const char *renderer = (const char *) glGetString(GL_RENDERER);
-  const char *version = (const char *) glGetString(GL_VERSION);
+  ctx = glXCreateContext( dpy, visinfo, NULL, GL_TRUE);
 
-  QString VENDOR_q(vendor);
-  QString RENDERER_q (renderer);
-  QString VERSION_q(version);
+  if (glXMakeCurrent(dpy, win, ctx)) {
+    gli.glVendor = (const char *) glGetString(GL_VENDOR);
+    gli.glRenderer = (const char *) glGetString(GL_RENDERER);
+    gli.glVersion = (const char *) glGetString(GL_VERSION);
+
+  }
+
+    /*
+    QString VENDOR_q(vendor);
+    QString RENDERER_q (renderer);
+    QString VERSION_q(version);*/
+  fprintf(stderr, "vendor: %s\n", glGetString(GL_VENDOR));
+  fprintf(stderr, "renderer: %s\n", glGetString(GL_RENDERER));
+  fprintf(stderr, "version: %s\n", glGetString(GL_VERSION));
 
   QBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
@@ -131,14 +155,15 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   // Get and set opengl
   QLabel *vendor_title = new QLabel(top_box);
-  vendor_title->setText(VENDOR_q);
+  vendor_title->setText(gli.glVendor);
   layout_info->addWidget(vendor_title);
 
-  QLabel *renderer_title = new QLabel( i18n("Renderer %s", RENDERER_q), top_box );
+  QLabel *renderer_title = new QLabel( i18n("Renderer %s", gli.glRenderer), top_box );
+  renderer_title->setText(gli.glRenderer);
   layout_info->addWidget(renderer_title);
 
   QLabel *version_title = new QLabel(top_box);
-  vendor_title->setText(VERSION_q);
+  version_title->setText(gli.glVersion);
   layout_info->addWidget(version_title);
 
 
