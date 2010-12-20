@@ -17,15 +17,13 @@ from quickformat.ui_volumeitem import Ui_VolumeItem
 
 import sys, os
 
-# volumeList = {listIndex:'VolumePath', ..}
-
 volumeList = {'':''}
 
 fileSystems = { "Ext4":"ext4",
                 "Ext3":"ext3",
                 "Ext2":"ext2",
                 "FAT32":"vfat",
-                "NTFS":"ntfs"}
+                "NTFS":"ntfs",}
 
 class VolumeItem(Ui_VolumeItem, QtGui.QWidget):
     def __init__(self, name, path, label, format, icon, parent = None):
@@ -119,6 +117,7 @@ class QuickFormat(QtGui.QWidget):
             self.ui.fileSystem.addItem(fs)
 
     def filter_file_system(self, fileSystem):
+        print fileSystem
         if fileSystem!="" \
                 and not str(fileSystem).startswith("iso") \
                 and not str(fileSystem).startswith("swap"):
