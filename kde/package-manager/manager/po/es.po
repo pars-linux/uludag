@@ -60,12 +60,12 @@ msgstr "Autor inicial"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Su nombre"
+msgstr "Klemens Häckel"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "Su email"
+msgstr "click3d (at) linuxmail.org"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
