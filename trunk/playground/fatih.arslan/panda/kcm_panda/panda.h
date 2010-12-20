@@ -23,7 +23,7 @@
 
 #include "kcmodule.h"
 
-class QCheckBox;
+class QRadioButton;
 
 class PandaConfig : public KCModule
 {
@@ -37,8 +37,8 @@ class PandaConfig : public KCModule
   void defaults();
 
  private:
-  QCheckBox    *osDriver;
-  QCheckBox    *vendorDriver;
+  QRadioButton    *osDriver;
+  QRadioButton    *vendorDriver;
 };
 
 #endif
