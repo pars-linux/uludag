@@ -6,3 +6,4 @@ Exec=user-manager
 Icon=system-users
 Type=Application
 Categories=Qt;KDE;System;
+NotShowIn=KDE;
