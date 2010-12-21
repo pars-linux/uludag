@@ -3,6 +3,11 @@
 Rubymodules
 ===========
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 get_config
 -----------
 
