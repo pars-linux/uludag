@@ -58,13 +58,8 @@
 #include <kpluginloader.h>
 
 #include "panda.h"
+#include "panda_parser.h"
 #include "panda.moc"
-
-static struct glinfo {
-      const char *glVendor;
-      const char *glRenderer;
-      const char *glVersion;
-} gli;
 
 K_PLUGIN_FACTORY(PandaConfigFactory, registerPlugin<PandaConfig>();)
 K_EXPORT_PLUGIN(PandaConfigFactory("kcmpanda"))
@@ -83,59 +78,7 @@ extern "C"
 PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     KCModule(PandaConfigFactory::componentData(), parent, args)
 {
-  GLXContext ctx;
-  char *displayName = NULL;
-  int scrnum = 0;
-
-  const int attribSingle[] = {
-    GLX_RGBA,
-    GLX_RED_SIZE, 1,
-    GLX_GREEN_SIZE, 1,
-    GLX_BLUE_SIZE, 1,
-    None };
-  const int attribDouble[] = {
-    GLX_RGBA,
-    GLX_RED_SIZE, 1,
-    GLX_GREEN_SIZE, 1,
-    GLX_BLUE_SIZE, 1,
-    GLX_DOUBLEBUFFER,
-    None };
-
-  Display *dpy = XOpenDisplay(displayName);
-  unsigned long mask;
-  XVisualInfo *visinfo;
-  Window root, win;
-  XSetWindowAttributes attr;
-
-  root = DefaultRootWindow(dpy);
-
-  visinfo = glXChooseVisual(dpy, scrnum, const_cast<int*>(attribSingle));
-  if (!visinfo) {
-     visinfo = glXChooseVisual(dpy, scrnum, const_cast<int*>(attribDouble));
-     if (!visinfo) {
-       kDebug() << "Error: couldn't find RGB GLX visual\n";
-       return ;
-     }
-  }
-
-  attr.colormap = XCreateColormap(dpy, root, visinfo->visual, AllocNone);
-  attr.event_mask = StructureNotifyMask | ExposureMask;
-  mask = CWBackPixel | CWBorderPixel | CWColormap | CWEventMask;
-  win = XCreateWindow(dpy, root, 0, 0, 600, 600, 0, visinfo->depth, InputOutput, visinfo->visual, mask, &attr);
-
-  ctx = glXCreateContext( dpy, visinfo, NULL, GL_TRUE);
-
-  if (glXMakeCurrent(dpy, win, ctx)) {
-    gli.glVendor = (const char *) glGetString(GL_VENDOR);
-    gli.glRenderer = (const char *) glGetString(GL_RENDERER);
-    gli.glVersion = (const char *) glGetString(GL_VERSION);
-  }
-
-  // TODO: Debug lines, should be removed at release
-  fprintf(stderr, "vendor: %s\n", glGetString(GL_VENDOR));
-  fprintf(stderr, "renderer: %s\n", glGetString(GL_RENDERER));
-  fprintf(stderr, "version: %s\n", glGetString(GL_VERSION));
-
+    
   // The Main Layout, on top of this are two groupboxes, topBox and bottomBox
   QBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
@@ -145,7 +88,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   QGridLayout *infoLayout = new QGridLayout(this);
   infoLayout->setAlignment(Qt::AlignTop|Qt::AlignLeft);
-  infoLayout->setSpacing(10);
+  //infoLayout->setSpacing(10);
 
   topBox->setLayout(infoLayout);
   layout->addWidget(topBox);
@@ -155,6 +98,10 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   iconLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
   iconLabel->setPixmap(KIcon("hwinfo").pixmap(64));
 
+  // Get opengl informations
+  pandaParser = new PandaParser();
+  pandaParser->getGlStrings();
+
   QFont bFont;
   bFont.setBold(true);
 
@@ -162,21 +109,21 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   vendorLabel->setFont(bFont);
   vendorLabel->setText(i18n("Vendor:"));
   QLabel *vendorNameLabel = new QLabel();
-  vendorNameLabel->setText(gli.glVendor);
+  vendorNameLabel->setText(pandaParser->glVendor);
   vendorNameLabel->setIndent(10);
 
   QLabel *rendererLabel = new QLabel();
   rendererLabel->setFont(bFont);
   rendererLabel->setText(i18n("Renderer:"));
   QLabel *rendererNameLabel = new QLabel();
-  rendererNameLabel->setText(gli.glRenderer);
+  rendererNameLabel->setText(pandaParser->glRenderer);
   rendererNameLabel->setIndent(10);
 
   QLabel *versionLabel = new QLabel();
   versionLabel->setFont(bFont);
   versionLabel->setText(i18n("Version:"));
   QLabel *versionNameLabel = new QLabel();
-  versionNameLabel->setText(gli.glVersion);
+  versionNameLabel->setText(pandaParser->glVersion);
   versionNameLabel->setIndent(10);
 
   infoLayout->addWidget(iconLabel,1,1,3,1,Qt::AlignCenter);
@@ -195,11 +142,12 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   QVBoxLayout *layout_settings = new QVBoxLayout();
   bottomGroupBox->setLayout(layout_settings);
   layout->addWidget(bottomGroupBox);
+  layout->addStretch();
 
-  QRadioButton *osDriver = new QRadioButton("Use Open Source Driver ... EXAMPLE");
+  QRadioButton *osDriver = new QRadioButton("Use Open Source Driver");
   layout_settings->addWidget(osDriver);
 
-  QRadioButton *vendorDriver = new QRadioButton("Use Driver from the Vendor itself ... EXAMPLE");
+  QRadioButton *vendorDriver = new QRadioButton("Use Vendor Driver");
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
