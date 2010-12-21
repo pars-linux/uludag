@@ -129,54 +129,72 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     gli.glVendor = (const char *) glGetString(GL_VENDOR);
     gli.glRenderer = (const char *) glGetString(GL_RENDERER);
     gli.glVersion = (const char *) glGetString(GL_VERSION);
-
   }
 
-    /*
-    QString VENDOR_q(vendor);
-    QString RENDERER_q (renderer);
-    QString VERSION_q(version);*/
+  // TODO: Debug lines, should be removed at release
   fprintf(stderr, "vendor: %s\n", glGetString(GL_VENDOR));
   fprintf(stderr, "renderer: %s\n", glGetString(GL_RENDERER));
   fprintf(stderr, "version: %s\n", glGetString(GL_VERSION));
 
+  // The Main Layout, on top of this are two groupboxes, topBox and bottomBox
   QBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
 
   // Current Driver Information
-  QGroupBox *top_box = new QGroupBox(i18n("Current Driver Information"), this );
-  QFormLayout *form_info = new QFormLayout();
-  top_box->setLayout(form_info);
-  layout->addWidget(top_box);
+  QGroupBox *topBox = new QGroupBox(i18n("Current Driver Information"), this );
 
-  // Add empty string
-  QLabel *empty_str = new QLabel("", top_box);
-  form_info->addRow(QString(), empty_str);
+  QGridLayout *infoLayout = new QGridLayout(this);
+  infoLayout->setAlignment(Qt::AlignTop|Qt::AlignLeft);
+  infoLayout->setSpacing(10);
 
-  QLabel *vendor_title = new QLabel(top_box);
-  vendor_title->setText(gli.glVendor);
-  vendor_title->setIndent(10);
+  topBox->setLayout(infoLayout);
+  layout->addWidget(topBox);
 
-  QLabel *renderer_title = new QLabel(top_box);
-  renderer_title->setText(gli.glRenderer);
-  renderer_title->setIndent(10);
+  QLabel *iconLabel = new QLabel();
+  iconLabel->setAlignment(Qt::AlignCenter);
+  iconLabel->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+  iconLabel->setPixmap(KIcon("hwinfo").pixmap(64));
 
-  QLabel *version_title = new QLabel(top_box);
-  version_title->setText(gli.glVersion);
-  version_title->setIndent(10);
+  QFont bFont;
+  bFont.setBold(true);
 
-  form_info->addRow(i18n("Vendor:"), vendor_title);
-  form_info->addRow(i18n("Renderer:"), renderer_title);
-  form_info->addRow(i18n("Version:"), version_title);
+  QLabel *vendorLabel = new QLabel();
+  vendorLabel->setFont(bFont);
+  vendorLabel->setText(i18n("Vendor:"));
+  QLabel *vendorNameLabel = new QLabel();
+  vendorNameLabel->setText(gli.glVendor);
+  vendorNameLabel->setIndent(10);
 
-  form_info->setLabelAlignment(Qt::AlignLeft);
-  form_info->setFormAlignment(Qt::AlignHCenter);
+  QLabel *rendererLabel = new QLabel();
+  rendererLabel->setFont(bFont);
+  rendererLabel->setText(i18n("Renderer:"));
+  QLabel *rendererNameLabel = new QLabel();
+  rendererNameLabel->setText(gli.glRenderer);
+  rendererNameLabel->setIndent(10);
+
+  QLabel *versionLabel = new QLabel();
+  versionLabel->setFont(bFont);
+  versionLabel->setText(i18n("Version:"));
+  QLabel *versionNameLabel = new QLabel();
+  versionNameLabel->setText(gli.glVersion);
+  versionNameLabel->setIndent(10);
+
+  infoLayout->addWidget(iconLabel,1,1,3,1,Qt::AlignCenter);
+
+  infoLayout->addWidget(vendorLabel,1,2,1,1);
+  infoLayout->addWidget(vendorNameLabel,1,3,1,1);
+
+  infoLayout->addWidget(rendererLabel,2,2,1,1);
+  infoLayout->addWidget(rendererNameLabel,2,3,1,1);
+
+  infoLayout->addWidget(versionLabel,3,2,1,1);
+  infoLayout->addWidget(versionNameLabel,3,3,1,1);
 
   // Driver Settings
-  QGroupBox *bottom_box = new QGroupBox(i18n("Driver Preferencies"), this );
+  QGroupBox *bottomGroupBox = new QGroupBox(i18n("Driver Preferencies"), this );
   QVBoxLayout *layout_settings = new QVBoxLayout();
-  bottom_box->setLayout(layout_settings);
-  layout->addWidget(bottom_box);
+  bottomGroupBox->setLayout(layout_settings);
+  layout->addWidget(bottomGroupBox);
 
   QRadioButton *osDriver = new QRadioButton("Use Open Source Driver ... EXAMPLE");
   layout_settings->addWidget(osDriver);
