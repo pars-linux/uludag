@@ -3,7 +3,8 @@
 
 ########### next target ###############
 
-set(kcm_panda_PART_SRCS panda.cpp )
+set(kcm_panda_PART_SRCS panda.cpp
+                        panda_parser.cpp)
 
 
 kde4_add_plugin(kcm_panda ${kcm_panda_PART_SRCS})

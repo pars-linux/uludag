@@ -24,6 +24,7 @@
 #include "kcmodule.h"
 
 class QRadioButton;
+class PandaParser;
 
 class PandaConfig : public KCModule
 {
@@ -39,6 +40,7 @@ class PandaConfig : public KCModule
  private:
   QRadioButton    *osDriver;
   QRadioButton    *vendorDriver;
+  PandaParser*     pandaParser;
 };
 
 #endif
