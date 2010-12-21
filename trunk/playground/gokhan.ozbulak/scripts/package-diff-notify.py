@@ -86,7 +86,7 @@ def process_cmd_line():
 
     parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
     parser.add_option("-m", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
-    parser.add_option("-r", "--report", dest = "report", action = "store_true", default = True, help = "dump the output into separate files")
+    parser.add_option("-n", "--noreport", dest = "noreport", action = "store_true", default = False, help = "prevent the output from being dumped into separate files")
     parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
     parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about the specified packager only")
     parser.add_option("-x", "--exclude", dest = "exclude", action = "store", type = "string", help = "filter out the given comma-separated component list")
@@ -146,6 +146,8 @@ def fetch_repos():
     for order, repo in enumerate(REPO_LIST):
         if OPTIONS.uselocal:
             # Use the local index files
+            print "Reading and extracting the pisi-index file from local file system for repo %s..." % (order + 1)
+
             if repo.endswith(".bz2"):
                 decompressed_index = bz2.decompress(open(repo, "r").read())
             else:
@@ -153,6 +155,8 @@ def fetch_repos():
                 decompressed_index = lzma.decompress(open(repo, "r").read())
         else:
             # Use the remote index files
+            print "Reading and extracting the pisi-index file from remote machine for repo %s..." % (order + 1)
+
             if repo.endswith(".bz2"):
                 decompressed_index = bz2.decompress(urllib2.urlopen(repo).read())
             else:
@@ -163,8 +167,23 @@ def fetch_repos():
         # Populate DISTRO_LIST in order of iteration done for repositories
         DISTRO_LIST.append("%s %s" %(pisi_index.distribution.sourceName, pisi_index.distribution.version))
 
+        component_list = []
+        if OPTIONS.exclude:
+            # Trim input coming from cmd line
+            component_list = map(string.strip, OPTIONS.exclude.split(","))
+
         # Update "repos" structure with current spec info
+        print "Fetching package information from repo %s..." % (order + 1)
         for spec in pisi_index.specs:
+            omitSpec = False
+            # Not interested in component(s) excluded if any
+            for component in component_list:
+                if spec.source.partOf.startswith(component):
+                    omitSpec = True
+                    break
+            if omitSpec:
+                continue
+
             if not REPOS.has_key(spec.source.packager.name):
                 REPOS[spec.source.packager.name] = {}
             if not REPOS[spec.source.packager.name].has_key(spec.source.name):
@@ -361,10 +380,16 @@ def traverse_repos():
         packager_list = REPOS.keys()
 
     for packager in packager_list:
+        # Case:
+        # 'exclude' option is set and all packages of packager are filtered out
+        if not REPOS.has_key(packager):
+            continue
+
         # Optimization in case that we are interested in one packager only
         if OPTIONS.packager:
             if not packager == OPTIONS.packager:
                 continue
+
         content_body = prepare_content_body(packager)
 
         # If content_body is empty, then there is nothing to report
@@ -374,7 +399,8 @@ def traverse_repos():
                 if not send_mail(receiver_mail_list, content_body):
                     return False
 
-            if OPTIONS.report:
+            if not OPTIONS.noreport:
+                print "Generating report for packager %s..." % packager
                 fp = open("_".join(packager.split()), "w")
                 fp.write("%s" % content_body)
 
