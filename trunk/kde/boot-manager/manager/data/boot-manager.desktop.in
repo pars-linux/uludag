@@ -6,3 +6,4 @@ Exec=boot-manager
 Icon=computer
 Type=Application
 Categories=Qt;KDE;System;
+NotShowIn=KDE;
