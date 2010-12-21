@@ -148,6 +148,7 @@
         <SelectedPackage>lsscsi</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
+        <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>mesa-utils</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
