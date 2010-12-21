@@ -12,5 +12,5 @@ X-KDE-System-Settings-Parent-Category=system-administration
 X-KDE-Weight=70
 
 _Name=Service Manager
-_Comment=Service Manager
+_Comment=An application for managing system services.
 X-KDE-Keywords=python service managers

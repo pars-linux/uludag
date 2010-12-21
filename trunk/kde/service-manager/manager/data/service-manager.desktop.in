@@ -6,3 +6,4 @@ Exec=service-manager
 Icon=flag-yellow
 Type=Application
 Categories=Qt;KDE;System;
+NotShowIn=KDE;
