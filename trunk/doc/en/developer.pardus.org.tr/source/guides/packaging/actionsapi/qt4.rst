@@ -3,6 +3,11 @@
 Qt4
 ===
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 Default Values
 --------------
 

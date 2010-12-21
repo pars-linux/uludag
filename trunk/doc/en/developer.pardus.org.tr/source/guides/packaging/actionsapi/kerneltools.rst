@@ -3,6 +3,11 @@
 Kerneltools
 ~~~~~~~~~~~
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 Configuration Part
 ==================
 

@@ -3,6 +3,11 @@
 KDE4
 ====
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 Default Parameters
 ------------------
 You can see all of the default parameters from:

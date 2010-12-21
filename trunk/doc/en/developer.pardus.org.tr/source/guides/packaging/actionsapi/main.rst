@@ -3,6 +3,10 @@
 About the document
 ==================
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
 One of the main part of pisi package is actions.py is. It is a python script
 that contains information of the operations to be executed on the source code.
 This document is an overview of the Actions API library which includes the

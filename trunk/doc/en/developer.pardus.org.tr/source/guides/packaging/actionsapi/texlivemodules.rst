@@ -3,6 +3,11 @@
 Texlivemodules
 ==============
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 compile
 -------
 

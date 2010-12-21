@@ -3,6 +3,11 @@
 KDE
 ===
 
+:Author: Semen Cirit
+:Date: |today|
+:Version: 0.1
+
+
 configure
 ---------
 
