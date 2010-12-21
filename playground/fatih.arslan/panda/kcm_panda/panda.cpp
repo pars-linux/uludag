@@ -159,6 +159,11 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   setAboutData(about);
 }
 
+PandaConfig::~PandaConfig()
+{
+    delete pandaParser;
+}
+
 void PandaConfig::load()
 {
   XKeyboardState kbd;

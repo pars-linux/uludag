@@ -32,6 +32,7 @@ class PandaConfig : public KCModule
 
  public:
   PandaConfig(QWidget *parent, const QVariantList &args);
+  virtual ~PandaConfig();
 
   void load();
   void save();
