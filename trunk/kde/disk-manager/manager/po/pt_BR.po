@@ -25,7 +25,6 @@ msgid "Disk Manager"
 msgstr "Gerenciador de Disco"
 
 #: src/diskmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
