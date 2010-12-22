@@ -6,3 +6,4 @@ Exec=firewall-manager
 Icon=security-high
 Type=Application
 Categories=Qt;KDE;System;
+NotShowIn=KDE;
