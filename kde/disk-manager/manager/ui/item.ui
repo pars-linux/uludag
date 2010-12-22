@@ -72,6 +72,14 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:rgba(0,0,0,140);</string>
+       </property>
        <property name="text">
         <string notr="true">labelDescription</string>
        </property>
