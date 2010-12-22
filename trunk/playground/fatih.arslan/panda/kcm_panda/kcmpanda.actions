@@ -1,0 +1,9 @@
+[Domain]
+Name=Pardus Alternative Driver Administration Control Module
+Icon=preferences-system-login
+
+[org.kde.kcontrol.kcmpanda.save]
+Name=Save the Panda settings
+Description=Administrator authorization is required to change the Panda settings
+Policy=auth_admin
+Persistence=session

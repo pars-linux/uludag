@@ -1,6 +1,3 @@
-
-
-
 ########### next target ###############
 
 set(kcm_panda_PART_SRCS panda.cpp
@@ -14,6 +11,15 @@ target_link_libraries(kcm_panda  ${KDE4_KDEUI_LIBS} ${QT_QTGUI_LIBRARY} ${X11_X1
 target_link_libraries(kcm_panda ${OPENGL_gl_LIBRARY} ${OPENGL_glu_LIBRARY})
 
 install(TARGETS kcm_panda  DESTINATION ${PLUGIN_INSTALL_DIR} )
+
+#### KAuth helper and actions ####
+kde4_add_executable(kcmpandahelper helper.cpp)
+target_link_libraries(kcmpandahelper ${KDE4_KDECORE_LIBS})
+install(TARGETS kcmpandahelper DESTINATION ${LIBEXEC_INSTALL_DIR})
+
+kde4_install_auth_helper_files(kcmpandahelper org.kde.kcontrol.kcmpanda root)
+
+kde4_install_auth_actions(org.kde.kcontrol.kcmpanda kcmpanda.actions)
 
 
 ########### install files ###############
