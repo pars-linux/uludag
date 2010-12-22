@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-19 20:02+0000\n"
+"POT-Creation-Date: 2010-12-22 18:01+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -121,9 +121,8 @@ msgid "Manual Partitioning"
 msgstr "Partitionnement manuel"
 
 #: ../release.xml.in.h:25
-#, fuzzy
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
-msgstr "Plusieurs utilisateurs peuvent partager le même ordinateur en toute sécurité avec Pardus. Un compte administrateur sera automatiquement réglée (qui est la racine). Vous pouvez ajouter de nouveaux utilisateurs dans cet écran. Le premier utilisateur sera accordé une autorisation administrative si vous n'avez pas les révoquer. Révocation des droits d'administration, de réglages personnalisés de l'ID utilisateur, et quelques autres options sont accessibles dans le menu Avancé. &lt;br&gt; Si vous avez besoin pour administrer les comptes d'utilisateur, vous pouvez appeler le Gestionnaire des utilisateurs dans les paramètres système après l'installation."
+msgstr "Plusieurs utilisateurs peuvent partager le même ordinateur en toute sécurité avec Pardus. Un compte administrateur sera automatiquement créé sous le nom &quot;root&quot;. Vous pouvez ajouter de nouveaux utilisateurs dans cet écran. Le premier utilisateur aura par défaut les droits d'administration, sauf si vous ne le souhaitez pas. Le menu Avancé permet de retirer les droits d'administration, de changer l'ID de l'utilisateur, etc. &lt;br&gt;&lt;br&gt; Après l'installation de Pardus, la gestion des comptes des utilisateurs se fait dans le Gestionnaire des Utilisateurs, disponible dans le centre de configuration du système."
 
 #: ../release.xml.in.h:27
 #, fuzzy, no-c-format
@@ -180,9 +179,8 @@ msgid "When using Dolphin, you may see that it learned a lot from the web experi
 msgstr "Lors de l'utilisation des dauphins, vous pouvez voir qu'il a beaucoup appris de l'expérience Web. Dolphin offre des fonctionnalités Web comme suh comme la navigation par onglets, les adresses dossier sous forme de chapelure, de marquage des fichiers afin qu'ils puissent être mis en vente par tags ailleurs la structure des dossiers traditionnels et de la transparence réseau puissant. &lt;br&gt; Tout endroit sur le réseau local ou web peut être intégré dans votre système de fichiers facilement par Dolphin. Ainsi, vous pouvez rejoindre les adresses distantes comme si elles étaient sur votre disque."
 
 #: ../release.xml.in.h:39
-#, fuzzy
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr "Lorsque vous sélectionnez \\ \"utiliser tout l'espace \", Pardus formater votre disque et de créer quatre partitions pour le système, l'espace utilisateur, démarrage et les fichiers de swap en utilisant LVM (Logical Volume Manager). &lt;br&gt; Si il ya un autre système installé avec un espace disque suffisant, vous pouvez utiliser le \\ \"Shrink actuel System \" option de redimensionnement de la première partition et installer Pardus dans l'espace créé libre. &lt;br&gt; Si vous avez au moins 4GBs d'espace non partitionné-utilisé (10 Go recommandé), vous pouvez choisir le \\ \"Utiliser l'espace libre \" option, si Pardus créer les partitions nécessaires décrits ci-dessous. &lt; &gt; br &lt;br&gt; Vous pouvez choisir \\ \"Create Custom Layout \" pour le partitionnement manuel. &lt;br&gt; Il est conseillé de sauvegarder vos données pour éviter des problèmes futurs."
+msgstr "Lorsque vous sélectionnez \"Utiliser tout l'espace\", Pardus efface votre disque dur et crée quatre partitions pour le système, l'espace utilisateur, le démarrage et l'espace d'échange (swap) en utilisant LVM (Logical Volume Manager).&lt;br&gt;&lt;br&gt; S'il y a un autre système installé avec un espace disque suffisant, vous pouvez opter pour \"Réduire le système actuel\" qui redimensionnera la première partition et installera Pardus dans l'espace ainsi libéré. &lt;br&gt;&lt;br&gt; Si vous avez au moins 4 Go d'espace non partitionné-utilisé (10 Go recommandé), vous pouvez choisir l'option \"Utiliser l'espace libre\", pour que Pardus crée les partitions nécessaires décrites ci-dessus. Pour réaliser un partitionnement manuel &lt;br&gt;&lt;br&gt;choisissez \"Partitionnement manuel\". &lt;br&gt;&lt;br&gt; Par prudence, il est conseillé d'avoir sauvegardé vos données avant de poursuivre."
 
 #: ../release.xml.in.h:40
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
