@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=kcmshell4 panda
-Icon=preferences-desktop-notification-bell
+Icon=hwinfo
 Type=Service
 X-KDE-ServiceTypes=KCModule,KCModuleInit
 X-DocPath=kcontrol/panda/index.html
@@ -10,11 +10,11 @@ X-KDE-Library=kcm_panda
 X-KDE-Init-Symbol=panda
 X-KDE-ParentApp=kcontrol
 
-X-KDE-System-Settings-Parent-Category=application-and-system-notifications
-X-KDE-Weight=50
+X-KDE-System-Settings-Parent-Category=display
+X-KDE-Weight=110
 
-Name=Pardus Alternative Driver Admnistration
+Name=Driver
 
-Comment=WHat does this module do ? Explain it here
+Comment=Video driver
 
-X-KDE-Keywords=Driver, Graphics, Display
+X-KDE-Keywords=Driver,Graphics,Display

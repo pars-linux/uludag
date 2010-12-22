@@ -138,16 +138,16 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   infoLayout->addWidget(versionNameLabel,3,3,1,1);
 
   // Driver Settings
-  QGroupBox *bottomGroupBox = new QGroupBox(i18n("Driver Preferencies"), this );
+  QGroupBox *bottomGroupBox = new QGroupBox(i18n("Driver Preference"), this );
   QVBoxLayout *layout_settings = new QVBoxLayout();
   bottomGroupBox->setLayout(layout_settings);
   layout->addWidget(bottomGroupBox);
   layout->addStretch();
 
-  QRadioButton *osDriver = new QRadioButton("Use Open Source Driver");
+  QRadioButton *osDriver = new QRadioButton(i18n("Use open source driver"));
   layout_settings->addWidget(osDriver);
 
-  QRadioButton *vendorDriver = new QRadioButton("Use Vendor Driver");
+  QRadioButton *vendorDriver = new QRadioButton(i18n("Use vendor driver"));
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
