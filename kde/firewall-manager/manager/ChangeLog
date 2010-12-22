@@ -1,0 +1,459 @@
+2010-12-22 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix desktop files 
+
+2010-12-20 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 86% (Klemens Häckel)
+         * New status: 19 messages complete with 0 fuzzies and 3 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% (José Afonso da Silva Carvalho)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add factoryName for each manager to fix systemsettings bug 
+
+2010-12-14 transifex
+         * l10n: Updated Italian (it) translation to 100% (Ali Işıngör)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-27 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-23 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Add missing help style file 
+
+2010-11-23 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use kcm_ prefix for kcm modules
+         * Bug fixed at http://bugs.pardus.org.tr/15175
+
+2010-11-20 transifex
+         * l10n: Updated German (de) translation to 90% (Stefan Wilhelm)
+         * New status: 20 messages complete with 0 fuzzies and 2 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-10 mehmet.ozdemir
+         * service manager help document added.
+
+2010-11-03 mehmet.ozdemir
+         * help docs updated for firewall manager and disk manager
+
+2010-11-03 mehmet.ozdemir
+         * help documents for firewall manager and disk manager
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-16 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-04 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-04 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-04 transifex
+         * l10n: New Russian translation (Yasirov Vasiliy)
+         * New status: 0 messages complete with 0 fuzzies and 22 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-22 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 77% (Klemens Häckel)
+         * New status: 17 messages complete with 0 fuzzies and 5 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-16 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-16 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 22 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * update version
+
+2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Firewall Manager, ready to use. 
+
+2010-08-08 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-08-06 transifex
+         * l10n: Updated Azerbaijani (az) translation to 100% (Barış Kutsal)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-28 transifex
+         * l10n: Updated German (de) translation to 90% (Kaan Akşit)
+         * New status: 18 messages complete with 0 fuzzies and 2 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-28 transifex
+         * l10n: Updated Azerbaijani (az) translation to 30% (Kaan Akşit)
+         * New status: 6 messages complete with 0 fuzzies and 14 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-28 transifex
+         * l10n: initial of Azerbaijani translation (Kaan Akşit)
+         * New status: 0 messages complete with 0 fuzzies and 20 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-08 transifex
+         * l10n: Updated Serbian (sr) translation to 100% (Jozsef Kurucity)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-08 transifex
+         * l10n: Serbian translation of firewall-manager (Jozsef Kurucity)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-07-06 bahadir.kandemir
+         * Fix labels
+
+2010-07-05 ozan.caglayan
+         * Fix code/ remnants
+
+2010-06-30 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Italian (it) translation to 100% (Davide Siciliano)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 20 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-25 ozan.caglayan
+         * Update messages
+
+2010-06-25 ozan.caglayan
+         * Rename code/ to src/
+         * Sync setup.py
+         * Add translator credits to strings
+
+2010-06-13 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 19 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-13 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 19 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-13 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 19 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-11 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 19 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-11 igungor
+         * update messages
+
+2010-06-11 igungor
+         * use intltool to extract and merge the translatable strings in desktop files
+
+2010-06-11 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Daniel Kovács)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-10 igungor
+         * fix warnings
+
+2010-06-03 transifex
+         * l10n: First version. (Daniel Kovács)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-02 bahadir.kandemir
+         * New release
+
+2010-05-30 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-28 transifex
+         * l10n: Updated German (de) translation to 100% (Andreas Jürgens)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-16 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-15 transifex
+         * l10n: Updated Italian (it) translation to 100% (Davide Siciliano)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-05-15 transifex
+         * l10n: Adding Portuguese Brazilian Translation (Diogo Lima)
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-04-12 transifex
+         * l10n: Updated German (de) translation to 88%
+         * User: Klemens Häckel
+         * New status: 16 messages complete with 0 fuzzies and 2 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-04-11 transifex
+         * l10n: Updated French (fr) translation to 100%
+         * User: Philippe Svetoslavsky
+         * New status: 18 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-01-15 semen.cirit
+         * Firewall  manager titles translate to french.
+
+2010-01-14 bahadir.kandemir
+         * New release
+
+2010-01-13 sw
+         * one little correction
+
+2010-01-13 sw
+         * one little correction
+
+2010-01-13 onur
+         * remove executable bit from de.po
+
+2010-01-13 bahadir.kandemir
+         * New release
+
+2010-01-12 klemens
+         * some german and spanish updates to simplify the names of the special pardus tools in the menu and the KDE control panel 
+         * (i think so at least), according to feedback also from some other german translation members..
+
+2010-01-10 fatih
+         * Fix French keywords
+
+2010-01-10 philippe.svetoslavsky
+         * missing french translation
+
+2010-01-10 philippe.svetoslavsky
+         * missing french translation
+
+2009-10-27 fatih
+         * Rename kde4 to kde
+
+2009-08-20 peter.lyberth
+         * Added danish translation
+
+2009-08-19 philippe.svetoslavsky
+         * French translation added.
+
+2009-07-25 ozan.caglayan
+         * Patch from Antoon Tolboom to improve Dutch translations in the desktop files
+
+2009-07-14 bahadir.kandemir
+         * New release
+
+2009-07-14 ozan.caglayan
+         * Add Turkish translations to kcm desktop files
+
+2009-07-09 bahadir.kandemir
+         * New release
+
+2009-07-08 sw
+         * german translation of de.po (little changes)
+
+2009-07-02 bahadir.kandemir
+         * New release
+
+2009-07-01 klemens
+         * some spanish language revision and addition 
+
+2009-07-01 sw
+         * german translation of de.po
+
+2009-07-01 atolboo
+         * Dutch language update of /kde4/firewall-manager
+
+2009-07-01 klemens
+         * some spanish language additions 
+
+2009-06-30 wpmhia
+         * Dutch translations from Antoon!
+
+2009-06-30 patrik
+         * Swedish translation
+
+2009-06-30 bahadir.kandemir
+         * Updating translations
+
+2009-06-30 bahadir.kandemir
+         * Reset statea
+
+2009-06-29 sw
+         * german translation of po-fole for firewall manager (some little changes)
+
+2009-06-29 bahadir.kandemir
+         * Bug fixed at http://bugs.pardus.org.tr/10166
+
+2009-06-28 klemens
+         * spanish and german language strings in several kde4 *.desktop files..
+
+2009-06-27 patrik
+         * Update translations
+
+2009-06-26 klemens
+         * some spanish language additions (kh)
+
+2009-06-26 bahadir.kandemir
+         * Don't hardcode application icons
+
+2009-06-26 gokcen.eraslan
+         * Fix icons of managers: Use KAboutData.setProgramIconName if icon name is different than appName. Also fix menu location of PM, it should be in System like other managers.
+
+2009-06-25 bahadir.kandemir
+         * Fixed translations, thanks to Necmettin Begiter
+
+2009-06-24 necmettin
+         * Turkish translation updates
+
+2009-06-22 edivad
+         * added it translation for history manager and firewall manager
+
+2009-06-21 sw
+         * german translation of firewall-manager (de.po)
+
+2009-06-16 bahadir.kandemir
+         * Merged to iptables package
+
+2009-06-11 bahadir.kandemir
+         * New release
+
+2009-06-10 bahadir.kandemir
+         * Wrap labels
+
+2009-06-10 bahadir.kandemir
+         * Cleanup & validation template
+
+2009-06-08 bahadir.kandemir
+         * Validation support, client side
+
+2009-06-08 bahadir.kandemir
+         * Moved KPageDialog code into pagedialog.py
+
+2009-06-08 bahadir.kandemir
+         * Validators
+
+2009-06-08 bahadir.kandemir
+         * Fix names
+
+2009-06-08 bahadir.kandemir
+         * i18n
+
+2009-06-04 bahadir.kandemir
+         * Use PK GUI
+
+2009-06-03 bahadir.kandemir
+         * Set Icon
+
+2009-05-28 klemens
+         * several spanish language additions and minor revision (kh)
+
+2009-05-27 bahadir.kandemir
+         * Make apps dir
+
+2009-05-27 bahadir.kandemir
+         * New release
+
+2009-05-27 bahadir.kandemir
+         * Desktop files
+
+2009-05-27 bahadir.kandemir
+         * updated messages
+
+2009-05-27 bahadir.kandemir
+         * fm -> firewallmanager
+
+2009-05-27 bahadir.kandemir
+         * update messages
+
+2009-05-27 bahadir.kandemir
+         * Fixed setup.py
+
+2009-05-27 bahadir.kandemir
+         * Continued...
+
+2009-05-27 bahadir.kandemir
+         * Change layout
+
+2009-05-27 gokcen.eraslan
+         * Common DBus fix for systemsettings crash.
+
+2009-05-25 bahadir.kandemir
+         * Network.Firewall playground
+
+2009-05-20 bahadir.kandemir
+         * Start/Stop text for toggle button
+
+2009-05-20 bahadir.kandemir
+         * Handle PK exceptions
+
+2009-05-18 bahadir.kandemir
+         * Always rebuild
+
+2009-05-16 bahadir.kandemir
+         * Disable state button while busy
+
+2009-05-16 klemens
+         * spanish language update and addition (kh)
+
+2009-05-15 bahadir.kandemir
+         * Fix symlink bug
+
+2009-05-15 bahadir.kandemir
+         * Fix wrong extension
+
+2009-05-15 bahadir.kandemir
+         * Firewall Manager 3.0 Preview Release
+
