@@ -152,11 +152,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.mounted_devices = {}
 
         for entry in self.iface.entryList():
-            if entry.startswith("/dev"):
-                self.device_entries[entry] = entry
-            elif entry.startswith("LABEL="):
-                label = entry.split("LABEL=")[1]
-                self.device_entries[self.iface.getDeviceByLabel(label)] = entry
+            self.device_entries[entry] = entry
 
         for device, path in self.iface.mountList():
             self.mounted_devices[device] = path
