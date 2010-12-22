@@ -121,4 +121,4 @@ class EditWidget(QtGui.QWidget, Ui_EditWidget):
         self.lineOptions.setText(unicode(options))
 
     def getOptions(self):
-        return unicode(self.lineOptions.text())
+        return unicode(self.lineOptions.text()).replace('\n', ' ')
