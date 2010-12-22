@@ -7,15 +7,12 @@ ActionReply Helper::save(const QVariantMap &args)
 {
     ActionReply reply;
 
-    int ret = 1; // error code
+    int ret = 0; // error code
     bool osdriver = args.value("osdriver").toBool();
     bool vendordriver = args.value("vendordriver").toBool();
 
-        qDebug() << "Os Driver is checked";
-        kdDebug(0) << "Os Driver is checked";
     if (osdriver){
         qDebug() << "Os Driver is checked";
-        kdDebug(0) << "Os Driver is checked" << endl;
     } else if (vendordriver) {
         qDebug() << "Vendor Driver is checked";
     } else {

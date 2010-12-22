@@ -144,10 +144,13 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout->addWidget(bottomGroupBox);
   layout->addStretch();
 
-  QRadioButton *osDriver = new QRadioButton(i18n("Use open source driver"));
-  layout_settings->addWidget(osDriver);
+  osDriver = new QRadioButton(i18n("Use open source driver"));
+  vendorDriver = new QRadioButton(i18n("Use vendor driver"));
 
-  QRadioButton *vendorDriver = new QRadioButton(i18n("Use vendor driver"));
+  connect(osDriver, SIGNAL(clicked()), this, SLOT(changed()));
+  connect(vendorDriver, SIGNAL(clicked()), this, SLOT(changed()));
+
+  layout_settings->addWidget(osDriver);
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
@@ -180,9 +183,9 @@ void PandaConfig::save()
 {
 
   QVariantMap helperargs;
+
   helperargs["osdriver"] = osDriver->isChecked();
   helperargs["vendordriver"] = vendorDriver->isChecked();
-
 
   Action *action = authAction();
   action->setArguments(helperargs);
