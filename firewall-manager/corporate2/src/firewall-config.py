@@ -179,7 +179,6 @@ class MainApplication(programbase):
         self.filterCombo.insertItem(i18n("Outgoing Connections"))
         self.toplayout.addWidget(self.filterCombo)
 
-
         self.inev = EntryView(self)
         self.inev.setEnabled(True)
         mainLayout.addMultiCellWidget(self.inev, 3, 3, 0, 3)
@@ -193,23 +192,19 @@ class MainApplication(programbase):
         spacer = QSpacerItem(100, 1, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.bottomlayout.addItem(spacer)
 
-        self.pushClose = QPushButton(self, "pushClose")
-        self.pushClose.setText(i18n("Close"))
-        self.bottomlayout.addWidget(self.pushClose)
+        if standalone:
+            self.pushClose = QPushButton(self, "pushClose")
+            self.pushClose.setText(i18n("Close"))
+            self.bottomlayout.addWidget(self.pushClose)
 
         # Initial conditions
         self.state = 'off'
         self.pushStatus.setEnabled(False)
 
-        #if not standalone:
-            #mainwidget.groupButtons.hide()
-
-
         # Icons
         self.setIcon(loadIcon('firewall_config', size=48))
 
         self.pushHelp.setIconSet(loadIconSet('help', group=KIcon.Small))
-        self.pushClose.setIconSet(loadIconSet('cancel', group=KIcon.Small))
 
         # COMAR
         self.link = comar.Link()
@@ -219,13 +214,15 @@ class MainApplication(programbase):
 
         # Signals
         self.connect(self.pushStatus, SIGNAL('clicked()'), self.slotStatus)
-        self.connect(self.pushClose, SIGNAL('clicked()'), self, SLOT('close()'))
         self.connect(self.pushHelp, SIGNAL('clicked()'), self.slotHelp)
         self.connect(self.filterCombo, SIGNAL("activated(int)"), self.slotFilterChanged)
 
         # Init
         self.getState()
 
+        if standalone:
+            self.pushClose.setIconSet(loadIconSet('cancel', group=KIcon.Small))
+            self.connect(self.pushClose, SIGNAL('clicked()'), self, SLOT('close()'))
 
     def handleSignals(self, package, signal, args):
         pass
