@@ -29,8 +29,9 @@ msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr ""
 
 #: src/diskmanager/about.py:32
+#, fuzzy
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
