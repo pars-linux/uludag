@@ -1,15 +1,15 @@
 find_package(KDE4 REQUIRED)
 include(KDE4Defaults)
 
-add_definitions (${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
+add_definitions(${QT_DEFINITIONS} ${KDE4_DEFINITIONS})
 include_directories(${KDE4_INCLUDES})
 
 find_package(OpenGL REQUIRED)
 
-include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}
+                    ${CMAKE_CURRENT_BINARY_DIR})
 
-########### next target ###############
+########### kcontrol module ###############
 
 set(kcm_panda_PART_SRCS panda.cpp
                         panda_parser.cpp)
@@ -22,8 +22,7 @@ target_link_libraries(kcm_panda
                         ${KDE4_KDEUI_LIBS}
                         ${QT_QTGUI_LIBRARY}
                         ${X11_X11_LIB}
-                        ${OPENGL_gl_LIBRARY}
-                        ${OPENGL_glu_LIBRARY})
+                        ${OPENGL_gl_LIBRARY})
 
 install(TARGETS kcm_panda  DESTINATION ${PLUGIN_INSTALL_DIR} )
 
