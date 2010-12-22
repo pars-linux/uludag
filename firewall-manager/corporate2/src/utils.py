@@ -28,15 +28,15 @@ def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 class AdvancedRuleCheckBox(QCheckBox):
-    def __init__(self, parent=None, name=None, ports='', index=0, isDefault=False, isRunning=False, isIncoming=False, message=None, fwconfig=None, entryView=None):
-        QCheckBox.__init__(self, parent, name)
+    def __init__(self, parent=None, name=None, ports='', index=0, isDefault=False, isRunning=False, isIncoming=False, message=None):
+        QCheckBox.__init__(self, parent.viewport(), name)
         self.index = index
         self.ports = ports
         self.isDefault = isDefault
         self.isRunning = isRunning
         self.isIncoming = isIncoming
-        self.fwconfig = fwconfig
-        self.entryView = entryView
+        self.fwconfig = parent.parentWidget()
+        self.entryView = parent
         self.serviceName = ""
         if isDefault:
             self.serviceName = message
@@ -274,10 +274,10 @@ class EntryView(QScrollView):
                 ports.append(e.ports)
         return ports
 
-    def add(self, name="", ports="", index=0, isDefault=False, isRunning=False, isIncoming=False, message=None, fwconfig=None):
+    def add(self, name="", ports="", index=0, isDefault=False, isRunning=False, isIncoming=False, message=None):
         if index == -1:
             index = len(self.entries)
-        e = AdvancedRuleCheckBox(self.viewport(), name, ports, index, isDefault, isRunning, isIncoming, message, fwconfig, self)
+        e = AdvancedRuleCheckBox(self, name, ports, index, isDefault, isRunning, isIncoming, message)
         self.entries.append(e)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
