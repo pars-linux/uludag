@@ -65,16 +65,6 @@ K_PLUGIN_FACTORY(PandaConfigFactory, registerPlugin<PandaConfig>();)
 K_EXPORT_PLUGIN(PandaConfigFactory("kcmpanda"))
 
 
-extern "C"
-{
-  KDE_EXPORT void kcminit_panda()
-  {
-
-    KConfig _config( "kcmpandarc", KConfig::NoGlobals  );
-    KConfigGroup config(&_config, "General");
-  }
-}
-
 PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     KCModule(PandaConfigFactory::componentData(), parent, args)
 {
@@ -88,7 +78,6 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   QGridLayout *infoLayout = new QGridLayout(this);
   infoLayout->setAlignment(Qt::AlignTop|Qt::AlignLeft);
-  //infoLayout->setSpacing(10);
 
   topBox->setLayout(infoLayout);
   layout->addWidget(topBox);
@@ -102,12 +91,15 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   pandaParser = new PandaParser();
   pandaParser->getGlStrings();
 
+  // A simple way to set labels to bold
   QFont bFont;
   bFont.setBold(true);
 
+  // Display driver informations
   QLabel *vendorLabel = new QLabel();
   vendorLabel->setFont(bFont);
   vendorLabel->setText(i18n("Vendor:"));
+
   QLabel *vendorNameLabel = new QLabel();
   vendorNameLabel->setText(pandaParser->glVendor);
   vendorNameLabel->setIndent(10);
@@ -115,6 +107,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   QLabel *rendererLabel = new QLabel();
   rendererLabel->setFont(bFont);
   rendererLabel->setText(i18n("Renderer:"));
+
   QLabel *rendererNameLabel = new QLabel();
   rendererNameLabel->setText(pandaParser->glRenderer);
   rendererNameLabel->setIndent(10);
@@ -153,9 +146,9 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   buttonGroup->setExclusive(true);
   buttonGroup->addButton(osDriver);
   buttonGroup->addButton(vendorDriver);
+
   layout_settings->addWidget(osDriver);
   layout_settings->addWidget(vendorDriver);
-
 
   KAboutData *about =
     new KAboutData(I18N_NOOP("kcmpanda"), 0, ki18n("KDE Panda Control Module"),
@@ -165,6 +158,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   about->addAuthor(ki18n("Fatih Arslan"), ki18n("Original author"), "farslan@pardus.org.tr");
   setAboutData(about);
 
+  // Needed by Kauth, should be executed after KAboutData
   setNeedsAuthorization(true);
 }
 
@@ -175,12 +169,7 @@ PandaConfig::~PandaConfig()
 
 void PandaConfig::load()
 {
-  XKeyboardState kbd;
-  XGetKeyboardControl(QX11Info::display(), &kbd);
-
-  KConfig _cfg("kdeglobals", KConfig::NoGlobals);
-  KConfigGroup cfg(&_cfg, "General");
-  emit changed(false);
+ emit changed(false);
 }
 
 void PandaConfig::save()
@@ -190,7 +179,6 @@ void PandaConfig::save()
 
   helperargs["osdriver"] = osDriver->isChecked();
   helperargs["vendordriver"] = vendorDriver->isChecked();
-
 
   Action *action = authAction();
   action->setArguments(helperargs);
@@ -207,7 +195,6 @@ void PandaConfig::save()
   }
 
   emit changed(false);
-
 }
 
 
