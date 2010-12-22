@@ -50,8 +50,9 @@ class Panda():
                 for line in open(driversDB):
                     if line.startswith(device_id):
                         driver_name = line.split()[1]
-                    else:
-                        driver_name = "Not defined"
+                if not driver_name:
+                    driver_name = "Not defined"
+
         self.driver_name = driver_name
 
     def __get_kernel_module_packages(self, kernel_list=None):
@@ -114,8 +115,8 @@ class Panda():
             # All modules should be stay nontouched, but remove kernels in kernel_flavors
             # that are not in kernel_list (hence we are not using them)
 
-            need_to_install = list(set(self.driver_packages[self.driver_name]) \
-                                   - (set(module_packages) - set(needed_module_packages)))
+            need_to_install = list(set(self.driver_packages[self.driver_name]) - \
+                                   (set(module_packages) - set(needed_module_packages)))
 
             return need_to_install
         else:
@@ -156,16 +157,28 @@ class Panda():
 
         # Get the current used kernel version
         # Create a new grub file
-        # Do not change the file if blacklist= .. is already available
-
+        configured = False
         grub_tmp = open(grub_new, "w")
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    if "blacklist" in line or not self.os_driver:
-                        print "Grub.conf is already configured"
-                        configured = False
-                        grub_tmp.write(line)
+                    if "blacklist" in line:
+                        # Already configured, but user want to use nouveau,fglrx
+                        if not self.os_driver:
+                            kernel_parameters = line.split()
+                            new_kernel_param = filter(lambda x: not x.startswith("blacklist="), \
+                                                      kernel_parameters)
+                            blacklist = filter(lambda x: x.startswith("blacklist="), kernel_parameters)
+                            new_kernel_line = " ".join(new_kernel_param)
+                            grub_tmp.write(new_kernel_line)
+                            configured = True
+                            print "The parameter \"%s\" is removed from Grub.conf" % blacklist[0]
+
+                        # Already configured, user want to use vendor drivers,no need to change
+                        else:
+                            configured = False
+                            print "Grub.conf is already configured"
+                            grub_tmp.write(line)
                     elif self.os_driver:
                         kernel_parameters = line.split()
                         kernel_parameters.append("blacklist=%s \n" % self.os_driver)
