@@ -79,7 +79,7 @@ msgstr "Möchten Sie die Auswahl zurücksetzen?"
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
-msgstr "Pisi Fehler"
+msgstr "PiSi Fehler"
 
 #: src/basketdialog.py:164
 msgid "Do you want to continue ?"
@@ -261,8 +261,9 @@ msgid "Installed Version:"
 msgstr "Installierte Version:"
 
 #: src/packagedelegate.py:282
+#, fuzzy
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
@@ -274,8 +275,9 @@ msgid "%prog packages_to_install"
 msgstr "%prog Pakete zu installieren"
 
 #: src/progressdialog.py:75
+#, fuzzy
 msgid "<p align='right'>%1 %</p>"
-msgstr ""
+msgstr "<p align='right'>%1 %</p>"
 
 #: src/progressdialog.py:76
 #, python-format
@@ -291,14 +293,16 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: src/progressdialog.py:90
+#, fuzzy
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 # could You put a comment with an example string, maybe in foreign language it
 # sounds better when inverting some positions ?
 #: src/progressdialog.py:97
+#, fuzzy
 msgid "%1 / %2, %3"
-msgstr ""
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:114
 msgid "Preparing PiSi..."
