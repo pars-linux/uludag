@@ -20,7 +20,7 @@
 */
 
 #include <QRadioButton>
-#include <QPushButton>
+#include <QButtonGroup>
 #include <QLabel>
 
 //Added by qt3to4:
@@ -144,14 +144,18 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout->addWidget(bottomGroupBox);
   layout->addStretch();
 
-  osDriver = new QRadioButton(i18n("Use open source driver"));
-  vendorDriver = new QRadioButton(i18n("Use vendor driver"));
+  osDriver = new QRadioButton(i18n("Use open source driver"), bottomGroupBox);
+  vendorDriver = new QRadioButton(i18n("Use vendor driver"), bottomGroupBox);
 
-  connect(osDriver, SIGNAL(clicked()), this, SLOT(changed()));
-  connect(vendorDriver, SIGNAL(clicked()), this, SLOT(changed()));
+  QButtonGroup *buttonGroup = new QButtonGroup(bottomGroupBox);
+  connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(changed()));
 
+  buttonGroup->setExclusive(true);
+  buttonGroup->addButton(osDriver);
+  buttonGroup->addButton(vendorDriver);
   layout_settings->addWidget(osDriver);
   layout_settings->addWidget(vendorDriver);
+
 
   KAboutData *about =
     new KAboutData(I18N_NOOP("kcmpanda"), 0, ki18n("KDE Panda Control Module"),
@@ -187,6 +191,7 @@ void PandaConfig::save()
   helperargs["osdriver"] = osDriver->isChecked();
   helperargs["vendordriver"] = vendorDriver->isChecked();
 
+
   Action *action = authAction();
   action->setArguments(helperargs);
 
@@ -200,6 +205,8 @@ void PandaConfig::save()
     }
 
   }
+
+  emit changed(false);
 
 }
 
