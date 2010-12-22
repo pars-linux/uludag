@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
@@ -124,34 +124,23 @@ msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
-"Netzwerk-Manager konnte mit Ihrem Netzwerk-Gerät nicht kommunizieren. Falls "
-"es\n"
-"eine drahtlose Schnittstelle ist, stellen Sie sicher, dass es aktiviert ist. "
-"Üblicherweise\n"
-"kann es durch ein Schalter oder durch die Fn-Tasten am Notebook (meistens in "
-"neuen vorhanden) aktiviert werden."
+"Netzwerk-Manager konnte mit Ihrem Netzwerk-Gerät nicht kommunizieren. Falls es\n"
+"eine drahtlose Schnittstelle ist, stellen Sie sicher, dass es aktiviert ist. Üblicherweise\n"
+"kann es durch ein Schalter oder durch die Fn-Tasten am Notebook (meistens in neuen vorhanden) aktiviert werden."
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
-"Der DHCP-Dienst konnte Ihrer Netzwerk-Schnittstelle keine IP-Adresse "
-"zuweisen.\n"
-"Stellen Sie sicher, dass das Netzwerk, mit dem Sie versuchen sich zu "
-"verbinden,\n"
-"durch den DHCP-Dienst IP-Adressen zuweisen kann. Andernfalls vergeben Sie "
-"manuell eine IP-Adresse."
+"Der DHCP-Dienst konnte Ihrer Netzwerk-Schnittstelle keine IP-Adresse zuweisen.\n"
+"Stellen Sie sicher, dass das Netzwerk, mit dem Sie versuchen sich zu verbinden,\n"
+"durch den DHCP-Dienst IP-Adressen zuweisen kann. Andernfalls vergeben Sie manuell eine IP-Adresse."
 
 #: comariface.py:190
 msgid "Network Manager - Error"
@@ -194,12 +183,8 @@ msgid "DHCP Server Error"
 msgstr "DHCP-Serverfehler:"
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
-msgstr ""
-"Die ausgewählte Schnittstelle muss unterschiedlich sein, um die "
-"Internetverbindung freizugeben"
+msgid "The interfaces that you have selected must be different to share internet connection"
+msgstr "Die ausgewählte Schnittstelle muss unterschiedlich sein, um die Internetverbindung freizugeben"
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
@@ -215,9 +200,7 @@ msgstr "Freigabe ist OK"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
-"Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine "
-"IP-Adresse"
+msgstr "Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine IP-Adresse"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -234,10 +217,8 @@ msgid "Network manager module is already started!"
 msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
-msgstr ""
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
+msgstr "Der aktuelle Unterbau für das Netzwerk basiert auf den GNOME Netzwerk-Manager. Um das Netzwerkapplet verwenden zu können  sollten Sie stattdessen auf den COMAR-Unterbau umschalten."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -408,10 +389,8 @@ msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
-msgstr ""
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
+msgstr "Das Funknetzwerk wurde durch den Hardwareschalter deaktiviert. Bitte aktivieren Sie es zuerst."
 
 #: autoswitch.py:79
 msgid "Scanning..."
@@ -457,8 +436,7 @@ msgstr "Einzelnes Ikon"
 
 #: network-applet.py:403
 msgid "Should network-applet start automatically when you login?"
-msgstr ""
-"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
+msgstr "Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
 
 #: network-applet.py:518
 msgid "Connecting to <b>%1</b> ..."
@@ -488,17 +466,10 @@ msgstr "Netzwerk-Applet"
 #~ msgstr "Wartend auf DBus..."
 
 #~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-#~ msgstr ""
-#~ "Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut "
-#~ "zu verbinden..."
+#~ msgstr "Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu verbinden..."
 
-#~ msgid ""
-#~ "Cannot connect to the DBus! If it is not running you should start it with "
-#~ "the 'service dbus start' command in a root console."
-#~ msgstr ""
-#~ "Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, "
-#~ "dann sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus "
-#~ "start' ausführen."
+#~ msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+#~ msgstr "Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' ausführen."
 
 #~ msgid "Share Connection"
 #~ msgstr "Verbindung freigeben"
