@@ -2,7 +2,7 @@
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk-Manager package.
-#
+# 
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -24,26 +24,24 @@ msgid "Disk Manager"
 msgstr "Festplatten-Manager"
 
 #: src/disk-manager.py:329
-#, fuzzy
 msgid "Unmount"
-msgstr "Mount-Punkt"
+msgstr "Aushängen"
 
 #: src/disk-manager.py:344 src/diskform.py:112
-#, fuzzy
 msgid "Mount"
-msgstr "Mount-Punkt"
+msgstr "Einhängen"
 
 #: src/disk-manager.py:383
-msgid ""
-"Changes saved but system couldn't mount it because it has been already "
-"mounted another point"
-msgstr ""
+msgid "Changes saved but system couldn't mount it because it has been already mounted another point"
+msgstr "Die Veränderungen wurden gespeichert, aber das System konnte den Datenträger nicht einbinden da er schon an einem anderen Punkt eingehängt ist."
 
 #: src/disk-manager.py:392
 msgid ""
 "Removing this partition from auto mount list can cause some boot problems.\n"
 "Do you want to continue?"
 msgstr ""
+"Das Entfernen dieser Partition von der Liste der automatisch einzuhängenden Datenträger kann Startprobleme verursachen.\n"
+"Wollen Sie fortfahren?"
 
 #: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
@@ -58,9 +56,8 @@ msgid "Partitions"
 msgstr "Partitionen"
 
 #: src/diskform.py:107
-#, fuzzy
 msgid "Mount Automatically"
-msgstr "Festplatten automatisch finden"
+msgstr "Automatisch einbinden"
 
 #: src/diskform.py:108
 msgid "File System Type :"
@@ -72,21 +69,18 @@ msgstr "Mount-Punkt:"
 
 #: src/diskform.py:110
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 #: src/diskform.py:111
 msgid "Additional Options :"
 msgstr "Zusätzliche Optionen :"
 
-#, fuzzy
 #~ msgid "Mount point is missing"
 #~ msgstr "Mount-Punkt:"
 
-#, fuzzy
 #~ msgid "Mount point does not exist"
 #~ msgstr "Mount-Punkt:"
 
-#, fuzzy
 #~ msgid "Add Missing Disks Automatically"
 #~ msgstr "Festplatten automatisch finden"
 
@@ -97,9 +91,7 @@ msgstr "Zusätzliche Optionen :"
 #~ msgstr "Standard-Optionen laden"
 
 #~ msgid "To update disk changes the manager must run as root"
-#~ msgstr ""
-#~ "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als "
-#~ "root ausgeführt werden"
+#~ msgstr "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als root ausgeführt werden"
 
 #~ msgid "User not in disk group !"
 #~ msgstr "Benutzer ist nicht in der Festplatten-Gruppe!"
