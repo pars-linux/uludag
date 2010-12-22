@@ -243,15 +243,21 @@ def create_stanza(summary_dict):
     # Indexing to traverse summary_dict as in sectionList manner
     for order, section in enumerate(section_list):
         tmp_content = ""
+        last_item = ""
         # Ignoring 'Email' item in sectionList, because handled it in prev loop
         if section == "Email":
             continue
         for distro in DISTRO_LIST:
             if summary_dict.has_key(distro):
-                if section == "Packager":
-                    tmp_content = "%s    %-30s: %s <%s>\n" % (tmp_content, distro, summary_dict[distro][order], ",".join(summary_dict[distro][order + 1]))
+                # Prevent content replication
+                if not summary_dict[distro][order] == last_item:
+                    if section == "Packager":
+                        tmp_content += "    %-30s: %s <%s>\n" % (distro, summary_dict[distro][order], ",".join(summary_dict[distro][order + 1]))
+                    else:
+                        tmp_content += "    %-30s: %s\n" % (distro, summary_dict[distro][order])
+                    last_item = summary_dict[distro][order]
                 else:
-                    tmp_content += "    %-30s: %s\n" % (distro, summary_dict[distro][order])
+                    tmp_content += "    %-30s:\n" % distro
         content += " %s:\n%s" % (section_list[order], tmp_content)
 
     return content
