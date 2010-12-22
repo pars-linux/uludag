@@ -45,7 +45,7 @@ msgstr ""
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
@@ -213,7 +213,7 @@ msgstr "- Lade PiSi History"
 
 #: .tmp/ui_mainwindow.py:136
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 # Kopie oder kopiere?
 #: .tmp/ui_mainwindow.py:138
