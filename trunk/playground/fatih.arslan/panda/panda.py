@@ -49,11 +49,12 @@ class Panda():
 
                 for line in open(driversDB):
                     if line.startswith(device_id):
-                        driver_name = line.split()[1]
-                if not driver_name:
-                    driver_name = "Not defined"
+                        self.driver_name = line.split()[1]
 
-        self.driver_name = driver_name
+                if not self.driver_name:
+                    self.driver_name = "Not defined"
+
+        return self.driver_name
 
     def __get_kernel_module_packages(self, kernel_list=None):
         '''Get the appropirate module for the specified kernel'''
@@ -186,6 +187,9 @@ class Panda():
                         grub_tmp.write(new_kernel_line)
                         configured = True
                         print "The parameter \"blacklist=%s\" is added to Grub.conf" % self.os_driver
+                    elif not self.os_driver:
+                        print "Grub.conf is already configured"
+                        print "You are using the default open source driver"
                 else:
                     grub_tmp.write(line)
         grub_tmp.close()
@@ -201,9 +205,12 @@ class Panda():
 if __name__ == '__main__':
     p = Panda()
     print
+    print "Packages needed to enable vendor driver:"
     print p.get_needed_driver_packages()
     print
+    print "Packages that could be removed. These are not needed:"
     print p.get_all_driver_packages()
+    print
     print
     p.update_grub_entries()
 
