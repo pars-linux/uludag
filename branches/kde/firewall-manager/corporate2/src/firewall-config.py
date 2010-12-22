@@ -192,11 +192,6 @@ class MainApplication(programbase):
         spacer = QSpacerItem(100, 1, QSizePolicy.Expanding, QSizePolicy.Minimum)
         self.bottomlayout.addItem(spacer)
 
-        if standalone:
-            self.pushClose = QPushButton(self, "pushClose")
-            self.pushClose.setText(i18n("Close"))
-            self.bottomlayout.addWidget(self.pushClose)
-
         # Initial conditions
         self.state = 'off'
         self.pushStatus.setEnabled(False)
@@ -221,6 +216,9 @@ class MainApplication(programbase):
         self.getState()
 
         if standalone:
+            self.pushClose = QPushButton(self, "pushClose")
+            self.pushClose.setText(i18n("Close"))
+            self.bottomlayout.addWidget(self.pushClose)
             self.pushClose.setIconSet(loadIconSet('cancel', group=KIcon.Small))
             self.connect(self.pushClose, SIGNAL('clicked()'), self, SLOT('close()'))
 
