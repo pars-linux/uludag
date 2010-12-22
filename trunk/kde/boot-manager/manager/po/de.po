@@ -35,7 +35,7 @@ msgstr ""
 
 #: src/bootmanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/bootmanager/about.py:34
 msgid "Current Maintainer"
@@ -43,7 +43,7 @@ msgstr "Aktueller Betreuer"
 
 #: src/bootmanager/about.py:35
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/bootmanager/about.py:35
 msgid "First Developer"
