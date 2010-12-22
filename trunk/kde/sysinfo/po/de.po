@@ -1,9 +1,9 @@
 # translation of de.po to German
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
-#
+# 
 # This file is distributed under the same license as @PACKAGE@ package. FIRST
-#
+# 
 # Michael Skiba <trans@michael-skiba.de>, 2007,2008.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -15,24 +15,24 @@ msgstr ""
 "PO-Revision-Date: 2010-01-14 18:26-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
-"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: src/sysinfo.cpp:88
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: src/sysinfo.cpp:94
 msgid "Not Available"
@@ -64,7 +64,7 @@ msgstr "Suche nach Hardwareinformation..."
 
 #: src/sysinfo.cpp:237
 msgid "System"
-msgstr ""
+msgstr "System"
 
 #: src/sysinfo.cpp:245
 msgid "Common Folders"
@@ -122,7 +122,7 @@ msgstr "Prozessor (CPU)"
 
 #: src/sysinfo.cpp:297
 msgid "%1 MHz"
-msgstr ""
+msgstr "%1 MHz"
 
 #: src/sysinfo.cpp:298
 msgid " core"
@@ -152,8 +152,7 @@ msgstr "Nicht eingehängt"
 msgid "%1 free of %2"
 msgstr "%1 frei von %2"
 
-#~ msgid ""
-#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 #~ msgstr "Ordner, Festplatten, Wechselmedien, Systeminformation und mehr..."
 
 #~ msgid "Driver: "
