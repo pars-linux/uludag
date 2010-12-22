@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Muhammed Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -57,7 +57,7 @@ msgstr "Port Bereich"
 
 #: src/dialog.py:72
 msgid "information"
-msgstr ""
+msgstr "Information"
 
 #: src/dialog.py:73
 msgid "Example: 100-200,300"
@@ -84,72 +84,57 @@ msgid "Firewall Configuration"
 msgstr "Firewall-Einstellungen"
 
 #: src/firewall-config.py:165
-#, fuzzy
 msgid "Incoming Rule"
-msgstr "Eingehende"
+msgstr "Einkommende Regel"
 
 #: src/firewall-config.py:166
-#, fuzzy
 msgid "Outgoing Rule"
-msgstr "Ausgehende"
+msgstr "Ausgehende Regel"
 
 #: src/firewall-config.py:177
 msgid "Incoming Connections"
 msgstr "Eingehende Verbindungen"
 
 #: src/firewall-config.py:178
-#, fuzzy
 msgid "Outgoing Connections"
-msgstr "Eingehende Verbindungen"
+msgstr "Ausgehende Verbindungen"
 
 #: src/firewall-config.py:241 src/utils.py:128
-msgid ""
-"Write ports or port ranges that you want to ALLOW for incoming connections."
-msgstr ""
+msgid "Write ports or port ranges that you want to ALLOW for incoming connections."
+msgstr "Bitte eintragen welche Ports oder Portbereiche OFFEN für einkommenden Verkehr sein sollen."
 
 #: src/firewall-config.py:251 src/firewall-config.py:267
 #, python-format
 msgid "%s already in list!"
-msgstr ""
+msgstr "%s schon in der Liste!"
 
 #: src/firewall-config.py:257 src/utils.py:130
-msgid ""
-"Write ports or port ranges that you want to BLOCK for outgoing connections."
-msgstr ""
+msgid "Write ports or port ranges that you want to BLOCK for outgoing connections."
+msgstr "Eintragen welche Ports oder Portbereiche, GESCHLOSSEN für ausgehenden Verkehr sein sollen."
 
 #: src/firewall-config.py:286
 msgid "Firewall Manager Help"
-msgstr ""
+msgstr "Hilfe für Firewall-Manager"
 
 #: src/firewall-config.py:350
 msgid "&Stop"
 msgstr "&Stop"
 
 #: src/firewall-config.py:352
-#, fuzzy
 msgid "Firewall is running"
-msgstr "Firewall-Einstellungen"
+msgstr "Firewall aktiv"
 
 #: src/firewall-config.py:354
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Klicken Sie hier, um die Firewall anzuhalten und alle ein- und ausgehende "
-"Verbindungen zu zulassen."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
+msgstr "Klicken Sie hier, um die Firewall anzuhalten und alle ein- und ausgehende Verbindungen zu zulassen."
 
 #: src/firewall-config.py:361
-#, fuzzy
 msgid "Firewall is not running"
-msgstr "<b><font size='+1'>Firewall ist nicht aktiv</font></b>"
+msgstr "Firewall nicht aktiv"
 
 #: src/firewall-config.py:363
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Klicken Sie hier, um die Firewall zu starten und nur Verbindungen zu den "
-"angegebenen Diensten zu erlauben."
+msgid "Click here to start the firewall and allow connections only to specified services."
+msgstr "Klicken Sie hier, um die Firewall zu starten und nur Verbindungen zu den angegebenen Diensten zu erlauben."
 
 #: src/firewall-config.py:480
 msgid "Pardus Firewall Interface is already running!"
@@ -157,36 +142,35 @@ msgstr "Pardus-Firewall Schnittstelle wird bereits ausgeführt!"
 
 #: src/utils.py:46 src/utils.py:131
 msgid "Edit Rule"
-msgstr ""
+msgstr "Regel bearbeiten"
 
 #: src/utils.py:50
-#, fuzzy
 msgid "Delete Rule"
-msgstr "Neue Richtlinie"
+msgstr "Regel löschen"
 
 #: src/utils.py:54
 msgid "Start/Stop Rule"
-msgstr ""
+msgstr "Start/Stop Regel"
 
 #: src/utils.py:80
-#, fuzzy, python-format
+#, python-format
 msgid "Allow all incoming connections to %s."
-msgstr "Alle eingehende Verbindungen durch die Ports %s akzeptieren"
+msgstr "Alle eingehenden Verbindungen durch die Ports %s gestatten."
 
 #: src/utils.py:82
-#, fuzzy, python-format
+#, python-format
 msgid "Reject all outgoing connections to %s."
-msgstr "Alle ausgehende Verbindungen durch die Ports %s verweigern"
+msgstr "Alle ausgehenden Verbindungen durch die Ports %s verweigern."
 
 #: src/utils.py:85
-#, fuzzy, python-format
+#, python-format
 msgid "Rejecting all incoming connections to %s."
-msgstr "Alle eingehende Verbindungen durch die Ports %s verweigern"
+msgstr "Alle eingehenden Verbindungen durch die Ports %s verweigern."
 
 #: src/utils.py:87
-#, fuzzy, python-format
+#, python-format
 msgid "Allowing all outgoing connections to %s."
-msgstr "Alle eingehende Verbindungen durch die Ports %s akzeptieren"
+msgstr "Alle ausgehenden Verbindungen durch die Ports %s gestatten."
 
 #: src/utils.py:88
 #, python-format
@@ -194,20 +178,19 @@ msgid "Ports: %s"
 msgstr "Ports: %s"
 
 #: src/utils.py:90
-#, fuzzy, python-format
+#, python-format
 msgid "Allow all incoming connection through ports %s."
-msgstr "Alle eingehende Verbindungen durch die Ports %s akzeptieren"
+msgstr "Alle eingehenden Verbindungen durch die Ports %s gestatten."
 
 #: src/utils.py:92
-#, fuzzy, python-format
+#, python-format
 msgid "Reject all outgoing connection through ports %s."
-msgstr "Alle ausgehende Verbindungen durch die Ports %s verweigern"
+msgstr "Alle ausgehenden Verbindungen durch die Ports %s verweigern."
 
 #: src/utils.py:326
 msgid "Invalid port range."
 msgstr "Ungültiger Port-Bereich"
 
-#, fuzzy
 #~ msgid "Reject all outgoing connection through port(s) %s"
 #~ msgstr "Alle ausgehende Verbindungen durch die Ports %s verweigern"
 
@@ -220,7 +203,6 @@ msgstr "Ungültiger Port-Bereich"
 #~ msgid "&Start Firewall"
 #~ msgstr "Firewall &starten"
 
-#, fuzzy
 #~ msgid "Rule"
 #~ msgstr "Neue Richtlinie"
 
@@ -231,26 +213,13 @@ msgstr "Ungültiger Port-Bereich"
 #~ msgstr "Alt+S"
 
 #~ msgid "Click here to stop the firewall and allow all incoming connections."
-#~ msgstr ""
-#~ "Klicken Sie hier, um die Firewall anzuhalten und alle eingehende "
-#~ "Verbindungen zu zulassen."
+#~ msgstr "Klicken Sie hier, um die Firewall anzuhalten und alle eingehende Verbindungen zu zulassen."
 
-#~ msgid ""
-#~ "All incoming connections are <b>rejected</b> by default. If you want to "
-#~ "allow other computers to access services on this computer, check the "
-#~ "service below:"
-#~ msgstr ""
-#~ "Alle eingehende Verbindungen sind standardmässig auf <b>verweigert</b> "
-#~ "gesetzt. Wenn Sie anderen Computer den Zugang zu manchen Diensten auf "
-#~ "Ihren Computer zulassen möchten, dann wählen Sie die Dienste aus:"
+#~ msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
+#~ msgstr "Alle eingehende Verbindungen sind standardmässig auf <b>verweigert</b> gesetzt. Wenn Sie anderen Computer den Zugang zu manchen Diensten auf Ihren Computer zulassen möchten, dann wählen Sie die Dienste aus:"
 
-#~ msgid ""
-#~ "In this tab, you can create your own firewall rules. Use '+' button to "
-#~ "create rules, and uncheck rules from list to remove them."
-#~ msgstr ""
-#~ "In dieser Registerkarte, können Sie Ihre eigenen Firewall-Richtlinien "
-#~ "einrichten. Benutzen Sie die '+' Schaltfläche, um die Richtlinien zu "
-#~ "erstellen und deaktivieren Sie die Richtlinien, um diese zu entfernen."
+#~ msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
+#~ msgstr "In dieser Registerkarte, können Sie Ihre eigenen Firewall-Richtlinien einrichten. Benutzen Sie die '+' Schaltfläche, um die Richtlinien zu erstellen und deaktivieren Sie die Richtlinien, um diese zu entfernen."
 
 #~ msgid "Alt+H"
 #~ msgstr "Alt+H"
