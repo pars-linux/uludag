@@ -33,7 +33,7 @@ msgstr ""
 
 #: src/firewallmanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/firewallmanager/about.py:34
 msgid "Current Maintainer"
