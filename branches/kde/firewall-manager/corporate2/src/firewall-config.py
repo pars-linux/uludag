@@ -237,7 +237,7 @@ class MainApplication(programbase):
         ports = self.askPorts(unicode(i18n("Write ports or port ranges that you want to ALLOW for incoming connections.")))
         if ports:
             if not self.inev.checkItem(ports):
-                item = self.inev.add("", ports, -1, False, True, True, "", self)
+                item = self.inev.add("", ports, -1, False, True, True, "")
                 try:
                     self.saveAll()
                     self.refreshView()
@@ -253,7 +253,7 @@ class MainApplication(programbase):
         ports = self.askPorts(unicode(i18n("Write ports or port ranges that you want to BLOCK for outgoing connections.")))
         if ports:
             if not self.inev.checkItem(ports):
-                item = self.inev.add("", ports, -1, False, True, False, "", self)
+                item = self.inev.add("", ports, -1, False, True, False, "")
                 try:
                     self.saveAll()
                     self.refreshView()
@@ -301,7 +301,7 @@ class MainApplication(programbase):
         runningList = {}
         index = 0
         for _key, (_name, _ports) in rules.filter.iteritems():
-            item = self.inev.add("", _ports, index, True, False, isIncoming, _name, self)
+            item = self.inev.add("", _ports, index, True, False, isIncoming, _name)
             runningList[_key] = item
             index = index + 1
         for port in ports:
@@ -311,7 +311,7 @@ class MainApplication(programbase):
                 item = runningList[key]
                 item.setIsRunning(True)
             else:
-                item = self.inev.add("", port, index, False, True, isIncoming, "", self)
+                item = self.inev.add("", port, index, False, True, isIncoming, "")
             index = index + 1
 
     def getIncomingRules(self):
