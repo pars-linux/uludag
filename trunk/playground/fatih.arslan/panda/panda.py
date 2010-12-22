@@ -50,6 +50,8 @@ class Panda():
                 for line in open(driversDB):
                     if line.startswith(device_id):
                         driver_name = line.split()[1]
+                    else:
+                        driver_name = "Not defined"
         self.driver_name = driver_name
 
     def __get_kernel_module_packages(self, kernel_list=None):
@@ -100,18 +102,24 @@ class Panda():
 
         needed_module_packages = self.__get_kernel_module_packages(kernel_flavors)
 
-        # List only kernel_flavors, we assume that a kernel flavor begins with "module-" and does not end with "-userspace"
-        module_packages = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
-                                self.driver_packages[self.driver_name])
+        if not self.driver_name == "Not defined":
+            # List only kernel_flavors, we assume that a kernel flavor begins with
+            # "module-" and does not end with "-userspace"
+            module_packages = filter(lambda x: x.startswith("module-") and not x.endswith("-userspace"), \
+                                    self.driver_packages[self.driver_name])
 
-        # Kernel_list contains currently used kernel modules
-        # Kernel_flavors contains predefined kernel modules
-        # driver_package[driver_name] contains all modules 
-        # All modules should be stay nontouched, but remove kernels in kernel_flavors that are not in kernel_list
-        # (hence we are not using them)
-        need_to_install = list(set(self.driver_packages[self.driver_name]) - (set(module_packages)- set(needed_module_packages)))
+            # Kernel_list contains currently used kernel modules
+            # Kernel_flavors contains predefined kernel modules
+            # driver_package[driver_name] contains all modules 
+            # All modules should be stay nontouched, but remove kernels in kernel_flavors
+            # that are not in kernel_list (hence we are not using them)
 
-        return need_to_install
+            need_to_install = list(set(self.driver_packages[self.driver_name]) \
+                                   - (set(module_packages) - set(needed_module_packages)))
+
+            return need_to_install
+        else:
+            return []
 
     def get_all_driver_packages(self):
         '''This dict contains all module sthat should be removed first'''
@@ -149,15 +157,16 @@ class Panda():
         # Get the current used kernel version
         # Create a new grub file
         # Do not change the file if blacklist= .. is already available
+
         grub_tmp = open(grub_new, "w")
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    if "blacklist" in line or not os_driver:
+                    if "blacklist" in line or not self.os_driver:
                         print "Grub.conf is already configured"
                         configured = False
                         grub_tmp.write(line)
-                    elif os_driver:
+                    elif self.os_driver:
                         kernel_parameters = line.split()
                         kernel_parameters.append("blacklist=%s \n" % self.os_driver)
                         new_kernel_line = " ".join(kernel_parameters)
