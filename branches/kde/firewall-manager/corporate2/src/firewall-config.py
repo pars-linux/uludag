@@ -346,7 +346,7 @@ class MainApplication(programbase):
         self.state = state
         if self.state == 'on': #and self.profile == rules.profile:
             self.pushStatus.setText(i18n('&Stop'))
-            self.pixmapFW.setPixmap(loadIcon('fw-unlocked', size=48))
+            self.pixmapFW.setPixmap(loadIcon('fw-locked', size=48))
             self.textStatus.setText(i18n('Firewall is running'))
             self.textStatus.setPaletteForegroundColor(QColor(41, 182, 31))
             self.txinfo.setText(i18n('Click here to stop the firewall and allow all incoming and outgoing connections.'))
@@ -355,7 +355,7 @@ class MainApplication(programbase):
             #self.getRules()
         else:
             self.pushStatus.setText(i18n('&Start'))
-            self.pixmapFW.setPixmap(loadIcon('fw-locked', size=48))
+            self.pixmapFW.setPixmap(loadIcon('fw-unlocked', size=48))
             self.textStatus.setText(i18n('Firewall is not running'))
             self.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
             self.txinfo.setText(i18n('Click here to start the firewall and allow connections only to specified services.'))

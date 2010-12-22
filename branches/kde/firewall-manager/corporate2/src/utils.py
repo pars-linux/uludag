@@ -61,7 +61,6 @@ class AdvancedRuleCheckBox(QCheckBox):
             self.pushEdit.hide()
         else:
             self.icon = QImage(locate("data", "firewall-config/user-defined.png"))
-            self.iconState = QImage(locate("data", "firewall-config/apply.png"))
             self.pushStart.hide()
         self.iconState = QImage(locate("data", "firewall-config/apply.png"))
         self.icon.smoothScale(32, 32)
