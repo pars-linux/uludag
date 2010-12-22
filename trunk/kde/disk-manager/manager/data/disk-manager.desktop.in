@@ -6,3 +6,4 @@ Exec=disk-manager
 Icon=drive-harddisk
 Type=Application
 Categories=Qt;KDE;System;
+NotShowIn=KDE;
