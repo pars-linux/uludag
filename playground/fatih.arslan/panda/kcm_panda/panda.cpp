@@ -29,6 +29,7 @@
 #include <QBoxLayout>
 #include <QGroupBox>
 
+#include "helper.h"
 
 #include <kcmodule.h>
 #include <kaboutdata.h>
@@ -39,6 +40,7 @@
 #include <klocale.h>
 #include <knuminput.h>
 #include <kdebug.h>
+#include <kmessagebox.h>
 
 
 // X11 includes
@@ -49,8 +51,6 @@
 #include <GL/gl.h>
 #include <GL/glext.h>
 #include <GL/glx.h>
-
-
 
 
 #include <QX11Info>
@@ -157,6 +157,8 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   about->addAuthor(ki18n("Fatih Arslan"), ki18n("Original author"), "farslan@pardus.org.tr");
   setAboutData(about);
+
+  setNeedsAuthorization(true);
 }
 
 PandaConfig::~PandaConfig()
@@ -176,6 +178,26 @@ void PandaConfig::load()
 
 void PandaConfig::save()
 {
+
+  QVariantMap helperargs;
+  helperargs["osdriver"] = osDriver->isChecked();
+  helperargs["vendordriver"] = vendorDriver->isChecked();
+
+
+  Action *action = authAction();
+  action->setArguments(helperargs);
+
+  ActionReply reply = action->execute();
+
+  if (reply.failed()) {
+    if (reply.type() == ActionReply::KAuthError) {
+        KMessageBox::error(this, i18n("Unable to authenticate/execute the action: %1, %2", reply.errorCode(), reply.errorDescription()));
+    } else {
+        KMessageBox::error(this, i18n("Error handler for custom errors should be setup here"));
+    }
+
+  }
+
 }
 
 
