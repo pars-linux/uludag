@@ -40,7 +40,7 @@ msgstr "Hinzufügen/Entfernen/Aktualisieren von Paketen"
 
 #: src/about.py:27
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr ""
 
 #: src/about.py:36
 msgid "Gökmen Göksel"
@@ -87,7 +87,7 @@ msgstr "Möchten Sie fortfahren ?"
 
 #: src/basketdialog.py:177
 msgid "You must restart your system for the updates to take effect"
-msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden Aktualisierungen Wirkung zeigen"
+msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die Aktualisierungen Wirkung zeigen"
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -261,7 +261,6 @@ msgid "Installed Version:"
 msgstr "Installierte Version:"
 
 #: src/packagedelegate.py:282
-#, fuzzy
 msgid "Details"
 msgstr "Details"
 
@@ -275,7 +274,6 @@ msgid "%prog packages_to_install"
 msgstr "%prog Pakete zu installieren"
 
 #: src/progressdialog.py:75
-#, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
@@ -293,7 +291,6 @@ msgid "%1 %2"
 msgstr "%1 %2"
 
 #: src/progressdialog.py:90
-#, fuzzy
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
