@@ -42,6 +42,7 @@ class AdvancedRuleCheckBox(QCheckBox):
             self.serviceName = message
 
         self.updateMessage(message)
+        self.isDragging = False
 
         self.pushEdit = IconButton(self, "configure")
         QToolTip.add(self.pushEdit, i18n("Edit Rule"))
@@ -98,13 +99,28 @@ class AdvancedRuleCheckBox(QCheckBox):
         self.updateMessage(self.serviceName)
         self.show()
 
-    def eventFilter(self,target,event):
-        if(event.type()==QEvent.Enter):
+    def eventFilter(self, target, event):
+        if(event.type()==QEvent.MouseMove):
+            self.isDragging = True
+        elif(event.type()==QEvent.MouseButtonPress):
             self.fillColor = KGlobalSettings.buttonBackground()
             self.showButtons(True)
+            self.entryView.setCurrentItem(self)
+        elif(event.type()==QEvent.MouseButtonRelease):
+            if self.isDragging:
+                self.isDragging = False
+                if self.entryView.getCurrentItem():
+                    self.fillColor = KGlobalSettings.baseColor()
+                    self.entryView.getCurrentItem().showButtons(False)
+        elif(event.type()==QEvent.Enter):
+            if not self.isDragging:
+                self.fillColor = KGlobalSettings.buttonBackground()
+                self.showButtons(True)
+                self.entryView.setCurrentItem(self)
         elif(event.type()==QEvent.Leave):
-            self.fillColor = KGlobalSettings.baseColor()
-            self.showButtons(False)
+            if not (self.entryView.getCurrentItem() and self.isDragging):
+                self.fillColor = KGlobalSettings.baseColor()
+                self.showButtons(False)
         return False
 
     def showButtons(self, b):
@@ -235,6 +251,13 @@ class EntryView(QScrollView):
         self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
         self.entries = []
         self.fwconfig = parent
+        self.currentItem = None
+
+    def setCurrentItem(self, item):
+        self.currentItem = item
+
+    def getCurrentItem(self):
+        return self.currentItem
 
     def clear(self):
         for e in self.entries:
