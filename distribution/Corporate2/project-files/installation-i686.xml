@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus Corporate 2 Beta i686</Title>
+    <Title>Pardus Corporate 2 Beta 2 i686</Title>
     <WorkDir>/tmp/iso/i686</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
