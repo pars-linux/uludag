@@ -145,7 +145,7 @@ class Panda():
                                          "nvidia-settings"]}
         return self.driver_packages
 
-    def update_grub_entries(self, arg="auto"):
+    def update_grub_entries(self, arg="status"):
         '''Edit grub file to enable the use of propretiary graphic card drivers'''
         if self.os_driver is None:
             self.__get_blacklisted_packages()
@@ -185,7 +185,9 @@ class Panda():
 
                         # The current os driver is blacklisted, multiple choices
                         if self.os_driver in blacklist_args:
-                            status = "using-%s" % self.driver_name
+                            if arg == "status":
+                                status = "using-%s" % self.driver_name
+                                return status
 
                             # Already configured, but user want to use nouveau,fglrx
                             if arg == "os":
@@ -222,7 +224,7 @@ class Panda():
                                 # Neither Ati nor Nvidia drivers are used. (ex: intel)
                                 status = "using-non-vendor"
 
-                    elif (arg == "vendor" or arg == "auto") and self.os_driver:
+                    elif arg == "vendor" and self.os_driver:
                         kernel_parameters = line.split()
                         kernel_parameters.append("blacklist=%s \n" % self.os_driver)
                         new_kernel_line = " ".join(kernel_parameters)
@@ -239,6 +241,7 @@ class Panda():
                             # Neither Ati nor Nvidia drivers are used. (ex: intel)
                 else:
                     grub_tmp.write(line)
+
         grub_tmp.close()
 
         #Replace the new grub file with the old one, create also a backup file
@@ -261,6 +264,6 @@ if __name__ == '__main__':
     #print p.get_all_driver_packages()
     #print
 
-    status = p.update_grub_entries("os")
+    status = p.update_grub_entries()
     print
     print status
