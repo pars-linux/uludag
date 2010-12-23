@@ -42,7 +42,7 @@ def mount_tmpfs(size="10G"):
     subprocess.call(["/bin/mount",
                      "tmpfs", "-t", "tmpfs",
                      ctx.config.values.dirs.tmp_dir,
-                     "-o size=%s,noatime" % size])
+                     "-o", "size=%s,noatime" % size])
 
 def umount_tmpfs():
     """Unmount tmp_dir if mounted."""
