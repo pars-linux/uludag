@@ -44,7 +44,7 @@ msgstr "Gökmen Göksel"
 
 #: src/about.py:36
 msgid "Developer"
-msgstr "Разработчики"
+msgstr "Разработчик"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -52,25 +52,25 @@ msgstr "Faik Uygur"
 
 #: src/about.py:37
 msgid "First Author"
-msgstr "First Author"
+msgstr "Первый автор"
 
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр"
+msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр, Алексей Иванов"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
-msgstr "Basket"
+msgstr "Очистить корзину"
 
 #: src/basketdialog.py:55
 msgid "Do you want to clear all selections ?"
-msgstr "Вы хотите продолжить?"
+msgstr "Вы хотите отменить выбор?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -83,7 +83,7 @@ msgstr "Вы хотите продолжить?"
 
 #: src/basketdialog.py:177
 msgid "You must restart your system for the updates to take effect"
-msgstr "Вы должны <b>перезагрузить компьютер</b> чтобы обновления  вступили в силу:"
+msgstr "Вы должны перезагрузить компьютер, чтобы обновления вступили в силу"
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
@@ -95,7 +95,7 @@ msgstr "Пакеты требуют перезагрузки системы"
 
 #: src/basketdialog.py:185
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Вы должны перезагрузить следующие службы, чтобы обновления вступили в силу:"
+msgstr "Вы должны перезапустить следующие службы, чтобы обновления вступили в силу"
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
@@ -111,15 +111,15 @@ msgstr "Предупреждение"
 
 #: src/basketdialog.py:202
 msgid "Critical Packages"
-msgstr "Удаление пакета (ов)"
+msgstr "Критические пакеты"
 
 #: src/basketdialog.py:213
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Выбранные пакеты [%1] конфликтуют друг с другом. Они не могут быть установлены вместе."
+msgstr "Выбранные пакеты уже установлены.<br>Если вы продолжите, пакеты будут установлены заново."
 
 #: src/basketdialog.py:215
 msgid "Already Installed Packages"
-msgstr "Установленные пакеты"
+msgstr "Уже установленные пакеты"
 
 #: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
 msgid "Installed Packages"
@@ -131,7 +131,7 @@ msgstr "Все"
 
 #: src/helpdialog.py:33
 msgid "Package Manager Help"
-msgstr "Менеджер пакетов Справка"
+msgstr "Краткая справка о менеджере пактов"
 
 #: src/main.py:66
 msgid "Show main window"
@@ -139,11 +139,11 @@ msgstr "Показать главное окно"
 
 #: src/mainwidget.py:147
 msgid "All packages are up to date"
-msgstr "Все пакеты в курсе"
+msgstr "Все пакеты уже обновлены"
 
 #: src/mainwidget.py:233
 msgid "Searching..."
-msgstr "Поиск ..."
+msgstr "Поиск..."
 
 #: src/mainwidget.py:245
 msgid "No results found."
@@ -155,7 +155,7 @@ msgstr "Ошибка сети"
 
 #: src/mainwidget.py:301
 msgid "Please check your network connections and try again."
-msgstr "Проверьте сетевые подключения и повторите попытку."
+msgstr "Пожалуйста, проверьте сетевые подключения и повторите попытку."
 
 #: src/mainwidget.py:303
 msgid "Authorization Error"
@@ -168,7 +168,7 @@ msgstr "Вы не авторизованы для этой операции."
 #: src/mainwidget.py:307
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Пакет <b>%s</b>  не найден в репозитории. <br> Это могут быть обновлены или удалены из хранилища. <br> Пожалуйста, попробуйте обновить хранилище информации."
+msgstr "Пакет <b>%s</b> не найден в репозитории.<br>Возможно пакет был обновлен или удален из репозитория.<br>Пожалуйста, попробуйте обновить информацию репозитория."
 
 #: src/mainwidget.py:446
 msgid "All Updates"
@@ -196,7 +196,7 @@ msgstr "Обновление"
 
 #: src/mainwindow.py:201
 msgid "Calculating dependencies..."
-msgstr "Расчет зависимостей ..."
+msgstr "Расчет зависимостей..."
 
 #: src/mainwindow.py:205
 msgid "Currently your basket is empty."
@@ -204,11 +204,11 @@ msgstr "В настоящее время Ваша корзина пуста."
 
 #: src/operationmanager.py:40
 msgid "installing"
-msgstr "установлено"
+msgstr "установка"
 
 #: src/operationmanager.py:41
 msgid "removing"
-msgstr "удалено"
+msgstr "удаление"
 
 #: src/operationmanager.py:42 src/progressdialog.py:79
 msgid "extracting"
@@ -224,11 +224,11 @@ msgstr "загрузка"
 
 #: src/packagedelegate.py:60
 msgid "critical"
-msgstr "критический"
+msgstr "критическое"
 
 #: src/packagedelegate.py:61
 msgid "security"
-msgstr "безопасный"
+msgstr "безопасности"
 
 #: src/packagedelegate.py:77
 msgid "Description:"
@@ -256,12 +256,12 @@ msgstr "Установленная версия:"
 
 #: src/packagedelegate.py:282
 msgid "Details"
-msgstr "Подробная информация"
+msgstr "Подробнее"
 
 #: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
 #: ui/ui_mainwidget_x11.py:85
 msgid "Select all packages in this group"
-msgstr "Выберить все пакеты в этой группе"
+msgstr "Выбрать все пакеты в этой группе"
 
 #: src/pm-install.py:57
 msgid "%prog packages_to_install"
@@ -298,11 +298,11 @@ msgstr "Подготовка PiSi ..."
 
 #: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Отмена операции ...</b>"
+msgstr "<b>Отмена операции...</b>"
 
 #: src/settingsdialog.py:152
 msgid "Open Directory"
-msgstr "Open Directory"
+msgstr "Открыть директорию"
 
 #: src/settingsdialog.py:162
 msgid "All the cached packages will be deleted. Are you sure? "
@@ -318,27 +318,28 @@ msgstr "<qt>Адресс репозитория должен оканчиват�
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
-msgstr "Установка пакета (ов)"
+msgstr "Установка пакета(ов)"
 
 #: src/statemanager.py:86
 msgid "Removing Package(s)"
-msgstr "Удаление пакета (ов)"
+msgstr "Удаление пакета(ов)"
 
 #: src/statemanager.py:87
 msgid "Upgrading Package(s)"
-msgstr "Обновление пакета (ов)"
+msgstr "Обновление пакета(ов)"
 
 #: src/statemanager.py:88
 msgid "Applying Repository Changes"
-msgstr "Применение данных изменения"
+msgstr "Применение изменений репозитория"
 
 #: src/statemanager.py:89
+#, fuzzy
 msgid "Updating Repository"
 msgstr "Обновление репозитория"
 
 #: src/statemanager.py:90
 msgid "Updating Repository(s)"
-msgstr "Обновление репозитория (ев)"
+msgstr "Обновление репозитория(ев)"
 
 #: src/statemanager.py:93
 msgid "installed"
@@ -412,7 +413,7 @@ msgstr "Дополнительные зависимости выбранных �
 
 #: src/statemanager.py:126
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
-msgstr "Удалить зависимости выбранных пакетов для удаления:"
+msgstr "Следующие зависимости выбранных пакетов также будут удалены:"
 
 #: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
@@ -424,15 +425,15 @@ msgstr "Дополнительные зависимости выбранных �
 
 #: src/statemanager.py:159
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Сейчас есть <b>%1</b> выбранных пакетов из <b>%2</b> по размеру"
+msgstr "Сейчас есть <b>%1</b> выбранных пакетов из <b>%2</b> по объему "
 
 #: src/statemanager.py:162
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "с <b>%1</b> убираемыми зависимостями на <b>%2</b> по размеру"
+msgstr "с <b>%1</b> зависимостями на <b>%2</b> по объему "
 
 #: src/statemanager.py:164
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "с <b>%1</b> дополнительными зависимостями на <b>%2</b> по размеру"
+msgstr "с <b>%1</b> дополнительными зависимостями на <b>%2</b> по объему "
 
 #: src/statemanager.py:165
 msgid "in your basket."
@@ -444,7 +445,7 @@ msgstr "Выбранные пакеты [%1] конфликтуют друг с 
 
 #: src/statemanager.py:194 src/statemanager.py:202
 msgid "Conflict Error"
-msgstr "Ошибка конфликта"
+msgstr "Конфликт"
 
 #: src/statemanager.py:198
 msgid "The following packages conflicts:\n"
@@ -480,11 +481,11 @@ msgstr "Игнорировать"
 
 #: src/webdialog.py:110 ui/ui_webdialog.py:169
 msgid "Package Files"
-msgstr "Список пакетов"
+msgstr "Файлы пакета"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
-msgstr "Применение"
+msgstr "Приложение"
 
 #: ui/ui_appitem.py:59
 msgid "Web Tarayıcı"
@@ -496,7 +497,7 @@ msgstr "Firefox"
 
 #: ui/ui_basketdialog.py:182 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
 msgid "Basket"
-msgstr "Basket"
+msgstr "Корзина"
 
 #: ui/ui_basketdialog.py:183
 msgid "Selected package(s) for install:"
@@ -504,7 +505,7 @@ msgstr "Выбранные пакеты для установки:"
 
 #: ui/ui_basketdialog.py:185
 msgid "Total Size:"
-msgstr "Размер:"
+msgstr "Общий размер:"
 
 #: ui/ui_basketdialog.py:186
 msgid "<b>2.2 MB</b>"
@@ -570,12 +571,14 @@ msgid "Settings"
 msgstr "Настройки"
 
 #: ui/ui_mainwidget_v3.py:185
+#, fuzzy
 msgid "Show Basket"
-msgstr "Basket"
+msgstr "Показать корзину"
 
 #: ui/ui_mainwidget_v3.py:186
+#, fuzzy
 msgid "Check for Updates"
-msgstr "Показать обновления"
+msgstr "Проверить наличие обновлений"
 
 #: ui/ui_progressdialog.py:154
 msgid "Operation"
@@ -617,7 +620,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- Кб/с</span></p></body></html>"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- КБ/с</span></p></body></html>"
 
 #: ui/ui_progressdialog.py:166 ui/ui_progressdialog_v3.py:188
 #: ui/ui_settingsdialog.py:370
@@ -647,11 +650,11 @@ msgstr "Адрес Репозитория"
 
 #: ui/ui_settingsdialog.py:367
 msgid "Package Manager Settings"
-msgstr "Установки Менеджера Пакетов"
+msgstr "Настройка Менеджера пакетов"
 
 #: ui/ui_settingsdialog.py:368
 msgid "&Help"
-msgstr "По&мощь"
+msgstr "Сп&равка"
 
 #: ui/ui_settingsdialog.py:369
 msgid "&OK"
@@ -679,7 +682,7 @@ msgstr "Включить значок в системном лотке"
 
 #: ui/ui_settingsdialog.py:376
 msgid "Hide system tray if there is no update."
-msgstr "Спрятать системный лоток, если нет обновлений"
+msgstr "Спрятать значок в системном лотке, если нет обновлений"
 
 #: ui/ui_settingsdialog.py:377
 msgid "Enable &periodic update check"
@@ -699,7 +702,7 @@ msgstr "Устанавливать обновления автоматическ
 
 #: ui/ui_settingsdialog.py:381
 msgid "Bandwidth limit"
-msgstr "Граница ширины канала"
+msgstr "Ограничение использования канала"
 
 #: ui/ui_settingsdialog.py:382
 msgid " kb/s"
@@ -707,15 +710,15 @@ msgstr " кб/с"
 
 #: ui/ui_settingsdialog.py:383
 msgid "Use bandwidth limit :"
-msgstr "Использовать ширину канала:"
+msgstr "Использовать лимит ширины канала:"
 
 #: ui/ui_settingsdialog.py:384
 msgid "&General Settings"
-msgstr "Общие &Установки"
+msgstr "Основные"
 
 #: ui/ui_settingsdialog.py:385
 msgid "&Use hard disk cache for downloaded software"
-msgstr "&Использовать жесткий диск для создания кэша для скачанного ПО"
+msgstr "&Использовать жесткий диск для создания кэша скачанного ПО"
 
 #: ui/ui_settingsdialog.py:386
 msgid "Maximum cache size:"
@@ -727,7 +730,7 @@ msgstr "Неограниченный"
 
 #: ui/ui_settingsdialog.py:388
 msgid " Mib"
-msgstr " Mib"
+msgstr " мб"
 
 #: ui/ui_settingsdialog.py:389
 msgid "Current cache dir:"
@@ -735,7 +738,7 @@ msgstr "Текущий каталог кэша:"
 
 #: ui/ui_settingsdialog.py:390
 msgid "Select..."
-msgstr "Выберите ..."
+msgstr "Выбрать..."
 
 #: ui/ui_settingsdialog.py:391
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
@@ -771,7 +774,7 @@ msgstr "&Репозитории"
 
 #: ui/ui_settingsdialog.py:401
 msgid "HTTP proxy server:"
-msgstr "HTTP proxy сервер:"
+msgstr "HTTP прокси-сервер:"
 
 #: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
 #: ui/ui_settingsdialog.py:407
@@ -780,19 +783,19 @@ msgstr "Порт:"
 
 #: ui/ui_settingsdialog.py:403
 msgid "Use this proxy server for all protocols"
-msgstr "Использовать этот proxy сервер для всех протоколов"
+msgstr "Использовать этот прокси-сервер для всех протоколов"
 
 #: ui/ui_settingsdialog.py:404
 msgid "HTTPS proxy server:"
-msgstr "HTTPS proxy сервер:"
+msgstr "HTTPS прокси-сервер:"
 
 #: ui/ui_settingsdialog.py:406
 msgid "FTP proxy server:"
-msgstr "FTP proxy сервер:"
+msgstr "FTP прокси-сервер:"
 
 #: ui/ui_settingsdialog.py:408
 msgid "No proxy server"
-msgstr "Нет proxy сервера"
+msgstr "Нет прокси-сервера"
 
 #: ui/ui_settingsdialog.py:409
 msgid "Use manual settings"
@@ -804,11 +807,11 @@ msgstr "Использовать установки среды рабочего 
 
 #: ui/ui_settingsdialog.py:411
 msgid "&Proxy"
-msgstr "&Proxy"
+msgstr "&Прокси-сервер"
 
 #: ui/ui_summarydialog.py:49
 msgid "Operation Summary"
-msgstr "Итог"
+msgstr "Итоги"
 
 #: ui/ui_summarydialog.py:50
 msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
