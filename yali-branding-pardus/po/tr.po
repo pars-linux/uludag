@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-19 23:01+0000\n"
+"POT-Creation-Date: 2010-12-23 14:02+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -150,9 +150,8 @@ msgid "There are a lot of features waiting to be explored. Thousands of software
 msgstr "Pek çok özellik keşfedilmeyi bekliyor. Hatta bu kurulum medyasına sığmadığı için konmamış binlerce yazılım, kütüphane ve araç var. Sisteminize yeni uygulamalar eklemek, Pardus&apos;un paket yönetimi sistemi PiSi ve onun kullanıcı dostu Paket Yöneticisi ile artık çok daha kolay.&lt;br&gt;&lt;br&gt;Paket Yöneticisi birkaç tıklama ile sisteminizi güncel tutmanıza, hiç kullanmadığınız bileşenleri kaldırmanıza veya yenilerini eklemeniz için size yardımcı olacaktır. Kurulumdan sonra Kaptan'ın yardımıyla ona tercih ettiğiniz menüden ulaşabilirsiniz. "
 
 #: ../release.xml.in.h:35
-#, fuzzy
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
-msgstr "Onaylama işlemi, kurulum medyasında yer alan paketlerin, depoda yer alan paketlerden farklı olup olmadıklarını, dosya doğrulama yöntemiyle kontrol eder. Onay alınamayan durumlar, genellikle kurulum medyasının üretiminde bir problem olduğunun göstergesidir. (CD, DVD ya da USB depolama aygıtı). &lt;br&gt;&lt;br&gt;Eğer optik bir medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda(DVD için 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde basmayı deneyebilirsiniz."
+msgstr "Onaylama işlemi, kurulum medyasında yer alan paketlerin, depoda yer alan paketlerden farklı olup olmadıklarını, dosya doğrulama yöntemiyle denetliyor. Onay alınamayan durumlar, genellikle kurulum medyasının yazımında bir sorun olduğunu gösterir. (CD, DVD ya da USB depolama aygıtı).&lt;br&gt;&lt;br&gt;Eğer optik bir medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda(DVD için 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde yazmayı deneyiniz."
 
 #: ../release.xml.in.h:36
 msgid "Welcome back"
