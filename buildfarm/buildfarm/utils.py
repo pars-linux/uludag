@@ -14,6 +14,7 @@
 
 import os
 import glob
+import subprocess
 
 from buildfarm.config import configuration as conf
 
@@ -35,6 +36,20 @@ def is_there_free_space(directory=None):
 
     # Return True if the free space >= 5GB
     return free_space >= (5*1024*1024*1024)
+
+def init_tmpfs(size="10G"):
+    """(U)Mounts pisi tmp_dir within a tmpfs of 10G size."""
+    if conf.usetmpfs:
+        if ctx.config.values.dirs.tmp_dir in \
+                open("/proc/self/mountinfo").readlines():
+            # Already mounted
+            subprocess.call(["/bin/umount",
+                             ctx.config.values.dirs.tmp_dir])
+        else:
+            subprocess.call(["/bin/mount",
+                             "tmpfs", "-t", "tmpfs",
+                             ctx.config.values.dirs.tmp_dir,
+                             "-o size=%s,noatime" % size)
 
 def create_directories():
     directories = [
