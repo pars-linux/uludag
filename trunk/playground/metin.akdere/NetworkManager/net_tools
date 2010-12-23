@@ -1,0 +1,25 @@
+[lan]
+device = pci:14e4_1698_eth0
+state = down
+name_mode = default
+net_mode = auto
+
+[Şirket]
+name_server = 8.8.8.8
+net_mask = 255.255.255.0
+net_gateway = 192.168.3.1
+state = down
+name_mode = custom
+device = pci:14e4_1698_eth0
+net_mode = manual
+net_address = 192.168.1.1
+
+[ptsp-server]
+net_mask = 255.255.255.0
+net_gateway = 10.0.0.1
+state = down
+name_mode = default
+device = pci:14e4_1698_eth0
+net_mode = manual
+net_address = 10.0.0.1
+
