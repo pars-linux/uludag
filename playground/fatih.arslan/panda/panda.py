@@ -164,87 +164,62 @@ class Panda():
             return "Wrong parameter!\" You can use: vendor or os"
 
 
-         ## Grub Parsing
+        ## Grub Parsing
         configured = False
-        grub_tmp = open(grub_new, "w")
+
+        def blacklist_in_line(line):
+            params = line.split()
+            blacklist = []
+
+            for param in params:
+                if param.startswith("blacklist="):
+                    modules = param.split("=", 1)[1].split(",")
+                    blacklist.extend(modules)
+
+            return blacklist
+
+        def update_blacklist_in_line(line, blacklist):
+            params = [x for x in line.strip().split() if not x.startswith("blacklist=")]
+
+            if blacklist:
+                params.append("blacklist=%s" % ",".join(blacklist))
+
+            return " ".join(params) + "\n"
+
+        if arg == "status":
+            import StringIO
+            grub_tmp = StringIO.StringIO()
+        else:
+            grub_tmp = open(grub_new, "w")
+
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    if "blacklist" in line:
-                        kernel_parameters = line.split()
-                        blacklist = filter(lambda x: x.startswith("blacklist="), kernel_parameters)
-                        blacklist_args = []
-                        for blck in blacklist:
-                            blck_args = blck.split("=")[1]
-                            if ',' in blck_args:
-                                blck_args = blck_args.split(",")
-                                for bl_args in blck_args:
-                                    blacklist_args.append(bl_args)
-                            else:
-                                blacklist_args.append(blck_args)
+                    blacklist = blacklist_in_line(line)
 
-                        # The current os driver is blacklisted, multiple choices
-                        if self.os_driver in blacklist_args:
-                            if arg == "status":
-                                status = "using-%s" % self.driver_name
-                                return status
+                    if arg == "status":
+                        status = "using-%s" % self.driver_name if self.os_driver in blacklist else "os"
+                        return status
 
-                            # Already configured, but user want to use nouveau,fglrx
-                            if arg == "os":
-                                new_kernel_param = filter(lambda x: not x.startswith("blacklist="), \
-                                                          kernel_parameters)
-                                for bl_args in blacklist_args:
-                                    if bl_args != self.os_driver:
-                                        new_kernel_param.append("blacklist=%s" % bl_args)
+                    elif arg == "os":
+                        blacklist = [x for x in blacklist if x != self.os_driver]
+                        status = "using-%s" % self.os_driver or "non-vendor"
 
-                                new_kernel_param.append("\n")
-                                new_kernel_line = " ".join(new_kernel_param)
-                                grub_tmp.write(new_kernel_line)
-                                configured = True
-                                status = "using-%s" % self.os_driver.strip("blacklist=")
+                    elif arg == "vendor":
+                        if self.os_driver not in blacklist:
+                            blacklist.append(self.os_driver)
+                        status = "using-%s" % self.driver_name if self.driver_name != "Not defined" else "non-vendor"
 
-                            # Already configured, user want to use vendor drivers,no need to change
-                            elif arg =="vendor":
-                                configured = False
-                                status = "using-%s" % self.driver_name
+                    new_line = update_blacklist_in_line(line, blacklist)
+                    grub_tmp.write(new_line)
+                    configured = line != new_line
 
-                        # No os driver is blacklisted, the user want to use vendor driver
-                        elif arg == "vendor" and self.os_driver:
-                            kernel_parameters.append("blacklist=%s \n" % self.os_driver)
-                            new_kernel_line = " ".join(kernel_parameters)
-                            grub_tmp.write(new_kernel_line)
-                            configured = True
-                            status = "using-%s" % self.driver_name
-
-                        # The user wants to use os driver, no need to change
-                        else:
-                            if self.os_driver:
-                                status = "using-%s" % self.os_driver.strip("blacklist=")
-                            else:
-                                # Neither Ati nor Nvidia drivers are used. (ex: intel)
-                                status = "using-non-vendor"
-
-                    elif arg == "vendor" and self.os_driver:
-                        kernel_parameters = line.split()
-                        kernel_parameters.append("blacklist=%s \n" % self.os_driver)
-                        new_kernel_line = " ".join(kernel_parameters)
-                        grub_tmp.write(new_kernel_line)
-                        configured = True
-                        status = "using-%s" % self.driver_name
-
-                    else:
-                        status = "using-%s" % self.os_driver
-                        if self.os_driver:
-                            status = "using-%s" % self.os_driver.strip("blacklist=")
-                        else:
-                            status = "using-non-vendor"
-                            # Neither Ati nor Nvidia drivers are used. (ex: intel)
                 else:
                     grub_tmp.write(line)
 
         grub_tmp.close()
 
-        #Replace the new grub file with the old one, create also a backup file
+        # Replace the new grub file with the old one, create also a backup file
         if configured:
             # Backup of grub file is created: /boot/grub/grub.conf.back
             shutil.copy2(grub_file, grub_back)
