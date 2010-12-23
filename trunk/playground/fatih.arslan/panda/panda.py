@@ -163,8 +163,8 @@ class Panda():
         else:
             return "Wrong parameter!\" You can use: vendor or os"
 
-        # Get the current used kernel version
-        # Create a new grub file
+
+         ## Grub Parsing
         configured = False
         grub_tmp = open(grub_new, "w")
         with open(grub_file) as grub:
@@ -185,6 +185,7 @@ class Panda():
 
                         # The current os driver is blacklisted, multiple choices
                         if self.os_driver in blacklist_args:
+                            status = "using-%s" % self.driver_name
 
                             # Already configured, but user want to use nouveau,fglrx
                             if arg == "os":
@@ -198,17 +199,12 @@ class Panda():
                                 new_kernel_line = " ".join(new_kernel_param)
                                 grub_tmp.write(new_kernel_line)
                                 configured = True
-                                print "The parameter \"%s\" is removed from Grub.conf" % blacklist[0]
-                                print "You are using now the os driver \"%s\"" % \
-                                       self.os_driver.strip("blacklist=")
+                                status = "using-%s" % self.os_driver.strip("blacklist=")
 
                             # Already configured, user want to use vendor drivers,no need to change
                             elif arg =="vendor":
                                 configured = False
-                                print "Grub.conf is already configured"
-                                print "You are using the vendor driver \"%s\"" % \
-                                       self.driver_name
-                                grub_tmp.write(line)
+                                status = "using-%s" % self.driver_name
 
                         # No os driver is blacklisted, the user want to use vendor driver
                         elif arg == "vendor" and self.os_driver:
@@ -216,20 +212,15 @@ class Panda():
                             new_kernel_line = " ".join(kernel_parameters)
                             grub_tmp.write(new_kernel_line)
                             configured = True
-                            print "The parameter \"blacklist=%s\" is added to Grub.conf" \
-                                   % self.os_driver
-                            print "You are using now the vendor driver \"%s\"" % \
-                                   self.driver_name
+                            status = "using-%s" % self.driver_name
 
                         # The user wants to use os driver, no need to change
                         else:
-                            print "Grub.conf is already configured"
                             if self.os_driver:
-                                print "You are using the os driver \"%s\"" % \
-                                       self.os_driver.strip("blacklist=")
+                                status = "using-%s" % self.os_driver.strip("blacklist=")
                             else:
                                 # Neither Ati nor Nvidia drivers are used. (ex: intel)
-                                print "Your are using the default os driver"
+                                status = "using-non-vendor"
 
                     elif (arg == "vendor" or arg == "auto") and self.os_driver:
                         kernel_parameters = line.split()
@@ -237,31 +228,28 @@ class Panda():
                         new_kernel_line = " ".join(kernel_parameters)
                         grub_tmp.write(new_kernel_line)
                         configured = True
-                        print "The parameter \"blacklist=%s\" is added to Grub.conf" \
-                               % self.os_driver
-                        print "You are using now the vendor driver \"%s\"" % \
-                               self.driver_name
+                        status = "using-%s" % self.driver_name
 
                     else:
-                        print "Grub.conf is already configured"
+                        status = "using-%s" % self.os_driver
                         if self.os_driver:
-                            print "You are using the os driver \"%s\"" % \
-                                   self.os_driver.strip("blacklist=")
+                            status = "using-%s" % self.os_driver.strip("blacklist=")
                         else:
+                            status = "using-non-vendor"
                             # Neither Ati nor Nvidia drivers are used. (ex: intel)
-                            print "Your are using the default os driver"
                 else:
                     grub_tmp.write(line)
         grub_tmp.close()
 
         #Replace the new grub file with the old one, create also a backup file
         if configured:
+            # Backup of grub file is created: /boot/grub/grub.conf.back
             shutil.copy2(grub_file, grub_back)
-            print
-            print "Backup of grub file is created: /boot/grub/grub.conf.back"
 
+            # New grub file is created: /boot/grub/grub.conf
             shutil.copy2(grub_new, grub_file)
-            print "New grub file is created: /boot/grub/grub.conf"
+
+        return status
 
 if __name__ == '__main__':
     p = Panda()
@@ -273,4 +261,6 @@ if __name__ == '__main__':
     #print p.get_all_driver_packages()
     #print
 
-    p.update_grub_entries("os")
+    status = p.update_grub_entries("os")
+    print
+    print status
