@@ -30,7 +30,7 @@ def is_there_free_space(directory=None):
         # Defaults to /var/pisi
         directory = ctx.config.values.dirs.tmp_dir
     _stat = os.statvfs(directory)
-    free_space =_stat.f_bfree * _stat.f_bsize
+    free_space = _stat.f_bfree * _stat.f_bsize
 
     print "Free space: %s GB" % (free_space/(1024*1024*1024.0))
 
@@ -42,7 +42,7 @@ def mount_tmpfs(size="10G"):
     subprocess.call(["/bin/mount",
                      "tmpfs", "-t", "tmpfs",
                      ctx.config.values.dirs.tmp_dir,
-                     "-o size=%s,noatime" % size)
+                     "-o size=%s,noatime" % size])
 
 def umount_tmpfs():
     """Unmount tmp_dir if mounted."""
