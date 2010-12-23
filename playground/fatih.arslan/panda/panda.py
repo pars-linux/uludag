@@ -155,8 +155,9 @@ class Panda():
 
         kernel_version = self.kernel_flavors["kernel"] # This one should change
 
-        if arg == "vendor" and not self.os_driver:
-            return "I'm not able to install vendor drivers"
+        if arg == "vendor" and self.os_driver is None:
+            print "I'm not able to install vendor drivers"
+            return
         elif arg:
             pass
         else:
@@ -272,4 +273,4 @@ if __name__ == '__main__':
     #print p.get_all_driver_packages()
     #print
 
-    p.update_grub_entries("vendor")
+    p.update_grub_entries("os")
