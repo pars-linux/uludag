@@ -5,45 +5,62 @@
 Script to migrate network profiles from Pardus' network manager to new NetworkManager 
 """
 import os
+import sys
 import shutil
 import ConfigParser
 
-class Migrator(object):
+class Migrator():
     def __init__(self):
 
         self.settings = {}
-        self.config_path = "/etc/network/net_tools"
+        self.config_path = os.path.join(os.getcwd(), "net_tools")
         self.lan_config = ConfigParser.ConfigParser()
         self.retrieveProfileNames(self.config_path)
-        self.getOldSettings(self.config_path)
+        self.getOldLanSettings(self.config_path)
 
     def retrieveProfileNames(self, config_path):
-        
-        """ Read all profile names, we will use a dict to keep each setting in a corresponding profile name"""
+        """ A helper func to read all profile names, we will use a dict to keep 
+        each setting in a corresponding profile name """
+
         self.lan_config.read(config_path)
         for section in self.lan_config.sections():
             self.settings[section] = {}
 
-    def getOldSettings(self, config_path):
-
+    def getOldLanSettings(self, config_path):
         """ Read profile settings of old network manager from given path"""
+
         self.lan_config.read(config_path)
         for section in self.lan_config.sections():
-            self.settings[section]['con_type'] = 'Ethernet' # FIXME : Do this automatically
-            self.settings[section]['device'] = self.lan_config.get(section, "device")
-            self.settings[section]['device_name'] = self.settings[section]['device'].split("_")[-1]
-            self.settings[section]['name_mode'] = self.lan_config.get(section, "name_mode")
-            self.settings[section]['net_mode'] = self.lan_config.get(section, "net_mode")
+            options = self.lan_config.options(section)
+            for option in options:
+                try:
+                    self.settings[section][option] = self.lan_config.get(section, option)
+                except:
+                    self.settings[section][option] = None
 
-            if self.settings[section]['net_mode'] == "manual":    # We have assigned an IP address, netmask and gateway manually
-                self.settings[section]['net_address'] = self.lan_config.get(section, "net_address")
-                self.settings[section]['net_mask'] = self.lan_config.get(section, "net_mask")
-                self.settings[section]['net_gateway'] = self.lan_config.get(section, "net_gateway")
+    def getSettings(self, profile_name=None):
+        """ Return a dict that stores settings of the given profile name """
+
+        for name, options in self.settings.items():
+            if name  == profile_name:
+                return options
+
+    def getProfileNames(self, connection_type=None):
+        """ Returns the array of the profile names """
+        profiles = []
+        if connection_type:
+            for name, options in self.settings.items():
+                profiles.append(name)
+            if len(profiles) > 0 :
+                return profiles
             else:
-                self.settings[section]['net_mask'] = None
-                self.settings[section]['net_gateway'] = None
-                self.settings[section]['net_address'] = None
+                print "No %s connection settings found on your system!\n" % connection_type
+
+        else:
+            print "Usage getProfileNames(['wired', 'wireless'])"
 
 if __name__ == "__main__":
-    
+    """Magic happens"""
+
     migrator = Migrator()
+    print migrator.getSettings(migrator.getProfileNames('wired')[2])
