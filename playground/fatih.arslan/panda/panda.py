@@ -17,9 +17,9 @@
 import os
 import sys
 import glob
-import gzip
 import pisi
 import shutil
+import argparse
 
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
@@ -32,11 +32,42 @@ kernel_file_pae = "/etc/kernel/kernel-pae"
 
 class Panda():
     '''Pardus Alternative Driver Administration'''
-    def __init__ (self):
+    def __init__ (self, default_args=None):
+        self.default_args = default_args
+        self.args = self.__argument()
         self.driver_name = None
+
         self.driver_packages = None
         self.kernel_flavors = None
         self.os_driver = None
+
+    def __argument(self):
+        '''Command line parser'''
+        parser = argparse.ArgumentParser(description='Pardus Alternative Driver Administration',
+                                         prog='panda',
+                                         usage='%(prog)s [options]')
+
+        parser.add_argument('-v', '--version',
+                             action='version',
+                             version='%(prog)s 0.0.1')
+
+        subparsers = parser.add_subparsers(help='Commands')
+        parser_cur = subparsers.add_parser('cur', help='Show currently used driver')
+        parser_cur.add_argument('cur',
+                                nargs='*',
+                                help="Show currently used driver")
+
+        parser_update = subparsers.add_parser('up', help='Update grub.conf')
+        parser_update.add_argument('up',
+                                nargs=1,
+                                help="Update grub.conf")
+
+        # We have to set them all to false, otherwise optional arguments are not
+        # passed to the args() namespace
+        parser.set_defaults(cur=None,
+                            up=None)
+
+        return parser.parse_args(self.default_args)
 
     def __get_primary_driver(self):
         '''Get driver name for the working primary device'''
@@ -256,14 +287,15 @@ class Panda():
 
 if __name__ == '__main__':
     p = Panda()
-    #print
-    #print "Packages needed to enable vendor driver:"
-    #print p.get_needed_driver_packages()
-    #print
-    #print "Packages that could be removed. These are not needed:"
-    #print p.get_all_driver_packages()
-    #print
+    print p.args
 
-    status = p.update_grub_entries()
+    if p.args.cur is not None:
+        status = p.update_grub_entries()
+        print "The driver currently used is: %s" % status
+
+    if p.args.up is not None:
+        status = p.update_grub_entries(p.args.up[0])
+        print status
+
     print
     print status
