@@ -66,11 +66,11 @@ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@g
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
-msgstr "Очистить корзину"
+msgstr "Очистить"
 
 #: src/basketdialog.py:55
 msgid "Do you want to clear all selections ?"
-msgstr "Вы хотите отменить выбор?"
+msgstr "Вы хотите очистить выбор пакетов?"
 
 #: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
 #: src/settingsdialog.py:222 src/settingsdialog.py:227
@@ -139,7 +139,7 @@ msgstr "Показать главное окно"
 
 #: src/mainwidget.py:147
 msgid "All packages are up to date"
-msgstr "Все пакеты уже обновлены"
+msgstr "Все пакеты в актуальном состонии"
 
 #: src/mainwidget.py:233
 msgid "Searching..."
@@ -360,15 +360,15 @@ msgstr "изменено"
 #: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
 #: ui/ui_mainwidget_x11.py:83
 msgid "Install Package(s)"
-msgstr "Установить пакет(ы)"
+msgstr "Установить"
 
 #: src/statemanager.py:101
 msgid "Remove Package(s)"
-msgstr "Удалить пакет(ы)"
+msgstr "Удалить"
 
 #: src/statemanager.py:102
 msgid "Upgrade Package(s)"
-msgstr "Обновить пакет(ы)"
+msgstr "Обновить"
 
 #: src/statemanager.py:103
 msgid "Select Operation"
