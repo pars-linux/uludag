@@ -333,7 +333,6 @@ msgid "Applying Repository Changes"
 msgstr "Применение изменений репозитория"
 
 #: src/statemanager.py:89
-#, fuzzy
 msgid "Updating Repository"
 msgstr "Обновление репозитория"
 
@@ -571,12 +570,10 @@ msgid "Settings"
 msgstr "Настройки"
 
 #: ui/ui_mainwidget_v3.py:185
-#, fuzzy
 msgid "Show Basket"
 msgstr "Показать корзину"
 
 #: ui/ui_mainwidget_v3.py:186
-#, fuzzy
 msgid "Check for Updates"
 msgstr "Проверить наличие обновлений"
 
