@@ -92,10 +92,9 @@ class Panda():
 
         if self.driver_name == "fglrx":
             self.os_driver = "radeon"
-        else:
-            for driver in ["nvidia-current", "nvidia96", "nvidia173"]:
-                if self.driver_name == driver:
-                    self.os_driver = "nouveau"
+        elif self.driver_name in ["nvidia-current", "nvidia96", "nvidia173"]:
+            self.os_driver = "nouveau"
+
 
     def get_needed_driver_packages(self, kernel_flavors=None):
         '''Filter modules that should be addded'''
@@ -161,7 +160,7 @@ class Panda():
         elif arg:
             pass
         else:
-            return "Wrong parameter!\" You can use: vendor, os or auto"
+            return "Wrong parameter!\" You can use: vendor or os"
 
         # Get the current used kernel version
         # Create a new grub file
@@ -171,28 +170,66 @@ class Panda():
             for line in grub:
                 if "kernel" in line and kernel_version in line:
                     if "blacklist" in line:
-                        # Already configured, but user want to use nouveau,fglrx
-                        if arg == "os" or arg == "auto":
-                            kernel_parameters = line.split()
-                            new_kernel_param = filter(lambda x: not x.startswith("blacklist="), \
-                                                      kernel_parameters)
-                            blacklist = filter(lambda x: x.startswith("blacklist="), \
-                                               kernel_parameters)
-                            new_kernel_param.append("\n")
-                            new_kernel_line = " ".join(new_kernel_param)
+                        kernel_parameters = line.split()
+                        blacklist = filter(lambda x: x.startswith("blacklist="), kernel_parameters)
+                        blacklist_args = []
+                        for blck in blacklist:
+                            blck_args = blck.split("=")[1]
+                            if ',' in blck_args:
+                                blck_args = blck_args.split(",")
+                                for bl_args in blck_args:
+                                    blacklist_args.append(bl_args)
+                            else:
+                                blacklist_args.append(blck_args)
+
+                        # The current os driver is blacklisted, multiple choices
+                        if self.os_driver in blacklist_args:
+
+                            # Already configured, but user want to use nouveau,fglrx
+                            if arg == "os":
+                                new_kernel_param = filter(lambda x: not x.startswith("blacklist="), \
+                                                          kernel_parameters)
+                                for bl_args in blacklist_args:
+                                    if bl_args != self.os_driver:
+                                        new_kernel_param.append("blacklist=%s" % bl_args)
+
+                                new_kernel_param.append("\n")
+                                new_kernel_line = " ".join(new_kernel_param)
+                                grub_tmp.write(new_kernel_line)
+                                configured = True
+                                print "The parameter \"%s\" is removed from Grub.conf" % blacklist[0]
+                                print "You are using now the os driver \"%s\"" % \
+                                       self.os_driver.strip("blacklist=")
+
+                            # Already configured, user want to use vendor drivers,no need to change
+                            elif arg =="vendor":
+                                configured = False
+                                print "Grub.conf is already configured"
+                                print "You are using the vendor driver \"%s\"" % \
+                                       self.driver_name
+                                grub_tmp.write(line)
+
+                        # No os driver is blacklisted, the user want to use vendor driver
+                        elif arg == "vendor" and self.os_driver:
+                            kernel_parameters.append("blacklist=%s \n" % self.os_driver)
+                            new_kernel_line = " ".join(kernel_parameters)
                             grub_tmp.write(new_kernel_line)
                             configured = True
-                            print "The parameter \"%s\" is removed from Grub.conf" % blacklist[0]
-                            print "You are using now the os driver \"%s\"" % \
-                                   self.os_driver.strip("blacklist=")
-
-                        # Already configured, user want to use vendor drivers,no need to change
-                        else:
-                            configured = False
-                            print "Grub.conf is already configured"
-                            print "You are using the vendor driver \"%s\"" % \
+                            print "The parameter \"blacklist=%s\" is added to Grub.conf" \
+                                   % self.os_driver
+                            print "You are using now the vendor driver \"%s\"" % \
                                    self.driver_name
-                            grub_tmp.write(line)
+
+                        # The user wants to use os driver, no need to change
+                        else:
+                            print "Grub.conf is already configured"
+                            if self.os_driver:
+                                print "You are using the os driver \"%s\"" % \
+                                       self.os_driver.strip("blacklist=")
+                            else:
+                                # Neither Ati nor Nvidia drivers are used. (ex: intel)
+                                print "Your are using the default os driver"
+
                     elif (arg == "vendor" or arg == "auto") and self.os_driver:
                         kernel_parameters = line.split()
                         kernel_parameters.append("blacklist=%s \n" % self.os_driver)
@@ -227,12 +264,12 @@ class Panda():
 
 if __name__ == '__main__':
     p = Panda()
-    print
-    print "Packages needed to enable vendor driver:"
-    print p.get_needed_driver_packages()
-    print
-    print "Packages that could be removed. These are not needed:"
-    print p.get_all_driver_packages()
-    print
+    #print
+    #print "Packages needed to enable vendor driver:"
+    #print p.get_needed_driver_packages()
+    #print
+    #print "Packages that could be removed. These are not needed:"
+    #print p.get_all_driver_packages()
+    #print
 
-    p.update_grub_entries("auto")
+    p.update_grub_entries("vendor")
