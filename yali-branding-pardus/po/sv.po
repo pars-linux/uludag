@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Patrik Karlsson <patrik@trixon.se>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Pardus 2011\n"
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
+"X-Poedit-Language: Swedish\n"
 
 #: ../release.xml.in.h:1
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
@@ -31,7 +31,7 @@ msgstr "Lägg till användare"
 
 #: ../release.xml.in.h:4
 msgid "Adjust Date and Time Settings"
-msgstr ""
+msgstr "Justera inställningar för datum och tid"
 
 #: ../release.xml.in.h:5
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
@@ -39,11 +39,11 @@ msgstr ""
 
 #: ../release.xml.in.h:6
 msgid "Choose an Administrator Password and a Hostname"
-msgstr ""
+msgstr "Välj ett administratörslösenord och värdnamn"
 
 #: ../release.xml.in.h:7
 msgid "Choose your keyboard layout"
-msgstr ""
+msgstr "Välj tangentborslayout"
 
 #: ../release.xml.in.h:8
 msgid "Configure Bootloader"
@@ -63,7 +63,7 @@ msgstr ""
 
 #: ../release.xml.in.h:12
 msgid "Double check your installation medium"
-msgstr ""
+msgstr "Kontrollera ditt installationsmedia"
 
 #: ../release.xml.in.h:13
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../release.xml.in.h:16
 msgid "Here you can review your options before the installation process starts."
-msgstr ""
+msgstr "Här kan du granska dina val innan installationsprocessen påbörjas."
 
 #: ../release.xml.in.h:17
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
@@ -91,7 +91,7 @@ msgstr ""
 
 #: ../release.xml.in.h:19
 msgid "Installing Pardus"
-msgstr ""
+msgstr "Installerar Pardus"
 
 #: ../release.xml.in.h:20
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
@@ -111,7 +111,7 @@ msgstr ""
 
 #: ../release.xml.in.h:24
 msgid "Manual Partitioning"
-msgstr ""
+msgstr "Manuell partitionering"
 
 #: ../release.xml.in.h:25
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
@@ -136,11 +136,11 @@ msgstr ""
 
 #: ../release.xml.in.h:31
 msgid "Select Partitioning Method"
-msgstr ""
+msgstr "Välj partitionsmetod"
 
 #: ../release.xml.in.h:32
 msgid "Select a Drive to Install Pardus"
-msgstr ""
+msgstr "Välj enhet för Pardusinstallation"
 
 #: ../release.xml.in.h:33
 msgid "Summary"
@@ -193,4 +193,3 @@ msgstr ""
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
 msgstr ""
-
