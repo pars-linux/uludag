@@ -53,7 +53,8 @@ def build_packages():
     logger.raw()
 
     for pspec in queue:
-        init_tmpfs()
+        mount_tmpfs()
+
         package_name = utils.get_package_name_from_path(pspec)
         package_name_with_component = utils.get_package_component_path(pspec)
         logfile = os.path.join(utils.get_package_log_directory(),
@@ -98,6 +99,9 @@ def build_packages():
             qmgr.removeFromWorkQueue(pspec)
             move_packages(new_binary_packages, new_debug_packages)
             package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
+        finally:
+            # Unmount tmp_dir if any
+            umount_tmpfs()
 
     # Use a/b/pspec.xml instead of full path in e-mails
     stripped_wait_queue = [utils.get_package_component_path(pkg) for pkg in qmgr.get_wait_queue()]
