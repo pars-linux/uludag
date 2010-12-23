@@ -1,6 +1,7 @@
 #include <QRadioButton>
 #include <QButtonGroup>
 #include <QLabel>
+#include <QProcess>
 
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -148,7 +149,28 @@ PandaConfig::~PandaConfig()
 
 void PandaConfig::load()
 {
- emit changed(false);
+  QStringList cliArgs;
+  cliArgs << "cur";
+  QString program = "panda-cli";
+
+  QProcess *p = new QProcess(this);
+  p->start(program, cliArgs);
+  p->waitForFinished();
+
+  QByteArray currentDriver = p->readAllStandardOutput();
+  QString vendor = "vendor";
+  QString os = "os";
+  QString pandaOutput = QString(currentDriver).trimmed();
+
+  bool isVendor = (vendor == pandaOutput);
+  bool isOs = (os == pandaOutput);
+
+  if (isVendor){
+      vendorDriver->setChecked(true);
+  } else if (isOs) {
+      osDriver->setChecked(true);
+  }
+  emit changed(false);
 }
 
 void PandaConfig::save()
