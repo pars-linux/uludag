@@ -198,17 +198,23 @@ class Panda():
                     blacklist = blacklist_in_line(line)
 
                     if arg == "status":
-                        status = "using-%s" % self.driver_name if self.os_driver in blacklist else "os"
-                        return status
+                        if self.os_driver in blacklist:
+                            return self.driver_name
+                        elif self.os_driver:
+                            return self.os_driver
+                        else:
+                            return "os"
 
                     elif arg == "os":
                         blacklist = [x for x in blacklist if x != self.os_driver]
-                        status = "using-%s" % self.os_driver or "non-vendor"
+                        #status = "using-%s" % self.os_driver or "non-vendor"
+                        status = "os"
 
                     elif arg == "vendor":
                         if self.os_driver not in blacklist:
                             blacklist.append(self.os_driver)
-                        status = "using-%s" % self.driver_name if self.driver_name != "Not defined" else "non-vendor"
+                        #status = "using-%s" % self.driver_name if self.driver_name != "Not defined" else "non-vendor"
+                        status = "vendor"
 
                     new_line = update_blacklist_in_line(line, blacklist)
                     grub_tmp.write(new_line)
