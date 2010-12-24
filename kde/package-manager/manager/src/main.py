@@ -33,16 +33,7 @@ from about import aboutData
 from pmlogging import logger
 from mainwindow import MainWindow
 from localedata import setSystemLocale
-
-def handleException(exception, value, tb):
-    """
-    Exception Handler
-
-    @param exception: exception object
-    @param value: exception message
-    @param tb: traceback log
-    """
-    logger.error("".join(traceback.format_exception(exception, value, tb)))
+from pmutils import handleException
 
 # Package Manager Main App
 if __name__ == '__main__':
