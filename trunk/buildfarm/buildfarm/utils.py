@@ -96,7 +96,6 @@ def get_compiled_packages_directory():
                         conf.subrepository,
                         conf.architecture)
 
-
 def get_expected_file_name(spec):
     last_update = spec.history[0]
 
@@ -132,6 +131,17 @@ def delete_pisi_files_from(directory):
             os.unlink(pisi_file)
         except OSError:
             pass
+
+def run_hooks():
+    """Runs hooks found in conf.hookdir."""
+    hooks = sorted(glob.glob("%s/[0-9][0-9]-*" % conf.hookdir))
+
+    for hook in hooks:
+        if os.access(hook, os.X_OK):
+            # Execute it asynchronously
+            subprocess.Popen(hook,
+                             stdout=open("/dev/null", "w"),
+                             stderr=subprocess.STDOUT).pid
 
 def remove_obsoleted_packages():
     """Removes obsoleted packages from the system."""

@@ -18,12 +18,8 @@ from distutils.core import setup
 import buildfarm
 
 # Scripts to install under /usr/bin
-SCRIPTS = ["scripts/%s" % s for s in """\
-buildfarm
-buildfarm-up
-buildfarm-init
-buildfarm-missing-packages
-""".split()]
+SCRIPTS = glob.glob("scripts/*")
+HOOKS = glob.glob("hooks/*")
 
 # Call distutils.setup
 
@@ -38,4 +34,5 @@ setup(name="buildfarm",
       platforms=["Linux"],
       packages=["buildfarm"],
       scripts=SCRIPTS,
-      data_files=[("/etc/buildfarm", ["data/buildfarm.conf", "data/auth.conf"])])
+      data_files=[("/etc/buildfarm", ["data/buildfarm.conf", "data/auth.conf"]),
+                   ("/etc/buildfarm/hooks.d", HOOKS)])
