@@ -151,7 +151,7 @@ void PandaConfig::load()
 {
   QStringList cliArgs;
   cliArgs << "cur";
-  QString program = "/usr/bin/panda-cli.py";
+  QString program = "/usr/libexec/panda-helper";
 
   QProcess *p = new QProcess(this);
   p->start(program, cliArgs);
@@ -226,7 +226,7 @@ void PandaConfig::defaults()
 bool PandaConfig::installMissing()
 {
   KProcess p;
-  p << "/usr/bin/panda-cli.py" << "check";
+  p << "/usr/libexec/panda-helper" << "check";
   p.setOutputChannelMode(KProcess::SeparateChannels);
   if (p.execute())
       return false;

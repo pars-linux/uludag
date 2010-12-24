@@ -16,7 +16,7 @@ ActionReply Helper::save(const QVariantMap &args)
     QStringList cliVendorArgs;
     cliOsArgs << "up" << "os";
     cliVendorArgs << "up" << "vendor";
-    QString program = "/usr/bin/panda-cli.py";
+    QString program = "/usr/libexec/panda-helper";
 
     QProcess *p = new QProcess(this);
 
