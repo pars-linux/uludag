@@ -102,6 +102,7 @@ def build_packages():
         finally:
             # Unmount tmp_dir if any
             # utils.umount_tmpfs()
+            pass
 
     # Use a/b/pspec.xml instead of full path in e-mails
     stripped_wait_queue = [utils.get_package_component_path(pkg) for pkg in qmgr.get_wait_queue()]
