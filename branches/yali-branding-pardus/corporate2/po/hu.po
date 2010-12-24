@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-10 10:40+0200\n"
+"POT-Creation-Date: 2010-12-24 12:27+0200\n"
 "PO-Revision-Date: 2010-12-02 12:28+0100\n"
 "Last-Translator: Zoltan Siposs <zoltan.siposs@gmail.com>\n"
 "Language-Team: HUNGARIAN <pardus-translators@pardus.org.tr>\n"
@@ -22,9 +22,32 @@ msgstr ""
 #: ../release.xml.in.h:1
 #, fuzzy
 msgid ""
+"&quot;root&quot; is the conventional name of the administrator user who has "
+"all rights and permissions (to all files and programs) in all modes (single "
+"or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember "
+"but strong enough to resist possible attacks. You can use capital and lower-"
+"case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;"
+"br&gt;You can also define a hostname for your computer. A hostname is an "
+"identifier assigned to your computer. As your computer will be recognized "
+"with this name in the local network, it is recommended to select a "
+"descriptive hostname."
+msgstr ""
+"Meg kell adnia egy jelszót a &quot;root&quot; felhasználónak, aki a "
+"hagyományok szerint minden jogosultsággal rendelkezik (fájlokon és "
+"programokon) a rendszer valamennyi üzemmódjában (több felhasználós, vagy egy "
+"felhasználós karbantartó mód).&lt;br&gt;&lt;br&gt;A jelszó legyen könnyen "
+"megjegyezhető, de mégis erős és ellenálló a támadásokkal szemben. Használhat "
+"kis- és nagybetűket, számokat, írásjeleket.&lt;br&gt;&lt;br&gt;Nevet is "
+"adhat a számítógépének. Ez a név az úgynevezett hostname, a számítógép "
+"azonosítója. Mivel ez a név azonosítja a gépet a helyi hálózaton, célszerű "
+"egyedi, beszédes nevet választani."
+
+#: ../release.xml.in.h:2
+#, fuzzy
+msgid ""
 "A bootloader is a tiny program that runs when a computer is first powered "
 "up. It is responsible for loading the operating system into memory and then "
-"transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus sets GRUB (GRand "
+"transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand "
 "Unified Bootloader) as the default bootloader. GRUB allows you to boot any "
 "supported operating system by presenting the user with a menu.&lt;br&gt;&lt;"
 "br&gt;The recommended way to use GRUB is to install it to the beginning of "
@@ -40,13 +63,13 @@ msgstr ""
 "rendszerindító lemez elejére telepíteni. Választhat más telepítési módot is, "
 "ha tudja mit tesz."
 
-#: ../release.xml.in.h:2
+#: ../release.xml.in.h:3
 #, fuzzy
 msgid ""
 "A keyboard layout sets the arrangement of keys on the keyboard. There are "
 "different keyboard layouts in use throughout the world. You may want to use "
 "a different layout then your keyboard&apos;s physical layout or to be sure "
-"that your keyboard is set correctly. &lt;br&gt;&lt;br&gt;You can test the "
+"that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the "
 "selected layout by typing in the given textbox."
 msgstr ""
 "A billentyűzet kiosztás annak a leírása, hogyan helyezkednek el a különbözű "
@@ -56,17 +79,15 @@ msgstr ""
 "amit majd a Pardusban használni kíván. Ki is próbálhatja, ha szöveget gépel "
 "a beviteli mezőbe."
 
-#: ../release.xml.in.h:3
-msgid "Add Users"
-msgstr "Felhasználók hozzáadása"
-
 #: ../release.xml.in.h:4
-msgid "Adjust Date and Time Settings"
-msgstr "Dátum és idő beállítása"
+#, fuzzy
+msgid "Choose a password for administration and a hostname"
+msgstr "Válasszon rendszergazda jelszót és adjon nevet a számítógépnek"
 
 #: ../release.xml.in.h:5
-msgid "Choose an Administrator Password and a Hostname"
-msgstr "Válasszon rendszergazda jelszót és adjon nevet a számítógépnek"
+#, fuzzy
+msgid "Choose your installation disk"
+msgstr "Ellenőrizze a telepítő adathordozót!"
 
 #: ../release.xml.in.h:6
 #, fuzzy
@@ -74,7 +95,8 @@ msgid "Choose your keyboard layout"
 msgstr "Válasszon billentyűzet kiosztást"
 
 #: ../release.xml.in.h:7
-msgid "Configure Bootloader"
+#, fuzzy
+msgid "Configure the bootloader"
 msgstr "A rendszerbetöltő beállítása"
 
 #: ../release.xml.in.h:8
@@ -123,14 +145,19 @@ msgid "Double check your installation medium"
 msgstr "Ellenőrizze a telepítő adathordozót!"
 
 #: ../release.xml.in.h:11
+#, fuzzy
+msgid "Get ready to install Pardus"
+msgstr "Válasszon egy meghajtót a Pardus számára"
+
+#: ../release.xml.in.h:12
 msgid "Goodbye"
 msgstr "Viszontlátásra"
 
-#: ../release.xml.in.h:12
+#: ../release.xml.in.h:13
 msgid "Help will be included when Kahya implentation is complete."
 msgstr ""
 
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:14
 #, fuzzy
 msgid ""
 "Here you can review your options before the installation process starts."
@@ -138,7 +165,7 @@ msgstr ""
 "Itt láthatók az Ön által választott telepítési opciók. Ellenőrizze őket a "
 "telepítés megkezdése előtt."
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:15
 #, fuzzy
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
@@ -159,37 +186,11 @@ msgstr ""
 "&lt;br&gt;&lt;br&gt;Van egy nyomtatója? Csatlakoztassa és az is önműködően "
 "beállításra kerül. Annyit kell tennie, hogy kinyomtatja dokumentumait."
 
-#: ../release.xml.in.h:15
-msgid ""
-"In this screen, you can manually partition your disk. You can select "
-"existing partitions and resize or delete them. You can create new partition"
-"(s) in the empty parts, make Pardus use them for system files, users&apos; "
-"home directories, swap space or general use. The changes that you make will "
-"not be applied until you go on with the installation, which means you can "
-"revert if you make any unwanted changes or change your configuration.&lt;"
-"br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more "
-"informationabout disk partitioning.&lt;/font&gt;"
-msgstr ""
-"Ezen a képernyőn Ön végezheti el a lemezek partícionálását. Kiválaszthat "
-"meglévő partíciókat és átméretezheti, vagy törölheti azokat. Létrehozhat új "
-"partíciókat az üres területeken, lehetővé téve a Pardusnak hogy "
-"rendszerfájlokat, felhasználói könyvtárakat, lapozóterületet, vagy általános "
-"tárhelyet hozzon létre. A változtatások amelyeket itt elvégez, nem kerülnek "
-"alkalmazásra, amíg maga a telepítés el nem indul. Ez azt jelenti, hogy "
-"visszavonhat bármilyen véletlen, nem megfelelő változtatást, vagy "
-"módosíthatja elképzeléseit.&lt;br&gt;&lt;br&gt;A lemez-partícionálással "
-"kapcsolatos további információkért kérem olvassa el a Pardus telepítési és "
-"felhasználói kézikönyvet.&lt;/font&gt;"
-
 #: ../release.xml.in.h:16
-msgid "Initial Settings"
-msgstr ""
-
-#: ../release.xml.in.h:17
 msgid "Installing Pardus"
 msgstr "A Pardus telepítése"
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:17
 msgid ""
 "KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE "
 "from the beginning you can see how this knowledge reflects on a powerful "
@@ -199,11 +200,11 @@ msgid ""
 "work space for administration of the system."
 msgstr ""
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:18
 msgid "Kahya"
 msgstr ""
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:19
 #, fuzzy
 msgid ""
 "Konqueror, carries the web experience into desktop. You can use many web-"
@@ -222,7 +223,7 @@ msgstr ""
 "segítségével. Így tehát a távoli helyek is úgy kezelhetők, mintha az Ön "
 "saját meghajtóján léteznének."
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:20
 #, fuzzy
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
@@ -243,7 +244,7 @@ msgstr ""
 "elérhető-e.&lt;br&gt;&lt;br&gt;Ragadós cetliket készíthet a munkaasztálara "
 "feladataiból, vagy fordítva, egyszerű áthúzással."
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:21
 #, fuzzy
 msgid ""
 "Looking for a production suite? Our suggestion is OpenOffice! OpenOffice "
@@ -263,32 +264,29 @@ msgstr ""
 "készítésére szolgál.&lt;br&gt;&lt;br&gt;A Pardus a még jobb élmény érdekében "
 "számos kiegészítést és bővítményt csomagolt hozzá."
 
-#: ../release.xml.in.h:23
-msgid "Manual Partitioning"
-msgstr "Kézi partícionálás"
-
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:22
 msgid ""
 "Most of the users need a talented file manager for every day use. Konqueror "
-"is a great solution for integration of every day tasks. &lt;br&gt;&lt;br&gt;"
+"is a great solution for integration of regular tasks. &lt;br&gt;&lt;br&gt;"
 "You can run KDE applications embedded into Konqueror thus you can edit an "
 "image file in your file manager with the full features of Gwenview, work "
 "with archive files etc."
 msgstr ""
 
-#: ../release.xml.in.h:25
+#: ../release.xml.in.h:23
 msgid ""
 "Multiple users can share the same computer safely with Pardus. An "
-"administrator account will be set automatically (which is root). You can add "
-"new users in this screen. The first user will be granted administrative "
-"authorization if you don't revoke them. Revoking administrative rights, "
-"custom user ID setting, and a few other options can be accessed from "
-"Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user "
-"accounts, you can call User Manager in the System Settings after "
-"installation."
+"administrator account with the name &quot;root&quot; will be set "
+"automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday "
+"use, sou we recommend you to add user accounts upon your needs. The first "
+"user will be granted administrative authorization if you don't revoke them. "
+"To revoke administrative rights, or set a custom user ID you can click on "
+"the Advanced tab where you can find a few other options as well. &lt;br&gt;"
+"&lt;br&gt; If you need to administrate user accounts later, you can find "
+"User Manager tool in the System Settings."
 msgstr ""
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:25
 #, fuzzy, no-c-format
 msgid ""
 "Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high "
@@ -310,7 +308,7 @@ msgstr ""
 "&lt;br&gt;A Pardus más ingyenes böngészőket is kínál, köztük a Chromoiumot, "
 "a Konqueror-t és az Operát."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:26
 msgid ""
 "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
 "with a long term support. You can still enjoy the powerful parade of all "
@@ -319,7 +317,7 @@ msgid ""
 "these features..."
 msgstr ""
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:27
 #, fuzzy
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
@@ -335,19 +333,19 @@ msgstr ""
 "is használható, vagy beépítve a Rendszerbeállítások alkalmazásba, amely az "
 "ilyen jellegű feladatok gyűjtőhelye."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:28
 #, fuzzy
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
-"known projects such as Linux kernel, GNU tools, Mozilla Firefox, OpenOffice "
-"etc. and easy-to-use special tools for a comfortable yet high performance "
-"experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed "
-"with GNU Public License (GPL version 2), which is also the most common "
-"license for the selected components. However there are softwares included in "
-"this installation medium which have different licenses. You can read all the "
-"license texts in this screen in a new tiny window or find all of them on our "
-"website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install "
-"Pardus on your computer."
+"known projects such as Linux kernel, and various softwares of the GNU "
+"project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for "
+"a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house "
+"products of Tübitak are licensed with GNU Public License (GPL version 2), "
+"which is also the most common license for the selected components. However "
+"there are softwares included in this installation medium which have "
+"different licenses. You can read all the license texts in this screen in a "
+"new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You "
+"have to accept all the terms to install Pardus on your computer."
 msgstr ""
 "A Pardus egy szabad és nyílt forrású operációs rendszer, mely olyan "
 "világszerte ismert projektek termékeit tartalmazza mint a Linux rendszermag, "
@@ -361,13 +359,22 @@ msgstr ""
 "licenszek nevére kattintással, vagy a weblapunkon. &lt;br&gt;&lt;br&gt;A "
 "Pardus telepítéséhez valamennyi felhasználó megállapodást el kell fogadnia."
 
-#: ../release.xml.in.h:31
-msgid "Select Partitioning Method"
+#: ../release.xml.in.h:29
+msgid "Partition your disk manually"
+msgstr ""
+
+#: ../release.xml.in.h:30
+#, fuzzy
+msgid "Select a partitioning method"
 msgstr "Válasszon partícionálási módszert"
 
+#: ../release.xml.in.h:31
+msgid "Set your local time and date"
+msgstr ""
+
 #: ../release.xml.in.h:32
-msgid "Select a Drive to Install Pardus"
-msgstr "Válasszon egy meghajtót a Pardus számára"
+msgid "Setup your account"
+msgstr ""
 
 #: ../release.xml.in.h:33
 msgid "Summary"
@@ -398,12 +405,12 @@ msgstr ""
 #: ../release.xml.in.h:35
 #, fuzzy
 msgid ""
-"Validation checks if the packages in the medium are consistent with the "
-"repository by file verification method. A failed validation usually is a "
-"sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;"
-"br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try "
-"burning the installation image using DAO (Disc-at-once) mode, at a lower "
-"speed (4x for DVD, 8-12x for CD)."
+"Validation is comparing the packages in the medium with the original ones by "
+"file verification method. A failed validation usually is a sign of a badly "
+"mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If "
+"you are using an optical medium (i.e. CD/DVD), try burning the installation "
+"image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for "
+"CD)."
 msgstr ""
 "E lépésben ellenőrizheti a telepítőcsomagok épségét. A sikertelen ellenőrzés "
 "általában hibás adathordozót (CD, DVD, USB eszköz) jelez.&lt;br&gt;&lt;br&gt;"
@@ -412,19 +419,19 @@ msgstr ""
 "lemezek, 8-12x a CD lemezek számára)."
 
 #: ../release.xml.in.h:36
-msgid "Welcome to Pardus"
-msgstr "A Pardus üdvözli Önt"
+msgid "Welcome back..."
+msgstr ""
 
 #: ../release.xml.in.h:37
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
-"four partitions for system, user space, boot and swap files using LVM "
+"four partitions for user space, and system, boot and swap files using LVM "
 "(Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed "
 "system with an adequate disk space, you can use the \"Shrink Current System"
 "\" option to resize the first partition and install Pardus in the created "
 "free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-"
 "unused space (10 GBs recommended), you can choose the \"Use Free Space\" "
-"option, so Pardus will create the necessary partitions described below.&lt;"
+"option, so Pardus will create the necessary partitions described above.&lt;"
 "br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual "
 "partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid "
 "future problems."
@@ -459,28 +466,21 @@ msgstr ""
 "következő lépéshez. Csak egy megjegyzés: Ugye emlékszik a jelszavára?"
 
 #: ../release.xml.in.h:40
-#, fuzzy
 msgid ""
-"You need to set the &quot;root&quot; account password. &quot;root&quot; is "
-"the conventional name of the administrator user who has all rights and "
-"permissions (to all files and programs) in all modes (single or multi-user)."
-"&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough "
-"to resist possible attacks. You can use capital and lower-case letters, "
-"numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can "
-"also define a hostname for your computer. A hostname is an identifier "
-"assigned to your computer. As your computer will be recognized with this "
-"name in the local network, it is recommended to select a descriptive "
-"hostname."
+"You have to choose a *free* physical partition in order to create your "
+"system partitions. If anything goes wrong you can Reset and start again. &lt;"
+"br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical "
+"Volume, then a Volume Group which will contain your Logical Volumes. You can "
+"use Logical Volumes similar to partitions and set them for system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you "
+"have to create at least two RAID members. Try to divide the space equally as "
+"the space of the disk will be same with the smallest partition. When you "
+"have two RAID members, you will be able to create a RAID array which is "
+"similar to a partition as it may be formatted and set for the system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and "
+"Using Guide for more information about disk partitioning. You can find it in "
+"our website."
 msgstr ""
-"Meg kell adnia egy jelszót a &quot;root&quot; felhasználónak, aki a "
-"hagyományok szerint minden jogosultsággal rendelkezik (fájlokon és "
-"programokon) a rendszer valamennyi üzemmódjában (több felhasználós, vagy egy "
-"felhasználós karbantartó mód).&lt;br&gt;&lt;br&gt;A jelszó legyen könnyen "
-"megjegyezhető, de mégis erős és ellenálló a támadásokkal szemben. Használhat "
-"kis- és nagybetűket, számokat, írásjeleket.&lt;br&gt;&lt;br&gt;Nevet is "
-"adhat a számítógépének. Ez a név az úgynevezett hostname, a számítógép "
-"azonosítója. Mivel ez a név azonosítja a gépet a helyi hálózaton, célszerű "
-"egyedi, beszédes nevet választani."
 
 #: ../release.xml.in.h:41
 msgid ""
@@ -497,6 +497,39 @@ msgid ""
 "least one user and set the system wide configurations. So you will be able "
 "to login and enjoy Pardus..."
 msgstr ""
+
+#~ msgid "Add Users"
+#~ msgstr "Felhasználók hozzáadása"
+
+#~ msgid "Adjust Date and Time Settings"
+#~ msgstr "Dátum és idő beállítása"
+
+#~ msgid ""
+#~ "In this screen, you can manually partition your disk. You can select "
+#~ "existing partitions and resize or delete them. You can create new "
+#~ "partition(s) in the empty parts, make Pardus use them for system files, "
+#~ "users&apos; home directories, swap space or general use. The changes that "
+#~ "you make will not be applied until you go on with the installation, which "
+#~ "means you can revert if you make any unwanted changes or change your "
+#~ "configuration.&lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and "
+#~ "Using Guide for more informationabout disk partitioning.&lt;/font&gt;"
+#~ msgstr ""
+#~ "Ezen a képernyőn Ön végezheti el a lemezek partícionálását. Kiválaszthat "
+#~ "meglévő partíciókat és átméretezheti, vagy törölheti azokat. Létrehozhat "
+#~ "új partíciókat az üres területeken, lehetővé téve a Pardusnak hogy "
+#~ "rendszerfájlokat, felhasználói könyvtárakat, lapozóterületet, vagy "
+#~ "általános tárhelyet hozzon létre. A változtatások amelyeket itt elvégez, "
+#~ "nem kerülnek alkalmazásra, amíg maga a telepítés el nem indul. Ez azt "
+#~ "jelenti, hogy visszavonhat bármilyen véletlen, nem megfelelő "
+#~ "változtatást, vagy módosíthatja elképzeléseit.&lt;br&gt;&lt;br&gt;A lemez-"
+#~ "partícionálással kapcsolatos további információkért kérem olvassa el a "
+#~ "Pardus telepítési és felhasználói kézikönyvet.&lt;/font&gt;"
+
+#~ msgid "Manual Partitioning"
+#~ msgstr "Kézi partícionálás"
+
+#~ msgid "Welcome to Pardus"
+#~ msgstr "A Pardus üdvözli Önt"
 
 #~ msgid "Kahya is working"
 #~ msgstr "A Kahya dolgozik"

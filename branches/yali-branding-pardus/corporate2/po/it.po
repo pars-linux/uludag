@@ -1,15 +1,16 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Ali Işıngör <ali@artistanbulptr.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-13 19:01+0000\n"
+"POT-Creation-Date: 2010-12-24 12:27+0200\n"
 "PO-Revision-Date: 2010-12-13 19:36+0000\n"
 "Last-Translator: Ali Işıngör <ali@artistanbulptr.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,39 +18,79 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
-msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
+msgid ""
+"&quot;root&quot; is the conventional name of the administrator user who has "
+"all rights and permissions (to all files and programs) in all modes (single "
+"or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember "
+"but strong enough to resist possible attacks. You can use capital and lower-"
+"case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;"
+"br&gt;You can also define a hostname for your computer. A hostname is an "
+"identifier assigned to your computer. As your computer will be recognized "
+"with this name in the local network, it is recommended to select a "
+"descriptive hostname."
 msgstr ""
 
 #: ../release.xml.in.h:2
-msgid "A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
+msgid ""
+"A bootloader is a tiny program that runs when a computer is first powered "
+"up. It is responsible for loading the operating system into memory and then "
+"transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand "
+"Unified Bootloader) as the default bootloader. GRUB allows you to boot any "
+"supported operating system by presenting the user with a menu.&lt;br&gt;&lt;"
+"br&gt;The recommended way to use GRUB is to install it to the beginning of "
+"the boot disk, which is set by Default settings. You can choose Advanced "
+"settings for a custom installation if you know what you are doing."
 msgstr ""
 
 #: ../release.xml.in.h:3
-msgid "Add Users"
-msgstr "Aggiungi Utenti"
+msgid ""
+"A keyboard layout sets the arrangement of keys on the keyboard. There are "
+"different keyboard layouts in use throughout the world. You may want to use "
+"a different layout then your keyboard&apos;s physical layout or to be sure "
+"that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the "
+"selected layout by typing in the given textbox."
+msgstr ""
 
 #: ../release.xml.in.h:4
-msgid "Adjust Date and Time Settings"
-msgstr "Regolare le impostazioni di Data e Tempo"
+msgid "Choose a password for administration and a hostname"
+msgstr ""
 
 #: ../release.xml.in.h:5
-msgid "Choose an Administrator Password and a Hostname"
-msgstr ""
+#, fuzzy
+msgid "Choose your installation disk"
+msgstr "Ricontrollate la media di installazione"
 
 #: ../release.xml.in.h:6
 msgid "Choose your keyboard layout"
 msgstr "Scegli il layout di tastiera"
 
 #: ../release.xml.in.h:7
-msgid "Configure Bootloader"
+#, fuzzy
+msgid "Configure the bootloader"
 msgstr "Configura Bootloader"
 
 #: ../release.xml.in.h:8
-msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
+msgid ""
+"Date and time settings allows you to set the date and time of your computer. "
+"You may also want to specify a correct timezone upon your location in order "
+"to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;"
+"br&gt;A timezone is a region of the earth that has uniform standard time, "
+"usually referred as the local time. By convention, timezones compute their "
+"local time as an offset from UTC, the Coordinated Universal Time."
 msgstr ""
 
 #: ../release.xml.in.h:9
-msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
+msgid ""
+"Do you have a habit of customization? Kaptan is there for you. Kaptan is an "
+"end-user configuration assistant which helps you to customize your system "
+"upon your preferences. Dou you prefer using your mouse with single click? "
+"Are you left-handed? Do you want to change the color-scheme of the desktop? "
+"A number of personalization options are offered in Kaptan. Kaptan will be "
+"automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to "
+"use Kaptan all over again sometime, you can call it from the application "
+"launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be "
+"called with its default shortcut Alt+F2 and it offers a number of basic "
+"functions as well, try it at home!"
 msgstr ""
 
 #: ../release.xml.in.h:10
@@ -57,23 +98,33 @@ msgid "Double check your installation medium"
 msgstr "Ricontrollate la media di installazione"
 
 #: ../release.xml.in.h:11
+#, fuzzy
+msgid "Get ready to install Pardus"
+msgstr "Seleziona un Disco per Installare Pardus"
+
+#: ../release.xml.in.h:12
 msgid "Goodbye"
 msgstr "Arrivederci"
 
-#: ../release.xml.in.h:12
+#: ../release.xml.in.h:13
 msgid "Help will be included when Kahya implentation is complete."
 msgstr "Aiuto sarà incluso quando implementazione di Kahya è completa."
 
-#: ../release.xml.in.h:13
-msgid "Here you can review your options before the installation process starts."
-msgstr ""
-
 #: ../release.xml.in.h:14
-msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Konqueror. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
+msgid ""
+"Here you can review your options before the installation process starts."
 msgstr ""
 
 #: ../release.xml.in.h:15
-msgid "In this screen, you can manually partition your disk. You can select existing partitions and resize or delete them. You can create new partition(s) in the empty parts, make Pardus use them for system files, users&apos; home directories, swap space or general use. The changes that you make will not be applied until you go on with the installation, which means you can revert if you make any unwanted changes or change your configuration.&lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more informationabout disk partitioning.&lt;/font&gt;"
+msgid ""
+"If you are a part of a local network, you can reach to the other systems "
+"from the Network link on Konqueror. Pardus will list all the shared places "
+"automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer "
+"using wired connections, all you have to do is plugging, then it will be "
+"automatically configured. If you prefer wireless connection, you will see a "
+"list of available networks when you click on the wireless icon.&lt;br&gt;&lt;"
+"br&gt;Do you have a local printer? Plug it and it will be configured "
+"automatically as well. All you do is printing out your document."
 msgstr ""
 
 #: ../release.xml.in.h:16
@@ -81,7 +132,13 @@ msgid "Installing Pardus"
 msgstr "Installando Pardus"
 
 #: ../release.xml.in.h:17
-msgid "KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE from the beginning you can see how this knowledge reflects on a powerful desktop environment. You will find a software collection, covering both enterprise and personal aspects. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, which creates a highly integrated work space for administration of the system."
+msgid ""
+"KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE "
+"from the beginning you can see how this knowledge reflects on a powerful "
+"desktop environment. You will find a software collection, covering both "
+"enterprise and personal aspects. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house "
+"tools are written KDE friendly as well, which creates a highly integrated "
+"work space for administration of the system."
 msgstr ""
 
 #: ../release.xml.in.h:18
@@ -89,94 +146,233 @@ msgid "Kahya"
 msgstr "Kahya"
 
 #: ../release.xml.in.h:19
-msgid "Konqueror, carries the web experience into desktop. You can use many web-like features suh as tabbed browsing or tagging your files and folders to list by tags and enjoy the powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily using protocols like SSH, WebDav, SMB. So you can reach remote files as if they are on your disk."
+msgid ""
+"Konqueror, carries the web experience into desktop. You can use many web-"
+"like features suh as tabbed browsing or tagging your files and folders to "
+"list by tags and enjoy the powerful network transparency.&lt;br&gt;&lt;br&gt;"
+"Any place on the local network or web can be integrated into your file "
+"system easily using protocols like SSH, WebDav, SMB. So you can reach remote "
+"files as if they are on your disk."
 msgstr ""
 
 #: ../release.xml.in.h:20
-msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
+msgid ""
+"Kontact, allows you to get in touch with your contact easier than ever. "
+"Kontact is a seamless integration of a number of applications to achieve a "
+"software to rule all communication and organization tasks. Calendars, e-"
+"mails, RSS news, addresses are altogether. You can even link your address "
+"book to Kopete to use with your IM accounts such as MSN, jabber or "
+"GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;"
+"br&gt;You can create sticky notes for your desktop from your tasks or vice "
+"versa by simply dragging them."
 msgstr ""
 
 #: ../release.xml.in.h:21
-msgid "Looking for a production suite? Our suggestion is OpenOffice! OpenOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. OpenOffice has the great experience of open source office suite model, with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
+msgid ""
+"Looking for a production suite? Our suggestion is OpenOffice! OpenOffice "
+"gives a stable, fast and free office experience while all your software and "
+"documents will be compatible with the rest of major suites. OpenOffice has "
+"the great experience of open source office suite model, with Writer for text "
+"documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;"
+"br&gt;Pardus packs this great office suite with a number of enhancements and "
+"plug-ins for a better experience."
 msgstr ""
 
 #: ../release.xml.in.h:22
-msgid "Manual Partitioning"
-msgstr "Partitizione Manuale"
-
-#: ../release.xml.in.h:23
-msgid "Most of the users need a talented file manager for every day use. Konqueror is a great solution for integration of every day tasks. &lt;br&gt;&lt;br&gt;You can run KDE applications embedded into Konqueror thus you can edit an image file in your file manager with the full features of Gwenview, work with archive files etc."
+msgid ""
+"Most of the users need a talented file manager for every day use. Konqueror "
+"is a great solution for integration of regular tasks. &lt;br&gt;&lt;br&gt;"
+"You can run KDE applications embedded into Konqueror thus you can edit an "
+"image file in your file manager with the full features of Gwenview, work "
+"with archive files etc."
 msgstr ""
 
-#: ../release.xml.in.h:24
-msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. You can add new users in this screen. The first user will be granted administrative authorization if you don't revoke them. Revoking administrative rights, custom user ID setting, and a few other options can be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts, you can call User Manager in the System Settings after installation."
+#: ../release.xml.in.h:23
+msgid ""
+"Multiple users can share the same computer safely with Pardus. An "
+"administrator account with the name &quot;root&quot; will be set "
+"automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday "
+"use, sou we recommend you to add user accounts upon your needs. The first "
+"user will be granted administrative authorization if you don't revoke them. "
+"To revoke administrative rights, or set a custom user ID you can click on "
+"the Advanced tab where you can find a few other options as well. &lt;br&gt;"
+"&lt;br&gt; If you need to administrate user accounts later, you can find "
+"User Manager tool in the System Settings."
+msgstr ""
+
+#: ../release.xml.in.h:25
+#, no-c-format
+msgid ""
+"Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high "
+"stability. Firefox is the most popular open source Internet browser and "
+"offers great customization options as well as a secure and safe browsing "
+"experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic "
+"Software term trying to show how the community creates the product. Add-ons, "
+"themes and plugins allows you to have your very own browser, both visually "
+"and capability.&lt;br&gt;&lt;br&gt;Pardus Corporate 2 also offers other open "
+"source browsers including Chromium, Konqueror."
 msgstr ""
 
 #: ../release.xml.in.h:26
-#, no-c-format
-msgid "Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high stability. Firefox is the most popular open source Internet browser and offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, themes and plugins allows you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus Corporate 2 also offers other open source browsers including Chromium, Konqueror."
+msgid ""
+"Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
+"with a long term support. You can still enjoy the powerful parade of all "
+"free and open source softwares included in Pardus with keeping in mind this "
+"will go on for years... While the installation goes on, you may explore "
+"these features..."
 msgstr ""
 
 #: ../release.xml.in.h:27
-msgid "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience with a long term support. You can still enjoy the powerful parade of all free and open source softwares included in Pardus with keeping in mind this will go on for years... While the installation goes on, you may explore these features..."
+msgid ""
+"Pardus have many other in-house developed user friendly manager tools such "
+"as User Manager, Boot Manager, Firewall Manager, Service Manager to "
+"administrate Pardus easier. All the managers can be used individually as "
+"well as from the System Settings, a single application for all "
+"administrative and configuration tasks."
 msgstr ""
 
 #: ../release.xml.in.h:28
-msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
+msgid ""
+"Pardus is a free and open source operating system that contains many well "
+"known projects such as Linux kernel, and various softwares of the GNU "
+"project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for "
+"a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house "
+"products of Tübitak are licensed with GNU Public License (GPL version 2), "
+"which is also the most common license for the selected components. However "
+"there are softwares included in this installation medium which have "
+"different licenses. You can read all the license texts in this screen in a "
+"new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You "
+"have to accept all the terms to install Pardus on your computer."
 msgstr ""
 
 #: ../release.xml.in.h:29
-msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer."
+msgid "Partition your disk manually"
 msgstr ""
 
 #: ../release.xml.in.h:30
-msgid "Select Partitioning Method"
+#, fuzzy
+msgid "Select a partitioning method"
 msgstr "Seleziona Metodo della Partitizione"
 
 #: ../release.xml.in.h:31
-msgid "Select a Drive to Install Pardus"
-msgstr "Seleziona un Disco per Installare Pardus"
+msgid "Set your local time and date"
+msgstr ""
 
 #: ../release.xml.in.h:32
+msgid "Setup your account"
+msgstr ""
+
+#: ../release.xml.in.h:33
 msgid "Summary"
 msgstr "Sommario"
 
-#: ../release.xml.in.h:33
-msgid "There are a lot of features waiting to be explored. Thousands of softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is onle a few clicks to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones. You can reach Package Manager from the menu of your choice, Kick-off, classic menu or Lancelot that you can choose with the help of Kaptan in your very first boot."
-msgstr ""
-
 #: ../release.xml.in.h:34
-msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
+msgid ""
+"There are a lot of features waiting to be explored. Thousands of softwares, "
+"libraries and tools are not included in the installation medium to save "
+"space. However with Pardus&apos;s package management system PiSi and its "
+"user friendly interface Package Manager, it is onle a few clicks to add "
+"these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager "
+"will help you to keep your system up-to-date, remove the components that you "
+"never use or add new ones. You can reach Package Manager from the menu of "
+"your choice, Kick-off, classic menu or Lancelot that you can choose with the "
+"help of Kaptan in your very first boot."
 msgstr ""
 
 #: ../release.xml.in.h:35
+msgid ""
+"Validation is comparing the packages in the medium with the original ones by "
+"file verification method. A failed validation usually is a sign of a badly "
+"mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If "
+"you are using an optical medium (i.e. CD/DVD), try burning the installation "
+"image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for "
+"CD)."
+msgstr ""
+
+#: ../release.xml.in.h:36
 msgid "Welcome back..."
 msgstr "Bentornato ..."
 
-#: ../release.xml.in.h:36
-msgid "Welcome to Pardus"
-msgstr "Benvenuti a Pardus"
-
 #: ../release.xml.in.h:37
-msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for system, user space, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described below.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
+msgid ""
+"When you select \"Use All Space\", Pardus will format your disk and create "
+"four partitions for user space, and system, boot and swap files using LVM "
+"(Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed "
+"system with an adequate disk space, you can use the \"Shrink Current System"
+"\" option to resize the first partition and install Pardus in the created "
+"free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-"
+"unused space (10 GBs recommended), you can choose the \"Use Free Space\" "
+"option, so Pardus will create the necessary partitions described above.&lt;"
+"br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual "
+"partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid "
+"future problems."
 msgstr ""
 
 #: ../release.xml.in.h:38
-msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
-msgstr "YALI ora sta installando al tuo computer. Questo operazione dura circa 20-30 minuti a seconda la sua computer e hardware. Prende in considerazione che installazione tramite una chiave USB sarà molto più veloce rispetto ad una media ottica.&lt;br&gt;&lt;br&gt;Ora puo' accomodarsi e goddete la presentazione delle caratteristiche e le innovazioni di Pardus offerte in questa nuova release."
+msgid ""
+"YALI is now installing Pardus on your computer. This operation takes "
+"approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
+"br&gt;&lt;br&gt;Note that the installation from a USB storage will be much "
+"faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and "
+"enjoy the installation during which you will be able to discover the "
+"features and the innovations offered by this new Pardus release."
+msgstr ""
+"YALI ora sta installando al tuo computer. Questo operazione dura circa 20-30 "
+"minuti a seconda la sua computer e hardware. Prende in considerazione che "
+"installazione tramite una chiave USB sarà molto più veloce rispetto ad una "
+"media ottica.&lt;br&gt;&lt;br&gt;Ora puo' accomodarsi e goddete la "
+"presentazione delle caratteristiche e le innovazioni di Pardus offerte in "
+"questa nuova release."
 
 #: ../release.xml.in.h:39
-msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
+msgid ""
+"You have successfully installed Pardus on your computer. After restarting "
+"your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
+"&lt;br&gt;Click Next to proceed. One note: You remember your password, "
+"don&apos;t you?"
 msgstr ""
 
 #: ../release.xml.in.h:40
-msgid "You need to set the &quot;root&quot; account password. &quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
+msgid ""
+"You have to choose a *free* physical partition in order to create your "
+"system partitions. If anything goes wrong you can Reset and start again. &lt;"
+"br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical "
+"Volume, then a Volume Group which will contain your Logical Volumes. You can "
+"use Logical Volumes similar to partitions and set them for system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you "
+"have to create at least two RAID members. Try to divide the space equally as "
+"the space of the disk will be same with the smallest partition. When you "
+"have two RAID members, you will be able to create a RAID array which is "
+"similar to a partition as it may be formatted and set for the system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and "
+"Using Guide for more information about disk partitioning. You can find it in "
+"our website."
 msgstr ""
 
 #: ../release.xml.in.h:41
-msgid "You will need at least 4GBs of unpartitioned-unused disk space or a disk to install Pardus (10 GBs recommended though). Please select the disk you want to use for installation. In the next step, you will be able to choose between different partitioning options."
+msgid ""
+"You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
+"install Pardus (10 GBs recommended though). Please select the disk you want "
+"to use for installation. In the next step, you will be able to choose "
+"between different partitioning options."
 msgstr ""
 
 #: ../release.xml.in.h:42
-msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
+msgid ""
+"You've installed and booted Pardus successfully... Just a few clicks left... "
+"Pardus supports multiple users on the same system. So you need to create at "
+"least one user and set the system wide configurations. So you will be able "
+"to login and enjoy Pardus..."
 msgstr ""
+
+#~ msgid "Add Users"
+#~ msgstr "Aggiungi Utenti"
+
+#~ msgid "Adjust Date and Time Settings"
+#~ msgstr "Regolare le impostazioni di Data e Tempo"
+
+#~ msgid "Manual Partitioning"
+#~ msgstr "Partitizione Manuale"
+
+#~ msgid "Welcome to Pardus"
+#~ msgstr "Benvenuti a Pardus"
