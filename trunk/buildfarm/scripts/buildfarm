@@ -126,6 +126,10 @@ def build_packages():
                        skip_signing=True,
                        compression=File.COMPRESSION_TYPE_XZ)
 
+    # Run hooks
+    print "\nRunning hooks"""
+    utils.run_hooks()
+
     # Check packages containing binaries and libraries broken by any package update
     print "\nChecking binary consistency with revdep-rebuild"
     os.environ["HOME"] = home_dir
