@@ -199,9 +199,11 @@ class Panda():
 
                     if arg == "status":
                         if self.os_driver in blacklist:
-                            return self.driver_name
+                            return "vendor"
+                            #return self.driver_name
                         elif self.os_driver:
-                            return self.os_driver
+                            return "os"
+                            #return self.os_driver
                         else:
                             return "os"
 
