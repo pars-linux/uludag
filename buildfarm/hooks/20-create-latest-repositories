@@ -15,13 +15,13 @@ def create_latest_repo_layout():
     repo_debug = utils.get_debug_packages_directory()
 
     # latest repository
-    # e.g. /var/db/buildfarm/packages/corporate2/devel/x86_64/latest
-    latest_repo = os.path.join(repo, "latest")
-    latest_repo_debug = os.path.join(repo_debug, "latest")
+    # e.g. /var/db/buildfarm/packages/corporate2/devel/x86_64-latest
+    latest_repo = "%s-latest" % repo
+    latest_repo_debug = "%s-latest" % repo_debug
 
     for repository in (latest_repo, latest_repo_debug):
         packages = []
-        source = os.path.dirname(repository)
+        source = repository.replace("-latest", "")
 
         try:
             os.makedirs(repository)
@@ -49,11 +49,11 @@ def create_latest_repo_layout():
 
         # Symlink indexes
         for index in glob.glob1(source, "pisi-index.xml*"):
-            os.symlink("../%s" % index, index)
+            os.symlink("../%s/%s" % (os.path.basename(source), index), index)
 
         # and finally symlink the packages
         for package in packages:
-            os.symlink("../%s" % package, package)
+            os.symlink("../%s/%s" % (os.path.basename(source), package), package)
 
 if __name__ == "__main__":
     create_latest_repo_layout()
