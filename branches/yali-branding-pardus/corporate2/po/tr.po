@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-24 12:26+0000\n"
+"POT-Creation-Date: 2010-12-24 13:00+0000\n"
 "PO-Revision-Date: 2010-12-14 13:44+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -161,7 +161,7 @@ msgstr "Tekrar hoşgeldiniz..."
 
 #: ../release.xml.in.h:37
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for user space, and system, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described above.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr ""
+msgstr "&quot; Diskin Tamamını Kullan &quot; seçeneği kullanıldığında Pardus seçili diskteki her şeyi silerek, baştan biçimlendirip, LVM (Mantıksal Birim Yönetimi) kullanarak kullanıcı hesapları, sistem, açılış ve takas dosyaları için dört yeni disk bölümü oluşturur. &lt;br&gt;&lt;br&gt; Kurulu olduğu diskte yeterli boş alan olan bir başka sistem varsa, &quot;Kullanılan Sistemi Küçült&quot; seçeneğini kullanarak o disk bölümündeki boş alanda yeni bir disk bölümü yaratıp oraya kurulum yapabilirsiniz.&lt;br&gt;&lt;br&gt; Bölümlendirilmemiş ve 4GB'tan büyük bir disk alanı varsa (10 GB ve üzeri daha iyi olacaktır), o alanın yukarıda tarif edildiği şekilde kullanılması için &quot;Boş Alanı Kullan&quot; seçeneğinden yararlanabilirsiniz. &lt;br&gt;&lt;br&gt; Bölümlendirmeyi elle yapmak için &quot; Kendi Düzenini Yarat &quot; seçeneğini kullanabilirsiniz. &lt;br&gt;&lt;br&gt; Sorun yaşamamak için kurulumdan önce yedek almanız önerilir."
 
 #: ../release.xml.in.h:38
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
