@@ -11,10 +11,14 @@ def main(args):
 
     if args.cur is not None:
         status = p.update_grub_entries()
-        print "The driver currently used is: %s" % status
+        print status
 
     if args.up is not None:
         status = p.update_grub_entries(args.up[0])
+        print status
+
+    if args.check is not None:
+        status = p.get_needed_driver_packages(installable=True)
         print status
 
 
@@ -40,6 +44,10 @@ def argument():
                             nargs=1,
                             help="Update grub.conf")
 
+    parser_update = subparsers.add_parser('check', help='Check for installable packages')
+    parser_update.add_argument('check',
+                            nargs='*',
+                            help="Check for installable packages")
     # We have to set them all to false, otherwise optional arguments are not
     # passed to the args() namespace
     parser.set_defaults(cur=None,
