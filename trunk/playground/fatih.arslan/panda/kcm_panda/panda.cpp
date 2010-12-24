@@ -17,11 +17,11 @@
 #include <kapplication.h>
 #include <kconfig.h>
 #include <kdialog.h>
-#include <knotification.h>
 #include <klocale.h>
 #include <knuminput.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
+#include <kworkspace/kworkspace.h>
 
 
 // X11 includes
@@ -194,6 +194,20 @@ void PandaConfig::save()
     }
 
     QTimer::singleShot(0, this, SLOT(changed()));
+  } else {
+
+      //KMessageBox::information(this, i18n("You have to restart your system "));
+    int ret = KMessageBox::questionYesNo(this,
+                                i18n("You have to restart your system for the changes to take affect.\n"
+                                     "Do you want to restart now?"));
+    if(ret == KMessageBox::Yes){
+
+        KWorkSpace::requestShutDown( KWorkSpace::ShutdownConfirmNo,
+                                     KWorkSpace::ShutdownTypeReboot,
+                                     KWorkSpace::ShutdownModeInteractive);
+        qDebug() << "YES";
+    }
+
   }
 
 }
