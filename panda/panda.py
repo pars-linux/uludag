@@ -1,19 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
-# PANDA - Pardus Alternative Driver Administration
-#
-# This scripts automatically detects the brand of a graphic card
-# After detecting, it simply returns a list which contains modules
-# that should be added/installed. These modules are mostly based on
-# proprietary graphic card drivers.
-# This script also has a extra function that modify grub.conf to
-# reflect the changes of the installed modules. It does append a
-# "blacklist=..." string to the end of kernel line in grub.conf. Due
-# to one will able to use the proprietary drivers like nvidia-current
-# or fglrx
-
 import os
 import sys
 import glob
