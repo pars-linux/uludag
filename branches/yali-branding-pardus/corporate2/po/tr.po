@@ -132,9 +132,8 @@ msgid "Partition your disk manually"
 msgstr "Diski elle bölümlendir"
 
 #: ../release.xml.in.h:30
-#, fuzzy
 msgid "Select a partitioning method"
-msgstr "Bölümleme Yöntemini Seçiniz"
+msgstr "Bölümleme yöntemi seçin"
 
 #: ../release.xml.in.h:31
 msgid "Set your local time and date"
