@@ -820,7 +820,7 @@ msgstr "О&к"
 
 #: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
 msgid "Package Details"
-msgstr "Список пакетов"
+msgstr "Описание пакета"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
