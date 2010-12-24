@@ -31,7 +31,7 @@
             <name>keyboardSetup</name>
             <_title>Choose your keyboard layout</_title>
             <icon>input-keyboard</icon>
-            <_help>A keyboard layout sets the arrangement of keys on the keyboard. There are different keyboard layouts in use throughout the world. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox.</_help>
+            <_help>A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox.</_help>
         </screen>
         <screen>
             <name>timeSetup</name>
@@ -43,7 +43,7 @@
             <name>accounts</name>
             <_title>Setup your account</_title>
             <icon>users</icon>
-            <_help>Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, sou we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings.</_help>
+            <_help>Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, so we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings.</_help>
         </screen>
         <screen>
             <name>admin</name>
