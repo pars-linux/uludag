@@ -18,8 +18,8 @@ def main(args):
         print status
 
     if args.check is not None:
-        status = p.get_needed_driver_packages(installable=True)
-        print status
+        packages = p.get_needed_driver_packages(installable=True)
+        print ",".join(packages)
 
 
 
