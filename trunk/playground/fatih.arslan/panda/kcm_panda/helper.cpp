@@ -3,7 +3,6 @@
 #include <QDebug>
 #include <QProcess>
 #include <kdebug.h>
-#include <kmessagebox.h>
 
 ActionReply Helper::save(const QVariantMap &args)
 {
@@ -26,7 +25,6 @@ ActionReply Helper::save(const QVariantMap &args)
         p->waitForFinished();
         QByteArray currentDriver = p->readAllStandardOutput();
         QString osOutput = QString(currentDriver).trimmed();
-        //KMessageBox::information(this, i18n("Your system has ben successfull configured to %1 driver", osOutput));
         qDebug() << "OS: " << osOutput;
     } else if (vendordriver) {
         p->start(program, cliVendorArgs);
