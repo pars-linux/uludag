@@ -22,6 +22,9 @@ from PyKDE4.kdecore import *
 
 from ui_pminstall import Ui_PmDialog
 from statemanager import StateManager
+from packageproxy import PackageProxy
+from packagemodel import PackageModel
+from packagedelegate import PackageDelegate
 
 class PmDialog(QDialog, Ui_PmDialog):
 
@@ -41,6 +44,14 @@ class PmDialog(QDialog, Ui_PmDialog):
                                         "Please try upgrading repository informations." % package)
                     self.showFailMessage(errorMessage)
                     sys.exit()
+
+        model = PackageModel(self)
+        proxy = PackageProxy(self)
+        proxy.setSourceModel(model)
+        self.packageList.setModel(proxy)
+        self.packageList.setItemDelegate(PackageDelegate(self))
+        self.packageList.setColumnWidth(0, 32)
+        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
         self.state.state = StateManager.INSTALL
         self.button_install.clicked.connect(self.installPackages)

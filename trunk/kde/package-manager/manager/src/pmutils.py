@@ -42,6 +42,16 @@ def network_available():
         return False
     return True
 
+def handleException(exception, value, tb):
+    """
+    Exception Handler
+
+    @param exception: exception object
+    @param value: exception message
+    @param tb: traceback log
+    """
+    logger.error("".join(traceback.format_exception(exception, value, tb)))
+
 def humanReadableSize(size, precision=".1"):
     symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
 
