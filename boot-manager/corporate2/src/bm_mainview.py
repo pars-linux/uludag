@@ -16,9 +16,12 @@ from kdeui import *
 from utility import *
 from ui_elements import *
 
+import functools
+
 import dbus
 import time
-from handler import CallHandler
+
+from backend import Backend
 
 BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, \
 BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED, BOOT_REMOVE_UNUSED_LAST = xrange(1, 10)
@@ -89,45 +92,28 @@ class widgetEntryList(QWidget):
         self.listEntries.viewport().setEnabled(True)
         self.checkSaved.setEnabled(True)
 
-    def slotCheckSaved(self):
-        def handler():
-            self.parent.queryEntries()
-        def cancel():
+    def checkSavedHandler(self, package, exception, args):
+        if exception:
             default = self.parent.options["default"]
             self.checkSaved.setChecked(default == 'saved')
-        def error(exception):
-            cancel()
-        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
-        ch.registerAuthError(error)
-        ch.registerDBusError(error)
-        ch.registerCancel(cancel)
-        ch.registerDone(handler)
+            return
+        self.parent.queryEntries()
+
+    def slotCheckSaved(self):
         if self.checkSaved.isChecked():
-            ch.call("default", "saved")
+            self.parent.backend.setOption(self.parent.package, "default", "saved", async = self.checkSavedHandler)
         else:
-            ch.call("default", "0")
+            self.parent.backend.setOption(self.parent.package, "default", "0", async = self.checkSavedHandler)
+
+    def timeoutHandler(self, package, exception, args):
+        if exception:
+            self.setTimeoutSlot(False)
+            self.spinTimeout.setValue(int(self.parent.options["timeout"]))
+            self.setTimeoutSlot(True)
+            return
 
     def slotTimeoutChanged(self, value):
-        def handler():
-            self.spinTimeout.setEnabled(True)
-            self.parent.setFocus()
-        def cancel():
-            self.setTimeoutSlot(False)
-            self.spinTimeout.setValue(int(self.parent.options["timeout"]))
-            self.setTimeoutSlot(True)
-            handler()
-        def error(exception):
-            self.setTimeoutSlot(False)
-            self.spinTimeout.setValue(int(self.parent.options["timeout"]))
-            self.setTimeoutSlot(True)
-            handler()
-        ch = self.parent.callMethod("setOption", "tr.org.pardus.comar.boot.loader.set")
-        ch.registerAuthError(error)
-        ch.registerDBusError(error)
-        ch.registerCancel(cancel)
-        ch.registerDone(handler)
-        self.spinTimeout.setEnabled(False)
-        ch.call("timeout", str(value))
+        self.parent.backend.setOption(self.parent.package, "timeout", str(value), async = self.timeoutHandler)
 
     def slotAddEntry(self):
         self.parent.widgetEditEntry.newEntry()
@@ -263,14 +249,12 @@ class widgetEditEntry(QWidget):
 
         self.parent.showScreen("EditEntry")
 
-    def deleteEntry(self, index, title):
-        def handler():
-            self.parent.widgetEntries.listEntries.setEnabled(True)
-        def cancel():
-            handler()
-        def error(exception):
-            handler()
+    def removeHandler(self, package, exception, args):
+        self.parent.widgetEntries.listEntries.setEnabled(True)
+        if exception:
+            return
 
+    def deleteEntry(self, index, title):
         entries = self.parent.entries
         pardus_entries = []
         pardus_versions = {}
@@ -294,13 +278,8 @@ class widgetEditEntry(QWidget):
                     if confirm_uninstall == KMessageBox.Yes:
                         uninstall = "yes"
 
-            ch = self.parent.callMethod("removeEntry", "tr.org.pardus.comar.boot.loader.removeentry")
-            ch.registerAuthError(error)
-            ch.registerDBusError(error)
-            ch.registerCancel(cancel)
-            ch.registerDone(handler)
             self.parent.widgetEntries.listEntries.setEnabled(False)
-            ch.call(index, title, uninstall)
+            self.parent.backend.removeEntry(self.parent.package, index, title, uninstall, async = self.removeHandler)
 
     def resetEntry(self):
         self.entry = None
@@ -371,18 +350,18 @@ class widgetEditEntry(QWidget):
 
         self.saved = True
 
-        def handlerError(exception):
+        self.parent.backend.setEntry(self.parent.package, args["title"], args["os_type"], args["root"], args["kernel"], args["initrd"], args["options"], args["default"], args["index"], async = self.setEntryHandler)
+
+    def setEntryHandler(self, package, exception, args):
+        if exception:
             self.parent.widgetEditEntry.saved = False
-            KMessageBox.error(self, unicode(exception.message), i18n("Failed"))
+            if "tr.org.pardus.comar.boot.loader" not in unicode (exception):
+                KMessageBox.error(self, unicode(exception.message), i18n("Failed"))
             self.parent.widgetEditEntry.buttonOK.setEnabled(True)
-        def handler():
-            self.parent.widgetEditEntry.saved = False
-            self.parent.queryEntries()
-            self.parent.widgetEditEntry.slotExit()
-        ch = self.parent.callMethod("setEntry", "tr.org.pardus.comar.boot.loader.set")
-        ch.registerDone(handler)
-        ch.registerError(handlerError)
-        ch.call(args["title"], args["os_type"], args["root"], args["kernel"], args["initrd"], args["options"], args["default"], args["index"])
+            return
+        self.parent.widgetEditEntry.saved = False
+        self.parent.queryEntries()
+        self.parent.widgetEditEntry.slotExit()
 
     def slotExit(self):
         self.resetEntry()
@@ -431,16 +410,18 @@ class widgetUnused(QWidget):
         self.listBusy = False
         self.listUnused()
 
+    def unusedKernelsHandler(self, package, exception, args):
+        versions, = args
+        if exception:
+            return
+        self.listKernels.clear()
+        for version in versions:
+            if version.strip():
+                self.listKernels.insertItem(version)
+        self.slotKernels()
+
     def listUnused(self):
-        def handler(versions):
-            self.listKernels.clear()
-            for version in versions:
-                if version.strip():
-                    self.listKernels.insertItem(version)
-            self.slotKernels()
-        ch = self.parent.callMethod("listUnused", "tr.org.pardus.comar.boot.loader.get")
-        ch.registerDone(handler)
-        ch.call()
+        self.parent.backend.listUnused(self.parent.package, async = self.unusedKernelsHandler)
 
     def slotKernels(self):
         item = self.listKernels.firstItem()
@@ -472,6 +453,17 @@ class widgetUnused(QWidget):
         self.buttonAdd.setEnabled(True)
         self.buttonRemove.setEnabled(True)
 
+    def removeUnusedHandler(self, isLast, package, exception, args):
+        self.setEnabled(True)
+        self.buttonAdd.setEnabled(True)
+        self.buttonRemove.setEnabled(True)
+        if exception:
+            return
+        self.listBusy = True
+        if isLast:
+            self.listBusy = False
+            self.listUnused()
+
     def slotRemove(self):
         confirm = KMessageBox.questionYesNo(self, i18n("Do you want to uninstall selected kernel(s) from the system?"), i18n("Uninstall Kernel"))
         if confirm == KMessageBox.Yes:
@@ -484,25 +476,10 @@ class widgetUnused(QWidget):
                     versions.append(str(item.text()))
                 item = item.next()
             if len(versions):
-                self.listBusy = True
-                def handler(isLast=False):
-                    if isLast:
-                        self.listBusy = False
-                        self.listUnused()
-                    self.setEnabled(True)
-                    self.buttonAdd.setEnabled(True)
-                    self.buttonRemove.setEnabled(True)
-                def cancel():
-                    self.setEnabled(True)
-                    self.buttonAdd.setEnabled(True)
-                    self.buttonRemove.setEnabled(True)
-
                 for version in versions:
-                    ch = self.parent.callMethod("removeUnused", "tr.org.pardus.comar.boot.loader.removeunused")
-                    ch.registerDone(handler, version == versions[-1])
-                    ch.registerCancel(cancel)
                     self.setEnabled(False)
-                    ch.call(version)
+                    # fixme: is there a better way to call async function without using functools?
+                    self.parent.backend.removeUnused(self.parent.package, version, async = functools.partial(self.removeUnusedHandler, version == versions[-1]))
 
     def slotExit(self):
         self.parent.showScreen("Entries")
@@ -513,6 +490,9 @@ class widgetMain(QWidget):
 
         #self.link = None
         self.dia = None
+
+        self.backend = Backend(self)
+        self.package = "grub"
 
         if not self.openBus():
             sys.exit(1)
@@ -550,58 +530,9 @@ class widgetMain(QWidget):
         self.queryOptions()
         self.querySystems()
         self.queryEntries()
-        self.listenSignals()
 
-    def callMethod(self, method, action):
-        ch = CallHandler("grub", "Boot.Loader", method,
-                         action,
-                         self.winId(),
-                         self.busSys, self.busSes)
-        ch.registerAuthError(self.comarError)
-        ch.registerDBusError(self.busError)
-        ch.registerCancel(self.cancelError)
-        return ch
-
-    def cancelError(self):
-        self.widgetEditEntry.buttonOK.setEnabled(True)
-
-    def busError(self, exception):
-        if self.dia:
-            return
-        self.dia = KProgressDialog(None, "lala", i18n("Waiting DBus..."), i18n("Connection to the DBus unexpectedly closed, trying to reconnect..."), True)
-        self.dia.progressBar().setTotalSteps(50)
-        self.dia.progressBar().setTextEnabled(False)
-        self.dia.show()
-        start = time.time()
-        while time.time() < start + 5:
-            if self.openBus():
-                self.dia.close()
-                self.setup()
-                return
-            if self.dia.wasCancelled():
-                break
-            percent = (time.time() - start) * 10
-            self.dia.progressBar().setProgress(percent)
-            qApp.processEvents(100)
-        self.dia.close()
-        KMessageBox.sorry(None, i18n("Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."))
-        sys.exit()
-
-    def comarError(self, exception):
-        if "Access denied" in exception.message:
-            message = i18n("You are not authorized for this operation.")
-            KMessageBox.sorry(self, message, i18n("Error"))
-        else:
-            KMessageBox.error(self, str(exception), i18n("COMAR Error"))
-
-    def listenSignals(self):
-        self.busSys.add_signal_receiver(self.handleSignals, dbus_interface="tr.org.pardus.comar.Boot.Loader", member_keyword="signal", path_keyword="path")
-
-    def handleSignals(self, *args, **kwargs):
-        path = kwargs["path"]
-        signal = kwargs["signal"]
-        if not path.startswith("/package/"):
-            return
+    def handleSignals(self, script, signal, args):
+        #print 'COMAR:', script, signal, args
         if signal == "Changed":
             if args[0]== "entry":
                 self.queryEntries()
@@ -614,55 +545,54 @@ class widgetMain(QWidget):
     def showScreen(self, label):
         self.stack.raiseWidget(self.screens[label])
 
+    def optionsHandler(self, package, exception, args):
+        options, = args
+        for key, value in options.iteritems():
+            self.options[key] = value
+        # Default entry
+        if self.options["default"] == "saved":
+            self.widgetEntries.checkSaved.setChecked(True)
+        # Timeout
+        timeout = int(self.options["timeout"])
+        self.widgetEntries.setTimeoutSlot(False)
+        self.widgetEntries.spinTimeout.setValue(timeout)
+        self.widgetEntries.setTimeoutSlot(True)
+
     def queryOptions(self):
-        def handler(options):
-            for key, value in options.iteritems():
-                self.options[key] = value
-            # Default entry
-            if self.options["default"] == "saved":
-                self.widgetEntries.checkSaved.setChecked(True)
-            # Timeout
-            timeout = int(self.options["timeout"])
-            self.widgetEntries.setTimeoutSlot(False)
-            self.widgetEntries.spinTimeout.setValue(timeout)
-            self.widgetEntries.setTimeoutSlot(True)
-        ch = self.callMethod("getOptions", "tr.org.pardus.comar.boot.loader.get")
-        ch.registerDone(handler)
-        ch.call()
+        self.backend.getOptions(self.package, async = self.optionsHandler)
+
+    def systemsHandler(self, package, exception, args):
+        systems, = args
+        self.systems = {}
+        for name, info in systems.iteritems():
+            label, fields_req, fields_opt = info
+            fields = fields_req + fields_opt
+            self.systems[name] = (label, fields)
 
     def querySystems(self):
-        def handler(systems):
-            self.systems = {}
-            for name, info in systems.iteritems():
-                label, fields_req, fields_opt = info
-                fields = fields_req + fields_opt
-                self.systems[name] = (label, fields)
-        ch = self.callMethod("listSystems", "tr.org.pardus.comar.boot.loader.get")
-        ch.registerDone(handler)
-        ch.call()
+        self.backend.listSystems(self.package, async = self.systemsHandler)
+
+    def entriesHandler(self, package, exception, args):
+        entries, = args
+        self.widgetEntries.listEntries.clear()
+        self.entries = []
+        for entry in entries:
+            self.entries.append(entry)
+
+            if entry.has_key("root"):
+                root_or_uuid = entry["root"]
+            elif entry.has_key("uuid"):
+                root_or_uuid = entry["uuid"]
+            else:
+                root_or_uuid = ""
+
+            self.widgetEntries.listEntries.add(self.widgetEditEntry,
+                                               int(entry["index"]),
+                                               unicode(entry["title"]),
+                                               root_or_uuid,
+                                               bool(entry.get("is_pardus_kernel", False)),
+                                               entry)
 
     def queryEntries(self):
-        def handler(entries):
-            self.widgetEntries.listEntries.clear()
-            self.entries = []
-            for entry in entries:
-                self.entries.append(entry)
-
-                if entry.has_key("root"):
-                    root_or_uuid = entry["root"]
-                elif entry.has_key("uuid"):
-                    root_or_uuid = entry["uuid"]
-                else:
-                    root_or_uuid = ""
-
-                self.widgetEntries.listEntries.add(self.widgetEditEntry,
-                                                   int(entry["index"]),
-                                                   unicode(entry["title"]),
-                                                   root_or_uuid,
-                                                   bool(entry.get("is_pardus_kernel", False)),
-                                                   entry)
-
         self.widgetEntries.listEntries.setEnabled(True)
-        ch = self.callMethod("listEntries", "tr.org.pardus.comar.boot.loader.get")
-        ch.registerDone(handler)
-        ch.call()
+        self.backend.listEntries(self.package, async = self.entriesHandler)
