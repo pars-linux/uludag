@@ -2,6 +2,7 @@
 #include <QButtonGroup>
 #include <QLabel>
 #include <QProcess>
+#include <QTimer>
 
 //Added by qt3to4:
 #include <QVBoxLayout>
@@ -151,7 +152,7 @@ void PandaConfig::load()
 {
   QStringList cliArgs;
   cliArgs << "cur";
-  QString program = "panda-cli";
+  QString program = "/usr/bin/panda-cli.py";
 
   QProcess *p = new QProcess(this);
   p->start(program, cliArgs);
@@ -170,7 +171,6 @@ void PandaConfig::load()
   } else if (isOs) {
       osDriver->setChecked(true);
   }
-  emit changed(false);
 }
 
 void PandaConfig::save()
@@ -193,13 +193,15 @@ void PandaConfig::save()
         KMessageBox::error(this, i18n("Error handler for custom errors should be setup here"));
     }
 
+    QTimer::singleShot(0, this, SLOT(changed()));
   }
 
-  emit changed(false);
 }
 
 
 void PandaConfig::defaults()
 {
+      osDriver->setChecked(true);
+      emit changed(true);
 }
 
