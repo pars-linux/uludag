@@ -17,6 +17,7 @@ class PandaConfig : public KCModule
   void load();
   void save();
   void defaults();
+  bool installMissing();
 
  private:
   QRadioButton    *osDriver;
