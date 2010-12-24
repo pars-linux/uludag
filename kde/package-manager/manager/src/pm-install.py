@@ -31,7 +31,7 @@ from PyKDE4.kdecore import i18n
 from PyKDE4.kdecore import KCmdLineArgs
 from PyKDE4.kdeui import KUniqueApplication
 
-from mainwindow import MainWindow
+from pmwindow import PmDialog
 from about import aboutData
 
 def handleException(exception, value, tb):
@@ -59,22 +59,17 @@ if __name__ == '__main__':
     args = filter(lambda x: not x.startswith('-'), sys.argv[1:])
 
     if len(sys.argv) > 1:
-
         aboutData.setAppName("pm-install")
-        KCmdLineArgs.init([], aboutData)
+        KCmdLineArgs.init(["--no-fork"], aboutData)
 
         app = KUniqueApplication(True, True)
         setSystemLocale()
 
-        manager = MainWindow(silence = True)
-        manager.statusBar().hide()
-        manager.resize(QSize(540, 80))
-        manager.move(QDesktopWidget().screenGeometry(manager).center() - manager.rect().center())
+        dialog = PmDialog(app, args)
+        dialog.exec_()
+        # cw.state._selected_packages = args
 
-        cw = manager.centralWidget()
-        cw.state.state = cw.state.INSTALL
-        cw.state._selected_packages = args
-
+        """
         if not any(package.endswith('.pisi') for package in cw.state._selected_packages):
             available_packages = cw.state.packages()
             for package in cw.state._selected_packages:
@@ -86,8 +81,8 @@ if __name__ == '__main__':
         if state == False:
             sys.exit()
 
+        """
         sys.excepthook = handleException
-        ctx._time()
         app.exec_()
     else:
         parser.print_usage()

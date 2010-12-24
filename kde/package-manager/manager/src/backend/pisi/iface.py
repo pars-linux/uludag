@@ -17,7 +17,9 @@ import comar
 import pisi
 
 from pmlogging import logger
-from statemanager import StateManager
+
+# States
+(ALL, INSTALL, REMOVE, UPGRADE, HISTORY) = range(5)
 
 class Singleton(object):
     def __new__(type):
@@ -121,9 +123,9 @@ class Iface(Singleton):
     def getExtras(self, packages, state):
         if not packages:
             return []
-        if state in (StateManager.INSTALL, StateManager.UPGRADE):
+        if state in (INSTALL, UPGRADE):
             return self.getDepends(packages)
-        elif state == StateManager.REMOVE:
+        elif state == REMOVE:
             return self.getRequires(packages)
 
     def getUpdateType(self, pkg):
