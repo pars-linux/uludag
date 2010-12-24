@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-24 13:00+0000\n"
+"POT-Creation-Date: 2010-12-24 19:01+0000\n"
 "PO-Revision-Date: 2010-12-14 13:44+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -30,7 +30,7 @@ msgstr "Klavye düzeni, klavyedeki tuşların yerleşim sırasını belirler. Ku
 
 #: ../release.xml.in.h:4
 msgid "Choose a password for administration and a hostname"
-msgstr "Yönetici parolası ve makina adı seçin"
+msgstr "Yönetici parolası ve makine adı seçin"
 
 #: ../release.xml.in.h:5
 msgid "Choose your installation disk"
@@ -90,7 +90,7 @@ msgstr "Kahya"
 
 #: ../release.xml.in.h:19
 msgid "Konqueror, carries the web experience into desktop. You can use many web-like features suh as tabbed browsing or tagging your files and folders to list by tags and enjoy the powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily using protocols like SSH, WebDav, SMB. So you can reach remote files as if they are on your disk."
-msgstr "Konqueror ağ deneyimini masaüstü ortamına taşır. Sekmeler, dizin ve dosyalarınızı etiketleme ve etiketlere gör listeleme gibi özelliklerle güçlü ağ şeffaflığının tadını çıkarın.&lt;br&gt;&lt;br&gt;Yerel ağ ya da İnternet üzerindeki herhangi bir adresi entegre ederek, SSH, WebDav, SMB gibi protokolleri kolayca kullanmanıza imkan tanır."
+msgstr "Konqueror ağ deneyimini masaüstü ortamına taşır. Sekmeler, dizin ve dosyalarınızı etiketleme ve etiketlere göre listeleme gibi özelliklerle güçlü ağ şeffaflığının tadını çıkarın.&lt;br&gt;&lt;br&gt;Yerel ağ ya da İnternet üzerindeki herhangi bir adresi entegre ederek, SSH, WebDav, SMB gibi protokolleri kolayca kullanmanıza imkan tanır."
 
 #: ../release.xml.in.h:20
 msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
@@ -113,11 +113,11 @@ msgstr ""
 #: ../release.xml.in.h:25
 #, no-c-format
 msgid "Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high stability. Firefox is the most popular open source Internet browser and offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, themes and plugins allows you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus Corporate 2 also offers other open source browsers including Chromium, Konqueror."
-msgstr "Pardus Kurumsal 2, üçüncü nesil açık kaynak kodlu web tarayıcı Firefox ile karşınızda. Firefox güvenli bir İnternet tebrücesi sunmanın yanı sıra, pek çok harika kişiselleştirme imkanı sunar. &lt;br&gt;&lt;br&gt;Mozilla ekibi, camianın ürünün oluşumundaki katkısını göstermek için 100% olarak Organik Yazılım terimini kullanıyor. Eklentiler, özellikle de Personas özelleştirme temaları   tarayıcınızın hem görsel hem de işlevsellik bakımından size özgü bir  yapıya kavuşmasını sağlar.&lt;br&gt;&lt;br&gt;Pardus Kurumsal 2 alternatif olarak Chromium, Konqueror gibi diğer açık kaynak tarayıcılar ile çalışma imkanı tanır."
+msgstr "Pardus Kurumsal 2, üçüncü nesil açık kaynak kodlu web tarayıcı Firefox ile karşınızda. Firefox güvenli bir İnternet deneyimi sunmanın yanı sıra, pek çok harika kişiselleştirme imkanı sunar. &lt;br&gt;&lt;br&gt;Mozilla ekibi, camianın ürünün oluşumundaki katkısını göstermek için 100% olarak Organik Yazılım terimini kullanıyor. Eklentiler, özellikle de Personas özelleştirme temaları   tarayıcınızın hem görsel hem de işlevsellik bakımından size özgü bir  yapıya kavuşmasını sağlar.&lt;br&gt;&lt;br&gt;Pardus Kurumsal 2 alternatif olarak Chromium, Konqueror gibi diğer açık kaynak tarayıcılar ile çalışma imkanı tanır."
 
 #: ../release.xml.in.h:26
 msgid "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience with a long term support. You can still enjoy the powerful parade of all free and open source softwares included in Pardus with keeping in mind this will go on for years... While the installation goes on, you may explore these features..."
-msgstr "Pardus Kurumsal 2, sizlere kararlı, hızlı, kullanımı kolay ve uzun süreli desteklenen bir Pardus deneyimi yaşatmayı teklif ediyor. Özgür ve açık kaynak yazılımlar geçidinin tadını çıkarırken, bu gücün yıllar boyunca devam edeceğiniz unutmayın... Kurulum devam ederken, bu özellikleri keşfedebilirsiniz."
+msgstr "Pardus Kurumsal 2, sizlere kararlı, hızlı, kullanımı kolay ve uzun süreli desteklenen bir Pardus deneyimi yaşatmayı teklif ediyor. Özgür ve açık kaynak yazılımlar geçidinin tadını çıkarırken, bu gücün yıllarca devam edeceğiniz unutmayın... Kurulum devam ederken, bu özellikleri keşfedebilirsiniz."
 
 #: ../release.xml.in.h:27
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
