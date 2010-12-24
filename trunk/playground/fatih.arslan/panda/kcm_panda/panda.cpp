@@ -15,12 +15,11 @@
 #include <kcmodule.h>
 #include <kaboutdata.h>
 #include <kapplication.h>
-#include <kconfig.h>
 #include <kdialog.h>
 #include <klocale.h>
-#include <knuminput.h>
 #include <kdebug.h>
 #include <kmessagebox.h>
+#include <kprocess.h>
 #include <kworkspace/kworkspace.h>
 
 
@@ -175,6 +174,11 @@ void PandaConfig::load()
 
 void PandaConfig::save()
 {
+  if (!installMissing()) {
+      KMessageBox::error(this, i18n("Unable to apply settings due to missing packages"));
+      QTimer::singleShot(0, this, SLOT(changed()));
+      return;
+  }
 
   QVariantMap helperargs;
 
@@ -219,3 +223,28 @@ void PandaConfig::defaults()
       emit changed(true);
 }
 
+bool PandaConfig::installMissing()
+{
+  KProcess p;
+  p << "/usr/bin/panda-cli.py" << "check";
+  p.setOutputChannelMode(KProcess::SeparateChannels);
+  if (p.execute())
+      return false;
+
+  QString cliOut = QString(p.readAllStandardOutput()).trimmed();
+  if (cliOut.isEmpty())
+      return true;
+
+  QStringList missingPackages = cliOut.split(",");
+  qDebug() << missingPackages;
+
+  KProcess pmInstall;
+  pmInstall << "/usr/bin/pm-install" << "--nofork" << missingPackages;
+  pmInstall.setOutputChannelMode(KProcess::SeparateChannels);
+
+  kapp->setOverrideCursor(QCursor(Qt::WaitCursor));
+  int failed = pmInstall.execute();
+  kapp->restoreOverrideCursor();
+
+  return !failed;
+}
