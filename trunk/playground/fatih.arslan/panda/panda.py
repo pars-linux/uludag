@@ -61,7 +61,7 @@ class Panda():
         if not kernel_list:
             if self.kernel_flavors is None:
                 self.__get_kernel_flavors()
-                kernel_list = self.kernel_flavors.keys()
+            kernel_list = self.kernel_flavors.keys()
 
         if self.driver_name is None:
             self.__get_primary_driver()
@@ -96,7 +96,7 @@ class Panda():
             self.os_driver = "nouveau"
 
 
-    def get_needed_driver_packages(self, kernel_flavors=None):
+    def get_needed_driver_packages(self, kernel_flavors=None, installable=False):
         '''Filter modules that should be addded'''
         if self.driver_packages is None:
             self.get_all_driver_packages()
@@ -117,6 +117,11 @@ class Panda():
 
             need_to_install = list(set(self.driver_packages[self.driver_name]) - \
                                    (set(module_packages) - set(needed_module_packages)))
+
+            if installable:
+                import pisi
+                idb = pisi.db.installdb.InstallDB()
+                need_to_install = [x for x in need_to_install if not idb.has_package(x)]
 
             return need_to_install
         else:
@@ -239,5 +244,6 @@ class Panda():
 
 if __name__ == '__main__':
     p = Panda()
-    print p.update_grub_entries()
+    print p.update_grub_entries("status")
+    print p.get_needed_driver_packages(installable=False)
 
