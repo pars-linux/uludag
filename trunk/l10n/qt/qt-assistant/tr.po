@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-10 10:43+0300\n"
-"PO-Revision-Date: 2010-12-20 23:43+0200\n"
+"PO-Revision-Date: 2010-12-25 13:53+0200\n"
 "Last-Translator: Hasan Ulusoy <hasonulusoy@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,7 +15,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: AboutDialog#1
-#, fuzzy
 msgctxt "AboutDialog#1"
 msgid "&Close"
 msgstr "&Kapat"
@@ -35,7 +34,6 @@ msgid "OK"
 msgstr "Tamam"
 
 #: Assistant#1
-#, fuzzy
 msgid "Error registering documentation file '%1': %2"
 msgstr "Belgelendirme dosyasına kayıt yapılırken hata meydana geldi '%1': %2"
 
@@ -44,7 +42,6 @@ msgid "Error: %1"
 msgstr "Hata: %1"
 
 #: Assistant#3
-#, fuzzy
 msgid ""
 "Could not register documentation file\n"
 "%1\n"
@@ -59,7 +56,6 @@ msgstr ""
 "%2"
 
 #: Assistant#4
-#, fuzzy
 msgid "Documentation successfully registered."
 msgstr "Belgelendirme başarılı bir şekilde kayıt edildi."
 
@@ -84,22 +80,18 @@ msgid "Documentation successfully unregistered."
 msgstr "Belgelendirme başarılı bir şekilde kayıtsız hale getirildi."
 
 #: Assistant#7
-#, fuzzy
 msgid "Error reading collection file '%1': %2."
 msgstr "Koleksiyon dosyası okunurken hata meydana geldi '%1': %2."
 
 #: Assistant#8
-#, fuzzy
 msgid "Error creating collection file '%1': %2."
 msgstr "Koleksiyon dosyası yaratılırken hata meydana geldi '%1': %2.r;"
 
 #: Assistant#9
-#, fuzzy
 msgid "Error reading collection file '%1': %2"
 msgstr "Koleksiyon dosyası okunurken hata meydana geldi '%1': %2"
 
 #: Assistant#10
-#, fuzzy
 msgid "Cannot load sqlite database driver!"
 msgstr "Sqlite veritabanı sürücüsü yüklenemiyor!"
 
@@ -112,7 +104,6 @@ msgid "Bookmark:"
 msgstr "Yer İmleri:"
 
 #: BookmarkDialog#3
-#, fuzzy
 msgid "Add in Folder:"
 msgstr "Dizine Ekle:"
 
@@ -130,7 +121,6 @@ msgid "Rename Folder"
 msgstr "Dizini Yeniden Adlandır"
 
 #: BookmarkManager#1
-#, fuzzy
 msgid "Untitled"
 msgstr "Başlıksız"
 
@@ -140,19 +130,16 @@ msgid "Remove"
 msgstr "Yeniden Adlandır"
 
 #: BookmarkManager#3
-#, fuzzy
 msgid "You are going to delete a Folder, this will also<br>remove it's content. Are you sure to continue?"
 msgstr "Bir dizin siliyorsunuz, bu işlem aynı zamanda içeriğinde<br>silinmesine neden olacak. Devam etmek istediğinize emin misiniz? "
 
 #: BookmarkManager#4
-#, fuzzy
 msgid "Manage Bookmarks..."
 msgstr "Yer İmlerini Yönet"
 
 #: BookmarkManager#5
-#, fuzzy
 msgid "Add Bookmark..."
-msgstr "&Yer İmi Ekle"
+msgstr "Yer İmi Ekle"
 
 #: BookmarkManager#6
 #, fuzzy
@@ -199,7 +186,6 @@ msgid "Search:"
 msgstr "Ara:"
 
 #: BookmarkManagerWidget#3
-#, fuzzy
 msgctxt "BookmarkManagerWidget#3"
 msgid "Remove"
 msgstr "Sil"
@@ -227,7 +213,6 @@ msgid "Open File"
 msgstr "Dosyayı Aç"
 
 #: BookmarkManagerWidget#9
-#, fuzzy
 msgid "Files (*.xbel)"
 msgstr "Dosyalar (*.xbel)"
 
@@ -245,42 +230,35 @@ msgid "Unable to save bookmarks."
 msgstr "Yer İmleri kaydedilemiyor"
 
 #: BookmarkManagerWidget#13
-#, fuzzy
 msgid "You are goingto delete a Folder, this will also<br> remove it's content. Are you sure to continue?"
 msgstr "Bir dizini siliyorsunuz, bu işlem aynı zamanda içeriğinde<br>silinmesine neden olacak. Devam etmek istediğinize emin misiniz?"
 
 #: BookmarkManagerWidget#14
-#, fuzzy
 msgctxt "BookmarkManagerWidget#14"
 msgid "Delete Folder"
 msgstr "Dizini Sil"
 
 #: BookmarkManagerWidget#15
-#, fuzzy
 msgctxt "BookmarkManagerWidget#15"
 msgid "Rename Folder"
 msgstr "Dizini yeniden Adlandır"
 
 #: BookmarkManagerWidget#16
-#, fuzzy
 msgctxt "BookmarkManagerWidget#16"
 msgid "Show Bookmark"
 msgstr "Yer İmini Göster"
 
 #: BookmarkManagerWidget#17
-#, fuzzy
 msgctxt "BookmarkManagerWidget#17"
 msgid "Show Bookmark in New Tab"
 msgstr "Yer İmini Yeni Sekmede Göster"
 
 #: BookmarkManagerWidget#18
-#, fuzzy
 msgctxt "BookmarkManagerWidget#18"
 msgid "Delete Bookmark"
 msgstr "Yer İmini Sil"
 
 #: BookmarkManagerWidget#19
-#, fuzzy
 msgctxt "BookmarkManagerWidget#19"
 msgid "Rename Bookmark"
 msgstr "Yer İmini Yeniden Adlandır"
@@ -303,7 +281,6 @@ msgid "Bookmarks"
 msgstr "Yer İmleri"
 
 #: BookmarkWidget#2
-#, fuzzy
 msgctxt "BookmarkWidget#2"
 msgid "Filter:"
 msgstr "Filtre:"
@@ -314,7 +291,6 @@ msgid "Add"
 msgstr "Ekle"
 
 #: BookmarkWidget#4
-#, fuzzy
 msgctxt "BookmarkWidget#4"
 msgid "Remove"
 msgstr "Sil"
@@ -324,24 +300,20 @@ msgid "Add new page"
 msgstr "Yeni sayfa ekle"
 
 #: CentralWidget#2
-#, fuzzy
 msgid "Close current page"
 msgstr "Geçerli sayfayı kapat"
 
 #: CentralWidget#3
-#, fuzzy
 msgid "Print Document"
 msgstr "Belgeyi Yazdır"
 
 #: CentralWidget#4
-#, fuzzy
 msgid "unknown"
 msgstr "bilinmeyen"
 
 #: CentralWidget#5
-#, fuzzy
 msgid "Add New Page"
-msgstr "Sayfa Ekle"
+msgstr "Yeni Sayfa Ekle"
 
 #: CentralWidget#6
 #, fuzzy
@@ -349,25 +321,21 @@ msgid "Close This Page"
 msgstr "Sayfayı kapat"
 
 #: CentralWidget#7
-#, fuzzy
 msgid "Close Other Pages"
 msgstr "Diğer Sayfaları Kapat"
 
 #: CentralWidget#8
-#, fuzzy
 msgid "Add Bookmark for this Page..."
 msgstr "Bu Sayfa için Yer İmi ekle"
 
 #: CentralWidget#9
-#, fuzzy
 msgctxt "CentralWidget#9"
 msgid "Search"
-msgstr "&Ara"
+msgstr "Ara"
 
 #: CmdLineParser#1
-#, fuzzy
 msgid "Unknown option: %1"
-msgstr "Bilinmeyen Seçenek: %1"
+msgstr "Bilinmeyen seçenek: %1"
 
 #: CmdLineParser#2
 #, fuzzy
@@ -382,12 +350,10 @@ msgid "Missing collection file."
 msgstr "Kayıp koleksiyon dosyası"
 
 #: CmdLineParser#4
-#, fuzzy
 msgid "Invalid URL '%1'."
 msgstr "Geçersiz URL '%1'."
 
 #: CmdLineParser#5
-#, fuzzy
 msgid "Missing URL."
 msgstr "Kayıp URL."
 
@@ -402,7 +368,6 @@ msgid "Missing widget."
 msgstr "Kayıp gereç."
 
 #: CmdLineParser#8
-#, fuzzy
 msgid "The Qt help file '%1' does not exist."
 msgstr "Qt yardım dosyası '%1' bulunamadı."
 
@@ -416,12 +381,10 @@ msgid "Missing filter argument."
 msgstr ""
 
 #: CmdLineParser#11
-#, fuzzy
 msgid "Error"
 msgstr "Hata..."
 
 #: CmdLineParser#12
-#, fuzzy
 msgid "Notice"
 msgstr "Bildiri"
 
@@ -431,18 +394,15 @@ msgid "Open Link"
 msgstr "Bağlantıyı Aç"
 
 #: ContentWindow#2
-#, fuzzy
 msgctxt "ContentWindow#2"
 msgid "Open Link in New Tab"
 msgstr "Bağlantıyı Yeni Sekmede Aç"
 
 #: FilterNameDialogClass#1
-#, fuzzy
 msgid "Add Filter Name"
 msgstr "Filtre Adı Ekle"
 
 #: FilterNameDialogClass#2
-#, fuzzy
 msgid "Filter Name:"
 msgstr "Filtre Adı:"
 
@@ -488,6 +448,7 @@ msgid "<title>about:blank</title>"
 msgstr "<title>about:blank>/title>"
 
 #: HelpViewer#2
+#, fuzzy
 msgid "<title>Error 404...</title><div align=\"center\"><br><br><h1>The page could not be found</h1><br><h3>'%1'</h3></div>"
 msgstr "<title>Hata 404...<div align=\"center\"><h1>Sayfa bulunamadı</h1><br><h3>'%1'</h3></div>"
 
@@ -498,101 +459,82 @@ msgid "Copy &Link Location"
 msgstr "Kopyala &Bağlantı Yeri"
 
 #: HelpViewer#4
-#, fuzzy
 msgid "Open Link in New Tab\tCtrl+LMB"
 msgstr "Bağlantıyı Yeni Sekmede Aç\tCtrl+LMB"
 
 #: HelpViewer#5
-#, fuzzy
 msgctxt "HelpViewer#5"
 msgid "Open Link in New Tab"
 msgstr "Bağlantıyı Yeni Sekmede Aç"
 
 #: IndexWindow#1
-#, fuzzy
 msgid "&Look for:"
 msgstr "&Bak:"
 
 #: IndexWindow#2
-#, fuzzy
 msgctxt "IndexWindow#2"
 msgid "Open Link"
 msgstr "Bağlantıyı Aç"
 
 #: IndexWindow#3
-#, fuzzy
 msgctxt "IndexWindow#3"
 msgid "Open Link in New Tab"
 msgstr "Bağlantıyı Yeni Sekmede Aç"
 
 #: InstallDialog#1
-#, fuzzy
 msgid "Install Documentation"
 msgstr "Belgelendirmeyi Yükle"
 
 #: InstallDialog#2
-#, fuzzy
 msgid "Available Documentation:"
 msgstr "Uygun Belgelendirme:"
 
 #: InstallDialog#3
-#, fuzzy
 msgid "Install"
 msgstr "Yükle"
 
 #: InstallDialog#4
-#, fuzzy
 msgctxt "InstallDialog#4"
 msgid "Cancel"
 msgstr "Yoksay"
 
 #: InstallDialog#5
-#, fuzzy
 msgid "Close"
-msgstr "&Kapat"
+msgstr "Kapat"
 
 #: InstallDialog#6
-#, fuzzy
 msgid "Installation Path:"
 msgstr "Yükleme Yolu:"
 
 #: InstallDialog#7
-#, fuzzy
 msgid "..."
 msgstr "..."
 
 #: InstallDialog#8
-#, fuzzy
 msgid "Downloading documentation info..."
 msgstr "Belgelendirme bilgisi indiriliyor..."
 
 #: InstallDialog#9
-#, fuzzy
 msgid "Download canceled."
 msgstr "İndirme iptal edildi."
 
 #: InstallDialog#10
-#, fuzzy
 msgid "Done."
 msgstr "Tamamlandı"
 
 #: InstallDialog#11
-#, fuzzy
 msgid "The file %1 already exists. Do you want to overwrite it?"
 msgstr "%1 dosyası mevcut. Üzerine yazmak ister misiniz?"
 
 #: InstallDialog#12
-#, fuzzy
 msgid "Unable to save the file %1: %2."
 msgstr "%1: %2 dosyası kaydedilemiyor."
 
 #: InstallDialog#13
-#, fuzzy
 msgid "Downloading %1..."
 msgstr "İndiriliyor %1..."
 
 #: InstallDialog#14
-#, fuzzy
 msgid "Download failed: %1."
 msgstr "İndirme başarısız: %1."
 
@@ -609,12 +551,10 @@ msgid "Download failed: Downloaded file is corrupted."
 msgstr "İndirme başarısız: indirilen dosya bozulmuş."
 
 #: InstallDialog#17
-#, fuzzy
 msgid "Installing documentation %1..."
 msgstr "Belgeleme yükleniyor %1..."
 
 #: InstallDialog#18
-#, fuzzy
 msgid ""
 "Error while installing documentation:\n"
 "%1"
@@ -628,12 +568,10 @@ msgid "Index"
 msgstr "İndeks"
 
 #: MainWindow#2
-#, fuzzy
 msgid "Contents"
 msgstr "İçindekiler"
 
 #: MainWindow#3
-#, fuzzy
 msgctxt "MainWindow#3"
 msgid "Bookmarks"
 msgstr "Yer İmleri"
@@ -645,7 +583,6 @@ msgid "Qt Assistant"
 msgstr "Qt Belge Tarayıcı"
 
 #: MainWindow#5
-#, fuzzy
 msgid "Looking for Qt Documentation..."
 msgstr "Qt Belgelendirmesi aranıyor..."
 
@@ -654,17 +591,14 @@ msgid "&File"
 msgstr "&Dosya"
 
 #: MainWindow#7
-#, fuzzy
 msgid "New &Tab"
-msgstr "Yeni Sekme"
+msgstr "Yeni &Sekme"
 
 #: MainWindow#8
-#, fuzzy
 msgid "Page Set&up..."
-msgstr "Sayfa Ayarı..."
+msgstr "Sayfa Ay&arı..."
 
 #: MainWindow#9
-#, fuzzy
 msgid "Print Preview..."
 msgstr "Yazdırma Önizlemesi..."
 
@@ -673,12 +607,10 @@ msgid "&Print..."
 msgstr "&Yazdır..."
 
 #: MainWindow#11
-#, fuzzy
 msgid "&Close Tab"
-msgstr "Sekmeyi Kapat"
+msgstr "&Sekmeyi Kapat"
 
 #: MainWindow#12
-#, fuzzy
 msgid "&Quit"
 msgstr "&Çık"
 
@@ -692,7 +624,6 @@ msgid "&Edit"
 msgstr "&Düzenle"
 
 #: MainWindow#15
-#, fuzzy
 msgid "&Copy selected Text"
 msgstr "&Seçilen Metni kopyala"
 
@@ -706,33 +637,34 @@ msgid "&Find"
 msgstr "&Bul"
 
 #: MainWindow#18
+#, fuzzy
 msgid "Find &Next"
 msgstr "Sonrakini &Bul"
 
 #: MainWindow#19
+#, fuzzy
 msgid "Find &Previous"
 msgstr "Öncekini &Bul"
 
 #: MainWindow#20
-#, fuzzy
 msgid "Preferences..."
 msgstr "Tercihler..."
 
 #: MainWindow#21
-#, fuzzy
 msgid "&View"
 msgstr "&Görünüm"
 
 #: MainWindow#22
+#, fuzzy
 msgid "Zoom &in"
-msgstr "Büyü&t"
+msgstr "Büy&üt"
 
 #: MainWindow#23
+#, fuzzy
 msgid "Zoom &out"
 msgstr "Küç&ült"
 
 #: MainWindow#24
-#, fuzzy
 msgid "Normal &Size"
 msgstr "Normal &Boyut"
 
@@ -757,10 +689,9 @@ msgid "ALT+O"
 msgstr "ALT+O"
 
 #: MainWindow#29
-#, fuzzy
 msgctxt "MainWindow#29"
 msgid "Search"
-msgstr "&Ara"
+msgstr "Ara"
 
 #: MainWindow#30
 #, fuzzy
@@ -776,7 +707,6 @@ msgid "&Home"
 msgstr "&Başlangıç"
 
 #: MainWindow#33
-#, fuzzy
 msgid "ALT+Home"
 msgstr "ALT+Başlangıç"
 
@@ -791,6 +721,7 @@ msgid "&Forward"
 msgstr "&İleri"
 
 #: MainWindow#36
+#, fuzzy
 msgid "Sync with Table of Contents"
 msgstr "İçindekiler ile Eşzamanla"
 
@@ -853,12 +784,10 @@ msgid "Ctrl+M"
 msgstr "Ctrl+M"
 
 #: MainWindow#50
-#, fuzzy
 msgid "Toolbars"
-msgstr "Araç Çubuğu"
+msgstr "Araç Çubukları"
 
 #: MainWindow#51
-#, fuzzy
 msgid "Filter Toolbar"
 msgstr "Filtre Araç Çubuğu"
 
@@ -868,23 +797,21 @@ msgid "Filtered by:"
 msgstr "Filtre sahibi:"
 
 #: MainWindow#53
-#, fuzzy
 msgid "Address Toolbar"
 msgstr "Adres Araç Çubuğu"
 
 #: MainWindow#54
-#, fuzzy
 msgid "Address:"
 msgstr "Adres:"
 
 #: MainWindow#55
-#, fuzzy
 msgid "Could not find the associated content item."
 msgstr "İlgili içerik maddesi bulunamadı"
 
 #: MainWindow#56
+#, fuzzy
 msgid "About %1"
-msgstr "Qt Hakkında "
+msgstr "Qt Hakkında %1"
 
 #: MainWindow#57
 #, fuzzy
@@ -894,15 +821,13 @@ msgstr "Arama indeksi güncelleniyor"
 #: MainWindow#58
 #, fuzzy
 msgid "Could not register file '%1': %2"
-msgstr "'%1': %2 dosyası kaydedilemiyor%"
+msgstr "'%1': %2 dosyası kaydedilemiyor"
 
 #: PreferencesDialog#1
-#, fuzzy
 msgid "Add Documentation"
 msgstr "Belgelendirme Ekle"
 
 #: PreferencesDialog#2
-#, fuzzy
 msgid "Qt Compressed Help Files (*.qch)"
 msgstr "Qt Sıkıştırılmış Yardım Dosyaları (*.qch)"
 
@@ -912,12 +837,10 @@ msgid "The namespace %1 is already registered!"
 msgstr "İsim uzayı %1 zaten kayıt altında"
 
 #: PreferencesDialog#4
-#, fuzzy
 msgid "The specified file is not a valid Qt Help File!"
 msgstr "Belirtilen dosya geçerli bir Qt Yardım dosyası değil!"
 
 #: PreferencesDialog#5
-#, fuzzy
 msgid "Remove Documentation"
 msgstr "Belgelendirmeyi Sil"
 
@@ -944,7 +867,6 @@ msgid "Use custom settings"
 msgstr "Özelleştirilmiş ayarları kullan"
 
 #: PreferencesDialogClass#1
-#, fuzzy
 msgid "Preferences"
 msgstr "Seçenekler"
 
@@ -965,12 +887,10 @@ msgid "Application"
 msgstr "Uygulama"
 
 #: PreferencesDialogClass#6
-#, fuzzy
 msgid "Filters"
 msgstr "Filtreler"
 
 #: PreferencesDialogClass#7
-#, fuzzy
 msgctxt "PreferencesDialogClass#7"
 msgid "Filter:"
 msgstr "Filtre:"
@@ -981,7 +901,6 @@ msgid "Attributes:"
 msgstr "Nitelikler:"
 
 #: PreferencesDialogClass#9
-#, fuzzy
 msgid "1"
 msgstr "F1"
 
@@ -992,13 +911,11 @@ msgid "Add"
 msgstr "Sekme Ekle"
 
 #: PreferencesDialogClass#11
-#, fuzzy
 msgctxt "PreferencesDialogClass#11"
 msgid "Remove"
 msgstr "Sil"
 
 #: PreferencesDialogClass#12
-#, fuzzy
 msgid "Documentation"
 msgstr "Belgelendirme"
 
@@ -1008,12 +925,10 @@ msgid "Registered Documentation:"
 msgstr "Kayıtlı Belgelendirme:"
 
 #: PreferencesDialogClass#14
-#, fuzzy
 msgid "Add..."
 msgstr "Ekle..."
 
 #: PreferencesDialogClass#15
-#, fuzzy
 msgid "Options"
 msgstr "Tercihler"
 
@@ -1022,27 +937,22 @@ msgid "On help start:"
 msgstr ""
 
 #: PreferencesDialogClass#17
-#, fuzzy
 msgid "Show my home page"
 msgstr "Başlangıç sayfamı göster"
 
 #: PreferencesDialogClass#18
-#, fuzzy
 msgid "Show a blank page"
 msgstr "Baş bir sayfa göster"
 
 #: PreferencesDialogClass#19
-#, fuzzy
 msgid "Show my tabs from last session"
 msgstr "Son oturumdaki sekmelerimi göster"
 
 #: PreferencesDialogClass#20
-#, fuzzy
 msgid "Homepage"
 msgstr "Başlangıç sayfası"
 
 #: PreferencesDialogClass#21
-#, fuzzy
 msgid "Current Page"
 msgstr "Geçerli Sayfa"
 
@@ -1051,7 +961,6 @@ msgid "Blank Page"
 msgstr "Boş Sayfa"
 
 #: PreferencesDialogClass#23
-#, fuzzy
 msgid "Restore to default"
 msgstr "Öntanımlı ayarlara dön"
 
@@ -1061,7 +970,6 @@ msgid "Debugging Remote Control"
 msgstr "Uzak Kontrol Hata ayıklama"
 
 #: RemoteControl#2
-#, fuzzy
 msgid "Received Command: %1 %2"
 msgstr "Alınan Komut: %1 %2"
 
@@ -1073,16 +981,14 @@ msgstr "&Kopyala"
 #, fuzzy
 msgctxt "SearchWidget#2"
 msgid "Copy &Link Location"
-msgstr "Kopyala &Yeri bağlantıla"
+msgstr "Kopyala &Bağlantı Yeri"
 
 #: SearchWidget#3
-#, fuzzy
 msgctxt "SearchWidget#3"
 msgid "Open Link in New Tab"
 msgstr "Bağlantıyı Yeni Sekmede Aç"
 
 #: SearchWidget#4
-#, fuzzy
 msgid "Select All"
 msgstr "Tümünü Seç"
 
@@ -1099,7 +1005,6 @@ msgid "&Display"
 msgstr "&Göster"
 
 #: TopicChooser#4
-#, fuzzy
 msgctxt "TopicChooser#4"
 msgid "&Close"
 msgstr "&Kapat"
