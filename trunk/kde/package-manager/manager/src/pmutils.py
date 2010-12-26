@@ -15,22 +15,86 @@ import sys
 import urllib
 import unicodedata
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import Qt, QEventLoop
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import SIGNAL
+from PyQt4.QtCore import QEventLoop
+
+from PyQt4.QtGui import QCursor
+from PyQt4.QtGui import QPixmap
+from PyQt4.QtGui import QMessageBox
+from PyQt4.QtGui import QApplication
 
 from PyKDE4.solid import Solid
+from PyKDE4.kdeui import KNotification
+from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import KComponentData
+
+class PM:
+
+    def connectOperationSignals(self):
+        # Basic connections
+        self.connect(self.operation, SIGNAL("exception(QString)"), self.exceptionCaught)
+        self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
+        self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)
+        self.connect(self.operation, SIGNAL("operationCancelled()"), self.actionCancelled)
+
+        # ProgressDialog connections
+        self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
+        self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
+        self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
+        self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
+        self.connect(self.operation, SIGNAL("elapsedTime(QString)"), self.progressDialog.updateRemainingTime)
+        self.connect(self.operation, SIGNAL("downloadInfoChanged(QString, QString, QString)"), self.progressDialog.updateCompletedInfo)
+
+    def notifyFinished(self):
+        if not self.operation.totalPackages:
+            return
+        KNotification.event("Summary",
+                self.state.getSummaryInfo(self.operation.totalPackages),
+                QPixmap(),
+                None,
+                KNotification.CloseOnTimeout,
+                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
+
+    def exceptionCaught(self, message, package = ''):
+        self.progressDialog._hide()
+        if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
+            errorTitle = i18n("Network Error")
+            errorMessage = i18n("Please check your network connections and try again.")
+        elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
+            errorTitle = i18n("Authorization Error")
+            errorMessage = i18n("You are not authorized for this operation.")
+        elif "HTTP Error 404" in message:
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
+                                "It may be upgraded or removed from the repository.<br>"\
+                                "Please try upgrading repository informations." % package)
+        else:
+            errorTitle = i18n("Pisi Error")
+            errorMessage = message
+
+        self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
+        self.messageBox.exec_()
+
+def askForActions(packages, reason, title, details_title):
+    msgbox = QMessageBox()
+    msgbox.setText('<b>%s</b>' % reason)
+    msgbox.setInformativeText(i18n("Do you want to continue ?"))
+    msgbox.setDetailedText(details_title + '\n' + '-'*60 + '\n  - ' + '\n  - '.join(packages))
+    msgbox.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+    return msgbox.exec_() == QMessageBox.Yes
 
 def waitCursor():
-    QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
+    QApplication.setOverrideCursor(QCursor(Qt.WaitCursor))
 
 def restoreCursor():
     # According to the Qt Documentation it should be called twice to reset 
     # cursor to the default if one use waitCursor twice.
-    QtGui.QApplication.restoreOverrideCursor()
-    QtGui.QApplication.restoreOverrideCursor()
+    QApplication.restoreOverrideCursor()
+    QApplication.restoreOverrideCursor()
 
 def processEvents():
-    QtGui.QApplication.processEvents()
+    QApplication.processEvents()
 
 def isSolidOnline():
     return Solid.Networking.status() == Solid.Networking.Connected

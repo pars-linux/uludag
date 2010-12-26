@@ -31,7 +31,7 @@ from PyKDE4.kdecore import i18n
 from PyKDE4.kdecore import KCmdLineArgs
 from PyKDE4.kdeui import KUniqueApplication
 
-from pmwindow import PmDialog
+from pmwindow import PmWindow
 from pmutils import handleException
 from about import aboutData
 
@@ -62,8 +62,9 @@ if __name__ == '__main__':
         app = KUniqueApplication(True, True)
         setSystemLocale()
 
-        dialog = PmDialog(app, packages)
-        dialog.exec_()
+        window = PmWindow(app, packages)
+        window.show()
+        app.exec_()
 
     else:
         parser.print_usage()

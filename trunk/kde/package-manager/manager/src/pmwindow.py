@@ -14,19 +14,31 @@
 import sys
 
 from PyQt4.QtGui import QDialog
+from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
-from ui_pminstall import Ui_PmDialog
 from statemanager import StateManager
+from operationmanager import OperationManager
+
+from pmutils import PM
+from pmutils import askForActions
+
+from ui_pminstall import Ui_PmWindow
+from summarydialog import SummaryDialog
+from progressdialog import ProgressDialog
+
 from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
 
-class PmDialog(QDialog, Ui_PmDialog):
+from PyKDE4.kdeui import KNotification
+from PyKDE4.kdecore import KComponentData
+
+class PmWindow(QDialog, PM, Ui_PmWindow):
 
     def __init__(self, app = None, packages = []):
         QDialog.__init__(self, None)
@@ -40,17 +52,14 @@ class PmDialog(QDialog, Ui_PmDialog):
             available_packages = self.state.packages()
             for package in self.state._selected_packages:
                 if package not in available_packages:
-                    errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
-                                        "It may be upgraded or removed from the repository.<br>"\
-                                        "Please try upgrading repository informations." % package)
-                    self.showFailMessage(errorMessage)
+                    self.exceptionCaught('HTTP Error 404', package)
                     sys.exit()
 
-        model = PackageModel(self)
-        model.setCheckable(False)
+        self.model = PackageModel(self)
+        self.model.setCheckable(False)
 
         proxy = PackageProxy(self)
-        proxy.setSourceModel(model)
+        proxy.setSourceModel(self.model)
 
         self.packageList.setModel(proxy)
         self.packageList.setPackages(packages)
@@ -59,20 +68,68 @@ class PmDialog(QDialog, Ui_PmDialog):
         self.packageList.setColumnWidth(0, 32)
         self.packageList.hideSelectAll()
 
+        self.operation = OperationManager(self.state)
+        self.progressDialog = ProgressDialog(self.state, self)
+        self.summaryDialog = SummaryDialog()
+
+        self.connectOperationSignals()
         self.state.state = StateManager.INSTALL
         self.button_install.clicked.connect(self.installPackages)
 
-        self.progress.hide()
+        self.button_install.setIcon(KIcon("list-add"))
+        self.button_cancel.setIcon(KIcon("dialog-cancel"))
 
-    def showFailMessage(self, message):
-        errorTitle = i18n("Pisi Error")
-        self.messageBox = QMessageBox(errorTitle, message, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-        self.messageBox.exec_()
 
     def installPackages(self):
-        operation = self.state.operationAction(self.state._selected_packages, silence = True)
-        print "op:::", operation
+
+        reinstall = False
+        answer = True
+        actions = self.state.checkInstallActions(self.model.selectedPackages())
+        if actions:
+            answer = askForActions(actions,
+                   i18n("Selected packages are already installed.<br>"
+                        "If you continue, the packages will be reinstalled"),
+                   i18n("Already Installed Packages"),
+                   i18n("Installed Packages"))
+
+        if not answer:
+            return
+
+        if actions:
+            reinstall = True
+
+        operation = self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall, silence = True)
+
         if operation == False:
             sys.exit()
 
+    def actionStarted(self, operation):
+        totalPackages = len(self.state._selected_packages)
+        if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+            totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
+
+        self.progressDialog.reset()
+        if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
+            self.operation.setTotalPackages(totalPackages)
+            self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
+
+        self.progressDialog._show()
+        self.progressDialog.enableCancel()
+
+    def actionFinished(self, operation):
+        if operation in ("System.Manager.installPackage",
+                         "System.Manager.removePackage",
+                         "System.Manager.updatePackage"):
+            self.notifyFinished()
+
+        if operation == "System.Manager.installPackage":
+            self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
+            self.summaryDialog.showSummary()
+            self.hide()
+
+        if not self.summaryDialog.hasApplication():
+            QTimer.singleShot(1000, sys.exit)
+
+    def actionCancelled(self):
+        self.progressDialog._hide()
 

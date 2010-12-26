@@ -36,7 +36,7 @@ import backend
 import config
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
-    def __init__(self, app = None, silence = False):
+    def __init__(self, app = None):
         KXmlGuiWindow.__init__(self, None)
         self.setupUi(self)
 
@@ -48,7 +48,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
 
-        self.setCentralWidget(MainWidget(self, silence))
+        self.setCentralWidget(MainWidget(self))
         self.cw = self.centralWidget()
 
         self.settingsDialog = SettingsDialog(self)
