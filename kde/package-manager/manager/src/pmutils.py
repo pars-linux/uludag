@@ -53,6 +53,9 @@ def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 def humanReadableSize(size, precision=".1"):
+    if not size:
+        return 'N/A'
+
     symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
 
     while size > 1000 and depth < 8:

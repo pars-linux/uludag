@@ -131,7 +131,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         margin = left + ICON_PADDING - 10
 
-        title = index.model().data(index, Qt.DisplayRole).toString()
+        title = index.model().data(index, NameRole).toString()
         summary = index.model().data(index, SummaryRole).toString()
         ptype = str(index.model().data(index, TypeRole).toString())
         rate = int(index.model().data(index, RateRole).toInt()[0])
@@ -297,11 +297,11 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         painter.restore()
 
     def editorEvent(self, event, model, option, index):
-        if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
+        if event.type() == QEvent.MouseButtonRelease and index.column() == 0 and index.flags() & Qt.ItemIsUserCheckable:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
-        if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
+        if event.type() == QEvent.MouseButtonRelease and self.animatable:
             if self.rowAnimator.row == index.row():
                 epos = event.pos()
                 if self.rowAnimator.hoverLinkFilter.link_rect.contains(QPoint(epos.x(), epos.y() + 32)):
@@ -311,7 +311,8 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
                 elif self.rowAnimator.hoverLinkFilter.button_rect.contains(epos, True):
                     self.showPackageDetails(model, index)
                     return __event
-            self.rowAnimator.animate(index.row())
+            if not unicode(model.data(index, DescriptionRole).toString()) == '':
+                self.rowAnimator.animate(index.row())
         return __event
 
     def showPackageDetails(self, model, index):
