@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
-msgstr "%1 Гб"
+msgstr "%1 ГБ"
 
 #: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
@@ -25,7 +25,7 @@ msgstr "%1 МБ"
 
 #: src/sysinfo.cpp:88
 msgid "%1 KB"
-msgstr "%1 KB"
+msgstr "%1 KБ"
 
 #: src/sysinfo.cpp:94
 msgid "Not Available"
@@ -117,7 +117,7 @@ msgstr "%1 МГц"
 
 #: src/sysinfo.cpp:298
 msgid " core"
-msgstr " core"
+msgstr " ядро"
 
 #: src/sysinfo.cpp:309
 msgid "Display"
@@ -133,12 +133,12 @@ msgstr "Поддержка 3D"
 
 #: src/sysinfo.cpp:558
 msgid "Mounted on %1"
-msgstr "Примонтировано на 1%"
+msgstr "Подключено на 1%"
 
 #: src/sysinfo.cpp:558
 msgid "Not mounted"
-msgstr "Не примонтированно"
+msgstr "Не подключено"
 
 #: src/sysinfo.cpp:567
 msgid "%1 free of %2"
-msgstr "% 1 свободно % 2"
+msgstr "%1 свободно из %2"
