@@ -15,7 +15,6 @@ from PyQt4.QtGui import qApp
 from PyQt4.QtGui import QMenu
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
-from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QCompleter
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QPushButton
@@ -40,11 +39,13 @@ from ui_mainwidget_v3 import Ui_MainWidget
 
 from config import PMConfig
 
+from pds.gui import FINISHED, OUT
 from pds.thread import PThread
 
 from pmutils import waitCursor
 from pmutils import network_available
 from pmutils import restoreCursor
+from pmutils import PM
 
 from pdswidgets import PMessageBox
 from packageproxy import PackageProxy
@@ -58,8 +59,8 @@ from progressdialog import ProgressDialog
 from packagedelegate import PackageDelegate
 from operationmanager import OperationManager
 
-class MainWidget(QWidget, Ui_MainWidget):
-    def __init__(self, parent = None, silence = False):
+class MainWidget(QWidget, PM, Ui_MainWidget):
+    def __init__(self, parent = None):
         QWidget.__init__(self, parent)
 
         self.setupUi(self)
@@ -72,9 +73,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.currentState = None
         self.completer = None
         self._updatesCheckedOnce = False
-
-        # state.silence is using for pm-install module
-        self.state.silence = silence
 
         # Search Thread
         self._searchThread = PThread(self, self.startSearch, self.searchFinished)
@@ -97,8 +95,11 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.setActionButton()
 
         self.operation = OperationManager(self.state)
+
         self.progressDialog = ProgressDialog(self.state, self.parent)
-        self.summaryDialog = SummaryDialog(silence = silence)
+        self.progressDialog.registerFunction(FINISHED, lambda: self.parent.statusBar().setVisible(not self.progressDialog.isVisible()))
+        self.progressDialog.registerFunction(OUT, lambda: self.parent.statusBar().show())
+        self.summaryDialog = SummaryDialog()
 
         self.connectOperationSignals()
         self.pdsMessageBox = PMessageBox(self.content)
@@ -118,18 +119,6 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(QString)"), lambda message: self.emit(SIGNAL("selectionStatusChanged(QString)"), message))
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
-
-    def connectOperationSignals(self):
-        self.connect(self.operation, SIGNAL("exception(QString)"), self.exceptionCaught)
-        self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
-        self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)
-        self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
-        self.connect(self.operation, SIGNAL("operationCancelled()"), self.actionCancelled)
-        self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
-        self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
-        self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
-        self.connect(self.operation, SIGNAL("elapsedTime(QString)"), self.progressDialog.updateRemainingTime)
-        self.connect(self.operation, SIGNAL("downloadInfoChanged(QString, QString, QString)"), self.progressDialog.updateCompletedInfo)
 
     def initialize(self):
         waitCursor()
@@ -275,22 +264,17 @@ class MainWidget(QWidget, Ui_MainWidget):
         self.actionButton.setText(self.state.getActionName())
 
     def actionStarted(self, operation):
-        if self.state.silence:
-            totalPackages = len(self.state._selected_packages)
-            if not any(package.endswith('.pisi') for package in self.state._selected_packages):
-                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
-            self.parent.show()
-
         self.pdsMessageBox.hideMessage()
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
-            if not self.state.silence:
-                totalPackages = self.packageList.packageCount()
+            totalPackages = self.packageList.packageCount()
             self.operation.setTotalPackages(totalPackages)
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
                 self.progressDialog.repoOperationView()
+            if self.parent.centralWidget().basket.isVisible():
+                self.parent.centralWidget().basket._hide()
             self.progressDialog._show()
         self.progressDialog.enableCancel()
 
@@ -300,33 +284,7 @@ class MainWidget(QWidget, Ui_MainWidget):
         else:
             self.state.updateRepoAction()
 
-    def exceptionCaught(self, message, package = ''):
-        self.progressDialog._hide()
-        if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
-            errorTitle = i18n("Network Error")
-            errorMessage = i18n("Please check your network connections and try again.")
-        elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
-            errorTitle = i18n("Authorization Error")
-            errorMessage = i18n("You are not authorized for this operation.")
-        elif "HTTP Error 404" in message:
-            errorTitle = i18n("Pisi Error")
-            errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
-                                "It may be upgraded or removed from the repository.<br>"\
-                                "Please try upgrading repository informations." % package)
-        else:
-            errorTitle = i18n("Pisi Error")
-            errorMessage = message
-
-        self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-        self.messageBox.exec_()
-
-        if self.state.silence:
-            qApp.exit()
-
     def actionFinished(self, operation):
-        if self.state.silence:
-            self.parent.hide()
-
         if operation in ("System.Manager.installPackage",
                          "System.Manager.removePackage",
                          "System.Manager.updatePackage"):
@@ -336,38 +294,22 @@ class MainWidget(QWidget, Ui_MainWidget):
             self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
             self.summaryDialog.showSummary()
 
-        if not self.summaryDialog.hasApplication() and self.state.silence:
-            QTimer.singleShot(1000, qApp.exit)
+        if operation in ("System.Manager.updateRepository",
+                         "System.Manager.updateAllRepositories"):
+            self.emit(SIGNAL("repositoriesUpdated()"))
 
-        if not self.state.silence:
-            if operation in ("System.Manager.updateRepository",
-                             "System.Manager.updateAllRepositories"):
-                self.emit(SIGNAL("repositoriesUpdated()"))
-
-            self.searchLine.clear()
-            self.state.reset()
-            self.progressDialog._hide()
-            if not self.currentState == self.state.UPGRADE:
-                self.switchState(self.currentState)
-            self.initialize()
+        self.searchLine.clear()
+        self.state.reset()
+        self.progressDialog._hide()
+        if not self.currentState == self.state.UPGRADE:
+            self.switchState(self.currentState)
+        self.initialize()
 
     def actionCancelled(self):
         self.progressDialog._hide()
         self.progressDialog.reset()
-        if self.state.silence:
-            qApp.exit()
         self.switchState(self.currentState)
         self.groupFilter()
-
-    def notifyFinished(self):
-        if not self.operation.totalPackages:
-            return
-        KNotification.event("Summary",
-                self.state.getSummaryInfo(self.operation.totalPackages),
-                QPixmap(),
-                None,
-                KNotification.CloseOnTimeout,
-                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
 
     def setActionEnabled(self):
         enabled = self.packageList.isSelected()

@@ -158,62 +158,54 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
 
-    def askForActions(self, packages, reason, title, details_title):
-        msgbox = QtGui.QMessageBox()
-        msgbox.setText('<b>%s</b>' % reason)
-        msgbox.setInformativeText(i18n("Do you want to continue ?"))
-        msgbox.setDetailedText(details_title + '\n' + '-'*60 + '\n  - ' + '\n  - '.join(packages))
-        msgbox.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
-        return msgbox.exec_()
-
     def action(self):
 
         if self.state.inUpgrade():
-            answer = QtGui.QMessageBox.Yes
+            answer = True
             actions = self.state.checkUpdateActions(
                 self.model.selectedPackages() + self.model.extraPackages())
             if actions[0]:
-                answer = self.askForActions(actions[0],
+                answer = askForActions(actions[0],
                        i18n("You must restart your system for the "
                             "updates to take effect"),
                        i18n("Update Requirements"),
                        i18n("Packages Require System Restart"))
-            if not answer == QtGui.QMessageBox.Yes:
+            if not answer:
                 return
             if actions[1]:
-                answer = self.askForActions(actions[1],
+                answer = askForActions(actions[1],
                        i18n("You must restart related system services for "
                             "the updated package(s) to take effect"),
                        i18n("Update Requirements"),
                        i18n("Packages Require Service Restart"))
-            if not answer == QtGui.QMessageBox.Yes:
+            if not answer:
                 return
 
         if self.state.inRemove():
-            answer = QtGui.QMessageBox.Yes
+            answer = True
             actions = self.state.checkRemoveActions(
                 self.model.selectedPackages() + self.model.extraPackages())
             if actions:
-                answer = self.askForActions(actions,
+                answer = askForActions(actions,
                        i18n("Selected packages are considered critical "
                             "for the system. Removing them may cause your "
                             "system to be unusable."),
                        i18n("Warning"),
                        i18n("Critical Packages"))
-            if not answer == QtGui.QMessageBox.Yes:
+            if not answer:
                 return
 
         reinstall = False
         if self.state.inInstall():
-            answer = QtGui.QMessageBox.Yes
+            answer = True
             actions = self.state.checkInstallActions(self.model.selectedPackages())
             if actions:
-                answer = self.askForActions(actions,
+                answer = askForActions(actions,
                        i18n("Selected packages are already installed.<br>"
                             "If you continue, the packages will be reinstalled"),
                        i18n("Already Installed Packages"),
                        i18n("Installed Packages"))
-            if not answer == QtGui.QMessageBox.Yes:
+            if not answer:
                 return
             if actions:
                 reinstall = True

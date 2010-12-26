@@ -30,7 +30,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.state = state
         self.setupUi(self)
 
-        self.busy = QProgressIndicator(self, "black" if state.silence else "white")
+        self.busy = QProgressIndicator(self, "white")
         self.busy.setMinimumSize(QSize(48, 48))
         self.mainLayout.addWidget(self.busy)
 
@@ -38,29 +38,21 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self._animation = 2
         self._duration = 500
         self.last_msg = None
-        self.enableOverlay(use_style = not state.silence)
+        self.enableOverlay()
         self._disable_parent_in_shown = True
 
-        self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
         self.registerFunction(FINISHED, self.busy.startAnimation)
-
-        self.registerFunction(OUT, lambda: parent.statusBar().show())
         self.registerFunction(OUT, self.busy.stopAnimation)
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
         self.parent = parent
 
-        if not state.silence:
-            self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
+        self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
 
         self._last_action = ''
 
     def _show(self):
-        start_pos = MIDCENTER if self.state.silence or \
-                                 not self.parent.centralWidget().basket.isVisible() else TOPCENTER
-        self.animate(start = start_pos, stop = MIDCENTER)
-        if self.parent.centralWidget().basket.isVisible():
-            self.parent.centralWidget().basket._hide()
+        self.animate(start = MIDCENTER, stop = MIDCENTER)
 
     def _hide(self):
         self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)

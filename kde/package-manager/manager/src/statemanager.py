@@ -30,7 +30,6 @@ class StateManager(QObject):
     def __init__(self, parent=None):
         QObject.__init__(self)
         self.state = self.ALL
-        self.silence = False
         self._group_cache = {}
         self.iface = backend.pm.Iface()
         self.reset()

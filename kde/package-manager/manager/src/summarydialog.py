@@ -61,13 +61,12 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         os.popen('%s&' % self.item.command)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
-    def __init__(self, parent = None, silence = False):
+    def __init__(self, parent = None):
         QtGui.QDialog.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
         self.lang = localedata.setSystemLocale(justGet = True)
         self.closeButton.clicked.connect(self._reject)
-        self.silence = silence
 
     def setDesktopFiles(self, desktopFiles):
         self.appList.clear()
@@ -104,8 +103,6 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
         self._reject()
 
     def _reject(self):
-        if self.silence:
-            qApp.exit()
         self.reject()
 
     def showSummary(self):
