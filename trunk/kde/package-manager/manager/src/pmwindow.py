@@ -33,6 +33,7 @@ class PmDialog(QDialog, Ui_PmDialog):
         self.setupUi(self)
 
         self.state = StateManager(self)
+        self.iface = self.state.iface
         self.state._selected_packages = packages
 
         if not any(package.endswith('.pisi') for package in self.state._selected_packages):
@@ -46,15 +47,21 @@ class PmDialog(QDialog, Ui_PmDialog):
                     sys.exit()
 
         model = PackageModel(self)
+
         proxy = PackageProxy(self)
         proxy.setSourceModel(model)
+
         self.packageList.setModel(proxy)
-        self.packageList.setItemDelegate(PackageDelegate(self))
+        self.packageList.setPackages(packages)
+        self.packageList.selectAll(packages)
+        self.packageList.setItemDelegate(PackageDelegate(self, self, False))
         self.packageList.setColumnWidth(0, 32)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
+        self.packageList.hideSelectAll()
 
         self.state.state = StateManager.INSTALL
         self.button_install.clicked.connect(self.installPackages)
+
+        self.progress.hide()
 
     def showFailMessage(self, message):
         errorTitle = i18n("Pisi Error")
