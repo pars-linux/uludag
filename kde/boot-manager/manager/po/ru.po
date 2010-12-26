@@ -47,12 +47,12 @@ msgstr "Первый разработчик"
 #: src/bootmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ясыров Василий (zaG), Семенов Николай (Tribunal), Щербаков Александр (neocrust)"
+msgstr "Ясыров Василий (zaG), Семенов Николай (Tribunal), Щербаков Александр (neocrust), Алексей Иванов (krab)"
 
 #: src/bootmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
@@ -116,7 +116,7 @@ msgstr "Параметры загрузки для операционной си
 
 #: ui/ui_item.py:74
 msgid "Set or unset entry as default boot entry."
-msgstr "Включенние или отключенние учетной записи по умолчанию."
+msgstr "Включение или отключение учетной записи по умолчанию."
 
 #: ui/ui_item.py:75
 msgid "Edit"
