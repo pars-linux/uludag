@@ -62,7 +62,7 @@ msgstr ""
 
 #: ../release.xml.in.h:12
 msgid "Double check your installation medium"
-msgstr ""
+msgstr "Bitte überprüfen Sie nochmals das Installationsmedium"
 
 #: ../release.xml.in.h:13
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
@@ -97,8 +97,9 @@ msgid "KDE is the desktop choice of Pardus, a software collection for desktop us
 msgstr ""
 
 #: ../release.xml.in.h:21
+#, fuzzy
 msgid "Kahya"
-msgstr ""
+msgstr "Kahya"
 
 #: ../release.xml.in.h:22
 msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
@@ -175,7 +176,7 @@ msgstr "YALI installiert nun Pardus auf ihrem Computer. Abhängig von Ihrer Hard
 
 #: ../release.xml.in.h:41
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Sie haben erfolgreich Pardus auf Ihrem Computer installiert. Nach einem Neustart können Sie die Vorteile von Pardus genießen.&lt;br&gt;&lt;br&gt;Klicken Sie auf Weiter um fortzufahren. Sie können sich doch bestimmt noch an das Paßwort erinnern - oder? "
 
 #: ../release.xml.in.h:42
 msgid "You may have questions or need help... Özgürlükİçin community portal is there for you. The portal is for all users to meet and share their skills and experience. You can also find guides, introductionary articles about applications and games. &lt;br&gt;If you happen to have any questions, the forum is waiting for you. If you need support, or if you want to support, your first stop should be www.ozgurlukicin.com"
@@ -191,7 +192,7 @@ msgstr ""
 
 #: ../release.xml.in.h:45
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr ""
+msgstr "Sie haben Pardus erfolgreich installiert und gestartet... es fehlen nur noch ein paar Klicks... Pardus unterstützt mehrere Nutzer auf dem gleichen System. Sie müssen also zumindest ein Benutzerkonto erstellen und die Systemeinstellungen tätigen. Danach können Sie sich einloggen und mit Pardus arbeiten..."
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya arbeitet"
