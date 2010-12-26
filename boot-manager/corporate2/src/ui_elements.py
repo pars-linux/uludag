@@ -33,6 +33,7 @@ class EntryView(QScrollView):
         QScrollView.__init__(self, parent)
         self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
         self.entries = []
+        self.currentEntry = None
 
     def clear(self):
         for e in self.entries:
@@ -40,7 +41,7 @@ class EntryView(QScrollView):
         self.entries = []
 
     def add(self, editWidget, index, title, description, pardus, os_data):
-        e = Entry(self.viewport(), editWidget, index, title, description, pardus, os_data, self)
+        e = Entry(self, editWidget, index, title, description, pardus, os_data, self)
         self.entries.append(e)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
@@ -66,9 +67,10 @@ class EntryView(QScrollView):
 
 class Entry(QWidget):
     def __init__(self, parent, editWidget, index, title, description, pardus, os_data, view):
-        QWidget.__init__(self, parent)
+        QWidget.__init__(self, parent.viewport())
         self.editWidget = editWidget
 
+        self.parent = parent
         self.index = index
         self.title = title
         self.description = description
@@ -97,7 +99,32 @@ class Entry(QWidget):
         QToolTip.add(self.pushDelete, i18n("Delete entry"))
         self.connect(self.pushDelete, SIGNAL("clicked()"), self.slotDelete)
 
+        self.checkbox = QCheckBox(self)
+        self.checkbox.resize(16, 16)
+        try:
+            if os_data["default"] == "yes":
+                self.checkbox.setChecked(True)
+                self.parent.currentEntry = self
+        except:
+            pass
+        self.connect(self.checkbox, SIGNAL("released()"), self.slotDefaultReleased)
+
         self.show()
+
+    def setDefaultHandler(self, package, exception, args):
+        if exception:
+            self.parent.currentEntry.checkbox.setChecked(True)
+            self.checkbox.setChecked(False)
+            return
+        self.parent.currentEntry = self
+
+    def slotDefaultReleased(self):
+        old = self.parent.currentEntry
+        if old == self:
+            self.checkbox.setChecked(True)
+            return
+        self.parent.currentEntry.checkbox.setChecked(False)
+        self.editWidget.parent.backend.setOption(self.editWidget.parent.package, "default", str(self.index), async = self.setDefaultHandler)
 
     def slotEdit(self):
         self.editWidget.editEntry(self.os_data)
@@ -114,9 +141,10 @@ class Entry(QWidget):
         paint.fillRect(event.rect(), QBrush(col))
         self.pushEdit.setPaletteBackgroundColor(col)
         self.pushDelete.setPaletteBackgroundColor(col)
+        self.checkbox.setPaletteBackgroundColor(col)
 
         dip = (self.height() - self.icon.height()) / 2
-        paint.drawPixmap(6, dip, self.icon)
+        paint.drawPixmap(20, dip, self.icon)
 
         font = paint.font()
         font.setPointSize(font.pointSize() + 1)
@@ -124,17 +152,18 @@ class Entry(QWidget):
         if "default" in self.os_data and self.os_data["default"] != "saved":
             font.setUnderline(True)
         fm = QFontMetrics(font)
-        paint.drawText(6 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
+        paint.drawText(20 + self.icon.width() + 6, fm.ascent() + 5, unicode(self.title))
 
         fark = fm.height()
         font.setPointSize(font.pointSize() - 2)
         font.setUnderline(False)
         fm = self.fontMetrics()
-        paint.drawText(6 + self.icon.width() + 6, 5 + fark + 3 + fm.ascent(), unicode(self.description))
+        paint.drawText(20 + self.icon.width() + 6, 5 + fark + 3 + fm.ascent(), unicode(self.description))
 
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
+        self.checkbox.setGeometry(4, 20, self.checkbox.width(), self.checkbox.height())
         self.pushEdit.setGeometry(w - self.pushEdit.myWidth - 6 - 6 - self.pushEdit.myWidth - 3, 6, self.pushEdit.myWidth, self.pushEdit.myHeight)
         self.pushDelete.setGeometry(w - self.pushDelete.myWidth - 6 - 6, 6, self.pushDelete.myWidth, self.pushDelete.myHeight)
         return QWidget.resizeEvent(self, event)
@@ -145,12 +174,12 @@ class Entry(QWidget):
         f.setBold(True)
         fm = QFontMetrics(f)
         rect = fm.boundingRect(unicode(self.title))
-        w = 6 + self.icon.width() + 6 + rect.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        w = 6 + self.checkbox.width() + self.icon.width() + 6 + rect.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
 
         f.setPointSize(f.pointSize() - 2)
         fm2 = self.fontMetrics()
         rect2 = fm2.boundingRect(unicode(self.description))
-        w2 = 6 + self.icon.width() + 6 + rect2.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
+        w2 = 6 + self.checkbox.width() + self.icon.width() + 6 + rect2.width() + 30 + self.pushEdit.myWidth + 3 + self.pushDelete.myWidth + 6
 
         w = max(w, w2)
         h = max(fm.height() + 3 + fm2.height(), 32) + 10
