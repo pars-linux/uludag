@@ -39,7 +39,12 @@ class Iface(Singleton):
     # Std Package Actions ------------------------------------------------->>-
 
     def getPackage(self, name):
-        if self.idb.has_package(name):
+        if name.endswith('.pisi'):
+            meta, files = pisi.api.info_file(name)
+            pkg = meta.package
+            pkg._type = None
+            pkg.installed = False
+        elif self.idb.has_package(name):
             pkg = self.idb.get_package(name)
             pkg._type = self.getUpdateType(pkg)
             pkg.installed = True
@@ -70,7 +75,6 @@ class Iface(Singleton):
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, timeout=2**16-1)
 
     def modifyPackages(self, packages):
-        # FIXME
         pass
 
     # Std Package Actions -------------------------------------------------<<-
