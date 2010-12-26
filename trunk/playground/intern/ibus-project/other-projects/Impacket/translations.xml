@@ -2,8 +2,8 @@
 <PISI>
     <Source>
         <Name>impackt</Name>
-        <Summary xml:lang="tr">deneme</Summary>
-        <Description xml:lang="tr">deneme</Description>
+        <Summary xml:lang="tr">Ağ protokollerini kolay ayırmak ve derlemek için python modulü</Summary>
+        <Description xml:lang="tr">Ağ protokollerini kolay ayırmak ve derlemek için python modulü</Description>
     </Source>
 </PISI>
 
