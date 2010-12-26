@@ -47,6 +47,7 @@ class PmDialog(QDialog, Ui_PmDialog):
                     sys.exit()
 
         model = PackageModel(self)
+        model.setCheckable(False)
 
         proxy = PackageProxy(self)
         proxy.setSourceModel(model)

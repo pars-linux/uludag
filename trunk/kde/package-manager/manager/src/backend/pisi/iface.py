@@ -17,6 +17,7 @@ import comar
 import pisi
 
 from pmlogging import logger
+from os import path
 
 # States
 (ALL, INSTALL, REMOVE, UPGRADE, HISTORY) = range(5)
@@ -40,8 +41,14 @@ class Iface(Singleton):
 
     def getPackage(self, name):
         if name.endswith('.pisi'):
-            meta, files = pisi.api.info_file(name)
-            pkg = meta.package
+            if path.exists(name):
+                meta, files = pisi.api.info_file(name)
+                pkg = meta.package
+            else:
+                pkg = pisi.metadata.Package()
+                pkg.name = name.split('/')[-1]
+                pkg.summary = name
+                pkg.version = ''
             pkg._type = None
             pkg.installed = False
         elif self.idb.has_package(name):
