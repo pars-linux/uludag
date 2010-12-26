@@ -42,9 +42,10 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
     AppStyle = QtGui.qApp.style
 
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, mainWindow=None, showDetailsButton=True):
         super(PackageDelegate, self).__init__(parent)
-        self.webDialog = WebDialog(parent.parent)
+        self.webDialog = WebDialog(mainWindow)
+        self.show_details_button = showDetailsButton
 
         self.rowAnimator = RowAnimator(parent.packageList)
         KIconLoader().addExtraDesktopThemes()
@@ -287,8 +288,9 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         painter.save()
 
         if not self.rowAnimator.running() and buttonStyle:
-            PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
-            self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
+            if self.show_details_button:
+                PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
+                self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
 
         painter.drawPixmap(option.rect.topLeft(), pixmap)
         del pixmap
