@@ -189,10 +189,6 @@ class widgetEditEntry(QWidget):
 
         self.fields["initrd"] = (self.labelInitrd, self.editInitrd)
 
-        self.checkDefault = QCheckBox(self)
-        self.checkDefault.setText(i18n("Set as default boot entry."))
-        layout.addMultiCellWidget(self.checkDefault, 12, 12, 0, 1)
-
         spacer = QSpacerItem(10, 1, QSizePolicy.Fixed, QSizePolicy.Expanding)
         layout.addMultiCell(spacer, 13, 13, 0, 1)
 
@@ -225,8 +221,6 @@ class widgetEditEntry(QWidget):
         self.entry = entry
         systems = self.parent.systems
 
-        self.checkDefault.setChecked(False)
-
         self.editTitle.setText(unicode(entry["title"]))
 
         self.listSystem.setCurrentText(unicode(systems[entry["os_type"]][0]))
@@ -238,14 +232,6 @@ class widgetEditEntry(QWidget):
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             if label in entry:
                 widgetEdit.setText(unicode(entry[label]))
-
-        if self.parent.widgetEntries.checkSaved.isChecked():
-            self.checkDefault.hide()
-        else:
-            self.checkDefault.show()
-
-        if "default" in entry and entry["default"] != "saved":
-            self.checkDefault.setChecked(True)
 
         self.parent.showScreen("EditEntry")
 
@@ -299,7 +285,6 @@ class widgetEditEntry(QWidget):
         for label, (widgetLabel, widgetEdit) in self.fields.iteritems():
             widgetEdit.setText("")
 
-        self.checkDefault.setChecked(False)
         self.buttonOK.setEnabled(True)
 
     def slotSystem(self, label):
@@ -323,8 +308,6 @@ class widgetEditEntry(QWidget):
         default = "no"
         if self.parent.widgetEntries.checkSaved.isChecked():
             default = "saved"
-        elif self.checkDefault.isChecked():
-            default = "yes"
 
         systems = self.parent.systems
         os_type = self.listSystem.getSelected()
