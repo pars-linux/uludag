@@ -11,7 +11,7 @@
             <name>license</name>
             <_title>Get ready to install Pardus</_title>
             <icon>applications-other</icon>
-            <_help>Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. 
+            <_help>Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. 
 &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website.
 &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer.</_help>
        </screen>
