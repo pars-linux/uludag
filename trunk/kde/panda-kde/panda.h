@@ -22,6 +22,7 @@ class PandaConfig : public KCModule
  private:
   QRadioButton    *osDriver;
   QRadioButton    *vendorDriver;
+  QRadioButton    *genericDriver;
   PandaParser*     pandaParser;
 };
 

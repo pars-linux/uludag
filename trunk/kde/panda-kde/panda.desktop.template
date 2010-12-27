@@ -12,8 +12,8 @@ X-KDE-ParentApp=kcontrol
 X-KDE-System-Settings-Parent-Category=display
 X-KDE-Weight=110
 
-_Name=Driver
+_Name=Video Driver
 
-_Comment=Video driver
+_Comment=Video Driver Administration
 
 _X-KDE-Keywords=video,driver,graphics,display

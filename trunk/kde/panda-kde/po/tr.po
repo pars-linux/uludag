@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: panda-kde\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 17:36+0200\n"
+"POT-Creation-Date: 2010-12-27 18:21+0200\n"
 "PO-Revision-Date: 2010-12-11 14:48+0200\n"
 "Last-Translator: Fatih Arslan <farslan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -45,41 +45,47 @@ msgstr "Açık kaynak topluluğu tarafından geliştirilen sürücüyü kullan"
 msgid "Use the proprietary driver provided by the manufacturer"
 msgstr "Kart üreticisinin sunduğu sahipli sürücüyü kullan"
 
-#: panda.cpp:135
-msgid "Video Driver Administration"
-msgstr "Ekran Sürücüsü Yönetimi"
+#: panda.cpp:123
+msgid "Use the safe driver that provides limited features"
+msgstr "Sınırlı özellikler barındıran güvenli sürücüyü kullan"
 
-#: panda.cpp:139
+#: panda.cpp:138 rc.cpp:2
+msgid "Video Driver Administration"
+msgstr "Ekran Kartı Sürücüsü Yönetimi"
+
+#: panda.cpp:142
 msgid "(c) 2011 Fatih Arslan"
 msgstr "(c) 2011 Fatih Arslan"
 
-#: panda.cpp:145
+#: panda.cpp:148
 msgid ""
 "Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</"
 "a> to report bugs.\n"
 msgstr ""
+"Lütfen hataları bildirmek için <a href=\"http://hata.pardus.org.tr\">http://"
+"hata.pardus.org.tr</a> adresini kullanın.\n"
 
-#: panda.cpp:147
+#: panda.cpp:150
 msgid "Fatih Arslan"
 msgstr "Fatih Arslan"
 
-#: panda.cpp:147
+#: panda.cpp:150
 msgid "Original author"
 msgstr "Asıl yazar"
 
-#: panda.cpp:193
+#: panda.cpp:196
 msgid "Unable to apply settings due to missing packages"
 msgstr "Eksik paketler yüzünden ayarlar uygulanamıyor"
 
-#: panda.cpp:210
+#: panda.cpp:213
 msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr "Bu eylem yetkilendirilemedi veya çalıştırılamadı: %1, %2"
 
-#: panda.cpp:212
+#: panda.cpp:215
 msgid "An internal error occurred"
 msgstr "Bir iç hata oluştu"
 
-#: panda.cpp:220
+#: panda.cpp:223
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
@@ -89,13 +95,9 @@ msgstr ""
 "Şimdi yeniden başlatmak istiyor musunuz?"
 
 #: rc.cpp:1
-msgid "Driver"
-msgstr "Sürücü"
-
-#: rc.cpp:2
-msgid "Video driver"
-msgstr "Ekran sürücüsü"
+msgid "Video Driver"
+msgstr "Ekran Kartı Sürücüsü"
 
 #: rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr ""
+msgstr "video,sürücü,grafik,ekran"
