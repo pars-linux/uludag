@@ -17,8 +17,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -40,7 +40,7 @@ msgstr "Hinzufügen/Entfernen/Aktualisieren von Paketen"
 
 #: src/about.py:27
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
 msgid "Gökmen Göksel"
@@ -91,7 +91,7 @@ msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die Aktualisierungen Wi
 
 #: src/basketdialog.py:179 src/basketdialog.py:187
 msgid "Update Requirements"
-msgstr "Update Anforderungen"
+msgstr "Anforderung der Aktualisierung"
 
 #: src/basketdialog.py:180
 msgid "Packages Require System Restart"
@@ -99,7 +99,7 @@ msgstr "Paket(e) benötigen Neustart des Systems"
 
 #: src/basketdialog.py:185
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Sie müssen abhängige System-Dienste neu starten, damit die aktualisierten Pakete Wirkung zeigen"
+msgstr "Damit die aktualisierten Pakete Wirkung zeigen müssen Sie zusammengehörige Systemdienste neu starten, "
 
 #: src/basketdialog.py:188
 msgid "Packages Require Service Restart"
@@ -297,7 +297,6 @@ msgstr "[%1 / %2]"
 # could You put a comment with an example string, maybe in foreign language it
 # sounds better when inverting some positions ?
 #: src/progressdialog.py:97
-#, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
