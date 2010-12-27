@@ -1,5 +1,5 @@
 #!/bin/sh
-BASEDIR="/root/repo/uludag/trunk/kde/panda-kde/po"    # root of translatable sources
+BASEDIR="po"    # root of translatable sources
 PROJECT="panda-kde"        # project name
 WDIR=`pwd`              # working dir
 
