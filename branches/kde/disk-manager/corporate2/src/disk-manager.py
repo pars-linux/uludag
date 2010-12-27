@@ -101,6 +101,10 @@ class diskForm(mainForm):
         self.frame_detail.setEnabled(False)
         self.frame_detail.hide()
 
+        self.old = None
+        self.pixBase = self.bindPixmaps(loadIcon("drive-harddisk.png", size=32), loadIcon("cancel", size=16), KGlobalSettings.baseColor())
+        self.pixHighlight = self.bindPixmaps(loadIcon("drive-harddisk.png", size=32), loadIcon("cancel", size=16), KGlobalSettings.highlightColor())
+
         self.knownFS = [
             ('ext4', 'ext4'),
             ('ext3', 'ext3'),
@@ -156,6 +160,8 @@ class diskForm(mainForm):
         self.items = {}
         # Get entries
         self.link.Disk.Manager.listEntries(async=self.asyncListEntries)
+        self.mountedList = []
+        self.old = None
 
 
     def signalHandler(self, package, signal, args):
@@ -228,11 +234,22 @@ class diskForm(mainForm):
                 label = "%s  (%s)\n%s" % (device, size, model)
                 disk = QListViewItem(self.list_main, label)
                 disk.setMultiLinesEnabled(True)
-                disk.setPixmap(0,loadIcon('mounted', size=32))
+                disk.setPixmap(0,loadIcon('drive-harddisk.png', size=32))
                 disk.setOpen(True)
                 disk.setVisible(False)
                 # Get parts
                 self.link.Disk.Manager[package].getDeviceParts(device, async=functools.partial(self.asyncGetPartitions, disk))
+
+    def bindPixmaps(self, background, foreground, color):
+        pix = QPixmap(36, 36)
+        pix.fill(color)
+        painter = QPainter(pix)
+        #painter.begin(pix)
+        painter.drawPixmap(0,0,background)
+        painter.drawPixmap(20,20,foreground)
+        painter.end()
+        return pix
+
 
     def asyncGetPartitions(self, listItem, package, exception, result):
         if not exception:
@@ -248,9 +265,10 @@ class diskForm(mainForm):
                     info = self.getFSType(part).upper()
                     label = "%s\n%s" % (part, info)
                 if self.link.Disk.Manager[self.package].isMounted(part):
-                    pixie = loadIcon('mounted', size=32)
+                    pixie = loadIcon('drive-harddisk.png', size=32)
+                    self.mountedList.append(part)
                 else:
-                    pixie = loadIcon('notmounted', size=32)
+                    pixie = self.pixBase
                 listItem.setVisible(True)
                 disk_part = QListViewItem(listItem, label)
                 disk_part.setMultiLinesEnabled(True)
@@ -296,11 +314,16 @@ class diskForm(mainForm):
 
     def slotList(self):
         item = self.list_main.selectedItem()
+        if self.old:
+            self.old.setPixmap(0, self.pixBase)
         if item not in self.items:
             self.frame_detail.setEnabled(False)
             self.frame_detail.hide()
             return
         device = str(self.items[item])
+        if device not in self.mountedList:
+            item.setPixmap(0, self.pixHighlight)
+            self.old = item
         if device not in self.entries:
             self.line_mountpoint.setText("")
             self.line_opts.setText("")
