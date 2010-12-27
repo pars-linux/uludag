@@ -6,18 +6,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-13 16:04+0000\n"
+"POT-Creation-Date: 2010-12-27 09:08+0200\n"
 "PO-Revision-Date: 2010-12-13 21:31+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../release.xml.in.h:1
+#, fuzzy
+msgid ""
+"&quot;root&quot; is the conventional name of the administrator user who has "
+"all rights and permissions (to all files and programs) in all modes (single "
+"or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember "
+"but strong enough to resist possible attacks. You can use capital and lower-"
+"case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;"
+"br&gt;You can also define a hostname for your computer. A hostname is an "
+"identifier assigned to your computer. As your computer will be recognized "
+"with this name in the local network, it is recommended to select a "
+"descriptive hostname."
+msgstr ""
+"Er dient een wachtwoord ingesteld te worden voor de &quot; root&quot; "
+"gebruiker, dit is de gebruikelijke naam van de gebruiker die alle rechten en "
+"toestemming heeft (naar alle bestanden en programma's) in alle modi (voor "
+"enkele - en meervoudige gebruikers).&lt;br&gt;&lt;br&gt;Het wachtwoord dient "
+"makkelijk te onthouden te zijn (voor u) maar moeilijk om te raden (voor "
+"anderen). Het is mogelijk kleine en hoofdletters, cijfers en symbolen te "
+"gebruiken in het wachtwoord.&lt;br&gt;&lt;br&gt;Ook kan een hostnaam voor "
+"deze computer opgeven worden. Met de hostnaam wordt deze computer in het "
+"lokale netwerk weergegeven en daarom wordt het instellen van een  unieke "
+"naam aanbevolen."
+
+#: ../release.xml.in.h:2
 msgid ""
 "A bootloader is a tiny program that runs when a computer is first powered "
 "up. It is responsible for loading the operating system into memory and then "
@@ -38,13 +62,13 @@ msgstr ""
 "eerste harde schijf te installeren. Het is altijd mogelijk om een andere "
 "installatimethode te kiezen wanneer u weet wat u doet."
 
-#: ../release.xml.in.h:2
+#: ../release.xml.in.h:3
+#, fuzzy
 msgid ""
-"A keyboard layout sets the arrangement of keys on the keyboard. There are "
-"different keyboard layouts in use throughout the world. You may want to use "
-"a different layout then your keyboard&apos;s physical layout or to be sure "
-"that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the "
-"selected layout by typing in the given textbox."
+"A keyboard layout sets the arrangement of keys on the keyboard. You may want "
+"to use a different layout then your keyboard&apos;s physical layout or to be "
+"sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can "
+"test the selected layout by typing in the given textbox."
 msgstr ""
 "Een toetsenbordindeling is een beschrijving van de positie van de toetsen op "
 "het toetsenbord. Er zijn verschillende indelingen van toetsenborden in de "
@@ -53,15 +77,7 @@ msgstr ""
 "gebruikt gaat worden. &lt;br&gt;&lt;br&gt;De geselecteerde indeling kan in "
 "het tekstveld getest worden."
 
-#: ../release.xml.in.h:3
-msgid "Add Users"
-msgstr "Gebruikers toevoegen"
-
 #: ../release.xml.in.h:4
-msgid "Adjust Date and Time Settings"
-msgstr "Datum- en tijdinstellingen aanpassen"
-
-#: ../release.xml.in.h:5
 msgid ""
 "Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
 "a number of multimedia editors and a massive file format and codec support "
@@ -77,16 +93,23 @@ msgstr ""
 "muziekverzamelingen met Amarok maken en fotoalbums met Digikam, CD en Dvd's "
 "branden met K3b, audioalbums back-uppen in Pardus..."
 
-#: ../release.xml.in.h:6
-msgid "Choose an Administrator Password and a Hostname"
+#: ../release.xml.in.h:5
+#, fuzzy
+msgid "Choose a password for administration and a hostname"
 msgstr "Wachtwoord systeembeheerder en hostnaam instellen"
+
+#: ../release.xml.in.h:6
+#, fuzzy
+msgid "Choose your installation disk"
+msgstr "Installatiemedium dubbel controleren"
 
 #: ../release.xml.in.h:7
 msgid "Choose your keyboard layout"
 msgstr "Toetsenbordindeling selecteren"
 
 #: ../release.xml.in.h:8
-msgid "Configure Bootloader"
+#, fuzzy
+msgid "Configure the bootloader"
 msgstr "Bootloader instellen"
 
 #: ../release.xml.in.h:9
@@ -170,21 +193,27 @@ msgstr ""
 "simulatiespelen, online FPS-spelen, oude vertrouwde arcadespellen enz..."
 
 #: ../release.xml.in.h:14
+#, fuzzy
+msgid "Get ready to install Pardus"
+msgstr "Selecteer een schijf om Pardus op te installeren"
+
+#: ../release.xml.in.h:15
 msgid "Goodbye"
 msgstr "Tot ziens"
 
-#: ../release.xml.in.h:15
-msgid "Help will be included when Kahya implentation is complete"
+#: ../release.xml.in.h:16
+#, fuzzy
+msgid "Help will be included when Kahya implentation is complete."
 msgstr "Help zal aanwezig wanneer de Kahya-ondersteuning compleet is"
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:17
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr ""
 "Hier worden de opties van de installatie getoond voordat de installatie "
 "begint."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:18
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -204,28 +233,6 @@ msgstr ""
 "pictogram.&lt;br&gt;&lt;br&gt;Bezit u een lokale printer? Verbindt deze met "
 "het systeem en deze zal ook automatisch geconfigureerd worden. Alleen het "
 "printen van de documenten is nodig."
-
-#: ../release.xml.in.h:18
-msgid ""
-"In this screen, you can manually partition your disk. You can select "
-"existing partitions and resize or delete them. You can create new partition"
-"(s) in the empty parts, make Pardus use them for system files, users&apos; "
-"home directories, swap space or general use. The changes that you make will "
-"not be applied until you go on with the installation, which means you can "
-"revert if you make any unwanted changes or change your configuration.&lt;"
-"br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more "
-"informationabout disk partitioning.&lt;/font&gt;"
-msgstr ""
-"In dit scherm kan handmatig de schijfindeling gemaakt worden. Het is "
-"mogelijk om een bestaande partitie te selecteren, in grootte te wijzigen of "
-"deze te verwijderen. Het is ook mogelijk om in het vrije gedeelte een "
-"partitie aan te maken en deze door Pardus te laten gebruiken voor "
-"systeembestanden, gebruiker&apos; thuismappen, swapruimte of voor algemeen "
-"gebruik. De gemaakte wijzigingen worden pas bij de installatie definitief "
-"toegepast, dit houdt in dat ze, bij niet gewenste wijzigingen, ongedaan "
-"gemaakt kunnen worden of de configuratie gewijzigd kan worden.&lt;br&gt;&lt;"
-"br&gt;Voor meer informatie over schijfindeling zie de installatie- en "
-"gebruikershandleiding van Pardus.&lt;/font&gt;"
 
 #: ../release.xml.in.h:19
 msgid "Installing Pardus"
@@ -297,30 +304,28 @@ msgstr ""
 "een betere ervaring."
 
 #: ../release.xml.in.h:24
-msgid "Manual Partitioning"
-msgstr "Handmatig partitioneren"
-
-#: ../release.xml.in.h:25
+#, fuzzy
 msgid ""
 "Multiple users can share the same computer safely with Pardus. An "
 "administrator account with the name &quot;root&quot; will be set "
-"automatically. You can add new users in this screen. The first user will be "
-"granted administrative authorization if you don't revoke them. Revoking "
-"administrative rights, custom user ID setting, and a few other options can "
-"be accessed from Advanced menu. &lt;br&gt;&lt;br&gt; If you need to "
-"administrate user accounts, you can call User Manager in the System Settings "
-"after installation."
+"automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday "
+"use, so we recommend you to add user accounts upon your needs. The first "
+"user will be granted administrative authorization if you don't revoke them. "
+"To revoke administrative rights, or set a custom user ID you can click on "
+"the Advanced tab where you can find a few other options as well. &lt;br&gt;"
+"&lt;br&gt; If you need to administrate user accounts later, you can find "
+"User Manager tool in the System Settings."
 msgstr ""
 "Meerdere gebruikers kunnen de computer veilig delen met Pardus. Een "
 "beheerderaccount met de naam &quot;root&quot; wordt automatisch aangemaakt. "
 "In dit scherm kunnen nieuwe gebruikers aangemaakt worden. De eerste "
 "gebruiker zal beheerdersautorisatie verkrijgen, indien dit niet verhinderd "
 "wordt. Verhinderen van beheersrechten, instellingen voor gebruiker-ID, "
-"opstartopties  en enkel andere zijn in het menu \"Geavanceerd\" toegankelijk."
-" &lt;br&gt;&lt;br&gt;De instellingen voor de gebruikers zijn na de "
-"installatie in Gebruikerbeheer van Systeeminstellingen te vinden."
+"opstartopties  en enkel andere zijn in het menu \"Geavanceerd\" "
+"toegankelijk. &lt;br&gt;&lt;br&gt;De instellingen voor de gebruikers zijn na "
+"de installatie in Gebruikerbeheer van Systeeminstellingen te vinden."
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:26
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -341,7 +346,7 @@ msgstr ""
 "als capaciteit.&lt;br&gt;&lt;br&gt;Pardus biedt ook andere vrije browsers "
 "aan inclusief Chromium, Konqueror of zelfs Opera."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:27
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -356,7 +361,7 @@ msgstr ""
 "aangepast zijn. Tijdens de installatie worden enkele van de kenmerken "
 "getoond..."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -370,22 +375,23 @@ msgstr ""
 "beheerders kunnen individueel gestart worden en ook vanuit Systeembeheer, "
 "een enkele toepassing voor alle administratieve en instellingentaken."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:29
+#, fuzzy
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, and various softwares of the GNU "
-"project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for "
+"project, Mozilla Firefox, OpenOffice etc. and easy-to-use special tools for "
 "a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house "
-"products of TÜBİTAK are licensed with GNU Public License (GPL version 2), "
+"products of Tübitak are licensed with GNU Public License (GPL version 2), "
 "which is also the most common license for the selected components. However "
 "there are softwares included in this installation medium which have "
 "different licenses. You can read all the license texts in this screen in a "
 "new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You "
-"have to accept all the license terms to install Pardus on your computer."
+"have to accept all the terms to install Pardus on your computer."
 msgstr ""
 "Pardus is een vrije en open-source besturingssysteem dat vele bekende "
-"projecten bevat zoals Linux-kernel, en diverse softwarepakketten van het "
-"GNU-project, Mozilla Firefox, LibreOffice enz. en ook vele gemakkelijk te "
+"projecten bevat zoals Linux-kernel, en diverse softwarepakketten van het GNU-"
+"project, Mozilla Firefox, LibreOffice enz. en ook vele gemakkelijk te "
 "gebruiken gereedschappen voor een comfortabele en toch krachtige ervaring. "
 "&lt;br&gt;&lt;br&gt;De eigengemaakte producten van TÜBİTAK vallen onder de  "
 "GNU Publieke Licentie (GPL versie 2) en is ook de meest algemene licentie "
@@ -395,19 +401,28 @@ msgstr ""
 "vinden. &lt;br&gt;&lt;br&gt;Het is nodig om deze licentievoorwaarden te "
 "accepteren om Pardus op de computer te installeren."
 
+#: ../release.xml.in.h:30
+msgid "Partition your disk manually"
+msgstr ""
+
 #: ../release.xml.in.h:31
-msgid "Select Partitioning Method"
+#, fuzzy
+msgid "Select a partitioning method"
 msgstr "Partitiemethode selecteren"
 
 #: ../release.xml.in.h:32
-msgid "Select a Drive to Install Pardus"
-msgstr "Selecteer een schijf om Pardus op te installeren"
+msgid "Set your local time and date"
+msgstr ""
 
 #: ../release.xml.in.h:33
+msgid "Setup your account"
+msgstr ""
+
+#: ../release.xml.in.h:34
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:35
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -430,7 +445,7 @@ msgstr ""
 "keuze, Kickoff, klassieke menustijl of Lancelot die gemaakt kan worden met "
 "behulp van Kaptan na de eerste start."
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:36
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -441,18 +456,15 @@ msgid ""
 msgstr ""
 "Validatie vergelijkt de pakketten op het medium met de originele versie door "
 "een methode van bestandverificatie. Een mislukte validatie komt meestal door "
-"een fout op het installatiemedium (CD, DVD of USB-opslag)."
-"&lt;br&gt;&lt;br&gt;Bij het maken van een optisch installatiemedium "
-"(CD/DVD), probeer DAO (Disc-at-once) modus te gebruiken en op een lagere "
-"snelheid (4x voor DVD, 8-12x voor CD)."
-
-#: ../release.xml.in.h:36
-msgid "Welcome back"
-msgstr "Welkom terug"
+"een fout op het installatiemedium (CD, DVD of USB-opslag).&lt;br&gt;&lt;"
+"br&gt;Bij het maken van een optisch installatiemedium (CD/DVD), probeer DAO "
+"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, "
+"8-12x voor CD)."
 
 #: ../release.xml.in.h:37
-msgid "Welcome to Pardus"
-msgstr "Welkom bij Pardus"
+#, fuzzy
+msgid "Welcome back..."
+msgstr "Welkom terug"
 
 #: ../release.xml.in.h:38
 msgid ""
@@ -474,15 +486,16 @@ msgstr ""
 "bevinden."
 
 #: ../release.xml.in.h:39
+#, fuzzy
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
-"four partitions for system, user space, boot and swap files using LVM "
+"four partitions for user space, and system, boot and swap files using LVM "
 "(Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed "
 "system with an adequate disk space, you can use the \"Shrink Current System"
 "\" option to resize the first partition and install Pardus in the created "
 "free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-"
 "unused space (10 GBs recommended), you can choose the \"Use Free Space\" "
-"option, so Pardus will create the necessary partitions described below.&lt;"
+"option, so Pardus will create the necessary partitions described above.&lt;"
 "br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual "
 "partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid "
 "future problems."
@@ -530,6 +543,23 @@ msgstr ""
 
 #: ../release.xml.in.h:42
 msgid ""
+"You have to choose a *free* physical partition in order to create your "
+"system partitions. If anything goes wrong you can Reset and start again. &lt;"
+"br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical "
+"Volume, then a Volume Group which will contain your Logical Volumes. You can "
+"use Logical Volumes similar to partitions and set them for system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you "
+"have to create at least two RAID members. Try to divide the space equally as "
+"the space of the disk will be same with the smallest partition. When you "
+"have two RAID members, you will be able to create a RAID array which is "
+"similar to a partition as it may be formatted and set for the system files, "
+"user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and "
+"Using Guide for more information about disk partitioning. You can find it in "
+"our website."
+msgstr ""
+
+#: ../release.xml.in.h:43
+msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
 "and experience. You can also find guides, introductionary articles about "
@@ -543,30 +573,6 @@ msgstr ""
 "Indien u vragen heeft, is het forum de plaats waar u deze kan stellen. Voor "
 "de gebruiker die de Turkse taal kunnen lezen is er voor ondersteuning ook "
 "nog www.ozgurlukicin.com"
-
-#: ../release.xml.in.h:43
-msgid ""
-"You need to set the &quot;root&quot; account password. &quot;root&quot; is "
-"the conventional name of the administrator user who has all rights and "
-"permissions (to all files and programs) in all modes (single or multi-user)."
-"&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough "
-"to resist possible attacks. You can use capital and lower-case letters, "
-"numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can "
-"also define a hostname for your computer. A hostname is an identifier "
-"assigned to your computer. As your computer will be recognized with this "
-"name in the local network, it is recommended to select a descriptive "
-"hostname."
-msgstr ""
-"Er dient een wachtwoord ingesteld te worden voor de &quot; root&quot; "
-"gebruiker, dit is de gebruikelijke naam van de gebruiker die alle rechten en "
-"toestemming heeft (naar alle bestanden en programma's) in alle modi (voor "
-"enkele - en meervoudige gebruikers).&lt;br&gt;&lt;br&gt;Het wachtwoord dient "
-"makkelijk te onthouden te zijn (voor u) maar moeilijk om te raden (voor "
-"anderen). Het is mogelijk kleine en hoofdletters, cijfers en symbolen te "
-"gebruiken in het wachtwoord.&lt;br&gt;&lt;br&gt;Ook kan een hostnaam voor "
-"deze computer opgeven worden. Met de hostnaam wordt deze computer in het "
-"lokale netwerk weergegeven en daarom wordt het instellen van een  unieke "
-"naam aanbevolen."
 
 #: ../release.xml.in.h:44
 msgid ""
@@ -593,6 +599,39 @@ msgstr ""
 "systeem. Daarom is het noodzakelijk om tenminste een gebruiker aan te maken "
 "en enkele instellingen voor het gehele systeem. Daarna kan er ingelogd "
 "worden en van Pardus gaan genieten."
+
+#~ msgid "Add Users"
+#~ msgstr "Gebruikers toevoegen"
+
+#~ msgid "Adjust Date and Time Settings"
+#~ msgstr "Datum- en tijdinstellingen aanpassen"
+
+#~ msgid ""
+#~ "In this screen, you can manually partition your disk. You can select "
+#~ "existing partitions and resize or delete them. You can create new "
+#~ "partition(s) in the empty parts, make Pardus use them for system files, "
+#~ "users&apos; home directories, swap space or general use. The changes that "
+#~ "you make will not be applied until you go on with the installation, which "
+#~ "means you can revert if you make any unwanted changes or change your "
+#~ "configuration.&lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and "
+#~ "Using Guide for more informationabout disk partitioning.&lt;/font&gt;"
+#~ msgstr ""
+#~ "In dit scherm kan handmatig de schijfindeling gemaakt worden. Het is "
+#~ "mogelijk om een bestaande partitie te selecteren, in grootte te wijzigen "
+#~ "of deze te verwijderen. Het is ook mogelijk om in het vrije gedeelte een "
+#~ "partitie aan te maken en deze door Pardus te laten gebruiken voor "
+#~ "systeembestanden, gebruiker&apos; thuismappen, swapruimte of voor "
+#~ "algemeen gebruik. De gemaakte wijzigingen worden pas bij de installatie "
+#~ "definitief toegepast, dit houdt in dat ze, bij niet gewenste wijzigingen, "
+#~ "ongedaan gemaakt kunnen worden of de configuratie gewijzigd kan worden."
+#~ "&lt;br&gt;&lt;br&gt;Voor meer informatie over schijfindeling zie de "
+#~ "installatie- en gebruikershandleiding van Pardus.&lt;/font&gt;"
+
+#~ msgid "Manual Partitioning"
+#~ msgstr "Handmatig partitioneren"
+
+#~ msgid "Welcome to Pardus"
+#~ msgstr "Welkom bij Pardus"
 
 #~ msgid "Kahya is working"
 #~ msgstr "Kahya is bezig"
