@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: panda-kde\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 11:06+0200\n"
+"POT-Creation-Date: 2010-12-27 15:22+0200\n"
 "PO-Revision-Date: 2010-12-11 14:48+0200\n"
 "Last-Translator: Fatih Arslan <farslan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -46,35 +46,41 @@ msgstr "Açık kaynak topluluğu tarafından geliştirilen sürücüyü kullan"
 msgid "Use the proprietary driver provided by the manufacturer"
 msgstr "Kart üreticisinin sunduğu sahipli sürücüyü kullan"
 
-#: panda.cpp:134
+#: panda.cpp:135
 msgid "Video Driver Administration"
 msgstr "Ekran Sürücüsü Yönetimi"
 
-#: panda.cpp:136
+#: panda.cpp:139
 msgid "(c) 2011 Fatih Arslan"
 msgstr "(c) 2011 Fatih Arslan"
 
-#: panda.cpp:138
+#: panda.cpp:145
+msgid ""
+"Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</"
+"a> to report bugs.\n"
+msgstr ""
+
+#: panda.cpp:147
 msgid "Fatih Arslan"
 msgstr "Fatih Arslan"
 
-#: panda.cpp:138
+#: panda.cpp:147
 msgid "Original author"
 msgstr "Asıl yazar"
 
-#: panda.cpp:178
+#: panda.cpp:193
 msgid "Unable to apply settings due to missing packages"
 msgstr "Eksik paketler yüzünden ayarlar uygulanamıyor"
 
-#: panda.cpp:195
+#: panda.cpp:210
 msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr "Bu eylem yetkilendirilemedi veya çalıştırılamadı: %1, %2"
 
-#: panda.cpp:197
+#: panda.cpp:212
 msgid "An internal error occurred"
 msgstr "Bir iç hata oluştu"
 
-#: panda.cpp:205
+#: panda.cpp:220
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
