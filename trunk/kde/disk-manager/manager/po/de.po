@@ -26,10 +26,9 @@ msgstr "Datenträgerverwaltung"
 
 #: src/diskmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/diskmanager/about.py:32
-#, fuzzy
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
