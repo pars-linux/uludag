@@ -248,6 +248,7 @@ Assigning Mentor Stock Response
 -------------------------------
 
 ::
+
     Seçmiş olduğunuz iş doğrultusunda size x kişisi mentor olarak atanmıştır.
 
     SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir [1].
@@ -262,6 +263,7 @@ Assigning Mentor Stock Response
     [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
 
 ::
+
     Related to your responses, x is assigned you as a mentor.
 
     In order to creating an svn account, you have to send the output that is mentioned below link [1].
