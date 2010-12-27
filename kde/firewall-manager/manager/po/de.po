@@ -29,7 +29,7 @@ msgstr "Firewall"
 
 #: src/firewallmanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:34
 msgid "Gökmen Göksel"
