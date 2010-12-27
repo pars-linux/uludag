@@ -42,7 +42,7 @@
 #include "panda.moc"
 
 K_PLUGIN_FACTORY(PandaConfigFactory, registerPlugin<PandaConfig>();)
-K_EXPORT_PLUGIN(PandaConfigFactory("kcmpanda"))
+K_EXPORT_PLUGIN(PandaConfigFactory("panda-kde"))
 
 
 PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
@@ -117,8 +117,8 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout->addWidget(bottomGroupBox);
   layout->addStretch();
 
-  osDriver = new QRadioButton(i18n("Use open source driver"), bottomGroupBox);
-  vendorDriver = new QRadioButton(i18n("Use vendor driver"), bottomGroupBox);
+  osDriver = new QRadioButton(i18n("Use the driver developed by the open source community"), bottomGroupBox);
+  vendorDriver = new QRadioButton(i18n("Use the proprietary driver provided by the manufacturer"), bottomGroupBox);
 
   QButtonGroup *buttonGroup = new QButtonGroup(bottomGroupBox);
   connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(changed()));
@@ -131,7 +131,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
-    new KAboutData(I18N_NOOP("kcmpanda"), 0, ki18n("KDE Panda Control Module"),
+    new KAboutData("panda-kde", 0, ki18n("Video Driver Administration"),
                   0, KLocalizedString(), KAboutData::License_GPL,
                   ki18n("(c) 2011 Fatih Arslan"));
 
@@ -194,7 +194,7 @@ void PandaConfig::save()
     if (reply.type() == ActionReply::KAuthError) {
         KMessageBox::error(this, i18n("Unable to authenticate/execute the action: %1, %2", reply.errorCode(), reply.errorDescription()));
     } else {
-        KMessageBox::error(this, i18n("Error handler for custom errors should be setup here"));
+        KMessageBox::error(this, i18n("An internal error occurred"));
     }
 
     QTimer::singleShot(0, this, SLOT(changed()));

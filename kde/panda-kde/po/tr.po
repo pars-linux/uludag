@@ -1,65 +1,84 @@
+# # translation of PANDA-tr.po to Türkçe
+# translation of tr.po to
+# Copyright (C) 2011
+# This file is distributed under the same license as the yali4 package.
+#
+# Fatih Arslan <farslan@pardus.org.tr>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: panda-kde\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-12-27 11:06+0200\n"
+"PO-Revision-Date: 2010-12-11 14:48+0200\n"
+"Last-Translator: Fatih Arslan <farslan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\\n\"\\nX-Generator: Lokalize 1.1\n"
+
 #: panda.cpp:57
 msgid "Current Driver Information"
-msgstr ""
+msgstr "Etkin Sürücü Bilgisi"
 
 #: panda.cpp:81
 msgid "Vendor:"
-msgstr ""
+msgstr "Üretici:"
 
 #: panda.cpp:89
 msgid "Renderer:"
-msgstr ""
+msgstr "Hızlandırıcı:"
 
 #: panda.cpp:97
 msgid "Version:"
-msgstr ""
+msgstr "Sürüm:"
 
 #: panda.cpp:114
 msgid "Driver Preference"
-msgstr ""
+msgstr "Sürücü Tercihi"
 
 #: panda.cpp:120
-msgid "Use open source driver"
-msgstr ""
+msgid "Use the driver developed by the open source community"
+msgstr "Açık kaynak topluluğu tarafından geliştirilen sürücüyü kullan"
 
 #: panda.cpp:121
-msgid "Use vendor driver"
-msgstr ""
+msgid "Use the proprietary driver provided by the manufacturer"
+msgstr "Kart üreticisinin sunduğu sahipli sürücüyü kullan"
 
 #: panda.cpp:134
-msgid "kcmpanda"
-msgstr ""
-
-#: panda.cpp:134
-msgid "KDE Panda Control Module"
-msgstr ""
+msgid "Video Driver Administration"
+msgstr "Ekran Sürücüsü Yönetimi"
 
 #: panda.cpp:136
 msgid "(c) 2011 Fatih Arslan"
-msgstr ""
+msgstr "(c) 2011 Fatih Arslan"
 
 #: panda.cpp:138
 msgid "Fatih Arslan"
-msgstr ""
+msgstr "Fatih Arslan"
 
 #: panda.cpp:138
 msgid "Original author"
-msgstr ""
+msgstr "Asıl yazar"
 
 #: panda.cpp:178
 msgid "Unable to apply settings due to missing packages"
-msgstr ""
+msgstr "Eksik paketler yüzünden ayarlar uygulanamıyor"
 
 #: panda.cpp:195
 msgid "Unable to authenticate/execute the action: %1, %2"
-msgstr ""
+msgstr "Bu eylem yetkilendirilemedi veya çalıştırılamadı: %1, %2"
 
 #: panda.cpp:197
-msgid "Error handler for custom errors should be setup here"
-msgstr ""
+msgid "An internal error occurred"
+msgstr "Bir iç hata oluştu"
 
 #: panda.cpp:205
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
 msgstr ""
+"Değişikliklerin ektin hale gelmesi için sisteminizi yeniden "
+"başlatmalısınız.\n"
+"Şimdi yeniden başlatmak istiyor musunuz?"
