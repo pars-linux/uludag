@@ -130,11 +130,20 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout_settings->addWidget(osDriver);
   layout_settings->addWidget(vendorDriver);
 
-  KAboutData *about =
-    new KAboutData("kcmpanda", 0, ki18n("Video Driver Administration"),
-                  0, KLocalizedString(), KAboutData::License_GPL,
-                  ki18n("(c) 2011 Fatih Arslan"));
+  KAboutData *about = new KAboutData("kcmpanda",
+                                      "panda-kde",
+                                      ki18n("Video Driver Administration"),
+                                      0,
+                                      KLocalizedString(),
+                                      KAboutData::License_GPL,
+                                      ki18n("(c) 2011 Fatih Arslan"),
+                                      KLocalizedString(),
+                                      "http://www.pardus.org.tr");
+  KLocalizedString authorPageText;
 
+  if (about->bugAddress().isEmpty() || about->bugAddress() == "submit@bugs.kde.org")
+    authorPageText = ki18n("Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> to report bugs.\n");
+  about->setCustomAuthorText(KLocalizedString(), authorPageText);
   about->addAuthor(ki18n("Fatih Arslan"), ki18n("Original author"), "farslan@pardus.org.tr");
   setAboutData(about);
 
