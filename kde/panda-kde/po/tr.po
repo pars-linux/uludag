@@ -1,0 +1,65 @@
+#: panda.cpp:57
+msgid "Current Driver Information"
+msgstr ""
+
+#: panda.cpp:81
+msgid "Vendor:"
+msgstr ""
+
+#: panda.cpp:89
+msgid "Renderer:"
+msgstr ""
+
+#: panda.cpp:97
+msgid "Version:"
+msgstr ""
+
+#: panda.cpp:114
+msgid "Driver Preference"
+msgstr ""
+
+#: panda.cpp:120
+msgid "Use open source driver"
+msgstr ""
+
+#: panda.cpp:121
+msgid "Use vendor driver"
+msgstr ""
+
+#: panda.cpp:134
+msgid "kcmpanda"
+msgstr ""
+
+#: panda.cpp:134
+msgid "KDE Panda Control Module"
+msgstr ""
+
+#: panda.cpp:136
+msgid "(c) 2011 Fatih Arslan"
+msgstr ""
+
+#: panda.cpp:138
+msgid "Fatih Arslan"
+msgstr ""
+
+#: panda.cpp:138
+msgid "Original author"
+msgstr ""
+
+#: panda.cpp:178
+msgid "Unable to apply settings due to missing packages"
+msgstr ""
+
+#: panda.cpp:195
+msgid "Unable to authenticate/execute the action: %1, %2"
+msgstr ""
+
+#: panda.cpp:197
+msgid "Error handler for custom errors should be setup here"
+msgstr ""
+
+#: panda.cpp:205
+msgid ""
+"You have to restart your system for the changes to take affect.\n"
+"Do you want to restart now?"
+msgstr ""
