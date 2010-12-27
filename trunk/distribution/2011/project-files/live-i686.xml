@@ -918,7 +918,6 @@
         <Package>pulseaudio</Package>
         <Package>pulseaudio-gconf</Package>
         <Package>pulseaudio-libs</Package>
-        <Package>pycups</Package>
         <Package>pycurl</Package>
         <Package>pygtk</Package>
         <Package>pyopenssl</Package>
