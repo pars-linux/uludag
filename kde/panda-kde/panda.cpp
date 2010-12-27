@@ -119,6 +119,9 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   osDriver = new QRadioButton(i18n("Use the driver developed by the open source community"), bottomGroupBox);
   vendorDriver = new QRadioButton(i18n("Use the proprietary driver provided by the manufacturer"), bottomGroupBox);
+  // For future use
+  genericDriver = new QRadioButton(i18n("Use the safe driver that provides limited features"), this);
+  genericDriver->setVisible(false);
 
   QButtonGroup *buttonGroup = new QButtonGroup(bottomGroupBox);
   connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(changed()));
@@ -265,6 +268,9 @@ void PandaConfig::defaults()
 
 bool PandaConfig::installMissing()
 {
+  if (!vendorDriver->isChecked())
+      return true;
+
   KProcess p;
   p << "/usr/libexec/panda-helper" << "check";
   p.setOutputChannelMode(KProcess::SeparateChannels);

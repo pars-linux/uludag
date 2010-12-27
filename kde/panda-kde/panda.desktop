@@ -12,10 +12,11 @@ X-KDE-ParentApp=kcontrol
 X-KDE-System-Settings-Parent-Category=display
 X-KDE-Weight=110
 
-Name=Driver
-Name[tr]=Sürücü
+Name=Video Driver
+Name[tr]=Ekran Kartı Sürücüsü
 
-Comment=Video driver
-Comment[tr]=Ekran sürücüsü
+Comment=Video Driver Administration
+Comment[tr]=Ekran Kartı Sürücüsü Yönetimi
 
 X-KDE-Keywords=video,driver,graphics,display
+X-KDE-Keywords[tr]=video,sürücü,grafik,ekran
