@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 09:32+0200\n"
+"POT-Creation-Date: 2010-12-27 16:42+0200\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -202,22 +202,18 @@ msgid "Get ready to install Pardus"
 msgstr "Sélectionnez le disque dur où installer Pardus"
 
 #: ../release.xml.in.h:15
-msgid "Goodbye"
-msgstr "Au revoir"
-
-#: ../release.xml.in.h:16
 #, fuzzy
 msgid "Help will be included when Kahya implentation is complete."
 msgstr "Aide sera inclus lorsque implentation Kahya est terminée."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:16
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr ""
 "Ici vous pouvez voir vos options d'installation avant le début de "
 "l'installation."
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:17
 #, fuzzy
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
@@ -238,6 +234,10 @@ msgstr ""
 "vous cliquez sur l'icône sans fil. &lt;br&gt; Avez-vous une imprimante "
 "locale? Branchez-le et il sera automatiquement configuré ainsi. Il vous "
 "suffit de l'impression de votre document."
+
+#: ../release.xml.in.h:18
+msgid "Installation complete!"
+msgstr ""
 
 #: ../release.xml.in.h:19
 msgid "Installing Pardus"
@@ -461,6 +461,12 @@ msgstr ""
 
 #: ../release.xml.in.h:36
 msgid ""
+"User accounts are successfully configured. Click Next to proceed. One note: "
+"You remember your password, don&apos;t you?"
+msgstr ""
+
+#: ../release.xml.in.h:37
+msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
 "mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If "
@@ -474,12 +480,12 @@ msgstr ""
 "optique, essayez de graver l'image d'installation en utilisant le mode DAO "
 "(Disc-at-once), à une vitesse inférieure (4x)."
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:38
 #, fuzzy
 msgid "Welcome back..."
 msgstr "De retour..."
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:39
 #, fuzzy
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
@@ -500,7 +506,7 @@ msgstr ""
 "vous pouvez rejoindre les adresses distantes comme si elles étaient sur "
 "votre disque."
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:40
 #, fuzzy
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
@@ -529,7 +535,7 @@ msgstr ""
 "Par prudence, il est conseillé d'avoir sauvegardé vos données avant de "
 "poursuivre."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:41
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -546,19 +552,29 @@ msgstr ""
 "laquelle vous pourrez découvrir les caractéristiques et les innovations "
 "offertes par cette nouvelle version de Pardus."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:42
+#, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
-"&lt;br&gt;Click Next to proceed. One note: You remember your password, "
-"don&apos;t you?"
+"&lt;br&gt;Please be sure that you remember your password and unmount the "
+"installation medium (remove the usb disk, eject the dvd or release the image "
+"in virtual machies)."
 msgstr ""
 "Vous avez réussi à installer Pardus sur votre ordinateur. Après son "
 "redémarrage, vous pourrez enfin profiter pleinement des avantages de Pardus. "
 "&lt;br&gt;&lt;br&gt;Cliquez sur Suivant pour continuer. NB : Vous vous "
 "souvenez de votre mot de passe, n'est-ce pas ?"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:43
+msgid ""
+"You have successfully installed Pardus on your computer. After restarting "
+"your computer, you will able to add new user accounts and use Pardus. Please "
+"be sure that you unmount the installation medium (remove the usb disk, eject "
+"the dvd or release the image in virtual machies)."
+msgstr ""
+
+#: ../release.xml.in.h:44
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -575,7 +591,7 @@ msgid ""
 "our website."
 msgstr ""
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -587,7 +603,7 @@ msgstr ""
 "L'équipe de www.pardus-fr.org tâchera de répondre au mieux à vos questions "
 "et de vous porter assistance en cas de problème. Inscrivez-vous sur le forum."
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -600,7 +616,7 @@ msgstr ""
 "l'étape suivante, vous pourrez choisir entre différentes options de "
 "partitionnement."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
@@ -611,6 +627,9 @@ msgstr ""
 "gère plusieurs utilisateurs sur le même système. Vous devez créer au moins "
 "un utilisateur et configurer le système. Après quoi vous pourrez enfin vous "
 "connecter et profiter de Pardus..."
+
+#~ msgid "Goodbye"
+#~ msgstr "Au revoir"
 
 #~ msgid "Add Users"
 #~ msgstr "Ajouter des utilisateurs"

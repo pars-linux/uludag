@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 09:32+0200\n"
+"POT-Creation-Date: 2010-12-27 16:42+0200\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -197,21 +197,17 @@ msgid "Get ready to install Pardus"
 msgstr "Pardus'un kurulacağı Sürücüyü Seçiniz"
 
 #: ../release.xml.in.h:15
-msgid "Goodbye"
-msgstr "Hoşça kalın"
-
-#: ../release.xml.in.h:16
 #, fuzzy
 msgid "Help will be included when Kahya implentation is complete."
 msgstr ""
 "Kahya uygulaması Yalı'ya eklendiğinde bu bölümde yardım metni yer alacak."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:16
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr "Kuruluma geçmeden önce tercihlerinizi topluca gözden geçirebilirsiniz."
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:17
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -231,6 +227,10 @@ msgstr ""
 "br&gt;Yerel yazıcınız mı var? Kablosunu takmanız onun da otomatik olarak "
 "ayarlanmasına yeter. Bundan sonra tek yapmanız gereken belgenizi yazdırmak "
 "olacaktır."
+
+#: ../release.xml.in.h:18
+msgid "Installation complete!"
+msgstr ""
 
 #: ../release.xml.in.h:19
 msgid "Installing Pardus"
@@ -442,6 +442,12 @@ msgstr ""
 
 #: ../release.xml.in.h:36
 msgid ""
+"User accounts are successfully configured. Click Next to proceed. One note: "
+"You remember your password, don&apos;t you?"
+msgstr ""
+
+#: ../release.xml.in.h:37
+msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
 "mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If "
@@ -457,12 +463,12 @@ msgstr ""
 "gibi), düşük hızda(DVD için 4x, CD için 8-12x) ve DAO (tek seferde yaz) "
 "kipinde yazmayı deneyiniz."
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:38
 #, fuzzy
 msgid "Welcome back..."
 msgstr "Tekrar hoş geldiniz"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:39
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
 "experience. Dolphin offers web-like features suh as tabbed browsing, folder "
@@ -479,7 +485,7 @@ msgstr ""
 "br&gt;&lt;br&gt;Yerel ağ ya da İnternet üzerindeki herhangi bir adresi "
 "entegre ederek, bilgisayarınızdaki bir dosya gibi kullanabilirsiniz."
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:40
 #, fuzzy
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
@@ -507,7 +513,7 @@ msgstr ""
 "Her ihtimalde ilerde çıkabilecek problemlere karşı var olan dosyalarınızın "
 "yedeğini almanızı öneririz."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:41
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -523,19 +529,29 @@ msgstr ""
 "arkanıza yaslanın ve bu yeni Pardus sürümünde size sunulan özelliklere "
 "keşfedin ve kurulumun keyfini çıkarın."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:42
+#, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
-"&lt;br&gt;Click Next to proceed. One note: You remember your password, "
-"don&apos;t you?"
+"&lt;br&gt;Please be sure that you remember your password and unmount the "
+"installation medium (remove the usb disk, eject the dvd or release the image "
+"in virtual machies)."
 msgstr ""
 "Pardus'u bilgisayarınıza başarıyla kurdunuz. Bilgisayarınızı yeniden "
 "başlattıktan sonra, Pardus'un tüm imkanlarından faydalanmanın keyfini "
 "süreceksiniz.&lt;br&gt;&lt;br&gt;Devam etmek için Sonraki seçeneğine "
 "tıklayınız. Önemli not: Şifrenizi hatırlıyorsunuz, değil&mi?&lt;br&gt;"
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:43
+msgid ""
+"You have successfully installed Pardus on your computer. After restarting "
+"your computer, you will able to add new user accounts and use Pardus. Please "
+"be sure that you unmount the installation medium (remove the usb disk, eject "
+"the dvd or release the image in virtual machies)."
+msgstr ""
+
+#: ../release.xml.in.h:44
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -552,7 +568,7 @@ msgid ""
 "our website."
 msgstr ""
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -569,7 +585,7 @@ msgstr ""
 "bir desteğe ihtiyacınız var ya da yeni kullanıcılarla kendi deneyimlerinizi "
 "paylaşmak isterseniz mutlaka www.ozgurlukicin.com adresine uğramalısınız."
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -581,7 +597,7 @@ msgstr ""
 "gerçekleştireceğiniz diski seçin. Sonraki adımda bölümlendirme konusunda "
 "değişik seçeneklerden yararlanabileceksiniz."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
@@ -593,6 +609,9 @@ msgstr ""
 "imkanı verir. En az bir adet kullanıcı oluşturmak ve tüm sistem ayarlarını "
 "yapmalısınız. Böylece Pardus'ta oturum açarak taze sistemin tadını "
 "çıkarabilirsiniz..."
+
+#~ msgid "Goodbye"
+#~ msgstr "Hoşça kalın"
 
 #~ msgid "Add Users"
 #~ msgstr "Kullanıcı İşlemleri"
