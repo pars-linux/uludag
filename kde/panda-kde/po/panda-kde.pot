@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 11:06+0200\n"
+"POT-Creation-Date: 2010-12-27 15:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,35 +45,41 @@ msgstr ""
 msgid "Use the proprietary driver provided by the manufacturer"
 msgstr ""
 
-#: panda.cpp:134
+#: panda.cpp:135
 msgid "Video Driver Administration"
 msgstr ""
 
-#: panda.cpp:136
+#: panda.cpp:139
 msgid "(c) 2011 Fatih Arslan"
 msgstr ""
 
-#: panda.cpp:138
+#: panda.cpp:145
+msgid ""
+"Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</"
+"a> to report bugs.\n"
+msgstr ""
+
+#: panda.cpp:147
 msgid "Fatih Arslan"
 msgstr ""
 
-#: panda.cpp:138
+#: panda.cpp:147
 msgid "Original author"
 msgstr ""
 
-#: panda.cpp:178
+#: panda.cpp:193
 msgid "Unable to apply settings due to missing packages"
 msgstr ""
 
-#: panda.cpp:195
+#: panda.cpp:210
 msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr ""
 
-#: panda.cpp:197
+#: panda.cpp:212
 msgid "An internal error occurred"
 msgstr ""
 
-#: panda.cpp:205
+#: panda.cpp:220
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
