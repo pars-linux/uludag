@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: panda-kde\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 17:21+0200\n"
+"POT-Creation-Date: 2010-12-27 17:36+0200\n"
 "PO-Revision-Date: 2010-12-11 14:48+0200\n"
 "Last-Translator: Fatih Arslan <farslan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -95,3 +95,7 @@ msgstr "Sürücü"
 #: rc.cpp:2
 msgid "Video driver"
 msgstr "Ekran sürücüsü"
+
+#: rc.cpp:3
+msgid "video,driver,graphics,display"
+msgstr ""
