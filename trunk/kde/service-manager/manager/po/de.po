@@ -29,7 +29,7 @@ msgstr "Verwaltung der System-Dienste."
 
 #: src/servicemanager/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/servicemanager/about.py:34
 msgid "Gökmen Göksel"
