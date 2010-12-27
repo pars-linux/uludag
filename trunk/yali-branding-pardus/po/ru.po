@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 16:42+0200\n"
+"POT-Creation-Date: 2010-12-27 16:48+0200\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -65,6 +65,10 @@ msgstr ""
 "выбранную раскладку, набрав что-нибудь в специальном поле ввода."
 
 #: ../release.xml.in.h:4
+msgid "All done!"
+msgstr ""
+
+#: ../release.xml.in.h:5
 msgid ""
 "Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
 "a number of multimedia editors and a massive file format and codec support "
@@ -74,26 +78,26 @@ msgid ""
 "backup your audio collection in Pardus..."
 msgstr ""
 
-#: ../release.xml.in.h:5
+#: ../release.xml.in.h:6
 #, fuzzy
 msgid "Choose a password for administration and a hostname"
 msgstr "Выберите пароль администратора и имя хоста"
 
-#: ../release.xml.in.h:6
+#: ../release.xml.in.h:7
 #, fuzzy
 msgid "Choose your installation disk"
 msgstr "Дважды проверьте выбранный способ установки"
 
-#: ../release.xml.in.h:7
+#: ../release.xml.in.h:8
 msgid "Choose your keyboard layout"
 msgstr "Выберите раскладку клавиатуры"
 
-#: ../release.xml.in.h:8
+#: ../release.xml.in.h:9
 #, fuzzy
 msgid "Configure the bootloader"
 msgstr "Настройка загрузчика"
 
-#: ../release.xml.in.h:9
+#: ../release.xml.in.h:10
 msgid ""
 "Date and time settings allows you to set the date and time of your computer. "
 "You may also want to specify a correct timezone upon your location in order "
@@ -110,7 +114,7 @@ msgstr ""
 "установки часовой пояс позволит вам рассчитать время относительно UTC, "
 "Скоординированного Универсального Времени."
 
-#: ../release.xml.in.h:10
+#: ../release.xml.in.h:11
 msgid ""
 "Do you have a habit of customization? Kaptan is there for you. Kaptan is an "
 "end-user configuration assistant which helps you to customize your system "
@@ -124,7 +128,7 @@ msgid ""
 "functions as well, try it at home!"
 msgstr ""
 
-#: ../release.xml.in.h:11
+#: ../release.xml.in.h:12
 msgid ""
 "Dolphin is the file manager of KDE and so Pardus. It gives a great set of "
 "features where it becomes surprising that a simple file manager may have so "
@@ -144,11 +148,11 @@ msgstr ""
 "Gwenview, просматривать изображения или использовать опциональный "
 "предварительный просмотр видео-файлов."
 
-#: ../release.xml.in.h:12
+#: ../release.xml.in.h:13
 msgid "Double check your installation medium"
 msgstr "Дважды проверьте выбранный способ установки"
 
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:14
 msgid ""
 "Fun is a serious matter... Everyone has the right to relax for a moment with "
 "the help of a sudoku puzzle or a simple game. Pardus has some little, "
@@ -158,22 +162,22 @@ msgid ""
 "simulators, online team building FPS&apos;s, old school arcades etc..."
 msgstr ""
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:15
 #, fuzzy
 msgid "Get ready to install Pardus"
 msgstr "Выберите диск для установки Pardus"
 
-#: ../release.xml.in.h:15
+#: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implentation is complete."
 msgstr ""
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:17
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr ""
 "Здесь вы можете просмотреть доступные варианты установки перед её началом."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:18
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -185,15 +189,19 @@ msgid ""
 "automatically as well. All you do is printing out your document."
 msgstr ""
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:19
+msgid "Installation complete"
+msgstr ""
+
+#: ../release.xml.in.h:20
 msgid "Installation complete!"
 msgstr ""
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:21
 msgid "Installing Pardus"
 msgstr "Установка Pardus"
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:22
 msgid ""
 "KDE is the desktop choice of Pardus, a software collection for desktop use "
 "with hundreds, even thousands of programs targeting different purposes. For "
@@ -204,11 +212,11 @@ msgid ""
 "suggest lightweight, faster yet less feature-rich desktop experience."
 msgstr ""
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:23
 msgid "Kahya"
 msgstr "Kahya"
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:24
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
 "Kontact is a seamless integration of a number of applications to achieve a "
@@ -220,7 +228,7 @@ msgid ""
 "versa by simply dragging them."
 msgstr ""
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:25
 msgid ""
 "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
 "gives a stable, fast and free office experience while all your software and "
@@ -232,7 +240,7 @@ msgid ""
 "plug-ins for a better experience."
 msgstr ""
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:26
 msgid ""
 "Multiple users can share the same computer safely with Pardus. An "
 "administrator account with the name &quot;root&quot; will be set "
@@ -245,7 +253,7 @@ msgid ""
 "User Manager tool in the System Settings."
 msgstr ""
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:28
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -265,7 +273,7 @@ msgstr ""
 "и дополняя возможностями.&lt;br&gt;&lt;br&gt;Pardus также предлагает другие "
 "бесплатные браузеры, такие как  Chromium, Konqueror и Opera."
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:29
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -274,7 +282,7 @@ msgid ""
 "installation goes on, you may see some of these features..."
 msgstr ""
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -283,7 +291,7 @@ msgid ""
 "administrative and configuration tasks."
 msgstr ""
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:31
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, and various softwares of the GNU "
@@ -297,28 +305,28 @@ msgid ""
 "have to accept all the terms to install Pardus on your computer."
 msgstr ""
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:32
 msgid "Partition your disk manually"
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:33
 #, fuzzy
 msgid "Select a partitioning method"
 msgstr "Выберите метод разбиения диска"
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:34
 msgid "Set your local time and date"
 msgstr ""
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:35
 msgid "Setup your account"
 msgstr ""
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:36
 msgid "Summary"
 msgstr "Суммарно"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -331,13 +339,13 @@ msgid ""
 "help of Kaptan in your very first boot."
 msgstr ""
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
 msgstr ""
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -347,12 +355,12 @@ msgid ""
 "CD)."
 msgstr ""
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 #, fuzzy
 msgid "Welcome back..."
 msgstr "Добро пожаловать"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
 "experience. Dolphin offers web-like features suh as tabbed browsing, folder "
@@ -363,7 +371,7 @@ msgid ""
 "they are on your disk."
 msgstr ""
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -378,7 +386,7 @@ msgid ""
 "future problems."
 msgstr ""
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -388,7 +396,7 @@ msgid ""
 "features and the innovations offered by this new Pardus release."
 msgstr ""
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -402,7 +410,7 @@ msgstr ""
 "системы Pardus! &lt;br&gt;&lt;br&gt;Нажмите Далее для перезагрузки. "
 "Примечание: Вы запомнили Ваш пароль, не так ли? "
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -410,7 +418,7 @@ msgid ""
 "the dvd or release the image in virtual machies)."
 msgstr ""
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -427,7 +435,7 @@ msgid ""
 "our website."
 msgstr ""
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -437,7 +445,7 @@ msgid ""
 "your first stop should be www.ozgurlukicin.com"
 msgstr ""
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -450,7 +458,7 @@ msgstr ""
 "установки. На следующем этапе, вы сможете выбирать различные варианты "
 "разметки."
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:49
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "

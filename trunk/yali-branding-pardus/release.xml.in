@@ -95,13 +95,13 @@
         </screen>
         <screen>
             <name>goodbye1</name>
-            <_title>Installation complete!</_title>
+            <_title>Installation complete</_title>
             <icon>goodbye</icon>
             <_help>You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies).</_help>
         </screen>
         <screen>
             <name>goodbye2</name>
-            <_title>Installation complete!</_title>
+            <_title>All done!</_title>
             <icon>goodbye</icon>
             <_help>User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?</_help>
         </screen>
