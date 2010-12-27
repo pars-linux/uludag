@@ -91,7 +91,7 @@
             <name>goodbye</name>
             <_title>Goodbye</_title>
             <icon>goodbye</icon>
-            <_help>You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Click Next to proceed. One note: You remember your password, don&apos;t you?</_help>
+            <_help>You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies).</_help>
         </screen>
     </screens>
     <slideshows>
