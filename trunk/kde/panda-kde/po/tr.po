@@ -1,14 +1,13 @@
 # # translation of PANDA-tr.po to Türkçe
 # translation of tr.po to
 # Copyright (C) 2011
-# This file is distributed under the same license as the yali4 package.
-#
+# This file is distributed under the same license as the panda-kde package
 # Fatih Arslan <farslan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: panda-kde\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 15:22+0200\n"
+"POT-Creation-Date: 2010-12-27 16:15+0200\n"
 "PO-Revision-Date: 2010-12-11 14:48+0200\n"
 "Last-Translator: Fatih Arslan <farslan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
