@@ -40,8 +40,9 @@ msgid "History Manager"
 msgstr "Systemwiederherstellung"
 
 #: .tmp/historymanager/about.py:25
+#, fuzzy
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
