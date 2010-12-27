@@ -48,7 +48,7 @@ K_EXPORT_PLUGIN(PandaConfigFactory("panda-kde"))
 PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     KCModule(PandaConfigFactory::componentData(), parent, args)
 {
-    
+
   // The Main Layout, on top of this are two groupboxes, topBox and bottomBox
   QBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
@@ -131,7 +131,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   layout_settings->addWidget(vendorDriver);
 
   KAboutData *about =
-    new KAboutData("panda-kde", 0, ki18n("Video Driver Administration"),
+    new KAboutData("kcmpanda", 0, ki18n("Video Driver Administration"),
                   0, KLocalizedString(), KAboutData::License_GPL,
                   ki18n("(c) 2011 Fatih Arslan"));
 
@@ -173,8 +173,9 @@ void PandaConfig::load()
       osDriver->setChecked(true);
   } else if (isNonVendor) {
       osDriver->setChecked(true);
-      vendorDriver->setCheckable(false);
+      vendorDriver->setDisabled(true);
   }
+  emit changed(false);
 }
 
 void PandaConfig::save()
@@ -266,15 +267,15 @@ bool PandaConfig::installMissing()
       return true;
 
   QStringList missingPackages = cliOut.split(",");
-  qDebug() << missingPackages;
 
   KProcess pmInstall;
-  pmInstall << "/usr/bin/pm-install" << "--nofork" << missingPackages;
+  pmInstall << "/usr/bin/pm-install" << "--hide-summary" <<missingPackages;
   pmInstall.setOutputChannelMode(KProcess::SeparateChannels);
 
   kapp->setOverrideCursor(QCursor(Qt::WaitCursor));
   int failed = pmInstall.execute();
+
   kapp->restoreOverrideCursor();
 
-  return !failed;
+  return bool(!failed);
 }
