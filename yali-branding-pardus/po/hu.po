@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 16:42+0200\n"
+"POT-Creation-Date: 2010-12-27 16:48+0200\n"
 "PO-Revision-Date: 2010-12-27 12:48+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -77,6 +77,10 @@ msgstr ""
 "mezőbe."
 
 #: ../release.xml.in.h:4
+msgid "All done!"
+msgstr ""
+
+#: ../release.xml.in.h:5
 msgid ""
 "Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
 "a number of multimedia editors and a massive file format and codec support "
@@ -92,23 +96,23 @@ msgstr ""
 "katalogizálására a Digikam szolgál. CD/DVD lemezek írására pedig használja a "
 "K3B programot..."
 
-#: ../release.xml.in.h:5
+#: ../release.xml.in.h:6
 msgid "Choose a password for administration and a hostname"
 msgstr "Válasszon rendszergazda jelszót és adjon nevet a számítógépnek"
 
-#: ../release.xml.in.h:6
+#: ../release.xml.in.h:7
 msgid "Choose your installation disk"
 msgstr "Válassza ki a telepítési lemezt"
 
-#: ../release.xml.in.h:7
+#: ../release.xml.in.h:8
 msgid "Choose your keyboard layout"
 msgstr "Válasszon billentyűzetkiosztást"
 
-#: ../release.xml.in.h:8
+#: ../release.xml.in.h:9
 msgid "Configure the bootloader"
 msgstr "A rendszerbetöltő beállítása"
 
-#: ../release.xml.in.h:9
+#: ../release.xml.in.h:10
 msgid ""
 "Date and time settings allows you to set the date and time of your computer. "
 "You may also want to specify a correct timezone upon your location in order "
@@ -124,7 +128,7 @@ msgstr ""
 "időnek hívnak. A hagyományok szerint az időzónákban a helyi időt az UTC-ből "
 "(Coordinated Universal Time) számítják."
 
-#: ../release.xml.in.h:10
+#: ../release.xml.in.h:11
 msgid ""
 "Do you have a habit of customization? Kaptan is there for you. Kaptan is an "
 "end-user configuration assistant which helps you to customize your system "
@@ -146,7 +150,7 @@ msgstr ""
 "is bármikor el tudja indítani. &lt;br&gt;Tipp: Az Alt+F2 megnyomásával "
 "előhívhatja a rendszer alkalmazásindítóját"
 
-#: ../release.xml.in.h:11
+#: ../release.xml.in.h:12
 msgid ""
 "Dolphin is the file manager of KDE and so Pardus. It gives a great set of "
 "features where it becomes surprising that a simple file manager may have so "
@@ -165,11 +169,11 @@ msgstr ""
 "előnézete választhatóan megtekinthető a teljesen igény szerint alakítható "
 "Információs sávban.&lt;br&gt;&lt;br&gt;"
 
-#: ../release.xml.in.h:12
+#: ../release.xml.in.h:13
 msgid "Double check your installation medium"
 msgstr "Ellenőrizze a telepítő adathordozót!"
 
-#: ../release.xml.in.h:13
+#: ../release.xml.in.h:14
 msgid ""
 "Fun is a serious matter... Everyone has the right to relax for a moment with "
 "the help of a sudoku puzzle or a simple game. Pardus has some little, "
@@ -184,20 +188,20 @@ msgstr ""
 "Ha ön számítógép játékos is, mindenképpen nézze meg a Csomagkezelő játék "
 "szekcióját játékok százai várnak Önre, köztük szimulátorok, FPS-ek, stb."
 
-#: ../release.xml.in.h:14
+#: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
 msgstr "Felkészülés a Pardus telepítésére"
 
-#: ../release.xml.in.h:15
+#: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implentation is complete."
 msgstr "A Kahya implementálásakor lesz elérhető súgó is."
 
-#: ../release.xml.in.h:16
+#: ../release.xml.in.h:17
 msgid ""
 "Here you can review your options before the installation process starts."
 msgstr "Itt áttekintheti a beállításait a telepítés megkezdése előtt."
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:18
 msgid ""
 "If you are a part of a local network, you can reach to the other systems "
 "from the Network link on Dolphin. Pardus will list all the shared places "
@@ -218,15 +222,19 @@ msgstr ""
 "önműködően beállításra kerül. Annyit kell tennie, hogy kinyomtatja "
 "dokumentumait."
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:19
+msgid "Installation complete"
+msgstr ""
+
+#: ../release.xml.in.h:20
 msgid "Installation complete!"
 msgstr ""
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:21
 msgid "Installing Pardus"
 msgstr "A Pardus telepítése"
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:22
 msgid ""
 "KDE is the desktop choice of Pardus, a software collection for desktop use "
 "with hundreds, even thousands of programs targeting different purposes. For "
@@ -244,11 +252,11 @@ msgstr ""
 "a használatát javasoljuk, de támogatunk más könnyedén használható, alacsony "
 "erőforrásigényű környezeteket is, mint pl. az Enlightment vagy az Xfce."
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:23
 msgid "Kahya"
 msgstr "Kahya"
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:24
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
 "Kontact is a seamless integration of a number of applications to achieve a "
@@ -268,7 +276,7 @@ msgstr ""
 "email feladója éppen elérhető-e.&lt;br&gt;&lt;br&gt;Ragadós cetliket "
 "készíthet a munkaasztálara feladataiból, vagy fordítva, egyszerű áthúzással."
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:25
 msgid ""
 "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice "
 "gives a stable, fast and free office experience while all your software and "
@@ -289,7 +297,7 @@ msgstr ""
 "bemutatók készítésére szolgál.&lt;br&gt;&lt;br&gt;A Pardus a még jobb élmény "
 "érdekében számos kiegészítést és bővítményt csomagolt hozzá."
 
-#: ../release.xml.in.h:24
+#: ../release.xml.in.h:26
 msgid ""
 "Multiple users can share the same computer safely with Pardus. An "
 "administrator account with the name &quot;root&quot; will be set "
@@ -310,7 +318,7 @@ msgstr ""
 "menüben található Felhasználókezelő segítségével módosíthatja a számítógép "
 "felhasználóit."
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:28
 #, no-c-format
 msgid ""
 "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet "
@@ -332,7 +340,7 @@ msgstr ""
 "&lt;br&gt;A Pardus más ingyenes böngészőket is kínál, köztük a Chromoiumot, "
 "a Konqueror-t és az Operát."
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:29
 msgid ""
 "Pardus experience may be summarized as a bright and powerful parade of free "
 "and open source softwares. You will meet some of the old friends, such as "
@@ -346,7 +354,7 @@ msgstr ""
 "mivel a Pardus fejlesztői az Ön rendszeréhez igazították őket. Amíg a "
 "telepítés halad, esetleg megtekintheti ezeket a sajátosságokat..."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -361,7 +369,7 @@ msgstr ""
 "használható, vagy beépítve a Rendszerbeállítások alkalmazásba, amely az "
 "ilyen jellegű feladatok gyűjtőhelye."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:31
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, and various softwares of the GNU "
@@ -386,27 +394,27 @@ msgstr ""
 "kattintással, vagy a weblapunkon. &lt;br&gt;&lt;br&gt;A Pardus telepítéséhez "
 "valamennyi felhasználói licenszmegállapodást el kell fogadnia."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:32
 msgid "Partition your disk manually"
 msgstr "Lemezek kézi partícionálása"
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:33
 msgid "Select a partitioning method"
 msgstr "Válasszon partícionálási módot"
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:34
 msgid "Set your local time and date"
 msgstr "Helyi dátum és idő beállítása"
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:35
 msgid "Setup your account"
 msgstr "Felhasználói beállítások"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:36
 msgid "Summary"
 msgstr "Összefoglalás"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -428,13 +436,13 @@ msgstr ""
 "menürendszeréből, melyet a legelső indítás során, a Kaptan segítségével "
 "állíthat be."
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
 msgstr ""
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -449,11 +457,11 @@ msgstr ""
 "At-Once) módban kiírni, alacsonyabb írási sebesség mellett (4x a DVD "
 "lemezek, 8-12x a CD lemezek számára)."
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 msgid "Welcome back..."
 msgstr "A Pardus üdvözli Önt..."
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
 "experience. Dolphin offers web-like features suh as tabbed browsing, folder "
@@ -472,7 +480,7 @@ msgstr ""
 "segítségével. Így tehát a távoli helyek is úgy kezelhetők, mintha az Ön "
 "saját meghajtóján léteznének."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -498,7 +506,7 @@ msgstr ""
 "használja a \"Saját beállítások\" lehetőséget. Tanácsos biztonsági mentést "
 "végezni a problémák elkerülése érdekében."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -515,7 +523,7 @@ msgstr ""
 "kiadása által kínált rendszer képességeinek és a bevezett újítások  "
 "bemutatóját."
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -528,7 +536,7 @@ msgstr ""
 "minden előnyét élvezheti.&lt;br&gt;&lt;br&gt;Kattintson a Tovább gombra a "
 "következő lépéshez. Csak egy megjegyzés: Ugye emlékszik a jelszavára?"
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -536,7 +544,7 @@ msgid ""
 "the dvd or release the image in virtual machies)."
 msgstr ""
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -565,7 +573,7 @@ msgstr ""
 "&lt;br&gt;&lt;br&gt; További információkért tanulmányozza a weboldalunkon "
 "található Pardus Telepítési és Felhasználói Útmutatót."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -581,7 +589,7 @@ msgstr ""
 "van szüksége, vagy segítene másoknak, az első megállója a www.ozgurlukicin."
 "com legyen."
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -592,7 +600,7 @@ msgstr ""
 "szükség (10GB ajánlott). Válassza ki a telepítésre használandó lemezt. A "
 "következő lépésben választani tud majd több partícionálási lehetőség közül."
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:49
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
