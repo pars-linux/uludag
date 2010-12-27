@@ -160,15 +160,20 @@ void PandaConfig::load()
   QByteArray currentDriver = p->readAllStandardOutput();
   QString vendor = "vendor";
   QString os = "os";
+  QString nonvendor = "nonvendor";
   QString pandaOutput = QString(currentDriver).trimmed();
 
   bool isVendor = (vendor == pandaOutput);
   bool isOs = (os == pandaOutput);
+  bool isNonVendor = (nonvendor == pandaOutput);
 
   if (isVendor){
       vendorDriver->setChecked(true);
   } else if (isOs) {
       osDriver->setChecked(true);
+  } else if (isNonVendor) {
+      osDriver->setChecked(true);
+      vendorDriver->setCheckable(false);
   }
 }
 
@@ -216,11 +221,36 @@ void PandaConfig::save()
 
 }
 
-
 void PandaConfig::defaults()
 {
+  QStringList cliArgs;
+  cliArgs << "cur";
+  QString program = "/usr/libexec/panda-helper";
+
+  QProcess *p = new QProcess(this);
+  p->start(program, cliArgs);
+  p->waitForFinished();
+
+  QByteArray currentDriver = p->readAllStandardOutput();
+  QString vendor = "vendor";
+  QString os = "os";
+  QString nonvendor = "nonvendor";
+  QString pandaOutput = QString(currentDriver).trimmed();
+
+  bool isVendor = (vendor == pandaOutput);
+  bool isOs = (os == pandaOutput);
+  bool isNonVendor = (nonvendor == pandaOutput);
+
+  if (isVendor){
       osDriver->setChecked(true);
-      emit changed(true);
+  } else if (isOs) {
+      osDriver->setChecked(true);
+  } else if (isNonVendor) {
+      osDriver->setChecked(true);
+      vendorDriver->setCheckable(false);
+  }
+  osDriver->setChecked(true);
+  emit changed(true);
 }
 
 bool PandaConfig::installMissing()
