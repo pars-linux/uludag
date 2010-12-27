@@ -51,6 +51,7 @@ def argument():
     # We have to set them all to false, otherwise optional arguments are not
     # passed to the args() namespace
     parser.set_defaults(cur=None,
+                        check=None,
                         up=None)
 
     return parser.parse_args()

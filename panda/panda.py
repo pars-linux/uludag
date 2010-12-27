@@ -197,7 +197,7 @@ class Panda():
                             return "os"
                             #return self.os_driver
                         else:
-                            return "os"
+                            return "nonvendor"
 
                     elif arg == "os":
                         blacklist = [x for x in blacklist if x != self.os_driver]
