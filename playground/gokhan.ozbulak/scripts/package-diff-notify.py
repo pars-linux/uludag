@@ -144,9 +144,9 @@ def fetch_repos():
 
     pisi_index = pisi.index.Index()
     for order, repo in enumerate(REPO_LIST):
+        print "Parsing index file %s" % repo
         if OPTIONS.uselocal:
             # Use the local index files
-            print "Reading and extracting the pisi-index file from local file system for repo %s..." % (order + 1)
 
             if repo.endswith(".bz2"):
                 decompressed_index = bz2.decompress(open(repo, "r").read())
@@ -155,7 +155,6 @@ def fetch_repos():
                 decompressed_index = lzma.decompress(open(repo, "r").read())
         else:
             # Use the remote index files
-            print "Reading and extracting the pisi-index file from remote machine for repo %s..." % (order + 1)
 
             if repo.endswith(".bz2"):
                 decompressed_index = bz2.decompress(urllib2.urlopen(repo).read())
@@ -167,17 +166,15 @@ def fetch_repos():
         # Populate DISTRO_LIST in order of iteration done for repositories
         DISTRO_LIST.append("%s %s" %(pisi_index.distribution.sourceName, pisi_index.distribution.version))
 
-        component_list = []
+        exclude_list = ["desktop.kde", "kernel"]
         if OPTIONS.exclude:
             # Trim input coming from cmd line
-            component_list = map(string.strip, OPTIONS.exclude.split(","))
+            exclude_list.extend([pkg.strip() for pkg in OPTIONS.exclude.split(",")])
 
-        # Update "repos" structure with current spec info
-        print "Fetching package information from repo %s..." % (order + 1)
         for spec in pisi_index.specs:
             omitSpec = False
             # Not interested in component(s) excluded if any
-            for component in component_list:
+            for component in exclude_list:
                 if spec.source.partOf.startswith(component):
                     omitSpec = True
                     break
@@ -277,7 +274,8 @@ def prepare_content_body(packager):
 
     if OPTIONS.package:
         # Trim input coming from cmd line
-        package_list = map(string.strip, OPTIONS.package.split(","))
+        package_list = package_list.extend([pkg.strip() \
+                for pkg in OPTIONS.package.split(",")])
     else:
         package_list = REPOS[packager].keys()
 
