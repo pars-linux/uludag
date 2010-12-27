@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 08:57+0200\n"
+"POT-Creation-Date: 2010-12-27 11:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,19 +38,15 @@ msgid "Driver Preference"
 msgstr ""
 
 #: panda.cpp:120
-msgid "Use open source driver"
+msgid "Use the driver developed by the open source community"
 msgstr ""
 
 #: panda.cpp:121
-msgid "Use vendor driver"
+msgid "Use the proprietary driver provided by the manufacturer"
 msgstr ""
 
 #: panda.cpp:134
-msgid "kcmpanda"
-msgstr ""
-
-#: panda.cpp:134
-msgid "KDE Panda Control Module"
+msgid "Video Driver Administration"
 msgstr ""
 
 #: panda.cpp:136
@@ -74,7 +70,7 @@ msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr ""
 
 #: panda.cpp:197
-msgid "Error handler for custom errors should be setup here"
+msgid "An internal error occurred"
 msgstr ""
 
 #: panda.cpp:205
