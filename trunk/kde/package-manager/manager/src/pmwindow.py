@@ -82,7 +82,12 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.button_cancel.clicked.connect(self.actionCancelled)
         self.button_cancel.setIcon(KIcon("dialog-cancel"))
 
-        self.rejected.connect(lambda: sys.exit(3))
+        self.rejected.connect(self.actionCancelled)
+
+    def reject(self):
+        if self.iface.operationInProgress():
+            return
+        QDialog.reject(self)
 
     def installPackages(self):
 

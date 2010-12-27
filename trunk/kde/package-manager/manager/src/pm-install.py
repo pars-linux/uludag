@@ -54,7 +54,7 @@ if __name__ == '__main__':
     argv = list(set(sys.argv[1:]) - set(packages))
     argv.append('--nofork')
     argv.insert(0, sys.argv[0])
-    print argv
+
     if len(sys.argv) > 1:
 
         aboutData.setAppName("pm-install")
