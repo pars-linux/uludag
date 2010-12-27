@@ -228,7 +228,7 @@ class diskForm(mainForm):
                 label = "%s  (%s)\n%s" % (device, size, model)
                 disk = QListViewItem(self.list_main, label)
                 disk.setMultiLinesEnabled(True)
-                disk.setPixmap(0,loadIcon('Disk', size=32))
+                disk.setPixmap(0,loadIcon('mounted', size=32))
                 disk.setOpen(True)
                 disk.setVisible(False)
                 # Get parts
@@ -243,12 +243,14 @@ class diskForm(mainForm):
                     sda1 = dsk.getPartitionByPath(part)
                     size = self.humanReadableSize(sda1.getSize(unit="B"))
                     label = "%s (%s)\n%s" % (part, size, info)
-                    pixie = loadIcon('DiskAdded', size=32)
                 else:
                     dsk = parted.Disk(parted.Device(part.rstrip(string.digits)))
                     info = self.getFSType(part).upper()
                     label = "%s\n%s" % (part, info)
-                    pixie = loadIcon('DiskNotAdded', size=32)
+                if self.link.Disk.Manager[self.package].isMounted(part):
+                    pixie = loadIcon('mounted', size=32)
+                else:
+                    pixie = loadIcon('notmounted', size=32)
                 listItem.setVisible(True)
                 disk_part = QListViewItem(listItem, label)
                 disk_part.setMultiLinesEnabled(True)

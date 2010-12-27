@@ -66,7 +66,7 @@ kdedistutils.setup(
     min_qt_version = "3.3.5",
     license = "GPL",
     application_data = ['src/diskform.ui', 'src/disk-manager.py',
-                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/disk_manager.png','src/Disk.png','src/DiskAdded.png','src/DiskNotAdded.png']),
+                        ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/disk_manager.png', 'src/mounted.png', 'src/notmounted.png']),
                         'help'],
     executable_links = [('disk-manager','disk-manager.py')],
     i18n = ('po',['src']),
