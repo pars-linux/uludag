@@ -261,7 +261,7 @@ msgstr "Benutzer ablehnen"
 
 #: ui/ui_edituser.py:243 ui/ui_edituser.py:246
 msgid "Start typing to filter"
-msgstr ""
+msgstr "Tippen Sie um zu filtern"
 
 #: ui/ui_edituser.py:244
 msgid "Authorizations"
