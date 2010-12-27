@@ -40,10 +40,11 @@ from PyKDE4.kdecore import KComponentData
 
 class PmWindow(QDialog, PM, Ui_PmWindow):
 
-    def __init__(self, app = None, packages = []):
+    def __init__(self, app = None, packages = [], hide_summary = False):
         QDialog.__init__(self, None)
         self.setupUi(self)
 
+        self.hide_summary = hide_summary
         self.state = StateManager(self)
         self.iface = self.state.iface
         self.state._selected_packages = packages
@@ -53,7 +54,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
             for package in self.state._selected_packages:
                 if package not in available_packages:
                     self.exceptionCaught('HTTP Error 404', package)
-                    sys.exit()
+                    sys.exit(1)
 
         self.model = PackageModel(self)
         self.model.setCheckable(False)
@@ -74,11 +75,14 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
 
         self.connectOperationSignals()
         self.state.state = StateManager.INSTALL
-        self.button_install.clicked.connect(self.installPackages)
 
+        self.button_install.clicked.connect(self.installPackages)
         self.button_install.setIcon(KIcon("list-add"))
+
+        self.button_cancel.clicked.connect(self.actionCancelled)
         self.button_cancel.setIcon(KIcon("dialog-cancel"))
 
+        self.rejected.connect(lambda: sys.exit(3))
 
     def installPackages(self):
 
@@ -98,10 +102,12 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         if actions:
             reinstall = True
 
-        operation = self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall, silence = True)
+        operation = self.state.operationAction(self.model.selectedPackages(),
+                                               reinstall = reinstall,
+                                               silence = True)
 
         if operation == False:
-            sys.exit()
+            sys.exit(1)
 
     def actionStarted(self, operation):
         totalPackages = len(self.state._selected_packages)
@@ -122,14 +128,21 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
                          "System.Manager.updatePackage"):
             self.notifyFinished()
 
-        if operation == "System.Manager.installPackage":
+        if operation == "System.Manager.installPackage" and not self.hide_summary:
             self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
             self.summaryDialog.showSummary()
             self.hide()
 
         if not self.summaryDialog.hasApplication():
-            QTimer.singleShot(1000, sys.exit)
+            # Package install succesfull return value is 0
+            QTimer.singleShot(10, lambda: sys.exit(0))
 
     def actionCancelled(self):
-        self.progressDialog._hide()
+        # Package install failed with user cancel, return value is 3
+        sys.exit(3)
+
+    def exceptionCaught(self, message, package = ''):
+        PM.exceptionCaught(self, message, package)
+        # Package install failed with some kind of error, return value is 1
+        sys.exit(1)
 

@@ -16,7 +16,6 @@ import sys
 import traceback
 import context as ctx
 
-from PyQt4 import QtGui
 from PyQt4.QtGui import QDesktopWidget
 from PyQt4.QtCore import *
 
@@ -27,8 +26,9 @@ from pmlogging import logger
 import config
 import signal
 
-from PyKDE4.kdecore import i18n
+from PyKDE4.kdecore import i18n, ki18n
 from PyKDE4.kdecore import KCmdLineArgs
+from PyKDE4.kdecore import KCmdLineOptions
 from PyKDE4.kdeui import KUniqueApplication
 
 from pmwindow import PmWindow
@@ -51,21 +51,32 @@ if __name__ == '__main__':
 
     packages = filter(lambda x: not x.startswith('-'), sys.argv[1:])
 
-    argv = list(set(sys.argv) - set(packages))
+    argv = list(set(sys.argv[1:]) - set(packages))
     argv.append('--nofork')
-
+    argv.insert(0, sys.argv[0])
+    print argv
     if len(sys.argv) > 1:
 
         aboutData.setAppName("pm-install")
         KCmdLineArgs.init(argv, aboutData)
 
+        # Add Command Line options
+        options = KCmdLineOptions()
+        options.add("hide-summary", ki18n("Hide summary screen"))
+        KCmdLineArgs.addCmdLineOptions(options)
+
         app = KUniqueApplication(True, True)
         setSystemLocale()
 
-        window = PmWindow(app, packages)
+        args = KCmdLineArgs.parsedArgs()
+
+        window = PmWindow(app, packages, hide_summary = args.isSet("hide-summary"))
         window.show()
         app.exec_()
 
     else:
         parser.print_usage()
+        sys.exit(1)
+
+    sys.exit(0)
 
