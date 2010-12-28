@@ -58,6 +58,7 @@
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedPackage>NetworkManager</SelectedPackage>
+                <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>device-mapper</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
                 <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
@@ -339,6 +340,7 @@
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
+        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>

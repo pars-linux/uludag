@@ -275,6 +275,7 @@
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>python-guestlogin</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
+                <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>konversation</SelectedPackage>
@@ -1342,6 +1343,7 @@
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
+        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
