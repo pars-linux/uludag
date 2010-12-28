@@ -90,14 +90,18 @@ class Panda():
 
         self.kernel_flavors = kernel_dict
 
-    def __get_blacklisted_packages(self):
+    def get_blacklisted_modules(self):
         if self.driver_name is None:
             self.__get_primary_driver()
 
         if self.driver_name == "fglrx":
             self.os_driver = "radeon"
+            return self.os_driver
         elif self.driver_name in ["nvidia-current", "nvidia96", "nvidia173"]:
             self.os_driver = "nouveau"
+            return self.os_driver
+        else:
+            return
 
 
     def get_needed_driver_packages(self, kernel_flavors=None, installable=False):
@@ -137,7 +141,7 @@ class Panda():
     def update_grub_entries(self, arg="status"):
         '''Edit grub file to enable the use of propretiary graphic card drivers'''
         if self.os_driver is None:
-            self.__get_blacklisted_packages()
+            self.get_blacklisted_modules()
 
         if self.kernel_flavors is None:
             self.__get_kernel_flavors()
@@ -229,6 +233,7 @@ class Panda():
 if __name__ == '__main__':
     p = Panda()
     print p.get_all_driver_packages()
+    print p.get_blacklisted_modules()
     print p.update_grub_entries("status")
     print p.get_needed_driver_packages(installable=False)
 
