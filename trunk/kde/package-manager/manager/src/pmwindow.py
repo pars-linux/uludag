@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 
 from PyQt4.QtGui import QDialog
@@ -26,6 +27,7 @@ from operationmanager import OperationManager
 
 from pmutils import PM
 from pmutils import askForActions
+from pmutils import get_real_paths
 
 from ui_pminstall import Ui_PmWindow
 from summarydialog import SummaryDialog
@@ -49,12 +51,26 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.iface = self.state.iface
         self.state._selected_packages = packages
 
-        if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+        # Check given package names available in repositories
+        if not any(package.endswith('.pisi') for package in packages):
             available_packages = self.state.packages()
-            for package in self.state._selected_packages:
+            for package in packages:
                 if package not in available_packages:
                     self.exceptionCaught('HTTP Error 404', package)
                     sys.exit(1)
+
+        # Check if local/remote packages mixed with repo packages
+        # which pisi does not support to handle these at the same time
+        else:
+            if not all(package.endswith('.pisi') for package in packages):
+                self.exceptionCaught('MIXING PACKAGES')
+                sys.exit(1)
+            # Check given local packages if exists
+            for package in get_real_paths(packages):
+                if '://' not in package and package.endswith('.pisi'):
+                    if not os.path.exists(package):
+                        self.exceptionCaught('FILE NOT EXISTS', package)
+                        sys.exit(1)
 
         self.model = PackageModel(self)
         self.model.setCheckable(False)

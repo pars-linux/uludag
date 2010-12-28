@@ -16,6 +16,7 @@ import string
 import comar
 import pisi
 
+from pmutils import get_real_paths
 from pmlogging import logger
 from os import path
 
@@ -44,6 +45,7 @@ class Iface(Singleton):
             if path.exists(name):
                 meta, files = pisi.api.info_file(name)
                 pkg = meta.package
+                pkg.name = name
             else:
                 pkg = pisi.metadata.Package()
                 pkg.name = name.split('/')[-1]
@@ -62,11 +64,13 @@ class Iface(Singleton):
         return pkg
 
     def installPackages(self, packages):
+        packages = get_real_paths(packages)
         logger.debug("Installing packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].installPackage(packages, async=self.handler, timeout=2**16-1)
 
     def reinstallPackages(self, packages):
+        packages = get_real_paths(packages)
         logger.debug("Re-Installing packages: %s" % packages)
         packages = string.join(packages,",")
         self.link.System.Manager["pisi"].reinstallPackage(packages, async=self.handler, timeout=2**16-1)
