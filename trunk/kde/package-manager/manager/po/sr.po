@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-11-11 11:15+0200\n"
+"POT-Creation-Date: 2010-12-28 12:04+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -22,7 +22,7 @@ msgid "Add or Remove Software"
 msgstr "Додај или уклони софтвер"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:67
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:59
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Менаџер пакета"
@@ -74,60 +74,58 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/basketdialog.py:69 src/mainwidget.py:306 src/mainwidget.py:311
-#: src/settingsdialog.py:222 src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
+#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
+#: src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
 
-#: src/basketdialog.py:164
-msgid "Do you want to continue ?"
-msgstr "Да ли желите да наставите ?"
-
-#: src/basketdialog.py:177
+#: src/basketdialog.py:169
 #, fuzzy
 msgid "You must restart your system for the updates to take effect"
 msgstr "Морате <b>restartрестартовати</b> свој систем да би ажурирање следећег(их) пакета имало дејства:"
 
-#: src/basketdialog.py:179 src/basketdialog.py:187
+#: src/basketdialog.py:171 src/basketdialog.py:179
 msgid "Update Requirements"
 msgstr "Неопходно за ажурирање"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:172
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:185
+#: src/basketdialog.py:177
 #, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Морате рестартовати следеће службе система да би ажурирани пакет(и) имао(ли) дејства:"
 
-#: src/basketdialog.py:188
+#: src/basketdialog.py:180
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:190
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:201 src/settingsdialog.py:161
+#: src/basketdialog.py:193 src/settingsdialog.py:161
 msgid "Warning"
 msgstr "Упозорење"
 
-#: src/basketdialog.py:202
+#: src/basketdialog.py:194
 #, fuzzy
 msgid "Critical Packages"
 msgstr "Уклањање пакета"
 
-#: src/basketdialog.py:213
+#: src/basketdialog.py:204 src/pmwindow.py:115
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:215
+#: src/basketdialog.py:206 src/pmwindow.py:117
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Инсталирај пакет(е)"
 
-#: src/basketdialog.py:216 src/mainwindow.py:148 src/mainwindow.py:151
+#: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
+#: src/pmwindow.py:118
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Инсталирај пакет(е)"
@@ -140,53 +138,32 @@ msgstr "Све"
 msgid "Package Manager Help"
 msgstr "Помоћ за менаџер пакета"
 
-#: src/main.py:66
+#: src/main.py:57
 msgid "Show main window"
 msgstr "Прикажи главни прозор"
 
-#: src/mainwidget.py:147
+#: src/mainwidget.py:139
 #, fuzzy
 msgid "All packages are up to date"
 msgstr "Сви пакети су ажурирани"
 
-#: src/mainwidget.py:233
+#: src/mainwidget.py:228
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:245
+#: src/mainwidget.py:240
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:300
-msgid "Network Error"
-msgstr "Мрежна грешка"
-
-#: src/mainwidget.py:301
-msgid "Please check your network connections and try again."
-msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
-
-#: src/mainwidget.py:303
-msgid "Authorization Error"
-msgstr "Грешка у вези овлашћења"
-
-#: src/mainwidget.py:304
-msgid "You are not authorized for this operation."
-msgstr "Нисте овлашћени за ову операцију."
-
-#: src/mainwidget.py:307
-#, fuzzy, python-format
-msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
-
-#: src/mainwidget.py:446
+#: src/mainwidget.py:390
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:447
+#: src/mainwidget.py:391
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:448
+#: src/mainwidget.py:392
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
@@ -223,96 +200,133 @@ msgstr "инсталирано"
 msgid "removing"
 msgstr "уклоњено"
 
-#: src/operationmanager.py:42 src/progressdialog.py:79
+#: src/operationmanager.py:42 src/progressdialog.py:71
 msgid "extracting"
 msgstr "отпакивање"
 
-#: src/operationmanager.py:43 src/progressdialog.py:79
+#: src/operationmanager.py:43 src/progressdialog.py:71
 msgid "configuring"
 msgstr "конфигурисање"
 
-#: src/operationmanager.py:133
+#: src/operationmanager.py:136
 msgid "downloading"
 msgstr "преузимање"
 
-#: src/packagedelegate.py:60
+#: src/packagedelegate.py:61
 msgid "critical"
 msgstr "критично"
 
-#: src/packagedelegate.py:61
+#: src/packagedelegate.py:62
 msgid "security"
 msgstr "сигурност"
 
-#: src/packagedelegate.py:77
+#: src/packagedelegate.py:78
 msgid "Description:"
 msgstr "Опис:"
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:79
 msgid "Website:"
 msgstr "Веб страница:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:80
 msgid "Release:"
 msgstr "Издање:"
 
-#: src/packagedelegate.py:80
+#: src/packagedelegate.py:81
 msgid "Repository:"
 msgstr "Репозиторијум:"
 
-#: src/packagedelegate.py:81
+#: src/packagedelegate.py:82
 msgid "Package Size:"
 msgstr "Величина пакета:"
 
-#: src/packagedelegate.py:82
+#: src/packagedelegate.py:83
 msgid "Installed Version:"
 msgstr "Инсталирана верзија:"
 
-#: src/packagedelegate.py:282
+#: src/packagedelegate.py:283
 msgid "Details"
 msgstr ""
 
-#: src/packageview.py:24 ui/ui_mainwidget_kde4.py:96
-#: ui/ui_mainwidget_x11.py:85
+#: src/packageview.py:24
 msgid "Select all packages in this group"
 msgstr ""
 
-#: src/pm-install.py:57
+#: src/pm-install.py:49
 msgid "%prog packages_to_install"
 msgstr "%prog пакета да се инсталира"
 
-#: src/progressdialog.py:75
+#: src/pm-install.py:65
+msgid "Hide summary screen"
+msgstr ""
+
+#: src/pmutils.py:65 src/statemanager.py:240
+msgid "Network Error"
+msgstr "Мрежна грешка"
+
+#: src/pmutils.py:66 src/statemanager.py:241
+msgid "Please check your network connections and try again."
+msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
+
+#: src/pmutils.py:68
+msgid "Authorization Error"
+msgstr "Грешка у вези овлашћења"
+
+#: src/pmutils.py:69
+msgid "You are not authorized for this operation."
+msgstr "Нисте овлашћени за ову операцију."
+
+#: src/pmutils.py:72
+#, fuzzy, python-format
+msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
+msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
+
+#: src/pmutils.py:77
+msgid "Mixing file names and package names not supported yet."
+msgstr ""
+
+#: src/pmutils.py:80
+#, python-format
+msgid "File <b>%s</b> doesn't exists."
+msgstr ""
+
+#: src/pmutils.py:95
+msgid "Do you want to continue ?"
+msgstr "Да ли желите да наставите ?"
+
+#: src/progressdialog.py:67
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:76
+#: src/progressdialog.py:68
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операција - %1%"
 
-#: src/progressdialog.py:83
+#: src/progressdialog.py:75
 msgid "Downloading package list of %1"
 msgstr "Преузимање листе пакета од %1"
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:77
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:90
+#: src/progressdialog.py:82
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:97
+#: src/progressdialog.py:89
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 пакет %3"
 
-#: src/progressdialog.py:114
+#: src/progressdialog.py:106
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Припремање ПиСија...</h3>"
 
-#: src/progressdialog.py:125
+#: src/progressdialog.py:117
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Поништавање операције...</b>"
 
@@ -374,8 +388,7 @@ msgid "modified"
 msgstr ""
 
 #: src/statemanager.py:100 ui/ui_basketdialog.py:188
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_v3.py:187
-#: ui/ui_mainwidget_x11.py:83
+#: ui/ui_mainwidget_v3.py:174
 msgid "Install Package(s)"
 msgstr "Инсталирај пакет(е)"
 
@@ -439,39 +452,39 @@ msgstr ""
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr ""
 
-#: src/statemanager.py:159
+#: src/statemanager.py:167
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:162
+#: src/statemanager.py:170
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:164
+#: src/statemanager.py:172
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:165
+#: src/statemanager.py:173
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:193
+#: src/statemanager.py:206
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr ""
 
-#: src/statemanager.py:194 src/statemanager.py:202
+#: src/statemanager.py:207 src/statemanager.py:215
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:198
+#: src/statemanager.py:211
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:200
+#: src/statemanager.py:213
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:201
+#: src/statemanager.py:214
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -493,7 +506,7 @@ msgstr ""
 msgid "Show Updates"
 msgstr ""
 
-#: src/webdialog.py:110 ui/ui_webdialog.py:169
+#: src/webdialog.py:111 ui/ui_webdialog.py:169
 #, fuzzy
 msgid "Package Files"
 msgstr "Величина пакета:"
@@ -510,7 +523,7 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: ui/ui_basketdialog.py:182 ui/ui_webdialog.py:166 ui/ui_webdialog_v2.py:71
+#: ui/ui_basketdialog.py:182 ui/ui_webdialog.py:166
 msgid "Basket"
 msgstr ""
 
@@ -534,109 +547,62 @@ msgstr ""
 msgid "<b>2.0 MB</"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_v3.py:178
-#: ui/ui_mainwidget_x11.py:76 ui/ui_message.py:42 ui/ui_pminstaller.py:34
-#: ui/ui_progressdialog_v3.py:176 ui/ui_progressdialog_v4.py:189
+#: ui/ui_mainwidget_v3.py:165 ui/ui_message.py:42
+#: ui/ui_progressdialog_v4.py:189
 msgid "Form"
 msgstr ""
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_v3.py:183
-#: ui/ui_mainwidget_x11.py:77
-msgid "Category Panel"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_v3.py:180
-#: ui/ui_mainwidget_x11.py:78
-msgid "Search Bar"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_v3.py:181
-#: ui/ui_mainwidget_x11.py:79
-msgid "Click to search"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
-msgid "Search Button"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
-msgid "Search"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
-msgid "Action Button for current states action"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:95 ui/ui_mainwidget_x11.py:84
-msgid "Toggler for selection all packages in Package List"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_v3.py:184
-#: ui/ui_mainwidget_x11.py:86
-msgid "Package List"
-msgstr ""
-
-#: ui/ui_mainwidget_kde4.py:98 ui/ui_mainwidget_v3.py:182
-#: ui/ui_mainwidget_x11.py:87
-msgid "Update Types"
-msgstr ""
-
-#: ui/ui_mainwidget_v3.py:179
+#: ui/ui_mainwidget_v3.py:166
 msgid "Settings"
 msgstr "Подешавања"
 
-#: ui/ui_mainwidget_v3.py:185
+#: ui/ui_mainwidget_v3.py:167
+msgid "Search Bar"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:168
+msgid "Click to search"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:169
+msgid "Update Types"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:170
+msgid "Category Panel"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:85
+msgid "Package List"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:172
 msgid "Show Basket"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:186
+#: ui/ui_mainwidget_v3.py:173
 #, fuzzy
 msgid "Check for Updates"
 msgstr "Сигурносне исправке"
 
-#: ui/ui_progressdialog.py:154
-msgid "Operation"
+#: ui/ui_pminstall.py:83
+#, fuzzy
+msgid "Package Manager Quick Install"
+msgstr "Подешавања"
+
+#: ui/ui_pminstall.py:84
+msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr ""
 
-#: ui/ui_progressdialog.py:155 ui/ui_progressdialog_v3.py:177
-msgid "<h3>Preparing PiSi...</h3>"
-msgstr "<h3>Припремање ПиСија...</h3>"
+#: ui/ui_pminstall.py:86
+#, fuzzy
+msgid "Install"
+msgstr "инсталирано"
 
-#: ui/ui_progressdialog.py:156 ui/ui_progressdialog_v3.py:183
-msgid "Time remaining:"
-msgstr "Преостало време:"
-
-#: ui/ui_progressdialog.py:157 ui/ui_progressdialog_v3.py:184
-msgid "--  / --"
-msgstr "--  / --"
-
-#: ui/ui_progressdialog.py:158 ui/ui_progressdialog_v3.py:185
-msgid "--:--:--"
-msgstr "--:--:--"
-
-#: ui/ui_progressdialog.py:159 ui/ui_progressdialog_v3.py:186
-msgid "Operation:"
+#: ui/ui_pminstall.py:87
+msgid "Cancel"
 msgstr ""
 
-#: ui/ui_progressdialog.py:160 ui/ui_progressdialog_v3.py:187
-msgid "Status:"
-msgstr "Статус:"
-
-#: ui/ui_progressdialog.py:161 ui/ui_progressdialog_v3.py:178
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-msgstr ""
-
-#: ui/ui_progressdialog.py:166 ui/ui_progressdialog_v3.py:188
-#: ui/ui_settingsdialog.py:370
-msgid "&Cancel"
-msgstr ""
-
-#: ui/ui_progressdialog.py:167 ui/ui_progressdialog_v3.py:189
 #: ui/ui_progressdialog_v4.py:190
 msgid "Alt+C"
 msgstr ""
@@ -667,6 +633,10 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:369
 msgid "&OK"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:370
+msgid "&Cancel"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:371
@@ -818,15 +788,15 @@ msgstr ""
 msgid "&Proxy"
 msgstr ""
 
-#: ui/ui_summarydialog.py:49
+#: ui/ui_summarydialog.py:62
 msgid "Operation Summary"
 msgstr ""
 
-#: ui/ui_summarydialog.py:50
+#: ui/ui_summarydialog.py:63
 msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
 msgstr ""
 
-#: ui/ui_summarydialog.py:51
+#: ui/ui_summarydialog.py:64
 msgid "&Ok"
 msgstr ""
 
@@ -846,25 +816,13 @@ msgid ""
 "Please check your network connection"
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
-#: ui/ui_webdialog_v2.py:72
-msgid "Close"
-msgstr ""
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
-
-#~ msgid "Quit"
-#~ msgstr "Прекид"
-
-#~ msgid "Help"
-#~ msgstr "Помоћ"
-
-#~ msgid "File"
-#~ msgstr "Фајл"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Прикажи пакете који могу да се ажурирају"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Уклањање пакета"
 
 #, fuzzy
 #~ msgid ""
@@ -873,9 +831,32 @@ msgstr ""
 #~ msgstr "Инсталирај пакет(е)"
 
 #, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Уклањање пакета"
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Прикажи пакете који могу да се ажурирају"
+#~ msgid "File"
+#~ msgstr "Фајл"
+
+#~ msgid "Help"
+#~ msgstr "Помоћ"
+
+#~ msgid "Quit"
+#~ msgstr "Прекид"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"
+
+#~ msgid "Status:"
+#~ msgstr "Статус:"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Преостало време:"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Припремање ПиСија...</h3>"
