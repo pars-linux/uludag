@@ -45,7 +45,6 @@ class Iface(Singleton):
             if path.exists(name):
                 meta, files = pisi.api.info_file(name)
                 pkg = meta.package
-                pkg.name = name
             else:
                 pkg = pisi.metadata.Package()
                 pkg.name = name.split('/')[-1]
