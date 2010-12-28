@@ -278,6 +278,7 @@
                 <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
+                <SelectedPackage>rfkill</SelectedPackage>
                 <SelectedPackage>konversation</SelectedPackage>
                 <SelectedPackage>konversation-docs</SelectedPackage>
                 <SelectedPackage>rdate</SelectedPackage>
