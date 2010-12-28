@@ -6,7 +6,6 @@ import sys
 import glob
 import pisi
 import shutil
-import argparse
 
 sysdir = "/sys/bus/pci/devices/"
 driversDB = "/usr/share/X11/DriversDB"
