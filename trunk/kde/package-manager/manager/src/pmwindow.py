@@ -13,6 +13,7 @@
 
 import os
 import sys
+import pisi
 
 from PyQt4.QtGui import QDialog
 from PyQt4.QtGui import QPixmap
@@ -132,8 +133,22 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
 
     def actionStarted(self, operation):
         totalPackages = len(self.state._selected_packages)
-        if not any(package.endswith('.pisi') for package in self.state._selected_packages):
-            totalPackages += len(self.state.iface.getExtras(self.state._selected_packages, self.state.state))
+
+        # Get a list of package names from given args.
+        # It may include a path to local package, a path to remote package
+        # or just a package name; following crypted code will remove
+        # remote paths, appends package name as is and uses the pisi.api
+        # to get package name from given local package path.
+        #
+        # Example:
+        # input : ['/tmp/ax-2.3-1.pisi', 'http://pardus.org.tr/tt-2.3.pisi', 'yali']
+        # output: ['ax', 'yali']
+        _pkgs = map(lambda x: pisi.api.info_file(x)[0].package.name \
+                        if x.endswith('.pisi') \
+                        else x, filter(lambda x: '://' not in x,
+                                        get_real_paths(self.state._selected_packages)))
+
+        totalPackages += len(self.state.iface.getExtras(_pkgs, self.state.state))
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
