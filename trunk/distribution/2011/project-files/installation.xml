@@ -275,6 +275,7 @@
                 <SelectedPackage>psutils</SelectedPackage>
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>python-guestlogin</SelectedPackage>
+                <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
@@ -1336,6 +1337,7 @@
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
+        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
