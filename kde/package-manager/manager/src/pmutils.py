@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 import urllib
 import unicodedata
@@ -57,7 +58,9 @@ class PM:
                 KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
 
     def exceptionCaught(self, message, package = ''):
-        self.progressDialog._hide()
+        if hasattr(self, "progressDialog"):
+            self.progressDialog.hide_()
+
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
@@ -69,12 +72,22 @@ class PM:
             errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
                                 "It may be upgraded or removed from the repository.<br>"\
                                 "Please try upgrading repository informations." % package)
+        elif "MIXING PACKAGES" in message:
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Mixing file names and package names not supported yet.")
+        elif "FILE NOT EXISTS" in message:
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("File <b>%s</b> doesn't exists." % package)
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
         self.messageBox.exec_()
+
+def get_real_paths(packages):
+    # If packages are not from repo or remote, find their absolute paths
+    return map(lambda x: x if not x.endswith('pisi') or '://' in x else os.path.abspath(x), packages)
 
 def askForActions(packages, reason, title, details_title):
     msgbox = QMessageBox()
