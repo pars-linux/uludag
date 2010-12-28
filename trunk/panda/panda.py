@@ -21,7 +21,6 @@ class Panda():
     '''Pardus Alternative Driver Administration'''
     def __init__ (self, default_args=None):
         self.driver_name = None
-        self.driver_packages = None
         self.kernel_flavors = None
         self.os_driver = None
         self.driver_packages = {"fglrx": ["module-fglrx",
