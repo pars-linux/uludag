@@ -9,6 +9,7 @@
 """"""""" USAGE
 " You can change the keybindings for your personal use
 nmap <F2>h :call FixHash()<CR>
+nmap <F2>a :call PackageTakeover()<CR>
 nmap <F2>c :call AddComment()<CR>
 nmap <F2>o :call OpenHomePage()<CR>
 nmap <F2>p :call AddPatches()<CR>
@@ -49,6 +50,36 @@ for row, line in enumerate(buf[:]):
         new_hash = hashlib.sha1(open(file_path, "r").read()).hexdigest()
         tag.setAttribute("sha1sum", new_hash)
         buf[row] = " " * 8 + tag.toString()
+EOF
+endfunction
+
+function! PackageTakeover()
+python << EOF
+import os
+import vim
+
+buf = vim.current.buffer
+
+conf_file = os.path.expanduser("~/.packagerinfo")
+if os.path.exists(conf_file):
+    # Read from it
+    name, email = open(conf_file, "r").read().strip().split(",")
+
+else:
+    name = vim.eval('input("Please enter your full name as seen in pspec files: ")')
+    email = vim.eval('input("Please enter your full email as seen in pspec files: ")')
+    open(conf_file, "w").write("%s,%s" % (name, email))
+
+pkgr_name = "            <Name>%s</Name>\n" % name
+pkgr_email = "            <Email>%s</Email>\n" % email
+
+for row, line in enumerate(buf[:]):
+    if "            <Name>" in line:
+        buf[row] = pkgr_name
+    elif "            <Email>" in line:
+        buf[row] = pkgr_email
+        break
+
 EOF
 endfunction
 
