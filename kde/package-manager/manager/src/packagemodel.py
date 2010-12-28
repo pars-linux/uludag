@@ -143,7 +143,7 @@ class PackageModel(QAbstractTableModel):
         if self.cached_package and self.cached_package.name == self.packages[index.row()]:
             return self.cached_package
         else:
-            self.cached_package = self.iface.getPackage(self.packages[index.row()])
+            self.cached_package = self.iface.getPackage(self.packages[index.row()], self.state.inUpgrade())
             return self.cached_package
 
     # FIXME: There should really be a better way to get this from proxy. Proxy's selectedIndexes only

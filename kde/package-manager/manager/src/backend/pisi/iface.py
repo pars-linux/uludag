@@ -40,7 +40,7 @@ class Iface(Singleton):
 
     # Std Package Actions ------------------------------------------------->>-
 
-    def getPackage(self, name):
+    def getPackage(self, name, forcePdb = False):
         if name.endswith('.pisi'):
             if path.exists(name):
                 meta, files = pisi.api.info_file(name)
@@ -52,7 +52,7 @@ class Iface(Singleton):
                 pkg.version = ''
             pkg._type = None
             pkg.installed = False
-        elif self.idb.has_package(name):
+        elif self.idb.has_package(name) and not forcePdb:
             pkg = self.idb.get_package(name)
             pkg._type = self.getUpdateType(pkg)
             pkg.installed = True
