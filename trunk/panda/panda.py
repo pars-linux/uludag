@@ -90,7 +90,7 @@ class Panda():
 
         self.kernel_flavors = kernel_dict
 
-    def get_blacklisted_modules(self):
+    def get_blacklisted_module(self):
         if self.driver_name is None:
             self.__get_primary_driver()
 
@@ -141,7 +141,7 @@ class Panda():
     def update_grub_entries(self, arg="status"):
         '''Edit grub file to enable the use of propretiary graphic card drivers'''
         if self.os_driver is None:
-            self.get_blacklisted_modules()
+            self.get_blacklisted_module()
 
         if self.kernel_flavors is None:
             self.__get_kernel_flavors()
