@@ -163,7 +163,7 @@
         <string>Cancel</string>
        </property>
        <property name="shortcut">
-        <string>Esc</string>
+        <string notr="true">Esc</string>
        </property>
       </widget>
      </item>
