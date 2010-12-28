@@ -193,6 +193,17 @@ class Widget(QtGui.QWidget, Screen):
 
             config.sync()
 
+
+        def deleteIconCache():
+            try:
+                os.remove("/var/tmp/kdecache-%s/icon-cache.kcache" % os.environ.get("USER"))
+            except:
+                pass
+
+            for i in range(kdeui.KIconLoader.LastGroup):
+                kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
+
+
         # Theme Settings
         if self.styleSettings["hasChanged"]:
             if self.styleSettings["iconChanged"]:
@@ -208,12 +219,7 @@ class Widget(QtGui.QWidget, Screen):
                 # Change Icon theme
                 kdeui.KIconTheme.reconfigure()
                 kdeui.KIconCache.deleteCache()
-
-                for i in range(kdeui.KIconLoader.LastGroup):
-                    kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
-
-
-
+                deleteIconCache()
 
             if self.styleSettings["styleChanged"]:
                 hasChanged = True
@@ -230,6 +236,7 @@ class Widget(QtGui.QWidget, Screen):
                 # Change Icon theme
                 kdeui.KIconTheme.reconfigure()
                 kdeui.KIconCache.deleteCache()
+                deleteIconCache()
 
                 for i in range(kdeui.KIconLoader.LastGroup):
                     kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.IconChanged, i)
