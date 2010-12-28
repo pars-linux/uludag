@@ -24,6 +24,25 @@ class Panda():
         self.driver_packages = None
         self.kernel_flavors = None
         self.os_driver = None
+        self.driver_packages = {"fglrx": ["module-fglrx",
+                                     "module-pae-fglrx",
+                                     "module-fglrx-userspace",
+                                     "xorg-video-fglrx"],
+                           "nvidia-current": ["module-nvidia-current",
+                                              "module-pae-nvidia-current",
+                                              "module-nvidia-current-userspace",
+                                              "xorg-video-nvidia-current",
+                                              "nvidia-settings"] ,
+                           "nvidia96": ["module-nvidia96",
+                                        "module-pae-nvidia96",
+                                        "module-nvidia96-userspace",
+                                        "xorg-video-nvidia96",
+                                        "nvidia-settings"],
+                           "nvidia173": ["module-nvidia173",
+                                         "module-pae-nvidia173",
+                                         "module-nvidia173-userspace",
+                                         "xorg-video-nvidia173",
+                                         "nvidia-settings"]}
 
     def __get_primary_driver(self):
         '''Get driver name for the working primary device'''
@@ -85,9 +104,6 @@ class Panda():
 
     def get_needed_driver_packages(self, kernel_flavors=None, installable=False):
         '''Filter modules that should be addded'''
-        if self.driver_packages is None:
-            self.get_all_driver_packages()
-
         needed_module_packages = self.__get_kernel_module_packages(kernel_flavors)
 
         if not self.driver_name == "Not defined":
@@ -115,27 +131,10 @@ class Panda():
             return []
 
     def get_all_driver_packages(self):
-        '''This dict contains all module sthat should be removed first'''
-        self.driver_packages = {"fglrx": ["module-fglrx",
-                                     "module-pae-fglrx",
-                                     "module-fglrx-userspace",
-                                     "xorg-video-fglrx"],
-                           "nvidia-current": ["module-nvidia-current",
-                                              "module-pae-nvidia-current",
-                                              "module-nvidia-current-userspace",
-                                              "xorg-video-nvidia-current",
-                                              "nvidia-settings"] ,
-                           "nvidia96": ["module-nvidia96",
-                                        "module-pae-nvidia96",
-                                        "module-nvidia96-userspace",
-                                        "xorg-video-nvidia96",
-                                        "nvidia-settings"],
-                           "nvidia173": ["module-nvidia173",
-                                         "module-pae-nvidia173",
-                                         "module-nvidia173-userspace",
-                                         "xorg-video-nvidia173",
-                                         "nvidia-settings"]}
-        return self.driver_packages
+        '''Extract lists from the driver dict and return one unique single list'''
+        drivers = sum([x for x in self.driver_packages.values()], [])
+
+        return list(set(drivers))
 
     def update_grub_entries(self, arg="status"):
         '''Edit grub file to enable the use of propretiary graphic card drivers'''
@@ -231,6 +230,7 @@ class Panda():
 
 if __name__ == '__main__':
     p = Panda()
+    print p.get_all_driver_packages()
     print p.update_grub_entries("status")
     print p.get_needed_driver_packages(installable=False)
 
