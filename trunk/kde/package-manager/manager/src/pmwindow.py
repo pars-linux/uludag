@@ -88,7 +88,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.packageList.setModel(proxy)
         self.packageList.setPackages(packages)
         self.packageList.selectAll(packages)
-        self.packageList.setItemDelegate(PackageDelegate(self, self, False))
+        self.packageList.setItemDelegate(PackageDelegate(self, self, showDetailsButton=False))
         self.packageList.setColumnWidth(0, 32)
         self.packageList.hideSelectAll()
 

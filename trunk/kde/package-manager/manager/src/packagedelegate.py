@@ -46,7 +46,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
     AppStyle = QtGui.qApp.style
 
-    def __init__(self, parent=None, mainWindow=None, showDetailsButton=True):
+    def __init__(self, parent=None, mainWindow=None, showDetailsButton=True, animatable=True):
         super(PackageDelegate, self).__init__(parent)
         self.webDialog = WebDialog(mainWindow)
         self.show_details_button = showDetailsButton
@@ -56,7 +56,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
                                                                KIconLoader.Desktop, 32))
         self.defaultInstalledIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', KIconLoader.Desktop, 32, KIconLoader.DefaultState, [CHECK_ICON]))
-        self.animatable = True
+        self.animatable = animatable
         self._max_height = ROW_HEIGHT
 
         self._rt_0 = QtGui.QIcon(":/data/star_0.png")
@@ -96,6 +96,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
     def paint(self, painter, option, index):
         if not index.isValid():
             return super(PackageDelegate, self).paint(painter, option, index)
+
         if index.flags() & Qt.ItemIsUserCheckable:
             if index.column() == 0:
                 self.paintCheckBoxColumn(painter, option, index)
@@ -110,7 +111,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         buttonStyle = QtGui.QStyleOptionButton()
         buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
 
-        if option.state & QtGui.QStyle.State_MouseOver:
+        if option.state & QtGui.QStyle.State_MouseOver or option.state & QtGui.QStyle.State_HasFocus:
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
@@ -298,7 +299,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             opt = QtGui.QStyleOptionViewItemV4(option)
 
             buttonStyle = QtGui.QStyleOptionButton()
-            if option.state & QtGui.QStyle.State_MouseOver:
+            if option.state & QtGui.QStyle.State_MouseOver or option.state & QtGui.QStyle.State_HasFocus:
                 buttonStyle.state |= QtGui.QStyle.State_HasFocus
             buttonStyle.text = i18n("Details")
 
@@ -306,6 +307,10 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         p.end()
         painter.save()
+
+        if option.state & QtGui.QStyle.State_HasFocus and self.animatable:
+            option.state |= QtGui.QStyle.State_Selected
+            PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
             if self.show_details_button:
@@ -321,6 +326,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
         __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
+        animate_requested = False
         if event.type() == QEvent.MouseButtonRelease and self.animatable:
             if self.rowAnimator.row == index.row():
                 epos = event.pos()
@@ -331,8 +337,13 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
                 elif self.rowAnimator.hoverLinkFilter.button_rect.contains(epos, True):
                     self.showPackageDetails(model, index)
                     return __event
-            if not unicode(model.data(index, DescriptionRole).toString()) == '':
-                self.rowAnimator.animate(index.row())
+            animate_requested = True
+        elif event.type() == QEvent.KeyPress and self.animatable:
+            # KeyCode 32 : Space key
+            if event.key() == 32 and index.column() == index.model().columnCount() - 1:
+                animate_requested = True
+        if not unicode(model.data(index, DescriptionRole).toString()) == '' and animate_requested:
+            self.rowAnimator.animate(index.row())
         return __event
 
     def showPackageDetails(self, model, index):
