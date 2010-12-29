@@ -170,6 +170,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
     def updateSettings(self):
         self.packageList.showComponents = PMConfig().showComponents()
+        self.packageList.showIsA = PMConfig().showIsA()
         self.packageList.setFocus()
 
     def searchLineChanged(self, text):

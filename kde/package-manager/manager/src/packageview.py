@@ -29,6 +29,7 @@ class PackageView(QtGui.QTableView):
 
         self.needs_select_all = True
         self.showComponents = False
+        self.showIsA = False
         self.parent = parent
 
     def hideSelectAll(self):

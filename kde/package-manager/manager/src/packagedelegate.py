@@ -30,6 +30,10 @@ WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
 GRAY = QtGui.QColor('gray')
 BLUE = QtGui.QColor('blue')
+LIGHTBLUE = QtGui.QColor('#DEE5F2')
+DARKVIOLET = QtGui.QColor('#3B414F')
+LIGHTGREEN = QtGui.QColor('#F1F5EC')
+DARKGREEN = QtGui.QColor('#32775F')
 CHECK_ICON = 'task-complete'
 RECT = QRect()
 
@@ -168,18 +172,34 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         tagWidth = 0
 
+        _component_width = 0
         if self.parent.showComponents:
             component = str(index.model().data(index, ComponentRole).toString())
             widthOfTitle = self.boldFontFM.width(title) + 6 + left + textInner
 
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, component)
-            p.setPen(GRAY)
-            p.setBrush(GRAY)
+            p.setPen(LIGHTGREEN)
+            p.setBrush(LIGHTGREEN)
             p.drawRoundRect(widthOfTitle , top + 12, rect.width() + 4, rect.height(), 10, 10)
-            p.setPen(WHITE)
+            p.setPen(DARKGREEN)
             p.drawText(widthOfTitle + 2, top + 12, rect.width(), rect.height(), Qt.AlignCenter, component)
             p.setPen(foregroundColor)
+            _component_width = rect.width() + 8
+
+        if self.parent.showIsA:
+            isa = str(index.model().data(index, IsaRole).toString())
+            if not isa == '':
+                widthOfTitle = self.boldFontFM.width(title) + 6 + left + textInner + _component_width
+
+                p.setFont(self.tagFont)
+                rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, isa)
+                p.setPen(LIGHTBLUE)
+                p.setBrush(LIGHTBLUE)
+                p.drawRoundRect(widthOfTitle , top + 12, rect.width() + 4, rect.height(), 10, 10)
+                p.setPen(DARKVIOLET)
+                p.drawText(widthOfTitle + 2, top + 12, rect.width(), rect.height(), Qt.AlignCenter, isa)
+                p.setPen(foregroundColor)
 
         if ptype not in ('None', 'normal'):
             p.setFont(self.tagFont)

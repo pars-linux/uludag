@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 11:24+0200\n"
+"POT-Creation-Date: 2010-12-29 15:34+0200\n"
 "PO-Revision-Date: 2010-11-28 10:53+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -22,7 +22,7 @@ msgid "Add or Remove Software"
 msgstr "Szoftver hozzáadása vagy eltávolítása"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:59
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:60
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Csomagkezelő"
@@ -73,54 +73,54 @@ msgstr "Kosár törlése"
 msgid "Do you want to clear all selections ?"
 msgstr "Az összes kijelölést törli?"
 
-#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
-#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
-#: src/settingsdialog.py:222 src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:72 src/pmutils.py:77
+#: src/pmutils.py:80 src/pmutils.py:83 src/pmutils.py:86
+#: src/settingsdialog.py:240 src/settingsdialog.py:245
 msgid "Pisi Error"
 msgstr "PiSi hiba"
 
-#: src/basketdialog.py:169
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr "<b>Újra kell indítania</b> a rendszert a változtatások életbe léptetéséhez"
 
-#: src/basketdialog.py:171 src/basketdialog.py:179
+#: src/basketdialog.py:172 src/basketdialog.py:180
 msgid "Update Requirements"
 msgstr "Frissítés követelmények"
 
-#: src/basketdialog.py:172
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr "A csomag újraindítást igényel"
 
-#: src/basketdialog.py:177
+#: src/basketdialog.py:178
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Újra kell indítania a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verziói életbe lépjenek:"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
 msgstr "Szolgáltatás újraindítást igénylő csomagok"
 
-#: src/basketdialog.py:190
+#: src/basketdialog.py:191
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "A kiválasztott csomagok kritikusak a rendszer működése szempontjából. Eltávolításuk a rendszer működésképtelenségét eredményezheti."
 
-#: src/basketdialog.py:193 src/settingsdialog.py:161
+#: src/basketdialog.py:194 src/settingsdialog.py:179
 msgid "Warning"
 msgstr "Figyelem"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:195
 msgid "Critical Packages"
 msgstr "Kritikus csomagok"
 
-#: src/basketdialog.py:204 src/pmwindow.py:122
+#: src/basketdialog.py:205 src/pmwindow.py:121
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok újratelepítésre kerülnek"
 
-#: src/basketdialog.py:206 src/pmwindow.py:124
+#: src/basketdialog.py:207 src/pmwindow.py:123
 msgid "Already Installed Packages"
 msgstr "Már telepített csomagok"
 
-#: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:125
+#: src/basketdialog.py:208 src/mainwindow.py:148 src/mainwindow.py:151
+#: src/pmwindow.py:124
 msgid "Installed Packages"
 msgstr "Telepített csomagok"
 
@@ -136,27 +136,27 @@ msgstr "Súgó a Csomagkezelőhöz"
 msgid "Show main window"
 msgstr "Főablak megjelenítése"
 
-#: src/mainwidget.py:140
+#: src/mainwidget.py:144
 msgid "All packages are up to date"
 msgstr "Nincs frissíthető csomag"
 
-#: src/mainwidget.py:229
+#: src/mainwidget.py:234
 msgid "Searching..."
 msgstr "Keresés..."
 
-#: src/mainwidget.py:241
+#: src/mainwidget.py:246
 msgid "No results found."
 msgstr "Nincs találat"
 
-#: src/mainwidget.py:395
+#: src/mainwidget.py:400
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:396
+#: src/mainwidget.py:401
 msgid "Security Updates"
 msgstr "Biztonsági frissítések"
 
-#: src/mainwidget.py:397
+#: src/mainwidget.py:402
 msgid "Critical Updates"
 msgstr "Kritikus frissítések"
 
@@ -188,51 +188,51 @@ msgstr "telepítés"
 msgid "removing"
 msgstr "eltávolítás"
 
-#: src/operationmanager.py:42 src/progressdialog.py:74
+#: src/operationmanager.py:42 src/progressdialog.py:75
 msgid "extracting"
 msgstr "kibontás"
 
-#: src/operationmanager.py:43 src/progressdialog.py:74
+#: src/operationmanager.py:43 src/progressdialog.py:75
 msgid "configuring"
 msgstr "konfigurálás"
 
-#: src/operationmanager.py:136
+#: src/operationmanager.py:137
 msgid "downloading"
 msgstr "letöltés"
 
-#: src/packagedelegate.py:61
+#: src/packagedelegate.py:65
 msgid "critical"
 msgstr "kritikus"
 
-#: src/packagedelegate.py:62
+#: src/packagedelegate.py:66
 msgid "security"
 msgstr "biztonsági"
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:82
 msgid "Description:"
 msgstr "Leírás:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:83
 msgid "Website:"
 msgstr "Honlap:"
 
-#: src/packagedelegate.py:80
+#: src/packagedelegate.py:84
 msgid "Release:"
 msgstr "Kiadás:"
 
-#: src/packagedelegate.py:81
+#: src/packagedelegate.py:85
 msgid "Repository:"
 msgstr "Tároló:"
 
-#: src/packagedelegate.py:82
+#: src/packagedelegate.py:86
 msgid "Package Size:"
 msgstr "Csomagméret:"
 
-#: src/packagedelegate.py:83
+#: src/packagedelegate.py:87
 msgid "Installed Version:"
 msgstr "Telepített verzió:"
 
-#: src/packagedelegate.py:283
+#: src/packagedelegate.py:303
 msgid "Details"
 msgstr "Részletek"
 
@@ -248,90 +248,90 @@ msgstr "%prog csomag van hátra"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:67 src/statemanager.py:240
+#: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Hálózati hiba"
 
-#: src/pmutils.py:68 src/statemanager.py:241
+#: src/pmutils.py:67 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Ellenőrizze a hálózati kapcsolatod és próbálja újra."
 
-#: src/pmutils.py:70
+#: src/pmutils.py:69
 msgid "Authorization Error"
 msgstr "Hitelesítési hiba"
 
-#: src/pmutils.py:71
+#: src/pmutils.py:70
 msgid "You are not authorized for this operation."
 msgstr "A művelet végrehajtásához nincs jogosultsága"
 
-#: src/pmutils.py:74
+#: src/pmutils.py:73
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "A <b>%s</b> csomag nem található a tárolóban.<br>Lehet hogy már frissült, vagy már el lett távolítva.<br>Kérem frissítse a tárolók információit."
 
-#: src/pmutils.py:79
+#: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:82
+#: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:85
+#: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Egy másik PiSi már fut. Csak egy példány indítása megengedett."
 
-#: src/pmutils.py:100
+#: src/pmutils.py:111
 msgid "Do you want to continue ?"
 msgstr "Kívánja folytatni?"
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:71
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:71
+#: src/progressdialog.py:72
 #, python-format
 msgid "Operation - %1%"
 msgstr "Művelet - %1%"
 
-#: src/progressdialog.py:78
+#: src/progressdialog.py:79
 msgid "Downloading package list of %1"
 msgstr "%1 csomaglista letöltése"
 
-#: src/progressdialog.py:80
+#: src/progressdialog.py:81
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:86
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:92
+#: src/progressdialog.py:93
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:109
+#: src/progressdialog.py:110
 msgid "Preparing PiSi..."
 msgstr "<h3>PiSi előkészítése...</h3>"
 
-#: src/progressdialog.py:120
+#: src/progressdialog.py:121
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Művelet visszavonása...</b>"
 
-#: src/settingsdialog.py:152
+#: src/settingsdialog.py:170
 msgid "Open Directory"
 msgstr "Könyvtár megnyitása"
 
-#: src/settingsdialog.py:162
+#: src/settingsdialog.py:180
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Minden gyorsítótárazott csomag törölve lesz. Folytatja?"
 
-#: src/settingsdialog.py:223
+#: src/settingsdialog.py:241
 msgid "Not a valid repository name"
 msgstr "Érvénytelen tárolónév"
 
-#: src/settingsdialog.py:228
+#: src/settingsdialog.py:246
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie.<p>Kérem, próbálja újra.</qt>"
 
@@ -604,176 +604,184 @@ msgstr "Új tároló hozzáadása"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "A tároló neve, pl. <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:394
+#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:414
 msgid "Repository Name"
 msgstr "Tároló neve"
 
-#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:415
 msgid "Repository Address"
 msgstr "Tároló címe"
 
-#: ui/ui_settingsdialog.py:367
+#: ui/ui_settingsdialog.py:385
 msgid "Package Manager Settings"
 msgstr "Csomagkezelő beállításai"
 
-#: ui/ui_settingsdialog.py:368
+#: ui/ui_settingsdialog.py:386
 msgid "&Help"
 msgstr "&Súgó"
 
-#: ui/ui_settingsdialog.py:369
+#: ui/ui_settingsdialog.py:387
 msgid "&OK"
 msgstr "&OK"
 
-#: ui/ui_settingsdialog.py:370
+#: ui/ui_settingsdialog.py:388
 msgid "&Cancel"
 msgstr "&Mégsem"
 
-#: ui/ui_settingsdialog.py:371
+#: ui/ui_settingsdialog.py:389
 msgid "Package list"
 msgstr "Csomaglista"
 
-#: ui/ui_settingsdialog.py:372
+#: ui/ui_settingsdialog.py:390
 msgid "&Show only desktop applications"
 msgstr "Csak az asztali alkalmazások &megjelenítése"
 
-#: ui/ui_settingsdialog.py:373
+#: ui/ui_settingsdialog.py:391
 msgid "Show Component information "
 msgstr "Komponens információk megjelenítése"
 
-#: ui/ui_settingsdialog.py:374
+#: ui/ui_settingsdialog.py:392
+msgid "Show package type tags"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:393
 msgid "System tray icon"
 msgstr "Rendszertálca ikon"
 
-#: ui/ui_settingsdialog.py:375
+#: ui/ui_settingsdialog.py:394
 msgid "Enable system tray icon"
 msgstr "Rendszertálca ikon engedélyezése"
 
-#: ui/ui_settingsdialog.py:376
+#: ui/ui_settingsdialog.py:395
 msgid "Hide system tray if there is no update."
 msgstr "Tálca ikon elrejtése, ha nincs elérhető frissítés"
 
-#: ui/ui_settingsdialog.py:377
+#: ui/ui_settingsdialog.py:396
 msgid "Enable &periodic update check"
 msgstr "&Ütemezett frissítés engedélyezése"
 
-#: ui/ui_settingsdialog.py:378
+#: ui/ui_settingsdialog.py:397
 msgid "Check interval :"
 msgstr "Frissítés gyakorisága:"
 
-#: ui/ui_settingsdialog.py:379
+#: ui/ui_settingsdialog.py:398
 msgid " min"
 msgstr "perc"
 
-#: ui/ui_settingsdialog.py:380
+#: ui/ui_settingsdialog.py:399
 msgid "Install updates automatically"
 msgstr "Frissítések automatikus telepítése"
 
-#: ui/ui_settingsdialog.py:381
+#: ui/ui_settingsdialog.py:400
 msgid "Bandwidth limit"
 msgstr "Sávszélesség korlát"
 
-#: ui/ui_settingsdialog.py:382
-msgid " kb/s"
-msgstr "kb/s"
+#: ui/ui_settingsdialog.py:401
+msgid " kB/s"
+msgstr ""
 
-#: ui/ui_settingsdialog.py:383
+#: ui/ui_settingsdialog.py:402
 msgid "Use bandwidth limit :"
 msgstr "Sávszélesség korlát:"
 
-#: ui/ui_settingsdialog.py:384
+#: ui/ui_settingsdialog.py:403
 msgid "&General Settings"
 msgstr "&Általános beállítások"
 
-#: ui/ui_settingsdialog.py:385
-msgid "&Use hard disk cache for downloaded software"
-msgstr "&Gyorsítótár használata a letöltött programokhoz"
-
-#: ui/ui_settingsdialog.py:386
+#: ui/ui_settingsdialog.py:404
 msgid "Maximum cache size:"
 msgstr "Maximális gyorsítótár méret:"
 
-#: ui/ui_settingsdialog.py:387
+#: ui/ui_settingsdialog.py:405
 msgid "Unlimited"
 msgstr "Nincs korlát"
 
-#: ui/ui_settingsdialog.py:388
+#: ui/ui_settingsdialog.py:406
 msgid " Mib"
 msgstr "Mib"
 
-#: ui/ui_settingsdialog.py:389
+#: ui/ui_settingsdialog.py:407
 msgid "Current cache dir:"
 msgstr "Gyorsítótár helye:"
 
-#: ui/ui_settingsdialog.py:390
+#: ui/ui_settingsdialog.py:408
 msgid "Select..."
 msgstr "Kiválasztás..."
 
-#: ui/ui_settingsdialog.py:391
+#: ui/ui_settingsdialog.py:409
+msgid "Open"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:410
+msgid "&Use hard disk cache for downloaded software"
+msgstr "&Gyorsítótár használata a letöltött programokhoz"
+
+#: ui/ui_settingsdialog.py:411
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
 msgstr "A gyorsítótár törlése eltávolítja az összes letöltött csomagfájlt. Ez a művelet nincs hatással a telepített alkalmazásokra, vagy a rendszer stabilitására"
 
-#: ui/ui_settingsdialog.py:392
+#: ui/ui_settingsdialog.py:412
 msgid "C&lean disk cache now"
 msgstr "A gyorsítótár k&iürítése"
 
-#: ui/ui_settingsdialog.py:393
+#: ui/ui_settingsdialog.py:413
 msgid "C&ache"
 msgstr "G&yorsítótár"
 
-#: ui/ui_settingsdialog.py:396
+#: ui/ui_settingsdialog.py:416
 msgid "&Add New Repository"
 msgstr "Új tároló &hozzáadása"
 
-#: ui/ui_settingsdialog.py:397
+#: ui/ui_settingsdialog.py:417
 msgid "Remove Repository"
 msgstr "Tároló eltávolítása"
 
-#: ui/ui_settingsdialog.py:398
+#: ui/ui_settingsdialog.py:418
 msgid "Move &Up"
 msgstr "&Fel"
 
-#: ui/ui_settingsdialog.py:399
+#: ui/ui_settingsdialog.py:419
 msgid "Move &Down"
 msgstr "&Le"
 
-#: ui/ui_settingsdialog.py:400
+#: ui/ui_settingsdialog.py:420
 msgid "&Repositories"
 msgstr "&Tárolók"
 
-#: ui/ui_settingsdialog.py:401
+#: ui/ui_settingsdialog.py:421
 msgid "HTTP proxy server:"
 msgstr "HTTP proxy szerver:"
 
-#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
-#: ui/ui_settingsdialog.py:407
+#: ui/ui_settingsdialog.py:422 ui/ui_settingsdialog.py:425
+#: ui/ui_settingsdialog.py:427
 msgid "Port:"
 msgstr "Port:"
 
-#: ui/ui_settingsdialog.py:403
+#: ui/ui_settingsdialog.py:423
 msgid "Use this proxy server for all protocols"
 msgstr "Ugyanazon proxy szerver használata az összes protokollon"
 
-#: ui/ui_settingsdialog.py:404
+#: ui/ui_settingsdialog.py:424
 msgid "HTTPS proxy server:"
 msgstr "HTTPS proxy szerver:"
 
-#: ui/ui_settingsdialog.py:406
+#: ui/ui_settingsdialog.py:426
 msgid "FTP proxy server:"
 msgstr "FTP proxy szerver:"
 
-#: ui/ui_settingsdialog.py:408
+#: ui/ui_settingsdialog.py:428
 msgid "No proxy server"
 msgstr "Nincs proxy szerver"
 
-#: ui/ui_settingsdialog.py:409
+#: ui/ui_settingsdialog.py:429
 msgid "Use manual settings"
 msgstr "Kézi beállítások használata"
 
-#: ui/ui_settingsdialog.py:410
+#: ui/ui_settingsdialog.py:430
 msgid "Use Desktop Enviorenment's settings"
 msgstr "Asztali környezet beállításainak használata"
 
-#: ui/ui_settingsdialog.py:411
+#: ui/ui_settingsdialog.py:431
 msgid "&Proxy"
 msgstr "&Proxy"
 
@@ -805,29 +813,69 @@ msgstr ""
 "Az AppInfo szerver nem elérhető\n"
 "Ellenőrizze a hálózati kapcsolatot és próbálja újra"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Mutasd a frissítendő csomagokat"
+#~ msgid "Search Button"
+#~ msgstr "Keresés"
 
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Csomag(ok) eltávolítása"
+#~ msgid "Search"
+#~ msgstr "Keresés"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Művelet gomb az aktuális állapot művelethez"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "A csomaglista kijelöléseinek megfordítása"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Csomag(ok) telepítése"
+#~ msgid "Operation"
+#~ msgstr "Művelet"
 
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>PiSi előkészítése...</h3>"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Hátralévő idő"
+
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Művelet:"
+
+#~ msgid "Status:"
+#~ msgstr "Állapot:"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "%1 frissítés elérhető!"
+
+#~ msgid "Quit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Help"
+#~ msgstr "Segítség"
+
+#~ msgid "File"
+#~ msgstr "Fájl"
 
 #, fuzzy
 #~ msgid ""
@@ -843,66 +891,29 @@ msgstr ""
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Fájl"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "Quit"
-#~ msgstr "Kilépés"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "%1 frissítés elérhető!"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
-
-#~ msgid "Close"
-#~ msgstr "Bezárás"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-
-#~ msgid "Status:"
-#~ msgstr "Állapot:"
-
-#~ msgid "Operation:"
-#~ msgstr "Művelet:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#, fuzzy
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Hátralévő idő"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Csomag(ok) telepítése"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>PiSi előkészítése...</h3>"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Operation"
-#~ msgstr "Művelet"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "A csomaglista kijelöléseinek megfordítása"
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Csomag(ok) eltávolítása"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Művelet gomb az aktuális állapot művelethez"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Mutasd a frissítendő csomagokat"
 
-#~ msgid "Search"
-#~ msgstr "Keresés"
-
-#~ msgid "Search Button"
-#~ msgstr "Keresés"
+#~ msgid " kb/s"
+#~ msgstr "kb/s"

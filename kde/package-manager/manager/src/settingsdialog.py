@@ -68,6 +68,7 @@ class GeneralSettings(SettingsTab):
     def initialize(self):
         self.settings.onlyGuiApp.setChecked(self.config.showOnlyGuiApp())
         self.settings.showComponents.setChecked(self.config.showComponents())
+        self.settings.showIsA.setChecked(self.config.showIsA())
         self.settings.intervalCheck.setChecked(self.config.updateCheck())
         self.settings.installUpdates.setChecked(self.config.installUpdatesAutomatically())
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
@@ -88,6 +89,7 @@ class GeneralSettings(SettingsTab):
     def connectSignals(self):
         self.connect(self.settings.onlyGuiApp, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.showComponents, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.showIsA, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.installUpdates, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
@@ -103,6 +105,10 @@ class GeneralSettings(SettingsTab):
 
         if not self.settings.showComponents.isChecked() == self.config.showComponents():
             self.config.setShowComponents(self.settings.showComponents.isChecked())
+            self.settings.emit(SIGNAL("packageViewChanged()"))
+
+        if not self.settings.showIsA.isChecked() == self.config.showIsA():
+            self.config.setShowIsA(self.settings.showIsA.isChecked())
             self.settings.emit(SIGNAL("packageViewChanged()"))
 
         if not self.settings.systemTray.isChecked() == self.config.systemTray() or \
