@@ -340,21 +340,6 @@
     menu.texts menu.entry get "%s " bc.cmd sprintf
   } ifelse
 
-  syslinux {
-    /splash_file 32 string def
-
-    video.modes.list xmenu.video .xm_current get get
-    dup .vm_mode get 0 ge {
-      dup .vm_height get exch .vm_width get
-      ",%04d%04d.spl" splash_file sprintf
-    } { pop } ifelse
-
-    % check whether splash file exists
-    splash_file 1 add filesize .undef eq {
-      splash_file 0 0 put	% empty string
-    } if
-  } if
-
   xmenu.kernelopts {
     kernelopts.options xmenu.kernelopts .xm_current get get dup "" ne {
       "%s " bc.cmd dup length add sprintf
@@ -402,25 +387,6 @@
 
   /splash_file xfree
 
-  syslinux {
-    video.modes.list xmenu.video .xm_current get get .vm_mode get
-
-    dup 0 ge {
-      0x200 add "vga=0x%x " bc.cmd dup length add sprintf
-    } {
-      -1 eq {
-        "textmode=1 " bc.cmd dup length add sprintf
-      } if
-    } ifelse
-
-    v_impaired 1 ge {
-      "braille=1 " bc.cmd dup length add sprintf
-    } if
-
-    v_impaired 2 ge {
-      "linemode=1 " bc.cmd dup length add sprintf
-    } if
-  } if
 
     config.lang {
       %config.lang "en_US" ne {
@@ -1246,11 +1212,6 @@
       sound.getsamplerate { sound.getsamplerate sound.setsamplerate } if
     } ifelse
 
-    xmenu.video .xm_current 0 put
-    % redraw unless another menu is still open
-    window.current {
-      window.current .xmenu get .undef eq { video.update } if
-    } if
 
     .undef 0 idle
     kroete.file free /kroete.file .undef def
