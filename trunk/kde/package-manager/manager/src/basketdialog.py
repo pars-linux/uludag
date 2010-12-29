@@ -73,6 +73,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
             return
         self.updateTotal()
         self.setActionButton()
+        self.setActionEnabled(True)
         self.setBasketLabel()
         self.connectModelSignals()
         QTimer.singleShot(0, restoreCursor)
@@ -211,6 +212,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                 reinstall = True
 
         self.parent.cw._started = True
+        self.setActionEnabled(False)
         self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall)
 
     def showHideDownloadInfo(self):
