@@ -160,6 +160,8 @@ import vim
 import os
 import subprocess
 
+buf = vim.current.buffer
+
 svn_output = subprocess.Popen(["svn", "st", "files/"],
                               stdout=subprocess.PIPE,
                               stderr=subprocess.STDOUT).communicate()[0].strip().split("\n")
@@ -172,16 +174,15 @@ for patch in svn_output:
             frmt_patch = '            <Patch level="1">%s</Patch>' % patch
             patches.append(frmt_patch)
 
-buf = vim.current.buffer
-win = vim.current.window
-pos = win.cursor
-
-if '<Patches>' in buf[pos[0] - 1]:
-    for patch in patches:
-        vim.command("call append(%s, '%s')" % (pos[0], patch))
-elif '</Patches>' in buf[pos[0] - 1]:
-    for patch in patches:
-        vim.command("call append(%s, '%s')" % (pos[0] - 1, patch))
+for row, line in enumerate(buf[:]):
+    if "</Source>" in line:
+        if "</Patches>" in buf[row - 1]:
+            for patch in patches:
+                vim.command("call append(%s, '%s')" % (row - 1, patch))
+        else:
+            vim.command("call append(%s, ['        <Patches>', '        </Patches>'])" % row)
+            for patch in patches:
+                vim.command("call append(%s, '%s')" % (row + 1, patch))
 
 EOF
 endfunction
