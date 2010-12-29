@@ -12,7 +12,12 @@
 
 import re
 
-from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox, QFileDialog
+from PyQt4.QtGui import QMessageBox
+from PyQt4.QtGui import QDialog
+from PyQt4.QtGui import QTableWidgetItem
+from PyQt4.QtGui import QCheckBox
+from PyQt4.QtGui import QFileDialog
+from PyQt4.QtGui import QDesktopServices
 from PyQt4.QtCore import *
 
 from PyKDE4.kdecore import i18n
@@ -138,6 +143,7 @@ class CacheSettings(SettingsTab):
 
         self.cacheEnabled = enableCache
         self.cacheSize = cache_limit
+        self.settings.cacheGroup.setEnabled(self.cacheEnabled)
         self.settings.useCacheCheck.setChecked(enableCache)
         self.settings.useCacheSpin.setValue(cache_limit)
         self.settings.cacheDirPath.setText(cache_dir)
@@ -147,6 +153,12 @@ class CacheSettings(SettingsTab):
         self.connect(self.settings.selectCacheDir, SIGNAL("clicked()"), self.selectCacheDir)
         self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useCacheSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.settings.openCacheDir.clicked.connect(self.openCacheDir)
+
+    def openCacheDir(self):
+        cache_dir = unicode(self.settings.cacheDirPath.text())
+        if path.exists(cache_dir):
+            QDesktopServices.openUrl(QUrl("file://%s" % cache_dir, QUrl.TolerantMode))
 
     def selectCacheDir(self):
         selected_dir = QFileDialog.getExistingDirectory(self.settings, i18n("Open Directory"), "/",
