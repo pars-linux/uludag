@@ -12,7 +12,7 @@
 
  -  #295 (New): Get security updates directly to the basket like system.base packages
  -  #24 (New): Support offline package management
- -  #23 (New): PM-Install Improvements
+ +  #23 (New): PM-Install Improvements
  -  #20 (New): Show repository changelogs with updates
  -  #18 (New): Basket Dialog Improvements
  -  #17 (New): Conflict Package Dialog Improvements
