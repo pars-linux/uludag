@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="dvd" compression="lzo">
-    <Title>Pardus 2011 Beta 2 (i686)</Title>
+    <Title>Pardus 2011 RC (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
@@ -1754,6 +1754,8 @@
         <Language>pt_BR</Language>
         <Language>it_IT</Language>
         <Language>nl_NL</Language>
+        <Language>ru_RU</Language>
+        <Language>hu_HU</Language>
         <Language>de_DE</Language>
         <Language>pl_PL</Language>
         <Language>fr_FR</Language>
