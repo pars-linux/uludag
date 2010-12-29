@@ -26,9 +26,8 @@ msgid "A bootloader is a tiny program that runs when a computer is first powered
 msgstr "Un cargador de arranque es un programa pequeño que se ejecuta al encender la computadra. Se encarga de transferir el sistema operativo a la memoria y le pasa el control. &lt;br&gt;&lt;br&gt;Pardus utiliza GRUB (GRand Unified Bootloader) como cargador de arranque predeterminado. GRUB presenta los sistemas operativos soportados en un menú y el usuario puede elegir el sistema con el cual arrancar la PC. &lt;br&gt;&lt;br&gt;Se recomienda instalar GRUB en el inicio del disco de arranque. Puede elegir una configuración avanzada para una instalación customizada, si sabe lo que está haciendo."
 
 #: ../release.xml.in.h:3
-#, fuzzy
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr "Una disposición de teclado determina la ubicación de cada tecla en el teclado. En el mundo se usan distintos disposiciones de teclado. Probablemente deseará usar una disposición de acuerdo al uso en su país o de su idioma. Puede escribir algo en el campo de texto para probar la disposición del teclado elegido."
+msgstr "Una disposición de teclado determina la ubicación de las teclas en el teclado. Posiblemente desea utilizar una disosición de teclas diferente a la disposicion real física de su teclado, o sencillamente desea asegurarse que la disposición elegida es la correcta. Puede escribir algo en el campo de texto para probar la disposición del teclado elegido."
 
 #: ../release.xml.in.h:4
 msgid "All done!"
@@ -119,9 +118,8 @@ msgid "Looking for a production suite? Our suggestion is LibreOffice! LibreOffic
 msgstr "Buscando una suite de producción ? Nuestra recomendación es LibreOffice !! LibreOffice le da una experiencia estable, rápida y libre para la oficina, dejando todos sus documentos compatibles con la mayoria de otros suites de software de office. Ya que LibreOffice tiene una base de experiencia de office de muchos años, incluso la primera versión estable es mucho más potente y competitivo, incluyendo Writer para documentos de texto, Calc para hojas de cálculo, Impress para presentaciones.&lt;br&gt;&lt;br&gt;En Pardus viene este paquete estupendo de office con una serie de mejoras y agregados para una mejor experiencia aún."
 
 #: ../release.xml.in.h:26
-#, fuzzy
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, so we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings."
-msgstr "Varios usuarios pueden compartir la compartir una sola computadora de manera segura con Pardus. Automáticamente se crea una cuenta de usuario &quot;root&quot;. En esta pantalla puede agregar nuevos usuarios. El primer usuario tendrá privilegios administrativos, si no se lo suspende. Suspender privilegios administrativos, ID de usuario personalizado, y algunas opciones más se acceden desde el menú avanzado. &lt;br&gt;&lt;br&gt; Si necesita administrar cuentas de usuarios, puede ejecutar el administrador de usuarios en el centro de configuración del sistema luego de la instalación."
+msgstr ""
 
 #: ../release.xml.in.h:28
 #, no-c-format
@@ -196,7 +194,7 @@ msgstr "Usted ha instalado exitosamente Pardus en su computadora. Luego de reini
 
 #: ../release.xml.in.h:45
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr ""
+msgstr "Usted ha instalado exitosamente Pardus. Después de reiniciar su computadora podrá agregar nuevos usuarios y empezar a usar Pardus. Por favor asegurese de desmontar el medio de instalación (extraiga el disco usb, expulse el dvd o desmonte la imagen iso en la maquina virtual)."
 
 #: ../release.xml.in.h:46
 msgid "You have to choose a *free* physical partition in order to create your system partitions. If anything goes wrong you can Reset and start again. &lt;br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical Volume, then a Volume Group which will contain your Logical Volumes. You can use Logical Volumes similar to partitions and set them for system files, user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you have to create at least two RAID members. Try to divide the space equally as the space of the disk will be same with the smallest partition. When you have two RAID members, you will be able to create a RAID array which is similar to a partition as it may be formatted and set for the system files, user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more information about disk partitioning. You can find it in our website."
