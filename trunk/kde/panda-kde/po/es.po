@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -49,11 +49,11 @@ msgstr "Administración de controlador de video"
 
 #: panda.cpp:136
 msgid "(c) 2011 Fatih Arslan"
-msgstr ""
+msgstr "(c) 2011 Fatih Arslan"
 
 #: panda.cpp:138
 msgid "Fatih Arslan"
-msgstr ""
+msgstr "Fatih Arslan"
 
 #: panda.cpp:138
 msgid "Original author"
@@ -78,4 +78,3 @@ msgid ""
 msgstr ""
 "Debe reiniciar el sistema para que los cambios tengan efecto.\n"
 "Desea reiniciar ahora?"
-
