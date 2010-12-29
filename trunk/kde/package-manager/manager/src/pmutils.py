@@ -142,7 +142,7 @@ def humanReadableSize(size, precision=".1"):
     if not size:
         return 'N/A'
 
-    symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
+    symbols, depth = [' B', 'kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
 
     while size > 1000 and depth < 8:
         size = float(size / 1024)

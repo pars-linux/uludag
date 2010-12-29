@@ -61,8 +61,9 @@ class OperationManager(QObject):
             pass
 
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
+        symbol = symbol.replace('K', 'k')
         if rate == 0:
-            self.rate = "-- KB/s"
+            self.rate = "-- kB/s"
         else:
             self.rate = "%s %s" % (rate, symbol)
 
