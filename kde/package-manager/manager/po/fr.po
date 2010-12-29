@@ -442,7 +442,7 @@ msgstr "Des paquets dépendants de ceux que vous avez choisis vont être égalem
 
 #: src/statemanager.py:167
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Actuellement, il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille totale de <b>%2</b>"
+msgstr "Actuellement, il y a <b>%1</b> paquets sélectionnés pour une taille totale de <b>%2</b>"
 
 #: src/statemanager.py:170
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -518,7 +518,7 @@ msgstr "Panier"
 
 #: ui/ui_basketdialog.py:183
 msgid "Selected package(s) for install:"
-msgstr "Paquet(s) sélectionné(s) pour installation :"
+msgstr "Paquets sélectionnés pour installation :"
 
 #: ui/ui_basketdialog.py:185
 msgid "Total Size:"
@@ -599,7 +599,7 @@ msgstr "Ajouter un nouveau dépôt"
 
 #: ui/ui_repodialog.py:55
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Nom du dépôt, p.ex. <b>2009-test</b>"
+msgstr "Nom du dépôt, p.ex. <b>pardus-devel</b>"
 
 #: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:414
 msgid "Repository Name"
@@ -723,7 +723,7 @@ msgstr "&Effacer le cache du disque maintenant"
 
 #: ui/ui_settingsdialog.py:413
 msgid "C&ache"
-msgstr "Cache"
+msgstr "C&ache"
 
 #: ui/ui_settingsdialog.py:416
 msgid "&Add New Repository"
