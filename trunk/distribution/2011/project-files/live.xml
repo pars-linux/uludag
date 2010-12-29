@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd" compression="lzo">
-    <Title>Pardus 2011 Beta 2 Live (x86_64)</Title>
+    <Title>Pardus 2011 RC Live (x86_64)</Title>
     <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
@@ -1160,6 +1160,8 @@
         <Language>pt_BR</Language>
         <Language>it_IT</Language>
         <Language>nl_NL</Language>
+        <Language>ru_RU</Language>
+        <Language>hu_HU</Language>
         <Language>de_DE</Language>
         <Language>pl_PL</Language>
         <Language>fr_FR</Language>
