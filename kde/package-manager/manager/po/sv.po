@@ -675,7 +675,6 @@ msgid "Bandwidth limit"
 msgstr "Bandbreddsbegränsning"
 
 #: ui/ui_settingsdialog.py:401
-#, fuzzy
 msgid " kB/s"
 msgstr " kB/s"
 
