@@ -55,8 +55,9 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.animate(start = MIDCENTER, stop = MIDCENTER)
 
     def _hide(self):
-        self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)
-        self.parent.setWindowTitle(i18n("Package Manager"))
+        if self.isVisible():
+            self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)
+            self.parent.setWindowTitle(i18n("Package Manager"))
 
     def updateProgress(self, progress):
         self.busy.stopAnimation()

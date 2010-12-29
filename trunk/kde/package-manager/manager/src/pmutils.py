@@ -59,9 +59,8 @@ class PM:
                 KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
 
     def exceptionCaught(self, message, package = ''):
-        if hasattr(self, "progressDialog"):
-            if hasattr(self.progressDialog, "hide_"):
-                self.progressDialog.hide_()
+
+        self.runPreExceptionMethods()
 
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
@@ -89,6 +88,18 @@ class PM:
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
         self.messageBox.exec_()
+
+        self.runPostExceptionMethods()
+
+    def runPreExceptionMethods(self):
+        if hasattr(self, '_preexceptions'):
+            for method in self._preexceptions:
+                method()
+
+    def runPostExceptionMethods(self):
+        if hasattr(self, '_postexceptions'):
+            for method in self._postexceptions:
+                method()
 
 def get_real_paths(packages):
     # If packages are not from repo or remote, find their absolute paths

@@ -223,4 +223,3 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
             self.downloadSize.show()
             self.downloadSizeLabel.show()
 
-
