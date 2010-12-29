@@ -107,6 +107,8 @@
         <SelectedPackage>kdebase-sounds</SelectedPackage>
         <SelectedPackage>kdebase-wallpapers</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
+        <SelectedPackage>kdegames-board</SelectedPackage>
+        <SelectedPackage>kdegames-logic</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdenlive</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>

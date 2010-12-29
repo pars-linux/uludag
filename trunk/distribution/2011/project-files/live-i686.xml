@@ -105,6 +105,8 @@
         <SelectedPackage>kdebase-emoticons</SelectedPackage>
         <SelectedPackage>kdebase-sounds</SelectedPackage>
         <SelectedPackage>kdebase-wallpapers</SelectedPackage>
+        <SelectedPackage>kdegames-board</SelectedPackage>
+        <SelectedPackage>kdegames-logic</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdenlive</SelectedPackage>

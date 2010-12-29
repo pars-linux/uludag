@@ -173,6 +173,8 @@
                 <SelectedPackage>kdebase-workspace</SelectedPackage>
                 <SelectedPackage>kdebase-workspace-doc</SelectedPackage>
                 <SelectedPackage>kdeedu-marble</SelectedPackage>
+                <SelectedPackage>kdegames-board</SelectedPackage>
+                <SelectedPackage>kdegames-logic</SelectedPackage>
                 <SelectedPackage>kdegraphics</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdenlive</SelectedPackage>
