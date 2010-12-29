@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -113,7 +113,7 @@ msgstr "Paquets décisifs"
 
 #: src/basketdialog.py:205 src/pmwindow.py:121
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Les paquets sélectionnés sont déjà installés.<br> Si vous continuez, les paquets vont être réinstallés"
+msgstr "Les paquets sélectionnés sont déjà installés.<br>Si vous continuez, les paquets vont être réinstallés"
 
 #: src/basketdialog.py:207 src/pmwindow.py:123
 msgid "Already Installed Packages"
@@ -122,7 +122,7 @@ msgstr "Paquets déjà installés"
 #: src/basketdialog.py:208 src/mainwindow.py:148 src/mainwindow.py:151
 #: src/pmwindow.py:124
 msgid "Installed Packages"
-msgstr "Les paquets installés"
+msgstr "Paquets installés"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -134,7 +134,7 @@ msgstr "Aide du gestionnaire de paquets"
 
 #: src/main.py:57
 msgid "Show main window"
-msgstr "Montrer la fenêtre principale"
+msgstr "Afficher la fenêtre principale"
 
 #: src/mainwidget.py:144
 msgid "All packages are up to date"
@@ -166,7 +166,7 @@ msgstr "Tous les paquets"
 
 #: src/mainwindow.py:142 src/mainwindow.py:145
 msgid "Installable Packages"
-msgstr "Les paquets installables"
+msgstr "Paquets installables"
 
 #: src/mainwindow.py:154 src/mainwindow.py:157
 msgid "Updates"
