@@ -491,10 +491,12 @@
         <Package>glibc-locales-es</Package>
         <Package>glibc-locales-fr</Package>
         <Package>glibc-locales-it</Package>
+        <Package>glibc-locales-hu</Package>
         <Package>glibc-locales-nl</Package>
         <Package>glibc-locales-pl</Package>
         <Package>glibc-locales-pt</Package>
         <Package>glibc-locales-sv</Package>
+        <Package>glibc-locales-ru</Package>
         <Package>glitz</Package>
         <Package>gnutls</Package>
         <Package>gperf</Package>
