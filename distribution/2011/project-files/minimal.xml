@@ -1,8 +1,8 @@
-<PardusmanProject type="install" media="cd" compression="gzip">
+<PardusmanProject type="install" media="dvd" compression="lzo">
     <Title>Minimal x86_64</Title>
     <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>../distribution/2011/media-content</ReleaseFiles>
-    <ExtraParameters>splash yali=default xorg=off</ExtraParameters> 
+    <ExtraParameters>splash yali=default</ExtraParameters> 
     <!-- xorg=off is a workaround for mudur to close the plymouth -->
     <PackageCollections>
         <PackageCollection default="True">
@@ -348,6 +348,7 @@
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
+        <SelectedPackage>ntfs_3g</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-core-libs</SelectedPackage>
         <SelectedPackage>plymouth-graphics-libs</SelectedPackage>
