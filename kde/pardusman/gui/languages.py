@@ -24,10 +24,12 @@ LANGUAGES = {
     "en_US": "English",
     "es_ES": "Spanish",
     "fr_FR": "French",
+    "hu_HU": "Hungarian",
     "it_IT": "Italian",
     "nl_NL": "Dutch",
     "pl_PL": "Polish",
     "pt_BR": "Brazilian Portuguese",
+    "ru_RU": "Russian",
     "sv_SE": "Svenska",
     "tr_TR": "Turkish",
 }
