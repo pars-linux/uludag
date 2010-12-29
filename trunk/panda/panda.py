@@ -30,16 +30,19 @@ class Panda():
                                               "module-pae-nvidia-current",
                                               "module-nvidia-current-userspace",
                                               "xorg-video-nvidia-current",
+                                              "nvidia-xconfig",
                                               "nvidia-settings"] ,
                            "nvidia96": ["module-nvidia96",
                                         "module-pae-nvidia96",
                                         "module-nvidia96-userspace",
                                         "xorg-video-nvidia96",
+                                        "nvidia-xconfig",
                                         "nvidia-settings"],
                            "nvidia173": ["module-nvidia173",
                                          "module-pae-nvidia173",
                                          "module-nvidia173-userspace",
                                          "xorg-video-nvidia173",
+                                         "nvidia-xconfig",
                                          "nvidia-settings"]}
 
     def __get_primary_driver(self):
