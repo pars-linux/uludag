@@ -1,3 +1,51 @@
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add option to show isa tags in package list
+         * Bug fixed at http://bugs.pardus.org.tr/15387
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add shortcut button to open cache directory
+         * Bug fixed at http://bugs.pardus.org.tr/14189
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use pre/post exception method for exceptionHandler
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Comment added to http://bugs.pardus.org.tr/13950
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Bug fixed at http://bugs.pardus.org.tr/15481
+         * Bug fixed at http://bugs.pardus.org.tr/15373
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use correct kB symbol
+         * Bug fixed at http://bugs.pardus.org.tr/13950
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Disable action button after action accepted
+         * Bug fixed at http://bugs.pardus.org.tr/15731
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix i18n issues in pm-install
+         * - Fix progressdialog hide issue when it is not available
+         * - Check if comar.link is running for pisi before starting the operation
+         * - Show progress, disable cancel;
+         * if another pisi instance starts the package installation
+         * - Po updated and available strings merged from pisi.pot
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - 34500 
+
+2010-12-28 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 190 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - correct version string 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - ready for RC 
+
 2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
          * - In upgrade state force to use PackageDB instead of InstallDB
          * Bug fixed at http://bugs.pardus.org.tr/15292
@@ -749,37 +797,4 @@
          * Bug fixed at http://bugs.pardus.org.tr/13406
          * Bug fixed at http://bugs.pardus.org.tr/13506
          * Bug fixed at http://bugs.pardus.org.tr/8540
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * fix wrong calculated extra packages issue. ,
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Fix Icon loading in summary dialog 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Modify selected packages to install or remove 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * do not try to calculate dependencies when all packages filter is active 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * show menu button when all packages filter is active. 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * select different installed overlay icon 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Use KConfig instead of QSettings 
-
-2010-09-02 Gökmen Göksel <gokmen@pardus.org.tr>
-         * remove comment 
-
-2010-09-02 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Fix resize event issue. 
-
-2010-09-02 Gökmen Göksel <gokmen@pardus.org.tr>
-         * paint overlay on installed packages 
-
-2010-09-02 Gökmen Göksel <gokmen@pardus.org.tr>
-         * filter search result as shown packages 
 
