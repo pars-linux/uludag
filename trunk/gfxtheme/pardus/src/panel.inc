@@ -44,12 +44,12 @@
       livecd {
 
         [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ]
-        [ keyF3 0 "F3" /panel.video /panel.video.width /panel.video.update /video.init ]
+        %[ keyF3 0 "F3" /panel.video /panel.video.width /panel.video.update /video.init ]
 
       } {
 
         [ keyF2 0 "F2" /panel.lang /panel.lang.width /panel.lang.update /lang.init ]
-        [ keyF3 0 "F3" /panel.video /panel.video.width /panel.video.update /video.init ]
+        %[ keyF3 0 "F3" /panel.video /panel.video.width /panel.video.update /video.init ]
         % [ keyF4 0 "F4" /panel.install /panel.install.width /panel.install.update /install.init ]
         [ keyF4 0 "F4" /panel.zorg /panel.zorg.width /panel.zorg.update /zorg.init ]
         [ keyF5 0 "F5" /panel.kernelopts /panel.kernelopts.width /panel.kernelopts.update /kernelopts.init ]
