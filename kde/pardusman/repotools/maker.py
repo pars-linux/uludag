@@ -255,7 +255,9 @@ def setup_isolinux(project):
     copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
     copy(os.path.join(image_dir, "usr/share/misc/pci.ids"), dest)
-    copy(os.path.join(image_dir, "lib/modules/%s-%s/modules.pcimap" % (repo.packages["kernel"].version, repo.packages["kernel"].release)), dest)
+
+    kernel_version = open(os.path.join(image_dir, "etc/kernel/kernel")).read()
+    copy(os.path.join(image_dir, "lib/modules/%s/modules.pcimap" % kernel_version), dest)
     copy(os.path.join(image_dir, "boot/memtest"), os.path.join(iso_dir, "boot"))
 
 #
@@ -537,8 +539,6 @@ def make_image(project):
         obj.setUser(0, "", "", "", "pardus", "", dbus_interface="tr.org.pardus.comar.User.Manager")
         if project.type != "install":
             obj.addUser(1000, "pars", "Panter Pardus", "/home/pars", "/bin/bash", "pardus", ["wheel", "users", "lp", "lpadmin", "cdrom", "floppy", "disk", "audio", "video", "power", "dialout"], [], [], dbus_interface="tr.org.pardus.comar.User.Manager")
-
-        chrun("/sbin/depmod -a %s-%s" % (repo.packages["kernel"].version, repo.packages["kernel"].release))
 
         path1 = os.path.join(image_dir, "usr/share/baselayout/inittab.live")
         path2 = os.path.join(image_dir, "etc/inittab")
