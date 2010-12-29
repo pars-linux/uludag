@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -378,15 +378,15 @@ msgstr "modifié"
 #: src/statemanager.py:100 ui/ui_basketdialog.py:188
 #: ui/ui_mainwidget_v3.py:174
 msgid "Install Package(s)"
-msgstr "Installer le(s) paquet(s)"
+msgstr "Installer les paquets"
 
 #: src/statemanager.py:101
 msgid "Remove Package(s)"
-msgstr "Désinstaller le(s) paquet(s)"
+msgstr "Désinstaller les paquets"
 
 #: src/statemanager.py:102
 msgid "Upgrade Package(s)"
-msgstr "Mettre à jour les paquets "
+msgstr "Mettre à jour les paquets"
 
 #: src/statemanager.py:103
 msgid "Select Operation"
@@ -394,15 +394,15 @@ msgstr "Choisir l'opération"
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 nouveau(x) paquet(s) a(ont) été installé(s) avec succès."
+msgstr "%1 nouveaux paquets ont été installés avec succès."
 
 #: src/statemanager.py:114
 msgid "%1 package(s) have been removed succesfully."
-msgstr "%1 nouveau(x) paquet(s) a(ont) été désinstallé(s) avec succès."
+msgstr "%1 nouveaux paquets ont été désinstallés avec succès."
 
 #: src/statemanager.py:115
 msgid "%1 package(s) have been upgraded succesfully."
-msgstr "%1 nouveau(x) paquet(s) a(ont) été mis-à-jour avec succès."
+msgstr "%1 nouveaux paquets ont été mis-à-jour avec succès."
 
 #: src/statemanager.py:116
 msgid "%1 package(s) have been modified succesfully."
