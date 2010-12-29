@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 00:02+0000\n"
+"POT-Creation-Date: 2010-12-29 23:01+0000\n"
 "PO-Revision-Date: 2010-11-24 16:14+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../release.xml.in.h:1
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr ""
+msgstr "&quot;root&quot; ist der gebräuchliche Name des Administrators, der alle Rechte und Befugnisse für alle Dateien und Programme besitzt. Diese sind gültig für alle Modies (Einzel- & Mehrbenutzer). &lt;br&gt;&lt;br&gtIhr Paßwort muß einfach zu merken sein, aber zugleich sicher genug um möglichen Angriffen zu widerstehen. Sie können und sollten durchaus Groß- und Kleinbuchstaben, Nummern und Sonderzeichen in dem Paßwort verwenden. &lt;br&gt;&lt;br&gt;Sie können ebenso einen Hostnamen für den Computer vergeben. Ein Hostname dient zur Identifizierung des Computers im lokalen Netzwerk. Es wird empfohlen einen Computernamen zu wählen, der den Rechner möglichst genau beschreibt. "
 
 #: ../release.xml.in.h:2
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
@@ -26,7 +26,7 @@ msgstr "Ein Bootmanager ist ein kleines Programm das als erstes abläuft nachdem
 
 #: ../release.xml.in.h:3
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr ""
+msgstr "Das Tastaturlayout arrangiert die Belegung der Tastatur. Möglicherweise wollen Sie eine unterschiedliche Belegung verwenden als Ihre Tastatur anbietet. &lt;br&gt;&lt;br&gt;Sie können die ausgewählte Tastenbelegung durch eine Eingabe in das zur Verfügung gestellte Textfeld testen."
 
 #: ../release.xml.in.h:4
 msgid "All done!"
@@ -34,7 +34,7 @@ msgstr "Fertig!"
 
 #: ../release.xml.in.h:5
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
-msgstr ""
+msgstr "Sehen Sie sich unser neues Multimedia-Studio an! Pardus wird mit einer Reihe von Multimedia-Editoren sowie mit einer massiven Unterstützung verschiedenster Dateiformate und Codecs ausgeliefert. &lt;br&gt;Sie können Ihre Bilder mit Gimp bearbeiten, Ihre selbstgedrehten Filme mit Kdenlive schneiden, Ihre Musiksammlung mit Amarok und Ihre Bilder mit Digikam katalogisieren, Ebenso können Sie mit K3B CDs und DVDs brennen, etc ..."
 
 #: ../release.xml.in.h:6
 msgid "Choose a password for administration and a hostname"
@@ -54,7 +54,7 @@ msgstr "Konfiguriere den Bootmanager"
 
 #: ../release.xml.in.h:10
 msgid "Date and time settings allows you to set the date and time of your computer. You may also want to specify a correct timezone upon your location in order to benefit from automatic daylight saving time adjustments.&lt;br&gt;&lt;br&gt;A timezone is a region of the earth that has uniform standard time, usually referred as the local time. By convention, timezones compute their local time as an offset from UTC, the Coordinated Universal Time."
-msgstr ""
+msgstr "Die Datum und Uhrzeit-Einstellungen erlauben Ihnen das Datum und die Uhrzeit Ihres Computers einzustellen. Um von der automatischen Anpassungen der Sommerzeit zu profitieren können Sie die korrekte Zeitzone von Ihrem Standort angeben, &lt;br&gt;Eine Zeitzone ist eine Region der Erde, für die eine einheitliche Zeit gilt. Diese Zeit wird oft als lokale Zeit bezeichnet. Per Definition wird im Computerbereich die lokale Zeit als eine Abweichung von UTC, die koordinierte Weltzeit beschrieben."
 
 #: ../release.xml.in.h:11
 msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
@@ -70,7 +70,7 @@ msgstr "Bitte überprüfen Sie nochmals das Installationsmedium"
 
 #: ../release.xml.in.h:14
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
-msgstr ""
+msgstr "Spaß ist eine ernste Angelegenheit ... Jeder hat das Recht, für einen Augenblick mit der Hilfe eines Sudoku-Rätsel oder durch ein einfaches Spiel zu entspannen. Pardus hat ein paar kleine Spielchen vorinstalliert. Die große Anzahl der Spiele aber wartet im Reposority darauf entdeckt zu werden. Wenn Sie ein Spieler sind, sollten Sie sich die Spiele-Sektion in den Paket-Manager genauer ansehen. Hier können Sie hunderte von kostenlosen Spielen finden. Darunter befinden sich Simulatoren, teamplayer FPS&apos;s sowie Arcadespiele, etc...."
 
 #: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
@@ -103,7 +103,7 @@ msgstr "Installiere Pardus"
 
 #: ../release.xml.in.h:22
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
-msgstr ""
+msgstr "KDE ist die präferierte Desktopoberfläche von Pardus und bietet zudem eine umfangreiche Ansammlung von Programmen für unterschiedlichste Anwendungsfälle. Darunter befindet sich Software für den privaten Bereich ebenso wie Software für den täglichen Gebrauch von Firmen, die auf einfach zu bedienende und hochintegrierte Lösungen angewiesen sind. &lt;br&gt;&lt;br&gt;Die parduseigenen Werkzeuge "
 
 #: ../release.xml.in.h:23
 msgid "Kahya"
@@ -111,11 +111,11 @@ msgstr "Kahya"
 
 #: ../release.xml.in.h:24
 msgid "Kontact, allows you to get in touch with your contact easier than ever. Kontact is a seamless integration of a number of applications to achieve a software to rule all communication and organization tasks. Calendars, e-mails, RSS news, addresses are altogether. You can even link your address book to Kopete to use with your IM accounts such as MSN, jabber or GoogleTalk. So you can see if the sender of a e-mail is online.&lt;br&gt;&lt;br&gt;You can create sticky notes for your desktop from your tasks or vice versa by simply dragging them."
-msgstr ""
+msgstr "Mit Kontakt können Sie so einfach wie noch nie mit Ihren Kontakten kommunizieren. Kontakt ist eine Ansammlung von bestimmten Programmen die eine nahtlose Kommunikation und Terminplanung ermöglichen. Kalender, e-Mails, RSS Nachrichten und Adressen sind unter einem Hut zusammengefasst und leicht zugänglich. Sie können sogar Ihr Adressbuch mit Kopete verknüpfen und so über MSN, jabber oder GoogleTalk kommunizieren. Somit ist es möglich zu erkennen ob der Emailsender/empfänger online ist.&lt;br&gt;&lt;br&gt;Sie können außerdem ganz einfach Haftnotizen von Ihren Aufgaben auf dem Desktop anbringen indem Sie die Aufgaben auf den Desktop ziehen. "
 
 #: ../release.xml.in.h:25
 msgid "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. As the roots of the LibreOffice lies in years long open source office experience, even the first stable release is much powerful and competetive with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
-msgstr ""
+msgstr "Sie suchen nach einem produktiven Office Paket? Unser Vorschlag für Sie ist LibreOffice. LibreOffice ermöglicht durch seine Stabilität, seine Schnelligkeit und Freiheit ein angenehmes arbeiten und ist dabei kompatibel mit den anderen weit verbreiteten Büroprogrammen. Da die Wurzeln von LibreOffice in der OpenSource-Welt weit zurückreichen ist bei der ersten Veröffentlichung ein problemfreies arbeiten mit Writer (für Textdokumente), Calc (Tabellenkalkulation) und Impress (Präsentationsprogramm) möglich.&lt;br&gt;&lt;br&gt;Für eine komfortablere Nutzung reichert Pardus dieses Office Paket mit zahlreichen Verbesserungen und Plugins an."
 
 #: ../release.xml.in.h:26
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, so we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings."
@@ -132,7 +132,7 @@ msgstr ""
 
 #: ../release.xml.in.h:30
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
-msgstr ""
+msgstr "Pardus besitzt viele selbstentwickelte nutzerfreundliche Werkzeuge zur Systemverwaltung. Der Benutzer-Manager, Boot-Manager, Firewall-Manager und der Dienste-Manager erlauben eine einfache Administration. Alle Manager können individuell sowie von den Systemeinstellungen aus genutzt werden. Die Systemeinstellungen ist eine Ansammlung von Programmen zur Administration und Konfiguration des Systems."
 
 #: ../release.xml.in.h:31
 msgid "Pardus is a free and open source operating system that contains many well known projects such as Linux kernel, and various softwares of the GNU project, Mozilla Firefox, LibreOffice etc. and easy-to-use special tools for a comfortable yet high performance experience. &lt;br&gt;&lt;br&gt;In-house products of Tübitak are licensed with GNU Public License (GPL version 2), which is also the most common license for the selected components. However there are softwares included in this installation medium which have different licenses. You can read all the license texts in this screen in a new tiny window or find all of them on our website. &lt;br&gt;&lt;br&gt;You have to accept all the terms to install Pardus on your computer."
@@ -140,16 +140,15 @@ msgstr ""
 
 #: ../release.xml.in.h:32
 msgid "Partition your disk manually"
-msgstr ""
+msgstr "Datenträger manuell partitionieren"
 
 #: ../release.xml.in.h:33
-#, fuzzy
 msgid "Select a partitioning method"
-msgstr "Art der Partitionierung wählen"
+msgstr "Bitte Partitionierungmethode auswählen"
 
 #: ../release.xml.in.h:34
 msgid "Set your local time and date"
-msgstr ""
+msgstr "Lokale Zeit und Datum wählen"
 
 #: ../release.xml.in.h:35
 msgid "Setup your account"
