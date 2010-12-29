@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 11:24+0200\n"
+"POT-Creation-Date: 2010-12-29 15:34+0200\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -22,7 +22,7 @@ msgid "Add or Remove Software"
 msgstr ""
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:59
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:60
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr "Pakke håndtering"
@@ -76,57 +76,57 @@ msgstr "Ryd mellemlager"
 msgid "Do you want to clear all selections ?"
 msgstr ""
 
-#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
-#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
-#: src/settingsdialog.py:222 src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:72 src/pmutils.py:77
+#: src/pmutils.py:80 src/pmutils.py:83 src/pmutils.py:86
+#: src/settingsdialog.py:240 src/settingsdialog.py:245
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
 
-#: src/basketdialog.py:169
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr ""
 
-#: src/basketdialog.py:171 src/basketdialog.py:179
+#: src/basketdialog.py:172 src/basketdialog.py:180
 msgid "Update Requirements"
 msgstr ""
 
-#: src/basketdialog.py:172
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:177
+#: src/basketdialog.py:178
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr ""
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:190
+#: src/basketdialog.py:191
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:193 src/settingsdialog.py:161
+#: src/basketdialog.py:194 src/settingsdialog.py:179
 msgid "Warning"
 msgstr "Advarsel"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:195
 #, fuzzy
 msgid "Critical Packages"
 msgstr "Fjerner pakke(r)"
 
-#: src/basketdialog.py:204 src/pmwindow.py:122
+#: src/basketdialog.py:205 src/pmwindow.py:121
 #, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Valgte pakker [%1] er i konflikt med hinanden. Disse pakker kan ikke installeres sammen."
 
-#: src/basketdialog.py:206 src/pmwindow.py:124
+#: src/basketdialog.py:207 src/pmwindow.py:123
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Installer Pakke(r)"
 
-#: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:125
+#: src/basketdialog.py:208 src/mainwindow.py:148 src/mainwindow.py:151
+#: src/pmwindow.py:124
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Installer Pakke(r)"
@@ -143,30 +143,30 @@ msgstr "Pakke håndtering hjælp"
 msgid "Show main window"
 msgstr "Vis hoved vinduet"
 
-#: src/mainwidget.py:140
+#: src/mainwidget.py:144
 msgid "All packages are up to date"
 msgstr ""
 
-#: src/mainwidget.py:229
+#: src/mainwidget.py:234
 #, fuzzy
 msgid "Searching..."
 msgstr "Søg"
 
-#: src/mainwidget.py:241
+#: src/mainwidget.py:246
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:395
+#: src/mainwidget.py:400
 #, fuzzy
 msgid "All Updates"
 msgstr "Opdater"
 
-#: src/mainwidget.py:396
+#: src/mainwidget.py:401
 #, fuzzy
 msgid "Security Updates"
 msgstr "VIs opdateringer"
 
-#: src/mainwidget.py:397
+#: src/mainwidget.py:402
 msgid "Critical Updates"
 msgstr ""
 
@@ -201,51 +201,51 @@ msgstr "installerer"
 msgid "removing"
 msgstr "fjerner"
 
-#: src/operationmanager.py:42 src/progressdialog.py:74
+#: src/operationmanager.py:42 src/progressdialog.py:75
 msgid "extracting"
 msgstr "udpakker"
 
-#: src/operationmanager.py:43 src/progressdialog.py:74
+#: src/operationmanager.py:43 src/progressdialog.py:75
 msgid "configuring"
 msgstr "konfigurerer"
 
-#: src/operationmanager.py:136
+#: src/operationmanager.py:137
 msgid "downloading"
 msgstr "downloader"
 
-#: src/packagedelegate.py:61
+#: src/packagedelegate.py:65
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:62
+#: src/packagedelegate.py:66
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:82
 msgid "Description:"
 msgstr "Beskrivelse:"
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:83
 msgid "Website:"
 msgstr ""
 
-#: src/packagedelegate.py:80
+#: src/packagedelegate.py:84
 msgid "Release:"
 msgstr "Udgivelse:"
 
-#: src/packagedelegate.py:81
+#: src/packagedelegate.py:85
 msgid "Repository:"
 msgstr "Pakkearkiv:"
 
-#: src/packagedelegate.py:82
+#: src/packagedelegate.py:86
 msgid "Package Size:"
 msgstr "Pakke størrelse:"
 
-#: src/packagedelegate.py:83
+#: src/packagedelegate.py:87
 msgid "Installed Version:"
 msgstr ""
 
-#: src/packagedelegate.py:283
+#: src/packagedelegate.py:303
 msgid "Details"
 msgstr ""
 
@@ -262,94 +262,94 @@ msgstr "Pakker til installation"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:67 src/statemanager.py:240
+#: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Netværks fejl"
 
-#: src/pmutils.py:68 src/statemanager.py:241
+#: src/pmutils.py:67 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
-#: src/pmutils.py:70
+#: src/pmutils.py:69
 msgid "Authorization Error"
 msgstr "Godkendelses fejl"
 
-#: src/pmutils.py:71
+#: src/pmutils.py:70
 msgid "You are not authorized for this operation."
 msgstr "Du har ikke rettigheder til at foretage denne handling"
 
-#: src/pmutils.py:74
+#: src/pmutils.py:73
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/pmutils.py:79
+#: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:82
+#: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:85
+#: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr ""
 
-#: src/pmutils.py:100
+#: src/pmutils.py:111
 msgid "Do you want to continue ?"
 msgstr ""
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:71
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:71
+#: src/progressdialog.py:72
 #, fuzzy, python-format
 msgid "Operation - %1%"
 msgstr "Handling"
 
-#: src/progressdialog.py:78
+#: src/progressdialog.py:79
 msgid "Downloading package list of %1"
 msgstr "Downloader pakkeliste af %1"
 
-#: src/progressdialog.py:80
+#: src/progressdialog.py:81
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:86
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:92
+#: src/progressdialog.py:93
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 pakke %3"
 
-#: src/progressdialog.py:109
+#: src/progressdialog.py:110
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Forbereder PiSi...</h3>"
 
-#: src/progressdialog.py:120
+#: src/progressdialog.py:121
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Fortryder handling...</b>"
 
-#: src/settingsdialog.py:152
+#: src/settingsdialog.py:170
 msgid "Open Directory"
 msgstr ""
 
-#: src/settingsdialog.py:162
+#: src/settingsdialog.py:180
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Alle de mellemlagrede pakker vil blive sletter. Er du sikker?"
 
-#: src/settingsdialog.py:223
+#: src/settingsdialog.py:241
 #, fuzzy
 msgid "Not a valid repository name"
 msgstr "Navn på pakkearkiv"
 
-#: src/settingsdialog.py:228
+#: src/settingsdialog.py:246
 #, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Adressen på pakkearkivet skal have et xml or xml.bz2 suffix.<p>Prøv venligst igen.</qt>"
@@ -639,187 +639,195 @@ msgstr "Tilføj nyt pakkearkiv"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Navn på pakkearkiv, eks <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:394
+#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:414
 msgid "Repository Name"
 msgstr "Navn på pakkearkiv"
 
-#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:415
 msgid "Repository Address"
 msgstr "Adresse til pakkearkiv"
 
-#: ui/ui_settingsdialog.py:367
+#: ui/ui_settingsdialog.py:385
 msgid "Package Manager Settings"
 msgstr "Instillinger for pakke håndtering"
 
-#: ui/ui_settingsdialog.py:368
+#: ui/ui_settingsdialog.py:386
 msgid "&Help"
 msgstr "&Hjælp"
 
-#: ui/ui_settingsdialog.py:369
+#: ui/ui_settingsdialog.py:387
 msgid "&OK"
 msgstr "&OK"
 
-#: ui/ui_settingsdialog.py:370
+#: ui/ui_settingsdialog.py:388
 msgid "&Cancel"
 msgstr "&Fortryd"
 
-#: ui/ui_settingsdialog.py:371
+#: ui/ui_settingsdialog.py:389
 #, fuzzy
 msgid "Package list"
 msgstr "Pakke størrelse:"
 
-#: ui/ui_settingsdialog.py:372
+#: ui/ui_settingsdialog.py:390
 msgid "&Show only desktop applications"
 msgstr "&VIs kun skrivebords programmer"
 
-#: ui/ui_settingsdialog.py:373
+#: ui/ui_settingsdialog.py:391
 msgid "Show Component information "
 msgstr ""
 
-#: ui/ui_settingsdialog.py:374
+#: ui/ui_settingsdialog.py:392
+msgid "Show package type tags"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:393
 #, fuzzy
 msgid "System tray icon"
 msgstr "&Benyt ikon i statusfeltet"
 
-#: ui/ui_settingsdialog.py:375
+#: ui/ui_settingsdialog.py:394
 #, fuzzy
 msgid "Enable system tray icon"
 msgstr "&Benyt ikon i statusfeltet"
 
-#: ui/ui_settingsdialog.py:376
+#: ui/ui_settingsdialog.py:395
 msgid "Hide system tray if there is no update."
 msgstr ""
 
-#: ui/ui_settingsdialog.py:377
+#: ui/ui_settingsdialog.py:396
 msgid "Enable &periodic update check"
 msgstr "Benyt &periodisk tjek af opdateringer"
 
-#: ui/ui_settingsdialog.py:378
+#: ui/ui_settingsdialog.py:397
 #, fuzzy
 msgid "Check interval :"
 msgstr "Opdaterings Interval:"
 
-#: ui/ui_settingsdialog.py:379
+#: ui/ui_settingsdialog.py:398
 msgid " min"
 msgstr "min"
 
-#: ui/ui_settingsdialog.py:380
+#: ui/ui_settingsdialog.py:399
 msgid "Install updates automatically"
 msgstr "Installer opdateringer automatisk"
 
-#: ui/ui_settingsdialog.py:381
+#: ui/ui_settingsdialog.py:400
 msgid "Bandwidth limit"
 msgstr "Båndbredde begrænsning"
 
-#: ui/ui_settingsdialog.py:382
-msgid " kb/s"
-msgstr " kb/s"
+#: ui/ui_settingsdialog.py:401
+msgid " kB/s"
+msgstr ""
 
-#: ui/ui_settingsdialog.py:383
+#: ui/ui_settingsdialog.py:402
 #, fuzzy
 msgid "Use bandwidth limit :"
 msgstr "Benyt båndbredde begrænsning"
 
-#: ui/ui_settingsdialog.py:384
+#: ui/ui_settingsdialog.py:403
 msgid "&General Settings"
 msgstr "&Generelle indstillinger"
 
-#: ui/ui_settingsdialog.py:385
-msgid "&Use hard disk cache for downloaded software"
-msgstr "Benyt harddisk mellemlager til downloadet software"
-
-#: ui/ui_settingsdialog.py:386
+#: ui/ui_settingsdialog.py:404
 msgid "Maximum cache size:"
 msgstr "Maximal mellemlager størrelse:"
 
-#: ui/ui_settingsdialog.py:387
+#: ui/ui_settingsdialog.py:405
 msgid "Unlimited"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:388
+#: ui/ui_settingsdialog.py:406
 #, fuzzy
 msgid " Mib"
 msgstr "Mb"
 
-#: ui/ui_settingsdialog.py:389
+#: ui/ui_settingsdialog.py:407
 msgid "Current cache dir:"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:390
+#: ui/ui_settingsdialog.py:408
 msgid "Select..."
 msgstr ""
 
-#: ui/ui_settingsdialog.py:391
+#: ui/ui_settingsdialog.py:409
+msgid "Open"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:410
+msgid "&Use hard disk cache for downloaded software"
+msgstr "Benyt harddisk mellemlager til downloadet software"
+
+#: ui/ui_settingsdialog.py:411
 #, fuzzy
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
 msgstr ""
 "Rydningen af mellemlageret vil fjerne alt downloader software.\n"
 "Dette vil ikke slette installeret software eller påvirke systemets stabilitet. "
 
-#: ui/ui_settingsdialog.py:392
+#: ui/ui_settingsdialog.py:412
 msgid "C&lean disk cache now"
 msgstr "R&yd disk mellemlageret nu"
 
-#: ui/ui_settingsdialog.py:393
+#: ui/ui_settingsdialog.py:413
 msgid "C&ache"
 msgstr "M&ellemlager"
 
-#: ui/ui_settingsdialog.py:396
+#: ui/ui_settingsdialog.py:416
 msgid "&Add New Repository"
 msgstr "&Tilføj nyt pakkearkiv"
 
-#: ui/ui_settingsdialog.py:397
+#: ui/ui_settingsdialog.py:417
 msgid "Remove Repository"
 msgstr "Fjern pakkearkiv"
 
-#: ui/ui_settingsdialog.py:398
+#: ui/ui_settingsdialog.py:418
 msgid "Move &Up"
 msgstr "Ryk &Op"
 
-#: ui/ui_settingsdialog.py:399
+#: ui/ui_settingsdialog.py:419
 msgid "Move &Down"
 msgstr "Ryk &Ned"
 
-#: ui/ui_settingsdialog.py:400
+#: ui/ui_settingsdialog.py:420
 msgid "&Repositories"
 msgstr "&Pakkearkiv"
 
-#: ui/ui_settingsdialog.py:401
+#: ui/ui_settingsdialog.py:421
 msgid "HTTP proxy server:"
 msgstr "HTTP proxy server:"
 
-#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
-#: ui/ui_settingsdialog.py:407
+#: ui/ui_settingsdialog.py:422 ui/ui_settingsdialog.py:425
+#: ui/ui_settingsdialog.py:427
 msgid "Port:"
 msgstr "Port:"
 
-#: ui/ui_settingsdialog.py:403
+#: ui/ui_settingsdialog.py:423
 msgid "Use this proxy server for all protocols"
 msgstr "Benyt denne proxy server til alle protokoller "
 
-#: ui/ui_settingsdialog.py:404
+#: ui/ui_settingsdialog.py:424
 msgid "HTTPS proxy server:"
 msgstr "HTTPS proxy server:"
 
-#: ui/ui_settingsdialog.py:406
+#: ui/ui_settingsdialog.py:426
 msgid "FTP proxy server:"
 msgstr "FTP proxy server:"
 
-#: ui/ui_settingsdialog.py:408
+#: ui/ui_settingsdialog.py:428
 #, fuzzy
 msgid "No proxy server"
 msgstr "Ingen proxy server"
 
-#: ui/ui_settingsdialog.py:409
+#: ui/ui_settingsdialog.py:429
 #, fuzzy
 msgid "Use manual settings"
 msgstr "&Generelle indstillinger"
 
-#: ui/ui_settingsdialog.py:410
+#: ui/ui_settingsdialog.py:430
 msgid "Use Desktop Enviorenment's settings"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:411
+#: ui/ui_settingsdialog.py:431
 msgid "&Proxy"
 msgstr "&Proxy"
 
@@ -852,30 +860,105 @@ msgid ""
 msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
 #, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Vis pakker der kan opdateres "
+#~ msgid "Search Button"
+#~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Fjerner pakke(r)"
+#~ msgid "Search"
+#~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#~ msgid "Operation"
+#~ msgstr "Handling"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Forbereder PiSi...</h3>"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installer Pakke(r)"
+#~ msgid "Time remaining:"
+#~ msgstr "Tid tilbage:"
 
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Handling:"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Vis installerede pakker"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
+
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
+
+#, fuzzy
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "&Hjælp"
 
 #, fuzzy
 #~ msgid ""
@@ -892,102 +975,30 @@ msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
 #, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Hjælp"
-
-#, fuzzy
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
-
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
-
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Vis installerede pakker"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-
-#~ msgid "Status:"
-#~ msgstr "Status:"
-
-#~ msgid "Operation:"
-#~ msgstr "Handling:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Tid tilbage:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Forbereder PiSi...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "Handling"
-
-#~ msgid "Search"
-#~ msgstr "Søg"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installer Pakke(r)"
 
 #, fuzzy
-#~ msgid "Search Button"
-#~ msgstr "Søg"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Fjerner pakke(r)"
+
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Vis pakker der kan opdateres "
+
+#~ msgid " kb/s"
+#~ msgstr " kb/s"

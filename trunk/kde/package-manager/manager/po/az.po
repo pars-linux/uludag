@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 11:23+0200\n"
+"POT-Creation-Date: 2010-12-29 15:34+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Add or Remove Software"
 msgstr ""
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:59
+#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:60
 #: ui/ui_mainwindow.py:31
 msgid "Package Manager"
 msgstr ""
@@ -72,54 +72,54 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr ""
 
-#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
-#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
-#: src/settingsdialog.py:222 src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:72 src/pmutils.py:77
+#: src/pmutils.py:80 src/pmutils.py:83 src/pmutils.py:86
+#: src/settingsdialog.py:240 src/settingsdialog.py:245
 msgid "Pisi Error"
 msgstr ""
 
-#: src/basketdialog.py:169
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr ""
 
-#: src/basketdialog.py:171 src/basketdialog.py:179
+#: src/basketdialog.py:172 src/basketdialog.py:180
 msgid "Update Requirements"
 msgstr ""
 
-#: src/basketdialog.py:172
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:177
+#: src/basketdialog.py:178
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr ""
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:190
+#: src/basketdialog.py:191
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:193 src/settingsdialog.py:161
+#: src/basketdialog.py:194 src/settingsdialog.py:179
 msgid "Warning"
 msgstr ""
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:195
 msgid "Critical Packages"
 msgstr ""
 
-#: src/basketdialog.py:204 src/pmwindow.py:122
+#: src/basketdialog.py:205 src/pmwindow.py:121
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:206 src/pmwindow.py:124
+#: src/basketdialog.py:207 src/pmwindow.py:123
 msgid "Already Installed Packages"
 msgstr ""
 
-#: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:125
+#: src/basketdialog.py:208 src/mainwindow.py:148 src/mainwindow.py:151
+#: src/pmwindow.py:124
 msgid "Installed Packages"
 msgstr ""
 
@@ -135,27 +135,27 @@ msgstr ""
 msgid "Show main window"
 msgstr ""
 
-#: src/mainwidget.py:140
+#: src/mainwidget.py:144
 msgid "All packages are up to date"
 msgstr ""
 
-#: src/mainwidget.py:229
+#: src/mainwidget.py:234
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:241
+#: src/mainwidget.py:246
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:395
+#: src/mainwidget.py:400
 msgid "All Updates"
 msgstr ""
 
-#: src/mainwidget.py:396
+#: src/mainwidget.py:401
 msgid "Security Updates"
 msgstr ""
 
-#: src/mainwidget.py:397
+#: src/mainwidget.py:402
 msgid "Critical Updates"
 msgstr ""
 
@@ -187,51 +187,51 @@ msgstr ""
 msgid "removing"
 msgstr ""
 
-#: src/operationmanager.py:42 src/progressdialog.py:74
+#: src/operationmanager.py:42 src/progressdialog.py:75
 msgid "extracting"
 msgstr ""
 
-#: src/operationmanager.py:43 src/progressdialog.py:74
+#: src/operationmanager.py:43 src/progressdialog.py:75
 msgid "configuring"
 msgstr ""
 
-#: src/operationmanager.py:136
+#: src/operationmanager.py:137
 msgid "downloading"
 msgstr ""
 
-#: src/packagedelegate.py:61
+#: src/packagedelegate.py:65
 msgid "critical"
 msgstr ""
 
-#: src/packagedelegate.py:62
+#: src/packagedelegate.py:66
 msgid "security"
 msgstr ""
 
-#: src/packagedelegate.py:78
+#: src/packagedelegate.py:82
 msgid "Description:"
 msgstr ""
 
-#: src/packagedelegate.py:79
+#: src/packagedelegate.py:83
 msgid "Website:"
 msgstr ""
 
-#: src/packagedelegate.py:80
+#: src/packagedelegate.py:84
 msgid "Release:"
 msgstr ""
 
-#: src/packagedelegate.py:81
+#: src/packagedelegate.py:85
 msgid "Repository:"
 msgstr ""
 
-#: src/packagedelegate.py:82
+#: src/packagedelegate.py:86
 msgid "Package Size:"
 msgstr ""
 
-#: src/packagedelegate.py:83
+#: src/packagedelegate.py:87
 msgid "Installed Version:"
 msgstr ""
 
-#: src/packagedelegate.py:283
+#: src/packagedelegate.py:303
 msgid "Details"
 msgstr ""
 
@@ -247,90 +247,90 @@ msgstr ""
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:67 src/statemanager.py:240
+#: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
 msgstr ""
 
-#: src/pmutils.py:68 src/statemanager.py:241
+#: src/pmutils.py:67 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr ""
 
-#: src/pmutils.py:70
+#: src/pmutils.py:69
 msgid "Authorization Error"
 msgstr ""
 
-#: src/pmutils.py:71
+#: src/pmutils.py:70
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: src/pmutils.py:74
+#: src/pmutils.py:73
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/pmutils.py:79
+#: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:82
+#: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:85
+#: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr ""
 
-#: src/pmutils.py:100
+#: src/pmutils.py:111
 msgid "Do you want to continue ?"
 msgstr ""
 
-#: src/progressdialog.py:70
+#: src/progressdialog.py:71
 msgid "<p align='right'>%1 %</p>"
 msgstr ""
 
-#: src/progressdialog.py:71
+#: src/progressdialog.py:72
 #, python-format
 msgid "Operation - %1%"
 msgstr ""
 
-#: src/progressdialog.py:78
+#: src/progressdialog.py:79
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: src/progressdialog.py:80
+#: src/progressdialog.py:81
 msgid "%1 %2"
 msgstr ""
 
-#: src/progressdialog.py:85
+#: src/progressdialog.py:86
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:92
+#: src/progressdialog.py:93
 msgid "%1 / %2, %3"
 msgstr ""
 
-#: src/progressdialog.py:109
+#: src/progressdialog.py:110
 msgid "Preparing PiSi..."
 msgstr ""
 
-#: src/progressdialog.py:120
+#: src/progressdialog.py:121
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
-#: src/settingsdialog.py:152
+#: src/settingsdialog.py:170
 msgid "Open Directory"
 msgstr ""
 
-#: src/settingsdialog.py:162
+#: src/settingsdialog.py:180
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
-#: src/settingsdialog.py:223
+#: src/settingsdialog.py:241
 msgid "Not a valid repository name"
 msgstr ""
 
-#: src/settingsdialog.py:228
+#: src/settingsdialog.py:246
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr ""
 
@@ -598,176 +598,184 @@ msgstr ""
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
-#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:394
+#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:414
 msgid "Repository Name"
 msgstr ""
 
-#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:415
 msgid "Repository Address"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:367
+#: ui/ui_settingsdialog.py:385
 msgid "Package Manager Settings"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:368
+#: ui/ui_settingsdialog.py:386
 msgid "&Help"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:369
+#: ui/ui_settingsdialog.py:387
 msgid "&OK"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:370
+#: ui/ui_settingsdialog.py:388
 msgid "&Cancel"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:371
+#: ui/ui_settingsdialog.py:389
 msgid "Package list"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:372
+#: ui/ui_settingsdialog.py:390
 msgid "&Show only desktop applications"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:373
+#: ui/ui_settingsdialog.py:391
 msgid "Show Component information "
 msgstr ""
 
-#: ui/ui_settingsdialog.py:374
-msgid "System tray icon"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:375
-msgid "Enable system tray icon"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:376
-msgid "Hide system tray if there is no update."
-msgstr ""
-
-#: ui/ui_settingsdialog.py:377
-msgid "Enable &periodic update check"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:378
-msgid "Check interval :"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:379
-msgid " min"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:380
-msgid "Install updates automatically"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:381
-msgid "Bandwidth limit"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:382
-msgid " kb/s"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:383
-msgid "Use bandwidth limit :"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:384
-msgid "&General Settings"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:385
-msgid "&Use hard disk cache for downloaded software"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:386
-msgid "Maximum cache size:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:387
-msgid "Unlimited"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:388
-msgid " Mib"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:389
-msgid "Current cache dir:"
-msgstr ""
-
-#: ui/ui_settingsdialog.py:390
-msgid "Select..."
-msgstr ""
-
-#: ui/ui_settingsdialog.py:391
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr ""
-
 #: ui/ui_settingsdialog.py:392
-msgid "C&lean disk cache now"
+msgid "Show package type tags"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:393
-msgid "C&ache"
+msgid "System tray icon"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:394
+msgid "Enable system tray icon"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:395
+msgid "Hide system tray if there is no update."
 msgstr ""
 
 #: ui/ui_settingsdialog.py:396
-msgid "&Add New Repository"
+msgid "Enable &periodic update check"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:397
-msgid "Remove Repository"
+msgid "Check interval :"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:398
-msgid "Move &Up"
+msgid " min"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:399
-msgid "Move &Down"
+msgid "Install updates automatically"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:400
-msgid "&Repositories"
+msgid "Bandwidth limit"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:401
-msgid "HTTP proxy server:"
+msgid " kB/s"
 msgstr ""
 
-#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
-#: ui/ui_settingsdialog.py:407
-msgid "Port:"
+#: ui/ui_settingsdialog.py:402
+msgid "Use bandwidth limit :"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:403
-msgid "Use this proxy server for all protocols"
+msgid "&General Settings"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:404
-msgid "HTTPS proxy server:"
+msgid "Maximum cache size:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:405
+msgid "Unlimited"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:406
-msgid "FTP proxy server:"
+msgid " Mib"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:407
+msgid "Current cache dir:"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:408
-msgid "No proxy server"
+msgid "Select..."
 msgstr ""
 
 #: ui/ui_settingsdialog.py:409
-msgid "Use manual settings"
+msgid "Open"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:410
-msgid "Use Desktop Enviorenment's settings"
+msgid "&Use hard disk cache for downloaded software"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:411
+msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
+msgstr ""
+
+#: ui/ui_settingsdialog.py:412
+msgid "C&lean disk cache now"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:413
+msgid "C&ache"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:416
+msgid "&Add New Repository"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:417
+msgid "Remove Repository"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:418
+msgid "Move &Up"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:419
+msgid "Move &Down"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:420
+msgid "&Repositories"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:421
+msgid "HTTP proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:422 ui/ui_settingsdialog.py:425
+#: ui/ui_settingsdialog.py:427
+msgid "Port:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:423
+msgid "Use this proxy server for all protocols"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:424
+msgid "HTTPS proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:426
+msgid "FTP proxy server:"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:428
+msgid "No proxy server"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:429
+msgid "Use manual settings"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:430
+msgid "Use Desktop Enviorenment's settings"
+msgstr ""
+
+#: ui/ui_settingsdialog.py:431
 msgid "&Proxy"
 msgstr ""
 

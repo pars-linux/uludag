@@ -57,6 +57,9 @@ class PMConfig(Config):
     def showComponents(self):
         return self.getBoolValue("ShowComponents")
 
+    def showIsA(self):
+        return self.getBoolValue("ShowIsA")
+
     def updateCheck(self):
         return self.getBoolValue("UpdateCheck")
 
@@ -95,6 +98,9 @@ class PMConfig(Config):
 
     def setShowComponents(self, enabled):
         self.setValue("ShowComponents", enabled)
+
+    def setShowIsA(self, enabled):
+        self.setValue("ShowIsA", enabled)
 
     def setUseKdeProxy(self, enabled):
         self.setValue("UseKdeProxy", enabled)
