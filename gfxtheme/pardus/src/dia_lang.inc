@@ -12,6 +12,7 @@
 % fallback if there is no "languages"
 /lang.items [ "en_US" ] def
 /lang.names [ "English (US)" ] def
+/lang.displayed false def
 
 /.la.locale 0 def
 /.la.rtl    1 def
@@ -240,6 +241,16 @@
 
 
 % - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+% Clean up after language menu has been undrawn.
+%
+% ( ) => ( )
+%
+/lang.cleanup {
+  /lang.displayed true def
+} def
+
+
+% - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 % Show language menu.
 %
 % ( ) => ( )
@@ -250,6 +261,7 @@
   window.xmenu
   dup .xmenu xmenu.lang put
   dup .xmenu.update /lang.update put
+  dup .xmenu.cleanup /lang.cleanup put
   dup window.init
       window.show
 } def

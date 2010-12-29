@@ -722,6 +722,7 @@
       } ifelse
 
     } if
+    lang.displayed not { panel.lang } if
   } if
 
 } def
@@ -1154,6 +1155,8 @@
       1 add
     } forall
     tmp dup setlang pop setkeymap
+    % FIXME: lang panel pops up when there is no default, remark this if wanted otherwise
+    /lang.displayed true def
   } {
     pop
     "en_US" dup setlang pop setkeymap
