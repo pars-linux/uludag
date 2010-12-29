@@ -184,7 +184,6 @@
                 <SelectedPackage>kdm</SelectedPackage>
                 <SelectedPackage>kdm-theme-pardus</SelectedPackage>
                 <SelectedPackage>kernel</SelectedPackage>
-                <SelectedPackage>kernel-module-headers</SelectedPackage>
                 <SelectedPackage>kfax</SelectedPackage>
                 <SelectedPackage>kmozillahelper</SelectedPackage>
                 <SelectedPackage>kmix</SelectedPackage>
@@ -717,7 +716,6 @@
                 <Package>kdm-theme-pardus</Package>
                 <Package>kernel</Package>
                 <Package>kernel-firmware</Package>
-                <Package>kernel-module-headers</Package>
                 <Package>keyutils</Package>
                 <Package>kfax</Package>
                 <Package>kmozillahelper</Package>
