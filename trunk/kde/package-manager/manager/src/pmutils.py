@@ -13,6 +13,7 @@
 
 import os
 import sys
+import comar
 import urllib
 import unicodedata
 
@@ -59,7 +60,8 @@ class PM:
 
     def exceptionCaught(self, message, package = ''):
         if hasattr(self, "progressDialog"):
-            self.progressDialog.hide_()
+            if hasattr(self.progressDialog, "hide_"):
+                self.progressDialog.hide_()
 
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
@@ -69,15 +71,18 @@ class PM:
             errorMessage = i18n("You are not authorized for this operation.")
         elif "HTTP Error 404" in message:
             errorTitle = i18n("Pisi Error")
-            errorMessage = i18n("Package <b>%s</b> not found in repositories.<br>"\
-                                "It may be upgraded or removed from the repository.<br>"\
-                                "Please try upgrading repository informations." % package)
+            errorMessage = unicode(i18n("Package <b>%s</b> not found in repositories.<br>"\
+                                        "It may be upgraded or removed from the repository.<br>"\
+                                        "Please try upgrading repository informations.")) % package
         elif "MIXING PACKAGES" in message:
             errorTitle = i18n("Pisi Error")
             errorMessage = i18n("Mixing file names and package names not supported yet.")
         elif "FILE NOT EXISTS" in message:
             errorTitle = i18n("Pisi Error")
-            errorMessage = i18n("File <b>%s</b> doesn't exists." % package)
+            errorMessage = unicode(i18n("File <b>%s</b> doesn't exists.")) % package
+        elif "ALREADY RUNNING" in message:
+            errorTitle = i18n("Pisi Error")
+            errorMessage = i18n("Another instance of PiSi is running. Only one instance is allowed.")
         else:
             errorTitle = i18n("Pisi Error")
             errorMessage = message
@@ -118,6 +123,10 @@ def network_available():
     except:
         return False
     return True
+
+def isPisiRunning():
+    link = comar.Link()
+    return any(operation.startswith('System.Manager') for operation in link.listRunning())
 
 def handleException(exception, value, tb):
     """

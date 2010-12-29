@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 12:04+0200\n"
+"POT-Creation-Date: 2010-12-29 11:24+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -74,9 +74,9 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
-#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
-#: src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
+#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
+#: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
 
@@ -115,17 +115,17 @@ msgstr "Упозорење"
 msgid "Critical Packages"
 msgstr "Уклањање пакета"
 
-#: src/basketdialog.py:204 src/pmwindow.py:115
+#: src/basketdialog.py:204 src/pmwindow.py:122
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:206 src/pmwindow.py:117
+#: src/basketdialog.py:206 src/pmwindow.py:124
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Инсталирај пакет(е)"
 
 #: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:118
+#: src/pmwindow.py:125
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Инсталирај пакет(е)"
@@ -142,28 +142,28 @@ msgstr "Помоћ за менаџер пакета"
 msgid "Show main window"
 msgstr "Прикажи главни прозор"
 
-#: src/mainwidget.py:139
+#: src/mainwidget.py:140
 #, fuzzy
 msgid "All packages are up to date"
 msgstr "Сви пакети су ажурирани"
 
-#: src/mainwidget.py:228
+#: src/mainwidget.py:229
 msgid "Searching..."
 msgstr ""
 
-#: src/mainwidget.py:240
+#: src/mainwidget.py:241
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:395
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:396
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:397
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
@@ -200,11 +200,11 @@ msgstr "инсталирано"
 msgid "removing"
 msgstr "уклоњено"
 
-#: src/operationmanager.py:42 src/progressdialog.py:71
+#: src/operationmanager.py:42 src/progressdialog.py:74
 msgid "extracting"
 msgstr "отпакивање"
 
-#: src/operationmanager.py:43 src/progressdialog.py:71
+#: src/operationmanager.py:43 src/progressdialog.py:74
 msgid "configuring"
 msgstr "конфигурисање"
 
@@ -260,73 +260,77 @@ msgstr "%prog пакета да се инсталира"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:65 src/statemanager.py:240
+#: src/pmutils.py:67 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Мрежна грешка"
 
-#: src/pmutils.py:66 src/statemanager.py:241
+#: src/pmutils.py:68 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
-#: src/pmutils.py:68
+#: src/pmutils.py:70
 msgid "Authorization Error"
 msgstr "Грешка у вези овлашћења"
 
-#: src/pmutils.py:69
+#: src/pmutils.py:71
 msgid "You are not authorized for this operation."
 msgstr "Нисте овлашћени за ову операцију."
 
-#: src/pmutils.py:72
+#: src/pmutils.py:74
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
 
-#: src/pmutils.py:77
+#: src/pmutils.py:79
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:80
+#: src/pmutils.py:82
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:95
+#: src/pmutils.py:85
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr ""
+
+#: src/pmutils.py:100
 msgid "Do you want to continue ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/progressdialog.py:67
+#: src/progressdialog.py:70
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:71
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операција - %1%"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:78
 msgid "Downloading package list of %1"
 msgstr "Преузимање листе пакета од %1"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:80
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:85
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:92
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 пакет %3"
 
-#: src/progressdialog.py:106
+#: src/progressdialog.py:109
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Припремање ПиСија...</h3>"
 
-#: src/progressdialog.py:117
+#: src/progressdialog.py:120
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Поништавање операције...</b>"
 

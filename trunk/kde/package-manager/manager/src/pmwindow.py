@@ -28,6 +28,7 @@ from operationmanager import OperationManager
 
 from pmutils import PM
 from pmutils import askForActions
+from pmutils import isPisiRunning
 from pmutils import get_real_paths
 
 from ui_pminstall import Ui_PmWindow
@@ -51,6 +52,12 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.state = StateManager(self)
         self.iface = self.state.iface
         self.state._selected_packages = packages
+        self._started = False
+
+        # Check if another pisi instance already running
+        if isPisiRunning():
+            self.exceptionCaught("ALREADY RUNNING")
+            sys.exit(1)
 
         # Check given package names available in repositories
         if not any(package.endswith('.pisi') for package in packages):
@@ -102,12 +109,11 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.rejected.connect(self.actionCancelled)
 
     def reject(self):
-        if self.iface.operationInProgress():
+        if self.iface.operationInProgress() and self._started:
             return
         QDialog.reject(self)
 
     def installPackages(self):
-
         reinstall = False
         answer = True
         actions = self.state.checkInstallActions(self.model.selectedPackages())
@@ -127,7 +133,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         operation = self.state.operationAction(self.model.selectedPackages(),
                                                reinstall = reinstall,
                                                silence = True)
-
+        self._started = True
         if operation == False:
             sys.exit(1)
 
@@ -156,7 +162,11 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
 
         self.progressDialog._show()
-        self.progressDialog.enableCancel()
+
+        if not self._started:
+            self.progressDialog.disableCancel()
+        else:
+            self.progressDialog.enableCancel()
 
     def actionFinished(self, operation):
         if operation in ("System.Manager.installPackage",

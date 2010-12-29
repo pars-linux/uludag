@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -9,14 +9,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 12:04+0200\n"
+"POT-Creation-Date: 2010-12-29 11:24+0200\n"
 "PO-Revision-Date: 2010-07-08 00:11+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -43,12 +43,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Entwickler"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -76,9 +76,9 @@ msgstr "Auswahl zurücksetzen"
 msgid "Do you want to clear all selections ?"
 msgstr "Möchten Sie die Auswahl zurücksetzen?"
 
-#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
-#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
-#: src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
+#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
+#: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "PiSi Fehler"
 
@@ -114,16 +114,16 @@ msgstr "Warnung"
 msgid "Critical Packages"
 msgstr "Kritische Pakete"
 
-#: src/basketdialog.py:204 src/pmwindow.py:115
+#: src/basketdialog.py:204 src/pmwindow.py:122
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Die ausgewählten Pakete sind schon installiert. <br>Falls Sie fortfahren, wird das Paket neu installiert"
 
-#: src/basketdialog.py:206 src/pmwindow.py:117
+#: src/basketdialog.py:206 src/pmwindow.py:124
 msgid "Already Installed Packages"
 msgstr "Bereits installierte Pakete"
 
 #: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:118
+#: src/pmwindow.py:125
 msgid "Installed Packages"
 msgstr "Installierte Pakete"
 
@@ -140,27 +140,27 @@ msgstr "Hilfe des Paket Managers"
 msgid "Show main window"
 msgstr "Hauptfenster zeigen"
 
-#: src/mainwidget.py:139
+#: src/mainwidget.py:140
 msgid "All packages are up to date"
 msgstr "Alle Pakete sind auf dem neuesten Stand!"
 
-#: src/mainwidget.py:228
+#: src/mainwidget.py:229
 msgid "Searching..."
 msgstr "Suche..."
 
-#: src/mainwidget.py:240
+#: src/mainwidget.py:241
 msgid "No results found."
 msgstr "Suche nicht erfolgreich."
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:395
 msgid "All Updates"
 msgstr "Alle Aktualisierungen"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:396
 msgid "Security Updates"
 msgstr "Sicherheitsupdates"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:397
 msgid "Critical Updates"
 msgstr "Kritische Updates"
 
@@ -192,11 +192,11 @@ msgstr "wird installiert"
 msgid "removing"
 msgstr "wird entfernt"
 
-#: src/operationmanager.py:42 src/progressdialog.py:71
+#: src/operationmanager.py:42 src/progressdialog.py:74
 msgid "extracting"
 msgstr "auspacken"
 
-#: src/operationmanager.py:43 src/progressdialog.py:71
+#: src/operationmanager.py:43 src/progressdialog.py:74
 msgid "configuring"
 msgstr "konfiguriere"
 
@@ -253,72 +253,76 @@ msgstr "%prog Pakete zu installieren"
 msgid "Hide summary screen"
 msgstr "Verberge die Anzeige der Zusammenfassung"
 
-#: src/pmutils.py:65 src/statemanager.py:240
+#: src/pmutils.py:67 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Netzwerkfehler"
 
-#: src/pmutils.py:66 src/statemanager.py:241
+#: src/pmutils.py:68 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
 
-#: src/pmutils.py:68
+#: src/pmutils.py:70
 msgid "Authorization Error"
 msgstr "Authorisationsfehler"
 
-#: src/pmutils.py:69
+#: src/pmutils.py:71
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 
-#: src/pmutils.py:72
+#: src/pmutils.py:74
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paket <b>%s</b> nicht in den Depots gefunden. <br>Möglicherweise ist es aktualisiert oder aus dem Depot entfernt worden.<br> Bitte versuchen Sie die Depot-Informationen zu aktualisieren."
 
-#: src/pmutils.py:77
+#: src/pmutils.py:79
 msgid "Mixing file names and package names not supported yet."
 msgstr "Das vermischen von Datei- und Paketnamen wird momentan nicht unterstützt."
 
-#: src/pmutils.py:80
+#: src/pmutils.py:82
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Die Datei <b>%s</b> existiert nicht."
 
-#: src/pmutils.py:95
+#: src/pmutils.py:85
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr "Eine andere Instanz von PiSi wird ausgeführt. Es ist nur eine Instanz erlaubt."
+
+#: src/pmutils.py:100
 msgid "Do you want to continue ?"
 msgstr "Möchten Sie fortfahren ?"
 
-#: src/progressdialog.py:67
+#: src/progressdialog.py:70
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:71
 #, python-format
 msgid "Operation - %1%"
 msgstr "Vorgang - %1%"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:78
 msgid "Downloading package list of %1"
 msgstr "Paketliste wird von %1 heruntergeladen"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:80
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:85
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
 # could You put a comment with an example string, maybe in foreign language it
 # sounds better when inverting some positions ?
-#: src/progressdialog.py:89
+#: src/progressdialog.py:92
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:106
+#: src/progressdialog.py:109
 msgid "Preparing PiSi..."
 msgstr "Bereite PiSi vor..."
 
-#: src/progressdialog.py:117
+#: src/progressdialog.py:120
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Vorgang wird abgebrochen...</b>"
 
@@ -496,12 +500,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
 #: src/tray.py:194
-msgid "Show Updates"
-msgstr "Updates anzeigen"
-
-#: src/tray.py:194
 msgid "Ignore"
 msgstr "Ignoriere"
+
+#: src/tray.py:194
+msgid "Show Updates"
+msgstr "Updates anzeigen"
 
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
 msgid "Package Files"
