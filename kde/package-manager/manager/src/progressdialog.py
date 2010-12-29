@@ -62,7 +62,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.busy.stopAnimation()
         self.busy.hide()
         self.widget.show()
-
+        if not self.isVisible():
+            if not self.parent.cw._started:
+                self.disableCancel()
+            self._show()
         self.progressBar.setValue(progress)
         self.percentage.setText(i18n("<p align='right'>%1 %</p>", progress))
         self.parent.setWindowTitle(i18n("Operation - %1%", progress))

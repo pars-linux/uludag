@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 12:04+0200\n"
+"POT-Creation-Date: 2010-12-29 11:24+0200\n"
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -76,9 +76,9 @@ msgstr " Pulisci Cestino"
 msgid "Do you want to clear all selections ?"
 msgstr "Vuoi cancellare tutte le selezioni?"
 
-#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
-#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
-#: src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
+#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
+#: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
 
@@ -115,18 +115,18 @@ msgstr "Attenzione"
 msgid "Critical Packages"
 msgstr "Pacchetti Critici"
 
-#: src/basketdialog.py:204 src/pmwindow.py:115
+#: src/basketdialog.py:204 src/pmwindow.py:122
 #, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono essere installati insieme."
 
-#: src/basketdialog.py:206 src/pmwindow.py:117
+#: src/basketdialog.py:206 src/pmwindow.py:124
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Installa pacchetto/i"
 
 #: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:118
+#: src/pmwindow.py:125
 #, fuzzy
 msgid "Installed Packages"
 msgstr "Installa pacchetto/i"
@@ -143,28 +143,28 @@ msgstr "Guida del Gestore Pacchetti"
 msgid "Show main window"
 msgstr "Mostra finestra principale"
 
-#: src/mainwidget.py:139
+#: src/mainwidget.py:140
 msgid "All packages are up to date"
 msgstr "Tutti i pacchetti sono aggiornati"
 
-#: src/mainwidget.py:228
+#: src/mainwidget.py:229
 #, fuzzy
 msgid "Searching..."
 msgstr "Cerca"
 
-#: src/mainwidget.py:240
+#: src/mainwidget.py:241
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:395
 msgid "All Updates"
 msgstr "Tutti gli aggiornamenti"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:396
 msgid "Security Updates"
 msgstr "Aggiornamenti di sicurezza"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:397
 msgid "Critical Updates"
 msgstr "Aggiornamenti critici"
 
@@ -196,11 +196,11 @@ msgstr "installazione in corso"
 msgid "removing"
 msgstr "rimozione in corso"
 
-#: src/operationmanager.py:42 src/progressdialog.py:71
+#: src/operationmanager.py:42 src/progressdialog.py:74
 msgid "extracting"
 msgstr "estrazione"
 
-#: src/operationmanager.py:43 src/progressdialog.py:71
+#: src/operationmanager.py:43 src/progressdialog.py:74
 msgid "configuring"
 msgstr "configurazione"
 
@@ -256,72 +256,76 @@ msgstr "%prog pacchetti_da_installare"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:65 src/statemanager.py:240
+#: src/pmutils.py:67 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Errore di rete"
 
-#: src/pmutils.py:66 src/statemanager.py:241
+#: src/pmutils.py:68 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
-#: src/pmutils.py:68
+#: src/pmutils.py:70
 msgid "Authorization Error"
 msgstr "Errore di autorizzazione"
 
-#: src/pmutils.py:69
+#: src/pmutils.py:71
 msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
-#: src/pmutils.py:72
+#: src/pmutils.py:74
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. Prova ad aggiornare le informazioni sui repository."
 
-#: src/pmutils.py:77
+#: src/pmutils.py:79
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:80
+#: src/pmutils.py:82
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:95
+#: src/pmutils.py:85
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr "Un'altra istanza di PiSi è in esecuzione. La modifica del database di PiSi è consentita a un'unica istanza alla volta."
+
+#: src/pmutils.py:100
 msgid "Do you want to continue ?"
 msgstr "Vuoi continuare?"
 
-#: src/progressdialog.py:67
+#: src/progressdialog.py:70
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:71
 #, python-format
 msgid "Operation - %1%"
 msgstr "Operazione - %1%"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:78
 msgid "Downloading package list of %1"
 msgstr "Download lista pacchetti di %1"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:80
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:85
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:92
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 pacchetto %3"
 
-#: src/progressdialog.py:106
+#: src/progressdialog.py:109
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Preparazione PiSi...</h3>"
 
-#: src/progressdialog.py:117
+#: src/progressdialog.py:120
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Annullamento operazione...</b>"
 

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 12:04+0200\n"
+"POT-Creation-Date: 2010-12-29 11:24+0200\n"
 "PO-Revision-Date: 2010-11-28 10:53+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -73,9 +73,9 @@ msgstr "Kosár törlése"
 msgid "Do you want to clear all selections ?"
 msgstr "Az összes kijelölést törli?"
 
-#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
-#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
-#: src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
+#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
+#: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "PiSi hiba"
 
@@ -111,16 +111,16 @@ msgstr "Figyelem"
 msgid "Critical Packages"
 msgstr "Kritikus csomagok"
 
-#: src/basketdialog.py:204 src/pmwindow.py:115
+#: src/basketdialog.py:204 src/pmwindow.py:122
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok újratelepítésre kerülnek"
 
-#: src/basketdialog.py:206 src/pmwindow.py:117
+#: src/basketdialog.py:206 src/pmwindow.py:124
 msgid "Already Installed Packages"
 msgstr "Már telepített csomagok"
 
 #: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:118
+#: src/pmwindow.py:125
 msgid "Installed Packages"
 msgstr "Telepített csomagok"
 
@@ -136,27 +136,27 @@ msgstr "Súgó a Csomagkezelőhöz"
 msgid "Show main window"
 msgstr "Főablak megjelenítése"
 
-#: src/mainwidget.py:139
+#: src/mainwidget.py:140
 msgid "All packages are up to date"
 msgstr "Nincs frissíthető csomag"
 
-#: src/mainwidget.py:228
+#: src/mainwidget.py:229
 msgid "Searching..."
 msgstr "Keresés..."
 
-#: src/mainwidget.py:240
+#: src/mainwidget.py:241
 msgid "No results found."
 msgstr "Nincs találat"
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:395
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:396
 msgid "Security Updates"
 msgstr "Biztonsági frissítések"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:397
 msgid "Critical Updates"
 msgstr "Kritikus frissítések"
 
@@ -188,11 +188,11 @@ msgstr "telepítés"
 msgid "removing"
 msgstr "eltávolítás"
 
-#: src/operationmanager.py:42 src/progressdialog.py:71
+#: src/operationmanager.py:42 src/progressdialog.py:74
 msgid "extracting"
 msgstr "kibontás"
 
-#: src/operationmanager.py:43 src/progressdialog.py:71
+#: src/operationmanager.py:43 src/progressdialog.py:74
 msgid "configuring"
 msgstr "konfigurálás"
 
@@ -248,70 +248,74 @@ msgstr "%prog csomag van hátra"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:65 src/statemanager.py:240
+#: src/pmutils.py:67 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Hálózati hiba"
 
-#: src/pmutils.py:66 src/statemanager.py:241
+#: src/pmutils.py:68 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Ellenőrizze a hálózati kapcsolatod és próbálja újra."
 
-#: src/pmutils.py:68
+#: src/pmutils.py:70
 msgid "Authorization Error"
 msgstr "Hitelesítési hiba"
 
-#: src/pmutils.py:69
+#: src/pmutils.py:71
 msgid "You are not authorized for this operation."
 msgstr "A művelet végrehajtásához nincs jogosultsága"
 
-#: src/pmutils.py:72
+#: src/pmutils.py:74
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "A <b>%s</b> csomag nem található a tárolóban.<br>Lehet hogy már frissült, vagy már el lett távolítva.<br>Kérem frissítse a tárolók információit."
 
-#: src/pmutils.py:77
+#: src/pmutils.py:79
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:80
+#: src/pmutils.py:82
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:95
+#: src/pmutils.py:85
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr "Egy másik PiSi már fut. Csak egy példány indítása megengedett."
+
+#: src/pmutils.py:100
 msgid "Do you want to continue ?"
 msgstr "Kívánja folytatni?"
 
-#: src/progressdialog.py:67
+#: src/progressdialog.py:70
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:71
 #, python-format
 msgid "Operation - %1%"
 msgstr "Művelet - %1%"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:78
 msgid "Downloading package list of %1"
 msgstr "%1 csomaglista letöltése"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:80
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:85
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:92
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:106
+#: src/progressdialog.py:109
 msgid "Preparing PiSi..."
 msgstr "<h3>PiSi előkészítése...</h3>"
 
-#: src/progressdialog.py:117
+#: src/progressdialog.py:120
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Művelet visszavonása...</b>"
 

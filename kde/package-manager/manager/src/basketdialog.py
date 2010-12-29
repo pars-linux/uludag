@@ -210,6 +210,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
             if actions:
                 reinstall = True
 
+        self.parent.cw._started = True
         self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall)
 
     def showHideDownloadInfo(self):

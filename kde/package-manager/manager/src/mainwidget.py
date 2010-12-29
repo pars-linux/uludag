@@ -123,6 +123,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
     def initialize(self):
         waitCursor()
         self.searchLine.clear()
+        self._started = False
         self._last_packages = None
         self.state.reset()
         self.initializePackageList()
@@ -276,7 +277,11 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             if self.parent.centralWidget().basket.isVisible():
                 self.parent.centralWidget().basket._hide()
             self.progressDialog._show()
-        self.progressDialog.enableCancel()
+
+        if not self._started:
+            self.progressDialog.disableCancel()
+        else:
+            self.progressDialog.enableCancel()
 
     def updateRepoAction(self):
         if not network_available():

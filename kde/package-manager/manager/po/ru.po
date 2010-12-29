@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-28 12:04+0200\n"
+"POT-Creation-Date: 2010-12-29 11:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -39,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Разработчик"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -72,9 +72,9 @@ msgstr "Очистить"
 msgid "Do you want to clear all selections ?"
 msgstr "Вы хотите очистить выбор пакетов?"
 
-#: src/basketdialog.py:69 src/pmutils.py:71 src/pmutils.py:76
-#: src/pmutils.py:79 src/pmutils.py:82 src/settingsdialog.py:222
-#: src/settingsdialog.py:227
+#: src/basketdialog.py:69 src/pmutils.py:73 src/pmutils.py:78
+#: src/pmutils.py:81 src/pmutils.py:84 src/pmutils.py:87
+#: src/settingsdialog.py:222 src/settingsdialog.py:227
 msgid "Pisi Error"
 msgstr "Ошибка в PiSi "
 
@@ -110,16 +110,16 @@ msgstr "Предупреждение"
 msgid "Critical Packages"
 msgstr "Критические пакеты"
 
-#: src/basketdialog.py:204 src/pmwindow.py:115
+#: src/basketdialog.py:204 src/pmwindow.py:122
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Выбранные пакеты уже установлены.<br>Если вы продолжите, пакеты будут установлены заново."
 
-#: src/basketdialog.py:206 src/pmwindow.py:117
+#: src/basketdialog.py:206 src/pmwindow.py:124
 msgid "Already Installed Packages"
 msgstr "Уже установленные пакеты"
 
 #: src/basketdialog.py:207 src/mainwindow.py:148 src/mainwindow.py:151
-#: src/pmwindow.py:118
+#: src/pmwindow.py:125
 msgid "Installed Packages"
 msgstr "Установленные пакеты"
 
@@ -135,27 +135,27 @@ msgstr "Краткая справка о менеджере пактов"
 msgid "Show main window"
 msgstr "Показать главное окно"
 
-#: src/mainwidget.py:139
+#: src/mainwidget.py:140
 msgid "All packages are up to date"
 msgstr "Все пакеты в актуальном состонии"
 
-#: src/mainwidget.py:228
+#: src/mainwidget.py:229
 msgid "Searching..."
 msgstr "Поиск..."
 
-#: src/mainwidget.py:240
+#: src/mainwidget.py:241
 msgid "No results found."
 msgstr "Ничего не найдено."
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:395
 msgid "All Updates"
 msgstr "Все обновления"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:396
 msgid "Security Updates"
 msgstr "Обновления безопасности"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:397
 msgid "Critical Updates"
 msgstr "Критические обновления"
 
@@ -187,11 +187,11 @@ msgstr "установка"
 msgid "removing"
 msgstr "удаление"
 
-#: src/operationmanager.py:42 src/progressdialog.py:71
+#: src/operationmanager.py:42 src/progressdialog.py:74
 msgid "extracting"
 msgstr "распаковка"
 
-#: src/operationmanager.py:43 src/progressdialog.py:71
+#: src/operationmanager.py:43 src/progressdialog.py:74
 msgid "configuring"
 msgstr "настройка"
 
@@ -247,70 +247,74 @@ msgstr "%prog packages_to_install"
 msgid "Hide summary screen"
 msgstr "Скрыть окно итогов"
 
-#: src/pmutils.py:65 src/statemanager.py:240
+#: src/pmutils.py:67 src/statemanager.py:240
 msgid "Network Error"
 msgstr "Ошибка сети"
 
-#: src/pmutils.py:66 src/statemanager.py:241
+#: src/pmutils.py:68 src/statemanager.py:241
 msgid "Please check your network connections and try again."
 msgstr "Пожалуйста, проверьте сетевые подключения и повторите попытку."
 
-#: src/pmutils.py:68
+#: src/pmutils.py:70
 msgid "Authorization Error"
 msgstr "Ошибка авторизации"
 
-#: src/pmutils.py:69
+#: src/pmutils.py:71
 msgid "You are not authorized for this operation."
 msgstr "Вы не авторизованы для этой операции."
 
-#: src/pmutils.py:72
+#: src/pmutils.py:74
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Пакет <b>%s</b> не найден в репозитории.<br>Возможно пакет был обновлен или удален из репозитория.<br>Пожалуйста, попробуйте обновить информацию репозитория."
 
-#: src/pmutils.py:77
+#: src/pmutils.py:79
 msgid "Mixing file names and package names not supported yet."
 msgstr "Смешивание имен файлов и имен пакетов не поддерживается."
 
-#: src/pmutils.py:80
+#: src/pmutils.py:82
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Файл <b>%s</b> не существует."
 
-#: src/pmutils.py:95
+#: src/pmutils.py:85
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr "Другой экземпляр PiSi работает. Допускается работа только одного экземпляра программы."
+
+#: src/pmutils.py:100
 msgid "Do you want to continue ?"
 msgstr "Вы хотите продолжить?"
 
-#: src/progressdialog.py:67
+#: src/progressdialog.py:70
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:68
+#: src/progressdialog.py:71
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операция - %1%"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:78
 msgid "Downloading package list of %1"
 msgstr "Загрузка списка пакетов %1"
 
-#: src/progressdialog.py:77
+#: src/progressdialog.py:80
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:85
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:92
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:106
+#: src/progressdialog.py:109
 msgid "Preparing PiSi..."
 msgstr "Подготовка PiSi ..."
 
-#: src/progressdialog.py:117
+#: src/progressdialog.py:120
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Отмена операции...</b>"
 
@@ -484,12 +488,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Доступно <b>%1</b> обновлений!"
 
 #: src/tray.py:194
-msgid "Show Updates"
-msgstr "Показать обновления"
-
-#: src/tray.py:194
 msgid "Ignore"
 msgstr "Игнорировать"
+
+#: src/tray.py:194
+msgid "Show Updates"
+msgstr "Показать обновления"
 
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
 msgid "Package Files"
