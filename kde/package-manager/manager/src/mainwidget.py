@@ -67,6 +67,8 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.parent = parent
 
         self._selectedGroups = []
+        self._preexceptions  = []
+        self._postexceptions = []
 
         self.state = StateManager(self)
         self.lastState = self.state.state
@@ -79,6 +81,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
         self.statusUpdater = StatusUpdater()
         self.basket = BasketDialog(self.state, self.parent)
+        self._postexceptions.append(lambda: self.basket.setActionEnabled(True))
         self.searchButton.setIcon(KIcon("edit-find"))
         self.initializeUpdateTypeList()
 
@@ -97,6 +100,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.operation = OperationManager(self.state)
 
         self.progressDialog = ProgressDialog(self.state, self.parent)
+        self._preexceptions.append(self.progressDialog._hide)
         self.progressDialog.registerFunction(FINISHED, lambda: self.parent.statusBar().setVisible(not self.progressDialog.isVisible()))
         self.progressDialog.registerFunction(OUT, lambda: self.parent.statusBar().show())
         self.summaryDialog = SummaryDialog()

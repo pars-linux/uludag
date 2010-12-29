@@ -54,10 +54,11 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.state._selected_packages = packages
         self._started = False
 
+        self._postexceptions = [lambda: sys.exit(1)]
+
         # Check if another pisi instance already running
         if isPisiRunning():
             self.exceptionCaught("ALREADY RUNNING")
-            sys.exit(1)
 
         # Check given package names available in repositories
         if not any(package.endswith('.pisi') for package in packages):
@@ -65,20 +66,18 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
             for package in packages:
                 if package not in available_packages:
                     self.exceptionCaught('HTTP Error 404', package)
-                    sys.exit(1)
 
         # Check if local/remote packages mixed with repo packages
         # which pisi does not support to handle these at the same time
         else:
             if not all(package.endswith('.pisi') for package in packages):
                 self.exceptionCaught('MIXING PACKAGES')
-                sys.exit(1)
+
             # Check given local packages if exists
             for package in get_real_paths(packages):
                 if '://' not in package and package.endswith('.pisi'):
                     if not os.path.exists(package):
                         self.exceptionCaught('FILE NOT EXISTS', package)
-                        sys.exit(1)
 
         self.model = PackageModel(self)
         self.model.setCheckable(False)
@@ -186,9 +185,4 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
     def actionCancelled(self):
         # Package install failed with user cancel, return value is 3
         sys.exit(3)
-
-    def exceptionCaught(self, message, package = ''):
-        PM.exceptionCaught(self, message, package)
-        # Package install failed with some kind of error, return value is 1
-        sys.exit(1)
 
