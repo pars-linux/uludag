@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 18:03+0000\n"
+"POT-Creation-Date: 2010-12-29 19:03+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
@@ -151,20 +151,19 @@ msgstr "Pardus est un système libre et open source exploitation qui contient de
 
 #: ../release.xml.in.h:32
 msgid "Partition your disk manually"
-msgstr ""
+msgstr "Partitionner votre disque manuellement"
 
 #: ../release.xml.in.h:33
-#, fuzzy
 msgid "Select a partitioning method"
 msgstr "Choisissez la méthode de partitionnement"
 
 #: ../release.xml.in.h:34
 msgid "Set your local time and date"
-msgstr ""
+msgstr "Réglez votre heure locale et la date"
 
 #: ../release.xml.in.h:35
 msgid "Setup your account"
-msgstr ""
+msgstr "Configurez votre compte"
 
 #: ../release.xml.in.h:36
 msgid "Summary"
@@ -177,14 +176,13 @@ msgstr "Il ya beaucoup de fonctionnalités à découvrir. Des milliers de logici
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Les comptes utilisateurs sont correctement configurés. Cliquez sur Suivant pour continuer. NB : Vous vous souvenez de votre mot de passe, n'est-ce pas ?"
 
 #: ../release.xml.in.h:39
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr "Ici, vous pouvez valider l'intégrité des paquets d'installation. Une validation qui échoue est généralement le signe d'un support d'installation défectueux (DVD ou clef USB). Si vous utilisez un support d'installation optique, essayez de graver l'image d'installation en utilisant le mode DAO (Disc-at-once), à une vitesse inférieure (4x)."
 
 #: ../release.xml.in.h:40
-#, fuzzy
 msgid "Welcome back..."
 msgstr "De retour..."
 
