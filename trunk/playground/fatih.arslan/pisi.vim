@@ -167,8 +167,8 @@ svn_output = subprocess.Popen(["svn", "st", "files/"],
 patches = []
 for patch in svn_output:
     if patch[0] == "?" or patch[0] == "A":
-        patch = patch.split("/", 1)[1]
         if patch.endswith("patch") or patch.endswith("diff"):
+            patch = patch.split("/", 1)[1]
             frmt_patch = '            <Patch level="1">%s</Patch>' % patch
             patches.append(frmt_patch)
 
