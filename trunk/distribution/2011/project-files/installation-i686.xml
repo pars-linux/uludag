@@ -235,6 +235,7 @@
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
                 <SelectedPackage>module-ndiswrapper</SelectedPackage>
                 <SelectedPackage>module-nvidia173</SelectedPackage>
+                <SelectedPackage>module-nvidia96</SelectedPackage>
                 <SelectedPackage>mplayer</SelectedPackage>
                 <SelectedPackage>netcat</SelectedPackage>
                 <SelectedPackage>netkit-ftp</SelectedPackage>
@@ -363,6 +364,7 @@
                 <SelectedPackage>xorg-video-nv</SelectedPackage>
                 <SelectedPackage>xorg-video-nvidia-current</SelectedPackage>
                 <SelectedPackage>xorg-video-nvidia173</SelectedPackage>
+                <SelectedPackage>xorg-video-nvidia96</SelectedPackage>
                 <SelectedPackage>xorg-video-openchrome</SelectedPackage>
                 <SelectedPackage>xorg-video-r128</SelectedPackage>
                 <SelectedPackage>xorg-video-radeon</SelectedPackage>
