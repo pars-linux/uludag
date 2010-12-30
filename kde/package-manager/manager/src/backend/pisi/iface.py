@@ -310,9 +310,9 @@ class Iface(Singleton):
 
     # Std Repository Actions ---------------------------------------------->>-
 
-    def getRepositories(self):
+    def getRepositories(self, only_active = False):
         repos = []
-        for repo in pisi.api.list_repos(only_active=False):
+        for repo in pisi.api.list_repos(only_active = only_active):
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
 

@@ -140,7 +140,7 @@ class PTray:
             pointSize = f.pointSizeF()
             fm = QtGui.QFontMetrics(f)
             w = fm.width(countStr)
-            if w > (19):
+            if w > 19:
                 pointSize *= float(19) / float(w)
                 f.setPointSizeF(pointSize)
 
@@ -181,9 +181,12 @@ class Tray(KSystemTrayIcon, PTray):
 
     def populateRepositoryMenu(self):
         self.actionMenu.menu().clear()
-        for name, address in self.iface.getRepositories():
+        has_repo = False
+        for name, address in self.iface.getRepositories(only_active = True):
             self._addAction(name, self.actionMenu)
-        self._addAction(i18n("All"), self.actionMenu)
+            has_repo = True
+        if has_repo:
+            self._addAction(i18n("All"), self.actionMenu)
 
     def showPopup(self):
         if self._ready_to_popup():

@@ -50,14 +50,17 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")
 
         self._last_action = ''
+        self._shown = False
 
     def _show(self):
         self.animate(start = MIDCENTER, stop = MIDCENTER)
+        self._shown = True
 
     def _hide(self):
-        if self.isVisible():
+        if self._shown:
             self.animate(direction = OUT, start = MIDCENTER, stop = MIDCENTER)
             self.parent.setWindowTitle(i18n("Package Manager"))
+            self._shown = False
 
     def updateProgress(self, progress):
         self.busy.stopAnimation()
