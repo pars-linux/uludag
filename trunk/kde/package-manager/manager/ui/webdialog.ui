@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>710</width>
-    <height>400</height>
+    <width>700</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Basket</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-#Basket {
- background-color: rgba(164, 164, 164, 100);
- border:1px solid grey ;
- border-radius:4px;
+   <string notr="true">#Basket {
+
+border:1px solid #AAA;
+border-radius:4px;
+
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
@@ -37,80 +37,6 @@
       <property name="margin">
        <number>0</number>
       </property>
-      <item row="0" column="0">
-       <widget class="QWidget" name="widget" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QWidget#widget{
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-
-border:1px solid #666;
-border-top-left-radius:4px;
-border-top-right-radius:4px;
-border-bottom:1px solid #999;
-}
-</string>
-        </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
-         <item>
-          <widget class="QLabel" name="packageName">
-           <property name="font">
-            <font>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="text">
-            <string>Package Details</string>
-           </property>
-           <property name="indent">
-            <number>3</number>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <spacer name="horizontalSpacer_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item>
-          <widget class="QPushButton" name="cancelButton">
-           <property name="font">
-            <font>
-             <pointsize>9</pointsize>
-             <weight>75</weight>
-             <bold>true</bold>
-            </font>
-           </property>
-           <property name="styleSheet">
-            <string notr="true">color:rgb(20,20,20);</string>
-           </property>
-           <property name="text">
-            <string notr="true">X</string>
-           </property>
-           <property name="flat">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QWidget" name="widget_2" native="true">
         <property name="styleSheet">
@@ -129,49 +55,21 @@ border-bottom:1px solid #999;
          <item row="1" column="0">
           <widget class="QTabWidget" name="tabWidget">
            <property name="styleSheet">
-            <string notr="true">QTabWidget::pane { 
-     margin-bottom:0px;
-     background:rgba(0,0,0,0);
-     border:0px;
- }
-QTabWidget::tab-bar {
-     alignment: right;
- }
-
+            <string notr="true">
  QTabBar::tab {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E5E5E5, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-     border: 1px solid #9B9B9B;
-     border-radius: 10px;
-     min-width: 8ex;
-     min-height:2ex;
-     padding: 3px;
-     padding-right:5px;
-     padding-left:5px;
-     margin:4px;
-     margin-top:0px;
-  color:rgba(0,0,0,180);    
-
- }
-
- QTabBar::tab:selected, QTabBar::tab:hover {
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #fafafa, stop: 0.4 #f4f4f4,
-                                 stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
- }
-
-QTabBar::tab:!selected {
-color:rgba(0,0,0,120);
+color:white;
 
  }
 </string>
            </property>
            <property name="tabPosition">
-            <enum>QTabWidget::South</enum>
+            <enum>QTabWidget::North</enum>
            </property>
            <property name="currentIndex">
             <number>1</number>
+           </property>
+           <property name="documentMode">
+            <bool>true</bool>
            </property>
            <widget class="QWidget" name="packageFiles">
             <attribute name="title">
@@ -182,10 +80,17 @@ color:rgba(0,0,0,120);
               <number>8</number>
              </property>
              <item row="1" column="0">
-              <widget class="QListWidget" name="filesList"/>
+              <widget class="QListWidget" name="filesList">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+              </widget>
              </item>
              <item row="0" column="0">
               <widget class="KListWidgetSearchLine" name="filterLine">
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
                <property name="clickMessage">
                 <string>Type to filter files</string>
                </property>
@@ -194,6 +99,9 @@ color:rgba(0,0,0,120);
             </layout>
            </widget>
            <widget class="QWidget" name="packageDetails">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(0,0,0,93);</string>
+            </property>
             <attribute name="title">
              <string>Package Details</string>
             </attribute>
@@ -201,7 +109,7 @@ color:rgba(0,0,0,120);
              <item row="1" column="0">
               <widget class="QWebView" name="webView">
                <property name="styleSheet">
-                <string notr="true">background:rgba(0,0,0,0);</string>
+                <string notr="true">background-color:rgba(0,0,0,0);</string>
                </property>
                <property name="url">
                 <url>
@@ -218,8 +126,12 @@ color:rgba(0,0,0,120);
                  <bold>true</bold>
                 </font>
                </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
                <property name="styleSheet">
-                <string notr="true">color:white;</string>
+                <string notr="true">color:white;
+background-color:none;</string>
                </property>
                <property name="text">
                 <string>AppInfo Server is not reachable
@@ -232,6 +144,84 @@ Please check your network connection</string>
              </item>
             </layout>
            </widget>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QWidget" name="widget" native="true">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>26</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QWidget#widget{
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+
+
+}
+</string>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="packageName">
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>Package Details</string>
+              </property>
+              <property name="indent">
+               <number>3</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="cancelButton">
+              <property name="font">
+               <font>
+                <pointsize>9</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color:rgb(20,20,20);
+</string>
+              </property>
+              <property name="text">
+               <string notr="true">X</string>
+              </property>
+              <property name="flat">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
         </layout>
