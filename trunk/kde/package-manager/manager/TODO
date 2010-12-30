@@ -9,7 +9,7 @@
  - Tasks  ------------------------------------------------------------------------
 
  +  #262 (New): Show updates screen improvements
- -  #261 (New): System Tray issues
+ +  #261 (New): System Tray issues
 
  - Features  ---------------------------------------------------------------------
 
@@ -17,7 +17,7 @@
 
  - Bugs  -------------------------------------------------------------------------
 
- -  #16 (New): Keyboard Support
+ +  #16 (New): Keyboard Support
  +  #15 (New): Error Window in the background blocks mainwindow.
 
  Package Manager v 3.1.0
