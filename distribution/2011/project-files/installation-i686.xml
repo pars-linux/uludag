@@ -280,6 +280,7 @@
                 <SelectedPackage>powertop</SelectedPackage>
                 <SelectedPackage>psutils</SelectedPackage>
                 <SelectedPackage>pulseaudio</SelectedPackage>
+                <SelectedPackage>pyparted</SelectedPackage>
                 <SelectedPackage>python-guestlogin</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
                 <SelectedPackage>python-networkmanager</SelectedPackage>
