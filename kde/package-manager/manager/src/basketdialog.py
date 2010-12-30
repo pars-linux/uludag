@@ -161,6 +161,8 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
 
     def action(self):
 
+        self.setActionEnabled(False)
+
         if self.state.inUpgrade():
             answer = True
             actions = self.state.checkUpdateActions(
@@ -172,6 +174,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Update Requirements"),
                        i18n("Packages Require System Restart"))
             if not answer:
+                self.setActionEnabled(True)
                 return
             if actions[1]:
                 answer = askForActions(actions[1],
@@ -180,6 +183,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Update Requirements"),
                        i18n("Packages Require Service Restart"))
             if not answer:
+                self.setActionEnabled(True)
                 return
 
         if self.state.inRemove():
@@ -194,6 +198,7 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Warning"),
                        i18n("Critical Packages"))
             if not answer:
+                self.setActionEnabled(True)
                 return
 
         reinstall = False
@@ -207,12 +212,12 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
                        i18n("Already Installed Packages"),
                        i18n("Installed Packages"))
             if not answer:
+                self.setActionEnabled(True)
                 return
             if actions:
                 reinstall = True
 
         self.parent.cw._started = True
-        self.setActionEnabled(False)
         self.state.operationAction(self.model.selectedPackages(), reinstall = reinstall)
 
     def showHideDownloadInfo(self):
