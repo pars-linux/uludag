@@ -307,7 +307,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         if operation in ("System.Manager.updateRepository",
                          "System.Manager.updateAllRepositories"):
             self.emit(SIGNAL("repositoriesUpdated()"))
-
         self.searchLine.clear()
         self.state.reset()
         self.progressDialog._hide()
