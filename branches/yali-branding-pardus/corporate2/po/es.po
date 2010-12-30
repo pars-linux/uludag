@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 16:44+0200\n"
+"POT-Creation-Date: 2010-12-30 10:46+0200\n"
 "PO-Revision-Date: 2010-11-28 18:58-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -77,26 +77,30 @@ msgstr ""
 "la disposición del teclado elegido."
 
 #: ../release.xml.in.h:4
+msgid "All done!"
+msgstr ""
+
+#: ../release.xml.in.h:5
 #, fuzzy
 msgid "Choose a password for administration and a hostname"
 msgstr "Establecer Contraseña de Administrador y Nombre de la Máquina"
 
-#: ../release.xml.in.h:5
+#: ../release.xml.in.h:6
 #, fuzzy
 msgid "Choose your installation disk"
 msgstr "Verifique su medio de instalación"
 
-#: ../release.xml.in.h:6
+#: ../release.xml.in.h:7
 #, fuzzy
 msgid "Choose your keyboard layout"
 msgstr "Elegir Teclado"
 
-#: ../release.xml.in.h:7
+#: ../release.xml.in.h:8
 #, fuzzy
 msgid "Configure the bootloader"
 msgstr "Configurar Cargador de Arranque"
 
-#: ../release.xml.in.h:8
+#: ../release.xml.in.h:9
 #, fuzzy
 msgid ""
 "Date and time settings allows you to set the date and time of your computer. "
@@ -114,7 +118,7 @@ msgstr ""
 "convencion se calcula la hora local como diferencia (retraso o adelanto) a "
 "la hora coordinada universal (UTC)."
 
-#: ../release.xml.in.h:9
+#: ../release.xml.in.h:10
 #, fuzzy
 msgid ""
 "Do you have a habit of customization? Kaptan is there for you. Kaptan is an "
@@ -138,18 +142,14 @@ msgstr ""
 "puede iniciar la línea de comando (Application launcher) con las teclas Alt"
 "+F2."
 
-#: ../release.xml.in.h:10
+#: ../release.xml.in.h:11
 msgid "Double check your installation medium"
 msgstr "Verifique su medio de instalación"
 
-#: ../release.xml.in.h:11
+#: ../release.xml.in.h:12
 #, fuzzy
 msgid "Get ready to install Pardus"
 msgstr "Selección de disco para la instalación de Pardus"
-
-#: ../release.xml.in.h:12
-msgid "Goodbye"
-msgstr "Adios"
 
 #: ../release.xml.in.h:13
 msgid "Help will be included when Kahya implentation is complete."
@@ -185,10 +185,18 @@ msgstr ""
 "necesita hacer es simplemente imprimir sus documentos."
 
 #: ../release.xml.in.h:16
+msgid "Installation complete"
+msgstr ""
+
+#: ../release.xml.in.h:17
+msgid "Installation complete!"
+msgstr ""
+
+#: ../release.xml.in.h:18
 msgid "Installing Pardus"
 msgstr "Instalando Pardus"
 
-#: ../release.xml.in.h:17
+#: ../release.xml.in.h:19
 msgid ""
 "KDE 3.5 is the desktop choice of Pardus Corporate 2. As Pardus prefers KDE "
 "from the beginning you can see how this knowledge reflects on a powerful "
@@ -198,11 +206,11 @@ msgid ""
 "work space for administration of the system."
 msgstr ""
 
-#: ../release.xml.in.h:18
+#: ../release.xml.in.h:20
 msgid "Kahya"
 msgstr ""
 
-#: ../release.xml.in.h:19
+#: ../release.xml.in.h:21
 #, fuzzy
 msgid ""
 "Konqueror, carries the web experience into desktop. You can use many web-"
@@ -220,7 +228,7 @@ msgstr ""
 "cualquier ubicación de la red local o de internet. De tál manera puede "
 "acceder a direcciones remotas como si fueran directorios del disco local."
 
-#: ../release.xml.in.h:20
+#: ../release.xml.in.h:22
 #, fuzzy
 msgid ""
 "Kontact, allows you to get in touch with your contact easier than ever. "
@@ -242,7 +250,7 @@ msgstr ""
 "notas recordatorios (sticky notes) en su escritorio con las tareas, "
 "sencillamente arrastrandolos, o vice versa."
 
-#: ../release.xml.in.h:21
+#: ../release.xml.in.h:23
 #, fuzzy
 msgid ""
 "Looking for a production suite? Our suggestion is OpenOffice! OpenOffice "
@@ -262,7 +270,7 @@ msgstr ""
 "viene este paquete estupendo de office con una serie de mejoras y agregados "
 "para una mejor experiencia aún."
 
-#: ../release.xml.in.h:22
+#: ../release.xml.in.h:24
 msgid ""
 "Most of the users need a talented file manager for every day use. Konqueror "
 "is a great solution for integration of regular tasks. &lt;br&gt;&lt;br&gt;"
@@ -271,7 +279,7 @@ msgid ""
 "with archive files etc."
 msgstr ""
 
-#: ../release.xml.in.h:23
+#: ../release.xml.in.h:25
 msgid ""
 "Multiple users can share the same computer safely with Pardus. An "
 "administrator account with the name &quot;root&quot; will be set "
@@ -284,7 +292,7 @@ msgid ""
 "User Manager tool in the System Settings."
 msgstr ""
 
-#: ../release.xml.in.h:25
+#: ../release.xml.in.h:27
 #, fuzzy, no-c-format
 msgid ""
 "Pardus Corporate 2 is shipped with Firefox 3rd generation, gives a high "
@@ -306,7 +314,7 @@ msgstr ""
 "además ofrece otros navegadores libres, incluyendo Chromium, Konqueror o "
 "incluso Opera."
 
-#: ../release.xml.in.h:26
+#: ../release.xml.in.h:28
 msgid ""
 "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
 "with a long term support. You can still enjoy the powerful parade of all "
@@ -315,7 +323,7 @@ msgid ""
 "these features..."
 msgstr ""
 
-#: ../release.xml.in.h:27
+#: ../release.xml.in.h:29
 #, fuzzy
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
@@ -331,7 +339,7 @@ msgstr ""
 "configuración del sistema, una sola aplicación que integra las herramientas "
 "para todas las tareas de administración y configuración."
 
-#: ../release.xml.in.h:28
+#: ../release.xml.in.h:30
 #, fuzzy
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
@@ -358,28 +366,28 @@ msgstr ""
 "nuestro sitio web. &lt;br&gt;&lt;br&gt;Debe aceptar los términos al instalar "
 "Pardus en su computadora."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:31
 msgid "Partition your disk manually"
 msgstr ""
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:32
 #, fuzzy
 msgid "Select a partitioning method"
 msgstr "Selección de Método de Particionamiento"
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:33
 msgid "Set your local time and date"
 msgstr ""
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:34
 msgid "Setup your account"
 msgstr ""
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:35
 msgid "Summary"
 msgstr "Resumen"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:36
 #, fuzzy
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
@@ -402,7 +410,13 @@ msgstr ""
 "con pocos clics. Puede accederlo desde el menú del sistema, el cual puede "
 "utilizar en una de sus versiones según su elección en el asistente Kaptan!"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
+msgid ""
+"User accounts are successfully configured. Click Next to proceed. One note: "
+"You remember your password, don&apos;t you?"
+msgstr ""
+
+#: ../release.xml.in.h:38
 #, fuzzy
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
@@ -418,11 +432,11 @@ msgstr ""
 "está utilizando un medio óptico, intente volver a grabarlo usando el modo "
 "DAO (Disc-at-once), con una velocidad más baja (4x para DVD, 8-12x para CD)."
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:39
 msgid "Welcome back..."
 msgstr ""
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:40
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -437,7 +451,7 @@ msgid ""
 "future problems."
 msgstr ""
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:41
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -453,7 +467,7 @@ msgstr ""
 "la instalación, mientras descrubra las funcionalidades e inovaciones "
 "ofrecidos por ésta nueva versión de Pardus."
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:42
 #, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
@@ -466,7 +480,19 @@ msgstr ""
 "su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;&lt;P&gt;"
 "Presione Siguiente para continuar. Nota : Recuerda su contraseña, verdad ?"
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:43
+#, fuzzy
+msgid ""
+"You have successfully installed Pardus on your computer. After restarting "
+"your computer, you will able to add new user accounts and use Pardus. Please "
+"be sure that you unmount the installation medium (remove the usb disk, eject "
+"the dvd or release the image in virtual machies)."
+msgstr ""
+"Usted ha instalado exitosamente Pardus en su computadora. Luego de reiniciar "
+"su computadora podrá disfrutar los beneficios de Pardus. &lt;/p&gt;&lt;P&gt;"
+"Presione Siguiente para continuar. Nota : Recuerda su contraseña, verdad ?"
+
+#: ../release.xml.in.h:44
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -483,7 +509,7 @@ msgid ""
 "our website."
 msgstr ""
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:45
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -491,13 +517,16 @@ msgid ""
 "between different partitioning options."
 msgstr ""
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:46
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
 "least one user and set the system wide configurations. So you will be able "
 "to login and enjoy Pardus..."
 msgstr ""
+
+#~ msgid "Goodbye"
+#~ msgstr "Adios"
 
 #~ msgid "Add Users"
 #~ msgstr "Añadir Usuarios"
