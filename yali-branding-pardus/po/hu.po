@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 16:48+0200\n"
-"PO-Revision-Date: 2010-12-27 12:48+0100\n"
+"POT-Creation-Date: 2010-12-30 09:01+0000\n"
+"PO-Revision-Date: 2010-12-30 10:21+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: HUNGARY\n"
@@ -78,7 +78,7 @@ msgstr ""
 
 #: ../release.xml.in.h:4
 msgid "All done!"
-msgstr ""
+msgstr "Készen vagyunk!"
 
 #: ../release.xml.in.h:5
 msgid ""
@@ -224,11 +224,11 @@ msgstr ""
 
 #: ../release.xml.in.h:19
 msgid "Installation complete"
-msgstr ""
+msgstr "A telepítés befejeződött"
 
 #: ../release.xml.in.h:20
 msgid "Installation complete!"
-msgstr ""
+msgstr "A telepítés befejeződött!"
 
 #: ../release.xml.in.h:21
 msgid "Installing Pardus"
@@ -441,6 +441,9 @@ msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
 msgstr ""
+"A felhasználói fiókok beállításra kerültek. Kattintson a Továbbra a "
+"folytatáshoz. Egy megjegyzés: "
+"Ugye emlékszik még a jelszóra?"
 
 #: ../release.xml.in.h:39
 msgid ""
@@ -524,7 +527,6 @@ msgstr ""
 "bemutatóját."
 
 #: ../release.xml.in.h:44
-#, fuzzy
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -532,9 +534,10 @@ msgid ""
 "installation medium (remove the usb disk, eject the dvd or release the image "
 "in virtual machies)."
 msgstr ""
-"Sikeresen telepítette a Pardust. A számítógép újraindítása után a Párdus "
-"minden előnyét élvezheti.&lt;br&gt;&lt;br&gt;Kattintson a Tovább gombra a "
-"következő lépéshez. Csak egy megjegyzés: Ugye emlékszik a jelszavára?"
+"Sikeresen telepítette a Pardust. A számítógép újraindítása után a Pardus "
+"minden előnyét élvezheti.&lt;br&gt;&lt;br&gt;Győződjön meg róla, hogy "
+"emlékszik még a jelszóra, és ne felejtse el eltávolítani a telepítő médiumot "
+"(usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
 
 #: ../release.xml.in.h:45
 msgid ""
@@ -543,6 +546,10 @@ msgid ""
 "be sure that you unmount the installation medium (remove the usb disk, eject "
 "the dvd or release the image in virtual machies)."
 msgstr ""
+"Sikeresen telepítette a Pardust számítógépére. Újraindítás után fog tudni "
+"felhasználókat felvenni a Pardus használatához. Ne felejtse el eltávolítani "
+"a "
+"telepítő médiát (usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
 
 #: ../release.xml.in.h:46
 msgid ""
