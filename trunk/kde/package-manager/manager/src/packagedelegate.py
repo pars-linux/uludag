@@ -301,6 +301,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             buttonStyle = QtGui.QStyleOptionButton()
             if option.state & QtGui.QStyle.State_MouseOver or option.state & QtGui.QStyle.State_HasFocus:
                 buttonStyle.state |= QtGui.QStyle.State_HasFocus
+            buttonStyle.state |= QtGui.QStyle.State_Enabled
             buttonStyle.text = i18n("Details")
 
             buttonStyle.rect = QRect(width - 100, position - 22, 100, 22)
