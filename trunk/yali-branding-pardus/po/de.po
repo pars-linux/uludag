@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-30 00:02+0000\n"
+"POT-Creation-Date: 2010-12-30 01:01+0000\n"
 "PO-Revision-Date: 2010-11-24 16:14+0100\n"
 "Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <de@li.org>\n"
@@ -86,7 +86,7 @@ msgstr "Bevor die Installation startet, können Sie hier die Installationseinste
 
 #: ../release.xml.in.h:18
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
-msgstr ""
+msgstr "Wenn Sie ein Teil eines lokalen Netzwerks sind, können Sie die anderen Systeme im Netzwerk über einen Link in Dolphin erreichen. Pardus wird alle freigegebenen Ordner automatisch auflisten. &lt;br&gt;Einfach? Es gibt noch mehr ... wenn Sie Kabelverbindungen bevorzugen müssen Sie nur den Netzwerkstecker anschließen und schon wird die automatische Konfiguration gestartet. Falls Sie eine schnurlose Verbindung bevorzugen, sehen Sie eine Liste der verfügbaren Netze nachdem Sie auf das Wireless-Symbol geklickt haben. &lt;br&gt;Haben Sie einen lokalen Drucker? Schließen Sie ihn an und er wird automatisch konfiguriert werden. Danach können Sie sofort Ihre Dokumente ausdrucken."
 
 #: ../release.xml.in.h:19
 msgid "Installation complete"
@@ -118,16 +118,16 @@ msgstr "Sie suchen nach einem produktiven Office Paket? Unser Vorschlag für Sie
 
 #: ../release.xml.in.h:26
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, so we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings."
-msgstr ""
+msgstr "Mehrere Anwender können dank Pardus den gleichen Computer sicher und gemeinsam nutzen. Ein Administrator-Konto mit dem Namen &quot;root&quot; wird automatisch erstellt. &lt;br&gt; Das Administrator-Konto ist nicht für den alltäglichen Gebrauch gedacht. Wir empfehlen Ihnen Benutzerkonten für Ihre Bedürfnisse hinzuzufügen. Dem ersten Nutzer werden administrative Befugnisse erteil sofern sie nicht widerrufen werden sollten. Um die administrativen Befugnisse für den ersten Nutzer zu widerrufen oder um eine geänderte Nutzer ID einzustellen klicken Sie auf den erweiterten Registertab wo sie weitere Optionen finden. &lt;br&gt;&lt;br&gt;Falls Sie ein Benutzerkonten später verwalten möchten, können Sie das mit Hilfe des Benutzer-Managers in den Systemeinstellungen erledigen."
 
 #: ../release.xml.in.h:28
 #, no-c-format
 msgid "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet browser. Firefox offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, including a fully personalization feature with Personas help you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus also offers other free browsers including Chromium, Konqueror or even Opera."
-msgstr ""
+msgstr "Pardus 2011 wird mit Firefox 4 ausgeliefert, dem populärsten Open-Source Internet-Browser. Firefox bietet dem Nutzer vielfältige Anpassungsmöglichkeiten sowie ein sicheren Surferlebnis. &lt;br&gt;&lt;br&gt;Das Mozilla-Team hat Firefox so gestaltet, dass von der Community erstellte Addons eine vollständige Personaliserung ermöglichen und jeder seinen eigenen Browser optisch sowie funktionell gestalten und formen kann. &lt;br&gt;&lt;br&gt;Pardus bietet neben Firefox auch andere kostenlos nutzbare Browse wie Chrom, Konqueror und Opera an."
 
 #: ../release.xml.in.h:29
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
-msgstr ""
+msgstr "Pardus ist eine Parade der besten, leistungsfähigsten und freien OpenSource Pogrammen. Sie werden hier einige der alten Bekannten antreffen, wie z.B. Mozilla Firefox oder LibreOffice. Die Programme wurden durch die Pardus Entwickler vielleicht etwas modifiziert um sie an das System besser anzupassen. Während die Installation abläuft werden einige der Funktionen vorgestellt..."
 
 #: ../release.xml.in.h:30
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
