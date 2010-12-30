@@ -1,3 +1,78 @@
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Package Manager v 3.0.0
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - small fixes 
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - UI, Cosmetic fixes 
+
+2010-12-30 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix System Tray issues 
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Show focus rectangle in packages, (I'm Qt Guru :p)
+         * - Fix a bug from history..
+         * Bug fixed at http://bugs.pardus.org.tr/3894
+
+2010-12-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Swedish (sv) translation to 99% (Patrik Karlsson)
+         * New status: 192 messages complete with 1 fuzzy and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - update ChangeLog, TODO, remove BUGS 
+
 2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Add option to show isa tags in package list
          * Bug fixed at http://bugs.pardus.org.tr/15387
@@ -11,10 +86,6 @@
 
 2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
          * Comment added to http://bugs.pardus.org.tr/13950
-
-2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Bug fixed at http://bugs.pardus.org.tr/15481
-         * Bug fixed at http://bugs.pardus.org.tr/15373
 
 2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Use correct kB symbol
@@ -742,59 +813,4 @@
 
 2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
          * fixes for shared setup.py 
-
-2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Show busy indicator while filtering groups 
-
-2010-09-14 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Use QStyledItemDelegate instead of QItemDelegate
-         * Return original paint statement instead of None
-         * Use painter's save and restore statements for performance issues
-         * Get details button click events ( need to find a proper solution for this )
-         * Good night at all.
-
-2010-09-14 Gökmen Göksel <gokmen@pardus.org.tr>
-         * much better 
-
-2010-09-14 Gökmen Göksel <gokmen@pardus.org.tr>
-         * It is necessary to use __init__ with new Qt family, kudos to bahadir. 
-
-2010-09-14 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Reset hoverlinkfilter when animation finished 
-
-2010-09-13 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Draw details button, needs attention. 
-
-2010-09-10 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Wrong position handling fix for homepage links with my little finger. 
-
-2010-09-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * faster. 
-
-2010-09-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * New UI of Package Manager v 3.0 is almost ready. \o/ 
-
-2010-09-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * A better solution for state management hodgepodge.. 
-
-2010-09-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Much better and faster search mechanism. 
-
-2010-09-06 Gökmen Göksel <gokmen@pardus.org.tr>
-         * A little time left for the new ui 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * correct .. 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * rename version to 3.0.0_alpha 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Ready to package ... 
-
-2010-09-03 Gökmen Göksel <gokmen@pardus.org.tr>
-         * - Package Manager v 3.0 Alpha -
-         * Bug fixed at http://bugs.pardus.org.tr/13406
-         * Bug fixed at http://bugs.pardus.org.tr/13506
-         * Bug fixed at http://bugs.pardus.org.tr/8540
 
