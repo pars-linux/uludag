@@ -7,13 +7,13 @@ msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-29 15:34+0200\n"
-"PO-Revision-Date: 2010-11-28 10:53+0100\n"
+"PO-Revision-Date: 2010-12-30 10:07+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Fejlesztő"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Fejlesztő"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -81,7 +81,8 @@ msgstr "PiSi hiba"
 
 #: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
-msgstr "<b>Újra kell indítania</b> a rendszert a változtatások életbe léptetéséhez"
+msgstr ""
+"<b>Újra kell indítania</b> a rendszert a változtatások életbe léptetéséhez"
 
 #: src/basketdialog.py:172 src/basketdialog.py:180
 msgid "Update Requirements"
@@ -92,16 +93,24 @@ msgid "Packages Require System Restart"
 msgstr "A csomag újraindítást igényel"
 
 #: src/basketdialog.py:178
-msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Újra kell indítania a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verziói életbe lépjenek:"
+msgid ""
+"You must restart related system services for the updated package(s) to take "
+"effect"
+msgstr ""
+"Újra kell indítania a következő rendszer-szolgáltatásokat, hogy a "
+"kiválasztott csomag(ok) frissített verziói életbe lépjenek:"
 
 #: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
 msgstr "Szolgáltatás újraindítást igénylő csomagok"
 
 #: src/basketdialog.py:191
-msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr "A kiválasztott csomagok kritikusak a rendszer működése szempontjából. Eltávolításuk a rendszer működésképtelenségét eredményezheti."
+msgid ""
+"Selected packages are considered critical for the system. Removing them may "
+"cause your system to be unusable."
+msgstr ""
+"A kiválasztott csomagok kritikusak a rendszer működése szempontjából. "
+"Eltávolításuk a rendszer működésképtelenségét eredményezheti."
 
 #: src/basketdialog.py:194 src/settingsdialog.py:179
 msgid "Warning"
@@ -112,8 +121,12 @@ msgid "Critical Packages"
 msgstr "Kritikus csomagok"
 
 #: src/basketdialog.py:205 src/pmwindow.py:121
-msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok újratelepítésre kerülnek"
+msgid ""
+"Selected packages are already installed.<br>If you continue, the packages "
+"will be reinstalled"
+msgstr ""
+"A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok "
+"újratelepítésre kerülnek"
 
 #: src/basketdialog.py:207 src/pmwindow.py:123
 msgid "Already Installed Packages"
@@ -246,7 +259,7 @@ msgstr "%prog csomag van hátra"
 
 #: src/pm-install.py:65
 msgid "Hide summary screen"
-msgstr ""
+msgstr "Összegzés elrejtése"
 
 #: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
@@ -266,17 +279,21 @@ msgstr "A művelet végrehajtásához nincs jogosultsága"
 
 #: src/pmutils.py:73
 #, python-format
-msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "A <b>%s</b> csomag nem található a tárolóban.<br>Lehet hogy már frissült, vagy már el lett távolítva.<br>Kérem frissítse a tárolók információit."
+msgid ""
+"Package <b>%s</b> not found in repositories.<br>It may be upgraded or "
+"removed from the repository.<br>Please try upgrading repository informations."
+msgstr ""
+"A <b>%s</b> csomag nem található a tárolóban.<br>Lehet hogy már frissült, "
+"vagy már el lett távolítva.<br>Kérem frissítse a tárolók információit."
 
 #: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
-msgstr ""
+msgstr "A fájlnevek és csomagnevek keverése még nem támogatott."
 
 #: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
-msgstr ""
+msgstr "<b>%s</b> fájl nem található."
 
 #: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
@@ -332,8 +349,12 @@ msgid "Not a valid repository name"
 msgstr "Érvénytelen tárolónév"
 
 #: src/settingsdialog.py:246
-msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie.<p>Kérem, próbálja újra.</qt>"
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please "
+"try again.</qt>"
+msgstr ""
+"<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie."
+"<p>Kérem, próbálja újra.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -425,24 +446,35 @@ msgid "You have selected the following package(s) to modify:"
 msgstr "A következő csomagokat jelölte ki módosításra:"
 
 #: src/statemanager.py:125 ui/ui_basketdialog.py:184
-msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
 msgstr "A kiválasztott csomagok alábbi függőségei is telepítésre kerülnek:"
 
 #: src/statemanager.py:126
-msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
-msgstr "Az eltávolításra kijelölt csomagok alábbi függőségei is törlésre kerülnek:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Az eltávolításra kijelölt csomagok alábbi függőségei is törlésre kerülnek:"
 
 #: src/statemanager.py:127
-msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
 msgstr "A kiválasztott csomagok alábbi függőségei is frissítésre kerülnek:"
 
 #: src/statemanager.py:128
-msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"modified:"
 msgstr "A kiválasztott csomagok alábbi függőségei is módosításra kerülnek:"
 
 #: src/statemanager.py:167
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Jelenleg <b>%1</b> van kiválasztva a <b>%2</b> csomagból, teljes méret "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Jelenleg <b>%1</b> van kiválasztva a <b>%2</b> csomagból, teljes méret "
 
 #: src/statemanager.py:170
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -457,8 +489,12 @@ msgid "in your basket."
 msgstr "van a kosárban."
 
 #: src/statemanager.py:206
-msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "A kiválasztott csomag [1%] ütközik egy másikkal. Ezek a csomagok együtt nem telepíthetők."
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"A kiválasztott csomag [1%] ütközik egy másikkal. Ezek a csomagok együtt nem "
+"telepíthetők."
 
 #: src/statemanager.py:207 src/statemanager.py:215
 msgid "Conflict Error"
@@ -489,12 +525,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "<b>%1</b> frissítés elérhető!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Mellőzés"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Frissítések megjelenítése"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Mellőzés"
 
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
 msgid "Package Files"
@@ -574,23 +610,23 @@ msgid "Check for Updates"
 msgstr "Frissítések megjelenítése"
 
 #: ui/ui_pminstall.py:83
-#, fuzzy
 msgid "Package Manager Quick Install"
-msgstr "Csomagkezelő beállításai"
+msgstr "Csomagkezelő gyorstelepítés"
 
 #: ui/ui_pminstall.py:84
-msgid "Following packages are selected to install. Do you want to install these packages ?"
+msgid ""
+"Following packages are selected to install. Do you want to install these "
+"packages ?"
 msgstr ""
+"Az alábbi csomagok telepítésre lettek kijelölve. Telepíteni akarja őket?"
 
 #: ui/ui_pminstall.py:86
-#, fuzzy
 msgid "Install"
-msgstr "telepítve"
+msgstr "Telepítés"
 
 #: ui/ui_pminstall.py:87
-#, fuzzy
 msgid "Cancel"
-msgstr "&Mégsem"
+msgstr "Mégsem"
 
 #: ui/ui_progressdialog_v4.py:190
 msgid "Alt+C"
@@ -642,7 +678,7 @@ msgstr "Komponens információk megjelenítése"
 
 #: ui/ui_settingsdialog.py:392
 msgid "Show package type tags"
-msgstr ""
+msgstr "Csomagtípus címkék megjelenítése"
 
 #: ui/ui_settingsdialog.py:393
 msgid "System tray icon"
@@ -678,7 +714,7 @@ msgstr "Sávszélesség korlát"
 
 #: ui/ui_settingsdialog.py:401
 msgid " kB/s"
-msgstr ""
+msgstr " kB/s"
 
 #: ui/ui_settingsdialog.py:402
 msgid "Use bandwidth limit :"
@@ -710,15 +746,20 @@ msgstr "Kiválasztás..."
 
 #: ui/ui_settingsdialog.py:409
 msgid "Open"
-msgstr ""
+msgstr "Megnyitás"
 
 #: ui/ui_settingsdialog.py:410
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Gyorsítótár használata a letöltött programokhoz"
 
 #: ui/ui_settingsdialog.py:411
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr "A gyorsítótár törlése eltávolítja az összes letöltött csomagfájlt. Ez a művelet nincs hatással a telepített alkalmazásokra, vagy a rendszer stabilitására"
+msgid ""
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
+msgstr ""
+"A gyorsítótár törlése eltávolítja az összes letöltött csomagfájlt. Ez a "
+"művelet nincs hatással a telepített alkalmazásokra, vagy a rendszer "
+"stabilitására"
 
 #: ui/ui_settingsdialog.py:412
 msgid "C&lean disk cache now"
@@ -790,8 +831,12 @@ msgid "Operation Summary"
 msgstr "Műveletek összegzése"
 
 #: ui/ui_summarydialog.py:63
-msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "Az újonnan telepített alkalmazásokat az alábbi listán található ikonjára duplán kattintva is elindíthatja, vagy megteheti ezt később, a menüből."
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Az újonnan telepített alkalmazásokat az alábbi listán található ikonjára "
+"duplán kattintva is elindíthatja, vagy megteheti ezt később, a menüből."
 
 #: ui/ui_summarydialog.py:64
 msgid "&Ok"
@@ -847,17 +892,27 @@ msgstr ""
 #~ msgstr "Állapot:"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #~ msgid "Close"
 #~ msgstr "Bezárás"
@@ -879,17 +934,27 @@ msgstr ""
 
 #, fuzzy
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p></body></html>"
 #~ msgstr ""
-#~ " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ " <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/"
+#~ "TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+#~ "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+#~ "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #, fuzzy
 #~ msgid "-- / --"
