@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 19:03+0000\n"
+"POT-Creation-Date: 2010-12-30 15:02+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -62,9 +62,8 @@ msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is 
 msgstr "Kaptan est un assistant de configuration qui vous aide à personnaliser votre système selon vos goûts. Préférez-vous utiliser votre souris avec un clic unique ? Êtes-vous gaucher ? Voulez-vous changer le schéma de couleurs du bureau ? Un certain nombre d'options de personnalisation sont offertes dans Kaptan. Kaptan sera exécuté automatiquement à la première connexion. &lt;br&gt;&lt;br&gtSi vous souhaitez le relancer pour modifier vos préférences, vous pouvez l'appeler depuis le lanceur d'application par son nom. &lt;br&gt; Astuce : le lanceur d'application peut être appelée avec le raccourci Alt + F2 par défaut et il offre un certain nombre de fonctions de base, essayez-le !"
 
 #: ../release.xml.in.h:12
-#, fuzzy
 msgid "Dolphin is the file manager of KDE and so Pardus. It gives a great set of features where it becomes surprising that a simple file manager may have so many features. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by columns to organize your files by comparing... Or you can utilize any KDE application as they can work in Dolpin embedded. Thus you can edit an image file in your file manager with the full features of Gwenview, the image viewer or preview a video in the optional and customizable Information panel."
-msgstr "Dolphin est le gestionnaire de fichiers de KDE et ainsi de Pardus. Il donne un grand ensemble de fonctionnalités, où elle devient surprenant qu'un simple gestionnaire de fichiers peut avoir de nombreuses fonctionnalités. &lt;br&gt; Vous pouvez diviser une fenêtre Dolphin par des colonnes d'organiser vos fichiers en comparant ... Ou vous pouvez utiliser n'importe quelle application KDE, car ils peuvent travailler dans Dolpin embarqués. Ainsi, vous pouvez éditer un fichier image dans votre gestionnaire de fichiers avec toutes les fonctionnalités de Gwenview, le visualiseur d'images ou de prévisualiser une vidéo dans le panneau d'information facultative et personnalisable."
+msgstr "Dolphin est le gestionnaire de fichiers de KDE et donc de Pardus. &lt;br&gt; Vous pouvez diviser en deux une fenêtre de Dolphin et manipuler plus facilement les fichiers entre deux dossiers... Vous pouvez utiliser n'importe quelle application KDE embarquée dans Dolpin. Ainsi, vous pouvez éditer un fichier image dans votre gestionnaire de fichiers avec toutes les fonctionnalités de Gwenview, le visualiseur d'images, ou prévisualiser une vidéo dans le panneau d'information facultatif et personnalisable."
 
 #: ../release.xml.in.h:13
 msgid "Double check your installation medium"
@@ -106,9 +105,8 @@ msgid "Installing Pardus"
 msgstr "Installation de Pardus"
 
 #: ../release.xml.in.h:22
-#, fuzzy
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
-msgstr "KDE est le choix de bureau de Pardus, une collection de logiciels pour une utilisation de bureau avec des centaines, voire des milliers de programmes visant des objectifs différents. Pour les utilisateurs finaux et les besoins quotidiens ou les sociétés dont intégrée, haute performance et facile à utiliser des solutions. outils &lt;br&gt; Pardus en interne sont écrites KDE amicale ainsi, il est donc fortement recommandé. Cependant, il existe différentes alternatives comme Enlightenment ou Xfce deux suggèrent léger, plus rapide encore moins d'expérience de bureau riche en fonctionnalités."
+msgstr "KDE est le bureau de choix de Pardus. Il offre une riche collection de logiciels pour une utilisation performante et fiable à la maison ou dans l'entreprise.&lt;br&gt;&lt;br&gt;Les outils maison de Pardus sont parfaitement intégrés à cet environnement de bureau, il est donc fortement recommandé. Cependant, il existe différentes alternatives comme Enlightenment ou Xfce, plus légers et plus rapides."
 
 #: ../release.xml.in.h:23
 msgid "Kahya"
@@ -120,9 +118,8 @@ msgid "Kontact, allows you to get in touch with your contact easier than ever. K
 msgstr "Kontact, vous permet d'entrer en contact avec votre contact plus facile que jamais. Kontact est une intégration transparente d'un certain nombre d'applications pour réaliser un logiciel à la règle toutes les tâches de communication et d'organisation. Calendriers, e-mails, de nouvelles RSS, les adresses sont tout à fait. Vous pouvez même lier votre carnet d'adresse de Kopete pour utiliser avec vos comptes de messagerie instantanée tels que MSN, Jabber ou GoogleTalk. Ainsi, vous pouvez voir si l'expéditeur d'un e-mail est en ligne. &lt;br&gt; Vous pouvez créer des notes autocollantes pour votre bureau à partir de vos tâches ou vice versa en les faisant simplement glisser."
 
 #: ../release.xml.in.h:25
-#, fuzzy
 msgid "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. As the roots of the LibreOffice lies in years long open source office experience, even the first stable release is much powerful and competetive with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
-msgstr "Vous cherchez une suite de production? Notre suggestion est LibreOffice! LibreOffice donne une expérience de bureau stable, rapide et gratuit alors que tous vos logiciels et documents seront compatibles avec le reste de suites majeures. Comme les racines de la LibreOffice réside dans de longues années d'expérience source open office, même la première version stable est beaucoup plus puissant et compétitifs avec l'écrivain pour les documents texte, feuilles de calcul Calc, Impress pour les présentations. &lt;br&gt; Pardus packs ce suite bureautique grand avec un certain nombre d'améliorations et de plug-ins pour une meilleure expérience."
+msgstr "Vous cherchez une suite bureautique ? LibreOffice est là ! LibreOffice donne une expérience de bureau stable, rapide et gratuite, tout en gardant accès à vos documents créés avec d'autres suites connues. LibreOffice est la continuation sous un autre nom d'OpenOffice.org, avec le traitement de texte Writer pour les documents texte, le tableur Calc pour les feuilles de calcul, Impress pour les présentations.&lt;br&gt;&lt;br&gt; Pardus inclut cette suite bureautique avec un certain nombre d'améliorations et de plug-ins pour une meilleure expérience. Pour la pérennité de vos documents, choisissez de les enregistrer aux formats libres et ouverts OpenDocument !"
 
 #: ../release.xml.in.h:26
 #, fuzzy
