@@ -1,5 +1,11 @@
 2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Package Manager v 3.0.0
+         * - Fix webdialog close button issue on other styles
+         * - Force to use enabled button from active style for details button
+         * - Fix tabbar issue
+         * Bug fixed at http://bugs.pardus.org.tr/15908
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ready to ship ! v 3.0.0 
 
 2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
          * - small fixes 
@@ -807,10 +813,4 @@
 
 2010-09-17 Gökmen Göksel <gokmen@pardus.org.tr>
          * Tab navigation and searchline shortcuts are added. 
-
-2010-09-17 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Refresh group list after repo changes 
-
-2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
-         * fixes for shared setup.py 
 
