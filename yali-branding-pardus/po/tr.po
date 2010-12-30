@@ -46,7 +46,7 @@ msgstr "Kurulum yapılacak diski seçin"
 
 #: ../release.xml.in.h:8
 msgid "Choose your keyboard layout"
-msgstr "Klavye Düzeni"
+msgstr "Klavye düzeni seçin"
 
 #: ../release.xml.in.h:9
 msgid "Configure the bootloader"
@@ -66,11 +66,11 @@ msgstr "KDE'nin ve dolayısıyla Pardus'un dosya yöneticisi Dolphin'le tanış�
 
 #: ../release.xml.in.h:13
 msgid "Double check your installation medium"
-msgstr "Kurulum ortamınızı bir kez daha denetleyin"
+msgstr "Kurulum ortamınızı kontrol edin"
 
 #: ../release.xml.in.h:14
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
-msgstr "Eğlence ciddi bir iştir... Herkes bir sudoku çözme ya da basit bir oyunla birkaç dakika dinlenme hakkına sahip olmalıdır. Pardus ufak tefek ama eğlenceli programları kurulum sırasında sunar. Ama asıl eğlence sizi İnternet depolarında bekliyor. Eğer oyun meraklısıysanız, Paket Yöneticisi'ni açıp oyunlar bölümünde keşfedilmeyi bekleyen, simülatörlerin, takım halinde oynanan FPS'lerin, klasik bilgisayar oyunlarının yer aldığı yüzlerce oyuna mutlaka göz atın."
+msgstr "Eğlence ciddi bir iştir... Herkes bir sudoku çözme ya da basit bir oyunla birkaç dakika dinlenme hakkına sahip olmalı. Pardus ufak tefek ama eğlenceli programları kurulum sırasında sunar. Ama asıl eğlence sizi İnternet depolarında bekliyor. Eğer oyun meraklısıysanız, Paket Yöneticisi'ni açıp oyunlar bölümünde keşfedilmeyi bekleyen, simülatörlerin, takım halinde oynanan FPS'lerin, klasik bilgisayar oyunlarının yer aldığı yüzlerce oyuna mutlaka göz atın."
 
 #: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
