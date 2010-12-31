@@ -173,7 +173,9 @@ class NetworkManagerSettings:
 
     def generateUUID(self):
         ''' Generate random type UUID '''
+        import uuid
 
+        return str(uuid.uuid4())
 
     def getMACAddress(self, iface):
         ''' Return MAC addresses of given interface on the machine using ifconfig, inspired from python uuid module '''
