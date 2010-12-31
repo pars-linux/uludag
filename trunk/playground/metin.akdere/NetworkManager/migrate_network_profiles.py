@@ -172,10 +172,32 @@ class NetworkManagerSettings:
         return [k for k, v in dic.iteritems() if v == val][0]
 
     def generateUUID(self):
-        pass
+        ''' Generate random type UUID '''
 
-    def getMACAddress(self, device):
-        pass
+
+    def getMACAddress(self, iface):
+        ''' Return MAC addresses of given interface on the machine using ifconfig, inspired from python uuid module '''
+
+        command = "ifconfig"
+        hw_identifiers = ['hwaddr', 'ether']
+
+        for dir in ['', '/sbin', '/usr/sbin']:
+            executable = os.path.join(dir, command)
+            if not os.path.exists(executable):
+                continue
+
+            try:
+                cmd = 'LC_ALL=C %s -a 2>/dev/null ' % executable
+                pipe = os.popen(cmd)
+            except IOError:
+                continue
+
+            for line in pipe:
+                if line.startswith(iface):
+                    words = line.lower().split()
+                    for i in range(len(words)):
+                        if words[i] in hw_identifiers:
+                            return words[i+1]
 
     def createTimeStamp(self):
         pass
