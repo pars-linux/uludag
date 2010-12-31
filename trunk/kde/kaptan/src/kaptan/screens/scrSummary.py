@@ -158,13 +158,22 @@ class Widget(QtGui.QWidget, Screen):
 
         def removeFolderViewWidget():
             config = KConfig("plasma-desktop-appletsrc")
-            group = config.group("Containments")
-            for each in list(group.groupList()):
-                subgroup = group.group(each)
-                plugin = subgroup.readEntry('plugin')
-                if plugin == 'folderview' and subgroup.hasGroup("Applets") and not subgroup.hasKey("wallpaper"):
-                    subgroup.deleteGroup()
-                    dir(each)
+
+            sub_lvl_0 = config.group("Containments")
+
+            for sub in list(sub_lvl_0.groupList()):
+                sub_lvl_1 = sub_lvl_0.group(sub)
+
+                if sub_lvl_1.hasGroup("Applets"):
+                    sub_lvl_2 = sub_lvl_1.group("Applets")
+
+                    for sub2 in list(sub_lvl_2.groupList()):
+                        sub_lvl_3 = sub_lvl_2.group(sub2)
+                        plugin = sub_lvl_3.readEntry('plugin')
+
+                        if plugin == 'folderview':
+                            sub_lvl_3.deleteGroup()
+
 
         # Desktop Type
         if self.styleSettings["hasChangedDesktopType"]:
