@@ -1,3 +1,9 @@
+[metin]
+device = pci:14e4_1698_eth0
+state = down
+name_mode = default
+net_mode = auto
+
 [lan]
 device = pci:14e4_1698_eth0
 state = down
