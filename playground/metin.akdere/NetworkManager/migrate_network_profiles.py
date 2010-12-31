@@ -126,7 +126,7 @@ class PardusNMSettings:
     def getWlanSettings(self):
         ''' Return a dict contains WLAN settings'''
 
-        return self.wlan_settings
+        return self.wireless_settings
 
     def listProfiles(self, connection_type=None):
         ''' Temporary func to see a list of profiles '''
@@ -144,8 +144,8 @@ class NetworkManagerSettings:
         self.pardus_nm_settings = PardusNMSettings()
         self.nm_settings = {}
 
-        self.pardus_lan_settings = self.pardus_nm_settings.getLansettings()
-        self.pardus_wlan_settings = self.pardus_nm_settings.getWlansettings()
+        self.pardus_lan_settings = self.pardus_nm_settings.getLanSettings()
+        self.pardus_wireless_settings = self.pardus_nm_settings.getWlanSettings()
 
         self.config_filename = ''
         self.config = ConfigParser.ConfigParser()
@@ -155,14 +155,14 @@ class NetworkManagerSettings:
         #self.getWirelessSettings()
 
         #self.generateUUID()
-        self.writeSettings(self.pardus_nm_settings)
+        #self.writeSettings(self.pardus_nm_settings)
 
     # Helper functions
     def generateConfigFilename(self, settings):
         ''' Generate the new profile name from the given settings '''
 
-        wired_profiles = old_settings.getProfileNames('wired')
-        wireless_profiles = old_settings.getProfileNames('wireless')
+        wired_profiles = pardus_nm_settings.getProfileNames('wired')
+        wireless_profiles = pardus_nm_settings.getProfileNames('wireless')
         return wired_profiles[0]
 
 
