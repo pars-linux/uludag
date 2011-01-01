@@ -122,9 +122,9 @@ msgid "Multiple users can share the same computer safely with Pardus. An adminis
 msgstr ""
 
 #: ../release.xml.in.h:28
-#, no-c-format
+#, no-c-format, fuzzy
 msgid "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet browser. Firefox offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, including a fully personalization feature with Personas help you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus also offers other free browsers including Chromium, Konqueror or even Opera."
-msgstr ""
+msgstr "Pardus 2011 è fornito con Firefox 4, il più popolare browser Internet  a codice sorgente aperta."
 
 #: ../release.xml.in.h:29
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
@@ -164,16 +164,15 @@ msgstr ""
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Gli account utente sono correttamente configurati. Clicca su Avanti per procedere. Nota bene: Ricordi il tuo password, no?"
 
 #: ../release.xml.in.h:39
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
 msgstr ""
 
 #: ../release.xml.in.h:40
-#, fuzzy
 msgid "Welcome back..."
-msgstr "Bentornato"
+msgstr "Bentornato..."
 
 #: ../release.xml.in.h:41
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
