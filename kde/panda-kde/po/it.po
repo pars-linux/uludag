@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Ali Işıngör, 2011.
 msgid ""
 msgstr ""
@@ -10,12 +10,12 @@ msgstr ""
 "PO-Revision-Date: 2011-01-02 00:02+0200\n"
 "Last-Translator: Ali Işıngör\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"Language: \n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: panda.cpp:57
 msgid "Current Driver Information"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: panda.cpp:81
 msgid "Vendor:"
-msgstr ""
+msgstr "Venditore:"
 
 #: panda.cpp:89
 msgid "Renderer:"
@@ -58,9 +58,7 @@ msgid "(c) 2011 Fatih Arslan"
 msgstr "(c) 2011 Fatih Arslan"
 
 #: panda.cpp:148
-msgid ""
-"Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</"
-"a> to report bugs.\n"
+msgid "Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> to report bugs.\n"
 msgstr ""
 
 #: panda.cpp:150
@@ -69,7 +67,7 @@ msgstr "Fatih Arslan"
 
 #: panda.cpp:150
 msgid "Original author"
-msgstr ""
+msgstr "Autore originale"
 
 #: panda.cpp:196
 msgid "Unable to apply settings due to missing packages"
@@ -96,4 +94,3 @@ msgstr ""
 #: rc.cpp:3 rc.cpp:3
 msgid "video,driver,graphics,display"
 msgstr ""
-
