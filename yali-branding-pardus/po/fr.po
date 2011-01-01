@@ -78,18 +78,16 @@ msgid "Get ready to install Pardus"
 msgstr "Préparez-vous à installer Pardus"
 
 #: ../release.xml.in.h:16
-#, fuzzy
 msgid "Help will be included when Kahya implentation is complete."
-msgstr "Aide sera inclus lorsque implentation Kahya est terminée."
+msgstr "L'Aide sera incluse lorsque l'implentation de Kahya sera terminée."
 
 #: ../release.xml.in.h:17
 msgid "Here you can review your options before the installation process starts."
 msgstr "Ici vous pouvez voir vos options d'installation avant le début de l'installation."
 
 #: ../release.xml.in.h:18
-#, fuzzy
 msgid "If you are a part of a local network, you can reach to the other systems from the Network link on Dolphin. Pardus will list all the shared places automatically.&lt;br&gt;&lt;br&gt;Easy? There&apos;s more... If you prefer using wired connections, all you have to do is plugging, then it will be automatically configured. If you prefer wireless connection, you will see a list of available networks when you click on the wireless icon.&lt;br&gt;&lt;br&gt;Do you have a local printer? Plug it and it will be configured automatically as well. All you do is printing out your document."
-msgstr "Si vous faites partie d'un réseau local, vous pouvez accéder aux autres systèmes à partir du lien réseau sur le dauphin. Pardus la liste de tous les lieux partagés automatiquement. &lt;br&gt; Facile? Il n'y a plus ... Si vous préférez utiliser des connexions câblées, tout ce que vous avez à faire est de brancher, alors il sera configuré automatiquement. Si vous préférez la connexion sans fil, vous verrez une liste des réseaux disponibles lorsque vous cliquez sur l'icône sans fil. &lt;br&gt; Avez-vous une imprimante locale? Branchez-le et il sera automatiquement configuré ainsi. Il vous suffit de l'impression de votre document."
+msgstr "Si vous faites partie d'un réseau local, vous pouvez accéder aux autres systèmes à partir du lien réseau de Dolphin. Pardus liste tous les lieux partagés automatiquement.&lt;br&gt;&lt;br&gt;Si vous préférez utiliser des connexions câblées, branchez, c'est configuré ! Si vous préférez la connexion sans fil, vous verrez une liste des réseaux disponibles lorsque vous cliquez sur l'icône sans fil. &lt;br&gt;&lt;br&gt; Avez-vous une imprimante locale? Branchez-la et elle sera automatiquement configurée et immédiatement prête à imprimer."
 
 #: ../release.xml.in.h:19
 msgid "Installation complete"
