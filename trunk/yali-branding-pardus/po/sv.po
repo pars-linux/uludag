@@ -165,7 +165,7 @@ msgstr ""
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Användarkonton anpassades framgångsrikt. Klicka Nästa för att fortsätta. En sak bara: Du kommer väl ihåg ditt lösenord, eller hur?"
 
 #: ../release.xml.in.h:39
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
