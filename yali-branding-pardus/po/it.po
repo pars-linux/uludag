@@ -26,9 +26,8 @@ msgid "A bootloader is a tiny program that runs when a computer is first powered
 msgstr "Bootloader è un piccolo programma che viene eseguito quando un computer viene acceso. È responsabile del caricamento del sistema operativo nella memoria e poi trasferisce il controllo all'utente. &lt;br&gt;&lt;br&gt;Pardus usa GRUB (GRand Unified Bootloader) come il bootloader predefinito. GRUB permette di avviare qualsiasi sistema operativo supportato presentandogli all'utente in un menu.&lt;br&gt;&lt;br&gt;Il metodo raccomandato per usare GRUB è quello di installare all'inizio del disco di avvio, che è fissato dalle impostazioni predefiniti. È possibile scegliere le impostazioni avanzate per una installazione personalizzata se si sa cosa sta facendo."
 
 #: ../release.xml.in.h:3
-#, fuzzy
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr "Un layout di tastiera imposta la disposizione dei tasti sulla tastiera. Ci sono diversi layout di tastiera in uso in tutto il mondo. Se volete, questo schermo vi permette di usare un layout di tastiera differente del paese di permanenza. È possibile verificare il formato selezionato, digitando nella casella di testo dato."
+msgstr "Un layout di tastiera imposta la disposizione dei tasti sulla tastiera. Ci sono diversi layout di tastiera in uso in tutto il mondo. Se volete, questo schermo vi permette di usare un layout di tastiera differente del paese di permanenza. &lt;br&gt;&lt;br&gt;È possibile verificare il layout selezionato, digitando nella casella di testo dato."
 
 #: ../release.xml.in.h:4
 msgid "All done!"
@@ -141,20 +140,19 @@ msgstr ""
 
 #: ../release.xml.in.h:32
 msgid "Partition your disk manually"
-msgstr ""
+msgstr "Partizionare il disco manualmente"
 
 #: ../release.xml.in.h:33
-#, fuzzy
 msgid "Select a partitioning method"
-msgstr "Seleziona Metodo della Partitizione"
+msgstr "Seleziona metodo della partizionamento"
 
 #: ../release.xml.in.h:34
 msgid "Set your local time and date"
-msgstr ""
+msgstr "Imposta il tempo locale e la data"
 
 #: ../release.xml.in.h:35
 msgid "Setup your account"
-msgstr ""
+msgstr "Imposta il tuo account"
 
 #: ../release.xml.in.h:36
 msgid "Summary"
