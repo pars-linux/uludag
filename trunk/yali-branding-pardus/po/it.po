@@ -155,7 +155,7 @@ msgstr ""
 
 #: ../release.xml.in.h:36
 msgid "Summary"
-msgstr ""
+msgstr "Sommario"
 
 #: ../release.xml.in.h:37
 msgid "There are a lot of features waiting to be explored. Thousands of softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is onle a few clicks to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones. You can reach Package Manager from the menu of your choice, Kick-off, classic menu or Lancelot that you can choose with the help of Kaptan in your very first boot."
@@ -171,7 +171,7 @@ msgstr ""
 
 #: ../release.xml.in.h:40
 msgid "Welcome back..."
-msgstr ""
+msgstr "Bentornato..."
 
 #: ../release.xml.in.h:41
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
