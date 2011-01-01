@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pardus 2011\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-27 20:01+0000\n"
+"POT-Creation-Date: 2011-01-01 17:01+0000\n"
 "PO-Revision-Date: 2010-12-23 16:11+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: sv <sv@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 
 #: ../release.xml.in.h:1
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr ""
+msgstr "&quot;root&quot; är namnet på den administrative användaren som har alla behörigheter och tillstånd (till alla filer och program) i alla lägen (ensam, eller fleranvändare). &lt;br&gt;&lt;br&gt;Ditt lösenord måste vara enkelt att komma ihåg men starkt nog att klara av möjliga intrång. Du kan använda versaler, gemener och andra tecken i ditt lösenord. &lt;br&gt;&lt;br&gt;Du kan också tilldela ett namn på din dator. Ett värdnamn är en identitet tilldelad din dator. Då datorn kommer att identifieras under detta namn på det lokala nätverket är det rekommenderat att välja ett beskrivande värdnamn."
 
 #: ../release.xml.in.h:2
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
@@ -80,7 +80,7 @@ msgstr "Gör dig redo för att installera Pardus"
 
 #: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implentation is complete."
-msgstr ""
+msgstr "Hjälp blir tillgänglig då Kahya är färdig."
 
 #: ../release.xml.in.h:17
 msgid "Here you can review your options before the installation process starts."
@@ -141,7 +141,7 @@ msgstr ""
 
 #: ../release.xml.in.h:32
 msgid "Partition your disk manually"
-msgstr ""
+msgstr "Partitionera disken manuellt"
 
 #: ../release.xml.in.h:33
 msgid "Select a partitioning method"
