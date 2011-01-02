@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-29 15:01+0000\n"
+"POT-Creation-Date: 2011-01-02 12:34+0200\n"
 "PO-Revision-Date: 2010-12-29 17:03+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -194,7 +194,8 @@ msgid "Get ready to install Pardus"
 msgstr "Gereed om Pardus te installeren"
 
 #: ../release.xml.in.h:16
-msgid "Help will be included when Kahya implentation is complete."
+#, fuzzy
+msgid "Help will be included when Kahya implementation is complete."
 msgstr "Help zal aanwezig wanneer de Kahya-ondersteuning compleet is."
 
 #: ../release.xml.in.h:17
@@ -464,8 +465,8 @@ msgstr ""
 "een methode van bestandverificatie. Een mislukte validatie komt meestal door "
 "een fout op het installatiemedium (CD, DVD of USB-opslag).&lt;br&gt;&lt;"
 "br&gt;Bij het maken van een optisch installatiemedium (CD/DVD), probeer DAO "
-"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, 8-"
-"12x voor CD)."
+"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, "
+"8-12x voor CD)."
 
 #: ../release.xml.in.h:40
 msgid "Welcome back..."
@@ -557,8 +558,8 @@ msgid ""
 msgstr ""
 "Pardus is met succes op de computer geïnstalleerd. Na een herstart van de "
 "computer kunt u nieuwe gebruikeraccounts toevoegen en Pardus gaan gebruiken. "
-"Wees er zeker van dat u het installatiemedium ontkoppelt (verwijder het "
-"USB-apparaat, werp de DVD uit of ontkoppel het image in de virtuele machine)."
+"Wees er zeker van dat u het installatiemedium ontkoppelt (verwijder het USB-"
+"apparaat, werp de DVD uit of ontkoppel het image in de virtuele machine)."
 
 #: ../release.xml.in.h:46
 msgid ""

@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-30 09:01+0000\n"
+"POT-Creation-Date: 2011-01-02 12:34+0200\n"
 "PO-Revision-Date: 2010-12-30 10:21+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: HUNGARY\n"
@@ -193,7 +193,8 @@ msgid "Get ready to install Pardus"
 msgstr "Felkészülés a Pardus telepítésére"
 
 #: ../release.xml.in.h:16
-msgid "Help will be included when Kahya implentation is complete."
+#, fuzzy
+msgid "Help will be included when Kahya implementation is complete."
 msgstr "A Kahya implementálásakor lesz elérhető súgó is."
 
 #: ../release.xml.in.h:17
@@ -442,8 +443,7 @@ msgid ""
 "You remember your password, don&apos;t you?"
 msgstr ""
 "A felhasználói fiókok beállításra kerültek. Kattintson a Továbbra a "
-"folytatáshoz. Egy megjegyzés: "
-"Ugye emlékszik még a jelszóra?"
+"folytatáshoz. Egy megjegyzés: Ugye emlékszik még a jelszóra?"
 
 #: ../release.xml.in.h:39
 msgid ""
@@ -548,8 +548,7 @@ msgid ""
 msgstr ""
 "Sikeresen telepítette a Pardust számítógépére. Újraindítás után fog tudni "
 "felhasználókat felvenni a Pardus használatához. Ne felejtse el eltávolítani "
-"a "
-"telepítő médiát (usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
+"a telepítő médiát (usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
 
 #: ../release.xml.in.h:46
 msgid ""
