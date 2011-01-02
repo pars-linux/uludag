@@ -27,7 +27,7 @@ msgstr "Venditore:"
 
 #: panda.cpp:89
 msgid "Renderer:"
-msgstr ""
+msgstr "Renderer:"
 
 #: panda.cpp:97
 msgid "Version:"
@@ -47,7 +47,7 @@ msgstr "Usa il driver proprietario fornito dal produttore"
 
 #: panda.cpp:123
 msgid "Use the safe driver that provides limited features"
-msgstr ""
+msgstr "Usa il driver sicuro che fornisce funzionalità limitate"
 
 #: panda.cpp:138 rc.cpp:2 rc.cpp:2
 msgid "Video Driver Administration"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: panda.cpp:215
 msgid "An internal error occurred"
-msgstr ""
+msgstr "Verificato un errore interno"
 
 #: panda.cpp:223
 msgid ""
