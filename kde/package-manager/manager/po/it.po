@@ -115,20 +115,17 @@ msgid "Critical Packages"
 msgstr "Pacchetti Critici"
 
 #: src/basketdialog.py:205 src/pmwindow.py:121
-#, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono essere installati insieme."
+msgstr "I pacchetti selezionati sono già installati. <br>Se continui, i pacchetti saranno riinstallati"
 
 #: src/basketdialog.py:207 src/pmwindow.py:123
-#, fuzzy
 msgid "Already Installed Packages"
-msgstr "Installa pacchetto/i"
+msgstr "Pacchetti Già Installati"
 
 #: src/basketdialog.py:208 src/mainwindow.py:148 src/mainwindow.py:151
 #: src/pmwindow.py:124
-#, fuzzy
 msgid "Installed Packages"
-msgstr "Installa pacchetto/i"
+msgstr "Pacchetti Installati"
 
 #: src/grouplist.py:48 src/tray.py:69 src/tray.py:186
 msgid "All"
@@ -147,25 +144,24 @@ msgid "All packages are up to date"
 msgstr "Tutti i pacchetti sono aggiornati"
 
 #: src/mainwidget.py:234
-#, fuzzy
 msgid "Searching..."
-msgstr "Cerca"
+msgstr "Cerca..."
 
 #: src/mainwidget.py:246
 msgid "No results found."
-msgstr ""
+msgstr "Nessun risultato trovato."
 
 #: src/mainwidget.py:400
 msgid "All Updates"
-msgstr "Tutti gli aggiornamenti"
+msgstr "Tutti gli Aggiornamenti"
 
 #: src/mainwidget.py:401
 msgid "Security Updates"
-msgstr "Aggiornamenti di sicurezza"
+msgstr "Aggiornamenti di Sicurezza"
 
 #: src/mainwidget.py:402
 msgid "Critical Updates"
-msgstr "Aggiornamenti critici"
+msgstr "Aggiornamenti Critici"
 
 #: src/mainwindow.py:136 src/mainwindow.py:139
 msgid "All Packages"
