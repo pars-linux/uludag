@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
@@ -32,23 +32,23 @@ msgstr "Gestore di Pacchetti"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr "Una GUI per il package-manager PiSi"
+msgstr "Un interfaccia grafica per il gestore di Pacchetti PiSi"
 
 #: data/packagemanager-helper.desktop.in.h:1
 msgid "Add/Remove/Update Packages"
-msgstr "Applica i cambiamenti"
+msgstr "Aggiungi/Rimuovi/Aggiorna i Pacchetti"
 
 #: src/about.py:27
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: src/about.py:36
-msgid "Developer"
-msgstr "Sviluppatore"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -61,16 +61,16 @@ msgstr "Primo autore"
 #: src/about.py:38
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Davide Siciliano"
+msgstr "Ali Isingor"
 
 #: src/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "edivad95@gmail.com"
+msgstr "isingor@gmail.com"
 
 #: src/basketdialog.py:54 ui/ui_basketdialog.py:187
 msgid "Clear Basket"
-msgstr " Pulisci Cestino"
+msgstr "Pulisci Cestino"
 
 #: src/basketdialog.py:55
 msgid "Do you want to clear all selections ?"
@@ -80,7 +80,7 @@ msgstr "Vuoi cancellare tutte le selezioni?"
 #: src/pmutils.py:80 src/pmutils.py:83 src/pmutils.py:86
 #: src/settingsdialog.py:240 src/settingsdialog.py:245
 msgid "Pisi Error"
-msgstr "Errore PiSi!"
+msgstr "Errore PiSi"
 
 #: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
@@ -95,9 +95,8 @@ msgid "Packages Require System Restart"
 msgstr ""
 
 #: src/basketdialog.py:178
-#, fuzzy
 msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti selezionati abbiano efetto:"
+msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti selezionati abbiano effetto"
 
 #: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
@@ -504,12 +503,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignora"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignora"
 
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
 #, fuzzy
