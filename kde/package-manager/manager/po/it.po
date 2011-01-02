@@ -279,7 +279,7 @@ msgstr ""
 #: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
-msgstr ""
+msgstr "File <b>%s</b> non esiste."
 
 #: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
@@ -308,17 +308,15 @@ msgstr "%1 %2"
 
 #: src/progressdialog.py:86
 msgid "[%1 / %2]"
-msgstr ""
+msgstr "[%1 / %2]"
 
 #: src/progressdialog.py:93
-#, fuzzy
 msgid "%1 / %2, %3"
-msgstr "%1 / %2 pacchetto %3"
+msgstr "%1 / %2, %3"
 
 #: src/progressdialog.py:110
-#, fuzzy
 msgid "Preparing PiSi..."
-msgstr "<h3>Preparazione PiSi...</h3>"
+msgstr "Preparazione PiSi..."
 
 #: src/progressdialog.py:121
 msgid "<b>Cancelling operation...</b>"
@@ -379,7 +377,7 @@ msgstr "aggionato"
 
 #: src/statemanager.py:96
 msgid "modified"
-msgstr ""
+msgstr "modificato"
 
 #: src/statemanager.py:100 ui/ui_basketdialog.py:188
 #: ui/ui_mainwidget_v3.py:174
@@ -395,9 +393,8 @@ msgid "Upgrade Package(s)"
 msgstr "Aggiorna pacchetto/i"
 
 #: src/statemanager.py:103
-#, fuzzy
 msgid "Select Operation"
-msgstr "Operazione"
+msgstr "Seleziona Operazione"
 
 #: src/statemanager.py:113
 msgid "%1 new package(s) have been installed succesfully."
@@ -412,9 +409,8 @@ msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 pacchetto/i aggiornato con successo."
 
 #: src/statemanager.py:116
-#, fuzzy
 msgid "%1 package(s) have been modified succesfully."
-msgstr "%1 pacchetto/i rimosso/i con successo."
+msgstr "%1 pacchetto/i modificato/i con successo."
 
 #: src/statemanager.py:119
 msgid "You have selected the following package(s) to install:"
@@ -429,9 +425,8 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Hai selezionato i seguenti pacchetti per l'aggiornamento:"
 
 #: src/statemanager.py:122
-#, fuzzy
 msgid "You have selected the following package(s) to modify:"
-msgstr "Hai selezionato i seguenti pacchetti per la rimoozione:"
+msgstr "Hai selezionato i seguenti pacchetti per la modifica:"
 
 #: src/statemanager.py:125 ui/ui_basketdialog.py:184
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
@@ -446,9 +441,8 @@ msgid "Extra dependencies of the selected package(s) that are also going to be u
 msgstr "Le dipendenze extra dei pacchetti selezionati saranno aggiornati:"
 
 #: src/statemanager.py:128
-#, fuzzy
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Le dipendenze extra dei pacchetti selezionati saranno aggiornati:"
+msgstr "Le dipendenze extra dei pacchetti selezionati che saranno modificati:"
 
 #: src/statemanager.py:167
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -577,9 +571,8 @@ msgid "Package List"
 msgstr "Lista pacchetti"
 
 #: ui/ui_mainwidget_v3.py:172
-#, fuzzy
 msgid "Show Basket"
-msgstr "Cestino"
+msgstr "Mostra il Cestino"
 
 #: ui/ui_mainwidget_v3.py:173
 #, fuzzy
