@@ -133,11 +133,11 @@ msgstr "Repository"
 
 #: .tmp/ui_scrStyleItem.py:71
 msgid "styleName"
-msgstr ""
+msgstr "Nome dello Stile"
 
 #: .tmp/ui_scrStyleItem.py:72
 msgid "styleDesc"
-msgstr ""
+msgstr "Descrizione dello Stile"
 
 #: .tmp/ui_scrGoodbye.py:324
 msgid "More"
