@@ -19,7 +19,7 @@ msgstr ""
 
 #: panda.cpp:57
 msgid "Current Driver Information"
-msgstr ""
+msgstr "Informazione Attuale dei Driver"
 
 #: panda.cpp:81
 msgid "Vendor:"
@@ -35,15 +35,15 @@ msgstr "Versione:"
 
 #: panda.cpp:114
 msgid "Driver Preference"
-msgstr ""
+msgstr "Preferenze Driver"
 
 #: panda.cpp:120
 msgid "Use the driver developed by the open source community"
-msgstr ""
+msgstr "Usa il driver sviluppato dalla comunità open source"
 
 #: panda.cpp:121
 msgid "Use the proprietary driver provided by the manufacturer"
-msgstr ""
+msgstr "Usa il driver proprietario fornito dal produttore"
 
 #: panda.cpp:123
 msgid "Use the safe driver that provides limited features"
@@ -89,8 +89,8 @@ msgstr ""
 
 #: rc.cpp:1 rc.cpp:1
 msgid "Video Driver"
-msgstr ""
+msgstr "Video Driver"
 
 #: rc.cpp:3 rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr ""
+msgstr "video,driver,graffici,schermo"
