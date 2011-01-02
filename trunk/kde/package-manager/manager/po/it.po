@@ -268,9 +268,9 @@ msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
 #: src/pmutils.py:73
-#, fuzzy, python-format
+#, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. Prova ad aggiornare le informazioni sui repository."
+msgstr "Pacchetto <b>%s</b> non trovato nei repositori. Può essere stato aggiornato o rimosso dal repositorio. Prova ad aggiornare le informazioni sui repository."
 
 #: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
@@ -335,9 +335,8 @@ msgid "Not a valid repository name"
 msgstr "Nome repository non valido"
 
 #: src/settingsdialog.py:246
-#, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2.<p>Prova di nuovo.</qt>"
+msgstr "<qt>L'indirizzo del repositorio deve finire con il suffisso xml o xml.bz2 o xz.<p>Prova di nuovo.</qt>"
 
 #: src/statemanager.py:84 src/statemanager.py:85
 msgid "Installing Package(s)"
@@ -575,9 +574,8 @@ msgid "Show Basket"
 msgstr "Mostra il Cestino"
 
 #: ui/ui_mainwidget_v3.py:173
-#, fuzzy
 msgid "Check for Updates"
-msgstr "Mostra aggiornamenti"
+msgstr "Controlla gli Aggiornamenti"
 
 #: ui/ui_pminstall.py:83
 #, fuzzy
@@ -589,9 +587,8 @@ msgid "Following packages are selected to install. Do you want to install these 
 msgstr ""
 
 #: ui/ui_pminstall.py:86
-#, fuzzy
 msgid "Install"
-msgstr "installato"
+msgstr "Installa"
 
 #: ui/ui_pminstall.py:87
 msgid "Cancel"
@@ -683,7 +680,7 @@ msgstr "Limite di banda"
 
 #: ui/ui_settingsdialog.py:401
 msgid " kB/s"
-msgstr ""
+msgstr "kB/s"
 
 #: ui/ui_settingsdialog.py:402
 msgid "Use bandwidth limit :"
@@ -805,9 +802,8 @@ msgid "&Ok"
 msgstr "&Ok"
 
 #: ui/ui_webdialog.py:167 ui/ui_webdialog.py:172
-#, fuzzy
 msgid "Package Details"
-msgstr "Lista pacchetti"
+msgstr "Dettagli del Pacchetto"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
