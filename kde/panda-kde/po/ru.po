@@ -26,7 +26,7 @@ msgstr "Производитель:"
 
 #: panda.cpp:89
 msgid "Renderer:"
-msgstr ""
+msgstr "Визуализация:"
 
 #: panda.cpp:97
 msgid "Version:"
@@ -34,7 +34,7 @@ msgstr "Версия:"
 
 #: panda.cpp:114
 msgid "Driver Preference"
-msgstr ""
+msgstr "Настройки драйвера"
 
 #: panda.cpp:120
 msgid "Use the driver developed by the open source community"
@@ -50,7 +50,7 @@ msgstr "Использовать безопасный драйвер, котор
 
 #: panda.cpp:138 rc.cpp:2 rc.cpp:2
 msgid "Video Driver Administration"
-msgstr ""
+msgstr "Управление видеодрайвером"
 
 #: panda.cpp:142
 msgid "(c) 2011 Fatih Arslan"
@@ -94,4 +94,4 @@ msgstr "Видеодрайвер"
 
 #: rc.cpp:3 rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr ""
+msgstr "видео, драйвер, графика, дисплей"
