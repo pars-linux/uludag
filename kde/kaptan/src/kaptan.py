@@ -36,11 +36,11 @@ class Kaptan(QtGui.QWidget):
 
     def signalHandler(self):
         ''' connects signals to slots '''
-        QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
-        QtCore.QObject.connect(self.ui.buttonApply, QtCore.SIGNAL("clicked()"), self.slotNext)
-        QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
-        QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
-        QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+        self.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
+        self.connect(self.ui.buttonApply, QtCore.SIGNAL("clicked()"), self.slotNext)
+        self.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
+        self.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+        self.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
 
     def initializeUI(self):
         ''' initializes the human interface '''
