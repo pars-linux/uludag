@@ -6,19 +6,3 @@ Legend:
 + Accomplished
 
 TODO:
-
-    General
-        / Normalize folder structure
-        - Modify code to work with the new folder structure
-        -? Plugin support for easy screen addition
-        -? Optimize performance
-        - Add a notification tool chooser
-
-    Network Screen
-        - Detached network manager
-
-    Summary screen
-        - Kaptan is now applying settings please wait
-
-    Wallpaper Screen
-        - Prioritized wallpapers
