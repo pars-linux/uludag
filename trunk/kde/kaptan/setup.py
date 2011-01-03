@@ -78,8 +78,7 @@ class Build(build):
         print "Copying kde-themes..."
         os.system("cp -R data/kde-themes build/kaptan/")
 
-        #os.system("mkdir build/kaptan/screens/ui")
-        update_messages()
+        #update_messages()
 
         # Copy compiled UIs and RCs
         print "Generating UIs..."
