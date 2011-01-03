@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 15:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,8 +48,8 @@ msgstr "Bitir"
 msgid "Apply Settings"
 msgstr ""
 
-#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:70
-#: .tmp/ui_wallpaperItem.py:73
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
+#: .tmp/ui_wallpaperItem.py:72
 msgid "Form"
 msgstr "Form"
 
@@ -73,35 +73,35 @@ msgstr ""
 msgid "Recapture"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:324
+#: .tmp/ui_scrGoodbye.py:325
 msgid "More"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:325
+#: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrSmolt.py:156
+#: .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328 .tmp/ui_scrSmolt.py:156
 msgid "My Smolt Page"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:328
+#: .tmp/ui_scrGoodbye.py:329
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:329 .tmp/ui_scrGoodbye.py:331
+#: .tmp/ui_scrGoodbye.py:330 .tmp/ui_scrGoodbye.py:332
 msgid "System Settings"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:330
+#: .tmp/ui_scrGoodbye.py:331
 msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:332 .tmp/ui_scrGoodbye.py:334
+#: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
 msgid "Help and Support"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:333
+#: .tmp/ui_scrGoodbye.py:334
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr ""
 
@@ -141,76 +141,64 @@ msgstr ""
 msgid "Sample"
 msgstr "Nmun"
 
-#: .tmp/ui_scrMouse.py:203
+#: .tmp/ui_scrMouse.py:202
 msgid "Mouse"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:204
+#: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:205
+#: .tmp/ui_scrMouse.py:204
 msgid "Clicking Behaviour"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:206
+#: .tmp/ui_scrMouse.py:205
 msgid "Single-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:207
+#: .tmp/ui_scrMouse.py:206
 msgid "Dou&ble-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:208
+#: .tmp/ui_scrMouse.py:207
 msgid "Button Order"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:209
+#: .tmp/ui_scrMouse.py:208
 msgid "Right Hand"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:210
+#: .tmp/ui_scrMouse.py:209
 msgid "Left Hand"
 msgstr ""
 
-#: .tmp/ui_scrMouse.py:211
+#: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:191
+#: .tmp/ui_scrPackage.py:132
 msgid "Packages"
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:192
+#: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:193
+#: .tmp/ui_scrPackage.py:134
 msgid "Check updates automatically every"
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:194
+#: .tmp/ui_scrPackage.py:135
 msgid " hours"
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:195
-msgid "Contrib repository includes extra and handy programs."
-msgstr ""
-
-#: .tmp/ui_scrPackage.py:196
-msgid "Add contrib repository"
-msgstr ""
-
-#: .tmp/ui_scrPackage.py:197
+#: .tmp/ui_scrPackage.py:136
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
 msgstr ""
 
-#: .tmp/ui_scrPackage.py:198
+#: .tmp/ui_scrPackage.py:137
 msgid "Updates"
-msgstr ""
-
-#: .tmp/ui_scrPackage.py:199
-msgid "Repositories"
 msgstr ""
 
 #: .tmp/ui_scrSearch.py:100
@@ -298,11 +286,11 @@ msgstr ""
 msgid "Number of Desktops"
 msgstr ""
 
-#: .tmp/ui_scrStyleItem.py:71
+#: .tmp/ui_scrStyleItem.py:70
 msgid "styleName"
 msgstr ""
 
-#: .tmp/ui_scrStyleItem.py:72
+#: .tmp/ui_scrStyleItem.py:71
 msgid "styleDesc"
 msgstr ""
 
@@ -350,10 +338,10 @@ msgstr ""
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
 msgstr ""
 
-#: .tmp/ui_wallpaperItem.py:74
+#: .tmp/ui_wallpaperItem.py:73
 msgid "wallPaperName"
 msgstr ""
 
-#: .tmp/ui_wallpaperItem.py:75
+#: .tmp/ui_wallpaperItem.py:74
 msgid "wallpaperDesc"
 msgstr ""
