@@ -220,28 +220,27 @@ Waiting in the Queue Stock Response
 Quiz Approved Stock Response
 -----------------------------
 
-    ::
+::
 
-        (Quiz'i kontrol eden kişi, sorular ile ilgili yorumlarını yazar ve gerekli istek ve beklentilerini
-        bildirir ve daha sonra aşağıda bulunan bilgileri yoruma ekler)
+    (Quiz'i kontrol eden kişi, sorular ile ilgili yorumlarını yazar ve gerekli istek ve beklentilerini
+    bildirir ve daha sonra aşağıda bulunan bilgileri yoruma ekler)
 
-        Bu aşamadan sonra bugzilla'da bulunan junior job'lardan[2] istediğiniz birini seçip bug id'sini
-        yoruma ekleyiniz.
+    Bu aşamadan sonra bugzilla'da bulunan junior job'lardan[1] admins@pardus.org.tr üzerine atanmış
+    olan istediğiniz raporlardan birini seçip bug id'sini
+    yoruma ekleyiniz.
 
-        [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
-        [2] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
+    [1] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
 
-    ::
+::
 
-        (The mentor that had controled the quiz responses, give his/her explanation and declare his/her desire and expectation.
-        Then add the below information to bug comment)
+   (The mentor that had controled the quiz responses, give his/her explanation and declare his/her desire and expectation.
+   Then add the below information to bug comment)
 
-        After this period you have choose a junior job [2] and send its bug id to this buf report as a comment.
+   After this period you have choose a junior job [1] that assigned to admins@pardus.org.tr and send its bug id to this bug report as a comment.
 
-        Regards,
+   Regards,
 
-        [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
-        [2] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
+   [1] http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED
 
 
 Assigning Mentor Stock Response
