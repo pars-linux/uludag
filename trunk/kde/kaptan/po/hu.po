@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaptan.trunk.hu.po\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:09+0200\n"
 "PO-Revision-Date: 2010-11-28 08:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -355,227 +355,227 @@ msgstr "háttérkép neve"
 msgid "wallpaperDesc"
 msgstr "háttérkép leírása"
 
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Gratulálunk"
-
-#~ msgid "Keyboard Layout Language"
-#~ msgstr "Billentyűzet kiosztása"
-
-#~ msgid "Choose a Menu Style"
-#~ msgstr "Válassza ki a menü stílusát"
-
-#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Kick-off menü a Pardus alapértelmezett menüje.<br><br>A programok elérési útja egyszerű és jól áttekinthető."
-
-#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-#~ msgstr "Az egyszerű menü a régi stílusú KDE 3 menü megfelelője.<br><br> Ez egy pehelysúlyú menü amit lassabb PC-kre javaslunk."
-
-#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Lancelot egy fejlettebb és nagymértékben testre szabható menü a Pardushoz.<br><br>A programok elérése könnyű és jól áttekinthető"
-
-#~ msgid "Setup Mouse Behavior"
-#~ msgstr "Egér működésének beállítása"
-
-#~ msgid "Left Handed"
-#~ msgstr "Bal kezes"
-
-#~ msgid "Right Handed"
-#~ msgstr "Jobb kezes"
-
-#~ msgid "Single Click "
-#~ msgstr "Egy kattintás"
-
-#~ msgid "Double Click"
-#~ msgstr "Dupla kattintás"
-
-#~ msgid "Connect to the Internet"
-#~ msgstr "Csatlakozás az internetre"
-
-#~ msgid "Install / Remove Programs"
-#~ msgstr "Programok telepítése/eltávolítása"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Könnyed asztali kereső"
-
-#~ msgid "On"
-#~ msgstr "Be"
-
-#~ msgid "Off"
-#~ msgstr "Ki"
-
-#~ msgid "Help Pardus Improve!"
-#~ msgstr "Segítse a Pardus fejlesztését!"
-
-#~ msgid "Label"
-#~ msgstr "Cimke"
-
-#~ msgid "Data"
-#~ msgstr "Adat"
-
-#~ msgid "&Back"
-#~ msgstr "&Vissza"
-
-#~ msgid "UUID"
-#~ msgstr "UUID"
-
-#~ msgid "OS"
-#~ msgstr "Operációs rendszer"
-
-#~ msgid "Default Run Level"
-#~ msgstr "Alapértelmezett futási szint"
-
-#~ msgid "Language"
-#~ msgstr "Nyelv"
-
-#~ msgid "Platform"
-#~ msgstr "Platform"
-
-#~ msgid "BogoMIPS"
-#~ msgstr "BogoMIPS"
-
-#~ msgid "CPU Vendor"
-#~ msgstr "CPU forgalmazó"
-
-#~ msgid "CPU Model"
-#~ msgstr "CPU modell"
-
-#~ msgid "CPU Stepping"
-#~ msgstr "CPU Stepping"
-
-#~ msgid "CPU Family"
-#~ msgstr "CPU család"
-
-#~ msgid "CPU Model Num"
-#~ msgstr "CPU modell szám"
-
-#~ msgid "Number of CPUs"
-#~ msgstr "CPU-k száma"
-
-#~ msgid "CPU Speed"
-#~ msgstr "CPU sebessége"
-
-#~ msgid "System Memory"
-#~ msgstr "Rendszer memória"
-
-#~ msgid "System Swap"
-#~ msgstr "Rendszer Swap"
-
-#~ msgid "Vendor"
-#~ msgstr "Forgalmazó"
-
-#~ msgid "System"
-#~ msgstr "Rendszer"
-
-#~ msgid "Form Factor"
-#~ msgstr "Form factor"
-
-#~ msgid "Kernel"
-#~ msgstr "Kernel"
-
-#~ msgid "SELinux Enabled"
-#~ msgstr "SELinux engedélyezve"
-
-#~ msgid "SELinux Policy"
-#~ msgstr "SELinux szabályok"
-
-#~ msgid "SELinux Enforce"
-#~ msgstr "SELinux kikényszerítés"
-
-#~ msgid "Yes"
-#~ msgstr "Igen"
-
-#~ msgid "No"
-#~ msgstr "Nem"
-
-#~ msgid "Customize Your Desktop"
-#~ msgstr "Asztal beállítása"
-
-#~ msgid "Save Your Settings"
-#~ msgstr "Beállítások mentése"
-
-#~ msgid "Mouse Settings"
-#~ msgstr "Egér beállítások"
-
-#~ msgid "Selected Mouse configuration: <b>%s</b>"
-#~ msgstr "Kiválasztott egér beállítás: <b>%s</b>"
-
-#~ msgid "Selected clicking behaviour: <b>%s</b>"
-#~ msgstr "Kiválasztott kattintás viselkedésének beállítása: <b>%s</b>"
-
-#~ msgid "Menu Settings"
-#~ msgstr "Menü beállítások"
-
-#~ msgid "Selected Menu: <b>%s</b>"
-#~ msgstr "Kiválasztott menü: <b>%s</b>"
-
-#~ msgid "Wallpaper Settings"
-#~ msgstr "Háttérkép beállítások"
-
-#~ msgid "You haven't selected any wallpaper."
-#~ msgstr "Nem választott ki egyetlen háttérképet sem."
-
-#~ msgid "Selected Wallpaper: <b>%s</b>"
-#~ msgstr "Választott háttérkép: <b>%s</b>"
-
-#~ msgid "You haven't selected any style."
-#~ msgstr "Egyetlen stílust sem választott ki"
-
-#~ msgid "Selected Style: <b>%s</b>"
-#~ msgstr "Kiválasztott stílus: <b>%s</b>"
-
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Asztal keresés: <b>%s</b>"
-
-#~ msgid "Smolt Settings"
-#~ msgstr "Smolt beállítások"
-
-#~ msgid "Send my profile: <b>%s</b>"
-#~ msgstr "Küldje el a profilomat: <b>%s</b>"
-
-#~ msgid "Error"
-#~ msgstr "Hiba"
-
-#~ msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-#~ msgstr "Plasma desktop újraindítása sikertelen. A Kaptan most leáll."
-
-#~ msgid "color: #642437;"
-#~ msgstr "szín: #642437;"
-
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "szín: rgb(95, 34, 52)"
-
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "szín: rgb(234, 225, 228);"
-
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "szín:rgb(95, 34, 52"
-
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "szín: rgb(100, 36, 55)"
-
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
-
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
-
-#~ msgid "Network"
-#~ msgstr "Hálózat"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
-
-#~ msgid "Migration Wizard"
-#~ msgstr "Áthelyezés varázsló"
-
-#~ msgid "Repositories"
-#~ msgstr "Tárolók"
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
 
 #~ msgid "Add contrib repository"
 #~ msgstr "Contrib tároló hozzáadása"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
+#~ msgid "Repositories"
+#~ msgstr "Tárolók"
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Áthelyezés varázsló"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
+
+#~ msgid "Network"
+#~ msgstr "Hálózat"
+
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
+
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
+
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "szín: rgb(100, 36, 55)"
+
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "szín:rgb(95, 34, 52"
+
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "szín: rgb(234, 225, 228);"
+
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "szín: rgb(95, 34, 52)"
+
+#~ msgid "color: #642437;"
+#~ msgstr "szín: #642437;"
+
+#~ msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+#~ msgstr "Plasma desktop újraindítása sikertelen. A Kaptan most leáll."
+
+#~ msgid "Error"
+#~ msgstr "Hiba"
+
+#~ msgid "Send my profile: <b>%s</b>"
+#~ msgstr "Küldje el a profilomat: <b>%s</b>"
+
+#~ msgid "Smolt Settings"
+#~ msgstr "Smolt beállítások"
+
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Asztal keresés: <b>%s</b>"
+
+#~ msgid "Selected Style: <b>%s</b>"
+#~ msgstr "Kiválasztott stílus: <b>%s</b>"
+
+#~ msgid "You haven't selected any style."
+#~ msgstr "Egyetlen stílust sem választott ki"
+
+#~ msgid "Selected Wallpaper: <b>%s</b>"
+#~ msgstr "Választott háttérkép: <b>%s</b>"
+
+#~ msgid "You haven't selected any wallpaper."
+#~ msgstr "Nem választott ki egyetlen háttérképet sem."
+
+#~ msgid "Wallpaper Settings"
+#~ msgstr "Háttérkép beállítások"
+
+#~ msgid "Selected Menu: <b>%s</b>"
+#~ msgstr "Kiválasztott menü: <b>%s</b>"
+
+#~ msgid "Menu Settings"
+#~ msgstr "Menü beállítások"
+
+#~ msgid "Selected clicking behaviour: <b>%s</b>"
+#~ msgstr "Kiválasztott kattintás viselkedésének beállítása: <b>%s</b>"
+
+#~ msgid "Selected Mouse configuration: <b>%s</b>"
+#~ msgstr "Kiválasztott egér beállítás: <b>%s</b>"
+
+#~ msgid "Mouse Settings"
+#~ msgstr "Egér beállítások"
+
+#~ msgid "Save Your Settings"
+#~ msgstr "Beállítások mentése"
+
+#~ msgid "Customize Your Desktop"
+#~ msgstr "Asztal beállítása"
+
+#~ msgid "No"
+#~ msgstr "Nem"
+
+#~ msgid "Yes"
+#~ msgstr "Igen"
+
+#~ msgid "SELinux Enforce"
+#~ msgstr "SELinux kikényszerítés"
+
+#~ msgid "SELinux Policy"
+#~ msgstr "SELinux szabályok"
+
+#~ msgid "SELinux Enabled"
+#~ msgstr "SELinux engedélyezve"
+
+#~ msgid "Kernel"
+#~ msgstr "Kernel"
+
+#~ msgid "Form Factor"
+#~ msgstr "Form factor"
+
+#~ msgid "System"
+#~ msgstr "Rendszer"
+
+#~ msgid "Vendor"
+#~ msgstr "Forgalmazó"
+
+#~ msgid "System Swap"
+#~ msgstr "Rendszer Swap"
+
+#~ msgid "System Memory"
+#~ msgstr "Rendszer memória"
+
+#~ msgid "CPU Speed"
+#~ msgstr "CPU sebessége"
+
+#~ msgid "Number of CPUs"
+#~ msgstr "CPU-k száma"
+
+#~ msgid "CPU Model Num"
+#~ msgstr "CPU modell szám"
+
+#~ msgid "CPU Family"
+#~ msgstr "CPU család"
+
+#~ msgid "CPU Stepping"
+#~ msgstr "CPU Stepping"
+
+#~ msgid "CPU Model"
+#~ msgstr "CPU modell"
+
+#~ msgid "CPU Vendor"
+#~ msgstr "CPU forgalmazó"
+
+#~ msgid "BogoMIPS"
+#~ msgstr "BogoMIPS"
+
+#~ msgid "Platform"
+#~ msgstr "Platform"
+
+#~ msgid "Language"
+#~ msgstr "Nyelv"
+
+#~ msgid "Default Run Level"
+#~ msgstr "Alapértelmezett futási szint"
+
+#~ msgid "OS"
+#~ msgstr "Operációs rendszer"
+
+#~ msgid "UUID"
+#~ msgstr "UUID"
+
+#~ msgid "&Back"
+#~ msgstr "&Vissza"
+
+#~ msgid "Data"
+#~ msgstr "Adat"
+
+#~ msgid "Label"
+#~ msgstr "Cimke"
+
+#~ msgid "Help Pardus Improve!"
+#~ msgstr "Segítse a Pardus fejlesztését!"
+
+#~ msgid "Off"
+#~ msgstr "Ki"
+
+#~ msgid "On"
+#~ msgstr "Be"
+
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Könnyed asztali kereső"
+
+#~ msgid "Install / Remove Programs"
+#~ msgstr "Programok telepítése/eltávolítása"
+
+#~ msgid "Connect to the Internet"
+#~ msgstr "Csatlakozás az internetre"
+
+#~ msgid "Double Click"
+#~ msgstr "Dupla kattintás"
+
+#~ msgid "Single Click "
+#~ msgstr "Egy kattintás"
+
+#~ msgid "Right Handed"
+#~ msgstr "Jobb kezes"
+
+#~ msgid "Left Handed"
+#~ msgstr "Bal kezes"
+
+#~ msgid "Setup Mouse Behavior"
+#~ msgstr "Egér működésének beállítása"
+
+#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+#~ msgstr "Lancelot egy fejlettebb és nagymértékben testre szabható menü a Pardushoz.<br><br>A programok elérése könnyű és jól áttekinthető"
+
+#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+#~ msgstr "Az egyszerű menü a régi stílusú KDE 3 menü megfelelője.<br><br> Ez egy pehelysúlyú menü amit lassabb PC-kre javaslunk."
+
+#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+#~ msgstr "Kick-off menü a Pardus alapértelmezett menüje.<br><br>A programok elérési útja egyszerű és jól áttekinthető."
+
+#~ msgid "Choose a Menu Style"
+#~ msgstr "Válassza ki a menü stílusát"
+
+#~ msgid "Keyboard Layout Language"
+#~ msgstr "Billentyűzet kiosztása"
+
+#~ msgid "Congratulations!"
+#~ msgstr "Gratulálunk"
+
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
