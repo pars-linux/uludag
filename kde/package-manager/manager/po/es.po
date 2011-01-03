@@ -1,7 +1,7 @@
 # translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
@@ -12,10 +12,10 @@ msgstr ""
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -42,12 +42,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr ""
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Desarrollador"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr ""
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Desarrollador"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -253,7 +253,7 @@ msgstr "%prog paquetes_a_instalar"
 
 #: src/pm-install.py:65
 msgid "Hide summary screen"
-msgstr ""
+msgstr "Ocultar resumen"
 
 #: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
@@ -278,12 +278,12 @@ msgstr "Paquete <b>%s</b> no encontrado en los repositorios.<br>Puede ser que se
 
 #: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
-msgstr ""
+msgstr "No se puede mezclar nombres de archivos y nombres de paquetes en la versión actual"
 
 #: src/pmutils.py:81
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
-msgstr ""
+msgstr "Archivo <b>%s</b> no existe."
 
 #: src/pmutils.py:84
 msgid "Another instance of PiSi is running. Only one instance is allowed."
@@ -507,12 +507,12 @@ msgid "There are <b>%1</b> updates available!"
 msgstr "Hay <b>%1</b> actualizaciones disponibles!"
 
 #: src/tray.py:194
-msgid "Ignore"
-msgstr "Ignorar"
-
-#: src/tray.py:194
 msgid "Show Updates"
 msgstr "Mostrar actualizaciones"
+
+#: src/tray.py:194
+msgid "Ignore"
+msgstr "Ignorar"
 
 # i shortened this, it does not fit otherwise
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
@@ -597,23 +597,20 @@ msgid "Check for Updates"
 msgstr "Comprobar Actualizaciones"
 
 #: ui/ui_pminstall.py:83
-#, fuzzy
 msgid "Package Manager Quick Install"
-msgstr "Configuración del Administrador de Paquetes"
+msgstr "Quick Install del Administrador de Paquetes"
 
 #: ui/ui_pminstall.py:84
 msgid "Following packages are selected to install. Do you want to install these packages ?"
-msgstr ""
+msgstr "Los siguientes paquetes están seleccionados para instalar. Desea instalar todos los paquetes seleccionados ?"
 
 #: ui/ui_pminstall.py:86
-#, fuzzy
 msgid "Install"
-msgstr "instalado"
+msgstr "instalar"
 
 #: ui/ui_pminstall.py:87
-#, fuzzy
 msgid "Cancel"
-msgstr "&Cancelar"
+msgstr "Cancelar"
 
 #: ui/ui_progressdialog_v4.py:190
 msgid "Alt+C"
@@ -735,7 +732,7 @@ msgstr "Seleccionar.."
 
 #: ui/ui_settingsdialog.py:409
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: ui/ui_settingsdialog.py:410
 msgid "&Use hard disk cache for downloaded software"
@@ -849,8 +846,6 @@ msgstr ""
 #~ msgid "Toggler for selection all packages in Package List"
 #~ msgstr "Invertir selección de paquetes en la lista"
 
-# translated as "progress information", i see this string is the title of the
-# progress info window..
 #~ msgid "Operation"
 #~ msgstr "Información del Progreso"
 
