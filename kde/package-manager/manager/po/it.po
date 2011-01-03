@@ -100,11 +100,11 @@ msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacche
 
 #: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
-msgstr "Occorre Riavvio del Servizi per i Pacchetti"
+msgstr "Occorre Riavvio dei Servizi per i Pacchetti"
 
 #: src/basketdialog.py:191
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr ""
+msgstr "Pacchetti selezionati sono considerati critici per il sistema. Rimozione può causare il sistema da essere inutilizzabile."
 
 #: src/basketdialog.py:194 src/settingsdialog.py:179
 msgid "Warning"
