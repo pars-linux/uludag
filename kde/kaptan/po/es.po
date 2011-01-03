@@ -2,7 +2,7 @@
 # Kaptan
 # Copyright (C) 2009
 # This file is distributed under the same license as the Kaptan package.
-# 
+#
 # Pınar Yanardağ <pinar@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
@@ -10,49 +10,223 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 15:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:05+0200\n"
 "PO-Revision-Date: 2010-01-06 20:31-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: .tmp/ui_wallpaperItem.py:73 .tmp/ui_scrStyleItem.py:70
-#: .tmp/ui_scrAvatar.py:247
+# i am not sure if it is good to translate this, maybe it should remain in
+# english (for the spanish version at least)
+# favor revisar
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_kaptan.py:357
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Asistente de Bienvenida"
+
+#: .tmp/ui_kaptan.py:358
+msgid "Welcome to Pardus"
+msgstr "Bienvenido a Pardus"
+
+#: .tmp/ui_kaptan.py:359
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .tmp/ui_kaptan.py:360
+msgid "Back"
+msgstr "Retroceder"
+
+#: .tmp/ui_kaptan.py:361
+msgid "Next"
+msgstr "Siguiente"
+
+# is this in the sense "end" (position) or "finish" (do - action) ?
+# favor revisar..
+#: .tmp/ui_kaptan.py:362
+msgid "Finish"
+msgstr "Terminar"
+
+#: .tmp/ui_kaptan.py:363
+msgid "Apply Settings"
+msgstr "Aplicar Configuración"
+
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
+#: .tmp/ui_wallpaperItem.py:72
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_wallpaperItem.py:74
-msgid "wallPaperName"
-msgstr ""
+#: .tmp/ui_scrAvatar.py:248
+msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
+msgstr "Esta pantalla le ayuda establecer su <b>imagen de usuario</b>. Puede elegir un archivo de imagen o puede hacer una captura de imagen con la webcam. Elija la opción deseada en el menu <b>opciones</b>."
 
-#: .tmp/ui_wallpaperItem.py:75
-msgid "wallpaperDesc"
-msgstr ""
+#: .tmp/ui_scrAvatar.py:249
+msgid "Options"
+msgstr "Opciones"
 
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Imagen de Fondo"
+#: .tmp/ui_scrAvatar.py:250
+msgid "Choose an image"
+msgstr "Elija una imagen"
 
-#: .tmp/ui_scrWallpaper.py:132
-msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Elija su imágen de fonde favorito para Pardus. No se olvide verificar <b>Configuración de Escritorio</b> y descargar imagenes de fondo nuevos."
+#: .tmp/ui_scrAvatar.py:251
+msgid "Capture"
+msgstr "Capturar"
 
-#: .tmp/ui_scrWallpaper.py:133
-msgid "Wallpapers"
-msgstr "Fondos de Escritorio"
+#: .tmp/ui_scrAvatar.py:252
+msgid "Recapture"
+msgstr "Volver a capturar"
 
-#: .tmp/ui_scrWallpaper.py:135
-msgid "Choose wallpaper from file"
-msgstr "Elegir archivo de imagen de fondo "
+#: .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Más"
 
-#: .tmp/ui_scrWallpaper.py:136
-msgid "Don't change wallpaper"
-msgstr "No cambiar imagen de fondo"
+#: .tmp/ui_scrGoodbye.py:326
+msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
+msgstr "<b>Se aplicaron sus preferencias.</b> Ahora puede continuar y disfrutar al sistema Pardus o puede seguir los siguientes enlaces y accesos directos para más configuraciones o para ayuda y soporte. No olvide de <b>unirse a nuestra comunidad!</b>"
+
+#: .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328 .tmp/ui_scrSmolt.py:156
+msgid "My Smolt Page"
+msgstr "Mi página Smolt"
+
+# favor revisar - rate - realmente capté la idea ?
+#: .tmp/ui_scrGoodbye.py:329
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr "Vaya a la página de Smolt y valore sus componentes de hardware."
+
+#: .tmp/ui_scrGoodbye.py:330 .tmp/ui_scrGoodbye.py:332
+msgid "System Settings"
+msgstr "Configuración del Sistema"
+
+#: .tmp/ui_scrGoodbye.py:331
+msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
+msgstr "Herramientas de configuración de Pardus como monitor, cortafuegos, teclado, administrador de usuarios..."
+
+#: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
+msgid "Help and Support"
+msgstr "Ayuda y Soporte"
+
+#: .tmp/ui_scrGoodbye.py:334
+msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
+msgstr "Comunidad de Pardus, listas de correo, salas de chat, wikis, paginas de ayuda y de soporte.."
+
+#: .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: .tmp/ui_scrKeyboard.py:94
+msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
+msgstr "Kaptan automaticamente selecciona la mejor distribución de teclado de acuerdo al idioma de su sistema. Si desea utilizar otra distribución de teclas, puede elegirlo y probarlo al instante."
+
+#: .tmp/ui_scrKeyboard.py:95
+msgid "Test Layout"
+msgstr "Probar Disposición"
+
+#: .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menú"
+
+#: .tmp/ui_scrMenu.py:124
+msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
+msgstr "También puede personalizar su <b>menú de KDE</b> como desea. Por favor elija uno de los estilos siguientes."
+
+#: .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Menú Kick-off"
+
+#: .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Menú sencillo"
+
+#: .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Menú Lancelot"
+
+#: .tmp/ui_scrMenu.py:128
+msgid "Sample"
+msgstr "Ejemplo"
+
+#: .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Ratón"
+
+#: .tmp/ui_scrMouse.py:203
+msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
+msgstr "El <b>comportamiento de clic</b> define cuantas veces desea cliquear cuando abre un archivo. Si es <b>zurdo</b>, podría preferir intercambiar las funciones del botón derecho con el botón izquierdo de su dispositivo de puntero."
+
+#: .tmp/ui_scrMouse.py:204
+msgid "Clicking Behaviour"
+msgstr "Comportamiento del clic"
+
+#: .tmp/ui_scrMouse.py:205
+msgid "Single-click to open files and folders"
+msgstr "Un solo clic para abrir archivos y directorios"
+
+#: .tmp/ui_scrMouse.py:206
+msgid "Dou&ble-click to open files and folders"
+msgstr "Do&ble-clic para abrir archivos y directorios"
+
+#: .tmp/ui_scrMouse.py:207
+msgid "Button Order"
+msgstr "Orden de los botones"
+
+#: .tmp/ui_scrMouse.py:208
+msgid "Right Hand"
+msgstr "Diestro"
+
+#: .tmp/ui_scrMouse.py:209
+msgid "Left Hand"
+msgstr "Zurdo"
+
+#: .tmp/ui_scrMouse.py:210
+msgid "Reverse scrolling"
+msgstr "Deslizamento inverso"
+
+#: .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Paquetes"
+
+#: .tmp/ui_scrPackage.py:133
+msgid "Show updates in the system tray"
+msgstr "Mostrar actualizaciones en la barra de tareas"
+
+#: .tmp/ui_scrPackage.py:134
+msgid "Check updates automatically every"
+msgstr "Comprobar actualizaciones automáticamente cada"
+
+#: .tmp/ui_scrPackage.py:135
+msgid " hours"
+msgstr " horas"
+
+#: .tmp/ui_scrPackage.py:136
+msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
+msgstr "Para instalar y remoter programas en Pardus, use el Administrador de Paquetes. Administrador de Paquetes también puede instalar automaticamente las ultimas actualizaciones. Puede establecer el intervalo de comprobación de nuevas actualizaciones."
+
+#: .tmp/ui_scrPackage.py:137
+msgid "Updates"
+msgstr "Actualizaciones"
+
+#: .tmp/ui_scrSearch.py:100
+msgid "Search"
+msgstr "Buscar"
+
+#: .tmp/ui_scrSearch.py:101
+msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
+msgstr "El buscador de escritorio Strigi indexa sus archivos que utiliza frecuentemente. Esto le permite resultados rápidos para una búsqueda. Strigi también puede buscar archivos por su contenido."
+
+#: .tmp/ui_scrSearch.py:102
+msgid "Allow Strigi to index my files"
+msgstr "Permitir Strigi de crear indice de mis archivos"
+
+#: .tmp/ui_scrSearch.py:103
+msgid "Search Options"
+msgstr "Configuración de la Busqueda"
 
 #: .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
@@ -61,10 +235,6 @@ msgstr "Smolt"
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> es una herramienta que colecciona la información de la tabla siguiente y nos lo envia para mejorar Pardus según las estadísticas de uso de tipos de hardware."
-
-#: .tmp/ui_scrSmolt.py:156 .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327
-msgid "My Smolt Page"
-msgstr "Mi página Smolt"
 
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
@@ -95,157 +265,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviado al servidor smolt se debe considerar pública, en la que todos pueden ver estadísticas, datos y perfiles de las computadoras.  El diseño de smolt se realizó con la intención de atraer la atención de los fabricantes de hardware y acesorios.  Por tál motivo no solamente se comparte esta información con terceros, sino además se utilizará la información para incentivar un mejor soporte de controladores de dicho hardware y en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Registro de IP:</span>  En la instalación del servidor smolt de Pardus, todo el trafico pasa primero por un servidor proxy.  Esto es el único lugar, donde las direcciones IP quedan grabados en un log, donde permanecen por 4 semanas, hasta la rotación de archivos los elimina de nuevo.  No se registra la dirección IP en la base de datos smolt del proyecto Pardus.  Estos archivos los son privados y están accesible para el público en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">  Usuarios que no están de acuerdo con ésta política sencillamente deberían no utilizar smolt.  Si tiene dudas y preguntas sobre la política puede contactar al equipo de infraestructura de Pardus al admin [at] pardus.org.tr.  Además recuerde que siempre puede eliminar su perfil en cualquier momento con el comando &quot;<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
-
-#: .tmp/ui_scrPackage.py:191
-msgid "Packages"
-msgstr "Paquetes"
-
-#: .tmp/ui_scrPackage.py:192
-msgid "Show updates in the system tray"
-msgstr "Mostrar actualizaciones en la barra de tareas"
-
-#: .tmp/ui_scrPackage.py:193
-msgid "Check updates automatically every"
-msgstr "Comprobar actualizaciones automáticamente cada"
-
-#: .tmp/ui_scrPackage.py:194
-msgid " hours"
-msgstr " horas"
-
-# favor verificar..
-#: .tmp/ui_scrPackage.py:195
-msgid "Contrib repository includes extra and handy programs."
-msgstr "Repositorio Contrib contiene programas adicionales."
-
-#: .tmp/ui_scrPackage.py:196
-msgid "Add contrib repository"
-msgstr "Agregar repositorio contrib"
-
-#: .tmp/ui_scrPackage.py:197
-msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
-msgstr "Para instalar y remoter programas en Pardus, use el Administrador de Paquetes. Administrador de Paquetes también puede instalar automaticamente las ultimas actualizaciones. Puede establecer el intervalo de comprobación de nuevas actualizaciones."
-
-#: .tmp/ui_scrPackage.py:198
-msgid "Updates"
-msgstr "Actualizaciones"
-
-#: .tmp/ui_scrPackage.py:199
-msgid "Repositories"
-msgstr "Repositorios"
-
-#: .tmp/ui_scrStyleItem.py:71
-msgid "styleName"
-msgstr ""
-
-#: .tmp/ui_scrStyleItem.py:72
-msgid "styleDesc"
-msgstr ""
-
-#: .tmp/ui_scrGoodbye.py:324
-msgid "More"
-msgstr "Más"
-
-#: .tmp/ui_scrGoodbye.py:325
-msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
-msgstr "<b>Se aplicaron sus preferencias.</b> Ahora puede continuar y disfrutar al sistema Pardus o puede seguir los siguientes enlaces y accesos directos para más configuraciones o para ayuda y soporte. No olvide de <b>unirse a nuestra comunidad!</b>"
-
-# favor revisar - rate - realmente capté la idea ?
-#: .tmp/ui_scrGoodbye.py:328
-msgid "Go to your Smolt page and rate your hardware components."
-msgstr "Vaya a la página de Smolt y valore sus componentes de hardware."
-
-#: .tmp/ui_scrGoodbye.py:329 .tmp/ui_scrGoodbye.py:331
-msgid "System Settings"
-msgstr "Configuración del Sistema"
-
-#: .tmp/ui_scrGoodbye.py:330
-msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
-msgstr "Herramientas de configuración de Pardus como monitor, cortafuegos, teclado, administrador de usuarios..."
-
-#: .tmp/ui_scrGoodbye.py:332 .tmp/ui_scrGoodbye.py:334
-msgid "Help and Support"
-msgstr "Ayuda y Soporte"
-
-#: .tmp/ui_scrGoodbye.py:333
-msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
-msgstr "Comunidad de Pardus, listas de correo, salas de chat, wikis, paginas de ayuda y de soporte.."
-
-# i am not sure if it is good to translate this, maybe it should remain in
-# english (for the spanish version at least)
-# favor revisar
-#: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
-msgid "Kaptan"
-msgstr "Kaptan"
-
-#: .tmp/ui_kaptan.py:358
-msgid "Welcome to Pardus"
-msgstr "Bienvenido a Pardus"
-
-#: .tmp/ui_kaptan.py:359
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: .tmp/ui_kaptan.py:360
-msgid "Back"
-msgstr "Retroceder"
-
-#: .tmp/ui_kaptan.py:361
-msgid "Next"
-msgstr "Siguiente"
-
-# is this in the sense "end" (position) or "finish" (do - action) ?
-# favor revisar..
-#: .tmp/ui_kaptan.py:362
-msgid "Finish"
-msgstr "Terminar"
-
-#: .tmp/ui_kaptan.py:363
-msgid "Apply Settings"
-msgstr "Aplicar Configuración"
-
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Bienvenido"
-
-#: .tmp/ui_scrWelcome.py:78
-msgid "What is Pardus?"
-msgstr "Que es Pardus ?"
-
-#: .tmp/ui_scrWelcome.py:79
-msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr "<b>Pardus</b> es un sistema operativo confiable, seguro, rápido y amigable. <br /><br />Con Pardus puede conectar a internet, leer sus emails, trabajar con sus documentos de office, ver videos, tocar musica, desarrollar programas, jugar, y mucho más! <br /><br /><b>Kaptan</b> le ayudará personalizar su espacio de trabajo en Pardus de manera fácil y rápido. Por favor presione <b>siguiente</b> para empezar."
-
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Teclado"
-
-#: .tmp/ui_scrKeyboard.py:94
-msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan automaticamente selecciona la mejor distribución de teclado de acuerdo al idioma de su sistema. Si desea utilizar otra distribución de teclas, puede elegirlo y probarlo al instante."
-
-#: .tmp/ui_scrKeyboard.py:95
-msgid "Test Layout"
-msgstr "Probar Disposición"
-
-#: .tmp/ui_scrAvatar.py:248
-msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
-msgstr "Esta pantalla le ayuda establecer su <b>imagen de usuario</b>. Puede elegir un archivo de imagen o puede hacer una captura de imagen con la webcam. Elija la opción deseada en el menu <b>opciones</b>."
-
-#: .tmp/ui_scrAvatar.py:249
-msgid "Options"
-msgstr "Opciones"
-
-#: .tmp/ui_scrAvatar.py:250
-msgid "Choose an image"
-msgstr "Elija una imagen"
-
-#: .tmp/ui_scrAvatar.py:251
-msgid "Capture"
-msgstr "Capturar"
-
-#: .tmp/ui_scrAvatar.py:252
-msgid "Recapture"
-msgstr "Volver a capturar"
 
 #: .tmp/ui_scrStyle.py:236
 msgid "Themes"
@@ -287,65 +306,13 @@ msgstr "Vista de Directorios (Estilo KDE3)"
 msgid "Number of Desktops"
 msgstr "Cantidad de Escritorios"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menú"
+#: .tmp/ui_scrStyleItem.py:70
+msgid "styleName"
+msgstr ""
 
-#: .tmp/ui_scrMenu.py:124
-msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "También puede personalizar su <b>menú de KDE</b> como desea. Por favor elija uno de los estilos siguientes."
-
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Menú Kick-off"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Menú sencillo"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Menú Lancelot"
-
-#: .tmp/ui_scrMenu.py:128
-msgid "Sample"
-msgstr "Ejemplo"
-
-#: .tmp/ui_scrMouse.py:203
-msgid "Mouse"
-msgstr "Ratón"
-
-#: .tmp/ui_scrMouse.py:204
-msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
-msgstr "El <b>comportamiento de clic</b> define cuantas veces desea cliquear cuando abre un archivo. Si es <b>zurdo</b>, podría preferir intercambiar las funciones del botón derecho con el botón izquierdo de su dispositivo de puntero."
-
-#: .tmp/ui_scrMouse.py:205
-msgid "Clicking Behaviour"
-msgstr "Comportamiento del clic"
-
-#: .tmp/ui_scrMouse.py:206
-msgid "Single-click to open files and folders"
-msgstr "Un solo clic para abrir archivos y directorios"
-
-#: .tmp/ui_scrMouse.py:207
-msgid "Dou&ble-click to open files and folders"
-msgstr "Do&ble-clic para abrir archivos y directorios"
-
-#: .tmp/ui_scrMouse.py:208
-msgid "Button Order"
-msgstr "Orden de los botones"
-
-#: .tmp/ui_scrMouse.py:209
-msgid "Right Hand"
-msgstr "Diestro"
-
-#: .tmp/ui_scrMouse.py:210
-msgid "Left Hand"
-msgstr "Zurdo"
-
-#: .tmp/ui_scrMouse.py:211
-msgid "Reverse scrolling"
-msgstr "Deslizamento inverso"
+#: .tmp/ui_scrStyleItem.py:71
+msgid "styleDesc"
+msgstr ""
 
 #: .tmp/ui_scrSummary.py:85
 msgid "Summary"
@@ -359,25 +326,45 @@ msgstr "Usted ha finalizado con éxito todos los pasos. Aqui un resumen de las c
 msgid "The following settings will be applied"
 msgstr "Se aplicará la siguiente configuración"
 
-#: .tmp/kaptan.desktop.in.h:2
-msgid "Welcome Wizard"
-msgstr "Asistente de Bienvenida"
+#: .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Imagen de Fondo"
 
-#: .tmp/ui_scrSearch.py:100
-msgid "Search"
-msgstr "Buscar"
+#: .tmp/ui_scrWallpaper.py:132
+msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr "Elija su imágen de fonde favorito para Pardus. No se olvide verificar <b>Configuración de Escritorio</b> y descargar imagenes de fondo nuevos."
 
-#: .tmp/ui_scrSearch.py:101
-msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr "El buscador de escritorio Strigi indexa sus archivos que utiliza frecuentemente. Esto le permite resultados rápidos para una búsqueda. Strigi también puede buscar archivos por su contenido."
+#: .tmp/ui_scrWallpaper.py:133
+msgid "Wallpapers"
+msgstr "Fondos de Escritorio"
 
-#: .tmp/ui_scrSearch.py:102
-msgid "Allow Strigi to index my files"
-msgstr "Permitir Strigi de crear indice de mis archivos"
+#: .tmp/ui_scrWallpaper.py:135
+msgid "Choose wallpaper from file"
+msgstr "Elegir archivo de imagen de fondo "
 
-#: .tmp/ui_scrSearch.py:103
-msgid "Search Options"
-msgstr "Configuración de la Busqueda"
+#: .tmp/ui_scrWallpaper.py:136
+msgid "Don't change wallpaper"
+msgstr "No cambiar imagen de fondo"
+
+#: .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: .tmp/ui_scrWelcome.py:78
+msgid "What is Pardus?"
+msgstr "Que es Pardus ?"
+
+#: .tmp/ui_scrWelcome.py:79
+msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
+msgstr "<b>Pardus</b> es un sistema operativo confiable, seguro, rápido y amigable. <br /><br />Con Pardus puede conectar a internet, leer sus emails, trabajar con sus documentos de office, ver videos, tocar musica, desarrollar programas, jugar, y mucho más! <br /><br /><b>Kaptan</b> le ayudará personalizar su espacio de trabajo en Pardus de manera fácil y rápido. Por favor presione <b>siguiente</b> para empezar."
+
+#: .tmp/ui_wallpaperItem.py:73
+msgid "wallPaperName"
+msgstr ""
+
+#: .tmp/ui_wallpaperItem.py:74
+msgid "wallpaperDesc"
+msgstr ""
 
 #~ msgid "Welcome to Pardus 2011 Alpha 1"
 #~ msgstr "Bienvenido a Pardus 2009.2"
@@ -905,3 +892,13 @@ msgstr "Configuración de la Busqueda"
 
 #~ msgid "Network"
 #~ msgstr "Red"
+
+#~ msgid "Repositories"
+#~ msgstr "Repositorios"
+
+#~ msgid "Add contrib repository"
+#~ msgstr "Agregar repositorio contrib"
+
+# favor verificar..
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Repositorio Contrib contiene programas adicionales."

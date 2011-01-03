@@ -1,55 +1,223 @@
 # translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 15:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:05+0200\n"
 "PO-Revision-Date: 2010-10-20 15:46+0300\n"
 "Last-Translator: Yasirov Vasia zaG <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: .tmp/ui_wallpaperItem.py:73 .tmp/ui_scrStyleItem.py:70
-#: .tmp/ui_scrAvatar.py:247
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_kaptan.py:357
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Мастер приветствия"
+
+#: .tmp/ui_kaptan.py:358
+msgid "Welcome to Pardus"
+msgstr "Добро пожаловать в Pardus"
+
+#: .tmp/ui_kaptan.py:359
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .tmp/ui_kaptan.py:360
+msgid "Back"
+msgstr "Назад"
+
+#: .tmp/ui_kaptan.py:361
+msgid "Next"
+msgstr "Вперед"
+
+#: .tmp/ui_kaptan.py:362
+msgid "Finish"
+msgstr "Закончить"
+
+#: .tmp/ui_kaptan.py:363
+msgid "Apply Settings"
+msgstr "Применить настройки"
+
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
+#: .tmp/ui_wallpaperItem.py:72
 msgid "Form"
 msgstr "Форма"
 
-#: .tmp/ui_wallpaperItem.py:74
-msgid "wallPaperName"
-msgstr "Achtergrondnaam"
+#: .tmp/ui_scrAvatar.py:248
+msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
+msgstr "Это окно поможет установить вашу <b>изображение пользователя</b>. Вы можете выбрать изображение из файла или вы можете захватить изображение с камеры. Выберите один из вариантов из меню <b>Опции</b>."
 
-#: .tmp/ui_wallpaperItem.py:75
-msgid "wallpaperDesc"
-msgstr "Achtergrondbeschrijving"
+#: .tmp/ui_scrAvatar.py:249
+msgid "Options"
+msgstr "Опции"
 
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Обои"
+#: .tmp/ui_scrAvatar.py:250
+msgid "Choose an image"
+msgstr "Выберите изображение"
 
-#: .tmp/ui_scrWallpaper.py:132
-msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Выбери свои любимые обои для рабочего стола Pardus. Не забудьте проверить <b>Настройки рабочего стола</b> для загрузки новых и отличных обоев для рабочего стола."
+#: .tmp/ui_scrAvatar.py:251
+msgid "Capture"
+msgstr "Захватить"
 
-#: .tmp/ui_scrWallpaper.py:133
-msgid "Wallpapers"
-msgstr "Обои рабочего стола"
+#: .tmp/ui_scrAvatar.py:252
+msgid "Recapture"
+msgstr "Захватить снова"
 
-#: .tmp/ui_scrWallpaper.py:135
-msgid "Choose wallpaper from file"
-msgstr "Выбрать обои из файла"
+#: .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Дополнительно"
 
-#: .tmp/ui_scrWallpaper.py:136
-msgid "Don't change wallpaper"
-msgstr "Не менять обои рабочего стола"
+#: .tmp/ui_scrGoodbye.py:326
+msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
+msgstr "<b>Ваши настройки были применены.</b> Теперь вы можете начать пользоваться Pardus или вы можете проследовать по следующим ссылкам и приложениям для настройки, либо за помощью и поддержки. Не забудьте <b>вступить в наше сообщество!</b>"
+
+#: .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328 .tmp/ui_scrSmolt.py:156
+msgid "My Smolt Page"
+msgstr "Моя страница Smolt"
+
+#: .tmp/ui_scrGoodbye.py:329
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr "Перейти на страницу Smolt и оценить ваши аппаратных компоненты."
+
+#: .tmp/ui_scrGoodbye.py:330 .tmp/ui_scrGoodbye.py:332
+msgid "System Settings"
+msgstr "Параметры системы"
+
+#: .tmp/ui_scrGoodbye.py:331
+msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
+msgstr "Инструмент конфигурации различных компонентов для Pardus, таких как дисплей, брандмауэр, клавиатуры, пользователь менеджер ..."
+
+#: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
+msgid "Help and Support"
+msgstr "Помощь и поддержка"
+
+#: .tmp/ui_scrGoodbye.py:334
+msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
+msgstr "Сообщество Pardus, списки рассылки, чаты, Wiki-документы, справки и страницы поддержки..."
+
+#: .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Клавиатура"
+
+#: .tmp/ui_scrKeyboard.py:94
+msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
+msgstr "Kaptan автоматически выбирает лучшую раскладки клавиатуры в зависимости от языка вашей системы. Если вы хотите использовать другую раскладку, кроме раскладки клавиатуры по-умолчанию, вы можете сделать свой выбор и протестировать его мгновенно."
+
+#: .tmp/ui_scrKeyboard.py:95
+msgid "Test Layout"
+msgstr "Тест раскладки"
+
+#: .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Меню"
+
+#: .tmp/ui_scrMenu.py:124
+msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
+msgstr "Вы так же можете настроить ваше <b>меню KDE</b> как вам нравится. Пожалуйста выберите один из предлагаемых стилей."
+
+#: .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Меню Kickoff"
+
+#: .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Упрощенное меню"
+
+#: .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Меню Lancelot"
+
+#: .tmp/ui_scrMenu.py:128
+msgid "Sample"
+msgstr "Пример"
+
+#: .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Мышка"
+
+#: .tmp/ui_scrMouse.py:203
+msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
+msgstr "<b>Поведение нажатия</b> определяет, сколько раз вы хотите кликнуть по файлу, чтобы его открыть. Если вы <b>левша</b>, то возможно вы захотите поменять левую и правую кнопки мыши."
+
+#: .tmp/ui_scrMouse.py:204
+msgid "Clicking Behaviour"
+msgstr "Поведение нажатия"
+
+#: .tmp/ui_scrMouse.py:205
+msgid "Single-click to open files and folders"
+msgstr "Один клик для открытия файлов и папок"
+
+#: .tmp/ui_scrMouse.py:206
+msgid "Dou&ble-click to open files and folders"
+msgstr "&Двойной клик для открытия файлов и папок"
+
+#: .tmp/ui_scrMouse.py:207
+msgid "Button Order"
+msgstr "Расположение кнопок"
+
+#: .tmp/ui_scrMouse.py:208
+msgid "Right Hand"
+msgstr "Правша"
+
+#: .tmp/ui_scrMouse.py:209
+msgid "Left Hand"
+msgstr "Левша"
+
+#: .tmp/ui_scrMouse.py:210
+msgid "Reverse scrolling"
+msgstr "Обратная прокрутка"
+
+#: .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Пакеты"
+
+#: .tmp/ui_scrPackage.py:133
+msgid "Show updates in the system tray"
+msgstr "Показать обновления в системном трее"
+
+#: .tmp/ui_scrPackage.py:134
+msgid "Check updates automatically every"
+msgstr "Проверять обновления автоматически каждые"
+
+#: .tmp/ui_scrPackage.py:135
+msgid " hours"
+msgstr " часов"
+
+#: .tmp/ui_scrPackage.py:136
+msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
+msgstr "Для установки и удаления программ в Pardus, используйте Менеджер Пакетов. Менеджер Пакетов также может автоматически устанавливать последние обновления. Вы можете установить период для проверки обновлений."
+
+#: .tmp/ui_scrPackage.py:137
+msgid "Updates"
+msgstr "Обновления"
+
+#: .tmp/ui_scrSearch.py:100
+msgid "Search"
+msgstr "Поиск"
+
+#: .tmp/ui_scrSearch.py:101
+msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
+msgstr "Strigi Desktop Search индексирует часто используемых файлов. Это позволяет вам очень быстро получить результаты поиска по файлам. Strigi также можете искать файлы на основе их содержимого."
+
+#: .tmp/ui_scrSearch.py:102
+msgid "Allow Strigi to index my files"
+msgstr "Позволить Strigi индексировать мои файлы"
+
+#: .tmp/ui_scrSearch.py:103
+msgid "Search Options"
+msgstr "Параметры поиска"
 
 #: .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
@@ -58,10 +226,6 @@ msgstr "Smolt"
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> является инструментом, который собирает информацию в следующей таблице и направляет ее к нам, что позволяет нам улучшать Pardus, согласно статистике профиля пользователя."
-
-#: .tmp/ui_scrSmolt.py:156 .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327
-msgid "My Smolt Page"
-msgstr "Моя страница Smolt"
 
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
@@ -92,150 +256,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Информация, посланная в базу данных smolt считается публичной, для того, чтобы каждый мог просмотреть статистику и профили. Часто smolt получает информацию от сторонних производителей. В этом случае информация будет не только доступна сторонним лицам, но и может быть использована для лучшей поддержки открытых драйверов и вообще программного обеспечения.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Logging:</span>  При установке сервера smolt в Pardus весь web-трафик будет идти через прокси-сервер. Это единственное место, где IP адреса будут сохраняться в течении 4 недель, после чего записи будут удаляться.  Проект The Pardus  не собирает IP адреса в базе данных smolt. Они являются частными и не будут доступны для публики.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Пользователи, которые недовольны этой политикой, могут просто не использовать smolt.  Пользователи, которые хотят задать вопросы, могут связаться с Pardus Infrastructure Team по адресу admin [at] pardus.org.tr  Так же помните, что в любой момент можно удалить свой профиль, используя &quot;<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
-
-#: .tmp/ui_scrPackage.py:191
-msgid "Packages"
-msgstr "Пакеты"
-
-#: .tmp/ui_scrPackage.py:192
-msgid "Show updates in the system tray"
-msgstr "Показать обновления в системном трее"
-
-#: .tmp/ui_scrPackage.py:193
-msgid "Check updates automatically every"
-msgstr "Проверять обновления автоматически каждые"
-
-#: .tmp/ui_scrPackage.py:194
-msgid " hours"
-msgstr " часов"
-
-#: .tmp/ui_scrPackage.py:195
-msgid "Contrib repository includes extra and handy programs."
-msgstr "Репозиторий Contrib содержит дополнительные приложения."
-
-#: .tmp/ui_scrPackage.py:196
-msgid "Add contrib repository"
-msgstr "Добавить репозиторий Contrib"
-
-#: .tmp/ui_scrPackage.py:197
-msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
-msgstr "Для установки и удаления программ в Pardus, используйте Менеджер Пакетов. Менеджер Пакетов также может автоматически устанавливать последние обновления. Вы можете установить период для проверки обновлений."
-
-#: .tmp/ui_scrPackage.py:198
-msgid "Updates"
-msgstr "Обновления"
-
-#: .tmp/ui_scrPackage.py:199
-msgid "Repositories"
-msgstr "Репозитории"
-
-#: .tmp/ui_scrStyleItem.py:71
-msgid "styleName"
-msgstr "styleName"
-
-#: .tmp/ui_scrStyleItem.py:72
-msgid "styleDesc"
-msgstr "styleDesc"
-
-#: .tmp/ui_scrGoodbye.py:324
-msgid "More"
-msgstr "Дополнительно"
-
-#: .tmp/ui_scrGoodbye.py:325
-msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
-msgstr "<b>Ваши настройки были применены.</b> Теперь вы можете начать пользоваться Pardus или вы можете проследовать по следующим ссылкам и приложениям для настройки, либо за помощью и поддержки. Не забудьте <b>вступить в наше сообщество!</b>"
-
-#: .tmp/ui_scrGoodbye.py:328
-msgid "Go to your Smolt page and rate your hardware components."
-msgstr "Перейти на страницу Smolt и оценить ваши аппаратных компоненты."
-
-#: .tmp/ui_scrGoodbye.py:329 .tmp/ui_scrGoodbye.py:331
-msgid "System Settings"
-msgstr "Параметры системы"
-
-#: .tmp/ui_scrGoodbye.py:330
-msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
-msgstr "Инструмент конфигурации различных компонентов для Pardus, таких как дисплей, брандмауэр, клавиатуры, пользователь менеджер ..."
-
-#: .tmp/ui_scrGoodbye.py:332 .tmp/ui_scrGoodbye.py:334
-msgid "Help and Support"
-msgstr "Помощь и поддержка"
-
-#: .tmp/ui_scrGoodbye.py:333
-msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
-msgstr "Сообщество Pardus, списки рассылки, чаты, Wiki-документы, справки и страницы поддержки..."
-
-#: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
-msgid "Kaptan"
-msgstr "Kaptan"
-
-#: .tmp/ui_kaptan.py:358
-msgid "Welcome to Pardus"
-msgstr "Добро пожаловать в Pardus"
-
-#: .tmp/ui_kaptan.py:359
-msgid "Cancel"
-msgstr "Отмена"
-
-#: .tmp/ui_kaptan.py:360
-msgid "Back"
-msgstr "Назад"
-
-#: .tmp/ui_kaptan.py:361
-msgid "Next"
-msgstr "Вперед"
-
-#: .tmp/ui_kaptan.py:362
-msgid "Finish"
-msgstr "Закончить"
-
-#: .tmp/ui_kaptan.py:363
-msgid "Apply Settings"
-msgstr "Применить настройки"
-
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Добро пожаловать"
-
-#: .tmp/ui_scrWelcome.py:78
-msgid "What is Pardus?"
-msgstr "Что такое Pardus?"
-
-#: .tmp/ui_scrWelcome.py:79
-msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr "<b>Pardus</b> is een betrouwbaar, veilig, snel en gebruikersvriendelijk besturingssysteem.<br /><br />Met Pardus kunt u verbinding met het internet maken, uw emails lezen, met office-documenten werken, films kijken, muziek afspelen, toepassingen maken, games spelen en nog veel meer! <br /><br /><b>Kaptan</b> zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van het Pardus systeem. Selecteer <b>Volgende</b> om te starten."
-
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Клавиатура"
-
-#: .tmp/ui_scrKeyboard.py:94
-msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan автоматически выбирает лучшую раскладки клавиатуры в зависимости от языка вашей системы. Если вы хотите использовать другую раскладку, кроме раскладки клавиатуры по-умолчанию, вы можете сделать свой выбор и протестировать его мгновенно."
-
-#: .tmp/ui_scrKeyboard.py:95
-msgid "Test Layout"
-msgstr "Тест раскладки"
-
-#: .tmp/ui_scrAvatar.py:248
-msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
-msgstr "Это окно поможет установить вашу <b>изображение пользователя</b>. Вы можете выбрать изображение из файла или вы можете захватить изображение с камеры. Выберите один из вариантов из меню <b>Опции</b>."
-
-#: .tmp/ui_scrAvatar.py:249
-msgid "Options"
-msgstr "Опции"
-
-#: .tmp/ui_scrAvatar.py:250
-msgid "Choose an image"
-msgstr "Выберите изображение"
-
-#: .tmp/ui_scrAvatar.py:251
-msgid "Capture"
-msgstr "Захватить"
-
-#: .tmp/ui_scrAvatar.py:252
-msgid "Recapture"
-msgstr "Захватить снова"
 
 #: .tmp/ui_scrStyle.py:236
 msgid "Themes"
@@ -277,65 +297,13 @@ msgstr "Просмотр папки (стиль KDE3)"
 msgid "Number of Desktops"
 msgstr "Число рабочих столов"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Меню"
+#: .tmp/ui_scrStyleItem.py:70
+msgid "styleName"
+msgstr "styleName"
 
-#: .tmp/ui_scrMenu.py:124
-msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "Вы так же можете настроить ваше <b>меню KDE</b> как вам нравится. Пожалуйста выберите один из предлагаемых стилей."
-
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Меню Kickoff"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Упрощенное меню"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Меню Lancelot"
-
-#: .tmp/ui_scrMenu.py:128
-msgid "Sample"
-msgstr "Пример"
-
-#: .tmp/ui_scrMouse.py:203
-msgid "Mouse"
-msgstr "Мышка"
-
-#: .tmp/ui_scrMouse.py:204
-msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
-msgstr "<b>Поведение нажатия</b> определяет, сколько раз вы хотите кликнуть по файлу, чтобы его открыть. Если вы <b>левша</b>, то возможно вы захотите поменять левую и правую кнопки мыши."
-
-#: .tmp/ui_scrMouse.py:205
-msgid "Clicking Behaviour"
-msgstr "Поведение нажатия"
-
-#: .tmp/ui_scrMouse.py:206
-msgid "Single-click to open files and folders"
-msgstr "Один клик для открытия файлов и папок"
-
-#: .tmp/ui_scrMouse.py:207
-msgid "Dou&ble-click to open files and folders"
-msgstr "&Двойной клик для открытия файлов и папок"
-
-#: .tmp/ui_scrMouse.py:208
-msgid "Button Order"
-msgstr "Расположение кнопок"
-
-#: .tmp/ui_scrMouse.py:209
-msgid "Right Hand"
-msgstr "Правша"
-
-#: .tmp/ui_scrMouse.py:210
-msgid "Left Hand"
-msgstr "Левша"
-
-#: .tmp/ui_scrMouse.py:211
-msgid "Reverse scrolling"
-msgstr "Обратная прокрутка"
+#: .tmp/ui_scrStyleItem.py:71
+msgid "styleDesc"
+msgstr "styleDesc"
 
 #: .tmp/ui_scrSummary.py:85
 msgid "Summary"
@@ -349,22 +317,51 @@ msgstr "Вы успешно закончили все этапы настрой�
 msgid "The following settings will be applied"
 msgstr "Следующие параметры будут применены"
 
-#: .tmp/kaptan.desktop.in.h:2
-msgid "Welcome Wizard"
-msgstr "Мастер приветствия"
+#: .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Обои"
 
-#: .tmp/ui_scrSearch.py:100
-msgid "Search"
-msgstr "Поиск"
+#: .tmp/ui_scrWallpaper.py:132
+msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr "Выбери свои любимые обои для рабочего стола Pardus. Не забудьте проверить <b>Настройки рабочего стола</b> для загрузки новых и отличных обоев для рабочего стола."
 
-#: .tmp/ui_scrSearch.py:101
-msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr "Strigi Desktop Search индексирует часто используемых файлов. Это позволяет вам очень быстро получить результаты поиска по файлам. Strigi также можете искать файлы на основе их содержимого."
+#: .tmp/ui_scrWallpaper.py:133
+msgid "Wallpapers"
+msgstr "Обои рабочего стола"
 
-#: .tmp/ui_scrSearch.py:102
-msgid "Allow Strigi to index my files"
-msgstr "Позволить Strigi индексировать мои файлы"
+#: .tmp/ui_scrWallpaper.py:135
+msgid "Choose wallpaper from file"
+msgstr "Выбрать обои из файла"
 
-#: .tmp/ui_scrSearch.py:103
-msgid "Search Options"
-msgstr "Параметры поиска"
+#: .tmp/ui_scrWallpaper.py:136
+msgid "Don't change wallpaper"
+msgstr "Не менять обои рабочего стола"
+
+#: .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .tmp/ui_scrWelcome.py:78
+msgid "What is Pardus?"
+msgstr "Что такое Pardus?"
+
+#: .tmp/ui_scrWelcome.py:79
+msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
+msgstr "<b>Pardus</b> is een betrouwbaar, veilig, snel en gebruikersvriendelijk besturingssysteem.<br /><br />Met Pardus kunt u verbinding met het internet maken, uw emails lezen, met office-documenten werken, films kijken, muziek afspelen, toepassingen maken, games spelen en nog veel meer! <br /><br /><b>Kaptan</b> zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van het Pardus systeem. Selecteer <b>Volgende</b> om te starten."
+
+#: .tmp/ui_wallpaperItem.py:73
+msgid "wallPaperName"
+msgstr "Achtergrondnaam"
+
+#: .tmp/ui_wallpaperItem.py:74
+msgid "wallpaperDesc"
+msgstr "Achtergrondbeschrijving"
+
+#~ msgid "Repositories"
+#~ msgstr "Репозитории"
+
+#~ msgid "Add contrib repository"
+#~ msgstr "Добавить репозиторий Contrib"
+
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Репозиторий Contrib содержит дополнительные приложения."

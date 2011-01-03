@@ -3,52 +3,220 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaptan.trunk.hu.po\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-02 15:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:05+0200\n"
 "PO-Revision-Date: 2010-11-28 08:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Country: HUNGARY\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: .tmp/ui_wallpaperItem.py:73 .tmp/ui_scrStyleItem.py:70
-#: .tmp/ui_scrAvatar.py:247
+#: .tmp/kaptan.desktop.in.h:1 .tmp/ui_kaptan.py:357
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#: .tmp/kaptan.desktop.in.h:2
+msgid "Welcome Wizard"
+msgstr "Első Indítás Varázsló"
+
+#: .tmp/ui_kaptan.py:358
+msgid "Welcome to Pardus"
+msgstr "Üdvözöljük a Pardusban!"
+
+#: .tmp/ui_kaptan.py:359
+msgid "Cancel"
+msgstr "Mégsem"
+
+#: .tmp/ui_kaptan.py:360
+msgid "Back"
+msgstr "Vissza"
+
+#: .tmp/ui_kaptan.py:361
+msgid "Next"
+msgstr "Következő"
+
+#: .tmp/ui_kaptan.py:362
+msgid "Finish"
+msgstr "Befejezés"
+
+#: .tmp/ui_kaptan.py:363
+msgid "Apply Settings"
+msgstr "Beállítások alkalmazása"
+
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_scrStyleItem.py:69
+#: .tmp/ui_wallpaperItem.py:72
 msgid "Form"
 msgstr "Forma"
 
-#: .tmp/ui_wallpaperItem.py:74
-msgid "wallPaperName"
-msgstr "háttérkép neve"
+#: .tmp/ui_scrAvatar.py:248
+msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
+msgstr "Ez a képernyő segít Önnek beállítani a <b>saját képét</b>. Választhat egy meglévő képet, vagy rögzíthet egy képet a kameráról. Válasszon egyet a <b>Lehetőségek</b> menüből."
 
-#: .tmp/ui_wallpaperItem.py:75
-msgid "wallpaperDesc"
-msgstr "háttérkép leírása"
+#: .tmp/ui_scrAvatar.py:249
+msgid "Options"
+msgstr "Lehetőségek"
 
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Háttérkép"
+#: .tmp/ui_scrAvatar.py:250
+msgid "Choose an image"
+msgstr "Válasszon egy képet"
 
-#: .tmp/ui_scrWallpaper.py:132
-msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Válassza ki kedvenc háttérképét a Pardushoz. Az <b>Asztal beállítás</b>okban további új és izgalmas háttérképeket tölthet le."
+#: .tmp/ui_scrAvatar.py:251
+msgid "Capture"
+msgstr "Felvétel"
 
-#: .tmp/ui_scrWallpaper.py:133
-msgid "Wallpapers"
-msgstr "Háttérképek"
+#: .tmp/ui_scrAvatar.py:252
+msgid "Recapture"
+msgstr "Új felvétel"
 
-#: .tmp/ui_scrWallpaper.py:135
-msgid "Choose wallpaper from file"
-msgstr "Válasszon háttérképet fájlból"
+#: .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Továbbiak"
 
-#: .tmp/ui_scrWallpaper.py:136
-msgid "Don't change wallpaper"
-msgstr "Ne változtassa meg a háttérképet"
+#: .tmp/ui_scrGoodbye.py:326
+msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
+msgstr "<b>A beállítások mentésre kerültek.</b> Legyen öreme új Pardus rendszerében! Az alábbi linkek használatával további beállításokat végezhet, vagy segítséget és támogatást vehet igénybe. Ne felejtsen el <b>csatlakozni közösségünkhöz!</b>"
+
+#: .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328 .tmp/ui_scrSmolt.py:156
+msgid "My Smolt Page"
+msgstr "Smolt oldalam"
+
+#: .tmp/ui_scrGoodbye.py:329
+msgid "Go to your Smolt page and rate your hardware components."
+msgstr "Látogasson el a Smolt oldalára és minősítse a hardver összetevőit."
+
+#: .tmp/ui_scrGoodbye.py:330 .tmp/ui_scrGoodbye.py:332
+msgid "System Settings"
+msgstr "Rendszer beállítások"
+
+#: .tmp/ui_scrGoodbye.py:331
+msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
+msgstr "Beállító eszközök Pardushoz - kijelző, tűzfal, billentyűzet, felhasználó kezelés..."
+
+#: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
+msgid "Help and Support"
+msgstr "Segítség és támogatás"
+
+#: .tmp/ui_scrGoodbye.py:334
+msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
+msgstr "Pardus közösség, levelező listák, chat szobák, Wiki dokumentációk, segítségnyújtó és támogató oldalak..."
+
+#: .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+#: .tmp/ui_scrKeyboard.py:94
+msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
+msgstr "Kaptan automatikusan kiválasztja az Ön számára legjobb billentyűzetkiosztást a rendszer nyelvének megfelelően. Amennyiben az alapértelmezettől eltérő billentyűzetkiosztást szeretne használni, kiválaszthatja és a lenti mezőben ellenőrizheti."
+
+#: .tmp/ui_scrKeyboard.py:95
+msgid "Test Layout"
+msgstr "Teszt kimenet"
+
+#: .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menü"
+
+#: .tmp/ui_scrMenu.py:124
+msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
+msgstr "Igénye szerint állíthatja be a <b>KDE menüt<b>. Kérem válasszon egyet az alábbi stílusok közül."
+
+#: .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Kick-off menü"
+
+#: .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Egyszerű menü"
+
+#: .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Lancelot menü"
+
+#: .tmp/ui_scrMenu.py:128
+msgid "Sample"
+msgstr "Minta"
+
+#: .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Egér"
+
+#: .tmp/ui_scrMouse.py:203
+msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
+msgstr "A <b> kattintás beállítása</b> meghatározza hányszor kelljen kattintani fájlok megnyitásakor. Ha Ön <b>bal kezes</b>, előnyben részesítheti, ha az egér bal és jobb gombja fel van cserélve."
+
+#: .tmp/ui_scrMouse.py:204
+msgid "Clicking Behaviour"
+msgstr "Kattintás beállításai"
+
+#: .tmp/ui_scrMouse.py:205
+msgid "Single-click to open files and folders"
+msgstr "Egy kattintás a fájlok és mappák megnyitásához"
+
+#: .tmp/ui_scrMouse.py:206
+msgid "Dou&ble-click to open files and folders"
+msgstr "Dupla kattintás a fájlok és mappák megnyitásához."
+
+#: .tmp/ui_scrMouse.py:207
+msgid "Button Order"
+msgstr "Gombok sorrendje"
+
+#: .tmp/ui_scrMouse.py:208
+msgid "Right Hand"
+msgstr "Jobb kezes"
+
+#: .tmp/ui_scrMouse.py:209
+msgid "Left Hand"
+msgstr "Bal kezes"
+
+#: .tmp/ui_scrMouse.py:210
+msgid "Reverse scrolling"
+msgstr "Görgetés megfordítása"
+
+#: .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Csomagok"
+
+#: .tmp/ui_scrPackage.py:133
+msgid "Show updates in the system tray"
+msgstr "Frissítések megjelenítése a rendszertálcán"
+
+#: .tmp/ui_scrPackage.py:134
+msgid "Check updates automatically every"
+msgstr "Frissítések automatikus ellenőrzése minden"
+
+#: .tmp/ui_scrPackage.py:135
+msgid " hours"
+msgstr "órában"
+
+#: .tmp/ui_scrPackage.py:136
+msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
+msgstr "Programok hozzáadásához és eltávolításához Pardus alatt használja a csomagkezelőt. A csomagkezelő automatikusan telepíti az elérhető legújabb frissítéseket. Beállíthatja az új frissítések keresésének gyakoriságát."
+
+#: .tmp/ui_scrPackage.py:137
+msgid "Updates"
+msgstr "Frissítések"
+
+#: .tmp/ui_scrSearch.py:100
+msgid "Search"
+msgstr "Keresés"
+
+#: .tmp/ui_scrSearch.py:101
+msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
+msgstr "Strigi Desktop Search indexeli a leggyakrabban használt fájljait. Ez rendkívül gyors keresést eredményez. A Strigi a fájlok tartalmában is képes keresni."
+
+#: .tmp/ui_scrSearch.py:102
+msgid "Allow Strigi to index my files"
+msgstr "Engedélyezem, hogy a Strigi indexelje a fájljaimat"
+
+#: .tmp/ui_scrSearch.py:103
+msgid "Search Options"
+msgstr "Keresési beállítások"
 
 #: .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
@@ -57,10 +225,6 @@ msgstr "Smolt"
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> az az eszköz ami összegyűjti az információkat az alábbi táblázatba és elküldi nekünk, amivel tovább fejleszthetjük a Pardust a felhasználói profil statisztikáknak megfelelően."
-
-#: .tmp/ui_scrSmolt.py:156 .tmp/ui_scrGoodbye.py:326 .tmp/ui_scrGoodbye.py:327
-msgid "My Smolt Page"
-msgstr "Smolt oldalam"
 
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
@@ -90,150 +254,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  A smolt adatbázis szerverre küldött adatok publikusak abban az értelemben, hogy bárki megtekintheti az adatokat és statisztikáikat, valamint megoszthatja a számítógépek profiljait. A smolt rendszert úgy alakítottuk ki, hogy harmadik fél érdeklődésére is számot tartson, ezenkívül használható legyen nyílt forrású eszközmeghajtó programok fejlesztéséhez a jobb támogatás érdekében.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; text-decoration: underline;\">IP naplózás:</span><span style=\" font-size:9pt;\">  A Pardusból minden smolt adatforgalom először egy proxy szerverre kerül. Ez az egyetlen hely, ahol a küldő IP címe eltárolódik, de itt is maximum 4 hétig tároljuk. Ezután a címek a naplófájlok forgatásával kikerülnek a rendszerből. A Párdus nem tárolja az IP címeket a smolt adatbázisban, illetve ezek a naplófáljok publikusan nem elérhetők.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Azon felhasználóinknak, akiknek ez az adattárolási módszer nem felel meg, azt tanácsoljuk, hogy ne használják a smolt adatbázist. Ha további kérdéseik vannak az adatvédelemmel kapcsolatban, kérjük keressék meg a Pardus Infrastruktúra Csapatát az admin [kukac] pardus.org.tr  email címen. Minden felhasználó bármikor törölheti a smolt adatait a &quot;</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span> parancs segítségével.</p></body></html>"
-
-#: .tmp/ui_scrPackage.py:191
-msgid "Packages"
-msgstr "Csomagok"
-
-#: .tmp/ui_scrPackage.py:192
-msgid "Show updates in the system tray"
-msgstr "Frissítések megjelenítése a rendszertálcán"
-
-#: .tmp/ui_scrPackage.py:193
-msgid "Check updates automatically every"
-msgstr "Frissítések automatikus ellenőrzése minden"
-
-#: .tmp/ui_scrPackage.py:194
-msgid " hours"
-msgstr "órában"
-
-#: .tmp/ui_scrPackage.py:195
-msgid "Contrib repository includes extra and handy programs."
-msgstr "A Contrib tároló további hasznos programokat tartalmaz."
-
-#: .tmp/ui_scrPackage.py:196
-msgid "Add contrib repository"
-msgstr "Contrib tároló hozzáadása"
-
-#: .tmp/ui_scrPackage.py:197
-msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
-msgstr "Programok hozzáadásához és eltávolításához Pardus alatt használja a csomagkezelőt. A csomagkezelő automatikusan telepíti az elérhető legújabb frissítéseket. Beállíthatja az új frissítések keresésének gyakoriságát."
-
-#: .tmp/ui_scrPackage.py:198
-msgid "Updates"
-msgstr "Frissítések"
-
-#: .tmp/ui_scrPackage.py:199
-msgid "Repositories"
-msgstr "Tárolók"
-
-#: .tmp/ui_scrStyleItem.py:71
-msgid "styleName"
-msgstr "stílusnév"
-
-#: .tmp/ui_scrStyleItem.py:72
-msgid "styleDesc"
-msgstr "stílus leírása"
-
-#: .tmp/ui_scrGoodbye.py:324
-msgid "More"
-msgstr "Továbbiak"
-
-#: .tmp/ui_scrGoodbye.py:325
-msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
-msgstr "<b>A beállítások mentésre kerültek.</b> Legyen öreme új Pardus rendszerében! Az alábbi linkek használatával további beállításokat végezhet, vagy segítséget és támogatást vehet igénybe. Ne felejtsen el <b>csatlakozni közösségünkhöz!</b>"
-
-#: .tmp/ui_scrGoodbye.py:328
-msgid "Go to your Smolt page and rate your hardware components."
-msgstr "Látogasson el a Smolt oldalára és minősítse a hardver összetevőit."
-
-#: .tmp/ui_scrGoodbye.py:329 .tmp/ui_scrGoodbye.py:331
-msgid "System Settings"
-msgstr "Rendszer beállítások"
-
-#: .tmp/ui_scrGoodbye.py:330
-msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
-msgstr "Beállító eszközök Pardushoz - kijelző, tűzfal, billentyűzet, felhasználó kezelés..."
-
-#: .tmp/ui_scrGoodbye.py:332 .tmp/ui_scrGoodbye.py:334
-msgid "Help and Support"
-msgstr "Segítség és támogatás"
-
-#: .tmp/ui_scrGoodbye.py:333
-msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
-msgstr "Pardus közösség, levelező listák, chat szobák, Wiki dokumentációk, segítségnyújtó és támogató oldalak..."
-
-#: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
-msgid "Kaptan"
-msgstr "Kaptan"
-
-#: .tmp/ui_kaptan.py:358
-msgid "Welcome to Pardus"
-msgstr "Üdvözöljük a Pardusban!"
-
-#: .tmp/ui_kaptan.py:359
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: .tmp/ui_kaptan.py:360
-msgid "Back"
-msgstr "Vissza"
-
-#: .tmp/ui_kaptan.py:361
-msgid "Next"
-msgstr "Következő"
-
-#: .tmp/ui_kaptan.py:362
-msgid "Finish"
-msgstr "Befejezés"
-
-#: .tmp/ui_kaptan.py:363
-msgid "Apply Settings"
-msgstr "Beállítások alkalmazása"
-
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Üdvözöljük"
-
-#: .tmp/ui_scrWelcome.py:78
-msgid "What is Pardus?"
-msgstr "Mi a Pardus?"
-
-#: .tmp/ui_scrWelcome.py:79
-msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr "<b>Pardus</b> egy megbízható, biztonságos. gyors és felhasználóbarát operációs rendszer. <br /><br />Pardus-szal csatlakozhat az internetre, olvashatja e-mailjeit, dolgozhat dokumentumaival, filmet nézhet, zenét hallgathat, alkalmazásokat fejleszthet, játékokkal játszhat és ímég sok mást is tehet! <br /><br />A <b>Kaptan</b> segít abban, hogy könnyen és gyorsan személyessé tegye a Pardus rendszerét. Kérem kattintson a <b>tovább</b> gombra a kezdéshez."
-
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Billentyűzet"
-
-#: .tmp/ui_scrKeyboard.py:94
-msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan automatikusan kiválasztja az Ön számára legjobb billentyűzetkiosztást a rendszer nyelvének megfelelően. Amennyiben az alapértelmezettől eltérő billentyűzetkiosztást szeretne használni, kiválaszthatja és a lenti mezőben ellenőrizheti."
-
-#: .tmp/ui_scrKeyboard.py:95
-msgid "Test Layout"
-msgstr "Teszt kimenet"
-
-#: .tmp/ui_scrAvatar.py:248
-msgid "This screen helps you set your <b>user picture</b>. You can either choose an image from a file or you can capture an image from your camera. Select an option from the <b>options</b> menu."
-msgstr "Ez a képernyő segít Önnek beállítani a <b>saját képét</b>. Választhat egy meglévő képet, vagy rögzíthet egy képet a kameráról. Válasszon egyet a <b>Lehetőségek</b> menüből."
-
-#: .tmp/ui_scrAvatar.py:249
-msgid "Options"
-msgstr "Lehetőségek"
-
-#: .tmp/ui_scrAvatar.py:250
-msgid "Choose an image"
-msgstr "Válasszon egy képet"
-
-#: .tmp/ui_scrAvatar.py:251
-msgid "Capture"
-msgstr "Felvétel"
-
-#: .tmp/ui_scrAvatar.py:252
-msgid "Recapture"
-msgstr "Új felvétel"
 
 #: .tmp/ui_scrStyle.py:236
 msgid "Themes"
@@ -275,65 +295,13 @@ msgstr "Mappa nézet (KDE3 stílus)"
 msgid "Number of Desktops"
 msgstr "Asztalok száma"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menü"
+#: .tmp/ui_scrStyleItem.py:70
+msgid "styleName"
+msgstr "stílusnév"
 
-#: .tmp/ui_scrMenu.py:124
-msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr "Igénye szerint állíthatja be a <b>KDE menüt<b>. Kérem válasszon egyet az alábbi stílusok közül."
-
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Kick-off menü"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Egyszerű menü"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Lancelot menü"
-
-#: .tmp/ui_scrMenu.py:128
-msgid "Sample"
-msgstr "Minta"
-
-#: .tmp/ui_scrMouse.py:203
-msgid "Mouse"
-msgstr "Egér"
-
-#: .tmp/ui_scrMouse.py:204
-msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
-msgstr "A <b> kattintás beállítása</b> meghatározza hányszor kelljen kattintani fájlok megnyitásakor. Ha Ön <b>bal kezes</b>, előnyben részesítheti, ha az egér bal és jobb gombja fel van cserélve."
-
-#: .tmp/ui_scrMouse.py:205
-msgid "Clicking Behaviour"
-msgstr "Kattintás beállításai"
-
-#: .tmp/ui_scrMouse.py:206
-msgid "Single-click to open files and folders"
-msgstr "Egy kattintás a fájlok és mappák megnyitásához"
-
-#: .tmp/ui_scrMouse.py:207
-msgid "Dou&ble-click to open files and folders"
-msgstr "Dupla kattintás a fájlok és mappák megnyitásához."
-
-#: .tmp/ui_scrMouse.py:208
-msgid "Button Order"
-msgstr "Gombok sorrendje"
-
-#: .tmp/ui_scrMouse.py:209
-msgid "Right Hand"
-msgstr "Jobb kezes"
-
-#: .tmp/ui_scrMouse.py:210
-msgid "Left Hand"
-msgstr "Bal kezes"
-
-#: .tmp/ui_scrMouse.py:211
-msgid "Reverse scrolling"
-msgstr "Görgetés megfordítása"
+#: .tmp/ui_scrStyleItem.py:71
+msgid "styleDesc"
+msgstr "stílus leírása"
 
 #: .tmp/ui_scrSummary.py:85
 msgid "Summary"
@@ -347,25 +315,45 @@ msgstr "Sikeresen befejezett minden lépést. Itt egy összegzés az elfogadásr
 msgid "The following settings will be applied"
 msgstr "A következő beállítások kerülnek alkalmazásra"
 
-#: .tmp/kaptan.desktop.in.h:2
-msgid "Welcome Wizard"
-msgstr "Első Indítás Varázsló"
+#: .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Háttérkép"
 
-#: .tmp/ui_scrSearch.py:100
-msgid "Search"
-msgstr "Keresés"
+#: .tmp/ui_scrWallpaper.py:132
+msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
+msgstr "Válassza ki kedvenc háttérképét a Pardushoz. Az <b>Asztal beállítás</b>okban további új és izgalmas háttérképeket tölthet le."
 
-#: .tmp/ui_scrSearch.py:101
-msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr "Strigi Desktop Search indexeli a leggyakrabban használt fájljait. Ez rendkívül gyors keresést eredményez. A Strigi a fájlok tartalmában is képes keresni."
+#: .tmp/ui_scrWallpaper.py:133
+msgid "Wallpapers"
+msgstr "Háttérképek"
 
-#: .tmp/ui_scrSearch.py:102
-msgid "Allow Strigi to index my files"
-msgstr "Engedélyezem, hogy a Strigi indexelje a fájljaimat"
+#: .tmp/ui_scrWallpaper.py:135
+msgid "Choose wallpaper from file"
+msgstr "Válasszon háttérképet fájlból"
 
-#: .tmp/ui_scrSearch.py:103
-msgid "Search Options"
-msgstr "Keresési beállítások"
+#: .tmp/ui_scrWallpaper.py:136
+msgid "Don't change wallpaper"
+msgstr "Ne változtassa meg a háttérképet"
+
+#: .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: .tmp/ui_scrWelcome.py:78
+msgid "What is Pardus?"
+msgstr "Mi a Pardus?"
+
+#: .tmp/ui_scrWelcome.py:79
+msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
+msgstr "<b>Pardus</b> egy megbízható, biztonságos. gyors és felhasználóbarát operációs rendszer. <br /><br />Pardus-szal csatlakozhat az internetre, olvashatja e-mailjeit, dolgozhat dokumentumaival, filmet nézhet, zenét hallgathat, alkalmazásokat fejleszthet, játékokkal játszhat és ímég sok mást is tehet! <br /><br />A <b>Kaptan</b> segít abban, hogy könnyen és gyorsan személyessé tegye a Pardus rendszerét. Kérem kattintson a <b>tovább</b> gombra a kezdéshez."
+
+#: .tmp/ui_wallpaperItem.py:73
+msgid "wallPaperName"
+msgstr "háttérkép neve"
+
+#: .tmp/ui_wallpaperItem.py:74
+msgid "wallpaperDesc"
+msgstr "háttérkép leírása"
 
 #~ msgid "Welcome to Pardus 2011 Alpha 1"
 #~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
@@ -582,3 +570,12 @@ msgstr "Keresési beállítások"
 
 #~ msgid "Migration Wizard"
 #~ msgstr "Áthelyezés varázsló"
+
+#~ msgid "Repositories"
+#~ msgstr "Tárolók"
+
+#~ msgid "Add contrib repository"
+#~ msgstr "Contrib tároló hozzáadása"
+
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
