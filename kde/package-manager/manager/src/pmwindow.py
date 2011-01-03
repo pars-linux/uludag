@@ -153,6 +153,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
                         else x, filter(lambda x: '://' not in x,
                                         get_real_paths(self.state._selected_packages)))
 
+        _pkgs = filter(lambda x: self.iface.pdb.has_package(x), _pkgs)
         totalPackages += len(self.state.iface.getExtras(_pkgs, self.state.state))
 
         self.progressDialog.reset()
