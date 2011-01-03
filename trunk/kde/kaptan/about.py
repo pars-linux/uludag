@@ -18,7 +18,7 @@ from PyKDE4.kdecore import KAboutData, ki18n
 appName     = "kaptan"
 programName = ki18n("Kaptan")
 modName     = "kaptan"
-version     = "5.0.1"
+version     = "5.0.4"
 description = ki18n("Kaptan")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2005-2011 TUBITAK/UEKAE")
