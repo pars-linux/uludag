@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>871</width>
+    <width>629</width>
     <height>772</height>
    </rect>
   </property>
@@ -75,6 +75,9 @@
      <property name="styleSheet">
       <string notr="true">#scrollArea {background-color: rgba(0, 0, 0, 0);border: 0px}</string>
      </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
      <property name="widgetResizable">
       <bool>true</bool>
      </property>
@@ -83,8 +86,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>831</width>
-        <height>670</height>
+        <width>589</width>
+        <height>653</height>
        </rect>
       </property>
       <property name="styleSheet">
