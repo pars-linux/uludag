@@ -149,8 +149,9 @@ class Iface(Singleton):
                 return type_name
         return "normal"
 
-    def getPackageSize(self, name):
-        package = self.getPackage(name)
+    def getPackageSize(self, package):
+        if type(package) in (str, unicode):
+            package = self.getPackage(package)
         if package.installed:
             return package.installedSize
         return package.packageSize
