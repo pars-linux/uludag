@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:05+0200\n"
+"POT-Creation-Date: 2011-01-03 12:09+0200\n"
 "PO-Revision-Date: 2010-12-07 22:13+0200\n"
 "Last-Translator: Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -362,26 +362,26 @@ msgstr "duvarkağıdıİsmi"
 msgid "wallpaperDesc"
 msgstr "duvarkağıdıAçıklaması"
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
-
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu işaretleyip Internet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip şifrenizi girmeyi unutmayın."
-
-#~ msgid "Network"
-#~ msgstr "Ağ"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
-
-#~ msgid "Migration Wizard"
-#~ msgstr "Göç Sihirbazı"
-
-#~ msgid "Repositories"
-#~ msgstr "Depolar"
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Katkı deposu kullanışlı ek programlar içerir."
 
 #~ msgid "Add contrib repository"
 #~ msgstr "Katkı deposunu ekle"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "Katkı deposu kullanışlı ek programlar içerir."
+#~ msgid "Repositories"
+#~ msgstr "Depolar"
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Göç Sihirbazı"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
+
+#~ msgid "Network"
+#~ msgstr "Ağ"
+
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu işaretleyip Internet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip şifrenizi girmeyi unutmayın."
+
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
