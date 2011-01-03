@@ -121,6 +121,7 @@ class Widget(QtGui.QWidget, Screen):
     def startPlasma(self):
         p = subprocess.Popen(["plasma-desktop"], stdout=subprocess.PIPE)
 
+
     def execute(self):
         hasChanged = False
 
