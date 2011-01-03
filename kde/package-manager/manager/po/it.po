@@ -92,7 +92,7 @@ msgstr "Requisiti Aggiornamento"
 
 #: src/basketdialog.py:173
 msgid "Packages Require System Restart"
-msgstr ""
+msgstr "Occorre Riavvio del Sistema per i Pacchetti"
 
 #: src/basketdialog.py:178
 msgid "You must restart related system services for the updated package(s) to take effect"
@@ -100,7 +100,7 @@ msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacche
 
 #: src/basketdialog.py:181
 msgid "Packages Require Service Restart"
-msgstr ""
+msgstr "Occorre Riavvio del Servizi per i Pacchetti"
 
 #: src/basketdialog.py:191
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
@@ -177,7 +177,7 @@ msgstr "Aggiornamenti"
 
 #: src/mainwindow.py:201
 msgid "Calculating dependencies..."
-msgstr ""
+msgstr "Si calcolano le dipendenze..."
 
 #: src/mainwindow.py:205
 msgid "Currently your basket is empty."
@@ -500,9 +500,8 @@ msgid "Ignore"
 msgstr "Ignora"
 
 #: src/webdialog.py:111 ui/ui_webdialog.py:169
-#, fuzzy
 msgid "Package Files"
-msgstr "Lista pacchetti"
+msgstr "File dei Pacchetti"
 
 #: ui/ui_appitem.py:58
 msgid "Application"
@@ -578,9 +577,8 @@ msgid "Check for Updates"
 msgstr "Controlla gli Aggiornamenti"
 
 #: ui/ui_pminstall.py:83
-#, fuzzy
 msgid "Package Manager Quick Install"
-msgstr "Impostazioni package manager"
+msgstr "Gestore dei Pacchetti Installazione Rapida"
 
 #: ui/ui_pminstall.py:84
 msgid "Following packages are selected to install. Do you want to install these packages ?"
@@ -712,7 +710,7 @@ msgstr "Seleziona..."
 
 #: ui/ui_settingsdialog.py:409
 msgid "Open"
-msgstr ""
+msgstr "Apri"
 
 #: ui/ui_settingsdialog.py:410
 msgid "&Use hard disk cache for downloaded software"
@@ -810,11 +808,10 @@ msgid "Type to filter files"
 msgstr ""
 
 #: ui/ui_webdialog.py:170
-#, fuzzy
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
-msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
+msgstr ""
 
 #~ msgid "Search Button"
 #~ msgstr "Pulsante di Ricerca"
