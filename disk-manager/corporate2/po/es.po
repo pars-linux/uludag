@@ -3,7 +3,7 @@
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk-Manager package.
-#
+# 
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007, 2008.
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
@@ -28,23 +28,23 @@ msgstr "Administrador de Puntos de Montaje"
 
 #: src/disk-manager.py:329
 msgid "Unmount"
-msgstr ""
+msgstr "Desmontar"
 
 #: src/disk-manager.py:344 src/diskform.py:112
 msgid "Mount"
-msgstr ""
+msgstr "Montar"
 
 #: src/disk-manager.py:383
-msgid ""
-"Changes saved but system couldn't mount it because it has been already "
-"mounted another point"
-msgstr ""
+msgid "Changes saved but system couldn't mount it because it has been already mounted another point"
+msgstr "Cambios guardados, pero no se puede montar porque ya está montado con otro punto de montaje"
 
 #: src/disk-manager.py:392
 msgid ""
 "Removing this partition from auto mount list can cause some boot problems.\n"
 "Do you want to continue?"
 msgstr ""
+"Remover la partición de la lista de montado automático puede causar problemas de booteo.\n"
+"Desea continuar?"
 
 #: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
