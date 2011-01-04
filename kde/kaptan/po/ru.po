@@ -100,73 +100,71 @@ msgstr "Вендор ЦП"
 
 #: .tmp/scrSmolt.py:121
 msgid "CPU Model"
-msgstr ""
+msgstr "Модель ЦПУ"
 
 #: .tmp/scrSmolt.py:122
 msgid "CPU Stepping"
-msgstr ""
+msgstr "Шаг ЦПУ"
 
 #: .tmp/scrSmolt.py:123
 msgid "CPU Family"
-msgstr ""
+msgstr "Тип ЦПУ"
 
 #: .tmp/scrSmolt.py:124
 msgid "CPU Model Num"
-msgstr ""
+msgstr "Номер модели ЦПУ"
 
 #: .tmp/scrSmolt.py:125
-#, fuzzy
 msgid "Number of CPUs"
-msgstr "Число рабочих столов"
+msgstr "Число ЦПУ"
 
 #: .tmp/scrSmolt.py:126
 msgid "CPU Speed"
-msgstr ""
+msgstr "Скорость ЦПУ"
 
 #: .tmp/scrSmolt.py:127
 msgid "System Memory"
-msgstr ""
+msgstr "Системная память"
 
 #: .tmp/scrSmolt.py:128
-#, fuzzy
 msgid "System Swap"
-msgstr "Параметры системы"
+msgstr "Системный swap"
 
 #: .tmp/scrSmolt.py:129
 msgid "Vendor"
-msgstr ""
+msgstr "Производитель"
 
 #: .tmp/scrSmolt.py:130
 msgid "System"
-msgstr ""
+msgstr "Система"
 
 #: .tmp/scrSmolt.py:131
 msgid "Form Factor"
-msgstr ""
+msgstr "Форм-фактор"
 
 #: .tmp/scrSmolt.py:132
 msgid "Kernel"
-msgstr ""
+msgstr "Ядро"
 
 #: .tmp/scrSmolt.py:133
 msgid "SELinux Enabled"
-msgstr ""
+msgstr "SELinux включено"
 
 #: .tmp/scrSmolt.py:134
 msgid "SELinux Policy"
-msgstr ""
+msgstr "Политика SELinux"
 
 #: .tmp/scrSmolt.py:135
 msgid "SELinux Enforce"
-msgstr ""
+msgstr "Обеспечение SELinux"
 
 #: .tmp/scrSmolt.py:148
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: .tmp/scrSmolt.py:150
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: .tmp/ui_scrStyle.py:236 .tmp/scrStyle.py:37
 msgid "Themes"
@@ -237,7 +235,6 @@ msgid "Setup Mouse Behavior"
 msgstr ""
 
 #: .tmp/scrMouse.py:140
-#, fuzzy
 msgid "Left Handed"
 msgstr "Левша"
 
