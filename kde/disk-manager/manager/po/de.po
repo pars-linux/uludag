@@ -17,7 +17,7 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr "Mounten von Partitonen & Datenträgern ins Dateisystem"
+msgstr "Partitonen & ihre Einhängepunkte verwalten"
 
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
