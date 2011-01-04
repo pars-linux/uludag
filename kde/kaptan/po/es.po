@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:09+0200\n"
+"POT-Creation-Date: 2011-01-04 13:01+0200\n"
 "PO-Revision-Date: 2010-01-06 20:31-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -31,6 +31,314 @@ msgstr "Kaptan"
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
 msgstr "Asistente de Bienvenida"
+
+#: .tmp/scrAvatar.py:36
+msgid "User Picture"
+msgstr ""
+
+#: .tmp/scrAvatar.py:48
+msgid "Create your user picture"
+msgstr ""
+
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Más"
+
+#: .tmp/scrGoodbye.py:25
+msgid "Congratulations!"
+msgstr "Felicidades !"
+
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Teclado"
+
+#: .tmp/scrKeyboard.py:32
+msgid "Keyboard Layout Language"
+msgstr "Idioma de distribución de teclado"
+
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menú"
+
+#: .tmp/scrMenu.py:27
+msgid "Choose a Menu Style"
+msgstr "Elegir un estilo de Menú"
+
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Menú Kick-off"
+
+#: .tmp/scrMenu.py:43
+msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Está predeterminado el estilo Kick-off para el menú de inicio de Pardus.<br><br>Los accesos a los programas están bien organizados y son fáciles de ubicar."
+
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Menú sencillo"
+
+#: .tmp/scrMenu.py:49
+msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+msgstr "El menú Simple (sencillo) es el estilo del menú antiguo de KDE 3.<br><br>Es un menú muy liviano, y por lo tanto recomendable para los PCs más lentos."
+
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Menú Lancelot"
+
+#: .tmp/scrMenu.py:55
+msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Lancelot es un menú avanzado con muchas opciones de personalización en Pardus.<br><br>Los accesos a los programas están bien organizados y son fáciles de ubicar."
+
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Ratón"
+
+#: .tmp/scrMouse.py:30
+msgid "Setup Mouse Behavior"
+msgstr "Comportamiento de Ratón"
+
+#: .tmp/scrMouse.py:140
+msgid "Left Handed"
+msgstr "Zurdo"
+
+#: .tmp/scrMouse.py:140
+msgid "Right Handed"
+msgstr "Diestro"
+
+#: .tmp/scrMouse.py:141
+msgid "Double Click"
+msgstr "Clic doble"
+
+#: .tmp/scrMouse.py:141
+msgid "Single Click "
+msgstr "Clic único"
+
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Paquetes"
+
+#: .tmp/scrPackage.py:29
+msgid "Install / Remove Programs"
+msgstr "Instalar / remover programas"
+
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
+msgid "Smolt"
+msgstr "Smolt"
+
+#: .tmp/scrSmolt.py:32
+msgid "Help Pardus Improve!"
+msgstr "Ayude a mejorar a Pardus!"
+
+#: .tmp/scrSmolt.py:68
+msgid "Label"
+msgstr "Etiqueta"
+
+#: .tmp/scrSmolt.py:69
+msgid "Data"
+msgstr ""
+
+#: .tmp/scrSmolt.py:108
+msgid "&Host Information"
+msgstr ""
+
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
+msgid "&Privacy policy"
+msgstr "&Política de privacidad"
+
+#: .tmp/scrSmolt.py:114
+msgid "UUID"
+msgstr ""
+
+#: .tmp/scrSmolt.py:115
+msgid "OS"
+msgstr "SO"
+
+#: .tmp/scrSmolt.py:116
+msgid "Default Run Level"
+msgstr "Nivel de ejecución por omisión"
+
+#: .tmp/scrSmolt.py:117
+msgid "Language"
+msgstr "Idioma"
+
+#: .tmp/scrSmolt.py:118
+msgid "Platform"
+msgstr "Plataforma"
+
+#: .tmp/scrSmolt.py:119
+msgid "BogoMIPS"
+msgstr ""
+
+#: .tmp/scrSmolt.py:120
+msgid "CPU Vendor"
+msgstr "Fabricante de CPU"
+
+#: .tmp/scrSmolt.py:121
+msgid "CPU Model"
+msgstr "Modelo CPU"
+
+#: .tmp/scrSmolt.py:122
+msgid "CPU Stepping"
+msgstr ""
+
+#: .tmp/scrSmolt.py:123
+msgid "CPU Family"
+msgstr "Familia de procesador"
+
+#: .tmp/scrSmolt.py:124
+msgid "CPU Model Num"
+msgstr "Modelo del procesador"
+
+#: .tmp/scrSmolt.py:125
+msgid "Number of CPUs"
+msgstr "Cantidad de CPUs"
+
+#: .tmp/scrSmolt.py:126
+msgid "CPU Speed"
+msgstr "Velocidad de la CPU"
+
+#: .tmp/scrSmolt.py:127
+msgid "System Memory"
+msgstr "Memoria del sistema"
+
+#: .tmp/scrSmolt.py:128
+msgid "System Swap"
+msgstr "Espacio de paginación (swap) del Sistema"
+
+#: .tmp/scrSmolt.py:129
+msgid "Vendor"
+msgstr "Fabricante"
+
+#: .tmp/scrSmolt.py:130
+msgid "System"
+msgstr "Sistema"
+
+#: .tmp/scrSmolt.py:131
+msgid "Form Factor"
+msgstr "Factor de molde"
+
+#: .tmp/scrSmolt.py:132
+msgid "Kernel"
+msgstr "Núcleo (kernel)"
+
+#: .tmp/scrSmolt.py:133
+msgid "SELinux Enabled"
+msgstr "SELinux habilitado"
+
+#: .tmp/scrSmolt.py:134
+msgid "SELinux Policy"
+msgstr "Política SELinux"
+
+#: .tmp/scrSmolt.py:135
+msgid "SELinux Enforce"
+msgstr "Forzar SELinux"
+
+#: .tmp/scrSmolt.py:148
+msgid "Yes"
+msgstr "Si"
+
+#: .tmp/scrSmolt.py:150
+msgid "No"
+msgstr "No"
+
+#: .tmp/scrStyle.py:37 .tmp/ui_scrStyle.py:236
+msgid "Themes"
+msgstr "Temas"
+
+#: .tmp/scrStyle.py:38
+msgid "Customize Your Desktop"
+msgstr "Personalice su Escritorio"
+
+#: .tmp/scrSummary.py:35 .tmp/ui_scrSummary.py:85
+msgid "Summary"
+msgstr "Resumen"
+
+#: .tmp/scrSummary.py:36
+msgid "Save Your Settings"
+msgstr "Guardar Configuración"
+
+#: .tmp/scrSummary.py:59
+msgid "Mouse Settings"
+msgstr "Configuración del ratón"
+
+#: .tmp/scrSummary.py:61
+#, python-format
+msgid "Selected Mouse configuration: <b>%s</b>"
+msgstr "Configuración de ratón seleccionado: <b>%s</b>"
+
+#: .tmp/scrSummary.py:62
+#, python-format
+msgid "Selected clicking behaviour: <b>%s</b>"
+msgstr "Comportamiento de clic seleccionado: <b>%s</b>"
+
+#: .tmp/scrSummary.py:66
+msgid "Menu Settings"
+msgstr "Configuración del Menú"
+
+#: .tmp/scrSummary.py:67
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Menú seleccionado: <b>%s</b>"
+
+#: .tmp/scrSummary.py:71
+msgid "Wallpaper Settings"
+msgstr "Configuración de Imagen de Fondo"
+
+#: .tmp/scrSummary.py:73
+msgid "You haven't selected any wallpaper."
+msgstr "Usted no eligió ningún imagen de fondo"
+
+#: .tmp/scrSummary.py:75
+#, python-format
+msgid "Selected Wallpaper: <b>%s</b>"
+msgstr "Imagen de fondo seleccionado: <b>%s</b>"
+
+#: .tmp/scrSummary.py:79
+msgid "Style Settings"
+msgstr "Configuración del Estilo"
+
+#: .tmp/scrSummary.py:82
+msgid "You haven't selected any style."
+msgstr "Usted no eligió ningún estilo."
+
+#: .tmp/scrSummary.py:84
+#, python-format
+msgid "Selected Style: <b>%s</b>"
+msgstr "Estilo seleccionado: <b>%s</b>"
+
+#: .tmp/scrSummary.py:91
+msgid "Smolt Settings"
+msgstr "Configuración de Smolt"
+
+#: .tmp/scrSummary.py:92
+#, python-format
+msgid "Send my profile: <b>%s</b>"
+msgstr "Enviar mi perfil: <b>%s</b>"
+
+#: .tmp/scrSummary.py:117
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr "No posible reiniciar plasma-desktop. Kaptan terminará ahora."
+
+#: .tmp/scrSummary.py:117
+msgid "Error"
+msgstr "Error"
+
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Imagen de Fondo"
+
+#: .tmp/scrWallpaper.py:35
+#, fuzzy
+msgid "Choose a Wallpaper"
+msgstr "Elegir archivo de imagen de fondo "
+
+#: .tmp/scrWelcome.py:27 .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: .tmp/scrWelcome.py:28
+#, fuzzy, python-format
+msgid "Welcome to %s"
+msgstr "Bienvenido a Pardus"
 
 #: .tmp/ui_kaptan.py:358
 msgid "Welcome to Pardus"
@@ -83,10 +391,6 @@ msgstr "Capturar"
 msgid "Recapture"
 msgstr "Volver a capturar"
 
-#: .tmp/ui_scrGoodbye.py:325
-msgid "More"
-msgstr "Más"
-
 #: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>Se aplicaron sus preferencias.</b> Ahora puede continuar y disfrutar al sistema Pardus o puede seguir los siguientes enlaces y accesos directos para más configuraciones o para ayuda y soporte. No olvide de <b>unirse a nuestra comunidad!</b>"
@@ -116,10 +420,6 @@ msgstr "Ayuda y Soporte"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Comunidad de Pardus, listas de correo, salas de chat, wikis, paginas de ayuda y de soporte.."
 
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Teclado"
-
 #: .tmp/ui_scrKeyboard.py:94
 msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
 msgstr "Kaptan automaticamente selecciona la mejor distribución de teclado de acuerdo al idioma de su sistema. Si desea utilizar otra distribución de teclas, puede elegirlo y probarlo al instante."
@@ -128,33 +428,13 @@ msgstr "Kaptan automaticamente selecciona la mejor distribución de teclado de a
 msgid "Test Layout"
 msgstr "Probar Disposición"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menú"
-
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
 msgstr "También puede personalizar su <b>menú de KDE</b> como desea. Por favor elija uno de los estilos siguientes."
 
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Menú Kick-off"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Menú sencillo"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Menú Lancelot"
-
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
 msgstr "Ejemplo"
-
-#: .tmp/ui_scrMouse.py:202
-msgid "Mouse"
-msgstr "Ratón"
 
 #: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
@@ -187,10 +467,6 @@ msgstr "Zurdo"
 #: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
 msgstr "Deslizamento inverso"
-
-#: .tmp/ui_scrPackage.py:132
-msgid "Packages"
-msgstr "Paquetes"
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
@@ -228,10 +504,6 @@ msgstr "Permitir Strigi de crear indice de mis archivos"
 msgid "Search Options"
 msgstr "Configuración de la Busqueda"
 
-#: .tmp/ui_scrSmolt.py:154
-msgid "Smolt"
-msgstr "Smolt"
-
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> es una herramienta que colecciona la información de la tabla siguiente y nos lo envia para mejorar Pardus según las estadísticas de uso de tipos de hardware."
@@ -239,10 +511,6 @@ msgstr "<b>Smolt</b> es una herramienta que colecciona la información de la tab
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
 msgstr "&Enviar mi perfil"
-
-#: .tmp/ui_scrSmolt.py:158
-msgid "&Privacy policy"
-msgstr "&Política de privacidad"
 
 #: .tmp/ui_scrSmolt.py:159
 msgid ""
@@ -265,10 +533,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviado al servidor smolt se debe considerar pública, en la que todos pueden ver estadísticas, datos y perfiles de las computadoras.  El diseño de smolt se realizó con la intención de atraer la atención de los fabricantes de hardware y acesorios.  Por tál motivo no solamente se comparte esta información con terceros, sino además se utilizará la información para incentivar un mejor soporte de controladores de dicho hardware y en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">Registro de IP:</span>  En la instalación del servidor smolt de Pardus, todo el trafico pasa primero por un servidor proxy.  Esto es el único lugar, donde las direcciones IP quedan grabados en un log, donde permanecen por 4 semanas, hasta la rotación de archivos los elimina de nuevo.  No se registra la dirección IP en la base de datos smolt del proyecto Pardus.  Estos archivos los son privados y están accesible para el público en general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">  Usuarios que no están de acuerdo con ésta política sencillamente deberían no utilizar smolt.  Si tiene dudas y preguntas sobre la política puede contactar al equipo de infraestructura de Pardus al admin [at] pardus.org.tr.  Además recuerde que siempre puede eliminar su perfil en cualquier momento con el comando &quot;<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
-
-#: .tmp/ui_scrStyle.py:236
-msgid "Themes"
-msgstr "Temas"
 
 #: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
@@ -314,10 +578,6 @@ msgstr ""
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/ui_scrSummary.py:85
-msgid "Summary"
-msgstr "Resumen"
-
 #: .tmp/ui_scrSummary.py:86
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
 msgstr "Usted ha finalizado con éxito todos los pasos. Aqui un resumen de las configuraciones que está a punto de aplicar. Presione <b>Aplicar Configuración</b> para guardarlos ahora. Ahora está listo para disfrutar Pardus!"
@@ -325,10 +585,6 @@ msgstr "Usted ha finalizado con éxito todos los pasos. Aqui un resumen de las c
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
 msgstr "Se aplicará la siguiente configuración"
-
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Imagen de Fondo"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
@@ -346,10 +602,6 @@ msgstr "Elegir archivo de imagen de fondo "
 msgid "Don't change wallpaper"
 msgstr "No cambiar imagen de fondo"
 
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Bienvenido"
-
 #: .tmp/ui_scrWelcome.py:78
 msgid "What is Pardus?"
 msgstr "Que es Pardus ?"
@@ -366,273 +618,93 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-# favor verificar..
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "Repositorio Contrib contiene programas adicionales."
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Bienvenido a Pardus 2009.2"
 
-#~ msgid "Add contrib repository"
-#~ msgstr "Agregar repositorio contrib"
+#~ msgid "Connect to the Internet"
+#~ msgstr "Conectar a Internet"
 
-#~ msgid "Repositories"
-#~ msgstr "Repositorios"
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Busqueda Fácil de Escritorio"
 
-#~ msgid "Network"
-#~ msgstr "Red"
+#~ msgid "On"
+#~ msgstr "Habilitar"
 
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Para crear una conexión nueva presione <b>Crear Perfil</b> y seleccione su adaptador de la lista. Si su conexión es inalambrica indique el punto de acceso. Luego de guardar el perfil marque la casilla para activar la conexión."
+#~ msgid "Off"
+#~ msgstr "Deshabilitar"
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Administrador de Red (Presione Aplicar para guardar su configuración)"
+#~ msgid "&Back"
+#~ msgstr "&Atrás"
 
-#~ msgid "Migration Wizard"
-#~ msgstr "Asistente de Migración"
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Busqueda de Escritorio: <b>%s</b>"
 
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Un asistente que le ayuda transferir archivos y configuraciones de sistemas operativos existentes (p.ej. Windows) a Pardus."
+#~ msgid ""
+#~ "This application, called Kaptan Desktop, will help you with your basic but sufficient setup for your Pardus desktop in a quick manner. Please click Next to personalize your desktop. \n"
+#~ "\n"
+#~ "Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
+#~ msgstr ""
+#~ "El presente programa, llamado Kaptan Desktop, le ayudará realizar una configuración básica pero funcional para su escritorio Pardus de manera sencilla. Por favor presione siguiente para personalizar su escritorio. \n"
+#~ "\n"
+#~ "Pardus es una distribución GNU/Linux, que cubre las necesidades de un escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer e-mails, trabajar con documentos de oficina y más!"
 
-#~ msgid "Welcome to Kaptan 2009.2"
-#~ msgstr "Bienvenido al Asistente Kaptan"
+#~ msgid "Enable Strigi Desktop File Indexer"
+#~ msgstr "Habilitar motor de búsqueda Strigi Desktop"
 
-#~ msgid "Insert some catchy title about keyboards.."
-#~ msgstr "Elija el teclado de su sistema"
+#~ msgid "Strigi desktop search allows searching for files by content instead of just by name."
+#~ msgstr "Strigi desktop search permite una búsqueda de archivos por su contenido en vez de simplemente por el nombre de archivo."
 
-#~ msgid "Select your keyboard layout"
-#~ msgstr "Seleccione su distribución de teclado"
+#~ msgid "An advanced menu for KDE4."
+#~ msgstr "Menú avanzado para KDE4."
 
-#~ msgid "Some catchy title about styles"
-#~ msgstr "Estilo de Escritorio"
+#~ msgid "An old style menu from KDE 3."
+#~ msgstr "Menú al estilo clásico de KDE 3."
 
-#~ msgid "Some catchy description about styles"
-#~ msgstr "Configure el aspecto de su escritorio"
+#~ msgid "Default menu of Pardus GNU/Linux."
+#~ msgstr "Menú por defecto de Pardus GNU/Linux."
 
-#~ msgid "Configure your mouse"
-#~ msgstr "Configure su ratón"
+#~ msgid "Goodbye from Kaptan Wizard :)"
+#~ msgstr "Kaptan Wizard se despide :)"
 
-#~ msgid "Network Manager"
-#~ msgstr "Administrador de Red"
-
-#~ msgid "Package Manager"
-#~ msgstr "Administrador de Paquetes"
-
-#~ msgid "Configure package manager settings"
-#~ msgstr "Configuración del administrador de paquetes"
-
-#~ msgid "Some catchy title about desktop search"
-#~ msgstr "Busqueda de Escritorio"
-
-#~ msgid "Some catchy description desktop search"
-#~ msgstr "El motor de busqueda le facilitará ubicar a sus archivos y datos"
-
-#~ msgid "Smolt Description"
-#~ msgstr "Descripción Smolt"
-
-#~ msgid "Insert some catchy title about wallpapers.."
-#~ msgstr "Elija su Fondo de Escritorio"
-
-#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
-#~ msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
-
-#~ msgid "Menu Styles"
-#~ msgstr "Estilos de Menú"
+#~ msgid "Repo"
+#~ msgstr "Repositorio"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Your settings have been applied.</span><span style=\" font-size:10pt; color:#5f2234;\"> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">join our community!</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Package-manager is the graphical front-end of PiSi. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically from the system tray with package manager.</span></p></body></html>"
 #~ msgstr ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Las configuraciones están aplicadas.</span><span style=\" font-size:10pt; color:#5f2234;\"> Ahora puede empezar y disfrutar usando Pardus o puede ingresar a los siguientes enlaces y programas para más configuraciones o ayuda y soporte. No se olvide de </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">unirse a nuestra comunidad !</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">El Administrador de Paquetes es la interfaz gráfica del administrador de paquetes PiSi. Puede fácilmente instalar programas nuevas, actualizar el sistema y le permite ver a través de una comprobación periódica, en un icono en la barra del sistema, la cantidad de paquetes disponibles para actualizar el sistema.</span></p></body></html>"
 
-#~ msgid "Try:"
-#~ msgstr "Pruebe:"
+#~ msgid "<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the \"Left handed\"option below. You can also select default click behaviour.</p>"
+#~ msgstr "<p align=\"left\">Si está zurdo, quizá le gustaría intercambiar las funciones de las teclas izquierda y derecha del dispositivo de puntero. Lo puede hacer seleccionando la opción \"Zurdo\" abajo. También puede establecer el comportamiento por defecto del clic.</p>"
 
-#~ msgid "Configure your keyboard layout."
-#~ msgstr "Configure la distribución del teclado"
+#~ msgid "Lancelot (Experimental Menu)"
+#~ msgstr "Lancelot (Menú experimental)"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#5f2234;\">You can also customize your </span><span style=\" font-weight:600; color:#5f2234;\">KDE menu</span><span style=\" color:#5f2234;\"> as you like. Please choose one from the following styles.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#5f2234;\">Tambien puede personalizar su </span><span style=\" font-weight:600; color:#5f2234;\">menú de KDE</span><span style=\" color:#5f2234;\"> según sus preferencias. Por favor elija uno de los estilos siguientes.</span></p></body></html>"
+#~ msgid "Classic (Simple Menu)"
+#~ msgstr "Clásico (Menú sencillo)"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Menu Styles</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Estilos de Menu</span></p></body></html>"
+#~ msgid "Kick-off (Advanced Menu)"
+#~ msgstr "Kick-off (Menú avanzado)"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">The </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">clicking behavior</span><span style=\" font-size:10pt; color:#5f2234;\"> defines how many times you want to click when you are opening a file.</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#5f2234;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">If you are </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">left handed</span><span style=\" font-size:10pt; color:#5f2234;\">, you may prefer to swap the left and right buttons of your pointing device.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Con el </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">comportamiento de clic</span><span style=\" font-size:10pt; color:#5f2234;\"> se determina cuantos clics desea hacer para abrir un archivo.</span></p>\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#5f2234;\"></p>\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Si es </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">zurdo</span><span style=\" font-size:10pt; color:#5f2234;\">, le gustaría intercambiar las funciones de botón derecho con el botón izquierda de su ratón.</span></p></body></html>"
+#~ msgid "User Groups and Help Pages"
+#~ msgstr "Grupos de usuarios y páginas de ayuda"
 
-#~ msgid "mouse icon"
-#~ msgstr "Icono del ratón"
+#~ msgid "System Settings is a configuration tool for Pardus."
+#~ msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">To create a new connection click on </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Create Profile</span><span style=\" font-size:10pt; color:#5f2234;\"> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Para crear una nueva conexión presione </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Crear Perfil</span><span style=\" font-size:10pt; color:#5f2234;\"> y seleccione una interfaz de la lista. Si su conexión es inalambrica, indique el punto de acceso. Luego guarde su perfil, y marque la casilla para establecer la conexión configurada.</span></p></body></html>"
+#~ msgid "Start"
+#~ msgstr "Inicio"
 
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-size:10pt; color:#5f2234;\">To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-size:10pt; color:#5f2234;\">Use Administrador de Paquetes para instalar y remover programas en Pardus. El administrador de Paquetes también puede instalar automaticamente las últimas actualizaciones. Puede especificar el intervalo de verificación por actualizaciones nuevas.</span></p></body></html>"
-
-#~ msgid "picture label"
-#~ msgstr "Rótulo de la imagen"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Strigi Desktop Search indexes your frequently used files. This gives you very fast search results. Strigi also can search for files based on their contents.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Strigi Desktop Search indexa sus archivos que utiliza frecuentemente. De esta manera obtiene resultados rápidos de búsqueda. Strigi buede también buscar archivos por su contenido.</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-size:10pt; color:#5f2234;\"> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-size:10pt; color:#5f2234;\"> es una herramienta que toma la información de la tabla siguiente y nos lo envia, permitiendonos mejorar Pardus según las estadísticas de perfiles de los equipos utilizados.</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Elija su tema y tipo de escritorio favorito. Personalice Pardus con estilos coloreados y temas.</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Desktop Type</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Tipo de Escritorio</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Number of Desktops</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Cantidad de Escritorios</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">You have finished all steps successfully. Here's a summary of the settings you want to apply. Click </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Apply Settings</span><span style=\" font-size:10pt; color:#5f2234;\"> to save them now. You are now ready to enjoy Pardus!</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Ha finalizado exitosamente todos los pasos. Aqui un resumen de la configuración que está a punto de aplicar. Presione </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Aplicar Configuración</span><span style=\" font-size:10pt; color:#5f2234;\"> para guardarlos ahora. Ahora está listo para disfrutar Pardus!</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Choose your favorite wallpaper for Pardus. Don't forget to check out </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Desktop Settings</span><span style=\" font-size:10pt; color:#5f2234;\"> for downloading new and cool wallpapers.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Elija su fonde de escritorio favorito para Pardus. Puede también entrar en </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Configuración de Escritorio</span><span style=\" font-size:10pt; color:#5f2234;\"> para descargar nuevos y hermosos fondes adicionales.</span></p></body></html>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:20pt; font-weight:600; color:#5f2234;\">Welcome to Pardus 2009.1 </span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-align:super;\">beta</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:20pt; font-weight:600; color:#5f2234;\">Bienvenido a Pardus 2009.1 </span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-align:super;\">beta</span></p></body></html>"
+#~ msgid "Goodbye"
+#~ msgstr "Adiós"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -659,246 +731,270 @@ msgstr ""
 #~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#5f2234;\"></p>\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Por favor presione </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Siguiente</span><span style=\" font-size:10pt; color:#5f2234;\"> para empezar.</span></p></body></html>"
 
-#~ msgid "Goodbye"
-#~ msgstr "Adiós"
-
-#~ msgid "Start"
-#~ msgstr "Inicio"
-
-#~ msgid "System Settings is a configuration tool for Pardus."
-#~ msgstr "Configuración del Sistema es una herramienta de configuración de Pardus."
-
-#~ msgid "User Groups and Help Pages"
-#~ msgstr "Grupos de usuarios y páginas de ayuda"
-
-#~ msgid "Kick-off (Advanced Menu)"
-#~ msgstr "Kick-off (Menú avanzado)"
-
-#~ msgid "Classic (Simple Menu)"
-#~ msgstr "Clásico (Menú sencillo)"
-
-#~ msgid "Lancelot (Experimental Menu)"
-#~ msgstr "Lancelot (Menú experimental)"
-
-#~ msgid "<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the \"Left handed\"option below. You can also select default click behaviour.</p>"
-#~ msgstr "<p align=\"left\">Si está zurdo, quizá le gustaría intercambiar las funciones de las teclas izquierda y derecha del dispositivo de puntero. Lo puede hacer seleccionando la opción \"Zurdo\" abajo. También puede establecer el comportamiento por defecto del clic.</p>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:20pt; font-weight:600; color:#5f2234;\">Welcome to Pardus 2009.1 </span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-align:super;\">beta</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:20pt; font-weight:600; color:#5f2234;\">Bienvenido a Pardus 2009.1 </span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-align:super;\">beta</span></p></body></html>"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Package-manager is the graphical front-end of PiSi. You can easily install new programs and upgrade your system and also can see new upgrades of the programs periodically from the system tray with package manager.</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Choose your favorite wallpaper for Pardus. Don't forget to check out </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Desktop Settings</span><span style=\" font-size:10pt; color:#5f2234;\"> for downloading new and cool wallpapers.</span></p></body></html>"
 #~ msgstr ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 #~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">El Administrador de Paquetes es la interfaz gráfica del administrador de paquetes PiSi. Puede fácilmente instalar programas nuevas, actualizar el sistema y le permite ver a través de una comprobación periódica, en un icono en la barra del sistema, la cantidad de paquetes disponibles para actualizar el sistema.</span></p></body></html>"
-
-#~ msgid "Repo"
-#~ msgstr "Repositorio"
-
-#~ msgid "Goodbye from Kaptan Wizard :)"
-#~ msgstr "Kaptan Wizard se despide :)"
-
-#~ msgid "Default menu of Pardus GNU/Linux."
-#~ msgstr "Menú por defecto de Pardus GNU/Linux."
-
-#~ msgid "An old style menu from KDE 3."
-#~ msgstr "Menú al estilo clásico de KDE 3."
-
-#~ msgid "An advanced menu for KDE4."
-#~ msgstr "Menú avanzado para KDE4."
-
-#~ msgid "Strigi desktop search allows searching for files by content instead of just by name."
-#~ msgstr "Strigi desktop search permite una búsqueda de archivos por su contenido en vez de simplemente por el nombre de archivo."
-
-#~ msgid "Enable Strigi Desktop File Indexer"
-#~ msgstr "Habilitar motor de búsqueda Strigi Desktop"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Elija su fonde de escritorio favorito para Pardus. Puede también entrar en </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Configuración de Escritorio</span><span style=\" font-size:10pt; color:#5f2234;\"> para descargar nuevos y hermosos fondes adicionales.</span></p></body></html>"
 
 #~ msgid ""
-#~ "This application, called Kaptan Desktop, will help you with your basic but sufficient setup for your Pardus desktop in a quick manner. Please click Next to personalize your desktop. \n"
-#~ "\n"
-#~ "Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">You have finished all steps successfully. Here's a summary of the settings you want to apply. Click </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Apply Settings</span><span style=\" font-size:10pt; color:#5f2234;\"> to save them now. You are now ready to enjoy Pardus!</span></p></body></html>"
 #~ msgstr ""
-#~ "El presente programa, llamado Kaptan Desktop, le ayudará realizar una configuración básica pero funcional para su escritorio Pardus de manera sencilla. Por favor presione siguiente para personalizar su escritorio. \n"
-#~ "\n"
-#~ "Pardus es una distribución GNU/Linux, que cubre las necesidades de un escritorio básico para un usuario de PC; Le ayuda conectar a internet, leer e-mails, trabajar con documentos de oficina y más!"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Ha finalizado exitosamente todos los pasos. Aqui un resumen de la configuración que está a punto de aplicar. Presione </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Aplicar Configuración</span><span style=\" font-size:10pt; color:#5f2234;\"> para guardarlos ahora. Ahora está listo para disfrutar Pardus!</span></p></body></html>"
 
-#~ msgid "Error"
-#~ msgstr "Error"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Number of Desktops</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Cantidad de Escritorios</span></p></body></html>"
 
-#~ msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-#~ msgstr "No posible reiniciar plasma-desktop. Kaptan terminará ahora."
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Desktop Type</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Tipo de Escritorio</span></p></body></html>"
 
-#~ msgid "Send my profile: <b>%s</b>"
-#~ msgstr "Enviar mi perfil: <b>%s</b>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Elija su tema y tipo de escritorio favorito. Personalice Pardus con estilos coloreados y temas.</span></p></body></html>"
 
-#~ msgid "Smolt Settings"
-#~ msgstr "Configuración de Smolt"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-size:10pt; color:#5f2234;\"> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-size:10pt; color:#5f2234;\"> es una herramienta que toma la información de la tabla siguiente y nos lo envia, permitiendonos mejorar Pardus según las estadísticas de perfiles de los equipos utilizados.</span></p></body></html>"
 
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Busqueda de Escritorio: <b>%s</b>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Strigi Desktop Search indexes your frequently used files. This gives you very fast search results. Strigi also can search for files based on their contents.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Strigi Desktop Search indexa sus archivos que utiliza frecuentemente. De esta manera obtiene resultados rápidos de búsqueda. Strigi buede también buscar archivos por su contenido.</span></p></body></html>"
 
-#~ msgid "Selected Style: <b>%s</b>"
-#~ msgstr "Estilo seleccionado: <b>%s</b>"
+#~ msgid "picture label"
+#~ msgstr "Rótulo de la imagen"
 
-#~ msgid "You haven't selected any style."
-#~ msgstr "Usted no eligió ningún estilo."
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-size:10pt; color:#5f2234;\">To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-size:10pt; color:#5f2234;\">Use Administrador de Paquetes para instalar y remover programas en Pardus. El administrador de Paquetes también puede instalar automaticamente las últimas actualizaciones. Puede especificar el intervalo de verificación por actualizaciones nuevas.</span></p></body></html>"
 
-#~ msgid "Style Settings"
-#~ msgstr "Configuración del Estilo"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">To create a new connection click on </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Create Profile</span><span style=\" font-size:10pt; color:#5f2234;\"> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Para crear una nueva conexión presione </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Crear Perfil</span><span style=\" font-size:10pt; color:#5f2234;\"> y seleccione una interfaz de la lista. Si su conexión es inalambrica, indique el punto de acceso. Luego guarde su perfil, y marque la casilla para establecer la conexión configurada.</span></p></body></html>"
 
-#~ msgid "Selected Wallpaper: <b>%s</b>"
-#~ msgstr "Imagen de fondo seleccionado: <b>%s</b>"
+#~ msgid "mouse icon"
+#~ msgstr "Icono del ratón"
 
-#~ msgid "You haven't selected any wallpaper."
-#~ msgstr "Usted no eligió ningún imagen de fondo"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">The </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">clicking behavior</span><span style=\" font-size:10pt; color:#5f2234;\"> defines how many times you want to click when you are opening a file.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#5f2234;\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">If you are </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">left handed</span><span style=\" font-size:10pt; color:#5f2234;\">, you may prefer to swap the left and right buttons of your pointing device.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Con el </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">comportamiento de clic</span><span style=\" font-size:10pt; color:#5f2234;\"> se determina cuantos clics desea hacer para abrir un archivo.</span></p>\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt; color:#5f2234;\"></p>\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; color:#5f2234;\">Si es </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">zurdo</span><span style=\" font-size:10pt; color:#5f2234;\">, le gustaría intercambiar las funciones de botón derecho con el botón izquierda de su ratón.</span></p></body></html>"
 
-#~ msgid "Wallpaper Settings"
-#~ msgstr "Configuración de Imagen de Fondo"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Menu Styles</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Estilos de Menu</span></p></body></html>"
 
-#~ msgid "Selected Menu: <b>%s</b>"
-#~ msgstr "Menú seleccionado: <b>%s</b>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#5f2234;\">You can also customize your </span><span style=\" font-weight:600; color:#5f2234;\">KDE menu</span><span style=\" color:#5f2234;\"> as you like. Please choose one from the following styles.</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#5f2234;\">Tambien puede personalizar su </span><span style=\" font-weight:600; color:#5f2234;\">menú de KDE</span><span style=\" color:#5f2234;\"> según sus preferencias. Por favor elija uno de los estilos siguientes.</span></p></body></html>"
 
-#~ msgid "Menu Settings"
-#~ msgstr "Configuración del Menú"
+#~ msgid "Configure your keyboard layout."
+#~ msgstr "Configure la distribución del teclado"
 
-#~ msgid "Selected clicking behaviour: <b>%s</b>"
-#~ msgstr "Comportamiento de clic seleccionado: <b>%s</b>"
+#~ msgid "Try:"
+#~ msgstr "Pruebe:"
 
-#~ msgid "Selected Mouse configuration: <b>%s</b>"
-#~ msgstr "Configuración de ratón seleccionado: <b>%s</b>"
+#~ msgid ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Your settings have been applied.</span><span style=\" font-size:10pt; color:#5f2234;\"> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">join our community!</span></p></body></html>"
+#~ msgstr ""
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Las configuraciones están aplicadas.</span><span style=\" font-size:10pt; color:#5f2234;\"> Ahora puede empezar y disfrutar usando Pardus o puede ingresar a los siguientes enlaces y programas para más configuraciones o ayuda y soporte. No se olvide de </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;\">unirse a nuestra comunidad !</span></p></body></html>"
 
-#~ msgid "Mouse Settings"
-#~ msgstr "Configuración del ratón"
+#~ msgid "Menu Styles"
+#~ msgstr "Estilos de Menú"
 
-#~ msgid "Save Your Settings"
-#~ msgstr "Guardar Configuración"
+#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
+#~ msgstr "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
-#~ msgid "Customize Your Desktop"
-#~ msgstr "Personalice su Escritorio"
+#~ msgid "Insert some catchy title about wallpapers.."
+#~ msgstr "Elija su Fondo de Escritorio"
 
-#~ msgid "No"
-#~ msgstr "No"
+#~ msgid "Smolt Description"
+#~ msgstr "Descripción Smolt"
 
-#~ msgid "Yes"
-#~ msgstr "Si"
+#~ msgid "Some catchy description desktop search"
+#~ msgstr "El motor de busqueda le facilitará ubicar a sus archivos y datos"
 
-#~ msgid "SELinux Enforce"
-#~ msgstr "Forzar SELinux"
+#~ msgid "Some catchy title about desktop search"
+#~ msgstr "Busqueda de Escritorio"
 
-#~ msgid "SELinux Policy"
-#~ msgstr "Política SELinux"
+#~ msgid "Configure package manager settings"
+#~ msgstr "Configuración del administrador de paquetes"
 
-#~ msgid "SELinux Enabled"
-#~ msgstr "SELinux habilitado"
+#~ msgid "Package Manager"
+#~ msgstr "Administrador de Paquetes"
 
-#~ msgid "Kernel"
-#~ msgstr "Núcleo (kernel)"
+#~ msgid "Network Manager"
+#~ msgstr "Administrador de Red"
 
-#~ msgid "Form Factor"
-#~ msgstr "Factor de molde"
+#~ msgid "Configure your mouse"
+#~ msgstr "Configure su ratón"
 
-#~ msgid "System"
-#~ msgstr "Sistema"
+#~ msgid "Some catchy description about styles"
+#~ msgstr "Configure el aspecto de su escritorio"
 
-#~ msgid "Vendor"
-#~ msgstr "Fabricante"
+#~ msgid "Some catchy title about styles"
+#~ msgstr "Estilo de Escritorio"
 
-#~ msgid "System Swap"
-#~ msgstr "Espacio de paginación (swap) del Sistema"
+#~ msgid "Select your keyboard layout"
+#~ msgstr "Seleccione su distribución de teclado"
 
-#~ msgid "System Memory"
-#~ msgstr "Memoria del sistema"
+#~ msgid "Insert some catchy title about keyboards.."
+#~ msgstr "Elija el teclado de su sistema"
 
-#~ msgid "CPU Speed"
-#~ msgstr "Velocidad de la CPU"
+#~ msgid "Welcome to Kaptan 2009.2"
+#~ msgstr "Bienvenido al Asistente Kaptan"
 
-#~ msgid "Number of CPUs"
-#~ msgstr "Cantidad de CPUs"
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Un asistente que le ayuda transferir archivos y configuraciones de sistemas operativos existentes (p.ej. Windows) a Pardus."
 
-#~ msgid "CPU Model Num"
-#~ msgstr "Modelo del procesador"
+#~ msgid "Migration Wizard"
+#~ msgstr "Asistente de Migración"
 
-#~ msgid "CPU Family"
-#~ msgstr "Familia de procesador"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Administrador de Red (Presione Aplicar para guardar su configuración)"
 
-#~ msgid "CPU Model"
-#~ msgstr "Modelo CPU"
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Para crear una conexión nueva presione <b>Crear Perfil</b> y seleccione su adaptador de la lista. Si su conexión es inalambrica indique el punto de acceso. Luego de guardar el perfil marque la casilla para activar la conexión."
 
-#~ msgid "CPU Vendor"
-#~ msgstr "Fabricante de CPU"
+#~ msgid "Network"
+#~ msgstr "Red"
 
-#~ msgid "Platform"
-#~ msgstr "Plataforma"
+#~ msgid "Repositories"
+#~ msgstr "Repositorios"
 
-#~ msgid "Language"
-#~ msgstr "Idioma"
+#~ msgid "Add contrib repository"
+#~ msgstr "Agregar repositorio contrib"
 
-#~ msgid "Default Run Level"
-#~ msgstr "Nivel de ejecución por omisión"
-
-#~ msgid "OS"
-#~ msgstr "SO"
-
-#~ msgid "&Back"
-#~ msgstr "&Atrás"
-
-#~ msgid "Label"
-#~ msgstr "Etiqueta"
-
-#~ msgid "Help Pardus Improve!"
-#~ msgstr "Ayude a mejorar a Pardus!"
-
-#~ msgid "Off"
-#~ msgstr "Deshabilitar"
-
-#~ msgid "On"
-#~ msgstr "Habilitar"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Busqueda Fácil de Escritorio"
-
-#~ msgid "Install / Remove Programs"
-#~ msgstr "Instalar / remover programas"
-
-#~ msgid "Connect to the Internet"
-#~ msgstr "Conectar a Internet"
-
-#~ msgid "Single Click "
-#~ msgstr "Clic único"
-
-#~ msgid "Double Click"
-#~ msgstr "Clic doble"
-
-#~ msgid "Right Handed"
-#~ msgstr "Diestro"
-
-#~ msgid "Left Handed"
-#~ msgstr "Zurdo"
-
-#~ msgid "Setup Mouse Behavior"
-#~ msgstr "Comportamiento de Ratón"
-
-#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Lancelot es un menú avanzado con muchas opciones de personalización en Pardus.<br><br>Los accesos a los programas están bien organizados y son fáciles de ubicar."
-
-#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-#~ msgstr "El menú Simple (sencillo) es el estilo del menú antiguo de KDE 3.<br><br>Es un menú muy liviano, y por lo tanto recomendable para los PCs más lentos."
-
-#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Está predeterminado el estilo Kick-off para el menú de inicio de Pardus.<br><br>Los accesos a los programas están bien organizados y son fáciles de ubicar."
-
-#~ msgid "Choose a Menu Style"
-#~ msgstr "Elegir un estilo de Menú"
-
-#~ msgid "Keyboard Layout Language"
-#~ msgstr "Idioma de distribución de teclado"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Felicidades !"
-
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Bienvenido a Pardus 2009.2"
+# favor verificar..
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Repositorio Contrib contiene programas adicionales."

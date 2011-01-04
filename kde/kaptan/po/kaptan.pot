@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:09+0200\n"
+"POT-Creation-Date: 2011-01-04 13:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -45,7 +45,127 @@ msgstr ""
 msgid "Apply Settings"
 msgstr ""
 
-#: .tmp/ui_scrStyle.py:236
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
+msgid "Smolt"
+msgstr ""
+
+#: .tmp/scrSmolt.py:32
+msgid "Help Pardus Improve!"
+msgstr ""
+
+#: .tmp/scrSmolt.py:68
+msgid "Label"
+msgstr ""
+
+#: .tmp/scrSmolt.py:69
+msgid "Data"
+msgstr ""
+
+#: .tmp/scrSmolt.py:108
+msgid "&Host Information"
+msgstr ""
+
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
+msgid "&Privacy policy"
+msgstr ""
+
+#: .tmp/scrSmolt.py:114
+msgid "UUID"
+msgstr ""
+
+#: .tmp/scrSmolt.py:115
+msgid "OS"
+msgstr ""
+
+#: .tmp/scrSmolt.py:116
+msgid "Default Run Level"
+msgstr ""
+
+#: .tmp/scrSmolt.py:117
+msgid "Language"
+msgstr ""
+
+#: .tmp/scrSmolt.py:118
+msgid "Platform"
+msgstr ""
+
+#: .tmp/scrSmolt.py:119
+msgid "BogoMIPS"
+msgstr ""
+
+#: .tmp/scrSmolt.py:120
+msgid "CPU Vendor"
+msgstr ""
+
+#: .tmp/scrSmolt.py:121
+msgid "CPU Model"
+msgstr ""
+
+#: .tmp/scrSmolt.py:122
+msgid "CPU Stepping"
+msgstr ""
+
+#: .tmp/scrSmolt.py:123
+msgid "CPU Family"
+msgstr ""
+
+#: .tmp/scrSmolt.py:124
+msgid "CPU Model Num"
+msgstr ""
+
+#: .tmp/scrSmolt.py:125
+msgid "Number of CPUs"
+msgstr ""
+
+#: .tmp/scrSmolt.py:126
+msgid "CPU Speed"
+msgstr ""
+
+#: .tmp/scrSmolt.py:127
+msgid "System Memory"
+msgstr ""
+
+#: .tmp/scrSmolt.py:128
+msgid "System Swap"
+msgstr ""
+
+#: .tmp/scrSmolt.py:129
+msgid "Vendor"
+msgstr ""
+
+#: .tmp/scrSmolt.py:130
+msgid "System"
+msgstr ""
+
+#: .tmp/scrSmolt.py:131
+msgid "Form Factor"
+msgstr ""
+
+#: .tmp/scrSmolt.py:132
+msgid "Kernel"
+msgstr ""
+
+#: .tmp/scrSmolt.py:133
+msgid "SELinux Enabled"
+msgstr ""
+
+#: .tmp/scrSmolt.py:134
+msgid "SELinux Policy"
+msgstr ""
+
+#: .tmp/scrSmolt.py:135
+msgid "SELinux Enforce"
+msgstr ""
+
+#: .tmp/scrSmolt.py:148
+msgid "Yes"
+msgstr ""
+
+#: .tmp/scrSmolt.py:150
+msgid "No"
+msgstr ""
+
+#: .tmp/ui_scrStyle.py:236 .tmp/scrStyle.py:37
 msgid "Themes"
 msgstr ""
 
@@ -87,7 +207,15 @@ msgstr ""
 msgid "Number of Desktops"
 msgstr ""
 
-#: .tmp/ui_scrSummary.py:85
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr ""
+
+#: .tmp/scrPackage.py:29
+msgid "Install / Remove Programs"
+msgstr ""
+
+#: .tmp/ui_scrSummary.py:85 .tmp/scrSummary.py:35
 msgid "Summary"
 msgstr ""
 
@@ -100,6 +228,30 @@ msgstr ""
 
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
+msgstr ""
+
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr ""
+
+#: .tmp/scrMouse.py:30
+msgid "Setup Mouse Behavior"
+msgstr ""
+
+#: .tmp/scrMouse.py:140
+msgid "Left Handed"
+msgstr ""
+
+#: .tmp/scrMouse.py:140
+msgid "Right Handed"
+msgstr ""
+
+#: .tmp/scrMouse.py:141
+msgid "Single Click "
+msgstr ""
+
+#: .tmp/scrMouse.py:141
+msgid "Double Click"
 msgstr ""
 
 #: .tmp/ui_scrAvatar.py:247 .tmp/ui_wallpaperItem.py:72
@@ -130,8 +282,50 @@ msgstr ""
 msgid "Recapture"
 msgstr ""
 
-#: .tmp/ui_scrSmolt.py:154
-msgid "Smolt"
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr ""
+
+#: .tmp/scrMenu.py:27
+msgid "Choose a Menu Style"
+msgstr ""
+
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr ""
+
+#: .tmp/scrMenu.py:43
+msgid ""
+"Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
+"are easy to access and well organized."
+msgstr ""
+
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr ""
+
+#: .tmp/scrMenu.py:49
+msgid ""
+"Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
+"menu thus it is recommended for slower PC's."
+msgstr ""
+
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr ""
+
+#: .tmp/scrMenu.py:55
+msgid ""
+"Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
+"program shortcuts are easy to access and well organized."
+msgstr ""
+
+#: .tmp/scrAvatar.py:36
+msgid "User Picture"
+msgstr ""
+
+#: .tmp/scrAvatar.py:48
+msgid "Create your user picture"
 msgstr ""
 
 #: .tmp/ui_scrSmolt.py:155
@@ -147,10 +341,6 @@ msgstr ""
 
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
-msgstr ""
-
-#: .tmp/ui_scrSmolt.py:158
-msgid "&Privacy policy"
 msgstr ""
 
 #: .tmp/ui_scrSmolt.py:159
@@ -209,7 +399,77 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_scrWelcome.py:77
+#: .tmp/scrSummary.py:36
+msgid "Save Your Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:59
+msgid "Mouse Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:61
+#, python-format
+msgid "Selected Mouse configuration: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:62
+#, python-format
+msgid "Selected clicking behaviour: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:66
+msgid "Menu Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:67
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:71
+msgid "Wallpaper Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:73
+msgid "You haven't selected any wallpaper."
+msgstr ""
+
+#: .tmp/scrSummary.py:75
+#, python-format
+msgid "Selected Wallpaper: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:79
+msgid "Style Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:82
+msgid "You haven't selected any style."
+msgstr ""
+
+#: .tmp/scrSummary.py:84
+#, python-format
+msgid "Selected Style: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:91
+msgid "Smolt Settings"
+msgstr ""
+
+#: .tmp/scrSummary.py:92
+#, python-format
+msgid "Send my profile: <b>%s</b>"
+msgstr ""
+
+#: .tmp/scrSummary.py:117
+msgid "Error"
+msgstr ""
+
+#: .tmp/scrSummary.py:117
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr ""
+
+#: .tmp/ui_scrWelcome.py:77 .tmp/scrWelcome.py:27
 msgid "Welcome"
 msgstr ""
 
@@ -225,10 +485,6 @@ msgid ""
 "applications, play games and much more! <br /><br /><b>Kaptan</b> will help "
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
-msgstr ""
-
-#: .tmp/ui_scrPackage.py:132
-msgid "Packages"
 msgstr ""
 
 #: .tmp/ui_scrPackage.py:133
@@ -254,26 +510,10 @@ msgstr ""
 msgid "Updates"
 msgstr ""
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr ""
-
 #: .tmp/ui_scrMenu.py:124
 msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
-msgstr ""
-
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr ""
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr ""
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
 msgstr ""
 
 #: .tmp/ui_scrMenu.py:128
@@ -286,6 +526,14 @@ msgstr ""
 
 #: .tmp/ui_scrStyleItem.py:71
 msgid "styleDesc"
+msgstr ""
+
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr ""
+
+#: .tmp/scrGoodbye.py:25
+msgid "Congratulations!"
 msgstr ""
 
 #: .tmp/ui_scrSearch.py:100
@@ -307,8 +555,17 @@ msgstr ""
 msgid "Search Options"
 msgstr ""
 
-#: .tmp/ui_scrGoodbye.py:325
-msgid "More"
+#: .tmp/scrWelcome.py:28
+#, python-format
+msgid "Welcome to %s"
+msgstr ""
+
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr ""
+
+#: .tmp/scrWallpaper.py:35
+msgid "Choose a Wallpaper"
 msgstr ""
 
 #: .tmp/ui_scrGoodbye.py:326
@@ -340,10 +597,6 @@ msgstr ""
 msgid ""
 "Pardus community, mailing lists, chat rooms, Wiki documents, help and "
 "support pages..."
-msgstr ""
-
-#: .tmp/ui_scrMouse.py:202
-msgid "Mouse"
 msgstr ""
 
 #: .tmp/ui_scrMouse.py:203
@@ -381,8 +634,16 @@ msgstr ""
 msgid "Reverse scrolling"
 msgstr ""
 
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
+#: .tmp/scrStyle.py:38
+msgid "Customize Your Desktop"
+msgstr ""
+
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr ""
+
+#: .tmp/scrKeyboard.py:32
+msgid "Keyboard Layout Language"
 msgstr ""
 
 #: .tmp/ui_scrWallpaper.py:132
@@ -401,10 +662,6 @@ msgstr ""
 
 #: .tmp/ui_scrWallpaper.py:136
 msgid "Don't change wallpaper"
-msgstr ""
-
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
 msgstr ""
 
 #: .tmp/ui_scrKeyboard.py:94
