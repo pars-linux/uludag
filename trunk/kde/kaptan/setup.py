@@ -15,6 +15,7 @@ import os
 import glob
 import shutil
 import sys
+import fnmatch
 
 from distutils.core import setup
 from distutils.cmd import Command
@@ -25,7 +26,7 @@ import about
 
 def update_messages():
     # Create empty directory
-    os.system("rm -rf .tmp")
+    shutil.rmtree(".tmp")
     os.makedirs(".tmp")
 
     # Collect UI files
@@ -33,8 +34,13 @@ def update_messages():
         os.system("pykde4uic -o .tmp/%s.py ui/%s" % (filename.split(".")[0], filename))
 
     # Collect Python files
-    for filename in glob.glob1("src/kaptan", "*.py"):
-        shutil.copy("src/kaptan/%s" % filename, ".tmp")
+    directories = [ "src/kaptan",
+                    "src/kaptan/screens",
+                    "src/kaptan/tools"]
+
+    for d in directories:
+        for filename in glob.glob1(d, "*.py"):
+            shutil.copy("%s/%s" % (d, filename), ".tmp")
 
     # Collect desktop files
     os.system("cp -R data/*.desktop.in .tmp/")
@@ -57,8 +63,9 @@ def update_messages():
         if item.endswith(".po"):
             os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
             os.system("cp .tmp/temp.po po/%s" % item)
+
     # Remove temporary directory
-    #os.system("rm -rf .tmp")
+    shutil.rmtree(".tmp")
 
 def makeDirs(dir):
     try:
