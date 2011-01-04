@@ -355,88 +355,81 @@ msgstr "Мастер приветствия"
 
 #: .tmp/ui_wallpaperItem.py:73
 msgid "wallPaperName"
-msgstr "Achtergrondnaam"
+msgstr "Имя рабочего стола"
 
 #: .tmp/ui_wallpaperItem.py:74
 msgid "wallpaperDesc"
-msgstr "Achtergrondbeschrijving"
+msgstr "Описание рабочего стола"
 
 #: .tmp/scrSummary.py:36
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Параметры системы"
+msgstr "Сохранить установки"
 
 #: .tmp/scrSummary.py:59
-#, fuzzy
 msgid "Mouse Settings"
-msgstr "Параметры системы"
+msgstr "Установки мышки"
 
 #: .tmp/scrSummary.py:61
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
-msgstr ""
+msgstr "Выбранная конфигурация для мышки: <b>%s</b>"
 
 #: .tmp/scrSummary.py:62
 #, python-format
 msgid "Selected clicking behaviour: <b>%s</b>"
-msgstr ""
+msgstr "Выбранное поведение кнопок мышки: <b>%s</b>"
 
 #: .tmp/scrSummary.py:66
-#, fuzzy
 msgid "Menu Settings"
-msgstr "Параметры системы"
+msgstr "Установки Меню"
 
 #: .tmp/scrSummary.py:67
 #, python-format
 msgid "Selected Menu: <b>%s</b>"
-msgstr ""
+msgstr "Выбранное Меню: <b>%s</b>"
 
 #: .tmp/scrSummary.py:71
-#, fuzzy
 msgid "Wallpaper Settings"
-msgstr "Обои рабочего стола"
+msgstr "Установки обоев рабочего стола"
 
 #: .tmp/scrSummary.py:73
-#, fuzzy
 msgid "You haven't selected any wallpaper."
-msgstr "Не менять обои рабочего стола"
+msgstr "Вы не  выбрали обоев для рабочего стола"
 
 #: .tmp/scrSummary.py:75
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr ""
+msgstr "Выбранные обои для рабочего стола: <b>%s</b>"
 
 #: .tmp/scrSummary.py:79
-#, fuzzy
 msgid "Style Settings"
-msgstr "Параметры системы"
+msgstr "Установки Стиля"
 
 #: .tmp/scrSummary.py:82
 msgid "You haven't selected any style."
-msgstr ""
+msgstr "Вы не выбрали никакой стиль."
 
 #: .tmp/scrSummary.py:84
 #, python-format
 msgid "Selected Style: <b>%s</b>"
-msgstr ""
+msgstr "Выбранный Стиль: <b>%s</b>"
 
 #: .tmp/scrSummary.py:91
-#, fuzzy
 msgid "Smolt Settings"
-msgstr "Параметры системы"
+msgstr "Параметры Smolt"
 
 #: .tmp/scrSummary.py:92
-#, fuzzy, python-format
+#, python-format
 msgid "Send my profile: <b>%s</b>"
-msgstr "&Отправить мой профиль"
+msgstr "Отправить мой профиль: <b>%s</b>"
 
 #: .tmp/scrSummary.py:117
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: .tmp/scrSummary.py:117
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-msgstr ""
+msgstr "Невозможно рестартовать plasma. Kaptan сейчас закончит свою работу."
 
 #: .tmp/ui_scrWelcome.py:77 .tmp/scrWelcome.py:27
 msgid "Welcome"
@@ -448,7 +441,7 @@ msgstr "Что такое Pardus?"
 
 #: .tmp/ui_scrWelcome.py:79
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr "<b>Pardus</b> is een betrouwbaar, veilig, snel en gebruikersvriendelijk besturingssysteem.<br /><br />Met Pardus kunt u verbinding met het internet maken, uw emails lezen, met office-documenten werken, films kijken, muziek afspelen, toepassingen maken, games spelen en nog veel meer! <br /><br /><b>Kaptan</b> zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van het Pardus systeem. Selecteer <b>Volgende</b> om te starten."
+msgstr "<b>Pardus</b> это надежная, быстрая, безопасная и дружелюбная операционная система.<br /><br />С Pardus вы можете подключиться к интернету, читать ваши сообщения по e-mail, работать с документами, смотреть видео, слушать музыку, разрабатывать приложения, играть в игры и многое другое!<br /><br /><b>Kaptan</b> поможет вам настроить рабочее пространство Pardus быстро и легко. Пожалуйста, нажмите <b>Дальше</b> для запуска."
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
