@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
 msgid "Kaptan"
@@ -485,7 +485,7 @@ msgstr "Дополнительно"
 
 #: .tmp/scrGoodbye.py:25
 msgid "Congratulations!"
-msgstr ""
+msgstr "Поздравляем!"
 
 #: .tmp/ui_scrSearch.py:100
 msgid "Search"
@@ -504,18 +504,17 @@ msgid "Search Options"
 msgstr "Параметры поиска"
 
 #: .tmp/scrWelcome.py:28
-#, fuzzy, python-format
+#, python-format
 msgid "Welcome to %s"
-msgstr "Добро пожаловать в Pardus"
+msgstr "Добро пожаловать в %s"
 
 #: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
 msgid "Wallpaper"
 msgstr "Обои"
 
 #: .tmp/scrWallpaper.py:35
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Выбрать обои из файла"
+msgstr "Выбрать обои рабочего стола"
 
 #: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
@@ -574,9 +573,8 @@ msgid "Reverse scrolling"
 msgstr "Обратная прокрутка"
 
 #: .tmp/scrStyle.py:38
-#, fuzzy
 msgid "Customize Your Desktop"
-msgstr "Число рабочих столов"
+msgstr "Настроить ваш рабочий стол"
 
 #: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
 msgid "Keyboard"
@@ -584,7 +582,7 @@ msgstr "Клавиатура"
 
 #: .tmp/scrKeyboard.py:32
 msgid "Keyboard Layout Language"
-msgstr ""
+msgstr "Язык расладки клавиатуры"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
