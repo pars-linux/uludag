@@ -142,12 +142,10 @@ class NetworkManagerSettings:
     def __init__(self):
 
         self.pardus_nm_settings = PardusNMSettings()
-        self.nm_settings = {}
-
         self.pardus_lan_settings = self.pardus_nm_settings.getLanSettings()
         self.pardus_wireless_settings = self.pardus_nm_settings.getWlanSettings()
 
-        self.config_filename = ''
+        self.nm_profiles = {}
         self.config = ConfigParser.ConfigParser()
 
         #self.getConnectionType(self.old_settings)
@@ -161,15 +159,15 @@ class NetworkManagerSettings:
     def generateConfigFilename(self, settings):
         ''' Generate the new profile name from the given settings '''
 
-        wired_profiles = pardus_nm_settings.getProfileNames('wired')
-        wireless_profiles = pardus_nm_settings.getProfileNames('wireless')
-        return wired_profiles[0]
+        wired_profile_names = pardus_nm_settings.getProfileNames('wired')
+        wireless_profile_names = pardus_nm_settings.getProfileNames('wireless')
+        return wired_profile_names[1]
 
 
-    def find_key(self, dic, val):
-        ''' Return the key of dictionary dic given the value '''
+    def find_key(self, dic, key):
+        ''' Return the value of dictionary dic given the key, to get the settings of the given profile name '''
 
-        return [k for k, v in dic.iteritems() if v == val][0]
+        return [v for k, v in dic.iteritems() if k == key][0]
 
     def generateUUID(self):
         ''' Generate random type UUID '''
@@ -202,13 +200,44 @@ class NetworkManagerSettings:
                             return words[i+1]
 
     def createTimeStamp(self):
+        ''' NM says: " Timestamp (in seconds since the Unix Epoch) that the connection was last successfully activated. Settings services should update the connection timestamp periodically when the connection is active to ensure that an active connection has the latest timestamp"
+        '''
         pass
 
-    def createAutomaticLanSettings(self, pardus_nm_settings):
+
+    def generateProfiles(self):
+        ''' Decide what kind of profile types should be created and call regarding method '''
+
+        for profile, options in self.pardus_lan_settings.items():
+            for key, value in options.items():
+                if key == "net_mode":
+                    if value == "auto":
+                        self.createAutomaticLanSettings(options)
+
+    def createAutomaticLanSettings(self, settings):
         ''' Create LAN settings, all addresses obtained from DHCP (IP, DNS etc.)'''
 
-        lan_settings = pardus_nm_settings.getLanSettings()
+        cfg = ConfigParser.ConfigParser()
+        cfg.add_section('connection')
+        cfg.add_section('ipv4')
+        cfg.add_section('802-3-ethernet')
+        cfg.add_section('ipv6')
 
+        profile_name = settings['profile_name']
+        cfg.set('connection', 'id', profile_name)
+        cfg.set('connection', 'uuid', self.generateUUID())
+        cfg.set('connection', 'type', '802-3-ethernet')
+        cfg.set('connection', 'autoconnect', 'false')
+
+        cfg.set('ipv4', 'method', 'auto')
+
+        cfg.set('802-3-ethernet', 'duplex', 'full')
+        iface = settings['device']
+        cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
+
+        cfg.set('ipv6', 'method', 'ignore')
+
+        self.writeSettings(cfg, profile_name)
 
     def createOnlyAutomaticLanSettings(self, lan_settings):
         ''' Create LAN settings, obtain addresses from DHCP except DNS servers '''
@@ -220,21 +249,11 @@ class NetworkManagerSettings:
 
         pass
 
-    def writeSettings(self, settings):
+    def writeSettings(self, config, profile_name):
         ''' Create a config file and write the given settings '''
 
-        self.config_filename = self.generateConfigFilename(self.old_settings)
-        #if not os.path.exists(os.path.join(os.getcwd(), self.config_filename)):
-        #        cfgfile = open(os.path.join(os.getcwd(), self.config_filename), 'w')
-
-        self.config.add_section('connection')
-        self.config.add_section('ipv4')
-        self.config.add_section('ipv6')
-        self.config.add_section('802-3-ethernet')
-        self.config.set('connection', 'id', self.generateConfigFilename(settings))
-        self.config.set('connection', 'type', '802-3-ethernet')
-        with open(self.config_filename, 'wb') as configfile:
-            self.config.write(configfile)
+        with open(profile_name, 'wb') as configfile:
+            config.write(configfile)
 
 
 if __name__ == "__main__":
@@ -242,4 +261,4 @@ if __name__ == "__main__":
 
     old_settings = PardusNMSettings()
     old_settings.listProfiles()
-    print old_settings.getLanProfileSettings('lan')
+    print old_settings.getLanProfileSettings('Şirket')
