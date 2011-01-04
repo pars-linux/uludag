@@ -15,8 +15,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
 msgid "Kaptan"
@@ -96,7 +96,7 @@ msgstr "BogoMIPS"
 
 #: .tmp/scrSmolt.py:120
 msgid "CPU Vendor"
-msgstr "Вендор ЦП"
+msgstr "Производитель ЦПУ"
 
 #: .tmp/scrSmolt.py:121
 msgid "CPU Model"
@@ -104,7 +104,7 @@ msgstr "Модель ЦПУ"
 
 #: .tmp/scrSmolt.py:122
 msgid "CPU Stepping"
-msgstr "Шаг ЦПУ"
+msgstr "Частота ЦПУ"
 
 #: .tmp/scrSmolt.py:123
 msgid "CPU Family"
@@ -212,7 +212,7 @@ msgstr "Пакеты"
 
 #: .tmp/scrPackage.py:29
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Установить / Удалить Программы"
 
 #: .tmp/ui_scrSummary.py:85 .tmp/scrSummary.py:35
 msgid "Summary"
@@ -232,24 +232,23 @@ msgstr "Мышка"
 
 #: .tmp/scrMouse.py:30
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Настроить поведении мышки"
 
 #: .tmp/scrMouse.py:140
 msgid "Left Handed"
 msgstr "Левша"
 
 #: .tmp/scrMouse.py:140
-#, fuzzy
 msgid "Right Handed"
 msgstr "Правша"
 
 #: .tmp/scrMouse.py:141
 msgid "Single Click "
-msgstr ""
+msgstr "Одиночный клик"
 
 #: .tmp/scrMouse.py:141
 msgid "Double Click"
-msgstr ""
+msgstr "Двойной клик"
 
 #: .tmp/ui_scrAvatar.py:247 .tmp/ui_wallpaperItem.py:72
 #: .tmp/ui_scrStyleItem.py:69
@@ -281,17 +280,16 @@ msgid "Menu"
 msgstr "Меню"
 
 #: .tmp/scrMenu.py:27
-#, fuzzy
 msgid "Choose a Menu Style"
-msgstr "Выберите изображение"
+msgstr "Выберите стиль меню"
 
 #: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
 msgid "Kick-off Menu"
-msgstr "Меню Kickoff"
+msgstr "Меню Kick-off"
 
 #: .tmp/scrMenu.py:43
 msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-msgstr ""
+msgstr "Kick-off меню - это меню по умолчанию в Pardus.<br><br>Ссылки на программы легко доступны и хорошо организованы."
 
 #: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
 msgid "Simple Menu"
@@ -299,7 +297,7 @@ msgstr "Упрощенное меню"
 
 #: .tmp/scrMenu.py:49
 msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-msgstr ""
+msgstr "Упрощенное меню - это меню в стиле KDE 3.<br><br>Это легковесное меню рекомендуется для более старых компьютеров."
 
 #: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
 msgid "Lancelot Menu"
@@ -307,15 +305,15 @@ msgstr "Меню Lancelot"
 
 #: .tmp/scrMenu.py:55
 msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-msgstr ""
+msgstr "Lancelot это сложное меню с большим количеством настроек для Pardus<br><br>Ссылки на программы легко доступны и хорошо организованы."
 
 #: .tmp/scrAvatar.py:36
 msgid "User Picture"
-msgstr ""
+msgstr "Иконка пользователя"
 
 #: .tmp/scrAvatar.py:48
 msgid "Create Your User Picture"
-msgstr ""
+msgstr "Создать свою иконку пользователя"
 
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
