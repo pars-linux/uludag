@@ -216,20 +216,24 @@ class NetworkManagerSettings:
 
         for profile, options in self.pardus_lan_settings.items():
             for key, value in options.items():
-                if key == "net_mode":
-                    if value == "auto":
+                if options["net_mode"] == "auto":
+                    if options["name_mode"] == "custom":
+                        self.createOnlyAutomaticLanSettings(options)
+                    else:
                         self.createAutomaticLanSettings(options)
 
     def createAutomaticLanSettings(self, settings):
         ''' Create LAN settings, all addresses obtained from DHCP (IP, DNS etc.)'''
 
         cfg = ConfigParser.ConfigParser()
+        profile_name = settings['profile_name']
+        iface = settings['device']
+
         cfg.add_section('connection')
         cfg.add_section('ipv4')
         cfg.add_section('802-3-ethernet')
         cfg.add_section('ipv6')
 
-        profile_name = settings['profile_name']
         cfg.set('connection', 'id', profile_name)
         cfg.set('connection', 'uuid', self.generateUUID())
         cfg.set('connection', 'type', '802-3-ethernet')
@@ -238,17 +242,41 @@ class NetworkManagerSettings:
         cfg.set('ipv4', 'method', 'auto')
 
         cfg.set('802-3-ethernet', 'duplex', 'full')
-        iface = settings['device']
         cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
 
         cfg.set('ipv6', 'method', 'ignore')
 
         self.writeSettings(cfg, profile_name)
 
-    def createOnlyAutomaticLanSettings(self, lan_settings):
+    def createOnlyAutomaticLanSettings(self, settings):
         ''' Create LAN settings, obtain addresses from DHCP except DNS servers '''
 
-        pass
+        cfg = ConfigParser.ConfigParser()
+        profile_name = settings['profile_name']
+        iface = settings['device']
+        name_server = settings['name_server']
+
+        cfg.add_section('connection')
+        cfg.add_section('ipv4')
+        cfg.add_section('802-3-ethernet')
+        cfg.add_section('ipv6')
+
+        cfg.set('connection', 'id', profile_name)
+        cfg.set('connection', 'uuid', self.generateUUID())
+        cfg.set('connection', 'type', '802-3-ethernet')
+        cfg.set('connection', 'autoconnect', 'false')
+
+        cfg.set('ipv4', 'method', 'auto')
+        # For now on, pretend we have only one DNS server address in the old NM settings
+        cfg.set('ipv4', 'dns', name_server)
+        cfg.set('ipv4', 'ignoe-auto-dns', 'true')
+
+        cfg.set('802-3-ethernet', 'duplex', 'full')
+        cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
+
+        cfg.set('ipv6', 'method', 'ignore')
+
+        self.writeSettings(cfg, profile_name)
 
     def createManualLanSettings(self, lan_settings):
         ''' Create LAN settings, giving each address manually '''

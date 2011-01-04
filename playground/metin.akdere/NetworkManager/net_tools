@@ -29,3 +29,20 @@ device = pci:14e4_1698_eth0
 net_mode = manual
 net_address = 10.0.0.1
 
+[ofis-lan]
+name_server = 8.8.8.8
+state = up 192.168.3.55
+name_mode = custom
+device = pci:10ec_8168_eth0
+net_mode = auto
+
+[thin client]
+name_server = 8.8.8.8
+net_mask = 255.255.255.0
+net_gateway = 10.0.0.1
+state = up 10.0.0.1
+name_mode = custom
+device = pci:8086_10b9_eth1
+net_mode = manual
+net_address = 10.0.0.1
+
