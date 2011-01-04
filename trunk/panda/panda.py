@@ -54,12 +54,21 @@ class Panda():
                 device = open(os.path.join(dev_path, "device")).read().strip()
                 device_id = vendor[2:] + device[2:]
 
+                # We've found a Nvidia card, thus set it to nvidia-current
+                # That's a workaround for new Nvidia cards that are not written in driversDB
+                if vendor[2:] == "10de":
+                    self.driver_name = "nvidia-current"
+
                 for line in open(driversDB):
                     if line.startswith(device_id):
                         self.driver_name = line.split()[1]
+                        break
 
-                if not self.driver_name:
-                    self.driver_name = "Not defined"
+                # We've found a card, no need to search for another one
+                break 
+        else:
+            # We couldn't found any card that matches a card in driversDB
+            self.driver_name = "Not defined"
 
         return self.driver_name
 
