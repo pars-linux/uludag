@@ -59,7 +59,10 @@ class PardusNMSettings:
         for section in self.lan_config.sections():
             for option in self.lan_config.options(section):
                 try:
-                    self.lan_settings[section][option] = self.lan_config.get(section, option)
+                    if option == "device":
+                        self.lan_settings[section][option] = self.lan_config.get(section, option).split("_")[-1]
+                    else:
+                        self.lan_settings[section][option] = self.lan_config.get(section, option)
                 except:
                     self.lan_settings[section][option] = None
 
@@ -69,7 +72,10 @@ class PardusNMSettings:
         for section in self.wlan_config.sections():
             for option in self.wlan_config.options(section):
                 try:
-                    self.wireless_settings[section][option] = self.wlan_config.get(section, option)
+                    if option == "device":
+                        self.wireless_settings[section][option] = self.wlan_config.get(section, option).split("_")[-1]
+                    else:
+                        self.lan_settings[section][option] = self.lan_config.get(section, option)
                 except:
                     self.wireless_settings[section][option] = None
 
