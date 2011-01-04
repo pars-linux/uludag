@@ -1,4 +1,4 @@
-<PardusmanProject type="install" media="cd" compression="lzo">
+<PardusmanProject type="install" media="cd" compression="gzip">
     <Title>Pardus Corporate 2 Beta 2 x86_64</Title>
     <WorkDir>/tmp/iso/x86_64</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
