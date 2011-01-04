@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-04 13:01+0200\n"
+"POT-Creation-Date: 2011-01-04 14:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgid "User Picture"
 msgstr ""
 
 #: .tmp/scrAvatar.py:48
-msgid "Create your user picture"
+msgid "Create Your User Picture"
 msgstr ""
 
 #: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325

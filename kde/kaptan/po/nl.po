@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-04 13:01+0200\n"
+"POT-Creation-Date: 2011-01-04 14:16+0200\n"
 "PO-Revision-Date: 2010-12-03 14:00+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -31,7 +31,7 @@ msgid "User Picture"
 msgstr ""
 
 #: .tmp/scrAvatar.py:48
-msgid "Create your user picture"
+msgid "Create Your User Picture"
 msgstr ""
 
 #: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
@@ -609,161 +609,161 @@ msgstr "Achtergrondnaam"
 msgid "wallpaperDesc"
 msgstr "Achtergrondbeschrijving"
 
-#, fuzzy
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Welkom bij Pardus 2009.2"
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Contrib-bron bevat extra en handige pakketten."
 
-#~ msgid "Connect to the Internet"
-#~ msgstr "Verbinden met het internet"
+#~ msgid "Add contrib repository"
+#~ msgstr "Contrib-bron toevoegen"
 
-#~ msgid "color: #642437;"
-#~ msgstr "color: #642437;"
+#~ msgid "Repositories"
+#~ msgstr "Softwarebronnen"
 
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Desktop-zoekactie: <b>%s</b>"
+#~ msgid "Network"
+#~ msgstr "Netwerk"
 
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "color: rgb(95, 34, 52);"
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</b> en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na een zoeken de gewenste bron gevonden worden en stel eventueel de bijbehorende sleutel in. Na toepassen van het profiel kan door markeren van het keuzeveld de verbinding gemaakt worden."
 
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "color: rgb(234, 225, 228);"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Netwerkbeheerder (activeer Toepassen voor opslaan instellingen)"
 
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "color:rgb(95, 34, 52)"
+#~ msgid "Migration Wizard"
+#~ msgstr "Migratie-assistent"
 
-#~ msgid "&Back"
-#~ msgstr "&Terug"
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Een assistent voor het overzetten van bestanden en instellingen van het huidige besturingsysteem (bijv. Windows) naar Pardus."
 
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Gemakkelijke desktop-zoekactie"
-
-#~ msgid "On"
-#~ msgstr "Aan"
-
-#~ msgid "Off"
-#~ msgstr "Uit"
-
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "color: rgb(100, 36, 55);"
-
-#~ msgid ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
-#~ msgstr ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
-
-#~ msgid ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
-#~ msgstr ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
-
-#~ msgid ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
-
-#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
-#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
-
-#~ msgid "Menu Styles"
-#~ msgstr "Menustijlen"
-
-#~ msgid ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-
-#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
-#~ msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
-
-#~ msgid "Insert some catchy title about wallpapers.."
-#~ msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
-
-#~ msgid "Smolt Description"
-#~ msgstr "Smolt-beschrijving"
-
-#~ msgid "Some catchy description desktop search"
-#~ msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
-
-#~ msgid "Some catchy title about desktop search"
-#~ msgstr "Enigzins pakkende titel van desktop-zoekactie"
-
-#~ msgid "Configure package manager settings"
-#~ msgstr "Configureer pakketbeheer instellingen"
-
-#~ msgid "Package Manager"
-#~ msgstr "Pakkettenbeheer"
-
-#~ msgid "Network Manager"
-#~ msgstr "Netwerkbeheer"
-
-#~ msgid "Configure your mouse"
-#~ msgstr "Configureer uw muis"
-
-#~ msgid "Some catchy description about styles"
-#~ msgstr "Enigszins pakkende beschrijving over stijlen"
-
-#~ msgid "Some catchy title about styles"
-#~ msgstr "Enigszins pakkende titel over stijlen"
-
-#~ msgid "Select your keyboard layout"
-#~ msgstr "Selecteer de toetsenbordindeling"
-
-#~ msgid "Insert some catchy title about keyboards.."
-#~ msgstr "Voeg een enigzins pakkende titel over toetsenborden toe.."
+#~ msgid "Kaptan Desktop"
+#~ msgstr "Kaptan Desktop"
 
 #, fuzzy
 #~ msgid "Welcome to Kaptan 2009.2"
 #~ msgstr "Welkom bij Kaptan"
 
-#~ msgid "Kaptan Desktop"
-#~ msgstr "Kaptan Desktop"
+#~ msgid "Insert some catchy title about keyboards.."
+#~ msgstr "Voeg een enigzins pakkende titel over toetsenborden toe.."
 
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Een assistent voor het overzetten van bestanden en instellingen van het huidige besturingsysteem (bijv. Windows) naar Pardus."
+#~ msgid "Select your keyboard layout"
+#~ msgstr "Selecteer de toetsenbordindeling"
 
-#~ msgid "Migration Wizard"
-#~ msgstr "Migratie-assistent"
+#~ msgid "Some catchy title about styles"
+#~ msgstr "Enigszins pakkende titel over stijlen"
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Netwerkbeheerder (activeer Toepassen voor opslaan instellingen)"
+#~ msgid "Some catchy description about styles"
+#~ msgstr "Enigszins pakkende beschrijving over stijlen"
 
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</b> en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na een zoeken de gewenste bron gevonden worden en stel eventueel de bijbehorende sleutel in. Na toepassen van het profiel kan door markeren van het keuzeveld de verbinding gemaakt worden."
+#~ msgid "Configure your mouse"
+#~ msgstr "Configureer uw muis"
 
-#~ msgid "Network"
-#~ msgstr "Netwerk"
+#~ msgid "Network Manager"
+#~ msgstr "Netwerkbeheer"
 
-#~ msgid "Repositories"
-#~ msgstr "Softwarebronnen"
+#~ msgid "Package Manager"
+#~ msgstr "Pakkettenbeheer"
 
-#~ msgid "Add contrib repository"
-#~ msgstr "Contrib-bron toevoegen"
+#~ msgid "Configure package manager settings"
+#~ msgstr "Configureer pakketbeheer instellingen"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "Contrib-bron bevat extra en handige pakketten."
+#~ msgid "Some catchy title about desktop search"
+#~ msgstr "Enigzins pakkende titel van desktop-zoekactie"
+
+#~ msgid "Some catchy description desktop search"
+#~ msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
+
+#~ msgid "Smolt Description"
+#~ msgstr "Smolt-beschrijving"
+
+#~ msgid "Insert some catchy title about wallpapers.."
+#~ msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
+
+#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
+#~ msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
+
+#~ msgid ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+
+#~ msgid "Menu Styles"
+#~ msgstr "Menustijlen"
+
+#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
+#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
+
+#~ msgid ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+
+#~ msgid ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+#~ msgstr ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+
+#~ msgid ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+#~ msgstr ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "color: rgb(100, 36, 55);"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "On"
+#~ msgstr "Aan"
+
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Gemakkelijke desktop-zoekactie"
+
+#~ msgid "&Back"
+#~ msgstr "&Terug"
+
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "color:rgb(95, 34, 52)"
+
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "color: rgb(234, 225, 228);"
+
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "color: rgb(95, 34, 52);"
+
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Desktop-zoekactie: <b>%s</b>"
+
+#~ msgid "color: #642437;"
+#~ msgstr "color: #642437;"
+
+#~ msgid "Connect to the Internet"
+#~ msgstr "Verbinden met het internet"
+
+#, fuzzy
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Welkom bij Pardus 2009.2"

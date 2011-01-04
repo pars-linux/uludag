@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaptan.trunk.hu.po\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-04 13:01+0200\n"
+"POT-Creation-Date: 2011-01-04 14:16+0200\n"
 "PO-Revision-Date: 2010-11-28 08:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -30,7 +30,7 @@ msgid "User Picture"
 msgstr ""
 
 #: .tmp/scrAvatar.py:48
-msgid "Create your user picture"
+msgid "Create Your User Picture"
 msgstr ""
 
 #: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
@@ -608,62 +608,62 @@ msgstr "háttérkép neve"
 msgid "wallpaperDesc"
 msgstr "háttérkép leírása"
 
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
-
-#~ msgid "Connect to the Internet"
-#~ msgstr "Csatlakozás az internetre"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Könnyed asztali kereső"
-
-#~ msgid "On"
-#~ msgstr "Be"
-
-#~ msgid "Off"
-#~ msgstr "Ki"
-
-#~ msgid "&Back"
-#~ msgstr "&Vissza"
-
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Asztal keresés: <b>%s</b>"
-
-#~ msgid "color: #642437;"
-#~ msgstr "szín: #642437;"
-
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "szín: rgb(95, 34, 52)"
-
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "szín: rgb(234, 225, 228);"
-
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "szín:rgb(95, 34, 52"
-
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "szín: rgb(100, 36, 55)"
-
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
-
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
-
-#~ msgid "Network"
-#~ msgstr "Hálózat"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
-
-#~ msgid "Migration Wizard"
-#~ msgstr "Áthelyezés varázsló"
-
-#~ msgid "Repositories"
-#~ msgstr "Tárolók"
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
 
 #~ msgid "Add contrib repository"
 #~ msgstr "Contrib tároló hozzáadása"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
+#~ msgid "Repositories"
+#~ msgstr "Tárolók"
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Áthelyezés varázsló"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
+
+#~ msgid "Network"
+#~ msgstr "Hálózat"
+
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
+
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
+
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "szín: rgb(100, 36, 55)"
+
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "szín:rgb(95, 34, 52"
+
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "szín: rgb(234, 225, 228);"
+
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "szín: rgb(95, 34, 52)"
+
+#~ msgid "color: #642437;"
+#~ msgstr "szín: #642437;"
+
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Asztal keresés: <b>%s</b>"
+
+#~ msgid "&Back"
+#~ msgstr "&Vissza"
+
+#~ msgid "Off"
+#~ msgstr "Ki"
+
+#~ msgid "On"
+#~ msgstr "Be"
+
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Könnyed asztali kereső"
+
+#~ msgid "Connect to the Internet"
+#~ msgstr "Csatlakozás az internetre"
+
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
