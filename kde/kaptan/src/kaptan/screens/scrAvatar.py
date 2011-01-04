@@ -45,7 +45,7 @@ class Widget(QtGui.QWidget, Screen):
 
         self.camActive = False
 
-        Widget.desc = QVariant(unicode(ki18n("Create your user picture").toString()))
+        Widget.desc = QVariant(unicode(ki18n("Create Your User Picture").toString()))
 
         self.pictureTaken = 0
         self.ui.takeButton.hide()
