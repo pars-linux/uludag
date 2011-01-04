@@ -26,7 +26,7 @@ import about
 
 def update_messages():
     # Create empty directory
-    shutil.rmtree(".tmp")
+    shutil.rmtree(".tmp", "true")
     os.makedirs(".tmp")
 
     # Collect UI files
