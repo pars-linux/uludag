@@ -5,16 +5,16 @@
 #
 # Pınar Yanardağ <pinar@pardus.org.tr>, 2009.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
-# Renan Çakırerk <renan@pardus.org.tr>, 2009, 2010.
+# Renan Çakırerk <renan@pardus.org.tr>, 2009, 2010, 2011.
 # Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:09+0200\n"
+"POT-Creation-Date: 2011-01-04 13:01+0200\n"
 "PO-Revision-Date: 2010-12-07 22:13+0200\n"
-"Last-Translator: Ayhan YALÇINSOY <ayhanyalcinsoy@gmail.com>\n"
-"Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Last-Translator: Renan Çakırerk <renan@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,6 +29,313 @@ msgstr "Kaptan"
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
 msgstr "Sihirbaza hoşgeldiniz"
+
+#: .tmp/scrAvatar.py:36
+msgid "User Picture"
+msgstr "Kullanıcı Resmi"
+
+#: .tmp/scrAvatar.py:48
+msgid "Create your user picture"
+msgstr "Kullanıcı resminizi yaratın"
+
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Diğer"
+
+#: .tmp/scrGoodbye.py:25
+msgid "Congratulations!"
+msgstr "Tebrikler!"
+
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Klavye"
+
+#: .tmp/scrKeyboard.py:32
+msgid "Keyboard Layout Language"
+msgstr "Klavye Dili"
+
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menü"
+
+#: .tmp/scrMenu.py:27
+msgid "Choose a Menu Style"
+msgstr "Bir Menü Stili Seçin"
+
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Kick-off Menü"
+
+#: .tmp/scrMenu.py:43
+msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Kick-off menü, Pardus'un öntanımlı menüsüdür.<br><br>Uygulama kısayolları hızlı ve kolay erişilebilecek şekilde düzenlenmiştir."
+
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Basit Menü"
+
+#: .tmp/scrMenu.py:49
+msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+msgstr "Basit menü KDE 3'ten kalma eski bir menü stilidir.<br><br>Oldukça hafif yapısı yüzünden yavaş bilgisayarlar için önerilir."
+
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Lancelot Menü"
+
+#: .tmp/scrMenu.py:55
+msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Lancelot menü, gelişmiş ve oldukça kişiselleştirilebilir bir menüdür.<br><br>Uygulama kısayolları hızlı ve kolay erişilebilecek şekilde düzenlenmiştir."
+
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Fare"
+
+#: .tmp/scrMouse.py:30
+msgid "Setup Mouse Behavior"
+msgstr "Fare Tıklama Davranışını Belirleyin"
+
+#: .tmp/scrMouse.py:140
+msgid "Left Handed"
+msgstr "Sol El"
+
+#: .tmp/scrMouse.py:140
+msgid "Right Handed"
+msgstr "Sağ El"
+
+#: .tmp/scrMouse.py:141
+msgid "Double Click"
+msgstr "Çift Tık"
+
+#: .tmp/scrMouse.py:141
+msgid "Single Click "
+msgstr "Tek Tık"
+
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Paketler"
+
+#: .tmp/scrPackage.py:29
+msgid "Install / Remove Programs"
+msgstr "Uygulama Ekle / Kaldır"
+
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
+msgid "Smolt"
+msgstr "Smolt"
+
+#: .tmp/scrSmolt.py:32
+msgid "Help Pardus Improve!"
+msgstr "Pardus'un Gelişimine Katkı Sağlayın!"
+
+#: .tmp/scrSmolt.py:68
+msgid "Label"
+msgstr "Etiket"
+
+#: .tmp/scrSmolt.py:69
+msgid "Data"
+msgstr "Veri"
+
+#: .tmp/scrSmolt.py:108
+msgid "&Host Information"
+msgstr "Sistem Bilgisi"
+
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
+msgid "&Privacy policy"
+msgstr "Gizlilik &Politikası"
+
+#: .tmp/scrSmolt.py:114
+msgid "UUID"
+msgstr "UUID"
+
+#: .tmp/scrSmolt.py:115
+msgid "OS"
+msgstr "İşletim Sistemi"
+
+#: .tmp/scrSmolt.py:116
+msgid "Default Run Level"
+msgstr "Öntanımlı Çalışma Seviyesi"
+
+#: .tmp/scrSmolt.py:117
+msgid "Language"
+msgstr "Dil"
+
+#: .tmp/scrSmolt.py:118
+msgid "Platform"
+msgstr "Platform"
+
+#: .tmp/scrSmolt.py:119
+msgid "BogoMIPS"
+msgstr "BogoMIPS"
+
+#: .tmp/scrSmolt.py:120
+msgid "CPU Vendor"
+msgstr "İşlemci Sağlayıcısı"
+
+#: .tmp/scrSmolt.py:121
+msgid "CPU Model"
+msgstr "İşlemci Modeli"
+
+#: .tmp/scrSmolt.py:122
+msgid "CPU Stepping"
+msgstr "İşlemci Basamağı"
+
+#: .tmp/scrSmolt.py:123
+msgid "CPU Family"
+msgstr "İşlemci Ailesi"
+
+#: .tmp/scrSmolt.py:124
+msgid "CPU Model Num"
+msgstr "İşlemci Model Numarası"
+
+#: .tmp/scrSmolt.py:125
+msgid "Number of CPUs"
+msgstr "İşlemci Sayısı"
+
+#: .tmp/scrSmolt.py:126
+msgid "CPU Speed"
+msgstr "İşlemci Hızı"
+
+#: .tmp/scrSmolt.py:127
+msgid "System Memory"
+msgstr "Sistem Belleği"
+
+#: .tmp/scrSmolt.py:128
+msgid "System Swap"
+msgstr "Sistem Takası"
+
+#: .tmp/scrSmolt.py:129
+msgid "Vendor"
+msgstr "Sağlayıcı"
+
+#: .tmp/scrSmolt.py:130
+msgid "System"
+msgstr "Sistem"
+
+#: .tmp/scrSmolt.py:131
+msgid "Form Factor"
+msgstr "Form Faktörü"
+
+#: .tmp/scrSmolt.py:132
+msgid "Kernel"
+msgstr "Çekirdek"
+
+#: .tmp/scrSmolt.py:133
+msgid "SELinux Enabled"
+msgstr "SELinux Etkin"
+
+#: .tmp/scrSmolt.py:134
+msgid "SELinux Policy"
+msgstr "SELinux politikası"
+
+#: .tmp/scrSmolt.py:135
+msgid "SELinux Enforce"
+msgstr "SELinux Mecbur"
+
+#: .tmp/scrSmolt.py:148
+msgid "Yes"
+msgstr "Evet"
+
+#: .tmp/scrSmolt.py:150
+msgid "No"
+msgstr "Hayır"
+
+#: .tmp/scrStyle.py:37 .tmp/ui_scrStyle.py:236
+msgid "Themes"
+msgstr "Temalar"
+
+#: .tmp/scrStyle.py:38
+msgid "Customize Your Desktop"
+msgstr "Masaüstünizi Kişiselleşitirin"
+
+#: .tmp/scrSummary.py:35 .tmp/ui_scrSummary.py:85
+msgid "Summary"
+msgstr "Özet"
+
+#: .tmp/scrSummary.py:36
+msgid "Save Your Settings"
+msgstr "Ayarlarınızı Kaydedin"
+
+#: .tmp/scrSummary.py:59
+msgid "Mouse Settings"
+msgstr "Fare Ayarları"
+
+#: .tmp/scrSummary.py:61
+#, python-format
+msgid "Selected Mouse configuration: <b>%s</b>"
+msgstr "Fare seçimi: <b>%s</b>"
+
+#: .tmp/scrSummary.py:62
+#, python-format
+msgid "Selected clicking behaviour: <b>%s</b>"
+msgstr "Tıklama davranışı seçimi: <b>%s</b>"
+
+#: .tmp/scrSummary.py:66
+msgid "Menu Settings"
+msgstr "Menü Ayarları"
+
+#: .tmp/scrSummary.py:67
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Menü seçimi: <b>%s</b>"
+
+#: .tmp/scrSummary.py:71
+msgid "Wallpaper Settings"
+msgstr "Duvar Kağıdı Ayarları"
+
+#: .tmp/scrSummary.py:73
+msgid "You haven't selected any wallpaper."
+msgstr "Duvar kağıdı seçimi yapmadınız."
+
+#: .tmp/scrSummary.py:75
+#, python-format
+msgid "Selected Wallpaper: <b>%s</b>"
+msgstr "Duvar kağıdı seçimi: <b>%s</b>"
+
+#: .tmp/scrSummary.py:79
+msgid "Style Settings"
+msgstr "Stil Ayarları"
+
+#: .tmp/scrSummary.py:82
+msgid "You haven't selected any style."
+msgstr "Stil seçimi yapmadınız."
+
+#: .tmp/scrSummary.py:84
+#, python-format
+msgid "Selected Style: <b>%s</b>"
+msgstr "Stil seçimi: <b>%s</b>"
+
+#: .tmp/scrSummary.py:91
+msgid "Smolt Settings"
+msgstr "Smolt Ayarları"
+
+#: .tmp/scrSummary.py:92
+#, python-format
+msgid "Send my profile: <b>%s</b>"
+msgstr "Donanım bilgisini gönder: <b>%s</b>"
+
+#: .tmp/scrSummary.py:117
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr "plasma-desktop yeniden başlatılamıyor. Kaptan sonlandırılıyor."
+
+#: .tmp/scrSummary.py:117
+msgid "Error"
+msgstr "Hata"
+
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Duvar Kağıdı"
+
+#: .tmp/scrWallpaper.py:35
+msgid "Choose a Wallpaper"
+msgstr "Duvar Kağıdı Seçin"
+
+#: .tmp/scrWelcome.py:27 .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Hoş Geldiniz"
+
+#: .tmp/scrWelcome.py:28
+#, python-format
+msgid "Welcome to %s"
+msgstr "Pardus'a Hoş Geldiniz"
 
 #: .tmp/ui_kaptan.py:358
 msgid "Welcome to Pardus"
@@ -79,10 +386,6 @@ msgstr "Çek"
 msgid "Recapture"
 msgstr "Yeniden Çek"
 
-#: .tmp/ui_scrGoodbye.py:325
-msgid "More"
-msgstr "Diğer"
-
 #: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>Ayarlarınız kaydedildi.</b> Artık Pardus'un tadını çıkarmaya başlayabilirsiniz. Daha detaylı ayarlar veya yardım ve destek için aşağıdaki program ve linkleri inceleyebilirsiniz. <b>Topluluğumuza üye olmayı unutmayın!</b>"
@@ -111,10 +414,6 @@ msgstr "Yardım ve Destek"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Pardus topluluğu, e-posta listeleri, sohbet odaları, Wiki belgeleri, yardım ve destek sayfaları..."
 
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Klavye"
-
 #: .tmp/ui_scrKeyboard.py:94
 msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
 msgstr "Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer. Eğer varsayılan düzenden başka bir düzen seçmek istiyorsanız aşağıda bulunan listeden uygun olan düzeni seçip hemen test edebilirsiniz."
@@ -123,33 +422,13 @@ msgstr "Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer. 
 msgid "Test Layout"
 msgstr "Test et"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menü"
-
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
 msgstr "KDE menüsünü istediğiniz stili seçerek kişiselleştirebilirsiniz."
 
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Kick-off Menü"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Basit Menü"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Lancelot Menü"
-
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
 msgstr "Örnek"
-
-#: .tmp/ui_scrMouse.py:202
-msgid "Mouse"
-msgstr "Fare"
 
 #: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
@@ -182,10 +461,6 @@ msgstr "Sol El"
 #: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
 msgstr "Tekerlek ters kaydırsın"
-
-#: .tmp/ui_scrPackage.py:132
-msgid "Packages"
-msgstr "Paketler"
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
@@ -223,10 +498,6 @@ msgstr "Strigi, aramalarımda yardımcı olsun"
 msgid "Search Options"
 msgstr "Arama Ayarları"
 
-#: .tmp/ui_scrSmolt.py:154
-msgid "Smolt"
-msgstr "Smolt"
-
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt,</b> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizlere göndererek  istatistikler doğrultusunda Pardus'u geliştirmemize katkıda bulunur."
@@ -235,12 +506,7 @@ msgstr "<b>Smolt,</b> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizl
 msgid "&Send my profile"
 msgstr "Donanım Bilgisini &Gönder"
 
-#: .tmp/ui_scrSmolt.py:158
-msgid "&Privacy policy"
-msgstr "Gizlilik &Politikası"
-
 #: .tmp/ui_scrSmolt.py:159
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -261,10 +527,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">komutunu çalıştırmaları yeterlidir. Herkes istatistik ve verilere bakabildiği ve bilgisayar profillerini paylaşabildiği için smolt veritabanı sunucusuna gönderilen veri halka açık kabul edilmelidir. Pek çok yönden biz smolt'u açık kaynak sürücüler ve genel olarak daha iyi destek için kullanacağımız için smolt donanım üreticilerinin ve diğer üçüncü kişilerin faydasına sunulur, yani bu bilgiler üçüncü kişilerle paylaşılır.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Günlükleme:</span>  Pardus'un smolt kurulumunda tüm Internet trafiği önce bir vekil sunucudan geçer. Bu vekil sunucu IP adreslerini günlüğüne kaydeder ve arşivler. Pardus Projesi IP adreslerini smolt veritabanında tutmaz. Bu günlükler gizlidir ve halka açık değildir.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Bu politikadan hoşnut olmayan kullanıcıların smolt'u kullanmaması yeterli olacaktır. Bu politika hakkında soruları olan kullanıcılar ise Pardus Yönetim Ekibi'yle admin [at] pardus.org.tr'den iletişim kurabilirler. Ayrıca kullanıcılar\"<span style=\" font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla profillerini istedikleri zaman silebilirler.</p></body></html>"
-
-#: .tmp/ui_scrStyle.py:236
-msgid "Themes"
-msgstr "Temalar"
 
 #: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
@@ -310,10 +572,6 @@ msgstr "biçemİsmi"
 msgid "styleDesc"
 msgstr "biçemAçıklaması"
 
-#: .tmp/ui_scrSummary.py:85
-msgid "Summary"
-msgstr "Özet"
-
 #: .tmp/ui_scrSummary.py:86
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
 msgstr "Bütün adımları başarıyla tamamladınız. Aşağıda uygulanmasını istediğiniz ayarların listesini görebilirsiniz. <b>Ayarları Uygula</b> tuşuna bastığınızda ayarlarınız kaydedilecektir. Artık Pardus'un tadını çıkarmaya hazırsınız!"
@@ -321,10 +579,6 @@ msgstr "Bütün adımları başarıyla tamamladınız. Aşağıda uygulanmasın�
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
 msgstr "Aşağıdaki ayarlar uygulanacaktır"
-
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Duvar Kağıdı"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
@@ -342,10 +596,6 @@ msgstr "Duvar Kağıdını Dosyadan Seç"
 msgid "Don't change wallpaper"
 msgstr "Duvar Kağıdını değiştirme"
 
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Hoş Geldiniz"
-
 #: .tmp/ui_scrWelcome.py:78
 msgid "What is Pardus?"
 msgstr "Pardus nedir?"
@@ -362,26 +612,26 @@ msgstr "duvarkağıdıİsmi"
 msgid "wallpaperDesc"
 msgstr "duvarkağıdıAçıklaması"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "Katkı deposu kullanışlı ek programlar içerir."
-
-#~ msgid "Add contrib repository"
-#~ msgstr "Katkı deposunu ekle"
-
-#~ msgid "Repositories"
-#~ msgstr "Depolar"
-
-#~ msgid "Migration Wizard"
-#~ msgstr "Göç Sihirbazı"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
-
-#~ msgid "Network"
-#~ msgstr "Ağ"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
 
 #~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
 #~ msgstr "Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu işaretleyip Internet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip şifrenizi girmeyi unutmayın."
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
+#~ msgid "Network"
+#~ msgstr "Ağ"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Kurulu diğer işletim sistemlerinden (örn. Windows) Pardus'a dosyalarınızı ve ayarlarınızı aktarmak için kullanabileceğiniz bir sihirbaz."
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Göç Sihirbazı"
+
+#~ msgid "Repositories"
+#~ msgstr "Depolar"
+
+#~ msgid "Add contrib repository"
+#~ msgstr "Katkı deposunu ekle"
+
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Katkı deposu kullanışlı ek programlar içerir."

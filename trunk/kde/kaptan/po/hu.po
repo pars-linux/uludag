@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Kaptan.trunk.hu.po\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:09+0200\n"
+"POT-Creation-Date: 2011-01-04 13:01+0200\n"
 "PO-Revision-Date: 2010-11-28 08:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -24,6 +24,315 @@ msgstr "Kaptan"
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
 msgstr "Első Indítás Varázsló"
+
+#: .tmp/scrAvatar.py:36
+msgid "User Picture"
+msgstr ""
+
+#: .tmp/scrAvatar.py:48
+msgid "Create your user picture"
+msgstr ""
+
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Továbbiak"
+
+#: .tmp/scrGoodbye.py:25
+msgid "Congratulations!"
+msgstr "Gratulálunk"
+
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Billentyűzet"
+
+#: .tmp/scrKeyboard.py:32
+msgid "Keyboard Layout Language"
+msgstr "Billentyűzet kiosztása"
+
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menü"
+
+#: .tmp/scrMenu.py:27
+msgid "Choose a Menu Style"
+msgstr "Válassza ki a menü stílusát"
+
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Kick-off menü"
+
+#: .tmp/scrMenu.py:43
+msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Kick-off menü a Pardus alapértelmezett menüje.<br><br>A programok elérési útja egyszerű és jól áttekinthető."
+
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Egyszerű menü"
+
+#: .tmp/scrMenu.py:49
+msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+msgstr "Az egyszerű menü a régi stílusú KDE 3 menü megfelelője.<br><br> Ez egy pehelysúlyú menü amit lassabb PC-kre javaslunk."
+
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Lancelot menü"
+
+#: .tmp/scrMenu.py:55
+msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Lancelot egy fejlettebb és nagymértékben testre szabható menü a Pardushoz.<br><br>A programok elérése könnyű és jól áttekinthető"
+
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Egér"
+
+#: .tmp/scrMouse.py:30
+msgid "Setup Mouse Behavior"
+msgstr "Egér működésének beállítása"
+
+#: .tmp/scrMouse.py:140
+msgid "Left Handed"
+msgstr "Bal kezes"
+
+#: .tmp/scrMouse.py:140
+msgid "Right Handed"
+msgstr "Jobb kezes"
+
+#: .tmp/scrMouse.py:141
+msgid "Double Click"
+msgstr "Dupla kattintás"
+
+#: .tmp/scrMouse.py:141
+msgid "Single Click "
+msgstr "Egy kattintás"
+
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Csomagok"
+
+#: .tmp/scrPackage.py:29
+msgid "Install / Remove Programs"
+msgstr "Programok telepítése/eltávolítása"
+
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
+msgid "Smolt"
+msgstr "Smolt"
+
+#: .tmp/scrSmolt.py:32
+msgid "Help Pardus Improve!"
+msgstr "Segítse a Pardus fejlesztését!"
+
+#: .tmp/scrSmolt.py:68
+msgid "Label"
+msgstr "Cimke"
+
+#: .tmp/scrSmolt.py:69
+msgid "Data"
+msgstr "Adat"
+
+#: .tmp/scrSmolt.py:108
+msgid "&Host Information"
+msgstr ""
+
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
+msgid "&Privacy policy"
+msgstr "&Adatvédelmi irányelv"
+
+#: .tmp/scrSmolt.py:114
+msgid "UUID"
+msgstr "UUID"
+
+#: .tmp/scrSmolt.py:115
+msgid "OS"
+msgstr "Operációs rendszer"
+
+#: .tmp/scrSmolt.py:116
+msgid "Default Run Level"
+msgstr "Alapértelmezett futási szint"
+
+#: .tmp/scrSmolt.py:117
+msgid "Language"
+msgstr "Nyelv"
+
+#: .tmp/scrSmolt.py:118
+msgid "Platform"
+msgstr "Platform"
+
+#: .tmp/scrSmolt.py:119
+msgid "BogoMIPS"
+msgstr "BogoMIPS"
+
+#: .tmp/scrSmolt.py:120
+msgid "CPU Vendor"
+msgstr "CPU forgalmazó"
+
+#: .tmp/scrSmolt.py:121
+msgid "CPU Model"
+msgstr "CPU modell"
+
+#: .tmp/scrSmolt.py:122
+msgid "CPU Stepping"
+msgstr "CPU Stepping"
+
+#: .tmp/scrSmolt.py:123
+msgid "CPU Family"
+msgstr "CPU család"
+
+#: .tmp/scrSmolt.py:124
+msgid "CPU Model Num"
+msgstr "CPU modell szám"
+
+#: .tmp/scrSmolt.py:125
+msgid "Number of CPUs"
+msgstr "CPU-k száma"
+
+#: .tmp/scrSmolt.py:126
+msgid "CPU Speed"
+msgstr "CPU sebessége"
+
+#: .tmp/scrSmolt.py:127
+msgid "System Memory"
+msgstr "Rendszer memória"
+
+#: .tmp/scrSmolt.py:128
+msgid "System Swap"
+msgstr "Rendszer Swap"
+
+#: .tmp/scrSmolt.py:129
+msgid "Vendor"
+msgstr "Forgalmazó"
+
+#: .tmp/scrSmolt.py:130
+msgid "System"
+msgstr "Rendszer"
+
+#: .tmp/scrSmolt.py:131
+msgid "Form Factor"
+msgstr "Form factor"
+
+#: .tmp/scrSmolt.py:132
+msgid "Kernel"
+msgstr "Kernel"
+
+#: .tmp/scrSmolt.py:133
+msgid "SELinux Enabled"
+msgstr "SELinux engedélyezve"
+
+#: .tmp/scrSmolt.py:134
+msgid "SELinux Policy"
+msgstr "SELinux szabályok"
+
+#: .tmp/scrSmolt.py:135
+msgid "SELinux Enforce"
+msgstr "SELinux kikényszerítés"
+
+#: .tmp/scrSmolt.py:148
+msgid "Yes"
+msgstr "Igen"
+
+#: .tmp/scrSmolt.py:150
+msgid "No"
+msgstr "Nem"
+
+#: .tmp/scrStyle.py:37 .tmp/ui_scrStyle.py:236
+msgid "Themes"
+msgstr "Témák"
+
+#: .tmp/scrStyle.py:38
+msgid "Customize Your Desktop"
+msgstr "Asztal beállítása"
+
+#: .tmp/scrSummary.py:35 .tmp/ui_scrSummary.py:85
+msgid "Summary"
+msgstr "Összegzés"
+
+#: .tmp/scrSummary.py:36
+msgid "Save Your Settings"
+msgstr "Beállítások mentése"
+
+#: .tmp/scrSummary.py:59
+msgid "Mouse Settings"
+msgstr "Egér beállítások"
+
+#: .tmp/scrSummary.py:61
+#, python-format
+msgid "Selected Mouse configuration: <b>%s</b>"
+msgstr "Kiválasztott egér beállítás: <b>%s</b>"
+
+#: .tmp/scrSummary.py:62
+#, python-format
+msgid "Selected clicking behaviour: <b>%s</b>"
+msgstr "Kiválasztott kattintás viselkedésének beállítása: <b>%s</b>"
+
+#: .tmp/scrSummary.py:66
+msgid "Menu Settings"
+msgstr "Menü beállítások"
+
+#: .tmp/scrSummary.py:67
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Kiválasztott menü: <b>%s</b>"
+
+#: .tmp/scrSummary.py:71
+msgid "Wallpaper Settings"
+msgstr "Háttérkép beállítások"
+
+#: .tmp/scrSummary.py:73
+msgid "You haven't selected any wallpaper."
+msgstr "Nem választott ki egyetlen háttérképet sem."
+
+#: .tmp/scrSummary.py:75
+#, python-format
+msgid "Selected Wallpaper: <b>%s</b>"
+msgstr "Választott háttérkép: <b>%s</b>"
+
+#: .tmp/scrSummary.py:79
+#, fuzzy
+msgid "Style Settings"
+msgstr "Rendszer beállítások"
+
+#: .tmp/scrSummary.py:82
+msgid "You haven't selected any style."
+msgstr "Egyetlen stílust sem választott ki"
+
+#: .tmp/scrSummary.py:84
+#, python-format
+msgid "Selected Style: <b>%s</b>"
+msgstr "Kiválasztott stílus: <b>%s</b>"
+
+#: .tmp/scrSummary.py:91
+msgid "Smolt Settings"
+msgstr "Smolt beállítások"
+
+#: .tmp/scrSummary.py:92
+#, python-format
+msgid "Send my profile: <b>%s</b>"
+msgstr "Küldje el a profilomat: <b>%s</b>"
+
+#: .tmp/scrSummary.py:117
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr "Plasma desktop újraindítása sikertelen. A Kaptan most leáll."
+
+#: .tmp/scrSummary.py:117
+msgid "Error"
+msgstr "Hiba"
+
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Háttérkép"
+
+#: .tmp/scrWallpaper.py:35
+#, fuzzy
+msgid "Choose a Wallpaper"
+msgstr "Válasszon háttérképet fájlból"
+
+#: .tmp/scrWelcome.py:27 .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Üdvözöljük"
+
+#: .tmp/scrWelcome.py:28
+#, fuzzy, python-format
+msgid "Welcome to %s"
+msgstr "Üdvözöljük a Pardusban!"
 
 #: .tmp/ui_kaptan.py:358
 msgid "Welcome to Pardus"
@@ -74,10 +383,6 @@ msgstr "Felvétel"
 msgid "Recapture"
 msgstr "Új felvétel"
 
-#: .tmp/ui_scrGoodbye.py:325
-msgid "More"
-msgstr "Továbbiak"
-
 #: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>A beállítások mentésre kerültek.</b> Legyen öreme új Pardus rendszerében! Az alábbi linkek használatával további beállításokat végezhet, vagy segítséget és támogatást vehet igénybe. Ne felejtsen el <b>csatlakozni közösségünkhöz!</b>"
@@ -106,10 +411,6 @@ msgstr "Segítség és támogatás"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Pardus közösség, levelező listák, chat szobák, Wiki dokumentációk, segítségnyújtó és támogató oldalak..."
 
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Billentyűzet"
-
 #: .tmp/ui_scrKeyboard.py:94
 msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
 msgstr "Kaptan automatikusan kiválasztja az Ön számára legjobb billentyűzetkiosztást a rendszer nyelvének megfelelően. Amennyiben az alapértelmezettől eltérő billentyűzetkiosztást szeretne használni, kiválaszthatja és a lenti mezőben ellenőrizheti."
@@ -118,33 +419,13 @@ msgstr "Kaptan automatikusan kiválasztja az Ön számára legjobb billentyűzet
 msgid "Test Layout"
 msgstr "Teszt kimenet"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menü"
-
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
 msgstr "Igénye szerint állíthatja be a <b>KDE menüt<b>. Kérem válasszon egyet az alábbi stílusok közül."
 
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Kick-off menü"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Egyszerű menü"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Lancelot menü"
-
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
 msgstr "Minta"
-
-#: .tmp/ui_scrMouse.py:202
-msgid "Mouse"
-msgstr "Egér"
 
 #: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
@@ -177,10 +458,6 @@ msgstr "Bal kezes"
 #: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
 msgstr "Görgetés megfordítása"
-
-#: .tmp/ui_scrPackage.py:132
-msgid "Packages"
-msgstr "Csomagok"
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
@@ -218,10 +495,6 @@ msgstr "Engedélyezem, hogy a Strigi indexelje a fájljaimat"
 msgid "Search Options"
 msgstr "Keresési beállítások"
 
-#: .tmp/ui_scrSmolt.py:154
-msgid "Smolt"
-msgstr "Smolt"
-
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> az az eszköz ami összegyűjti az információkat az alábbi táblázatba és elküldi nekünk, amivel tovább fejleszthetjük a Pardust a felhasználói profil statisztikáknak megfelelően."
@@ -229,10 +502,6 @@ msgstr "<b>Smolt</b> az az eszköz ami összegyűjti az információkat az aláb
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
 msgstr "&Profil elküldése"
-
-#: .tmp/ui_scrSmolt.py:158
-msgid "&Privacy policy"
-msgstr "&Adatvédelmi irányelv"
 
 #: .tmp/ui_scrSmolt.py:159
 msgid ""
@@ -254,10 +523,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">  A smolt adatbázis szerverre küldött adatok publikusak abban az értelemben, hogy bárki megtekintheti az adatokat és statisztikáikat, valamint megoszthatja a számítógépek profiljait. A smolt rendszert úgy alakítottuk ki, hogy harmadik fél érdeklődésére is számot tartson, ezenkívül használható legyen nyílt forrású eszközmeghajtó programok fejlesztéséhez a jobb támogatás érdekében.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; text-decoration: underline;\">IP naplózás:</span><span style=\" font-size:9pt;\">  A Pardusból minden smolt adatforgalom először egy proxy szerverre kerül. Ez az egyetlen hely, ahol a küldő IP címe eltárolódik, de itt is maximum 4 hétig tároljuk. Ezután a címek a naplófájlok forgatásával kikerülnek a rendszerből. A Párdus nem tárolja az IP címeket a smolt adatbázisban, illetve ezek a naplófáljok publikusan nem elérhetők.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt;\">   Azon felhasználóinknak, akiknek ez az adattárolási módszer nem felel meg, azt tanácsoljuk, hogy ne használják a smolt adatbázist. Ha további kérdéseik vannak az adatvédelemmel kapcsolatban, kérjük keressék meg a Pardus Infrastruktúra Csapatát az admin [kukac] pardus.org.tr  email címen. Minden felhasználó bármikor törölheti a smolt adatait a &quot;</span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span> parancs segítségével.</p></body></html>"
-
-#: .tmp/ui_scrStyle.py:236
-msgid "Themes"
-msgstr "Témák"
 
 #: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
@@ -303,10 +568,6 @@ msgstr "stílusnév"
 msgid "styleDesc"
 msgstr "stílus leírása"
 
-#: .tmp/ui_scrSummary.py:85
-msgid "Summary"
-msgstr "Összegzés"
-
 #: .tmp/ui_scrSummary.py:86
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
 msgstr "Sikeresen befejezett minden lépést. Itt egy összegzés az elfogadásra váró beállításokról. Kattintson a <b>Beállítások alkalmazása</b> gombra az elfogadásukhoz. Most már készen áll a Pardus használatára! "
@@ -314,10 +575,6 @@ msgstr "Sikeresen befejezett minden lépést. Itt egy összegzés az elfogadásr
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
 msgstr "A következő beállítások kerülnek alkalmazásra"
-
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Háttérkép"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
@@ -335,10 +592,6 @@ msgstr "Válasszon háttérképet fájlból"
 msgid "Don't change wallpaper"
 msgstr "Ne változtassa meg a háttérképet"
 
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Üdvözöljük"
-
 #: .tmp/ui_scrWelcome.py:78
 msgid "What is Pardus?"
 msgstr "Mi a Pardus?"
@@ -355,227 +608,62 @@ msgstr "háttérkép neve"
 msgid "wallpaperDesc"
 msgstr "háttérkép leírása"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."
-
-#~ msgid "Add contrib repository"
-#~ msgstr "Contrib tároló hozzáadása"
-
-#~ msgid "Repositories"
-#~ msgstr "Tárolók"
-
-#~ msgid "Migration Wizard"
-#~ msgstr "Áthelyezés varázsló"
-
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
-
-#~ msgid "Network"
-#~ msgstr "Hálózat"
-
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
-
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
-
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "szín: rgb(100, 36, 55)"
-
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "szín:rgb(95, 34, 52"
-
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "szín: rgb(234, 225, 228);"
-
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "szín: rgb(95, 34, 52)"
-
-#~ msgid "color: #642437;"
-#~ msgstr "szín: #642437;"
-
-#~ msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-#~ msgstr "Plasma desktop újraindítása sikertelen. A Kaptan most leáll."
-
-#~ msgid "Error"
-#~ msgstr "Hiba"
-
-#~ msgid "Send my profile: <b>%s</b>"
-#~ msgstr "Küldje el a profilomat: <b>%s</b>"
-
-#~ msgid "Smolt Settings"
-#~ msgstr "Smolt beállítások"
-
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Asztal keresés: <b>%s</b>"
-
-#~ msgid "Selected Style: <b>%s</b>"
-#~ msgstr "Kiválasztott stílus: <b>%s</b>"
-
-#~ msgid "You haven't selected any style."
-#~ msgstr "Egyetlen stílust sem választott ki"
-
-#~ msgid "Selected Wallpaper: <b>%s</b>"
-#~ msgstr "Választott háttérkép: <b>%s</b>"
-
-#~ msgid "You haven't selected any wallpaper."
-#~ msgstr "Nem választott ki egyetlen háttérképet sem."
-
-#~ msgid "Wallpaper Settings"
-#~ msgstr "Háttérkép beállítások"
-
-#~ msgid "Selected Menu: <b>%s</b>"
-#~ msgstr "Kiválasztott menü: <b>%s</b>"
-
-#~ msgid "Menu Settings"
-#~ msgstr "Menü beállítások"
-
-#~ msgid "Selected clicking behaviour: <b>%s</b>"
-#~ msgstr "Kiválasztott kattintás viselkedésének beállítása: <b>%s</b>"
-
-#~ msgid "Selected Mouse configuration: <b>%s</b>"
-#~ msgstr "Kiválasztott egér beállítás: <b>%s</b>"
-
-#~ msgid "Mouse Settings"
-#~ msgstr "Egér beállítások"
-
-#~ msgid "Save Your Settings"
-#~ msgstr "Beállítások mentése"
-
-#~ msgid "Customize Your Desktop"
-#~ msgstr "Asztal beállítása"
-
-#~ msgid "No"
-#~ msgstr "Nem"
-
-#~ msgid "Yes"
-#~ msgstr "Igen"
-
-#~ msgid "SELinux Enforce"
-#~ msgstr "SELinux kikényszerítés"
-
-#~ msgid "SELinux Policy"
-#~ msgstr "SELinux szabályok"
-
-#~ msgid "SELinux Enabled"
-#~ msgstr "SELinux engedélyezve"
-
-#~ msgid "Kernel"
-#~ msgstr "Kernel"
-
-#~ msgid "Form Factor"
-#~ msgstr "Form factor"
-
-#~ msgid "System"
-#~ msgstr "Rendszer"
-
-#~ msgid "Vendor"
-#~ msgstr "Forgalmazó"
-
-#~ msgid "System Swap"
-#~ msgstr "Rendszer Swap"
-
-#~ msgid "System Memory"
-#~ msgstr "Rendszer memória"
-
-#~ msgid "CPU Speed"
-#~ msgstr "CPU sebessége"
-
-#~ msgid "Number of CPUs"
-#~ msgstr "CPU-k száma"
-
-#~ msgid "CPU Model Num"
-#~ msgstr "CPU modell szám"
-
-#~ msgid "CPU Family"
-#~ msgstr "CPU család"
-
-#~ msgid "CPU Stepping"
-#~ msgstr "CPU Stepping"
-
-#~ msgid "CPU Model"
-#~ msgstr "CPU modell"
-
-#~ msgid "CPU Vendor"
-#~ msgstr "CPU forgalmazó"
-
-#~ msgid "BogoMIPS"
-#~ msgstr "BogoMIPS"
-
-#~ msgid "Platform"
-#~ msgstr "Platform"
-
-#~ msgid "Language"
-#~ msgstr "Nyelv"
-
-#~ msgid "Default Run Level"
-#~ msgstr "Alapértelmezett futási szint"
-
-#~ msgid "OS"
-#~ msgstr "Operációs rendszer"
-
-#~ msgid "UUID"
-#~ msgstr "UUID"
-
-#~ msgid "&Back"
-#~ msgstr "&Vissza"
-
-#~ msgid "Data"
-#~ msgstr "Adat"
-
-#~ msgid "Label"
-#~ msgstr "Cimke"
-
-#~ msgid "Help Pardus Improve!"
-#~ msgstr "Segítse a Pardus fejlesztését!"
-
-#~ msgid "Off"
-#~ msgstr "Ki"
-
-#~ msgid "On"
-#~ msgstr "Be"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Könnyed asztali kereső"
-
-#~ msgid "Install / Remove Programs"
-#~ msgstr "Programok telepítése/eltávolítása"
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
 
 #~ msgid "Connect to the Internet"
 #~ msgstr "Csatlakozás az internetre"
 
-#~ msgid "Double Click"
-#~ msgstr "Dupla kattintás"
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Könnyed asztali kereső"
 
-#~ msgid "Single Click "
-#~ msgstr "Egy kattintás"
+#~ msgid "On"
+#~ msgstr "Be"
 
-#~ msgid "Right Handed"
-#~ msgstr "Jobb kezes"
+#~ msgid "Off"
+#~ msgstr "Ki"
 
-#~ msgid "Left Handed"
-#~ msgstr "Bal kezes"
+#~ msgid "&Back"
+#~ msgstr "&Vissza"
 
-#~ msgid "Setup Mouse Behavior"
-#~ msgstr "Egér működésének beállítása"
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Asztal keresés: <b>%s</b>"
 
-#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Lancelot egy fejlettebb és nagymértékben testre szabható menü a Pardushoz.<br><br>A programok elérése könnyű és jól áttekinthető"
+#~ msgid "color: #642437;"
+#~ msgstr "szín: #642437;"
 
-#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-#~ msgstr "Az egyszerű menü a régi stílusú KDE 3 menü megfelelője.<br><br> Ez egy pehelysúlyú menü amit lassabb PC-kre javaslunk."
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "szín: rgb(95, 34, 52)"
 
-#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Kick-off menü a Pardus alapértelmezett menüje.<br><br>A programok elérési útja egyszerű és jól áttekinthető."
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "szín: rgb(234, 225, 228);"
 
-#~ msgid "Choose a Menu Style"
-#~ msgstr "Válassza ki a menü stílusát"
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "szín:rgb(95, 34, 52"
 
-#~ msgid "Keyboard Layout Language"
-#~ msgstr "Billentyűzet kiosztása"
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "szín: rgb(100, 36, 55)"
 
-#~ msgid "Congratulations!"
-#~ msgstr "Gratulálunk"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Hálózati menedzser (Nyomja meg az alkalmaz gombot a beállítások elmentéséhez) "
 
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Üdvözlöm a Pardus 2009.2-ben"
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Új kapcsolat létrehozásához kattintson a <b> Profil létrehozása</b> menüre és válassza ki a csatlakozás típusát a listából. Amennyiben vezeték nélkül csatlakozik akkor utána válassza ki a csatlakozási pontot is. A profil létrehozása után kattintson a négyzetbe a kapcsolat létrehozásához."
+
+#~ msgid "Network"
+#~ msgstr "Hálózat"
+
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Varázsló a fájlok és beállítások átviteléhez egy meglévő operációs rendszerből (pl. Windows) Pardusba."
+
+#~ msgid "Migration Wizard"
+#~ msgstr "Áthelyezés varázsló"
+
+#~ msgid "Repositories"
+#~ msgstr "Tárolók"
+
+#~ msgid "Add contrib repository"
+#~ msgstr "Contrib tároló hozzáadása"
+
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "A Contrib tároló további hasznos programokat tartalmaz."

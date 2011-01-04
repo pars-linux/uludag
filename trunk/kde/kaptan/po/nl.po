@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-03 12:09+0200\n"
+"POT-Creation-Date: 2011-01-04 13:01+0200\n"
 "PO-Revision-Date: 2010-12-03 14:00+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -25,6 +25,314 @@ msgstr "Kaptan"
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
 msgstr "Welkomassistent"
+
+#: .tmp/scrAvatar.py:36
+msgid "User Picture"
+msgstr ""
+
+#: .tmp/scrAvatar.py:48
+msgid "Create your user picture"
+msgstr ""
+
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
+msgid "More"
+msgstr "Meer"
+
+#: .tmp/scrGoodbye.py:25
+msgid "Congratulations!"
+msgstr "Gefeliciteerd!"
+
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
+msgid "Keyboard"
+msgstr "Toetsenbord"
+
+#: .tmp/scrKeyboard.py:32
+msgid "Keyboard Layout Language"
+msgstr "Toetsenbord voor taal"
+
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
+msgid "Menu"
+msgstr "Menu"
+
+#: .tmp/scrMenu.py:27
+msgid "Choose a Menu Style"
+msgstr "Kies een menustijl"
+
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
+msgid "Kick-off Menu"
+msgstr "Kickoff-menu"
+
+#: .tmp/scrMenu.py:43
+msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Het Kickoff-menu is het standaard menu van Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en handig georganiseerd."
+
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
+msgid "Simple Menu"
+msgstr "Eenvoudig menu"
+
+#: .tmp/scrMenu.py:49
+msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
+msgstr "Het klassieke menu is de vertrouwde menustijl van KDE 3.<br><br>Het is een eenvoudig menu en geschikt voor tragere PC's."
+
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
+msgid "Lancelot Menu"
+msgstr "Lancelot-menu"
+
+#: .tmp/scrMenu.py:55
+msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
+msgstr "Lancelot is een geavanceerd en volledig instelbaar menu voor Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en en handig georganiseerd."
+
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
+msgid "Mouse"
+msgstr "Muis"
+
+#: .tmp/scrMouse.py:30
+msgid "Setup Mouse Behavior"
+msgstr "Muisgedrag instellen"
+
+#: .tmp/scrMouse.py:140
+msgid "Left Handed"
+msgstr "Linkshandig"
+
+#: .tmp/scrMouse.py:140
+msgid "Right Handed"
+msgstr "Rechtshandig"
+
+#: .tmp/scrMouse.py:141
+msgid "Double Click"
+msgstr "Dubbelklik"
+
+#: .tmp/scrMouse.py:141
+msgid "Single Click "
+msgstr "Enkele klik"
+
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
+msgid "Packages"
+msgstr "Pakketten"
+
+#: .tmp/scrPackage.py:29
+msgid "Install / Remove Programs"
+msgstr "Installeer / Verwijder programma's"
+
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
+msgid "Smolt"
+msgstr "Smolt"
+
+#: .tmp/scrSmolt.py:32
+msgid "Help Pardus Improve!"
+msgstr "Help bij het verbeteren van Pardus!"
+
+#: .tmp/scrSmolt.py:68
+msgid "Label"
+msgstr "Label"
+
+#: .tmp/scrSmolt.py:69
+msgid "Data"
+msgstr "Gegevens"
+
+#: .tmp/scrSmolt.py:108
+msgid "&Host Information"
+msgstr ""
+
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
+msgid "&Privacy policy"
+msgstr "&Privacy-beleid"
+
+#: .tmp/scrSmolt.py:114
+msgid "UUID"
+msgstr "UUID"
+
+#: .tmp/scrSmolt.py:115
+msgid "OS"
+msgstr "OS"
+
+#: .tmp/scrSmolt.py:116
+msgid "Default Run Level"
+msgstr "Standaard niveau van uitvoeren"
+
+#: .tmp/scrSmolt.py:117
+msgid "Language"
+msgstr "Taal"
+
+#: .tmp/scrSmolt.py:118
+msgid "Platform"
+msgstr "Platvorm"
+
+#: .tmp/scrSmolt.py:119
+msgid "BogoMIPS"
+msgstr "BogoMIPS"
+
+#: .tmp/scrSmolt.py:120
+msgid "CPU Vendor"
+msgstr "CPU-fabrikant"
+
+#: .tmp/scrSmolt.py:121
+msgid "CPU Model"
+msgstr "CPU-model"
+
+#: .tmp/scrSmolt.py:122
+msgid "CPU Stepping"
+msgstr "CPU Stepping"
+
+#: .tmp/scrSmolt.py:123
+msgid "CPU Family"
+msgstr "CPU-familie"
+
+#: .tmp/scrSmolt.py:124
+msgid "CPU Model Num"
+msgstr "CPU-model num"
+
+#: .tmp/scrSmolt.py:125
+msgid "Number of CPUs"
+msgstr "Aantal CPU's"
+
+#: .tmp/scrSmolt.py:126
+msgid "CPU Speed"
+msgstr "CPU-snelheid"
+
+#: .tmp/scrSmolt.py:127
+msgid "System Memory"
+msgstr "Systeemgeheugen"
+
+#: .tmp/scrSmolt.py:128
+msgid "System Swap"
+msgstr "Systeem wisselgeheugen"
+
+#: .tmp/scrSmolt.py:129
+msgid "Vendor"
+msgstr "Fabrikant"
+
+#: .tmp/scrSmolt.py:130
+msgid "System"
+msgstr "Systeem"
+
+#: .tmp/scrSmolt.py:131
+msgid "Form Factor"
+msgstr "Vormfactor"
+
+#: .tmp/scrSmolt.py:132
+msgid "Kernel"
+msgstr "Kernel"
+
+#: .tmp/scrSmolt.py:133
+msgid "SELinux Enabled"
+msgstr "SELinux ingeschakeld"
+
+#: .tmp/scrSmolt.py:134
+msgid "SELinux Policy"
+msgstr "SELinux-beleid"
+
+#: .tmp/scrSmolt.py:135
+msgid "SELinux Enforce"
+msgstr "SELinux afdwingen"
+
+#: .tmp/scrSmolt.py:148
+msgid "Yes"
+msgstr "Ja"
+
+#: .tmp/scrSmolt.py:150
+msgid "No"
+msgstr "Nee"
+
+#: .tmp/scrStyle.py:37 .tmp/ui_scrStyle.py:236
+msgid "Themes"
+msgstr "Thema's"
+
+#: .tmp/scrStyle.py:38
+msgid "Customize Your Desktop"
+msgstr "Pas uw bureaublad aan"
+
+#: .tmp/scrSummary.py:35 .tmp/ui_scrSummary.py:85
+msgid "Summary"
+msgstr "Samenvatting"
+
+#: .tmp/scrSummary.py:36
+msgid "Save Your Settings"
+msgstr "Uw instellingen opslaan"
+
+#: .tmp/scrSummary.py:59
+msgid "Mouse Settings"
+msgstr "Muisinstellingen"
+
+#: .tmp/scrSummary.py:61
+#, python-format
+msgid "Selected Mouse configuration: <b>%s</b>"
+msgstr "Geselecteerde muisconfiguratie: <b>%s</b>"
+
+#: .tmp/scrSummary.py:62
+#, python-format
+msgid "Selected clicking behaviour: <b>%s</b>"
+msgstr "Geselecteerde klikgedrag: <b>%s</b>"
+
+#: .tmp/scrSummary.py:66
+msgid "Menu Settings"
+msgstr "Menu-instellingen"
+
+#: .tmp/scrSummary.py:67
+#, python-format
+msgid "Selected Menu: <b>%s</b>"
+msgstr "Geselecteerd menu: <b>%s</b>"
+
+#: .tmp/scrSummary.py:71
+msgid "Wallpaper Settings"
+msgstr "Achtergrondinstellingen"
+
+#: .tmp/scrSummary.py:73
+msgid "You haven't selected any wallpaper."
+msgstr "Er is geen achtergrond geselecteerd."
+
+#: .tmp/scrSummary.py:75
+#, python-format
+msgid "Selected Wallpaper: <b>%s</b>"
+msgstr "Geselecteerde achtergrond: <b>%s</b>"
+
+#: .tmp/scrSummary.py:79
+msgid "Style Settings"
+msgstr "Stijlinstellingen"
+
+#: .tmp/scrSummary.py:82
+msgid "You haven't selected any style."
+msgstr "Er is geen stijl geselecteerd."
+
+#: .tmp/scrSummary.py:84
+#, python-format
+msgid "Selected Style: <b>%s</b>"
+msgstr "Geselecteerde stijl: <b>%s</b>"
+
+#: .tmp/scrSummary.py:91
+msgid "Smolt Settings"
+msgstr "Smolt-instellingen"
+
+#: .tmp/scrSummary.py:92
+#, python-format
+msgid "Send my profile: <b>%s</b>"
+msgstr "Verstuur mijn profiel: <b>%s</b>"
+
+#: .tmp/scrSummary.py:117
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr "Kan het Plasma-bureaublad niet herstarten. Kaptan zal nu afgesloten worden."
+
+#: .tmp/scrSummary.py:117
+msgid "Error"
+msgstr "Fout"
+
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
+msgid "Wallpaper"
+msgstr "Achtergrond"
+
+#: .tmp/scrWallpaper.py:35
+#, fuzzy
+msgid "Choose a Wallpaper"
+msgstr "Achtergrond uit een bestand kiezen"
+
+#: .tmp/scrWelcome.py:27 .tmp/ui_scrWelcome.py:77
+msgid "Welcome"
+msgstr "Welkom"
+
+#: .tmp/scrWelcome.py:28
+#, fuzzy, python-format
+msgid "Welcome to %s"
+msgstr "Welkom bij Pardus"
 
 #: .tmp/ui_kaptan.py:358
 msgid "Welcome to Pardus"
@@ -75,10 +383,6 @@ msgstr "Opnemen"
 msgid "Recapture"
 msgstr "Opnieuw opnemen"
 
-#: .tmp/ui_scrGoodbye.py:325
-msgid "More"
-msgstr "Meer"
-
 #: .tmp/ui_scrGoodbye.py:326
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
 msgstr "<b>De instellingen zijn toegepast.</b> Begin nu van Pardus te genieten of gebruik de volgende linken of toepassingen voor meer instellingen en ondersteuning. Vergeet niet aan de <b>Pardus-gemeenschap deel te nemen!</b>"
@@ -107,10 +411,6 @@ msgstr "Help en ondersteuning"
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
 msgstr "Pardus-gemeenschap, email-lijsten, chat-clubs, Wiki-documenten en pagina's voor ondersteuning..."
 
-#: .tmp/ui_scrKeyboard.py:93
-msgid "Keyboard"
-msgstr "Toetsenbord"
-
 #: .tmp/ui_scrKeyboard.py:94
 msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
 msgstr "Kaptan selecteert automatisch de beste bij de systeemtaal bijbehorende toetsenborduitvoering. Indien een andere dan de standaard gewenst is, selecteer een andere en test deze ook hier."
@@ -119,33 +419,13 @@ msgstr "Kaptan selecteert automatisch de beste bij de systeemtaal bijbehorende t
 msgid "Test Layout"
 msgstr "Testweergave"
 
-#: .tmp/ui_scrMenu.py:123
-msgid "Menu"
-msgstr "Menu"
-
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
 msgstr "Het <b>KDE-menu</b> kan helemaal naar wens aangepast worden. Selecteer er een uit de volgende stijlen."
 
-#: .tmp/ui_scrMenu.py:125
-msgid "Kick-off Menu"
-msgstr "Kickoff-menu"
-
-#: .tmp/ui_scrMenu.py:126
-msgid "Simple Menu"
-msgstr "Eenvoudig menu"
-
-#: .tmp/ui_scrMenu.py:127
-msgid "Lancelot Menu"
-msgstr "Lancelot-menu"
-
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
 msgstr "Voorbeeld"
-
-#: .tmp/ui_scrMouse.py:202
-msgid "Mouse"
-msgstr "Muis"
 
 #: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
@@ -178,10 +458,6 @@ msgstr "Linkshandig"
 #: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
 msgstr "Omgekeerd scrollen"
-
-#: .tmp/ui_scrPackage.py:132
-msgid "Packages"
-msgstr "Pakketten"
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
@@ -219,10 +495,6 @@ msgstr "Sta Strigi toe om mijn bestanden te doorzoeken"
 msgid "Search Options"
 msgstr "Zoekopties"
 
-#: .tmp/ui_scrSmolt.py:154
-msgid "Smolt"
-msgstr "Smolt"
-
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "<b>Smolt</b> in een hulpmiddel om informatie in de volgende tabel te verzamelen en te versturen waardoor Pardus aan de hand gebruikte profielstatistieken verbeterd kan worden."
@@ -230,10 +502,6 @@ msgstr "<b>Smolt</b> in een hulpmiddel om informatie in de volgende tabel te ver
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
 msgstr "Mijn profiel &verzenden"
-
-#: .tmp/ui_scrSmolt.py:158
-msgid "&Privacy policy"
-msgstr "&Privacy-beleid"
 
 #: .tmp/ui_scrSmolt.py:159
 msgid ""
@@ -256,10 +524,6 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   De informatie die naar de smoltserver verstuurd wordt is openbaar en kan door iedereen ingezien worden. De informatie zal hoofdzakelijk door hardware fabrikanten en andere gebruikt worden. En zal ook gebruikt worden om een betere ondersteuning van open-source stuurprogramma's en betere ondersteuning in het algemeen te verkrijgen.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP-loggen:</span>  Met de smolt van Pardus gaat al het  web-verkeer eerst door een proxy server.  Dit is de enigste plaats waar IP-adressen gedurende 4 weken opgeslagen worden, waarna deze verwijderd worden.  Het Pardus-project verzamelt geen ip-adressen in de smolt database.  Deze logs zijn privé en zullen niet voor iedereen beschikbaar zijn.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">   Indien U niet eens bent met dit beleid, gebruik smolt dan niet.  Voor vragen over dit beleid kunt u contact opnemen met het Pardus Infrastructure Team op admin [at] pardus.org.tr  Denk er ook aan dat het verwijderen van het profiel op ieder moment kan door het starten van &quot;<span style=\" font style:italic;\">smoltDeleteProfile</span>&quot;</p></body></html>"
-
-#: .tmp/ui_scrStyle.py:236
-msgid "Themes"
-msgstr "Thema's"
 
 #: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
@@ -305,10 +569,6 @@ msgstr "Stijlnaam"
 msgid "styleDesc"
 msgstr "Stijlbeschrijving"
 
-#: .tmp/ui_scrSummary.py:85
-msgid "Summary"
-msgstr "Samenvatting"
-
 #: .tmp/ui_scrSummary.py:86
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
 msgstr "Alle stappen zijn met succes doorlopen. Hier is een samenvatting van gekozen instellingen. Selecteer <b>Instellingen toepassen</b> om ze nu op te slaan. U kunt nu van Pardus gaan genieten!"
@@ -316,10 +576,6 @@ msgstr "Alle stappen zijn met succes doorlopen. Hier is een samenvatting van gek
 #: .tmp/ui_scrSummary.py:87
 msgid "The following settings will be applied"
 msgstr "De volgende instellingen zullen toegepast worden"
-
-#: .tmp/ui_scrWallpaper.py:131
-msgid "Wallpaper"
-msgstr "Achtergrond"
 
 #: .tmp/ui_scrWallpaper.py:132
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
@@ -337,10 +593,6 @@ msgstr "Achtergrond uit een bestand kiezen"
 msgid "Don't change wallpaper"
 msgstr "Achtergrond niet wijzigen"
 
-#: .tmp/ui_scrWelcome.py:77
-msgid "Welcome"
-msgstr "Welkom"
-
 #: .tmp/ui_scrWelcome.py:78
 msgid "What is Pardus?"
 msgstr "Wat is Pardus?"
@@ -357,329 +609,161 @@ msgstr "Achtergrondnaam"
 msgid "wallpaperDesc"
 msgstr "Achtergrondbeschrijving"
 
-#~ msgid "Contrib repository includes extra and handy programs."
-#~ msgstr "Contrib-bron bevat extra en handige pakketten."
+#, fuzzy
+#~ msgid "Welcome to Pardus 2011 Alpha 1"
+#~ msgstr "Welkom bij Pardus 2009.2"
 
-#~ msgid "Add contrib repository"
-#~ msgstr "Contrib-bron toevoegen"
+#~ msgid "Connect to the Internet"
+#~ msgstr "Verbinden met het internet"
 
-#~ msgid "Repositories"
-#~ msgstr "Softwarebronnen"
+#~ msgid "color: #642437;"
+#~ msgstr "color: #642437;"
 
-#~ msgid "Network"
-#~ msgstr "Netwerk"
+#~ msgid "Desktop search: <b>%s</b>"
+#~ msgstr "Desktop-zoekactie: <b>%s</b>"
 
-#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-#~ msgstr "Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</b> en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na een zoeken de gewenste bron gevonden worden en stel eventueel de bijbehorende sleutel in. Na toepassen van het profiel kan door markeren van het keuzeveld de verbinding gemaakt worden."
+#~ msgid "color: rgb(95, 34, 52);"
+#~ msgstr "color: rgb(95, 34, 52);"
 
-#~ msgid "Network Manager (Press Apply to save your settings)"
-#~ msgstr "Netwerkbeheerder (activeer Toepassen voor opslaan instellingen)"
+#~ msgid "color: rgb(234, 225, 228);"
+#~ msgstr "color: rgb(234, 225, 228);"
 
-#~ msgid "Migration Wizard"
-#~ msgstr "Migratie-assistent"
+#~ msgid "color:rgb(95, 34, 52)"
+#~ msgstr "color:rgb(95, 34, 52)"
 
-#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
-#~ msgstr "Een assistent voor het overzetten van bestanden en instellingen van het huidige besturingsysteem (bijv. Windows) naar Pardus."
+#~ msgid "&Back"
+#~ msgstr "&Terug"
 
-#~ msgid "Kaptan Desktop"
-#~ msgstr "Kaptan Desktop"
+#~ msgid "Easy Desktop Search"
+#~ msgstr "Gemakkelijke desktop-zoekactie"
+
+#~ msgid "On"
+#~ msgstr "Aan"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "color: rgb(100, 36, 55);"
+#~ msgstr "color: rgb(100, 36, 55);"
+
+#~ msgid ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+#~ msgstr ""
+#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);}"
+
+#~ msgid ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+#~ msgstr ""
+#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "padding: 20px}\n"
+
+#~ msgid ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#listStyles{\n"
+#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
+#~ "\n"
+#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
+#~ "\n"
+#~ "color: rgb(234, 225, 228);\n"
+#~ "}"
+
+#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
+#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
+
+#~ msgid "Menu Styles"
+#~ msgstr "Menustijlen"
+
+#~ msgid ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+#~ msgstr ""
+#~ "#pictureMenuStyles{\n"
+#~ "border: 1px solid rgb(255, 255, 255);\n"
+#~ "}"
+
+#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
+#~ msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
+
+#~ msgid "Insert some catchy title about wallpapers.."
+#~ msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
+
+#~ msgid "Smolt Description"
+#~ msgstr "Smolt-beschrijving"
+
+#~ msgid "Some catchy description desktop search"
+#~ msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
+
+#~ msgid "Some catchy title about desktop search"
+#~ msgstr "Enigzins pakkende titel van desktop-zoekactie"
+
+#~ msgid "Configure package manager settings"
+#~ msgstr "Configureer pakketbeheer instellingen"
+
+#~ msgid "Package Manager"
+#~ msgstr "Pakkettenbeheer"
+
+#~ msgid "Network Manager"
+#~ msgstr "Netwerkbeheer"
+
+#~ msgid "Configure your mouse"
+#~ msgstr "Configureer uw muis"
+
+#~ msgid "Some catchy description about styles"
+#~ msgstr "Enigszins pakkende beschrijving over stijlen"
+
+#~ msgid "Some catchy title about styles"
+#~ msgstr "Enigszins pakkende titel over stijlen"
+
+#~ msgid "Select your keyboard layout"
+#~ msgstr "Selecteer de toetsenbordindeling"
+
+#~ msgid "Insert some catchy title about keyboards.."
+#~ msgstr "Voeg een enigzins pakkende titel over toetsenborden toe.."
 
 #, fuzzy
 #~ msgid "Welcome to Kaptan 2009.2"
 #~ msgstr "Welkom bij Kaptan"
 
-#~ msgid "Insert some catchy title about keyboards.."
-#~ msgstr "Voeg een enigzins pakkende titel over toetsenborden toe.."
+#~ msgid "Kaptan Desktop"
+#~ msgstr "Kaptan Desktop"
 
-#~ msgid "Select your keyboard layout"
-#~ msgstr "Selecteer de toetsenbordindeling"
+#~ msgid "A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus."
+#~ msgstr "Een assistent voor het overzetten van bestanden en instellingen van het huidige besturingsysteem (bijv. Windows) naar Pardus."
 
-#~ msgid "Some catchy title about styles"
-#~ msgstr "Enigszins pakkende titel over stijlen"
+#~ msgid "Migration Wizard"
+#~ msgstr "Migratie-assistent"
 
-#~ msgid "Some catchy description about styles"
-#~ msgstr "Enigszins pakkende beschrijving over stijlen"
+#~ msgid "Network Manager (Press Apply to save your settings)"
+#~ msgstr "Netwerkbeheerder (activeer Toepassen voor opslaan instellingen)"
 
-#~ msgid "Configure your mouse"
-#~ msgstr "Configureer uw muis"
+#~ msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
+#~ msgstr "Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</b> en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na een zoeken de gewenste bron gevonden worden en stel eventueel de bijbehorende sleutel in. Na toepassen van het profiel kan door markeren van het keuzeveld de verbinding gemaakt worden."
 
-#~ msgid "Network Manager"
-#~ msgstr "Netwerkbeheer"
+#~ msgid "Network"
+#~ msgstr "Netwerk"
 
-#~ msgid "Package Manager"
-#~ msgstr "Pakkettenbeheer"
+#~ msgid "Repositories"
+#~ msgstr "Softwarebronnen"
 
-#~ msgid "Configure package manager settings"
-#~ msgstr "Configureer pakketbeheer instellingen"
+#~ msgid "Add contrib repository"
+#~ msgstr "Contrib-bron toevoegen"
 
-#~ msgid "Some catchy title about desktop search"
-#~ msgstr "Enigzins pakkende titel van desktop-zoekactie"
-
-#~ msgid "Some catchy description desktop search"
-#~ msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
-
-#~ msgid "Smolt Description"
-#~ msgstr "Smolt-beschrijving"
-
-#~ msgid "Insert some catchy title about wallpapers.."
-#~ msgstr "Voeg een enigzins pakkende titel over achtergronden toe.."
-
-#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
-#~ msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
-
-#~ msgid ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-
-#~ msgid "Menu Styles"
-#~ msgstr "Menustijlen"
-
-#~ msgid "border: 1px solid rgb(236, 236, 236, 100);"
-#~ msgstr "border: 1px solid rgb(236, 236, 236, 100);"
-
-#~ msgid ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#listStyles{\n"
-#~ "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "\n"
-#~ "color: rgb(234, 225, 228);\n"
-#~ "}"
-
-#~ msgid ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
-#~ msgstr ""
-#~ "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);\n"
-#~ "padding: 20px}\n"
-
-#~ msgid ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
-#~ msgstr ""
-#~ "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));\n"
-#~ "\n"
-#~ "border: 1px solid rgb(236, 236, 236, 80);}"
-
-#~ msgid "Install / Remove Programs"
-#~ msgstr "Installeer / Verwijder programma's"
-
-#~ msgid "color: rgb(100, 36, 55);"
-#~ msgstr "color: rgb(100, 36, 55);"
-
-#~ msgid "Congratulations!"
-#~ msgstr "Gefeliciteerd!"
-
-#~ msgid "Off"
-#~ msgstr "Uit"
-
-#~ msgid "On"
-#~ msgstr "Aan"
-
-#~ msgid "Easy Desktop Search"
-#~ msgstr "Gemakkelijke desktop-zoekactie"
-
-#~ msgid "Double Click"
-#~ msgstr "Dubbelklik"
-
-#~ msgid "Single Click "
-#~ msgstr "Enkele klik"
-
-#~ msgid "Right Handed"
-#~ msgstr "Rechtshandig"
-
-#~ msgid "Left Handed"
-#~ msgstr "Linkshandig"
-
-#~ msgid "Setup Mouse Behavior"
-#~ msgstr "Muisgedrag instellen"
-
-#~ msgid "No"
-#~ msgstr "Nee"
-
-#~ msgid "Yes"
-#~ msgstr "Ja"
-
-#~ msgid "SELinux Enforce"
-#~ msgstr "SELinux afdwingen"
-
-#~ msgid "SELinux Policy"
-#~ msgstr "SELinux-beleid"
-
-#~ msgid "SELinux Enabled"
-#~ msgstr "SELinux ingeschakeld"
-
-#~ msgid "Kernel"
-#~ msgstr "Kernel"
-
-#~ msgid "Form Factor"
-#~ msgstr "Vormfactor"
-
-#~ msgid "System"
-#~ msgstr "Systeem"
-
-#~ msgid "Vendor"
-#~ msgstr "Fabrikant"
-
-#~ msgid "System Swap"
-#~ msgstr "Systeem wisselgeheugen"
-
-#~ msgid "System Memory"
-#~ msgstr "Systeemgeheugen"
-
-#~ msgid "CPU Speed"
-#~ msgstr "CPU-snelheid"
-
-#~ msgid "Number of CPUs"
-#~ msgstr "Aantal CPU's"
-
-#~ msgid "CPU Model Num"
-#~ msgstr "CPU-model num"
-
-#~ msgid "CPU Family"
-#~ msgstr "CPU-familie"
-
-#~ msgid "CPU Stepping"
-#~ msgstr "CPU Stepping"
-
-#~ msgid "CPU Model"
-#~ msgstr "CPU-model"
-
-#~ msgid "CPU Vendor"
-#~ msgstr "CPU-fabrikant"
-
-#~ msgid "BogoMIPS"
-#~ msgstr "BogoMIPS"
-
-#~ msgid "Platform"
-#~ msgstr "Platvorm"
-
-#~ msgid "Language"
-#~ msgstr "Taal"
-
-#~ msgid "Default Run Level"
-#~ msgstr "Standaard niveau van uitvoeren"
-
-#~ msgid "OS"
-#~ msgstr "OS"
-
-#~ msgid "UUID"
-#~ msgstr "UUID"
-
-#~ msgid "&Back"
-#~ msgstr "&Terug"
-
-#~ msgid "Data"
-#~ msgstr "Gegevens"
-
-#~ msgid "Label"
-#~ msgstr "Label"
-
-#~ msgid "Help Pardus Improve!"
-#~ msgstr "Help bij het verbeteren van Pardus!"
-
-#~ msgid "color:rgb(95, 34, 52)"
-#~ msgstr "color:rgb(95, 34, 52)"
-
-#~ msgid "color: rgb(234, 225, 228);"
-#~ msgstr "color: rgb(234, 225, 228);"
-
-#~ msgid "color: rgb(95, 34, 52);"
-#~ msgstr "color: rgb(95, 34, 52);"
-
-#~ msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-#~ msgstr "Kan het Plasma-bureaublad niet herstarten. Kaptan zal nu afgesloten worden."
-
-#~ msgid "Error"
-#~ msgstr "Fout"
-
-#~ msgid "Send my profile: <b>%s</b>"
-#~ msgstr "Verstuur mijn profiel: <b>%s</b>"
-
-#~ msgid "Smolt Settings"
-#~ msgstr "Smolt-instellingen"
-
-#~ msgid "Desktop search: <b>%s</b>"
-#~ msgstr "Desktop-zoekactie: <b>%s</b>"
-
-#~ msgid "Selected Style: <b>%s</b>"
-#~ msgstr "Geselecteerde stijl: <b>%s</b>"
-
-#~ msgid "You haven't selected any style."
-#~ msgstr "Er is geen stijl geselecteerd."
-
-#~ msgid "Style Settings"
-#~ msgstr "Stijlinstellingen"
-
-#~ msgid "Selected Wallpaper: <b>%s</b>"
-#~ msgstr "Geselecteerde achtergrond: <b>%s</b>"
-
-#~ msgid "You haven't selected any wallpaper."
-#~ msgstr "Er is geen achtergrond geselecteerd."
-
-#~ msgid "Wallpaper Settings"
-#~ msgstr "Achtergrondinstellingen"
-
-#~ msgid "Selected Menu: <b>%s</b>"
-#~ msgstr "Geselecteerd menu: <b>%s</b>"
-
-#~ msgid "Menu Settings"
-#~ msgstr "Menu-instellingen"
-
-#~ msgid "Selected clicking behaviour: <b>%s</b>"
-#~ msgstr "Geselecteerde klikgedrag: <b>%s</b>"
-
-#~ msgid "Selected Mouse configuration: <b>%s</b>"
-#~ msgstr "Geselecteerde muisconfiguratie: <b>%s</b>"
-
-#~ msgid "Mouse Settings"
-#~ msgstr "Muisinstellingen"
-
-#~ msgid "Save Your Settings"
-#~ msgstr "Uw instellingen opslaan"
-
-#~ msgid "Customize Your Desktop"
-#~ msgstr "Pas uw bureaublad aan"
-
-#~ msgid "color: #642437;"
-#~ msgstr "color: #642437;"
-
-#~ msgid "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Lancelot is een geavanceerd en volledig instelbaar menu voor Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en en handig georganiseerd."
-
-#~ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-#~ msgstr "Het klassieke menu is de vertrouwde menustijl van KDE 3.<br><br>Het is een eenvoudig menu en geschikt voor tragere PC's."
-
-#~ msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
-#~ msgstr "Het Kickoff-menu is het standaard menu van Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en handig georganiseerd."
-
-#~ msgid "Choose a Menu Style"
-#~ msgstr "Kies een menustijl"
-
-#~ msgid "Connect to the Internet"
-#~ msgstr "Verbinden met het internet"
-
-#~ msgid "Keyboard Layout Language"
-#~ msgstr "Toetsenbord voor taal"
-
-#, fuzzy
-#~ msgid "Welcome to Pardus 2011 Alpha 1"
-#~ msgstr "Welkom bij Pardus 2009.2"
+#~ msgid "Contrib repository includes extra and handy programs."
+#~ msgstr "Contrib-bron bevat extra en handige pakketten."
