@@ -4,7 +4,7 @@ checkelf
 ========
 
 Checkelf is a script which facilitates developers to find dependencies,
-undefined symbols of packages, etc. It's based on Ozan's checklib's script.
+undefined symbols of packages, etc. It's based on Ozan's checkelf's script.
 I've tried to explain all available options, which you can examine below.
 It has a lot of fine-tuning options which allows the user to get the
 desired output directly. For more info please read the options and examples
