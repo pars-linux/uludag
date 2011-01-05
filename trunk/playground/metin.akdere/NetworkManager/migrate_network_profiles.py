@@ -254,7 +254,6 @@ class NetworkManagerSettings:
         cfg = ConfigParser.ConfigParser()
         profile_name = settings['profile_name']
         iface = settings['device']
-        name_server = settings['name_server']
 
         cfg.add_section('connection')
         cfg.add_section('ipv4')
@@ -267,9 +266,7 @@ class NetworkManagerSettings:
         cfg.set('connection', 'autoconnect', 'false')
 
         cfg.set('ipv4', 'method', 'auto')
-        # For now on, pretend we have only one DNS server address in the old NM settings
-        cfg.set('ipv4', 'dns', name_server)
-        cfg.set('ipv4', 'ignoe-auto-dns', 'true')
+        self.useCustomDNSServers(cfg, settings)
 
         cfg.set('802-3-ethernet', 'duplex', 'full')
         cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
@@ -280,8 +277,15 @@ class NetworkManagerSettings:
 
     def createManualLanSettings(self, lan_settings):
         ''' Create LAN settings, giving each address manually '''
-
         pass
+
+    def useCustomDNSServers(self, cfg, settings):
+        ''' Insert DNS server addresses to the given configParser object '''
+
+        # For now on, pretend we have only one DNS server address in the old NM settings
+        cfg.set('ipv4', 'dns', settings['name_server'])
+        cfg.set('ipv4', 'ignoe-auto-dns', 'true')
+
 
     def writeSettings(self, config, profile_name):
         ''' Create a config file and write the given settings '''
