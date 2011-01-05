@@ -12,19 +12,14 @@ import ConfigParser
 NetworkManagerConfDir = "/etc/NetworkManager/system-connections"
 NMConfDir = "/etc/network"
 
-# Map corresponding NM option to NetworkManager option
-mapConfigOptions = {"id" : "profile_name",
-                    "type" : "connection_type",
-                    "method":"net_mode",
-                    "dns" : "name_server",
-                    "addresses" : ("net_address", "net_gateway"),
-                    }
 
 class PardusNMSettings:
     def __init__(self):
 
         self.lan_settings = {}
         self.wireless_settings = {}
+        self.default_nameservers = []
+        self.default_resolv_conf_file = "/etc/resolv.default.conf"
 
         self.lan_config_path = os.path.join(os.getcwd(), "net_tools")
         self.wireless_config_path = os.path.join(os.getcwd(), "wireless_tools")
@@ -38,6 +33,8 @@ class PardusNMSettings:
 
         self.readAllLanSettings()
         self.readAllWirelessSettings()
+
+        self.readDefaultNameservers()
 
     def retrieveLanProfileNames(self):
         ''' A helper func to read all profile names, we will use a dict to keep 
@@ -79,6 +76,27 @@ class PardusNMSettings:
                 except:
                     self.wireless_settings[section][option] = None
 
+    
+    def readDefaultNameservers(self):
+        ''' Read default DNS servers in resolve.default.conf '''
+
+        # TODO: We should supply a default nameserver conf unless we find any
+        nameservers_file = ""
+        if os.path.exists(self.default_resolv_conf_file):
+            try:
+                file_pointer = open(self.default_resolv_conf_file)
+                try:
+                    nameservers_file = file_pointer.readlines()
+                finally:
+                    file_pointer.close()
+            except:
+                pass
+        
+        for line in nameservers_file:
+            if not line.startswith("#") and line.startswith("nameserver"):
+                ns = line.split()[-1]
+                print ns
+                self.default_nameservers.append(ns)
 
     def getLanProfileSettings(self, profile_name):
         ''' Return a dict that stores settings of the given LAN profile name '''
@@ -217,12 +235,8 @@ class NetworkManagerSettings:
         for profile, options in self.pardus_lan_settings.items():
             for key, value in options.items():
                 if options["net_mode"] == "auto":
-                    if options["name_mode"] == "custom":
-                        self.createOnlyAutomaticLanSettings(options)
-                    else:
                         self.createAutomaticLanSettings(options)
                 if options["net_mode"] == "manual":
-                    if options["name_mode"] == "custom":
                         self.createManualLanSettings(options)
 
 
@@ -244,33 +258,7 @@ class NetworkManagerSettings:
         cfg.set('connection', 'autoconnect', 'false')
 
         cfg.set('ipv4', 'method', 'auto')
-
-        cfg.set('802-3-ethernet', 'duplex', 'full')
-        cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
-
-        cfg.set('ipv6', 'method', 'ignore')
-
-        self.writeSettings(cfg, profile_name)
-
-    def createOnlyAutomaticLanSettings(self, settings):
-        ''' Create LAN settings, obtain addresses from DHCP except DNS servers '''
-
-        cfg = ConfigParser.ConfigParser()
-        profile_name = settings['profile_name']
-        iface = settings['device']
-
-        cfg.add_section('connection')
-        cfg.add_section('ipv4')
-        cfg.add_section('802-3-ethernet')
-        cfg.add_section('ipv6')
-
-        cfg.set('connection', 'id', profile_name)
-        cfg.set('connection', 'uuid', self.generateUUID())
-        cfg.set('connection', 'type', '802-3-ethernet')
-        cfg.set('connection', 'autoconnect', 'false')
-
-        cfg.set('ipv4', 'method', 'auto')
-        self.useCustomDNSServers(cfg, settings)
+        self.chooseNameserverSettings(cfg, settings)
 
         cfg.set('802-3-ethernet', 'duplex', 'full')
         cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
@@ -298,7 +286,7 @@ class NetworkManagerSettings:
 
         cfg.set('ipv4', 'method', 'manual')
         self.setNetworkAddresses(cfg, settings)
-        self.useCustomDNSServers(cfg, settings)
+        self.chooseNameserverSettings(cfg, settings)
 
         cfg.set('802-3-ethernet', 'duplex', 'full')
         cfg.set('802-3-ethernet', 'mac-address', self.getMACAddress(iface))
@@ -307,12 +295,19 @@ class NetworkManagerSettings:
 
         self.writeSettings(cfg, profile_name)
 
-    def useCustomDNSServers(self, cfg, settings):
-        ''' Insert DNS server addresses to the given configParser object '''
+    def chooseNameserverSettings(self, cfg, settings):
+        ''' Decide whether to use default, custom or auto (DHCP assigned) nameservers '''
 
-        # For now on, pretend we have only one DNS server address in the old NM settings
+        default_nameservers = ";".join(self.pardus_nm_settings.default_nameservers)
+
         cfg.set('ipv4', 'ignoe-auto-dns', 'true')
-        cfg.set('ipv4', 'dns', settings['name_server'])
+
+        if settings["name_mode"] == "default":
+            cfg.set('ipv4', 'dns', default_nameservers)
+        elif settings["name_mode"] == "custom":
+            cfg.set('ipv4', 'dns', settings['name_server'])
+
+        # Nothing special is done in auto mode
 
     def setNetworkAddresses(self, cfg, settings):
         ''' Set network addresses from given settings '''
