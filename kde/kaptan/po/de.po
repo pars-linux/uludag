@@ -19,8 +19,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
 msgid "Kaptan"
@@ -67,7 +67,6 @@ msgid "Data"
 msgstr "Wert"
 
 #: .tmp/scrSmolt.py:108
-#, fuzzy
 msgid "&Host Information"
 msgstr "&Host Information"
 
