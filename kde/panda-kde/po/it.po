@@ -51,7 +51,7 @@ msgstr "Usa il driver sicuro che fornisce funzionalità limitate"
 
 #: panda.cpp:138 rc.cpp:2 rc.cpp:2
 msgid "Video Driver Administration"
-msgstr ""
+msgstr "Informazioni Di Video Driver"
 
 #: panda.cpp:142
 msgid "(c) 2011 Fatih Arslan"
@@ -59,7 +59,7 @@ msgstr "(c) 2011 Fatih Arslan"
 
 #: panda.cpp:148
 msgid "Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> to report bugs.\n"
-msgstr ""
+msgstr "Per favore usare <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> per segnalare i bug.\n"
 
 #: panda.cpp:150
 msgid "Fatih Arslan"
@@ -86,6 +86,8 @@ msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
 msgstr ""
+"Devi riavviare il sistema affinché le modifiche abbiano effetto.\n"
+" Vuoi avviarlo ora?"
 
 #: rc.cpp:1 rc.cpp:1
 msgid "Video Driver"
