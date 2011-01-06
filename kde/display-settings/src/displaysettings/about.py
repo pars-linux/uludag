@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 - 2010 TUBITAK/UEKAE
+# Copyright (C) 2009-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -17,7 +17,7 @@ from PyKDE4.kdecore import KAboutData, ki18n, ki18nc
 appName     = "display-settings"
 modName     = "displaysettings"
 programName = ki18n("Display Settings")
-version     = "1.0.1"
+version     = "1.0.2"
 description = ki18n("Display Configuration Tool")
 license     = KAboutData.License_GPL
 copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
