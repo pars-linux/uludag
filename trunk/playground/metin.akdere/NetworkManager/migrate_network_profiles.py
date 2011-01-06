@@ -228,6 +228,35 @@ class NetworkManagerSettings:
         '''
         pass
 
+    def decimal2binary(self, n):
+        ''' Convert decimal octet value to binary format'''
+
+        octet = ["0","0","0","0","0","0","0","0"]
+        index = 0
+        if n < 0 or n > 255:
+            raise ValueError, "Octet value must be between [0-255]"
+        if n == 0: 
+            return "".join(octet)
+        while n > 0:
+            octet[index] = str((n % 2))
+            index += 1
+            n = n >> 1
+        octet.reverse()
+        return "".join(octet)
+
+    def calculatePrefix(self, net_mask):
+        ''' Convert netmask value to CIDR prefix type which is between [1-32] as told in NM spec
+            See http://mail.gnome.org/archives/networkmanager-list/2008-August/msg00076.html '''
+
+        octets = net_mask.split(".")
+        octet_in_binary = []
+        netmask_value = 0
+        for octet in octets:
+            ret = self.decimal2binary(int(octet))
+            octet_in_binary.append(ret)
+        for i in "".join(octet_in_binary):
+            if int(i) == 1 : netmask_value += 1
+        return netmask_value
 
     def generateProfiles(self):
         ''' Decide what kind of profile types should be created and call regarding method '''
@@ -312,8 +341,10 @@ class NetworkManagerSettings:
     def setNetworkAddresses(self, cfg, settings):
         ''' Set network addresses from given settings '''
 
+        net_mask = self.calculatePrefix(settings['net_mask'])
+
         # Get network address and gateway values and join them with ";"
-        net_addresses = ";".join([settings['net_address'], settings['net_gateway'], ""])
+        net_addresses = ";".join([settings['net_address'], str(net_mask), settings['net_gateway'], ""])
         cfg.set('ipv4', 'addresses1', net_addresses)
 
     def writeSettings(self, config, profile_name):
