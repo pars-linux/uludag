@@ -1,0 +1,15 @@
+Kaptan TODO List
+=========================
+
+Legend:
+
+- Todo
+? Not determined if/how we have to do
+/ In progress
++ Accomplished
+
+
+- Port to QT4.
+/ Add Smolt screen.
+/ Add photo-boot screen.
+? Add selecting language screen.
