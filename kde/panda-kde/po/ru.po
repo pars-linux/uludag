@@ -38,7 +38,7 @@ msgstr "Настройки драйвера"
 
 #: panda.cpp:120
 msgid "Use the driver developed by the open source community"
-msgstr "Использовать драйвер, который разработан сообществом Open Source"
+msgstr "Использовать драйвер, который разработан свободным сообществом"
 
 #: panda.cpp:121
 msgid "Use the proprietary driver provided by the manufacturer"
@@ -94,4 +94,4 @@ msgstr "Видеодрайвер"
 
 #: rc.cpp:3 rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr "видео, драйвер, графика, дисплей"
+msgstr "видео,драйвер,графика,дисплей"
