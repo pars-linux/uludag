@@ -16,7 +16,7 @@ import sys
 import uuid
 from optparse import OptionParser
 
-from networkmanager import NetworkManager, WiredSettings, WirelessSettings, DeviceType
+from networkmanager import NetworkManager, WiredSettings, WirelessSettings, DeviceType, DeviceState
 
 # Color characters
 COLORS = {
@@ -501,28 +501,33 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
         if conn.settings.mac_address:
             device = get_device_by_mac(nm_handle, conn.settings.mac_address)
             if device is not None:
-                nm_handle.activate_connection(conn, device)
-                return
-
-        # The connection doesn't have a fixed MAC so
-        # we have to ask for the interface
-        # or use a possibly given interface through CLI
-
-        types = {
-                    '802-11-wireless'   : DeviceType.WIFI,
-                    '802-3-ethernet'    : DeviceType.ETHERNET,
-#                    'cdma'              : [],
-#                    'gsm'               : [],
-#                    'unknown'           : [],
-        }
-
-        device_list = nm_handle.devices_map[types[conn.settings.type]]
-        device = get_device(nm_handle, device_list)
-
-        if device is not None:
-            nm_handle.activate_connection(conn, device)
+                if not device.state == DeviceState.UNAVAILABLE:
+                    nm_handle.activate_connection(conn, device)
+                else:
+                    print "Device unavailable"
         else:
-            print "No device"
+            # The connection doesn't have a fixed MAC so
+            # we have to ask for the interface
+            # or use a possibly given interface through CLI
+
+            types = {
+                        '802-11-wireless'   : DeviceType.WIFI,
+                        '802-3-ethernet'    : DeviceType.ETHERNET,
+                    #   'cdma'              : [],
+                    #   'gsm'               : [],
+                    #   'unknown'           : [],
+            }
+
+            device_list = nm_handle.devices_map[types[conn.settings.type]]
+            device = get_device(nm_handle, device_list)
+
+            if device is not None:
+                if not device.state == DeviceState.UNAVAILABLE:
+                    nm_handle.activate_connection(conn, device)
+                else:
+                    print "Device unavailable"
+            else:
+                print "No device"
     else:
         print "There is no connection named: %s" % connection_id
 
