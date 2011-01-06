@@ -148,6 +148,8 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
     authorPageText = ki18n("Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> to report bugs.\n");
   about->setCustomAuthorText(KLocalizedString(), authorPageText);
   about->addAuthor(ki18n("Fatih Arslan"), ki18n("Original author"), "farslan@pardus.org.tr");
+  about->setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"),
+                       ki18nc("EMAIL OF TRANSLATORS", "Your emails"));
   setAboutData(about);
 
   // Needed by Kauth, should be executed after KAboutData
