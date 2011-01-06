@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pardus 2011\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-02 11:01+0000\n"
+"POT-Creation-Date: 2011-01-06 14:02+0000\n"
 "PO-Revision-Date: 2010-12-23 16:11+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: sv <sv@li.org>\n"
@@ -44,11 +44,11 @@ msgstr "Välj ett lösenord för administration och ett värdnamn"
 
 #: ../release.xml.in.h:7
 msgid "Choose your installation disk"
-msgstr "Välj din installationsdisk"
+msgstr "Välj installationsdisk"
 
 #: ../release.xml.in.h:8
 msgid "Choose your keyboard layout"
-msgstr "Välj tangentborslayout"
+msgstr "Välj tangentbordslayout"
 
 #: ../release.xml.in.h:9
 msgid "Configure the bootloader"
