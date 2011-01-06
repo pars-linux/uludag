@@ -1,0 +1,368 @@
+# Translation of pt_BR.po to Brazilian Portuguese
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Diogo Lima <diogo.urb@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-25 10:34+0300\n"
+"PO-Revision-Date: 2010-05-15 20:52-0300\n"
+"Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
+msgid "Configure display devices"
+msgstr ""
+
+#: data/displaysettings.desktop.in.h:2 src/displaysettings/about.py:19
+#: ui/ui_devices.py:67 ui/ui_screens.py:83
+msgid "Display Settings"
+msgstr "Configurações da Tela"
+
+#: data/kcm_displaydevices.desktop.in.h:2
+msgid "Devices"
+msgstr ""
+
+#: data/kcm_displaydevices.desktop.in.h:3
+#: data/kcm_displaysettings.desktop.in.h:3
+msgid "python display screen video monitor manager"
+msgstr ""
+
+#: data/kcm_displaysettings.desktop.in.h:1
+msgid "Resize and rotate displays"
+msgstr ""
+
+#: data/kcm_displaysettings.desktop.in.h:2
+msgid "Screens"
+msgstr ""
+
+#: src/displaysettings/about.py:21
+msgid "Display Configuration Tool"
+msgstr "Ferramenta de Configuração da Tela"
+
+#: src/displaysettings/about.py:23
+#, fuzzy
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: src/displaysettings/about.py:31
+msgid "Current Maintainer"
+msgstr "Mantenedor Atual"
+
+#: src/displaysettings/about.py:31
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
+
+#: src/displaysettings/about.py:32
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/displaysettings/about.py:32
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Saída Padrão"
+
+#: src/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Painel do Laptop"
+
+#: src/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Saída Analógica"
+
+#: src/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Saída Digital"
+
+#: src/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "Saída para TV"
+
+#: src/displaysettings/deviceswidget.py:78
+#: src/displaysettings/screenswidget.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Não existem pacotes que forneçam suporte para esta aplicação.\n"
+"Por favor tenha certeza de que todos os pacotes estão instalados e configurados corretamente."
+
+#: src/displaysettings/deviceswidget.py:85
+#: src/displaysettings/screenswidget.py:77
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Não foi possível encontrar uma configuração válida. As configurações da tela não serão habilitadas até que você crie uma nova configuração.\n"
+"Você gostaria de criar uma configuração segura agora?"
+
+#: src/displaysettings/deviceswidget.py:94
+#: src/displaysettings/deviceswidget.py:269
+#: src/displaysettings/screenswidget.py:86
+#: src/displaysettings/screenswidget.py:370
+msgid "Access denied."
+msgstr "Acesso negado."
+
+#: src/displaysettings/deviceswidget.py:119
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Para obter melhor performace, você pode querer usar o driver <b>%1</b> fornecido pelo vendedor do hardware. Você gostaria de usar esse driver?</p></qt>"
+
+#: src/displaysettings/deviceswidget.py:139
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Para obter melhor performace, você pode quere usar o driver <b>%1</b> fornecido pelo vendedor do hardware. Para usá-lo, você precisa instalar o pacote <b>%2</b> e usar <b>%1</b> nas opções da placa de vídeo.</qt>"
+
+#: src/displaysettings/deviceswidget.py:144
+msgid "Start Package Manager"
+msgstr "Iniciar Gerenciador de Pacote"
+
+#: src/displaysettings/deviceswidget.py:259
+msgid "You must restart your X session for the changes to take effect."
+msgstr "Você precisa reiniciar a sua sessão do X para que as modificações façam efeito."
+
+#: src/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Tipo:"
+
+#: src/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitores:"
+
+#: src/displaysettings/outputdialog.py:43
+msgid "Settings for Output %1"
+msgstr "Configurações para a Saída %1"
+
+#: src/displaysettings/outputdialog.py:74
+msgid "Custom Monitor"
+msgstr "Monitor Persolnalizado"
+
+#: src/displaysettings/outputdialog.py:78
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Clique no botão \"Selecionar...\" para escolher um monitor</i></qt>"
+
+#: src/displaysettings/screenswidget.py:175
+msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
+msgid "%1 (%2)"
+msgstr ""
+
+#: src/displaysettings/screenswidget.py:193
+#: src/displaysettings/screenswidget.py:268
+msgid "Auto"
+msgstr "Auto"
+
+#: src/displaysettings/screenswidget.py:263
+msgid "Output Properties - %1"
+msgstr "Propriedades da Saída - %1"
+
+#: src/displaysettings/screenswidget.py:363
+msgid "You must restart your X session for all the changes to take effect."
+msgstr "Você deve reiniciar a sua sessão X para que todas as modificações façam efeito."
+
+#: ui/ui_devices.py:68
+msgid "Video Card:"
+msgstr "Placas de Vídeo:"
+
+#: ui/ui_devices.py:69
+msgid "Card Info"
+msgstr "Informações da Placa"
+
+#: ui/ui_devices.py:70
+msgid "Configure..."
+msgstr "Configurar..."
+
+#: ui/ui_devices.py:71
+msgid "Outputs:"
+msgstr "Saídas:"
+
+#: ui/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Navegar pelos Monitores"
+
+#: ui/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Vendedores:"
+
+#: ui/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modelos:"
+
+#: ui/ui_output.py:225
+msgid "Output Configuration"
+msgstr "Configuração de Saída"
+
+#: ui/ui_output.py:226
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Se os alcances de frequência que o seu monitor suporta não foi detectado por alguma razão, você pode especificá-los aqui. Tenha cuidado com esses valores, já que um valor inexato pode causar danos ao seu monitor, especialmente se é um modelo antigo."
+
+#: ui/ui_output.py:227
+msgid "Specify Ranges"
+msgstr "Especificar Alcances"
+
+#: ui/ui_output.py:228
+msgid "Selection:"
+msgstr "Seleção:"
+
+#: ui/ui_output.py:229
+msgid "Select a standard monitor"
+msgstr "Selecionar um monitor padrão"
+
+#: ui/ui_output.py:230
+msgid "Select from vendor/model list"
+msgstr "Selecionar da lista vendedor/modelo"
+
+#: ui/ui_output.py:231
+msgid "Enter ranges manually"
+msgstr "Inserir alcances manualmente"
+
+#: ui/ui_output.py:232
+msgid "Monitor:"
+msgstr "Monitor:"
+
+#: ui/ui_output.py:233
+msgid "Choose..."
+msgstr "Selecionar..."
+
+#: ui/ui_output.py:234
+msgid "Horizontal sync:"
+msgstr "Frequência horizontal:"
+
+#: ui/ui_output.py:235
+msgid "kHz"
+msgstr "kHz"
+
+#: ui/ui_output.py:236
+msgid "Vertical refresh:"
+msgstr "Taxa de Atualização Vertical"
+
+#: ui/ui_output.py:237
+msgid "Hz"
+msgstr "Hz"
+
+#: ui/ui_output.py:238
+msgid "Frequency Ranges"
+msgstr "Alcances de Frquência"
+
+#: ui/ui_output.py:239
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+msgstr "Se as dimensões do seu monitor não foram corretamente detectadas, fontes e outros objetos visuais podem parecer maiores ou menores do que o normal. Para poder consertar esse problema, você pode especificar as dimensões do monitor aqui."
+
+#: ui/ui_output.py:240
+msgid "Specify Display Size"
+msgstr "Especifique o Tamanho da Tela"
+
+#: ui/ui_output.py:241
+msgid "Display size:"
+msgstr "Tamanho da tela:"
+
+#: ui/ui_output.py:242
+msgid "15.4\" Wide Screen"
+msgstr " Tela Larga de 15.4\""
+
+#: ui/ui_output.py:243
+msgid "Custom"
+msgstr "Personalizado"
+
+#: ui/ui_output.py:244
+msgid "Width:"
+msgstr "Largura:"
+
+#: ui/ui_output.py:245 ui/ui_output.py:247
+msgid " mm"
+msgstr " mm"
+
+#: ui/ui_output.py:246
+msgid "Height:"
+msgstr "Altura:"
+
+#: ui/ui_output.py:248
+msgid "Dimensions"
+msgstr "Dimensões"
+
+#: ui/ui_output.py:249
+msgid "Ignore this output"
+msgstr "Ignorar essa saída"
+
+#: ui/ui_screens.py:84
+msgid "Outputs"
+msgstr "Saídas"
+
+#: ui/ui_screens.py:85
+msgid "Extend desktop to all displays"
+msgstr "Extender a sua área de trabalho para todas as telas"
+
+#: ui/ui_screens.py:86
+msgid "Detect Outputs"
+msgstr "Detectar as Saídas"
+
+#: ui/ui_screens.py:87
+msgid "Output Properties"
+msgstr "Propriedades da Saída"
+
+#: ui/ui_screens.py:88
+msgid "Size:"
+msgstr "Tamanho:"
+
+#: ui/ui_screens.py:89
+msgid "Refresh Rate:"
+msgstr "Taxa de Atualização:"
+
+#: ui/ui_screens.py:90
+msgid "Rotation:"
+msgstr "Rotação:"
+
+#: ui/ui_screens.py:91
+msgid "No Rotation"
+msgstr "Nenhuma Rotação"
+
+#: ui/ui_screens.py:92
+msgid "Left (90 degrees)"
+msgstr "Esquerda (90°)"
+
+#: ui/ui_screens.py:93
+msgid "Upside-Down (180 degrees)"
+msgstr "De cabeça para baixo (180°)"
+
+#: ui/ui_screens.py:94
+msgid "Right (270 degrees)"
+msgstr "Direita (270°)"
+
+#: ui/ui_videocard.py:76
+msgid "Video Card Configuration"
+msgstr "Configuração da Placa de Vídeo"
+
+#: ui/ui_videocard.py:77
+msgid "Video Driver"
+msgstr "Driver de Vídeo"
+
+#: ui/ui_videocard.py:78
+msgid "Use the default driver for the detected card."
+msgstr "Usar o driver padrão para a placa detectada."
+
+#: ui/ui_videocard.py:79 ui/ui_videocard.py:82
+msgid "Select from the list:"
+msgstr "Selecionar da lista:"
+
+#: ui/ui_videocard.py:80
+msgid "Color Depth"
+msgstr "Profundidade de Cor"
+
+#: ui/ui_videocard.py:81
+msgid "Determined by the driver"
+msgstr "Determinado pelo driver"
+
+#: ui/ui_videocard.py:83
+msgid "16 Bit"
+msgstr "16 Bits"
+
+#: ui/ui_videocard.py:84
+msgid "24 Bit"
+msgstr "24 Bits"

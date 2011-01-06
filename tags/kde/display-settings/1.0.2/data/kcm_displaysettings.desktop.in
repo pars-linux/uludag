@@ -1,0 +1,16 @@
+[Desktop Entry]
+Exec=kcmshell4 display-settings
+Icon=preferences-desktop-display-randr
+Type=Service
+X-KDE-ServiceTypes=KCModule
+
+X-KDE-Library=kpythonpluginfactory
+X-KDE-ParentApp=kcontrol
+X-KDE-PluginKeyword=display-settings/display-settings.py
+
+X-KDE-System-Settings-Parent-Category=display
+X-KDE-Weight=10
+
+_Name=Screens
+_Comment=Resize and rotate displays
+_X-KDE-Keywords=python display screen video monitor manager

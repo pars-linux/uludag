@@ -1,0 +1,372 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Patrik Karlsson <patrik@trixon.se>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: display-settings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-25 10:34+0300\n"
+"PO-Revision-Date: 2010-07-10 18:38+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
+
+#: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
+msgid "Configure display devices"
+msgstr "Anpassar bildskärmen"
+
+#: data/displaysettings.desktop.in.h:2 src/displaysettings/about.py:19
+#: ui/ui_devices.py:67 ui/ui_screens.py:83
+msgid "Display Settings"
+msgstr "Bildskärm"
+
+#: data/kcm_displaydevices.desktop.in.h:2
+msgid "Devices"
+msgstr "Enheter"
+
+#: data/kcm_displaydevices.desktop.in.h:3
+#: data/kcm_displaysettings.desktop.in.h:3
+msgid "python display screen video monitor manager"
+msgstr "python bildskärm skärm monitor inställningar"
+
+#: data/kcm_displaysettings.desktop.in.h:1
+msgid "Resize and rotate displays"
+msgstr "Roterar och ändrar storlek"
+
+#: data/kcm_displaysettings.desktop.in.h:2
+msgid "Screens"
+msgstr "Skärmar"
+
+#: src/displaysettings/about.py:21
+msgid "Display Configuration Tool"
+msgstr "Verktyg för bildskärmsinställning"
+
+#: src/displaysettings/about.py:23
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr "(c) 2010 TUBITAK/UEKAE"
+
+#: src/displaysettings/about.py:31
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
+
+#: src/displaysettings/about.py:31
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
+
+#: src/displaysettings/about.py:32
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Patrik Karlsson"
+
+#: src/displaysettings/about.py:32
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
+
+#: src/displaysettings/device.py:60
+msgid "Default Output"
+msgstr "Standardutgång"
+
+#: src/displaysettings/device.py:61
+msgid "Laptop Panel"
+msgstr "Bärbar panel"
+
+#: src/displaysettings/device.py:62
+msgid "Analog Output"
+msgstr "Analog utgång"
+
+#: src/displaysettings/device.py:63
+msgid "Digital Output"
+msgstr "Digital utgång"
+
+#: src/displaysettings/device.py:64
+msgid "TV Output"
+msgstr "TV-utgång"
+
+#: src/displaysettings/deviceswidget.py:78
+#: src/displaysettings/screenswidget.py:70
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please be sure that packages are installed and configured correctly."
+msgstr ""
+"Det finns inte något paket som tillhandahåller bakände för det här programmet.\n"
+"Vänligen se till att paketen är rätt installerade och inställda."
+
+#: src/displaysettings/deviceswidget.py:85
+#: src/displaysettings/screenswidget.py:77
+msgid ""
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
+"Would you like to create a safe configuration now?"
+msgstr ""
+"Kan inte hitta giltig konfiguration. Bildskärmsinställningar är inte tillgängliga före du skapat en ny konfiguration.\n"
+"Vill du skapa en säker konfiguration nu?"
+
+#: src/displaysettings/deviceswidget.py:94
+#: src/displaysettings/deviceswidget.py:269
+#: src/displaysettings/screenswidget.py:86
+#: src/displaysettings/screenswidget.py:370
+msgid "Access denied."
+msgstr "Åtkomst nekad."
+
+#: src/displaysettings/deviceswidget.py:119
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestanda. Vill du använda den drivrutinen?</p></qt>"
+
+#: src/displaysettings/deviceswidget.py:139
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Du kan använda drivrutinen <b>%1</b> som tillhandahålls av tillverkaren för att få bättre prestanda. För att använda den måste du installera paketet <b>%2</b> och välja <b>%1</b> i grafikkortsinställningarna.</qt>"
+
+#: src/displaysettings/deviceswidget.py:144
+msgid "Start Package Manager"
+msgstr "Starta Pakethanteraren"
+
+#: src/displaysettings/deviceswidget.py:259
+msgid "You must restart your X session for the changes to take effect."
+msgstr "Du måste starta om X för att ändringarna skall börja gälla."
+
+#: src/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Typ:"
+
+#: src/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Bildskärmar:"
+
+#: src/displaysettings/outputdialog.py:43
+msgid "Settings for Output %1"
+msgstr "Inställning för utgång %1"
+
+#: src/displaysettings/outputdialog.py:74
+msgid "Custom Monitor"
+msgstr "Anpassad bildskärm"
+
+#: src/displaysettings/outputdialog.py:78
+msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
+msgstr "<qt><i>Tryck \"Välj...\"-knappen för att välja en bildskärm</i></qt>"
+
+#: src/displaysettings/screenswidget.py:175
+msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: src/displaysettings/screenswidget.py:193
+#: src/displaysettings/screenswidget.py:268
+msgid "Auto"
+msgstr "Automatiskt"
+
+#: src/displaysettings/screenswidget.py:263
+msgid "Output Properties - %1"
+msgstr "Utgångsinställningar - %1"
+
+#: src/displaysettings/screenswidget.py:363
+msgid "You must restart your X session for all the changes to take effect."
+msgstr "Du måste starta om X för att alla ändringar skall börja gälla."
+
+#: ui/ui_devices.py:68
+msgid "Video Card:"
+msgstr "Grafikkort:"
+
+#: ui/ui_devices.py:69
+msgid "Card Info"
+msgstr "Kortinformation"
+
+#: ui/ui_devices.py:70
+msgid "Configure..."
+msgstr "Anpassa..."
+
+#: ui/ui_devices.py:71
+msgid "Outputs:"
+msgstr "Utgångar:"
+
+#: ui/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Visa bildskärmar"
+
+#: ui/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Tillverkare:"
+
+#: ui/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modeller:"
+
+#: ui/ui_output.py:225
+msgid "Output Configuration"
+msgstr "Utgångsinställning"
+
+#: ui/ui_output.py:226
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Om din bildskärms frekvensomfång inte upptäcks av någon orsak kan du ange det här. Var försiktig när du anger dessa värden, felaktiga värden kan skada din bildskärm, i synnerhet om den är av en äldre modell."
+
+#: ui/ui_output.py:227
+msgid "Specify Ranges"
+msgstr "Ange omfång"
+
+#: ui/ui_output.py:228
+msgid "Selection:"
+msgstr "Urval:"
+
+#: ui/ui_output.py:229
+msgid "Select a standard monitor"
+msgstr "Välj en standardbildskärm"
+
+#: ui/ui_output.py:230
+msgid "Select from vendor/model list"
+msgstr "Välj ur tillverkare/modell-förteckningen"
+
+#: ui/ui_output.py:231
+msgid "Enter ranges manually"
+msgstr "Ange omfång manuellt"
+
+#: ui/ui_output.py:232
+msgid "Monitor:"
+msgstr "Bildskärm:"
+
+#: ui/ui_output.py:233
+msgid "Choose..."
+msgstr "Välj..."
+
+#: ui/ui_output.py:234
+msgid "Horizontal sync:"
+msgstr "Horisontal synk:"
+
+#: ui/ui_output.py:235
+msgid "kHz"
+msgstr "kHz"
+
+#: ui/ui_output.py:236
+msgid "Vertical refresh:"
+msgstr "Vertikal uppdatering"
+
+#: ui/ui_output.py:237
+msgid "Hz"
+msgstr "Hz"
+
+#: ui/ui_output.py:238
+msgid "Frequency Ranges"
+msgstr "Frekvensomfång"
+
+#: ui/ui_output.py:239
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+msgstr "Om din bildskärms storlek inte är korrekt avläst kan teckensnitt och andra synliga objekt framstå större eller mindre än normalt. För att lösa detta problem kan du ange din bildskärms storlek här."
+
+#: ui/ui_output.py:240
+msgid "Specify Display Size"
+msgstr "Ange bildskärmsstorlek"
+
+#: ui/ui_output.py:241
+msgid "Display size:"
+msgstr "Bildskärmsstorlek:"
+
+#: ui/ui_output.py:242
+msgid "15.4\" Wide Screen"
+msgstr "15.4\" Bred skärm"
+
+#: ui/ui_output.py:243
+msgid "Custom"
+msgstr "Anpassad"
+
+#: ui/ui_output.py:244
+msgid "Width:"
+msgstr "Bredd:"
+
+#: ui/ui_output.py:245 ui/ui_output.py:247
+msgid " mm"
+msgstr " mm"
+
+#: ui/ui_output.py:246
+msgid "Height:"
+msgstr "Höjd:"
+
+#: ui/ui_output.py:248
+msgid "Dimensions"
+msgstr "Storlek"
+
+#: ui/ui_output.py:249
+msgid "Ignore this output"
+msgstr "Strunta i denna utgång"
+
+#: ui/ui_screens.py:84
+msgid "Outputs"
+msgstr "Utgångar"
+
+#: ui/ui_screens.py:85
+msgid "Extend desktop to all displays"
+msgstr "Utvidga skrivbordet till alla skärmar"
+
+#: ui/ui_screens.py:86
+msgid "Detect Outputs"
+msgstr "Upptäck utgångar"
+
+#: ui/ui_screens.py:87
+msgid "Output Properties"
+msgstr "Utgångsinställningar"
+
+#: ui/ui_screens.py:88
+msgid "Size:"
+msgstr "Storlek:"
+
+#: ui/ui_screens.py:89
+msgid "Refresh Rate:"
+msgstr "Uppdateringsfrekvens:"
+
+#: ui/ui_screens.py:90
+msgid "Rotation:"
+msgstr "Orientering:"
+
+#: ui/ui_screens.py:91
+msgid "No Rotation"
+msgstr "Ingen rotation"
+
+#: ui/ui_screens.py:92
+msgid "Left (90 degrees)"
+msgstr "Vänster (90 grader)"
+
+#: ui/ui_screens.py:93
+msgid "Upside-Down (180 degrees)"
+msgstr "Upp och ner (180 grader)"
+
+#: ui/ui_screens.py:94
+msgid "Right (270 degrees)"
+msgstr "Höger (270 grader)"
+
+#: ui/ui_videocard.py:76
+msgid "Video Card Configuration"
+msgstr "Grafikkortsinställning"
+
+#: ui/ui_videocard.py:77
+msgid "Video Driver"
+msgstr "Drivrutin"
+
+#: ui/ui_videocard.py:78
+msgid "Use the default driver for the detected card."
+msgstr "Använd förvald drivrutin för avkänt grafikkort."
+
+#: ui/ui_videocard.py:79 ui/ui_videocard.py:82
+msgid "Select from the list:"
+msgstr "Välj ur listan:"
+
+#: ui/ui_videocard.py:80
+msgid "Color Depth"
+msgstr "Färgdjup"
+
+#: ui/ui_videocard.py:81
+msgid "Determined by the driver"
+msgstr "Fastställd av drivrutinen"
+
+#: ui/ui_videocard.py:83
+msgid "16 Bit"
+msgstr "16 bitar"
+
+#: ui/ui_videocard.py:84
+msgid "24 Bit"
+msgstr "24 bitar"
+
+#~ msgid " "
+#~ msgstr " "
