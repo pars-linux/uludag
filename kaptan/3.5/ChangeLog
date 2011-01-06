@@ -1,0 +1,20 @@
+2009-12-30 Renan Çakırerk <renan@pardus.org.tr>
+	* Kaptan: Update to version 3.5.5
+
+2009-01-27 Pınar Yanardağ <pinar@pardus.org.tr>
+	* __init__.py:	Update version to 3.5.4
+	* screens/ScrMultiple.py: Increase minimum desktop number to 2 (bug#9096)
+	* screens/ScrWallpaper.py: Add support for exclusive wallpapers. a tag
+	named OnTop {True, False} should exist.
+
+2009-01-06 Pınar Yanardağ <pinar@pardus.org.tr>
+	* __init__.py:	Update version to 3.5.3
+	* screens/ScrPanel.py: Fix bug#8056
+
+2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
+	* __init__.py:	Update version to 3.5.2
+	* po/nl.po:		Fix bug#8162
+	* screens/ScrPanel.py:	Remove kwin decoration stuff
+
+2008-09-11 Pınar Yanardağ <pinar@pardus.org.tr>
+	* CHANGELOG, AUTHORS, INSTALL, TODO, README: Update README and add four new files.

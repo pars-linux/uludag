@@ -1,0 +1,479 @@
+# translation of nl.po to Nederlands
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Willem Gielen <w.gielen@gmail.com>, 2008.
+# W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: nl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-30 16:28+0200\n"
+"PO-Revision-Date: 2008-09-10 20:12+0200\n"
+"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
+"Language-Team: Nederlands <nl@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/kaptan.py:128 src/kaptan.py:281 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
+msgstr "Welkom bij de Kaptan wizard :)"
+
+#: src/kaptan.py:130
+msgid "&Back"
+msgstr "&Terug"
+
+#: src/kaptan.py:131
+msgid "&Next"
+msgstr "&Verder"
+
+#: src/kaptan.py:132
+msgid "Finish"
+msgstr "Beëindig"
+
+#: src/kaptan.py:271
+#, fuzzy
+msgid "Kaptan is already running."
+msgstr "Kaptan is al actief!"
+
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
+msgstr "Geniet met Pardus..."
+
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr "Configuren van netwerkinstellingen..."
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Laden...</big>"
+
+#: src/screens/kaptanMain.py:107
+msgid "KaptanUi"
+msgstr "KaptanUI"
+
+#: src/screens/kaptanMain.py:119
+msgid "Sample"
+msgstr ""
+
+#: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+#: src/screens/welcomedlg.py:76
+msgid "Welcome"
+msgstr "Welkom"
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"<b>Kaptan</b> will help you personalize your Pardus workspace easily and "
+"quickly.<br/><br/>Please click <b>next</b> in order to begin."
+msgstr ""
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a reliable, secure, fast and user friendly operating system."
+"<br/><br/>With Pardus, you can connect to the internet, read your e-mails, "
+"work with your office documents, watch movies, play music, develop "
+"applications, play games and much more!"
+msgstr ""
+
+#: src/screens/paneldlg.py:85 src/screens/ScrPanel.py:41
+msgid "Panel"
+msgstr "Paneel"
+
+#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:60
+msgid "Multiple"
+msgstr "Meerdere"
+
+#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
+msgid "Thumbnails"
+msgstr "Miniaturen"
+
+#: src/screens/wallpaperdlg.py:131
+msgid "Wallpaper"
+msgstr "Achtergrond"
+
+#: src/screens/wallpaperdlg.py:133
+msgid "toolTip"
+msgstr "toolTip"
+
+#: src/screens/wallpaperdlg.py:135
+msgid "Choose Wallpaper"
+msgstr "Kies achtergrond"
+
+#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
+msgid "Keyboard Layouts"
+msgstr "Toetsenbordindeling"
+
+#: src/screens/keyboarddlg.py:668 src/screens/ScrKeyboard.py:37
+msgid "Keyboard"
+msgstr "Toetsenbord"
+
+#: src/screens/keyboarddlg.py:672
+msgid "Try:"
+msgstr "Probeer:"
+
+#: src/screens/ScrWallpaper.py:46
+msgid "Enjoy with wonderful backgrounds..."
+msgstr "Geniet van prachtige achtergronden..."
+
+#: src/screens/ScrWallpaper.py:53
+msgid "Show all resolutions."
+msgstr "Toon alle resoluties."
+
+#: src/screens/ScrWallpaper.py:54
+msgid "Old Wallpaper"
+msgstr "Oude achtergrond"
+
+#: src/screens/ScrWallpaper.py:55
+msgid "No Wallpaper"
+msgstr "Geen achtergrond"
+
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr "Foto"
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr "Afdruk"
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr "Voeg mijn foto toe aan:"
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr "E-mail programma's"
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr "Instant mesengers"
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr "Login scherm (KDM)"
+
+#: src/screens/smoltdlg.py:58 src/screens/ScrSmolt.py:38
+#, fuzzy
+msgid "Smolt"
+msgstr "Afdruk"
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Netwerk"
+
+#: src/screens/ScrPackage.py:29
+msgid "Package Manager"
+msgstr "Pakketbeheer"
+
+#: src/screens/ScrPackage.py:30
+msgid "Configure package manager settings..."
+msgstr "Configureer pakketbeheer instellingen..."
+
+#: src/screens/ScrPackage.py:44 src/screens/packagedlg.py:89
+msgid "Package"
+msgstr "Pakket"
+
+#: src/screens/ScrPackage.py:45
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
+msgstr ""
+"<b>Pakketbeheer</b> is de grafische schil voor <b>PiSi</b>. U kunt "
+"gemakkelijk nieuwe programma's installeren of uw systeem bijwerken en u kunt "
+"op de hoogte gehouden worden van nieuwe bijgewerkte pakketten vanuit het "
+"systeemvak."
+
+#: src/screens/ScrPackage.py:46 src/screens/packagedlg.py:94
+msgid "tooltipPisiPopup"
+msgstr "tooltopPisiPopup"
+
+#: src/screens/ScrPackage.py:47
+msgid "Updates"
+msgstr "Updates"
+
+#: src/screens/ScrPackage.py:48
+msgid "Show in system tray"
+msgstr "Toon in systeemvak"
+
+#: src/screens/ScrPackage.py:49
+msgid "Check updates automatically for every"
+msgstr "Controlleer voor updates elke "
+
+#: src/screens/ScrPackage.py:50
+msgid " hours"
+msgstr " uur"
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr "SummeryWidget"
+
+#: src/screens/ScrMultiple.py:26
+msgid "Multiple Desktops"
+msgstr "Meerdere bureaubladen"
+
+#: src/screens/ScrMultiple.py:27
+msgid "Configure virtual desktops.."
+msgstr "Configureer virtuele bureaubladen.."
+
+#: src/screens/ScrMultiple.py:61
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr ""
+"<p>Met deze module kunt u het aantal virtuele bureaubladen instellen.</P>"
+
+#: src/screens/ScrMultiple.py:62
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr "Scrollwiel van muis over bureaublad achtergrond wisselt bureaublad."
+
+#: src/screens/ScrMultiple.py:63
+msgid " Desktop(s)"
+msgstr "Bureaublad(en)"
+
+#: src/screens/ScrKeyboard.py:26
+msgid "Keyboard Settings"
+msgstr "Toetsenbordinstellingen"
+
+#: src/screens/ScrKeyboard.py:27
+msgid "Configure your keyboard"
+msgstr "Configureer uw toetsenbord"
+
+#: src/screens/ScrKeyboard.py:38
+msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
+msgstr "<p align=\"left\">U kunt uw toetsenbord van hieruit configureren.</p>"
+
+#: src/screens/ScrMouse.py:27
+msgid "Mouse Settings"
+msgstr "Muis instellingen"
+
+#: src/screens/ScrMouse.py:28
+msgid "Configure your mouse"
+msgstr "Configureer uw muis"
+
+#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:106
+msgid "Mouse"
+msgstr "Muis"
+
+#: src/screens/ScrMouse.py:40
+#, fuzzy
+msgid "Reverse scrolling direction"
+msgstr "Omgekeerd scrollen"
+
+#: src/screens/ScrMouse.py:41
+msgid ""
+"<p align='left'>The <b>clicking behavior</b> defines how many times you want "
+"to click when you are opening a file.<br/><br/>If you are <b>left handed</"
+"b>, you may prefer to swap the left and right buttons of your pointing "
+"device.</p>"
+msgstr ""
+
+#: src/screens/ScrMouse.py:42
+msgid "Button Order"
+msgstr "Knop volgorde"
+
+#: src/screens/ScrMouse.py:43
+msgid "Left Hand"
+msgstr "Linkshandig"
+
+#: src/screens/ScrMouse.py:44
+msgid "Right Hand"
+msgstr "Rechtshandig"
+
+#: src/screens/ScrMouse.py:45
+#, fuzzy
+msgid "Clicking Behaviour"
+msgstr "Klik gedrag"
+
+#: src/screens/ScrMouse.py:46
+msgid "&Single-click to open files and folders"
+msgstr "&Enkelmalig klikken om bestanden en mappen te openen"
+
+#: src/screens/ScrMouse.py:47
+msgid "Dou&ble-click to open files and folders"
+msgstr "Du&bbel kikken om bestanden en mappen te openen"
+
+#: src/screens/ScrSmolt.py:29 src/screens/ScrSmolt.py:30
+msgid "Pardus hardware profiler"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:39
+msgid ""
+"Pardus hardware profiler gets your hardware info and sends it<br> to public "
+"Pardus server."
+msgstr ""
+
+#: src/screens/ScrSmolt.py:40
+msgid "Show details"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:41
+msgid "Privacy policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:42
+msgid "I want to share my hardware info"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:58
+#, fuzzy
+msgid "Label"
+msgstr "Paneel"
+
+#: src/screens/ScrSmolt.py:60
+msgid "Data"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:86
+msgid "Smolt Detailes Wigdet"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:92
+#, fuzzy
+msgid "Smolt Privacy Widget"
+msgstr "SummeryWidget"
+
+#: src/screens/ScrSmolt.py:105
+msgid "Sending..."
+msgstr ""
+
+#: src/screens/goodbyedlg.py:154
+msgid "Goodbye"
+msgstr "Tot ziens"
+
+#: src/screens/goodbyedlg.py:155
+msgid "Tasma"
+msgstr "Tasma"
+
+#: src/screens/goodbyedlg.py:156
+msgid ""
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr ""
+"<P>TASMA is een configuratie applicatie voor het Pardus besturingssysteem.</"
+"p>"
+
+#: src/screens/goodbyedlg.py:157 src/screens/goodbyedlg.py:159
+#: src/screens/goodbyedlg.py:163
+msgid "Start"
+msgstr "Start"
+
+#: src/screens/goodbyedlg.py:158
+msgid "User Groups and Help Pages"
+msgstr "Gebruikersgroepen en Hulp pagina' s"
+
+#: src/screens/goodbyedlg.py:160
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr ""
+"<p>Pardus gemeenschap, gebruikers lijsten, IRC kanalen, Wiki's en meer.</p>"
+
+#: src/screens/goodbyedlg.py:161
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+"<p>Gefeliciteerd! U heeft alle stappen doorlopen. U kunt nu doorgaan met "
+"Pardus te gebruiken en onderstaande applicaties proberen.</p>"
+
+#: src/screens/goodbyedlg.py:162
+msgid "Screen Resolution"
+msgstr "Scherm resolutie"
+
+#: src/screens/goodbyedlg.py:164
+msgid ""
+"<p><p>Your screen resolution is very low. It may be wrong. You can change "
+"your resolution bye using <b>Display Manager</b>.</p></p>"
+msgstr ""
+"<p><p>Uw scherm resolutie is erg laag. Dit kan fout zijn. U kunt uw "
+"resolutie aanpassen door gebruik te maken van het <b>Beeldscherm beheer</b>."
+"</p></p>"
+
+#: src/screens/mousedlg.py:110 src/screens/mousedlg.py:115
+msgid "deneme"
+msgstr ""
+
+#: src/screens/ScrPanel.py:31
+msgid "Configure your panel !"
+msgstr "Configureer uw paneel!"
+
+#: src/screens/ScrPanel.py:32
+msgid "Select the one you like..."
+msgstr "Selecteer welk u wilt..."
+
+#: src/screens/ScrPanel.py:42
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr ""
+"Hier kunt u een <b>stijl </b>kiezen voor uw bureaublad. <b>Pardus</b> levert "
+"u enkel oogstrelende stijlen."
+
+#: src/screens/ScrPanel.py:44
+msgid "Preview"
+msgstr "Voorbeeld"
+
+#: src/screens/ScrPanel.py:45
+msgid "Use enhanced Kickoff style menu"
+msgstr "Gebruik het geavanceerde Kickoff menu"
+
+#: src/screens/smoltProgressPopup.py:45
+msgid "smoltProgressWidget"
+msgstr ""
+
+#~ msgid "Kaptan Welcome Wizard"
+#~ msgstr "Kaptan Welkom wizard"
+
+#~ msgid ""
+#~ "<p align=\"left\">If you are left-handed, you may prefer to swap the "
+#~ "functions on the left and right buttons on your pointing device by "
+#~ "choosing the \"Left handed\" option below. You can also select default "
+#~ "click behaviour.</p>"
+#~ msgstr ""
+#~ "<p align=\"left\">Indien u linkshandig bent, zou u de  functies van de "
+#~ "linker en rechter muisknop kunnen omwisselen door de onderstaanden "
+#~ "\"Linkshandig\" optie te selecteren. U kunt voor standaard klik gedrag "
+#~ "instellen.</P>"
+
+#~ msgid ""
+#~ "This application, called <b>Kaptan Desktop</b>, will help you with your "
+#~ "basic but sufficient setup for your <b>Pardus</b> desktop in a quick "
+#~ "manner. Please click <b>Next</b> to personalize your desktop. :)"
+#~ msgstr ""
+#~ "Deze applicatie, <b>Kaptan Desktop</b>, zal u snel en eenvoudig helpen "
+#~ "met uw basis instellingen van <b>Pardus</b>. Klik <b>Volgende</b> om uw "
+#~ "systeem te personaliseren. :)"
+
+#~ msgid ""
+#~ "<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
+#~ "users' basic desktop needs; helps you connect to internet, read e-mails, "
+#~ "work with office documents and more!"
+#~ msgstr ""
+#~ "<b>Pardus</b> is een GNU/Linux distributie, gericht op standaard "
+#~ "computergebruik; het helpt u te verbinden met internet, e-mails te lezen, "
+#~ "te werken met office documenten en meer!"
+
+#~ msgid "Repo"
+#~ msgstr "Repo"
+
+#~ msgid "Contrib repo includes extra packages."
+#~ msgstr "Contrib repo bevat extra pakketten."
+
+#~ msgid "Add contrib repo"
+#~ msgstr "Voeg contrib repo toe"
+
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#~ msgid "Authentication Error!"
+#~ msgstr "Autorisatie fout!"
+
+#~ msgid "Migration Tool"
+#~ msgstr "Migratie gereedschap"
+
+#~ msgid ""
+#~ "<p>A wizard to transfer files and settings from existing operating "
+#~ "systems (e.g. Windows) to Pardus.</p>"
+#~ msgstr ""
+#~ "<p>Een wizard om bestanden en instellingen van een bestaan "
+#~ "besturingssysteem (bijv. Windows) naar Pardus te verplaatsen.</p>"
