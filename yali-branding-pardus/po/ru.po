@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-02 18:01+0000\n"
+"POT-Creation-Date: 2011-01-07 06:02+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -25,7 +25,6 @@ msgid "A bootloader is a tiny program that runs when a computer is first powered
 msgstr "Загрузчик крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt;Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
 
 #: ../release.xml.in.h:3
-#, fuzzy
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
 msgstr "Раскладка клавиатуры - это описание того, как расположены клавиши на клавиатуре. По всему миру используются различные раскладки клавиатуры. Та, которая нужна Вам, как правило завит от страны проживания или используемого Вами языка. Данный диалог позволит Вам выбрать раскладку клавиатуры, которую Вы хотите использовать в Pardus.&lt;br&gt;&lt;br&gt;Вы можете проверить выбранную раскладку, набрав что-нибудь в специальном поле ввода."
 
@@ -34,8 +33,9 @@ msgid "All done!"
 msgstr "Все сделано!"
 
 #: ../release.xml.in.h:5
+#, fuzzy
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
-msgstr ""
+msgstr "Попробуйте свою новую, готовую к использованию мультимедиа студию! Pardus поставляется с набором мультимедийных редакторов и массивной поддержкой форматов и кодеков сразу из коробки. &lt;br&gt;Вы можете редактировать ваши изображения в Gimp, создавать домашние фильмы в Kdenlive, организовывать музыкальные альбомы в каталогах с Amarok и изображений альбомов с Digikam, записывать CD и DVD диски используя K3B."
 
 #: ../release.xml.in.h:6
 msgid "Choose a password for administration and a hostname"
@@ -92,19 +92,20 @@ msgstr ""
 
 #: ../release.xml.in.h:19
 msgid "Installation complete"
-msgstr ""
+msgstr "Установка завершена"
 
 #: ../release.xml.in.h:20
 msgid "Installation complete!"
-msgstr ""
+msgstr "Установка завершена!"
 
 #: ../release.xml.in.h:21
 msgid "Installing Pardus"
 msgstr "Установка Pardus"
 
 #: ../release.xml.in.h:22
+#, fuzzy
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
-msgstr ""
+msgstr "KDE является средой рабочего стола выбранной в Pardus, коллекцией программного обеспечение для настольного использования с сотней, даже тысячами программ, предназначенных для различных целей. Для конечных пользователей и повседневных нужд или корпораций с интегрированным, высоко производительными, но простыми в использовании решениями.&lt;br&gt;&lt;br&gt;"
 
 #: ../release.xml.in.h:23
 msgid "Kahya"
@@ -142,8 +143,9 @@ msgid "Pardus is a free and open source operating system that contains many well
 msgstr ""
 
 #: ../release.xml.in.h:32
+#, fuzzy
 msgid "Partition your disk manually"
-msgstr ""
+msgstr "Разделите свой диск вручную"
 
 #: ../release.xml.in.h:33
 #, fuzzy
@@ -151,12 +153,14 @@ msgid "Select a partitioning method"
 msgstr "Выберите метод разбиения диска"
 
 #: ../release.xml.in.h:34
+#, fuzzy
 msgid "Set your local time and date"
-msgstr ""
+msgstr "Установить местное время и дату"
 
 #: ../release.xml.in.h:35
+#, fuzzy
 msgid "Setup your account"
-msgstr ""
+msgstr "Настройте вашу учетную запись"
 
 #: ../release.xml.in.h:36
 msgid "Summary"
@@ -194,11 +198,12 @@ msgstr ""
 #: ../release.xml.in.h:44
 #, fuzzy
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Нажмите Далее для перезагрузки. Примечание: Вы запомнили Ваш пароль, не так ли? "
+msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Пожалуйста, убедитесь в том, что вы запомнили Ваш пароль и размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:45
+#, fuzzy
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr ""
+msgstr "Вы успешно установили Pardus на ваш компьютер. После перезагрузки компьютера, вы сможете добавить новые учетные записи пользователей и начать использовать Pardus. Пожалуйста, убедитесь в том, что вы размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:46
 msgid "You have to choose a *free* physical partition in order to create your system partitions. If anything goes wrong you can Reset and start again. &lt;br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical Volume, then a Volume Group which will contain your Logical Volumes. You can use Logical Volumes similar to partitions and set them for system files, user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you have to create at least two RAID members. Try to divide the space equally as the space of the disk will be same with the smallest partition. When you have two RAID members, you will be able to create a RAID array which is similar to a partition as it may be formatted and set for the system files, user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more information about disk partitioning. You can find it in our website."
