@@ -64,7 +64,12 @@ class Panda():
                         self.driver_name = line.split()[1]
                         break
 
-                # We've found a card, no need to search for another one
+                # We couldn't find any in driverDB, that might be an Intel card
+                # Assign it as "not defined"
+                if not self.driver_name:
+                    sefl.driver_name = "Not defined"
+
+                # We've set a card, no need to search for another one
                 break 
         else:
             # We couldn't found any card that matches a card in driversDB
