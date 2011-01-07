@@ -30,9 +30,9 @@ def isValidPackageList(field_data, all_data):
     try:
         for package in field_data.split("\n"):
             if package.strip():
-                year, no = package.split(" ", 1)
+                name, no, year = package.split(" ")
     except ValueError:
-        raise validators.ValidationError(_("Package name and version must be seperated with a whitespace."))
+        raise validators.ValidationError(_("Package name, version and distro version must be seperated with a whitespace."))
 
 def isValidAdvisoryID(field_data, all_data):
     import re
