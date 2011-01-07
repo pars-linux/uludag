@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-07 06:02+0000\n"
+"POT-Creation-Date: 2011-01-07 14:03+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #: ../release.xml.in.h:1
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr ""
+msgstr "&quot;root&quot; это принятное имя администратора, у которого есть все права и доступ (ко всем файлам и программам) во всех режимах: режиме с одним пользователем или обычном.&lt;br&gt;&lt;br&gt;Ваш пароль должен быть достаточно легким, чтобы его не забыть, но и достаточно сложным, чтобы противостоять возможным атакам. Вы можете использовать заглавные и прописные буквы, числа и пунктуацию в своем пароле. &lt;br&gt;&lt;br&gt;Вы также можете определить имя (hostname) для вашего компьютера. Имя - это идентификатор, связанный с вашим компьютером. По нему ваш компьютер будет узнаваться в локальной сети. Рекомендуется выбирать имя, которое позволит легко отличить ваш компьютер."
 
 #: ../release.xml.in.h:2
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
@@ -33,7 +33,6 @@ msgid "All done!"
 msgstr "Все сделано!"
 
 #: ../release.xml.in.h:5
-#, fuzzy
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
 msgstr "Попробуйте свою новую, готовую к использованию мультимедиа студию! Pardus поставляется с набором мультимедийных редакторов и массивной поддержкой форматов и кодеков сразу из коробки. &lt;br&gt;Вы можете редактировать ваши изображения в Gimp, создавать домашние фильмы в Kdenlive, организовывать музыкальные альбомы в каталогах с Amarok и изображений альбомов с Digikam, записывать CD и DVD диски используя K3B."
 
@@ -74,9 +73,8 @@ msgid "Fun is a serious matter... Everyone has the right to relax for a moment w
 msgstr ""
 
 #: ../release.xml.in.h:15
-#, fuzzy
 msgid "Get ready to install Pardus"
-msgstr "Выберите диск для установки Pardus"
+msgstr "Будьте готовы к установке Pardus"
 
 #: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implementation is complete."
@@ -103,7 +101,6 @@ msgid "Installing Pardus"
 msgstr "Установка Pardus"
 
 #: ../release.xml.in.h:22
-#, fuzzy
 msgid "KDE is the desktop choice of Pardus, a software collection for desktop use with hundreds, even thousands of programs targeting different purposes. For end-users and daily needs or the corporates with integrated, high performance yet easy-to-use solutions. &lt;br&gt;&lt;br&gt; Pardus&apos;s in-house tools are written KDE friendly as well, so it is strongly recommended. However, there are different alternatives such as Enlightenment or Xfce both suggest lightweight, faster yet less feature-rich desktop experience."
 msgstr "KDE является средой рабочего стола выбранной в Pardus, коллекцией программного обеспечение для настольного использования с сотней, даже тысячами программ, предназначенных для различных целей. Для конечных пользователей и повседневных нужд или корпораций с интегрированным, высоко производительными, но простыми в использовании решениями.&lt;br&gt;&lt;br&gt;"
 
@@ -143,22 +140,18 @@ msgid "Pardus is a free and open source operating system that contains many well
 msgstr ""
 
 #: ../release.xml.in.h:32
-#, fuzzy
 msgid "Partition your disk manually"
 msgstr "Разделите свой диск вручную"
 
 #: ../release.xml.in.h:33
-#, fuzzy
 msgid "Select a partitioning method"
 msgstr "Выберите метод разбиения диска"
 
 #: ../release.xml.in.h:34
-#, fuzzy
 msgid "Set your local time and date"
 msgstr "Установить местное время и дату"
 
 #: ../release.xml.in.h:35
-#, fuzzy
 msgid "Setup your account"
 msgstr "Настройте вашу учетную запись"
 
