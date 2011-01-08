@@ -71,11 +71,11 @@ msgstr "Autore originale"
 
 #: panda.cpp:196
 msgid "Unable to apply settings due to missing packages"
-msgstr ""
+msgstr "Impossibile applicare le impostazioni a causa di pacchetti mancanti"
 
 #: panda.cpp:213
 msgid "Unable to authenticate/execute the action: %1, %2"
-msgstr ""
+msgstr "Impossibile autenticare / eseguire l'azione: %1, %2"
 
 #: panda.cpp:215
 msgid "An internal error occurred"
