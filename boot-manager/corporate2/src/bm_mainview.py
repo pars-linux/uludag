@@ -330,6 +330,8 @@ class widgetEditEntry(QWidget):
 
         if self.entry:
             args["index"] = int(self.entry["index"])
+            if self.parent.options["default"] == self.entry["index"]:
+                args["default"] = "yes"
 
         self.saved = True
 
