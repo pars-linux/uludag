@@ -43,7 +43,7 @@ msgstr "Bahadır Kandemir"
 
 #: src/servicemanager/about.py:35
 msgid "COMAR Author"
-msgstr ""
+msgstr "Autore di COMAR"
 
 #: src/servicemanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
@@ -57,11 +57,11 @@ msgstr "edivad95@gmail.com"
 
 #: src/servicemanager/base.py:96
 msgid "Authentication Error"
-msgstr ""
+msgstr "Errore di Autenticazione"
 
 #: src/servicemanager/base.py:97
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Non sei autorizzato per questa operazione."
 
 #: src/servicemanager/base.py:99
 msgid "Error"
@@ -69,27 +69,27 @@ msgstr "Errore"
 
 #: src/servicemanager/base.py:100
 msgid "An exception occured."
-msgstr ""
+msgstr "Si è verificata un'eccezione."
 
 #: src/servicemanager/widgets.py:171 ui/ui_info.py:52
 msgid "Service information is not available"
-msgstr ""
+msgstr "Informazioni di servizio non sono disponibili"
 
 #: ui/ui_info.py:51 ui/ui_item.py:124 ui/ui_main.py:61
 msgid "Form"
-msgstr ""
+msgstr "Forma"
 
 #: ui/ui_info.py:53
 msgid "Hide Information"
-msgstr ""
+msgstr "Nascondi Informazioni"
 
 #: ui/ui_item.py:125
 msgid "serviceName"
-msgstr ""
+msgstr "Nome del Servizio"
 
 #: ui/ui_item.py:126
 msgid "serviceDesc"
-msgstr ""
+msgstr "Descrizione del Servizio"
 
 #: ui/ui_item.py:127
 msgid "Start service"
