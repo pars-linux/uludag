@@ -249,7 +249,7 @@ msgstr "%prog pacchetti_da_installare"
 
 #: src/pm-install.py:65
 msgid "Hide summary screen"
-msgstr ""
+msgstr "Nascondi schermata di riepilogo"
 
 #: src/pmutils.py:66 src/statemanager.py:240
 msgid "Network Error"
@@ -582,7 +582,7 @@ msgstr "Gestore dei Pacchetti Installazione Rapida"
 
 #: ui/ui_pminstall.py:84
 msgid "Following packages are selected to install. Do you want to install these packages ?"
-msgstr ""
+msgstr "I seguenti pacchetti sono stati selezionati per l'installazione. Vuoi installare questi pacchetti?"
 
 #: ui/ui_pminstall.py:86
 msgid "Install"
