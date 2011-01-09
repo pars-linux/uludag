@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-07 14:03+0000\n"
+"POT-Creation-Date: 2011-01-09 22:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -172,9 +172,8 @@ msgid "Validation is comparing the packages in the medium with the original ones
 msgstr ""
 
 #: ../release.xml.in.h:40
-#, fuzzy
 msgid "Welcome back..."
-msgstr "Добро пожаловать"
+msgstr "Добро пожаловать..."
 
 #: ../release.xml.in.h:41
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
@@ -189,12 +188,10 @@ msgid "YALI is now installing Pardus on your computer. This operation takes appr
 msgstr ""
 
 #: ../release.xml.in.h:44
-#, fuzzy
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
 msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Пожалуйста, убедитесь в том, что вы запомнили Ваш пароль и размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:45
-#, fuzzy
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
 msgstr "Вы успешно установили Pardus на ваш компьютер. После перезагрузки компьютера, вы сможете добавить новые учетные записи пользователей и начать использовать Pardus. Пожалуйста, убедитесь в том, что вы размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
 
