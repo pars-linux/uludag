@@ -14,14 +14,15 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
-import subprocess
-import time
+import sys
+import threading
 
 from screens.Screen import ScreenWidget
 from screens.smoltdlg import SmoltWidget
-from screens.smoltDetailsPopup import smoltDetailsWidget
-from screens.smoltPrivacyPopup import smoltPrivacyWidget
-from screens.pProgress import pProgress
+
+sys.path.append('/usr/share/smolt/client')
+
+import smolt
 
 class Widget(SmoltWidget, ScreenWidget):
 
@@ -35,110 +36,119 @@ class Widget(SmoltWidget, ScreenWidget):
         apply(SmoltWidget.__init__, (self,) + args)
 
         # set texts
-	self.setName(i18n("Smolt"))
+        self.setName(i18n("Smolt"))
         self.textSmolt.setText(i18n("Pardus hardware profiler gets your hardware info and sends it<br> to public Pardus server."))
-        self.detailsKURLLabel.setText(i18n("Show details"))
-        self.privacyButton.setText(i18n("Privacy policy"))
-        self.sendCheckBox.setText(i18n("I want to share my hardware info"))
-
-        # run smolt and show output to user
-        p = subprocess.Popen(["smoltSendProfile", "-p"], stdout=subprocess.PIPE)
-        out, err = p.communicate()
-        global fullHdInfo
-        fullHdInfo = QString(out).remove("\t")
-        sumHdInfo = QString(out).remove("\t")
-        i = sumHdInfo.find( "Devices", 0 )
-        sumHdInfo.remove( i-2, 10000)
-        #fullHdInfo.remove( 0, i+42)
-        sumHdInfo = str(sumHdInfo).splitlines()
-        #fullHdInfo = str(fullHdInfo).splitlines()
+        self.privacyButton.setText(i18n("&Privacy policy"))
+        self.sendCheckBox.setText(i18n("&I want to share my hardware info"))
 
         self.hdInfoListView.setSorting(-1)
 
         self.hdInfoListView.addColumn(i18n("Label"))
         self.hdInfoListView.header().setClickEnabled(0,self.hdInfoListView.header().count() - 1)
-        self.hdInfoListView.addColumn(i18n("Data"))
+        self.hdInfoListView.addColumn(i18n("Value"))
         self.hdInfoListView.header().setClickEnabled(0,self.hdInfoListView.header().count() - 1)
         self.hdInfoListView.setResizeMode( KListView.LastColumn )
 
-        #font = QFont((self.hdInfoListView.count() - 1).font())
-        #font.setBold(1)
-        #(self.hdInfoListView.count() - 1).setFont(font)
+        self.labels()
 
+        self.profile = smolt.Hardware()
+        for label, value in reversed(list(self.profile.hostIter())):
+            item = KListViewItem(self.hdInfoListView, None)
+            item.setText(0,self.sendable_host_labels.pop())
+            item.setText(1,str(value))
 
-        global d
-        d = {}
-        l = len(sumHdInfo)
-        item = None
-        for line in sumHdInfo:
-            item = KListViewItem(self.hdInfoListView, item)
-            label, data = line.split(':')
-            d[label] = data
-            item.setText(0,(label))
-            item.setText(1,(d[label]))
+        QObject.connect(self.privacyButton, SIGNAL("clicked()"), self.changePage)
 
+    def showPrivacy(self):
+        self.mainStack.raiseWidget(1)
+        self.privacyButton.setText(i18n("&Host Information"))
+        self.privacyTextEdit.setText(PRIVACY_POLICY)
 
-        QObject.connect(self.privacyButton, SIGNAL("clicked()"), self.privacy)
-        QObject.connect(self.detailsKURLLabel, SIGNAL("leftClickedURL()"), self.popup)
+    def showHost(self):
+        self.mainStack.raiseWidget(0)
+        self.privacyButton.setText(i18n("&Privacy Policy"))
 
-    def popup(self):
-        self.smoltPopup = smoltDetailsWidget()
-        self.smoltPopup.setName(i18n("Smolt Detailes Wigdet"))
-        self.smoltPopup.hdInfoTextEdit.setText(fullHdInfo)
-        self.smoltPopup.show()
-
-    def privacy(self):
-        self.smoltPrivacy = smoltPrivacyWidget()
-        self.smoltPrivacy.setName(i18n("Smolt Privacy Widget"))
-        self.smoltPrivacy.privacyTextEdit.setText(PRIVACY_POLICY)
-        self.smoltPrivacy.show()
+    def changePage(self):
+        if self.mainStack.id(self.mainStack.visibleWidget()) == 0:
+            self.showPrivacy()
+        else:
+            self.showHost()
 
     def send(self):
         if self.sendCheckBox.isChecked():
-            p = subprocess.Popen(["smoltSendProfile", "-s", "http://www.smolts.org", "-a" ], stdout=subprocess.PIPE)
-            out, err = p.communicate()
-            #print err, "*****************\n\n\n", out
+            Send().start()
 
-
-    def prog(self):
-        self.sendingProgress = pProgress()
-        self.sendingProgress.infoTextLabel.setText(i18n("Sending..."))
-        self.sendingProgress.cancelPushButton.setText(i18n("Cancel"))
-        self.sendingProgress.show()
+    def labels(self):
+        self.sendable_host_labels = [ i18n("UUID"),
+                                      i18n("OS"),
+                                      i18n("Default Run Level"),
+                                      i18n("Language"),
+                                      i18n("Platform"),
+                                      i18n("BogoMIPS"),
+                                      i18n("CPU Vendor"),
+                                      i18n("CPU Model"),
+                                      i18n("CPU Stepping"),
+                                      i18n("CPU Family"),
+                                      i18n("CPU Model Num"),
+                                      i18n("Number of CPUs"),
+                                      i18n("CPU Speed"),
+                                      i18n("System Memory"),
+                                      i18n("System Swap"),
+                                      i18n("Vendor"),
+                                      i18n("System"),
+                                      i18n("Form Factor"),
+                                      i18n("Kernel"),
+                                      i18n("SELinux Enabled"),
+                                      i18n("SELinux Policy"),
+                                      i18n("SELinux Enforce") ]
 
     def shown(self):
+        # Should check internet connection
         pass
 
     def execute(self):
         self.send()
-        #pass
+
+class Send(threading.Thread):
+
+    def run(self):
+        s_client = smolt.Hardware()
+        response = s_client.send()
+
+        # Goodbye screen should check against smolt err before quit.
+        # What if kaptan quits before smolt finishes its jobs?
+        #if response[0] != 0:
+        #    with open("smolt.err","w") as flog:
+        #        flog.write(str(response[0]))
 
 
 PRIVACY_POLICY = \
-"""Smolt will only send hardware and basic operating system information to the
-Fedora smolt server (smoon).  The only tie from the database to a submitters
+"""<p>Smolt will only send hardware and basic operating system information to the
+Pardus smolt server (smoon).  The only tie from the database to a submitters
 machine is the UUID.  As long as the submitter does not give out this UUID
 the submission is anonymous.  If at any point in time a user wants to delete
-their profile from the database they need only run
+their profile from the database they need only run</p>
 
-    smoltDeleteProfile
+    <b>smoltDeleteProfile</b>
 
-The information sent to the smolt database server should be considered public
+<p>The information sent to the smolt database server should be considered public
 in that anyone can view the statistics, data and share machine profiles.  In 
 many ways smolt is designed to get hardware vendors and other 3rd parties'
 attention.  As such, not only will this information be shared with 3rd parties,
 we will be using smolt as leverage to gain better support for open source
-drivers and better support in general.
+drivers and better support in general.</p>
 
-IP Logging:  In Fedora's smolt install all web traffic goes through a proxy
+<p><u><i>IP Logging:</i></u>  In Pardus's smolt install all web traffic goes through a proxy
 server first.  This is the only place IP addresses are being logged and they
 are kept on that server for a period of 4 weeks at which time log rotation
 removes these logs.  The Fedora Project does not aggregate ip addresses in
 the smolt database.  These logs are private and will not be available to the
-general public.
+general public.</p>
 
-Users unhappy with this policy should simply not use smolt.  Users with
-questions about this policy should contact the Fedora Infrastructure Team at
-admin [at] fedoraproject.org  Also remember that users can delete their
-profiles at any time using "smoltDeleteProfile"
+<p>Users unhappy with this policy should simply not use smolt.  Users with
+questions about this policy should contact the Pardus Infrastructure Team at
+<i>admin [at] pardus.org.tr<i>  Also remember that users can delete their
+profiles at any time using</p>
+
+     <b>smoltDeleteProfile</b>
 """

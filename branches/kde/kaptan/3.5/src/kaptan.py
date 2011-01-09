@@ -34,6 +34,7 @@ import screens.ScrPanel as ScrPanel
 import screens.ScrKeyboard as ScrKeyboard
 import screens.ScrGoodbye as ScrGoodbye
 import screens.ScrMultiple as ScrMultiple
+import screens.ScrSmolt as ScrSmolt
 
 def getKernelOpt(cmdopt=None):
     if cmdopt:
@@ -81,6 +82,7 @@ else:
                      ScrMultiple,
                      ScrWallpaper,
                      #ScrNetwork,
+                     ScrSmolt,
                      ScrPackage,
                      ScrGoodbye]
 

@@ -34,9 +34,9 @@
             <string></string>
         </property>
     </widget>
-    <widget class="KListView">
+    <widget class="QWidgetStack">
         <property name="name">
-            <cstring>hdInfoListView</cstring>
+            <cstring>mainStack</cstring>
         </property>
         <property name="geometry">
             <rect>
@@ -46,63 +46,68 @@
                 <height>270</height>
             </rect>
         </property>
-        <property name="selectionMode" stdset="0">
-            <enum>NoSelection</enum>
-        </property>
-        <property name="alternateBackground">
-            <color>
-                <red>85</red>
-                <green>85</green>
-                <blue>0</blue>
-            </color>
-        </property>
-    </widget>
-    <widget class="QPushButton">
-        <property name="name">
-            <cstring>privacyButton</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>382</x>
-                <y>360</y>
-                <width>108</width>
-                <height>29</height>
-            </rect>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-    </widget>
-    <widget class="KURLLabel">
-        <property name="name">
-            <cstring>detailsKURLLabel</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>300</x>
-                <y>340</y>
-                <width>190</width>
-                <height>20</height>
-            </rect>
-        </property>
-        <property name="backgroundOrigin">
-            <enum>ParentOrigin</enum>
-        </property>
-        <property name="font">
-            <font>
-                <pointsize>7</pointsize>
-                <underline>1</underline>
-            </font>
-        </property>
-        <property name="text">
-            <string></string>
-        </property>
-        <property name="alignment">
-            <set>AlignVCenter|AlignRight</set>
-        </property>
-        <property name="url" stdset="0">
-            <string></string>
-        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>hostPage</cstring>
+            </property>
+            <attribute name="id">
+                <number>0</number>
+            </attribute>
+            <widget class="KListView">
+                <property name="name">
+                    <cstring>hdInfoListView</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>450</width>
+                        <height>270</height>
+                    </rect>
+                </property>
+                <property name="selectionMode" stdset="0">
+                    <enum>NoSelection</enum>
+                </property>
+                <property name="itemsMovable">
+                    <bool>false</bool>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>privacyPage</cstring>
+            </property>
+            <attribute name="id">
+                <number>1</number>
+            </attribute>
+            <widget class="QTextEdit">
+                <property name="name">
+                    <cstring>privacyTextEdit</cstring>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>450</width>
+                        <height>270</height>
+                    </rect>
+                </property>
+                <property name="paletteBackgroundPixmap">
+                    <pixmap>image0</pixmap>
+                </property>
+                <property name="font">
+                    <font>
+                        <pointsize>8</pointsize>
+                    </font>
+                </property>
+                <property name="text">
+                    <string></string>
+                </property>
+                <property name="readOnly">
+                    <bool>true</bool>
+                </property>
+            </widget>
+        </widget>
     </widget>
     <widget class="QCheckBox">
         <property name="name">
@@ -112,7 +117,7 @@
             <rect>
                 <x>50</x>
                 <y>360</y>
-                <width>330</width>
+                <width>320</width>
                 <height>22</height>
             </rect>
         </property>
@@ -123,10 +128,38 @@
             <string></string>
         </property>
     </widget>
+    <widget class="QPushButton">
+        <property name="name">
+            <cstring>privacyButton</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>377</x>
+                <y>360</y>
+                <width>113</width>
+                <height>29</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>3</hsizetype>
+                <vsizetype>0</vsizetype>
+                <horstretch>20</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="text">
+            <string></string>
+        </property>
+    </widget>
 </widget>
+<images>
+    <image name="image0">
+        <data format="XPM.GZ" length="55955">789ced9d4b6fdb561046f7fe1582b9338ac6cf3c507461795da0cb0245177c887a58b21dbf9aa4e87fafe692223ff25ec9b69a56a470ceacbe5542dc9399214349ef8e06bffdfacbe0e8ddc1c363fc384d07e924be1f1c654f8bc5d7dffff8f9af83c38bd3f3c1c9f1c5e0ec647072f8c3c1e1d5201d44a3532b8b972e9e59591cba786e653172f1c2ca62ece27b2b8b3fbaf821cbd2dc6252442b8b7fbaf8311b65c716d3225a59fceae2a72ccfdcdf2a2ba295c5918bb195c5dcc5c4cae2d8c5d4cae2c4c5cccae2d44587c5998bb995c56b8bf9b195c5b98b275616172e9e5a59bc71f1cccae2ad8be75616ef5cbcb0b2f8d9c5f75616ef5dfc6065f1c1c58f56161f5dfc6465f1c9c5d8cae2b38b8995c52f2ea65616bfb99859b95388e22449b36c94e7e3f164329dce66d7d7d7f3f962717373737b7b7b7777f779c9fd9207c723f484e2bcece4ec049707b93ccee5a12e16f3f9f28867b3e97432198ff37cb4fc279824711c391fe23849db3e980e8b960e2d1b9ea0b3f846a8108b4208f16194a569ed43623e8ccc87567bf075c085dea0466c14c2f9e01a44edc386f6e0ebb0eb2b85d711124227863730c23e34db83e8d0b4e1193a8b6f445308af4164c5c0707b7bec8d8b6a992ca64540875d5f30bc841a510b514f8cf6c0a87d28dac3a8352eeaf6a03a60437f582344d520ec16a33530c487725c34b687557b68eab0ebeb84d7b25188aa41acf561537ba874a8ffb42fd0519a46ac8458e7c3a4ed83b73e54eda1392d54875d5f326ca62d44b341d41b653930ca05427da8ee2edaed21a0c3aeaf165e262844a041047c58ad0fcd71e1b6877a5ad43aecfa4ae1757842341b44608170ff13e4ad0fcd7121eda1a5c337e82461215a0da2b8c3682d10be0fc171d1680fc8d003da426883680e8c57fbd0bcb940879e2142841a84e7c3487d58ad9333df87d6b4c086bed014a26a10fe02210ba5f3210df8508e0baf3da0437fa885a81b446b60d40b65ed83f73c4afef7a27a0da6f16cf2bb2fc2f09fd07846f950db50b787993e7fd0e793a1e70f72bf19da20a0f304ef37efd68f0be7c365121a18def387607bd8754b049fb6104fdeb4d8da874d3718d8d059c20d62ddf3a8b7faf010da28b1a1d3780da2b94014ef48bdc1075d275be3021dfac0e681d1f061bab50fcff8d017360d0cef0663ad0f72bb195a27793ed91fc203e3fbfb407be8076ff421c7873de7fff561d7570b2ff1061f26f8b0ffe00328f8000a3e80820fa0e003285bfb30c4877d041f40c10750f001147c00051f40d9fe7e334e5ef8c49eff895edeb1ee3ccfd567f5fc4ff3b63e9d55bd6e1fe1c3de820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa06cedc35514c749f02b6a433fd0fb54f00c1da73ca8d205fd795efdfd6ef935d6388e86f8b0b7e003285bfb70890ffb083e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80820fa0e00328f8000a3e80b2b50f57c328aa5fb12ebfd4dc19b17ac9ba54a272a2d6023a4b7950a50b950ceed5ea950de54ff316df651e45c34b7cd85bf001147c00051f40c10750f001147c00051f40c10750f001147c00051f40c10750f001147c00051f40c10750f001147c00e55ff8301cd6afd4965f52eb8c58bd545b2a5139516b019da53ca8d2854a06f72aedca86496143f1ddb44b0d2e0ffffee9e01f431dff0e</data>
+    </image>
+</images>
 <layoutdefaults spacing="6" margin="11"/>
 <includehints>
     <includehint>klistview.h</includehint>
-    <includehint>kurllabel.h</includehint>
 </includehints>
 </UI>
