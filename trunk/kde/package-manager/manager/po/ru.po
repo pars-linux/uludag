@@ -441,7 +441,7 @@ msgstr "Дополнительные зависимости выбранных �
 
 #: src/statemanager.py:167
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Сейчас есть <b>%1</b> выбранных пакетов из <b>%2</b> по объему "
+msgstr "Сейчас есть <b>%1</b> выбранных пакетов на <b>%2</b> по объему "
 
 #: src/statemanager.py:170
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -521,7 +521,7 @@ msgstr "Выбранные пакеты для установки:"
 
 #: ui/ui_basketdialog.py:185
 msgid "Total Size:"
-msgstr "Общий размер:"
+msgstr "Общий объем:"
 
 #: ui/ui_basketdialog.py:186
 msgid "<b>2.2 MB</b>"
@@ -686,7 +686,7 @@ msgstr "Основные"
 
 #: ui/ui_settingsdialog.py:404
 msgid "Maximum cache size:"
-msgstr "Максимальный размер кэша:"
+msgstr "Максимальный объем кэша:"
 
 #: ui/ui_settingsdialog.py:405
 msgid "Unlimited"
