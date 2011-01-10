@@ -177,11 +177,11 @@ msgstr "Добро пожаловать..."
 
 #: ../release.xml.in.h:41
 msgid "When using Dolphin, you may see that it learned a lot from the web experience. Dolphin offers web-like features suh as tabbed browsing, folder addresses in breadcrumbs form, tagging files so they can be listed by tags besides traditional folder structure and powerful network transparency.&lt;br&gt;&lt;br&gt;Any place on the local network or web can be integrated into your file system easily by Dolphin. So you can reach remote addresses as if they are on your disk."
-msgstr ""
+msgstr "Когда вы используете Dolphin, вы можете заметить, что многое он почерпнул из браузеров. Dolphin предлагает такие знакомые вещи, как табулирование, адреса папок в сокращенной форме, разделение файлов по тэгам, так, что они потом могут быть отсортированы по ним в дополнение к традиционной структуре. Кроме того, имеется мощная поддержка Сети.&lt;br&gt;&lt;br&gt;Любое место в локальной сети или интернете может быть интегрировано в вашу файловую систему с помощью Dolphin. Так вы можете работать с удаленными адресами, как если бы они были расположены у вас на диске."
 
 #: ../release.xml.in.h:42
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for user space, and system, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described above.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr "&lt;br&gt;&lt;br&gt;"
+msgstr ""
 
 #: ../release.xml.in.h:43
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
