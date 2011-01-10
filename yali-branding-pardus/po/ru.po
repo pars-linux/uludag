@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 07:17+0000\n"
+"POT-Creation-Date: 2011-01-10 09:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgstr "Дважды проверьте выбранный способ уста
 
 #: ../release.xml.in.h:14
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
-msgstr ""
+msgstr "Отдых - это серьезная штука... Каждый может расслабиться на некоторое время с помощь головоломки Судоку или простой игры. Pardus. У начальной установке Pardus включено несколько небольших, веселых игр, а полный набор вы можете получить по Сети. Если вы любитель игр, вам следует выбрать секцию \"Игры\" в Package Manager для того, чтобы иметь возможность получить тысячи игр, включая симуляторы, мультиплеерные игры, аркадные игры старой школы и другие..."
 
 #: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
