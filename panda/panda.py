@@ -47,6 +47,9 @@ class Panda():
 
     def __get_primary_driver(self):
         '''Get driver name for the working primary device'''
+
+        self.driver_name = "Not defined"
+
         for boot_vga in glob.glob("%s/*/boot_vga" % sysdir):
             if open(boot_vga).read().startswith("1"):
                 dev_path = os.path.dirname(boot_vga)
@@ -54,30 +57,23 @@ class Panda():
                 device = open(os.path.join(dev_path, "device")).read().strip()
                 device_id = vendor[2:] + device[2:]
 
+                try:
+                    db_file = open(driversDB)
+                except IOError:
+                    break
+
                 # We've found a Nvidia card, thus set it to nvidia-current
                 # That's a workaround for new Nvidia cards that are not written in driversDB
                 if vendor[2:] == "10de":
                     self.driver_name = "nvidia-current"
 
-                try:
-                    for line in open(driversDB):
-                        if line.startswith(device_id):
-                            self.driver_name = line.split()[1]
-                            break
-                except IOError:
-                    self.driver_name = "Not defined"
-
-
-                # We couldn't find any in driverDB, that might be an Intel card
-                # Assign it as "not defined"
-                if not self.driver_name:
-                    self.driver_name = "Not defined"
+                for line in db_file:
+                    if line.startswith(device_id):
+                        self.driver_name = line.split()[1]
+                        break
 
                 # We've set a card, no need to search for another one
                 break 
-        else:
-            # We couldn't found any card that matches a card in driversDB
-            self.driver_name = "Not defined"
 
         return self.driver_name
 
