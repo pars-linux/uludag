@@ -97,7 +97,7 @@ class MainManager(QtGui.QWidget):
             errorMessage = i18n("You are not authorized for this operation.")
         else:
             errorTitle = i18n("Error")
-            errorMessage = i18n("An exception occured.")
+            errorMessage = i18n("An exception occurred.")
         messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
 
         if not exception.startswith('tr.org.pardus.comar.Comar.PolicyKit'):
