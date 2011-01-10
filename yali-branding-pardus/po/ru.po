@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 13:01+0000\n"
+"POT-Creation-Date: 2011-01-10 14:02+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -129,7 +129,7 @@ msgstr ""
 
 #: ../release.xml.in.h:29
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
-msgstr ""
+msgstr "Работа с Pardus дает возможность использовать множество свободных и открытых программ. Вы встретите такие известные программы, как Mozilla Firefox или LibreOffice. Они могут быть немного изменены разработчиками Pardus&apos; для того, чтобы лучше работать в вашей системе. Пока установка продолжается, вы можете увидеть некоторые из этих изменений."
 
 #: ../release.xml.in.h:30
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
