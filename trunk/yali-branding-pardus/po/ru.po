@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-09 22:01+0000\n"
+"POT-Creation-Date: 2011-01-10 07:17+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -58,7 +58,7 @@ msgstr "Установки даты и времени позволят вам у
 
 #: ../release.xml.in.h:11
 msgid "Do you have a habit of customization? Kaptan is there for you. Kaptan is an end-user configuration assistant which helps you to customize your system upon your preferences. Dou you prefer using your mouse with single click? Are you left-handed? Do you want to change the color-scheme of the desktop? A number of personalization options are offered in Kaptan. Kaptan will be automatically run when you first login. &lt;br&gt;&lt;br&gt;If you want to use Kaptan all over again sometime, you can call it from the application launcher by its name kaptan. &lt;br&gt;Hint: Application launcher can be called with its default shortcut Alt+F2 and it offers a number of basic functions as well, try it at home!"
-msgstr ""
+msgstr "У вас привычка настраивать? Тогда Kaptan для вас. Kaptan - это приложение, которое поможет вам настроить вашу систему в соответствии со своими предпочтениями. Вы предпочитаете одиночное нажатие кнопок мыши? А может вы левша? Вы хотите изменить цветовую гамму для вашего рабочего стола? Большое количество опций представлено в Kaptan. Kaptan будет автоматически запущен после вашего первого запуска системы. &lt;br&gt;&lt;br&gt;Если вы хотите использовать Kaptan снова, вы можете запустить его как обычное приложение. &lt;br&gt;Подсказка: запуск приложений вызывается по умолчанию по комбинации клавиш Alt+F2 и он предложит вам также набор базовых функций, попробуйте его!"
 
 #: ../release.xml.in.h:12
 msgid "Dolphin is the file manager of KDE and so Pardus. It gives a great set of features where it becomes surprising that a simple file manager may have so many features. &lt;br&gt;&lt;br&gt;You can divide any Dolphin window by columns to organize your files by comparing... Or you can utilize any KDE application as they can work in Dolpin embedded. Thus you can edit an image file in your file manager with the full features of Gwenview, the image viewer or preview a video in the optional and customizable Information panel."
@@ -78,7 +78,7 @@ msgstr "Будьте готовы к установке Pardus"
 
 #: ../release.xml.in.h:16
 msgid "Help will be included when Kahya implementation is complete."
-msgstr ""
+msgstr "Помощь будет включена, когда реализация Kahya будет закончена."
 
 #: ../release.xml.in.h:17
 msgid "Here you can review your options before the installation process starts."
