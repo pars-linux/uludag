@@ -1,3 +1,26 @@
+2011-01-08 mehmet.ozdemir
+         * save default status if an entry is default
+
+2010-12-27 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-26 mehmet.ozdemir
+         * A checkbox was added at the begining of every item for setting that item as default boot entry.
+         * Set as default boot entry check was removed from edit entry widget.
+
+2010-12-24 mehmet.ozdemir
+         * handler was removed, backend was added.
+
+2010-12-07 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 38 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-07 gokmen.goksel
+         * - Ready for new release 
+
 2010-12-07 mehmet.ozdemir
          * buttons were enabled after job completion.
 
@@ -305,4 +328,294 @@
 
 2007-06-22 bahadir.kandemir
          * Upcoming release
+
+2007-06-21 bahadir.kandemir
+         * Update messages
+
+2007-06-21 bahadir.kandemir
+         * Bootloader Manager -> Boot Manager
+
+2007-06-21 bahadir.kandemir
+         * Update messages
+
+2007-06-21 bahadir.kandemir
+         * Better
+
+2007-06-21 bahadir.kandemir
+         * There must be at least one Pardus entry.
+
+2007-06-21 bahadir.kandemir
+         * we don't need you anymore
+
+2007-06-19 bahadir.kandemir
+         * fixed typo
+
+2007-06-19 bahadir.kandemir
+         * Show message
+
+2007-06-19 bahadir.kandemir
+         * Allow setting timeout
+
+2007-06-19 bahadir.kandemir
+         * better
+
+2007-06-19 bahadir.kandemir
+         * Kozmetik
+
+2007-06-18 mustafaoe
+         * german update
+
+2007-06-16 bahadir.kandemir
+         * Fixed typo
+
+2007-06-15 bahadir.kandemir
+         * Cosmetic
+
+2007-06-15 bahadir.kandemir
+         * Better
+
+2007-06-13 bahadir.kandemir
+         * Boot.Modules v0.1
+
+2007-06-13 bahadir.kandemir
+         * Don't show grub address to user.
+
+2007-06-12 bahadir.kandemir
+         * Fixed typo
+
+2007-06-05 bahadir.kandemir
+         * Yeah, yet another > 250 lines commit.
+         * Boot.Loader works fine if Grub is written on second disk.
+
+2007-06-03 wpmhia
+         * Added dutch language support
+
+2007-06-03 wpmhia
+         * Small update
+
+2007-06-03 wpmhia
+         * Voila, here is the dutch bootload manager!
+
+2007-06-01 bahadir.kandemir
+         * fixed a typo
+
+2007-05-30 amine
+         * i18n update.
+
+2007-05-30 bahadir.kandemir
+         * It's not my job to create device.map
+
+2007-05-30 bahadir.kandemir
+         * Create device.map if not exists
+
+2007-05-29 bahadir.kandemir
+         * Background color and splash can be changed.
+
+2007-05-28 bahadir.kandemir
+         * {linux,grub}Device(): Return None if no part. given
+
+2007-05-27 klemens
+         * some checking again of typos and better spanish for tasma files
+
+2007-05-27 bahadir.kandemir
+         * Bug fixed at http://bugs.pardus.org.tr/5775
+
+2007-05-27 bahadir.kandemir
+         * Memtest support and better input validation
+
+2007-05-26 bahadir.kandemir
+         * update_messages
+
+2007-05-26 bahadir.kandemir
+         * Comment added to http://bugs.pardus.org.tr/5767
+
+2007-05-25 bahadir.kandemir
+         * ağlama 2
+
+2007-05-25 bahadir.kandemir
+         * Ağlama
+
+2007-05-25 bahadir.kandemir
+         * Show 'other' icon is OS type is unknown
+
+2007-05-25 bahadir.kandemir
+         * Mising md5crypt() method
+         * Xen support
+
+2007-05-25 bahadir.kandemir
+         * fix for CCISS disks
+
+2007-05-24 bahadir.kandemir
+         * Thanks to Fred Gansevles
+
+2007-05-23 bahadir.kandemir
+         * No help atm
+
+2007-05-23 bahadir.kandemir
+         * update messages
+
+2007-05-21 klemens
+         * some proofreading and updating of the spanish language file
+
+2007-05-21 bahadir.kandemir
+         * Input validation
+
+2007-05-21 bahadir.kandemir
+         * Update messages
+
+2007-05-21 bahadir.kandemir
+         * tidy
+
+2007-05-20 bahadir.kandemir
+         * better
+
+2007-05-17 bahadir.kandemir
+         * Kernel Options -> Kernel Parameters
+
+2007-05-17 klemens
+         * some proofreading and additions of spanish language files
+
+2007-05-15 bahadir.kandemir
+         * merged grub module to Boot.Loader script. We don't need a seperate module.
+
+2007-05-14 bahadir.kandemir
+         * Use new COMAR model. Next to last commit (i hope)
+
+2007-05-14 bahadir.kandemir
+         * Save all entries' states on 'save last' mode
+
+2007-05-13 bahadir.kandemir
+         * Ooops i did it again.
+
+2007-05-13 bahadir.kandemir
+         * An option to make Grub remember last booted entry and make it default item. Thanks to Fred Gansevles.
+
+2007-05-11 amine
+         * i18n version for fr.
+
+2007-05-09 bahadir.kandemir
+         * Default index can not be greater than entry length
+
+2007-05-09 bahadir.kandemir
+         * Cosmetic changes to entry editor
+
+2007-05-02 bahadir.kandemir
+         * Set default entry while adding/updating entries.
+
+2007-05-01 bahadir.kandemir
+         * update messages
+
+2007-05-01 bahadir.kandemir
+         * New entry list widget from Network-Manager
+
+2007-04-30 bahadir.kandemir
+         * Show default entry
+
+2007-04-30 bahadir.kandemir
+         * Coming Soon
+
+2007-04-30 bahadir.kandemir
+         * No need to distribute grub module as a seperate package
+
+2007-04-28 bahadir.kandemir
+         * removeEntry()
+
+2007-04-28 bahadir.kandemir
+         * {update,remove}Entry(): Fail if index is out of range
+
+2007-04-28 bahadir.kandemir
+         * Ignore fields not supported by specified OS
+
+2007-04-27 bahadir.kandemir
+         * Add/update dialog. I know, GUI sucks.
+
+2007-04-27 bahadir.kandemir
+         * if 'root' is not given, use active root partition.
+
+2007-04-27 bahadir.kandemir
+         * Let client specify root partition
+
+2007-04-26 bahadir.kandemir
+         * Provide new listSystems() method.
+
+2007-04-26 bahadir.kandemir
+         * listOptions() method returns a list of option names.
+
+2007-04-26 bahadir.kandemir
+         * Set default values of options
+         * Get root device address from kernel if possible
+
+2007-04-25 bahadir.kandemir
+         * List options supported by model, also remove debug code
+
+2007-04-25 bahadir.kandemir
+         * Client is now Grub-independed
+
+2007-04-22 bahadir.kandemir
+         * One notify is enough.
+
+2007-04-22 bahadir.kandemir
+         * we don't need that
+
+2007-04-22 bahadir.kandemir
+         * Use new notifies & cleanup
+
+2007-04-22 bahadir.kandemir
+         * Use new notifies
+
+2007-04-21 bahadir.kandemir
+         * Entry düzenlerken, başka bir uygulama entry'yi silmişse kullanıcıyı uyar.
+
+2007-04-21 bahadir.kandemir
+         * Using QWidgetStack
+
+2007-04-21 bahadir.kandemir
+         * Return all entries
+
+2007-04-21 bahadir.kandemir
+         * Cosmetic changes
+
+2007-04-20 bahadir.kandemir
+         * System.Boot -> Boot.Loader + temizlik
+
+2007-04-20 bahadir.kandemir
+         * set debug off
+
+2007-04-20 bahadir.kandemir
+         * Moved to COMAR
+
+2007-04-20 bahadir.kandemir
+         * COMAR model
+
+2007-04-20 bahadir.kandemir
+         * System.Boot -> Boot.Loader
+
+2007-04-20 bahadir.kandemir
+         * New model
+
+2007-04-18 bahadir.kandemir
+         * Don't update default boot entry if it's not a Pardus kernel entry.
+         * Remove lambda's
+
+2007-04-16 bahadir.kandemir
+         * updateEntry() and renameEntry() methods
+         * Almost ready.
+
+2007-04-09 bahadir.kandemir
+         * Lock file is hidden
+
+2007-04-09 bahadir.kandemir
+         * Update default index
+
+2007-04-06 bahadir.kandemir
+         * Olmayan grub.conf dosyası nasıl da çökertiyor Pardus'u
+
+2007-04-04 bahadir.kandemir
+         * addEntry
+         * removeEntry
+         * Lock grub.conf before editing
+         * Update default entry index after update/remove
+
+2007-03-30 bahadir.kandemir
+         * updateKernelEntry is a better name
 
