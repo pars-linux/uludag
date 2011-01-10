@@ -32,7 +32,7 @@ import comar
 # DBus event loop
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
-version = '2.1.2'
+version = '2.1.4'
 
 """
 A util list for HAL. It is used for storing volume device changes.

@@ -1,47 +1,44 @@
+2011-01-04 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 100% (Klemens Häckel)
+         * New status: 13 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-27 mehmet.ozdemir
+         * binding pixmaps was used, dm takes icons and pixmap background colors from system.
+
+2010-12-27 mehmet.ozdemir
+         * list view item icons shows partitions' mount status instead of records in fstab.
+
+2010-12-27 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 13 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 13 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-08 transifex
+         * l10n: Updated Turkish (tr) translation to 100% (Ayhan Yalçınsoy)
+         * New status: 13 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 13 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
 2010-12-08 gokmen.goksel
-         * - fix fs type for lvm member 
+         * - Update ChangeLog 
 
-2010-12-08 mehmet.ozdemir
-         * entry information is now more user friendly.
-         * lvm check is added.
-
-2010-12-08 mehmet.ozdemir
-         * trying to remove entry for '/boot' directory gives a warning.
-
-2010-12-07 mehmet.ozdemir
-         * hide/show property was added for detail frame.
-
-2010-12-06 mehmet.ozdemir
-         * missing root disk removal control is added.
-
-2010-12-06 mehmet.ozdemir
-         * a missing control iss added.
-
-2010-11-16 mehmet.ozdemir
-         * diskform maximize problem fixed
+2010-12-08 gokmen.goksel
+         * - Merge Mehmet's changes 
 
 2010-11-02 transifex
          * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
          * New status: 9 messages complete with 0 fuzzies and 0 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-11-01 mehmet.ozdemir
-         * getDeviceByLabel added again
-
-2010-11-01 mehmet.ozdemir
-         * diff revision number added
-
-2010-11-01 mehmet.ozdemir
-         * do not send labels to disk-manager III
-
-2010-11-01 mehmet.ozdemir
-         * do not send labels to disk-manager from mudur
-
-2010-10-30 mehmet.ozdemir
-         * Comment lines added.
-
-2010-10-29 mehmet.ozdemir
-         * clean code for dm
 
 2010-10-29 transifex
          * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
@@ -353,4 +350,146 @@
 
 2007-02-18 meren
          * fstab içerisinde syntax hatası varsa disk-manager çakılmasın..
+
+2007-02-18 pedro.leite
+         * Added missing blank pt_BR.po files
+
+2007-02-09 gokmen.goksel
+         * fix for auth errors and po update..
+
+2007-02-04 klemens
+         * spanish translation updates, checked for polite form, some typos, etc (kh)
+
+2006-12-12 gokmen.goksel
+         * hide details when system partition toggled
+
+2006-12-12 gokmen.goksel
+         * po update..
+
+2006-12-11 mustafaoe
+         * dsk-mngr.desktopa almanca ceviri
+
+2006-12-10 mustafaoe
+         * Disk-managere almanca eklendi
+
+2006-12-10 gokmen.goksel
+         * English Help file added, big thanks to Pınar ;) 
+
+2006-12-08 gokmen.goksel
+         * Help file in Turkish added
+
+2006-12-08 gokmen.goksel
+         * Mount added/changed partitions done ;) Version 1.1
+
+2006-12-08 gokmen.goksel
+         * mount added/changed partitions not finished.
+
+2006-12-07 gorkem
+         * update
+
+2006-12-05 gokmen.goksel
+         * new version 1.0.1
+         * Check user's group as in disk
+         * Bug fixed at http://bugs.pardus.org.tr/4346
+
+2006-12-04 cartman
+         * show it
+
+2006-12-04 cartman
+         * tr & don't show up in menu
+
+2006-12-04 cartman
+         * Show up in Katapult
+         * Comment added to http://bugs.pardus.org.tr/2416
+
+2006-12-03 gorkem
+         * updated disk manager po file from klemens
+
+2006-12-02 wpmhia
+         * updated dutch schijfbeheer
+
+2006-12-01 cartman
+         * fixes
+
+2006-11-30 gokmen.goksel
+         * Bug fixed at http://bugs.pardus.org.tr/4303
+
+2006-11-30 gokmen.goksel
+         * cosmetics
+
+2006-11-30 gokmen.goksel
+         * po's are fixed. new release v1.0
+
+2006-11-30 gokmen.goksel
+         * Show Disk Model (HAL)
+         * Es lang support
+         * Fix for debug messages
+
+2006-11-30 gokmen.goksel
+         * tr.po added, nl and de must translate. some i18n bugs fixed.
+
+2006-11-30 gokmen.goksel
+         * typo
+
+2006-11-30 gokmen.goksel
+         * warn user when done
+
+2006-11-30 gokmen.goksel
+         * last one i guess
+
+2006-11-30 gokmen.goksel
+         * fstab to disk too
+
+2006-11-30 gokmen.goksel
+         * fstab to disk 
+
+2006-11-30 gokmen.goksel
+         * let start to change its name as disk-manager
+
+2006-11-30 gokmen.goksel
+         * clean code, debug messages, usb devices is not a block device (Gurer's Patch).
+
+2006-11-29 gokmen.goksel
+         * rc1 
+
+2006-11-28 gokmen.goksel
+         * partially completed 
+
+2006-11-28 gokmen.goksel
+         * modul name changed
+
+2006-11-23 gokmen.goksel
+         * finished :) has some bugs, only writes with root 
+
+2006-11-23 gokmen.goksel
+         * wrong signal ;)
+
+2006-11-23 gokmen.goksel
+         * dont forget file_system type
+
+2006-11-23 gokmen.goksel
+         * sessionSave fixed
+
+2006-11-22 gokmen.goksel
+         * dont forget changed values and hide system entries..
+
+2006-11-21 gokmen.goksel
+         * be smart, be pretty ..
+
+2006-11-21 gokmen.goksel
+         * upsi unutmuşum bunları ;) 
+
+2006-11-21 gokmen.goksel
+         * List redesigned
+         * Now gets correct list while comparing fstab and sys
+         * Added, NotAdded icons added
+         * For added infos it gets item properties when clicked.
+
+2006-11-20 gokmen.goksel
+         * check fstab first if it has partition info dont use system's 
+
+2006-11-20 gokmen.goksel
+         * Fstab Management;
+         * - Now just get the list of block device via mudur's update_fstab script
+         * - GUI (Mockup a word from Bahadir) completed
 
