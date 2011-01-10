@@ -59,10 +59,14 @@ class Panda():
                 if vendor[2:] == "10de":
                     self.driver_name = "nvidia-current"
 
-                for line in open(driversDB):
-                    if line.startswith(device_id):
-                        self.driver_name = line.split()[1]
-                        break
+                try:
+                    for line in open(driversDB):
+                        if line.startswith(device_id):
+                            self.driver_name = line.split()[1]
+                            break
+                except IOError:
+                    self.driver_name = "Not defined"
+
 
                 # We couldn't find any in driverDB, that might be an Intel card
                 # Assign it as "not defined"
