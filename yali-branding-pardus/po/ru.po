@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 14:02+0000\n"
+"POT-Creation-Date: 2011-01-10 15:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -169,7 +169,7 @@ msgstr "Аккаунты пользователей успешно настро�
 
 #: ../release.xml.in.h:39
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
-msgstr ""
+msgstr "Проверка - это сравнение пакетов в загрузке с оригинальными путем сравнения файлов. Если проверка не удалась - это обычно означает, что носитель, с которого производится установка (CD/DVD или USB-устройство) был записан с ошибкой.&lt;br&gt;&lt;br&gt;Если вы используете оптический носитель (CD/DVD), попробуйте записать образ используя метод DAO на более низкой скорости (4x для DVD, 8-12x для CD)"
 
 #: ../release.xml.in.h:40
 msgid "Welcome back..."
