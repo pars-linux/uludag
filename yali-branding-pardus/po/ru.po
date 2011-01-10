@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 09:01+0000\n"
+"POT-Creation-Date: 2011-01-10 10:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "&quot;root&quot; это принятное имя администрат
 
 #: ../release.xml.in.h:2
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
-msgstr "Загрузчик крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt;Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
+msgstr "Загрузчик - это крошечная программа, которая первой запускается при включении компьютера. Он отвечает за загрузку операционной системы в память, а затем передает ей управление. &lt;br&gt;&lt;br&gt;Pardus использует GRUB в качестве загрузчика по умолчанию. GRUB позволяет вам загружать любую поддерживаемую операционную систему, предоставляя для этого пользователю меню. &lt;br&gt;&lt;br&gt; Рекомендуемый способ работы GRUB - это установка его в начало загрузочного диска. Вы всегда сможете выбрать другой способ установки, если вы знаете, что вы делаете."
 
 #: ../release.xml.in.h:3
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
@@ -70,7 +70,7 @@ msgstr "Дважды проверьте выбранный способ уста
 
 #: ../release.xml.in.h:14
 msgid "Fun is a serious matter... Everyone has the right to relax for a moment with the help of a sudoku puzzle or a simple game. Pardus has some little, enjoying games in the installation medium, however the real domain is waiting you online. If you are a gamer, you should check out the games section in Package Manager to explore hundreds of free games including simulators, online team building FPS&apos;s, old school arcades etc..."
-msgstr "Отдых - это серьезная штука... Каждый может расслабиться на некоторое время с помощь головоломки Судоку или простой игры. Pardus. У начальной установке Pardus включено несколько небольших, веселых игр, а полный набор вы можете получить по Сети. Если вы любитель игр, вам следует выбрать секцию \"Игры\" в Package Manager для того, чтобы иметь возможность получить тысячи игр, включая симуляторы, мультиплеерные игры, аркадные игры старой школы и другие..."
+msgstr "Отдых - это серьезная штука... Каждый может расслабиться на некоторое время с помощь головоломки Судоку или простой игры. Pardus. В начальной установке Pardus включено несколько небольших, веселых игр, а полный набор вы можете получить по Сети. Если вы любитель игр, вам следует выбрать секцию \"Игры\" в Package Manager для того, чтобы иметь возможность получить тысячи игр, включая симуляторы, мультиплеерные игры, аркадные игры старой школы и другие..."
 
 #: ../release.xml.in.h:15
 msgid "Get ready to install Pardus"
@@ -185,7 +185,7 @@ msgstr ""
 
 #: ../release.xml.in.h:43
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
-msgstr ""
+msgstr "YALI сейчас устанавливает Pardus на ваш компьютер. Эта операция займет приблизительно 20-30 минут в зависимости от вашего &apos;s аппаратного обеспечения.&lt;br&gt;&lt;br&gt;Имейте ввиду, что установка с USB-накопителя будет гораздо быстрее, чем с оптического носителя (CD/DVD).&lt;br&gt;&lt;br&gt;А сейчас просто расслабтесь и ждите завершения установки. В процессе вы узнаете о возможностях, которые появились в новой версии Pardus."
 
 #: ../release.xml.in.h:44
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
