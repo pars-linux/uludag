@@ -31,8 +31,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	       frame="false"
 	       />
 	
-	<item type="svg" id="background" background="true">
-		<normal file="background.svg" scalemode="crop"/>
+	<item type="pixmap" id="background" background="true">
+		<normal file="bg.png" scalemode="crop"/>
 		<pos width="100%" height="100%"/>
 	</item>
 	
@@ -80,8 +80,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 			
 			<!-- dark belt -->
 			<item type="rect" id="greeter">
-				<pos y="50%" x="50%" anchor="c" width="100%" height="box"/>
-				<normal color="#000000" alpha="0.6"/>
+				<pos y="50%" x="50%" anchor="c" width="100%" height="250"/>
+				<normal color="#000000" alpha="0.3"/>
 				
 				<!-- this box is to align all belt elements to center -->
 				<box orientation="horizontal" spacing="0">
@@ -95,9 +95,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 					<item type="rect" id="container">
 						<pos width="box" height="box"/>
 						
-						<box orientation="vertical" spacing="0" xpadding="0" ypadding="0">
-							
-														
+						<box orientation="vertical" spacing="0" xpadding="0" ypadding="30">				
 							
 							
 							<item type="rect" id="userinfo">
@@ -190,7 +188,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 												</item>
 												<item type="pixmap" id="login_button" button="true">
 													<normal file="login.png"/>
-													<prelight file="login.png"/>
+													<prelight file="login-hover.png"/>
 													<active file="login.png"/>
 													<pos anchor="e" x="12" y="50%"/>
 												</item>
