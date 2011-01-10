@@ -642,7 +642,7 @@ msgstr "Visualizza informazioni componente "
 
 #: ui/ui_settingsdialog.py:392
 msgid "Show package type tags"
-msgstr ""
+msgstr "Mostra etichette del tipo di pacchetto"
 
 #: ui/ui_settingsdialog.py:393
 msgid "System tray icon"
