@@ -1,19 +1,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2010.
+# Antoon Tolboom <atolboo@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-02 12:34+0200\n"
-"PO-Revision-Date: 2010-12-29 17:03+0100\n"
+"POT-Creation-Date: 2011-01-10 20:03+0000\n"
+"PO-Revision-Date: 2011-01-10 21:35+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -194,7 +194,6 @@ msgid "Get ready to install Pardus"
 msgstr "Gereed om Pardus te installeren"
 
 #: ../release.xml.in.h:16
-#, fuzzy
 msgid "Help will be included when Kahya implementation is complete."
 msgstr "Help zal aanwezig wanneer de Kahya-ondersteuning compleet is."
 
@@ -465,8 +464,8 @@ msgstr ""
 "een methode van bestandverificatie. Een mislukte validatie komt meestal door "
 "een fout op het installatiemedium (CD, DVD of USB-opslag).&lt;br&gt;&lt;"
 "br&gt;Bij het maken van een optisch installatiemedium (CD/DVD), probeer DAO "
-"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, "
-"8-12x voor CD)."
+"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, 8-"
+"12x voor CD)."
 
 #: ../release.xml.in.h:40
 msgid "Welcome back..."
