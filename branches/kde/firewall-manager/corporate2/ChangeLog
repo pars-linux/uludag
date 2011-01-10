@@ -1,3 +1,38 @@
+2011-01-04 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 100% (Klemens Häckel)
+         * New status: 41 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 41 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 mehmet.ozdemir
+         * review
+
+2010-12-22 mehmet.ozdemir
+         * fix flickering problem which occurs while dragging mouse over rightside buttons.
+
+2010-12-22 mehmet.ozdemir
+         * swap firewall satate icons.
+
+2010-12-22 mehmet.ozdemir
+         * hide close button when firewall-config is running in tasma.
+
+2010-12-08 transifex
+         * l10n: Updated Turkish (tr) translation to 100% (Ayhan Yalçınsoy)
+         * New status: 41 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 41 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-08 gokmen.goksel
+         * - Ready for 2.1.0 
+
 2010-12-07 mehmet.ozdemir
          * an output mistake was fixed.
 
@@ -342,4 +377,154 @@
 
 2007-03-25 pau
          * Corrected emails addresses in ca.po
+
+2007-03-18 pau
+         * 1st Catalan translation of firewall-config.pot
+
+2007-03-17 klenje
+         * Italian translation
+
+2007-03-12 pedro.leite
+         * Updated .desktop pt_BR translations;
+
+2007-03-10 amine
+         * i18n for fr.
+
+2007-03-02 bahadir.kandemir
+         * firewall-config-1.6.3
+         * pt_BR
+
+2007-03-01 gorkem
+         * templates for it + fr
+
+2007-02-20 pedro.leite
+         * Language-Team header updated from Brazillian to Brazilian;
+
+2007-02-19 pedro.leite
+         * Updated pt_BR translation files (included information about mailing list);
+         * disk-manager fully translated to pt_BR;
+         * kio_sysinfo fully translated to pt_BR;
+         * repokit almost translated to pt_BR;
+
+2007-02-15 bahadir.kandemir
+         * Cleanup
+
+2007-02-12 baris
+         * pt-BR -> pt_BR
+
+2007-02-12 gorkem
+         * Add pt-BR translations for firewall-configurator 
+
+2006-12-11 mustafaoe
+         * firewl-config.desktopa almanca ceviri
+
+2006-12-10 mustafaoe
+         * Firewallda almanca cevirisindeki en son durum
+
+2006-12-08 bahadir.kandemir
+         * Done.
+
+2006-12-08 bahadir.kandemir
+         * Firewall-Manager -> Firewall-Config
+
+2006-12-08 bahadir.kandemir
+         * firewall-config -> firewall-manager
+
+2006-12-08 bahadir.kandemir
+         * tobleron
+
+2006-12-05 mustafaoe
+         * Firewall almanca cevirinin en son durumu.
+
+2006-12-05 gorkem
+         * update
+
+2006-12-04 cartman
+         * show it
+
+2006-12-04 cartman
+         * tr & don't show up in KDE menu
+
+2006-12-04 bahadir.kandemir
+         * 1.6.2
+
+2006-12-04 cartman
+         * Show up in Katapult
+         * Comment added to http://bugs.pardus.org.tr/2416
+
+2006-12-03 wpmhia
+         * Update dutch firewall
+
+2006-12-01 cartman
+         * fixes
+
+2006-11-29 baris
+         * es.po update from Klemens Häckel
+
+2006-11-28 baris
+         * add missing de.po
+
+2006-11-28 baris
+         * fix msgfmt warnings for translators...
+
+2006-11-28 baris
+         * create es.po for po_stats
+
+2006-11-27 bahadir.kandemir
+         * kafam karışmış benim...
+
+2006-11-27 bahadir.kandemir
+         * fix WFS again
+
+2006-11-25 bahadir.kandemir
+         * Bug fixed at http://bugs.pardus.org.tr/4229
+
+2006-11-25 bahadir.kandemir
+         * fix WFS again
+
+2006-11-23 bahadir.kandemir
+         * heta olmuş
+
+2006-11-23 bahadir.kandemir
+         * fix
+
+2006-11-23 bahadir.kandemir
+         * KCM
+
+2006-11-23 bahadir.kandemir
+         * use KCM's buttons
+
+2006-11-22 bahadir.kandemir
+         * Giden bağlantılar sekmesi gereksiz...
+
+2006-11-22 bahadir.kandemir
+         * Add Rule Dialog for Advanced tab
+
+2006-11-22 bahadir.kandemir
+         * Tab 3 - View/Change custom rules
+
+2006-11-18 bahadir.kandemir
+         * Bir kural biden fazla IPTables komutundan oluşabilsin.
+
+2006-11-08 bahadir.kandemir
+         * Outgoing connections tab, and releated changes
+
+2006-11-03 bahadir.kandemir
+         * NL translation from Willem Gielen
+
+2006-11-02 bahadir.kandemir
+         * typos & missing translations
+
+2006-11-02 bahadir.kandemir
+         * Pre-defined rules moved to rules.py
+         * Icon replaced with new one
+
+2006-11-02 bahadir.kandemir
+         * typo
+
+2006-11-02 bahadir.kandemir
+         * FW profile
+
+2006-11-02 bahadir.kandemir
+         * 1.6.0
 
