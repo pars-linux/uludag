@@ -45,7 +45,7 @@ class Backend:
             if 'PolicyKit' in unicode(msg):
                 self.show_error(i18n('You are not authorized for this operation.'))
             else:
-                self.show_error(i18n('An error occured:\n%s' % unicode(msg)))
+                self.show_error(i18n('An error occurred:\n%s' % unicode(msg)))
             return False
 
     def start(self, service, async = None):
