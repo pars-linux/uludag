@@ -161,7 +161,7 @@ msgstr "Суммарно"
 
 #: ../release.xml.in.h:37
 msgid "There are a lot of features waiting to be explored. Thousands of softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is onle a few clicks to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones. You can reach Package Manager from the menu of your choice, Kick-off, classic menu or Lancelot that you can choose with the help of Kaptan in your very first boot."
-msgstr ""
+msgstr "Есть много новых возможностей, которые могут быть исследованы. Тысячи программ, библиотек и утилит не включены в набор установки для сохранения дискового пространства. Однако, с Pardus&apos;s пакетной системой PiSi и его дружественном интерфейсе, реализованном в Менеджере Пакетов, вам неодбоходимо всего несколько кликов  мышки, чтобы добавить эти приложения. &lt;br&gt;&lt;br&gt;Менеджер Пакетов поможет вам обновляться, удалять компоненты, которые вам не нужны, или добавлять новые. Вы можете запустить Менеджер Пакетов из меню, стиль которого вы выберете используя Kaptan во время первой загрузки."
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
