@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2010.
+# Antoon Tolboom <atolboo@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-27 11:06+0200\n"
-"PO-Revision-Date: 2010-12-27 14:42+0100\n"
+"PO-Revision-Date: 2011-01-10 22:30+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -27,7 +27,7 @@ msgstr "Fabrikant:"
 
 #: panda.cpp:89
 msgid "Renderer:"
-msgstr "Renderer:"
+msgstr "Type:"
 
 #: panda.cpp:97
 msgid "Version:"
@@ -45,40 +45,71 @@ msgstr "Het door de open-source gemeenschap gemaakte stuurprogramma gebruiken"
 msgid "Use the proprietary driver provided by the manufacturer"
 msgstr "Het door de fabrikant gemaakte propriëtaire stuurprogramma gebruiken"
 
-#: panda.cpp:134
-msgid "Video Driver Administration"
-msgstr "Videostuurprogramma beheer"
+#: panda.cpp:123
+msgid "Use the safe driver that provides limited features"
+msgstr "Het veilige stuurprogramma met beperkte mogelijkheden gebruiken"
 
-#: panda.cpp:136
+#: panda.cpp:138 rc.cpp:2 rc.cpp:2
+msgid "Video Driver Administration"
+msgstr "Beheer videostuurprogramma"
+
+#: panda.cpp:142
 msgid "(c) 2011 Fatih Arslan"
 msgstr "(c) 2011 Fatih Arslan"
 
-#: panda.cpp:138
+#: panda.cpp:148
+msgid ""
+"Please use <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</"
+"a> to report bugs.\n"
+msgstr ""
+"Gebruik <a href=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</a> "
+"om fouten te melden.\n"
+
+#: panda.cpp:150
 msgid "Fatih Arslan"
 msgstr "Fatih Arslan"
 
-#: panda.cpp:138
+#: panda.cpp:150
 msgid "Original author"
 msgstr "Oorspronkelijke auteur"
 
-#: panda.cpp:178
+#: panda.cpp:151
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Antoon Tolboom"
+
+#: panda.cpp:152
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
+
+#: panda.cpp:198
 msgid "Unable to apply settings due to missing packages"
 msgstr "Kan instellingen niet toepassen door ontbrekende pakketten"
 
-#: panda.cpp:195
+#: panda.cpp:215
 msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr "Kan de bewerking niet goedkeuren/toepassen: %1, %2"
 
-#: panda.cpp:197
+#: panda.cpp:217
 msgid "An internal error occurred"
 msgstr "Er is een interne fout opgetreden"
 
-#: panda.cpp:205
+#: panda.cpp:225
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
 msgstr ""
-"Om de wijzigingen te activeren dient het systeem opnieuw opgestart te worden."
-"\n"
+"Om de wijzigingen te activeren dient het systeem opnieuw opgestart te "
+"worden.\n"
 "Nu opnieuw opstarten?"
+
+#: rc.cpp:1 rc.cpp:1
+msgid "Video Driver"
+msgstr "Videostuurprogramma"
+
+#: rc.cpp:3 rc.cpp:3
+msgid "video,driver,graphics,display"
+msgstr "video,stuurprogramma, grafisch,beeldscherm"
+
 
