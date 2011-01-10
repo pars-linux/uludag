@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 10:01+0000\n"
+"POT-Creation-Date: 2011-01-10 13:01+0000\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -114,11 +114,11 @@ msgstr "Kontact позволит вам связаться с кем-нибуд�
 
 #: ../release.xml.in.h:25
 msgid "Looking for a production suite? Our suggestion is LibreOffice! LibreOffice gives a stable, fast and free office experience while all your software and documents will be compatible with the rest of major suites. As the roots of the LibreOffice lies in years long open source office experience, even the first stable release is much powerful and competetive with Writer for text documents, Calc for spreadsheets, Impress for presentations.&lt;br&gt;&lt;br&gt;Pardus packs this great office suite with a number of enhancements and plug-ins for a better experience."
-msgstr ""
+msgstr "Ищете набор для работы с документами? Наше предложение - это LibreOffice! LibreOffice предлагает стабильные и быстрые решения, совместимые с большинством других офисных приложений. Хотя корни разработки LibreOffice уходят в годы длительной open source разработки, даже первый стабильный релиз предлагает мощное решение с Writer для текстовых документов, Calc для обработки таблиц, Impress для презентаций.&lt;br&gt;&lt;br&gt;Pardus предлагает это офисное решение с большим количеством разширений и улучшений."
 
 #: ../release.xml.in.h:26
 msgid "Multiple users can share the same computer safely with Pardus. An administrator account with the name &quot;root&quot; will be set automatically. &lt;br&gt;&lt;br&gt;Administrator account is not for everyday use, so we recommend you to add user accounts upon your needs. The first user will be granted administrative authorization if you don't revoke them. To revoke administrative rights, or set a custom user ID you can click on the Advanced tab where you can find a few other options as well. &lt;br&gt;&lt;br&gt; If you need to administrate user accounts later, you can find User Manager tool in the System Settings."
-msgstr ""
+msgstr "Несколько пользователей могут использовать один и тот же компьютер с Pardus. Аккаунт суперпользователя с именем &quot;root&quot; будет установлен автоматически. &lt;br&gt;&lt;br&gt;Аккаунт суперпользователя не предназначен для обычной работы, поэтому мы предлагаем вам добавить пользователейских аккаунтов столько, сколько надо для ваших нужд. Первый пользователь будет наделен возможностью получить права суперпользователя, если вы не отмените эту возможность. Для отмены прав или установки собственного ID пользователя вы можете кликнуть на табе Дополнительно, где вы найдете несколько опций. &lt;br&gt;&lt;br&gt; Если вы хотите управлять аккаунтами пользоватлей позже, вы можете найти User Manager в Параметрах Системы."
 
 #: ../release.xml.in.h:28
 #, no-c-format
@@ -165,7 +165,7 @@ msgstr ""
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
-msgstr ""
+msgstr "Аккаунты пользователей успешно настроены. Нажмите Далее, чтобы продолжить. Примечание: Вы запомнили свой пароль, не так ли?"
 
 #: ../release.xml.in.h:39
 msgid "Validation is comparing the packages in the medium with the original ones by file verification method. A failed validation usually is a sign of a badly mastered installation medium (CD, DVD or USB storage).&lt;br&gt;&lt;br&gt;If you are using an optical medium (i.e. CD/DVD), try burning the installation image using DAO (Disc-at-once) mode, at a lower speed (4x for DVD, 8-12x for CD)."
