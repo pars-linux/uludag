@@ -188,7 +188,7 @@ class Connection:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value is not "None" or not attr == "name":
+            if value not in ["False", "None"] and  attr != "name":
                 #Before creating config file _id must be id, and _type must be type
                 if attr == "_id" or attr == "_type" : attr = attr.split("_")[-1]
                 #There isnt any underscore in config options, replace them with dashes if found any
@@ -201,10 +201,7 @@ class IpV4:
 
     def __init__(self, pardus_profile):
         self.name = "ipv4"
-        self.method = pardus_profile.get_net_mode() # auto or manual, same as in NM
-        self.dns = self.set_dns(pardus_profile)
         self.dns_search = "None"
-        self.addresses = self.set_addresses(pardus_profile)
         self.routes = "None"
         self.ignore_auto_routes = "False"
         self.ignore_auto_dns = "False"
@@ -212,12 +209,16 @@ class IpV4:
         self.dhcp_send_hostname = "False"
         self.dhcp_hostname = "None"
         self.never_default = "False"
+        self.method = pardus_profile.get_net_mode() # auto or manual, same as in NM
+        self.addresses = self.set_addresses(pardus_profile)
+        self.dns = self.set_dns(pardus_profile)
 
     def set_dns(self, pardus_profile):
         """Decide whether to use default, custom or auto (DHCP assigned) nameservers"""
 
         if pardus_profile.get_name_mode() == "default":
             default_nameservers =";".join( get_default_nameservers())
+            self.ignore_auto_dns = "True"
             return str(default_nameservers)
         elif pardus_profile.get_name_mode() == "custom":
             name_server = pardus_profile.get_name_server()
@@ -276,7 +277,7 @@ class IpV4:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if not value == "None" or not attr=="name":
+            if value not in ["False", "None"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -308,7 +309,7 @@ class IpV6:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if not value == "None" or not attr == "name":
+            if value not in ["False", "None"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -352,7 +353,7 @@ class _802_3_Ethernet:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if not value == "None" or not attr == "name":
+            if value not in ["False", "None"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -402,7 +403,7 @@ class _802_11_Wireless:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if not value == "None" or not attr == "name":
+            if value not in ["False", "None"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -434,7 +435,7 @@ class _802_11_Wireless_Security:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if not value == "None" or not attr == "name":
+            if value not in ["False", "None"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
