@@ -121,7 +121,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 														<normal file="userlist.png"/>
 													</item>
 													<item type="list" id="userlist">
-														<pos  x="5"  y="5" width="210" height="103"/>
+														<pos  x="5"  y="9" width="210" height="94"/>
 														<style font="Sans 9" text-color="#2d2d2d" frame="false"/>
 													</item>
 												</fixed>
