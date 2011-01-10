@@ -84,6 +84,8 @@ class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
 
         icon = parser.safe_get_locale('Desktop Entry', 'Icon', None)
         command = parser.safe_get_locale('Desktop Entry', 'Exec', None)
+        if not command:
+            return
         name = unicode(parser.safe_get_locale('Desktop Entry', 'Name', self.lang))
         genericName = unicode(parser.safe_get_locale('Desktop Entry', 'GenericName', self.lang))
         if not genericName:
