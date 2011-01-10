@@ -48,7 +48,7 @@ class PardusNetworkProfile:
         self.name_mode = "None"
         self.state = "None"
         self.name_server = "None"
-        self.network_address = "None"
+        self.net_address = "None"
         self.net_mask = "None"
         self.net_gateway = "None"
         self.remote = "None"
@@ -86,8 +86,8 @@ class PardusNetworkProfile:
     def get_name_server(self):
         return self.name_server
 
-    def get_network_address(self):
-        return self.network_address
+    def get_net_address(self):
+        return self.net_address
 
     def get_net_mask(self):
         return self.net_mask
@@ -133,10 +133,8 @@ class NetworkManagerProfile:
             return "None"
 
     def set_802_11_wireless(self, pardus_profile):
-         """If this is a wireless (802-11-wirelesss) profile, set 
-         _802_11_wireless attribute.
-        """
-
+        """If this is a wireless (802-11-wirelesss) profile, set 
+        _802_11_wireless attribute."""
         pass
 
     def set_802_11_wireless_security(self, pardus_profile):
@@ -235,9 +233,10 @@ class IpV4:
         addresses = []
         if self.method == "manual":
             net_mask = self.calculate_prefix(pardus_profile.get_net_mask())
-            addresses.append(pardus_profile.get_network_address)
-            addresses.append(net_mask)
-            addresses.append(pardus_profile.get_net_gateway)
+            addresses.append(str(pardus_profile.get_net_address()))
+            addresses.append(str(net_mask))
+            addresses.append(str(pardus_profile.get_net_gateway()))
+            addresses = ";".join(addresses)
             return addresses
         else:
             return "None"
@@ -499,4 +498,3 @@ class Migrator:
 
         for profile in self.network_manager_profiles:
             profile.write_config()
-
