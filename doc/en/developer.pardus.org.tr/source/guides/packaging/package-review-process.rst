@@ -96,7 +96,7 @@ The package reviewing process steps on `Pardus Bug Tracking System
      - **Good:**   You should change the directory paths.
 
    After the package maintainer has fixed the problem, the reviewer verifies
-   the problem and gives an ``ACK`` as an approval comment.
+   the solution and gives an ``ACK`` as an approval comment.
 
 #. The package that takes the necessary approvals, is taken into the package repositories,
    removed from the review directory and the bug status is changed to
