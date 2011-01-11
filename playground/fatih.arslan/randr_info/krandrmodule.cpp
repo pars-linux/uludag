@@ -114,11 +114,11 @@ void KRandRModule::defaults()
 void KRandRModule::load()
 {
 
-    glinfo = new GlInfo();
-    glinfo->getGlStrings();
+    glInfo = new GlInfo();
+    glInfo->getGlStrings();
 
     QString vendorText;
-    vendorText = glinfo->glVendor;
+    vendorText = glInfo->glVendor;
 
     qDebug() << vendorText << endl;
 
