@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE greeter SYSTEM "greeter.dtd">
 <!--
-Copyright 2008 Urs Wolfer <uwolfer @ kde.org>
-Copyright 2008 Oswald Buddenhagen <ossi @ kde.org>
+Copyright 2010 Renan Çakırerk <renan @ pardus.org.tr>
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License as
@@ -62,8 +61,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                         <pos y="10"/>
                         <normal file="logo.png"/>
                     </item>
-
-
 
                     <!-- hspacer expanding -->
                     <item type="rect" id="spacer1">
@@ -164,9 +161,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                 </fixed>
                                             </item>
 
-
-
-
                                             <!-- password box and login button -->
                                             <item type="rect" id="password_and_login_button">
                                                 <pos width="box" height="box"/>
@@ -200,13 +194,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                 <pos expand="true"/>
                                             </item>
 
-
                                         </box>
                                     </item>
 
                                 </box>
                             </item>
-
 
 
                             <item type="rect" id="pam-error-placeholder">
