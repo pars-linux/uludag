@@ -1,0 +1,9 @@
+[Domain]
+Name=Langage Manager Control Module
+Icon=preferences-system-login
+
+[org.kde.kcontrol.kcmlocale.managelocale]
+Name=Save the Locale settings
+Description=Administrator authorization is required to change the Locale settings
+Policy=auth_admin
+Persistence=session
