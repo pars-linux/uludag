@@ -58,6 +58,18 @@
         <SelectedPackage>glibc-locales-sv</SelectedPackage>
         <SelectedPackage>gst-ffmpeg</SelectedPackage>
         <SelectedPackage>gtkspell</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-ca</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-de</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-es</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-fr</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-hu</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-it</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-nl</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-pl</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-pt_BR</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-ru</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-sv</SelectedPackage>
+        <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>hal</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
@@ -68,6 +80,18 @@
         <SelectedPackage>iw</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
+        <SelectedPackage>k3b-l10n-ca</SelectedPackage>
+        <SelectedPackage>k3b-l10n-de</SelectedPackage>
+        <SelectedPackage>k3b-l10n-es</SelectedPackage>
+        <SelectedPackage>k3b-l10n-fr</SelectedPackage>
+        <SelectedPackage>k3b-l10n-hu</SelectedPackage>
+        <SelectedPackage>k3b-l10n-it</SelectedPackage>
+        <SelectedPackage>k3b-l10n-nl</SelectedPackage>
+        <SelectedPackage>k3b-l10n-pl</SelectedPackage>
+        <SelectedPackage>k3b-l10n-pt_BR</SelectedPackage>
+        <SelectedPackage>k3b-l10n-ru</SelectedPackage>
+        <SelectedPackage>k3b-l10n-sv</SelectedPackage>
+        <SelectedPackage>k3b-l10n-tr</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kde-i18n-ca</SelectedPackage>
@@ -133,6 +157,7 @@
         <SelectedPackage>min12xxw</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
+        <SelectedPackage>module-kvm</SelectedPackage>
         <SelectedPackage>mplayer</SelectedPackage>
         <SelectedPackage>netcat</SelectedPackage>
         <SelectedPackage>netkit-ftp</SelectedPackage>
@@ -390,6 +415,7 @@
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
         <Package>guile</Package>
+        <Package>gwenview</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-info</Package>
@@ -629,6 +655,7 @@
         <Package>module-alsa-driver-userspace</Package>
         <Package>module-broadcom-wl-userspace</Package>
         <Package>module-init-tools</Package>
+        <Package>module-kvm-userspace</Package>
         <Package>module-virtualbox-guest</Package>
         <Package>module-virtualbox-guest-userspace</Package>
         <Package>mpfr</Package>
