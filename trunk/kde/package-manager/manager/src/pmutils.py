@@ -105,6 +105,9 @@ def get_real_paths(packages):
     # If packages are not from repo or remote, find their absolute paths
     return map(lambda x: x if not x.endswith('pisi') or '://' in x else os.path.abspath(x), packages)
 
+def isAllLocal(packages):
+    return all(map(lambda x: x.endswith('.pisi') and not '://' in x, packages))
+
 def askForActions(packages, reason, title, details_title):
     msgbox = QMessageBox()
     msgbox.setText('<b>%s</b>' % reason)
