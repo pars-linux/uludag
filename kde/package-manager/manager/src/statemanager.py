@@ -174,11 +174,12 @@ class StateManager(QObject):
 
         return text
 
-    def operationAction(self, packages, silence = False, reinstall = False):
+    def operationAction(self, packages, silence = False, reinstall = False, connection_required = True):
 
-        if not network_available() and not self.state == self.REMOVE:
-            self.showFailMessage()
-            return False
+        if connection_required:
+            if not network_available() and not self.state == self.REMOVE:
+                self.showFailMessage()
+                return False
 
         if not silence:
             if not self.conflictCheckPasses(packages):

@@ -27,6 +27,7 @@ from statemanager import StateManager
 from operationmanager import OperationManager
 
 from pmutils import PM
+from pmutils import isAllLocal
 from pmutils import askForActions
 from pmutils import isPisiRunning
 from pmutils import get_real_paths
@@ -79,6 +80,28 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
                     if not os.path.exists(package):
                         self.exceptionCaught('FILE NOT EXISTS', package)
 
+        self.state.state = StateManager.INSTALL
+
+        # Get a list of package names from given args.
+        # It may include a path to local package, a path to remote package
+        # or just a package name; following crypted code will remove
+        # remote paths, appends package name as is and uses the pisi.api
+        # to get package name from given local package path.
+        #
+        # Example:
+        # input : ['/tmp/ax-2.3-1.pisi', 'http://pardus.org.tr/tt-2.3.pisi', 'yali']
+        # output: ['ax', 'yali']
+        _pkgs = map(lambda x: pisi.api.info_file(x)[0].package.name \
+                        if x.endswith('.pisi') \
+                        else x, filter(lambda x: '://' not in x,
+                                        get_real_paths(self.state._selected_packages)))
+
+        _pkgs = filter(lambda x: self.iface.pdb.has_package(x), _pkgs)
+
+        extras = self.state.iface.getExtras(_pkgs, self.state.state)
+        if extras:
+            self.state._selected_packages.extend(extras)
+
         self.model = PackageModel(self)
         self.model.setCheckable(False)
 
@@ -97,7 +120,6 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.summaryDialog = SummaryDialog()
 
         self.connectOperationSignals()
-        self.state.state = StateManager.INSTALL
 
         self.button_install.clicked.connect(self.installPackages)
         self.button_install.setIcon(KIcon("list-add"))
@@ -129,32 +151,20 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         if actions:
             reinstall = True
 
+        connection_required = True
+        if isAllLocal(self.model.selectedPackages()):
+            connection_required = False
+
         operation = self.state.operationAction(self.model.selectedPackages(),
                                                reinstall = reinstall,
-                                               silence = True)
+                                               silence = True,
+                                               connection_required = connection_required)
         self._started = True
         if operation == False:
             sys.exit(1)
 
     def actionStarted(self, operation):
         totalPackages = len(self.state._selected_packages)
-
-        # Get a list of package names from given args.
-        # It may include a path to local package, a path to remote package
-        # or just a package name; following crypted code will remove
-        # remote paths, appends package name as is and uses the pisi.api
-        # to get package name from given local package path.
-        #
-        # Example:
-        # input : ['/tmp/ax-2.3-1.pisi', 'http://pardus.org.tr/tt-2.3.pisi', 'yali']
-        # output: ['ax', 'yali']
-        _pkgs = map(lambda x: pisi.api.info_file(x)[0].package.name \
-                        if x.endswith('.pisi') \
-                        else x, filter(lambda x: '://' not in x,
-                                        get_real_paths(self.state._selected_packages)))
-
-        _pkgs = filter(lambda x: self.iface.pdb.has_package(x), _pkgs)
-        totalPackages += len(self.state.iface.getExtras(_pkgs, self.state.state))
 
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
