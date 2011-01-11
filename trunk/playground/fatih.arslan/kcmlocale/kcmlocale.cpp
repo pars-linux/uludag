@@ -31,6 +31,7 @@
 #include <KConfig>
 #include <KConfigGroup>
 #include <KStandardDirs>
+#include <KMessageBox>
 
 #include "kcmlocale.moc"
 #include "toplevel.h"
@@ -73,6 +74,7 @@ KLocaleConfig::KLocaleConfig(KControlLocale *locale, QWidget *parent)
 
     m_crLabel->setObjectName(I18N_NOOP("Country or region:"));
     m_languagesLabel->setObjectName(I18N_NOOP("Languages:"));
+    m_systemWide->setObjectName(I18N_NOOP("Save settings system wide"));
     languageRemove->setObjectName(I18N_NOOP("Remove"));
     m_upButton->setObjectName(QString());
     m_downButton->setObjectName(QString());
@@ -88,6 +90,7 @@ KLocaleConfig::KLocaleConfig(KControlLocale *locale, QWidget *parent)
     connect(m_selectedCountryLabel, SIGNAL(linkActivated(const QString &)), SLOT(changeCountry()));
     connect(languageAdd, SIGNAL(activated(const QString &)), SLOT(slotAddLanguage(const QString &)));
     connect(m_languages, SIGNAL(itemSelectionChanged()), SLOT(slotCheckButtons()));
+    connect(m_systemWide, SIGNAL(clicked()), this, SIGNAL(localeChanged()));
 
     m_upButton->setIcon(KIcon("arrow-up"));
     m_downButton->setIcon(KIcon("arrow-down"));
@@ -198,21 +201,23 @@ void KLocaleConfig::save()
 
   config->sync();
 
-  if (systemWide->isChecked()) {
+  if (m_systemWide->isChecked()) {
       int replyErrorCode = saveSystemWide();
+      qDebug() << replyErrorCode << endl;
       if (replyErrorCode != 0)
           KMessageBox::error(this, i18n("KAuth returned an error code: %1", replyErrorCode));
   };
 }
 
-void KLocaleConfig::saveSystemWide()
+int  KLocaleConfig::saveSystemWide()
 {
   KAuth::Action action("org.kde.kcontrol.kcmlocale.managelocale");
   action.setHelperID("org.kde.kcontrol.kcmlocale");
 
   QVariantMap helperargs;
+  helperargs["locale"] = m_languageList.at(0);
 
-  helperargs["language"] = m_languageList.join(":");
+  qDebug() << m_languageList.at(0);
 
   action.setArguments(helperargs);
 
