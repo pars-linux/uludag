@@ -119,9 +119,7 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
 
   osDriver = new QRadioButton(i18n("Use the driver developed by the open source community"), bottomGroupBox);
   vendorDriver = new QRadioButton(i18n("Use the proprietary driver provided by the manufacturer"), bottomGroupBox);
-  // For future use
-  genericDriver = new QRadioButton(i18n("Use the safe driver that provides limited features"), this);
-  genericDriver->setVisible(false);
+  genericDriver = new QRadioButton(i18n("Use the safe driver that provides limited features"), bottomGroupBox);
 
   QButtonGroup *buttonGroup = new QButtonGroup(bottomGroupBox);
   connect(buttonGroup, SIGNAL(buttonClicked(int)), this, SLOT(changed()));
@@ -129,9 +127,11 @@ PandaConfig::PandaConfig(QWidget *parent, const QVariantList &args):
   buttonGroup->setExclusive(true);
   buttonGroup->addButton(osDriver);
   buttonGroup->addButton(vendorDriver);
+  buttonGroup->addButton(genericDriver);
 
   layout_settings->addWidget(osDriver);
   layout_settings->addWidget(vendorDriver);
+  layout_settings->addWidget(genericDriver);
 
   KAboutData *about = new KAboutData("kcmpanda",
                                       "panda-kde",
@@ -175,11 +175,13 @@ void PandaConfig::load()
   QString vendor = "vendor";
   QString os = "os";
   QString nonvendor = "nonvendor";
+  QString generic = "generic";
   QString pandaOutput = QString(currentDriver).trimmed();
 
   bool isVendor = (vendor == pandaOutput);
   bool isOs = (os == pandaOutput);
   bool isNonVendor = (nonvendor == pandaOutput);
+  bool isGeneric = (generic == pandaOutput);
 
   if (isVendor){
       vendorDriver->setChecked(true);
@@ -188,6 +190,8 @@ void PandaConfig::load()
   } else if (isNonVendor) {
       osDriver->setChecked(true);
       vendorDriver->setDisabled(true);
+  } else if (isGeneric) {
+      genericDriver->setChecked(true);
   }
   emit changed(false);
 }
@@ -204,6 +208,7 @@ void PandaConfig::save()
 
   helperargs["osdriver"] = osDriver->isChecked();
   helperargs["vendordriver"] = vendorDriver->isChecked();
+  helperargs["genericdriver"] = genericDriver->isChecked();
 
   Action *action = authAction();
   action->setArguments(helperargs);
