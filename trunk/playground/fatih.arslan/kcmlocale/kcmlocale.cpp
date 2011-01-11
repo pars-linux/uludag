@@ -74,7 +74,7 @@ KLocaleConfig::KLocaleConfig(KControlLocale *locale, QWidget *parent)
 
     m_crLabel->setObjectName(I18N_NOOP("Country or region:"));
     m_languagesLabel->setObjectName(I18N_NOOP("Languages:"));
-    m_systemWide->setObjectName(I18N_NOOP("Set the first language as the system wide language"));
+    m_systemWide->setObjectName(I18N_NOOP("Set the first language as the system default"));
     languageRemove->setObjectName(I18N_NOOP("Remove"));
     m_upButton->setObjectName(QString());
     m_downButton->setObjectName(QString());
