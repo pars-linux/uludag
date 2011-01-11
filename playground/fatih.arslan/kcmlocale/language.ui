@@ -136,7 +136,7 @@
            <item>
             <widget class="QCheckBox" name="m_systemWide">
              <property name="text">
-              <string>Set the first language as the system wide language</string>
+              <string>Set the first language as the system default</string>
              </property>
             </widget>
            </item>
