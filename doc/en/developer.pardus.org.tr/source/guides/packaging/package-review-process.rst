@@ -92,8 +92,8 @@ The package reviewing process steps on `Pardus Bug Tracking System
 
    - Example:
 
-     - **Bad:**    After changing the directory paths, it will be ``ACK``.
-     - **Good:**   It should change the directory paths.
+     - **Bad:**    ``ACK`` after changing the directory paths.
+     - **Good:**   You should change the directory paths.
 
    After the package maintainer has fixed the problem, the reviewer verifies
    the problem and gives an ``ACK`` as an approval comment.
