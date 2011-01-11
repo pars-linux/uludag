@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-10 20:03+0000\n"
-"PO-Revision-Date: 2011-01-10 21:35+0100\n"
+"POT-Creation-Date: 2011-01-11 19:01+0000\n"
+"PO-Revision-Date: 2011-01-11 20:54+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,7 +171,7 @@ msgstr ""
 
 #: ../release.xml.in.h:13
 msgid "Double check your installation medium"
-msgstr "Installatiemedium dubbel controleren"
+msgstr "Installatiemedium controleren"
 
 #: ../release.xml.in.h:14
 msgid ""
