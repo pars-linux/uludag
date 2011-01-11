@@ -50,7 +50,7 @@ private:
 	LegacyRandRConfig *m_legacyConfig;
 	RandRConfig *m_config;
 	RandRDisplay *m_display;
-    GlInfo* glinfo;
+    GlInfo* glInfo;
 };
 
 #endif
