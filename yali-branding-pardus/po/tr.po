@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-08 13:01+0000\n"
+"POT-Creation-Date: 2011-01-11 00:01+0000\n"
 "PO-Revision-Date: 2010-12-05 15:03+0200\n"
 "Last-Translator: Server Acim <serveracim@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -34,7 +34,7 @@ msgstr "Her şey tamam!"
 
 #: ../release.xml.in.h:5
 msgid "Check out your brand new, ready-to-use multimedia studio! Pardus comes with a number of multimedia editors and a massive file format and codec support out of box. &lt;br&gt;You can edit your images with Gimp, create your homemade movies with Kdenlive, organise your music albums in catalogs with Amarok and image albums with Digikam, burn your CD and DVDs using K3B, backup your audio collection in Pardus..."
-msgstr "Kullanıma hazır, yeni stüdyonuzu deneyin! Pardus çoklu ortam için düzenleyici programlar, çok sayıda dosya türü ve kodekle birlikte kuruluyor.&lt;br&gt;Resimlerinizi düzenlemek için Gimp, amatör filmleriniz için Kdenlive kullanabilir; Amarok'la müzik, Digikam'la fotoğraf albümlerinizi kataloglar halinde düzenleyebilir; K3B kullanarak CD ya da DVD yazabilir, müzik koleksiyonunuzu Pardus'a yedekleyebilirsiniz."
+msgstr "Kullanıma hazır, yeni stüdyonuzu deneyin! Pardus çoklu ortam için düzenleyici programlar, çok sayıda dosya türü ve kodekle birlikte kuruluyor.&lt;br&gt;Resimlerinizi düzenlemek için Gimp, amatör filmleriniz için Kdenlive kullanabilir; Amarok ile müzik, Digikam ile fotoğraf albümlerinizi kataloglar halinde düzenleyebilir; K3B kullanarak CD ya da DVD yazabilir, müzik koleksiyonunuzu Pardus'a yedekleyebilirsiniz."
 
 #: ../release.xml.in.h:6
 msgid "Choose a password for administration and a hostname"
