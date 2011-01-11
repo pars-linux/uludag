@@ -87,6 +87,17 @@
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>kdeartwork-styles</SelectedPackage>
         <SelectedPackage>kdebase</SelectedPackage>
+        <SelectedPackage>kdegraphics-core</SelectedPackage>
+        <SelectedPackage>kdegraphics-kooka</SelectedPackage>
+        <SelectedPackage>kdegraphics-kpdf</SelectedPackage>
+        <SelectedPackage>kdegraphics-ksnapshot</SelectedPackage>
+        <SelectedPackage>kdemultimedia-core</SelectedPackage>
+        <SelectedPackage>kdemultimedia-kmix</SelectedPackage>
+        <SelectedPackage>kdenetwork-core</SelectedPackage>
+        <SelectedPackage>kdenetwork-kopete</SelectedPackage>
+        <SelectedPackage>kdepim-kmail</SelectedPackage>
+        <SelectedPackage>kdepim-kontact</SelectedPackage>
+        <SelectedPackage>kdeutils-ark</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
@@ -105,6 +116,7 @@
         <SelectedPackage>libreoffice-langpack-hu</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-it</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-nl</SelectedPackage>
+        <SelectedPackage>libreoffice-langpack-pt_BR</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-ru</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-sv</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
@@ -229,7 +241,6 @@
         <SelectedPackage>xvattr</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zemberek</SelectedPackage>
-        <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>ConsoleKit</Package>
@@ -351,6 +362,7 @@
         <Package>glibmm</Package>
         <Package>glitz</Package>
         <Package>gmp</Package>
+        <Package>gnokii</Package>
         <Package>gnome-mime-data</Package>
         <Package>gnome-mplayer</Package>
         <Package>gnome-vfs</Package>
@@ -359,6 +371,7 @@
         <Package>gnutls</Package>
         <Package>gobject-introspection</Package>
         <Package>gobject-introspection-devel</Package>
+        <Package>gocr</Package>
         <Package>gpac</Package>
         <Package>gperf</Package>
         <Package>gpgme</Package>
@@ -388,6 +401,7 @@
         <Package>hunspell-dict-fr</Package>
         <Package>hunspell-dict-it</Package>
         <Package>hunspell-dict-nl</Package>
+        <Package>hunspell-dict-pt</Package>
         <Package>hunspell-dict-ru</Package>
         <Package>hunspell-dict-sv</Package>
         <Package>icu4c</Package>
@@ -407,8 +421,13 @@
         <Package>k3b</Package>
         <Package>kbd</Package>
         <Package>kdebase</Package>
+        <Package>kdegraphics-core</Package>
         <Package>kdelibs</Package>
         <Package>kdepim-core</Package>
+        <Package>kdepim-kmail</Package>
+        <Package>kdepim-korganizer</Package>
+        <Package>kdepim-kpilot</Package>
+        <Package>kdeutils-core</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>keyutils</Package>
@@ -446,6 +465,7 @@
         <Package>libXvMC</Package>
         <Package>libXxf86dga</Package>
         <Package>libXxf86vm</Package>
+        <Package>libaio</Package>
         <Package>libao</Package>
         <Package>libart_lgpl</Package>
         <Package>libass</Package>
@@ -499,6 +519,7 @@
         <Package>libgpod</Package>
         <Package>libgsf</Package>
         <Package>libgssglue</Package>
+        <Package>libical</Package>
         <Package>libid3tag</Package>
         <Package>libidn</Package>
         <Package>libiec61883</Package>
@@ -515,6 +536,7 @@
         <Package>liblazy</Package>
         <Package>liblqr</Package>
         <Package>libmad</Package>
+        <Package>libmal</Package>
         <Package>libmatroska</Package>
         <Package>libmatthew-java</Package>
         <Package>libmng</Package>
@@ -593,6 +615,7 @@
         <Package>man-pages</Package>
         <Package>mcpp</Package>
         <Package>mdbtools</Package>
+        <Package>meanwhile</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>mina-core</Package>
@@ -616,6 +639,7 @@
         <Package>musicbrainz</Package>
         <Package>musicbrainz3</Package>
         <Package>mutagen</Package>
+        <Package>mysql-libs</Package>
         <Package>nano</Package>
         <Package>ncompress</Package>
         <Package>ncurses</Package>
@@ -639,6 +663,7 @@
         <Package>openssh</Package>
         <Package>openssl</Package>
         <Package>orbit2</Package>
+        <Package>p7zip</Package>
         <Package>pam</Package>
         <Package>pam_python</Package>
         <Package>pango</Package>
@@ -669,8 +694,10 @@
         <Package>poppler</Package>
         <Package>poppler-data</Package>
         <Package>poppler-glib</Package>
+        <Package>poppler-qt3</Package>
         <Package>poppler-utils</Package>
         <Package>popt</Package>
+        <Package>postgresql-libs</Package>
         <Package>ppp</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
@@ -689,6 +716,8 @@
         <Package>python-pyliblzma</Package>
         <Package>python-tk</Package>
         <Package>python-xlib</Package>
+        <Package>qca</Package>
+        <Package>qca-tls</Package>
         <Package>qt</Package>
         <Package>qt3</Package>
         <Package>raptor</Package>
