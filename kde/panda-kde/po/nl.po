@@ -49,7 +49,7 @@ msgstr "Het door de fabrikant gemaakte propriëtaire stuurprogramma gebruiken"
 msgid "Use the safe driver that provides limited features"
 msgstr "Het veilige stuurprogramma met beperkte mogelijkheden gebruiken"
 
-#: panda.cpp:138 rc.cpp:2 rc.cpp:2
+#: panda.cpp:138 rc.cpp:2
 msgid "Video Driver Administration"
 msgstr "Beheer videostuurprogramma"
 
@@ -104,12 +104,10 @@ msgstr ""
 "worden.\n"
 "Nu opnieuw opstarten?"
 
-#: rc.cpp:1 rc.cpp:1
+#: rc.cpp:1
 msgid "Video Driver"
 msgstr "Videostuurprogramma"
 
-#: rc.cpp:3 rc.cpp:3
+#: rc.cpp:3
 msgid "video,driver,graphics,display"
 msgstr "video,stuurprogramma, grafisch,beeldscherm"
-
-
