@@ -18,311 +18,311 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <greeter id="theme">
-	<style
-	       text-color="#3f3f3f"
-	       window-text-color="#C7C7C7"
-	       base-color="#C7C7C7"
-	       disabled-text-color="#808080"
-	       base-alpha="0"
-	       alternate-base-alpha="0"
-	       disabled-base-color="#ffffff"
-	       disabled-base-alpha="0"
-	       disabled-highlight-alpha="0"
-	       frame="false"
-	       />
-	
-	<item type="svg" id="background" background="true">
-		<normal file="background.svg" scalemode="crop"/>
-		<pos width="100%" height="100%"/>
-	</item>
-	
-	
-	<item type="rect" id="central_container">
-		<pos y="50%" x="50%" anchor="c" width="100%" height="box"/>
-		<normal color="#000011" alpha="0"/>
-		
-		<!-- VLayout -->
-		<box orientation="vertical" spacing="10">
-			
-			<!-- Header: Logo and Welcome -->
-			<item type="rect" id="header">
-				<pos y="50%" x="50%" anchor="c" width="100%" height="box"/>
-				<normal color="#000000" alpha="0"/>
-				
-				<!-- HLayout -->
-				<box orientation="horizontal" spacing="20">
-					
-					<!-- hspacer expanding -->
-					<item type="rect" id="spacer1">
-						<pos expand="true"/>
-					</item>
-					
-					<!-- pardus logo -->
-					<item type="pixmap" id="logo">
-						<pos y="10"/>
-						<normal file="logo2011.png"/>
-					</item>
-					
+    <style
+           text-color="#3f3f3f"
+           window-text-color="#C7C7C7"
+           base-color="#C7C7C7"
+           disabled-text-color="#808080"
+           base-alpha="0"
+           alternate-base-alpha="0"
+           disabled-base-color="#ffffff"
+           disabled-base-alpha="0"
+           disabled-highlight-alpha="0"
+           frame="false"
+           />
 
-					
-					<!-- hspacer expanding -->
-					<item type="rect" id="spacer1">
-						<pos expand="true"/>
-					</item>
-				</box>
-				
-			</item>
-			
-			<!-- vspacer expanding -->
-			<item type="rect" id="spacer1">
-				<pos height="20"/>
-			</item>
-			
-			<!-- dark belt -->
-			<item type="rect" id="greeter">
-				<pos y="50%" x="50%" anchor="c" width="100%" height="250"/>
-				<normal color="#000000" alpha="0.25"/>
-				
-				<!-- this box is to align all belt elements to center -->
-				<box orientation="horizontal" spacing="0">
-					
-					<!-- left hspacer expanding -->
-					<item type="rect" id="spacer4">
-						<pos expand="true"/>
-					</item>
-					
-					<!-- CENTRAL CONTAINER -->
-					<item type="rect" id="container">
-						<pos width="box" height="box"/>
-						
-						<box orientation="vertical" spacing="0" xpadding="0" ypadding="30">				
-							
-							
-							<item type="rect" id="userinfo">
-								<pos width="box" height="box"/>
-								<box orientation="horizontal" spacing="0">
-							
-									<item type="rect" id="labels">
-										<pos width="box" height="box"/>
-										<box orientation="vertical" spacing="32">
-									
-											<!-- vspacer expanding -->
-											<item type="rect" id="spacer43">
-												<pos expand="true"/>
-											</item>
-										
-											
-											<!-- user list -->
-											<item type="rect" id="user-field">
-											<pos x="0" width="220" height="113"/>
-												<fixed>
-													<item type="pixmap">
-														<pos x="0" y="0"/>
-														<normal file="userlist.png"/>
-													</item>
-													<item type="list" id="userlist">
-														<pos  x="5"  y="9" width="210" height="96"/>
-														<style font="Sans 9" text-color="#2d2d2d" frame="false"/>
-													</item>
-												</fixed>
-											</item>
-											
-											<!-- vspacer expanding -->
-											<item type="rect" id="spacer45">
-												<pos expand="true"/>
-											</item>
-										
-										</box>
-									</item>
-									
-									<!-- hspacer 50px -->
-									<item type="rect" id="spacer4">
-										<pos width="50"/>
-									</item>
-									
-									<item type="rect" id="textboxes">
-										<pos width="box" height="box"/>
-										<box orientation="vertical" spacing="35">
-											<!-- vspacer expanding -->
-											<item type="rect" id="spacer40">
-												<pos expand="true"/>
-											</item>
-												
-											
-											<!-- username box -->
-											<item type="rect" id="user-field">
-											<pos x="0" y="0" width="249" height="36"/>
-												<fixed>
-													<item type="pixmap">
-														<pos x="0" y="0" height="36"/>
-														<normal file="username.png"/>
-													</item>
-													<item type="entry" id="user-entry">
-														<pos x="55"  y="0" width="178" height="36"/>
-														<style font="Sans 16" text-color="#444444" frame="false"/>
-													</item>
-												</fixed>
-											</item>
-											
-										
-											
-											
-											<!-- password box and login button -->
-											<item type="rect" id="password_and_login_button">
-												<pos width="box" height="box"/>
-												<box orientation="horizontal" spacing="30">
-											
-												 <!-- password box -->
-												 <item type="rect" id="user-field">
-													 <pos x="0" y="0" width="206" height="36"/>
-													 <fixed>
-														<item type="pixmap">
-															<pos x="0" y="0" height="36"/>
-															<normal file="password.png"/>
-														</item>
-														<item type="entry" id="pw-entry">
-															<pos  x="55"  y="0" width="137" height="36"/>
-															<style font="Sans 12" text-color="#444444" frame="false"/>
-														</item>
-													</fixed>
-												</item>
-												<item type="pixmap" id="login_button" button="true">
-													<normal file="login.png"/>
-													<prelight file="login-hover.png"/>
-													<active file="login.png"/>
-													<pos anchor="e" x="12" y="50%"/>
-												</item>
-												</box>
-											</item>
-										
-											<!-- vspacer expanding -->
-											<item type="rect" id="spacer41">
-												<pos expand="true"/>
-											</item>
-												
-										
-										</box>
-									</item>
-									
-								</box>
-							</item>
-								
-							
+    <item type="svg" id="background" background="true">
+        <normal file="background.svg" scalemode="crop"/>
+        <pos width="100%" height="100%"/>
+    </item>
 
-							<item type="rect" id="pam-error-placeholder">
-								<pos width="100%" height="box"/>
-								<box orientation="horizontal">
-									<item type="label" id="dummy1">
-										<normal alpha="0" font="Sans Bold 9"/>
-										<text/>
-									</item>
-									<item type="label" id="pam-error">
-										<pos anchor="c" x="50%" y="50%" expand="true"/>
-										<normal color="#C7C7C7" font="Sans Bold 9"/>
-										<text/>
-									</item>
-								</box>
-							</item>
-							<item type="label" id="caps-lock-warning">
-								<normal color="#C7C7C7" font="Sans 9"/>
-								<pos anchor="c" x="50%" y="50%"/>
-								<stock type="caps-lock-warning"/>
-							</item>
 
-							
-						</box>
-					</item>
+    <item type="rect" id="central_container">
+        <pos y="50%" x="50%" anchor="c" width="100%" height="box"/>
+        <normal color="#000011" alpha="0"/>
 
-					<item type="rect" id="spacer5">
-						<pos expand="true"/>
-					</item>
-				</box>
-			</item>
-		</box>
-	</item>
-	<!-- end of central container -->
-	
-	
+        <!-- VLayout -->
+        <box orientation="vertical" spacing="10">
 
-	<!-- bottom bar and session buttons -->
-	<item type="rect" id="footer">
-		<normal  color="#000000" alpha="0.2" />
-		<pos x="-0" y="-22" min-width="100%" width="box" height="43" anchor="e"/>
+            <!-- Header: Logo and Welcome -->
+            <item type="rect" id="header">
+                <pos y="50%" x="50%" anchor="c" width="100%" height="box"/>
+                <normal color="#000000" alpha="0"/>
 
-		<box orientation="horizontal" spacing="10" xpadding="10">
-			
-			<item type="rect" id="system_button" button="true">
-				<show modes="console" type="system"/>
-				<pos y="50%" anchor="w" width="box" height="box"/>
-				<box orientation="horizontal" spacing="10" xpadding="10">
-					<item type="pixmap">
-						<normal file="system.png" tint="#ffffff"/>
-						<prelight file="system.png"/>
-						<active file="system.png" tint="#ffffff"/>
-						<pos y="50%" anchor="w"/>
-					</item>
-					<item type="label">
-						<normal color="#C7C7C7" font="Sans 9"/>
-						<prelight color="#ffffff" font="Sans 9"/>
-						<active color="#666666" font="Sans 9"/>
-						<pos y="50%" anchor="w"/>
-						<stock type="system"/>
-					</item>
-				</box>
-			</item>
-			
-			
-			<item type="rect" id="session_button" button="true">
-				<pos y="50%" anchor="w" width="box" height="box"/>
-				<box orientation="horizontal" spacing="10" xpadding="10">
-					<item type="pixmap">
-						<normal file="session.png" tint="#ffffff"/>
-						<prelight file="session.png"/>
-						<active file="session.png" tint="#ffffff"/>
-						<pos y="50%" anchor="w"/>
-					</item>
-					<item type="label">
-						<normal color="#C7C7C7" font="Sans 9"/>
-						<prelight color="#ffffff" font="Sans 9"/>
-						<active color="#666666" font="Sans 9"/>
-						<pos y="50%" anchor="w"/>
-						<stock type="session"/>
-					</item>
-				</box>
-			</item>
+                <!-- HLayout -->
+                <box orientation="horizontal" spacing="20">
 
-			<item type="rect" id="spacer2">
-				<pos expand="true"/>
-			</item>
-			
-			<!-- clock -->
-			<item type="label" id="clock">
-				<pos anchor="w" y="50%"/>
-				<normal font="Sans 9" color="#C7C7C7"/>
-				<text>%c</text>
-			</item>
-			
-			<!-- hostname -->
-			<item type="label" id="hostname">
-				<pos anchor="w" y="50%"/>
-				<normal font="Sans 9 bold" color="#aaaaaa"/>
-				<text>@  %h</text>
-			</item>
-			<item type="rect" id="spacer3">
-				<pos width="15"/>
-			</item>
-		</box>
-	</item>
+                    <!-- hspacer expanding -->
+                    <item type="rect" id="spacer1">
+                        <pos expand="true"/>
+                    </item>
 
-	<item type="rect" id="timed-label">
-		<pos anchor="c" x="50%" y="20%" width="box" height="box"/>
-		<box orientation="vertical" xpadding="50" ypadding="5" spacing="0">
-			<item type="label">
-				<normal color="#C7C7C7" font="Sans 9"/>
-				<pos x="50%" anchor="n"/>
-				<stock type="timed-label"/>
-			</item>
-		</box>
-	</item>
+                    <!-- pardus logo -->
+                    <item type="pixmap" id="logo">
+                        <pos y="10"/>
+                        <normal file="logo.png"/>
+                    </item>
+
+
+
+                    <!-- hspacer expanding -->
+                    <item type="rect" id="spacer1">
+                        <pos expand="true"/>
+                    </item>
+                </box>
+
+            </item>
+
+            <!-- vspacer expanding -->
+            <item type="rect" id="spacer1">
+                <pos height="20"/>
+            </item>
+
+            <!-- dark belt -->
+            <item type="rect" id="greeter">
+                <pos y="50%" x="50%" anchor="c" width="100%" height="250"/>
+                <normal color="#000000" alpha="0.25"/>
+
+                <!-- this box is to align all belt elements to center -->
+                <box orientation="horizontal" spacing="0">
+
+                    <!-- left hspacer expanding -->
+                    <item type="rect" id="spacer4">
+                        <pos expand="true"/>
+                    </item>
+
+                    <!-- CENTRAL CONTAINER -->
+                    <item type="rect" id="container">
+                        <pos width="box" height="box"/>
+
+                        <box orientation="vertical" spacing="0" xpadding="0" ypadding="30">
+
+
+                            <item type="rect" id="userinfo">
+                                <pos width="box" height="box"/>
+                                <box orientation="horizontal" spacing="0">
+
+                                    <item type="rect" id="labels">
+                                        <pos width="box" height="box"/>
+                                        <box orientation="vertical" spacing="32">
+
+                                            <!-- vspacer expanding -->
+                                            <item type="rect" id="spacer43">
+                                                <pos expand="true"/>
+                                            </item>
+
+
+                                            <!-- user list -->
+                                            <item type="rect" id="user-field">
+                                            <pos x="0" width="220" height="113"/>
+                                                <fixed>
+                                                    <item type="pixmap">
+                                                        <pos x="0" y="0"/>
+                                                        <normal file="userlist.png"/>
+                                                    </item>
+                                                    <item type="list" id="userlist">
+                                                        <pos  x="5"  y="9" width="210" height="96"/>
+                                                        <style font="Sans 9" text-color="#2d2d2d" frame="false"/>
+                                                    </item>
+                                                </fixed>
+                                            </item>
+
+                                            <!-- vspacer expanding -->
+                                            <item type="rect" id="spacer45">
+                                                <pos expand="true"/>
+                                            </item>
+
+                                        </box>
+                                    </item>
+
+                                    <!-- hspacer 50px -->
+                                    <item type="rect" id="spacer4">
+                                        <pos width="50"/>
+                                    </item>
+
+                                    <item type="rect" id="textboxes">
+                                        <pos width="box" height="box"/>
+                                        <box orientation="vertical" spacing="35">
+                                            <!-- vspacer expanding -->
+                                            <item type="rect" id="spacer40">
+                                                <pos expand="true"/>
+                                            </item>
+
+
+                                            <!-- username box -->
+                                            <item type="rect" id="user-field">
+                                            <pos x="0" y="0" width="249" height="36"/>
+                                                <fixed>
+                                                    <item type="pixmap">
+                                                        <pos x="0" y="0" height="36"/>
+                                                        <normal file="username.png"/>
+                                                    </item>
+                                                    <item type="entry" id="user-entry">
+                                                        <pos x="55"  y="0" width="178" height="36"/>
+                                                        <style font="Sans 16" text-color="#444444" frame="false"/>
+                                                    </item>
+                                                </fixed>
+                                            </item>
+
+
+
+
+                                            <!-- password box and login button -->
+                                            <item type="rect" id="password_and_login_button">
+                                                <pos width="box" height="box"/>
+                                                <box orientation="horizontal" spacing="30">
+
+                                                 <!-- password box -->
+                                                 <item type="rect" id="user-field">
+                                                     <pos x="0" y="0" width="206" height="36"/>
+                                                     <fixed>
+                                                        <item type="pixmap">
+                                                            <pos x="0" y="0" height="36"/>
+                                                            <normal file="password.png"/>
+                                                        </item>
+                                                        <item type="entry" id="pw-entry">
+                                                            <pos  x="55"  y="0" width="137" height="36"/>
+                                                            <style font="Sans 12" text-color="#444444" frame="false"/>
+                                                        </item>
+                                                    </fixed>
+                                                </item>
+                                                <item type="pixmap" id="login_button" button="true">
+                                                    <normal file="login.png"/>
+                                                    <prelight file="login-hover.png"/>
+                                                    <active file="login.png"/>
+                                                    <pos anchor="e" x="12" y="50%"/>
+                                                </item>
+                                                </box>
+                                            </item>
+
+                                            <!-- vspacer expanding -->
+                                            <item type="rect" id="spacer41">
+                                                <pos expand="true"/>
+                                            </item>
+
+
+                                        </box>
+                                    </item>
+
+                                </box>
+                            </item>
+
+
+
+                            <item type="rect" id="pam-error-placeholder">
+                                <pos width="100%" height="box"/>
+                                <box orientation="horizontal">
+                                    <item type="label" id="dummy1">
+                                        <normal alpha="0" font="Sans Bold 9"/>
+                                        <text/>
+                                    </item>
+                                    <item type="label" id="pam-error">
+                                        <pos anchor="c" x="50%" y="50%" expand="true"/>
+                                        <normal color="#C7C7C7" font="Sans Bold 9"/>
+                                        <text/>
+                                    </item>
+                                </box>
+                            </item>
+                            <item type="label" id="caps-lock-warning">
+                                <normal color="#C7C7C7" font="Sans 9"/>
+                                <pos anchor="c" x="50%" y="50%"/>
+                                <stock type="caps-lock-warning"/>
+                            </item>
+
+
+                        </box>
+                    </item>
+
+                    <item type="rect" id="spacer5">
+                        <pos expand="true"/>
+                    </item>
+                </box>
+            </item>
+        </box>
+    </item>
+    <!-- end of central container -->
+
+
+
+    <!-- bottom bar and session buttons -->
+    <item type="rect" id="footer">
+        <normal  color="#000000" alpha="0.2" />
+        <pos x="-0" y="-22" min-width="100%" width="box" height="43" anchor="e"/>
+
+        <box orientation="horizontal" spacing="10" xpadding="10">
+
+            <item type="rect" id="system_button" button="true">
+                <show modes="console" type="system"/>
+                <pos y="50%" anchor="w" width="box" height="box"/>
+                <box orientation="horizontal" spacing="10" xpadding="10">
+                    <item type="pixmap">
+                        <normal file="system.png" tint="#ffffff"/>
+                        <prelight file="system.png"/>
+                        <active file="system.png" tint="#ffffff"/>
+                        <pos y="50%" anchor="w"/>
+                    </item>
+                    <item type="label">
+                        <normal color="#C7C7C7" font="Sans 9"/>
+                        <prelight color="#ffffff" font="Sans 9"/>
+                        <active color="#666666" font="Sans 9"/>
+                        <pos y="50%" anchor="w"/>
+                        <stock type="system"/>
+                    </item>
+                </box>
+            </item>
+
+
+            <item type="rect" id="session_button" button="true">
+                <pos y="50%" anchor="w" width="box" height="box"/>
+                <box orientation="horizontal" spacing="10" xpadding="10">
+                    <item type="pixmap">
+                        <normal file="session.png" tint="#ffffff"/>
+                        <prelight file="session.png"/>
+                        <active file="session.png" tint="#ffffff"/>
+                        <pos y="50%" anchor="w"/>
+                    </item>
+                    <item type="label">
+                        <normal color="#C7C7C7" font="Sans 9"/>
+                        <prelight color="#ffffff" font="Sans 9"/>
+                        <active color="#666666" font="Sans 9"/>
+                        <pos y="50%" anchor="w"/>
+                        <stock type="session"/>
+                    </item>
+                </box>
+            </item>
+
+            <item type="rect" id="spacer2">
+                <pos expand="true"/>
+            </item>
+
+            <!-- clock -->
+            <item type="label" id="clock">
+                <pos anchor="w" y="50%"/>
+                <normal font="Sans 9" color="#C7C7C7"/>
+                <text>%c</text>
+            </item>
+
+            <!-- hostname -->
+            <item type="label" id="hostname">
+                <pos anchor="w" y="50%"/>
+                <normal font="Sans 9 bold" color="#aaaaaa"/>
+                <text>@  %h</text>
+            </item>
+            <item type="rect" id="spacer3">
+                <pos width="15"/>
+            </item>
+        </box>
+    </item>
+
+    <item type="rect" id="timed-label">
+        <pos anchor="c" x="50%" y="20%" width="box" height="box"/>
+        <box orientation="vertical" xpadding="50" ypadding="5" spacing="0">
+            <item type="label">
+                <normal color="#C7C7C7" font="Sans 9"/>
+                <pos x="50%" anchor="n"/>
+                <stock type="timed-label"/>
+            </item>
+        </box>
+    </item>
 
 </greeter>
