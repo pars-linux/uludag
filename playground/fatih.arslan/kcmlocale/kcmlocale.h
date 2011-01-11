@@ -68,7 +68,7 @@ private:
   void languageMove(Direction direcition);
   int selectedRow() const;
 
-  void saveSystemWide();
+  int saveSystemWide();
   // NOTE: we need to mantain our own language list instead of using KLocale's
   // because KLocale does not add a language if there is no translation
   // for the current application so it would not be possible to set
