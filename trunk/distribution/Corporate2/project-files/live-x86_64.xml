@@ -6,12 +6,13 @@
     <PackageSelection repo_uri="http://192.168.3.141/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
+        <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>alsa-lib</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
         <SelectedPackage>amarok</SelectedPackage>
-        <SelectedPackage>apmd</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
@@ -178,6 +179,7 @@
         <SelectedPackage>samba</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
+        <SelectedPackage>service-manager</SelectedPackage>
         <SelectedPackage>shared-mime-info</SelectedPackage>
         <SelectedPackage>splix</SelectedPackage>
         <SelectedPackage>sshfs</SelectedPackage>
@@ -186,6 +188,7 @@
         <SelectedPackage>sun-jre</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
+        <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
@@ -262,6 +265,8 @@
         <Package>DirectFB</Package>
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
+        <Package>PyKDE3</Package>
+        <Package>PyQt3</Package>
         <Package>Pygments</Package>
         <Package>Twisted</Package>
         <Package>ZopeInterface</Package>
@@ -419,6 +424,7 @@
         <Package>hunspell-dict-ru</Package>
         <Package>hunspell-dict-sv</Package>
         <Package>icu4c</Package>
+        <Package>iksemel</Package>
         <Package>ilmbase</Package>
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
@@ -716,6 +722,7 @@
         <Package>python-pyliblzma</Package>
         <Package>python-tk</Package>
         <Package>python-xlib</Package>
+        <Package>qscintilla</Package>
         <Package>qt</Package>
         <Package>qt3</Package>
         <Package>raptor</Package>
@@ -737,6 +744,7 @@
         <Package>sg3_utils</Package>
         <Package>shadow</Package>
         <Package>shared-mime-info</Package>
+        <Package>sip</Package>
         <Package>skey</Package>
         <Package>slang</Package>
         <Package>slf4j</Package>
