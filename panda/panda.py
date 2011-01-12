@@ -211,7 +211,9 @@ class Panda():
                     xorg_param = keyword_in_line(line, "xorg")
 
                     if arg == "status":
-                        if self.os_driver in blacklist:
+                        if xorg_param:
+                            return "generic"
+                        elif self.os_driver in blacklist:
                             return "vendor"
                             #return self.driver_name
                         elif self.os_driver:
