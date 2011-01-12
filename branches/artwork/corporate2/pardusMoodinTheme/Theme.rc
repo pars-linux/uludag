@@ -7,7 +7,7 @@ Homepage = http://www.pardus.org.tr
 Engine = Moodin
 
 BeginOpacity = 0.1
-BaseResolution = 1280
+BaseResolution = 1920
 KeepXdmBackground = true
 
 UseIconSet = true
