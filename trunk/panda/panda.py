@@ -188,13 +188,13 @@ class Panda():
 
             return blacklist
 
-        def update_keyword_in_line(line, keyword_param=None, keyword="blacklist"):
+        def update_keyword_in_line(line, value, keyword="blacklist"):
             params = [x for x in line.strip().split() if not x.startswith("%s" % keyword)]
 
-            if keyword_param is "ADDNOMODESET":
+            if value is True:
                 params.append(keyword)
-            elif keyword_param:
-                params.append("%s=%s" % (keyword, ",".join(keyword_param)))
+            elif value:
+                params.append("%s=%s" % (keyword, ",".join(value)))
 
             return " ".join(params) + "\n"
 
@@ -208,10 +208,10 @@ class Panda():
             for line in grub:
                 if "kernel" in line and kernel_version in line:
                     blacklist = keyword_in_line(line)
-                    xorg_param = keyword_in_line(line, "xorg")
+                    xorg_param = keyword_in_line(line, keyword="xorg")
 
                     if arg == "status":
-                        if xorg_param:
+                        if "safe" in xorg_param:
                             return "generic"
                         elif self.os_driver in blacklist:
                             return "vendor"
@@ -224,31 +224,31 @@ class Panda():
 
                     elif arg == "os":
                         blacklist = [x for x in blacklist if x != self.os_driver]
-                        if xorg_param:
-                            xorg_param = []
-                        nomodeset_param = []
+                        if "safe" in xorg_param:
+                            xorg_param.remove("safe")
+                        nomodeset_param = False
                         status = "os"
 
                     elif arg == "vendor":
                         if self.os_driver not in blacklist:
                             blacklist.append(self.os_driver)
-                        if xorg_param:
-                            xorg_param = []
-                        nomodeset_param = []
+                        if "safe" in xorg_param:
+                            xorg_param.remove("safe")
+                        nomodeset_param = False
                         status = "vendor"
 
                     elif arg == "generic":
-                        if not xorg_param:
+                        if "safe" not in xorg_param:
                             xorg_param.append("safe")
-                        nomodeset_param = "ADDNOMODESET"
+                        nomodeset_param = True
                         status = "generic"
 
-                    line = update_keyword_in_line(line, xorg_param, "xorg")
-                    line = update_keyword_in_line(line, nomodeset_param, "nomodeset")
-                    new_line = update_keyword_in_line(line, blacklist)
+                    new_line = update_keyword_in_line(line, xorg_param, "xorg")
+                    new_line = update_keyword_in_line(new_line, nomodeset_param, "nomodeset")
+                    new_line = update_keyword_in_line(new_line, blacklist)
                     print new_line
                     grub_tmp.write(new_line)
-                    configured = True
+                    configured = line != new_line
 
                 else:
                     grub_tmp.write(line)
