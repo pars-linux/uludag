@@ -177,22 +177,24 @@ class Panda():
         ## Grub Parsing
         configured = False
 
-        def blacklist_in_line(line):
+        def keyword_in_line(line, keyword="blacklist"):
             params = line.split()
             blacklist = []
 
             for param in params:
-                if param.startswith("blacklist="):
+                if param.startswith("%s=" % keyword):
                     modules = param.split("=", 1)[1].split(",")
                     blacklist.extend(modules)
 
             return blacklist
 
-        def update_blacklist_in_line(line, blacklist):
-            params = [x for x in line.strip().split() if not x.startswith("blacklist=")]
+        def update_keyword_in_line(line, keyword_param=None, keyword="blacklist"):
+            params = [x for x in line.strip().split() if not x.startswith("%s" % keyword)]
 
-            if blacklist:
-                params.append("blacklist=%s" % ",".join(blacklist))
+            if keyword_param is "ADDNOMODESET":
+                params.append(keyword)
+            elif keyword_param:
+                params.append("%s=%s" % (keyword, ",".join(keyword_param)))
 
             return " ".join(params) + "\n"
 
@@ -205,7 +207,8 @@ class Panda():
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    blacklist = blacklist_in_line(line)
+                    blacklist = keyword_in_line(line)
+                    xorg_param = keyword_in_line(line, "xorg")
 
                     if arg == "status":
                         if self.os_driver in blacklist:
@@ -219,18 +222,31 @@ class Panda():
 
                     elif arg == "os":
                         blacklist = [x for x in blacklist if x != self.os_driver]
-                        #status = "using-%s" % self.os_driver or "non-vendor"
+                        if xorg_param:
+                            xorg_param = []
+                        nomodeset_param = []
                         status = "os"
 
                     elif arg == "vendor":
                         if self.os_driver not in blacklist:
                             blacklist.append(self.os_driver)
-                        #status = "using-%s" % self.driver_name if self.driver_name != "Not defined" else "non-vendor"
+                        if xorg_param:
+                            xorg_param = []
+                        nomodeset_param = []
                         status = "vendor"
 
-                    new_line = update_blacklist_in_line(line, blacklist)
+                    elif arg == "generic":
+                        if not xorg_param:
+                            xorg_param.append("safe")
+                        nomodeset_param = "ADDNOMODESET"
+                        status = "generic"
+
+                    line = update_keyword_in_line(line, xorg_param, "xorg")
+                    line = update_keyword_in_line(line, nomodeset_param, "nomodeset")
+                    new_line = update_keyword_in_line(line, blacklist)
+                    print new_line
                     grub_tmp.write(new_line)
-                    configured = line != new_line
+                    configured = True
 
                 else:
                     grub_tmp.write(line)
