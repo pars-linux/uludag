@@ -64,8 +64,9 @@ class GroupList(QListWidget):
         icon = QIcon(KIconLoader().loadIcon(icon_path, KIconLoader.NoGroup, 22))
         if icon.isNull():
             icon = self.defaultIcon
-        item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count),
-                               self)
+        text = "%s (%d)" % (localName, package_count)
+        item = QListWidgetItem(icon, text, self)
+        item.setToolTip(localName)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 

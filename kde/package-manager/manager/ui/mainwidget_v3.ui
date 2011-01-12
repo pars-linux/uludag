@@ -157,6 +157,9 @@
           <property name="whatsThis">
            <string>Category Panel</string>
           </property>
+          <property name="textElideMode">
+           <enum>Qt::ElideMiddle</enum>
+          </property>
          </widget>
         </item>
         <item>
