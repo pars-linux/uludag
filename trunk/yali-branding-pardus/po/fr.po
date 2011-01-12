@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-02 14:01+0000\n"
+"POT-Creation-Date: 2011-01-12 10:01+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -133,9 +133,8 @@ msgid "Pardus experience may be summarized as a bright and powerful parade of fr
 msgstr "Pardus expérience peut se résumer comme une parade lumineuse et puissante de logiciels libres et open source. Vous rencontrerez quelques-uns des vieux amis, tels que Mozilla Firefox ou LibreOffice. Ils pourraient être un peu changé avec les choix des développeurs de Pardus de les adapter à votre système. Bien que l'installation se passe, vous pouvez voir certaines de ces fonctionnalités ..."
 
 #: ../release.xml.in.h:30
-#, fuzzy
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
-msgstr "Pardus ont beaucoup d'autres, développé en interne des outils utilisateur du gestionnaire convivial tels que le Gestionnaire des utilisateurs, Boot Manager, Firewall Manager, Service Manager pour gérer plus facilement Pardus. Tous les gestionnaires peuvent être utilisés individuellement, ainsi que dans les paramètres du système, une application unique pour toutes les tâches administratives et de la configuration."
+msgstr "Pardus offre de nombreux outils de configuration parfaitement intégrés à KDE : Gestionnaire des utilisateurs, gestionnaire de démarrage, de pare-feu, de services, etc. Tous les gestionnaires peuvent être lancés individuellement, ou à partir du centre de configuration du système."
 
 #: ../release.xml.in.h:31
 #, fuzzy
