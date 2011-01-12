@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-27 18:21+0200\n"
-"PO-Revision-Date: 2011-01-12 12:47+0100\n"
+"PO-Revision-Date: 2011-01-12 13:34+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -39,17 +39,15 @@ msgstr "Préférences du pilote"
 
 #: panda.cpp:120
 msgid "Use the driver developed by the open source community"
-msgstr "Utiliser le pilote libre pour la carte détectée"
+msgstr "Utiliser le pilote développé par la communauté open-source"
 
 #: panda.cpp:121
 msgid "Use the proprietary driver provided by the manufacturer"
-msgstr "Utiliser le pilote propriétaire pour la carte détectée"
+msgstr "Utiliser le pilote développé par le fabricant"
 
 #: panda.cpp:123
 msgid "Use the safe driver that provides limited features"
-msgstr ""
-"Utiliser le pilote sûr mais offrant des fonctionnalités limitées pour la "
-"carte détectée."
+msgstr "Utiliser le pilote sûr mais offrant des fonctionnalités limitées"
 
 #: panda.cpp:138 rc.cpp:2 rc.cpp:2
 msgid "Video Driver Administration"
@@ -75,7 +73,17 @@ msgstr "Fatih Arslan"
 msgid "Original author"
 msgstr "Auteur originel"
 
-#: panda.cpp:196
+#: panda.cpp:151
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Philippe Svetoslavsky"
+
+#: panda.cpp:152
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "philsvet@gmail.com"
+
+#: panda.cpp:198
 msgid "Unable to apply settings due to missing packages"
 msgstr "Impossible d'appliquer les paramètres à cause de paquets manquants"
 
@@ -102,6 +110,5 @@ msgstr "Pilote vidéo"
 
 #: rc.cpp:3 rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr "vidéo, pilote, graphique, affichage"
-
+msgstr "vidéo, pilote, grafique, affichage"
 
