@@ -159,9 +159,8 @@ msgid "Summary"
 msgstr "Récapitulatif"
 
 #: ../release.xml.in.h:37
-#, fuzzy
 msgid "There are a lot of features waiting to be explored. Thousands of softwares, libraries and tools are not included in the installation medium to save space. However with Pardus&apos;s package management system PiSi and its user friendly interface Package Manager, it is onle a few clicks to add these new applications to your system. &lt;br&gt;&lt;br&gt;Package Manager will help you to keep your system up-to-date, remove the components that you never use or add new ones. You can reach Package Manager from the menu of your choice, Kick-off, classic menu or Lancelot that you can choose with the help of Kaptan in your very first boot."
-msgstr "Il ya beaucoup de fonctionnalités à découvrir. Des milliers de logiciels, les bibliothèques et les outils ne sont pas inclus dans l'installation à moyen et à économiser de l'espace. Cependant, avec Pardus système de gestion des paquets PiSi et son interface conviviale Package Manager, il est onle de quelques clics pour ajouter ces nouvelles applications sur votre système. &lt;br&gt; Package Manager vous aidera à garder votre système à jour, supprimer les composants que vous n'utilisez jamais ou en ajouter de nouvelles. Vous pouvez rejoindre le Gestionnaire de package à partir du menu de votre choix, Kick-off, le menu classique ou Lancelot que vous pouvez choisir avec l'aide de Kaptan dans votre tout premier démarrage."
+msgstr "Il y a beaucoup de fonctionnalités à découvrir. Des milliers de logiciels, des bibliothèques et des outils ne sont pas inclus dans l'installation par manque de place. Cependant, avec le système de gestion des paquets PiSi et son interface conviviale Package Manager, ils sont mis à portée de clic.&lt;br&gt; &lt;br&gt; Package Manager vous aidera à garder votre système à jour, supprimer les composants que vous n'utilisez jamais ou en ajouter de nouveaux. Vous pouvez rejoindre le Gestionnaire de paquet à partir du menu général en bas à gauche."
 
 #: ../release.xml.in.h:38
 msgid "User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?"
