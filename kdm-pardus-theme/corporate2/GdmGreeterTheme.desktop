@@ -1,10 +1,7 @@
-# This is not really a .desktop file like the rest, but it's useful to treat
-# it as such
-
 [GdmGreeterTheme]
 Greeter=theme.xml
-Name=PardusCorporate 2
-Description=Pardus Corporate2 KDM Theme
-Author=Gökhan Özkan
-Copyright=(c) 2009 TUBITAK UEKAE
+Name=Pardus Corporate 2
+Description=Pardus Corporate 2 KDM Theme
+Author=Ozan Çağlayan
+Copyright=(c) 2011 BILGEM/UEKAE
 Screenshot=screenshot.png
