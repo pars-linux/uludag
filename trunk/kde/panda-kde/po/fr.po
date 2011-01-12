@@ -4,10 +4,10 @@
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: panda-kde\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-27 18:21+0200\n"
-"PO-Revision-Date: 2011-01-12 13:34+0100\n"
+"PO-Revision-Date: 2011-01-12 14:20+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -49,7 +49,7 @@ msgstr "Utiliser le pilote développé par le fabricant"
 msgid "Use the safe driver that provides limited features"
 msgstr "Utiliser le pilote sûr mais offrant des fonctionnalités limitées"
 
-#: panda.cpp:138 rc.cpp:2 rc.cpp:2
+#: panda.cpp:138 rc.cpp:2
 msgid "Video Driver Administration"
 msgstr "Paramétrage du pilote vidéo"
 
@@ -87,15 +87,15 @@ msgstr "philsvet@gmail.com"
 msgid "Unable to apply settings due to missing packages"
 msgstr "Impossible d'appliquer les paramètres à cause de paquets manquants"
 
-#: panda.cpp:213
+#: panda.cpp:215
 msgid "Unable to authenticate/execute the action: %1, %2"
 msgstr "Impossible d'authentifier/exécuter l'action : %1, %2"
 
-#: panda.cpp:215
+#: panda.cpp:217
 msgid "An internal error occurred"
 msgstr "Une erreur interne s'est produite"
 
-#: panda.cpp:223
+#: panda.cpp:225
 msgid ""
 "You have to restart your system for the changes to take affect.\n"
 "Do you want to restart now?"
@@ -104,11 +104,11 @@ msgstr ""
 "effet. \n"
 "Voulez-vous redémarrer maintenant ?"
 
-#: rc.cpp:1 rc.cpp:1
+#: rc.cpp:1
 msgid "Video Driver"
 msgstr "Pilote vidéo"
 
-#: rc.cpp:3 rc.cpp:3
+#: rc.cpp:3
 msgid "video,driver,graphics,display"
-msgstr "vidéo, pilote, grafique, affichage"
+msgstr "vidéo, pilote, graphique, affichage"
 
