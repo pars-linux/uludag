@@ -1,13 +1,14 @@
 [KSplash Theme: Pardus]
 Name = Pardus
 Description = Pardus Splash Theme
-Version = 0.3
+Version = 0.4
 Author = Gökhan Özkan <gokhan@pardus.org.tr>
 Homepage = http://www.pardus.org.tr
 Engine = Moodin
 
 BeginOpacity = 0.1
 BaseResolution = 1280
+KeepXdmBackground = true
 
 UseIconSet = true
 IconSetSize = 48
