@@ -11,11 +11,14 @@ ActionReply Helper::save(const QVariantMap &args)
     int ret = 0; // error code
     bool osdriver = args.value("osdriver").toBool();
     bool vendordriver = args.value("vendordriver").toBool();
+    bool genericdriver = args.value("genericdriver").toBool();
 
     QStringList cliOsArgs;
     QStringList cliVendorArgs;
+    QStringList cliGenericArgs;
     cliOsArgs << "up" << "os";
     cliVendorArgs << "up" << "vendor";
+    cliGenericArgs << "up" << "generic";
     QString program = "/usr/libexec/panda-helper";
 
     QProcess *p = new QProcess(this);
@@ -32,6 +35,12 @@ ActionReply Helper::save(const QVariantMap &args)
         QByteArray currentDriver = p->readAllStandardOutput();
         QString vendorOutput = QString(currentDriver).trimmed();
         qDebug() << "Vendor: " << vendorOutput;
+    } else if (genericdriver) {
+        p->start(program, cliGenericArgs);
+        p->waitForFinished();
+        QByteArray currentDriver = p->readAllStandardOutput();
+        QString genericOutput = QString(currentDriver).trimmed();
+        qDebug() << "Generic: " << genericOutput;
     }
 
     /* Just an helperarg example for type string
