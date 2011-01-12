@@ -123,9 +123,9 @@ msgid "Multiple users can share the same computer safely with Pardus. An adminis
 msgstr "Plusieurs utilisateurs peuvent partager le même ordinateur en toute sécurité avec Pardus. Un compte administrateur sera automatiquement créé sous le nom &quot;root&quot;. Vous pouvez ajouter de nouveaux utilisateurs dans cet écran. Le premier utilisateur aura par défaut les droits d'administration, sauf si vous ne le souhaitez pas. Le menu Avancé permet de retirer les droits d'administration, de changer l'ID de l'utilisateur, etc. &lt;br&gt;&lt;br&gt; Après l'installation de Pardus, la gestion des comptes des utilisateurs se fait dans le Gestionnaire des Utilisateurs, disponible dans le centre de configuration du système."
 
 #: ../release.xml.in.h:28
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Pardus 2011 is shipped with Firefox 4, the most popular open source Internet browser. Firefox offers great customization options as well as a secure and safe browsing experience. &lt;br&gt;&lt;br&gt;The Mozilla Team uses the 100% Organic Software term trying to show how the community creates the product. Add-ons, including a fully personalization feature with Personas help you to have your very own browser, both visually and capability.&lt;br&gt;&lt;br&gt;Pardus also offers other free browsers including Chromium, Konqueror or even Opera."
-msgstr "Pardus 2011 est livré avec Firefox 4, le plus populaire navigateur Internet open source. Firefox offre des options de personnalisation grande ainsi qu'une expérience de la navigation sûre et sécuritaire. &lt;br&gt; L'équipe de Mozilla utilise le logiciel 100% organique terme essayé de montrer comment la communauté crée le produit. Add-ons, y compris une fonctionnalité de personnalisation pleinement avec Personas vous aider à avoir votre propre navigateur, à la fois visuellement et de capacité. &lt;br&gt; Pardus propose également d'autres navigateurs gratuits, Chrome, Konqueror ou encore Opera."
+msgstr "Pardus 2011 est livré avec Firefox 4, le plus populaire navigateur Internet open source. Firefox propose la navigation par onglets et ses extensions comme AdBlock Plus, le dictionnaire français classique, Download Status Bar, Zotero, et des centaines d'autres. &lt;br&gt; &lt;br&gt; Pardus propose également d'autres navigateurs gratuits : Chrome, Rekonq ou encore Opéra."
 
 #: ../release.xml.in.h:29
 #, fuzzy
