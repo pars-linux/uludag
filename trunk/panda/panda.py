@@ -177,7 +177,7 @@ class Panda():
         ## Grub Parsing
         configured = False
 
-        def keyword_in_line(line, keyword="blacklist"):
+        def parameter_value_in_line(line, keyword):
             params = line.split()
             blacklist = []
 
@@ -188,13 +188,13 @@ class Panda():
 
             return blacklist
 
-        def update_keyword_in_line(line, value, keyword="blacklist"):
-            params = [x for x in line.strip().split() if not x.startswith("%s" % keyword)]
+        def update_parameter_in_line(line, parameter_name, parameter_value):
+            params = [x for x in line.strip().split() if not x.startswith("%s" % parameter_name)]
 
-            if value is True:
-                params.append(keyword)
-            elif value:
-                params.append("%s=%s" % (keyword, ",".join(value)))
+            if parameter_value is True:
+                params.append(parameter_name)
+            elif parameter_value:
+                params.append("%s=%s" % (parameter_name, ",".join(parameter_value)))
 
             return " ".join(params) + "\n"
 
@@ -207,8 +207,8 @@ class Panda():
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    blacklist = keyword_in_line(line)
-                    xorg_param = keyword_in_line(line, keyword="xorg")
+                    blacklist = parameter_value_in_line(line, "blacklist")
+                    xorg_param = parameter_value_in_line(line, "xorg")
 
                     if arg == "status":
                         if "safe" in xorg_param:
@@ -243,9 +243,9 @@ class Panda():
                         nomodeset_param = True
                         status = "generic"
 
-                    new_line = update_keyword_in_line(line, xorg_param, "xorg")
-                    new_line = update_keyword_in_line(new_line, nomodeset_param, "nomodeset")
-                    new_line = update_keyword_in_line(new_line, blacklist)
+                    new_line = update_parameter_in_line(line, "xorg", xorg_param)
+                    new_line = update_parameter_in_line(new_line, "nomodeset", nomodeset_param)
+                    new_line = update_parameter_in_line(new_line, "blacklist", blacklist)
                     print new_line
                     grub_tmp.write(new_line)
                     configured = line != new_line
