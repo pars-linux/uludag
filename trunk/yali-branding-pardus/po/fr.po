@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-12 10:01+0000\n"
+"POT-Creation-Date: 2011-01-12 11:01+0000\n"
 "PO-Revision-Date: 2010-11-18 22:59+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -127,9 +127,8 @@ msgid "Pardus 2011 is shipped with Firefox 4, the most popular open source Inter
 msgstr "Pardus 2011 est livré avec Firefox 4, le plus populaire navigateur Internet open source. Firefox propose la navigation par onglets et ses extensions comme AdBlock Plus, le dictionnaire français classique, Download Status Bar, Zotero, et des centaines d'autres. &lt;br&gt; &lt;br&gt; Pardus propose également d'autres navigateurs gratuits : Chrome, Rekonq ou encore Opéra."
 
 #: ../release.xml.in.h:29
-#, fuzzy
 msgid "Pardus experience may be summarized as a bright and powerful parade of free and open source softwares. You will meet some of the old friends, such as Mozilla Firefox or LibreOffice. They might be changed a bit with Pardus developers&apos; choices to tailor them for your system. While the installation goes on, you may see some of these features..."
-msgstr "Pardus expérience peut se résumer comme une parade lumineuse et puissante de logiciels libres et open source. Vous rencontrerez quelques-uns des vieux amis, tels que Mozilla Firefox ou LibreOffice. Ils pourraient être un peu changé avec les choix des développeurs de Pardus de les adapter à votre système. Bien que l'installation se passe, vous pouvez voir certaines de ces fonctionnalités ..."
+msgstr "Sous Pardus, vous retrouverez les logiciels les plus populaires tels que Firefox pour l'Internet ou LibreOffice (ex-OpenOffice.org) pour la bureautique. Pendant l'installation, vous pouvez lire les informations qui défilent..."
 
 #: ../release.xml.in.h:30
 msgid "Pardus have many other in-house developed user friendly manager tools such as User Manager, Boot Manager, Firewall Manager, Service Manager to administrate Pardus easier. All the managers can be used individually as well as from the System Settings, a single application for all administrative and configuration tasks."
