@@ -14,12 +14,12 @@
             <!-- makine adı -->
             <item type="label">
                 <pos anchor="n" x="%50"/>
-                <normal color="#555555" font="Sans Bold 12"/>
+                <normal color="#DDDDDD" font="Sans Bold 12"/>
                 <text>%h</text>
             </item>
             <!-- saat -->
             <item type="label" id="clock">
-                <normal color="#555555" font="Sans Bold 12"/>
+                <normal color="#DDDDDD" font="Sans Bold 12"/>
                 <text>%c</text>
             </item>
         </box>
@@ -41,13 +41,13 @@
                                     <!-- kullanıcı adı sorusu -->
                                     <item type="label">
                                         <pos anchor="w" y="%60"/>
-                                        <normal color="#000000" font="Sans Bold 15"/>
+                                        <normal color="#CCCCCC" font="Sans 14"/>
                                         <stock type="username-label"/>
                                     </item>
                                     <!-- parola sorusu -->
                                     <item type="label">
                                         <pos anchor="w" y="%60"/>
-                                        <normal color="#000000" font="Sans Bold 15"/>
+                                        <normal color="#CCCCCC" font="Sans 14"/>
                                         <stock type="password-label"/>
                                     </item>
                                 </box>
@@ -57,12 +57,12 @@
                                 <box orientation="vertical" homogenous="true" spacing="10">
                                     <!-- kullanıcı adı giriş yeri -->
                                     <item type="entry" id="user-entry">
-                                        <normal font="Sans Bold 15"/>
+                                        <normal font="Sans Bold 12"/>
                                         <pos width="130" height="28"/>
                                     </item>
                                     <!-- parola giriş yeri -->
                                     <item type="entry" id="pw-entry">
-                                        <normal font="Sans Bold 15"/>
+                                        <normal font="Sans Bold 12"/>
                                         <pos width="130" height="28"/>
                                     </item>
                                 </box>
@@ -79,7 +79,7 @@
                             </item>
                             <item type="label">
                                 <pos anchor="w" y="%50"/>
-                                <normal color="#CCCCCC" font="Sans Bold 15"/>
+                                <normal color="#CCCCCC" font="Sans Bold 12"/>
                                 <stock type="login"/>
                             </item>
                         </box>
@@ -94,7 +94,7 @@
                             </item>
                             <item type="label">
                                 <pos anchor="w" y="%50"/>
-                                <normal color="#CCCCCC" font="Sans Bold 15"/>
+                                <normal color="#CCCCCC" font="Sans Bold 12"/>
                                 <stock type="quit"/>
                             </item>
                         </box>
@@ -103,7 +103,7 @@
             </item>
             <!-- kullanıcı listesi -->
             <item type="rect" id="userlist">
-                <pos anchor="w" y="%50" height="%100" width="200"/>
+                <pos anchor="w" y="%50" height="400" width="200"/>
             </item>
 
 
@@ -113,7 +113,7 @@
 
     <!-- hata mesajı -->
     <item type="label" id="pam-error">
-        <normal color="#EEEEEE" font="Sans Bold 15"/>
+        <normal color="#EEEEEE" font="Sans Bold 12"/>
         <pos anchor="n" x="%50" y="%70"/>
     </item>
 
