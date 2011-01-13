@@ -16,7 +16,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Welcome to Pardus"
-msgstr ""
+msgstr "Pardus'a Hoş Geldiniz"
 
 #. Tag: para
 #, no-c-format
