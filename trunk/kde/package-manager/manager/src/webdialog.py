@@ -40,6 +40,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
         self._as = 'http://appinfo.pardus.org.tr'
         self.cancelButton.clicked.connect(self._hide)
+        self.cancelButton.setIcon(KIcon("dialog-close"))
 
         # Hide Scrollbars and context menu in webview
         self.webView.setContextMenuPolicy(Qt.NoContextMenu)
