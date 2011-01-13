@@ -8,11 +8,5 @@
     <xi:include href="Article_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     <xi:include href="Welcome.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     <xi:include href="What_is_New.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-
-    <section id="sect-Release_Notes-Needed">
-        <title>Installation requirements</title>
-        <xi:include href="Requirements.xml"
-            xmlns:xi="http://www.w3.org/2001/XInclude">
-        </xi:include>
-    </section>
+    <xi:include href="Requirements.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 </article>
