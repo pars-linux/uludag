@@ -1,0 +1,89 @@
+#
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2011-01-13T09:41:09\n"
+"PO-Revision-Date: 2011-01-13T09:41:09\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#, no-c-format
+msgid "What is New?"
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Updates in Pardus Technologies"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<package>YALI</package> is easy, stable and fast with its renewed interface, LVM/RAID support and disc partitioning screen."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "The boot splash system has completely renewed. 2011 release offers richer theme support and more capable animations by using Plymouth technology."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Package scoring and screenshot features which are the users' ambitions expected for 2011, now supported. Screenshot from the web interface and voting will be done soon."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "As well as the some innovations and effects on The Package Manager interfaces, faster package updates and installation can be performed with the improvements in Pisi infrastructure."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "KDE Desktop Environment"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus 2011 RC release, coming with latest release of KDE desktop environment, <package>KDE 4.5</package>. With this release the backbone of desktop environment Plasma, the file manager (Dolphin) and desktop effects has become more stable and faster with a lot of fixes."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "The applications which are frequently used by desktop users such as Amarok (multimedia player), Skanlite (browser interface), KTorrent (torrent interface), SMPlayer (video player) can be installed with this version."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Updated Components"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Firefox gets new stable release rapidly. 4.0b8pre release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "The alternative web browsers such as Chromium and Rekonq are ready for the users which prefer the alternative Internet browsers other than Firefox."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Those who use office applications extensively, can try LibreOffice, OpenOffice's continuation project, with improvements like Turkish spell checking, add-ons and compatibility which are prepared by Pardus developers."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Users can now configure Wacom tablets, Touchpads and Bluetooth devices using System Settings. Version 2.6.37 of the Linux kernel provides support for the users with recent hardware."
+msgstr ""
