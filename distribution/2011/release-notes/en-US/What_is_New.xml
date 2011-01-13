@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-What_is_New">
+    <title>What is New?</title>
+
+    <section id="sect-Release_Notes-Updates_in_Pardus_Technologies">
+        <title>Updates in Pardus Technologies</title>
+        <para>
+            Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features.
+        </para>
+        <para>
+            <package>YALI</package> is easy, stable and fast with its renewed interface, LVM/RAID support and disc
+            partitioning screen.
+        </para>
+        <para>
+            The boot splash system has completely renewed. 2011 release offers richer theme support and more capable
+            animations by using Plymouth technology.
+        </para>
+        <para>
+            Package scoring and screenshot features which are the users' ambitions expected for 2011, now supported.
+            Screenshot from the web interface and voting will be done soon.
+        </para>
+        <para>
+            As well as the some innovations and effects on The Package Manager interfaces, faster package updates and
+            installation can be performed with the improvements in Pisi infrastructure.
+        </para>
+    </section>
+
+    <section id="sect-Release_Notes-KDE_Desktop_Environment">
+        <title>KDE Desktop Environment</title>
+        <para>
+            Pardus 2011 RC release, coming with latest release of KDE desktop environment, <package>KDE 4.5</package>.
+            With this release the backbone of desktop environment Plasma, the file manager (Dolphin) and desktop
+            effects has become more stable and faster with a lot of fixes.
+        </para>
+        <para>
+            The applications which are frequently used by desktop users such as Amarok (multimedia player),
+            Skanlite (browser interface), KTorrent (torrent interface), SMPlayer (video player) can be installed
+            with this version.
+        </para>
+    </section>
+
+    <section id="sect-Release_Notes-Updated_Components">
+        <title>Updated Components</title>
+        <para>
+            Firefox gets new stable release rapidly. 4.0b8pre release presents many new features like the new
+            interface of the browser as well as plugin management new interface, tab grouping, bookmarks between
+            computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology
+            supports are also most important features for the developers.
+        </para>
+        <para>
+            The alternative web browsers such as Chromium and Rekonq are ready for the users which prefer
+            the alternative Internet browsers other than Firefox.
+        </para>
+        <para>
+            Those who use office applications extensively, can try LibreOffice, OpenOffice's continuation project,
+            with improvements like Turkish spell checking, add-ons and compatibility which are prepared
+            by Pardus developers.
+        </para>
+        <para>
+            Users can now configure Wacom tablets, Touchpads and Bluetooth devices using System Settings.
+            2.6.37 version of Linux kernel provides support for the users with recent hardware.
+        </para>
+    </section>
+</section>

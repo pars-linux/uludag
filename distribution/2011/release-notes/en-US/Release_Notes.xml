@@ -7,23 +7,7 @@
 <article>
     <xi:include href="Article_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
     <xi:include href="Welcome.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-
-
-    <section id="sect-Release_Notes-Changes">
-        <title>What is new ?</title>
-        <xi:include href="Technologies.xml"
-            xmlns:xi="http://www.w3.org/2001/XInclude">
-        </xi:include>
-        <xi:include href="Desktop.xml"
-            xmlns:xi="http://www.w3.org/2001/XInclude">
-        </xi:include>
-        <xi:include href="Kde.xml"
-            xmlns:xi="http://www.w3.org/2001/XInclude">
-        </xi:include>
-        <xi:include href="Components.xml"
-            xmlns:xi="http://www.w3.org/2001/XInclude">
-        </xi:include>
-    </section>
+    <xi:include href="What_is_New.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
 
     <section id="sect-Release_Notes-Needed">
         <title>Installation requirements</title>
