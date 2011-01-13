@@ -3,6 +3,11 @@
 Package Reviewing Process
 =========================
 
+:Author: Semen Cirit, Ozan Çağlayan
+:Date: |today|
+:Version: 0.1
+
+
 Aim of Review
 -------------
 
@@ -92,11 +97,11 @@ The package reviewing process steps on `Pardus Bug Tracking System
 
    - Example:
 
-     - **Bad:**    ``ACK`` after changing the directory paths.
-     - **Good:**   You should change the directory paths.
+     - **Bad:**    After changing the directory paths, it will be ``ACK``.
+     - **Good:**   It should change the directory paths.
 
    After the package maintainer has fixed the problem, the reviewer verifies
-   the solution and gives an ``ACK`` as an approval comment.
+   the problem and gives an ``ACK`` as an approval comment.
 
 #. The package that takes the necessary approvals, is taken into the package repositories,
    removed from the review directory and the bug status is changed to
@@ -106,7 +111,3 @@ The package reviewing process steps on `Pardus Bug Tracking System
    is closed, package request bug will be closed too. ``RESOLVED/FIXED`` solution can
    also be applied for this bug. Ideally, closing both review and request bugs at
    the same commit is preferred.
-
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit, Ozan Çağlayan
