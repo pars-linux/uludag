@@ -34,6 +34,7 @@ def get_default_nameservers():
                 default_nameservers.append(ns)
     return default_nameservers
 
+
 class PardusNetworkProfile:
     """Represents network profiles that we have been using in Pardus' network
     manager. We have two types of network profiles specified: wired or wireless
@@ -81,7 +82,7 @@ class PardusNetworkProfile:
         return self.name_mode
 
     def get_state(self):
-        return self.state
+         return self.state
 
     def get_name_server(self):
         return self.name_server
@@ -118,7 +119,8 @@ class NetworkManagerProfile:
         self.ipv4 = IpV4(pardus_profile)
         self.ipv6 = IpV6(pardus_profile)
         self._802_3_ethernet = self.set_802_3_ethernet(pardus_profile)
-        #self._802_11_wireless = self.set_802_11_wireless(pardus_profile)
+        self._802_11_wireless = self.set_802_11_wireless(pardus_profile)
+        self._802_11_wireless_security = self.set_802_11_wireless_security(pardus_profile)
 
         self.create_config()
 
@@ -135,10 +137,25 @@ class NetworkManagerProfile:
     def set_802_11_wireless(self, pardus_profile):
         """If this is a wireless (802-11-wirelesss) profile, set 
         _802_11_wireless attribute."""
-        pass
+        if pardus_profile.connection_type == "802-11-wireless":
+            return  _802_11_Wireless(pardus_profile)
+        else:
+            return "None"
 
     def set_802_11_wireless_security(self, pardus_profile):
-        pass
+        """If the wireless connection has any security restrictions, create a 
+        802-11-wireless-security section with corresponding values.
+        """
+
+        if pardus_profile.get_connection_type() ==  "802-11-wireless": #Check if it is a wlan profile
+            if pardus_profile.get_auth() == "none":
+                self._802_11_wireless.security = "None"
+                return "None"
+            else:
+                self._802_11_wireless.security = "802-11-wireless-security"
+                return _802_11_Wireless_Security(pardus_profile)
+        else:
+            return "None"
 
     def create_config(self):
         """Create sections and options in the prfoile's config file by calling
@@ -157,6 +174,8 @@ class NetworkManagerProfile:
                 self._802_3_ethernet.set_config(self.cfg)
             if attr=="_802_11_wireless" and not value == "None":
                 self._802_11_wireless.set_config(self.cfg)
+            if attr=="_802_11_wireless_security" and not value == "None":
+                self._802_11_wireless_security.set_config(self.cfg)
 
     def write_config(self):
         """Write settings to profile file"""
@@ -363,16 +382,16 @@ class _802_11_Wireless:
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless"
         self.ssid = "None"
-        self.mode = "None"
         self.band = "None"
-        self.channel = "None" #0
+        self.channel = "0"
         self.bssid = "None"
-        self.rate = "None" #0
-        self.tx_power = "None" #0
-        self.mac_address = self.set_mac_address(self.pardus_profile.get_device())
-        self.mtu = "None" #0
+        self.rate = "0"
+        self.tx_power = "0"
+        self.mtu = "0"
         self.seen_bssids = "None"
         self.security = "None"
+        self.mode = self.set_mode(pardus_profile)
+        self.mac_address = self.set_mac_address(pardus_profile.get_device())
 
     def set_mac_address(self, iface):
         """Return MAC addresses of given interface on the machine using ifconfig, inspired from python uuid module"""
@@ -398,12 +417,18 @@ class _802_11_Wireless:
                         if words[i] in hw_identifiers:
                             self.mac_address = words[i+1]
 
+    def set_mode(self, pardus_profile):
+        """One of 'infrastructure' or 'adhoc'. If blank, infrastructure is assumed"""
+
+        #TODO: How to determine mode (adhoc or infrastructure) from old profile settings
+        return "infrastructure"
+
     def set_config(self, cfg):
         """One single config file will be used ot write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["False", "None", "0"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -412,7 +437,6 @@ class _802_11_Wireless_Security:
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless-security"
-        self.key_mgmt = "None"
         self.wep_tx_keyidx = "None"
         self.key_mgmt = "None"
         self.wep_tx_keyidx = "None" #0
@@ -428,7 +452,19 @@ class _802_11_Wireless_Security:
         self.psk = "None"
         self.leap_password = "None"
         self._wep_key_type = "None" #0
+        self.key_mgmt = self.set_key_mgmt(pardus_profile)
 
+    def set_key_mgmt(self, pardus_profile):
+        """Set to 'none' for WEP, 'ieee8021x' for Dynamic WEP, 'wpa-none' for WPA-PSK Ad-Hoc,
+        'wpa-psk' for infrastructure WPA-PSK or 'wpa-eap' for WPA-Enterprise
+        """
+
+        if pardus_profile.get_auth() in ["wep", "wepascii"]:
+            self.psk = str(pardus_profile.get_auth_password())
+            return "none"
+        elif pardus_profile.get_auth() == "wpa-psk":
+            self.psk = str(pardus_profile.get_auth_password())
+            return "wpa-psk"
 
     def set_config(self, cfg):
         """One single config file will be used ot write settings"""
