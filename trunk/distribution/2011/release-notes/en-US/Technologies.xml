@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Technologies">
+    <title>Updates in Pardus Technologies</title>
+    <para>
+        Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features.
+    </para>
+    <para>
+        <package>YALI</package> is easy, stable and fast with its renewed interface, LVM/RAID support and disc 
+        partitioning screen.
+    </para>
+    <para>
+        The boot splash system has completely renewed. 2011 release offers richer theme support and more capable 
+        animations by using Plymouth technology.
+    </para>
+    <para>
+        Package scoring and screenshot features which are the users' ambitions expected for 2011, now supported. 
+        Screenshot from the web interface and voting will be done soon.
+    </para>
+    <para>
+        As well as the some innovations and effects on The Package Manager interfaces, faster package updates and 
+        installation can be performed with the improvements in Pisi infrastructure.
+    </para>
+</section>

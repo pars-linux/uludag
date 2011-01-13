@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Requirements">
+    <title>Installation requirements</title>
+    <para>
+        You can run Pardus on an average x86 compatible hardware. We suggest to use at least 
+        512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and 
+        recommended hardware requirements for Pardus 2011 are mentioned below:
+    </para>
+
+    <itemizedlist>
+        <listitem>
+            <para>
+                256 MB memory (1GB or more recommended)
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                450 MHz Intel or AMD processor (1000 MHz recommended)
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                At least 4 GB of free hard disk space (10 GB recommended)
+            </para>
+        </listitem>
+    </itemizedlist>
+</section>

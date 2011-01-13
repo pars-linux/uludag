@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Desktop">
+    <title>Graphical Enhancements</title>
+    <para>
+        Like other Pardus releases, this new release comes with the theme and name of species that is in 
+        danger of extinction. With new packages added to repositories, GTK and KDE integration is improved 
+        from notifications to user dialogs. Milky icon theme of Pardus is also updated with new icons.
+    </para>
+</section>

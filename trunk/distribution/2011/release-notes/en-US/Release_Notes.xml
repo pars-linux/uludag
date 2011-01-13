@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<article>
+  <xi:include href="Article_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <section id="sect-Release_Notes-Welcome_to_Pardus_2011">
+    <title>Welcome to Pardus 2011</title>
+    <note> <title> hede </title> <para> Bu bir nottur. Notlar ipucuları ya da farklı alternatif çözüm yollarını göstermek için görsel uyarıdır. Hede höde bude.... </para> </note>
+    <xi:include href="Welcome.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Overview.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Howto_Use.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Feedback.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+  </section>
+
+  <section id="sect-Release_Notes-Changes">
+    <title>What is new ?</title>
+    <important> <title> hede </title> <para> dedi naber? dedim iyidir. dedi ee 
+            dedi dedi ne dedi iyidir dedi ne dedi dedi ne dedin kim dedim dedi 
+            kim ne dedi dedi </para> </important>
+    <xi:include href="Technologies.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Desktop.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Kde.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+    <xi:include href="Components.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+  </section>
+
+  <section id="sect-Release_Notes-Needed">
+    <title>Installation requirements</title>
+    <warning> <title> hede </title> <para> gözünü seveyim docbook</para> </warning>
+    <xi:include href="Requirements.xml"
+		xmlns:xi="http://www.w3.org/2001/XInclude">
+    </xi:include>
+  </section>
+
+  <xi:include href="Revision_History.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <index id="appe-Release_Notes-index" />
+</article>
+
