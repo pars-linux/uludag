@@ -127,7 +127,7 @@ exist in that directory, the pisi files inside that directory is also checked.
 
 
 Examples:
---------
+---------
 In general, checkelf can check for two types. It can check for installed
 packages, or it can check for a speficied pisi file.
 Below are several examples for real-world use of checkelf
