@@ -1,0 +1,39 @@
+#
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2011-01-13T09:41:09\n"
+"PO-Revision-Date: 2011-01-13T09:41:09\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#, no-c-format
+msgid "Installation Requirements"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2011 are mentioned below:"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "256 MB memory (1GB or more recommended)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "At least 4 GB of free hard disk space (10 GB recommended)"
+msgstr ""
