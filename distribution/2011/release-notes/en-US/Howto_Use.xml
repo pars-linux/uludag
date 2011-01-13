@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Howto_Use">
+  <title>Overview</title>
+  <para>
+      Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan 
+      (live media, running on the media only, slower but does not install on your computer) and can 
+      be started from a CD / DVD / External storage (USB stick for example) or can be installed to 
+      internal harddisk depending on your preference.
+  </para>
+  <para>
+      Çalışan (live) image and Kurulan (installation) images can fit on one DVD each.
+  </para>
+  <para>
+      To start your Pardus experience, you need to insert the related media in your computer, reboot 
+      the system and set up your computer BIOS to boot from the Pardus media.
+  </para>
+</section>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Components">
+    <title>Uptaded Components</title>
+    <para>
+        New release includes many updated packages. Some of the highlights are as follows:
+
+    <itemizedlist>
+        <listitem>
+            <para>
+                KDE 4.5.5
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Qt 4.7.1
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Python 2.7.1
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                LibreOffice Office Suite 3.3.0.2
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Firefox Web Browser 4.0_beta8
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Thunderbird 3.1.7
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Gimp 2.6.11
+            </para>
+        </listitem>
+        <listitem>
+            <para>
+                Linux Kernel 2.6.37
+            </para>
+        </listitem>
+    </itemizedlist>
+
+    </para>
+</section>

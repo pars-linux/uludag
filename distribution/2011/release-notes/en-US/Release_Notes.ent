@@ -1,0 +1,8 @@
+<!ENTITY PRODUCT "Fedora Documentation">
+<!ENTITY BOOKID "release-notes">
+<!ENTITY YEAR "2010">
+<!ENTITY HOLDER "Red Hat, Inc. and others">
+<!ENTITY PRODVER "14">
+<!ENTITY PREVVER "15">
+<!ENTITY KERNEL "2.6.35">
+

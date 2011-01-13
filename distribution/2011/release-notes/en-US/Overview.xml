@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<section id="sect-Release_Notes-Overview">
+  <title>Overview</title>
+  <para>
+      Pardus is a Linux distribution developed as a product of the Pardus Project, by National 
+      Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific 
+      and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. 
+      It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana.
+  </para>
+  <para>
+      Pardus consists of a Linux based operating system, opensource applications and related data files 
+      necessary for desktop and server environments, aiming to provide users stable, reliable, easy 
+      to use and feature rich computer experience.
+  </para>
+</section>
