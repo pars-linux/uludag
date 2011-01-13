@@ -57,7 +57,7 @@ class UpdatePO(Command):
         os.chdir("..")
 
 setup(name="yali-branding-pardus",
-      version= "2011.0.6",
+      version= "2011.0.7",
       description="Pardus branding files for YALI (Yet Another Linux Installer)",
       license="GNU GPL2",
       author="Pardus Developers",
