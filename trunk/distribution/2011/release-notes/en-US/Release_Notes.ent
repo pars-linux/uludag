@@ -1,8 +1,7 @@
-<!ENTITY PRODUCT "Fedora Documentation">
+<!ENTITY PRODUCT "Pardus Documentation">
 <!ENTITY BOOKID "release-notes">
-<!ENTITY YEAR "2010">
-<!ENTITY HOLDER "Red Hat, Inc. and others">
-<!ENTITY PRODVER "14">
-<!ENTITY PREVVER "15">
-<!ENTITY KERNEL "2.6.35">
-
+<!ENTITY YEAR "2011">
+<!ENTITY HOLDER "TÜBİTAK / BİLGEM">
+<!ENTITY PRODVER "2011">
+<!ENTITY PREVVER "2009.2">
+<!ENTITY KERNEL "2.6.37">

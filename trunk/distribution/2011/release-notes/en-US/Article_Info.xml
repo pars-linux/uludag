@@ -3,15 +3,9 @@
 ]>
 
 <articleinfo id="arti-Release_Notes-Release_Notes">
-	<title>Release Notes</title>
-	<subtitle>Release Notes for Pardus 2011</subtitle>
-	<productname>Pardus</productname>
-	<productnumber>2011</productnumber>
-	<edition>1</edition>
-	<pubsnumber>0</pubsnumber>
-	<abstract>
-		<para>This document details the release notes for Pardus 2011.</para></abstract>
-			<xi:include href="Common_Content/Legal_Notice.xml" xmlns:xi="http://www.w3.org/2001/XInclude"></xi:include>
-			<xi:include href="Author_Group.xml" xmlns:xi="http://www.w3.org/2001/XInclude"></xi:include>
-		</articleinfo>
-		
+    <title>Release Notes</title>
+    <productname>Pardus</productname>
+    <productnumber>2011</productnumber>
+    <edition>1</edition>
+    <pubsnumber>0</pubsnumber>
+</articleinfo>
