@@ -1,0 +1,74 @@
+# 
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2011-01-13T09:41:09\n"
+"PO-Revision-Date: 2011-01-13T09:41:09\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Tag: title
+#, no-c-format
+msgid "Welcome to Pardus"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Welcome to Pardus 2011, another great Pardus release from Pardus developers, translators, artists and documentation writers."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "We kindly invite you to visit <ulink url=\"http://www.pardus.org.tr/eng\"> http://www.pardus.org.tr/eng</ulink> for more information."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "What is Pardus?"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "How Can I Use Pardus?"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Çalışan (live) image and Kurulan (installation) images can fit on one DVD each."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Feedback"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "You can use <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink>, (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is."
+msgstr ""
+
