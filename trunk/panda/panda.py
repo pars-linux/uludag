@@ -246,7 +246,6 @@ class Panda():
                     new_line = update_parameter_in_line(line, "xorg", xorg_param)
                     new_line = update_parameter_in_line(new_line, "nomodeset", nomodeset_param)
                     new_line = update_parameter_in_line(new_line, "blacklist", blacklist)
-                    print new_line
                     grub_tmp.write(new_line)
                     configured = line != new_line
 
