@@ -162,10 +162,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         for _rt_i in range(rate):
             self._rt_1.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
 
-        if option.state & QtGui.QStyle.State_HasFocus:
-            foregroundColor = option.palette.color(QtGui.QPalette.HighlightedText)
-        else:
-            foregroundColor = option.palette.color(QtGui.QPalette.Text)
+        foregroundColor = option.palette.color(QtGui.QPalette.Text)
         p.setPen(foregroundColor)
 
         # Package Name
@@ -310,8 +307,8 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         p.end()
 
         if option.state & QtGui.QStyle.State_HasFocus and self.animatable:
-            option.state |= QtGui.QStyle.State_Selected
-            PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, option, painter, None)
+            # option.state |= QtGui.QStyle.State_Selected
+            PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_FrameButtonBevel, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
             if self.show_details_button:
