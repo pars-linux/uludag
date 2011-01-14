@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
@@ -45,11 +45,8 @@ msgid "Use my old wallpaper"
 msgstr "Setze meinen alten Bildschirmhintergrund"
 
 #: .tmp/ScrOptions.py:85
-msgid ""
-"Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr ""
-"Kopiere Ihren alten Wallpaper zu Pardus und benutzt ihn als neuer "
-"Bildschirmhintergrund."
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr "Kopiere Ihren alten Wallpaper zu Pardus und benutzt ihn als neuer Bildschirmhintergrund."
 
 #: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
@@ -88,8 +85,7 @@ msgid "Windows Mail accounts"
 msgstr "Windows E-mailkonten"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
-msgid ""
-"Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
 msgstr "Kopiere alte E-mail- und Newsgroupkonten zu KMail und KNode."
 
 #: .tmp/ScrOptions.py:160
@@ -102,8 +98,7 @@ msgstr "Kopiere E-mailnachrichten von den E-mailkonten"
 
 #: .tmp/ScrOptions.py:170
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr ""
-"Kopiere E-mailnachrichten zu KMail von den obig ausgewählten Programmen."
+msgstr "Kopiere E-mailnachrichten zu KMail von den obig ausgewählten Programmen."
 
 #: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
@@ -175,9 +170,7 @@ msgstr "Internet Explorer Lesezeichen geladen."
 
 #: .tmp/ScrProgress.py:293
 msgid "Firefox is open. Please close it first to continue..."
-msgstr ""
-"Firefox ist geöffnet. Bitte schließen Sie Ihn erst um weitermachen "
-"zu können... "
+msgstr "Firefox ist geöffnet. Bitte schließen Sie Ihn erst um weitermachen zu können... "
 
 #: .tmp/ScrProgress.py:305
 msgid "Windows Mail accounts could not be loaded."
@@ -197,7 +190,7 @@ msgstr "Thunderbird-konten geladen."
 
 #: .tmp/ScrProgress.py:330
 msgid "MSN accounts could be loaded."
-msgstr ""
+msgstr "MSN-Konten konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
@@ -227,27 +220,20 @@ msgstr "News Konten"
 msgid "Desktop Links"
 msgstr "Desktopverknüpfungen"
 
-#: .tmp/ScrProgress.py:396, python-format
+#: .tmp/ScrProgress.py:396
+#, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
-msgstr ""
-"Ordner '%s' konnte nicht erstellt werden, bitte wählen Sie einen anderen "
-"Ordner!"
+msgstr "Ordner '%s' konnte nicht erstellt werden, bitte wählen Sie einen anderen Ordner!"
 
-#: .tmp/ScrProgress.py:400, python-format
-msgid ""
-"You don't have permission to write to folder '%s', please choose another "
-"folder!"
-msgstr ""
-"Sie haben nicht die Berechtigung, in den Ordner '%s' zu schreiben, bitte "
-"wählen Sie einen anderen Ordner!"
+#: .tmp/ScrProgress.py:400
+#, python-format
+msgid "You don't have permission to write to folder '%s', please choose another folder!"
+msgstr "Sie haben nicht die Berechtigung, in den Ordner '%s' zu schreiben, bitte wählen Sie einen anderen Ordner!"
 
-#: .tmp/ScrProgress.py:411, python-format
-msgid ""
-"Total size of files you've selected is %(size)d MB, but you have only %(free)"
-"d MB of free space!"
-msgstr ""
-"Die Gesamtgröße der von Ihnen gewählten Dateien ist %(size)d MB, aber Sie "
-"haben nur %(free)d MB freien Speicherplatz zur Verfügung!"
+#: .tmp/ScrProgress.py:411
+#, python-format
+msgid "Total size of files you've selected is %(size)d MB, but you have only %(free)d MB of free space!"
+msgstr "Die Gesamtgröße der von Ihnen gewählten Dateien ist %(size)d MB, aber Sie haben nur %(free)d MB freien Speicherplatz zur Verfügung!"
 
 #: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
@@ -280,15 +266,11 @@ msgstr "Link '%s' erstellt."
 
 #: .tmp/ScrProgress.py:506
 msgid "Nothing done, because no option selected. You can close the wizard..."
-msgstr ""
-"Nichts ausgeführt, da keine Option ausgewählt war. Sie können den Migrations "
-"Assistenten nun schließen..."
+msgstr "Nichts ausgeführt, da keine Option ausgewählt war. Sie können den Migrations Assistenten nun schließen..."
 
 #: .tmp/ScrProgress.py:508
 msgid "All operations completed. You can close the wizard..."
-msgstr ""
-"Alle Vorgänge abgeschlossen. Sie können den Migrations Assistenten nun "
-"schließen..."
+msgstr "Alle Vorgänge abgeschlossen. Sie können den Migrations Assistenten nun schließen..."
 
 #: .tmp/ScrSummary.py:25 .tmp/ui_summaryWidget.py:54
 msgid "Summary"
@@ -358,12 +340,8 @@ msgid "User Profiles"
 msgstr "Benutzerprofile"
 
 #: .tmp/ScrUser.py:101
-msgid ""
-"There aren't any Microsoft Windows partitions to migrate! Please check your "
-"mounted partitions..."
-msgstr ""
-"Keine Partitionen mit Microsoft Windows gefunden! Bitte überprüfen Sie die "
-"angeschlossenen Partitionen..."
+msgid "There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."
+msgstr "Keine Partitionen mit Microsoft Windows gefunden! Bitte überprüfen Sie die angeschlossenen Partitionen..."
 
 #: .tmp/ScrUser.py:111
 msgid "There isn't any selected user on User Selection Window!"
@@ -395,33 +373,21 @@ msgstr "Beenden"
 
 #: .tmp/ui_summaryWidget.py:55
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
-"</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Your settings will be applied in next screen...</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ihre Einstellungen werden geschrieben, wenn "
-"Sie zum nächsten Screen weitergehen...</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Ihre Einstellungen werden geschrieben, wenn Sie zum nächsten Screen weitergehen...</span></p></body></html>"
 
 #: .tmp/ui_userFilesWidget.py:45
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_userFilesWidget.py:46
 msgid "Do Nothing"
@@ -437,7 +403,7 @@ msgstr "Kopiere Dateien ins Verzeichnis:"
 
 #: .tmp/ui_userFilesWidget.py:49
 msgid "~/Desktop"
-msgstr ""
+msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
 msgid "Directory"
@@ -457,44 +423,23 @@ msgstr "Benutzer"
 
 #: .tmp/ui_welcomeWidget.py:45
 msgid ""
-"This application, called Migration Tool, helps you transfer files and "
-"settings from other operating systems to Pardus. Please click Next to "
-"transfer your files. \n"
+"This application, called Migration Tool, helps you transfer files and settings from other operating systems to Pardus. Please click Next to transfer your files. \n"
 "\n"
-"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
-"basic desktop needs; helps you connect to internet, read e-mails, work with "
-"office documents and more!"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
 msgstr ""
-"Dieses Programm, genannt Migration Tool, wird Ihnen helfen Dateien und "
-"Einstellungen Ihres schon vorhandenen Betriebssystems zu Pardus zu "
-"überführen. Bitte klicken Sie auf Weiter um die notwendigen Dateien zu "
-"kopieren. \n"
+"Dieses Programm, genannt Migration Tool, wird Ihnen helfen Dateien und Einstellungen Ihres schon vorhandenen Betriebssystems zu Pardus zu überführen. Bitte klicken Sie auf Weiter um die notwendigen Dateien zu kopieren. \n"
 "\n"
-"Pardus ist eine GNU/Linux Distribution, ausgerichtet auf die grundsätzlichen "
-"Anforderungen an ein PC-Betriebssystem für sämtliche Benutzerschichten. "
-"Pardus hilft Ihnen sich mit dem Internet zu verbinden, unterstützt Sie beim "
-"E-mail lesen, beim arbeiten mit Office Dokumenten und vielem mehr!"
+"Pardus ist eine GNU/Linux Distribution, ausgerichtet auf die grundsätzlichen Anforderungen an ein PC-Betriebssystem für sämtliche Benutzerschichten. Pardus hilft Ihnen sich mit dem Internet zu verbinden, unterstützt Sie beim E-mail lesen, beim arbeiten mit Office Dokumenten und vielem mehr!"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Willkommen zum Migrations - Assistenten !</span></p></"
-#~ "body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Willkommen zum Migrations - Assistenten !</span></p></body></html>"
