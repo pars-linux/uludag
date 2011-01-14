@@ -70,7 +70,7 @@ class PM:
         elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
             errorTitle = i18n("Authorization Error")
             errorMessage = i18n("You are not authorized for this operation.")
-        elif "HTTP Error 404" in message:
+        elif "HTTP Error 404" in message and not package == '':
             errorTitle = i18n("Pisi Error")
             errorMessage = unicode(i18n("Package <b>%s</b> not found in repositories.<br>"\
                                         "It may be upgraded or removed from the repository.<br>"\
