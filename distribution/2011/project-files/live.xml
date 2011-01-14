@@ -290,7 +290,7 @@
         <SelectedPackage>yacpi</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zemberek</SelectedPackage>
-        <SelectedPackage>zemberek-openoffice</SelectedPackage>
+        <SelectedPackage>zemberek-office</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>ConsoleKit</Package>
@@ -1143,7 +1143,7 @@
         <Package>zd1201-firmware</Package>
         <Package>zd1211-firmware</Package>
         <Package>zemberek</Package>
-        <Package>zemberek-openoffice</Package>
+        <Package>zemberek-office</Package>
         <Package>zemberek-server</Package>
         <Package>zip</Package>
         <Package>zlib</Package>
