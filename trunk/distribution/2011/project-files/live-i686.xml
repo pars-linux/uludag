@@ -40,16 +40,13 @@
         <SelectedPackage>gfxboot</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
-        <SelectedPackage>gimp-i18n-ca</SelectedPackage>
         <SelectedPackage>gimp-i18n-de</SelectedPackage>
         <SelectedPackage>gimp-i18n-es</SelectedPackage>
         <SelectedPackage>gimp-i18n-fr</SelectedPackage>
         <SelectedPackage>gimp-i18n-hu</SelectedPackage>
         <SelectedPackage>gimp-i18n-it</SelectedPackage>
         <SelectedPackage>gimp-i18n-nl</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pl</SelectedPackage>
         <SelectedPackage>gimp-i18n-ru</SelectedPackage>
-        <SelectedPackage>gimp-i18n-pt_BR</SelectedPackage>
         <SelectedPackage>gimp-i18n-sv</SelectedPackage>
         <SelectedPackage>gimp-i18n-tr</SelectedPackage>
         <SelectedPackage>glibc-locales-ca</SelectedPackage>
@@ -80,7 +77,6 @@
         <SelectedPackage>k3b-l10n-other</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
-        <SelectedPackage>kde-l10n-ca</SelectedPackage>
         <SelectedPackage>kde-l10n-de</SelectedPackage>
         <SelectedPackage>kde-l10n-es</SelectedPackage>
         <SelectedPackage>kde-l10n-fr</SelectedPackage>
@@ -88,8 +84,6 @@
         <SelectedPackage>kde-l10n-hu</SelectedPackage>
         <SelectedPackage>kde-l10n-ru</SelectedPackage>
         <SelectedPackage>kde-l10n-nl</SelectedPackage>
-        <SelectedPackage>kde-l10n-pl</SelectedPackage>
-        <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-l10n-sv</SelectedPackage>
         <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kde-l10n-tr-doc</SelectedPackage>
@@ -144,7 +138,6 @@
         <SelectedPackage>libreoffice-langpack-hu</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-it</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-nl</SelectedPackage>
-        <SelectedPackage>libreoffice-langpack-pt-BR</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-ru</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-sv</SelectedPackage>
         <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
