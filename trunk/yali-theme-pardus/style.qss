@@ -15,18 +15,26 @@ QWidget#scrollAreaWidgetContents {
 
 QSlider::groove:horizontal {
     height: 12px;
-    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #B1B1B1, stop:1 #FFFFFF);
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.516304, y2:0.653, stop:0 rgba(171, 171, 171, 255), stop:1 rgba(255, 255, 255, 255));
+    border-radius: 2px;
     margin: 2px 0;
 }
 
 QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5A2848, stop:1 #8f8f8f);
-    border: 1px solid #5c5c5c;
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+    border:1px solid  rgba(34, 49, 60, 100);
     width: 18px;
     margin: 0 0;
     border-radius: 2px;
 }
 
+QSlider::handle:horizontal:hover {
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255));
+    border:1px solid  rgba(34, 49, 60, 100);
+    width: 18px;
+    margin: 0 0;
+    border-radius: 2px;
+}
  QToolButton {
     color: white;
 	border:1px solid  rgba(34, 49, 60, 100);
