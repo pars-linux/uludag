@@ -121,7 +121,7 @@ class OperationManager(QObject):
             logger.debug("Args: %s" % str(args))
 
         # FIXME: iface should just send either a status or signal
-        if signal in  ["status", "progress"]:
+        if signal in ["status", "progress"]:
             signal = args[0]
             args = args[1:]
         ####
