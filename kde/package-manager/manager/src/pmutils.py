@@ -17,6 +17,7 @@ import comar
 import urllib
 import unicodedata
 
+import traceback
 from pmlogging import logger
 
 from PyQt4.QtCore import Qt
