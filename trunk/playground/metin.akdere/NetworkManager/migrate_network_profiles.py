@@ -8,16 +8,19 @@ import ConfigParser
 
 
 default_nameservers = []
+default_resolv_conf_file = "/etc/resolv.default.conf"
+lan_config_file  = "/etc/network/net_tools"
+wlan_config_file  = "/etc/network/wireless_tools"
+NetworkManager_conf_dir = "/etc/NetworkManager/system-connections"
 
 def get_default_nameservers():
     """Read once default name servers in resolve.default.conf, if 'name_mode' in
     given profile was set to default, supply these values in the new profile file
     """
 
-    global default_nameservers
     if len(default_nameservers) == 0:
+
         # TODO: We should supply a default nameserver conf unless we find any
-        default_resolv_conf_file = "resolv.default.conf"
         if os.path.exists(default_resolv_conf_file):
             try:
                 file_pointer = open(default_resolv_conf_file)
@@ -181,7 +184,8 @@ class NetworkManagerProfile:
         """Write settings to profile file"""
 
         #Before writing to file we must convert underscores to dashes, moreover _id must be written as id, and _type as type
-        with open(self.connection._id, "wb") as configfile:
+        profile_path = os.path.join("%s" % NetworkManager_conf_dir, self.connection._id)
+        with open(profile_path, "wb") as configfile:
             self.cfg.write(configfile)
 
 
@@ -203,7 +207,7 @@ class Connection:
         return str(uuid.uuid4())
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -292,7 +296,7 @@ class IpV4:
         return netmask_value
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -324,7 +328,7 @@ class IpV6:
         self.method = "ignore"
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -368,7 +372,7 @@ class _802_3_Ethernet:
                             return words[i+1]
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -424,7 +428,7 @@ class _802_11_Wireless:
         return "infrastructure"
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -467,7 +471,7 @@ class _802_11_Wireless_Security:
             return "wpa-psk"
 
     def set_config(self, cfg):
-        """One single config file will be used ot write settings"""
+        """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
@@ -485,8 +489,8 @@ class Migrator:
 
         self.pardus_profiles = []
         self.network_manager_profiles = []
-        self.lan_config_path = "net_tools"
-        self.wlan_config_path = "wireless_tools"
+        self.lan_config_path = lan_config_file
+        self.wlan_config_path = wlan_config_file
         self.read_pardus_profiles()
         #self.transform_profiles()
         #self.write_new_profiles()
@@ -535,3 +539,4 @@ class Migrator:
 
         for profile in self.network_manager_profiles:
             profile.write_config()
+
