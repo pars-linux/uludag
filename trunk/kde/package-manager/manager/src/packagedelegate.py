@@ -162,7 +162,10 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         for _rt_i in range(rate):
             self._rt_1.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
 
-        foregroundColor = option.palette.color(QtGui.QPalette.Text)
+        if option.state & QtGui.QStyle.State_HasFocus:
+            foregroundColor = option.palette.color(QtGui.QPalette.HighlightedText)
+        else:
+            foregroundColor = option.palette.color(QtGui.QPalette.Text)
         p.setPen(foregroundColor)
 
         # Package Name
