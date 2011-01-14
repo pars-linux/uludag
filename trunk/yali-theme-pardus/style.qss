@@ -1,5 +1,5 @@
 #menuContainer{
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+	background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 140), stop:0.501481 rgba(70, 70, 70, 140), stop:0.503057 rgba(62, 62, 62, 140), stop:1 rgba(16, 16, 16, 140));
 	border-top: 1px solid white
 }
 
@@ -145,7 +145,7 @@ QListView {
 
 
 #frame{
-background-color: rgba(0,0,0,100);
+background-color: rgba(0,0,0,70);
 }
 
 
@@ -153,7 +153,7 @@ background-color: rgba(0,0,0,100);
 #headContainer{
     border:1px;
     border-bottom:1px solid rgba(255,255,255,100);
-    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 255), stop:0.501481 rgba(70, 70, 70, 255), stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+    background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0 rgba(132, 132, 132, 140), stop:0.501481 rgba(70, 70, 70, 140), stop:0.503057 rgba(62, 62, 62, 140), stop:1 rgba(16, 16, 16, 140));
     /*background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0,
 stop:0 rgba(26, 38, 45, 255), stop:0.398093 rgba(51, 72, 91, 255), stop:0.521739
 rgba(45, 76, 94, 255), stop:0.531585 rgba(49, 84, 106, 255), stop:0.983696
