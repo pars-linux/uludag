@@ -15,9 +15,9 @@ Applicant Tracking on Bugzilla
 
 - Developers and testers can follow this process in order to be a contributor.
 - For translators applications can be held from `Pardus translation website <http://translate.pardus.org.tr>`_. (See :ref:`introduction-to-translation`)
-- For bug triagers please see `Bug reporting and triaging <http://developer.pardus.org.tr/policies/newcontributor/areas-to-contribute.html#bug-reporting-and-triaging>`_
-- For content writers please see `Documentation <http://developer.pardus.org.tr/policies/newcontributor/areas-to-contribute.html#documentation>`_
-- For designers please see `Graphical design and multimedia <http://developer.pardus.org.tr/policies/newcontributor/areas-to-contribute.html#graphical-design-and-multimedia>`_
+- For bug triagers please see `Bug reporting and triaging <http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html#bug-reporting-and-triaging>`_
+- For content writers please see `Documentation <http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html#documentation>`_
+- For designers please see `Graphical design and multimedia <http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html#graphical-design-and-multimedia>`_
 
     ..  image:: images/application_process.png
 
