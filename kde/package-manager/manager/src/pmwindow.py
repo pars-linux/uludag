@@ -59,26 +59,26 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
 
         # Check if another pisi instance already running
         if isPisiRunning():
-            self.exceptionCaught("ALREADY RUNNING")
+            self.exceptionCaught("ALREADY RUNNING", block = True)
 
         # Check given package names available in repositories
         if not any(package.endswith('.pisi') for package in packages):
             available_packages = self.state.packages()
             for package in packages:
                 if package not in available_packages:
-                    self.exceptionCaught('HTTP Error 404', package)
+                    self.exceptionCaught('HTTP Error 404', package, block = True)
 
         # Check if local/remote packages mixed with repo packages
         # which pisi does not support to handle these at the same time
         else:
             if not all(package.endswith('.pisi') for package in packages):
-                self.exceptionCaught('MIXING PACKAGES')
+                self.exceptionCaught('MIXING PACKAGES', block = True)
 
             # Check given local packages if exists
             for package in get_real_paths(packages):
                 if '://' not in package and package.endswith('.pisi'):
                     if not os.path.exists(package):
-                        self.exceptionCaught('FILE NOT EXISTS', package)
+                        self.exceptionCaught('FILE NOT EXISTS', package, block = True)
 
         self.state.state = StateManager.INSTALL
 
