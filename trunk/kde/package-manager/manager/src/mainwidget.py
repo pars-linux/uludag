@@ -71,7 +71,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self._postexceptions = []
 
         self.state = StateManager(self)
-        self.lastState = self.state.state
         self.currentState = None
         self.completer = None
         self._updatesCheckedOnce = False
@@ -94,6 +93,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
         self.initialize()
+
         self.updateSettings()
         self.setActionButton()
 
@@ -168,6 +168,13 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.completer.setCaseSensitivity(Qt.CaseInsensitive)
         self.searchLine.setCompleter(self.completer)
 
+    def selectComponent(self, component):
+        if not self.state.iface.operationInProgress():
+            self.stateTab.setCurrentIndex(1)
+            if component in self.groupList._list:
+                self.groupList.setCurrentItem(self.groupList._list[component])
+                self.groupFilter()
+
     def updateSettings(self):
         self.packageList.showComponents = PMConfig().showComponents()
         self.packageList.showIsA = PMConfig().showIsA()
@@ -193,6 +200,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
     def initializeGroupList(self):
         self.groupList.clear()
+        self.groupList._list = {}
         self.groupList.setAlternatingRowColors(True)
         self.groupList.setIconSize(QSize(32, 32))
         self.groupList.setState(self.state)
@@ -330,7 +338,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
     def switchState(self, state):
         self.pdsMessageBox.hideMessage()
         self._states[state][1].setChecked(True)
-        self.lastState = self.state.state
         self.state.setState(state)
         self.currentState = state
         self._selectedGroups = []

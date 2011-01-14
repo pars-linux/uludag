@@ -35,6 +35,7 @@ class GroupList(QListWidget):
                             KIconLoader.SizeSmallMedium))
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"),
                             self.groupChanged)
+        self._list = {}
 
     def setState(self, state):
         self.state = state
@@ -69,6 +70,7 @@ class GroupList(QListWidget):
         item.setToolTip(localName)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
+        self._list[name] = item
 
     def moveAllToFirstLine(self):
         if not self.count():
