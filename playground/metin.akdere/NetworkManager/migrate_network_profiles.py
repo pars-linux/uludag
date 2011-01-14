@@ -188,6 +188,12 @@ class NetworkManagerProfile:
         with open(profile_path, "wb") as configfile:
             self.cfg.write(configfile)
 
+    def set_ownership(self):
+        """NetworkManager is smart enough to understand whether a configuration file is valid 
+        by checking its permissions"""
+
+        os.chmod(os.path.join("%s" %NetworkManager_conf_dir, self.connection._id), 0600)
+
 
 class Connection:
 
@@ -535,8 +541,9 @@ class Migrator:
             self.network_manager_profiles.append(network_manager_profile)
 
     def write_network_manager_profiles(self):
-        """Create profile file for each NetworkManager profile"""
+        """Create profile file for each NetworkManager profile and change ownerships to 0600"""
 
         for profile in self.network_manager_profiles:
             profile.write_config()
+            profile.set_ownership()
 
