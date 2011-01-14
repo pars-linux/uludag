@@ -35,6 +35,35 @@ from mainwindow import MainWindow
 from localedata import setSystemLocale
 from pmutils import handleException
 
+class PmApp(KUniqueApplication):
+    def __init__(self, *args, **kwds):
+        super(PmApp, self).__init__(*args)
+
+        # Set system Locale, we may not need it anymore
+        # It should set just before MainWindow call
+        setSystemLocale()
+
+        # Create MainWindow
+        self.manager = MainWindow()
+
+    def newInstance(self):
+        args = KCmdLineArgs.parsedArgs()
+
+        component = None
+        if args.isSet("select-component"):
+            component = str(args.getOption("select-component"))
+            self.manager.cw.selectComponent(component)
+
+        # Check if show-mainwindow used in sys.args to show mainWindow
+        if args.isSet("show-mainwindow"):
+            self.manager.show()
+
+        # If system tray disabled show mainwindow at first
+        if not config.PMConfig().systemTray():
+            self.manager.show()
+
+        return super(PmApp, self).newInstance()
+
 # Package Manager Main App
 if __name__ == '__main__':
 
@@ -55,26 +84,10 @@ if __name__ == '__main__':
     # Add Command Line options
     options = KCmdLineOptions()
     options.add("show-mainwindow", ki18n("Show main window"))
+    options.add("select-component <component>", ki18n("Show main window"))
     KCmdLineArgs.addCmdLineOptions(options)
 
-    # Create a unique KDE Application
-    app = KUniqueApplication(True, True)
-
-    # Set system Locale, we may not need it anymore
-    # It should set just before MainWindow call
-    setSystemLocale()
-
-    # Create MainWindow
-    manager = MainWindow()
-
-    # Check if show-mainwindow used in sys.args to show mainWindow
-    args = KCmdLineArgs.parsedArgs()
-    if args.isSet("show-mainwindow"):
-        manager.show()
-
-    # If system tray disabled show mainwindow at first
-    if not config.PMConfig().systemTray():
-        manager.show()
+    app = PmApp()
 
     # Set exception handler
     sys.excepthook = handleException
