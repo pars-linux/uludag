@@ -559,7 +559,9 @@ QComboBox {
                                  stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
  }
 
-
+QComboBox:disabled {
+    background-color: rgba(160, 160, 160, 160);
+}
 
 
 QComboBox:!editable:hover, QComboBox::drop-down:editable:hover { 
@@ -569,8 +571,6 @@ QComboBox:!editable:hover, QComboBox::drop-down:editable:hover {
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
 
 }
-
-
 
 QComboBox:on:hover { 
 	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(129, 3, 3, 255), stop:0.0192308 rgba(160, 35, 25, 255), stop:0.521739 rgba(166, 35, 29, 255), stop:0.531585 rgba(184, 46, 40, 255), stop:0.983696 rgba(168, 78, 74, 255), stop:1 rgba(210, 110, 110, 255))
