@@ -137,6 +137,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
     def installPackages(self):
         reinstall = False
         answer = True
+        self.button_install.setEnabled(False)
         actions = self.state.checkInstallActions(self.model.selectedPackages())
         if actions:
             answer = askForActions(actions,
@@ -146,6 +147,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
                    i18n("Installed Packages"))
 
         if not answer:
+            self.button_install.setEnabled(True)
             return
 
         if actions:
