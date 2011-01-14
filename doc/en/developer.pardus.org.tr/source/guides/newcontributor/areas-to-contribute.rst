@@ -27,7 +27,10 @@ For contributor applications: :ref:`how-to-be-contributor`
 Test
 ****
 
-Our project has a test team in order to test the new releases of Pardus distributions and also test packages which will go to stable repositories. For detail information :ref:`pardus-test-processes`.
+Our project has a test team in order to test the new releases of Pardus distributions and also test packages which will go to stable repositories.
+
+.. For detail information :ref:`pardus-test-processes`.
+
 For contributor applications: :ref:`how-to-be-contributor`
 
 
