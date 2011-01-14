@@ -181,7 +181,7 @@ class StateManager(QObject):
                 self.showFailMessage()
                 return False
 
-        if not silence:
+        if not silence and not self.state == self.REMOVE:
             if not self.conflictCheckPasses(packages):
                 return False
 
