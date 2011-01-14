@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -81,6 +81,8 @@ msgid ""
 "An error occured:\n"
 "%s"
 msgstr ""
+"Ein Fehler ist aufgetreten:\n"
+"%s"
 
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
