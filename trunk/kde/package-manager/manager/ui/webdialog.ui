@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#Basket {
-
+background-color: rgb(164, 164, 164);
 border:1px solid #AAA;
 border-radius:4px;
 
@@ -39,21 +39,24 @@ border-radius:4px;
       </property>
       <item row="1" column="0">
        <widget class="QWidget" name="widget_2" native="true">
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
         <property name="styleSheet">
-         <string notr="true">#webView {background:rgba(0,0,0,0);}</string>
+         <string notr="true"/>
         </property>
         <layout class="QGridLayout" name="gridLayout">
-         <property name="horizontalSpacing">
-          <number>0</number>
-         </property>
-         <property name="verticalSpacing">
-          <number>5</number>
-         </property>
          <property name="margin">
           <number>1</number>
          </property>
+         <property name="spacing">
+          <number>0</number>
+         </property>
          <item row="1" column="0">
           <widget class="QTabWidget" name="tabWidget">
+           <property name="autoFillBackground">
+            <bool>false</bool>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
@@ -61,12 +64,15 @@ border-radius:4px;
             <enum>QTabWidget::North</enum>
            </property>
            <property name="currentIndex">
-            <number>1</number>
+            <number>0</number>
            </property>
            <property name="documentMode">
             <bool>true</bool>
            </property>
            <widget class="QWidget" name="packageFiles">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <attribute name="title">
              <string>Package Files</string>
             </attribute>
@@ -94,25 +100,32 @@ border-radius:4px;
             </layout>
            </widget>
            <widget class="QWidget" name="packageDetails">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgba(0,0,0,93);</string>
+             <string notr="true">QWidget#webWidget {
+	border:0px solid #555;
+	border-radius:6px;
+
+	background-color:rgba(122,122,122);
+    color:rgba(20,20,20);
+
+}</string>
             </property>
             <attribute name="title">
              <string>Package Details</string>
             </attribute>
             <layout class="QGridLayout" name="webLayout">
-             <item row="1" column="0">
-              <widget class="QWebView" name="webView">
-               <property name="styleSheet">
-                <string notr="true">background-color:rgba(0,0,0,0);</string>
-               </property>
-               <property name="url">
-                <url>
-                 <string>about:blank</string>
-                </url>
-               </property>
-              </widget>
-             </item>
+             <property name="leftMargin">
+              <number>4</number>
+             </property>
+             <property name="rightMargin">
+              <number>4</number>
+             </property>
+             <property name="bottomMargin">
+              <number>4</number>
+             </property>
              <item row="0" column="0">
               <widget class="QLabel" name="noconnection">
                <property name="font">
@@ -125,8 +138,7 @@ border-radius:4px;
                 <enum>Qt::LeftToRight</enum>
                </property>
                <property name="styleSheet">
-                <string notr="true">color:white;
-background-color:none;</string>
+                <string notr="true"/>
                </property>
                <property name="text">
                 <string>AppInfo Server is not reachable
@@ -135,6 +147,33 @@ Please check your network connection</string>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
                </property>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QWidget" name="webWidget" native="true">
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <property name="horizontalSpacing">
+                 <number>0</number>
+                </property>
+                <property name="margin">
+                 <number>4</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QWebView" name="webView">
+                  <property name="styleSheet">
+                   <string notr="true">background-color:rgba(0,0,0,0);</string>
+                  </property>
+                  <property name="url">
+                   <url>
+                    <string>about:blank</string>
+                   </url>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
@@ -161,7 +200,7 @@ background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
 
-
+border-bottom:1px solid #CCC;
 }
 </string>
            </property>

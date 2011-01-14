@@ -17,6 +17,8 @@ import comar
 import urllib
 import unicodedata
 
+from pmlogging import logger
+
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import SIGNAL

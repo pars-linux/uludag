@@ -88,11 +88,11 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             _replace('title', package)
             _replace('summary', summary)
             _replace('description', description)
-            self.webView.show()
+            self.webWidget.show()
             self.noconnection.hide()
         else:
             self.noconnection.show()
-            self.webView.hide()
+            self.webWidget.hide()
 
     def showPackageDetails(self, package, installed, summary='', description=''):
         self.packageName.setText(package)
@@ -101,7 +101,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.loadFinished.connect(lambda x: \
                 self._sync_template(x, package, summary, description))
         if network_available():
-            self.webView.hide()
+            self.webWidget.hide()
             self.busy.show()
             self.busy.startAnimation()
 
