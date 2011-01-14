@@ -115,9 +115,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
-        painter.save()
         PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
-        painter.restore()
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
@@ -307,7 +305,6 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             buttonStyle.rect = QRect(width - 100, position - 22, 100, 22)
 
         p.end()
-        painter.save()
 
         if option.state & QtGui.QStyle.State_HasFocus and self.animatable:
             option.state |= QtGui.QStyle.State_Selected
@@ -320,7 +317,6 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         painter.drawPixmap(option.rect.topLeft(), pixmap)
         del pixmap
-        painter.restore()
 
     def editorEvent(self, event, model, option, index):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0 and index.flags() & Qt.ItemIsUserCheckable:
