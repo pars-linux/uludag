@@ -18,6 +18,7 @@ import urllib
 import unicodedata
 
 from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QEventLoop
 
@@ -58,8 +59,7 @@ class PM:
                 KNotification.CloseOnTimeout,
                 KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
 
-    def exceptionCaught(self, message, package = ''):
-
+    def exceptionCaught(self, message, package = '', block = False):
         self.runPreExceptionMethods()
 
         if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
@@ -87,16 +87,20 @@ class PM:
             errorMessage = message
 
         self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
-        self.messageBox.exec_()
 
-        self.runPostExceptionMethods()
+        if block:
+            self.messageBox.exec_()
+            self.runPostExceptionMethods()
+        else:
+            QTimer.singleShot(0, self.messageBox.exec_)
+            self.messageBox.buttonClicked.connect(self.runPostExceptionMethods)
 
     def runPreExceptionMethods(self):
         if hasattr(self, '_preexceptions'):
             for method in self._preexceptions:
                 method()
 
-    def runPostExceptionMethods(self):
+    def runPostExceptionMethods(self, *args):
         if hasattr(self, '_postexceptions'):
             for method in self._postexceptions:
                 method()
