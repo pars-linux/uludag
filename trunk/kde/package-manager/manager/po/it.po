@@ -274,7 +274,7 @@ msgstr "Pacchetto <b>%s</b> non trovato nei repositori. Può essere stato aggior
 
 #: src/pmutils.py:78
 msgid "Mixing file names and package names not supported yet."
-msgstr ""
+msgstr "La miscelazione dei nomi dei file e dei pacchetti non è ancora supportata."
 
 #: src/pmutils.py:81
 #, python-format
@@ -805,13 +805,15 @@ msgstr "Dettagli del Pacchetto"
 
 #: ui/ui_webdialog.py:168
 msgid "Type to filter files"
-msgstr ""
+msgstr "Digita per filtrare i file"
 
 #: ui/ui_webdialog.py:170
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
 msgstr ""
+"AppInfo Server non è raggiungibile\n"
+"Per favore controllare connessione di rete"
 
 #~ msgid "Search Button"
 #~ msgstr "Pulsante di Ricerca"
