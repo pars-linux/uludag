@@ -308,7 +308,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
                          "System.Manager.updatePackage"):
             self.notifyFinished()
 
-        if operation == "System.Manager.installPackage":
+        if operation == "System.Manager.installPackage" and self._started:
             self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
             self.summaryDialog.showSummary()
 
