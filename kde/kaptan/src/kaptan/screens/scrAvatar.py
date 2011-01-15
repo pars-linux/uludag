@@ -59,7 +59,7 @@ class Widget(QtGui.QWidget, Screen):
                 if "video_capture" in cam_capabilities:
                     if "radio" in cam_capabilities or "tuner" in cam_capabilities:
                         continue
-                    self.ui.comboBox.addItem(cam_str)
+                    self.ui.comboBox.addItem(cam_str, QVariant(os.path.join("/dev", dev)))
 
         self.timer = QtCore.QTimer(self)
         self.connect(self.timer, QtCore.SIGNAL("timeout()"), self.refreshCam)
@@ -82,8 +82,7 @@ class Widget(QtGui.QWidget, Screen):
         self.ui.takeButton.show()
         self.ui.takeAgainButton.hide()
         self.timer.stop()
-        cam = str(self.ui.comboBox.currentText())
-        cam = cam.split("-")[1].strip()
+        cam = str(self.ui.comboBox.itemData(self.ui.comboBox.currentIndex()).toString())
         self.video = v4l2capture.Video_device(cam)
 
         self.size_x, self.size_y = self.video.set_format(320, 240)
