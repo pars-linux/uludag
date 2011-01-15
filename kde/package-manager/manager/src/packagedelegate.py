@@ -36,7 +36,6 @@ LIGHTGREEN = QtGui.QColor('#F1F5EC')
 DARKGREEN = QtGui.QColor('#32775F')
 CHECK_ICON = 'task-complete'
 RECT = QRect()
-
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
 ROW_HEIGHT = 52
@@ -92,6 +91,9 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
         self.parent = parent.packageList
+
+        # Base style for some of important features
+        self.oxygen = QtGui.QStyleFactory.create('oxygen')
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -307,8 +309,9 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         p.end()
 
         if option.state & QtGui.QStyle.State_HasFocus and self.animatable:
-            # option.state |= QtGui.QStyle.State_Selected
-            PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_FrameButtonBevel, option, painter, None)
+            option.state |= QtGui.QStyle.State_MouseOver
+            # Use Oxygen style to draw focus rect like MouseOver effect of Oxygen..
+            self.oxygen.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
             if self.show_details_button:
