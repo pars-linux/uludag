@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="dvd" compression="lzo">
-    <Title>Pardus 2011 RC (x86_64)</Title>
+    <Title>Pardus 2011 (x86_64)</Title>
     <WorkDir>/tmp/pardusman-workdir/64</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
