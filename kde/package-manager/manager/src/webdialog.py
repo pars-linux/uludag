@@ -11,6 +11,7 @@
 # Please read the COPYING file
 
 from PyQt4 import QtGui
+from PyQt4 import QtWebKit
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
@@ -20,7 +21,9 @@ from pds.gui import *
 from pmutils import *
 from pds.thread import PThread
 
+from ui_preview import Ui_Preview
 from ui_webdialog import Ui_WebDialog
+
 from pds.qprogressindicator import QProgressIndicator
 
 class WebDialog(PAbstractBox, Ui_WebDialog):
@@ -47,6 +50,9 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.webView.page().mainFrame().setScrollBarPolicy(Qt.Vertical, Qt.ScrollBarAlwaysOff)
         self.webView.page().mainFrame().setScrollBarPolicy(Qt.Horizontal, Qt.ScrollBarAlwaysOff)
 
+        self.webView.page().setLinkDelegationPolicy(QtWebKit.QWebPage.DelegateAllLinks)
+        self.webView.page().linkClicked.connect(self.showFullImage)
+
         self.tabWidget.removeTab(0)
 
         self.busy = QProgressIndicator(self, "white")
@@ -57,6 +63,10 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self._filesThread = PThread(self, self.getFiles, self.getFilesFinished)
         self.filterLine.setListWidget(self.filesList)
         self.noconnection.hide()
+        self.parent = parent
+
+    def showFullImage(self, url):
+        PreviewDialog(self.parent, url)
 
     def showPage(self, addr):
         if network_available():
@@ -122,4 +132,52 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.busy.stopAnimation()
         self.webView.loadFinished.disconnect()
         self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
+
+class PreviewDialog(PAbstractBox, Ui_Preview):
+    def __init__(self, parent, url):
+        PAbstractBox.__init__(self, parent)
+        self.setupUi(self)
+
+        # PDS Settings
+        self._animation = 1
+        self._duration = 400
+        self.enableOverlay()
+        # self._disable_parent_in_shown = True
+
+        self.cancelButton.clicked.connect(self._hide)
+        self.cancelButton.setIcon(KIcon("dialog-close"))
+
+        # Hide Scrollbars and context menu in webview
+        self.webView.setContextMenuPolicy(Qt.NoContextMenu)
+        self.webView.page().mainFrame().setScrollBarPolicy(Qt.Vertical, Qt.ScrollBarAlwaysOff)
+        self.webView.page().mainFrame().setScrollBarPolicy(Qt.Horizontal, Qt.ScrollBarAlwaysOff)
+
+        self.busy = QProgressIndicator(self, "white")
+        self.busy.setMaximumSize(QSize(48, 48))
+        self.webLayout.addWidget(self.busy)
+        self.busy.hide()
+
+        QTimer.singleShot(0, lambda: self.showPackageScreenShot(url))
+
+        self.setOverlayClickMethod(lambda x:self._hide())
+
+    def showPackageScreenShot(self, url):
+        if network_available():
+
+            self.webView.loadFinished.connect(lambda x: self.webView.setVisible(x))
+            self.webView.loadFinished.connect(lambda x: self.busy.setVisible(not x))
+            self.webView.loadFinished.connect(lambda x: self.cancelButton.setVisible(x))
+
+            self.registerFunction(FINISHED, lambda: self.webView.load(url))
+
+            self.cancelButton.hide()
+            self.webView.hide()
+            self.busy.busy()
+
+            self.animate(start = MIDLEFT, stop = MIDCENTER)
+
+    def _hide(self):
+        self.busy.stopAnimation()
+        self.webView.loadFinished.disconnect()
+        self.animate(start = MIDCENTER, stop = MIDRIGHT, direction = OUT)
 
