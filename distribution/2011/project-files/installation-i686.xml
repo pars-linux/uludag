@@ -1335,6 +1335,7 @@
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
+        <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>

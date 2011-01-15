@@ -340,6 +340,7 @@
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
+        <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
