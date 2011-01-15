@@ -1,3 +1,33 @@
+2010-12-27 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 28 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-26 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 28 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 96% (Stefan Wilhelm)
+         * New status: 27 messages complete with 0 fuzzies and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Clear \n after getting the options
+         * Bug fixed at http://bugs.pardus.org.tr/15779
+
+2010-12-21 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - update .desktop files 
+
+2010-12-20 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 89% (Klemens Häckel)
+         * New status: 25 messages complete with 0 fuzzies and 3 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2010-12-17 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Final Release for 2011 
 
