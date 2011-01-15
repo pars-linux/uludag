@@ -92,8 +92,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.packageList.setColumnWidth(0, 32)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
 
-        self.initialize()
-
         self.updateSettings()
         self.setActionButton()
 
