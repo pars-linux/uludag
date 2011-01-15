@@ -1,9 +1,87 @@
+2011-01-10 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-10 igungor
+         * Update messages and affected po files.
+
+2011-01-10 igungor
+         * Fix typo
+
+2011-01-08 transifex
+         * l10n: Updated Italian (it) translation to 100% (Ali Işıngör)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-27 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-23 transifex
+         * l10n: Updated Italian (it) translation to 70% (Ali Işıngör)
+         * New status: 21 messages complete with 0 fuzzies and 9 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 96% (Stefan Wilhelm)
+         * New status: 29 messages complete with 0 fuzzies and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-21 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ready for 2011
+         * - Use flat buttons
+         * - Hide standalone app in KDE
+
+2010-12-20 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 80% (Klemens Häckel)
+         * New status: 24 messages complete with 0 fuzzies and 6 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-18 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 80% (Klemens Häckel)
+         * New status: 24 messages complete with 0 fuzzies and 6 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix hiddenlist bug issue, update todo, rename ChangeLog 
+
+2010-12-17 transifex
+         * l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 100% (José Afonso da Silva Carvalho)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add factoryName for each manager to fix systemsettings bug 
+
+2010-12-09 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-07 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Add helps 
+
+2010-12-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Beta 1 
+
 2010-11-28 transifex
          * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
          * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Just colorize label itself 
 
 2010-11-26 transifex
@@ -11,38 +89,38 @@
          * New status: 30 messages complete with 0 fuzzies and 0 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Update po, add AUTHORS 
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Workaround for hidden list items 
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Show descriptions in tooltip
          * - Wrap long tooltips to 70 character by using textwrap module
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Call setState async 
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Show error dialog when exception occured or authentication failed
          * - Store last state and go back if exception occured
          * - Show busy indicator while waiting the service state
 
-2010-11-26 gokmen.goksel
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * update todo 
 
-2010-11-25 gokmen.goksel
+2010-11-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * Show service descriptions from service package
          * Bug fixed at http://bugs.pardus.org.tr/13379
 
-2010-11-25 gokmen.goksel
+2010-11-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * add missing help 
 
-2010-11-23 gokmen.goksel
+2010-11-23 Gökmen Göksel <gokmen@pardus.org.tr>
          * 33333 
 
-2010-11-23 gokmen.goksel
+2010-11-23 Gökmen Göksel <gokmen@pardus.org.tr>
          * Use kcm_ prefix for kcm modules
          * Bug fixed at http://bugs.pardus.org.tr/15175
 
@@ -79,10 +157,10 @@
          * New status: 17 messages complete with 0 fuzzies and 6 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
 
-2010-09-15 gokmen.goksel
+2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
          * add TODO 
 
-2010-09-15 gokmen.goksel
+2010-09-15 Gökmen Göksel <gokmen@pardus.org.tr>
          * Service Manager v3.0.0_alpha1, ready for 2011 
 
 2010-08-08 transifex
@@ -240,7 +318,7 @@
 2009-07-14 ozan.caglayan
          * Add Turkish translations to kcm desktop files
 
-2009-07-10 gokmen.goksel
+2009-07-10 Gökmen Göksel <gokmen@pardus.org.tr>
          * repeat search after state change 
 
 2009-07-09 bahadir.kandemir
@@ -286,93 +364,108 @@
 2009-05-14 klemens
          * new spanish translation files (kh) starting..
 
-2009-05-11 gokmen.goksel
+2009-05-11 Gökmen Göksel <gokmen@pardus.org.tr>
          * Po updates
          * Ui and About Data updates
          * Ready for new release 
 
-2009-05-11 gokmen.goksel
+2009-05-11 Gökmen Göksel <gokmen@pardus.org.tr>
          * Filtering feature added with various filter method
          * Some ui fixes
 
 2009-05-10 bahadir.kandemir
          * Localize strings
 
-2009-05-09 gokmen.goksel
+2009-05-09 Gökmen Göksel <gokmen@pardus.org.tr>
          * Use .py, SystemSettings can not load the module without the extension ..
 
-2009-05-08 gokmen.goksel
+2009-05-08 Gökmen Göksel <gokmen@pardus.org.tr>
          * Merge setup.py from Network Manager 
 
-2009-04-03 gokmen.goksel
+2009-04-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * Search also in descriptions, special request of Onur ;) 
 
-2009-04-03 gokmen.goksel
+2009-04-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * Service filter added
          * Hide local services when just show servers selected
 
-2009-04-03 gokmen.goksel
+2009-04-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * Update UI
          * Update PO
          * Use hidden checkbox for service start status..
          * Use progressbar to show getting service info process..
 
-2009-04-02 gokmen.goksel
+2009-04-02 Gökmen Göksel <gokmen@pardus.org.tr>
          * Fill list and then update their status
          * Use checkbox for autostart state
 
-2009-04-02 gokmen.goksel
+2009-04-02 Gökmen Göksel <gokmen@pardus.org.tr>
          * Provide basic operations from backend.py
          * Use backend.py with widgets for predefined operations
 
-2009-04-02 gokmen.goksel
+2009-04-02 Gökmen Göksel <gokmen@pardus.org.tr>
          * Split modules, add license.. 
 
-2009-03-30 gokmen.goksel
+2009-03-30 Gökmen Göksel <gokmen@pardus.org.tr>
          * update ui,po ...
 
-2009-03-30 gokmen.goksel
+2009-03-30 Gökmen Göksel <gokmen@pardus.org.tr>
          * use instertCatalog method from KGlobal.locale()
          * pass if exception occurs when creating same symlink..
 
-2009-03-29 gokmen.goksel
+2009-03-29 Gökmen Göksel <gokmen@pardus.org.tr>
          * remove .. 
 
-2009-03-29 gokmen.goksel
+2009-03-29 Gökmen Göksel <gokmen@pardus.org.tr>
          * use build dir for temp files
          * skip build section, put them into install
          * use symlink instead of hardlink
          * make symlink for main.py
 
-2009-03-25 gokmen.goksel
+2009-03-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * check before creating dirs, use a link for system settings module ..
 
-2009-03-25 gokmen.goksel
+2009-03-25 Gökmen Göksel <gokmen@pardus.org.tr>
          * Huge changes, not finished ..
 
-2009-02-19 gokmen.goksel
+2009-02-19 Gökmen Göksel <gokmen@pardus.org.tr>
          * moved from branches, all kde4 work will be under it ..
 
-2009-02-12 gokmen.goksel
+2009-02-12 Gökmen Göksel <gokmen@pardus.org.tr>
          * it is very important to check if there is an active mainloop
          * before creating a new one, it may cause to crash plasma itself
 
-2009-01-20 gokmen.goksel
+2009-01-20 Gökmen Göksel <gokmen@pardus.org.tr>
          * much better name for work ..
 
-2009-01-20 gokmen.goksel
+2009-01-20 Gökmen Göksel <gokmen@pardus.org.tr>
          * much better name for work ..
 
-2008-12-03 gokmen.goksel
+2008-12-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * Fixed MakeFile 
          * Added Plasmoid (Python) for System Services Yay !
 
-2008-11-19 gokmen.goksel
+2008-11-19 Gökmen Göksel <gokmen@pardus.org.tr>
          * typo :) 
 
-2008-11-18 gokmen.goksel
+2008-11-18 Gökmen Göksel <gokmen@pardus.org.tr>
          * New UI design ..
 
-2008-11-17 gokmen.goksel
+2008-11-17 Gökmen Göksel <gokmen@pardus.org.tr>
          * A KDE4 oriented design ..
+
+2008-11-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * A lot of fixes for base system
+         * I wrote a small script for fixing py files created 
+         * from uis with pykde4uic.
+         * Icons updated
+
+2008-11-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Run in KDE4 System Settings
+         * Use QRC
+
+2008-11-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Created tasma-2009 branch
+         * Created service-manager for KDE4 with PyKDE4 as KApplication
+         * It is just a template for now.
 
