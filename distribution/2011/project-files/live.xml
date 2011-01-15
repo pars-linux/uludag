@@ -10,7 +10,6 @@
         <SelectedPackage>alsa-lib</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
-        <SelectedPackage>amarok</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
         <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
@@ -20,7 +19,7 @@
         <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>cdrtools</SelectedPackage>
         <SelectedPackage>choqok</SelectedPackage>
-        <SelectedPackage>chromium-browser</SelectedPackage>
+        <SelectedPackage>clementine</SelectedPackage>
         <SelectedPackage>crda</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
@@ -77,7 +76,6 @@
         <SelectedPackage>jfsutils</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>k3b-l10n-other</SelectedPackage>
-        <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kde-l10n-de</SelectedPackage>
         <SelectedPackage>kde-l10n-es</SelectedPackage>
@@ -118,6 +116,7 @@
         <SelectedPackage>kmozillahelper</SelectedPackage>
         <SelectedPackage>kmix</SelectedPackage>
         <SelectedPackage>konqueror-plugins</SelectedPackage>
+        <SelectedPackage>kscd</SelectedPackage>
         <SelectedPackage>ksplash-theme-pardus</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
         <SelectedPackage>kwin-crystal-style</SelectedPackage>
@@ -192,7 +191,6 @@
         <SelectedPackage>rdesktop</SelectedPackage>
         <SelectedPackage>redland-virtuoso</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
-        <SelectedPackage>rekonq</SelectedPackage>
         <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>rsync</SelectedPackage>
         <SelectedPackage>samba</SelectedPackage>
@@ -306,7 +304,6 @@
         <Package>alsa-plugins-pulseaudio</Package>
         <Package>alsa-utils</Package>
         <Package>alternatives</Package>
-        <Package>amarok</Package>
         <Package>apmd</Package>
         <Package>ar9170-firmware</Package>
         <Package>artwork-pardus-release</Package>
@@ -346,7 +343,6 @@
         <Package>check</Package>
         <Package>chmlib</Package>
         <Package>choqok</Package>
-        <Package>chromium-browser</Package>
         <Package>cln</Package>
         <Package>clucene</Package>
         <Package>comar</Package>
@@ -541,7 +537,6 @@
         <Package>jpeg</Package>
         <Package>k3b</Package>
         <Package>k3b-l10n-other</Package>
-        <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>kbd</Package>
         <Package>kde-l10n-ca</Package>
@@ -963,7 +958,6 @@
         <Package>redland</Package>
         <Package>redland-virtuoso</Package>
         <Package>reiserfsprogs</Package>
-        <Package>rekonq</Package>
         <Package>rlog</Package>
         <Package>rp-pppoe</Package>
         <Package>rsync</Package>
