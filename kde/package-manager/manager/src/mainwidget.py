@@ -168,6 +168,9 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
     def selectComponent(self, component):
         if not self.state.iface.operationInProgress():
+            if self.basket.isVisible():
+                self.basket._hide()
+
             self.stateTab.setCurrentIndex(1)
             if component in self.groupList._list:
                 self.groupList.setCurrentItem(self.groupList._list[component])
@@ -285,8 +288,8 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
                 self.progressDialog.repoOperationView()
-            if self.parent.centralWidget().basket.isVisible():
-                self.parent.centralWidget().basket._hide()
+            if self.basket.isVisible():
+                self.basket._hide()
                 QTimer.singleShot(0, self.progressDialog._show)
             else:
                 self.progressDialog._show()
