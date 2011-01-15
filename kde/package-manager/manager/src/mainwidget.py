@@ -287,7 +287,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
                 self.progressDialog.repoOperationView()
             if self.parent.centralWidget().basket.isVisible():
                 self.parent.centralWidget().basket._hide()
-                QTimer.singleShot(30, self.progressDialog._show)
+                QTimer.singleShot(0, self.progressDialog._show)
             else:
                 self.progressDialog._show()
 
