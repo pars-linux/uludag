@@ -195,6 +195,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         # Little time left for the new ui
         self.menuBar().setVisible(False)
+        self.cw.switchState(self.cw.state.ALL)
 
     def statusWaiting(self):
         self.updateStatusBar(i18n('Calculating dependencies...'), busy = True)
