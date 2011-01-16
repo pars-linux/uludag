@@ -78,18 +78,59 @@ def process_cmd_line():
     args = []
 
     # Initialization of option parser object
-    usage_str = "Usage: package-diff-notify [options] [repoURL [repoURL ...]]"
+    usage_str = "Usage: %prog [options] [repoURL [repoURL ...]]"
     des_str = "This is a notifier script to give detailed info to packagers about their packages."
     epi_str = "repoURL:\t  compressed pisi-index file path in URL format as xz or bz2"
 
     parser = OptionParser(prog = "package-diff-notify", version = "%prog 1.0", usage = usage_str, description = des_str, epilog = epi_str)
 
-    parser.add_option("-u", "--uselocal", dest = "uselocal", action = "store_true", default = False, help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
-    parser.add_option("-m", "--mail", dest = "mail", action = "store_true", default = False, help = "allow the util to send e-mails to packagers")
-    parser.add_option("-n", "--noreport", dest = "noreport", action = "store_true", default = False, help = "prevent the output from being dumped into separate files")
-    parser.add_option("-p", "--packager", dest = "packager", action = "store", type = "string", help = "filter the output to show details about specified packager(s) only")
-    parser.add_option("-k", "--package", dest = "package", action = "store", type = "string", help = "filter the output to show details about the specified packager only")
-    parser.add_option("-x", "--exclude", dest = "exclude", action = "store", type = "string", help = "filter out the given comma-separated component list")
+    parser.add_option("-u", "--uselocal",
+                     dest = "uselocal",
+                     action = "store_true",
+                     default = False,
+                     help = "use local pisi-index files as xz or bz2. Use without <repoURL>")
+
+    parser.add_option("-m", "--mail",
+                      dest = "mail",
+                      action = "store_true",
+                      default = False,
+                      help = "allow the util to send e-mails to packagers")
+
+    parser.add_option("-n", "--noreport",
+                      dest = "noreport", 
+                      action = "store_true",
+                      default = False,
+                      help = "prevent the output from being dumped into separate files")
+
+    parser.add_option("-p", "--packager",
+                     dest = "packager",
+                     action = "store",
+                     type = "string",
+                     help = "filter the output to show details about specified packager(s) only")
+
+    parser.add_option("-k", "--package",
+                     dest = "package",
+                     action = "store",
+                     type = "string",
+                     help = "filter the output to show details about the specified packager only")
+
+    parser.add_option("-x", "--exclude",
+                     dest = "exclude",
+                     action = "store",
+                     type = "string",
+                     help = "filter out the given comma-separated component list")
+
+    parser.add_option("-d", "--dump",
+                     dest = "dump",
+                     action = "store_true",
+                     default = False,
+                     help = "dump the content to the standard output")
+
+    parser.add_option("-a", "--all",
+                     dest = "allpackages",
+                     action = "store_true",
+                     default = False,
+                     help = "lists all packages even their attributes are same between repos")
 
     # Parse the command line
     (OPTIONS, args) = parser.parse_args()
@@ -266,6 +307,20 @@ def is_summary_dict_empty(summary_dict):
 
     return True
 
+def is_summary_dict_diff(summary_dict):
+    section_list = ("Package Names", "Packager", "Email", "Release", "Version", "Number of Sub-Package", "Number of Patches")
+
+    first_summary_item = summary_dict.values()[0]
+    rest_summary_items = summary_dict.values()[1:]
+
+    for order,section in enumerate(section_list):
+        if not section == "Release":
+            for item in rest_summary_items:
+                if not first_summary_item[order] == item[order]:
+                    return True
+
+    return False
+
 def prepare_content_body(packager):
     ''' This function generates info about all packages of given packager '''
 
@@ -325,6 +380,9 @@ def prepare_content_body(packager):
                                         if distro in REPOS[pckgr][obsolete][DISTROS]:
                                             summary_dict[distro] = create_summary_entry(pckgr, obsolete, distro)
         if not is_summary_dict_empty(summary_dict):
+            if not OPTIONS.allpackages:
+                if not is_summary_dict_diff(summary_dict):
+                    return content
             package_history.append(package)
             content = "%s%s\n%s\n%s\n\n" % (content, package, len(package) * "-", create_stanza(summary_dict))
 
@@ -407,6 +465,10 @@ def traverse_repos():
                 print "Generating report for packager %s..." % packager
                 fp = open("_".join(packager.split()), "w")
                 fp.write("%s" % content_body)
+
+            # Dumping to stdout is ok if only one packager's info is requested
+            if OPTIONS.dump and OPTIONS.packager:
+                print "%s's package(s):\n%s" %(packager, content_body)
 
     return True
 
