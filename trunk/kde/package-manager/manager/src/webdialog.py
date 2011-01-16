@@ -66,7 +66,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.parent = parent
 
     def showFullImage(self, url):
-        PreviewDialog(self.parent, url)
+        PreviewDialog(self, url)
 
     def showPage(self, addr):
         if network_available():
@@ -130,13 +130,17 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
     def _hide(self):
         self.busy.stopAnimation()
-        self.webView.loadFinished.disconnect()
+        try:
+            self.webView.loadFinished.disconnect()
+        except:
+            pass
         self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
 
 class PreviewDialog(PAbstractBox, Ui_Preview):
     def __init__(self, parent, url):
-        PAbstractBox.__init__(self, parent)
+        PAbstractBox.__init__(self, parent.parent)
         self.setupUi(self)
+        self.parent = parent
 
         # PDS Settings
         self._animation = 1
@@ -157,6 +161,7 @@ class PreviewDialog(PAbstractBox, Ui_Preview):
         self.webLayout.addWidget(self.busy)
         self.busy.hide()
 
+        self.parent._hide()
         QTimer.singleShot(0, lambda: self.showPackageScreenShot(url))
 
         self.setOverlayClickMethod(lambda x:self._hide())
@@ -174,10 +179,11 @@ class PreviewDialog(PAbstractBox, Ui_Preview):
             self.webView.hide()
             self.busy.busy()
 
-            self.animate(start = MIDLEFT, stop = MIDCENTER)
+            self.animate(start = BOTCENTER, stop = MIDCENTER)
 
     def _hide(self):
         self.busy.stopAnimation()
         self.webView.loadFinished.disconnect()
-        self.animate(start = MIDCENTER, stop = MIDRIGHT, direction = OUT)
+        self.animate(start = MIDCENTER, stop = BOTCENTER, direction = OUT)
+        self.parent.animate(start = BOTCENTER, stop = MIDCENTER)
 
