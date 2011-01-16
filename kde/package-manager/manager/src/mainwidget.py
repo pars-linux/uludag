@@ -258,7 +258,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.initializeGroupList()
 
     def startSearch(self):
-        searchText = unicode(self.searchLine.text()).split()
+        searchText = str(self.searchLine.text()).split()
         sourceModel = self.packageList.model().sourceModel()
         self.state.cached_packages = sourceModel.search(searchText)
 
