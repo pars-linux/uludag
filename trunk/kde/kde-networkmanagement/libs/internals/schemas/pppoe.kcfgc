@@ -1,5 +1,0 @@
-File=pppoe.kcfg
-ClassName=Pppoe
-Mutators=true
-Visibility=KNMINTERNALS_EXPORT
-NameSpace=Knm
