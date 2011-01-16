@@ -1,3 +1,26 @@
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Do not try to save same settings if already saved before. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Much better transition between webdialog and the preview ui ... 
+
+2011-01-15 transifex
+         * l10n: Updated Italian (it) translation to 100% (Ali Işıngör)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Force to use oxygen style for drawing focus rect like Oxygen style :) Qt Guru Part 2. 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Hide basket if is visible when selectComponent called 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update version string 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
          * - If operation is not started by PackageManager instance do not show the summary dialog about the operation 
 
@@ -792,39 +815,4 @@
 
 2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
          * Integrate with AppInfo for score information, alpha3 release 
-
-2010-10-18 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-16 transifex
-         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-15 transifex
-         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-13 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-12 transifex
-         * l10n: Updated Spanish (Castilian) (es) translation to 90% (Klemens Häckel)
-         * New status: 164 messages complete with 1 fuzzy and 17 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-12 transifex
-         * l10n: Updated Spanish (Castilian) (es) translation to 87% (Klemens Häckel)
-         * New status: 160 messages complete with 5 fuzzies and 17 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-12 transifex
-         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
 
