@@ -236,7 +236,7 @@ class RepositorySettings(SettingsTab):
         repoName = self.repoDialog.repoName.text()
         repoAddress = self.repoDialog.repoAddress.currentText()
         if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)) or str(repoName) == '':
-            QMessageBox.warning(self.settings, 
+            QMessageBox.warning(self.settings,
                                 i18n("Pisi Error"),
                                 i18n("Not a valid repository name"))
             return
@@ -457,6 +457,7 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
             if settings.changed:
                 settings.save()
+                settings.changed = False
         self.config = config.PMConfig()
 
     def showHelp(self):
