@@ -80,6 +80,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
     def getFilesFinished(self):
         self.filesList.addItems(self._filesThread.get())
+        self.filesList.sortItems()
 
     def _tabSwitched(self, index):
         if index == 0 and self.tabWidget.count() > 1:
