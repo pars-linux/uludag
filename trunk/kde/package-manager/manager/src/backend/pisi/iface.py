@@ -17,6 +17,7 @@ import comar
 import pisi
 
 from pmutils import get_real_paths
+from pmutils import repos_available
 from pmlogging import logger
 from os import path
 
@@ -318,8 +319,11 @@ class Iface(Singleton):
         return repos
 
     def updateRepositories(self):
+        if not repos_available(self):
+            return False
         logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
+        return True
 
     def updateRepository(self, repo):
         logger.debug("Updating %s..." % repo)
