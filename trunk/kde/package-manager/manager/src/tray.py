@@ -121,6 +121,9 @@ class PTray:
 
     # stolen from Akregator
     def slotSetUnread(self, unread):
+        cfg = config.PMConfig()
+        if not cfg.systemTray():
+            return
 
         if config.PMConfig().hideTrayIfThereIsNoUpdate() and unread == 0:
             self.setToolTip("package-manager", i18n("Package Manager"), i18n("No updates available"))
