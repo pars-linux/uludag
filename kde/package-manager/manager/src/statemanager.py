@@ -18,6 +18,7 @@ from PyKDE4.kdeui import KIcon
 from PyKDE4.kdecore import i18n
 from appinfo.client import AppInfoClient
 
+from pmutils import repos_available
 from pmutils import network_available
 from pmlogging import logger
 import config
@@ -147,16 +148,16 @@ class StateManager(QObject):
             chains[operation]()
 
     def updateRepoAction(self, silence = False):
-        if not network_available():
+
+        if not self.iface.updateRepositories():
             if not silence:
                 self.showFailMessage()
             return False
 
-        self.iface.updateRepositories()
-
-        if not AppInfoClient().checkOutDB()[0]:
-            AppInfoClient().setServer('http://appinfo.pardus.org.tr')
-            AppInfoClient().checkOutDB()
+        if network_available():
+            if not AppInfoClient().checkOutDB()[0]:
+                AppInfoClient().setServer('http://appinfo.pardus.org.tr')
+                AppInfoClient().checkOutDB()
 
         return True
 
@@ -178,8 +179,9 @@ class StateManager(QObject):
 
         if connection_required:
             if not network_available() and not self.state == self.REMOVE:
-                self.showFailMessage()
-                return False
+                if not repos_available(self.iface):
+                    self.showFailMessage()
+                    return False
 
         if not silence and not self.state == self.REMOVE:
             if not self.conflictCheckPasses(packages):
