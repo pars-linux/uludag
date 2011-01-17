@@ -1,3 +1,45 @@
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add more desktop files for Install More Software menu items ... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - use already translated string 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - If systemTray is not enabled ignore update changes 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use KStatusNotifierItem instead of KNotification.. 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Catch settingsDialog exceptions 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix tabs 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - No need for different updateRepo method, we use StateManager's updateRepoAction 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Even internet connection not availabe, user may use local repositories... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Check if repos available before starting to update... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add new repos_available method, Set default socket time... 
+
+2011-01-17 igungor
+         * critical bugfix for ru.po
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - When using unicode pisi.db get nuts. bork. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Special request from Gökcen to sort file list of selected packages. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Do not try to save same settings if already saved before. 
 
@@ -763,56 +805,4 @@
 
 2010-10-26 Gökmen Göksel <gokmen@pardus.org.tr>
          * Add history tab for future release 
-
-2010-10-23 transifex
-         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
-         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-21 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-21 Gökmen Göksel <gokmen@pardus.org.tr>
-         * i forgot to add important_packages file 
-
-2010-10-21 transifex
-         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
-         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * paranoia 
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Update package details page with given package information 
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * fix help document paths 
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Po update, operation translation fixed 
-
-2010-10-20 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Web UI for AppInfo is done. 
-
-2010-10-20 transifex
-         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
-         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * update appinfo db in repo update action 
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Po update 
-
-2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Integrate with AppInfo for score information, alpha3 release 
 
