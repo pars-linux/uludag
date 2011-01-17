@@ -15,6 +15,7 @@ import os
 import sys
 import comar
 import urllib
+import socket
 import unicodedata
 
 import traceback
@@ -140,9 +141,27 @@ def isSolidOnline():
 
 def network_available():
     try:
-        urllib.urlopen('http://packages.pardus.org.tr')
+        socket.setdefaulttimeout(6)
+        urllib.urlopen('http://appinfo.pardus.org.tr')
+        socket.setdefaulttimeout(60)
     except:
         return False
+    return True
+
+def repos_available(iface):
+    print "Checking repos..."
+    socket.setdefaulttimeout(6)
+    repos = iface.getRepositories(only_active = True)
+    if not repos:
+        return False
+    for name, address in repos:
+        print "Checking repo: %s at %s ..." % (name, address)
+        try:
+            urllib.urlretrieve('%s.sha1sum' % address)
+        except:
+            return False
+        finally:
+            socket.setdefaulttimeout(60)
     return True
 
 def isPisiRunning():
