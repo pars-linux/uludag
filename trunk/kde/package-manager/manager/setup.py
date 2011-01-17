@@ -148,9 +148,10 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
 
-        shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
+        for filename in glob.glob("data/*.desktop"):
+            shutil.copy(filename, apps_dir)
+
         shutil.copy("data/%s.png" % PROJECT, icon_dir)
-        shutil.copy("data/packagemanager-helper.desktop", apps_dir)
         shutil.copy("data/%s.xml" % PROJECT, mime_dir)
 
         # Install icons
