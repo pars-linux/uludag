@@ -7,9 +7,9 @@ if [ -z $TARGET ]; then
     exit
 fi
 
-svn export . /tmp/plymouth-theme-pardus
+svn export . /tmp/pardus
 cd /tmp
-mv plymouth-theme-pardus/pardus.script{.$TARGET,}
-tar cvjf plymouth-theme-pardus.tar.bz2 plymouth-theme-pardus
-rm -rf plymouth-theme-pardus
+mv pardus/pardus.script{.$TARGET,}
+tar cvjf plymouth-theme-pardus.tar.bz2 pardus
+rm -rf pardus
 
