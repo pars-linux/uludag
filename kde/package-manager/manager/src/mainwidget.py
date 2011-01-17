@@ -108,7 +108,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
-        self.connect(self.checkUpdatesButton, SIGNAL("clicked()"), self.updateRepoAction)
+        self.connect(self.checkUpdatesButton, SIGNAL("clicked()"), self.state.updateRepoAction)
         self.connect(self.searchButton, SIGNAL("clicked()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
@@ -298,12 +298,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             self.progressDialog.disableCancel()
         else:
             self.progressDialog.enableCancel()
-
-    def updateRepoAction(self):
-        if not network_available():
-            self.exceptionCaught('Socket Error')
-        else:
-            self.state.updateRepoAction()
 
     def actionFinished(self, operation):
         if operation in ("System.Manager.installPackage",
