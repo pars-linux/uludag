@@ -1,7 +1,13 @@
 # Pardus boot theme script derived from the basic script
 
 Window.SetBackgroundTopColor(0.196, 0.196, 0.196);
-Window.SetBackgroundBottomColor(0, 0, 0);
+
+bg.image = Image("bg.png");
+bg.sprite = Sprite(bg.image);
+bg.x = 0;
+bg.y = 0;
+bg.z = 10000;
+bg.sprite.SetPosition(bg.x, bg.y, bg.z);
 
 logo.image = Image("special://logo");
 logo.sprite = Sprite(logo.image);
@@ -9,11 +15,13 @@ logo.opacity_angle = 0;
 
 logo.sprite.SetX (Window.GetX() + Window.GetWidth()  / 2 - logo.image.GetWidth()  / 2);
 logo.sprite.SetY (Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2);
+logo.sprite.SetZ (30000);
 
 fun refresh_callback ()
   {
     if (status == "normal")
       {
+
         logo.opacity_angle += ((2 * 3.14) / 50) * 0.5;  # 0.5 HZ
         min_opacity = 0.3;
         opacity = (Math.Cos(logo.opacity_angle) + 1) / 2;
@@ -21,6 +29,7 @@ fun refresh_callback ()
         opacity += min_opacity;
         logo.sprite.SetX (Window.GetX() + Window.GetWidth()  / 2 - logo.image.GetWidth()  / 2);
         logo.sprite.SetY (Window.GetY() + Window.GetHeight() / 2 - logo.image.GetHeight() / 2);
+
         logo.sprite.SetOpacity (opacity);
       }
     else

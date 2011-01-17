@@ -4,6 +4,7 @@ nodist_theme_DATA = \
 
 dist_theme_DATA =                                                     \
                     pardus.script                                     \
+                    bg.png                                            \
                     box.png                                           \
                     bullet.png                                        \
                     entry.png                                         \
