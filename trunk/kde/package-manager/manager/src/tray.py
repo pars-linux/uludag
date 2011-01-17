@@ -126,13 +126,13 @@ class PTray:
             return
 
         if config.PMConfig().hideTrayIfThereIsNoUpdate() and unread == 0:
-            self.setToolTip("package-manager", i18n("Package Manager"), i18n("No updates available"))
+            self.setToolTip("package-manager", i18n("Package Manager"), i18n("All packages are up to date"))
             self.setStatus(KStatusNotifierItem.Passive)
         else:
             if unread > 0:
                 self.setToolTip("package-manager", i18n("Package Manager"), i18n("There are <b>%1</b> updates available!", unread))
             else:
-                self.setToolTip("package-manager", i18n("Package Manager"), i18n("No updates available"))
+                self.setToolTip("package-manager", i18n("Package Manager"), i18n("All packages are up to date"))
             self.setStatus(KStatusNotifierItem.Active)
 
         if self.unread == unread:
