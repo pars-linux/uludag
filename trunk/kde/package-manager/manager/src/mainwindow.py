@@ -107,9 +107,9 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def trayAction(self, operation):
         if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             self.tray.showPopup()
-        if self.tray.isVisible() and operation in ["System.Manager.updatePackage",
-                                                   "System.Manager.installPackage",
-                                                   "System.Manager.removePackage"]:
+        if self.tray.isActive() and operation in ["System.Manager.updatePackage",
+                                                  "System.Manager.installPackage",
+                                                  "System.Manager.removePackage"]:
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
