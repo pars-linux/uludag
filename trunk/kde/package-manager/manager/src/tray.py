@@ -25,7 +25,7 @@ class PTray:
         self.countIcon = QtGui.QIcon(":/data/tray-count.png")
         self.clip = QtGui.QMovie(":/data/animated-tray.mng")
         self.lastIcon = self.defaultIcon
-        self.setIcon(self.defaultIcon)
+        self.setIconByPixmap(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
         self.iface = iface
@@ -41,10 +41,10 @@ class PTray:
 
     def stop(self):
         self.clip.stop()
-        self.setIcon(self.lastIcon)
+        self.setIconByPixmap(self.lastIcon)
 
     def slotAnimate(self, scene):
-        self.setIcon(QtGui.QIcon(self.clip.currentPixmap()))
+        self.setIconByPixmap(QtGui.QIcon(self.clip.currentPixmap()))
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -103,12 +103,15 @@ class PTray:
     def settingsChanged(self):
         cfg = config.PMConfig()
         if cfg.systemTray():
-            self.show()
+            self.setCategory(KStatusNotifierItem.ApplicationStatus)
             QTimer.singleShot(1, self.updateTrayUnread)
         else:
-            self.hide()
+            self.setStatus(KStatusNotifierItem.Passive)
         QtGui.qApp.setQuitOnLastWindowClosed(not cfg.systemTray())
         self.updateInterval(cfg.updateCheckInterval())
+
+    def isActive(self):
+        return self.status() == KStatusNotifierItem.Active
 
     def updateTrayUnread(self):
         waitCursor()
@@ -120,9 +123,14 @@ class PTray:
     def slotSetUnread(self, unread):
 
         if config.PMConfig().hideTrayIfThereIsNoUpdate() and unread == 0:
-            self.hide()
-        elif config.PMConfig().systemTray():
-            self.show()
+            self.setToolTip("package-manager", i18n("Package Manager"), i18n("No updates available"))
+            self.setStatus(KStatusNotifierItem.Passive)
+        else:
+            if unread > 0:
+                self.setToolTip("package-manager", i18n("Package Manager"), i18n("There are <b>%1</b> updates available!", unread))
+            else:
+                self.setToolTip("package-manager", i18n("Package Manager"), i18n("No updates available"))
+            self.setStatus(KStatusNotifierItem.Active)
 
         if self.unread == unread:
             return
@@ -130,7 +138,7 @@ class PTray:
         self.unread = unread
 
         if unread == 0:
-            self.setIcon(self.defaultIcon)
+            self.setIconByPixmap(self.defaultIcon)
             self.lastIcon = self.defaultIcon
         else:
             countStr = "%s" % unread
@@ -161,19 +169,20 @@ class PTray:
 
             p.end()
             self.lastIcon = QtGui.QIcon(overlayImg)
-            self.setIcon(self.lastIcon)
+            self.setIconByPixmap(self.lastIcon)
 
-from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu
+from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu, KStatusNotifierItem
 from PyKDE4.kdecore import KComponentData
 
-class Tray(KSystemTrayIcon, PTray):
+class Tray(KStatusNotifierItem, PTray):
     def __init__(self, parent, iface):
         KSystemTrayIcon.__init__(self, parent)
         self.appWindow = parent
+        self.setAssociatedWidget(parent)
         PTray.__init__(self, iface)
 
     def initializePopup(self):
-        self.setIcon(self.defaultIcon)
+        self.setIconByPixmap(self.defaultIcon)
         self.actionMenu = KActionMenu(i18n("Update"), self)
         self.populateRepositoryMenu()
         self.contextMenu().addAction(self.actionMenu)
