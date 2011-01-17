@@ -442,6 +442,8 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         self.repositorySettings = RepositorySettings(self)
         self.proxySettings = ProxySettings(self)
 
+        self.parent = parent
+
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
         self.connect(self.buttonCancel, SIGNAL("clicked()"), self.cancelSettings)
@@ -455,9 +457,12 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
 
     def saveSettings(self):
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
-            if settings.changed:
-                settings.save()
-                settings.changed = False
+            try:
+                if settings.changed:
+                    settings.save()
+            except Exception, e:
+                self.parent.cw.exceptionCaught(str(e))
+            settings.changed = False
         self.config = config.PMConfig()
 
     def showHelp(self):
