@@ -38,6 +38,7 @@
 #include <KDebug>
 #include <KProcess>
 #include <KMessageBox>
+#include <kdesktopfileactions.h>
 #include <config-randr.h>
 
 #include "randr.h"
@@ -125,17 +126,24 @@ void KRandRModule::load()
     if (vendorText.startsWith("NVIDIA")){
         int ret = KMessageBox::questionYesNo(this,
                                     i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                         "Please use nvidia-settings for your preferencies?"));
+                                         "Do you want to use nvidia-settings for your preferencies?"));
         if(ret == KMessageBox::Yes){
 
-            qDebug() << "YES";
+          KUrl url =  KUrl::fromPath("/usr/share/applications/nvidia-settings.desktop");
+          KDesktopFileActions::run(url, true);
+          qDebug() << "YES";
+
         }
     }
     else if (vendorText.startsWith("ATI")){
         int ret = KMessageBox::questionYesNo(this,
                                     i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                         "Please use ati-control-center for your preferencies ?"));
+                                         "Do you want to use ati-control-center for your preferencies ?"));
         if(ret == KMessageBox::Yes){
+
+          KUrl url =  KUrl::fromPath("/usr/share/applications/amdccclesu.desktop");
+          KDesktopFileActions::run(url, true);
+
 
             qDebug() << "YES";
         }
