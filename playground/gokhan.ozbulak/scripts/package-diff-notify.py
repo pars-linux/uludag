@@ -307,7 +307,7 @@ def is_summary_dict_empty(summary_dict):
 
     return True
 
-def is_summary_dict_diff(summary_dict):
+def is_summary_dict_diff(summary_dict, package):
     section_list = ("Package Names", "Packager", "Email", "Release", "Version", "Number of Sub-Package", "Number of Patches")
 
     first_summary_item = summary_dict.values()[0]
@@ -381,8 +381,8 @@ def prepare_content_body(packager):
                                             summary_dict[distro] = create_summary_entry(pckgr, obsolete, distro)
         if not is_summary_dict_empty(summary_dict):
             if not OPTIONS.allpackages:
-                if not is_summary_dict_diff(summary_dict):
-                    return content
+                if not is_summary_dict_diff(summary_dict, package):
+                    continue
             package_history.append(package)
             content = "%s%s\n%s\n%s\n\n" % (content, package, len(package) * "-", create_stanza(summary_dict))
 
