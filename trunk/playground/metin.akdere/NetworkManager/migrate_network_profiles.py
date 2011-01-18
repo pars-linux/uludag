@@ -447,9 +447,8 @@ class _802_11_Wireless_Security:
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless-security"
-        self.wep_tx_keyidx = "None"
         self.key_mgmt = "None"
-        self.wep_tx_keyidx = "None" #0
+        self.wep_tx_keyidx = "0"
         self.auth_alg = "None"
         self.proto = "None"
         self.pairwise = "None"
@@ -461,27 +460,41 @@ class _802_11_Wireless_Security:
         self.wep_key3 ="None"
         self.psk = "None"
         self.leap_password = "None"
-        self._wep_key_type = "None" #0
-        self.key_mgmt = self.set_key_mgmt(pardus_profile)
+        self.wep_key_type = "0"
 
-    def set_key_mgmt(self, pardus_profile):
-        """Set to 'none' for WEP, 'ieee8021x' for Dynamic WEP, 'wpa-none' for WPA-PSK Ad-Hoc,
-        'wpa-psk' for infrastructure WPA-PSK or 'wpa-eap' for WPA-Enterprise
-        """
+        self.set_up_wireless_security(pardus_profile)
+
+    def set_up_wireless_security(self, pardus_profile):
+        """WEP, WPA or none type security based operations"""
 
         if pardus_profile.get_auth() in ["wep", "wepascii"]:
-            self.psk = str(pardus_profile.get_auth_password())
-            return "none"
+            self.set_wep(pardus_profile)
         elif pardus_profile.get_auth() == "wpa-psk":
-            self.psk = str(pardus_profile.get_auth_password())
-            return "wpa-psk"
+            self.set_wpa(pardus_profile)
+        else:
+            return
+
+    def set_wpa(self, pardus_profile):
+        """Set up WPA based networks"""
+
+        self.key_mgmt = "wpa-psk"
+        self.psk = str(pardus_profile.get_auth_password())
+
+    def set_wep(self, pardus_profile):
+        """Set up WEP based networks"""
+
+        self.auth_alg = "open" #TODO: or 'shared' ??
+        self.key_mgmt = "none" # Which stands for WEP based key management
+        self.wep_key0 = str(pardus_profile.get_auth_password()) # Default index
+        self.wep_key_type = "1" # Interpret WEP keys as hex or ascii keys
+
 
     def set_config(self, cfg):
         """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["False", "None", "0"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
