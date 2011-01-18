@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-18 16:25+0200\n"
-"PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-01-18 16:27+0200\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
 "Language: ru\n"
@@ -78,7 +78,6 @@ msgid "All done!"
 msgstr "Все сделано!"
 
 #: ../release.xml.in.h:5
-#, fuzzy
 msgid ""
 "Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
 "a number of multimedia editors and a massive file format and codec support "
@@ -91,7 +90,7 @@ msgstr ""
 "поставляется с набором мультимедийных редакторов и массивной поддержкой "
 "форматов и кодеков сразу из коробки. &lt;br&gt;Вы можете редактировать ваши "
 "изображения в Gimp, создавать домашние фильмы в Kdenlive, организовывать "
-"музыкальные альбомы в каталогах с Amarok и изображений альбомов с Digikam, "
+"музыкальные альбомы в каталогах с Clementine и изображений альбомов с Digikam, "
 "записывать CD и DVD диски используя K3B."
 
 #: ../release.xml.in.h:6
