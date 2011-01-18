@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/">
+    <file>gui/pics/view-refresh.png</file>
     <file>gui/pics/user-group-delete.png</file>
     <file>gui/pics/user-group-new.png</file>
     <file>gui/pics/user-group-properties.png</file>
