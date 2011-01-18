@@ -2,7 +2,7 @@
     <Title>Pardus 2011 Live (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
-    <ExtraParameters>splash</ExtraParameters>
+    <ExtraParameters></ExtraParameters>
     <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/2011/devel/i686/pisi-index.xml.xz">
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedComponent>system.base</SelectedComponent>
