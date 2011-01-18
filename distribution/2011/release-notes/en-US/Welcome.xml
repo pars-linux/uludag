@@ -7,27 +7,27 @@
 <section id="sect-Release_Notes-Welcome_to_Pardus">
     <title>Welcome to Pardus 2011</title>
     <para>
-        Welcome to Pardus 2011, another great Pardus release from Pardus developers,
-        translators, artists and documentation writers.
-    </para>
-    <para>
-        We kindly invite you to visit <ulink url="http://www.pardus.org.tr/eng">
-        http://www.pardus.org.tr/eng</ulink> for more information.
+        Welcome to Pardus 2011, the latest release of Pardus, a powerful, KDE-focused Linux distribution.
     </para>
 
     <section id="sect-Release_Notes-What_is_Pardus">
         <title>What is Pardus?</title>
         <para>
-            Pardus is a Linux distribution developed as a product of the Pardus Project, by National
-            Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific
-            and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors.
-            It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana.
+            Pardus is an open-source, freely distributable, GPL (General Public License) licensed user-friendly
+            GNU/Linux distribution with many usability, hardware compatibility, stability and security enhancements.
+        </para>
+        <para>
+            The Pardus project is sponsored by the <emphasis>National Research Institute of Electronics and Cryptology (UEKAE)</emphasis>,
+            an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TÜBİTAK)</emphasis>.
         </para>
         <para>
             The aim of the Pardus distribution is to offer people a stable, reliable, easy-to-use and
             feature-rich computer experience by providing modern and popular open-source software. The
             developers are also putting an additional effort to make Pardus run on a wide range of
             hardware.
+        </para>
+        <para>
+            The project is named after the latin (and scientific) name for the Anatolian leopard, <emphasis>Panthera pardus tulliana</emphasis>.
         </para>
     </section>
 
@@ -51,13 +51,21 @@
         </para>
     </section>
 
+    <section id="sect-Release_Notes-More_Information">
+        <title>More Information</title>
+        <para>
+            Visit the official web site <ulink url="http://www.pardus.org.tr/eng">http://www.pardus.org.tr/eng</ulink>
+            for more information.
+        </para>
+    </section>
+
     <section id="sect-Release_Notes-Feedback">
         <title>Feedback</title>
         <para>
-            You can use <ulink url="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</ulink>,
-            (Pardus bug tracking system) to report a bug, send a bug fix or suggest improvements
-            about Pardus. We would like to thank all of our users and community members for their
-            valuable contributions which help improving Pardus.
+            Visit <ulink url="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</ulink>
+            to report a bug, send a bug fix or suggest improvements about Pardus.We would
+            like to thank all of our users and community members for their valuable contributions
+            which help improving Pardus, Linux and free software worldwide.
         </para>
     </section>
 </section>
