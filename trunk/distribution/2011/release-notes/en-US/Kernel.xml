@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "Release_Notes.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Include the name of this XML in Release_Notes.xml -->
+
+<section id="sect-Release_Notes-Kernel">
+    <title>Kernel</title>
+    <para>
+        The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest
+        stable kernel released on 2011/01/05.
+    </para>
+</section>
