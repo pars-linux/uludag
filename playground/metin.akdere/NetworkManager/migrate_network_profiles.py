@@ -247,10 +247,12 @@ class IpV4:
 
         if pardus_profile.get_name_mode() == "default":
             default_nameservers =";".join( get_default_nameservers())
+            default_nameservers = default_nameservers + ";" # Make sure addresses end with ';'
             self.ignore_auto_dns = "True"
             return str(default_nameservers)
         elif pardus_profile.get_name_mode() == "custom":
             name_server = pardus_profile.get_name_server()
+            name_server = name_server + ";"
             self.ignore_auto_dns = "True"
             return str(name_server)
         else:
@@ -267,6 +269,7 @@ class IpV4:
             addresses.append(str(net_mask))
             addresses.append(str(pardus_profile.get_net_gateway()))
             addresses = ";".join(addresses)
+            addresses = addresses + ";"     # Make sure addresses end with ';'
             return addresses
         else:
             return "None"
