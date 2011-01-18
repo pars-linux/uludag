@@ -239,7 +239,7 @@ class IpV4:
         self.dhcp_hostname = "None"
         self.never_default = "False"
         self.method = pardus_profile.get_net_mode() # auto or manual, same as in NM
-        self.addresses = self.set_addresses(pardus_profile)
+        self.addresses1 = self.set_addresses(pardus_profile)    # NM uses array of IPv4 address structures. We have only one for each iface
         self.dns = self.set_dns(pardus_profile)
 
     def set_dns(self, pardus_profile):
@@ -394,7 +394,7 @@ class _802_11_Wireless:
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless"
-        self.ssid = "None"
+        self.ssid = self.set_ssid(pardus_profile)
         self.band = "None"
         self.channel = "0"
         self.bssid = "None"
@@ -435,6 +435,14 @@ class _802_11_Wireless:
 
         #TODO: How to determine mode (adhoc or infrastructure) from old profile settings
         return "infrastructure"
+
+    def set_ssid(self, pardus_profile):
+        """Set ssid value"""
+
+        if pardus_profile.connection_type == "802-11-wireless":
+            return str(pardus_profile.get_remote())
+        else:
+            return "None"
 
     def set_config(self, cfg):
         """One single config file will be used to write settings"""
