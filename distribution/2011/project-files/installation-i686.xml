@@ -2,7 +2,7 @@
     <Title>Pardus 2011 (i686)</Title>
     <WorkDir>/tmp/pardusman-workdir/32</WorkDir>
     <ReleaseFiles>/home/gokcen/distribution/2011/media-content</ReleaseFiles>
-    <ExtraParameters>splash</ExtraParameters>
+    <ExtraParameters></ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
             <Id>B6hbCO1cc</Id>
