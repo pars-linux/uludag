@@ -39,7 +39,8 @@ kde4_add_ui_files(kcm_randr_PART_SRCS
 kde4_add_plugin(kcm_randr ${kcm_randr_PART_SRCS})
 
 
-target_link_libraries(kcm_randr  ${KDE4_KDEUI_LIBS} ${X11_Xrandr_LIB} ${X11_LIBRARIES} ${QT_QTGUI_LIBRARY} ${X11_X11_LIB} ${OPENGL_gl_LIBRARY})
+target_link_libraries(kcm_randr  ${KDE4_KDEUI_LIBS} ${X11_Xrandr_LIB}
+    ${X11_LIBRARIES} ${QT_QTGUI_LIBRARY} ${X11_X11_LIB} ${OPENGL_gl_LIBRARY} ${KDE4_KIO_LIBS})
 
 
 
