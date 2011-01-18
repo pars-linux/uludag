@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-13T13:02:28\n"
+"POT-Creation-Date: 2011-01-18T11:08:48\n"
 "PO-Revision-Date: 2011-01-13T09:41:09\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
@@ -55,12 +55,12 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus 2011 RC release, coming with latest release of KDE desktop environment, <package>KDE 4.5</package>. With this release the backbone of desktop environment Plasma, the file manager (Dolphin) and desktop effects has become more stable and faster with a lot of fixes."
+msgid "Pardus 2011 final release, coming with latest release of KDE desktop environment, <package>KDE 4.5</package>. With this release the backbone of desktop environment Plasma, the file manager (Dolphin) and desktop effects has become more stable and faster with a lot of fixes."
 msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "The applications which are frequently used by desktop users such as Amarok (multimedia player), Skanlite (browser interface), KTorrent (torrent interface), SMPlayer (video player) can be installed with this version."
+msgid "The applications which are frequently used by desktop users such as Clementine (multimedia player), Skanlite (scanner interface), KTorrent (torrent interface), SMPlayer (video player) can be installed with this version."
 msgstr ""
 
 #. Tag: title
@@ -70,7 +70,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Firefox gets new stable release rapidly. 4.0b8pre release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
+msgid "Firefox gets new stable release rapidly. 4.0b9 release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr ""
 
 #. Tag: para
