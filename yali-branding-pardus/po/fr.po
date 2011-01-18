@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-18 16:25+0200\n"
-"PO-Revision-Date: 2010-11-18 22:59+0100\n"
+"PO-Revision-Date: 2011-01-18 16:26+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -79,7 +79,6 @@ msgid "All done!"
 msgstr "C'est fini !"
 
 #: ../release.xml.in.h:5
-#, fuzzy
 msgid ""
 "Check out your brand new, ready-to-use multimedia studio! Pardus comes with "
 "a number of multimedia editors and a massive file format and codec support "
@@ -92,7 +91,7 @@ msgstr ""
 "plusieurs éditeurs multimédia et gère de nombreux formats de fichiers et "
 "codecs audio et vidéo. &lt;br&gt; Vous pouvez éditer vos images avec Gimp, "
 "créer vos films maison avec Kdenlive, organiser vos albums de musique dans "
-"des catalogues avec Amarok et vos albums photo avec Digikam, gravez vos CD "
+"des catalogues avec Clementine et vos albums photo avec Digikam, gravez vos CD "
 "et DVD avec K3B, sauvegardez votre collection musicale..."
 
 #: ../release.xml.in.h:6
