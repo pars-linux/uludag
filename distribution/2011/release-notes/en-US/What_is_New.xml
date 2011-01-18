@@ -33,7 +33,7 @@
     <section id="sect-Release_Notes-KDE_Desktop_Environment">
         <title>KDE Desktop Environment</title>
         <para>
-            Pardus 2011 final release, coming with latest release of KDE desktop environment, <package>KDE 4.5</package>.
+            Pardus &PRODVER; final release, coming with latest release of KDE desktop environment, <package>KDE &KDEVER;</package>.
             With this release the backbone of desktop environment Plasma, the file manager (Dolphin) and desktop
             effects has become more stable and faster with a lot of fixes.
         </para>
@@ -47,7 +47,7 @@
     <section id="sect-Release_Notes-Updated_Components">
         <title>Updated Components</title>
         <para>
-            Firefox gets new stable release rapidly. 4.0b9 release presents many new features like the new
+            Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new
             interface of the browser as well as plugin management new interface, tab grouping, bookmarks between
             computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology
             supports are also most important features for the developers.
@@ -63,7 +63,7 @@
         </para>
         <para>
             Users can now configure Wacom tablets, Touchpads and Bluetooth devices using System Settings.
-            Version 2.6.37 of the Linux kernel provides support for the users with recent hardware.
+            Version &KERNELVER; of the Linux kernel provides support for the users with recent hardware.
         </para>
     </section>
 </section>
