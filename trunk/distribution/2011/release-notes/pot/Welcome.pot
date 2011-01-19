@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
-"PO-Revision-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"PO-Revision-Date: 2011-01-19T11:58:40\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "The Pardus project is sponsored by the <emphasis>National Research Institute of Electronics and Cryptology (UEKAE)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TÜBİTAK)</emphasis>."
+msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
 msgstr ""
 
 #. Tag: para

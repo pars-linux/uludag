@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
-"PO-Revision-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"PO-Revision-Date: 2011-01-19T11:58:40\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Users are now able to select between Open Source and proprietary drivers for their nVidia video adapters."
+msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
 msgstr ""
 
 #. Tag: title
@@ -254,7 +254,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for nVidia and ATI display adapters."
+msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
 msgstr ""
 
 #. Tag: para
