@@ -63,12 +63,5 @@
                 </para>
             </listitem>
         </itemizedlist>
-
-        <para>
-            Some other major updates include:
-        </para>
-        <para>
-            Updated Perl to &PERLVER;, Python to &PYTHONVER;, Mozilla Firefox to &FIREFOXVER;, xorg-server to &XORGVER;.
-        </para>
     </section>
 </section>
