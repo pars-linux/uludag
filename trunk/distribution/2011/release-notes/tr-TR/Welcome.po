@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-18T11:08:47\n"
+"POT-Creation-Date: 2011-01-19T10:14:10\n"
 "PO-Revision-Date: 2011-01-13T09:41:09\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
@@ -15,12 +15,12 @@ msgstr ""
 
 #. Tag: title
 #, fuzzy, no-c-format
-msgid "Welcome to Pardus 2011"
+msgid "Welcome to Pardus &PRODVER;"
 msgstr "Pardus'a Hoş Geldiniz"
 
 #. Tag: para
 #, no-c-format
-msgid "Welcome to Pardus 2011, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
 msgstr ""
 
 #. Tag: title
