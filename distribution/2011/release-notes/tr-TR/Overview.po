@@ -16,7 +16,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Overview"
-msgstr ""
+msgstr "Genel Bakış"
 
 #. Tag: para
 #, no-c-format
@@ -26,7 +26,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Hardware Overview"
-msgstr ""
+msgstr "Donanım"
 
 #. Tag: para
 #, no-c-format
@@ -36,7 +36,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Software Overview"
-msgstr ""
+msgstr "Yazılım"
 
 #. Tag: para
 #, no-c-format
