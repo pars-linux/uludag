@@ -41,7 +41,7 @@ msgstr "Pentium 4, Celeron D, Xeon ve Pentium Dual-Core işlemcilerinin yeni sü
 #. Tag: para
 #, no-c-format
 msgid "Atom D5xx, N4xx and N5xx"
-msgid "Atom D5xx, N4xx ve N5xx"
+msgstr "Atom D5xx, N4xx ve N5xx"
 
 #. Tag: para
 #, no-c-format
