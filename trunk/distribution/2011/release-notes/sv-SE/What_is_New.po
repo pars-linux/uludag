@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-19 18:54+0100\n"
+"PO-Revision-Date: 2011-01-19 23:40+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "Language: \n"
@@ -24,7 +24,7 @@ msgstr "Vad är nytt?"
 #. Tag: title
 #, no-c-format
 msgid "Updates in Pardus Technologies"
-msgstr ""
+msgstr "Uppdateringar av Pardustekniker"
 
 #. Tag: title
 #, no-c-format
@@ -34,27 +34,27 @@ msgstr "YALI"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr ""
+msgstr "<emphasis>YALI</emphasis>, installationsprogrammet för Pardus, har fått stöd för LVM/RAID och UUID."
 
 #. Tag: para
 #, no-c-format
 msgid "The user interface is completely redesigned to improve the usability."
-msgstr ""
+msgstr "Användargränssnittet är helt omgjort för att öka användbarheten."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr ""
+msgstr "Användaren kan nu välja mellan mellan drivrutin med öppen eller sluten källkod för NVIDIAs grafikkort."
 
 #. Tag: title
 #, no-c-format
 msgid "First Boot"
-msgstr ""
+msgstr "Första starten"
 
 #. Tag: para
 #, no-c-format
 msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
-msgstr ""
+msgstr "Vissa inställningar som efterfrågades under installationen av Pardus &PREVVER; är nu flyttade till ett annat program som körs en gång under den första uppstarten efter installationen."
 
 #. Tag: title
 #, no-c-format
@@ -64,12 +64,12 @@ msgstr "Kaptan"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr ""
+msgstr "<emphasis>Kaptan</emphasis>, anpassningsverktyget för Pardusskrivbordet, nu med möjligheten att ta din bild och använda som avatar i KDE."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
-msgstr ""
+msgstr "Användarna kan nu välja sitt önskade ikontema som används i KDE."
 
 #. Tag: title
 #, no-c-format
@@ -79,7 +79,7 @@ msgstr "Pisi"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
-msgstr ""
+msgstr "<emphasis>Pisi</emphasis> använder nu XZ som standard packningsalgoritm."
 
 #. Tag: para
 #, no-c-format
@@ -94,7 +94,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Pakethanteraren"
 
 #. Tag: para
 #, no-c-format
@@ -114,7 +114,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Updates in Core Components"
-msgstr ""
+msgstr "Uppdateringar av kärnkomponenter"
 
 #. Tag: para
 #, no-c-format
@@ -149,7 +149,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Desktop Experience"
-msgstr ""
+msgstr "Skrivbordsupplevelse"
 
 #. Tag: title
 #, no-c-format
@@ -184,7 +184,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Network Management"
-msgstr ""
+msgstr "Nätverkshantering"
 
 #. Tag: para
 #, no-c-format
@@ -199,12 +199,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Default Applications"
-msgstr ""
+msgstr "Förvalda program"
 
 #. Tag: title
 #, no-c-format
 msgid "Mozilla Firefox"
-msgstr ""
+msgstr "Mozilla Firefox"
 
 #. Tag: para
 #, no-c-format
@@ -214,7 +214,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Clementine"
-msgstr ""
+msgstr "Clementine"
 
 #. Tag: para
 #, no-c-format
@@ -224,7 +224,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "SMPlayer"
-msgstr ""
+msgstr "SMPlayer"
 
 #. Tag: para
 #, no-c-format
@@ -244,7 +244,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Web Browsers"
-msgstr ""
+msgstr "Webbläsare"
 
 #. Tag: para
 #, no-c-format
@@ -254,7 +254,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "System Settings"
-msgstr ""
+msgstr "Systeminställningar"
 
 #. Tag: para
 #, no-c-format
@@ -274,7 +274,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Office Suite"
-msgstr ""
+msgstr "Kontorspaket"
 
 #. Tag: para
 #, no-c-format
@@ -284,7 +284,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Games"
-msgstr ""
+msgstr "Spel"
 
 #. Tag: para
 #, no-c-format
@@ -294,10 +294,11 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Other Changes"
-msgstr ""
+msgstr "Andra förändringar"
 
 #. Tag: para
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr ""
+
 
