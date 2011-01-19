@@ -26,7 +26,7 @@
                 <listitem>
                     <para>
                         Users are now able to select between Open Source and proprietary drivers for their
-                        nVidia video adapters.
+                        NVIDIA video adapters.
                     </para>
                 </listitem>
             </itemizedlist>
@@ -226,7 +226,7 @@
             <title>System Settings</title>
             <para>
                 <emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver
-                between Open Source and proprietary one for nVidia and ATI display adapters.
+                between Open Source and proprietary one for NVIDIA and ATI display adapters.
             </para>
             <para>
                 Users are now able to set up their Bluetooth devices, Wacom tablets and Synaptics touchpads through System Settings.
