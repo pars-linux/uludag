@@ -1,79 +1,83 @@
 #
-# AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-19T10:14:10\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: None\n"
+"PO-Revision-Date: 2011-01-19 18:29+0100\n"
+"Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
+"Language-Team: French <kde-i18n-doc@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #. Tag: title
 #, no-c-format
 msgid "Overview"
-msgstr ""
+msgstr "Vue d'ensemble"
 
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
-msgstr ""
+msgstr "Pardus &PRODVER; contient des changements majeurs par rapport à la version &PREVVER; précédente. Les sections suivantes en donnent un bref aperçu."
 
 #. Tag: title
 #, no-c-format
 msgid "Hardware Overview"
-msgstr ""
+msgstr "Matériel"
 
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; now supports 64-bit processor architecture which is supported by many new Intel and AMD processors."
-msgstr ""
+msgstr "Pardus &PRODVER; gère les processeurs à architecture 64-bit que proposent Intel et AMD."
 
 #. Tag: title
 #, no-c-format
 msgid "Software Overview"
-msgstr ""
+msgstr "Logiciel"
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support together with a thousand of bug fixes."
-msgstr ""
+msgstr "<application>Noyau</application> - Le dernier noyau Linux &KERNELVER; offre une meilleure gestion du matériel ainsi que la résolution de milliers de bogues."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
-msgstr ""
+msgstr "<application>Plymouth</application> - La technologie de l'écran de progression du démarrage du système  utilisée dans Pardus &PREVVER; est changée pour le moteur Plymouth."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>YALI</application> - YALI, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr ""
+msgstr "<application>YALI</application> - YALI, l'installeur de Pardus, gagne la gestion de LVM, du RAID ainsi que de l'UUID."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr ""
+msgstr "<application>KDE SC</application> - Pardus &PRODVER; est livrée avec le dernier KDE, KDE SC &KDEVER;. Les paquets de base contiennent des rétro-portages et des correctifs qui améliorent significativement la stabilité de votre bureau."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr ""
+msgstr "<application>Kaptan</application> - Kaptan, l'assistant de personnalisation du bureau de Pardus, vous propose désormais de prendre votre photo et de la placer comme avatar dans KDE."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
-msgstr ""
+msgstr "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 est désormais le backend réseau dans Pardus &PRODVER;. On peut maintenant configurer ensemble des réseaux HSPA/CDMA/VPN, en plus des réseaux câblés Ethernet et sans-fil 802.11."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>GTK Oxygen style</application> - All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr ""
+msgstr "<application>Style Oxygen GTK</application> - L'ensemble des applications GTK sont maintenant rendues avec le style Oxygen, grâce au projet <emphasis>oxygen-gtk</emphasis>. Ce qui apporte une plus grande cohérence visuelle dans l'interface."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
-msgstr ""
+msgstr "<application>LibreOffice</application> - LibreOffice, la suite bureautique libre sponsorisée par la Fondation Document, remplace la suite OpenOffice.org dans Pardus &PRODVER;."
+
