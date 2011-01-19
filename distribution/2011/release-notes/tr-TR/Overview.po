@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-19T10:14:10\n"
+"PO-Revision-Date: 2011-01-19 16:26+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -21,7 +21,7 @@ msgstr "Genel Bakış"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
-msgstr ""
+msgstr "Pardus &PRODVER;, Pardus &PREVVER; sürümüne göre önemli yenilikler içermektedir. Aşağıdaki bölümlerde bu değişiklerden kısaca bahsedilmiştir."
 
 #. Tag: title
 #, no-c-format
@@ -31,7 +31,7 @@ msgstr "Donanım"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; now supports 64-bit processor architecture which is supported by many new Intel and AMD processors."
-msgstr ""
+msgstr "Pardus &PRODVER;, Intel ve AMD işlemcilerinin sağladığı 64-bit işlemci mimarisini desteklemektedir."
 
 #. Tag: title
 #, no-c-format
@@ -41,32 +41,32 @@ msgstr "Yazılım"
 #. Tag: para
 #, no-c-format
 msgid "<application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support together with a thousand of bug fixes."
-msgstr ""
+msgstr "<application>Çekirdek</application> - Son Linux çekirdeği &KERNELVER; binlerce hata düzeltmesinin yanında en güncel donanımlara da destek vermektedir."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
-msgstr ""
+msgstr "<application>Plymouth</application> - Pardus &PREVVER; sürümünde kullanılan bootsplash aracının yerine yeni Plymouth teknolojisi geçiyor. "
 
 #. Tag: para
 #, no-c-format
 msgid "<application>YALI</application> - YALI, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr ""
+msgstr "<application>YALI</application> - Kurulum aracı YALI, LVM/RAID ve UUID desteği kazandı."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr ""
+msgstr "<application>KDE SC</application> - Pardus &PRODVER; en güncel ve kararlı KDE Yazılım Bileşeni, KDE SC &KDEVER; ile geliyor. Masaüstü deneyiminizin daha hızlı ve kararlı olması için temel paketlere birçok hata düzeltmesi ve iyileştirmeler yapıldı."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr ""
+msgstr "<application>Kaptan</application> - Masaüstü özelleştirme aracı Kaptan, artık seçimli olarak fotoğrafınızı çekip avatar olarak ayarlayabiliyor."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
-msgstr ""
+msgstr "<application>NetworkManager</application> - Pardus &PRODVER; sürümünde öntanımlı ağ altyapısı olarak GNOME NetworkManager 0.8.2 sürüme geçildi."
 
 #. Tag: para
 #, no-c-format
