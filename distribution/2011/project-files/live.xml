@@ -1141,15 +1141,12 @@
     <LanguageSelection default_language="tr_TR">
         <Language>tr_TR</Language>
         <Language>en_US</Language>
-        <Language>pt_BR</Language>
         <Language>it_IT</Language>
         <Language>nl_NL</Language>
         <Language>ru_RU</Language>
         <Language>hu_HU</Language>
         <Language>de_DE</Language>
-        <Language>pl_PL</Language>
         <Language>fr_FR</Language>
-        <Language>ca_ES</Language>
         <Language>sv_SE</Language>
         <Language>es_ES</Language>
     </LanguageSelection>
