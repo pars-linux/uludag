@@ -9,14 +9,6 @@
             <Id>DURSUNAMCA5</Id>
             <Icon>/usr/share/icons/oxygen/48x48/places/start-here-kde.png</Icon>
             <Translations>
-                <Translation language="pt_BR">
-                    <Title>Base system</Title>
-                    <Description>Base system packages</Description>
-                </Translation>
-                <Translation language="ca_ES">
-                    <Title>Base system</Title>
-                    <Description>Base system packages</Description>
-                </Translation>
                 <Translation language="it_IT">
                     <Title>Base system</Title>
                     <Description>Base system packages</Description>
@@ -38,10 +30,6 @@
                     <Description>Temel sistem paketleri</Description>
                 </Translation>
                 <Translation language="de_DE">
-                    <Title>Base system</Title>
-                    <Description>Base system packages</Description>
-                </Translation>
-                <Translation language="pl_PL">
                     <Title>Base system</Title>
                     <Description>Base system packages</Description>
                 </Translation>
