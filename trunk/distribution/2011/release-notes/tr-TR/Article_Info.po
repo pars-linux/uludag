@@ -16,9 +16,9 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Release Notes"
-msgstr ""
+msgstr "Sürüm Notları"
 
 #. Tag: productname
 #, no-c-format
 msgid "Pardus"
-msgstr ""
+msgstr "Pardus"

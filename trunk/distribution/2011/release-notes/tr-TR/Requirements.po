@@ -16,92 +16,92 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "System Requirements"
-msgstr ""
+msgstr "Sistem Gereksinimleri"
 
 #. Tag: title
 #, no-c-format
 msgid "Processor (CPU)"
-msgstr ""
+msgstr "İşlemci (CPU)"
 
 #. Tag: para
 #, no-c-format
 msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
-msgstr ""
+msgstr "Eğer sisteminiz aşağıda listelenen işlemcilerden birine sahipse, Pardus &PRODVER; 64-bit sürümünü kurmak isteyebilirsiniz."
 
 #. Tag: title
 #, no-c-format
 msgid "Intel processors which support 64-bit architecture"
-msgstr ""
+msgstr "64-bit mimarisini destekleyen Intel işlemciler"
 
 #. Tag: para
 #, no-c-format
 msgid "Newer versions of Pentium 4, Celeron D, Xeon and Pentium Dual-Core"
-msgstr ""
+msgstr "Pentium 4, Celeron D, Xeon ve Pentium Dual-Core işlemcilerinin yeni sürümleri"
 
 #. Tag: para
 #, no-c-format
 msgid "Atom D5xx, N4xx and N5xx"
-msgstr ""
+msgid "Atom D5xx, N4xx ve N5xx"
 
 #. Tag: para
 #, no-c-format
 msgid "All versions of Pentium D, Pentium Extreme Edition, Core 2, Core i7, Core i5 and Core i3 processors"
-msgstr ""
+msgstr "Pentium D, Pentium Extreme Edition, Core 2, Core i7, Core i5 ve Core i3 ailelerinin hepsi"
 
 #. Tag: para
 #, no-c-format
 msgid "Probably newer processors manufactured after the time this document was originally written."
-msgstr ""
+msgstr "Bu belge yazıldıktan sonra üretilen yeni işlemcilerin büyük bir kısmı."
 
 #. Tag: title
 #, no-c-format
 msgid "AMD processors which support 64-bit architecture"
-msgstr ""
+msgstr "64-bit mimarisini destekleyen AMD işlemciler"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Athlon 64, 64 X2, 64 FX"
-msgstr ""
+msgstr "AMD Athlon 64, 64 X2, 64 FX"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Athlon II"
-msgstr ""
+msgstr "AMD Athlon II"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Opteron"
-msgstr ""
+msgstr "AMD Opteron"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Turion 64"
-msgstr ""
+msgstr "AMD Turion 64"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Turion 64 X2"
-msgstr ""
+msgstr "AMD Turion 64 X2"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Sempron"
-msgstr ""
+msgstr "AMD Sempron"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Phenom"
-msgstr ""
+msgstr "AMD Phenom"
 
 #. Tag: para
 #, no-c-format
 msgid "AMD Phenom II"
-msgstr ""
+msgstr "AMD Phenom II"
 
 #. Tag: title
 #, no-c-format
 msgid "System memory (RAM)"
-msgstr ""
+msgstr "Sistem Belleği (RAM)"
 
 #. Tag: para
 #, no-c-format
@@ -111,12 +111,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Hard disk space requirements"
-msgstr ""
+msgstr "Sabit disk"
 
 #. Tag: title
 #, no-c-format
 msgid "Minimum requirements"
-msgstr ""
+msgstr "Minimum gereksinimler"
 
 #. Tag: para
 #, no-c-format
@@ -126,7 +126,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Recommended requirements"
-msgstr ""
+msgstr "Önerilen gereksinimler"
 
 #. Tag: para
 #, no-c-format
@@ -136,7 +136,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Note on Swap space"
-msgstr ""
+msgstr "Takas Alanı hakkında"
 
 #. Tag: para
 #, no-c-format
