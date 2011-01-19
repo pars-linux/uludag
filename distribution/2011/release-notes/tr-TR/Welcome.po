@@ -14,9 +14,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Welcome to Pardus &PRODVER;"
-msgstr "Pardus'a Hoş Geldiniz"
+msgstr "Pardus &PRODVER; Sürümüne Hoş Geldiniz"
 
 #. Tag: para
 #, no-c-format
@@ -26,7 +26,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "What is Pardus?"
-msgstr ""
+msgstr "Pardus Nedir?"
 
 #. Tag: para
 #, no-c-format
@@ -51,7 +51,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "How Can I Try Pardus?"
-msgstr ""
+msgstr "Pardus'u Nasıl Deneyebilirim?"
 
 #. Tag: para
 #, no-c-format
@@ -71,7 +71,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "More Information"
-msgstr ""
+msgstr "Daha Fazla Bilgi"
 
 #. Tag: para
 #, no-c-format
@@ -81,7 +81,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Feedback"
-msgstr ""
+msgstr "Geribildirim"
 
 #. Tag: para
 #, no-c-format
