@@ -5,10 +5,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-20T06:58:23\n"
 "PO-Revision-Date: 2011-01-19 23:09+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,8 +42,8 @@ msgid "The user interface is completely redesigned to improve the usability."
 msgstr "De gebruikersinterfaceis helemaal opnieuw ontworpen om gemakkelijker te zijn."
 
 #. Tag: para
-#, no-c-format
-msgid "Users are now able to select between Open Source and proprietary drivers for their nVidia video adapters."
+#, fuzzy, no-c-format
+msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
 msgstr "Gebruikers zijn nu in staat om het open-source of propriëtaire stuurprogramma voor nVidia-kaarten te gebruiken."
 
 #. Tag: title
@@ -256,8 +257,8 @@ msgid "System Settings"
 msgstr "Systeeminstellingen"
 
 #. Tag: para
-#, no-c-format
-msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for nVidia and ATI display adapters."
+#, fuzzy, no-c-format
+msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
 msgstr "<emphasis>Panda</emphasis> (Pardus alternatieve stuurprogrammabeheerder) is een nieuw module in Systeeminstellingen om het wisselen tussen open-source en propriëtaire stuurprogramma voor nVidia- en ATI-videokaarten mogelijk te maken."
 
 #. Tag: para
@@ -298,8 +299,4 @@ msgstr "Overige wijzigingen"
 #. Tag: para
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
-msgstr ""
-"Firefox krijgt snel een stabiele uitgave . &FIREFOXVER;-uitgave presenteert vele nieuwe mogelijkheden zoals de nieuwe interface van de browser en ook nieuwe interface voor plug-in-beheer, tabbladen-groepering, bladwijzers tussen computers, wachtwoorden en geschiedenis uitwisseling, een nieuwe plug-in-interface. HTML5, CSS3 and WebM-technologie zijn zeer belangrijke "
-"mogelijkheden voor de ontwikkelaars."
-
-
+msgstr "Firefox krijgt snel een stabiele uitgave . &FIREFOXVER;-uitgave presenteert vele nieuwe mogelijkheden zoals de nieuwe interface van de browser en ook nieuwe interface voor plug-in-beheer, tabbladen-groepering, bladwijzers tussen computers, wachtwoorden en geschiedenis uitwisseling, een nieuwe plug-in-interface. HTML5, CSS3 and WebM-technologie zijn zeer belangrijke mogelijkheden voor de ontwikkelaars."

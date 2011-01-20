@@ -5,10 +5,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-20T06:58:23\n"
 "PO-Revision-Date: 2011-01-19 17:29+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,16 +37,14 @@ msgid "Pardus is an open-source, freely distributable, GPL (General Public Licen
 msgstr "Pardus is een open-source, vrij beschikbare, onder GPL-licentie (General Public License) vallende, gebruikersvriendelijke GNU/Linux-distributie met veel gebruikersgemak, hardware-compatibiliteit, stabiliteit en veilige mogelijkheden."
 
 #. Tag: para
-#, no-c-format
-msgid "The Pardus project is sponsored by the <emphasis>National Research Institute of Electronics and Cryptology (UEKAE)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TÜBİTAK)</emphasis>."
+#, fuzzy, no-c-format
+msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
 msgstr "Het Pardus-project wordt ondersteund door de <emphasis>National Research Institute of Electronics en Cryptology (UEKAE)</emphasis>, een afdeling van de <emphasis>Scientific and Technological Research Council of Turkey (TÜBİTAK)</emphasis>."
 
 #. Tag: para
 #, no-c-format
 msgid "The aim of the Pardus distribution is to offer people a stable, reliable, easy-to-use and feature-rich computer experience by providing modern and popular open-source software. The developers are also putting an additional effort to make Pardus run on a wide range of hardware."
-msgstr ""
-"Het doel van de Pardus-distributie is het aanbieden van een stabiele, betrouwbare, gemakkelijk-in-gebruik en vele-mogelijkheden computerervaring door gebruik te maken van moderne en populaire open-source software. De ontwikkelaars hebben tevens additionele inspanningen gedaan om Pardus op zoveel mogelijk hardware mogelijk "
-"te maken. "
+msgstr "Het doel van de Pardus-distributie is het aanbieden van een stabiele, betrouwbare, gemakkelijk-in-gebruik en vele-mogelijkheden computerervaring door gebruik te maken van moderne en populaire open-source software. De ontwikkelaars hebben tevens additionele inspanningen gedaan om Pardus op zoveel mogelijk hardware mogelijk te maken. "
 
 #. Tag: para
 #, no-c-format
@@ -90,8 +89,4 @@ msgstr "Terugkoppeling"
 #. Tag: para
 #, no-c-format
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
-msgstr ""
-"Bezoek <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> voor het rapporteren van fouten, oplossingen voor fouten of aanwijzingen voor verbeteringen van Pardus. Wij willen hierbij all onze gebruikers en gemeenschapsleden bedanken voor hun waardevolle bijdrage voor het verbeteren van Pardus, Linux "
-"and vrije wereldwijde software."
-
-
+msgstr "Bezoek <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> voor het rapporteren van fouten, oplossingen voor fouten of aanwijzingen voor verbeteringen van Pardus. Wij willen hierbij all onze gebruikers en gemeenschapsleden bedanken voor hun waardevolle bijdrage voor het verbeteren van Pardus, Linux and vrije wereldwijde software."

@@ -5,10 +5,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-20T06:58:23\n"
 "PO-Revision-Date: 2011-01-19 14:03+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -68,9 +69,7 @@ msgstr "<application>Kaptan</application> - A Kaptan, a Pardus asztal testreszab
 #. Tag: para
 #, no-c-format
 msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
-msgstr ""
-"<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 az alapértelmezett hálózatkezelő háttérprogram a  Pardus &PRODVER; kiadásában. Ezzel lehetővé vált, hogy a felhasználók beállíthassák a HSPA/CDMA/VPN hálózataikat a már eddig is támogatott "
-"Ethernet és 802.11 WLAN mellé."
+msgstr "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 az alapértelmezett hálózatkezelő háttérprogram a  Pardus &PRODVER; kiadásában. Ezzel lehetővé vált, hogy a felhasználók beállíthassák a HSPA/CDMA/VPN hálózataikat a már eddig is támogatott Ethernet és 802.11 WLAN mellé."
 
 #. Tag: para
 #, no-c-format
@@ -81,5 +80,3 @@ msgstr "<application>GTK Oxygen stílus</application> - Minden GTK alkalmazás m
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
 msgstr "<application>LibreOffice</application> - A Document Foundation által szponzorált nyílt forrású LibreOffice az alapértelmezett irodai csomag a Pardus &PRODVER; kiadásában."
-
-
