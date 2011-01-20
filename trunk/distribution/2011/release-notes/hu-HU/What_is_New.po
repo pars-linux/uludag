@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-01-20T06:58:23\n"
 "PO-Revision-Date: 2011-01-19 20:11+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -42,8 +42,8 @@ msgid "The user interface is completely redesigned to improve the usability."
 msgstr "A használhatóság növelése érdekében a felhasználói felület újratervezésre került."
 
 #. Tag: para
-#, no-c-format
-msgid "Users are now able to select between Open Source and proprietary drivers for their nVidia video adapters."
+#, fuzzy, no-c-format
+msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
 msgstr "A felhasználók mostantól kiválaszthatják hogy nyílt vagy zárt meghajtót kívánnak-e használni az nVidia videókártyájukhoz."
 
 #. Tag: title
@@ -257,8 +257,8 @@ msgid "System Settings"
 msgstr "Rendszerbeállítások"
 
 #. Tag: para
-#, no-c-format
-msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for nVidia and ATI display adapters."
+#, fuzzy, no-c-format
+msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
 msgstr "<emphasis>Panda</emphasis> (Pardus alternative driver administration, azaz Pardus alternatív meghajtóprogram kezelő) egy új rendszerbeállító modul, amellyel a felhasználók a nyílt és zárt forrású meghajtóprogramok között választhatnak nVidia és ATI videókártyák esetében."
 
 #. Tag: para
@@ -300,4 +300,3 @@ msgstr "További változások"
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr "A Firefox hamarosan új stabil kiadáshoz érkezik. A &FIREFOXVER; kiadás több új funkciót felsorakoztat mint az új felület, új beépülő kezelőfelület, fülek csoportosítása, számítógépek közti könyvjelzők, jelszó és előzmény egyeztetés. A HTML5, CSS3 és WebM technológiák támogatása a fejlesztőknek jelent sokat."
-
