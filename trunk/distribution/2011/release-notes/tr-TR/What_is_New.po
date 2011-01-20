@@ -255,7 +255,7 @@ msgstr "Sistem Ayarları"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
-msgstr "<emphasis>Panda</emphasis>(Pardus alternative driver administration / Pardus alternatif sürücü yönetimi) Sistem Ayarlarına eklenen yeni bileşenlerden biri. Panda kullanılarak NVIDIA ve ATI kartlarda açık kaynak kodlu ya da sahipli sürücülerden biri seçilebiliyor."
+msgstr "<emphasis>Panda</emphasis> (Pardus alternative driver administration / Pardus alternatif sürücü yönetimi) Sistem Ayarlarına eklenen yeni bileşenlerden biri. Panda kullanılarak NVIDIA ve ATI kartlarda açık kaynak kodlu ya da sahipli sürücülerden biri seçilebiliyor."
 
 #. Tag: para
 #, no-c-format
