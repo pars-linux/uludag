@@ -1,6 +1,5 @@
-#
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -8,110 +7,110 @@ msgstr ""
 "PO-Revision-Date: 2011-01-13T09:41:09\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
 msgid "What is New?"
-msgstr ""
+msgstr "Yenilikler"
 
 #. Tag: title
 #, no-c-format
 msgid "Updates in Pardus Technologies"
-msgstr ""
+msgstr "Pardus Teknolojilerinde yenilikler"
 
 #. Tag: title
 #, no-c-format
 msgid "YALI"
-msgstr ""
+msgstr "YALI"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr ""
+msgstr "Pardus kurulum aracı <emphasis>YALI</emphasis>, LVM/RAID ve UUID desteği sunuyor."
 
 #. Tag: para
 #, no-c-format
 msgid "The user interface is completely redesigned to improve the usability."
-msgstr ""
+msgstr "Kullanışlılığı artırmak için tüm arayüz yeniden tasarlandı."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr ""
+msgstr "Kullanıcılar kurulum esnasında NVIDIA ekran kartları için açık kaynak ya da firmanın sahipli sürücülerinden birini seçme şansına sahip."
 
 #. Tag: title
 #, no-c-format
 msgid "First Boot"
-msgstr ""
+msgstr "İlk Açılış"
 
 #. Tag: para
 #, no-c-format
 msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
-msgstr ""
+msgstr "Pardus &PREVVER; sürümünde bazı yapılandırma işlemleri ayrı bir uygulama içinde gerçekleştiriliyor. Bu kurulumdan sonra bir kez çalışan bir uygulama."
 
 #. Tag: title
 #, no-c-format
 msgid "Kaptan"
-msgstr ""
+msgstr "Kaptan"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr ""
+msgstr "Pardus'un kişiselleştirme yardımcısı <emphasis>Kaptan</emphasis>, isteğinize bağlı olarak resminizi çekerek KDE içinde avatar olarak kullanmanızı sağlıyor."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
-msgstr ""
+msgstr "Kullanıcılar artık KDE içinde kullanılacak olan simge setini Kaptan'la  seçebiliyor."
 
 #. Tag: title
 #, no-c-format
 msgid "Pisi"
-msgstr ""
+msgstr "PiSi"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
-msgstr ""
+msgstr "<emphasis>PiSi</emphasis> XZ'yi öntanımlı sıkıştırma algoritması olarak kullanıyor."
 
 #. Tag: para
 #, no-c-format
 msgid "Binary package names now reflects the architecture and the distribution release for which the package is built."
-msgstr ""
+msgstr "İkili paketlerin isimleri artık hangi sürüm ve işlemci mimarisine göre derlendikleri bilgisini gösterir şekilde hazırlanıyor."
 
 #. Tag: para
 #, no-c-format
 msgid "Various speed enhancements has been done in the core components for a better package management experience."
-msgstr ""
+msgstr "Paket yönetiminde daha rahat kullanım için temel bileşenlerde bir çok iyileştirme gerçekleşti."
 
 #. Tag: title
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Paket Yöneticisi"
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
-msgstr ""
+msgstr "Kullanıcılar paketleri oylayabiliyor ve ekran görüntülerine bakarak tercih yapabiliyor."
 
 #. Tag: para
 #, no-c-format
 msgid "The graphical user interface is redesigned to improve the usability. Various speed enhancements has been done for a better graphical package management experience."
-msgstr ""
+msgstr "Grafik arabirim kullanışlılığı artırmak için baştan tasarlandı. Daha hızlı çalışması için bir çok iyileştirme yapıldı."
 
 #. Tag: para
 #, no-c-format
 msgid "A lot of KDE integration work has been done including the usage of KDE system tray."
-msgstr ""
+msgstr "KDE sistem çekmecesinin kullanımı da dahil olmak üzere bir çok KDE entegrasyonu iyileştirmesi gerçekleştirildi."
 
 #. Tag: title
 #, no-c-format
 msgid "Updates in Core Components"
-msgstr ""
+msgstr "Temel Bileşenlerde Güncellemeler"
 
 #. Tag: para
 #, no-c-format
