@@ -42,9 +42,9 @@ msgid "The user interface is completely redesigned to improve the usability."
 msgstr "De gebruikersinterfaceis helemaal opnieuw ontworpen om gemakkelijker te zijn."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr "Gebruikers zijn nu in staat om het open-source of propriëtaire stuurprogramma voor nVidia-kaarten te gebruiken."
+msgstr "Gebruikers zijn nu in staat om het open-source of propriëtaire stuurprogramma voor NVIDIA-kaarten te gebruiken."
 
 #. Tag: title
 #, no-c-format
@@ -257,9 +257,9 @@ msgid "System Settings"
 msgstr "Systeeminstellingen"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
-msgstr "<emphasis>Panda</emphasis> (Pardus alternatieve stuurprogrammabeheerder) is een nieuw module in Systeeminstellingen om het wisselen tussen open-source en propriëtaire stuurprogramma voor nVidia- en ATI-videokaarten mogelijk te maken."
+msgstr "<emphasis>Panda</emphasis> (Pardus alternatieve stuurprogrammabeheerder) is een nieuw module in Systeeminstellingen om het wisselen tussen open-source en propriëtaire stuurprogramma voor NVIDIA- en ATI-videokaarten mogelijk te maken."
 
 #. Tag: para
 #, no-c-format
