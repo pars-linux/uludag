@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
 "PO-Revision-Date: 2011-01-19 18:17+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -57,8 +57,8 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - YALI, installationsprogrammet för Pardus, har fått stöd för LVM/RAID och UUID."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#, fuzzy, no-c-format
+msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr "<application>KDE SC</application> - Pardus &PRODVER; har den senaste KDE Software Component, KDE SC &KDEVER;. Baspaketet innehåller också ett antal bakåtporteringar och rättningar vilket ökar stabiliteten på skrivbordet avsevärt."
 
 #. Tag: para
@@ -69,8 +69,7 @@ msgstr "<application>Kaptan</application> - Kaptan, anpassningsverktyget för Pa
 #. Tag: para
 #, no-c-format
 msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
-msgstr ""
-"<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 är nu standardhanteraren för nätverksbakänden i Pardus &PRODVER;. Användaren kan nu ställa in sina nätverk för HSPA/CDMA/VPN tillsammans med det redan stödda Ethernet och 802.11 WLAN-nätverk."
+msgstr "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 är nu standardhanteraren för nätverksbakänden i Pardus &PRODVER;. Användaren kan nu ställa in sina nätverk för HSPA/CDMA/VPN tillsammans med det redan stödda Ethernet och 802.11 WLAN-nätverk."
 
 #. Tag: para
 #, no-c-format
@@ -81,4 +80,3 @@ msgstr "<application>GTK Oxygen style</application> - Alla GTK-program ritas i s
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
 msgstr "<application>LibreOffice</application> - LibreOffice, en kontorssvit baserad på öppen källkod sponsrad av Document Foundation, är nu standard i Pardus &PRODVER;."
-
