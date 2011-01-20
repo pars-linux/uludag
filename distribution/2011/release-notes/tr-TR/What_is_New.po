@@ -20,7 +20,7 @@ msgstr "Yenilikler"
 #. Tag: title
 #, no-c-format
 msgid "Updates in Pardus Technologies"
-msgstr "Pardus Teknolojilerinde yenilikler"
+msgstr "Pardus Teknolojilerinde Yenilikler"
 
 #. Tag: title
 #, no-c-format
