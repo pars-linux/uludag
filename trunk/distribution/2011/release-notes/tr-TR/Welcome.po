@@ -1,5 +1,5 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -7,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-13T09:41:09\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -35,9 +35,7 @@ msgstr "Pardus açık kaynak kodlu, özgürce dağıtılan, GPL (Genel Kamu Lisa
 #. Tag: para
 #, no-c-format
 msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
-msgstr ""
-"Pardus projesi, Türkiye Bilimsel ve Teknolojik Araştırma Kurumu (TÜBİTAK)'na bağlı\r\n"
-"Bilişim ve Bilgi Güvenliği İleri Teknolojiler Araştırmalar Merkezi (BİLGEM) bünyesinde geliştirilmektedir."
+msgstr "Pardus projesi, Türkiye Bilimsel ve Teknolojik Araştırma Kurumu (TÜBİTAK)'na bağlı Bilişim ve Bilgi Güvenliği İleri Teknolojiler Araştırmalar Merkezi (BİLGEM) bünyesinde geliştirilmektedir."
 
 #. Tag: para
 #, no-c-format
@@ -82,7 +80,7 @@ msgstr "Daha çok bilgi için lütfen <ulink url=\"http://www.pardus.org.tr\">ht
 #. Tag: title
 #, no-c-format
 msgid "Feedback"
-msgstr "Geribildirim"
+msgstr "Geri bildirim"
 
 #. Tag: para
 #, no-c-format
