@@ -5,83 +5,83 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-13T09:41:09\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2011-01-20 02:00+0100\n"
+"Last-Translator: Stefan Wilhelm <sw _AT_ pardususer DOT de>\n"
 "Language-Team: None\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #. Tag: title
 #, no-c-format
 msgid "What is New?"
-msgstr ""
+msgstr "Was ist neu?"
 
 #. Tag: title
 #, no-c-format
 msgid "Updates in Pardus Technologies"
-msgstr ""
+msgstr "Aktualisierung der Pardus Technologien"
 
 #. Tag: title
 #, no-c-format
 msgid "YALI"
-msgstr ""
+msgstr "YALI"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr ""
+msgstr "<emphasis>YALI</emphasis>, der Installer von Pardus bietet nun LVM/RAID sowie UUID-Unterstützung."
 
 #. Tag: para
 #, no-c-format
 msgid "The user interface is completely redesigned to improve the usability."
-msgstr ""
+msgstr "Die Benutzeroberfläche wurde vollständig neu entworfen, um die Nutzerfreundlichkeit zu verbessern."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr ""
+msgstr "Anwender können nun zwischen OpenSource und proprietären Treibern für ihre NVIDIA Grafikkarte auswählen."
 
 #. Tag: title
 #, no-c-format
 msgid "First Boot"
-msgstr ""
+msgstr "Erster Start"
 
 #. Tag: para
 #, no-c-format
 msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
-msgstr ""
+msgstr "Einige der Einstellungen, die während der Installation von Pardus &PREVVER; getätigt wurden, sind in eine Anwendung integriert worden, die beim ersten Systemstart nach der Installation ausgeführt wird."
 
 #. Tag: title
 #, no-c-format
 msgid "Kaptan"
-msgstr ""
+msgstr "Kaptan"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr ""
+msgstr "<emphasis>Kaptan</emphasis>, das Werkzeug zur Anpassung des Desktops kann sofern gewünscht ein Foto von Ihnen aufnehmen, und dieses als Avatar in KDE verwenden."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
-msgstr ""
+msgstr "Anwendern ist es nun möglich ihr bevorzuges Iconset für die KDE Desktopumgebung auszuwählen."
 
 #. Tag: title
 #, no-c-format
 msgid "Pisi"
-msgstr ""
+msgstr "PiSi"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
-msgstr ""
+msgstr "<emphasis>PiSi</emphasis> nutzt nun intern XZ als Standard Kompressionsverfahren."
 
 #. Tag: para
 #, no-c-format
 msgid "Binary package names now reflects the architecture and the distribution release for which the package is built."
-msgstr ""
+msgstr "Der Name der Programmpakete reflektiert nun die Architektur und die Version der Distribution für die sie erstellt wurde."
 
 #. Tag: para
 #, no-c-format
@@ -91,12 +91,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Package Manager"
-msgstr ""
+msgstr "Paket-Manager"
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
-msgstr ""
+msgstr "Anwendern ist es nun möglich im Paket-Manager ein Programmpaket zu bewerten und einen Screenshot des Programms zu sehen."
 
 #. Tag: para
 #, no-c-format
@@ -111,52 +111,52 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Updates in Core Components"
-msgstr ""
+msgstr "Aktualisierungen der Kernkomponenten"
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest stable kernel released on 2011/01/05."
-msgstr ""
+msgstr "<application>Kernel</application> - Der Linux Kernel mit der Version &KERNELVER;, der mit Pardus &PRODVER; ausgeliefert wird, ist der neueste stabile Kernel der am 05.01.2011 veröffentlicht wurde."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
-msgstr ""
+msgstr "<application>Plymouth</application> - Die unter Pardus &PREVVER; genutzte Bootscreen-Technologie wurde vollständig durch das neue Plymouth ersetzt."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Python</application> - Python is updated to &PYTHONVER;."
-msgstr ""
+msgstr "<application>Python</application> - Python ist aktualisiert worden auf &PYTHONVER;."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Perl</application> - Perl is updated to &PERLVER;."
-msgstr ""
+msgstr "<application>Perl</application> - Perl ist aktualisert worden auf &PERLVER;."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers."
-msgstr ""
+msgstr "<application>X.org</application> - Xorg-Server wurde aktualisiert auf &XORGVER;. Durch unsere Entwickler wurden Verbesserungen bei der automatischen Treiberkonfiguration eingeführt."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Texlive</application> - Texlive documentation stack is updated to &TEXLIVEVER;."
-msgstr ""
+msgstr "<application>Texlive</application> - Texlive das System für Tex-Dokumente ist aktualisiert worden auf &TEXLIVEVER;."
 
 #. Tag: title
 #, no-c-format
 msgid "Desktop Experience"
-msgstr ""
+msgstr "Desktoperlebnis"
 
 #. Tag: title
 #, no-c-format
 msgid "Changes in KDE Desktop Environment"
-msgstr ""
+msgstr "Änderungen der KDE Desktopumgebung"
 
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr ""
+msgstr "Pardus &PRODVER; wird mit der neuesten KDE SC Version &KDEVER; ausgeliefert. Die Basispakete beinhalten zusätzlich eine gewisse Anzahl von Portierungen und Fehlerkorrekturen, um die Stabilität des Desktops signifikant zu steigern."
 
 #. Tag: para
 #, no-c-format
@@ -166,12 +166,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Visual Enhancements"
-msgstr ""
+msgstr "Visuelle Verbesserungen"
 
 #. Tag: para
 #, no-c-format
 msgid "All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr ""
+msgstr "Alle GTK Programme werden nun Dank dem <emphasis>oxygen-gtk</emphasis> Project im Oxygen Stil dargestellt. Für die Konsistenz der Benutzeroberfläche ist dies eine großartige Verbesserung."
 
 #. Tag: para
 #, no-c-format
@@ -181,7 +181,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Network Management"
-msgstr ""
+msgstr "Netzwerkmanagement"
 
 #. Tag: para
 #, no-c-format
@@ -196,12 +196,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Default Applications"
-msgstr ""
+msgstr "Standard Programme"
 
 #. Tag: title
 #, no-c-format
 msgid "Mozilla Firefox"
-msgstr ""
+msgstr "Mozilla Firefox"
 
 #. Tag: para
 #, no-c-format
@@ -211,17 +211,17 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Clementine"
-msgstr ""
+msgstr "Clementine"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it is well maintained and lightweight."
-msgstr ""
+msgstr "<emphasis>Clementine</emphasis>, ein plattformübergreifender und leichtgewichtiger Musikplayer basierend auf Amarok 1.4 ist das Standard Abspielprogramm für Audioinhalte."
 
 #. Tag: title
 #, no-c-format
 msgid "SMPlayer"
-msgstr ""
+msgstr "SMPlayer"
 
 #. Tag: para
 #, no-c-format
@@ -231,57 +231,57 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "KsCD"
-msgstr ""
+msgstr "KsCD"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
-msgstr ""
+msgstr "<emphasis>KsCD</emphasis> ist das Standardprogramm zum Abspielen von Audio CDs."
 
 #. Tag: title
 #, no-c-format
 msgid "Web Browsers"
-msgstr ""
+msgstr "Web Browser"
 
 #. Tag: para
 #, no-c-format
 msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
-msgstr ""
+msgstr "Obwohl nicht im Installationsmedium integriert, ist eine große Anzahl von Webbrowsern verfügbar. Unter anderem kann mit dem Paket-Manager Chromium, rekonq, Arora und Opera installiert werden."
 
 #. Tag: title
 #, no-c-format
 msgid "System Settings"
-msgstr ""
+msgstr "Systemeinstellungen"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
-msgstr ""
+msgstr "<emphasis>Panda</emphasis> (Pardus alternative driver administration) ist ein neues Systemmodul, das dem Anwender erlaubt zwischen OpenSource und proprietären Treibern für NVIDIA und ATI Grafikarten zu wechseln."
 
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to set up their Bluetooth devices, Wacom tablets and Synaptics touchpads through System Settings."
-msgstr ""
+msgstr "Anwender können nun mit den Systemeinstellungen Bluetoothgeräte, Wacom tablets and Synaptics touchpads konfigurieren."
 
 #. Tag: para
 #, no-c-format
 msgid "The default language used throughout the whole system can now be changed through the locale settings section."
-msgstr ""
+msgstr "Die Standard Systemsprache für das gesamte System kann nun leicht durch die Länder/Sprachauswahl geändert werden."
 
 #. Tag: title
 #, no-c-format
 msgid "Office Suite"
-msgstr ""
+msgstr "Office Suite"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
-msgstr ""
+msgstr "<emphasis>LibreOffice</emphasis>, eine OpenSource Suite zur produktiven Office Arbeit, welche durch die Document Foundation gesponsert wird, ist nun das Standard Officeprogramm bei Pardus &PRODVER;."
 
 #. Tag: title
 #, no-c-format
 msgid "Games"
-msgstr ""
+msgstr "Spiele"
 
 #. Tag: para
 #, no-c-format
@@ -291,9 +291,10 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Other Changes"
-msgstr ""
+msgstr "Weitere Änderungen"
 
 #. Tag: para
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
-msgstr ""
+msgstr "Die Firefox-Version &FIREFOXVER; beinhaltet eine Vielzahl an neuen Funktionen wie das neue Benutzerinterface, eine neue Pluginverwaltung, Tabgruppierung, Lesezeichensynchronisierung, Paßwort und Chronik Abgleich. Die Unterstützung von HTML5, CSS3 und der WebM Technologie sind die wichtigsten Funktionen für Entwickler."
+
