@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
-"PO-Revision-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
+"PO-Revision-Date: 2011-01-20T08:05:34\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr ""
 
 #. Tag: para

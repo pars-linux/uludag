@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
 "PO-Revision-Date: 2011-01-19 16:31+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
@@ -54,8 +54,8 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - Kurulum aracı YALI, LVM/RAID ve UUID desteği kazandı."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#, fuzzy, no-c-format
+msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr "<application>KDE SC</application> - Pardus &PRODVER; en güncel ve kararlı KDE Yazılım Bileşeni, KDE SC &KDEVER; ile geliyor. Masaüstü deneyiminizin daha hızlı ve kararlı olması için temel paketlere birçok hata düzeltmesi ve iyileştirmeler yapıldı."
 
 #. Tag: para

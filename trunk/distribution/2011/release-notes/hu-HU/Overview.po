@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
 "PO-Revision-Date: 2011-01-19 14:03+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -57,8 +57,8 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - YALI, a Pardus telepítőprogramja, LVM/RAID és UUID támogatást kapott."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#, fuzzy, no-c-format
+msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr "<application>KDE SC</application> - A Pardus &PRODVER; a legfrissebb KDE-vel érkezik, ami a KDE SC &KDEVER;. Már az alapcsomagok is számtalan javítást tartalmaznak, amitől a KDE környezet felhasználói élménye jelentősen javul."
 
 #. Tag: para

@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
 "PO-Revision-Date: 2011-01-19 23:40+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -158,7 +158,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr ""
 
 #. Tag: para
@@ -300,5 +300,3 @@ msgstr "Andra förändringar"
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr ""
-
-

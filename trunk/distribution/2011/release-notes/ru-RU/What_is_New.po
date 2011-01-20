@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
 "PO-Revision-Date: 2011-01-20 05:23+0300\n"
 "Last-Translator: Alexander Scherbakov <neocrust@gmail.com>\n"
 "Language-Team: None\n"
@@ -154,8 +154,8 @@ msgid "Changes in KDE Desktop Environment"
 msgstr "Изменения в KDE Desktop Environment"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#, fuzzy, no-c-format
+msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
 msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Component, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
 
 #. Tag: para
@@ -297,4 +297,3 @@ msgstr "Другие изменения"
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr "Совсем скоро выйдет новая стабильная версия Firefox. &FIREFOXVER; представляет множество новых возможностей, таких как новый интерфейс браузера, а также плагин управления новым интерфейсом, группировка вкладок, синхронизация паролей, истории и закладок между компьютерами. Поддержка HTML5, CSS 3 и WebM и наиболее важных функций для разработчиков."
-
