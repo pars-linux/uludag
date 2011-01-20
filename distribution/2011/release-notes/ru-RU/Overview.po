@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-20 02:28+0300\n"
+"PO-Revision-Date: 2011-01-20 19:14+0300\n"
 "Last-Translator: Alexey Ivanov <alexey.ivanes@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "MIME-Version: 1.0\n"
@@ -47,12 +47,12 @@ msgstr "<application>Ядро</application> - Последнее Linux ядро 
 #. Tag: para
 #, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
-msgstr "<application>Plymouth</application> - Технология графической заставки на этапе загрузки, используемая в Pardus &PREVVER; полностью заменена новой технологией Plymouth. "
+msgstr "<application>Plymouth</application> - Технология графической заставки на этапе загрузки, используемая в Pardus &PREVVER; полностью переделана и заменена на новый движок Plymouth."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>YALI</application> - YALI, the installer of Pardus, gained LVM/RAID and UUID support."
-msgstr "<application>YALI</application> - YALI, установщик Pardus, улучшен LVM/RAID и UUID поддержкой."
+msgstr "<application>YALI</application> - YALI, установщик Pardus, предоставляет поддержку LVM/RAID и UUID."
 
 #. Tag: para
 #, no-c-format
@@ -62,7 +62,7 @@ msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляе�
 #. Tag: para
 #, no-c-format
 msgid "<application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr "<application>Kaptan</application> - Kaptan, утилита настройки рабочего стола для Pardus, теперь может (опционально) захватывать изображение и устанавливать его в качестве аватара в KDE."
+msgstr "<application>Kaptan</application> - Kaptan, утилита настройки рабочего стола для Pardus, теперь может (опционально) захватывать изображение с веб-камеры и устанавливать его в качестве аватара в KDE."
 
 #. Tag: para
 #, no-c-format
@@ -72,9 +72,10 @@ msgstr "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 �
 #. Tag: para
 #, no-c-format
 msgid "<application>GTK Oxygen style</application> - All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr "<application>GTK Oxygen style</application> - Все GTK-приложения отображаются со стилем Oxygen, благодаря <emphasis>oxygen-gtk</emphasis> проекту. Это огромный шаг вперед для полноценности и равномерности отображения интерфейса пользователя."
+msgstr "<application>GTK Oxygen style</application> - Все GTK приложения отображаются со стилем Oxygen, благодаря проекту<emphasis>oxygen-gtk</emphasis>. Это огромный шаг вперед для полноценности и равномерности отображения интерфейса пользователя."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
-msgstr "<application>LibreOffice</application> - LibreOffice, открытый и свободный офисный пакет, спонсируемый Document Foundation, используется как набор офисных приложений по-умолчанию в Pardus &PRODVER;."
+msgstr "<application>LibreOffice</application> - LibreOffice, открытый и свободный офисный пакет, спонсируемый Document Foundation, используется как набор офисных приложений по умолчанию в Pardus &PRODVER;."
+
