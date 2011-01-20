@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-20 02:00+0100\n"
-"Last-Translator: Stefan Wilhelm <sw _AT_ pardususer DOT de>\n"
+"PO-Revision-Date: 2011-01-20 09:04+0100\n"
+"Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr "Was ist neu?"
 #. Tag: title
 #, no-c-format
 msgid "Updates in Pardus Technologies"
-msgstr "Aktualisierung der Pardus Technologien"
+msgstr "Updates der Pardus Technologien"
 
 #. Tag: title
 #, no-c-format
@@ -86,7 +86,7 @@ msgstr "Der Name der Programmpakete reflektiert nun die Architektur und die Vers
 #. Tag: para
 #, no-c-format
 msgid "Various speed enhancements has been done in the core components for a better package management experience."
-msgstr ""
+msgstr "Für eine bessere und schnellere Paketverwaltung wurden verschiedene Verbesserungen in den Kernkomponenten eingeführt."
 
 #. Tag: title
 #, no-c-format
@@ -101,12 +101,12 @@ msgstr "Anwendern ist es nun möglich im Paket-Manager ein Programmpaket zu bewe
 #. Tag: para
 #, no-c-format
 msgid "The graphical user interface is redesigned to improve the usability. Various speed enhancements has been done for a better graphical package management experience."
-msgstr ""
+msgstr "Um die Bedienung zu vereinfachen wurde die Benutzeroberfläche wurde neu gestaltet. Zusätzlich wurden bei der Paketverwaltung verschiedene Geschwindigkeitsverbesserungen eingeführt."
 
 #. Tag: para
 #, no-c-format
 msgid "A lot of KDE integration work has been done including the usage of KDE system tray."
-msgstr ""
+msgstr "Viel Arbeit wurde in die KDE Integration und der Verbesserung des KDE Systemtrays gesteckt."
 
 #. Tag: title
 #, no-c-format
@@ -161,7 +161,7 @@ msgstr "Pardus &PRODVER; wird mit der neuesten KDE SC Version &KDEVER; ausgelief
 #. Tag: para
 #, no-c-format
 msgid "KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version."
-msgstr ""
+msgstr "KDE SC &KDEVER; bietet eine verbesserte Leistung und Stabilität. Die Unterstützung für WebKit, eine verbesserte Darstellung für Netbooks und ein high-speed Cache der schnellen Zugriff auf gespeicherte Ressourcen auf dem Datenträger ermöglicht, sind weitere Vorteile der neuen Version."
 
 #. Tag: title
 #, no-c-format
@@ -176,7 +176,7 @@ msgstr "Alle GTK Programme werden nun Dank dem <emphasis>oxygen-gtk</emphasis> P
 #. Tag: para
 #, no-c-format
 msgid "Milky icon theme especially designed for Pardus is shipped within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>System Settings</emphasis>."
-msgstr ""
+msgstr "Die Iconsammlung Milky wurde speziell für Pardus entworfen und ist im Installationsmedium enthalten. Mit Hilfe von <emphasis>Kaptan</emphasis> oder den <emphasis>Systemeinstellungen</emphasis> kann der Benutzer diese Sammlung verwenden."
 
 #. Tag: title
 #, no-c-format
@@ -186,12 +186,12 @@ msgstr "Netzwerkmanagement"
 #. Tag: para
 #, no-c-format
 msgid "Besides switching to GNOME NetworkManager as the default networking backend, Pardus &PRODVER; comes with a heavily improved and modified KDE Network Management tool and plasmoid to give their users a much more consistent networking experience."
-msgstr ""
+msgstr "Nicht nur, dass nun der GNOME NetworkManager der Standard Netzwerkunterbau ist, wird bei Pardus &PRODVER; ein stark modifiziertes und verbessertes KDE Werkzeug zur Netzwerkverwaltung eingesetzt, um dem Anwender eine konsistente Netzwerk Erfahrung zu bieten."
 
 #. Tag: para
 #, no-c-format
 msgid "With this new networking backend, users are now able to easily set up their Ethernet (With support for 802.1x authentication), 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks."
-msgstr ""
+msgstr "Mit dem neuen Netzwerkunterbau ist es den Anwendern nun möglich ihr Ethernet-, Wireless- (WEP/WPA/WPA2/WPA-EAP) sowie EDGE/3G/CDMA- und VPN-Netzwerk einzurichten."
 
 #. Tag: title
 #, no-c-format
@@ -206,7 +206,7 @@ msgstr "Mozilla Firefox"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default web browser application. New features of this Firefox release include Firefox Panorama, application tabs, a redesigned extension manager, Jetpack extensions support, integration with Firefox Sync, and support for multitouch displays."
-msgstr ""
+msgstr "Pardus &PRODVER; nutzt als Standard Webbrowser Mozilla Firefox &FIREFOXVER;. Diese Version bietet neue Funktionen, wie Firefox Panorama, Applikations Tabs, ein neu gestalteter Addon-Manager, Unterstützung für Jetpack Erweiterungen, die Integration von Firefox Sync und Unterstützung für Multitouch Bildschirme."
 
 #. Tag: title
 #, no-c-format
@@ -226,7 +226,7 @@ msgstr "SMPlayer"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
-msgstr ""
+msgstr "<emphasis>SMplayer</emphasis>, eine auf Qt basierende Oberfläche für MPlayer ist das Standardprogramm für das Abspielen von Video/VCD und DVD. Das Programm ist sehr gut in die KDE Desktopumgebung integriert und bietet neben einer nutzerfreudlichen Bedienung dank dem MPlayer Unterbau eine sehr gute Unterstützung für viele Videoformate."
 
 #. Tag: title
 #, no-c-format
@@ -286,7 +286,7 @@ msgstr "Spiele"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; continues the tradition of giving importance to the quality of games offered to their users. The default installation now includes the board and logic games provided by the <application>kdegames</application> package."
-msgstr ""
+msgstr "Pardus &PRODVER; führt die Tradition weiter den Anwendern nur Spiele mit hoher Qualität anzubieten. Die Standardinstallation beinhaltet nun die Brett- und Logikspiele, die in dem Paket <application>kdegames</application> integriert sind."
 
 #. Tag: title
 #, no-c-format
