@@ -141,7 +141,7 @@
             </listitem>
             <listitem>
                 <para>
-                    <application>Texlive</application> - Texlive documentation stack is updated to &TEXLIVEVER;.
+                    <application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;.
                 </para>
             </listitem>
         </itemizedlist>
