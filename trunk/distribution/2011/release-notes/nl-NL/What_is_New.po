@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T08:05:34\n"
+"POT-Creation-Date: 2011-01-20T14:02:07\n"
 "PO-Revision-Date: 2011-01-20 11:11+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
@@ -143,8 +143,8 @@ msgstr "<application>X.org</application> - xorg-server is bijgewerkt tot &XORGVE
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Texlive</application> - Texlive documentation stack is updated to &TEXLIVEVER;."
-msgstr "<application>Texlive</application> - de stack van Texlive-documentatie is bijgewerkt tot &TEXLIVEVER;."
+msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
+msgstr "<application>TeX Live</application> - de stack van TeX Live-documentatie is bijgewerkt tot &TEXLIVEVER;."
 
 #. Tag: title
 #, no-c-format
@@ -300,5 +300,3 @@ msgstr "Overige wijzigingen"
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr "Firefox krijgt snel een stabiele uitgave . &FIREFOXVER;-uitgave presenteert vele nieuwe mogelijkheden zoals de nieuwe interface van de browser en ook nieuwe interface voor plug-in-beheer, tabbladen-groepering, bladwijzers tussen computers, wachtwoorden en geschiedenis uitwisseling, een nieuwe plug-in-interface. HTML5, CSS3 and WebM-technologie zijn zeer belangrijke mogelijkheden voor de ontwikkelaars."
-
-
