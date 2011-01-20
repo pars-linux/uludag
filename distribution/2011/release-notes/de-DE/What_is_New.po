@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T09:16:47\n"
-"PO-Revision-Date: 2011-01-20 09:04+0100\n"
+"POT-Creation-Date: 2011-01-20T08:05:34\n"
+"PO-Revision-Date: 2011-01-20 10:20+0100\n"
 "Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -139,8 +139,8 @@ msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;, i
 msgstr "<application>X.org</application> - Xorg-Server wurde aktualisiert auf &XORGVER;. Durch unsere Entwickler wurden Verbesserungen bei der automatischen Treiberkonfiguration eingeführt."
 
 #. Tag: para
-#, fuzzy, no-c-format
-msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
+#, no-c-format
+msgid "<application>Texlive</application> - Texlive documentation stack is updated to &TEXLIVEVER;."
 msgstr "<application>Texlive</application> - Texlive das System für Tex-Dokumente ist aktualisiert worden auf &TEXLIVEVER;."
 
 #. Tag: title
@@ -154,9 +154,9 @@ msgid "Changes in KDE Desktop Environment"
 msgstr "Änderungen der KDE Desktopumgebung"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "Pardus &PRODVER; wird mit der neuesten KDE SC Version &KDEVER; ausgeliefert. Die Basispakete beinhalten zusätzlich eine gewisse Anzahl von Portierungen und Fehlerkorrekturen, um die Stabilität des Desktops signifikant zu steigern."
+msgstr "Pardus &PRODVER; wird mit der neuesten KDE Software Compilation, KDE SC &KDEVER; ausgeliefert. Die Basispakete beinhalten zusätzlich eine gewisse Anzahl von Portierungen und Fehlerkorrekturen, um die Stabilität des Desktops signifikant zu steigern."
 
 #. Tag: para
 #, no-c-format
@@ -297,3 +297,4 @@ msgstr "Weitere Änderungen"
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
 msgstr "Die Firefox-Version &FIREFOXVER; beinhaltet eine Vielzahl an neuen Funktionen wie das neue Benutzerinterface, eine neue Pluginverwaltung, Tabgruppierung, Lesezeichensynchronisierung, Paßwort und Chronik Abgleich. Die Unterstützung von HTML5, CSS3 und der WebM Technologie sind die wichtigsten Funktionen für Entwickler."
+
