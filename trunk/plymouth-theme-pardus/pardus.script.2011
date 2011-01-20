@@ -41,7 +41,7 @@ pardus_logo.sprite.SetPosition(pardus_logo.x, pardus_logo.y, pardus_logo.z);
 # Throbber
 throbber.frame_size = 24;
 for (i = 1; i < throbber.frame_size; i++)
-    throbber.images[i] = Image("throbber/22/apngframe" + i + ".png");
+    throbber.images[i] = Image("apngframe" + i + ".png");
 throbber.sprite = Sprite(throbber.images[1]);
 throbber.x = Window.GetX() + Window.GetWidth() / 2 - throbber.images[1].GetWidth() / 2;
 throbber.y = Window.GetHeight() - throbber.images[1].GetHeight() - 100;

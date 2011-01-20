@@ -4,13 +4,15 @@ nodist_theme_DATA = \
 
 dist_theme_DATA =                                                     \
                     pardus.script                                     \
-                    bg.png                                            \
+                    background.png                                    \
+                    logo.png                                          \
                     box.png                                           \
                     bullet.png                                        \
                     entry.png                                         \
                     lock.png                                          \
                     progress_box.png                                  \
-                    progress_bar.png
+                    progress_bar.png                                  \
+                    apngframe*.png
 
 
 MAINTAINERCLEANFILES = Makefile.in pardus.plymouth
