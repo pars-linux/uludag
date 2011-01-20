@@ -32,7 +32,7 @@ class Install(install):
 
 
 setup(name="yali-theme-pardus",
-      version= "2011.0.4",
+      version= "2011.0.5",
       description="Pardus theme for YALI (Yet Another Linux Installer)",
       license="GNU GPL2",
       author="Pardus Developers",
