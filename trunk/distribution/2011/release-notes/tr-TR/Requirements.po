@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-13T09:41:09\n"
+"PO-Revision-Date: 2011-01-20 10:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -105,7 +105,7 @@ msgstr "Sistem Belleği (RAM)"
 #. Tag: para
 #, no-c-format
 msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
-msgstr "Pardus &PRODVER; sistem belleği (RAM) gereksinimi günlük kullanıma bağlı olarak değişebileceği için asgari ya da yeterli miktarı belirlemek zor. Yine de rahat bir masaüstü deneyimi için &MINMEMİ değerinin altına inilmemesini öneriyoruz."
+msgstr "Pardus &PRODVER; sistem belleği (RAM) gereksinimi günlük kullanıma bağlı olarak değişebileceği için asgari ya da yeterli miktarı belirlemek zor. Yine de rahat bir masaüstü deneyimi için &MINMEM; değerinin altına inilmemesini öneriyoruz."
 
 #. Tag: title
 #, no-c-format
