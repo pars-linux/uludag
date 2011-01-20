@@ -152,7 +152,7 @@
         <section id="sect-Release_Notes-What_is_New_KDE">
             <title>Changes in KDE Desktop Environment</title>
             <para>
-                Pardus &PRODVER; comes with the latest KDE Software Component, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
+                Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
             </para>
             <para>
                 KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version.
