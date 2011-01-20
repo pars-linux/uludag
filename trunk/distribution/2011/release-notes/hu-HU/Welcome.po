@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T06:58:23\n"
-"PO-Revision-Date: 2011-01-19 18:49+0100\n"
+"PO-Revision-Date: 2011-01-20 12:07+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
 "Language: \n"
@@ -37,9 +37,9 @@ msgid "Pardus is an open-source, freely distributable, GPL (General Public Licen
 msgstr "A Pardus egy nyílt forrású, ingyenesen terjeszthető, GPL licenszelésű barátságod GNU/Linux disztribúció számos hardver kompatibilitási, stabilitási, biztonsági és felhasználhatósági fejlesztéssel."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
-msgstr "A Pardus project támogatója a törökországi <emphasis>Nemzeti Elektronikai és Kriptológiai Kutató Intézet (UEKAE)</emphasis>, a <emphasis>Törökországi Tudományos és Technológiai Kutatótanács (TÜBİTAK)</emphasis> tagja."
+msgstr "A Pardus project támogatója a törökországi <emphasis>Informatikai Technológia Fejlesztési és Információs Biztonságtechnikai Kutatóközpont (BILGEM)</emphasis>, a <emphasis>Törökországi Tudományos és Technológiai Kutatótanács (TÜBİTAK)</emphasis> tagja."
 
 #. Tag: para
 #, no-c-format
@@ -90,3 +90,4 @@ msgstr "Visszajelzés"
 #, no-c-format
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Hibákat, vagy fejlesztési javaslatokat a <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> tud tenni. Köszönjük minden felhasználónknak és közösségi tagunknak értékes részvételét, amivel világszerte segítenek jobbá tenni a Pardust, a Linuxot és a szabad szoftvereket."
+
