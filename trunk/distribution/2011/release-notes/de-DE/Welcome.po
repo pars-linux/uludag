@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-19T11:58:40\n"
-"PO-Revision-Date: 2011-01-19 16:25+0100\n"
+"PO-Revision-Date: 2011-01-20 11:10+0100\n"
 "Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -76,7 +76,7 @@ msgstr "Weitere Informationen"
 #. Tag: para
 #, no-c-format
 msgid "Visit the official web site <ulink url=\"http://www.pardus.org.tr/eng\">http://www.pardus.org.tr/eng</ulink> for more information."
-msgstr "Für weitere Informationen können Sie die offizielle Webseite <ulink url=\"http://www.pardus.org.tr/eng\">http://www.pardus.org.tr/eng</ulink> besuchen."
+msgstr "Für weitere Informationen können Sie die offizielle Webseite <ulink url=\"http://www.pardus.org.tr/eng\">http://www.pardus.org.tr/eng</ulink> besuchen. Support und Hilfe können Sie sowohl im englischsprachigen Worldforum <ulink url=\"http://worldforum.pardus-linux.nl/\">http://worldforum.pardus-linux.nl</ulink> als auch in der deutschsprachigen Community <ulink url=\"http://www.pardususer.de\">http://www.pardususer.de</ulink> erhalten."
 
 #. Tag: title
 #, no-c-format
