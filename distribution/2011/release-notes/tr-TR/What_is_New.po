@@ -170,7 +170,7 @@ msgstr "Görsel İyileştirmeler"
 #. Tag: para
 #, no-c-format
 msgid "All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr "<emphasis>oxygen-gtk</emphasis>projesi sağolsun, tüm GTK uygulamaları artık Oxygen stili ile görüntülenebiliyor, Bu özellik arabirim tutarlılığı konusunda büyük bir gelişme sağladı."
+msgstr "<emphasis>oxygen-gtk</emphasis>projesi sağolsun, tüm GTK uygulamaları artık Oxygen biçemiyle görüntülenebiliyor, Bu özellik arabirim tutarlılığı konusunda büyük bir gelişme sağladı."
 
 #. Tag: para
 #, no-c-format
