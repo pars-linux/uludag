@@ -1,3 +1,13 @@
+2011-01-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix stars positions
+         * Bug fixed at http://bugs.pardus.org.tr/16337
+
+2011-01-19 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ignore effect 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update version string 
+
 2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Add more desktop files for Install More Software menu items ... 
 
@@ -794,15 +804,4 @@
          * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
          * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
          * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-29 transifex
-         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
-         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-10-26 Gökmen Göksel <gokmen@pardus.org.tr>
-         * make details dialog similar to basket dialog 
-
-2010-10-26 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Add history tab for future release 
 
