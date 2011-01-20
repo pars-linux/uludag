@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-19 15:37+0100\n"
+"PO-Revision-Date: 2011-01-20 10:24+0100\n"
 "Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -54,9 +54,9 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - YALI, der Installer von Pardus bietet nun LVM/RAID sowie UUID-Unterstützung."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - Pardus &PRODVER; wird mit der neuesten KDE SC Version &KDEVER; ausgeliefert. Die Basispakete beinhalten zusätzlich eine gewisse Anzahl von Portierungen und Fehlerkorrekturen, um die Stabilität des Desktops signifikant zu steigern."
+msgstr "<application>KDE SC</application> - Pardus &PRODVER; wird mit der neuesten KDE Software Compilation, KDE SC &KDEVER; ausgeliefert.  Um die Stabilität des Desktops signifikant zu steigern beinhalten die Basispakete zusätzlich eine gewisse Anzahl von Portierungen und Fehlerkorrekturen."
 
 #. Tag: para
 #, no-c-format
@@ -77,3 +77,4 @@ msgstr "<application>GTK Oxygen Stil</application> - Alle GTK Programme werden j
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
 msgstr "<application>LibreOffice</application> - LibreOffice, eine OpenSource Suite zur produktiven Office Arbeit, welche durch die Document Foundation gesponsert wird, ist nun das Standard Officeprogramm bei Pardus &PRODVER;."
+
