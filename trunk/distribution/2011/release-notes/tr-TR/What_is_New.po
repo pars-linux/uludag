@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T09:16:47\n"
-"PO-Revision-Date: 2011-01-20 11:15+0200\n"
+"PO-Revision-Date: 2011-01-20 11:19+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -138,9 +138,9 @@ msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;, i
 msgstr "<application>X.org</application> - xorg-sunucusu &XORGVER; sürümüne yükseltildi. Otomatik sürücü yapılandırması için geliştiricilerimizin iyileştirmeleri eklendi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
-msgstr "<application>Texlive</application> - Texlive belgeleme araçları &TEXLIVEVER; sürümüne yükseltildi."
+msgstr "<application>TeX Live</application> - TeX Live belgeleme araçları &TEXLIVEVER; sürümüne yükseltildi."
 
 #. Tag: title
 #, no-c-format
