@@ -2,11 +2,12 @@
 #
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
 # Siposs Attila <siposs.attila@isd-dunaferr.hu>, 2011.
+# Attila Siposs <sipiatti@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-19 14:03+0100\n"
+"PO-Revision-Date: 2011-01-20 12:11+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
 "Language: hu\n"
@@ -57,9 +58,9 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - YALI, a Pardus telepítőprogramja, LVM/RAID és UUID támogatást kapott."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - A Pardus &PRODVER; a legfrissebb KDE-vel érkezik, ami a KDE SC &KDEVER;. Már az alapcsomagok is számtalan javítást tartalmaznak, amitől a KDE környezet felhasználói élménye jelentősen javul."
+msgstr "<application>KDE SC</application> - A Pardus &PRODVER; a legfrissebb KDE-vel érkezik (KDE SC &KDEVER;). Már az alapcsomagok is számtalan javítást és frissítést tartalmaznak, amitől a KDE környezet felhasználói élménye jelentősen javul."
 
 #. Tag: para
 #, no-c-format
@@ -80,3 +81,4 @@ msgstr "<application>GTK Oxygen stílus</application> - Minden GTK alkalmazás m
 #, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
 msgstr "<application>LibreOffice</application> - A Document Foundation által szponzorált nyílt forrású LibreOffice az alapértelmezett irodai csomag a Pardus &PRODVER; kiadásában."
+
