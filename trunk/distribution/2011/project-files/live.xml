@@ -167,6 +167,9 @@
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
+        <SelectedPackage>service-manager</SelectedPackage>
+        <SelectedPackage>user-manager</SelectedPackage>
+        <SelectedPackage>firewall-manager</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
         <SelectedPackage>phonon-backend-xine</SelectedPackage>
