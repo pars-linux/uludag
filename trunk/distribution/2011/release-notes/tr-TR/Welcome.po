@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-20 11:04+0200\n"
+"PO-Revision-Date: 2011-01-20 11:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -35,7 +35,7 @@ msgstr "Pardus açık kaynak kodlu, özgürce dağıtılan, GPL (Genel Kamu Lisa
 #. Tag: para
 #, no-c-format
 msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
-msgstr "Pardus projesi, Türkiye Bilimsel ve Teknolojik Araştırma Kurumu (TÜBİTAK)'na bağlı Bilişim ve Bilgi Güvenliği İleri Teknolojiler Araştırmalar Merkezi (BİLGEM) bünyesinde geliştirilmektedir."
+msgstr "Pardus projesi, <emphasis>Türkiye Bilimsel ve Teknolojik Araştırma Kurumu (TÜBİTAK)</emphasis>'na bağlı <emphasis>Bilişim ve Bilgi Güvenliği İleri Teknolojiler Araştırmalar Merkezi (BİLGEM)</emphasis> bünyesinde geliştirilmektedir."
 
 #. Tag: para
 #, no-c-format
