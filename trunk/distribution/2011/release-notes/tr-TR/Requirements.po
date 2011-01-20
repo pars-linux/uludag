@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:05:34\n"
-"PO-Revision-Date: 2011-01-20 10:15+0200\n"
+"PO-Revision-Date: 2011-01-20 13:28+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "Language: \n"
@@ -135,7 +135,7 @@ msgstr "Pardus &PRODVER; sürümünde günlük kullanım ihtiyaçlarının rahat
 #. Tag: title
 #, no-c-format
 msgid "Note on Swap space"
-msgstr "Takas Alanı hakkında"
+msgstr "Takas alanı hakkında"
 
 #. Tag: para
 #, no-c-format
