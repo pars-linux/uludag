@@ -158,11 +158,15 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         # Paint the Icon
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
+        fix_pos = 0
+        if index.model().columnCount() <= 1:
+            fix_pos = 22
+
         # Rating Stars
         for _rt_i in range(5):
-            self._rt_0.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
+            self._rt_0.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
         for _rt_i in range(rate):
-            self._rt_1.paint(p, width + 10 * _rt_i - 50, top + ROW_HEIGHT / 2 - 5, 10, 10, Qt.AlignCenter)
+            self._rt_1.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         p.setPen(foregroundColor)

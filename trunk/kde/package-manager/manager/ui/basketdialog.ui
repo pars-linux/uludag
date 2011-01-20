@@ -148,9 +148,6 @@ border-bottom:1px solid #999;
            <property name="horizontalScrollBarPolicy">
             <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
-           <property name="autoScrollMargin">
-            <number>1</number>
-           </property>
            <property name="editTriggers">
             <set>QAbstractItemView::NoEditTriggers</set>
            </property>
@@ -167,7 +164,7 @@ border-bottom:1px solid #999;
             <enum>QAbstractItemView::NoSelection</enum>
            </property>
            <property name="selectionBehavior">
-            <enum>QAbstractItemView::SelectRows</enum>
+            <enum>QAbstractItemView::SelectColumns</enum>
            </property>
            <property name="verticalScrollMode">
             <enum>QAbstractItemView::ScrollPerPixel</enum>
@@ -257,7 +254,7 @@ border-bottom:1px solid #999;
             <enum>QAbstractItemView::NoSelection</enum>
            </property>
            <property name="selectionBehavior">
-            <enum>QAbstractItemView::SelectRows</enum>
+            <enum>QAbstractItemView::SelectColumns</enum>
            </property>
            <property name="verticalScrollMode">
             <enum>QAbstractItemView::ScrollPerPixel</enum>
