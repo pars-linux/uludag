@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:16:44\n"
-"PO-Revision-Date: 2011-01-20 11:11+0200\n"
+"PO-Revision-Date: 2011-01-20 11:15+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -65,17 +65,17 @@ msgstr "Pardus'un kişiselleştirme yardımcısı <emphasis>Kaptan</emphasis>, i
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
-msgstr "Kullanıcılar artık KDE içinde kullanılacak olan simge setini Kaptan'la  seçebiliyor."
+msgstr "Kullanıcılar artık KDE içinde kullanılacak olan simge setini Kaptan ile seçebiliyor."
 
 #. Tag: title
 #, no-c-format
 msgid "Pisi"
-msgstr "PiSi"
+msgstr "Pisi"
 
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
-msgstr "<emphasis>PiSi</emphasis> XZ'yi öntanımlı sıkıştırma algoritması olarak kullanıyor."
+msgstr "<emphasis>Pisi</emphasis> XZ sıkıştırma algoritmasını öntanımlı olarak kullanıyor."
 
 #. Tag: para
 #, no-c-format
@@ -85,7 +85,7 @@ msgstr "İkili paketlerin isimleri artık hangi sürüm ve işlemci mimarisine g
 #. Tag: para
 #, no-c-format
 msgid "Various speed enhancements has been done in the core components for a better package management experience."
-msgstr "Paket yönetiminde daha rahat kullanım için temel bileşenlerde bir çok iyileştirme gerçekleşti."
+msgstr "Paket yönetiminde daha rahat kullanım için temel bileşenlerde bir çok iyileştirme yapıldı."
 
 #. Tag: title
 #, no-c-format
@@ -95,7 +95,7 @@ msgstr "Paket Yöneticisi"
 #. Tag: para
 #, no-c-format
 msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
-msgstr "Kullanıcılar paketleri oylayabiliyor ve ekran görüntülerine bakarak tercih yapabiliyor."
+msgstr "Kullanıcılar artık paketleri oylayabiliyor ve ekran görüntülerine bakarak tercih yapabiliyor."
 
 #. Tag: para
 #, no-c-format
@@ -140,7 +140,7 @@ msgstr "<application>X.org</application> - xorg-sunucusu &XORGVER; sürümüne y
 #. Tag: para
 #, no-c-format
 msgid "<application>Texlive</application> - Texlive documentation stack is updated to &TEXLIVEVER;."
-msgstr "<application>Texlive</application> - Texlive belgeleme araçları  &TEXLIVEVER; sürümüne yükseltildi."
+msgstr "<application>Texlive</application> - Texlive belgeleme araçları &TEXLIVEVER; sürümüne yükseltildi."
 
 #. Tag: title
 #, no-c-format
@@ -150,7 +150,7 @@ msgstr "Masaüstü Deneyimi"
 #. Tag: title
 #, no-c-format
 msgid "Changes in KDE Desktop Environment"
-msgstr "KDE Yazılım Seçkisinde değişiklikler"
+msgstr "KDE Yazılım Seçkisinde Değişiklikler"
 
 #. Tag: para
 #, no-c-format
@@ -215,7 +215,7 @@ msgstr "Clementine"
 #. Tag: para
 #, no-c-format
 msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it is well maintained and lightweight."
-msgstr "Amarok 1.4 sürümü temel alınarak hazırlanan platform bağımsız  müzik çalar <emphasis>Clementine</emphasis> geliştirme süreci aktif devam eden, hafif ve başarılı uygulama olarak ses dosyaları için öntanımlı oynatıcı olarak yer aldı."
+msgstr "Amarok 1.4 sürümü temel alınarak hazırlanan platform bağımsız müzik çalar <emphasis>Clementine</emphasis> geliştirme süreci aktif devam eden, hafif ve başarılı uygulama olarak ses dosyaları için öntanımlı oynatıcı olarak yer aldı."
 
 #. Tag: title
 #, no-c-format
