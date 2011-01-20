@@ -280,19 +280,19 @@ msgstr "Document Foundation tarafından hazırlanan, açık kaynak kodlu üretim
 #. Tag: title
 #, no-c-format
 msgid "Games"
-msgstr ""
+msgstr "Oyunlar"
 
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; continues the tradition of giving importance to the quality of games offered to their users. The default installation now includes the board and logic games provided by the <application>kdegames</application> package."
-msgstr ""
+msgstr "Pardus &PRODVER; sürümüyle, kullanıcılarına kaliteli oyunlar sunma geleneğini sürdürüyor. Kurulum sırasında <application>kdegames</application> ile gelen masaüstü oyunları ve mantık oyunları yer alıyor."
 
 #. Tag: title
 #, no-c-format
 msgid "Other Changes"
-msgstr ""
+msgstr "Diğer Değişiklikler"
 
 #. Tag: para
 #, no-c-format
 msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
-msgstr ""
+msgstr "Firefox &FIREFOXVER; sürümü bir çok yeni özellik sunuyor. Yeni arabirim, eklenti yönetimi, sekme gruplama, bilgisayarlar arası yer imlerini, parola ve tarama geçmişini eşlemenin yanı sıra geliştiriciler için önem taşıyan HTML5 ve CSS3 desteği, WebM teknolojilerine uyumluluk gibi özellikler öne çıkanlar arasında."
