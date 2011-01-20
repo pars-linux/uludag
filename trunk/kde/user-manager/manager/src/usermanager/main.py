@@ -11,6 +11,8 @@
 # Please read the COPYING file.
 #
 
+import commands
+
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
@@ -337,7 +339,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             fullname = widget.getDescription()
 
             # If the user is logged in display warning, else delete user
-            if self.userLoggedOn(uid):
+            if self.userLoggedOn(username):
                 message = kdecore.i18n("Cannot delete <b>%1</b>. The user is currently logged in.", username)
                 kdeui.KMessageBox.sorry(self, message, 'Message')
             else:
@@ -356,20 +358,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 # User.Manager does not emit signals, refresh whole list.
                 self.buildItemList()
 
-    def userLoggedOn(self, uidToDelete):
+    def userLoggedOn(self, userToDelete):
         """
             Check if user is logged on.
         """
-        # Read logged on users list
-        keyUsers = open('/proc/key-users', 'r')
-        loggedOnUsers = keyUsers.readlines()
-
-        # If "user to delete" is logged on return True
-        for user in loggedOnUsers:
-            uidUser = user.split(':')[0]
-            if str(uidToDelete).strip() == str(uidUser).strip():
-                return True
-        return False
+        loggedOnUsers = commands.getoutput('users')
+        return userToDelete in loggedOnUsers
 
     def slotOpenEdit(self, action):
         """
