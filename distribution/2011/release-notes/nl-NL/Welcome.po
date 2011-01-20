@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T06:58:23\n"
-"PO-Revision-Date: 2011-01-19 17:29+0100\n"
+"PO-Revision-Date: 2011-01-20 10:57+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: nl\n"
@@ -37,9 +37,9 @@ msgid "Pardus is an open-source, freely distributable, GPL (General Public Licen
 msgstr "Pardus is een open-source, vrij beschikbare, onder GPL-licentie (General Public License) vallende, gebruikersvriendelijke GNU/Linux-distributie met veel gebruikersgemak, hardware-compatibiliteit, stabiliteit en veilige mogelijkheden."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "The Pardus project is sponsored by the <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, an affiliate of the <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
-msgstr "Het Pardus-project wordt ondersteund door de <emphasis>National Research Institute of Electronics en Cryptology (UEKAE)</emphasis>, een afdeling van de <emphasis>Scientific and Technological Research Council of Turkey (TÜBİTAK)</emphasis>."
+msgstr "Het Pardus-project wordt ondersteund door de <emphasis>Center of Research for Advanced Technologies of Informatics and Information Security (BILGEM)</emphasis>, een afdeling van de <emphasis>Scientific and Technological Research Council of Turkey (TUBITAK)</emphasis>."
 
 #. Tag: para
 #, no-c-format
@@ -59,7 +59,7 @@ msgstr "Hoe kan ik Pardus proberen?"
 #. Tag: para
 #, no-c-format
 msgid "You can try Pardus either by installing it on your computer or running the Live version without touching your hard disk. You can boot Pardus from an optical drive as well as from USB mass storage devices like external hard drives and USB flash drives."
-msgstr "Het is mogelijk om Pardus te proberen door het op de computer te installeren of door de live-versie en daarbij de harde schijf niet te veranderen. Pardus kan opgestart worden vanaf een optisch medium en ook vanaf een USB-medium zoals externe harde schijf en USB-geheugen."
+msgstr "Het is mogelijk om Pardus te proberen door het op de computer te installeren of door het starten van de live-versie en daardoor de inhoud van de harde schijf niet te veranderen. Pardus kan opgestart worden vanaf een optisch medium en ook vanaf een USB-medium zoals externe harde schijf en USB-geheugen/stick."
 
 #. Tag: para
 #, no-c-format
@@ -69,7 +69,7 @@ msgstr "Zowel de installatie- en ook de live-uitgave passen niet op een normale 
 #. Tag: para
 #, no-c-format
 msgid "Note that the boot order in your system's BIOS software should be set with the optical drive or USB mass storage device as the first device in order to boot from the installation or the live medium. On newer systems, the boot order can also be changed by pressing a key (generally F8 on desktop systems) while booting."
-msgstr "Let op dat de volgorde van opstarten in de BIOS van de computer ingesteld dient te worden met het optisch - of USB-station als eerste opstartapparaat. Bij de meeste nieuwere computers kan deze volgorde ook geselecteerd worden door het indrukken van een toets (meestal F8 of F11) tijdens het opstarten."
+msgstr "Let op dat de volgorde van opstarten in de BIOS van de computer ingesteld dient te worden met het optisch - of USB-station als eerste opstartmedium. Bij de meeste nieuwere computers kan deze volgorde ook geselecteerd worden door het indrukken van een toets (meestal F8 of F11) tijdens het opstarten."
 
 #. Tag: title
 #, no-c-format
@@ -90,3 +90,5 @@ msgstr "Terugkoppeling"
 #, no-c-format
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Bezoek <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> voor het rapporteren van fouten, oplossingen voor fouten of aanwijzingen voor verbeteringen van Pardus. Wij willen hierbij all onze gebruikers en gemeenschapsleden bedanken voor hun waardevolle bijdrage voor het verbeteren van Pardus, Linux and vrije wereldwijde software."
+
+
