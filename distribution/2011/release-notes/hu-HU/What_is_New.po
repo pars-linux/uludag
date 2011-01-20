@@ -42,9 +42,9 @@ msgid "The user interface is completely redesigned to improve the usability."
 msgstr "A használhatóság növelése érdekében a felhasználói felület újratervezésre került."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr "A felhasználók mostantól kiválaszthatják hogy nyílt vagy zárt meghajtót kívánnak-e használni az nVidia videókártyájukhoz."
+msgstr "A felhasználók mostantól kiválaszthatják hogy nyílt vagy zárt meghajtót kívánnak-e használni az NVIDIA videókártyájukhoz."
 
 #. Tag: title
 #, no-c-format
@@ -259,7 +259,7 @@ msgstr "Rendszerbeállítások"
 #. Tag: para
 #, fuzzy, no-c-format
 msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
-msgstr "<emphasis>Panda</emphasis> (Pardus alternative driver administration, azaz Pardus alternatív meghajtóprogram kezelő) egy új rendszerbeállító modul, amellyel a felhasználók a nyílt és zárt forrású meghajtóprogramok között választhatnak nVidia és ATI videókártyák esetében."
+msgstr "<emphasis>Panda</emphasis> (Pardus alternative driver administration, azaz Pardus alternatív meghajtóprogram kezelő) egy új rendszerbeállító modul, amellyel a felhasználók a nyílt és zárt forrású meghajtóprogramok között választhatnak NVIDIA és ATI videókártyák esetében."
 
 #. Tag: para
 #, no-c-format
