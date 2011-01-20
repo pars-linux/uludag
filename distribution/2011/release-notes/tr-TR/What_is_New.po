@@ -155,12 +155,12 @@ msgstr "KDE Yazılım Seçkisinde değişiklikler"
 #. Tag: para
 #, no-c-format
 msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "Pardus &PRODVER; en yeni KDE Yazılım Seçkisi, KDE YS &KDEVER; ile geliyor. Temel paketler bir çok uyumluluk ve hata giderme çalışmasından geçirilerek masaüstü deneyiminize gözle görülür bir iyileştirme hedeflendi."
+msgstr "Pardus &PRODVER; en yeni KDE Yazılım Seçkisi, KDE SC &KDEVER; ile geliyor. Temel paketler bir çok uyumluluk ve hata giderme çalışmasından geçirilerek masaüstü deneyiminize gözle görülür bir iyileştirme hedeflendi."
 
 #. Tag: para
 #, no-c-format
 msgid "KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version."
-msgstr "KDE YS &KDEVER; daha iyi performans ve kararlılık sağlıyor. WebKit desteği, netbook kullanıcıları için geliştirilen kullanışlılık, yüksek hızlı önbellek ile diskte tutulan bilgilere çabucak ulaşım gibi özellikler göze çarpıyor."
+msgstr "KDE SC &KDEVER; daha iyi performans ve kararlılık sağlıyor. WebKit desteği, netbook kullanıcıları için geliştirilen kullanışlılık, yüksek hızlı önbellek ile diskte tutulan bilgilere çabucak ulaşım gibi özellikler göze çarpıyor."
 
 #. Tag: title
 #, no-c-format
