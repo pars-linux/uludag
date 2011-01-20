@@ -1,5 +1,5 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -7,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-13T09:41:09\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -165,7 +165,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Visual Enhancements"
-msgstr ""
+msgstr "Görsel İyileştirmeler"
 
 #. Tag: para
 #, no-c-format
@@ -180,7 +180,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Network Management"
-msgstr ""
+msgstr "Ağ Yönetimi"
 
 #. Tag: para
 #, no-c-format
@@ -195,12 +195,12 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Default Applications"
-msgstr ""
+msgstr "Öntanımlı Uygulamalar"
 
 #. Tag: title
-#, no-c-format
+#, no-c-format, fuzzy
 msgid "Mozilla Firefox"
-msgstr ""
+msgstr "Mozilla Firefox"
 
 #. Tag: para
 #, no-c-format
@@ -208,9 +208,9 @@ msgid "Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default w
 msgstr ""
 
 #. Tag: title
-#, no-c-format
+#, no-c-format, fuzzy
 msgid "Clementine"
-msgstr ""
+msgstr "Clementine"
 
 #. Tag: para
 #, no-c-format
@@ -218,9 +218,9 @@ msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on A
 msgstr ""
 
 #. Tag: title
-#, no-c-format
+#, no-c-format, fuzzy
 msgid "SMPlayer"
-msgstr ""
+msgstr "SMPlayer"
 
 #. Tag: para
 #, no-c-format
@@ -228,9 +228,9 @@ msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as 
 msgstr ""
 
 #. Tag: title
-#, no-c-format
+#, no-c-format, fuzzy
 msgid "KsCD"
-msgstr ""
+msgstr "KsCD"
 
 #. Tag: para
 #, no-c-format
@@ -240,7 +240,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "Web Browsers"
-msgstr ""
+msgstr "İnternet Tarayıcıları"
 
 #. Tag: para
 #, no-c-format
@@ -250,7 +250,7 @@ msgstr ""
 #. Tag: title
 #, no-c-format
 msgid "System Settings"
-msgstr ""
+msgstr "Sistem Ayarları"
 
 #. Tag: para
 #, no-c-format
