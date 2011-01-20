@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-01-20T08:16:44\n"
-"PO-Revision-Date: 2011-01-13T09:41:09\n"
+"PO-Revision-Date: 2011-01-20 11:11+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -50,7 +50,7 @@ msgstr "İlk Açılış"
 #. Tag: para
 #, no-c-format
 msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
-msgstr "Pardus &PREVVER; sürümünde bazı yapılandırma işlemleri ayrı bir uygulama içinde gerçekleştiriliyor. Bu kurulumdan sonra bir kez çalışan bir uygulama."
+msgstr "Pardus &PREVVER; sürümünde bazı yapılandırma işlemleri kurulum sırasında yapılıyordu. Bu işlemler artık farklı bir uygulama içerisinde yer alıyor ve kurulumdan sonraki ilk açılışta yapılıyor."
 
 #. Tag: title
 #, no-c-format
