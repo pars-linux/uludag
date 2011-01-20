@@ -1,6 +1,5 @@
-#
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -8,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-20 11:19+0200\n"
 "Last-Translator: Alexander Scherbakov <neocrust@gmail.com>\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -154,9 +153,9 @@ msgid "Changes in KDE Desktop Environment"
 msgstr "Изменения в KDE Desktop Environment"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Component, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
+msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Compilation, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
 
 #. Tag: para
 #, no-c-format
