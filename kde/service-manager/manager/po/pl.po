@@ -1,134 +1,142 @@
-# 
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Michał Komasa, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: service-manager\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
-"PO-Revision-Date: 2006-04-08 12:19+0900\n"
-"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
-"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"POT-Creation-Date: 2011-01-10 08:20+0200\n"
+"PO-Revision-Date: 2011-01-24 00:32+0100\n"
+"Last-Translator: Michał Komasa\n"
+"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2);\n"
 
-#: src/service-manager.py:33 src/service-manager.py:88
-#: src/service_manager.py:123
+#: data/kcm_service-manager.desktop.in.h:1 data/service-manager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr ""
+
+#: data/kcm_service-manager.desktop.in.h:2 data/service-manager.desktop.in.h:2
 msgid "Service Manager"
 msgstr "Menedżer Usług"
 
-#: src/service-manager.py:81
-msgid "Service Manager is already started!"
-msgstr "Menedżer Usług już działa!"
+#: src/servicemanager/about.py:26
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
-#: src/sm_mainview.py:171 src/service_manager.py:127
-msgid "Select a service from list."
-msgstr "Wybierz usługę z listy."
+#: src/servicemanager/about.py:34
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
-#: src/sm_mainview.py:178
-msgid "Clear Search"
-msgstr "Wyczyść Szukaj"
+#: src/servicemanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Obecny opiekun"
 
-#: src/sm_mainview.py:179 src/service_manager.py:129
-#: src/service_manager.py:131
-msgid "Start"
-msgstr "Uruchom"
+#: src/servicemanager/about.py:35
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: src/sm_mainview.py:181
-msgid "Restart"
-msgstr "Zrestartuj"
+#: src/servicemanager/about.py:35
+msgid "COMAR Author"
+msgstr "Autor COMAR"
 
-#: src/sm_mainview.py:186
-#, python-format
-msgid "%s is running."
-msgstr "%s działa"
+#: src/servicemanager/about.py:36
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Nazwy"
 
-#: src/sm_mainview.py:189
-#, python-format
-msgid "%s is not running."
-msgstr "%s nie działa"
+#: src/servicemanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Adresy e-mail"
 
-#: src/sm_mainview.py:264
-msgid ""
-"If you stop this service, you may have problems.\n"
-"Are you sure you want to stop this service?"
-msgstr ""
-"Jeżeli zatrzymasz tą usługę możesz mieć problemy.\n"
-"Czy na pewno chcesz zatrzymać tą usługę?"
+#: src/servicemanager/base.py:96
+msgid "Authentication Error"
+msgstr "Błąd autoryzacji"
 
-#: src/sm_mainview.py:268
-msgid ""
-"If you disable this service, you may have problems.\n"
-"Are you sure you want to do this?"
-msgstr ""
-"Jeżeli wyłączysz tą usługę możesz mieć problemy.\n"
-"Czy na pewno chcesz zatrzymać tą usługę?"
-
-#: src/backend.py:46
+#: src/servicemanager/base.py:97
 msgid "You are not authorized for this operation."
 msgstr "Nie masz uprawnień dla tej operacji"
 
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
+#: src/servicemanager/base.py:99
+msgid "Error"
+msgstr "Błąd "
+
+#: src/servicemanager/base.py:100
+msgid "An exception occurred."
 msgstr ""
-"Wystąpił błąd: \n"
-" %s"
 
-#: src/service_manager.py:86 src/service_manager.py:134
-msgid "1"
-msgstr "1"
+#: src/servicemanager/widgets.py:171 ui/ui_info.py:53
+msgid "Service information is not available"
+msgstr ""
 
-#: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Usługa"
+#: ui/ui_info.py:52 ui/ui_item.py:127 ui/ui_main.py:61
+msgid "Form"
+msgstr ""
 
-#: src/service_manager.py:88 src/service_manager.py:136
-msgid "Run on Startup"
-msgstr "Uruchom przy starcie systemu"
+#: ui/ui_info.py:54
+msgid "Hide Information"
+msgstr ""
 
-#: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Pakiet"
+#: ui/ui_item.py:128
+msgid "serviceName"
+msgstr ""
 
-#: src/service_manager.py:125
-msgid "Run on startup."
-msgstr "Uruchom na starcie systemu."
+#: ui/ui_item.py:129
+msgid "serviceDesc"
+msgstr ""
 
-#: src/service_manager.py:126
-msgid "Don't run on startup."
-msgstr "Nie uruchamiaj na starcie systemu"
+#: ui/ui_item.py:130
+msgid "Start service"
+msgstr ""
 
-#: src/service_manager.py:139
-msgid "Reset Search"
-msgstr "Zrestartuj"
+#: ui/ui_item.py:131
+msgid "Reload service"
+msgstr ""
 
-#: src/service_manager.py:140
-msgid "Search:"
-msgstr "Szukaj:"
+#: ui/ui_item.py:132
+msgid "Run on start"
+msgstr ""
 
-#: src/service_manager.py:141
-msgid "&List servers only."
-msgstr "&Listuj tylko serwery."
+#: ui/ui_item.py:133
+msgid "Stop service"
+msgstr ""
 
-#~ msgid "Alt+L"
-#~ msgstr "Alt+L"
+#: ui/ui_item.py:134
+msgid "More Information"
+msgstr ""
 
-#~ msgid "Access Denied"
-#~ msgstr "Odmowa Dostępu"
+#: ui/ui_main.py:62
+msgid "type service name to search..."
+msgstr ""
 
-#~ msgid "COMAR script execution failed."
-#~ msgstr "Błąd wykonywania skryptu COMARa"
+#: ui/ui_main.py:63
+msgid "Servers"
+msgstr ""
 
-#~ msgid "Script Error"
-#~ msgstr "Bład Skryptu"
+#: ui/ui_main.py:64
+msgid "System Services"
+msgstr ""
 
-#~ msgid "Unable to start service"
-#~ msgstr "Nie mogę uruchomić usługi"
+#: ui/ui_main.py:65
+msgid "Startup Services"
+msgstr ""
 
-#~ msgid "Unable to stop service"
-#~ msgstr "Nie mogę zatrzymać usługi"
+#: ui/ui_main.py:66
+msgid "Running Services"
+msgstr ""
 
-#~ msgid "Unable to restart service"
-#~ msgstr "Nie mogę zrestartować usługi"
+#: ui/ui_main.py:67
+msgid "All Services"
+msgstr ""
+
+#: ui/ui_main.py:68
+msgid "Getting service info... %p%"
+msgstr ""
+
