@@ -105,8 +105,8 @@ msgstr "Edytuj"
 
 #: ui/ui_item.py:71
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: ui/ui_main.py:77
 msgid "Add New"
-msgstr ""
+msgstr "Dodaj nowy"
