@@ -16,6 +16,5 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: pisirunner.cpp:120
-#, fuzzy
 msgid "Install '%1' containing the application '%2'"
 msgstr "Zainstaluj '%1' zawierający aplikacje '%2'"
