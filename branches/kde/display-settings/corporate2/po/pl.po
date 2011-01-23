@@ -240,9 +240,8 @@ msgid "If the frequency ranges that your monitor supports are not detected for s
 msgstr "Jeśli zakres częstotliwości obsługiwanych przez twój monitor, z jakiegoś powodu nie jest wykrywany, można ustawić go tutaj. Bądź ostrożny z tymi wartościami,  niepoprawne określenie może spowodować uszkodzenie monitora, szczególnie jeśli jest to stary model."
 
 #: ui/output.py:162
-#, fuzzy
 msgid "Specify Ranges"
-msgstr "Określ zakresy"
+msgstr "Zakresy"
 
 #: ui/output.py:163
 msgid "Horizontal sync:"
@@ -309,6 +308,5 @@ msgid "Vendors:"
 msgstr "Dostawca:"
 
 #: ui/monitorbrowser.py:73
-#, fuzzy
 msgid "Models:"
 msgstr "Modele:"
