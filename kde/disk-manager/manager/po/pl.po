@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,89 +17,91 @@ msgstr ""
 
 #: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
+msgstr "Aplikacja do zarządzania partycjami i ich montowaniem."
 
 #: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
 #: src/diskmanager/about.py:20 src/diskmanager/about.py:22
 msgid "Disk Manager"
-msgstr ""
+msgstr "Menadżer Dysków"
 
 #: src/diskmanager/about.py:24
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/diskmanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Obecny opiekun"
 
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Nazwy"
 
 #: src/diskmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Adresy e-mail"
 
 #: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Nie ma pakietów dostarczających wszystkie wymagania aplikacji. \n"
+" Proszę się upewnić, że pakiety są zainstalowane i skonfigurowane poprawnie."
 
 #: src/diskmanager/main.py:175
 msgid "Mounted at %1"
-msgstr ""
+msgstr "Zamontowany w %1"
 
 #: src/diskmanager/main.py:194
 msgid "All Items"
-msgstr ""
+msgstr "Wszystkie pozycje"
 
 #: src/diskmanager/main.py:205
 msgid "Add"
-msgstr ""
+msgstr "Dodaj"
 
 #: src/diskmanager/main.py:273 src/diskmanager/main.py:283
 #: src/diskmanager/main.py:322
 msgid "Access denied."
-msgstr ""
+msgstr "Odmowa dostępu."
 
 #: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: ui/ui_edit.py:67
 msgid "Mount Disk Automatically"
-msgstr ""
+msgstr "Zamontuj dysk automatycznie"
 
 #: ui/ui_edit.py:68
 msgid "Mount Point:"
-msgstr ""
+msgstr "Punkt montowania:"
 
 #: ui/ui_edit.py:69
 msgid "Filesystem Type:"
-msgstr ""
+msgstr "Typ systemu plików:"
 
 #: ui/ui_edit.py:70
 msgid "Options:"
-msgstr ""
+msgstr "Opcje:"
 
 #: ui/ui_edit.py:71
 msgid "Default Options"
-msgstr ""
+msgstr "Opcje domyślne"
 
 #: ui/ui_item.py:69
 msgid "Mount or unmount disk."
-msgstr ""
+msgstr "Zamontuj lub domontuj dysk."
 
 #: ui/ui_item.py:70
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 #: ui/ui_item.py:71
 msgid "Delete"
