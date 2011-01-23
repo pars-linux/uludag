@@ -60,10 +60,13 @@ class AppInfo(object):
         """ Initialize given database """
 
         def _check_table():
-            return (u'packages',) in [x for x in \
-                    self._sq.execute("SELECT name FROM sqlite_master "\
-                                     "WHERE type IN ('table','view') "\
-                                     "AND name NOT LIKE 'sqlite_%'")]
+            try:
+                return (u'packages',) in [x for x in \
+                        self._sq.execute("SELECT name FROM sqlite_master "\
+                                         "WHERE type IN ('table','view') "\
+                                         "AND name NOT LIKE 'sqlite_%'")]
+            except:
+                return False
 
         if os.path.exists(db) or force:
             self._sq = sqlite3.connect(db)
