@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Michał Komasa, 2011.
 msgid ""
 msgstr ""
@@ -10,17 +10,16 @@ msgstr ""
 "PO-Revision-Date: 2011-01-24 00:32+0100\n"
 "Last-Translator: Michał Komasa\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
-"|| n%100>=20) ? 1 : 2);\n"
 
 #: data/kcm_service-manager.desktop.in.h:1 data/service-manager.desktop.in.h:1
 msgid "An application for managing system services."
-msgstr ""
+msgstr "Aplikacja do zarządzania usługami systemowymi."
 
 #: data/kcm_service-manager.desktop.in.h:2 data/service-manager.desktop.in.h:2
 msgid "Service Manager"
@@ -70,73 +69,74 @@ msgstr "Błąd "
 
 #: src/servicemanager/base.py:100
 msgid "An exception occurred."
-msgstr ""
+msgstr "Wystąpił wyjątek."
 
 #: src/servicemanager/widgets.py:171 ui/ui_info.py:53
 msgid "Service information is not available"
-msgstr ""
+msgstr "Informacje o usłudze nie są dostępne."
 
 #: ui/ui_info.py:52 ui/ui_item.py:127 ui/ui_main.py:61
 msgid "Form"
-msgstr ""
+msgstr "Formularz"
 
 #: ui/ui_info.py:54
 msgid "Hide Information"
-msgstr ""
+msgstr "Ukryj informacje"
 
 #: ui/ui_item.py:128
 msgid "serviceName"
-msgstr ""
+msgstr "nazwa_usługi"
 
 #: ui/ui_item.py:129
+#, fuzzy
 msgid "serviceDesc"
-msgstr ""
+msgstr "serviceDesc"
 
 #: ui/ui_item.py:130
 msgid "Start service"
-msgstr ""
+msgstr "Uruchom usługę"
 
 #: ui/ui_item.py:131
 msgid "Reload service"
-msgstr ""
+msgstr "Uruchom ponownie usługę"
 
 #: ui/ui_item.py:132
 msgid "Run on start"
-msgstr ""
+msgstr "Uruchom przy starcie systemu"
 
 #: ui/ui_item.py:133
 msgid "Stop service"
-msgstr ""
+msgstr "Zatrzymaj usługę"
 
 #: ui/ui_item.py:134
 msgid "More Information"
-msgstr ""
+msgstr "Więcej informacji"
 
 #: ui/ui_main.py:62
 msgid "type service name to search..."
-msgstr ""
+msgstr "szukaj typ usługi ..."
 
 #: ui/ui_main.py:63
+#, fuzzy
 msgid "Servers"
-msgstr ""
+msgstr "Serwery"
 
 #: ui/ui_main.py:64
 msgid "System Services"
-msgstr ""
+msgstr "Usługi systemowe"
 
 #: ui/ui_main.py:65
 msgid "Startup Services"
-msgstr ""
+msgstr "Usługi uruchamiane przy starcie systemu"
 
 #: ui/ui_main.py:66
 msgid "Running Services"
-msgstr ""
+msgstr "Uruchomione usługi"
 
 #: ui/ui_main.py:67
 msgid "All Services"
-msgstr ""
+msgstr "Wszystkie usługi"
 
 #: ui/ui_main.py:68
 msgid "Getting service info... %p%"
-msgstr ""
-
+msgstr "Pobierania informacji o usłudze... %p%"
