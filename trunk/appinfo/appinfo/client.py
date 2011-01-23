@@ -113,10 +113,12 @@ class AppInfoClient(AppInfo):
         if not self.server:
             return (False, 'No server defined')
 
-        self.createSkeleton()
-
         def updateLocalSum():
-            os.system('md5sum %s > %s' % (self.local_db, self.local_db_sum))
+            if os.path.exists(self.local_db):
+                os.system('md5sum %s > %s' % (self.local_db, self.local_db_sum))
+
+        self.createSkeleton()
+        updateLocalSum()
 
         def updateLocalDb():
             try:
