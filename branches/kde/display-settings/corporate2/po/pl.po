@@ -112,67 +112,68 @@ msgstr "Musisz ponownie uruchomić sesję X-ów, by wszystkie zmiany miały efek
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
-msgstr ""
+msgstr "Edytuj wpis"
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
-msgstr ""
+msgstr "Typ:"
 
 #: code/displaysettings/monitorbrowser.py:39
 msgid "Monitors:"
-msgstr ""
+msgstr "Monitory:"
 
 #: ui/mainview.py:182
 msgid "Outputs"
-msgstr ""
+msgstr "Wyjścia"
 
 #: ui/mainview.py:183
 msgid "Extend desktop to all displays"
-msgstr ""
+msgstr "Rozszerz pulpit na wszystkie monitory."
 
 #: ui/mainview.py:184
 msgid "Detect Outputs"
-msgstr ""
+msgstr "Wykryj wyjścia"
 
 #: ui/mainview.py:186
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Plik konfiguracyjny nie jest gotowy."
 
 #: ui/mainview.py:190
 msgid "Output Properties"
-msgstr ""
+msgstr "Właściwości wyjścia"
 
 #: ui/mainview.py:191
 msgid "Size:"
-msgstr ""
+msgstr "Rozmiar:"
 
 #: ui/mainview.py:192
 msgid "Refresh Rate:"
-msgstr ""
+msgstr "Częstotliwość odświeżania:"
 
 #: ui/mainview.py:193
 msgid "Rotation:"
-msgstr ""
+msgstr "Obrót:"
 
 #: ui/mainview.py:195
 msgid "No Rotation"
-msgstr ""
+msgstr "Bez obrotu"
 
 #: ui/mainview.py:196
 msgid "Left (90 degrees)"
-msgstr ""
+msgstr "Lewo (90 stopni)"
 
 #: ui/mainview.py:197
 msgid "Upside-Down (180 degrees)"
-msgstr ""
+msgstr "Do góry nogami (180 stopni)"
 
 #: ui/mainview.py:198
 msgid "Right (270 degrees)"
-msgstr ""
+msgstr "Prawo (270 stopni)"
 
 #: ui/mainview.py:199
+#, fuzzy
 msgid "Screens"
-msgstr ""
+msgstr "Ekrany"
 
 #: ui/mainview.py:200
 msgid "<b>Video Card:</b>"
@@ -235,77 +236,80 @@ msgid "Output Configuration"
 msgstr ""
 
 #: ui/output.py:161
+#, fuzzy
 msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
+msgstr "Jeśli zakres częstotliwości obsługiwanych przez twój monitor, z jakiegoś powodu nie jest wykrywany, można ustawić go tutaj. Bądź ostrożny z tymi wartościami,  niepoprawne określenie może spowodować uszkodzenie monitora, szczególnie jeśli jest to stary model."
 
 #: ui/output.py:162
+#, fuzzy
 msgid "Specify Ranges"
-msgstr ""
+msgstr "Określ zakresy"
 
 #: ui/output.py:163
 msgid "Horizontal sync:"
-msgstr ""
+msgstr "Synchronizacja pozioma:"
 
 #: ui/output.py:164
 msgid "Monitor 800x600"
-msgstr ""
+msgstr "Monitor 800x600"
 
 #: ui/output.py:165
 msgid "Choose..."
-msgstr ""
+msgstr "Wybierz ..."
 
 #: ui/output.py:167
 msgid "Select a standard monitor"
-msgstr ""
+msgstr "Wybierz standard monitora"
 
 #: ui/output.py:168
 msgid "Select from vendor/model list"
-msgstr ""
+msgstr "Wybierz producenta/model z listy"
 
 #: ui/output.py:169
 msgid "Enter ranges manually"
-msgstr ""
+msgstr "Wpisz zakresy ręcznie"
 
 #: ui/output.py:170 ui/output.py:172
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ui/output.py:171
 msgid "kHz"
-msgstr ""
+msgstr "kHz"
 
 #: ui/output.py:173
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: ui/output.py:174
 msgid "Selection:"
-msgstr ""
+msgstr "Wybór:"
 
 #: ui/output.py:175
 msgid "Vertical refresh:"
-msgstr ""
+msgstr "Odświeżanie w pionie:"
 
 #: ui/output.py:176
 msgid "Monitor:"
-msgstr ""
+msgstr "Monitor:"
 
 #: ui/output.py:177
 msgid "Frequency Ranges"
-msgstr ""
+msgstr "Zakresach częstotliwości:"
 
 #: ui/output.py:178
 msgid "Ignore this output"
-msgstr ""
+msgstr "Ignorowanie tego wyjścia"
 
 #: ui/monitorbrowser.py:71
 msgid "Browse Monitors"
-msgstr ""
+msgstr "Przeglądaj Monitory"
 
 #: ui/monitorbrowser.py:72
 msgid "Vendors:"
-msgstr ""
+msgstr "Dostawca:"
 
 #: ui/monitorbrowser.py:73
+#, fuzzy
 msgid "Models:"
-msgstr ""
+msgstr "Modele:"
