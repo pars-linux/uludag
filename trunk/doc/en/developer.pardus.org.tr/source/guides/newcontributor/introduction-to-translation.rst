@@ -100,7 +100,7 @@ Obtaining and Translating Projects
       lock button. This way, you tell that you are working on the file and going
       to unlock it when the translation is done and commited.
 
-   #. Now you are aware of the workflow and begin translating. Translate the po file for your
+   #. Now you are aware of the workflow and begin translating. Translate the po file to your
       language in a PO editor such as Lokalize.
 
    #. Check the integrity of your file before you commit it.
@@ -135,8 +135,7 @@ Adding Non-Existing Translation File
 
       .. image:: images/dl-pot.png
 
-   * Once you finish the translation, click on the button marked below at
-     project page.
+   * Once you finish the translation, click on the button marked below.
 
       .. image:: images/add-new.png
 
