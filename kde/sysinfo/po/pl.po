@@ -111,9 +111,8 @@ msgid "Operating System"
 msgstr "System operacyjny"
 
 #: src/sysinfo.cpp:284
-#, fuzzy
 msgid "Kde <b>%1</b> on <b>%2</b>"
-msgstr "Kde <b>%1</b> on <b>%2</b>"
+msgstr "Kde <b>%1</b> na <b>%2</b>"
 
 #: src/sysinfo.cpp:295
 msgid "Processor"
@@ -128,17 +127,14 @@ msgid " core"
 msgstr "rdzenie"
 
 #: src/sysinfo.cpp:309
-#, fuzzy
 msgid "Display"
 msgstr "Karta graficzna"
 
 #: src/sysinfo.cpp:542
-#, fuzzy
 msgid "3D Not Supported"
 msgstr "%1 (bez obsługi 3D)"
 
 #: src/sysinfo.cpp:544
-#, fuzzy
 msgid "3D Supported"
 msgstr "%1 (z obsługą 3D)"
 
