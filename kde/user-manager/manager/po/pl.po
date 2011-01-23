@@ -104,82 +104,85 @@ msgstr ""
 
 #: src/usermanager/edit.py:385
 msgid "You should enter a password for this user."
-msgstr ""
+msgstr "Należy wprowadzić hasło dla tego użytkownika."
 
 #: src/usermanager/edit.py:392
 msgid "Password must be longer."
-msgstr ""
+msgstr "Hasło musi być dłuższe."
 
 #: src/usermanager/edit.py:396
 msgid "Don't use your full name or user name as a password."
-msgstr ""
+msgstr "Nie należy używać pełnego nazwiska lub nazwy użytkownika jako hasła."
 
 #: src/usermanager/edit.py:399
 msgid "Passwords don't match."
-msgstr ""
+msgstr "Hasła nie zgadzają się."
 
 #: src/usermanager/edit.py:404
 msgid "You must enter a user name."
-msgstr ""
+msgstr "Musisz podać nazwę użytkownika."
 
 #: src/usermanager/edit.py:407
 msgid "This user name is used by another user."
-msgstr ""
+msgstr "Ta nazwa użytkownika jest już używana przez innego użytkownika."
 
 #: src/usermanager/edit.py:411
 msgid "User name must not start with a number."
-msgstr ""
+msgstr "Nazwa użytkownika nie może zaczynać się od cyfry."
 
 #: src/usermanager/main.py:108
+#, fuzzy
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Nie ma pakietów, które dostarczają wszystkie wymagania aplikacji. \n"
+" Proszę się upewnić, że pakiety są zainstalowane i skonfigurowane poprawnie."
 
 #: src/usermanager/main.py:209
 msgid "Users"
-msgstr ""
+msgstr "Użytkownicy"
 
 #: src/usermanager/main.py:210 ui/ui_edituser.py:247
 msgid "Groups"
-msgstr ""
+msgstr "Grupy"
 
 #: src/usermanager/main.py:211
 msgid "All Users"
-msgstr ""
+msgstr "Wszyscy użytkownicy"
 
 #: src/usermanager/main.py:212
 msgid "All Groups"
-msgstr ""
+msgstr "Wszystkie grupy"
 
 #: src/usermanager/main.py:223
 msgid "Add User"
-msgstr ""
+msgstr "Dodaj użytkownika"
 
 #: src/usermanager/main.py:228
 msgid "Add Group"
-msgstr ""
+msgstr "Dodaj grupę"
 
 #: src/usermanager/main.py:250 src/usermanager/main.py:265
 #: src/usermanager/main.py:419
 msgid "Access denied."
-msgstr ""
+msgstr "Odmowa dostępu."
 
 #: src/usermanager/main.py:341
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
+msgstr "Nie można usunąć <b>%1</b>.  Użytkownik jest aktualnie zalogowany"
 
 #: src/usermanager/main.py:345
 msgid "Do you want to delete user '%1' (%2)?"
-msgstr ""
+msgstr "Czy chcesz usunąć użytkownika  '%1' (%2)?"
 
 #: src/usermanager/main.py:346
 msgid "Also remove user files. (This may take long.)"
-msgstr ""
+msgstr "Usuń także pliki użytkownika. (Może to trochę potrwać.)"
 
 #: src/usermanager/main.py:354
 msgid "Do you want to delete group '%1'?"
-msgstr ""
+msgstr "Czy chcesz usunąć grupę  '%1'?"
 
 #: ui/ui_editgroup.py:86
 msgid "Group Information"
@@ -259,20 +262,20 @@ msgstr ""
 
 #: ui/ui_edituser.py:244
 msgid "Authorizations"
-msgstr ""
+msgstr "Uprawnienia"
 
 #: ui/ui_edituser.py:245
 msgid "Main Group:"
-msgstr ""
+msgstr "Główna grupa:"
 
 #: ui/ui_item.py:65
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 #: ui/ui_item.py:66
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: ui/ui_main.py:82
 msgid "Add New"
-msgstr ""
+msgstr "Dodaj nową"
