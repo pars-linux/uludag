@@ -106,33 +106,34 @@ msgid "Ramdisk File"
 msgstr "Plik RAM-dysku"
 
 #: ui/ui_edit.py:146
+#, fuzzy
 msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr ""
+msgstr "Plik, który zawiera mini system operacyjny do wstępnego załadowania modułów jądra."
 
 #: ui/ui_edit.py:147
 msgid "Boot Options"
-msgstr ""
+msgstr "Opcje startowe"
 
 #: ui/ui_edit.py:148
 msgid "Boot options for operating system."
-msgstr ""
+msgstr "Opcje rozruchowe systemu operacyjnego."
 
 #: ui/ui_item.py:74
 msgid "Set or unset entry as default boot entry."
-msgstr ""
+msgstr "Ustaw/odznacz wpis jako domyślny do rozruchu."
 
 #: ui/ui_item.py:75
 msgid "Edit"
-msgstr ""
+msgstr "Edytuj"
 
 #: ui/ui_item.py:76
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: ui/ui_main.py:82
 msgid "Add New"
-msgstr ""
+msgstr "Dodaj nowy"
 
 #: ui/ui_options.py:42
 msgid "Boot menu display time:"
-msgstr ""
+msgstr "Czas wyświetlania menu rozruchu:"
