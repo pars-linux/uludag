@@ -329,6 +329,7 @@ msgid "&Send my profile"
 msgstr "I&nvia il mio profilo"
 
 #: .tmp/ui_scrSmolt.py:159
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -344,7 +345,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Smolt invierà le informazioni che riguarda ai hardware e la base del sistema operativo per i server smolt Pardus (smoon). L'unico collegamento dal database ai sistemi degli utenti è l'UUID. Affinche il mittente non dà questa UUID, tutte le informazioni sono anonimi. If at any point in time a user wants to delete their profile from the database they need only run</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Smolt invierà le informazioni che riguarda ai hardware e la base del sistema operativo per i server smolt Pardus (smoon). L'unico collegamento dal database ai sistemi degli utenti è l'UUID. Affinche il mittente non dà questa UUID, tutte le informazioni sono anonimi. Se in qualsiasi punto un utente desidera cancellare il proprio profilo dal database, hanno solo bisogno di correre</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> <span style=\" font-style:italic;\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> The information sent to the smolt database server should be considered public in that anyone can view the statistics, data and share machine profiles. In many ways smolt is designed to get hardware vendors and other 3rd parties attention. As such, not only will this information be shared with 3rd parties, we will be using smolt as leverage to gain better support for open source drivers and better support in general.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-decoration: underline;\">IP Logging:</span> In Pardus's smolt install all web traffic goes through a proxy server first. This is the only place IP addresses are being logged and they are kept on that server for a period of 4 weeks at which time log rotation removes these logs. The Pardus Project does not aggregate ip addresses in the smolt database. These logs are private and will not be available to the general public.</p>\n"
