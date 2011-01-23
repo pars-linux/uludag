@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -18,97 +17,98 @@ msgstr ""
 
 #: code/display-settings.py:36 code/display-settings.py:104 ui/mainview.py:181
 msgid "Display Settings"
-msgstr ""
+msgstr "Ustawienia ekranu"
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
-msgstr ""
+msgstr "Moduł ustawień ekranu jest już uruchomiony!"
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
-msgstr ""
+msgstr "Ekran główny"
 
 #: code/displaysettings/device.py:63
+#, fuzzy
 msgid "Laptop Panel"
-msgstr ""
+msgstr "Laptop Panel"
 
 #: code/displaysettings/device.py:64
 msgid "Analog Output"
-msgstr ""
+msgstr "Wyjście analogowe"
 
 #: code/displaysettings/device.py:65
 msgid "Digital Output"
-msgstr ""
+msgstr "Wyjście cyfrowe"
 
 #: code/displaysettings/device.py:66
 msgid "TV Output"
-msgstr ""
+msgstr "Wyjście TV"
 
 #: code/displaysettings/outputdialog.py:35
 msgid "Settings for Output %1"
-msgstr ""
+msgstr "Ustawienia dla %1"
 
 #: code/displaysettings/outputdialog.py:63
+#, fuzzy
 msgid "Custom Monitor"
-msgstr ""
+msgstr "Monitor Custom"
 
 #: code/displaysettings/outputdialog.py:67
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
+msgstr "<qt> <i>Kliknij przycisk \"Wybierz ... \", aby wybrać monitor</i> </qt>"
 
 #: code/displaysettings/mainwidget.py:97
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
+"Nie ma pakietów, które dostarczają zaplecza dla tej aplikacji. \n"
+" Proszę upewnić się, że pakiety są zainstalowane i skonfigurowane poprawnie."
 
 #: code/displaysettings/mainwidget.py:104
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
-msgstr ""
+msgstr "Nie można znaleźć poprawnej konfiguracji. Ustawienia ekranu nie będą aktywne do czasu utworzenia nowej konfiguracji. \\ n Czy chcesz utworzyć nową konfigurację?"
 
 #: code/displaysettings/mainwidget.py:113
 #: code/displaysettings/mainwidget.py:539
 msgid "Access denied."
-msgstr ""
+msgstr "Odmowa dostępu."
 
 #: code/displaysettings/mainwidget.py:195
-msgid ""
-"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
-"(LVDS, VGA, etc.)"
+msgid "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgstr ""
+"Pokazany w menu, na liście, na przykład itp. \n"
+" %1 = wykryty typ wyjścia, \n"
+" %2 rodzaj wyjścia = (LVDS, VGA, itp.)"
 
 #: code/displaysettings/mainwidget.py:213
 #: code/displaysettings/mainwidget.py:316
 msgid "Auto"
-msgstr ""
+msgstr "Automatycznie"
 
 #: code/displaysettings/mainwidget.py:312
 msgid "Output Properties - %1"
-msgstr ""
+msgstr "Właściwości wyjścia - %1"
 
 #: code/displaysettings/mainwidget.py:396
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt> Do uzyskania lepszych efektów, można użyć <b>%1</b> sterowników dostarczonych przez producenta sprzętu. Czy chcesz wykorzystać te sterowniki? </p></qt>"
 
 #: code/displaysettings/mainwidget.py:412
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
+#, fuzzy
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt> Do uzyskania lepszych efektów, można użyć <b>%1</b> sterowników dostarczonych przez producenta sprzętu. Aby z nich skorzystać, należy zainstalować pakiet <b>%2</b> i wybrać  <b>%1</b> w ustawieniach karty graficznej. </qt>"
 
 #: code/displaysettings/mainwidget.py:417
 msgid "Start Package Manager"
-msgstr ""
+msgstr "Uruchom Menedżer pakietów"
 
 #: code/displaysettings/mainwidget.py:530
+#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
+msgstr "Musisz ponownie uruchomić sesję X-ów, by wszystkie zmiany miały efekt."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
@@ -235,10 +235,7 @@ msgid "Output Configuration"
 msgstr ""
 
 #: ui/output.py:161
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
 msgstr ""
 
 #: ui/output.py:162
