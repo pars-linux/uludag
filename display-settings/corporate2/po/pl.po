@@ -171,69 +171,68 @@ msgid "Right (270 degrees)"
 msgstr "Prawo (270 stopni)"
 
 #: ui/mainview.py:199
-#, fuzzy
 msgid "Screens"
 msgstr "Ekrany"
 
 #: ui/mainview.py:200
 msgid "<b>Video Card:</b>"
-msgstr ""
+msgstr "<b>Karta graficzna:</b>"
 
 #: ui/mainview.py:201
 msgid "Card Info"
-msgstr ""
+msgstr "Informacje o karcie"
 
 #: ui/mainview.py:202
 msgid "Configure..."
-msgstr ""
+msgstr "Konfiguruj ..."
 
 #: ui/mainview.py:203
 msgid "<b>Outputs:</b>"
-msgstr ""
+msgstr "<b>Wyjścia:</b>"
 
 #: ui/mainview.py:204
 msgid "Devices"
-msgstr ""
+msgstr "Urządzenia"
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
-msgstr ""
+msgstr "Konfiguracja karty graficznej"
 
 #: ui/videocard.py:102
 msgid "Video Driver"
-msgstr ""
+msgstr "Sterownik karty graficznej"
 
 #: ui/videocard.py:103
 msgid "Use the default driver for the detected card"
-msgstr ""
+msgstr "Użyj domyślnego sterownika dla wykrytej karty"
 
 #: ui/videocard.py:104 ui/videocard.py:109
 msgid "Select from the list:"
-msgstr ""
+msgstr "Wybierz z listy:"
 
 #: ui/videocard.py:106
 msgid "radeon"
-msgstr ""
+msgstr "radeon"
 
 #: ui/videocard.py:107
 msgid "Color Depth"
-msgstr ""
+msgstr "Głębia kolorów"
 
 #: ui/videocard.py:108
 msgid "Determined by the driver"
-msgstr ""
+msgstr "Ustalone przez sterownik"
 
 #: ui/videocard.py:111
 msgid "16 Bit"
-msgstr ""
+msgstr "16 Bit"
 
 #: ui/videocard.py:112
 msgid "24 Bit"
-msgstr ""
+msgstr "24 Bit"
 
 #: ui/output.py:160
 msgid "Output Configuration"
-msgstr ""
+msgstr "Konfiguracja wyjścia"
 
 #: ui/output.py:161
 #, fuzzy
