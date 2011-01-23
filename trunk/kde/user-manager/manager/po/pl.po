@@ -2,8 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -12,92 +11,92 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:2
 msgid "User Manager"
-msgstr ""
+msgstr "Menedżer użytkowników"
 
 #: data/user-manager.desktop.in.h:1
 msgid "An application for managing user accounts."
-msgstr ""
+msgstr "Aplikacja do zarządzania kontami użytkowników."
 
 #: src/usermanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/usermanager/about.py:34
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Obecny opiekun"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/usermanager/about.py:35
 msgid "First Developer"
-msgstr ""
+msgstr "Główny wykonawca"
 
 #: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Nazwy"
 
 #: src/usermanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Adresy e-mail"
 
 #: src/usermanager/edit.py:36
 msgid "User/group operations"
-msgstr ""
+msgstr "Operacje na użytkowniku/grupie"
 
 #: src/usermanager/edit.py:37
 msgid "Package operations"
-msgstr ""
+msgstr "Zarządzanie aplikacjami"
 
 #: src/usermanager/edit.py:38
 msgid "Service operations"
-msgstr ""
+msgstr "Zarządzanie usługami systemowych"
 
 #: src/usermanager/edit.py:39
 msgid "Date/time operations"
-msgstr ""
+msgstr "Zmiana daty/czasu"
 
 #: src/usermanager/edit.py:40
 msgid "Kernel/Process operations"
-msgstr ""
+msgstr "Zarządzanie jądrem"
 
 #: src/usermanager/edit.py:41
 msgid "Bootloader settings"
-msgstr ""
+msgstr "Ustawienia menadżera uruchamiania"
 
 #: src/usermanager/edit.py:42
 msgid "Screen settings"
-msgstr ""
+msgstr "Ustawienia ekranu"
 
 #: src/usermanager/edit.py:43
 msgid "Network settings"
-msgstr ""
+msgstr "Ustawienia sieci"
 
 #: src/usermanager/edit.py:44
 msgid "Login Manager settings"
-msgstr ""
+msgstr "Ustawienia menadżera logowania"
 
 #: src/usermanager/edit.py:45
 msgid "Keyboard settings"
-msgstr ""
+msgstr "Ustawienia klawiatury"
 
 #: src/usermanager/edit.py:306
 msgid "There has to be at least one group selected."
-msgstr ""
+msgstr "Musi być wybrana co najmniej jedna grupa."
 
 #: src/usermanager/edit.py:382
 msgid "Start with typing this user's full name."
