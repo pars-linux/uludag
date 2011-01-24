@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Michal Komasa <bigkoma@gmail.com>, 2011.
 msgid ""
 msgstr ""
@@ -14,8 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
@@ -27,24 +26,24 @@ msgstr ""
 
 #: .tmp/ui_configure.py:46
 msgid " Operations"
-msgstr ""
+msgstr "Operacje"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr ""
+msgstr "History Manager"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Obecny opiekun"
 
 #: .tmp/historymanager/window.py:76
 msgid "%1 Operations Loaded"
@@ -91,8 +90,7 @@ msgid "Takeback operation verification"
 msgstr ""
 
 #: .tmp/historymanager/window.py:225
-msgid ""
-"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr ""
 
 #: .tmp/historymanager/window.py:226
@@ -108,9 +106,7 @@ msgid "Start new snapshot"
 msgstr ""
 
 #: .tmp/historymanager/window.py:238
-msgid ""
-"<center>This will take a snapshot of your system.<br>Click Ok when you're "
-"ready.</center>"
+msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
 msgstr ""
 
 #: .tmp/historymanager/window.py:244
@@ -136,7 +132,7 @@ msgstr "Aktualizuj"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Removal"
-msgstr ""
+msgstr "Usuwanie"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Emerge"
@@ -144,7 +140,7 @@ msgstr ""
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Installation"
-msgstr ""
+msgstr "Instalacja"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Snapshot"
@@ -175,8 +171,9 @@ msgid "Take back to this point"
 msgstr ""
 
 #: .tmp/ui_uiitem.py:88
+#, fuzzy
 msgid "Details"
-msgstr ""
+msgstr "Szczegóły"
 
 #: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
@@ -196,7 +193,7 @@ msgstr ""
 
 #: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
-msgstr ""
+msgstr "Anuluj"
 
 #: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
@@ -208,5 +205,4 @@ msgstr ""
 
 #: .tmp/ui_mainwindow.py:138
 msgid "Copy"
-msgstr ""
-
+msgstr "Kopiuj"
