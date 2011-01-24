@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Michal Komasa <bigkoma@gmail.com>, 2011.
 msgid ""
 msgstr ""
@@ -10,22 +10,21 @@ msgstr ""
 "PO-Revision-Date: 2011-01-24 23:06+0100\n"
 "Last-Translator: Michal Komasa <bigkoma@gmail.com>\n"
 "Language-Team: Polish <pardus-translators@pardus.org.tr>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && "
-"(n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: data/firewall-manager.desktop.in.h:1
 msgid "An application for managing firewall."
-msgstr ""
+msgstr "Aplikacja do zarządzania zaporą sieciową."
 
 #: data/firewall-manager.desktop.in.h:2
 #: data/kcm_firewall-manager.desktop.in.h:1
 msgid "Firewall Manager"
-msgstr ""
+msgstr "Menadżer zapory sieciowej."
 
 #: src/firewallmanager/about.py:26
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
@@ -37,60 +36,62 @@ msgstr "Gökmen Göksel"
 
 #: src/firewallmanager/about.py:34
 msgid "Current Maintainer"
-msgstr ""
+msgstr "Obecny opiekun"
 
 #: src/firewallmanager/about.py:35
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: src/firewallmanager/about.py:35
 msgid "First Developer"
-msgstr ""
+msgstr "First wykonawca"
 
 #: src/firewallmanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Nazwy"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Adresy e-mail"
 
 #: src/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
+"Nie ma pakietów, które dostarczają wymagania dla tej aplikacji. \n"
+" Proszę się upewnić,  że pakiety są zainstalowane i skonfigurowane poprawnie."
 
 #: src/firewallmanager/main.py:200
 msgid "All"
-msgstr ""
+msgstr "Wszystkie"
 
 #: src/firewallmanager/main.py:211
 msgid "Action"
-msgstr ""
+msgstr "Działanie"
 
 #: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
 #: src/firewallmanager/main.py:317
 msgid "Access denied."
-msgstr ""
+msgstr "Odmowa dostępu."
 
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
-msgstr ""
+msgstr "Ustawienia"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
-msgstr ""
+msgstr "Zapora sieciowa jest aktywna."
 
 #: src/firewallmanager/service.py:41
 msgid "Stop"
-msgstr ""
+msgstr "Zatrzymaj"
 
 #: src/firewallmanager/service.py:43
 msgid "Firewall is deactivated."
-msgstr ""
+msgstr "Zapora sieciowa jest wyłączona."
 
 #: src/firewallmanager/service.py:46 ui/ui_service.py:47
 msgid "Start"
@@ -98,7 +99,7 @@ msgstr "Uruchom"
 
 #: ui/ui_item.py:74
 msgid "Active or deactivate module."
-msgstr ""
+msgstr "Włącz lub wyłącz moduł. "
 
 #: ui/ui_item.py:75
 msgid "Edit"
@@ -111,4 +112,3 @@ msgstr "Usuń"
 #: ui/ui_main.py:82
 msgid "Add New"
 msgstr "Dodaj nowy"
-
