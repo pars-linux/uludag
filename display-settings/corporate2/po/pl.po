@@ -97,7 +97,6 @@ msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provi
 msgstr "<qt> Do uzyskania lepszych efektów, można użyć <b>%1</b> sterowników dostarczonych przez producenta sprzętu. Czy chcesz wykorzystać te sterowniki? </p></qt>"
 
 #: code/displaysettings/mainwidget.py:412
-#, fuzzy
 msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
 msgstr "<qt> Do uzyskania lepszych efektów, można użyć <b>%1</b> sterowników dostarczonych przez producenta sprzętu. Aby z nich skorzystać, należy zainstalować pakiet <b>%2</b> i wybrać  <b>%1</b> w ustawieniach karty graficznej. </qt>"
 
@@ -106,7 +105,6 @@ msgid "Start Package Manager"
 msgstr "Uruchom Menedżer pakietów"
 
 #: code/displaysettings/mainwidget.py:530
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
 msgstr "Musisz ponownie uruchomić sesję X-ów, by wszystkie zmiany miały efekt."
 
@@ -235,7 +233,6 @@ msgid "Output Configuration"
 msgstr "Konfiguracja wyjścia"
 
 #: ui/output.py:161
-#, fuzzy
 msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
 msgstr "Jeśli zakres częstotliwości obsługiwanych przez twój monitor, z jakiegoś powodu nie jest wykrywany, można ustawić go tutaj. Bądź ostrożny z tymi wartościami,  niepoprawne określenie może spowodować uszkodzenie monitora, szczególnie jeśli jest to stary model."
 
