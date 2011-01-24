@@ -1,0 +1,115 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Korostil Daniel <ted.korostiled@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-16 00:19+0300\n"
+"PO-Revision-Date: 2011-01-24 16:17+0300\n"
+"Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
+"Language-Team: translation@linux.org.ua\n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: data/firewall-manager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr "Програма для керування мережевої безпеки."
+
+#: data/firewall-manager.desktop.in.h:2
+#: data/kcm_firewall-manager.desktop.in.h:1
+msgid "Firewall Manager"
+msgstr "Керування мережевої безпеки."
+
+#: src/firewallmanager/about.py:26
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
+msgstr "© 2006–2010 TUBITAK/UEKAE"
+
+#: src/firewallmanager/about.py:34
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
+
+#: src/firewallmanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Теперішній супровідник"
+
+#: src/firewallmanager/about.py:35
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: src/firewallmanager/about.py:35
+msgid "First Developer"
+msgstr "Засновник"
+
+#: src/firewallmanager/about.py:36
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Daniel Korostil"
+
+#: src/firewallmanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "ted.korostiled@gmail.com"
+
+#: src/firewallmanager/main.py:96
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Нема пакунка, поверх якого може працювати ця програма.\n"
+"Будь ласка, переконайтесь, що пакунок установлено та налаштовано правильно. "
+
+#: src/firewallmanager/main.py:200
+msgid "All"
+msgstr "Все"
+
+#: src/firewallmanager/main.py:211
+msgid "Action"
+msgstr "Дія"
+
+#: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
+#: src/firewallmanager/main.py:317
+msgid "Access denied."
+msgstr "Доступ заборонено."
+
+#: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Мережеву безпеку ввімкнено."
+
+#: src/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Зупинити"
+
+#: src/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Мережеву безпеку вимкнено."
+
+#: src/firewallmanager/service.py:46 ui/ui_service.py:47
+msgid "Start"
+msgstr "Запустити"
+
+#: ui/ui_item.py:74
+msgid "Active or deactivate module."
+msgstr "Увімкнути або вимкнути модуль."
+
+#: ui/ui_item.py:75
+msgid "Edit"
+msgstr "Редагувати"
+
+#: ui/ui_item.py:76
+msgid "Delete"
+msgstr "Вилучити"
+
+#: ui/ui_main.py:82
+msgid "Add New"
+msgstr "Додати новий"
