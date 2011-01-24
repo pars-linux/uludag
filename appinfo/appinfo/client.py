@@ -22,6 +22,9 @@ import urlgrabber
 # AppInfo Base Object
 from appinfo.base import AppInfo
 
+# Utils
+from appinfo.utils import update_sum
+
 DB_FILE = 'appinfo.db'
 DB_FILE_SUM = DB_FILE + '.md5'
 
@@ -115,7 +118,7 @@ class AppInfoClient(AppInfo):
 
         def updateLocalSum():
             if os.path.exists(self.local_db):
-                os.system('md5sum %s > %s' % (self.local_db, self.local_db_sum))
+                update_sum(self.local_db)
 
         self.createSkeleton()
         updateLocalSum()

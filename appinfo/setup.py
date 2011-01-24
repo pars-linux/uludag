@@ -57,7 +57,7 @@ class Install(install):
 
 
 setup(name=PROJECT,
-      version='0.1',
+      version='0.2',
       description='Appinfo: Metadata information for packages',
       long_description='Package Management System indepented, package metadata'\
                        'information management system.',
