@@ -5,7 +5,7 @@ Source Code Repository
 
 :Author: Semen Cirit
 :Date: |today|
-:Version: 0.1
+:Version: 0.2
 
 Pardus developers may be located all around the world. We keep the source code in
 an internet-accessible version control system called Subversion `SVN`_, in order
@@ -50,7 +50,7 @@ be committed a related devel repository folder.
 
 This folder may contain alfa, beta or latest ubstable releases of packages.
 
-stable Folder
+testing Folder
 ^^^^^^^^^^^^^
 
 This folder includes package source files which obtains their stable releases. In
@@ -61,6 +61,8 @@ But some exceptions can also be exist, if you are not sure please ask Pardus
 
 These two folders also has a specific folder tree. In this tree, the folders are
 named with Pardus `package components`_.
+
+devel 
 
 playground Folder
 -----------------
