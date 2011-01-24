@@ -28,9 +28,8 @@ msgid "Default Output"
 msgstr "Ekran główny"
 
 #: code/displaysettings/device.py:63
-#, fuzzy
 msgid "Laptop Panel"
-msgstr "Laptop Panel"
+msgstr "Panel konfiguracyjny Laptop"
 
 #: code/displaysettings/device.py:64
 msgid "Analog Output"
@@ -49,9 +48,8 @@ msgid "Settings for Output %1"
 msgstr "Ustawienia dla %1"
 
 #: code/displaysettings/outputdialog.py:63
-#, fuzzy
 msgid "Custom Monitor"
-msgstr "Monitor Custom"
+msgstr "Ustawienia monitora"
 
 #: code/displaysettings/outputdialog.py:67
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
