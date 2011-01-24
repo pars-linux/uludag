@@ -13,6 +13,11 @@ Pardus packages are located at software repositories in binary format.
 
 Every Pardus distribution has specific `binary repositories`_.
 
+All of these repositories group packages by `supported architectures`_ and these
+repositories are also have debug packages folder.
+
+During alfa, beta versions of Pardus distributions, all these repositories are
+the same.
 
 Devel Binary Repository
 -----------------------
@@ -35,12 +40,6 @@ Stable Binary Repository
 The updated and newly added packages under test binary repository enters a test
 process. The approved packages after this process are merged to this stable
 repository by release manager.
-
-All of these repositories group pacakges by `supported architectures`_ and these
-repositories are also have debug packages folder.
-
-During alfa, beta versions of Pardus distributions, all these repositories are
-the same.
 
 .. _binary repositories: http://packages.pardus.org.tr/pardus/
 .. _devel package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
