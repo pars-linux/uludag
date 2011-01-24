@@ -21,6 +21,9 @@ from appinfo import database
 # AppInfo Base Object
 from appinfo.base import AppInfo
 
+# Utils
+from appinfo.utils import update_sum
+
 class AppInfoServer(AppInfo):
     """ AppInfoServer
         -------------
@@ -111,5 +114,5 @@ class AppInfoServer(AppInfo):
         """ It closes the db and updates db sum file """
         if self._sq:
             self._sq.close()
-            os.system('md5sum %s > %s.md5' % (self._db, self._db))
+            update_sum(self._db)
 

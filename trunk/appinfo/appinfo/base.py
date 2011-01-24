@@ -20,6 +20,9 @@ from appinfo import config
 from appinfo import backends
 from appinfo import database
 
+# Utils
+from appinfo.utils import update_sum
+
 class AppInfo(object):
     """ AppInfo
         -------
@@ -98,5 +101,5 @@ class AppInfo(object):
         self._sq.commit()
 
         if self.config.updateSignAfterEachCommit:
-            os.system('md5sum %s' % self._db)
+            update_sum(self._db)
 
