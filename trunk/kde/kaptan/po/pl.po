@@ -70,11 +70,11 @@ msgstr ""
 
 #: .tmp/scrSmolt.py:114
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: .tmp/scrSmolt.py:115
 msgid "OS"
-msgstr ""
+msgstr "OS"
 
 #: .tmp/scrSmolt.py:116
 msgid "Default Run Level"
@@ -98,7 +98,7 @@ msgstr "Producent procesora"
 
 #: .tmp/scrSmolt.py:121
 msgid "CPU Model"
-msgstr ""
+msgstr "Model Procesora"
 
 #: .tmp/scrSmolt.py:122
 msgid "CPU Stepping"
@@ -114,23 +114,23 @@ msgstr ""
 
 #: .tmp/scrSmolt.py:125
 msgid "Number of CPUs"
-msgstr ""
+msgstr "Liczba procesorów"
 
 #: .tmp/scrSmolt.py:126
 msgid "CPU Speed"
-msgstr ""
+msgstr "Częstotliwość procesora"
 
 #: .tmp/scrSmolt.py:127
 msgid "System Memory"
-msgstr ""
+msgstr "Pamięć"
 
 #: .tmp/scrSmolt.py:128
 msgid "System Swap"
-msgstr ""
+msgstr "Pamięć wymiany (SWAP)"
 
 #: .tmp/scrSmolt.py:129
 msgid "Vendor"
-msgstr ""
+msgstr "Dostawca"
 
 #: .tmp/scrSmolt.py:130
 msgid "System"
@@ -283,7 +283,7 @@ msgstr "Wybierz styl menu"
 
 #: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
 msgid "Kick-off Menu"
-msgstr ""
+msgstr "Kick-off Menu"
 
 #: .tmp/scrMenu.py:43
 msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
@@ -298,7 +298,6 @@ msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightwei
 msgstr ""
 
 #: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
-#, fuzzy
 msgid "Lancelot Menu"
 msgstr "Lancelot Menu"
 
@@ -308,11 +307,11 @@ msgstr ""
 
 #: .tmp/scrAvatar.py:36
 msgid "User Picture"
-msgstr ""
+msgstr "Obrazek użytkownika"
 
 #: .tmp/scrAvatar.py:48
 msgid "Create Your User Picture"
-msgstr ""
+msgstr "Utwórz obrazek dla swojego użytkownika"
 
 #: .tmp/ui_scrSmolt.py:155
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
@@ -324,7 +323,7 @@ msgstr ""
 
 #: .tmp/ui_scrSmolt.py:157
 msgid "&Send my profile"
-msgstr ""
+msgstr "&Wyślij mój profil"
 
 #: .tmp/ui_scrSmolt.py:159
 msgid ""
@@ -341,7 +340,7 @@ msgstr ""
 
 #: .tmp/kaptan.desktop.in.h:2
 msgid "Welcome Wizard"
-msgstr ""
+msgstr "Witamy w kreatorze"
 
 #: .tmp/ui_wallpaperItem.py:73
 msgid "wallPaperName"
@@ -349,11 +348,11 @@ msgstr ""
 
 #: .tmp/ui_wallpaperItem.py:74
 msgid "wallpaperDesc"
-msgstr ""
+msgstr "Tapeta"
 
 #: .tmp/scrSummary.py:36
 msgid "Save Your Settings"
-msgstr ""
+msgstr "Zapisz ustawienia"
 
 #: .tmp/scrSummary.py:59
 msgid "Mouse Settings"
@@ -362,7 +361,7 @@ msgstr "Ustawienia myszy"
 #: .tmp/scrSummary.py:61
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
-msgstr ""
+msgstr "Wybrane ustawienia myszy: <b>%s</b>"
 
 #: .tmp/scrSummary.py:62
 #, python-format
@@ -376,7 +375,7 @@ msgstr "Ustawienia menu"
 #: .tmp/scrSummary.py:67
 #, python-format
 msgid "Selected Menu: <b>%s</b>"
-msgstr ""
+msgstr "Wybrane menu: <b>%s</b>"
 
 #: .tmp/scrSummary.py:71
 msgid "Wallpaper Settings"
@@ -419,7 +418,7 @@ msgstr "Błąd"
 
 #: .tmp/scrSummary.py:117
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-msgstr ""
+msgstr "Nie można ponownie uruchomić plasma-desktop. Kaptan zostanie teraz zamknięty."
 
 #: .tmp/ui_scrWelcome.py:77 .tmp/scrWelcome.py:27
 msgid "Welcome"
@@ -444,7 +443,7 @@ msgstr "Sprawdź aktualizacje automatycznie co"
 
 #: .tmp/ui_scrPackage.py:135
 msgid " hours"
-msgstr ""
+msgstr "godziny"
 
 #: .tmp/ui_scrPackage.py:136
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
@@ -452,7 +451,7 @@ msgstr ""
 
 #: .tmp/ui_scrPackage.py:137
 msgid "Updates"
-msgstr ""
+msgstr "Aktualizacje"
 
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
@@ -472,15 +471,15 @@ msgstr ""
 
 #: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
 msgid "More"
-msgstr ""
+msgstr "Więcej"
 
 #: .tmp/scrGoodbye.py:25
 msgid "Congratulations!"
-msgstr ""
+msgstr "Gratulacje!"
 
 #: .tmp/ui_scrSearch.py:100
 msgid "Search"
-msgstr ""
+msgstr "Szukaj"
 
 #: .tmp/ui_scrSearch.py:101
 msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
@@ -553,11 +552,11 @@ msgstr ""
 
 #: .tmp/ui_scrMouse.py:208
 msgid "Right Hand"
-msgstr ""
+msgstr "Praworęczni"
 
 #: .tmp/ui_scrMouse.py:209
 msgid "Left Hand"
-msgstr ""
+msgstr "Leworęczni"
 
 #: .tmp/ui_scrMouse.py:210
 msgid "Reverse scrolling"
