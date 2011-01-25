@@ -495,7 +495,7 @@ class _802_11_Wireless_Security:
         """Set up WEP based networks"""
 
         self.auth_alg = "open" #TODO: or 'shared' ??
-        self.key_mgmt = "none" # Which stands for WEP based key management
+        self.key_mgmt = "None" # Which stands for WEP based key management
         self.wep_key0 = str(pardus_profile.get_auth_password()) # Default index
         self.wep_key_type = "1" # Interpret WEP keys as hex or ascii keys
 
@@ -507,7 +507,8 @@ class _802_11_Wireless_Security:
         for attr, value in self.__dict__.items():
             if value not in ["false", "none", "0"] and  attr != "name":
                 attr = attr.replace("_", "-")
-                cfg.set(self.name, attr, value)
+                #Exceptionally use value.lower() to escape mandatory key-mgmt=none assignment for WEP key management
+                cfg.set(self.name, attr, value.lower())
 
 
 class Migrator:
