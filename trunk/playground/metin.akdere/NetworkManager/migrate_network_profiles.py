@@ -428,7 +428,7 @@ class _802_11_Wireless:
                     words = line.lower().split()
                     for i in range(len(words)):
                         if words[i] in hw_identifiers:
-                            self.mac_address = words[i+1]
+                            return words[i+1]
 
     def set_mode(self, pardus_profile):
         """One of 'infrastructure' or 'adhoc'. If blank, infrastructure is assumed"""
