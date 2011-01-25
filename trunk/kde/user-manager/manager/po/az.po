@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-17 18:44+0200\n"
+"POT-Creation-Date: 2011-01-25 10:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:2
-msgid "User Manager"
+#: data/kcm_user-manager.desktop.in.h:1 data/user-manager.desktop.in.h:1
+msgid "An application for managing user accounts."
 msgstr ""
 
-#: data/user-manager.desktop.in.h:1
-msgid "An application for managing user accounts."
+#: data/kcm_user-manager.desktop.in.h:2 data/user-manager.desktop.in.h:2
+msgid "User Manager"
 msgstr ""
 
 #: src/usermanager/about.py:26
@@ -54,130 +54,134 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: src/usermanager/edit.py:36
+#: src/usermanager/edit.py:125
 msgid "User/group operations"
 msgstr ""
 
-#: src/usermanager/edit.py:37
+#: src/usermanager/edit.py:126
 msgid "Package operations"
 msgstr ""
 
-#: src/usermanager/edit.py:38
+#: src/usermanager/edit.py:127
 msgid "Service operations"
 msgstr ""
 
-#: src/usermanager/edit.py:39
+#: src/usermanager/edit.py:128
 msgid "Date/time operations"
 msgstr ""
 
-#: src/usermanager/edit.py:40
+#: src/usermanager/edit.py:129
 msgid "Kernel/Process operations"
 msgstr ""
 
-#: src/usermanager/edit.py:41
+#: src/usermanager/edit.py:130
 msgid "Bootloader settings"
 msgstr ""
 
-#: src/usermanager/edit.py:42
+#: src/usermanager/edit.py:131
 msgid "Screen settings"
 msgstr ""
 
-#: src/usermanager/edit.py:43
+#: src/usermanager/edit.py:132
+msgid "Locale settings"
+msgstr ""
+
+#: src/usermanager/edit.py:133
 msgid "Network settings"
 msgstr ""
 
-#: src/usermanager/edit.py:44
+#: src/usermanager/edit.py:134
 msgid "Login Manager settings"
 msgstr ""
 
-#: src/usermanager/edit.py:45
+#: src/usermanager/edit.py:135
 msgid "Keyboard settings"
 msgstr ""
 
-#: src/usermanager/edit.py:306
+#: src/usermanager/edit.py:307
 msgid "There has to be at least one group selected."
 msgstr ""
 
-#: src/usermanager/edit.py:382
+#: src/usermanager/edit.py:384
 msgid "Start with typing this user's full name."
 msgstr ""
 
-#: src/usermanager/edit.py:385
+#: src/usermanager/edit.py:387
 msgid "You should enter a password for this user."
 msgstr ""
 
-#: src/usermanager/edit.py:392
+#: src/usermanager/edit.py:394
 msgid "Password must be longer."
 msgstr ""
 
-#: src/usermanager/edit.py:396
+#: src/usermanager/edit.py:398
 msgid "Don't use your full name or user name as a password."
 msgstr ""
 
-#: src/usermanager/edit.py:399
+#: src/usermanager/edit.py:401
 msgid "Passwords don't match."
 msgstr ""
 
-#: src/usermanager/edit.py:404
+#: src/usermanager/edit.py:406
 msgid "You must enter a user name."
 msgstr ""
 
-#: src/usermanager/edit.py:407
+#: src/usermanager/edit.py:409
 msgid "This user name is used by another user."
 msgstr ""
 
-#: src/usermanager/edit.py:411
+#: src/usermanager/edit.py:413
 msgid "User name must not start with a number."
 msgstr ""
 
-#: src/usermanager/main.py:108
+#: src/usermanager/main.py:110
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 
-#: src/usermanager/main.py:209
+#: src/usermanager/main.py:211
 msgid "Users"
 msgstr ""
 
-#: src/usermanager/main.py:210 ui/ui_edituser.py:247
+#: src/usermanager/main.py:212 ui/ui_edituser.py:247
 msgid "Groups"
 msgstr ""
 
-#: src/usermanager/main.py:211
+#: src/usermanager/main.py:213
 msgid "All Users"
 msgstr ""
 
-#: src/usermanager/main.py:212
+#: src/usermanager/main.py:214
 msgid "All Groups"
 msgstr ""
 
-#: src/usermanager/main.py:223
+#: src/usermanager/main.py:225
 msgid "Add User"
 msgstr ""
 
-#: src/usermanager/main.py:228
+#: src/usermanager/main.py:230
 msgid "Add Group"
 msgstr ""
 
-#: src/usermanager/main.py:250 src/usermanager/main.py:265
-#: src/usermanager/main.py:419
+#: src/usermanager/main.py:252 src/usermanager/main.py:267
+#: src/usermanager/main.py:417
 msgid "Access denied."
 msgstr ""
 
-#: src/usermanager/main.py:341
+#: src/usermanager/main.py:343
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
 msgstr ""
 
-#: src/usermanager/main.py:345
+#: src/usermanager/main.py:347
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr ""
 
-#: src/usermanager/main.py:346
+#: src/usermanager/main.py:348
 msgid "Also remove user files. (This may take long.)"
 msgstr ""
 
-#: src/usermanager/main.py:354
+#: src/usermanager/main.py:356
 msgid "Do you want to delete group '%1'?"
 msgstr ""
 
