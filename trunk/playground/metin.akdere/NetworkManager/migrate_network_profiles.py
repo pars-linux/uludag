@@ -257,7 +257,7 @@ class IpV4:
             return str(name_server)
         else:
             # Nothing done in auto option
-            return "Auto option secildi"
+            return "none"
 
     def set_addresses(self, pardus_profile):
         """Set network addresses from given settings"""

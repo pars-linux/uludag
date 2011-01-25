@@ -1,48 +1,30 @@
-[metin]
-device = pci:14e4_1698_eth0
-state = down
-name_mode = default
-net_mode = auto
-
-[lan]
-device = pci:14e4_1698_eth0
-state = down
-name_mode = default
-net_mode = auto
-
-[Şirket]
+[kablolu-dns-custom-ip-custom]
 name_server = 8.8.8.8
 net_mask = 255.255.255.0
-net_gateway = 192.168.3.1
-state = down
-name_mode = custom
-device = pci:14e4_1698_eth0
 net_mode = manual
-net_address = 192.168.1.1
-
-[ptsp-server]
-net_mask = 255.255.255.0
-net_gateway = 10.0.0.1
-state = down
-name_mode = default
-device = pci:14e4_1698_eth0
-net_mode = manual
-net_address = 10.0.0.1
-
-[ofis-lan]
-name_server = 8.8.8.8
-state = up 192.168.3.55
-name_mode = custom
-device = pci:10ec_8168_eth0
-net_mode = auto
-
-[thin client]
-name_server = 8.8.8.8
-net_mask = 255.255.255.0
-net_gateway = 10.0.0.1
-state = up 10.0.0.1
 name_mode = custom
 device = pci:8086_10b9_eth1
+net_gateway = 192.168.3.1
+net_address = 192.168.3.99
+
+[kablolu-dns-default-ip-custom]
+net_mask = 255.255.255.0
 net_mode = manual
-net_address = 10.0.0.1
+state = up 192.168.3.193
+name_mode = default
+device = pci:8086_10b9_eth1
+net_gateway = 192.168.3.1
+net_address = 192.168.3.99
+
+[kablolu-dns-custom-dhcp]
+device = pci:8086_10b9_eth1
+name_mode = custom
+net_mode = auto
+name_server = 8.8.8.8
+
+[kablolu-dns-auto-dhcp]
+device = pci:10ec_8168_eth0
+state = down
+name_mode = auto
+net_mode = auto
 
