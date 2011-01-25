@@ -236,7 +236,7 @@ class IpV4:
         self.ignore_auto_dns = "false"
         self.dhcp_client_id = "none"
         self.dhcp_send_hostname = "false"
-        self.dhcp_hostname = "fone"
+        self.dhcp_hostname = "none"
         self.never_default = "false"
         self.method = pardus_profile.get_net_mode() # auto or manual, same as in NM
         self.addresses1 = self.set_addresses(pardus_profile)    # NM uses array of IPv4 address structures. We have only one for each iface
