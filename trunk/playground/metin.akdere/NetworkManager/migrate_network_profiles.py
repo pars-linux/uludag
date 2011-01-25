@@ -47,17 +47,17 @@ class PardusNetworkProfile:
 
         self.profile_name = name
         self.connection_type = connection_type
-        self.device = "None"
-        self.net_mode = "None"
-        self.name_mode = "None"
-        self.state = "None"
-        self.name_server = "None"
-        self.net_address = "None"
-        self.net_mask = "None"
-        self.net_gateway = "None"
-        self.remote = "None"
-        self.auth = "None"
-        self.auth_password = "None"
+        self.device = "none"
+        self.net_mode = "none"
+        self.name_mode = "none"
+        self.state = "none"
+        self.name_server = "none"
+        self.net_address = "none"
+        self.net_mask = "none"
+        self.net_gateway = "none"
+        self.remote = "none"
+        self.auth = "none"
+        self.auth_password = "none"
 
         self.set_attributes(settings)
 
@@ -135,7 +135,7 @@ class NetworkManagerProfile:
         if pardus_profile.connection_type == "802-3-ethernet":
             return  _802_3_Ethernet(pardus_profile)
         else:
-            return "None"
+            return "none"
 
     def set_802_11_wireless(self, pardus_profile):
         """If this is a wireless (802-11-wirelesss) profile, set 
@@ -143,7 +143,7 @@ class NetworkManagerProfile:
         if pardus_profile.connection_type == "802-11-wireless":
             return  _802_11_Wireless(pardus_profile)
         else:
-            return "None"
+            return "none"
 
     def set_802_11_wireless_security(self, pardus_profile):
         """If the wireless connection has any security restrictions, create a 
@@ -152,13 +152,13 @@ class NetworkManagerProfile:
 
         if pardus_profile.get_connection_type() ==  "802-11-wireless": #Check if it is a wlan profile
             if pardus_profile.get_auth() == "none":
-                self._802_11_wireless.security = "None"
-                return "None"
+                self._802_11_wireless.security = "none"
+                return "none"
             else:
                 self._802_11_wireless.security = "802-11-wireless-security"
                 return _802_11_Wireless_Security(pardus_profile)
         else:
-            return "None"
+            return "none"
 
     def create_config(self):
         """Create sections and options in the prfoile's config file by calling
@@ -173,11 +173,11 @@ class NetworkManagerProfile:
                 self.ipv4.set_config(self.cfg)
             if attr == "ipv6":
                 self.ipv6.set_config(self.cfg)
-            if attr == "_802_3_ethernet" and not value == "None":
+            if attr == "_802_3_ethernet" and not value == "none":
                 self._802_3_ethernet.set_config(self.cfg)
-            if attr=="_802_11_wireless" and not value == "None":
+            if attr=="_802_11_wireless" and not value == "none":
                 self._802_11_wireless.set_config(self.cfg)
-            if attr=="_802_11_wireless_security" and not value == "None":
+            if attr=="_802_11_wireless_security" and not value == "none":
                 self._802_11_wireless_security.set_config(self.cfg)
 
     def write_config(self):
@@ -202,9 +202,9 @@ class Connection:
         self._id = pardus_profile.get_profile_name()
         self.uuid = self.set_uuid(device = pardus_profile.get_device())
         self._type = pardus_profile.get_connection_type()
-        self.autoconnect = "False" #FIXME False gives error on iteration in ConfigParser
-        self.timestamp = "None"
-        self.read_only = "False"
+        self.autoconnect = "false" #FIXME False gives error on iteration in ConfigParser
+        self.timestamp = "none"
+        self.read_only = "false"
 
     def set_uuid(self, device):
         """Generate random type UUID"""
@@ -217,7 +217,7 @@ class Connection:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["false", "none"] and  attr != "name":
                 #Before creating config file _id must be id, and _type must be type
                 if attr == "_id" or attr == "_type" : attr = attr.split("_")[-1]
                 #There isnt any underscore in config options, replace them with dashes if found any
@@ -230,14 +230,14 @@ class IpV4:
 
     def __init__(self, pardus_profile):
         self.name = "ipv4"
-        self.dns_search = "None"
-        self.routes = "None"
-        self.ignore_auto_routes = "False"
-        self.ignore_auto_dns = "False"
-        self.dhcp_client_id = "None"
-        self.dhcp_send_hostname = "False"
-        self.dhcp_hostname = "None"
-        self.never_default = "False"
+        self.dns_search = "none"
+        self.routes = "none"
+        self.ignore_auto_routes = "false"
+        self.ignore_auto_dns = "false"
+        self.dhcp_client_id = "none"
+        self.dhcp_send_hostname = "false"
+        self.dhcp_hostname = "fone"
+        self.never_default = "false"
         self.method = pardus_profile.get_net_mode() # auto or manual, same as in NM
         self.addresses1 = self.set_addresses(pardus_profile)    # NM uses array of IPv4 address structures. We have only one for each iface
         self.dns = self.set_dns(pardus_profile)
@@ -248,12 +248,12 @@ class IpV4:
         if pardus_profile.get_name_mode() == "default":
             default_nameservers =";".join( get_default_nameservers())
             default_nameservers = default_nameservers + ";" # Make sure addresses end with ';'
-            self.ignore_auto_dns = "True"
+            self.ignore_auto_dns = "true"
             return str(default_nameservers)
         elif pardus_profile.get_name_mode() == "custom":
             name_server = pardus_profile.get_name_server()
             name_server = name_server + ";"
-            self.ignore_auto_dns = "True"
+            self.ignore_auto_dns = "true"
             return str(name_server)
         else:
             # Nothing done in auto option
@@ -272,7 +272,7 @@ class IpV4:
             addresses = addresses + ";"     # Make sure addresses end with ';'
             return addresses
         else:
-            return "None"
+            return "none"
 
     def decimal2binary(self, n):
         """Convert decimal octet value to binary format"""
@@ -309,7 +309,7 @@ class IpV4:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["false", "none"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -318,17 +318,17 @@ class IpV6:
 
     def __init__(self, pardus_profile):
         self.name = "ipv6"
-        self.method = "None"
-        self.dns = "None"
-        self.dns_search = "None"
-        self.addresses = "None"
-        self.routes = "None"
-        self.ignore_auto_routes = "False"
-        self.ignore_auto_dns = "False"
-        self.dhcp_client_id = "None"
-        self.dhcp_send_hostname = "None"
-        self.dhcp_hostname = "None"
-        self.never_default = "False"
+        self.method = "none"
+        self.dns = "none"
+        self.dns_search = "none"
+        self.addresses = "none"
+        self.routes = "none"
+        self.ignore_auto_routes = "false"
+        self.ignore_auto_dns = "false"
+        self.dhcp_client_id = "none"
+        self.dhcp_send_hostname = "none"
+        self.dhcp_hostname = "none"
+        self.never_default = "false"
 
         self.set_method()
 
@@ -341,7 +341,7 @@ class IpV6:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["false", "none"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -349,12 +349,12 @@ class _802_3_Ethernet:
 
     def __init__(self, pardus_profile):
         self.name = "802-3-ethernet"
-        self.port = "None"
-        self.speed = "None" #0
+        self.port = "none"
+        self.speed = "none" #0
         self.duplex = "full"
-        self.auto_negotiate = "False"
+        self.auto_negotiate = "false"
         self.mac_address = self.set_mac_address(pardus_profile.get_device())
-        self.mtu = "None" #0
+        self.mtu = "none" #0
 
     def set_mac_address(self, iface):
         """Return MAC addresses of given interface on the machine using ifconfig, inspired from python uuid module"""
@@ -385,7 +385,7 @@ class _802_3_Ethernet:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None"] and  attr != "name":
+            if value not in ["false", "none"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -395,14 +395,14 @@ class _802_11_Wireless:
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless"
         self.ssid = self.set_ssid(pardus_profile)
-        self.band = "None"
+        self.band = "none"
         self.channel = "0"
-        self.bssid = "None"
+        self.bssid = "none"
         self.rate = "0"
         self.tx_power = "0"
         self.mtu = "0"
-        self.seen_bssids = "None"
-        self.security = "None"
+        self.seen_bssids = "none"
+        self.security = "none"
         self.mode = self.set_mode(pardus_profile)
         self.mac_address = self.set_mac_address(pardus_profile.get_device())
 
@@ -442,14 +442,14 @@ class _802_11_Wireless:
         if pardus_profile.connection_type == "802-11-wireless":
             return str(pardus_profile.get_remote())
         else:
-            return "None"
+            return "none"
 
     def set_config(self, cfg):
         """One single config file will be used to write settings"""
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None", "0"] and  attr != "name":
+            if value not in ["false", "none", "0"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
@@ -458,19 +458,19 @@ class _802_11_Wireless_Security:
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless-security"
-        self.key_mgmt = "None"
+        self.key_mgmt = "none"
         self.wep_tx_keyidx = "0"
-        self.auth_alg = "None"
-        self.proto = "None"
-        self.pairwise = "None"
-        self.group = "None"
-        self.leap_username = "None"
-        self.wep_key0 ="None"
-        self.wep_key1 ="None"
-        self.wep_key2 ="None"
-        self.wep_key3 ="None"
-        self.psk = "None"
-        self.leap_password = "None"
+        self.auth_alg = "none"
+        self.proto = "none"
+        self.pairwise = "none"
+        self.group = "none"
+        self.leap_username = "none"
+        self.wep_key0 ="none"
+        self.wep_key1 ="none"
+        self.wep_key2 ="none"
+        self.wep_key3 ="none"
+        self.psk = "none"
+        self.leap_password = "none"
         self.wep_key_type = "0"
 
         self.set_up_wireless_security(pardus_profile)
@@ -505,7 +505,7 @@ class _802_11_Wireless_Security:
 
         cfg.add_section(self.name)
         for attr, value in self.__dict__.items():
-            if value not in ["False", "None", "0"] and  attr != "name":
+            if value not in ["false", "none", "0"] and  attr != "name":
                 attr = attr.replace("_", "-")
                 cfg.set(self.name, attr, value)
 
