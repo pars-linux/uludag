@@ -172,6 +172,8 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
                 self.basket._hide()
 
             self.stateTab.setCurrentIndex(1)
+            self.switchState(self.state.INSTALL)
+
             if component in self.groupList._list:
                 self.groupList.setCurrentItem(self.groupList._list[component])
                 self.groupFilter()
