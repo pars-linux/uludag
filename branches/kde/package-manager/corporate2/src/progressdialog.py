@@ -34,6 +34,11 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
+    def closeEvent(self, event):
+        if self.cancelButton.isEnabled():
+            self.cancel()
+        event.ignore()
+
     def show(self):
         self.busy.busy()
         QtGui.QDialog.show(self)
