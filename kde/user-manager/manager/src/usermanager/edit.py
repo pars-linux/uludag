@@ -377,6 +377,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
     def checkFields(self, *args):
         err = ""
+        self.wrn = ""
 
         if self.lineFullname.text() == "" and self.lineUsername.text() == "":
             err = i18n("Start with typing this user's full name.")
@@ -389,7 +390,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
             # After removing the length check from COMAR backend we need to remove these
             if pw != "" and len(pw) < 4:
-                err = i18n("Password must be longer.")
+                self.wrn = i18n("Password must be longer.")
 
             if not err:
                 if len(pw) and pw == self.lineFullname.text() or pw == self.lineUsername.text():
