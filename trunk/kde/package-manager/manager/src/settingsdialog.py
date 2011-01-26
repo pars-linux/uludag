@@ -76,29 +76,16 @@ class GeneralSettings(SettingsTab):
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
         self.settings.systemTray.setChecked(self.config.systemTray())
         self.settings.hideIfNoUpdate.setChecked(self.config.hideTrayIfThereIsNoUpdate())
-        self.__getBandwidthSettings()
-
-    def __getBandwidthSettings(self):
-        config = self.iface.getConfig()
-        bandwidth_limit = config.get("general", "bandwidth_limit")
-        bandwidth_limit = int(bandwidth_limit) if bandwidth_limit else 0
-
-        if bandwidth_limit != 0:
-            self.settings.useBandwidthLimit.setChecked(True)
-
-        self.settings.bandwidthSpin.setValue(bandwidth_limit)
 
     def connectSignals(self):
         self.connect(self.settings.onlyGuiApp, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.showComponents, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.showIsA, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
-        self.connect(self.settings.installUpdates, SIGNAL("toggled(bool)"), self.markChanged)
-        self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.installUpdates, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.systemTray, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.hideIfNoUpdate, SIGNAL("toggled(bool)"), self.markChanged)
-        self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
         if not self.settings.onlyGuiApp.isChecked() == self.config.showOnlyGuiApp():
@@ -125,11 +112,6 @@ class GeneralSettings(SettingsTab):
 
         self.config.setInstallUpdatesAutomatically(self.settings.installUpdates.isChecked())
 
-        if self.settings.useBandwidthLimit.isChecked():
-            self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
-        else:
-            self.iface.setConfig("general", "bandwidth_limit", "0")
-
 class CacheSettings(SettingsTab):
     def setupUi(self):
         self.initialize()
@@ -155,12 +137,25 @@ class CacheSettings(SettingsTab):
         self.settings.useCacheCheck.setChecked(enableCache)
         self.settings.useCacheSpin.setValue(cache_limit)
         self.settings.cacheDirPath.setText(cache_dir)
+        self.__getBandwidthSettings()
+
+    def __getBandwidthSettings(self):
+        config = self.iface.getConfig()
+        bandwidth_limit = config.get("general", "bandwidth_limit")
+        bandwidth_limit = int(bandwidth_limit) if bandwidth_limit else 0
+
+        if bandwidth_limit != 0:
+            self.settings.useBandwidthLimit.setChecked(True)
+
+        self.settings.bandwidthSpin.setValue(bandwidth_limit)
 
     def connectSignals(self):
         self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
         self.connect(self.settings.selectCacheDir, SIGNAL("clicked()"), self.selectCacheDir)
         self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useCacheSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
         self.settings.openCacheDir.clicked.connect(self.openCacheDir)
 
     def openCacheDir(self):
@@ -186,6 +181,10 @@ class CacheSettings(SettingsTab):
     def save(self):
         self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
         self.iface.setConfig("directories", "cached_packages_dir", unicode(self.settings.cacheDirPath.text()))
+        if self.settings.useBandwidthLimit.isChecked():
+            self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
+        else:
+            self.iface.setConfig("general", "bandwidth_limit", "0")
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):
@@ -311,7 +310,9 @@ class ProxySettings(SettingsTab):
         self.initialize()
 
     def initialize(self):
-        self.settings.noProxyButton.setChecked(True)
+        self.settings.useProxy.setChecked(False)
+        self.settings.useDe.hide()
+
         config = self.iface.getConfig()
         httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
 
@@ -333,10 +334,8 @@ class ProxySettings(SettingsTab):
             self.settings.ftpProxy.setText(ftpProxy)
             self.settings.ftpProxyPort.setValue(int(ftpProxyPort))
 
-        if self.config.useKdeProxy():
-            self.settings.useKdeButton.setChecked(True)
-        elif httpProxy or ftpProxy or httpsProxy:
-            self.settings.useProxyButton.setChecked(True)
+        if httpProxy or ftpProxy or httpsProxy:
+            self.settings.useProxy.setChecked(True)
             if (httpProxy == httpsProxy == ftpProxy) and (httpProxyPort == httpsProxyPort == ftpProxyPort):
                 self.settings.useHttpForAll.setChecked(True)
 
@@ -348,9 +347,9 @@ class ProxySettings(SettingsTab):
         self.connect(self.settings.httpsProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.ftpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
         self.connect(self.settings.ftpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
-        self.connect(self.settings.noProxyButton, SIGNAL("toggled(bool)"), self.markChanged)
-        self.connect(self.settings.useKdeButton, SIGNAL("toggled(bool)"), self.markChanged)
-        self.connect(self.settings.useKdeButton, SIGNAL("toggled(bool)"), self.getSettingsFromKde)
+        self.connect(self.settings.useProxy, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.useProxy, SIGNAL("toggled(bool)"), self.checkDeSettings)
+        self.connect(self.settings.useDe, SIGNAL("linkActivated(const QString&)"), self.getSettingsFromDe)
 
     def useHttpToggled(self, enabled):
         controls = (self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort)
@@ -376,10 +375,10 @@ class ProxySettings(SettingsTab):
             for control in controls:
                 control.setEnabled(True)
 
-            self.clear(all=False)
+            self.clear(all_clear=False)
 
-    def clear(self, all=True):
-        if all:
+    def clear(self, all_clear=True):
+        if all_clear:
             self.settings.httpProxy.setText("")
             self.settings.httpProxyPort.setValue(0)
         self.settings.httpsProxy.setText("")
@@ -387,36 +386,42 @@ class ProxySettings(SettingsTab):
         self.settings.ftpProxy.setText("")
         self.settings.ftpProxyPort.setValue(0)
 
-    def getSettingsFromKde(self, toggled):
-        if toggled:
-            cf = path.join(Pds.config_path, 'share/config/kioslaverc')
-            config = Pds.parse(cf, force=True)
-            proxyType = config.value('Proxy Settings/ProxyType').toString()
-            if proxyType:
-                if int(proxyType) > 0:
-                    http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
-                    self.settings.httpsProxy.setText(http[0])
-                    self.settings.httpsProxyPort.setValue(int(http[1]))
+    def checkDeSettings(self, toggled):
+        self.settings.useDe.setVisible(self.getSettingsFromDe(just_check = True) and toggled)
 
-                    https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
-                    self.settings.httpProxy.setText(https[0])
-                    self.settings.httpProxyPort.setValue(int(https[1]))
+    def getSettingsFromDe(self, link = '', just_check = False):
+        cf = path.join(Pds.config_path, 'share/config/kioslaverc')
+        config = Pds.parse(cf, force=True)
+        proxyType = config.value('Proxy Settings/ProxyType').toString()
+        if proxyType:
+            if int(proxyType) > 0:
+                if just_check:
+                    return True
 
-                    ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
-                    self.settings.ftpProxy.setText(ftp[0])
-                    self.settings.ftpProxyPort.setValue(int(ftp[1]))
-            else:
-                self.clear()
+                http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
+                self.settings.httpsProxy.setText(http[0])
+                self.settings.httpsProxyPort.setValue(int(http[1]))
+
+                https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
+                self.settings.httpProxy.setText(https[0])
+                self.settings.httpProxyPort.setValue(int(https[1]))
+
+                ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
+                self.settings.ftpProxy.setText(ftp[0])
+                self.settings.ftpProxyPort.setValue(int(ftp[1]))
+
+                return True
+
+        return False
 
     def save(self):
         httpProxy, httpProxyPort = self.settings.httpProxy.text().split('://')[-1], self.settings.httpProxyPort.value()
         httpsProxy, httpsProxyPort = self.settings.httpsProxy.text().split('://')[-1], self.settings.httpsProxyPort.value()
         ftpProxy, ftpProxyPort = self.settings.ftpProxy.text().split('://')[-1], self.settings.ftpProxyPort.value()
 
-        if self.settings.noProxyButton.isChecked():
+        if not self.settings.useProxy.isChecked():
             httpProxy = httpsProxy = ftpProxy = None
-
-        self.config.setUseKdeProxy(self.settings.useKdeButton.isChecked())
+            self.clear()
 
         if httpProxy:
             self.iface.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
