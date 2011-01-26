@@ -1,3 +1,65 @@
+2011-01-26 gokcen.eraslan
+         * Add real NetworkManager policy file to user-manager
+
+2011-01-25 transifex
+         * l10n: Updated Ukrainian (uk) translation to 100% (Коростіль Данило)
+         * New status: 65 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-25 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 65 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-25 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 65 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-25 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 65 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-25 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 65 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-25 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add new policies, update locales, fix Tr locale 
+
+2011-01-25 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Instead of blocking the operation just show a warning about the pasword length
+         * - Thanks İlker Kesen for the patch
+         * Bug fixed at http://bugs.pardus.org.tr/6106
+
+2011-01-25 transifex
+         * l10n: add uk (Коростіль Данило)
+         * New status: 64 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-23 transifex
+         * l10n: Updated Polish (pl) translation to 67% (Michał Komasa)
+         * New status: 43 messages complete with 1 fuzzy and 20 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-23 transifex
+         * l10n: Updated Polish (pl) translation to 31% (Michał Komasa)
+         * New status: 20 messages complete with 0 fuzzies and 44 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-23 transifex
+         * l10n: Polish (Michał Komasa)
+         * New status: 0 messages complete with 0 fuzzies and 64 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix loggedOn user delete code. 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
 2011-01-02 transifex
          * l10n: Updated Italian (it) translation to 90% (Ali Işıngör)
          * New status: 58 messages complete with 2 fuzzies and 4 untranslated.
