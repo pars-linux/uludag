@@ -251,7 +251,7 @@ class IpV4:
             self.ignore_auto_dns = "true"
             return str(default_nameservers)
         elif pardus_profile.get_name_mode() == "custom":
-            name_server = pardus_profile.get_name_server()
+            name_server = str(pardus_profile.get_name_server())
             name_server = name_server + ";"
             self.ignore_auto_dns = "true"
             return str(name_server)
@@ -523,7 +523,7 @@ class Migrator:
         self.lan_config_path = lan_config_file
         self.wlan_config_path = wlan_config_file
         self.read_pardus_profiles()
-        #self.transform_profiles()
+        self.transform_profiles()
         #self.write_new_profiles()
 
     def read_pardus_profiles(self):
