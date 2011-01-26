@@ -26,7 +26,6 @@ ActionReply Helper::createReply(int code, const QVariantMap *returnData)
 bool Helper::writeLocale(const QString &locale)
 {
     QString mudurFile = "/etc/conf.d/mudur";
-    QString mudurNewFile = "/etc/conf.d/mudurnew";
 
     // open file to read
     QFile file(mudurFile);
@@ -38,6 +37,7 @@ bool Helper::writeLocale(const QString &locale)
     // read whole file, replace language string and create a new string
     QString output;
     QTextStream in(&file);
+    in.setCodec("UTF-8");
     while (!in.atEnd()) {
         QString line = in.readLine();
         if (line.contains("language=")) {
@@ -51,13 +51,13 @@ bool Helper::writeLocale(const QString &locale)
     }
     file.close();
 
-    // create a new file to write
-    QFile fileNew(mudurNewFile);
+    QFile fileNew(mudurFile);
     if( !fileNew.open( QIODevice::WriteOnly | QIODevice::Text)) {
         qDebug() << "Failed to write.";
         return false;
     }
     QTextStream out(&fileNew);
+    out.setCodec("UTF-8");
     out << output; //write the output to the new file
     fileNew.close();
 
