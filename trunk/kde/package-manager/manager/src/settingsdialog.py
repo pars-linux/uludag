@@ -23,14 +23,16 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
 from os import path
-
 from ui_settingsdialog import Ui_SettingsDialog
 
+import pds
 import config
 import helpdialog
 import repodialog
 import pmutils
 import backend
+
+Pds = pds.Pds()
 
 class SettingsTab(QObject):
     def __init__(self, settings):
