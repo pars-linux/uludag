@@ -20,7 +20,7 @@ from utility import *
 import polkit
 
 categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
-        "tr.org.pardus.comar.net": [I18N_NOOP("Network settings"), "network"],
+        "org.freedesktop.modem-manager|org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system": [I18N_NOOP("Network settings"), "network"],
         "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "package"],
         "tr.org.pardus.comar.system.service": [I18N_NOOP("Service operations"), "ksysv"],
         "tr.org.pardus.comar.time": [I18N_NOOP("Date/time operations"), "history"],
@@ -741,13 +741,15 @@ class PolicyTab(QVBox):
         #do not show policies require policy type yes or no, only the ones require auth_* type
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
-        for category in categories.keys():
-            catitem = KListViewItem(self.policyview, i18n(categories[category][0]))
-            catitem.setPixmap(0, getIcon(categories[category][1]))
-            catactions = filter(lambda x: x.startswith(category), allActions)
-            for cataction in catactions:
-                actioninfo = polkit.action_info(cataction)
-                actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])
+        for cats in categories:
+            catitem = KListViewItem(self.policyview, i18n(categories[cats][0]))
+            catitem.setPixmap(0, getIcon(categories[cats][1]))
+            cats = cats.split('|')
+            for category in cats:
+                catactions = filter(lambda x: x.startswith(category), allActions)
+                for cataction in catactions:
+                    actioninfo = polkit.action_info(cataction)
+                    actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])
 
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
