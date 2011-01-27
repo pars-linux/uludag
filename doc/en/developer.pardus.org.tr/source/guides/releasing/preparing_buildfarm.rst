@@ -3,6 +3,11 @@
 Preparing Buildfarm
 ===================
 
+:Author: Semen Cirit, Fatih Aşıcı
+
+:Last Modificaiton Date: |today|
+
+:Version: 0.1
 
 Buildfarm is an automated package building tool for Pardus packages. When it is
 installed and start to work it send warning mails to contributors for start and

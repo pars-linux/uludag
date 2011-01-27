@@ -11,3 +11,4 @@ Releasing
    repository_concepts/index.rst
    bootstrapping.rst
    preparing_buildfarm.rst
+   generating_nightly_builds.rst
