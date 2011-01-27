@@ -10,3 +10,4 @@ Releasing
    security_process.rst
    repository_concepts/index.rst
    bootstrapping.rst
+   preparing_buildfarm.rst
