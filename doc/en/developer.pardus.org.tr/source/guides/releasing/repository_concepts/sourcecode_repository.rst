@@ -34,6 +34,25 @@ meaningful to use.
 Package Source Repository
 =========================
 
+Following table shows binary/farm/source mappings for package source repository:
+
++---------------+-----------------+---------------+
+| Binary Repo   |  Farm           | Source Repo   |
++===============+=================+===============+
+| devel/i686    |  devel/i686     | devel         |
++---------------+-----------------+---------------+
+| devel/x86_64  |  devel/x86_86   | devel         |
++---------------+-----------------+---------------+
+| testing/i686  |  testing/i686   | testing       |
++---------------+-----------------+---------------+
+| testing/x86_64|  testing/x86_64 | testing       |
++---------------+-----------------+---------------+
+| stable/i686   |  -              | testing       |
++---------------+-----------------+---------------+
+| stable/x86_64 |  -              | testing       |
++---------------+-----------------+---------------+
+
+
 distribution Folder
 --------------------
 
@@ -51,7 +70,7 @@ be committed a related devel repository folder.
 This folder may contain alfa, beta or latest ubstable releases of packages.
 
 testing Folder
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 This folder includes package source files which obtains their stable releases. In
 other words while devel folder can contain unstable packages stable can not.
@@ -61,8 +80,6 @@ But some exceptions can also be exist, if you are not sure please ask Pardus
 
 These two folders also has a specific folder tree. In this tree, the folders are
 named with Pardus `package components`_.
-
-devel 
 
 playground Folder
 -----------------

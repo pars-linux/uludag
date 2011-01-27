@@ -19,6 +19,25 @@ repositories are also have debug packages folder.
 During alfa, beta versions of Pardus distributions, all these repositories are
 the same.
 
+Following table shows binary/farm/source mappings:
+
++---------------+-----------------+---------------+
+| Binary Repo   |  Farm           | Source Repo   |
++===============+=================+===============+
+| devel/i686    |  devel/i686     | devel         |
++---------------+-----------------+---------------+
+| devel/x86_64  |  devel/x86_86   | devel         |
++---------------+-----------------+---------------+
+| testing/i686  |  testing/i686   | testing       |
++---------------+-----------------+---------------+
+| testing/x86_64|  testing/x86_64 | testing       |
++---------------+-----------------+---------------+
+| stable/i686   |  -              | testing       |
++---------------+-----------------+---------------+
+| stable/x86_64 |  -              | testing       |
++---------------+-----------------+---------------+
+
+
 Devel Binary Repository
 -----------------------
 
