@@ -297,6 +297,7 @@
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
+        <SelectedPackage>system-config-lvm</SelectedPackage>
         <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>system-config-printer-gtk</SelectedPackage>
         <SelectedPackage>tango-icon-theme</SelectedPackage>
@@ -368,6 +369,7 @@
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
+        <SelectedPackage>zemberek-office</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <SelectedPackage>zsh</SelectedPackage>
@@ -965,6 +967,7 @@
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
         <Package>polkit</Package>
+        <Package>polkit-gnome</Package>
         <Package>poppler</Package>
         <Package>poppler-data</Package>
         <Package>poppler-glib</Package>
@@ -973,6 +976,7 @@
         <Package>popt</Package>
         <Package>postgresql-libs</Package>
         <Package>ppp</Package>
+        <Package>pptpclient</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
         <Package>pth</Package>
@@ -1071,12 +1075,14 @@
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vigra</Package>
+        <Package>virt-viewer</Package>
         <Package>virtinst</Package>
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
         <Package>vpnc</Package>
         <Package>vte</Package>
         <Package>wavpack</Package>
+        <Package>webkit-gtk</Package>
         <Package>which</Package>
         <Package>wireless-regdb</Package>
         <Package>wireless-tools</Package>
