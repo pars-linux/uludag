@@ -1,3 +1,12 @@
+2011-01-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - catch all exceptions 
+
+2011-01-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - no need these 
+
+2011-01-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix locale icon, update ChangeLog 
+
 2011-01-26 gokcen.eraslan
          * Add real NetworkManager policy file to user-manager
 
