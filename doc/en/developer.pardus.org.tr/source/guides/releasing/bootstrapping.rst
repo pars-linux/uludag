@@ -7,7 +7,7 @@ Bootstrapping
 :Date: |today|
 :Version: 1.0
 
-This document contains the bootstrap steps and methods carried out on the 32/64-bit processor architecture for Pardus 2011 release. Some compilers and libraries such as gcc and glibc requires themselves. To compile and generate executables of these compilers and libraries we had to use older version of these tools with special parameters.
+This document contains the bootstrap steps and methods carried out on the 32/64-bit processor architecture for Pardus releases. Some compilers and libraries such as gcc and glibc requires themselves. To compile and generate executables of these compilers and libraries we had to use older version of these tools with special parameters.
 
 Bootstrap Steps
 ===============
