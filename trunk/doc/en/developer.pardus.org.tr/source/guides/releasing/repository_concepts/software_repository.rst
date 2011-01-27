@@ -28,8 +28,8 @@ binary pisi packages are located under this repository.
 Users that want to use bleeding edge versions of packages, they can use this
 repository.
 
-Test Binary Repository
-----------------------
+Testing Binary Repository
+-------------------------
 
 The packages under `testing package source repository`_ are compiled and the created
 binary pisi packages are located under this repository.
