@@ -73,9 +73,9 @@ affort between Test_, Development_, Release Managing.
 
 The fixing process is the general `bug cycle`_.
 
-.. _alpha: http://developer.pardus.org.tr/guides/releasing/official-releases/alpha-release.html#alpha-release-requirements
-.. _beta: http://developer.pardus.org.tr/guides/releasing/official-releases/beta-release.html#beta-release-requirements
-.. _final: http://developer.pardus.org.tr/guides/releasing/official-releases/final-release.html#final-release-requirements
+.. _alpha: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_release.html#alpha-release-requirements
+.. _beta: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_release.html#beta-release-requirements
+.. _final: http://developer.pardus.org.tr/guides/releasing/official_releases/final_release.html#final-release-requirements
 .. _Development: http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html#development
 .. _Test: http://developer.pardus.org.tr/guides/newcontributor/areas-to-contribute.html#test
 .. _official release: http://developer.pardus.org.tr/guides/releasing/official-releases/index.html
