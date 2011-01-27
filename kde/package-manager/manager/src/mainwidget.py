@@ -90,7 +90,9 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.packageList.setModel(proxy)
         self.packageList.setItemDelegate(PackageDelegate(self, self.parent))
         self.packageList.setColumnWidth(0, 32)
+
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
+        self.connect(self.packageList, SIGNAL("updateRequested()"), self.initialize)
 
         self.updateSettings()
         self.setActionButton()
