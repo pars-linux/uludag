@@ -140,7 +140,7 @@ at the "where we are" meeting.
 .. _Package Manager: http://developer.pardus.org.tr/projects/package-manager/index.html
 .. _Pisi: http://developer.pardus.org.tr/projects/pisi/index.html
 .. _severity: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
-.. _tester list: testci@pardus.org.tr
+.. _tester list: http://lists.pardus.org.tr/mailman/listinfo/testci
 .. _Bootstrap: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html
 .. _buildfarm: http://developer.pardus.org.tr/guides/releasing/preparing_buildfarm.html
 .. _nightly builds: http://developer.pardus.org.tr/guides/releasing/generating_nightly_builds.html

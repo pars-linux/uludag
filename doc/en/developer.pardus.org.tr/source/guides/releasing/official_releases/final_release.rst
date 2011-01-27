@@ -66,6 +66,7 @@ Final Tickets
 #. Decide for RC code name and its Wallpaper
 #. Send weekly emails about `urgent package list`_
 #. Warn about Final artwork deadlines of each task one week before
+
    * Final Wallpapers
    * Final Icon theme
    * Final Splash screens
@@ -76,6 +77,7 @@ Final Tickets
 #. Update feature list according to completed features
 #. Warn about Final Freeze (RC Phase) one week before
 #. Create Final Test Release for RC validation tests
+
    * Installation media
    * Live media
 #. Prepare and make "where we are meeting" after validation tests
@@ -87,6 +89,7 @@ Final Tickets
 #. Track the production of publicity and promotion materials
 #. Make stock plan for publicity and promotion materials
 #. Create Release Candidate (RC)
+
    * Installation media
    * Live Media
 #. Release RC
@@ -94,6 +97,7 @@ Final Tickets
    * Upload iso to torrents
 #. Send an announcement mail for Final release
 #. Release Final
+
    * Open stable source and binary repositories
    * Add stable repository to packages.pardus.org.tr
    * Upload iso to FTP servers
@@ -126,7 +130,7 @@ Test team has the responsibility of determining whether the criteria for the
 the test team reports on `Pardus Bugzilla`_ will be reviewed and discussed
 at the "where we are" meeting.
 
-.. _beta release requirements:  http://developer.pardus.org.tr/guides/releasing/official-releases/beta-release.html#beta-release-requirements
+.. _beta release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/beta_release.html#beta-release-requirements
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
 .. _Kaptan: http://developer.pardus.org.tr/projects/kaptan/index.html
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/

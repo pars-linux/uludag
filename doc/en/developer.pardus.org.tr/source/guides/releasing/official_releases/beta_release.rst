@@ -127,7 +127,7 @@ at the "where we are" meeting.
 .. _package source repository: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
 .. _devel branch: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#devel-folder
 .. _component based: http://developer.pardus.org.tr/guides/packaging/package_components.html
-.. _alpha release requirements:  http://developer.pardus.org.tr/guides/releasing/official-releases/alpha-release.html#alpha-release-requirements
+.. _alpha release requirements: http://developer.pardus.org.tr/guides/releasing/official_releases/alpha_release.html#alpha-release-requirements
 .. _severity: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
 .. _supported architectures: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#architecture-support
 .. _YALI: http://developer.pardus.org.tr/projects/yali/index.html
@@ -135,4 +135,6 @@ at the "where we are" meeting.
 .. _Pardus technologies: http://developer.pardus.org.tr/projects/index.html
 .. _code complete: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
+.. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
+
 

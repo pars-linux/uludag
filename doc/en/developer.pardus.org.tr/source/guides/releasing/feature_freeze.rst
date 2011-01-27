@@ -27,7 +27,7 @@ After feature freeze some needed expectations:
 
 #. Should implement something testable
 #. Should have the the feature significantly complete
-#. Should submit the fixed bugs with svn `commit hooks`_
+#. Should submit the fixed bugs with `svn commit hooks`_
 #. Can not continue to add new enhancements
 #. Can not make the feature default if it is not already default before freeze
 #. Can not make changes that require other softwares to change.
