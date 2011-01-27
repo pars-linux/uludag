@@ -13,6 +13,7 @@
 
 import os
 import sys
+import pisi
 import comar
 import urllib
 import socket
@@ -140,28 +141,18 @@ def isSolidOnline():
     return Solid.Networking.status() == Solid.Networking.Connected
 
 def network_available():
-    try:
-        socket.setdefaulttimeout(6)
-        urllib.urlopen('http://appinfo.pardus.org.tr')
-        socket.setdefaulttimeout(60)
-    except:
-        return False
-    return True
+    return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
 
 def repos_available(iface):
-    print "Checking repos..."
-    socket.setdefaulttimeout(6)
+
     repos = iface.getRepositories(only_active = True)
     if not repos:
         return False
+
     for name, address in repos:
-        print "Checking repo: %s at %s ..." % (name, address)
-        try:
-            urllib.urlretrieve('%s.sha1sum' % address)
-        except:
+        if not pisi.fetcher.Fetcher('%s.sha1sum' % address).test():
             return False
-        finally:
-            socket.setdefaulttimeout(60)
+
     return True
 
 def isPisiRunning():
