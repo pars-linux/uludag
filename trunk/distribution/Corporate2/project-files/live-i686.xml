@@ -1,7 +1,7 @@
 <PardusmanProject type="live" media="cd" compression="gzip">
     <Title>Pardus Corporate 2 RC Live i686</Title>
     <WorkDir>/tmp/iso/i686</WorkDir>
-    <ReleaseFiles>/home/ozan/distribution/Corporate2/media-content</ReleaseFiles>
+    <ReleaseFiles>~/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
     <PackageSelection repo_uri="http://192.168.3.140/pardus/corporate2/devel/i686/pisi-index.xml.xz">
         <SelectedComponent>hardware.firmware</SelectedComponent>
@@ -199,6 +199,7 @@
         <SelectedPackage>sun-jre</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
+        <SelectedPackage>system-config-lvm</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
@@ -270,6 +271,7 @@
         <SelectedPackage>xvattr</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
         <SelectedPackage>zemberek</SelectedPackage>
+        <SelectedPackage>zemberek-office</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
         <Package>ConsoleKit</Package>
@@ -277,6 +279,7 @@
         <Package>ModemManager</Package>
         <Package>NetworkManager</Package>
         <Package>PyKDE3</Package>
+        <Package>PyKDEeXtensions</Package>
         <Package>PyQt3</Package>
         <Package>Pygments</Package>
         <Package>Twisted</Package>
@@ -396,6 +399,7 @@
         <Package>gnokii</Package>
         <Package>gnome-mime-data</Package>
         <Package>gnome-mplayer</Package>
+        <Package>gnome-python</Package>
         <Package>gnome-vfs</Package>
         <Package>gnu-gs-fonts-std</Package>
         <Package>gnupg</Package>
@@ -421,6 +425,13 @@
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
         <Package>guile</Package>
+        <Package>gvfs</Package>
+        <Package>gvfs-archive</Package>
+        <Package>gvfs-common</Package>
+        <Package>gvfs-fuse</Package>
+        <Package>gvfs-gphoto2</Package>
+        <Package>gvfs-obexftp</Package>
+        <Package>gvfs-smb</Package>
         <Package>gwenview</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
@@ -500,6 +511,7 @@
         <Package>libXxf86vm</Package>
         <Package>libaio</Package>
         <Package>libao</Package>
+        <Package>libarchive</Package>
         <Package>libart_lgpl</Package>
         <Package>libass</Package>
         <Package>libasyncns</Package>
@@ -642,6 +654,7 @@
         <Package>lpsolve</Package>
         <Package>lsb-release</Package>
         <Package>lua</Package>
+        <Package>lvm2</Package>
         <Package>lzo</Package>
         <Package>madplay</Package>
         <Package>man</Package>
@@ -688,11 +701,13 @@
         <Package>ntfs_3g</Package>
         <Package>ntp-client</Package>
         <Package>numpy</Package>
+        <Package>obexftp</Package>
         <Package>openal</Package>
         <Package>opencore-amr</Package>
         <Package>openexr</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
+        <Package>openobex</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
@@ -725,6 +740,7 @@
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
         <Package>polkit</Package>
+        <Package>polkit-gnome</Package>
         <Package>poppler</Package>
         <Package>poppler-data</Package>
         <Package>poppler-glib</Package>
@@ -743,6 +759,7 @@
         <Package>pygobject</Package>
         <Package>pygtk</Package>
         <Package>pyopenssl</Package>
+        <Package>pyorbit</Package>
         <Package>pypolkit</Package>
         <Package>python</Package>
         <Package>python-foolscap</Package>
@@ -816,6 +833,7 @@
         <Package>vixie-cron</Package>
         <Package>vorbis-tools</Package>
         <Package>wavpack</Package>
+        <Package>webkit-gtk</Package>
         <Package>which</Package>
         <Package>wireless-regdb</Package>
         <Package>wireless-tools</Package>
