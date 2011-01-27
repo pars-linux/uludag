@@ -1,2 +1,39 @@
-2008-09-12 Pınar Yanardağ <pinar@pardus.org.tr>
-	* setup.py:	Version bump to 1.0.2
+2011-01-26 gokmen.goksel
+         * - Replace comar.net policies with NetworkManager ones. 
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 70 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 70 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Adding Russian translation (Alexander Total)
+         * New status: 70 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-06-02 bahadir.kandemir
+         * Show policies right
+
+2010-06-02 bahadir.kandemir
+         * First element contains authorizations
+
+2010-05-28 bahadir.kandemir
+         * New release
+
+2010-05-28 bahadir.kandemir
+         * Fix policy listing problems
+
+2010-04-21 bahadir.kandemir
+         * Use comar.Link
+
+2009-11-17 bahadir.kandemir
+         * Fixed one COMAR function
+
+2009-11-17 bahadir.kandemir
+         * UM for Corporate 2
+
