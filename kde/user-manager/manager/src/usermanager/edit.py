@@ -71,10 +71,6 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         # Build policy list
         self.buildPolicies()
 
-        # Validators
-        #self.lineUsername.setValidator(QtCore.QRegExpValidator(QtCore.QRegExp("[abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_]*"), self.lineUsername))
-        #self.lineFullname.setValidator(QtCore.QRegExpValidator(QtCore.QRegExp("[^\n:]*"), self.lineFullname))
-
         # Warning icon
         self.labelSign.setPixmap(kdeui.KIcon("process-stop").pixmap(32, 32))
         self.labelSign.hide()
