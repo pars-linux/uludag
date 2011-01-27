@@ -149,36 +149,40 @@ Quiz Sending Stock Response
 ---------------------------
     ::
 
-       Merhaba,
+       Merhaba (Aday),
 
-       Öncelikle x adaylığınızı kutlar ve Pardus'a katkıda bulunmak istediğiniz için teşekkür ederiz.
-       Pardus Linux Dağıtımı ve x süreci hakkında bilgilendirici nitelikte olan sınavımızı ekte
-       bulabilirsiniz.
+       Pardus (Geliştirici / Testçi) Adayı Başvurunuz alınmıştır.
+       Pardus'a göstermiş olduğunuz ilgi için teşekkür ederiz.
 
+       Adayların Pardus ve (Geliştirme / Test) süreci hakkında araştırma yaparken öğrenmelerini
+       hedefleyen sınavımızı ekte bulabilirsiniz.
 
+       Soruları ve altına yanıtları yazarak AD_SOYAD isminde kaydettiğiniz dosyayı ek olarak gönderiniz.
+
+       Bol şanslar.
 
        Kaynaklar,
-       x
-       y
-       z
-
-       Kolay Gelsin,
-       --
-       Pardus Mentor Koordinatörleri
-
+       http://developer.pardus.org.tr
+       http://tr.pardus-wiki.org
 
     ::
 
-       Hi,
+       Hi (Applicant),
 
-       First of all, we want to conragulate your x application and thanks to your desire to contribute to Pardus.
-       You can find our informative quiz about Pardus Linux Distribution and x processes as an attachment.
+       Thank you for your Pardus (Developer / Tester) Candidate application. We appreciate
+       your interest in contributing to Pardus.
 
-       Resources,
+       Please take your time to answer the (Developer / Tester) Candidate Quiz given to you as an
+       attachment. The aim of this quiz is to give candidates a general Pardus
+       knowledge while they dig for answers.
 
-       Regards,
-       -- 
-       Pardus Mentoring Coordinators
+       Send the file named NAME_SURNAME that includes the questions and answers as an attachment.
+
+       Good luck.
+
+       Resources:
+       http://developer.pardus.org.tr
+       http://en.pardus-wiki.org
 
 Tester Acceptence Stock Response
 --------------------------------
