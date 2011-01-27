@@ -3,6 +3,11 @@
 Starting Bug Triage
 ===================
 
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.1
 
 Choosing Bugs
 -------------
@@ -134,10 +139,10 @@ This checklist is used for bugs which have NEW status.
         * `Gnome Bugzilla <https://bugzilla.gnome.org/>`_
         * `Xfce Bugzilla <http://bugzilla.xfce.org/>`_
 
-Mark as triaged
-----------------
+.. Mark as triaged
+.. ----------------
 
-If you finish triage, you should add "TRIAGED" keyword, in order to avoid retriage.
+.. If you finish triage, you should add "TRIAGED" keyword, in order to avoid retriage.
 
 Pursuance
 ---------
@@ -166,6 +171,3 @@ General Advice
     * Please read carefully, and think before you click.
     * Use :ref:`stock-responses` as appropriate.
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
