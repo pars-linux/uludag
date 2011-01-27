@@ -13,3 +13,4 @@ Bug Tracking Guide
     finding_duplicates.rst
     stack_traces.rst
     stock_responses.rst
+    tracker_bug_process.rst

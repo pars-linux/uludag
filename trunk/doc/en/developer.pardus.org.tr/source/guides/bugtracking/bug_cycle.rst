@@ -1,5 +1,12 @@
 .. _bug-cycle:
 
+
+**Last Modified Date:** |today|
+
+:Author: Semen Cirit
+
+:Version: 0.1
+
 Bug Cycle
 =========
 
@@ -44,7 +51,4 @@ This document gives information about Pardus bug tracking system process. The pr
     #  "REOPENED" bugs are reviewed again by assignee and will be fixed.
 
 
-**Last Modified Date:** |today|
-
-:Author: Semen Cirit
 
