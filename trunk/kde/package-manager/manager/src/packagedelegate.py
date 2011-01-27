@@ -142,8 +142,16 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         rate = int(index.model().data(index, RateRole).toInt()[0])
         installed = index.model().data(index, InstalledRole).toBool()
 
-        # Get Package Icon if exists
-        _icon = index.model().data(index, Qt.DecorationRole).toString()
+        # We need to request update if its not possible to get meta data about the package
+        try:
+            # Get Package Icon if exists
+            _icon = index.model().data(index, Qt.DecorationRole).toString()
+        except:
+            p.end()
+            painter.drawPixmap(option.rect.topLeft(), pixmap)
+            self.parent.requestUpdate()
+            return
+
         icon = None
 
         if _icon:
