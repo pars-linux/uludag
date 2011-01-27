@@ -175,6 +175,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 for uid, name, fullname in users:
                     self.all_users.append(name)
                     self.addItem(uid, name, fullname)
+
         self.iface.userList(func=handleUserList)
 
         def handleGroupList(package, exception, args):
@@ -186,7 +187,22 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 for gid, name in groups:
                     self.all_groups.append(name)
                     self.addItem(gid, name, "", group=True)
+
         self.iface.groupList(func=handleGroupList)
+
+
+    def callIface(self, method):
+        """
+            Grab all comar exceptions
+        """
+        try:
+            method()
+        except Exception, e:
+            if "Comar.PolicyKit" in e._dbus_error_name:
+                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+            else:
+                kdeui.KMessageBox.error(self, unicode(e))
+            return False
 
     def itemMatchesFilter(self, item):
         """
@@ -347,14 +363,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 dialog.setQuestion(kdecore.i18n("Do you want to delete user '%1' (%2)?", fullname, username))
                 dialog.setCheckBox(kdecore.i18n("Also remove user files. (This may take long.)"))
                 if dialog.exec_():
-                    self.iface.deleteUser(uid, deleteFiles=dialog.getCheckBox())
+                    self.callIface(lambda: self.iface.deleteUser(uid, deleteFiles=dialog.getCheckBox()))
                     # User.Manager does not emit signals, refresh whole list.
                     self.buildItemList()
         else:
             gid = widget.getId()
             groupname = widget.getTitle()
             if kdeui.KMessageBox.questionYesNo(self, kdecore.i18n("Do you want to delete group '%1'?", groupname)) == kdeui.KMessageBox.Yes:
-                self.iface.deleteGroup(gid)
+                self.callIface(lambda: self.iface.deleteGroup(gid))
                 # User.Manager does not emit signals, refresh whole list.
                 self.buildItemList()
 
