@@ -163,36 +163,60 @@ PandaConfig::~PandaConfig()
 
 void PandaConfig::load()
 {
-  QStringList cliArgs;
-  cliArgs << "cur";
+
   QString program = "/usr/libexec/panda-helper";
 
-  QProcess *p = new QProcess(this);
-  p->start(program, cliArgs);
-  p->waitForFinished();
+  // Gather which checkboxes do should be enabled or not
+  QStringList typeArgs;
+  typeArgs << "types";
 
-  QByteArray currentDriver = p->readAllStandardOutput();
+  QProcess *typeP = new QProcess(this);
+  typeP->start(program, typeArgs);
+  typeP->waitForFinished();
+
+  QByteArray typeOut = typeP->readAllStandardOutput();
+  QStringList driverTypes = QString(typeOut).split(",");
+
+  // Which driver is used currently
+  QStringList curArgs;
+  curArgs << "cur";
+  QProcess *curP = new QProcess(this);
+  curP->start(program, curArgs);
+  curP->waitForFinished();
+
+  QByteArray curOut = curP->readAllStandardOutput();
+  QString currentDriver = QString(curOut).trimmed();
+
+  // Set checkboxes
   QString vendor = "vendor";
   QString os = "os";
-  QString nonvendor = "nonvendor";
   QString generic = "generic";
-  QString pandaOutput = QString(currentDriver).trimmed();
 
-  bool isVendor = (vendor == pandaOutput);
-  bool isOs = (os == pandaOutput);
-  bool isNonVendor = (nonvendor == pandaOutput);
-  bool isGeneric = (generic == pandaOutput);
+  bool isVendor = (vendor == currentDriver);
+  bool isOs = (os == currentDriver);
+  bool isGeneric = (generic == currentDriver);
 
-  if (isVendor){
-      vendorDriver->setChecked(true);
-  } else if (isOs) {
-      osDriver->setChecked(true);
-  } else if (isNonVendor) {
-      osDriver->setChecked(true);
-      vendorDriver->setDisabled(true);
-  } else if (isGeneric) {
-      genericDriver->setChecked(true);
+  if (driverTypes.contains(vendor)) {
+      if (isVendor)
+          vendorDriver->setChecked(true);
+  } else {
+      vendorDriver->setCheckable(false);
   }
+
+  if (driverTypes.contains(os)) {
+      if (isOs)
+          osDriver->setChecked(true);
+  } else {
+      osDriver->setCheckable(false);
+  }
+
+  if (driverTypes.contains(generic)) {
+      if (isGeneric)
+          genericDriver->setChecked(true);
+  } else {
+      genericDriver->setCheckable(false);
+  }
+
   emit changed(false);
 }
 
@@ -243,32 +267,32 @@ void PandaConfig::save()
 
 void PandaConfig::defaults()
 {
-  QStringList cliArgs;
-  cliArgs << "cur";
   QString program = "/usr/libexec/panda-helper";
 
-  QProcess *p = new QProcess(this);
-  p->start(program, cliArgs);
-  p->waitForFinished();
+  // Gather which checkboxes do should be enabled or not
+  QStringList typeArgs;
+  typeArgs << "types";
 
-  QByteArray currentDriver = p->readAllStandardOutput();
+  QProcess *typeP = new QProcess(this);
+  typeP->start(program, typeArgs);
+  typeP->waitForFinished();
+
+  QByteArray typeOut = typeP->readAllStandardOutput();
+  QStringList driverTypes = QString(typeOut).split(",");
+
   QString vendor = "vendor";
   QString os = "os";
-  QString nonvendor = "nonvendor";
-  QString pandaOutput = QString(currentDriver).trimmed();
+  QString generic = "generic";
 
-  bool isVendor = (vendor == pandaOutput);
-  bool isOs = (os == pandaOutput);
-  bool isNonVendor = (nonvendor == pandaOutput);
-
-  if (isVendor){
-      osDriver->setChecked(true);
-  } else if (isOs) {
-      osDriver->setChecked(true);
-  } else if (isNonVendor) {
-      osDriver->setChecked(true);
+  if (!driverTypes.contains(vendor))
       vendorDriver->setCheckable(false);
-  }
+
+  if (!driverTypes.contains(os))
+      osDriver->setCheckable(false);
+
+  if (!driverTypes.contains(generic))
+      genericDriver->setCheckable(false);
+
   osDriver->setChecked(true);
   emit changed(true);
 }
