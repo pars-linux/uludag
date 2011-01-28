@@ -111,6 +111,7 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.filesList.clear()
         self.webView.loadFinished.connect(lambda x: \
                 self._sync_template(x, package, summary, description))
+
         if network_available():
             self.webWidget.hide()
             self.busy.show()
