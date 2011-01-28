@@ -11,6 +11,7 @@
 # Please read the COPYING file
 
 import re
+from os import path
 
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QDialog
@@ -18,12 +19,11 @@ from PyQt4.QtGui import QTableWidgetItem
 from PyQt4.QtGui import QCheckBox
 from PyQt4.QtGui import QFileDialog
 from PyQt4.QtGui import QDesktopServices
+from PyQt4.QtNetwork import QNetworkProxy
 from PyQt4.QtCore import *
 
 from PyKDE4.kdecore import i18n
 from PyKDE4.kdeui import KIcon
-from os import path
-from ui_settingsdialog import Ui_SettingsDialog
 
 import pds
 import config
@@ -31,6 +31,9 @@ import helpdialog
 import repodialog
 import pmutils
 import backend
+
+from ui_settingsdialog import Ui_SettingsDialog
+from pmutils import parse_proxy
 
 Pds = pds.Pds()
 
@@ -309,26 +312,6 @@ class ProxySettings(SettingsTab):
     def setupUi(self):
         self.initialize()
 
-    def parse_proxy(self, line):
-        settings = {'domain':None,'user':None,'pass':None,'host':None,'port':None}
-
-        if '://' in line:
-            line = line.replace('%s://' % line.split('://')[0], '', 1)
-
-        if '\\' in line:
-            settings['domain'] = line.split('\\')[0]
-            line = line.replace('%s\\' % settings['domain'], '', 1)
-
-        if '@' in line:
-            auth = line.split('@')[0]
-            settings['user'], settings['pass'] = auth.split(':')
-            line = line.replace('%s@' % auth, '', 1)
-
-        if ':' in line:
-            settings['host'], settings['port'] = line.split(':')
-
-        return settings
-
     def initialize(self):
         self.settings.useProxy.setChecked(False)
         self.settings.useDe.hide()
@@ -338,21 +321,21 @@ class ProxySettings(SettingsTab):
 
         https = config.get("general", "https_proxy")
         if https and https != "None":
-            items = self.parse_proxy(https)
+            items = parse_proxy(https)
             self.settings.httpsProxy.setText(items['host'])
             self.settings.httpsProxyPort.setValue(int(items['port']))
             proxyInUse = True
 
         ftp = config.get("general", "ftp_proxy")
         if ftp and ftp != "None":
-            items = self.parse_proxy(ftp)
+            items = parse_proxy(ftp)
             self.settings.ftpProxy.setText(items['host'])
             self.settings.ftpProxyPort.setValue(int(items['port']))
             proxyInUse = True
 
         http = config.get("general", "http_proxy")
         if http and http != "None":
-            items = self.parse_proxy(http)
+            items = parse_proxy(http)
             self.settings.httpProxy.setText(items['host'])
             self.settings.httpProxyPort.setValue(int(items['port']))
             proxyInUse = True
@@ -407,15 +390,15 @@ class ProxySettings(SettingsTab):
                 if just_check:
                     return True
 
-                items = self.parse_proxy(config.value('Proxy Settings/httpProxy').toString())
+                items = parse_proxy(config.value('Proxy Settings/httpProxy').toString())
                 self.settings.httpProxy.setText(items['host'])
                 self.settings.httpProxyPort.setValue(int(items['port']))
 
-                items = self.parse_proxy(config.value('Proxy Settings/httpsProxy').toString())
+                items = parse_proxy(config.value('Proxy Settings/httpsProxy').toString())
                 self.settings.httpsProxy.setText(items['host'])
                 self.settings.httpsProxyPort.setValue(int(items['port']))
 
-                items = self.parse_proxy(config.value('Proxy Settings/ftpProxy').toString())
+                items = parse_proxy(config.value('Proxy Settings/ftpProxy').toString())
                 self.settings.ftpProxy.setText(items['host'])
                 self.settings.ftpProxyPort.setValue(int(items['port']))
 
@@ -446,6 +429,8 @@ class ProxySettings(SettingsTab):
             self.iface.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
         else:
             self.iface.setConfig("general", "ftp_proxy", "None")
+
+        QNetworkProxy.setApplicationProxy(QNetworkProxy(QNetworkProxy.HttpProxy, httpsProxy, httpsProxyPort))
 
 class SettingsDialog(QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):

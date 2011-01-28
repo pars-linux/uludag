@@ -143,6 +143,26 @@ def isSolidOnline():
 def network_available():
     return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
 
+def parse_proxy(line):
+    settings = {'domain':None,'user':None,'pass':None,'host':None,'port':None}
+
+    if '://' in line:
+        line = line.replace('%s://' % line.split('://')[0], '', 1)
+
+    if '\\' in line:
+        settings['domain'] = line.split('\\')[0]
+        line = line.replace('%s\\' % settings['domain'], '', 1)
+
+    if '@' in line:
+        auth = line.split('@')[0]
+        settings['user'], settings['pass'] = auth.split(':')
+        line = line.replace('%s@' % auth, '', 1)
+
+    if ':' in line:
+        settings['host'], settings['port'] = line.split(':')
+
+    return settings
+
 def repos_available(iface):
 
     repos = iface.getRepositories(only_active = True)
