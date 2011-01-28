@@ -118,7 +118,7 @@ msgid ""
 "<p>Congratulations! You have finished all steps. You can now continue using "
 "Pardus and try applications below.</p>"
 msgstr ""
-"<p>Tebrikler! Tüm aşamaları bitirdiniz. Pardus kullanmaya devam edebilir, "
+"<p>Tebrikler! Tüm aşamaları bitirdiniz. Pardus kullanmaya başlayabilir, "
 "aşağıdaki uygulamaları deneyebilirsiniz.</p>"
 
 #: src/screens/goodbyedlg.py:162
@@ -151,7 +151,7 @@ msgstr "<p align=\"left\">Klavyenizi buradan yapılandırabilirsiniz.</p>"
 
 #: src/screens/smoltdlg.py:208 src/screens/ScrSmolt.py:39
 msgid "Hardware Profile"
-msgstr ""
+msgstr "Donanım Bilgileri"
 
 #: src/screens/networkdlg.py:46
 msgid "Network"
@@ -224,7 +224,7 @@ msgstr ""
 
 #: src/screens/kaptanMain.py:119
 msgid "Sample"
-msgstr "Ornek"
+msgstr "Örnek"
 
 #: src/screens/ScrGoodbye.py:29
 msgid "Enjoy with Pardus..."
@@ -380,21 +380,23 @@ msgstr "Duvarkağıdı Yok"
 
 #: src/screens/ScrSmolt.py:30 src/screens/ScrSmolt.py:31
 msgid "Share your hardware profile"
-msgstr ""
+msgstr "Donanım bilgilerinizi paylaşın"
 
 #: src/screens/ScrSmolt.py:40
 msgid ""
 "You can help Pardus by sharing your hardware profile. Your hardware "
 "information will be collected and sent to Pardus anonymously."
 msgstr ""
+"Donanım bilgilerinizi paylaşarak Pardus'a katkıda bulunabilirsiniz. "
+"Donanım bilgileriniz toplandıktan sonra anonim olarak gönderilecektir."
 
 #: src/screens/ScrSmolt.py:41
 msgid "&Privacy policy"
-msgstr ""
+msgstr "Gizlilik Politikası"
 
 #: src/screens/ScrSmolt.py:42
 msgid "&Share my hardware profile"
-msgstr ""
+msgstr "Donanım bilgilerimi paylaş"
 
 #: src/screens/ScrSmolt.py:46
 msgid "Label"
@@ -402,104 +404,103 @@ msgstr "Etiket"
 
 #: src/screens/ScrSmolt.py:48
 msgid "Value"
-msgstr ""
+msgstr "Değer"
 
 #: src/screens/ScrSmolt.py:64
 msgid "&Host Information"
-msgstr ""
+msgstr "Makine Bilgileri"
 
 #: src/screens/ScrSmolt.py:69
 msgid "&Privacy Policy"
-msgstr ""
+msgstr "Gizlilik Politikası"
 
 #: src/screens/ScrSmolt.py:82
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: src/screens/ScrSmolt.py:83
 msgid "OS"
-msgstr ""
+msgstr "İşletim Sistemi"
 
 #: src/screens/ScrSmolt.py:84
 msgid "Default Run Level"
-msgstr ""
+msgstr "Çalışma Seviyesi"
 
 #: src/screens/ScrSmolt.py:85
 msgid "Language"
-msgstr ""
+msgstr "Dil"
 
 #: src/screens/ScrSmolt.py:86
 msgid "Platform"
-msgstr ""
+msgstr "Platform"
 
 #: src/screens/ScrSmolt.py:87
 msgid "BogoMIPS"
-msgstr ""
+msgstr "BogoMIPS"
 
 #: src/screens/ScrSmolt.py:88
 msgid "CPU Vendor"
-msgstr ""
+msgstr "İşlemci Sağlayıcısı"
 
 #: src/screens/ScrSmolt.py:89
 msgid "CPU Model"
-msgstr ""
+msgstr "İşlemci Modeli"
 
 #: src/screens/ScrSmolt.py:90
 msgid "CPU Stepping"
-msgstr ""
+msgstr "İşlemci Adımlama"
 
 #: src/screens/ScrSmolt.py:91
 msgid "CPU Family"
-msgstr ""
+msgstr "İşlemci Ailesi"
 
 #: src/screens/ScrSmolt.py:92
 msgid "CPU Model Num"
-msgstr ""
+msgstr "İşlemci Model No"
 
 #: src/screens/ScrSmolt.py:93
 msgid "Number of CPUs"
-msgstr ""
+msgstr "İşlemci Sayısı"
 
 #: src/screens/ScrSmolt.py:94
 msgid "CPU Speed"
-msgstr ""
+msgstr "İşlemci Hızı"
 
 #: src/screens/ScrSmolt.py:95
 msgid "System Memory"
-msgstr ""
+msgstr "Sistem Hafızası"
 
 #: src/screens/ScrSmolt.py:96
 msgid "System Swap"
-msgstr ""
+msgstr "Sistem Takası"
 
 #: src/screens/ScrSmolt.py:97
-#, fuzzy
 msgid "Vendor"
-msgstr "Gönder"
+msgstr "Sağlayıcı"
 
 #: src/screens/ScrSmolt.py:98
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: src/screens/ScrSmolt.py:99
 msgid "Form Factor"
-msgstr ""
+msgstr "Form Faktörü"
 
 #: src/screens/ScrSmolt.py:100
 msgid "Kernel"
-msgstr ""
+msgstr "Çekirdek"
 
 #: src/screens/ScrSmolt.py:101
 msgid "SELinux Enabled"
-msgstr ""
+msgstr "SELinux Etkin"
 
 #: src/screens/ScrSmolt.py:102
 msgid "SELinux Policy"
-msgstr ""
+msgstr "SELinux Politikası"
 
 #: src/screens/ScrSmolt.py:103
 msgid "SELinux Enforce"
-msgstr ""
+msgstr "SELinux Zorunlu"
 
 #: src/screens/summarydlg.py:64
 msgid "SummaryWidget"
