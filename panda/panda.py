@@ -197,6 +197,11 @@ class Panda():
         if self.os_driver is None:
             self.get_blacklisted_module()
 
+        if self.kernel_flavors is None:
+            self.__get_kernel_flavors()
+
+        kernel_version = self.kernel_flavors["kernel"] # This one should change
+
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
