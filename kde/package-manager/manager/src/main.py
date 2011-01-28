@@ -19,7 +19,6 @@ import traceback
 
 # PyQt4 Imports
 from PyQt4.QtGui import QApplication
-from PyQt4.QtNetwork import QNetworkProxy
 
 # PyKDE4 Imports
 from PyKDE4.kdeui import KUniqueApplication
@@ -69,15 +68,6 @@ class PmApp(KUniqueApplication):
 
         return super(PmApp, self).newInstance()
 
-def set_proxy_settings():
-    http = backend.pm.Iface().getConfig().get("general", "http_proxy")
-    if http and not http == "None":
-        items = parse_proxy(http)
-        QNetworkProxy.setApplicationProxy(
-                QNetworkProxy(QNetworkProxy.HttpProxy,
-                            items['host'], int(items['port']),
-                            items['user'] or '', items['pass'] or ''))
-
 # Package Manager Main App
 if __name__ == '__main__':
 
@@ -88,8 +78,6 @@ if __name__ == '__main__':
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
-
-    set_proxy_settings()
 
     # Use raster to make it faster
     QApplication.setGraphicsSystem('raster')
