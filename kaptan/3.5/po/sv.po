@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2008-09-10 16:37+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130
 #, fuzzy
-msgid "Welcome to Kaptan"
+msgid "Welcome to Pardus"
 msgstr "Välkommen till Kaptan Lots :)"
 
 #: src/kaptan.py:132
@@ -38,6 +38,11 @@ msgstr "Slutför"
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan körs redan!"
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
+msgstr "Välkommen till Kaptan Lots :)"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"

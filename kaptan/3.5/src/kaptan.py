@@ -127,7 +127,7 @@ class Kaptan(kaptanUi):
         self.buttonFinish.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
 
         # set texts
-        self.pageDesc.setText(i18n("Welcome to Kaptan"))
+        self.pageDesc.setText(i18n("Welcome to Pardus"))
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("&Back"))
         self.buttonNext.setText(i18n("&Next"))

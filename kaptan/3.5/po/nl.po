@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2008-09-10 20:12+0200\n"
 "Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
 "Language-Team: Nederlands <nl@li.org>\n"
@@ -17,9 +17,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130
 #, fuzzy
-msgid "Welcome to Kaptan"
+msgid "Welcome to Pardus"
 msgstr "Welkom bij de Kaptan wizard :)"
 
 #: src/kaptan.py:132
@@ -38,6 +38,11 @@ msgstr "Beëindig"
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan is al actief!"
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
+msgstr "Welkom bij de Kaptan wizard :)"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"

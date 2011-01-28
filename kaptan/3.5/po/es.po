@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2010-01-01 17:43-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -22,8 +22,9 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
-msgid "Welcome to Kaptan"
+#: src/kaptan.py:130
+#, fuzzy
+msgid "Welcome to Pardus"
 msgstr "Bienvenido a Kaptan"
 
 #: src/kaptan.py:132
@@ -41,6 +42,10 @@ msgstr "Terminar"
 #: src/kaptan.py:273
 msgid "Kaptan is already running."
 msgstr "Kaptan ya se está ejecutando."
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+msgid "Welcome to Kaptan"
+msgstr "Bienvenido a Kaptan"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"

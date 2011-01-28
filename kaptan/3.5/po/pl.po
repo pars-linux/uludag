@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -14,9 +14,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130
 #, fuzzy
-msgid "Welcome to Kaptan"
+msgid "Welcome to Pardus"
 msgstr "Witaj w Kaptan"
 
 #: src/kaptan.py:132
@@ -35,6 +35,11 @@ msgstr "Zakończ"
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan już działa!"
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
+msgstr "Witaj w Kaptan"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"

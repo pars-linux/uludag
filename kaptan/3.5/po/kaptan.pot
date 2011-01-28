@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
-msgid "Welcome to Kaptan"
+#: src/kaptan.py:130
+msgid "Welcome to Pardus"
 msgstr ""
 
 #: src/kaptan.py:132
@@ -34,6 +34,10 @@ msgstr ""
 
 #: src/kaptan.py:273
 msgid "Kaptan is already running."
+msgstr ""
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+msgid "Welcome to Kaptan"
 msgstr ""
 
 #: src/screens/ScrPanel.py:31
