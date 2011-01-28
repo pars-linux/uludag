@@ -7,7 +7,7 @@ How to be a Contributor?
 
 :Author: Semen Cirit
 
-:Version: 0.2
+:Version: 0.3
 
 ******************************
 Applicant Tracking on Bugzilla
@@ -60,7 +60,7 @@ Sending Quiz to Applicant
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 #. If the quiz review is positive:
     #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
-    #. If the applicant is applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report and sends `Quiz Approved Stock Response` to the quiz is approved..
+    #. If the applicant is applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report and sends `Quiz Approved Stock Response`_ to the quiz is approved..
 
 
 Assigning Mentor
@@ -125,8 +125,6 @@ Rejection Stock Response
         bizi ikna edecek düzeye geldiğini düşündüğünüzde tekrar başvurmaktan çekinmeyin.
 
         Bol şanslar.
-        --
-        Pardus Mentor Koordinatörleri
 
     ::
 
@@ -142,8 +140,7 @@ Rejection Stock Response
         Pardus and knowledge is adequate for persuading the Pardus Application
         Review Team.
 
-        --
-        Pardus Mentoring Coordinators
+
 
 Quiz Sending Stock Response
 ---------------------------
@@ -191,14 +188,11 @@ Tester Acceptence Stock Response
 
         Başvurunuz olumlu sonuçlanmıştır,  testçi@pardus.org.tr için gerekli izinleriniz verilmiştir.
         Pardus'a yapacağınız katkılarda dolayı şimdiden size teşşekür ederiz.
-        --
-        Pardus Mentor Koordinatörleri
+
     ::
 
         Your application is favorable, the permissions about testçi@pardus.org.tr has been given. 
         Thank you in advance for their generous contributions to make for Pardus.
-        --
-        Pardus Mentoring Coordinators
 
 Waiting in the Queue Stock Response
 -----------------------------------
@@ -209,15 +203,11 @@ Waiting in the Queue Stock Response
         ve kendinizi bu yönde daha fazla geliştirebilir ve mentor sürecinizi kısaltabilirsiniz.
 
         İyi günler,
-        --
-        Pardus Mentor Koordinatörleri
 
     ::
 
         ll slots of our mentors are occupied, when the slots are available we will back to your application.
         uring this period, you can continue to contribute to Pardus, and may shorten your mentoring process.
-        -
-        Pardus Mentor Koordinatörleri
 
 
 
