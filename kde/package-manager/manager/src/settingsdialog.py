@@ -140,16 +140,11 @@ class CacheSettings(SettingsTab):
         self.settings.useCacheCheck.setChecked(enableCache)
         self.settings.useCacheSpin.setValue(cache_limit)
         self.settings.cacheDirPath.setText(cache_dir)
-        self.__getBandwidthSettings()
 
-    def __getBandwidthSettings(self):
-        config = self.iface.getConfig()
         bandwidth_limit = config.get("general", "bandwidth_limit")
         bandwidth_limit = int(bandwidth_limit) if bandwidth_limit else 0
 
-        if bandwidth_limit != 0:
-            self.settings.useBandwidthLimit.setChecked(True)
-
+        self.settings.useBandwidthLimit.setChecked(not bandwidth_limit == 0)
         self.settings.bandwidthSpin.setValue(bandwidth_limit)
 
     def connectSignals(self):
@@ -315,6 +310,7 @@ class ProxySettings(SettingsTab):
     def initialize(self):
         self.settings.useProxy.setChecked(False)
         self.settings.useDe.hide()
+        self.clear()
 
         proxyInUse = False
         config = self.iface.getConfig()
@@ -357,6 +353,9 @@ class ProxySettings(SettingsTab):
         self.connect(self.settings.httpsProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.ftpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
         self.connect(self.settings.ftpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
+        self.connect(self.settings.userProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
+        self.connect(self.settings.passwordProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
+        self.connect(self.settings.domainProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
         self.connect(self.settings.useProxy, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useProxy, SIGNAL("toggled(bool)"), self.checkDeSettings)
         self.connect(self.settings.useDe, SIGNAL("linkActivated(const QString&)"), self.getSettingsFromDe)
@@ -411,26 +410,24 @@ class ProxySettings(SettingsTab):
         httpsProxy, httpsProxyPort = self.settings.httpsProxy.text().split('://')[-1], self.settings.httpsProxyPort.value()
         ftpProxy, ftpProxyPort = self.settings.ftpProxy.text().split('://')[-1], self.settings.ftpProxyPort.value()
 
+        userProxy = self.settings.userProxy.text()
+        passProxy = self.settings.passwordProxy.text()
+        domainProxy = self.settings.domainProxy.text()
+
         if not self.settings.useProxy.isChecked():
             httpProxy = httpsProxy = ftpProxy = None
             self.clear()
 
-        if httpProxy:
-            self.iface.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))
+        if userProxy and passProxy:
+            auth = '%s:%s@' % (userProxy, passProxy)
+            if domainProxy:
+                auth = '%s\%s:%s@' % (domainProxy, userProxy, passProxy)
         else:
-            self.iface.setConfig("general", "http_proxy", "None")
+            auth = ''
 
-        if httpsProxy:
-            self.iface.setConfig("general", "https_proxy", "https://%s:%s" % (httpsProxy, httpsProxyPort))
-        else:
-            self.iface.setConfig("general", "https_proxy", "None")
-
-        if ftpProxy:
-            self.iface.setConfig("general", "ftp_proxy", "ftp://%s:%s" % (ftpProxy, ftpProxyPort))
-        else:
-            self.iface.setConfig("general", "ftp_proxy", "None")
-
-        QNetworkProxy.setApplicationProxy(QNetworkProxy(QNetworkProxy.HttpProxy, httpsProxy, httpsProxyPort))
+        self.iface.setConfig("general", "http_proxy",  "None" if not httpProxy  else "http://%s%s:%s"  % (auth, httpProxy,  httpProxyPort))
+        self.iface.setConfig("general", "https_proxy", "None" if not httpsProxy else "https://%s%s:%s" % (auth, httpsProxy, httpsProxyPort))
+        self.iface.setConfig("general", "ftp_proxy",   "None" if not ftpProxy   else "ftp://%s%s:%s"   % (auth, ftpProxy,   ftpProxyPort))
 
 class SettingsDialog(QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):
@@ -463,7 +460,10 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
                     settings.save()
             except Exception, e:
                 self.parent.cw.exceptionCaught(str(e))
-            settings.changed = False
+            finally:
+                if settings.changed:
+                    settings.initialize()
+                settings.changed = False
         self.config = config.PMConfig()
 
     def showHelp(self):
