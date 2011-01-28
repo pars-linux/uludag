@@ -384,10 +384,12 @@ class ProxySettings(SettingsTab):
         self.settings.ftpProxy.setText(self.settings.httpProxy.text())
         self.settings.ftpProxyPort.setValue(self.settings.httpProxyPort.value())
 
-    def clear(self, all_clear=True):
-        if all_clear:
-            self.settings.httpProxy.setText("")
-            self.settings.httpProxyPort.setValue(0)
+    def clear(self):
+        self.settings.httpProxy.setText("")
+        self.settings.httpProxyPort.setValue(0)
+        self.settings.userProxy.setText("")
+        self.settings.passwordProxy.setText("")
+        self.settings.domainProxy.setText("")
         self.settings.httpsProxy.setText("")
         self.settings.httpsProxyPort.setValue(0)
         self.settings.ftpProxy.setText("")
