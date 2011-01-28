@@ -10,8 +10,12 @@ def main(args):
     p = panda.Panda()
 
     if args.cur is not None:
-        status = p.update_grub_entries()
+        status = p.get_grub_state()
         print status
+
+    if args.types is not None:
+        types = p.get_driver_types()
+        print ",".join(types)
 
     if args.up is not None:
         status = p.update_grub_entries(args.up[0])
@@ -39,6 +43,11 @@ def argument():
                             nargs='*',
                             help="Show currently used driver")
 
+    parser_update = subparsers.add_parser('types', help='List available driver types')
+    parser_update.add_argument('types',
+                            nargs='*',
+                            help="List available driver types")
+
     parser_update = subparsers.add_parser('up', help='Update grub.conf')
     parser_update.add_argument('up',
                             nargs=1,
@@ -52,6 +61,7 @@ def argument():
     # passed to the args() namespace
     parser.set_defaults(cur=None,
                         check=None,
+                        types=None,
                         up=None)
 
     return parser.parse_args()
