@@ -49,6 +49,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             self.setupUi(self)
 
+        self._in_progress = False
+
         # Animation
         self.animator = QtCore.QTimeLine(ANIM_TIME, self)
         self.animationLast = ANIM_HIDE
@@ -189,7 +191,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     self.addItem(gid, name, "", group=True)
 
         self.iface.groupList(func=handleGroupList)
-
+        self.buttonBox.setDisabled(False)
 
     def callIface(self, method):
         """
@@ -313,10 +315,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
         if self.animationLast == ANIM_SHOW:
             self.animationLast = ANIM_HIDE
-            # Set range
-            self.animator.setFrameRange(self.frameEdit.height(), ANIM_TARGET)
-            # Go go go!
-            self.animator.start()
+
+            self.frameEdit.setMaximumHeight(0)
+            self.frameList.setMaximumHeight(self.height())
 
     def slotFilterChanged(self, index):
         """
@@ -400,7 +401,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Save clicked on edit box, save item details then show item list.
         """
+        if self._in_progress:
+            return
+        self._in_progress = True
         try:
+            self.buttonBox.setDisabled(True)
             if self.typeEdit == "user":
                 widget = self.widgetUserEdit
                 grant, revoke, block = widget.getAuthorizations()
@@ -434,10 +439,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             else:
                 kdeui.KMessageBox.error(self, unicode(e))
             return
-        # User.Manager does not emit signals, refresh whole list.
-        self.buildItemList()
+        finally:
+            self._in_progress = False
+
         # Hide edit box
         self.hideEditBox()
+        # User.Manager does not emit signals, refresh whole list.
+        self.buildItemList()
 
     def slotAnimate(self, frame):
         """

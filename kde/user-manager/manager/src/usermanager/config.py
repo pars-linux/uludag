@@ -16,6 +16,6 @@ DEFAULT_GROUPS = ["users", "audio", "dialout", "disk", "pnp", "pnpadmin", "power
 
 # Animation
 ANIM_SHOW, ANIM_HIDE = range(2)
-ANIM_TIME = 200
+ANIM_TIME = 240
 ANIM_TARGET = 0
 ANIM_DEFAULT = 16777215
