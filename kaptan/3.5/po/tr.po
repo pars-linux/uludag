@@ -74,7 +74,7 @@ msgstr "Önizlemeler"
 
 #: src/screens/wallpaperdlg.py:131
 msgid "Wallpaper"
-msgstr "Duvarkağıdı"
+msgstr "Duvar kağıdı"
 
 #: src/screens/wallpaperdlg.py:133
 msgid "toolTip"
@@ -82,7 +82,7 @@ msgstr "toolTip"
 
 #: src/screens/wallpaperdlg.py:135
 msgid "Choose Wallpaper"
-msgstr "Duvarkağıdı Seçin"
+msgstr "Duvar kağıdı Seçin"
 
 #: src/screens/goodbyedlg.py:154
 msgid "Goodbye"
