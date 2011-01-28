@@ -309,7 +309,7 @@ class ProxySettings(SettingsTab):
     def setupUi(self):
         self.initialize()
 
-    def parse_proxy(line):
+    def parse_proxy(self, line):
         settings = {'domain':None,'user':None,'pass':None,'host':None,'port':None}
 
         if '://' in line:
@@ -338,21 +338,21 @@ class ProxySettings(SettingsTab):
 
         https = config.get("general", "https_proxy")
         if https and https != "None":
-            items = parse_proxy(https)
+            items = self.parse_proxy(https)
             self.settings.httpsProxy.setText(items['host'])
             self.settings.httpsProxyPort.setValue(int(items['port']))
             proxyInUse = True
 
         ftp = config.get("general", "ftp_proxy")
         if ftp and ftp != "None":
-            items = parse_proxy(ftp)
+            items = self.parse_proxy(ftp)
             self.settings.ftpProxy.setText(items['host'])
             self.settings.ftpProxyPort.setValue(int(items['port']))
             proxyInUse = True
 
         http = config.get("general", "http_proxy")
         if http and http != "None":
-            items = parse_proxy(http)
+            items = self.parse_proxy(http)
             self.settings.httpProxy.setText(items['host'])
             self.settings.httpProxyPort.setValue(int(items['port']))
             proxyInUse = True
