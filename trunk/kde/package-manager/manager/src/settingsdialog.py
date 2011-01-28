@@ -309,38 +309,65 @@ class ProxySettings(SettingsTab):
     def setupUi(self):
         self.initialize()
 
+    def parse_proxy(line):
+        settings = {'domain':None,'user':None,'pass':None,'host':None,'port':None}
+
+        if '://' in line:
+            line = line.replace('%s://' % line.split('://')[0], '', 1)
+
+        if '\\' in line:
+            settings['domain'] = line.split('\\')[0]
+            line = line.replace('%s\\' % settings['domain'], '', 1)
+
+        if '@' in line:
+            auth = line.split('@')[0]
+            settings['user'], settings['pass'] = auth.split(':')
+            line = line.replace('%s@' % auth, '', 1)
+
+        if ':' in line:
+            settings['host'], settings['port'] = line.split(':')
+
+        return settings
+
     def initialize(self):
         self.settings.useProxy.setChecked(False)
         self.settings.useDe.hide()
 
+        proxyInUse = False
         config = self.iface.getConfig()
-        httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
-
-        http = config.get("general", "http_proxy")
-        if http and http != "None":
-            httpProxy, httpProxyPort = http[7:].rsplit(":", 1)
-            self.settings.httpProxy.setText(httpProxy)
-            self.settings.httpProxyPort.setValue(int(httpProxyPort))
 
         https = config.get("general", "https_proxy")
         if https and https != "None":
-            httpsProxy, httpsProxyPort = https[8:].rsplit(":", 1)
-            self.settings.httpsProxy.setText(httpsProxy)
-            self.settings.httpsProxyPort.setValue(int(httpsProxyPort))
+            items = parse_proxy(https)
+            self.settings.httpsProxy.setText(items['host'])
+            self.settings.httpsProxyPort.setValue(int(items['port']))
+            proxyInUse = True
 
         ftp = config.get("general", "ftp_proxy")
         if ftp and ftp != "None":
-            ftpProxy, ftpProxyPort = ftp[6:].rsplit(":", 1)
-            self.settings.ftpProxy.setText(ftpProxy)
-            self.settings.ftpProxyPort.setValue(int(ftpProxyPort))
+            items = parse_proxy(ftp)
+            self.settings.ftpProxy.setText(items['host'])
+            self.settings.ftpProxyPort.setValue(int(items['port']))
+            proxyInUse = True
 
-        if httpProxy or ftpProxy or httpsProxy:
+        http = config.get("general", "http_proxy")
+        if http and http != "None":
+            items = parse_proxy(http)
+            self.settings.httpProxy.setText(items['host'])
+            self.settings.httpProxyPort.setValue(int(items['port']))
+            proxyInUse = True
+
+        if proxyInUse:
             self.settings.useProxy.setChecked(True)
-            if (httpProxy == httpsProxy == ftpProxy) and (httpProxyPort == httpsProxyPort == ftpProxyPort):
-                self.settings.useHttpForAll.setChecked(True)
+            if items['domain']:
+                self.settings.domainProxy.setText(items['domain'])
+            if items['user']:
+                self.settings.userProxy.setText(items['user'])
+            if items['pass']:
+                self.settings.passwordProxy.setText(items['pass'])
 
     def connectSignals(self):
-        self.connect(self.settings.useHttpForAll, SIGNAL("toggled(bool)"), self.useHttpToggled)
+        self.connect(self.settings.useHttpForAll, SIGNAL("linkActivated(const QString&)"), self.useHttpForAll)
         self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
         self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.httpsProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
@@ -351,31 +378,11 @@ class ProxySettings(SettingsTab):
         self.connect(self.settings.useProxy, SIGNAL("toggled(bool)"), self.checkDeSettings)
         self.connect(self.settings.useDe, SIGNAL("linkActivated(const QString&)"), self.getSettingsFromDe)
 
-    def useHttpToggled(self, enabled):
-        controls = (self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort)
-        if enabled:
-            self.settings.httpsProxy.setText(self.settings.httpProxy.text())
-            self.settings.httpsProxyPort.setValue(self.settings.httpProxyPort.value())
-            self.settings.ftpProxy.setText(self.settings.httpProxy.text())
-            self.settings.ftpProxyPort.setValue(self.settings.httpProxyPort.value())
-
-            for control in controls:
-                control.setEnabled(False)
-
-            self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.httpsProxy, SLOT("setText(const QString&)"))
-            self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.ftpProxy, SLOT("setText(const QString&)"))
-            self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.httpsProxyPort, SLOT("setValue(int)"))
-            self.connect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.ftpProxyPort, SLOT("setValue(int)"))
-        else:
-            self.disconnect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.httpsProxy, SLOT("setText(const QString&)"))
-            self.disconnect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.ftpProxy, SLOT("setText(const QString&)"))
-            self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.httpsProxyPort, SLOT("setValue(int)"))
-            self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.ftpProxyPort, SLOT("setValue(int)"))
-
-            for control in controls:
-                control.setEnabled(True)
-
-            self.clear(all_clear=False)
+    def useHttpForAll(self, link):
+        self.settings.httpsProxy.setText(self.settings.httpProxy.text())
+        self.settings.httpsProxyPort.setValue(self.settings.httpProxyPort.value())
+        self.settings.ftpProxy.setText(self.settings.httpProxy.text())
+        self.settings.ftpProxyPort.setValue(self.settings.httpProxyPort.value())
 
     def clear(self, all_clear=True):
         if all_clear:
@@ -398,17 +405,17 @@ class ProxySettings(SettingsTab):
                 if just_check:
                     return True
 
-                http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
-                self.settings.httpsProxy.setText(http[0])
-                self.settings.httpsProxyPort.setValue(int(http[1]))
+                items = self.parse_proxy(config.value('Proxy Settings/httpProxy').toString())
+                self.settings.httpProxy.setText(items['host'])
+                self.settings.httpProxyPort.setValue(int(items['port']))
 
-                https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
-                self.settings.httpProxy.setText(https[0])
-                self.settings.httpProxyPort.setValue(int(https[1]))
+                items = self.parse_proxy(config.value('Proxy Settings/httpsProxy').toString())
+                self.settings.httpsProxy.setText(items['host'])
+                self.settings.httpsProxyPort.setValue(int(items['port']))
 
-                ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
-                self.settings.ftpProxy.setText(ftp[0])
-                self.settings.ftpProxyPort.setValue(int(ftp[1]))
+                items = self.parse_proxy(config.value('Proxy Settings/ftpProxy').toString())
+                self.settings.ftpProxy.setText(items['host'])
+                self.settings.ftpProxyPort.setValue(int(items['port']))
 
                 return True
 
