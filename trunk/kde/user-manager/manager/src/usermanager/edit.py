@@ -99,6 +99,8 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.advancedGroup.hide()
         self.available_shells = []
 
+        self.wrn = ""
+
     def reset(self):
         self.setId(-1)
         self.setUsername("")
