@@ -57,6 +57,7 @@ In order to do Pardus Final official, the following criterias must be met:
     - Sound Mixer
     - Date & Time
     - Network connection
+* Release notes should open automatically on other operating systems.
 * The policy settings must work successfully
 * Final release must include default artwork by default for the installation manager (YALI_), graphical boot, firstboot, graphical login, desktop background and splash screens.
 * Pardus icon theme must be supported by the desktop greeter (Kaptan_) and should load successfully if selected.
