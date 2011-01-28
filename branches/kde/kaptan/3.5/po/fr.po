@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2008-06-27 03:20+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -16,9 +16,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130
 #, fuzzy
-msgid "Welcome to Kaptan"
+msgid "Welcome to Pardus"
 msgstr "Bienvenue chez l'assistant Kaptan :)"
 
 #: src/kaptan.py:132
@@ -37,6 +37,11 @@ msgstr "Terminer"
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan est déjà en cours d'exécution !"
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
+msgstr "Bienvenue chez l'assistant Kaptan :)"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"

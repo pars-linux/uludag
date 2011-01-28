@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 12:44+0200\n"
+"POT-Creation-Date: 2011-01-28 13:19+0200\n"
 "PO-Revision-Date: 2008-05-08 11:37+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -20,9 +20,9 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
-msgid "Welcome to Kaptan"
-msgstr "Kaptan'a Hoşgeldiniz"
+#: src/kaptan.py:130
+msgid "Welcome to Pardus"
+msgstr "Pardus'a Hoşgeldiniz"
 
 #: src/kaptan.py:132
 msgid "&Back"
@@ -39,6 +39,10 @@ msgstr "Bitir"
 #: src/kaptan.py:273
 msgid "Kaptan is already running."
 msgstr "Kaptan zaten çalışıyor!"
+
+#: src/kaptan.py:283 src/screens/ScrWelcome.py:24
+msgid "Welcome to Kaptan"
+msgstr "Kaptan'a Hoşgeldiniz"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"
@@ -387,8 +391,8 @@ msgid ""
 "You can help Pardus by sharing your hardware profile. Your hardware "
 "information will be collected and sent to Pardus anonymously."
 msgstr ""
-"Donanım bilgilerinizi paylaşarak Pardus'a katkıda bulunabilirsiniz. "
-"Donanım bilgileriniz toplandıktan sonra anonim olarak gönderilecektir."
+"Donanım bilgilerinizi paylaşarak Pardus'a katkıda bulunabilirsiniz. Donanım "
+"bilgileriniz toplandıktan sonra anonim olarak gönderilecektir."
 
 #: src/screens/ScrSmolt.py:41
 msgid "&Privacy policy"
