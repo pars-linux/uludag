@@ -105,6 +105,8 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
             self.noconnection.show()
             self.webWidget.hide()
 
+        reset_proxy_settings()
+
     def showPackageDetails(self, package, installed, summary='', description=''):
         self.packageName.setText(package)
 
@@ -113,10 +115,10 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
                 self._sync_template(x, package, summary, description))
 
         if network_available():
+            set_proxy_settings()
             self.webWidget.hide()
             self.busy.show()
             self.busy.startAnimation()
-
             self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
         else:
             self._sync_template(status = False)

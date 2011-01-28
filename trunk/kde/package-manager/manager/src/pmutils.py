@@ -18,8 +18,10 @@ import comar
 import urllib
 import socket
 import unicodedata
-
 import traceback
+
+import backend
+
 from pmlogging import logger
 
 from PyQt4.QtCore import Qt
@@ -31,6 +33,8 @@ from PyQt4.QtGui import QCursor
 from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QApplication
+
+from PyQt4.QtNetwork import QNetworkProxy
 
 from PyKDE4.solid import Solid
 from PyKDE4.kdeui import KNotification
@@ -139,6 +143,18 @@ def processEvents():
 
 def isSolidOnline():
     return Solid.Networking.status() == Solid.Networking.Connected
+
+def set_proxy_settings():
+    http = backend.pm.Iface().getConfig().get("general", "http_proxy")
+    if http and not http == "None":
+        items = parse_proxy(http)
+        QNetworkProxy.setApplicationProxy(
+                QNetworkProxy(QNetworkProxy.HttpProxy,
+                            items['host'], int(items['port']),
+                            items['user'] or '', items['pass'] or ''))
+
+def reset_proxy_settings():
+    QNetworkProxy.setApplicationProxy(QNetworkProxy())
 
 def network_available():
     return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
