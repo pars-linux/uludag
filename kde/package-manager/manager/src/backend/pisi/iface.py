@@ -59,7 +59,7 @@ class Iface(Singleton):
             pkg.installed = True
         else:
             pkg = self.pdb.get_package(name)
-            pkg._type = None
+            pkg._type = self.getUpdateType(pkg)
             pkg.installed = False
         return pkg
 
@@ -144,10 +144,11 @@ class Iface(Singleton):
             return self.getRequires(packages)
 
     def getUpdateType(self, pkg):
-        (version, release, build) = self.idb.get_version(pkg.name)
-        for type_name in ("security", "critical"):
-            if pkg.has_update_type(type_name, release):
-                return type_name
+        if self.idb.has_package(pkg.name):
+            (version, release, build) = self.idb.get_version(pkg.name)
+            for type_name in ("security", "critical"):
+                if pkg.has_update_type(type_name, release):
+                    return type_name
         return "normal"
 
     def getPackageSize(self, package):
