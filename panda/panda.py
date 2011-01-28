@@ -155,7 +155,67 @@ class Panda():
 
         return list(set(drivers))
 
-    def update_grub_entries(self, arg="status"):
+
+    ########################################
+    # Functions essential for grub parsing #
+
+    def parameter_value_in_line(self, line, keyword):
+        params = line.split()
+        blacklist = []
+
+        for param in params:
+            if param.startswith("%s=" % keyword):
+                modules = param.split("=", 1)[1].split(",")
+                blacklist.extend(modules)
+
+        return blacklist
+
+    def update_parameter_in_line(self, line, parameter_name, parameter_value):
+        params = [x for x in line.strip().split() if not x.startswith("%s" % parameter_name)]
+
+        if parameter_value is True:
+            params.append(parameter_name)
+        elif parameter_value:
+            params.append("%s=%s" % (parameter_name, ",".join(parameter_value)))
+
+        return " ".join(params) + "\n"
+
+    ###################
+    # State functions #
+
+    def get_driver_types(self):
+        if self.driver_name is None:
+            self.__get_primary_driver()
+
+        if self.driver_name in "fglrx" or self.driver_name in ["nvidia-current", "nvidia96", "nvidia173"]:
+            return ["vendor", "os", "generic"]
+        elif "Not defined" == self.driver_name:
+            return ["os", "generic"]
+
+    def get_grub_state(self):
+        '''Get the current driver state from grub file'''
+        if self.os_driver is None:
+            self.get_blacklisted_module()
+
+        with open(grub_file) as grub:
+            for line in grub:
+                if "kernel" in line and kernel_version in line:
+                    blacklist = self.parameter_value_in_line(line, "blacklist")
+                    xorg_param = self.parameter_value_in_line(line, "xorg")
+
+                    if self.os_driver in blacklist:
+                        return "vendor"
+                    elif self.os_driver:
+                        return "os"
+                    elif "safe" in xorg_param:
+                        return "generic"
+
+        return status
+
+    ######################################
+    # Grub parsing and writing functions #
+
+    def update_grub_entries(self, arg):
         '''Edit grub file to enable the use of propretiary graphic card drivers'''
         if self.os_driver is None:
             self.get_blacklisted_module()
@@ -173,56 +233,18 @@ class Panda():
         else:
             return "Wrong parameter!\" You can use: vendor or os"
 
-
         ## Grub Parsing
         configured = False
 
-        def parameter_value_in_line(line, keyword):
-            params = line.split()
-            blacklist = []
-
-            for param in params:
-                if param.startswith("%s=" % keyword):
-                    modules = param.split("=", 1)[1].split(",")
-                    blacklist.extend(modules)
-
-            return blacklist
-
-        def update_parameter_in_line(line, parameter_name, parameter_value):
-            params = [x for x in line.strip().split() if not x.startswith("%s" % parameter_name)]
-
-            if parameter_value is True:
-                params.append(parameter_name)
-            elif parameter_value:
-                params.append("%s=%s" % (parameter_name, ",".join(parameter_value)))
-
-            return " ".join(params) + "\n"
-
-        if arg == "status":
-            import StringIO
-            grub_tmp = StringIO.StringIO()
-        else:
-            grub_tmp = open(grub_new, "w")
+        grub_tmp = open(grub_new, "w")
 
         with open(grub_file) as grub:
             for line in grub:
                 if "kernel" in line and kernel_version in line:
-                    blacklist = parameter_value_in_line(line, "blacklist")
-                    xorg_param = parameter_value_in_line(line, "xorg")
+                    blacklist = self.parameter_value_in_line(line, "blacklist")
+                    xorg_param = self.parameter_value_in_line(line, "xorg")
 
-                    if arg == "status":
-                        if "safe" in xorg_param:
-                            return "generic"
-                        elif self.os_driver in blacklist:
-                            return "vendor"
-                            #return self.driver_name
-                        elif self.os_driver:
-                            return "os"
-                            #return self.os_driver
-                        else:
-                            return "nonvendor"
-
-                    elif arg == "os":
+                    if arg == "os":
                         blacklist = [x for x in blacklist if x != self.os_driver]
                         if "safe" in xorg_param:
                             xorg_param.remove("safe")
@@ -243,9 +265,9 @@ class Panda():
                         nomodeset_param = True
                         status = "generic"
 
-                    new_line = update_parameter_in_line(line, "xorg", xorg_param)
-                    new_line = update_parameter_in_line(new_line, "nomodeset", nomodeset_param)
-                    new_line = update_parameter_in_line(new_line, "blacklist", blacklist)
+                    new_line = self.update_parameter_in_line(line, "xorg", xorg_param)
+                    new_line = self.update_parameter_in_line(new_line, "nomodeset", nomodeset_param)
+                    new_line = self.update_parameter_in_line(new_line, "blacklist", blacklist)
                     grub_tmp.write(new_line)
                     configured = line != new_line
 
@@ -267,7 +289,7 @@ class Panda():
 if __name__ == '__main__':
     p = Panda()
     print p.get_all_driver_packages()
-    print p.get_blacklisted_modules()
-    print p.update_grub_entries("status")
+    print p.get_blacklisted_module()
+    print p.update_grub_entries("vendor")
     print p.get_needed_driver_packages(installable=False)
 
