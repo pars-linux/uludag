@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-17 08:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -39,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Разработчик"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Разработчик"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -488,12 +488,12 @@ msgid "Update"
 msgstr "Обновление"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Игнорировать"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "Показать обновления"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Игнорировать"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -667,7 +667,7 @@ msgstr "Основные"
 #: ui/ui_settingsdialog.py:411
 #, fuzzy
 msgid "Cache Limit"
-msgstr "Список пакетов"
+msgstr "Ограничение кеша"
 
 #: ui/ui_settingsdialog.py:412
 msgid "&Use hard disk cache for downloaded software"
@@ -744,7 +744,7 @@ msgstr "&Репозитории"
 #: ui/ui_settingsdialog.py:432
 #, fuzzy
 msgid "Use Proxy"
-msgstr "&Прокси-сервер"
+msgstr "Использовать прокси-сервер"
 
 #: ui/ui_settingsdialog.py:433
 msgid "HTTP proxy server:"
@@ -765,15 +765,15 @@ msgstr "FTP прокси-сервер:"
 
 #: ui/ui_settingsdialog.py:439
 msgid "Domain:"
-msgstr ""
+msgstr "Домен:"
 
 #: ui/ui_settingsdialog.py:440
 msgid "Username:"
-msgstr ""
+msgstr "Имя пользователя:"
 
 #: ui/ui_settingsdialog.py:441
 msgid "Password:"
-msgstr ""
+msgstr "Пароль:"
 
 #: ui/ui_settingsdialog.py:442
 #, fuzzy
@@ -791,9 +791,8 @@ msgstr ""
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- КБ/с</span></p></body></html>"
 
 #: ui/ui_settingsdialog.py:447
-#, fuzzy
 msgid "<a href=#>Use this proxy server for all protocols</a>"
-msgstr "Использовать этот прокси-сервер для всех протоколов"
+msgstr "<a href=#>Использовать этот прокси-сервер для всех протоколов</a>"
 
 #: ui/ui_settingsdialog.py:448
 msgid "&Proxy"
