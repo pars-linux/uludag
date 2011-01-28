@@ -191,7 +191,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     self.addItem(gid, name, "", group=True)
 
         self.iface.groupList(func=handleGroupList)
-        self.buttonBox.setDisabled(False)
 
     def callIface(self, method):
         """
@@ -441,6 +440,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             return
         finally:
             self._in_progress = False
+            self.buttonBox.setDisabled(False)
 
         # Hide edit box
         self.hideEditBox()
