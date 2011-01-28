@@ -213,15 +213,18 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
                 p.setPen(DARKVIOLET)
                 p.drawText(widthOfTitle + 2, top + 12, rect.width(), rect.height(), Qt.AlignCenter, isa)
                 p.setPen(foregroundColor)
+                _component_width += rect.width() + 8
 
         if ptype not in ('None', 'normal'):
+            widthOfTitle = self.boldFontFM.width(title) + 6 + left + textInner + _component_width
+
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)
             p.setPen(self.types[ptype][0])
             p.setBrush(self.types[ptype][0])
-            p.drawRoundRect(width - rect.width() - 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width() + 4, rect.height(), 10, 10)
+            p.drawRoundRect(widthOfTitle, top + 12, rect.width() + 4, rect.height(), 10, 10)
             p.setPen(WHITE)
-            p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, self.types[ptype][1])
+            p.drawText(widthOfTitle + 2, top + 12, rect.width(), rect.height(), Qt.AlignCenter, self.types[ptype][1])
             p.setPen(foregroundColor)
             tagWidth = rect.width()
 
