@@ -27,8 +27,8 @@ import smolt
 class Widget(SmoltWidget, ScreenWidget):
 
     # title and description at the top of the dialog window
-    title = i18n("Pardus hardware profiler")
-    desc = i18n("Pardus hardware profiler")
+    title = i18n("Share your hardware profile")
+    desc = i18n("Share your hardware profile")
     icon = ""
 
 
@@ -36,10 +36,10 @@ class Widget(SmoltWidget, ScreenWidget):
         apply(SmoltWidget.__init__, (self,) + args)
 
         # set texts
-        self.setName(i18n("Smolt"))
-        self.textSmolt.setText(i18n("Pardus hardware profiler gets your hardware info and sends it<br> to public Pardus server."))
+        self.setName(i18n("Hardware Profile"))
+        self.textSmolt.setText(i18n("You can help Pardus by sharing your hardware profile. Your hardware information will be collected and sent to Pardus anonymously."))
         self.privacyButton.setText(i18n("&Privacy policy"))
-        self.sendCheckBox.setText(i18n("&I want to share my hardware info"))
+        self.sendCheckBox.setText(i18n("&Share my hardware profile"))
 
         self.hdInfoListView.setSorting(-1)
 
