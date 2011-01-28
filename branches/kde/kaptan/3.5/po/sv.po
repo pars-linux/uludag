@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 16:28+0200\n"
+"POT-Creation-Date: 2011-01-28 12:44+0200\n"
 "PO-Revision-Date: 2008-09-10 16:37+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -17,47 +17,143 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/kaptan.py:128 src/kaptan.py:281 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
 #, fuzzy
 msgid "Welcome to Kaptan"
 msgstr "Välkommen till Kaptan Lots :)"
 
-#: src/kaptan.py:130
+#: src/kaptan.py:132
 msgid "&Back"
 msgstr "&Bakåt"
 
-#: src/kaptan.py:131
+#: src/kaptan.py:133
 msgid "&Next"
 msgstr "&Nästa"
 
-#: src/kaptan.py:132
+#: src/kaptan.py:134
 msgid "Finish"
 msgstr "Slutför"
 
-#: src/kaptan.py:271
+#: src/kaptan.py:273
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan körs redan!"
 
-#: src/screens/ScrGoodbye.py:29
-msgid "Enjoy with Pardus..."
-msgstr "Njut av Pardus..."
+#: src/screens/ScrPanel.py:31
+msgid "Configure your panel !"
+msgstr "Anpassa din panel !"
 
-#: src/screens/ScrNetwork.py:25
-msgid "Configure network settings..."
-msgstr "Anpassa nätverket"
+#: src/screens/ScrPanel.py:32
+msgid "Select the one you like..."
+msgstr "Välj den som passar dig..."
 
-#: src/screens/ScrNetwork.py:37
-msgid "<big>Loading...</big>"
-msgstr "<big>Laddar...</big>"
+#: src/screens/ScrPanel.py:41 src/screens/paneldlg.py:85
+msgid "Panel"
+msgstr "Panel"
 
-#: src/screens/kaptanMain.py:107
-msgid "KaptanUi"
-msgstr "KaptanUi"
-
-#: src/screens/kaptanMain.py:119
-msgid "Sample"
+#: src/screens/ScrPanel.py:42
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
 msgstr ""
+"Här kan du välja <b>stil</b> för ditt skrivbord. <b>Pardus</b> erbjuder dig "
+"lite ögongodis."
+
+#: src/screens/ScrPanel.py:44
+msgid "Preview"
+msgstr "Förhandsgranskning"
+
+#: src/screens/ScrPanel.py:45
+msgid "Use enhanced Kickoff style menu"
+msgstr "Använd utökad Kickoff-meny"
+
+#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
+msgid "Thumbnails"
+msgstr "Minibild"
+
+#: src/screens/wallpaperdlg.py:131
+msgid "Wallpaper"
+msgstr "Bakgrundsbild"
+
+#: src/screens/wallpaperdlg.py:133
+msgid "toolTip"
+msgstr "toolTip"
+
+#: src/screens/wallpaperdlg.py:135
+msgid "Choose Wallpaper"
+msgstr "Välj bakgrundsbild"
+
+#: src/screens/goodbyedlg.py:154
+msgid "Goodbye"
+msgstr "Farväl"
+
+#: src/screens/goodbyedlg.py:155
+msgid "Tasma"
+msgstr "Tasma"
+
+#: src/screens/goodbyedlg.py:156
+msgid ""
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr ""
+"<p>TASMA är ett anpassningsprogram för ditt Pardus operativsystem. </p>"
+
+#: src/screens/goodbyedlg.py:157 src/screens/goodbyedlg.py:159
+#: src/screens/goodbyedlg.py:163
+msgid "Start"
+msgstr "Starta"
+
+#: src/screens/goodbyedlg.py:158
+msgid "User Groups and Help Pages"
+msgstr "Användargrupper och hjälpsidor"
+
+#: src/screens/goodbyedlg.py:160
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr ""
+"<p>Pardus gemenskap, användarförteckning, IRC-kanaler, wiki med mera.</p>"
+
+#: src/screens/goodbyedlg.py:161
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
+msgstr ""
+"<p>Grattis! Nu har du gått igenom alla steg. Du kan fortsätta använda Pardus "
+"och prova programmen nedan.</p>"
+
+#: src/screens/goodbyedlg.py:162
+msgid "Screen Resolution"
+msgstr "Bildskärmsupplösning"
+
+#: src/screens/goodbyedlg.py:164
+msgid ""
+"<p><p>Your screen resolution is very low. It may be wrong. You can change "
+"your resolution bye using <b>Display Manager</b>.</p></p>"
+msgstr ""
+"<p><p>Din bildskärmsupplösning är mycket låg, den kan vara felaktig. Du kan "
+"ändra upplösning med <b>Bildskärmshanteraren</b>.</p></p>"
+
+#: src/screens/ScrKeyboard.py:26
+msgid "Keyboard Settings"
+msgstr "Tangentbordsinställningar"
+
+#: src/screens/ScrKeyboard.py:27
+msgid "Configure your keyboard"
+msgstr "Anpassa tangentbordet"
+
+#: src/screens/ScrKeyboard.py:37 src/screens/keyboarddlg.py:668
+msgid "Keyboard"
+msgstr "Tangentbord"
+
+#: src/screens/ScrKeyboard.py:38
+msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
+msgstr "<p align=\"left\">Här kan du anpassa ditt tangentbord.</p>"
+
+#: src/screens/smoltdlg.py:208 src/screens/ScrSmolt.py:39
+msgid "Hardware Profile"
+msgstr ""
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Nätverk"
 
 #: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
 #: src/screens/welcomedlg.py:76
@@ -78,138 +174,13 @@ msgid ""
 "applications, play games and much more!"
 msgstr ""
 
-#: src/screens/paneldlg.py:85 src/screens/ScrPanel.py:41
-msgid "Panel"
-msgstr "Panel"
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr "Anpassa nätverket"
 
-#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:60
-msgid "Multiple"
-msgstr "Flera skrivbord"
-
-#: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
-msgid "Thumbnails"
-msgstr "Minibild"
-
-#: src/screens/wallpaperdlg.py:131
-msgid "Wallpaper"
-msgstr "Bakgrundsbild"
-
-#: src/screens/wallpaperdlg.py:133
-msgid "toolTip"
-msgstr "toolTip"
-
-#: src/screens/wallpaperdlg.py:135
-msgid "Choose Wallpaper"
-msgstr "Välj bakgrundsbild"
-
-#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
-msgid "Keyboard Layouts"
-msgstr "Tangentbordslayout"
-
-#: src/screens/keyboarddlg.py:668 src/screens/ScrKeyboard.py:37
-msgid "Keyboard"
-msgstr "Tangentbord"
-
-#: src/screens/keyboarddlg.py:672
-msgid "Try:"
-msgstr "Testa:"
-
-#: src/screens/ScrWallpaper.py:46
-msgid "Enjoy with wonderful backgrounds..."
-msgstr "Njut av underbara bakgrundsbilder..."
-
-#: src/screens/ScrWallpaper.py:53
-msgid "Show all resolutions."
-msgstr "Visa alla upplösningar"
-
-#: src/screens/ScrWallpaper.py:54
-msgid "Old Wallpaper"
-msgstr "Gamla bilder"
-
-#: src/screens/ScrWallpaper.py:55
-msgid "No Wallpaper"
-msgstr "Ingen bild"
-
-#: src/screens/photodlg.py:66
-msgid "Photo"
-msgstr "Foto"
-
-#: src/screens/photodlg.py:67
-msgid "Shot"
-msgstr "Ta"
-
-#: src/screens/photodlg.py:68
-msgid "Put my photo to:"
-msgstr "Lägg min bild i:"
-
-#: src/screens/photodlg.py:69
-msgid "E-mail clients"
-msgstr "Epostklient"
-
-#: src/screens/photodlg.py:70
-msgid "Instant messengers"
-msgstr "Direktmeddelandeklienter"
-
-#: src/screens/photodlg.py:71
-msgid "Login Screen (KDM)"
-msgstr "Startskärm (KDM)"
-
-#: src/screens/smoltdlg.py:58 src/screens/ScrSmolt.py:38
-#, fuzzy
-msgid "Smolt"
-msgstr "Ta"
-
-#: src/screens/networkdlg.py:46
-msgid "Network"
-msgstr "Nätverk"
-
-#: src/screens/ScrPackage.py:29
-msgid "Package Manager"
-msgstr "Pakethanteraren"
-
-#: src/screens/ScrPackage.py:30
-msgid "Configure package manager settings..."
-msgstr "Anpassa Pakethanteraren"
-
-#: src/screens/ScrPackage.py:44 src/screens/packagedlg.py:89
-msgid "Package"
-msgstr "Paket"
-
-#: src/screens/ScrPackage.py:45
-msgid ""
-"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically  from the system tray with package "
-"manager."
-msgstr ""
-"<b>Pakethanteraren</b> är den grafiska framänden till <b>PiSi</b>. Du kan "
-"enkelt installera nya program och uppdatera ditt system. Du kan också se "
-"resultatet av den automatiska uppdateringskontrollen i systembrickan med "
-"Pakethanteraren."
-
-#: src/screens/ScrPackage.py:46 src/screens/packagedlg.py:94
-msgid "tooltipPisiPopup"
-msgstr "tooltipPisiPopup"
-
-#: src/screens/ScrPackage.py:47
-msgid "Updates"
-msgstr "Uppdateringar"
-
-#: src/screens/ScrPackage.py:48
-msgid "Show in system tray"
-msgstr "Aktivera systembrickan"
-
-#: src/screens/ScrPackage.py:49
-msgid "Check updates automatically for every"
-msgstr "Sök automatiskt efter uppdateringar varje"
-
-#: src/screens/ScrPackage.py:50
-msgid " hours"
-msgstr " timmar"
-
-#: src/screens/summarydlg.py:64
-msgid "SummaryWidget"
-msgstr "Sammanställning"
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Laddar...</big>"
 
 #: src/screens/ScrMultiple.py:26
 msgid "Multiple Desktops"
@@ -218,6 +189,10 @@ msgstr "Flera skrivbord"
 #: src/screens/ScrMultiple.py:27
 msgid "Configure virtual desktops.."
 msgstr "Anpassa flera skrivbord"
+
+#: src/screens/ScrMultiple.py:60 src/screens/multipledlg.py:135
+msgid "Multiple"
+msgstr "Flera skrivbord"
 
 #: src/screens/ScrMultiple.py:61
 msgid ""
@@ -232,17 +207,17 @@ msgstr "Mushjul över skrivbordets bakgrund byter skrivbord"
 msgid " Desktop(s)"
 msgstr " skrivbord"
 
-#: src/screens/ScrKeyboard.py:26
-msgid "Keyboard Settings"
-msgstr "Tangentbordsinställningar"
+#: src/screens/kaptanMain.py:107
+msgid "KaptanUi"
+msgstr "KaptanUi"
 
-#: src/screens/ScrKeyboard.py:27
-msgid "Configure your keyboard"
-msgstr "Anpassa tangentbordet"
+#: src/screens/kaptanMain.py:119
+msgid "Sample"
+msgstr ""
 
-#: src/screens/ScrKeyboard.py:38
-msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr "<p align=\"left\">Här kan du anpassa ditt tangentbord.</p>"
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
+msgstr "Njut av Pardus..."
 
 #: src/screens/ScrMouse.py:27
 msgid "Mouse Settings"
@@ -294,129 +269,236 @@ msgstr "&Enkelklicka för att öppna filer och kataloger"
 msgid "Dou&ble-click to open files and folders"
 msgstr "&Dubbelklicka för att öppna filer och kataloger"
 
-#: src/screens/ScrSmolt.py:29 src/screens/ScrSmolt.py:30
-msgid "Pardus hardware profiler"
-msgstr ""
+#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
+msgid "Keyboard Layouts"
+msgstr "Tangentbordslayout"
 
-#: src/screens/ScrSmolt.py:39
-msgid ""
-"Pardus hardware profiler gets your hardware info and sends it<br> to public "
-"Pardus server."
-msgstr ""
-
-#: src/screens/ScrSmolt.py:40
-msgid "Show details"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:41
-msgid "Privacy policy"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:42
-msgid "I want to share my hardware info"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:58
-#, fuzzy
-msgid "Label"
-msgstr "Panel"
-
-#: src/screens/ScrSmolt.py:60
-msgid "Data"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:86
-msgid "Smolt Detailes Wigdet"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:92
-#, fuzzy
-msgid "Smolt Privacy Widget"
-msgstr "Sammanställning"
-
-#: src/screens/ScrSmolt.py:105
-msgid "Sending..."
-msgstr ""
-
-#: src/screens/goodbyedlg.py:154
-msgid "Goodbye"
-msgstr "Farväl"
-
-#: src/screens/goodbyedlg.py:155
-msgid "Tasma"
-msgstr "Tasma"
-
-#: src/screens/goodbyedlg.py:156
-msgid ""
-"<p>TASMA is a configuration application for Pardus Operating System. </p>"
-msgstr ""
-"<p>TASMA är ett anpassningsprogram för ditt Pardus operativsystem. </p>"
-
-#: src/screens/goodbyedlg.py:157 src/screens/goodbyedlg.py:159
-#: src/screens/goodbyedlg.py:163
-msgid "Start"
-msgstr "Starta"
-
-#: src/screens/goodbyedlg.py:158
-msgid "User Groups and Help Pages"
-msgstr "Användargrupper och hjälpsidor"
-
-#: src/screens/goodbyedlg.py:160
-msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
-msgstr ""
-"<p>Pardus gemenskap, användarförteckning, IRC-kanaler, wiki med mera.</p>"
-
-#: src/screens/goodbyedlg.py:161
-msgid ""
-"<p>Congratulations! You have finished all steps. You can now continue using "
-"Pardus and try applications below.</p>"
-msgstr ""
-"<p>Grattis! Nu har du gått igenom alla steg. Du kan fortsätta använda Pardus "
-"och prova programmen nedan.</p>"
-
-#: src/screens/goodbyedlg.py:162
-msgid "Screen Resolution"
-msgstr "Bildskärmsupplösning"
-
-#: src/screens/goodbyedlg.py:164
-msgid ""
-"<p><p>Your screen resolution is very low. It may be wrong. You can change "
-"your resolution bye using <b>Display Manager</b>.</p></p>"
-msgstr ""
-"<p><p>Din bildskärmsupplösning är mycket låg, den kan vara felaktig. Du kan "
-"ändra upplösning med <b>Bildskärmshanteraren</b>.</p></p>"
+#: src/screens/keyboarddlg.py:672
+msgid "Try:"
+msgstr "Testa:"
 
 #: src/screens/mousedlg.py:110 src/screens/mousedlg.py:115
 msgid "deneme"
 msgstr ""
 
-#: src/screens/ScrPanel.py:31
-msgid "Configure your panel !"
-msgstr "Anpassa din panel !"
+#: src/screens/packagedlg.py:89 src/screens/ScrPackage.py:44
+msgid "Package"
+msgstr "Paket"
 
-#: src/screens/ScrPanel.py:32
-msgid "Select the one you like..."
-msgstr "Välj den som passar dig..."
+#: src/screens/packagedlg.py:94 src/screens/ScrPackage.py:46
+msgid "tooltipPisiPopup"
+msgstr "tooltipPisiPopup"
 
-#: src/screens/ScrPanel.py:42
+#: src/screens/ScrPackage.py:29
+msgid "Package Manager"
+msgstr "Pakethanteraren"
+
+#: src/screens/ScrPackage.py:30
+msgid "Configure package manager settings..."
+msgstr "Anpassa Pakethanteraren"
+
+#: src/screens/ScrPackage.py:45
 msgid ""
-"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
-"some eye candy styles for you."
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
 msgstr ""
-"Här kan du välja <b>stil</b> för ditt skrivbord. <b>Pardus</b> erbjuder dig "
-"lite ögongodis."
+"<b>Pakethanteraren</b> är den grafiska framänden till <b>PiSi</b>. Du kan "
+"enkelt installera nya program och uppdatera ditt system. Du kan också se "
+"resultatet av den automatiska uppdateringskontrollen i systembrickan med "
+"Pakethanteraren."
 
-#: src/screens/ScrPanel.py:44
-msgid "Preview"
-msgstr "Förhandsgranskning"
+#: src/screens/ScrPackage.py:47
+msgid "Updates"
+msgstr "Uppdateringar"
 
-#: src/screens/ScrPanel.py:45
-msgid "Use enhanced Kickoff style menu"
-msgstr "Använd utökad Kickoff-meny"
+#: src/screens/ScrPackage.py:48
+msgid "Show in system tray"
+msgstr "Aktivera systembrickan"
 
-#: src/screens/smoltProgressPopup.py:45
-msgid "smoltProgressWidget"
+#: src/screens/ScrPackage.py:49
+msgid "Check updates automatically for every"
+msgstr "Sök automatiskt efter uppdateringar varje"
+
+#: src/screens/ScrPackage.py:50
+msgid " hours"
+msgstr " timmar"
+
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr "Foto"
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr "Ta"
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr "Lägg min bild i:"
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr "Epostklient"
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr "Direktmeddelandeklienter"
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr "Startskärm (KDM)"
+
+#: src/screens/ScrWallpaper.py:46
+msgid "Enjoy with wonderful backgrounds..."
+msgstr "Njut av underbara bakgrundsbilder..."
+
+#: src/screens/ScrWallpaper.py:53
+msgid "Show all resolutions."
+msgstr "Visa alla upplösningar"
+
+#: src/screens/ScrWallpaper.py:54
+msgid "Old Wallpaper"
+msgstr "Gamla bilder"
+
+#: src/screens/ScrWallpaper.py:55
+msgid "No Wallpaper"
+msgstr "Ingen bild"
+
+#: src/screens/ScrSmolt.py:30 src/screens/ScrSmolt.py:31
+msgid "Share your hardware profile"
 msgstr ""
+
+#: src/screens/ScrSmolt.py:40
+msgid ""
+"You can help Pardus by sharing your hardware profile. Your hardware "
+"information will be collected and sent to Pardus anonymously."
+msgstr ""
+
+#: src/screens/ScrSmolt.py:41
+msgid "&Privacy policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:42
+msgid "&Share my hardware profile"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:46
+#, fuzzy
+msgid "Label"
+msgstr "Panel"
+
+#: src/screens/ScrSmolt.py:48
+msgid "Value"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:64
+msgid "&Host Information"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:69
+msgid "&Privacy Policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:82
+msgid "UUID"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:83
+msgid "OS"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:84
+msgid "Default Run Level"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:85
+msgid "Language"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:86
+msgid "Platform"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:87
+msgid "BogoMIPS"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:88
+msgid "CPU Vendor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:89
+msgid "CPU Model"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:90
+msgid "CPU Stepping"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:91
+msgid "CPU Family"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:92
+msgid "CPU Model Num"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:93
+msgid "Number of CPUs"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:94
+msgid "CPU Speed"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:95
+msgid "System Memory"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:96
+msgid "System Swap"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:97
+msgid "Vendor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:98
+msgid "System"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:99
+msgid "Form Factor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:100
+msgid "Kernel"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:101
+msgid "SELinux Enabled"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:102
+msgid "SELinux Policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:103
+msgid "SELinux Enforce"
+msgstr ""
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr "Sammanställning"
+
+#, fuzzy
+#~ msgid "Smolt"
+#~ msgstr "Ta"
+
+#, fuzzy
+#~ msgid "Smolt Privacy Widget"
+#~ msgstr "Sammanställning"
 
 #~ msgid "Kaptan Welcome Wizard"
 #~ msgstr "Kaptan Lots"

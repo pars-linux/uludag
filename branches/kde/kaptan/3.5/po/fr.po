@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 16:28+0200\n"
+"POT-Creation-Date: 2011-01-28 12:44+0200\n"
 "PO-Revision-Date: 2008-06-27 03:20+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: French <pardus-translators@liste.pardus.org.tr>\n"
@@ -16,74 +16,55 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/kaptan.py:128 src/kaptan.py:281 src/screens/ScrWelcome.py:24
+#: src/kaptan.py:130 src/kaptan.py:283 src/screens/ScrWelcome.py:24
 #, fuzzy
 msgid "Welcome to Kaptan"
 msgstr "Bienvenue chez l'assistant Kaptan :)"
 
-#: src/kaptan.py:130
+#: src/kaptan.py:132
 msgid "&Back"
 msgstr "&Retour"
 
-#: src/kaptan.py:131
+#: src/kaptan.py:133
 msgid "&Next"
 msgstr "Suivan&t"
 
-#: src/kaptan.py:132
+#: src/kaptan.py:134
 msgid "Finish"
 msgstr "Terminer"
 
-#: src/kaptan.py:271
+#: src/kaptan.py:273
 #, fuzzy
 msgid "Kaptan is already running."
 msgstr "Kaptan est déjà en cours d'exécution !"
 
-#: src/screens/ScrGoodbye.py:29
-msgid "Enjoy with Pardus..."
-msgstr "Savourez avec Pardus..."
+#: src/screens/ScrPanel.py:31
+msgid "Configure your panel !"
+msgstr "Configurer votre panel !"
 
-#: src/screens/ScrNetwork.py:25
-msgid "Configure network settings..."
-msgstr "Configuration des paramètres réseau..."
+#: src/screens/ScrPanel.py:32
+msgid "Select the one you like..."
+msgstr "Sélectionnez celui que vous préférez..."
 
-#: src/screens/ScrNetwork.py:37
-msgid "<big>Loading...</big>"
-msgstr "<big>Chargement...</big>"
-
-#: src/screens/kaptanMain.py:107
-msgid "KaptanUi"
-msgstr "KaptanUi"
-
-#: src/screens/kaptanMain.py:119
-msgid "Sample"
-msgstr ""
-
-#: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
-#: src/screens/welcomedlg.py:76
-msgid "Welcome"
-msgstr "Bienvenue"
-
-#: src/screens/ScrWelcome.py:33
-msgid ""
-"<b>Kaptan</b> will help you personalize your Pardus workspace easily and "
-"quickly.<br/><br/>Please click <b>next</b> in order to begin."
-msgstr ""
-
-#: src/screens/ScrWelcome.py:34
-msgid ""
-"<b>Pardus</b> is a reliable, secure, fast and user friendly operating system."
-"<br/><br/>With Pardus, you can connect to the internet, read your e-mails, "
-"work with your office documents, watch movies, play music, develop "
-"applications, play games and much more!"
-msgstr ""
-
-#: src/screens/paneldlg.py:85 src/screens/ScrPanel.py:41
+#: src/screens/ScrPanel.py:41 src/screens/paneldlg.py:85
 msgid "Panel"
 msgstr "Panel"
 
-#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:60
-msgid "Multiple"
-msgstr "Multiple"
+#: src/screens/ScrPanel.py:42
+msgid ""
+"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
+"some eye candy styles for you."
+msgstr ""
+"Ici, vous pouvez sélectionner le <b>style</b> de votre bureau. <b>Pardus</b> "
+"vous fournit quelques styles agréables à regarder."
+
+#: src/screens/ScrPanel.py:44
+msgid "Preview"
+msgstr "Prévisualisation"
+
+#: src/screens/ScrPanel.py:45
+msgid "Use enhanced Kickoff style menu"
+msgstr "Utiliser le style de menu Kickoff amélioré"
 
 #: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
 msgid "Thumbnails"
@@ -101,247 +82,6 @@ msgstr "indice"
 #, fuzzy
 msgid "Choose Wallpaper"
 msgstr "Aucun fond d'écran"
-
-#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
-msgid "Keyboard Layouts"
-msgstr ""
-
-#: src/screens/keyboarddlg.py:668 src/screens/ScrKeyboard.py:37
-msgid "Keyboard"
-msgstr ""
-
-#: src/screens/keyboarddlg.py:672
-msgid "Try:"
-msgstr ""
-
-#: src/screens/ScrWallpaper.py:46
-msgid "Enjoy with wonderful backgrounds..."
-msgstr "Appréciez avec des fonds d'écran magnifiques..."
-
-#: src/screens/ScrWallpaper.py:53
-msgid "Show all resolutions."
-msgstr "Montrer toutes les résolutions."
-
-#: src/screens/ScrWallpaper.py:54
-msgid "Old Wallpaper"
-msgstr "Fond d'écran anciens"
-
-#: src/screens/ScrWallpaper.py:55
-msgid "No Wallpaper"
-msgstr "Aucun fond d'écran"
-
-#: src/screens/photodlg.py:66
-msgid "Photo"
-msgstr "Photo"
-
-#: src/screens/photodlg.py:67
-msgid "Shot"
-msgstr "Shot"
-
-#: src/screens/photodlg.py:68
-msgid "Put my photo to:"
-msgstr "Mettre ma photo à :"
-
-#: src/screens/photodlg.py:69
-msgid "E-mail clients"
-msgstr "Clients de messagerie"
-
-#: src/screens/photodlg.py:70
-msgid "Instant messengers"
-msgstr "Clients de messagerie instantannée"
-
-#: src/screens/photodlg.py:71
-msgid "Login Screen (KDM)"
-msgstr "Écran de Login (KDM)"
-
-#: src/screens/smoltdlg.py:58 src/screens/ScrSmolt.py:38
-#, fuzzy
-msgid "Smolt"
-msgstr "Shot"
-
-#: src/screens/networkdlg.py:46
-msgid "Network"
-msgstr "Réseau"
-
-#: src/screens/ScrPackage.py:29
-msgid "Package Manager"
-msgstr "Gestionnaire de paquets"
-
-#: src/screens/ScrPackage.py:30
-msgid "Configure package manager settings..."
-msgstr "Configurer les options du gestionnaire de paquets..."
-
-#: src/screens/ScrPackage.py:44 src/screens/packagedlg.py:89
-msgid "Package"
-msgstr "Paquet"
-
-#: src/screens/ScrPackage.py:45
-msgid ""
-"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically  from the system tray with package "
-"manager."
-msgstr ""
-"<b>Package-manager</b> est l'interface graphique de <b>PiSi</b>. Vous pouvez "
-"intaller facilement de nouveau programmes et mettre à jour votre système. "
-"Vous pouvez également voir les nouvelles mises à jour de programmes "
-"périodiquement depuis la zone d'icônes à l'aide de package manager."
-
-#: src/screens/ScrPackage.py:46 src/screens/packagedlg.py:94
-msgid "tooltipPisiPopup"
-msgstr "tooltipPisiPopup"
-
-#: src/screens/ScrPackage.py:47
-msgid "Updates"
-msgstr "Mises à jour"
-
-#: src/screens/ScrPackage.py:48
-msgid "Show in system tray"
-msgstr "Faire apparaître dans la zone d'icônes"
-
-#: src/screens/ScrPackage.py:49
-msgid "Check updates automatically for every"
-msgstr "Rechercher les mises à jour automatiquement toutes les "
-
-#: src/screens/ScrPackage.py:50
-msgid " hours"
-msgstr "heures"
-
-#: src/screens/summarydlg.py:64
-msgid "SummaryWidget"
-msgstr "WidgetRésumé"
-
-#: src/screens/ScrMultiple.py:26
-msgid "Multiple Desktops"
-msgstr "Bureaux multiples"
-
-#: src/screens/ScrMultiple.py:27
-msgid "Configure virtual desktops.."
-msgstr "Configurer des bureaux virtuels.."
-
-#: src/screens/ScrMultiple.py:61
-msgid ""
-"<p>In this module, you can configure how many virtual desktops you want.</p>"
-msgstr ""
-"<p>Dans ce module, vous pouvez configurer le nombre de bureaux virtuels que "
-"vous voulez.</p>"
-
-#: src/screens/ScrMultiple.py:62
-msgid "Mouse wheel over desktop background switches desktop."
-msgstr ""
-"Utiliser la roulette de la souris sur le fond d'écran change le bureau."
-
-#: src/screens/ScrMultiple.py:63
-msgid " Desktop(s)"
-msgstr " Bureau(x)"
-
-#: src/screens/ScrKeyboard.py:26
-#, fuzzy
-msgid "Keyboard Settings"
-msgstr "Paramétrage de la souris"
-
-#: src/screens/ScrKeyboard.py:27
-#, fuzzy
-msgid "Configure your keyboard"
-msgstr "Paramétrer la souris"
-
-#: src/screens/ScrKeyboard.py:38
-msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr ""
-
-#: src/screens/ScrMouse.py:27
-msgid "Mouse Settings"
-msgstr "Paramétrage de la souris"
-
-#: src/screens/ScrMouse.py:28
-msgid "Configure your mouse"
-msgstr "Paramétrer la souris"
-
-#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:106
-msgid "Mouse"
-msgstr "Souris"
-
-#: src/screens/ScrMouse.py:40
-#, fuzzy
-msgid "Reverse scrolling direction"
-msgstr "Scroll inverse"
-
-#: src/screens/ScrMouse.py:41
-msgid ""
-"<p align='left'>The <b>clicking behavior</b> defines how many times you want "
-"to click when you are opening a file.<br/><br/>If you are <b>left handed</"
-"b>, you may prefer to swap the left and right buttons of your pointing "
-"device.</p>"
-msgstr ""
-
-#: src/screens/ScrMouse.py:42
-msgid "Button Order"
-msgstr "Ordre des boutons"
-
-#: src/screens/ScrMouse.py:43
-msgid "Left Hand"
-msgstr "Main Gauche"
-
-#: src/screens/ScrMouse.py:44
-msgid "Right Hand"
-msgstr "Main Droite"
-
-#: src/screens/ScrMouse.py:45
-#, fuzzy
-msgid "Clicking Behaviour"
-msgstr "Comportement du clic"
-
-#: src/screens/ScrMouse.py:46
-msgid "&Single-click to open files and folders"
-msgstr "Clic &Simple pour ouvrir les fichiers et les dossiers"
-
-#: src/screens/ScrMouse.py:47
-msgid "Dou&ble-click to open files and folders"
-msgstr "Dou&ble clic pour ouvrir fichiers et dossiers"
-
-#: src/screens/ScrSmolt.py:29 src/screens/ScrSmolt.py:30
-msgid "Pardus hardware profiler"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:39
-msgid ""
-"Pardus hardware profiler gets your hardware info and sends it<br> to public "
-"Pardus server."
-msgstr ""
-
-#: src/screens/ScrSmolt.py:40
-msgid "Show details"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:41
-msgid "Privacy policy"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:42
-msgid "I want to share my hardware info"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:58
-#, fuzzy
-msgid "Label"
-msgstr "Panel"
-
-#: src/screens/ScrSmolt.py:60
-msgid "Data"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:86
-msgid "Smolt Detailes Wigdet"
-msgstr ""
-
-#: src/screens/ScrSmolt.py:92
-#, fuzzy
-msgid "Smolt Privacy Widget"
-msgstr "WidgetRésumé"
-
-#: src/screens/ScrSmolt.py:105
-msgid "Sending..."
-msgstr ""
 
 #: src/screens/goodbyedlg.py:154
 msgid "Goodbye"
@@ -395,37 +135,379 @@ msgstr ""
 "inadéquate. Vous pouvez changer votre résolution en utilisant <b>Display "
 "Manager</b>.</p></p>"
 
+#: src/screens/ScrKeyboard.py:26
+#, fuzzy
+msgid "Keyboard Settings"
+msgstr "Paramétrage de la souris"
+
+#: src/screens/ScrKeyboard.py:27
+#, fuzzy
+msgid "Configure your keyboard"
+msgstr "Paramétrer la souris"
+
+#: src/screens/ScrKeyboard.py:37 src/screens/keyboarddlg.py:668
+msgid "Keyboard"
+msgstr ""
+
+#: src/screens/ScrKeyboard.py:38
+msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
+msgstr ""
+
+#: src/screens/smoltdlg.py:208 src/screens/ScrSmolt.py:39
+msgid "Hardware Profile"
+msgstr ""
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Réseau"
+
+#: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+#: src/screens/welcomedlg.py:76
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"<b>Kaptan</b> will help you personalize your Pardus workspace easily and "
+"quickly.<br/><br/>Please click <b>next</b> in order to begin."
+msgstr ""
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a reliable, secure, fast and user friendly operating system."
+"<br/><br/>With Pardus, you can connect to the internet, read your e-mails, "
+"work with your office documents, watch movies, play music, develop "
+"applications, play games and much more!"
+msgstr ""
+
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr "Configuration des paramètres réseau..."
+
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Chargement...</big>"
+
+#: src/screens/ScrMultiple.py:26
+msgid "Multiple Desktops"
+msgstr "Bureaux multiples"
+
+#: src/screens/ScrMultiple.py:27
+msgid "Configure virtual desktops.."
+msgstr "Configurer des bureaux virtuels.."
+
+#: src/screens/ScrMultiple.py:60 src/screens/multipledlg.py:135
+msgid "Multiple"
+msgstr "Multiple"
+
+#: src/screens/ScrMultiple.py:61
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr ""
+"<p>Dans ce module, vous pouvez configurer le nombre de bureaux virtuels que "
+"vous voulez.</p>"
+
+#: src/screens/ScrMultiple.py:62
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr ""
+"Utiliser la roulette de la souris sur le fond d'écran change le bureau."
+
+#: src/screens/ScrMultiple.py:63
+msgid " Desktop(s)"
+msgstr " Bureau(x)"
+
+#: src/screens/kaptanMain.py:107
+msgid "KaptanUi"
+msgstr "KaptanUi"
+
+#: src/screens/kaptanMain.py:119
+msgid "Sample"
+msgstr ""
+
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
+msgstr "Savourez avec Pardus..."
+
+#: src/screens/ScrMouse.py:27
+msgid "Mouse Settings"
+msgstr "Paramétrage de la souris"
+
+#: src/screens/ScrMouse.py:28
+msgid "Configure your mouse"
+msgstr "Paramétrer la souris"
+
+#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:106
+msgid "Mouse"
+msgstr "Souris"
+
+#: src/screens/ScrMouse.py:40
+#, fuzzy
+msgid "Reverse scrolling direction"
+msgstr "Scroll inverse"
+
+#: src/screens/ScrMouse.py:41
+msgid ""
+"<p align='left'>The <b>clicking behavior</b> defines how many times you want "
+"to click when you are opening a file.<br/><br/>If you are <b>left handed</"
+"b>, you may prefer to swap the left and right buttons of your pointing "
+"device.</p>"
+msgstr ""
+
+#: src/screens/ScrMouse.py:42
+msgid "Button Order"
+msgstr "Ordre des boutons"
+
+#: src/screens/ScrMouse.py:43
+msgid "Left Hand"
+msgstr "Main Gauche"
+
+#: src/screens/ScrMouse.py:44
+msgid "Right Hand"
+msgstr "Main Droite"
+
+#: src/screens/ScrMouse.py:45
+#, fuzzy
+msgid "Clicking Behaviour"
+msgstr "Comportement du clic"
+
+#: src/screens/ScrMouse.py:46
+msgid "&Single-click to open files and folders"
+msgstr "Clic &Simple pour ouvrir les fichiers et les dossiers"
+
+#: src/screens/ScrMouse.py:47
+msgid "Dou&ble-click to open files and folders"
+msgstr "Dou&ble clic pour ouvrir fichiers et dossiers"
+
+#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
+msgid "Keyboard Layouts"
+msgstr ""
+
+#: src/screens/keyboarddlg.py:672
+msgid "Try:"
+msgstr ""
+
 #: src/screens/mousedlg.py:110 src/screens/mousedlg.py:115
 msgid "deneme"
 msgstr ""
 
-#: src/screens/ScrPanel.py:31
-msgid "Configure your panel !"
-msgstr "Configurer votre panel !"
+#: src/screens/packagedlg.py:89 src/screens/ScrPackage.py:44
+msgid "Package"
+msgstr "Paquet"
 
-#: src/screens/ScrPanel.py:32
-msgid "Select the one you like..."
-msgstr "Sélectionnez celui que vous préférez..."
+#: src/screens/packagedlg.py:94 src/screens/ScrPackage.py:46
+msgid "tooltipPisiPopup"
+msgstr "tooltipPisiPopup"
 
-#: src/screens/ScrPanel.py:42
+#: src/screens/ScrPackage.py:29
+msgid "Package Manager"
+msgstr "Gestionnaire de paquets"
+
+#: src/screens/ScrPackage.py:30
+msgid "Configure package manager settings..."
+msgstr "Configurer les options du gestionnaire de paquets..."
+
+#: src/screens/ScrPackage.py:45
 msgid ""
-"Here, you can select a <b>style </b>for your desktop. <b>Pardus</b> provides "
-"some eye candy styles for you."
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
 msgstr ""
-"Ici, vous pouvez sélectionner le <b>style</b> de votre bureau. <b>Pardus</b> "
-"vous fournit quelques styles agréables à regarder."
+"<b>Package-manager</b> est l'interface graphique de <b>PiSi</b>. Vous pouvez "
+"intaller facilement de nouveau programmes et mettre à jour votre système. "
+"Vous pouvez également voir les nouvelles mises à jour de programmes "
+"périodiquement depuis la zone d'icônes à l'aide de package manager."
 
-#: src/screens/ScrPanel.py:44
-msgid "Preview"
-msgstr "Prévisualisation"
+#: src/screens/ScrPackage.py:47
+msgid "Updates"
+msgstr "Mises à jour"
 
-#: src/screens/ScrPanel.py:45
-msgid "Use enhanced Kickoff style menu"
-msgstr "Utiliser le style de menu Kickoff amélioré"
+#: src/screens/ScrPackage.py:48
+msgid "Show in system tray"
+msgstr "Faire apparaître dans la zone d'icônes"
 
-#: src/screens/smoltProgressPopup.py:45
-msgid "smoltProgressWidget"
+#: src/screens/ScrPackage.py:49
+msgid "Check updates automatically for every"
+msgstr "Rechercher les mises à jour automatiquement toutes les "
+
+#: src/screens/ScrPackage.py:50
+msgid " hours"
+msgstr "heures"
+
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr "Photo"
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr "Shot"
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr "Mettre ma photo à :"
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr "Clients de messagerie"
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr "Clients de messagerie instantannée"
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr "Écran de Login (KDM)"
+
+#: src/screens/ScrWallpaper.py:46
+msgid "Enjoy with wonderful backgrounds..."
+msgstr "Appréciez avec des fonds d'écran magnifiques..."
+
+#: src/screens/ScrWallpaper.py:53
+msgid "Show all resolutions."
+msgstr "Montrer toutes les résolutions."
+
+#: src/screens/ScrWallpaper.py:54
+msgid "Old Wallpaper"
+msgstr "Fond d'écran anciens"
+
+#: src/screens/ScrWallpaper.py:55
+msgid "No Wallpaper"
+msgstr "Aucun fond d'écran"
+
+#: src/screens/ScrSmolt.py:30 src/screens/ScrSmolt.py:31
+msgid "Share your hardware profile"
 msgstr ""
+
+#: src/screens/ScrSmolt.py:40
+msgid ""
+"You can help Pardus by sharing your hardware profile. Your hardware "
+"information will be collected and sent to Pardus anonymously."
+msgstr ""
+
+#: src/screens/ScrSmolt.py:41
+msgid "&Privacy policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:42
+msgid "&Share my hardware profile"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:46
+#, fuzzy
+msgid "Label"
+msgstr "Panel"
+
+#: src/screens/ScrSmolt.py:48
+msgid "Value"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:64
+msgid "&Host Information"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:69
+msgid "&Privacy Policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:82
+msgid "UUID"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:83
+msgid "OS"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:84
+msgid "Default Run Level"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:85
+msgid "Language"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:86
+msgid "Platform"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:87
+msgid "BogoMIPS"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:88
+msgid "CPU Vendor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:89
+msgid "CPU Model"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:90
+msgid "CPU Stepping"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:91
+msgid "CPU Family"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:92
+msgid "CPU Model Num"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:93
+msgid "Number of CPUs"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:94
+msgid "CPU Speed"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:95
+msgid "System Memory"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:96
+msgid "System Swap"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:97
+msgid "Vendor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:98
+msgid "System"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:99
+msgid "Form Factor"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:100
+msgid "Kernel"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:101
+msgid "SELinux Enabled"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:102
+msgid "SELinux Policy"
+msgstr ""
+
+#: src/screens/ScrSmolt.py:103
+msgid "SELinux Enforce"
+msgstr ""
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr "WidgetRésumé"
+
+#, fuzzy
+#~ msgid "Smolt"
+#~ msgstr "Shot"
+
+#, fuzzy
+#~ msgid "Smolt Privacy Widget"
+#~ msgstr "WidgetRésumé"
 
 #~ msgid "Kaptan Welcome Wizard"
 #~ msgstr "Assistant de bienvenue Kaptan"
