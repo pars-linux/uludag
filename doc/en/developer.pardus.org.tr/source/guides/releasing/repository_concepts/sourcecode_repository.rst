@@ -67,13 +67,13 @@ The under development package source files are included in this folder. This mea
 whenever a package maintainer changes some code on his/her packages, it should
 be committed a related devel repository folder.
 
-This folder may contain alfa, beta or latest ubstable releases of packages.
+This folder may contain alfa, beta or latest unstable releases of packages.
 
 testing Folder
 ^^^^^^^^^^^^^^
 
 This folder includes package source files which obtains their stable releases. In
-other words while devel folder can contain unstable packages stable can not.
+other words while devel folder can contain unstable packages testing can not.
 
 But some exceptions can also be exist, if you are not sure please ask Pardus
 `devel list`_.
