@@ -1,3 +1,12 @@
+2011-01-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Reset the warning message 
+
+2011-01-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Disable hide animation which causes freeze on some systems . 
+
+2011-01-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update changelog, ready to release 
+
 2011-01-27 Gökmen Göksel <gokmen@pardus.org.tr>
          * - catch all exceptions 
 
