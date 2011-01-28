@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-01-28 16:14+0200\n"
-"PO-Revision-Date: 2010-12-29 16:44+0100\n"
+"PO-Revision-Date: 2011-01-28 16:15+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
@@ -41,12 +41,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Onwikkelaar"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Onwikkelaar"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -93,16 +93,24 @@ msgid "Packages Require System Restart"
 msgstr "Pakketten vereisen herstart systeem"
 
 #: src/basketdialog.py:182
-msgid "You must restart related system services for the updated package(s) to take effect"
-msgstr "Herstart gerelateerde systeemdiensten voor het actief maken van de bijgewerkte pakketten"
+msgid ""
+"You must restart related system services for the updated package(s) to take "
+"effect"
+msgstr ""
+"Herstart gerelateerde systeemdiensten voor het actief maken van de "
+"bijgewerkte pakketten"
 
 #: src/basketdialog.py:185
 msgid "Packages Require Service Restart"
 msgstr "Pakketten vereisen herstart systeemdienst"
 
 #: src/basketdialog.py:196
-msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
-msgstr "Geselecteerde pakketten zijn belangrijk voor het systeem. Door ze te verwijderen kan het systeem onbruikbaar worden."
+msgid ""
+"Selected packages are considered critical for the system. Removing them may "
+"cause your system to be unusable."
+msgstr ""
+"Geselecteerde pakketten zijn belangrijk voor het systeem. Door ze te "
+"verwijderen kan het systeem onbruikbaar worden."
 
 #: src/basketdialog.py:199 src/settingsdialog.py:174
 msgid "Warning"
@@ -113,8 +121,12 @@ msgid "Critical Packages"
 msgstr "Kritieke pakketten"
 
 #: src/basketdialog.py:211 src/pmwindow.py:144
-msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Geselecteerde pakketten zijn reeds geïnstalleerd. <br>Bij doorgaan, worden deze pakketten opnieuw geïnstalleerd."
+msgid ""
+"Selected packages are already installed.<br>If you continue, the packages "
+"will be reinstalled"
+msgstr ""
+"Geselecteerde pakketten zijn reeds geïnstalleerd. <br>Bij doorgaan, worden "
+"deze pakketten opnieuw geïnstalleerd."
 
 #: src/basketdialog.py:213 src/pmwindow.py:146
 msgid "Already Installed Packages"
@@ -267,8 +279,13 @@ msgstr "U bent niet gemachtigd om deze handeling uit te voeren."
 
 #: src/pmutils.py:82
 #, python-format
-msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
-msgstr "Pakket <b>%s</b> is niet in de softwarebron gevonden.<br>Het kan eventueel opgewaardeerd of verwijderd zijn uit de bron.<br> Ververs de informatie van de softwarebron."
+msgid ""
+"Package <b>%s</b> not found in repositories.<br>It may be upgraded or "
+"removed from the repository.<br>Please try upgrading repository informations."
+msgstr ""
+"Pakket <b>%s</b> is niet in de softwarebron gevonden.<br>Het kan eventueel "
+"opgewaardeerd of verwijderd zijn uit de bron.<br> Ververs de informatie van "
+"de softwarebron."
 
 #: src/pmutils.py:87
 msgid "Mixing file names and package names not supported yet."
@@ -333,8 +350,12 @@ msgid "Not a valid repository name"
 msgstr "Geen geldige bronnaam"
 
 #: src/settingsdialog.py:245
-msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
-msgstr "<qt>Adres van softwarebron dient te eindigen op XML of XML.BuZa of x suffix. <p>Probeer hetopnieuw.</qt>"
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please "
+"try again.</qt>"
+msgstr ""
+"<qt>Adres van softwarebron dient te eindigen op XML of XML.BuZa of x suffix. "
+"<p>Probeer hetopnieuw.</qt>"
 
 #: src/statemanager.py:85 src/statemanager.py:86
 msgid "Installing Package(s)"
@@ -426,40 +447,66 @@ msgid "You have selected the following package(s) to modify:"
 msgstr "De volgende  pakket(ten) zijn geselecteerd om te wijzigen:"
 
 #: src/statemanager.py:126 ui/ui_basketdialog.py:187
-msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook geïnstalleerd zullen worden:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook "
+"geïnstalleerd zullen worden:"
 
 #: src/statemanager.py:127
-msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
-msgstr "Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook verwijderd zullen worden:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
+msgstr ""
+"Keer afhankelijkheden van de geselecteerde pakket(ten) om welk ook "
+"verwijderd zullen worden:"
 
 #: src/statemanager.py:128
-msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt zullen worden:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) welk ook bijgewerkt "
+"zullen worden:"
 
 #: src/statemanager.py:129
-msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Extra afhankelijkheden van de geselecteerde pakket(ten) die ook gewijzigd worden:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"modified:"
+msgstr ""
+"Extra afhankelijkheden van de geselecteerde pakket(ten) die ook gewijzigd "
+"worden:"
 
 #: src/statemanager.py:168
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte van <b>%2</b>"
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
+"van <b>%2</b>"
 
 #: src/statemanager.py:171
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> omgekeerde afhankelijkheden met een totale grootte van <b>%2</"
+"b>"
 
 #: src/statemanager.py:173
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr ""
+"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
 
 #: src/statemanager.py:174
 msgid "in your basket."
 msgstr "in uw mandje."
 
 #: src/statemanager.py:209
-msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten kunnen niet samen geïnstalleerd worden."
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Geselecteerde pakketten [%1] zijn in conflict met elkaar. Deze pakketten "
+"kunnen niet samen geïnstalleerd worden."
 
 #: src/statemanager.py:210 src/statemanager.py:218
 msgid "Conflict Error"
@@ -490,12 +537,12 @@ msgid "Update"
 msgstr "Opwaarderen"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Negeren"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "Opwaarderingen tonen"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Negeren"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -579,8 +626,12 @@ msgid "Package Manager Quick Install"
 msgstr "Snel installeren pakketbeheer"
 
 #: ui/ui_pminstall.py:84
-msgid "Following packages are selected to install. Do you want to install these packages ?"
-msgstr "De volgende pakketten zijn geselecteerd om geïnstalleerd te worden. Deze pakketten installeren?"
+msgid ""
+"Following packages are selected to install. Do you want to install these "
+"packages ?"
+msgstr ""
+"De volgende pakketten zijn geselecteerd om geïnstalleerd te worden. Deze "
+"pakketten installeren?"
 
 #: ui/ui_pminstall.py:86
 msgid "Install"
@@ -592,7 +643,7 @@ msgstr "Annuleren"
 
 #: ui/ui_preview.py:52
 msgid "Preview"
-msgstr ""
+msgstr "Voorbeeld"
 
 #: ui/ui_progressdialog_v4.py:196
 msgid "Alt+C"
@@ -667,9 +718,8 @@ msgid "&General Settings"
 msgstr "Al&gemene instellingen"
 
 #: ui/ui_settingsdialog.py:411
-#, fuzzy
 msgid "Cache Limit"
-msgstr "Pakketlijst"
+msgstr "Bufferlimiet"
 
 #: ui/ui_settingsdialog.py:412
 msgid "&Use hard disk cache for downloaded software"
@@ -700,8 +750,13 @@ msgid "Open"
 msgstr "Openen"
 
 #: ui/ui_settingsdialog.py:419
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr "Leeg maken van het schijfbuffer zal alle gedownloade software verwijderen. Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw systeem beïnvloeden."
+msgid ""
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
+msgstr ""
+"Leeg maken van het schijfbuffer zal alle gedownloade software verwijderen. "
+"Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw "
+"systeem beïnvloeden."
 
 #: ui/ui_settingsdialog.py:420
 msgid "C&lean disk cache now"
@@ -744,9 +799,8 @@ msgid "&Repositories"
 msgstr "&Softwarebronnen"
 
 #: ui/ui_settingsdialog.py:432
-#, fuzzy
 msgid "Use Proxy"
-msgstr "&Proxy"
+msgstr "Proxy gebruiken"
 
 #: ui/ui_settingsdialog.py:433
 msgid "HTTP proxy server:"
@@ -767,35 +821,48 @@ msgstr "FTP-proxyserver:"
 
 #: ui/ui_settingsdialog.py:439
 msgid "Domain:"
-msgstr ""
+msgstr "Domein:"
 
 #: ui/ui_settingsdialog.py:440
 msgid "Username:"
-msgstr ""
+msgstr "Gebruikernaam:"
 
 #: ui/ui_settingsdialog.py:441
 msgid "Password:"
-msgstr ""
+msgstr "Wachtwoord:"
 
 #: ui/ui_settingsdialog.py:442
-#, fuzzy
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">There is proxy settings available in KDE, you can click <a href=\"#\"><span style=\" text-decoration: underline; color:#1b7bae;\">here</span></a> to get these settings</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There is proxy settings "
+"available in KDE, you can click <a href=\"#\"><span style=\" text-"
+"decoration: underline; color:#1b7bae;\">here</span></a> to get these "
+"settings</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Er is een proxy-instelling "
+"in "
+"KDE beschikbaar, klik op <a href=\"#\"><span style=\" text-"
+"decoration: underline; color:#1b7bae;\">hier</span></a> om deze "
+"instellingen te verkrijgen</p></body></html>"
 
 #: ui/ui_settingsdialog.py:447
-#, fuzzy
 msgid "<a href=#>Use this proxy server for all protocols</a>"
-msgstr "Gebruik deze proxyserver voor alle protocollen"
+msgstr "<a href=#>Gebruik deze proxyserver voor alle protocollen</a>"
 
 #: ui/ui_settingsdialog.py:448
 msgid "&Proxy"
@@ -818,8 +885,12 @@ msgid "Operation Summary"
 msgstr "Samenvatting van bewerking"
 
 #: ui/ui_summarydialog.py:63
-msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande lijst gestart worden of later via het toepassingenmenu."
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaande "
+"lijst gestart worden of later via het toepassingenmenu."
 
 #: ui/ui_summarydialog.py:64
 msgid "&Ok"
@@ -869,17 +940,27 @@ msgstr "Pakketdetails"
 #~ msgstr "-- / --"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"
+#~ "\"></p></body></html>"
 
 #~ msgid "File"
 #~ msgstr "Bestand"
