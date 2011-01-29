@@ -1,0 +1,807 @@
+2011-01-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix stars positions
+         * Bug fixed at http://bugs.pardus.org.tr/16337
+
+2011-01-19 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ignore effect 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update version string 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add more desktop files for Install More Software menu items ... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - use already translated string 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - If systemTray is not enabled ignore update changes 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use KStatusNotifierItem instead of KNotification.. 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Catch settingsDialog exceptions 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix tabs 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - No need for different updateRepo method, we use StateManager's updateRepoAction 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Even internet connection not availabe, user may use local repositories... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Check if repos available before starting to update... 
+
+2011-01-17 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add new repos_available method, Set default socket time... 
+
+2011-01-17 igungor
+         * critical bugfix for ru.po
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - When using unicode pisi.db get nuts. bork. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Special request from Gökcen to sort file list of selected packages. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Do not try to save same settings if already saved before. 
+
+2011-01-16 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Much better transition between webdialog and the preview ui ... 
+
+2011-01-15 transifex
+         * l10n: Updated Italian (it) translation to 100% (Ali Işıngör)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Force to use oxygen style for drawing focus rect like Oxygen style :) Qt Guru Part 2. 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Hide basket if is visible when selectComponent called 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update version string 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - If operation is not started by PackageManager instance do not show the summary dialog about the operation 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - In details page if package has screenshot and if user click the screenshot it will load the original image in another pds instance, yay. 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - much better transition 
+
+2011-01-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Faster first run... 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use FrameButtonBevel Primitive Element of selected theme for selected items, it just draws a selection rectangle on selected item.. More readable.. 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Disable install button after one clicked 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add command line option to select given component in install section
+         * For example;
+         * $ package-manager --select-component science
+         * It opens Pm, switches to Install section and selects the science component.
+         * Rules:
+         * ------
+         * - If Pm is already running it will raise the running window and selects the
+         * given component.
+         * - If some operation in progress in running instance of pm, it just raise the
+         * window.
+         * - If given component is not available it just switch to the install section.
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - add forgotten import traceback 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - No need to switch the lastState. 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Handle package error as just pisi error when no package given 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use HighlightedText if item is active, otherwise just use the Text color 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - add forgotten import 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Block mainloop in pm-install, when an error occured we dont need pm-install anymore 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Do not block the mainloop as default, it will cause to freeze PM itself..
+         * Bug fixed at http://bugs.pardus.org.tr/15998
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix whitespace 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - No need these, QPainter handles all operation.. 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Do not check conflicts while package removing.. 
+
+2011-01-14 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use dialog-close icon
+         * - Fix titlebar issues
+
+2011-01-13 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use an icon for webdialog close button
+         * Bug fixed at http://bugs.pardus.org.tr/15908
+
+2011-01-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use TextElide mode as Middle
+         * - Add tooltip for each group item
+         * Bug fixed at http://bugs.pardus.org.tr/16178
+
+2011-01-11 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - At first calculate all dependencies for given packages and add
+         * them to the package list.
+         * - If all given packages and their dependencies are local packages
+         * ignore checking internet connection status
+         * Bug fixed at http://bugs.pardus.org.tr/16164
+
+2011-01-10 transifex
+         * l10n: Updated Italian (it) translation to 98% (Ali Işıngör)
+         * New status: 190 messages complete with 0 fuzzies and 3 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-10 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Ignore .desktop files which has not exec line.
+         * Bug fixed at http://bugs.pardus.org.tr/16122
+
+2011-01-09 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-08 transifex
+         * l10n: Updated Italian (it) translation to 97% (Ali Işıngör)
+         * New status: 189 messages complete with 0 fuzzies and 4 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-03 transifex
+         * l10n: Updated Italian (it) translation to 96% (Ali Işıngör)
+         * New status: 187 messages complete with 0 fuzzies and 6 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-03 transifex
+         * l10n: Updated Italian (it) translation to 96% (Ali Işıngör)
+         * New status: 186 messages complete with 0 fuzzies and 7 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Do not count packages which are not in any repository. 
+
+2011-01-03 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 94% (Klemens Häckel)
+         * New status: 182 messages complete with 0 fuzzies and 11 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-02 transifex
+         * l10n: Updated Italian (it) translation to 93% (Ali Işıngör)
+         * New status: 180 messages complete with 3 fuzzies and 10 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-02 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - make percentage widget fixed 
+
+2011-01-02 transifex
+         * l10n: Updated Italian (it) translation to 90% (Ali Işıngör)
+         * New status: 174 messages complete with 8 fuzzies and 11 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-02 transifex
+         * l10n: Updated Italian (it) translation to 84% (Ali Işıngör)
+         * New status: 164 messages complete with 15 fuzzies and 14 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-02 transifex
+         * l10n: Updated Italian (it) translation to 82% (Ali Işıngör)
+         * New status: 159 messages complete with 19 fuzzies and 15 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog 
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix webdialog close button issue on other styles
+         * - Force to use enabled button from active style for details button
+         * - Fix tabbar issue
+         * Bug fixed at http://bugs.pardus.org.tr/15908
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ready to ship ! v 3.0.0 
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - small fixes 
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - UI, Cosmetic fixes 
+
+2010-12-30 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix System Tray issues 
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Show focus rectangle in packages, (I'm Qt Guru :p)
+         * - Fix a bug from history..
+         * Bug fixed at http://bugs.pardus.org.tr/3894
+
+2010-12-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Swedish (sv) translation to 99% (Patrik Karlsson)
+         * New status: 192 messages complete with 1 fuzzy and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - update ChangeLog, TODO, remove BUGS 
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add option to show isa tags in package list
+         * Bug fixed at http://bugs.pardus.org.tr/15387
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Add shortcut button to open cache directory
+         * Bug fixed at http://bugs.pardus.org.tr/14189
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use pre/post exception method for exceptionHandler
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Comment added to http://bugs.pardus.org.tr/13950
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use correct kB symbol
+         * Bug fixed at http://bugs.pardus.org.tr/13950
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Disable action button after action accepted
+         * Bug fixed at http://bugs.pardus.org.tr/15731
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix i18n issues in pm-install
+         * - Fix progressdialog hide issue when it is not available
+         * - Check if comar.link is running for pisi before starting the operation
+         * - Show progress, disable cancel;
+         * if another pisi instance starts the package installation
+         * - Po updated and available strings merged from pisi.pot
+
+2010-12-29 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - 34500 
+
+2010-12-28 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 190 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - correct version string 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - ready for RC 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - In upgrade state force to use PackageDB instead of InstallDB
+         * Bug fixed at http://bugs.pardus.org.tr/15292
+
+2010-12-28 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 190 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Take care number of extra packages for progress. 
+
+2010-12-28 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 190 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-28 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 190 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update PO 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - No need this 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - cleanup unused uis 
+
+2010-12-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix PMinstall issues
+         * - Add file exists controls
+         * - Use absolute paths for local packages
+         * - Avoid to mix package_names and package_files which are not supported by Pisi
+
+2010-12-27 transifex
+         * l10n: Updated German (de) translation to 100% (Stefan Wilhelm)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Ignore reject requests while pm-install working.. 
+
+2010-12-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix option parser
+         * - Add hide-summary option
+         * - Use following return codes for pm-install:
+         * - Returns 0 if packages installed successfully
+         * - Returns 1 if some kind of error was occured
+         * - Returns 3 if user cancelled the operation
+
+2010-12-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Pm install is almost done.
+         * - Group commonly used methods under PM Class
+         * - Clear old method which was used for pm-install
+         * - Use pm's progressdialog in pm-install
+         * - Use pm's summarydialog in pm-install
+         * - Pm-install's basic pisi ui event actions are done
+         * - Pm-install's ui fixed
+
+2010-12-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use Empty Package object for given remote packages
+         * - Hide checkboxes from pm-install list
+         * - Fix basketdialog packagelist for new packagelist
+
+2010-12-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - use pisi.api.info_file method for local packages 
+
+2010-12-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use same delegate with pm, for selected packages list
+         * - Hide details button in list
+         * - Fix ui
+
+2010-12-24 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-24 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - continue at home ..
+
+2010-12-24 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Pm-installer from scratch, it just installs for now 
+
+2010-12-23 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - rename, cleanup 
+
+2010-12-23 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-23 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexey Ivanes)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-23 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Alexey Ivanes)
+         * New status: 193 messages complete with 3 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 98% (Stefan Wilhelm)
+         * New status: 194 messages complete with 1 fuzzy and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 98% (Stefan Wilhelm)
+         * New status: 194 messages complete with 1 fuzzy and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-22 transifex
+         * l10n: Updated German (de) translation to 97% (Stefan Wilhelm)
+         * New status: 192 messages complete with 4 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-20 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 93% (Klemens Häckel)
+         * New status: 183 messages complete with 0 fuzzies and 13 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-19 transifex
+         * l10n: Updated Italian (it) translation to 86% (Ali Işıngör)
+         * New status: 169 messages complete with 18 fuzzies and 9 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 93% (Klemens Häckel)
+         * New status: 183 messages complete with 0 fuzzies and 13 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 97% (José Afonso da Silva Carvalho)
+         * New status: 192 messages complete with 4 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-17 transifex
+         * l10n: Updated Portuguese (Brazilian) (pt_BR) translation to 89% (José Afonso da Silva Carvalho)
+         * New status: 176 messages complete with 12 fuzzies and 8 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-13 transifex
+         * l10n: Updated Swedish (sv) translation to 97% (Patrik Karlsson)
+         * New status: 192 messages complete with 4 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-12-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Dont check dependencies 
+
+2010-12-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update ChangeLog
+
+2010-12-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Hide message box even mainwindow is not visible
+         * Bug fixed at http://bugs.pardus.org.tr/15283
+
+2010-12-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Beta 2 
+
+2010-11-29 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 92% (Klemens Häckel)
+         * New status: 182 messages complete with 1 fuzzy and 13 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 89% (Klemens Häckel)
+         * New status: 176 messages complete with 6 fuzzies and 14 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 89% (Klemens Häckel)
+         * New status: 175 messages complete with 6 fuzzies and 15 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-28 transifex
+         * l10n: Updated Hungarian (hu) translation to 100% (Attila Siposs)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Set minimum size
+         * Bug fixed at http://bugs.pardus.org.tr/15352
+
+2010-11-24 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Paranoia 
+
+2010-11-24 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix updating repo progress, thanks to Hakan. 
+
+2010-11-24 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix network check 
+
+2010-11-22 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Sync TODO with redmine 
+
+2010-11-21 transifex
+         * l10n: Updated German (de) translation to 97% (Stefan Wilhelm)
+         * New status: 192 messages complete with 0 fuzzies and 4 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-16 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-15 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use network_check where available in package-manager.. Thanks to urllib gods.. 
+
+2010-11-13 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * dont forget to import 
+
+2010-11-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use pds.thread 
+
+2010-11-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix empty basket issues 
+
+2010-11-11 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 196 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Icon, Po, UI updates ~ all cosmetic. 
+
+2010-11-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix search in updates 
+
+2010-11-10 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix memory leak, deleteLater is your friend. 
+
+2010-11-10 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 198 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix default package repos 
+
+2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix version string 
+
+2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix settings dialog UI, kudos to ibrahim 
+
+2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
+         * typo 
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 198 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 99% (Yasirov Vasiliy)
+         * New status: 197 messages complete with 1 fuzzy and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
+         * New status: 196 messages complete with 2 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
+         * New status: 195 messages complete with 3 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 95% (Yasirov Vasiliy)
+         * New status: 189 messages complete with 9 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 93% (Yasirov Vasiliy)
+         * New status: 186 messages complete with 12 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-09 transifex
+         * l10n: Updated Russian (ru) translation to 91% (Yasirov Vasiliy)
+         * New status: 181 messages complete with 17 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Check connection status before trying to get package details from AppInfo server 
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Solid Networking check added
+         * Show proper message about updates
+         * Check for updates button added
+         * Just once update repo when user switched to updates
+         * After this user should click the check for updates button
+
+2010-11-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 197 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * fix state status, and css 
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Clear basket option
+         * v 3.0 Beta \o/
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show busy indicator and basket popup button 
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Qt Assistant: 'Warning: This function is only effective before the QApplication constructor is called.' 
+
+2010-11-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix Message Boxes, update po 
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * If its already running dont do it :) 
+
+2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Much better animation ;) 
+
+2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use raster default, it is faster.
+
+2010-11-05 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Reinstall Package option
+         * (If already installed package selected to install, PM will ask you ! 5th.Nov.)
+         * Bug fixed at http://bugs.pardus.org.tr/8545
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show Package Files (if installed)
+         * Fix Sip issues
+         * Show Details
+         * Bug fixed at http://bugs.pardus.org.tr/1537
+         * Bug fixed at http://bugs.pardus.org.tr/14400
+         * Bug fixed at http://bugs.pardus.org.tr/14172
+         * Bug fixed at http://bugs.pardus.org.tr/13840
+         * Bug fixed at http://bugs.pardus.org.tr/13544
+         * These are duplicate..
+         * Bug fixed at http://bugs.pardus.org.tr/15004
+         * Bug fixed at http://bugs.pardus.org.tr/15021
+         * Bug fixed at http://bugs.pardus.org.tr/15024
+         * Bug fixed at http://bugs.pardus.org.tr/15043
+
+2010-11-05 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show busy indicator while package details loading.. 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Make enough time to show notifications 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * remove old stuff 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Search is now threaded. 
+
+2010-11-04 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Threaded search support, not finished. 
+
+2010-11-04 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show QProgressIndicator until pisi is ready 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * make it small 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Much better layout change 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * add re-install method 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Check package existence before starting the operation 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * fix percentage 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Progress should look standalone while pm-install running 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix layout stretch 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * just show mainwindow when there is a progress 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * If there is summary to show, do not exit directly 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * oldway of pm-install 
+
+2010-11-02 Gökmen Göksel <gokmen@pardus.org.tr>
+         * cosmetic 
+
+2010-11-02 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Disable scrollbars, disable contextmenu, ui changes 
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Hide history tab for now 
+
+2010-11-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * I love sip, a bit. 
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
