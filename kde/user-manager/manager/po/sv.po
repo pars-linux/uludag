@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -10,10 +10,10 @@ msgstr ""
 "PO-Revision-Date: 2009-12-31 17:41+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
-"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -30,12 +30,12 @@ msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:34
-msgid "Current Maintainer"
-msgstr "Nuvarande utvecklare"
-
-#: src/usermanager/about.py:34
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/usermanager/about.py:34
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
 
 #: src/usermanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -46,14 +46,14 @@ msgid "First Developer"
 msgstr "Förste utvecklare"
 
 #: src/usermanager/about.py:36
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "patrik@trixon.se"
-
-#: src/usermanager/about.py:36
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Patrik Karlsson"
+
+#: src/usermanager/about.py:36
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
 
 #: src/usermanager/edit.py:125
 msgid "User/group operations"
@@ -84,9 +84,8 @@ msgid "Screen settings"
 msgstr "Skärminställningar."
 
 #: src/usermanager/edit.py:132
-#, fuzzy
 msgid "Locale settings"
-msgstr "Skärminställningar."
+msgstr "Språkinställningar."
 
 #: src/usermanager/edit.py:133
 msgid "Network settings"
