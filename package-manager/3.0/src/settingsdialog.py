@@ -22,9 +22,6 @@ from PyQt4.QtGui import QDesktopServices
 from PyQt4.QtNetwork import QNetworkProxy
 from PyQt4.QtCore import *
 
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon
-
 import pds
 import config
 import helpdialog
@@ -33,9 +30,7 @@ import pmutils
 import backend
 
 from ui_settingsdialog import Ui_SettingsDialog
-from pmutils import parse_proxy
-
-Pds = pds.Pds()
+from pmutils import *
 
 class SettingsTab(QObject):
     def __init__(self, settings):
@@ -64,8 +59,8 @@ class SettingsTab(QObject):
 
 class GeneralSettings(SettingsTab):
     def setupUi(self):
-        self.settings.moveUpButton.setIcon(KIcon("arrow-up"))
-        self.settings.moveDownButton.setIcon(KIcon("arrow-down"))
+        self.settings.moveUpButton.setIcon(KIcon("up"))
+        self.settings.moveDownButton.setIcon(KIcon("down"))
         self.settings.addRepoButton.setIcon(KIcon("list-add"))
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
         self.initialize()

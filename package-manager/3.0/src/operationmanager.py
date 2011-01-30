@@ -15,9 +15,7 @@ import time
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
 
-from PyKDE4.kdecore import i18n
-
-from pmutils import humanReadableSize
+from pmutils import *
 from pmlogging import logger
 
 class OperationManager(QObject):

@@ -13,9 +13,9 @@
 
 from PyQt4 import QtCore, QtGui
 from pds.gui import *
-from PyKDE4.kdeui import KIcon
 from pds.qprogressindicator import QProgressIndicator
 from ui_message import Ui_MessageBox
+from pmutils import *
 
 class PMessageBox(PAbstractBox):
 
@@ -36,7 +36,7 @@ class PMessageBox(PAbstractBox):
         self.ui.mainLayout.insertWidget(1, self.busy)
 
         self._animation = 2
-        self._duration = 500
+        self._duration = 1
         self.last_msg = None
         self.setStyleSheet(PMessageBox.STYLE)
         self.enableOverlay()

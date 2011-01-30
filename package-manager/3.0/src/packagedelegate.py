@@ -12,38 +12,53 @@
 #
 
 # Qt Stuff
-from PyQt4 import QtGui
-from PyQt4.QtCore import QPoint
-from PyQt4.QtCore import *
+from PyQt4.QtGui import qApp
+from PyQt4.QtGui import QIcon
+from PyQt4.QtGui import QFont
+from PyQt4.QtGui import QColor
+from PyQt4.QtGui import QStyle
+from PyQt4.QtGui import QPixmap
+from PyQt4.QtGui import QPainter
+from PyQt4.QtGui import QPalette
+from PyQt4.QtGui import QFontMetrics
+from PyQt4.QtGui import QItemDelegate
+from PyQt4.QtGui import QStyleFactory
+from PyQt4.QtGui import QDesktopServices
+from PyQt4.QtGui import QStyleOptionButton
+from PyQt4.QtGui import QStyledItemDelegate
+from PyQt4.QtGui import QStyleOptionViewItemV4
 
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QUrl
+from PyQt4.QtCore import QRect
+from PyQt4.QtCore import QEvent
+from PyQt4.QtCore import QPoint
+from PyQt4.QtCore import QVariant
+
+from pmutils import *
 from packagemodel import *
+from webdialog import WebDialog
 from rowanimator import RowAnimator
 
-from PyKDE4.kdeui import KIcon
-from PyKDE4.kdeui import KIconLoader
-from PyKDE4.kdecore import i18n
-
-from webdialog import WebDialog
-
-DARKRED = QtGui.QColor('darkred')
-WHITE = QtGui.QColor('white')
-RED = QtGui.QColor('red')
-GRAY = QtGui.QColor('gray')
-BLUE = QtGui.QColor('blue')
-LIGHTBLUE = QtGui.QColor('#DEE5F2')
-DARKVIOLET = QtGui.QColor('#3B414F')
-LIGHTGREEN = QtGui.QColor('#F1F5EC')
-DARKGREEN = QtGui.QColor('#32775F')
-CHECK_ICON = 'task-complete'
+DARKRED = QColor('darkred')
+WHITE = QColor('white')
+RED = QColor('red')
+GRAY = QColor('gray')
+BLUE = QColor('blue')
+LIGHTBLUE = QColor('#DEE5F2')
+DARKVIOLET = QColor('#3B414F')
+LIGHTGREEN = QColor('#F1F5EC')
+DARKGREEN = QColor('#32775F')
+CHECK_ICON = 'redo'
 RECT = QRect()
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
 ROW_HEIGHT = 52
 ICON_SIZE = 2
 
-class PackageDelegate(QtGui.QStyledItemDelegate):
+class PackageDelegate(QStyledItemDelegate):
 
-    AppStyle = QtGui.qApp.style
+    AppStyle = qApp.style
 
     def __init__(self, parent=None, mainWindow=None, showDetailsButton=True, animatable=True):
         super(PackageDelegate, self).__init__(parent)
@@ -51,32 +66,32 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         self.show_details_button = showDetailsButton
 
         self.rowAnimator = RowAnimator(parent.packageList)
-        KIconLoader().addExtraDesktopThemes()
-        self.defaultIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', \
-                                                               KIconLoader.Desktop, 32))
-        self.defaultInstalledIcon = QtGui.QIcon(KIconLoader().loadIcon('applications-other', KIconLoader.Desktop, 32, KIconLoader.DefaultState, [CHECK_ICON]))
+        KIconLoader._forceCache = False
+        self.defaultIcon = KIcon('applications-other', 32)
+        self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed('applications-other', CHECK_ICON, 32))
+        KIconLoader._forceCache = True
         self.animatable = animatable
         self._max_height = ROW_HEIGHT
 
-        self._rt_0 = QtGui.QIcon(":/data/star_0.png")
-        self._rt_1 = QtGui.QIcon(":/data/star_1.png")
+        self._rt_0 = QIcon(":/data/star_0.png")
+        self._rt_1 = QIcon(":/data/star_1.png")
 
         self.types = {'critical':(RED,     i18n('critical')),
                       'security':(DARKRED, i18n('security'))}
 
-        self.font = QtGui.qApp.font().toString().split(',')[0]
+        self.font = qApp.font().toString().split(',')[0]
 
-        self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
-        self.boldFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
-        self.normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
-        self.boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
-        self.tagFont = QtGui.QFont(self.font, 7, QtGui.QFont.Normal)
+        self.normalFont = QFont(self.font, 10, QFont.Normal)
+        self.boldFont = QFont(self.font, 11, QFont.Bold)
+        self.normalDetailFont = QFont(self.font, 9, QFont.Normal)
+        self.boldDetailFont = QFont(self.font, 9, QFont.Bold)
+        self.tagFont = QFont(self.font, 7, QFont.Normal)
 
-        self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
-        self.boldFontFM = QtGui.QFontMetrics(self.boldFont)
-        self.boldDetailFontFM = QtGui.QFontMetrics(self.boldDetailFont)
-        self.normalFontFM = QtGui.QFontMetrics(self.normalFont)
-        self.normalDetailFontFM = QtGui.QFontMetrics(self.normalDetailFont)
+        self.tagFontFM = QFontMetrics(self.tagFont)
+        self.boldFontFM = QFontMetrics(self.boldFont)
+        self.boldDetailFontFM = QFontMetrics(self.boldDetailFont)
+        self.normalFontFM = QFontMetrics(self.normalFont)
+        self.normalDetailFontFM = QFontMetrics(self.normalDetailFont)
 
         self._titles = {'description': i18n("Description:"),
                         'website'    : i18n("Website:"),
@@ -93,7 +108,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         self.parent = parent.packageList
 
         # Base style for some of important features
-        self.oxygen = QtGui.QStyleFactory.create('oxygen')
+        self.oxygen = QStyleFactory.create('cleanlooks')
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -108,27 +123,27 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             self.paintInfoColumn(painter, option, index, width_limit = 10)
 
     def paintCheckBoxColumn(self, painter, option, index):
-        opt = QtGui.QStyleOptionViewItemV4(option)
+        opt = QStyleOptionViewItemV4(option)
 
-        buttonStyle = QtGui.QStyleOptionButton()
-        buttonStyle.state = QtGui.QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QtGui.QStyle.State_Off
+        buttonStyle = QStyleOptionButton()
+        buttonStyle.state = QStyle.State_On if index.model().data(index, Qt.CheckStateRole) == QVariant(Qt.Checked) else QStyle.State_Off
 
-        if option.state & QtGui.QStyle.State_MouseOver or option.state & QtGui.QStyle.State_HasFocus:
-            buttonStyle.state |= QtGui.QStyle.State_HasFocus
+        if option.state & QStyle.State_MouseOver or option.state & QStyle.State_HasFocus:
+            buttonStyle.state |= QStyle.State_HasFocus
 
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + ROW_HEIGHT, 0, 0)
-        PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+        PackageDelegate.AppStyle().drawControl(QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index, width_limit = 0):
         left = option.rect.left() + 3
         top = option.rect.top()
         width = option.rect.width() - width_limit
 
-        pixmap = QtGui.QPixmap(option.rect.size())
+        pixmap = QPixmap(option.rect.size())
         pixmap.fill(Qt.transparent)
 
-        p = QtGui.QPainter(pixmap)
-        p.setRenderHint(QtGui.QPainter.Antialiasing, True)
+        p = QPainter(pixmap)
+        p.setRenderHint(QPainter.Antialiasing, True)
         p.translate(-option.rect.topLeft())
 
         textInner = 2 * ICON_PADDING + ROW_HEIGHT - 10
@@ -156,9 +171,9 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
 
         if _icon:
             overlay = [CHECK_ICON] if installed else []
-            pix = KIconLoader().loadIcon(_icon, KIconLoader.NoGroup, 32, KIconLoader.DefaultState, overlay, '', True)
+            pix = KIconLoader.loadOverlayed(_icon, overlay, 32)
             if not pix.isNull():
-                icon = QtGui.QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
+                icon = QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
 
         if not icon:
             icon = self.defaultIcon if not installed else self.defaultInstalledIcon
@@ -176,7 +191,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         for _rt_i in range(rate):
             self._rt_1.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
 
-        foregroundColor = option.palette.color(QtGui.QPalette.Text)
+        foregroundColor = option.palette.color(QPalette.Text)
         p.setPen(foregroundColor)
 
         # Package Name
@@ -264,7 +279,7 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextSingleLine, homepage)
             self.rowAnimator.hoverLinkFilter.link_rect = QRect(left + self._titleFM['website'] + 2, position + 2 + 32, rect.width(), rect.height())
 
-            p.setPen(option.palette.color(QtGui.QPalette.Link))
+            p.setPen(option.palette.color(QPalette.Link))
             p.drawText(left + self._titleFM['website'], position, width, rect.height(), Qt.TextSingleLine, homepage)
             p.setPen(foregroundColor)
 
@@ -311,26 +326,26 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
             self.rowAnimator.max_height = position - top + 8
 
             # Package More info button
-            opt = QtGui.QStyleOptionViewItemV4(option)
+            opt = QStyleOptionViewItemV4(option)
 
-            buttonStyle = QtGui.QStyleOptionButton()
-            if option.state & QtGui.QStyle.State_MouseOver or option.state & QtGui.QStyle.State_HasFocus:
-                buttonStyle.state |= QtGui.QStyle.State_HasFocus
-            buttonStyle.state |= QtGui.QStyle.State_Enabled
+            buttonStyle = QStyleOptionButton()
+            if option.state & QStyle.State_MouseOver or option.state & QStyle.State_HasFocus:
+                buttonStyle.state |= QStyle.State_HasFocus
+            buttonStyle.state |= QStyle.State_Enabled
             buttonStyle.text = i18n("Details")
 
             buttonStyle.rect = QRect(width - 100, position - 22, 100, 22)
 
         p.end()
 
-        if option.state & QtGui.QStyle.State_HasFocus and self.animatable:
-            option.state |= QtGui.QStyle.State_MouseOver
+        if option.state & QStyle.State_HasFocus and self.animatable:
+            option.state |= QStyle.State_MouseOver
             # Use Oxygen style to draw focus rect like MouseOver effect of Oxygen..
-            self.oxygen.drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, option, painter, None)
+            self.oxygen.drawPrimitive(QStyle.PE_PanelItemViewItem, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
             if self.show_details_button:
-                PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_PushButton, buttonStyle, painter, None)
+                PackageDelegate.AppStyle().drawControl(QStyle.CE_PushButton, buttonStyle, painter, None)
                 self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
 
         painter.drawPixmap(option.rect.topLeft(), pixmap)
@@ -340,14 +355,14 @@ class PackageDelegate(QtGui.QStyledItemDelegate):
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0 and index.flags() & Qt.ItemIsUserCheckable:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
-        __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
+        __event = QItemDelegate(self).editorEvent(event, model, option, index)
         animate_requested = False
         if event.type() == QEvent.MouseButtonRelease and self.animatable:
             if self.rowAnimator.row == index.row():
                 epos = event.pos()
                 if self.rowAnimator.hoverLinkFilter.link_rect.contains(QPoint(epos.x(), epos.y() + 32)):
                     url = QUrl(model.data(index, HomepageRole).toString())
-                    QtGui.QDesktopServices.openUrl(url)
+                    QDesktopServices.openUrl(url)
                     return __event
                 elif self.rowAnimator.hoverLinkFilter.button_rect.contains(epos, True):
                     self.showPackageDetails(model, index)

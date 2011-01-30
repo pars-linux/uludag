@@ -22,9 +22,7 @@ from PyQt4.QtGui import QIcon
 from PyQt4.QtGui import QListWidget
 from PyQt4.QtGui import QListWidgetItem
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
+from pmutils import *
 from statemanager import StateManager
 
 class GroupList(QListWidget):
@@ -62,7 +60,7 @@ class GroupList(QListWidget):
             localName, icon_path = content[0], content[1]
             package_count = content[2]
 
-        icon = QIcon(KIconLoader().loadIcon(icon_path, KIconLoader.NoGroup, 22))
+        icon = KIcon(icon_path, 22)
         if icon.isNull():
             icon = self.defaultIcon
         text = "%s (%d)" % (localName, package_count)

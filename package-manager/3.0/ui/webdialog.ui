@@ -80,20 +80,10 @@ border-radius:4px;
              <property name="margin">
               <number>8</number>
              </property>
-             <item row="1" column="0">
+             <item row="0" column="0" colspan="2">
               <widget class="QListWidget" name="filesList">
                <property name="layoutDirection">
                 <enum>Qt::LeftToRight</enum>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="KListWidgetSearchLine" name="filterLine">
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="clickMessage">
-                <string>Type to filter files</string>
                </property>
               </widget>
              </item>
@@ -285,16 +275,6 @@ border-bottom:1px solid #CCC;
   </layout>
  </widget>
  <customwidgets>
-  <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>KListWidgetSearchLine</class>
-   <extends>KLineEdit</extends>
-   <header>klistwidgetsearchline.h</header>
-  </customwidget>
   <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>

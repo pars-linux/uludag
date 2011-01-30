@@ -19,54 +19,17 @@ import traceback
 
 # PyQt4 Imports
 from PyQt4.QtGui import QApplication
-
-# PyKDE4 Imports
-from PyKDE4.kdeui import KUniqueApplication
-from PyKDE4.kdeui import KApplication
-from PyKDE4.kdecore import KCmdLineArgs
-from PyKDE4.kdecore import ki18n
-from PyKDE4.kdecore import KCmdLineOptions
+from pds.quniqueapp import QUniqueApplication
 
 # Package Manager Specific Imports
 import config
 import backend
 
-from about import aboutData
 from pmlogging import logger
 from mainwindow import MainWindow
 from localedata import setSystemLocale
 
-from pmutils import handleException
-from pmutils import parse_proxy
-
-class PmApp(KUniqueApplication):
-    def __init__(self, *args, **kwds):
-        super(PmApp, self).__init__(*args)
-
-        # Set system Locale, we may not need it anymore
-        # It should set just before MainWindow call
-        setSystemLocale()
-
-        # Create MainWindow
-        self.manager = MainWindow()
-
-    def newInstance(self):
-        args = KCmdLineArgs.parsedArgs()
-
-        component = None
-        if args.isSet("select-component"):
-            component = str(args.getOption("select-component"))
-            self.manager.cw.selectComponent(component)
-
-        # Check if show-mainwindow used in sys.args to show mainWindow
-        if args.isSet("show-mainwindow"):
-            self.manager.show()
-
-        # If system tray disabled show mainwindow at first
-        if not config.PMConfig().systemTray():
-            self.manager.show()
-
-        return super(PmApp, self).newInstance()
+from pmutils import *
 
 # Package Manager Main App
 if __name__ == '__main__':
@@ -82,16 +45,17 @@ if __name__ == '__main__':
     # Use raster to make it faster
     QApplication.setGraphicsSystem('raster')
 
-    # Initialize Command Line arguments from sys.argv
-    KCmdLineArgs.init(sys.argv, aboutData)
+    pid = os.fork()
+    if pid:
+        os._exit(0)
 
-    # Add Command Line options
-    options = KCmdLineOptions()
-    options.add("show-mainwindow", ki18n("Show main window"))
-    options.add("select-component <component>", ki18n("Show main window"))
-    KCmdLineArgs.addCmdLineOptions(options)
+    app = QUniqueApplication(sys.argv, catalog='package-manager')
+    setSystemLocale()
 
-    app = PmApp()
+    manager = MainWindow(app)
+    app.setMainWindow(manager)
+
+    manager.show()
 
     # Set exception handler
     sys.excepthook = handleException

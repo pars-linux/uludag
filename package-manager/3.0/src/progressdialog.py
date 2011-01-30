@@ -15,8 +15,7 @@ from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QSize
 
-from PyKDE4.kdecore import i18n
-
+from pmutils import *
 from pds.gui import *
 from pds.qprogressindicator import QProgressIndicator
 from ui_progressdialog_v4 import Ui_ProgressDialog
@@ -36,9 +35,10 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
 
         # PDS Settings
         self._animation = 2
-        self._duration = 500
+        self._duration = 1
         self.last_msg = None
         self.enableOverlay()
+        self.setOverlayOpacity(150)
         self._disable_parent_in_shown = True
 
         self.registerFunction(FINISHED, self.busy.startAnimation)
