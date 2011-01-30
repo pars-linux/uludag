@@ -206,7 +206,7 @@ class Iface(Singleton):
     # Filters ------------------------------------------------------------->>-
 
     def filterUpdates(self, updates, _type):
-        return filter(lambda x: self.getPackage(x)._type == _type, updates)
+        return filter(lambda x: self.getPackage(x, True)._type == _type, updates)
 
     def filterPackages(self, packages, installed):
         return filter(lambda x: self.getPackage(x).installed == installed, packages)
