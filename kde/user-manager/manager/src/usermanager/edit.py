@@ -98,6 +98,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
 
         self.advancedGroup.hide()
         self.available_shells = []
+        self._new = False
 
     def reset(self):
         self.wrn = ""
@@ -109,9 +110,12 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         self.lineUsername.setEnabled(True)
         self.lineHomeDir.setEnabled(True)
         self.pushAdvanced.setChecked(False)
+        self.labelWarning.setText("")
+        self.labelSign.hide()
         self.advancedGroup.hide()
         self.comboShell.clear()
         self.comboShell.addItems(self.available_shells)
+        self.emit(QtCore.SIGNAL("buttonStatusChanged(int)"),1)
         for index in xrange(self.treeAuthorizations.topLevelItemCount()):
             self.treeAuthorizations.collapseItem(self.treeAuthorizations.topLevelItem(index))
 
@@ -377,7 +381,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         err = ""
         self.wrn = ""
 
-        if self.lineFullname.text() == "" and self.lineUsername.text() == "":
+        if self.lineFullname.text() == "" and self.lineUsername.text() == "" and self.isNew():
             err = i18n("Start with typing this user's full name.")
 
         if not err and self.isNew() and self.linePassword.text() == "":
