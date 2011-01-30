@@ -28,7 +28,7 @@ from usermanager.ui_main import Ui_MainWidget
 from usermanager.backend import Interface
 
 # Config
-from usermanager.config import DEFAULT_GROUPS, ANIM_SHOW, ANIM_HIDE, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
+from usermanager.config import DEFAULT_GROUPS, ANIM_SHOW, ANIM_TARGET, ANIM_DEFAULT, ANIM_TIME
 
 # Item widget
 from usermanager.item import ItemListWidgetItem, ItemWidget
@@ -38,7 +38,6 @@ from usermanager.edit import EditUserWidget, EditGroupWidget
 
 # Delete Dialog
 from usermanager.question import DialogQuestion
-
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -53,10 +52,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Animation
         self.animator = QtCore.QTimeLine(ANIM_TIME, self)
-        self.animationLast = ANIM_HIDE
 
         # Initialize heights of animated widgets
-        self.slotAnimationFinished()
+        self.hideEditBox()
 
         # Backend
         self.iface = Interface()
@@ -256,10 +254,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if type_ == "user":
             # Reset fields
             self.widgetUserEdit.reset()
-            # Hide group edit
-            self.widgetGroupEdit.hide()
-            # Show user edit
-            self.widgetUserEdit.show()
 
             if id_ != None:
                 try:
@@ -293,6 +287,14 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.widgetUserEdit.setGroups(self.all_groups, DEFAULT_GROUPS)
                 self.widgetUserEdit.setAuthorizations(authorizations)
 
+            if self.widgetUserEdit.isNew():
+                self.widgetUserEdit.checkFields()
+
+            # Hide group edit
+            self.widgetGroupEdit.hide()
+            # Show user edit
+            self.widgetUserEdit.show()
+
         else:
             # Reset fields
             self.widgetGroupEdit.reset()
@@ -301,22 +303,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             # Show group edit
             self.widgetGroupEdit.show()
 
-        if self.animationLast == ANIM_HIDE:
-            self.animationLast = ANIM_SHOW
-            # Set range
-            self.animator.setFrameRange(ANIM_TARGET, self.height() - ANIM_TARGET)
-            # Go go go!
-            self.animator.start()
+        # Set range
+        self.animator.setFrameRange(ANIM_TARGET, self.height() - ANIM_TARGET)
+        # Go go go!
+        self.animator.start()
 
     def hideEditBox(self):
         """
             Hides edit box.
         """
-        if self.animationLast == ANIM_SHOW:
-            self.animationLast = ANIM_HIDE
-
-            self.frameEdit.setMaximumHeight(0)
-            self.frameList.setMaximumHeight(self.height())
+        self.frameEdit.setMaximumHeight(ANIM_TARGET)
+        self.frameList.setMaximumHeight(ANIM_DEFAULT)
+        self.hiddenListWorkaround()
 
     def slotFilterChanged(self, index):
         """
@@ -431,7 +429,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
             else:
                 widget = self.widgetGroupEdit
-                self.iface.addGroup(widget.getId(), widget.getGroupname())
+                self.callIface(lambda: self.iface.addGroup(widget.getId(), widget.getGroupname()))
         except Exception, e: # TODO: Named exception should be raised
             if "Comar.PolicyKit" in e:
                 kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
@@ -459,13 +457,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Animation is finished.
         """
-        if self.animationLast == ANIM_SHOW:
-            self.frameEdit.setMaximumHeight(ANIM_DEFAULT)
-            self.frameList.setMaximumHeight(ANIM_TARGET)
-        else:
-            self.frameEdit.setMaximumHeight(ANIM_TARGET)
-            self.frameList.setMaximumHeight(ANIM_DEFAULT)
-            self.hiddenListWorkaround()
+        self.frameEdit.setMaximumHeight(ANIM_DEFAULT)
+        self.frameList.setMaximumHeight(ANIM_TARGET)
 
     def slotButtonStatusChanged(self, status):
         if status:
