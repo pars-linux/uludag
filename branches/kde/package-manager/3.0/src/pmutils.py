@@ -36,10 +36,17 @@ from PyQt4.QtGui import QApplication
 
 from PyQt4.QtNetwork import QNetworkProxy
 
-from PyKDE4.solid import Solid
-from PyKDE4.kdeui import KNotification
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdecore import KComponentData
+import pds
+from pds.qiconloader import QIconLoader
+
+Pds = pds.Pds('package-manager', debug = False)
+# Force to use Default Session for testing
+# Pds.session = pds.DefaultDe
+# print 'Current session is : %s %s' % (Pds.session.Name, Pds.session.Version)
+
+i18n = Pds.session.i18n
+KIconLoader = QIconLoader(Pds, forceCache = True)
+KIcon = KIconLoader.icon
 
 class PM:
 
@@ -61,12 +68,7 @@ class PM:
     def notifyFinished(self):
         if not self.operation.totalPackages:
             return
-        KNotification.event("Summary",
-                self.state.getSummaryInfo(self.operation.totalPackages),
-                QPixmap(),
-                None,
-                KNotification.CloseOnTimeout,
-                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration))
+        Pds.notify(i18n('Package Manager'), self.state.getSummaryInfo(self.operation.totalPackages))
 
     def exceptionCaught(self, message, package = '', block = False):
         self.runPreExceptionMethods()
@@ -141,9 +143,6 @@ def restoreCursor():
 def processEvents():
     QApplication.processEvents()
 
-def isSolidOnline():
-    return Solid.Networking.status() == Solid.Networking.Connected
-
 def set_proxy_settings():
     http = backend.pm.Iface().getConfig().get("general", "http_proxy")
     if http and not http == "None":
@@ -157,6 +156,7 @@ def reset_proxy_settings():
     QNetworkProxy.setApplicationProxy(QNetworkProxy())
 
 def network_available():
+    return True
     return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
 
 def parse_proxy(line):
@@ -180,7 +180,7 @@ def parse_proxy(line):
     return settings
 
 def repos_available(iface):
-
+    return True
     repos = iface.getRepositories(only_active = True)
     if not repos:
         return False

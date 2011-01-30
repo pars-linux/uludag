@@ -14,9 +14,6 @@ from PyQt4 import QtGui
 from PyQt4 import QtWebKit
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from pds.gui import *
 from pmutils import *
 from pds.thread import PThread
@@ -35,15 +32,16 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
         # PDS Settings
         self._animation = 1
-        self._duration = 400
+        self._duration = 1
         self.enableOverlay()
+        self.setOverlayOpacity(150)
         self._disable_parent_in_shown = True
 
         self.registerFunction(IN, lambda: parent.statusBar().hide())
         self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
         self._as = 'http://appinfo.pardus.org.tr'
         self.cancelButton.clicked.connect(self._hide)
-        self.cancelButton.setIcon(KIcon("dialog-close"))
+        self.cancelButton.setIcon(KIcon("cancel"))
 
         # Hide Scrollbars and context menu in webview
         self.webView.setContextMenuPolicy(Qt.NoContextMenu)
@@ -61,7 +59,6 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
         self.busy.hide()
 
         self._filesThread = PThread(self, self.getFiles, self.getFilesFinished)
-        self.filterLine.setListWidget(self.filesList)
         self.noconnection.hide()
         self.parent = parent
 
@@ -148,12 +145,13 @@ class PreviewDialog(PAbstractBox, Ui_Preview):
 
         # PDS Settings
         self._animation = 1
-        self._duration = 400
+        self._duration = 1
         self.enableOverlay()
+        self.setOverlayOpacity(150)
         # self._disable_parent_in_shown = True
 
         self.cancelButton.clicked.connect(self._hide)
-        self.cancelButton.setIcon(KIcon("dialog-close"))
+        self.cancelButton.setIcon(KIcon("cancel"))
 
         # Hide Scrollbars and context menu in webview
         self.webView.setContextMenuPolicy(Qt.NoContextMenu)

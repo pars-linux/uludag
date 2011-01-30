@@ -10,8 +10,7 @@
 #
 # Please read the COPYING file
 
-from PyKDE4.kdecore import KConfig
-from PyQt4.Qt import QVariant
+from PyQt4.Qt import QVariant, QSettings
 
 defaults = {
             "SystemTray" : False,
@@ -20,36 +19,32 @@ defaults = {
             "UpdateCheckInterval" : 60,
            }
 
-GROUP = "General"
-DATA_DIR = '/usr/share/kde4/apps/package-manager/data/'
+DATA_DIR = '/usr/share/apps/package-manager/data/'
 
 class Config:
-    def __init__(self, config):
-        self.config = KConfig(config)
-        self.group = None
+    def __init__(self, organization, product):
+        self.config = QSettings(organization, product)
 
     def setValue(self, option, value):
-        self.group = self.config.group(GROUP)
-        self.group.writeEntry(option, QVariant(value))
+        self.config.setValue(option, QVariant(value))
         self.config.sync()
 
     def getBoolValue(self, option):
         default = self._initValue(option, False)
-        return self.group.readEntry(option, QVariant(default)).toBool()
+        return self.config.value(option, QVariant(default)).toBool()
 
     def getNumValue(self, option):
         default = self._initValue(option, 0)
-        return self.group.readEntry(option, QVariant(default)).toInt()[0]
+        return self.config.value(option, QVariant(default)).toInt()[0]
 
     def _initValue(self, option, value):
-        self.group = self.config.group(GROUP)
         if defaults.has_key(option):
             return defaults[option]
         return value
 
 class PMConfig(Config):
     def __init__(self):
-        Config.__init__(self, "package-managerrc")
+        Config.__init__(self, "Pardus", "Package-Manager")
 
     def showOnlyGuiApp(self):
         return self.getBoolValue("ShowOnlyGuiApp")

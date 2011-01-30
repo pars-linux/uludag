@@ -20,9 +20,6 @@ import backend
 from pmutils import humanReadableSize
 from pmlogging import logger
 
-from PyKDE4.kdeui import KIconLoader
-from context import _time
-
 from statemanager import StateManager
 from appinfo.client import AppInfoClient
 

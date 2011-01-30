@@ -13,65 +13,49 @@
 
 import os
 import sys
-import traceback
-import context as ctx
-
-from PyQt4.QtGui import QDesktopWidget
-from PyQt4.QtCore import *
-
 import dbus
-
-from localedata import setSystemLocale
-from pmlogging import logger
-import config
 import signal
+import traceback
+from optparse import OptionParser
 
-from PyKDE4.kdecore import i18n, ki18n
-from PyKDE4.kdecore import KCmdLineArgs
-from PyKDE4.kdecore import KCmdLineOptions
-from PyKDE4.kdeui import KUniqueApplication
+# PyQt4 Imports
+from PyQt4.QtCore import *
+from PyQt4.QtGui import QApplication
 
+from pds.quniqueapp import QUniqueApplication
+
+import config
+from pmlogging import logger
 from pmwindow import PmWindow
-from pmutils import handleException
-from about import aboutData
+from localedata import setSystemLocale
+
+from pmutils import *
 
 if __name__ == '__main__':
-    setSystemLocale()
+    # Catch signals
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
 
-    signal.signal(signal.SIGINT, signal.SIG_IGN)
-
+    # Create a dbus mainloop if its not exists
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
-    from optparse import OptionParser
+    # Use raster to make it faster
+    QApplication.setGraphicsSystem('raster')
 
     usage = unicode(i18n("%prog packages_to_install"))
     parser = OptionParser(usage=usage)
 
     packages = filter(lambda x: not x.startswith('-'), sys.argv[1:])
 
-    argv = list(set(sys.argv[1:]) - set(packages))
-    argv.append('--nofork')
-    argv.insert(0, sys.argv[0])
-
     if len(sys.argv) > 1:
 
-        aboutData.setAppName("pm-install")
-        KCmdLineArgs.init(argv, aboutData)
-
-        # Add Command Line options
-        options = KCmdLineOptions()
-        options.add("hide-summary", ki18n("Hide summary screen"))
-        KCmdLineArgs.addCmdLineOptions(options)
-
-        app = KUniqueApplication(True, True)
+        app = QUniqueApplication(sys.argv, catalog='pm-install')
         setSystemLocale()
 
-        args = KCmdLineArgs.parsedArgs()
-
-        window = PmWindow(app, packages, hide_summary = args.isSet("hide-summary"))
+        window = PmWindow(app, packages)
         window.show()
+
         app.exec_()
 
     else:

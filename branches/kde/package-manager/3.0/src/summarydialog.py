@@ -15,9 +15,6 @@ from PyQt4 import QtGui
 from PyQt4.QtGui import qApp
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import KIconLoader
-from PyKDE4.kdecore import i18n
-
 from ui_summarydialog import Ui_SummaryDialog
 from ui_appitem import Ui_ApplicationItem
 
@@ -47,7 +44,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
 
-        self.appIcon.setPixmap(KIconLoader().loadIcon(self.item.icon, KIconLoader.Desktop, 32))
+        self.appIcon.setPixmap(KIconLoader.load(self.item.icon, 32))
 
         self.appName.hide()
 

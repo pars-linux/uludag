@@ -20,17 +20,10 @@ from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from statemanager import StateManager
 from operationmanager import OperationManager
 
-from pmutils import PM
-from pmutils import isAllLocal
-from pmutils import askForActions
-from pmutils import isPisiRunning
-from pmutils import get_real_paths
+from pmutils import *
 
 from ui_pminstall import Ui_PmWindow
 from summarydialog import SummaryDialog
@@ -39,9 +32,6 @@ from progressdialog import ProgressDialog
 from packageproxy import PackageProxy
 from packagemodel import PackageModel
 from packagedelegate import PackageDelegate
-
-from PyKDE4.kdeui import KNotification
-from PyKDE4.kdecore import KComponentData
 
 class PmWindow(QDialog, PM, Ui_PmWindow):
 
@@ -125,7 +115,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.button_install.setIcon(KIcon("list-add"))
 
         self.button_cancel.clicked.connect(self.actionCancelled)
-        self.button_cancel.setIcon(KIcon("dialog-cancel"))
+        self.button_cancel.setIcon(KIcon("cancel"))
 
         self.rejected.connect(self.actionCancelled)
 

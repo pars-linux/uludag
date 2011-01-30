@@ -14,9 +14,7 @@ from PyQt4.QtGui import QGridLayout
 from PyQt4.QtGui import QTextBrowser
 from PyQt4.QtCore import QUrl
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
+from pmutils import *
 from localedata import *
 
 (MAINAPP, PREFERENCES) = (1, 2)
@@ -42,11 +40,11 @@ class HelpDialog(QDialog):
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
             self.htmlPart.setSource(
-                    QUrl("/usr/share/kde4/apps/package-manager/help/%s/%s" %
+                    QUrl("/usr/share/apps/package-manager/help/%s/%s" %
                         (locale, help_files[help])))
 
         else:
             self.htmlPart.setSource(
-                    QUrl("/usr/share/kde4/apps/package-manager/help/en/%s" %
+                    QUrl("/usr/share/apps/package-manager/help/en/%s" %
                         help_files[help]))
 

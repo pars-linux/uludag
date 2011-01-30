@@ -13,9 +13,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from packagemodel import GroupRole
 from packageproxy import PackageProxy
 from packagemodel import PackageModel
@@ -34,9 +31,10 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
         self.parent = parent
         # PDS Settings
         self._animation = 1
-        self._duration = 400
+        self._duration = 1
         self.last_msg = None
         self.enableOverlay()
+        self.setOverlayOpacity(150)
         self._disable_parent_in_shown = True
         self.registerFunction(IN, lambda: parent.statusBar().hide())
         self.registerFunction(FINISHED, lambda: parent.statusBar().setVisible(not self.isVisible()))
@@ -46,10 +44,10 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
 
         self.actionButton.clicked.connect(self.action)
         self.cancelButton.clicked.connect(self._hide)
-        self.cancelButton.setIcon(KIcon("dialog-close"))
+        self.cancelButton.setIcon(KIcon("cancel"))
 
         self.clearButton.clicked.connect(self.clearSelections)
-        self.clearButton.setIcon(KIcon("trash-empty"))
+        self.clearButton.setIcon(KIcon("trashcan_empty"))
 
     def clearSelections(self):
         sure = QtGui.QMessageBox.question(self, i18n("Clear Basket"),

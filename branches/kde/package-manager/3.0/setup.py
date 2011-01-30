@@ -48,7 +48,7 @@ def update_messages():
     # Collect UI files
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        os.system("pyuic4 -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
     # Collect headers for desktop files
     for filename in glob.glob("data/*.desktop.in"):
@@ -106,7 +106,7 @@ class Build(build):
 
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("pyuic4 -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
@@ -132,8 +132,8 @@ class Install(install):
         icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
         mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
-        apps_dir = os.path.join(root_dir, "applications/kde4")
-        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+        apps_dir = os.path.join(root_dir, "applications")
+        project_dir = os.path.join(root_dir, "apps", PROJECT)
 
         # Make directories
         print "Making directories..."
@@ -209,8 +209,8 @@ class Uninstall(Command):
         bin_dir = "/usr/bin"
 
         locale_dir = os.path.join(root_dir, "locale")
-        apps_dir = os.path.join(root_dir, "applications/kde4")
-        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+        apps_dir = os.path.join(root_dir, "applications")
+        project_dir = os.path.join(root_dir, "apps", PROJECT)
 
         print 'Uninstalling ...'
         remove(project_dir)

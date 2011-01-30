@@ -14,15 +14,13 @@
 from PyQt4.QtCore import QObject, SIGNAL
 from PyQt4.QtGui import QMessageBox
 
-from PyKDE4.kdeui import KIcon
-from PyKDE4.kdecore import i18n
 from appinfo.client import AppInfoClient
 
-from pmutils import repos_available
-from pmutils import network_available
-from pmlogging import logger
 import config
 import backend
+
+from pmutils import *
+from pmlogging import logger
 
 class StateManager(QObject):
 

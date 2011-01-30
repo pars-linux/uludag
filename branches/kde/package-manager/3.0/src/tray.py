@@ -12,7 +12,6 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import i18n
 
 from pmutils import *
 
@@ -25,7 +24,7 @@ class PTray:
         self.countIcon = QtGui.QIcon(":/data/tray-count.png")
         self.clip = QtGui.QMovie(":/data/animated-tray.mng")
         self.lastIcon = self.defaultIcon
-        self.setIconByPixmap(self.defaultIcon)
+        self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
         self.iface = iface
@@ -41,10 +40,10 @@ class PTray:
 
     def stop(self):
         self.clip.stop()
-        self.setIconByPixmap(self.lastIcon)
+        self.setIcon(self.lastIcon)
 
     def slotAnimate(self, scene):
-        self.setIconByPixmap(QtGui.QIcon(self.clip.currentPixmap()))
+        self.setIcon(QtGui.QIcon(self.clip.currentPixmap()))
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -66,7 +65,7 @@ class PTray:
     def updateRepo(self):
         if not self.iface.operationInProgress():
             repoName = unicode(self.sender().iconText())
-            if repoName == i18n("All"):
+            if repoName == i18n("Update All Repositories"):
                 self.iface.updateRepositories()
             else:
                 self.iface.updateRepository(repoName)
@@ -103,15 +102,12 @@ class PTray:
     def settingsChanged(self):
         cfg = config.PMConfig()
         if cfg.systemTray():
-            self.setCategory(KStatusNotifierItem.ApplicationStatus)
+            self.show()
             QTimer.singleShot(1, self.updateTrayUnread)
         else:
-            self.setStatus(KStatusNotifierItem.Passive)
+            self.hide()
         QtGui.qApp.setQuitOnLastWindowClosed(not cfg.systemTray())
         self.updateInterval(cfg.updateCheckInterval())
-
-    def isActive(self):
-        return self.status() == KStatusNotifierItem.Active
 
     def updateTrayUnread(self):
         waitCursor()
@@ -121,19 +117,11 @@ class PTray:
 
     # stolen from Akregator
     def slotSetUnread(self, unread):
-        cfg = config.PMConfig()
-        if not cfg.systemTray():
-            return
 
         if config.PMConfig().hideTrayIfThereIsNoUpdate() and unread == 0:
-            self.setToolTip("package-manager", i18n("Package Manager"), i18n("All packages are up to date"))
-            self.setStatus(KStatusNotifierItem.Passive)
-        else:
-            if unread > 0:
-                self.setToolTip("package-manager", i18n("Package Manager"), i18n("There are <b>%1</b> updates available!", unread))
-            else:
-                self.setToolTip("package-manager", i18n("Package Manager"), i18n("All packages are up to date"))
-            self.setStatus(KStatusNotifierItem.Active)
+            self.hide()
+        elif config.PMConfig().systemTray():
+            self.show()
 
         if self.unread == unread:
             return
@@ -141,17 +129,17 @@ class PTray:
         self.unread = unread
 
         if unread == 0:
-            self.setIconByPixmap(self.defaultIcon)
+            self.setIcon(self.defaultIcon)
             self.lastIcon = self.defaultIcon
         else:
             countStr = "%s" % unread
-            f = QtGui.qApp.font()
+            f = QtGui.QFont(Pds.settings('font','Dejavu Sans'))
             f.setBold(True)
 
             pointSize = f.pointSizeF()
             fm = QtGui.QFontMetrics(f)
             w = fm.width(countStr)
-            if w > 19:
+            if w > (19):
                 pointSize *= float(19) / float(w)
                 f.setPointSizeF(pointSize)
 
@@ -172,42 +160,38 @@ class PTray:
 
             p.end()
             self.lastIcon = QtGui.QIcon(overlayImg)
-            self.setIconByPixmap(self.lastIcon)
+            self.setIcon(self.lastIcon)
 
-from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu, KStatusNotifierItem
-from PyKDE4.kdecore import KComponentData
-
-class Tray(KStatusNotifierItem, PTray):
+class Tray(QtGui.QSystemTrayIcon, PTray):
     def __init__(self, parent, iface):
-        KSystemTrayIcon.__init__(self, parent)
+        QtGui.QSystemTrayIcon.__init__(self, parent)
         self.appWindow = parent
-        self.setAssociatedWidget(parent)
         PTray.__init__(self, iface)
 
+        self.activated.connect(self.__activated)
+
+    def __activated(self, reason):
+        if not reason == QtGui.QSystemTrayIcon.Context:
+            if self.appWindow.isVisible():
+                self.appWindow.hide()
+            else:
+                self.appWindow.show()
+
     def initializePopup(self):
-        self.setIconByPixmap(self.defaultIcon)
-        self.actionMenu = KActionMenu(i18n("Update"), self)
+        self.setIcon(self.defaultIcon)
+        self.actionMenu = QtGui.QMenu(i18n("Update"))
         self.populateRepositoryMenu()
-        self.contextMenu().addAction(self.actionMenu)
-        self.contextMenu().addSeparator()
 
     def populateRepositoryMenu(self):
-        self.actionMenu.menu().clear()
-        has_repo = False
+        self.actionMenu.clear()
         for name, address in self.iface.getRepositories(only_active = True):
-            self._addAction(name, self.actionMenu)
-            has_repo = True
-        if has_repo:
-            self._addAction(i18n("All"), self.actionMenu)
+            self._addAction("Update %s repository" % name, self.actionMenu)
+        self._addAction(i18n("Update All Repositories"), self.actionMenu)
+        self.setContextMenu(self.actionMenu)
+        self.contextMenu().addSeparator()
+        self.contextMenu().addAction(i18n("Quit"), QtGui.qApp.quit)
 
     def showPopup(self):
         if self._ready_to_popup():
-            if self.notification:
-                del self.notification
-            self.notification = KNotification("Updates")
-            self.notification.setText(i18n("There are <b>%1</b> updates available!", self.unread))
-            self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
-            self.notification.setFlags(KNotification.Persistent)
-            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
-            self.notification.sendEvent()
+            self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", self.unread))
+

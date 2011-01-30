@@ -28,13 +28,6 @@ from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QRegExp
 from PyQt4.QtCore import QVariant
 
-from PyKDE4.kdeui import KIcon
-from PyKDE4.kdeui import KIconLoader
-from PyKDE4.kdeui import KNotification
-
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdecore import KComponentData
-
 from ui_mainwidget_v3 import Ui_MainWidget
 
 from config import PMConfig
@@ -42,10 +35,7 @@ from config import PMConfig
 from pds.gui import FINISHED, OUT
 from pds.thread import PThread
 
-from pmutils import waitCursor
-from pmutils import network_available
-from pmutils import restoreCursor
-from pmutils import PM
+from pmutils import *
 
 from pdswidgets import PMessageBox
 from packageproxy import PackageProxy
@@ -141,7 +131,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         if self.currentState == self.state.UPGRADE:
             if self.groupList.count() == 0:
                 QTimer.singleShot(0, \
-                lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date"), icon = "games-endturn"))
+                lambda: self.pdsMessageBox.showMessage(i18n("All packages are up to date"), icon = "info"))
         if self.groupList.count() > 0:
             if self.state.inUpgrade():
                 self.pdsMessageBox.hideMessage(force = True)
@@ -350,11 +340,6 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             else:
                 self.checkUpdatesButton.hide()
             self.initialize()
-            # self.contentHistory.hide()
-            # self.content.show()
-        # else:
-            # self.contentHistory.show()
-            # self.content.hide()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
@@ -379,10 +364,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
                 self._selectedGroups.remove(self.groupList.currentGroup())
             self.setSelectAll(self._last_packages)
 
-        # A hacky solution to repaint the list to take care of selection changes
-        # FIXME Later
         self.packageList.setFocus()
-
         self.statusChanged()
 
     def showBasket(self):
