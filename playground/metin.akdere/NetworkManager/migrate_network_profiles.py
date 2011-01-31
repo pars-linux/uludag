@@ -565,14 +565,16 @@ class Migrator:
     def transform_profiles(self):
         """Convert Pardus' network profiles to NetworkManager profiles"""
 
-        for profile in self.pardus_profiles:
-            network_manager_profile = NetworkManagerProfile(profile.get_profile_name, profile)
-            self.network_manager_profiles.append(network_manager_profile)
+        if len(self.pardus_profiles) > 0:  # Make sure we have some profiles to migrate
+            for profile in self.pardus_profiles:
+                network_manager_profile = NetworkManagerProfile(profile.get_profile_name, profile)
+                self.network_manager_profiles.append(network_manager_profile)
 
     def write_network_manager_profiles(self):
         """Create profile file for each NetworkManager profile and change ownerships to 0600"""
-
-        for profile in self.network_manager_profiles:
-            profile.write_config()
-            profile.set_ownership()
+        
+        if len(self.network_manager_profiles) > 0:  # Make sure we have some profiles to migrate
+            for profile in self.network_manager_profiles:
+                profile.write_config()
+                profile.set_ownership()
 
