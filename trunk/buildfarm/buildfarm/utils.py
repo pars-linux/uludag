@@ -145,9 +145,17 @@ def run_hooks():
 
 def remove_obsoleted_packages():
     """Removes obsoleted packages from the system."""
-    s_index = pisi.index.Index("%s/pisi-index.xml" % utils.get_local_repository_url())
-    for obsolete in s_index.distribution.obsoletes:
-        pisi.api.remove(obsolete.package)
+    # Use directly distributions.xml to not rely on available
+    # repositories on the system.
+    dist = pisi.component.Distribution("%s/distribution.xml" % utils.get_local_repository_url())
+    obsoletes = [obsolete.package() for obsolete in dist.obsoletes]
+
+    # Reduce the list so that already removed ones are excluded
+    obsoletes = set(obsoletes).intersection(pisi.api.list_installed())
+
+    if obsoletes:
+        print obsoletes
+        #pisi.api.remove(obsoletes)
 
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built
