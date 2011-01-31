@@ -30,9 +30,10 @@ This document gives information about Pardus bug tracking system process. The pr
         #. If the bug is an insolubale bug:
             - WONTFIX: Bugs are not related to Pardus and will never be fixed
             - DUPLICATE: Bugs which have duplicates which are already been reported
+            - LATER: Bugs can be fixed for the next release or for a later time
             - INVALID: Bugs that are not realy a bug
             - WORKSFORME: Bugs could not be reproduced
-            - NEXTRELEASE: Bugs can be fixed for the next release
+            - NEXTRELEASE: Bugs fixed in next release
 
         #. Bugs set as a tracker bug of a release only by release managers or related component supervisor.
 
