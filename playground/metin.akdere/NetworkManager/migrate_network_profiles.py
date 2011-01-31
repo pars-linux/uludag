@@ -184,6 +184,10 @@ class NetworkManagerProfile:
         """Write settings to profile file"""
 
         #Before writing to file we must convert underscores to dashes, moreover _id must be written as id, and _type as type
+
+        if not os.path.exists(NetworkManager_conf_dir):
+            os.makedirs(NetworkManager_conf_dir, mode=0755)
+
         profile_path = os.path.join("%s" % NetworkManager_conf_dir, self.connection._id)
         with open(profile_path, "wb") as configfile:
             self.cfg.write(configfile)
