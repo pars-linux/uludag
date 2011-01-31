@@ -32,6 +32,7 @@ This document gives information about Pardus bug tracking system process. The pr
             - DUPLICATE: Bugs which have duplicates which are already been reported
             - INVALID: Bugs that are not realy a bug
             - WORKSFORME: Bugs could not be reproduced
+            - NEXTRELEASE: Bugs can be fixed for the next release
 
         #. Bugs set as a tracker bug of a release only by release managers or related component supervisor.
 
