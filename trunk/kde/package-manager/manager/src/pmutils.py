@@ -20,8 +20,6 @@ import socket
 import unicodedata
 import traceback
 
-import backend
-
 from pmlogging import logger
 
 from PyQt4.QtCore import Qt
@@ -145,6 +143,7 @@ def isSolidOnline():
     return Solid.Networking.status() == Solid.Networking.Connected
 
 def set_proxy_settings():
+    import backend
     http = backend.pm.Iface().getConfig().get("general", "http_proxy")
     if http and not http == "None":
         items = parse_proxy(http)
