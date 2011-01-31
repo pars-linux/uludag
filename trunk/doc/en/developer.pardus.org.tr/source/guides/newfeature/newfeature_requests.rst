@@ -130,7 +130,7 @@ There exist a deadline for the new feature submission of new Pardus Release. Aft
 
 #. Review "low" and "newfeature" severity bugs by release manager and assigned developer.
     #. If the new feature request is not suitable for `What is a Feature?`_ description, the report status is marked with "RESOLVED/INVALID".
-    #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with "RESOLVED/LATER".
+    #. If this new feature can not be done for this new release but may be done for the next new release, the report status is marked with "RESOLVED/NEXTRELEASE".
     #. If this new feaure is suitable for `What is a Feature?`_ description, and can be accepted for this new release:
         #. The report status is marked with "RESOLVED/REMIND"
         #. If necessary the product and component can be changed.
@@ -143,7 +143,7 @@ Accomplishment of New Feature
 
 There exist a deadline for the accomplishment of the new feature (feature freeze time).
 
-    #. If the developer can not be finish the work in due time, the status of the bug report is marked as "RESOLVED/LATER" and the new feature is left to next release.
+    #. If the developer can not be finish the work in due time, the status of the bug report is marked as "RESOLVED/NEXTRELEASE" and the new feature is left to next release.
     #. If the developer can finish the work in time, the bug status is marked as "RESOLVED/FIXED" via SVN commits of the developer.
 
 
@@ -153,7 +153,7 @@ How I can follow the new feature progress?
 If the bug status is marked as:
 
 #. "RESOLVED/INVALID", your new feature request is unfortunately not accepted.
-#. "REOLSVED/LATER", your new feature request is left to next release.
+#. "RESOLVED/NEXTRELEASE", your new feature request is left to next release.
 #. "RESOLVED/REMIND", your new feature request is accepted as a new feature of this new release.
     #. The implementation progress is reflected to comments as SVN commits. 
     #. The implementation can also be followed via related task of the project management tool URL given in the bug report.
