@@ -42,6 +42,7 @@ def build_packages():
     package_list = []
 
     # Remove obsoleted packages
+    logger.info("Removing obsoleted packages, this may take a while..")
     removed_packages = utils.remove_obsoleted_packages()
     if removed_packages:
         logger.info("Removed the following obsoleted packages:\n%s" % "\n".join(removed_packages))
