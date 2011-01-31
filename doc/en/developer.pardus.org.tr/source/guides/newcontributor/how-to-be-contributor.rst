@@ -257,17 +257,16 @@ Assigning Mentor Stock Response
 
 ::
 
-    Related to your responses, x is assigned you as a mentor.
+    Related to your responses, Gökçen Eraslan is assigned you as a mentor.
 
-    In order to creating an svn account, you have to send the output that is mentioned below link [1].
+    In order to creating an svn account, you have to add the output that is mentioned below link [1] as a comment to this bug.
+
     When you send this output, the write permissions for http://svn.pardus.org.tr/uludag/trunk/playground/
     and http://svn.pardus.org.tr/pardus/playground/ directories will be given.
 
-    After this period you can start to implement the choosed junior job. If you need , please do not hasitate to
-    communicate with your mentor.
+    After this period you can start to implement the chosen junior job. If you need , please do not hesitate to communicate with your mentor.
 
     Regards,
 
     [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
-
 
