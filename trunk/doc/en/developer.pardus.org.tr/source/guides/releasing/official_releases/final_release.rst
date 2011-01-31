@@ -94,13 +94,15 @@ Final Tickets
    * Installation media
    * Live Media
 #. Release RC
+
    * Upload iso to FTP servers
    * Upload iso to torrents
 #. Send an announcement mail for Final release
 #. Release Final
 
-   * Open stable source and binary repositories
+   * Open stable binary repository
    * Add stable repository to packages.pardus.org.tr
+   * Warn mirrors and ULAKBIM one week before
    * Upload iso to FTP servers
    * Upload iso to torrents
 #. Send an announcement mail for Final release

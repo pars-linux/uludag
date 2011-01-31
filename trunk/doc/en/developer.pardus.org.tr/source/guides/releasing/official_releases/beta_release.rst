@@ -89,6 +89,8 @@ Beta Tickets
 #. Create release-notes
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Beta
+
+    * Warn mirrors and ULAKBIM one week before
     * Upload iso to FTP servers
     * Upload iso to torrents
 #. Send an announcement mail for Beta release

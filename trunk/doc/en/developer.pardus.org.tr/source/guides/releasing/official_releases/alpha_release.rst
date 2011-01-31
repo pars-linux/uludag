@@ -86,16 +86,20 @@ Alpha Tickets
 #. Warn about `feature freeze`_ one week before
 #. Warn about Alpha freeze one week before
 #. Plan for artwork Pardus
+
     * Wallpapers
     * Icon theme
     * Splash screens
 #. Create Alpha Test Release for Alpha validation tests
+
     * Installation media
     * Live media
 #. Prepare and make "where we are meeting" after validation tests
 #. Create release-notes
 #. Upload release-notes to developer.pardus.org.tr
 #. Release Alpha
+
+    * Warn mirrors and ULAKBIM one week before
     * Upload iso to FTP servers
     * Upload iso to torrents
 #. Send an announcement mail for Alpha release
