@@ -133,8 +133,8 @@ def build_packages():
                        compression=File.COMPRESSION_TYPE_XZ)
 
     # Run hooks
-    print "\nRunning hooks"""
-    utils.run_hooks()
+    # print "\nRunning hooks"""
+    # utils.run_hooks()
 
     # Check packages containing binaries and libraries broken by any package update
     print "\nChecking binary consistency with revdep-rebuild"
