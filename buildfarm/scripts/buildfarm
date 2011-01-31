@@ -41,6 +41,9 @@ def build_packages():
 
     package_list = []
 
+    # Remove obsoleted packages
+    utils.remove_obsoleted_packages()
+
     # Compiling current work queue
 
     # Use a/b/pspec.xml instead of full path in e-mails
