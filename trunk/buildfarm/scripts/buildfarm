@@ -42,7 +42,9 @@ def build_packages():
     package_list = []
 
     # Remove obsoleted packages
-    utils.remove_obsoleted_packages()
+    removed_packages = utils.remove_obsoleted_packages()
+    if removed_packages:
+        logger.info("Removed the following obsoleted packages:\n%s" % "\n".join(removed_packages))
 
     # Compiling current work queue
 

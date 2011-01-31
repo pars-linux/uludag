@@ -148,14 +148,15 @@ def remove_obsoleted_packages():
     # Use directly distributions.xml to not rely on available
     # repositories on the system.
     dist = pisi.component.Distribution("%s/distribution.xml" % get_local_repository_url())
-    obsoletes = [obsolete.package() for obsolete in dist.obsoletes]
+    obsoletes = [obsolete.package for obsolete in dist.obsoletes]
 
     # Reduce the list so that already removed ones are excluded
-    obsoletes = set(obsoletes).intersection(pisi.api.list_installed())
+    obsoletes = list(set(obsoletes).intersection(pisi.api.list_installed()))
 
     if obsoletes:
-        print obsoletes
-        #pisi.api.remove(obsoletes)
+        pisi.api.remove(obsoletes)
+
+    return obsoletes
 
 def is_arch_excluded(spec):
     """Returns True if the given pspec.xml shouldn't be built

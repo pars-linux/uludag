@@ -13,8 +13,8 @@ TODO for buildfarm 3.0
 (+) Use pisi.api for creating the indexes
 (+) Use pisi methods if available to avoid redundancy
 (+) Add hooks.d for running a number of hooks after each run
+(+) Support for the removal of obsoleted packages
 
 (-) Drop waitqueue
-(-) Support for the removal of obsoleted packages
 (-) A Web status page for current status
 (-) Implement locking correctly
