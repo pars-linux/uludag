@@ -7,7 +7,7 @@ Packaging Guidelines
 
 :Author: Semen Cirit
 
-:Version: 0.4
+:Version: 0.5
 
 During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
 
@@ -477,10 +477,10 @@ Renaming/replacing existing packages
 
 Sometimes it is necessary to rename or replace an existing package. The new pacage(s) should make the change without user intervention.
 
-If a package is renamed without any functional changes or pacakge(s) replace with an existing package, the necessary changes should be made on relevant files:
+If a package is renamed without any functional changes or package(s) replace with an existing package, the necessary changes should be made on relevant files:
 
 
-    * The pacakge(s) that are not been found after the changes, should be tagged with <Obsolete> in distribution.xml file as below:
+    * The package(s) that will not exist after the changes, should be tagged with <Obsolete> in distribution.xml file as below:
 
     ::
 
@@ -492,6 +492,16 @@ If a package is renamed without any functional changes or pacakge(s) replace wit
         Example:
           <!-- Replaced by texlive-core  texlive-latex texlive-latexextra texlive-latexrecommended texlive-omega -->
           <Package>tetex</Package>
+
+    * The obsoleted packages in distribution.xml should be added under below information:
+
+    ::
+
+            <!--
+            ************************************************************
+            not gone to binary stable yet, please don't remove this mark
+            ************************************************************
+            -->
 
     * The new packages' pspec.xml file should include the old package(s) that are renamed or replaced. The format of this change:
 
