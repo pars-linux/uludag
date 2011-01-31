@@ -26,7 +26,6 @@ if __name__ == "__main__":
             sys.stderr.write("%s\n" % e)
         else:
             if conf.architecture in spec.source.excludeArch:
-                print "** Skipping %s because of architecture mismatch" % pkg
                 continue
 
             ver = spec.history[0].version
