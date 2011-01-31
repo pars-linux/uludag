@@ -1,0 +1,42 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys
+import subprocess
+
+COMMANDS_NOPARAM = [
+                        "init",
+                        "up",
+                        "run",
+                        "missing",
+                   ]
+
+COMMANDS_WITH_1PARAM = []
+
+def usage():
+    print """\
+Pardus buildfarm framework
+
+Usage: %s COMMAND
+    Where COMMAND can be one of the following:
+
+    init        Initializes a new buildfarm environment
+    up          Checks out the repository from remote SCM
+    run         Build and install packages
+    missing     Dumps the packages which has releases not
+                built yet.
+""" % sys.argv[0]
+
+if __name__ == "__main__":
+    # Dispatches commands to real commands
+    if len(sys.argv) < 2:
+        sys.exit(usage())
+
+    cmd = sys.argv[1]
+
+    if cmd in COMMANDS_NOPARAM:
+        sys.exit(subprocess.call(["/usr/bin/buildfarm",
+                                  cmd]))
+
+    else:
+        sys.exit(usage)
