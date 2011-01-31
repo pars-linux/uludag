@@ -48,7 +48,7 @@ def update_messages():
     # Collect UI files
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("pyuic4 -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        os.system("pyuic4 -o ui/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
 
     # Collect headers for desktop files
     for filename in glob.glob("data/*.desktop.in"):
@@ -106,7 +106,7 @@ class Build(build):
 
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("pyuic4 -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("pyuic4 -o build/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
