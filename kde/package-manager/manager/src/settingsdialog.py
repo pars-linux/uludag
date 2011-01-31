@@ -174,7 +174,10 @@ class CacheSettings(SettingsTab):
                                                   i18n("Warning"),
                                                   i18n("All the cached packages will be deleted. Are you sure? "),
                                                   QMessageBox.Yes | QMessageBox.No):
-            self.iface.clearCache(0)
+            try:
+                self.iface.clearCache(0)
+            except Exception, e:
+                self.settings.parent.cw.exceptionCaught(str(e))
 
     def save(self):
         self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
@@ -434,13 +437,12 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
         QDialog.__init__(self, parent)
         self.setupUi(self)
         self.connectSignals()
+        self.parent = parent
 
         self.generalSettings = GeneralSettings(self)
         self.cacheSettings = CacheSettings(self)
         self.repositorySettings = RepositorySettings(self)
         self.proxySettings = ProxySettings(self)
-
-        self.parent = parent
 
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
