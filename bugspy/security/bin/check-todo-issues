@@ -32,13 +32,13 @@ TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
 TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
 
 TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
-               "corporate2": TRACKER_PARDUS_CORPORATE2}
+               "Corporate2": TRACKER_PARDUS_CORPORATE2}
 
 # Global variable that is used when asked for which pardus versions are affected
 PARDUS_RELEASES = {"1": "2009",
-                   "2": "corporate2"}
+                   "2": "Corporate2"}
 
-DEFAULT_ISSUE_REGEX = '^CVE-20(0[3-9]|10)'
+DEFAULT_ISSUE_REGEX = '^CVE-20(0[3-9]|10|11)'
 DEFAULT_TODO_REGEX = '^\s+TODO: check$'
 
 # Log class for BugSPY
