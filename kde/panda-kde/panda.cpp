@@ -175,7 +175,7 @@ void PandaConfig::load()
   typeP->waitForFinished();
 
   QByteArray typeOut = typeP->readAllStandardOutput();
-  QStringList driverTypes = QString(typeOut).split(",");
+  QStringList driverTypes = QString(typeOut).trimmed().split(",");
 
   // Which driver is used currently
   QStringList curArgs;
@@ -200,21 +200,21 @@ void PandaConfig::load()
       if (isVendor)
           vendorDriver->setChecked(true);
   } else {
-      vendorDriver->setCheckable(false);
+      vendorDriver->setDisabled(true);
   }
 
   if (driverTypes.contains(os)) {
       if (isOs)
           osDriver->setChecked(true);
   } else {
-      osDriver->setCheckable(false);
+      osDriver->setDisabled(true);
   }
 
   if (driverTypes.contains(generic)) {
       if (isGeneric)
           genericDriver->setChecked(true);
   } else {
-      genericDriver->setCheckable(false);
+      genericDriver->setDisabled(true);
   }
 
   emit changed(false);
@@ -278,20 +278,20 @@ void PandaConfig::defaults()
   typeP->waitForFinished();
 
   QByteArray typeOut = typeP->readAllStandardOutput();
-  QStringList driverTypes = QString(typeOut).split(",");
+  QStringList driverTypes = QString(typeOut).trimmed().split(",");
 
   QString vendor = "vendor";
   QString os = "os";
   QString generic = "generic";
 
   if (!driverTypes.contains(vendor))
-      vendorDriver->setCheckable(false);
+      vendorDriver->setDisabled(true);
 
   if (!driverTypes.contains(os))
-      osDriver->setCheckable(false);
+      osDriver->setDisabled(true);
 
   if (!driverTypes.contains(generic))
-      genericDriver->setCheckable(false);
+      genericDriver->setDisabled(true);
 
   osDriver->setChecked(true);
   emit changed(true);
