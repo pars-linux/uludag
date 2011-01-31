@@ -185,7 +185,7 @@ class Tray(QtGui.QSystemTrayIcon, PTray):
     def populateRepositoryMenu(self):
         self.actionMenu.clear()
         for name, address in self.iface.getRepositories(only_active = True):
-            self._addAction("Update %s repository" % name, self.actionMenu)
+            self._addAction(i18n("Update %1 repository", name), self.actionMenu)
         self._addAction(i18n("Update All Repositories"), self.actionMenu)
         self.setContextMenu(self.actionMenu)
         self.contextMenu().addSeparator()

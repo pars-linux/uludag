@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-01-31 11:52+0200\n"
 "PO-Revision-Date: 2011-01-25 19:15+0300\n"
 "Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
 "Language-Team: translation@linux.org.ua\n"
@@ -22,8 +22,8 @@ msgid "Add or Remove Software"
 msgstr "Встановлення та вилучення програм"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/progressdialog.py:62
-#: src/tray.py:129 src/tray.py:133 src/tray.py:135 ui/ui_mainwindow.py:31
+#: data/packagemanager-helper.desktop.in.h:2 src/pmutils.py:71
+#: src/progressdialog.py:62 ui/ui_mainwindow.py:35
 msgid "Package Manager"
 msgstr "Керування пакунками"
 
@@ -35,254 +35,224 @@ msgstr "Графічний інтефейс керування пакункам�
 msgid "Add/Remove/Update Packages"
 msgstr "Встановити/вилучити/оновити пакунки"
 
-#: src/about.py:27
-msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "© 2009–2010 TUBITAK/UEKAE"
-
-#: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
-msgid "Developer"
-msgstr "Розробник"
-
-#: src/about.py:37
-msgid "Faik Uygur"
-msgstr "Faik Uygur"
-
-#: src/about.py:37
-msgid "First Author"
-msgstr "Засновник"
-
-#: src/about.py:38
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Daniel Korostil"
-
-#: src/about.py:39
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "ted.korostiled@gmail.com"
-
-#: src/basketdialog.py:55 ui/ui_basketdialog.py:190
+#: src/basketdialog.py:53 ui/ui_basketdialog.py:194
 msgid "Clear Basket"
 msgstr "Очистити кошик"
 
-#: src/basketdialog.py:56
+#: src/basketdialog.py:54
 msgid "Do you want to clear all selections ?"
 msgstr "Очистити все вибране ?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
+#: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
+#: src/settingsdialog.py:234 src/settingsdialog.py:239
 msgid "Pisi Error"
 msgstr "Помилка Pisi"
 
-#: src/basketdialog.py:173
+#: src/basketdialog.py:171
 msgid "You must restart your system for the updates to take effect"
 msgstr "Щоб оновлення набрало чинності, потрібно перезавантажити систему"
 
-#: src/basketdialog.py:175 src/basketdialog.py:184
+#: src/basketdialog.py:173 src/basketdialog.py:182
 msgid "Update Requirements"
 msgstr "Оновлення вимог"
 
-#: src/basketdialog.py:176
+#: src/basketdialog.py:174
 msgid "Packages Require System Restart"
 msgstr "Пакунки потребують перезапуску системи"
 
-#: src/basketdialog.py:182
+#: src/basketdialog.py:180
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Потрібно перезапустити пов'язані системні служби для оновлення пакунків, щоб ті набрали чинності."
 
-#: src/basketdialog.py:185
+#: src/basketdialog.py:183
 msgid "Packages Require Service Restart"
 msgstr "Пакунки потребують перезапуску служб"
 
-#: src/basketdialog.py:196
+#: src/basketdialog.py:194
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Вибрані пакунки вважаються критичними для системи. Їхнє вилучення може призвести до її непрацездатності."
 
-#: src/basketdialog.py:199 src/settingsdialog.py:174
+#: src/basketdialog.py:197 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Попередження"
 
-#: src/basketdialog.py:200
+#: src/basketdialog.py:198
 msgid "Critical Packages"
 msgstr "Критичні пакунки"
 
-#: src/basketdialog.py:211 src/pmwindow.py:144
+#: src/basketdialog.py:209 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Вибрані пакунки встановлено.<br>Якщо продовжите, пакунки буде перевстановлено"
 
-#: src/basketdialog.py:213 src/pmwindow.py:146
+#: src/basketdialog.py:211 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr "Уже встановлені пакунки"
 
-#: src/basketdialog.py:214 src/mainwindow.py:147 src/mainwindow.py:150
-#: src/pmwindow.py:147
+#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr "Установлені пакунки"
 
-#: src/grouplist.py:49 src/tray.py:69 src/tray.py:201
+#: src/grouplist.py:47
 msgid "All"
 msgstr "Усі"
 
-#: src/helpdialog.py:33
+#: src/helpdialog.py:31
 msgid "Package Manager Help"
 msgstr "Довідка керування пакунками"
 
-#: src/main.py:90 src/main.py:91
-msgid "Show main window"
-msgstr "Показати головне вікно"
-
-#: src/mainwidget.py:144 src/tray.py:129 src/tray.py:135
+#: src/mainwidget.py:134
 msgid "All packages are up to date"
 msgstr "Усі пакунки оновлено"
 
-#: src/mainwidget.py:247
+#: src/mainwidget.py:237
 msgid "Searching..."
 msgstr "Пошук…"
 
-#: src/mainwidget.py:259
+#: src/mainwidget.py:249
 msgid "No results found."
 msgstr "Нічого не знайдено."
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:389
 msgid "All Updates"
 msgstr "Усі оновлення"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:390
 msgid "Security Updates"
 msgstr "Оновлення безпеки"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:391
 msgid "Critical Updates"
 msgstr "Критичні оновлення"
 
-#: src/mainwindow.py:135 src/mainwindow.py:138
+#: src/mainwindow.py:134 src/mainwindow.py:136
 msgid "All Packages"
 msgstr "Усі пакунки"
 
-#: src/mainwindow.py:141 src/mainwindow.py:144
+#: src/mainwindow.py:138 src/mainwindow.py:140
 msgid "Installable Packages"
 msgstr "Установчі пакунки"
 
-#: src/mainwindow.py:153 src/mainwindow.py:156
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
 msgid "Updates"
 msgstr "Оновлення"
 
-#: src/mainwindow.py:201
+#: src/mainwindow.py:150 ui/ui_mainwidget_v3.py:167
+msgid "Settings"
+msgstr "Налаштування"
+
+#: src/mainwindow.py:153 src/tray.py:192
+msgid "Quit"
+msgstr ""
+
+#: src/mainwindow.py:181
 msgid "Calculating dependencies..."
 msgstr "Розрахунок залежностей…"
 
-#: src/mainwindow.py:205
+#: src/mainwindow.py:185
 msgid "Currently your basket is empty."
 msgstr "Натепер ваш кшик порожній."
 
-#: src/operationmanager.py:40
+#: src/operationmanager.py:38
 msgid "installing"
 msgstr "установлення"
 
-#: src/operationmanager.py:41
+#: src/operationmanager.py:39
 msgid "removing"
 msgstr "вилучення"
 
-#: src/operationmanager.py:42 src/progressdialog.py:78
+#: src/operationmanager.py:40 src/progressdialog.py:78
 msgid "extracting"
 msgstr "розпакування"
 
-#: src/operationmanager.py:43 src/progressdialog.py:78
+#: src/operationmanager.py:41 src/progressdialog.py:78
 msgid "configuring"
 msgstr "налаштування"
 
-#: src/operationmanager.py:137
+#: src/operationmanager.py:135
 msgid "downloading"
 msgstr "звантаження"
 
-#: src/packagedelegate.py:64
+#: src/packagedelegate.py:79
 msgid "critical"
 msgstr "критичне"
 
-#: src/packagedelegate.py:65
+#: src/packagedelegate.py:80
 msgid "security"
 msgstr "безпека"
 
-#: src/packagedelegate.py:81
+#: src/packagedelegate.py:96
 msgid "Description:"
 msgstr "Опис:"
 
-#: src/packagedelegate.py:82
+#: src/packagedelegate.py:97
 msgid "Website:"
 msgstr "Сайт:"
 
-#: src/packagedelegate.py:83
+#: src/packagedelegate.py:98
 msgid "Release:"
 msgstr "Випуск:"
 
-#: src/packagedelegate.py:84
+#: src/packagedelegate.py:99
 msgid "Repository:"
 msgstr "Сховище:"
 
-#: src/packagedelegate.py:85
+#: src/packagedelegate.py:100
 msgid "Package Size:"
 msgstr "Розмір пакунка:"
 
-#: src/packagedelegate.py:86
+#: src/packagedelegate.py:101
 msgid "Installed Version:"
 msgstr "Версія встановленої:"
 
-#: src/packagedelegate.py:320
+#: src/packagedelegate.py:335
 msgid "Details"
 msgstr "Подробиці"
 
-#: src/packageview.py:24
+#: src/packageview.py:23
 msgid "Select all packages in this group"
 msgstr "Вибрати всі пакунки у цій групі"
 
-#: src/pm-install.py:49
+#: src/pm-install.py:46
 msgid "%prog packages_to_install"
 msgstr "%prog packages_to_install"
 
-#: src/pm-install.py:65
-msgid "Hide summary screen"
-msgstr "Сховати екран підсумків"
-
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:77 src/statemanager.py:241
 msgid "Network Error"
 msgstr "Помилка мережі"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:78 src/statemanager.py:242
 msgid "Please check your network connections and try again."
 msgstr "Будь ласка, перевірте ваше мережеве з'єднання та спробуйте знову. "
 
-#: src/pmutils.py:78
+#: src/pmutils.py:80
 msgid "Authorization Error"
 msgstr "Помилка авторизації"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:81
 msgid "You are not authorized for this operation."
 msgstr "Ви не авторизовані для цією дії."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:84
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Не знайдено пакунка <b>%s</b> у сховищах.<br>Він міг бути оновленим або вилученим зі сховища.<br>Будь ласка, спробуйте оновити інформацію про сховище."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:89
 msgid "Mixing file names and package names not supported yet."
 msgstr "Змішування назв файлів і назв пакунків не підтримується поки що."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:92
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Файл <b>%s</b> не існує."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:95
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "PiSi вже запущено деінде. Дозволено лише одну одночасно."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:129
 msgid "Do you want to continue ?"
 msgstr "Продовжити?"
 
@@ -319,160 +289,159 @@ msgstr "Підготовлення PiSi…"
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Скасування дії…</b>"
 
-#: src/settingsdialog.py:165
+#: src/settingsdialog.py:160
 msgid "Open Directory"
 msgstr "Відкрити теку"
 
-#: src/settingsdialog.py:175
+#: src/settingsdialog.py:170
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Всі кешовані пакунки буде вилучено. Впевнені?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:235
 msgid "Not a valid repository name"
 msgstr "Неправильна назва сховища"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:240
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса сховища повинна закінчувати або на суфікс «xml», або «xml.bz2», або «xz» .<p>Спробуйте ще раз.</qt>"
 
-#: src/statemanager.py:85 src/statemanager.py:86
+#: src/statemanager.py:83 src/statemanager.py:84
 msgid "Installing Package(s)"
 msgstr "Установлення пакунків"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:85
 msgid "Removing Package(s)"
 msgstr "Вилучення пакунків"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:86
 msgid "Upgrading Package(s)"
 msgstr "Оновлення пакунків"
 
-#: src/statemanager.py:89
+#: src/statemanager.py:87
 msgid "Applying Repository Changes"
 msgstr "Застосування змін щодо сховищ"
 
-#: src/statemanager.py:90
+#: src/statemanager.py:88
 msgid "Updating Repository"
 msgstr "Оновлення сховища"
 
-#: src/statemanager.py:91
+#: src/statemanager.py:89
 msgid "Updating Repository(s)"
 msgstr "Оновлення сховищ"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:92
 msgid "installed"
 msgstr "встановлено"
 
-#: src/statemanager.py:95
+#: src/statemanager.py:93
 msgid "removed"
 msgstr "вилучено"
 
-#: src/statemanager.py:96
+#: src/statemanager.py:94
 msgid "upgraded"
 msgstr "оновлено"
 
-#: src/statemanager.py:97
+#: src/statemanager.py:95
 msgid "modified"
 msgstr "змінено"
 
-#: src/statemanager.py:101 ui/ui_basketdialog.py:191
-#: ui/ui_mainwidget_v3.py:175
+#: src/statemanager.py:99 ui/ui_basketdialog.py:195 ui/ui_mainwidget_v3.py:173
 msgid "Install Package(s)"
 msgstr "Установити пакунки"
 
-#: src/statemanager.py:102
+#: src/statemanager.py:100
 msgid "Remove Package(s)"
 msgstr "Вилучити пакунки"
 
-#: src/statemanager.py:103
+#: src/statemanager.py:101
 msgid "Upgrade Package(s)"
 msgstr "Оновити пакунки"
 
-#: src/statemanager.py:104
+#: src/statemanager.py:102
 msgid "Select Operation"
 msgstr "Вибрати дію"
 
-#: src/statemanager.py:114
+#: src/statemanager.py:112
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 пакунків успішно встановлено."
 
-#: src/statemanager.py:115
+#: src/statemanager.py:113
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 пакунків успішно вилучено."
 
-#: src/statemanager.py:116
+#: src/statemanager.py:114
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 пакунків успішно оновлено."
 
-#: src/statemanager.py:117
+#: src/statemanager.py:115
 msgid "%1 package(s) have been modified succesfully."
 msgstr "%1 пакунків успішно змінено."
 
-#: src/statemanager.py:120
+#: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
 msgstr "Ви вибрали такі пакунки для встановлення:"
 
-#: src/statemanager.py:121
+#: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
 msgstr "Ви вибрали такі пакунки для вилучення:"
 
-#: src/statemanager.py:122
+#: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ви вибрали такі пакунки для оновлення:"
 
-#: src/statemanager.py:123
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to modify:"
 msgstr "Ви вибрали такі пакунки для зміни:"
 
-#: src/statemanager.py:126 ui/ui_basketdialog.py:187
+#: src/statemanager.py:124 ui/ui_basketdialog.py:191
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Обов'язкові залежності вибраних пакунків також буде встановлено:"
 
-#: src/statemanager.py:127
+#: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Непотрібні залежності вибраних пакунків також буде вилучено:"
 
-#: src/statemanager.py:128
+#: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Обов'язкові залежності вибраних пакунків також буде оновлено:"
 
-#: src/statemanager.py:129
+#: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Обов'язкові залежності вибраних пакунків також буде змінено:"
 
-#: src/statemanager.py:168
+#: src/statemanager.py:166
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Вибрано <b>%1</b> пакунків із загальним розміром <b>%2</b>"
 
-#: src/statemanager.py:171
+#: src/statemanager.py:169
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "з <b>%1</b> розміром непотрібних залежностей із загальним розміром <b>%2</b>"
 
-#: src/statemanager.py:173
+#: src/statemanager.py:171
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "з <b>%1</b> розміром обов'язкових залежностей із загальним розміром <b>%2</b>"
 
-#: src/statemanager.py:174
+#: src/statemanager.py:172
 msgid "in your basket."
 msgstr "у кошику."
 
-#: src/statemanager.py:209
+#: src/statemanager.py:207
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Вибрані пакунки [%1] конфліктують одне з одним. Ці пакунки неможливо встановити разом."
 
-#: src/statemanager.py:210 src/statemanager.py:218
+#: src/statemanager.py:208 src/statemanager.py:216
 msgid "Conflict Error"
 msgstr "Помилка конфліктів"
 
-#: src/statemanager.py:214
+#: src/statemanager.py:212
 msgid "The following packages conflicts:\n"
 msgstr "Такі пакунки конфліктують:\n"
 
-#: src/statemanager.py:216
+#: src/statemanager.py:214
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 конфліктує з: [%2]\n"
 
-#: src/statemanager.py:217
+#: src/statemanager.py:215
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -480,301 +449,292 @@ msgstr ""
 "\n"
 "Вилучити конфліктний пакунок із системи?"
 
-#: src/tray.py:133 src/tray.py:208
-msgid "There are <b>%1</b> updates available!"
-msgstr "<b>%1</b> оновлень доступно!"
+#: src/tray.py:68 src/tray.py:189
+#, fuzzy
+msgid "Update All Repositories"
+msgstr "Оновлення сховища"
 
-#: src/tray.py:189
+#: src/tray.py:182
 msgid "Update"
 msgstr "Оновити"
 
-#: src/tray.py:209
-msgid "Show Updates"
-msgstr "Показати оновлення"
+#: src/tray.py:188
+#, fuzzy
+msgid "Update %1 repository"
+msgstr "Оновлення сховища"
 
-#: src/tray.py:209
-msgid "Ignore"
-msgstr "Ігнорувати"
+#: src/tray.py:196
+#, fuzzy
+msgid "There are %1 updates available!"
+msgstr "<b>%1</b> оновлень доступно!"
 
-#: src/webdialog.py:126 ui/ui_webdialog.py:158
+#: src/webdialog.py:123 ui/ui_webdialog.py:157
 msgid "Package Files"
 msgstr "Файли пакунка"
 
-#: ui/ui_appitem.py:58
+#: ui/ui_appitem.py:62
 msgid "Application"
 msgstr "Програми"
 
-#: ui/ui_appitem.py:59
+#: ui/ui_appitem.py:63
 msgid "Web Tarayıcı"
 msgstr "Tarayıcı"
 
-#: ui/ui_appitem.py:60
+#: ui/ui_appitem.py:64
 msgid "Firefox"
 msgstr "Firefox"
 
-#: ui/ui_basketdialog.py:185 ui/ui_webdialog.py:156
+#: ui/ui_basketdialog.py:189 ui/ui_webdialog.py:156
 msgid "Basket"
 msgstr "Кошик"
 
-#: ui/ui_basketdialog.py:186
+#: ui/ui_basketdialog.py:190
 msgid "Selected package(s) for install:"
 msgstr "Вибрані пакунки для встановлення:"
 
-#: ui/ui_basketdialog.py:188
+#: ui/ui_basketdialog.py:192
 msgid "Total Size:"
 msgstr "Загальний розмір:"
 
-#: ui/ui_basketdialog.py:189
+#: ui/ui_basketdialog.py:193
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 МБ</b>"
 
-#: ui/ui_basketdialog.py:192
+#: ui/ui_basketdialog.py:196
 msgid "Download Size:"
 msgstr "Розмір звантаження:"
 
-#: ui/ui_basketdialog.py:193
+#: ui/ui_basketdialog.py:197
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 МБ</"
 
-#: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:42
-#: ui/ui_progressdialog_v4.py:195
+#: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
+#: ui/ui_progressdialog_v4.py:199
 msgid "Form"
 msgstr "Форма"
 
-#: ui/ui_mainwidget_v3.py:167
-msgid "Settings"
-msgstr "Налаштування"
-
 #: ui/ui_mainwidget_v3.py:168
-msgid "Search Bar"
-msgstr "Панель пошуку"
-
-#: ui/ui_mainwidget_v3.py:169
-msgid "Click to search"
-msgstr "Натисніть для пошуку"
-
-#: ui/ui_mainwidget_v3.py:170
 msgid "Update Types"
 msgstr "Оновити типи"
 
-#: ui/ui_mainwidget_v3.py:171
+#: ui/ui_mainwidget_v3.py:169
 msgid "Category Panel"
 msgstr "Панель категорій"
 
-#: ui/ui_mainwidget_v3.py:172 ui/ui_pminstall.py:85
+#: ui/ui_mainwidget_v3.py:170 ui/ui_pminstall.py:89
 msgid "Package List"
 msgstr "Перелік пакунків"
 
-#: ui/ui_mainwidget_v3.py:173
+#: ui/ui_mainwidget_v3.py:171
 msgid "Show Basket"
 msgstr "Показати кошик"
 
-#: ui/ui_mainwidget_v3.py:174
+#: ui/ui_mainwidget_v3.py:172
 msgid "Check for Updates"
 msgstr "Перевірити на оновлення"
 
-#: ui/ui_pminstall.py:83
+#: ui/ui_pminstall.py:87
 msgid "Package Manager Quick Install"
 msgstr "Швидке встановлення керування пакунками "
 
-#: ui/ui_pminstall.py:84
+#: ui/ui_pminstall.py:88
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr "Ці пакунки вибрано для встановлення. Встановити їх?"
 
-#: ui/ui_pminstall.py:86
+#: ui/ui_pminstall.py:90
 msgid "Install"
 msgstr "Встановити"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:91
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: ui/ui_preview.py:52
+#: ui/ui_preview.py:56
 msgid "Preview"
 msgstr "Перегляд"
 
-#: ui/ui_progressdialog_v4.py:196
+#: ui/ui_progressdialog_v4.py:200
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: ui/ui_repodialog.py:54
+#: ui/ui_repodialog.py:58
 msgid "Add New Repository"
 msgstr "Додати нове сховище"
 
-#: ui/ui_repodialog.py:55
+#: ui/ui_repodialog.py:59
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Назва сховища, наприклад, <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:56 ui/ui_settingsdialog.py:425
+#: ui/ui_repodialog.py:60 ui/ui_settingsdialog.py:429
 msgid "Repository Name"
 msgstr "Назва сховища"
 
-#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:426
+#: ui/ui_repodialog.py:61 ui/ui_settingsdialog.py:430
 msgid "Repository Address"
 msgstr "Адреса сховища"
 
-#: ui/ui_settingsdialog.py:398
+#: ui/ui_settingsdialog.py:402
 msgid "Package Manager Settings"
 msgstr "Налаштування керування пакунками"
 
-#: ui/ui_settingsdialog.py:399
+#: ui/ui_settingsdialog.py:403
 msgid "Package list"
 msgstr "Перелік пакунків"
 
-#: ui/ui_settingsdialog.py:400
+#: ui/ui_settingsdialog.py:404
 msgid "&Show only desktop applications"
 msgstr "&Показати лише стільничні програми"
 
-#: ui/ui_settingsdialog.py:401
+#: ui/ui_settingsdialog.py:405
 msgid "Show Component information "
 msgstr "Показати інформацію про компоненти"
 
-#: ui/ui_settingsdialog.py:402
+#: ui/ui_settingsdialog.py:406
 msgid "Show package type tags"
 msgstr "Показати мітки типу пакунка"
 
-#: ui/ui_settingsdialog.py:403
+#: ui/ui_settingsdialog.py:407
 msgid "System tray icon"
 msgstr "Піктограма системного лотка"
 
-#: ui/ui_settingsdialog.py:404
+#: ui/ui_settingsdialog.py:408
 msgid "Enable system tray icon"
 msgstr "Увімкнути піктограму системного лотка"
 
-#: ui/ui_settingsdialog.py:405
+#: ui/ui_settingsdialog.py:409
 msgid "Hide system tray if there is no update."
 msgstr "Сховати системний лоток, якщо нема оновлень."
 
-#: ui/ui_settingsdialog.py:406
+#: ui/ui_settingsdialog.py:410
 msgid "Enable &periodic update check"
 msgstr "Увімкнути &періодичну перевірку оновлень"
 
-#: ui/ui_settingsdialog.py:407
+#: ui/ui_settingsdialog.py:411
 msgid "Check interval :"
 msgstr "Проміжок перевірки :"
 
-#: ui/ui_settingsdialog.py:408
+#: ui/ui_settingsdialog.py:412
 msgid " min"
 msgstr " хв."
 
-#: ui/ui_settingsdialog.py:409
+#: ui/ui_settingsdialog.py:413
 msgid "Install updates automatically"
 msgstr "Установлювати оновлення автоматично"
 
-#: ui/ui_settingsdialog.py:410
+#: ui/ui_settingsdialog.py:414
 msgid "&General Settings"
 msgstr "&Загальні налаштування"
 
-#: ui/ui_settingsdialog.py:411
+#: ui/ui_settingsdialog.py:415
 msgid "Cache Limit"
 msgstr "Обмеження кешу"
 
-#: ui/ui_settingsdialog.py:412
+#: ui/ui_settingsdialog.py:416
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Використати кеш твердого диска для звантажених програм"
 
-#: ui/ui_settingsdialog.py:413
+#: ui/ui_settingsdialog.py:417
 msgid "Maximum cache size:"
 msgstr "Максимальний розмір кешу:"
 
-#: ui/ui_settingsdialog.py:414
+#: ui/ui_settingsdialog.py:418
 msgid "Unlimited"
 msgstr "Необмежено"
 
-#: ui/ui_settingsdialog.py:415
+#: ui/ui_settingsdialog.py:419
 msgid " Mib"
 msgstr " Міб"
 
-#: ui/ui_settingsdialog.py:416
+#: ui/ui_settingsdialog.py:420
 msgid "Current cache dir:"
 msgstr "Теперішня тека кешу:"
 
-#: ui/ui_settingsdialog.py:417
+#: ui/ui_settingsdialog.py:421
 msgid "Select..."
 msgstr "Вибрати…"
 
-#: ui/ui_settingsdialog.py:418
+#: ui/ui_settingsdialog.py:422
 msgid "Open"
 msgstr "Відкрити"
 
-#: ui/ui_settingsdialog.py:419
+#: ui/ui_settingsdialog.py:423
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
 msgstr "Очищення кешу диска вилучить всі звантажені програми. Це не вилучить встановлені програми і не вплине на стабільність системи."
 
-#: ui/ui_settingsdialog.py:420
+#: ui/ui_settingsdialog.py:424
 msgid "C&lean disk cache now"
 msgstr "&Очистити кеш диска зараз же"
 
-#: ui/ui_settingsdialog.py:421
+#: ui/ui_settingsdialog.py:425
 msgid "Bandwidth limit"
 msgstr "Обмеження пропускної здатності"
 
-#: ui/ui_settingsdialog.py:422
+#: ui/ui_settingsdialog.py:426
 msgid "Use bandwidth limit :"
 msgstr "Використовувати обмеження пропускної здатності :"
 
-#: ui/ui_settingsdialog.py:423
+#: ui/ui_settingsdialog.py:427
 msgid " kB/s"
 msgstr " кБ/сек"
 
-#: ui/ui_settingsdialog.py:424
+#: ui/ui_settingsdialog.py:428
 msgid "C&ache"
 msgstr "&Кеш"
 
-#: ui/ui_settingsdialog.py:427
+#: ui/ui_settingsdialog.py:431
 msgid "&Add New Repository"
 msgstr "&Додати нове сховище"
 
-#: ui/ui_settingsdialog.py:428
+#: ui/ui_settingsdialog.py:432
 msgid "Remove Repository"
 msgstr "Вилучити сховище"
 
-#: ui/ui_settingsdialog.py:429
+#: ui/ui_settingsdialog.py:433
 msgid "Move &Up"
 msgstr "Підняти &уверх"
 
-#: ui/ui_settingsdialog.py:430
+#: ui/ui_settingsdialog.py:434
 msgid "Move &Down"
 msgstr "Опустити &вниз"
 
-#: ui/ui_settingsdialog.py:431
+#: ui/ui_settingsdialog.py:435
 msgid "&Repositories"
 msgstr "&Сховища"
 
-#: ui/ui_settingsdialog.py:432
+#: ui/ui_settingsdialog.py:436
 msgid "Use Proxy"
 msgstr "Використовувати проксі"
 
-#: ui/ui_settingsdialog.py:433
+#: ui/ui_settingsdialog.py:437
 msgid "HTTP proxy server:"
 msgstr "Проксі-сервер HTTP:"
 
-#: ui/ui_settingsdialog.py:434 ui/ui_settingsdialog.py:436
-#: ui/ui_settingsdialog.py:438
+#: ui/ui_settingsdialog.py:438 ui/ui_settingsdialog.py:440
+#: ui/ui_settingsdialog.py:442
 msgid "Port:"
 msgstr "Порт:"
 
-#: ui/ui_settingsdialog.py:435
+#: ui/ui_settingsdialog.py:439
 msgid "HTTPS proxy server:"
 msgstr "Проксі-сервер HTTPS:"
 
-#: ui/ui_settingsdialog.py:437
+#: ui/ui_settingsdialog.py:441
 msgid "FTP proxy server:"
 msgstr "Проксі-сервер FTP:"
 
-#: ui/ui_settingsdialog.py:439
+#: ui/ui_settingsdialog.py:443
 msgid "Domain:"
 msgstr "Домен:"
 
-#: ui/ui_settingsdialog.py:440
+#: ui/ui_settingsdialog.py:444
 msgid "Username:"
 msgstr "Псевдонім:"
 
-#: ui/ui_settingsdialog.py:441
+#: ui/ui_settingsdialog.py:445
 msgid "Password:"
 msgstr "Пароль:"
 
-#: ui/ui_settingsdialog.py:442
+#: ui/ui_settingsdialog.py:446
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -788,43 +748,39 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Налаштування проксі доступні в  KDE, ви можете натиснути <a href=\"#\"><span style=\" text-decoration: underline; color:#1b7bae;\">тут</span></a> для переходу до них</p></body></html>"
 
-#: ui/ui_settingsdialog.py:447
+#: ui/ui_settingsdialog.py:451
 msgid "<a href=#>Use this proxy server for all protocols</a>"
 msgstr "<a href=#>Використовувати проксі-сервер для всіх протоколів</a>"
 
-#: ui/ui_settingsdialog.py:448
+#: ui/ui_settingsdialog.py:452
 msgid "&Proxy"
 msgstr "&Проксі"
 
-#: ui/ui_settingsdialog.py:449
+#: ui/ui_settingsdialog.py:453
 msgid "&Help"
 msgstr "&Довідка"
 
-#: ui/ui_settingsdialog.py:450
+#: ui/ui_settingsdialog.py:454
 msgid "&OK"
 msgstr "&Гаразд"
 
-#: ui/ui_settingsdialog.py:451
+#: ui/ui_settingsdialog.py:455
 msgid "&Cancel"
 msgstr "&Скасувати"
 
-#: ui/ui_summarydialog.py:62
+#: ui/ui_summarydialog.py:66
 msgid "Operation Summary"
 msgstr "Підсумок дій"
 
-#: ui/ui_summarydialog.py:63
+#: ui/ui_summarydialog.py:67
 msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
 msgstr "Можете запустити встановлену програму подвійник кліком у списку нижче або пізніше через меню програм."
 
-#: ui/ui_summarydialog.py:64
+#: ui/ui_summarydialog.py:68
 msgid "&Ok"
 msgstr "&Гаразд"
 
-#: ui/ui_webdialog.py:157
-msgid "Type to filter files"
-msgstr "Уведіть для фільтрування файлів"
-
-#: ui/ui_webdialog.py:159
+#: ui/ui_webdialog.py:158
 msgid ""
 "AppInfo Server is not reachable\n"
 "Please check your network connection"
@@ -832,15 +788,59 @@ msgstr ""
 "Сервер AppInfo недоступний\n"
 "Будь ласка, перевірте мережеве з'єднання"
 
-#: ui/ui_webdialog.py:161 ui/ui_webdialog.py:162
+#: ui/ui_webdialog.py:160 ui/ui_webdialog.py:161
 msgid "Package Details"
 msgstr "Подробиці про пакунок"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Використовувати стільничні налаштування"
+#~ msgid "No proxy server"
+#~ msgstr "Без проксі-сервера"
 
 #~ msgid "Use manual settings"
 #~ msgstr "Використовувати ручні налаштування"
 
-#~ msgid "No proxy server"
-#~ msgstr "Без проксі-сервера"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Використовувати стільничні налаштування"
+
+#~ msgid "Type to filter files"
+#~ msgstr "Уведіть для фільтрування файлів"
+
+#~ msgid "Click to search"
+#~ msgstr "Натисніть для пошуку"
+
+#~ msgid "Search Bar"
+#~ msgstr "Панель пошуку"
+
+#~ msgid "Ignore"
+#~ msgstr "Ігнорувати"
+
+#~ msgid "Show Updates"
+#~ msgstr "Показати оновлення"
+
+#~ msgid "Hide summary screen"
+#~ msgstr "Сховати екран підсумків"
+
+#~ msgid "Show main window"
+#~ msgstr "Показати головне вікно"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "ted.korostiled@gmail.com"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Daniel Korostil"
+
+#~ msgid "First Author"
+#~ msgstr "Засновник"
+
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
+
+#~ msgid "Developer"
+#~ msgstr "Розробник"
+
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
+
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "© 2009–2010 TUBITAK/UEKAE"
