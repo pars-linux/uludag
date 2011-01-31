@@ -335,7 +335,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.basket.setActionEnabled(enabled)
 
     def switchState(self, state):
-        self.pdsMessageBox.hideMessage()
+        self.pdsMessageBox.hideMessage(force = True)
         self._states[state][1].setChecked(True)
         self.state.setState(state)
         self.currentState = state
