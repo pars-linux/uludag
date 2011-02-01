@@ -617,6 +617,7 @@ class UserStack(QVBox):
         grants = []
         blocks = []
         self.checkAdd()
+        self.checkBoxAdmin.setChecked(False)
 
     def startAdd(self, groups, names):
         self.u_groups.populate(groups)
