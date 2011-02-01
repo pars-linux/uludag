@@ -17,24 +17,21 @@ def get_default_nameservers():
     """Read once default name servers in resolve.default.conf, if 'name_mode' in
     given profile was set to default, supply these values in the new profile file
     """
-
+    global default_nameservers
     if len(default_nameservers) == 0:
-
-        # TODO: We should supply a default nameserver conf unless we find any
         if os.path.exists(default_resolv_conf_file):
-            try:
-                file_pointer = open(default_resolv_conf_file)
-                try:
-                    nameservers_file = file_pointer.readlines()
-                finally:
-                    file_pointer.close()
-            except:
-                pass
+            with open(default_resolv_conf_file) as f:
+                nameservers_file = f.readlines()
 
-        for line in nameservers_file:
-            if not line.startswith("#") and line.startswith("nameserver"):
-                ns = line.split()[-1]
-                default_nameservers.append(ns)
+            for line in nameservers_file:
+                if not line.startswith("#") and line.startswith("nameserver"):
+                    ns = line.split()[-1]
+                    default_nameservers.append(ns)
+
+        #If we can't find default.resolv.conf, supply default Pardus DNS servers
+        else:
+            default_nameservers = ["193.140.100.215", "193.140.100.216"]
+
     return default_nameservers
 
 
