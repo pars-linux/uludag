@@ -41,12 +41,6 @@ def build_packages():
 
     package_list = []
 
-    # Remove obsoleted packages
-    logger.info("Removing obsoleted packages, this may take a while..")
-    removed_packages = utils.remove_obsoleted_packages()
-    if removed_packages:
-        logger.info("Removed the following obsoleted packages:\n%s" % "\n".join(removed_packages))
-
     # Compiling current work queue
 
     # Use a/b/pspec.xml instead of full path in e-mails
@@ -120,6 +114,12 @@ def build_packages():
         mailer.info("Queue finished without a problem.\n\n\nNew binary packages are:\n\n%s\n\n" % ("\n".join(package_list)))
     logger.raw()
     logger.raw()
+
+    # Remove obsoleted packages
+    logger.info("Removing obsoleted packages, this may take a while..")
+    removed_packages = utils.remove_obsoleted_packages()
+    if removed_packages:
+        logger.info("Removed the following obsoleted packages:\n%s" % "\n".join(removed_packages))
 
     # Set index paths
     paths = [utils.get_compiled_packages_directory()]
