@@ -26,8 +26,9 @@ msgid "Vendor:"
 msgstr "Dostawca:"
 
 #: panda.cpp:89
+#, fuzzy
 msgid "Renderer:"
-msgstr ""
+msgstr "Renderer:"
 
 #: panda.cpp:97
 msgid "Version:"
@@ -39,7 +40,7 @@ msgstr "Ustawienia sterownika"
 
 #: panda.cpp:120
 msgid "Use the driver developed by the open source community"
-msgstr ""
+msgstr "Użyj sterownika stworzonego przez społeczność Open Source"
 
 #: panda.cpp:121
 msgid "Use the proprietary driver provided by the manufacturer"
@@ -47,7 +48,7 @@ msgstr "Użyj własnościowego sterownika dostarczonego przez producenta"
 
 #: panda.cpp:123
 msgid "Use the safe driver that provides limited features"
-msgstr ""
+msgstr "Użyj bezpiecznego sterownika, które ogranicza funkcje"
 
 #: panda.cpp:138 rc.cpp:2 rc.cpp:2
 msgid "Video Driver Administration"
@@ -85,7 +86,7 @@ msgstr "Nie można zastosować ustawień  ze względu na brakujące pakiety"
 
 #: panda.cpp:215
 msgid "Unable to authenticate/execute the action: %1, %2"
-msgstr ""
+msgstr "Nie można uwierzytelnić / wykonać działania: %1, %2"
 
 #: panda.cpp:217
 msgid "An internal error occurred"
