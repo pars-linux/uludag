@@ -26,9 +26,8 @@ msgid "Vendor:"
 msgstr "Dostawca:"
 
 #: panda.cpp:89
-#, fuzzy
 msgid "Renderer:"
-msgstr "Renderer:"
+msgstr "Wykonywanie:"
 
 #: panda.cpp:97
 msgid "Version:"
