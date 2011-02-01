@@ -3,6 +3,11 @@
 Final Release
 =============
 
+:Author: Semen Cirit
+:Last Modified Date: |today|
+:Version: 0.1
+
+
 Relase Canditate
 ----------------
 

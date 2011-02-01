@@ -28,17 +28,17 @@ in order to help developers.
 
 `Reporting and triaging bugs`_ is a big contribution for Pardus.
 
-Joining Stable Tests
---------------------
+Joining Package Update Tests
+-----------------------------
 
-Pardus Test team has two different stable test process. One of them is regular
-package update tests and the other is security vulnerability update tests for
-official stable Pardus releases.
+Pardus Test team has two different maintenance test process. One of them is regular
+`package update tests`_ and the other is `security vulnerability update tests`_ for
+official final Pardus releases.
 
 In these tests the listed packages on `test mail list`_ by test supervisor are
 tested via their testcases_. See `Pardus Package testcases`_.
 
-The stable package tests can only be done by approved testers, you can be a
+The maintenance tests can only be done by approved testers, you can be a
 an approved tester by `applying for a new contributor`_.
 
 Testing Shipping Release
@@ -51,6 +51,8 @@ bugs are closed and the openned issues are fixed for the related Pardus release.
 
 Desktop and installation validation tests should also be done.
 
+See: `Shipping release test process`_
+
 .. desktop ve installation validation belgeleri yazılacak
 
 
@@ -59,7 +61,7 @@ Testing Pardus Nightly Releases
 
 Before an official Pardus release comes out, `nightly releases`_ are automatically
 generated in order to tests the changes in repositories frequently. You can
-contribute by installing these nigthky releases and testing them.
+contribute by installing these nigtly releases and testing them.
 
 You can also keep a nightly release and install updates regularly,
 and so can help test the release as it is developed.
@@ -67,6 +69,7 @@ and so can help test the release as it is developed.
 Report any issues you find to `Pardus Bugzilla`_, following the instructions at
 `bug requests`_.
 
+See: `Development release test process`_
 
 Creating Testcases
 -------------------
@@ -111,3 +114,7 @@ Tools currently under development are `package acceptence test tool`_,
 .. _group packages for their components: http://svn.pardus.org.tr/uludag/trunk/scripts/group-ack-list-as-components.py
 .. _package acceptence test tool: http://svn.pardus.org.tr/uludag/trunk/playground/gsoc/testing-framework
 .. _bug reporting tool: http://svn.pardus.org.tr/uludag/trunk/playground/gsoc/bug-reporting-tool/
+.. _Shipping release test process: http://developer.pardus.org.tr/guides/releasing/testing_process/shipping_release_test_process.html
+.. _Development release test process: http://developer.pardus.org.tr/guides/releasing/testing_process/development_release_test_process.html
+.. _package update tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/package_update_tests.html
+.. _security vulnerability update tests: http://developer.pardus.org.tr/guides/releasing/testing_process/package_update_tests/security_tests.html
