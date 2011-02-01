@@ -1,3 +1,33 @@
+2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - New release 3.0.3 
+
+2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Use unicode 
+
+2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Correct check 
+
+2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Fix changing repository names issue;
+         * In Pisi.Db.RepoDB, it is not possible to get changed repo names,
+         * when you changed the repos you have the restart the PM, beacuse
+         * Pisi.Db.RepoDB just handles repos in init method.
+         * So now, at first PM gets repo list from Pisi.Db.RepoDB and then
+         * it uses own list of repos, it fixes the change repo issues.
+         * p.s. There is one known issues left about it; when changing repo
+         * names, it is not possible to query its status (active) from Rdb,
+         * so, when you changed a repo name you will see the repo is deac-
+         * tive in PM, when you restart the PM it gets the correct state.
+         * Thanks for the fish.
+
+2011-01-31 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 197 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-01-31 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - It is not needed always 
+
 2011-01-31 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Force to hide 
 
@@ -788,26 +818,4 @@
 
 2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
          * Qt Assistant: 'Warning: This function is only effective before the QApplication constructor is called.' 
-
-2010-11-08 transifex
-         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
-         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Fix Message Boxes, update po 
-
-2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
-         * If its already running dont do it :) 
-
-2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Much better animation ;) 
-
-2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Use raster default, it is faster.
-
-2010-11-05 transifex
-         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
-         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
 
