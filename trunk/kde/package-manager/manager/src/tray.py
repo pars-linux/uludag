@@ -59,7 +59,7 @@ class PTray:
         pass
 
     def _addAction(self, name, menu):
-        action = QtGui.QAction(name, self)
+        action = QtGui.QAction(unicode(name), self)
         menu.addAction(action)
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
 
