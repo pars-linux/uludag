@@ -314,7 +314,7 @@ class Iface(Singleton):
     # Std Repository Actions ---------------------------------------------->>-
 
     def getRepositories(self, only_active = False, repos = None):
-        repos = repos if repos else pisi.api.list_repos(only_active = only_active)
+        repos = repos if not repos == None else pisi.api.list_repos(only_active = only_active)
         _repos = []
         for repo in repos:
             _repos.append((repo, self.rdb.get_repo_url(repo)))
