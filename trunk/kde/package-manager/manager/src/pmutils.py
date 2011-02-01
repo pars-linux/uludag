@@ -178,9 +178,9 @@ def parse_proxy(line):
 
     return settings
 
-def repos_available(iface):
+def repos_available(iface, check_repos = None):
 
-    repos = iface.getRepositories(only_active = True)
+    repos = iface.getRepositories(only_active = True, repos = check_repos)
     if not repos:
         return False
 
