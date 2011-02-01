@@ -30,7 +30,7 @@ def get_default_nameservers():
 
         #If we can't find default.resolv.conf, supply default Pardus DNS servers
         else:
-            default_nameservers = ["193.140.100.215", "193.140.100.216"]
+            default_nameservers = ["193.140.100.210", "193.140.100.215", "193.140.100.220"]
 
     return default_nameservers
 
