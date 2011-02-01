@@ -32,9 +32,11 @@ Prepare Tester Machine
 ----------------------
 
 * You can reserve a min 8Gb special partition for tests. And at the beginning of each
-regular package update test, you should re-install this system (Because the test
-environment must be proper.)
+  regular package update test, you should re-install this system (Because the test
+  environment must be proper.)
+
 .. Yalı installation guide ekle
+
 * After installation you must update the system. (The repository must be stable repository)
 * Add the `tester repository`_ to the system.
     Change repository via  `Package Manager`_: Follow Settings -> Package Manager Settings
