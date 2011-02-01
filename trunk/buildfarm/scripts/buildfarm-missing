@@ -33,7 +33,9 @@ if __name__ == "__main__":
 
             for subpkg in spec.packages:
                 expected_file = pisi.util.package_filename(subpkg.name, ver, release)
-                if not os.path.exists(os.path.join(binary_dir, expected_file)):
-                    missing_pkgs.add(pkg)
+                if os.path.exists(os.path.join(binary_dir, expected_file)):
+                    break
+            else:
+                missing_pkgs.add(pkg)
 
     print "\n".join(sorted(list(missing_pkgs)))
