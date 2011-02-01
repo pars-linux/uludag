@@ -775,7 +775,7 @@ msgstr "Nazwa użytkownika:"
 
 #: ui/ui_settingsdialog.py:441
 msgid "Password:"
-msgstr ""
+msgstr "Hasło:"
 
 #: ui/ui_settingsdialog.py:442
 msgid ""
@@ -787,9 +787,8 @@ msgid ""
 msgstr ""
 
 #: ui/ui_settingsdialog.py:447
-#, fuzzy
 msgid "<a href=#>Use this proxy server for all protocols</a>"
-msgstr "Użyj tego serwera proxy dla wszystkich protokołów"
+msgstr "<a href=#>Użyj tego serwera proxy dla wszystkich protokołów</a>"
 
 #: ui/ui_settingsdialog.py:448
 msgid "&Proxy"
@@ -804,9 +803,8 @@ msgid "&OK"
 msgstr "&OK"
 
 #: ui/ui_settingsdialog.py:451
-#, fuzzy
 msgid "&Cancel"
-msgstr "Koniec"
+msgstr "&Koniec"
 
 #: ui/ui_summarydialog.py:62
 msgid "Operation Summary"
