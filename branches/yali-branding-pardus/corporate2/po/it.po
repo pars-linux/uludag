@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-11 11:43+0200\n"
+"POT-Creation-Date: 2011-02-02 22:55+0200\n"
 "PO-Revision-Date: 2010-12-13 19:36+0000\n"
 "Last-Translator: Ali Işıngör <ali@artistanbulptr.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -106,7 +106,8 @@ msgid "Get ready to install Pardus"
 msgstr "Seleziona un Disco per Installare Pardus"
 
 #: ../release.xml.in.h:13
-msgid "Help will be included when Kahya implentation is complete."
+#, fuzzy
+msgid "Help will be included when Kahya implementation is complete."
 msgstr "Aiuto sarà incluso quando implementazione di Kahya è completa."
 
 #: ../release.xml.in.h:14

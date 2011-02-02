@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-11 11:43+0200\n"
+"POT-Creation-Date: 2011-02-02 22:55+0200\n"
 "PO-Revision-Date: 2010-12-02 12:28+0100\n"
 "Last-Translator: Zoltan Siposs <zoltan.siposs@gmail.com>\n"
 "Language-Team: HUNGARIAN <pardus-translators@pardus.org.tr>\n"
@@ -153,7 +153,7 @@ msgid "Get ready to install Pardus"
 msgstr "Válasszon egy meghajtót a Pardus számára"
 
 #: ../release.xml.in.h:13
-msgid "Help will be included when Kahya implentation is complete."
+msgid "Help will be included when Kahya implementation is complete."
 msgstr ""
 
 #: ../release.xml.in.h:14

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-11 11:43+0200\n"
+"POT-Creation-Date: 2011-02-02 22:55+0200\n"
 "PO-Revision-Date: 2010-11-24 HO:MI+ZONE\n"
 "Last-Translator: Yasirov Vasia (zaG) <zag@vspu.ru>\n"
 "Language-Team: Russian <LL@li.org>\n"
@@ -131,7 +131,7 @@ msgid "Get ready to install Pardus"
 msgstr "Выберите диск для установки Pardus"
 
 #: ../release.xml.in.h:13
-msgid "Help will be included when Kahya implentation is complete."
+msgid "Help will be included when Kahya implementation is complete."
 msgstr ""
 
 #: ../release.xml.in.h:14
