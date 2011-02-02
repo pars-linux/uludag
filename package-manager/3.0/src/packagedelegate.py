@@ -40,6 +40,8 @@ from packagemodel import *
 from webdialog import WebDialog
 from rowanimator import RowAnimator
 
+import config
+
 DARKRED = QColor('darkred')
 WHITE = QColor('white')
 RED = QColor('red')
@@ -185,11 +187,12 @@ class PackageDelegate(QStyledItemDelegate):
         if index.model().columnCount() <= 1:
             fix_pos = 22
 
-        # Rating Stars
-        for _rt_i in range(5):
-            self._rt_0.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
-        for _rt_i in range(rate):
-            self._rt_1.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
+        if config.USE_APPINFO:
+            # Rating Stars
+            for _rt_i in range(5):
+                self._rt_0.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
+            for _rt_i in range(rate):
+                self._rt_1.paint(p, width + 10 * _rt_i - 30 - fix_pos, top + ROW_HEIGHT / 4, 10, 10, Qt.AlignCenter)
 
         foregroundColor = option.palette.color(QPalette.Text)
         p.setPen(foregroundColor)
@@ -344,7 +347,7 @@ class PackageDelegate(QStyledItemDelegate):
             self.oxygen.drawPrimitive(QStyle.PE_PanelItemViewItem, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
-            if self.show_details_button:
+            if self.show_details_button and (installed or config.USE_APPINFO):
                 PackageDelegate.AppStyle().drawControl(QStyle.CE_PushButton, buttonStyle, painter, None)
                 self.rowAnimator.hoverLinkFilter.button_rect = QRect(buttonStyle.rect)
 
