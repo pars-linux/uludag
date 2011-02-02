@@ -344,6 +344,18 @@ In order to take the package hash, we need to download the souce code archive of
 
     sha1sum source_code_archive
 
+Giving Mirrors
+--------------
+
+In order to download source code of the package, the link is included between <Archive> tag in pspec.xml. We generally use mirrors for dowload links, common mirrors used can be found under /etc/pisi/mirrors.conf file. You can find the relevant mirror and can use it with "mirrors:" prefix. Found the used mirror value in /etc/pisi/mirrors and removed it from the download link and add  "mirrors:" prefix.
+
+Example::
+
+    http://ftp.gnu.org/gnu/freefont/freefont-sfd-20090104.tar.gz (The download link)
+    mirrors://gnu/freefont/freefont-sfd-20090104.tar.gz (with mirror prefix)
+
+
+
 Documentation
 -------------
 
