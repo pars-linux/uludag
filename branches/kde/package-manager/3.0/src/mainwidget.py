@@ -300,6 +300,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             self.notifyFinished()
 
         if operation == "System.Manager.installPackage" and self._started:
+            KIconLoader.updateAvailableIcons()
             self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
             self.summaryDialog.showSummary()
 

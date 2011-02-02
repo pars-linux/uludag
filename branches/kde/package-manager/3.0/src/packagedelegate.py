@@ -66,10 +66,8 @@ class PackageDelegate(QStyledItemDelegate):
         self.show_details_button = showDetailsButton
 
         self.rowAnimator = RowAnimator(parent.packageList)
-        KIconLoader._forceCache = False
         self.defaultIcon = KIcon('package-x-generic', 32)
         self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed('package-x-generic', CHECK_ICON, 32))
-        KIconLoader._forceCache = True
         self.animatable = animatable
         self._max_height = ROW_HEIGHT
 
@@ -171,9 +169,11 @@ class PackageDelegate(QStyledItemDelegate):
 
         if _icon:
             overlay = [CHECK_ICON] if installed else []
+            KIconLoader._forceCache = True
             pix = KIconLoader.loadOverlayed(_icon, overlay, 32)
             if not pix.isNull():
                 icon = QIcon(pix.scaled(QSize(32, 32), Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            KIconLoader._forceCache = False
 
         if not icon:
             icon = self.defaultIcon if not installed else self.defaultInstalledIcon
