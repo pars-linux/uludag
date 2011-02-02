@@ -49,7 +49,7 @@ LIGHTBLUE = QColor('#DEE5F2')
 DARKVIOLET = QColor('#3B414F')
 LIGHTGREEN = QColor('#F1F5EC')
 DARKGREEN = QColor('#32775F')
-CHECK_ICON = 'redo'
+CHECK_ICON = 'add'
 RECT = QRect()
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
@@ -67,8 +67,8 @@ class PackageDelegate(QStyledItemDelegate):
 
         self.rowAnimator = RowAnimator(parent.packageList)
         KIconLoader._forceCache = False
-        self.defaultIcon = KIcon('applications-other', 32)
-        self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed('applications-other', CHECK_ICON, 32))
+        self.defaultIcon = KIcon('package-x-generic', 32)
+        self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed('package-x-generic', CHECK_ICON, 32))
         KIconLoader._forceCache = True
         self.animatable = animatable
         self._max_height = ROW_HEIGHT
