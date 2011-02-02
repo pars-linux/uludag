@@ -5,7 +5,7 @@
             <name>kahya</name>
             <_title>Kahya</_title>
             <icon></icon>
-            <_help> Help will be included when Kahya implentation is complete. </_help>
+            <_help>Help will be included when Kahya implementation is complete.</_help>
         </screen>
         <screen>
             <name>license</name>
@@ -17,7 +17,7 @@
        </screen>
        <screen>
             <name>welcome</name>
-            <_title>Welcome back... </_title>
+            <_title>Welcome back...</_title>
             <icon>applications-other</icon>
             <_help>You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus...</_help>
         </screen>
