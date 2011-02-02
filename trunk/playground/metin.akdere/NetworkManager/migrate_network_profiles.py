@@ -209,6 +209,7 @@ class NetworkManagerProfile:
 
 
 class Connection:
+    """Instances of Connection class represent essential properties of a network connection to identify itself."""
 
     def __init__(self, pardus_profile):
         self.name = "connection"
@@ -246,8 +247,8 @@ class Connection:
                 cfg.set(self.name, attr, value)
 
 
-
 class IpV4:
+    """Instances of IpV4 class represent IPv4 based properties of a connection."""
 
     def __init__(self, pardus_profile):
         self.name = "ipv4"
@@ -336,6 +337,7 @@ class IpV4:
 
 
 class IpV6:
+    """Instances of IpV6 class represent IPv6 based properties of a connection."""
 
     def __init__(self, pardus_profile):
         self.name = "ipv6"
@@ -367,6 +369,7 @@ class IpV6:
                 cfg.set(self.name, attr, value)
 
 class _802_3_Ethernet:
+    """Instances of _802_3_Ethernet class represent options related with ethernet device."""
 
     def __init__(self, pardus_profile):
         self.name = "802-3-ethernet"
@@ -412,6 +415,7 @@ class _802_3_Ethernet:
 
 
 class _802_11_Wireless:
+    """Instances of _802_11_Wireless class represent options related with wireless device."""
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless"
@@ -476,6 +480,9 @@ class _802_11_Wireless:
 
 
 class _802_11_Wireless_Security:
+    """Instances of _802_11_Wireless_Security class represent authentication properties and operations 
+    used in order to be included in networks requiring them.
+    """
 
     def __init__(self, pardus_profile):
         self.name = "802-11-wireless-security"
