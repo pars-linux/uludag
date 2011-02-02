@@ -545,7 +545,6 @@ def make_image(project):
         os.unlink(path2)
         run('mv "%s" "%s"' % (path1, path2))
 
-        file(os.path.join(image_dir, "etc/pardus-release"), "w").write("%s\n" % project.title)
 
         if project.type != "install" and ("kdebase" in project.all_packages):
             setup_live_kdm(project)
