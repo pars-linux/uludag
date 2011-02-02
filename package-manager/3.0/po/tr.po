@@ -331,7 +331,7 @@ msgstr "Depo Güncelleniyor"
 
 #: src/statemanager.py:89
 msgid "Updating Repository(s)"
-msgstr "Depo(lar) Güncelleniyor"
+msgstr "Depolar Güncelleniyor"
 
 #: src/statemanager.py:92
 msgid "installed"
