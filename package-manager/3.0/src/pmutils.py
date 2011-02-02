@@ -156,7 +156,6 @@ def reset_proxy_settings():
     QNetworkProxy.setApplicationProxy(QNetworkProxy())
 
 def network_available():
-    return True
     return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
 
 def parse_proxy(line):
@@ -180,7 +179,6 @@ def parse_proxy(line):
     return settings
 
 def repos_available(iface):
-    return True
     repos = iface.getRepositories(only_active = True)
     if not repos:
         return False
