@@ -19,7 +19,7 @@ defaults = {
             "UpdateCheckInterval" : 60,
            }
 
-DATA_DIR = '/usr/share/apps/package-manager/data/'
+DATA_DIR = '/usr/share/package-manager/data/'
 
 class Config:
     def __init__(self, organization, product):

@@ -133,7 +133,7 @@ class Install(install):
         mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications")
-        project_dir = os.path.join(root_dir, "apps", PROJECT)
+        project_dir = os.path.join(root_dir, PROJECT)
 
         # Make directories
         print "Making directories..."
@@ -210,7 +210,7 @@ class Uninstall(Command):
 
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications")
-        project_dir = os.path.join(root_dir, "apps", PROJECT)
+        project_dir = os.path.join(root_dir, PROJECT)
 
         print 'Uninstalling ...'
         remove(project_dir)
