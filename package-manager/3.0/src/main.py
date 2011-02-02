@@ -18,6 +18,7 @@ import signal
 import traceback
 
 # PyQt4 Imports
+from PyQt4.QtGui import QFont
 from PyQt4.QtGui import QApplication
 from pds.quniqueapp import QUniqueApplication
 
@@ -52,10 +53,18 @@ if __name__ == '__main__':
     app = QUniqueApplication(sys.argv, catalog='package-manager')
     setSystemLocale()
 
+    # Set application font from system
+    font = Pds.settings('font','Dejavu Sans,10').split(',')
+    app.setFont(QFont(font[0], int(font[1])))
+
     manager = MainWindow(app)
     app.setMainWindow(manager)
 
-    manager.show()
+    if config.PMConfig().systemTray():
+        app.setQuitOnLastWindowClosed(False)
+
+    if not config.PMConfig().systemTray():
+        manager.show()
 
     # Set exception handler
     sys.excepthook = handleException
