@@ -187,7 +187,7 @@ class RepositorySettings(SettingsTab):
         self.settings.repoListView.horizontalHeader().setStretchLastSection(True)
         self.settings.repoListView.verticalHeader().hide()
         self.settings.repoListView.setColumnWidth(0, 32)
-        self.initialize()
+        self.initialize(firstRun = True)
 
     def connectSignals(self):
         self.connect(self.settings.addRepoButton, SIGNAL("clicked()"), self.addRepository)
@@ -196,9 +196,19 @@ class RepositorySettings(SettingsTab):
         self.connect(self.settings.moveDownButton, SIGNAL("clicked()"), self.moveDown)
         self.connect(self.settings.repoListView, SIGNAL("itemChanged(QTableWidgetItem*)"), self.markChanged)
 
-    def initialize(self):
-        self.repositories = self.iface.getRepositories()
+    def get_repo_names(self):
+        repos = []
+        for row in range(self.settings.repoListView.rowCount()):
+            repos.append(unicode(self.settings.repoListView.item(row, 1).text()))
+        return repos
+
+    def initialize(self, firstRun = False):
+
+        self.repositories = self.iface.getRepositories(
+                repos = None if firstRun else self.get_repo_names())
+
         self.__clear()
+
         for name, address in self.repositories:
             self.__insertRow(unicode(name), address)
 
@@ -299,7 +309,7 @@ class RepositorySettings(SettingsTab):
             activities[name]=active
         self.iface.setRepositories(repos)
         self.iface.setRepoActivities(activities)
-        self.iface.updateRepositories()
+        self.iface.updateRepositories(self.get_repo_names())
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
