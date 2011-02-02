@@ -156,8 +156,8 @@ class widgetMain(formMain):
         if exception:
             return
         _type, _desc, _state = args
-        state = _state in ['started', 'on']
-        autostart = _state in ['stopped', 'on']
+        state = _state in ['conditional_started', 'started', 'on']
+        autostart = _state in ['stopped', 'on'] #TODO: add support for conditional services
 
         si = serviceItem(self.listServices, package, _type, state, autostart, _desc)
 
