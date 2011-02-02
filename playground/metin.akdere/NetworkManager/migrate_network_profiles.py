@@ -215,9 +215,17 @@ class Connection:
         self._id = pardus_profile.get_profile_name()
         self.uuid = self.set_uuid(device = pardus_profile.get_device())
         self._type = pardus_profile.get_connection_type()
-        self.autoconnect = "false" #FIXME False gives error on iteration in ConfigParser
+        self.autoconnect = self.set_autoconnect(pardus_profile)
         self.timestamp = "none"
         self.read_only = "false"
+
+    def set_autoconnect(self, profile):
+        """Set profile activation at startup"""
+
+        if str(profile.get_state()) == "down":
+            return "false"
+        else:
+            return "none"   #NM set this 'true' as default if we dont set anything
 
     def set_uuid(self, device):
         """Generate random type UUID"""
