@@ -17,7 +17,7 @@ from PyQt4.QtCore import *
 
 import string
 import backend
-from pmutils import humanReadableSize
+from pmutils import *
 from pmlogging import logger
 
 from statemanager import StateManager
@@ -109,7 +109,8 @@ class PackageModel(QAbstractTableModel):
         elif role == Qt.DecorationRole:
             package = self.package(index)
             if package.icon:
-                return QVariant(package.icon)
+                if package.icon in KIconLoader._available_icons:
+                    return QVariant(package.icon)
         return _variant
 
     def setData(self, index, value, role):

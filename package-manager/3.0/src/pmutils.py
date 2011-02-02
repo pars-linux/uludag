@@ -45,7 +45,7 @@ Pds = pds.Pds('package-manager', debug = False)
 # print 'Current session is : %s %s' % (Pds.session.Name, Pds.session.Version)
 
 i18n = Pds.session.i18n
-KIconLoader = QIconLoader(Pds, forceCache = True)
+KIconLoader = QIconLoader(Pds)
 KIcon = KIconLoader.icon
 
 class PM:

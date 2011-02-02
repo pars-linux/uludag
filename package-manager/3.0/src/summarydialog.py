@@ -44,7 +44,17 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
 
-        self.appIcon.setPixmap(KIconLoader.load(self.item.icon, 32))
+        icon = str(self.item.icon).split('.')[:-1]
+        icon = KIconLoader.load(icon)
+
+        if icon.isNull():
+            icon = KIconLoader.load('package')
+
+        self.appIcon.setPixmap(
+                               icon.scaled(QSize(32, 32),
+                               Qt.KeepAspectRatio,
+                               Qt.SmoothTransformation)
+                              )
 
         self.appName.hide()
 
