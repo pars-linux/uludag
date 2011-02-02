@@ -133,7 +133,7 @@ class PTray:
             self.lastIcon = self.defaultIcon
         else:
             countStr = "%s" % unread
-            f = QtGui.QFont(Pds.settings('font','Dejavu Sans'))
+            f = QtGui.QFont(Pds.settings('font','Sans'))
             f.setBold(True)
 
             pointSize = f.pointSizeF()

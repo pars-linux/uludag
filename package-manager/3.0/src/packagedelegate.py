@@ -77,7 +77,7 @@ class PackageDelegate(QStyledItemDelegate):
         self.types = {'critical':(RED,     i18n('critical')),
                       'security':(DARKRED, i18n('security'))}
 
-        self.font = Pds.settings('font','Dejavu Sans,10').split(',')[0]
+        self.font = Pds.settings('font','Sans,10').split(',')[0]
 
         self.normalFont = QFont(self.font, 10, QFont.Normal)
         self.boldFont = QFont(self.font, 11, QFont.Bold)
