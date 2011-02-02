@@ -14,9 +14,12 @@
 from PyQt4.QtCore import QObject, SIGNAL
 from PyQt4.QtGui import QMessageBox
 
-from appinfo.client import AppInfoClient
 
 import config
+
+if config.USE_APPINFO:
+    from appinfo.client import AppInfoClient
+
 import backend
 
 from pmutils import *
@@ -152,10 +155,11 @@ class StateManager(QObject):
                 self.showFailMessage()
             return False
 
-        if network_available():
-            if not AppInfoClient().checkOutDB()[0]:
-                AppInfoClient().setServer('http://appinfo.pardus.org.tr')
-                AppInfoClient().checkOutDB()
+        if config.USE_APPINFO:
+            if network_available():
+                if not AppInfoClient().checkOutDB()[0]:
+                    AppInfoClient().setServer('http://appinfo.pardus.org.tr')
+                    AppInfoClient().checkOutDB()
 
         return True
 

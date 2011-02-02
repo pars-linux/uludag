@@ -21,7 +21,10 @@ from pmutils import *
 from pmlogging import logger
 
 from statemanager import StateManager
-from appinfo.client import AppInfoClient
+
+import config
+if config.USE_APPINFO:
+    from appinfo.client import AppInfoClient
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
@@ -42,10 +45,11 @@ class PackageModel(QAbstractTableModel):
 
         self.state = parent.state
 
-        self.appinfo = AppInfoClient()
-        self.appinfo.setServer('http://appinfo.pardus.org.tr')
-        if not self.appinfo.initializeLocalDB()[0]:
-            self.appinfo.checkOutDB()
+        if config.USE_APPINFO:
+            self.appinfo = AppInfoClient()
+            self.appinfo.setServer('http://appinfo.pardus.org.tr')
+            if not self.appinfo.initializeLocalDB()[0]:
+                self.appinfo.checkOutDB()
 
     def initPhase(self):
         self.resetCachedInfos()
@@ -103,7 +107,9 @@ class PackageModel(QAbstractTableModel):
             isa = '' if not len(package.isA) > 0 else package.isA[0]
             return QVariant(unicode(isa))
         elif role == RateRole:
-            return QVariant(self.appinfo.getPackageScore(package.name))
+            if config.USE_APPINFO:
+                return QVariant(self.appinfo.getPackageScore(package.name))
+            return QVariant(0)
         elif role == NameRole:
             return QVariant(package.name)
         elif role == Qt.DecorationRole:

@@ -14,6 +14,8 @@ from PyQt4 import QtGui
 from PyQt4 import QtWebKit
 from PyQt4.QtCore import *
 
+import config
+
 from pds.gui import *
 from pmutils import *
 from pds.thread import PThread
@@ -106,22 +108,26 @@ class WebDialog(PAbstractBox, Ui_WebDialog):
 
     def showPackageDetails(self, package, installed, summary='', description=''):
         self.packageName.setText(package)
-
         self.filesList.clear()
-        self.webView.loadFinished.connect(lambda x: \
-                self._sync_template(x, package, summary, description))
-
-        if network_available():
-            set_proxy_settings()
-            self.webWidget.hide()
-            self.busy.show()
-            self.busy.startAnimation()
-            self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
-        else:
-            self._sync_template(status = False)
 
         self.tabWidget.insertTab(0, self.packageFiles, i18n('Package Files'))
         self.tabWidget.currentChanged.connect(self._tabSwitched)
+
+        if config.USE_APPINFO:
+            self.webView.loadFinished.connect(lambda x: \
+                    self._sync_template(x, package, summary, description))
+
+            if network_available():
+                set_proxy_settings()
+                self.webWidget.hide()
+                self.busy.show()
+                self.busy.startAnimation()
+                self.webView.load(QUrl('%s/?p=%s' % (self._as, package)))
+            else:
+                self._sync_template(status = False)
+        else:
+            self.tabWidget.removeTab(1)
+            self._filesThread.start()
 
         if not installed:
             self.tabWidget.removeTab(0)

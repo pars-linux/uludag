@@ -21,6 +21,13 @@ defaults = {
 
 DATA_DIR = '/usr/share/package-manager/data/'
 
+try:
+    import appinfo
+except ImportError:
+    USE_APPINFO = False
+else:
+    USE_APPINFO = True
+
 class Config:
     def __init__(self, organization, product):
         self.config = QSettings(organization, product)
