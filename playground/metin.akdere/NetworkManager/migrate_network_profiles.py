@@ -11,7 +11,19 @@ default_nameservers = []
 default_resolv_conf_file = "/etc/resolv.default.conf"
 lan_config_file  = "/etc/network/net_tools"
 wlan_config_file  = "/etc/network/wireless_tools"
+migration_sign = "/etc/network/.migrated"
 NetworkManager_conf_dir = "/etc/NetworkManager/system-connections"
+
+def is_migrated_before():
+    """Make this tool run once; so after migration, touch a file named '.migrated' 
+    under old network manager profiles dir. Check it first and then try to migrate profiles.
+    """
+    
+    global migration_sign
+    if os.path.exists(migration_sign):
+        return True
+    else:
+        return False
 
 def get_default_nameservers():
     """Read once default name servers in resolve.default.conf, if 'name_mode' in
@@ -524,8 +536,6 @@ class Migrator:
         self.lan_config_path = lan_config_file
         self.wlan_config_path = wlan_config_file
         self.read_pardus_profiles()
-        self.transform_profiles()
-        #self.write_new_profiles()
 
     def read_pardus_profiles(self):
         """Read wired/wireless profile settings, create PardusNetworkProfile 
@@ -574,4 +584,17 @@ class Migrator:
             for profile in self.network_manager_profiles:
                 profile.write_config()
                 profile.set_ownership()
+        with open(migration_sign, "w") as f:
+            pass
+
+
+if __name__ == "__main__":
+
+    if not is_migrated_before():
+        m = Migrator()
+        m.transform_profiles()
+        m.write_network_manager_profiles()
+        print "DEBUG:: Migration completed successfully!"
+    else:
+        print "DEBUG:: Migration was run before. Nothing done!"
 
