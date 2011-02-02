@@ -54,7 +54,7 @@ if __name__ == '__main__':
     setSystemLocale()
 
     # Set application font from system
-    font = Pds.settings('font','Dejavu Sans,10').split(',')
+    font = Pds.settings('font','Sans,10').split(',')
     app.setFont(QFont(font[0], int(font[1])))
 
     manager = MainWindow(app)
