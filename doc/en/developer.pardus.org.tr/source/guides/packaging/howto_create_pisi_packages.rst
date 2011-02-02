@@ -296,6 +296,8 @@ Different pspec.xml File Tags
         * gzip
         * binary
 
+        The download link includes between <Archive> tag and the mirrors can also be used. See `usage <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#giving-mirrors>`_.
+
     #. **<BuildDependencies>:** This part is used in order to list packages which is required for building (compiling) the package. These dependencies can not be automatically find. So you should try to compile the pacakge in a proper system and you need to include everything needed to build the program. The packages for development environment are not needed to add as a build dependency. You can see the list of packages that will be ignored from `here <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#dependencies-excepted>`_. You need to add all dependencies in a different <Dependency> tag.  You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details.
     #. **<Patches>:** The list of patches added here. Each patch should be added with <Patch> tag and added in the order that they applied.
 
@@ -311,7 +313,8 @@ Different pspec.xml File Tags
 
     #. **<Files>:** This part is needed to specify the paths of different file types in the system. All file paths will be used with <Path fileType=""> tag.
 
-        These are the different file types used for Pardus:
+       These are the different file types used for Pardus:
+
        * **config:** This is used for the configuration files and those  are placed under "/etc" path.
        * **executable:** This is used for the executable files and those are placed under "/usr/bin" path.
        * **header:** This is used for header files and those are placed under "/usr/include" path.
@@ -401,7 +404,7 @@ this file.
     </PISI>
 
 Different translations.xml File Tags
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 #. **<Name>:** The name of the package should be added here.
 #. **<Summary>:** The translation of the summary should be added there. The language type should be gived as a value of "xml:lang" attribute.
