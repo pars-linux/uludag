@@ -37,7 +37,7 @@ msgstr "PİSİ paket yöneticisinin grafik ara yüzü"
 
 #: data/packagemanager-helper.desktop.in.h:1
 msgid "Add/Remove/Update Packages"
-msgstr "Paket(ler)i Ekle/Kaldır/Güncelle"
+msgstr "Paketleri Ekle/Kaldır/Güncelle"
 
 #: src/basketdialog.py:53 ui/ui_basketdialog.py:194
 msgid "Clear Basket"
@@ -311,15 +311,15 @@ msgstr "<qt>Depo adresleri xml,xml.bz2 veya uzantısı ile bitmelidir.<p>Lütfen
 
 #: src/statemanager.py:83 src/statemanager.py:84
 msgid "Installing Package(s)"
-msgstr "Paket(ler) Kuruluyor"
+msgstr "Paketler Kuruluyor"
 
 #: src/statemanager.py:85
 msgid "Removing Package(s)"
-msgstr "Paket(ler) Kaldırılıyor"
+msgstr "Paketler Kaldırılıyor"
 
 #: src/statemanager.py:86
 msgid "Upgrading Package(s)"
-msgstr "Paket(ler) Güncelleniyor"
+msgstr "Paketler Güncelleniyor"
 
 #: src/statemanager.py:87
 msgid "Applying Repository Changes"
@@ -351,15 +351,15 @@ msgstr "değiştirildi"
 
 #: src/statemanager.py:99 ui/ui_basketdialog.py:195 ui/ui_mainwidget_v3.py:173
 msgid "Install Package(s)"
-msgstr "Paket(ler)i Kur"
+msgstr "Paketleri Kur"
 
 #: src/statemanager.py:100
 msgid "Remove Package(s)"
-msgstr "Paket(ler)i Kaldır"
+msgstr "Paketleri Kaldır"
 
 #: src/statemanager.py:101
 msgid "Upgrade Package(s)"
-msgstr "Paket(ler)i Güncelle"
+msgstr "Paketleri Güncelle"
 
 #: src/statemanager.py:102
 msgid "Select Operation"
@@ -383,19 +383,19 @@ msgstr "%1 paket başarılı şekilde değiştirildi."
 
 #: src/statemanager.py:118
 msgid "You have selected the following package(s) to install:"
-msgstr "Aşağıdaki paket(ler)i kurmak üzere seçtiniz:"
+msgstr "Aşağıdaki paketleri kurmak üzere seçtiniz:"
 
 #: src/statemanager.py:119
 msgid "You have selected the following package(s) to removal:"
-msgstr "Aşağıdaki paket(ler)i kaldırmak üzere seçtiniz:"
+msgstr "Aşağıdaki paketleri kaldırmak üzere seçtiniz:"
 
 #: src/statemanager.py:120
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
+msgstr "Aşağıdaki paketleri güncellemek üzere seçtiniz:"
 
 #: src/statemanager.py:121
 msgid "You have selected the following package(s) to modify:"
-msgstr "Aşağıdaki paket(ler)i kaldırmak/kurmak üzere seçtiniz:"
+msgstr "Aşağıdaki paketlerin durumunu değiştirmek üzere seçtiniz:"
 
 #: src/statemanager.py:124 ui/ui_basketdialog.py:191
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
@@ -403,15 +403,15 @@ msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
 #: src/statemanager.py:125
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
-msgstr "Seçili paket(ler)in ayrıca kaldırılacak olan ters bağımlılıkları:"
+msgstr "Seçili paketlerin kaldırılacak olan ters bağımlılıkları:"
 
 #: src/statemanager.py:126
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
-msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
+msgstr "Seçili paketlerin güncellenecek olan ek bağımlılıkları:"
 
 #: src/statemanager.py:127
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Seçili paket(ler)in ayrıca kurulacak/kaldırılacak olan ek bağımlılıkları:"
+msgstr "Seçili paketlerin kurulacak/kaldırılacak olan ek bağımlılıkları:"
 
 #: src/statemanager.py:166
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -491,7 +491,7 @@ msgstr "Sepet"
 
 #: ui/ui_basketdialog.py:190
 msgid "Selected package(s) for install:"
-msgstr "Kurulmak üzere seçilmiş paket(ler):"
+msgstr "Kurulmak üzere seçilmiş paketler:"
 
 #: ui/ui_basketdialog.py:192
 msgid "Total Size:"
