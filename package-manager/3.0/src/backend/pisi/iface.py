@@ -313,14 +313,15 @@ class Iface(Singleton):
 
     # Std Repository Actions ---------------------------------------------->>-
 
-    def getRepositories(self, only_active = False):
-        repos = []
-        for repo in pisi.api.list_repos(only_active = only_active):
-            repos.append((repo, self.rdb.get_repo_url(repo)))
-        return repos
+    def getRepositories(self, only_active = False, repos = None):
+        repos = repos if not repos == None else pisi.api.list_repos(only_active = only_active)
+        _repos = []
+        for repo in repos:
+            _repos.append((repo, self.rdb.get_repo_url(repo)))
+        return _repos
 
-    def updateRepositories(self):
-        if not repos_available(self):
+    def updateRepositories(self, check_repos = None):
+        if not repos_available(self, check_repos):
             return False
         logger.debug("Updating repositories...")
         self.link.System.Manager["pisi"].updateAllRepositories(async=self.handler, timeout=2**16-1)
