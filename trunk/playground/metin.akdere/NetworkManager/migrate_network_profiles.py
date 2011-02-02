@@ -604,12 +604,13 @@ class Migrator:
 
 
 if __name__ == "__main__":
-
+        
+    print "DEBUG: Checking whether network profiles migrated..."
     if not is_migrated_before():
         m = Migrator()
         m.transform_profiles()
         m.write_network_manager_profiles()
-        print "DEBUG:: Migration completed successfully!"
+        print "DEBUG: Network profiles migration completed successfully!"
     else:
-        print "DEBUG:: Migration was run before. Nothing done!"
+        print "DEBUG: Network profiles migration seems already done before. Nothing done this time!"
 
