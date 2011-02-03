@@ -279,8 +279,8 @@ def search(request):
                     unified_sources = sources | summaries | descriptions
                     # i need to find a better way here like using set
                     #s1 = set(sources).union(set(summaries).union(set(descriptions))
-                unified_sources = unified_sources.filter(distribution__name__icontains=dist_name)
-                unified_sources = unified_sources.filter(distribution__release__icontains=dist_release)
+                unified_sources = unified_sources.filter(distribution__name__exact=dist_name)
+                unified_sources = unified_sources.filter(distribution__release__exact=dist_release)
                 unified_sources = unified_sources.distinct()
 
             if in_package == 'Binary':
@@ -299,8 +299,8 @@ def search(request):
                     unified_binaries = binaries | summaries | descriptions
                     unified_binaries = unified_binaries.distinct()
 
-                unified_binaries =  unified_binaries.filter(source__distribution__name__icontains=dist_name)
-                unified_binaries =  unified_binaries.filter(source__distribution__release__icontains=dist_release)
+                unified_binaries =  unified_binaries.filter(source__distribution__name__exact=dist_name)
+                unified_binaries =  unified_binaries.filter(source__distribution__release__exact=dist_release)
 
             if unified_sources and not unified_binaries:
                 result = unified_sources
@@ -314,6 +314,7 @@ def search(request):
                 # create an empty result
                 result = Source.objects.filter(id=-1)
                 sources_len = result.count()
+                binary_len = 0
 
             sources_len = str(sources_len)
             binary_len = str(binary_len)
