@@ -294,7 +294,7 @@ msgstr ""
 "hesapları eklemenizi öneririz. İlk eklenen kullanıcı, aksini belirtmezseniz, "
 "yönetici haklarına sahip olur. Bu hakları kaldırmak, kullanıcı ID numarasını "
 "elle belirlemek ve benzeri tercihler için Gelişmiş sekmesini "
-"kullanabilirsiniz.\r\n"
+"kullanabilirsiniz.\n"
 "&lt;br&gt;&lt;br&gt;Daha sonra kullanıcı hesaplarını yönetme ihtiyacı "
 "duyarsanız, Tasma'dan Kullanıcı Yöneticisi aracını kullanabilirsiniz."
 
