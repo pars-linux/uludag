@@ -57,15 +57,16 @@ class PTray:
     def populateRepositoryMenu(self):
         pass
 
-    def _addAction(self, name, menu):
-        action = QtGui.QAction(name, self)
+    def _addAction(self, title, menu, repo):
+        action = QtGui.QAction(unicode(title), self)
+        action.setData(QVariant(unicode(repo)))
         menu.addAction(action)
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
 
     def updateRepo(self):
         if not self.iface.operationInProgress():
-            repoName = unicode(self.sender().iconText())
-            if repoName == i18n("Update All Repositories"):
+            repoName = unicode(self.sender().data().toString())
+            if repoName == "all":
                 self.iface.updateRepositories()
             else:
                 self.iface.updateRepository(repoName)
@@ -185,8 +186,8 @@ class Tray(QtGui.QSystemTrayIcon, PTray):
     def populateRepositoryMenu(self):
         self.actionMenu.clear()
         for name, address in self.iface.getRepositories(only_active = True):
-            self._addAction(i18n("Update %1 repository", name), self.actionMenu)
-        self._addAction(i18n("Update All Repositories"), self.actionMenu)
+            self._addAction(i18n("Update %1 repository", name), self.actionMenu, name)
+        self._addAction(i18n("Update All Repositories"), self.actionMenu, "all")
         self.setContextMenu(self.actionMenu)
         self.contextMenu().addSeparator()
         self.contextMenu().addAction(i18n("Quit"), QtGui.qApp.quit)
