@@ -151,6 +151,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.showPreferences, SIGNAL("triggered()"), self.settingsDialog.show)
 
         self.actionQuit = QAction(KIcon("exit"), i18n("Quit"), self)
+        self.actionQuit.setShortcuts(QKeySequence.Quit)
         self.connect(self.actionQuit, SIGNAL("triggered()"), qApp.exit)
 
         self.cw.menuButton.setMenu(QMenu('MainMenu', self.cw.menuButton))
