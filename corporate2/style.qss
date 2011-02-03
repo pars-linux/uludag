@@ -384,7 +384,7 @@
         subcontrol-position: bottom right; /* position at the top right corner */
         width: 16px; /* 16 + 2*1px border-width = 15px padding + 3px parent border */
         border-image: url(:/images/arrow-down.png);
-        background-color: qlineargradient(spread:pad, x1:0.5, y1:0, x2:0.5, y2:1, stop:0.503057 rgba(62, 62, 62, 255), stop:1 rgba(16, 16, 16, 255));
+        background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(89, 117, 112, 180), stop:0.0247525 rgba(74, 98, 93, 180), stop:0.50463 rgba(64, 83, 83, 180), stop:0.536842 rgba(73, 96, 95, 180), stop:0.98594 rgba(121, 144, 145, 180), stop:1 rgba(155, 186, 186, 180));
     }
 
     QTimeEdit::down-button:hover {
