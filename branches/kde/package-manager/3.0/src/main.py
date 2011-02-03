@@ -63,7 +63,7 @@ if __name__ == '__main__':
     if config.PMConfig().systemTray():
         app.setQuitOnLastWindowClosed(False)
 
-    if not config.PMConfig().systemTray():
+    if not config.PMConfig().systemTray() or "--show-mainwindow" in sys.argv:
         manager.show()
 
     # Set exception handler
