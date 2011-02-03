@@ -103,7 +103,6 @@ class BasketDialog(PAbstractBox, Ui_BasketDialog):
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
         packageList.setItemDelegate(PackageDelegate(self, self.parent, animatable = False))
-        packageList.setSelectionMode(QtGui.QAbstractItemView.MultiSelection)
         packageList.model().setFilterRole(GroupRole)
         packageList.itemDelegate().setAnimatable(False)
 
