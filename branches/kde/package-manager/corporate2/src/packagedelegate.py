@@ -108,7 +108,7 @@ class PackageDelegate(QStyledItemDelegate):
         self.parent = parent.packageList
 
         # Base style for some of important features
-        self.oxygen = QStyleFactory.create('cleanlooks')
+        self.plastik = QStyleFactory.create('plastique')
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -341,10 +341,11 @@ class PackageDelegate(QStyledItemDelegate):
 
         p.end()
 
-        if option.state & QStyle.State_HasFocus and self.animatable:
-            option.state |= QStyle.State_MouseOver
-            # Use Oxygen style to draw focus rect like MouseOver effect of Oxygen..
-            self.oxygen.drawPrimitive(QStyle.PE_PanelItemViewItem, option, painter, None)
+        # FIXME
+        # if option.state & QStyle.State_HasFocus and self.animatable:
+        #     option.state |= QStyle.State_MouseOver
+            # Use Plastique style to draw focus rect like MouseOver effect of Oxygen.
+            # self.plastik.drawPrimitive(QStyle.PE_FrameLineEdit, option, painter, None)
 
         if not self.rowAnimator.running() and buttonStyle:
             if self.show_details_button and (installed or config.USE_APPINFO):
