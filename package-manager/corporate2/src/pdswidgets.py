@@ -40,6 +40,7 @@ class PMessageBox(PAbstractBox):
         self.last_msg = None
         self.setStyleSheet(PMessageBox.STYLE)
         self.enableOverlay()
+        self.setOverlayOpacity(150)
         self.hide()
 
     def showMessage(self, message, icon = None, busy = False):
