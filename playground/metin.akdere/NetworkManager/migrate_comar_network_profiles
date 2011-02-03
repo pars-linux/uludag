@@ -1,5 +1,21 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#
+#
+#
+# A migration script to transform COMAR based network profiles into NetworkManager based network profiles.
+#
+# The main purpose of the script is help Pardus 2009 users to be able to use their network profiles in Pardus 2011
+# without any effort when they upgrade their system.
+#
+# A few words about how stuff works. COMAR based network manager keeps profile settings under /etc/network with two
+# files: net_tools which includes ethernet profile settings and wireless_tools which includes wireless profile settings.
+# On the other hand, NetworkManager keeps each profile settings in an individual file under /etc/NetworkManager/system-connections.
+#
+# This script simply reads your old profile files and try to create a new profile file compatible with NetworkManager for each profile.
+#
+#
+
 
 import os
 import sys
@@ -48,7 +64,7 @@ def get_default_nameservers():
 
 
 class PardusNetworkProfile:
-    """Represents network profiles that we have been using in Pardus' network
+    """Represents COMAR based network profiles that we have been using in Pardus' network
     manager. We have two types of network profiles specified: wired or wireless
     """
 
@@ -540,7 +556,7 @@ class _802_11_Wireless_Security:
 
 
 class Migrator:
-    """Read network profiles we have been using in Pardus' network manager and 
+    """Read COMAR based network profiles we have been using in Pardus' network manager and 
     transform them into NetworkManager profile type.
     """
 
@@ -604,7 +620,7 @@ class Migrator:
 
 
 if __name__ == "__main__":
-        
+
     print "DEBUG: Checking whether network profiles migrated..."
     if not is_migrated_before():
         m = Migrator()
