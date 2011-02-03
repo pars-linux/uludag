@@ -1,16 +1,15 @@
 2011-02-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * New release
+         * - Use same opacity value 
+         * - No need any selectionMode 
+         * - For now disable selection rectangle 
+         * - Cosmetic changes 
+         * - Update ChangeLog, change version string 
+         * - Use data for repo name in system tray 
          * - Move 3.0 branch as corporate2 
-
-2011-02-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Set Quit shortcut for Quit Action 
-
-2011-02-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Add show-mainwindow option
-
-2011-02-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Fix locales, add place holder text 
-
-2011-02-03 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Fix UI issues in progressDialog 
 
 2011-02-02 Gökmen Göksel <gokmen@pardus.org.tr>
@@ -764,30 +763,4 @@
 
 2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
          * Fix version string 
-
-2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
-         * Fix settings dialog UI, kudos to ibrahim 
-
-2010-11-09 Gökmen Göksel <gokmen@pardus.org.tr>
-         * typo 
-
-2010-11-09 transifex
-         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
-         * New status: 198 messages complete with 0 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-11-09 transifex
-         * l10n: Updated Russian (ru) translation to 99% (Yasirov Vasiliy)
-         * New status: 197 messages complete with 1 fuzzy and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-11-09 transifex
-         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
-         * New status: 196 messages complete with 2 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
-
-2010-11-09 transifex
-         * l10n: Updated Russian (ru) translation to 98% (Yasirov Vasiliy)
-         * New status: 195 messages complete with 3 fuzzies and 0 untranslated.
-         * Transmitted-via: Transifex (translate.pardus.org.tr).
 
