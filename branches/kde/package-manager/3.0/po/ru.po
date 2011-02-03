@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-31 11:52+0200\n"
+"POT-Creation-Date: 2011-02-03 09:21+0200\n"
 "PO-Revision-Date: 2011-01-17 08:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr "Установка и удаление программ"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/pmutils.py:71
-#: src/progressdialog.py:62 ui/ui_mainwindow.py:35
+#: src/progressdialog.py:63 ui/ui_mainwindow.py:35
 msgid "Package Manager"
 msgstr "Менеджер пакетов"
 
@@ -44,7 +44,7 @@ msgstr "Вы хотите очистить выбор пакетов?"
 
 #: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
 #: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
-#: src/settingsdialog.py:234 src/settingsdialog.py:239
+#: src/settingsdialog.py:247 src/settingsdialog.py:252
 msgid "Pisi Error"
 msgstr "Ошибка в PiSi "
 
@@ -93,7 +93,7 @@ msgstr "Уже установленные пакеты"
 msgid "Installed Packages"
 msgstr "Установленные пакеты"
 
-#: src/grouplist.py:47
+#: src/grouplist.py:46
 msgid "All"
 msgstr "Все"
 
@@ -113,15 +113,15 @@ msgstr "Поиск..."
 msgid "No results found."
 msgstr "Ничего не найдено."
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:390
 msgid "All Updates"
 msgstr "Все обновления"
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:391
 msgid "Security Updates"
 msgstr "Обновления безопасности"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:392
 msgid "Critical Updates"
 msgstr "Критические обновления"
 
@@ -161,11 +161,11 @@ msgstr "установка"
 msgid "removing"
 msgstr "удаление"
 
-#: src/operationmanager.py:40 src/progressdialog.py:78
+#: src/operationmanager.py:40 src/progressdialog.py:79
 msgid "extracting"
 msgstr "распаковка"
 
-#: src/operationmanager.py:41 src/progressdialog.py:78
+#: src/operationmanager.py:41 src/progressdialog.py:79
 msgid "configuring"
 msgstr "настройка"
 
@@ -205,7 +205,7 @@ msgstr "Размер пакета:"
 msgid "Installed Version:"
 msgstr "Установленная версия:"
 
-#: src/packagedelegate.py:335
+#: src/packagedelegate.py:338
 msgid "Details"
 msgstr "Подробнее"
 
@@ -217,11 +217,11 @@ msgstr "Выбрать все пакеты в этой группе"
 msgid "%prog packages_to_install"
 msgstr "%prog packages_to_install"
 
-#: src/pmutils.py:77 src/statemanager.py:241
+#: src/pmutils.py:77 src/statemanager.py:245
 msgid "Network Error"
 msgstr "Ошибка сети"
 
-#: src/pmutils.py:78 src/statemanager.py:242
+#: src/pmutils.py:78 src/statemanager.py:246
 msgid "Please check your network connections and try again."
 msgstr "Пожалуйста, проверьте сетевые подключения и повторите попытку."
 
@@ -255,36 +255,36 @@ msgstr "Другой экземпляр PiSi работает. Допускае�
 msgid "Do you want to continue ?"
 msgstr "Вы хотите продолжить?"
 
-#: src/progressdialog.py:74
+#: src/progressdialog.py:75
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='right'>%1 %</p>"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операция - %1%"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Загрузка списка пакетов %1"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr "[%1 / %2]"
 
-#: src/progressdialog.py:96
+#: src/progressdialog.py:97
 msgid "%1 / %2, %3"
 msgstr "%1 / %2, %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 msgid "Preparing PiSi..."
 msgstr "Подготовка PiSi ..."
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Отмена операции...</b>"
 
@@ -296,151 +296,152 @@ msgstr "Открыть директорию"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Все кэшированные пакеты будут удалены. Вы уверены?"
 
-#: src/settingsdialog.py:235
+#: src/settingsdialog.py:248
 msgid "Not a valid repository name"
 msgstr "Не верное имя репозитория"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адресс репозитория должен оканчиваться суффиксом xml или xml.bz2.<p>Пожалуйста, попробуйте еще раз.</qt>"
 
-#: src/statemanager.py:83 src/statemanager.py:84
+#: src/statemanager.py:86 src/statemanager.py:87
 msgid "Installing Package(s)"
 msgstr "Установка пакета(ов)"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:88
 msgid "Removing Package(s)"
 msgstr "Удаление пакета(ов)"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:89
 msgid "Upgrading Package(s)"
 msgstr "Обновление пакета(ов)"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:90
 msgid "Applying Repository Changes"
 msgstr "Применение изменений репозитория"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:91
 msgid "Updating Repository"
 msgstr "Обновление репозитория"
 
-#: src/statemanager.py:89
+#: src/statemanager.py:92
 msgid "Updating Repository(s)"
 msgstr "Обновление репозитория(ев)"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:95
 msgid "installed"
 msgstr "установлено"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:96
 msgid "removed"
 msgstr "удалено"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:97
 msgid "upgraded"
 msgstr "обновлено"
 
-#: src/statemanager.py:95
+#: src/statemanager.py:98
 msgid "modified"
 msgstr "изменено"
 
-#: src/statemanager.py:99 ui/ui_basketdialog.py:195 ui/ui_mainwidget_v3.py:173
+#: src/statemanager.py:102 ui/ui_basketdialog.py:195
+#: ui/ui_mainwidget_v3.py:174
 msgid "Install Package(s)"
 msgstr "Установить"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:103
 msgid "Remove Package(s)"
 msgstr "Удалить"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:104
 msgid "Upgrade Package(s)"
 msgstr "Обновить"
 
-#: src/statemanager.py:102
+#: src/statemanager.py:105
 msgid "Select Operation"
 msgstr "Выбор операции"
 
-#: src/statemanager.py:112
+#: src/statemanager.py:115
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 новые пакеты были установлены успешно."
 
-#: src/statemanager.py:113
+#: src/statemanager.py:116
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 пакеты были удалены успешно."
 
-#: src/statemanager.py:114
+#: src/statemanager.py:117
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 пакеты были обновлены успешно."
 
-#: src/statemanager.py:115
+#: src/statemanager.py:118
 msgid "%1 package(s) have been modified succesfully."
 msgstr "%1 пакеты были изменены успешно."
 
-#: src/statemanager.py:118
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to install:"
 msgstr "Вы выбрали следующий(е) пакет(ы) для установки:"
 
-#: src/statemanager.py:119
+#: src/statemanager.py:122
 msgid "You have selected the following package(s) to removal:"
 msgstr "Вы выбрали следующий(е) пакет(ы) для удаления:"
 
-#: src/statemanager.py:120
+#: src/statemanager.py:123
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Вы выбрали следующий(е) пакет(ы) для обновления:"
 
-#: src/statemanager.py:121
+#: src/statemanager.py:124
 msgid "You have selected the following package(s) to modify:"
 msgstr "Вы выбрали следующий(е) пакет(ы) для изменения:"
 
-#: src/statemanager.py:124 ui/ui_basketdialog.py:191
+#: src/statemanager.py:127 ui/ui_basketdialog.py:191
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Дополнительные зависимости выбранных пакетов также будут установлены:"
 
-#: src/statemanager.py:125
+#: src/statemanager.py:128
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Следующие зависимости выбранных пакетов также будут удалены:"
 
-#: src/statemanager.py:126
+#: src/statemanager.py:129
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Дополнительные зависимости выбранных пакетов, которые тоже будут обновлены:"
 
-#: src/statemanager.py:127
+#: src/statemanager.py:130
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Дополнительные зависимости выбранных пакетов, которые тоже будут изменены:"
 
-#: src/statemanager.py:166
+#: src/statemanager.py:170
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Сейчас есть <b>%1</b> выбранных пакетов на <b>%2</b> по объему "
 
-#: src/statemanager.py:169
+#: src/statemanager.py:173
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "с <b>%1</b> зависимостями на <b>%2</b> по объему "
 
-#: src/statemanager.py:171
+#: src/statemanager.py:175
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "с <b>%1</b> дополнительными зависимостями на <b>%2</b> по объему "
 
-#: src/statemanager.py:172
+#: src/statemanager.py:176
 msgid "in your basket."
 msgstr "в вашей корзине."
 
-#: src/statemanager.py:207
+#: src/statemanager.py:211
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Выбранные пакеты [%1] конфликтуют друг с другом. Они не могут быть установлены вместе."
 
-#: src/statemanager.py:208 src/statemanager.py:216
+#: src/statemanager.py:212 src/statemanager.py:220
 msgid "Conflict Error"
 msgstr "Конфликт"
 
-#: src/statemanager.py:212
+#: src/statemanager.py:216
 msgid "The following packages conflicts:\n"
 msgstr "Конфликты среди следующих пакетов:\n"
 
-#: src/statemanager.py:214
+#: src/statemanager.py:218
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 конфликтует с: [%2]\n"
 
-#: src/statemanager.py:215
+#: src/statemanager.py:219
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -467,7 +468,7 @@ msgstr "Обновление репозитория"
 msgid "There are %1 updates available!"
 msgstr "Доступно <b>%1</b> обновлений!"
 
-#: src/webdialog.py:123 ui/ui_webdialog.py:157
+#: src/webdialog.py:113 ui/ui_webdialog.py:157
 msgid "Package Files"
 msgstr "Файлы пакета"
 
@@ -508,27 +509,32 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:199
+#: ui/ui_progressdialog_v4.py:223
 msgid "Form"
 msgstr "Форма"
 
 #: ui/ui_mainwidget_v3.py:168
+#, fuzzy
+msgid "Type to search..."
+msgstr "Нажмите для поиска"
+
+#: ui/ui_mainwidget_v3.py:169
 msgid "Update Types"
 msgstr "Типы обновлений"
 
-#: ui/ui_mainwidget_v3.py:169
+#: ui/ui_mainwidget_v3.py:170
 msgid "Category Panel"
 msgstr "Панель категории"
 
-#: ui/ui_mainwidget_v3.py:170 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
 msgid "Package List"
 msgstr "Список пакетов"
 
-#: ui/ui_mainwidget_v3.py:171
+#: ui/ui_mainwidget_v3.py:172
 msgid "Show Basket"
 msgstr "Показать корзину"
 
-#: ui/ui_mainwidget_v3.py:172
+#: ui/ui_mainwidget_v3.py:173
 msgid "Check for Updates"
 msgstr "Проверить наличие обновлений"
 
@@ -552,7 +558,7 @@ msgstr "Отменить"
 msgid "Preview"
 msgstr ""
 
-#: ui/ui_progressdialog_v4.py:200
+#: ui/ui_progressdialog_v4.py:224
 msgid "Alt+C"
 msgstr "Alt+O"
 
@@ -792,50 +798,69 @@ msgstr "Проверьте сетевые подключения и повтор
 msgid "Package Details"
 msgstr "Описание пакета"
 
-#~ msgid "No proxy server"
-#~ msgstr "Нет прокси-сервера"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Использовать пользовательские установки"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Использовать установки среды рабочего стола"
+#~ msgid "Developer"
+#~ msgstr "Разработчик"
 
-#~ msgid "Search Button"
-#~ msgstr "Кнопка поиска"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Search"
-#~ msgstr "Поиск"
+#~ msgid "First Author"
+#~ msgstr "Первый автор"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Кнопка действия для текущего состояния"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр, Алексей Иванов"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Переключатель для выбора всех пакетов в Списке пакетов"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
 
-#~ msgid "Operation"
-#~ msgstr "Операция"
+#~ msgid "Show main window"
+#~ msgstr "Показать главное окно"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Подготовка PiSi...</h3>"
+#~ msgid "Hide summary screen"
+#~ msgstr "Скрыть окно итогов"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Оставшееся время:"
+#~ msgid "Show Updates"
+#~ msgstr "Показать обновления"
 
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
+#~ msgid "Ignore"
+#~ msgstr "Игнорировать"
 
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
+#~ msgid "Search Bar"
+#~ msgstr "Строка поиска"
 
-#~ msgid "Operation:"
-#~ msgstr "Операция:"
+#~ msgid "Type to filter files"
+#~ msgstr "По типу файлов"
 
-#~ msgid "Status:"
-#~ msgstr "Статус:"
+#~ msgid " kb/s"
+#~ msgstr " кб/с"
 
-#~ msgid "Close"
-#~ msgstr "Закрыть"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Обновляемые пакеты"
+
+#~ msgid "Modify Package(s)"
+#~ msgstr "Изменить пакет(ы)"
+
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Установленные пакеты"
+
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -850,69 +875,47 @@ msgstr "Описание пакета"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Close"
+#~ msgstr "Закрыть"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Установленные пакеты"
+#~ msgid "Status:"
+#~ msgstr "Статус:"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Operation:"
+#~ msgstr "Операция:"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Изменить пакет(ы)"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Обновляемые пакеты"
+#~ msgid "Time remaining:"
+#~ msgstr "Оставшееся время:"
 
-#~ msgid " kb/s"
-#~ msgstr " кб/с"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Подготовка PiSi...</h3>"
 
-#~ msgid "Type to filter files"
-#~ msgstr "По типу файлов"
+#~ msgid "Operation"
+#~ msgstr "Операция"
 
-#~ msgid "Click to search"
-#~ msgstr "Нажмите для поиска"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Переключатель для выбора всех пакетов в Списке пакетов"
 
-#~ msgid "Search Bar"
-#~ msgstr "Строка поиска"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Кнопка действия для текущего состояния"
 
-#~ msgid "Ignore"
-#~ msgstr "Игнорировать"
+#~ msgid "Search"
+#~ msgstr "Поиск"
 
-#~ msgid "Show Updates"
-#~ msgstr "Показать обновления"
+#~ msgid "Search Button"
+#~ msgstr "Кнопка поиска"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Скрыть окно итогов"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Использовать установки среды рабочего стола"
 
-#~ msgid "Show main window"
-#~ msgstr "Показать главное окно"
+#~ msgid "Use manual settings"
+#~ msgstr "Использовать пользовательские установки"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Ясыров Василий, Семенов Николай, Щербаков Александр, Алексей Иванов"
-
-#~ msgid "First Author"
-#~ msgstr "Первый автор"
-
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
-
-#~ msgid "Developer"
-#~ msgstr "Разработчик"
-
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(C) 2009-2010 TUBITAK / UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Нет прокси-сервера"

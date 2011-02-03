@@ -77,7 +77,11 @@
       <number>0</number>
      </property>
      <item>
-      <widget class="QLineEdit" name="searchLine"/>
+      <widget class="QLineEdit" name="searchLine">
+       <property name="placeholderText">
+        <string>Type to search...</string>
+       </property>
+      </widget>
      </item>
      <item>
       <widget class="QToolButton" name="searchButton">

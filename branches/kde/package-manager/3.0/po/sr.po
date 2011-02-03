@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-31 11:52+0200\n"
+"POT-Creation-Date: 2011-02-03 09:21+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -23,7 +23,7 @@ msgstr "Додај или уклони софтвер"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/pmutils.py:71
-#: src/progressdialog.py:62 ui/ui_mainwindow.py:35
+#: src/progressdialog.py:63 ui/ui_mainwindow.py:35
 msgid "Package Manager"
 msgstr "Менаџер пакета"
 
@@ -46,7 +46,7 @@ msgstr "Да ли желите да наставите ?"
 
 #: src/basketdialog.py:68 src/pmutils.py:83 src/pmutils.py:88
 #: src/pmutils.py:91 src/pmutils.py:94 src/pmutils.py:97
-#: src/settingsdialog.py:234 src/settingsdialog.py:239
+#: src/settingsdialog.py:247 src/settingsdialog.py:252
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
 
@@ -100,7 +100,7 @@ msgstr "Инсталирај пакет(е)"
 msgid "Installed Packages"
 msgstr "Инсталирај пакет(е)"
 
-#: src/grouplist.py:47
+#: src/grouplist.py:46
 msgid "All"
 msgstr "Све"
 
@@ -121,15 +121,15 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:389
+#: src/mainwidget.py:390
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:391
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:392
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
@@ -174,11 +174,11 @@ msgstr "инсталирано"
 msgid "removing"
 msgstr "уклоњено"
 
-#: src/operationmanager.py:40 src/progressdialog.py:78
+#: src/operationmanager.py:40 src/progressdialog.py:79
 msgid "extracting"
 msgstr "отпакивање"
 
-#: src/operationmanager.py:41 src/progressdialog.py:78
+#: src/operationmanager.py:41 src/progressdialog.py:79
 msgid "configuring"
 msgstr "конфигурисање"
 
@@ -218,7 +218,7 @@ msgstr "Величина пакета:"
 msgid "Installed Version:"
 msgstr "Инсталирана верзија:"
 
-#: src/packagedelegate.py:335
+#: src/packagedelegate.py:338
 msgid "Details"
 msgstr ""
 
@@ -230,11 +230,11 @@ msgstr ""
 msgid "%prog packages_to_install"
 msgstr "%prog пакета да се инсталира"
 
-#: src/pmutils.py:77 src/statemanager.py:241
+#: src/pmutils.py:77 src/statemanager.py:245
 msgid "Network Error"
 msgstr "Мрежна грешка"
 
-#: src/pmutils.py:78 src/statemanager.py:242
+#: src/pmutils.py:78 src/statemanager.py:246
 msgid "Please check your network connections and try again."
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
@@ -268,39 +268,39 @@ msgstr ""
 msgid "Do you want to continue ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/progressdialog.py:74
+#: src/progressdialog.py:75
 #, fuzzy
 msgid "<p align='right'>%1 %</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:75
+#: src/progressdialog.py:76
 #, python-format
 msgid "Operation - %1%"
 msgstr "Операција - %1%"
 
-#: src/progressdialog.py:82
+#: src/progressdialog.py:83
 msgid "Downloading package list of %1"
 msgstr "Преузимање листе пакета од %1"
 
-#: src/progressdialog.py:84
+#: src/progressdialog.py:85
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: src/progressdialog.py:89
+#: src/progressdialog.py:90
 msgid "[%1 / %2]"
 msgstr ""
 
-#: src/progressdialog.py:96
+#: src/progressdialog.py:97
 #, fuzzy
 msgid "%1 / %2, %3"
 msgstr "%1 / %2 пакет %3"
 
-#: src/progressdialog.py:113
+#: src/progressdialog.py:114
 #, fuzzy
 msgid "Preparing PiSi..."
 msgstr "<h3>Припремање ПиСија...</h3>"
 
-#: src/progressdialog.py:124
+#: src/progressdialog.py:125
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Поништавање операције...</b>"
 
@@ -312,152 +312,153 @@ msgstr "Отвори директоријум"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Сви пакети из складишта ће бити избрисани. Да ли сте сигурни?"
 
-#: src/settingsdialog.py:235
+#: src/settingsdialog.py:248
 msgid "Not a valid repository name"
 msgstr "Не важечи назив репозиторијума"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 #, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса репозиторијума би требала да се заврши са xml или xml.bz2 наставком.<p>Молимо покушајте поново.</qt>"
 
-#: src/statemanager.py:83 src/statemanager.py:84
+#: src/statemanager.py:86 src/statemanager.py:87
 msgid "Installing Package(s)"
 msgstr "Инсталирање пакета"
 
-#: src/statemanager.py:85
+#: src/statemanager.py:88
 msgid "Removing Package(s)"
 msgstr "Уклањање пакета"
 
-#: src/statemanager.py:86
+#: src/statemanager.py:89
 msgid "Upgrading Package(s)"
 msgstr "Надограђивање пакета"
 
-#: src/statemanager.py:87
+#: src/statemanager.py:90
 msgid "Applying Repository Changes"
 msgstr "Примењивање промена на репозиторијуму"
 
-#: src/statemanager.py:88
+#: src/statemanager.py:91
 msgid "Updating Repository"
 msgstr "Ажурирање репозиторијума"
 
-#: src/statemanager.py:89
+#: src/statemanager.py:92
 msgid "Updating Repository(s)"
 msgstr "Ажурирање репозиторијума"
 
-#: src/statemanager.py:92
+#: src/statemanager.py:95
 msgid "installed"
 msgstr "инсталирано"
 
-#: src/statemanager.py:93
+#: src/statemanager.py:96
 msgid "removed"
 msgstr "уклоњено"
 
-#: src/statemanager.py:94
+#: src/statemanager.py:97
 msgid "upgraded"
 msgstr "надограђено"
 
-#: src/statemanager.py:95
+#: src/statemanager.py:98
 msgid "modified"
 msgstr ""
 
-#: src/statemanager.py:99 ui/ui_basketdialog.py:195 ui/ui_mainwidget_v3.py:173
+#: src/statemanager.py:102 ui/ui_basketdialog.py:195
+#: ui/ui_mainwidget_v3.py:174
 msgid "Install Package(s)"
 msgstr "Инсталирај пакет(е)"
 
-#: src/statemanager.py:100
+#: src/statemanager.py:103
 msgid "Remove Package(s)"
 msgstr "Уклони пакет(е)"
 
-#: src/statemanager.py:101
+#: src/statemanager.py:104
 msgid "Upgrade Package(s)"
 msgstr "Надогради пакет(е)"
 
-#: src/statemanager.py:102
+#: src/statemanager.py:105
 msgid "Select Operation"
 msgstr ""
 
-#: src/statemanager.py:112
+#: src/statemanager.py:115
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: src/statemanager.py:113
+#: src/statemanager.py:116
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: src/statemanager.py:114
+#: src/statemanager.py:117
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: src/statemanager.py:115
+#: src/statemanager.py:118
 msgid "%1 package(s) have been modified succesfully."
 msgstr ""
 
-#: src/statemanager.py:118
+#: src/statemanager.py:121
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: src/statemanager.py:119
+#: src/statemanager.py:122
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: src/statemanager.py:120
+#: src/statemanager.py:123
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: src/statemanager.py:121
+#: src/statemanager.py:124
 msgid "You have selected the following package(s) to modify:"
 msgstr ""
 
-#: src/statemanager.py:124 ui/ui_basketdialog.py:191
+#: src/statemanager.py:127 ui/ui_basketdialog.py:191
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr ""
 
-#: src/statemanager.py:125
+#: src/statemanager.py:128
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr ""
 
-#: src/statemanager.py:126
+#: src/statemanager.py:129
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr ""
 
-#: src/statemanager.py:127
+#: src/statemanager.py:130
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr ""
 
-#: src/statemanager.py:166
+#: src/statemanager.py:170
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:169
+#: src/statemanager.py:173
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:171
+#: src/statemanager.py:175
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: src/statemanager.py:172
+#: src/statemanager.py:176
 msgid "in your basket."
 msgstr ""
 
-#: src/statemanager.py:207
+#: src/statemanager.py:211
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr ""
 
-#: src/statemanager.py:208 src/statemanager.py:216
+#: src/statemanager.py:212 src/statemanager.py:220
 msgid "Conflict Error"
 msgstr ""
 
-#: src/statemanager.py:212
+#: src/statemanager.py:216
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: src/statemanager.py:214
+#: src/statemanager.py:218
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: src/statemanager.py:215
+#: src/statemanager.py:219
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -481,7 +482,7 @@ msgstr "Ажурирање репозиторијума"
 msgid "There are %1 updates available!"
 msgstr ""
 
-#: src/webdialog.py:123 ui/ui_webdialog.py:157
+#: src/webdialog.py:113 ui/ui_webdialog.py:157
 #, fuzzy
 msgid "Package Files"
 msgstr "Величина пакета:"
@@ -523,27 +524,31 @@ msgid "<b>2.0 MB</"
 msgstr ""
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:199
+#: ui/ui_progressdialog_v4.py:223
 msgid "Form"
 msgstr ""
 
 #: ui/ui_mainwidget_v3.py:168
-msgid "Update Types"
+msgid "Type to search..."
 msgstr ""
 
 #: ui/ui_mainwidget_v3.py:169
+msgid "Update Types"
+msgstr ""
+
+#: ui/ui_mainwidget_v3.py:170
 msgid "Category Panel"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:170 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
 msgid "Package List"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:171
+#: ui/ui_mainwidget_v3.py:172
 msgid "Show Basket"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:172
+#: ui/ui_mainwidget_v3.py:173
 #, fuzzy
 msgid "Check for Updates"
 msgstr "Сигурносне исправке"
@@ -570,7 +575,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: ui/ui_progressdialog_v4.py:200
+#: ui/ui_progressdialog_v4.py:224
 msgid "Alt+C"
 msgstr ""
 
@@ -804,33 +809,39 @@ msgstr "Молимо Вас проверите мрежну конекцију �
 msgid "Package Details"
 msgstr "Величина пакета:"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Припремање ПиСија...</h3>"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) -2010 ТУБИТАК/УЕКАЕ"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Преостало време:"
+#~ msgid "Developer"
+#~ msgstr "Развијач"
 
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Гокман Гоксел"
 
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
+#~ msgid "Faik Uygur"
+#~ msgstr "Фаик Ујгур"
 
-#~ msgid "Status:"
-#~ msgstr "Статус:"
+#~ msgid "First Author"
+#~ msgstr "Први аутор"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Јожеф Куруцић"
 
-#~ msgid "Help"
-#~ msgstr "Помоћ"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "Kurucity@aim.com"
 
-#~ msgid "File"
-#~ msgstr "Фајл"
+#~ msgid "Show main window"
+#~ msgstr "Прикажи главни прозор"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Прикажи пакете који могу да се ажурирају"
+
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Уклањање пакета"
 
 #, fuzzy
 #~ msgid ""
@@ -839,35 +850,29 @@ msgstr "Величина пакета:"
 #~ msgstr "Инсталирај пакет(е)"
 
 #, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Уклањање пакета"
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Прикажи пакете који могу да се ажурирају"
+#~ msgid "File"
+#~ msgstr "Фајл"
 
-#~ msgid "Show main window"
-#~ msgstr "Прикажи главни прозор"
+#~ msgid "Help"
+#~ msgstr "Помоћ"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "Kurucity@aim.com"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Јожеф Куруцић"
+#~ msgid "Status:"
+#~ msgstr "Статус:"
 
-#~ msgid "First Author"
-#~ msgstr "Први аутор"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Фаик Ујгур"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Гокман Гоксел"
+#~ msgid "Time remaining:"
+#~ msgstr "Преостало време:"
 
-#~ msgid "Developer"
-#~ msgstr "Развијач"
-
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) -2010 ТУБИТАК/УЕКАЕ"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Припремање ПиСија...</h3>"
