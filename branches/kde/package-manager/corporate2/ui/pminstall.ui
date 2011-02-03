@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>228</height>
+    <width>580</width>
+    <height>230</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -73,6 +73,9 @@
      </property>
      <property name="text">
       <string>Following packages are selected to install. Do you want to install these packages ?</string>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
      </property>
     </widget>
    </item>

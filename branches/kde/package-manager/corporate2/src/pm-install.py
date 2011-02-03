@@ -53,6 +53,10 @@ if __name__ == '__main__':
         app = QUniqueApplication(sys.argv, catalog='pm-install')
         setSystemLocale()
 
+        # Set application font from system
+        font = Pds.settings('font','Sans,10').split(',')
+        app.setFont(QFont(font[0], int(font[1])))
+
         window = PmWindow(app, packages)
         window.show()
 

@@ -196,6 +196,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.busy.hide()
 
         self.cw.statusLabel.setText(text)
+        self.cw.statusLabel.setToolTip(text)
 
     def queryClose(self):
         if config.PMConfig().systemTray():
