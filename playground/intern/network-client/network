@@ -189,7 +189,12 @@ def get_ip_assignment(settings):
     else:
         settings.address = get_input("Address")
         settings.netmask = get_input("Mask")
-        settings.gateway = get_input("Gateway")
+
+        gateway_input = get_input("Gateway")
+        if gateway_input is not "":
+            settings.gateway = gateway_input
+        else:
+            settings.gateway = "0.0.0.0"
     return settings
 
 def get_dns_assignment(settings):
