@@ -67,7 +67,17 @@ def __getModuleFlavour():
 
 def __getKernelARCH():
     """i386 is relevant for our i686 architecture."""
-    return get.ARCH().replace("i686", "i386")
+    arch=get.ARCH()
+    karch=""
+
+    if re.match('x86_64', arch):
+        karch="x86_64"
+    elif re.match('i.86', arch):
+        karch="i386"
+    elif re.match('arm.*', arch):
+        karch="arm"
+
+    return arch
 
 def __getSuffix():
     """Read and return the value read from .suffix file."""
