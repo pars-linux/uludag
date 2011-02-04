@@ -370,6 +370,7 @@
         <SelectedPackage>zemberek-office</SelectedPackage>
         <SelectedPackage>zemberek-server</SelectedPackage>
         <SelectedPackage>zorg</SelectedPackage>
+        <SelectedPackage>zpspell</SelectedPackage>
         <SelectedPackage>zsh</SelectedPackage>
         <Package>ConsoleKit</Package>
         <Package>DirectFB</Package>
@@ -661,7 +662,6 @@
         <Package>kernel</Package>
         <Package>keyutils</Package>
         <Package>kipi-plugins</Package>
-        <Package>kvm</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lapack</Package>
@@ -875,14 +875,12 @@
         <Package>module-alsa-driver-userspace</Package>
         <Package>module-broadcom-wl-userspace</Package>
         <Package>module-init-tools</Package>
-        <Package>module-kvm</Package>
         <Package>module-kvm-userspace</Package>
         <Package>module-microdia-userspace</Package>
         <Package>module-ndiswrapper-userspace</Package>
         <Package>module-ov51x-jpeg-userspace</Package>
         <Package>module-r5u870-userspace</Package>
         <Package>module-syntekdriver-userspace</Package>
-        <Package>mozilla-opensc-signer</Package>
         <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
@@ -923,7 +921,6 @@
         <Package>openldap-server</Package>
         <Package>openobex</Package>
         <Package>opensc</Package>
-        <Package>opensc-devel</Package>
         <Package>openslp</Package>
         <Package>openssh</Package>
         <Package>openssl</Package>
