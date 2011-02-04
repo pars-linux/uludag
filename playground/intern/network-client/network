@@ -220,25 +220,11 @@ def get_dns_assignment(settings):
 def create_ethernet_connection(nm_handle, _device):
     """Create an ethernet connection."""
 
-    settings = None
     settings = WiredSettings()
     settings.uuid = uuid.uuid4()
     settings.device = _device
     settings.mac_address = _device.hwaddress
-    settings = get_ip_assignment(settings)
-    print
-    settings = get_dns_assignment(settings)
-    print
-    connection_id = None
-    while not connection_id:
-        connection_id = get_input("Profile name").strip()
-        if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
-            print
-            connection_id = None
-
-    settings.id = connection_id
-    nm_handle.add_connection(settings)
+    return settings
 
 def dbus_byte_array_to_string(array):
     cikti = ""
@@ -290,27 +276,7 @@ def create_wireless_connection(nm_handle, _device):
             #FIXME:remote is string, not device
             remote = get_input("ESSID")
     settings._settings["802-11-wireless"][dbus.String('ssid')] = remote.ssid
-
-
-    #"""Get IP and DNS assignment method"""
-    settings = get_ip_assignment(settings)
-    print
-    settings = get_dns_assignment(settings)
-    print
-
-    #"""Get connection id"""
-    connection_id = None
-    while not connection_id:
-        connection_id = get_input("Profile name").strip()
-        if nm_handle.get_connections_by_id(connection_id) is not None:
-            print "There is already a connection named '%s'" % connection_id
-            print
-            connection_id = None
-
-    settings.id = connection_id
-
-
-    nm_handle.add_connection(settings)
+    return settings
 
 def create_connection(nm_handle):
     """Create a connection."""
@@ -338,8 +304,30 @@ def create_connection(nm_handle):
 
     device = get_device(nm_handle, filtered_devices)
 
+    settings = None
     if device is not None:
-        functions[device.type](nm_handle, device)
+        settings = functions[device.type](nm_handle, device)
+
+    #"""Get IP and DNS assignment method"""
+    settings = get_ip_assignment(settings)
+    print
+    settings = get_dns_assignment(settings)
+    print
+
+    #"""Get connection id"""
+    connection_id = None
+    while not connection_id:
+        connection_id = get_input("Profile name").strip()
+        if nm_handle.get_connections_by_id(connection_id) is not None:
+            print "There is already a connection named '%s'" % connection_id
+            print
+            connection_id = None
+
+    settings.id = connection_id
+
+
+    nm_handle.add_connection(settings)
+
 
 def get_device(nm_handle, device_list = None, type = None, mustSelect = True):
     """Get device from user"""
