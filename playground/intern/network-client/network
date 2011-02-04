@@ -12,10 +12,8 @@
 
 """Interactive network configuration tool for NetworkManager"""
 
-import sys
-import uuid
+import sys, uuid, dbus
 from optparse import OptionParser
-
 from networkmanager import NetworkManager, WiredSettings, WirelessSettings, DeviceType, DeviceState
 
 # Color characters
@@ -186,7 +184,9 @@ def get_ip_assignment(settings):
             ignore_auto_dns = settings._settings["ipv4"]["ignore-auto-dns"]
         settings.set_auto()
         settings._settings["ipv4"]["ignore-auto-dns"] = ignore_auto_dns
+        print
     else:
+        print
         settings.address = get_input("Address")
         settings.netmask = get_input("Mask")
 
@@ -226,9 +226,10 @@ def create_ethernet_connection(nm_handle, _device):
     settings.device = _device
     settings.mac_address = _device.hwaddress
     settings = get_ip_assignment(settings)
-    settings = get_dns_assignment(settings)
-    connection_id = None
     print
+    settings = get_dns_assignment(settings)
+    print
+    connection_id = None
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
@@ -240,7 +241,6 @@ def create_ethernet_connection(nm_handle, _device):
     nm_handle.add_connection(settings)
 
 def dbus_byte_array_to_string(array):
-    import dbus
     cikti = ""
     for i in array:
         cikti += chr(i)
@@ -248,7 +248,6 @@ def dbus_byte_array_to_string(array):
 
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
-    import dbus
 
     settings = WirelessSettings()
     settings.uuid = uuid.uuid4()
@@ -295,12 +294,12 @@ def create_wireless_connection(nm_handle, _device):
 
     #"""Get IP and DNS assignment method"""
     settings = get_ip_assignment(settings)
+    print
     settings = get_dns_assignment(settings)
-
+    print
 
     #"""Get connection id"""
     connection_id = None
-    print
     while not connection_id:
         connection_id = get_input("Profile name").strip()
         if nm_handle.get_connections_by_id(connection_id) is not None:
@@ -334,7 +333,7 @@ def create_connection(nm_handle):
                                     str(device_type).capitalize())
 
     device_no = get_number("Device type", 1, len(device_types)) - 1
-
+    print
     filtered_devices = nm_handle.devices_map[device_types[device_no]]
 
     device = get_device(nm_handle, filtered_devices)
