@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Copyright (C) 2005 - 2007, TUBITAK/UEKAE
+# Copyright (C) 2005 - 2011, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -105,7 +105,7 @@ class UIHandler:
 class Fetcher:
     """Fetcher can fetch a file from various sources using various
     protocols."""
-    def __init__(self, url, destdir, destfile=None):
+    def __init__(self, url, destdir="/tmp", destfile=None):
         if not isinstance(url, pisi.uri.URI):
             url = pisi.uri.URI(url)
 
@@ -121,6 +121,21 @@ class Fetcher:
         self.partial_file = os.path.join(self.destdir, self.url.filename()) + ctx.const.partial_suffix
 
         util.ensure_dirs(self.destdir)
+
+    def test(self, timeout=3):
+        import urlgrabber
+
+        try:
+            urlgrabber.urlopen(self.url.get_uri(),
+                           http_headers = self._get_http_headers(),
+                           ftp_headers  = self._get_ftp_headers(),
+                           proxies      = self._get_proxies(),
+                           timeout      = timeout,
+                           user_agent   = 'PiSi Fetcher/' + pisi.__version__)
+        except urlgrabber.grabber.URLGrabError:
+            return False
+
+        return True
 
     def fetch (self):
         """Return value: Fetched file's full path.."""
