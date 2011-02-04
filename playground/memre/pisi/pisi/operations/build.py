@@ -302,11 +302,15 @@ class Builder:
     def build(self):
         """Build the package in one shot."""
 
+        # excludeArch should accept regex.
+        # eg. <exludeArch>arm*</exludeArch> armv7l, armv5te matches
+        #     <exludeArch>i?86</exludeArch> i586, i686 matches
         architecture = ctx.config.values.general.architecture
-        if architecture in self.spec.source.excludeArch:
-            raise ExcludedArchitectureException(
-                    _("pspec.xml avoids this package from building for '%s'")
-                    % architecture)
+        for arch in self.spec.source.excludeArch:
+            if re.match(arch, architecture):
+                raise ExcludedArchitectureException(
+                        _("pspec.xml avoids this package from building for '%s'")
+                        % architecture)
 
         ctx.ui.status(_("Building source package: %s")
                       % self.spec.source.name)
