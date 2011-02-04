@@ -77,7 +77,7 @@ def __getKernelARCH():
     elif re.match('arm.*', arch):
         karch="arm"
 
-    return arch
+    return karch
 
 def __getSuffix():
     """Read and return the value read from .suffix file."""
