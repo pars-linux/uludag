@@ -41,8 +41,8 @@ def is_method_missing(exception):
         return True
     return False
 
-def safe_package_name(package):
-    """Generates DBus-safe object name for package name."""
+def safe_script_name(package):
+    """Generates DBus-safe object name for package script names."""
     object = package
     for char in package:
         if not is_char_valid(char):
@@ -97,7 +97,7 @@ def post_install(package_name, provided_scripts,
     ctx.ui.info(_("Configuring %s package") % package_name)
     self_post = False
 
-    package_name = safe_package_name(package_name)
+    package_name = safe_script_name(package_name)
 
     if package_name == 'comar':
         ctx.ui.debug(_("COMAR package updated. From now on,"
@@ -108,7 +108,8 @@ def post_install(package_name, provided_scripts,
 
     for script in provided_scripts:
         ctx.ui.debug(_("Registering %s comar script") % script.om)
-        script_name = script.name if script.name else package_name
+        script_name = safe_script_name(script.name) \
+                if script.name else package_name
         if script.om == "System.Package":
             self_post = True
         try:
@@ -158,7 +159,7 @@ def pre_remove(package_name, metapath, filepath):
     ctx.ui.info(_("Running pre removal operations for %s") % package_name)
     link = get_link()
 
-    package_name = safe_package_name(package_name)
+    package_name = safe_script_name(package_name)
 
     if package_name in list(link.System.Package):
         ctx.ui.debug(_("Running package's pre remove script"))
@@ -188,8 +189,9 @@ def post_remove(package_name, metapath, filepath, provided_scripts=[]):
     ctx.ui.info(_("Running post removal operations for %s") % package_name)
     link = get_link()
 
-    package_name = safe_package_name(package_name)
-    scripts = set([s.name for s in provided_scripts if s.name])
+    package_name = safe_script_name(package_name)
+    scripts = set([safe_script_name(s.name) for s \
+            in provided_scripts if s.name])
     scripts.add(package_name)
 
     if package_name in list(link.System.Package):
