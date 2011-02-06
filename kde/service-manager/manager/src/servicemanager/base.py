@@ -69,11 +69,9 @@ class MainManager(QtGui.QWidget):
         """
             Workaround for hidden list items
         """
-        size = self.size()
-        size += QSize(1,1)
-        QTimer.singleShot(1, lambda: self.resize(size))
-        size -= QSize(1,1)
-        QTimer.singleShot(5, lambda: self.resize(size))
+        self.ui.listServices.setFocus()
+        # QTimer.singleShot(2, self.ui.lineSearch.setFocus)
+        self.ui.lineSearch.setFocus()
 
     def doSearch(self, text):
         for service in self.services:
