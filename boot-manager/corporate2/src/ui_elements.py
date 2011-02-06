@@ -34,6 +34,7 @@ class EntryView(QScrollView):
         self.viewport().setPaletteBackgroundColor(KGlobalSettings.baseColor())
         self.entries = []
         self.currentEntry = None
+        self.parent = parent
 
     def clear(self):
         for e in self.entries:
@@ -116,6 +117,7 @@ class Entry(QWidget):
             self.parent.currentEntry.checkbox.setChecked(True)
             self.checkbox.setChecked(False)
             return
+        self.parent.parent.checkSaved.setChecked(False)
         self.parent.currentEntry = self
 
     def slotDefaultReleased(self):
@@ -123,7 +125,8 @@ class Entry(QWidget):
         if old == self:
             self.checkbox.setChecked(True)
             return
-        self.parent.currentEntry.checkbox.setChecked(False)
+        if self.parent.currentEntry:
+            self.parent.currentEntry.checkbox.setChecked(False)
         self.editWidget.parent.backend.setOption(self.editWidget.parent.package, "default", str(self.index), async = self.setDefaultHandler)
 
     def slotEdit(self):

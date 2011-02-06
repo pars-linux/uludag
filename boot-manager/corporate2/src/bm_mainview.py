@@ -535,8 +535,7 @@ class widgetMain(QWidget):
         for key, value in options.iteritems():
             self.options[key] = value
         # Default entry
-        if self.options["default"] == "saved":
-            self.widgetEntries.checkSaved.setChecked(True)
+        self.widgetEntries.checkSaved.setChecked(self.options["default"] == "saved")
         # Timeout
         timeout = int(self.options["timeout"])
         self.widgetEntries.setTimeoutSlot(False)
