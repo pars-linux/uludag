@@ -96,11 +96,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Workaround for hidden list items
         """
-        size = self.size()
-        size += QtCore.QSize(1,1)
-        self.resize(size)
-        size -= QtCore.QSize(1,1)
-        QtCore.QTimer.singleShot(1, lambda: self.resize(size))
+        self.listItems.setFocus()
+        self.comboFilter.setFocus()
 
     def checkBackend(self):
         """
@@ -172,7 +169,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 # TODO: Handle exception
             else:
                 users = args[0]
-                for uid, name, fullname in users:
+                for uid, name, fullname in sorted(users, key=lambda username: username[1]):
                     self.all_users.append(name)
                     self.addItem(uid, name, fullname)
 
@@ -184,7 +181,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 # TODO: Handle exception
             else:
                 groups = args[0]
-                for gid, name in groups:
+                for gid, name in sorted(groups, key=lambda groupname: groupname[1]):
                     self.all_groups.append(name)
                     self.addItem(gid, name, "", group=True)
 
