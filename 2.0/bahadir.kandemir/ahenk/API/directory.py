@@ -235,16 +235,15 @@ def main():
     """
     tmp_db = {}
     tmp_db[0] = [
-        Data(1, "ULAKBİM", "Ankara'daki sunucular"),
-        Data(2, "BİLGEM", "Gebze'deki sunucular"),
+        Data(1, "Releases", ""),
+        Data(2, "Upcoming", ""),
     ]
     tmp_db[1] = [
-        Data(3, "TASMA", "Gateway"),
-        Data(4, "Ahenk", "Redmine"),
+        Data(3, "2009", "Pardus 2009"),
+        Data(4, "2011", "Pardus 2011"),
     ]
     tmp_db[2] = [
-        Data(5, "PiSi", "Web sunucusu"),
-        Data(6, "Derin", "FTP sunucusu"),
+        Data(5, "Corporate 2", "Pardus Corporate 2"),
     ]
 
     def populate(node, callback):
@@ -259,7 +258,7 @@ def main():
         callback(nodes)
 
     root = Node()
-    root.set_data(Data(0, "Pardus", "Sunucular"))
+    root.set_data(Data(0, "Pardus", "Pardus Linux"))
 
     root.register_hook_populate(populate)
     root.populate_children(deep=True)
