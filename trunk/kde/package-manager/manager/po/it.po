@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
@@ -43,12 +43,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -492,12 +492,12 @@ msgid "Update"
 msgstr "Aggiorna"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Ignora"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Ignora"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -669,9 +669,8 @@ msgid "&General Settings"
 msgstr "&Impostazioni Generali"
 
 #: ui/ui_settingsdialog.py:411
-#, fuzzy
 msgid "Cache Limit"
-msgstr "Lista pacchetti"
+msgstr ""
 
 #: ui/ui_settingsdialog.py:412
 msgid "&Use hard disk cache for downloaded software"
@@ -748,9 +747,8 @@ msgid "&Repositories"
 msgstr "&Repository"
 
 #: ui/ui_settingsdialog.py:432
-#, fuzzy
 msgid "Use Proxy"
-msgstr "&Proxy"
+msgstr "Usa Proxy"
 
 #: ui/ui_settingsdialog.py:433
 msgid "HTTP proxy server:"
@@ -771,18 +769,17 @@ msgstr "Proxy FTP:"
 
 #: ui/ui_settingsdialog.py:439
 msgid "Domain:"
-msgstr ""
+msgstr "Dominio:"
 
 #: ui/ui_settingsdialog.py:440
 msgid "Username:"
-msgstr ""
+msgstr "Nome utente:"
 
 #: ui/ui_settingsdialog.py:441
 msgid "Password:"
-msgstr ""
+msgstr "Password:"
 
 #: ui/ui_settingsdialog.py:442
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -790,16 +787,10 @@ msgid ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">There is proxy settings available in KDE, you can click <a href=\"#\"><span style=\" text-decoration: underline; color:#1b7bae;\">here</span></a> to get these settings</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: ui/ui_settingsdialog.py:447
-#, fuzzy
 msgid "<a href=#>Use this proxy server for all protocols</a>"
-msgstr "Usa questo proxy per tutti i protocolli"
+msgstr "<a href=#>Usa questo proxy server per tutti i protocolli</a>"
 
 #: ui/ui_settingsdialog.py:448
 msgid "&Proxy"
