@@ -59,8 +59,11 @@ class Node:
         self.children = []
         self.deep = False
 
-        # Callback functions
+        # Hook functions
         self.hook_populate = None
+
+        # Callback functions
+        self.cb_populate = None
 
         if parent:
             self.parent.append_child(self)
@@ -75,12 +78,39 @@ class Node:
         """
         self.children.append(node)
 
+    def register_cb_populate(self, callback):
+        """
+            Registers callback function to be called after populating nodes.
+
+            Arguments:
+                callback: Callback function. Gets node and list of nodes as arguments.
+
+
+            Use this callback function to update your GUI:
+
+                def draw(node, children):
+                    for child in children:
+                        print child
+                node.register_cb_populate(draw)
+                node.populate_children()
+        """
+        self.cb_populate = callback
+
     def register_hook_populate(self, hook):
         """
             Registers hook function to be called while populating nodes.
 
             Arguments:
                 hook: Hook function. Gets node and callback function as arguments.
+
+
+            Use this hook function to add data to the model:
+
+                def populate(node, cb):
+                    nodes = [1, 2, 3]
+                    cb(nodes)
+                node.register_hook_populate(populate)
+                node.populate_children()
         """
         self.hook_populate = hook
 
@@ -101,14 +131,25 @@ class Node:
 
             Arguments:
                 uid: Node UID
-                children: List of child nodes
+                children: List of child node data
         """
+        child_nodes = []
         for child in children:
             node = Node(self)
             node.set_data(child)
-            if self.deep:
+            child_nodes.append(node)
+
+            if self.hook_populate:
                 node.register_hook_populate(self.hook_populate)
+
+            if self.cb_populate:
+                node.register_cb_populate(self.cb_populate)
+
+            if self.deep:
                 node.populate_children(deep=True)
+
+        if self.cb_populate:
+            self.cb_populate(self, child_nodes)
 
     def get_uid(self):
         """
@@ -221,13 +262,7 @@ def main():
     root.set_data(Data(0, "Pardus", "Sunucular"))
 
     root.register_hook_populate(populate)
-    root.populate_children()
-
-    root.children[0].register_hook_populate(populate)
-    root.children[0].populate_children()
-
-    # Enable to populate all nodes:
-    #root.populate_children(deep=True)
+    root.populate_children(deep=True)
 
     root.pretty_print()
 
