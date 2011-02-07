@@ -84,6 +84,11 @@ def main():
         node.populate_children()
     win.connect(win, QtCore.SIGNAL('itemExpanded(QTreeWidgetItem*)'), slot_populate)
 
+    # Method for removing node children when collapsing
+    def slot_collapse(item):
+        item.takeChildren()
+    win.connect(win, QtCore.SIGNAL('itemCollapsed(QTreeWidgetItem*)'), slot_collapse)
+
     # Size and visibility
     win.resize(600, 400)
     win.show()
