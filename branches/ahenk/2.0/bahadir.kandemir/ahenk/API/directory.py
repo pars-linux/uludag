@@ -200,6 +200,8 @@ class Node:
 class Data:
     """
         Node data model.
+
+        For testing purposes only. You need to define your own data model.
     """
 
     def __init__(self, uid, title, description):
