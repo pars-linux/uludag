@@ -24,7 +24,6 @@ import pisi.context as ctx
 # ActionsAPI Modules
 import pisi.actionsapi
 import pisi.actionsapi.get          as get
-import pisi.actionsapi.autotools    as autotools
 import pisi.actionsapi.pisitools    as pisitools
 import pisi.actionsapi.shelltools   as shelltools
 
@@ -131,6 +130,20 @@ def getKernelVersion(flavour=None):
         # Fail
         raise ConfigureError(_("Can't find kernel version information file %s.") % kverfile)
 
+# Do not use autotools for make
+def make(parameters=''):
+    '''make sources with given parameters'''
+    # if crosscompiling, then add CROSS_COMPILE parameter
+    # we prefer traditional cross-build style since kernel
+    # has very good build system.
+    if crosscompiling:
+        parameters += ' CROSS_COMPILE=%s-' % get.HOST()
+
+    cmd = 'make %s ARCH=%s %s' % (get.makeJOBS(), __getKernelARCH(), parameters)
+
+    if shelltools.system(cmd):
+        raise MakeError(_('Make failed.'))
+
 def configure():
     # Copy the relevant configuration file
     shutil.copy("configs/kernel-%s-config" % get.ARCH(), ".config")
@@ -138,18 +151,13 @@ def configure():
     # Set EXTRAVERSION
     pisitools.dosed("Makefile", "EXTRAVERSION =.*", "EXTRAVERSION = %s" % __getExtraVersion())
 
-    # If crosscompiling, add CROSS_COMPILE parameter
-    extra_parameters=""
-    if crosscompiling:
-        extra_parameters="CROSS_COMPILE=%s-" % get.HOST()
-
     # Configure the kernel interactively if
     # configuration contains new options
-    autotools.make("ARCH=%s oldconfig %s" % (__getKernelARCH()), extra_parameters)
+    make("oldconfig")
 
     # Check configuration with listnewconfig
     # listnewconfig does not work yet.
-    # autotools.make("ARCH=%s listnewconfig %s" % (__getKernelARCH()), extra_parameters)
+    # make("listnewconfig %s" % __getKernelARCH())
 
 ###################################
 # Building and installation stuff #
@@ -165,17 +173,13 @@ def dumpVersion():
 
 
 def build(debugSymbols=False):
+    shelltools.export("LDFLAGS", "")
     extra_config = []
     if debugSymbols:
         # Enable debugging symbols (-g -gdwarf2)
         extra_config.append("CONFIG_DEBUG_INFO=y")
 
-    # If crosscompiling, add CROSS_COMPILE parameter
-    if crosscompiling:
-        extra_config.append("CROSS_COMPILE=%s-" % get.HOST())
-
-    autotools.make("ARCH=%s %s" % (__getKernelARCH(), " ".join(extra_config)))
-
+    make(" ".join(extra_config))
 
 def install():
     suffix = __getSuffix()
@@ -190,8 +194,7 @@ def install():
     # mod-fw= avoids firmwares from installing
     # Override DEPMOD= to not call depmod as it will be called
     # during module-init-tools' package handler
-    autotools.rawInstall("INSTALL_MOD_PATH=%s/" % get.installDIR(),
-                         "DEPMOD=/bin/true modules_install mod-fw=")
+    make("INSTALL_MOD_PATH=%s/ DEPMOD=/bin/true modules_install mod-fw=" % get.makeJOBS())
 
     # Remove symlinks first
     pisitools.remove("/lib/modules/%s/source" % suffix)
@@ -204,7 +207,6 @@ def install():
     # Create extra/ and updates/ subdirectories
     for _dir in ("extra", "updates"):
         pisitools.dodir("/lib/modules/%s/%s" % (suffix, _dir))
-
 
 def installHeaders(extraHeaders=None):
     """ Install the files needed to build out-of-tree kernel modules. """
@@ -278,8 +280,8 @@ def installLibcHeaders(excludes=None):
     shelltools.makedirs(headers_dir)
 
     # make defconfig and install the headers
-    autotools.make("%s defconfig" % make_cmd)
-    autotools.rawInstall(make_cmd, "headers_install")
+    make("%s defconfig" % make_cmd)
+    make("%s headers_install" % make_cmd)
 
     oldwd = os.getcwd()
 
