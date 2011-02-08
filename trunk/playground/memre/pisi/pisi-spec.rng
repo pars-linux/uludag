@@ -166,9 +166,9 @@
     <define name="ExcludeArch">
         <element name="ExcludeArch">
             <choice>
-                <value>i686</value>
+                <value>i?86</value>
                 <value>x86_64</value>
-                <value>armv7l</value>
+                <value>arm.*</value>
             </choice>
         </element>
     </define>
