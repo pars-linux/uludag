@@ -302,6 +302,7 @@
                 <SelectedPackage>suspend</SelectedPackage>
                 <SelectedPackage>synaptiks</SelectedPackage>
                 <SelectedPackage>synergy</SelectedPackage>
+                <SelectedPackage>system-config-lvm</SelectedPackage>
                 <SelectedPackage>telnet-bsd</SelectedPackage>
                 <SelectedPackage>traceroute</SelectedPackage>
                 <SelectedPackage>tree</SelectedPackage>

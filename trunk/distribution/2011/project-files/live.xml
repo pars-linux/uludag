@@ -214,6 +214,7 @@
         <SelectedPackage>sun-jre</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>synaptiks</SelectedPackage>
+        <SelectedPackage>system-config-lvm</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
