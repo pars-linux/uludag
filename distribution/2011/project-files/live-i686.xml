@@ -214,6 +214,7 @@
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>synaptiks</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
+        <SelectedPackage>system-config-lvm</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
