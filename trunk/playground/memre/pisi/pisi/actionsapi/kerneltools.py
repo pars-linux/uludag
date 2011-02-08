@@ -28,6 +28,11 @@ import pisi.actionsapi.autotools    as autotools
 import pisi.actionsapi.pisitools    as pisitools
 import pisi.actionsapi.shelltools   as shelltools
 
+crosscompiling = ctx.config.values.build.crosscompiling
+if crosscompiling:
+    ctx.ui.info(_("cross compiling"))
+else:
+    ctx.ui.info(_("native compiling"))
 
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):
@@ -133,12 +138,18 @@ def configure():
     # Set EXTRAVERSION
     pisitools.dosed("Makefile", "EXTRAVERSION =.*", "EXTRAVERSION = %s" % __getExtraVersion())
 
+    # If crosscompiling, add CROSS_COMPILE parameter
+    extra_parameters=""
+    if crosscompiling:
+        extra_parameters="CROSS_COMPILE=%s-" % get.HOST()
+
     # Configure the kernel interactively if
     # configuration contains new options
-    autotools.make("ARCH=%s oldconfig" % __getKernelARCH())
+    autotools.make("ARCH=%s oldconfig %s" % (__getKernelARCH()), extra_parameters)
 
     # Check configuration with listnewconfig
-    autotools.make("ARCH=%s listnewconfig" % __getKernelARCH())
+    # listnewconfig does not work yet.
+    # autotools.make("ARCH=%s listnewconfig %s" % (__getKernelARCH()), extra_parameters)
 
 ###################################
 # Building and installation stuff #
@@ -158,6 +169,10 @@ def build(debugSymbols=False):
     if debugSymbols:
         # Enable debugging symbols (-g -gdwarf2)
         extra_config.append("CONFIG_DEBUG_INFO=y")
+
+    # If crosscompiling, add CROSS_COMPILE parameter
+    if crosscompiling:
+        extra_config.append("CROSS_COMPILE=%s-" % get.HOST())
 
     autotools.make("ARCH=%s %s" % (__getKernelARCH(), " ".join(extra_config)))
 
