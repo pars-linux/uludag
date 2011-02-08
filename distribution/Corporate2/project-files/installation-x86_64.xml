@@ -280,6 +280,7 @@
         <SelectedPackage>pulseaudio</SelectedPackage>
         <SelectedPackage>pyqtermwidget</SelectedPackage>
         <SelectedPackage>python-networkmanager</SelectedPackage>
+        <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rdiff-backup</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
@@ -1117,6 +1118,7 @@
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
         <SelectedPackage>python-networkmanager</SelectedPackage>
+        <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>xorg-input-evdev</SelectedPackage>
         <SelectedPackage>xorg-input-synaptics</SelectedPackage>
         <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
@@ -1194,7 +1196,6 @@
         <Package>dbus-python</Package>
         <Package>dejavu-fonts</Package>
         <Package>device-mapper</Package>
-        <Package>device-mapper-static</Package>
         <Package>dhcpcd</Package>
         <Package>diffutils</Package>
         <Package>disktype</Package>
@@ -1249,7 +1250,6 @@
         <Package>iscan-firmware</Package>
         <Package>jpeg</Package>
         <Package>kbd</Package>
-        <Package>kernel</Package>
         <Package>keyutils</Package>
         <Package>lcms</Package>
         <Package>less</Package>
@@ -1318,13 +1318,11 @@
         <Package>linux-firmware</Package>
         <Package>lsb-release</Package>
         <Package>lvm2</Package>
-        <Package>lvm2-static</Package>
         <Package>lzo</Package>
         <Package>man</Package>
         <Package>man-pages</Package>
         <Package>mcpp</Package>
         <Package>mdadm</Package>
-        <Package>mdadm-static</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>mingetty</Package>
@@ -1363,11 +1361,9 @@
         <Package>piksemel</Package>
         <Package>pisi</Package>
         <Package>pixman</Package>
-        <Package>plymouth</Package>
         <Package>plymouth-core-libs</Package>
         <Package>plymouth-graphics-libs</Package>
         <Package>plymouth-plugin-script</Package>
-        <Package>plymouth-theme-pardus</Package>
         <Package>pm-utils</Package>
         <Package>polkit</Package>
         <Package>poppler</Package>
@@ -1384,7 +1380,6 @@
         <Package>pyqtermwidget</Package>
         <Package>python</Package>
         <Package>python-decorator</Package>
-        <Package>python-networkmanager</Package>
         <Package>python-pyblock</Package>
         <Package>python-pyliblzma</Package>
         <Package>qt</Package>
@@ -1427,49 +1422,9 @@
         <Package>xinit</Package>
         <Package>xkeyboard-config</Package>
         <Package>xorg-app</Package>
-        <Package>xorg-input-evdev</Package>
-        <Package>xorg-input-synaptics</Package>
-        <Package>xorg-input-vmmouse</Package>
         <Package>xorg-server</Package>
         <Package>xorg-server-common</Package>
-        <Package>xorg-video-apm</Package>
-        <Package>xorg-video-ark</Package>
-        <Package>xorg-video-ast</Package>
-        <Package>xorg-video-chips</Package>
-        <Package>xorg-video-cirrus</Package>
-        <Package>xorg-video-fbdev</Package>
-        <Package>xorg-video-glint</Package>
-        <Package>xorg-video-i128</Package>
-        <Package>xorg-video-i740</Package>
-        <Package>xorg-video-intel</Package>
-        <Package>xorg-video-mach64</Package>
-        <Package>xorg-video-mga</Package>
-        <Package>xorg-video-neomagic</Package>
-        <Package>xorg-video-newport</Package>
-        <Package>xorg-video-nouveau</Package>
-        <Package>xorg-video-nv</Package>
-        <Package>xorg-video-openchrome</Package>
-        <Package>xorg-video-r128</Package>
-        <Package>xorg-video-radeon</Package>
-        <Package>xorg-video-radeonhd</Package>
-        <Package>xorg-video-rendition</Package>
-        <Package>xorg-video-s3</Package>
-        <Package>xorg-video-s3virge</Package>
-        <Package>xorg-video-savage</Package>
-        <Package>xorg-video-siliconmotion</Package>
-        <Package>xorg-video-sis</Package>
-        <Package>xorg-video-sisimedia</Package>
-        <Package>xorg-video-sisusb</Package>
-        <Package>xorg-video-tdfx</Package>
-        <Package>xorg-video-tga</Package>
-        <Package>xorg-video-trident</Package>
-        <Package>xorg-video-tseng</Package>
-        <Package>xorg-video-v4l</Package>
-        <Package>xorg-video-vesa</Package>
-        <Package>xorg-video-vmware</Package>
-        <Package>xorg-video-voodoo</Package>
         <Package>xz</Package>
-        <Package>yali</Package>
         <Package>yali-branding-pardus</Package>
         <Package>yali-theme-pardus</Package>
         <Package>zip</Package>
