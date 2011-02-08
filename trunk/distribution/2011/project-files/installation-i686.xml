@@ -1328,6 +1328,7 @@
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
+        <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
