@@ -215,7 +215,7 @@ class Panda():
                     elif "safe" in xorg_param:
                         return "generic"
 
-        return status
+        return "Cannot parse grub.conf"
 
     ######################################
     # Grub parsing and writing functions #
