@@ -302,7 +302,6 @@
                 <SelectedPackage>suspend</SelectedPackage>
                 <SelectedPackage>synaptiks</SelectedPackage>
                 <SelectedPackage>synergy</SelectedPackage>
-                <SelectedPackage>system-config-lvm</SelectedPackage>
                 <SelectedPackage>telnet-bsd</SelectedPackage>
                 <SelectedPackage>traceroute</SelectedPackage>
                 <SelectedPackage>tree</SelectedPackage>
@@ -1328,7 +1327,6 @@
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
-        <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
