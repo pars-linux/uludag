@@ -131,23 +131,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def initializeOperationActions(self):
 
-        self.showAllAction = QAction(KIcon("applications-other"), i18n("All Packages"), self)
+        self.showAllAction = QAction(KIcon(("applications-other", "package_applications")), i18n("All Packages"), self)
         self.connect(self.showAllAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.ALL))
-        self.cw.stateTab.addTab(QWidget(), KIcon("applications-other"), i18n("All Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon(("applications-other", "package_applications")), i18n("All Packages"))
 
-        self.showInstallAction = QAction(KIcon("list-add"), i18n("Installable Packages"), self)
+        self.showInstallAction = QAction(KIcon(("list-add", "add")), i18n("Installable Packages"), self)
         self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.INSTALL))
-        self.cw.stateTab.addTab(QWidget(), KIcon("list-add"), i18n("Installable Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon(("list-add", "add")), i18n("Installable Packages"))
 
-        self.showRemoveAction = QAction(KIcon("list-remove"), i18n("Installed Packages"), self)
+        self.showRemoveAction = QAction(KIcon(("list-remove", "remove")), i18n("Installed Packages"), self)
         self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.REMOVE))
-        self.cw.stateTab.addTab(QWidget(), KIcon("list-remove"), i18n("Installed Packages"))
+        self.cw.stateTab.addTab(QWidget(), KIcon(("list-remove", "remove")), i18n("Installed Packages"))
 
-        self.showUpgradeAction = QAction(KIcon("system-software-update"), i18n("Updates"), self)
+        self.showUpgradeAction = QAction(KIcon(("system-software-update", "gear")), i18n("Updates"), self)
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.cw.switchState(StateManager.UPGRADE))
-        self.cw.stateTab.addTab(QWidget(), KIcon("system-software-update"), i18n("Updates"))
+        self.cw.stateTab.addTab(QWidget(), KIcon(("system-software-update", "gear")), i18n("Updates"))
 
-        self.showPreferences = QAction(KIcon("preferences-system"), i18n("Settings"), self)
+        self.showPreferences = QAction(KIcon(("preferences-system", "package_settings")), i18n("Settings"), self)
         self.connect(self.showPreferences, SIGNAL("triggered()"), self.settingsDialog.show)
 
         self.actionQuit = QAction(KIcon("exit"), i18n("Quit"), self)
@@ -155,7 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.actionQuit, SIGNAL("triggered()"), qApp.exit)
 
         self.cw.menuButton.setMenu(QMenu('MainMenu', self.cw.menuButton))
-        self.cw.menuButton.setIcon(KIcon('preferences-system'))
+        self.cw.menuButton.setIcon(KIcon(("preferences-system", "package_settings")))
         self.cw.menuButton.menu().clear()
 
         self.cw.contentHistory.hide()
@@ -171,7 +171,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.showAllAction.setChecked(True)
         self.cw.checkUpdatesButton.hide()
-        self.cw.checkUpdatesButton.setIcon(KIcon('view-refresh'))
+        self.cw.checkUpdatesButton.setIcon(KIcon(("view-refresh", "reload")))
         self.cw.showBasketButton.clicked.connect(self.cw.showBasket)
 
         # Little time left for the new ui
