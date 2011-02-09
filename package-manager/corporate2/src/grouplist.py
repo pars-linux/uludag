@@ -29,7 +29,7 @@ class GroupList(QListWidget):
     def __init__(self, parent=None):
         QListWidget.__init__(self, parent)
         self.iface = backend.pm.Iface()
-        self.defaultIcon = KIcon('applications-other', KIconLoader.SizeSmallMedium)
+        self.defaultIcon = KIcon(('applications-other', 'unknown'), KIconLoader.SizeSmallMedium)
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"),
                             self.groupChanged)
         self._list = {}

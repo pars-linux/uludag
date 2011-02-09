@@ -112,7 +112,7 @@ class PmWindow(QDialog, PM, Ui_PmWindow):
         self.connectOperationSignals()
 
         self.button_install.clicked.connect(self.installPackages)
-        self.button_install.setIcon(KIcon("list-add"))
+        self.button_install.setIcon(KIcon(("list-add", "add")))
 
         self.button_cancel.clicked.connect(self.actionCancelled)
         self.button_cancel.setIcon(KIcon("cancel"))

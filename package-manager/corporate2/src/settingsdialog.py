@@ -61,8 +61,8 @@ class GeneralSettings(SettingsTab):
     def setupUi(self):
         self.settings.moveUpButton.setIcon(KIcon("up"))
         self.settings.moveDownButton.setIcon(KIcon("down"))
-        self.settings.addRepoButton.setIcon(KIcon("list-add"))
-        self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
+        self.settings.addRepoButton.setIcon(KIcon(("list-add", "add")))
+        self.settings.removeRepoButton.setIcon(KIcon(("list-remove", "remove")))
         self.initialize()
 
     def initialize(self):

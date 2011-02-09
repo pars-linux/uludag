@@ -68,8 +68,8 @@ class PackageDelegate(QStyledItemDelegate):
         self.show_details_button = showDetailsButton
 
         self.rowAnimator = RowAnimator(parent.packageList)
-        self.defaultIcon = KIcon('package-x-generic', 32)
-        self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed('package-x-generic', CHECK_ICON, 32))
+        self.defaultIcon = KIcon(('package-x-generic', 'package_applications'), 32)
+        self.defaultInstalledIcon = QIcon(KIconLoader.loadOverlayed(('package-x-generic', 'package_applications'), CHECK_ICON, 32))
         self.animatable = animatable
         self._max_height = ROW_HEIGHT
 

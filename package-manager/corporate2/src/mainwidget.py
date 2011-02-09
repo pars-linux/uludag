@@ -71,7 +71,7 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.statusUpdater = StatusUpdater()
         self.basket = BasketDialog(self.state, self.parent)
         self._postexceptions.append(lambda: self.basket.setActionEnabled(True))
-        self.searchButton.setIcon(KIcon("edit-find"))
+        self.searchButton.setIcon(KIcon(("edit-find", "find")))
         self.initializeUpdateTypeList()
 
         model = PackageModel(self)
@@ -387,9 +387,9 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
 
     def initializeUpdateTypeList(self):
         self.typeCombo.clear()
-        UPDATE_TYPES = [['normal', i18n('All Updates'), 'system-software-update'],
-                        ['security', i18n('Security Updates'), 'security-medium'],
-                        ['critical', i18n('Critical Updates'), 'security-low']]
+        UPDATE_TYPES = [['normal', i18n('All Updates'), ('system-software-update', 'ledgreen')],
+                        ['security', i18n('Security Updates'), ('security-medium', 'ledyellow')],
+                        ['critical', i18n('Critical Updates'), ('security-low', 'ledred')]]
 
         for type in UPDATE_TYPES:
             self.typeCombo.addItem(KIcon(type[2]), type[1], QVariant(type[0]))
