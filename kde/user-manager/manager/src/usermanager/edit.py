@@ -131,7 +131,7 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
                       "tr.org.pardus.comar.boot.loader": (i18n("Bootloader settings"), "media-floppy"),
                       "org.kde.kcontrol.kcmpanda": (i18n("Screen settings"), "video-display"),
                       "org.kde.kcontrol.kcmlocale": (i18n("Locale settings"), "preferences-desktop-locale"),
-                      "org.freedesktop.network-manager-settings|org.freedesktop.NetworkManager": (i18n("Network settings"), "networkmanager"),
+                      "tr.org.pardus.comar.net.filter|tr.org.pardus.comar.net.share|org.freedesktop.network-manager-settings|org.freedesktop.NetworkManager": (i18n("Network settings"), "networkmanager"),
                       "org.kde.kcontrol.kcmkdm": (i18n("Login Manager settings"), "preferences-system-login"),
                       "org.kde.kcontrol.kcmkeyboard": (i18n("Keyboard settings"), "input-keyboard")}
 
