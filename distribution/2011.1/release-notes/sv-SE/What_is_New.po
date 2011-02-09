@@ -1,0 +1,302 @@
+#
+#
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Patrik Karlsson <patrik@trixon.se>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2011-01-20T09:16:47\n"
+"PO-Revision-Date: 2011-01-19 23:40+0100\n"
+"Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Tag: title
+#, no-c-format
+msgid "What is New?"
+msgstr "Vad är nytt?"
+
+#. Tag: title
+#, no-c-format
+msgid "Updates in Pardus Technologies"
+msgstr "Uppdateringar av Pardustekniker"
+
+#. Tag: title
+#, no-c-format
+msgid "YALI"
+msgstr "YALI"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>YALI</emphasis>, the installer of Pardus, gained LVM/RAID and UUID support."
+msgstr "<emphasis>YALI</emphasis>, installationsprogrammet för Pardus, har fått stöd för LVM/RAID och UUID."
+
+#. Tag: para
+#, no-c-format
+msgid "The user interface is completely redesigned to improve the usability."
+msgstr "Användargränssnittet är helt omgjort för att öka användbarheten."
+
+#. Tag: para
+#, no-c-format
+msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
+msgstr "Användaren kan nu välja mellan mellan drivrutin med öppen eller sluten källkod för NVIDIAs grafikkort."
+
+#. Tag: title
+#, no-c-format
+msgid "First Boot"
+msgstr "Första starten"
+
+#. Tag: para
+#, no-c-format
+msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
+msgstr "Vissa inställningar som efterfrågades under installationen av Pardus &PREVVER; är nu flyttade till ett annat program som körs en gång under den första uppstarten efter installationen."
+
+#. Tag: title
+#, no-c-format
+msgid "Kaptan"
+msgstr "Kaptan"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
+msgstr "<emphasis>Kaptan</emphasis>, anpassningsverktyget för Pardusskrivbordet, nu med möjligheten att ta din bild och använda som avatar i KDE."
+
+#. Tag: para
+#, no-c-format
+msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
+msgstr "Användarna kan nu välja sitt önskade ikontema som används i KDE."
+
+#. Tag: title
+#, no-c-format
+msgid "Pisi"
+msgstr "Pisi"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>Pisi</emphasis> now internally uses XZ as the default compression algorithm."
+msgstr "<emphasis>Pisi</emphasis> använder nu XZ som standard packningsalgoritm."
+
+#. Tag: para
+#, no-c-format
+msgid "Binary package names now reflects the architecture and the distribution release for which the package is built."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Various speed enhancements has been done in the core components for a better package management experience."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Package Manager"
+msgstr "Pakethanteraren"
+
+#. Tag: para
+#, no-c-format
+msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "The graphical user interface is redesigned to improve the usability. Various speed enhancements has been done for a better graphical package management experience."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "A lot of KDE integration work has been done including the usage of KDE system tray."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Updates in Core Components"
+msgstr "Uppdateringar av kärnkomponenter"
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest stable kernel released on 2011/01/05."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Python</application> - Python is updated to &PYTHONVER;."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Perl</application> - Perl is updated to &PERLVER;."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Desktop Experience"
+msgstr "Skrivbordsupplevelse"
+
+#. Tag: title
+#, no-c-format
+msgid "Changes in KDE Desktop Environment"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Visual Enhancements"
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Milky icon theme especially designed for Pardus is shipped within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>System Settings</emphasis>."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Network Management"
+msgstr "Nätverkshantering"
+
+#. Tag: para
+#, no-c-format
+msgid "Besides switching to GNOME NetworkManager as the default networking backend, Pardus &PRODVER; comes with a heavily improved and modified KDE Network Management tool and plasmoid to give their users a much more consistent networking experience."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "With this new networking backend, users are now able to easily set up their Ethernet (With support for 802.1x authentication), 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Default Applications"
+msgstr "Förvalda program"
+
+#. Tag: title
+#, no-c-format
+msgid "Mozilla Firefox"
+msgstr "Mozilla Firefox"
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default web browser application. New features of this Firefox release include Firefox Panorama, application tabs, a redesigned extension manager, Jetpack extensions support, integration with Firefox Sync, and support for multitouch displays."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Clementine"
+msgstr "Clementine"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it is well maintained and lightweight."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "SMPlayer"
+msgstr "SMPlayer"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "KsCD"
+msgstr "KsCD"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Web Browsers"
+msgstr "Webbläsare"
+
+#. Tag: para
+#, no-c-format
+msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "System Settings"
+msgstr "Systeminställningar"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "Users are now able to set up their Bluetooth devices, Wacom tablets and Synaptics touchpads through System Settings."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "The default language used throughout the whole system can now be changed through the locale settings section."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Office Suite"
+msgstr "Kontorspaket"
+
+#. Tag: para
+#, no-c-format
+msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Games"
+msgstr "Spel"
+
+#. Tag: para
+#, no-c-format
+msgid "Pardus &PRODVER; continues the tradition of giving importance to the quality of games offered to their users. The default installation now includes the board and logic games provided by the <application>kdegames</application> package."
+msgstr ""
+
+#. Tag: title
+#, no-c-format
+msgid "Other Changes"
+msgstr "Andra förändringar"
+
+#. Tag: para
+#, no-c-format
+msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
+msgstr ""
