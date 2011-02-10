@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2010-08-20 15:05+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -74,9 +74,9 @@ msgstr ""
 msgid "Do you want to clear all selections ?"
 msgstr "Да ли желите да наставите ?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "ПиСи грешка"
 
@@ -155,15 +155,24 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Прикажи инсталиране пакете"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Све исправке"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Сигурносне исправке"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Критичне исправке"
 
@@ -260,41 +269,41 @@ msgstr "%prog пакета да се инсталира"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Мрежна грешка"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Молимо Вас проверите мрежну конекцију и покушајте поново."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Грешка у вези овлашћења"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Нисте овлашћени за ову операцију."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, fuzzy, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Пакет није пронађен. Можда је ажуриран у или уклоњен из репозиторијума. Молимо покушајте да ажурирате информације о репозиротијуму."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr ""
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Да ли желите да наставите ?"
 
@@ -342,11 +351,11 @@ msgstr "Отвори директоријум"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Сви пакети из складишта ће бити избрисани. Да ли сте сигурни?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Не важечи назив репозиторијума"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 #, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса репозиторијума би требала да се заврши са xml или xml.bz2 наставком.<p>Молимо покушајте поново.</qt>"
@@ -849,13 +858,36 @@ msgstr "Молимо Вас проверите мрежну конекцију �
 msgid "Package Details"
 msgstr "Величина пакета:"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Прикажи пакете који могу да се ажурирају"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Припремање ПиСија...</h3>"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Преостало време:"
+
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Status:"
+#~ msgstr "Статус:"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Прикажи инсталиране пакете"
+
+#~ msgid "Quit"
+#~ msgstr "Прекид"
+
+#~ msgid "Help"
+#~ msgstr "Помоћ"
+
+#~ msgid "File"
+#~ msgstr "Фајл"
 
 #, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Уклањање пакета"
+#~ msgid "-- / --"
+#~ msgstr "--  / --"
 
 #, fuzzy
 #~ msgid ""
@@ -864,32 +896,9 @@ msgstr "Величина пакета:"
 #~ msgstr "Инсталирај пакет(е)"
 
 #, fuzzy
-#~ msgid "-- / --"
-#~ msgstr "--  / --"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Уклањање пакета"
 
-#~ msgid "File"
-#~ msgstr "Фајл"
-
-#~ msgid "Help"
-#~ msgstr "Помоћ"
-
-#~ msgid "Quit"
-#~ msgstr "Прекид"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Прикажи инсталиране пакете"
-
-#~ msgid "Status:"
-#~ msgstr "Статус:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
-
-#~ msgid "Time remaining:"
-#~ msgstr "Преостало време:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Припремање ПиСија...</h3>"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Прикажи пакете који могу да се ажурирају"

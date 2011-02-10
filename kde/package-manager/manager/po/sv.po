@@ -1,20 +1,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 # Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -41,12 +41,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Utvecklare"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -74,9 +74,9 @@ msgstr "Rensa korg"
 msgid "Do you want to clear all selections ?"
 msgstr "Vill du rensa valda objekt?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "Pisi-fel"
 
@@ -149,15 +149,24 @@ msgstr "Söker..."
 msgid "No results found."
 msgstr "Inga träffar."
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Alla paket"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Alla uppdateringar"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Säkerhetsuppdateringar"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Kritiska uppdateringar"
 
@@ -249,41 +258,41 @@ msgstr "%prog paket att installera"
 msgid "Hide summary screen"
 msgstr "Dölj sammanställning"
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Nätverksfel"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Kontrollera din nätverksanslutning och försök igen."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Auktoriseringsfel"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Du har inte behörighet till den här åtgärden."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paketet <b>%s</b> finns ej i förråden.<br>Det kan vara uppdaterat i, eller borttaget ur, förrådet.<br>Försök att uppdatera förrådsinformationen."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr "Blandning av fil- och paketnamn stöds ej ännu."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Filen <b>%s</b> finns inte."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "En annan instans av PiSi körs redan. Endast en instans är tillåten."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Vill du fortsätta?"
 
@@ -328,11 +337,11 @@ msgstr "Öppna katalog"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Alla cachade paket kommer att raderas. Är du säker?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Ogiltigt förrådsnamn"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Förrådsadresser måste sluta på xml, xml.bz2  eller xz.<p>Försök igen.</qt>"
 
@@ -490,12 +499,12 @@ msgid "Update"
 msgstr "Uppdatera"
 
 #: src/tray.py:209
-msgid "Show Updates"
-msgstr "Visa uppdateringar"
-
-#: src/tray.py:209
 msgid "Ignore"
 msgstr "Ignorera"
+
+#: src/tray.py:209
+msgid "Show Updates"
+msgstr "Visa uppdateringar"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -837,28 +846,122 @@ msgstr ""
 msgid "Package Details"
 msgstr "Paketdetaljer"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "No proxy server"
+#~ msgstr "Ingen proxyserver"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Uppdaterbara paket"
+#~ msgid "Use manual settings"
+#~ msgstr "Använd manuella inställningar"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Ändrade paket"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Använd skrivbordsmiljöns inställningar"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Search Button"
+#~ msgstr "Sökknapp"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Search"
+#~ msgstr "Sök"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installerade paket"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Åtgärdsknapp"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Växlare för paketval"
+
+#~ msgid "Operation"
+#~ msgstr "Åtgärd"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Förbereder PiSi...</h3>"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Återstående tid:"
+
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Åtgärd:"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Close"
+#~ msgstr "Stäng"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Visa installerade paket"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
+
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
+
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
+
+#~ msgid "Quit"
+#~ msgstr "Avsluta"
+
+#~ msgid "Help"
+#~ msgstr "Hjälp"
+
+#~ msgid "File"
+#~ msgstr "Arkiv"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -873,119 +976,25 @@ msgstr "Paketdetaljer"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Arkiv"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "Help"
-#~ msgstr "Hjälp"
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installerade paket"
 
-#~ msgid "Quit"
-#~ msgstr "Avsluta"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Det finns %1 tillgängliga uppdateringar!"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
+#~ msgid "Modify Package(s)"
+#~ msgstr "Ändrade paket"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Uppdaterbara paket"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
-
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
-
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Visa installerade paket"
-
-#~ msgid "Close"
-#~ msgstr "Stäng"
-
-#~ msgid "Status:"
-#~ msgstr "Status:"
-
-#~ msgid "Operation:"
-#~ msgstr "Åtgärd:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
-
-#~ msgid "Time remaining:"
-#~ msgstr "Återstående tid:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Förbereder PiSi...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "Åtgärd"
-
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Växlare för paketval"
-
-#~ msgid "Action Button for current states action"
-#~ msgstr "Åtgärdsknapp"
-
-#~ msgid "Search"
-#~ msgstr "Sök"
-
-#~ msgid "Search Button"
-#~ msgstr "Sökknapp"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Använd skrivbordsmiljöns inställningar"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Använd manuella inställningar"
-
-#~ msgid "No proxy server"
-#~ msgstr "Ingen proxyserver"
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
