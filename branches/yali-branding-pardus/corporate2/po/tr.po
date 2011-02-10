@@ -331,7 +331,7 @@ msgstr ""
 "Pardus Kurumsal 2, sizlere kararlı, hızlı, kullanımı kolay ve uzun süreli "
 "desteklenen bir Pardus deneyimi yaşatmayı teklif ediyor. Özgür ve açık "
 "kaynak yazılımlar geçidinin tadını çıkarırken, bu gücün yıllarca devam "
-"edeceğiniz unutmayın... Kurulum devam ederken, bu özellikleri "
+"edeceğini unutmayın. Kurulum devam ederken, bu özellikleri "
 "keşfedebilirsiniz."
 
 #: ../release.xml.in.h:29
