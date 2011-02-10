@@ -1,6 +1,11 @@
+3 main icons in bugzilla homepage:
+
+basket.png / page-zoom.png / preferences-desktop-user.png
+
+
 Bugzilla Filename / Product / Icon Filename
 
-1.png / Mailing lists / view-pim-mail.png
+1.png / Mailing lists / kmail2.png
 2.png / Bugzilla / ?
 3.png / Web pages / view-web-browser-dom-tree.png
 4.png / Version Control System / ?
@@ -59,3 +64,6 @@ Bugzilla Filename / Product / Icon Filename
 78.png / New Package Request / project-development-new-template.png
 79.png / Firewall Manager / security-high.png
 80.png / Display Settings / preferences-desktop-screensaver.png
+
+
+
