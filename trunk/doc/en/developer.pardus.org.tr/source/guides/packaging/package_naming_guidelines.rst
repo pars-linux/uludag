@@ -293,14 +293,14 @@ Example::
 
     perl-YAML: YAML module for Perl
 
-Plasma Widgets
+Plasma Applets
 ==============
 
-For packages providing Plasma widgets, "plasma-widget-" prefix must be used.
+For packages providing Plasma applets, "plasma-applet-" prefix must be used.
 
 Example::
 
-    plasma-widget-network: Network configuration plasmoid for Plasma
+    plasma-applet-network: Network configuration plasmoid for Plasma
 
 Python Modules
 ==============
