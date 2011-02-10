@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -51,50 +51,50 @@ msgstr ""
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr ""
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr ""
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr ""
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Advarsel"
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 #, fuzzy
 msgid "Critical Packages"
 msgstr "Fjerner pakke(r)"
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 #, fuzzy
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Valgte pakker [%1] er i konflikt med hinanden. Disse pakker kan ikke installeres sammen."
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 #, fuzzy
 msgid "Already Installed Packages"
 msgstr "Installer Pakke(r)"
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 #, fuzzy
 msgid "Installed Packages"
@@ -121,17 +121,26 @@ msgstr "Søg"
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+#, fuzzy
+msgid "Select packages"
+msgstr "Vis installerede pakker"
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:401
 #, fuzzy
 msgid "All Updates"
 msgstr "Opdater"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 #, fuzzy
 msgid "Security Updates"
 msgstr "VIs opdateringer"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr ""
 
@@ -145,7 +154,7 @@ msgstr "Vis installerede pakker"
 msgid "Installable Packages"
 msgstr "Vis pakker der kan installeres"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 #, fuzzy
 msgid "Updates"
 msgstr "Opdater"
@@ -155,15 +164,15 @@ msgstr "Opdater"
 msgid "Settings"
 msgstr "udpakker"
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr ""
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr "Din kurv er i øjeblikket tom."
 
@@ -227,7 +236,7 @@ msgstr ""
 msgid "Select all packages in this group"
 msgstr "Vælg alle pakker i denne gruppe"
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 #, fuzzy
 msgid "%prog packages_to_install"
 msgstr "Pakker til installation"
@@ -478,21 +487,21 @@ msgstr ""
 "\n"
 "Fjern "
 
-#: src/tray.py:68 src/tray.py:189
-#, fuzzy
-msgid "Update All Repositories"
-msgstr "Opdaterer pakkearkiv"
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr "Opdater"
 
-#: src/tray.py:188
+#: src/tray.py:189
 #, fuzzy
 msgid "Update %1 repository"
 msgstr "Opdaterer pakkearkiv"
 
-#: src/tray.py:196
+#: src/tray.py:190
+#, fuzzy
+msgid "Update All Repositories"
+msgstr "Opdaterer pakkearkiv"
+
+#: src/tray.py:197
 #, fuzzy
 msgid "There are %1 updates available!"
 msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
@@ -539,7 +548,7 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr "Formular"
 
@@ -557,7 +566,7 @@ msgstr "Opdater"
 msgid "Category Panel"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 #, fuzzy
 msgid "Package List"
 msgstr "Pakke størrelse:"
@@ -572,21 +581,21 @@ msgstr "Kurv"
 msgid "Check for Updates"
 msgstr "VIs opdateringer"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 #, fuzzy
 msgid "Package Manager Quick Install"
 msgstr "Instillinger for pakke håndtering"
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr ""
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 #, fuzzy
 msgid "Install"
 msgstr "installeret "
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 #, fuzzy
 msgid "Cancel"
 msgstr "&Fortryd"
@@ -595,7 +604,7 @@ msgstr "&Fortryd"
 msgid "Preview"
 msgstr ""
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -848,56 +857,96 @@ msgid "Package Details"
 msgstr "Pakke størrelse:"
 
 #, fuzzy
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
-
-#~ msgid "Show main window"
-#~ msgstr "Vis hoved vinduet"
-
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
-
-#~ msgid "Ignore"
-#~ msgstr "Ignorer"
-
-#~ msgid "Show Updates"
-#~ msgstr "VIs opdateringer"
+#~ msgid "No proxy server"
+#~ msgstr "Ingen proxy server"
 
 #, fuzzy
-#~ msgid "Search Bar"
+#~ msgid "Use manual settings"
+#~ msgstr "&Generelle indstillinger"
+
+#, fuzzy
+#~ msgid "Search Button"
 #~ msgstr "Søg"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Search"
+#~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Vis pakker der kan opdateres "
+#~ msgid "Operation"
+#~ msgstr "Handling"
 
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Fjerner pakke(r)"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Forbereder PiSi...</h3>"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#~ msgid "Time remaining:"
+#~ msgstr "Tid tilbage:"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installer Pakke(r)"
-
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Handling:"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Vis installerede pakker"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
+
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "&Hjælp"
 
 #, fuzzy
 #~ msgid ""
@@ -914,93 +963,53 @@ msgstr "Pakke størrelse:"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
 #, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Hjælp"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
-
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
-
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Vis installerede pakker"
-
-#~ msgid "Status:"
-#~ msgstr "Status:"
-
-#~ msgid "Operation:"
-#~ msgstr "Handling:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Tid tilbage:"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installer Pakke(r)"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Forbereder PiSi...</h3>"
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Operation"
-#~ msgstr "Handling"
+#, fuzzy
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#~ msgid "Search"
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Fjerner pakke(r)"
+
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Vis pakker der kan opdateres "
+
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
+
+#, fuzzy
+#~ msgid "Search Bar"
 #~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "Search Button"
-#~ msgstr "Søg"
+#~ msgid "Show Updates"
+#~ msgstr "VIs opdateringer"
+
+#~ msgid "Ignore"
+#~ msgstr "Ignorer"
+
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
+
+#~ msgid "Show main window"
+#~ msgstr "Vis hoved vinduet"
+
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
 #, fuzzy
-#~ msgid "Use manual settings"
-#~ msgstr "&Generelle indstillinger"
-
-#, fuzzy
-#~ msgid "No proxy server"
-#~ msgstr "Ingen proxy server"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009 TUBITAK/UEKAE"

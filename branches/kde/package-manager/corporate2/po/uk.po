@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: 2011-01-25 19:15+0300\n"
 "Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
 "Language-Team: translation@linux.org.ua\n"
@@ -49,47 +49,47 @@ msgstr "Очистити все вибране ?"
 msgid "Pisi Error"
 msgstr "Помилка Pisi"
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr "Щоб оновлення набрало чинності, потрібно перезавантажити систему"
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr "Оновлення вимог"
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr "Пакунки потребують перезапуску системи"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Потрібно перезапустити пов'язані системні служби для оновлення пакунків, щоб ті набрали чинності."
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr "Пакунки потребують перезапуску служб"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Вибрані пакунки вважаються критичними для системи. Їхнє вилучення може призвести до її непрацездатності."
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Попередження"
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 msgid "Critical Packages"
 msgstr "Критичні пакунки"
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Вибрані пакунки встановлено.<br>Якщо продовжите, пакунки буде перевстановлено"
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr "Уже встановлені пакунки"
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr "Установлені пакунки"
@@ -114,15 +114,24 @@ msgstr "Пошук…"
 msgid "No results found."
 msgstr "Нічого не знайдено."
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+#, fuzzy
+msgid "Select packages"
+msgstr "Усі пакунки"
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Усі оновлення"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Оновлення безпеки"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Критичні оновлення"
 
@@ -134,7 +143,7 @@ msgstr "Усі пакунки"
 msgid "Installable Packages"
 msgstr "Установчі пакунки"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 msgid "Updates"
 msgstr "Оновлення"
 
@@ -142,15 +151,15 @@ msgstr "Оновлення"
 msgid "Settings"
 msgstr "Налаштування"
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr ""
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr "Розрахунок залежностей…"
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr "Натепер ваш кшик порожній."
 
@@ -214,7 +223,7 @@ msgstr "Подробиці"
 msgid "Select all packages in this group"
 msgstr "Вибрати всі пакунки у цій групі"
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr "%prog packages_to_install"
 
@@ -450,21 +459,21 @@ msgstr ""
 "\n"
 "Вилучити конфліктний пакунок із системи?"
 
-#: src/tray.py:68 src/tray.py:189
-#, fuzzy
-msgid "Update All Repositories"
-msgstr "Оновлення сховища"
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr "Оновити"
 
-#: src/tray.py:188
+#: src/tray.py:189
 #, fuzzy
 msgid "Update %1 repository"
 msgstr "Оновлення сховища"
 
-#: src/tray.py:196
+#: src/tray.py:190
+#, fuzzy
+msgid "Update All Repositories"
+msgstr "Оновлення сховища"
+
+#: src/tray.py:197
 #, fuzzy
 msgid "There are %1 updates available!"
 msgstr "<b>%1</b> оновлень доступно!"
@@ -510,7 +519,7 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2.0 МБ</"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr "Форма"
 
@@ -527,7 +536,7 @@ msgstr "Оновити типи"
 msgid "Category Panel"
 msgstr "Панель категорій"
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 msgid "Package List"
 msgstr "Перелік пакунків"
 
@@ -539,19 +548,19 @@ msgstr "Показати кошик"
 msgid "Check for Updates"
 msgstr "Перевірити на оновлення"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 msgid "Package Manager Quick Install"
 msgstr "Швидке встановлення керування пакунками "
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr "Ці пакунки вибрано для встановлення. Встановити їх?"
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 msgid "Install"
 msgstr "Встановити"
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 msgid "Cancel"
 msgstr "Скасувати"
 
@@ -559,7 +568,7 @@ msgstr "Скасувати"
 msgid "Preview"
 msgstr "Перегляд"
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -798,52 +807,52 @@ msgstr ""
 msgid "Package Details"
 msgstr "Подробиці про пакунок"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "© 2009–2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Без проксі-сервера"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Use manual settings"
+#~ msgstr "Використовувати ручні налаштування"
 
-#~ msgid "Developer"
-#~ msgstr "Розробник"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Використовувати стільничні налаштування"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Type to filter files"
+#~ msgstr "Уведіть для фільтрування файлів"
 
-#~ msgid "First Author"
-#~ msgstr "Засновник"
+#~ msgid "Search Bar"
+#~ msgstr "Панель пошуку"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Daniel Korostil"
+#~ msgid "Ignore"
+#~ msgstr "Ігнорувати"
+
+#~ msgid "Show Updates"
+#~ msgstr "Показати оновлення"
+
+#~ msgid "Hide summary screen"
+#~ msgstr "Сховати екран підсумків"
+
+#~ msgid "Show main window"
+#~ msgstr "Показати головне вікно"
 
 #~ msgctxt "EMAIL OF TRANSLATORS"
 #~ msgid "Your emails"
 #~ msgstr "ted.korostiled@gmail.com"
 
-#~ msgid "Show main window"
-#~ msgstr "Показати головне вікно"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Daniel Korostil"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Сховати екран підсумків"
+#~ msgid "First Author"
+#~ msgstr "Засновник"
 
-#~ msgid "Show Updates"
-#~ msgstr "Показати оновлення"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Ignore"
-#~ msgstr "Ігнорувати"
+#~ msgid "Developer"
+#~ msgstr "Розробник"
 
-#~ msgid "Search Bar"
-#~ msgstr "Панель пошуку"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Уведіть для фільтрування файлів"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Використовувати стільничні налаштування"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Використовувати ручні налаштування"
-
-#~ msgid "No proxy server"
-#~ msgstr "Без проксі-сервера"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "© 2009–2010 TUBITAK/UEKAE"

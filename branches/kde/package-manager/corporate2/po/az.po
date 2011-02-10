@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,47 +48,47 @@ msgstr ""
 msgid "Pisi Error"
 msgstr ""
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr ""
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr ""
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr ""
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr ""
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr ""
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr ""
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr ""
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 msgid "Critical Packages"
 msgstr ""
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr ""
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr ""
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr ""
@@ -113,15 +113,23 @@ msgstr ""
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+msgid "Select packages"
+msgstr ""
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr ""
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr ""
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr ""
 
@@ -133,7 +141,7 @@ msgstr ""
 msgid "Installable Packages"
 msgstr ""
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 msgid "Updates"
 msgstr ""
 
@@ -141,15 +149,15 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr ""
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr ""
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr ""
 
@@ -213,7 +221,7 @@ msgstr ""
 msgid "Select all packages in this group"
 msgstr ""
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr ""
 
@@ -447,19 +455,19 @@ msgid ""
 "Remove the conflicting packages from the system?"
 msgstr ""
 
-#: src/tray.py:68 src/tray.py:189
-msgid "Update All Repositories"
-msgstr ""
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr ""
 
-#: src/tray.py:188
+#: src/tray.py:189
 msgid "Update %1 repository"
 msgstr ""
 
-#: src/tray.py:196
+#: src/tray.py:190
+msgid "Update All Repositories"
+msgstr ""
+
+#: src/tray.py:197
 msgid "There are %1 updates available!"
 msgstr ""
 
@@ -504,7 +512,7 @@ msgid "<b>2.0 MB</"
 msgstr ""
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr ""
 
@@ -520,7 +528,7 @@ msgstr ""
 msgid "Category Panel"
 msgstr ""
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 msgid "Package List"
 msgstr ""
 
@@ -532,19 +540,19 @@ msgstr ""
 msgid "Check for Updates"
 msgstr ""
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 msgid "Package Manager Quick Install"
 msgstr ""
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr ""
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 msgid "Install"
 msgstr ""
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 msgid "Cancel"
 msgstr ""
 
@@ -552,7 +560,7 @@ msgstr ""
 msgid "Preview"
 msgstr ""
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr ""
 
@@ -784,8 +792,8 @@ msgstr ""
 msgid "Package Details"
 msgstr ""
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
-
 #~ msgid "Faik Uygur"
 #~ msgstr "Faik Uygur"
+
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"

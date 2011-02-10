@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -53,47 +53,47 @@ msgstr "Tüm seçimlerinizi temizlemek istiyor musunuz ?"
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr "Güncellemelerin geçerli olabilmesi için bilgisayarınızı yeniden başlatmanız gerekiyor"
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr "Güncelleme Gereksinimleri"
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr "Sistemin Yeniden Başlatılmasını Gerektiren Paketler"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Seçili güncellemelerin geçerli olabilmesi için ilişkili sistem servislerini yeniden başlatmanız gerekiyor"
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr "Servislerin Yeniden Başlatılmasını Gerektiren Paketler"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Seçtiğiniz paketler sistem için önemli paketler içerisinde. Bu paketleri kaldırmak sisteminizi kullanamamanıza sebep olabilir."
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Uyarı"
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 msgid "Critical Packages"
 msgstr "Kritik Paketler"
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Seçtiğiniz paketler daha önce sisteme kurulmuş.<br>Eğer devam ederseniz, bu paketler tekrar kurulacak"
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr "Daha Önce Kurulmuş Paketler"
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr "Kurulu Paketler"
@@ -118,15 +118,23 @@ msgstr "Aranıyor..."
 msgid "No results found."
 msgstr "Sonuç bulunamadı."
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+msgid "Select packages"
+msgstr "Paket seçin"
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr "En az bir kurulu paketi seçmeniz gerekir"
+
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Tüm Güncellemeler"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Güvenlik Güncellemeleri"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Kritik Güncellemeler"
 
@@ -138,7 +146,7 @@ msgstr "Tüm Paketler"
 msgid "Installable Packages"
 msgstr "Kurulabilir Paketler"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 msgid "Updates"
 msgstr "Güncellemeler"
 
@@ -146,15 +154,15 @@ msgstr "Güncellemeler"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr "Çıkış"
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr "Bağımlılıklar hesaplanıyor..."
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
@@ -218,7 +226,7 @@ msgstr "Detaylar"
 msgid "Select all packages in this group"
 msgstr "Bu gruptaki tüm paketleri seç"
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr "%prog kurulacak_paketler"
 
@@ -454,19 +462,19 @@ msgstr ""
 "\n"
 "Çakışan paketler sistemden kaldırılsın mı?"
 
-#: src/tray.py:68 src/tray.py:189
-msgid "Update All Repositories"
-msgstr "Tüm Depoları Güncelle"
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr "Güncelle"
 
-#: src/tray.py:188
+#: src/tray.py:189
 msgid "Update %1 repository"
 msgstr "%1 deposunu güncelle"
 
-#: src/tray.py:196
+#: src/tray.py:190
+msgid "Update All Repositories"
+msgstr "Tüm Depoları Güncelle"
+
+#: src/tray.py:197
 msgid "There are %1 updates available!"
 msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
@@ -511,7 +519,7 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</b>"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr "Form"
 
@@ -527,7 +535,7 @@ msgstr "Güncelleme Tipleri"
 msgid "Category Panel"
 msgstr "Kategori Paneli"
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 msgid "Package List"
 msgstr "Paket Listesi"
 
@@ -539,19 +547,19 @@ msgstr "Sepeti Göster"
 msgid "Check for Updates"
 msgstr "Güncellemeleri Kontrol Et"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 msgid "Package Manager Quick Install"
 msgstr "Paket Yöneticisi Hızlı Kurulum"
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr "Aşağıdaki paketler kurulmak üzere seçildi. Bu paketleri kurmak istiyor musunuz ?"
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 msgid "Install"
 msgstr "Kur"
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 msgid "Cancel"
 msgstr "İptal"
 
@@ -559,7 +567,7 @@ msgstr "İptal"
 msgid "Preview"
 msgstr "Önizleme"
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -798,77 +806,116 @@ msgstr ""
 msgid "Package Details"
 msgstr "Paket Detayı"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Vekil sunucu yok"
 
-#~ msgid "Developer"
-#~ msgstr "Geliştirici"
+#~ msgid "Use manual settings"
+#~ msgstr "Elle ayarla"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Masaüstü Ortamının ayarlarını kullan"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Search Button"
+#~ msgstr "Arama Düğmesi"
 
-#~ msgid "First Author"
-#~ msgstr "İlk Geliştirici"
+#~ msgid "Search"
+#~ msgstr "Ara"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Faik Uygur, Necmettin Begiter, Gökmen Göksel"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Mevcut durum için geçerli eylem düğmesi"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "faik@pardus.org.tr, necmettin.begiter@gmail.com, gokmen@pardus.org.tr"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Paket Listesindeki tüm paketleri seç düğmesi"
 
-#~ msgid "Show main window"
-#~ msgstr "Ana pencereyi göster"
+#~ msgid "Operation"
+#~ msgstr "İşlem"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Özet ekranını gösterme"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>PiSi Hazırlanıyor...</h3>"
 
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
+#~ msgid "Time remaining:"
+#~ msgstr "Kalan zaman:"
 
-#~ msgid "Ignore"
-#~ msgstr "Yoksay"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Show Updates"
-#~ msgstr "Güncellemeleri Göster"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Search Bar"
-#~ msgstr "Arama Çubuğu"
+#~ msgid "Operation:"
+#~ msgstr "İşlem:"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Hızlı arama"
+#~ msgid "Status:"
+#~ msgstr "Durum:"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Close"
+#~ msgstr "Kapat"
 
-#~ msgid "Esc"
-#~ msgstr "Esc"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Kurulu Paketleri Göster"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Güncellemeler"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 yeni paket başarı ile kuruldu."
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "İşlemi Seç"
+#~ msgid "Reverse package selections"
+#~ msgstr "Paket seçimlerini tersine çevir"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Kurucusu zaten çalışıyor!"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr ""
-#~ "Kurulu Paketler\n"
-#~ "\n"
+#~ msgid "Installing %1"
+#~ msgstr "%1 kuruluyor"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Package Installer"
+#~ msgstr "Paket Kurucusu"
+
+#~ msgid "Maintainer"
+#~ msgstr "Bakıcı"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Ok"
+#~ msgstr "Tamam"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
+
+#~ msgid "Summary"
+#~ msgstr "Özet"
+
+#~ msgid "%p%"
+#~ msgstr "%%p"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Vekil sunucu kullan"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Help"
+#~ msgstr "Yardım"
+
+#~ msgid "File"
+#~ msgstr "Dosya"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -883,113 +930,74 @@ msgstr "Paket Detayı"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Dosya"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "Help"
-#~ msgstr "Yardım"
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr ""
+#~ "Kurulu Paketler\n"
+#~ "\n"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Vekil sunucu kullan"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "%1 başarılı bir şekilde kuruldu"
+#~ msgid "Modify Package(s)"
+#~ msgstr "İşlemi Seç"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketlerin kurulumu tamamlandı"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Güncellemeler"
 
-#~ msgid "%p%"
-#~ msgstr "%%p"
+#~ msgid "Esc"
+#~ msgstr "Esc"
 
-#~ msgid "Summary"
-#~ msgstr "Özet"
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bant genişliği sınırı:"
+#~ msgid "Type to filter files"
+#~ msgstr "Hızlı arama"
 
-#~ msgid "Update check"
-#~ msgstr "Güncelleme kontrolü"
+#~ msgid "Search Bar"
+#~ msgstr "Arama Çubuğu"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+#~ msgid "Show Updates"
+#~ msgstr "Güncellemeleri Göster"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Ignore"
+#~ msgstr "Yoksay"
 
-#~ msgid "Ok"
-#~ msgstr "Tamam"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
-#~ msgid "Delete"
-#~ msgstr "Sil"
+#~ msgid "Hide summary screen"
+#~ msgstr "Özet ekranını gösterme"
 
-#~ msgid "Maintainer"
-#~ msgstr "Bakıcı"
+#~ msgid "Show main window"
+#~ msgstr "Ana pencereyi göster"
 
-#~ msgid "Package Installer"
-#~ msgstr "Paket Kurucusu"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "faik@pardus.org.tr, necmettin.begiter@gmail.com, gokmen@pardus.org.tr"
 
-#~ msgid "Installing %1"
-#~ msgstr "%1 kuruluyor"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Faik Uygur, Necmettin Begiter, Gökmen Göksel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "First Author"
+#~ msgstr "İlk Geliştirici"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Kurucusu zaten çalışıyor!"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Paket seçimlerini tersine çevir"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 yeni paket başarı ile kuruldu."
+#~ msgid "Developer"
+#~ msgstr "Geliştirici"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Kurulu Paketleri Göster"
-
-#~ msgid "Close"
-#~ msgstr "Kapat"
-
-#~ msgid "Status:"
-#~ msgstr "Durum:"
-
-#~ msgid "Operation:"
-#~ msgstr "İşlem:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
-
-#~ msgid "Time remaining:"
-#~ msgstr "Kalan zaman:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>PiSi Hazırlanıyor...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "İşlem"
-
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Paket Listesindeki tüm paketleri seç düğmesi"
-
-#~ msgid "Action Button for current states action"
-#~ msgstr "Mevcut durum için geçerli eylem düğmesi"
-
-#~ msgid "Search"
-#~ msgstr "Ara"
-
-#~ msgid "Search Button"
-#~ msgstr "Arama Düğmesi"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Masaüstü Ortamının ayarlarını kullan"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Elle ayarla"
-
-#~ msgid "No proxy server"
-#~ msgstr "Vekil sunucu yok"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: 2011-01-11 20:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -49,47 +49,47 @@ msgstr "Az összes kijelölést törli?"
 msgid "Pisi Error"
 msgstr "PiSi hiba"
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr "<b>Újra kell indítania</b> a rendszert a változtatások életbe léptetéséhez"
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr "Frissítési követelmények"
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr "A csomag újraindítást igényel"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Újra kell indítania a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verziói életbe lépjenek:"
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr "Szolgáltatás újraindítást igénylő csomagok"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "A kiválasztott csomagok kritikusak a rendszer működése szempontjából. Eltávolításuk a rendszer működésképtelenségét eredményezheti."
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Figyelem"
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 msgid "Critical Packages"
 msgstr "Kritikus csomagok"
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "A kiválasztott csomagok már telepítve vannak.<br>Ha folytatja, a csomagok újratelepítésre kerülnek"
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr "Már telepített csomagok"
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr "Telepített csomagok"
@@ -114,15 +114,24 @@ msgstr "Keresés..."
 msgid "No results found."
 msgstr "Nincs találat"
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+#, fuzzy
+msgid "Select packages"
+msgstr "Minden csomag"
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Biztonsági frissítések"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Kritikus frissítések"
 
@@ -134,7 +143,7 @@ msgstr "Minden csomag"
 msgid "Installable Packages"
 msgstr "Telepíthető csomagok"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 msgid "Updates"
 msgstr "Frissítések"
 
@@ -142,15 +151,15 @@ msgstr "Frissítések"
 msgid "Settings"
 msgstr "Beállítások"
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr "Kilépés"
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr "Függőségek meghatározása..."
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr "A kosár jelenleg üres."
 
@@ -214,7 +223,7 @@ msgstr "Részletek"
 msgid "Select all packages in this group"
 msgstr "Az összes csomag kiválasztása ebben a csoportban"
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr "%prog packages_to_install"
 
@@ -450,21 +459,21 @@ msgstr ""
 "\n"
 "Eltávolítja az ütköző csomagokat a rendszerből?"
 
-#: src/tray.py:68 src/tray.py:189
-#, fuzzy
-msgid "Update All Repositories"
-msgstr "Tároló frissítése"
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr "Frissítés"
 
-#: src/tray.py:188
+#: src/tray.py:189
 #, fuzzy
 msgid "Update %1 repository"
 msgstr "Tároló frissítése"
 
-#: src/tray.py:196
+#: src/tray.py:190
+#, fuzzy
+msgid "Update All Repositories"
+msgstr "Tároló frissítése"
+
+#: src/tray.py:197
 msgid "There are %1 updates available!"
 msgstr "%1 frissítés elérhető!"
 
@@ -509,7 +518,7 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr "Űrlap"
 
@@ -526,7 +535,7 @@ msgstr "Frissítés típusok"
 msgid "Category Panel"
 msgstr "Kategória panel"
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 msgid "Package List"
 msgstr "Csomaglista"
 
@@ -538,19 +547,19 @@ msgstr "Kosár megjelenítése"
 msgid "Check for Updates"
 msgstr "Frissítések ellenőrzése"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 msgid "Package Manager Quick Install"
 msgstr "Csomagkezelő gyorstelepítés"
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr "Az alábbi csomagok telepítésre lettek kijelölve. Telepíteni akarja őket?"
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 msgid "Install"
 msgstr "Telepítés"
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 msgid "Cancel"
 msgstr "Mégsem"
 
@@ -558,7 +567,7 @@ msgstr "Mégsem"
 msgid "Preview"
 msgstr ""
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -801,76 +810,59 @@ msgstr ""
 msgid "Package Details"
 msgstr "Csomag részletei"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Nincs proxy szerver"
 
-#~ msgid "Developer"
-#~ msgstr "Fejlesztő"
+#~ msgid "Use manual settings"
+#~ msgstr "Kézi beállítások használata"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Asztali környezet beállításainak használata"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Search Button"
+#~ msgstr "Keresés"
 
-#~ msgid "First Author"
-#~ msgstr "Első szerző"
+#~ msgid "Search"
+#~ msgstr "Keresés"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Daniel Kovács, Attila Siposs"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Művelet gomb az aktuális állapot művelethez"
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "A csomaglista kijelöléseinek megfordítása"
 
-#~ msgid "Show main window"
-#~ msgstr "Főablak megjelenítése"
+#~ msgid "Operation"
+#~ msgstr "Művelet"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Összegzés elrejtése"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>PiSi előkészítése...</h3>"
 
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "<b>%1</b> frissítés elérhető!"
+#~ msgid "Time remaining:"
+#~ msgstr "Hátralévő idő"
 
-#~ msgid "Ignore"
-#~ msgstr "Mellőzés"
-
-#~ msgid "Show Updates"
-#~ msgstr "Frissítések megjelenítése"
-
-#~ msgid "Search Bar"
-#~ msgstr "Keresősáv"
-
-#~ msgid "Type to filter files"
-#~ msgstr "Írjon be szűrőfeltételt"
-
-#~ msgid " kb/s"
-#~ msgstr "kb/s"
-
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Mutasd a frissítendő csomagokat"
-
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Csomag(ok) eltávolítása"
-
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Csomag(ok) telepítése"
-
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Művelet:"
+
+#~ msgid "Status:"
+#~ msgstr "Állapot:"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"
+
+#~ msgid "Help"
+#~ msgstr "Segítség"
+
+#~ msgid "File"
+#~ msgstr "Fájl"
 
 #, fuzzy
 #~ msgid ""
@@ -886,56 +878,73 @@ msgstr "Csomag részletei"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Fájl"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
-
-#~ msgid "Close"
-#~ msgstr "Bezárás"
-
-#~ msgid "Status:"
-#~ msgstr "Állapot:"
-
-#~ msgid "Operation:"
-#~ msgstr "Művelet:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#, fuzzy
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Hátralévő idő"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Csomag(ok) telepítése"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>PiSi előkészítése...</h3>"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Operation"
-#~ msgstr "Művelet"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "A csomaglista kijelöléseinek megfordítása"
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Csomag(ok) eltávolítása"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Művelet gomb az aktuális állapot művelethez"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Mutasd a frissítendő csomagokat"
 
-#~ msgid "Search"
-#~ msgstr "Keresés"
+#~ msgid " kb/s"
+#~ msgstr "kb/s"
 
-#~ msgid "Search Button"
-#~ msgstr "Keresés"
+#~ msgid "Type to filter files"
+#~ msgstr "Írjon be szűrőfeltételt"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Asztali környezet beállításainak használata"
+#~ msgid "Search Bar"
+#~ msgstr "Keresősáv"
 
-#~ msgid "Use manual settings"
-#~ msgstr "Kézi beállítások használata"
+#~ msgid "Show Updates"
+#~ msgstr "Frissítések megjelenítése"
 
-#~ msgid "No proxy server"
-#~ msgstr "Nincs proxy szerver"
+#~ msgid "Ignore"
+#~ msgstr "Mellőzés"
+
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "<b>%1</b> frissítés elérhető!"
+
+#~ msgid "Hide summary screen"
+#~ msgstr "Összegzés elrejtése"
+
+#~ msgid "Show main window"
+#~ msgstr "Főablak megjelenítése"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "bicskas9323@gmail.com, sipiatti@gmail.com"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Daniel Kovács, Attila Siposs"
+
+#~ msgid "First Author"
+#~ msgstr "Első szerző"
+
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
+
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
+
+#~ msgid "Developer"
+#~ msgstr "Fejlesztő"
+
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"

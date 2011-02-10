@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:21+0200\n"
+"POT-Creation-Date: 2011-02-10 17:26+0200\n"
 "PO-Revision-Date: 2011-01-28 16:15+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
@@ -50,47 +50,47 @@ msgstr "Alle geselecteerde wissen?"
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
-#: src/basketdialog.py:171
+#: src/basketdialog.py:170
 msgid "You must restart your system for the updates to take effect"
 msgstr "Herstart het systeem voor het actief maken van de opwaarderingen"
 
-#: src/basketdialog.py:173 src/basketdialog.py:182
+#: src/basketdialog.py:172 src/basketdialog.py:181
 msgid "Update Requirements"
 msgstr "Vereisten voor opwaarderen"
 
-#: src/basketdialog.py:174
+#: src/basketdialog.py:173
 msgid "Packages Require System Restart"
 msgstr "Pakketten vereisen herstart systeem"
 
-#: src/basketdialog.py:180
+#: src/basketdialog.py:179
 msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr "Herstart gerelateerde systeemdiensten voor het actief maken van de bijgewerkte pakketten"
 
-#: src/basketdialog.py:183
+#: src/basketdialog.py:182
 msgid "Packages Require Service Restart"
 msgstr "Pakketten vereisen herstart systeemdienst"
 
-#: src/basketdialog.py:194
+#: src/basketdialog.py:193
 msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
 msgstr "Geselecteerde pakketten zijn belangrijk voor het systeem. Door ze te verwijderen kan het systeem onbruikbaar worden."
 
-#: src/basketdialog.py:197 src/settingsdialog.py:169
+#: src/basketdialog.py:196 src/settingsdialog.py:169
 msgid "Warning"
 msgstr "Waarschuwing"
 
-#: src/basketdialog.py:198
+#: src/basketdialog.py:197
 msgid "Critical Packages"
 msgstr "Kritieke pakketten"
 
-#: src/basketdialog.py:209 src/pmwindow.py:134
+#: src/basketdialog.py:208 src/pmwindow.py:134
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
 msgstr "Geselecteerde pakketten zijn reeds geïnstalleerd. <br>Bij doorgaan, worden deze pakketten opnieuw geïnstalleerd."
 
-#: src/basketdialog.py:211 src/pmwindow.py:136
+#: src/basketdialog.py:210 src/pmwindow.py:136
 msgid "Already Installed Packages"
 msgstr "Reeds geïnstalleerde pakketten"
 
-#: src/basketdialog.py:212 src/mainwindow.py:142 src/mainwindow.py:144
+#: src/basketdialog.py:211 src/mainwindow.py:142 src/mainwindow.py:144
 #: src/pmwindow.py:137
 msgid "Installed Packages"
 msgstr "Geïnstalleerde pakketten"
@@ -115,15 +115,24 @@ msgstr "Zoeken..."
 msgid "No results found."
 msgstr "Geen resultaten gevonden."
 
-#: src/mainwidget.py:390
+#: src/mainwidget.py:388
+#, fuzzy
+msgid "Select packages"
+msgstr "Alle pakketten"
+
+#: src/mainwidget.py:389
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:401
 msgid "All Updates"
 msgstr "Alle opwaarderingen"
 
-#: src/mainwidget.py:391
+#: src/mainwidget.py:402
 msgid "Security Updates"
 msgstr "Beveiligingsopwaarderingen"
 
-#: src/mainwidget.py:392
+#: src/mainwidget.py:403
 msgid "Critical Updates"
 msgstr "Kritieke opwaarderingen"
 
@@ -135,7 +144,7 @@ msgstr "Alle pakketten"
 msgid "Installable Packages"
 msgstr "Installeerbare pakketten"
 
-#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:196
+#: src/mainwindow.py:146 src/mainwindow.py:148 src/tray.py:197
 msgid "Updates"
 msgstr "Opwaarderingen"
 
@@ -143,15 +152,15 @@ msgstr "Opwaarderingen"
 msgid "Settings"
 msgstr "Instellingen"
 
-#: src/mainwindow.py:153 src/tray.py:192
+#: src/mainwindow.py:153 src/tray.py:193
 msgid "Quit"
 msgstr "Afsluiten"
 
-#: src/mainwindow.py:181
+#: src/mainwindow.py:182
 msgid "Calculating dependencies..."
 msgstr "Afhankelijkheden bepalen..."
 
-#: src/mainwindow.py:185
+#: src/mainwindow.py:186
 msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
@@ -215,7 +224,7 @@ msgstr "Details"
 msgid "Select all packages in this group"
 msgstr "Selecteer alle pakketten in deze groep"
 
-#: src/pm-install.py:46
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr "%prog te_installeren_pakketten"
 
@@ -451,21 +460,21 @@ msgstr ""
 "\n"
 "Verwijder de conflicterende pakketten van het systeem?"
 
-#: src/tray.py:68 src/tray.py:189
-#, fuzzy
-msgid "Update All Repositories"
-msgstr "Bijwerken van softwarebron"
-
-#: src/tray.py:182
+#: src/tray.py:183
 msgid "Update"
 msgstr "Opwaarderen"
 
-#: src/tray.py:188
+#: src/tray.py:189
 #, fuzzy
 msgid "Update %1 repository"
 msgstr "Bijwerken van softwarebron"
 
-#: src/tray.py:196
+#: src/tray.py:190
+#, fuzzy
+msgid "Update All Repositories"
+msgstr "Bijwerken van softwarebron"
+
+#: src/tray.py:197
 msgid "There are %1 updates available!"
 msgstr "Er zijn %1 opwaarderingen beschikbaar!"
 
@@ -510,7 +519,7 @@ msgid "<b>2.0 MB</"
 msgstr "<b>2,0 MB</"
 
 #: ui/ui_mainwidget_v3.py:166 ui/ui_message.py:46
-#: ui/ui_progressdialog_v4.py:223
+#: ui/ui_progressdialog_v4.py:228
 msgid "Form"
 msgstr "Form"
 
@@ -527,7 +536,7 @@ msgstr "Opwaardeertypen"
 msgid "Category Panel"
 msgstr "Categoriepaneel"
 
-#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:89
+#: ui/ui_mainwidget_v3.py:171 ui/ui_pminstall.py:90
 msgid "Package List"
 msgstr "Pakketlijst"
 
@@ -539,19 +548,19 @@ msgstr "Mandje tonen"
 msgid "Check for Updates"
 msgstr "Controleren op opwaarderingen"
 
-#: ui/ui_pminstall.py:87
+#: ui/ui_pminstall.py:88
 msgid "Package Manager Quick Install"
 msgstr "Snel installeren pakketbeheer"
 
-#: ui/ui_pminstall.py:88
+#: ui/ui_pminstall.py:89
 msgid "Following packages are selected to install. Do you want to install these packages ?"
 msgstr "De volgende pakketten zijn geselecteerd om geïnstalleerd te worden. Deze pakketten installeren?"
 
-#: ui/ui_pminstall.py:90
+#: ui/ui_pminstall.py:91
 msgid "Install"
 msgstr "Installeer"
 
-#: ui/ui_pminstall.py:91
+#: ui/ui_pminstall.py:92
 msgid "Cancel"
 msgstr "Annuleren"
 
@@ -559,7 +568,7 @@ msgstr "Annuleren"
 msgid "Preview"
 msgstr "Voorbeeld"
 
-#: ui/ui_progressdialog_v4.py:224
+#: ui/ui_progressdialog_v4.py:229
 msgid "Alt+C"
 msgstr "Alt+C"
 
@@ -798,76 +807,113 @@ msgstr ""
 msgid "Package Details"
 msgstr "Pakketdetails"
 
-#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
-#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgid "No proxy server"
+#~ msgstr "Geen proxyserver"
 
-#~ msgid "Gökmen Göksel"
-#~ msgstr "Gökmen Göksel"
+#~ msgid "Use manual settings"
+#~ msgstr "Handmatige instellingen gebruiken"
 
-#~ msgid "Developer"
-#~ msgstr "Onwikkelaar"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Bureaubladinstellingen gebruiken"
 
-#~ msgid "Faik Uygur"
-#~ msgstr "Faik Uygur"
+#~ msgid "Search Button"
+#~ msgstr "Zoeken-knop"
 
-#~ msgid "First Author"
-#~ msgstr "Eerste auteur"
+#~ msgid "Search"
+#~ msgstr "Zoeken"
 
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Antoon Tolboom"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Actie-knop voor huidige bewerkingen "
 
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "atolboo@gmail.com"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Omschakelen van geselecteerde pakketten in de pakketlijst"
 
-#~ msgid "Show main window"
-#~ msgstr "Hoofdvenster tonen"
+#~ msgid "Operation"
+#~ msgstr "Bewerking"
 
-#~ msgid "Hide summary screen"
-#~ msgstr "Samenvatting verbergen"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Voorbereiden PiSi...</h3>"
 
-#~ msgid "There are <b>%1</b> updates available!"
-#~ msgstr "Er zijn <b>%1</b> opwaarderingen beschikbaar!"
+#~ msgid "Time remaining:"
+#~ msgstr "Resterende tijd:"
 
-#~ msgid "Show Updates"
-#~ msgstr "Opwaarderingen tonen"
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
 
-#~ msgid "Ignore"
-#~ msgstr "Negeren"
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
 
-#~ msgid "Search Bar"
-#~ msgstr "Zoekbalk"
+#~ msgid "Operation:"
+#~ msgstr "Bewerking:"
 
-#~ msgid "Type to filter files"
-#~ msgstr "Type om bestanden te filteren"
+#~ msgid "Status:"
+#~ msgstr "Status:"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#~ msgid "Close"
+#~ msgstr "Sluiten"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Opwaardeerbare pakketten"
+#~ msgid "Show Installed Packages"
+#~ msgstr "Geïnstalleerde pakketten tonen"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Pakket(ten) wijzigen"
+#~ msgid "padding-left:15px;"
+#~ msgstr "opvullen-links:15px;"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Use proxy server"
+#~ msgstr "Gebruik proxyserver"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installatie van %1 is gelukt"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Geïnstalleerde pakketten"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
 
-#~ msgid "History KCM will be here."
-#~ msgstr "KCM-geschiedenis zal hier zijn."
+#~ msgid "%p%"
+#~ msgstr "%p%"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Summary"
+#~ msgstr "Samenvatting"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bandbreedtelimiet:"
+
+#~ msgid "Update check"
+#~ msgstr "Opwaaderingen controleren"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(gebruik 0 voor geen limiet)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
+
+#~ msgid "Maintainer"
+#~ msgstr "Onderhouder"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakket-installeerder"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installeren van %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-installeer"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakket-installeerder is reeds gestart!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Keer pakketselectie om"
+
+#~ msgid "Help"
+#~ msgstr "Help"
+
+#~ msgid "File"
+#~ msgstr "Bestand"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -882,110 +928,73 @@ msgstr "Pakketdetails"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Bestand"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "Help"
-#~ msgstr "Help"
+#~ msgid "History KCM will be here."
+#~ msgstr "KCM-geschiedenis zal hier zijn."
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Keer pakketselectie om"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Geïnstalleerde pakketten"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakket-installeerder is reeds gestart!"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installeer"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installeren van %1"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Pakket(ten) wijzigen"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakket-installeerder"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Opwaardeerbare pakketten"
 
-#~ msgid "Maintainer"
-#~ msgstr "Onderhouder"
+#~ msgid " kb/s"
+#~ msgstr " kb/s"
 
-#~ msgid "Delete"
-#~ msgstr "Verwijderen"
+#~ msgid "Type to filter files"
+#~ msgstr "Type om bestanden te filteren"
 
-#~ msgid "Ok"
-#~ msgstr "Ok"
+#~ msgid "Search Bar"
+#~ msgstr "Zoekbalk"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Ignore"
+#~ msgstr "Negeren"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(gebruik 0 voor geen limiet)"
+#~ msgid "Show Updates"
+#~ msgstr "Opwaarderingen tonen"
 
-#~ msgid "Update check"
-#~ msgstr "Opwaaderingen controleren"
+#~ msgid "There are <b>%1</b> updates available!"
+#~ msgstr "Er zijn <b>%1</b> opwaarderingen beschikbaar!"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bandbreedtelimiet:"
+#~ msgid "Hide summary screen"
+#~ msgstr "Samenvatting verbergen"
 
-#~ msgid "Summary"
-#~ msgstr "Samenvatting"
+#~ msgid "Show main window"
+#~ msgstr "Hoofdvenster tonen"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "atolboo@gmail.com"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Antoon Tolboom"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installatie van %1 is gelukt"
+#~ msgid "First Author"
+#~ msgstr "Eerste auteur"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Gebruik proxyserver"
+#~ msgid "Faik Uygur"
+#~ msgstr "Faik Uygur"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "opvullen-links:15px;"
+#~ msgid "Developer"
+#~ msgstr "Onwikkelaar"
 
-#~ msgid "Show Installed Packages"
-#~ msgstr "Geïnstalleerde pakketten tonen"
+#~ msgid "Gökmen Göksel"
+#~ msgstr "Gökmen Göksel"
 
-#~ msgid "Close"
-#~ msgstr "Sluiten"
-
-#~ msgid "Status:"
-#~ msgstr "Status:"
-
-#~ msgid "Operation:"
-#~ msgstr "Bewerking:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
-
-#~ msgid "Time remaining:"
-#~ msgstr "Resterende tijd:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Voorbereiden PiSi...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "Bewerking"
-
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Omschakelen van geselecteerde pakketten in de pakketlijst"
-
-#~ msgid "Action Button for current states action"
-#~ msgstr "Actie-knop voor huidige bewerkingen "
-
-#~ msgid "Search"
-#~ msgstr "Zoeken"
-
-#~ msgid "Search Button"
-#~ msgstr "Zoeken-knop"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Bureaubladinstellingen gebruiken"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Handmatige instellingen gebruiken"
-
-#~ msgid "No proxy server"
-#~ msgstr "Geen proxyserver"
+#~ msgid "(c) 2009-2010 TUBITAK/UEKAE"
+#~ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
