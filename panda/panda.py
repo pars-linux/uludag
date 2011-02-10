@@ -210,10 +210,10 @@ class Panda():
 
                     if self.os_driver in blacklist:
                         return "vendor"
-                    elif self.os_driver:
-                        return "os"
                     elif "safe" in xorg_param:
                         return "generic"
+                    else:
+                        return "os"
 
         return "Cannot parse grub.conf"
 
@@ -293,6 +293,9 @@ class Panda():
 
 if __name__ == '__main__':
     p = Panda()
+    
+    # Test cases
+    print p.get_grub_state()
     print p.get_all_driver_packages()
     print p.get_blacklisted_module()
     print p.update_grub_entries("vendor")
