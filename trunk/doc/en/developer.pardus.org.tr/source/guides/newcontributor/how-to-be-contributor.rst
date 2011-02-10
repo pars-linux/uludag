@@ -93,7 +93,7 @@ Applicant Progress Observation
 #. All svn permissions excluding "stable" will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
 #. Mentor will keep an eye on applicant, until the applicant reach a good level.
     #. He/she joins the package review process of the packages that the applicant done.
-    #. He/she controls that the applicant fullfills the `responsibilities of the contributor <http://developer.pardus.org.tr/policies/newcontributor/new-contributor-guide.html#responsibilities-of-a-contributor>`_ like continuity, accuracy, determination, communication.
+    #. He/she controls that the applicant fullfills the `responsibilities of the contributor <http://developer.pardus.org.tr/guides/newcontributor/new-contributor-guide.html#responsibilities-of-a-contributor>`_ like continuity, accuracy, determination, communication.
 #. If the applicant can not pass this process, his/her bug will be closed with status RESOLVED/INVALID by the mentor and related comment will be given. (The mentor will send and an email to sys. Admin for removing permissions.)
 #. If the applicant can pass this process:
     #. When the mentor has been satisfied by applicant, mentor sends a comment as he/she leaves the applicant and changes the bug status as RESOLVED/FIXED
@@ -253,7 +253,7 @@ Assigning Mentor Stock Response
 
     Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
 
-    [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
+    [1] http://developer.pardus.org.tr/guides/newcontributor/creating-svn-account.html
 
 ::
 
@@ -268,5 +268,5 @@ Assigning Mentor Stock Response
 
     Regards,
 
-    [1] http://developer.pardus.org.tr/policies/newcontributor/creating-svn-account.html
+    [1] http://developer.pardus.org.tr/guides/newcontributor/creating-svn-account.html
 
