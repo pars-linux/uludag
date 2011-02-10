@@ -1,0 +1,61 @@
+Bugzilla Filename / Product / Icon Filename
+
+1.png / Mailing lists / view-pim-mail.png
+2.png / Bugzilla / ?
+3.png / Web pages / view-web-browser-dom-tree.png
+4.png / Version Control System / ?
+5.png / Jabber Servers / ?
+6.png / Translations / preferences-desktop-locale.png
+7.png / ???
+9.png / Live Media / media-optical.png
+10.png / COMAR / comar.png
+12.png / Package Management Infrastruc. / ???
+15.png / Desktop Greeter / ???
+19.png / ???
+21.png / YALI Installation Manager / office-chart-ring.png
+28.png / Package Manager / package-manager.png
+31.png / Security / document-encrypt.png
+32.png / Pardus ???
+33.png / ?? / preferences-system-session-services.png
+34.png / Package Review / xeyes.png
+38.png / New Contributor Application / user-group-new.png
+40.png / ??? / download_manager.png
+41.png / Boot Manager / computer.png
+42.png / Network Manager / applications-internet.png
+43.png / Farm / preferences-system.png
+44.png / Disk Manager / drive-harddisk.png
+45.png / User Manager / system-users.png
+46.png / Mudur / utilities-terminal.png
+47.png / Service Manager / flag.png
+48.png / System Manager / applications-system.png
+49.png / Tasma / tasma.png
+
+50/51/52.png Pardus 2009/2011/C2
+
+53.png / Installation Media / utilities-system-monitor.png
+54.png / Network & Server / preferences-system-network.png
+56.png / Science / application-science.png
+57.png / Multimedia / applications-multimedia.png
+58.png / Desktop / preferences-desktop-personal.png
+59.png / Office / view-presentation.png
+60.png / Games / games-config-custom.png
+61.png / Network / network-wireless.png
+62.png / Input Peripherals / preferences-desktop-peripherals.png
+63.png / Storage / server-database.png
+64.png / Display / preferences-desktop-screensaver.png
+65.png / Processor & Power Management / battery.png
+66.png / Camera / camera-web.png
+67.png / Optical Drives / drive-optical.png
+68.png / Virtualization / utilities-system-monitor.png
+69.png / Sound / audio-volume-high.png
+70.png / Scanner / scanner.png
+71.png / Printers / printer-laser.png
+72.png / Wallpapers / preferences-desktop-wallpaper.png
+73.png / Splash Screens / preferences-desktop-theme.png
+74.png / ??? / preferences-desktop-color.png
+75.png / ??? / milky.png
+76.png / ??? / view-presentation.png
+77.png / Guides / help-browser.png
+78.png / New Package Request / project-development-new-template.png
+79.png / Firewall Manager / security-high.png
+80.png / Display Settings / preferences-desktop-screensaver.png
