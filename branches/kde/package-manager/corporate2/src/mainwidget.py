@@ -380,6 +380,17 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
             action = {self.__remove_action:self.state.REMOVE,
                       self.__install_action:self.state.INSTALL}.get(self.sender(), self.state.INSTALL)
             if action:
+                if action == self.state.REMOVE:
+                    installed_packages = self.state.iface.getInstalledPackages()
+                    filtered_packages = filter(lambda x: x not in installed_packages, self.basket.model.selectedPackages())
+                    if filtered_packages == self.basket.model.selectedPackages():
+                        restoreCursor()
+                        QMessageBox(i18n("Select packages"),
+                                    i18n("You must select at least one installed package"),
+                                    QMessageBox.Information, QMessageBox.Ok, 0, 0).exec_()
+                        return
+                    self.packageList.model().sourceModel().selectPackages(filtered_packages, state = False)
+
                 self.state.state = action
 
         self.basket._show()
