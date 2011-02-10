@@ -1,5 +1,32 @@
+2011-02-10 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - Update locales 
+
+2011-02-10 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - If user selects not installed packages to remove, and all selected packages are not installed it shows an information dialog, if at least one of the selected packages is installed it just removes the not installed selection from the list
+         * Comment added to http://bugs.pardus.org.tr/16780
+
+2011-02-07 transifex
+         * l10n: Updated Italian (it) translation to 98% (Ali Işıngör)
+         * New status: 194 messages complete with 0 fuzzies and 3 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-02-06 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 93% (Klemens Häckel)
+         * New status: 185 messages complete with 0 fuzzies and 12 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-02-01 transifex
+         * l10n: Updated Polish (pl) translation to 97% (Michał Komasa)
+         * New status: 192 messages complete with 4 fuzzies and 1 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2011-02-01 transifex
+         * l10n: Updated Polish (pl) translation to 95% (Michał Komasa)
+         * New status: 189 messages complete with 6 fuzzies and 2 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
 2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
-         * - New release 3.0.3 
+         * - Update ChangeLog 
 
 2011-02-01 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Use unicode 
@@ -27,6 +54,9 @@
 
 2011-01-31 Gökmen Göksel <gokmen@pardus.org.tr>
          * - It is not needed always 
+
+2011-01-31 Gökmen Göksel <gokmen@pardus.org.tr>
+         * - New release 3.0.3 
 
 2011-01-31 Gökmen Göksel <gokmen@pardus.org.tr>
          * - Force to hide 
@@ -818,4 +848,365 @@
 
 2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
          * Qt Assistant: 'Warning: This function is only effective before the QApplication constructor is called.' 
+
+2010-11-08 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 193 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix Message Boxes, update po 
+
+2010-11-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * If its already running dont do it :) 
+
+2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Much better animation ;) 
+
+2010-11-07 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use raster default, it is faster.
+
+2010-11-05 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Reinstall Package option
+         * (If already installed package selected to install, PM will ask you ! 5th.Nov.)
+         * Bug fixed at http://bugs.pardus.org.tr/8545
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show Package Files (if installed)
+         * Fix Sip issues
+         * Show Details
+         * Bug fixed at http://bugs.pardus.org.tr/1537
+         * Bug fixed at http://bugs.pardus.org.tr/14400
+         * Bug fixed at http://bugs.pardus.org.tr/14172
+         * Bug fixed at http://bugs.pardus.org.tr/13840
+         * Bug fixed at http://bugs.pardus.org.tr/13544
+         * These are duplicate..
+         * Bug fixed at http://bugs.pardus.org.tr/15004
+         * Bug fixed at http://bugs.pardus.org.tr/15021
+         * Bug fixed at http://bugs.pardus.org.tr/15024
+         * Bug fixed at http://bugs.pardus.org.tr/15043
+
+2010-11-05 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 188 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-11-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show busy indicator while package details loading.. 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Make enough time to show notifications 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * remove old stuff 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Search is now threaded. 
+
+2010-11-04 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Threaded search support, not finished. 
+
+2010-11-04 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 187 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show QProgressIndicator until pisi is ready 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * make it small 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Much better layout change 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * add re-install method 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Check package existence before starting the operation 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * fix percentage 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Progress should look standalone while pm-install running 
+
+2010-11-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix layout stretch 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * just show mainwindow when there is a progress 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * If there is summary to show, do not exit directly 
+
+2010-11-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * oldway of pm-install 
+
+2010-11-02 Gökmen Göksel <gokmen@pardus.org.tr>
+         * cosmetic 
+
+2010-11-02 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Disable scrollbars, disable contextmenu, ui changes 
+
+2010-11-02 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-11-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Hide history tab for now 
+
+2010-11-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * I love sip, a bit. 
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-29 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Alexander Total)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * make details dialog similar to basket dialog 
+
+2010-10-26 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Add history tab for future release 
+
+2010-10-23 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Yasirov Vasiliy)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-21 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-21 Gökmen Göksel <gokmen@pardus.org.tr>
+         * i forgot to add important_packages file 
+
+2010-10-21 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 185 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * paranoia 
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Update package details page with given package information 
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * fix help document paths 
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update, operation translation fixed 
+
+2010-10-20 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Web UI for AppInfo is done. 
+
+2010-10-20 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * update appinfo db in repo update action 
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-10-20 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Integrate with AppInfo for score information, alpha3 release 
+
+2010-10-18 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-16 transifex
+         * l10n: Updated Swedish (sv) translation to 100% (Patrik Karlsson)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-15 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-13 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 90% (Klemens Häckel)
+         * New status: 164 messages complete with 1 fuzzy and 17 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 87% (Klemens Häckel)
+         * New status: 160 messages complete with 5 fuzzies and 17 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Add stars, stars everywhere, Luke I'm your father. 
+
+2010-10-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Revert last for packagedelegate.py , we need this for selecting packages when descriptions toggled 
+
+2010-10-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Fix statemanager issue
+         * Fix basketdialog issue
+         * Fix UI issues about oxygen theme
+         * Update translation files
+
+2010-10-12 Gökmen Göksel <gokmen@pardus.org.tr>
+         * UI issues. 
+
+2010-10-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * no need this 
+
+2010-10-11 Gökmen Göksel <gokmen@pardus.org.tr>
+         * New BasketDialog \o/
+         * Warn user about removing important packages like kdebase, kdelibs etc.
+         * ISSUE:FIXED:185
+
+2010-10-10 transifex
+         * l10n: Updated Russian (ru) translation to 100% (Nikolay Semenov)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-10 transifex
+         * l10n: Updated Russian (ru) translation to 98% (Nikolay Semenov)
+         * New status: 179 messages complete with 3 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-10 igungor
+         * make it xdg standard compliant.
+
+2010-10-08 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Show operation at window title 
+
+2010-10-05 transifex
+         * l10n: Updated Russian (ru) translation to 56% (Yasirov Vasiliy)
+         * New status: 102 messages complete with 0 fuzzies and 80 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-05 transifex
+         * l10n: Updated Russian (ru) translation to 27% (Yasirov Vasiliy)
+         * New status: 50 messages complete with 0 fuzzies and 132 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-05 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Cosmetic changes
+
+2010-10-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use plain search button instead of modified one
+         * Use hide method to delete model selections after action finishes
+         * Fix basketdialog ui issues
+
+2010-10-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Merge BasketDialog into the mainwindow with PAbstractBox from PDS.Gui 
+
+2010-10-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Use MainWindow as parent for progress dialog and others. 
+
+2010-10-04 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Hide statusbar when in progress
+         * Hide messagebox if state changed
+
+2010-10-03 transifex
+         * l10n: Updated Russian (ru) translation to 16% (Yasirov Vasiliy)
+         * New status: 30 messages complete with 1 fuzzy and 151 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-03 transifex
+         * l10n: New Russian translation (Yasirov Vasiliy)
+         * New status: 0 messages complete with 0 fuzzies and 182 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Disable widgets when progress dialog appears 
+
+2010-10-03 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Switch new variables, no need to use PWidgetBox, no need to call processEvents after animation finihes. 
+
+2010-10-01 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-01 transifex
+         * l10n: Updated French (fr) translation to 100% (Philippe Svetoslavsky)
+         * New status: 182 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-10-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Po update 
+
+2010-10-01 Gökmen Göksel <gokmen@pardus.org.tr>
+         * To avoid flickering with oxygen style we need to use QTextEdit in ReadOnly mode instead of QLabel, hell.
+
+2010-09-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Cosmetic. 
+
+2010-09-30 Gökmen Göksel <gokmen@pardus.org.tr>
+         * Embed ProgressDialog into the MainWindow with PDS.GUI 
+
+2010-09-29 transifex
+         * l10n: Updated Dutch (Flemish) (nl) translation to 100% (Antoon Tolboom)
+         * New status: 174 messages complete with 0 fuzzies and 0 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * change animation and duration 
+
+2010-09-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * forgotten ui 
+
+2010-09-28 Gökmen Göksel <gokmen@pardus.org.tr>
+         * PDS completely integrated with search mechanism. \o/ 
+
+2010-09-27 Gökmen Göksel <gokmen@pardus.org.tr>
+         * early stage of pds integration. 
+
+2010-09-23 transifex
+         * l10n: Updated Spanish (Castilian) (es) translation to 91% (Klemens Häckel)
+         * New status: 159 messages complete with 0 fuzzies and 15 untranslated.
+         * Transmitted-via: Transifex (translate.pardus.org.tr).
+
+2010-09-21 Gökmen Göksel <gokmen@pardus.org.tr>
+         * a new ui, not finished. 
 
