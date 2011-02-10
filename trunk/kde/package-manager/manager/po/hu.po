@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2011-01-11 20:51+0100\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -73,9 +73,9 @@ msgstr "Kosár törlése"
 msgid "Do you want to clear all selections ?"
 msgstr "Az összes kijelölést törli?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "PiSi hiba"
 
@@ -148,15 +148,24 @@ msgstr "Keresés..."
 msgid "No results found."
 msgstr "Nincs találat"
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Minden csomag"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Minden frissítés"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Biztonsági frissítések"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Kritikus frissítések"
 
@@ -248,41 +257,41 @@ msgstr "%prog packages_to_install"
 msgid "Hide summary screen"
 msgstr "Összegzés elrejtése"
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Hálózati hiba"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Ellenőrizze a hálózati kapcsolatot és próbálja újra."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Hitelesítési hiba"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "A művelet végrehajtásához nincs jogosultsága"
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "A <b>%s</b> csomag nem található a tárolóban.<br>Lehet hogy már frissült, vagy már el lett távolítva.<br>Kérem frissítse a tárolók információit."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr "A fájlnevek és csomagnevek keverése még nem támogatott."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "<b>%s</b> fájl nem található."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Egy másik PiSi már fut. Csak egy példány indítása megengedett."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Kívánja folytatni?"
 
@@ -327,11 +336,11 @@ msgstr "Könyvtár megnyitása"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Minden gyorsítótárazott csomag törölve lesz. Folytatja?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Érvénytelen tárolónév"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie.<p>Kérem, próbálja újra.</qt>"
 
@@ -840,32 +849,65 @@ msgstr ""
 msgid "Package Details"
 msgstr "Csomag részletei"
 
-#~ msgid " kb/s"
-#~ msgstr "kb/s"
+#~ msgid "No proxy server"
+#~ msgstr "Nincs proxy szerver"
 
-#, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Mutasd a frissítendő csomagokat"
+#~ msgid "Use manual settings"
+#~ msgstr "Kézi beállítások használata"
 
-#, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Csomag(ok) eltávolítása"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Asztali környezet beállításainak használata"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Search Button"
+#~ msgstr "Keresés"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Search"
+#~ msgstr "Keresés"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Csomag(ok) telepítése"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Művelet gomb az aktuális állapot művelethez"
 
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "A csomaglista kijelöléseinek megfordítása"
+
+#~ msgid "Operation"
+#~ msgstr "Művelet"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>PiSi előkészítése...</h3>"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Hátralévő idő"
+
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Művelet:"
+
+#~ msgid "Status:"
+#~ msgstr "Állapot:"
+
+#~ msgid "Close"
+#~ msgstr "Bezárás"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Mutasd a telepített csomagokat"
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "%1 frissítés elérhető!"
+
+#~ msgid "Quit"
+#~ msgstr "Kilépés"
+
+#~ msgid "Help"
+#~ msgstr "Segítség"
+
+#~ msgid "File"
+#~ msgstr "Fájl"
 
 #, fuzzy
 #~ msgid ""
@@ -881,62 +923,29 @@ msgstr "Csomag részletei"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Fájl"
-
-#~ msgid "Help"
-#~ msgstr "Segítség"
-
-#~ msgid "Quit"
-#~ msgstr "Kilépés"
-
-#~ msgid "There are %1 updates available!"
-#~ msgstr "%1 frissítés elérhető!"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Mutasd a telepített csomagokat"
-
-#~ msgid "Close"
-#~ msgstr "Bezárás"
-
-#~ msgid "Status:"
-#~ msgstr "Állapot:"
-
-#~ msgid "Operation:"
-#~ msgstr "Művelet:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#, fuzzy
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Hátralévő idő"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Csomag(ok) telepítése"
 
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>PiSi előkészítése...</h3>"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "Operation"
-#~ msgstr "Művelet"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "A csomaglista kijelöléseinek megfordítása"
+#, fuzzy
+#~ msgid "Modify Package(s)"
+#~ msgstr "Csomag(ok) eltávolítása"
 
-#~ msgid "Action Button for current states action"
-#~ msgstr "Művelet gomb az aktuális állapot művelethez"
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Mutasd a frissítendő csomagokat"
 
-#~ msgid "Search"
-#~ msgstr "Keresés"
-
-#~ msgid "Search Button"
-#~ msgstr "Keresés"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Asztali környezet beállításainak használata"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Kézi beállítások használata"
-
-#~ msgid "No proxy server"
-#~ msgstr "Nincs proxy szerver"
+#~ msgid " kb/s"
+#~ msgstr "kb/s"

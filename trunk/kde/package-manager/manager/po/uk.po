@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2011-01-25 19:15+0300\n"
 "Last-Translator: Korostil Daniel <ted.korostiled@gmail.com>\n"
 "Language-Team: translation@linux.org.ua\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.6.1\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "© 2009–2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Розробник"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -73,9 +73,9 @@ msgstr "Очистити кошик"
 msgid "Do you want to clear all selections ?"
 msgstr "Очистити все вибране ?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "Помилка Pisi"
 
@@ -148,15 +148,24 @@ msgstr "Пошук…"
 msgid "No results found."
 msgstr "Нічого не знайдено."
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Усі пакунки"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Усі оновлення"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Оновлення безпеки"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Критичні оновлення"
 
@@ -248,41 +257,41 @@ msgstr "%prog packages_to_install"
 msgid "Hide summary screen"
 msgstr "Сховати екран підсумків"
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Помилка мережі"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Будь ласка, перевірте ваше мережеве з'єднання та спробуйте знову. "
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Помилка авторизації"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Ви не авторизовані для цією дії."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Не знайдено пакунка <b>%s</b> у сховищах.<br>Він міг бути оновленим або вилученим зі сховища.<br>Будь ласка, спробуйте оновити інформацію про сховище."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr "Змішування назв файлів і назв пакунків не підтримується поки що."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Файл <b>%s</b> не існує."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "PiSi вже запущено деінде. Дозволено лише одну одночасно."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Продовжити?"
 
@@ -327,11 +336,11 @@ msgstr "Відкрити теку"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Всі кешовані пакунки буде вилучено. Впевнені?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Неправильна назва сховища"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Адреса сховища повинна закінчувати або на суфікс «xml», або «xml.bz2», або «xz» .<p>Спробуйте ще раз.</qt>"
 
@@ -489,12 +498,12 @@ msgid "Update"
 msgstr "Оновити"
 
 #: src/tray.py:209
-msgid "Show Updates"
-msgstr "Показати оновлення"
-
-#: src/tray.py:209
 msgid "Ignore"
 msgstr "Ігнорувати"
+
+#: src/tray.py:209
+msgid "Show Updates"
+msgstr "Показати оновлення"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -836,11 +845,11 @@ msgstr ""
 msgid "Package Details"
 msgstr "Подробиці про пакунок"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Використовувати стільничні налаштування"
+#~ msgid "No proxy server"
+#~ msgstr "Без проксі-сервера"
 
 #~ msgid "Use manual settings"
 #~ msgstr "Використовувати ручні налаштування"
 
-#~ msgid "No proxy server"
-#~ msgstr "Без проксі-сервера"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Використовувати стільничні налаштування"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -76,9 +76,9 @@ msgstr "Ryd mellemlager"
 msgid "Do you want to clear all selections ?"
 msgstr ""
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
 
@@ -156,17 +156,26 @@ msgstr "Søg"
 msgid "No results found."
 msgstr ""
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Vis installerede pakker"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 #, fuzzy
 msgid "All Updates"
 msgstr "Opdater"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 #, fuzzy
 msgid "Security Updates"
 msgstr "VIs opdateringer"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr ""
 
@@ -262,41 +271,41 @@ msgstr "Pakker til installation"
 msgid "Hide summary screen"
 msgstr ""
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Netværks fejl"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Godkendelses fejl"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Du har ikke rettigheder til at foretage denne handling"
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr ""
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr ""
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr ""
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr ""
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr ""
 
@@ -344,12 +353,12 @@ msgstr ""
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Alle de mellemlagrede pakker vil blive sletter. Er du sikker?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 #, fuzzy
 msgid "Not a valid repository name"
 msgstr "Navn på pakkearkiv"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 #, fuzzy
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>Adressen på pakkearkivet skal have et xml or xml.bz2 suffix.<p>Prøv venligst igen.</qt>"
@@ -887,34 +896,101 @@ msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 msgid "Package Details"
 msgstr "Pakke størrelse:"
 
-#~ msgid " kb/s"
-#~ msgstr " kb/s"
+#, fuzzy
+#~ msgid "No proxy server"
+#~ msgstr "Ingen proxy server"
 
 #, fuzzy
-#~ msgid "Upgradable Packages"
-#~ msgstr "Vis pakker der kan opdateres "
+#~ msgid "Use manual settings"
+#~ msgstr "&Generelle indstillinger"
 
 #, fuzzy
-#~ msgid "Modify Package(s)"
-#~ msgstr "Fjerner pakke(r)"
+#~ msgid "Search Button"
+#~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+#~ msgid "Search"
+#~ msgstr "Søg"
 
-#, fuzzy
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Operation"
+#~ msgstr "Handling"
 
-#, fuzzy
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Installer Pakke(r)"
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Forbereder PiSi...</h3>"
 
-#, fuzzy
-#~ msgid "-- / --"
+#~ msgid "Time remaining:"
+#~ msgstr "Tid tilbage:"
+
+#~ msgid "--  / --"
 #~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Handling:"
+
+#~ msgid "Status:"
+#~ msgstr "Status:"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Vis installerede pakker"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
+
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
+
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
+
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
+
+#, fuzzy
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
+
+#, fuzzy
+#~ msgid "Help"
+#~ msgstr "&Hjælp"
 
 #, fuzzy
 #~ msgid ""
@@ -931,97 +1007,30 @@ msgstr "Pakke størrelse:"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
 #, fuzzy
-#~ msgid "Help"
-#~ msgstr "&Hjælp"
-
-#, fuzzy
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Der er <b>%1</b> opdateringer tilgængelige!"
-
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
-
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
-
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
-
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
-
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Vis installerede pakker"
-
-#~ msgid "Status:"
-#~ msgstr "Status:"
-
-#~ msgid "Operation:"
-#~ msgstr "Handling:"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
+#~ msgid "-- / --"
 #~ msgstr "--  / --"
 
-#~ msgid "Time remaining:"
-#~ msgstr "Tid tilbage:"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Forbereder PiSi...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "Handling"
-
-#~ msgid "Search"
-#~ msgstr "Søg"
+#, fuzzy
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Installer Pakke(r)"
 
 #, fuzzy
-#~ msgid "Search Button"
-#~ msgstr "Søg"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #, fuzzy
-#~ msgid "Use manual settings"
-#~ msgstr "&Generelle indstillinger"
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
 #, fuzzy
-#~ msgid "No proxy server"
-#~ msgstr "Ingen proxy server"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Fjerner pakke(r)"
+
+#, fuzzy
+#~ msgid "Upgradable Packages"
+#~ msgstr "Vis pakker der kan opdateres "
+
+#~ msgid " kb/s"
+#~ msgstr " kb/s"

@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2011-01-22 18:00+0100\n"
 "Last-Translator: Michał Komasa <bigkoma@gmail.com>\n"
 "Language-Team: BigKoma <bigkoma@gmail.com>\n"
+"Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pl\n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -39,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Wykonawca"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -72,9 +72,9 @@ msgstr "Wyczyść Kosz"
 msgid "Do you want to clear all selections ?"
 msgstr "Czy chcesz wyczyścić wszystkie wybrane?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "Błąd Pisi"
 
@@ -147,15 +147,24 @@ msgstr "Szukanie..."
 msgid "No results found."
 msgstr "Nic nie znaleziono."
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Wszystkie pakiety"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Wszystkie aktualizacje"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Aktualizacje bezpieczeństwa"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Kluczowe aktualizacje"
 
@@ -247,42 +256,42 @@ msgstr "% postępu pakietów do instalacji"
 msgid "Hide summary screen"
 msgstr "Ukryj ekran podsumowania"
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Błąd sieci"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Sprawdź połączenie internetowe i spróbuj ponownie."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Błąd autoryzacji"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Nie jesteś upoważniony do tej operacji."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Pakiet <b>%s</b> nie znaleziony w repozytorium. <br> Może został zaktualizowany lub usunięty z repozytorium.Spróbuj zaktualizować informacje o repozytorium."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 #, fuzzy
 msgid "Mixing file names and package names not supported yet."
 msgstr "Mixing file names and package names not supported yet."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Plik <b>%s</b> nie istnieje."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Inny proces PiSi jest uruchominy. Tylko jeden proces jest dozwolony."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Chcesz kontynuować ?"
 
@@ -327,11 +336,11 @@ msgstr "Open Directory"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Wszystkie pliki pakietów zostaną usunięte. Czy jesteś pewien? "
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Nieprawidłowa nazwa repozytorium"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt> Adres repozytorium powinien posiadać rozszerzeni xml, xml.bz2 lub xz.<p> Spróbuj ponownie. </ qt>"
 
@@ -491,12 +500,12 @@ msgid "Update"
 msgstr "Aktualizuj"
 
 #: src/tray.py:209
-msgid "Show Updates"
-msgstr "Pokaż aktualizacje"
-
-#: src/tray.py:209
 msgid "Ignore"
 msgstr "Ignoruj"
+
+#: src/tray.py:209
+msgid "Show Updates"
+msgstr "Pokaż aktualizacje"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -834,20 +843,20 @@ msgstr ""
 msgid "Package Details"
 msgstr "Szczegóły pakietu"
 
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Użyj ustawień systemowych"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Użyj ustawień ręcznych"
-
-#~ msgid "No proxy server"
-#~ msgstr "Bez serwera proxy:"
-
-#~ msgid "&Koniec"
-#~ msgstr "&Koniec"
+#~ msgid "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
+#~ msgstr "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
 
 #~ msgid "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
 #~ msgstr "z <b>%1</b> dodatkowymi zależnościami o całkowitym rozmiarze <b>%2</b> "
 
-#~ msgid "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
-#~ msgstr "z <b>%1</b> zależnościami o całkowitym rozmiarze <b>%2</b>"
+#~ msgid "&Koniec"
+#~ msgstr "&Koniec"
+
+#~ msgid "No proxy server"
+#~ msgstr "Bez serwera proxy:"
+
+#~ msgid "Use manual settings"
+#~ msgstr "Użyj ustawień ręcznych"
+
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Użyj ustawień systemowych"

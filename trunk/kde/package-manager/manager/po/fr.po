@@ -1,19 +1,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-28 16:14+0200\n"
+"POT-Creation-Date: 2011-02-10 17:33+0200\n"
 "PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
@@ -40,12 +40,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:36
 msgid "Developer"
 msgstr "Développeur"
+
+#: src/about.py:36
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -73,9 +73,9 @@ msgstr "Vider le panier"
 msgid "Do you want to clear all selections ?"
 msgstr "Voulez-vous effacer toutes les sélections ?"
 
-#: src/basketdialog.py:70 src/pmutils.py:81 src/pmutils.py:86
-#: src/pmutils.py:89 src/pmutils.py:92 src/pmutils.py:95
-#: src/settingsdialog.py:239 src/settingsdialog.py:244
+#: src/basketdialog.py:70 src/pmutils.py:79 src/pmutils.py:84
+#: src/pmutils.py:87 src/pmutils.py:90 src/pmutils.py:93
+#: src/settingsdialog.py:252 src/settingsdialog.py:257
 msgid "Pisi Error"
 msgstr "Erreur de Pisi"
 
@@ -148,15 +148,24 @@ msgstr "Recherche..."
 msgid "No results found."
 msgstr "Aucun résultat trouvé."
 
-#: src/mainwidget.py:407
+#: src/mainwidget.py:405
+#, fuzzy
+msgid "Select packages"
+msgstr "Tous les paquets"
+
+#: src/mainwidget.py:406
+msgid "You must select at least one installed package"
+msgstr ""
+
+#: src/mainwidget.py:417
 msgid "All Updates"
 msgstr "Toutes les mises à jour"
 
-#: src/mainwidget.py:408
+#: src/mainwidget.py:418
 msgid "Security Updates"
 msgstr "Mises à jour de sécurité"
 
-#: src/mainwidget.py:409
+#: src/mainwidget.py:419
 msgid "Critical Updates"
 msgstr "Mises à jour critiques"
 
@@ -248,41 +257,41 @@ msgstr "%prog paquets_à_installer"
 msgid "Hide summary screen"
 msgstr "Masquer l'écran récapitulatif"
 
-#: src/pmutils.py:75 src/statemanager.py:243
+#: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
 msgstr "Erreur de réseau"
 
-#: src/pmutils.py:76 src/statemanager.py:244
+#: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
 msgstr "Vérifiez vos paramètres de connexion réseau et réessayez."
 
-#: src/pmutils.py:78
+#: src/pmutils.py:76
 msgid "Authorization Error"
 msgstr "Erreur d'autorisation"
 
-#: src/pmutils.py:79
+#: src/pmutils.py:77
 msgid "You are not authorized for this operation."
 msgstr "Vous n'êtes pas autorisé à faire cette opération."
 
-#: src/pmutils.py:82
+#: src/pmutils.py:80
 #, python-format
 msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
 msgstr "Paquet <b>%s</b> introuvable. Il peut être mis à jour ou supprimé du dépôt. <br>Essayez de mettre à jour les informations du dépôt."
 
-#: src/pmutils.py:87
+#: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
 msgstr "Le mélange des noms de fichiers et des noms de paquets n'est pas encore géré."
 
-#: src/pmutils.py:90
+#: src/pmutils.py:88
 #, python-format
 msgid "File <b>%s</b> doesn't exists."
 msgstr "Le fichier <b>%s</b> n'existe pas."
 
-#: src/pmutils.py:93
+#: src/pmutils.py:91
 msgid "Another instance of PiSi is running. Only one instance is allowed."
 msgstr "Une autre instance de PiSi est en cours d'exécution. Une seule est autorisée."
 
-#: src/pmutils.py:127
+#: src/pmutils.py:125
 msgid "Do you want to continue ?"
 msgstr "Voulez-vous continuer?"
 
@@ -327,11 +336,11 @@ msgstr "Ouvrir le dossier"
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Êtes-vous sûr de vouloir supprimer tous les paquets du cache ?"
 
-#: src/settingsdialog.py:240
+#: src/settingsdialog.py:253
 msgid "Not a valid repository name"
 msgstr "Nom de dépôt invalide"
 
-#: src/settingsdialog.py:245
+#: src/settingsdialog.py:258
 msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
 msgstr "<qt>L'adresse du dépôt doit se terminer par xml ou xml.bz2 ou xz.<p>Merci de corriger.</qt>"
 
@@ -489,12 +498,12 @@ msgid "Update"
 msgstr "Mise à jour"
 
 #: src/tray.py:209
-msgid "Show Updates"
-msgstr "Montrer les mises à jour"
-
-#: src/tray.py:209
 msgid "Ignore"
 msgstr "Ignorer"
+
+#: src/tray.py:209
+msgid "Show Updates"
+msgstr "Montrer les mises à jour"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -836,31 +845,122 @@ msgstr ""
 msgid "Package Details"
 msgstr "Détails des paquets"
 
-#~ msgid " kb/s"
-#~ msgstr "ko/s"
+#~ msgid "No proxy server"
+#~ msgstr "Aucun serveur proxy"
 
-#~ msgid "Upgradable Packages"
-#~ msgstr "Les paquets à mettre à jour"
+#~ msgid "Use manual settings"
+#~ msgstr "Utiliser les paramètres manuels"
 
-#~ msgid "Modify Package(s)"
-#~ msgstr "Modifier les paquets"
+#~ msgid "Use Desktop Enviorenment's settings"
+#~ msgstr "Utiliser les paramètres de l'environnement de bureau"
 
-#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgid "Search Button"
+#~ msgstr "Bouton de recherche"
 
-#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgid "Search"
+#~ msgstr "Rechercher"
 
-#~ msgid ""
-#~ "Installed Packages\n"
-#~ "\n"
-#~ msgstr "Les paquets installés"
+#~ msgid "Action Button for current states action"
+#~ msgstr "Bouton d'action pour action sur les états actuels"
 
-#~ msgid "History KCM will be here."
-#~ msgstr "L'historique de KCM sera ici."
+#~ msgid "Toggler for selection all packages in Package List"
+#~ msgstr "Touche à bascule pour la sélection de tous les paquets de la liste"
 
-#~ msgid "-- / --"
-#~ msgstr "-- / --"
+#~ msgid "Operation"
+#~ msgstr "Opération"
+
+#~ msgid "<h3>Preparing PiSi...</h3>"
+#~ msgstr "<h3>Préparation de PiSi...</h3>"
+
+#~ msgid "Time remaining:"
+#~ msgstr "Temps restant :"
+
+#~ msgid "--  / --"
+#~ msgstr "--  / --"
+
+#~ msgid "--:--:--"
+#~ msgstr "--:--:--"
+
+#~ msgid "Operation:"
+#~ msgstr "Opération :"
+
+#~ msgid "Status:"
+#~ msgstr "Statut :"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Show Installed Packages"
+#~ msgstr "Afficher les paquets installés"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Utiliser un serveur proxy"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "L'installation de %1 a réussi."
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation des paquets terminée avec succès"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Résumé"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite de bande passante :"
+
+#~ msgid "Update check"
+#~ msgstr "Vérifier les mises à jour"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(mettez 0 pour illimité)"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Effacer"
+
+#~ msgid "Maintainer"
+#~ msgstr "Mainteneur"
+
+#~ msgid "Package Installer"
+#~ msgstr "Installeur de paquets"
+
+#~ msgid "Installing %1"
+#~ msgstr "Installation de %1"
+
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
+
+#~ msgid "Package Installer is already started!"
+#~ msgstr "L'installeur de paquets est déjà démarré !"
+
+#~ msgid "Reverse package selections"
+#~ msgstr "Sélection inverse des paquets"
+
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nouveaux paquets installés avec succès."
+
+#~ msgid "There are %1 updates available!"
+#~ msgstr "Il y a %1 mises à jour disponibles !"
+
+#~ msgid "Quit"
+#~ msgstr "Quitter"
+
+#~ msgid "Help"
+#~ msgstr "Aide"
+
+#~ msgid "File"
+#~ msgstr "Fichier"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -875,119 +975,28 @@ msgstr "Détails des paquets"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></p></body></html>"
 
-#~ msgid "File"
-#~ msgstr "Fichier"
+#~ msgid "-- / --"
+#~ msgstr "-- / --"
 
-#~ msgid "Help"
-#~ msgstr "Aide"
+#~ msgid "History KCM will be here."
+#~ msgstr "L'historique de KCM sera ici."
 
-#~ msgid "Quit"
-#~ msgstr "Quitter"
+#~ msgid ""
+#~ "Installed Packages\n"
+#~ "\n"
+#~ msgstr "Les paquets installés"
 
-#~ msgid "There are %1 updates available!"
-#~ msgstr "Il y a %1 mises à jour disponibles !"
+#~ msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nouveaux paquets installés avec succès."
+#~ msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+#~ msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Sélection inverse des paquets"
+#~ msgid "Modify Package(s)"
+#~ msgstr "Modifier les paquets"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "L'installeur de paquets est déjà démarré !"
+#~ msgid "Upgradable Packages"
+#~ msgstr "Les paquets à mettre à jour"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
-
-#~ msgid "Installing %1"
-#~ msgstr "Installation de %1"
-
-#~ msgid "Package Installer"
-#~ msgstr "Installeur de paquets"
-
-#~ msgid "Maintainer"
-#~ msgstr "Mainteneur"
-
-#~ msgid "Delete"
-#~ msgstr "Effacer"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(mettez 0 pour illimité)"
-
-#~ msgid "Update check"
-#~ msgstr "Vérifier les mises à jour"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Limite de bande passante :"
-
-#~ msgid "Summary"
-#~ msgstr "Résumé"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation des paquets terminée avec succès"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "L'installation de %1 a réussi."
-
-#~ msgid "Use proxy server"
-#~ msgstr "Utiliser un serveur proxy"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Show Installed Packages"
-#~ msgstr "Afficher les paquets installés"
-
-#~ msgid "Close"
-#~ msgstr "Fermer"
-
-#~ msgid "Status:"
-#~ msgstr "Statut :"
-
-#~ msgid "Operation:"
-#~ msgstr "Opération :"
-
-#~ msgid "--:--:--"
-#~ msgstr "--:--:--"
-
-#~ msgid "--  / --"
-#~ msgstr "--  / --"
-
-#~ msgid "Time remaining:"
-#~ msgstr "Temps restant :"
-
-#~ msgid "<h3>Preparing PiSi...</h3>"
-#~ msgstr "<h3>Préparation de PiSi...</h3>"
-
-#~ msgid "Operation"
-#~ msgstr "Opération"
-
-#~ msgid "Toggler for selection all packages in Package List"
-#~ msgstr "Touche à bascule pour la sélection de tous les paquets de la liste"
-
-#~ msgid "Action Button for current states action"
-#~ msgstr "Bouton d'action pour action sur les états actuels"
-
-#~ msgid "Search"
-#~ msgstr "Rechercher"
-
-#~ msgid "Search Button"
-#~ msgstr "Bouton de recherche"
-
-#~ msgid "Use Desktop Enviorenment's settings"
-#~ msgstr "Utiliser les paramètres de l'environnement de bureau"
-
-#~ msgid "Use manual settings"
-#~ msgstr "Utiliser les paramètres manuels"
-
-#~ msgid "No proxy server"
-#~ msgstr "Aucun serveur proxy"
+#~ msgid " kb/s"
+#~ msgstr "ko/s"
