@@ -189,10 +189,10 @@ class PackageModel(QAbstractTableModel):
         self.cached_extras_size = 0
         self.cached_package = None
 
-    def selectPackages(self, packages):
+    def selectPackages(self, packages, state = True):
         self.resetCachedInfos()
         for package in packages:
-            self.package_selections[self.packages.index(package)] = Qt.Checked
+            self.package_selections[self.packages.index(package)] = Qt.Checked if state else Qt.Unchecked
 
     def reverseSelection(self, packages):
         self.resetCachedInfos()
