@@ -39,15 +39,16 @@ class Widget(QtGui.QWidget, Screen):
         # set updateTime
         self.ui.updateInterval.setValue(self.updateTime)
 
-        # set initial checkbox visibility
-        self.ui.checkUpdate.setVisible(False)
-        self.ui.updateInterval.setVisible(False)
+        # set initial states
+        self.ui.checkUpdate.setChecked(True)
+        self.ui.showTray.setChecked(True)
 
         # set signals
         self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)
         self.ui.checkUpdate.connect(self.ui.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
 
     def enableCheckTime(self):
+        print "deneme"
         if self.ui.showTray.isChecked():
             self.ui.checkUpdate.setVisible(True)
             self.ui.updateInterval.setVisible(True)
@@ -58,6 +59,7 @@ class Widget(QtGui.QWidget, Screen):
             self.ui.updateInterval.setVisible(False)
 
     def updateSelected(self):
+        print "deneme"
         if self.ui.checkUpdate.isChecked():
             self.ui.updateInterval.setEnabled(True)
         else:
