@@ -343,12 +343,10 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         if not state == self.state.HISTORY:
             self.setActionButton()
             self.state.cached_packages = None
-            if state == self.state.UPGRADE:
-                self.checkUpdatesButton.show()
+            if state == self.state.UPGRADE or (state == self.state.INSTALL and self.groupList.count() == 1):
                 if not self._updatesCheckedOnce:
                     self._updatesCheckedOnce = self.state.updateRepoAction(silence = True)
-            else:
-                self.checkUpdatesButton.hide()
+            self.checkUpdatesButton.setHidden(not state == self.state.UPGRADE)
             self.initialize()
             # self.contentHistory.hide()
             # self.content.show()
