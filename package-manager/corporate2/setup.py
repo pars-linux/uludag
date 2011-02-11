@@ -243,9 +243,7 @@ setup(
       author            = "Pardus Developers",
       author_email      = about.bugEmail,
       url               = about.homePage,
-      packages          = [''],
-      package_dir       = {'': ''},
-      data_files        = [],
+      data_files        = [('/usr/share/doc/%s' % PROJECT, ['AUTHORS', 'ChangeLog'])],
       cmdclass          = {
                             'build': Build,
                             'install': Install,

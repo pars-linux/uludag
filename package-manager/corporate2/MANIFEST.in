@@ -1,3 +1,5 @@
+ChangeLog
+AUTHORS
 include *.py
 recursive-include src/ *.py *.notifyrc
 recursive-include po/ *.po *.pot
