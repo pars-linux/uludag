@@ -778,18 +778,18 @@ Aşağıda bulunan komutu çalıştırın:
   urls.py 
   </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve daha sonra firefox’tan http://localhost:8080/ adresini girin ve sunucuya bağlanabildiğinizi gözlemleyin
 <PRE CLASS="verbatim">   python manage.py runserver 8080
-  </PRE></LI><LI CLASS="li-itemize">settings.py içerisinde DATABASE_ENGINE <P>DATABASE_NAME değişkenlerini aşağıdaki database değişkenlerini atayın:
-</P><PRE CLASS="verbatim">   DATABASE_ENGINE = 'sqlite3'
-   DATABASE_NAME = 'sqlite3_'   
+  </PRE></LI><LI CLASS="li-itemize">settings.py içerisinde DATABASES bölümünü aşağıda bulunduğu şekilde değiştirin. <PRE CLASS="verbatim">   'default': {
+        'ENGINE': 'sqlite3', 
+        'NAME': 'deneme',    
+        'HOST': '',          
+        'PORT': '',        
+    }
   </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve istemiş olduğu işlemleri sırasıyla gerçekleştirin ve sorunsuz bir şekilde Django onay sisteminin kurulduğunu gözlemleyin:
 <PRE CLASS="verbatim">python manage.py syncdb 
 </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve polls adında bir dizinin oluştuğunu gözlemleyin:
 <PRE CLASS="verbatim"> python manage.py startapp polls 
-</PRE></LI><LI CLASS="li-itemize">Ve dizin içerişinde aşağıdaki dosyaların oluştuğunu gözlemleyin:
-<PRE CLASS="verbatim"> __init__.py
- models.py
- views.py
-</PRE></LI></UL></LI><LI CLASS="li-itemize">python-memcached paketi kurulumu sonrası:<P>memcached sunucusunu servis yöneticisinden başlatın.</P><P>Aşağıdaki komutları çalıştırın ve sonucun "True" döndürdüğünü gözlemleyin.
+</PRE><P>Komutların sorunsuz çalıştığını ve deneme adında bir dosya oluştuğunu gözlemleyin.
+</P></LI></UL></LI><LI CLASS="li-itemize">python-memcached paketi kurulumu sonrası:<P>memcached sunucusunu servis yöneticisinden başlatın.</P><P>Aşağıdaki komutları çalıştırın ve sonucun "True" döndürdüğünü gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/
 python/test_python-memcache.py
  python test_python-memcache.py
