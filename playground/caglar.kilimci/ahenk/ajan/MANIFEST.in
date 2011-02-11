@@ -1,8 +1,0 @@
-include ahenk/*.py
-include ahenk/agent/*.py
-include etc/*
-include modules/*.py
-include utils/*
-include README
-include ahenk_agent
-include setup.py

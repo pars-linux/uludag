@@ -1,9 +1,0 @@
-[KSplash Theme: Pardus-Milky]
-Name = Splash Screen for Pardus (Milky version)
-Description = Pardus Milky Splash Screen based on Air
-Version = 2.2
-Author = Gökhan Özkan <gokhan@pardus.org.tr>, Onur Küçük <onur@pardus.org.tr>, Banu Önal <banu@pardus.org.tr>, Anıl Özbek <ozbekanil@gmail.com>
-Homepage = http://pardus.org.tr/eng
-
-# Theme behaviour settings.
-Engine = KSplashX

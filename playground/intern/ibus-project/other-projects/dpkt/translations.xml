@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>dpkt</Name>
-        <Summary xml:lang="tr">Python paket yaratma-ayırma kütüphanesi</Summary>
-        <Description xml:lang="tr">TCP/IP protokolü için hızlı ve basit paket yaratma-ayırma kütüphanesi</Description>
-    </Source>
-</PISI>
-

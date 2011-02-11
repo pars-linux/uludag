@@ -1,6 +1,0 @@
-PythonPath "['/path/to/security/pardus.org.tr/'] + sys.path"
-PythonInterpreter pardus_security
-PythonHandler django.core.handlers.modpython
-SetEnv DJANGO_SETTINGS_MODULE security.settings
-SetHandler python-program
-PythonDebug On

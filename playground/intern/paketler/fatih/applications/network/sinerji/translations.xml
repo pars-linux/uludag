@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-            <Name>sinerji</Name>
-            <Summary xml:lang="tr" >Synergy uygulaması için arayüz</Summary>
-            <Description xml:lang="tr">Sinerji, synergy uygulaması için PyQt4 ile yazılmış bir arayüzdür. Arka planda avahi ve dbus ile kolay bir kullanabirlik sağlamayı hedefler</Description>
-    </Source>
-</PISI>

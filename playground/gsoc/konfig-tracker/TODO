@@ -1,5 +1,0 @@
-1. Import of tar.gz archives containing configuration files
-2. Now KonfigTracker performs restore of complete configurations in a snapshot. 
-   Make it possible to restore any file selected in treeView.
-3. Enable users to delete any snapshot, or even purge the whole database.
-4. An option to restore the configurations to initial.

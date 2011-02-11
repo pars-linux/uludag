@@ -1,9 +1,0 @@
-[Desktop Entry]
-_Name=Service Manager
-_GenericName=Service Manager
-_Comment=An application for managing system services.
-Exec=service-manager
-Icon=flag-yellow
-Type=Application
-Categories=Qt;KDE;System;
-NotShowIn=KDE;

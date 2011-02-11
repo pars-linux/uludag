@@ -1,6 +1,0 @@
-* 16/12/2005 S.Çağlar Onur <caglar _at_ pardus.org.tr>:
-    New icons by Serdar Soytetir
-
-* 17/9/2005 S.Çağlar Onur <caglar _at_ pardus.org.tr>:
-	Build system now uses SCons instead of old and ugly autotools/automake
-	and their family...

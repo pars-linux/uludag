@@ -1,8 +1,0 @@
-[Desktop Entry]
-_Name=Network Manager
-_GenericName=Network Manager
-_Comment=An application for managing network connections.
-Exec=network-manager
-Icon=applications-internet
-Type=Application
-Categories=Qt;KDE;System;

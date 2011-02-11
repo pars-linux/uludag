@@ -1,9 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>anthy</Name>
-        <Summary xml:lang="tr">Japon karakter kümesi girdi kütüphanesi</Summary>
-        <Description xml:lang="tr">Anthy, X uygulamaları ve emacs gibi Japonca girdiler isteyen uygulamalara bir kütüphane sağlar.</Description>
-    </Source>
-</PISI>
-

@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-    <Source>
-        <Name>perl-Data-HexDump</Name>
-        <Summary xml:lang="en">hexadecimal dumper</Summary>
-        <Description xml:lang="en">Dump in hexadecimal the content of a scalar.</Description>
-    </Source>
-</PISI>

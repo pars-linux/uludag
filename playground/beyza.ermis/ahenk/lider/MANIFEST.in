@@ -1,5 +1,0 @@
-include Makefile
-recursive-include lider *.ui
-recursive-include lider *.py
-recursive-include lider *.qrc
-recursive-include lider *.png

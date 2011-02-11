@@ -1,7 +1,0 @@
-# name type description
-
-authenticationType str Authentication type (unix, ldap or ad)
-authenticationHostLDAP str LDAP hostname
-authenticationDomainLDAP str LDAP domain
-authenticationHostAD str Active Directory hostname
-authenticationDomainAD str Active Directory domain

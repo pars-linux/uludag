@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=KonfigTracker
-GenericName=Configuration Monitor
-Comment=Snapshot and Monitoring Tool for KDE4 Settings
-Icon=konfigtracker
-Type=Application
-Exec=konfigtracker
-Categories=Qt;KDE;System

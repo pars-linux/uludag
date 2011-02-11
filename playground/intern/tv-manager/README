@@ -1,4 +1,0 @@
-BENİOKU
-
-To build:
-g++ `pkg-config --cflags --libs dbus-1 QtGui` main.cpp -o main -L/usr/kde/4/lib -I/usr/kde/4/include/KDE/ -I/usr/kde/4/include -lkdeui

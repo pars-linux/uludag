@@ -1,4 +1,0 @@
-include Makefile
-include ahenk_schema
-recursive-include schema *.schema
-recursive-include schema_templates *.txt

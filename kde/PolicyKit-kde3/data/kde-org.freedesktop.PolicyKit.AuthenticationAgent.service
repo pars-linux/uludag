@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.freedesktop.PolicyKit.AuthenticationAgent
-Exec=/usr/libexec/policykit-kde
