@@ -1889,12 +1889,15 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
   \begin{verbatim}
    python manage.py runserver 8080
   \end{verbatim}
- \item settings.py içerisinde DATABASE\_ENGINE 
+ \item settings.py içerisinde DATABASES bölümünü aşağıda bulunduğu şekilde değiştirin. 
 
-DATABASE\_NAME değişkenlerini aşağıdaki database değişkenlerini atayın:
   \begin{verbatim}
-   DATABASE_ENGINE = 'sqlite3'
-   DATABASE_NAME = 'sqlite3_'   
+   'default': {
+        'ENGINE': 'sqlite3', 
+        'NAME': 'deneme',    
+        'HOST': '',          
+        'PORT': '',        
+    }
   \end{verbatim}
 \item Aşağıdaki komutu çalıştırın ve istemiş olduğu işlemleri sırasıyla gerçekleştirin ve sorunsuz bir şekilde Django onay sisteminin kurulduğunu gözlemleyin:
 \begin{verbatim}
@@ -1904,13 +1907,8 @@ python manage.py syncdb
 \begin{verbatim}
  python manage.py startapp polls 
 \end{verbatim}
-\item Ve dizin içerişinde aşağıdaki dosyaların oluştuğunu gözlemleyin:
-\begin{verbatim}
- __init__.py
- models.py
- views.py
-\end{verbatim}
 
+Komutların sorunsuz çalıştığını ve deneme adında bir dosya oluştuğunu gözlemleyin.
 \end{itemize}
 
 \item python-memcached paketi kurulumu sonrası:
