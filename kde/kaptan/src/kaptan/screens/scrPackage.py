@@ -48,7 +48,6 @@ class Widget(QtGui.QWidget, Screen):
         self.ui.checkUpdate.connect(self.ui.checkUpdate, SIGNAL("toggled(bool)"), self.updateSelected)
 
     def enableCheckTime(self):
-        print "deneme"
         if self.ui.showTray.isChecked():
             self.ui.checkUpdate.setVisible(True)
             self.ui.updateInterval.setVisible(True)
@@ -59,7 +58,6 @@ class Widget(QtGui.QWidget, Screen):
             self.ui.updateInterval.setVisible(False)
 
     def updateSelected(self):
-        print "deneme"
         if self.ui.checkUpdate.isChecked():
             self.ui.updateInterval.setEnabled(True)
         else:
