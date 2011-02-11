@@ -7,7 +7,7 @@
     <property name="geometry">
         <rect>
             <x>0</x>
-            <y>0</y>
+            <y>20</y>
             <width>700</width>
             <height>500</height>
         </rect>
@@ -190,61 +190,6 @@
             </rect>
         </property>
     </spacer>
-    <widget class="QWidgetStack">
-        <property name="name">
-            <cstring>pageStack</cstring>
-        </property>
-        <property name="geometry">
-            <rect>
-                <x>161</x>
-                <y>54</y>
-                <width>524</width>
-                <height>400</height>
-            </rect>
-        </property>
-        <property name="sizePolicy">
-            <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>0</vsizetype>
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-            </sizepolicy>
-        </property>
-        <property name="minimumSize">
-            <size>
-                <width>524</width>
-                <height>400</height>
-            </size>
-        </property>
-        <property name="maximumSize">
-            <size>
-                <width>32767</width>
-                <height>410</height>
-            </size>
-        </property>
-        <property name="paletteForegroundColor">
-            <color>
-                <red>73</red>
-                <green>94</green>
-                <blue>84</blue>
-            </color>
-        </property>
-        <property name="paletteBackgroundColor">
-            <color>
-                <red>239</red>
-                <green>239</green>
-                <blue>239</blue>
-            </color>
-        </property>
-        <widget class="QWidget">
-            <property name="name">
-                <cstring>WStackPage</cstring>
-            </property>
-            <attribute name="id">
-                <number>0</number>
-            </attribute>
-        </widget>
-    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>pixSteps</cstring>
@@ -311,6 +256,61 @@
             <number>20</number>
         </property>
     </widget>
+    <widget class="QWidgetStack">
+        <property name="name">
+            <cstring>pageStack</cstring>
+        </property>
+        <property name="geometry">
+            <rect>
+                <x>161</x>
+                <y>54</y>
+                <width>524</width>
+                <height>397</height>
+            </rect>
+        </property>
+        <property name="sizePolicy">
+            <sizepolicy>
+                <hsizetype>0</hsizetype>
+                <vsizetype>0</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+            </sizepolicy>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>524</width>
+                <height>397</height>
+            </size>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>32767</width>
+                <height>397</height>
+            </size>
+        </property>
+        <property name="paletteForegroundColor">
+            <color>
+                <red>73</red>
+                <green>94</green>
+                <blue>84</blue>
+            </color>
+        </property>
+        <property name="paletteBackgroundColor">
+            <color>
+                <red>239</red>
+                <green>239</green>
+                <blue>239</blue>
+            </color>
+        </property>
+        <widget class="QWidget">
+            <property name="name">
+                <cstring>WStackPage</cstring>
+            </property>
+            <attribute name="id">
+                <number>0</number>
+            </attribute>
+        </widget>
+    </widget>
     <widget class="QLabel">
         <property name="name">
             <cstring>pageDesc</cstring>
@@ -320,8 +320,20 @@
                 <x>161</x>
                 <y>25</y>
                 <width>524</width>
-                <height>40</height>
+                <height>50</height>
             </rect>
+        </property>
+        <property name="minimumSize">
+            <size>
+                <width>0</width>
+                <height>50</height>
+            </size>
+        </property>
+        <property name="maximumSize">
+            <size>
+                <width>32767</width>
+                <height>50</height>
+            </size>
         </property>
         <property name="paletteForegroundColor">
             <color>
