@@ -12,7 +12,7 @@
 #
 
 # Package Manager Version String
-version = "2.3.0"
+version = "2.3.1"
 PACKAGE = "Package Manager"
 
 # PyKDE4 Imports
