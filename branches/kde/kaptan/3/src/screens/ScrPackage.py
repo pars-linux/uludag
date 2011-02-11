@@ -49,6 +49,12 @@ class Widget(PackageWidget, ScreenWidget):
         self.checkUpdate.setText(i18n("Check updates automatically for every"))
         self.updateInterval.setSuffix(i18n(" hours"))
 
+
+        self.showTray.setChecked(True)
+        self.enableCheckTime()
+        self.checkUpdate.setChecked(True)
+        self.updateSelected()
+
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pixPackage.setPixmap(QPixmap(locate("data", "kaptan/pics/package.png")))
