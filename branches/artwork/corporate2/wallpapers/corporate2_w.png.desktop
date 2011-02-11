@@ -1,8 +1,8 @@
 [Wallpaper]
 Encoding=UTF-8
 File=corporate2_w.png
-Name= Pardus Corporate 2 [Wide Screen]
-Name[tr]= Pardus Kurumsal 2 [Geniş Ekran]
+Name=Pardus Corporate 2 [Wide Screen]
+Name[tr]=Pardus Kurumsal 2 [Geniş Ekran]
 ImageType=pixmap
 Author=Gökhan Özkan
 Resolution=Wide
