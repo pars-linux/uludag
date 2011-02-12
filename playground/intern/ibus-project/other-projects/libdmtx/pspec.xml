@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>libdmtx</Name>
+        <Homepage>http://www.libdmtx.org/</Homepage>
+        <Packager>
+            <Name>Caner Başaran</Name>
+            <Email>basaran.caner@gmail.com</Email>
+        </Packager>
+        <License>GPLv2</License>
+        <IsA>library</IsA>
+        <Summary>Library for working with Data Matrix 2D bar-codes</Summary>
+        <Description>libdmtx is open source software for reading and writing Data Matrix 2D bar-codes on Linux, Unix, OS X, Windows, and mobile devices.</Description>
+        <Archive sha1sum="6eb8d61682d4ec4d04ad16f164136e2ebd477e30" type="targz">http://garr.dl.sourceforge.net/project/libdmtx/libdmtx/0.7.2/libdmtx-0.7.2.tar.gz</Archive>
+    </Source>
+
+    <Package>
+        <Name>libdmtx</Name>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2011-02-12</Date>
+            <Version>0.7.2</Version>
+            <Comment>First release.</Comment>
+            <Name>Caner Başaran</Name>
+            <Email>basaran.caner@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
+
