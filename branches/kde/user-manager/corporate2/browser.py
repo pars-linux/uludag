@@ -148,7 +148,10 @@ class BrowseStack(QVBox):
                     if exception:
                         return
                     self.userModified(item.uid)
-                self.mainwidget.link.User.Manager["baselayout"].deleteUser(item.uid, ret == KMessageBox.Yes, async=handler)
+                if ret == KMessageBox.Yes or ret == KMessageBox.No:
+                    self.mainwidget.link.User.Manager["baselayout"].deleteUser(item.uid, ret == KMessageBox.Yes, async=handler)
+                elif ret == KMessageBox.Cancel:
+                    pass
         else:
             item = self.groups.selectedItem()
             if item:
