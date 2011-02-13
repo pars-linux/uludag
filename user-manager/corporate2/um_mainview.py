@@ -41,16 +41,19 @@ class UserManager(QWidgetStack):
     def slotAdd(self):
         if self.browse.tab.currentPageIndex() == 0:
             names = []
+            ids = []
             item = self.browse.users.firstChild()
             while item:
                 names.append(item.nick)
+                ids.append(item.uid)
                 item = item.nextSibling()
             self.raiseWidget(self.user)
-            self.user.startAdd(self.browse.groups, names)
+            self.user.startAdd(self.browse.groups, names, ids)
         else:
             self.raiseWidget(self.group)
             self.group.startAdd()
 
     def slotEdit(self):
-        self.raiseWidget(self.useredit)
-        self.useredit.startEdit(self.browse.groups, self.browse.users.selectedItem().uid)
+        if self.browse.users.selectedItem():
+            self.raiseWidget(self.useredit)
+            self.useredit.startEdit(self.browse.groups, self.browse.users.selectedItem().uid)

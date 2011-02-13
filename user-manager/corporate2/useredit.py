@@ -11,6 +11,8 @@
 
 import os
 
+import qt
+
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -19,8 +21,10 @@ from utility import *
 
 import polkit
 
+import functools
+
 categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
-        "org.freedesktop.modem-manager|org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system": [I18N_NOOP("Network settings"), "network"],
+        "org.freedesktop.modem-manager|org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system|tr.org.pardus.comar.net": [I18N_NOOP("Network settings"), "network"],
         "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "package"],
         "tr.org.pardus.comar.system.service": [I18N_NOOP("Service operations"), "ksysv"],
         "tr.org.pardus.comar.time": [I18N_NOOP("Date/time operations"), "history"],
@@ -33,6 +37,7 @@ class UID:
     def __init__(self, stack, w, grid, edit=False):
         self.edit = edit
         self.stack = stack
+        self.usedids = []
         lab = QLabel(i18n("ID:"), w)
         if edit:
             self.uid = QLabel(w)
@@ -123,6 +128,8 @@ class RealName:
     def slotChange(self, text):
         if not self.edit:
             self.stack.u_name.guess(text)
+        else:
+            self.stack.checkAdd()
 
     def setText(self, text):
         self.name.setText(text)
@@ -242,6 +249,7 @@ class UserGroup(QCheckListItem):
         self.stack = stack
         QCheckListItem.__init__(self, parent, group.name, self.CheckBox)
         self.name = group.name
+        self.gid = group.gid
         self.updateItem = updateItem
 
     def text(self, col):
@@ -289,10 +297,13 @@ class UserGroupList(QWidget):
 
     def slotGroup(self):
         groups = []
+        mainGroup = None
         item = self.groups.firstChild()
         while item:
             if item.state() == item.On:
                 groups.append(item.name)
+                if self.stack.editdict and item.gid == self.stack.editdict['gid']:
+                    mainGroup = item.name
             item = item.nextSibling()
         self.main_group.clear()
         if groups == []:
@@ -304,11 +315,13 @@ class UserGroupList(QWidget):
             if self.main_sel and self.main_sel in groups:
                 self.main_group.setCurrentText(self.main_sel)
             else:
-                self.main_sel = groups[0]
+                if mainGroup:
+                    self.main_sel = mainGroup
         self.stack.checkAdd()
 
     def slotMain(self, text):
         self.main_sel = unicode(text)
+        self.stack.checkAdd()
 
     def slotToggle(self, bool):
         group = self.groups.firstChild()
@@ -377,8 +390,13 @@ class Guide(QWidget):
         if not err and p.u_password.text() == None:
             err = i18n("Passwords don't match.")
 
-        if not err and p.u_id.text() == "":
-            err = i18n("You must enter a user ID or use the auto selection.")
+        if not err:
+            if p.u_id.text() == "":
+                err = i18n("You must enter a user ID or use the auto selection.")
+            elif not p.u_id.text() == "auto":
+                uid = int(p.u_id.text())
+                if uid < 1000 or uid > 65535:
+                    err = i18n("You must enter a user ID between 999 and 65535.")
 
         nick = p.u_name.text()
 
@@ -388,6 +406,9 @@ class Guide(QWidget):
         if not err and nick in p.u_name.usednames:
             err = i18n("This user name is used by another user.")
 
+        if not err and not p.u_id.text() == 'auto' and int(p.u_id.text()) in p.u_id.usedids:
+            err = i18n("This user ID is used by another user.")
+
         if not err:
             if len(nick) > 0 and nick[0] >= "0" and nick[0] <= "9":
                 err = i18n("User name must not start with a number.")
@@ -395,12 +416,58 @@ class Guide(QWidget):
         if not err and p.u_groups.text() == "":
             err = i18n("You should select at least one group this user belongs to.")
 
+        def isRealNameDirty():
+            if p.u_realname.text() == p.editdict['realname']:
+                return False
+            return True
+
+        def isShellDirty():
+            if p.u_shell.text() == p.editdict['shell']:
+                return False
+            return True
+
+        def isPasswordDirty():
+            if p.u_password.text() == "":
+                return False
+            return True
+
+        def isGroupsDirty():
+            groups = []
+            for gr in p.editdict['groups']:
+                groups.append(gr)
+            # current (changed!) groups
+            u_groups = p.u_groups.text().split(',')
+            diff_list = list(set(u_groups).symmetric_difference(set(groups)))
+            if len(diff_list) == 0:
+                return False
+            return True
+
+        def isAdminCheckDirty():
+            if (p.u_isWheel and not p.checkBoxAdmin.isChecked()) or (not p.u_isWheel and p.checkBoxAdmin.isChecked()):
+                return True
+            return False
+
+        def isPolicyDirty():
+            if len(p.u_operations) == 0:
+                return False
+            return True
+
+        def isMainGroupDirty():
+            if p.editdict['gid'] == p.findGroupID(p.u_policygrouptab.groupsWidget.groups, p.u_policygrouptab.groupsWidget.main_sel):
+                return False
+            return True
+
         if err:
             self.info.setText(u"<font color=red>%s</font>" % err)
             self.ok_but.setEnabled(False)
         else:
             self.info.setText("")
             self.ok_but.setEnabled(True)
+            if p.edit:
+                if isRealNameDirty() or isPasswordDirty() or isShellDirty() or isGroupsDirty() or isAdminCheckDirty() or isPolicyDirty() or isMainGroupDirty():
+                    p.setDirty(True)
+                else:
+                    p.setDirty(False)
 
         return err
 
@@ -419,6 +486,7 @@ class UserStack(QVBox):
         QVBox.__init__(self, parent)
         self.setMargin(6)
         self.setSpacing(6)
+        self.edit = edit
 
         self.mainwidget = parent
 
@@ -455,6 +523,10 @@ class UserStack(QVBox):
         self.u_home = Homedir(w, grid, edit)
 
         self.u_shell = Shell(self, w, grid)
+
+        self.u_isWheel = False
+
+        self.editdict = None
 
         line = QFrame(w)
         line.setFrameStyle(QFrame.HLine | QFrame.Sunken)
@@ -494,14 +566,27 @@ class UserStack(QVBox):
         hb.setSpacing(12)
         QLabel(" ", hb)
         if edit:
-            but = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
-            self.connect(but, SIGNAL("clicked()"), self.slotEdit)
+            self.applyButton = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+            self.connect(self.applyButton, SIGNAL("clicked()"), self.slotEdit)
+            self.applyButton.setEnabled(False)
+            self.guide.ok_but = self.applyButton
         else:
-            but = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
-            self.connect(but, SIGNAL("clicked()"), self.slotAdd)
-        self.guide.ok_but = but
+            self.addButton = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+            self.connect(self.addButton, SIGNAL("clicked()"), self.slotAdd)
+            self.guide.ok_but = self.addButton
         but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
+
+    def findGroupID(self, list, name):
+        it = list.firstChild()
+        while it:
+            if it.name == name:
+                return it.gid
+            it = it.nextSibling()
+        return -1
+
+    def setDirty(self, isDirty):
+        self.applyButton.setEnabled(isDirty)
 
     def slotAddAdministrator(self):
         tmpGroups =  self.u_groups.text().split(",")
@@ -546,13 +631,18 @@ class UserStack(QVBox):
                 if ret == KMessageBox.Cancel:
                     return
             dict["groups"] = tmp.split(",")
-
+        else:
+            dict["groups"] = tmp.split(",")
         if len(dict) > 1:
             self.guide.op_start(i18n("Changing user information..."))
 
-            # synchronous call 'setuser'
-            self.mainwidget.link.User.Manager["baselayout"].setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
-            self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
+            try:
+                # synchronous call 'setuser'
+                self.mainwidget.link.User.Manager["baselayout"].setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
+                self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
+            except:
+                self.parent().slotCancel()
+                return
 
             for key in self.u_operations.keys():
                 value = self.u_operations[key]
@@ -619,10 +709,11 @@ class UserStack(QVBox):
         self.checkAdd()
         self.checkBoxAdmin.setChecked(False)
 
-    def startAdd(self, groups, names):
+    def startAdd(self, groups, names, ids):
         self.u_groups.populate(groups)
         self.reset()
         self.u_name.usednames = names
+        self.u_id.usedids = ids
         self.u_groups.setText(["users", "pnp", "pnpadmin", "removable", "disk", "audio", "video", "power", "dialout"])
         self.guide.op_end()
         self.u_realname.name.setFocus()
@@ -638,22 +729,27 @@ class UserStack(QVBox):
                 return
             nick, name, gid, homedir, shell, groups = args
             dict = {}
-            self.u_id.setText(str(uid))
             dict["uid"] = uid
-            self.u_name.setText(nick)
-            self.u_realname.setText(name)
             dict["realname"] = name
-            self.u_home.setText(homedir)
-            self.u_shell.setText(shell)
             dict["shell"] = shell
-            self.u_groups.setText(groups)
             dict["groups"] = groups
             dict["password"] = ""
+            dict["gid"] = gid
             self.editdict = dict
+            self.u_id.setText(str(uid))
+            self.u_name.setText(nick)
+            self.u_realname.setText(name)
+            self.u_home.setText(homedir)
+            self.u_shell.setText(shell)
+            self.u_groups.setText(groups)
             self.guide.op_end()
+            self.applyButton.setEnabled(False)
 
             if "wheel" in self.u_groups.text():
                 self.checkBoxAdmin.setChecked(True)
+                self.u_isWheel = True
+            else:
+                self.u_isWheel = False
 
         self.mainwidget.link.User.Manager["baselayout"].userInfo(uid, async=userInfo)
 
@@ -665,7 +761,7 @@ class PolicyGroupTab(KTabWidget):
         hb = QHBox(self)
         hb.setSpacing(12)
         hb.setMargin(6)
-        self.policytab = PolicyTab(hb, mainwidget, uid, edit)
+        self.policytab = PolicyTab(hb, mainwidget, stack, uid, edit)
         self.addTab(hb, i18n("Authorizations"))
 
         #add groups tab
@@ -679,7 +775,7 @@ class PolicyGroupTab(KTabWidget):
         self.policytab.reset()
 
 class PolicyTab(QVBox):
-    def __init__(self, parent, mainwidget, uid, edit):
+    def __init__(self, parent, mainwidget, stack, uid, edit):
         QVBox.__init__(self, parent)
         self.policyview = KListView(self)
         self.policyview.setRootIsDecorated(True)
@@ -690,6 +786,7 @@ class PolicyTab(QVBox):
         self.mainwidget = mainwidget
         self.operations = {}
         self.inOperation = False
+        self.stack = stack
 
         #add radio buttons
         w = QButtonGroup(self)
@@ -711,10 +808,16 @@ class PolicyTab(QVBox):
         lbl = QLabel("   ", w)
         hb.addWidget(lbl)
         self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
-        self.connect(self.authorized, SIGNAL("toggled(bool)"), self.passwordCheck.setEnabled)
+        self.connect(self.authorized, SIGNAL("toggled(bool)"), self.slotAuthorized)
         self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
         hb.addWidget(self.passwordCheck, 1)
         hb.addStretch(3)
+
+        self.selectionPopup = QPopupMenu(self)
+        self.selectionPopup.insertItem(i18n("Apply all"), self.slotAuthAll)
+        self.selectionPopup.insertItem(i18n("Apply only this category"), self.slotAuthAllForCategory)
+        self.selectionPopup.insertSeparator(2)
+        self.resetID = self.selectionPopup.insertItem(i18n("Reset"), self.slotResetChanges)
 
         #disable buttons about policy until one of the policies is selected
         self.setPolicyButtonsEnabled(False)
@@ -724,11 +827,109 @@ class PolicyTab(QVBox):
 
         self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
         self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
+        self.connect(self.policyview, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.showPopup)
+
+
+    def showPopup(self, item, point, column):
+        if item.depth() != 1:
+            return
+        else:
+            self.checkResetStatus()
+            self.selectionPopup.exec_loop(qt.QCursor.pos())
+
+    def checkResetStatus(self):
+        if len(self.operations) > 0:
+            self.selectionPopup.setItemEnabled(self.resetID, True)
+        else:
+            self.selectionPopup.setItemEnabled(self.resetID, False)
+
+    def slotResetChanges(self):
+        self.operations.clear()
+        self.reset()
+        self.stack.checkAdd()
+
+    def slotAuthAllForCategory(self):
+        item = self.policyview.selectedItem()
+        if not item or item.depth() != 1:
+            return
+
+        def categoryAuth(item, package, exception, auths):
+            if not auths:
+                return
+            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+            storedAuths = {}
+            for i in auths:
+                storedAuths[i["action_id"]] = i["negative"]
+            it = item.parent().firstChild()
+            while it:
+                if it.id == item.id:
+                    it = it.nextSibling()
+                    continue
+                self.checkItemStatus(it, storedAuths)
+                it = it.nextSibling()
+            self.stack.checkAdd()
+
+        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.parent().name, async=functools.partial(categoryAuth, item))
+
+    def checkItemStatus(self, item, storedAuths):
+        icon = "yes"
+        if item.id in storedAuths.keys():
+            # saved as blocked
+            if storedAuths[item.id]:
+                if self.authorized.isOn():
+                    if self.passwordCheck.isChecked():
+                        self.operations[item.id] = "grant"
+                    else:
+                        self.operations[item.id] = "block_revoke"
+                elif self.blocked.isOn():
+                    icon = "no"
+                    if self.operations.has_key(item.id):
+                        self.operations.pop(item.id)
+            # negative = False. granted.
+            elif not storedAuths[item.id]:
+                if self.authorized.isOn():
+                    if self.passwordCheck.isChecked():
+                        if self.operations.has_key(item.id):
+                            self.operations.pop(item.id)
+                    else:
+                        self.operations[item.id] = "grant_revoke"
+                elif self.blocked.isOn():
+                    self.operations[item.id] = "block"
+                    icon = "no"
+        else:
+            if self.authorized.isOn() and self.passwordCheck.isChecked():
+                self.operations[item.id] = "grant"
+            elif self.blocked.isOn():
+                self.operations[item.id] = "block"
+                icon = "no"
+            else:
+                if self.operations.has_key(item.id):
+                    self.operations.pop(item.id)
+        item.setAuthIcon(icon)
+
+    def slotAuthAll(self):
+        def listUserAuthorizations(package, exception, auths):
+            if exception:
+                return
+            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+            storedAuths = {}
+            for i in auths:
+                storedAuths[i["action_id"]] = i["negative"]
+            it = QListViewItemIterator(self.policyview)
+            item = it.current()
+            while item:
+                if item.depth() == 1:
+                    self.checkItemStatus(item, storedAuths)
+                it += 1
+                item = it.current()
+            self.stack.checkAdd()
+
+        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
     def reset(self):
         it = self.policyview.firstChild()
         while it:
-            #it.setOpen(False)
+            it.setOpen(False)
             it = it.nextSibling()
         self.setPolicyButtonsEnabled(False)
         self.policyview.clearSelection()
@@ -743,7 +944,7 @@ class PolicyTab(QVBox):
         allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for cats in categories:
-            catitem = KListViewItem(self.policyview, i18n(categories[cats][0]))
+            catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
             catitem.setPixmap(0, getIcon(categories[cats][1]))
             cats = cats.split('|')
             for category in cats:
@@ -756,8 +957,11 @@ class PolicyTab(QVBox):
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
         if enable and self.blocked.isOn():
-            return
-        self.passwordCheck.setEnabled(enable)
+            self.passwordCheck.setEnabled(False)
+        elif enable and self.authorized.isOn():
+            self.passwordCheck.setEnabled(True)
+        else:
+            self.passwordCheck.setEnabled(False)
 
     def listviewClicked(self, item):
         if not item:
@@ -768,6 +972,14 @@ class PolicyTab(QVBox):
             self.setPolicyButtonsEnabled(True)
             self.actionClicked(item)
 
+    def checkNegativeAndCall(self, item, method):
+        def checkNegative(method, package, exception, negative):
+            if exception:
+                return
+            method(item, negative[0])
+            self.stack.checkAdd()
+        self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), item.id, async=functools.partial(checkNegative, method))
+
     def passwordCheckSlot(self, toggle):
         if self.inOperation:
             return
@@ -777,18 +989,29 @@ class PolicyTab(QVBox):
             return
 
         if toggle:
-            #grant
-            #self.ch = self.mainwidget.callMethod("grantAuthorization", "tr.org.pardus.comar.user.manager.grantauthorization")
-            if item.id in self.operations.keys() and self.operations[item.id] == "grant_revoke":
-                self.operations.pop(item.id)
-            else:
-                self.operations[item.id] = "grant"
+            self.checkNegativeAndCall(item, self.passwordCheckChecked)
         else:
-            #revoke
-            if item.id in self.operations.keys() and self.operations[item.id] == "grant":
-                self.operations.pop(item.id)
-            else:
+            self.checkNegativeAndCall(item, self.passwordCheckUnchecked)
+
+    def passwordCheckChecked(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                self.operations[item.id] = "grant"
+            else: # grant
+                if item.id in self.operations.keys():
+                    self.operations.pop(item.id)
+        else: # not registered
+            self.operations[item.id] = "grant"
+
+    def passwordCheckUnchecked(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                self.operations[item.id] = "block_revoke"
+            else: # grant
                 self.operations[item.id] = "grant_revoke"
+        else: # not registered
+            if item.id in self.operations.keys():
+                self.operations.pop(item.id)
 
     def blockedSlot(self, toggle):
         item = self.policyview.selectedItem()
@@ -799,22 +1022,49 @@ class PolicyTab(QVBox):
             item.setAuthIcon("no")
             if self.inOperation:
                 return
+            self.checkNegativeAndCall(item, self.doBlock)
 
-            #block
-            if item.id in self.operations.keys() and self.operations[item.id] == "block_revoke":
-                self.operations.pop(item.id)
-            else:
+    def doBlock(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                if item.id in self.operations.keys():
+                    self.operations.pop(item.id)
+            else: # granted
                 self.operations[item.id] = "block"
         else:
+            self.operations[item.id] = "block"
+
+    def slotAuthorized(self, toggle):
+        item = self.policyview.selectedItem()
+        if not item or item.depth() != 1:
+            return
+        self.passwordCheck.setEnabled(toggle)
+
+        if toggle:
             item.setAuthIcon("yes")
             if self.inOperation:
                 return
+            self.checkNegativeAndCall(item, self.doAuthorize)
 
-            #revoke
-            if item.id in self.operations.keys() and self.operations[item.id] == "block":
-                self.operations.pop(item.id)
+    def doAuthorize(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                if self.authorized.isOn() and self.passwordCheck.isChecked():
+                    self.operations[item.id] = "grant"
+                else:
+                    self.operations[item.id] = "block_revoke"
+            else: # granted
+                if self.authorized.isOn() and self.passwordCheck.isChecked():
+                    if item.id in self.operations.keys():
+                        self.operations.pop(item.id)
+                else:
+                    self.operations[item.id] = "grant_revoke"
+        else: # not registered
+            if self.authorized.isOn() and self.passwordCheck.isChecked():
+                self.operations[item.id] = "grant"
             else:
-                self.operations[item.id] = "block_revoke"
+                if item.id in self.operations.keys():
+                    self.operations.pop(item.id)
 
     def listviewExpanded(self, item):
         if not item: # or self.policyview.selectedItem()
@@ -833,8 +1083,12 @@ class PolicyTab(QVBox):
 
         def setIcons(auths):
             blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
+
             if self.operations:
                 # add selections done via user-manager
+                for op in self.operations:
+                    if op in blocks:
+                        blocks.remove(op)
                 blocks.extend(filter(lambda x: self.operations[x] == "block", self.operations.keys()))
                 blocks = list(set(blocks))
 
@@ -879,7 +1133,7 @@ class PolicyTab(QVBox):
             self.inOperation = False
             return
 
-        #if it is a new user, default is authorized
+        # if it is a new user, default is authorized
         if not self.edit:
             self.authorized.setOn(True)
             self.passwordCheck.setChecked(False)
@@ -928,6 +1182,11 @@ class PolicyTab(QVBox):
 
         self.inOperation = False
 
+class CategoryItem(KListViewItem):
+    def __init__(self, parent, label, name):
+        KListViewItem.__init__(self, parent, label)
+        self.name = name
+
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
         KListViewItem.__init__(self, parent, desc)
@@ -941,3 +1200,4 @@ class ActionItem(KListViewItem):
 
     def setAuthIcon(self, state):
         self.setPixmap(0, getIcon(self.states[state]))
+
