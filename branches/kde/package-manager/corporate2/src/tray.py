@@ -194,5 +194,5 @@ class Tray(QtGui.QSystemTrayIcon, PTray):
 
     def showPopup(self):
         if self._ready_to_popup():
-            self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", self.unread))
+            Pds.notify(i18n('Updates'), i18n("There are %1 updates available!", self.unread))
 
