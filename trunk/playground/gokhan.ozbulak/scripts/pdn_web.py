@@ -61,9 +61,9 @@ class PackageDiffNotify:
 
         return packagers
 
-
     def master_fetch(self):
         self.fetch_repos()
+        self.update_repos()
         for packager,mail in self.fetch_packagers().items():
             # Serialize the object storing info about package(s) to keep it in file
             pickle.dump(self.REPOS[packager], open(os.path.join(self.PACKAGERSDIR, "%s.%s" %(packager, mail)), "w"))
@@ -84,6 +84,69 @@ class PackageDiffNotify:
                             for tmp_packager in tmp_packager_list:
                                 if tmp_packager not in self.CONFLICT_DICT[spec.source.name]:
                                     self.CONFLICT_DICT[spec.source.name].append(tmp_packager)
+                break
+
+    def update_repos(self):
+        ''' This function updates REPOS structure based on CONFLICT_DICT and OBSOLETE_DICT structures '''
+
+        # MODIFY HERE DUDE #
+        package_history = []
+
+        for packager in self.fetch_packagers().keys():
+            package_list = REPOS[packager].keys()
+            for package in package_list:
+                # No need to replicate same info for obsolete package in content
+                # Must consider as reversible
+                if OBSOLETE_DICT.has_key(package):
+                    if OBSOLETE_DICT[package] in package_history:
+                        continue
+                omit_package = False
+                for item in package_history:
+                    if OBSOLETE_DICT.has_key(item):
+                        if OBSOLETE_DICT[item] == package:
+                            omit_package = True
+                            break
+
+                if omit_package:
+                    continue
+
+                summary_dict = {}
+                for distro in DISTRO_LIST:
+                    if REPOS[packager].has_key(package):
+                        if distro in REPOS[packager][package][3]:
+                            summary_dict[distro] = create_summary_entry(packager, package, distro)
+                        else:
+                            if OBSOLETE_DICT.has_key(package):
+                                pck = OBSOLETE_DICT[package]
+                            else:
+                                pck = package
+
+                            for pckgr in CONFLICT_DICT[pck]:
+                                if REPOS[pckgr].has_key(pck):
+                                    if distro in REPOS[pckgr][pck][DISTROS]:
+                                        summary_dict[distro] = create_summary_entry(pckgr, pck, distro)
+                                if OBSOLETE_DICT.has_key(package) and REPOS[pckgr].has_key(package):
+                                    if distro in REPOS[pckgr][package][DISTROS]:
+                                        summary_dict[distro] = create_summary_entry(pckgr, package, distro)
+
+                            # Look for obsolete packages if no new package in distro
+                            for obsolete, new in OBSOLETE_DICT.items():
+                                # There may be more than one replace, no break
+                                # {openoffice->libreoffice}, {openoffice3->libreoffice}
+                                if new == package:
+                                    if CONFLICT_DICT.has_key(new):
+                                        for pckgr in CONFLICT_DICT[new]:
+                                            if REPOS[pckgr].has_key(obsolete):
+                                                if distro in REPOS[pckgr][obsolete][DISTROS]:
+                                                    summary_dict[distro] = create_summary_entry(pckgr, obsolete, distro)
+                if not is_summary_dict_empty(summary_dict):
+                    if not OPTIONS.allpackages:
+                        if not is_summary_dict_diff(summary_dict, package):
+                            continue
+                    package_history.append(package)
+                    content = "%s%s\n%s\n%s\n\n" % (content, package, len(package) * "-", create_stanza(summary_dict))
+
+            return content
 
     def reset_subfields(self):
         self.REPOS = {}
