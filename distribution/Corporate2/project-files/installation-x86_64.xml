@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="gzip">
-    <Title>Pardus Corporate 2 RC x86_64</Title>
+    <Title>Pardus Corporate 2 x86_64</Title>
     <WorkDir>/tmp/iso/x86_64</WorkDir>
     <ReleaseFiles>~/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
@@ -35,7 +35,6 @@
         <SelectedPackage>blueman</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
         <SelectedPackage>boot-manager</SelectedPackage>
-        <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>byobu</SelectedPackage>
         <SelectedPackage>ccid</SelectedPackage>

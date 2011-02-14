@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd" compression="gzip">
-    <Title>Pardus Corporate 2 RC Live i686</Title>
+    <Title>Pardus Corporate 2 Live i686</Title>
     <WorkDir>/tmp/iso/i686</WorkDir>
     <ReleaseFiles>~/distribution/Corporate2/media-content</ReleaseFiles>
     <ExtraParameters>splash</ExtraParameters>
