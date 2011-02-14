@@ -30,6 +30,9 @@ from lider.helpers import plugins
 from lider.helpers import talk
 from lider.helpers import wrappers
 
+# Custom widgets
+from widgets.list_item import list_item
+
 
 class FormMain(QtGui.QWidget, Ui_FormMain):
     """
@@ -134,10 +137,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     status = talk.Offline
             node = self.nodes_cn[name]
             if status == talk.Online:
-                icon = wrappers.Icon("computer48", 32, [("online8", 1, 1)])
+                node.widget.set_status_icon(wrappers.Icon("online48"))
             else:
-                icon = wrappers.Icon("computer48")
-            node.setIcon(0, icon)
+                node.widget.set_status_icon()
 
     def __update_status(self, backend, status):
         """
@@ -249,13 +251,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
     def  __list_items(self, root=None):
         if not root:
-            root = QtGui.QTreeWidgetItem(self.treeComputers)
+            root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), "...", icon=wrappers.Icon("folder48"))
+            root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+
             root.dn = self.directory.directory_domain
             root.name = root.dn.split(",")[0].split("=")[1]
             root.folder = True
-            root.setText(0, self.directory.get_name())
-            root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
-            root.setIcon(0, wrappers.Icon("folder48"))
             return
 
         dn = root.dn
@@ -271,20 +272,19 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             if folder and "o" in attrs:
                 label = attrs["o"][0]
 
-            item = QtGui.QTreeWidgetItem(root)
+            item = list_item.add_tree_item(root, dn, label, "...", icon=wrappers.Icon("computer48"))
             item.dn = dn
             item.name = name
             item.folder = folder
-            item.setText(0, label)
 
             self.nodes_dn[dn] = item
 
             if fancy:
                 if folder:
                     item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
-                    item.setIcon(0, wrappers.Icon("folder48"))
+                    item.widget.set_icon(wrappers.Icon("folder48"))
                 elif user:
-                    item.setIcon(0, wrappers.Icon("user48"))
+                    item.widget.set_icon(wrappers.Icon("user48"))
                 else:
                     self.nodes_cn[name] = item
                     self.__update_icon(name)
