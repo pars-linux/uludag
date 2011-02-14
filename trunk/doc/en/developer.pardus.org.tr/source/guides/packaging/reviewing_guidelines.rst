@@ -39,7 +39,7 @@ own experiences when reviewing a package.
     #. `Pkgconfig(.pc)`_ situation should be examined and their package placement should be decided. 
 
 .. _package naming: http://developer.pardus.org.tr/guides/packaging/package_naming_guidelines.html
-.. _packaging guidelines: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.htm
+.. _packaging guidelines: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html
 .. _licensing guidelines: http://developer.pardus.org.tr/guides/licensing/licensing_guidelines.html
 .. _license short names: http://svn.pardus.org.tr/uludag/trunk/doc/en/licenses/
 .. _english: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#summary-and-description
