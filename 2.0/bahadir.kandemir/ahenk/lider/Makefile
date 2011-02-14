@@ -6,6 +6,8 @@ all:
 	pyuic4 lider/user.ui > lider/ui_user.py
 	pyrcc4 lider/data.qrc > lider/data_rc.py
 	
+	pyuic4 lider/widgets/list_item/list_item.ui > lider/widgets/list_item/ui_list_item.py
+	
 	pyuic4 lider/plugins/plugin_authentication/authentication.ui > lider/plugins/plugin_authentication/ui_authentication.py
 	pyrcc4 lider/plugins/plugin_authentication/authentication.qrc > lider/plugins/plugin_authentication/authentication_rc.py
 	
