@@ -152,20 +152,17 @@
         <section id="sect-Release_Notes-What_is_New_KDE">
             <title>Changes in KDE Desktop Environment</title>
             <para>
-                Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
+                Pardus &PRODVER; comes with 3rd generation KDE, KDE &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
             </para>
             <para>
-                KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version.
+                KDE &KDEVER; offers high performance, stability, usability for desktop experience.
             </para>
         </section>
 
         <section id="sect-Release_Notes-What_is_New_Visual">
             <title>Visual Enhancements</title>
             <para>
-                All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency.
-            </para>
-            <para>
-                Milky icon theme especially designed for Pardus is shipped within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>System Settings</emphasis>.
+                Tango and BC Tango icon themes are provided within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>Tasma</emphasis>.
             </para>
         </section>
 
@@ -173,7 +170,7 @@
             <title>Network Management</title>
             <para>
                 Besides switching to GNOME NetworkManager as the default networking backend, Pardus &PRODVER; comes with a heavily improved and modified KDE Network Management
-                tool and plasmoid to give their users a much more consistent networking experience.
+                tool to give their users a much more consistent networking experience.
             </para>
             <para>
                 With this new networking backend, users are now able to easily set up their Ethernet (With support for 802.1x authentication),
@@ -186,16 +183,13 @@
             <section id="sect-Release_Notes-What_is_New_Default_Applications_Mozilla_Firefox">
                 <title>Mozilla Firefox</title>
                 <para>
-                    Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default web browser application.
-                    New features of this Firefox release include Firefox Panorama, application tabs, a redesigned extension
-                    manager, Jetpack extensions support, integration with Firefox Sync, and support for multitouch displays.
+                    Pardus &PRODVER; comes with one of the most popular open source browsers, Mozilla Firefox &FIREFOXVER; as the default web browser application.
                 </para>
             </section>
             <section id="sect-Release_Notes-What_is_New_Default_Applications_Clementine">
-                <title>Clementine</title>
+                <title>Amarok</title>
                 <para>
-                    <emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it
-                    is well maintained and lightweight.
+                    <emphasis>Amarok</emphasis>, a cross-platform music player is set as the default audio playing application.
                 </para>
             </section>
             <section id="sect-Release_Notes-What_is_New_Default_Applications_SMplayer">
