@@ -461,7 +461,7 @@ msgstr "Dependencias, que se actualizarán también:"
 
 #: src/statemanager.py:129
 msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
-msgstr "Dependencias adicionales de los paquetes seleccionados, que también se modificarán:"
+msgstr "Dependencias de los paquetes seleccionados, que también requieren modificarse:"
 
 #: src/statemanager.py:168
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
@@ -476,7 +476,7 @@ msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2
 
 #: src/statemanager.py:173
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias, con un total de <b>%2</b>"
 
 #: src/statemanager.py:174
 msgid "in your basket."
