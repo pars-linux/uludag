@@ -61,7 +61,7 @@ app_data = [
     'src/service-manager.py',
     ('/usr/kde/3.5/share/icons/hicolor/128x128/apps', ['src/service_manager.png']),
     'src/sm_mainview.py',
-    'src/backend.py',
+    'src/sm_backend.py',
     'src/service_manager.ui',
     'src/sm_utility.py',
     'src/handler.py',
