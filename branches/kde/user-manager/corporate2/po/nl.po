@@ -5,24 +5,24 @@
 # Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
+# Antoon Tolboom <atolboo@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-02-15 14:59+0200\n"
-"PO-Revision-Date: 2008-06-27 23:33+0200\n"
-"Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
-">\n"
+"PO-Revision-Date: 2011-02-15 16:00+0100\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: browser.py:92
 msgid "Show system user and groups"
-msgstr "Toon systeemgebruikers en groepen"
+msgstr "Systeemgebruikers en groepen tonen"
 
 #: browser.py:102 browser.py:112
 msgid "ID"
@@ -58,32 +58,32 @@ msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %"
-"s<br>Gebruikersnaam: % s <br>ID: %d"
+"<big><b>Deze gebruiker verwijderen?</b></big><br><br>Naam: %s<br>"
+"Gebruikersnaam: % s <br>ID: %d"
 
 #: browser.py:143
 msgid "Delete User"
-msgstr "Verwijder gebruiker"
+msgstr "Gebruiker verwijderen"
 
 #: browser.py:144
 msgid "Delete user and files"
-msgstr "Verwijder gebruiker en bestanden"
+msgstr "Gebruiker en bestanden verwijderen"
 
 #: browser.py:145
 msgid "Delete user"
-msgstr "Verwijder gebruiker"
+msgstr "Gebruiker verwijderen"
 
 #: browser.py:158
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
-"<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
+"<big><b>Deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
 "s<br>ID: %d"
 
 #: browser.py:164 browser.py:165
 msgid "Delete Group"
-msgstr "Verwijder groep"
+msgstr "Groep verwijderen"
 
 #: groupedit.py:22 useredit.py:41
 msgid "ID:"
@@ -99,19 +99,19 @@ msgstr "Groepsnaam:"
 
 #: groupedit.py:97
 msgid "Enter a group ID or use auto selection"
-msgstr "Geef een groeps-id, of gebruik autoselectie"
+msgstr "Voer een groeps-ID in, of gebruik autoselectie"
 
 #: groupedit.py:100
 msgid "Enter a group name"
-msgstr "Geef een groepsnaam"
+msgstr "Voer een groepsnaam in"
 
 #: groupedit.py:129
 msgid "Enter Information For New Group"
-msgstr "Geef informatie voor de nieuwe groep"
+msgstr "Voer informatie voor de nieuwe groep in"
 
 #: groupedit.py:168
 msgid "Adding group..."
-msgstr "Toevoegen groep..."
+msgstr "Groep toevoegen..."
 
 #: user-manager.py:33
 msgid "User Management"
@@ -131,7 +131,7 @@ msgstr "Gebruiker/groep handelingen"
 
 #: useredit.py:27
 msgid "Network settings"
-msgstr "Netwerk instellingen"
+msgstr "Netwerkinstellingen"
 
 #: useredit.py:28
 msgid "Package operations"
@@ -151,11 +151,11 @@ msgstr "Kernel module handelingen"
 
 #: useredit.py:32
 msgid "Bootloader settings"
-msgstr "Bootlader handelingen"
+msgstr "Bootloader-handelingen"
 
 #: useredit.py:33
 msgid "Screen settings"
-msgstr "Scherm instellingen"
+msgstr "Scherminstellingen"
 
 #: useredit.py:88
 msgid "User name:"
@@ -171,7 +171,7 @@ msgstr "Persoonlijke map:"
 
 #: useredit.py:176
 msgid "Select user's home directory"
-msgstr "Selecteer de home map van de gebruiker"
+msgstr "Selecteer de persoonlijke map van de gebruiker"
 
 #: useredit.py:185
 msgid "Password:"
@@ -179,7 +179,7 @@ msgstr "Wachtwoord:"
 
 #: useredit.py:191
 msgid "Confirm password:"
-msgstr "Bevestig wachtwoord:"
+msgstr "Wachtwoord bevestigen:"
 
 #: useredit.py:219
 msgid "Shell:"
@@ -187,7 +187,7 @@ msgstr "Shell:"
 
 #: useredit.py:241
 msgid "Please specify an existing shell command"
-msgstr "Geef een bestaand shell-commando"
+msgstr "Voer een bestaand shell-commando in"
 
 #: useredit.py:243
 msgid "Specified shell command is not executable"
@@ -226,9 +226,8 @@ msgid "You must enter a user ID or use the auto selection."
 msgstr "Geef een gebruikers-id, of gebruik autoselectie."
 
 #: useredit.py:399
-#, fuzzy
 msgid "You must enter a user ID between 999 and 65535."
-msgstr "U dient een gebruikersnaam op te geven."
+msgstr "U dient een gebruiker-ID tussen 999 en 65535 op te geven."
 
 #: useredit.py:404
 msgid "You must enter a user name."
@@ -236,24 +235,23 @@ msgstr "U dient een gebruikersnaam op te geven."
 
 #: useredit.py:407
 msgid "This user name is used by another user."
-msgstr "Deze gebruikersnaam wordt al gebruikt."
+msgstr "Deze gebruikersnaam wordt al door een ander gebruiker gebruikt."
 
 #: useredit.py:410
-#, fuzzy
 msgid "This user ID is used by another user."
-msgstr "Deze gebruikersnaam wordt al gebruikt."
+msgstr "Deze gebruiker-ID wordt al door een andere gebruiker gebruikt."
 
 #: useredit.py:414
 msgid "User name must not start with a number."
-msgstr "Gebruikersnaam mag niet starten met een cijfer."
+msgstr "Gebruikersnaam mag niet met een cijfer beginnen."
 
 #: useredit.py:417
 msgid "You should select at least one group this user belongs to."
-msgstr "U dient minstens één groep kiezen waartoe deze gebruiker behoort."
+msgstr "U dient minstens één groep te kiezen waartoe deze gebruiker behoort."
 
 #: useredit.py:497
 msgid "Edit User's Information"
-msgstr "Bewerk gebruikersinformatie"
+msgstr "Gebruikersinformatie bewerken"
 
 #: useredit.py:499
 msgid "Enter Information For New User"
@@ -268,24 +266,24 @@ msgid ""
 "You are removing yourself from the 'wheel' system group, you might not use "
 "your administrator permissions after that."
 msgstr ""
-"U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk "
+"U wilt uzelf verwijderen van de 'wheel' systeemgroep, u kunt hierna mogelijk "
 "uw systeembeheerder permissies niet meer gebruiken."
 
 #: useredit.py:629
 msgid "Important Group Change"
-msgstr "Belangrijke groep wijziging"
+msgstr "Belangrijke groepwijziging"
 
 #: useredit.py:637
 msgid "Changing user information..."
-msgstr "Veranderen gebruikersinformatie..."
+msgstr "Gebruikersinformatie wijzigen..."
 
 #: useredit.py:662
 msgid "Adding user..."
-msgstr "Toevoegen gebruiker..."
+msgstr "Gebruiker toevoegen..."
 
 #: useredit.py:725
 msgid "Getting user information..."
-msgstr "Ophalen gebruikersinformatie..."
+msgstr "Gebruikersinformatie ophalen..."
 
 #: useredit.py:765
 msgid "Authorizations"
@@ -301,23 +299,23 @@ msgstr "Autoriseer"
 
 #: useredit.py:799
 msgid "Block"
-msgstr "Blok"
+msgstr "Blokkeer"
 
 #: useredit.py:810
 msgid "Do not ask password"
-msgstr "Vraag geen wachtwoord"
+msgstr "Geen wachtwoord vragen"
 
 #: useredit.py:818 useredit.py:823
 msgid "Apply this policy to all"
-msgstr ""
+msgstr "Dit beleid op alles toepassen"
 
 #: useredit.py:824
 msgid "Apply this policy to category"
-msgstr ""
+msgstr "Dit beleid op alle categorieën toepassen"
 
 #: useredit.py:826
 msgid "Reset"
-msgstr ""
+msgstr "Opnieuw instellen"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Kan niet verbinden met DBus."
