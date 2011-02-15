@@ -29,8 +29,8 @@ import comar
 import dbus
 import dbus.mainloop.qt3
 
-from handler import CallHandler
-from utils import *
+from fw_handler import CallHandler
+from fw_utils import *
 
 # Rules
 import rules
