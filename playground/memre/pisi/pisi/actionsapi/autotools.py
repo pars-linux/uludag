@@ -59,24 +59,26 @@ class RunTimeError(pisi.actionsapi.Error):
         self.value = value
         ctx.ui.error(value)
 
-def configure(parameters = ''):
+def configure(parameters = '', configure_cmd='./configure'):
     '''configure source with given parameters = "--with-nls --with-libusb --with-something-usefull"'''
 
-    if can_access_file('configure'):
+    if can_access_file(configure_cmd):
         gnuconfig_update()
 
-        cmd = './configure \
+        cmd = '%s \
                --prefix=/%s \
                --build=%s \
                --host=%s \
+               --target=%s \
                --mandir=/%s \
                --infodir=/%s \
                --datadir=/%s \
                --sysconfdir=/%s \
                --localstatedir=/%s \
                --libexecdir=/%s \
-               %s' % (get.defaultprefixDIR(), \
-                      get.HOST(), get.HOST(), get.manDIR(), \
+               %s' % (configure_cmd,
+                      get.defaultprefixDIR(), \
+                      get.BUILD(), get.HOST(), get.TARGET(), get.manDIR(), \
                       get.infoDIR(), get.dataDIR(), \
                       get.confDIR(), get.localstateDIR(), get.libexecDIR(), parameters)
 

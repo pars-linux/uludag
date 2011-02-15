@@ -29,7 +29,9 @@ def exportFlags():
     values = ctx.config.values
     sysroot = values.general.destinationdirectory
 
-    os.environ['HOST'] =  values.build.host
+    os.environ['BUILD']  = values.build.build
+    os.environ['HOST']   = values.build.host
+    os.environ['TARGET'] = values.build.target
     os.environ['CFLAGS'] = values.build.cflags
     os.environ['CXXFLAGS'] = values.build.cxxflags
     os.environ['LDFLAGS'] = values.build.ldflags
@@ -44,7 +46,6 @@ def exportFlags():
     if values.build.crosscompiling:
         os.environ['SYSROOT']   = sysroot
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
-        os.environ['BUILD']     = os.popen('gcc -dumpmachine').read().strip()
         os.environ['ARCH']      = values.general.architecture
 
         os.environ['CPPFLAGS']  = "%s -isystem%s/usr/include" % (values.build.cppflags, sysroot)
@@ -69,7 +70,9 @@ class Env(object):
             'src_name': 'SRC_NAME',
             'src_version': 'SRC_VERSION',
             'src_release': 'SRC_RELEASE',
+            'build': 'BUILD',
             'host': 'HOST',
+            'target': 'TARGET',
             'cflags': 'CFLAGS',
             'cxxflags': 'CXXFLAGS',
             'ldflags': 'LDFLAGS',

@@ -47,16 +47,15 @@ class Config(object):
     __metaclass__ = pisi.util.Singleton
 
     def __init__(self, options = Options()):
+        # Dirty workaround for buildfarm. I'm thinking on it.
+        # FIXME: remove this sh*t
         prog_name = sys.argv[0]
-        if prog_name == "pisi":
+        arch = prog_name.split('-')[-1]
+
+        # if program name is pisi-armv7l, then config file is pisi-armv7l.conf
+        cf_name = "/etc/pisi/pisi-%s.conf" % arch
+        if not os.access(cf_name, os.R_OK):
             cf_name = "/etc/pisi/pisi.conf"
-        else:
-            try:
-                # if program name is pisi-cross, config file is pisi-cross.conf
-                cf_name = "/etc/pisi/pisi-%s.conf" % prog_name.split('pisi-')[1]
-            except IndexError:
-                # fallback, def value
-                cf_name = "/etc/pisi/pisi.conf"
 
         self.set_options(options)
         self.values = pisi.configfile.ConfigurationFile(cf_name)
