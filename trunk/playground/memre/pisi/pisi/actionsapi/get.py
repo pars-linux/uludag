@@ -105,8 +105,14 @@ def srcDIR():
 def ARCH():
     return generals.architecture
 
+def BUILD():
+    return env.build
+
 def HOST():
     return env.host
+
+def TARGET():
+    return env.target
 
 def CHOST():
     # FIXME: Currently it behave same as HOST,
