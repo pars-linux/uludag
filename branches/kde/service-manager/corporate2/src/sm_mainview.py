@@ -14,7 +14,7 @@ from kdecore import *
 from kdeui import *
 
 from sm_utility import *
-from backend import Backend
+from sm_backend import Backend
 
 import kdedesigner
 from service_manager import formMain
