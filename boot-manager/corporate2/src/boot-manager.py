@@ -16,7 +16,7 @@ from kdecore import *
 from kdeui import *
 
 import bm_mainview
-from utility import *
+from bm_utility import *
 
 import dbus.mainloop.qt3
 import dbus

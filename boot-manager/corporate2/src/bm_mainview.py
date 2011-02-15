@@ -13,7 +13,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from utility import *
+from bm_utility import *
 from ui_elements import *
 
 import functools
@@ -21,7 +21,7 @@ import functools
 import dbus
 import time
 
-from backend import Backend
+from bm_backend import Backend
 
 BOOT_ACCESS, BOOT_ENTRIES, BOOT_SYSTEMS, BOOT_OPTIONS, BOOT_SET_ENTRY, \
 BOOT_SET_TIMEOUT, BOOT_UNUSED, BOOT_REMOVE_UNUSED, BOOT_REMOVE_UNUSED_LAST = xrange(1, 10)
