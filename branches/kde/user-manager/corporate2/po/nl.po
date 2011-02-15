@@ -9,43 +9,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-27 02:11+0300\n"
+"POT-Creation-Date: 2011-02-15 14:59+0200\n"
 "PO-Revision-Date: 2008-06-27 23:33+0200\n"
 "Last-Translator: W.P.M.H.I.A. Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/>\n"
+"Language-Team: Nederlands <http://liste.pardus.org.tr/pardus-translation-nl/"
+">\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
-
-#: groupedit.py:22 useredit.py:36
-msgid "ID:"
-msgstr "ID:"
-
-#: groupedit.py:30 useredit.py:48
-msgid "Select manually"
-msgstr "Handmatig selecteren"
-
-#: groupedit.py:61
-msgid "Group name:"
-msgstr "Groepsnaam:"
-
-#: groupedit.py:97
-msgid "Enter a group ID or use auto selection"
-msgstr "Geef een groeps-id, of gebruik autoselectie"
-
-#: groupedit.py:100
-msgid "Enter a group name"
-msgstr "Geef een groepsnaam"
-
-#: groupedit.py:129
-msgid "Enter Information For New Group"
-msgstr "Geef informatie voor de nieuwe groep"
-
-#: groupedit.py:168
-msgid "Adding group..."
-msgstr "Toevoegen groep..."
 
 #: browser.py:92
 msgid "Show system user and groups"
@@ -71,231 +44,74 @@ msgstr "Groepsnaam"
 msgid "Users"
 msgstr "Gebruikers"
 
-#: browser.py:120 useredit.py:682
+#: browser.py:120 useredit.py:772
 msgid "Groups"
 msgstr "Groepen"
 
-#: browser.py:135
+#: browser.py:130
 msgid "User Manager Help"
 msgstr "Gebruikersbeheer hulp"
 
-#: browser.py:142
+#: browser.py:137
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
 "s<br>ID: %d"
 msgstr ""
-"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %s<br>Gebruikersnaam: % "
-"s <br>ID: %d"
+"<big><b>Wilt u deze gebruiker verwijderen?</b></big><br><br>Naam: %"
+"s<br>Gebruikersnaam: % s <br>ID: %d"
 
-#: browser.py:148
+#: browser.py:143
 msgid "Delete User"
 msgstr "Verwijder gebruiker"
 
-#: browser.py:149
+#: browser.py:144
 msgid "Delete user and files"
 msgstr "Verwijder gebruiker en bestanden"
 
-#: browser.py:150
+#: browser.py:145
 msgid "Delete user"
 msgstr "Verwijder gebruiker"
 
-#: browser.py:167
+#: browser.py:158
 #, python-format
-msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr "<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %s<br>ID: %d"
+msgid ""
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr ""
+"<big><b>Wilt u deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
+"s<br>ID: %d"
 
-#: browser.py:173 browser.py:174
+#: browser.py:164 browser.py:165
 msgid "Delete Group"
 msgstr "Verwijder groep"
 
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "Kan niet verbinden met DBus."
+#: groupedit.py:22 useredit.py:41
+msgid "ID:"
+msgstr "ID:"
 
-#: um_mainview.py:43 um_mainview.py:63
-msgid "DBus Error"
-msgstr "DBus fout"
+#: groupedit.py:30 useredit.py:53
+msgid "Select manually"
+msgstr "Handmatig selecteren"
 
-#: um_mainview.py:59 useredit.py:857 useredit.py:913
-msgid "You are not authorized for this operation."
-msgstr "U bent niet geautoriseerd voor deze handeling."
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Groepsnaam:"
 
-#: um_mainview.py:67
-msgid "COMAR Error"
-msgstr "COMAR fout"
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Geef een groeps-id, of gebruik autoselectie"
 
-#: useredit.py:22
-msgid "User/group operations"
-msgstr "Gebruiker/groep handelingen"
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Geef een groepsnaam"
 
-#: useredit.py:23
-msgid "Network settings"
-msgstr "Netwerk instellingen"
+#: groupedit.py:129
+msgid "Enter Information For New Group"
+msgstr "Geef informatie voor de nieuwe groep"
 
-#: useredit.py:24
-msgid "Package operations"
-msgstr "Pakket handelingen"
-
-#: useredit.py:25
-msgid "Service operations"
-msgstr "Diensten handelingen"
-
-#: useredit.py:26
-msgid "Date/time operations"
-msgstr "Datum/tijd handelingen"
-
-#: useredit.py:27
-msgid "Kernel module operations"
-msgstr "Kernel module handelingen"
-
-#: useredit.py:28
-msgid "Bootloader settings"
-msgstr "Bootlader handelingen"
-
-#: useredit.py:29
-msgid "Screen settings"
-msgstr "Scherm instellingen"
-
-#: useredit.py:83
-msgid "User name:"
-msgstr "Gebruikersnaam:"
-
-#: useredit.py:114
-msgid "Full name:"
-msgstr "Volledige naam:"
-
-#: useredit.py:137
-msgid "Home:"
-msgstr "Persoonlijke map:"
-
-#: useredit.py:169
-msgid "Select user's home directory"
-msgstr "Selecteer de home map van de gebruiker"
-
-#: useredit.py:178
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: useredit.py:184
-msgid "Confirm password:"
-msgstr "Bevestig wachtwoord:"
-
-#: useredit.py:212
-msgid "Shell:"
-msgstr "Shell:"
-
-#: useredit.py:234
-msgid "Please specify an existing shell command"
-msgstr "Geef een bestaand shell-commando"
-
-#: useredit.py:236
-msgid "Specified shell command is not executable"
-msgstr "Opgegeven shell-commando is niet uitvoerbaar"
-
-#: useredit.py:263
-msgid "Group"
-msgstr "Groep"
-
-#: useredit.py:270
-msgid "Main group:"
-msgstr "Hoofdgroep:"
-
-#: useredit.py:363
-msgid "Start with typing this user's full name."
-msgstr "Begin met het typen van de volledige naam van deze gebruiker."
-
-#: useredit.py:366
-msgid "You should enter a password for this user."
-msgstr "U dient een wachtwoord voor deze gebruiker te geven."
-
-#: useredit.py:371
-msgid "Password must be longer."
-msgstr "Wachtwoord dient langer te zijn."
-
-#: useredit.py:375
-msgid "Don't use your full name or user name as a password."
-msgstr "Gebruik niet uw volledige naam of gebruikersnaam als wachtwoord."
-
-#: useredit.py:378
-msgid "Passwords don't match."
-msgstr "Wachtwoorden komen niet overeen."
-
-#: useredit.py:381
-msgid "You must enter a user ID or use the auto selection."
-msgstr "Geef een gebruikers-id, of gebruik autoselectie."
-
-#: useredit.py:386
-msgid "You must enter a user name."
-msgstr "U dient een gebruikersnaam op te geven."
-
-#: useredit.py:389
-msgid "This user name is used by another user."
-msgstr "Deze gebruikersnaam wordt al gebruikt."
-
-#: useredit.py:393
-msgid "User name must not start with a number."
-msgstr "Gebruikersnaam mag niet starten met een cijfer."
-
-#: useredit.py:396
-msgid "You should select at least one group this user belongs to."
-msgstr "U dient minstens één groep kiezen waartoe deze gebruiker behoort."
-
-#: useredit.py:429
-msgid "Edit User's Information"
-msgstr "Bewerk gebruikersinformatie"
-
-#: useredit.py:431
-msgid "Enter Information For New User"
-msgstr "Voer informatie voor nieuwe gebruiker in"
-
-#: useredit.py:467
-msgid "Give administrator privileges to this user"
-msgstr "Geef systeembeheerder privileges aan deze gebruiker"
-
-#: useredit.py:543
-msgid ""
-"You are removing yourself from the 'wheel' system group, you might not use "
-"your administrator permissions after that."
-msgstr ""
-"U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk "
-"uw systeembeheerder permissies niet meer gebruiken."
-
-#: useredit.py:544
-msgid "Important Group Change"
-msgstr "Belangrijke groep wijziging"
-
-#: useredit.py:551
-msgid "Changing user information..."
-msgstr "Veranderen gebruikersinformatie..."
-
-#: useredit.py:578
-msgid "Adding user..."
-msgstr "Toevoegen gebruiker..."
-
-#: useredit.py:641
-msgid "Getting user information..."
-msgstr "Ophalen gebruikersinformatie..."
-
-#: useredit.py:675
-msgid "Authorizations"
-msgstr "Autorisaties"
-
-#: useredit.py:693
-msgid "Actions"
-msgstr "Acties"
-
-#: useredit.py:704
-msgid "Authorize"
-msgstr "Autoriseer"
-
-#: useredit.py:708
-msgid "Block"
-msgstr "Blok"
-
-#: useredit.py:719
-msgid "Do not ask password"
-msgstr "Vraag geen wachtwoord"
+#: groupedit.py:168
+msgid "Adding group..."
+msgstr "Toevoegen groep..."
 
 #: user-manager.py:33
 msgid "User Management"
@@ -309,3 +125,208 @@ msgstr "Module gebruikersbeheer is al opgestart!"
 msgid "User Manager"
 msgstr "Gebruikersbeheer"
 
+#: useredit.py:26
+msgid "User/group operations"
+msgstr "Gebruiker/groep handelingen"
+
+#: useredit.py:27
+msgid "Network settings"
+msgstr "Netwerk instellingen"
+
+#: useredit.py:28
+msgid "Package operations"
+msgstr "Pakket handelingen"
+
+#: useredit.py:29
+msgid "Service operations"
+msgstr "Diensten handelingen"
+
+#: useredit.py:30
+msgid "Date/time operations"
+msgstr "Datum/tijd handelingen"
+
+#: useredit.py:31
+msgid "Kernel module operations"
+msgstr "Kernel module handelingen"
+
+#: useredit.py:32
+msgid "Bootloader settings"
+msgstr "Bootlader handelingen"
+
+#: useredit.py:33
+msgid "Screen settings"
+msgstr "Scherm instellingen"
+
+#: useredit.py:88
+msgid "User name:"
+msgstr "Gebruikersnaam:"
+
+#: useredit.py:119
+msgid "Full name:"
+msgstr "Volledige naam:"
+
+#: useredit.py:144
+msgid "Home:"
+msgstr "Persoonlijke map:"
+
+#: useredit.py:176
+msgid "Select user's home directory"
+msgstr "Selecteer de home map van de gebruiker"
+
+#: useredit.py:185
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: useredit.py:191
+msgid "Confirm password:"
+msgstr "Bevestig wachtwoord:"
+
+#: useredit.py:219
+msgid "Shell:"
+msgstr "Shell:"
+
+#: useredit.py:241
+msgid "Please specify an existing shell command"
+msgstr "Geef een bestaand shell-commando"
+
+#: useredit.py:243
+msgid "Specified shell command is not executable"
+msgstr "Opgegeven shell-commando is niet uitvoerbaar"
+
+#: useredit.py:271
+msgid "Group"
+msgstr "Groep"
+
+#: useredit.py:278
+msgid "Main group:"
+msgstr "Hoofdgroep:"
+
+#: useredit.py:376
+msgid "Start with typing this user's full name."
+msgstr "Begin met het typen van de volledige naam van deze gebruiker."
+
+#: useredit.py:379
+msgid "You should enter a password for this user."
+msgstr "U dient een wachtwoord voor deze gebruiker te geven."
+
+#: useredit.py:384
+msgid "Password must be longer."
+msgstr "Wachtwoord dient langer te zijn."
+
+#: useredit.py:388
+msgid "Don't use your full name or user name as a password."
+msgstr "Gebruik niet uw volledige naam of gebruikersnaam als wachtwoord."
+
+#: useredit.py:391
+msgid "Passwords don't match."
+msgstr "Wachtwoorden komen niet overeen."
+
+#: useredit.py:395
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Geef een gebruikers-id, of gebruik autoselectie."
+
+#: useredit.py:399
+#, fuzzy
+msgid "You must enter a user ID between 999 and 65535."
+msgstr "U dient een gebruikersnaam op te geven."
+
+#: useredit.py:404
+msgid "You must enter a user name."
+msgstr "U dient een gebruikersnaam op te geven."
+
+#: useredit.py:407
+msgid "This user name is used by another user."
+msgstr "Deze gebruikersnaam wordt al gebruikt."
+
+#: useredit.py:410
+#, fuzzy
+msgid "This user ID is used by another user."
+msgstr "Deze gebruikersnaam wordt al gebruikt."
+
+#: useredit.py:414
+msgid "User name must not start with a number."
+msgstr "Gebruikersnaam mag niet starten met een cijfer."
+
+#: useredit.py:417
+msgid "You should select at least one group this user belongs to."
+msgstr "U dient minstens één groep kiezen waartoe deze gebruiker behoort."
+
+#: useredit.py:497
+msgid "Edit User's Information"
+msgstr "Bewerk gebruikersinformatie"
+
+#: useredit.py:499
+msgid "Enter Information For New User"
+msgstr "Voer informatie voor nieuwe gebruiker in"
+
+#: useredit.py:539
+msgid "Give administrator privileges to this user"
+msgstr "Geef systeembeheerder privileges aan deze gebruiker"
+
+#: useredit.py:628
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr ""
+"U wilt uzelf verwijderen van de 'wiel' systeemgroep, u kunt hierna mogelijk "
+"uw systeembeheerder permissies niet meer gebruiken."
+
+#: useredit.py:629
+msgid "Important Group Change"
+msgstr "Belangrijke groep wijziging"
+
+#: useredit.py:637
+msgid "Changing user information..."
+msgstr "Veranderen gebruikersinformatie..."
+
+#: useredit.py:662
+msgid "Adding user..."
+msgstr "Toevoegen gebruiker..."
+
+#: useredit.py:725
+msgid "Getting user information..."
+msgstr "Ophalen gebruikersinformatie..."
+
+#: useredit.py:765
+msgid "Authorizations"
+msgstr "Autorisaties"
+
+#: useredit.py:783
+msgid "Actions"
+msgstr "Acties"
+
+#: useredit.py:795
+msgid "Authorize"
+msgstr "Autoriseer"
+
+#: useredit.py:799
+msgid "Block"
+msgstr "Blok"
+
+#: useredit.py:810
+msgid "Do not ask password"
+msgstr "Vraag geen wachtwoord"
+
+#: useredit.py:818 useredit.py:823
+msgid "Apply this policy to all"
+msgstr ""
+
+#: useredit.py:824
+msgid "Apply this policy to category"
+msgstr ""
+
+#: useredit.py:826
+msgid "Reset"
+msgstr ""
+
+#~ msgid "Unable to connect to DBus."
+#~ msgstr "Kan niet verbinden met DBus."
+
+#~ msgid "DBus Error"
+#~ msgstr "DBus fout"
+
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "U bent niet geautoriseerd voor deze handeling."
+
+#~ msgid "COMAR Error"
+#~ msgstr "COMAR fout"
