@@ -19,7 +19,7 @@ import dbus
 import dbus.mainloop.qt3
 
 import um_mainview
-from utility import *
+from um_utility import *
 
 mod_version = "2.2"
 mod_app = "user-manager"

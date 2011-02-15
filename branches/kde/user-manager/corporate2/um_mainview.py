@@ -15,10 +15,10 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-import browser
+import um_browser
 import useredit
 import groupedit
-from utility import *
+from um_utility import *
 
 import comar
 import dbus
@@ -30,7 +30,7 @@ class UserManager(QWidgetStack):
         self.link = comar.Link()
         self.link.setLocale()
 
-        self.browse = browser.BrowseStack(self)
+        self.browse = um_browser.BrowseStack(self)
         self.user = useredit.UserStack(self)
         self.useredit = useredit.UserStack(self, edit=True)
         self.group = groupedit.GroupStack(self)
