@@ -512,6 +512,13 @@
     }
 
 
+/* #QListWidget */
+
+    QListWidget QLabel {
+        color: #222222;
+    }
+
+
 /* #QCheckBox */
 
     QCheckBox {
