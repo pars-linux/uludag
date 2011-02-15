@@ -64,9 +64,9 @@ app_data = [
     'src/icons/linux.png',
     'src/icons/windows.png',
     'src/icons/other.png',
-    'src/utility.py',
+    'src/bm_utility.py',
     'src/ui_elements.py',
-    'src/backend.py',
+    'src/bm_backend.py',
     'src/boot-manager.desktop',
     'src/help',
 ]
