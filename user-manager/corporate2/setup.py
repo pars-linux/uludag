@@ -55,10 +55,10 @@ if "dist" in sys.argv:
 app_data = [
     'user-manager.py',
     'um_mainview.py',
-    'browser.py',
+    'um_browser.py',
     'useredit.py',
     'groupedit.py',
-    'utility.py',
+    'um_utility.py',
     'user-manager.desktop',
     'help'
 ]

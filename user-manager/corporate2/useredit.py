@@ -17,7 +17,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from utility import *
+from um_utility import *
 
 import polkit
 

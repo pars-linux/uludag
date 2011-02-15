@@ -14,8 +14,8 @@ from qt import *
 from kdecore import *
 from kdeui import *
 
-from utility import getIconSet
-from utility import HelpDialog
+from um_utility import getIconSet
+from um_utility import HelpDialog
 
 class UserItem(QListViewItem):
     def __init__(self, parent, uid, nick, name):
