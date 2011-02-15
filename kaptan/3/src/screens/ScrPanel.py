@@ -122,8 +122,12 @@ class Widget(PanelWidget, ScreenWidget):
         kickerConf.writeEntry("Alignment", self.getProperty(Kicker, "Alignment", "value"))
         kickerConf.sync()
 
-        # restart kicker
-        client.send("kicker", "kicker", "restart()", "")
+        if self.checkKickoff.isChecked():
+            # Restart kicker as switching to kickoff needs that
+            client.send("kicker", "kicker", "restart()", "")
+        else:
+            # For other things, configure() is faster and safer
+            client.send("kicker", "kicker", "configure()", "")
 
         """
         # we don't have a style-changing anymore.
