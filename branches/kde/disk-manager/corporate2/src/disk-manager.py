@@ -227,8 +227,8 @@ class diskForm(mainForm):
             for device in result[0]:
                 try:
                     dsk = parted.Disk(parted.Device(device))
-                except:
-                    pass #no medium found
+                except Exception, e:
+                    continue #no medium found
                 model = dsk.device.model
                 size = self.humanReadableSize(dsk.device.getSize(unit="B"))
                 label = "%s  (%s)\n%s" % (device, size, model)
