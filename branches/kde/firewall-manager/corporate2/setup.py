@@ -63,7 +63,7 @@ kdedistutils.setup(
     min_kde_version = "3.5.0",
     min_qt_version = "3.3.5",
     license = "GPL",
-    application_data = [ "src/dialog.ui", "src/firewall-config.py", "src/rules.py", "src/handler.py", "src/utils.py", "help",
+    application_data = [ "src/dialog.ui", "src/firewall-config.py", "src/rules.py", "src/fw_handler.py", "src/fw_utils.py", "help",
                          "src/default.png", "src/user-defined.png", "src/apply.png",
                         ("/usr/kde/3.5/share/icons/hicolor/128x128/apps", ["src/firewall_config.png"]),
                         ("/usr/kde/3.5/share/icons/hicolor/48x48/apps", ["src/fw-locked.png"]),
