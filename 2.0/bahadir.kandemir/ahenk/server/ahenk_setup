@@ -117,7 +117,7 @@ TEMP_JABBER = """{loglevel, 1}.
 {ldap_base, "%(ldap_domain)s"}.
 {ldap_rootdn, "cn=%(root_account)s, %(ldap_domain)s"}.
 {ldap_password, "%(password)s"}.
-{ldap_filter, "(|(objectClass=pardusComputer)(&(objectClass=organizationalRole)(cn=%(root_account)s)))"}.
+{ldap_filter, "(|(objectClass=pardusComputer)(objectClass=organizationalRole))"}.
 {shaper, normal, {maxrate, 100000}}.
 {shaper, fast, {maxrate, 500000}}.
 {acl, local, {user_regexp, ""}}.
