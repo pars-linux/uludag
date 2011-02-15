@@ -42,7 +42,6 @@ class AdvancedRuleCheckBox(QCheckBox):
             self.serviceName = message
 
         self.updateMessage(message)
-        self.isDragging = False
 
         self.pushEdit = IconButton(self, "configure")
         QToolTip.add(self.pushEdit, i18n("Edit Rule"))
@@ -100,27 +99,22 @@ class AdvancedRuleCheckBox(QCheckBox):
         self.show()
 
     def eventFilter(self, target, event):
-        if(event.type()==QEvent.MouseMove):
-            self.isDragging = True
-        elif(event.type()==QEvent.MouseButtonPress):
+        if(event.type()==QEvent.MouseButtonPress):
             self.fillColor = KGlobalSettings.buttonBackground()
             self.showButtons(True)
             self.entryView.setCurrentItem(self)
         elif(event.type()==QEvent.MouseButtonRelease):
-            if self.isDragging:
-                self.isDragging = False
-                if self.entryView.getCurrentItem():
-                    self.fillColor = KGlobalSettings.baseColor()
+            if self.entryView.getCurrentItem():
+                if self.entryView.getCurrentItem() != self:
+                    self.entryView.getCurrentItem().fillColor = KGlobalSettings.baseColor()
                     self.entryView.getCurrentItem().showButtons(False)
         elif(event.type()==QEvent.Enter):
-            if not self.isDragging:
-                self.fillColor = KGlobalSettings.buttonBackground()
-                self.showButtons(True)
-                self.entryView.setCurrentItem(self)
+            self.fillColor = KGlobalSettings.buttonBackground()
+            self.showButtons(True)
+            self.entryView.setCurrentItem(self)
         elif(event.type()==QEvent.Leave):
-            if not (self.entryView.getCurrentItem() and self.isDragging):
-                self.fillColor = KGlobalSettings.baseColor()
-                self.showButtons(False)
+            self.fillColor = KGlobalSettings.baseColor()
+            self.showButtons(False)
         return False
 
     def showButtons(self, b):
@@ -306,10 +300,17 @@ class EntryView(QScrollView):
             self.resizeContents(width, th)
 
     def checkItem(self, ports):
-        for x in self.entries:
-            if x.ports == ports:
-                return True
-        return False
+        iSet = set(ports.split(" "))
+        tmpArr = []
+        for it in self.entries:
+            lst = it.ports.split(" ")
+            for i in lst:
+                tmpArr.append(i)
+        sSet = set(tmpArr)
+        len(iSet.intersection(sSet))
+        if len(iSet.intersection(sSet)) == 0:
+            return False
+        return True
 
 class HelpDialog(QDialog):
     def __init__(self, name, title, parent=None):
