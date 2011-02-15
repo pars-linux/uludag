@@ -114,7 +114,16 @@ class Widget(PanelWidget, ScreenWidget):
         Kicker = qtxml.QDomElement
         Kicker = dom.elementsByTagName("kicker").item(0).toElement()
 
-        kickerConf.writeEntry("LegacyKMenu",not self.checkKickoff.isChecked())
+        shouldRestart = False
+
+        if kickerConf.readEntry("LegacyKMenu") == "1" \
+                and self.checkKickoff.isChecked():
+            shouldRestart = True
+        elif kickerConf.readEntry("LegacyKMenu") == "0" \
+                and not self.checkKickoff.isChecked():
+            shouldRestart = True
+
+        kickerConf.writeEntry("LegacyKMenu", not self.checkKickoff.isChecked())
         kickerConf.writeEntry("Transparent", self.getProperty(Kicker, "Transparent", "value"))
         kickerConf.writeEntry("SizePercentage", self.getProperty(Kicker, "SizePercentage", "value"))
         kickerConf.writeEntry("CustomSize", self.getProperty(Kicker, "CustomSize", "value"))
@@ -122,7 +131,7 @@ class Widget(PanelWidget, ScreenWidget):
         kickerConf.writeEntry("Alignment", self.getProperty(Kicker, "Alignment", "value"))
         kickerConf.sync()
 
-        if self.checkKickoff.isChecked():
+        if shouldRestart:
             # Restart kicker as switching to kickoff needs that
             client.send("kicker", "kicker", "restart()", "")
         else:
