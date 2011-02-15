@@ -24,7 +24,7 @@ import polkit
 import functools
 
 categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
-        "org.freedesktop.modem-manager|org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system|tr.org.pardus.comar.net": [I18N_NOOP("Network settings"), "network"],
+        "org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system|tr.org.pardus.comar.net.filter|tr.org.pardus.comar.net.share": [I18N_NOOP("Network settings"), "network"],
         "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "package"],
         "tr.org.pardus.comar.system.service": [I18N_NOOP("Service operations"), "ksysv"],
         "tr.org.pardus.comar.time": [I18N_NOOP("Date/time operations"), "history"],
@@ -813,9 +813,15 @@ class PolicyTab(QVBox):
         hb.addWidget(self.passwordCheck, 1)
         hb.addStretch(3)
 
+        w = QWidget(self)
+        hb = QHBoxLayout(w)
+        self.applyAllButton = QPushButton(i18n("Apply this policy to all"), w)
+        hb.addWidget(self.applyAllButton)
+        self.connect(self.applyAllButton, SIGNAL("clicked()"), self.slotAuthAll)
+
         self.selectionPopup = QPopupMenu(self)
-        self.selectionPopup.insertItem(i18n("Apply all"), self.slotAuthAll)
-        self.selectionPopup.insertItem(i18n("Apply only this category"), self.slotAuthAllForCategory)
+        self.selectionPopup.insertItem(i18n("Apply this policy to all"), self.slotAuthAll)
+        self.selectionPopup.insertItem(i18n("Apply this policy to category"), self.slotAuthAllForCategory)
         self.selectionPopup.insertSeparator(2)
         self.resetID = self.selectionPopup.insertItem(i18n("Reset"), self.slotResetChanges)
 
@@ -908,6 +914,9 @@ class PolicyTab(QVBox):
         item.setAuthIcon(icon)
 
     def slotAuthAll(self):
+        item = self.policyview.selectedItem()
+        if not item:
+            return
         def listUserAuthorizations(package, exception, auths):
             if exception:
                 return
@@ -956,6 +965,7 @@ class PolicyTab(QVBox):
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
+        self.applyAllButton.setEnabled(enable)
         if enable and self.blocked.isOn():
             self.passwordCheck.setEnabled(False)
         elif enable and self.authorized.isOn():
@@ -1014,14 +1024,14 @@ class PolicyTab(QVBox):
                 self.operations.pop(item.id)
 
     def blockedSlot(self, toggle):
+        if self.inOperation:
+            return
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
 
         if toggle:
             item.setAuthIcon("no")
-            if self.inOperation:
-                return
             self.checkNegativeAndCall(item, self.doBlock)
 
     def doBlock(self, item, negative):
@@ -1035,6 +1045,8 @@ class PolicyTab(QVBox):
             self.operations[item.id] = "block"
 
     def slotAuthorized(self, toggle):
+        if self.inOperation:
+            return
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
@@ -1042,8 +1054,6 @@ class PolicyTab(QVBox):
 
         if toggle:
             item.setAuthIcon("yes")
-            if self.inOperation:
-                return
             self.checkNegativeAndCall(item, self.doAuthorize)
 
     def doAuthorize(self, item, negative):
@@ -1167,6 +1177,7 @@ class PolicyTab(QVBox):
 
         if len(auths) == 0:
             self.authorized.setOn(True)
+            self.passwordCheck.setEnabled(True)
             self.passwordCheck.setChecked(False)
 
             self.inOperation = False
@@ -1175,9 +1186,11 @@ class PolicyTab(QVBox):
         if len(filter(lambda x: x['negative'], auths)) > 0:
             #if action is blocked
             self.blocked.setOn(True)
+            self.passwordCheck.setEnabled(False)
             self.passwordCheck.setChecked(False)
         else:
             self.authorized.setOn(True)
+            self.passwordCheck.setEnabled(True)
             self.passwordCheck.setChecked(True)
 
         self.inOperation = False

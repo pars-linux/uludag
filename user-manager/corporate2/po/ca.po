@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: User Manager per a Pardus en català\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-27 02:11+0300\n"
+"POT-Creation-Date: 2011-02-15 14:59+0200\n"
 "PO-Revision-Date: 2007-03-28 03:20+0100\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: Catalan translators Pardus <Pardus-translation-ca@uludag.org."
@@ -15,34 +15,6 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: groupedit.py:22 useredit.py:36
-msgid "ID:"
-msgstr "ID:"
-
-#: groupedit.py:30 useredit.py:48
-msgid "Select manually"
-msgstr "Selecciona manualment"
-
-#: groupedit.py:61
-msgid "Group name:"
-msgstr "Nom del grup:"
-
-#: groupedit.py:97
-msgid "Enter a group ID or use auto selection"
-msgstr "Introduïu una ID de grup o feu servir la selecció automàtica"
-
-#: groupedit.py:100
-msgid "Enter a group name"
-msgstr "Introduïu un nom per al grup"
-
-#: groupedit.py:129
-msgid "Enter Information For New Group"
-msgstr "Introduïu informació per al nou grup"
-
-#: groupedit.py:168
-msgid "Adding group..."
-msgstr "Afegim un grup..."
 
 #: browser.py:92
 msgid "Show system user and groups"
@@ -68,16 +40,16 @@ msgstr "Nom del grup"
 msgid "Users"
 msgstr "Usuaris"
 
-#: browser.py:120 useredit.py:682
+#: browser.py:120 useredit.py:772
 msgid "Groups"
 msgstr "Grups"
 
-#: browser.py:135
+#: browser.py:130
 msgid "User Manager Help"
 msgstr "Ajuda del gestor d'usuaris"
 
 # S'ha de traduir User Name?
-#: browser.py:142
+#: browser.py:137
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
@@ -86,20 +58,20 @@ msgstr ""
 "<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom: %s<br>Nom de "
 "l'usuari: %s<br>ID: %d"
 
-#: browser.py:148
+#: browser.py:143
 msgid "Delete User"
 msgstr "Suprimeix l'usuari"
 
-#: browser.py:149
+#: browser.py:144
 msgid "Delete user and files"
 msgstr "Suprimeix l'usuari i els arxius"
 
-#: browser.py:150
+#: browser.py:145
 msgid "Delete user"
 msgstr "Suprimeix l'usuari"
 
 # S'ha de traduir Group Name?
-#: browser.py:167
+#: browser.py:158
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
@@ -107,200 +79,37 @@ msgstr ""
 "<big><b>Que voleu eliminar aquest usuari?</b></big><br><br>Nom del grup: %"
 "s<br>ID: %d"
 
-#: browser.py:173 browser.py:174
+#: browser.py:164 browser.py:165
 msgid "Delete Group"
 msgstr "Suprimeix el grup"
 
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr ""
+#: groupedit.py:22 useredit.py:41
+msgid "ID:"
+msgstr "ID:"
 
-#: um_mainview.py:43 um_mainview.py:63
-msgid "DBus Error"
-msgstr ""
+#: groupedit.py:30 useredit.py:53
+msgid "Select manually"
+msgstr "Selecciona manualment"
 
-#: um_mainview.py:59 useredit.py:857 useredit.py:913
-#, fuzzy
-msgid "You are not authorized for this operation."
-msgstr "Ho sent. No teniu autorització per a fer això"
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Nom del grup:"
 
-#: um_mainview.py:67
-msgid "COMAR Error"
-msgstr ""
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Introduïu una ID de grup o feu servir la selecció automàtica"
 
-#: useredit.py:22
-msgid "User/group operations"
-msgstr ""
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Introduïu un nom per al grup"
 
-#: useredit.py:23
-msgid "Network settings"
-msgstr ""
+#: groupedit.py:129
+msgid "Enter Information For New Group"
+msgstr "Introduïu informació per al nou grup"
 
-#: useredit.py:24
-msgid "Package operations"
-msgstr ""
-
-#: useredit.py:25
-msgid "Service operations"
-msgstr ""
-
-#: useredit.py:26
-msgid "Date/time operations"
-msgstr ""
-
-#: useredit.py:27
-msgid "Kernel module operations"
-msgstr ""
-
-#: useredit.py:28
-msgid "Bootloader settings"
-msgstr ""
-
-#: useredit.py:29
-msgid "Screen settings"
-msgstr ""
-
-#: useredit.py:83
-msgid "User name:"
-msgstr "Nom d'usuari:"
-
-#: useredit.py:114
-msgid "Full name:"
-msgstr "Nom complet:"
-
-#: useredit.py:137
-msgid "Home:"
-msgstr "Inici:"
-
-#: useredit.py:169
-msgid "Select user's home directory"
-msgstr "Seleccioneu el directori d'inici de l'usuari"
-
-#: useredit.py:178
-msgid "Password:"
-msgstr "Mot de pas:"
-
-#: useredit.py:184
-msgid "Confirm password:"
-msgstr "Repeteix el mot de pas:"
-
-#: useredit.py:212
-msgid "Shell:"
-msgstr "Intèrpret de comandaments (shell):"
-
-#: useredit.py:234
-msgid "Please specify an existing shell command"
-msgstr "Si us plau, especifiqueu una ordre de shell existent."
-
-#: useredit.py:236
-msgid "Specified shell command is not executable"
-msgstr "L'ordre de shell especificada no és executable"
-
-#: useredit.py:263
-msgid "Group"
-msgstr "Grup"
-
-#: useredit.py:270
-msgid "Main group:"
-msgstr "Grup principal:"
-
-#: useredit.py:363
-msgid "Start with typing this user's full name."
-msgstr "Comenceu a escriure el nom complet d'aquest usuari."
-
-#: useredit.py:366
-msgid "You should enter a password for this user."
-msgstr "Heu de donar un mot de pas per a aquest usuari"
-
-#: useredit.py:371
-msgid "Password must be longer."
-msgstr "El mot de pas ha de ser més llarg."
-
-#: useredit.py:375
-msgid "Don't use your full name or user name as a password."
-msgstr "No feu servir el nom complet o el nom d'usuari com a mot de pas."
-
-#: useredit.py:378
-msgid "Passwords don't match."
-msgstr "Els mots de pas són diferents"
-
-#: useredit.py:381
-msgid "You must enter a user ID or use the auto selection."
-msgstr ""
-"Heu d'introduir una ID per a l'usuari o fer servir la selecció automàtica."
-
-#: useredit.py:386
-msgid "You must enter a user name."
-msgstr "Heu d'introduir un nom per a l'usuari"
-
-#: useredit.py:389
-msgid "This user name is used by another user."
-msgstr "Aquest nom ja està registrat per a un altre usuari"
-
-#: useredit.py:393
-msgid "User name must not start with a number."
-msgstr "El nom d'usuari no pot començar amb un número"
-
-#: useredit.py:396
-msgid "You should select at least one group this user belongs to."
-msgstr "Heu d'escollir almenys un dels grups als quals pertany aquest usuari"
-
-#: useredit.py:429
-msgid "Edit User's Information"
-msgstr "Edita la informació de l'usuari"
-
-#: useredit.py:431
-msgid "Enter Information For New User"
-msgstr "Introduïu la informació per al nou usuari"
-
-#: useredit.py:467
-msgid "Give administrator privileges to this user"
-msgstr ""
-
-#: useredit.py:543
-msgid ""
-"You are removing yourself from the 'wheel' system group, you might not use "
-"your administrator permissions after that."
-msgstr ""
-"Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar "
-"els vostres permissos com a administrador."
-
-#: useredit.py:544
-msgid "Important Group Change"
-msgstr "Canvi de grup important"
-
-#: useredit.py:551
-msgid "Changing user information..."
-msgstr "S'està canviant la informació de l'usuari"
-
-#: useredit.py:578
-msgid "Adding user..."
-msgstr "Afegim l'usuari..."
-
-#: useredit.py:641
-msgid "Getting user information..."
-msgstr "Recopilem la informació de l'usuari..."
-
-#: useredit.py:675
-msgid "Authorizations"
-msgstr ""
-
-#: useredit.py:693
-msgid "Actions"
-msgstr ""
-
-#: useredit.py:704
-msgid "Authorize"
-msgstr ""
-
-#: useredit.py:708
-msgid "Block"
-msgstr ""
-
-#: useredit.py:719
-#, fuzzy
-msgid "Do not ask password"
-msgstr "Repeteix el mot de pas:"
+#: groupedit.py:168
+msgid "Adding group..."
+msgstr "Afegim un grup..."
 
 #: user-manager.py:33
 msgid "User Management"
@@ -313,6 +122,206 @@ msgstr "Ho sent. El mòdul del gestor d'usuaris ja està en marxa"
 #: user-manager.py:88
 msgid "User Manager"
 msgstr "Gestor d'usuaris"
+
+#: useredit.py:26
+msgid "User/group operations"
+msgstr ""
+
+#: useredit.py:27
+msgid "Network settings"
+msgstr ""
+
+#: useredit.py:28
+msgid "Package operations"
+msgstr ""
+
+#: useredit.py:29
+msgid "Service operations"
+msgstr ""
+
+#: useredit.py:30
+msgid "Date/time operations"
+msgstr ""
+
+#: useredit.py:31
+msgid "Kernel module operations"
+msgstr ""
+
+#: useredit.py:32
+msgid "Bootloader settings"
+msgstr ""
+
+#: useredit.py:33
+msgid "Screen settings"
+msgstr ""
+
+#: useredit.py:88
+msgid "User name:"
+msgstr "Nom d'usuari:"
+
+#: useredit.py:119
+msgid "Full name:"
+msgstr "Nom complet:"
+
+#: useredit.py:144
+msgid "Home:"
+msgstr "Inici:"
+
+#: useredit.py:176
+msgid "Select user's home directory"
+msgstr "Seleccioneu el directori d'inici de l'usuari"
+
+#: useredit.py:185
+msgid "Password:"
+msgstr "Mot de pas:"
+
+#: useredit.py:191
+msgid "Confirm password:"
+msgstr "Repeteix el mot de pas:"
+
+#: useredit.py:219
+msgid "Shell:"
+msgstr "Intèrpret de comandaments (shell):"
+
+#: useredit.py:241
+msgid "Please specify an existing shell command"
+msgstr "Si us plau, especifiqueu una ordre de shell existent."
+
+#: useredit.py:243
+msgid "Specified shell command is not executable"
+msgstr "L'ordre de shell especificada no és executable"
+
+#: useredit.py:271
+msgid "Group"
+msgstr "Grup"
+
+#: useredit.py:278
+msgid "Main group:"
+msgstr "Grup principal:"
+
+#: useredit.py:376
+msgid "Start with typing this user's full name."
+msgstr "Comenceu a escriure el nom complet d'aquest usuari."
+
+#: useredit.py:379
+msgid "You should enter a password for this user."
+msgstr "Heu de donar un mot de pas per a aquest usuari"
+
+#: useredit.py:384
+msgid "Password must be longer."
+msgstr "El mot de pas ha de ser més llarg."
+
+#: useredit.py:388
+msgid "Don't use your full name or user name as a password."
+msgstr "No feu servir el nom complet o el nom d'usuari com a mot de pas."
+
+#: useredit.py:391
+msgid "Passwords don't match."
+msgstr "Els mots de pas són diferents"
+
+#: useredit.py:395
+msgid "You must enter a user ID or use the auto selection."
+msgstr ""
+"Heu d'introduir una ID per a l'usuari o fer servir la selecció automàtica."
+
+#: useredit.py:399
+#, fuzzy
+msgid "You must enter a user ID between 999 and 65535."
+msgstr "Heu d'introduir un nom per a l'usuari"
+
+#: useredit.py:404
+msgid "You must enter a user name."
+msgstr "Heu d'introduir un nom per a l'usuari"
+
+#: useredit.py:407
+msgid "This user name is used by another user."
+msgstr "Aquest nom ja està registrat per a un altre usuari"
+
+#: useredit.py:410
+#, fuzzy
+msgid "This user ID is used by another user."
+msgstr "Aquest nom ja està registrat per a un altre usuari"
+
+#: useredit.py:414
+msgid "User name must not start with a number."
+msgstr "El nom d'usuari no pot començar amb un número"
+
+#: useredit.py:417
+msgid "You should select at least one group this user belongs to."
+msgstr "Heu d'escollir almenys un dels grups als quals pertany aquest usuari"
+
+#: useredit.py:497
+msgid "Edit User's Information"
+msgstr "Edita la informació de l'usuari"
+
+#: useredit.py:499
+msgid "Enter Information For New User"
+msgstr "Introduïu la informació per al nou usuari"
+
+#: useredit.py:539
+msgid "Give administrator privileges to this user"
+msgstr ""
+
+#: useredit.py:628
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr ""
+"Us esteu esborrant del grup de sistema 'wheel', després no podreu utilitzar "
+"els vostres permissos com a administrador."
+
+#: useredit.py:629
+msgid "Important Group Change"
+msgstr "Canvi de grup important"
+
+#: useredit.py:637
+msgid "Changing user information..."
+msgstr "S'està canviant la informació de l'usuari"
+
+#: useredit.py:662
+msgid "Adding user..."
+msgstr "Afegim l'usuari..."
+
+#: useredit.py:725
+msgid "Getting user information..."
+msgstr "Recopilem la informació de l'usuari..."
+
+#: useredit.py:765
+msgid "Authorizations"
+msgstr ""
+
+#: useredit.py:783
+msgid "Actions"
+msgstr ""
+
+#: useredit.py:795
+msgid "Authorize"
+msgstr ""
+
+#: useredit.py:799
+msgid "Block"
+msgstr ""
+
+#: useredit.py:810
+#, fuzzy
+msgid "Do not ask password"
+msgstr "Repeteix el mot de pas:"
+
+#: useredit.py:818 useredit.py:823
+msgid "Apply this policy to all"
+msgstr ""
+
+#: useredit.py:824
+msgid "Apply this policy to category"
+msgstr ""
+
+#: useredit.py:826
+msgid "Reset"
+msgstr ""
+
+#, fuzzy
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "Ho sent. No teniu autorització per a fer això"
 
 # S'ha de traduir Service comar start?
 #~ msgid ""

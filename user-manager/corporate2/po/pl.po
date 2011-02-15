@@ -2,41 +2,13 @@ msgid ""
 msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-06-27 02:11+0300\n"
+"POT-Creation-Date: 2011-02-15 14:59+0200\n"
 "PO-Revision-Date: 2007-06-30 19:59+0100\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-
-#: groupedit.py:22 useredit.py:36
-msgid "ID:"
-msgstr "ID:"
-
-#: groupedit.py:30 useredit.py:48
-msgid "Select manually"
-msgstr "Wybierz ręcznie"
-
-#: groupedit.py:61
-msgid "Group name:"
-msgstr "Nazwa grupy:"
-
-#: groupedit.py:97
-msgid "Enter a group ID or use auto selection"
-msgstr "Wpisz ID grupy lub użyj autoselekcji"
-
-#: groupedit.py:100
-msgid "Enter a group name"
-msgstr "Podaj nazwę grupy"
-
-#: groupedit.py:129
-msgid "Enter Information For New Group"
-msgstr "Podaj informacje o nowej grupie"
-
-#: groupedit.py:168
-msgid "Adding group..."
-msgstr "Dodawanie grupy..."
 
 #: browser.py:92
 msgid "Show system user and groups"
@@ -62,15 +34,15 @@ msgstr "Nazwa grupy"
 msgid "Users"
 msgstr "Użytkownicy"
 
-#: browser.py:120 useredit.py:682
+#: browser.py:120 useredit.py:772
 msgid "Groups"
 msgstr "Grupy"
 
-#: browser.py:135
+#: browser.py:130
 msgid "User Manager Help"
 msgstr "Pomoc - zarządzanie użytkownikami"
 
-#: browser.py:142
+#: browser.py:137
 #, python-format
 msgid ""
 "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
@@ -79,216 +51,55 @@ msgstr ""
 "<big><b>Powinienem usunąć tego użytkownika?</b></big><br><br>Nazwa: %"
 "s<br>Nazwa użytkownika: %s<br>ID: %d"
 
-#: browser.py:148
+#: browser.py:143
 msgid "Delete User"
 msgstr "Usuń Użytkownika"
 
-#: browser.py:149
+#: browser.py:144
 msgid "Delete user and files"
 msgstr "Usuń użytkownika oraz jego pliki"
 
-#: browser.py:150
+#: browser.py:145
 msgid "Delete user"
 msgstr "Usuń użytkownika"
 
-#: browser.py:167
+#: browser.py:158
 #, python-format
 msgid ""
 "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr "<big><b>Usunąć tą grupę?</b></big><br><br>Nazwa grupy: %s<br>ID: %d"
 
-#: browser.py:173 browser.py:174
+#: browser.py:164 browser.py:165
 msgid "Delete Group"
 msgstr "usuń grupę"
 
-#: um_mainview.py:43
-msgid "Unable to connect to DBus."
-msgstr "Nie mogę połączyć się z DBus."
+#: groupedit.py:22 useredit.py:41
+msgid "ID:"
+msgstr "ID:"
 
-#: um_mainview.py:43 um_mainview.py:63
-msgid "DBus Error"
-msgstr "Błąd DBus"
+#: groupedit.py:30 useredit.py:53
+msgid "Select manually"
+msgstr "Wybierz ręcznie"
 
-#: um_mainview.py:59 useredit.py:857 useredit.py:913
-msgid "You are not authorized for this operation."
-msgstr "Nie masz uprawnień dla tej operacji."
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Nazwa grupy:"
 
-#: um_mainview.py:67
-msgid "COMAR Error"
-msgstr "Błąd COMARa"
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Wpisz ID grupy lub użyj autoselekcji"
 
-#: useredit.py:22
-msgid "User/group operations"
-msgstr "Operacje na użytkownikach/grupach"
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Podaj nazwę grupy"
 
-#: useredit.py:23
-msgid "Network settings"
-msgstr "Ustawienia sieci"
+#: groupedit.py:129
+msgid "Enter Information For New Group"
+msgstr "Podaj informacje o nowej grupie"
 
-#: useredit.py:24
-msgid "Package operations"
-msgstr "Operacje na pakietach"
-
-#: useredit.py:25
-msgid "Service operations"
-msgstr "Operacje na usługach"
-
-#: useredit.py:26
-msgid "Date/time operations"
-msgstr "Operacje na dacie/czasie"
-
-#: useredit.py:27
-msgid "Kernel module operations"
-msgstr "Operacje na modułach kernela"
-
-#: useredit.py:28
-msgid "Bootloader settings"
-msgstr "Ustawienia menedżera rozruchowego"
-
-#: useredit.py:29
-msgid "Screen settings"
-msgstr "Ustawienia ekranu"
-
-#: useredit.py:83
-msgid "User name:"
-msgstr "Nazwa użytkownika:"
-
-#: useredit.py:114
-msgid "Full name:"
-msgstr "Pełna nazwa:"
-
-#: useredit.py:137
-msgid "Home:"
-msgstr "Katalog domowy:"
-
-#: useredit.py:169
-msgid "Select user's home directory"
-msgstr "Wybierz katalog domowy użytkownika"
-
-#: useredit.py:178
-msgid "Password:"
-msgstr "Hasło:"
-
-#: useredit.py:184
-msgid "Confirm password:"
-msgstr "Potwierdz hasło:"
-
-#: useredit.py:212
-msgid "Shell:"
-msgstr "Powłoka:"
-
-#: useredit.py:234
-msgid "Please specify an existing shell command"
-msgstr "Podaj nazwę zainstalowanej powłoki"
-
-#: useredit.py:236
-msgid "Specified shell command is not executable"
-msgstr "Podana nazwa nie jest prawidłowa"
-
-#: useredit.py:263
-msgid "Group"
-msgstr "Frupa"
-
-#: useredit.py:270
-msgid "Main group:"
-msgstr "Główna grupa:"
-
-#: useredit.py:363
-msgid "Start with typing this user's full name."
-msgstr "Zacznij od podania pełnego imienia i nazwiska użytkownika"
-
-#: useredit.py:366
-msgid "You should enter a password for this user."
-msgstr "Powinieneś podać hasło dla tego użytkownika."
-
-#: useredit.py:371
-msgid "Password must be longer."
-msgstr "Hasło musi być dłuższe"
-
-#: useredit.py:375
-msgid "Don't use your full name or user name as a password."
-msgstr "Nie używaj imienia i nazwiska lub nazwy użytkownika jako hasło"
-
-#: useredit.py:378
-msgid "Passwords don't match."
-msgstr "Hasła nie są identyczne"
-
-#: useredit.py:381
-msgid "You must enter a user ID or use the auto selection."
-msgstr "Wpisz ID użytkownika lub użyj autoselekcji"
-
-#: useredit.py:386
-msgid "You must enter a user name."
-msgstr "Musisz podać nazwę użytkownika"
-
-#: useredit.py:389
-msgid "This user name is used by another user."
-msgstr "Podana nazwa jest już używana przez innego użytkownika."
-
-#: useredit.py:393
-msgid "User name must not start with a number."
-msgstr "Nazwa użytkownika nie może rozpoczynać się od cyfry."
-
-#: useredit.py:396
-msgid "You should select at least one group this user belongs to."
-msgstr ""
-"Powinieneś wybrać dokładnie jedną grupę, do której ma należeć ten użytkownik."
-
-#: useredit.py:429
-msgid "Edit User's Information"
-msgstr "Edytuj informacje o użytkowniku"
-
-#: useredit.py:431
-msgid "Enter Information For New User"
-msgstr "Wpisz Informacje Noweg Użytkownika"
-
-#: useredit.py:467
-msgid "Give administrator privileges to this user"
-msgstr "Nadaj uprawnienia administratora temu użytkownikowi"
-
-#: useredit.py:543
-msgid ""
-"You are removing yourself from the 'wheel' system group, you might not use "
-"your administrator permissions after that."
-msgstr ""
-"Usuwasz samego siebie z okręgu grup systemowych, możesz utracić uprawnienia "
-"administratora po tej operacji."
-
-#: useredit.py:544
-msgid "Important Group Change"
-msgstr "Zmiany w Ważnej Grupie"
-
-#: useredit.py:551
-msgid "Changing user information..."
-msgstr "Zmiana informacji o użytkowniku..."
-
-#: useredit.py:578
-msgid "Adding user..."
-msgstr "Dodawanie użytkownika..."
-
-#: useredit.py:641
-msgid "Getting user information..."
-msgstr "Pobieranie danych o użytkowniku"
-
-#: useredit.py:675
-msgid "Authorizations"
-msgstr "Autoryzacje"
-
-#: useredit.py:693
-msgid "Actions"
-msgstr "Akcje"
-
-#: useredit.py:704
-msgid "Authorize"
-msgstr "Autoryzuj"
-
-#: useredit.py:708
-msgid "Block"
-msgstr "Blokuj"
-
-#: useredit.py:719
-msgid "Do not ask password"
-msgstr "Nie pytaj o hasło"
+#: groupedit.py:168
+msgid "Adding group..."
+msgstr "Dodawanie grupy..."
 
 #: user-manager.py:33
 msgid "User Management"
@@ -301,6 +112,213 @@ msgstr "Moduł zarządzania użytkownikami jest już uruchomiony!"
 #: user-manager.py:88
 msgid "User Manager"
 msgstr "Menedżer Użytkowników"
+
+#: useredit.py:26
+msgid "User/group operations"
+msgstr "Operacje na użytkownikach/grupach"
+
+#: useredit.py:27
+msgid "Network settings"
+msgstr "Ustawienia sieci"
+
+#: useredit.py:28
+msgid "Package operations"
+msgstr "Operacje na pakietach"
+
+#: useredit.py:29
+msgid "Service operations"
+msgstr "Operacje na usługach"
+
+#: useredit.py:30
+msgid "Date/time operations"
+msgstr "Operacje na dacie/czasie"
+
+#: useredit.py:31
+msgid "Kernel module operations"
+msgstr "Operacje na modułach kernela"
+
+#: useredit.py:32
+msgid "Bootloader settings"
+msgstr "Ustawienia menedżera rozruchowego"
+
+#: useredit.py:33
+msgid "Screen settings"
+msgstr "Ustawienia ekranu"
+
+#: useredit.py:88
+msgid "User name:"
+msgstr "Nazwa użytkownika:"
+
+#: useredit.py:119
+msgid "Full name:"
+msgstr "Pełna nazwa:"
+
+#: useredit.py:144
+msgid "Home:"
+msgstr "Katalog domowy:"
+
+#: useredit.py:176
+msgid "Select user's home directory"
+msgstr "Wybierz katalog domowy użytkownika"
+
+#: useredit.py:185
+msgid "Password:"
+msgstr "Hasło:"
+
+#: useredit.py:191
+msgid "Confirm password:"
+msgstr "Potwierdz hasło:"
+
+#: useredit.py:219
+msgid "Shell:"
+msgstr "Powłoka:"
+
+#: useredit.py:241
+msgid "Please specify an existing shell command"
+msgstr "Podaj nazwę zainstalowanej powłoki"
+
+#: useredit.py:243
+msgid "Specified shell command is not executable"
+msgstr "Podana nazwa nie jest prawidłowa"
+
+#: useredit.py:271
+msgid "Group"
+msgstr "Frupa"
+
+#: useredit.py:278
+msgid "Main group:"
+msgstr "Główna grupa:"
+
+#: useredit.py:376
+msgid "Start with typing this user's full name."
+msgstr "Zacznij od podania pełnego imienia i nazwiska użytkownika"
+
+#: useredit.py:379
+msgid "You should enter a password for this user."
+msgstr "Powinieneś podać hasło dla tego użytkownika."
+
+#: useredit.py:384
+msgid "Password must be longer."
+msgstr "Hasło musi być dłuższe"
+
+#: useredit.py:388
+msgid "Don't use your full name or user name as a password."
+msgstr "Nie używaj imienia i nazwiska lub nazwy użytkownika jako hasło"
+
+#: useredit.py:391
+msgid "Passwords don't match."
+msgstr "Hasła nie są identyczne"
+
+#: useredit.py:395
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Wpisz ID użytkownika lub użyj autoselekcji"
+
+#: useredit.py:399
+#, fuzzy
+msgid "You must enter a user ID between 999 and 65535."
+msgstr "Musisz podać nazwę użytkownika"
+
+#: useredit.py:404
+msgid "You must enter a user name."
+msgstr "Musisz podać nazwę użytkownika"
+
+#: useredit.py:407
+msgid "This user name is used by another user."
+msgstr "Podana nazwa jest już używana przez innego użytkownika."
+
+#: useredit.py:410
+#, fuzzy
+msgid "This user ID is used by another user."
+msgstr "Podana nazwa jest już używana przez innego użytkownika."
+
+#: useredit.py:414
+msgid "User name must not start with a number."
+msgstr "Nazwa użytkownika nie może rozpoczynać się od cyfry."
+
+#: useredit.py:417
+msgid "You should select at least one group this user belongs to."
+msgstr ""
+"Powinieneś wybrać dokładnie jedną grupę, do której ma należeć ten użytkownik."
+
+#: useredit.py:497
+msgid "Edit User's Information"
+msgstr "Edytuj informacje o użytkowniku"
+
+#: useredit.py:499
+msgid "Enter Information For New User"
+msgstr "Wpisz Informacje Noweg Użytkownika"
+
+#: useredit.py:539
+msgid "Give administrator privileges to this user"
+msgstr "Nadaj uprawnienia administratora temu użytkownikowi"
+
+#: useredit.py:628
+msgid ""
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
+msgstr ""
+"Usuwasz samego siebie z okręgu grup systemowych, możesz utracić uprawnienia "
+"administratora po tej operacji."
+
+#: useredit.py:629
+msgid "Important Group Change"
+msgstr "Zmiany w Ważnej Grupie"
+
+#: useredit.py:637
+msgid "Changing user information..."
+msgstr "Zmiana informacji o użytkowniku..."
+
+#: useredit.py:662
+msgid "Adding user..."
+msgstr "Dodawanie użytkownika..."
+
+#: useredit.py:725
+msgid "Getting user information..."
+msgstr "Pobieranie danych o użytkowniku"
+
+#: useredit.py:765
+msgid "Authorizations"
+msgstr "Autoryzacje"
+
+#: useredit.py:783
+msgid "Actions"
+msgstr "Akcje"
+
+#: useredit.py:795
+msgid "Authorize"
+msgstr "Autoryzuj"
+
+#: useredit.py:799
+msgid "Block"
+msgstr "Blokuj"
+
+#: useredit.py:810
+msgid "Do not ask password"
+msgstr "Nie pytaj o hasło"
+
+#: useredit.py:818 useredit.py:823
+msgid "Apply this policy to all"
+msgstr ""
+
+#: useredit.py:824
+msgid "Apply this policy to category"
+msgstr ""
+
+#: useredit.py:826
+msgid "Reset"
+msgstr ""
+
+#~ msgid "Unable to connect to DBus."
+#~ msgstr "Nie mogę połączyć się z DBus."
+
+#~ msgid "DBus Error"
+#~ msgstr "Błąd DBus"
+
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "Nie masz uprawnień dla tej operacji."
+
+#~ msgid "COMAR Error"
+#~ msgstr "Błąd COMARa"
 
 #~ msgid ""
 #~ "Cannot connect to the COMAR! If it is not running you should start it "
