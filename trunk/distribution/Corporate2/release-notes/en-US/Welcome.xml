@@ -5,9 +5,10 @@
 ]>
 
 <section id="sect-Release_Notes-Welcome_to_Pardus">
-    <title>Welcome to Pardus &PRODVER;</title>
+    <title>Welcome to &DISTRONAME; &PRODVER;</title>
     <para>
-        Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution.
+        Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop
+        experience to the users.
     </para>
 
     <section id="sect-Release_Notes-What_is_Pardus">
