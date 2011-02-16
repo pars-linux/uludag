@@ -8,13 +8,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/sm_backend.py:48
+#, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -64,23 +75,12 @@ msgid ""
 "Are you sure you want to do this?"
 msgstr ""
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr ""
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr ""
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
+msgid "Service Description"
 msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
@@ -88,7 +88,7 @@ msgid "Run on Startup"
 msgstr ""
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
+msgid "Service Name"
 msgstr ""
 
 #: src/service_manager.py:125

@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2008-06-18 00:04+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -18,6 +18,19 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
+
+#: src/sm_backend.py:48
+#, fuzzy, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
+"Ein Fehler ist aufgetreten:\n"
+"%s"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -71,34 +84,22 @@ msgstr ""
 "Wenn Sie diesen Dienst anhalten, können evtl. Probleme auftreten.\n"
 "Sind Sie sicher, dass Sie diesen Dienst anhalten möchten?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-"Ein Fehler ist aufgetreten:\n"
-"%s"
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Dienst"
+msgid "Service Description"
+msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Automatisch starten"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Paket"
+#, fuzzy
+msgid "Service Name"
+msgstr "Dienste-Manager"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -119,6 +120,12 @@ msgstr "Suche:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Liste nur die Server auf."
+
+#~ msgid "Service"
+#~ msgstr "Dienst"
+
+#~ msgid "Package"
+#~ msgstr "Paket"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Verbindung zum DBus nicht möglich."

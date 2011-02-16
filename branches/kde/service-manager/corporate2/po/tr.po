@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service-manager 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2009-07-14 12:48+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -17,6 +17,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "Bu işlemi yapmaya yetkiniz yok."
+
+#: src/sm_backend.py:48
+#, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
+"Bir hata meydana geldi:\n"
+"%s"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -70,34 +83,21 @@ msgstr ""
 "Bu servisi kapatırsanız, problem yaşayabilirsiniz.\n"
 "Servisi kapatmak istediğinizden emin misiniz?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "Bu işlemi yapmaya yetkiniz yok."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-"Bir hata meydana geldi:\n"
-"%s"
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Servis"
+msgid "Service Description"
+msgstr "Servis Açıklaması"
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Açılışta Çalıştır"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Paket"
+msgid "Service Name"
+msgstr "Servis Adı"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -118,6 +118,12 @@ msgstr "Ara:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Sadece sunucuları listele."
+
+#~ msgid "Service"
+#~ msgstr "Servis"
+
+#~ msgid "Package"
+#~ msgstr "Paket"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "DBus'a bağlanılamadı."

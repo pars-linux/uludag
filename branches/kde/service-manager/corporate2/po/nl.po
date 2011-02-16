@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2010-12-07 12:14+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -20,6 +20,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "U mag deze handeling niet verrichten."
+
+#: src/sm_backend.py:48
+#, fuzzy, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
+"Een fout is opgetreden:\n"
+"%s"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -73,34 +86,22 @@ msgstr ""
 "Als u deze dienst stopt, kunt u in de problemen raken.\n"
 "Weet u zeker dat u deze dienst wilt stoppen?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "U mag deze handeling niet verrichten."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-"Een fout is opgetreden:\n"
-"%s"
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Dienst"
+msgid "Service Description"
+msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Bij opstarten uitvoeren"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Pakket"
+#, fuzzy
+msgid "Service Name"
+msgstr "Dienstbeheer"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -121,6 +122,12 @@ msgstr "Zoek:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Lijst van alleen servers."
+
+#~ msgid "Service"
+#~ msgstr "Dienst"
+
+#~ msgid "Package"
+#~ msgstr "Pakket"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Kan geen verbinding maken met DBus."

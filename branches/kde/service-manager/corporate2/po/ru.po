@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2008-06-18 00:04+0200\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -18,6 +18,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "У вас нет прав для данной операции."
+
+#: src/sm_backend.py:48
+#, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -71,32 +82,22 @@ msgstr ""
 "Если вы отключите этот сервис, то могут возникнуть проблемы.\n"
 "Вы действительно хотите продолжить?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "У вас нет прав для данной операции."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Сервис"
+msgid "Service Description"
+msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Запускать при запуске системы"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Пакет"
+#, fuzzy
+msgid "Service Name"
+msgstr "Менеджер сервисов"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -117,6 +118,12 @@ msgstr "Поиск:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Liste nur die Server auf."
+
+#~ msgid "Service"
+#~ msgstr "Сервис"
+
+#~ msgid "Package"
+#~ msgstr "Пакет"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Невозможно подключиться к DBus."

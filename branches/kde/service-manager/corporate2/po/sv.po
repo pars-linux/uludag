@@ -1,13 +1,13 @@
 # translation of sv.po to Svenska
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Patrik Karlsson <patrik@pardus.nu>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2008-09-04 18:29+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -16,6 +16,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "Du är inte behörig för den här åtgärden."
+
+#: src/sm_backend.py:48
+#, fuzzy, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
+"Ett fel uppstod:\n"
+"%s"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -69,34 +82,22 @@ msgstr ""
 "Om du inaktiverar den här tjänsten kan du få problem.\n"
 "Är du säker på att du vill göra det?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "Du är inte behörig för den här åtgärden."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-"Ett fel uppstod:\n"
-"%s"
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Tjänst"
+msgid "Service Description"
+msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Kör vid uppstart"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Paket"
+#, fuzzy
+msgid "Service Name"
+msgstr "Tjänstehanteraren"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -117,6 +118,12 @@ msgstr "Sök:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Visa enbart servrar."
+
+#~ msgid "Service"
+#~ msgstr "Tjänst"
+
+#~ msgid "Package"
+#~ msgstr "Paket"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Kan inte ansluta till D-Bus."
