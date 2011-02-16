@@ -1,5 +1,5 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -78,49 +78,49 @@ msgid "Updates in Core Components"
 msgstr "Temel Bileşenlerde Güncellemeler"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
-msgstr "<application>Kernel</application> - Pardus &PRODVER; ile Linux çekirdeğinin 5 Ocak 2011'de yayınlanan en son kararlı &KERNELVER; sürümüne geçildi."
+msgstr "<application>Kernel</application> - &DISTRONAME; &PRODVER;, ile Linux çekirdeğinin 5 Ocak 2011'de yayınlanan en son kararlı &KERNELVER; sürümüne geçildi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in &DISTRONAME; &PRODVER; is the brand new Plymouth engine."
-msgstr "<application>Plymouth</application> - Pardus &PREVVER; sürümünde açılış süreci görselleştirmesi için kullanılan teknoloji bırakılarak Plymouth teknolojisine geçildi."
+msgstr "<application>Plymouth</application> - &DISTRONAME; &PRODVER; ile açılış görselleştirmesinde yeni Plymouth teknolojisine geçildi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Python</application> - Python &PYTHONVER; is the default Python interpreter in &DISTRONAME; &PRODVER;."
-msgstr "<application>Python</application> - Python &PYTHONVER; sürümüne yükseltildi."
+msgstr "<application>Python</application> - Python &PYTHONVER; &DISTRONAME; &PRODVER; için öntanımlı Python yorumlayıcısı olarak belirlendi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Perl</application> - Perl &PERLVER; is the default Perl interpreter in &DISTRONAME; &PRODVER;."
-msgstr "<application>Perl</application> - Perl, &PERLVER; sürümüne yükseltildi."
+msgstr "<application>Perl</application> - Perl &PERLVER; &DISTRONAME; &PRODVER; için öntanımlı Perl yorumlayıcısı olarak belirlendi."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>X.org</application> - The shipped xorg-server version is &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers."
 msgstr "<application>X.org</application> - xorg-sunucusu &XORGVER; sürümüne yükseltildi. Otomatik sürücü yapılandırması için geliştiricilerimizin iyileştirmeleri eklendi."
 
 #. Tag: title
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Updates in Server Components"
 msgstr "Temel Bileşenlerde Güncellemeler"
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Web servers</application> - &DISTRONAME; &PRODVER; ships both Apache &APACHEVER; and NGINX &NGINXVER; HTTP daemon alternatives."
-msgstr ""
+msgstr "<application>Web sunucular</application> - &DISTRONAME; &PRODVER; hem Apache &APACHEVER; hem de NGINX &NGINXVER;  seçenekleriyle birlikte sunuluyor."
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Databases</application> - MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; and SqLite &SQLITEVER; are among the DBMS alternatives offered in &DISTRONAME; &PRODVER;."
-msgstr ""
+msgstr "<application>Veritabanları</application> - &DISTRONAME; &PRODVER;. ile sunulan DBMS alternatiflerinin başlıcaları MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; ve SqLite &SQLITEVER;"
 
 #. Tag: para
 #, no-c-format
 msgid "<application>Mail Servers</application> - Postfix &POSTFIXVER; and Dovecot &DOVECOTVER; are the mail server daemon softwares offered within &DISTRONAME; &PRODVER;."
-msgstr ""
+msgstr "<application>Posta Sunucuları</application> - &DISTRONAME; &PRODVER; ile e-posta servisi vermek isteyen kullanıcılar için Postfix &POSTFIXVER; ve Dovecot &DOVECOTVER; alternatifleri sunuluyor."
 
 #. Tag: title
 #, no-c-format
@@ -135,7 +135,7 @@ msgstr "Görsel İyileştirmeler"
 #. Tag: para
 #, no-c-format
 msgid "The default icon theme of &DISTRONAME; &PRODVER; is BC Tango which is a Tango derivative specially customized for KDE desktop environment."
-msgstr ""
+msgstr "&DISTRONAME; &PRODVER; öntanımlı simge seti olarak BC Tango belirlendi. Bu set, Tango'nun KDE masaüstü ortamı için özelleşmiş bir sürümü."
 
 #. Tag: title
 #, no-c-format
@@ -145,10 +145,10 @@ msgstr "Ağ Yönetimi"
 #. Tag: para
 #, no-c-format
 msgid "&DISTRONAME; &PRODVER; uses GNOME NetworkManager as the default networking backend."
-msgstr ""
+msgstr "&DISTRONAME; &PRODVER; ağ altyapısında GNOME NetworkManager kullanıyor."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "With the GNOME networking backend, users are able to easily set up their Ethernet (With support for 802.1x authentication), 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks."
 msgstr "Yeni ağ altyapısı ile kullanıcılar Ethernet (802.1x yetkilendirme desteği ile), 802.11 Kablosuz (WEP/WPA/WPA2/WPA-EAP ve 802.1x yetkilendirme desteği), EDGE/3G/CDMA ve VPN ağlarına bağlanabiliyor."
 
@@ -158,9 +158,9 @@ msgid "Office Suite"
 msgstr "Ofis Paketi"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;."
-msgstr "Document Foundation tarafından hazırlanan, açık kaynak kodlu üretim araçları paketi <emphasis>LibreOffice</emphasis> Pardus &PRODVER; sürümüyle öntanımlı ofis paketi olarak geliyor."
+msgstr "Document Foundation tarafından hazırlanan, açık kaynak kodlu üretim araçları paketi <emphasis>LibreOffice</emphasis> &DISTRONAME; &PRODVER; sürümüyle öntanımlı ofis paketi olarak geliyor."
 
 #~ msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
 #~ msgstr "Kullanıcılar kurulum esnasında NVIDIA ekran kartları için açık kaynak ya da firmanın sahipli sürücülerinden birini seçme şansına sahip."
