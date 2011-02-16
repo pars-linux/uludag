@@ -22,8 +22,8 @@
         <itemizedlist>
             <listitem>
                 <para>
-                    <application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support
-                    together with a thousand of bug fixes.
+                    <application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest
+                    kernel branch which will be supported for a long term period.
                 </para>
             </listitem>
             <listitem>
@@ -48,12 +48,12 @@
             </listitem>
             <listitem>
                 <para>
-                    <application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in &DISTRONAME; &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks.
+                    <application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is the default networking backend in &DISTRONAME; &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks.
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    <application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in &DISTRONAME; &PRODVER;.
+                    <application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;.
                 </para>
             </listitem>
         </itemizedlist>
