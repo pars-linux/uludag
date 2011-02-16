@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
 "POT-Creation-Date: 2011-02-16T12:49:39\n"
-"PO-Revision-Date: 2011-02-16 15:24+0200\n"
+"PO-Revision-Date: 2011-02-16 15:26+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -115,7 +115,7 @@ msgstr "<application>Web sunucular</application> - &DISTRONAME; &PRODVER; hem Ap
 #. Tag: para
 #, no-c-format
 msgid "<application>Databases</application> - MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; and SqLite &SQLITEVER; are among the DBMS alternatives offered in &DISTRONAME; &PRODVER;."
-msgstr "<application>Veritabanları</application> - &DISTRONAME; &PRODVER;. ile sunulan DBMS alternatiflerinin başlıcaları MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; ve SqLite &SQLITEVER;"
+msgstr "<application>Veritabanları</application> - &DISTRONAME; &PRODVER; ile sunulan DBMS alternatiflerinin başlıcaları MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; ve SqLite &SQLITEVER;."
 
 #. Tag: para
 #, no-c-format
