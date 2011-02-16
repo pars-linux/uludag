@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-06 15:16+0200\n"
+"POT-Creation-Date: 2011-02-16 09:40+0200\n"
 "PO-Revision-Date: 2007-07-02 15:55+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -15,6 +15,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+
+#: src/sm_backend.py:46
+msgid "You are not authorized for this operation."
+msgstr "Vous n'êtes pas autorisé à effectuer cette opération."
+
+#: src/sm_backend.py:48
+#, python-format
+msgid ""
+"An error occurred:\n"
+"%s"
+msgstr ""
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -68,32 +79,22 @@ msgstr ""
 "La désactivation de ce service provoquera d'éventuel problèmes.\n"
 "Êtes vous sûr de vouloir désactiver ce service?"
 
-#: src/backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "Vous n'êtes pas autorisé à effectuer cette opération."
-
-#: src/backend.py:48
-#, python-format
-msgid ""
-"An error occured:\n"
-"%s"
-msgstr ""
-
 #: src/service_manager.py:86 src/service_manager.py:134
 msgid "1"
 msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service"
-msgstr "Service"
+msgid "Service Description"
+msgstr ""
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Lancer au Démarrage"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-msgid "Package"
-msgstr "Paquet"
+#, fuzzy
+msgid "Service Name"
+msgstr "Gestionnaire de Services"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
@@ -114,6 +115,12 @@ msgstr "Recherche:"
 #: src/service_manager.py:141
 msgid "&List servers only."
 msgstr "&Lister seulement les serveurs"
+
+#~ msgid "Service"
+#~ msgstr "Service"
+
+#~ msgid "Package"
+#~ msgstr "Paquet"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Impossible de connecter à DBus."

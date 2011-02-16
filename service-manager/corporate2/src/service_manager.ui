@@ -218,7 +218,7 @@
             </column>
             <column>
                 <property name="text">
-                    <string>Service</string>
+                    <string>Service Description</string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
@@ -240,7 +240,7 @@
             </column>
             <column>
                 <property name="text">
-                    <string>Package</string>
+                    <string>Service Name</string>
                 </property>
                 <property name="clickable">
                     <bool>true</bool>
