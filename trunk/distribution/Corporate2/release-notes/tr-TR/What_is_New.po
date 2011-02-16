@@ -63,14 +63,14 @@ msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "The graphical user interface is redesigned to improve the usability."
-msgstr "Kullanışlılığı artırmak için tüm arayüz yeniden tasarlandı."
+msgstr "Kullanışlılığı artırmak için tüm grafik arayüz yeniden tasarlandı."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Various speed enhancements has been done for a better graphical package management experience."
-msgstr "Paket yönetiminde daha rahat kullanım için temel bileşenlerde bir çok iyileştirme yapıldı."
+msgstr "Paket yönetiminin görsel arayüzünü daha rahat kullanabilmek için bir çok performans iyileştirilmesi yapıldı."
 
 #. Tag: title
 #, no-c-format
