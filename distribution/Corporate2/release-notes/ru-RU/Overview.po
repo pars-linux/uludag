@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T08:05:34\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 19:14+0300\n"
 "Last-Translator: Alexey Ivanov <alexey.ivanes@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,8 +21,8 @@ msgstr "Обзор"
 
 #. Tag: para
 #, no-c-format
-msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
-msgstr "Pardus &PRODVER; содержит важные улучшения со времен предыдущего выпуска Pardus &PREVVER;. В следующих разделах приведен краткий обзор этих изменений."
+msgid "The following sections provides a brief overview of the features offered by &DISTRONAME; &PRODVER;."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -30,8 +30,8 @@ msgid "Hardware Overview"
 msgstr "Обзор оборудования"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; now supports 64-bit processor architecture which is supported by many new Intel and AMD processors."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; supports both 32-bit and 64-bit processor architectures manufactured by Intel and AMD."
 msgstr "Pardus &PRODVER; уже поддерживает 64-битную архитектуру процессора, которая поддерживается многими новейшими процессорами Intel и AMD."
 
 #. Tag: title
@@ -41,12 +41,12 @@ msgstr "Обзор программного обеспечения"
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support together with a thousand of bug fixes."
-msgstr "<application>Ядро</application> - Последнее Linux ядро &KERNELVER; обеспечивает поддержку современного оборудования, а так же содержит тысячи исправленных ошибок."
+msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
+msgstr ""
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
+#, fuzzy, no-c-format
+msgid "<application>Plymouth</application> - The bootsplash technology used in &DISTRONAME; &PRODVER; is the brand new Plymouth engine."
 msgstr "<application>Plymouth</application> - Технология графической заставки на этапе загрузки, используемая в Pardus &PREVVER; полностью переделана и заменена на новый движок Plymouth."
 
 #. Tag: para
@@ -55,27 +55,28 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - YALI, установщик Pardus, предоставляет поддержку LVM/RAID и UUID."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>KDE SC</application> - Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#, fuzzy, no-c-format
+msgid "<application>KDE</application> - &DISTRONAME; &PRODVER; comes with KDE &KDEVER;, the old KDE stack which has proven its stability and reliability. The base packages also contains numerous fixes which will improve the stability of your desktop experience significantly."
 msgstr "<application>KDE SC</application> - Pardus &PRODVER; поставляется с последней версией KDE Software Compilation, KDE SC &KDEVER;. Базовые пакеты так же содержат многочисленные исправления и улучшения, что значительно увеличивает стабильность вашей системы."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr "<application>Kaptan</application> - Kaptan, утилита настройки рабочего стола для Pardus, теперь может (опционально) захватывать изображение с веб-камеры и устанавливать его в качестве аватара в KDE."
-
-#. Tag: para
-#, no-c-format
-msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is now the default networking backend in Pardus &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
+#, fuzzy, no-c-format
+msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is the default networking backend in &DISTRONAME; &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
 msgstr "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 используется как сетевой модуль по-умолчанию в Pardus &PRODVER;. Пользователи теперь могут создавать свои HSPA/CDMA/VPN сети, наряду с уже поддерживаемыми Ethernet и 802.11 WLAN сетями."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>GTK Oxygen style</application> - All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr "<application>GTK Oxygen style</application> - Все GTK приложения отображаются со стилем Oxygen, благодаря проекту<emphasis>oxygen-gtk</emphasis>. Это огромный шаг вперед для полноценности и равномерности отображения интерфейса пользователя."
-
-#. Tag: para
-#, no-c-format
-msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
+#, fuzzy, no-c-format
+msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;."
 msgstr "<application>LibreOffice</application> - LibreOffice, открытый и свободный офисный пакет, спонсируемый Document Foundation, используется как набор офисных приложений по умолчанию в Pardus &PRODVER;."
 
+#~ msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
+#~ msgstr "Pardus &PRODVER; содержит важные улучшения со времен предыдущего выпуска Pardus &PREVVER;. В следующих разделах приведен краткий обзор этих изменений."
+
+#~ msgid "<application>Kernel</application> - The latest Linux kernel &KERNELVER; provides an up-to-date hardware support together with a thousand of bug fixes."
+#~ msgstr "<application>Ядро</application> - Последнее Linux ядро &KERNELVER; обеспечивает поддержку современного оборудования, а так же содержит тысячи исправленных ошибок."
+
+#~ msgid "<application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
+#~ msgstr "<application>Kaptan</application> - Kaptan, утилита настройки рабочего стола для Pardus, теперь может (опционально) захватывать изображение с веб-камеры и устанавливать его в качестве аватара в KDE."
+
+#~ msgid "<application>GTK Oxygen style</application> - All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
+#~ msgstr "<application>GTK Oxygen style</application> - Все GTK приложения отображаются со стилем Oxygen, благодаря проекту<emphasis>oxygen-gtk</emphasis>. Это огромный шаг вперед для полноценности и равномерности отображения интерфейса пользователя."

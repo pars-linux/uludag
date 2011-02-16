@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 00:19+0100\n"
 "Last-Translator: Stefan Wilhelm <sw _AT_ pardususer DOT de>\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -24,8 +24,8 @@ msgid "Processor (CPU)"
 msgstr "Prozessor (CPU)"
 
 #. Tag: para
-#, no-c-format
-msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
+#, fuzzy, no-c-format
+msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
 msgstr "Falls Ihr System mit einem der Prozessoren ausgestattet ist, die in der Sektion unterhalb aufgelistet sind, möchten Sie vielleicht die 64-Bit Version von Pardus &PRODVER; installieren."
 
 #. Tag: title
@@ -104,8 +104,8 @@ msgid "System memory (RAM)"
 msgstr "Arbeitsspeicher (RAM)"
 
 #. Tag: para
-#, no-c-format
-msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
+#, fuzzy, no-c-format
+msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
 msgstr "Die Anforderung von Pardus &PRODVER;  nach Arbeitsspeicher (RAM) hängt stark davon ab, welche arbeiten Sie mit dem System durchführen wollen. Deshalb ist es sehr schwer eine Unter- und Obergrenze zu definieren. Für ein ruckelfreies System empfehlen wir aber wenigstens &MINMEM; Arbeitsspeicher."
 
 #. Tag: title
@@ -119,8 +119,8 @@ msgid "Minimum requirements"
 msgstr "Minimale Anforderung"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
 msgstr "Für eine erfolgreiche Installation benötigt Pardus &PRODVER; zumindest &MINREQSPACE; freien Speicherplatz. Da wir während der Installation keine Paketauswahl anbieten, ist diese Mindestgröße für alle Installationen gültig."
 
 #. Tag: title
@@ -129,8 +129,8 @@ msgid "Recommended requirements"
 msgstr "Empfohlene Anforderung"
 
 #. Tag: para
-#, no-c-format
-msgid "In order to effectively use Pardus &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
+#, fuzzy, no-c-format
+msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
 msgstr "Um mit Pardus &PRODVER; effektiv arbeiten zu können, ohne ständig durch mangelnden Speicherplatz in Bedrängnis zu kommen, empfehlen wir mindestens &RECOMMSPACE; freien Speicherplatz."
 
 #. Tag: title
@@ -147,4 +147,3 @@ msgstr "Der Swap Speicher wird benutzt, wenn das System mehr Arbeitsspeicher nut
 #, no-c-format
 msgid "<emphasis>Note that</emphasis> a disk partition reserved for swap space is <emphasis>required</emphasis> if you want to hibernate (Suspend to disk) Pardus. Otherwise the functionality will be disabled."
 msgstr "<emphasis>Beachten Sie</emphasis>, dass eine Swap-Partition <emphasis>notwendig</emphasis> ist, falls Sie bei Pardus den Ruhezustand (Suspend to disk bzw. Hibernate) nutzen wollen. Andernfalls ist die Funktionalität nicht möglich."
-

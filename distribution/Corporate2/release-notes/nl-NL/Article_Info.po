@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-19 13:45+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -23,5 +23,8 @@ msgstr "Uitgavenotities"
 
 #. Tag: productname
 #, no-c-format
-msgid "Pardus"
-msgstr "Pardus"
+msgid "Pardus Corporate"
+msgstr ""
+
+#~ msgid "Pardus"
+#~ msgstr "Pardus"

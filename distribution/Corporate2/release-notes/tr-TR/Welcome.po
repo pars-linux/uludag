@@ -3,24 +3,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T09:16:47\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 11:06+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;"
+#, fuzzy, no-c-format
+msgid "Welcome to &DISTRONAME; &PRODVER;"
 msgstr "Pardus &PRODVER; Sürümüne Hoş Geldiniz"
 
 #. Tag: para
 #, no-c-format
-msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
-msgstr "KDE öncelikli, güçlü bir Linux dağıtımı olan Pardus'un en güncel ürünü olan Pardus &PRODVER; sürümüne hoş geldiniz."
+msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to the users."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -86,3 +86,6 @@ msgstr "Geri bildirim"
 #, no-c-format
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Karşılaştığınız hataları bildirmek, yeni bir özellik ya da entegre edilmesini istediğiniz bir uygulamayı önermek için lütfen <ulink url=\"http://hata.pardus.org.tr\">http://hata.pardus.org.tr</ulink> adresini ziyaret edin. Pardus, özgür yazılım ve Linux topluluklarının tüm üyelerine ve kullanıcılarına değerli katkıları için teşekkür ederiz."
+
+#~ msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+#~ msgstr "KDE öncelikli, güçlü bir Linux dağıtımı olan Pardus'un en güncel ürünü olan Pardus &PRODVER; sürümüne hoş geldiniz."
