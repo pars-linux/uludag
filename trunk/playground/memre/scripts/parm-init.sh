@@ -41,42 +41,45 @@ set -e
 trap sighandler 1 2 3 6
 
 # Colors for a better user interaction and logging
-_clNoColor="\e[0m"
-_clWhite="\e[1;37m"
-_clYellow="\e[1;33m"
-_clCyan="\e[0;36m"
-_clBlack="\e[0;30m"
-_clBlue="\e[0;34m"
-_clGreen="\e[0;32m"
-_clCyan="\e[0;36m"
-_clRed="\e[0;31m"
-_clPurple="\e[0;35m"
-_clBrown="\e[0;33m"
-_clLightGray="\e[0;37m"
-_clLightPurple="\e[1;35m"
-_clLightRed="\e[1;31m"
-_clLightCyan="\e[1;36m"
-_clLightGreen="\e[1;32m"
-_clLightBlue="\e[1;34m"
-_clDarkGray="\e[1;30m"
+set_colors()
+{
+    export _clNoColor="\e[0m"
+    export _clWhite="\e[1;37m"
+    export _clYellow="\e[1;33m"
+    export _clCyan="\e[0;36m"
+    export _clBlack="\e[0;30m"
+    export _clBlue="\e[0;34m"
+    export _clGreen="\e[0;32m"
+    export _clCyan="\e[0;36m"
+    export _clRed="\e[0;31m"
+    export _clPurple="\e[0;35m"
+    export _clBrown="\e[0;33m"
+    export _clLightGray="\e[0;37m"
+    export _clLightPurple="\e[1;35m"
+    export _clLightRed="\e[1;31m"
+    export _clLightCyan="\e[1;36m"
+    export _clLightGreen="\e[1;32m"
+    export _clLightBlue="\e[1;34m"
+    export _clDarkGray="\e[1;30m"
 
-_clInfo=${_clWhite}
-_clError=${_clRed}
-_clWarning=${_clYellow}
-_clHead=${_clLightPurple}
-_clQuestion=${_clLightRed}
-_clUserAnswer=${_clNoColor}
-_clTime=${_clPurple}
+    export _clInfo=${_clWhite}
+    export _clError=${_clRed}
+    export _clWarning=${_clYellow}
+    export _clHead=${_clLightPurple}
+    export _clQuestion=${_clLightRed}
+    export _clUserAnswer=${_clNoColor}
+    export _clTime=${_clPurple}
 
-# Title colors
-_clTitle1=${_clGreen}
-_clTitle2=${_clLightGreen}
-_clTitle3=${_clLightBlue}
+    # Title colors
+    export _clTitle1=${_clGreen}
+    export _clTitle2=${_clLightGreen}
+    export _clTitle3=${_clLightBlue}
 
-# Title Numbers
-_tn1=0  # Main title [X]
-_tn2=0  # 2nd title  [1.X]
-_tn3=0  # 3rd title  [1.2.X]
+    # Title Numbers
+    export _tn1=0  # Main title [X]
+    export _tn2=0  # 2nd title  [1.X]
+    export _tn3=0  # 3rd title  [1.2.X]
+}
 
 # Start time for logging and printing
 _start_time=$(date +%s)
@@ -86,6 +89,7 @@ _start_time=$(date +%s)
 _b_install_toolchain_sysroot=true
 _b_use_prebuilt_sysroot=true
 _b_install_toolchain=true
+_b_enable_colors=true
 _b_force_yes=false
 _b_skip_pisi=
 _b_skip_sbox2=
@@ -187,8 +191,8 @@ BUILT_PACKAGES_DIR="${CROSS}/repos/${ARCH}" # this is the place for compiled pac
 ######################################################################
 # Toolchain options
 
-TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${DISTRIB_ID}/${DISTRIB_ID}-${ARCH}-toolchain.tar.xz"
-TOOLCHAIN_SHA1SUM="76f8211e3af869015d795ef7d1f9a8a676b61751"
+TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${DISTRIB_ID}/${DISTRIB_ID}${DISTRIB_RELEASE}-${ARCH}-toolchain.tar.xz"
+TOOLCHAIN_SHA1SUM="61019893ab4162215014970125e84298660bde69"
 TOOLCHAIN_TARBALL="`echo ${TOOLCHAIN_URL} | awk -F/ '{print $NF}'`"
 
 # export HOST=${HOST:-"`gcc -dumpmachine`"}
@@ -309,7 +313,7 @@ print()
 println()
 {
     # print something with newline
-    echo -e "$*${_clNoColor}";
+    echo -e "$*${_clNoColor}"
 }
 
 ##################################
@@ -646,7 +650,7 @@ pisi_()
         ur|update-repo)
             # update native or cross repositories
             # no more parameters
-            print_t3 "Upgrading Repositories"
+            print_info "Upgrading Repositories"
             prep_log &
             (${pisi_cmd} ur -y${VERBOSE}${DEBUG} > ${_log_fifo} 2>&1)
             __r=$?; wait
@@ -657,7 +661,7 @@ pisi_()
         up|upgrade)
             # upgrade native or cross repositories
             # no more parameters
-            print_t3 "Upgrading System"
+            print_info "Upgrading System"
             prep_log &
             (${pisi_cmd} up -y${VERBOSE}${DEBUG} > ${_log_fifo} 2>&1)
             __r=$?; wait
@@ -671,7 +675,6 @@ pisi_()
             local packages=$3
             local extra_parameters="$4"
 
-            print_t3 "Installing packages"
             print_info "Following packages will be installed: \"${packages}\"" "${head}"
             prep_log &
             (${pisi_cmd} it -y${VERBOSE}${DEBUG} ${extra_parameters} ${packages} > ${_log_fifo} 2>&1)
@@ -690,7 +693,7 @@ pisi_()
 
             local pspec="${package_url}/${package_name}/pspec.xml"
 
-            print_t3 "Building package: ${package_name}"
+            print_info "Building package: ${package_name}"
             prep_log &
 
             (${pisi_cmd} bi -y${VERBOSE}${DEBUG} ${PISI_IGNORE_CHECK} ${extra_parameters} ${pspec} > ${_log_fifo} 2>&1)
@@ -704,7 +707,6 @@ pisi_()
             local packages="$3"
             local extra_parameters="$4"
 
-            print_t3 "Emerging packages"
             print_info "Following packages will be emerged: \"${packages}\"" "${head}"
             prep_log &
             (${pisi_cmd} em -y${VERBOSE}${DEBUG} ${PISI_IGNORE_CHECK} ${extra_parameters} ${packages} > ${_log_fifo} 2>&1)
@@ -789,8 +791,8 @@ checksum()
 # @desc: fetches something from net
 #
 # @param1: tarball description name for printing log (eg. toolchain)
-# @param2: tarball full name (eg. PardusCorporate-armv7l-toolchain.tar.xz)
-# @param3: download link of the tarball (eg. http://hede.hodo/PardusCorporate-armv7l-toolchain.tar.xz)
+# @param2: tarball full name (eg. PardusCorporate2-armv7l-toolchain.tar.xz)
+# @param3: download link of the tarball (eg. http://hede.hodo/PardusCorporate2-armv7l-toolchain.tar.xz)
 # @param4: sha1sum of the tarball
 fetch()
 {
@@ -833,7 +835,7 @@ fetch()
 # to given directory (@param3)
 #
 # @param1: tarball description name for printing log (eg. toolchain)
-# @param2: tarball full name (eg. PardusCorporate-armv7l-toolchain.tar.xz)
+# @param2: tarball full name (eg. PardusCorporate2-armv7l-toolchain.tar.xz)
 # @param3: destinationdirectory directory for tarball
 extract()
 {
@@ -1114,7 +1116,7 @@ init_pisi()
 build_host = localhost
 # buildhelper = None
 # http://comments.gmane.org/gmane.comp.gcc.cross-compiling/11513
-enableSandbox = True
+enableSandbox = False
 compressionlevel = 9
 fallback = ftp://ftp.pardus.org.tr/pub/source/corporate2
 generateDebug = False
@@ -1203,12 +1205,61 @@ init_farm()
 
 ##################################
 # @func: emerge_minimum
-# @desc: Builds and installs minimum requirements to the sysroot
+# @desc: Builds and installs minimum build environment to the sysroot
 #
 # NO parameters
 emerge_minimum()
 {
-    print_info "ehehehehe, I won't emerge anything, I will make farm to emerge all of it!! :P"
+    local head="$(toupper $FUNCNAME)"
+
+    # TODO:
+    #  - prep initial rootfs with old rootfs.
+    #  - switch to curses interface
+    #  - make generic list for packages to be installed
+    #  - ui enhancement, decisions with colors etc
+
+    local min_list=(
+        # Package    # Component    : Dependencies
+        ##########################################
+        'binutils'   # system.devel
+        'libsigsegv' # system.devel
+        'gnuconfig'  # system.devel
+        'patch'      # system.devel
+        'zip'        # system.base
+        'bzip2'      # system.base
+        'zlib'       # system.base
+        'gdbm'       # system.base
+        'ncurses'    # system.base  : gnuconfig
+        'texinfo'    # system.base  : ncurses
+        'attr'       # system.base
+        'acl'        # system.base  : attr
+        'libpcre'    # system.base
+        'glib2'      # system.base  : libpcre zlib
+        'groff'      # system.base  : texinfo
+        'gettext'    # system.base  : glib2 acl ncurses
+        'diffutils'  # system.base  : gettext patch
+        'expat'      # system.base  : diffutils gnuconfig
+        'db4'        # system.base
+        'perl'       # system.base  : bzip2 db4 gdbm groff
+        'm4'         # system.devel : gettext libsigsegv
+        'sed'        # system.base  : gettext
+        'bison'      # system.devel : gettext m4 patch
+        'gmp'        # system.devel
+        'mpfr'       # system.devel : gmp
+        'busybox'    # system.base
+        'glibc'      # system.base  : gettext
+        'gcc'        # system.devel : binutils bison gettext gnuconfig
+                     #                gmp mpfr ncurses patch sed texinfo zlib
+    )
+
+    print_t2 "Emerging minimum development tools"
+    for ((pack=0; pack<${#min_list[*]}; pack++)); do
+        local p=${min_list[$pack]}
+        print_info " ==> ${p}" "${head}"
+        pisi_ cross emerge ${p}
+    done
+
+    print_info "Done."
 }
 
 ##################################
@@ -1273,13 +1324,16 @@ options:
       (default: ${LOG_LEVEL})
 
   -v --verbose
-      Verbose messages on.
+      Verbose messages on
 
   -d --debug
-      Debug messages on.
+      Debug messages on
+
+  -C --enable-colors
+      Use colors for logging
 
   -f --force-yes
-      Do not ask questions, go on with default values.
+      Do not ask questions, go on with default values
 
   --skip-sbox2
       Do not initialize sbox2
@@ -1296,7 +1350,7 @@ options:
       or forget existence of http://bugs.pardus.org.tr
 
   All effected variables:
-    Yazarım bi ara la, öf..
+      Yazarım bi ara la, öf..
 __EOF
 }
 
@@ -1353,6 +1407,10 @@ while [ $# -ne 0 ]; do
             DEBUG="d"
             ;;
 
+        -C|--disable-colors)
+            _b_enable_colors=false
+            ;;
+
         -f|--force-yes)
             _b_force_yes=true
             ;;
@@ -1395,6 +1453,9 @@ head="::"
 # Lets start with a clean page.
 clear
 
+# Enable colors for logs, if user wants it
+[ ${_b_enable_colors} ] && set_colors
+
 # Log the start date on top of the ${LOG_FILE}
 log ${_log_level_debug} "Build date: `date`"
 
@@ -1403,20 +1464,26 @@ println "
  ${_clGreen}TUBITAK BILGEM
  ${_clGreen}Pardus Linux Project
  ${_clGreen}Copyright (C) 2010, 2011
- ${_clYellow}Welcome to ${_clRed}${DISTRIB_DESCRIPTION}${_clYellow} ARM build system.
+ ${_clYellow}Welcome to ${_clRed}${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}${_clYellow} ARM build system.
  ${_clNoColor}
     If you want to cancel build operation, press Ctrl+C
 
-    Please know that, your PiSi will be replaced by the PiSi of memre\'s.
-    If you want to reinstall your original PiSi, run \`pisi it pisi -y --reinstall'.
+    Please know that, your PiSi will be replaced by cross-build
+    supported PiSi. If you want to reinstall your original PiSi,
+    then run \`pisi it pisi -y --reinstall'.
 
-    If you want to follow logs, open a new console and give this command: \`tail -f ${LOG_FILE}'
+    If you want to follow logs, open a new console and give this
+    command: \`tail -f ${LOG_FILE}'
 
     Press return to continue... " | log ${_log_level_any}
 
 # if user doesnt want to answer questions, then assume that he/she doesnt want
 # to wait. Otherwise show all the stuff.
 if ! ${_b_force_yes}; then read; fi
+
+# print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
+# emerge_minimum
+# exit 0
 
 ### 1st, prepare the environment for building
 print_t1 "Preparing build environment"
@@ -1434,29 +1501,29 @@ if ! ${_b_force_yes}; then sleep 3; fi
 
 ### 2nd phase of the building is scratchbox2 initialization
 [ ${_b_skip_sbox2} ] || {
-    print_t1 "Initializing scratchbox for ${DISTRIB_DESCRIPTION}"
+    print_t1 "Initializing scratchbox for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
     init_sbox2 || die "Scratchbox2 couldn't be initialized" "${head}"
 }
 
 ### 3rd phase is preparing PiSi
 [ ${_b_skip_pisi} ] || {
-    print_t1 "Preparing PiSi for ${DISTRIB_DESCRIPTION}"
+    print_t1 "Preparing PiSi for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
     init_pisi || die "PiSi couldn't be initialized" "${head}"
 }
 
 ### 4th phase is preparing buildfarm
-# [ ${_b_skip_farm} ] || {
-#     print_t1 "Preparing buildfarm for ${DISTRIB_DESCRIPTION}"
-#     init_farm || die "Buildfarm couldn't be initialized" "${head}"
-# }
+[ ${_b_skip_farm} ] || {
+    print_t1 "Preparing buildfarm for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
+    init_farm || die "Buildfarm couldn't be initialized" "${head}"
+}
 
 # END OF INITIALIZATION
 ######################################################################
 
 # Now its time to build and install some packages.
 # emerge_minimum function builds and installs minimal packages to sysroot
-# print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
-# emerge_minimum
+print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
+emerge_minimum
 
 # Lastly, build all kernel-headers, system.base and system.devel with buildfarm.
 # After that step, developer would make his/her packages ;)
@@ -1464,7 +1531,7 @@ if ! ${_b_force_yes}; then sleep 3; fi
 # FIXME: prep queue for first build
 # poke_farm
 
-println "Pardus ${DISTRIB_DESCRIPTION} sysroot initializing operation complated." | log ${_log_level_any}
+println "Pardus ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE} sysroot initializing operation complated." | log ${_log_level_any}
 println "Congrats, happy hacking ;)" | log ${_log_level_any}
 
 cleanup
