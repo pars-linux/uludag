@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-02-16T11:35:28\n"
+"POT-Creation-Date: 2011-02-16T11:58:06\n"
 "PO-Revision-Date: 2011-01-20 10:57+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
@@ -23,7 +23,7 @@ msgstr "Welkom bij Pardus &PRODVER;"
 
 #. Tag: para
 #, no-c-format
-msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to the users."
+msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to users."
 msgstr ""
 
 #. Tag: title
