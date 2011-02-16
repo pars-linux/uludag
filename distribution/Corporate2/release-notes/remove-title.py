@@ -17,4 +17,4 @@ if __name__ == "__main__":
     source = source.replace(str(title), "").replace(str(producttitle), "")
 
     print source
-    #open(html_path, "w").write(source)
+    open(html_path, "w").write(source)
