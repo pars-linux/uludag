@@ -53,7 +53,7 @@
             <itemizedlist>
                 <listitem>
                     <para>
-                        The graphical user interface is redesigned to improve the usability. 
+                        The graphical user interface is redesigned to improve the usability.
                     </para>
                 </listitem>
                 <listitem>
@@ -70,28 +70,28 @@
         <itemizedlist>
             <listitem>
                 <para>
-                    <application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest
-                    stable kernel released on 2011/01/05.
+                    <application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest
+                    kernel branch which will be supported for a long term period.
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    <application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine.
+                    <application>Plymouth</application> - The bootsplash technology used in &DISTRONAME; &PRODVER; is the brand new Plymouth engine.
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    <application>Python</application> - Python is updated to &PYTHONVER;.
+                    <application>Python</application> - Python &PYTHONVER; is the default Python interpreter in &DISTRONAME; &PRODVER;.
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    <application>Perl</application> - Perl is updated to &PERLVER;.
+                    <application>Perl</application> - Perl &PERLVER; is the default Perl interpreter in &DISTRONAME; &PRODVER;.
                 </para>
             </listitem>
             <listitem>
                 <para>
-                    <application>X.org</application> - xorg-server is updated to &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers.
+                    <application>X.org</application> - The shipped xorg-server version is &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers.
                 </para>
             </listitem>
         </itemizedlist>
@@ -102,17 +102,17 @@
       <itemizedlist>
         <listitem>
           <para>
-            <application>Web servers</application> - Pardus Corporate &PRODVER; shipped both with Apache &APACHEVER; and NGINX &NGINXVER; web server alternatives.
+            <application>Web servers</application> - &DISTRONAME; &PRODVER; ships both Apache &APACHEVER; and NGINX &NGINXVER; HTTP daemon alternatives.
           </para>
         </listitem>
         <listitem>
           <para>
-            <application>Databases</application> - You can choose between the MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; and SqLite &SQLITEVER; in Pardus Corporate &PRODVER;, among other DBs.
+            <application>Databases</application> - MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; and SqLite &SQLITEVER; are among the DBMS alternatives offered in &DISTRONAME; &PRODVER;.
           </para>
         </listitem>
         <listitem>
           <para>
-            <application>Mail Servers</application> - Admins who have the habit of Postfix may found &POSTFIXVER; where anyone in need of an alternative can use Dovecot &DOVECOTVER; as well.
+            <application>Mail Servers</application> - Postfix &POSTFIXVER; and Dovecot &DOVECOTVER; are the mail server daemon softwares offered within &DISTRONAME; &PRODVER;.
           </para>
         </listitem>
       </itemizedlist>
@@ -123,17 +123,17 @@
         <section id="sect-Release_Notes-What_is_New_Visual">
             <title>Visual Enhancements</title>
             <para>
-                Pardus Corporate &PRODVER; comes with Tango and BC Tango icon themes besides the KDE classic Crystal.
+                &DISTRONAME; &PRODVER; ships with Tango and BC Tango icon themes besides the KDE classic Crystal.
             </para>
         </section>
 
         <section id="sect-Release_Notes-What_is_New_Network_Management">
             <title>Network Management</title>
             <para>
-                With Pardus Corporate &PRODVER; GNOME NetworkManager replaces Pardus' own network interface.
+                &DISTRONAME; &PRODVER; uses GNOME NetworkManager as the default networking backend.
             </para>
             <para>
-                With this new networking backend, users are now able to easily set up their Ethernet (With support for 802.1x authentication),
+                With the GNOME networking backend, users are able to easily set up their Ethernet (With support for 802.1x authentication),
                 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks.
             </para>
         </section>
@@ -141,7 +141,7 @@
         <section id="sect-Release_Notes-What_is_New_Office">
             <title>Office Suite</title>
             <para>
-                <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus Corporate &PRODVER;.
+                <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;.
             </para>
         </section>
 
