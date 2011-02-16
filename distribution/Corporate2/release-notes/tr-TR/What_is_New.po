@@ -105,7 +105,7 @@ msgstr "<application>X.org</application> - xorg-sunucusu &XORGVER; sürümüne y
 #. Tag: title
 #, no-c-format
 msgid "Updates in Server Components"
-msgstr "Temel Bileşenlerde Güncellemeler"
+msgstr "Sunucu Bileşenlerinde Yenilikler"
 
 #. Tag: para
 #, no-c-format
