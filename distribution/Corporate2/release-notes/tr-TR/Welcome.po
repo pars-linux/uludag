@@ -20,7 +20,7 @@ msgstr "&DISTRONAME; &PRODVER; Sürümüne Hoş Geldiniz"
 #. Tag: para
 #, no-c-format
 msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to users."
-msgstr "&DISTRONAME; &PRODVER;, kurumsal serisinin kararlı ve kurumlara yönelik ihtiyaçlar temelinde hazırlanan ilk ürününe hoş geldiniz."
+msgstr "&DISTRONAME; &PRODVER;, kararlı ve kurumlara yönelik ihtiyaçlar temelinde hazırlanan kurumsal serisinin ilk ürününe hoş geldiniz."
 
 #. Tag: title
 #, no-c-format
