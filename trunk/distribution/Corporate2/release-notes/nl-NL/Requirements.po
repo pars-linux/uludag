@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-19 16:20+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -27,8 +27,8 @@ msgid "Processor (CPU)"
 msgstr "Processor (CPU)"
 
 #. Tag: para
-#, no-c-format
-msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
+#, fuzzy, no-c-format
+msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
 msgstr "Het is mogelijk om de 64-bit versie van Pardus &PRODVER; te installeren indien het systeem voorzien is van een van de in onderstaande lijst getoonde processoren."
 
 #. Tag: title
@@ -107,8 +107,8 @@ msgid "System memory (RAM)"
 msgstr "Systeemgeheugen (RAM)"
 
 #. Tag: para
-#, no-c-format
-msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
+#, fuzzy, no-c-format
+msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
 msgstr "De eisen voor systeemgeheugen (RAM) van Pardus &PRODVER; zijn sterk afhankelijk van het dagelijks gebruik en daarom is de boven- en ondergrens moeilijk aan te geven, ten minste &MINMEM; geheugen wordt aanbevolen voor een prettige bedieningservaring."
 
 #. Tag: title
@@ -122,8 +122,8 @@ msgid "Minimum requirements"
 msgstr "Minimum eisen"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
 msgstr "Pardus &PRODVER; heeft tenminste &MINREQSPACE; vrije ruimte op de harde schijf nodig voor een succesvolle installatie. Omdat het niet mogelijk is het pakket tijdens de installatie aan te passen, is dit de minimale eis voor alle installaties."
 
 #. Tag: title
@@ -132,8 +132,8 @@ msgid "Recommended requirements"
 msgstr "Aanbevolen eisen"
 
 #. Tag: para
-#, no-c-format
-msgid "In order to effectively use Pardus &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
+#, fuzzy, no-c-format
+msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
 msgstr "Voor het comfortabel dagelijks werken met Pardus &PRODVER; en daarbij het risico van onvoldoende schijfruimte te vermijden wordt tenminste &RECOMMSPACE; vrije hard schijfruimte aanbevolen."
 
 #. Tag: title

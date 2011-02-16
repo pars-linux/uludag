@@ -5,26 +5,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T06:58:23\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 10:57+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. Tag: title
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;"
+#, fuzzy, no-c-format
+msgid "Welcome to &DISTRONAME; &PRODVER;"
 msgstr "Welkom bij Pardus &PRODVER;"
 
 #. Tag: para
 #, no-c-format
-msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
-msgstr "Welkom bij Pardus &PRODVER;, de laatste uitgave van Pardus, een krachtige op KDE gebaseerde Linux-distributie."
+msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to the users."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -91,4 +91,5 @@ msgstr "Terugkoppeling"
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Bezoek <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> voor het rapporteren van fouten, oplossingen voor fouten of aanwijzingen voor verbeteringen van Pardus. Wij willen hierbij all onze gebruikers en gemeenschapsleden bedanken voor hun waardevolle bijdrage voor het verbeteren van Pardus, Linux and vrije wereldwijde software."
 
-
+#~ msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+#~ msgstr "Welkom bij Pardus &PRODVER;, de laatste uitgave van Pardus, een krachtige op KDE gebaseerde Linux-distributie."

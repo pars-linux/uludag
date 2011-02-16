@@ -3,14 +3,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T08:05:34\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 13:28+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -23,8 +23,8 @@ msgid "Processor (CPU)"
 msgstr "İşlemci (CPU)"
 
 #. Tag: para
-#, no-c-format
-msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
+#, fuzzy, no-c-format
+msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
 msgstr "Eğer sisteminiz aşağıda listelenen işlemcilerden birine sahipse, Pardus &PRODVER; 64-bit sürümünü kurmak isteyebilirsiniz."
 
 #. Tag: title
@@ -103,8 +103,8 @@ msgid "System memory (RAM)"
 msgstr "Sistem Belleği (RAM)"
 
 #. Tag: para
-#, no-c-format
-msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
+#, fuzzy, no-c-format
+msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
 msgstr "Pardus &PRODVER; sistem belleği (RAM) gereksinimi günlük kullanıma bağlı olarak değişebileceği için asgari ya da yeterli miktarı belirlemek zor. Yine de rahat bir masaüstü deneyimi için &MINMEM; değerinin altına inilmemesini öneriyoruz."
 
 #. Tag: title
@@ -118,8 +118,8 @@ msgid "Minimum requirements"
 msgstr "Minimum gereksinimler"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
 msgstr "Pardus, &PRODVER; kurulmak için en az &MINREQSPACE; boş disk alanına ihtiyaç duyar. Kurulum sırasında paket seçimi sunulmadığı için bu değer her kurulum için aynıdır."
 
 #. Tag: title
@@ -128,8 +128,8 @@ msgid "Recommended requirements"
 msgstr "Önerilen gereksinimler"
 
 #. Tag: para
-#, no-c-format
-msgid "In order to effectively use Pardus &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
+#, fuzzy, no-c-format
+msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
 msgstr "Pardus &PRODVER; sürümünde günlük kullanım ihtiyaçlarının rahatça karşılanması için en az &RECOMMSPACE; boş disk alanı bulunmasını öneririz."
 
 #. Tag: title

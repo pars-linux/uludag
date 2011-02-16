@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T09:16:57\n"
-"PO-Revision-Date: 2011-01-20T09:16:57\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
+"PO-Revision-Date: 2011-02-16T11:35:28\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -19,6 +19,6 @@ msgstr ""
 
 #. Tag: productname
 #, no-c-format
-msgid "Pardus"
+msgid "Pardus Corporate"
 msgstr ""
 

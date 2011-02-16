@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-20T09:16:47\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 11:18+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -39,36 +39,6 @@ msgstr "<emphasis>YALI</emphasis>, l'installeur de Pardus, gagne la gestion de L
 msgid "The user interface is completely redesigned to improve the usability."
 msgstr "L'interface de l'utilisateur a été complètement revue afin d'en améliorer l'ergonomie."
 
-#. Tag: para
-#, no-c-format
-msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
-msgstr "Les utilisateurs de carte graphique NVidia peuvent désormais choisir très facilement entre l'utilisation de pilotes vidéo libre ou propriétaire."
-
-#. Tag: title
-#, no-c-format
-msgid "First Boot"
-msgstr "Premier démarrage"
-
-#. Tag: para
-#, no-c-format
-msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
-msgstr "Certains des paramétrages qui étaient réalisés durant l'installation de Pardus &PREVVER; ont été déplacés dans une application apparaissant au premier démarrage après l'installation de Pardus."
-
-#. Tag: title
-#, no-c-format
-msgid "Kaptan"
-msgstr "Kaptan"
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
-msgstr "<emphasis>Kaptan</emphasis>, l'assistant de personnalisation du bureau de Pardus, vous propose désormais de prendre votre photo et de la placer comme avatar dans KDE."
-
-#. Tag: para
-#, no-c-format
-msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
-msgstr "Les utilisateurs ont maintenant de choisir le thème du jeu d'icônes de KDE."
-
 #. Tag: title
 #, no-c-format
 msgid "Pisi"
@@ -95,19 +65,14 @@ msgid "Package Manager"
 msgstr "Le gestionnaire de paquets"
 
 #. Tag: para
-#, no-c-format
-msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
-msgstr "Les utilisateurs peuvent désormais mettre une note aux paquets et voir une photo d'écran des applications graphiques."
+#, fuzzy, no-c-format
+msgid "The graphical user interface is redesigned to improve the usability."
+msgstr "L'interface de l'utilisateur a été complètement revue afin d'en améliorer l'ergonomie."
 
 #. Tag: para
-#, no-c-format
-msgid "The graphical user interface is redesigned to improve the usability. Various speed enhancements has been done for a better graphical package management experience."
-msgstr "L'interface graphique a été retravaillée pour en améliorer l'ergonomie. La vitesse d'exécution accrue améliore la gestion des paquets. "
-
-#. Tag: para
-#, no-c-format
-msgid "A lot of KDE integration work has been done including the usage of KDE system tray."
-msgstr "Un gros travail d'intégration de KDE a été réalisé, y compris dans l'usage du tableau de bord."
+#, fuzzy, no-c-format
+msgid "Various speed enhancements has been done for a better graphical package management experience."
+msgstr "Diverses améliorations au coeur de PiSi augmentent sa vitesse d'exécution. "
 
 #. Tag: title
 #, no-c-format
@@ -115,34 +80,49 @@ msgid "Updates in Core Components"
 msgstr "Mises à jour des composants de base"
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &PRODVER; is &KERNELVER; which is the latest stable kernel released on 2011/01/05."
+#, fuzzy, no-c-format
+msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
 msgstr "<application>Noyau</application> - Le noyau Linux livré avec Pardus &PRODVER; est le &KERNELVER;, dernier noyau stable en date du 05/01/11."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine."
+#, fuzzy, no-c-format
+msgid "<application>Plymouth</application> - The bootsplash technology used in &DISTRONAME; &PRODVER; is the brand new Plymouth engine."
 msgstr "<application>Plymouth</application> - La technologie de l'écran de progression du démarrage du système  utilisée dans Pardus &PREVVER; est changée pour le moteur Plymouth."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Python</application> - Python is updated to &PYTHONVER;."
+#, fuzzy, no-c-format
+msgid "<application>Python</application> - Python &PYTHONVER; is the default Python interpreter in &DISTRONAME; &PRODVER;."
 msgstr "<application>Python</application> - Python est mis à jour vers la version &PYTHONVER;."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Perl</application> - Perl is updated to &PERLVER;."
+#, fuzzy, no-c-format
+msgid "<application>Perl</application> - Perl &PERLVER; is the default Perl interpreter in &DISTRONAME; &PRODVER;."
 msgstr "<application>Perl</application> - Perl  est mis à jour vers la version &PERLVER;."
 
 #. Tag: para
-#, no-c-format
-msgid "<application>X.org</application> - xorg-server is updated to &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers."
+#, fuzzy, no-c-format
+msgid "<application>X.org</application> - The shipped xorg-server version is &XORGVER;, improvements to the automatic driver configuration mechanism has been done by our developers."
 msgstr "<application>X.org</application> - xorg-server est mis à jour vers la version &XORGVER;, à laquelle nos développeurs ont apporté des améliorations dans la configuration automatique des pilotes."
+
+#. Tag: title
+#, fuzzy, no-c-format
+msgid "Updates in Server Components"
+msgstr "Mises à jour des composants de base"
 
 #. Tag: para
 #, no-c-format
-msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
-msgstr "<application>TeX Live</application> - TeX Live est mis à jour vers la version &TEXLIVEVER;."
+msgid "<application>Web servers</application> - &DISTRONAME; &PRODVER; ships both Apache &APACHEVER; and NGINX &NGINXVER; HTTP daemon alternatives."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Databases</application> - MySQL &MYSQLVER;, PostgreSQL &POSTGRESQLVER;, BerkeleyDB &BDDBVER; and SqLite &SQLITEVER; are among the DBMS alternatives offered in &DISTRONAME; &PRODVER;."
+msgstr ""
+
+#. Tag: para
+#, no-c-format
+msgid "<application>Mail Servers</application> - Postfix &POSTFIXVER; and Dovecot &DOVECOTVER; are the mail server daemon softwares offered within &DISTRONAME; &PRODVER;."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -151,33 +131,13 @@ msgstr "Environnement de bureau"
 
 #. Tag: title
 #, no-c-format
-msgid "Changes in KDE Desktop Environment"
-msgstr "Changements dans l'environnement de bureau KDE"
-
-#. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
-msgstr "Pardus &PRODVER; est livrée avec le dernier KDE, KDE SC &KDEVER;. Les paquets de base contiennent des rétro-portages et des correctifs qui améliorent significativement la stabilité de votre bureau."
-
-#. Tag: para
-#, no-c-format
-msgid "KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version."
-msgstr "KDE SC &KDEVER; offre plus de performance et de stabilité. Parmi ses fonctionnalités, citons la prise en charge de WebKit, l'amélioration de l'ergonomie pour les utilisateurs de mini-portables, un nouveau cache autorisant des accès aux ressources stockées sur le disque dur."
-
-#. Tag: title
-#, no-c-format
 msgid "Visual Enhancements"
 msgstr "Améliorations graphiques"
 
 #. Tag: para
 #, no-c-format
-msgid "All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
-msgstr "L'ensemble des applications GTK sont maintenant rendues avec le style Oxygen, grâce au projet <emphasis>oxygen-gtk</emphasis>. Ce qui apporte une plus grande cohérence visuelle dans l'interface."
-
-#. Tag: para
-#, no-c-format
-msgid "Milky icon theme especially designed for Pardus is shipped within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>System Settings</emphasis>."
-msgstr "Milky, le jeu d'icônes spécialement conçu pour Pardus est disponible, à choisir dans<emphasis>Kaptan</emphasis> ou dans <emphasis>Configuration du système</emphasis>."
+msgid "The default icon theme of &DISTRONAME; &PRODVER; is BC Tango which is a Tango derivative specially customized for KDE desktop environment."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -186,88 +146,13 @@ msgstr "Réseau"
 
 #. Tag: para
 #, no-c-format
-msgid "Besides switching to GNOME NetworkManager as the default networking backend, Pardus &PRODVER; comes with a heavily improved and modified KDE Network Management tool and plasmoid to give their users a much more consistent networking experience."
-msgstr " Pardus &PRODVER;, en plus d'adopter NetworkManager, le backend réseau de GNOME, a profondément modifié l'outil et le plasmoïde de gestion du réseau de KDE, de façon a apporter plus de cohérence du point de vue de l'utilisateur."
+msgid "&DISTRONAME; &PRODVER; uses GNOME NetworkManager as the default networking backend."
+msgstr ""
 
 #. Tag: para
-#, no-c-format
-msgid "With this new networking backend, users are now able to easily set up their Ethernet (With support for 802.1x authentication), 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks."
+#, fuzzy, no-c-format
+msgid "With the GNOME networking backend, users are able to easily set up their Ethernet (With support for 802.1x authentication), 802.11 Wireless (With support for WEP/WPA/WPA2/WPA-EAP and 802.1x authentication), EDGE/3G/CDMA and VPN networks."
 msgstr "Grâce à ce backend réseau, les utilisateurs peuvent facilement configurer leur réseau câblé (avec authentification 802.1x), sans-fil EDGE, 3G, CDMA (avec authentification WEP, WPA, WPA2, WPA-EAP et 802.1x ) et VPN."
-
-#. Tag: title
-#, no-c-format
-msgid "Default Applications"
-msgstr "Applications par défaut"
-
-#. Tag: title
-#, no-c-format
-msgid "Mozilla Firefox"
-msgstr "Mozilla Firefox"
-
-#. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default web browser application. New features of this Firefox release include Firefox Panorama, application tabs, a redesigned extension manager, Jetpack extensions support, integration with Firefox Sync, and support for multitouch displays."
-msgstr "Pardus &PRODVER; utilise Mozilla Firefox &FIREFOXVER; comme navigateur par défaut. Au menu des nouveautés : Firefox panorama, les onglets d'application, la refonte du gestionnaire d'extensions, la prise en charge des extensions jetpack, l'intégration de Firefox Sync, et la prise en charge des afichages \"multitouch\"."
-
-#. Tag: title
-#, no-c-format
-msgid "Clementine"
-msgstr "Clementine"
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it is well maintained and lightweight."
-msgstr "<emphasis>Clementine</emphasis>, le lecteur de musique basé sur Amarok 1.4 a été choisi pour être l'application audio par défaut, compte tenu de sa légèreté et de sa maintenance."
-
-#. Tag: title
-#, no-c-format
-msgid "SMPlayer"
-msgstr "SMPlayer"
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
-msgstr "<emphasis>SMplayer</emphasis>, l'habillage graphique Qt de MPlayer a été choisi comme lecteur vidéo, VCD et DVD par défaut compte tenu de son intégration dans KDE en terme d'utilisabilité, d'interface graphique et de sa large gamme de types de formats pris en charge par MPlayer."
-
-#. Tag: title
-#, no-c-format
-msgid "KsCD"
-msgstr "KsCD"
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
-msgstr "<emphasis>KsCD</emphasis> est l'application par défaut pour lire les CD."
-
-#. Tag: title
-#, no-c-format
-msgid "Web Browsers"
-msgstr "Navigateur web"
-
-#. Tag: para
-#, no-c-format
-msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
-msgstr "Sont disponibles en sus, dans le gestionnaire de paquets, les navigateurs Chromium, Rekonq, Arora et Opera."
-
-#. Tag: title
-#, no-c-format
-msgid "System Settings"
-msgstr "Paramètres du système"
-
-#. Tag: para
-#, no-c-format
-msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
-msgstr "<emphasis>Panda</emphasis> (Pardus Alternative Driver Administration) est un nouveau module du centre de configuration du système qui permet de basculer vers les pilotes vidéo libres ou propriétaires."
-
-#. Tag: para
-#, no-c-format
-msgid "Users are now able to set up their Bluetooth devices, Wacom tablets and Synaptics touchpads through System Settings."
-msgstr "Les utilisateurs peuvent maintenant configurer les périphériques Bluetooth, les tablettes Wacom et les touchpads Synaptics dans le centre de configuration."
-
-#. Tag: para
-#, no-c-format
-msgid "The default language used throughout the whole system can now be changed through the locale settings section."
-msgstr "La langue par défaut utilisée dans tout le système peut maintenant être changée dans la section localisation."
 
 #. Tag: title
 #, no-c-format
@@ -275,26 +160,111 @@ msgid "Office Suite"
 msgstr "Suite bureautique"
 
 #. Tag: para
-#, no-c-format
-msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;."
+#, fuzzy, no-c-format
+msgid "<emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;."
 msgstr "<emphasis>LibreOffice</emphasis> - LibreOffice, la suite bureautique libre sponsorisée par la Fondation Document, remplace la suite OpenOffice.org dans Pardus &PRODVER;."
 
-#. Tag: title
-#, no-c-format
-msgid "Games"
-msgstr "Jeux"
+#~ msgid "Users are now able to select between Open Source and proprietary drivers for their NVIDIA video adapters."
+#~ msgstr "Les utilisateurs de carte graphique NVidia peuvent désormais choisir très facilement entre l'utilisation de pilotes vidéo libre ou propriétaire."
 
-#. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; continues the tradition of giving importance to the quality of games offered to their users. The default installation now includes the board and logic games provided by the <application>kdegames</application> package."
-msgstr "Pardus &PRODVER; continue de fournir de bons jeux vidéo. Par défaut sont présents les jeux de logique et de table du paquet  <application>kdegames</application>."
+#~ msgid "First Boot"
+#~ msgstr "Premier démarrage"
 
-#. Tag: title
-#, no-c-format
-msgid "Other Changes"
-msgstr "Autres changements"
+#~ msgid "Some of the settings which were asked during the installation in Pardus &PREVVER; are now moved into a different application which shows up once during the first boot after the installation."
+#~ msgstr "Certains des paramétrages qui étaient réalisés durant l'installation de Pardus &PREVVER; ont été déplacés dans une application apparaissant au premier démarrage après l'installation de Pardus."
 
-#. Tag: para
-#, no-c-format
-msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
-msgstr "Firefox &FIREFOXVER; présente de nouvelles fonctionnalités comme son interface renouvelée, la gestion des extensions, le regroupement des onglets, les marque-pages partageables entre plusieurs ordinateurs, la correspondance entre mots de passe et historique, les technologies HTML5, CSS3 et WebM."
+#~ msgid "Kaptan"
+#~ msgstr "Kaptan"
+
+#~ msgid "<emphasis>Kaptan</emphasis>, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE."
+#~ msgstr "<emphasis>Kaptan</emphasis>, l'assistant de personnalisation du bureau de Pardus, vous propose désormais de prendre votre photo et de la placer comme avatar dans KDE."
+
+#~ msgid "Users are now able to select their preferred icon theme which will be used in their KDE desktop environment."
+#~ msgstr "Les utilisateurs ont maintenant de choisir le thème du jeu d'icônes de KDE."
+
+#~ msgid "Users are now able to vote for a package and see the screenshots of graphical applications shipped within packages."
+#~ msgstr "Les utilisateurs peuvent désormais mettre une note aux paquets et voir une photo d'écran des applications graphiques."
+
+#~ msgid "The graphical user interface is redesigned to improve the usability. Various speed enhancements has been done for a better graphical package management experience."
+#~ msgstr "L'interface graphique a été retravaillée pour en améliorer l'ergonomie. La vitesse d'exécution accrue améliore la gestion des paquets. "
+
+#~ msgid "A lot of KDE integration work has been done including the usage of KDE system tray."
+#~ msgstr "Un gros travail d'intégration de KDE a été réalisé, y compris dans l'usage du tableau de bord."
+
+#~ msgid "<application>TeX Live</application> - TeX Live documentation stack is updated to &TEXLIVEVER;."
+#~ msgstr "<application>TeX Live</application> - TeX Live est mis à jour vers la version &TEXLIVEVER;."
+
+#~ msgid "Changes in KDE Desktop Environment"
+#~ msgstr "Changements dans l'environnement de bureau KDE"
+
+#~ msgid "Pardus &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly."
+#~ msgstr "Pardus &PRODVER; est livrée avec le dernier KDE, KDE SC &KDEVER;. Les paquets de base contiennent des rétro-portages et des correctifs qui améliorent significativement la stabilité de votre bureau."
+
+#~ msgid "KDE SC &KDEVER; brings more performance and stability to the desktop experience. Support for WebKit, improved user experience for netbooks, a new high-speed cache allowing fast access to resources stored on disk are among the new features of this version."
+#~ msgstr "KDE SC &KDEVER; offre plus de performance et de stabilité. Parmi ses fonctionnalités, citons la prise en charge de WebKit, l'amélioration de l'ergonomie pour les utilisateurs de mini-portables, un nouveau cache autorisant des accès aux ressources stockées sur le disque dur."
+
+#~ msgid "All GTK applications are now rendered with Oxygen style thanks to the <emphasis>oxygen-gtk</emphasis> project. This brings a huge improvement to the user interface consistency."
+#~ msgstr "L'ensemble des applications GTK sont maintenant rendues avec le style Oxygen, grâce au projet <emphasis>oxygen-gtk</emphasis>. Ce qui apporte une plus grande cohérence visuelle dans l'interface."
+
+#~ msgid "Milky icon theme especially designed for Pardus is shipped within the installation image. Users can set this icon theme through <emphasis>Kaptan</emphasis> or <emphasis>System Settings</emphasis>."
+#~ msgstr "Milky, le jeu d'icônes spécialement conçu pour Pardus est disponible, à choisir dans<emphasis>Kaptan</emphasis> ou dans <emphasis>Configuration du système</emphasis>."
+
+#~ msgid "Besides switching to GNOME NetworkManager as the default networking backend, Pardus &PRODVER; comes with a heavily improved and modified KDE Network Management tool and plasmoid to give their users a much more consistent networking experience."
+#~ msgstr " Pardus &PRODVER;, en plus d'adopter NetworkManager, le backend réseau de GNOME, a profondément modifié l'outil et le plasmoïde de gestion du réseau de KDE, de façon a apporter plus de cohérence du point de vue de l'utilisateur."
+
+#~ msgid "Default Applications"
+#~ msgstr "Applications par défaut"
+
+#~ msgid "Mozilla Firefox"
+#~ msgstr "Mozilla Firefox"
+
+#~ msgid "Pardus &PRODVER; comes with Mozilla Firefox &FIREFOXVER; as the default web browser application. New features of this Firefox release include Firefox Panorama, application tabs, a redesigned extension manager, Jetpack extensions support, integration with Firefox Sync, and support for multitouch displays."
+#~ msgstr "Pardus &PRODVER; utilise Mozilla Firefox &FIREFOXVER; comme navigateur par défaut. Au menu des nouveautés : Firefox panorama, les onglets d'application, la refonte du gestionnaire d'extensions, la prise en charge des extensions jetpack, l'intégration de Firefox Sync, et la prise en charge des afichages \"multitouch\"."
+
+#~ msgid "Clementine"
+#~ msgstr "Clementine"
+
+#~ msgid "<emphasis>Clementine</emphasis>, a cross-platform music player based on Amarok 1.4 is set as the default audio playing application as it is well maintained and lightweight."
+#~ msgstr "<emphasis>Clementine</emphasis>, le lecteur de musique basé sur Amarok 1.4 a été choisi pour être l'application audio par défaut, compte tenu de sa légèreté et de sa maintenance."
+
+#~ msgid "SMPlayer"
+#~ msgstr "SMPlayer"
+
+#~ msgid "<emphasis>SMplayer</emphasis>, a Qt based frontend for MPlayer is set as the default Video/VCD/DVD playing application as it is well integrated with KDE desktop environment in terms of usability and graphical user interface and supports playing a wide range of video file types thanks to the MPlayer backend."
+#~ msgstr "<emphasis>SMplayer</emphasis>, l'habillage graphique Qt de MPlayer a été choisi comme lecteur vidéo, VCD et DVD par défaut compte tenu de son intégration dans KDE en terme d'utilisabilité, d'interface graphique et de sa large gamme de types de formats pris en charge par MPlayer."
+
+#~ msgid "KsCD"
+#~ msgstr "KsCD"
+
+#~ msgid "<emphasis>KsCD</emphasis>, is set as the default Audio CD playing application."
+#~ msgstr "<emphasis>KsCD</emphasis> est l'application par défaut pour lire les CD."
+
+#~ msgid "Web Browsers"
+#~ msgstr "Navigateur web"
+
+#~ msgid "Although not included in the installation images, a wide range of web browsers including Chromium browser, rekonq, Arora and Opera are available for installation through the package manager."
+#~ msgstr "Sont disponibles en sus, dans le gestionnaire de paquets, les navigateurs Chromium, Rekonq, Arora et Opera."
+
+#~ msgid "System Settings"
+#~ msgstr "Paramètres du système"
+
+#~ msgid "<emphasis>Panda</emphasis> (Pardus alternative driver administration) is a new System Settings module which allows users to change the driver between Open Source and proprietary one for NVIDIA and ATI display adapters."
+#~ msgstr "<emphasis>Panda</emphasis> (Pardus Alternative Driver Administration) est un nouveau module du centre de configuration du système qui permet de basculer vers les pilotes vidéo libres ou propriétaires."
+
+#~ msgid "Users are now able to set up their Bluetooth devices, Wacom tablets and Synaptics touchpads through System Settings."
+#~ msgstr "Les utilisateurs peuvent maintenant configurer les périphériques Bluetooth, les tablettes Wacom et les touchpads Synaptics dans le centre de configuration."
+
+#~ msgid "The default language used throughout the whole system can now be changed through the locale settings section."
+#~ msgstr "La langue par défaut utilisée dans tout le système peut maintenant être changée dans la section localisation."
+
+#~ msgid "Games"
+#~ msgstr "Jeux"
+
+#~ msgid "Pardus &PRODVER; continues the tradition of giving importance to the quality of games offered to their users. The default installation now includes the board and logic games provided by the <application>kdegames</application> package."
+#~ msgstr "Pardus &PRODVER; continue de fournir de bons jeux vidéo. Par défaut sont présents les jeux de logique et de table du paquet  <application>kdegames</application>."
+
+#~ msgid "Other Changes"
+#~ msgstr "Autres changements"
+
+#~ msgid "Firefox gets new stable release rapidly. &FIREFOXVER; release presents many new features like the new interface of the browser as well as plugin management new interface, tab grouping, bookmarks between computers, passwords and history matching, a new plug-in interface. HTML5, CSS3 and WebM technology supports are also most important features for the developers."
+#~ msgstr "Firefox &FIREFOXVER; présente de nouvelles fonctionnalités comme son interface renouvelée, la gestion des extensions, le regroupement des onglets, les marque-pages partageables entre plusieurs ordinateurs, la correspondance entre mots de passe et historique, les technologies HTML5, CSS3 et WebM."

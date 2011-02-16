@@ -4,14 +4,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 13:59-0400\n"
 "Last-Translator: Klemens Häckel <click3d [at] linuxmail <dot> org>\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -24,8 +24,8 @@ msgid "Processor (CPU)"
 msgstr "Procesador (CPU)"
 
 #. Tag: para
-#, no-c-format
-msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
+#, fuzzy, no-c-format
+msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
 msgstr "Le convendría instalar la versión de 64-bit de Pardus &PRODVER; si sus sistema está equipado con uno de los procesadores del listado abajo."
 
 #. Tag: title
@@ -104,8 +104,8 @@ msgid "System memory (RAM)"
 msgstr "Memoria del sistema (RAM)"
 
 #. Tag: para
-#, no-c-format
-msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
+#, fuzzy, no-c-format
+msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
 msgstr "Los requirimientos de memoria RAM de Pardus &PRODVER; dependen del tipo de uso que le dan al sistema, y por lo tanto es dificil de determinar límites inferiores o superiores. Sin embargo recomendamos al mínimo &MINMEM; de RAM para una experiencia agradable del escritorio."
 
 #. Tag: title
@@ -119,8 +119,8 @@ msgid "Minimum requirements"
 msgstr "Requisitos mínimos"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
 msgstr "Pardus &PRODVER; requiere al menos &MINREQSPACE; de espacio en disco para uns instalación exitosa. Este valor de espacio está predeterminado por la cantidad de paquetes que se van a instalar, ya que durante de la instalación no se tiene la opción de elegir los paquetes a instalar."
 
 #. Tag: title
@@ -129,8 +129,8 @@ msgid "Recommended requirements"
 msgstr "Requirimientos recomendados"
 
 #. Tag: para
-#, no-c-format
-msgid "In order to effectively use Pardus &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
+#, fuzzy, no-c-format
+msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
 msgstr "Para un uso eficiente de Pardus &PRODVER; en su sistema sin llegar al límite de espacio en disco para su uso diario, recomendamos al menos &RECOMMSPACE; de espacio disponible en disco."
 
 #. Tag: title
@@ -147,4 +147,3 @@ msgstr "El sistema usa el espacio de intercambio (Swap), cuando la memoria RAM d
 #, no-c-format
 msgid "<emphasis>Note that</emphasis> a disk partition reserved for swap space is <emphasis>required</emphasis> if you want to hibernate (Suspend to disk) Pardus. Otherwise the functionality will be disabled."
 msgstr "<emphasis>Atención:</emphasis> Si desea utilizar la funcionalidad de hibernar (Suspend to disk) en Pardus se <emphasis>necesita</emphasis> la existencia del espacio de intercambio Pardus. Esta función queda deshabilitada si no existe el espacio de intercambio."
-

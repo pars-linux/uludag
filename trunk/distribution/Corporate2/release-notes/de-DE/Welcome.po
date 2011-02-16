@@ -4,24 +4,24 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T11:58:40\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-20 11:12+0100\n"
 "Last-Translator: Stefan Wilhelm <sw  _at_  pardususer  dot  de>\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
-#, no-c-format
-msgid "Welcome to Pardus &PRODVER;"
+#, fuzzy, no-c-format
+msgid "Welcome to &DISTRONAME; &PRODVER;"
 msgstr "Willkommen bei Pardus &PRODVER;"
 
 #. Tag: para
 #, no-c-format
-msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
-msgstr "Willkommen bei Pardus &PRODVER;, der neuesten Version einer leistungsfähigen und auf KDE fokussierten Linux Distribution."
+msgid "Welcome to &DISTRONAME; &PRODVER;, the first release of Pardus Corporate series offering a mature enterprise desktop experience to the users."
+msgstr ""
 
 #. Tag: title
 #, no-c-format
@@ -88,3 +88,5 @@ msgstr "Rückmeldung"
 msgid "Visit <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> to report a bug, send a bug fix or suggest improvements about Pardus.We would like to thank all of our users and community members for their valuable contributions which help improving Pardus, Linux and free software worldwide."
 msgstr "Um Fehler zu melden, einen Bugfix zu senden, oder um eine Verbesserung für Pardus vorzuschlagen können Sie die Seite <ulink url=\"http://bugs.pardus.org.tr\">http://bugs.pardus.org.tr</ulink> aufsuchen. An dieser Stelle möchten wir allen Nutzern und Communitymitgliedern für Ihre wertvolle Arbeit danken, die uns hilft Pardus, Linux und freie Software zu verbessern."
 
+#~ msgid "Welcome to Pardus &PRODVER;, the latest release of Pardus, a powerful, KDE-focused Linux distribution."
+#~ msgstr "Willkommen bei Pardus &PRODVER;, der neuesten Version einer leistungsfähigen und auf KDE fokussierten Linux Distribution."

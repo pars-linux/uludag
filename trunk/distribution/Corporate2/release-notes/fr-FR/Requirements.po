@@ -5,14 +5,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-01-19T10:14:10\n"
+"POT-Creation-Date: 2011-02-16T11:35:28\n"
 "PO-Revision-Date: 2011-01-19 22:33+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
@@ -27,8 +27,8 @@ msgid "Processor (CPU)"
 msgstr "Processeur (CPU)"
 
 #. Tag: para
-#, no-c-format
-msgid "You may want to install the 64-bit version of Pardus &PRODVER; if your system is equipped with one of the processors listed in the sections below."
+#, fuzzy, no-c-format
+msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
 msgstr "Vous pouvez installer la version 64-bit de Pardus &PRODVER; si votre système est équipé des processeurs listés dans les sections suivantes."
 
 #. Tag: title
@@ -107,8 +107,8 @@ msgid "System memory (RAM)"
 msgstr "Mémoire vive (RAM)"
 
 #. Tag: para
-#, no-c-format
-msgid "System memory (RAM) requirements of Pardus &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
+#, fuzzy, no-c-format
+msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
 msgstr "Les pré-requis en mémoire vive de Pardus &PRODVER; dépendent de l'intensité de votre utilisation de l'ordinateur. Nous recommandons au moins &MINMEM; de mémoire vive."
 
 #. Tag: title
@@ -122,8 +122,8 @@ msgid "Minimum requirements"
 msgstr "Pré-requis minimum"
 
 #. Tag: para
-#, no-c-format
-msgid "Pardus &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
+#, fuzzy, no-c-format
+msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
 msgstr "Pardus &PRODVER; nécessite au moins &MINREQSPACE; d'espace disque pour son installation."
 
 #. Tag: title
@@ -132,8 +132,8 @@ msgid "Recommended requirements"
 msgstr "Pré-requis recommandés"
 
 #. Tag: para
-#, no-c-format
-msgid "In order to effectively use Pardus &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
+#, fuzzy, no-c-format
+msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
 msgstr "Afin d'utiliser Pardus &PRODVER; sans être à court d'espace disque, nous recommandons au moins &RECOMMSPACE; d'espace libre."
 
 #. Tag: title
@@ -150,4 +150,3 @@ msgstr "L'espace d'échange (SWAP) est utilisé par le système à court de mém
 #, no-c-format
 msgid "<emphasis>Note that</emphasis> a disk partition reserved for swap space is <emphasis>required</emphasis> if you want to hibernate (Suspend to disk) Pardus. Otherwise the functionality will be disabled."
 msgstr "<emphasis>Notez que</emphasis> une partition réservée à la swap est <emphasis>requise</emphasis> si vous souhaitez utiliser la fonction d'hibernation (Suspend to disk) de Pardus. Autrement, cette fonctionnalité sera désactivée."
-
