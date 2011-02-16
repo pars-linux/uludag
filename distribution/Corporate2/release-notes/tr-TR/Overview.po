@@ -1,16 +1,16 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-02-16T11:35:28\n"
+"POT-Creation-Date: 2011-02-16T12:49:39\n"
 "PO-Revision-Date: 2011-01-19 16:31+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -38,8 +38,8 @@ msgid "Software Overview"
 msgstr "Yazılım"
 
 #. Tag: para
-#, no-c-format
-msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
+#, fuzzy, no-c-format
+msgid "<application>Kernel</application> - The Linux kernel shipped with &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
 msgstr "<application>Kernel</application> - &DISTRONAME; &PRODVER; ile Linux çekirdeğinin en yeni sürümü olan &KERNELVER; uzun dönem destek (LTS) dahilinde sunulmakta."
 
 #. Tag: para
