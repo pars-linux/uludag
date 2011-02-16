@@ -1,5 +1,5 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -7,10 +7,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-20 13:40+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: application/x-publican; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #. Tag: title
 #, no-c-format
@@ -78,7 +78,7 @@ msgid "Updates in Core Components"
 msgstr "Temel Bileşenlerde Güncellemeler"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Kernel</application> - The Linux kernel shipped with &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
 msgstr "<application>Kernel</application> - &DISTRONAME; &PRODVER;, ile Linux çekirdeğinin 5 Ocak 2011'de yayınlanan en son kararlı &KERNELVER; sürümüne geçildi."
 
