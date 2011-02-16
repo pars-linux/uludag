@@ -24,12 +24,12 @@
             <!-- makine adı -->
             <item type="label">
                 <pos anchor="n" x="%50"/>
-                <normal color="#DDDDDD" font="Sans Bold 12"/>
+                <normal color="#DDDDDD" font="Sans Bold 10"/>
                 <text>%h</text>
             </item>
             <!-- saat -->
             <item type="label" id="clock">
-                <normal color="#DDDDDD" font="Sans Bold 12"/>
+                <normal color="#DDDDDD" font="Sans Bold 10"/>
                 <text>%c</text>
             </item>
         </box>
@@ -51,13 +51,13 @@
                                     <!-- kullanıcı adı sorusu -->
                                     <item type="label">
                                         <pos anchor="w" y="%60"/>
-                                        <normal color="#CCCCCC" font="Sans 14"/>
+                                        <normal color="#CCCCCC" font="Sans 13"/>
                                         <stock type="username-label"/>
                                     </item>
                                     <!-- parola sorusu -->
                                     <item type="label">
                                         <pos anchor="w" y="%60"/>
-                                        <normal color="#CCCCCC" font="Sans 14"/>
+                                        <normal color="#CCCCCC" font="Sans 13"/>
                                         <stock type="password-label"/>
                                     </item>
                                 </box>
@@ -67,12 +67,12 @@
                                 <box orientation="vertical" homogenous="true" spacing="10">
                                     <!-- kullanıcı adı giriş yeri -->
                                     <item type="entry" id="user-entry">
-                                        <normal font="Sans Bold 12"/>
+                                        <normal font="Sans Bold 10"/>
                                         <pos width="130" height="28"/>
                                     </item>
                                     <!-- parola giriş yeri -->
                                     <item type="entry" id="pw-entry">
-                                        <normal font="Sans Bold 12"/>
+                                        <normal font="Sans Bold 10"/>
                                         <pos width="130" height="28"/>
                                     </item>
                                 </box>
@@ -89,7 +89,7 @@
                             </item>
                             <item type="label">
                                 <pos anchor="w" y="%50"/>
-                                <normal color="#CCCCCC" font="Sans Bold 12"/>
+                                <normal color="#CCCCCC" font="Sans Bold 10"/>
                                 <stock type="login"/>
                             </item>
                         </box>
@@ -104,7 +104,7 @@
                             </item>
                             <item type="label">
                                 <pos anchor="w" y="%50"/>
-                                <normal color="#CCCCCC" font="Sans Bold 12"/>
+                                <normal color="#CCCCCC" font="Sans Bold 10"/>
                                 <stock type="quit"/>
                             </item>
                         </box>
@@ -123,7 +123,7 @@
 
     <!-- hata mesajı -->
     <item type="label" id="pam-error">
-        <normal color="#EEEEEE" font="Sans Bold 12"/>
+        <normal color="#EEEEEE" font="Sans Bold 10"/>
         <pos anchor="n" x="%50" y="%70"/>
     </item>
 
@@ -133,7 +133,7 @@
         <pos anchor="n" x="%50" y="77%" width="box" height="box"/>
         <box orientation="vertical" xpadding="6" ypadding="6">
             <item type="label">
-                <normal color="#CCCCCC" font="Sans Bold 11"/>
+                <normal color="#CCCCCC" font="Sans Bold 10"/>
                 <pos anchor="nw" x="0" y="0"/>
                 <stock type="caps-lock-warning"/>
             </item>
