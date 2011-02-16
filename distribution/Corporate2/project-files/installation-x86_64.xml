@@ -250,9 +250,6 @@
         <SelectedPackage>module-microdia</SelectedPackage>
         <SelectedPackage>module-ndiswrapper</SelectedPackage>
         <SelectedPackage>module-ndiswrapper-userspace</SelectedPackage>
-        <SelectedPackage>module-ov51x-jpeg</SelectedPackage>
-        <SelectedPackage>module-r5u870</SelectedPackage>
-        <SelectedPackage>module-syntekdriver</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
         <SelectedPackage>network-manager-applet</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
@@ -878,9 +875,6 @@
         <Package>module-kvm-userspace</Package>
         <Package>module-microdia-userspace</Package>
         <Package>module-ndiswrapper-userspace</Package>
-        <Package>module-ov51x-jpeg-userspace</Package>
-        <Package>module-r5u870-userspace</Package>
-        <Package>module-syntekdriver-userspace</Package>
         <Package>mpfr</Package>
         <Package>mpg123</Package>
         <Package>mplayer</Package>
