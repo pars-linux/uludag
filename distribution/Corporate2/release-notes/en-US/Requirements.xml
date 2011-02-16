@@ -10,7 +10,7 @@
     <section id="sect-Release_Notes-CPU_Requirements">
         <title>Processor (CPU)</title>
         <para>
-            You may want to install the 64-bit version of Pardus &PRODVER;DISTRONAME; Pardus &PRODVER;PRODVER; if your system is
+            You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is
             equipped with one of the processors listed in the sections below.
         </para>
 
@@ -43,7 +43,7 @@
     <section id="sect-Release_Notes-Memory_Requirements">
         <title>System memory (RAM)</title>
         <para>
-            System memory (RAM) requirements of Pardus &PRODVER;DISTRONAME; Pardus &PRODVER;PRODVER; depends heavily on your daily workflow
+            System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow
             so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory
             for a smooth desktop experience.
         </para>
@@ -54,7 +54,7 @@
         <section id="sect-Release_Notes-Harddisk_Minimum_Requirements">
             <title>Minimum requirements</title>
             <para>
-                Pardus &PRODVER;DISTRONAME; Pardus &PRODVER;PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation.
+                &DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation.
                 As we don't offer custom package selection during the installation, this minimum
                 size constraint applies to all installations.
             </para>
@@ -62,7 +62,7 @@
         <section id="sect-Release_Notes-Harddisk_Recommended_Requirements">
             <title>Recommended requirements</title>
             <para>
-                In order to effectively use Pardus &PRODVER;DISTRONAME; Pardus &PRODVER;PRODVER; on your system without running low on disk space
+                In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space
                 during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space.
             </para>
         </section>
