@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
-"POT-Creation-Date: 2011-02-16T11:58:06\n"
-"PO-Revision-Date: 2011-02-16T11:58:06\n"
+"POT-Creation-Date: 2011-02-16T12:49:39\n"
+"PO-Revision-Date: 2011-02-16T12:49:39\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: None\n"
 "MIME-Version: 1.0\n"
@@ -79,7 +79,7 @@ msgstr ""
 
 #. Tag: para
 #, no-c-format
-msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
+msgid "<application>Kernel</application> - The Linux kernel shipped with &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
 msgstr ""
 
 #. Tag: para
