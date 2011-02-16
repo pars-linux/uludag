@@ -21,7 +21,7 @@ msgstr "Sürüm Notları"
 #. Tag: productname
 #, no-c-format
 msgid "Pardus Corporate"
-msgstr ""
+msgstr "Pardus Kurumsal"
 
 #~ msgid "Pardus"
 #~ msgstr "Pardus"
