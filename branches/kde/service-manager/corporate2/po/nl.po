@@ -2,144 +2,329 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Thijs Hulshof <thijs@fedoraproject.org>, 2006.
+# Willem Gielen <w.gielen@gmail.com>, 2006.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2006, 2007, 2008.
-# Willem Gielen <w.gielen@gmail.com>, 2006, 2007.
-# Antoon Tolboom <atolboo@gmail.com>, 2010.
+# Antoon Tolboom <atolboo@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-16 09:40+0200\n"
-"PO-Revision-Date: 2010-12-07 12:14+0100\n"
+"POT-Creation-Date: 2011-02-15 14:59+0200\n"
+"PO-Revision-Date: 2011-02-15 16:00+0100\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/sm_backend.py:46
-msgid "You are not authorized for this operation."
-msgstr "U mag deze handeling niet verrichten."
+#: browser.py:92
+msgid "Show system user and groups"
+msgstr "Systeemgebruikers en groepen tonen"
 
-#: src/sm_backend.py:48
-#, fuzzy, python-format
-msgid ""
-"An error occurred:\n"
-"%s"
-msgstr ""
-"Een fout is opgetreden:\n"
-"%s"
+#: browser.py:102 browser.py:112
+msgid "ID"
+msgstr "ID"
 
-#: src/service-manager.py:33 src/service-manager.py:88
-#: src/service_manager.py:123
-msgid "Service Manager"
-msgstr "Dienstbeheer"
+#: browser.py:104
+msgid "User name"
+msgstr "Gebruikersnaam"
 
-#: src/service-manager.py:81
-msgid "Service Manager is already started!"
-msgstr "Dienstbeheer is reeds gestart!"
+#: browser.py:105
+msgid "Full name"
+msgstr "Volledige naam"
 
-#: src/sm_mainview.py:171 src/service_manager.py:127
-msgid "Select a service from list."
-msgstr "Kies een dienst van de lijst."
+#: browser.py:114
+msgid "Group name"
+msgstr "Groepsnaam"
 
-#: src/sm_mainview.py:178
-msgid "Clear Search"
-msgstr "Leeg zoekopdracht"
+#: browser.py:119
+msgid "Users"
+msgstr "Gebruikers"
 
-#: src/sm_mainview.py:179 src/service_manager.py:129
-#: src/service_manager.py:131
-msgid "Start"
-msgstr "Start"
+#: browser.py:120 useredit.py:772
+msgid "Groups"
+msgstr "Groepen"
 
-#: src/sm_mainview.py:181
-msgid "Restart"
-msgstr "Herstart"
+#: browser.py:130
+msgid "User Manager Help"
+msgstr "Gebruikersbeheer hulp"
 
-#: src/sm_mainview.py:186
+#: browser.py:137
 #, python-format
-msgid "%s is running."
-msgstr "%s is actief."
+msgid ""
+"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
+"s<br>ID: %d"
+msgstr ""
+"<big><b>Deze gebruiker verwijderen?</b></big><br><br>Naam: %s<br>"
+"Gebruikersnaam: % s <br>ID: %d"
 
-#: src/sm_mainview.py:189
+#: browser.py:143
+msgid "Delete User"
+msgstr "Gebruiker verwijderen"
+
+#: browser.py:144
+msgid "Delete user and files"
+msgstr "Gebruiker en bestanden verwijderen"
+
+#: browser.py:145
+msgid "Delete user"
+msgstr "Gebruiker verwijderen"
+
+#: browser.py:158
 #, python-format
-msgid "%s is not running."
-msgstr "%s is niet actief."
-
-#: src/sm_mainview.py:264
 msgid ""
-"If you stop this service, you may have problems.\n"
-"Are you sure you want to stop this service?"
+"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
 msgstr ""
-"Als u deze dienst stopt, kunt u in de problemen raken.\n"
-"Weet u zeker dat u deze dienst wilt stoppen?"
+"<big><b>Deze groep verwijderen?</b></big><br><br>Groepsnaam: %"
+"s<br>ID: %d"
 
-#: src/sm_mainview.py:268
+#: browser.py:164 browser.py:165
+msgid "Delete Group"
+msgstr "Groep verwijderen"
+
+#: groupedit.py:22 useredit.py:41
+msgid "ID:"
+msgstr "ID:"
+
+#: groupedit.py:30 useredit.py:53
+msgid "Select manually"
+msgstr "Handmatig selecteren"
+
+#: groupedit.py:61
+msgid "Group name:"
+msgstr "Groepsnaam:"
+
+#: groupedit.py:97
+msgid "Enter a group ID or use auto selection"
+msgstr "Voer een groeps-ID in, of gebruik autoselectie"
+
+#: groupedit.py:100
+msgid "Enter a group name"
+msgstr "Voer een groepsnaam in"
+
+#: groupedit.py:129
+msgid "Enter Information For New Group"
+msgstr "Voer informatie voor de nieuwe groep in"
+
+#: groupedit.py:168
+msgid "Adding group..."
+msgstr "Groep toevoegen..."
+
+#: user-manager.py:33
+msgid "User Management"
+msgstr "Gebruikersbeheer"
+
+#: user-manager.py:83
+msgid "User manager module is already started!"
+msgstr "Module gebruikersbeheer is al opgestart!"
+
+#: user-manager.py:88
+msgid "User Manager"
+msgstr "Gebruikersbeheer"
+
+#: useredit.py:26
+msgid "User/group operations"
+msgstr "Gebruiker/groep handelingen"
+
+#: useredit.py:27
+msgid "Network settings"
+msgstr "Netwerkinstellingen"
+
+#: useredit.py:28
+msgid "Package operations"
+msgstr "Pakket handelingen"
+
+#: useredit.py:29
+msgid "Service operations"
+msgstr "Diensten handelingen"
+
+#: useredit.py:30
+msgid "Date/time operations"
+msgstr "Datum/tijd handelingen"
+
+#: useredit.py:31
+msgid "Kernel module operations"
+msgstr "Kernel module handelingen"
+
+#: useredit.py:32
+msgid "Bootloader settings"
+msgstr "Bootloader-handelingen"
+
+#: useredit.py:33
+msgid "Screen settings"
+msgstr "Scherminstellingen"
+
+#: useredit.py:88
+msgid "User name:"
+msgstr "Gebruikersnaam:"
+
+#: useredit.py:119
+msgid "Full name:"
+msgstr "Volledige naam:"
+
+#: useredit.py:144
+msgid "Home:"
+msgstr "Persoonlijke map:"
+
+#: useredit.py:176
+msgid "Select user's home directory"
+msgstr "Selecteer de persoonlijke map van de gebruiker"
+
+#: useredit.py:185
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: useredit.py:191
+msgid "Confirm password:"
+msgstr "Wachtwoord bevestigen:"
+
+#: useredit.py:219
+msgid "Shell:"
+msgstr "Shell:"
+
+#: useredit.py:241
+msgid "Please specify an existing shell command"
+msgstr "Voer een bestaand shell-commando in"
+
+#: useredit.py:243
+msgid "Specified shell command is not executable"
+msgstr "Opgegeven shell-commando is niet uitvoerbaar"
+
+#: useredit.py:271
+msgid "Group"
+msgstr "Groep"
+
+#: useredit.py:278
+msgid "Main group:"
+msgstr "Hoofdgroep:"
+
+#: useredit.py:376
+msgid "Start with typing this user's full name."
+msgstr "Begin met het typen van de volledige naam van deze gebruiker."
+
+#: useredit.py:379
+msgid "You should enter a password for this user."
+msgstr "U dient een wachtwoord voor deze gebruiker te geven."
+
+#: useredit.py:384
+msgid "Password must be longer."
+msgstr "Wachtwoord dient langer te zijn."
+
+#: useredit.py:388
+msgid "Don't use your full name or user name as a password."
+msgstr "Gebruik niet uw volledige naam of gebruikersnaam als wachtwoord."
+
+#: useredit.py:391
+msgid "Passwords don't match."
+msgstr "Wachtwoorden komen niet overeen."
+
+#: useredit.py:395
+msgid "You must enter a user ID or use the auto selection."
+msgstr "Geef een gebruikers-id, of gebruik autoselectie."
+
+#: useredit.py:399
+msgid "You must enter a user ID between 999 and 65535."
+msgstr "U dient een gebruiker-ID tussen 999 en 65535 op te geven."
+
+#: useredit.py:404
+msgid "You must enter a user name."
+msgstr "U dient een gebruikersnaam op te geven."
+
+#: useredit.py:407
+msgid "This user name is used by another user."
+msgstr "Deze gebruikersnaam wordt al door een ander gebruiker gebruikt."
+
+#: useredit.py:410
+msgid "This user ID is used by another user."
+msgstr "Deze gebruiker-ID wordt al door een andere gebruiker gebruikt."
+
+#: useredit.py:414
+msgid "User name must not start with a number."
+msgstr "Gebruikersnaam mag niet met een cijfer beginnen."
+
+#: useredit.py:417
+msgid "You should select at least one group this user belongs to."
+msgstr "U dient minstens één groep te kiezen waartoe deze gebruiker behoort."
+
+#: useredit.py:497
+msgid "Edit User's Information"
+msgstr "Gebruikersinformatie bewerken"
+
+#: useredit.py:499
+msgid "Enter Information For New User"
+msgstr "Voer informatie voor nieuwe gebruiker in"
+
+#: useredit.py:539
+msgid "Give administrator privileges to this user"
+msgstr "Geef systeembeheerder privileges aan deze gebruiker"
+
+#: useredit.py:628
 msgid ""
-"If you disable this service, you may have problems.\n"
-"Are you sure you want to do this?"
+"You are removing yourself from the 'wheel' system group, you might not use "
+"your administrator permissions after that."
 msgstr ""
-"Als u deze dienst stopt, kunt u in de problemen raken.\n"
-"Weet u zeker dat u deze dienst wilt stoppen?"
+"U wilt uzelf verwijderen van de 'wheel' systeemgroep, u kunt hierna mogelijk "
+"uw systeembeheerder permissies niet meer gebruiken."
 
-#: src/service_manager.py:86 src/service_manager.py:134
-msgid "1"
-msgstr "1"
+#: useredit.py:629
+msgid "Important Group Change"
+msgstr "Belangrijke groepwijziging"
 
-#: src/service_manager.py:87 src/service_manager.py:135
-msgid "Service Description"
-msgstr ""
+#: useredit.py:637
+msgid "Changing user information..."
+msgstr "Gebruikersinformatie wijzigen..."
 
-#: src/service_manager.py:88 src/service_manager.py:136
-msgid "Run on Startup"
-msgstr "Bij opstarten uitvoeren"
+#: useredit.py:662
+msgid "Adding user..."
+msgstr "Gebruiker toevoegen..."
 
-#: src/service_manager.py:89 src/service_manager.py:137
-#, fuzzy
-msgid "Service Name"
-msgstr "Dienstbeheer"
+#: useredit.py:725
+msgid "Getting user information..."
+msgstr "Gebruikersinformatie ophalen..."
 
-#: src/service_manager.py:125
-msgid "Run on startup."
-msgstr "Bij opstarten uitvoeren"
+#: useredit.py:765
+msgid "Authorizations"
+msgstr "Autorisaties"
 
-#: src/service_manager.py:126
-msgid "Don't run on startup."
-msgstr "Niet uitvoeren bij opstarten."
+#: useredit.py:783
+msgid "Actions"
+msgstr "Acties"
 
-#: src/service_manager.py:139
-msgid "Reset Search"
-msgstr "Herstart zoekopdracht"
+#: useredit.py:795
+msgid "Authorize"
+msgstr "Autoriseer"
 
-#: src/service_manager.py:140
-msgid "Search:"
-msgstr "Zoek:"
+#: useredit.py:799
+msgid "Block"
+msgstr "Blokkeer"
 
-#: src/service_manager.py:141
-msgid "&List servers only."
-msgstr "&Lijst van alleen servers."
+#: useredit.py:810
+msgid "Do not ask password"
+msgstr "Geen wachtwoord vragen"
 
-#~ msgid "Service"
-#~ msgstr "Dienst"
+#: useredit.py:818 useredit.py:823
+msgid "Apply this policy to all"
+msgstr "Dit beleid op alles toepassen"
 
-#~ msgid "Package"
-#~ msgstr "Pakket"
+#: useredit.py:824
+msgid "Apply this policy to category"
+msgstr "Dit beleid op alle categorieën toepassen"
+
+#: useredit.py:826
+msgid "Reset"
+msgstr "Opnieuw instellen"
 
 #~ msgid "Unable to connect to DBus."
-#~ msgstr "Kan geen verbinding maken met DBus."
+#~ msgstr "Kan niet verbinden met DBus."
 
 #~ msgid "DBus Error"
 #~ msgstr "DBus fout"
 
-#~ msgid "D-Bus Error"
-#~ msgstr "D-Bus fout"
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "U bent niet geautoriseerd voor deze handeling."
 
 #~ msgid "COMAR Error"
 #~ msgstr "COMAR fout"
-
-#~ msgid "Alt+L"
-#~ msgstr "ALT+L"
