@@ -223,9 +223,8 @@ msgid "You must enter a user ID or use the auto selection."
 msgstr "Otomatik seçimi kullanın ya da kullanıcı numarasını girin."
 
 #: useredit.py:399
-#, fuzzy
 msgid "You must enter a user ID between 999 and 65535."
-msgstr "Bir kullanıcı adı girin."
+msgstr "999 ile 65535 değerleri arasında bir kullanıcı numarası girin."
 
 #: useredit.py:404
 msgid "You must enter a user name."
@@ -236,9 +235,8 @@ msgid "This user name is used by another user."
 msgstr "Bu kullanıcı adı bir başka kullanıcı tarafından kullanılıyor."
 
 #: useredit.py:410
-#, fuzzy
 msgid "This user ID is used by another user."
-msgstr "Bu kullanıcı adı bir başka kullanıcı tarafından kullanılıyor."
+msgstr "Bu kullanıcı numarası bir başka kullanıcı tarafından kullanılıyor."
 
 #: useredit.py:414
 msgid "User name must not start with a number."
