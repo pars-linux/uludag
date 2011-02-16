@@ -8,6 +8,16 @@
         <pos x="0" y="0" width="100%" height="100%"/>
     </item>
 
+    <!-- logo -->
+    <item type="rect">
+        <pos anchor="n" x="%50" y="%8" width="box" height="box"/>
+        <box orientation="vertical" spacing="2">
+            <item type="pixmap">
+                <normal file="logo.png"/>
+            </item>
+        </box>
+    </item>
+
     <item type="rect">
         <pos anchor="n" x="%50" y="%85" width="box" height="box"/>
         <box orientation="vertical" spacing="2">
