@@ -26,6 +26,7 @@ Usage: %s COMMAND
     missing     Dumps the packages which has releases not
                 built yet.
 """ % sys.argv[0]
+    return 1
 
 if __name__ == "__main__":
     # Dispatches commands to real commands
@@ -37,4 +38,4 @@ if __name__ == "__main__":
     if cmd in COMMANDS_NOPARAM:
         sys.exit(subprocess.call(["buildfarm-%s" % cmd]))
     else:
-        sys.exit(usage)
+        sys.exit(usage())
