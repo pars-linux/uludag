@@ -13,7 +13,7 @@ msgstr ""
 "Language: \n"
 
 #. Tag: title
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "Welcome to &DISTRONAME; &PRODVER;"
 msgstr "Pardus &PRODVER; Sürümüne Hoş Geldiniz"
 
