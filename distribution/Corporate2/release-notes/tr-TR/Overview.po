@@ -1,5 +1,5 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 0\n"
@@ -20,7 +20,7 @@ msgstr "Genel Bakış"
 #. Tag: para
 #, no-c-format
 msgid "The following sections provides a brief overview of the features offered by &DISTRONAME; &PRODVER;."
-msgstr ""
+msgstr "Bu bölümde &DISTRONAME; &PRODVER;'nin özellikleri hakkında kısa bir özet bulabilirsiniz."
 
 #. Tag: title
 #, no-c-format
@@ -28,9 +28,9 @@ msgid "Hardware Overview"
 msgstr "Donanım"
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "&DISTRONAME; &PRODVER; supports both 32-bit and 64-bit processor architectures manufactured by Intel and AMD."
-msgstr "Pardus &PRODVER;, Intel ve AMD işlemcilerinin sağladığı 64-bit işlemci mimarisini desteklemektedir."
+msgstr "&DISTRONAME; &PRODVER; Intel ve AMD'nin hem 32-bit hem de 64-bit işlemi mimarilerini destekler."
 
 #. Tag: title
 #, no-c-format
@@ -40,12 +40,12 @@ msgstr "Yazılım"
 #. Tag: para
 #, no-c-format
 msgid "<application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest kernel branch which will be supported for a long term period."
-msgstr ""
+msgstr "<application>Kernel</application> - &DISTRONAME; &PRODVER; ile Linux çekirdeğinin en yeni sürümü olan &KERNELVER; uzun dönem destek (LTS) dahilinde sunulmakta."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>Plymouth</application> - The bootsplash technology used in &DISTRONAME; &PRODVER; is the brand new Plymouth engine."
-msgstr "<application>Plymouth</application> - Pardus &PREVVER; sürümünde kullanılan bootsplash aracının yerine yeni Plymouth teknolojisi geçiyor. "
+msgstr "<application>Plymouth</application> - &DISTRONAME; &PRODVER; açılış görselleştirmesinde yeni Plymouth teknolojisini kullanıldı."
 
 #. Tag: para
 #, no-c-format
@@ -53,19 +53,19 @@ msgid "<application>YALI</application> - YALI, the installer of Pardus, gained L
 msgstr "<application>YALI</application> - Kurulum aracı YALI, LVM/RAID ve UUID desteği kazandı."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>KDE</application> - &DISTRONAME; &PRODVER; comes with KDE &KDEVER;, the old KDE stack which has proven its stability and reliability. The base packages also contains numerous fixes which will improve the stability of your desktop experience significantly."
-msgstr "<application>KDE SC</application> - Pardus &PRODVER; en güncel ve kararlı KDE Yazılım Seçkisi, KDE SC &KDEVER; ile geliyor. Masaüstü deneyiminizin daha hızlı ve kararlı olması için temel paketlere birçok hata düzeltmesi ve iyileştirmeler yapıldı."
+msgstr "<application>KDE</application> - &DISTRONAME; &PRODVER; masaüstünde  kararlılık ve güvenilirlik açısından kendini ispatlamış olan önceki nesil KDE &KDEVER;, ile sunuluyor. Temel yazılımlar, kararlılığı artırmak üzere yapılan bir çok hata düzeltme ve iyileştirmeyi de içeriyor."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>NetworkManager</application> - GNOME NetworkManager 0.8.2 is the default networking backend in &DISTRONAME; &PRODVER;. Users are now able to set up their HSPA/CDMA/VPN networks together with the already supported Ethernet and 802.11 WLAN networks."
-msgstr "<application>NetworkManager</application> - Pardus &PRODVER; sürümünde öntanımlı ağ altyapısı olarak GNOME NetworkManager 0.8.2 sürüme geçildi. Uzun zamandır desteklenen Ethernet ve 802.11 WLAN ağlarının yanı sıra kullanıcılar artık HSPA/CDMA/VPN ağlarını da ayarlayabilecekler."
+msgstr "<application>NetworkManager</application> - &DISTRONAME; &PRODVER; sürümünde öntanımlı ağ altyapısı olarak GNOME NetworkManager 0.8.2 sürüme geçildi. Uzun zamandır desteklenen Ethernet ve 802.11 WLAN ağlarının yanı sıra kullanıcılar artık HSPA/CDMA/VPN ağlarını da ayarlayabilecekler."
 
 #. Tag: para
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "<application>LibreOffice</application> - LibreOffice, an Open Source personal productivity suite sponsored by the Document Foundation, is the default Office Suite in &DISTRONAME; &PRODVER;."
-msgstr "<application>LibreOffice</application> - Document Foundation tarafından geliştirilen açık kaynak kodlu ofis araçları takımı LibreOffice, Pardus &PRODVER; sürümünde artık öntanımlı oluyor."
+msgstr "<application>LibreOffice</application> - Document Foundation tarafından geliştirilen açık kaynak kodlu ofis araçları takımı LibreOffice, &DISTRONAME; &PRODVER; sürümünde artık öntanımlı oluyor."
 
 #~ msgid "Pardus &PRODVER; contains major improvements over the previous Pardus release &PREVVER;. The following sections provide a brief overview of those changes."
 #~ msgstr "Pardus &PRODVER;, Pardus &PREVVER; sürümüne göre önemli yenilikler içermektedir. Aşağıdaki bölümlerde bu değişiklerden kısaca bahsedilmiştir."
