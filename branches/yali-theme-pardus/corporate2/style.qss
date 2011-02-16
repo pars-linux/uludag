@@ -286,7 +286,7 @@
     }
 
     QToolButton::menu-arrow {
-        image: url(:/images/treeview-branch-open.png);
+        image: url(:/images/arrow-down-small.png);
     }
 
     QToolButton::menu-arrow:open {
