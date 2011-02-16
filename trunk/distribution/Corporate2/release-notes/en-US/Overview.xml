@@ -21,7 +21,7 @@
         <itemizedlist>
             <listitem>
                 <para>
-                    <application>Kernel</application> - The Linux kernel shipped with Pardus &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest
+                    <application>Kernel</application> - The Linux kernel shipped with &DISTRONAME; &PRODVER; is &KERNELVER; which is the latest
                     kernel branch which will be supported for a long term period.
                 </para>
             </listitem>
