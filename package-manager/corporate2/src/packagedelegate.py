@@ -108,7 +108,7 @@ class PackageDelegate(QStyledItemDelegate):
         self.parent = parent.packageList
 
         # Base style for some of important features
-        self.plastik = QStyleFactory.create('plastique')
+        # self.plastik = QStyleFactory.create('plastique')
 
     def paint(self, painter, option, index):
         if not index.isValid():

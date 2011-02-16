@@ -57,8 +57,8 @@ class PTray:
     def populateRepositoryMenu(self):
         pass
 
-    def _addAction(self, title, menu, repo):
-        action = QtGui.QAction(unicode(title), self)
+    def _addAction(self, title, menu, repo, icon):
+        action = QtGui.QAction(KIcon(icon), unicode(title), self)
         action.setData(QVariant(unicode(repo)))
         menu.addAction(action)
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
@@ -186,11 +186,11 @@ class Tray(QtGui.QSystemTrayIcon, PTray):
     def populateRepositoryMenu(self):
         self.actionMenu.clear()
         for name, address in self.iface.getRepositories(only_active = True):
-            self._addAction(i18n("Update %1 repository", name), self.actionMenu, name)
-        self._addAction(i18n("Update All Repositories"), self.actionMenu, "all")
+            self._addAction(i18n("Update %1 repository", name), self.actionMenu, name, "applications-system")
+        self._addAction(i18n("Update All Repositories"), self.actionMenu, "all", "update-manager")
         self.setContextMenu(self.actionMenu)
         self.contextMenu().addSeparator()
-        self.contextMenu().addAction(i18n("Quit"), QtGui.qApp.quit)
+        self.contextMenu().addAction(KIcon("exit"), i18n("Quit"), QtGui.qApp.quit)
 
     def showPopup(self):
         if self._ready_to_popup():
