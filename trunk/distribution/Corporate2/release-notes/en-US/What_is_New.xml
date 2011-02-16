@@ -123,7 +123,8 @@
         <section id="sect-Release_Notes-What_is_New_Visual">
             <title>Visual Enhancements</title>
             <para>
-                &DISTRONAME; &PRODVER; ships with Tango and BC Tango icon themes besides the KDE classic Crystal.
+                The default icon theme of &DISTRONAME; &PRODVER; is BC Tango which is a Tango derivative specially customized for
+                KDE desktop environment.
             </para>
         </section>
 
