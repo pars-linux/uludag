@@ -25,7 +25,7 @@ msgstr "İşlemci (CPU)"
 #. Tag: para
 #, no-c-format
 msgid "You may want to install the 64-bit version of &DISTRONAME; &PRODVER; if your system is equipped with one of the processors listed in the sections below."
-msgstr "Eğer sisteminiz aşağıda listelenen işlemcilerden birine sahipse, Pardus Kurumsal &PRODVER; 64-bit sürümünü kurmak isteyebilirsiniz."
+msgstr "Eğer sisteminiz aşağıda listelenen işlemcilerden birine sahipse, &DISTRONAME; &PRODVER; 64-bit sürümünü kurmak isteyebilirsiniz."
 
 #. Tag: title
 #, no-c-format
@@ -105,7 +105,7 @@ msgstr "Sistem Belleği (RAM)"
 #. Tag: para
 #, no-c-format
 msgid "System memory (RAM) requirements of &DISTRONAME; &PRODVER; depends heavily on your daily workflow so it is very hard to define upper and lower bounds, but we recommend at least &MINMEM; of memory for a smooth desktop experience."
-msgstr "Pardus Kurumsal &PRODVER; sistem belleği (RAM) gereksinimi günlük kullanıma bağlı olarak değişebileceği için asgari ya da yeterli miktarı belirlemek zor. Yine de rahat bir masaüstü deneyimi için &MINMEM; değerinin altına inilmemesini öneriyoruz."
+msgstr "&DISTRONAME; &PRODVER; sistem belleği (RAM) gereksinimi günlük kullanıma bağlı olarak değişebileceği için asgari ya da yeterli miktarı belirlemek zor. Yine de rahat bir masaüstü deneyimi için &MINMEM; değerinin altına inilmemesini öneriyoruz."
 
 #. Tag: title
 #, no-c-format
@@ -120,7 +120,7 @@ msgstr "Minimum gereksinimler"
 #. Tag: para
 #, no-c-format
 msgid "&DISTRONAME; &PRODVER; requires at least &MINREQSPACE; of free hard disk space for a successful installation. As we don't offer custom package selection during the installation, this minimum size constraint applies to all installations."
-msgstr "Pardus Kurumsal &PRODVER;, kurulmak için en az &MINREQSPACE; boş disk alanına ihtiyaç duyar. Kurulum sırasında paket seçimi sunulmadığı için bu değer her kurulum için aynıdır."
+msgstr "&DISTRONAME; &PRODVER;, kurulmak için en az &MINREQSPACE; boş disk alanına ihtiyaç duyar. Kurulum sırasında paket seçimi sunulmadığı için bu değer her kurulum için aynıdır."
 
 #. Tag: title
 #, no-c-format
@@ -130,7 +130,7 @@ msgstr "Önerilen gereksinimler"
 #. Tag: para
 #, no-c-format
 msgid "In order to effectively use &DISTRONAME; &PRODVER; on your system without running low on disk space during your daily workflow, we recommend at least &RECOMMSPACE; of free hard disk space."
-msgstr "Pardus Kurumsal &PRODVER; sürümünde günlük kullanım ihtiyaçlarının rahatça karşılanması için en az &RECOMMSPACE; boş disk alanı bulunmasını öneririz."
+msgstr "&DISTRONAME; &PRODVER; sürümünde günlük kullanım ihtiyaçlarının rahatça karşılanması için en az &RECOMMSPACE; boş disk alanı bulunmasını öneririz."
 
 #. Tag: title
 #, no-c-format
