@@ -38,12 +38,7 @@
             </listitem>
             <listitem>
                 <para>
-                    <application>KDE</application> - &DISTRONAME; &PRODVER; comes with the latest KDE Software Compilation, KDE SC &KDEVER;. The base packages also contains numerous backports and fixes which will improve the stability of your desktop experience significantly.
-                </para>
-            </listitem>
-            <listitem>
-                <para>
-                    <application>Kaptan</application> - Kaptan, the desktop customization tool of Pardus, now optionally captures your picture and sets it as your avatar in KDE.
+                    <application>KDE</application> - &DISTRONAME; &PRODVER; comes with KDE &KDEVER;, the old KDE stack which has proven its stability and reliability. The base packages also contains numerous fixes which will improve the stability of your desktop experience significantly.
                 </para>
             </listitem>
             <listitem>
