@@ -17,8 +17,8 @@ from distutils.core import setup
 
 import buildfarm
 
-# Scripts to install under /usr/bin
-SCRIPTS = glob.glob("scripts/*")
+# tools to install under /usr/bin
+TOOLS = glob.glob("tools/*")
 HOOKS = glob.glob("hooks/*")
 
 # Call distutils.setup
@@ -33,6 +33,6 @@ setup(name="buildfarm",
       license="GPLv2",
       platforms=["Linux"],
       packages=["buildfarm"],
-      scripts=SCRIPTS,
+      scripts=TOOLS,
       data_files=[("/etc/buildfarm", ["data/buildfarm.conf", "data/auth.conf"]),
                    ("/etc/buildfarm/hooks.d", HOOKS)])
