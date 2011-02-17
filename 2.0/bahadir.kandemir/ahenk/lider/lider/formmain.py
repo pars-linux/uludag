@@ -552,6 +552,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.item = item
         self.__update_toolbar()
 
+        item_alt = self.nodes_dn[item.dn]
+        self.treeComputers.setCurrentItem(item_alt)
+
         widget = self.stackedWidget.currentWidget()
         self.__show_widget(widget)
 
@@ -560,6 +563,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when user expands a node.
         """
         self.__list_items(item, True)
+
+        item_alt = self.nodes_dn[item.dn]
+        self.treeComputers.expandItem(item_alt)
+
         if item.childCount() == 0:
             item.setExpanded(False)
 
@@ -568,6 +575,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when user collapses a node.
         """
         item.takeChildren()
+
+        item_alt = self.nodes_dn[item.dn]
+        self.treeComputers.collapseItem(item_alt)
 
     def __slot_tree_menu(self, pos):
         """
