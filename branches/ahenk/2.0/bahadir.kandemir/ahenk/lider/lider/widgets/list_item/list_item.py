@@ -109,6 +109,9 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         self.set_edit(edit)
         self.set_delete(delete)
 
+        self.pushEdit.setFlat(True)
+        self.pushDelete.setFlat(True)
+
         # Signals
         self.connect(self.checkState, QtCore.SIGNAL("stateChanged(int)"), lambda: self.emit(QtCore.SIGNAL("stateChanged(int)"), self.checkState.checkState()))
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), lambda: self.emit(QtCore.SIGNAL("editClicked()")))
@@ -132,6 +135,10 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
 
     def set_description(self, description=""):
         self.labelDescription.setText(unicode(description))
+        if len(description):
+            self.labelDescription.show()
+        else:
+            self.labelDescription.hide()
 
     def get_description(self):
         return unicode(self.labelDescription.text())

@@ -61,6 +61,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Fine tune UI
         self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.treeSummary.hide()
 
         # Popup for connection management
         menu = wrappers.Menu(self)
@@ -88,11 +89,17 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.__slot_talk_status)
         self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
+
         self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree_expand)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree_collapse)
         self.connect(self.treeComputers, QtCore.SIGNAL("customContextMenuRequested(QPoint)"), self.__slot_tree_menu)
+
+        self.connect(self.treeSummary, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree2_expand)
+        self.connect(self.treeSummary, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
+        self.connect(self.treeSummary, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
+
         self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
         self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.__slot_apply)
@@ -105,6 +112,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.policy = {}
         self.nodes_cn = {}
         self.nodes_dn = {}
+
+        self.nodes_alt_cn = {}
+        self.nodes_alt_dn = {}
 
         # Load plugins
         self.__load_plugins()
@@ -249,14 +259,24 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.pushPluginGlobal.setMenu(menu_global)
         self.pushPluginItem.setMenu(menu_single)
 
-    def  __list_items(self, root=None):
+    def  __list_items(self, root=None, alternative=False):
         if not root:
-            root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), "...", icon=wrappers.Icon("folder48"))
-            root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            if alternative:
+                root_alt = QtGui.QTreeWidgetItem(self.treeSummary)
+                root_alt.setText(0, unicode(self.directory.get_name()))
+                root_alt.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+                root_alt.dn = self.directory.directory_domain
+                root_alt.name = root_alt.dn.split(",")[0].split("=")[1]
+                root_alt.folder = True
+                self.nodes_alt_dn[root_alt.dn] = root_alt
+            else:
+                root = list_item.add_tree_item(self.treeComputers, self.directory.directory_domain, self.directory.get_name(), self.directory.directory_domain, icon=wrappers.Icon("folder48"))
+                root.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+                root.dn = self.directory.directory_domain
+                root.name = root.dn.split(",")[0].split("=")[1]
+                root.folder = True
+                self.nodes_dn[root.dn] = root
 
-            root.dn = self.directory.directory_domain
-            root.name = root.dn.split(",")[0].split("=")[1]
-            root.folder = True
             return
 
         dn = root.dn
@@ -272,19 +292,35 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             if folder and "o" in attrs:
                 label = attrs["o"][0]
 
-            item = list_item.add_tree_item(root, dn, label, "...", icon=wrappers.Icon("computer48"))
+            if alternative:
+                item = QtGui.QTreeWidgetItem(root)
+                item.setText(0, unicode(label))
+            else:
+                item = list_item.add_tree_item(root, dn, label, dn, icon=wrappers.Icon("computer48"))
+
             item.dn = dn
             item.name = name
             item.folder = folder
 
-            self.nodes_dn[dn] = item
+            if alternative:
+                self.nodes_alt_dn[dn] = item
+            else:
+                self.nodes_dn[dn] = item
 
-            if fancy:
-                if folder:
-                    item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            if folder:
+                if alternative:
+                    item.setIcon(0, wrappers.Icon("folder48"))
+                else:
                     item.widget.set_icon(wrappers.Icon("folder48"))
-                elif user:
+                item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            elif user:
+                if alternative:
+                    item.setIcon(0, wrappers.Icon("user48"))
+                else:
                     item.widget.set_icon(wrappers.Icon("user48"))
+            else:
+                if alternative:
+                    item.setIcon(0, wrappers.Icon("computer48"))
                 else:
                     self.nodes_cn[name] = item
                     self.__update_icon(name)
@@ -368,6 +404,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # List components
         self.__list_items()
+        self.__list_items(alternative=True)
 
         # Update toolbar
         self.__update_toolbar()
@@ -467,6 +504,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Return to main screen.
         """
         self.stackedWidget.setCurrentIndex(0)
+        self.treeSummary.hide()
         self.__update_toolbar()
 
     def __slot_tree_click(self, item, column):
@@ -475,6 +513,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         self.item = item
         self.__update_toolbar()
+
+        print
+        item_alt = self.nodes_alt_dn[item.dn]
+        self.treeSummary.setCurrentItem(item_alt)
 
     def __slot_tree_double_click(self, item, column):
         """
@@ -489,8 +531,37 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.__list_items(item)
         if item.childCount() == 0:
             item.setExpanded(False)
+        item_alt = self.nodes_alt_dn[item.dn]
+        self.treeSummary.expandItem(item_alt)
 
     def __slot_tree_collapse(self, item):
+        """
+            Triggered when user collapses a node.
+        """
+        item.takeChildren()
+
+        item_alt = self.nodes_alt_dn[item.dn]
+        item_alt.takeChildren()
+
+    def __slot_tree2_click(self, item, column):
+        """
+            Triggered when user clicks a node.
+        """
+        self.item = item
+        self.__update_toolbar()
+
+        widget = self.stackedWidget.currentWidget()
+        self.__show_widget(widget)
+
+    def __slot_tree2_expand(self, item):
+        """
+            Triggered when user expands a node.
+        """
+        self.__list_items(item, True)
+        if item.childCount() == 0:
+            item.setExpanded(False)
+
+    def __slot_tree2_collapse(self, item):
         """
             Triggered when user collapses a node.
         """
@@ -606,7 +677,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when users activates a policy plugin.
         """
         widget = self.sender().widget
+        self.__show_widget(widget)
 
+    def __show_widget(self, widget):
+        """
+            Shows a widget
+        """
         policy_match = False
         policy_inherit = True
 
@@ -662,6 +738,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
+        self.treeSummary.show()
 
         if policy_match:
             widget.policy_match = True
