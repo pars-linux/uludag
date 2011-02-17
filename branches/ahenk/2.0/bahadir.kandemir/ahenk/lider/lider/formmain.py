@@ -310,9 +310,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             if folder:
                 if alternative:
                     item.setIcon(0, wrappers.Icon("folder48"))
+                    item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
                 else:
                     item.widget.set_icon(wrappers.Icon("folder48"))
-                item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+                    item.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
             elif user:
                 if alternative:
                     item.setIcon(0, wrappers.Icon("user48"))
@@ -514,7 +515,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.item = item
         self.__update_toolbar()
 
-        print
         item_alt = self.nodes_alt_dn[item.dn]
         self.treeSummary.setCurrentItem(item_alt)
 
@@ -529,10 +529,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when user expands a node.
         """
         self.__list_items(item)
-        if item.childCount() == 0:
-            item.setExpanded(False)
+
         item_alt = self.nodes_alt_dn[item.dn]
         self.treeSummary.expandItem(item_alt)
+
+        if item.childCount() == 0:
+            item.setExpanded(False)
 
     def __slot_tree_collapse(self, item):
         """
@@ -541,7 +543,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         item.takeChildren()
 
         item_alt = self.nodes_alt_dn[item.dn]
-        item_alt.takeChildren()
+        self.treeSummary.collapseItem(item_alt)
 
     def __slot_tree2_click(self, item, column):
         """
