@@ -29,7 +29,11 @@
    <item row="0" column="1">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="1">
-      <widget class="QLineEdit" name="editDomain"/>
+      <widget class="QComboBox" name="comboDomain">
+       <property name="editable">
+        <bool>true</bool>
+       </property>
+      </widget>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">

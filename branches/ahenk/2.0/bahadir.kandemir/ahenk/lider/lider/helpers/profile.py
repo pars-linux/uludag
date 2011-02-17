@@ -1,10 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-"""
-    Connection profile manager
-"""
-
 # Standard modules
 import os
 
@@ -17,7 +13,7 @@ class Profile:
         Base class for connection profile.
 
         Usage:
-            last_profile = Profile()
+            profile = Profile()
 
             or
 
@@ -38,26 +34,20 @@ class Profile:
         self.address = address
         self.username = username
 
-        if not os.path.exists(PROFILE_FILE):
-            return
-
-        with file(PROFILE_FILE) as config_file:
-            for line in config_file:
-                line = line.strip()
-                if line.startswith("domain="):
-                    self.domain = line.split("=", 1)[1]
-                elif line.startswith("address="):
-                    self.address = line.split("=", 1)[1]
-                elif line.startswith("username="):
-                    self.username = line.split("=", 1)[1]
-
-    def is_set(self):
+    def __eq__(self, tmp_profile):
         """
-            Return true if one of the properties set
+            Operator for equality, "=="
         """
-        if len(self.domain) or len(self.address) or len(self.username):
+        if type(self) != type(tmp_profile):
+            return False
+
+        if tmp_profile.get_domain() == self.domain and \
+                tmp_profile.get_address() == self.address and \
+                tmp_profile.get_username() == self.username:
             return True
+
         return False
+
 
     def get_domain(self):
         """
@@ -65,11 +55,23 @@ class Profile:
         """
         return self.domain
 
+    def set_domain(self, domain):
+        """
+            Sets domain.
+        """
+        self.domain = domain
+
     def get_address(self):
         """
             Returns ip address.
         """
         return self.address
+
+    def set_address(self, address):
+        """
+            Sets ip address.
+        """
+        self.address = address
 
     def get_username(self):
         """
@@ -77,19 +79,8 @@ class Profile:
         """
         return self.username
 
-    def save(self):
+    def set_username(self, username):
         """
-            Saves the exist information to the file.
+            Sets username.
         """
-        lines = []
-
-        if len(self.domain) != 0:
-            lines.append("domain=%s" % self.domain)
-        if len(self.address) !=0:
-            lines.append("address=%s" % self.address)
-        if len(self.username) != 0:
-            lines.append("username=%s" % self.username)
-
-        file_content = "\n".join(lines)
-
-        file(PROFILE_FILE, "w").write(file_content)
+        self.username = username
