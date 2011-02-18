@@ -1,0 +1,92 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import shutil
+
+import pisi
+from buildfarm import utils
+
+if __name__ == "__main__":
+    dry_run = True
+    input_file = None
+
+    args = sys.argv[1:]
+    while args:
+        param = args.pop(0)
+
+        if param == "-f":
+            dry_run = False
+        else:
+            input_file = param
+
+    if not input_file:
+        print "Usage: %s [-f] <input file>"
+        sys.exit(0)
+
+    testing_dir = utils.get_compiled_packages_directory()
+    stable_dir = testing_dir.replace("/testing/", "/stable/")
+    source_dir = utils.get_local_repository_url()
+
+    def copy(src, dst):
+        print "Copying %s ..." % src
+        if not dry_run:
+            shutil.copy(src, dst)
+
+    def index(path):
+        cmd = "pisi index --skip-signing --skip-sources %s %s -o %s" % (source_dir, path, os.path.join(path, "pisi-index.xml"))
+
+        print cmd
+        if not dry_run:
+            os.system(cmd)
+
+    packages = []
+    with open(input_file) as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+
+            status, filename = line.split(None, 1)
+
+            package_file = os.path.join(testing_dir, filename)
+            if os.path.exists(package_file):
+                packages.append(package_file)
+            else:
+                print "ERROR: Cannot find '%s' in testing repository!" % filename
+                sys.exit(1)
+
+    print "Copying packages into %s" % stable_dir
+    for package_file in packages:
+        copy(package_file, stable_dir)
+    print
+
+    print "Creating index for stable repository..."
+    index(stable_dir)
+    print
+
+    print "Looking for missing debug packages..."
+    stable_index = pisi.index.Index(stable_dir + "/pisi-index.xml")
+
+    missing_debug_packages = []
+    for package in stable_index.packages:
+        parts = pisi.util.split_package_filename(package.packageURI)
+        parts = list(parts)
+        parts[0] += "-dbginfo"
+        fn = pisi.util.package_filename(*parts)
+        if not os.path.exists(stable_dir + "-debug/" + fn) \
+                and os.path.exists(testing_dir + "-debug/" + fn):
+            missing_debug_packages.append(fn)
+
+    missing_debug_packages.sort()
+    print
+
+    print "Copying missing debug packages into %s" % stable_dir + "-debug/"
+
+    for package_file in missing_debug_packages:
+        copy(os.path.join(testing_dir, package_file), stable_dir + "-debug/")
+    print
+
+    print "Creating index for stable debug repository..."
+    index(stable_dir + "-debug")
