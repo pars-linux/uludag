@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -54,12 +54,8 @@ msgstr "Помощь менеджера пользователей"
 
 #: browser.py:137
 #, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Должен ли я удалить этого пользователя?</b></big><br><br>Имя: %"
-"s<br>Имя пользователя: %s<br>ID: %d"
+msgid "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %s<br>ID: %d"
+msgstr "<big><b>Должен ли я удалить этого пользователя?</b></big><br><br>Имя: %s<br>Имя пользователя: %s<br>ID: %d"
 
 #: browser.py:143
 msgid "Delete User"
@@ -75,11 +71,8 @@ msgstr "Удаление пользователя"
 
 #: browser.py:158
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Должен ли я удалить эту группу?</b></big><br><br>Имя группы: %"
-"s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Должен ли я удалить эту группу?</b></big><br><br>Имя группы: %s<br>ID: %d"
 
 #: browser.py:164 browser.py:165
 msgid "Delete Group"
@@ -223,13 +216,11 @@ msgstr "Пароли не соответствуют."
 
 #: useredit.py:395
 msgid "You must enter a user ID or use the auto selection."
-msgstr ""
-"Вы должны ввести ID пользователя или использовать автоматический выбор."
+msgstr "Вы должны ввести ID пользователя или использовать автоматический выбор."
 
 #: useredit.py:399
-#, fuzzy
 msgid "You must enter a user ID between 999 and 65535."
-msgstr "Вы должны ввести имя пользователя."
+msgstr "Вы должны ввести идентификатор пользователя между 999 и 65535."
 
 #: useredit.py:404
 msgid "You must enter a user name."
@@ -240,9 +231,8 @@ msgid "This user name is used by another user."
 msgstr "Это имя пользователя используется другим пользователем."
 
 #: useredit.py:410
-#, fuzzy
 msgid "This user ID is used by another user."
-msgstr "Это имя пользователя используется другим пользователем."
+msgstr "Этот идентификатор пользователя используется другим пользователем."
 
 #: useredit.py:414
 msgid "User name must not start with a number."
@@ -265,12 +255,8 @@ msgid "Give administrator privileges to this user"
 msgstr "Выдать права администратора для этого пользователя"
 
 #: useredit.py:628
-msgid ""
-"You are removing yourself from the 'wheel' system group, you might not use "
-"your administrator permissions after that."
-msgstr ""
-"Вы удаляете себя из системной группы \"wheel\", после этого вы не сможете "
-"использовать ваши права администратора."
+msgid "You are removing yourself from the 'wheel' system group, you might not use your administrator permissions after that."
+msgstr "Вы удаляете себя из системной группы \"wheel\", после этого вы не сможете использовать ваши права администратора."
 
 #: useredit.py:629
 msgid "Important Group Change"
@@ -310,15 +296,15 @@ msgstr "Не запрашивать пароль"
 
 #: useredit.py:818 useredit.py:823
 msgid "Apply this policy to all"
-msgstr ""
+msgstr "Применить эту политику ко всем"
 
 #: useredit.py:824
 msgid "Apply this policy to category"
-msgstr ""
+msgstr "Применить эту политику к категории"
 
 #: useredit.py:826
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Невозможно подключиться к DBus"
