@@ -1,0 +1,46 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+
+import pisi
+from buildfarm import utils
+
+if __name__ == "__main__":
+    testing_dir = utils.get_compiled_packages_directory()
+    stable_dir = testing_dir.replace("/testing/", "/stable/")
+
+    testing_index = pisi.index.Index(testing_dir + "/pisi-index.xml")
+    stable_index = pisi.index.Index(stable_dir + "/pisi-index.xml")
+
+    stable_packages = {}
+    for package in stable_index.packages:
+        stable_packages[package.name] = package
+
+    new_packages = []
+    for package in testing_index.packages:
+        if os.path.exists(os.path.join(stable_dir, package.packageURI)):
+            continue
+
+        status = "A"
+        update_action = " "
+
+        old_stable = stable_packages.get(package.name)
+        if old_stable:
+            status = "U"
+            if package.has_update_type("security", old_stable.history[0].release):
+                update_action = "S"
+            elif package.has_update_type("critical", old_stable.history[0].release):
+                update_action = "C"
+
+        new_packages.append((package.source.name, package.packageURI, status, update_action))
+
+    new_packages.sort()
+
+    old_source = new_packages[0][0]
+    for source, filename, status, update_action in new_packages:
+        if source != old_source:
+            print
+            old_source = source
+        print "%s%s %s" % (status, update_action, filename)
