@@ -77,6 +77,12 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         salted = Directory.make_password(password)
         return salted
 
+    def get_home(self):
+        """
+            Returns home directory.
+        """
+        return str(self.editHomeDir.text())
+
     def get_uid(self):
         """
             Returns user ID.

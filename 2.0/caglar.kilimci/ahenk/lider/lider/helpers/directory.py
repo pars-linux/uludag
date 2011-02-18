@@ -220,7 +220,7 @@ class Directory:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_user(self, parent_dn, name, password, uid, gid):
+    def add_user(self, parent_dn, name, password, uid, gid, home=None):
         """
             Adds a new user under specified DN.
 
@@ -230,11 +230,13 @@ class Directory:
                 password: Node password
         """
         dn = "uid=%s,%s" % (name, parent_dn)
+        if not home:
+            home = "/home/%s" % name
         properties = {
             "uid": [name],
             "objectClass": ["top", "account", "posixAccount", "shadowAccount"],
             "cn": [name],
-            "homeDirectory": ["/home/%s" % name],
+            "homeDirectory": [home],
             "uidNumber": [uid],
             "gidNumber": [gid],
             "userPassword": [password]
