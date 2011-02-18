@@ -1,7 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # 
-#, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -1016,9 +1015,8 @@ msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Перезагрузка системы. Пожалуйста подождите!</b>"
 
 #: yali4/gui/ScrInstallationAuto.py:35
-#, fuzzy
 msgid "Choose Collections"
-msgstr "Выберете Разбиение диска"
+msgstr ""
 
 #: yali4/gui/ScrInstallationAuto.py:36
 #, fuzzy
@@ -1408,9 +1406,8 @@ msgid "Getting history ..."
 msgstr "Получение истории..."
 
 #: yali4/gui/ScrRescuePisi.py:91
-#, fuzzy
 msgid "There is no connection"
-msgstr "Выберите Соединение"
+msgstr ""
 
 #: yali4/gui/ScrRescuePisi.py:132
 #, python-format
@@ -1479,9 +1476,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Установка начнется через: <b>%s секунд(ы)</b>"
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Итог инсталляции..."
+msgstr "Начать установку"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -1570,24 +1566,21 @@ msgid "GRUB will not be installed."
 msgstr "GRUB не будет установлен."
 
 #: yali4/gui/ScrSummary.py:232
-#, fuzzy
 msgid "Package Installation Settings"
-msgstr "Установки Разделов"
+msgstr ""
 
 #: yali4/gui/ScrSummary.py:235
-#, fuzzy
 msgid "Auto installation selected."
-msgstr "Выбрано Автоматическое Разбиение на разделы."
+msgstr ""
 
 #: yali4/gui/ScrSummary.py:237
-#, fuzzy, python-format
+#, python-format
 msgid "Manual Installation ( %s ) selected"
-msgstr "Выбрано Ручное разбиение на разделы"
+msgstr ""
 
 #: yali4/gui/ScrSummary.py:240
-#, fuzzy
 msgid "Default Kernel selected"
-msgstr "Удалить Выбранного Пользователя"
+msgstr ""
 
 #: yali4/gui/ScrSummary.py:242
 msgid "PAE Kernel selected"
@@ -1760,15 +1753,15 @@ msgstr "Показать помощь"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Выключить компьютер"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Перезагрузить компьютер"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Перезапустить YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:192
@@ -1870,11 +1863,11 @@ msgstr "Старт проверки CD"
 #: yali4/installer.py:209
 #, python-format
 msgid "Checking: %s"
-msgstr ""
+msgstr "Проверка: %s"
 
 #: yali4/installer.py:216
 msgid "Check Failed"
-msgstr ""
+msgstr "Ошибка проверки"
 
 #: yali4/installer.py:217
 msgid "<b><p>Integrity check for packages failed.                                  It seems that installation CD is broken.</p></b>"
@@ -1914,19 +1907,19 @@ msgstr ""
 
 #: yali4/installer.py:542
 msgid "Setting Hostname..."
-msgstr ""
+msgstr "Настройка имени хоста..."
 
 #: yali4/installer.py:543
 msgid "Setting TimeZone..."
-msgstr ""
+msgstr "Настройка часового пояса..."
 
 #: yali4/installer.py:544
 msgid "Setting Root Password..."
-msgstr ""
+msgstr "Настройка пароля для пользователя root..."
 
 #: yali4/installer.py:545
 msgid "Adding Users..."
-msgstr ""
+msgstr "Создание пользователя..."
 
 #: yali4/installer.py:546
 msgid "Writing Console Data..."
@@ -1946,31 +1939,31 @@ msgstr ""
 
 #: yali4/localedata.py:20
 msgid "Turkish"
-msgstr ""
+msgstr "Turkish"
 
 #: yali4/localedata.py:22
 msgid "Turkish F"
-msgstr ""
+msgstr "Turkish F"
 
 #: yali4/localedata.py:22
 msgid "Turkish Q"
-msgstr ""
+msgstr "Turkish Q"
 
 #: yali4/localedata.py:31
 msgid "English"
-msgstr ""
+msgstr "English"
 
 #: yali4/localedata.py:42
 msgid "English GB"
-msgstr ""
+msgstr "English GB"
 
 #: yali4/localedata.py:52
 msgid "Greek"
-msgstr ""
+msgstr "Greek"
 
 #: yali4/localedata.py:62
 msgid "Afrikaans"
-msgstr ""
+msgstr "Afrikaans"
 
 #: yali4/localedata.py:72
 msgid "Vietnamese"
@@ -1998,83 +1991,83 @@ msgstr ""
 
 #: yali4/localedata.py:134
 msgid "Estonian"
-msgstr ""
+msgstr "Estonian"
 
 #: yali4/localedata.py:144
 msgid "Spanish"
-msgstr ""
+msgstr "Spanish"
 
 #: yali4/localedata.py:155
 msgid "Russian"
-msgstr ""
+msgstr "Russian"
 
 #: yali4/localedata.py:165
 msgid "Dutch"
-msgstr ""
+msgstr "Dutch"
 
 #: yali4/localedata.py:176
 msgid "Portuguese"
-msgstr ""
+msgstr "Portuguese"
 
 #: yali4/localedata.py:187
 msgid "Norwegian"
-msgstr ""
+msgstr "Norwegian"
 
 #: yali4/localedata.py:197
 msgid "Icelandic"
-msgstr ""
+msgstr "Icelandic"
 
 #: yali4/localedata.py:207
 msgid "Polish"
-msgstr ""
+msgstr "Polish"
 
 #: yali4/localedata.py:218
 msgid "Belgium"
-msgstr ""
+msgstr "Belgium"
 
 #: yali4/localedata.py:228
 msgid "French"
-msgstr ""
+msgstr "French"
 
 #: yali4/localedata.py:239
 msgid "Bulgarian"
-msgstr ""
+msgstr "Bulgarian"
 
 #: yali4/localedata.py:249
 msgid "Slovenian"
-msgstr ""
+msgstr "Slovenian"
 
 #: yali4/localedata.py:259
 msgid "Croatian"
-msgstr ""
+msgstr "Croatian"
 
 #: yali4/localedata.py:269
 msgid "German"
-msgstr ""
+msgstr "German"
 
 #: yali4/localedata.py:280
 msgid "Danish"
-msgstr ""
+msgstr "Danish"
 
 #: yali4/localedata.py:290
 msgid "Brazilian"
-msgstr ""
+msgstr "Brazilian"
 
 #: yali4/localedata.py:300
 msgid "Finnish"
-msgstr ""
+msgstr "Finnish"
 
 #: yali4/localedata.py:310
 msgid "Hungarian"
-msgstr ""
+msgstr "Hungarian"
 
 #: yali4/localedata.py:320
 msgid "Japanese"
-msgstr ""
+msgstr "Japanese"
 
 #: yali4/localedata.py:330
 msgid "Malayalam"
-msgstr ""
+msgstr "Malayalam"
 
 #: yali4/localedata.py:340
 msgid "Swedish"
