@@ -22,7 +22,7 @@ if __name__ == "__main__":
             input_file = param
 
     if not input_file:
-        print "Usage: %s [--force] <input file>"
+        print "Usage: %s [--force] <input file>" % sys.argv[0]
         sys.exit(0)
 
     testing_dir = utils.get_compiled_packages_directory()
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     print "Copying missing debug packages into %s" % stable_debug_dir
 
     for package_file in missing_debug_packages:
-        copy(os.path.join(testing_dir, package_file), stable_debug_dir)
+        copy(os.path.join(testing_debug_dir, package_file), stable_debug_dir)
     print
 
     print "Creating index for stable debug repository..."
