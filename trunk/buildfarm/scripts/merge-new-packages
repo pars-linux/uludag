@@ -16,17 +16,19 @@ if __name__ == "__main__":
     while args:
         param = args.pop(0)
 
-        if param == "-f":
+        if param == "--force":
             dry_run = False
         else:
             input_file = param
 
     if not input_file:
-        print "Usage: %s [-f] <input file>"
+        print "Usage: %s [--force] <input file>"
         sys.exit(0)
 
     testing_dir = utils.get_compiled_packages_directory()
+    testing_debug_dir = utils.get_compiled_debug_packages_directory()
     stable_dir = utils.get_stable_packages_directory()
+    stable_debug_dir = utils.get_stable_debug_packages_directory()
 
     if not stable_dir:
         print "You don't have a stable repository on this buildfarm."
@@ -46,6 +48,7 @@ if __name__ == "__main__":
         if not dry_run:
             os.system(cmd)
 
+
     packages = []
     with open(input_file) as f:
         for line in f:
@@ -62,7 +65,6 @@ if __name__ == "__main__":
                 print "ERROR: Cannot find '%s' in testing repository!" % filename
                 sys.exit(1)
 
-    print "Copying packages into %s" % stable_dir
     for package_file in packages:
         copy(package_file, stable_dir)
     print
@@ -72,7 +74,7 @@ if __name__ == "__main__":
     print
 
     print "Looking for missing debug packages..."
-    stable_index = pisi.index.Index(stable_dir + "/pisi-index.xml")
+    stable_index = pisi.index.Index(os.path.join(stable_dir, "pisi-index.xml"))
 
     missing_debug_packages = []
     for package in stable_index.packages:
@@ -80,18 +82,18 @@ if __name__ == "__main__":
         parts = list(parts)
         parts[0] += "-dbginfo"
         fn = pisi.util.package_filename(*parts)
-        if not os.path.exists(stable_dir + "-debug/" + fn) \
-                and os.path.exists(testing_dir + "-debug/" + fn):
+        if not os.path.exists(os.path.join(stable_debug_dir, fn)) \
+                and os.path.exists(os.path.join(testing_debug_dir, fn)):
             missing_debug_packages.append(fn)
 
     missing_debug_packages.sort()
     print
 
-    print "Copying missing debug packages into %s" % stable_dir + "-debug/"
+    print "Copying missing debug packages into %s" % stable_debug_dir
 
     for package_file in missing_debug_packages:
-        copy(os.path.join(testing_dir, package_file), stable_dir + "-debug/")
+        copy(os.path.join(testing_dir, package_file), stable_debug_dir)
     print
 
     print "Creating index for stable debug repository..."
-    index(stable_dir + "-debug")
+    index(stable_debug_dir)
