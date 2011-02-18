@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: 2011-01-17 08:29+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
@@ -39,12 +39,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(C) 2009-2010 TUBITAK / UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Разработчик"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Разработчик"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -148,13 +148,12 @@ msgid "No results found."
 msgstr "Ничего не найдено."
 
 #: src/mainwidget.py:405
-#, fuzzy
 msgid "Select packages"
-msgstr "Все пакеты"
+msgstr "Выберите пакеты"
 
 #: src/mainwidget.py:406
 msgid "You must select at least one installed package"
-msgstr ""
+msgstr "Вы должны выбрать хотя бы один установленный пакет"
 
 #: src/mainwidget.py:417
 msgid "All Updates"
@@ -497,12 +496,12 @@ msgid "Update"
 msgstr "Обновление"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Игнорировать"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "Показать обновления"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Игнорировать"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -674,7 +673,6 @@ msgid "&General Settings"
 msgstr "Основные"
 
 #: ui/ui_settingsdialog.py:411
-#, fuzzy
 msgid "Cache Limit"
 msgstr "Ограничение кеша"
 
@@ -751,7 +749,6 @@ msgid "&Repositories"
 msgstr "&Репозитории"
 
 #: ui/ui_settingsdialog.py:432
-#, fuzzy
 msgid "Use Proxy"
 msgstr "Использовать прокси-сервер"
 
