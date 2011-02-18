@@ -26,7 +26,7 @@ class PisiApi:
 
         # Override these so that pisi searches for .pisi files in the right locations
         self.options.output_dir = output_dir
-        self.options.debug_packages_dir = utils.get_debug_packages_directory()
+        self.options.debug_packages_dir = utils.get_compiled_debug_packages_directory()
         self.options.compiled_packages_dir = utils.get_compiled_packages_directory()
 
         self.options.yes_all = True

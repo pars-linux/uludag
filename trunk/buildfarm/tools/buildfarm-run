@@ -124,7 +124,7 @@ def build_packages():
     # Set index paths
     paths = [utils.get_compiled_packages_directory()]
     if ctx.config.values.build.generatedebug:
-        paths.append(utils.get_debug_packages_directory())
+        paths.append(utils.get_compiled_debug_packages_directory())
 
     for directory in paths:
         pisi.api.index([utils.get_local_repository_url(), directory],
@@ -158,7 +158,7 @@ def move_packages(new_binary_packages, new_debug_packages):
         move_package(package, utils.get_compiled_packages_directory())
 
     for package in new_debug_packages:
-        move_package(package, utils.get_debug_packages_directory())
+        move_package(package, utils.get_compiled_debug_packages_directory())
 
 
 ### Entry point ###
