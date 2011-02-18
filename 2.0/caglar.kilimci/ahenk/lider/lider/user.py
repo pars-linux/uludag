@@ -49,7 +49,7 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
             If user did not write custom path for home directory, copy name as home directory.
         """
         if not (self.editHomeDir.isModified()):
-            self.editHomeDir.setText(self.editName.text())
+            self.editHomeDir.setText("/home/%s" % self.editName.text())
 
     def __slotPasswordTextChanged(self):
         """
