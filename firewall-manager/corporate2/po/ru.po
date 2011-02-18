@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -17,7 +17,7 @@ msgstr ""
 
 #: src/rules.py:7
 msgid "Mail services"
-msgstr ""
+msgstr "Почтовые службы"
 
 #: src/rules.py:11
 msgid "Web services"
@@ -33,7 +33,7 @@ msgstr ""
 
 #: src/rules.py:23
 msgid "Internet relay chat service"
-msgstr ""
+msgstr "Служба IRC"
 
 #: src/rules.py:27
 msgid "File transfer service"
@@ -45,19 +45,19 @@ msgstr ""
 
 #: src/dialog.py:70 src/firewall-config.py:169 src/firewall-config.py:412
 msgid "New Rule"
-msgstr ""
+msgstr "Новое правило"
 
 #: src/dialog.py:71
 msgid "Port Range"
-msgstr ""
+msgstr "Диапазон портов"
 
 #: src/dialog.py:72
 msgid "information"
-msgstr ""
+msgstr "информация"
 
 #: src/dialog.py:73
 msgid "Example: 100-200,300"
-msgstr ""
+msgstr "Пример: 100-200,300"
 
 #: src/firewall-config.py:41
 msgid "Pardus Firewall Graphical User Interface"
@@ -80,14 +80,12 @@ msgid "Firewall Configuration"
 msgstr " "
 
 #: src/firewall-config.py:165
-#, fuzzy
 msgid "Incoming Rule"
-msgstr " "
+msgstr "Входящее правило"
 
 #: src/firewall-config.py:166
-#, fuzzy
 msgid "Outgoing Rule"
-msgstr " "
+msgstr "Исходящее правило"
 
 #: src/firewall-config.py:177
 msgid "Incoming Connections"
@@ -98,18 +96,16 @@ msgid "Outgoing Connections"
 msgstr " "
 
 #: src/firewall-config.py:241 src/utils.py:128
-msgid ""
-"Write ports or port ranges that you want to ALLOW for incoming connections."
+msgid "Write ports or port ranges that you want to ALLOW for incoming connections."
 msgstr ""
 
 #: src/firewall-config.py:251 src/firewall-config.py:267
 #, python-format
 msgid "%s already in list!"
-msgstr ""
+msgstr "%s уже в списке!"
 
 #: src/firewall-config.py:257 src/utils.py:130
-msgid ""
-"Write ports or port ranges that you want to BLOCK for outgoing connections."
+msgid "Write ports or port ranges that you want to BLOCK for outgoing connections."
 msgstr ""
 
 #: src/firewall-config.py:286
@@ -121,24 +117,19 @@ msgid "&Stop"
 msgstr "&"
 
 #: src/firewall-config.py:352
-#, fuzzy
 msgid "Firewall is running"
-msgstr " "
+msgstr "Firewall включен"
 
 #: src/firewall-config.py:354
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
 msgstr ""
 
 #: src/firewall-config.py:361
 msgid "Firewall is not running"
-msgstr ""
+msgstr "Firewall отключен"
 
 #: src/firewall-config.py:363
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
+msgid "Click here to start the firewall and allow connections only to specified services."
 msgstr ""
 
 #: src/firewall-config.py:480
@@ -194,7 +185,7 @@ msgstr " "
 
 #: src/utils.py:326
 msgid "Invalid port range."
-msgstr ""
+msgstr "Неверный диапазон портов."
 
 #~ msgid "Alt+S"
 #~ msgstr "Alt+S"
