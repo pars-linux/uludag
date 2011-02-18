@@ -36,6 +36,12 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         # Attach generated UI
         self.setupUi(self)
 
+        self.connect(self.editName, QtCore.SIGNAL("textChanged(QString)"), self.__slotTextChanged)
+
+    def __slotTextChanged(self):
+        if not (self.editHomeDir.isModified()):
+            self.editHomeDir.setText(self.editName.text())
+
     def get_name(self):
         """
             Returns name.
