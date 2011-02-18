@@ -3,7 +3,7 @@
 # translation of boot-manager.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/boot-manager.py:33 src/boot-manager.py:92
 msgid "Boot Manager"
@@ -48,7 +48,7 @@ msgstr "Удалить запись"
 
 #: src/ui_elements.py:109
 msgid "This is the last entry, you cannot delete it!"
-msgstr ""
+msgstr "Это последняя запись, вы не можете ее удалить!"
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -127,9 +127,7 @@ msgid "Failed"
 msgstr "Неудачно"
 
 #: src/bm_mainview.py:401
-msgid ""
-"These kernels are installed in the system but doesn't exist in boot loader "
-"list:"
+msgid "These kernels are installed in the system but doesn't exist in boot loader list:"
 msgstr "Эти ядра установлены в системе, но отсутствуют в списке загрузчика:"
 
 #: src/bm_mainview.py:410
@@ -165,12 +163,8 @@ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 msgstr "Подключение к DBus неожиданно закрыто, попытка переподключения..."
 
 #: src/bm_mainview.py:584
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"Не удается подключиться к DBus! Если он не запущен вы должны запустить его "
-"командой 'service dbus start'  в консоли администратора."
+msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+msgstr "Не удается подключиться к DBus! Если он не запущен вы должны запустить его командой 'service dbus start'  в консоли администратора."
 
 #: src/bm_mainview.py:589
 msgid "You are not authorized for this operation."
