@@ -8,17 +8,18 @@ import pisi
 from buildfarm import utils
 
 if __name__ == "__main__":
-    testing_dir = utils.get_compiled_packages_directory()
-    stable_dir = testing_dir.replace("/testing/", "/stable/")
-
-    testing_index = pisi.index.Index(testing_dir + "/pisi-index.xml")
-    stable_index = pisi.index.Index(stable_dir + "/pisi-index.xml")
-
     stable_packages = {}
+    new_packages = []
+
+    testing_dir = utils.get_compiled_packages_directory()
+    stable_dir = utils.get_stable_packages_directory()
+
+    testing_index = pisi.index.Index(os.path.join(testing_dir, "pisi-index.xml"))
+    stable_index = pisi.index.Index(os.path.join(stable_dir, "pisi-index.xml"))
+
     for package in stable_index.packages:
         stable_packages[package.name] = package
 
-    new_packages = []
     for package in testing_index.packages:
         if os.path.exists(os.path.join(stable_dir, package.packageURI)):
             continue
