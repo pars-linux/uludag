@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -29,6 +29,8 @@ msgid ""
 "An error occurred:\n"
 "%s"
 msgstr ""
+"Произошла ошибка:\n"
+"%s"
 
 #: src/service-manager.py:33 src/service-manager.py:88
 #: src/service_manager.py:123
@@ -88,16 +90,15 @@ msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
 msgid "Service Description"
-msgstr ""
+msgstr "Описание службы"
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Запускать при запуске системы"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-#, fuzzy
 msgid "Service Name"
-msgstr "Менеджер сервисов"
+msgstr "Имя службы"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
