@@ -12,7 +12,7 @@ def create_latest_repo_layout():
 
     # e.g. /var/db/buildfarm/packages/corporate2/devel/x86_64
     repo = utils.get_compiled_packages_directory()
-    repo_debug = utils.get_debug_packages_directory()
+    repo_debug = utils.get_compiled_debug_packages_directory()
 
     # latest repository
     # e.g. /var/db/buildfarm/packages/corporate2/devel/x86_64-latest

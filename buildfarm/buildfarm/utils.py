@@ -59,7 +59,7 @@ def create_directories():
                     conf.repositorydir,
                     conf.logdir,
                     get_compiled_packages_directory(),
-                    get_debug_packages_directory(),
+                    get_compiled_debug_packages_directory(),
                     get_local_repository_url(),
                     get_package_log_directory(),
                   ]
@@ -87,7 +87,7 @@ def get_package_log_directory():
                         conf.subrepository,
                         conf.architecture)
 
-def get_debug_packages_directory():
+def get_compiled_debug_packages_directory():
     return "%s-debug" % get_compiled_packages_directory()
 
 def get_compiled_packages_directory():
