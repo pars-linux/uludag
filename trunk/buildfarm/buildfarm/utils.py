@@ -87,14 +87,14 @@ def get_package_log_directory():
                         conf.subrepository,
                         conf.architecture)
 
-def get_compiled_debug_packages_directory():
-    return "%s-debug" % get_compiled_packages_directory()
-
 def get_compiled_packages_directory():
     return os.path.join(conf.binarypath,
                         conf.release,
                         conf.subrepository,
                         conf.architecture)
+
+def get_compiled_debug_packages_directory():
+    return "%s-debug" % get_compiled_packages_directory()
 
 def get_stable_packages_directory():
     """Return the stable packages repository if this is a testing buildfarm."""
@@ -104,6 +104,14 @@ def get_stable_packages_directory():
                             conf.release,
                             "stable",
                             conf.architecture)
+    else:
+        return None
+
+def get_stable_debug_packages_directory():
+    """Return the stable debug packages repository if this is a testing buildfarm."""
+    stable_packages_directory = get_stable_packages_directory()
+    if stable_packages_directory:
+        return "%s-debug" % stable_packages_directory
     else:
         return None
 
