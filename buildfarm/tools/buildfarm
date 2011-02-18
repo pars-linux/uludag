@@ -11,7 +11,7 @@ COMMANDS_NOPARAM = [
                         "missing",
                    ]
 
-COMMANDS_WITH_1PARAM = []
+COMMANDS_WITH_ONEPARAM = []
 
 def usage():
     print """\
@@ -25,6 +25,8 @@ Usage: %s COMMAND
     run         Build and install packages
     missing     Dumps the packages which has releases not
                 built yet.
+
+    --version   Prints the version
 """ % sys.argv[0]
     return 1
 
@@ -35,7 +37,14 @@ if __name__ == "__main__":
 
     cmd = sys.argv[1]
 
-    if cmd in COMMANDS_NOPARAM:
+    # Handle the version in here for simplicity
+    if cmd == "--version":
+        import buildfarm
+        print "Version: %s" % buildfarm.__version__
+
+    elif cmd in COMMANDS_NOPARAM:
         sys.exit(subprocess.call(["buildfarm-%s" % cmd]))
     else:
         sys.exit(usage())
+
+    sys.exit(0)
