@@ -96,6 +96,17 @@ def get_compiled_packages_directory():
                         conf.subrepository,
                         conf.architecture)
 
+def get_stable_packages_directory():
+    """Return the stable packages repository if this is a testing buildfarm."""
+    if conf.subrepository == "testing":
+        # Must have a corresponding stable repository
+        return os.path.join(conf.binarypath,
+                            conf.release,
+                            "stable",
+                            conf.architecture)
+    else:
+        return None
+
 def get_expected_file_name(spec):
     last_update = spec.history[0]
 
