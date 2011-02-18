@@ -2,7 +2,7 @@
 # Disk Manager Interface
 # Copyright (C) 2006-2007, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Disk-Manager package.
-#
+# 
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2006.
 # Mustafa M. Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
@@ -25,24 +25,23 @@ msgstr "Менеджер дисков"
 
 #: src/disk-manager.py:329
 msgid "Unmount"
-msgstr ""
+msgstr "Отключить"
 
 #: src/disk-manager.py:344 src/diskform.py:112
-#, fuzzy
 msgid "Mount"
-msgstr "Mount-Punkt"
+msgstr "Подключить"
 
 #: src/disk-manager.py:383
-msgid ""
-"Changes saved but system couldn't mount it because it has been already "
-"mounted another point"
-msgstr ""
+msgid "Changes saved but system couldn't mount it because it has been already mounted another point"
+msgstr "Изменения сохранены, но нельзя подключить, потому что установлена другая точка"
 
 #: src/disk-manager.py:392
 msgid ""
 "Removing this partition from auto mount list can cause some boot problems.\n"
 "Do you want to continue?"
 msgstr ""
+"Удаление этого раздела из списка автоматически подключаемых может вызвать некоторые проблемы с загрузкой.\n"
+"Вы хотите продолжить?"
 
 #: src/disk-manager.py:474
 msgid "Disk Manager is already running!"
@@ -92,9 +91,7 @@ msgstr "Дополнительные параметры :"
 #~ msgstr "Standard-Optionen laden"
 
 #~ msgid "To update disk changes the manager must run as root"
-#~ msgstr ""
-#~ "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als "
-#~ "root ausgeführt werden"
+#~ msgstr "Um die Festplattenänderungen zu aktualisieren, muss dieser Manager als root ausgeführt werden"
 
 #~ msgid "User not in disk group !"
 #~ msgstr "Benutzer ist nicht in der Festplatten-Gruppe!"
