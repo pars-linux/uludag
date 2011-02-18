@@ -26,7 +26,12 @@ if __name__ == "__main__":
         sys.exit(0)
 
     testing_dir = utils.get_compiled_packages_directory()
-    stable_dir = testing_dir.replace("/testing/", "/stable/")
+    stable_dir = utils.get_stable_packages_directory()
+
+    if not stable_dir:
+        print "You don't have a stable repository on this buildfarm."
+        sys.exit(1)
+
     source_dir = utils.get_local_repository_url()
 
     def copy(src, dst):
