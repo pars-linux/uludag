@@ -85,6 +85,16 @@ class HelpDialog(QDialog):
         else:
             self.htmlPart.openURL(KURL(locate('data', 'disk-manager/help/en/main_help.html')))
 
+class PartitionInfo():
+    def __init__(self, name):
+        self.name = name # /dev/sda1
+        self.isInEntries = False
+        self.mountPoint = None
+        self.fsType = None
+        self.isMounted = False
+        self.uuid = None
+        self.size = None
+
 class diskForm(mainForm):
     def __init__(self, parent=None, name=None):
         mainForm.__init__(self, parent, name)
@@ -99,7 +109,7 @@ class diskForm(mainForm):
 
         self.list_main.header().hide()
         self.frame_detail.setEnabled(False)
-        self.frame_detail.hide()
+        #self.frame_detail.hide()
 
         self.old = None
         self.pixBase = self.bindPixmaps(loadIcon("drive-harddisk.png", size=32), loadIcon("cancel", size=16), KGlobalSettings.baseColor())
@@ -150,24 +160,36 @@ class diskForm(mainForm):
         self.combo_fs.setCurrentText(fsname)
 
     def initialize(self):
+
+        self.frame_detail.setEnabled(False)
+
         # Package
         self.package = None
-        # Entry list
+
+        # Entries in the fstab. device name, file system type etc. all available
+        # These entries are the only ones about disk devices
         self.entries = {}
-        # Devices on entry list
+
+        # Disk devices in the system. (/dev/sda, /dev/sdb...)
         self.devices = []
+
+        # All partitions in the system and information about them. Stores PartitionInfo objects
+        self.partitions = {}
+
         # Items
         self.items = {}
+
         # Get entries
         self.link.Disk.Manager.listEntries(async=self.asyncListEntries)
-        self.mountedList = []
+
+        # for setting icon background correctly
         self.old = None
 
 
     def signalHandler(self, package, signal, args):
         self.initialize()
         self.frame_detail.setEnabled(False)
-        self.frame_detail.hide()
+        #self.frame_detail.hide()
 
     def asyncUmount(self, device, package, exception, result):
         """
@@ -176,7 +198,7 @@ class diskForm(mainForm):
         if not exception:
             self.initialize()
             self.frame_detail.setEnabled(False)
-            self.frame_detail.hide()
+            #self.frame_detail.hide()
         else:
             if unicode(exception.message).startswith("tr.org.pardus.comar"):
                 self.btn_mount.setEnabled(True)
@@ -190,7 +212,7 @@ class diskForm(mainForm):
         if not exception:
             self.initialize()
             self.frame_detail.setEnabled(False)
-            self.frame_detail.hide()
+            #self.frame_detail.hide()
         else:
             if unicode(exception.message).startswith("tr.org.pardus.comar"):
                 self.btn_mount.setEnabled(True)
@@ -198,6 +220,9 @@ class diskForm(mainForm):
                 KMessageBox.sorry(self, unicode(exception.message))
 
     def asyncListEntries(self, package, exception, result):
+        """
+        Entries that are in the fstab file
+        """
         if not self.package:
             self.package = package
         else:
@@ -207,9 +232,6 @@ class diskForm(mainForm):
                 self.entries[device] = self.link.Disk.Manager[self.package].getEntry(device)
             # Get devices
             self.link.Disk.Manager[self.package].getDevices(async=self.asyncGetDevices)
-
-    def getDeviceByLabel(self, label):
-        return self.link.Disk.Manager[self.package].getDeviceByLabel(label)
 
     def humanReadableSize(self, size, precision=".1"):
         symbols, depth = [' B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'], 0
@@ -222,13 +244,17 @@ class diskForm(mainForm):
         return fmt % (size, symbols[depth])
 
     def asyncGetDevices(self, package, exception, result):
+        """
+        Handles the disk devices in the system such as /dev/sda, /dev/sdb etc.
+        """
         if not exception:
             self.list_main.clear()
             for device in result[0]:
+                self.devices.append(device)
                 try:
                     dsk = parted.Disk(parted.Device(device))
                 except Exception, e:
-                    continue #no medium found
+                    continue
                 model = dsk.device.model
                 size = self.humanReadableSize(dsk.device.getSize(unit="B"))
                 label = "%s  (%s)\n%s" % (device, size, model)
@@ -252,21 +278,34 @@ class diskForm(mainForm):
 
 
     def asyncGetPartitions(self, listItem, package, exception, result):
+        """
+        Handles partitions of a specific disk device.
+        For example, /dev/sda1 and /dev/sda2 are partitions of disk device /dev/sda.
+        """
         if not exception:
             for part in result[0]:
+                pinfo = PartitionInfo(part)
+                self.partitions[part] = pinfo
                 if part in self.entries:
-                    info = self.getEntryInfo(part)
+                    pinfo.isInEntries = True
+                    entryMountPoint = self.entries[part][0]
+                    pinfo.mountPoint = entryMountPoint
+                    pinfo.fsType = self.entries[part][1]
                     dsk = parted.Disk(parted.Device(part.rstrip(string.digits)))
-                    sda1 = dsk.getPartitionByPath(part)
-                    size = self.humanReadableSize(sda1.getSize(unit="B"))
-                    label = "%s (%s)\n%s" % (part, size, info)
+                    partition = dsk.getPartitionByPath(part)
+                    size = self.humanReadableSize(partition.getSize(unit="B"))
+                    pinfo.size = size
+                    label = "%s (%s)\n%s" % (part, size, entryMountPoint)
                 else:
                     dsk = parted.Disk(parted.Device(part.rstrip(string.digits)))
-                    info = self.getFSType(part).upper()
-                    label = "%s\n%s" % (part, info)
-                if self.link.Disk.Manager[self.package].isMounted(part):
+                    fstype = self.getFSType(part)
+                    pinfo.fsType = fstype
+                    label = "%s\n%s" % (part, fstype.upper())
+                path = self.link.Disk.Manager[self.package].isMounted(part)
+                if path:
+                    pinfo.isMounted = True
+                    pinfo.mountPoint = path
                     pixie = loadIcon('drive-harddisk.png', size=32)
-                    self.mountedList.append(part)
                 else:
                     pixie = self.pixBase
                 listItem.setVisible(True)
@@ -275,16 +314,18 @@ class diskForm(mainForm):
                 disk_part.setPixmap(0, pixie)
                 self.items[disk_part] = part
 
-    def getEntryInfo(self, device):
-        info = self.entries[device]
-        return "%s" % (info[0])
-
     def slotToggle(self, checked):
         if checked:
             self.slotFS()
 
     def slotFS(self, text=""):
-        fsType = self.getFSName()
+        item = self.list_main.selectedItem()
+        if not item:
+            return
+        device = str(self.items[item])
+        part = self.partitions[device]
+        fsType = part.fsType
+        self.setFSName(fsType)
         options = self.fsOptions.get(fsType, "defaults")
         self.line_opts.setText(options)
 
@@ -300,7 +341,7 @@ class diskForm(mainForm):
         item = self.list_main.selectedItem()
         device = str(self.items[item])
         try:
-            if not self.link.Disk.Manager[self.package].isMounted(device):
+            if not self.isMounted(device):
                 self.link.Disk.Manager.mount(device, '', async=functools.partial(self.asyncMount, device, ''))
             else:
                 self.link.Disk.Manager.umount(device, async=functools.partial(self.asyncUmount, device))
@@ -312,16 +353,19 @@ class diskForm(mainForm):
         # This is for preventing user to push repeatedly.
         self.btn_mount.setEnabled(False)
 
+    def isMounted(self, partition):
+        return self.partitions[partition].isMounted
+
     def slotList(self):
         item = self.list_main.selectedItem()
         if self.old:
             self.old.setPixmap(0, self.pixBase)
         if item not in self.items:
             self.frame_detail.setEnabled(False)
-            self.frame_detail.hide()
+            #self.frame_detail.hide()
             return
         device = str(self.items[item])
-        if device not in self.mountedList:
+        if not self.isMounted(device):
             item.setPixmap(0, self.pixHighlight)
             self.old = item
         if device not in self.entries:
@@ -341,27 +385,19 @@ class diskForm(mainForm):
             self.setFSName(self.entries[device][1])
             self.frame_entry.setChecked(True)
         self.frame_detail.setEnabled(True)
-        self.link.Disk.Manager.isMounted(device, async=functools.partial(self.asyncCheckMounted, device))
 
-    def asyncCheckMounted(self, device, package, exception, result):
-        """
-        Checks partition's mount state and due to this result
-        configures mount button's behaviour.
-        """
-        if result and not not result[0]:
-            # There is a mount point for this partition so enable the 
-            # mount button and set its text as 'unmount'.
+        if self.isMounted(device):
             self.btn_mount.setText(i18n('Unmount'))
             self.frame_entry.setEnabled(True)
             self.frame_detail.show()
             self.btn_mount.setEnabled(True)
         else:
             # This partition is not mounted.
-            fstype = self.getFSType(device)
+            fstype = self.partitions[device].fsType
             if fstype == 'swap' or fstype == 'LVM2_member':
                 # If partition is a swap or LVM member there won't be mount option.
                 self.frame_entry.setEnabled(False)
-                self.frame_detail.hide()
+                #self.frame_detail.hide()
                 self.btn_mount.setEnabled(False)
             else:
                 # Partition is not mounted and other than a swap.
@@ -371,12 +407,11 @@ class diskForm(mainForm):
                 self.btn_mount.setEnabled(True)
                 self.frame_detail.show()
 
-
     def slotUpdate(self):
         item = self.list_main.selectedItem()
         if item not in self.items:
             self.frame_detail.setEnabled(False)
-            self.frame_detail.hide()
+            #self.frame_detail.hide()
             return
         device = str(self.items[item])
         if self.frame_entry.isChecked():
@@ -395,7 +430,7 @@ class diskForm(mainForm):
             try:
                 # Get the mount path for related partition. This must be
                 # stored before call of the addEntry function.
-                mountPath = self.link.Disk.Manager[self.package].isMounted(device)
+                mountPoint = self.partitions[device].mountPoint
                 # Try to add an entry for this partition to fstab.
                 # Add entry function also mounts a partition if it is
                 # not mounted.
@@ -404,7 +439,7 @@ class diskForm(mainForm):
                 # mounted a point which is different from entry's path,
                 # say to user that it is saved but not mounted to entry's
                 # path beacause it is mounted another point.
-                if not not mountPath and not mountPath == path:
+                if mountPoint and not mountPoint == path:
                     KMessageBox.sorry(self, i18n("Changes saved but system couldn't mount it because it has been already mounted another point"))
             except dbus.DBusException, e:
                 if e.message.startswith("tr.org.pardus.comar"):
@@ -477,7 +512,7 @@ def deviceAdded(udi):
                 deviceList[udi] = udi
                 dmWidget.initialize()
                 self.frame_detail.setEnabled(False)
-                self.frame_detail.hide()
+                #self.frame_detail.hide()
         except Exception, e:
             pass
 
@@ -490,7 +525,7 @@ def deviceRemoved(udi):
         del deviceList[udi]
         dmWidget.initialize()
         self.frame_detail.setEnabled(False)
-        self.frame_detail.hide()
+        #self.frame_detail.hide()
 
 def main():
     about_data = AboutData()
