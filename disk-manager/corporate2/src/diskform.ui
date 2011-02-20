@@ -76,6 +76,17 @@
         </widget>
         <widget class="QFrame">
             <property name="name">
+                <cstring>mountFrame</cstring>
+            </property>
+            <property name="frameShape">
+                <enum>StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>Raised</enum>
+            </property>
+        </widget>
+        <widget class="QFrame">
+            <property name="name">
                 <cstring>frame_detail</cstring>
             </property>
             <property name="frameShape">

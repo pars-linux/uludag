@@ -26,6 +26,8 @@ from kdecore import *
 # Widget
 from diskform import mainForm
 
+from PLinkLabel import PLinkLabel
+
 # COMAR
 import comar
 
@@ -71,6 +73,104 @@ def loadIcon(name, group=KIcon.Desktop, size=16):
 def loadIconSet(name, group=KIcon.Desktop, size=16):
     return KGlobal.iconLoader().loadIconSet(name, group, size)
 
+class MountDialog(QDialog):
+    def __init__(self, parent = None, name = None, modal = 0, fl = 0, partition = None):
+        QDialog.__init__(self, parent, name, modal, fl)
+        self.setCaption(i18n('Mount'))
+        self.setSizePolicy(QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed, 0, 0, self.sizePolicy().hasHeightForWidth()))
+
+        self.partition = partition
+
+        layout = QGridLayout(self, 2, 3 ,8, 8)
+        layout.setResizeMode(QLayout.Fixed)
+
+        self.buttonGroup = QButtonGroup(self)
+        bgLayout = QGridLayout(self.buttonGroup, 5, 6, 8, 2)
+        layout.addMultiCellWidget(self.buttonGroup, 0, 0, 0, 2)
+        #self.buttonGroup.setFrameShape(QFrame.NoFrame)
+
+        self.savedOptions = QRadioButton(i18n("Mount with system saved options"), self.buttonGroup)
+        bgLayout.addMultiCellWidget(self.savedOptions, 0, 0, 0, 5)
+
+        self.savedLabel = QLabel(self.buttonGroup, "savedLabel")
+        bgLayout.addMultiCellWidget(self.savedLabel, 1, 1, 1, 5)
+
+        self.belowOptions = QRadioButton(i18n("Mount with system saved options"), self.buttonGroup)
+        bgLayout.addMultiCellWidget(self.belowOptions, 2, 2, 0, 5)
+
+        self.mountPointEdit = QLineEdit(self.buttonGroup, "mountPointEdit")
+        bgLayout.addMultiCellWidget(self.mountPointEdit, 3, 3, 0, 4)
+
+        self.mountBrowseButton = QPushButton(self.buttonGroup, "mountBrowseButton")
+        self.mountBrowseButton.setText("...")
+        bgLayout.addMultiCellWidget(self.mountBrowseButton, 3, 3, 5, 5)
+
+        self.cancelButton = QPushButton(self, "cancelButton")
+        self.cancelButton.setText(i18n("Cancel"))
+        layout.addWidget(self.cancelButton, 1, 1)
+
+        self.mountButton = QPushButton(self,"mountButton")
+        self.mountButton.setText(i18n("Mount"))
+        layout.addWidget(self.mountButton, 1, 2)
+
+        spacer = QSpacerItem(10, 2, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        layout.addItem(spacer, 1, 0)
+
+        self.connect(self.cancelButton, SIGNAL('clicked()'), self, SLOT('reject()'))
+        self.connect(self.mountButton, SIGNAL('clicked()'), SLOT('accept()'))
+        self.connect(self.mountBrowseButton, SIGNAL('clicked()'), self.browseMountPoint)
+        self.connect(self.savedOptions, SIGNAL("toggled(bool)"), self.slotToggle)
+        self.connect(self.belowOptions, SIGNAL("toggled(bool)"), self.slotToggle)
+
+        if partition.isInEntries:
+            self.savedOptions.setOn(True)
+            self.savedLabel.setText(i18n("Partition is going to mount %s" % partition.mountPoint))
+        else:
+            self.belowOptions.setOn(True)
+            self.savedLabel.setText(i18n("There is no saved data for %s" % partition.name))
+
+    def browseMountPoint(self):
+        mountPoint = QFileDialog.getExistingDirectory(
+            "/media",
+            self,
+            "browse mount point",
+            i18n("Browse mount point"),
+            True )
+        self.mountPointEdit.setText(mountPoint)
+
+    def accept(self):
+        if self.savedOptions.isOn():
+            QDialog.accept(self)
+            return
+
+        if not os.path.ismount(str(self.mountPointEdit.text())):
+            if os.path.exists(str(self.mountPointEdit.text())):
+                QDialog.accept(self)
+            else:
+                KMessageBox.sorry(self, i18n("Path is not valid. Select a valid one."), i18n('Error'))
+        else:
+            KMessageBox.sorry(self, i18n("Another filesystem has been mounted this path. Select a different one."), i18n('Error'))
+
+
+    def exec_loop(self):
+        if QDialog.exec_loop(self):
+            if self.savedOptions.isOn():
+                return self.partition.mountPoint
+            else:
+                return str(self.mountPointEdit.text())
+        else:
+            return False
+
+    def slotToggle(self):
+        if self.savedOptions.isOn():
+            self.savedLabel.setEnabled(True)
+            self.mountBrowseButton.setEnabled(False)
+            self.mountPointEdit.setEnabled(False)
+        else:
+            self.savedLabel.setEnabled(False)
+            self.mountBrowseButton.setEnabled(True)
+            self.mountPointEdit.setEnabled(True)
+
 class HelpDialog(QDialog):
     def __init__(self, parent=None):
         QDialog.__init__(self, parent)
@@ -104,12 +204,29 @@ class diskForm(mainForm):
         self.connect(self.combo_fs, SIGNAL('activated(const QString&)'), self.slotFS)
         self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
         self.connect(self.btn_update, SIGNAL('clicked()'), self.slotUpdate)
-        self.connect(self.btn_mount, SIGNAL('clicked()'), self.slotMount)
+        #self.connect(self.btn_mount, SIGNAL('clicked()'), self.slotMount)
         self.connect(self.frame_entry, SIGNAL('toggled(bool)'), self.slotToggle)
 
         self.list_main.header().hide()
         self.frame_detail.setEnabled(False)
         #self.frame_detail.hide()
+
+        layout = QGridLayout(self.mountFrame, 1, 4, 4, 4)
+
+        self.infoIconLabel = QLabel(self.mountFrame, "mountInfoIconLabel")
+        self.infoIconLabel.setPixmap(loadIcon('info', size=16))
+        layout.addWidget(self.infoIconLabel, 0, 0)
+
+        self.infoLabel = QLabel(self.mountFrame, "mountInfoLabel")
+        layout.addWidget(self.infoLabel, 0, 1)
+
+        self.clickLabel = PLinkLabel(self.mountFrame, "mountClickLabel")
+        layout.addWidget(self.clickLabel, 0, 2)
+        self.clickLabel.method = self.handleClickEvents
+
+        layout.addItem(QSpacerItem(2, 2, QSizePolicy.Expanding, QSizePolicy.Minimum), 0, 3)
+
+        self.mountFrame.layout = layout
 
         self.old = None
         self.pixBase = self.bindPixmaps(loadIcon("drive-harddisk.png", size=32), loadIcon("cancel", size=16), KGlobalSettings.baseColor())
@@ -159,9 +276,34 @@ class diskForm(mainForm):
         self.combo_fs.insertItem(fsname)
         self.combo_fs.setCurrentText(fsname)
 
+    def resetMountInfoFrame(self):
+        self.infoLabel.setText(i18n("Select a partition"))
+        self.clickLabel.setLinkText("")
+
+    def handleClickEvents(self):
+        item = self.list_main.selectedItem()
+        if not item:
+            return
+        part = str(self.items[item])
+        pi = self.partitions[part]
+        if pi.isMounted:
+            if KMessageBox.Yes == KMessageBox.questionYesNo(
+                    self,
+                    i18n("Do you want to unmount '%s'?" % part),
+                    i18n("Unmount"),
+                    KStdGuiItem.yes(),
+                    KStdGuiItem.no()
+                ):
+                self.mount(False, part)
+        else:
+            dialog = MountDialog(self, partition=pi)
+            mountPoint = dialog.exec_loop()
+            self.mount(True, part, mountPoint)
+
     def initialize(self):
 
         self.frame_detail.setEnabled(False)
+        self.resetMountInfoFrame()
 
         # Package
         self.package = None
@@ -332,26 +474,26 @@ class diskForm(mainForm):
     def getFSType(self, part):
         return self.link.Disk.Manager[self.package].getFSType(part)
 
-    def slotMount(self):
-        """
+    def mount(self, mount, part, mountPoint=""):
+        """ buraları                                    düzenleeeeeeeeeeeeeeeeeeee         !!!!!!!!!!!
         Triggered when mount/umount button clicked. If the selected 
         partition is not mounted this function calls mount function 
         otherwise calls umount function.
         """
-        item = self.list_main.selectedItem()
-        device = str(self.items[item])
+        #item = self.list_main.selectedItem()
+        #device = str(self.items[item])
         try:
-            if not self.isMounted(device):
-                self.link.Disk.Manager.mount(device, '', async=functools.partial(self.asyncMount, device, ''))
+            if mount:
+                self.link.Disk.Manager.mount(part, mountPoint, async=functools.partial(self.asyncMount, part, ''))
             else:
-                self.link.Disk.Manager.umount(device, async=functools.partial(self.asyncUmount, device))
+                self.link.Disk.Manager.umount(part, async=functools.partial(self.asyncUmount, part))
         except Exception, e:
             if e.message.startswith("tr.org.pardus.comar"):
                 pass
             else:
                 KMessageBox.sorry(self, unicode(e.message))
         # This is for preventing user to push repeatedly.
-        self.btn_mount.setEnabled(False)
+        #self.btn_mount.setEnabled(False)
 
     def isMounted(self, partition):
         return self.partitions[partition].isMounted
@@ -362,6 +504,7 @@ class diskForm(mainForm):
             self.old.setPixmap(0, self.pixBase)
         if item not in self.items:
             self.frame_detail.setEnabled(False)
+            self.resetMountInfoFrame()
             #self.frame_detail.hide()
             return
         device = str(self.items[item])
@@ -406,6 +549,18 @@ class diskForm(mainForm):
                 self.frame_entry.setEnabled(True)
                 self.btn_mount.setEnabled(True)
                 self.frame_detail.show()
+        self.updateMountFrame(device)
+
+    def updateMountFrame(self, part):
+        pi = self.partitions[part]
+        if self.isMounted(part):
+            self.infoLabel.setText(i18n("'%s' is mounted to '%s'." % (part, pi.mountPoint)))
+            self.clickLabel.setLinkText(i18n("Unmount"))
+        else:
+            self.infoLabel.setText(i18n("'%s' is not mounted." % part))
+            self.clickLabel.setLinkText(i18n("Mount"))
+        if pi.fsType == "swap":
+            self.clickLabel.setLinkText("")
 
     def slotUpdate(self):
         item = self.list_main.selectedItem()
