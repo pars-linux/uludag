@@ -829,7 +829,7 @@ class PolicyTab(QVBox):
         self.setPolicyButtonsEnabled(False)
 
         #put all necessary actions to listview
-        self.fillAuths()
+        #self.fillAuths()
 
         self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
         self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)

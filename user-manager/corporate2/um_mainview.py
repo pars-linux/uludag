@@ -11,6 +11,7 @@
 
 import sys
 import time
+from threading import Thread
 from qt import *
 from kdecore import *
 from kdeui import *
@@ -30,10 +31,15 @@ class UserManager(QWidgetStack):
         self.link = comar.Link()
         self.link.setLocale()
 
+        self.authsLoaded = False
+
         self.browse = um_browser.BrowseStack(self)
         self.user = useredit.UserStack(self)
         self.useredit = useredit.UserStack(self, edit=True)
         self.group = groupedit.GroupStack(self)
+
+        filler = Filler(self)
+        filler.start()
 
     def slotCancel(self):
         self.raiseWidget(self.browse)
@@ -47,6 +53,8 @@ class UserManager(QWidgetStack):
                 names.append(item.nick)
                 ids.append(item.uid)
                 item = item.nextSibling()
+            if not self.authsLoaded:
+                return
             self.raiseWidget(self.user)
             self.user.startAdd(self.browse.groups, names, ids)
         else:
@@ -55,5 +63,21 @@ class UserManager(QWidgetStack):
 
     def slotEdit(self):
         if self.browse.users.selectedItem():
+            if not self.authsLoaded:
+                return
             self.raiseWidget(self.useredit)
             self.useredit.startEdit(self.browse.groups, self.browse.users.selectedItem().uid)
+
+class Filler(Thread):
+    def __init__(self, usermanager):
+        Thread.__init__(self)
+        self.usermanager = usermanager
+
+    def run(self):
+        try:
+            self.usermanager.user.u_policygrouptab.policytab.fillAuths()
+            self.usermanager.useredit.u_policygrouptab.policytab.fillAuths()
+            self.usermanager.authsLoaded = True
+        except:
+            pass
+
