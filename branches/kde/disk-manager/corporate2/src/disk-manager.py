@@ -89,13 +89,13 @@ class MountDialog(QDialog):
         layout.addMultiCellWidget(self.buttonGroup, 0, 0, 0, 2)
         #self.buttonGroup.setFrameShape(QFrame.NoFrame)
 
-        self.savedOptions = QRadioButton(i18n("Mount with system saved options"), self.buttonGroup)
+        self.savedOptions = QRadioButton(i18n("Mount to system saved point"), self.buttonGroup)
         bgLayout.addMultiCellWidget(self.savedOptions, 0, 0, 0, 5)
 
         self.savedLabel = QLabel(self.buttonGroup, "savedLabel")
         bgLayout.addMultiCellWidget(self.savedLabel, 1, 1, 1, 5)
 
-        self.belowOptions = QRadioButton(i18n("Mount with system saved options"), self.buttonGroup)
+        self.belowOptions = QRadioButton(i18n("Mount to chosen point"), self.buttonGroup)
         bgLayout.addMultiCellWidget(self.belowOptions, 2, 2, 0, 5)
 
         self.mountPointEdit = QLineEdit(self.buttonGroup, "mountPointEdit")
@@ -125,9 +125,13 @@ class MountDialog(QDialog):
         if partition.isInEntries:
             self.savedOptions.setOn(True)
             self.savedLabel.setText(i18n("Partition is going to mount %s" % partition.mountPoint))
+            self.belowOptions.show()
+            self.savedLabel.show()
         else:
             self.belowOptions.setOn(True)
             self.savedLabel.setText(i18n("There is no saved data for %s" % partition.name))
+            self.belowOptions.hide()
+            self.savedLabel.hide()
 
     def browseMountPoint(self):
         mountPoint = QFileDialog.getExistingDirectory(
@@ -211,20 +215,29 @@ class diskForm(mainForm):
         self.frame_detail.setEnabled(False)
         #self.frame_detail.hide()
 
-        layout = QGridLayout(self.mountFrame, 1, 4, 4, 4)
+        layout = QGridLayout(self.mountFrame, 1, 7, 4, 4)
 
         self.infoIconLabel = QLabel(self.mountFrame, "mountInfoIconLabel")
         self.infoIconLabel.setPixmap(loadIcon('info', size=16))
         layout.addWidget(self.infoIconLabel, 0, 0)
 
-        self.infoLabel = QLabel(self.mountFrame, "mountInfoLabel")
-        layout.addWidget(self.infoLabel, 0, 1)
+        self.infoLabel1 = QLabel(self.mountFrame, "mountInfoLabel1")
+        self.infoLabel1.setAlignment(Qt.SingleLine)
+        layout.addWidget(self.infoLabel1, 0, 1)
 
         self.clickLabel = PLinkLabel(self.mountFrame, "mountClickLabel")
         layout.addWidget(self.clickLabel, 0, 2)
-        self.clickLabel.method = self.handleClickEvents
 
-        layout.addItem(QSpacerItem(2, 2, QSizePolicy.Expanding, QSizePolicy.Minimum), 0, 3)
+        self.infoLabel2 = QLabel(self.mountFrame, "mountInfoLabel2")
+        layout.addWidget(self.infoLabel2, 0, 3)
+
+        self.clickLabel2 = PLinkLabel(self.mountFrame, "mountClickLabel2")
+        layout.addWidget(self.clickLabel2, 0, 4)
+
+        self.infoLabel3 = QLabel(self.mountFrame, "mountInfoLabel3")
+        layout.addWidget(self.infoLabel3, 0, 5)
+
+        layout.addItem(QSpacerItem(2, 2, QSizePolicy.Expanding, QSizePolicy.Minimum), 0, 6)
 
         self.mountFrame.layout = layout
 
@@ -276,11 +289,15 @@ class diskForm(mainForm):
         self.combo_fs.insertItem(fsname)
         self.combo_fs.setCurrentText(fsname)
 
-    def resetMountInfoFrame(self):
-        self.infoLabel.setText(i18n("Select a partition"))
-        self.clickLabel.setLinkText("")
+    def handleOpenMediaEvents(self):
+        item = self.list_main.selectedItem()
+        if not item:
+            return
+        part = str(self.items[item])
+        pi = self.partitions[part]
+        os.system('/usr/bin/xdg-open '+pi.mountPoint)
 
-    def handleClickEvents(self):
+    def handleMountLinkEvents(self):
         item = self.list_main.selectedItem()
         if not item:
             return
@@ -298,7 +315,8 @@ class diskForm(mainForm):
         else:
             dialog = MountDialog(self, partition=pi)
             mountPoint = dialog.exec_loop()
-            self.mount(True, part, mountPoint)
+            if mountPoint:
+                self.mount(True, part, mountPoint)
 
     def initialize(self):
 
@@ -551,16 +569,43 @@ class diskForm(mainForm):
                 self.frame_detail.show()
         self.updateMountFrame(device)
 
+    def resetMountInfoFrame(self):
+        self.infoLabel1.setText(i18n("Select a partition"))
+        self.clickLabel.setLinkText("")
+        self.infoLabel2.setText("")
+        self.clickLabel2.setLinkText("")
+        self.infoLabel3.setText("")
+
     def updateMountFrame(self, part):
         pi = self.partitions[part]
         if self.isMounted(part):
-            self.infoLabel.setText(i18n("'%s' is mounted to '%s'." % (part, pi.mountPoint)))
-            self.clickLabel.setLinkText(i18n("Unmount"))
+            msg = unicode(i18n("%s is mounted to <b>%s</b>. Click <b>here</b> to unmount" % (part, pi.mountPoint)))
+            p1 = msg.split("<b>")
+            p2 = p1[1].split("</b>")
+            p3 = p1[2].split("</b>")
+            self.infoLabel1.setText(p1[0])
+            self.clickLabel.setLinkText(p2[0])
+            self.infoLabel2.setText(p2[1])
+            self.clickLabel2.setLinkText(p3[0])
+            self.infoLabel3.setText(p3[1])
+            self.clickLabel.method = self.handleOpenMediaEvents
+            self.clickLabel2.method = self.handleMountLinkEvents
         else:
-            self.infoLabel.setText(i18n("'%s' is not mounted." % part))
-            self.clickLabel.setLinkText(i18n("Mount"))
+            msg = unicode(i18n("%s is not mounted. Click <b>here</b> to mount." % part))
+            p1 = msg.split("<b>")
+            p2 = p1[1].split("</b>")
+            self.infoLabel1.setText(p1[0])
+            self.clickLabel.setLinkText(p2[0])
+            self.infoLabel2.setText(p2[1])
+            self.clickLabel2.setLinkText("")
+            self.infoLabel3.setText("")
+            self.clickLabel.method = self.handleMountLinkEvents
         if pi.fsType == "swap":
+            self.infoLabel1.setText(i18n("This is a swap partition."))
             self.clickLabel.setLinkText("")
+            self.infoLabel2.setText("")
+            self.clickLabel2.setLinkText("")
+            self.infoLabel3.setText("")
 
     def slotUpdate(self):
         item = self.list_main.selectedItem()
