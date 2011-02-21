@@ -60,3 +60,4 @@ own experiences when reviewing a package.
 .. _icon tag: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
 .. _strict dependency: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies
 .. _Pkgconfig(.pc): http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#devel-packages
+.. _checkelf: http://developer.pardus.org.tr/guides/packaging/checkelf.html
