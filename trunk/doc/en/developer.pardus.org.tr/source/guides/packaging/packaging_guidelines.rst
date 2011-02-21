@@ -92,6 +92,38 @@ Architecture Support
 
 Pardus support two different architechtures (x86 (32 bit), x86_64 (64 bit)), packages must successfully compile and build into binary pisis on at least one supported architecture. If the package could not be compile for a specific architecture it should be specified in `pspec.xml file`_.
 
+Build Package For a Special Architecture
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+More than one pacakge can be created from the same source code and some of these pacakges can need special architecture and buid dependency to build. In this kind of a situation, the build architecture type and dependencies can be given for relevant packages in `pspec.xml file`_ and this type can be parsed by `buildTYPE`_ () method in actions.py file.
+
+pspec.xml Example::
+
+   <Package>
+    <Name>libfoo</Name>
+    ...
+    <Files>
+      <Path fileType="library">/usr/lib</Path>
+    <Files>
+   </Package>
+
+   <Package>
+    <Name>libfoo-32bit</Name>
+    <BuildType>32bit</BuildType>
+    <BuildDependencies>
+      <Dependency>libbar-32bit</Dependency>
+    </BuildDependencies>
+    ...
+    <Files>
+      <Path fileType="library">/usr/lib32</Path>
+    <Files>
+   </Package>
+
+actions.py Example::
+
+    if get.buildTYPE() == "32bit":
+    # add -32 for LDFLAGS
+
 Building Packages
 ^^^^^^^^^^^^^^^^^
 
@@ -568,3 +600,4 @@ Operation types:
 .. _developer mail list: http://liste.pardus.org.tr/mailman/listinfo/gelistirici
 .. _Conflicts: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
 .. _Dependency: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
+.. _buildTYPE: http://developer.pardus.org.tr/guides/packaging/actionsapi/get.html#buildtype
