@@ -31,15 +31,15 @@ class UserManager(QWidgetStack):
         self.link = comar.Link()
         self.link.setLocale()
 
-        self.authsLoaded = False
+        #self.authsLoaded = False
 
         self.browse = um_browser.BrowseStack(self)
         self.user = useredit.UserStack(self)
         self.useredit = useredit.UserStack(self, edit=True)
         self.group = groupedit.GroupStack(self)
 
-        filler = Filler(self)
-        filler.start()
+        #filler = Filler(self)
+        #filler.start()
 
     def slotCancel(self):
         self.raiseWidget(self.browse)
@@ -53,8 +53,8 @@ class UserManager(QWidgetStack):
                 names.append(item.nick)
                 ids.append(item.uid)
                 item = item.nextSibling()
-            if not self.authsLoaded:
-                return
+            #if not self.authsLoaded:
+            #    return
             self.raiseWidget(self.user)
             self.user.startAdd(self.browse.groups, names, ids)
         else:
@@ -63,8 +63,8 @@ class UserManager(QWidgetStack):
 
     def slotEdit(self):
         if self.browse.users.selectedItem():
-            if not self.authsLoaded:
-                return
+            #if not self.authsLoaded:
+            #    return
             self.raiseWidget(self.useredit)
             self.useredit.startEdit(self.browse.groups, self.browse.users.selectedItem().uid)
 

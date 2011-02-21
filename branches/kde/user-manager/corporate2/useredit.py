@@ -789,34 +789,33 @@ class PolicyTab(QVBox):
         self.stack = stack
 
         #add radio buttons
-        w = QButtonGroup(self)
-        w.setFrameShape(QFrame.NoFrame)
-        hb = QHBoxLayout(w)
-        self.authorized = QRadioButton(i18n("Authorize"), w)
-        hb.addStretch(1)
-        hb.addWidget(self.authorized)
-        hb.addStretch(3)
-        self.blocked = QRadioButton(i18n("Block"), w)
-        self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
-        hb.addWidget(self.blocked)
-        hb.addStretch(1)
+        self.buttonGroup = QButtonGroup(self)
+        #w.setFrameShape(QFrame.NoFrame)
+        layout = QGridLayout(self.buttonGroup, 3, 2, 0, 0)
+        self.authorized = QRadioButton(i18n("Authorize"), self.buttonGroup)
+        layout.addWidget(self.authorized, 0, 0)
 
-        #add checkbox
-        w = QWidget(self)
+        self.blocked = QRadioButton(i18n("Block"), self.buttonGroup)
+        layout.addWidget(self.blocked, 2, 0)
+
+        w = QWidget(self.buttonGroup)
         hb = QHBoxLayout(w)
-        hb.addStretch(1)
+        self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
         lbl = QLabel("   ", w)
         hb.addWidget(lbl)
-        self.passwordCheck = QCheckBox(i18n("Do not ask password"), w)
-        self.connect(self.authorized, SIGNAL("toggled(bool)"), self.slotAuthorized)
-        self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
-        hb.addWidget(self.passwordCheck, 1)
-        hb.addStretch(3)
+        hb.addWidget(self.passwordCheck)
+        hb.addStretch(2)
+        layout.addWidget(w, 1, 0)
 
+        self.connect(self.authorized, SIGNAL("toggled(bool)"), self.slotAuthorized)
+        self.connect(self.blocked, SIGNAL("toggled(bool)"), self.blockedSlot)
+        self.connect(self.passwordCheck, SIGNAL("toggled(bool)"), self.passwordCheckSlot)
+
+        # !!!!!!!!!!!! kalkacak
         w = QWidget(self)
         hb = QHBoxLayout(w)
         self.applyAllButton = QPushButton(i18n("Apply this policy to all"), w)
-        hb.addWidget(self.applyAllButton)
+        #hb.addWidget(self.applyAllButton)
         self.connect(self.applyAllButton, SIGNAL("clicked()"), self.slotAuthAll)
 
         self.selectionPopup = QPopupMenu(self)
@@ -829,7 +828,7 @@ class PolicyTab(QVBox):
         self.setPolicyButtonsEnabled(False)
 
         #put all necessary actions to listview
-        #self.fillAuths()
+        self.fillAuths()
 
         self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
         self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
@@ -950,18 +949,23 @@ class PolicyTab(QVBox):
 
     def fillAuths(self):
         #do not show policies require policy type yes or no, only the ones require auth_* type
-        allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
+        # ilkin hiç leaf konmuyo, tıkladıkça doluyo. dolmuş mu diye denetlemek ve tekrar tekrar doldurmamak gerekiyo
+        # ilk leaf i fake ise daha dolmamış demek olsun
+        #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for cats in categories:
             catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
             catitem.setPixmap(0, getIcon(categories[cats][1]))
-            cats = cats.split('|')
+            actionitem = ActionItem(catitem, "", "", "")
+
+            """cats = cats.split('|')
             for category in cats:
                 catactions = filter(lambda x: x.startswith(category), allActions)
                 for cataction in catactions:
                     actioninfo = polkit.action_info(cataction)
-                    actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])
+                    actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])"""
 
+    #bu kalkacak, karışmış iyice. derinlik filan da gelince iyice karışır
     def setPolicyButtonsEnabled(self, enable):
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
@@ -999,9 +1003,15 @@ class PolicyTab(QVBox):
             return
 
         if toggle:
-            self.checkNegativeAndCall(item, self.passwordCheckChecked)
+            if self.edit:
+                self.checkNegativeAndCall(item, self.passwordCheckChecked)
+            else:
+                self.passwordCheckChecked(item, -1)
         else:
-            self.checkNegativeAndCall(item, self.passwordCheckUnchecked)
+            if self.edit:
+                self.checkNegativeAndCall(item, self.passwordCheckUnchecked)
+            else:
+                self.passwordCheckUnchecked(item, -1)
 
     def passwordCheckChecked(self, item, negative):
         if negative != -1: # registered to policykit
@@ -1032,7 +1042,10 @@ class PolicyTab(QVBox):
 
         if toggle:
             item.setAuthIcon("no")
-            self.checkNegativeAndCall(item, self.doBlock)
+            if self.edit:
+                self.checkNegativeAndCall(item, self.doBlock)
+            else:
+                self.doBlock(item, -1)
 
     def doBlock(self, item, negative):
         if negative != -1: # registered to policykit
@@ -1054,7 +1067,10 @@ class PolicyTab(QVBox):
 
         if toggle:
             item.setAuthIcon("yes")
-            self.checkNegativeAndCall(item, self.doAuthorize)
+            if self.edit:
+                self.checkNegativeAndCall(item, self.doAuthorize)
+            else:
+                self.doAuthorize(item, -1)
 
     def doAuthorize(self, item, negative):
         if negative != -1: # registered to policykit
@@ -1076,9 +1092,23 @@ class PolicyTab(QVBox):
                 if item.id in self.operations.keys():
                     self.operations.pop(item.id)
 
+    def fillCategory(self, item):
+        item.isFilled = True
+        item.takeItem(item.firstChild())
+        for i in polkit.action_list():
+            cats = item.name.split('|')
+            for j in cats:
+                if i.startswith(j):
+                    actioninfo = polkit.action_info(i)
+                    if actioninfo['policy_active'].startswith("auth_"):
+                        actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])
+
     def listviewExpanded(self, item):
         if not item: # or self.policyview.selectedItem()
             return
+
+        if not item.isFilled:
+            self.fillCategory(item)
 
         # get list of children items
         childCount = item.childCount()
@@ -1119,8 +1149,27 @@ class PolicyTab(QVBox):
             setIcons([])
             return
 
-        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
+        # DİKAAAAAAAAAAAATTTTTTTTTTT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        # bacağa eklediğim bu işlevin access lableını get yapmıştım, listuserauthorizations olmalı, değiştir
+        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=listUserAuthorizations)
 
+    def setButtonStatus(self, status):
+        """
+        -1: nothing
+         0: blocked
+         1: granted
+        """
+        if status == -1:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(False)
+            self.passwordCheck.setEnabled(True)
+        elif status == 0:
+            self.blocked.setOn(True)
+            self.passwordCheck.setEnabled(False)
+        elif status == 1:
+            self.authorized.setOn(True)
+            self.passwordCheck.setChecked(True)
+            self.passwordCheck.setEnabled(True)
 
     def actionClicked(self, actionItem):
         #now we will setup radiobuttons and checkbox according to the action clicked, but during this setup
@@ -1131,27 +1180,22 @@ class PolicyTab(QVBox):
         if actionItem.id in self.operations.keys():
             pol =  self.operations[actionItem.id]
             if pol == "grant":
-                self.authorized.setOn(True)
-                self.passwordCheck.setChecked(True)
+                self.setButtonStatus(1)
             elif pol.endswith("revoke"):
-                self.authorized.setOn(True)
-                self.passwordCheck.setChecked(False)
+                self.setButtonStatus(-1)
             else: #block
-                self.blocked.setOn(True)
-                self.passwordCheck.setChecked(False)
+                self.setButtonStatus(0)
 
             self.inOperation = False
             return
 
         # if it is a new user, default is authorized
         if not self.edit:
-            self.authorized.setOn(True)
-            self.passwordCheck.setChecked(False)
+            self.setButtonStatus(-1)
             self.inOperation = False
             return
 
-        def listUserAuthorizations(package, exception, authList):
-            #since COMAR calls this handler twice, we have a workaround like this
+        def handleLeafStatus(package, exception, negative):
             if exception:
                 self.setPolicyButtonsEnabled(False)
                 return
@@ -1159,8 +1203,10 @@ class PolicyTab(QVBox):
             self.inOperation = True
 
             # convert comar answer to pypolkit call structure
-            authList = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, authList[0])
-            self.selectRightButtons(authList, actionItem)
+            #authList = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, authList[0])
+            #self.selectRightButtons(authList, actionItem)
+            #self.setItemStatusButtons(int(negative[0]))
+            self.setButtonStatus(int(negative[0]))
 
         #try:
         #    auths = polkit.auth_list_uid(int(self.uid.text()))
@@ -1169,36 +1215,15 @@ class PolicyTab(QVBox):
         #except:
         #call COMAR see different users' auths
 
-        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
+        self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), actionItem.id, async=handleLeafStatus)
 
 
-    def selectRightButtons(self, auths, actionItem):
-        auths = filter(lambda x: x['action_id'] == actionItem.id, auths)
-
-        if len(auths) == 0:
-            self.authorized.setOn(True)
-            self.passwordCheck.setEnabled(True)
-            self.passwordCheck.setChecked(False)
-
-            self.inOperation = False
-            return
-
-        if len(filter(lambda x: x['negative'], auths)) > 0:
-            #if action is blocked
-            self.blocked.setOn(True)
-            self.passwordCheck.setEnabled(False)
-            self.passwordCheck.setChecked(False)
-        else:
-            self.authorized.setOn(True)
-            self.passwordCheck.setEnabled(True)
-            self.passwordCheck.setChecked(True)
-
-        self.inOperation = False
 
 class CategoryItem(KListViewItem):
-    def __init__(self, parent, label, name):
+    def __init__(self, parent, label, name, isFilled=False):
         KListViewItem.__init__(self, parent, label)
         self.name = name
+        self.isFilled = False
 
 class ActionItem(KListViewItem):
     def __init__(self, parent, id, desc, policy):
