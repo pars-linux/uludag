@@ -172,7 +172,7 @@ class Directory:
             label = dn.split(",")[0].split("=")[1]
         return label
 
-    def add_folder(self, parent_dn, name, label):
+    def add_folder(self, parent_dn, name, label, description):
         """
             Adds a new folder under specified DN.
 
@@ -180,12 +180,14 @@ class Directory:
                 parent_dn: Distinguished name of parent
                 name: Node name
                 label: Node label
+                description: LDAP attribute name
         """
         dn = "dc=%s,%s" % (name, parent_dn)
         properties = {
             "dc": [name],
             "objectClass": ["top", "dcObject", "organization"],
-            "o": [label]
+            "o": [label],
+            "description": [description]
         }
         try:
             self.add_new(dn, properties)
