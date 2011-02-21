@@ -48,6 +48,12 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
         """
         return str(self.editLabel.text())
 
+    def get_description(self):
+        """
+            Returns LDAP attribute name.
+        """
+        return str(self.editDescription.text())
+
     def set_name(self, user):
         """
             Sets name.
@@ -59,3 +65,11 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
             Sets label.
         """
         self.editLabel.setText(label)
+
+    def set_description(self, password):
+        """
+            Sets LDAP attribute name.
+        """
+        self.editDescription.setText(password)
+
+
