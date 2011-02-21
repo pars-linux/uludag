@@ -551,8 +551,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             password = dialog.get_password()
             uid = dialog.get_uid()
             gid = dialog.get_gid()
+            home = dialog.get_home()
             try:
-                dn = self.directory.add_user(parent_path, name, password, uid, gid)
+                dn = self.directory.add_user(parent_path, name, password, uid, gid, home)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect

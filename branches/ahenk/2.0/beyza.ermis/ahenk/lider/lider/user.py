@@ -36,6 +36,32 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         # Attach generated UI
         self.setupUi(self)
 
+        # Signal for guess home directory
+        self.connect(self.editName, QtCore.SIGNAL("textChanged(QString)"), self.__slotNameTextChanged)
+        # Signals for password matching control
+        self.connect(self.editPassword, QtCore.SIGNAL("textChanged(QString)"), self.__slotPasswordTextChanged)
+        self.connect(self.editConfirmPassword, QtCore.SIGNAL("textChanged(QString)"), self.__slotPasswordTextChanged)
+
+        self.labelWarning.hide()
+
+    def __slotNameTextChanged(self):
+        """
+            If user did not write custom path for home directory, copy name as home directory.
+        """
+        if not (self.editHomeDir.isModified()):
+            self.editHomeDir.setText("/home/%s" % self.editName.text())
+
+    def __slotPasswordTextChanged(self):
+        """
+            If password confirmation field is not empty, compare password and its confirmation field whether same or not.
+            If they are not same, show warning label.
+        """
+        if len(str(self.editConfirmPassword.text())):
+            if self.editPassword.text() == self.editConfirmPassword.text():
+                self.labelWarning.hide()
+            else:
+                self.labelWarning.show()
+
     def get_name(self):
         """
             Returns name.
@@ -50,6 +76,12 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         password = str(self.editPassword.text())
         salted = Directory.make_password(password)
         return salted
+
+    def get_home(self):
+        """
+            Returns home directory.
+        """
+        return str(self.editHomeDir.text())
 
     def get_uid(self):
         """
@@ -86,3 +118,12 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
             Sets group id.
         """
         self.spinGID.setValue(uid)
+
+    def accept(self):
+        """
+            Checks written passwords are same or not. If not, warn user.
+        """
+        if not (self.editPassword.text() == self.editConfirmPassword.text()):
+            QtGui.QMessageBox.warning(self, "User Adding..", "Passwords do not match.")
+        else:
+            QtGui.QDialog.accept(self)
