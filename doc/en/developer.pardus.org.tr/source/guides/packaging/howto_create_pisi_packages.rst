@@ -68,6 +68,10 @@ command under package named directory.
 
     <Package>
         <Name></Name>
+         <BuildType></BuildType>
+         <BuildDependencies>
+            <Dependency></Dependency>
+        </BuildDependencies>
         <RuntimeDependencies>
             <AnyDependency>
                 <Dependency></Dependency>
@@ -305,6 +309,8 @@ Different pspec.xml File Tags
 #. **<Package>:**  This main tag is needed in order to give package information when it runs on the system.
 
     #. **<Name>:** The name of the package is added here. It must follow the :ref:`package-naming`. This should be match with the <Name> part of <Source> tag.
+    #. **<BuildType>** One more than packages can be created from same source, if one of these packages needs a special architecture to build, it should be added with <BuildType> tag. This value can be "32bit" or "64bit".
+    #. **<BuildDependencies>** One more than packages can be created from same source, if one of these packages needs a special dependency to build, it should be added with <BuildDependencies> tag.
     #. **<RuntimeDependencies>:** This part is used in order to list packages which is required when the program runs. In order to find runtime dependencies please `see <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#runtime-dependencies>`_. You need to add all dependencies in a different <Dependency> tag. You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details.
     #. **<AnyDependency>:** This part is used when the package can have more than one dependency for a specific work. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#any-dependency>`_.
     #. **<Conflicts>:** This part is used for the packages that conflict with the prapared package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#conflicting-packages>`_

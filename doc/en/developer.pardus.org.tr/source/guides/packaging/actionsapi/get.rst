@@ -227,7 +227,7 @@ BuildDefaults.
 
 
 makeJOBS
-----------
+--------
 
 ::
 
@@ -237,6 +237,16 @@ makeJOBS
 Return the default jobs value used for pardus. You can see it from
 "http://svn.pardus.org.tr/uludag/trunk/pisi/pisi/configfile.py" in class
 BuildDefaults.
+
+buildTYPE
+---------
+
+::
+
+    get.buildTYPE()
+
+Return the current build type included in pspec.xml with <BuildType> tag.
+
 
 Directory Related Functions
 ===========================
