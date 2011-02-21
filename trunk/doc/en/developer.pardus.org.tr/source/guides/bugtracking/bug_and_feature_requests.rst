@@ -17,7 +17,7 @@ If there are not exist any bug already been reported, the bugs of the software t
 Bug Cycle
 ---------
 
-You can find additional information from :ref:`bug-cycle`.
+You can find additional information from `bug cycle`_ document.
 
 Before reporting a bug
 ----------------------
@@ -70,7 +70,7 @@ After reporting bug
 -------------------
 
     * Developers generally do not send an acknowlegement comment that they are dealing with the bug. You should be patient during your bug left commentless, and you should keep on following.
-    * After reporting the bug, other users can comment it or developers can change the status or resolution of the bug report. In order to see different resolutions and status used in Pardus bug tracking system please visit :ref:`bug-cycle`.
+    * After reporting the bug, other users can comment it or developers can change the status or resolution of the bug report. In order to see different resolutions and status used in Pardus bug tracking system please visit `bug cycle`_.
     * Please do not allow someone to depart from your's bug subject. The irrelevant conversations in your bug comment cause only confusion and difficulty to track it.
     * If you think your bug has fixed but an other bug will exist about the same component, please file a new bug report.
     * If your bug is relevant to a release that reaches its end of life, the bug triagers will control whether this bug is experienced for maintained releases. If the bug is not reproducible for the maintained releases, they will close it.
@@ -341,4 +341,4 @@ If a graphical user interface bug exist, the best is to add the screenshot of it
 **Last Modified Date:** |today|
 
 :Author: Semen Cirit
-
+.. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
