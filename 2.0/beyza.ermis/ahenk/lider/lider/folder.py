@@ -66,10 +66,10 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
         """
         self.editLabel.setText(label)
 
-    def set_description(self, password):
+    def set_description(self, description):
         """
             Sets LDAP attribute name.
         """
-        self.editDescription.setText(password)
+        self.editDescription.setText(description)
 
 
