@@ -130,11 +130,13 @@ class MountDialog(QDialog):
             self.savedLabel.setText(i18n("Partition is going to mount %s" % partition.mountPoint))
             self.savedOptions.show()
             self.savedLabel.show()
+            self.belowOptions.show()
         else:
             self.belowOptions.setOn(True)
             self.savedLabel.setText(i18n("There is no saved data for %s" % partition.name))
             self.savedOptions.hide()
             self.savedLabel.hide()
+            self.belowOptions.show()
 
     def browseMountPoint(self):
         mountPoint = QFileDialog.getExistingDirectory(
@@ -218,7 +220,7 @@ class diskForm(mainForm):
         self.frame_detail.setEnabled(False)
         #self.frame_detail.hide()
 
-        layout = QGridLayout(self.mountFrame, 1, 7, 4, 4)
+        layout = QGridLayout(self.mountFrame, 1, 7, 0, 4)
 
         self.infoIconLabel = QLabel(self.mountFrame, "mountInfoIconLabel")
         self.infoIconLabel.setPixmap(loadIcon('info', size=16))
