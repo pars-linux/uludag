@@ -107,9 +107,13 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         # Initialize "talk" backend
         self.talk.start()
 
-        # Directory nodes
-        self.item = None
+        # Selected items
+        self.items = []
+
+        # Last fetched olicy
         self.policy = {}
+
+        # Directory nodes
         self.nodes_cn = {}
         self.nodes_dn = {}
 
@@ -198,7 +202,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.pushMain.setEnabled(False)
         if self.stackedWidget.currentIndex() == 0:
             # Disable unnecessary buttons
-            if self.item:
+            if len(self.items):
                 self.pushPluginGlobal.setEnabled(True)
                 self.pushPluginItem.setEnabled(True)
             else:
@@ -335,10 +339,16 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Returns policy of selected tree node.
         """
-        if not self.item:
+        if not len(self.items):
             return None
+
+        if len(self.items) == 1:
+            dn = self.items[0].dn
+        else:
+            return {}
+
         try:
-            results = self.directory.search(self.item.dn, scope="base")
+            results = self.directory.search(dn, scope="base")
         except directory.DirectoryConnectionError:
             self.__update_status("directory", "error")
             # TODO: Disconnect
@@ -432,7 +442,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.treeComputers.clear()
 
         # Reset selected item
-        self.item = None
+        self.items = []
 
         # Go to first screen
         self.__slot_main()
@@ -517,7 +527,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks a node.
         """
-        self.item = item
+        self.items = []
+        for i in self.treeComputers.selectedItems():
+            self.items.append(i)
+
         self.__update_toolbar()
 
         item_alt = self.nodes_alt_dn[item.dn]
@@ -527,7 +540,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user double clicks a node.
         """
-        self.item = item
+        self.items = [item]
 
     def __slot_tree_expand(self, item):
         """
@@ -554,7 +567,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks a node.
         """
-        self.item = item
+        self.items = [item]
         self.__update_toolbar()
 
         item_alt = self.nodes_dn[item.dn]
@@ -588,17 +601,22 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user right clicks a node.
         """
-        if self.item:
+        item = self.treeComputers.itemAt(pos)
+        if item:
+            self.items = [item]
+            self.treeComputers.setCurrentItem(item)
             self.menu.exec_(self.treeComputers.mapToGlobal(pos))
 
     def __slot_new_computer(self):
         """
             Triggered when user wants to add a new computer.
         """
-        if self.item.folder:
-            parent_item = self.item
+        item = self.items[0]
+
+        if item.folder:
+            parent_item = item
         else:
-            parent_item = self.item.parent()
+            parent_item = item.parent()
 
         parent_path = parent_item.dn
 
@@ -628,10 +646,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user wants to add a new user.
         """
-        if self.item.folder:
-            parent_item = self.item
+        item = self.items[0]
+
+        if item.folder:
+            parent_item = item
         else:
-            parent_item = self.item.parent()
+            parent_item = item.parent()
 
         parent_path = parent_item.dn
 
@@ -663,10 +683,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user wants to add a new folder.
         """
-        if self.item.folder:
-            parent_item = self.item
+        item = self.items[0]
+
+        if item.folder:
+            parent_item = item
         else:
-            parent_item = self.item.parent()
+            parent_item = item.parent()
 
         parent_path = parent_item.dn
 
@@ -706,8 +728,15 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         policy_match = False
         policy_inherit = True
 
-        if widget.get_type() == plugins.TYPE_SINGLE:
-            paths = self.directory.get_parent_paths(self.item.dn)
+        if len(self.items) == 1:
+            item = self.items[0]
+            self.treeSummary.show()
+        else:
+            item = None
+            self.treeSummary.hide()
+
+        if item and widget.get_type() == plugins.TYPE_SINGLE:
+            paths = self.directory.get_parent_paths(item.dn)
             self_path = paths[-1]
             classes = {}
             for path in paths:
@@ -731,7 +760,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     break
 
         try:
-            widget.set_item(self.item)
+            widget.set_item(item)
         except AttributeError:
             pass
         try:
@@ -744,7 +773,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             pass
 
         if widget.get_type() == plugins.TYPE_SINGLE:
-            if self.item and self.item.name in self.talk.online:
+            if item and item.name in self.talk.online:
                 self.pushApply.show()
             else:
                 self.pushApply.hide()
@@ -758,7 +787,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
-        self.treeSummary.show()
 
         if policy_match:
             widget.policy_match = True
@@ -781,16 +809,23 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
     def __slot_apply(self):
         """
-            Triggered when user clicks 'save & close' button.
+            Triggered when user clicks 'save & apply' button.
         """
         if self.__slot_save():
-            jid = "%s@%s" % (self.item.name, self.talk.domain)
-            self.talk.send_command(jid, "ahenk.force_update")
+            for item in self.items:
+                jid = "%s@%s" % (item.name, self.talk.domain)
+                self.talk.send_command(jid, "ahenk.force_update")
 
     def __slot_save(self):
         """
             Triggered when user clicks 'save' button.
         """
+        if len(self.items) != 1:
+            print "Not implemented!"
+            return
+
+        item = self.items[0]
+
         if self.stackedWidget.currentIndex() != 0:
             widget = self.stackedWidget.currentWidget()
 
@@ -803,11 +838,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
             try:
                 if remove:
-                    self.directory.modify(self.item.dn, policy_now, policy_new)
-                    self.directory.modify(self.item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                    self.directory.modify(item.dn, policy_now, policy_new)
+                    self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
                 else:
-                    self.directory.modify(self.item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
-                    self.directory.modify(self.item.dn, policy_now, policy_new)
+                    self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                    self.directory.modify(item.dn, policy_now, policy_new)
             except directory.DirectoryConnectionError, e:
                 print e
                 self.__update_status("directory", "error")
