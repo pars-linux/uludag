@@ -4,6 +4,9 @@
 import sys
 from qt import *
 
+from temp import PListView
+from temp import PListViewItem
+
 class MainWindow(QMainWindow):
     def __init__(self, *args):
         apply(QMainWindow.__init__, (self, ) + args)
@@ -12,8 +15,15 @@ class MainWindow(QMainWindow):
 
         layout = QVBoxLayout(mainwidget, 1, 1, "layout")
 
-        b1 = QPushButton("button1", mainwidget, "button1")
-        layout.addWidget(b1)
+        self.lv = PListView(mainwidget)
+        layout.addWidget(self.lv)
+
+        lvi = PListViewItem(self.lv, "name", "mesajjjjjjj")
+        self.lv.add(lvi)
+
+        b1 = QPushButton("button1", lvi, "button1")
+        lvi.widget = b1
+        #layout.addWidget(b1)
 
         self.setCentralWidget(mainwidget)
 
