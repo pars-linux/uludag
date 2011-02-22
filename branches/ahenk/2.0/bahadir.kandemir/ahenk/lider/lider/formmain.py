@@ -849,19 +849,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
                 try:
                     if remove:
-                        print policy_now
-                        print policy_new
-                        print classes_now
-                        print classes_new
-                        print "- " * 10
                         self.directory.modify(item.dn, policy_now, policy_new)
                         self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
                     else:
-                        print policy_now
-                        print policy_new
-                        print classes_now
-                        print classes_new
-                        print "- " * 10
                         self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
                         self.directory.modify(item.dn, policy_now, policy_new)
                 except directory.DirectoryConnectionError, e:
@@ -881,13 +871,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
                     self.directory.modify(item.dn, policy_now, policy_new)
             except directory.DirectoryConnectionError, e:
-                print e
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
                 return False
             except directory.DirectoryError, e:
-                print e
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify node.")
                 return False
             widget.policy = self.__load_policy()
