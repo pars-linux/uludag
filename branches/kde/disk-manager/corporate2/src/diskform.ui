@@ -198,7 +198,7 @@
                         </widget>
                         <widget class="QLayoutWidget">
                             <property name="name">
-                                <cstring>layout12</cstring>
+                                <cstring>layout3</cstring>
                             </property>
                             <hbox>
                                 <property name="name">
@@ -216,19 +216,11 @@
                                     </property>
                                     <property name="sizeHint">
                                         <size>
-                                            <width>230</width>
+                                            <width>372</width>
                                             <height>21</height>
                                         </size>
                                     </property>
                                 </spacer>
-                                <widget class="QPushButton">
-                                    <property name="name">
-                                        <cstring>btn_mount</cstring>
-                                    </property>
-                                    <property name="text">
-                                        <string>Mount</string>
-                                    </property>
-                                </widget>
                                 <widget class="QPushButton">
                                     <property name="name">
                                         <cstring>btn_update</cstring>

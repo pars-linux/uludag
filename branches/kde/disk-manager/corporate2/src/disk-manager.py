@@ -85,7 +85,7 @@ class MountDialog(QDialog):
         layout.setResizeMode(QLayout.Fixed)
 
         self.buttonGroup = QButtonGroup(self)
-        bgLayout = QGridLayout(self.buttonGroup, 5, 6, 8, 2)
+        bgLayout = QGridLayout(self.buttonGroup, 6, 6, 8, 2)
         layout.addMultiCellWidget(self.buttonGroup, 0, 0, 0, 2)
         #self.buttonGroup.setFrameShape(QFrame.NoFrame)
 
@@ -98,12 +98,15 @@ class MountDialog(QDialog):
         self.belowOptions = QRadioButton(i18n("Mount to chosen point"), self.buttonGroup)
         bgLayout.addMultiCellWidget(self.belowOptions, 2, 2, 0, 5)
 
+        self.mountPointInfoLabel = QLabel(i18n("Mount Point:"), self.buttonGroup)
+        bgLayout.addMultiCellWidget(self.mountPointInfoLabel, 3, 3, 0, 5)
+
         self.mountPointEdit = QLineEdit(self.buttonGroup, "mountPointEdit")
-        bgLayout.addMultiCellWidget(self.mountPointEdit, 3, 3, 0, 4)
+        bgLayout.addMultiCellWidget(self.mountPointEdit, 4, 4, 0, 4)
 
         self.mountBrowseButton = QPushButton(self.buttonGroup, "mountBrowseButton")
         self.mountBrowseButton.setText("...")
-        bgLayout.addMultiCellWidget(self.mountBrowseButton, 3, 3, 5, 5)
+        bgLayout.addMultiCellWidget(self.mountBrowseButton, 4, 4, 5, 5)
 
         self.cancelButton = QPushButton(self, "cancelButton")
         self.cancelButton.setText(i18n("Cancel"))
@@ -125,12 +128,12 @@ class MountDialog(QDialog):
         if partition.isInEntries:
             self.savedOptions.setOn(True)
             self.savedLabel.setText(i18n("Partition is going to mount %s" % partition.mountPoint))
-            self.belowOptions.show()
+            self.savedOptions.show()
             self.savedLabel.show()
         else:
             self.belowOptions.setOn(True)
             self.savedLabel.setText(i18n("There is no saved data for %s" % partition.name))
-            self.belowOptions.hide()
+            self.savedOptions.hide()
             self.savedLabel.hide()
 
     def browseMountPoint(self):
@@ -361,7 +364,8 @@ class diskForm(mainForm):
             #self.frame_detail.hide()
         else:
             if unicode(exception.message).startswith("tr.org.pardus.comar"):
-                self.btn_mount.setEnabled(True)
+                #self.btn_mount.setEnabled(True)
+                pass
             else:
                 KMessageBox.sorry(self, unicode(exception.message))
 
@@ -375,7 +379,8 @@ class diskForm(mainForm):
             #self.frame_detail.hide()
         else:
             if unicode(exception.message).startswith("tr.org.pardus.comar"):
-                self.btn_mount.setEnabled(True)
+                pass
+                #self.btn_mount.setEnabled(True)
             else:
                 KMessageBox.sorry(self, unicode(exception.message))
 
@@ -548,10 +553,10 @@ class diskForm(mainForm):
         self.frame_detail.setEnabled(True)
 
         if self.isMounted(device):
-            self.btn_mount.setText(i18n('Unmount'))
+            #self.btn_mount.setText(i18n('Unmount'))
             self.frame_entry.setEnabled(True)
             self.frame_detail.show()
-            self.btn_mount.setEnabled(True)
+            #self.btn_mount.setEnabled(True)
         else:
             # This partition is not mounted.
             fstype = self.partitions[device].fsType
@@ -559,13 +564,13 @@ class diskForm(mainForm):
                 # If partition is a swap or LVM member there won't be mount option.
                 self.frame_entry.setEnabled(False)
                 #self.frame_detail.hide()
-                self.btn_mount.setEnabled(False)
+                #self.btn_mount.setEnabled(False)
             else:
                 # Partition is not mounted and other than a swap.
                 # Enable the mount button and set its text as 'mount'.
-                self.btn_mount.setText(i18n('Mount'))
+                #self.btn_mount.setText(i18n('Mount'))
                 self.frame_entry.setEnabled(True)
-                self.btn_mount.setEnabled(True)
+                #self.btn_mount.setEnabled(True)
                 self.frame_detail.show()
         self.updateMountFrame(device)
 
@@ -711,7 +716,7 @@ def deviceAdded(udi):
             if deviceInterface.GetProperty('info.category') == 'volume':
                 deviceList[udi] = udi
                 dmWidget.initialize()
-                self.frame_detail.setEnabled(False)
+                dmWidget.frame_detail.setEnabled(False)
                 #self.frame_detail.hide()
         except Exception, e:
             pass
@@ -724,7 +729,7 @@ def deviceRemoved(udi):
     if deviceList.has_key(udi):
         del deviceList[udi]
         dmWidget.initialize()
-        self.frame_detail.setEnabled(False)
+        dmWidget.frame_detail.setEnabled(False)
         #self.frame_detail.hide()
 
 def main():
