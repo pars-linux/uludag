@@ -281,13 +281,18 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         dn = root.dn
 
-        results = self.directory.search(dn, ["o", "cn"], "one")
+        results = self.directory.search(dn, ["o", "cn", "description"], "one")
         fancy = len(results) < 100
         for dn, attrs in results:
             name = dn.split(",")[0].split("=")[1]
             label = name
             folder = dn.startswith("dc=")
             user = dn.startswith("uid=")
+
+            if "description" in attrs:
+                description = attrs["description"][0]
+            else:
+                description = ""
 
             if folder and "o" in attrs:
                 label = attrs["o"][0]
@@ -296,7 +301,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 item = QtGui.QTreeWidgetItem(root)
                 item.setText(0, unicode(label))
             else:
-                item = list_item.add_tree_item(root, dn, label, dn, icon=wrappers.Icon("computer48"))
+                item = list_item.add_tree_item(root, dn, label, description, icon=wrappers.Icon("computer48"))
 
             item.dn = dn
             item.name = name
