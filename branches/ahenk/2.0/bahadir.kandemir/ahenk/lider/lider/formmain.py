@@ -62,6 +62,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.treeSummary.hide()
+        self.lineSearch.hide()
+        self.pushSearch.hide()
 
         # Popup for connection management
         menu = wrappers.Menu(self)
@@ -99,6 +101,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeSummary, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree2_expand)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
+
+        self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
 
         self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
@@ -335,17 +339,17 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     self.nodes_cn[name] = item
                     self.__update_icon(name)
 
-    def __load_policy(self):
+    def __load_policy(self, item=None):
         """
             Returns policy of selected tree node.
         """
-        if not len(self.items):
-            return None
-
-        if len(self.items) == 1:
-            dn = self.items[0].dn
+        if item:
+            dn = item.dn
         else:
-            return {}
+            if len(self.items) == 1:
+                dn = self.items[0].dn
+            else:
+                return {}
 
         try:
             results = self.directory.search(dn, scope="base")
@@ -422,6 +426,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.__list_items()
         self.__list_items(alternative=True)
 
+        # Search bar
+        self.lineSearch.show()
+        self.pushSearch.show()
+
         # Update toolbar
         self.__update_toolbar()
 
@@ -440,6 +448,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Clear tree
         self.treeComputers.clear()
+
+        # Remove search bar
+        self.lineSearch.hide()
+        self.pushSearch.hide()
 
         # Reset selected item
         self.items = []
@@ -820,19 +832,44 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks 'save' button.
         """
+        if self.stackedWidget.currentIndex() == 0:
+            return False
+
+        widget = self.stackedWidget.currentWidget()
+
+        remove = False
+        if widget.policy_match:
+            if self.radioPolicyInherit.isChecked():
+                remove = True
+
         if len(self.items) != 1:
-            print "Not implemented!"
-            return
+            for item in self.items:
+                widget.policy = self.__load_policy(item)
+                classes_now, policy_now, classes_new, policy_new = widget.mod_policy(remove=remove)
 
-        item = self.items[0]
-
-        if self.stackedWidget.currentIndex() != 0:
-            widget = self.stackedWidget.currentWidget()
-
-            remove = False
-            if widget.policy_match:
-                if self.radioPolicyInherit.isChecked():
-                    remove = True
+                try:
+                    if remove:
+                        print policy_now
+                        print policy_new
+                        print classes_now
+                        print classes_new
+                        print "- " * 10
+                        self.directory.modify(item.dn, policy_now, policy_new)
+                        self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                    else:
+                        print policy_now
+                        print policy_new
+                        print classes_now
+                        print classes_new
+                        print "- " * 10
+                        self.directory.modify(item.dn, {"objectClass": classes_now}, {"objectClass": classes_new})
+                        self.directory.modify(item.dn, policy_now, policy_new)
+                except directory.DirectoryConnectionError, e:
+                    pass
+                except directory.DirectoryError, e:
+                    pass
+        else:
+            item = self.items[0]
 
             classes_now, policy_now, classes_new, policy_new = widget.mod_policy(remove=remove)
 
@@ -856,7 +893,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             widget.policy = self.__load_policy()
             return True
 
-        return False
+    def __slot_search(self):
+        """
+            Triggered when user clicks search button.
+        """
+        return
 
     def __slot_reset(self):
         """
