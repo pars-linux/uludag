@@ -9,8 +9,21 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import kdedesigner
+from kdecore import *
+from kdeui import *
+import kdedesigner
+
+def loadIcon(name, group=KIcon.Desktop, size=16):
+    return KGlobal.iconLoader().loadIcon(name, group, size)
+
+def getIconSet(name, group=KIcon.Toolbar):
+    return KGlobal.iconLoader().loadIconSet(name, group)
+
 
 class PListView(QScrollView):
+    itemHeight = 20
+    iconHeight = 16
+    arrowSize = 8
     def __init__(self, parent):
         QScrollView.__init__(self, parent)
         self.viewport().setPaletteBackgroundColor(QColor(255,255,255))
@@ -19,7 +32,7 @@ class PListView(QScrollView):
         self.selectedItem = None
 
     def clear(self):
-        #çocukları da silinecek !!!!!!!!!!
+        #çocukları da silinecek !!!!!!!!!! böyleyken hepsini siliyo işte
         for e in self.items:
             e.hide()
         self.items = []
@@ -53,15 +66,18 @@ class PListView(QScrollView):
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
 
-def loadIcon(name, group=KIcon.Desktop, size=16):
-    return KGlobal.iconLoader().loadIcon(name, group, size)
-
 class PListViewItem(QWidget):
+
+    PLVIconButtonType = 1
+    PLVRadioButtonType = 2
+
+    widgetSpacing = 2
+
     def __init__(self, parent=None, name=None, text="text"):
         QWidget.__init__(self, parent.viewport(), name)
         self.parent = parent
         self.text = text
-        self.widget = None
+        self.widgets = []
 
         self.isExpanded = False
         self.isSelected = False
@@ -71,10 +87,14 @@ class PListViewItem(QWidget):
         self.nextItem = None
         self.firstChild = None
 
+        self.baseColor = QColor(200,200,200)
+        #self.baseColor = KGlobalSettings.baseColor()
+
         #self.widget = QPushButton("Radio", self)
-        self.icon = QPixmap("/usr/share/icons/BCTango/32x32/actions/down.png")
+        self.icon = QPixmap("/usr/share/icons/BCTango/16x16/categories/package_network_www.png")
 
         self.fillColor = QColor(25,255,255)
+        #self.fillColor = KGlobalSettings.buttonBackground()
         self.installEventFilter(self)
         self.show()
 
@@ -89,62 +109,96 @@ class PListViewItem(QWidget):
             pass
         return False
 
-    def paintEvent(self, event):
+    def setWidgetsBg(self):
+        for w in self.widgets:
+            w.setPaletteBackgroundColor(self.fillColor)
 
+    def setWidgetsGeometry(self, width, height):
+        if len(self.widgets):
+            excess = 6
+            for w in self.widgets:
+                excess += w.width() + self.widgetSpacing
+                mid = (height - w.height()) / 2
+                w.setGeometry(width - excess, mid, w.width(), w.height())
+
+    def paintEvent(self, event):
         paint = QPainter(self)
         col = QColor(200,200,200)
         paint.fillRect(event.rect(), QBrush(self.fillColor))
-        if self.widget:
-            self.widget.setPaletteBackgroundColor(col)
+        if len(self.widgets):
+            self.setWidgetsBg()
 
         dip = (self.height() - self.icon.height()) / 2
-        paint.drawPixmap(6, dip, self.icon)
-
-        oldFont = paint.font()
-        font = QFont(oldFont)
-        font.setItalic(True)
-        font.setPointSize(10)
+        paint.drawPixmap(2 + PListView.arrowSize + 6, dip, self.icon)
 
         col = QColor(20,20,20)
         self.setPaletteBackgroundColor(col)
-        paint.fillRect(QRect(100, 40, 40, 40), QBrush(col))
-        #paint.drawText(120, 40, unicode(self.text))
         arr = QPointArray(3)
-        arr.setPoint(0, QPoint(20,20))
-        arr.setPoint(1, QPoint(70,30))
-        arr.setPoint(2, QPoint(60,40))
-        paint.drawPolygon(arr)
+        top = (self.height() - PListView.arrowSize) / 2
         if self.isExpanded:
-            pass
+            arr.setPoint(0, QPoint(4,6))
+            arr.setPoint(1, QPoint(12,6))
+            arr.setPoint(2, QPoint(8,10))
         else:
-            pass
+            arr.setPoint(0, QPoint(4,dip+4))
+            arr.setPoint(1, QPoint(4,dip+12))
+            arr.setPoint(2, QPoint(8,dip+8))
+        oldBrush = paint.brush()
+        paint.setBrush(QBrush(col))
+        paint.drawPolygon(arr)
+        paint.setBrush(oldBrush)
 
-        paint.drawText(12 + self.icon.width() + 6, 12, unicode(self.text))
+        font = paint.font()
+        fm = QFontMetrics(font)
+        ascent = fm.ascent()
+        mid = (self.height()+8) / 2
+        paint.drawText(2 + PListView.arrowSize + 6 + self.icon.width() + 6, mid, unicode(self.text))
 
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
-        if self.widget:
-            self.widget.setGeometry(w - self.widget.width() - 6, 5, self.widget.width(), self.widget.height())
+        self.setWidgetsGeometry(w, h)
         return QWidget.resizeEvent(self, event)
 
     def sizeHint(self):
         f = QFont(self.font())
-        f.setPointSize(f.pointSize() + 1)
-        f.setBold(True)
         fm = QFontMetrics(f)
-        extra = 0
-        if self.widget:
-            extra = self.widget.width()
-        w = 6 + self.icon.width() + 6 +  30 + extra + 6
 
-        f.setPointSize(f.pointSize() - 2)
-        fm2 = self.fontMetrics()
-        w2 = 6 + self.icon.width() + 6 +  30 + extra + 6
+        w = 1
+        h = max(fm.height(), PListView.itemHeight)
+        return QSize(w, 80)
 
-        w = max(w, w2)
-        h = max(fm.height() + 10, 24) + 10
-        return QSize(w, h)
+    def addWidgetItem(self, type, args=None):
+        if type == self.PLVIconButtonType:
+            self.addPLVIconButton(args)
+        elif type == self.PLVRadioButtonType:
+            self.addPLVRadioButton(args)
+
+    def addPLVIconButton(self, args):
+        plvib = PLVIconButton(self, args)
+        self.widgets.append(plvib)
+
+    def addPLVRadioButton(self, args):
+        plvrb = PLVRadioButton(self, args)
+        self.widgets.append(plvrb)
+
+class PLVIconButton(QPushButton):
+    def __init__(self, parent, args):
+        QPushButton.__init__(self, parent)
+        self.setFlat(True)
+        self.myset = getIconSet(args[0], KIcon.Small)
+        self.setIconSet(self.myset)
+        size = self.myset.iconSize(QIconSet.Small)
+        self.myWidth = size.width()
+        self.myHeight = size.height()
+        self.resize(self.myWidth, self.myHeight)
+
+class PLVRadioButton(QRadioButton):
+    def __init__(self, parent, args):
+        QRadioButton.__init__(self, parent)
+        #self.myWidth = size.width()
+        #self.myHeight = size.height()
+        self.resize(16, 16)
 
 
 
