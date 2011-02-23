@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/system-tr.tex -->
+<!--HEVEA command line is: hevea system-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">System Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -113,6 +113,8 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  zlib
  dbus
  pam
+</PRE></LI><LI CLASS="li-enumerate">shadow paketi kurulumu sonrası:<P>Aşağıda bulunan komutun, root yetkisine geçirdiğini gözlemleyin.
+</P><PRE CLASS="verbatim"> su -
 </PRE></LI><LI CLASS="li-enumerate">bzip2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde dosyaları sıkıştırdığını gözlemleyin:</P><PRE CLASS="verbatim"> touch file1
  bzip2 -v file1
 </PRE></LI><LI CLASS="li-enumerate">grep paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ps aux | grep firefox
