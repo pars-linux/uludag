@@ -48,13 +48,14 @@ class MainApplication(QDialog):
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["configure"])
-        lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
-        lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
-        lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
-        lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
+        #lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
+        #lvi.addWidgetItem(PListViewItem.PLVRadioButtonType, None)
+        lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVCheckBoxType], [] ])
 
-        #b1 = PLVIconButton(lvi, ["configure"])
-        #lvi.widget = b1
+        lvi = PListViewItem(lv, "name", "ileti")
+        lv.add(lvi)
+        lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
 
 def main(args):
     global kapp
