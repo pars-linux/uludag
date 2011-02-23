@@ -53,7 +53,7 @@ if __name__ == "__main__":
     with open(input_file) as f:
         for line in f:
             line = line.strip()
-            if not line:
+            if not line or line.startswith("#"):
                 continue
 
             status, filename = line.split(None, 1)
