@@ -99,6 +99,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeSummary, QtCore.SIGNAL("itemExpanded(QTreeWidgetItem*)"), self.__slot_tree2_expand)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
+        self.connect(self.treeSummary, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_double_click)
 
 
         self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
@@ -535,8 +536,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         self.__update_toolbar()
 
-        item_alt = self.nodes_alt_dn[item.dn]
-        self.treeSummary.setCurrentItem(item_alt)
+        self.treeSummary.clearSelection()
+
+        for item in self.items:
+            item_alt = self.nodes_alt_dn[item.dn]
+            self.treeSummary.setItemSelected(item_alt, True)
 
     def __slot_tree_double_click(self, item, column):
         """
@@ -569,14 +573,26 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks a node.
         """
-        self.items = [item]
+        self.items = []
+        for i in self.treeSummary.selectedItems():
+            self.items.append(i)
+
         self.__update_toolbar()
 
-        item_alt = self.nodes_dn[item.dn]
-        self.treeComputers.setCurrentItem(item_alt)
+        self.treeComputers.clearSelection()
+
+        for item in self.items:
+            item_alt = self.nodes_dn[item.dn]
+            self.treeComputers.setItemSelected(item_alt, True)
 
         widget = self.stackedWidget.currentWidget()
         self.__show_widget(widget)
+
+    def __slot_tree2_double_click(self, item, column):
+        """
+            Triggered when user double clicks a node.
+        """
+        self.items = [item]
 
     def __slot_tree2_expand(self, item):
         """
@@ -729,13 +745,12 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
         policy_match = False
         policy_inherit = True
+        self.treeSummary.show()
 
         if len(self.items) == 1:
             item = self.items[0]
-            self.treeSummary.show()
         else:
             item = None
-            self.treeSummary.hide()
 
         if item and widget.get_type() == plugins.TYPE_SINGLE:
             paths = self.directory.get_parent_paths(item.dn)
