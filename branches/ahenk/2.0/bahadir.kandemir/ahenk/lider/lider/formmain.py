@@ -62,8 +62,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.treeComputers.header().setResizeMode(0, QtGui.QHeaderView.Stretch)
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.treeSummary.hide()
-        self.lineSearch.hide()
-        self.pushSearch.hide()
 
         # Popup for connection management
         menu = wrappers.Menu(self)
@@ -102,7 +100,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeSummary, QtCore.SIGNAL("itemCollapsed(QTreeWidgetItem*)"), self.__slot_tree2_collapse)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
 
-        self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
 
         self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
@@ -200,6 +197,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Updates status of toolbar.
         """
         self.framePolicyInherit.hide()
+        self.frameMulti.hide()
         if self.directory.is_connected:
             self.pushMain.setEnabled(True)
         else:
@@ -426,10 +424,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.__list_items()
         self.__list_items(alternative=True)
 
-        # Search bar
-        self.lineSearch.show()
-        self.pushSearch.show()
-
         # Update toolbar
         self.__update_toolbar()
 
@@ -448,10 +442,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Clear tree
         self.treeComputers.clear()
-
-        # Remove search bar
-        self.lineSearch.hide()
-        self.pushSearch.hide()
 
         # Reset selected item
         self.items = []
@@ -800,6 +790,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.stackedWidget.setCurrentWidget(widget)
         self.__update_toolbar()
 
+        if len(self.items) > 1:
+            self.frameMulti.show()
+
         if policy_match:
             widget.policy_match = True
             self.framePolicyInherit.show()
@@ -880,12 +873,6 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 return False
             widget.policy = self.__load_policy()
             return True
-
-    def __slot_search(self):
-        """
-            Triggered when user clicks search button.
-        """
-        return
 
     def __slot_reset(self):
         """
