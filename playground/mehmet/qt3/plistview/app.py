@@ -41,10 +41,10 @@ class MainApplication(QDialog):
         self.setCaption("APP")
         mainLayout = QHBoxLayout(self)
 
-        lv = PListView(self)
+        lv = PListView(self, "plistview1")
         mainLayout.addWidget(lv)
 
-        lvi = PListViewItem(lv, "name", "Mesaj")
+        lvi = PListViewItem(lv, "name", "Kullanıcı Yönetici")
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["configure"])
@@ -53,9 +53,51 @@ class MainApplication(QDialog):
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVCheckBoxType], [] ])
 
-        lvi = PListViewItem(lv, "name", "ileti")
+        lviChild = PListViewItem(lv, "name", "Üzüm", lvi)
+        lv.add(lviChild)
+        lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+
+
+        lvi = PListViewItem(lv, "name", "Hamsi", data="1")
         lv.add(lvi)
-        lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
+        lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
+        lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
+            PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
+
+        lviChild = PListViewItem(lv, "name", "Lüfer", lvi)
+        lv.add(lviChild)
+        lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+
+        lviChild2 = PListViewItem(lv, "name", "Çinekop", lviChild)
+        lv.add(lviChild2)
+        lviChild2.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+
+        lviChild = PListViewItem(lv, "name", "Sarıkanat", lvi)
+        lv.add(lviChild)
+        lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+
+        lvi = PListViewItem(lv, "name", "Ağ")
+        lv.add(lvi)
+        lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
+        lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
+            PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
+
+        lvi = PListViewItem(lv, "name", "Ekran Kartı")
+        lv.add(lvi)
+        lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
+        lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
+            PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
+
+        #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
+
+    def slotExpanded(self, item):
+        print 'expanded'
+        if item.data:
+            print 'data='+item.data
 
 def main(args):
     global kapp

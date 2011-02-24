@@ -22,15 +22,22 @@ def getIconSet(name, group=KIcon.Toolbar):
 # !!!!!!!!!!! viewportun dışında yapışık bi header olsa iyi olur
 # !!!! butonlar hover olunca gözüksün seçeneği ekle
 class PListView(QScrollView):
+
     itemHeight = 24
     iconHeight = 16
     arrowSize = 8
-    def __init__(self, parent):
-        QScrollView.__init__(self, parent)
+    depthSize = 12
+
+    def __init__(self, parent, name=None):
+        QScrollView.__init__(self, parent, name)
         self.parent = parent
-        self.items = []
+        self.items = [] # tüm itemler. hiyerarşi yok
         self.selectedItem = None
         self.hoverItem = None
+
+        self.layout = QVBoxLayout(self.viewport())
+        self.spacer = QSpacerItem(4, 4, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.layout.addItem(self.spacer)
 
         self.baseColor = KGlobalSettings.baseColor()
         self.selectedColor = KGlobalSettings.highlightColor()
@@ -46,6 +53,9 @@ class PListView(QScrollView):
     def resizeEvent(self, event):
         QScrollView.resizeEvent(self, event)
         self.myResize(self.visibleWidth())
+        self.repaint()
+        self.layout.removeItem(self.spacer)
+        self.layout.addItem(self.spacer)
 
     def myResize(self, width):
         mw = 0
@@ -68,9 +78,21 @@ class PListView(QScrollView):
         pass
 
     def add(self, item):
+        self.layout.removeItem(self.spacer)
+        self.layout.addWidget(item)
+        self.layout.addItem(self.spacer)
         self.items.append(item)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
+        if item.parentItem:
+            if item.parentItem.firstChild: # childların sonuna ekle
+                lastChild = item.parentItem.findLastChild()
+                lastChild.nextItem = item
+            else: # first child olarak ekle
+                item.parentItem.firstChild = item
+            #item.reparent(self, 0, QPoint(0,0), False)
+        if item.parentItem:
+            item.hide()
 
 class PListViewItem(QWidget):
 
@@ -81,31 +103,71 @@ class PListViewItem(QWidget):
 
     widgetSpacing = 2
 
-    def __init__(self, parent=None, name=None, text="text"):
+    def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None):
         QWidget.__init__(self, parent.viewport(), name)
+        self.buffer = QPixmap()
         self.parent = parent
         self.text = text
         self.widgets = []
+
+        self.data = data
 
         self.isExpanded = False
         self.isSelected = False
         self.depth = -1
 
-        self.parentItem = None
+        self.parentItem = parentItem
         self.nextItem = None
         self.firstChild = None
 
         self.icon = QPixmap("/usr/share/icons/BCTango/16x16/categories/package_network_www.png")
 
         self.installEventFilter(self)
+
+        self.setMaximumHeight(self.parent.itemHeight)
+
+        self.setDepth()
+        self.depthExtra = self.depth * PListView.depthSize
+
         self.show()
 
-    def findDepth(self):
-        parent = self.parent
+    def isInArrowArea(self, x):
+        if ((self.depthExtra + self.parent.depthSize) > x) and (self.depthExtra < x):
+            return True
+        return False
+
+    def findLastChild(self):
+        child = self.firstChild
+        while child:
+            if child.nextItem:
+                child = child.nextItem
+            else:
+                return child
+        return
+
+    def setDepth(self):
+        parent = self.parentItem
+        depth = 0
+        while parent:
+            parent = parent.parentItem
+            depth += 1
+        self.depth = depth
 
     def resetOldSelected(self, item):
         item.isSelected = False
         item.repaint()
+
+    def expandOrCollapse(self):
+        if not self.firstChild:
+            return False
+        self.isExpanded = not self.isExpanded
+        self.repaint()
+        if self.isExpanded:
+            self.showChilds()
+            self.parent.emit(PYSIGNAL("expanded"), (self,))
+        else:
+            self.hideChilds()
+            self.parent.emit(PYSIGNAL("collapsed"), (self,))
 
     def eventFilter(self, target, event):
         if(event.type() == QEvent.MouseButtonPress):
@@ -115,8 +177,10 @@ class PListViewItem(QWidget):
                 self.parent.selectedItem = self
                 self.isSelected = True
                 self.repaint()
+            if self.isInArrowArea(event.pos().x()):
+                self.expandOrCollapse()
         elif (event.type() == QEvent.MouseButtonDblClick):
-            print 'collapse or expand'
+            self.expandOrCollapse()
         elif (event.type() == QEvent.MouseButtonRelease):
             pass
         elif (event.type() == QEvent.Enter):
@@ -126,6 +190,21 @@ class PListViewItem(QWidget):
             self.parent.hoverItem = None
             self.repaint()
         return False
+
+    def showChilds(self):
+        child = self.firstChild
+        while child:
+            child.show()
+            child = child.nextItem
+
+    def hideChilds(self):
+        child = self.firstChild
+        while child:
+            child.hide()
+            if child.firstChild:
+                child.isExpanded = False
+                child.hideChilds()
+            child = child.nextItem
 
     def setWidgetsBg(self, color):
         for w in self.widgets:
@@ -140,7 +219,11 @@ class PListViewItem(QWidget):
                 w.setGeometry(width - excess, mid, w.width(), w.height())
 
     def paintEvent(self, event):
-        paint = QPainter(self)
+
+        #paint = QPainter(self)
+        paint = QPainter(self.buffer)
+        if not paint.isActive():
+            paint.begin(self.buffer)
 
         color = self.parent.baseColor
         if self.isSelected:
@@ -152,20 +235,20 @@ class PListViewItem(QWidget):
             self.setWidgetsBg(color)
 
         dip = (self.height() - self.icon.height()) / 2
-        paint.drawPixmap(2 + PListView.arrowSize + 6, dip, self.icon)
+        paint.drawPixmap(self.depthExtra + 2 + PListView.arrowSize + 6, dip, self.icon)
 
         col = QColor(0,0,0)
-        self.setPaletteBackgroundColor(col)
+        #self.setPaletteBackgroundColor(col)
         arr = QPointArray(3)
         top = (self.height() - PListView.arrowSize) / 2
         if self.isExpanded:
-            arr.setPoint(0, QPoint(4,6))
-            arr.setPoint(1, QPoint(12,6))
-            arr.setPoint(2, QPoint(8,10))
+            arr.setPoint(0, QPoint(self.depthExtra+2,10))
+            arr.setPoint(1, QPoint(self.depthExtra+10,10))
+            arr.setPoint(2, QPoint(self.depthExtra+6,14))
         else:
-            arr.setPoint(0, QPoint(4,dip+4))
-            arr.setPoint(1, QPoint(4,dip+12))
-            arr.setPoint(2, QPoint(8,dip+8))
+            arr.setPoint(0, QPoint(self.depthExtra+4,dip+4))
+            arr.setPoint(1, QPoint(self.depthExtra+4,dip+12))
+            arr.setPoint(2, QPoint(self.depthExtra+8,dip+8))
         oldBrush = paint.brush()
         paint.setBrush(QBrush(col))
         paint.drawPolygon(arr)
@@ -175,12 +258,16 @@ class PListViewItem(QWidget):
         fm = QFontMetrics(font)
         ascent = fm.ascent()
         mid = (self.height()+8) / 2
-        paint.drawText(2 + PListView.arrowSize + 6 + self.icon.width() + 6, mid, unicode(self.text))
+        paint.drawText(self.depthExtra + 2 + PListView.arrowSize + 6 + self.icon.width() + 6, mid, unicode(self.text))
+
+        paint.end()
+        bitBlt(self, 0, 0, self.buffer)
 
     def resizeEvent(self, event):
         w = event.size().width()
         h = event.size().height()
         self.setWidgetsGeometry(w, h)
+        self.buffer = QPixmap(w,h)
         return QWidget.resizeEvent(self, event)
 
     def sizeHint(self):
