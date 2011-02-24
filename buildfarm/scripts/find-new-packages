@@ -7,6 +7,19 @@ import sys
 import pisi
 from buildfarm import utils
 
+class UpdateInfo:
+    def __init__(self, package):
+        self.name = package.source.name
+        self.version = package.history[0].version
+        self.release = package.history[0].release
+        self.owner = package.source.packager.name
+        self.comment = package.history[0].comment.splitlines()[0][:40]
+        if self.comment != package.history[0].comment:
+            self.comment += "..."
+
+        #FIXME: Change hardcoded parts
+        self.url = "http://packages.pardus.org.tr/info/2011/testing/source/%s.html" % self.name
+
 if __name__ == "__main__":
     stable_packages = {}
     new_packages = []
@@ -23,6 +36,9 @@ if __name__ == "__main__":
 
     for package in stable_index.packages:
         stable_packages[package.name] = package
+
+    updaters = {}
+    updates = {}
 
     for package in testing_index.packages:
         if os.path.exists(os.path.join(stable_dir, package.packageURI)):
@@ -41,6 +57,23 @@ if __name__ == "__main__":
 
         new_packages.append((package.source.name, package.packageURI, status, update_action))
 
+        if package.source.name not in updates:
+            updates[package.source.name] = UpdateInfo(package)
+
+        if old_stable:
+            history = package.history
+            old_release = old_stable.history[0].release
+        else:
+            history = package.history[:1]
+            old_release = ""
+
+        for update in history:
+            if update.release == old_release:
+                break
+
+            updater = update.name
+            updaters.setdefault(updater, set()).add(package.source.name)
+
     new_packages.sort()
 
     old_source = new_packages[0][0]
@@ -49,3 +82,16 @@ if __name__ == "__main__":
             print
             old_source = source
         print "%s%s %s" % (status, update_action, filename)
+
+    with open("updates.txt", "w") as f:
+        for updater in sorted(updaters):
+            sources = updaters[updater]
+            f.write("%s:\n" % updater)
+            for source in sorted(sources):
+                info = updates[source]
+                f.write("     Source: %s ( %s )\n" % (source, info.url))
+                f.write("    Version: %s\n" % info.version)
+                f.write("    Release: %s (%s)\n" % (info.release, info.comment))
+                f.write("      Owner: %s\n" % info.owner)
+                f.write("\n\n")
+
