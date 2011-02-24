@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/home/s/testing-framework/src/testcases/ui/main.ui'
 #
 # Created: Thu Aug 12 15:04:59 2010
 #      by: PyQt4 UI code generator 4.5.4
