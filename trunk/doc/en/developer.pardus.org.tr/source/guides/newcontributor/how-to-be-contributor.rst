@@ -67,7 +67,8 @@ Assigning Mentor
 ----------------
 #. The applicant choose a job from `Junior Jobs <http://bugs.pardus.org.tr/buglist.cgi?keywords=JUNIORJOBS&query_format=advanced&keywords_type=allwords&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED>`_ and give this junior job id on his/her new contributor report as a bug comment.
     #. The mentor will assign according to this job. `MENTORASSIGNED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword is added to the report.
-    #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. The coordinator will also reassign the bug to related applicant mentor.
+    #. When a mentor is assigned to an applicant, the mentoring coordinators send `Assigning Mentor Stock Response`_ as a comment to the bug. 
+    #. The coordinator will also reassign the bug to related applicant mentor.
     #. At this stage playground svn permissions will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
 #. The mentor coordinators will track:
     #. The number of applicant on mentor.
@@ -80,6 +81,7 @@ But there are some constraints about assigning:
 Mentoring Process
 -----------------
 #. Assigned mentor will keep an eye on applicant (see  :ref:`newcontributor-mentors`)
+    #. The mentor should reassign junior job bugs to himself and make the bugs blocker of applicant bug.
     #. Give warnings on applicant bug report.
     #. Related to junior jobs difficulty, one more job can be demanded from the applicant. (Mentor can guide applicant to find one more job.)
     #. The owner of the packages that applicant has done will be his/her mentor.
