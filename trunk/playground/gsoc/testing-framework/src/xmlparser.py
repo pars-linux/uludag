@@ -99,7 +99,7 @@ class XMLParser(object):
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
         caseList = self.testcase_tag_parse(element, 'case')
-        if len(caseList) == 0:
+        if not caseList:
             print colorize('No <case> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
@@ -121,13 +121,13 @@ class XMLParser(object):
     def test_automated(self, element, packagelist, counter):
         """Call the module for testcase type AUTOMATED."""
         expectedTextList = self.testcase_tag_parse(element, 'expected')
-        if len(expectedTextList) == 0:
+        if not expectedTextList:
             print colorize('No <expected> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
-        if len(commandTextList) == 0:
+        if not commandTextList:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
@@ -147,7 +147,7 @@ class XMLParser(object):
     def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
         commandList = self.testcase_tag_parse(element, 'command')
-        if len(commandList) == 0:
+        if not commandList:
             print colorize('No <command> tag found. Skipping test ...', 'red')
             self.testreport.append(None)
             return
