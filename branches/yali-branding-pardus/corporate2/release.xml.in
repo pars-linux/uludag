@@ -88,6 +88,12 @@
             <_help>YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release.</_help>
         </screen>
         <screen>
+            <name>collectionSelection</name>
+            <_title>Select Collection to install</_title>
+            <icon>applications-other</icon>
+            <_help>YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release.</_help>
+        </screen>
+        <screen>
             <name>goodbye0</name>
             <_title>Installation complete!</_title>
             <icon>goodbye</icon>
