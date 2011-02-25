@@ -18,6 +18,8 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
+def getIcon(name, group=KIcon.Small):
+    return KGlobal.iconLoader().loadIcon(name, group)
 
 def AboutData():
     global version, description
@@ -44,7 +46,9 @@ class MainApplication(QDialog):
         lv = PListView(self, "plistview1")
         mainLayout.addWidget(lv)
 
-        lvi = PListViewItem(lv, "name", "Kullanıcı Yönetici")
+        icon="help"
+
+        lvi = PListViewItem(lv, "name", "Kullanıcı Yönetici", icon=icon)
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["configure"])
@@ -53,13 +57,13 @@ class MainApplication(QDialog):
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVCheckBoxType], [] ])
 
-        lviChild = PListViewItem(lv, "name", "Üzüm", lvi)
+        lviChild = PListViewItem(lv, "name", "Üzüm", lvi, icon=icon)
         lv.add(lviChild)
         lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
 
 
-        lvi = PListViewItem(lv, "name", "Hamsi", data="1")
+        lvi = PListViewItem(lv, "name", "Hamsi", data="1", icon="add")
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
@@ -67,34 +71,38 @@ class MainApplication(QDialog):
 
         #lv.remove(lvi)
 
-        lviChild = PListViewItem(lv, "name", "Lüfer", lvi)
+        lviChild = PListViewItem(lv, "name", "Lüfer", lvi, icon=icon)
         lv.add(lviChild)
         lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
 
-        lviChild2 = PListViewItem(lv, "name", "Çinekop", lviChild)
+        lviChild2 = PListViewItem(lv, "name", "Çinekop", lviChild, icon=icon)
         lv.add(lviChild2)
         lviChild2.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
 
-        lviChild = PListViewItem(lv, "name", "Sarıkanat", lvi)
+        lviChild = PListViewItem(lv, "name", "Sarıkanat", lvi, icon=icon)
         lv.add(lviChild)
         lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
 
-        lvi = PListViewItem(lv, "name", "Ağ")
+        lvi = PListViewItem(lv, "name", "Ağ", icon=icon)
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
             PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
 
-        lvi = PListViewItem(lv, "name", "Ekran Kartı")
+        lvi = PListViewItem(lv, "name", "Ekran Kartı", icon=icon)
         lv.add(lvi)
         lvi.addWidgetItem(PListViewItem.PLVIconButtonType, ["new"])
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
             PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
 
         #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
+        self.connect(lv, PYSIGNAL("clicked"), self.slotClicked)
+
+    def slotClicked(self, event, item):
+        pass
 
     def slotExpanded(self, item):
         print 'expanded'
