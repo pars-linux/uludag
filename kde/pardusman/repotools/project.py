@@ -256,8 +256,8 @@ class Project:
             translations = {}
             if node:
                 for translation in node.tags("Translation"):
-                    translations[translation.getAttribute("language")]= (translation.getTagData("Title"),
-                                                                         translation.getTagData("Description"))
+                    translations[translation.getAttribute("language")]= (unicode(translation.getTagData("Title")),
+                                                                         unicode(translation.getTagData("Description")))
                 return translations
             return None
 
