@@ -28,11 +28,7 @@
 # TODO:
 # - sd card flasher support
 # - beagle nandflash writer
-# - toolchain build from scratch
-# - add more comments
-#   . function explanations, parameter definitions etc.
-#
-# - Dialog based ui
+# - If packages installed, do not emerge them.
 #
 ######################################################################
 
@@ -40,63 +36,27 @@
 set -e
 trap sighandler 1 2 3 6
 
-# Colors for a better user interaction and logging
-set_colors()
-{
-    export _clNoColor="\e[0m"
-    export _clWhite="\e[1;37m"
-    export _clYellow="\e[1;33m"
-    export _clCyan="\e[0;36m"
-    export _clBlack="\e[0;30m"
-    export _clBlue="\e[0;34m"
-    export _clGreen="\e[0;32m"
-    export _clCyan="\e[0;36m"
-    export _clRed="\e[0;31m"
-    export _clPurple="\e[0;35m"
-    export _clBrown="\e[0;33m"
-    export _clLightGray="\e[0;37m"
-    export _clLightPurple="\e[1;35m"
-    export _clLightRed="\e[1;31m"
-    export _clLightCyan="\e[1;36m"
-    export _clLightGreen="\e[1;32m"
-    export _clLightBlue="\e[1;34m"
-    export _clDarkGray="\e[1;30m"
-
-    export _clInfo=${_clWhite}
-    export _clError=${_clRed}
-    export _clWarning=${_clYellow}
-    export _clHead=${_clLightPurple}
-    export _clQuestion=${_clLightRed}
-    export _clUserAnswer=${_clNoColor}
-    export _clTime=${_clPurple}
-
-    # Title colors
-    export _clTitle1=${_clGreen}
-    export _clTitle2=${_clLightGreen}
-    export _clTitle3=${_clLightBlue}
-
-    # Title Numbers
-    export _tn1=0  # Main title [X]
-    export _tn2=0  # 2nd title  [1.X]
-    export _tn3=0  # 3rd title  [1.2.X]
-}
-
 # Start time for logging and printing
-_start_time=$(date +%s)
+cur_time() { date +%0s%0N; } # prints the current time as nanoseconds
+_start_time=$(cur_time)
+
+# for printing time info in logger
+_b_print_time=false
 
 # some options for this script
 # _b -> boolean value
-_b_install_toolchain_sysroot=true
-_b_use_prebuilt_sysroot=true
-_b_install_toolchain=true
-_b_enable_colors=true
-_b_force_yes=false
-_b_skip_pisi=
-_b_skip_sbox2=
-_b_skip_farm=
+_b_install_toolchain=true          # if true, then install toolchain
+_b_install_sysroot=true            # if true, then use sysroot in the toolchain,
+                                   # TODO:    else
+_b_enable_colors=true  # colors are enabled by default
+_b_force_yes=false     # if true, then don't ask any questions to user, use defaults.
+_b_skip_pisi=false     # if true, then don't install pisi in memre's playground.
+_b_skip_sbox2=false    # if true, then don't emerge sbox2
+_b_skip_farm=true      # if true, then don't install and prepare buildfarm
+_b_print_time=false    # if true, then print time at the screen
 
 # log levels, also print levels.
-# if LOG_FILE is equal or grater than the level, then it is
+# if LOG_LEVEL is equal or grater than the level, then it is
 # also printed to the screen
 #
 # see log function for details.
@@ -107,7 +67,8 @@ _log_level_info=3  # add info messages
 _log_level_debug=4 # add some debug messages
 
 # Progress bar animation \ | / -
-_prog_bar_cpt=0
+_prog_bar=( '\\' '|' '/' '-' )
+_prog_bar_index=0
 
 ######################################################################
 # Distro options and architecture settings
@@ -115,7 +76,6 @@ _prog_bar_cpt=0
 # Rootfs for initial ARM sysroot, this rootfs installs into sysroot
 # directory before ARM buildfarm starts.
 # FIXME: prepare one.
-
 # rootfs_url="http://cekirdek.pardus.org.tr/~memre/pardus-arm/sd-image/pardus-arm_beagleboard_rootfs.tar.bz2"
 # rootfs_sha1sum="df5b9c03cff1a2c000ad35978c83f5dade7e5daf"
 # rootfs="`echo ${rootfs_url} | awk -F/ '{print $NF}'`"
@@ -138,10 +98,10 @@ SYSROOT=${SYSROOT:-"${CROSS}/sysroots/${ARCH}"}
 TOOLCHAIN_UP_DIR="/opt/toolchain"
 TOOLCHAIN_DIR=${TOOLCHAIN_DIR:-"${TOOLCHAIN_UP_DIR}/${ARCH}"}
 
-# A log file for testing this scripts
+# A log file for testing this script
 LOG_FILE=${LOG_FILE:-"${CROSS}/pardus-${ARCH}.log"}
 
-# Log level for printing logs to the screen.
+# Log level for printing logs to the screen
 LOG_LEVEL=${LOG_LEVEL:-${_log_level_info}}
 
 # Directory for downloaded tarballs
@@ -169,30 +129,48 @@ DISTRIB_RELEASE=${DISTRIB_RELEASE:-`lsb_release -r | cut -d: -f2 | tr -d '\t'`}
 DISTRIB_DESCRIPTION=${DISTRIB_DESCRIPTION:-`lsb_release -d | cut -d: -f2 | tr -d '\t'`}
 DISTRIB_CODENAME=${DISTRIB_CODENAME:-`lsb_release -c | cut -d: -f2 | tr -d '\t'`}
 
-# This repo contains pre-built binary packages
-BIN_REPO="${DISTRIB_ID}_bin"
-BIN_REPO_URL="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}/pisi-index.xml.xz"
+# dialog interface
+_dialog_back_title="${DISTRIB_ID}${DISTRIB_RELEASE} ARM Sysroot Preparator"
+_dialog_width=80
+_dialog_height=20
 
-# FIXME: remove me
-BIN_REPO_DIR="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}/" # this is the place for compiled packages
+# dialog colors
+_dialog_cl_normal="\Zn"
+_dialog_cl_reverse="\Zr"
+_dialog_cl_noreverse="\ZR"
+_dialog_cl_bold="\Zb"
+_dialog_cl_nobold="\ZB"
+_dialog_cl_underline="\Zu"
+_dialog_cl_nounderline="\ZU"
+_dialog_cl_black="\Z0"
+_dialog_cl_red="\Z1"
+_dialog_cl_green="\Z2"
+_dialog_cl_yellow="\Z3"
+_dialog_cl_blue="\Z4"
+_dialog_cl_magenta="\Z5"
+_dialog_cl_cyan="\Z6"
+_dialog_cl_white="\Z7"
 
 # Source repo for building PiSi packages from source codes
-SRC_REPO="${DISTRIB_ID}_src"
-# SRC_REPO_URL="http://svn.pardus.org.tr/pardus/playground/memre/${ARCH}/${DISTRIB_ID}/pisi-index.xml.xz"
-SRC_REPO_URL="/home/memre/workspace/pardus/playground/memre/${ARCH}/${DISTRIB_ID}/pisi-index.xml.xz"
+SRC_REPO="http://svn.pardus.org.tr/pardus/playground/memre/${ARCH}/${DISTRIB_ID}"
+SRC_REPO_NAME="${DISTRIB_ID}_src"
+SRC_REPO_INDEX="/var/lib/buildfarm/repositories/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/pisi-index.xml"
 
-# FIXME: remove me
-SRC_REPO_DIR="/home/memre/workspace/pardus/playground/memre/${ARCH}/${DISTRIB_ID}"
+# This repo contains pre-built binary packages
+BIN_REPO="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}"
+BIN_REPO_NAME="${DISTRIB_ID}_bin"
+BIN_REPO_INDEX="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}/pisi-index.xml.xz"
 
-# Compiled packages stored here.
-BUILT_REPO="${DISTRIB_ID}_local"
-BUILT_PACKAGES_DIR="${CROSS}/repos/${ARCH}" # this is the place for compiled packages
+# This repo contains packages which compiled by buildfarm
+FARM_REPO="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/${ARCH}"
+FARM_REPO_NAME="${DISTRIB_ID}_farm"
+FARM_REPO_INDEX="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/${ARCH}/pisi-index.xml"
 
 ######################################################################
 # Toolchain options
 
-TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${DISTRIB_ID}/${DISTRIB_ID}${DISTRIB_RELEASE}-${ARCH}-toolchain.tar.xz"
-TOOLCHAIN_SHA1SUM="61019893ab4162215014970125e84298660bde69"
+TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/parm/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}/${DISTRIB_ID}${DISTRIB_RELEASE}-${ARCH}-toolchain.tar.xz"
+TOOLCHAIN_SHA1SUM="ee3ba6d6b44cc7675fa350d643546095284d5851"
 TOOLCHAIN_TARBALL="`echo ${TOOLCHAIN_URL} | awk -F/ '{print $NF}'`"
 
 # export HOST=${HOST:-"`gcc -dumpmachine`"}
@@ -236,17 +214,57 @@ DEBUG="d"
 # default yes
 PISI_IGNORE_CHECK="--ignore-check"
 
-# for printing time info in logger
-PRINT_TIME=1
-
 # fifo for logging, this is a workaround of bash pipe operation
 # we often use this fifo for logging
 _log_fifo="${TMP_DIR}/.pardus_${ARCH}_logfifo"
 
 ##################################
+# @func: set_colors
+# @desc: sets colors if user wants
+#
+set_colors()
+{
+    export _clNoColor="\e[0m"
+    export _clWhite="\e[1;37m"
+    export _clYellow="\e[1;33m"
+    export _clCyan="\e[0;36m"
+    export _clBlack="\e[0;30m"
+    export _clBlue="\e[0;34m"
+    export _clGreen="\e[0;32m"
+    export _clCyan="\e[0;36m"
+    export _clRed="\e[0;31m"
+    export _clPurple="\e[0;35m"
+    export _clBrown="\e[0;33m"
+    export _clLightGray="\e[0;37m"
+    export _clLightPurple="\e[1;35m"
+    export _clLightRed="\e[1;31m"
+    export _clLightCyan="\e[1;36m"
+    export _clLightGreen="\e[1;32m"
+    export _clLightBlue="\e[1;34m"
+    export _clDarkGray="\e[1;30m"
+
+    export _clInfo=${_clWhite}
+    export _clError=${_clRed}
+    export _clWarning=${_clYellow}
+    export _clHead=${_clLightPurple}
+    export _clQuestion=${_clCyan}
+    export _clUserAnswer=${_clNoColor}
+    export _clTime=${_clBrown}
+
+    # Title colors
+    export _clTitle1=${_clLightGreen}
+    export _clTitle2=${_clLightCyan}
+    export _clTitle3=${_clLightBlue}
+
+    # Title Numbers
+    export _tn1=0  # Main title [X]
+    export _tn2=0  # 2nd title  [1.X]
+    export _tn3=0  # 3rd title  [1.2.X]
+}
+
+##################################
 # @func: backup_suffix
-# @desc: if there is a file which this script change, then backup previous one
-#        with a suffix
+# @desc: create a uniq suffix for backup
 backup_suffix()
 {
     echo "$(date +%y_%m_%d_%H_%M_%S)"
@@ -279,7 +297,7 @@ cleanup()
 
     echo # new line
     # Wait for a while
-    for i in 1 2 3 4 5; do
+    for i in 1 2 3; do
         echo -n '.'
         sleep 1
     done
@@ -344,7 +362,6 @@ prep_log()
 log()
 {
     local CR=$(printf "\n")
-    local debug_out="/dev/null" # do not print to the console as default
     local log_level=$1
     shift # other parameters are message
 
@@ -356,16 +373,9 @@ log()
         printf "%s\n" "$*"
     fi | (
         while IFS=${CR} read line; do # just newlines seperates the line
-            local message=
+            local debug_out="/dev/null" # do not print to the console as default
             local current_time="[${_clTime}$(elapsed_time)${_clNoColor}]"
-
-            # if user want timer, then log it.
-            [ "${PRINT_TIME}" ] && message="${current_time} "
-
-            # for replacing the animation
-            [ -z "${line}" ] &&  line="   "
-
-            message="${message}${line}"
+            local message=
 
             # if LOG_LEVEL is equal or grater than the log_level, which
             # is given from the function which calls this log function,
@@ -375,15 +385,20 @@ log()
             # all the outputs of the applications.
             [ ${LOG_LEVEL} -ge ${log_level} ] && debug_out="/proc/self/fd/1"
 
+            # if user want to see timer, then print it, otherwise just log it.
+            ${_b_print_time} && \
+                message="${current_time} " || \
+                print "${current_time} " >> ${LOG_FILE}
+
+            # if there are just blanks, remove the timer and animation
+            [ -z "$(echo -n ${line})" ] && print "          \r"
+
+            message="${message}${line}"
+
             println "${message}" | tee -a ${LOG_FILE} > ${debug_out} 2>&1
 
-            _prog_bar=( '\\'
-                        '|'
-                        '/'
-                        '-' )
-
-            echo -ne "${current_time} ${_prog_bar[$((_prog_bar_cpt/5))]} \r"
-            _prog_bar_cpt=$(( (_prog_bar_cpt + 1) % 20 ))
+            echo -ne "${current_time} ${_prog_bar[$((_prog_bar_index/5))]} \r"
+            _prog_bar_index=$(( (_prog_bar_index + 1) % 20 ))
         done
     ) # end of logging
 }
@@ -393,16 +408,26 @@ log()
 # @desc: prints elapsed time since this script started
 #
 # @param1: start_time (optinal, if $1="" then use global _start_time)
+# @param2: nanosecond level (optinal)
 #
 # @usage: echo "$(elapsed_time)"
 elapsed_time()
 {
-    local current_time=$(date +%0s)
+    local current_time=$(cur_time)
     local start_time=${1:-${_start_time}}
 
-    local secs=$(( current_time - start_time ))
+    local nsecs_passed=$(( current_time - start_time ))
 
-    printf "%02d:%02d" $((secs/60)) $((secs%60))
+    local nsecs=$((  nsecs_passed %    1000000000 ))
+    local secs=$((  (nsecs_passed /    1000000000) % 60 ))
+    local mins=$((   nsecs_passed /   60000000000 ))
+    local hours=$((  nsecs_passed / 3600000000000 ))
+
+    if [ x"$2" != x"fancy" ]; then
+        printf "%02d:%02d" ${mins} ${secs}
+    else
+        printf "%02d mins %02d.%04d secs." ${mins} ${secs} ${nsecs}
+    fi
 }
 
 ##################################
@@ -484,14 +509,14 @@ print_t1()
 # @desc: prints subtitle 2
 #        This subtitle prints like this:
 #         1) print_t1
-#           1.1) [this function]
-#             ^
-#             1.1.1) print_t3
-#             1.1.2) print_t3
-#           1.2) [this function]
-#             ^
-#             1.2.1) print_t3
-#             1.2.2) print_t3
+#         1.1) [this function]
+#           ^
+#         1.1.1) print_t3
+#         1.1.2) print_t3
+#         1.2) [this function]
+#           ^
+#         1.2.1) print_t3
+#         1.2.2) print_t3
 #
 #         Increses _tn2 and sets _tn3 as 0.
 #
@@ -502,7 +527,7 @@ print_t2()
     _tn2=$((${_tn2} + 1))
     _tn3="0"
 
-    local message="   ${_clTitle2}${_tn1}.${_tn2}) $*"
+    local message=" ${_clTitle2}${_tn1}.${_tn2}) $*"
 
     println "${message}" | log "${_log_level_any}"
 }
@@ -512,11 +537,11 @@ print_t2()
 # @desc: prints subtitle 3
 #        This subtitle prints like this:
 #         1) print_t1
-#           1.1) print_t2
-#             1.1.1) [this function]
-#                 ^
-#             1.1.2) [this function]
-#                 ^
+#         1.1) print_t2
+#         1.1.1) [this function]
+#             ^
+#         1.1.2) [this function]
+#             ^
 #         Increses _tn3.
 #
 # @param*: title text
@@ -525,56 +550,9 @@ print_t3()
     # title 3 [1.2.X]
     _tn3=$(($_tn3 + 1))
 
-    local message="     ${_clTitle3}${_tn1}.${_tn2}.${_tn3}) $*"
+    local message=" ${_clTitle3}${_tn1}.${_tn2}.${_tn3}) $*"
 
     println "${message}" | log "${_log_level_any}"
-}
-
-##################################
-# @func: ask
-# @desc: asks a question to the user.
-#
-# @param1: message to be printed
-# @param2: head
-ask()
-{
-    local head=$2
-    local message=" ${_clHead}${head} ${_clQuestion}${1}${_clUserAnswer} "
-
-    println "${message}" | log "${_log_level_any}"
-}
-
-##################################
-# @func: yesno
-# @desc: gets answer from user and prints it to the screen
-yesno()
-{
-    # default answer is NULL
-    if ${_b_force_yes}; then echo; return; fi
-
-    local ret_val=
-    read answer
-
-    # define ret_val values
-    case "$answer" in
-        [Nn]|[Nn][Oo])
-            ret_val="no"
-            ;;
-
-        [Yy]|[Yy][Ee]|[Yy][Ee][Ss])
-            ret_val="yes"
-            ;;
-
-        "")
-            # this is used for default answers (eg. ok? [Yn] : default:Yes)
-            ret_val="";;
-
-        *)
-            ret_val="${answer}";;
-
-    esac
-
-    echo $ret_val | tee -a ${LOG_FILE} 2>&1
 }
 
 ##################################
@@ -588,11 +566,15 @@ die()
     local head=$2
 
     print_err "$1" "${head}"
-    print_err "Build script is terminating! Removing temporary files and directories." "DIE"
+    print_err "Build script is terminated! Removing temporary files and directories.
+See log file \`${LOG_FILE}' for details.
+
+If you think that this is a bug, then open a bug report to
+http://bugs.pardus.org.tr and add ${LOG_FILE} as attattachment." "DIE:${head}"
 
     cleanup
 
-    exit 1
+    exit 1 # byby cruel world
 }
 
 ##################################
@@ -605,6 +587,80 @@ toupper()
     local message="$*"
 
     echo "`echo $* | tr '[:lower:]' '[:upper:]'`"
+}
+
+##################################
+# @func: dialog_
+# @desc: manages dialog for helping other functions
+#
+# @param1: operation (eg. message-box, yesno dialog etc..)
+# @param2: title
+# @param3: text
+#
+# @param4: extra_param (if any, not mendatory)
+#
+# @usage:
+#        dialog_ msgbox "welcome to parm init."
+#        dialog_ yesno "Would you like to go on?" "really?" "--defaultno"
+#
+dialog_()
+{
+    local operation="$1"
+    local title="$2"
+    local text="$3"
+    local extra_param="$4"
+    local cmd="dialog --cr-wrap --colors "
+    local ret_val=0
+
+    # if user run this script with force-yes, then do not show dialog
+    # boxes
+    case ${operation} in
+        msgbox)
+            ${_b_force_yes} || ${cmd} \
+                --backtitle "${_dialog_back_title}" \
+                --title "${title}" \
+                ${extra_param} \
+                --msgbox "${text}" "-1" "-1"
+            ret_val=$?
+            echo -e " ==> DIALOG Message Box\n${text}\n\n ==> DIALOG --" | \
+                sed -e 's/\\Z[bBuUrRnN01234567]//g' | \
+                log ${_log_level_debug}
+
+            ;;
+
+        yesno)
+            ${_b_force_yes} || ${cmd} \
+                --backtitle "${_dialog_back_title}" \
+                --title "${title}" \
+                ${extra_param} \
+                --yesno "${text}" "-1" "-1"
+            ret_val=$?
+
+            ;;
+
+    esac
+
+    # after dialog exits, it leaves a dirty blue screen behind of it, grrr.
+    # It's best to go on with a clean page after dialog.
+    clear
+
+    return ${ret_val}
+}
+
+##################################
+# @func: ask
+# @desc: asks the question with a dialog and returns the answer
+#
+# @param1: message to be printed
+# @param2: head
+ask()
+{
+    local title=$1
+    local message=$2
+    local extra_param=$3
+
+    dialog_ "yesno" "${title}" "${message}" "${extra_param}"
+    return $?
 }
 
 ##################################
@@ -624,24 +680,26 @@ toupper()
 #          pisi_ native update-repo
 pisi_()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="PISI"
 
-    local system=$1     # refers cross or native
-    local operation=$2  # refers which operation will be performed
-    local pisi_cmd=     # refers the pisi command (native or cross)
+    local system=$1      # refers cross or native
+    local operation=$2   # refers which operation will be performed
+    local pisi_cmd=      # refers the pisi command (native or cross)
 
     # Native or cross pisi, make your choice
     case ${system} in
         n|native)
           pisi_cmd=${_pisi_native}
+          system="native"
           ;;
 
         c|cross)
           pisi_cmd=${_pisi_cross}
+          system="${ARCH}"
           ;;
 
         *)
-          die "Hmm, another \`build stayla'.." "${head}"
+          die "Hmm, another \`build stayla'. Please let us know what this is.." "${head}"
           ;;
     esac
 
@@ -650,23 +708,27 @@ pisi_()
         ur|update-repo)
             # update native or cross repositories
             # no more parameters
-            print_info "Upgrading Repositories"
+            print_info " ==> Updating ${system} repositories..." "${head}"
+
             prep_log &
             (${pisi_cmd} ur -y${VERBOSE}${DEBUG} > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then die "Unable to update repositories!" "${head}"; fi
+            [ ${__r} -eq 0 ] || die "Unable to update ${system} repositories!" "${head}"
+
             ;;
 
         up|upgrade)
             # upgrade native or cross repositories
             # no more parameters
-            print_info "Upgrading System"
+            print_info " ==> Upgrading ${system} system..." "${head}"
+
             prep_log &
             (${pisi_cmd} up -y${VERBOSE}${DEBUG} > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then die "Unable to upgrade system!" "${head}"; fi
+            [ ${__r} -eq 0 ] || die "Unable to upgrade ${system} system!" "${head}"
+
             ;;
 
         it|install)
@@ -675,30 +737,36 @@ pisi_()
             local packages=$3
             local extra_parameters="$4"
 
-            print_info "Following packages will be installed: \"${packages}\"" "${head}"
+            print_info " ==> Installing \"${packages}\" to ${system} system..." "${head}"
+
             prep_log &
             (${pisi_cmd} it -y${VERBOSE}${DEBUG} ${extra_parameters} ${packages} > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then die "Unable to install packages: \"${packages}\"" "${head}"; fi
+            [ ${__r} -eq 0 ] || die "Unable to install \"${packages}\" to ${system} system!" "${head}"
+
             ;;
 
         bi|build)
             # @param3 package_name
-            # @param4 package_url
+            # @param4 package_url (may be remote or a local file)
             # @param5 extra_parameters
             local package_name="$3"
             local package_url="$4"
             local extra_parameters="$5"
-
             local pspec="${package_url}/${package_name}/pspec.xml"
 
-            print_info "Building package: ${package_name}"
-            prep_log &
+            print_info " ==> Building \"${package_name}\" for ${system} system..." "${head}"
 
+            local start_=$(cur_time)
+            prep_log &
             (${pisi_cmd} bi -y${VERBOSE}${DEBUG} ${PISI_IGNORE_CHECK} ${extra_parameters} ${pspec} > ${_log_fifo} 2>&1)
             __r=$?; wait
-            if [ ${__r} -ne 0 ]; then die "Unable to build \"${package_name}\"" "${head}"; fi
+
+            [ ${__r} -eq 0 ] || die "Unable to build \"${package_name}\" to ${system} system!" "${head}"
+
+            print_info "    * \"${package_name}\" built in $(elapsed_time ${start_} fancy)" "${head}"
+
             ;;
 
         em|emerge)
@@ -707,12 +775,17 @@ pisi_()
             local packages="$3"
             local extra_parameters="$4"
 
-            print_info "Following packages will be emerged: \"${packages}\"" "${head}"
+            print_info " ==> Emerging \"${packages}\" to ${system} system..." "${head}"
+
+            start_=$(cur_time)
             prep_log &
             (${pisi_cmd} em -y${VERBOSE}${DEBUG} ${PISI_IGNORE_CHECK} ${extra_parameters} ${packages} > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then die "Unable to emerge package: \"${packages}\"" "${head}"; fi
+            [ ${__r} -eq 0 ] || die "Unable to emerge \"${packages}\" to ${system} system!" "${head}"
+
+            print_info "    * \"${packages}\" emerged in $(elapsed_time ${start_} fancy)" "${head}"
+
             ;;
 
         ar|add-repo)
@@ -721,36 +794,41 @@ pisi_()
             local repo_name=$3
             local repo_url=$4
 
-            repos=`cat ${SYSROOT}/var/lib/pisi/info/repos | \
-                   grep Name | \
-                   cut -d\> -f2 | \
-                   cut -d\< -f1 | \
-                   tr '\n' ' '`
+            # repos=`cat ${SYSROOT}/var/lib/pisi/info/repos | \
+            #        grep Name | \
+            #        cut -d\> -f2 | \
+            #        cut -d\< -f1 | \
+            #        tr '\n' ' '`
 
-            print_info "Adding repository: \"${repo_name}\"" "${head}"
+            print_info " ==> Adding \"${repo_name}\":\"${repo_url}\" to ${system} system}..." "${head}"
             prep_log &
             (${pisi_cmd} ar -y${VERBOSE}${DEBUG} ${repo_name} ${repo_url} > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then
-                # actually, this should "die"
-                print_err "Unable to add repo \"${repo_name}\"" "${head}";
+            [ ${__r} -eq 0 ] || (
+                # actually, this should be "die"
+                print_err "Unable to add repo \"${repo_name}\" \"${repo_url}\"" "${head}";
                 return 1;
-            fi
+            )
+
             ;;
 
         ix|index)
             # NO parameters
-            print_info "Creating pisi-index" "${head}"
+            print_info " ==> Creating pisi-index" "${head}"
             prep_log &
             (${pisi_cmd} ix -y${VERBOSE}${DEBUG} --skip-signing > ${_log_fifo} 2>&1)
             __r=$?; wait
 
-            if [ ${__r} -ne 0 ]; then print_err "Unable to create pisi-index" "${head}"; return 1; fi
+            [ ${__r} -eq 0 ] || (
+                print_err "Unable to create pisi-index!" "${head}";
+                return 1;
+            )
+
             ;;
 
          *)
-            die "PiSi nin yetenekleri sinirli haci, her seyi yapamaz.." "${head}"
+            die "There is no such operation called \"${operation}\"!" "${head}"
             ;;
 
     esac
@@ -764,22 +842,21 @@ pisi_()
 # @param2: sha1sum
 checksum()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="CHECKSUM"
 
     local tarball=$1
     local sum=$2
 
     if [ -e "${tarball}" ]; then
-        if [ x"`sha1sum ${tarball} | cut -d' ' -f1`" != x"${sum}" ]; then
-            if [ -e "${tarball}.aria2" ]; then
-                return 2 # there is a downloaded image and can be proceeded
-            else
-                print_warn "Removing bad \"${tarball}\" image!" "${head}"
-                rm -fv ${tarball} 2>&1 | log ${_log_level_debug}
-                return 1 # fail, refetch
-            fi
+        [ x"`sha1sum ${tarball} | cut -d' ' -f1`" == x"${sum}" ] && \
+            return 0 # sum is good.
+
+        if [ -e "${tarball}.aria2" ]; then
+            return 3 # there is a downloaded image and can be proceeded
         else
-            return 0 # already fetched
+            print_warn "Removing bad \"${tarball}\" image!" "${head}"
+            rm_ ${tarball}
+            return 2 # fail, refetch
         fi
     fi
 
@@ -796,35 +873,39 @@ checksum()
 # @param4: sha1sum of the tarball
 fetch()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="FETCH"
 
     local name=$1
     local tarball=$2
     local download_link=$3
     local sum=$4
+    local current_dir=$(pwd)
 
     cd ${TARBALL_DIR}
     if checksum ${tarball} ${sum} ; then
-        print_warn "Already fetched: \"${name}\"" "${head}"
+        print_info "\"${name}\" is already fetched!" "${head}"
         return 0
     fi
 
-    print_info "Fetching: \"${name}\"" "${head}"
+    print_info " ==> Fetching \"${name}\"..." "${head}"
     prep_log &
     (aria2c -c ${download_link} > ${_log_fifo} 2>&1)
     __r=$?; wait
 
     # Is there any connection problem?
-    if [ ${__r} -ne 0 ]; then
-        print_err "Couldn't fetch \"${name}\"" "${head}"
+    [ ${__r} -eq 0 ] || (
+        print_err "\"${name}\" cannot be fetched!" "${head}"
         return 1
-    fi
+    )
 
     # Check sha1sum
     if ! checksum ${tarball} ${sum} ; then
-        print_err "Downloaded Image is bad: \"${name}\"" "${head}"
-        return 1
+        print_err "Downloaded image \"${tarball}\" is bad!" "${head}"
+        rm_ ${tarball}
+        return 2
     fi
+
+    cd ${current_dir}
 
     return 0
 }
@@ -839,7 +920,7 @@ fetch()
 # @param3: destinationdirectory directory for tarball
 extract()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="EXTRACT"
 
     local ret_val=0
 
@@ -847,19 +928,19 @@ extract()
     local tarball=$2
     local target=$3
 
-    print_info "Extracting: \"${name}\"" "${head}"
+    print_info " ==> Extracting \"${name}\" into \"${target}\"" "${head}"
 
     prep_log &
-    tar xfp${VERBOSE} ${TARBALL_DIR}/$2 -C ${target} > ${_log_fifo} 2>&1
+    (tar xfp${VERBOSE} ${TARBALL_DIR}/$2 -C ${target} > ${_log_fifo} 2>&1)
     __r=$?; wait
 
     # Is there any problem with tarball?
-    if [ ${__r} -ne 0 ]; then
-        print_err "Couldn't extract \"${name}\"" "${head}"
-        ret_val=1
-    fi
+    [ ${__r} -eq 0 ] || (
+        print_err "\"${name}\" cannot be extracted!" "${head}"
+        return 1
+    )
 
-    return ${ret_val}
+    return 0
 }
 
 ##################################
@@ -884,114 +965,71 @@ mkdir_()
 
 ##################################
 # @func: prepare
-# @desc: prepares initial `hede's
+# @desc: prepares build environment
 #
 # NO parameters
 prepare()
 {
-    local head="$(toupper $FUNCNAME)" # 1st. Preparation Phase
+    local head="$(toupper $FUNCNAME)"
+
+    print_t2 "Checking for toolchain"
+    {
+        if [ -d "${TOOLCHAIN_DIR}" ]; then
+            ask "Toolchain Initialization" \
+                "There is also a toolchain directory: \"${TOOLCHAIN_DIR}\".\n\nDo you want to ${_dialog_cl_bold}remove and recreate${_dialog_cl_nobold} it?" "--defaultno"
+            [ $? -eq 0 ] && _b_install_toolchain=true || _b_install_toolchain=false
+        else
+            _b_install_toolchain=true
+        fi
+    } # END OF TOOLCHAIN
+
+    print_t2 "Checking for sysroot"
+    {
+        if [ -d "${SYSROOT}" ]; then
+            ask "Sysroot Initialization" \
+                "There is also a sysroot directory: \"${SYSROOT}\".\n\nDo you want to ${_dialog_cl_bold}remove and recreate${_dialog_cl_nobold} it?" "--defaultno"
+            [ $? -eq 0 ] && _b_install_sysroot=true || _b_install_sysroot=false
+        else
+             _b_install_sysroot=true
+        fi
+    } # END OF SYSROOT
 
     print_t2 "Cleaning up temp directory: ${TMP_DIR}"
     rm_ ${TMP_DIR}
+
     print_info "Creating some minimal required directories and files" "${head}"
     # we need temp dir, tarball dir, built packages dir
     mkdir_ ${TMP_DIR} ${TOOLCHAIN_UP_DIR}
-    # and we need a fifo for outputs also
+
+    # and we also need a fifo for outputs
     rm ${_log_fifo} 2>/dev/null
     mkfifo ${_log_fifo} 2>/dev/null
 
     # Be sure your system is up to date.
-    print_t2 "Upgrading system"
+    print_t2 "Upgrading native Pardus system"
     {
-        pisi_ native ur
-        pisi_ native up
+        (DEBUG= VERBOSE= pisi_ native ur)
+        (DEBUG= VERBOSE= pisi_ native up)
     } # END OF UPGRADE
 
     # Install toolchain, scratchbox2 and all other development tools..
     print_t2 "Installing required packages"
     {
-        # FIXME: make nonexisting packages : fakechroot sbrsh
-        # WORKAROUND: emerge from playground
-        # local native_packages="-c system.devel git git-svn subversion scratchbox2 fakeroot aria2 most"
-        local native_packages="-c system.devel git subversion aria2 wget most"
-        pisi_ native it "${native_packages}"
+        local native_packages="-c system.devel git subversion aria2 wget most cvs"
+        DEBUG= VERBOSE= pisi_ native it "${native_packages}"
 
-        # FIXME: make nonexisting packages and remove me
+        # FIXME: remove me
+        #        make nonexisting packages: scratchbox2, sbrsh and fakeroot
         for package_name in fakeroot scratchbox2; do
+            if ! [ -z "$(pisi li | grep ${package_name})" ]; then continue; fi
+
             local package_url="http://svn.pardus.org.tr/pardus/playground/memre/"
             pisi_ native bi ${package_name} ${package_url}
             pisi_ native it ${pack}*pisi
+
             rm ${pack}*pisi
         done
     } # END OF INSTALL NATIVE COMPONENTS
-
-    # FIXME: download or cat crosstool-ng configuration
-    # wget http://cekirdek.pardus.org.tr/~memre/pardus-arm/corp2/ct-ng-config
-    # mv ct-ng-config .config
-    # /opt/ct-ng/bin/ct-ng build
-
-    # Cleanup and create directories
-    print_t2 "Checking for toolchain"
-    {
-        local sub_head="TOOLCHAIN"
-
-        if [ -d "${TOOLCHAIN_DIR}" ]; then
-            print_warn "There is also a toolchain directory: \"${TOOLCHAIN_DIR}\"" "${head}::${sub_head}"
-
-            while true; do
-                ask "Do you want to remove and recreate \"${TOOLCHAIN_DIR}\"? [yN] " "${head}::${sub_head}"
-                answer=$(yesno)
-
-                if [ x"$answer" == x"yes" ]; then
-                    print_t3 "Removing all ${TOOLCHAIN_DIR} contents"
-                    rm_ ${TOOLCHAIN_DIR}
-                    _b_install_toolchain=true
-                    break
-                elif [[ x"$answer" == x"no" || x"$answer" == x"" ]]; then
-                    print_info "Skiped removing ${TOOLCHAIN_DIR}" "${head}::${sub_head}"
-                    _b_install_toolchain=false
-                    break
-                else
-                    print_err "Wrong answer" "${head}::${sub_head}"
-                fi
-            done
-        fi
-
-        print_info "Toolchain checked." "${head}"
-    } # END OF TOOLCHAIN
-
-    print_t2 "Checking for sysroot"
-    {
-        local sub_head="SYSROOT"
-
-        if [ -d "${SYSROOT}" ]; then
-            print_warn "There is also a sysroot directory: \"${SYSROOT}\"" "${head}::${sub_head}"
-
-            while true; do
-                ask "Do you want to remove and recreate \"${SYSROOT}\"? [yN] " "${head}::${sub_head}"
-                answer=$(yesno)
-
-                if [ x"$answer" == x"yes" ]; then
-                    print_t3 "Removing all \"${SYSROOT}\" contents"
-                    rm_ ${SYSROOT}
-
-                    # FIXME:
-                    # this option enables copying a temporary sysroot
-                    # into the sysroot directory.
-                    _b_install_toolchain_sysroot=true
-                    break
-                elif [[ x"$answer" == x"no" || x"$answer" == x"" ]]; then
-                    print_info "Skiped removing \"${SYSROOT}\"" "${head}::${sub_head}"
-                    _b_install_toolchain_sysroot=false
-                    break
-                else
-                    print_err "Wrong answer" "${head}::${sub_head}"
-                fi
-            done
-        fi
-
-        print_info "Sysroot checked." "${head}"
-    } # END OF SYSROOT
 
     # Create neccessary directories
     print_t2 "Creating neccessary directories"
@@ -999,39 +1037,68 @@ prepare()
 
     print_t2 "Fetching required components"
     {
+        # ${_b_install_sysroot} && ( \
         # fetch "${DISTRIB_ID} rootfs" \
         #       ${rootfs} \
         #       ${rootfs_url} \
         #       ${rootfs_sha1sum} || die "rootfs yoksa arm da yok"
-        if ${_b_install_toolchain}; then
+        # ) # INSTALL SYSROOT
+        ${_b_install_toolchain} && ( \
             fetch "${DISTRIB_ID} cross-toolchain" \
-                  ${TOOLCHAIN_TARBALL} \
-                  ${TOOLCHAIN_URL} \
-                  ${TOOLCHAIN_SHA1SUM} || die "Toolchainsiz bunu (o))) insa edersin" "${head}"
-        fi
-
-        print_info "Required components fetched" "${head}"
+                ${TOOLCHAIN_TARBALL} \
+                ${TOOLCHAIN_URL} \
+                ${TOOLCHAIN_SHA1SUM} || die "Toolchain cannot be fetched!" "${head}"
+        ) # INSTALL TOOLCHAIN
     } # END OF FETCH
 
-    print_t2 "Extracting fetched components"
-    {
-        if ${_b_install_toolchain}; then
-            extract "Pardus ${DISTRIB_DESCRIPTION} cross-toolchain" ${TOOLCHAIN_TARBALL} ${TOOLCHAIN_UP_DIR} || \
-                die "Toolchain, aah toolchain, esekler kovalasin seni.." "${head}"
-        fi
-    } # END OF EXTRACTING
-
-    print_t2 "Preparing first temporary sysroot"
-    {
-        # Copy the toolchain's minimal sys-root to $SYSROOT directory.
-        # During the build processes, this sys-root will be changed.
-        if ${_b_install_toolchain_sysroot}; then
-            print_info "Copying toolchain sysroot as temporary-rootfs"
-            cp -rf${VERBOSE} ${TOOLCHAIN_DIR}/${HOST}/sys-root/* ${SYSROOT} | log ${_log_level_debug}
-        fi
-    } # END OF INITIAL SYSROOT PREPARATION
+    dialog_ "msgbox" "Preparation summary" "
+    Architecture......: ${_dialog_cl_red}${ARCH}${_dialog_cl_black}
+    Sysroot...........: ${_dialog_cl_red}${SYSROOT}${_dialog_cl_black}
+    Tarball Dir.......: ${_dialog_cl_red}${TARBALL_DIR}${_dialog_cl_black}
+    Toolchain Dir.....: ${_dialog_cl_red}${TOOLCHAIN_DIR}${_dialog_cl_black}
+    Temp Dir..........: ${_dialog_cl_red}${TMP_DIR}${_dialog_cl_black}" "--timeout 5"
 
     return 0 # success.
+}
+
+init_toolchain()
+{
+    # Cleanup and create directories
+    local head="TOOLCHAIN"
+
+    # FIXME: download or cat crosstool-ng configuration
+    # wget http://cekirdek.pardus.org.tr/~memre/pardus-arm/corp2/ct-ng-config
+    # mv ct-ng-config .config
+    # /opt/ct-ng/bin/ct-ng build
+
+    ${_b_install_toolchain} && (
+        [ -d "${TOOLCHAIN_DIR}" ] && (
+            print_info " ==> Removing all \"${TOOLCHAIN_DIR}\" contents..." "${head}"
+            rm_ ${TOOLCHAIN_DIR}
+        ) # REMOVE TOOLCHAIN DIRECTORY IF EXISTS
+
+        extract "${DISTRIB_DESCRIPTION} cross-toolchain" \
+            ${TOOLCHAIN_TARBALL} ${TOOLCHAIN_UP_DIR} || \
+            die "Cannot extract \"${TOOLCHAIN_DIR}\" directory" "${head}"
+    ) # INSTALL TOOLCHAIN
+}
+
+init_sysroot()
+{
+    local head="SYSROOT"
+
+    ${_b_install_sysroot} && (
+        [ -d "${SYSROOT}" ] && (
+            print_info " ==> Removing all \"${SYSROOT}\" contents..." "${head}"
+            rm_ ${SYSROOT}
+        ) # REMOVE SYSROOT DIRECTORY IF EXISTS
+
+        mkdir_ ${SYSROOT}
+
+        # sysroot should be extracted from a tarball, but toolchain's sysroot directory
+        # might be used before
+        cp -rf${VERBOSE} ${TOOLCHAIN_DIR}/${HOST}/sysroot/* ${SYSROOT} | log ${_log_level_debug}
+    ) # INSTALL SYSROOT
 }
 
 ##################################
@@ -1041,24 +1108,15 @@ prepare()
 # NO parameters
 init_sbox2()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="SBOX2"
 
-    # FIXME: scratchbox2 emerge support
-    print_info "Scratchbox2 is building libtool for native-like crossbuild" "${head}"
+    print_info " ==> sbox2 is building libtool for native-like cross-build" "${head}"
     cd ${SYSROOT}
     prep_log &
     (sb2-init -c ${_qemu} ${DISTRIB_ID} ${HOST}-gcc > ${_log_fifo} 2>&1)
     __r=$?; wait
 
-    # Is there any problem with scratchbox2 init?
-    if [ ${__r} -ne 0 ]; then
-        print_err "Scratchbox2 couldn't initialized" "${head}"
-        die "Without Scratchbox2, you can only build this: (O)))"
-    fi
-
-    print_info "Done." "${head}"
-
-    return 0
+    [ ${__r} -eq 0 ] || die "Scratchbox cannot be initialized!" "${head}"
 }
 
 ##################################
@@ -1068,29 +1126,25 @@ init_sbox2()
 # NO parameters
 init_pisi()
 {
-    local head="$(toupper $FUNCNAME)"
+    local head="PISI"
 
-    print_t2 "Preparing PiSi-Cross"
+    print_info " ==> Preparing PiSi-Cross..." ${head}
 
-    if [ -L "${_pisi_cross}" ]; then
-        rm_ ${_pisi_cross}
-    fi
+    [ -L "${_pisi_cross}" ] || rm_ ${_pisi_cross}
 
     ln -s${VERBOSE} pisi ${_pisi_cross} | log ${_log_level_debug}
 
-    print_info "Generating pisi-${ARCH}.conf" "${head}"
-
     # if there is a config file, keep it
-    if [ -e "${_pisi_cross_conf}" ]; then
-        mv ${_pisi_cross_conf}{,_$(backup_suffix)}
-    fi
+    [ -e "${_pisi_cross_conf}" ] && mv ${_pisi_cross_conf}{,_$(backup_suffix)}
+
+    print_info "Generating pisi-${ARCH}.conf" "${head}"
 
     cat > ${_pisi_cross_conf} << __EOF
 #
-# Copyright (C) 2010 TUBITAK/BILGEM
 # Pardus Linux ARM Architecture sysroot PiSi config file
+# Copyright (C) 2009-2011 TUBITAK/BILGEM
 #
-# Generated at   : "`date`"
+# Generated at   : "`date -u`"
 # Distribution   : ${DISTRIB_DESCRIPTION}
 # Build Arch     : ${BUILD_ARCH}
 # Target Arch    : ${ARCH}
@@ -1124,7 +1178,9 @@ crosscompiling = True
 cflags = ${CFLAGS}
 cxxflags = ${CXXFLAGS}
 ldflags = ${LDFLAGS}
+build = ${HOST}
 host = ${HOST}
+target = ${HOST}
 jobs = `cat /etc/pisi/pisi.conf | egrep "jobs\s+" | cut -d= -f2`
 max_delta_count = `cat /etc/pisi/pisi.conf | egrep "max_delta_count\s+" | cut -d= -f2`
 
@@ -1163,31 +1219,42 @@ package_cache = False
 package_cache_limit = 0
 __EOF
 
-    print_t3 "Removing old pisi"
+    print_info " ==> Removing old pisi" "${head}"
     rm -rf${VERBOSE} /usr/lib/pardus/pisi | log ${_log_level_debug}
 
-    print_t3 "Checking out the latest cross-build supported PiSi from memre's playground"
+    print_info " ==> Checking out the latest cross-build supported PiSi" "${head}"
     cd ${TMP_DIR}
     prep_log &
     (${_svn} co https://svn.pardus.org.tr/uludag/trunk/playground/memre/pisi pisi > ${_log_fifo} 2>&1)
     __r=$?; wait
-    if [ ${__r} -ne 0 ]; then die "Unable to checkout pisi-cross!" "${head}"; fi
 
-    print_t3 "Installing new Pisi"
+    if [ ${__r} -ne 0 ]; then
+        print_err "pisi-cross cannot be checked out, old pisi is installing back!" "${head}"
+        prep_log &
+
+        (pisi_ n it pisi --reinstall); wait
+
+        print_info "Old pisi installed back" "${head}";
+        die "parm initialization cannot be proceeded!" "${head}"
+    fi
+
+    print_info " ==> Installing new Pisi" "${head}"
     cd pisi
     prep_log &
-    (python ./setup.py install --install-lib=/usr/lib/pardus> ${_log_fifo} 2>&1)
+    (python ./setup.py install --install-lib=/usr/lib/pardus > ${_log_fifo} 2>&1)
     __r=$?; wait
-    if [ ${__r} -ne 0 ]; then die "Unable to install new pisi!: ${__r}" "${head}"; fi
 
-    print_t3 "Adding latest source repo to ${DISTRIB_DESCRIPTION} ${ARCH} sysroot"
-    # FIXME: no binary repo for now
-    # pisi_ cross ar ${BIN_REPO} ${BIN_REPO_URL}
-    (pisi_ cross ar ${SRC_REPO} ${SRC_REPO_URL})
-    __r=$?
-    if [ ${__r} -ne 0 ]; then print_err "Unable to add repo!" "${head}"; fi
+    [ ${__r} -eq 0 ] || die "Unable to install new pisi!: ${__r}" "${head}"
 
-    return 0
+    ${_b_install_sysroot} && (
+        print_info "Adding the latest source repo to ${DISTRIB_DESCRIPTION} ${ARCH} sysroot" "${head}"
+        # FIXME: no binary repo for now
+        (pisi_ cross ar ${BIN_REPO_NAME} ${BIN_REPO_INDEX})
+        (pisi_ cross ar ${SRC_REPO_NAME} ${SRC_REPO_INDEX})
+        __r=$?; wait
+
+        [ ${__r} -eq 0 ] || die "PiSi initialization failed!" "${head}"
+    )
 }
 
 ##################################
@@ -1239,8 +1306,6 @@ emerge_minimum()
         'gettext'    # system.base  : glib2 acl ncurses
         'diffutils'  # system.base  : gettext patch
         'expat'      # system.base  : diffutils gnuconfig
-        'db4'        # system.base
-        'perl'       # system.base  : bzip2 db4 gdbm groff
         'm4'         # system.devel : gettext libsigsegv
         'sed'        # system.base  : gettext
         'bison'      # system.devel : gettext m4 patch
@@ -1250,12 +1315,14 @@ emerge_minimum()
         'glibc'      # system.base  : gettext
         'gcc'        # system.devel : binutils bison gettext gnuconfig
                      #                gmp mpfr ncurses patch sed texinfo zlib
+        'db4'        # system.base
+        # 'perl'       # system.base  : bzip2 db4 gdbm groff
     )
 
     print_t2 "Emerging minimum development tools"
     for ((pack=0; pack<${#min_list[*]}; pack++)); do
         local p=${min_list[$pack]}
-        print_info " ==> ${p}" "${head}"
+        print_info " [$((pack + 1))/${#min_list[*]}] ${p}" "${head}"
         pisi_ cross emerge ${p}
     done
 
@@ -1329,8 +1396,8 @@ options:
   -d --debug
       Debug messages on
 
-  -C --enable-colors
-      Use colors for logging
+  -C --disable-colors
+      Don't use colors for both logging and debugging
 
   -f --force-yes
       Do not ask questions, go on with default values
@@ -1358,6 +1425,9 @@ __EOF
 ###               L E T   T H E   G A M E   B E G I N              ###
 ######################################################################
 
+# :: refers upper scope
+head="::"
+
 # some functions/commands writes absurd sh*ts to log, this is the best ;)
 export LC_ALL=C
 
@@ -1369,9 +1439,8 @@ while [ $# -ne 0 ]; do
     case $command in
         -a|--arch)
             ARCH=$1
-            if [ -z "` echo ${ARCH} | grep arm`" ]; then
+            [ -z "` echo ${ARCH} | grep arm`" ] && \
                 die "Architecture must be an ARM variant."
-            fi
             shift
             ;;
 
@@ -1399,6 +1468,7 @@ while [ $# -ne 0 ]; do
             LOG_LEVEL=$1
             shift
             ;;
+
         -v|--verbose)
             VERBOSE="v"
             ;;
@@ -1447,74 +1517,65 @@ if [ -f "${LOG_FILE}" ]; then
     :> ${LOG_FILE}
 fi
 
-# :: refers upper scope
-head="::"
-
-# Lets start with a clean page.
-clear
-
 # Enable colors for logs, if user wants it
-[ ${_b_enable_colors} ] && set_colors
+${_b_enable_colors} && set_colors
 
 # Log the start date on top of the ${LOG_FILE}
-log ${_log_level_debug} "Build date: `date`"
+log ${_log_level_debug} "Build date: `date -u`"
 
 # Greetings
-println "
- ${_clGreen}TUBITAK BILGEM
- ${_clGreen}Pardus Linux Project
- ${_clGreen}Copyright (C) 2010, 2011
- ${_clYellow}Welcome to ${_clRed}${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}${_clYellow} ARM build system.
- ${_clNoColor}
-    If you want to cancel build operation, press Ctrl+C
+dialog_ "msgbox" "Welcome to ${DISTRIB_DESCRIPTION} ARM sysroot initializator" "
+TUBITAK BILGEM
+Pardus Linux Project
+Copyright (C) 2010, 2011
+${_dialog_cl_bold}${_dialog_cl_red}${DISTRIB_DESCRIPTION}${_dialog_cl_nobold}${_dialog_cl_black} ARM build system initializator.
+${_dialog_cl_normal}
+    This script prepares a complete Pardus ARM development environment.
 
     Please know that, your PiSi will be replaced by cross-build
     supported PiSi. If you want to reinstall your original PiSi,
     then run \`pisi it pisi -y --reinstall'.
 
+    If you want to cancel the build operation, press Ctrl+C
+
     If you want to follow logs, open a new console and give this
-    command: \`tail -f ${LOG_FILE}'
+    command: \`tail -f ${LOG_FILE}' or start this script
+    with debug log level parameter.
+"
 
-    Press return to continue... " | log ${_log_level_any}
-
-# if user doesnt want to answer questions, then assume that he/she doesnt want
-# to wait. Otherwise show all the stuff.
-if ! ${_b_force_yes}; then read; fi
-
-# print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
 # emerge_minimum
-# exit 0
+# return 0
 
 ### 1st, prepare the environment for building
 print_t1 "Preparing build environment"
 prepare || die "Preparation failed!" "$head"
 
-# Print info
-print_info "Architecture......: ${ARCH}" "${head}"
-print_info "Sysroot...........: ${SYSROOT}"  "${head}"
-print_info "Tarball Dir.......: ${TARBALL_DIR}" "${head}"
-print_info "Toolchain Dir.....: ${TOOLCHAIN_DIR}" "${head}"
-print_info "Temp Dir..........: ${TMP_DIR}" "${head}"
+# let user see details for 3 secs, if force-yes, then no need to wait.
+${_b_force_yes} || sleep 3
 
-# let user see details for 3 secs, if he/she want to see details.
-if ! ${_b_force_yes}; then sleep 3; fi
-
-### 2nd phase of the building is scratchbox2 initialization
-[ ${_b_skip_sbox2} ] || {
-    print_t1 "Initializing scratchbox for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
-    init_sbox2 || die "Scratchbox2 couldn't be initialized" "${head}"
+${_b_install_toolchain} && {
+    print_t1 "Toolchain Initialization"
+    init_toolchain || die "Toolchain couldn't be initialized!" "${head}"
 }
 
-### 3rd phase is preparing PiSi
-[ ${_b_skip_pisi} ] || {
-    print_t1 "Preparing PiSi for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
-    init_pisi || die "PiSi couldn't be initialized" "${head}"
+${_b_install_sysroot} && {
+    print_t1 "Sysroot Initialization"
+    init_sysroot || die "Sysroot couldn't be initialized!" "${head}"
 }
 
-### 4th phase is preparing buildfarm
-[ ${_b_skip_farm} ] || {
-    print_t1 "Preparing buildfarm for ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE}"
-    init_farm || die "Buildfarm couldn't be initialized" "${head}"
+${_b_skip_pisi} || {
+    print_t1 "Cross-build supported PiSi Initialization"
+    init_pisi || die "Cross-build supported PiSi couldn't be initialized!" "${head}"
+}
+
+${_b_skip_sbox2} || {
+    print_t1 "Scratchbox Initialization"
+    init_sbox2 || die "Scratchbox2 couldn't be initialized!" "${head}"
+}
+
+${_b_skip_farm} || {
+    print_t1 "Buildfarm Initialization"
+    init_farm || die "Buildfarm couldn't be initialized!" "${head}"
 }
 
 # END OF INITIALIZATION
