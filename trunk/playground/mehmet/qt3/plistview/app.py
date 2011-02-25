@@ -65,7 +65,7 @@ class MainApplication(QDialog):
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
             PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
 
-        lv.remove(lvi)
+        #lv.remove(lvi)
 
         lviChild = PListViewItem(lv, "name", "Lüfer", lvi)
         lv.add(lviChild)

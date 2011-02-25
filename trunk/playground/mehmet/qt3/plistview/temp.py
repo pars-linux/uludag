@@ -241,6 +241,14 @@ class PListViewItem(QWidget):
                 child.hideChilds()
             child = child.nextItem
 
+    def getChilds(self):
+        childs = []
+        it = self.firstChild
+        while it:
+            childs.append(it)
+            it = it.nextItem
+        return childs
+
     def setWidgetsBg(self, color):
         for w in self.widgets:
             w.setPaletteBackgroundColor(color)
