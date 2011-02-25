@@ -31,6 +31,7 @@ class PListView(QScrollView):
     def __init__(self, parent, name=None):
         QScrollView.__init__(self, parent, name)
         self.parent = parent
+        self.firstItem = None
         self.items = [] # tüm itemler. hiyerarşi yok
         self.selectedItem = None
         self.hoverItem = None
@@ -71,11 +72,28 @@ class PListView(QScrollView):
         else:
             self.resizeContents(width, th)
 
-    def add(self, item):
-        pass
-
     def remove(self, item):
-        pass
+        it = item.firstChild
+        while it:
+            self.remove(it)
+            it = it.nextItem
+        previousItem = self.findPreviousItem(item)
+        previousItem.nextItem = item.nextItem
+        self.layout.remove(item)
+        self.items.remove(item)
+
+    def findPreviousItem(self, item):
+        previous = None
+        if item.parentItem:
+            it = item.parentItem.firstChild
+        else:
+            it = self.firstItem
+        while it:
+            if it == item:
+                return previous
+            else:
+                previous = it
+                it = it.nextItem
 
     def add(self, item):
         self.layout.removeItem(self.spacer)
@@ -91,8 +109,25 @@ class PListView(QScrollView):
             else: # first child olarak ekle
                 item.parentItem.firstChild = item
             #item.reparent(self, 0, QPoint(0,0), False)
+        else:
+            if not self.firstItem:
+                self.firstItem = item
+            else:
+                lastSibling = self.findLastSibling(self.firstItem)
+                lastSibling.nextItem = item
         if item.parentItem:
             item.hide()
+
+    def findLastSibling(self, item):
+        if not item.nextItem:
+            return item
+        else:
+            it = item.nextItem
+        while it:
+            if not it.nextItem:
+                return it
+            it = it.nextItem
+
 
 class PListViewItem(QWidget):
 

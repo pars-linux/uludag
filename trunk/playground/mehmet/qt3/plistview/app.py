@@ -65,6 +65,8 @@ class MainApplication(QDialog):
         lvi.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVCheckBoxType,
             PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType, PListViewItem.PLVCheckBoxType], [] ])
 
+        lv.remove(lvi)
+
         lviChild = PListViewItem(lv, "name", "Lüfer", lvi)
         lv.add(lviChild)
         lviChild.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
