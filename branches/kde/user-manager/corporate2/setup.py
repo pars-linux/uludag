@@ -56,6 +56,7 @@ app_data = [
     'user-manager.py',
     'um_mainview.py',
     'um_browser.py',
+    'um_list.py',
     'useredit.py',
     'groupedit.py',
     'um_utility.py',

@@ -18,6 +18,8 @@ from kdecore import *
 from kdeui import *
 
 from um_utility import *
+from um_list import PListView
+from um_list import PListViewItem
 
 import polkit
 
@@ -777,10 +779,11 @@ class PolicyGroupTab(KTabWidget):
 class PolicyTab(QVBox):
     def __init__(self, parent, mainwidget, stack, uid, edit):
         QVBox.__init__(self, parent)
-        self.policyview = KListView(self)
+        self.policylist = PListView(self, "um-policylist")
+        """self.policyview = KListView(self)
         self.policyview.setRootIsDecorated(True)
         self.policyview.setResizeMode(KListView.LastColumn)
-        self.policyview.addColumn(i18n("Actions"))
+        self.policyview.addColumn(i18n("Actions"))"""
         self.uid = uid
         self.edit = edit
         self.mainwidget = mainwidget
@@ -788,7 +791,7 @@ class PolicyTab(QVBox):
         self.inOperation = False
         self.stack = stack
 
-        #add radio buttons
+        """#add radio buttons
         self.buttonGroup = QButtonGroup(self)
         #w.setFrameShape(QFrame.NoFrame)
         layout = QGridLayout(self.buttonGroup, 3, 2, 0, 0)
@@ -825,14 +828,17 @@ class PolicyTab(QVBox):
         self.resetID = self.selectionPopup.insertItem(i18n("Reset"), self.slotResetChanges)
 
         #disable buttons about policy until one of the policies is selected
-        self.setPolicyButtonsEnabled(False)
+        self.setPolicyButtonsEnabled(False)"""
 
         #put all necessary actions to listview
         self.fillAuths()
 
-        self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
-        self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
-        self.connect(self.policyview, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.showPopup)
+        self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
+        #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
+
+        #self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
+        #self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
+        #self.connect(self.policyview, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.showPopup)
 
 
     def showPopup(self, item, point, column):
@@ -854,6 +860,7 @@ class PolicyTab(QVBox):
         self.stack.checkAdd()
 
     def slotAuthAllForCategory(self):
+        return
         item = self.policyview.selectedItem()
         if not item or item.depth() != 1:
             return
@@ -913,6 +920,7 @@ class PolicyTab(QVBox):
         item.setAuthIcon(icon)
 
     def slotAuthAll(self):
+        return
         item = self.policyview.selectedItem()
         if not item:
             return
@@ -935,6 +943,7 @@ class PolicyTab(QVBox):
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
     def reset(self):
+        return
         it = self.policyview.firstChild()
         while it:
             it.setOpen(False)
@@ -954,9 +963,14 @@ class PolicyTab(QVBox):
         #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for cats in categories:
-            catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
-            catitem.setPixmap(0, getIcon(categories[cats][1]))
-            actionitem = ActionItem(catitem, "", "", "")
+            catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
+            self.policylist.add(catitem)
+            radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+                        PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+            #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
+            #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
+            #catitem.setPixmap(0, getIcon(categories[cats][1]))
+            #actionitem = ActionItem(catitem, "", "", "")
 
             """cats = cats.split('|')
             for category in cats:
@@ -967,6 +981,7 @@ class PolicyTab(QVBox):
 
     #bu kalkacak, karışmış iyice. derinlik filan da gelince iyice karışır
     def setPolicyButtonsEnabled(self, enable):
+        return
         self.authorized.setEnabled(enable)
         self.blocked.setEnabled(enable)
         self.applyAllButton.setEnabled(enable)
@@ -995,6 +1010,7 @@ class PolicyTab(QVBox):
         self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), item.id, async=functools.partial(checkNegative, method))
 
     def passwordCheckSlot(self, toggle):
+        return
         if self.inOperation:
             return
 
@@ -1034,6 +1050,7 @@ class PolicyTab(QVBox):
                 self.operations.pop(item.id)
 
     def blockedSlot(self, toggle):
+        return
         if self.inOperation:
             return
         item = self.policyview.selectedItem()
@@ -1058,6 +1075,7 @@ class PolicyTab(QVBox):
             self.operations[item.id] = "block"
 
     def slotAuthorized(self, toggle):
+        return
         if self.inOperation:
             return
         item = self.policyview.selectedItem()
@@ -1094,16 +1112,36 @@ class PolicyTab(QVBox):
 
     def fillCategory(self, item):
         item.isFilled = True
-        item.takeItem(item.firstChild())
         for i in polkit.action_list():
             cats = item.name.split('|')
             for j in cats:
                 if i.startswith(j):
                     actioninfo = polkit.action_info(i)
                     if actioninfo['policy_active'].startswith("auth_"):
-                        actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])
+                        actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
+                        self.policylist.add(actionitem)
+                        print actioninfo['description']
+                        radios = actionitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+                                    PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        """item.takeItem(item.firstChild())
+        for i in polkit.action_list():
+            cats = item.name.split('|')
+            for j in cats:
+                if i.startswith(j):
+                    actioninfo = polkit.action_info(i)
+                    if actioninfo['policy_active'].startswith("auth_"):
+                        actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])"""
+
+    def policyListClicked(self, event, item):
+        if event.type() == QEvent.MouseButtonDblClick:
+            if not item:
+                return
+
+            if not item.isFilled:
+                self.fillCategory(item)
 
     def listviewExpanded(self, item):
+        return
         if not item: # or self.policyview.selectedItem()
             return
 
@@ -1219,15 +1257,15 @@ class PolicyTab(QVBox):
 
 
 
-class CategoryItem(KListViewItem):
-    def __init__(self, parent, label, name, isFilled=False):
-        KListViewItem.__init__(self, parent, label)
+class CategoryItem(PListViewItem):
+    def __init__(self, parent, label, name, isFilled=False, icon=None):
+        PListViewItem.__init__(self, parent, name, label,icon=icon)
         self.name = name
         self.isFilled = False
 
-class ActionItem(KListViewItem):
-    def __init__(self, parent, id, desc, policy):
-        KListViewItem.__init__(self, parent, desc)
+class ActionItem(PListViewItem):
+    def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
+        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "history")
         self.id = id
         self.desc = desc
         self.policy = policy
@@ -1237,5 +1275,5 @@ class ActionItem(KListViewItem):
         self.setAuthIcon("n/a")
 
     def setAuthIcon(self, state):
-        self.setPixmap(0, getIcon(self.states[state]))
+        self.setItemIcon(self.states[state])
 
