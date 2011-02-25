@@ -12,7 +12,7 @@
 #
 
 class PackageCollection(object):
-    def __init__(self, uniqueTag=None, icon=None, title=None, description=None, packageSelection=None, languageSelection=None, default=""):
+    def __init__(self, uniqueTag="", icon="", title="", description="", packageSelection=None, languageSelection=None, default=""):
         self.uniqueTag = uniqueTag
         self.icon = icon
         self.title = title
