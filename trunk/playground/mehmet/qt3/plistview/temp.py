@@ -19,12 +19,15 @@ def loadIcon(name, group=KIcon.Desktop, size=16):
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
+def getIcon(name, group=KIcon.Small):
+    return KGlobal.iconLoader().loadIcon(name, group)
+
 # !!!!!!!!!!! viewportun dışında yapışık bi header olsa iyi olur
 # !!!! butonlar hover olunca gözüksün seçeneği ekle
 class PListView(QScrollView):
 
     itemHeight = 24
-    iconHeight = 16
+    iconSize = 16
     arrowSize = 8
     depthSize = 12
 
@@ -138,7 +141,10 @@ class PListViewItem(QWidget):
 
     widgetSpacing = 2
 
-    def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None):
+    PLVIMouseClicked = 101
+    PLVIMouseDoubleClicked = 102
+
+    def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None, icon=None):
         QWidget.__init__(self, parent.viewport(), name)
         self.buffer = QPixmap()
         self.parent = parent
@@ -155,7 +161,7 @@ class PListViewItem(QWidget):
         self.nextItem = None
         self.firstChild = None
 
-        self.icon = QPixmap("/usr/share/icons/BCTango/16x16/categories/package_network_www.png")
+        self.icon = getIcon(icon) if icon else None
 
         self.installEventFilter(self)
 
@@ -165,6 +171,10 @@ class PListViewItem(QWidget):
         self.depthExtra = self.depth * PListView.depthSize
 
         self.show()
+
+    def setItemIcon(self, icon):
+        self.icon = getIcon(icon) if icon else None
+        self.repaint()
 
     def isInArrowArea(self, x):
         if ((self.depthExtra + self.parent.depthSize) > x) and (self.depthExtra < x):
@@ -214,8 +224,10 @@ class PListViewItem(QWidget):
                 self.repaint()
             if self.isInArrowArea(event.pos().x()):
                 self.expandOrCollapse()
+            self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonDblClick):
             self.expandOrCollapse()
+            self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonRelease):
             pass
         elif (event.type() == QEvent.Enter):
@@ -277,8 +289,11 @@ class PListViewItem(QWidget):
         if len(self.widgets) > 0:
             self.setWidgetsBg(color)
 
-        dip = (self.height() - self.icon.height()) / 2
-        paint.drawPixmap(self.depthExtra + 2 + PListView.arrowSize + 6, dip, self.icon)
+        if self.icon:
+            dip = (self.height() - self.icon.height()) / 2
+            paint.drawPixmap(self.depthExtra + 2 + PListView.arrowSize + 6, dip, self.icon)
+        else:
+            dip = (self.height() - self.parent.iconSize) / 2
 
         col = QColor(0,0,0)
         #self.setPaletteBackgroundColor(col)
@@ -301,7 +316,7 @@ class PListViewItem(QWidget):
         fm = QFontMetrics(font)
         ascent = fm.ascent()
         mid = (self.height()+8) / 2
-        paint.drawText(self.depthExtra + 2 + PListView.arrowSize + 6 + self.icon.width() + 6, mid, unicode(self.text))
+        paint.drawText(self.depthExtra + 2 + PListView.arrowSize + 6 + self.parent.iconSize + 6, mid, unicode(self.text))
 
         paint.end()
         bitBlt(self, 0, 0, self.buffer)
