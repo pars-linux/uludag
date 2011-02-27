@@ -117,7 +117,6 @@ msgid "type service name to search..."
 msgstr "szukaj typ usługi ..."
 
 #: ui/ui_main.py:63
-#, fuzzy
 msgid "Servers"
 msgstr "Serwery"
 
