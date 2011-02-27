@@ -184,9 +184,8 @@ msgid "You can check the integrity of the packages in installation media. Althou
 msgstr "Możesz sprawdzić spójność pakietów na płycie instalacyjnej. Mimoże jest to opcjonalne, nalegamy aby to uczynić, by ominąć błędypodczas instalowania."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
-#, fuzzy
 msgid "Check Packages Integrity"
-msgstr "Sprawdź spójność CD"
+msgstr "Sprawdź poprawność pakietów"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid "To use PiSi History support, you may need to be online. You can use a connection profile from the list below."
@@ -194,11 +193,11 @@ msgstr ""
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
-msgstr ""
+msgstr "Połącz"
 
 #: yali4/gui/Ui/datetimewidget.py:91
 msgid "The current time"
-msgstr ""
+msgstr "Aktualny czas"
 
 #: yali4/gui/Ui/datetimewidget.py:92 yali4/gui/Ui/datetimewidget.py:93
 msgid ":"
@@ -206,7 +205,7 @@ msgstr ""
 
 #: yali4/gui/Ui/datetimewidget.py:94
 msgid "Time Zone"
-msgstr ""
+msgstr "Strefa czasowa"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 #, fuzzy
@@ -261,19 +260,19 @@ msgstr "Test wybranego układu:"
 
 #: yali4/gui/Ui/main.py:223
 msgid "Yali4"
-msgstr ""
+msgstr "Yali4"
 
 #: yali4/gui/Ui/main.py:225
 msgid "Screen Name"
-msgstr ""
+msgstr "Nazwa monitora"
 
 #: yali4/gui/Ui/main.py:227
 msgid "Details about the screen"
-msgstr ""
+msgstr "Szczegóły na temat monitora"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -289,39 +288,36 @@ msgstr ""
 
 #: yali4/gui/Ui/main.py:232
 msgid "Back"
-msgstr ""
+msgstr "Cofnij"
 
 #: yali4/gui/Ui/main.py:233
 msgid "Next Screen"
-msgstr ""
+msgstr "Następny monitor"
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
 #: yali4/gui/ScrSummary.py:344
 msgid "Next"
-msgstr ""
+msgstr "Następny"
 
 #: yali4/gui/Ui/partedit.py:167
 msgid "Partition 1 on FUJISTU - /dev/sda1"
 msgstr ""
 
 #: yali4/gui/Ui/partedit.py:168
-#, fuzzy
 msgid "Use :"
-msgstr "Użytkownicy:"
+msgstr "W użyciu:"
 
 #: yali4/gui/Ui/partedit.py:169
-#, fuzzy
 msgid "Size :"
-msgstr "Rozmiar"
+msgstr "Rozmiar: "
 
 #: yali4/gui/Ui/partedit.py:170 yali4/gui/Ui/partresize.py:93
 msgid " MB"
-msgstr ""
+msgstr " MB"
 
 #: yali4/gui/Ui/partedit.py:171
-#, fuzzy
 msgid "Format :"
-msgstr "Formatować?"
+msgstr "Format :"
 
 #: yali4/gui/Ui/partedit.py:172
 #, fuzzy
@@ -347,7 +343,7 @@ msgstr ""
 
 #: yali4/gui/Ui/partedit.py:177
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Odśwież dysk"
 
 #: yali4/gui/Ui/partedit.py:178
 msgid "Reset All Changes"
@@ -381,28 +377,24 @@ msgid "User to change password of:"
 msgstr ""
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:107
-#, fuzzy
 msgid "New password:"
-msgstr "Hasło:"
+msgstr "Nowe hasło:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:108
-#, fuzzy
 msgid "New password (again):"
-msgstr "Hasło (ponownie):"
+msgstr "Nowe hasło (ponownie):"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:109
-#, fuzzy
 msgid "Update Password"
-msgstr "Utwórz Użytkownika"
+msgstr "Zmień hasło"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:69
-#, fuzzy
 msgid "Connection Status:"
-msgstr "Sprawdzanie nieudane"
+msgstr "Status połączenia:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Not Connected"
-msgstr ""
+msgstr "Niepołączony "
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "To use PiSi's history feature, you may need to be online. Select connection profile."
@@ -410,11 +402,11 @@ msgstr ""
 
 #: yali4/gui/Ui/rescuepisiwidget.py:72
 msgid "Select Connection"
-msgstr ""
+msgstr "Wybrane połączenie"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:73
 msgid "Operation to undo:"
-msgstr ""
+msgstr "Operacje do cofnięcia:"
 
 #: yali4/gui/Ui/rescuewidget.py:89
 #, fuzzy
@@ -472,9 +464,8 @@ msgid "Password (again):"
 msgstr "Hasło (ponownie):"
 
 #: yali4/gui/Ui/setupuserswidget.py:181
-#, fuzzy
 msgid "User ID"
-msgstr "Użytkownicy:"
+msgstr "ID Użytkownika:"
 
 #: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Give administrator privileges to this user"
@@ -482,11 +473,11 @@ msgstr "Przydziel prawa administratora temu użytkownikowi"
 
 #: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Not recommended"
-msgstr ""
+msgstr "Niezalecany"
 
 #: yali4/gui/Ui/setupuserswidget.py:184
 msgid "Do not ask any password to this user"
-msgstr ""
+msgstr "Nie pytaj się o hasło dla tego użytkownika"
 
 #: yali4/gui/Ui/setupuserswidget.py:185
 msgid "Advanced"
@@ -623,9 +614,8 @@ msgid "Pardus Corporate 2 is set to support most hardware right away. At the end
 msgstr ""
 
 #: yali4/gui/DiskWidgets.py:87
-#, fuzzy
 msgid "Manual Partitioning selected."
-msgstr "Stwórz Partycję"
+msgstr "Wybrano ręczne partycjonowanie."
 
 #: yali4/gui/DiskWidgets.py:192
 #, python-format
@@ -655,9 +645,8 @@ msgstr "Partycja %d"
 
 #: yali4/gui/DiskWidgets.py:268 yali4/gui/GUIAdditional.py:164
 #: yali4/partition.py:124
-#, fuzzy
 msgid "Free Space"
-msgstr "wolne miejsce"
+msgstr "Wolne miejsce"
 
 #: yali4/gui/DiskWidgets.py:296
 #, python-format
@@ -743,12 +732,11 @@ msgstr ""
 #: yali4/gui/GUIAdditional.py:88
 #, python-format
 msgid "Resizing to %s MB.."
-msgstr ""
+msgstr "Nowy rozmiar %s MB.."
 
 #: yali4/gui/GUIAdditional.py:97 yali4/installer.py:388
-#, fuzzy
 msgid "Filesystem Error"
-msgstr "System Plików"
+msgstr "Błąd systemu plików"
 
 #: yali4/gui/GUIAdditional.py:104
 #, python-format
@@ -758,50 +746,45 @@ msgstr ""
 #: yali4/gui/GUIAdditional.py:167
 #, python-format
 msgid "(%s) [%s] Size : %s - Free : %s"
-msgstr ""
+msgstr "(%s) [%s] Rozmiar : %s - wolne : %s"
 
 #: yali4/gui/GUIAdditional.py:186
 #, python-format
 msgid "%s (Boot Disk)"
-msgstr ""
+msgstr "%s (Dysk rozruchowy)"
 
 #: yali4/gui/GUIAdditional.py:247
 #, python-format
 msgid "Connecting to network <b>%s</b> ..."
-msgstr ""
+msgstr "Łączenie z siecią <b>%s</b> ..."
 
 #: yali4/gui/GUIAdditional.py:253 yali4/gui/GUIAdditional.py:254
-#, fuzzy
 msgid "Connection failed"
-msgstr "Sprawdzanie nieudane"
+msgstr "Połączenie nieudane"
 
 #: yali4/gui/GUIAdditional.py:257 yali4/gui/GUIAdditional.py:258
 msgid "Connected"
-msgstr ""
+msgstr "Połączony"
 
 #: yali4/gui/GUIAdditional.py:292
 msgid "Can't open License file!"
 msgstr "Nie mogę otworzyć pliku z licencją!"
 
 #: yali4/gui/GUIAdditional.py:303
-#, fuzzy
 msgid "Can't open Release Notes!"
 msgstr "Nie mogę otworzyć pliku z notką wydania!"
 
 #: yali4/gui/runner.py:157
-#, fuzzy
 msgid "Error occured !"
 msgstr "Pojawił się błąd!"
 
 #: yali4/gui/runner.py:173
-#, fuzzy
 msgid "Unhandled exception occured!"
-msgstr "Pojawił się błąd!"
+msgstr "Pojawił się nieznany błąd!"
 
 #: yali4/gui/ScrAdmin.py:30
-#, fuzzy
 msgid "Set Administrator"
-msgstr "Hasło administratora systemu:"
+msgstr "Ustaw hasło administratora systemu:"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins have important rights on the system..."
@@ -831,31 +814,26 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/ScrAdmin.py:66
-#, fuzzy
 msgid "<center>Caps Lock is on!</center>"
-msgstr "<font color=\"#FF6D19\">Caps Lock jest włączony!</font>"
+msgstr "<center>Caps Lock jest włączony!</center>"
 
 #: yali4/gui/ScrAdmin.py:120 yali4/gui/ScrRescuePassword.py:114
 #: yali4/gui/ScrUsers.py:196
-#, fuzzy
 msgid "Password is too short!"
-msgstr "<font color=\"#FF6D19\">Hasło jest zbyt krótkie!</font>"
+msgstr "Hasło jest zbyt krótkie!"
 
 #: yali4/gui/ScrAdmin.py:129 yali4/gui/ScrRescuePassword.py:111
 #: yali4/gui/ScrUsers.py:193
-#, fuzzy
 msgid "Passwords do not match!"
-msgstr "<font color=\"#FF6D19\">Hasła nie zgadzają się!</font>"
+msgstr "Hasła nie zgadzają się!"
 
 #: yali4/gui/ScrAdmin.py:134
-#, fuzzy
 msgid "Don't use your username as password !"
-msgstr "<font color=\"#FF6D19\">Nie używaj Twojego imienia jako hasła.</font>"
+msgstr "Nie używaj Twojego imienia jako hasła."
 
 #: yali4/gui/ScrAdmin.py:154
-#, fuzzy
 msgid "Hostname contains invalid characters!"
-msgstr "<font color=\"#FF6D19\">Nazwa użytkownika zawiera niedozwolone znaki!</font>"
+msgstr "Nazwa użytkownika zawiera niedozwolone znaki!"
 
 #: yali4/gui/ScrBootloader.py:38
 msgid "Bootloader Choice"
@@ -909,9 +887,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your installation medium"
-msgstr "Host:"
+msgstr "Sprawdź nośnik instalacyjny:"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore installation medium corruptions you can check your packages integrity..."
@@ -932,15 +909,15 @@ msgstr "<font color=\"#FF6D19\">Proszę zaczekać w trakcie sprawdzania CD.</fon
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
-msgstr ""
+msgstr "Zatrzymaj sprawdzanie"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "Set your timezone"
-msgstr ""
+msgstr "Ustaw swoją strefę czasową"
 
 #: yali4/gui/ScrDateTime.py:29
 msgid "You can change your timezone, time or date settings..."
-msgstr ""
+msgstr "Możesz zmienić ustawienia czasu i daty swojej strefy czasowej..."
 
 #: yali4/gui/ScrDateTime.py:31
 #, fuzzy
@@ -1002,16 +979,15 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:71
 msgid "Running post install operations.."
-msgstr ""
+msgstr "Uruchamianie operacji po instalacyjnych..."
 
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 msgid "Press <b>Reboot</b> button to restart your system."
-msgstr ""
+msgstr "Naciśnij przycisk <b>Restart</b> by uruchomić ponownie twój komputer."
 
 #: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
-#, fuzzy
 msgid "<b>Rebooting system. Please wait!</b>"
-msgstr "<b><font size=\"+2\" color=\"#FF6D19\">Restartuję system. Proszę czekać!</font></b>"
+msgstr "Restartuję system. Proszę czekać!"
 
 #: yali4/gui/ScrInstallationAuto.py:35
 #, fuzzy
@@ -1043,9 +1019,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrInstall.py:64
-#, fuzzy
 msgid "Installing system..."
-msgstr "Instalowanie Systemu"
+msgstr "Instalowanie Systemu ..."
 
 #: yali4/gui/ScrInstall.py:65
 msgid "Installing takes approximately 20 minutes depending on your hardware..."
