@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
@@ -32,7 +32,6 @@ msgid "Automatic"
 msgstr "Automatycznie"
 
 #: browser.py:71
-#, fuzzy
 msgid "Mod:"
 msgstr "Tryb:"
 
@@ -122,27 +121,21 @@ msgstr "Nie masz uprawnień aby zmieniać ustawienia sieci."
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
 
 #: comariface.py:190
-#, fuzzy
 msgid "Network Manager - Error"
-msgstr "Manager sieci"
+msgstr "Manager sieci - Błąd"
 
 #: comariface.py:353
 msgid "new connection"
@@ -183,9 +176,7 @@ msgid "DHCP Server Error"
 msgstr ""
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
+msgid "The interfaces that you have selected must be different to share internet connection"
 msgstr ""
 
 #: connsharing.py:156
@@ -220,9 +211,7 @@ msgid "Network manager module is already started!"
 msgstr "Moduł zarządzania siecią jest już uruchomiony!"
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
 msgstr ""
 
 #: newconn.py:26
@@ -247,9 +236,7 @@ msgstr "Zainstaluj pakiety sieciowe!"
 
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
-msgstr ""
-"Żadne pakiety ze skryptami sieciowymi managera COMAR nie są jeszcze "
-"zainstalowane."
+msgstr "Żadne pakiety ze skryptami sieciowymi managera COMAR nie są jeszcze zainstalowane."
 
 #: connection.py:28
 msgid "Channel"
@@ -404,9 +391,7 @@ msgid "Configure network connection"
 msgstr "Konfiguruj połączenie sieciowe"
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
 msgstr ""
 
 #: autoswitch.py:79
@@ -483,48 +468,35 @@ msgstr "Aplet Sieci"
 #~ msgstr "Oczekiwanie na DBus..."
 
 #~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-#~ msgstr ""
-#~ "Połączenie z DBus niespodziewanie zostało zerwane, łączę ponownie..."
+#~ msgstr "Połączenie z DBus niespodziewanie zostało zerwane, łączę ponownie..."
 
-#~ msgid ""
-#~ "Cannot connect to the DBus! If it is not running you should start it with "
-#~ "the 'service dbus start' command in a root console."
-#~ msgstr ""
-#~ "Nie można połączyć się z DBus! Jeżeli nie działa to powinieneś uruchomić "
-#~ "usługę 'service dbus start' jako root."
+#~ msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+#~ msgstr "Nie można połączyć się z DBus! Jeżeli nie działa to powinieneś uruchomić usługę 'service dbus start' jako root."
 
-#, fuzzy
 #~ msgid "Share Connection"
 #~ msgstr "Połączenie"
 
 #~ msgid "Just try to connect automatically"
 #~ msgstr "Próbuj połączyć się automatycznie"
 
-#, fuzzy
 #~ msgid "Name Server Settings"
 #~ msgstr "Ustawienia nazwy usługi"
 
-#, fuzzy
 #~ msgid "Name"
 #~ msgstr "Nazwa:"
 
-#, fuzzy
 #~ msgid "Address :"
 #~ msgstr "Adres:"
 
-#, fuzzy
 #~ msgid "NameConf"
 #~ msgstr "Nazwa:"
 
-#, fuzzy
 #~ msgid "Name Server"
 #~ msgstr "Nazwy serwerów"
 
-#, fuzzy
 #~ msgid "Name :"
 #~ msgstr "Nazwa:"
 
-#, fuzzy
 #~ msgid "Device Mode"
 #~ msgstr "Urządzenie:"
 
