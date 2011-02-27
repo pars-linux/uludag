@@ -155,27 +155,22 @@ msgstr ""
 "Twojego nowo zainstalowanego Pardusa.</p>"
 
 #: yali4/gui/Ui/bootloaderwidget.py:81 yali4/gui/Ui/rescuegrubwidget.py:78
-#, fuzzy
 msgid "Select target to install boot loader"
 msgstr "Wybierz dysk, na którym ma być zainstalowany GRUB:"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:79
-#, fuzzy
 msgid "First bootable disk (recommended)"
-msgstr "Zainstaluj w MBR dysku Pardusa (zalecane)"
+msgstr "Pierwszy dysk z możliwością rozruchu"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:80
-#, fuzzy
 msgid "Pardus installed partition"
-msgstr "Zainstaluj w partycji Pardusa"
+msgstr "Partycja z zainstalowanym Pardus"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:81
-#, fuzzy
 msgid "Selected disk below"
-msgstr "Zainstaluj w MBR wybranego poniżej dysku"
+msgstr "Poniżej wybierz dysk"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
-#, fuzzy
 msgid "Don't install bootloader"
 msgstr "Nie instaluj menedżera rozruchu"
 
