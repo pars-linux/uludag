@@ -965,8 +965,8 @@ class PolicyTab(QVBox):
 
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
-            radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-                        PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+            #radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            #            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
             self.policylist.add(catitem)
             #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
             #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
