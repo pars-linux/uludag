@@ -833,7 +833,8 @@ class PolicyTab(QVBox):
         #put all necessary actions to listview
         self.fillAuths()
 
-        self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
+        self.connect(self.policylist, PYSIGNAL("expanded"), self.policyListExpanded)
+        #self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
         #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
 
         #self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
@@ -964,9 +965,9 @@ class PolicyTab(QVBox):
 
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
-            self.policylist.add(catitem)
             radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
                         PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+            self.policylist.add(catitem)
             #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
             #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
             #catitem.setPixmap(0, getIcon(categories[cats][1]))
@@ -1119,10 +1120,11 @@ class PolicyTab(QVBox):
                     actioninfo = polkit.action_info(i)
                     if actioninfo['policy_active'].startswith("auth_"):
                         actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
-                        self.policylist.add(actionitem)
-                        print actioninfo['description']
                         radios = actionitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
                                     PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+                        self.policylist.add(actionitem)
+                        #print "--------"
+                        #actionitem.show()
         """item.takeItem(item.firstChild())
         for i in polkit.action_list():
             cats = item.name.split('|')
@@ -1132,13 +1134,17 @@ class PolicyTab(QVBox):
                     if actioninfo['policy_active'].startswith("auth_"):
                         actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])"""
 
-    def policyListClicked(self, event, item):
-        if event.type() == QEvent.MouseButtonDblClick:
-            if not item:
-                return
+    def policyListExpanded(self, item):
+        if not item:
+            return
+        if isinstance(item, CategoryItem) and not item.isFilled:
+            self.fillCategory(item)
 
-            if not item.isFilled:
-                self.fillCategory(item)
+        #kaldır bunu burdan
+        """elif isinstance(item, CategoryItem):
+            # manually call resizeEvent to put the widgets right place
+            for i in item.getChilds():
+                i.resizeEvent(QResizeEvent(QSize(i.width(), i.height()), QSize(i.width(), i.height())))"""
 
     def listviewExpanded(self, item):
         return

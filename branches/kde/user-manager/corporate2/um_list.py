@@ -36,12 +36,16 @@ class PListView(QScrollView):
         self.parent = parent
         self.firstItem = None
         self.items = [] # tüm itemler. hiyerarşi yok
+        self.visibleitems = []
         self.selectedItem = None
         self.hoverItem = None
 
-        self.layout = QVBoxLayout(self.viewport())
-        self.spacer = QSpacerItem(4, 4, QSizePolicy.Minimum, QSizePolicy.Expanding)
-        self.layout.addItem(self.spacer)
+        self.layout = QBoxLayout(self.viewport(), 0, 0)
+        self.layout.setDirection(QVBoxLayout.TopToBottom)
+        self.layout.setSpacing(0)
+        self.layout.setMargin(0)
+        #self.spacer = QSpacerItem(4, 4, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        #self.layout.insertItem(-1, self.spacer)
 
         self.baseColor = KGlobalSettings.baseColor()
         self.selectedColor = KGlobalSettings.highlightColor()
@@ -58,22 +62,25 @@ class PListView(QScrollView):
         QScrollView.resizeEvent(self, event)
         self.myResize(self.visibleWidth())
         self.repaint()
-        self.layout.removeItem(self.spacer)
-        self.layout.addItem(self.spacer)
+        #self.layout.removeItem(self.spacer)
+        #self.layout.insertItem(-1, self.spacer)
 
     def myResize(self, width):
         mw = 0
         th = 0
-        for i in self.items:
+        for i in self.visibleitems:
             h = i.sizeHint().height()
             mw = max(mw, i.sizeHint().width())
-            i.setGeometry(0, th, width, h)
+            #i.setGeometry(0, th, width, h)
             th += h
-        self.setMinimumSize(QSize(mw, 0))
+        #self.setMinimumSize(QSize(mw, 0))
         if th > self.height():
             self.resizeContents(width - 12, th)
         else:
             self.resizeContents(width, th)
+        #print 'myresize içiiiiiii'
+        self.setContentsPos(0,0)
+        #self.updateContents(0,0, 50,500)
 
     def remove(self, item):
         it = item.firstChild
@@ -99,13 +106,15 @@ class PListView(QScrollView):
                 it = it.nextItem
 
     def add(self, item):
-        self.layout.removeItem(self.spacer)
-        self.layout.addWidget(item)
-        self.layout.addItem(self.spacer)
+        # pop spacer
+        #self.layout.removeItem(self.spacer)
         self.items.append(item)
+        self.visibleitems.append(item)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         if item.parentItem:
+            index = self.layout.findWidget(item.parentItem)
+            self.layout.insertWidget(index+1, item)
             if item.parentItem.firstChild: # childların sonuna ekle
                 lastChild = item.parentItem.findLastChild()
                 lastChild.nextItem = item
@@ -113,13 +122,19 @@ class PListView(QScrollView):
                 item.parentItem.firstChild = item
             #item.reparent(self, 0, QPoint(0,0), False)
         else:
+            # add to end (index = -1)
+            #self.layout.removeItem(self.spacer)
+            self.layout.insertWidget(-1, item)
+            #self.layout.insertItem(-1, self.spacer)
             if not self.firstItem:
                 self.firstItem = item
             else:
                 lastSibling = self.findLastSibling(self.firstItem)
                 lastSibling.nextItem = item
-        if item.parentItem:
-            item.hide()
+        # push spacer
+        #self.layout.insertItem(-1, self.spacer)
+        #if item.parentItem:
+        #    item.hide()
 
     def findLastSibling(self, item):
         if not item.nextItem:
@@ -166,6 +181,7 @@ class PListViewItem(QWidget):
         self.installEventFilter(self)
 
         self.setMaximumHeight(self.parent.itemHeight)
+        self.setMinimumHeight(self.parent.itemHeight)
 
         self.setDepth()
         self.depthExtra = self.depth * PListView.depthSize
@@ -201,10 +217,13 @@ class PListViewItem(QWidget):
     def resetOldSelected(self, item):
         item.isSelected = False
         item.repaint()
-
+    # normal listviewde first child olmadığı zaman arrow gözükmez ve + işareti çıkmadığı için tıklama yapılmaz.
+    # burda çocuğu olmasa dahi arrow gözükecek ve expanded signali yollanacak, adam slotta denetlesin
+    # böyle bir şeyi yapma sebebi, expanded olduğunda listenin altını doldurmak isteği, öbür türlü fake bi kayıt koymak ve sonra
+    # onu silmek gerekiyo
     def expandOrCollapse(self):
-        if not self.firstChild:
-            return False
+        #if not self.firstChild:
+        #    return False
         self.isExpanded = not self.isExpanded
         self.repaint()
         if self.isExpanded:
@@ -213,6 +232,7 @@ class PListViewItem(QWidget):
         else:
             self.hideChilds()
             self.parent.emit(PYSIGNAL("collapsed"), (self,))
+        self.parent.resizeEvent(QResizeEvent(QSize(self.width(), self.height()), QSize(self.width(), self.height())))
 
     def eventFilter(self, target, event):
         if(event.type() == QEvent.MouseButtonPress):
@@ -223,10 +243,15 @@ class PListViewItem(QWidget):
                 self.isSelected = True
                 self.repaint()
             if self.isInArrowArea(event.pos().x()):
+                self.isSelected = True
                 self.expandOrCollapse()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonDblClick):
             self.expandOrCollapse()
+            #print 'event filter içiii'
+            #self.parent.scrollBy(0,500)
+            #self.parent.ensureVisible(event.pos().x(), self.pos().y())
+            #print event.pos().x(), self.pos().y()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonRelease):
             pass
@@ -242,12 +267,16 @@ class PListViewItem(QWidget):
         child = self.firstChild
         while child:
             child.show()
+            if child not in self.parent.visibleitems:
+                self.parent.visibleitems.append(child)
             child = child.nextItem
 
     def hideChilds(self):
         child = self.firstChild
         while child:
             child.hide()
+            if child in self.parent.visibleitems:
+                self.parent.visibleitems.remove(child)
             if child.firstChild:
                 child.isExpanded = False
                 child.hideChilds()
@@ -266,12 +295,11 @@ class PListViewItem(QWidget):
             w.setPaletteBackgroundColor(color)
 
     def setWidgetsGeometry(self, width, height):
-        if len(self.widgets):
-            excess = 6
-            for w in self.widgets:
-                excess += w.width() + self.widgetSpacing
-                mid = (height - w.height()) / 2
-                w.setGeometry(width - excess, mid, w.width(), w.height())
+        excess = 6
+        for w in self.widgets:
+            excess += w.width() + self.widgetSpacing
+            mid = (height - w.height()) / 2
+            w.setGeometry(width - excess, mid, w.width(), w.height())
 
     def paintEvent(self, event):
 
@@ -285,6 +313,7 @@ class PListViewItem(QWidget):
             color = self.parent.selectedColor
         elif self.parent.hoverItem == self:
             color = self.parent.hoverColor
+        #paint.fillRect(event.rect(), QBrush(color))
         paint.fillRect(event.rect(), QBrush(color))
         if len(self.widgets) > 0:
             self.setWidgetsBg(color)
@@ -326,7 +355,11 @@ class PListViewItem(QWidget):
         h = event.size().height()
         self.setWidgetsGeometry(w, h)
         self.buffer = QPixmap(w,h)
+        self.handleItemText()
         return QWidget.resizeEvent(self, event)
+
+    def handleItemText(self):
+        pass
 
     def sizeHint(self):
         f = QFont(self.font())
