@@ -40,10 +40,12 @@ class PListView(QScrollView):
         self.selectedItem = None
         self.hoverItem = None
 
-        self.layout = QBoxLayout(self.viewport(), 0, 0)
+        """self.layout = QBoxLayout(self.viewport(), 0, 0)
         self.layout.setDirection(QVBoxLayout.TopToBottom)
         self.layout.setSpacing(0)
-        self.layout.setMargin(0)
+        self.layout.setMargin(0)"""
+        self.setStaticBackground(True)
+        self.enableClipper(True)
         #self.spacer = QSpacerItem(4, 4, QSizePolicy.Minimum, QSizePolicy.Expanding)
         #self.layout.insertItem(-1, self.spacer)
 
@@ -65,6 +67,11 @@ class PListView(QScrollView):
         #self.layout.removeItem(self.spacer)
         #self.layout.insertItem(-1, self.spacer)
 
+    def viewportResizeEvent(self, e):
+        for x in self.items:
+            x.resize(self.width(), 24)
+        print ':::::::::::::'
+
     def myResize(self, width):
         mw = 0
         th = 0
@@ -79,7 +86,7 @@ class PListView(QScrollView):
         else:
             self.resizeContents(width, th)
         #print 'myresize içiiiiiii'
-        self.setContentsPos(0,0)
+        #self.setContentsPos(0,0)
         #self.updateContents(0,0, 50,500)
 
     def remove(self, item):
@@ -108,13 +115,15 @@ class PListView(QScrollView):
     def add(self, item):
         # pop spacer
         #self.layout.removeItem(self.spacer)
+        index = (len(self.items))*24
+        self.addChild(item, 0, index)
         self.items.append(item)
         self.visibleitems.append(item)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         if item.parentItem:
-            index = self.layout.findWidget(item.parentItem)
-            self.layout.insertWidget(index+1, item)
+            #index = self.layout.findWidget(item.parentItem)
+            #self.layout.insertWidget(index+1, item)
             if item.parentItem.firstChild: # childların sonuna ekle
                 lastChild = item.parentItem.findLastChild()
                 lastChild.nextItem = item
@@ -124,7 +133,7 @@ class PListView(QScrollView):
         else:
             # add to end (index = -1)
             #self.layout.removeItem(self.spacer)
-            self.layout.insertWidget(-1, item)
+            #self.layout.insertWidget(-1, item)
             #self.layout.insertItem(-1, self.spacer)
             if not self.firstItem:
                 self.firstItem = item
