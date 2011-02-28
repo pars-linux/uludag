@@ -60,7 +60,7 @@ class PM:
         if not self.operation.totalPackages:
             return
         KNotification.event("Summary",
-                self.state.getSummaryInfo(self.operation.totalPackages),
+                self.state.getSummaryInfo(self.operation.totalPackages, self.operation.extraPackages),
                 QPixmap(),
                 None,
                 KNotification.CloseOnTimeout,
