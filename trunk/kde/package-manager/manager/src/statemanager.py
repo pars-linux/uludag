@@ -110,10 +110,16 @@ class StateManager(QObject):
                 self.UPGRADE:KIcon("system-software-update"),
                 self.ALL    :KIcon("preferences-other")}[state]
 
-    def getSummaryInfo(self, total):
+    def getSummaryInfo(self, total, extraPackagesCount):
+        # BUG Fixed #15163
+        extraPackageMessage = i18n("%1 new package(s) have been installed succesfully.", extraPackagesCount)
+        upgradeMessage = i18n("%1 package(s) have been upgraded succesfully.", total-extraPackagesCount)
+        if not extraPackagesCount == 0:
+            upgradeMessage = "%s\n%s" % (upgradeMessage, extraPackageMessage)
+
         return {self.INSTALL:i18n("%1 new package(s) have been installed succesfully.", total),
                 self.REMOVE :i18n("%1 package(s) have been removed succesfully.", total),
-                self.UPGRADE:i18n("%1 package(s) have been upgraded succesfully.", total),
+                self.UPGRADE:upgradeMessage,
                 self.ALL    :i18n("%1 package(s) have been modified succesfully.", total)}[self.state]
 
     def getBasketInfo(self):

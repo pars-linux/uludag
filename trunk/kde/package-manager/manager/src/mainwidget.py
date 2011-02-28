@@ -287,7 +287,9 @@ class MainWidget(QWidget, PM, Ui_MainWidget):
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             totalPackages = self.packageList.packageCount()
+            extraPackages = self.packageList.extraPackagesCount()
             self.operation.setTotalPackages(totalPackages)
+            self.operation.setExtraPackages(extraPackages)
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:

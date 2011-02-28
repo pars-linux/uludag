@@ -65,6 +65,9 @@ class PackageView(QtGui.QTableView):
     def packageCount(self):
         return len(self.selectedPackages()) + len(self.extraPackages())
 
+    def extraPackagesCount(self):
+        return len(self.extraPackages())
+
     def isSelected(self):
         return bool(self.selectedPackages())
 

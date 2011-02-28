@@ -33,6 +33,7 @@ class OperationManager(QObject):
     def initialize(self):
         self.packageNo = 0
         self.totalPackages = 0
+        self.extraPackages = 0
         self.totalSize = 0
         self.totalDownloaded = 0
         self.curPkgDownloaded = 0
@@ -44,6 +45,9 @@ class OperationManager(QObject):
 
     def setTotalPackages(self, totalPackages):
         self.totalPackages = totalPackages
+
+    def setExtraPackages(self, extraPackages):
+        self.extraPackages = extraPackages
 
     def calculateTimeLeft(self, rate, symbol):
         factor = {"B/s":1, "KB/s":1024, "MB/s":1048576, "GB/s":1073741824}
