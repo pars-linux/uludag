@@ -80,7 +80,7 @@ class PListView(QScrollView):
             th += h
         #self.setMinimumSize(QSize(mw, 0))
         if th > self.height():
-            self.resizeContents(width - 12, th)
+            self.resizeContents(width - 16, th)
         else:
             self.resizeContents(width, th)
         #print 'myresize içiiiiiii'
@@ -94,8 +94,20 @@ class PListView(QScrollView):
             it = it.nextItem
         previousItem = self.findPreviousItem(item)
         previousItem.nextItem = item.nextItem
-        self.layout.remove(item)
+        self.removeChild(item)
         self.items.remove(item)
+        if item in self.visibleitems:
+            self.visibleitems.remove(item)
+        if not findAnItemWhoHasAChild(item):
+            self.setSiblingHasChild(item, False)
+
+    def findAnItemWhoHasAChild(self, item):
+        it = item.parentItem
+        while it:
+            if it.firstChild:
+                return it
+            it = it.nextItem
+        return
 
     def findPreviousItem(self, item):
         previous = None
@@ -109,14 +121,6 @@ class PListView(QScrollView):
             else:
                 previous = it
                 it = it.nextItem
-
-    def rootItems(self):
-        rootItems = []
-        it = self.firstItem
-        while it:
-            rootItems.append(it)
-            it = it.nextItem
-        return rootItems
 
     def shiftLowerItems(self, item):
         for i in range(self.visibleitems.index(item), len(self.visibleitems)):
@@ -133,6 +137,7 @@ class PListView(QScrollView):
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         #self.visibleitems.append(item)
         if item.parentItem:
+            item.parentItem.isExpanded = True
             lastChild = item.parentItem.findLastChild()
             if lastChild:
                 self.items.insert(self.items.index(lastChild)+1, item)
@@ -148,6 +153,7 @@ class PListView(QScrollView):
                 item.parentItem.firstChild = item
             item.resize(item.parentItem.width(), self.itemHeight)
             self.shiftLowerItems(item)
+            self.setSiblingHasChild(item.parentItem, True)
         else:
             self.items.insert(len(self.items), item) # en sona ekle
             self.visibleitems.insert(len(self.visibleitems), item) # en sona ekle
@@ -159,6 +165,16 @@ class PListView(QScrollView):
                 lastSibling.nextItem = item
         #if item.parentItem:
         #    item.hide()
+
+    def setSiblingHasChild(self, item, hasChild):
+        if item.parentItem:
+            it = item.parentItem.firstChild
+        else:
+            it = self.firstItem
+        while it:
+            it.siblingHasChild = hasChild
+            it.repaint()
+            it = it.nextItem
 
     def findLastSibling(self, item):
         if not item.nextItem:
@@ -190,11 +206,11 @@ class PListViewItem(QWidget):
         self.text = text
         self.widgets = []
 
-        self.index = -1
         self.data = data
 
         self.isExpanded = False
         self.isSelected = False
+        self.siblingHasChild = False
         self.depth = -1
 
         self.parentItem = parentItem
@@ -243,13 +259,9 @@ class PListViewItem(QWidget):
         item.isSelected = False
         item.repaint()
 
-    # normal listviewde first child olmadığı zaman arrow gözükmez ve + işareti çıkmadığı için tıklama yapılmaz.
-    # burda çocuğu olmasa dahi arrow gözükecek ve expanded signali yollanacak, adam slotta denetlesin
-    # böyle bir şeyi yapma sebebi, expanded olduğunda listenin altını doldurmak isteği, öbür türlü fake bi kayıt koymak ve sonra
-    # onu silmek gerekiyo
     def expandOrCollapse(self):
-        #if not self.firstChild:
-        #    return False
+        if not self.firstChild:
+            return False
         self.isExpanded = not self.isExpanded
         self.repaint()
         if self.isExpanded:
@@ -269,17 +281,13 @@ class PListViewItem(QWidget):
                 self.parent.selectedItem = self
                 self.isSelected = True
                 self.repaint()
-            if self.isInArrowArea(event.pos().x()):
+            if self.firstChild and self.isInArrowArea(event.pos().x()):
                 self.isSelected = True
                 self.expandOrCollapse()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
             self.setFocus()
         elif (event.type() == QEvent.MouseButtonDblClick):
             self.expandOrCollapse()
-            #print 'event filter içiii'
-            #self.parent.scrollBy(0,500)
-            #self.parent.ensureVisible(event.pos().x(), self.pos().y())
-            #print event.pos().x(), self.pos().y()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonRelease):
             pass
@@ -355,7 +363,7 @@ class PListViewItem(QWidget):
             w.setPaletteBackgroundColor(color)
 
     def setWidgetsGeometry(self, width, height):
-        excess = 6
+        excess = 12
         for w in self.widgets:
             excess += w.width() + self.widgetSpacing
             mid = (height - w.height()) / 2
@@ -374,33 +382,34 @@ class PListViewItem(QWidget):
             color = self.parent.selectedColor
         elif self.parent.hoverItem == self:
             color = self.parent.hoverColor
-        #paint.fillRect(event.rect(), QBrush(color))
         paint.fillRect(event.rect(), QBrush(color))
         if len(self.widgets) > 0:
             self.setWidgetsBg(color)
 
         if self.icon:
             dip = (self.height() - self.icon.height()) / 2
-            paint.drawPixmap(self.depthExtra + 2 + PListView.arrowSize + 6, dip, self.icon)
         else:
             dip = (self.height() - self.parent.iconSize) / 2
 
-        col = QColor(0,0,0)
-        #self.setPaletteBackgroundColor(col)
-        arr = QPointArray(3)
-        top = (self.height() - PListView.arrowSize) / 2
-        if self.isExpanded:
-            arr.setPoint(0, QPoint(self.depthExtra+2,10))
-            arr.setPoint(1, QPoint(self.depthExtra+10,10))
-            arr.setPoint(2, QPoint(self.depthExtra+6,14))
-        else:
-            arr.setPoint(0, QPoint(self.depthExtra+4,dip+4))
-            arr.setPoint(1, QPoint(self.depthExtra+4,dip+12))
-            arr.setPoint(2, QPoint(self.depthExtra+8,dip+8))
-        oldBrush = paint.brush()
-        paint.setBrush(QBrush(col))
-        paint.drawPolygon(arr)
-        paint.setBrush(oldBrush)
+        arrow = PListView.arrowSize+4
+        if self.firstChild:
+            col = QColor(0,0,0)
+            arr = QPointArray(3)
+            top = (self.height() - PListView.arrowSize) / 2
+            if self.isExpanded:
+                arr.setPoint(0, QPoint(self.depthExtra+2,10))
+                arr.setPoint(1, QPoint(self.depthExtra+10,10))
+                arr.setPoint(2, QPoint(self.depthExtra+6,14))
+            else:
+                arr.setPoint(0, QPoint(self.depthExtra+4,dip+4))
+                arr.setPoint(1, QPoint(self.depthExtra+4,dip+12))
+                arr.setPoint(2, QPoint(self.depthExtra+8,dip+8))
+            oldBrush = paint.brush()
+            paint.setBrush(QBrush(col))
+            paint.drawPolygon(arr)
+            paint.setBrush(oldBrush)
+
+        paint.drawPixmap(self.depthExtra + 2 + arrow + 2, dip, self.icon)
 
         font = paint.font()
         fm = QFontMetrics(font)
@@ -408,7 +417,8 @@ class PListViewItem(QWidget):
         mid = (self.height()+8) / 2
         #font.setStyleStrategy(QFont.NoAntialias)
         paint.setFont(font)
-        dx = self.depthExtra + 2 + PListView.arrowSize + 6 + self.parent.iconSize + 6
+
+        dx = self.depthExtra + 2 + arrow + 2 + self.parent.iconSize + 6
         paint.drawText(dx, mid, unicode(self.text))
 
         paint.end()
@@ -485,16 +495,19 @@ class PLVIconButton(QPushButton):
         self.myWidth = size.width()
         self.myHeight = size.height()
         self.resize(self.myWidth, self.myHeight)
+        self.show()
 
 class PLVRadioButton(QRadioButton):
     def __init__(self, parent, args):
         QRadioButton.__init__(self, parent)
         self.resize(16, 16)
+        self.show()
 
 class PLVCheckBox(QCheckBox):
     def __init__(self, parent, args):
         QCheckBox.__init__(self, parent)
         self.resize(20, 20)
+        self.show()
 
 class PLVButtonGroup(QButtonGroup):
     buttonSpacing = 8
@@ -503,6 +516,7 @@ class PLVButtonGroup(QButtonGroup):
         layout = QHBoxLayout(self)
         self.resize((16+self.buttonSpacing)*len(args[0]), 16)
         self.setFrameShape(QButtonGroup.NoFrame)
+        self.show()
 
 
 

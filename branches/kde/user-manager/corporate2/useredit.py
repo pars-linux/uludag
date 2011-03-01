@@ -833,14 +833,23 @@ class PolicyTab(QVBox):
         #put all necessary actions to listview
         self.fillAuths()
 
-        self.connect(self.policylist, PYSIGNAL("expanded"), self.policyListExpanded)
-        #self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
+        #self.connect(self.policylist, PYSIGNAL("expanded"), self.policyListExpanded)
+        self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
         #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
 
         #self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
         #self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
         #self.connect(self.policyview, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.showPopup)
 
+    def policyListClicked(self, event, item):
+        if event.type() == QEvent.MouseButtonDblClick:
+            if isinstance(item, CategoryItem) and not item.isFilled:
+                self.fillCategory(item)
+
+    def policyListExpanded(self, item):
+        print 'expanded'
+        #if isinstance(item, CategoryItem) and not item.isFilled:
+        #    self.fillCategory(item)
 
     def showPopup(self, item, point, column):
         if item.depth() != 1:
@@ -965,8 +974,8 @@ class PolicyTab(QVBox):
 
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
-            #radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-            #            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+            radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+                        PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
             self.policylist.add(catitem)
             #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
             #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
@@ -1133,18 +1142,6 @@ class PolicyTab(QVBox):
                     actioninfo = polkit.action_info(i)
                     if actioninfo['policy_active'].startswith("auth_"):
                         actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])"""
-
-    def policyListExpanded(self, item):
-        if not item:
-            return
-        if isinstance(item, CategoryItem) and not item.isFilled:
-            self.fillCategory(item)
-
-        #kaldır bunu burdan
-        """elif isinstance(item, CategoryItem):
-            # manually call resizeEvent to put the widgets right place
-            for i in item.getChilds():
-                i.resizeEvent(QResizeEvent(QSize(i.width(), i.height()), QSize(i.width(), i.height())))"""
 
     def listviewExpanded(self, item):
         return
