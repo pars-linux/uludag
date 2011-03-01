@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/insecure64.png</file>
+    <file>icons/secure64.png</file>
+    <file>icons/undo48.png</file>
+    <file>icons/list48.png</file>
     <file>icons/firewall48.png</file>
   </qresource>
 </RCC>
