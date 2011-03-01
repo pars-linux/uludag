@@ -16,6 +16,10 @@
     <file>gui/pics/utilities-terminal-big.png</file>
     <file>gui/pics/logo-on-black.png</file>
     <file>gui/pics/caps.png</file>
+    <file>gui/pics/user-desktop.png</file>
+    <file>gui/pics/network-server.png</file>
+    <file>gui/pics/gnome-term.png</file>
+    <file>gui/pics/systemsettings.png</file>
     <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
     <file>gui/pics/dialog-warning.png</file>
