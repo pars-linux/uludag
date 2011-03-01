@@ -315,7 +315,7 @@ class Repository:
             if collection.default:
                 collectionTag.setAttribute("default", collection.default)
             collectionTag.insertTag("id").insertData(collection._id)
-            collectionTag.insertTag("icon").insertData(os.path.basename(collection.icon))
+            collectionTag.insertTag("icon").insertData(collection.icon)
             translationsTag = collectionTag.insertTag("translations")
             translationsTag.setAttribute("default", default_language)
             for languageCode, translation in collection.translations.items():

@@ -43,12 +43,12 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
         else:
             self.tmpCollection = PackageCollection(packages=PackageSet(self.repo_uri))
 
+        self.connect(self.titleText, SIGNAL("textChanged(const QString &)"), self.titleChanged)
+        self.connect(self.descriptionText, SIGNAL("textChanged()"), self.descriptionChanged)
         self.connect(self.languagesCombo, SIGNAL("currentIndexChanged(int)"), self.updateTranslations)
-        self.connect(self.saveButton, SIGNAL("clicked()"), self.saveTranslations)
         self.connect(self.packagesButton, SIGNAL("clicked()"), self.slotSelectPackages)
         self.connect(self.selectIcon, SIGNAL("clicked()"), self.slotSelectIcon)
         self.connect(self.clearIcon, SIGNAL("clicked()"), self.slotClearIcon)
-
         self.connect(self.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.buttonBox, SIGNAL("rejected()"), self.reject)
         self.fillContent()
@@ -58,7 +58,7 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
         self.descriptionText.clear()
         if self.project.selected_languages:
             missingTranslations = set(self.project.selected_languages) - set(self.tmpCollection.translations)
-            if  missingTranslations:
+            if missingTranslations:
                 for code in missingTranslations:
                     self.tmpCollection.translations[code] = ("", "")
             for code in self.project.selected_languages:
@@ -74,14 +74,8 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
             self.descriptionText.setPlainText(unicode(self.tmpCollection.translations[self.project.default_language][1]))
 
         if self.tmpCollection.icon:
-            if os.path.exists(self.tmpCollection.icon):
-                self.icon.setPixmap(QPixmap(self.tmpCollection.icon))
-
-        if self.tmpCollection.packages:
-            self.packagesLabel.setText("Selected Components:%s \n Selected Packages:%s" %
-                                    (len(self.tmpCollection.packages.selectedComponents), len(self.tmpCollection.packages.selectedPackages)))
-        else:
-            self.packagesLabel.setText("ID:YOK" )
+            if os.path.exists(os.path.join(os.getcwd(), "icons", self.tmpCollection.icon)):
+                self.icon.setPixmap(QPixmap(os.path.join(os.getcwd(), "icons", self.tmpCollection.icon)))
 
     def updateTranslations(self, currentIndex):
         code = unicode(self.languagesCombo.itemData(currentIndex).toString())
@@ -89,9 +83,17 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
             self.titleText.setText(unicode(self.tmpCollection.translations[code][0]))
             self.descriptionText.setPlainText(unicode(self.tmpCollection.translations[code][1]))
 
-    def saveTranslations(self):
-        code = unicode(self.languagesCombo.itemData(self.languagesCombo.currentIndex()).toString())
-        self.tmpCollection.translations[code] = (unicode(self.titleText.text()), unicode(self.descriptionText.toPlainText()))
+    def titleChanged(self, text):
+        code = str(self.languagesCombo.itemData(self.languagesCombo.currentIndex()).toString())
+        if code and self.tmpCollection.translations[code]:
+            translations = self.tmpCollection.translations[code]
+            self.tmpCollection.translations[code] = (unicode(text), translations[1])
+
+    def descriptionChanged(self):
+        code = str(self.languagesCombo.itemData(self.languagesCombo.currentIndex()).toString())
+        if code and self.tmpCollection.translations[code]:
+            translations = self.tmpCollection.translations[code]
+            self.tmpCollection.translations[code] = (translations[0], unicode(self.descriptionText.toPlainText()))
 
     def accept(self):
         if self.origCollection:
@@ -99,8 +101,6 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
                 self.tmpCollection._id = random_id()
 
         self.collection = self.tmpCollection
-        self.titleText.clear()
-        self.descriptionText.clear()
         QDialog.accept(self)
 
     def slotSelectIcon(self):
@@ -109,7 +109,7 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
                                                "*.png")
         if iconPath:
             if self.tmpCollection:
-                self.tmpCollection.icon = unicode(iconPath)
+                self.tmpCollection.icon = unicode(os.path.basename(unicode(iconPath)))
             self.icon.setPixmap(QPixmap(iconPath))
 
     def slotClearIcon(self):
