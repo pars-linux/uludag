@@ -156,8 +156,10 @@ def configure():
     make("oldconfig")
 
     # Check configuration with listnewconfig
-    # listnewconfig does not work yet.
-    # make("listnewconfig %s" % __getKernelARCH())
+    try:
+        make("listnewconfig %s" % __getKernelARCH())
+    except:
+        pass
 
 ###################################
 # Building and installation stuff #

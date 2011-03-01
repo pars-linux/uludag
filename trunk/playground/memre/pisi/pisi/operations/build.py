@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2010, TUBITAK/UEKAE
+# Copyright (C) 2005-2011, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -116,7 +116,7 @@ def check_path_collision(package, pkgList):
     return collisions
 
 def exclude_special_files(filepath, fileinfo, ag):
-    keeplist = [] if not ag.has_key('KeepSpecial') else ag['KeepSpecial']
+    keeplist = ag.get("KeepSpecial", [])
     patterns = {"libtool": "libtool library file",
                 "python":  "python.*byte-compiled",
                 "perl":    "Perl POD document text"}
@@ -136,30 +136,32 @@ def exclude_special_files(filepath, fileinfo, ag):
             if new_ladata != ladata:
                 file(filepath, "w").write(new_ladata)
 
-    for pattern in patterns.keys():
-        if not pattern in keeplist and re.match(patterns[pattern], fileinfo):
-            ctx.ui.debug("Removing special %s file: %s" % (pattern, filepath))
+    for name, pattern in patterns.items():
+        if name in keeplist:
+            continue
+
+        if re.match(pattern, fileinfo):
+            ctx.ui.debug("Removing special %s file: %s" % (name, filepath))
             os.unlink(filepath)
             # Remove dir if it becomes empty (Bug #11588)
             util.rmdirs(os.path.dirname(filepath))
 
 def strip_debug_action(filepath, fileinfo, install_dir, ag):
-    excludelist = [] if not ag.has_key('NoStrip') else ag['NoStrip']
+    excludelist = tuple(ag.get("NoStrip", []))
+
+    # real path in .pisi package
+    path = '/' + util.removepathprefix(install_dir, filepath)
+
+    if path.startswith(excludelist):
+        return
+
     outputpath = util.join_path(os.path.dirname(install_dir),
                                 ctx.const.debug_dir_suffix,
                                 ctx.const.debug_files_suffix,
-                                util.remove_prefix(install_dir, filepath))
+                                path)
 
-    # real path in .pisi package
-    p = '/' + util.removepathprefix(install_dir, filepath)
-    strip = True
-    for exclude in excludelist:
-        if p.startswith(exclude):
-            strip = False
-
-    if strip:
-        if util.strip_file(filepath, fileinfo, outputpath):
-            ctx.ui.debug("%s [%s]" % (p, "stripped"))
+    if util.strip_file(filepath, fileinfo, outputpath):
+        ctx.ui.debug("%s [%s]" % (path, "stripped"))
 
 class Builder:
     """Provides the package build and creation routines"""
@@ -220,11 +222,14 @@ class Builder:
 
         self.read_translations(self.specdir)
 
-        self.sourceArchives = pisi.sourcearchive.SourceArchives(
-                                                        self.spec,
-                                                        self.pkg_work_dir())
+        self.sourceArchives = pisi.sourcearchive.SourceArchives(self.spec)
 
-        self.set_environment_vars()
+        self.build_types = self.get_build_types()
+
+        # Use an empty string for the default build
+        self.set_build_type("")
+
+        self.check_paths()
 
         self.actionLocals = None
         self.actionGlobals = None
@@ -281,7 +286,8 @@ class Builder:
                               packageDir)
 
     def pkg_work_dir(self):
-        return self.pkg_dir() + ctx.const.work_dir_suffix
+        suffix = "-%s" % self.build_type if self.build_type else ""
+        return self.pkg_dir() + ctx.const.work_dir_suffix + suffix
 
     def pkg_debug_dir(self):
         return self.pkg_dir() + ctx.const.debug_dir_suffix
@@ -315,7 +321,6 @@ class Builder:
         ctx.ui.status(_("Building source package: %s")
                       % self.spec.source.name)
 
-        self.load_action_script()
         self.compile_comar_script()
 
         # check if all patch files exists, if there are missing no need
@@ -325,16 +330,47 @@ class Builder:
         self.check_build_dependencies()
         self.fetch_component()
         self.fetch_source_archives()
-        self.unpack_source_archives()
 
-        self.run_setup_action()
-        self.run_build_action()
-        if ctx.get_option('debug') and not ctx.get_option('ignore_check'):
-            self.run_check_action()
-        self.run_install_action()
+        for build_type in self.build_types:
+            self.set_build_type(build_type)
+            self.unpack_source_archives()
+
+            self.run_setup_action()
+            self.run_build_action()
+            if ctx.get_option('debug') and not ctx.get_option('ignore_check'):
+                self.run_check_action()
+            self.run_install_action()
 
         # after all, we are ready to build/prepare the packages
         self.build_packages()
+
+    def get_build_types(self):
+        ignored_build_types = \
+                ctx.config.values.build.ignored_build_types.split(",")
+        build_types = [""]
+        packages = []
+
+        for package in self.spec.packages:
+            if package.buildType:
+                if package.buildType in ignored_build_types:
+                    continue
+
+                if package.buildType not in build_types:
+                    build_types.append(package.buildType)
+
+            packages.append(package)
+
+        self.spec.packages = packages
+
+        return build_types
+
+    def set_build_type(self, build_type):
+        if build_type:
+            ctx.ui.action(_("Rebuilding for %s") % build_type)
+
+        self.build_type = build_type
+        self.set_environment_vars()
+        self.load_action_script()
 
     def set_environment_vars(self):
         """Sets the environment variables for actions API to use"""
@@ -346,6 +382,7 @@ class Builder:
         env = {"PKG_DIR": self.pkg_dir(),
                "WORK_DIR": self.pkg_work_dir(),
                "INSTALL_DIR": self.pkg_install_dir(),
+               "PISI_BUILD_TYPE": self.build_type,
                "SRC_NAME": self.spec.source.name,
                "SRC_VERSION": self.spec.getSourceVersion(),
                "SRC_RELEASE": self.spec.getSourceRelease()}
@@ -402,19 +439,17 @@ class Builder:
             pass
 
     def fetch_patches(self):
-        spec = self.spec
-        for patch in spec.source.patches:
-            file_name = os.path.basename(patch.filename)
+        for patch in self.spec.source.patches:
             dir_name = os.path.dirname(patch.filename)
             patchuri = util.join_path(self.specdiruri,
-                            ctx.const.files_dir, dir_name, file_name)
+                                      ctx.const.files_dir,
+                                      patch.filename)
             self.download(patchuri, util.join_path(self.destdir,
                                                    ctx.const.files_dir,
                                                    dir_name))
 
     def fetch_comarfiles(self):
-        spec = self.spec
-        for package in spec.packages:
+        for package in self.spec.packages:
             for pcomar in package.providesComar:
                 comaruri = util.join_path(self.specdiruri,
                                 ctx.const.comar_dir, pcomar.script)
@@ -438,41 +473,43 @@ class Builder:
         pisi.file.File.download(uri, transferdir)
 
     def fetch_component(self):
-        if not self.spec.source.partOf:
-            ctx.ui.info(_('PartOf tag not defined, looking for component'))
-            diruri = util.parenturi(self.specuri.get_uri())
-            parentdir = util.parenturi(diruri)
-            url = util.join_path(parentdir, 'component.xml')
-            progress = ctx.ui.Progress
-            if pisi.uri.URI(url).is_remote_file():
-                try:
-                    pisi.fetcher.fetch_url(url, self.pkg_work_dir(), progress)
-                except pisi.fetcher.FetchError:
-                    ctx.ui.warning(_("Cannot find component.xml in remote "
-                                     "directory, Source is now part of "
-                                     "unknown component"))
-                    self.spec.source.partOf = 'unknown'
-                    return
-                path = util.join_path(self.pkg_work_dir(), 'component.xml')
-            else:
-                if not os.path.exists(url):
-                    ctx.ui.warning(_("Cannot find component.xml in upper "
-                                     "directory, Source is now part of "
-                                     "unknown component"))
-                    self.spec.source.partOf = 'unknown'
-                    return
-                path = url
-            comp = component.CompatComponent()
-            comp.read(path)
-            ctx.ui.info(_('Source is part of %s component') % comp.name)
-            self.spec.source.partOf = comp.name
+        if self.spec.source.partOf:
+            return
+
+        ctx.ui.info(_('PartOf tag not defined, looking for component'))
+        diruri = util.parenturi(self.specuri.get_uri())
+        parentdir = util.parenturi(diruri)
+        url = util.join_path(parentdir, 'component.xml')
+        progress = ctx.ui.Progress
+        if pisi.uri.URI(url).is_remote_file():
+            try:
+                pisi.fetcher.fetch_url(url, self.pkg_work_dir(), progress)
+            except pisi.fetcher.FetchError:
+                ctx.ui.warning(_("Cannot find component.xml in remote "
+                                 "directory, Source is now part of "
+                                 "unknown component"))
+                self.spec.source.partOf = 'unknown'
+                return
+            path = util.join_path(self.pkg_work_dir(), 'component.xml')
+        else:
+            if not os.path.exists(url):
+                ctx.ui.warning(_("Cannot find component.xml in upper "
+                                 "directory, Source is now part of "
+                                 "unknown component"))
+                self.spec.source.partOf = 'unknown'
+                return
+            path = url
+        comp = component.CompatComponent()
+        comp.read(path)
+        ctx.ui.info(_('Source is part of %s component') % comp.name)
+        self.spec.source.partOf = comp.name
 
     def fetch_source_archives(self):
         self.sourceArchives.fetch()
 
     def unpack_source_archives(self):
-        ctx.ui.info(_("Unpacking archive(s)..."))
-        self.sourceArchives.unpack()
+        ctx.ui.action(_("Unpacking archive(s)..."))
+        self.sourceArchives.unpack(self.pkg_work_dir())
         # apply the patches and prepare a source directory for build.
         if self.apply_patches():
             # Grab AdditionalFiles
@@ -498,8 +535,8 @@ class Builder:
     def run_install_action(self):
         ctx.ui.action(_("Installing..."))
 
-        # Before install make sure install_dir is clean
-        if os.path.exists(self.pkg_install_dir()):
+        # Before the default install make sure install_dir is clean
+        if not self.build_type and os.path.exists(self.pkg_install_dir()):
             util.clean_dir(self.pkg_install_dir())
 
         # install function is mandatory!
@@ -509,7 +546,7 @@ class Builder:
     def get_abandoned_files(self):
         # return the files those are not collected from the install dir
 
-        install_dir = self.pkg_dir() + ctx.const.install_dir_suffix
+        install_dir = self.pkg_install_dir()
         abandoned_files = []
         all_paths_in_packages = []
 
@@ -696,6 +733,23 @@ class Builder:
         os.chdir(curDir)
         return True
 
+    def check_paths(self):
+        paths = []
+
+        for package in self.spec.packages:
+            for path_info in package.files:
+                path = os.path.normpath(path_info.path)
+
+                if not path.startswith("/"):
+                    raise Error(_("Path must start with a slash: "
+                                  "%s") % path_info.path)
+
+                if path in paths:
+                    raise Error(_("Multiple 'Path' tags specified "
+                                  "for this path: %s") % path_info.path)
+
+                paths.append(path)
+
     def check_versioning(self, version, release):
         try:
             int(release)
@@ -708,6 +762,9 @@ class Builder:
         """check and try to install build dependencies, otherwise fail."""
 
         build_deps = self.spec.source.buildDependencies
+
+        for package in self.spec.packages:
+            build_deps.extend(package.buildDependencies)
 
         if not ctx.config.values.general.ignore_safety and \
                 not ctx.get_option('ignore_safety'):
@@ -952,7 +1009,7 @@ class Builder:
             if debug_packages:
                 self.spec.packages.extend(debug_packages)
 
-        install_dir = self.pkg_dir() + ctx.const.install_dir_suffix
+        install_dir = self.pkg_install_dir()
 
         # Store additional files
         c = os.getcwd()
@@ -1179,10 +1236,15 @@ def __buildState_installaction(pb, last):
         __buildState_buildaction(pb, last)
     pb.run_install_action()
 
-def __buildState_buildpackages(pb, last):
+def __buildState_buildpackages(pb):
 
-    if order[last] < order["installaction"]:
-        __buildState_installaction(pb, last)
+    for build_type in pb.build_types:
+        pb.set_build_type(build_type)
+        last = pb.get_state() or "none"
+
+        if order[last] < order["installaction"]:
+            __buildState_installaction(pb, last)
+
     pb.build_packages()
 
 def build_until(pspec, state):
@@ -1191,24 +1253,32 @@ def build_until(pspec, state):
     else:
         pb = Builder.from_name(pspec)
 
-    pb.load_action_script()
     pb.compile_comar_script()
-
-    last = pb.get_state()
-    ctx.ui.info("Last state was %s"%last)
-
-    if not last: last = "none"
 
     if state == "fetch":
         __buildState_fetch(pb)
         return
 
+    # from now on build dependencies are needed
+    pb.check_build_dependencies()
+
+    if state == "package":
+        __buildState_buildpackages(pb)
+        return
+
+    for build_type in pb.build_types:
+        pb.set_build_type(build_type)
+        last = pb.get_state() or "none"
+
+        __build_until(pb, state, last)
+
+
+def __build_until(pb, state, last):
+    ctx.ui.info("Last state was %s" % last)
+
     if state == "unpack":
         __buildState_unpack(pb, last)
         return
-
-    # from now on build dependencies are needed
-    pb.check_build_dependencies()
 
     if state == "setup":
         __buildState_setupaction(pb, last)
@@ -1224,6 +1294,3 @@ def build_until(pspec, state):
 
     if state == "install":
         __buildState_installaction(pb, last)
-        return
-
-    __buildState_buildpackages(pb, last)

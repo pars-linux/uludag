@@ -34,6 +34,7 @@ def exportFlags():
     os.environ['TARGET'] = values.build.target
     os.environ['CFLAGS'] = values.build.cflags
     os.environ['CXXFLAGS'] = values.build.cxxflags
+    os.environ['CPPFLAGS'] = values.build.cppflags
     os.environ['LDFLAGS'] = values.build.ldflags
     os.environ['USER_LDFLAGS'] = values.build.ldflags
     os.environ['JOBS'] = values.build.jobs
@@ -67,6 +68,7 @@ class Env(object):
             'pkg_dir': 'PKG_DIR',
             'work_dir': 'WORK_DIR',
             'install_dir': 'INSTALL_DIR',
+            'build_type': 'PISI_BUILD_TYPE',
             'src_name': 'SRC_NAME',
             'src_version': 'SRC_VERSION',
             'src_release': 'SRC_RELEASE',
