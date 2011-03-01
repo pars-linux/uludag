@@ -81,7 +81,9 @@ class GeneralDefaults:
 class BuildDefaults:
     """Default values for [build] section"""
     build_host = "localhost"
+    build = "i686-pc-linux-gnu"
     host = "i686-pc-linux-gnu"
+    target = "i686-pc-linux-gnu"
     jobs = "-j3"
     generateDebug = False
     enableSandbox = True
@@ -94,6 +96,7 @@ class BuildDefaults:
     crosscompiling = False
     fallback = "ftp://ftp.pardus.org.tr/pub/source/2009"
     max_delta_count = 0
+    ignored_build_types = ""
 
 class DirectoriesDefaults:
     "Default values for [directories] section"
