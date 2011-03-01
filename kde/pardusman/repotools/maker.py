@@ -299,13 +299,6 @@ ResultActive=yes
     f.write(policykit_conf_tmpl)
     f.close()
 
-def copyCollectionIcon(project):
-    image_dir = project.image_dir()
-    destination = os.path.join(image_dir, "usr/share/yali/data")
-    collectionDir = os.path.join(destination, "index")
-    for collection in project.package_collections:
-        run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
-
 def copyPisiIndex(project):
     image_dir = project.image_dir()
     if project.package_collections:
@@ -320,13 +313,10 @@ def copyPisiIndex(project):
             source = os.path.join(project.install_repo_dir(), "%s-index.xml.bz2" % collection._id)
             run('cp -PR "%s" "%s"' % (source, collectionDir))
             run('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir, os.path.basename(source))))
-            run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
-
+            #run('cp -PR "%s" "%s"' % (os.path.join(os.getcwd(), "icons", collection.icon), collectionDir))
             #print('cp -PR "%s" "%s"' % (source, collectionDir))
             #print('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
             #print('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
-
-        copyCollectionIcon(project)
 
     # Copy All Collection Packages index as pisi index dvd and default cd installation
     yali_data_dir = os.path.join(image_dir, "usr/share/yali/data")

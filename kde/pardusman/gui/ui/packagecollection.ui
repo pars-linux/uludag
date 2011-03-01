@@ -14,115 +14,17 @@
    <string>Dialog</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
-   <item row="0" column="0">
-    <layout class="QVBoxLayout">
-     <item>
-      <widget class="QLabel" name="icon">
-       <property name="minimumSize">
-        <size>
-         <width>96</width>
-         <height>96</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>96</width>
-         <height>96</height>
-        </size>
-       </property>
-       <property name="frameShape">
-        <enum>QFrame::Box</enum>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Plain</enum>
-       </property>
-       <property name="text">
-        <string>No Icon</string>
-       </property>
-       <property name="textFormat">
-        <enum>Qt::RichText</enum>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="_2">
-       <property name="spacing">
-        <number>5</number>
-       </property>
-       <item>
-        <spacer>
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QToolButton" name="selectIcon">
-         <property name="toolTip">
-          <string>Select Photo</string>
-         </property>
-         <property name="whatsThis">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="raw.qrc">
-           <normaloff>:/raw/pics/view-preview.png</normaloff>:/raw/pics/view-preview.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QToolButton" name="clearIcon">
-         <property name="toolTip">
-          <string>Clear Photo</string>
-         </property>
-         <property name="statusTip">
-          <string/>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="raw.qrc">
-           <normaloff>:/raw/pics/edit-clear-locationbar-rtl.png</normaloff>:/raw/pics/edit-clear-locationbar-rtl.png</iconset>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
-   </item>
-   <item row="0" column="1">
-    <spacer name="spacer">
+   <item row="1" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Minimum</enum>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>16</width>
-       <height>130</height>
-      </size>
-     </property>
-    </spacer>
+    </widget>
    </item>
-   <item row="0" column="2">
+   <item row="0" column="1">
     <layout class="QGridLayout" name="gridLayout">
      <item row="0" column="0">
       <widget class="QLabel" name="titleLabel">
@@ -143,7 +45,7 @@
      <item row="0" column="1">
       <widget class="QLineEdit" name="titleText"/>
      </item>
-     <item row="1" column="1" rowspan="4">
+     <item row="1" column="1" rowspan="5">
       <widget class="QTextEdit" name="descriptionText"/>
      </item>
      <item row="1" column="0">
@@ -159,83 +61,127 @@
        </property>
       </widget>
      </item>
-     <item row="1" column="2">
-      <widget class="QPushButton" name="saveButton">
-       <property name="text">
-        <string>Save</string>
-       </property>
-       <property name="icon">
-        <iconset resource="raw.qrc">
-         <normaloff>:/raw/pics/document-save.png</normaloff>:/raw/pics/document-save.png</iconset>
-       </property>
-      </widget>
-     </item>
      <item row="0" column="2">
       <widget class="QComboBox" name="languagesCombo"/>
      </item>
-     <item row="2" column="2">
+     <item row="1" column="2">
+      <layout class="QVBoxLayout">
+       <item>
+        <widget class="QLabel" name="icon">
+         <property name="minimumSize">
+          <size>
+           <width>96</width>
+           <height>96</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>96</width>
+           <height>96</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Plain</enum>
+         </property>
+         <property name="text">
+          <string>No Icon</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::RichText</enum>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="_2">
+         <property name="spacing">
+          <number>5</number>
+         </property>
+         <item>
+          <spacer>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Minimum</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="selectIcon">
+           <property name="toolTip">
+            <string>Select Photo</string>
+           </property>
+           <property name="whatsThis">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="raw.qrc">
+             <normaloff>:/raw/pics/view-preview.png</normaloff>:/raw/pics/view-preview.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="clearIcon">
+           <property name="toolTip">
+            <string>Clear Photo</string>
+           </property>
+           <property name="statusTip">
+            <string/>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="raw.qrc">
+             <normaloff>:/raw/pics/edit-clear-locationbar-rtl.png</normaloff>:/raw/pics/edit-clear-locationbar-rtl.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item row="6" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="5" column="2">
       <widget class="QPushButton" name="packagesButton">
        <property name="text">
         <string>Packages</string>
        </property>
       </widget>
      </item>
-     <item row="3" column="2">
-      <widget class="QLabel" name="packagesLabel">
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </item>
     </layout>
-   </item>
-   <item row="1" column="2">
-    <widget class="QDialogButtonBox" name="buttonBox">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-     </property>
-    </widget>
    </item>
   </layout>
  </widget>
  <resources>
   <include location="raw.qrc"/>
  </resources>
- <connections>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>accepted()</signal>
-   <receiver>PackageCollectionDialog</receiver>
-   <slot>accept()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>248</x>
-     <y>254</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>157</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>buttonBox</sender>
-   <signal>rejected()</signal>
-   <receiver>PackageCollectionDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>316</x>
-     <y>260</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>286</x>
-     <y>274</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
