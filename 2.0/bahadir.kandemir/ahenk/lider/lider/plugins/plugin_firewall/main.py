@@ -48,6 +48,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         self.setupUi(self)
 
         # UI events
+        self.connect(self.radioEnable, QtCore.SIGNAL("clicked()"), self.__slot_status)
+        self.connect(self.radioDisable, QtCore.SIGNAL("clicked()"), self.__slot_status)
         self.connect(self.pushEdit, QtCore.SIGNAL("clicked()"), self.__slot_edit)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
 
@@ -77,7 +79,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
             Not required for global widgets.
         """
         firewallState = policy.get("firewallState", ["off"])[0]
-        self.groupFirewall.setChecked(firewallState == "on")
+        if firewallState == "on":
+            self.radioEnable.setChecked(True)
+        else:
+            self.radioDisable.setChecked(True)
+        self.__slot_status()
 
         firewallRules = policy.get("firewallRules", [""])[0]
 
@@ -105,7 +111,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
             Not required for global widgets.
         """
         firewallState = "off"
-        if self.groupFirewall.isChecked():
+        if self.radioEnable.isChecked():
             firewallState = "on"
 
         rules_xml = bz2.compress(self.rules_xml)
@@ -156,9 +162,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
 
-        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh %s" % (name, name, fw_name))
-        if ret != 0:
-            self.labelFirewall.setText("Unable to compile firewall rules.")
+        process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if process.wait() != 0:
+            self.labelFirewall.setText("Unable to compile firewall rules:\n\n%s" % process.stderr.read())
             return
 
         self.rules_xml = file(name).read()
@@ -177,9 +183,21 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
 
-        ret = os.system("/usr/bin/fwb_ipt -q -f %s -o %s.sh %s" % (name, name, fw_name))
-        if ret != 0:
+        process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if process.wait() != 0:
             return
 
         self.rules_xml = file(name).read()
         self.rules_compiled = file(name + ".sh").read()
+
+    def __slot_status(self):
+        """
+            Triggered when user changes firewall status.
+        """
+        if self.radioEnable.isChecked():
+            icon = wrappers.Icon("secure64", 64)
+        else:
+            icon = wrappers.Icon("insecure64", 64)
+
+        pixmap = icon.pixmap(64, 64)
+        self.pixmapStatus.setPixmap(pixmap)
