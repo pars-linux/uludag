@@ -34,7 +34,7 @@ def exportFlags():
     os.environ['TARGET'] = values.build.target
     os.environ['CFLAGS'] = values.build.cflags
     os.environ['CXXFLAGS'] = values.build.cxxflags
-    os.environ['CPPFLAGS'] = values.build.cppflags
+    os.environ['CPPFLAGS'] = values.build.cppflags or ""
     os.environ['LDFLAGS'] = values.build.ldflags
     os.environ['USER_LDFLAGS'] = values.build.ldflags
     os.environ['JOBS'] = values.build.jobs
@@ -49,7 +49,7 @@ def exportFlags():
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
         os.environ['ARCH']      = values.general.architecture
 
-        os.environ['CPPFLAGS']  = "%s -isystem%s/usr/include" % (values.build.cppflags, sysroot)
+        os.environ['CPPFLAGS'] += " -isystem%s/usr/include" % values.build.cppflags
         os.environ['CFLAGS']   += " -I%s/usr/include" % sysroot
         os.environ['CXXFLAGS'] += " -I%s/usr/include" % sysroot
         os.environ['LDFLAGS']  += " -L%(sysroot)s/lib -Wl,-rpath-link,%(sysroot)s/lib \
@@ -75,6 +75,7 @@ class Env(object):
             'build': 'BUILD',
             'host': 'HOST',
             'target': 'TARGET',
+            'cppflags': 'CFLAGS',
             'cflags': 'CFLAGS',
             'cxxflags': 'CXXFLAGS',
             'ldflags': 'LDFLAGS',
