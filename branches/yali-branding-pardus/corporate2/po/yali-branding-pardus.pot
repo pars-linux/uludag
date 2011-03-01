@@ -8,11 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-03 09:32+0200\n"
+"POT-Creation-Date: 2011-03-01 10:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,6 +219,14 @@ msgstr ""
 
 #: ../release.xml.in.h:28
 msgid ""
+"Pardus Corporate 2 offers different installation scenarios upon your needs. "
+"So you may able to choose to install a fully desktop workspace or server "
+"applications or even a base system where you can install your choice of "
+"softwares manually."
+msgstr ""
+
+#: ../release.xml.in.h:29
+msgid ""
 "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
 "with a long term support. You can still enjoy the powerful parade of all "
 "free and open source softwares included in Pardus with keeping in mind this "
@@ -227,7 +234,7 @@ msgid ""
 "these features..."
 msgstr ""
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -236,7 +243,7 @@ msgid ""
 "administrative and configuration tasks."
 msgstr ""
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:31
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, and various softwares of the GNU "
@@ -250,27 +257,31 @@ msgid ""
 "have to accept all the terms to install Pardus on your computer."
 msgstr ""
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid "Partition your disk manually"
 msgstr ""
 
-#: ../release.xml.in.h:32
-msgid "Select a partitioning method"
-msgstr ""
-
 #: ../release.xml.in.h:33
-msgid "Set your local time and date"
+msgid "Select a collection"
 msgstr ""
 
 #: ../release.xml.in.h:34
-msgid "Setup your account"
+msgid "Select a partitioning method"
 msgstr ""
 
 #: ../release.xml.in.h:35
-msgid "Summary"
+msgid "Set your local time and date"
 msgstr ""
 
 #: ../release.xml.in.h:36
+msgid "Setup your account"
+msgstr ""
+
+#: ../release.xml.in.h:37
+msgid "Summary"
+msgstr ""
+
+#: ../release.xml.in.h:38
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -283,13 +294,13 @@ msgid ""
 "help of Kaptan in your very first boot."
 msgstr ""
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
 msgstr ""
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -299,11 +310,11 @@ msgid ""
 "CD)."
 msgstr ""
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid "Welcome back..."
 msgstr ""
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -318,7 +329,7 @@ msgid ""
 "future problems."
 msgstr ""
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -328,7 +339,7 @@ msgid ""
 "features and the innovations offered by this new Pardus release."
 msgstr ""
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -337,7 +348,7 @@ msgid ""
 "in virtual machies)."
 msgstr ""
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -345,7 +356,7 @@ msgid ""
 "the dvd or release the image in virtual machies)."
 msgstr ""
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -362,7 +373,7 @@ msgid ""
 "our website."
 msgstr ""
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -370,7 +381,7 @@ msgid ""
 "between different partitioning options."
 msgstr ""
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "

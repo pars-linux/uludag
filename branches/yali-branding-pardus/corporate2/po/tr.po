@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-02 22:55+0200\n"
+"POT-Creation-Date: 2011-03-01 10:03+0200\n"
 "PO-Revision-Date: 2011-02-16 16:11+0200\n"
 "Last-Translator: Koray Löker <loker@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: ../release.xml.in.h:1
 msgid ""
@@ -105,10 +105,11 @@ msgid ""
 msgstr ""
 "Tarih ve saat ayarları bilgisayarınızın tarih ve saatini ayarlamanızı "
 "sağlar. Yaz saati uygulamalarından doğru faydalanabilmek için bulunduğunuz "
-"bölgeye göre doğru zaman dilimini seçmeniz gerektiğini unutmayın.&lt;br&gt;&lt;br&gt;"
-"Zaman dilimleri, bölgesel olarak belirlenmiş standart zaman ayarları sunar "
-"ve genellikle yerel saat olarak anılır. Zaman dilimleri, yerel zamanlarını, "
-"UTC evrensel zamanına göre belirli bir kayma miktarıyla belirler."
+"bölgeye göre doğru zaman dilimini seçmeniz gerektiğini unutmayın.&lt;br&gt;"
+"&lt;br&gt;Zaman dilimleri, bölgesel olarak belirlenmiş standart zaman "
+"ayarları sunar ve genellikle yerel saat olarak anılır. Zaman dilimleri, "
+"yerel zamanlarını, UTC evrensel zamanına göre belirli bir kayma miktarıyla "
+"belirler."
 
 #: ../release.xml.in.h:10
 msgid ""
@@ -144,7 +145,8 @@ msgstr "Pardus kurmaya hazır olun"
 
 #: ../release.xml.in.h:13
 msgid "Help will be included when Kahya implementation is complete."
-msgstr "Kahya uygulaması geliştirmesi tamamlandığında yardım metni eklenecektir."
+msgstr ""
+"Kahya uygulaması geliştirmesi tamamlandığında yardım metni eklenecektir."
 
 #: ../release.xml.in.h:14
 msgid ""
@@ -196,9 +198,9 @@ msgstr ""
 "Pardus Kurumsal 2'de masaüstü ortamı olarak KDE 3.5'i tercih ediyor. Böylece "
 "KDE konusundaki bilgi birikimiyle size güçlü bir masaüstü deneyimi ve hem "
 "kişisel hem de kurumsal ihtiyaçlarınızı karşılayacak başarılı bir yazılım "
-"seçkisi sunuyor. &lt;br&gt;&lt;br&gt; Pardus bünyesinde geliştirilen araçların "
-"KDE uyumlu teknolojilerle yazılmış olması, tüm çalışma ortamınızın ve sistem "
-"yönetiminin bütünlüklü biçimde kullanımını sağlıyor."
+"seçkisi sunuyor. &lt;br&gt;&lt;br&gt; Pardus bünyesinde geliştirilen "
+"araçların KDE uyumlu teknolojilerle yazılmış olması, tüm çalışma ortamınızın "
+"ve sistem yönetiminin bütünlüklü biçimde kullanımını sağlıyor."
 
 #: ../release.xml.in.h:20
 msgid "Kahya"
@@ -292,11 +294,11 @@ msgstr ""
 "ayarlanacak. Bu yönetici hesabı günlük işlemleri yapmak için doğru bir "
 "tercih olmayabilir. Bu nedenle, bu ekranı kullanarak yeni kullanıcı "
 "hesapları tanımlayabilirsiniz. &lt;br&gt;&lt;br&gt;İlk eklenen kullanıcı, "
-"aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. "
-"Bu yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi "
-"seçeneklere Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; "
-"Kurulumdan sonra kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem "
-"Ayarlarında Kullanıcı Yöneticisini bulabilirsiniz."
+"aksini belirtmezseniz yönetici hakları kullanma yetkisine sahip olur. Bu "
+"yetkiyi kaldırmak, elle kullanıcı ID numarası belirlemek gibi seçeneklere "
+"Gelişmiş menüden ulaşabilirsiniz. &lt;br&gt;&lt;br&gt; Kurulumdan sonra "
+"kullanıcı hesaplarını yönetmeniz gerektiğinde, Sistem Ayarlarında Kullanıcı "
+"Yöneticisini bulabilirsiniz."
 
 #: ../release.xml.in.h:27
 #, no-c-format
@@ -322,6 +324,14 @@ msgstr ""
 
 #: ../release.xml.in.h:28
 msgid ""
+"Pardus Corporate 2 offers different installation scenarios upon your needs. "
+"So you may able to choose to install a fully desktop workspace or server "
+"applications or even a base system where you can install your choice of "
+"softwares manually."
+msgstr ""
+
+#: ../release.xml.in.h:29
+msgid ""
 "Pardus Corporate 2 offers the stable, fast, easy-to-use Pardus experience "
 "with a long term support. You can still enjoy the powerful parade of all "
 "free and open source softwares included in Pardus with keeping in mind this "
@@ -331,10 +341,9 @@ msgstr ""
 "Pardus Kurumsal 2, sizlere kararlı, hızlı, kullanımı kolay ve uzun süreli "
 "desteklenen bir Pardus deneyimi yaşatmayı teklif ediyor. Özgür ve açık "
 "kaynak yazılımlar geçidinin tadını çıkarırken, bu gücün yıllarca devam "
-"edeceğini unutmayın. Kurulum devam ederken, bu özellikleri "
-"keşfedebilirsiniz."
+"edeceğini unutmayın. Kurulum devam ederken, bu özellikleri keşfedebilirsiniz."
 
-#: ../release.xml.in.h:29
+#: ../release.xml.in.h:30
 msgid ""
 "Pardus have many other in-house developed user friendly manager tools such "
 "as User Manager, Boot Manager, Firewall Manager, Service Manager to "
@@ -348,7 +357,7 @@ msgstr ""
 "yönetim ve yapılandırma araçlarıyla birlikte Sistem Ayarları altında "
 "bulabilirsiniz."
 
-#: ../release.xml.in.h:30
+#: ../release.xml.in.h:31
 msgid ""
 "Pardus is a free and open source operating system that contains many well "
 "known projects such as Linux kernel, and various softwares of the GNU "
@@ -372,27 +381,31 @@ msgstr ""
 "br&gt;Pardus'u bilgisayarınıza kurmak için koşulları kabul etmeniz "
 "gerekmektedir."
 
-#: ../release.xml.in.h:31
+#: ../release.xml.in.h:32
 msgid "Partition your disk manually"
 msgstr "Diski elle bölümlendir"
 
-#: ../release.xml.in.h:32
+#: ../release.xml.in.h:33
+msgid "Select a collection"
+msgstr ""
+
+#: ../release.xml.in.h:34
 msgid "Select a partitioning method"
 msgstr "Bölümleme yöntemi seçin"
 
-#: ../release.xml.in.h:33
+#: ../release.xml.in.h:35
 msgid "Set your local time and date"
 msgstr "Saat ve tarihi ayarlayın"
 
-#: ../release.xml.in.h:34
+#: ../release.xml.in.h:36
 msgid "Setup your account"
 msgstr "Kullanıcı hesabı açın"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
 msgid "Summary"
 msgstr "Özet"
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -413,7 +426,7 @@ msgstr ""
 "yardımcı olacaktır. Kurulumdan sonra Kaptan'ın yardımıyla ona tercih "
 "ettiğiniz menüden ulaşabilirsiniz. "
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
@@ -421,7 +434,7 @@ msgstr ""
 "Kullanıcı hesapları başarıyla yapılandırıldı. İleri tuşuna basarak devam "
 "edebilirsiniz. Parolanızı hatırlıyorsunuz değil mi?"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -431,17 +444,17 @@ msgid ""
 "CD)."
 msgstr ""
 "Kurulum ortamını kontrol etmek için, ortam içindeki paketlerin, depoda yer "
-"alan paketlerden farklı olup olmadıkları, dosya doğrulama yöntemiyle denetlenir."
-"Onay alınamayan durumlar, genellikle kurulum medyasının yazımında bir sorun "
-"olduğunu gösterir. (CD, DVD ya da USB depolama aygıtı). &lt;br&gt;&lt;br&gt; "
-"Optik medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda (DVD için"
-" 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde yazmanızı öneririz."
+"alan paketlerden farklı olup olmadıkları, dosya doğrulama yöntemiyle "
+"denetlenir.Onay alınamayan durumlar, genellikle kurulum medyasının yazımında "
+"bir sorun olduğunu gösterir. (CD, DVD ya da USB depolama aygıtı). &lt;br&gt;"
+"&lt;br&gt; Optik medya kullanıyorsanız (CD ya da DVD gibi), düşük hızda (DVD "
+"için 4x, CD için 8-12x) ve DAO (tek seferde yaz) kipinde yazmanızı öneririz."
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid "Welcome back..."
 msgstr "Tekrar hoş geldiniz..."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -458,17 +471,17 @@ msgstr ""
 "\"Diskin Tamamını Kullan\" seçeneği, diski biçimlendirip (formatlama), LVM "
 "(Mantıksal Hacim Yönetimi) kullanarak sistem,  kullanıcılar, açılış ve takas "
 "dosyaları için dört ayrı disk bölümü yaratır. &lt;br&gt;&lt;br&gt; Eğer "
-"başka bir işletim sistemi kuruluysa ve diskte yeterli yer varsa, \"Mevcut Sistemi "
-"Küçült\" seçeneğini kullanarak, otomatik olarak o diski bölüp yeni bölüm"
-"(ler) yaratarak kurulumu gerçekleştirebilirsiniz. &lt;br&gt;&lt;br&gt; Eğer  "
-"bölümlenmemiş, kullanılmayan 4GB alan varsa (10 GB ve üzeri önerilir),  "
-"\"Boş Alanı Kullan\" seçeneğiyle, bu alanda gerekli disk bölümlerini "
-"yaratabilirsiniz. &lt;br&gt;&lt;br&gt; \"Bölüm Tablosunu Özelleştir\" seçeneğini "
-"kullanarak bölümlendirmeyi kendiniz de yapabilirsiniz. &lt;br&gt;&lt;br&gt; "
-"Her ihtimalde ilerde çıkabilecek problemlere karşı var olan dosyalarınızın "
-"yedeğini almanızı öneririz."
+"başka bir işletim sistemi kuruluysa ve diskte yeterli yer varsa, \"Mevcut "
+"Sistemi Küçült\" seçeneğini kullanarak, otomatik olarak o diski bölüp yeni "
+"bölüm(ler) yaratarak kurulumu gerçekleştirebilirsiniz. &lt;br&gt;&lt;br&gt; "
+"Eğer  bölümlenmemiş, kullanılmayan 4GB alan varsa (10 GB ve üzeri "
+"önerilir),  \"Boş Alanı Kullan\" seçeneğiyle, bu alanda gerekli disk "
+"bölümlerini yaratabilirsiniz. &lt;br&gt;&lt;br&gt; \"Bölüm Tablosunu "
+"Özelleştir\" seçeneğini kullanarak bölümlendirmeyi kendiniz de "
+"yapabilirsiniz. &lt;br&gt;&lt;br&gt; Her ihtimalde ilerde çıkabilecek "
+"problemlere karşı var olan dosyalarınızın yedeğini almanızı öneririz."
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -484,7 +497,7 @@ msgstr ""
 "arkanıza yaslanın ve bu yeni Pardus sürümünde size sunulan özelliklere "
 "keşfedin ve kurulumun keyfini çıkarın."
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -498,7 +511,7 @@ msgstr ""
 "sanal disklerdeki imaj dosyalarının ilişkilendirmesini kaldırarak) emin "
 "olun. "
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -511,7 +524,7 @@ msgstr ""
 "sanal disklerdeki imaj dosyalarının ilişkilendirmesini kaldırarak) emin "
 "olun. "
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -542,7 +555,7 @@ msgstr ""
 "&lt;br&gt; Disk bölümleme ile ilgili daha geniş bilgi için lütfen web "
 "sitemizde bulabileceğiniz Pardus Kurulum ve Kullanım Kılavuzuna bakın. "
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -554,7 +567,7 @@ msgstr ""
 "gerçekleştireceğiniz diski seçin. Sonraki adımda bölümlendirme konusunda "
 "değişik seçeneklerden yararlanabileceksiniz."
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
