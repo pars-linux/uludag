@@ -75,7 +75,7 @@ class Env(object):
             'build': 'BUILD',
             'host': 'HOST',
             'target': 'TARGET',
-            'cppflags': 'CFLAGS',
+            'cppflags': 'CPPFLAGS',
             'cflags': 'CFLAGS',
             'cxxflags': 'CXXFLAGS',
             'ldflags': 'LDFLAGS',
