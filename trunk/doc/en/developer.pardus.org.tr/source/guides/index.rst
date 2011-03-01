@@ -12,5 +12,4 @@ Guides
    rest/index.rst
    licensing/index.rst
    releasing/index.rst
-
-
+   communication/index.rst
