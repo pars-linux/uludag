@@ -44,15 +44,16 @@ class PListView(QScrollView):
         self.layout.setDirection(QVBoxLayout.TopToBottom)
         self.layout.setSpacing(0)
         self.layout.setMargin(0)"""
-        self.setStaticBackground(True)
+        #self.setStaticBackground(True)
         self.enableClipper(True)
-        #self.spacer = QSpacerItem(4, 4, QSizePolicy.Minimum, QSizePolicy.Expanding)
-        #self.layout.insertItem(-1, self.spacer)
 
         self.baseColor = KGlobalSettings.baseColor()
         self.selectedColor = KGlobalSettings.highlightColor()
         self.hoverColor = KGlobalSettings.buttonBackground()
         self.viewport().setPaletteBackgroundColor(self.baseColor)
+
+    def showSelected(self):
+        self.ensureVisible(0, self.visibleitems.index(self.selectedItem)*self.itemHeight)
 
     def clear(self):
         #çocukları da silinecek !!!!!!!!!! böyleyken hepsini siliyo işte
@@ -63,14 +64,11 @@ class PListView(QScrollView):
     def resizeEvent(self, event):
         QScrollView.resizeEvent(self, event)
         self.myResize(self.visibleWidth())
-        self.repaint()
-        #self.layout.removeItem(self.spacer)
-        #self.layout.insertItem(-1, self.spacer)
+        #self.repaint()
 
     def viewportResizeEvent(self, e):
-        for x in self.items:
-            x.resize(self.width(), 24)
-        print ':::::::::::::'
+        for x in self.visibleitems:
+            x.resize(self.width(), self.itemHeight)
 
     def myResize(self, width):
         mw = 0
@@ -112,36 +110,53 @@ class PListView(QScrollView):
                 previous = it
                 it = it.nextItem
 
+    def rootItems(self):
+        rootItems = []
+        it = self.firstItem
+        while it:
+            rootItems.append(it)
+            it = it.nextItem
+        return rootItems
+
+    def shiftLowerItems(self, item):
+        for i in range(self.visibleitems.index(item), len(self.visibleitems)):
+            shiftItem = self.visibleitems[i]
+            self.moveChild(shiftItem, 0, self.visibleitems.index(shiftItem)*self.itemHeight)
+            #print self.visibleitems.index(item)*self.itemHeight
+            #print self.visibleitems[i].name
+
     def add(self, item):
-        # pop spacer
-        #self.layout.removeItem(self.spacer)
-        index = (len(self.items))*24
-        self.addChild(item, 0, index)
-        self.items.append(item)
-        self.visibleitems.append(item)
+        ### Ekleme yapıldığında collapsed ise açılmalı !!!!!!!!
+
+        #self.items.append(item)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
+        #self.visibleitems.append(item)
         if item.parentItem:
-            #index = self.layout.findWidget(item.parentItem)
-            #self.layout.insertWidget(index+1, item)
+            lastChild = item.parentItem.findLastChild()
+            if lastChild:
+                self.items.insert(self.items.index(lastChild)+1, item)
+                self.visibleitems.insert(self.visibleitems.index(lastChild)+1, item)
+            else:
+                self.items.insert(self.items.index(item.parentItem)+1, item)
+                self.visibleitems.insert(self.visibleitems.index(item.parentItem)+1, item)
+            self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
             if item.parentItem.firstChild: # childların sonuna ekle
-                lastChild = item.parentItem.findLastChild()
+                #lastChild = item.parentItem.findLastChild()
                 lastChild.nextItem = item
             else: # first child olarak ekle
                 item.parentItem.firstChild = item
-            #item.reparent(self, 0, QPoint(0,0), False)
+            item.resize(item.parentItem.width(), self.itemHeight)
+            self.shiftLowerItems(item)
         else:
-            # add to end (index = -1)
-            #self.layout.removeItem(self.spacer)
-            #self.layout.insertWidget(-1, item)
-            #self.layout.insertItem(-1, self.spacer)
+            self.items.insert(len(self.items), item) # en sona ekle
+            self.visibleitems.insert(len(self.visibleitems), item) # en sona ekle
+            self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
             if not self.firstItem:
                 self.firstItem = item
             else:
                 lastSibling = self.findLastSibling(self.firstItem)
                 lastSibling.nextItem = item
-        # push spacer
-        #self.layout.insertItem(-1, self.spacer)
         #if item.parentItem:
         #    item.hide()
 
@@ -175,6 +190,7 @@ class PListViewItem(QWidget):
         self.text = text
         self.widgets = []
 
+        self.index = -1
         self.data = data
 
         self.isExpanded = False
@@ -226,6 +242,7 @@ class PListViewItem(QWidget):
     def resetOldSelected(self, item):
         item.isSelected = False
         item.repaint()
+
     # normal listviewde first child olmadığı zaman arrow gözükmez ve + işareti çıkmadığı için tıklama yapılmaz.
     # burda çocuğu olmasa dahi arrow gözükecek ve expanded signali yollanacak, adam slotta denetlesin
     # böyle bir şeyi yapma sebebi, expanded olduğunda listenin altını doldurmak isteği, öbür türlü fake bi kayıt koymak ve sonra
@@ -241,6 +258,7 @@ class PListViewItem(QWidget):
         else:
             self.hideChilds()
             self.parent.emit(PYSIGNAL("collapsed"), (self,))
+        self.parent.shiftLowerItems(self)
         self.parent.resizeEvent(QResizeEvent(QSize(self.width(), self.height()), QSize(self.width(), self.height())))
 
     def eventFilter(self, target, event):
@@ -255,6 +273,7 @@ class PListViewItem(QWidget):
                 self.isSelected = True
                 self.expandOrCollapse()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
+            self.setFocus()
         elif (event.type() == QEvent.MouseButtonDblClick):
             self.expandOrCollapse()
             #print 'event filter içiii'
@@ -270,15 +289,47 @@ class PListViewItem(QWidget):
         elif (event.type() == QEvent.Leave):
             self.parent.hoverItem = None
             self.repaint()
+        elif (event.type() == QEvent.KeyPress):
+            if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
+                self.expandOrCollapse()
+            elif event.key() == Qt.Key_Up:
+                index = self.parent.visibleitems.index(self)
+                previous = self.parent.visibleitems[index-1]
+                self.resetOldSelected(self)
+                self.parent.selectedItem = previous
+                previous.isSelected = True
+                previous.repaint()
+                previous.setFocus()
+                self.parent.showSelected()
+                return True
+            elif event.key() == Qt.Key_Down:
+                index = self.parent.visibleitems.index(self)
+                if index == len(self.parent.visibleitems)-1:
+                    index = -1
+                next = self.parent.visibleitems[index+1]
+                self.resetOldSelected(self)
+                self.parent.selectedItem = next
+                next.isSelected = True
+                next.repaint()
+                next.setFocus()
+                self.parent.showSelected()
+                return True
+            elif event.key() == Qt.Key_Tab:
+                return False
+            self.setFocus()
+            return True
         return False
 
     def showChilds(self):
         child = self.firstChild
+        index = self.parent.visibleitems.index(self)
         while child:
-            child.show()
             if child not in self.parent.visibleitems:
-                self.parent.visibleitems.append(child)
+                self.parent.visibleitems.insert(index+1, child)
+            index += 1
+            child.show()
             child = child.nextItem
+        self.parent.setContentsPos(0, self.parent.visibleitems.index(self)*self.parent.itemHeight)
 
     def hideChilds(self):
         child = self.firstChild
@@ -312,10 +363,11 @@ class PListViewItem(QWidget):
 
     def paintEvent(self, event):
 
-        #paint = QPainter(self)
-        paint = QPainter(self.buffer)
+        paint = QPainter(self)
+        #paint = QPainter(self.buffer)
         if not paint.isActive():
-            paint.begin(self.buffer)
+            #paint.begin(self.buffer)
+            paint.begin(self)
 
         color = self.parent.baseColor
         if self.isSelected:
@@ -354,10 +406,13 @@ class PListViewItem(QWidget):
         fm = QFontMetrics(font)
         ascent = fm.ascent()
         mid = (self.height()+8) / 2
-        paint.drawText(self.depthExtra + 2 + PListView.arrowSize + 6 + self.parent.iconSize + 6, mid, unicode(self.text))
+        #font.setStyleStrategy(QFont.NoAntialias)
+        paint.setFont(font)
+        dx = self.depthExtra + 2 + PListView.arrowSize + 6 + self.parent.iconSize + 6
+        paint.drawText(dx, mid, unicode(self.text))
 
         paint.end()
-        bitBlt(self, 0, 0, self.buffer)
+        #bitBlt(self, 0, 0, self.buffer)
 
     def resizeEvent(self, event):
         w = event.size().width()
