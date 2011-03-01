@@ -5,8 +5,8 @@
     <ExtraParameters>splash</ExtraParameters>
     <PackageCollections>
         <PackageCollection default="True">
-            <Id>8Xsw7p0XJx</Id>
-            <Icon>/home/mete/repo/git/pardusman/icons/preferences-desktop-display.png</Icon>
+            <Id>LL35Z5df2n1o2O</Id>
+            <Icon>user-desktop.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
                     <Title>None</Title>
@@ -53,7 +53,7 @@
                     <Description>None</Description>
                 </Translation>
             </Translations>
-            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/stable/x86_64/pisi-index.xml.xz">
+            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>hardware.smartcard</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
@@ -1005,6 +1005,7 @@
                 <Package>libmpeg2</Package>
                 <Package>libmpeg3</Package>
                 <Package>libmtp</Package>
+                <Package>libnfnetlink</Package>
                 <Package>libnfsidmap</Package>
                 <Package>libnjb</Package>
                 <Package>libnl</Package>
@@ -1475,8 +1476,8 @@
             </PackageSelection>
         </PackageCollection>
         <PackageCollection>
-            <Id>P6YUxWk8n7y3f</Id>
-            <Icon>/home/mete/repo/git/pardusman/icons/system-software-update.png</Icon>
+            <Id>fmolRrWRQh0ye</Id>
+            <Icon>gnome-term.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
                     <Title>None</Title>
@@ -1523,7 +1524,7 @@
                     <Description>None</Description>
                 </Translation>
             </Translations>
-            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/stable/x86_64/pisi-index.xml.xz">
+            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedPackage>NetworkManager</SelectedPackage>
@@ -1670,6 +1671,7 @@
                 <Package>libidn</Package>
                 <Package>libkms</Package>
                 <Package>libmng</Package>
+                <Package>libnfnetlink</Package>
                 <Package>libnl</Package>
                 <Package>libpaper</Package>
                 <Package>libpcap</Package>
@@ -1797,8 +1799,8 @@
             </PackageSelection>
         </PackageCollection>
         <PackageCollection>
-            <Id>ZattYwh2C</Id>
-            <Icon>/home/mete/repo/git/pardusman/icons/preferences-web-browser-shortcuts.png</Icon>
+            <Id>uYKN0oXTZxzZMh</Id>
+            <Icon>network-server.png</Icon>
             <Translations>
                 <Translation language="pt_BR">
                     <Title>None</Title>
@@ -1845,7 +1847,7 @@
                     <Description>None</Description>
                 </Translation>
             </Translations>
-            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/stable/x86_64/pisi-index.xml.xz">
+            <PackageSelection repo_uri="http://packages.pardus.org.tr/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
                 <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
                 <SelectedPackage>NetworkManager</SelectedPackage>
@@ -2003,6 +2005,7 @@
                 <Package>libidn</Package>
                 <Package>libkms</Package>
                 <Package>libmng</Package>
+                <Package>libnfnetlink</Package>
                 <Package>libnl</Package>
                 <Package>libpaper</Package>
                 <Package>libpcap</Package>
@@ -2330,6 +2333,7 @@
         <Package>libidn</Package>
         <Package>libkms</Package>
         <Package>libmng</Package>
+        <Package>libnfnetlink</Package>
         <Package>libnl</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
