@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-23 11:03+0000\n"
+"POT-Creation-Date: 2011-03-02 20:01+0000\n"
 "PO-Revision-Date: 2011-01-02 00:10+0200\n"
 "Last-Translator: Ali Işıngör\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -18,16 +18,19 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: ../release.xml.in.h:1
+#, fuzzy
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
-msgstr ""
+msgstr "&quot;root&quot;È il nome convenzionale di utente amministratore che ha tutti i diritti e le autorizzazioni (per tutti i file e programmi) in tutte le modalità (singolo o multi-utente).&lt;br&gt;&lt;br&gt; La password deve essere facile da ricordare ma abbastanza forte da resistere ad eventuali attacchi. È possibile utilizzare le lettere in maiuscole o in minuscole, numeri e segni di punteggiatura nella password. \"&lt;br&gt;&lt;br&gt;È inoltre possibile definire un hostname per il computer. Un nome host è un identificativo assegnato al computer.Il computer verrà riconosciuto con questo nome nella rete locale, si consiglia di selezionare un hostname descrittivo."
 
 #: ../release.xml.in.h:2
+#, fuzzy
 msgid "A bootloader is a tiny program that runs when a computer is first powered up. It is responsible for loading the operating system into memory and then transferring the control to it.&lt;br&gt;&lt;br&gt;Pardus uses GRUB (GRand Unified Bootloader) as the default bootloader. GRUB allows you to boot any supported operating system by presenting the user with a menu.&lt;br&gt;&lt;br&gt;The recommended way to use GRUB is to install it to the beginning of the boot disk, which is set by Default settings. You can choose Advanced settings for a custom installation if you know what you are doing."
-msgstr ""
+msgstr "Un bootloader è un piccolo programma che viene eseguito quando un computer viene acceso.E 'responsabile del caricamento del sistema operativo nella memoria e poi trasferire il controllo ad esso.&lt;br&gt;&lt;br&gt;Pardus utilizza GRUB (GRand unified Bootloader), come il bootloader predefinito. GRUB permette di avviare qualsiasi Sistema operativa supportato da presentare all'utente  un menu.&lt;br&gt;&lt;br&gt;Il metodo raccomandato per usare GRUB è quello  di installare l'inizio del disco di avvio, che è fissato dalle impostazioni di Default. È possibile scegliere impostazioni avanzate per una installazione personalizzata se si sa cosa si sta facendo.\r\n"
 
 #: ../release.xml.in.h:3
+#, fuzzy
 msgid "A keyboard layout sets the arrangement of keys on the keyboard. You may want to use a different layout then your keyboard&apos;s physical layout or to be sure that your keyboard is set up correctly. &lt;br&gt;&lt;br&gt;You can test the selected layout by typing in the given textbox."
-msgstr ""
+msgstr "Un layout della tastiera imposta la disposizione dei tasti sulla tastiera. Potreste voler usare un layout di tastiera diverso dalla tastiera fisica o di essere certo che la tastiera sia impostato correttamente. &lt;br&gt;&lt;br&gt ;È possibile fare il test del layout selezionato, digitando nella casella di testo dato.\"\r\n"
 
 #: ../release.xml.in.h:4
 msgid "All done!"
