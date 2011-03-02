@@ -20,6 +20,7 @@ from kdeui import *
 from um_utility import *
 from um_list import PListView
 from um_list import PListViewItem
+from um_list import *
 
 import polkit
 
@@ -1311,9 +1312,14 @@ class CategoryItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
         PListViewItem.__init__(self, parent, name, label,icon=icon)
         self.name = name
+        self.parent = parent
         self.isFilled = False
 
-        retVal = self.addWidgetItem(PListViewItem.PLVFlatComboType, [])
+        self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
+            [PLVFlatComboPopupData(i18n("Do not ask password"), self.slotGrant),
+            PLVFlatComboPopupData(i18n("Authorize"), self.slotAuth),
+            PLVFlatComboPopupData(i18n("Block"), self.slotBlock)],
+                ])
         """retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
         self.buttonGroup = retVal[0]
@@ -1332,16 +1338,13 @@ class CategoryItem(PListViewItem):
             it = it.nextItem
 
     def slotAuth(self, toggle):
-        if toggle:
-            print 'auth -> '+self.name
+        self.combo.setText(i18n("Authorize"))
 
     def slotGrant(self, toggle):
-        if toggle:
-            print 'grant -> '+self.name
+        self.combo.setText(i18n("Do not ask password"))
 
     def slotBlock(self, toggle):
-        if toggle:
-            print 'block -> '+self.name
+        self.combo.setText(i18n("Block"))
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
