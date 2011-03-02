@@ -152,7 +152,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
             fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())
         fp.close()
 
-        self.labelFirewall.setText("")
+        self.plainTextEdit.setPlainText("")
 
         process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
         while True:
@@ -164,7 +164,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if process.wait() != 0:
-            self.labelFirewall.setText("Unable to compile firewall rules:\n\n%s" % process.stderr.read())
+            self.plainTextEdit.setPlainText(process.stderr.read())
             return
 
         self.rules_xml = file(name).read()
@@ -179,7 +179,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())
         fp.close()
 
-        self.labelFirewall.setText("")
+        self.plainTextEdit.setPlainText("")
 
         fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
 
