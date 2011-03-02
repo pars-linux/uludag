@@ -6,6 +6,9 @@
 #
 #  Author: Mehmet Emre Atasever <memre ~ pardus.org.tr>
 #
+#  Tester and reviewer:
+#          Renjith Gopinadhan <renjithg ~ pearlsoft.in>
+#
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License as
 #  published by the Free Software Foundation; either version 2 of the
@@ -170,7 +173,6 @@ FARM_REPO_INDEX="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/deve
 # Toolchain options
 
 TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/parm/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}/${DISTRIB_ID}${DISTRIB_RELEASE}-${ARCH}-toolchain.tar.xz"
-TOOLCHAIN_SHA1SUM="ee3ba6d6b44cc7675fa350d643546095284d5851"
 TOOLCHAIN_TARBALL="`echo ${TOOLCHAIN_URL} | awk -F/ '{print $NF}'`"
 
 # export HOST=${HOST:-"`gcc -dumpmachine`"}
@@ -218,6 +220,9 @@ PISI_IGNORE_CHECK="--ignore-check"
 # we often use this fifo for logging
 _log_fifo="${TMP_DIR}/.pardus_${ARCH}_logfifo"
 
+# backup suffix
+_backup_suffix=$(date +%Y%m%d_%H%M)
+
 ##################################
 # @func: set_colors
 # @desc: sets colors if user wants
@@ -260,14 +265,6 @@ set_colors()
     export _tn1=0  # Main title [X]
     export _tn2=0  # 2nd title  [1.X]
     export _tn3=0  # 3rd title  [1.2.X]
-}
-
-##################################
-# @func: backup_suffix
-# @desc: create a uniq suffix for backup
-backup_suffix()
-{
-    echo "$(date +%y_%m_%d_%H_%M_%S)"
 }
 
 ##################################
@@ -378,11 +375,10 @@ log()
             local message=
 
             # if LOG_LEVEL is equal or grater than the log_level, which
-            # is given from the function which calls this log function,
-            # then print this log to the console as well.
+            # is given from the function, then print this log to the console as well.
             #
             # this is good with debugging, but end user needn't to see
-            # all the outputs of the applications.
+            # all the outputs.
             [ ${LOG_LEVEL} -ge ${log_level} ] && debug_out="/proc/self/fd/1"
 
             # if user want to see timer, then print it, otherwise just log it.
@@ -400,7 +396,7 @@ log()
             echo -ne "${current_time} ${_prog_bar[$((_prog_bar_index/5))]} \r"
             _prog_bar_index=$(( (_prog_bar_index + 1) % 20 ))
         done
-    ) # end of logging
+    ) # END OF LOGGING
 }
 
 ##################################
@@ -572,7 +568,7 @@ See log file \`${LOG_FILE}' for details.
 If you think that this is a bug, then open a bug report to
 http://bugs.pardus.org.tr and add ${LOG_FILE} as attattachment." "DIE:${head}"
 
-    cleanup
+    # cleanup
 
     exit 1 # byby cruel world
 }
@@ -635,6 +631,13 @@ dialog_()
                 ${extra_param} \
                 --yesno "${text}" "-1" "-1"
             ret_val=$?
+
+            local user_answer=
+            [ ${ret_val} -eq 0 ] && echo "yes" || echo "No"
+
+            echo -e " ==> DIALOG YesNo Dialog Box\n${text} ==> DIALOG User answer: \"${user_answer}\"\n ==> DIALOG --" | \
+                sed -e 's/\\Z[bBuUrRnN01234567]//g' | \
+                log ${_log_level_debug}
 
             ;;
 
@@ -839,13 +842,18 @@ pisi_()
 # @desc: checks the tarballs with sha1sum
 #
 # @param1: tarball in filesystem
-# @param2: sha1sum
 checksum()
 {
     local head="CHECKSUM"
 
     local tarball=$1
-    local sum=$2
+    local sum=`cat ${tarball}.sha1sum | cut -d' ' -f1`
+
+    # if there is no sha1sum file, then refetch it!
+    [ -e "${tarball}.sha1sum" ] || (
+        rm_ ${tarball}
+        return 2 # fail, refetch
+    )
 
     if [ -e "${tarball}" ]; then
         [ x"`sha1sum ${tarball} | cut -d' ' -f1`" == x"${sum}" ] && \
@@ -870,7 +878,6 @@ checksum()
 # @param1: tarball description name for printing log (eg. toolchain)
 # @param2: tarball full name (eg. PardusCorporate2-armv7l-toolchain.tar.xz)
 # @param3: download link of the tarball (eg. http://hede.hodo/PardusCorporate2-armv7l-toolchain.tar.xz)
-# @param4: sha1sum of the tarball
 fetch()
 {
     local head="FETCH"
@@ -878,18 +885,17 @@ fetch()
     local name=$1
     local tarball=$2
     local download_link=$3
-    local sum=$4
     local current_dir=$(pwd)
 
     cd ${TARBALL_DIR}
-    if checksum ${tarball} ${sum} ; then
+    if checksum ${tarball} ; then
         print_info "\"${name}\" is already fetched!" "${head}"
         return 0
     fi
 
     print_info " ==> Fetching \"${name}\"..." "${head}"
     prep_log &
-    (aria2c -c ${download_link} > ${_log_fifo} 2>&1)
+    ( aria2c -c ${download_link} ${download_link}.sha1sum > ${_log_fifo} 2>&1 )
     __r=$?; wait
 
     # Is there any connection problem?
@@ -899,7 +905,7 @@ fetch()
     )
 
     # Check sha1sum
-    if ! checksum ${tarball} ${sum} ; then
+    if ! checksum ${tarball} ; then
         print_err "Downloaded image \"${tarball}\" is bad!" "${head}"
         rm_ ${tarball}
         return 2
@@ -976,7 +982,7 @@ prepare()
     {
         if [ -d "${TOOLCHAIN_DIR}" ]; then
             ask "Toolchain Initialization" \
-                "There is also a toolchain directory: \"${TOOLCHAIN_DIR}\".\n\nDo you want to ${_dialog_cl_bold}remove and recreate${_dialog_cl_nobold} it?" "--defaultno"
+                "There is also a toolchain directory: \"${TOOLCHAIN_DIR}\".\n\nDo you want to ${_dialog_cl_bold}backup old toolchain and recreate${_dialog_cl_nobold} it?"
             [ $? -eq 0 ] && _b_install_toolchain=true || _b_install_toolchain=false
         else
             _b_install_toolchain=true
@@ -987,7 +993,7 @@ prepare()
     {
         if [ -d "${SYSROOT}" ]; then
             ask "Sysroot Initialization" \
-                "There is also a sysroot directory: \"${SYSROOT}\".\n\nDo you want to ${_dialog_cl_bold}remove and recreate${_dialog_cl_nobold} it?" "--defaultno"
+                "There is also a sysroot directory: \"${SYSROOT}\".\n\nDo you want to ${_dialog_cl_bold}backup old sysroot and recreate${_dialog_cl_nobold} it?"
             [ $? -eq 0 ] && _b_install_sysroot=true || _b_install_sysroot=false
         else
              _b_install_sysroot=true
@@ -1040,17 +1046,16 @@ prepare()
         # ${_b_install_sysroot} && ( \
         # fetch "${DISTRIB_ID} rootfs" \
         #       ${rootfs} \
-        #       ${rootfs_url} \
-        #       ${rootfs_sha1sum} || die "rootfs yoksa arm da yok"
+        #       ${rootfs_url}  || die "rootfs yoksa arm da yok"
         # ) # INSTALL SYSROOT
         ${_b_install_toolchain} && ( \
             fetch "${DISTRIB_ID} cross-toolchain" \
                 ${TOOLCHAIN_TARBALL} \
-                ${TOOLCHAIN_URL} \
-                ${TOOLCHAIN_SHA1SUM} || die "Toolchain cannot be fetched!" "${head}"
+                ${TOOLCHAIN_URL}  || die "Toolchain cannot be fetched!" "${head}"
         ) # INSTALL TOOLCHAIN
     } # END OF FETCH
 
+    # Let user see the details at least 5 secs.
     dialog_ "msgbox" "Preparation summary" "
     Architecture......: ${_dialog_cl_red}${ARCH}${_dialog_cl_black}
     Sysroot...........: ${_dialog_cl_red}${SYSROOT}${_dialog_cl_black}
@@ -1073,13 +1078,13 @@ init_toolchain()
 
     ${_b_install_toolchain} && (
         [ -d "${TOOLCHAIN_DIR}" ] && (
-            print_info " ==> Removing all \"${TOOLCHAIN_DIR}\" contents..." "${head}"
-            rm_ ${TOOLCHAIN_DIR}
-        ) # REMOVE TOOLCHAIN DIRECTORY IF EXISTS
+            print_info " ==> Backing up \"${TOOLCHAIN_DIR}\" -> \"${TOOLCHAIN_DIR}_${_backup_suffix}\"..." "${head}"
+            mv ${TOOLCHAIN_DIR}{,_${_backup_suffix}} -v | log ${_log_level_debug}
+        ) # BACKUP TOOLCHAIN DIRECTORY IF EXISTS
 
         extract "${DISTRIB_DESCRIPTION} cross-toolchain" \
             ${TOOLCHAIN_TARBALL} ${TOOLCHAIN_UP_DIR} || \
-            die "Cannot extract \"${TOOLCHAIN_DIR}\" directory" "${head}"
+            die "Cannot extract \"cross-toolchain\"!" "${head}"
     ) # INSTALL TOOLCHAIN
 }
 
@@ -1089,9 +1094,9 @@ init_sysroot()
 
     ${_b_install_sysroot} && (
         [ -d "${SYSROOT}" ] && (
-            print_info " ==> Removing all \"${SYSROOT}\" contents..." "${head}"
-            rm_ ${SYSROOT}
-        ) # REMOVE SYSROOT DIRECTORY IF EXISTS
+            print_info " ==> Backing up \"${SYSROOT}\" -> \"${SYSROOT}_${_backup_suffix}\"..." "${head}"
+            mv ${SYSROOT}{,_${_backup_suffix}} -v | log ${_log_level_debug}
+        ) # BACKUP SYSROOT DIRECTORY IF EXISTS
 
         mkdir_ ${SYSROOT}
 
@@ -1135,7 +1140,7 @@ init_pisi()
     ln -s${VERBOSE} pisi ${_pisi_cross} | log ${_log_level_debug}
 
     # if there is a config file, keep it
-    [ -e "${_pisi_cross_conf}" ] && mv ${_pisi_cross_conf}{,_$(backup_suffix)}
+    [ -e "${_pisi_cross_conf}" ] && mv ${_pisi_cross_conf}{,_${_backup_suffix}}
 
     print_info "Generating pisi-${ARCH}.conf" "${head}"
 
@@ -1175,6 +1180,7 @@ compressionlevel = 9
 fallback = ftp://ftp.pardus.org.tr/pub/source/corporate2
 generateDebug = False
 crosscompiling = True
+cppflags = ${CPPFLAGS}
 cflags = ${CFLAGS}
 cxxflags = ${CXXFLAGS}
 ldflags = ${LDFLAGS}
@@ -1219,24 +1225,17 @@ package_cache = False
 package_cache_limit = 0
 __EOF
 
-    print_info " ==> Removing old pisi" "${head}"
-    rm -rf${VERBOSE} /usr/lib/pardus/pisi | log ${_log_level_debug}
-
     print_info " ==> Checking out the latest cross-build supported PiSi" "${head}"
     cd ${TMP_DIR}
     prep_log &
     (${_svn} co https://svn.pardus.org.tr/uludag/trunk/playground/memre/pisi pisi > ${_log_fifo} 2>&1)
     __r=$?; wait
 
-    if [ ${__r} -ne 0 ]; then
-        print_err "pisi-cross cannot be checked out, old pisi is installing back!" "${head}"
-        prep_log &
+    [ ${__r} -eq 0 ] || \
+        die "pisi-cross cannot be checked out, so parm initialization cannot be proceeded!" "${head}"
 
-        (pisi_ n it pisi --reinstall); wait
-
-        print_info "Old pisi installed back" "${head}";
-        die "parm initialization cannot be proceeded!" "${head}"
-    fi
+    print_info " ==> Removing old pisi" "${head}"
+    rm -rf${VERBOSE} /usr/lib/pardus/pisi | log ${_log_level_debug}
 
     print_info " ==> Installing new Pisi" "${head}"
     cd pisi
@@ -1255,6 +1254,8 @@ __EOF
 
         [ ${__r} -eq 0 ] || die "PiSi initialization failed!" "${head}"
     )
+
+    return 0 # Success
 }
 
 ##################################
@@ -1288,29 +1289,29 @@ emerge_minimum()
     local min_list=(
         # Package    # Component    : Dependencies
         ##########################################
-        'binutils'   # system.devel
-        'libsigsegv' # system.devel
-        'gnuconfig'  # system.devel
-        'patch'      # system.devel
-        'zip'        # system.base
-        'bzip2'      # system.base
-        'zlib'       # system.base
-        'gdbm'       # system.base
-        'ncurses'    # system.base  : gnuconfig
-        'texinfo'    # system.base  : ncurses
-        'attr'       # system.base
-        'acl'        # system.base  : attr
-        'libpcre'    # system.base
-        'glib2'      # system.base  : libpcre zlib
-        'groff'      # system.base  : texinfo
-        'gettext'    # system.base  : glib2 acl ncurses
-        'diffutils'  # system.base  : gettext patch
-        'expat'      # system.base  : diffutils gnuconfig
-        'm4'         # system.devel : gettext libsigsegv
-        'sed'        # system.base  : gettext
-        'bison'      # system.devel : gettext m4 patch
-        'gmp'        # system.devel
-        'mpfr'       # system.devel : gmp
+        # 'binutils'   # system.devel
+        # 'libsigsegv' # system.devel
+        # 'gnuconfig'  # system.devel
+        # 'patch'      # system.devel
+        # 'zip'        # system.base
+        # 'bzip2'      # system.base
+        # 'zlib'       # system.base
+        # 'gdbm'       # system.base
+        # 'ncurses'    # system.base  : gnuconfig
+        # 'texinfo'    # system.base  : ncurses
+        # 'attr'       # system.base
+        # 'acl'        # system.base  : attr
+        # 'libpcre'    # system.base
+        # 'glib2'      # system.base  : libpcre zlib
+        # 'groff'      # system.base  : texinfo
+        # 'gettext'    # system.base  : glib2 acl ncurses
+        # 'diffutils'  # system.base  : gettext patch
+        # 'expat'      # system.base  : diffutils gnuconfig
+        # 'm4'         # system.devel : gettext libsigsegv
+        # 'sed'        # system.base  : gettext
+        # 'bison'      # system.devel : gettext m4 patch
+        # 'gmp'        # system.devel
+        # 'mpfr'       # system.devel : gmp
         'busybox'    # system.base
         'glibc'      # system.base  : gettext
         'gcc'        # system.devel : binutils bison gettext gnuconfig
@@ -1513,7 +1514,7 @@ fi
 # If there is a logfile, then backup. We dont want to lose
 # old logs, maybe its neccessary for the user.
 if [ -f "${LOG_FILE}" ]; then
-    cp ${LOG_FILE}{,_$(backup_suffix)}
+    cp ${LOG_FILE}{,_${_backup_suffix}}
     :> ${LOG_FILE}
 fi
 
@@ -1583,8 +1584,8 @@ ${_b_skip_farm} || {
 
 # Now its time to build and install some packages.
 # emerge_minimum function builds and installs minimal packages to sysroot
-print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
-emerge_minimum
+# print_t1 "Emerging minimal-development environment for ${ARCH} architecture"
+# emerge_minimum
 
 # Lastly, build all kernel-headers, system.base and system.devel with buildfarm.
 # After that step, developer would make his/her packages ;)
@@ -1592,7 +1593,7 @@ emerge_minimum
 # FIXME: prep queue for first build
 # poke_farm
 
-println "Pardus ${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE} sysroot initializing operation complated." | log ${_log_level_any}
+println "${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE} sysroot initializing operation complated." | log ${_log_level_any}
 println "Congrats, happy hacking ;)" | log ${_log_level_any}
 
 cleanup
