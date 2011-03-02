@@ -61,6 +61,9 @@ app_data = [
     'groupedit.py',
     'um_utility.py',
     'user-manager.desktop',
+    'security-high.png',
+    'security-medium.png',
+    'security-low.png',
     'help'
 ]
 

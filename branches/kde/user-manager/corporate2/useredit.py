@@ -968,14 +968,10 @@ class PolicyTab(QVBox):
 
     def fillAuths(self):
         #do not show policies require policy type yes or no, only the ones require auth_* type
-        # ilkin hiç leaf konmuyo, tıkladıkça doluyo. dolmuş mu diye denetlemek ve tekrar tekrar doldurmamak gerekiyo
-        # ilk leaf i fake ise daha dolmamış demek olsun
         #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
-            radios = catitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-                        PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
             self.policylist.add(catitem)
             #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
             #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
@@ -1129,19 +1125,68 @@ class PolicyTab(QVBox):
                     actioninfo = polkit.action_info(i)
                     if actioninfo['policy_active'].startswith("auth_"):
                         actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
-                        radios = actionitem.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-                                    PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
                         self.policylist.add(actionitem)
-                        #print "--------"
-                        #actionitem.show()
-        """item.takeItem(item.firstChild())
-        for i in polkit.action_list():
-            cats = item.name.split('|')
-            for j in cats:
-                if i.startswith(j):
-                    actioninfo = polkit.action_info(i)
-                    if actioninfo['policy_active'].startswith("auth_"):
-                        actionitem = ActionItem(item, i, unicode(actioninfo['description']), actioninfo['policy_active'])"""
+
+        self.fillCategoryAuths(item)
+
+    def getStoredActionsStatusList(self, auths):
+        authz = {}
+        for a in auths:
+            authz[a["action_id"]] = a["negative"]
+        return authz
+
+    def fillCategoryAuths(self, item):
+        children = item.getChilds()
+
+        def fill(package, exception, auths):
+            if exception:
+                return
+            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+            # eğer bi action operationsda ise onun bilgileriyle doldur.
+            # operationsta yoksa authsa bak ona göre doldur
+            # ikisinde de yoksa default doldur
+            auths = self.getStoredActionsStatusList(auths)
+
+            for child in children:
+                if child in self.operations:
+                    child.setStatus(self.operations[child.id])
+                elif child.id in auths.keys():
+                    statusText = ""
+                    childNegative = auths[child.id]
+                    if childNegative:
+                        statusText = "block"
+                    else:
+                        statusText = "grant"
+                    child.setStatus(statusText)
+                else:
+                    child.setStatus()
+
+            self.startItemsConnection(item)
+
+            """blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
+
+            if self.operations:
+                # add selections done via user-manager
+                for op in self.operations: #blocked olarak kayıtlı ama operationsda olduğuna göre artık blocked değil. o yüzden blocked listesinden kaldır bunu
+                    ## grant olarak kayıtlı ama operationsda varsa ne olacak?!!!!!!!
+                    if op in blocks:
+                        blocks.remove(op)
+                blocks.extend(filter(lambda x: self.operations[x] == "block", self.operations.keys()))
+                blocks = list(set(blocks))
+
+            for child in children:
+                if child in auths:
+                    if child in blocks:
+                        pass
+                if child.id in blocks:
+                    child.setAuthIcon("no")
+                else:
+                    child.setAuthIcon("yes")"""
+
+        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
+
+    def startItemsConnection(self, item):
+        item.startConnections()
 
     def listviewExpanded(self, item):
         return
@@ -1260,22 +1305,89 @@ class PolicyTab(QVBox):
 
 
 
+### !!! umlistitem diye bir abstract sınıf oluştur ve radio işlerini onda hallet
+
 class CategoryItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
         PListViewItem.__init__(self, parent, name, label,icon=icon)
         self.name = name
         self.isFilled = False
 
+        retVal = self.addWidgetItem(PListViewItem.PLVFlatComboType, [])
+        """retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        self.buttonGroup = retVal[0]
+        self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
+        self.authRadio = retVal[1][1]   # gives authorization and asks for password
+        self.blockRadio = retVal[1][2]  # blcoks"""
+
+    def startConnections(self):
+        self.connect(self.authRadio, SIGNAL("toggled(bool)"), self.slotAuth)
+        self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
+        self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
+
+        it = self.firstChild
+        while it:
+            it.startConnections()
+            it = it.nextItem
+
+    def slotAuth(self, toggle):
+        if toggle:
+            print 'auth -> '+self.name
+
+    def slotGrant(self, toggle):
+        if toggle:
+            print 'grant -> '+self.name
+
+    def slotBlock(self, toggle):
+        if toggle:
+            print 'block -> '+self.name
+
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
-        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "history")
+        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset")
         self.id = id
         self.desc = desc
         self.policy = policy
 
         # icon mappings
-        self.states = {"yes": "ok", "no": "cancel", "n/a": "history"}
-        self.setAuthIcon("n/a")
+        self.states = {"grant": "security-high.png", "block": "security-low.png", "auth": "security-medium.png", "notset": "history"}
+        self.setAuthIcon("notset")
+
+        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        self.buttonGroup = retVal[0]
+        self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
+        self.authRadio = retVal[1][1]   # gives authorization and asks for password
+        self.blockRadio = retVal[1][2]  # blcoks
+
+    def startConnections(self):
+        self.connect(self.authRadio, SIGNAL("toggled(bool)"), self.slotAuth)
+        self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
+        self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
+
+    def setStatus(self, status=""):
+        if status == "" or status == "block_revoke" or status == "grant_revoke":
+            self.authRadio.setOn(True)
+            self.setAuthIcon("auth")
+        elif status == "grant":
+            self.grantRadio.setOn(True)
+            self.setAuthIcon("grant")
+        elif status == "block":
+            self.blockRadio.setOn(True)
+            self.setAuthIcon("block")
+
+    def slotAuth(self, toggle):
+        if toggle:
+            print 'auth -> '+self.id
+
+    def slotGrant(self, toggle):
+        if toggle:
+            print 'grant -> '+self.id
+
+    def slotBlock(self, toggle):
+        if toggle:
+            print 'block -> '+self.id
 
     def setAuthIcon(self, state):
         self.setItemIcon(self.states[state])
