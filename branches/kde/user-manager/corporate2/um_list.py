@@ -3,6 +3,7 @@
 #
 
 import os
+import qt
 import locale
 
 from qt import *
@@ -532,62 +533,79 @@ class PLVButtonGroup(QButtonGroup):
         self.setFrameShape(QButtonGroup.NoFrame)
         self.show()
 
+class PLVFlatComboPopupData:
+    def __init__(self, popupText, popupSlot):
+        self.popupText = popupText
+        self.popupSlot = popupSlot
+
 class PLVFlatCombo(QWidget):
     def __init__(self, parent, args):
         QWidget.__init__(self, parent)
         self.popup = None
+        self.parent = parent
         self.setCursor(QCursor(Qt.PointingHandCursor))
-        self.selectionPopup = QPopupMenu(self)
-        self.selectionPopup.insertItem(i18n("Blocked"), self.slotMenu)
-        #self.selectionPopup.exec_loop(qt.QCursor.pos())
         self.installEventFilter(self)
+        self.__text = args[0][0].popupText
+        textWidth = self.fontMetrics().width(self.__text)
+        s = QSize(4+textWidth+24, PListView.itemHeight)
+        self.setMinimumSize(s)
+        self.setMaximumSize(s)
         self.show()
+        self.selectionPopup = QPopupMenu(self)
+        popupItemList = args[0]
+        for i in popupItemList:
+            self.selectionPopup.insertItem(i.popupText, i.popupSlot)
 
-    def slotMenu(self):
-        pass
+    def setText(self, text):
+        self.__text = text
+        textWidth = self.fontMetrics().width(self.__text)
+        s = QSize(4+textWidth+24, PListView.itemHeight)
+        self.setMinimumSize(s)
+        self.setMaximumSize(s)
+        si = QSize(self.parent.width(), self.parent.height())
+        self.parent.resizeEvent(QResizeEvent(si , QSize(0, 0)))
 
     def eventFilter(self, target, event):
         if(event.type() == QEvent.MouseButtonPress):
-            print "press"
-        return True
+            #self.selectionPopup.exec_loop(self.parent.mapToGlobal(QPoint(self.pos().x(), self.pos().y()+self.height())))
+            self.selectionPopup.exec_loop(self.parent.mapToGlobal(QPoint(self.pos().x(), self.pos().y())))
+            return True
+        return False
 
     def paintEvent(self, event):
         paint = QPainter(self)
         if not paint.isActive():
             paint.begin(self)
 
-        color = QColor(160,160,60)
-        paint.fillRect(event.rect(), QBrush(color))
+        #color = QColor(160,160,60)
+        #paint.fillRect(event.rect(), QBrush(color))
         #w.setPaletteBackgroundColor(color)
-
-        """
-        if self.icon:
-            dip = (self.height() - self.icon.height()) / 2
-        else:
-            dip = (self.height() - self.parent.iconSize) / 2
-
-        paint.drawPixmap(self.depthExtra + 2 + arrow + 2, dip, self.icon)
-        """
 
         font = paint.font()
         fm = QFontMetrics(font)
         ascent = fm.ascent()
         mid = (self.height()+8) / 2
 
-        paint.drawText(4, mid, unicode("ABC"))
+        #while(x<self.width()):
+        #x,y,w,h,flags,text
+        textWidth = self.fontMetrics().width(self.__text)
+        paint.drawText(4, 0, textWidth+4, self.height(), Qt.AlignLeft|Qt.AlignVCenter, self.__text)
+        #    x+=textWidth
 
-        dip = 5
+        #paint.drawText(4, mid, unicode("ABC"))
+
+        dip = (self.height() - 10)/2
 
         col = QColor(0,0,0)
         arrUp = QPointArray(3)
         arrDown = QPointArray(3)
         self.depthExtra = self.width() - 16
-        arrDown.setPoint(0, QPoint(self.depthExtra+2,dip+10))
-        arrDown.setPoint(1, QPoint(self.depthExtra+10,dip+10))
-        arrDown.setPoint(2, QPoint(self.depthExtra+6,dip+14))
-        arrUp.setPoint(0, QPoint(self.depthExtra+2,dip+8))
-        arrUp.setPoint(1, QPoint(self.depthExtra+10,dip+8))
-        arrUp.setPoint(2, QPoint(self.depthExtra+6,dip+4))
+        arrDown.setPoint(0, QPoint(self.depthExtra+2,dip+6))
+        arrDown.setPoint(1, QPoint(self.depthExtra+10,dip+6))
+        arrDown.setPoint(2, QPoint(self.depthExtra+6,dip+10))
+        arrUp.setPoint(0, QPoint(self.depthExtra+2,dip+4))
+        arrUp.setPoint(1, QPoint(self.depthExtra+10,dip+4))
+        arrUp.setPoint(2, QPoint(self.depthExtra+6,dip))
         oldBrush = paint.brush()
         paint.setBrush(QBrush(col))
         paint.drawPolygon(arrUp)
