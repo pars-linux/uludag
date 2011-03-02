@@ -193,6 +193,7 @@ class PListViewItem(QWidget):
     PLVRadioButtonType = 2
     PLVCheckBoxType = 3
     PLVButtonGroupType = 4
+    PLVFlatComboType = 5
 
     widgetSpacing = 2
 
@@ -395,7 +396,6 @@ class PListViewItem(QWidget):
         if self.firstChild:
             col = QColor(0,0,0)
             arr = QPointArray(3)
-            top = (self.height() - PListView.arrowSize) / 2
             if self.isExpanded:
                 arr.setPoint(0, QPoint(self.depthExtra+2,10))
                 arr.setPoint(1, QPoint(self.depthExtra+10,10))
@@ -452,6 +452,8 @@ class PListViewItem(QWidget):
             return self.addPLVCheckBox(args, self)
         elif type == self.PLVButtonGroupType:
             return self.addPLVButtonGroup(args, self)
+        elif type == self.PLVFlatComboType:
+            return self.addPLVFlatCombo(args, self)
 
     def addPLVIconButton(self, args, parent):
         plvib = PLVIconButton(parent, args)
@@ -471,17 +473,29 @@ class PListViewItem(QWidget):
             self.widgets.append(plvrb)
         return plvrb
 
+    def addPLVFlatCombo(self, args, parent):
+        plvfc = PLVFlatCombo(parent, args)
+        if parent == self:
+            self.widgets.append(plvfc)
+        return plvfc
+
     def addPLVButtonGroup(self, args, parent):
         plvbg = PLVButtonGroup(parent, args)
         buttonList = []
         blist = args[0]
         for type in blist:
             if type == self.PLVIconButtonType:
-                buttonList.append(plvbg.layout().addWidget(self.addPLVIconButton(args, args[1][args[0].index(type)], plvbg)))
+                ib = self.addPLVIconButton(args, args[1][args[0].index(type)], plvbg)
+                plvbg.layout().addWidget(ib)
+                buttonList.append(ib)
             elif type == self.PLVRadioButtonType:
-                buttonList.append(plvbg.layout().addWidget(self.addPLVRadioButton(args, plvbg)))
+                rb = self.addPLVRadioButton(args, plvbg)
+                plvbg.layout().addWidget(rb)
+                buttonList.append(rb)
             elif type == self.PLVCheckBoxType:
-                buttonList.append(plvbg.layout().addWidget(self.addPLVCheckBox(args, plvbg)))
+                cb = self.addPLVCheckBox(args, plvbg)
+                plvbg.layout().addWidget(cb)
+                buttonList.append(cb)
         self.widgets.append(plvbg)
         return [plvbg, buttonList]
 
@@ -518,5 +532,67 @@ class PLVButtonGroup(QButtonGroup):
         self.setFrameShape(QButtonGroup.NoFrame)
         self.show()
 
+class PLVFlatCombo(QWidget):
+    def __init__(self, parent, args):
+        QWidget.__init__(self, parent)
+        self.popup = None
+        self.setCursor(QCursor(Qt.PointingHandCursor))
+        self.selectionPopup = QPopupMenu(self)
+        self.selectionPopup.insertItem(i18n("Blocked"), self.slotMenu)
+        #self.selectionPopup.exec_loop(qt.QCursor.pos())
+        self.installEventFilter(self)
+        self.show()
 
+    def slotMenu(self):
+        pass
+
+    def eventFilter(self, target, event):
+        if(event.type() == QEvent.MouseButtonPress):
+            print "press"
+        return True
+
+    def paintEvent(self, event):
+        paint = QPainter(self)
+        if not paint.isActive():
+            paint.begin(self)
+
+        color = QColor(160,160,60)
+        paint.fillRect(event.rect(), QBrush(color))
+        #w.setPaletteBackgroundColor(color)
+
+        """
+        if self.icon:
+            dip = (self.height() - self.icon.height()) / 2
+        else:
+            dip = (self.height() - self.parent.iconSize) / 2
+
+        paint.drawPixmap(self.depthExtra + 2 + arrow + 2, dip, self.icon)
+        """
+
+        font = paint.font()
+        fm = QFontMetrics(font)
+        ascent = fm.ascent()
+        mid = (self.height()+8) / 2
+
+        paint.drawText(4, mid, unicode("ABC"))
+
+        dip = 5
+
+        col = QColor(0,0,0)
+        arrUp = QPointArray(3)
+        arrDown = QPointArray(3)
+        self.depthExtra = self.width() - 16
+        arrDown.setPoint(0, QPoint(self.depthExtra+2,dip+10))
+        arrDown.setPoint(1, QPoint(self.depthExtra+10,dip+10))
+        arrDown.setPoint(2, QPoint(self.depthExtra+6,dip+14))
+        arrUp.setPoint(0, QPoint(self.depthExtra+2,dip+8))
+        arrUp.setPoint(1, QPoint(self.depthExtra+10,dip+8))
+        arrUp.setPoint(2, QPoint(self.depthExtra+6,dip+4))
+        oldBrush = paint.brush()
+        paint.setBrush(QBrush(col))
+        paint.drawPolygon(arrUp)
+        paint.drawPolygon(arrDown)
+        paint.setBrush(oldBrush)
+
+        paint.end()
 
