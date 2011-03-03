@@ -491,6 +491,7 @@
             </Translations>
             <PackageSelection repo_uri="http://192.168.3.141/pardus/corporate2/devel/x86_64/pisi-index.xml.xz">
                 <SelectedComponent>system.base</SelectedComponent>
+                <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedPackage>device-mapper</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
                 <SelectedPackage>gfxtheme-base</SelectedPackage>
@@ -500,6 +501,7 @@
                 <SelectedPackage>lvm2-static</SelectedPackage>
                 <SelectedPackage>mdadm-static</SelectedPackage>
                 <SelectedPackage>module-kvm</SelectedPackage>
+                <SelectedPackage>NetworkManager</SelectedPackage>
                 <Package>ConsoleKit</Package>
                 <Package>acl</Package>
                 <Package>alternatives</Package>
@@ -699,7 +701,9 @@
                 <SelectedComponent>server.proxy</SelectedComponent>
                 <SelectedComponent>server.web</SelectedComponent>
                 <SelectedComponent>system.base</SelectedComponent>
+                <SelectedComponent>hardware.firmware</SelectedComponent>
                 <SelectedPackage>gfxtheme-base</SelectedPackage>
+                <SelectedPackage>NetworkManager</SelectedPackage>
                 <SelectedPackage>tree</SelectedPackage>
                 <SelectedPackage>iw</SelectedPackage>
                 <SelectedPackage>device-mapper-static</SelectedPackage>
