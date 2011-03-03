@@ -22,6 +22,7 @@ distfiles = """
     README
     AUTHORS
     *.py
+    *.png
     *.desktop
     po/*.po
     po/*.pot
@@ -61,9 +62,9 @@ app_data = [
     'groupedit.py',
     'um_utility.py',
     'user-manager.desktop',
-    'security-high.png',
-    'security-medium.png',
-    'security-low.png',
+    ('/usr/kde/3.5/share/icons/hicolor/16x16/apps', ['um_grant.png']),
+    ('/usr/kde/3.5/share/icons/hicolor/16x16/apps', ['um_auth.png']),
+    ('/usr/kde/3.5/share/icons/hicolor/16x16/apps', ['um_block.png']),
     'help'
 ]
 

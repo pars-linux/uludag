@@ -20,7 +20,6 @@ from kdeui import *
 from um_utility import *
 from um_list import PListView
 from um_list import PListViewItem
-from um_list import *
 
 import polkit
 
@@ -834,23 +833,26 @@ class PolicyTab(QVBox):
         #put all necessary actions to listview
         self.fillAuths()
 
-        #self.connect(self.policylist, PYSIGNAL("expanded"), self.policyListExpanded)
-        self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
+        self.connect(self.policylist, PYSIGNAL("expanded"), self.policyListExpanded)
+        #self.connect(self.policylist, PYSIGNAL("clicked"), self.policyListClicked)
         #self.connect(lv, PYSIGNAL("expanded"), self.slotExpanded)
 
         #self.connect(self.policyview, SIGNAL("selectionChanged(QListViewItem *)"), self.listviewClicked)
         #self.connect(self.policyview, SIGNAL("expanded(QListViewItem *)"), self.listviewExpanded)
         #self.connect(self.policyview, SIGNAL("contextMenuRequested(QListViewItem *, const QPoint &, int)"), self.showPopup)
 
-    def policyListClicked(self, event, item):
+    """def policyListClicked(self, event, item):
         if event.type() == QEvent.MouseButtonDblClick:
             if isinstance(item, CategoryItem) and not item.isFilled:
-                self.fillCategory(item)
+                self.policylist.remove(item.firstChild) # remove fake record
+                self.fillCategory(item)"""
 
     def policyListExpanded(self, item):
-        print 'expanded'
-        #if isinstance(item, CategoryItem) and not item.isFilled:
-        #    self.fillCategory(item)
+        if isinstance(item, CategoryItem):
+            if not item.isFilled:
+                self.fillCategory(item)
+            else:
+                self.fillCategoryAuths(item)
 
     def showPopup(self, item, point, column):
         if item.depth() != 1:
@@ -972,19 +974,11 @@ class PolicyTab(QVBox):
         #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         for cats in categories:
-            catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=categories[cats][1])
+            catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=getIcon(categories[cats][1]))
             self.policylist.add(catitem)
-            #catitem.addWidgetItem(PListViewItem.PLVIconButtonType, ["help"])
-            #catitem = CategoryItem(self.policyview, i18n(categories[cats][0]), cats)
-            #catitem.setPixmap(0, getIcon(categories[cats][1]))
-            #actionitem = ActionItem(catitem, "", "", "")
-
-            """cats = cats.split('|')
-            for category in cats:
-                catactions = filter(lambda x: x.startswith(category), allActions)
-                for cataction in catactions:
-                    actioninfo = polkit.action_info(cataction)
-                    actionitem = ActionItem(catitem, cataction, unicode(actioninfo['description']), actioninfo['policy_active'])"""
+            actionitem = ActionItem(self.policylist, "*", "*", "*", parentItem=catitem)
+            self.policylist.add(actionitem)
+            catitem.hideChilds()
 
     #bu kalkacak, karışmış iyice. derinlik filan da gelince iyice karışır
     def setPolicyButtonsEnabled(self, enable):
@@ -1119,6 +1113,7 @@ class PolicyTab(QVBox):
 
     def fillCategory(self, item):
         item.isFilled = True
+        self.policylist.remove(item.firstChild) # remove fake record
         for i in polkit.action_list():
             cats = item.name.split('|')
             for j in cats:
@@ -1141,6 +1136,7 @@ class PolicyTab(QVBox):
 
         def fill(package, exception, auths):
             if exception:
+                item.expandOrCollapse()
                 return
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
             # eğer bi action operationsda ise onun bilgileriyle doldur.
@@ -1162,7 +1158,7 @@ class PolicyTab(QVBox):
                 else:
                     child.setStatus()
 
-            self.startItemsConnection(item)
+            item.isStarted = True # now, category item can handle slot events
 
             """blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
 
@@ -1185,9 +1181,6 @@ class PolicyTab(QVBox):
                     child.setAuthIcon("yes")"""
 
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
-
-    def startItemsConnection(self, item):
-        item.startConnections()
 
     def listviewExpanded(self, item):
         return
@@ -1313,38 +1306,51 @@ class CategoryItem(PListViewItem):
         PListViewItem.__init__(self, parent, name, label,icon=icon)
         self.name = name
         self.parent = parent
-        self.isFilled = False
+        self.isFilled = False # is category item filled with with policy items
+        self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
 
-        self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
+        """self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
             [PLVFlatComboPopupData(i18n("Do not ask password"), self.slotGrant),
             PLVFlatComboPopupData(i18n("Authorize"), self.slotAuth),
             PLVFlatComboPopupData(i18n("Block"), self.slotBlock)],
-                ])
-        """retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+                ])"""
+        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
         self.buttonGroup = retVal[0]
         self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
-        self.blockRadio = retVal[1][2]  # blcoks"""
+        self.blockRadio = retVal[1][2]  # blcoks
 
-    def startConnections(self):
         self.connect(self.authRadio, SIGNAL("toggled(bool)"), self.slotAuth)
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
-        it = self.firstChild
-        while it:
-            it.startConnections()
-            it = it.nextItem
-
     def slotAuth(self, toggle):
-        self.combo.setText(i18n("Authorize"))
+        if not self.isFilled:
+            self.parent.parent.fillCategory(self)
+            return
+        if not isStarted:
+            return
+        if toggle:
+            print 'auth -> '+self.name
 
     def slotGrant(self, toggle):
-        self.combo.setText(i18n("Do not ask password"))
+        if not self.isFilled:
+            self.parent.parent.fillCategory(self)
+            return
+        if not self.isStarted:
+            return
+        if toggle:
+            print 'grant -> '+self.name
 
     def slotBlock(self, toggle):
-        self.combo.setText(i18n("Block"))
+        if not self.isFilled:
+            self.parent.parent.fillCategory(self)
+            return
+        if not isStarted:
+            return
+        if toggle:
+            print 'block -> '+self.name
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
@@ -1353,9 +1359,7 @@ class ActionItem(PListViewItem):
         self.desc = desc
         self.policy = policy
 
-        # icon mappings
-        self.states = {"grant": "security-high.png", "block": "security-low.png", "auth": "security-medium.png", "notset": "history"}
-        self.setAuthIcon("notset")
+        self.setAuthIcon(getIcon("history"))
 
         retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
             PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
@@ -1364,7 +1368,6 @@ class ActionItem(PListViewItem):
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
         self.blockRadio = retVal[1][2]  # blcoks
 
-    def startConnections(self):
         self.connect(self.authRadio, SIGNAL("toggled(bool)"), self.slotAuth)
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
@@ -1372,26 +1375,32 @@ class ActionItem(PListViewItem):
     def setStatus(self, status=""):
         if status == "" or status == "block_revoke" or status == "grant_revoke":
             self.authRadio.setOn(True)
-            self.setAuthIcon("auth")
+            self.setAuthIcon(getIcon("um_auth.png"))
         elif status == "grant":
             self.grantRadio.setOn(True)
-            self.setAuthIcon("grant")
+            self.setAuthIcon(getIcon("um_grant"))
         elif status == "block":
             self.blockRadio.setOn(True)
-            self.setAuthIcon("block")
+            self.setAuthIcon(getIcon("um_block"))
 
     def slotAuth(self, toggle):
+        if not self.parentItem.isStarted:
+            return
         if toggle:
             print 'auth -> '+self.id
 
     def slotGrant(self, toggle):
+        if not self.parentItem.isStarted:
+            return
         if toggle:
             print 'grant -> '+self.id
 
     def slotBlock(self, toggle):
+        if not self.parentItem.isStarted:
+            return
         if toggle:
             print 'block -> '+self.id
 
-    def setAuthIcon(self, state):
-        self.setItemIcon(self.states[state])
+    def setAuthIcon(self, icon):
+        self.setItemIcon(icon)
 

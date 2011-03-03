@@ -14,13 +14,11 @@ from kdecore import *
 from kdeui import *
 import kdedesigner
 
-def loadIcon(name, group=KIcon.Desktop, size=16):
-    return KGlobal.iconLoader().loadIcon(name, group, size)
-
 def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 def getIcon(name, group=KIcon.Small):
+    print name
     return KGlobal.iconLoader().loadIcon(name, group)
 
 # !!!!!!!!!!! viewportun dışında yapışık bi header olsa iyi olur
@@ -94,13 +92,21 @@ class PListView(QScrollView):
             self.remove(it)
             it = it.nextItem
         previousItem = self.findPreviousItem(item)
-        previousItem.nextItem = item.nextItem
+        if not previousItem: # sen ilk çocuksun ve başka çocuk yok
+            if item.parentItem: # kök değil
+                item.parentItem.firstChild = None
+        else:
+            previousItem.nextItem = item.nextItem
+        item.clear()
+        item.hide()
         self.removeChild(item)
         self.items.remove(item)
         if item in self.visibleitems:
             self.visibleitems.remove(item)
-        if not findAnItemWhoHasAChild(item):
-            self.setSiblingHasChild(item, False)
+        self.moveChild(item, 0, 0)
+        del item
+        """if not self.findAnItemWhoHasAChild(item):
+            self.setSiblingHasChild(item, False)"""
 
     def findAnItemWhoHasAChild(self, item):
         it = item.parentItem
@@ -133,10 +139,8 @@ class PListView(QScrollView):
     def add(self, item):
         ### Ekleme yapıldığında collapsed ise açılmalı !!!!!!!!
 
-        #self.items.append(item)
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
-        #self.visibleitems.append(item)
         if item.parentItem:
             item.parentItem.isExpanded = True
             lastChild = item.parentItem.findLastChild()
@@ -219,7 +223,7 @@ class PListViewItem(QWidget):
         self.nextItem = None
         self.firstChild = None
 
-        self.icon = getIcon(icon) if icon else None
+        self.icon = icon
 
         self.installEventFilter(self)
 
@@ -231,8 +235,13 @@ class PListViewItem(QWidget):
 
         self.show()
 
+    def clear(self):
+        for w in self.widgets:
+            w.hide()
+        self.widgets = []
+
     def setItemIcon(self, icon):
-        self.icon = getIcon(icon) if icon else None
+        self.icon = icon
         self.repaint()
 
     def isInArrowArea(self, x):
@@ -337,11 +346,13 @@ class PListViewItem(QWidget):
             if child not in self.parent.visibleitems:
                 self.parent.visibleitems.insert(index+1, child)
             index += 1
+            child.resize(self.width(), self.height())
             child.show()
             child = child.nextItem
         self.parent.setContentsPos(0, self.parent.visibleitems.index(self)*self.parent.itemHeight)
 
     def hideChilds(self):
+        self.isExpanded = False
         child = self.firstChild
         while child:
             child.hide()
