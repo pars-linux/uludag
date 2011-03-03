@@ -25,6 +25,7 @@ import polkit
 
 import functools
 
+
 categories = {"tr.org.pardus.comar.user.manager": [I18N_NOOP("User/group operations"), "user"],
         "org.freedesktop.NetworkManager|org.freedesktop.network-manager-settings.system|tr.org.pardus.comar.net.filter|tr.org.pardus.comar.net.share": [I18N_NOOP("Network settings"), "network"],
         "tr.org.pardus.comar.system.manager": [I18N_NOOP("Package operations"), "package"],
@@ -790,6 +791,9 @@ class PolicyTab(QVBox):
         self.operations = {}
         self.inOperation = False
         self.stack = stack
+        self.authIcon = getIcon("um_auth")
+        self.grantIcon = getIcon("um_grant")
+        self.blockIcon = getIcon("um_block")
 
         """#add radio buttons
         self.buttonGroup = QButtonGroup(self)
@@ -846,6 +850,11 @@ class PolicyTab(QVBox):
             if isinstance(item, CategoryItem) and not item.isFilled:
                 self.policylist.remove(item.firstChild) # remove fake record
                 self.fillCategory(item)"""
+
+    def yaz(self):
+        for i in self.operations.keys():
+            print i + '->' + self.operations[i]
+        print '---------------------------------'
 
     def policyListExpanded(self, item):
         if isinstance(item, CategoryItem):
@@ -1375,31 +1384,83 @@ class ActionItem(PListViewItem):
     def setStatus(self, status=""):
         if status == "" or status == "block_revoke" or status == "grant_revoke":
             self.authRadio.setOn(True)
-            self.setAuthIcon(getIcon("um_auth.png"))
+            self.setAuthIcon(self.parent.parent.authIcon)
         elif status == "grant":
             self.grantRadio.setOn(True)
-            self.setAuthIcon(getIcon("um_grant"))
+            self.setAuthIcon(self.parent.parent.grantIcon)
         elif status == "block":
             self.blockRadio.setOn(True)
-            self.setAuthIcon(getIcon("um_block"))
+            self.setAuthIcon(self.parent.parent.blockIcon)
 
     def slotAuth(self, toggle):
         if not self.parentItem.isStarted:
             return
+        if self.parent.parent.inOperation:
+            return
         if toggle:
-            print 'auth -> '+self.id
+            self.setAuthIcon(self.parent.parent.authIcon)
+            if self.parent.parent.edit:
+                self.parent.parent.checkNegativeAndCall(self, self.authorize)
+            else:
+                self.authorize(item, -1)
+
+    #item kalkacak parametrleerden !!!!!!!!!!
+    def authorize(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                self.parent.parent.operations[item.id] = "block_revoke"
+            else: # granted
+                self.parent.parent.operations[item.id] = "grant_revoke"
+        else: # not registered
+            if self.id in self.parent.parent.operations.keys():
+                self.parent.parent.operations.pop(item.id)
+        self.parent.parent.yaz()
 
     def slotGrant(self, toggle):
         if not self.parentItem.isStarted:
             return
+        if self.parent.parent.inOperation:
+            return
         if toggle:
-            print 'grant -> '+self.id
+            self.setAuthIcon(self.parent.parent.grantIcon)
+            if self.parent.parent.edit:
+                self.parent.parent.checkNegativeAndCall(self, self.grant)
+            else:
+                self.grant(item, -1)
+
+    def grant(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                self.parent.parent.operations[item.id] = "grant"
+            else: # granted
+                if self.id in self.parent.parent.operations.keys():
+                    self.parent.parent.operations.pop(item.id)
+        else: # not registered
+            self.parent.parent.operations[item.id] = "grant"
+        self.parent.parent.yaz()
 
     def slotBlock(self, toggle):
         if not self.parentItem.isStarted:
             return
+        if self.parent.parent.inOperation:
+            return
         if toggle:
-            print 'block -> '+self.id
+            self.setAuthIcon(self.parent.parent.blockIcon)
+            if self.parent.parent.edit:
+                self.parent.parent.checkNegativeAndCall(self, self.block)
+            else:
+                self.block(item, -1)
+
+    def block(self, item, negative):
+        if negative != -1: # registered to policykit
+            if negative == 0: # blocked
+                if self.id in self.parent.parent.operations.keys():
+                    self.parent.parent.operations.pop(item.id)
+            else: # granted
+                self.parent.parent.operations[item.id] = "block"
+        else: # not registered
+            self.parent.parent.operations[item.id] = "block"
+        self.parent.parent.yaz()
 
     def setAuthIcon(self, icon):
         self.setItemIcon(icon)
