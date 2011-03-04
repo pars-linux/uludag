@@ -60,12 +60,12 @@ class TestInstall(object):
             self.summary.append('Success')
             return
         
-        # Calculate the download size and display it in MB        
+        # Calculate the download size and display it in MiB        
         downloadSize = calculate_download_size(finalPackages)[0]/(1024.0 * 1024.0)
         self.report.append('Number of packages to be installed: ' \
-            "'{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
+            "'{0}', total size: '{1:.2f} MiB'".format(totalPackages, downloadSize))
         print 'Installing packages, please wait ... ' \
-                'Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
+                'Size:', colorize('{0:.2f} MiB', 'bold').format(downloadSize)
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
