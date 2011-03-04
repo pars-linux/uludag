@@ -36,6 +36,7 @@ programming-tr.pdf python-mlt testini gerçekleştiriniz.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  mpd
+ darkice
 \end{verbatim}
 
 \item ushare paketi kurulumu sonrası:
@@ -751,7 +752,7 @@ Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile dü
    \item Stamps butonuna basın ve sağ tarafta bulunan pullardan birini eklemeye çalışın sorunsuz bir şekilde eklendiğini gözlemleyin.
    \item Aşağıda bulunan komutu çalıştırın ve daha sonra uygulamanın sol tarafında bulunan open butonuna basın ve import ettiğiniz resmin uygulmada görüntülenmiş olduğunu gözlemleyin.
 \begin{verbatim}
-   # tuxpaint-import /usr/share/tuxpaint/stamps/vehicles/ship/walnutBoat.png
+   tuxpaint-import /usr/share/tuxpaint/stamps/vehicles/ship/walnutBoat.png
 \end{verbatim} 
 \end{itemize}
 
@@ -759,34 +760,34 @@ Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile dü
 
 Aşağida bulunan dosyayı inkscape uygulaması ile açın ve üzerinde birkaç değişiklik yapın. Sorunsuz bir şekilde çalışabildiklerini gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/drawing.svg 
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/drawing.svg 
 \end{verbatim}
 
 \item asymptote paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.tex
-# latex test_asymptote
-# asy test_asymptote
-# latex test_asymptote
-# okular test_asymptote.dvi
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.tex
+ latex test_asymptote
+ asy test_asymptote
+ latex test_asymptote
+ okular test_asymptote.dvi
 \end{verbatim}
 \item  dcmtk paketi kurulumu sonrası:
 
 Aşağıda bulunan komutlaruın düzgün bir şekilde çalıştırğını gözlemleyin:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
-# dcmj2pnm test_dcmtk.dcm  test.png
-# gwenview test.png
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
+ dcmj2pnm test_dcmtk.dcm  test.png
+ gwenview test.png
 \end{verbatim}
 
 \item dcraw paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların düzgün bir şekilde çalıştıklarını gözlemleyin.  
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
-# dcparse test_dcraw.jpg 
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
+ dcparse test_dcraw.jpg 
 \end{verbatim}
 
 \end{enumerate}
@@ -813,8 +814,8 @@ Uygulamanın boş olan beyaz alanına sağ tıklayın. "Import clips" seçeneği
 
 Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag'inin listelediğini gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
- # eyeD3 linux.mp3 
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ eyeD3 linux.mp3 
 \end{verbatim}
 
 \item lilypond paketi kurulumu sonrası:
@@ -829,7 +830,7 @@ Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag'in
 
   Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı açın ve trim butonuna basarak çeşitli noktalardan kesmeye çalışın.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
 \end{verbatim}
 
 
@@ -838,7 +839,7 @@ Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag'in
 Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya $\rightarrow$ Aç yolunu izleyerek açın ve tag bölümünü editlemeye çalışın, editleyebildiğinizi gözlemleyin.
 
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
 \end{verbatim}
 
  \item blender paketi kurulumu sonrası:

@@ -20,6 +20,16 @@
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  autogen
+ ant-doc
+\end{verbatim}
+
+\item ant paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve daha sonra altta bulunan komutu çalıştırın, sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/build/build.xml
+ant
 \end{verbatim}
 
 \end{enumerate}
@@ -346,8 +356,21 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemle
 llvm
 llvm-docs
 llvm-ocaml
+vala-docs
 \end{verbatim}
 
+\item vala paketi kurulumu sonrası:
+
+Aşağıda bulunan komutları sırası ile uygulayın ve "Hello World" yazdığını gözlemleyin:  
+
+\begin{verbatim}
+sudo pisi it -c system.devel
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/vala-test.vala
+valac vala-test.vala -o vala-test
+./vala-test
+\end{verbatim}
+
+ 
 \end{enumerate}
 
 \subsection{Ruby alt bileşeni}
