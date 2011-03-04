@@ -860,8 +860,8 @@ class PolicyTab(QVBox):
         if isinstance(item, CategoryItem):
             if not item.isFilled:
                 self.fillCategory(item)
-            else:
-                self.fillCategoryAuths(item)
+            #else:
+            #    self.fillCategoryAuths(item)
 
     def showPopup(self, item, point, column):
         if item.depth() != 1:
@@ -1019,6 +1019,14 @@ class PolicyTab(QVBox):
             self.stack.checkAdd()
         self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), item.id, async=functools.partial(checkNegative, method))
 
+    def checkCategoryAndCall(self, item, method):
+        def checkCategory(method, package, exception, auths):
+            if exception:
+                return
+            method(auths)
+            self.stack.checkAdd()
+        self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=functools.partial(checkCategory, method))
+
     def passwordCheckSlot(self, toggle):
         return
         if self.inOperation:
@@ -1120,7 +1128,7 @@ class PolicyTab(QVBox):
                 if item.id in self.operations.keys():
                     self.operations.pop(item.id)
 
-    def fillCategory(self, item):
+    def fillCategory(self, item, method=None):
         item.isFilled = True
         self.policylist.remove(item.firstChild) # remove fake record
         for i in polkit.action_list():
@@ -1132,7 +1140,7 @@ class PolicyTab(QVBox):
                         actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
                         self.policylist.add(actionitem)
 
-        self.fillCategoryAuths(item)
+        self.fillCategoryAuths(item, method)
 
     def getStoredActionsStatusList(self, auths):
         authz = {}
@@ -1140,7 +1148,7 @@ class PolicyTab(QVBox):
             authz[a["action_id"]] = a["negative"]
         return authz
 
-    def fillCategoryAuths(self, item):
+    def fillCategoryAuths(self, item, method=None):
         children = item.getChilds()
 
         def fill(package, exception, auths):
@@ -1168,6 +1176,8 @@ class PolicyTab(QVBox):
                     child.setStatus()
 
             item.isStarted = True # now, category item can handle slot events
+            item.checkButtonsState()
+            method(True)
 
             """blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
 
@@ -1317,6 +1327,8 @@ class CategoryItem(PListViewItem):
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
+        self.allItemsHaveSamePolicy = False
+        self.ignoreTemp = False # ignore action item button actions temporarily while we are setting all category's actions
 
         """self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
             [PLVFlatComboPopupData(i18n("Do not ask password"), self.slotGrant),
@@ -1334,32 +1346,123 @@ class CategoryItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
-    def slotAuth(self, toggle):
+    def actionControls(self, method):
         if not self.isFilled:
-            self.parent.parent.fillCategory(self)
-            return
-        if not isStarted:
-            return
+            self.parent.parent.fillCategory(self, method)
+            return False
+        if not self.isStarted:
+            return False
+        #if not self.allItemsHaveSamePolicy: # set by code, not user click action so ignore it
+        #    print 'hepsi aynı deel'
+        #    return False
+        return True
+
+    def slotAuth(self, toggle):
         if toggle:
-            print 'auth -> '+self.name
+            if not self.actionControls(self.slotAuth):
+                return
+            if self.parent.parent.edit:
+                self.ignoreTemp = True
+                self.parent.parent.checkCategoryAndCall(self, self.authorizeCategory)
+
+    def authorizeCategory(self, auths):
+        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+        storedAuths = {}
+        for a in auths:
+            storedAuths[a["action_id"]] = a["negative"]
+        for c in self.getChilds():
+            # kayıtlı mı?
+            if c.id in storedAuths.keys():
+                if storedAuths[c.id]: #blocked
+                    self.parent.parent.operations[c.id] = "block_revoke"
+                else:
+                    self.parent.parent.operations[c.id] = "grant_revoke"
+            else: # kayıt yok
+                if c.id in self.parent.parent.operations.keys():
+                    self.parent.parent.operations.pop(c.id)
+            c.setStatus("")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
 
     def slotGrant(self, toggle):
-        if not self.isFilled:
-            self.parent.parent.fillCategory(self)
-            return
-        if not self.isStarted:
-            return
         if toggle:
-            print 'grant -> '+self.name
+            if not self.actionControls(self.slotGrant):
+                return
+            if self.parent.parent.edit:
+                self.ignoreTemp = True
+                self.parent.parent.checkCategoryAndCall(self, self.grantCategory)
+
+    def grantCategory(self, auths):
+        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+        storedAuths = {}
+        for a in auths:
+            storedAuths[a["action_id"]] = a["negative"]
+        for c in self.getChilds():
+            # kayıtlı mı?
+            if c.id in storedAuths.keys():
+                if storedAuths[c.id]: #blocked
+                    self.parent.parent.operations[c.id] = "grant"
+                else:
+                    if c.id in self.parent.parent.operations.keys():
+                        self.parent.parent.operations.pop(c.id)
+            else: # kayıt yok
+                self.parent.parent.operations[c.id] = "grant"
+            c.setStatus("grant")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
 
     def slotBlock(self, toggle):
-        if not self.isFilled:
-            self.parent.parent.fillCategory(self)
-            return
-        if not isStarted:
-            return
         if toggle:
-            print 'block -> '+self.name
+            if not self.actionControls(self.slotBlock):
+                return
+            if self.parent.parent.edit:
+                self.ignoreTemp = True
+                self.parent.parent.checkCategoryAndCall(self, self.blockCategory)
+
+    def blockCategory(self, auths):
+        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
+        storedAuths = {}
+        for a in auths:
+            storedAuths[a["action_id"]] = a["negative"]
+        for c in self.getChilds():
+            # kayıtlı mı?
+            if c.id in storedAuths.keys():
+                if storedAuths[c.id]: #blocked
+                    if c.id in self.parent.parent.operations.keys():
+                        self.parent.parent.operations.pop(c.id)
+                else:
+                    self.parent.parent.operations[c.id] = "block"
+            else: # kayıt yok
+                self.parent.parent.operations[c.id] = "block"
+            c.setStatus("block")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
+
+    def setStatus(self, status=""):
+        self.buttonGroup.setExclusive(True)
+        if status == "auth":
+            self.authRadio.setOn(True)
+        elif status == "grant":
+            self.grantRadio.setOn(True)
+        elif status == "block":
+            self.blockRadio.setOn(True)
+
+    def checkButtonsState(self):
+        it = self.firstChild
+        if not it:
+            return
+        firstState = it.getStatus()
+        while it:
+            if not firstState == it.getStatus():
+                self.buttonGroup.setExclusive(False)
+                self.authRadio.setOn(False)
+                self.grantRadio.setOn(False)
+                self.blockRadio.setOn(False)
+                self.allItemsHaveSamePolicy = False
+                return
+            it = it.nextItem
+        self.setStatus(firstState)
+        self.allItemsHaveSamePolicy = True
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
@@ -1381,6 +1484,23 @@ class ActionItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
+    def getStatus(self):
+        if self.authRadio.isOn():
+            return "auth"
+        elif self.grantRadio.isOn():
+            return "grant"
+        else: # blocked
+            return "block"
+
+    def checkActionItemControls(self):
+        if not self.parentItem.isStarted:
+            return False
+        if self.parent.parent.inOperation:
+            return False
+        if self.parentItem.ignoreTemp:
+            return False
+        return True
+
     def setStatus(self, status=""):
         if status == "" or status == "block_revoke" or status == "grant_revoke":
             self.authRadio.setOn(True)
@@ -1393,11 +1513,9 @@ class ActionItem(PListViewItem):
             self.setAuthIcon(self.parent.parent.blockIcon)
 
     def slotAuth(self, toggle):
-        if not self.parentItem.isStarted:
-            return
-        if self.parent.parent.inOperation:
-            return
         if toggle:
+            if not self.checkActionItemControls():
+                return
             self.setAuthIcon(self.parent.parent.authIcon)
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.authorize)
@@ -1415,13 +1533,12 @@ class ActionItem(PListViewItem):
             if self.id in self.parent.parent.operations.keys():
                 self.parent.parent.operations.pop(item.id)
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState()
 
     def slotGrant(self, toggle):
-        if not self.parentItem.isStarted:
-            return
-        if self.parent.parent.inOperation:
-            return
         if toggle:
+            if not self.checkActionItemControls():
+                return
             self.setAuthIcon(self.parent.parent.grantIcon)
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.grant)
@@ -1438,13 +1555,12 @@ class ActionItem(PListViewItem):
         else: # not registered
             self.parent.parent.operations[item.id] = "grant"
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState()
 
     def slotBlock(self, toggle):
-        if not self.parentItem.isStarted:
-            return
-        if self.parent.parent.inOperation:
-            return
         if toggle:
+            if not self.checkActionItemControls():
+                return
             self.setAuthIcon(self.parent.parent.blockIcon)
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.block)
@@ -1461,6 +1577,7 @@ class ActionItem(PListViewItem):
         else: # not registered
             self.parent.parent.operations[item.id] = "block"
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState()
 
     def setAuthIcon(self, icon):
         self.setItemIcon(icon)
