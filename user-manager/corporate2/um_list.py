@@ -72,11 +72,12 @@ class PListView(QScrollView):
     def myResize(self, width):
         mw = 0
         th = 0
-        for i in self.visibleitems:
-            h = i.sizeHint().height()
-            mw = max(mw, i.sizeHint().width())
+        th = len(self.visibleitems)*self.itemHeight
+        #for i in self.visibleitems:
+            #h = i.sizeHint().height()
+            #mw = max(mw, i.sizeHint().width())
             #i.setGeometry(0, th, width, h)
-            th += h
+            #th += h
         #self.setMinimumSize(QSize(mw, 0))
         if th > self.height():
             self.resizeContents(width - 16, th)
@@ -191,6 +192,20 @@ class PListView(QScrollView):
                 return it
             it = it.nextItem
 
+    def clearSelection(self):
+        if self.selectedItem:
+            self.selectedItem.isSelected = False
+            self.selectedItem.repaint()
+            self.selectedItem = None
+        for i in self.items:
+            for w in i.widgets:
+                print type(w)
+                if isinstance(w, PLVButtonGroup):
+                    w.setExclusive(False)
+                    for b in w.buttonList:
+                        if isinstance(b, PLVRadioButton):
+                            b.setOn(False)
+
 
 class PListViewItem(QWidget):
 
@@ -270,6 +285,14 @@ class PListViewItem(QWidget):
         item.isSelected = False
         item.repaint()
 
+    def collapse(self):
+        if not self.firstChild:
+            return False
+        self.hideChilds()
+        self.parent.emit(PYSIGNAL("collapsed"), (self,))
+        self.parent.shiftLowerItems(self)
+        self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
+
     def expandOrCollapse(self):
         if not self.firstChild:
             return False
@@ -282,7 +305,8 @@ class PListViewItem(QWidget):
             self.hideChilds()
             self.parent.emit(PYSIGNAL("collapsed"), (self,))
         self.parent.shiftLowerItems(self)
-        self.parent.resizeEvent(QResizeEvent(QSize(self.width(), self.height()), QSize(self.width(), self.height())))
+        self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
+        #self.parent.resizeContents(self.parent.visibleWidth(), len(self.visibleitems)*self.itemHeight)
 
     def eventFilter(self, target, event):
         if(event.type() == QEvent.MouseButtonPress):
@@ -337,6 +361,7 @@ class PListViewItem(QWidget):
                 return False
             self.setFocus()
             return True
+        self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
         return False
 
     def showChilds(self):
@@ -493,23 +518,22 @@ class PListViewItem(QWidget):
 
     def addPLVButtonGroup(self, args, parent):
         plvbg = PLVButtonGroup(parent, args)
-        buttonList = []
         blist = args[0]
         for type in blist:
             if type == self.PLVIconButtonType:
                 ib = self.addPLVIconButton(args, args[1][args[0].index(type)], plvbg)
                 plvbg.layout().addWidget(ib)
-                buttonList.append(ib)
+                plvbg.buttonList.append(ib)
             elif type == self.PLVRadioButtonType:
                 rb = self.addPLVRadioButton(args, plvbg)
                 plvbg.layout().addWidget(rb)
-                buttonList.append(rb)
+                plvbg.buttonList.append(rb)
             elif type == self.PLVCheckBoxType:
                 cb = self.addPLVCheckBox(args, plvbg)
                 plvbg.layout().addWidget(cb)
-                buttonList.append(cb)
+                plvbg.buttonList.append(cb)
         self.widgets.append(plvbg)
-        return [plvbg, buttonList]
+        return [plvbg, plvbg.buttonList]
 
 class PLVIconButton(QPushButton):
     def __init__(self, parent, args):
@@ -542,6 +566,7 @@ class PLVButtonGroup(QButtonGroup):
         layout = QHBoxLayout(self)
         self.resize((16+self.buttonSpacing)*len(args[0]), 16)
         self.setFrameShape(QButtonGroup.NoFrame)
+        self.buttonList = []
         self.show()
 
 class PLVFlatComboPopupData:
