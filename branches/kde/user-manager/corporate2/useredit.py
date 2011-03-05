@@ -965,16 +965,21 @@ class PolicyTab(QVBox):
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
     def reset(self):
-        return
-        it = self.policyview.firstChild()
+        it = self.policylist.firstItem
         while it:
-            it.setOpen(False)
-            it = it.nextSibling()
-        self.setPolicyButtonsEnabled(False)
-        self.policyview.clearSelection()
-        self.passwordCheck.setChecked(False)
-        self.authorized.setChecked(False)
-        self.blocked.setChecked(False)
+            it.collapse()
+            it.isFilled = False
+            it = it.nextItem
+        #it = self.policyview.firstChild()
+        #while it:
+        #    it.setOpen(False)
+        #    it = it.nextSibling()
+        #self.setPolicyButtonsEnabled(False)
+        #self.policyview.clearSelection()
+        #self.passwordCheck.setChecked(False)
+        #self.authorized.setChecked(False)
+        #self.blocked.setChecked(False)
+        self.policylist.clearSelection()
         self.operations.clear()
         self.inOperation = False
 
@@ -1015,7 +1020,7 @@ class PolicyTab(QVBox):
         def checkNegative(method, package, exception, negative):
             if exception:
                 return
-            method(item, negative[0])
+            method(negative[0])
             self.stack.checkAdd()
         self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), item.id, async=functools.partial(checkNegative, method))
 
@@ -1130,23 +1135,43 @@ class PolicyTab(QVBox):
 
     def fillCategory(self, item, method=None):
         item.isFilled = True
-        self.policylist.remove(item.firstChild) # remove fake record
-        for i in polkit.action_list():
-            cats = item.name.split('|')
-            for j in cats:
-                if i.startswith(j):
-                    actioninfo = polkit.action_info(i)
-                    if actioninfo['policy_active'].startswith("auth_"):
-                        actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
-                        self.policylist.add(actionitem)
+        if item.firstChild and item.firstChild.id == "*": # policy categories has never loaded, load them first
+            self.policylist.remove(item.firstChild) # remove fake record
+            for i in polkit.action_list():
+                cats = item.name.split('|')
+                for j in cats:
+                    if i.startswith(j):
+                        actioninfo = polkit.action_info(i)
+                        if actioninfo['policy_active'].startswith("auth_"):
+                            actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
+                            self.policylist.add(actionitem)
 
-        self.fillCategoryAuths(item, method)
+        if self.edit:
+            self.fillCategoryAuths(item, method)
+        else:
+            self.fillCategoryAuthsAsDefault(item, method)
 
     def getStoredActionsStatusList(self, auths):
         authz = {}
         for a in auths:
             authz[a["action_id"]] = a["negative"]
         return authz
+
+    def fillCategoryAuthsAsDefault(self, item, method=None):
+        children = item.getChilds()
+
+        for child in children:
+            if child in self.operations:
+                child.setStatus(self.operations[child.id])
+            else:
+                if not method:
+                    child.setStatus()
+
+        item.isStarted = True # now, category item can handle slot events
+        if method:
+            method(True)
+        else:
+            item.checkButtonsState()
 
     def fillCategoryAuths(self, item, method=None):
         children = item.getChilds()
@@ -1171,33 +1196,17 @@ class PolicyTab(QVBox):
                         statusText = "block"
                     else:
                         statusText = "grant"
-                    child.setStatus(statusText)
+                    if not method:
+                        child.setStatus(statusText)
                 else:
-                    child.setStatus()
+                    if not method:
+                        child.setStatus()
 
             item.isStarted = True # now, category item can handle slot events
-            item.checkButtonsState()
-            method(True)
-
-            """blocks = map(lambda x: x["action_id"], filter(lambda x: x["negative"], auths))
-
-            if self.operations:
-                # add selections done via user-manager
-                for op in self.operations: #blocked olarak kayıtlı ama operationsda olduğuna göre artık blocked değil. o yüzden blocked listesinden kaldır bunu
-                    ## grant olarak kayıtlı ama operationsda varsa ne olacak?!!!!!!!
-                    if op in blocks:
-                        blocks.remove(op)
-                blocks.extend(filter(lambda x: self.operations[x] == "block", self.operations.keys()))
-                blocks = list(set(blocks))
-
-            for child in children:
-                if child in auths:
-                    if child in blocks:
-                        pass
-                if child.id in blocks:
-                    child.setAuthIcon("no")
-                else:
-                    child.setAuthIcon("yes")"""
+            if method:
+                method(True)
+            else:
+                item.checkButtonsState()
 
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
 
@@ -1364,6 +1373,16 @@ class CategoryItem(PListViewItem):
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.authorizeCategory)
+            else:
+                self.giveAuthToNewUser()
+
+    def giveAuthToNewUser(self):
+        for c in self.getChilds():
+            if c.id in self.parent.parent.operations.keys():
+                self.parent.parent.operations.pop(c.id)
+            c.setStatus("")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
 
     def authorizeCategory(self, auths):
         auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
@@ -1391,6 +1410,15 @@ class CategoryItem(PListViewItem):
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.grantCategory)
+            else:
+                self.giveGrantToNewUser()
+
+    def giveGrantToNewUser(self):
+        for c in self.getChilds():
+            self.parent.parent.operations[c.id] = "grant"
+            c.setStatus("grant")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
 
     def grantCategory(self, auths):
         auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
@@ -1418,6 +1446,16 @@ class CategoryItem(PListViewItem):
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.blockCategory)
+            else:
+                self.giveBlockToNewUser()
+
+    def giveBlockToNewUser(self):
+        for c in self.getChilds():
+            self.parent.parent.operations[c.id] = "block"
+            c.setStatus("block")
+        self.ignoreTemp = False
+        self.parent.parent.yaz()
+
 
     def blockCategory(self, auths):
         auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
@@ -1520,18 +1558,17 @@ class ActionItem(PListViewItem):
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.authorize)
             else:
-                self.authorize(item, -1)
+                self.authorize(-1)
 
-    #item kalkacak parametrleerden !!!!!!!!!!
-    def authorize(self, item, negative):
+    def authorize(self, negative):
         if negative != -1: # registered to policykit
             if negative == 0: # blocked
-                self.parent.parent.operations[item.id] = "block_revoke"
+                self.parent.parent.operations[self.id] = "block_revoke"
             else: # granted
-                self.parent.parent.operations[item.id] = "grant_revoke"
+                self.parent.parent.operations[self.id] = "grant_revoke"
         else: # not registered
             if self.id in self.parent.parent.operations.keys():
-                self.parent.parent.operations.pop(item.id)
+                self.parent.parent.operations.pop(self.id)
         self.parent.parent.yaz()
         self.parentItem.checkButtonsState()
 
@@ -1543,17 +1580,17 @@ class ActionItem(PListViewItem):
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.grant)
             else:
-                self.grant(item, -1)
+                self.grant(-1)
 
-    def grant(self, item, negative):
+    def grant(self, negative):
         if negative != -1: # registered to policykit
             if negative == 0: # blocked
-                self.parent.parent.operations[item.id] = "grant"
+                self.parent.parent.operations[self.id] = "grant"
             else: # granted
                 if self.id in self.parent.parent.operations.keys():
-                    self.parent.parent.operations.pop(item.id)
+                    self.parent.parent.operations.pop(self.id)
         else: # not registered
-            self.parent.parent.operations[item.id] = "grant"
+            self.parent.parent.operations[self.id] = "grant"
         self.parent.parent.yaz()
         self.parentItem.checkButtonsState()
 
@@ -1565,17 +1602,17 @@ class ActionItem(PListViewItem):
             if self.parent.parent.edit:
                 self.parent.parent.checkNegativeAndCall(self, self.block)
             else:
-                self.block(item, -1)
+                self.block(-1)
 
-    def block(self, item, negative):
+    def block(self, negative):
         if negative != -1: # registered to policykit
             if negative == 0: # blocked
                 if self.id in self.parent.parent.operations.keys():
-                    self.parent.parent.operations.pop(item.id)
+                    self.parent.parent.operations.pop(self.id)
             else: # granted
-                self.parent.parent.operations[item.id] = "block"
+                self.parent.parent.operations[self.id] = "block"
         else: # not registered
-            self.parent.parent.operations[item.id] = "block"
+            self.parent.parent.operations[self.id] = "block"
         self.parent.parent.yaz()
         self.parentItem.checkButtonsState()
 
