@@ -431,13 +431,18 @@ class PListViewItem(QWidget):
         if width < self.textLength:
             return
         wi = self.decrementTextOutToHalf()
+        ctrl = False
         while True:
+            print ctrl
             print wi
+            print '\n'
             if wi < self.textLength:
+                ctrl = True
                 wi = self.incrementTextOutByHalf()
-                break
             else:
                 wi = self.decrementTextOutToHalf()
+                if ctrl:
+                    break
         self.textOut += "..."
 
     def decrementTextOutToHalf(self):
@@ -448,9 +453,8 @@ class PListViewItem(QWidget):
 
     def incrementTextOutByHalf(self):
         total = (self.textOut.length()*3)/2
-        txt = self.textOut.left(total)
-        self.textOut = txt
-        return self.fontMetrics().width(txt)
+        self.textOut = self.text.left(total)
+        return self.fontMetrics().width(self.textOut)
 
     def paintEvent(self, event):
 
