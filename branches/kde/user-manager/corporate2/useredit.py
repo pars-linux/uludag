@@ -1147,7 +1147,7 @@ class PolicyTab(QVBox):
                     if i.startswith(j):
                         actioninfo = polkit.action_info(i)
                         if actioninfo['policy_active'].startswith("auth_"):
-                            actionitem = ActionItem(self.policylist, i, unicode(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
+                            actionitem = ActionItem(self.policylist, i, i18n(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
                             self.policylist.add(actionitem)
 
         if self.edit:
