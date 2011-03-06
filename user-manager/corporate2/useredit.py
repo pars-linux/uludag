@@ -1687,7 +1687,6 @@ class RootItem(PListViewItem):
             self.blockRadio.setOn(True)
 
     def checkButtonsState(self):
-        print '***************************************root checked'
         it = self.firstChild
         if not it:
             return
