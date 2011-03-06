@@ -143,6 +143,8 @@ class PListView(QScrollView):
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         if item.parentItem:
+            if not item.parentItem in self.items:
+                return # 
             item.parentItem.isExpanded = True
             lastChild = item.parentItem.findLastChild()
             if lastChild:
@@ -199,7 +201,6 @@ class PListView(QScrollView):
             self.selectedItem = None
         for i in self.items:
             for w in i.widgets:
-                print type(w)
                 if isinstance(w, PLVButtonGroup):
                     w.setExclusive(False)
                     for b in w.buttonList:
@@ -284,6 +285,14 @@ class PListViewItem(QWidget):
     def resetOldSelected(self, item):
         item.isSelected = False
         item.repaint()
+
+    def expand(self):
+        if not self.firstChild:
+            return False
+        self.showChilds()
+        self.parent.emit(PYSIGNAL("expanded"), (self,))
+        self.parent.shiftLowerItems(self)
+        self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
 
     def collapse(self):
         if not self.firstChild:

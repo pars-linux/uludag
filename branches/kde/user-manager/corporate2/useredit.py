@@ -966,7 +966,8 @@ class PolicyTab(QVBox):
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
     def reset(self):
-        it = self.policylist.firstItem
+        self.policylist.firstItem.expand()
+        it = self.policylist.firstItem.firstChild
         while it:
             it.collapse()
             it.isFilled = False
@@ -988,7 +989,8 @@ class PolicyTab(QVBox):
         #do not show policies require policy type yes or no, only the ones require auth_* type
         #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
-        self.root = RootItem(self.policylist, i18n("All actions"), icon=getIcon("add"))
+        self.root = RootItem(self.policylist, i18n("All actions"), "root-item", icon=getIcon("security-medium"))
+        self.policylist.add(self.root)
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=getIcon(categories[cats][1]), parentItem=self.root)
             self.policylist.add(catitem)
@@ -1332,13 +1334,13 @@ class PolicyTab(QVBox):
 ### !!! umlistitem diye bir abstract sınıf oluştur ve radio işlerini onda hallet
 
 class CategoryItem(PListViewItem):
-    def __init__(self, parent, label, name, isFilled=False, icon=None):
-        PListViewItem.__init__(self, parent, name, label,icon=icon)
+    def __init__(self, parent, label, name, isFilled=False, icon=None, parentItem=None):
+        PListViewItem.__init__(self, parent, name, label, parentItem, icon=icon)
         self.name = name
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
-        self.allItemsHaveSamePolicy = False
+        #self.allItemsHaveSamePolicy = False
         self.ignoreTemp = False # ignore action item button actions temporarily while we are setting all category's actions
 
         """self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
@@ -1404,6 +1406,7 @@ class CategoryItem(PListViewItem):
             c.setStatus("")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState() # for root
 
     def slotGrant(self, toggle):
         if toggle:
@@ -1440,6 +1443,7 @@ class CategoryItem(PListViewItem):
             c.setStatus("grant")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState() # for root
 
     def slotBlock(self, toggle):
         if toggle:
@@ -1477,6 +1481,7 @@ class CategoryItem(PListViewItem):
             c.setStatus("block")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.parentItem.checkButtonsState() # for root
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
@@ -1486,6 +1491,16 @@ class CategoryItem(PListViewItem):
             self.grantRadio.setOn(True)
         elif status == "block":
             self.blockRadio.setOn(True)
+
+    def getStatus(self):
+        if self.authRadio.isOn():
+            return "auth"
+        elif self.grantRadio.isOn():
+            return "grant"
+        elif self.blockRadio.isOn(): # blocked
+            return "block"
+        else:
+            return
 
     def checkButtonsState(self):
         it = self.firstChild
@@ -1498,11 +1513,13 @@ class CategoryItem(PListViewItem):
                 self.authRadio.setOn(False)
                 self.grantRadio.setOn(False)
                 self.blockRadio.setOn(False)
-                self.allItemsHaveSamePolicy = False
+                #self.allItemsHaveSamePolicy = False
+                self.parentItem.checkButtonsState() # for root
                 return
             it = it.nextItem
         self.setStatus(firstState)
-        self.allItemsHaveSamePolicy = True
+        self.parentItem.checkButtonsState() # for root
+        #self.allItemsHaveSamePolicy = True
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
@@ -1529,8 +1546,10 @@ class ActionItem(PListViewItem):
             return "auth"
         elif self.grantRadio.isOn():
             return "grant"
-        else: # blocked
+        elif self.blockRadio.isOn(): # blocked
             return "block"
+        else:
+            return
 
     def checkActionItemControls(self):
         if not self.parentItem.isStarted:
@@ -1626,11 +1645,10 @@ class ActionItem(PListViewItem):
 class RootItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
         PListViewItem.__init__(self, parent, name, label,icon=icon)
-        self.name = name
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
-        self.allItemsHaveSamePolicy = False
+        #self.allItemsHaveSamePolicy = False
         self.ignoreTemp = False # ignore action item button actions temporarily while we are setting all category's actions
 
         retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
@@ -1644,126 +1662,20 @@ class RootItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
-    def actionControls(self, method):
-        if not self.isFilled:
-            self.parent.parent.fillCategory(self, method)
-            return False
-        if not self.isStarted:
-            return False
-        #if not self.allItemsHaveSamePolicy: # set by code, not user click action so ignore it
-        #    print 'hepsi aynı deel'
-        #    return False
-        return True
-
     def slotAuth(self, toggle):
         if toggle:
-            if not self.actionControls(self.slotAuth):
-                return
-            if self.parent.parent.edit:
-                self.ignoreTemp = True
-                self.parent.parent.checkCategoryAndCall(self, self.authorizeCategory)
-            else:
-                self.giveAuthToNewUser()
-
-    def giveAuthToNewUser(self):
-        for c in self.getChilds():
-            if c.id in self.parent.parent.operations.keys():
-                self.parent.parent.operations.pop(c.id)
-            c.setStatus("")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
-
-    def authorizeCategory(self, auths):
-        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
-        storedAuths = {}
-        for a in auths:
-            storedAuths[a["action_id"]] = a["negative"]
-        for c in self.getChilds():
-            # kayıtlı mı?
-            if c.id in storedAuths.keys():
-                if storedAuths[c.id]: #blocked
-                    self.parent.parent.operations[c.id] = "block_revoke"
-                else:
-                    self.parent.parent.operations[c.id] = "grant_revoke"
-            else: # kayıt yok
-                if c.id in self.parent.parent.operations.keys():
-                    self.parent.parent.operations.pop(c.id)
-            c.setStatus("")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
+            for i in self.getChilds():
+                i.authRadio.setOn(True)
 
     def slotGrant(self, toggle):
         if toggle:
-            if not self.actionControls(self.slotGrant):
-                return
-            if self.parent.parent.edit:
-                self.ignoreTemp = True
-                self.parent.parent.checkCategoryAndCall(self, self.grantCategory)
-            else:
-                self.giveGrantToNewUser()
-
-    def giveGrantToNewUser(self):
-        for c in self.getChilds():
-            self.parent.parent.operations[c.id] = "grant"
-            c.setStatus("grant")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
-
-    def grantCategory(self, auths):
-        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
-        storedAuths = {}
-        for a in auths:
-            storedAuths[a["action_id"]] = a["negative"]
-        for c in self.getChilds():
-            # kayıtlı mı?
-            if c.id in storedAuths.keys():
-                if storedAuths[c.id]: #blocked
-                    self.parent.parent.operations[c.id] = "grant"
-                else:
-                    if c.id in self.parent.parent.operations.keys():
-                        self.parent.parent.operations.pop(c.id)
-            else: # kayıt yok
-                self.parent.parent.operations[c.id] = "grant"
-            c.setStatus("grant")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
+            for i in self.getChilds():
+                i.grantRadio.setOn(True)
 
     def slotBlock(self, toggle):
         if toggle:
-            if not self.actionControls(self.slotBlock):
-                return
-            if self.parent.parent.edit:
-                self.ignoreTemp = True
-                self.parent.parent.checkCategoryAndCall(self, self.blockCategory)
-            else:
-                self.giveBlockToNewUser()
-
-    def giveBlockToNewUser(self):
-        for c in self.getChilds():
-            self.parent.parent.operations[c.id] = "block"
-            c.setStatus("block")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
-
-
-    def blockCategory(self, auths):
-        auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
-        storedAuths = {}
-        for a in auths:
-            storedAuths[a["action_id"]] = a["negative"]
-        for c in self.getChilds():
-            # kayıtlı mı?
-            if c.id in storedAuths.keys():
-                if storedAuths[c.id]: #blocked
-                    if c.id in self.parent.parent.operations.keys():
-                        self.parent.parent.operations.pop(c.id)
-                else:
-                    self.parent.parent.operations[c.id] = "block"
-            else: # kayıt yok
-                self.parent.parent.operations[c.id] = "block"
-            c.setStatus("block")
-        self.ignoreTemp = False
-        self.parent.parent.yaz()
+            for i in self.getChilds():
+                i.blockRadio.setOn(True)
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
@@ -1775,8 +1687,11 @@ class RootItem(PListViewItem):
             self.blockRadio.setOn(True)
 
     def checkButtonsState(self):
+        print '***************************************root checked'
         it = self.firstChild
         if not it:
+            return
+        if not it.isFilled:
             return
         firstState = it.getStatus()
         while it:
@@ -1785,9 +1700,9 @@ class RootItem(PListViewItem):
                 self.authRadio.setOn(False)
                 self.grantRadio.setOn(False)
                 self.blockRadio.setOn(False)
-                self.allItemsHaveSamePolicy = False
+                #self.allItemsHaveSamePolicy = False
                 return
             it = it.nextItem
         self.setStatus(firstState)
-        self.allItemsHaveSamePolicy = True
+        #self.allItemsHaveSamePolicy = True
 
