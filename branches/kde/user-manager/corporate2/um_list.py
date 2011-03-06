@@ -221,11 +221,14 @@ class PListViewItem(QWidget):
     PLVIMouseClicked = 101
     PLVIMouseDoubleClicked = 102
 
+    textLength = 0
+
     def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None, icon=None):
         QWidget.__init__(self, parent.viewport(), name)
         self.buffer = QPixmap()
         self.parent = parent
         self.text = text
+        self.textOut = text
         self.widgets = []
 
         self.data = data
@@ -250,6 +253,8 @@ class PListViewItem(QWidget):
         self.depthExtra = self.depth * PListView.depthSize
 
         self.show()
+
+        self.threeDotLength = self.fontMetrics().width("...")
 
     def clear(self):
         for w in self.widgets:
@@ -415,6 +420,37 @@ class PListViewItem(QWidget):
             excess += w.width() + self.widgetSpacing
             mid = (height - w.height()) / 2
             w.setGeometry(width - excess, mid, w.width(), w.height())
+        self.textLength = self.width() - self.parent.iconSize - self.parent.arrowSize - self.threeDotLength - 10 - 2 - (self.parent.depthSize*self.depth) - excess
+        self.calculateTextOut()
+
+    def calculateTextOut(self):
+        if not self.isVisible():
+            return
+        self.textOut = self.text
+        width = self.fontMetrics().width(self.textOut)
+        if width < self.textLength:
+            return
+        wi = self.decrementTextOutToHalf()
+        while True:
+            print wi
+            if wi < self.textLength:
+                wi = self.incrementTextOutByHalf()
+                break
+            else:
+                wi = self.decrementTextOutToHalf()
+        self.textOut += "..."
+
+    def decrementTextOutToHalf(self):
+        total = self.textOut.length()/2
+        txt = self.textOut.left(total)
+        self.textOut = txt
+        return self.fontMetrics().width(txt)
+
+    def incrementTextOutByHalf(self):
+        total = (self.textOut.length()*3)/2
+        txt = self.textOut.left(total)
+        self.textOut = txt
+        return self.fontMetrics().width(txt)
 
     def paintEvent(self, event):
 
@@ -464,8 +500,9 @@ class PListViewItem(QWidget):
         #font.setStyleStrategy(QFont.NoAntialias)
         paint.setFont(font)
 
+        print self.textLength
         dx = self.depthExtra + 2 + arrow + 2 + self.parent.iconSize + 6
-        paint.drawText(dx, mid, unicode(self.text))
+        paint.drawText(dx, mid, unicode(self.textOut))
 
         paint.end()
         #bitBlt(self, 0, 0, self.buffer)
