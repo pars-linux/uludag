@@ -223,7 +223,7 @@ class PListViewItem(QWidget):
 
     textLength = 0
 
-    def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None, icon=None):
+    def __init__(self, parent=None, name=None, text="text", parentItem=None, data=None, icon=None, enableWidgetHiding=False):
         QWidget.__init__(self, parent.viewport(), name)
         self.buffer = QPixmap()
         self.parent = parent
@@ -241,6 +241,8 @@ class PListViewItem(QWidget):
         self.parentItem = parentItem
         self.nextItem = None
         self.firstChild = None
+
+        self.enableWidgetHiding = enableWidgetHiding
 
         self.icon = icon
 
@@ -322,6 +324,14 @@ class PListViewItem(QWidget):
         self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
         #self.parent.resizeContents(self.parent.visibleWidth(), len(self.visibleitems)*self.itemHeight)
 
+    def hideWidgets(self):
+        for w in self.widgets:
+            w.hide()
+
+    def showWidgets(self):
+        for w in self.widgets:
+            w.show()
+
     def eventFilter(self, target, event):
         if(event.type() == QEvent.MouseButtonPress):
             if not self.parent.selectedItem == self:
@@ -342,9 +352,11 @@ class PListViewItem(QWidget):
             pass
         elif (event.type() == QEvent.Enter):
             self.parent.hoverItem = self
+            self.showWidgets()
             self.repaint()
         elif (event.type() == QEvent.Leave):
             self.parent.hoverItem = None
+            self.hideWidgets()
             self.repaint()
         elif (event.type() == QEvent.KeyPress):
             if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:

@@ -1335,7 +1335,7 @@ class PolicyTab(QVBox):
 
 class CategoryItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None, parentItem=None):
-        PListViewItem.__init__(self, parent, name, label, parentItem, icon=icon)
+        PListViewItem.__init__(self, parent, name, label, parentItem, icon=icon, enableWidgetHiding=True)
         self.name = name
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
@@ -1523,7 +1523,7 @@ class CategoryItem(PListViewItem):
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
-        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset")
+        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset", enableWidgetHiding=True)
         self.id = id
         self.desc = desc
         self.policy = policy
@@ -1644,7 +1644,7 @@ class ActionItem(PListViewItem):
 
 class RootItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
-        PListViewItem.__init__(self, parent, name, label,icon=icon)
+        PListViewItem.__init__(self, parent, name, label, icon=icon, enableWidgetHiding=True)
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
