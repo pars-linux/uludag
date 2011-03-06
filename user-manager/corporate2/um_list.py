@@ -243,6 +243,7 @@ class PListViewItem(QWidget):
         self.firstChild = None
 
         self.enableWidgetHiding = enableWidgetHiding
+        self.threeDotLength = self.fontMetrics().width("...")
 
         self.icon = icon
 
@@ -255,8 +256,6 @@ class PListViewItem(QWidget):
         self.depthExtra = self.depth * PListView.depthSize
 
         self.show()
-
-        self.threeDotLength = self.fontMetrics().width("...")
 
     def clear(self):
         for w in self.widgets:
@@ -352,11 +351,13 @@ class PListViewItem(QWidget):
             pass
         elif (event.type() == QEvent.Enter):
             self.parent.hoverItem = self
-            self.showWidgets()
+            if self.enableWidgetHiding:
+                self.showWidgets()
             self.repaint()
         elif (event.type() == QEvent.Leave):
             self.parent.hoverItem = None
-            self.hideWidgets()
+            if self.enableWidgetHiding:
+                self.hideWidgets()
             self.repaint()
         elif (event.type() == QEvent.KeyPress):
             if event.key() == Qt.Key_Return or event.key() == Qt.Key_Enter:
@@ -436,6 +437,7 @@ class PListViewItem(QWidget):
         self.calculateTextOut()
 
     def calculateTextOut(self):
+        return
         if not self.isVisible():
             return
         self.textOut = self.text
@@ -445,9 +447,6 @@ class PListViewItem(QWidget):
         wi = self.decrementTextOutToHalf()
         ctrl = False
         while True:
-            print ctrl
-            print wi
-            print '\n'
             if wi < self.textLength:
                 ctrl = True
                 wi = self.incrementTextOutByHalf()
@@ -458,14 +457,14 @@ class PListViewItem(QWidget):
         self.textOut += "..."
 
     def decrementTextOutToHalf(self):
-        total = self.textOut.length()/2
-        txt = self.textOut.left(total)
+        total = len(self.textOut)/2
+        txt = QString(self.textOut).left(total)
         self.textOut = txt
         return self.fontMetrics().width(txt)
 
     def incrementTextOutByHalf(self):
         total = (self.textOut.length()*3)/2
-        self.textOut = self.text.left(total)
+        self.textOut = QString(self.text).left(total)
         return self.fontMetrics().width(self.textOut)
 
     def paintEvent(self, event):
@@ -558,24 +557,32 @@ class PListViewItem(QWidget):
         plvib = PLVIconButton(parent, args)
         if parent == self:
             self.widgets.append(plvib)
+            if self.enableWidgetHiding:
+                plvib.hide()
         return plvib
 
     def addPLVRadioButton(self, args, parent):
         plvrb = PLVRadioButton(parent, args)
         if parent == self:
             self.widgets.append(plvrb)
+            if self.enableWidgetHiding:
+                plvrb.hide()
         return plvrb
 
     def addPLVCheckBox(self, args, parent):
-        plvrb = PLVCheckBox(parent, args)
+        plvcb = PLVCheckBox(parent, args)
         if parent == self:
-            self.widgets.append(plvrb)
-        return plvrb
+            self.widgets.append(plvcb)
+            if self.enableWidgetHiding:
+                plvcb.hide()
+        return plvcb
 
     def addPLVFlatCombo(self, args, parent):
         plvfc = PLVFlatCombo(parent, args)
         if parent == self:
             self.widgets.append(plvfc)
+            if self.enableWidgetHiding:
+                plvfc.hide()
         return plvfc
 
     def addPLVButtonGroup(self, args, parent):
@@ -595,6 +602,8 @@ class PListViewItem(QWidget):
                 plvbg.layout().addWidget(cb)
                 plvbg.buttonList.append(cb)
         self.widgets.append(plvbg)
+        if self.enableWidgetHiding:
+            plvbg.hide()
         return [plvbg, plvbg.buttonList]
 
 class PLVIconButton(QPushButton):
