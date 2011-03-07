@@ -795,6 +795,8 @@ class PolicyTab(QVBox):
         self.authIcon = getIcon("um_auth")
         self.grantIcon = getIcon("um_grant")
         self.blockIcon = getIcon("um_block")
+        self.authControl = None
+        self.authControlMethod = None
 
         """#add radio buttons
         self.buttonGroup = QButtonGroup(self)
@@ -1182,8 +1184,25 @@ class PolicyTab(QVBox):
 
         def fill(package, exception, auths):
             if exception:
+                # resetle: root ile ilk çocuğunu 
                 item.expandOrCollapse()
                 return
+
+            if self.authControl == 1:
+                self.authControl == 0
+                it = self.policylist.firstItem.firstChild
+                while it:
+                    it = it.nextItem
+                    if not it:
+                        break
+                    if self.authControlMethod == "auth":
+                        it.authRadio.setOn(True)
+                    elif self.authControlMethod == "grant":
+                        it.grantRadio.setOn(True)
+                    elif self.authControlMethod == "block":
+                        it.blockRadio.setOn(True)
+                self.authControlMethod = None
+
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
             # eğer bi action operationsda ise onun bilgileriyle doldur.
             # operationsta yoksa authsa bak ona göre doldur
@@ -1329,13 +1348,11 @@ class PolicyTab(QVBox):
 
         self.mainwidget.link.User.Manager["baselayout"].getNegativeValue(int(self.uid.text()), actionItem.id, async=handleLeafStatus)
 
-
-
 ### !!! umlistitem diye bir abstract sınıf oluştur ve radio işlerini onda hallet
 
 class CategoryItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None, parentItem=None):
-        PListViewItem.__init__(self, parent, name, label, parentItem, icon=icon, enableWidgetHiding=True)
+        PListViewItem.__init__(self, parent, name, label, parentItem, icon=icon, enableWidgetHiding=False)
         self.name = name
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
@@ -1647,7 +1664,7 @@ class ActionItem(PListViewItem):
 
 class RootItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
-        PListViewItem.__init__(self, parent, name, label, icon=icon, enableWidgetHiding=True)
+        PListViewItem.__init__(self, parent, name, label, icon=icon, enableWidgetHiding=False)
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
@@ -1668,20 +1685,39 @@ class RootItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
+    def checkAuthControl(self):
+        if self.parent.parent.authControl > 0:
+            return False
+        else:
+            self.parent.parent.authControl = 1
+        return True
+
     def slotAuth(self, toggle):
         if toggle:
-            for i in self.getChilds():
-                i.authRadio.setOn(True)
+            if not self.checkAuthControl():
+                return
+            self.firstChild.authRadio.setOn(True)
+            self.parent.parent.authControlMethod = "auth"
+            #for i in self.getChilds():
+            #    i.authRadio.setOn(True)
 
     def slotGrant(self, toggle):
         if toggle:
-            for i in self.getChilds():
-                i.grantRadio.setOn(True)
+            if not self.checkAuthControl():
+                return
+            self.firstChild.grantRadio.setOn(True)
+            self.parent.parent.authControlMethod = "grant"
+            #for i in self.getChilds():
+            #    i.grantRadio.setOn(True)
 
     def slotBlock(self, toggle):
         if toggle:
-            for i in self.getChilds():
-                i.blockRadio.setOn(True)
+            if not self.checkAuthControl():
+                return
+            self.firstChild.blockRadio.setOn(True)
+            self.parent.parent.authControlMethod = "block"
+            #for i in self.getChilds():
+            #    i.blockRadio.setOn(True)
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
