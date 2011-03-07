@@ -80,9 +80,13 @@ class PListView(QScrollView):
         #self.setMinimumSize(QSize(mw, 0))
         if th > self.height():
             self.resizeContents(width - 16, th)
+            for i in self.visibleitems:
+                i.setWidgetsGeometry(self.firstItem.width(), self.firstItem.height())
         else:
             self.resizeContents(width, th)
-        #print 'myresize içiiiiiii'
+            for i in self.visibleitems:
+                if self.firstItem:
+                    i.setWidgetsGeometry(self.firstItem.width(), self.firstItem.height())
         #self.setContentsPos(0,0)
         #self.updateContents(0,0, 50,500)
 
@@ -205,6 +209,9 @@ class PListView(QScrollView):
                     for b in w.buttonList:
                         if isinstance(b, PLVRadioButton):
                             b.setOn(False)
+                        elif isinstance(b, PLVIconRadioButton):
+                            b.setOn(False)
+                            b.isMouseOver = False
 
 
 class PListViewItem(QWidget):
@@ -246,6 +253,8 @@ class PListViewItem(QWidget):
         self.threeDotLength = self.fontMetrics().width("...")
 
         self.icon = icon
+
+        self.flickerCtrl = False
 
         self.installEventFilter(self)
 
@@ -290,6 +299,8 @@ class PListViewItem(QWidget):
 
     def resetOldSelected(self, item):
         item.isSelected = False
+        if item.enableWidgetHiding:
+            item.hideWidgets()
         item.repaint()
 
     def expand(self):
@@ -312,7 +323,6 @@ class PListViewItem(QWidget):
         if not self.firstChild:
             return False
         self.isExpanded = not self.isExpanded
-        self.repaint()
         if self.isExpanded:
             self.showChilds()
             self.parent.emit(PYSIGNAL("expanded"), (self,))
@@ -321,6 +331,7 @@ class PListViewItem(QWidget):
             self.parent.emit(PYSIGNAL("collapsed"), (self,))
         self.parent.shiftLowerItems(self)
         self.parent.resizeEvent(QResizeEvent(QSize(self.parent.visibleWidth(), len(self.parent.visibleitems)*self.parent.itemHeight), QSize(0, 0)))
+        self.repaint()
         #self.parent.resizeContents(self.parent.visibleWidth(), len(self.visibleitems)*self.itemHeight)
 
     def hideWidgets(self):
@@ -328,6 +339,8 @@ class PListViewItem(QWidget):
             w.hide()
 
     def showWidgets(self):
+        if self.flickerCtrl:
+            return
         for w in self.widgets:
             w.show()
 
@@ -344,11 +357,12 @@ class PListViewItem(QWidget):
                 self.expandOrCollapse()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
             self.setFocus()
+            self.flickerCtrl = True
         elif (event.type() == QEvent.MouseButtonDblClick):
             self.expandOrCollapse()
             self.parent.emit(PYSIGNAL("clicked"), (event, self,))
         elif (event.type() == QEvent.MouseButtonRelease):
-            pass
+            self.flickerCtrl = False
         elif (event.type() == QEvent.Enter):
             self.parent.hoverItem = self
             if self.enableWidgetHiding:
@@ -392,6 +406,7 @@ class PListViewItem(QWidget):
         return False
 
     def showChilds(self):
+        self.repaint()
         child = self.firstChild
         index = self.parent.visibleitems.index(self)
         while child:
@@ -400,6 +415,7 @@ class PListViewItem(QWidget):
             index += 1
             child.resize(self.width(), self.height())
             child.show()
+            child.repaint()
             child = child.nextItem
         self.parent.setContentsPos(0, self.parent.visibleitems.index(self)*self.parent.itemHeight)
 
@@ -426,9 +442,15 @@ class PListViewItem(QWidget):
     def setWidgetsBg(self, color):
         for w in self.widgets:
             w.setPaletteBackgroundColor(color)
+            if isinstance(w, PLVButtonGroup):
+                for i in w.buttonList:
+                    i.setPaletteBackgroundColor(color)
+                    i.bgcolor = color
 
     def setWidgetsGeometry(self, width, height):
-        excess = 12
+        excess = 4
+        if self.parent.verticalScrollBar().isVisible():
+            excess += 12
         for w in self.widgets:
             excess += w.width() + self.widgetSpacing
             mid = (height - w.height()) / 2
@@ -525,7 +547,7 @@ class PListViewItem(QWidget):
         w = event.size().width()
         h = event.size().height()
         self.setWidgetsGeometry(w, h)
-        self.buffer = QPixmap(w,h)
+        #self.buffer = QPixmap(w,h)
         self.handleItemText()
         return QWidget.resizeEvent(self, event)
 
@@ -649,6 +671,7 @@ class PLVIconRadioButton(QRadioButton):
         self.isMouseOver = False
         self.installEventFilter(self)
         self.baseColor = KGlobalSettings.baseColor()
+        self.bgcolor = self.baseColor
         self.selectedColor = KGlobalSettings.calculateAlternateBackgroundColor(KGlobalSettings.highlightColor())
         self.hoverColor = KGlobalSettings.calculateAlternateBackgroundColor(KGlobalSettings.buttonBackground())
         if isinstance(self.parent, PLVButtonGroup):
@@ -665,6 +688,9 @@ class PLVIconRadioButton(QRadioButton):
         elif (event.type() == QEvent.Leave):
             self.isMouseOver = False
             self.repaint()
+        elif(event.type() == QEvent.MouseButtonPress):
+            if not self.isOn():
+                self.setOn(not self.isOn())
         return False
 
     def paintEvent(self, event):
@@ -673,13 +699,20 @@ class PLVIconRadioButton(QRadioButton):
         if not paint.isActive():
             paint.begin(self)
         if self.isOn():
-            paint.setBrush(QBrush(QColor(30,30,30)))
-            paint.drawRoundRect(0, 0, 20, 20)
             paint.fillRect(0, 0, 20, 20, QBrush(self.selectedColor))
+            oldPen = paint.pen()
+            paint.setPen(QPen(QColor(50,50,50)))
+            paint.drawRoundRect(0, 0, 20, 20)
+            paint.setPen(oldPen)
         elif self.isMouseOver:
             paint.fillRect(0, 0, 20, 20, QBrush(self.hoverColor))
+            oldPen = paint.pen()
+            paint.setPen(QPen(QColor(50,50,50)))
+            paint.drawRoundRect(0, 0, 20, 20)
+            paint.setPen(oldPen)
         else:
-            paint.fillRect(0, 0, 20, 20, QBrush(0))
+            paint.fillRect(0, 0, 20, 20, QBrush(self.bgcolor))
+        #    paint.fillRect(0, 0, 20, 20, QBrush(0))
         #oldBrush = paint.brush()
         #paint.setBrush(QBrush(self.selectedColor))
         #paint.drawRoundRect(0, 0, 20, 20)
