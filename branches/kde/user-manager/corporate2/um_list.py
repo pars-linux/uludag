@@ -18,7 +18,6 @@ def getIconSet(name, group=KIcon.Toolbar):
     return KGlobal.iconLoader().loadIconSet(name, group)
 
 def getIcon(name, group=KIcon.Small):
-    print name
     return KGlobal.iconLoader().loadIcon(name, group)
 
 # !!!!!!!!!!! viewportun dışında yapışık bi header olsa iyi olur
@@ -215,6 +214,7 @@ class PListViewItem(QWidget):
     PLVCheckBoxType = 3
     PLVButtonGroupType = 4
     PLVFlatComboType = 5
+    PLVIconRadioButtonType = 6
 
     widgetSpacing = 2
 
@@ -515,7 +515,6 @@ class PListViewItem(QWidget):
         #font.setStyleStrategy(QFont.NoAntialias)
         paint.setFont(font)
 
-        print self.textLength
         dx = self.depthExtra + 2 + arrow + 2 + self.parent.iconSize + 6
         paint.drawText(dx, mid, unicode(self.textOut))
 
@@ -585,9 +584,18 @@ class PListViewItem(QWidget):
                 plvfc.hide()
         return plvfc
 
+    def addPLVIconRadioButton(self, icon, parent):
+        plvirb = PLVIconRadioButton(parent, icon)
+        if parent == self:
+            self.widgets.append(plvirb)
+            if self.enableWidgetHiding:
+                plvirb.hide()
+        return plvirb
+
     def addPLVButtonGroup(self, args, parent):
         plvbg = PLVButtonGroup(parent, args)
         blist = args[0]
+        index = 0
         for type in blist:
             if type == self.PLVIconButtonType:
                 ib = self.addPLVIconButton(args, args[1][args[0].index(type)], plvbg)
@@ -601,6 +609,11 @@ class PListViewItem(QWidget):
                 cb = self.addPLVCheckBox(args, plvbg)
                 plvbg.layout().addWidget(cb)
                 plvbg.buttonList.append(cb)
+            elif type == self.PLVIconRadioButtonType:
+                cb = self.addPLVIconRadioButton(args[1][index], plvbg)
+                plvbg.layout().addWidget(cb)
+                plvbg.buttonList.append(cb)
+            index += 1
         self.widgets.append(plvbg)
         if self.enableWidgetHiding:
             plvbg.hide()
@@ -624,6 +637,56 @@ class PLVRadioButton(QRadioButton):
         self.resize(16, 16)
         self.show()
 
+class PLVIconRadioButton(QRadioButton):
+    def __init__(self, parent, icon):
+        QRadioButton.__init__(self, parent)
+        self.resize(20, 20)
+        self.setMinimumSize(QSize(20,20))
+        self.setMaximumSize(QSize(20,20))
+        self.show()
+        self.parent = parent
+        self.icon = icon
+        self.isMouseOver = False
+        self.installEventFilter(self)
+        self.baseColor = KGlobalSettings.baseColor()
+        self.selectedColor = KGlobalSettings.calculateAlternateBackgroundColor(KGlobalSettings.highlightColor())
+        self.hoverColor = KGlobalSettings.calculateAlternateBackgroundColor(KGlobalSettings.buttonBackground())
+        if isinstance(self.parent, PLVButtonGroup):
+            self.connect(self, SIGNAL("toggled(bool)"), self.slotToogle)
+
+    def slotToogle(self):
+        for b in self.parent.buttonList:
+            b.repaint()
+
+    def eventFilter(self, target, event):
+        if (event.type() == QEvent.Enter):
+            self.isMouseOver = True
+            self.repaint()
+        elif (event.type() == QEvent.Leave):
+            self.isMouseOver = False
+            self.repaint()
+        return False
+
+    def paintEvent(self, event):
+        #üzerine gelip gelip durunca koyulaşıyo????
+        paint = QPainter(self)
+        if not paint.isActive():
+            paint.begin(self)
+        if self.isOn():
+            paint.setBrush(QBrush(QColor(30,30,30)))
+            paint.drawRoundRect(0, 0, 20, 20)
+            paint.fillRect(0, 0, 20, 20, QBrush(self.selectedColor))
+        elif self.isMouseOver:
+            paint.fillRect(0, 0, 20, 20, QBrush(self.hoverColor))
+        else:
+            paint.fillRect(0, 0, 20, 20, QBrush(0))
+        #oldBrush = paint.brush()
+        #paint.setBrush(QBrush(self.selectedColor))
+        #paint.drawRoundRect(0, 0, 20, 20)
+        #paint.setBrush(oldBrush)
+        paint.drawPixmap(2, 2, self.icon, 0, 0, 20, 20)
+        paint.end()
+
 class PLVCheckBox(QCheckBox):
     def __init__(self, parent, args):
         QCheckBox.__init__(self, parent)
@@ -635,7 +698,7 @@ class PLVButtonGroup(QButtonGroup):
     def __init__(self, parent, args):
         QButtonGroup.__init__(self, parent)
         layout = QHBoxLayout(self)
-        self.resize((16+self.buttonSpacing)*len(args[0]), 16)
+        self.resize((16+self.buttonSpacing)*len(args[0]), parent.height())
         self.setFrameShape(QButtonGroup.NoFrame)
         self.buttonList = []
         self.show()
