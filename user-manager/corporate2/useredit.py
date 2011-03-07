@@ -1348,8 +1348,8 @@ class CategoryItem(PListViewItem):
             PLVFlatComboPopupData(i18n("Authorize"), self.slotAuth),
             PLVFlatComboPopupData(i18n("Block"), self.slotBlock)],
                 ])"""
-        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVIconRadioButtonType,
+            PListViewItem.PLVIconRadioButtonType, PListViewItem.PLVIconRadioButtonType], [getIcon("um_grant"), getIcon("um_auth"), getIcon("um_block")] ])
         self.buttonGroup = retVal[0]
         self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
@@ -1530,8 +1530,11 @@ class ActionItem(PListViewItem):
 
         self.setAuthIcon(getIcon("history"))
 
-        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVIconRadioButtonType,
+            PListViewItem.PLVIconRadioButtonType, PListViewItem.PLVIconRadioButtonType], [getIcon("um_grant"), getIcon("um_auth"), getIcon("um_block")] ])
+        self.buttonGroup = retVal[0]
+        #retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+        #    PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
         self.buttonGroup = retVal[0]
         self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
@@ -1651,8 +1654,11 @@ class RootItem(PListViewItem):
         #self.allItemsHaveSamePolicy = False
         self.ignoreTemp = False # ignore action item button actions temporarily while we are setting all category's actions
 
-        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
-            PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
+        retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVIconRadioButtonType,
+            PListViewItem.PLVIconRadioButtonType, PListViewItem.PLVIconRadioButtonType], [getIcon("um_grant"), getIcon("um_auth"), getIcon("um_block")] ])
+        self.buttonGroup = retVal[0]
+        #retVal = self.addWidgetItem(PListViewItem.PLVButtonGroupType, [[PListViewItem.PLVRadioButtonType,
+        #    PListViewItem.PLVRadioButtonType, PListViewItem.PLVRadioButtonType], [] ])
         self.buttonGroup = retVal[0]
         self.grantRadio = retVal[1][0]  # gives auth and dont asks for password
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
