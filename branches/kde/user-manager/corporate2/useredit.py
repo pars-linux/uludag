@@ -1546,11 +1546,11 @@ class CategoryItem(PListViewItem):
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
-        if status == "auth":
+        if status == "auth" and not self.authRadio.isOn():
             self.authRadio.setOn(True)
-        elif status == "grant":
+        elif status == "grant" and not self.grantRadio.isOn():
             self.grantRadio.setOn(True)
-        elif status == "block":
+        elif status == "block" and not self.blockRadio.isOn():
             self.blockRadio.setOn(True)
 
     def resetStatus(self):
@@ -1640,13 +1640,13 @@ class ActionItem(PListViewItem):
         return True
 
     def setStatus(self, status=""):
-        if status == "" or status == "block_revoke" or status == "grant_revoke":
+        if (status == "" or status == "block_revoke" or status == "grant_revoke") and not self.authRadio.isOn():
             self.authRadio.setOn(True)
             self.setAuthIcon(self.parent.parent.authIcon)
-        elif status == "grant":
+        elif status == "grant" and not self.grantRadio.isOn():
             self.grantRadio.setOn(True)
             self.setAuthIcon(self.parent.parent.grantIcon)
-        elif status == "block":
+        elif status == "block" and not self.blockRadio.isOn():
             self.blockRadio.setOn(True)
             self.setAuthIcon(self.parent.parent.blockIcon)
 
@@ -1760,8 +1760,11 @@ class RootItem(PListViewItem):
             if self.parent.parent.edit:
                 if not self.checkAuthControl():
                     return
-                self.firstChild.authRadio.setOn(True)
                 self.parent.parent.authControlMethod = "auth"
+                if self.firstChild.getStatus() == "auth":
+                    self.firstChild.slotAuth(True)
+                else:
+                    self.firstChild.setStatus("auth")
             else:
                 for i in self.getChilds():
                     i.authRadio.setOn(True)
@@ -1771,8 +1774,11 @@ class RootItem(PListViewItem):
             if self.parent.parent.edit:
                 if not self.checkAuthControl():
                     return
-                self.firstChild.grantRadio.setOn(True)
                 self.parent.parent.authControlMethod = "grant"
+                if self.firstChild.getStatus() == "grant":
+                    self.firstChild.slotGrant(True)
+                else:
+                    self.firstChild.setStatus("grant")
             else:
                 for i in self.getChilds():
                     i.grantRadio.setOn(True)
@@ -1782,8 +1788,11 @@ class RootItem(PListViewItem):
             if self.parent.parent.edit:
                 if not self.checkAuthControl():
                     return
-                self.firstChild.blockRadio.setOn(True)
                 self.parent.parent.authControlMethod = "block"
+                if self.firstChild.getStatus() == "block":
+                    self.firstChild.slotBlock(True)
+                else:
+                    self.firstChild.setStatus("block")
             else:
                 for i in self.getChilds():
                     i.blockRadio.setOn(True)
@@ -1810,11 +1819,11 @@ class RootItem(PListViewItem):
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
-        if status == "auth":
+        if status == "auth" and not self.authRadio.isOn():
             self.authRadio.setOn(True)
-        elif status == "grant":
+        elif status == "grant" and not self.grantRadio.isOn():
             self.grantRadio.setOn(True)
-        elif status == "block":
+        elif status == "block" and not self.blockRadio.isOn():
             self.blockRadio.setOn(True)
 
     def checkButtonsState(self):
