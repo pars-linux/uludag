@@ -1264,8 +1264,8 @@ class PolicyTab(QVBox):
             else:
                 item.checkButtonsState()
 
-            if not item.isExpanded:
-                item.expand()
+            #if not item.isExpanded:
+            #    item.expand()
 
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
 
