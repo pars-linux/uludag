@@ -46,12 +46,15 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/programming-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/programming-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> autogen
+ ant-doc
+</PRE></LI><LI CLASS="li-enumerate">ant paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve daha sonra altta bulunan komutu çalıştırın, sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/build/build.xml
+ant
 </PRE></LI></OL><!--TOC section Profiler alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Profiler alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 valgrind paketi kurulumu sonrası:<P>Gimp uygulamasının işlem ve hafıza durumunun listelendiğini gözlemleyin.</P><PRE CLASS="verbatim">   valgrind gimp
@@ -89,6 +92,17 @@ ctags
 clearsilver
 clearsilver-devel
 lemon
+dev86
+</PRE></LI><LI CLASS="li-enumerate">dejagnu paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve "runtest" konutunun hata döndürmediğini gözlemleyin.
+</P><PRE CLASS="verbatim"> mkdir dejagnu.test
+ cd dejagnu.test
+ mkdir testsuite
+ cd testsuite
+ mkdir hello.test
+ cd hello.test
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/tool/local_echo_no.exp
+ cd ../../
+ runtest testsuite/hello.test/local_echo_no.exp
 </PRE></LI><LI CLASS="li-enumerate">translate-toolkit paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import translate
@@ -190,8 +204,16 @@ eric-i18n-tr
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">llvm
 llvm-docs
 llvm-ocaml
-</PRE></LI></OL><!--TOC subsection Ruby alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">8.2</A>  Ruby alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+vala-docs
+</PRE></LI><LI CLASS="li-enumerate">vala paketi kurulumu sonrası:<P>Aşağıda bulunan komutları sırası ile uygulayın ve "Hello World" yazdığını gözlemleyin: </P><PRE CLASS="verbatim">sudo pisi it -c system.devel
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/vala-test.vala
+valac vala-test.vala -o vala-test
+./vala-test
+</PRE></LI></OL><!--TOC subsection Pascal alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc10">8.2</A>  Pascal alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+fpc, fpcsrc ve fpc-qt4 paketleri kurulumu sonrası:<P>programming-tr.pdf lazarus testini gerçekleştirin.
+</P></LI></OL><!--TOC subsection Ruby alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  Ruby alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıdaki paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">ruby-redland
 </PRE></LI><LI CLASS="li-enumerate">ruby paketi kurulumu sonrası:<PRE CLASS="verbatim">irb --simple-prompt 
@@ -201,12 +223,13 @@ puts "Test Pardus"
 =&gt; nil
 </PRE></LI><LI CLASS="li-enumerate">ruby-mode paketi kurulumu sonrası:<P>Emacs uygulamasını açın ALT+x tuşlarına basın ve ruby-mode yazın ENTER tuşuna basın, emacs’in bu mod değişkliğini yaptığını gözlemleyin.
 </P></LI></OL><!--TOC subsection tcl alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  tcl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  tcl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekranı çıkardığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_tcl.tcl
  wish test_tcl.tcl
-</PRE></LI></OL><!--TOC subsection Php alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıdaki paketler sadece kurulum testine tabidir
+</PRE></LI><LI CLASS="li-enumerate">expect paketi kurulumu sonrası:<P>programming-tr.pdf dejagnu testini gerçekleştirin.
+</P></LI></OL><!--TOC subsection Php alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıdaki paketler sadece kurulum testine tabidir
 <PRE CLASS="verbatim"> php-redland
 </PRE></LI><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
@@ -214,7 +237,7 @@ tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekr
 </PRE></LI><LI CLASS="li-enumerate">php-cli, php-common paketleri kurulumu sonrası:<P>Servis yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.</P><PRE CLASS="verbatim"> cd /var/www/localhost/htdocs/
  sudo wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test.php 
 </PRE></LI></OL><!--TOC subsection Perl alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Perl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Perl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim"> perl-HTML-Template-Pro
  perl-JSON
@@ -239,6 +262,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir:
  perl-URI
  perl-Git
  perl-Barcode-Code128
+ perl-Config-Tiny
 </PRE></LI><LI CLASS="li-enumerate">perl-SDL ve perl-YAML paketleri kurulumu sonrası:<P>game-tr.pdf frozen-bubble testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">perl-MailTools paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/MailTools.tar.gz
  perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
@@ -299,7 +323,7 @@ Class-Accessor.tar.gz
  test_perl_Test_Simple.t
  perl test_perl_Test_Simple.t
 </PRE><P>Tüm sonuçların "ok" döndürdüğünü gözlemleyin. </P></LI></OL><!--TOC subsection Python alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Python alt bileşeni</H3><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">8.7</A>  Python alt bileşeni</H3><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> python-docs
  gnome-python-docs
  PyQt-doc
@@ -829,7 +853,7 @@ python/test_python-memcache.py
 </P><PRE CLASS="verbatim"> ipython
  import openid
 </PRE></LI></UL><!--TOC subsection Java alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">8.7</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">8.8</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> tomcat-servlet-api
 </PRE></LI><LI CLASS="li-enumerate">Aşağıdaki paketlerin kurulumu sonrası:
 <PRE CLASS="verbatim"> sun-jre
@@ -842,15 +866,14 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
  javac test.java
  java test
-</PRE></LI><LI CLASS="li-enumerate">libmatthew, slf4j paketleri kurulumu sonrası:<P>office-tr.pdf zemberek-openoffice testini gerçekleştirin.
-</P></LI></OL><!--TOC subsection Lisp alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc16">8.8</A>  Lisp alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+</PRE></LI><LI CLASS="li-enumerate">libmatthew, slf4j paketleri kurulumu sonrası:<P>office-tr.pdf zemberek-openoffice testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hsqldb-lib paketi kurulumu sonrası: <P>office-tr.pdf openoffice veritabanı düzenleyici testini gerçekleştirin.</P></LI></OL><!--TOC subsection Lisp alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc17">8.9</A>  Lisp alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 clisp paketi kurulumu sonrası: (Warningleri önemsemeyiniz.)<P>Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/lisp/
 test_clisp.lisp 
 clisp -c test_clisp.lisp
 </PRE></LI></OL><!--TOC subsection Dotnet alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc17">8.9</A>  Dotnet alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc18">8.10</A>  Dotnet alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir
 <PRE CLASS="verbatim">taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib

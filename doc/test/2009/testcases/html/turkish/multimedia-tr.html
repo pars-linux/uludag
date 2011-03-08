@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea multimedia-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/multimedia-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Multimedia Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Share-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Share</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -56,6 +56,7 @@ mlt paketi kurulumu sonrası:<P>programming-tr.pdf python-mlt testini gerçekle�
 </P></LI></OL><!--TOC section Stream alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Stream alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> mpd
+ darkice
 </PRE></LI><LI CLASS="li-enumerate">ushare paketi kurulumu sonrası:<P>/etc/ushare.conf dosyası içerisinde USHARE_DIR değerine gerçerli bir dizin verin.</P><P>Servis yöneticisinden ushare sunucusunu başlatın ve sorunsuz bir şekilde başlatıldığını gözlemleyin.</P><PRE CLASS="verbatim"> 
 </PRE></LI><LI CLASS="li-enumerate">mpeg4ip paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.</P><P>Aşağıda bulunan komutun avi wav dönüşümünü gerçekleştirdiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
@@ -376,32 +377,32 @@ gimp-i18n-si
 Uygulamayı açın çeşitli çizimler yapın ve kaydedin, sorunsuz bir şekilde çalıştığını ve ilgili yerlerde ses dosyaları çalıştırdığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Stamps butonuna basın ve sağ tarafta bulunan pullardan birini eklemeye çalışın sorunsuz bir şekilde eklendiğini gözlemleyin.
 </LI><LI CLASS="li-itemize">Aşağıda bulunan komutu çalıştırın ve daha sonra uygulamanın sol tarafında bulunan open butonuna basın ve import ettiğiniz resmin uygulmada görüntülenmiş olduğunu gözlemleyin.
-<PRE CLASS="verbatim">   # tuxpaint-import /usr/share/tuxpaint/stamps/vehicles/ship/walnutBoat.png
+<PRE CLASS="verbatim">   tuxpaint-import /usr/share/tuxpaint/stamps/vehicles/ship/walnutBoat.png
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">inkscape paketi kurulumu sonrası:<P>Aşağida bulunan dosyayı inkscape uygulaması ile açın ve üzerinde birkaç değişiklik yapın. Sorunsuz bir şekilde çalışabildiklerini gözlemleyin.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/drawing.svg 
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/drawing.svg 
 </PRE></LI><LI CLASS="li-enumerate">asymptote paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.tex
-# latex test_asymptote
-# asy test_asymptote
-# latex test_asymptote
-# okular test_asymptote.dvi
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.tex
+ latex test_asymptote
+ asy test_asymptote
+ latex test_asymptote
+ okular test_asymptote.dvi
 </PRE></LI><LI CLASS="li-enumerate">dcmtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutlaruın düzgün bir şekilde çalıştırğını gözlemleyin:
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
-# dcmj2pnm test_dcmtk.dcm  test.png
-# gwenview test.png
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcmtk.dcm 
+ dcmj2pnm test_dcmtk.dcm  test.png
+ gwenview test.png
 </PRE></LI><LI CLASS="li-enumerate">dcraw paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün bir şekilde çalıştıklarını gözlemleyin. 
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
-# dcparse test_dcraw.jpg 
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
+ dcparse test_dcraw.jpg 
 </PRE></LI></OL><!--TOC section Editor alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc9">9</A>  Editor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 openshot paketi kurulumu sonrası:<P>Uygulamayı kmenu’den açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">pitivi paketi kurulumu sonrası:<P>Uygulamayı kmenü’den açın. </P><P>Aşağıda bulunan dosyayı indirin. 
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
 </PRE><P>Uygulamanın boş olan beyaz alanına sağ tıklayın. "Import clips" seçeneğini seçin ve indirmiş olduğunuz dosyayı buraya ekleyin. Bu dosya beyaz alana eklenecektir, bu eklenmiş görüntüyü sağ bölümde bulunan video penceresine götürün ve dosyanın ses ve görüntü olarak sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">python-eyeD3 paketi kurulumu sonrası:<P>Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag’inin listelediğini gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
- # eyeD3 linux.mp3 
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ eyeD3 linux.mp3 
 </PRE></LI><LI CLASS="li-enumerate">lilypond paketi kurulumu sonrası:<P>multimedia-tr.pdf frescobaldi testini gerçaklaştiriniz.</P></LI><LI CLASS="li-enumerate">lilycomp paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve uygulamanın yukarısında bulunan notalara basın ve alt bölümde bu notaların kodlarının basıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kino paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı açın ve trim butonuna basarak çeşitli noktalardan kesmeye çalışın.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
-</PRE></LI><LI CLASS="li-enumerate">kid3 paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya → Aç yolunu izleyerek açın ve tag bölümünü editlemeye çalışın, editleyebildiğinizi gözlemleyin.</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
+</PRE></LI><LI CLASS="li-enumerate">kid3 paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya → Aç yolunu izleyerek açın ve tag bölümünü editlemeye çalışın, editleyebildiğinizi gözlemleyin.</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
 </PRE></LI><LI CLASS="li-enumerate">blender paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı blender ile açın ve Render butonuna basın. Resmi render edebildiğinizi gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
 </PRE></LI><LI CLASS="li-enumerate">dvd-slideshow paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve bir slideshow oluştuğunu gözlemleyin.

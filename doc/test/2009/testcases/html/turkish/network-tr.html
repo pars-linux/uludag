@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/network-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/network-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Network Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Filter alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Filter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -115,7 +115,7 @@ wget paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştı
 </PRE></LI><LI CLASS="li-enumerate">aria2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun boot.iso’yu sorunsuz bir şekilde indirdiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> aria2c http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 </PRE></LI><LI CLASS="li-enumerate">youtube-dl paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indirildiğini gözlemleyin.
-</P><PRE CLASS="verbatim"># http://www.youtube.com/watch?v=iLNngHQ_lj0
+</P><PRE CLASS="verbatim"> youtube-dl http://www.youtube.com/watch?v=iLNngHQ_lj0
 </PRE></LI></OL><!--TOC section Chat alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> telepathy-mission-control
  amsn-plugins
@@ -148,6 +148,7 @@ Aşağıda bulunan sayfanın ilgili butonlarına basıldığında sorunsuz bir �
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Share alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> smbldap-tools
+ cadaver
 </PRE></LI><LI CLASS="li-enumerate">smb4k paketi kurulumu sonrası.<P>Uygulamanın sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI></OL><!--TOC section Monitor alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Monitor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 knemo paketi kurulumu sonrası:<P>Uygulamayı Kmenü’den açın ve sistem çekmesine uygulamanın eklendiğini gözlemleyin. 
@@ -205,8 +206,7 @@ Firefox → Düzen → Seçenekler → Eklentileri Yönet → Yan Uygulamalar b�
 <PRE CLASS="verbatim">  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/  
   </PRE></LI></UL>
 </LI></OL><!--TOC section Ftp alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Ftp alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-netkit-ftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Ftp alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">gftp paketi kurulumu sonrası:<P>Kmenu’den gftp uygulamasını açın ve sorunsuz açıldığını gözlemeyin.</P></LI><LI CLASS="li-enumerate">netkit-ftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
 </P><PRE CLASS="verbatim"> ftp ftp.waytec.com
 </PRE></LI><LI CLASS="li-enumerate">filezilla paketi kurulumu sonrası:<P>Uygulamayı açın, sunucu kısmına "ftp.pardus.org.tr" yazın ve "Hızlı bağlan" butonuna basın. "Uzaktaki site" penceresinde "ftp.pardus.org.tr" altında bulunan dizinlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lftp paketi kurulumu sonrası:
 <PRE CLASS="verbatim">  lftp http://ftp.pardus.org.tr/pub/
@@ -238,6 +238,9 @@ efax-gtk paketi kurulumu sonrası:<P>Kmenu’den efax-gtk uygulamasını açın 
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">italc-client
 italc-master
 libitalc
+</PRE></LI></OL><!--TOC section RSS alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc15">15</A>  RSS alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+canto paketi kurulumu sonrası<P>Aşağıda bulunan komutun ekli olan rss’leri listelediğni gözlemleyin:</P><PRE CLASS="verbatim">canto
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
