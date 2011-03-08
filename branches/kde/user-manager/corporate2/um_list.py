@@ -142,33 +142,35 @@ class PListView(QScrollView):
 
     def add(self, item):
         ### Ekleme yapıldığında collapsed ise açılmalı !!!!!!!!
+        ### NAsıl ise öyle kalmalı burda açma kapama yapma
 
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         if item.parentItem:
             if not item.parentItem in self.items:
                 return # 
-            item.parentItem.isExpanded = True
             lastChild = item.parentItem.findLastChild()
             if lastChild:
                 self.items.insert(self.items.index(lastChild)+1, item)
-                self.visibleitems.insert(self.visibleitems.index(lastChild)+1, item)
+                lastChild.nextItem = item
             else:
                 self.items.insert(self.items.index(item.parentItem)+1, item)
-                self.visibleitems.insert(self.visibleitems.index(item.parentItem)+1, item)
-            self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
-            if item.parentItem.firstChild: # childların sonuna ekle
-                #lastChild = item.parentItem.findLastChild()
-                lastChild.nextItem = item
-            else: # first child olarak ekle
                 item.parentItem.firstChild = item
+            if item.parentItem.isExpanded: # çocuk gözükecek
+                # kendinden önce gözükür durumda olan eleman ya kardeşidir ya da atası
+                previousItem = self.findPreviousItem(item)
+                if lastChild: # sen ilk çocuksun ve başka çocuk yok
+                    self.visibleitems.insert(self.visibleitems.index(lastChild)+1, item)
+                else:
+                    self.visibleitems.insert(self.visibleitems.index(item.parentItem)+1, item)
+                self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
+                self.shiftLowerItems(item)
             item.resize(item.parentItem.width(), self.itemHeight)
-            self.shiftLowerItems(item)
             self.setSiblingHasChild(item.parentItem, True)
 
         else:
             self.items.insert(len(self.items), item) # en sona ekle
-            self.visibleitems.insert(len(self.visibleitems), item) # en sona ekle
+            self.visibleitems.insert(len(self.visibleitems), item) # parentı yoksa  mutlaka visible olur
             self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
             if not self.firstItem:
                 self.firstItem = item
