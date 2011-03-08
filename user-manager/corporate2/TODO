@@ -10,3 +10,8 @@ Legend:
 
 
 - Port to QT4.
+
+- Make header for PListView
+- Improve calculateTextOut algorithm
+- Add wait/loadig thing (or change cursor) while list expanding/collapsing something
+- New PListViewItem will be visible if its parent is expanded otherwise it wont be visible

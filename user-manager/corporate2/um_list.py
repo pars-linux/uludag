@@ -165,6 +165,7 @@ class PListView(QScrollView):
             item.resize(item.parentItem.width(), self.itemHeight)
             self.shiftLowerItems(item)
             self.setSiblingHasChild(item.parentItem, True)
+
         else:
             self.items.insert(len(self.items), item) # en sona ekle
             self.visibleitems.insert(len(self.visibleitems), item) # en sona ekle
@@ -263,7 +264,7 @@ class PListViewItem(QWidget):
 
         self.setDepth()
         self.depthExtra = self.depth * PListView.depthSize
-
+        self.parent.add(self)
         self.show()
 
     def clear(self):
@@ -459,7 +460,6 @@ class PListViewItem(QWidget):
         self.calculateTextOut()
 
     def calculateTextOut(self):
-        return
         if not self.isVisible():
             return
         self.textOut = self.text
@@ -469,9 +469,12 @@ class PListViewItem(QWidget):
         wi = self.decrementTextOutToHalf()
         ctrl = False
         while True:
+            if wi <= 0:
+                break
             if wi < self.textLength:
                 ctrl = True
                 wi = self.incrementTextOutByHalf()
+                break
             else:
                 wi = self.decrementTextOutToHalf()
                 if ctrl:
@@ -480,13 +483,12 @@ class PListViewItem(QWidget):
 
     def decrementTextOutToHalf(self):
         total = len(self.textOut)/2
-        txt = QString(self.textOut).left(total)
-        self.textOut = txt
-        return self.fontMetrics().width(txt)
+        self.textOut = self.textOut[:total]
+        return self.fontMetrics().width(self.textOut)
 
     def incrementTextOutByHalf(self):
-        total = (self.textOut.length()*3)/2
-        self.textOut = QString(self.text).left(total)
+        total = (len(self.textOut)*3)/2
+        self.textOut = self.text[:total]
         return self.fontMetrics().width(self.textOut)
 
     def paintEvent(self, event):

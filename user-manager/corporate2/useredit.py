@@ -643,7 +643,10 @@ class UserStack(QVBox):
                 # synchronous call 'setuser'
                 self.mainwidget.link.User.Manager["baselayout"].setUser(dict["uid"], dict["realname"], "", dict["shell"], dict["password"], dict["groups"])
                 self.parent().browse.userModified(int(dict["uid"]), realname=dict["realname"])
-            except:
+            except Exception, e:
+                print e
+                if str(e).find("Comar.PolicyKit"):
+                    KMessageBox.error(None, i18n('You are not authorized to set user information'), i18n("Error"))
                 self.parent().slotCancel()
                 return
 
@@ -795,7 +798,7 @@ class PolicyTab(QVBox):
         self.authIcon = getIcon("um_auth")
         self.grantIcon = getIcon("um_grant")
         self.blockIcon = getIcon("um_block")
-        self.authControl = None
+        self.authControl = False
         self.authControlMethod = None
 
         """#add radio buttons
@@ -863,6 +866,11 @@ class PolicyTab(QVBox):
         if isinstance(item, CategoryItem):
             if not item.isFilled:
                 self.fillCategory(item)
+            elif not item.isStarted:
+                if self.edit:
+                    self.fillCategoryAuths(item)
+                else:
+                    self.fillCategoryAuthsAsDefault()
             #else:
             #    self.fillCategoryAuths(item)
 
@@ -992,12 +1000,12 @@ class PolicyTab(QVBox):
         #allActions = filter(lambda x: polkit.action_info(x)['policy_active'].startswith("auth_"),polkit.action_list())
 
         self.root = RootItem(self.policylist, i18n("All actions"), "root-item", icon=getIcon("security-medium"))
-        self.policylist.add(self.root)
+        #self.policylist.add(self.root)
         for cats in categories:
             catitem = CategoryItem(self.policylist, i18n(categories[cats][0]), cats, icon=getIcon(categories[cats][1]), parentItem=self.root)
-            self.policylist.add(catitem)
+            #self.policylist.add(catitem)
             actionitem = ActionItem(self.policylist, "*", "*", "*", parentItem=catitem)
-            self.policylist.add(actionitem)
+            #self.policylist.add(actionitem)
             catitem.hideChilds()
 
     #bu kalkacak, karışmış iyice. derinlik filan da gelince iyice karışır
@@ -1033,7 +1041,9 @@ class PolicyTab(QVBox):
     def checkCategoryAndCall(self, item, method):
         def checkCategory(method, package, exception, auths):
             if exception:
+                self.handleGivePolicyToAllFailed(item)
                 return
+            self.handleGivePolicyToAllSucceeded()
             method(auths)
             self.stack.checkAdd()
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=functools.partial(checkCategory, method))
@@ -1150,7 +1160,7 @@ class PolicyTab(QVBox):
                         actioninfo = polkit.action_info(i)
                         if actioninfo['policy_active'].startswith("auth_"):
                             actionitem = ActionItem(self.policylist, i, i18n(actioninfo['description']), actioninfo['policy_active'], parentItem=item)
-                            self.policylist.add(actionitem)
+                            #self.policylist.add(actionitem)
 
         if self.edit:
             self.fillCategoryAuths(item, method)
@@ -1179,29 +1189,52 @@ class PolicyTab(QVBox):
         else:
             item.checkButtonsState()
 
+        #if not item.isExpanded:
+        #    item.expand()
+
+        #self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
+
+    def listviewExpanded(self, item):
+        return
+
+    def handleGivePolicyToAllFailed(self, item=None):
+        self.authControl = False
+
+        if self.authControlMethod:
+            self.policylist.firstItem.resetStatus()
+            self.policylist.firstItem.firstChild.resetStatus()
+        else: #root a tıklanınca değil de categorye tıklanınca cancel dedik
+            item.resetStatus()
+        self.authControlMethod = None
+        #self.policylist.firstItem.firstChild.isStarted = False
+
+    def handleGivePolicyToAllSucceeded(self):
+        if self.authControl:
+            self.authControl = False
+            it = self.policylist.firstItem.firstChild
+            while it:
+                it = it.nextItem
+                if not it:
+                    break
+                if self.authControlMethod == "auth":
+                    it.authRadio.setOn(True)
+                elif self.authControlMethod == "grant":
+                    it.grantRadio.setOn(True)
+                elif self.authControlMethod == "block":
+                    it.blockRadio.setOn(True)
+            self.authControlMethod = None
+
     def fillCategoryAuths(self, item, method=None):
         children = item.getChilds()
 
         def fill(package, exception, auths):
             if exception:
-                # resetle: root ile ilk çocuğunu 
-                item.expandOrCollapse()
+                self.handleGivePolicyToAllFailed(item)
+                if item.isExpanded:
+                    item.collapse()
                 return
 
-            if self.authControl == 1:
-                self.authControl == 0
-                it = self.policylist.firstItem.firstChild
-                while it:
-                    it = it.nextItem
-                    if not it:
-                        break
-                    if self.authControlMethod == "auth":
-                        it.authRadio.setOn(True)
-                    elif self.authControlMethod == "grant":
-                        it.grantRadio.setOn(True)
-                    elif self.authControlMethod == "block":
-                        it.blockRadio.setOn(True)
-                self.authControlMethod = None
+            self.handleGivePolicyToAllSucceeded()
 
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
             # eğer bi action operationsda ise onun bilgileriyle doldur.
@@ -1230,6 +1263,9 @@ class PolicyTab(QVBox):
                 method(True)
             else:
                 item.checkButtonsState()
+
+            if not item.isExpanded:
+                item.expand()
 
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizationsByCategory(int(self.uid.text()), item.name, async=fill)
 
@@ -1372,6 +1408,10 @@ class CategoryItem(PListViewItem):
         self.authRadio = retVal[1][1]   # gives authorization and asks for password
         self.blockRadio = retVal[1][2]  # blcoks
 
+        QToolTip.add(self.grantRadio, i18n("Grant category"))
+        QToolTip.add(self.authRadio, i18n("Auth category"))
+        QToolTip.add(self.blockRadio, i18n("Block category"))
+
         self.connect(self.authRadio, SIGNAL("toggled(bool)"), self.slotAuth)
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
@@ -1381,6 +1421,10 @@ class CategoryItem(PListViewItem):
             self.parent.parent.fillCategory(self, method)
             return False
         if not self.isStarted:
+            if self.parent.parent.edit:
+                self.parent.parent.fillCategoryAuths(self, method)
+            else:
+                self.parent.parent.fillCategoryAuthsAsDefault(self, method)
             return False
         #if not self.allItemsHaveSamePolicy: # set by code, not user click action so ignore it
         #    print 'hepsi aynı deel'
@@ -1509,6 +1553,16 @@ class CategoryItem(PListViewItem):
         elif status == "block":
             self.blockRadio.setOn(True)
 
+    def resetStatus(self):
+        self.buttonGroup.setExclusive(False)
+        status = self.getStatus()
+        if status == "auth":
+            self.authRadio.setOn(False)
+        elif status == "grant":
+            self.grantRadio.setOn(False)
+        elif status == "block":
+            self.blockRadio.setOn(False)
+
     def getStatus(self):
         if self.authRadio.isOn():
             return "auth"
@@ -1561,6 +1615,10 @@ class ActionItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
+        QToolTip.add(self.grantRadio, i18n("Grant"))
+        QToolTip.add(self.authRadio, i18n("Auth"))
+        QToolTip.add(self.blockRadio, i18n("Block"))
+
     def getStatus(self):
         if self.authRadio.isOn():
             return "auth"
@@ -1573,6 +1631,7 @@ class ActionItem(PListViewItem):
 
     def checkActionItemControls(self):
         if not self.parentItem.isStarted:
+            # !!!
             return False
         if self.parent.parent.inOperation:
             return False
@@ -1685,39 +1744,69 @@ class RootItem(PListViewItem):
         self.connect(self.grantRadio, SIGNAL("toggled(bool)"), self.slotGrant)
         self.connect(self.blockRadio, SIGNAL("toggled(bool)"), self.slotBlock)
 
+        QToolTip.add(self.grantRadio, i18n("Grant all"))
+        QToolTip.add(self.authRadio, i18n("Auth all"))
+        QToolTip.add(self.blockRadio, i18n("Block all"))
+
     def checkAuthControl(self):
-        if self.parent.parent.authControl > 0:
+        if self.parent.parent.authControl:
             return False
         else:
-            self.parent.parent.authControl = 1
+            self.parent.parent.authControl = True
         return True
 
     def slotAuth(self, toggle):
         if toggle:
-            if not self.checkAuthControl():
-                return
-            self.firstChild.authRadio.setOn(True)
-            self.parent.parent.authControlMethod = "auth"
-            #for i in self.getChilds():
-            #    i.authRadio.setOn(True)
+            if self.parent.parent.edit:
+                if not self.checkAuthControl():
+                    return
+                self.firstChild.authRadio.setOn(True)
+                self.parent.parent.authControlMethod = "auth"
+            else:
+                for i in self.getChilds():
+                    i.authRadio.setOn(True)
 
     def slotGrant(self, toggle):
         if toggle:
-            if not self.checkAuthControl():
-                return
-            self.firstChild.grantRadio.setOn(True)
-            self.parent.parent.authControlMethod = "grant"
-            #for i in self.getChilds():
-            #    i.grantRadio.setOn(True)
+            if self.parent.parent.edit:
+                if not self.checkAuthControl():
+                    return
+                self.firstChild.grantRadio.setOn(True)
+                self.parent.parent.authControlMethod = "grant"
+            else:
+                for i in self.getChilds():
+                    i.grantRadio.setOn(True)
 
     def slotBlock(self, toggle):
         if toggle:
-            if not self.checkAuthControl():
-                return
-            self.firstChild.blockRadio.setOn(True)
-            self.parent.parent.authControlMethod = "block"
-            #for i in self.getChilds():
-            #    i.blockRadio.setOn(True)
+            if self.parent.parent.edit:
+                if not self.checkAuthControl():
+                    return
+                self.firstChild.blockRadio.setOn(True)
+                self.parent.parent.authControlMethod = "block"
+            else:
+                for i in self.getChilds():
+                    i.blockRadio.setOn(True)
+
+    def resetStatus(self):
+        self.buttonGroup.setExclusive(False)
+        status = self.getStatus()
+        if status == "auth":
+            self.authRadio.setOn(False)
+        elif status == "grant":
+            self.grantRadio.setOn(False)
+        elif status == "block":
+            self.blockRadio.setOn(False)
+
+    def getStatus(self):
+        if self.authRadio.isOn():
+            return "auth"
+        elif self.grantRadio.isOn():
+            return "grant"
+        elif self.blockRadio.isOn(): # blocked
+            return "block"
+        else:
+            return
 
     def setStatus(self, status=""):
         self.buttonGroup.setExclusive(True)
