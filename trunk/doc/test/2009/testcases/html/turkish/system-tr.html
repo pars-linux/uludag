@@ -113,6 +113,8 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  zlib
  dbus
  pam
+</PRE></LI><LI CLASS="li-enumerate">bc paketi kurulumu sonrası:<P>Aşağıda bulunan hatasız bir şekilde sonucu döndürdüğünü gözlemleyin.
+</P><PRE CLASS="verbatim"> echo "56.8 + 77.7" | bc
 </PRE></LI><LI CLASS="li-enumerate">shadow paketi kurulumu sonrası:<P>Aşağıda bulunan komutun, root yetkisine geçirdiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> su -
 </PRE></LI><LI CLASS="li-enumerate">bzip2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde dosyaları sıkıştırdığını gözlemleyin:</P><PRE CLASS="verbatim"> touch file1
@@ -253,7 +255,7 @@ Service yöneticinizden dnsmasq servisini başlatın.
 Makinenizi yeniden başlatın ve sistemin düzgün bir şekilde açıldığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Ctrl+Alt+F1 tuşuna basıp sistem konsoluna geçin ve sistem dilinizin daha önceki dil ve klavye düzeni ile aynı olduğunu gözlemleyin.
 </LI><LI CLASS="li-itemize">/etc/mudur/ altında bulunan locale, language, keymap dosyalarının sistem dil ve klavye dilinize eskisi gibi uygun olduğunu gözlemleyin.
-</LI><LI CLASS="li-itemize">Pisi komutlarının düzgün bir şekilde çalıştığını gözlemleyin. </LI></UL></LI><LI CLASS="li-enumerate">tiff paketi kurulumu sonrası:
+</LI><LI CLASS="li-itemize">Pisi komutlarının düzgün bir şekilde çalıştığını gözlemleyin. </LI></UL></LI><LI CLASS="li-enumerate">tiff ve tiff-devel paketi kurulumu sonrası:
 <PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/doga.tiff
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/istanbul.tiff
 </PRE><P>Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile açılabildiklerini gözlemleyin.</P></LI><LI CLASS="li-enumerate">pisi paketi kurulumu sonrası:

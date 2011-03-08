@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea editor-tr.tex editor-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/editor-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Editör Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC subsection Ed-->
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Ed</H3><!--SEC END --><P>Aşağıda örnek bir ed oturumu bulunmaktadır. Burada yazanları ed komutu çalıştırıldıktan sonra uygulayarak, ed test edilebilir.</P><PRE CLASS="verbatim">a
@@ -105,7 +105,9 @@ C-c dosyadan çıkmak için
 </PRE><P>Sorunsuz bir şekilde dosyanın kaydedilmiş olduğunu, aşağıdaki komutu kullanarak gözlemleyin.
 </P><PRE CLASS="verbatim"># joe ornek.txt 
 </PRE><!--TOC subsection Vi alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR -->Vi alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">vim paketi kurulumu sonrası:<P>Paketini kurduktan sonra, konsoldan aşağıdaki komutu çalıştırın.</P><PRE CLASS="verbatim"> # vi ornek.txt
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Vi alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">vimchant
+</PRE></LI><LI CLASS="li-enumerate">vim paketi kurulumu sonrası:<P>Paketini kurduktan sonra, konsoldan aşağıdaki komutu çalıştırın.</P><PRE CLASS="verbatim"> vi ornek.txt
 </PRE><P>Aşağıda bulunan bilgileri joe ile ne yazın.
 </P><PRE CLASS="verbatim">Bu bir vi örnek testidir.
 Bu ikinci satırdır.
@@ -113,17 +115,17 @@ Bu ikinci satırdır.
 </P><PRE CLASS="verbatim">:w tuşu dosyayı kaydetmek için.
 :q dosyadan çıkmak için
 </PRE><P>Sorunsuz bir şekilde dosyanın kaydedilmiş olduğunu, aşağıdaki komutu kullanarak gözlemleyin.
-</P><PRE CLASS="verbatim"># vi ornek.txt 
+</P><PRE CLASS="verbatim">vi ornek.txt 
 </PRE></LI><LI CLASS="li-enumerate">vim-colorschemes paketi<P>Aşağıda bulunanan dosyayı açın.
-</P><PRE CLASS="verbatim"># vi ornek.py
+</P><PRE CLASS="verbatim">vi ornek.py
 </PRE><P>Daha sonra vi komutunu çalıştırın:
 </P><PRE CLASS="verbatim">:colorscheme Blacksea
 </PRE><P>Renk temasının değiştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">gvim paketi kurulduktan sonra:<P>Aşağıda bulunan komutları çalıştırın ve bir vi penceresinin açıldığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # eview
- # evim
+</P><PRE CLASS="verbatim"> eview
+ evim
 </PRE><P>Daha sonra bu pencereler üzerinden editor-tr.pdf vim testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">zile paketi kurulumu sonrası:
 Aşağıda bulunan komutu çalıştırın ve bir vi penceresinin açıldığını gözlemleyin.
-<PRE CLASS="verbatim"> # zile
+<PRE CLASS="verbatim"> zile
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->

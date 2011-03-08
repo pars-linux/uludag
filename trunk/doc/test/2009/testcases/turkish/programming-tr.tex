@@ -104,6 +104,22 @@ ctags
 clearsilver
 clearsilver-devel
 lemon
+dev86
+\end{verbatim}
+\item dejagnu paketi kurulumu sonrası:
+
+
+Aşağıda bulunan komutları çalıştırın ve "runtest" konutunun hata döndürmediğini gözlemleyin.
+\begin{verbatim}
+ mkdir dejagnu.test
+ cd dejagnu.test
+ mkdir testsuite
+ cd testsuite
+ mkdir hello.test
+ cd hello.test
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/tool/local_echo_no.exp
+ cd ../../
+ runtest testsuite/hello.test/local_echo_no.exp
 \end{verbatim}
 
 \item translate-toolkit paketi kurulumu sonrası:
@@ -373,6 +389,15 @@ valac vala-test.vala -o vala-test
  
 \end{enumerate}
 
+\subsection{Pascal alt bileşeni}
+
+\begin{enumerate}
+ \item fpc, fpcsrc ve fpc-qt4 paketleri kurulumu sonrası:
+
+programming-tr.pdf lazarus testini gerçekleştirin.
+\end{enumerate}
+
+
 \subsection{Ruby alt bileşeni}
 
 \begin{enumerate}
@@ -411,7 +436,9 @@ Aşağıda bulunan komutun bir gui ekranı çıkardığını gözlemleyin.
  wish test_tcl.tcl
 \end{verbatim}
 
+\item expect paketi kurulumu sonrası:
 
+programming-tr.pdf dejagnu testini gerçekleştirin.
 \end{enumerate}
 
 \subsection{Php alt bileşeni}
@@ -471,6 +498,7 @@ Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.ph
  perl-URI
  perl-Git
  perl-Barcode-Code128
+ perl-Config-Tiny
 \end{verbatim}
 
 \item perl-SDL ve perl-YAML paketleri kurulumu sonrası:
@@ -2072,6 +2100,11 @@ Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözleml
 \item libmatthew, slf4j paketleri kurulumu sonrası:
 
 office-tr.pdf zemberek-openoffice testini gerçekleştirin.
+
+\item hsqldb-lib paketi kurulumu sonrası: 
+
+office-tr.pdf openoffice veritabanı düzenleyici testini gerçekleştirin.
+
 \end{enumerate}
 
 
