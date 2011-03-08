@@ -91,7 +91,7 @@ class Bugzilla:
 
     def _check_cookies(self):
         if self._has_cookie_file():
-            log.debug("Cookile file is present, assuming we are logged in")
+            log.debug("Cookie file is present, assuming we are logged in")
             self.is_logged_in = True
         else:
             self.is_logged_in = False
