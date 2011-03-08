@@ -43,7 +43,7 @@ password = %(password)s
 
 CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
-VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
+VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE", "WORKSFORME", "NEXTRELEASE"]
 VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED"]
 # valid versions for security
 VALID_VERSIONS = ["2008", "2009", "corporate2"]
