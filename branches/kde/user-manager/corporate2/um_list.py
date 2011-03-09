@@ -554,9 +554,9 @@ class PListViewItem(QWidget):
             col = QColor(0,0,0)
             arr = QPointArray(3)
             if self.isExpanded:
-                arr.setPoint(0, QPoint(self.depthExtra+2,10))
-                arr.setPoint(1, QPoint(self.depthExtra+10,10))
-                arr.setPoint(2, QPoint(self.depthExtra+6,14))
+                arr.setPoint(0, QPoint(self.depthExtra+2,dip+6))
+                arr.setPoint(1, QPoint(self.depthExtra+10,dip+6))
+                arr.setPoint(2, QPoint(self.depthExtra+6,dip+10))
             else:
                 arr.setPoint(0, QPoint(self.depthExtra+4,dip+4))
                 arr.setPoint(1, QPoint(self.depthExtra+4,dip+12))
