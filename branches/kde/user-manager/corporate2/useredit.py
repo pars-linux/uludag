@@ -1010,7 +1010,7 @@ class PolicyTab(QVBox):
             #self.policylist.add(catitem)
             actionitem = ActionItem(self.policylist, "*", "*", "*", parentItem=catitem)
             #self.policylist.add(actionitem)
-            catitem.hideChilds()
+            #catitem.hideChilds()
 
     #bu kalkacak, karışmış iyice. derinlik filan da gelince iyice karışır
     def setPolicyButtonsEnabled(self, enable):
@@ -1229,16 +1229,18 @@ class PolicyTab(QVBox):
             self.authControlMethod = None
 
     def fillCategoryAuths(self, item, method=None):
-        children = item.getChilds()
 
         def fill(package, exception, auths):
             if exception:
-                self.handleGivePolicyToAllFailed(item)
-                #if item.isExpanded:
-                #    item.collapse()
+                if self.authControl:
+                    self.handleGivePolicyToAllFailed(item)
+                else:
+                    if item.isExpanded:
+                        item.collapse()
                 return
 
-            self.handleGivePolicyToAllSucceeded()
+            if self.authControl:
+                self.handleGivePolicyToAllSucceeded()
 
             auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths[0])
             # eğer bi action operationsda ise onun bilgileriyle doldur.
@@ -1246,6 +1248,7 @@ class PolicyTab(QVBox):
             # ikisinde de yoksa default doldur
             auths = self.getStoredActionsStatusList(auths)
 
+            children = item.getChilds()
             for child in children:
                 if child in self.operations:
                     child.setStatus(self.operations[child.id])

@@ -444,7 +444,7 @@ class PListViewItem(QWidget):
         return False
 
     def showChilds(self):
-        self.repaint()
+        self.isExpanded = True
         child = self.firstChild
         index = self.parent.visibleitems.index(self)
         while child:
@@ -453,7 +453,6 @@ class PListViewItem(QWidget):
             index += 1
             child.resize(self.width(), self.height())
             child.show()
-            child.repaint()
             child = child.nextItem
         self.parent.setContentsPos(0, self.parent.visibleitems.index(self)*self.parent.itemHeight)
 
