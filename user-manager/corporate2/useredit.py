@@ -860,6 +860,7 @@ class PolicyTab(QVBox):
                 self.fillCategory(item)"""
 
     def yaz(self):
+        return
         for i in self.operations.keys():
             print i + '->' + self.operations[i]
         print '---------------------------------'
@@ -1207,13 +1208,11 @@ class PolicyTab(QVBox):
         if self.authControlMethod:
             self.policylist.firstItem.resetStatus()
             self.policylist.firstItem.firstChild.resetStatus()
-        else: #root a tıklanınca değil de categorye tıklanınca cancel dedik
-            item.resetStatus()
         self.authControlMethod = None
         #self.policylist.firstItem.firstChild.isStarted = False
 
     def handleGivePolicyToAllSucceeded(self):
-        if self.authControl:
+        if self.authControl: # auth control is set when one of the rootitem's raido icon toggled
             self.authControl = False
             it = self.policylist.firstItem.firstChild
             while it:
@@ -1237,6 +1236,7 @@ class PolicyTab(QVBox):
                 else:
                     if item.isExpanded:
                         item.collapse()
+                    item.resetStatus()
                 return
 
             if self.authControl:
@@ -1401,6 +1401,7 @@ class CategoryItem(PListViewItem):
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
         #self.allItemsHaveSamePolicy = False
+        self.isComplete = True
         self.ignoreTemp = False # ignore action item button actions temporarily while we are setting all category's actions
 
         """self.combo = self.addWidgetItem(PListViewItem.PLVFlatComboType, [
@@ -1433,6 +1434,8 @@ class CategoryItem(PListViewItem):
             else:
                 self.parent.parent.fillCategoryAuthsAsDefault(self, method)
             return False
+        if not self.isComplete:
+            return False
         #if not self.allItemsHaveSamePolicy: # set by code, not user click action so ignore it
         #    print 'hepsi aynı deel'
         #    return False
@@ -1442,6 +1445,7 @@ class CategoryItem(PListViewItem):
         if toggle:
             if not self.actionControls(self.slotAuth):
                 return
+            self.isComplete = False
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.authorizeCategory)
@@ -1474,12 +1478,14 @@ class CategoryItem(PListViewItem):
             c.setStatus("")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.isComplete = True
         self.parentItem.checkButtonsState() # for root
 
     def slotGrant(self, toggle):
         if toggle:
             if not self.actionControls(self.slotGrant):
                 return
+            self.isComplete = False
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.grantCategory)
@@ -1511,12 +1517,14 @@ class CategoryItem(PListViewItem):
             c.setStatus("grant")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.isComplete = True
         self.parentItem.checkButtonsState() # for root
 
     def slotBlock(self, toggle):
         if toggle:
             if not self.actionControls(self.slotBlock):
                 return
+            self.isComplete = False
             if self.parent.parent.edit:
                 self.ignoreTemp = True
                 self.parent.parent.checkCategoryAndCall(self, self.blockCategory)
@@ -1549,6 +1557,7 @@ class CategoryItem(PListViewItem):
             c.setStatus("block")
         self.ignoreTemp = False
         self.parent.parent.yaz()
+        self.isComplete = True
         self.parentItem.checkButtonsState() # for root
 
     def setStatus(self, status=""):
@@ -1760,6 +1769,11 @@ class RootItem(PListViewItem):
             return False
         else:
             self.parent.parent.authControl = True
+        completeItem = self.firstChild
+        while completeItem:
+            if not completeItem.isComplete:
+                return False
+            completeItem = completeItem.nextItem
         return True
 
     def slotAuth(self, toggle):
@@ -1770,6 +1784,7 @@ class RootItem(PListViewItem):
                 self.parent.parent.authControlMethod = "auth"
                 if self.firstChild.getStatus() == "auth":
                     self.firstChild.slotAuth(True)
+                    self.firstChild.isComplete = False
                 else:
                     self.firstChild.setStatus("auth")
             else:
@@ -1784,6 +1799,7 @@ class RootItem(PListViewItem):
                 self.parent.parent.authControlMethod = "grant"
                 if self.firstChild.getStatus() == "grant":
                     self.firstChild.slotGrant(True)
+                    self.firstChild.isComplete = False
                 else:
                     self.firstChild.setStatus("grant")
             else:
@@ -1798,6 +1814,7 @@ class RootItem(PListViewItem):
                 self.parent.parent.authControlMethod = "block"
                 if self.firstChild.getStatus() == "block":
                     self.firstChild.slotBlock(True)
+                    self.firstChild.isComplete = False
                 else:
                     self.firstChild.setStatus("block")
             else:
