@@ -19,6 +19,7 @@ from kdeui import *
 
 from um_utility import *
 from um_list import PListView
+from um_list import PListViewHeader
 from um_list import PListViewItem
 
 import polkit
@@ -784,6 +785,7 @@ class PolicyTab(QVBox):
     def __init__(self, parent, mainwidget, stack, uid, edit):
         QVBox.__init__(self, parent)
         self.policylist = PListView(self, "um-policylist")
+        PListViewHeader(self.policylist, textMain="Actions", iconMain=getIcon("apply"))
         """self.policyview = KListView(self)
         self.policyview.setRootIsDecorated(True)
         self.policyview.setResizeMode(KListView.LastColumn)
@@ -976,6 +978,8 @@ class PolicyTab(QVBox):
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
     def reset(self):
+        if not self.policylist.firstItem:
+            return
         self.policylist.firstItem.expand()
         it = self.policylist.firstItem.firstChild
         while it:
@@ -1230,8 +1234,8 @@ class PolicyTab(QVBox):
         def fill(package, exception, auths):
             if exception:
                 self.handleGivePolicyToAllFailed(item)
-                if item.isExpanded:
-                    item.collapse()
+                #if item.isExpanded:
+                #    item.collapse()
                 return
 
             self.handleGivePolicyToAllSucceeded()

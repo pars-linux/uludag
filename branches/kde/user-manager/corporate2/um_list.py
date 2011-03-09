@@ -38,6 +38,8 @@ class PListView(QScrollView):
         self.selectedItem = None
         self.hoverItem = None
 
+        self.header = None
+
         """self.layout = QBoxLayout(self.viewport(), 0, 0)
         self.layout.setDirection(QVBoxLayout.TopToBottom)
         self.layout.setSpacing(0)
@@ -67,11 +69,18 @@ class PListView(QScrollView):
     def viewportResizeEvent(self, e):
         for x in self.visibleitems:
             x.resize(self.width(), self.itemHeight)
+        if self.header:
+            if self.verticalScrollBar().isVisible():
+                width = self.verticalScrollBar().pos().x()-2
+            else:
+                width = self.width()-4
+            #self.header.resize(width-4, self.header.headerHeight)
+            self.header.setGeometry(2,2,width, self.header.headerHeight)
 
     def myResize(self, width):
         mw = 0
         th = 0
-        th = len(self.visibleitems)*self.itemHeight
+        th = (len(self.visibleitems)*self.itemHeight)+self.getHeaderHeight()
         #for i in self.visibleitems:
             #h = i.sizeHint().height()
             #mw = max(mw, i.sizeHint().width())
@@ -107,7 +116,7 @@ class PListView(QScrollView):
         self.items.remove(item)
         if item in self.visibleitems:
             self.visibleitems.remove(item)
-        self.moveChild(item, 0, 0)
+        #self.moveChild(item, 0, 0)
         del item
         """if not self.findAnItemWhoHasAChild(item):
             self.setSiblingHasChild(item, False)"""
@@ -133,10 +142,16 @@ class PListView(QScrollView):
                 previous = it
                 it = it.nextItem
 
+    def getHeaderHeight(self):
+        headerHeight = 0
+        if self.header and self.header.isVisible:
+            headerHeight = PListViewHeader.headerHeight
+        return headerHeight
+
     def shiftLowerItems(self, item):
         for i in range(self.visibleitems.index(item), len(self.visibleitems)):
             shiftItem = self.visibleitems[i]
-            self.moveChild(shiftItem, 0, self.visibleitems.index(shiftItem)*self.itemHeight)
+            self.moveChild(shiftItem, 0, (self.visibleitems.index(shiftItem)*self.itemHeight)+self.getHeaderHeight())
             #print self.visibleitems.index(item)*self.itemHeight
             #print self.visibleitems[i].name
 
@@ -163,7 +178,7 @@ class PListView(QScrollView):
                     self.visibleitems.insert(self.visibleitems.index(lastChild)+1, item)
                 else:
                     self.visibleitems.insert(self.visibleitems.index(item.parentItem)+1, item)
-                self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
+                self.addChild(item, 0, (self.visibleitems.index(item)*self.itemHeight)+self.getHeaderHeight())
                 self.shiftLowerItems(item)
             item.resize(item.parentItem.width(), self.itemHeight)
             self.setSiblingHasChild(item.parentItem, True)
@@ -171,7 +186,7 @@ class PListView(QScrollView):
         else:
             self.items.insert(len(self.items), item) # en sona ekle
             self.visibleitems.insert(len(self.visibleitems), item) # parentı yoksa  mutlaka visible olur
-            self.addChild(item, 0, self.visibleitems.index(item)*self.itemHeight)
+            self.addChild(item, 0, (self.visibleitems.index(item)*self.itemHeight)+self.getHeaderHeight())
             if not self.firstItem:
                 self.firstItem = item
             else:
@@ -179,6 +194,24 @@ class PListView(QScrollView):
                 lastSibling.nextItem = item
         #if item.parentItem:
         #    item.hide()
+
+    def showHeader(self):
+        self.header.isVisible = True
+        self.addChild(self.header, 0, 0)
+        if len(self.visibleitems):
+            self.shiftLowerItems(self.visibleitems[0])
+
+    def hideHeader(self):
+        self.header.isVisible = False
+        self.removeChild(item)
+        if len(self.visibleitems):
+            self.shiftLowerItems(self.visibleitems[0])
+
+    def addHeader(self, header):
+        self.header = header
+        self.items.insert(0, header)
+        if len(self.visibleitems):
+            self.shiftLowerItems(self.visibleitems[0])
 
     def setSiblingHasChild(self, item, hasChild):
         if item.parentItem:
@@ -206,6 +239,8 @@ class PListView(QScrollView):
             self.selectedItem.repaint()
             self.selectedItem = None
         for i in self.items:
+            if isinstance(i, PListViewHeader):
+                return
             for w in i.widgets:
                 if isinstance(w, PLVButtonGroup):
                     w.setExclusive(False)
@@ -820,4 +855,117 @@ class PLVFlatCombo(QWidget):
         paint.setBrush(oldBrush)
 
         paint.end()
+
+
+class PListViewHeader(QWidget):
+
+    headerHeight = 24
+
+    def __init__(self, parent=None, name=None, textMain="main-text", iconMain=None, textWidgets="text-widgets", iconWidgets=None):
+        QWidget.__init__(self, parent, name)
+        self.parent = parent
+        self.textMain = textMain
+        self.iconMain = iconMain
+        self.textWidgets = textWidgets
+        self.iconWidgets = iconWidgets
+
+        self.isVisible = True
+
+        self.setMaximumHeight(self.headerHeight)
+        self.setMinimumHeight(self.headerHeight)
+
+        self.parent.addHeader(self)
+        self.show()
+
+    def setWidgetsGeometry(self, width, height):
+        return
+        excess = 4
+        if self.parent.verticalScrollBar().isVisible():
+            excess += 12
+        for w in self.widgets:
+            excess += w.width() + self.widgetSpacing
+            mid = (height - w.height()) / 2
+            w.setGeometry(width - excess, mid, w.width(), w.height())
+        self.textLength = self.width() - self.parent.iconSize - self.parent.arrowSize - self.threeDotLength - 10 - 2 - (self.parent.depthSize*self.depth) - excess
+        self.calculateTextOut()
+
+    def calculateTextOut(self):
+        if not self.isVisible():
+            return
+        self.textOut = self.text
+        width = self.fontMetrics().width(self.textOut)
+        if width < self.textLength:
+            return
+        wi = self.decrementTextOutToHalf()
+        ctrl = False
+        while True:
+            if wi <= 0:
+                break
+            if wi < self.textLength:
+                ctrl = True
+                wi = self.incrementTextOutByHalf()
+                break
+            else:
+                wi = self.decrementTextOutToHalf()
+                if ctrl:
+                    break
+        self.textOut += "..."
+
+    def decrementTextOutToHalf(self):
+        total = len(self.textOut)/2
+        self.textOut = self.textOut[:total]
+        return self.fontMetrics().width(self.textOut)
+
+    def incrementTextOutByHalf(self):
+        total = (len(self.textOut)*3)/2
+        self.textOut = self.text[:total]
+        return self.fontMetrics().width(self.textOut)
+
+    def paintEvent(self, event):
+
+        paint = QPainter(self)
+        if not paint.isActive():
+            paint.begin(self)
+
+        #self.setPaletteBackgroundColor(self.parent.baseColor)
+        paint.fillRect(0, 0, self.width(), self.height(), QBrush(0))
+
+        iconMainWidth = 0
+        if self.iconMain:
+            dip = (self.height() - self.iconMain.height()) / 2
+            paint.drawPixmap (2, dip, self.iconMain)
+            iconMainWidth = self.iconMain.width() + 2
+        #else:
+        #    dip = (self.height() - self.parent.iconSize) / 2
+
+
+        font = paint.font()
+        fm = QFontMetrics(font)
+        ascent = fm.ascent()
+        mid = (self.height()+8) / 2
+        #font.setStyleStrategy(QFont.NoAntialias)
+        font.setBold(True)
+        paint.setFont(font)
+
+        dx = 2 + iconMainWidth + 4
+        paint.drawText(dx, mid, unicode(self.textMain))
+        #paint.drawText(0, 12, unicode("mana mana duub dubudb u"))
+
+        paint.end()
+
+    def resizeEvent(self, event):
+        w = event.size().width()
+        h = event.size().height()
+        self.setWidgetsGeometry(w, h)
+        #self.buffer = QPixmap(w,h)
+        """self.handleItemText()"""
+        return QWidget.resizeEvent(self, event)
+
+    def sizeHint(self):
+        f = QFont(self.font())
+        fm = QFontMetrics(f)
+
+        w = 1
+        h = max(fm.height(), PListViewHeader.headerHeight)
+        return QSize(w, h)
 
