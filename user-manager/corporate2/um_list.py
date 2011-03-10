@@ -539,14 +539,17 @@ class PListViewItem(QWidget):
         return self.fontMetrics().width(self.textOut)
 
     def isInViewArea(self):
+        itemCount = ((self.parent.visibleHeight()-self.parent.getHeaderHeight())/self.parent.itemHeight)+1
+        firstVisibleItemIndex = ((self.parent.contentsY()+self.parent.getHeaderHeight())/self.parent.itemHeight)-1
+        lastVisibleItemIndex = firstVisibleItemIndex+itemCount
+        myIndex = self.parent.visibleitems.index(self)
+        if myIndex >= firstVisibleItemIndex and myIndex <= lastVisibleItemIndex:
+            return True
         return False
 
     def paintEvent(self, event):
-        #print self.parent
         if not self.isInViewArea():
             return
-        #print self.parent.visibleHeight() #viewportun heightı
-        #print self.parent.contentsHeight() # header + itemCount*itemHeight
         paint = QPainter(self)
         #paint = QPainter(self.buffer)
         if not paint.isActive():
