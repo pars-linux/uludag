@@ -158,7 +158,6 @@ class PListView(QScrollView):
     def add(self, item):
         ### Ekleme yapıldığında collapsed ise açılmalı !!!!!!!!
         ### NAsıl ise öyle kalmalı burda açma kapama yapma
-
         size = QSize(self.width(), self.height())
         self.resizeEvent(QResizeEvent(size , QSize(0, 0)))
         if item.parentItem:
@@ -180,8 +179,9 @@ class PListView(QScrollView):
                     self.visibleitems.insert(self.visibleitems.index(item.parentItem)+1, item)
                 self.addChild(item, 0, (self.visibleitems.index(item)*self.itemHeight)+self.getHeaderHeight())
                 self.shiftLowerItems(item)
+            # is resize really required? try to remove below line
             item.resize(item.parentItem.width(), self.itemHeight)
-            self.setSiblingHasChild(item.parentItem, True)
+            #self.setSiblingHasChild(item.parentItem, True)
 
         else:
             self.items.insert(len(self.items), item) # en sona ekle
@@ -528,7 +528,6 @@ class PListViewItem(QWidget):
         return self.fontMetrics().width(self.textOut)
 
     def paintEvent(self, event):
-
         paint = QPainter(self)
         #paint = QPainter(self.buffer)
         if not paint.isActive():
