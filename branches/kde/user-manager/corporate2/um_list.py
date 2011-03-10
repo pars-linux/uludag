@@ -240,7 +240,7 @@ class PListView(QScrollView):
             self.selectedItem = None
         for i in self.items:
             if isinstance(i, PListViewHeader):
-                return
+                continue
             for w in i.widgets:
                 if isinstance(w, PLVButtonGroup):
                     w.setExclusive(False)
