@@ -493,6 +493,8 @@ class PListViewItem(QWidget):
             mid = (height - w.height()) / 2
             w.setGeometry(width - excess, mid, w.width(), w.height())
         self.textLength = self.width() - self.parent.iconSize - self.parent.arrowSize - self.threeDotLength - 10 - 2 - (self.parent.depthSize*self.depth) - excess
+        if self.textLength < self.threeDotLength:
+            self.textLength = 0
         self.calculateTextOut()
 
     def calculateTextOut(self):
@@ -506,15 +508,24 @@ class PListViewItem(QWidget):
         ctrl = False
         while True:
             if wi <= 0:
-                break
+                self.textOut = "..."
+                return
             if wi < self.textLength:
                 ctrl = True
-                wi = self.incrementTextOutByHalf()
+                break
+                #wi = self.incrementTextOutByHalf()
                 break
             else:
                 wi = self.decrementTextOutToHalf()
                 if ctrl:
                     break
+        while True:
+            total = len(self.textOut)+1
+            txt = self.text[:total]
+            wi = self.fontMetrics().width(txt)
+            if wi >= self.textLength:
+                break
+            self.textOut = txt
         self.textOut += "..."
 
     def decrementTextOutToHalf(self):
