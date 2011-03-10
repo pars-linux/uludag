@@ -1610,7 +1610,7 @@ class CategoryItem(PListViewItem):
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
-        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset", enableWidgetHiding=False)
+        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset", enableWidgetHiding=True)
         self.id = id
         self.desc = desc
         self.policy = policy

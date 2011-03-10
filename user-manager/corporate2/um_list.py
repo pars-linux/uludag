@@ -487,11 +487,16 @@ class PListViewItem(QWidget):
     def setWidgetsGeometry(self, width, height):
         excess = 4
         if self.parent.verticalScrollBar().isVisible():
-            excess += 12
+            excess += self.parent.verticalScrollBar().width()
         for w in self.widgets:
             excess += w.width() + self.widgetSpacing
             mid = (height - w.height()) / 2
             w.setGeometry(width - excess, mid, w.width(), w.height())
+        if self.enableWidgetHiding:
+            if not self.parent.hoverItem == self:
+                excess = 4
+                if self.parent.verticalScrollBar().isVisible():
+                    excess += self.parent.verticalScrollBar().width()
         self.textLength = self.width() - self.parent.iconSize - self.parent.arrowSize - self.threeDotLength - 10 - 2 - (self.parent.depthSize*self.depth) - excess
         if self.textLength < self.threeDotLength:
             self.textLength = 0
@@ -542,6 +547,8 @@ class PListViewItem(QWidget):
         itemCount = ((self.parent.visibleHeight()-self.parent.getHeaderHeight())/self.parent.itemHeight)+1
         firstVisibleItemIndex = ((self.parent.contentsY()+self.parent.getHeaderHeight())/self.parent.itemHeight)-1
         lastVisibleItemIndex = firstVisibleItemIndex+itemCount
+        if self not in self.parent.visibleitems:
+            return
         myIndex = self.parent.visibleitems.index(self)
         if myIndex >= firstVisibleItemIndex and myIndex <= lastVisibleItemIndex:
             return True
