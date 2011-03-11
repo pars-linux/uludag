@@ -568,7 +568,8 @@ class PListViewItem(QWidget):
             color = self.parent.selectedColor
         elif self.parent.hoverItem == self:
             color = self.parent.hoverColor
-        paint.fillRect(event.rect(), QBrush(color))
+        #paint.fillRect(event.rect(), QBrush(color))
+        self.setPaletteBackgroundColor(color)
         if len(self.widgets) > 0:
             self.setWidgetsBg(color)
 
@@ -955,7 +956,7 @@ class PListViewHeader(QWidget):
             paint.begin(self)
 
         #self.setPaletteBackgroundColor(self.parent.baseColor)
-        paint.fillRect(0, 0, self.width(), self.height(), QBrush(0))
+        #paint.fillRect(0, 0, self.width(), self.height(), QBrush(0))
 
         iconMainWidth = 0
         if self.iconMain:
