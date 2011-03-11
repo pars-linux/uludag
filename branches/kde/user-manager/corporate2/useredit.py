@@ -46,6 +46,7 @@ class UID:
         if edit:
             self.uid = QLineEdit(w)
             self.uid.setReadOnly(True)
+            self.uid.setEnabled(False)
             QToolTip.add(self.uid, i18n("User ID is not editable"))
             hb = self.uid
         else:
@@ -95,6 +96,7 @@ class Name:
         if edit:
             self.name = QLineEdit(w)
             self.name.setReadOnly(True)
+            self.name.setEnabled(False)
             QToolTip.add(self.name, i18n("User name is not editable"))
         else:
             self.name = QLineEdit(w)
@@ -153,6 +155,7 @@ class Homedir:
         if edit:
             self.home = QLineEdit(w)
             self.home.setReadOnly(True)
+            self.home.setEnabled(False)
             QToolTip.add(self.home, i18n("User's home is not editable"))
             hb = self.home
         else:
@@ -514,6 +517,7 @@ class UserStack(QVBox):
         mainhb.setSpacing(18)
 
         w = QWidget(mainhb)
+        w.setMaximumWidth(300)
         grid = QGridLayout(w, 0, 0)
         grid.setSpacing(9)
 
@@ -1624,7 +1628,7 @@ class CategoryItem(PListViewItem):
 
 class ActionItem(PListViewItem):
     def __init__(self, parent, id, desc, policy, name=None, parentItem=None, data=None, icon=None):
-        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset", enableWidgetHiding=True)
+        PListViewItem.__init__(self, parent, name, desc, parentItem, data, "notset", enableWidgetHiding=False)
         self.id = id
         self.desc = desc
         self.policy = policy
@@ -1753,7 +1757,7 @@ class ActionItem(PListViewItem):
 
 class RootItem(PListViewItem):
     def __init__(self, parent, label, name, isFilled=False, icon=None):
-        PListViewItem.__init__(self, parent, name, label, icon=icon, enableWidgetHiding=False)
+        PListViewItem.__init__(self, parent, name, label, icon=icon, enableWidgetHiding=True)
         self.parent = parent
         self.isFilled = False # is category item filled with with policy items
         self.isStarted = False # this is a control for preventing slot actions that occurs while setting actions' values. we set this var after filling action items
