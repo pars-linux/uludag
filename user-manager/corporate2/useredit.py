@@ -44,7 +44,9 @@ class UID:
         self.usedids = []
         lab = QLabel(i18n("ID:"), w)
         if edit:
-            self.uid = QLabel(w)
+            self.uid = QLineEdit(w)
+            self.uid.setReadOnly(True)
+            QToolTip.add(self.uid, i18n("User ID is not editable"))
             hb = self.uid
         else:
             hb = QHBox(w)
@@ -91,7 +93,9 @@ class Name:
         self.usednames = []
         lab = QLabel(i18n("User name:"), w)
         if edit:
-            self.name = QLabel(w)
+            self.name = QLineEdit(w)
+            self.name.setReadOnly(True)
+            QToolTip.add(self.name, i18n("User name is not editable"))
         else:
             self.name = QLineEdit(w)
             lab.setBuddy(self.name)
@@ -147,7 +151,9 @@ class Homedir:
         self.w = w
         lab = QLabel(i18n("Home:"), w)
         if edit:
-            self.home = QLabel(w)
+            self.home = QLineEdit(w)
+            self.home.setReadOnly(True)
+            QToolTip.add(self.home, i18n("User's home is not editable"))
             hb = self.home
         else:
             hb = QHBox(w)
