@@ -552,6 +552,10 @@ class UserStack(QVBox):
         row = grid.numRows()
         grid.addMultiCellWidget(line, row, row, 0, 1)
 
+        spacer = QSpacerItem(20,0,QSizePolicy.Minimum,QSizePolicy.Expanding)
+        row = grid.numRows()
+        grid.addItem(spacer, row, 1)
+
         self.u_policygrouptab = PolicyGroupTab(mainhb, self, self.mainwidget, self.u_id, edit)
         self.u_groups = self.u_policygrouptab.groupsWidget
         self.u_operations = self.u_policygrouptab.policytab.operations
