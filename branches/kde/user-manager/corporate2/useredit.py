@@ -566,19 +566,23 @@ class UserStack(QVBox):
         grid.addMultiCellWidget(self.guide, row, row, 0, 1)
 
         hb = QHBox(self)
-        self.guide.buttons = hb
-        hb.setSpacing(12)
-        QLabel(" ", hb)
+        layout = hb.layout()
+        layout.setSpacing(4)
+        self.guide.buttons = hb #?
+        layout.insertStretch(0)
         if edit:
-            self.applyButton = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb)
+            self.applyButton = QPushButton(getIconSet("apply.png", KIcon.Small), i18n("Apply"), hb, "applybutton")
+            layout.addWidget(self.applyButton)
             self.connect(self.applyButton, SIGNAL("clicked()"), self.slotEdit)
             self.applyButton.setEnabled(False)
             self.guide.ok_but = self.applyButton
         else:
-            self.addButton = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb)
+            self.addButton = QPushButton(getIconSet("add.png", KIcon.Small), i18n("Add"), hb, "addbutton")
+            layout.addWidget(self.addButton)
             self.connect(self.addButton, SIGNAL("clicked()"), self.slotAdd)
             self.guide.ok_but = self.addButton
-        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb)
+        but = QPushButton(getIconSet("cancel.png", KIcon.Small), i18n("Cancel"), hb, "cancelbutton")
+        layout.addWidget(but)
         self.connect(but, SIGNAL("clicked()"), parent.slotCancel)
 
     def findGroupID(self, list, name):
