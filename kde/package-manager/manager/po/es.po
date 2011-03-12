@@ -480,7 +480,7 @@ msgstr "y además <b>%1</b> dependencias, con un total de <b>%2</b>"
 
 #: src/statemanager.py:174
 msgid "in your basket."
-msgstr "En su carrito."
+msgstr " en su carrito."
 
 #: src/statemanager.py:209
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
