@@ -115,7 +115,7 @@ msgstr "Paquetes Críticos"
 
 #: src/basketdialog.py:211 src/pmwindow.py:144
 msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
-msgstr "Los paquetes seleccionados ya están instalados.<br>Si continúa los paquetes se volveran a instalar"
+msgstr "Los paquetes seleccionados ya están instalados.<br>Si continúa los paquetes se volverán a instalar"
 
 #: src/basketdialog.py:213 src/pmwindow.py:146
 msgid "Already Installed Packages"
@@ -465,7 +465,7 @@ msgstr "Dependencias de los paquetes seleccionados, que también requieren modif
 
 #: src/statemanager.py:168
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</b>"
+msgstr "Seleccionados <b>%1</b> paquetes con un total de <b>%2</b>"
 
 # favor revisar si necesario colocar "total" de nuevo ?? porque esto aquí es
 # adicional ..
@@ -484,7 +484,7 @@ msgstr " en su carrito."
 
 #: src/statemanager.py:209
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
+msgstr "Los paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
 
 #: src/statemanager.py:210 src/statemanager.py:218
 msgid "Conflict Error"
