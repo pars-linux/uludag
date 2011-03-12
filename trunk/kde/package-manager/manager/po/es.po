@@ -472,11 +472,11 @@ msgstr "Seleccionados <b>%1</b> paquetes con un total de <b>%2</b>"
 # please check if necessary use "total" again ?? because THIS is additional..
 #: src/statemanager.py:171
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr ", además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: src/statemanager.py:173
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "y además <b>%1</b> dependencias, con un total de <b>%2</b>"
+msgstr ", además <b>%1</b> dependencias, con un total de <b>%2</b>"
 
 #: src/statemanager.py:174
 msgid "in your basket."
