@@ -66,15 +66,28 @@ class PEditLabelLineEdit(QtGui.QLineEdit):
     def __init__(self, parent):
         QtGui.QLineEdit.__init__(self, parent)
         self.parent = parent
+        self.updateSize()
 
-        self.setMaximumSize(QtCore.QSize(self.parent.label.width()*3/2,self.parent.label.height()+4))
-        self.setMinimumSize(QtCore.QSize(self.parent.label.width()*3/2,self.parent.label.height()+4))
+        self.installEventFilter(self)
+
+    def updateSize(self, width=None):
+        if width:
+            self.setMaximumSize(QtCore.QSize(self.width()+width,self.height()))
+            self.setMinimumSize(QtCore.QSize(self.width()+width,self.height()))
+        else:
+            self.setMaximumSize(QtCore.QSize(self.parent.label.width()+32,self.parent.label.height()+4))
+            self.setMinimumSize(QtCore.QSize(self.parent.label.width()+32,self.parent.label.height()+4))
 
     def setText(self, text):
         QtGui.QLineEdit.setText(self, text)
+        self.updateSize()
 
-        self.setMaximumSize(QtCore.QSize(self.parent.label.width()*3/2,self.parent.label.height()+4))
-        self.setMinimumSize(QtCore.QSize(self.parent.label.width()*3/2,self.parent.label.height()+4))
+    def eventFilter(self, target, event):
+        if(event.type() == QtCore.QEvent.KeyPress):
+            if event.key() >= 32 or event.key() <= 127:
+                self.updateSize(self.fontMetrics().width(event.text()))
+
+        return False
 
     def sizeHint(self):
         return QtCore.QSize(self.parent.label.width(), self.parent.label.height())
