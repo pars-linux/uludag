@@ -1,9 +1,9 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 from PyQt4 import QtGui
 from PyQt4 import QtCore
+from PyQt4.QtCore import *
 
 from PyKDE4 import kdeui
 from PyKDE4 import kdecore
@@ -28,31 +28,27 @@ class PEditLabelIcon(QtGui.QLabel):
     def sizeHint(self):
         return QtCore.QSize(self.pixmap().width(), self.pixmap().height())
 
-
     def eventFilter(self, target, event):
         if(event.type() == QtCore.QEvent.MouseButtonPress):
             if self.parent.label.isVisible():
-                self.setIcon(self.editIcon)
-                self.parent.label.hide()
-                self.parent.edit.setText(self.parent.label.text())
-                self.parent.edit.show()
+                self.parent.startEditing()
             else:
-                self.setIcon(self.readOnlyIcon)
-                self.parent.edit.hide()
-                self.parent.label.setText(self.parent.edit.text())
-                self.parent.label.show()
+                self.parent.endEditing()
 
         return False
 
 class PEditLabelLabel(QtGui.QLabel):
     def __init__(self, parent, text):
         QtGui.QLabel.__init__(self, text, parent)
+        self.parent = parent
 
         width = self.fontMetrics().width(self.text())+2
         height = self.fontMetrics().height()+4
 
         self.setMaximumSize(QtCore.QSize(width, height))
         self.setMinimumSize(QtCore.QSize(width, height))
+
+        self.installEventFilter(self)
 
     def setText(self, text):
         QtGui.QLabel.setText(self, text)
@@ -62,21 +58,31 @@ class PEditLabelLabel(QtGui.QLabel):
         self.setMaximumSize(QtCore.QSize(width, height))
         self.setMinimumSize(QtCore.QSize(width, height))
 
+    def eventFilter(self, target, event):
+        if event.type() == QEvent.MouseButtonDblClick:
+            self.parent.startEditing()
+
+        return False
+
 class PEditLabelLineEdit(QtGui.QLineEdit):
+
+    extraWidth = 32
+
     def __init__(self, parent):
         QtGui.QLineEdit.__init__(self, parent)
         self.parent = parent
         self.updateSize()
 
         self.installEventFilter(self)
+        self.connect(self, SIGNAL('textChanged(QString)'), self.editTextChanged)
 
-    def updateSize(self, width=None):
-        if width:
-            self.setMaximumSize(QtCore.QSize(self.width()+width,self.height()))
-            self.setMinimumSize(QtCore.QSize(self.width()+width,self.height()))
-        else:
-            self.setMaximumSize(QtCore.QSize(self.parent.label.width()+32,self.parent.label.height()+4))
-            self.setMinimumSize(QtCore.QSize(self.parent.label.width()+32,self.parent.label.height()+4))
+    def editTextChanged(self, text):
+        self.updateSize()
+
+    def updateSize(self):
+        width = self.fontMetrics().width(self.text())+PEditLabelLineEdit.extraWidth
+        self.setMaximumSize(QtCore.QSize(width,self.height()))
+        self.setMinimumSize(QtCore.QSize(width,self.height()))
 
     def setText(self, text):
         QtGui.QLineEdit.setText(self, text)
@@ -84,9 +90,8 @@ class PEditLabelLineEdit(QtGui.QLineEdit):
 
     def eventFilter(self, target, event):
         if(event.type() == QtCore.QEvent.KeyPress):
-            if event.key() >= 32 or event.key() <= 127:
-                self.updateSize(self.fontMetrics().width(event.text()))
-
+            if event.key() == QtCore.Qt.Key_Return or event.key() == QtCore.Qt.Key_Enter:
+                self.parent.endEditing()
         return False
 
     def sizeHint(self):
@@ -112,6 +117,17 @@ class PEditLabel(QtGui.QWidget):
 
         #self.resize(QtCore.QSize(400,400))
 
+    def startEditing(self):
+        self.icon.setIcon(self.icon.editIcon)
+        self.label.hide()
+        self.edit.setText(self.label.text())
+        self.edit.show()
+
+    def endEditing(self):
+        self.icon.setIcon(self.icon.readOnlyIcon)
+        self.edit.hide()
+        self.label.setText(self.edit.text())
+        self.label.show()
 
     def sizeHint(self):
         return QtCore.QSize(self.label.width()+self.icon.width(), self.label.height())
