@@ -540,6 +540,38 @@
             </widget>
            </item>
            <item>
+            <widget class="QPushButton" name="pushSearch">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>48</horstretch>
+               <verstretch>48</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>48</width>
+               <height>48</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>Search</string>
+             </property>
+             <property name="icon">
+              <iconset resource="data.qrc">
+               <normaloff>:/icons/find32.png</normaloff>:/icons/find32.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>22</width>
+               <height>22</height>
+              </size>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
             <widget class="QPushButton" name="pushDebug">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">

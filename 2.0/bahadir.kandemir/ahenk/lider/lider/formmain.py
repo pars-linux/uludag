@@ -202,8 +202,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.frameMulti.hide()
         if self.directory.is_connected:
             self.pushMain.setEnabled(True)
+            self.pushSearch.setEnabled(True)
         else:
             self.pushMain.setEnabled(False)
+            self.pushSearch.setEnabled(False)
         if self.stackedWidget.currentIndex() == 0:
             # Disable unnecessary buttons
             if len(self.items):
