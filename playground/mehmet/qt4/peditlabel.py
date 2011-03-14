@@ -25,8 +25,8 @@ class PEditLabelIcon(QtGui.QLabel):
     def setIcon(self, icon):
         self.setPixmap(QtGui.QPixmap(icon))
 
-    def sizeHint(self):
-        return QtCore.QSize(self.pixmap().width(), self.pixmap().height())
+    """def sizeHint(self):
+        return QtCore.QSize(self.pixmap().width(), self.pixmap().height())"""
 
     def eventFilter(self, target, event):
         if(event.type() == QtCore.QEvent.MouseButtonPress):
@@ -105,8 +105,8 @@ class PEditLabelLineEdit(QtGui.QLineEdit):
                 self.parent.endEditing()
         return False
 
-    def sizeHint(self):
-        return QtCore.QSize(self.parent.label.width(), self.parent.label.height())
+    """def sizeHint(self):
+        return QtCore.QSize(self.parent.label.width(), self.parent.label.height())"""
 
 class PEditLabel(QtGui.QWidget):
     def __init__(self, parent, text):
@@ -114,7 +114,7 @@ class PEditLabel(QtGui.QWidget):
         QtGui.QWidget.__init__(self, parent)
         layout = QtGui.QHBoxLayout(self)
         layout.setSpacing(0)
-        #self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy., QtGui.QSizePolicy.Minimum))
+        self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum))
         self.label = PEditLabelLabel(self, "")
         layout.addWidget(self.label)
         self.edit = PEditLabelLineEdit(self)
@@ -168,28 +168,31 @@ class PEditLabel(QtGui.QWidget):
     def text(self):
         return self.label.text()
 
-    def sizeHint(self):
-        return QtCore.QSize(self.label.width()+self.icon.width(), self.label.height())
+    """def sizeHint(self):
+        return QtCore.QSize(self.label.width()+self.icon.width(), self.label.height())"""
 
     def resizeEvent(self, event):
-        print event.oldSize()
-        print event.size()
-        print ''
         #self.label.updateSize()
+        if self.edit.isVisible():
+            self.endEditing()
         self.label.setText(self.cropLabelText())
         return QWidget.resizeEvent(self, event)
 
     def cropLabelText(self):
         if not self.label.text():
             if not self.storedText:
+                return
                 raise
             else:
                 self.label.setText(self.storedText)
-        textWidth = self.label.fontMetrics().width(self.label.text())
-        if textWidth + 32 > self.width():
+        oldLength = len(self.label.text())
+        textWidth = self.label.fontMetrics().width(self.storedText)
+        #print self.width()
+        #print textWidth+32
+        if textWidth + 32 >= self.width():
             r1 = float(self.width())/(textWidth+32)
-            r2 = int(float(len(self.label.text()))*r1)-3
-            return self.label.text()[:r2]+"..."
+            r2 = int(float(len(self.storedText))*r1)-3
+            return self.storedText[:r2]+"..."
         else:
-            return self.label.text()
+            return self.storedText
 
