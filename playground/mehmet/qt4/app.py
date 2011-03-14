@@ -38,9 +38,31 @@ aboutData.setProgramIconName("computer")
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
         KMainWindow.__init__(self, parent)
-        widget = PEditLabel(self, "deneme")
-        self.resize(widget.size())
-        self.setCentralWidget(widget)
+        #self.resize(QtCore.QSize(800,800))
+        #self.setMaximumSize(QtCore.QSize(800,800))
+        #self.setMinimumSize(QtCore.QSize(800,800))
+
+        centralWidget = QtGui.QWidget(self)
+        centralWidget.setStyleSheet( "background-color: rgb( 8,8,228 )" )
+
+        #centralWidget.setMinimumSize(QtCore.QSize(400,400))
+        #centralWidget.setMaximumSize(QtCore.QSize(400,400))
+
+        layout = QtGui.QHBoxLayout(centralWidget)
+
+        widget = PEditLabel(centralWidget, "deneme mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
+        #widget.setStyleSheet( "background-color: rgb( 0,0,0 )" )
+        #www = QtGui.QWidget(centralWidget)
+        #QtGui.QLabel("wwww", www)
+        layout.addWidget(widget)
+
+        w2 = QtGui.QWidget(centralWidget)
+        #w2.setMinimumWidth(400)
+        w2.setStyleSheet( "background-color: rgb( 255,0,0 )" )
+        QtGui.QLabel("eee", w2)
+        layout.addWidget(w2)
+
+        self.setCentralWidget(centralWidget)
 
 
 if __name__ == "__main__":
