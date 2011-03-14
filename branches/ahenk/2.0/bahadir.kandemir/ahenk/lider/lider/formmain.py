@@ -636,7 +636,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         item = self.items[0]
 
         dn = item.dn
-        results = self.directory.search(dn, scope="one")
+        results = self.directory.search(dn, scope="one", fields=["objectClass"])
 
         if dn.startswith('dc=') and len(results) > 0:
             QtGui.QMessageBox.warning(self, "Warning", "The selected item is a non-empty directory. It cannot be deleted.")
@@ -824,7 +824,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             pass
 
         if widget.get_type() == plugins.TYPE_SINGLE:
-            if item and item.name in self.talk.online:
+            if item and (item.name in self.talk.online) or item.folder:
                 self.pushApply.show()
             else:
                 self.pushApply.hide()
@@ -865,10 +865,19 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks 'save & apply' button.
         """
+        def xmpp_update(_name):
+            if _name in self.talk.online:
+                jid = "%s@%s" % (_name, self.talk.domain)
+                self.talk.send_command(jid, "ahenk.force_update")
+
         if self.__slot_save():
             for item in self.items:
-                jid = "%s@%s" % (item.name, self.talk.domain)
-                self.talk.send_command(jid, "ahenk.force_update")
+                if item.folder:
+                    for dn, attrs in self.directory.search(item.dn, scope="sub", fields=['objectClass']):
+                        if dn.startswith("cn="):
+                            xmpp_update(dn.split(",")[0].split("=")[1])
+                else:
+                    xmpp_update(item.name)
 
     def __slot_save(self):
         """
