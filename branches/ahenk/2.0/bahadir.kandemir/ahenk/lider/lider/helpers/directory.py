@@ -117,6 +117,15 @@ class Directory:
         ldif = ldap.modlist.addModlist(attributes)
         self.conn.add_s(dn, ldif)
 
+    def delete_item(self, dn):
+        """
+            Deletes selected item
+
+            Arguments:
+                dn: Distinguished name
+        """
+        self.conn.delete_s(dn)
+
     def search(self, directory=None, fields=None, scope="one"):
         """
             Searches for all Folder and Computer objects in given directory.

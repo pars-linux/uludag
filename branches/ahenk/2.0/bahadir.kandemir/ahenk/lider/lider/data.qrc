@@ -31,5 +31,6 @@
     <file>icons/folder16.png</file>
     <file>icons/network48.png</file>
     <file>icons/help48.png</file>
+    <file>icons/edit-delete.png</file>
   </qresource>
 </RCC>
