@@ -50,7 +50,7 @@ class MainWindow(KMainWindow):
 
         layout = QtGui.QHBoxLayout(centralWidget)
 
-        widget = PEditLabel(centralWidget, "deneme mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
+        widget = PEditLabel(centralWidget, "deneme mmmmmmmmmmmmmmmmmmmm")
         #widget.setStyleSheet( "background-color: rgb( 0,0,0 )" )
         #www = QtGui.QWidget(centralWidget)
         #QtGui.QLabel("wwww", www)
