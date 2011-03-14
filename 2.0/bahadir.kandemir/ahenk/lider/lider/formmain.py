@@ -22,6 +22,7 @@ from lider.ui_formmain import Ui_FormMain
 from lider.connection import DialogConnection
 from lider.computer import DialogComputer
 from lider.folder import DialogFolder
+from lider.search import DialogSearch
 from lider.user import DialogUser
 
 # Helper modules
@@ -90,6 +91,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.talk, QtCore.SIGNAL("userStatusChanged(QString, int)"), self.__slot_talk_status)
         self.connect(self.pushMain, QtCore.SIGNAL("clicked()"), self.__slot_main)
         self.connect(self.pushDebug, QtCore.SIGNAL("toggled(bool)"), self.__slot_debug)
+        self.connect(self.pushSearch, QtCore.SIGNAL("clicked()"), self.__slot_search)
 
         self.connect(self.treeComputers, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree_click)
         self.connect(self.treeComputers, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree_double_click)
@@ -862,6 +864,14 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.textLog.show()
         else:
             self.textLog.hide()
+
+    def __slot_search(self):
+        """
+            Triggered when user clicks search button.
+        """
+        dialog = DialogSearch()
+        if dialog.exec_():
+            print "Searching:", dialog.get_query()
 
     def __slot_apply(self):
         """

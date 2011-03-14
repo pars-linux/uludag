@@ -2,6 +2,7 @@ all:
 	pyuic4 lider/formmain.ui > lider/ui_formmain.py
 	pyuic4 lider/connection.ui > lider/ui_connection.py
 	pyuic4 lider/computer.ui > lider/ui_computer.py
+	pyuic4 lider/search.ui > lider/ui_search.py
 	pyuic4 lider/folder.ui > lider/ui_folder.py
 	pyuic4 lider/user.ui > lider/ui_user.py
 	pyrcc4 lider/data.qrc > lider/data_rc.py
