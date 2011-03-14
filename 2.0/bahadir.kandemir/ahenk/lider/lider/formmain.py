@@ -74,6 +74,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
         self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
         self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
+        self.menu.newAction("Delete", wrappers.Icon("edit-delete"), self.__slot_delete)
 
         # Backends
         self.talk = talk.Talk()
@@ -625,6 +626,38 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.treeComputers.setCurrentItem(item)
             self.menu.exec_(self.treeComputers.mapToGlobal(pos))
 
+    def __slot_delete(self):
+        """
+            Triggered when user wants to delete an item
+        """
+        if len(self.items) != 1:
+            QtGui.QMessageBox.warning(self, "Warning", "Only one item at a time can be deleted.")
+
+        item = self.items[0]
+
+        dn = item.dn
+        results = self.directory.search(dn, scope="one")
+
+        if dn.startswith('dc=') and len(results) > 0:
+            QtGui.QMessageBox.warning(self, "Warning", "The selected item is a non-empty directory. It cannot be deleted.")
+        else:
+            msg = str()
+            reply = QtGui.QMessageBox.question(self, "Warning", "This is not undoable. Are you sure you want to remove?", QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
+            if reply == QtGui.QMessageBox.Yes:
+                try:
+                    self.directory.delete_item(dn)
+                    index = item.parent().indexOfChild(self.treeComputers.currentItem())
+                    item.parent().takeChild(index)
+
+                except directory.DirectoryConnectionError:
+                    self.__update_status("directory", "error")
+                    # TODO: Disconnect
+                    QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                    return
+                except directory.DirectoryError:
+                    QtGui.QMessageBox.warning(self, "Connection Error", "Unable to delete item.")
+                    return
+
     def __slot_new_computer(self):
         """
             Triggered when user wants to add a new computer.
@@ -731,6 +764,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             item = self.nodes_dn[dn]
             self.treeComputers.scrollToItem(item)
             self.treeComputers.setCurrentItem(item)
+
 
     def __slot_widget_stack(self, toggled):
         """
