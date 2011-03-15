@@ -25,6 +25,14 @@ import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system, can_access_file, unlink, isEmpty
 from pisi.actionsapi.pisitools import dodoc
+import pisi.actionsapi.variables as variables
+
+crosscompiling = ctx.config.values.build.crosscompiling
+sysroot = get.sysroot()
+python_cmd = "python"
+
+if crosscompiling:
+    python_cmd = "sb2 %s/usr/bin/python" % sysroot
 
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):
@@ -52,19 +60,27 @@ class RunTimeError(pisi.actionsapi.Error):
 
 def configure(parameters = ''):
     '''does python setup.py configure'''
-    if system('python setup.py configure %s' % (parameters)):
+    if system('%s setup.py configure %s' % (python_cmd, parameters)):
         raise ConfigureError, _('Configuration failed.')
 
+def test(parameters = ''):
+    if system('%s setup.py test %s' % (python_cmd, parameters)):
+        raise CompileError, _('Make failed.')
 
 def compile(parameters = ''):
     '''compile source with given parameters.'''
-    if system('python setup.py build %s' % (parameters)):
+    if system('%s setup.py build %s' % (python_cmd, parameters)):
         raise CompileError, _('Make failed.')
 
 def install(parameters = ''):
     '''does python setup.py install'''
-    if system('python setup.py install --root=%s --no-compile -O0 %s' % (get.installDIR(), parameters)):
+    install_dir = get.installDIR()
+    cmd  = '%s setup.py install --root=%s --no-compile -O0 %s;' % (python_cmd, install_dir, parameters)
+
+    if system(cmd):
         raise InstallError, _('Install failed.')
+    elif sysroot:
+        fix_sb2_python_install_dir()
 
     docFiles = ('AUTHORS', 'CHANGELOG', 'CONTRIBUTORS', 'COPYING*', 'COPYRIGHT',
                 'Change*', 'KNOWN_BUGS', 'LICENSE', 'MAINTAINERS', 'NEWS',
@@ -75,9 +91,26 @@ def install(parameters = ''):
             if not isEmpty(doc):
                 dodoc(doc)
 
+def fix_sb2_python_install_dir():
+    ''' fixes scratchbox2 installation directories,
+        hacky fix, maybe fixed later..'''
+    install_dir = get.installDIR()
+
+    system('cp -rfv %(install_dir)s%(sysroot)s/* %(install_dir)s; \
+            remove_dir=""; \
+            dir_cnt="`ls %(install_dir)s/var | wc -l`"; \
+            if [ ${dir_cnt} -eq 1 ]; then \
+                remove_dir=%(install_dir)s/var/; \
+            else \
+                remove_dir=%(install_dir)s/var/cross; \
+            fi; \
+            rm -rfv $remove_dir;' % \
+                { 'install_dir' : install_dir,
+                  'sysroot'     : sysroot})
+
 def run(parameters = ''):
     '''executes parameters with python'''
-    if system('python %s' % (parameters)):
+    if system('python %s %s' % (parameters, extra_param)):
         raise RunTimeError, _('Running %s failed.') % parameters
 
 def fixCompiledPy(lookInto = '/usr/lib/%s/' % get.curPYTHON()):
