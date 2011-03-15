@@ -45,11 +45,13 @@ def exportFlags():
 
     # if we are crosscompiling, some extra flags and variables has to be defined.
     if values.build.crosscompiling:
+        os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
+        os.environ['PYTHON']    = "%s/usr/bin/python" % sysroot
         os.environ['SYSROOT']   = sysroot
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
         os.environ['ARCH']      = values.general.architecture
 
-        os.environ['CPPFLAGS'] += " -isystem%s/usr/include" % values.build.cppflags
+        os.environ['CPPFLAGS'] += " -isystem%s/usr/include" % sysroot
         os.environ['CFLAGS']   += " -I%s/usr/include" % sysroot
         os.environ['CXXFLAGS'] += " -I%s/usr/include" % sysroot
         os.environ['LDFLAGS']  += " -L%(sysroot)s/lib -Wl,-rpath-link,%(sysroot)s/lib \
@@ -58,6 +60,12 @@ def exportFlags():
 
         os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig" % sysroot
 
+    crosscompiling = ctx.config.values.build.crosscompiling
+    if crosscompiling:
+        print " ==> cross compiling <== "
+    else:
+        print " ==> native compiling <== "
+
 class Env(object):
     '''General environment variables used in actions API'''
     def __init__(self):
@@ -65,21 +73,26 @@ class Env(object):
         exportFlags()
 
         self.__vars = {
-            'pkg_dir': 'PKG_DIR',
-            'work_dir': 'WORK_DIR',
-            'install_dir': 'INSTALL_DIR',
-            'build_type': 'PISI_BUILD_TYPE',
-            'src_name': 'SRC_NAME',
-            'src_version': 'SRC_VERSION',
-            'src_release': 'SRC_RELEASE',
-            'build': 'BUILD',
-            'host': 'HOST',
-            'target': 'TARGET',
-            'cppflags': 'CPPFLAGS',
-            'cflags': 'CFLAGS',
-            'cxxflags': 'CXXFLAGS',
-            'ldflags': 'LDFLAGS',
-            'jobs': 'JOBS'
+            'pkg_dir'     : 'PKG_DIR',
+            'work_dir'    : 'WORK_DIR',
+            'install_dir' : 'INSTALL_DIR',
+            'build_type'  : 'PISI_BUILD_TYPE',
+
+            'src_name'    : 'SRC_NAME',
+            'src_version' : 'SRC_VERSION',
+            'src_release' : 'SRC_RELEASE',
+
+            'build'       : 'BUILD',
+            'host'        : 'HOST',
+            'target'      : 'TARGET',
+
+            'cppflags'    : 'CPPFLAGS',
+            'cflags'      : 'CFLAGS',
+            'cxxflags'    : 'CXXFLAGS',
+            'ldflags'     : 'LDFLAGS',
+
+            'jobs'        : 'JOBS',
+            'preload'     : 'LD_PRELOAD'
         }
 
     def __getattr__(self, attr):
@@ -137,3 +150,4 @@ def initVariables():
     ctx.dirs = Dirs()
     ctx.generals = Generals()
     glb = ctx
+

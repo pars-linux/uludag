@@ -68,8 +68,6 @@ def configure(parameters = '', configure_cmd='./configure'):
         cmd = '%s \
                --prefix=/%s \
                --build=%s \
-               --host=%s \
-               --target=%s \
                --mandir=/%s \
                --infodir=/%s \
                --datadir=/%s \
@@ -78,12 +76,14 @@ def configure(parameters = '', configure_cmd='./configure'):
                --libexecdir=/%s \
                %s' % (configure_cmd,
                       get.defaultprefixDIR(), \
-                      get.BUILD(), get.HOST(), get.TARGET(), get.manDIR(), \
+                      get.BUILD(), get.manDIR(), \
                       get.infoDIR(), get.dataDIR(), \
                       get.confDIR(), get.localstateDIR(), get.libexecDIR(), parameters)
 
         if crosscompiling:
-            cmd = "sb2 %s" % cmd
+            cmd = "sb2 %s \
+                    --host=%s \
+                    " % (cmd, get.HOST())
 
         if system(cmd):
             raise ConfigureError(_('Configure failed.'))
