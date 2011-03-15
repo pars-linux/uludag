@@ -77,6 +77,15 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         salted = Directory.make_password(password)
         return salted
 
+    def get_confirm_password(self):
+        """
+            Returns confirm password.
+        """
+        from lider.helpers.directory import Directory
+        confirm_password = str(self.editConfirmPassword.text())
+        salted = Directory.make_password(confirm_password)
+        return salted
+
     def get_home(self):
         """
             Returns home directory.
@@ -107,6 +116,18 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         """
         self.editPassword.setText(password)
 
+    def set_confirm_password(self, confirm_password):
+        """
+            Sets confirm password.
+        """
+        self.editConfirmPassword.setText(confirm_password)
+
+    def set_home(self, home):
+        """
+            Sets home directory.
+        """
+        self.editHomeDir.setText(home)
+
     def set_uid(self, uid):
         """
             Sets user id.
@@ -117,7 +138,7 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         """
             Sets group id.
         """
-        self.spinGID.setValue(uid)
+        self.spinGID.setValue(gid)
 
     def accept(self):
         """
