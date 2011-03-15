@@ -70,6 +70,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
         self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
         self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
+        self.menu.newAction("Modify", wrappers.Icon("settings32"), self.__slot_modify)
 
         # Backends
         self.talk = talk.Talk()
@@ -568,6 +569,75 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             item = self.nodes_dn[dn]
             self.treeComputers.scrollToItem(item)
             self.treeComputers.setCurrentItem(item)
+
+    def __slot_modify(self):
+        """
+            Modify selected item.
+        """
+        items = self.directory.search()
+
+        for item in items:
+            if item[0] == self.item.dn:
+                break
+
+        if self.item.dn.startswith("uid="):
+            dialog = DialogUser()
+            dialog.set_name(item[1]["uid"][0])
+            dialog.set_home(item[1]["homeDirectory"][0])
+            dialog.set_password("****")
+            dialog.set_confirm_password("****")
+            dialog.set_uid(int(item[1]["uidNumber"][0]))
+            dialog.set_gid(int(item[1]["gidNumber"][0]))
+            if dialog.exec_():
+                old = {}
+                new = {}
+                new_name = dialog.get_name()
+                if new_name != item[1]["uid"][0]:
+                    old["uid"] = item[1]["uid"][0]
+                    new["uid"] = new_name
+                new_home = dialog.get_home()
+                if new_home != item[1]["homeDirectory"][0]:
+                    old["homeDirectory"] = item[1]["homeDirectory"][0]
+                    new["homeDirectory"] = new_home
+                if dialog.editPassword.isModified():
+                    new_pass = dialog.get_password()
+                    if new_pass != item[1]["userPassword"][0]:
+                        old["userPassword"] = item[1]["userPassword"][0]
+                        new["userPassword"] = new_pass
+                new_uid = dialog.get_uid()
+                if new_uid != item[1]["uidNumber"][0]:
+                    old["uidNumber"] = item[1]["uidNumber"][0]
+                    new["uidNumber"] = new_uid
+                new_gid = dialog.get_gid()
+                if new_gid != item[1]["gidNumber"][0]:
+                    old["gidNumber"] = item[1]["gidNumber"][0]
+                    new["gidNumber"] = new_gid
+                print "old=", old
+                print "new=", new
+                self.directory.modify(self.item.dn, old, new)
+            return
+        elif self.item.dn.startswith("dc="):
+            dialog = DialogFolder()
+            dialog.set_name(item[1]["dc"][0])
+            dialog.set_label(item[1]["o"][0])
+            if dialog.exec_():
+                old = {}
+                new = {}
+                new_name = dialog.get_name()
+                if new_name != item[1]["dc"][0]:
+                    old["dc"] = item[1]["dc"][0]
+                    new["dc"] = new_name
+                new_label = dialog.get_label()
+                if new_label != item[1]["o"][0]:
+                    old["o"] = item[1]["o"][0]
+                    new["o"] = new_label
+                self.directory.modify(self.item.dn, old, new)
+        elif self.item.dn.startswith("cn="):
+            # TODO : computer modification
+            pass
+        else:
+            QtGui.QMessageBox.warning(self, "Error", "Unable to understand dn!")
+        return
 
     def __slot_new_folder(self):
         """
