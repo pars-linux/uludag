@@ -44,22 +44,21 @@ class PEditLabelLabel(QtGui.QLabel):
         self.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Minimum))
 
         self.installEventFilter(self)
-        self.updateSize()
+        #self.updateSize()
 
-    def updateSize(self):
+    """def updateSize(self):
         width = self.fontMetrics().width(self.text())+2
         height = self.fontMetrics().height()+4
 
-        self.setMaximumSize(QtCore.QSize(width, height))
-        self.setMinimumSize(QtCore.QSize(width, height))
+        #self.setMaximumSize(QtCore.QSize(width, height))
+        #self.setMinimumSize(QtCore.QSize(width, height))"""
 
     def setText(self, text):
         QtGui.QLabel.setText(self, text)
         width = self.fontMetrics().width(self.text())+2
         height = self.fontMetrics().height()+4
-
         self.setMaximumSize(QtCore.QSize(width, height))
-        self.setMinimumSize(QtCore.QSize(width, height))
+        #self.setMinimumSize(QtCore.QSize(width, height))
 
     def eventFilter(self, target, event):
         if event.type() == QEvent.MouseButtonDblClick:
@@ -176,7 +175,8 @@ class PEditLabel(QtGui.QWidget):
         if self.edit.isVisible():
             self.endEditing()
         self.label.setText(self.cropLabelText())
-        return QWidget.resizeEvent(self, event)
+        ret = QWidget.resizeEvent(self, event)
+        return ret
 
     def cropLabelText(self):
         if not self.label.text():
@@ -185,13 +185,16 @@ class PEditLabel(QtGui.QWidget):
                 raise
             else:
                 self.label.setText(self.storedText)
-        oldLength = len(self.label.text())
+        #oldLength = len(self.label.text())
         textWidth = self.label.fontMetrics().width(self.storedText)
-        #print self.width()
-        #print textWidth+32
         if textWidth + 32 >= self.width():
             r1 = float(self.width())/(textWidth+32)
             r2 = int(float(len(self.storedText))*r1)-3
+            print r2
+            """print self.width()
+            print textWidth+32
+            print r1
+            print ''"""
             return self.storedText[:r2]+"..."
         else:
             return self.storedText
