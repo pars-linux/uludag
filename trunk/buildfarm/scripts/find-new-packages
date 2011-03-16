@@ -17,8 +17,8 @@ class UpdateInfo:
         if self.comment != package.history[0].comment:
             self.comment += "..."
 
-        #FIXME: Change hardcoded parts
-        self.url = "http://packages.pardus.org.tr/info/2011/testing/source/%s.html" % self.name
+        self.url = "http://packages.pardus.org.tr/info/%s/testing/source/%s.html" % (utils.get_distribution_release(),
+                                                                                     self.name)
 
 if __name__ == "__main__":
     stable_packages = {}
