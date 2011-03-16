@@ -64,6 +64,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.treeComputers.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
         self.treeSummary.hide()
 
+        # Hide search
+        self.pushSearch.hide()
+
         # Popup for connection management
         menu = wrappers.Menu(self)
         menu.newAction("Connect", wrappers.Icon("online48"), self.__slot_connect)
@@ -828,7 +831,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             pass
 
         if widget.get_type() == plugins.TYPE_SINGLE:
-            if item and (item.name in self.talk.online) or item.folder:
+            if item and ((item.name in self.talk.online) or item.folder):
                 self.pushApply.show()
             else:
                 self.pushApply.hide()
@@ -869,6 +872,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks search button.
         """
+        self.__slot_main()
         dialog = DialogSearch()
         if dialog.exec_():
             print "Searching:", dialog.get_query()
