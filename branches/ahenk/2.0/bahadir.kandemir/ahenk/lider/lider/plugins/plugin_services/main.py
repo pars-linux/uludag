@@ -44,14 +44,22 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         # Package index
         self.package_index = {}
 
-    def showEvent(self, event):
+    def set_item(self, item):
         """
-            Things to do before widget is shown.
+            Sets directory item that is being worked on.
+            Not required for global widgets.
         """
+        self.item = item
         if not self.item:
             self.groupBox.setEnabled(False)
         else:
             self.groupBox.setEnabled(True)
+
+    def showEvent(self, event):
+        """
+            Things to do before widget is shown.
+        """
+        if self.item:
             jid = "%s@%s" % (self.item.name, self.talk.domain)
             self.talk.send_command(jid, "service.info")
 
