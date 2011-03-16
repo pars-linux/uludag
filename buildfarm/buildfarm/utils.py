@@ -71,6 +71,9 @@ def create_directories():
             except OSError:
                 print "Directory %s cannot be created." % directory
 
+def get_distribution_release():
+    return conf.release
+
 def get_local_repository_url():
     return os.path.join(conf.repositorydir,
                         conf.release,
