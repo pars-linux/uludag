@@ -518,8 +518,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             password = dialog.get_password()
+            description = dialog.get_description()
             try:
-                self.directory.add_computer(parent_path, name, password)
+                self.directory.add_computer(parent_path, name, password, description)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect

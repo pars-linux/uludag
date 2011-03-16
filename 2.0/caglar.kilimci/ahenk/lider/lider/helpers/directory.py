@@ -196,7 +196,7 @@ class Directory:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_computer(self, parent_dn, name, password):
+    def add_computer(self, parent_dn, name, password, description):
         """
             Adds a new computer under specified DN.
 
@@ -204,20 +204,23 @@ class Directory:
                 parent_dn: Distinguished name of parent
                 name: Node name
                 password: Node password
+                description: LDAP attribute name
         """
         dn = "cn=%s,%s" % (name, parent_dn)
         properties = {
             "cn": [name],
             "objectClass": ["top", "device", "pardusComputer"],
-            "userPassword": [password]
+            "userPassword": [password],
+            "description": [description]
         }
         try:
             self.add_new(dn, properties)
-        except ldap.LDAPError:
+        except ldap.LDAPError, e:
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
                 raise DirectoryConnectionError
+            print e
             raise DirectoryError
 
     def add_user(self, parent_dn, name, password, uid, gid, home=None):
