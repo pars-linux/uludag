@@ -655,8 +655,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             label = dialog.get_label()
+            description = dialog.get_description()
             try:
-                self.directory.add_folder(parent_path, name, label)
+                self.directory.add_folder(parent_path, name, label, description)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
