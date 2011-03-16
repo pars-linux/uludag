@@ -48,9 +48,8 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
         """
             Things to do before widget is shown.
         """
-        if len(self.items) == 1 and not item.folder:
-            jid = "%s@%s" % (self.item.name, self.talk.domain)
-            self.talk.send_command(jid, "service.info")
+        jid = "%s@%s" % (self.item.name, self.talk.domain)
+        self.talk.send_command(jid, "service.info")
 
     def get_type(self):
         """
