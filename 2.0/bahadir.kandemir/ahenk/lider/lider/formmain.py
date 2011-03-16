@@ -32,7 +32,7 @@ from lider.helpers import talk
 from lider.helpers import wrappers
 
 # Custom widgets
-from widgets.list_item import list_item
+from lider.widgets.list_item import list_item
 
 
 class FormMain(QtGui.QWidget, Ui_FormMain):
