@@ -5,7 +5,6 @@
     Ahenk software update tool
 """
 
-import ConfigParser
 import optparse
 import os
 import sys
