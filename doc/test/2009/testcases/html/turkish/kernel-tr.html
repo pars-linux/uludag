@@ -53,7 +53,7 @@ TD P{margin:0px;}
 Aşağıda bulunan paketler kurulum testine tabidir:
 <PRE CLASS="verbatim"> module-vloopback
  module-vloopback-userspace
-</PRE></LI><LI CLASS="li-enumerate">module-ipheth-driver ve module-ipheth-driver-userspace paketleri kurulumu sonrası:<P>Eğer iphone 3G veya 3Gs cihazınız var ise bu testi gerçekleştirebilirsiniz.</P><P>iphone’u usb kablosu ile bağladıktan sonra ağ yöneticisinden iphone’u bir ağ olarak seçin ve internete bağlanmayı deneyin, sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">perf paketi kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">alsa-headers paketi kurulumu sonrası.<P>hardware-tr.pdf alsa-plugins testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">module-ipheth-driver ve module-ipheth-driver-userspace paketleri kurulumu sonrası:<P>Eğer iphone 3G veya 3Gs cihazınız var ise bu testi gerçekleştirebilirsiniz.</P><P>iphone’u usb kablosu ile bağladıktan sonra ağ yöneticisinden iphone’u bir ağ olarak seçin ve internete bağlanmayı deneyin, sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">perf paketi kurulumu sonrası:
 <PRE CLASS="verbatim">uname -r  
 </PRE><P>Yukarıdaki komut sonucunda dönen kernel versiyon numarasını aşağıda bulunan komutun versiyon değeri yerine ekleyiniz.</P><P>Versiyon değeri örneğin 2.6.31.11-130-pae için: 2.6.31.11</P><P>Aşağıda bulunan komutun kernel fonksiyon bilgilerini listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim">sudo  perf.kernel-versiyon top 

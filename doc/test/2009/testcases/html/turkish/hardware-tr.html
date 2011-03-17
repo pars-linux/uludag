@@ -78,7 +78,8 @@ foomatic-db
 foomatic-db-engine
 foomatic-db-hpijs
 foomatic-filters
-</PRE></LI><LI CLASS="li-enumerate">epson-alc1100 paketi kurulumu sonrası:<P>Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">cups paketi kurulumu sonrası:<P>Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.</P><P>2008 Yazıcı ayarları için:</P><P>Tasma → Çevre Birimleri → Yazıcılar → Ekle → Yazıcı/Sınıf Ekle yolunu izleyebilirsiniz.</P></LI><LI CLASS="li-enumerate">hplip-gui, hplip-doc ve hplip kurulumu sonrası:<P>kmenu’den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.</P></LI></OL><!--TOC section Smart Card alt Bileşeni-->
+hplip-doc
+</PRE></LI><LI CLASS="li-enumerate">epson-alc1100 paketi kurulumu sonrası:<P>Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">cups paketi kurulumu sonrası:<P>Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.</P><P>2008 Yazıcı ayarları için:</P><P>Tasma → Çevre Birimleri → Yazıcılar → Ekle → Yazıcı/Sınıf Ekle yolunu izleyebilirsiniz.</P></LI><LI CLASS="li-enumerate">hplip-gui ve hplip kurulumu sonrası:<P>kmenu’den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.</P></LI></OL><!--TOC section Smart Card alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Smart Card alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">ccid 
@@ -87,8 +88,9 @@ openct
 opensc
 pcsc-lite
 </PRE></LI></OL><!--TOC section Info alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Info alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-smolt paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırın ve datalarınızı gönderin.</P><P>Profilinizi paylaşmak için bölümünden, donanımınıza ait linki kopyalayın ve firefox ile sayfanızı görüntüleyin, donanımınızın sunucuya gitmiş olduğunu gözlemleyin.</P><PRE CLASS="verbatim"> smoltSendProfile
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Info alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">dmidecode paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> sudo dmidecode
+</PRE></LI><LI CLASS="li-enumerate">smolt paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırın ve datalarınızı gönderin.</P><P>Profilinizi paylaşmak için bölümünden, donanımınıza ait linki kopyalayın ve firefox ile sayfanızı görüntüleyin, donanımınızın sunucuya gitmiş olduğunu gözlemleyin.</P><PRE CLASS="verbatim"> smoltSendProfile
 </PRE><PRE CLASS="verbatim"> kaptan
 </PRE></LI><LI CLASS="li-enumerate">hal-info paketi kurulumu sonrası:
 Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.</LI><LI CLASS="li-enumerate">x86info paketi kurulumu sonrası:<P>Aşağıda bulunan komutun x86 mimarisi ile oluşturulmuş cpu’ları listelediğini gözlemleyin.
@@ -176,6 +178,7 @@ Aşağıda bulunan paketler sadecekurulum testine tabidir.
 Aşağıda bulunan paketler sadece kurulum testine tabidir. 
 <PRE CLASS="verbatim">  obexd
   bluez-compat
+  cwiid-devel
 </PRE></LI><LI CLASS="li-enumerate">obex-data-server paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takın ve dosya paylaşımı yapmaya çalışın. Sorunsuz bir şekilde yapılabildiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">bluez paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takınız ve aşağıda bulunan komutun bu aygıtı listelediğini gözlemleyiniz.
 </P><PRE CLASS="verbatim"> list-devices
@@ -197,18 +200,20 @@ Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
   lvm2-static
   udftools
   extundelete
-</PRE></LI><LI CLASS="li-enumerate">testdisk paketi kurulumu sonrası:<P>"testdisk" komutunu çalıştırın ve Create → Select a Media → None → Analyse → QuickSearch yolunu izleyin ve sorunsuz bir şekilde seçilen disk içerisinde bulunan bölümlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">ddrescue paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test2 dosyasına test_ddrescue içeriğini kopyaladığını gözlemleyin.
+  ntfsprogs-devel
+  hdparm
+  sg3_utils-devel
+</PRE></LI><LI CLASS="li-enumerate">ntfprogs paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">testdisk paketi kurulumu sonrası:<P>"testdisk" komutunu çalıştırın ve Create → Select a Media → None → Analyse → QuickSearch yolunu izleyin ve sorunsuz bir şekilde seçilen disk içerisinde bulunan bölümlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">ddrescue paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test2 dosyasına test_ddrescue içeriğini kopyaladığını gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/disk/test_ddrescue
   ddrescue test_ddrescue test2
- </PRE></LI><LI CLASS="li-enumerate">dosfstools paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu dos veya fat olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">ntfs_3g paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">gparted paketi kurulumu sonrası:<P>Bir usbdis takın ve gparted uygulamasını Kmenu’den çalıştırın. </P><P>Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">fuseiso paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
+ </PRE></LI><LI CLASS="li-enumerate">dosfstools paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu dos veya fat olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">ntfs_3g paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">gparted paketi kurulumu sonrası:<P>Bir usbdis takın ve gparted uygulamasını Kmenu’den çalıştırın. </P><P>Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">fuseiso paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
  fuseiso -p boot.iso test
  su -
  cd test
 </PRE></LI><LI CLASS="li-enumerate">fuse paketi kurulumu sonrası:
 hardware-tr.pdf fuse-python testini gerçekleştirin.</LI><LI CLASS="li-enumerate">fuse-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import fuse
 </PRE></LI><LI CLASS="li-enumerate">sg3_utils paketi kurulumu sonrası:<P>Eğer bir SCSI disk kullanıyorsanız, aşağıda bulunan komutları ilgili SCSI disk bölümünüzü kullanarak çalıştırın.
 </P><PRE CLASS="verbatim"> sg_modes &lt;SCSIdisk&gt;
@@ -228,7 +233,7 @@ hardware-tr.pdf fuse-python testini gerçekleştirin.</LI><LI CLASS="li-enumerat
  reiserfsck /dev/&lt;aygıt uzantısı&gt;
 </PRE></LI></OL><!--TOC section Sound alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc17">17</A>  Sound alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-alsa-driver, alsa-headers, alsa-lib, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
+alsa-driver, alsa-headers, alsa-lib, alsa-lib-devel, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.

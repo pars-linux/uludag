@@ -20,7 +20,7 @@
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  autogen
- ant-doc
+ ant-docs
 \end{verbatim}
 
 \item ant paketi kurulumu sonrası:
@@ -152,6 +152,7 @@ git-gui
 git-svn
 gitweb
 gitosis
+bzr-docs
 \end{verbatim}
 
 \item cvs paketi kurulumu sonrası:
@@ -274,6 +275,9 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
  \begin{verbatim}
   kdevelop-devel
  \end{verbatim}
+\item pisiyap ve kde-servicemenu-pisiyap paketleri kurulumu sonrası:
+
+Kmenuden uygulamayı açın sorunsuz bir şekilde açılabildiğini gözlemleyin.
 
 \item eclipse paketi kurulumu sonrası:
 
@@ -501,6 +505,18 @@ Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.ph
  perl-Config-Tiny
 \end{verbatim}
 
+\item perl-SOAP-Lite paketi kurulumu sonrası:
+
+programming-tr.pdf perlmod testini gerçekleştiriniz.
+
+\item perlmod paketi kurulumu sonası:
+
+Aşağıda bulunan komutun modülü yüklediğini gözlemleyin.
+
+\begin{verbatim}
+ perlmod -i perlmod -i Date::Calc SOAP::Parser Authen::NTLM::HTTP
+\end{verbatim}
+
 \item perl-SDL ve perl-YAML paketleri kurulumu sonrası:
 
 game-tr.pdf frozen-bubble testini gerçekleştiriniz.
@@ -723,6 +739,26 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  python-rapyd 
  scientificpython-devel
  scientificpython-docs
+ python-orbit-devel
+ python-Jinja2-docs
+ python-sphinx-docs
+\end{verbatim}
+\item python-appinfo paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ ipython
+ import appinfo
+\end{verbatim}
+
+\item pardus-desktop-services paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ ipython
+ import pds
 \end{verbatim}
 
 \item pyro paketi kurulumu sonrası:
@@ -1445,7 +1481,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import babel
 \end{verbatim}
 
-\item pyfits paketi kurulumu sonrası:
+\item pyfits ve python-pyfits  paketleri kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
  ipython
@@ -1545,7 +1581,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import django_sorting
 \end{verbatim}
 
-\item pycha paketi kurulumu sonrası:
+\item pycha, python-pycha ve chavier paketleri kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
  ipython
@@ -1617,7 +1653,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import tornado
 \end{verbatim}
 
-\item pyorbit paketi kurulumu sonrası:
+\item pyorbit ve python-orbit paketleri kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
  ipython
@@ -1729,7 +1765,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import OpenGL
 \end{verbatim}
 
-\item imdbpy  paketi kurulumu sonrası:
+\item imdbpy ve python-imdbpy  paketleri kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -2080,6 +2116,8 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
  \item Aşağıdaki paketlerin kurulumu sonrası:
 \begin{verbatim}
+ junit
+ tomcat-servlet-api
  sun-jre
  sun-jdk
  sun-jdk-demo
@@ -2208,7 +2246,7 @@ programming-tr.pdf mono testini gerçekleştiriniz.
 \begin{itemize}
 \item ocaml paketi kurulumu sonrası:
 
-Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırğını gözlemleyin.
+Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırdığını gözlemleyin.
 \begin{verbatim}
 wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/ocaml-test.ml 
 ocaml ocaml-test.ml

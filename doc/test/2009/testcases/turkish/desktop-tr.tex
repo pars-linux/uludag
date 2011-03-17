@@ -391,8 +391,25 @@ Drawing Area, Clipboard, Color Selector bölümlerine çift tıklayarak çalış
  \item progrmming-tr.pdf pygtk testini gerçekleştirin.
  \item multimedia-tr.pdf inkscape testini gerçekleştirin.
 \end{itemize}
-
 \end{enumerate}
+\subsection*{Motif}
+\begin{itemize}
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ openmotif-devel
+\end{verbatim}
+
+\item openmotif maketi kurulumu sonrası:
+
+game-tr.pdf warzone2100 testini gerçekleştiriniz.
+
+\end{itemize}
+
+
+
+
 \subsection*{Others}
 \begin{enumerate}
 \item wxGTK ve wxGTK-devel paketleri kurulumu sonrası:
@@ -409,8 +426,6 @@ science-tr.pdf wxMaxima testini gerçekleştirin.
   \item hardware-tr.pdf partimage testini gerçekleştirin.
 
 \end{itemize}
- 
-
 
 \end{enumerate}
 
@@ -515,6 +530,11 @@ kde-l10n-zh_TW
 
 \subsection*{Admin alt bileşeni}
 \begin{enumerate} 
+
+\item panda-desktop paketi kurulumu sonrası:
+
+Kmenu'den Ekran Kartı Sürücüsü uygulamasını açın, ekran kartı sürücünüzün sürücü tercihlerini değiştirin ve uygulamanın sorunsuz olarak çalıştığını gözlemleyin.
+
 \item disk-manager paketi kurulumu sonrası:
 
 disk-manager.pdf testini gerçekleştiriniz.
@@ -776,14 +796,14 @@ Aynı şekilde LCD Weather Station, Twitter Microblogging, RSSNOW, Blue Marble p
 
 Aşağıda bulunan dosyaların gwenview  ile çalıştıklarını gözlemleyin.  
 \begin{verbatim} 
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.mng
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.xcf
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
- # gwenview
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.jpg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.mng
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.tif
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.xcf
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
+  gwenview
 \end{verbatim}
 Aşapıda bulunan dosyaların okular ile düzgün çalıştığını gözlemleyin:
 \begin{verbatim} 
@@ -806,6 +826,15 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 \subsection*{Addon alt bileşeni}
 
 \begin{enumerate}
+
+\item polkit-kde\_ paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın "PolicyKitKDE is already running!" uyarısının verildiğini gözlemleyin.
+\begin{verbatim}
+ /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1
+\end{verbatim}
+
+Paket yöneticisi için daha önce kullanmış olduğunuz kullanıcı parola ayarlarının değişmediğini gözlemleyin.
 
 \item  kdm-pardus-theme, kdm paketleri kurulumu sonrası:
 

@@ -98,7 +98,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  sudo pisi  bi pspec.xml -vd
 
 </PRE></LI><LI CLASS="li-enumerate">icecream ve icecream scheduler paketleri kurulumu sonrası:<P>Servis yöneticisinden icecream servisini başlatın.</P><P>Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olun.
-</P><PRE CLASS="verbatim">   # service icercream status
+</P><PRE CLASS="verbatim">   service icecream status
  </PRE></LI></OL><!--TOC section Base alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Base alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler kurulum testine tabidir.
@@ -113,6 +113,10 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  zlib
  dbus
  pam
+ dhcpcd
+</PRE></LI><LI CLASS="li-enumerate">busybox paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test dosyasını sildiğini gözlemleyin.
+</P><PRE CLASS="verbatim"> touch test
+ busybox rm test
 </PRE></LI><LI CLASS="li-enumerate">bc paketi kurulumu sonrası:<P>Aşağıda bulunan hatasız bir şekilde sonucu döndürdüğünü gözlemleyin.
 </P><PRE CLASS="verbatim"> echo "56.8 + 77.7" | bc
 </PRE></LI><LI CLASS="li-enumerate">shadow paketi kurulumu sonrası:<P>Aşağıda bulunan komutun, root yetkisine geçirdiğini gözlemleyin.
@@ -266,12 +270,12 @@ package-manager-tr.pdf test aşamalarını gerçekleştiriniz.
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bilgisayarınızı kapatın düzgün bir şekilde kapanabildiğini gözlemleyin.
 </LI><LI CLASS="li-itemize">Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açılabildiğini gözlemleyin.
-</LI><LI CLASS="li-itemize">2009 için:
+</LI><LI CLASS="li-itemize">2009 ve üzeri için:
 <PRE CLASS="verbatim">  pisi blame baselayout
   </PRE>2008 için: http://svn.pardus.org.tr/pardus/2008/stable/system/base/baselayout/pspec.xml linkinde bulunan en son eklenmiş history tag’i yorumuna (comment) bakınız.<P>Bu her iki durumda da yorumlarda belirtilmiş olan kullanıcının (user) /etc/passwd dosyasına eklenmiş olduğunu gözlemleyin.</P></LI></UL>
 </LI><LI CLASS="li-enumerate">libxml2 paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan komutun bir katalog oluşturduğunu gözlemleyin.
-<PRE CLASS="verbatim">   #  xmlcatalog --create
+<PRE CLASS="verbatim">   xmlcatalog --create
   </PRE></LI><LI CLASS="li-itemize">multimedia-tr.pdf avidemux-qt, avidemux ve inkscape testlerini gerçekleştirin.
 </LI></UL></LI><LI CLASS="li-enumerate">curl paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
 http://packages.pardus.org.tr/search/pardus-2009/libkate/ içeriğinin sorunsuz bir şekilde listelendiğini gözlemleyin.
@@ -282,14 +286,14 @@ http://packages.pardus.org.tr/search/pardus-2009/libkate/ içeriğinin sorunsuz 
 system-tr.pdf openssh testini gerçekleştirin.
 </LI><LI CLASS="li-itemize">system-tr.pdf gettext testini gerçekleştirin.
 </LI></UL></LI><LI CLASS="li-enumerate">gettext paketi kurulumu sonrası:<P>Aşağıda bulunan komutun po dizini altında "network-manager.pot" dosyasını oluşturduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # svn co http://svn.pardus.org.tr/uludag/trunk/kde/network-manager/
- # cd network-manager/manager
- # rm -rf po
- # mkdir po
- # xgettext setup.py 
- # ./setup.py update_messages
+</P><PRE CLASS="verbatim">  svn co http://svn.pardus.org.tr/uludag/trunk/kde/network-manager/
+  cd network-manager/manager
+  rm -rf po
+  mkdir po
+  xgettext setup.py 
+  ./setup.py update_messages
 </PRE></LI><LI CLASS="li-enumerate">openssh paketi kurulumu sonrası:<P>Servis yöneticisinden openssh’ı çalıştırın ve aşağıda bulunan komutun çıktısında openssh’ın çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"> # service list 
+</P><PRE CLASS="verbatim"> service list 
 </PRE></LI><LI CLASS="li-enumerate">mkinitramfs paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın. Düzgün bir şekilde açıldığını gözlemleyin.</P><P>/boot/ dizini altında kullanmakta olduğunuz kernel’in initramfs dosyasının var olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">pardus-python paketi kurulum testine tabidir.</LI></OL><!--TOC section Service alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Service alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 omniORB paketi kurulumu sonrası:<P>Servis yöneticisinden omniORB başlatın, aşağıdaki komut ile başlatıldığına emin olun:

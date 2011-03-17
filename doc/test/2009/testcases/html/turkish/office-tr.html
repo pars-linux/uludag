@@ -91,22 +91,26 @@ docbook-xml4_4
 docbook-xml4_5
 docbook-xsl
 opensp
+</PRE></LI><LI CLASS="li-enumerate">publican paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir html dosyası oluşturduğunu gözlemleyin
+</P><PRE CLASS="verbatim"> svn co http://svn.pardus.org.tr/uludag/trunk/distribution/2011/release-notes/
+ cd release-notes
+ publican build --formats=html --lang=tr-TR
 </PRE></LI><LI CLASS="li-enumerate">asciidoc paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/testasciidoc.txt
-# asciidoc testasciidoc.txt
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/testasciidoc.txt
+ asciidoc testasciidoc.txt
 </PRE><P>Sorunsuz bir şekilde testasciidoc.html dosyasının oluştuğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">docbook-utils paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
-# pisi info -F docbook-utils
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
+ pisi info -F docbook-utils
 </PRE><P>Pisi çıktısı docbook-utils paketinin dosyalarının sistemde nereye yerleştiği ile ilgili bilgi içermektedir. Bu çıktıda /usr/bin altında bulunan tüm dosyalar ile test.sgml dosyasını çalıştırın.</P><P>örnek olarak:
-</P><PRE CLASS="verbatim">#docbook2dvi test.sgml
+</P><PRE CLASS="verbatim">docbook2dvi test.sgml
 </PRE><P>Tüm çalıştırılabilir dosyaların sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">openjade paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
-# openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
+ openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
 </PRE><P>Yukarıdaki komutları çalıştırın, openjade’ın sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">sgml-common paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # sudo install-catalog --add /etc/sgml/sgml-ent.cat /usr/share/sgml/sgml-iso-entities-8879.1986/catalog
+<PRE CLASS="verbatim"> sudo install-catalog --add /etc/sgml/sgml-ent.cat /usr/share/sgml/sgml-iso-entities-8879.1986/catalog
 </PRE><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">xmlto paketi kurulumu sonrası:<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.xml
-# xmlto -o html_dir html test.xml
+</P></LI><LI CLASS="li-enumerate">xmlto paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.xml
+ xmlto -o html_dir html test.xml
 </PRE><P>Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P></LI></OL><!--TOC section Koffice alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Koffice alt bileşeni</H2><!--SEC END --><!--TOC subsection base alt bileşeni-->
@@ -152,7 +156,7 @@ koffice-l10n-zh_TW
  aqbanking
  kmymoney
  kmymoney-docs
-</PRE></LI><LI CLASS="li-enumerate">txt2man paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir man dosyası ürettiğini gözlemleyin:</P><PRE CLASS="verbatim"> txt2man -h 2&gt;&amp;1 | txt2man -T
+</PRE></LI><LI CLASS="li-enumerate">kchmviewer paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">txt2man paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir man dosyası ürettiğini gözlemleyin:</P><PRE CLASS="verbatim"> txt2man -h 2&gt;&amp;1 | txt2man -T
 </PRE></LI><LI CLASS="li-enumerate">skrooge paketi kurulumu sonrası:<P>Kmenu’den uygulamayı çalıştırın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">fet paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">scribus paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
  rst2pdf test.rst
  okular test.pdf
@@ -308,7 +312,8 @@ openoffice-langpack-tr
 </P></LI></OL><!--TOC section  Postscript alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>   Postscript alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
-<PRE CLASS="verbatim"> ghostscript-doc 
+<PRE CLASS="verbatim"> ghostscript-devel
+ ghostscript-docs
 </PRE></LI><LI CLASS="li-enumerate">poppler-glib paketi kurulumu sonrası:<P>multimedia-tr.pdf inkscape testini gerçekleştiriniz.
 </P></LI><LI CLASS="li-enumerate">poppler-qt paketi kurulumu sonrası:<P>office-tr.pdf inkscape tellico testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">a2ps paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
@@ -320,10 +325,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
  gs test_ghostscript.ps
  eps2eps test_ghostscript.ps test.eps
- font2c test_ghostscript.ps test.c
  pdf2dsc test_ghostscript.pdf test.dsc
  pdfopt test_ghostscript.pdf test.pdf
- printafm test_ghostscript.ps
  ps2ascii test_ghostscript.ps test
  ps2pdf test_ghostscript.ps test.pdf
  ps2ps test_ghostscript.ps test.ps

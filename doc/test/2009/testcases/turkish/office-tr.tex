@@ -89,50 +89,59 @@ docbook-xml4_5
 docbook-xsl
 opensp
 \end{verbatim}
+\item publican paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun bir html dosyası oluşturduğunu gözlemleyin
+\begin{verbatim}
+ svn co http://svn.pardus.org.tr/uludag/trunk/distribution/2011/release-notes/
+ cd release-notes
+ publican build --formats=html --lang=tr-TR
+\end{verbatim}
+
  \item asciidoc paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/testasciidoc.txt
-# asciidoc testasciidoc.txt
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/testasciidoc.txt
+ asciidoc testasciidoc.txt
 \end{verbatim}
 
 Sorunsuz bir şekilde testasciidoc.html dosyasının oluştuğunu gözlemleyin.
 
 \item docbook-utils paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
-# pisi info -F docbook-utils
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
+ pisi info -F docbook-utils
 \end{verbatim}
 
 Pisi çıktısı docbook-utils paketinin dosyalarının sistemde nereye yerleştiği ile ilgili bilgi içermektedir. Bu çıktıda /usr/bin altında bulunan tüm dosyalar ile test.sgml dosyasını çalıştırın.
 
 örnek olarak:
 \begin{verbatim}
-#docbook2dvi test.sgml
+docbook2dvi test.sgml
 \end{verbatim}
 
 Tüm çalıştırılabilir dosyaların sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item openjade paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
-# openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.sgml
+ openjade -t sgml /usr/share/sgml/docbook/dsssl-stylesheets-1.79/html/docbook.dsl test.sgml
 \end{verbatim}
 
 Yukarıdaki komutları çalıştırın, openjade'ın sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item sgml-common paketi kurulumu sonrası:
 \begin{verbatim}
- # sudo install-catalog --add /etc/sgml/sgml-ent.cat /usr/share/sgml/sgml-iso-entities-8879.1986/catalog
+ sudo install-catalog --add /etc/sgml/sgml-ent.cat /usr/share/sgml/sgml-iso-entities-8879.1986/catalog
 \end{verbatim}
 
 Sorunsuz bir şekilde çalıştığını gözlemleyin.
 \item xmlto paketi kurulumu sonrası:
 
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.xml
-# xmlto -o html_dir html test.xml
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/docbook/test.xml
+ xmlto -o html_dir html test.xml
 \end{verbatim}
 
 Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -250,6 +259,10 @@ koffice-l10n-zh_TW
  kmymoney
  kmymoney-docs
 \end{verbatim}
+
+\item kchmviewer paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve sorunsuz açıldığını gözlemleyin.
 
 \item txt2man paketi kurulumu sonrası:
 
@@ -647,7 +660,8 @@ Yukarıda bulunan dosyayı açın ve Araçlar $\rightarrow$ İmla denetimi ve Di
 \begin{enumerate}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
- ghostscript-doc 
+ ghostscript-devel
+ ghostscript-docs
 \end{verbatim}
 
 \item poppler-glib paketi kurulumu sonrası:
@@ -675,10 +689,8 @@ Eğer bir yazıcınınz var ise 3. komut ile sorunsuz bir şekilde çıktı alı
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
  gs test_ghostscript.ps
  eps2eps test_ghostscript.ps test.eps
- font2c test_ghostscript.ps test.c
  pdf2dsc test_ghostscript.pdf test.dsc
  pdfopt test_ghostscript.pdf test.pdf
- printafm test_ghostscript.ps
  ps2ascii test_ghostscript.ps test
  ps2pdf test_ghostscript.ps test.pdf
  ps2ps test_ghostscript.ps test.ps

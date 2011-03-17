@@ -120,7 +120,8 @@ wget paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştı
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> telepathy-mission-control
  amsn-plugins
  konversation-docs 
-</PRE></LI><LI CLASS="li-enumerate">weechat paketi kurulumu sonrası:<P>Konsole’a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzünğn açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kvirc paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlat butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
+ chokoq-devel
+</PRE></LI><LI CLASS="li-enumerate">kmess paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın, eğer msn mail adresiniz var ise bu adresiniz ile bağlanmayı deneyin. Bağlanabildğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">weechat paketi kurulumu sonrası:<P>Konsole’a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzünğn açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kvirc paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlat butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
 </P><PRE CLASS="verbatim"> su -
  vi /etc/xinetd.d/bitlbee
 </PRE><P>Konversation uygulamasını çalıştırın, Dosya → Çabuk bağlan yolunu izleyerek, Sunucu bilgisayar kısmına "localhost" yazın ve "Bağlan" butonuna basın. Uygulamanın alt bölümünde bulunan kannallarda "bitlbee" kanalının açılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">skype paketi kurulumu sonrası:<P>Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
@@ -241,6 +242,20 @@ libitalc
 </PRE></LI></OL><!--TOC section RSS alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc15">15</A>  RSS alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 canto paketi kurulumu sonrası<P>Aşağıda bulunan komutun ekli olan rss’leri listelediğni gözlemleyin:</P><PRE CLASS="verbatim">canto
+</PRE></LI></OL><!--TOC section VOIP alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc16">16</A>  VOIP alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan komutun ekli olan rss’leri listelediğni gözlemleyin:<PRE CLASS="verbatim">linphone-devel
+mediastreamer2
+mediastreamer2-devel
+mediastreamer2-docs
+</PRE></LI><LI CLASS="li-enumerate">linphone paketi krulumu sonrası:<P>Kmenuden uygulamasının sorunsuz çalıştığını gözlemleyin.</P></LI></OL><!--TOC section Misc alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc17">17</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">libssh
+libssh-devel
+libssh-docs
+ortp
+ortp-devel
+ortp-docs
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
