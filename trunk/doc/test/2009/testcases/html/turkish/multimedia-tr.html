@@ -80,6 +80,13 @@ espeak-devel
 flite-devel
 opentts-devel
 speech-dispatcher-devel
+dssi-devel
+libvorbis-devel
+pulseaudio-docs
+pulseaudio-libs-devel
+</PRE></LI><LI CLASS="li-enumerate">qsynth paketi kurulumu sonrası:<P>Kmenuden qsynth uygulamasını açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">libvorbis paketi kurulumu sonrası:<P>multimedia-tr.pdf vorbis-tools testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">timidity paketi kurulumu sonrası:<P>multimedia-tr.pdf solfege testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">dssi paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> dssi_list_plugins
+ dssi_osc_send -p osc.udp://localhost:19383/dssi/test.1 0 7
 </PRE></LI><LI CLASS="li-enumerate">clementine paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın. Daha sonra bu dosyada bulunan ses dosyalarını uyglama ile birlikte çalıştırın.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
 </PRE><P>Sorunsuz çalıştıklarını gözlemleyin.</P></LI><LI CLASS="li-enumerate">opentts paketi kurulumu sonrası:<P>programming-tr.pdf python-opentts testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">flite ve speech-dispatcher paketi kurulumu sonrası:<P>programming-tr.pdf python-speech-dispatcher testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">espeak paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> espeak "This is a test"
@@ -105,7 +112,7 @@ Aşağıda bulunan
 </P></LI><LI CLASS="li-enumerate">frescobaldi paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  </PRE>Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
-</LI><LI CLASS="li-enumerate">pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
+</LI><LI CLASS="li-enumerate">pulseaudio,pulseaudio-libs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 multimedia-tr.pdf pavucontrol testini gerçekleştirin.
 </LI><LI CLASS="li-itemize">Sisteminizi tekrar başlatın ve açılış sesinin düzgün bir şekilde çıktığını gözlemleyin. 
@@ -116,10 +123,10 @@ multimedia-tr.pdf pavucontrol testini gerçekleştirin.
 </P><PRE CLASS="verbatim">  wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
  </PRE><P>	</P></LI><LI CLASS="li-enumerate">listen paketi kurulumu sonrası: <P>Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizinine girin ve sorunsuz bir şekilde müziklerin listelendiğini ve müzikleri çalabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">vorbis-tools paketi kurulumu sonrası: 
 <PRE CLASS="verbatim">   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
-   oggdec game.ogg
-   mplayer game.wav
-   oggenc game.wav
-   mplqayer game.ogg
+   oggdec sample.ogg
+   mplayer sample.wav
+   oggenc sample.wav
+   mplqayer sample.ogg
  </PRE></LI><LI CLASS="li-enumerate">qpitch paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın düzgün bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qjackctl paketi kurulumu sonrası: <P>Kmenüden qjackct uygulamasını açın. (Bu sırada hiçbir ses aygıtının açık olmadığından emin olun)</P><P>Başla butonuna basın, status ve mesajlardan Jack ses sunucusunun başlatılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">lame ve lame-docs paketleri kurulumu sonrası: <P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
  lame sample.mp3 music.mpeg
@@ -132,7 +139,12 @@ multimedia-tr.pdf pavucontrol testini gerçekleştirin.
 Aşağıda bulunan paketler sadece kurulum testine tabidir. 
 <PRE CLASS="verbatim"> libvpx
  libvpx-devel
-</PRE></LI><LI CLASS="li-enumerate">minitube paketi kurulumu sonrası:<P>minitube uygulamasını açın ve YouTube’te bulunan bir arama yapın ve sorunsuz bir şekilde bulunduğunu ve izlenebildiğini gözlemleyin.
+ libv4l-devel
+ v4l-utils
+ vlc-devel
+ vlc-libs
+ vlc-lua
+</PRE></LI><LI CLASS="li-enumerate">libv4l paketi kurulumu sonrası: (Kamerası olanlar test edebilecektir.)<P>multimedia-tr.pdf vlc testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">minitube paketi kurulumu sonrası:<P>minitube uygulamasını açın ve YouTube’te bulunan bir arama yapın ve sorunsuz bir şekilde bulunduğunu ve izlenebildiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">recordmydesktop paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve bilgisayar üzerinde dosya açma kapama, uygulama açma kapama gibi işlemler yapın. 
 </P><PRE CLASS="verbatim"> recordmydesktop
 </PRE><P>Ctrl+C tuşlarına basın ve videonun encode edilmesini bekleyin. Daha sonra aşağıda bulunan komut ile video’nun sorunsuz bir şekilde oluştuğunu gözlemleyin.</P><PRE CLASS="verbatim"> mplayer out.ogv 
@@ -142,7 +154,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  mpgjoin chunk-01.mpg chunk-02.mpg 
  mplayer chunk.mpg
 </PRE></LI><LI CLASS="li-enumerate">gpac paketi kurulumu sonrası:<P>multimedia-tr.pdf x264 testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">dvdrip paketi kurulumu sonrası:<P>Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.</P><P>dvdrip uygulmasını kmenüden açın ve dvd’de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">mplayer, vlc, kaffeine, smplayer, gnome-mplayer paketleri kurulumu sonrası:
+</P></LI><LI CLASS="li-enumerate">mplayer, vlc, kaffeine, smplayer, gnome-mplayer, bangarang paketleri kurulumu sonrası:
 <PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  </PRE>Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya formatı ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-enumerate">vlc-firefox kurulumu sonrası:
@@ -272,6 +284,10 @@ Aşağıda bulunan paketler kurulum testine tabidir
  gimp-ufraw-plugin
  imagemagick-doc
  tuxpaint-doc 
+ libopenraw-devel
+ CImg
+ CImg-docs
+</PRE></LI><LI CLASS="li-enumerate">libopenraw paketi kurulumu sonrası:<P>Aşağıda bulunan dosyanın Gimp ile açılabildiğini gözlemleyin.</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/DSC_0048.NEF
 </PRE></LI><LI CLASS="li-enumerate">mypaint paketi kurulumu sonrası:<P>Uygulamayı açın ve fırçaların birkaçını kullanarak çizim yapmayı deneyin, yapabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">autopano-sift-C paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">enblend paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hugin paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test-hugin.zip
 </PRE></LI><LI CLASS="li-enumerate">tesseract paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde text dosyasının oluştuğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_tesseract.tif

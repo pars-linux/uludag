@@ -72,6 +72,7 @@ foomatic-db
 foomatic-db-engine
 foomatic-db-hpijs
 foomatic-filters
+hplip-doc
 \end{verbatim}
 \item epson-alc1100 paketi kurulumu sonrası:
 
@@ -85,7 +86,7 @@ Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bi
 
 Tasma $\rightarrow$ Çevre Birimleri $\rightarrow$ Yazıcılar $\rightarrow$ Ekle $\rightarrow$ Yazıcı/Sınıf Ekle yolunu izleyebilirsiniz.
 
-\item hplip-gui, hplip-doc ve hplip kurulumu sonrası:
+\item hplip-gui ve hplip kurulumu sonrası:
 
 kmenu'den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.
     
@@ -107,6 +108,14 @@ pcsc-lite
 
 \section{Info alt Bileşeni}
 \begin{enumerate}
+
+\item dmidecode paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ sudo dmidecode
+\end{verbatim}
+
  \item smolt paketi kurulumu sonrası:
 
 Aşağıdaki komutu çalıştırın ve datalarınızı gönderin.
@@ -357,6 +366,7 @@ Eğer toshiba dizüstü bilgisayarınız var ise LCD parlaklığı, ses ve fan g
 \begin{verbatim}
   obexd
   bluez-compat
+  cwiid-devel
 \end{verbatim}
 
  \item obex-data-server paketi kurulumu sonrası: 
@@ -419,7 +429,13 @@ wiimote uygulamasını açın ve Nintendo kumandanızı aktif hale getirmeye ça
   lvm2-static
   udftools
   extundelete
+  ntfsprogs-devel
+  hdparm
+  sg3_utils-devel
 \end{verbatim}
+\item ntfprogs paketi kurulumu sonrası:
+
+gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. 
 
 \item testdisk paketi kurulumu sonrası:
 
@@ -446,6 +462,7 @@ gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittik
 Bir usbdis takın ve gparted uygulamasını Kmenu'den çalıştırın. 
 
 Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.
+
 \item fuseiso paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
@@ -463,7 +480,7 @@ hardware-tr.pdf fuse-python testini gerçekleştirin.
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import fuse
 \end{verbatim}
 
@@ -525,7 +542,7 @@ Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aş
 \end{enumerate}
 \section{Sound alt Bileşeni}
 \begin{enumerate}
- \item alsa-driver, alsa-headers, alsa-lib, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
+ \item alsa-driver, alsa-headers, alsa-lib, alsa-lib-devel, alsa-plugins, alsa-plugins-pulseaudio, alsa-tools, alsa-utils paketleri kurulumu sonrası.
 \begin{itemize}
  \item Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
  \item Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.

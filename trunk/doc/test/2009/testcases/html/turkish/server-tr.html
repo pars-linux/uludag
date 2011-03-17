@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea server-tr.tex server-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -55,36 +55,36 @@ freeradius paketi kurulumu sonrası:<P>Servis yöneticisinden freeradius servisi
 </PRE></LI></OL><!--TOC section Proxy alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service squid status
+</P><PRE CLASS="verbatim">  service squid status
 </PRE></LI><LI CLASS="li-enumerate">dansguardian paketi kurulumu sonrası:<P>Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service dansguardian status
+</P><PRE CLASS="verbatim">  service dansguardian status
 </PRE></LI><LI CLASS="li-enumerate">ntlmaps paketi kurulumu sonrası:<P>Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service ntlmaps status
+</P><PRE CLASS="verbatim">  service ntlmaps status
 </PRE></LI></OL><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service ypserv status
+</P><PRE CLASS="verbatim">  service ypserv status
 </PRE></LI><LI CLASS="li-enumerate">yp-tools paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatıldıktan sonra:
-</P><PRE CLASS="verbatim"> # su -
- # domainname localdomain
- # domainname
- # nisdomainname
+</P><PRE CLASS="verbatim">  su -
+  domainname localdomain
+  domainname
+  nisdomainname
 </PRE></LI><LI CLASS="li-enumerate">ypbind paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı /etc altına kopylayın,
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/auth/yp.conf 
-# sudo cp yp.conf /etc/
-# sudo domainname localdomain
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/auth/yp.conf 
+ sudo cp yp.conf /etc/
+ sudo domainname localdomain
 </PRE><P>Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service ypbind status
+</P><PRE CLASS="verbatim">  service ypbind status
 </PRE></LI></OL><!--TOC section Mta alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
 Aşağıdaki komut ile başlatıldığını gözlemleyin:
-</P><PRE CLASS="verbatim"> # service dovecot status
+</P><PRE CLASS="verbatim">  service dovecot status
 </PRE><P>Aşağıdaki komut ile dovecot kullanıcısı tarafından servisin başlatıldığını gözlemleyin.
-</P><PRE CLASS="verbatim"># ps aux|grep dovecot 
+</P><PRE CLASS="verbatim"> ps aux|grep dovecot 
 </PRE><P>Aşağıda bulunan komutlar ile imap ve pop3 paketlerini kontrol edin:
-</P><PRE CLASS="verbatim"># netstat -ln|grep 110
-# netstat -ln|grep 143
+</P><PRE CLASS="verbatim"> netstat -ln|grep 110
+ netstat -ln|grep 143
 </PRE></LI></OL><!--TOC section Web alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
@@ -147,12 +147,14 @@ Servis yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullana
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mysql-man-pages paketi kurulumu sonrası:<P>Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 </P><PRE CLASS="verbatim">man myisampack 
 </PRE></LI></OL><!--TOC section Diğerleri-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> service ntp_server status
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> ntp-docs
+</PRE></LI><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
+</P><PRE CLASS="verbatim"> service ntpd status
 </PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
 </P><PRE CLASS="verbatim"> ping 4.2.2.1
 </PRE></LI><LI CLASS="li-itemize">bind paketleri kurulumu sonrası:
-<PRE CLASS="verbatim"># dig www.google.com
+<PRE CLASS="verbatim"> dig www.google.com
 </PRE>Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.</LI><LI CLASS="li-itemize">samba paketi kurulumu sonrası:<P>Servis yöneticisinden samba servisini başlatın.</P><P>Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 </P><PRE CLASS="verbatim">  service samba status 
 </PRE><P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin:

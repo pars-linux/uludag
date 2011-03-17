@@ -99,7 +99,33 @@ espeak-devel
 flite-devel
 opentts-devel
 speech-dispatcher-devel
+dssi-devel
+libvorbis-devel
+pulseaudio-docs
+pulseaudio-libs-devel
 \end{verbatim}
+
+\item qsynth paketi kurulumu sonrası:
+
+Kmenuden qsynth uygulamasını açın ve sorunsuz çalıştığını gözlemleyin.
+
+\item libvorbis paketi kurulumu sonrası:
+
+multimedia-tr.pdf vorbis-tools testini gerçekleştirin.
+
+\item timidity paketi kurulumu sonrası:
+
+multimedia-tr.pdf solfege testini gerçekleştirin.
+
+\item dssi paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ dssi_list_plugins
+ dssi_osc_send -p osc.udp://localhost:19383/dssi/test.1 0 7
+\end{verbatim}
+
+
 \item clementine paketi kurulumu sonrası:
 
 Aşağıda bulunan dosyayı indirin ve açın. Daha sonra bu dosyada bulunan ses dosyalarını uyglama ile birlikte çalıştırın.
@@ -208,7 +234,7 @@ Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulu
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  \end{verbatim}
 Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
-\item pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
+\item pulseaudio,pulseaudio-libs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 \begin{itemize}
  \item multimedia-tr.pdf pavucontrol testini gerçekleştirin.
  \item Sisteminizi tekrar başlatın ve açılış sesinin düzgün bir şekilde çıktığını gözlemleyin. 
@@ -231,10 +257,10 @@ Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizini
 \item vorbis-tools paketi kurulumu sonrası: 
  \begin{verbatim}
    wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
-   oggdec game.ogg
-   mplayer game.wav
-   oggenc game.wav
-   mplqayer game.ogg
+   oggdec sample.ogg
+   mplayer sample.wav
+   oggenc sample.wav
+   mplqayer sample.ogg
  \end{verbatim}
 
 \item qpitch paketi kurulumu sonrası:
@@ -272,7 +298,15 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 \begin{verbatim}
  libvpx
  libvpx-devel
+ libv4l-devel
+ v4l-utils
+ vlc-devel
+ vlc-libs
+ vlc-lua
 \end{verbatim}
+\item libv4l paketi kurulumu sonrası: (Kamerası olanlar test edebilecektir.)
+
+multimedia-tr.pdf vlc testini gerçekleştirin.
 
 \item minitube paketi kurulumu sonrası:
 
@@ -309,7 +343,7 @@ multimedia-tr.pdf x264 testini gerçekleştirin.
 Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.
 
 dvdrip uygulmasını kmenüden açın ve dvd'de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
- \item mplayer, vlc, kaffeine, smplayer, gnome-mplayer paketleri kurulumu sonrası:
+ \item mplayer, vlc, kaffeine, smplayer, gnome-mplayer, bangarang paketleri kurulumu sonrası:
  \begin{verbatim}
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
@@ -545,7 +579,19 @@ Lake_dance_XviD.AVI
  gimp-ufraw-plugin
  imagemagick-doc
  tuxpaint-doc 
+ libopenraw-devel
+ CImg
+ CImg-docs
 \end{verbatim}
+\item libopenraw paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyanın Gimp ile açılabildiğini gözlemleyin.
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/DSC_0048.NEF
+\end{verbatim}
+
+
 \item mypaint paketi kurulumu sonrası:
 
 Uygulamayı açın ve fırçaların birkaçını kullanarak çizim yapmayı deneyin, yapabildiğinizi gözlemleyin.

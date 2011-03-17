@@ -105,6 +105,7 @@ Menüden Sistem Ayarları → Masaüstü yolunu izleyerek efektlerinizi açın/k
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">  vdpau-video
   xvba-video   
+  xorg-input-wacom-devel
   </PRE></LI><LI CLASS="li-enumerate">xorg-input-evdev paketi kurulumu sonrası:<P>Kurulumdan sonra klavye ve farnizin sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">virtualbox-guest-utils paketi kurulumu sonrası:<P>hardware-tr.pdf virtualbox testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">xorg-input-synaptics paketi kurulumu sonrası:<P>Eğer aşağıda bulunan komut bir çıktı üretiyor ise bu testi gerçekleştirebilirsiniz.
 </P><PRE CLASS="verbatim">   # grep -i synap /proc/bus/input/devices
   </PRE><P>Bilgisayarınızı yeniden başlatın ve dokunmatik giriş aygıtının (touchpad) düzgün çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">xorg-input-vmmouse paketi kurulumu sonrası:<P>Eğer vmware sanal makine kullanıyor iseniz bu testi gerçekleştirebilirsiniz. </P><P>VMware sanal makinelesinde fare uyumunu test ediniz.</P></LI><LI CLASS="li-enumerate">xorg-input-wacom paketi kurulumu sonrası:<P>Wacom tabletiniz var ise bu testi gerçekleştirebilirsiniz.</P><P>Wacom tabletinizi takın ve çalışıp çalışmadığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">Aşağıda bulunan ekran kartı sürücüsü paketleri aynı şekilde test edilecektir elinizde bulunan ekran kartınına göre testlerimizi gerçekleştireceğiz. <P>Örneğin: xorg-video-apm paketini Alliance Promotion ekran kartınız var ise test edebilirsiniz.</P><P>Paket hakkında ayrıntılı bilgiye aşağıda bulunan komut ile bakıp hangi ekran kartı ile ilgili olduğuna bakabilirsiniz.
@@ -170,13 +171,16 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 libXft
 libXmu
 libpciaccess
+libpciaccess-devel
+pixman
+pixman-devel
 libvdpau
 libva
 libxkbfile
 xcb-util
   </PRE></LI><LI CLASS="li-enumerate">libXcomposite paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın ve effektlerinizin düzgün çalıştığını gözlemleyin.</P></LI></OL><!--TOC section Misc alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-xinit paketi kurulumu sonrası:<P>Aşağıdaki komutun sorunsuz çalıştığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> xorg-sgml-doctools
+</PRE></LI><LI CLASS="li-enumerate">xinit paketi kurulumu sonrası:<P>Aşağıdaki komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">   sudo pisi it xterm
    xinit -- :2
   </PRE></LI><LI CLASS="li-enumerate">xdm paketi kurulumu sonrası:<P>Service yöneticisinden xdm servisini tekrar başlatın ve X’in sorunsuz bir şekilde kapanıp açıldığını gözlemleyin.

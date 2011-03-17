@@ -57,6 +57,10 @@ phoronix-test-suite paketi kurulumu sonası:<P>Aşağıda bulunan komutu çalı�
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> unshield
  minizip
+ zziplib-devel
+ zziplib-docs
+</PRE></LI><LI CLASS="li-enumerate">zziplib paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test.zip
+ unzzip test.zip
 </PRE></LI><LI CLASS="li-enumerate">rdiff-backup paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 </P><PRE CLASS="verbatim"> mkdir test
  rdiff-backup test backup
@@ -80,7 +84,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
   lrzip -d test_lrzip.lrz -O test/
 </PRE></LI></OL><!--TOC section Crypt alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Crypt alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> gnupg-docs
+</PRE></LI><LI CLASS="li-enumerate">gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim">gpg --gen-key
 </PRE></LI><LI CLASS="li-enumerate">johntheripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
@@ -101,7 +106,7 @@ Sorunsuz bir şekilde yapılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enum
  clamscan eicar.com.txt
 </PRE><P>Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.</P></LI></OL><!--TOC section Admin alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Admin alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-sudo paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+panda paketi kurulumu sonrası:<P>desktop-tr.pdf panda-desktop testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">sudo paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo pisi info pidgin
 </PRE></LI><LI CLASS="li-enumerate">ntp-client paketi kurulumu sonrası:<P>Eğer ntp server servisi açık ise kapatmalısınız. </P><P>Aşağıda bulunan komutun sistem saatini değiştirdiğini gözlemleyin. ("date" komutunu kullanarak kontrol edebilirsiniz.)
 </P><PRE CLASS="verbatim">ntpdate -b "clock.nc.fukuoka-u.ac.jp" 

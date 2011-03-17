@@ -47,19 +47,19 @@ Serisin başlatılmış olduğunu gözlemleyin:
 
 Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service squid status
+  service squid status
 \end{verbatim}
  \item dansguardian paketi kurulumu sonrası:
 
 Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service dansguardian status
+  service dansguardian status
 \end{verbatim}
 \item ntlmaps paketi kurulumu sonrası:
 
 Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service ntlmaps status
+  service ntlmaps status
 \end{verbatim}
 \end{enumerate}
 
@@ -70,31 +70,31 @@ Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldı�
 
 Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service ypserv status
+  service ypserv status
 \end{verbatim}
 
 \item yp-tools paketi kurulumu sonrası:
 
 Servis yöneticisinden ypserv başlatıldıktan sonra:
 \begin{verbatim}
- # su -
- # domainname localdomain
- # domainname
- # nisdomainname
+  su -
+  domainname localdomain
+  domainname
+  nisdomainname
 \end{verbatim}
 
 \item ypbind paketi kurulumu sonrası:
 
 Aşağıda bulunan dosyayı /etc altına kopylayın,
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/auth/yp.conf 
-# sudo cp yp.conf /etc/
-# sudo domainname localdomain
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/server/auth/yp.conf 
+ sudo cp yp.conf /etc/
+ sudo domainname localdomain
 \end{verbatim}
 
 Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service ypbind status
+  service ypbind status
 \end{verbatim}
 
 \end{enumerate}
@@ -106,17 +106,17 @@ Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığ
 Servis yöneticisinde dovecot başlatılır.
 Aşağıdaki komut ile başlatıldığını gözlemleyin:
 \begin{verbatim}
- # service dovecot status
+  service dovecot status
 \end{verbatim}
 Aşağıdaki komut ile dovecot kullanıcısı tarafından servisin başlatıldığını gözlemleyin.
 \begin{verbatim}
-# ps aux|grep dovecot 
+ ps aux|grep dovecot 
 \end{verbatim}
 
 Aşağıda bulunan komutlar ile imap ve pop3 paketlerini kontrol edin:
 \begin{verbatim}
-# netstat -ln|grep 110
-# netstat -ln|grep 143
+ netstat -ln|grep 110
+ netstat -ln|grep 143
 \end{verbatim}
 
 \end{enumerate}
@@ -266,13 +266,18 @@ man myisampack
 \section{Diğerleri}
 
 \begin{itemize}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ ntp-docs
+\end{verbatim}
 
 
 \item ntp-server paketi kurulumu sonrası:
 
 Servis yöneticisinden ntp deamon'u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
 \begin{verbatim}
- service ntp_server status
+ service ntpd status
 \end{verbatim}
 
 
@@ -285,7 +290,7 @@ Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra ko
 
 \item bind paketleri kurulumu sonrası:
 \begin{verbatim}
-# dig www.google.com
+ dig www.google.com
 \end{verbatim}
 Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.
 

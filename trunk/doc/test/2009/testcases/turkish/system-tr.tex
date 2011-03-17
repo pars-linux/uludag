@@ -88,11 +88,10 @@ Servis yöneticisinden icecream servisini başlatın.
 
 Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olun.
  \begin{verbatim}
-   # service icercream status
+   service icecream status
  \end{verbatim}
 
 \end{enumerate}
-
 
 \section{Base alt Bileşeni}
 
@@ -110,7 +109,17 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  zlib
  dbus
  pam
+ dhcpcd
 \end{verbatim}
+
+\item busybox paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun test dosyasını sildiğini gözlemleyin.
+\begin{verbatim}
+ touch test
+ busybox rm test
+\end{verbatim}
+
 
 \item bc paketi kurulumu sonrası:
 
@@ -518,7 +527,7 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 \begin{itemize}
  \item Bilgisayarınızı kapatın düzgün bir şekilde kapanabildiğini gözlemleyin.
  \item Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açılabildiğini gözlemleyin.
- \item 2009 için:
+ \item 2009 ve üzeri için:
   \begin{verbatim}
   pisi blame baselayout
   \end{verbatim}
@@ -532,7 +541,7 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 \begin{itemize}
 \item Aşağıda bulunan komutun bir katalog oluşturduğunu gözlemleyin.
   \begin{verbatim}
-   #  xmlcatalog --create
+   xmlcatalog --create
   \end{verbatim}
 \item multimedia-tr.pdf avidemux-qt, avidemux ve inkscape testlerini gerçekleştirin.
 \end{itemize}
@@ -557,20 +566,19 @@ curl http://packages.pardus.org.tr/search/pardus-2009/libkate/
 
 Aşağıda bulunan komutun po dizini altında "network-manager.pot" dosyasını oluşturduğunu gözlemleyin.
 \begin{verbatim}
- # svn co http://svn.pardus.org.tr/uludag/trunk/kde/network-manager/
- # cd network-manager/manager
- # rm -rf po
- # mkdir po
- # xgettext setup.py 
- # ./setup.py update_messages
+  svn co http://svn.pardus.org.tr/uludag/trunk/kde/network-manager/
+  cd network-manager/manager
+  rm -rf po
+  mkdir po
+  xgettext setup.py 
+  ./setup.py update_messages
 \end{verbatim}
-
 
 \item openssh paketi kurulumu sonrası:
 
 Servis yöneticisinden openssh'ı çalıştırın ve aşağıda bulunan komutun çıktısında openssh'ın çalıştığını gözlemleyin:
 \begin{verbatim}
- # service list 
+ service list 
 \end{verbatim}
 
 \item mkinitramfs paketi kurulumu sonrası:
