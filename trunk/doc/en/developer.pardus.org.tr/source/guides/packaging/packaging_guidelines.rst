@@ -588,6 +588,14 @@ Operation types:
 - preRemove: Execute pre-remove script of a package before installation
 - postRemove: Execute post-remove script of a package after installation
 
+Special Packages
+----------------
+
+Texlive Packages
+^^^^^^^^^^^^^^^^
+
+Texlive has special packaging rules these can be found from `texlive packaging`_.
+
 .. _stack traces: http://developer.pardus.org.tr/guides/bugtracking/stack_traces.html
 .. _CFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#c-compiler-flags-cflags
 .. _LDFLAGS: http://developer.pardus.org.tr/guides/releasing/bootstrapping.html#linker-flags-ldflags
@@ -601,3 +609,4 @@ Operation types:
 .. _Conflicts: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
 .. _Dependency: http://developer.pardus.org.tr/guides/packaging/howto_create_pisi_packages.html#different-pspec-xml-file-tags
 .. _buildTYPE: http://developer.pardus.org.tr/guides/packaging/actionsapi/get.html#buildtype
+.. _texlive packaging: http://developer.pardus.org.tr/guides/packaging/texlive_packaging.html

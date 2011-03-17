@@ -88,7 +88,8 @@ Packages about development and boot of the system are included in this component
 Tex
 ---
 
-The TeX applications and tools are included in this component.
+The TeX applications and tools are included in this component. For `texlive sub
+components`_.
 
 Util
 ----
@@ -104,4 +105,4 @@ this component.
 
 .. _component supervisor: http://developer.pardus.org.tr/guides/newcontributor/developer_roles.html#component-supervisor
 .. _package source repositories: http://developer.pardus.org.tr/guides/releasing/repository_concepts/sourcecode_repository.html#package-source-repository
-
+.. _texlive sub components: http://developer.pardus.org.tr/guides/packaging/texlive_packaging.html#new-component-structure
