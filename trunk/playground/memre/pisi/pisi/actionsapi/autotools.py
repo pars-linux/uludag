@@ -59,7 +59,7 @@ class RunTimeError(pisi.actionsapi.Error):
         self.value = value
         ctx.ui.error(value)
 
-def configure(parameters = '', configure_cmd='./configure'):
+def configure(parameters = '', configure_cmd='./configure', no_default_vars=False):
     '''configure source with given parameters = "--with-nls --with-libusb --with-something-usefull"'''
 
     if can_access_file(configure_cmd):
@@ -67,7 +67,6 @@ def configure(parameters = '', configure_cmd='./configure'):
 
         cmd = '%s \
                --prefix=/%s \
-               --build=%s \
                --mandir=/%s \
                --infodir=/%s \
                --datadir=/%s \
@@ -76,14 +75,17 @@ def configure(parameters = '', configure_cmd='./configure'):
                --libexecdir=/%s \
                %s' % (configure_cmd,
                       get.defaultprefixDIR(), \
-                      get.BUILD(), get.manDIR(), \
-                      get.infoDIR(), get.dataDIR(), \
+                      get.manDIR(), get.infoDIR(), get.dataDIR(), \
                       get.confDIR(), get.localstateDIR(), get.libexecDIR(), parameters)
 
+        if not no_default_vars:
+            cmd = "%s --build=%s" % (cmd, get.BUILD())
+
         if crosscompiling:
-            cmd = "sb2 %s \
-                    --host=%s \
-                    " % (cmd, get.HOST())
+            cmd = "sb2 %s" % cmd
+
+            if not no_default_vars:
+                cmd = "%s --host=%s" % (cmd, get.HOST())
 
         if system(cmd):
             raise ConfigureError(_('Configure failed.'))
