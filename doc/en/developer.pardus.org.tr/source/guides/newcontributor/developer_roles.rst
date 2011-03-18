@@ -46,7 +46,7 @@ Roles
        #. Allow temporarily maintenance of the orphan package for an other maintainer
        #. Find maintainer for orphan package.
 
-   #. Join the new package review process of the packages under his supervised component.
+   #. Join the new `package review`_ process of the packages under his supervised component.
 
 Software Developer
 ------------------
@@ -68,3 +68,5 @@ Lead Developer:
 **Last Modified Date** |today|
 
 :Author: Semen Cirit
+
+.. _package review: http://developer.pardus.org.tr/guides/packaging/package-review-process.html
