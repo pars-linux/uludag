@@ -47,6 +47,7 @@ def exportFlags():
     if values.build.crosscompiling:
         os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
         os.environ['PYTHON']    = "%s/usr/bin/python" % sysroot
+        os.environ['PERL']      = "%s/usr/bin/perl" % sysroot
         os.environ['SYSROOT']   = sysroot
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
         os.environ['ARCH']      = values.general.architecture

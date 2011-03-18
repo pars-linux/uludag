@@ -27,6 +27,12 @@ from pisi.actionsapi.shelltools import system
 from pisi.actionsapi.shelltools import can_access_file
 from pisi.actionsapi.shelltools import unlink
 
+crosscompiling = ctx.config.values.build.crosscompiling
+if crosscompiling:
+    ctx.ui.info(_("cross compiling"))
+else:
+    ctx.ui.info(_("native compiling"))
+
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):
         pisi.actionsapi.Error.__init__(self, value)
@@ -62,6 +68,9 @@ def configure(parameters = '', installPrefix = '/%s' % get.defaultprefixDIR(), s
                       -DCMAKE_LD_FLAGS="%s" \
                       -DCMAKE_BUILD_TYPE=RelWithDebInfo %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.LDFLAGS(), parameters, sourceDir)
 
+        if crosscompiling:
+            args = "sb2 %s" % args
+
         if system(args):
             raise ConfigureError(_('Configure failed.'))
     else:
@@ -73,6 +82,9 @@ def make(parameters = ''):
         command = 'make VERBOSE=1 %s %s' % (get.makeJOBS(), parameters)
     else:
         command = 'make %s %s' % (get.makeJOBS(), parameters)
+
+    if crosscompiling:
+        command = "sb2 %s" % command
 
     if system(command):
         raise MakeError(_('Make failed.'))
@@ -93,6 +105,9 @@ def install(parameters = '', argument = 'install'):
                                      'parameters'   : parameters,
                                      'argument'     : argument,
                                  }
+
+    if crosscompiling:
+        args = "sb2 %s" % args
 
     if system(args):
         raise InstallError(_('Install failed.'))
