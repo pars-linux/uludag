@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-03-22 15:54+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/upgrade-manager.desktop.in.h:1
+msgid "Add or Remove Software"
+msgstr ""
+
+#: data/upgrade-manager.desktop.in.h:2 src/progressdialog.py:63
+msgid "Package Manager"
+msgstr ""
+
+#: data/upgrade-manager.desktop.in.h:3
+msgid "PiSi Package Manager Graphical User Interface"
+msgstr ""
+
+#: src/operationmanager.py:38
+msgid "installing"
+msgstr ""
+
+#: src/operationmanager.py:39
+msgid "removing"
+msgstr ""
+
+#: src/operationmanager.py:40 src/progressdialog.py:75
+msgid "extracting"
+msgstr ""
+
+#: src/operationmanager.py:41 src/progressdialog.py:75
+msgid "configuring"
+msgstr ""
+
+#: src/operationmanager.py:135
+msgid "downloading"
+msgstr ""
+
+#: src/pmutils.py:71 ui/ui_pminstall.py:42
+msgid "Upgrade Manager"
+msgstr ""
+
+#: src/pmutils.py:77 src/statemanager.py:233
+msgid "Network Error"
+msgstr ""
+
+#: src/pmutils.py:78 src/statemanager.py:234
+msgid "Please check your network connections and try again."
+msgstr ""
+
+#: src/pmutils.py:80
+msgid "Authorization Error"
+msgstr ""
+
+#: src/pmutils.py:81
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: src/pmutils.py:83 src/pmutils.py:88 src/pmutils.py:91 src/pmutils.py:94
+#: src/pmutils.py:97
+msgid "Pisi Error"
+msgstr ""
+
+#: src/pmutils.py:84
+#, python-format
+msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
+msgstr ""
+
+#: src/pmutils.py:89
+msgid "Mixing file names and package names not supported yet."
+msgstr ""
+
+#: src/pmutils.py:92
+#, python-format
+msgid "File <b>%s</b> doesn't exists."
+msgstr ""
+
+#: src/pmutils.py:95
+msgid "Another instance of PiSi is running. Only one instance is allowed."
+msgstr ""
+
+#: src/pmutils.py:129
+msgid "Do you want to continue ?"
+msgstr ""
+
+#: src/progressdialog.py:71
+msgid "<p align='right'>%1 %</p>"
+msgstr ""
+
+#: src/progressdialog.py:72
+#, python-format
+msgid "Operation - %1%"
+msgstr ""
+
+#: src/progressdialog.py:79
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: src/progressdialog.py:81
+msgid "%1 %2"
+msgstr ""
+
+#: src/progressdialog.py:86
+msgid "[%1 / %2]"
+msgstr ""
+
+#: src/progressdialog.py:93
+msgid "%1 / %2, %3"
+msgstr ""
+
+#: src/progressdialog.py:110
+msgid "Preparing PiSi..."
+msgstr ""
+
+#: src/progressdialog.py:121
+msgid "<b>Cancelling operation...</b>"
+msgstr ""
+
+#: src/statemanager.py:80 src/statemanager.py:81
+msgid "Installing Package(s)"
+msgstr ""
+
+#: src/statemanager.py:82
+msgid "Removing Package(s)"
+msgstr ""
+
+#: src/statemanager.py:83
+msgid "Upgrading Package(s)"
+msgstr ""
+
+#: src/statemanager.py:84
+msgid "Applying Repository Changes"
+msgstr ""
+
+#: src/statemanager.py:85
+msgid "Updating Repository"
+msgstr ""
+
+#: src/statemanager.py:86
+msgid "Updating Repository(s)"
+msgstr ""
+
+#: src/statemanager.py:89
+msgid "installed"
+msgstr ""
+
+#: src/statemanager.py:90
+msgid "removed"
+msgstr ""
+
+#: src/statemanager.py:91
+msgid "upgraded"
+msgstr ""
+
+#: src/statemanager.py:92
+msgid "modified"
+msgstr ""
+
+#: src/statemanager.py:96
+msgid "Install Package(s)"
+msgstr ""
+
+#: src/statemanager.py:97
+msgid "Remove Package(s)"
+msgstr ""
+
+#: src/statemanager.py:98
+msgid "Upgrade Package(s)"
+msgstr ""
+
+#: src/statemanager.py:99
+msgid "Select Operation"
+msgstr ""
+
+#: src/statemanager.py:109
+msgid "%1 new package(s) have been installed succesfully."
+msgstr ""
+
+#: src/statemanager.py:110
+msgid "%1 package(s) have been removed succesfully."
+msgstr ""
+
+#: src/statemanager.py:111
+msgid "%1 package(s) have been upgraded succesfully."
+msgstr ""
+
+#: src/statemanager.py:112
+msgid "%1 package(s) have been modified succesfully."
+msgstr ""
+
+#: src/statemanager.py:115
+msgid "You have selected the following package(s) to install:"
+msgstr ""
+
+#: src/statemanager.py:116
+msgid "You have selected the following package(s) to removal:"
+msgstr ""
+
+#: src/statemanager.py:117
+msgid "You have selected the following package(s) to upgrade:"
+msgstr ""
+
+#: src/statemanager.py:118
+msgid "You have selected the following package(s) to modify:"
+msgstr ""
+
+#: src/statemanager.py:121
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgstr ""
+
+#: src/statemanager.py:122
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr ""
+
+#: src/statemanager.py:123
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgstr ""
+
+#: src/statemanager.py:124
+msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
+msgstr ""
+
+#: src/statemanager.py:158
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+
+#: src/statemanager.py:161
+msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
+msgstr ""
+
+#: src/statemanager.py:163
+msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
+msgstr ""
+
+#: src/statemanager.py:164
+msgid "in your basket."
+msgstr ""
+
+#: src/statemanager.py:199
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr ""
+
+#: src/statemanager.py:200 src/statemanager.py:208
+msgid "Conflict Error"
+msgstr ""
+
+#: src/statemanager.py:204
+msgid "The following packages conflicts:\n"
+msgstr ""
+
+#: src/statemanager.py:206
+msgid "%1 conflicts with: [%2]\n"
+msgstr ""
+
+#: src/statemanager.py:207
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+
+#: ui/ui_page_1.py:35 ui/ui_progressdialog_v4.py:195
+msgid "Form"
+msgstr ""
+
+#: ui/ui_page_1.py:36
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Ubuntu'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Welcome to <span style=\" font-weight:600;\">upgrade manager</span>, click next to continue bla bla bla...</p></body></html>"
+msgstr ""
+
+#: ui/ui_pminstall.py:43
+msgid "Cancel"
+msgstr ""
+
+#: ui/ui_pminstall.py:44
+msgid "Next"
+msgstr ""
+
+#: ui/ui_pminstall.py:45
+msgid "Previous"
+msgstr ""
+
+#: ui/ui_progressdialog_v4.py:196
+msgid "Alt+C"
+msgstr ""

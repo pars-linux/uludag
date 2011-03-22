@@ -1,0 +1,8 @@
+[Desktop Entry]
+_Name=Upgrade Manager
+_GenericName=Upgrade Pardus 2009 to 2011
+_Comment=Pardus Upgrade Manager Graphical User Interface
+Icon=upgrade-manager
+Type=Application
+Exec=upgrade-manager
+Categories=Qt;KDE;System;
