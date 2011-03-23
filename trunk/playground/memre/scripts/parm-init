@@ -6,9 +6,6 @@
 #
 #  Author: Mehmet Emre Atasever <memre ~ pardus.org.tr>
 #
-#  Tester and reviewer:
-#          Renjith Gopinadhan <renjithg ~ pearlsoft.in>
-#
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License as
 #  published by the Free Software Foundation; either version 2 of the
@@ -26,12 +23,12 @@
 #   * Pardus Corporate 2
 #   * PiSi from memre's playground
 #     - https://svn.pardus.org.tr/uludag/trunk/playground/memre/pisi
-#       Release: 34138
+#       Revision: 36047
+#
+######################################################################
 #
 # TODO:
-# - sd card flasher support
-# - beagle nandflash writer
-# - If packages installed, do not emerge them.
+#   - buildfarm initialization
 #
 ######################################################################
 
@@ -111,13 +108,14 @@ LOG_LEVEL=${LOG_LEVEL:-${_log_level_info}}
 TARBALL_DIR=${TARBALL_DIR:-"${CROSS}/tarballs"}
 
 # Temp directory
-TMP_DIR=${TMP_DIR:-"${CROSS}/tmp"}
+TMP_DIR=${TMP_DIR:-"/tmp/initparm-$$$RANDOM"}
 
 # pisi commands for cross and native platforms.
 #
 # For example, if pisi-armv7l is executed, pisi
 # uses pisi-armv7l.conf configuration file.
 _pisi_native="/usr/bin/pisi"
+_pisi_native_conf="/etc/pisi/pisi.conf"
 _pisi_cross="/usr/bin/pisi-${ARCH}"
 _pisi_cross_conf="/etc/pisi/pisi-${ARCH}.conf"
 
@@ -132,7 +130,7 @@ DISTRIB_RELEASE=${DISTRIB_RELEASE:-`lsb_release -r | cut -d: -f2 | tr -d '\t'`}
 DISTRIB_DESCRIPTION=${DISTRIB_DESCRIPTION:-`lsb_release -d | cut -d: -f2 | tr -d '\t'`}
 DISTRIB_CODENAME=${DISTRIB_CODENAME:-`lsb_release -c | cut -d: -f2 | tr -d '\t'`}
 
-# dialog interface
+# dialog ui
 _dialog_back_title="${DISTRIB_ID}${DISTRIB_RELEASE} ARM Sysroot Preparator"
 _dialog_width=80
 _dialog_height=20
@@ -155,19 +153,20 @@ _dialog_cl_cyan="\Z6"
 _dialog_cl_white="\Z7"
 
 # Source repo for building PiSi packages from source codes
-SRC_REPO="http://svn.pardus.org.tr/pardus/playground/memre/${ARCH}/${DISTRIB_ID}"
+# SRC_REPO="http://svn.pardus.org.tr/pardus/playground/memre/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}"
+SRC_REPO="/var/lib/buildfarm/repositories/${DISTRIB_ID}${DISTRIB_RELEASE}"
 SRC_REPO_NAME="${DISTRIB_ID}_src"
-SRC_REPO_INDEX="/var/lib/buildfarm/repositories/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/pisi-index.xml"
+SRC_REPO_INDEX="${SRC_REPO}/devel/pisi-index.xml"
 
 # This repo contains pre-built binary packages
-BIN_REPO="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}"
+BIN_REPO="http://cekirdek.pardus.org.tr/~memre/parm/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}/repo"
 BIN_REPO_NAME="${DISTRIB_ID}_bin"
-BIN_REPO_INDEX="http://cekirdek.pardus.org.tr/~memre/pardus-arm/${ARCH}/${BIN_REPO}/pisi-index.xml.xz"
+BIN_REPO_INDEX="${BIN_REPO}/pisi-index.xml.xz"
 
 # This repo contains packages which compiled by buildfarm
 FARM_REPO="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/${ARCH}"
 FARM_REPO_NAME="${DISTRIB_ID}_farm"
-FARM_REPO_INDEX="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/devel/${ARCH}/pisi-index.xml"
+FARM_REPO_INDEX="${FARM_REPO}/pisi-index.xml"
 
 ######################################################################
 # Toolchain options
@@ -175,7 +174,6 @@ FARM_REPO_INDEX="/var/db/buildfarm/packages/${DISTRIB_ID}${DISTRIB_RELEASE}/deve
 TOOLCHAIN_URL="http://cekirdek.pardus.org.tr/~memre/parm/${ARCH}/${DISTRIB_ID}${DISTRIB_RELEASE}/${DISTRIB_ID}${DISTRIB_RELEASE}-${ARCH}-toolchain.tar.xz"
 TOOLCHAIN_TARBALL="`echo ${TOOLCHAIN_URL} | awk -F/ '{print $NF}'`"
 
-# export HOST=${HOST:-"`gcc -dumpmachine`"}
 export HOST=${HOST:-"arm-pardus-linux-gnueabi"}
 # export STRIP=${STRIP:-"${HOST}-strip"}
 # export OBJCOPY=${OBJCOPY:-"${HOST}-objcopy"}
@@ -188,9 +186,8 @@ export HOST=${HOST:-"arm-pardus-linux-gnueabi"}
 # export CXX=${CXX:-"${HOST}-g++"}
 # export LD=${LD:-"${HOST}-ld"}
 
-
 # FIXME: get these values from a config file.
-# flags for target ${ARCH} platform, default optimized for cortex-a8
+# flags for target ${ARCH} platform, default optimized for cortex-a8 which has armv7l core.
 export CPPFLAGS=${CPPFLAGS:-"-isystem${SYSROOT}/usr/include"}
 export CFLAGS=${CFLAGS:-"-march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -pipe -fexpensive-optimizations -fomit-frame-pointer -frename-registers -O2 -g3 -ggdb -funwind-tables -fasynchronous-unwind-tables"}
 export CXXFLAGS=${CXXFLAGS:-"-march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -pipe -fexpensive-optimizations -fomit-frame-pointer -frename-registers -O2 -g3 -ggdb -fpermissive -fvisibility-inlines-hidden -funwind-tables -fasynchronous-unwind-tables"}
@@ -213,7 +210,6 @@ VERBOSE="v"
 DEBUG="d"
 
 # takes --ignore-check parameter to pisi,
-# default yes
 PISI_IGNORE_CHECK="--ignore-check"
 
 # fifo for logging, this is a workaround of bash pipe operation
@@ -248,7 +244,7 @@ set_colors()
     export _clLightBlue="\e[1;34m"
     export _clDarkGray="\e[1;30m"
 
-    export _clInfo=${_clWhite}
+    export _clInfo=${_clNoColor}
     export _clError=${_clRed}
     export _clWarning=${_clYellow}
     export _clHead=${_clLightPurple}
@@ -286,22 +282,20 @@ sighandler()
 # @desc: for cleaning up the temp directories and unneccessary stuffs.
 cleanup()
 {
-    local head="$(toupper ${FUNCNAME})"
-
-    print_info "Cleaning up..." "${head}"
+    print "Cleaning up "
 
     # FIXME: kill all working stuff
 
-    echo # new line
-    # Wait for a while
-    for i in 1 2 3; do
+    ( rm -rf ${TMP_DIR} >> ${LOG_FILE} 2>&1 ) &
+
+    # Wait until all cleaning process done
+    while [ -e ${TMP_DIR} ]; do
         echo -n '.'
         sleep 1
     done
     echo
 
-    # FIXME: clean up the shits behind of you.
-    print_info "Cleaning done." "${head}"
+    println "Cleaning done."
 }
 
 ######################################################################
@@ -568,7 +562,7 @@ See log file \`${LOG_FILE}' for details.
 If you think that this is a bug, then open a bug report to
 http://bugs.pardus.org.tr and add ${LOG_FILE} as attattachment." "DIE:${head}"
 
-    # cleanup
+    cleanup
 
     exit 1 # byby cruel world
 }
@@ -635,7 +629,7 @@ dialog_()
             local user_answer=
             [ ${ret_val} -eq 0 ] && echo "yes" || echo "No"
 
-            echo -e " ==> DIALOG YesNo Dialog Box\n${text} ==> DIALOG User answer: \"${user_answer}\"\n ==> DIALOG --" | \
+            echo -e " ==> DIALOG YesNo Dialog Box\n${text}\n\n ==> DIALOG User answer: \"${user_answer}\"\n ==> DIALOG --" | \
                 sed -e 's/\\Z[bBuUrRnN01234567]//g' | \
                 log ${_log_level_debug}
 
@@ -803,7 +797,7 @@ pisi_()
             #        cut -d\< -f1 | \
             #        tr '\n' ' '`
 
-            print_info " ==> Adding \"${repo_name}\":\"${repo_url}\" to ${system} system}..." "${head}"
+            print_info " ==> Adding \"${repo_name}\":\"${repo_url}\" to ${system} system..." "${head}"
             prep_log &
             (${pisi_cmd} ar -y${VERBOSE}${DEBUG} ${repo_name} ${repo_url} > ${_log_fifo} 2>&1)
             __r=$?; wait
@@ -998,10 +992,15 @@ prepare()
         else
              _b_install_sysroot=true
         fi
+
+        ${_b_install_sysroot} || die "Sorry but I cannot work in a dirty sysroot.." "gittim"
     } # END OF SYSROOT
 
-    print_t2 "Cleaning up temp directory: ${TMP_DIR}"
-    rm_ ${TMP_DIR}
+    # WTF, you shouldn't be there!! :/
+    if [ -d ${TMP_DIR} ]; then
+        print_t2 "Removing temp directory: ${TMP_DIR}"
+        rm_ ${TMP_DIR}
+    fi
 
     print_info "Creating some minimal required directories and files" "${head}"
     # we need temp dir, tarball dir, built packages dir
@@ -1066,6 +1065,11 @@ prepare()
     return 0 # success.
 }
 
+##################################
+# @func: init_toolchain
+# @desc: Initializes toolchain
+#
+# NO parameters
 init_toolchain()
 {
     # Cleanup and create directories
@@ -1079,7 +1083,8 @@ init_toolchain()
     ${_b_install_toolchain} && (
         [ -d "${TOOLCHAIN_DIR}" ] && (
             print_info " ==> Backing up \"${TOOLCHAIN_DIR}\" -> \"${TOOLCHAIN_DIR}_${_backup_suffix}\"..." "${head}"
-            mv ${TOOLCHAIN_DIR}{,_${_backup_suffix}} -v | log ${_log_level_debug}
+            mv ${TOOLCHAIN_DIR}{,_${_backup_suffix}} -v 2>&1 | log ${_log_level_debug}
+            [ $? -eq 0 ] || die "Cannot move \"${TOOLCHAIN_DIR}\" -> \"${TOOLCHAIN_DIR}_${_backup_suffix}\"..." "${head}"
         ) # BACKUP TOOLCHAIN DIRECTORY IF EXISTS
 
         extract "${DISTRIB_DESCRIPTION} cross-toolchain" \
@@ -1088,21 +1093,39 @@ init_toolchain()
     ) # INSTALL TOOLCHAIN
 }
 
+##################################
+# @func: init_sysroot
+# @desc: Initializes sysroot
+#
+# NO parameters
 init_sysroot()
 {
     local head="SYSROOT"
 
     ${_b_install_sysroot} && (
         [ -d "${SYSROOT}" ] && (
+            # # unlink symlinks
+            # for dir in tmp var/pisi var/cache/pisi/archives; do
+            #     print_info " ==> Unlinking symlink ${dir}: \"${SYSROOT}/${dir}\""
+            #     [ -L ${SYSROOT}/${dir} ] && rm_ ${SYSROOT}/${dir}
+            # done
+
             print_info " ==> Backing up \"${SYSROOT}\" -> \"${SYSROOT}_${_backup_suffix}\"..." "${head}"
-            mv ${SYSROOT}{,_${_backup_suffix}} -v | log ${_log_level_debug}
+            mv ${SYSROOT}{,_${_backup_suffix}} -v 2>&1 | log ${_log_level_debug}
+            [ $? -eq 0 ] || die "Cannot move \"${SYSROOT}\" -> \"${SYSROOT}_${_backup_suffix}\"..." "${head}"
         ) # BACKUP SYSROOT DIRECTORY IF EXISTS
 
-        mkdir_ ${SYSROOT}
+        mkdir_ ${SYSROOT}/var/cache/pisi
 
         # sysroot should be extracted from a tarball, but toolchain's sysroot directory
         # might be used before
         cp -rf${VERBOSE} ${TOOLCHAIN_DIR}/${HOST}/sysroot/* ${SYSROOT} | log ${_log_level_debug}
+
+        # we can use the same temporary and cache directories with the host system
+        for dir in tmp var/pisi var/cache/pisi/archives; do
+            rm_ ${SYSROOT}/${dir}
+            ln -s${VERBOSE} /${dir} ${SYSROOT}/${dir} | log ${_log_level_debug}
+        done
     ) # INSTALL SYSROOT
 }
 
@@ -1187,8 +1210,8 @@ ldflags = ${LDFLAGS}
 build = ${HOST}
 host = ${HOST}
 target = ${HOST}
-jobs = `cat /etc/pisi/pisi.conf | egrep "jobs\s+" | cut -d= -f2`
-max_delta_count = `cat /etc/pisi/pisi.conf | egrep "max_delta_count\s+" | cut -d= -f2`
+jobs = `egrep "jobs\s+" "${_pisi_native_conf}" | cut -d= -f2`
+max_delta_count = `egrep "max_delta_count\s+" "${_pisi_native_conf}" | cut -d= -f2`
 
 [directories]
 archives_dir = /var/cache/pisi/archives
@@ -1199,12 +1222,12 @@ debug_packages_dir = /var/cache/pisi/packages-debug
 history_dir = /var/lib/pisi/history
 index_dir = /var/lib/pisi/index
 info_dir = /var/lib/pisi/info
-kde_dir = `cat /etc/pisi/pisi.conf | egrep "kde_dir\s+" | cut -d= -f2`
+kde_dir = `egrep "kde_dir\s+" "${_pisi_native_conf}" | cut -d= -f2`
 lib_dir = /var/lib/pisi
 lock_dir = /var/lock/subsys
 log_dir = /var/log
 packages_dir = /var/lib/pisi/package
-qt_dir = `cat /etc/pisi/pisi.conf | egrep "qt_dir\s+" | cut -d= -f2`
+qt_dir = `egrep "qt_dir\s+" "${_pisi_native_conf}" | cut -d= -f2`
 tmp_dir = /var/pisi
 
 [general]
@@ -1213,9 +1236,9 @@ bandwidth_limit = 0
 architecture = ${ARCH}
 destinationdirectory = ${SYSROOT}
 # we use destinationdirectory as SYSROOT as well
-distribution = `cat /etc/pisi/pisi.conf | egrep "distribution\s+" | cut -d= -f2`
-distribution_release = `cat /etc/pisi/pisi.conf | egrep "distribution_release\s+" | cut -d= -f2`
-distribution_id = `cat /etc/pisi/pisi.conf | egrep "distribution_id\s+" | cut -d= -f2`
+distribution = `egrep "distribution\s+" "${_pisi_native_conf}" | cut -d= -f2`
+distribution_release = `egrep "distribution_release\s+" "${_pisi_native_conf}" | cut -d= -f2`
+distribution_id = `egrep "distribution_id\s+" "${_pisi_native_conf}" | cut -d= -f2`
 # ftp_proxy = None
 # http_proxy = None
 # https_proxy = None
@@ -1234,6 +1257,7 @@ __EOF
     [ ${__r} -eq 0 ] || \
         die "pisi-cross cannot be checked out, so parm initialization cannot be proceeded!" "${head}"
 
+    # Remove old pisi files since python distutils sometimes do not remove existing sources.
     print_info " ==> Removing old pisi" "${head}"
     rm -rf${VERBOSE} /usr/lib/pardus/pisi | log ${_log_level_debug}
 
@@ -1246,13 +1270,20 @@ __EOF
     [ ${__r} -eq 0 ] || die "Unable to install new pisi!: ${__r}" "${head}"
 
     ${_b_install_sysroot} && (
-        print_info "Adding the latest source repo to ${DISTRIB_DESCRIPTION} ${ARCH} sysroot" "${head}"
-        # FIXME: no binary repo for now
+        print_t2 "Adding the latest repositories to ${DISTRIB_DESCRIPTION} ${ARCH} sysroot"
+
         (pisi_ cross ar ${BIN_REPO_NAME} ${BIN_REPO_INDEX})
+        __r=$?; wait
+        [ ${__r} -eq 0 ] || die "PiSi initialization failed!" "${head}"
+
         (pisi_ cross ar ${SRC_REPO_NAME} ${SRC_REPO_INDEX})
         __r=$?; wait
-
         [ ${__r} -eq 0 ] || die "PiSi initialization failed!" "${head}"
+
+        # installing system.base and system.devel
+        (pisi_ cross it "-c system.base -c system.devel --ignore-comar")
+        __r=$?; wait
+        [ ${__r} -eq 0 ] || die "system.base and  system.devel couldn't be initialized!" "${head}"
     )
 
     return 0 # Success
@@ -1267,8 +1298,8 @@ init_farm()
 {
     local head="$(toupper $FUNCNAME)"
 
-    print_t2 "Preparing Buildfarm"
-    print_t2 "Oh, I just changed my mind, later baby :)"
+    # print_t2 "Preparing Buildfarm"
+    print_t2 "farm is not initialized for now, later baby.."
 }
 
 ##################################
@@ -1289,35 +1320,35 @@ emerge_minimum()
     local min_list=(
         # Package    # Component    : Dependencies
         ##########################################
-        # 'binutils'   # system.devel
-        # 'libsigsegv' # system.devel
-        # 'gnuconfig'  # system.devel
-        # 'patch'      # system.devel
-        # 'zip'        # system.base
-        # 'bzip2'      # system.base
-        # 'zlib'       # system.base
-        # 'gdbm'       # system.base
-        # 'ncurses'    # system.base  : gnuconfig
-        # 'texinfo'    # system.base  : ncurses
-        # 'attr'       # system.base
-        # 'acl'        # system.base  : attr
-        # 'libpcre'    # system.base
-        # 'glib2'      # system.base  : libpcre zlib
-        # 'groff'      # system.base  : texinfo
-        # 'gettext'    # system.base  : glib2 acl ncurses
-        # 'diffutils'  # system.base  : gettext patch
-        # 'expat'      # system.base  : diffutils gnuconfig
-        # 'm4'         # system.devel : gettext libsigsegv
-        # 'sed'        # system.base  : gettext
-        # 'bison'      # system.devel : gettext m4 patch
-        # 'gmp'        # system.devel
-        # 'mpfr'       # system.devel : gmp
+        'binutils'   # system.devel
+        'libsigsegv' # system.devel
+        'gnuconfig'  # system.devel
+        'patch'      # system.devel
+        'zip'        # system.base
+        'bzip2'      # system.base
+        'zlib'       # system.base
+        'gdbm'       # system.base
+        'ncurses'    # system.base  : gnuconfig
+        'texinfo'    # system.base  : ncurses
+        'attr'       # system.base
+        'acl'        # system.base  : attr
+        'libpcre'    # system.base
+        'glib2'      # system.base  : libpcre zlib
+        'groff'      # system.base  : texinfo
+        'gettext'    # system.base  : glib2 acl ncurses
+        'diffutils'  # system.base  : gettext patch
+        'expat'      # system.base  : diffutils gnuconfig
+        'm4'         # system.devel : gettext libsigsegv
+        'sed'        # system.base  : gettext
+        'bison'      # system.devel : gettext m4 patch
+        'gmp'        # system.devel
+        'mpfr'       # system.devel : gmp
         'busybox'    # system.base
         'glibc'      # system.base  : gettext
         'gcc'        # system.devel : binutils bison gettext gnuconfig
                      #                gmp mpfr ncurses patch sed texinfo zlib
         'db4'        # system.base
-        # 'perl'       # system.base  : bzip2 db4 gdbm groff
+        'perl'       # system.base  : bzip2 db4 gdbm groff
     )
 
     print_t2 "Emerging minimum development tools"
@@ -1343,9 +1374,9 @@ poke_farm()
 
 usage()
 {
-cat << __EOF
-${DISTRIB_DESCRIPTION} ${ARCH} builder script
-Copyright (C) 2010 TUBITAK/BILGEM
+    cat << __EOF
+${DISTRIB_DESCRIPTION} ${ARCH} sysroot preparator script
+Copyright (C) 2010, 2011 TUBITAK/BILGEM
 
 Please do NOT change defaults if you don't know what you do..
 
@@ -1412,7 +1443,7 @@ options:
   --skip-farm
       Do not initialize buildfarm
 
-  -h --help
+  -h --help --usage ?
       Most probably you are smart enough to figure out what this is.
       If you don't think you are, then please DO NOT run this script
       or forget existence of http://bugs.pardus.org.tr
@@ -1426,7 +1457,7 @@ __EOF
 ###               L E T   T H E   G A M E   B E G I N              ###
 ######################################################################
 
-# :: refers upper scope
+# :: refers the uppest scope
 head="::"
 
 # some functions/commands writes absurd sh*ts to log, this is the best ;)
@@ -1498,7 +1529,7 @@ while [ $# -ne 0 ]; do
             _b_skip_farm=true
             ;;
 
-        -h|--help|*)
+        -h|--help|--usage|'?'|*)
             usage
             exit 0
             ;;
@@ -1545,14 +1576,11 @@ ${_dialog_cl_normal}
 "
 
 # emerge_minimum
-# return 0
+# exit 0
 
 ### 1st, prepare the environment for building
 print_t1 "Preparing build environment"
 prepare || die "Preparation failed!" "$head"
-
-# let user see details for 3 secs, if force-yes, then no need to wait.
-${_b_force_yes} || sleep 3
 
 ${_b_install_toolchain} && {
     print_t1 "Toolchain Initialization"
@@ -1593,7 +1621,7 @@ ${_b_skip_farm} || {
 # FIXME: prep queue for first build
 # poke_farm
 
-println "${DISTRIB_DESCRIPTION} ${DISTRIB_RELEASE} sysroot initializing operation complated." | log ${_log_level_any}
+println "${DISTRIB_DESCRIPTION} sysroot initializing operation complated." | log ${_log_level_any}
 println "Congrats, happy hacking ;)" | log ${_log_level_any}
 
 cleanup
