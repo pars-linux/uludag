@@ -71,6 +71,9 @@ class PisiApi:
 
         logger.info("Building %s" % pspec)
         self.builder = pisi.operations.build.Builder(pspec)
+
+        #self.builder.search_old_packages_for_delta(max_count=3)
+
         self.builder.build()
 
         logger.info("Created package(s): %s" % self.builder.new_packages)
