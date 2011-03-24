@@ -156,7 +156,8 @@ def reset_proxy_settings():
     QNetworkProxy.setApplicationProxy(QNetworkProxy())
 
 def network_available():
-    return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
+    return True
+    # return pisi.fetcher.Fetcher('http://appinfo.pardus.org.tr').test()
 
 def parse_proxy(line):
     settings = {'domain':None,'user':None,'pass':None,'host':None,'port':None}
