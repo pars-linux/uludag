@@ -45,7 +45,7 @@ class ProgressDialog(PAbstractBox, Ui_ProgressDialog):
         self.registerFunction(OUT, self.busy.stopAnimation)
 
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
-        self.cancelButton.setIcon(KIcon("cancel"))
+        self.cancelButton.setIcon(KIcon("dialog-close"))
         self.parent = parent
 
         self.setStyleSheet("QLabel, QTextEdit, QTextBrowser{background:rgba(0,0,0,0);color:white;}")

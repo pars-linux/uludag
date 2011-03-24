@@ -66,7 +66,7 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
         self.pages.createPage(QLabel("Welcome to upgrade manager bla bla bla... ", self.widget))
         self.pages.createPage(QLabel("Second Page we can define anything in here... ", self.widget))
 
-        button = QPushButton("Install Curl package for test", self.widget)
+        button = QPushButton("Install 'Abe' package for test", self.widget)
         button.clicked.connect(self.install_test)
         self.pages.createPage(button,
                               inMethod  = lambda: self.nextButton.setEnabled(False),
@@ -83,7 +83,7 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
 
     def install_test(self):
 
-        packages = ['curl']
+        packages = ['abe']
         self.state._selected_packages = packages
         self.model.setPackages(packages)
         self.model.selectPackages(packages)
@@ -99,7 +99,7 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
         reinstall = True
         connection_required = True
         operation = self.state.operationAction(self.model.selectedPackages(),
-                                               reinstall = reinstall,
+                                               reinstall = False,
                                                silence = True,
                                                connection_required = connection_required)
         self._started = True
@@ -131,6 +131,8 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
         self.pages.next()
 
     def actionCancelled(self):
+        return
+
         # Package install failed with user cancel, return value is 3
         sys.exit(3)
 
