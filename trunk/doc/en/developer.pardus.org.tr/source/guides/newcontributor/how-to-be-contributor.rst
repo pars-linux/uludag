@@ -59,8 +59,8 @@ Sending Quiz to Applicant
 #. If the quiz review is negative, his/her bug will be closed with status RESOLVED/INVALID by mentoring coordinators and the `Rejection Stock Response`_ is given.
 #. If the applicant gets a rejection at that stage, in the case of his/her effort to Pardus, he/she can reapply in 3 months to be tester, 6 months to be developer.
 #. If the quiz review is positive:
-    #. If the applicant is applied as a tester, the test team membership will be accepted and tester list permissions will be gived. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
-    #. If the applicant is applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report and sends `Quiz Approved Stock Response`_ to the quiz is approved..
+    #. If the applicant applied as a tester, the test team membership will be accepted and tester list permissions will be given. The acceptence anouncement will be done by mentor coordinators as a `Tester Acceptence Stock Response`_ comment to the bug and the bug status will be changed to RESOLVED/FIXED.
+    #. If the applicant applied as a developer, the mentor that controls the quiz give `QUIZAPPROVED <http://bugs.pardus.org.tr/describekeywords.cgi>`_ keyword to the report and sends `Quiz Approved Stock Response`_ to the quiz is approved..
 
 
 Assigning Mentor
@@ -86,11 +86,11 @@ Mentoring Process
     #. Related to junior jobs difficulty, one more job can be demanded from the applicant. (Mentor can guide applicant to find one more job.)
     #. The owner of the packages that applicant has done will be his/her mentor.
 #. If the applicant might not have achieved to finish the applicant job until the deadline, his/her bug will be closed with status RESOLVED/INVALID by the mentor and related comment will be given. Mentor can also add the reapply time to the comment. (Reapply time is depended to mentor related to applicant performance)(The mentor will send and an email to sys. Admin for removing permissions.)
-#. If applicant has finished his/her jobs in time the applicant is enters applicant progress observation period.
+#. If applicant has finished his/her jobs in time the applicant enters applicant progress observation period.
 
 Applicant Progress Observation
 ------------------------------
-#. The applicant process finishing time is related to the his/her mentor.
+#. The applicant process finishing time is related to his/her mentor.
 #. The owner of the packages that applicant has done will be his/her mentor.
 #. All svn permissions excluding "stable" will be given to applicant. (The mentor will send and an email to sys. Admin for giving permissions.)
 #. Mentor will keep an eye on applicant, until the applicant reach a good level.
