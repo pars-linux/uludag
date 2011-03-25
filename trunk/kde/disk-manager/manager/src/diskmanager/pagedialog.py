@@ -36,3 +36,18 @@ class PageDialog(kdeui.KPageDialog):
         self.addPage(self.page_item)
 
         self.edit = self.page_widget
+
+    def slotButtonClicked(self, button):
+        if button == kdeui.KPageDialog.Ok:
+            if self.validate():
+                kdeui.KPageDialog.slotButtonClicked(self, button)
+        else:
+            kdeui.KPageDialog.slotButtonClicked(self, button)
+
+    def validate(self):
+        if self.page_widget.getAutoMount():
+            if not self.page_widget.getMountPoint():
+                QtGui.QMessageBox.information(self, kdecore.i18n('Error'), kdecore.i18n("Mount point is required"))
+                return False
+        return True
+
