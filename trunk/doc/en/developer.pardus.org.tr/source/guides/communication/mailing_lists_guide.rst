@@ -14,7 +14,6 @@ Before Posting
 --------------
 
 Please first try to find `help documents`_ or look into `list archives`_ about your problem. If you do not find a suitable answer, you can write to a relevant list.
-.. relevant list linki ekle
 
 Posting
 -------
