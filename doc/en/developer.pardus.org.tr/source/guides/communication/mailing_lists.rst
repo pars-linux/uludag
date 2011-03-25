@@ -64,6 +64,10 @@ Contributor Lists
 +----------------------+----------------------------------------------------------------------------------+----------+-------------------------------+
 | testci_              |  For test team discussion concerning Pardus test processes.                      | tr       | Public                        |
 +----------------------+----------------------------------------------------------------------------------+----------+-------------------------------+
+| teknik_              |  For technical discussions about any kind of software development activity       |          |                               |
+|                      |   concerning the Pardus distribution itself or the tools and utilities conceived |          |                               |
+|                      |   by Pardus developers.                                                          | tr       | Public                        |
++----------------------+----------------------------------------------------------------------------------+----------+-------------------------------+
 | gsoc_                |  For Google Summer of Code discussions of Pardus.                                | eng      | Public                        |
 +----------------------+----------------------------------------------------------------------------------+----------+-------------------------------+
 | pardus-mirrors_      |  For mirror request and announcements.                                           | tr,eng   | Public                        |
@@ -150,3 +154,4 @@ Obsolte Lists
 .. _u18a-en: http://lists.pardus.org.tr/u18a-en/
 .. _yali: http://lists.pardus.org.tr/yali/
 .. _zemberek-pardus: http://lists.pardus.org.tr/zemberek-pardus/
+.. _teknik: http://liste.pardus.org.tr/mailman/listinfo/teknik
