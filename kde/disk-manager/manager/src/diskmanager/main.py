@@ -209,7 +209,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 if "Comar.PolicyKit" in e._dbus_error_name:
                     kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
                 else:
-                    kdeui.KMessageBox.error(self, unicode(e))
+                    err = kdecore.i18n("Error") + unicode(e)[unicode(e).find(":"):]
+                    kdeui.KMessageBox.error(self, err)
 
     def slotItemDelete(self):
         """ Delete button clicked. """
