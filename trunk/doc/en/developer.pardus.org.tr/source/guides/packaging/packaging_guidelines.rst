@@ -524,13 +524,16 @@ Sometimes it is necessary to rename or replace an existing package. The new paca
 If a package is renamed without any functional changes or package(s) replace with an existing package, the necessary changes should be made on relevant files:
 
 
-    * The package(s) that will not exist after the changes, should be tagged with <Obsolete> in distribution.xml file as below:
+    * The package(s) that will not exist after the changes, should be tagged between  <Obsoletes> </Obsoletes>  in distribution.xml file as below:
 
     ::
-
+        <Obsoletes>
         <!--A comment should be gived for package(s) that removed from repository-->
-        <Package>oldpackage</Package>
-
+            <Package>oldpackage</Package>
+            .
+            .
+            .
+        </Obsoletes>
     ::
 
         Example:
