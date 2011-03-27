@@ -401,7 +401,7 @@ msgstr "Выбор операции"
 
 #: src/statemanager.py:114
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 новые пакеты были установлены успешно."
+msgstr "%1 новых пакетов успешно установлены."
 
 #: src/statemanager.py:115
 msgid "%1 package(s) have been removed succesfully."
