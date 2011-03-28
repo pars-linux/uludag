@@ -18,21 +18,6 @@
     <normaloff>:/icons/web.png</normaloff>:/icons/web.png</iconset>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QComboBox" name="comboComputers">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <item>
-      <property name="text">
-       <string>Select...</string>
-      </property>
-     </item>
-    </widget>
-   </item>
    <item row="0" column="2">
     <widget class="QPushButton" name="pushRefresh">
      <property name="sizePolicy">
@@ -96,7 +81,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="4">
+      <item row="0" column="5">
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -160,7 +145,31 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="4">
+       <widget class="QPushButton" name="pushBrowser">
+        <property name="text">
+         <string>View In Browser</string>
+        </property>
+        <property name="icon">
+         <iconset resource="web.qrc">
+          <normaloff>:/icons/web.png</normaloff>:/icons/web.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>22</width>
+          <height>22</height>
+         </size>
+        </property>
+       </widget>
+      </item>
      </layout>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Service:</string>
+     </property>
     </widget>
    </item>
   </layout>
