@@ -19,7 +19,7 @@ Choosing Bugs
 Understanding Bugzilla
 ----------------------
 
-    * See :ref:`bug-cycle`
+    * See `bug cycle`_
 
 Check list for bugs have NEW status
 -----------------------------------
@@ -171,3 +171,4 @@ General Advice
     * Please read carefully, and think before you click.
     * Use :ref:`stock-responses` as appropriate.
 
+.. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
