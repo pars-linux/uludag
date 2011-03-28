@@ -154,14 +154,14 @@ When a wrong format is used in the pspec.xml file, `package SVN commit hook`_ ca
 
 Some Errors:
 ^^^^^^^^^^^^
-invalid version
-bad release number
-invalid date
-package name has invalid char
-out of order release numbers
-this is a duplicate source package of
-this source has duplicate binary package
-package depends on missing package
+* invalid version
+* bad release number
+* invalid date
+* package name has invalid char
+* out of order release numbers
+* this is a duplicate source package of
+* this source has duplicate binary package
+* package depends on missing package
 
 
 History Comments
@@ -172,6 +172,7 @@ Every time you make changes, that means whenever you increment a package release
 Therefore there are some restrictions while writing history comments
 
 History comments and commit messages:
+
 #. Should be in English
 #. Should be short and descriptive
 #. Max 80 character long
