@@ -46,6 +46,7 @@ Takeover Process
 
 #. Control why the package was orphaned on announced mail.
 #. Announce on devel_ and gelistirici_ which packages you would like to become the owner of.
+#. If you think that the component of the package is wrong, please also announce its new component and take an approval from an experienced developer.
 #. Run takeover_ script for the package(s) you want to takeover.
 #. Take all open bugs of the related packages on `Pardus bugzilla`_
 
@@ -70,6 +71,7 @@ List of Orphaned Packages
 .. _obsoleted: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#renaming-replacing-existing-packages
 .. _package replace procedure: http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#renaming-replacing-existing-packages
 .. _Pardus bugzilla: http://bugs.pardus.org.tr/
+.. _component: http://developer.pardus.org.tr/guides/packaging/package_components.html
 
 .. script sayfası yazılınca takeover linki yerine koy
 .. orphaned packages liste linkini yeni packages sitesi yapılınca değiştir.
