@@ -57,7 +57,8 @@ class ThreadFW(QtCore.QThread):
                 os.kill(process.pid, signal.SIGINT)
                 break
 
-        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
+        self.rules_xml = file(name).read()
+        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', self.rules_xml)[0]
 
         process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         if process.wait() != 0:
@@ -71,7 +72,7 @@ class ThreadFW(QtCore.QThread):
         data = re.sub('(reset_all )', '#\\1', data)
         data = re.sub('RULE_', '%s_RULE_' % self.group_name, data)
         data = re.sub('"RULE ', '"%s RULE ' % self.group_name, data)
-        self.rules_compiled = rules
+        self.rules_compiled = data
 
 
 class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
@@ -193,15 +194,22 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
     def __slot_thread(self):
         if self.thread.isFinished():
-            self.plainTextEdit.setPlainText("")
-            if not self.thread.status:
+            self.rules_xml = self.thread.rules_xml
+            self.rules_compiled = self.thread.rules_compiled
+            if self.thread.status:
+                self.plainTextEdit.setPlainText("")
+            else:
                 self.plainTextEdit.setPlainText(self.thread.error)
+        self.pushEdit.setEnabled(True)
+        self.pushReset.setEnabled(True)
 
     def __slot_edit(self):
         """
             Triggered when user clicks 'Edit Rules' button.
         """
 
+        self.pushEdit.setEnabled(False)
+        self.pushReset.setEnabled(False)
         self.thread = ThreadFW("Test", self.rules_xml)
         self.connect(self.thread, QtCore.SIGNAL("finished()"), self.__slot_thread)
         self.thread.start()
