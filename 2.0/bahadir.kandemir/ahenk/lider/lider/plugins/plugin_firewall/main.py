@@ -207,10 +207,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
             Triggered when user clicks 'Edit Rules' button.
         """
+        if self.item:
+            name = self.item.name
+            name = name.upper()
+        else:
+            name = "Group"
 
         self.pushEdit.setEnabled(False)
         self.pushReset.setEnabled(False)
-        self.thread = ThreadFW("Test", self.rules_xml)
+        self.thread = ThreadFW(name, self.rules_xml)
         self.connect(self.thread, QtCore.SIGNAL("finished()"), self.__slot_thread)
         self.thread.start()
 
