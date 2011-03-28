@@ -45,22 +45,33 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
 
         # UI events
         self.connect(self.pushRefresh, QtCore.SIGNAL("clicked()"), self.__slot_refresh)
-        self.connect(self.comboComputers, QtCore.SIGNAL("activated(int)"), self.__slot_select)
-        self.connect(self.comboServices, QtCore.SIGNAL("activated(int)"), self.__slot_select2)
+        self.connect(self.comboServices, QtCore.SIGNAL("activated(int)"), self.__slot_select)
         self.connect(self.webView, QtCore.SIGNAL("loadFinished(bool)"), self.__slot_web_loaded)
         self.connect(self.pushBack, QtCore.SIGNAL("clicked()"), self.__slot_web_back)
         self.connect(self.pushForward, QtCore.SIGNAL("clicked()"), self.__slot_web_forward)
         self.connect(self.pushReload, QtCore.SIGNAL("clicked()"), self.__slot_web_reload)
         self.connect(self.pushPrint, QtCore.SIGNAL("clicked()"), self.__slot_web_print)
 
+    def set_item(self, item):
+        """
+            Sets directory item that is being worked on.
+            Not required for global widgets.
+        """
+        self.item = item
+        if not self.item:
+            self.webView.setHtml("")
+            self.comboServices.clear()
+            self.comboServices.addItem("Select...")
+        else:
+            name = self.item.name
+            jid = "%s@%s" % (name, self.talk.domain)
+            self.talk.send_command(jid, "apache.info")
+
     def showEvent(self, event):
         """
             Things to do before widget is shown.
         """
-        self.comboComputers.clear()
-        self.comboComputers.addItem("Select...")
-        for username in self.talk.online:
-            self.comboComputers.addItem(username)
+        pass
 
     def get_type(self):
         """
@@ -99,38 +110,15 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         """
             Main window calls this method when an XMPP status is changed.
         """
-        if status == talk.Online:
-            for i in range(1, self.comboComputers.count()):
-                if sender == str(self.comboComputers.itemText(i)):
-                    return
-            self.comboComputers.addItem(sender)
-        elif status == talk.Offline:
-            for i in range(1, self.comboComputers.count()):
-                if sender == str(self.comboComputers.itemText(i)):
-                    self.comboComputers.removeItem(i)
-                    return
+        pass
 
     def __slot_refresh(self):
         """
             Triggered when users clicks refresh button.
         """
-        index = self.comboComputers.currentIndex()
-        self.__slot_select(index)
+        self.set_item(self.item)
 
     def __slot_select(self, index):
-        """
-            Triggered when users selects a computer.
-        """
-        if index == 0:
-            self.webView.setHtml("")
-            self.comboServices.clear()
-            self.comboServices.addItem("Select...")
-        else:
-            name = str(self.comboComputers.itemText(index))
-            jid = "%s@%s" % (name, self.talk.domain)
-            self.talk.send_command(jid, "apache.info")
-
-    def __slot_select2(self, index):
         """
             Triggered when users selects a computer.
         """
