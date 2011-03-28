@@ -887,13 +887,30 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.talk.send_command(jid, "ahenk.force_update")
 
         if self.__slot_save():
+            names = []
             for item in self.items:
                 if item.folder:
                     for dn, attrs in self.directory.search(item.dn, scope="sub", fields=['objectClass']):
                         if dn.startswith("cn="):
-                            xmpp_update(dn.split(",")[0].split("=")[1])
+                            names.append(dn.split(",")[0].split("=")[1])
                 else:
-                    xmpp_update(item.name)
+                    names.append(item.name)
+
+            if not len(names):
+                return
+
+            msg = QtGui.QMessageBox(self)
+            msg.setIcon(QtGui.QMessageBox.Question)
+            msg.setText("%d item(s) will be forced to update policy." % len(names))
+            msg.setInformativeText("Do you want to continue?")
+            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+            msg.setDefaultButton(QtGui.QMessageBox.Yes)
+
+            if msg.exec_() != QtGui.QMessageBox.Yes:
+                return
+
+            for name in names:
+                xmpp_update(name)
 
     def __slot_save(self):
         """
