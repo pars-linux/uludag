@@ -7,7 +7,7 @@ Packaging Guidelines
 
 :Author: Semen Cirit
 
-:Version: 0.5
+:Version: 0.6
 
 During package reviews the reviewer and the packager should deal with the above issues. They make sure that the package in review require a package or can be worked on after these packages is in the repository.
 
@@ -195,7 +195,7 @@ History comments and commit messages:
     <Comment>
         - description 1
         - description 2
-        - Fixes bugs (#9021, #9038, #9020, #4113, #9089, #8811, #8361, #9101, #8845, #8123, #6157, #9156, #9083)
+        - Fixes bugs (pb#9021, pb#9038, pb#9020, pb#4113, pb#9089, pb#8811, pb#8361, pb#9101, pb#8845, pb#8123, pb#6157, pb#9156, pb#9083)
     </Comment>
 
 
@@ -206,6 +206,10 @@ The bug format changes according to bugzilla source:
         - KDE bugs kde#<bugnumber>
         - Redhat bugs rhbz#<bugnumber>
         - SUSE bugs bnc#<bugnumber>
+        - Pardus bugs pb#<bugnumber>
+        - Launchpad lp:<bugnumber>
+        - freedesktop.org  fdo#<bugnumber>
+        - bugzilla.novell.com bnc#<bugnumber>
 
 Buildtime Dependencies
 ----------------------

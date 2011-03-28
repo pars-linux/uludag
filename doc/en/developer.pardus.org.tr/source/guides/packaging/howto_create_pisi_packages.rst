@@ -7,7 +7,7 @@ How to Create Pisi Packages
 
 :Author: Semen Cirit
 
-:Version: 0.5
+:Version: 0.6
 
 Creating Package
 ----------------
@@ -68,10 +68,11 @@ command under package named directory.
 
     <Package>
         <Name></Name>
+         <PartOf></PartOf>
          <BuildType></BuildType>
-         <BuildDependencies>
-            <Dependency></Dependency>
-        </BuildDependencies>
+         <BuildFlags>
+            <Flag></Flag>
+        </BuildFlags>
         <RuntimeDependencies>
             <AnyDependency>
                 <Dependency></Dependency>
@@ -105,7 +106,7 @@ command under package named directory.
     </Package>
 
     <History>
-        <Update release="1">
+        <Update release="" type="">
             <Date>YYYY-MM-DD</Date>
             <Version></Version>
             <Comment>First release.</Comment>
@@ -164,6 +165,11 @@ command under package named directory.
 
     <Package>
         <Name>texlive-core</Name>
+         <PartOf>office.misc</PartOf>
+         <BuildFlags>
+            <Flag>noDebug</Flag>
+            <Flag>noDelta</Flag>
+        </BuildFlags>
         <RuntimeDependencies>
             <Dependency>fontconfig</Dependency>
             <Dependency>teckit</Dependency>
@@ -202,13 +208,28 @@ command under package named directory.
         </Package>
 
         <History>
-            <Update release="4">
+            <Update release="5" type="critical">
                 <Date>2010-02-25</Date>
                 <Version>0.0_20091107</Version>
-                <Comment>Enable font generation to users.</Comment>
+                <Comment>
+                    * Fix a file descriptor leak
+                    * Fix e2fsck bug (Red Hat Bugzilla #465679)
+                    * Fix a bug in resize2fs (Red Hat Bugzilla: #465984)
+                    * Fix a bug in libblkid so it correctly detects the ext4 and ext4dev filesystems
+                    * Fixed a parallel build problem (Sourceforge Bug: #214328)
+                </Comment>
                 <Name>Semen Cirit</Name>
                 <Email>scirit@pardus.org.tr</Email>
             </Update>
+
+            <Update release="4" type="security">
+                <Date>2010-02-20</Date>
+                <Version>0.0_20080816</Version>
+                <Comment>Bump xorg-server to 1.4.2 which fixes fixes CVE-2008-{1377,1379,2360,2361,2362}</Comment>
+                <Name>Semen Cirit</Name>
+                <Email>scirit@pardus.org.tr</Email>
+            </Update>
+
             <Update release="3">
                 <Date>2010-02-15</Date>
                 <Version>0.0_20080816</Version>
@@ -226,10 +247,10 @@ Different pspec.xml File Tags
     #. **<Name>:** The name of the package is added here. It must follow the :ref:`package-naming`. This should be match with the <Name> part of <Package> tag.
     #. **<Homepage>:** The project page of the package is added here.
     #. **<Packager>:** The packager name is added <Name>, and email is added to <Email> part.
-    #. **<ExcludeArch>:** When a package could not be compiled for a specific architecture it should be added to pspec.xml file with this tag.
-    #. **<License>:** The pacakge license type is added here. See :ref:`licensing-guidelines`.
+    #. **<ExcludeArch>:** When a package could not be compiled for a specific architecture it should be added to pspec.xml file with this tag. You can see different architecture types, look **<!-- ExcludeArch -->** part of `pisi-spec.rng`_ file.
+    #. **<License>:** The package license type is added here. See :ref:`licensing-guidelines`. You can see different license type used, look **<!-- License -->** part of `pisi-spec.rng`_ file.
     #. **<Icon>:** If a package has a gui part, the icon name should be added this part.
-    #. **<IsA>:** This tag is used in order to give the types of the software which the the package includes. One then more IsA type can be used, if it is relevant.
+    #. **<IsA>:** This tag is used in order to give the types of the software which the the package includes. One then more IsA type can be used, if it is relevant. You can see different IsA types, look **<!-- IsA -->** part of `pisi-spec.rng`_ file.
         Different IsA types used for Pardus packages:
 
         * app
@@ -290,28 +311,41 @@ Different pspec.xml File Tags
 
         **sha1sum:** This attribute is for sha1sum value
 
-        **type:** This attribute is for archive type.  These are the different archive types used for Pardus:
+        **type:** This attribute is for archive type. You can see different archive types, look **<!-- attlist.Archive -->** part of `pisi-spec.rng`_ file.  These are the different archive types used for Pardus:
 
-        * targz
-        * tarbz2
-        * tarlzma
-        * tar
-        * zip
-        * gzip
-        * binary
+            * targz
+            * tarbz2
+            * tarlzma
+            * tarxz
+            * tarZ
+            * tar
+            * zip
+            * gz
+            * gzip
+            * bz2
+            * bzip2
+            * lzma
+            * xz
+            * binary
 
         The download link includes between <Archive> tag and the mirrors can also be used. See `usage <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#giving-mirrors>`_.
 
-    #. **<BuildDependencies>:** This part is used in order to list packages which is required for building (compiling) the package. These dependencies can not be automatically find. So you should try to compile the pacakge in a proper system and you need to include everything needed to build the program. The packages for development environment are not needed to add as a build dependency. You can see the list of packages that will be ignored from `here <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#dependencies-excepted>`_. You need to add all dependencies in a different <Dependency> tag.  You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details.
-    #. **<Patches>:** The list of patches added here. Each patch should be added with <Patch> tag and added in the order that they applied.
+    #. **<BuildDependencies>:** This part is used in order to list packages which is required for building (compiling) the package. These dependencies can not be automatically find. So you should try to compile the pacakge in a proper system and you need to include everything needed to build the program. The packages for development environment are not needed to add as a build dependency. You can see the list of packages that will be ignored from `here <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#dependencies-excepted>`_. You need to add all dependencies in a different <Dependency> tag.  You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details. You can see different strict dependency types, look **<!-- attlist.VersionReleaseToFrom -->** part of `pisi-spec.rng`_ file.
+    #. **<Patches>:** The list of patches added here. Each patch should be added with <Patch> tag and added in the order that they applied. You can see different patch attributes, look **<!-- attlist.Patch -->** part of `pisi-spec.rng`_ file.
 
     The level parameter is needed in order to apply the patch properly. It specifies depth differences of the patch and the file that the patch will be applied.
 #. **<Package>:**  This main tag is needed in order to give package information when it runs on the system.
 
     #. **<Name>:** The name of the package is added here. It must follow the :ref:`package-naming`. This should be match with the <Name> part of <Source> tag.
+    #. **<PartOf>** If a source contains more than one package, each package can belong to different components_. This compenent can be given between **<PartOf>** tag.
     #. **<BuildType>** One more than packages can be created from same source, if one of these packages needs a special architecture to build, it should be added with <BuildType> tag. This value can be "32bit" or "64bit".
+    #. **<BuildFlags>**  You can see different build flags types, look **<!-- Flag -->** part of `pisi-spec.rng`_ file.
+        **noDebug** flag is used to disable building of a debug package for this package tag.
+
+        **noDelta** flag is used to disable building of delta packages automatically. It doesn't change the behaviour of "pisi delta" command.
+
     #. **<BuildDependencies>** One more than packages can be created from same source, if one of these packages needs a special dependency to build, it should be added with <BuildDependencies> tag.
-    #. **<RuntimeDependencies>:** This part is used in order to list packages which is required when the program runs. In order to find runtime dependencies please `see <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#runtime-dependencies>`_. You need to add all dependencies in a different <Dependency> tag. You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details.
+    #. **<RuntimeDependencies>:** This part is used in order to list packages which is required when the program runs. In order to find runtime dependencies please `see <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#runtime-dependencies>`_. You need to add all dependencies in a different <Dependency> tag. You can also specify minimum versions or releases of the package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#strict-dependencies>`_ for details. You can see different strict dependency types, look **<!-- attlist.VersionReleaseToFrom -->** part of `pisi-spec.rng`_ file.
     #. **<AnyDependency>:** This part is used when the package can have more than one dependency for a specific work. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#any-dependency>`_.
     #. **<Conflicts>:** This part is used for the packages that conflict with the prapared package. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#conflicting-packages>`_
 
@@ -356,11 +390,11 @@ Different pspec.xml File Tags
 
             **release:** The release number of the change should be gived here.
 
-            **type:** The type of the change should be gived there. There are two types used for Pardus. For critical changes "critical", for security changes "security" value are used.
+            **type:** The type of the change should be gived there. There are two types used for Pardus. For critical changes "critical", for security changes "security" value are used. You can see different update types, look **<!-- attlist.Update -->** part of `pisi-spec.rng`_ file.
         #. **<Date>:** This part is used for adding the time that the change done. The format should be "YYYY-MM-DD"
         #. **<Version>:** The version of the package should be written there. See `link <http://developer.pardus.org.tr/guides/packaging/binary_package_naming_guidelines.html#version-number>`_
         #. **<Comment>:** The description of the change should be added here. See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#history-comments>`_
-        #. **<Requires>:** There are three type actions can be applied for the package.
+        #. **<Requires>:** There are three type actions can be applied for the package. You can see different require types, look **<!-- Requires -->** part of `pisi-spec.rng`_ file.
             - reverseDependencyUpdate: This action should be used, when the package are installed, the packages that are dependent to this package should be updated::
 
                 <Action package="module-fglrx-userspace">reverseDependencyUpdate</Action>
@@ -418,3 +452,5 @@ Different translations.xml File Tags
 
 See `link <http://developer.pardus.org.tr/guides/packaging/packaging_guidelines.html#summary-and-description>`_.
 
+.. _pisi-spec.rng: http://svn.pardus.org.tr/uludag/trunk/pisi/pisi-spec.rng
+.. _components: http://developer.pardus.org.tr/guides/packaging/package_components.html
