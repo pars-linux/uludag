@@ -26,6 +26,54 @@ from lider.helpers import plugins
 from lider.helpers import wrappers
 
 
+class ThreadFW(QtCore.QThread):
+    def __init__(self, group_name= None, rules_xml=None):
+        QtCore.QThread.__init__(self)
+
+        self.status = None
+        self.error = ""
+
+        if group_name:
+            self.group_name = group_name
+        else:
+            self.group_name = "Firewall"
+
+        if len(rules_xml):
+            self.rules_xml = rules_xml
+        else:
+            self.rules_xml = file("/usr/share/ahenk-lider/firewall.fwb").read()
+
+        self.rules_compiled = ""
+
+    def run(self):
+        fp = tempfile.NamedTemporaryFile(delete=False)
+        name = fp.name
+        fp.write(self.rules_xml)
+        fp.close()
+
+        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
+        while True:
+            if "delayedQuit" in process.stderr.readline():
+                os.kill(process.pid, signal.SIGINT)
+                break
+
+        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
+
+        process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if process.wait() != 0:
+            self.status = False
+            self.error = process.stderr.read()
+            return
+
+        self.status = True
+
+        data = file(name + ".sh").read()
+        data = re.sub('(reset_all )', '#\\1', data)
+        data = re.sub('RULE_', '%s_RULE_' % self.group_name, data)
+        data = re.sub('"RULE ', '"%s RULE ' % self.group_name, data)
+        self.rules_compiled = rules
+
+
 class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
     """
         Firewall management UI.
@@ -46,6 +94,9 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
 
         # Attach generated UI
         self.setupUi(self)
+
+        # FW Builder thread
+        self.thread = None
 
         # UI events
         self.connect(self.radioEnable, QtCore.SIGNAL("clicked()"), self.__slot_status)
@@ -140,35 +191,20 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
         pass
 
+    def __slot_thread(self):
+        if self.thread.isFinished():
+            self.plainTextEdit.setPlainText("")
+            if not self.thread.status:
+                self.plainTextEdit.setPlainText(self.thread.error)
+
     def __slot_edit(self):
         """
             Triggered when user clicks 'Edit Rules' button.
         """
-        fp = tempfile.NamedTemporaryFile(delete=False)
-        name = fp.name
-        if len(self.rules_xml):
-            fp.write(self.rules_xml)
-        else:
-            fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())
-        fp.close()
 
-        self.plainTextEdit.setPlainText("")
-
-        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
-        while True:
-            if "delayedQuit" in process.stderr.readline():
-                os.kill(process.pid, signal.SIGINT)
-                break
-
-        fw_name = re.findall('Firewall.*iptables.*name="([a-zA-Z0-9\-_]+)"', file(name).read())[0]
-
-        process = subprocess.Popen(["/usr/bin/fwb_ipt", "-q", "-f", name, "-o", "%s.sh" % name, fw_name], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if process.wait() != 0:
-            self.plainTextEdit.setPlainText(process.stderr.read())
-            return
-
-        self.rules_xml = file(name).read()
-        self.rules_compiled = file(name + ".sh").read()
+        self.thread = ThreadFW("Test", self.rules_xml)
+        self.connect(self.thread, QtCore.SIGNAL("finished()"), self.__slot_thread)
+        self.thread.start()
 
     def __slot_reset(self):
         """
