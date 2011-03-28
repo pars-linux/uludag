@@ -64,7 +64,7 @@ KCMKeyboard::KCMKeyboard(QWidget *parent, const QVariantList &/*args*/)
 
   keyboardConfig = new KeyboardConfig();
 
-  systemWide = new QCheckBox("Save settings system &wide");
+  systemWide = new QCheckBox(i18n("Save settings system &wide"));
 
   QVBoxLayout *layout = new QVBoxLayout(this);
   layout->setMargin(0);
