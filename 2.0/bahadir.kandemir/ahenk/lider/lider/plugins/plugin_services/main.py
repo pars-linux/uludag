@@ -50,10 +50,10 @@ class WidgetModule(QtGui.QWidget, Ui_widgetServices, plugins.PluginWidget):
             Not required for global widgets.
         """
         self.item = item
-        if not self.item:
-            self.groupBox.setEnabled(False)
-        else:
+        if self.item and not self.item.folder:
             self.groupBox.setEnabled(True)
+        else:
+            self.groupBox.setEnabled(False)
 
     def showEvent(self, event):
         """
