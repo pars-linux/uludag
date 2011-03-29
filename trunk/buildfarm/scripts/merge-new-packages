@@ -8,6 +8,45 @@ import shutil
 import pisi
 from buildfarm import utils
 
+def get_releases(repo_dir):
+    releases = {}
+    for root, dirs, files in os.walk(repo_dir):
+        for filename in files:
+            if filename.endswith(".delta.pisi"):
+                continue
+
+            if not filename.endswith(".pisi"):
+                continue
+
+            name, ver, rel, distro, arch = \
+                    pisi.util.split_package_filename(filename)
+
+            releases.setdefault(name, []).append(rel)
+
+    return releases
+
+def find_missing_delta_packages(testing_dir, stable_dir):
+    releases = get_releases(stable_dir)
+    testing_index = pisi.index.Index(os.path.join(testing_dir, "pisi-index.xml"))
+
+    missing_delta_packages = []
+    for package in testing_index.packages:
+        if package.name not in releases:
+            continue
+
+        for delta_package in package.deltaPackages:
+            if delta_package.releaseFrom not in releases[package.name]:
+                continue
+
+            fn = delta_package.packageURI
+
+            if not os.path.exists(os.path.join(stable_dir, fn)):
+                missing_delta_packages.append(fn)
+
+    missing_delta_packages.sort()
+    return missing_delta_packages
+
+
 if __name__ == "__main__":
     dry_run = True
     input_file = None
@@ -69,6 +108,16 @@ if __name__ == "__main__":
         copy(package_file, stable_dir)
     print
 
+    print "Looking for missing delta packages in stable repository..."
+    packages = find_missing_delta_packages(testing_dir, stable_dir)
+    print
+
+    print "Copying missing delta packages into %s" % stable_dir
+
+    for package_file in packages:
+        copy(os.path.join(testing_dir, package_file), stable_dir)
+    print
+
     print "Creating index for stable repository..."
     index(stable_dir)
     print
@@ -92,6 +141,16 @@ if __name__ == "__main__":
     print "Copying missing debug packages into %s" % stable_debug_dir
 
     for package_file in missing_debug_packages:
+        copy(os.path.join(testing_debug_dir, package_file), stable_debug_dir)
+    print
+
+    print "Looking for missing delta packages in stable debug repository..."
+    packages = find_missing_delta_packages(testing_debug_dir, stable_debug_dir)
+    print
+
+    print "Copying missing delta packages into %s" % stable_debug_dir
+
+    for package_file in packages:
         copy(os.path.join(testing_debug_dir, package_file), stable_debug_dir)
     print
 
