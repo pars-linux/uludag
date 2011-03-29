@@ -6,6 +6,7 @@
 """
 
 # Standard modules
+import os
 import simplejson
 
 # Qt4 modules
@@ -42,6 +43,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         self.pushForward.setEnabled(False)
         self.pushReload.setEnabled(False)
         self.pushPrint.setEnabled(False)
+        self.pushBrowser.setEnabled(False)
 
         # UI events
         self.connect(self.pushRefresh, QtCore.SIGNAL("clicked()"), self.__slot_refresh)
@@ -51,6 +53,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         self.connect(self.pushForward, QtCore.SIGNAL("clicked()"), self.__slot_web_forward)
         self.connect(self.pushReload, QtCore.SIGNAL("clicked()"), self.__slot_web_reload)
         self.connect(self.pushPrint, QtCore.SIGNAL("clicked()"), self.__slot_web_print)
+        self.connect(self.pushBrowser, QtCore.SIGNAL("clicked()"), self.__slot_web_browser)
 
     def set_item(self, item):
         """
@@ -137,6 +140,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         self.pushForward.setEnabled(history.canGoForward())
         self.pushReload.setEnabled(True)
         self.pushPrint.setEnabled(True)
+        self.pushBrowser.setEnabled(True)
 
     def __slot_web_back(self):
         """
@@ -165,3 +169,11 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
         dialog.exec_()
         printer = dialog.printer()
         self.webView.print_(printer)
+
+    def __slot_web_browser(self):
+        """
+            Triggered when user clicks "Browse" button.
+        """
+        index = self.comboServices.currentIndex()
+        url = self.comboServices.itemData(index).toString()
+        os.system("firefox \"%s\" &" % url)
