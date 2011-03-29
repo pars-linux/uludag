@@ -1,3 +1,6 @@
 
- Nothing to do.
+ - Do not forget to add "kde4" parameter to setup.py for kde4-based pacages, like;
+
+   sudo python setup.py kde4
+
 
