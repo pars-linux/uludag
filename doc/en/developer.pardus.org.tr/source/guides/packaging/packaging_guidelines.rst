@@ -202,12 +202,11 @@ History comments and commit messages:
 
 The bug format changes according to bugzilla source:
 
-    - If the bug is in Pardus Bugzilla, the comments about this bug referenced with only "#" and the bug number.
+    - If the bug is in Pardus Bugzilla, the comments about this bug referenced with  "pb#<bugnumber>".
     - If the bug is in external bugzillas, the comments contains used bug references of relevant bugzillas:
         - KDE bugs kde#<bugnumber>
         - Redhat bugs rhbz#<bugnumber>
         - SUSE bugs bnc#<bugnumber>
-        - Pardus bugs pb#<bugnumber>
         - Launchpad lp:<bugnumber>
         - freedesktop.org  fdo#<bugnumber>
         - bugzilla.novell.com bnc#<bugnumber>
