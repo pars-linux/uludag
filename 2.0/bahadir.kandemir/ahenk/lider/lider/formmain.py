@@ -107,6 +107,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.connect(self.treeSummary, QtCore.SIGNAL("itemClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_click)
         self.connect(self.treeSummary, QtCore.SIGNAL("itemDoubleClicked(QTreeWidgetItem*, int)"), self.__slot_tree2_double_click)
 
+        self.connect(self.radioPolicyInherit, QtCore.SIGNAL("toggled(bool)"), self.__slot_inherit_toggle)
+        self.connect(self.pushCopyPolicy, QtCore.SIGNAL("clicked()"), self.__slot_copy)
 
         self.connect(self.pushSave, QtCore.SIGNAL("clicked()"), self.__slot_save)
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
@@ -854,8 +856,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.framePolicyInherit.show()
             if policy_inherit:
                 self.radioPolicyInherit.setChecked(True)
+                self.pushCopyPolicy.setEnabled(False)
             else:
                 self.radioPolicyNoInherit.setChecked(True)
+                self.pushCopyPolicy.setEnabled(True)
         else:
             widget.policy_match = False
 
@@ -976,3 +980,21 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     widget.load_policy(widget.policy)
                 except AttributeError:
                     pass
+
+    def __slot_inherit_toggle(self, state):
+        """
+            Triggered when user switches inheritance policy.
+        """
+        if self.radioPolicyNoInherit.isChecked():
+            self.pushCopyPolicy.setEnabled(True)
+        else:
+            self.pushCopyPolicy.setEnabled(False)
+
+    def __slot_copy(self):
+        """
+            Triggered when user clicks "Copy Policy" button.
+        """
+        widget = self.stackedWidget.currentWidget()
+        item = widget.item.parent()
+        widget.policy = self.__load_policy(item)
+        widget.load_policy(widget.policy)
