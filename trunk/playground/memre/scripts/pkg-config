@@ -1,13 +1,21 @@
 #!/bin/bash
 #
+# TUBITAK UEKAE ~ Pardus Linux
+# Copyright (C) 2011
+# Mehmet Emre Atasever <memre ~ pardus.org.tr>
+#
 # pkg-config wrapper for PARM sb2 cross-build
-# Mehmet Emre Atasever
+#########################################################################
 #
-# copy this script into toolchain directory and add bin directory of
-# the toolchain at the first of PATH variable
+# Buildsystems often calls pkg-config for proper flags of the libraries.
+# But pkg-config gives flags for native systems and cross-build fails
+# because of linking x86 ELFCLASS. So we had to do a workaround like this.
 #
-# if $SYSROOT variable exported by cross-build, this script adds $SYSROOT
-# to the flags
+# In order to use this script, copy this into the toolchain bin directory
+# and add this bin directory at the head of the PATH variable
+#
+# if $SYSROOT variable is exported and --cflags --libs or --variable parametter
+# is passed to the pkg-config, this script adds $SYSROOT to the flags.
 #
 # Example output:
 #
@@ -15,7 +23,7 @@
 # $ PATH=/var/cross/sysroots/armv7l/bin:$PATH
 # $ which pkg-config
 # /opt/toolchain/armv7l/bin/pkg-config
-# $ pango > pkg-config --cflags --libs xrender
+# $ pkg-config --cflags --libs xrender
 # -lXrender -lX11
 # $ SYSROOT=/var/cross/sysroots/armv7l pkg-config --cflags --libs xrender
 # -I/var/cross/sysroots/armv7l/usr/include  -L/var/cross/sysroots/armv7l/usr/lib -lXrender -lX11
