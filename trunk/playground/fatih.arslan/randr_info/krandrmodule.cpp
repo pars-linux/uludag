@@ -124,9 +124,15 @@ void KRandRModule::load()
     qDebug() << vendorText << endl;
 
     if (vendorText.startsWith("NVIDIA")){
+        QString dontAskAgainName;
+        dontAskAgainName = QLatin1String("Do not ask again");
         int ret = KMessageBox::questionYesNo(this,
-                                    i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                         "Do you want to use nvidia-settings for your preferencies?"));
+                                             i18n("You are using the proprietary driver provided by the manufacturer.\n"
+                                                  "Do you want to use nvidia-settings for your preferencies?"),
+                                             i18n("Randr settings"),
+                                             KGuiItem(i18n("Yes"), KIcon("nvidia-settings")), 
+                                             KGuiItem(i18n("No")),
+                                             dontAskAgainName);
         if(ret == KMessageBox::Yes){
 
           KUrl url =  KUrl::fromPath("/usr/share/applications/nvidia-settings.desktop");
@@ -136,9 +142,15 @@ void KRandRModule::load()
         }
     }
     else if (vendorText.startsWith("ATI")){
+        QString dontAskAgainName;
+        dontAskAgainName = QLatin1String("Do not ask again");
         int ret = KMessageBox::questionYesNo(this,
-                                    i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                         "Do you want to use ati-control-center for your preferencies ?"));
+                                             i18n("You are using the proprietary driver provided by the manufacturer.\n"
+                                                  "Do you want to use ati-control-center for your preferencies?"),
+                                             i18n("Randr settings"),
+                                             KGuiItem(i18n("Yes"), KIcon("amdcclesu")), 
+                                             KGuiItem(i18n("No")),
+                                             dontAskAgainName);
         if(ret == KMessageBox::Yes){
 
           KUrl url =  KUrl::fromPath("/usr/share/applications/amdccclesu.desktop");
