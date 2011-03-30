@@ -59,6 +59,7 @@ bluez-firmware
 ql2x00-firmware
 v4l-dvb-firmware
 alsa- firmware
+linux-firmware
 \end{verbatim}
 \end{enumerate}
 
@@ -81,10 +82,6 @@ Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını
 \item cups paketi kurulumu sonrası:
 
 Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.
-
-2008 Yazıcı ayarları için:
-
-Tasma $\rightarrow$ Çevre Birimleri $\rightarrow$ Yazıcılar $\rightarrow$ Ekle $\rightarrow$ Yazıcı/Sınıf Ekle yolunu izleyebilirsiniz.
 
 \item hplip-gui ve hplip kurulumu sonrası:
 
@@ -353,6 +350,8 @@ Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edild
  \item Aşağıda bulunan paketler sadecekurulum testine tabidir.
 \begin{verbatim}
   acpi4asus
+  libmtp
+  libmtp-devel
 \end{verbatim}
 
 \item fnfx paketi kurulumu sonrası:
@@ -517,8 +516,8 @@ Uygulamayı kmenuden açın ve disk kullanımının görsel olarak yapıldığı
 
 Aşağıda bulunan komutun sorunsuz bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
- # su -
- # partimage
+  su -
+  partimage
 \end{verbatim}
 
  \item mountmanager paketi kurulumu sonrası:
@@ -548,7 +547,7 @@ Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aş
  \item Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
 \begin{verbatim}
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
- mplayer music.mp3
+ mplayer sample.mp3
 \end{verbatim}
 
 \item alsa-tools-gui paketi kurulumu sonrası:

@@ -71,6 +71,7 @@ bluez-firmware
 ql2x00-firmware
 v4l-dvb-firmware
 alsa- firmware
+linux-firmware
 </PRE></LI></OL><!--TOC section Printer alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Printer alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim">gutenprint 
@@ -79,7 +80,7 @@ foomatic-db-engine
 foomatic-db-hpijs
 foomatic-filters
 hplip-doc
-</PRE></LI><LI CLASS="li-enumerate">epson-alc1100 paketi kurulumu sonrası:<P>Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">cups paketi kurulumu sonrası:<P>Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.</P><P>2008 Yazıcı ayarları için:</P><P>Tasma → Çevre Birimleri → Yazıcılar → Ekle → Yazıcı/Sınıf Ekle yolunu izleyebilirsiniz.</P></LI><LI CLASS="li-enumerate">hplip-gui ve hplip kurulumu sonrası:<P>kmenu’den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.</P></LI></OL><!--TOC section Smart Card alt Bileşeni-->
+</PRE></LI><LI CLASS="li-enumerate">epson-alc1100 paketi kurulumu sonrası:<P>Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">cups paketi kurulumu sonrası:<P>Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">hplip-gui ve hplip kurulumu sonrası:<P>kmenu’den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.</P></LI></OL><!--TOC section Smart Card alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Smart Card alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">ccid 
@@ -172,6 +173,8 @@ Aşağıda bulunan komutların sorunsuz çalıştığını ve iso’nun boot edi
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc13">13</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadecekurulum testine tabidir.
 <PRE CLASS="verbatim">  acpi4asus
+  libmtp
+  libmtp-devel
 </PRE></LI><LI CLASS="li-enumerate">fnfx paketi kurulumu sonrası:<P>Eğer toshiba dizüstü bilgisayarınız var ise LCD parlaklığı, ses ve fan gibi ayarların tuşlar üzerinden yapılmasına olanak tanındığını gözlemleyin.
 </P></LI></OL><!--TOC section Bluetooth alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc14">14</A>  Bluetooth alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -226,8 +229,8 @@ hardware-tr.pdf fuse-python testini gerçekleştirin.</LI><LI CLASS="li-enumerat
 </P><PRE CLASS="verbatim"> sdparm /dev/sda1
 </PRE></LI><LI CLASS="li-enumerate">filelight paketi kurulumu sonrası:<P>Uygulamayı kmenuden açın ve disk kullanımının görsel olarak yapıldığını gözlemleyin. Tara → Ev dizinini tara bölümünden dizininizi taratın ve surunsuz bir şekilde tarandığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">partimage paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"> # su -
- # partimage
+</P><PRE CLASS="verbatim">  su -
+  partimage
 </PRE></LI><LI CLASS="li-enumerate">mountmanager paketi kurulumu sonrası:<P>Uygulamayı kmenuden açın ve daha sonra bir usb stick takın ve mountmanager’a bu aygıtın eklendiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">partitionmanager paketi kurulumu sonrası:<P>Partitionmanager’ı kmenüden açın ve diskinizin küçük bir kısmını bölmeye çelışın sorunsuz bir şekilde bölünebildiğini gözlemleyin.</P><P>USB bellek takarak, bu bellek üzerinden de işlem yapabilirsiniz.</P></LI><LI CLASS="li-enumerate">reiserfsprogs paketi kurulumu sonrası:<P>Bir usb disk takın ve /dev dizini altında bulunan uzantısını kullanarak aşağıda bulunan komutları çalıştırın. Düzgün bir şekilde çalıştıklarını gözlemleyin. </P><PRE CLASS="verbatim"> mkreiserfs /dev/&lt;aygıt uzantısı&gt; -f
  reiserfsck /dev/&lt;aygıt uzantısı&gt;
@@ -238,7 +241,7 @@ alsa-driver, alsa-headers, alsa-lib, alsa-lib-devel, alsa-plugins, alsa-plugins-
 Bilgisayarınızı yeniden başlatın ve açılış sesinin sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-itemize">Aşağıda bulunan dosyanın düzgün çalıştığını gözlemleyin.
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
- mplayer music.mp3
+ mplayer sample.mp3
 </PRE></LI><LI CLASS="li-itemize">alsa-tools-gui paketi kurulumu sonrası:<P>Eğer EchoAudio, Envy24, Hammerfall HDSP, RMedigicontrol ses kartlarından birini kullanıyorsanız bu testi gerçekleştirebilirsiniz.</P><P>Echomixer uygulaması EchoAudio aygıtı için.</P><P>Envy24control uygulaması Envy24 aygıtı için.</P><P>HDSPconf ve HDSPmixer uygulaması Hammerfall HDSP aygıtı için.</P><P>Rmedigicontrol uygulaması RMedigicontrol aygıtı için.
 </P></LI></UL></LI></OL><!--TOC section Mobile alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc18">18</A>  Mobile alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
