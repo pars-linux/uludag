@@ -32,8 +32,6 @@ from pmutils import *
 from ui_pminstall import Ui_UmWindow
 from progressdialog import ProgressDialog
 
-from packagemodel import PackageModel
-
 class UmWindow(QDialog, PM, Ui_UmWindow):
 
     def __init__(self, app = None):
@@ -52,7 +50,6 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
 
         self.state.state = StateManager.INSTALL
 
-        self.model = PackageModel(self)
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state, self)
 
@@ -85,8 +82,6 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
 
         packages = ['abe']
         self.state._selected_packages = packages
-        self.model.setPackages(packages)
-        self.model.selectPackages(packages)
 
         self.installPackages()
 
@@ -98,10 +93,8 @@ class UmWindow(QDialog, PM, Ui_UmWindow):
     def installPackages(self):
         reinstall = True
         connection_required = True
-        operation = self.state.operationAction(self.model.selectedPackages(),
-                                               reinstall = False,
-                                               silence = True,
-                                               connection_required = connection_required)
+        operation = self.state.operationAction(['abe'])
+
         self._started = True
         if operation == False:
             sys.exit(1)
