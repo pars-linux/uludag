@@ -70,6 +70,7 @@ def worker_applier(options, q_in, q_out, q_ldap):
             msg = q_in.get()
         except IOError:
             continue
+
         if msg["type"] == "command":
             message = utils.Command(msg, q_out)
         elif msg["type"] == "policy":

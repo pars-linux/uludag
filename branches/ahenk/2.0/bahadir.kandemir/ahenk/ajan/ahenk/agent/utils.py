@@ -76,6 +76,7 @@ class Policy(Message):
         Message.__init__(self, message)
         self.type = "policy"
         self.policy = message["policy"]
+        self.policy_stack = message["policy_stack"]
         self.first_run = first_run
 
 
