@@ -41,6 +41,8 @@ public:
 	virtual void load();
 	virtual void save();
 	virtual void defaults();
+    void updateStateInformation();
+    void startApp();
 
 protected:
 	void apply();
@@ -51,6 +53,11 @@ private:
 	RandRConfig *m_config;
 	RandRDisplay *m_display;
     GlInfo* glInfo;
+    QFrame *stateContainer;
+    QLabel *stateIconLabel;
+    QLabel *stateTextLabel;
+    QPushButton *startButton;
+
 };
 
 #endif
