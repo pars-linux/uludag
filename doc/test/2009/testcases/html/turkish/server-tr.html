@@ -77,7 +77,8 @@ ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aş
 </P><PRE CLASS="verbatim">  service ypbind status
 </PRE></LI></OL><!--TOC section Mta alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> postfi
+</PRE></LI><LI CLASS="li-enumerate">dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
 Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </P><PRE CLASS="verbatim">  service dovecot status
 </PRE><P>Aşağıdaki komut ile dovecot kullanıcısı tarafından servisin başlatıldığını gözlemleyin.
@@ -153,7 +154,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"
 </P><PRE CLASS="verbatim"> service ntpd status
 </PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
 </P><PRE CLASS="verbatim"> ping 4.2.2.1
-</PRE></LI><LI CLASS="li-itemize">bind paketleri kurulumu sonrası:
+</PRE></LI><LI CLASS="li-itemize">bind paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> dig www.google.com
 </PRE>Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.</LI><LI CLASS="li-itemize">samba paketi kurulumu sonrası:<P>Servis yöneticisinden samba servisini başlatın.</P><P>Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 </P><PRE CLASS="verbatim">  service samba status 
