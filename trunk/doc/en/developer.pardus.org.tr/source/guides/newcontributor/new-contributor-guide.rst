@@ -57,8 +57,8 @@ Communication
 
   It'll be useful to let other contributors know about the decisions you make, the steps you take and the changes -even the minor ones- you make. In this way, you can adapt new contributors -who are always needed- to the subject you are dealing with easier, you can cooperate with the contributors you work with more consistently and faster. When you'll be in need for help in the future, with the help of this attitude, you can be sure that a solution will be produced faster because another contributor already knows what you want to do. For communication you can use e-mail lists, the documents you'll prepare or explanatory information (such as subversion messages) you'll add to the changes you make.
 
-Email discussions among specific Pardus contributors takes place on the `e-mail lists <http://lists.pardus.org.tr/lists/>`_.
+Email discussions among specific Pardus contributors takes place on the `e-mail lists`_.
 
 The ``#pardus-devel`` ``#pardus`` channel on FreeNode IRC network is home to many Pardus contributors for real-time communication.
 
-
+.. _e-mail lists: http://developer.pardus.org.tr/guides/communication/mailing_lists.html
