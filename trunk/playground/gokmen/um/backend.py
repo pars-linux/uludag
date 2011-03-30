@@ -12,9 +12,17 @@
 #
 
 import pisi
+import threading
 from pds.thread import PThread
 
 from PyQt4.QtCore import QObject
+from PyQt4.QtCore import SIGNAL
+
+def threaded(fn):
+    def run(*k, **kw):
+        t = threading.Thread(target=fn, args=k, kwargs=kw)
+        t.start()
+    return run
 
 class PisiUI(QObject, pisi.ui.UI):
 
@@ -26,8 +34,19 @@ class PisiUI(QObject, pisi.ui.UI):
     def notify(self, event, **keywords):
         print "UM DEBUG:", event, keywords
 
+    def info(self, message, verbose = False, noln = False):
+        print "MM:", message
+
+    def warning(self, message):
+        print "WR:", message
+
     def display_progress(self, **keywords):
-        print "$keywords",keywords
+        self.emit(SIGNAL("progress(QString, int, int, QString, int)"), \
+                  keywords['filename'],
+                  keywords['downloaded_size'],
+                  keywords['total_size'],
+                  keywords['symbol'],
+                  keywords['percent'])
 
 class Singleton(object):
     def __new__(type):
@@ -39,29 +58,29 @@ class Iface(QObject, Singleton):
 
     """ Pisi Iface for UM """
 
-    def __init__(self):
+    def __init__(self, parent):
         apply(QObject.__init__, (self,))
         options = pisi.config.Options()
 
-        options.yes_all = True
-        options.ignore_dependency = True
-        options.ignore_safety = True
+        # Make something crazy.
+        # options.yes_all = True
+        # options.ignore_dependency = True
+        # options.ignore_safety = True
 
         self.ui = PisiUI()
+        self.connect(self.ui,\
+                SIGNAL("progress(QString, int, int, QString, int)"),\
+                parent.updateProgress)
+
         pisi.api.set_userinterface(self.ui)
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
 
-    def runThreaded(self, action, args=[], kwargs={}):
-        def hede():
-            return
-        thread = PThread(self, action, hede, args, kwargs)
-        thread.start()
-
-    # Std Package Actions ------------------------------------------------->>-
-
+    @threaded
     def installPackages(self, packages):
-        self.runThreaded(lambda:pisi.api.install(packages))
+        pisi.api.install(packages)
 
-    # Std Package Actions -------------------------------------------------<<-
+    @threaded
+    def downloadPackages(self, packages):
+        pisi.api.fetch(packages)
 
