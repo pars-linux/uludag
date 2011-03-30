@@ -20,6 +20,8 @@
 #include "krandrmodule.h"
 #include "legacyrandrconfig.h"
 #include <QTextStream>
+#include <QSizePolicy>
+#include <QBrush>
 #include "legacyrandrscreen.h"
 #include "randrdisplay.h"
 #include "randrconfig.h"
@@ -36,8 +38,10 @@
 #include <KPluginFactory>
 #include <KPluginLoader>
 #include <KDebug>
+#include <KIcon>
 #include <KProcess>
 #include <KMessageBox>
+#include <KColorScheme>
 #include <kdesktopfileactions.h>
 #include <config-randr.h>
 
@@ -56,7 +60,9 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 	if (!m_display->isValid())
 	{
 		QVBoxLayout *topLayout = new QVBoxLayout(this);
-		QLabel *label =
+		
+       
+        QLabel *label =
 		    new QLabel(i18n("Your X server does not support resizing and "
 		                    "rotating the display. Please update to version 4.3 "
 						"or greater. You need the X Resize, Rotate, and Reflect "
@@ -73,6 +79,96 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 	topLayout->setMargin(0);
 	topLayout->setSpacing(KDialog::spacingHint());
 
+    QFrame* stateContainer = new QFrame(this);
+    stateContainer->setAutoFillBackground(true);
+    stateContainer->setFrameShape(QFrame::Box);
+    stateContainer->setFrameShadow(QFrame::Plain); 
+
+    topLayout->addWidget(stateContainer);
+
+    QHBoxLayout* stateHorizontalLayout = new QHBoxLayout(stateContainer);
+
+    QLabel* stateIconLabel = new QLabel(stateContainer);
+    QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    sizePolicy.setHorizontalStretch(0);
+    sizePolicy.setVerticalStretch(0);
+    sizePolicy.setHeightForWidth(stateIconLabel->sizePolicy().hasHeightForWidth());
+    stateIconLabel->setSizePolicy(sizePolicy);
+    stateIconLabel->setMinimumSize(QSize(22, 22));
+
+    stateHorizontalLayout->addWidget(stateIconLabel);
+
+    QLabel* stateTextLabel = new QLabel(stateContainer);
+    //QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    //sizePolicy1.setHorizontalStretch(0);
+    //sizePolicy1.setVerticalStretch(0);
+    //sizePolicy1.setHeightForWidth(stateTextLabel->sizePolicy().hasHeightForWidth());
+    stateTextLabel->setText(QString::fromUtf8("[current notification system information]"));
+    stateTextLabel->setWordWrap(false);
+
+    stateHorizontalLayout->addWidget(stateTextLabel);
+
+    QPushButton* startButton = new QPushButton(stateContainer);
+    stateContainer->setFixedHeight(38);
+
+    //sizePolicy.setHeightForWidth(startButton->sizePolicy().hasHeightForWidth());
+    stateHorizontalLayout->addStretch();
+    stateHorizontalLayout->addWidget(startButton);
+
+    glInfo = new GlInfo();
+    glInfo->getGlStrings();
+
+    QString vendorText;
+    vendorText = glInfo->glVendor;
+
+    QString icon = "dialog-information";
+    QString text;
+    bool showStartButton = false;
+    bool nvidia = false;
+    bool ati = false;
+
+    if (vendorText.startsWith("NVIDIA")){
+        nvidia = true;
+        text = i18n("You can use Nvidia-settings for your Randr settings");
+        startButton->setText("Start Nvidia-settings");
+        showStartButton = true;
+    }
+    else if (vendorText.startsWith("ATI")){
+        ati = true;
+        text = i18n("You can use Ati control center ,for your Randr settings");
+        startButton->setText("Start Nvidia-settings");
+        showStartButton = true;
+    }
+
+    // Adjust palette
+    KColorScheme scheme(QPalette::Active, KColorScheme::Window);
+    QBrush bg = scheme.background(KColorScheme::PositiveBackground);
+    QBrush fg = scheme.foreground(KColorScheme::PositiveText);
+
+    stateContainer->setStyleSheet(
+        QString(".QFrame {"
+            "background-color: %1;"
+            "border-radius: 3px;"
+            "border: 1px solid %2;"
+            "}"
+            ".QLabel { color: %2; }"
+            )
+        .arg(bg.color().name())
+        .arg(fg.color().name())
+        );
+
+    stateIconLabel->setPixmap(KIcon(icon).pixmap(22));
+    stateTextLabel->setText(text);
+    startButton->setVisible(showStartButton);
+    startButton->setIcon(KIcon("nvidia-settings"));
+
+    if (nvidia || !ati) {
+        stateContainer->show();
+    }
+    else {
+        stateContainer->hide();
+    }
+
 #ifdef HAS_RANDR_1_2
 	if (RandR::has_1_2)
 	{
@@ -88,8 +184,6 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 		topLayout->addWidget(m_legacyConfig);
 	}
 
-	//topLayout->addStretch(1);
-
 	setButtons(KCModule::Apply);
 }
 
@@ -101,6 +195,7 @@ KRandRModule::~KRandRModule(void)
 
 void KRandRModule::defaults()
 {
+
         if (!m_display->isValid()) {
                 return;
         }
@@ -114,53 +209,6 @@ void KRandRModule::defaults()
 
 void KRandRModule::load()
 {
-
-    glInfo = new GlInfo();
-    glInfo->getGlStrings();
-
-    QString vendorText;
-    vendorText = glInfo->glVendor;
-
-    qDebug() << vendorText << endl;
-
-    if (vendorText.startsWith("NVIDIA")){
-        QString dontAskAgainName;
-        dontAskAgainName = QLatin1String("Do not ask again");
-        int ret = KMessageBox::questionYesNo(this,
-                                             i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                                  "Do you want to use nvidia-settings for your preferencies?"),
-                                             i18n("Randr settings"),
-                                             KGuiItem(i18n("Yes"), KIcon("nvidia-settings")), 
-                                             KGuiItem(i18n("No")),
-                                             dontAskAgainName);
-        if(ret == KMessageBox::Yes){
-
-          KUrl url =  KUrl::fromPath("/usr/share/applications/nvidia-settings.desktop");
-          KDesktopFileActions::run(url, true);
-          qDebug() << "YES";
-
-        }
-    }
-    else if (vendorText.startsWith("ATI")){
-        QString dontAskAgainName;
-        dontAskAgainName = QLatin1String("Do not ask again");
-        int ret = KMessageBox::questionYesNo(this,
-                                             i18n("You are using the proprietary driver provided by the manufacturer.\n"
-                                                  "Do you want to use ati-control-center for your preferencies?"),
-                                             i18n("Randr settings"),
-                                             KGuiItem(i18n("Yes"), KIcon("amdcclesu")), 
-                                             KGuiItem(i18n("No")),
-                                             dontAskAgainName);
-        if(ret == KMessageBox::Yes){
-
-          KUrl url =  KUrl::fromPath("/usr/share/applications/amdccclesu.desktop");
-          KDesktopFileActions::run(url, true);
-
-
-            qDebug() << "YES";
-        }
-    }
-
     if (!m_display->isValid()) {
                 return;
     }
@@ -202,5 +250,9 @@ void KRandRModule::apply()
 		m_legacyConfig->apply();
 }
 
+void KRandRModule::startApp()
+{
+    qDebug() << "44444444" << endl;
+}
 
 #include "krandrmodule.moc"
