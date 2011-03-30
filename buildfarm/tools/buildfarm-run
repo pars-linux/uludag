@@ -77,6 +77,9 @@ def build_packages():
             new_binary_packages = pisi_api.get_new_packages()
             new_debug_packages = pisi_api.get_new_debug_packages()
 
+            # Get the dictionary of delta packages (a-b-c.pisi -> a-b-c-d.delta.pisi)
+            new_delta_packages = pisi_api.get_delta_package_map()
+
             # Build was successful, let's install the packages
             pisi_api.install(new_binary_packages)
 
@@ -97,7 +100,7 @@ def build_packages():
             # Installation was successful
             pisi_api.close()
             qmgr.removeFromWorkQueue(pspec)
-            move_packages(new_binary_packages, new_debug_packages)
+            move_packages(new_binary_packages, new_debug_packages, new_delta_packages)
             package_list += [os.path.basename(pkg) for pkg in new_binary_packages]
         finally:
             # Unmount tmp_dir if any
@@ -142,7 +145,7 @@ def build_packages():
     os.environ["HOME"] = home_dir
     os.system("/usr/bin/revdep-rebuild --force")
 
-def move_packages(new_binary_packages, new_debug_packages):
+def move_packages(new_binary_packages, new_debug_packages, new_delta_packages):
 
     def move_package(package, target):
         logger.info("Moving %s into %s" % (package, target))
@@ -151,14 +154,24 @@ def move_packages(new_binary_packages, new_debug_packages):
         except shutil.Error:
             pass
 
-    logger.info("New binary package(s): %s" % new_binary_packages)
-    logger.info("New debug package(s): %s" % new_debug_packages)
+    logger.info("New binary package(s): %s" % [os.path.basename(pkg) \
+                                                for pkg in new_binary_packages])
+    logger.info("New debug package(s): %s" % [os.path.basename(pkg) \
+                                                for pkg in new_debug_packages])
+    logger.info("New delta package(s): %s" % [os.path.basename(pkg) \
+                                                for pkg in sum(new_delta_packages.values(), [])])
 
     for package in new_binary_packages:
         move_package(package, utils.get_compiled_packages_directory())
 
+        for pkg in new_delta_packages[package]:
+            move_package(pkg, utils.get_compiled_packages_directory())
+
     for package in new_debug_packages:
         move_package(package, utils.get_compiled_debug_packages_directory())
+
+        for pkg in new_delta_packages[package]:
+            move_package(pkg, utils.get_compiled_debug_packages_directory())
 
 
 ### Entry point ###

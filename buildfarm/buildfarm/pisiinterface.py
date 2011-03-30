@@ -26,8 +26,6 @@ class PisiApi:
 
         # Override these so that pisi searches for .pisi files in the right locations
         self.options.output_dir = output_dir
-        self.options.debug_packages_dir = utils.get_compiled_debug_packages_directory()
-        self.options.compiled_packages_dir = utils.get_compiled_packages_directory()
 
         self.options.yes_all = True
         self.options.ignore_file_conflicts = True
@@ -72,7 +70,13 @@ class PisiApi:
         logger.info("Building %s" % pspec)
         self.builder = pisi.operations.build.Builder(pspec)
 
-        #self.builder.search_old_packages_for_delta(max_count=3)
+        # This will only make builder search for old packages
+        # 2 packages for testing repository
+        self.builder.search_old_packages_for_delta(max_count=2,
+                                                   search_paths=(utils.get_compiled_packages_directory(),))
+        # 3 packages for stable repository
+        self.builder.search_old_packages_for_delta(max_count=3,
+                                                   search_paths=(utils.get_stable_packages_directory(),))
 
         self.builder.build()
 
