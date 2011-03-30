@@ -34,13 +34,6 @@ class StateManager(QObject):
         self.cached_packages = None
         self._typeCaches = {}
         self._typeFilter = 'normal'
-        self.initializePackageLists()
-
-    def initializePackageLists(self):
-        self.__groups = self.iface.getGroups()
-        self.__installed_packages = self.iface.getInstalledPackages()
-        self.__new_packages = self.iface.getNewPackages()
-        self.__all_packages = self.__installed_packages + self.__new_packages
 
     def setState(self, state):
         self.state = state
@@ -165,20 +158,7 @@ class StateManager(QObject):
 
         return text
 
-    def operationAction(self, packages, silence = False, reinstall = False, connection_required = True):
-
-        if connection_required:
-            if not network_available() and not self.state == self.REMOVE:
-                if not repos_available(self.iface):
-                    self.showFailMessage()
-                    return False
-
-        if not silence and not self.state == self.REMOVE:
-            if not self.conflictCheckPasses(packages):
-                return False
-
-        if reinstall:
-            return self.iface.reinstallPackages(packages)
+    def operationAction(self, packages):
 
         return {self.ALL    :self.iface.modifyPackages,
                 self.INSTALL:self.iface.installPackages,
@@ -186,6 +166,7 @@ class StateManager(QObject):
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
 
     def setActionHandler(self, handler):
+        return
         self.iface.setHandler(handler)
 
     def setExceptionHandler(self, handler):

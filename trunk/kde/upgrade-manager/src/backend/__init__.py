@@ -13,5 +13,6 @@
 
 BACKEND = "pisi"
 
-import pisi.iface as pm
+#import pisi.iface as pm
+import pisi.api as pm
 
