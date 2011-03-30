@@ -10,6 +10,7 @@ import ldif
 import logging
 import os
 import time
+import simplejson
 import StringIO
 import Queue
 
@@ -62,6 +63,21 @@ def load_ldif(filename):
     parser.parse()
     return parser.comp
 
+def load_dump(filename):
+    """
+        Loads JSON dump
+
+        Args:
+            filename: File that contains JSON
+        Returns:
+            Python object
+    """
+    try:
+        data = file(filename).read()
+        return simplejson.loads(data)
+    except:
+        return None
+
 def parent_paths(dn, domain):
     """
         Returns a list of parent paths of the DN.
@@ -93,14 +109,16 @@ def fetch_policy(conn, options, domain, dn):
             domain: Domain name
             dn: Distinguished name
         Returns:
-            True or False, and policy object
+            True or False, policy object, policy stack
     """
 
     policy_file = os.path.join(options.policydir, "policy_" + options.username)
+    policy_stack_file = os.path.join(options.policydir, "policy_stack_" + options.username)
     timestamp_file = policy_file + '.ts'
     timestamp_old = ''
     timestamp_new = ''
     policy_new = {}
+    policy_stack = []
     update_required = False
 
     if os.path.exists(timestamp_file):
@@ -130,12 +148,14 @@ def fetch_policy(conn, options, domain, dn):
             if len(search):
                 attrs = search[0][1]
                 policy_new.update(attrs)
+                policy_stack.append(attrs)
 
         file(timestamp_file, 'w').write(str(timestamp_new))
-        file(policy_file, 'w').write(get_ldif(policy_new))
-        return True, policy_new
+        file(policy_file, 'w').write(simplejson.dumps(policy_new))
+        file(policy_stack_file, 'w').write(simplejson.dumps(policy_stack))
+        return True, policy_new, policy_stack
 
-    return False, {}
+    return False, {}, []
 
 def ldap_go(options, q_in, q_out, q_ldap):
     """
@@ -143,11 +163,13 @@ def ldap_go(options, q_in, q_out, q_ldap):
     """
     # Load last fetched policy
     logging.info("Loading last fetched policy.")
-    filename = os.path.join(options.policydir, "policy_", options.username)
+    filename = os.path.join(options.policydir, "policy_" + options.username)
+    filename_stack = os.path.join(options.policydir, "policy_stack_" + options.username)
     if os.path.exists(filename):
-        policy = load_ldif(filename)
-        if policy:
-            q_in.put({"type": "policy init", "policy": policy})
+        policy = load_dump(filename)
+        policy_stack = load_dump(filename_stack)
+        if policy or policy_stack:
+            q_in.put({"type": "policy init", "policy": policy, "policy_stack": policy_stack})
 
     domain = "dc=" + options.domain.replace(".", ", dc=")
     while True:
@@ -165,13 +187,13 @@ def ldap_go(options, q_in, q_out, q_ldap):
             logging.debug("Logged in as %s" % dn)
 
             while True:
-                updated, policy = fetch_policy(conn, options, domain, dn)
+                updated, policy, policy_stack = fetch_policy(conn, options, domain, dn)
                 if updated:
                     logging.info("LDAP policy was updated.")
                     policy_repr = dict(zip(policy.keys(), ['...' for x in range(len(policy))]))
                     #policy_repr = policy
                     logging.debug("New policy: %s" % policy_repr)
-                    q_in.put({"type": "policy", "policy": policy})
+                    q_in.put({"type": "policy", "policy": policy, "policy_stack": policy_stack})
                 try:
                     logging.debug("Checking policy...")
                     q_ldap.get(timeout=options.interval)
