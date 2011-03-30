@@ -74,9 +74,10 @@ class PisiApi:
         # 2 packages for testing repository
         self.builder.search_old_packages_for_delta(max_count=2,
                                                    search_paths=(utils.get_compiled_packages_directory(),))
-        # 3 packages for stable repository
-        self.builder.search_old_packages_for_delta(max_count=3,
-                                                   search_paths=(utils.get_stable_packages_directory(),))
+        if utils.get_stable_packages_directory():
+            # 3 packages for stable repository
+            self.builder.search_old_packages_for_delta(max_count=3,
+                                                       search_paths=(utils.get_stable_packages_directory(),))
 
         self.builder.build()
 
