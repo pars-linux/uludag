@@ -29,25 +29,40 @@ def exportFlags():
     values = ctx.config.values
     sysroot = values.general.destinationdirectory
 
-    os.environ['BUILD']  = values.build.build
-    os.environ['HOST']   = values.build.host
-    os.environ['TARGET'] = values.build.target
-    os.environ['CFLAGS'] = values.build.cflags
+    os.environ['BUILD']    = values.build.build
+    os.environ['HOST']     = values.build.host
+    os.environ['TARGET']   = values.build.target
+    os.environ['CFLAGS']   = values.build.cflags
     os.environ['CXXFLAGS'] = values.build.cxxflags
     os.environ['CPPFLAGS'] = values.build.cppflags or ""
-    os.environ['LDFLAGS'] = values.build.ldflags
+    os.environ['LDFLAGS']  = values.build.ldflags
     os.environ['USER_LDFLAGS'] = values.build.ldflags
     os.environ['JOBS'] = values.build.jobs
 
     # http://liste.pardus.org.tr/gelistirici/2009-January/016442.html
-    os.environ['CC'] = "%s-gcc" % values.build.host
+    os.environ['CC']  = "%s-gcc" % values.build.host
+    os.environ['CPP'] = "%s-gcc -E" % values.build.host
     os.environ['CXX'] = "%s-g++" % values.build.host
 
     # if we are crosscompiling, some extra flags and variables has to be defined.
     if values.build.crosscompiling:
+        os.environ["AR"]      = "%s-ar" % values.build.host
+        os.environ["AS"]      = "%s-as" % values.build.host
+        os.environ["LD"]      = "%s-ld" % values.build.host
+        os.environ["RANLIB"]  = "%s-ranlib"  % values.build.host
+        os.environ["OBJDUMP"] = "%s-objdump" % values.build.host
+        os.environ["OBJCOPY"] = "%s-objcopy" % values.build.host
+        os.environ["STRIP"]   = "%s-strip"   % values.build.host
+        # FIXME: sb2 has a libtool too, do not export this unless it is neccessary
+        # os.environ['LIBTOOL']   = "%s-libtool" % values.build.host
+
+        # FIXME: PATH environmental variable should be changed in sb2
+        # os.environ['PATH']  = "%(sysroot)s/bin:%(sysroot)s/sbin:%(sysroot)s/usr/bin:%(sysroot)s/usr/sbin:%(path)s" % { 'sysroot' : sysroot, 'path' : os.environ['PATH'] }
         os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
         os.environ['PYTHON']    = "%s/usr/bin/python" % sysroot
-        os.environ['PERL']      = "%s/usr/bin/perl" % sysroot
+        # FIXME: sometimes perl fails with qemu.
+        # os.environ['PERL']      = "%s/usr/bin/perl" % sysroot
+        os.environ['SBOX_TARGET_ROOT'] = sysroot
         os.environ['SYSROOT']   = sysroot
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
         os.environ['ARCH']      = values.general.architecture

@@ -185,18 +185,33 @@ def build(debugSymbols=False):
 
 def install():
     suffix = __getSuffix()
+    karch = __getKernelARCH()
 
     # Dump kernel version under /etc/kernel
     dumpVersion()
 
-    # Install kernel image
-    pisitools.insinto("/boot/", "arch/x86/boot/bzImage", "kernel-%s" % suffix)
+    if karch == "arm":
+        shelltools.system("%s -O binary -R .note -R .comment -S arch/arm/boot/compressed/vmlinux linux.bin" % get.OBJCOPY())
+        shelltools.system('mkimage \
+                           -A arm \
+                           -O linux \
+                           -T kernel \
+                           -C none \
+                           -a 0x80008000 -e 0x80008000 \
+                           -n "Pardus Linux Kernel for armv7l" \
+                           -d linux.bin arch/arm/boot/uImage')
+
+        pisitools.insinto("/boot/", "arch/arm/boot/uImage", "uImage")
+        pisitools.insinto("/boot/", "arch/arm/boot/zImage", "kernel-%s" % suffix)
+    else:
+        # Install kernel image
+        pisitools.insinto("/boot/", "arch/x86/boot/bzImage", "kernel-%s" % suffix)
 
     # Install the modules
     # mod-fw= avoids firmwares from installing
     # Override DEPMOD= to not call depmod as it will be called
     # during module-init-tools' package handler
-    make("INSTALL_MOD_PATH=%s/ DEPMOD=/bin/true modules_install mod-fw=" % get.makeJOBS())
+    make("INSTALL_MOD_PATH=%s/ DEPMOD=/bin/true modules_install mod-fw=" % get.installDIR())
 
     # Remove symlinks first
     pisitools.remove("/lib/modules/%s/source" % suffix)
