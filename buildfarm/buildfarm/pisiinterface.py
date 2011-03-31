@@ -17,6 +17,7 @@ import pisi.api
 import pisi.config
 
 from buildfarm import cli, logger, utils
+from buildfarm.releasecache import ReleaseCache
 from buildfarm.config import configuration as conf
 
 
@@ -78,6 +79,13 @@ class PisiApi:
             # 3 packages for stable repository
             self.builder.search_old_packages_for_delta(max_count=3,
                                                        search_paths=(utils.get_stable_packages_directory(),))
+
+            # and 1 for the previous distribution release (e.g. 2011.1)
+            package_name = utils.get_package_name_from_path(pspec)
+            last_disto_release = ReleaseCache().get_last_release(package_name)
+            if last_distro_release:
+                self.builder.search_old_packages_for_delta(release=last_distro_release,
+                                                           search_paths=(utils.get_stable_packages_directory(),))
 
         self.builder.build()
 

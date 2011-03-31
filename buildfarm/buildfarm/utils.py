@@ -84,6 +84,12 @@ def get_remote_repository_url():
                         conf.release,
                         conf.subrepository)
 
+def get_remote_tags_repository_index_url():
+    return os.path.join(conf.scmrepositorybaseurl,
+                        "tags",
+                        conf.basedeltarelease,
+                        "pisi-index.xml.bz2")
+
 def get_package_log_directory():
     return os.path.join(conf.logdir,
                         conf.release,
