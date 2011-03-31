@@ -65,8 +65,9 @@ def configure(parameters = '', installPrefix = '/%s' % get.defaultprefixDIR(), s
         args = 'cmake -DCMAKE_INSTALL_PREFIX=%s \
                       -DCMAKE_C_FLAGS="%s" \
                       -DCMAKE_CXX_FLAGS="%s" \
+                      -DCMAKE_CPP_FLAGS="%s" \
                       -DCMAKE_LD_FLAGS="%s" \
-                      -DCMAKE_BUILD_TYPE=RelWithDebInfo %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.LDFLAGS(), parameters, sourceDir)
+                      -DCMAKE_BUILD_TYPE=RelWithDebInfo %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.CPPFLAGS(), get.LDFLAGS(), parameters, sourceDir)
 
         if crosscompiling:
             args = "sb2 %s" % args

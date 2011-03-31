@@ -216,6 +216,12 @@ def NM():
 def RANLIB():
     return getBinutilsInfo('ranlib')
 
+def OBJDUMP():
+    return getBinutilsInfo('objdump')
+
+def OBJCOPY():
+    return getBinutilsInfo('objcopy')
+
 def F77():
     return getBinutilsInfo('g77')
 

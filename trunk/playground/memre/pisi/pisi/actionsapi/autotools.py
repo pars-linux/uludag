@@ -79,7 +79,7 @@ def configure(parameters = '', configure_cmd='./configure', no_default_vars=Fals
                       get.confDIR(), get.localstateDIR(), get.libexecDIR(), parameters)
 
         if not no_default_vars:
-            cmd = "%s --build=%s" % (cmd, get.BUILD())
+            cmd = "%s --build=%s" % (cmd, get.HOST())
 
         if crosscompiling:
             cmd = "sb2 %s" % cmd
