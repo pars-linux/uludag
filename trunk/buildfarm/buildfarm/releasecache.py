@@ -33,6 +33,8 @@ class ReleaseCache(object):
 
         if not os.path.exists(local_index):
             remote_index = utils.get_remote_tags_repository_index_url()
+            if not remote_index:
+                return
             try:
                 index_file = pisi.file.File(remote_index,
                                             mode=pisi.file.File.read,
