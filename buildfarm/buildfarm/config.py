@@ -35,7 +35,7 @@ class Config(object):
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
         retval = value
-        if value:
+        if value is not None:
             if value.lower() in ("true", "false"):
                 # the value from ConfigParser is always string
                 # check it and return bool
