@@ -841,13 +841,14 @@ checksum()
     local head="CHECKSUM"
 
     local tarball=$1
-    local sum=`cat ${tarball}.sha1sum | cut -d' ' -f1`
 
     # if there is no sha1sum file, then refetch it!
     [ -e "${tarball}.sha1sum" ] || (
         rm_ ${tarball}
         return 2 # fail, refetch
     )
+
+    local sum=`cat ${tarball}.sha1sum | cut -d' ' -f1`
 
     if [ -e "${tarball}" ]; then
         [ x"`sha1sum ${tarball} | cut -d' ' -f1`" == x"${sum}" ] && \
@@ -889,12 +890,23 @@ fetch()
 
     print_info " ==> Fetching \"${name}\"..." "${head}"
     prep_log &
-    ( aria2c -c ${download_link} ${download_link}.sha1sum > ${_log_fifo} 2>&1 )
+    ( aria2c -c ${download_link} > ${_log_fifo} 2>&1 )
     __r=$?; wait
 
     # Is there any connection problem?
     [ ${__r} -eq 0 ] || (
         print_err "\"${name}\" cannot be fetched!" "${head}"
+        return 1
+    )
+
+    print_info " ==> Fetching sha1sum of the \"${name}\"..." "${head}"
+    prep_log &
+    ( aria2c -c ${download_link}.sha1sum > ${_log_fifo} 2>&1 )
+    __r=$?; wait
+
+    # Is there any connection problem?
+    [ ${__r} -eq 0 ] || (
+        print_err "sha1sum of the \"${name}\" cannot be fetched!" "${head}"
         return 1
     )
 
