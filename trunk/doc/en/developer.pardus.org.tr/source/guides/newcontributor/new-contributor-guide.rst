@@ -16,7 +16,7 @@ When referring to contributor, we describe not only those who write programs but
 How do I start?
 ================
 
-First of all it's a good idea to keep up with the ongoing discussions. The most effective way of achieving this is to observe for a while and see how people work. It might be useful to join the `e-mail lists <http://lists.pardus.org.tr>`_ and follow the discussions, the ongoing events, the bug reports, the solutions proposed to the bug reports and examine the documents published.
+First of all it's a good idea to keep up with the ongoing discussions. The most effective way of achieving this is to observe for a while and see how people work. It might be useful to join the `e-mail lists`_ and follow the discussions, the ongoing events, the bug reports, the solutions proposed to the bug reports and examine the documents published.
 
 By considering the outlined methods you may continue to help the development process. You can add your comments and proposals for solutions to the `bug reports <http://bugs.pardus.org.tr>`_ by testing the sofware or you can report the new bugs you've just found. You can contribute to develop innovative technologies and add new features or you can support a step of the process which you think is not working correctly or fast enough.
 
