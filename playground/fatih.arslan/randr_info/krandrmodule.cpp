@@ -124,15 +124,19 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 
     if (vendorText.startsWith("NVIDIA")){
         nvidia = true;
-        text = i18n("You can use Nvidia-settings for your Randr settings");
+        text = i18n("You can use Nvidia-settings for your RandR settings");
         startButton->setText("Start Nvidia-settings");
+        startButton->setIcon(KIcon("nvidia-settings"));
         showStartButton = true;
+        connect(startButton, SIGNAL(clicked(bool)), SLOT(startNvidia()));
     }
     else if (vendorText.startsWith("ATI")){
         ati = true;
-        text = i18n("You can use Ati control center ,for your Randr settings");
-        startButton->setText("Start Nvidia-settings");
+        text = i18n("You can use ATI Control Center for your RandR settings");
+        startButton->setText("Start ATI Control Center");
         showStartButton = true;
+        startButton->setIcon(KIcon("amdcccle"));
+        connect(startButton, SIGNAL(clicked(bool)), SLOT(startAti()));
     }
 
     // Adjust palette
@@ -158,15 +162,6 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 
     if (nvidia || ati) {
         stateContainer->show();
-        if (nvidia) {
-            startButton->setIcon(KIcon("nvidia-settings"));
-            connect(startButton, SIGNAL(clicked(bool)), SLOT(startNvidia()));
-        }
-        else if (ati) {
-            startButton->setIcon(KIcon("amdccclesu"));
-            connect(startButton, SIGNAL(clicked(bool)), SLOT(startAti()));
-        }
-
     }
     else {
         stateContainer->hide();
