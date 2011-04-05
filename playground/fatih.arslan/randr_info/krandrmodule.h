@@ -42,7 +42,6 @@ public:
 	virtual void save();
 	virtual void defaults();
     void updateStateInformation();
-    void startApp();
 
 protected:
 	void apply();
@@ -57,6 +56,10 @@ private:
     QLabel *stateIconLabel;
     QLabel *stateTextLabel;
     QPushButton *startButton;
+
+private Q_SLOTS:
+    void startNvidia();
+    void startAti();
 
 };
 

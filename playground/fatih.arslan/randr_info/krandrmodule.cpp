@@ -99,10 +99,6 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     stateHorizontalLayout->addWidget(stateIconLabel);
 
     QLabel* stateTextLabel = new QLabel(stateContainer);
-    //QSizePolicy sizePolicy1(QSizePolicy::Expanding, QSizePolicy::Preferred);
-    //sizePolicy1.setHorizontalStretch(0);
-    //sizePolicy1.setVerticalStretch(0);
-    //sizePolicy1.setHeightForWidth(stateTextLabel->sizePolicy().hasHeightForWidth());
     stateTextLabel->setText(QString::fromUtf8("[current notification system information]"));
     stateTextLabel->setWordWrap(false);
 
@@ -111,7 +107,6 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     QPushButton* startButton = new QPushButton(stateContainer);
     stateContainer->setFixedHeight(38);
 
-    //sizePolicy.setHeightForWidth(startButton->sizePolicy().hasHeightForWidth());
     stateHorizontalLayout->addStretch();
     stateHorizontalLayout->addWidget(startButton);
 
@@ -160,10 +155,18 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     stateIconLabel->setPixmap(KIcon(icon).pixmap(22));
     stateTextLabel->setText(text);
     startButton->setVisible(showStartButton);
-    startButton->setIcon(KIcon("nvidia-settings"));
 
-    if (nvidia || !ati) {
+    if (nvidia || ati) {
         stateContainer->show();
+        if (nvidia) {
+            startButton->setIcon(KIcon("nvidia-settings"));
+            connect(startButton, SIGNAL(clicked(bool)), SLOT(startNvidia()));
+        }
+        else if (ati) {
+            startButton->setIcon(KIcon("amdccclesu"));
+            connect(startButton, SIGNAL(clicked(bool)), SLOT(startAti()));
+        }
+
     }
     else {
         stateContainer->hide();
@@ -250,9 +253,19 @@ void KRandRModule::apply()
 		m_legacyConfig->apply();
 }
 
-void KRandRModule::startApp()
+void KRandRModule::startNvidia()
 {
-    qDebug() << "44444444" << endl;
+
+  KUrl url =  KUrl::fromPath("/usr/share/applications/nvidia-settings.desktop");
+  KDesktopFileActions::run(url, true);
+
 }
 
+void KRandRModule::startAti()
+{
+
+  KUrl url =  KUrl::fromPath("/usr/share/applications/amdccclesu.desktop");
+  KDesktopFileActions::run(url, true);
+
+}
 #include "krandrmodule.moc"
