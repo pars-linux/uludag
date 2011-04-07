@@ -60,8 +60,8 @@
                 <SelectedPackage>ccid</SelectedPackage>
                 <SelectedPackage>cdrtools</SelectedPackage>
                 <SelectedPackage>choqok</SelectedPackage>
-                <SelectedPackage>command-not-found</SelectedPackage>
                 <SelectedPackage>clementine</SelectedPackage>
+                <SelectedPackage>command-not-found</SelectedPackage>
                 <SelectedPackage>crda</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-black</SelectedPackage>
                 <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
@@ -156,9 +156,9 @@
                 <SelectedPackage>kdebase-workspace</SelectedPackage>
                 <SelectedPackage>kdebase-workspace-doc</SelectedPackage>
                 <SelectedPackage>kdeedu-marble</SelectedPackage>
+                <SelectedPackage>kdegraphics</SelectedPackage>
                 <SelectedPackage>kdegames-board</SelectedPackage>
                 <SelectedPackage>kdegames-logic</SelectedPackage>
-                <SelectedPackage>kdegraphics</SelectedPackage>
                 <SelectedPackage>kdenetwork</SelectedPackage>
                 <SelectedPackage>kdenlive</SelectedPackage>
                 <SelectedPackage>kdepim</SelectedPackage>
@@ -182,9 +182,6 @@
                 <SelectedPackage>ktorrent</SelectedPackage>
                 <SelectedPackage>kwin-crystal-style</SelectedPackage>
                 <SelectedPackage>liberation-fonts</SelectedPackage>
-                <SelectedPackage>libkcddb</SelectedPackage>
-                <SelectedPackage>libkaudiocd</SelectedPackage>
-                <SelectedPackage>libkcompactdisc</SelectedPackage>
                 <SelectedPackage>libreoffice</SelectedPackage>
                 <SelectedPackage>libreoffice-extension-pdfimport</SelectedPackage>
                 <SelectedPackage>libreoffice-extension-presentation-minimizer</SelectedPackage>
@@ -205,6 +202,9 @@
                 <SelectedPackage>libreoffice-langpack-tr</SelectedPackage>
                 <SelectedPackage>libreoffice-python</SelectedPackage>
                 <SelectedPackage>libvisual-plugins</SelectedPackage>
+                <SelectedPackage>libkcddb</SelectedPackage>
+                <SelectedPackage>libkaudiocd</SelectedPackage>
+                <SelectedPackage>libkcompactdisc</SelectedPackage>
                 <SelectedPackage>lm_sensors</SelectedPackage>
                 <SelectedPackage>logrotate</SelectedPackage>
                 <SelectedPackage>lsscsi</SelectedPackage>
@@ -266,8 +266,8 @@
                 <SelectedPackage>pulseaudio</SelectedPackage>
                 <SelectedPackage>pyparted</SelectedPackage>
                 <SelectedPackage>python-guestlogin</SelectedPackage>
-                <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>python-qt</SelectedPackage>
+                <SelectedPackage>python-networkmanager</SelectedPackage>
                 <SelectedPackage>python-qt-webkit</SelectedPackage>
                 <SelectedPackage>qt-l10n</SelectedPackage>
                 <SelectedPackage>quickformat</SelectedPackage>

@@ -258,6 +258,7 @@
                 <SelectedPackage>plymouth-theme-solar</SelectedPackage>
                 <SelectedPackage>plymouth-theme-spinfinity</SelectedPackage>
                 <SelectedPackage>plymouth-utils</SelectedPackage>
+                <SelectedPackage>pmtools</SelectedPackage>
                 <SelectedPackage>polkit-kde_1</SelectedPackage>
                 <SelectedPackage>poster</SelectedPackage>
                 <SelectedPackage>powertop</SelectedPackage>
@@ -1052,6 +1053,7 @@
                 <Package>plymouth-theme-spinfinity</Package>
                 <Package>plymouth-utils</Package>
                 <Package>pm-utils</Package>
+                <Package>pmtools</Package>
                 <Package>pnm2ppa</Package>
                 <Package>podofo</Package>
                 <Package>polkit</Package>
@@ -1327,6 +1329,7 @@
         <SelectedComponent>system.base</SelectedComponent>
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
+        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
@@ -1334,7 +1337,6 @@
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
-        <SelectedPackage>python-networkmanager</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xorg-input-aiptek</SelectedPackage>
