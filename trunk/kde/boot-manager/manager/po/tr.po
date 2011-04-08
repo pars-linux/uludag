@@ -10,9 +10,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 16:19+0300\n"
+"POT-Creation-Date: 2011-04-08 15:05+0300\n"
 "PO-Revision-Date: 2009-06-24 13:32+0300\n"
-"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n" 
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -21,45 +21,63 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
-#: data/boot-manager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr "Önyükleyici yapılandırması için bir uygulama."
-
-#: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
+#: src/boot-manager.py:95
 msgid "Boot Manager"
 msgstr "Açılış Yöneticisi"
 
-#: src/bootmanager/about.py:26
-msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2010 TUBITAK/UEKAE"
+#: src/bootmanager/about.py:30
+msgid "(c) 2006-2011 TUBITAK/UEKAE"
+msgstr "(c) 2006-2011 TUBITAK/UEKAE"
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Current Maintainer"
 msgstr "Güncel Bakıcı"
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "First Developer"
 msgstr "İlk Geliştirici"
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:38
+msgid "Aydan Taşdemir"
+msgstr "Aydan Taşdemir"
+
+#: src/bootmanager/about.py:38
+msgid "Pure Qt Support"
+msgstr "Qt Destekçisi"
+
+#: src/bootmanager/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bahadir@pardus.org.tr, necmettin.begiter@gmail.com, gokmen@pardus.org.tr"
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:39
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Bahadır Kandemir, Necmettin Begiter, Gökmen Göksel"
 
-#: src/bootmanager/main.py:99
+#: src/bootmanager/edit.py:151 src/bootmanager/edit.py:153
+#: src/bootmanager/edit.py:172 src/bootmanager/edit.py:174
+msgid "File System"
+msgstr "Dosya Sistemi"
+
+#: src/bootmanager/edit.py:153 src/bootmanager/edit.py:172
+#: src/bootmanager/edit.py:174
+msgid "All Files"
+msgstr "Tüm Dosyalar"
+
+#: src/bootmanager/main.py:120
+msgid "Error"
+msgstr "Hata"
+
+#: src/bootmanager/main.py:120
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -67,71 +85,67 @@ msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
 "Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
 
-#: src/bootmanager/main.py:198
+#: src/bootmanager/main.py:229
 msgid "All Items"
 msgstr "Tüm Öğeler"
 
-#: src/bootmanager/main.py:306
+#: src/bootmanager/main.py:350
 msgid "Do you want to delete '%1'?"
 msgstr "'%1' silinsin mi?"
 
-#: src/bootmanager/main.py:337
-msgid "Access denied."
-msgstr "Erişim reddedildi."
+#: src/bootmanager/main.py:350
+msgid "Remove items"
+msgstr "Öğeleri kaldır"
 
-#: ui/ui_edit.py:139
+#: src/bootmanager/main.py:383 src/bootmanager/main.py:388
+msgid "Access denied"
+msgstr "Erişim reddedildi"
+
+#: ui/ui_edit.py:148
 msgid "Title"
 msgstr "Başlık"
 
-#: ui/ui_edit.py:140
+#: ui/ui_edit.py:149
 msgid "Name of the boot entry to be shown at the boot menu."
 msgstr "Açılış menüsünde gösterilecek metin."
 
-#: ui/ui_edit.py:141
+#: ui/ui_edit.py:150
 msgid "Disk"
 msgstr "Disk"
 
-#: ui/ui_edit.py:142
-msgid "Disk that contains operating system."
-msgstr "İşletim sisteminin bulunduğu disk."
-
-#: ui/ui_edit.py:143
+#: ui/ui_edit.py:151
 msgid "Kernel"
 msgstr "Çekirdek"
 
-#: ui/ui_edit.py:144
-msgid "Operating system kernel."
-msgstr "İşletim sistemi çekirdeği."
+#: ui/ui_edit.py:152 ui/ui_edit.py:154
+msgid "..."
+msgstr "..."
 
-#: ui/ui_edit.py:145
+#: ui/ui_edit.py:153
 msgid "Ramdisk File"
 msgstr "Ramdisk Dosyası"
 
-#: ui/ui_edit.py:146
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "Çekirdek bileşenlerini önyükleyecek bir mikro işletim sistemi içeren dosya."
-
-#: ui/ui_edit.py:147
+#: ui/ui_edit.py:155
 msgid "Boot Options"
 msgstr "Açılış Seçenekleri"
 
-#: ui/ui_edit.py:148
+#: ui/ui_edit.py:156
 msgid "Boot options for operating system."
 msgstr "İşletim sisteminin açılış seçenekleri."
 
-#: ui/ui_item.py:74
+#: ui/ui_item.py:78
 msgid "Set or unset entry as default boot entry."
 msgstr "Öntanımlı açılış öğesi olarak ayarlama."
 
-#: ui/ui_item.py:75
+#: ui/ui_item.py:79
 msgid "Edit"
 msgstr "Düzenle"
 
-#: ui/ui_item.py:76
+#: ui/ui_item.py:80
 msgid "Delete"
 msgstr "Sil"
 
-#: ui/ui_main.py:82
+#: ui/ui_main.py:85
 msgid "Add New"
 msgstr "Yeni Ekle"
 
@@ -139,3 +153,32 @@ msgstr "Yeni Ekle"
 msgid "Boot menu display time:"
 msgstr "Açılış menüsünün görüntüleneceği süre:"
 
+#~ msgid "An application for managing boot loader."
+#~ msgstr "Önyükleyici yapılandırması için bir uygulama."
+
+#~ msgid "Package Error"
+#~ msgstr "Paket Hatası"
+
+#~ msgid "Yes"
+#~ msgstr "Evet"
+
+#~ msgid "No"
+#~ msgstr "Hayır"
+
+#~ msgid "title"
+#~ msgstr "Başlık"
+
+#~ msgid "kernel"
+#~ msgstr "Çekirdek"
+
+#~ msgid "Disk that contains operating system."
+#~ msgstr "İşletim sisteminin bulunduğu disk."
+
+#~ msgid "Operating system kernel."
+#~ msgstr "İşletim sistemi çekirdeği."
+
+#~ msgid "File that contains a micro operating system for preloading kernel modules."
+#~ msgstr "Çekirdek bileşenlerini önyükleyecek bir mikro işletim sistemi içeren dosya."
+
+#~ msgid "Access denied."
+#~ msgstr "Erişim reddedildi."

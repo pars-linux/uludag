@@ -15,9 +15,6 @@
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-# PyKDE
-from PyKDE4 import kdeui
-from PyKDE4 import kdecore
 
 # UI
 from bootmanager.ui_options import Ui_OptionsWidget
