@@ -11,7 +11,6 @@
 # Please read the COPYING file.
 #
 
-from PyKDE4.kdecore import i18n
 
 # Animation
 ANIM_SHOW, ANIM_HIDE = range(2)

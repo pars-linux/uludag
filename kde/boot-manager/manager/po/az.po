@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 16:19+0300\n"
+"POT-Creation-Date: 2011-04-08 15:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,115 +16,130 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: data/boot-manager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr ""
-
-#: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
+#: src/boot-manager.py:95
 msgid "Boot Manager"
 msgstr ""
 
-#: src/bootmanager/about.py:26
-msgid "(c) 2006-2010 TUBITAK/UEKAE"
+#: src/bootmanager/about.py:30
+#, fuzzy
+msgid "(c) 2006-2011 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Current Maintainer"
 msgstr ""
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Gökmen Göksel"
 msgstr ""
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "First Developer"
 msgstr ""
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:38
+msgid "Aydan Taşdemir"
+msgstr ""
+
+#: src/bootmanager/about.py:38
+msgid "Pure Qt Support"
+msgstr ""
+
+#: src/bootmanager/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:39
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
-#: src/bootmanager/main.py:99
+#: src/bootmanager/edit.py:151 src/bootmanager/edit.py:153
+#: src/bootmanager/edit.py:172 src/bootmanager/edit.py:174
+msgid "File System"
+msgstr ""
+
+#: src/bootmanager/edit.py:153 src/bootmanager/edit.py:172
+#: src/bootmanager/edit.py:174
+msgid "All Files"
+msgstr ""
+
+#: src/bootmanager/main.py:120
+msgid "Error"
+msgstr ""
+
+#: src/bootmanager/main.py:120
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 
-#: src/bootmanager/main.py:198
+#: src/bootmanager/main.py:229
 msgid "All Items"
 msgstr ""
 
-#: src/bootmanager/main.py:306
+#: src/bootmanager/main.py:350
 msgid "Do you want to delete '%1'?"
 msgstr ""
 
-#: src/bootmanager/main.py:337
-msgid "Access denied."
+#: src/bootmanager/main.py:350
+msgid "Remove items"
 msgstr ""
 
-#: ui/ui_edit.py:139
-msgid "Title"
-msgstr ""
-
-#: ui/ui_edit.py:140
-msgid "Name of the boot entry to be shown at the boot menu."
-msgstr ""
-
-#: ui/ui_edit.py:141
-msgid "Disk"
-msgstr ""
-
-#: ui/ui_edit.py:142
-msgid "Disk that contains operating system."
-msgstr ""
-
-#: ui/ui_edit.py:143
-msgid "Kernel"
-msgstr ""
-
-#: ui/ui_edit.py:144
-msgid "Operating system kernel."
-msgstr ""
-
-#: ui/ui_edit.py:145
-msgid "Ramdisk File"
-msgstr ""
-
-#: ui/ui_edit.py:146
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-
-#: ui/ui_edit.py:147
-msgid "Boot Options"
+#: src/bootmanager/main.py:383 src/bootmanager/main.py:388
+msgid "Access denied"
 msgstr ""
 
 #: ui/ui_edit.py:148
+msgid "Title"
+msgstr ""
+
+#: ui/ui_edit.py:149
+msgid "Name of the boot entry to be shown at the boot menu."
+msgstr ""
+
+#: ui/ui_edit.py:150
+msgid "Disk"
+msgstr ""
+
+#: ui/ui_edit.py:151
+msgid "Kernel"
+msgstr ""
+
+#: ui/ui_edit.py:152 ui/ui_edit.py:154
+msgid "..."
+msgstr ""
+
+#: ui/ui_edit.py:153
+msgid "Ramdisk File"
+msgstr ""
+
+#: ui/ui_edit.py:155
+msgid "Boot Options"
+msgstr ""
+
+#: ui/ui_edit.py:156
 msgid "Boot options for operating system."
 msgstr ""
 
-#: ui/ui_item.py:74
+#: ui/ui_item.py:78
 msgid "Set or unset entry as default boot entry."
 msgstr ""
 
-#: ui/ui_item.py:75
+#: ui/ui_item.py:79
 msgid "Edit"
 msgstr ""
 
-#: ui/ui_item.py:76
+#: ui/ui_item.py:80
 msgid "Delete"
 msgstr ""
 
-#: ui/ui_main.py:82
+#: ui/ui_main.py:85
 msgid "Add New"
 msgstr ""
 

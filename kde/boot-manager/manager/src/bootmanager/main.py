@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -14,10 +14,6 @@
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
-
-# PyKDE
-from PyKDE4 import kdeui
-from PyKDE4 import kdecore
 
 # UI
 from bootmanager.ui_main import Ui_MainWidget
@@ -41,6 +37,15 @@ from bootmanager.edit import EditWidget
 from bootmanager.options import OptionsWidget
 
 from pardus.diskutils import getPartitions
+
+# Pds vs KDE
+import bootmanager.context as ctx
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KIcon
+    from PyKDE4.kdecore import i18n
+else:
+    from bootmanager.context import KIcon, i18n
 
 PARTITIONS = getPartitions()
 
@@ -112,7 +117,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Check if there are packages that provide required backend.
         """
         if not len(self.iface.getPackages()):
-            kdeui.KMessageBox.error(self, kdecore.i18n("There are no packages that provide backend for this application.\nPlease make sure that packages are installed and configured correctly."))
+            QtGui.QMessageBox.critical(self,i18n("Error"), i18n("There are no packages that provide backend for this application.\nPlease make sure that packages are installed and configured correctly."))
             return False
         return True
 
@@ -150,7 +155,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         """
             Adds an item to list.
         """
-        icon = kdeui.KIcon("drive-harddisk")
+        icon = KIcon("drive-harddisk")
         type_ = os_type
 
         # Build widget and widget item
@@ -197,7 +202,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                         self.addItem(entry["index"], entry["title"], root, entry["os_type"], default)
 
                     if self.listItems.count() == 1:
-                        self.listItems.itemWidget(self.listItems.item(0)).pushDelete.hide()
+                        self.listIatems.itemWidget(self.listItems.item(0)).pushDelete.hide()
 
             self.iface.getEntries(func=handleList)
 
@@ -221,7 +226,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Builds item filter.
         """
         self.comboFilter.clear()
-        self.comboFilter.addItem(kdecore.i18n("All Items"), QtCore.QVariant("all"))
+        self.comboFilter.addItem(i18n("All Items"), QtCore.QVariant("all"))
 
         for name, (label, mandatory, optional) in self.systems.iteritems():
             self.comboFilter.addItem(label, QtCore.QVariant(name))
@@ -340,7 +345,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Delete button clicked.
         """
         widget = self.sender()
-        if kdeui.KMessageBox.questionYesNo(self, kdecore.i18n("Do you want to delete '%1'?", widget.getTitle())) == kdeui.KMessageBox.Yes:
+
+        # QMessageBox usage for MessageBox
+        answer=QtGui.QMessageBox.question(self,i18n("Remove items"),i18n("Do you want to delete '%1'?",widget.getTitle()), QtGui.QMessageBox.Yes,QtGui.QMessageBox.No,)
+
+        if answer == QtGui.QMessageBox.Yes:
             def handler(package, exception, args):
                 pass
             self.iface.removeEntry(widget.getId(), widget.getTitle(), False, func=handler)
@@ -371,12 +380,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.setEntry(widget.getTitle(), widget.getType(), widget.getDisk(), widget.getKernel(), widget.getRamdisk(), widget.getOptions(), "no", widget.getId())
         except Exception, e:
             if "Comar.PolicyKit" in e._dbus_error_name:
-                message = kdecore.i18n('Access denied.')
+                message = i18n('Access denied')
             elif unicode(e).startswith('tr.org.pardus.comar.Exception:'):
                 message = unicode(e).lstrip('tr.org.pardus.comar.Exception: ')
             else:
                 message = unicode(e)
-            kdeui.KMessageBox.error(self, message)
+            QtGui.QMessageBox.critical(self,i18n("Access denied"), message)
 
             return
         # Hide edit box

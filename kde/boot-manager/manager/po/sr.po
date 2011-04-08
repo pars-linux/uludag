@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-15 16:19+0300\n"
+"POT-Creation-Date: 2011-04-08 15:05+0300\n"
 "PO-Revision-Date: 2010-07-08 23:57+0400\n"
 "Last-Translator: Jozsef <Kurucity@aim.com>\n"
 "Language-Team: American English <pardus-translators@pardus.org.tr>\n"
@@ -17,45 +17,65 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/boot-manager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr "Апликација за управљање boot loaderom."
-
-#: data/boot-manager.desktop.in.h:2 data/kcm_boot-manager.desktop.in.h:1
+#: src/boot-manager.py:95
 msgid "Boot Manager"
 msgstr "Boot Менаџер"
 
-#: src/bootmanager/about.py:26
-msgid "(c) 2006-2010 TUBITAK/UEKAE"
+#: src/bootmanager/about.py:30
+#, fuzzy
+msgid "(c) 2006-2011 TUBITAK/UEKAE"
 msgstr "(c) 2006-2010 ТУБИТАК/УЕКАЕ"
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Current Maintainer"
 msgstr "Тренутни одржавалац"
 
-#: src/bootmanager/about.py:34
+#: src/bootmanager/about.py:36
 msgid "Gökmen Göksel"
 msgstr ""
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
 msgstr "Бахадир Кандемир"
 
-#: src/bootmanager/about.py:35
+#: src/bootmanager/about.py:37
 msgid "First Developer"
 msgstr ""
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:38
+msgid "Aydan Taşdemir"
+msgstr ""
+
+#: src/bootmanager/about.py:38
+msgid "Pure Qt Support"
+msgstr ""
+
+#: src/bootmanager/about.py:39
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Kurucity@aim.com"
 
-#: src/bootmanager/about.py:36
+#: src/bootmanager/about.py:39
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Јожеф Куруцић"
 
-#: src/bootmanager/main.py:99
+#: src/bootmanager/edit.py:151 src/bootmanager/edit.py:153
+#: src/bootmanager/edit.py:172 src/bootmanager/edit.py:174
+msgid "File System"
+msgstr "систем датотека"
+
+#: src/bootmanager/edit.py:153 src/bootmanager/edit.py:172
+#: src/bootmanager/edit.py:174
+#, fuzzy
+msgid "All Files"
+msgstr "Све ставке"
+
+#: src/bootmanager/main.py:120
+msgid "Error"
+msgstr ""
+
+#: src/bootmanager/main.py:120
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -63,74 +83,95 @@ msgstr ""
 "Нема пакета који обезбеђују позадину за ову апликацију.\n"
 "Молим Вас проверите да ли су пакети инсталирани и конфигурисани како треба."
 
-#: src/bootmanager/main.py:198
+#: src/bootmanager/main.py:229
 msgid "All Items"
 msgstr "Све ставке"
 
-#: src/bootmanager/main.py:306
+#: src/bootmanager/main.py:350
 msgid "Do you want to delete '%1'?"
 msgstr "Да ли желите да избришете '%1'?"
 
-#: src/bootmanager/main.py:337
-msgid "Access denied."
+#: src/bootmanager/main.py:350
+msgid "Remove items"
+msgstr "Уклањање ставки"
+
+#: src/bootmanager/main.py:383 src/bootmanager/main.py:388
+#, fuzzy
+msgid "Access denied"
 msgstr "Приступ забрањен."
 
-#: ui/ui_edit.py:139
+#: ui/ui_edit.py:148
 msgid "Title"
 msgstr "Наслов"
 
-#: ui/ui_edit.py:140
+#: ui/ui_edit.py:149
 msgid "Name of the boot entry to be shown at the boot menu."
 msgstr "Назив boot уноса који ће бити приказан у boot листи."
 
-#: ui/ui_edit.py:141
+#: ui/ui_edit.py:150
 msgid "Disk"
 msgstr "Диск"
 
-#: ui/ui_edit.py:142
-msgid "Disk that contains operating system."
-msgstr "Диск који садржи оперативни систем."
-
-#: ui/ui_edit.py:143
+#: ui/ui_edit.py:151
 msgid "Kernel"
 msgstr "Језгро"
 
-#: ui/ui_edit.py:144
-msgid "Operating system kernel."
-msgstr "Језгро оперативног ситема."
+#: ui/ui_edit.py:152 ui/ui_edit.py:154
+msgid "..."
+msgstr ""
 
-#: ui/ui_edit.py:145
+#: ui/ui_edit.py:153
 msgid "Ramdisk File"
 msgstr "Ram диск фајл"
 
-#: ui/ui_edit.py:146
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "Фајл који садржи микро оперативни систем за пред учитавање модула језгра."
-
-#: ui/ui_edit.py:147
+#: ui/ui_edit.py:155
 msgid "Boot Options"
 msgstr "Boot опције"
 
-#: ui/ui_edit.py:148
+#: ui/ui_edit.py:156
 msgid "Boot options for operating system."
 msgstr "Boot опције за оперативни систем."
 
-#: ui/ui_item.py:74
+#: ui/ui_item.py:78
 msgid "Set or unset entry as default boot entry."
 msgstr "Постави или уклони унос као подразумевани boot унос."
 
-#: ui/ui_item.py:75
+#: ui/ui_item.py:79
 msgid "Edit"
 msgstr "Измени"
 
-#: ui/ui_item.py:76
+#: ui/ui_item.py:80
 msgid "Delete"
 msgstr "Избриши"
 
-#: ui/ui_main.py:82
+#: ui/ui_main.py:85
 msgid "Add New"
 msgstr "Додај нови"
 
 #: ui/ui_options.py:42
 msgid "Boot menu display time:"
 msgstr "Време приказа boot листе:"
+
+#~ msgid "An application for managing boot loader."
+#~ msgstr "Апликација за управљање boot loaderom."
+
+#~ msgid "Package Error"
+#~ msgstr "пакет грешка"
+
+#~ msgid "Yes"
+#~ msgstr "Да"
+
+#~ msgid "No"
+#~ msgstr "нема"
+
+#~ msgid "Disk that contains operating system."
+#~ msgstr "Диск који садржи оперативни систем."
+
+#~ msgid "Operating system kernel."
+#~ msgstr "Језгро оперативног ситема."
+
+#~ msgid "File that contains a micro operating system for preloading kernel modules."
+#~ msgstr "Фајл који садржи микро оперативни систем за пред учитавање модула језгра."
+
+#~ msgid "Access denied."
+#~ msgstr "Приступ забрањен."

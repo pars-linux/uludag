@@ -55,7 +55,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="KComboBox" name="comboFilter"/>
+         <widget class="QComboBox" name="comboFilter"/>
         </item>
        </layout>
       </item>
@@ -121,15 +121,7 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
-  <tabstop>comboFilter</tabstop>
   <tabstop>listItems</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
