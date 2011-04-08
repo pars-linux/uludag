@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -15,14 +15,19 @@
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-# PyKDE
-from PyKDE4.kdeui import KIcon
+# Pds vs Kde Stuff
+import context as ctx
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KIcon
+else:
+    from diskmanager.context import KIcon
 
 # UI
 from diskmanager.ui_item import Ui_ItemWidget
 
-
 class ItemListWidgetItem(QtGui.QListWidgetItem):
+
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
@@ -34,8 +39,8 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
     def getType(self):
         return self.widget.getType()
 
-
 class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
+
     def __init__(self, parent, id_, title="", description="", type_=None, icon=None, state=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
@@ -50,10 +55,8 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
             self.setIcon(icon)
         else:
             self.labelIcon.hide()
-        if state != None:
-            self.setState(state)
-        else:
-            self.checkState.hide()
+
+        self.setState(state)
 
         # Buttons
         self.pushEdit.setIcon(KIcon("preferences-other"))
@@ -92,14 +95,12 @@ class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
         return self.checkState.checkState()
 
     def setState(self, state):
-        if state == True:
-            state = QtCore.Qt.Checked
-        elif state == False:
-            state = QtCore.Qt.Unchecked
-        return self.checkState.setCheckState(state)
+        
+        return self.checkState.setCheckState(QtCore.Qt.Checked if state else QtCore.Qt.Unchecked)
 
     def hideEdit(self):
         self.pushEdit.hide()
 
     def hideDelete(self):
         self.pushDelete.hide()
+

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -14,10 +14,6 @@
 # PyQt
 from PyQt4 import QtCore
 from PyQt4 import QtGui
-
-# PyKDE
-from PyKDE4 import kdeui
-from PyKDE4 import kdecore
 
 # UI
 from diskmanager.ui_main import Ui_MainWidget
@@ -36,6 +32,15 @@ from diskmanager.item import ItemListWidgetItem, ItemWidget
 
 # Edit widget
 from diskmanager.pagedialog import PageDialog
+
+# Pds vs Kde4 Stuff
+import diskmanager.context as ctx
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KIcon
+    from PyKDE4.kdecore import i18n
+else:
+    from diskmanager.context import KIcon, i18n, KIconLoader
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -63,11 +68,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def checkBackend(self):
         """ Check if there are packages that provide required backend. """
         if not len(self.iface.getPackages()):
-            kdeui.KMessageBox.error(self, \
-                    kdecore.i18n("There are no packages that provide " \
-                                 "backend for this application.\n" \
-                                 "Please make sure that packages " \
-                                 "are installed and configured correctly."))
+            QtGui.QMessageBox.critical(self, i18n("Error"), \
+                                             i18n("There are no packages that provide \
+                                                  backend for this application.\n \
+                                                  Please make sure that packages \
+                                                  are installed and configured correctly."))
             return False
         return True
 
@@ -93,9 +98,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def addItem(self, id_, name="", description="", mounted=False):
         """ Adds an item to list. """
         if mounted:
-            icon = kdeui.KIcon("drive-harddisk", None, ["emblem-mounted"])
+            if ctx.Pds.session == ctx.pds.Kde4:
+                icon = KIcon("drive-harddisk", None, ["emblem-mounted"])
+            else:
+                icon = QtGui.QIcon(KIconLoader.loadOverlayed('drive-harddisk', ["emblem-mounted"], 32))
         else:
-            icon = kdeui.KIcon("drive-harddisk")
+            icon = KIcon("drive-harddisk")
 
         type_ = "disk"
 
@@ -135,8 +143,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     parts.sort()
                     for part in parts:
                         if part in self.mounted_devices:
-                            description = kdecore.i18n("Mounted at %1", \
-                                    self.mounted_devices[part])
+                            description = i18n("Mounted at %1", self.mounted_devices[part])
                             self.addItem(part, part, description, True)
                         else:
                             self.addItem(part, part, "")
@@ -156,10 +163,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.mount(widget.getId(), path)
             except Exception, e:
                 if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self,
-                            kdecore.i18n("Access denied."))
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Access denied."))
                 else:
-                    kdeui.KMessageBox.error(self, unicode(e))
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Error") + unicode(e)[unicode(e).find(":"):])
                 widget.setState(False)
                 return
         elif state == QtCore.Qt.Unchecked:
@@ -167,10 +173,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.umount(widget.getId())
             except Exception, e:
                 if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self,
-                            kdecore.i18n("Access denied."))
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Access denied."))
                 else:
-                    kdeui.KMessageBox.error(self, unicode(e))
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Error") + unicode(e)[unicode(e).find(":"):])
                 widget.setState(True)
                 return
         self.buildItemList()
@@ -207,10 +212,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     self.iface.removeEntry(device)
             except Exception, e:
                 if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Access denied."))
                 else:
-                    err = kdecore.i18n("Error") + unicode(e)[unicode(e).find(":"):]
-                    kdeui.KMessageBox.error(self, err)
+                    QtGui.QMessageBox.critical(self, i18n("Error"), i18n("Error") + unicode(e)[unicode(e).find(":"):])
 
     def slotItemDelete(self):
         """ Delete button clicked. """
@@ -224,3 +228,4 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def signalHandler(self, package, signal, args):
         self.buildItemList()
+

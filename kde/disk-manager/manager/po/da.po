@@ -49,6 +49,10 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
 
+#: src/diskmanager/main.py:70 src/diskmanager/main.py:211 src/diskmanager/main.py:213 src/diskmanager/main.py:162 src/diskmanager/main.py:164 src/diskmanager/main.py:172 src/diskmanager/main.py:174
+msgid "Error"
+msgstr "Fejl"
+
 #: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -10,8 +10,6 @@
 #
 # Please read the COPYING file.
 #
-
-from PyKDE4.kdecore import i18n
 
 # FS types and options
 FS_TYPES = {
@@ -39,3 +37,4 @@ ANIM_SHOW, ANIM_HIDE = range(2)
 ANIM_TIME = 200
 ANIM_TARGET = 0
 ANIM_DEFAULT = 16777215
+
