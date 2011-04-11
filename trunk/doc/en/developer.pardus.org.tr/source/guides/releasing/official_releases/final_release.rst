@@ -43,7 +43,7 @@ Final Release Requirements
 
 In order to do Pardus Final official, the following criterias must be met:
 
-* All `beta release requirements_` must be achieved.
+* All `beta release requirements`_ must be achieved.
 * All bugs blocking the Final tracker must be closed.
 * The installation manager (YALI_) must be able to complete an installation using IDE, SATA, SCSI and iSCSI storage devices
 * The installation manager (YALI_) must be able to create partition tables using any file system offered in installer configuration and complete installation for LVM, software, hardware or BIOS RAID, or  IDE, SATA, SCSI and iSCSI storage devices.

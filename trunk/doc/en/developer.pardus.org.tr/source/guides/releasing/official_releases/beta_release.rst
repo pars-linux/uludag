@@ -45,7 +45,7 @@ Beta Release Requirements
 
 In order to do Pardus Beta official, the following criterias must be meet:
 
-* All `alpha release requirements_` must be achieved.
+* All `alpha release requirements`_ must be achieved.
 * All bugs blocking the Beta tracker must be closed.
 * The installation manager (YALI_) must boot and run on all `supported architectures`_ from install and live images
 * The installation manager (YALI_) must  be able to complete the installation using the shrink option supported different file systems.
@@ -138,5 +138,3 @@ at the "where we are" meeting.
 .. _code complete: http://developer.pardus.org.tr/guides/releasing/feature_freeze.html
 .. _tracker bugs: http://developer.pardus.org.tr/guides/bugtracking/tracker_bug_process.html#open-tracker-bug-report
 .. _accepted features: http://bugs.pardus.org.tr/buglist.cgi?query_format=advanced&bug_severity=newfeature&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&resolution=REMIND
-
-
