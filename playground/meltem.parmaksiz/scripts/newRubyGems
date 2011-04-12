@@ -1,0 +1,192 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+
+# Meltem Parmaksız
+
+# Script for automatically creating ruby gem modules The script is not usable,
+# need heavy changes to work.  I've modified it for my own work, please check
+# it before you try to use it
+
+import os
+import sys
+import time
+import string
+import shutil
+
+pspec = '''<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>%(package)s</Name>
+        <Homepage>%(homepage)s</Homepage>
+        <Packager>
+            <Name>%(packager_name)s</Name>
+            <Email>%(packager_email)s</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>library</IsA>
+        <Summary>FIXsummary</Summary>
+        <Description>FIXdesc</Description>
+        <Archive sha1sum="a" type="binary">%(download_url)s</Archive>
+    </Source>
+
+    <Package>
+        <Name>%(package)s</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="library">/usr/lib/ruby/gems/1.8/gems/%(source_version)s</Path>
+            <Path fileType="library">/usr/lib/ruby/gems/1.8/specifications</Path>
+            <Path fileType="doc">/usr/lib/ruby/gems/1.8/doc/%(source_version)s</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>%(date)s</Date>
+            <Version>%(version)s</Version>
+            <Comment>First release</Comment>
+            <Name>%(packager_name)s</Name>
+            <Email>%(packager_email)s</Email>
+        </Update>
+    </History>
+</PISI>
+'''
+
+actions_part1 = '''#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# Copyright 2011 TUBITAK/UEKAE
+# Licensed under the GNU General Public License, version 2.
+# See the file http://www.gnu.org/copyleft/gpl.txt.
+
+from pisi.actionsapi import autotools
+from pisi.actionsapi import pisitools
+from pisi.actionsapi import shelltools
+from pisi.actionsapi import get
+
+WorkDir = "."
+
+#ruby -rubygems -e 'puts Gem::dir' 2>/dev/null
+ruby_gemdir = "/usr/lib/ruby/gems/1.8"
+source = "%(source_version)s.gem"
+'''
+
+actions_part2 ='''
+def install():
+    shelltools.system("gem install -E --local --install-dir %s/%s  --bindir %s/usr/bin --force %s/%s" %  ( get.installDIR(), ruby_gemdir, get.installDIR(), get.workDIR(), source))
+
+    pisitools.removeDir("%s/cache" % ruby_gemdir)
+
+'''
+
+translation = '''<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>%(package)s</Name>
+        <Summary xml:lang="">FIXsummary </Summary>
+        <Description xml:lang="">FIXdesc</Description>
+    </Source>
+</PISI>
+'''
+
+
+
+def write(filename, data):
+    try:
+       f = file("%s" % ( filename), "w")
+       f.write(data)
+       f.close()
+    except:
+        print "Could not write file %s/%s" % (target, filename)
+
+def create_dir(dir_name):
+    try:
+        os.makedirs(dir_name)
+    except:
+        print "Could not make directory %s" % target
+        sys.exit(1)
+
+
+'''
+def readConfig():
+    home = os.getenv("HOME", "")
+    cfg = "%s/%s" % (home, packagerfile)
+    d = {"name": "", "email": ""}
+
+    if home != "" and os.path.exists(cfg):
+        for line in file(cfg):
+            if line != "" and not line.startswith("#") and "=" in line:
+                l, m = line.split("=", 1)
+                k = l.strip()
+                v = m.strip()
+                if k in ["name", "email"]:
+                    if v.startswith('"') or v.startswith("'"):
+                        v = v[1:-1]
+                    d[k.strip()] = v.strip()
+
+    return d["name"], d["email"]
+'''
+
+def update_sha1sum(fl):
+    sh = os.popen("sha1sum %s" % fl ).read().split()[0]
+    print sh
+
+    if sh:
+        ret = []
+        for l in open("pspec.xml", "r").readlines():
+            if "<Archive" in l:
+                nls = l.split("sha1sum=\"")
+                nl = nls[0] + "sha1sum=\"%s\"" %sh + nls[1].split("\"", 1)[1]
+                ret.append(nl)
+            else:
+                ret.append(l)
+
+        return "".join(ret)
+
+
+if "__main__"== __name__:
+
+    data = {}
+
+    package = sys.argv[1]
+    data["package"]= sys.argv[1] 
+    data["homepage"]= sys.argv[2]  
+    data["download_url"] =  sys.argv[3]
+
+    data["version"] = (data["download_url"].split("-")[-1])[:-4]
+    data["source_version"] = "%s-%s" %( data["package"][8:],data["version"])
+    data["date"] = time.strftime("%Y-%m-%d")
+
+
+    data["packager_name"] = "Meltem Parmaksız"  
+    data["packager_email"] = "meltem@pardus.org.tr" 
+
+    if os.path.exists(package):
+        shutil.rmtree(package)
+    create_dir( package )
+    os.chdir(package)
+
+    write("pspec.xml", pspec % data )
+    write("actions.py", "%s%s" % (actions_part1 %data , actions_part2 ) )
+    write("translations.xml", translation % data )
+
+    if os.getenv("USER") != "root":
+        os.system("sudo pisi build pspec.xml --fetch")
+    else:
+        os.system("pisi build pspec.xml --fetch")
+
+
+#    fl = "%s-%s-1/work/%s" % (package, data["version"],"%s.gem" % data["source_version"])
+    fl= "/var/cache/pisi/archives/%s.gem" % data["source_version"]
+    pspec =  update_sha1sum(fl)
+    open("pspec.xml", "w").write(pspec)
+
+    #open("pspec.xml", "w").write(update_sha1sum(fl))  bos donduruo NEDENNNNNNNN????????
+
+
+    if os.getenv("USER") != "root":
+        os.system("sudo pisi build pspec.xml --package")
+    else:
+        os.system("pisi build pspec.xml --package")
+
+
