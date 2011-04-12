@@ -15,6 +15,7 @@ _ = __trans.ugettext
 
 # Pisi Modules
 import pisi.context as ctx
+from pisi.util  import join_path
 
 # ActionsAPI Modules
 import pisi.actionsapi
@@ -40,11 +41,12 @@ def remove_cachedir():
         error(_('ActionsAPI [unlinkDir]: Operation not permitted: %s') % (sourceDirectory))
 
 def install(parameters = ''):
-    installdir = os.path.join( get.installDIR(), get_rubygemdir() )
-    bindir = os.path.join( get.installDIR(), "/usr/bin" )
-    source = "%s-%s" % (get.srcNAME()[8:], get.srcVERSION())
-    sourcedir = os.path.join(get.workDIR(), source )
+    installdir = join_path(get.installDIR(), get_rubygemdir())
+    bindir = join_path(get.installDIR(), "/usr/bin")
+    source = "%s-%s" %(get.srcNAME()[8:], get.srcVERSION())
+    sourcedir = join_path(get.workDIR(), source)
 
+    print installdir ,  bindir,  source, sourcedir 
     if system("gem install -E --local --install-dir %s  --bindir %s --force %s" % (installdir, bindir, sourcedir)):
         raise InstallError, _('Install failed.')
 
