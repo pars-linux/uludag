@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Meltem Parmaksız
+# A little tiny script to change description and summary fastly without opening the file
+
+summary=$1
+desc=$2
+
+filePs="pspec.xml"
+fileTra="translations.xml"
+
+if [ "$3"!='' ]
+    then
+        filePs="$3pspec.xml"
+        fileTra="$3translations.xml"
+fi
+
+
+sed -i "s/<Summary.*<\/Summary>/<Summary>$1<\/Summary>/"  $filePs
+sed -i "s/<Description.*<\/Description>/<Description>$2<\/Description>/"  $filePs
+
+sed -i "s/<Summary.*<\/Summary>/<Summary xml:lang=\"en\">$1<\/Summary>/"  $fileTra
+sed -i "s/<Description.*<\/Description>/<Description xml:lang=\"en\">$2<\/Description>/"  $fileTra
+
+
+
+
