@@ -994,7 +994,17 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         """
             Triggered when user clicks "Copy Policy" button.
         """
+        msg = QtGui.QMessageBox(self)
+        msg.setIcon(QtGui.QMessageBox.Question)
+        msg.setText("Policy from parent directory will be copied.")
+        msg.setInformativeText("Do you want to continue?")
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setDefaultButton(QtGui.QMessageBox.Yes)
+
+        if msg.exec_() != QtGui.QMessageBox.Yes:
+            return
+
         widget = self.stackedWidget.currentWidget()
         item = widget.item.parent()
-        widget.policy = self.__load_policy(item)
-        widget.load_policy(widget.policy)
+        policy = self.__load_policy(item)
+        widget.load_policy(policy)
