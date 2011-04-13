@@ -69,9 +69,20 @@ class ThreadFW(QtCore.QThread):
         self.status = True
 
         data = file(name + ".sh").read()
+
+        # Disable "start" method clearing whole rule set
         data = re.sub('(reset_all )', '#\\1', data)
+
+        # Add NAT log rules
+        data = re.sub('    echo \"Rule ([0-9]+) \(NAT\)\"\n    # \n    \$IPTABLES \-t nat (.*) \-j DNAT (.*)',
+                      '    echo "Rule \\1 (NAT)"\n    # \n    $IPTABLES -t nat \\2 -j DNAT \\3\n    $IPTABLES -t nat \\2 -j LOG  --log-level info --log-prefix "RULE \\1 -- TRANSLATE " \\3',
+                      data,
+                      re.MULTILINE)
+
+        # Add log prefixes
         data = re.sub('RULE_', '%s_RULE_' % self.group_name, data)
         data = re.sub('"RULE ', '"%s RULE ' % self.group_name, data)
+
         self.rules_compiled = data
 
 
