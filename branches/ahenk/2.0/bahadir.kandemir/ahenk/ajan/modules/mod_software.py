@@ -86,12 +86,12 @@ def set_autoupdate(mode, crondate=None, dryrun=False):
         logging.info("Software: Auto update disabled.")
         if not dryrun:
             # Remove command from crontab, ignore arguments while matching records
-            utils.update_cron("ahenk_software_update", noargs=True, filename="/etc/cron.d/ahenk_software")
+            utils.update_cron("ahenk_software_update", noargs=True)
     elif mode == "security":
         logging.info("Software: Security updates will be made automatically.")
         if not dryrun:
-            utils.update_cron("ahenk_software_update --security", crondate, noargs=True, filename="/etc/cron.d/ahenk_software")
+            utils.update_cron("ahenk_software_update --security", crondate, noargs=True)
     elif mode == "full":
         logging.info("Software: All updates will be made automatically.")
         if not dryrun:
-            utils.update_cron("ahenk_software_update", crondate, noargs=True, filename="/etc/cron.d/ahenk_software")
+            utils.update_cron("ahenk_software_update", crondate, noargs=True)
