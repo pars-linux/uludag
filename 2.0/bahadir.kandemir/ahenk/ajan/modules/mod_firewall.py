@@ -34,8 +34,6 @@ def enable_firewall(rules, options, first=False):
                 os.system("/bin/bash %s stop" % script_path)
             os.system("/bin/bash %s start" % script_path)
 
-        logging.info("Firewall: IPTables service is running.")
-
 def disable_firewall(options):
     dryrun = options.dryrun
 
@@ -44,8 +42,6 @@ def disable_firewall(options):
     if not dryrun:
         if os.path.exists(script_path):
             os.system("/bin/bash %s stop" % script_path)
-
-    logging.info("Firewall: IPTables service is not running.")
 
 def process(message, options):
     """
@@ -62,6 +58,7 @@ def process(message, options):
         stack = message.policy_stack
         stack.reverse()
         first = True
+        logging.info("Firewall: Loading rule sets.")
         for policy in stack:
             firewallState = policy.get("firewallState", [""])[0]
             firewallRules = policy.get("firewallRules", [""])[0]
