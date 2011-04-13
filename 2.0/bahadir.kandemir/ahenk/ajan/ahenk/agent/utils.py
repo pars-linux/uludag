@@ -123,7 +123,7 @@ def process_modules(options, message, children):
                 else:
                     locals["process"](message, options)
 
-def update_cron(command, schedule=None, username="root", noargs=False, filename="/etc/cron.d/ahenk"):
+def update_cron(command, schedule=None, username="root", noargs=False, filename="/etc/crontab"):
     """
         Updates an crontab record in /etc/crontab file.
 
