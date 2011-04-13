@@ -128,7 +128,7 @@ def connect():
     factory.clientConnectionFailed = event_connection_failed
     factory.addBootstrap(xmlstream.STREAM_AUTHD_EVENT, event_session_start)
     factory.addBootstrap(xmlstream.INIT_FAILED_EVENT, event_init_failed)
-    reactor.connectTCP(OPTIONS.domain, 5222, factory)
+    reactor.connectTCP(OPTIONS.hostname, 5222, factory)
 
 def xmpp_go(options, q_in, q_out):
     """
