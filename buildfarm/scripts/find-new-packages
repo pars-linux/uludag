@@ -24,6 +24,9 @@ if __name__ == "__main__":
     stable_packages = {}
     new_packages = []
 
+    updaters = {}
+    updates = {}
+
     testing_dir = utils.get_compiled_packages_directory()
     stable_dir = utils.get_stable_packages_directory()
 
@@ -31,32 +34,39 @@ if __name__ == "__main__":
         print "You don't have a stable repository on this buildfarm."
         sys.exit(1)
 
+    # Create index objects
     testing_index = pisi.index.Index(os.path.join(testing_dir, "pisi-index.xml"))
     stable_index = pisi.index.Index(os.path.join(stable_dir, "pisi-index.xml"))
 
+    # Create a package mapping
     for package in stable_index.packages:
         stable_packages[package.name] = package
 
-    updaters = {}
-    updates = {}
-
     for package in testing_index.packages:
+        # Skip if it already exists in stable repository
         if os.path.exists(os.path.join(stable_dir, package.packageURI)):
             continue
 
+        # Assume that the package is completely new for stable repository
         status = "A"
         update_action = " "
 
+        # Get the old package from stable repository
         old_stable = stable_packages.get(package.name)
         if old_stable:
+            # Stable has an older release so this is an (U)pdate
             status = "U"
             if package.has_update_type("security", old_stable.history[0].release):
+                # This is security
                 update_action = "S"
             elif package.has_update_type("critical", old_stable.history[0].release):
+                # This is critical
                 update_action = "C"
 
+        # Finally append it to the new_packages list
         new_packages.append((package.source.name, package.packageURI, status, update_action))
 
+        # Add the source package to updates dictionary
         if package.source.name not in updates:
             updates[package.source.name] = UpdateInfo(package)
 
@@ -64,6 +74,7 @@ if __name__ == "__main__":
             history = package.history
             old_release = old_stable.history[0].release
         else:
+            # In case of a new package
             history = package.history[:1]
             old_release = ""
 
