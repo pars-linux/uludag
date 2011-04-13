@@ -429,7 +429,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             return
 
         # Connect to XMPP server
-        self.talk.connect(self.directory.user, self.directory.domain, self.directory.password)
+        self.talk.connect(self.directory.host, self.directory.domain, self.directory.user, self.directory.password)
 
         # List components
         self.__list_items()
@@ -453,6 +453,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         # Clear tree
         self.treeComputers.clear()
+        self.treeSummary.clear()
 
         # Reset selected item
         self.items = []

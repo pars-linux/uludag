@@ -55,20 +55,22 @@ class Talk(QtCore.QThread):
         # Looping call for checking for shutdown request
         task.LoopingCall(self.__task_shutdown).start(0.5)
 
-    def connect(self, username, domain, password):
+    def connect(self, hostname, domain, username, password):
         """
             Connects to username@domain with specified password
 
             Arguments:
+                hostname: XMPP server address
+                domain: XMPP domain name
                 username: User name
-                domain: XMPP server address
                 password: User password
         """
         if self.connector and self.is_connected:
             self.disconnect()
 
-        self.username = username
+        self.hostname = hostname
         self.domain = domain
+        self.username = username
         self.password = password
 
         myJid = jid.JID('%s@%s' % (self.username, self.domain))
@@ -78,7 +80,7 @@ class Talk(QtCore.QThread):
         factory.addBootstrap(xmlstream.STREAM_AUTHD_EVENT, self.__event_session_start)
 
         self.is_connected = True
-        self.connector = reactor.connectTCP(self.domain, 5222, factory)
+        self.connector = reactor.connectTCP(self.hostname, 5222, factory)
 
     def __task_shutdown(self):
         """
