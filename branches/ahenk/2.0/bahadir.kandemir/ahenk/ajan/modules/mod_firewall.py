@@ -15,7 +15,7 @@ import comar
 from ahenk.agent import utils
 
 
-def enable_firewall(rules, options):
+def enable_firewall(rules, options, first=False):
     dryrun = options.dryrun
 
     script_path = os.path.join(options.policydir, "firewall.sh")
@@ -30,7 +30,8 @@ def enable_firewall(rules, options):
         fp.close()
 
         if not dryrun:
-            os.system("/bin/bash %s stop" % script_path)
+            if first:
+                os.system("/bin/bash %s stop" % script_path)
             os.system("/bin/bash %s start" % script_path)
 
         logging.info("Firewall: IPTables service is running.")
@@ -58,10 +59,14 @@ def process(message, options):
     dryrun = options.dryrun
 
     if message.type == "policy":
-        for policy in message.policy_stack:
+        stack = message.policy_stack
+        stack.reverse()
+        first = True
+        for policy in stack:
             firewallState = policy.get("firewallState", [""])[0]
             firewallRules = policy.get("firewallRules", [""])[0]
             if firewallState == "on":
-                enable_firewall(firewallRules, options)
-            elif firewallState == "off":
+                enable_firewall(firewallRules, options, first)
+            elif firewallState == "off" and first:
                 disable_firewall(options)
+            first = False
