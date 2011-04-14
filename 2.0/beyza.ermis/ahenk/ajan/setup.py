@@ -18,6 +18,7 @@ setup(name='ahenk-agent',
                                              'modules/mod_authentication.py',
                                              'modules/mod_firewall.py',
                                              'modules/mod_services.py',
+                                             'modules/mod_apache.py',
                                             ]),
                   ('/etc/ahenk', ['etc/ahenk-agent.conf']),
                   ]

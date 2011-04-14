@@ -1,0 +1,7 @@
+apacheDomains [str] List of domain names
+port [str] Virtual Host Port
+ip [str] Virtual Host IP Address
+serverAdmin [str] Virtual Host server admin
+documentRoot [str] Virtual Host document root
+serverName [str] Virtual Host server name
+

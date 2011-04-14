@@ -1,0 +1,43 @@
+objectIdentifier pardusBase 2.16.792.1.2.1.1.5.1
+attributetype ( pardusBase:4.1
+    NAME 'apacheDomains'
+    DESC 'List of domain names'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+attributetype ( pardusBase:4.2
+    NAME 'port'
+    DESC 'Virtual Host Port'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+attributetype ( pardusBase:4.3
+    NAME 'ip'
+    DESC 'Virtual Host IP Address'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+attributetype ( pardusBase:4.4
+    NAME 'serverAdmin'
+    DESC 'Virtual Host server admin'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+attributetype ( pardusBase:4.5
+    NAME 'documentRoot'
+    DESC 'Virtual Host document root'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+attributetype ( pardusBase:4.6
+    NAME 'serverName'
+    DESC 'Virtual Host server name'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+ )
+
+objectclass ( pardusBase:4.0
+    NAME 'apachePolicy'
+    SUP top
+    AUXILIARY
+    MAY ( apacheDomains $ port $ ip $ serverAdmin $ documentRoot $ serverName )
+ )
