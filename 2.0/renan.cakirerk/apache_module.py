@@ -51,15 +51,15 @@ def addVirtualHost(vhost_config):
     config.set("$vhost/VirtualHost/arg", vhost_ip_port)
 
     # Add ServerAdmin
-    # === config.set("$vhost/VirtualHost/directive", "ServerAdmin")
+    config.set("$vhost/VirtualHost/directive[1]", "ServerAdmin")
     config.set("$vhost/VirtualHost/*[self::directive='ServerAdmin']/arg", server_admin)
 
     # Add DocumentRoot
-    # === config.set("$vhost/VirtualHost/directive", "DocumentRoot")
+    config.set("$vhost/VirtualHost/directive[2]", "DocumentRoot")
     config.set("$vhost/VirtualHost/*[self::directive='DocumentRoot']/arg", document_root)
 
     # Add ServerName
-    # === config.set("$vhost/VirtualHost/directive", "ServerName")
+    config.set("$vhost/VirtualHost/directive[3]", "ServerName")
     config.set("$vhost/VirtualHost/*[self::directive='ServerName']/arg", server_name)
 
     config.save()
