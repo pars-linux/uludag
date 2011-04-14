@@ -35,11 +35,10 @@ def get_index(queue, index_path):
 
 def main():
     stable_packages = {}
-
+    diff_packages = {}
+    uri_dict = {}
     updaters = {}
     updates = {}
-
-    diff_packages = {}
 
     testing_dir = utils.get_compiled_packages_directory()
     stable_dir = utils.get_stable_packages_directory()
@@ -132,6 +131,12 @@ def main():
                             except KeyError:
                                 rev_cdeps[dependency.name()] = [package_metadata.packageURI]
 
+    # Keep a list of package name -> URI mappings
+    for valuelist in diff_packages.values():
+        for val in valuelist:
+            package_metadata, status, update_action = val
+            uri_dict[package_metadata.name] = package_metadata.packageURI
+
     # Check for dependencies
     for package_source_name in sorted(diff_packages.keys()):
         # Sort according to packageURI
@@ -143,7 +148,7 @@ def main():
             # Print updates
             print "%s%s %s" % (status, update_action, package_metadata.packageURI)
             if cdeps.has_key(package_metadata.packageURI):
-                print "#  Depends on %s" % cdeps[package_metadata.packageURI]
+                print "#  Depends on %s" % uri_dict[cdeps[package_metadata.packageURI]]
 
             for revdep in rev_cdeps.get(package_metadata.name, []):
                 print "#  %s depends on this" % revdep
