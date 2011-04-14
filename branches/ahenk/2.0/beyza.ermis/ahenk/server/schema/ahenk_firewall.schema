@@ -1,0 +1,21 @@
+objectIdentifier pardusBase 2.16.792.1.2.1.1.5.1
+attributetype ( pardusBase:3.1
+    NAME 'firewallState'
+    DESC 'Firewall state (on/off)'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+    SINGLE-VALUE
+ )
+
+attributetype ( pardusBase:3.2
+    NAME 'firewallRules'
+    DESC 'IPTables rules'
+    SYNTAX 1.3.6.1.4.1.1466.115.121.1.40
+    SINGLE-VALUE
+ )
+
+objectclass ( pardusBase:3.0
+    NAME 'firewallPolicy'
+    SUP top
+    AUXILIARY
+    MAY ( firewallState $ firewallRules )
+ )

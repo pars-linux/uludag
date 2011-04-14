@@ -24,6 +24,9 @@ all:
 	
 	pyuic4 lider/plugins/plugin_web/web.ui > lider/plugins/plugin_web/ui_web.py
 	pyrcc4 lider/plugins/plugin_web/web.qrc > lider/plugins/plugin_web/web_rc.py
+	
+	pyuic4 lider/plugins/plugin_apache/apache.ui > lider/plugins/plugin_apache/ui_apache.py
+	pyrcc4 lider/plugins/plugin_apache/apache.qrc > lider/plugins/plugin_apache/apache_rc.py
 
 clean:
 	find . -name "*.pyc" | xargs rm -rf

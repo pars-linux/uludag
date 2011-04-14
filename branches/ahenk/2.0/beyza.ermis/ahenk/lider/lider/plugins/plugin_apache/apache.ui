@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>widgetApache</class>
+ <widget class="QWidget" name="widgetApache">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>671</width>
+    <height>545</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Apache</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="apache.qrc">
+    <normaloff>:/icons/wine.png</normaloff>:/icons/wine.png</iconset>
+  </property>
+  <widget class="QLabel" name="warningLabel">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>440</y>
+     <width>399</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::WheelFocus</enum>
+   </property>
+   <property name="text">
+    <string>                                             Apache web server is not installed.</string>
+   </property>
+   <property name="textFormat">
+    <enum>Qt::AutoText</enum>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>631</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="name">
+        <property name="text">
+         <string>Virtual Host Name              </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="host_name"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="port">
+        <property name="text">
+         <string>Virtual Host Port                </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="host_port"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="root">
+        <property name="text">
+         <string>Document Root                  </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QTextEdit" name="document_root"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>631</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="domainLayout">
+    <item>
+     <widget class="QLabel" name="domainLabel">
+      <property name="text">
+       <string>ApacheDomains                 </string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="textDomains"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>210</y>
+     <width>631</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="overrideLabel">
+        <property name="text">
+         <string>Allow Override                          </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QCheckBox" name="auth_config">
+          <property name="text">
+           <string>Auth Config</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="limit">
+          <property name="text">
+           <string>Limit</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="file_info">
+          <property name="text">
+           <string>File Info</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="default_host">
+      <property name="text">
+       <string>Default Host</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="indexes">
+        <property name="text">
+         <string>Indexes</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="follow_symlinks">
+          <property name="text">
+           <string>Follow Symlinks</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="owner_watch">
+          <property name="text">
+           <string>Symlinks if Owner Watch</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="exec_CGI">
+          <property name="text">
+           <string>Exec CGI</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="multiviews">
+          <property name="text">
+           <string>Multi Views</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="apache.qrc"/>
+ </resources>
+ <connections/>
+</ui>
