@@ -20,7 +20,7 @@ from buildfarm import logger, templates, utils
 from buildfarm.config import configuration as conf
 
 
-def send(message, pspec = "", _type = "", subject=""):
+def send(msg, pspec = "", _type = "", subject=""):
 
     if not conf.sendemail:
         logger.info("Sending of notification e-mails is turned off.")
@@ -67,7 +67,7 @@ def send(message, pspec = "", _type = "", subject=""):
                                         'mailFrom'     : conf.mailfrom,
                                         'announceAddr' : conf.announceaddr,
                                         'subject'      : package_name_with_component or subject or _type,
-                                        'message'      : message,
+                                        'message'      : msg,
                                         'pspec'        : pspec,
                                         'type'         : _type,
                                         'packagename'  : package_name,
