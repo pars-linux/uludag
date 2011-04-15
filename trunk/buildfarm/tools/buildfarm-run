@@ -93,9 +93,9 @@ def build_packages():
             # Cleanup possibly built .pisi packages
             utils.delete_pisi_files_from(conf.workdir)
 
-            errmsg = "Error occured while building %s:\n %s" % (package_name_with_component, e)
+            errmsg = "Error occurred while building %s:\n %s" % (package_name_with_component, e)
             logger.error(errmsg)
-            mailer.error(errmsg, pspec)
+            mailer.error(e, pspec)
         else:
             # Installation was successful
             pisi_api.close()

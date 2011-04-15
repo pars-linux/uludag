@@ -32,6 +32,7 @@ The last 50 lines of the log before the error happens is as follows:
 
 --------------------------------------------------------------------------
 %(log)s
+%(message)s
 --------------------------------------------------------------------------
 
 Plain log file: http://packages.pardus.org.tr/logs/%(logsdir)s/%(logfilename)s.log
@@ -54,6 +55,7 @@ The last 50 lines of the log before the error happens is as follows:
         <tr>
             <td bgcolor="#000000">
                 <pre style="color: #FFFFFF;">%(log)s</pre>
+                <pre style="color: #FF0000;">%(message)s</pre>
             </td>
         </tr>
     </table>
