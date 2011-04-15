@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
@@ -56,7 +56,7 @@ msgstr "ecofont, harflerin içerisinde küçük boş daireler içererek, okunabi
 
 #: desktop/font/Libertine-fonts::summary
 msgid "A font similar to Times New Roman"
-msgstr ""
+msgstr "Times New Roamn benzeri bir yazıtipi"
 
 #: desktop/font/Libertine-fonts::description
 msgid "Linux Libertine font is similar to Times New Roman. It contains kerning information, western ligatures, OpenType-Tables and small caps."
@@ -80,7 +80,7 @@ msgstr "Stix-fonts,  matematiksel semboller ve alfabe seti içeren kapsamlı bir
 
 #: desktop/font/Inconsolata-fonts::summary
 msgid "A font similar to the TheSansMono"
-msgstr ""
+msgstr "TheSansMono benzeri bir yazıtipi"
 
 #: desktop/font/Inconsolata-fonts::description
 msgid "A sans monospaced font designed especially for high resolution rendering."
@@ -220,7 +220,7 @@ msgstr ""
 
 #: desktop/font/Gentium-fonts::summary
 msgid "Unicode enabled TTF font"
-msgstr ""
+msgstr "Unicode destekli TTF yazıtipi"
 
 #: desktop/font/Gentium-fonts::description
 msgid "Gentium is a typeface family designed to enable the diverse ethnic groups around the world who use the Latin script to produce readable, high-quality publications. It supports a wide range of Latin-based alphabets and includes glyphs that correspond to all the Latin ranges of Unicode."
