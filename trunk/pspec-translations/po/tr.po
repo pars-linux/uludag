@@ -27710,7 +27710,7 @@ msgstr "Vim renk şemaları"
 
 #: editor/vi/vim-colorschemes::description
 msgid "Contains extra colorschemes for Vi Improved."
-msgstr "Vım için ekstra renk şemeları içerir."
+msgstr "Vım için ekstra renk şemaları içerir."
 
 #: editor/vi/vim-plugin-surround::summary
 msgid "A Vim plugin to maintain code surroundings"
