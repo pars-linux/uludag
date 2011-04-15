@@ -1,224 +1,332 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>widgetApache</class>
- <widget class="QWidget" name="widgetApache">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>671</width>
-    <height>545</height>
+    <width>959</width>
+    <height>577</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Apache</string>
+   <string>Form</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="apache.qrc">
-    <normaloff>:/icons/wine.png</normaloff>:/icons/wine.png</iconset>
-  </property>
-  <widget class="QLabel" name="warningLabel">
-   <property name="enabled">
-    <bool>false</bool>
-   </property>
-   <property name="geometry">
-    <rect>
-     <x>80</x>
-     <y>440</y>
-     <width>399</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::WheelFocus</enum>
-   </property>
-   <property name="text">
-    <string>                                             Apache web server is not installed.</string>
-   </property>
-   <property name="textFormat">
-    <enum>Qt::AutoText</enum>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-   </property>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>80</y>
-     <width>631</width>
-     <height>111</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_4">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <item>
-       <widget class="QLabel" name="name">
-        <property name="text">
-         <string>Virtual Host Name              </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="host_name"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_4">
-      <item>
-       <widget class="QLabel" name="port">
-        <property name="text">
-         <string>Virtual Host Port                </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="host_port"/>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_5">
-      <item>
-       <widget class="QLabel" name="root">
-        <property name="text">
-         <string>Document Root                  </string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextEdit" name="document_root"/>
-      </item>
-     </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>631</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="domainLayout">
-    <item>
-     <widget class="QLabel" name="domainLabel">
-      <property name="text">
-       <string>ApacheDomains                 </string>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="4" column="1" colspan="2">
+      <widget class="QLineEdit" name="vhostDocumentRoot"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="root">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Document Root                  </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="name">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Virtual Host Ip           </string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1" colspan="2">
+      <widget class="QLineEdit" name="vhostIP"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="name_2">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Virtual Host Name              </string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1" colspan="2">
+      <widget class="QLineEdit" name="vhostName"/>
+     </item>
+     <item row="3" column="1" colspan="2">
+      <widget class="QLineEdit" name="vhostAdmin"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="name_3">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Server Admin</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="port">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>Virtual Host Port                </string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSpinBox" name="vhostPort">
+       <property name="maximumSize">
+        <size>
+         <width>100</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="title">
+      <string>Directory</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>10</number>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPlainTextEdit" name="textDomains"/>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>210</y>
-     <width>631</width>
-     <height>191</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout_3">
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="overrideLabel">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <property name="text">
-         <string>Allow Override                          </string>
+         <string>Driectory Path</string>
         </property>
        </widget>
       </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout">
+      <item row="2" column="0" colspan="2">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="spacing">
+         <number>10</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
         <item>
-         <widget class="QCheckBox" name="auth_config">
-          <property name="text">
-           <string>Auth Config</string>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Allow Override</string>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <property name="rightMargin">
+            <number>20</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="file_info">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>File Info</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="auth_config">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Auth Config</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="limit">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Limit</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="limit">
-          <property name="text">
-           <string>Limit</string>
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Indexes</string>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="leftMargin">
+            <number>20</number>
+           </property>
+           <property name="rightMargin">
+            <number>20</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="follow_symlinks">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Follow Symlinks</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="owner_watch">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Symlinks if Owner Watch</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="exec_CGI">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Exec CGI</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="multiviews">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Multi Views</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
         <item>
-         <widget class="QCheckBox" name="file_info">
-          <property name="text">
-           <string>File Info</string>
+         <spacer name="horizontalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
           </property>
-         </widget>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
         </item>
        </layout>
       </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QCheckBox" name="default_host">
-      <property name="text">
-       <string>Default Host</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QLabel" name="indexes">
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="lineEdit_4"/>
+      </item>
+      <item row="3" column="0" colspan="2">
+       <widget class="QLabel" name="warningLabel">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::WheelFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color:red</string>
+        </property>
         <property name="text">
-         <string>Indexes</string>
+         <string>Apache web server is not installed.</string>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::AutoText</enum>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
         </property>
        </widget>
       </item>
-      <item>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
-        <item>
-         <widget class="QCheckBox" name="follow_symlinks">
-          <property name="text">
-           <string>Follow Symlinks</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="owner_watch">
-          <property name="text">
-           <string>Symlinks if Owner Watch</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="exec_CGI">
-          <property name="text">
-           <string>Exec CGI</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QCheckBox" name="multiviews">
-          <property name="text">
-           <string>Multi Views</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
      </layout>
-    </item>
-   </layout>
-  </widget>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>185</width>
+       <height>169</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
  </widget>
- <resources>
-  <include location="apache.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
