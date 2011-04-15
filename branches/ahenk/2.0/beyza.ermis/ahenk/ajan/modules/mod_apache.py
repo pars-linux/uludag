@@ -23,7 +23,6 @@ def find_next_file_prefix(path):
     else:
         return str(max + 1)
 
-
 def add_virtual_host(vhost_config):
     """ Add new virtual host to apache config, vhosts.d directory """
 
