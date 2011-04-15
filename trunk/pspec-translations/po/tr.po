@@ -1,16 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2011-04-15 20:02+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -461,15 +460,15 @@ msgstr "Hicolor, simge teması desteği için ihtiyaç duyulan temel dizin ve do
 
 #: desktop/lookandfeel/icon-theme-milky::summary
 msgid "Pardus alternative icon theme"
-msgstr ""
+msgstr "Pardus alternatif simge teması"
 
 #: desktop/lookandfeel/icon-theme-milky::description
 msgid "Milky is Pardus' alternative icon theme."
-msgstr ""
+msgstr "Milky, Pardus'un alternatif simge temasıdır."
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-png:summary
 msgid "Oxygen icon theme in PNG format"
-msgstr ""
+msgstr "PNG biçeminde Oxygen simge teması"
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-png:description
 msgid "icon-theme-oxygen-png package contains Oxygen icon theme which is designed as default icon theme of KDE4 in PNG format."
@@ -477,7 +476,7 @@ msgstr ""
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-svg:summary
 msgid "Oxygen icon theme in SVG format"
-msgstr ""
+msgstr "SVG biçeminde Oxygen simge teması"
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-svg:description
 msgid "icon-theme-oxygen-svg package contains Oxygen icon theme which is designed as default icon theme of KDE4 in SVG format."
@@ -485,7 +484,7 @@ msgstr ""
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-index:summary
 msgid "Index file for Oxygen icon theme"
-msgstr ""
+msgstr "Oxygen simge temasına ait indeks dosyası"
 
 #: desktop/lookandfeel/icon-theme-oxygen:icon-theme-oxygen-index:description
 msgid "icon-theme-oxygen-index package contains index.theme file for Oxygen icon theme which is a metadata file."
@@ -805,7 +804,7 @@ msgstr "cairomm için geliştirme belgeleri"
 
 #: desktop/toolkit/gtk/cairomm::summary
 msgid "C++ binding for Cairo"
-msgstr "Cairo için C++ bağlamı"
+msgstr "Cairo için C++ bağlayıcı"
 
 #: desktop/toolkit/gtk/cairomm::description
 msgid "cairomm package is the C++ binding for Cairo (it makes possible using Cairo in C++)."
@@ -1309,7 +1308,7 @@ msgstr "e-module-calendar, Enlightenment için basit bir takvim modülüdür."
 
 #: desktop/kde/base/kdemultimedia:kdemultimedia:summary
 msgid "Base kdemultimedia package dependant to all kdemultimedia subpackages"
-msgstr ""
+msgstr "Tüm kdemultimedia altpaketlerini kapsayan kdemultimedia paketi"
 
 #: desktop/kde/base/kdemultimedia:kdemultimedia-devel:summary
 msgid "Development files for kdemultimedia"
@@ -1317,15 +1316,15 @@ msgstr "kdemultimedia için geliştirme dosyaları"
 
 #: desktop/kde/base/kdemultimedia:kmix:summary
 msgid "KMix: KDE Digital Mixer"
-msgstr ""
+msgstr "KMix: KDE Dijital Karıştırıcı"
 
 #: desktop/kde/base/kdemultimedia:kde-thumbnailer-ffmpeg:summary
 msgid "ffmpeg based thumbnailer for KDE"
-msgstr ""
+msgstr "KDE için ffmpeg tabanlı önizleme aracı"
 
 #: desktop/kde/base/kdemultimedia:libkcddb:summary
 msgid "KDE library for CDDB (Compact Disc Database)"
-msgstr ""
+msgstr "CDDB KDE kitaplığı (Kompakt Disk Veritabanı)"
 
 #: desktop/kde/base/kdemultimedia:libkcompactdisc:summary
 msgid "A CD drive interface for the KDE Project"
@@ -1337,7 +1336,7 @@ msgstr ""
 
 #: desktop/kde/base/kdemultimedia:juk:summary
 msgid "Juk: Music player for KDE"
-msgstr ""
+msgstr "Juk: KDE için müzik oynatıcı"
 
 #: desktop/kde/base/kdemultimedia:dragonplayer:summary
 msgid "Dragon Player: Simple video player for KDE 4"
@@ -4129,7 +4128,7 @@ msgstr "Pidgin-SIPE eklentisi ile SIP/Simple protokolü kullanarak Microsoft LCS
 
 #: network/plugin/flashplugin::summary
 msgid "Adobe Flash Player"
-msgstr "Adobe flash oynatıcı"
+msgstr "Macromedia Shockwave Flash oynatıcı"
 
 #: network/plugin/flashplugin::description
 msgid "Adobe (Macromedia) Flash Player is an application to present interactive (and possibly multimedia-containing) content created using Adobe Flash."
@@ -4529,11 +4528,11 @@ msgstr ""
 
 #: network/ftp/netkit-ftp::summary
 msgid "Standard Linux FTP client"
-msgstr "Standart Linux FTP istemci"
+msgstr "Standard Linux FTP istemcisi"
 
 #: network/ftp/netkit-ftp::description
 msgid "Ftp is the user interface to the ARPANET standard File Transfer Protocol. The program allows a user to transfer files to and from a remote network site using the FTP protocol."
-msgstr ""
+msgstr "Ftp, ARPANET standart dosya transferi protokolü için kullanıcı arayüzüdür."
 
 #: network/voip/jrtplib:jrtplib-devel:summary
 msgid "Development files for jrtplib"
@@ -27626,7 +27625,7 @@ msgstr "MMM (Multiple Major Mode), Emacs uygulamasının bir tamponda aynı anda
 
 #: editor/emacs/emacs-emms::summary
 msgid "The Emacs Multimedia System"
-msgstr ""
+msgstr "Emacs Multimedia Sistemi"
 
 #: editor/emacs/emacs-emms::description
 msgid "EMMS tries to be a clean and small application to play multimedia files from Emacs using external players."
