@@ -9,12 +9,27 @@ import os
 
 MYROOT="/"
 
-def addVirtualHost(vhost_config):
+def find_next_file_prefix(path):
+    max = 0
+
+    for dirname, dirnames, filenames in os.walk(path):
+        for filename in filenames:
+            try:
+                current = int((filename.split("_"))[0])
+                if current > max:
+                    max = current
+            except:
+                pass
+
+    if max < 10:
+        return "0%s" % str(max + 1)
+    else:
+        return str(max + 1)
+
+def add_virtual_host(vhost_config):
     """ Add new virtual host to apache config, vhosts.d directory """
 
-    vhosts_path = "/etc/apache2/vhosts.d/"
-
-    config = augeas.Augeas(root=MYROOT)
+    vhosts_config_path = "/etc/apache2/vhosts.d/"
 
     port = vhost_config["port"]
     ip = vhost_config["ip"]
@@ -32,14 +47,17 @@ def addVirtualHost(vhost_config):
     #   indexes = directory["indexes"]
 
     # Generate file name from server name
-    vhost_file_name = "01_%s_vhosts.conf" % server_name.replace(".", "_")
+    prefix = find_next_file_prefix(vhosts_config_path)
+    vhost_file_name = "%s_%s_vhosts.conf" % (prefix, server_name.replace(".", "_"))
 
     # Create configuration file if not exists
-    vhost_path = "%s%s" % (vhosts_path, vhost_file_name)
+    vhost_path = "%s%s" % (vhosts_config_path, vhost_file_name)
     if not os.path.exists(vhost_path):
         vhost_file = open(vhost_path, "w").close()
 
     # Add vhosts.d to /usr/share/augeas/lenses/dist/httpd.aug
+
+    config = augeas.Augeas(root=MYROOT)
 
     # Define vhost variable
     config.defvar("vhost", "/files%s" % vhost_path)
@@ -75,4 +93,4 @@ if __name__ == "__main__":
               "serverName":"foo.bar.com"
             }
 
-    addVirtualHost(vhost)
+    add_virtual_host(vhost)
