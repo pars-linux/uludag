@@ -93,7 +93,7 @@ def build_packages():
             # Cleanup possibly built .pisi packages
             utils.delete_pisi_files_from(conf.workdir)
 
-            errmsg = "Error occurred while building %s:\n %s" % (package_name_with_component, e)
+            errmsg = "Error occurred in package %s:\n %s" % (package_name_with_component, e)
             logger.error(errmsg)
             mailer.error(e, pspec)
         else:
