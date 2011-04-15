@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -2977,35 +2977,35 @@ msgstr "gconf, Gnome Konfigürasyon Sistemidir."
 
 #: desktop/gnome/gvfs:gvfs-common:summary
 msgid "Common files and applications for main GVFS daemon"
-msgstr ""
+msgstr "GVFS servisi için ortak dosyalar ve uygulamalar"
 
 #: desktop/gnome/gvfs:gvfs-fuse:summary
 msgid "FUSE backend for GVFS"
-msgstr ""
+msgstr "GVFS FUSE arkaucu"
 
 #: desktop/gnome/gvfs:gvfs-smb:summary
 msgid "Samba backend for GVFS"
-msgstr ""
+msgstr "GVFS Samba arkaucu"
 
 #: desktop/gnome/gvfs:gvfs-archive:summary
 msgid "Compression backend for GVFS"
-msgstr ""
+msgstr "GVFS sıkıştırma arkaucu"
 
 #: desktop/gnome/gvfs:gvfs-obexftp:summary
 msgid "FTP backend for GVFS"
-msgstr ""
+msgstr "GVFS FTP arkaucu"
 
 #: desktop/gnome/gvfs:gvfs-gphoto2:summary
 msgid "Digital camera backend for GVFS"
-msgstr ""
+msgstr "GVFS dijital kamera arkaucu"
 
 #: desktop/gnome/gvfs:gvfs-afc:summary
 msgid "AFC(Apple File Control) backend for GVFS"
-msgstr ""
+msgstr "GVFS AFC (Apple Dosya Kontrolü) arkaucu"
 
 #: desktop/gnome/gvfs:gvfs:summary
 msgid "gvfs package contains all GVFS backends and translations files"
-msgstr ""
+msgstr "gvfs paketi tüm GVFS arkauçlarını ve çeviri dosyalarını içerir"
 
 #: desktop/gnome/gvfs::summary
 msgid "New generation gnome-virtual-file-system"
