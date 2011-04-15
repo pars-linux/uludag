@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: 2011-04-15 15:54+0300\n"
+"PO-Revision-Date: 2011-04-15 16:23+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1124,7 +1124,7 @@ msgstr "ecore için geliştirme dosyaları"
 
 #: desktop/enlightenment/base/ecore::summary
 msgid "Enlightenment event/X abstraction layer"
-msgstr "Enlightenment cekirdek ve X ayrıştırma katmanı"
+msgstr "Enlightenment X ayrıştırma katmanı"
 
 #: desktop/enlightenment/base/ecore::description
 msgid "Ecore is the core event abstraction layer and X abstraction layer that makes doing selections, Xdnd, general X stuff, and event loops, timeouts and idle handlers fast, optimized, and convenient."
@@ -12052,7 +12052,7 @@ msgstr "Python programları için çağrı grafiği olşturan bir kütüphane."
 
 #: programming/language/python/python-pycallgraph::description
 msgid "Python Call Graph uses GraphViz to generate call graphs from one execution of your Python code."
-msgstr ""
+msgstr "python-pycallgraph, Python programları için çağrı grafiği olşturan bir kitaplıktır."
 
 #: programming/language/python/python-biggles::summary
 msgid "Python module for creating publication-quality 2D scientific plots"
@@ -18421,7 +18421,7 @@ msgstr "OpenGL için yazı tipi hazırlama kitaplığı"
 
 #: x11/library/ftgl::description
 msgid "FTGL is a free, open source library to enable developers to use arbitrary fonts in their OpenGL (www.opengl.org) applications. FTGL uses the Freetype (www.freetype.org) font library to open and 'decode' the fonts."
-msgstr ""
+msgstr "FTGL özgür, açık kaynak kodlu, OpenGL kullanan uygulamalarda çeşitli yazıtiplerini kullanmaya olanak tanıyan bir kitaplıktır."
 
 #: x11/library/libXdamage:libXdamage-devel:summary
 msgid "Development files for libXdamage"
@@ -26241,7 +26241,7 @@ msgstr "Python cURL Modülü"
 
 #: system/base/pycurl::description
 msgid "PycURL is a Python interface to libcurl. PycURL can be used to fetch objects identified by a URL from a Python program."
-msgstr ""
+msgstr "PycURL, python libcurl için python arayüzüdür. PycURL, URL tarafında tanımlanan nesneleri indirmek için bir python programı tarafından kullanılabilir."
 
 #: system/base/e2fsprogs:e2fsprogs-devel:summary
 msgid "Development files for e2fsprogs"
