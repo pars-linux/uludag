@@ -80,7 +80,6 @@ def add_virtual_host(vhost_config):
 
     config.save()
 
-
 def process(message, options):
     """
         Policy/command processor.
@@ -106,6 +105,5 @@ def process(message, options):
               "documentRoot":documentRoot,
               "serverName":serverName
             }
-
 
     add_virtual_host(vhost)
