@@ -45,7 +45,7 @@ def add_virtual_host(vhost_config):
 
     # Generate file name from server name
     prefix = find_next_file_prefix(vhosts_config_path)
-    vhost_file_name = "%s_%s_vhosts.conf" % (prefix, server_name.replace(".", "_"))
+    vhost_file_name = "%s_%s_vhosts.conf" % (prefix, str(server_name).replace(".", "_"))
 
     # Create configuration file if not exists
     vhost_path = "%s%s" % (vhosts_config_path, vhost_file_name)
@@ -89,9 +89,16 @@ def process(message, options):
     """
 
     dryrun = options.dryrun
+    print "basladi1"
+
+    port = ""
+    ip = ""
+    serverAdmin = ""
+    documentRoot = ""
+    serverName =""
 
     if message.type == "policy":
-        apacheDomains = message.policy.get("apacheDomains", [])
+        print "basladi2"
         documentRoot = message.policy.get("documentRoot", [])
         ip = message.policy.get("ip", [])
         port = message.policy.get("port", [])
@@ -106,3 +113,4 @@ def process(message, options):
             }
 
     add_virtual_host(vhost)
+    print "bitti"
