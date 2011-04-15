@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -27706,11 +27706,11 @@ msgstr "vimchant; Zemberek, Hunspell, Hspell, Uspell, Myspell, Aspell ve Ispell 
 
 #: editor/vi/vim-colorschemes::summary
 msgid "Vim colorschemes"
-msgstr ""
+msgstr "Vim renk şemaları"
 
 #: editor/vi/vim-colorschemes::description
 msgid "Contains extra colorschemes for Vi Improved."
-msgstr ""
+msgstr "Vım için ekstra renk şemeları içerir."
 
 #: editor/vi/vim-plugin-surround::summary
 msgid "A Vim plugin to maintain code surroundings"
