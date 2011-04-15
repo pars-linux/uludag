@@ -1,4 +1,3 @@
-apacheDomains [str] List of domain names
 port [str] Virtual Host Port
 ip [str] Virtual Host IP Address
 serverAdmin [str] Virtual Host server admin
