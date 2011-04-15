@@ -3689,7 +3689,7 @@ msgstr "telepathy-gabble, tek ve çoklu kullanıcılı sohbet, sesli aramalar gi
 
 #: network/chat/konversation:konversation-docs:summary
 msgid "Konversation documentation"
-msgstr ""
+msgstr "Konversation belgeleri"
 
 #: network/chat/konversation::summary
 msgid "User friendly IRC Client for KDE"
@@ -4129,7 +4129,7 @@ msgstr "Pidgin-SIPE eklentisi ile SIP/Simple protokolü kullanarak Microsoft LCS
 
 #: network/plugin/flashplugin::summary
 msgid "Adobe Flash Player"
-msgstr ""
+msgstr "Adobe flash oynatıcı"
 
 #: network/plugin/flashplugin::description
 msgid "Adobe (Macromedia) Flash Player is an application to present interactive (and possibly multimedia-containing) content created using Adobe Flash."
@@ -4529,7 +4529,7 @@ msgstr ""
 
 #: network/ftp/netkit-ftp::summary
 msgid "Standard Linux FTP client"
-msgstr ""
+msgstr "Standart Linux FTP istemci"
 
 #: network/ftp/netkit-ftp::description
 msgid "Ftp is the user interface to the ARPANET standard File Transfer Protocol. The program allows a user to transfer files to and from a remote network site using the FTP protocol."
@@ -5225,7 +5225,7 @@ msgstr "Dxflib, DXF dosyalarına yazabilir ama geçerli bir çıktı üretebilme
 
 #: programming/misc/mhash:mhash-devel:summary
 msgid "Development files for mhash"
-msgstr ""
+msgstr "mhash paketine ait geliştirme dosyaları"
 
 #: programming/misc/mhash::summary
 msgid "A uniform interface to several hash algorithms"
@@ -5253,7 +5253,7 @@ msgstr "gc, C malloc veya C++ new yerine kullanılabilecek, Boehm-Demers-Weiser 
 
 #: programming/misc/tre:tre-devel:summary
 msgid "Development files for tre"
-msgstr ""
+msgstr "tre paketine ait geliştirme dosyaları"
 
 #: programming/misc/tre::summary
 msgid "A lightweight, robust, and efficient POSIX compliant regexp matching library"
@@ -6857,7 +6857,7 @@ msgstr ""
 
 #: programming/language/erlang:erlang-reltool:summary
 msgid "A release management tool"
-msgstr ""
+msgstr "Bir sürüm yönetim aracı"
 
 #: programming/language/erlang:erlang-parsetools:summary
 msgid "A set of parsing and lexical analysis tools"
@@ -6869,7 +6869,7 @@ msgstr ""
 
 #: programming/language/erlang:erlang-test_server:summary
 msgid "The OTP Test Server"
-msgstr ""
+msgstr "OTP Test Sunucu"
 
 #: programming/language/erlang:erlang-cosProperty:summary
 msgid "Orber OMG Property Service"
@@ -6881,7 +6881,7 @@ msgstr ""
 
 #: programming/language/erlang:erlang-ic:summary
 msgid "IDL compiler"
-msgstr ""
+msgstr "IDL derleyici"
 
 #: programming/language/erlang:erlang-tools:summary
 msgid "A set of programming tools including a coverage analyzer etc"
