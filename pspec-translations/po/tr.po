@@ -4128,7 +4128,7 @@ msgstr "Pidgin-SIPE eklentisi ile SIP/Simple protokolü kullanarak Microsoft LCS
 
 #: network/plugin/flashplugin::summary
 msgid "Adobe Flash Player"
-msgstr "Macromedia Shockwave Flash oynatıcı"
+msgstr "Adobe Flash Oynatıcı"
 
 #: network/plugin/flashplugin::description
 msgid "Adobe (Macromedia) Flash Player is an application to present interactive (and possibly multimedia-containing) content created using Adobe Flash."
