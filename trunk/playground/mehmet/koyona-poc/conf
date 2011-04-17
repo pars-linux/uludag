@@ -1,0 +1,34 @@
+class deneme {
+	apache::vhost { "w23.w23":
+		id => "w23",
+		port => "w23",
+		vhost => "w23",
+		domain => "w23",
+		aliases => "w23",
+	}
+
+	apache::vhost { "w2.w2":
+		id => "w2",
+		port => "w2",
+		vhost => "w2",
+		domain => "w2",
+		aliases => "w2",
+	}
+
+	apache::vhost { "w.w":
+		id => "w",
+		port => "w",
+		vhost => "w",
+		domain => "w",
+		aliases => "w",
+	}
+
+
+   apache::vhost { "foo.bar.com":
+       vhost => "foo",
+       domain => "bar.com",
+       aliases => ["*.bar.com", "bar.com"],
+       packages => ["libapache2-mod-php5", "php5-mysql"]
+   }
+
+}
