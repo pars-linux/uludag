@@ -148,7 +148,8 @@ def main():
             # Print updates
             print "%s%s %s" % (status, update_action, package_metadata.packageURI)
             if cdeps.has_key(package_metadata.packageURI):
-                print "#  Depends on %s" % uri_dict[cdeps[package_metadata.packageURI]]
+                # Use get as a workaround here since we cannot get binary package names if it has an AnyDependency 
+                print "#  Depends on %s" % uri_dict.get(cdeps[package_metadata.packageURI], cdeps[package_metadata.packageURI])
 
             for revdep in rev_cdeps.get(package_metadata.name, []):
                 print "#  %s depends on this" % revdep
