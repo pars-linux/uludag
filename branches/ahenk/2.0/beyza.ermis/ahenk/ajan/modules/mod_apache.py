@@ -49,11 +49,12 @@ def add_virtual_host(vhost_config):
 
     # Create configuration file if not exists
     vhost_path = "%s%s" % (vhosts_config_path, vhost_file_name)
+    print "%s" %vhost_path
+
     if not os.path.exists(vhost_path):
         vhost_file = open(vhost_path, "w").close()
 
     # Add vhosts.d to /usr/share/augeas/lenses/dist/httpd.aug
-
     config = augeas.Augeas(root=MYROOT)
 
     # Define vhost variable
@@ -78,6 +79,7 @@ def add_virtual_host(vhost_config):
     config.set("$vhost/VirtualHost/*[self::directive='ServerName']/arg", server_name)
 
     config.save()
+    config.close()
 
 def process(message, options):
     """
@@ -89,7 +91,6 @@ def process(message, options):
     """
 
     dryrun = options.dryrun
-    print "basladi1"
 
     port = ""
     ip = ""
@@ -98,12 +99,11 @@ def process(message, options):
     serverName =""
 
     if message.type == "policy":
-        print "basladi2"
-        documentRoot = message.policy.get("documentRoot", [])
-        ip = message.policy.get("ip", [])
-        port = message.policy.get("port", [])
-        serverAdmin = message.policy.get("serverAdmin", [])
-        serverName = message.policy.get("serverName", [])
+        documentRoot = message.policy.get("documentRoot", [])[0]
+        ip = message.policy.get("ip", [])[0]
+        port = message.policy.get("port", [])[0]
+        serverAdmin = message.policy.get("serverAdmin", [])[0]
+        serverName = message.policy.get("serverName", [])[0]
 
     vhost = { "port":port,
               "ip":ip,
@@ -113,4 +113,3 @@ def process(message, options):
             }
 
     add_virtual_host(vhost)
-    print "bitti"
