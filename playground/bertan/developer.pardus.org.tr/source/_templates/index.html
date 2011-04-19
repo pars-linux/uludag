@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% set title = 'Pardus Developer Base' %}
+{% block body %}
+
+<img class="logo" src="_static/icons/pardus_logo.png" />
+<h2>What is Pardus?</h2>
+<p>
+Pardus is an open source, freely distributable, GPL (General Public License) licensed user-friendly GNU/Linux distribution with many usability, hardware compatibility, stability and security enhancements. It's named after the Anatolian Leopard.
+</p>
+<p>
+Pardus officially supports 11 languages: Turkish, English, Dutch, French, German, Spanish, Catalan, Italian, Swedish, Polish and Brazilian Portuguese.
+</p>
+<p>The Pardus project is sponsored by the Turkish National Research Institute of Electronics and Cryptology (<a href="http://uekae.tubitak.gov.tr/home.do?ot=10&lang=en&sid=0&pid=0" target="_blank">UEKAE</a>), an affiliate of the Scientific and Technological Research Council of Turkey (<a href="http://www.tubitak.gov.tr/home.do?ot=10&lang=en" target="_blank">TÜBİTAK</a>).
+</p>
+<p>
+For further information, please visit <a href="http://www.pardus.org.tr/eng" target="_blank">http://www.pardus.org.tr/eng</a>
+</p>
+
+<h2>To get started...</h2>
+<p>
+<table class="contentstable" align="center">
+    <tr>
+        <td width="20%">
+           <img class="section" src="_static/releases.png" />
+           <p class="biglink">
+                <a class="biglink" href="{{ pathto("releases/index") }}">Releases</a><br />
+                <span class="linkdescr">Pardus Releases</span>
+            </p>
+        </td>
+        <td width="20%">
+           <img class="section" src="_static/projects.png" />
+            <p class="biglink">
+                <a class="biglink" href="{{ pathto("projects/index") }}">Projects</a><br />
+                <span class="linkdescr">Pardus Projects</span>
+            </p>
+        </td>
+        <td width="20%">
+           <img class="section" src="_static/guides.png" />
+            <p class="biglink">
+                <a class="biglink" href="{{ pathto("guides/index") }}">Guides</a><br />
+                <span class="linkdescr">Guides to get started</span>
+            </p>
+        </td>
+        <td width="20%">
+           <img class="section" src="_static/events.png" />
+            <p class="biglink">
+                <a class="biglink" href="{{ pathto("events/index") }}">Events</a><br />
+                <span class="linkdescr">Events for open source</span>
+            </p>
+        </td>
+        <td width="20%">
+           <img class="section" src="_static/planet.png" />
+            <p class="biglink">
+                <a class="biglink" href="http://planet.pardus.org.tr">Planet</a><br />
+                <span class="linkdescr">Developer's Planet</span>
+            </p>
+        </td>
+    </tr>
+</table>
+</p>
+<img class="logo" src="_static/icons/browse.png" />
+<h2>Browsing Pardus Repositories</h2>
+
+<p>
+You can browse our Subversion repository through <a href="http://websvn.pardus.org.tr/">Pardus SVN Web Interface</a> or you can use SVN to checkout it:
+</p>
+
+<b>Individual technologies</b>
+<pre>
+  svn co https://svn.pardus.org.tr/uludag/trunk/PROJECT_NAME
+</pre>
+
+<b>Source package repository</b>
+<pre>
+  svn co https://svn.pardus.org.tr/pardus/RELEASE_NAME
+</pre>
+{% endblock %}
