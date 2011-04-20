@@ -229,6 +229,7 @@
                 <SelectedPackage>ntfsprogs</SelectedPackage>
                 <SelectedPackage>ntp-client</SelectedPackage>
                 <SelectedPackage>nvidia-settings</SelectedPackage>
+                <SelectedPackage>openssh</SelectedPackage>
                 <SelectedPackage>p7zip</SelectedPackage>
                 <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>paprefs</SelectedPackage>
@@ -1330,6 +1331,7 @@
         <SelectedPackage>NetworkManager</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>python-networkmanager</SelectedPackage>
+        <SelectedPackage>openssh</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
         <SelectedPackage>qt-l10n</SelectedPackage>
         <SelectedPackage>mdadm-static</SelectedPackage>
