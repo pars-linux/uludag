@@ -34,6 +34,8 @@ python_cmd = "python"
 if crosscompiling:
     python_cmd = "sb2 %s/usr/bin/python" % sysroot
 
+variables.exportFlags()
+
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):
         pisi.actionsapi.Error.__init__(self, value)
@@ -108,9 +110,9 @@ def fix_sb2_python_install_dir():
                 { 'install_dir' : install_dir,
                   'sysroot'     : sysroot})
 
-def run(parameters = ''):
+def run(parameters = '', extra_param=""):
     '''executes parameters with python'''
-    if system('python %s %s' % (parameters, extra_param)):
+    if system('%s %s %s' % (python_cmd, parameters, extra_param)):
         raise RunTimeError, _('Running %s failed.') % parameters
 
 def fixCompiledPy(lookInto = '/usr/lib/%s/' % get.curPYTHON()):

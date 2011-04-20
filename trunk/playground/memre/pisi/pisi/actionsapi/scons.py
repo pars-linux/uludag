@@ -22,6 +22,8 @@ import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system
 
+scons_cmd = "scons" if not get.ARCH().startswith('arm') else "sb2 %s/usr/bin/scons" % get.sysroot()
+
 class MakeError(pisi.actionsapi.Error):
     def __init__(self, value=''):
         pisi.actionsapi.Error.__init__(self, value)
@@ -35,9 +37,9 @@ class InstallError(pisi.actionsapi.Error):
         ctx.ui.error(value)
 
 def make(parameters = ''):
-    if system('scons %s %s' % (get.makeJOBS(), parameters)):
+    if system('%s %s %s' % (scons_cmd, get.makeJOBS(), parameters)):
         raise MakeError(_('Make failed.'))
 
 def install(parameters = 'install', prefix = get.installDIR(), argument='prefix'):
-    if system('scons %s=%s %s' % (argument, prefix, parameters)):
+    if system('%s %s=%s %s' % (scons_cmd, argument, prefix, parameters)):
         raise InstallError(_('Install failed.'))

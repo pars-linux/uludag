@@ -28,6 +28,7 @@ def exportFlags():
     # we export them instead of using as (instance) variables.
     values = ctx.config.values
     sysroot = values.general.destinationdirectory
+    crosscompiling = ctx.config.values.build.crosscompiling
 
     os.environ['BUILD']    = values.build.build
     os.environ['HOST']     = values.build.host
@@ -49,10 +50,12 @@ def exportFlags():
         os.environ["AR"]      = "%s-ar" % values.build.host
         os.environ["AS"]      = "%s-as" % values.build.host
         os.environ["LD"]      = "%s-ld" % values.build.host
+        os.environ['NM']      = "%s-nm" % values.build.host
+        os.environ["STRIP"]   = "%s-strip"   % values.build.host
         os.environ["RANLIB"]  = "%s-ranlib"  % values.build.host
         os.environ["OBJDUMP"] = "%s-objdump" % values.build.host
         os.environ["OBJCOPY"] = "%s-objcopy" % values.build.host
-        os.environ["STRIP"]   = "%s-strip"   % values.build.host
+        os.environ['FORTRAN'] = "%s-gfortran" % values.build.host
         # FIXME: sb2 has a libtool too, do not export this unless it is neccessary
         # os.environ['LIBTOOL']   = "%s-libtool" % values.build.host
 
@@ -67,6 +70,7 @@ def exportFlags():
         os.environ['BUILDARCH'] = os.popen('uname -m').read().strip()
         os.environ['ARCH']      = values.general.architecture
 
+        os.environ['ASFLAGS']   = ""
         os.environ['CPPFLAGS'] += " -isystem%s/usr/include" % sysroot
         os.environ['CFLAGS']   += " -I%s/usr/include" % sysroot
         os.environ['CXXFLAGS'] += " -I%s/usr/include" % sysroot
@@ -74,9 +78,10 @@ def exportFlags():
                                     -L%(sysroot)s/usr/lib -Wl,-rpath-link,%(sysroot)s/usr/lib \
                                     " % { 'sysroot' : sysroot, }
 
-        os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig" % sysroot
+        os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
+        os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig:%s/usr/qt/4/lib/pkgconfig" % (sysroot, sysroot)
+        os.environ['PKGCONFIG']        = "/opt/toolchain/armv7l/bin/pkg-config"
 
-    crosscompiling = ctx.config.values.build.crosscompiling
     if crosscompiling:
         print " ==> cross compiling <== "
     else:
