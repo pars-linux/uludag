@@ -118,31 +118,30 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 
     QString icon = "dialog-information";
     QString text;
+    text = i18n("Your graphic card's manufacturer provides a tool for these settings.\n"
+                "It's recommended to use this tool. You can start it by clicking the button on the left.\n");
+
     bool showStartButton = false;
     bool nvidia = false;
     bool ati = false;
 
     if (vendorText.startsWith("NVIDIA")){
         nvidia = true;
-        text = i18n("You can use Nvidia-settings for your RandR settings");
-        startButton->setText("Start Nvidia-settings");
+        startButton->setText("Start Nvidia Settings");
         startButton->setIcon(KIcon("nvidia-settings"));
         showStartButton = true;
-        connect(startButton, SIGNAL(clicked(bool)), SLOT(startNvidia()));
     }
     else if (vendorText.startsWith("ATI")){
         ati = true;
-        text = i18n("You can use ATI Control Center for your RandR settings");
-        startButton->setText("Start ATI Control Center");
+        startButton->setText("Start Ati Control Center");
+        startButton->setIcon(KIcon("amdccclesu"));
         showStartButton = true;
-        startButton->setIcon(KIcon("amdcccle"));
-        connect(startButton, SIGNAL(clicked(bool)), SLOT(startAti()));
     }
 
     // Adjust palette
     KColorScheme scheme(QPalette::Active, KColorScheme::Window);
     QBrush bg = scheme.background(KColorScheme::PositiveBackground);
-    QBrush fg = scheme.foreground(KColorScheme::PositiveText);
+    QBrush fg = scheme.foreground(KColorScheme::NormalText);
 
     stateContainer->setStyleSheet(
         QString(".QFrame {"
@@ -162,6 +161,13 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
 
     if (nvidia || ati) {
         stateContainer->show();
+        if (nvidia) {
+            connect(startButton, SIGNAL(clicked(bool)), SLOT(startNvidia()));
+        }
+        else if (ati) {
+            connect(startButton, SIGNAL(clicked(bool)), SLOT(startAti()));
+        }
+
     }
     else {
         stateContainer->hide();
