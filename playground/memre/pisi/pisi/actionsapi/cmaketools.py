@@ -24,14 +24,56 @@ from pisi.util import join_path
 import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system
+from pisi.actionsapi.shelltools import export
 from pisi.actionsapi.shelltools import can_access_file
 from pisi.actionsapi.shelltools import unlink
 
 crosscompiling = ctx.config.values.build.crosscompiling
 if crosscompiling:
     ctx.ui.info(_("cross compiling"))
+    export('QTDIR', "%s/usr/qt/4" % get.sysroot())
+
+    export('QMAKE_PLATFORM', "linux-g++")
+    export('QMAKESPEC',      "%s/usr/qt/4/mkspecs/linux-g++" % get.sysroot())
+
+    export('QMAKE_CC',   get.CC())
+    export('QMAKE_AR',   get.AR())
+    export('QMAKE_CXX',  get.CXX())
+    export('QMAKE_LINK', get.CXX())
+    export('QMAKE_LINK_SHLIB', get.CXX())
+
+    export('QMAKE_CFLAGS',   "%s %s -Wno-psabi -I%s/usr/qt/4/include" % (get.CPPFLAGS(), get.CFLAGS(), get.sysroot()))
+    export('QMAKE_CXXFLAGS', "%s %s -Wno-psabi -fno-exceptions -fno-rtti -I%s/usr/qt/4/include" % (get.CPPFLAGS(), get.CXXFLAGS(), get.sysroot()))
+    export('QMAKE_LDFLAGS',   "%s" % get.LDFLAGS())
+    export('QMAKE_RPATH',     "-Wl,-rpath-link,")
+
+    export('QMAKE_INCDIR',        "%s/usr/qt/4/include" % get.sysroot())
+    export('QMAKE_INCDIR_QT',     "%s/usr/qt/4/include" % get.sysroot())
+    export('QMAKE_INCDIR_X11',    "%s/usr/include/X11" % get.sysroot())
+    export('QMAKE_INCDIR_OPENGL', "%s/usr/include" % get.sysroot())
+    export('QMAKE_LIBS',          "%s/usr/qt/4/lib" % get.sysroot())
+    export('QMAKE_LIBS_QT',       "qt")
+    export('QMAKE_LIBS_X11',      "")
+    export('QMAKE_LIBS_OPENGL',   "%s/usr/lib" % get.sysroot())
+
+    export('INCLUDEPATH', "%s/usr/qt/4/include" % get.sysroot())
+    export('INCLUDE',     "%s/usr/qt/4/include" % get.sysroot())
+    export('LIB',         "%s/usr/qt/4/include" % get.sysroot())
+
+    export('QMAKE_QMAKE', "/usr/qt/4/bin/qmake")
+    export('QMAKE_MOC',   "/usr/qt/4/bin/moc")
+    export('QMAKE_UIC',   "/usr/qt/4/bin/uic")
+    export('QMAKE_UIC3',  "/usr/qt/4/bin/uic3")
+    export('QMAKE_LRELEASE',      "/usr/qt/4/bin/lrelease")
+    export('QMAKE_LUPDATE',       "/usr/qt/4/bin/lupdate")
+    export('QMAKE_QDBUSCPP2XML',  "/usr/qt/4/bin/qdbuscpp2xml4")
+    export('QMAKE_QDBUSXML2CPP',  "/usr/qt/4/bin/qdbusxml2cpp4")
+
+    export('QMAKE_STRIP', "true") # we dont want qmake to strip executables, pisi does this if neccessary.
+
 else:
     ctx.ui.info(_("native compiling"))
+
 
 class ConfigureError(pisi.actionsapi.Error):
     def __init__(self, value=''):
@@ -62,15 +104,19 @@ class RunTimeError(pisi.actionsapi.Error):
 def configure(parameters = '', installPrefix = '/%s' % get.defaultprefixDIR(), sourceDir = '.'):
     '''configure source with given cmake parameters = "-DCMAKE_BUILD_TYPE -DCMAKE_CXX_FLAGS ... "'''
     if can_access_file(join_path(sourceDir, 'CMakeLists.txt')):
-        args = 'cmake -DCMAKE_INSTALL_PREFIX=%s \
+        args = 'cmake -Wdev \
+                      -DCMAKE_BUILD_TYPE=Release \
+                      -DCMAKE_INSTALL_PREFIX=%s \
                       -DCMAKE_C_FLAGS="%s" \
                       -DCMAKE_CXX_FLAGS="%s" \
                       -DCMAKE_CPP_FLAGS="%s" \
                       -DCMAKE_LD_FLAGS="%s" \
-                      -DCMAKE_BUILD_TYPE=RelWithDebInfo %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.CPPFLAGS(), get.LDFLAGS(), parameters, sourceDir)
+                      %s %s' % (installPrefix, get.CFLAGS(), get.CXXFLAGS(), get.CPPFLAGS(), get.LDFLAGS(), parameters, sourceDir)
 
         if crosscompiling:
-            args = "sb2 %s" % args
+            args = "sb2 %s \
+                     -DCMAKE_TOOLCHAIN_FILE=/opt/toolchain/armv7l/c2_parm.cmake \
+                     " % args
 
         if system(args):
             raise ConfigureError(_('Configure failed.'))

@@ -59,7 +59,7 @@ class RunTimeError(pisi.actionsapi.Error):
         self.value = value
         ctx.ui.error(value)
 
-def configure(parameters = '', configure_cmd='./configure', no_default_vars=False):
+def configure(parameters = '', configure_cmd='./configure', no_default_vars=False, no_sb2=False):
     '''configure source with given parameters = "--with-nls --with-libusb --with-something-usefull"'''
 
     if can_access_file(configure_cmd):
@@ -78,28 +78,35 @@ def configure(parameters = '', configure_cmd='./configure', no_default_vars=Fals
                       get.manDIR(), get.infoDIR(), get.dataDIR(), \
                       get.confDIR(), get.localstateDIR(), get.libexecDIR(), parameters)
 
-        if not no_default_vars:
-            cmd = "%s --build=%s" % (cmd, get.HOST())
-
         if crosscompiling:
-            cmd = "sb2 %s" % cmd
-
+            if no_sb2 and not no_default_vars:
+                cmd += " --build=%s \
+                         --host=%s" % (get.BUILD(), get.HOST())
+            elif not no_sb2 and no_default_vars:
+                cmd += "sb2 %s \
+                          --build=%s \
+                          --host=%s" % (cmd, get.BUILD(), get.HOST())
+            elif not no_sb2 and not no_default_vars:
+                cmd = "sb2 %s \
+                         --build=%s \
+                         --host=%s" % (cmd, get.HOST(), get.HOST())
+        else:
             if not no_default_vars:
-                cmd = "%s --host=%s" % (cmd, get.HOST())
+                cmd += " --build=%s" % get.BUILD()
 
         if system(cmd):
             raise ConfigureError(_('Configure failed.'))
     else:
         raise ConfigureError(_('No configure script found.'))
 
-def rawConfigure(parameters = ''):
+def rawConfigure(parameters = '', configure_cmd='./configure', no_sb2=False, ld_lib_path=""):
     '''configure source with given parameters = "--prefix=/usr --libdir=/usr/lib --with-nls"'''
     if can_access_file('configure'):
         gnuconfig_update()
 
-        cmd = './configure %s' % parameters
+        cmd = '%s ./configure %s' % (ld_lib_path, parameters)
 
-        if crosscompiling:
+        if crosscompiling and not no_sb2:
             cmd = "sb2 %s" % cmd
 
         if system(cmd):
@@ -110,9 +117,9 @@ def rawConfigure(parameters = ''):
 def compile(parameters = ''):
     system('%s %s %s' % (get.CC(), get.CFLAGS(), parameters))
 
-def make(parameters = ''):
+def make(parameters = '', ld_lib_path=""):
     '''make source with given parameters = "all" || "doc" etc.'''
-    cmd = 'make %s %s' % (get.makeJOBS(), parameters)
+    cmd = '%s make %s %s' % (ld_lib_path, get.makeJOBS(), parameters)
 
     if crosscompiling:
         cmd = "sb2 %s" % cmd
