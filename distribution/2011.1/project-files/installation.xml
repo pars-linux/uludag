@@ -229,6 +229,7 @@
                 <SelectedPackage>ntfsprogs</SelectedPackage>
                 <SelectedPackage>ntp-client</SelectedPackage>
                 <SelectedPackage>nvidia-settings</SelectedPackage>
+                <SelectedPackage>openssh</SelectedPackage>
                 <SelectedPackage>p7zip</SelectedPackage>
                 <SelectedPackage>package-manager</SelectedPackage>
                 <SelectedPackage>paprefs</SelectedPackage>
@@ -1333,6 +1334,7 @@
         <SelectedPackage>mdadm-static</SelectedPackage>
         <SelectedPackage>memtest86</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
+        <SelectedPackage>openssh</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-theme-pardus</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>

@@ -59,6 +59,7 @@
                 <SelectedPackage>memtest86</SelectedPackage>
                 <SelectedPackage>module-alsa-driver</SelectedPackage>
                 <SelectedPackage>module-broadcom-wl</SelectedPackage>
+                <SelectedPackage>openssh</SelectedPackage>
                 <SelectedPackage>plymouth</SelectedPackage>
                 <SelectedPackage>plymouth-core-libs</SelectedPackage>
                 <SelectedPackage>plymouth-devel</SelectedPackage>
@@ -339,6 +340,7 @@
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>ntfs_3g</SelectedPackage>
+        <SelectedPackage>openssh</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
         <SelectedPackage>plymouth-core-libs</SelectedPackage>
         <SelectedPackage>plymouth-graphics-libs</SelectedPackage>

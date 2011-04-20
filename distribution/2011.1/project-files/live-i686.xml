@@ -162,6 +162,7 @@
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
+        <SelectedPackage>openssh</SelectedPackage>
         <SelectedPackage>p7zip</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
