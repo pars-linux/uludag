@@ -55,7 +55,7 @@ In order to do Pardus Alpha official, the following criterias must be meet:
 Pre-Alpha (Developer Release) Tickets
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #. Prepare and plan start meeting
-#. Create general release schedule (give deadlines only for general relase cycles (Alpha, Beta, RC, Final))
+#. Create general release schedule (give deadlines only for general relase cycles (Alpha, Beta, RC, Final), ( deadline for submitting new features, feature freeze, string freeze, feature complete, translation freeze, repo freeze))
 #. Put the schedule to developer.pardus.org.tr
 #. Open `devel source`_ and  `devel binary`_ repositories
 #. Add new devel repository to http://packages.pardus.org.tr
@@ -72,16 +72,16 @@ Pre-Alpha (Developer Release) Tickets
 #. Enable automatic mails about nightly build changes to `tester list`_.
 #. Review package components for orphan and dead packages
 #. Warn developers about their orphan and dead packages and developer release
-#. Create release plan (give deadlines for milestones( submitting new features, feature freeze, string freeze, feature complete, translation freeze, repo freeze, announce final feature list))
-#. Put the updated schedule to developer.pardus.org.tr
+#. Warn users and developers about `feature request`_ deadline one week before
+#. Warn developers about `feature submission`_ deadline one week before
+#. Create accepted feature list
+#. Create detailed release schedule (priotirize feaute list, give other detailes for development, artwork, documentation etc.)
+#. Update schedule on developer.pardus.org.tr
 #. Prepare a developer meeting on IRC
 #. Prepare and plan Alpha start meeting
 
 Alpha Tickets
 ^^^^^^^^^^^^^
-#. Warn users and developers about `feature request`_ deadline one week before
-#. Warn developers about `feature submission`_ deadline one week before
-#. Create accepted feature list
 #. Create default applications list for desktop menu
 #. Put feature list to developer.pardus.org.tr
 #. Send weekly emails about `urgent package list`_
