@@ -157,7 +157,7 @@ def fetch_policy(conn, options, domain, dn):
 
     return False, {}, []
 
-def ldap_go(options, q_in, q_out, q_ldap):
+def ldap_go(options, q_in, q_out, q_force):
     """
         Main event loop for LDAP worker
     """
@@ -196,7 +196,7 @@ def ldap_go(options, q_in, q_out, q_ldap):
                     q_in.put({"type": "policy", "policy": policy, "policy_stack": policy_stack})
                 try:
                     logging.debug("Checking policy...")
-                    q_ldap.get(timeout=options.interval)
+                    q_force.get(timeout=options.interval)
                 except (Queue.Empty, IOError):
                     continue
         except (ldap.SERVER_DOWN, ldap.NO_SUCH_OBJECT, IndexError):
