@@ -16,5 +16,8 @@ Install packages again:
 Generate LDAP schemas:
     $ make
 
+Install setup tool to system:
+    $ sudo python setup.py install
+
 Configure openldap-server and ejabberd:
-    $ sudo ./ahenk_server.py ahenk.domain.com
+    $ sudo ahenk_setup ahenk.domain.com
