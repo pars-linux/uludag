@@ -264,7 +264,7 @@ msgstr "Non autorizzare utente"
 
 #: ui/ui_edituser.py:243 ui/ui_edituser.py:246
 msgid "Start typing to filter"
-msgstr ""
+msgstr "Inizia a digitare per filtrare"
 
 #: ui/ui_edituser.py:244
 msgid "Authorizations"
