@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -13,10 +13,10 @@ msgstr ""
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
-"Language: it\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: it\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
@@ -43,12 +43,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:36
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: src/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/about.py:37
 msgid "Faik Uygur"
@@ -152,13 +152,12 @@ msgid "No results found."
 msgstr "Nessun risultato trovato."
 
 #: src/mainwidget.py:405
-#, fuzzy
 msgid "Select packages"
-msgstr "Tutti Pacchetti"
+msgstr "Selezionare i pacchetti"
 
 #: src/mainwidget.py:406
 msgid "You must select at least one installed package"
-msgstr ""
+msgstr "È necessario selezionare almeno un pacchetto installato"
 
 #: src/mainwidget.py:417
 msgid "All Updates"
@@ -501,12 +500,12 @@ msgid "Update"
 msgstr "Aggiorna"
 
 #: src/tray.py:209
-msgid "Ignore"
-msgstr "Ignora"
-
-#: src/tray.py:209
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
+
+#: src/tray.py:209
+msgid "Ignore"
+msgstr "Ignora"
 
 #: src/webdialog.py:126 ui/ui_webdialog.py:158
 msgid "Package Files"
@@ -603,7 +602,7 @@ msgstr "A&nnulla"
 
 #: ui/ui_preview.py:52
 msgid "Preview"
-msgstr ""
+msgstr "Anteprima"
 
 #: ui/ui_progressdialog_v4.py:196
 msgid "Alt+C"
@@ -679,7 +678,7 @@ msgstr "&Impostazioni Generali"
 
 #: ui/ui_settingsdialog.py:411
 msgid "Cache Limit"
-msgstr ""
+msgstr "Limite di Cache"
 
 #: ui/ui_settingsdialog.py:412
 msgid "&Use hard disk cache for downloaded software"
