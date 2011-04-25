@@ -18,6 +18,7 @@
     <file>gui/pics/fluxbox-desktop-collection-icon.png</file>
     <file>gui/pics/lxde-desktop-collection-icon.png</file>
     <file>gui/pics/server-collection-icon.png</file>
+    <file>gui/pics/systemsettings.png</file>
     <file>gui/pics/lock.png</file>
     <file>gui/pics/computer.png</file>
     <file>gui/pics/dialog-warning.png</file>
