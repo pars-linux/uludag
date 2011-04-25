@@ -9,8 +9,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"POT-Creation-Date: 2011-02-27 18:45+EET\n"
-"PO-Revision-Date: 2011-02-27 20:57+0100\n"
+"POT-Creation-Date: 2011-04-06 00:27+EEST\n"
+"PO-Revision-Date: 2011-04-06 08:38+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -593,7 +593,7 @@ msgstr "* Toevoegen '%s' aan db... "
 msgid "OK."
 msgstr "OK."
 
-#: pisi/archive.py:380
+#: pisi/archive.py:419
 msgid "Problem occured while uncompressing %s.Z file"
 msgstr "Probleem tijdens uitpakken bestand %s.Z"
 
@@ -618,7 +618,7 @@ msgstr "Pakket %s niet gevonden in de actieve softwarebronnen."
 msgid "Installing %s, version %s, release %s"
 msgstr "Installatie %s, versie %s, uitgave %s"
 
-#: pisi/atomicoperations.py:192 pisi/operations/build.py:735
+#: pisi/atomicoperations.py:192 pisi/operations/build.py:757
 msgid "%s-%s is not a valid PiSi version format"
 msgstr "%s-%s is niet een geldig PiSi-versie formaat"
 
@@ -753,8 +753,6 @@ msgid ""
 "<repo>: name of repository to add\n"
 "<indexuri>: URI of index file\n"
 "\n"
-"If no repo is given, add-repo pardus-devel repo is added by default\n"
-"\n"
 "NB: We support only local files (e.g., /a/b/c) and http:// URIs at the "
 "moment\n"
 msgstr ""
@@ -765,31 +763,28 @@ msgstr ""
 "<repo>: naam van de toe te voegen softwarebron\n"
 "<indexuri>: IRI van indexbestand\n"
 "\n"
-"Als geen bron wordt gegeven, wordt add-repo pardus-devel als standaard "
-"toegevoegd\n"
-"\n"
 "NB: Momenteel worden alleen lokale bestanden ondersteund (bijv. /a/b/c) en "
 "http:// URI's\n"
 
-#: pisi/cli/addrepo.py:45
+#: pisi/cli/addrepo.py:43
 msgid "add-repo options"
 msgstr "bronopties toevoegen"
 
-#: pisi/cli/addrepo.py:46
+#: pisi/cli/addrepo.py:44
 msgid "Ignore repository distribution check"
 msgstr "Controle van distributiebron en architectuur overslaan"
 
-#: pisi/cli/addrepo.py:47
+#: pisi/cli/addrepo.py:45
 msgid "Does not fetch repository index and does not check distribution match"
 msgstr ""
 "Haalt index van de bron niet op en controleert de distributie en "
 "architectuur niet"
 
-#: pisi/cli/addrepo.py:50
+#: pisi/cli/addrepo.py:48
 msgid "Add repository at given position (0 is first)"
 msgstr "Softwarebron op gegeven positie (0 is eerst) toevoegen"
 
-#: pisi/cli/addrepo.py:69
+#: pisi/cli/addrepo.py:62
 msgid ""
 "Add %s repository without updating the database?\n"
 "By confirming this you are also adding the repository to your system without "
@@ -801,7 +796,7 @@ msgstr ""
 "controleren.\n"
 "Doorgaan met toevoegen? "
 
-#: pisi/cli/addrepo.py:81
+#: pisi/cli/addrepo.py:74
 msgid "%s repository could not be reached. Removing %s from system."
 msgstr "%s softwarebron is onbereikbaar. %s van systeem verwijderen."
 
@@ -829,7 +824,7 @@ msgstr "Blame voor de gegeven uitgave"
 msgid "Blame for all of the releases"
 msgstr "Blame voor alle uitgaven"
 
-#: pisi/cli/blame.py:68 pisi/specfile.py:369 pisi/specfile.py:454
+#: pisi/cli/blame.py:68 pisi/specfile.py:370 pisi/specfile.py:456
 msgid "Name: %s, version: %s, release: %s\n"
 msgstr "Naam: %s, versie %s, uitgave %s\n"
 
@@ -2239,7 +2234,7 @@ msgstr "Deregistreren comar-scripts"
 msgid "Destination directory %s does not exist. Creating it."
 msgstr "Doelmap %s bestaat niet. Deze wordt nu aangemaakt."
 
-#: pisi/configfile.py:128
+#: pisi/configfile.py:127
 msgid "No section by name '%s'"
 msgstr "Geen sectie met de naam '%s'"
 
@@ -2483,15 +2478,15 @@ msgstr "% is teruggebracht van %s naar %s."
 msgid "Unknown package operation"
 msgstr "Onbekende pakketbewerking"
 
-#: pisi/index.py:115
+#: pisi/index.py:118
 msgid "Adding %s to package index"
 msgstr "Toevoegen %s aan pakketindex"
 
-#: pisi/index.py:132
+#: pisi/index.py:135
 msgid "Package %s: metadata corrupt, skipping..."
 msgstr "Pakket %s: metadata is corrupt, wordt overgeslagen..."
 
-#: pisi/index.py:192
+#: pisi/index.py:195
 msgid "Adding %s to source index"
 msgstr "Toevoegen %s aan bronindex"
 
@@ -2523,31 +2518,31 @@ msgstr "Bron URI: %s"
 msgid "Source %s not found in any active repository."
 msgstr "Bron %s niet gevonden in actieve softwarebronnen."
 
-#: pisi/operations/build.py:312
+#: pisi/operations/build.py:317
 msgid "pspec.xml avoids this package from building for '%s'"
 msgstr "pspec.xml voorkomt het bouwen van dit pakket voor '%s'"
 
-#: pisi/operations/build.py:315
+#: pisi/operations/build.py:320
 msgid "Building source package: %s"
 msgstr "Bouwen bronbronpakket: %s "
 
-#: pisi/operations/build.py:363
+#: pisi/operations/build.py:368
 msgid "Rebuilding for %s"
 msgstr "Opnieuw bouwen voor %s"
 
-#: pisi/operations/build.py:391
+#: pisi/operations/build.py:396
 msgid "IceCream detected. Make sure your daemon is up and running..."
 msgstr "IceCream gevonden. Zorg dat uw daemon actief is..."
 
-#: pisi/operations/build.py:401
-msgid "CCache detected..."
+#: pisi/operations/build.py:406
+msgid "ccache detected..."
 msgstr "Ccache gevonden..."
 
-#: pisi/operations/build.py:473
+#: pisi/operations/build.py:478
 msgid "PartOf tag not defined, looking for component"
 msgstr "PartOf tag is niet omschreven, zoeken naar component"
 
-#: pisi/operations/build.py:482
+#: pisi/operations/build.py:487
 msgid ""
 "Cannot find component.xml in remote directory, Source is now part of unknown "
 "component"
@@ -2555,7 +2550,7 @@ msgstr ""
 "Kan component.xml in map op afstand niet vinden. Bron is nu onderdeel van "
 "onbekende component"
 
-#: pisi/operations/build.py:490
+#: pisi/operations/build.py:495
 msgid ""
 "Cannot find component.xml in upper directory, Source is now part of unknown "
 "component"
@@ -2563,163 +2558,170 @@ msgstr ""
 "Kan component.xml in bovenliggende map niet vinden. Bron is nu onderdeel van "
 "onbekende component"
 
-#: pisi/operations/build.py:498
+#: pisi/operations/build.py:503
 msgid "Source is part of %s component"
 msgstr "Bron is onderdeel van %s component"
 
-#: pisi/operations/build.py:505
+#: pisi/operations/build.py:510
 msgid "Unpacking archive(s)..."
 msgstr "Bezig uitpakken archief..."
 
-#: pisi/operations/build.py:511
+#: pisi/operations/build.py:516
 msgid " unpacked (%s)"
 msgstr " uitgepakt (%s)"
 
-#: pisi/operations/build.py:516
+#: pisi/operations/build.py:521
 msgid "Setting up source..."
 msgstr "Instellen bron..."
 
-#: pisi/operations/build.py:521
+#: pisi/operations/build.py:526
 msgid "Building source..."
 msgstr "Bouwen bron..."
 
-#: pisi/operations/build.py:526
+#: pisi/operations/build.py:531
 msgid "Testing package..."
 msgstr "Testen pakket..."
 
-#: pisi/operations/build.py:530
+#: pisi/operations/build.py:535
 msgid "Installing..."
 msgstr "Installeren..."
 
-#: pisi/operations/build.py:596
+#: pisi/operations/build.py:601
 msgid "Unable to read Actions Script (%s): %s"
 msgstr "Kan Actions Script niet lezen (%s): %s"
 
-#: pisi/operations/build.py:599
+#: pisi/operations/build.py:604
 msgid "SyntaxError in Actions Script (%s): %s"
 msgstr "Syntaxfout in Actions Script (%s): %s"
 
-#: pisi/operations/build.py:629
+#: pisi/operations/build.py:634
 msgid "Unable to read COMAR script (%s): %s"
 msgstr "Kan COMAR script niet lezen (%s): %s"
 
-#: pisi/operations/build.py:632
+#: pisi/operations/build.py:637
 msgid "SyntaxError in COMAR file (%s): %s"
 msgstr "Syntaxfout in COMAR bestand (%s): %s"
 
-#: pisi/operations/build.py:664
+#: pisi/operations/build.py:669
 msgid "Sandbox violation: %s (%s -> %s)"
 msgstr "Sandbox overtreding: %s (%s?)"
 
-#: pisi/operations/build.py:680 pisi/util.py:549
+#: pisi/operations/build.py:685 pisi/util.py:549
 msgid "ERROR: WorkDir (%s) does not exist\n"
 msgstr "FOUT: Werkmap (%s) bestaat niet\n"
 
-#: pisi/operations/build.py:689
+#: pisi/operations/build.py:694
 msgid "Sandbox enabled build..."
 msgstr "Sanbox geactiveerde build..."
 
-#: pisi/operations/build.py:713
+#: pisi/operations/build.py:718
 msgid "Sandbox violation result:"
 msgstr "Sandbox overtreding resultaat:"
 
-#: pisi/operations/build.py:718
+#: pisi/operations/build.py:723
 msgid "Sandbox violations!"
 msgstr "Sandbox overtredingen!"
 
-#: pisi/operations/build.py:724
+#: pisi/operations/build.py:729
 msgid "unable to call function from actions: %s"
 msgstr "kan functie niet aanroepen vanuit actions: %s"
 
-#: pisi/operations/build.py:754
+#: pisi/operations/build.py:743
+msgid "Path must start with a slash: %s"
+msgstr "Pad dient te beginnen met een slash: %s"
+
+#: pisi/operations/build.py:747
+msgid "Multiple 'Path' tags specified for this path: %s"
+msgstr "Meerdere 'Pad'-tags opgegeven voor dit pad: %s"
+
+#: pisi/operations/build.py:776
 msgid ""
 "Safety switch: following extra packages in system.devel will be installed: "
 msgstr ""
 "Veiligheidsprocedure: de volgende extra pakketten in system.devel zullen "
 "geïnstalleerd worden: "
 
-#: pisi/operations/build.py:759
+#: pisi/operations/build.py:781
 msgid "Safety switch: system.devel is already installed"
 msgstr "Veiligheidsprocedure: system.devel is al geïnstalleerd"
 
-#: pisi/operations/build.py:761
+#: pisi/operations/build.py:783
 msgid "Safety switch: the component system.devel cannot be found"
 msgstr "Veiligheidsprocedure: het component system.devel niet gevonden"
 
-#: pisi/operations/build.py:770
+#: pisi/operations/build.py:792
 msgid "Unsatisfied Build Dependencies:"
 msgstr "Niet-opgeloste bouwafhankelijkheden:"
 
-#: pisi/operations/build.py:774
+#: pisi/operations/build.py:796
 msgid "Cannot build package due to unsatisfied build dependencies"
 msgstr "Kan pakket niet bouwen wegens niet-opgeloste compileerafhankelijkheden"
 
-#: pisi/operations/build.py:779
+#: pisi/operations/build.py:801
 msgid "Build dependency %s cannot be satisfied"
 msgstr "Bouwafhankelijkheid %s niet opgelost"
 
-#: pisi/operations/build.py:781
+#: pisi/operations/build.py:803
 msgid "Do you want to install the unsatisfied build dependencies"
 msgstr "Wilt u de niet-opgeloste bouwafhankelijkheden installeren"
 
-#: pisi/operations/build.py:782
+#: pisi/operations/build.py:804
 msgid "Installing build dependencies."
 msgstr "Installeren bouwafhankelijkheden."
 
-#: pisi/operations/build.py:788
+#: pisi/operations/build.py:810
 msgid "Ignoring build dependencies."
 msgstr "Negeren bouwafhankelijkheden."
 
-#: pisi/operations/build.py:798
+#: pisi/operations/build.py:820
 msgid "Patch file is missing: %s\n"
 msgstr "Patch-bestand ontbreekt: %s\n"
 
-#: pisi/operations/build.py:800
+#: pisi/operations/build.py:822
 msgid "Patch file is empty: %s"
 msgstr "Patch-bestand is leeg: %s"
 
-#: pisi/operations/build.py:816
+#: pisi/operations/build.py:838
 msgid "* Applying patch: %s"
 msgstr "* Toepassen patch: %s"
 
-#: pisi/operations/build.py:935
+#: pisi/operations/build.py:957
 msgid "/%s has suid bit set"
 msgstr "%s heeft suid-bit gezet"
 
-#: pisi/operations/build.py:1008
+#: pisi/operations/build.py:1033
 msgid "No user named '%s' found on the system"
 msgstr "Geen gebruiker met de naam '%s' gevonden op het systeem"
 
-#: pisi/operations/build.py:1014
+#: pisi/operations/build.py:1039
 msgid "No group named '%s' found on the system"
 msgstr "Geen groep met de naam '%s' gevonden op het systeem"
 
-#: pisi/operations/build.py:1021
+#: pisi/operations/build.py:1046
 msgid "There are abandoned files under the install dir (%s):"
 msgstr "Er zijn achtergelaten bestanden in de installatiemap (%s):"
 
-#: pisi/operations/build.py:1049
+#: pisi/operations/build.py:1074
 msgid "Ignoring empty package %s"
 msgstr "Negeren leeg pakket %s"
 
-#: pisi/operations/build.py:1053
+#: pisi/operations/build.py:1078
 msgid "Building package: %s"
 msgstr "Bouwen pakket: %s"
 
-#: pisi/operations/build.py:1072 pisi/operations/delta.py:50
-#: pisi/operations/delta.py:148
+#: pisi/operations/build.py:1097 pisi/operations/delta.py:59
 msgid "Creating %s..."
 msgstr "Aanmaken %s... "
 
-#: pisi/operations/build.py:1115
+#: pisi/operations/build.py:1144
 msgid "Cleaning build directory..."
 msgstr "Opschonen bouwmap..."
 
-#: pisi/operations/build.py:1118
+#: pisi/operations/build.py:1147
 msgid "Keeping build directory"
 msgstr "Behouden bouwmap"
 
-#: pisi/operations/build.py:1171
+#: pisi/operations/build.py:1235
 msgid "*** %d error(s), %d warning(s)"
 msgstr "*** %d fout(en), %d waarschuwing(en)"
 
@@ -2751,22 +2753,30 @@ msgstr ""
 "\n"
 "Ontbrekend bestand: /%s"
 
-#: pisi/operations/delta.py:98
-msgid "New package '%s' exists in the list of old packages. Skipping it..."
-msgstr "Nieuw pakket '%s' bestaat in lijst van oude pakketten. Overslaan..."
-
-#: pisi/operations/delta.py:132
+#: pisi/operations/delta.py:43
 msgid ""
 "The file '%s' belongs to a different package other than '%s'. Skipping it..."
 msgstr ""
 "Het bestand '%s' behoort toe aan een ander pakket dan '%s'. Overslaan..."
 
-#: pisi/operations/delta.py:138
+#: pisi/operations/delta.py:49
 msgid ""
 "Package '%s' has the same release number with the new package. Skipping it..."
 msgstr ""
 "Pakket '%s' heeft hetzelfde vrijgavenummer met het nieuwe pakket. "
 "Overslaan..."
+
+#: pisi/operations/delta.py:69
+msgid ""
+"All files in the package '%s' are different from the files in the new "
+"package. Skipping it..."
+msgstr ""
+"Alle bestanden in het pakket '%s' zijn ongelijk aan de bestanden in het "
+"nieuwe pakket. Overslaan..."
+
+#: pisi/operations/delta.py:113
+msgid "New package '%s' exists in the list of old packages. Skipping it..."
+msgstr "Nieuw pakket '%s' bestaat in lijst van oude pakketten. Overslaan..."
 
 #: pisi/operations/emerge.py:35
 msgid "No packages to emerge."
@@ -2913,7 +2923,7 @@ msgstr "Externe afhankelijkheden zijn niet voldaan"
 msgid "Installation order: "
 msgstr "Volgorde van installatie: "
 
-#: pisi/operations/install.py:279 pisi/specfile.py:273
+#: pisi/operations/install.py:279 pisi/specfile.py:274
 msgid "%s dependency of package %s is not satisfied"
 msgstr "%s afhankelijkheid van pakket %s is niet bevredigend"
 
@@ -3138,7 +3148,7 @@ msgstr "Regel '%s' bevat ongeldige XML"
 msgid "Unable to read file (%s): %s"
 msgstr "Kan bestand (%s) niet lezen : %s"
 
-#: pisi/pxml/xmlfile.py:85 pisi/specfile.py:441
+#: pisi/pxml/xmlfile.py:85 pisi/specfile.py:443
 msgid "File '%s' has invalid XML"
 msgstr "Bestand '%s' bevat ongeldige XML"
 
@@ -3194,31 +3204,35 @@ msgstr "URI: %s, type: %s, sha1sum: %s"
 msgid " or "
 msgstr "of"
 
-#: pisi/specfile.py:371 pisi/specfile.py:456
+#: pisi/specfile.py:372 pisi/specfile.py:458
 msgid "Summary: %s\n"
-msgstr "Inhoud: %s\n"
+msgstr "Sammenvatting: %s\n"
 
-#: pisi/specfile.py:372 pisi/specfile.py:457
+#: pisi/specfile.py:373 pisi/specfile.py:459
 msgid "Description: %s\n"
 msgstr "Beschrijving: %s\n"
 
-#: pisi/specfile.py:373 pisi/specfile.py:458
+#: pisi/specfile.py:374 pisi/specfile.py:460
+msgid "Licenses: %s\n"
+msgstr "Licenties: %s\n"
+
+#: pisi/specfile.py:375 pisi/specfile.py:461
 msgid "Component: %s\n"
 msgstr "Component: %s\n"
 
-#: pisi/specfile.py:374
+#: pisi/specfile.py:376
 msgid "Provides: "
 msgstr "Levert: "
 
-#: pisi/specfile.py:378
+#: pisi/specfile.py:380
 msgid "Dependencies: "
 msgstr "Afhankelijkheden: "
 
-#: pisi/specfile.py:432
+#: pisi/specfile.py:434
 msgid "translations.xml file is badly formed."
 msgstr "translations.xml bestand is niet goed. "
 
-#: pisi/specfile.py:459
+#: pisi/specfile.py:462
 msgid "Build Dependencies: "
 msgstr "Bouw afhankelijkheden: "
 
