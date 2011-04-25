@@ -4,7 +4,7 @@
 using namespace std;
 
 void print_hello(){
-    cout << "Hello World!";
+    cout << "Hello World!" << endl;
     cout << "Hello Bot!";
     cout << "this must fail";
     cout << "yazmak";
