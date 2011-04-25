@@ -88,6 +88,12 @@
             <_help>YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release.</_help>
         </screen>
         <screen>
+            <name>collectionSelection</name>
+            <_title>Select a collection</_title>
+            <icon>applications-other</icon>
+            <_help>Pardus Corporate 2 offers different installation scenarios upon your needs. So you may able to choose to install a fully desktop workspace or server applications or even a base system where you can install your choice of softwares manually.</_help>
+        </screen>
+        <screen>
             <name>goodbye0</name>
             <_title>Installation complete!</_title>
             <icon>goodbye</icon>
