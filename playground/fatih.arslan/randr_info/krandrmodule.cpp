@@ -119,7 +119,7 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     QString icon = "dialog-information";
     QString text;
     text = i18n("Your graphic card's manufacturer provides a tool for these settings.\n"
-                "It's recommended to use this tool. You can start it by clicking the button on the left.\n");
+                "It's recommended to use this tool. You can start it by clicking the button on the left.");
 
     bool showStartButton = false;
     bool nvidia = false;
