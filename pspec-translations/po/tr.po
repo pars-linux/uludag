@@ -1,15 +1,16 @@
+# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: 2011-04-15 20:02+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -321,6 +322,22 @@ msgstr "Çok Amaçlı Not Tutma Uygulaması"
 #: desktop/misc/basket::description
 msgid "Basket is an application that provides a set of baskets to keep a full range of data on hand."
 msgstr "Basket, el altında kolayca ulaşılması gereken bilgileri belgeleri birarada tutmanıza yarayan bir not tutma aracıdır."
+
+#: desktop/misc/zeitgeist-datahub::summary
+msgid "Passive plugins for Zeitgeist daemon"
+msgstr "Zeitgeist servisi için pasif eklentiler"
+
+#: desktop/misc/zeitgeist-datahub::description
+msgid "zeitgeist-datahub provides passive plugins which insert events into Zeitgeist."
+msgstr "zeitgeist-datahub Zeitgeist günlüğüne olaylar bildiren pasif eklentiler sağlar."
+
+#: desktop/misc/zeitgeist::summary
+msgid "Service which logs user activities and presents them to other applications"
+msgstr "Kullanıcı aktivitelerini günlüğe kaydeden ve istendiğinde diğer uygulamalara sağlayan bir servis"
+
+#: desktop/misc/zeitgeist::description
+msgid "zeitgeist is a service which logs the users’ activities and events, anywhere from files opened to websites visited and conversations had. It makes this information readily available for other applications to use."
+msgstr "zeitgeist, kullanıcıların dosya açma, web sitesine girme ve çevrimiçi görüşmeler yapma gibi aktivitelerini ve olaylarını takip edip, günlük tutar. Gerektiğinde bu verileri diğer uygulamaların kullanımına sunar."
 
 #: desktop/misc/desktop-file-utils::summary
 msgid "Command line utilities to work with desktop menu entries"
@@ -5252,7 +5269,7 @@ msgstr "gc, C malloc veya C++ new yerine kullanılabilecek, Boehm-Demers-Weiser 
 
 #: programming/misc/tre:tre-devel:summary
 msgid "Development files for tre"
-msgstr "tre paketine ait geliştirme dosyaları"
+msgstr ""
 
 #: programming/misc/tre::summary
 msgid "A lightweight, robust, and efficient POSIX compliant regexp matching library"
@@ -5737,6 +5754,18 @@ msgstr "Django şablon sistemi benzeri bir Qt metin şablon motoru"
 #: programming/misc/grantlee::description
 msgid "grantlee is a plugin based String Template system written using the Qt framework. The goals of the project are to make it easier for application developers to separate the structure of documents from the data they contain, opening the door for theming."
 msgstr "grantlee Qt çatısı kullanılarak yazılmış bir eklenti destekli metin şablon sistemidir. Projenin amaçları; belgelerin yapısını, içerdikleri veriden ayırarak uygulama geliştiricilerinin işini kolaylaştırmak ve tema desteği için imkan sağlamaktır."
+
+#: programming/misc/libzeitgeist:libzeitgeist-devel:summary
+msgid "Development files for libzeitgeist"
+msgstr "libzeitgeist için geliştirme dosyaları"
+
+#: programming/misc/libzeitgeist::summary
+msgid "Client library for Zeitgeist"
+msgstr "Zeitgeist için istemci kitaplığı"
+
+#: programming/misc/libzeitgeist::description
+msgid "libzeitgeist provides a client library for applications that want to interact with the Zeitgeist daemon. The library is written in C using glib and provides an asynchronous GObject oriented API."
+msgstr "libzeitgeist Zeitgeist servisi ile iletişim kurmak isteyen istemciler için bir kitaplık sağlar. Kitaplık glib kullanılarak C dilinde yazılmıştır ve GObject temelli asenkron bir API sunar."
 
 #: programming/misc/libmowgli:libmowgli-devel:summary
 msgid "Development headers for libmowgli"
@@ -10778,6 +10807,14 @@ msgstr "OAuth 1.0a sürümü için Python kitaplığı"
 msgid "python-oauth is a python library for OAuth version 1.0a."
 msgstr "python-oauth, OAuth 1.0a sürümü için Python kitaplığıdır."
 
+#: programming/language/python/python-distutils-extra::summary
+msgid "Enhancements to Python's distutils"
+msgstr "Python'un distutils araçları için iyileştirmeler"
+
+#: programming/language/python/python-distutils-extra::description
+msgid "python-distutils-extra enables you to easily integrate gettext support, themed icons and scrollkeeper based documentation into Python's distutils."
+msgstr "python-distutils-extra Python'un distutils araçlarına, gettext desteği, simge temaları ve scrollkeeper temelli belgelendirme özellikleri sağlar."
+
 #: programming/language/python/python-kaa-metadata::summary
 msgid "A powerful media metadata parser for media files in Python"
 msgstr "Python için güçlü bir metaveri ayrıştırıcısı"
@@ -11926,6 +11963,14 @@ msgstr ""
 msgid "Pexpect makes Python a better tool for controlling other applications."
 msgstr "Pexpect, diğer uygulamaları kontrol etmek için Pythonu daha iyi bir araç yapar."
 
+#: programming/language/python/python-rdflib::summary
+msgid "RDF library for Python"
+msgstr "Python için RDF kitaplığı"
+
+#: programming/language/python/python-rdflib::description
+msgid "python-rdflib is a Python library for working with RDF, a simple yet powerful language for representing information. The library contains parsers and serializers for RDF/XML, N3, NTriples, Turtle, TriX and RDFa."
+msgstr "python-rdflib bilgiyi ifade etmek için basit ve güçlü bir dil olan RDF ile çalışmak için bir Python kitaplığıdır. Kitaplık; RDF/XML, N3, NTriples, Turtle, TriX ve RDFa için ayrıştırıcılar ve serileştiriciler içermektedir."
+
 #: programming/language/python/pyPdf::summary
 msgid "A Pure-Python library built as a PDF toolkit"
 msgstr "PDF araç kiti olarak inşa edilen saf bir Python kütüphanesi"
@@ -12634,6 +12679,22 @@ msgstr "C, C++ ve D programlama dilleri için yazım ayrıştırma üreteci"
 msgid "Lemon is a LALR parser generator for C, C++ and D languages. It does the same job as GNU bison and yacc; however, Lemon is not another bison or yacc clone. It uses a different grammar syntax which is designed to reduce the number of coding errors."
 msgstr "Lemon C, C++ ve D programlama dilleri için bir yazım ayrıştırma üretecidir. GNU bison ve yacc ile aynı işi yapmasına rağmen bir başka bison veya yacc klonu değildir. Kodlama hatalarını azaltmak için tasarlanmış bir gramer sözdizimi kullanır."
 
+#: programming/tool/umlgraph:umlgraph-docs:summary
+msgid "Documentation for umlgraph package"
+msgstr "umlgraph belgeleri"
+
+#: programming/tool/umlgraph:umlgraph-docs:description
+msgid "Includes the html documentation and the javadoc for the umlgraph package."
+msgstr "umlgraph paketinin html ve javadoc belgelerini barındırır."
+
+#: programming/tool/umlgraph::summary
+msgid "Generate UML class and sequence diagrams using a declarative approach."
+msgstr "Yazılı tanımlamalardan UML sınıf ve ardışık diyagramları üretir."
+
+#: programming/tool/umlgraph::description
+msgid "UMLGraph allows the declarative specification and drawing of UML class and sequence diagrams. The technology behind UMLGraph was used to draw many of the diagrams appearing in the award-winning books \"Code Quality: The Open Source Perspective\" (Addison Wesley, 2006) and \"Code Reading: The Open Source Perspective\" (Addison Wesley, 2003)."
+msgstr "UMLGraph ile düz yazı kullanarak tanımladığınız UML sınıf ve ardışık diyagramlarının (sequence diagram) görsel çıktılarını elde edebilirsiniz. UMLGraph'ın teknolojisi kullanılarak hazırlanmış UML diyagramları \"Code Quality: The Open Source Perspective\" (Addison Wesley, 2006) ve \"Code Reading: The Open Source Perspective\" (Addison Wesley, 2003) gibi ödüllü kitaplarda kullanılmıştır."
+
 #: programming/tool/python-cx_freeze::summary
 msgid "Set of utilities for freezing Python scripts into executables"
 msgstr "Python betiklerini çalıştırılabilir dosya haline getirmeye yarayan araçlar kümesi"
@@ -13146,6 +13207,14 @@ msgstr "VNC sunucu oluşturmak için kütüphane"
 #: server/misc/libvncserver::description
 msgid "libvncserver provides a C library to create VNC servers."
 msgstr "VNC sunucu benzeri kendi VNC (Virtual Network Computing) sunucunuzu oluşturmak isterseniz gerekli kütüphane"
+
+#: server/openssh::summary
+msgid "Port of OpenBSD's free SSH release"
+msgstr "OpenBSD'den aktarılmış SSH sürümü"
+
+#: server/openssh::description
+msgid "OpenSSH is a FREE version of the SSH connectivity tools that technical users of the Internet rely on. Users of telnet, rlogin, and ftp may not realize that their password is transmitted across the Internet unencrypted, but it is. OpenSSH encrypts all traffic (including passwords) to effectively eliminate eavesdropping, connection hijacking, and other attacks."
+msgstr "OpenSSH teknik internet kullanıcıların güvendikleri SSH bağlanırlık araçlarının Özgür (free) sürümüdür.telnet, rlogin ve ftp kullanıcıları parolalarının internetten şifresiz olarak aktarıldığını anlayamayabilirler ancak aktarılmaktadır.OpenSSH  eavesdropping (iletişim kanalını dinleme), connection hijacking (bağlantı çalma) ve diğer atakları önlemek için tüm bağlantı trafiğini (parolalar dahil) şifrelemektedir."
 
 #: server/backup/BackupPC::summary
 msgid "High-performance backup system"
@@ -18473,7 +18542,7 @@ msgstr "libdrm için geliştirme dosyaları"
 
 #: x11/library/libdrm:libdrm-32bit:summary
 msgid "32-bit shared libraries for libdrm"
-msgstr ""
+msgstr "libdrm için 32-bit paylaşımlı kitaplıklar"
 
 #: x11/library/libdrm:libdrm-intel-32bit:summary
 msgid "32-bit shared libraries for libdrm-intel"
@@ -24839,6 +24908,14 @@ msgstr ""
 msgid "plymouth-plugin-fade-throbber contains the \"Fade-In\" boot splash plugin for Plymouth. It features a centered image that fades in and out while other images pulsate around during system boot up."
 msgstr ""
 
+#: system/boot/plymouth:plymouth-theme-spinner:summary
+msgid "Spinner theme for Plymouth"
+msgstr "plymouth için Spinner teması"
+
+#: system/boot/plymouth:plymouth-theme-spinner:description
+msgid "plymouth-theme-spinner contains the \"Spinner\" boot splash theme for Plymouth. It features a simple theme with a small spinner on a dark background."
+msgstr ""
+
 #: system/boot/plymouth:plymouth-theme-fade-in:summary
 msgid "Fade-in theme for Plymouth"
 msgstr ""
@@ -25586,14 +25663,6 @@ msgstr "Kapsamlı Linux kılavuz dökümanları"
 #: system/base/man-pages::description
 msgid "A large collection of man pages (documentation) from the Linux Documentation Project (LDP)."
 msgstr ""
-
-#: system/base/openssh::summary
-msgid "Port of OpenBSD's free SSH release"
-msgstr "OpenBSD'den aktarılmış SSH sürümü"
-
-#: system/base/openssh::description
-msgid "OpenSSH is a FREE version of the SSH connectivity tools that technical users of the Internet rely on. Users of telnet, rlogin, and ftp may not realize that their password is transmitted across the Internet unencrypted, but it is. OpenSSH encrypts all traffic (including passwords) to effectively eliminate eavesdropping, connection hijacking, and other attacks."
-msgstr "OpenSSH teknik internet kullanıcıların güvendikleri SSH bağlanırlık araçlarının Özgür (free) sürümüdür.telnet, rlogin ve ftp kullanıcıları parolalarının internetten şifresiz olarak aktarıldığını anlayamayabilirler ancak aktarılmaktadır.OpenSSH  eavesdropping (iletişim kanalını dinleme), connection hijacking (bağlantı çalma) ve diğer atakları önlemek için tüm bağlantı trafiğini (parolalar dahil) şifrelemektedir."
 
 #: system/base/dbus:dbus-devel:summary
 msgid "Development files for dbus"
@@ -27234,6 +27303,14 @@ msgstr "Sistem günlük (log) dosyalarını yönetmeyi kolaylaştıran bir araç
 #: util/admin/logrotate::description
 msgid "logrotate is designed to ease administration of systems that generate large numbers of log files. It allows automatic rotation, compression, removal, and emailing of log files."
 msgstr "Logrotate kayıt dosyalarının rotasyonunu, silinmesini veya e-posta ile gönderilmesi gibi işlevleri ile sistem yönetimini kolaylaştırıan bir uygulamadır."
+
+#: util/admin/at::summary
+msgid "Delayed job execution and batch processing"
+msgstr "Zamanlanmış iş ve toplu iş çalıştırma"
+
+#: util/admin/at::description
+msgid "Schedules a command to be ran at a particular time, such as a print job late at night."
+msgstr "at, gece yarısı bir dosyanın yazdırılması tanımı gibi, komutları belirli zamanlarda çalıştırmak için kullanılan zamanlama hizmetidir."
 
 #: util/admin/rdate::summary
 msgid "Retrieve current date and time of another machine over the web and optionally set local date and time"
