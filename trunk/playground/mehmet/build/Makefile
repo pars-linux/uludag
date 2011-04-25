@@ -18,6 +18,3 @@ hello.o: hello.cpp
 
 clean:
 		rm -rf *o hello
-
-foo:
-		echo "Print line for Mehmet"
