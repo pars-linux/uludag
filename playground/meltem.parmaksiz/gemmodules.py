@@ -11,8 +11,6 @@ from gettext import translation
 __trans = translation('pisi', fallback=True)
 _ = __trans.ugettext
 
-
-
 # Pisi Modules
 import pisi.context as ctx
 from pisi.util  import join_path
@@ -21,7 +19,6 @@ from pisi.util  import join_path
 import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system, unlink
-
 
 
 class InstallError(pisi.actionsapi.Error):
@@ -46,11 +43,10 @@ def install(parameters = ''):
     source = "%s-%s" %(get.srcNAME()[8:], get.srcVERSION())
     sourcedir = join_path(get.workDIR(), source)
 
-    print installdir ,  bindir,  source, sourcedir 
     if system("gem install -E --local --install-dir %s  --bindir %s --force %s" % (installdir, bindir, sourcedir)):
         raise InstallError, _('Install failed.')
 
-
+    remove_cachedir()
 
 
 
