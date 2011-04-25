@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-04-25 11:47+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -709,7 +709,7 @@ msgstr "Glade arayüz oluşturucu"
 
 #: desktop/toolkit/gtk/libglade::description
 msgid "Libglade is a library that performs a similar job to the C source output routines in the GLADE user interface builder. Whereas GLADE's output routines create C code that can then be compiled, libglade builds the interface from an XML file (GLADE's save format) at runtime. This way you can change the look of a program without needing to recompile."
-msgstr "Libglade, GLADE kullanıcı arayüzü yapıcısındaki C kaynak çıkışı yöntemine benzer iş yapan bir kütüphanedir. GLADE'in çıkış yöntemi derlenebilir C kodu oluştururken, libglade arayüzü bir XML dosyasında oluşturur. Böylece yeniden derlenmeye gerek kalmadan arayüz değiştirilebilir."
+msgstr "Libglade, GLADE kullanıcı arayüzü yapıcısındaki C kaynak çıkışı yöntemine benzer iş yapan bir kitaplıktır. GLADE'in çıkış yöntemi derlenebilir C kodu oluştururken, libglade arayüzü bir XML dosyasında oluşturur. Böylece yeniden derlenmeye gerek kalmadan arayüz değiştirilebilir."
 
 #: desktop/toolkit/gtk/libsexy:libsexy-devel:summary
 msgid "Development files for libsexy"
@@ -733,11 +733,11 @@ msgstr "gdk-pixbuf için başvuru belgeleri"
 
 #: desktop/toolkit/gtk/gdk-pixbuf::summary
 msgid "GDK pixbuf library"
-msgstr "GDK pixbuf kütüphanesi"
+msgstr "GDK pixbuf kitaplığı"
 
 #: desktop/toolkit/gtk/gdk-pixbuf::description
 msgid "gdk-pixbuf is a library that provides image loading and scaling support for gtk+ applications"
-msgstr "gdk-pixbuf, gtk+ uygulamalarına resim açma ve ölçeklendirme desteği sağlayan bir kütüphanedir."
+msgstr "gdk-pixbuf, gtk+ uygulamalarına resim açma ve ölçeklendirme desteği sağlayan bir kitaplıktır."
 
 #: desktop/toolkit/gtk/gtkhtml3::summary
 msgid "Lightweight HTML Rendering/Printing/Editing Engine"
@@ -765,11 +765,11 @@ msgstr "Pango referans dokümanları"
 
 #: desktop/toolkit/gtk/pango::summary
 msgid "Text rendering and layout library"
-msgstr "Metin görüntüleme kütüphanesi"
+msgstr "Metin görüntüleme kitaplığı"
 
 #: desktop/toolkit/gtk/pango::description
 msgid "Pango is a library for laying out and rendering of text, with an emphasis on internationalization. Pango can be used anywhere that text layout is needed, though most of the work on Pango so far has been done in the context of the GTK+ widget toolkit. Pango forms the core of text and font handling for GTK+-2.x."
-msgstr "Pango, özellikle yerelleştirme ile birlikte metin düzenlemek ve biçimlendirmek için bir kütüphanedir. Pango metin biçimlendirmenin gerekli olduğu her yerde kullanılabilir ama şimdiye kadar ki birçok Pango çalışması GTK+ araç takımının parçası ile tamamlandı. Pango formları, GTK+-2.x. için temel metin ve yazı tipini yönetir."
+msgstr "Pango, özellikle yerelleştirme ile birlikte metin düzenlemek ve biçimlendirmek için bir kitaplıktır. Pango metin biçimlendirmenin gerekli olduğu her yerde kullanılabilir ama şimdiye kadar ki birçok Pango çalışması GTK+ araç takımının parçası ile tamamlandı. Pango formları, GTK+-2.x. için temel metin ve yazı tipini yönetir."
 
 #: desktop/toolkit/gtk/pangomm:pangomm-devel:summary
 msgid "Development files for pangomm"
@@ -781,7 +781,7 @@ msgstr "Pango için C++ arayüzü"
 
 #: desktop/toolkit/gtk/pangomm::description
 msgid "Pangomm is a library that provides pango based C++ interface for object-oriented gtkmm applications."
-msgstr "Pangomm, nesne tabanlı gtkmm uygulamaları için C++ tabanlı pango arayüzü sağlayan bir kütüphanedir."
+msgstr "Pangomm, nesne tabanlı gtkmm uygulamaları için C++ tabanlı pango arayüzü sağlayan bir kitaplıktır."
 
 #: desktop/toolkit/gtk/gtkimageview:gtkimageview-docs:summary
 msgid "Help files and API documents for gtkimageview library"
@@ -809,7 +809,7 @@ msgstr "GTK+ için C++ bağlamı"
 
 #: desktop/toolkit/gtk/gtkmm::description
 msgid "gtkmm is the official C++ interface for the popular GUI library GTK+. Highlights include typesafe callbacks, and a comprehensive set of widgets that are easily extensible via inheritance."
-msgstr "gtkmm, grafik kullanıcı arayüzü kütüphanesi GTK+'nın resmi C++ arayüzüdür. Tip-güvenli geri çağırmalar ve mirasla genişleyebilen tutarlı parçacıklardan oluşması, en önemli özelliklerini oluşturur."
+msgstr "gtkmm, grafik kullanıcı arayüzü kitaplığı GTK+'nın resmi C++ arayüzüdür. Tip-güvenli geri çağırmalar ve mirasla genişleyebilen tutarlı parçacıklardan oluşması, en önemli özelliklerini oluşturur."
 
 #: desktop/toolkit/gtk/cairomm:cairomm-devel:summary
 msgid "Development files for cairomm"
@@ -857,7 +857,7 @@ msgstr "GTK+ API belge oluşturucusu"
 
 #: desktop/toolkit/gtk/gtk-doc::description
 msgid "Gtk-Doc is typically used to document the public API of GTK+ and GNOME libraries, but it can also be used to document application code."
-msgstr "gtk-doc, GNOME ve GTK+ gibi kütüphanelerin API'lerinin belgelendirilmesi için yazılmış bir uygulama projesidir."
+msgstr "gtk-doc, GNOME ve GTK+ gibi kitaplıkların API'lerinin belgelendirilmesi için yazılmış bir uygulama projesidir."
 
 #: desktop/toolkit/gtk/gtk2:gtk2-demo:summary
 msgid "GTK demo application"
@@ -873,7 +873,7 @@ msgstr "gtk2 için geliştirme dosyaları"
 
 #: desktop/toolkit/gtk/gtk2::summary
 msgid "The GIMP Toolkit version 2"
-msgstr "GTK grafik arayüz kütüphanesi versiyon 2"
+msgstr "GTK grafik arayüz kitaplığı versiyon 2"
 
 #: desktop/toolkit/gtk/gtk2::description
 msgid "GTK+ is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off projects to complete application suites."
@@ -885,11 +885,11 @@ msgstr "atk için geliştirme dosyaları"
 
 #: desktop/toolkit/gtk/atk::summary
 msgid "GTK+ and GNOME Accessibility Toolkit"
-msgstr "GTK+ ve GNOME erişilebilirlik kütüphanesi"
+msgstr "GTK+ ve GNOME erişilebilirlik kitaplığı"
 
 #: desktop/toolkit/gtk/atk::description
 msgid "These libraries provide tools for making software for people with disabilities."
-msgstr "Bu kütüphaneler engelli insanlar için yapılan programlarda kullanılabilecek araçları içerir."
+msgstr "Bu kitaplıklar engelli insanlar için yapılan programlarda kullanılabilecek araçları içerir."
 
 #: desktop/toolkit/gtk/gtk-qt-engine::summary
 msgid "GTK+2 Qt Theme Engine for KDE4"
@@ -913,7 +913,7 @@ msgstr "GTK+ için bir cairo tuval parçacığı"
 
 #: desktop/toolkit/gtk/goocanvas::description
 msgid "GooCanvas is a canvas widget for GTK+ that uses the cairo 2D library for drawing."
-msgstr "GooCanvas, GTK+ için cairo 2B çizim kütüphanesini kullanan bir tuval parçacığıdır."
+msgstr "GooCanvas, GTK+ için cairo 2B çizim kitaplığını kullanan bir tuval parçacığıdır."
 
 #: desktop/toolkit/gtk/cairo:cairo-devel:summary
 msgid "Development files for cairo"
@@ -921,7 +921,7 @@ msgstr "cairo için geliştirme dosyaları"
 
 #: desktop/toolkit/gtk/cairo::summary
 msgid "2D graphics library with bindings of many programming languages"
-msgstr "Birden çok çıktı cihazına destek veren bir 2 boyutlu grafik kütüphanesi"
+msgstr "Birden çok çıktı cihazına destek veren bir 2 boyutlu grafik kitaplığı"
 
 #: desktop/toolkit/gtk/cairo::description
 msgid "Cairo is a 2D graphics library with support for multiple output devices (and fileformats)."
@@ -933,11 +933,11 @@ msgstr "libqxt için geliştirme dosyaları"
 
 #: desktop/toolkit/qt/libqxt::summary
 msgid "An extension library for Qt"
-msgstr "Qt için ek bir kütüphane"
+msgstr "Qt için ek bir kitaplık"
 
 #: desktop/toolkit/qt/libqxt::description
 msgid "LibQxt is an extension library for Qt. It provides a suite of cross-platform utility classes to add functionality not readily available in the Qt toolkit by Trolltech, a Nokia company."
-msgstr "LibQxt henüz Qt'de bulunmayan işlevleri Qt'ye eklemek için bir çok platformda çalışan yardımcı sınıflar içeren eklenti kütüphanesidir."
+msgstr "LibQxt henüz Qt'de bulunmayan işlevleri Qt'ye eklemek için bir çok platformda çalışan yardımcı sınıflar içeren eklenti kitaplığıdır."
 
 #: desktop/toolkit/qt/qscintilla2:qscintilla2-python:summary
 msgid "Python bindings for qscintilla2"
@@ -1109,7 +1109,7 @@ msgstr "FLTK, platformlar arası C++ kullanıcı arayüzü için bir araç takı
 
 #: desktop/toolkit/fltk::description
 msgid "FLTK provides modern GUI functionality without the bloat and supports 3D graphics via OpenGL and its built-in GLUT emulation. FLTK is designed to be small and modular enough to be statically linked, but works fine as a shared library. FLTK also includes an excellent UI builder called FLUID that can be used to create applications in minutes."
-msgstr "FLTK sistemi yormadan modern bir arayüzün işlevselliğini sağlar. OpenGL ve kendi içinde bulunan GLUT emülasyonu sayesinde 3B görüntü de sağlayabilir. FLTK statik kütüphane olabilecek kadar küçük ve modülerdir, fakat paylaşılmış kütüphane olarak da çalışabilir. Ayrıca FLUID adlı grafik arayüz tasarım aracı sayesinde çok kısa sürede FLTK uygulamaları geliştirilebilir."
+msgstr "FLTK sistemi yormadan modern bir arayüzün işlevselliğini sağlar. OpenGL ve kendi içinde bulunan GLUT emülasyonu sayesinde 3B görüntü de sağlayabilir. FLTK statik kitaplık olabilecek kadar küçük ve modülerdir, fakat paylaşılmış kitaplık olarak da çalışabilir. Ayrıca FLUID adlı grafik arayüz tasarım aracı sayesinde çok kısa sürede FLTK uygulamaları geliştirilebilir."
 
 #: desktop/enlightenment/base/eeze:eeze-devel:summary
 msgid "Development files for eeze"
@@ -2737,11 +2737,11 @@ msgstr "libcroco için geliştirme dosyaları"
 
 #: desktop/gnome/libcroco::summary
 msgid "Generic Cascading Style Sheet (CSS) parsing and manipulation toolkit"
-msgstr "CSS ayıklama kütüphanesi"
+msgstr "CSS ayıklama kitaplığı"
 
 #: desktop/gnome/libcroco::description
 msgid "libcroco is an effort to build a generic Cascading Style Sheet (CSS) parsing and manipulation toolkit that can be used by GNOME applications in need of CSS support."
-msgstr "libcroco GNOME uygulamaları tarafından CSS desteği için kullanılan genel bir CSS ayıklama kütüphanesidir."
+msgstr "libcroco GNOME uygulamaları tarafından CSS desteği için kullanılan genel bir CSS ayıklama kitaplığıdır."
 
 #: desktop/gnome/gdl:gdl-devel:summary
 msgid "Development files for gdl"
@@ -2753,11 +2753,11 @@ msgstr "gdl için başvuru belgeleri"
 
 #: desktop/gnome/gdl::summary
 msgid "GNOME devtool libraries"
-msgstr "GNOME geliştirme kütüphaneleri"
+msgstr "GNOME geliştirme kitaplıkları"
 
 #: desktop/gnome/gdl::description
 msgid "This package contains components and libraries that are intended to be shared between GNOME development tools."
-msgstr "Bu paket, GNOME geliştirme araçları arasında paylaşılan kütüphaneleri ve bileşenleri içerir."
+msgstr "Bu paket, GNOME geliştirme araçları arasında paylaşılan kitaplıkları ve bileşenleri içerir."
 
 #: desktop/gnome/libbonobo:libbonobo-devel:summary
 msgid "Development files for libbonobo"
@@ -2785,7 +2785,7 @@ msgstr "libbonoboui için geliştirme dosyaları"
 
 #: desktop/gnome/libbonoboui::summary
 msgid "User Interface part of libbonobo"
-msgstr "Libbonobo kütüphanesinin kullanıcı arayüz kısmı"
+msgstr "Libbonobo kitaplığının kullanıcı arayüz kısmı"
 
 #: desktop/gnome/libbonoboui::description
 msgid "Bonobo is a component system based on CORBA, used by the GNOME desktop. libbonoboui contains the user interface related components that come with Bonobo."
@@ -2825,7 +2825,7 @@ msgstr "libgweather için geliştirme dosyaları"
 
 #: desktop/gnome/libgweather::summary
 msgid "GNOME weather library"
-msgstr "GNOME hava durumu kütüphanesi"
+msgstr "GNOME hava durumu kitaplığı"
 
 #: desktop/gnome/libgweather::description
 msgid "libgweather is a library to access weather information from online services for numerous locations."
@@ -2913,11 +2913,11 @@ msgstr "librsvg için geliştirme dosyaları"
 
 #: desktop/gnome/librsvg::summary
 msgid "Scalable Vector Graphics (SVG) rendering library"
-msgstr "Scalable Vector Graphics (SVG) kütüphanesi"
+msgstr "Scalable Vector Graphics (SVG) kitaplığı"
 
 #: desktop/gnome/librsvg::description
 msgid "librsvg is a component used within software applications to enable support for SVG-format scalable vector graphics."
-msgstr "Scalable Vector Graphics (SVG) kütüphanesi"
+msgstr "Scalable Vector Graphics (SVG) kitaplığı"
 
 #: desktop/gnome/polkit-gnome:polkit-gnome-devel:summary
 msgid "Development files for polkit-gnome"
@@ -2941,11 +2941,11 @@ msgstr "libgnome-keyring için başvuru belgeleri"
 
 #: desktop/gnome/libgnome-keyring::summary
 msgid "Compatibility library for accessing gnome-keyring"
-msgstr "gnome-keyring'e ulaşmak için uyumluluk kütüphanesidir."
+msgstr "gnome-keyring'e ulaşmak için uyumluluk kitaplığı."
 
 #: desktop/gnome/libgnome-keyring::description
 msgid "libgnome-keyring is a library that used by applications to integrate with the gnome-keyring system."
-msgstr "libgnome-keyring, gnome-keyring sistemine uyumlu olmak için programlar tarafından kullanılan bir kütüphanedir."
+msgstr "libgnome-keyring, gnome-keyring sistemine uyumlu olmak için programlar tarafından kullanılan bir kitaplığıdır."
 
 #: desktop/gnome/libgnomeui:libgnomeui-docs:summary
 msgid "libgnomeui reference documents"
@@ -2969,11 +2969,11 @@ msgstr "glibmm için geliştirme dosyaları"
 
 #: desktop/gnome/glibmm::summary
 msgid "C++ interface for glib2"
-msgstr "glib2 kütüphanesi için C++ programlama dili arayüzü"
+msgstr "glib2 kitaplığı için C++ programlama dili arayüzü"
 
 #: desktop/gnome/glibmm::description
 msgid "Glibmm is the official C++ interface for the popular GUI library GTK+. Highlights include typesafe callbacks and a comprehensive set of widgets that are easily extensible via inheritance."
-msgstr "Glibmm, ünlü GUI kütüphanesi GTK' için resmi C++ arayüzüdür. Önemli özelliklerinin arasında tip bağımsız çağırmalar ve miras ile genişleyebilen uyumlu parçacıklar vardır."
+msgstr "Glibmm, ünlü GUI kitaplığı GTK+ için resmi C++ arayüzüdür. Önemli özelliklerinin arasında tip bağımsız çağırmalar ve miras ile genişleyebilen uyumlu parçacıklar vardır."
 
 #: desktop/gnome/gconf:gconf-docs:summary
 msgid "GConf reference documents"
@@ -3229,11 +3229,11 @@ msgstr "libproxy için geliştirme dosyaları"
 
 #: network/misc/libproxy::summary
 msgid "Proxy configuration library"
-msgstr "Proxy yapılandırma kütüphanesi"
+msgstr "Proxy yapılandırma kitaplığı"
 
 #: network/misc/libproxy::description
 msgid "libproxy is a library that provides automatic proxy configuration management."
-msgstr "Otomatik proxy yapılandırma yönetimini sağlayan bir kütüphanedir."
+msgstr "Otomatik proxy yapılandırma yönetimini sağlayan bir kitaplığı."
 
 #: network/misc/protobuf:protobuf-devel:summary
 msgid "Development files for protobuf"
@@ -3265,11 +3265,11 @@ msgstr "libnl için geliştirme dosyaları"
 
 #: network/misc/libnl::summary
 msgid "A library for applications dealing with netlink sockets"
-msgstr "Netlink soketleri erişimi için bir kütüphane"
+msgstr "Netlink soketleri erişimi için bir kitaplığı"
 
 #: network/misc/libnl::description
 msgid "libnl is a convenience library to simplify the usage of the Linux kernel's netlink sockets interface for network manipulation."
-msgstr "libnl Linux çekirdeğinin netlink soket arayüzünü ağ ile ilgili çeşitli işlemleri kolaylaştırmak için kullanan bir kütüphanedir."
+msgstr "libnl Linux çekirdeğinin netlink soket arayüzünü ağ ile ilgili çeşitli işlemleri kolaylaştırmak için kullanan bir kitaplığıdır."
 
 #: network/misc/psimedia::summary
 msgid "Psi plugin for voice/video calls"
@@ -3285,11 +3285,11 @@ msgstr "neon için geliştirme dosyaları"
 
 #: network/misc/neon::summary
 msgid "HTTP and WebDAV client library"
-msgstr "C arayüzü ile birlikte gelen, Http ve WebDAV için istemci kütüphanesi"
+msgstr "C arayüzü ile birlikte gelen, Http ve WebDAV için istemci kitaplığı"
 
 #: network/misc/neon::description
 msgid "neon is an HTTP and WebDAV client library with a C interface; providing a high-level interface to HTTP and WebDAV methods along with a low-level interface for HTTP request handling."
-msgstr "neon, C arayüzü sunan bir HTTP ve WebDAV istemci kütüphanesidir. HTTP ve WebDAV metodlarına yüksek seviyeli, HTTP istek değerlendirmesi için de düşük seviyeli bir arayüz sunar."
+msgstr "neon, C arayüzü sunan bir HTTP ve WebDAV istemci kitaplığıdır. HTTP ve WebDAV metodlarına yüksek seviyeli, HTTP istek değerlendirmesi için de düşük seviyeli bir arayüz sunar."
 
 #: network/misc/libssh:libssh-devel:summary
 msgid "Development files for libssh"
@@ -3313,11 +3313,11 @@ msgstr "yaz için geliştirme dosyaları"
 
 #: network/misc/yaz::summary
 msgid "C/C++ Z39.50v3 library"
-msgstr "C/C++ Z39.50v3 kütüphanesi"
+msgstr "C/C++ Z39.50v3 kitaplığı"
 
 #: network/misc/yaz::description
 msgid "YAZ is a programmers' toolkit supporting the development of Z39.50/SRW/SRU clients and servers."
-msgstr "YAZ Z39.50/SRW/SRU istemci ve sunucular geliştirmek için bir programlama kütüphanesidir."
+msgstr "YAZ Z39.50/SRW/SRU istemci ve sunucular geliştirmek için bir programlama kitaplığıdır."
 
 #: network/misc/enet:enet-devel:summary
 msgid "Development files for enet"
@@ -3421,11 +3421,11 @@ msgstr "libasyncns için geliştirme dosyaları"
 
 #: network/misc/libasyncns::summary
 msgid "A C library for asynchronous name service queries"
-msgstr "Asenkron isim servisi sorguları için C kütüphanesi"
+msgstr "Asenkron isim servisi sorguları için C kitaplığı"
 
 #: network/misc/libasyncns::description
 msgid "libasyncns is a C library for Linux/Unix for executing name service queries asynchronously. It is an asynchronous wrapper around getaddrinfo(), getnameinfo(), res_query() and res_search() from libc and libresolv."
-msgstr "libasyncns, Linux/Unix üzerinde isim servisi sorgularını asenkron olarak gerçekleştirme imkanı veren bir C kütüphanesidir."
+msgstr "libasyncns, Linux/Unix üzerinde isim servisi sorgularını asenkron olarak gerçekleştirme imkanı veren bir C kitaplığıdır."
 
 #: network/misc/c-ares:c-ares-devel:summary
 msgid "Development files for c-ares"
@@ -3437,15 +3437,15 @@ msgstr "c-ares için belgelendirme dosyaları"
 
 #: network/misc/c-ares::summary
 msgid "A C library that performs DNS requests and name resolves asynchronously"
-msgstr "Eşzamansız DNS sorgulamaları ve isim çözme işlemleri için bir C kütüphanesi"
+msgstr "Eşzamansız DNS sorgulamaları ve isim çözme işlemleri için bir C kitaplığı"
 
 #: network/misc/c-ares::description
 msgid "c-ares is a C library that performs DNS requests and name resolves asynchronously. c-ares is a fork of the library named 'ares', written by Greg Hudson at MIT."
-msgstr "Eşzamansız DNS sorgulamaları ve isim çözme işlemleri için bir C kütüphanesi. c-ares, ares kütüphanesi temel alınarak geliştirilmiştir."
+msgstr "Eşzamansız DNS sorgulamaları ve isim çözme işlemleri için bir C kitaplığı. c-ares, ares kitaplığı temel alınarak geliştirilmiştir."
 
 #: network/misc/ntrack:ntrack-devel:summary
 msgid "Development files for ntrack library"
-msgstr "ntrack kütüphanesi için geliştirme dosyaları"
+msgstr "ntrack kitaplığı için geliştirme dosyaları"
 
 #: network/misc/ntrack:ntrack-qt4:summary
 msgid "Network Connectivity Tracking library for Desktop Applications"
@@ -3453,15 +3453,15 @@ msgstr "Uygulamalar için ağ bağlantı durumu izleme kitaplığı"
 
 #: network/misc/ntrack:ntrack-qt4-devel:summary
 msgid "Development files for ntrack-qt4 library"
-msgstr "ntrack-qt4 kütüphanesi için geliştirme dosyaları"
+msgstr "ntrack-qt4 kitaplığı için geliştirme dosyaları"
 
 #: network/misc/ntrack:ntrack-glib-devel:summary
 msgid "Development files for ntrack-glib library"
-msgstr "ntrack-glib kütüphanesi için geliştirme dosyaları"
+msgstr "ntrack-glib kitaplığı için geliştirme dosyaları"
 
 #: network/misc/ntrack:ntrack-gobject-devel:summary
 msgid "Development files for ntrack-gobject library"
-msgstr "ntrack-gobject kütüphanesi için geliştirme dosyaları"
+msgstr "ntrack-gobject kitaplığı için geliştirme dosyaları"
 
 #: network/misc/ntrack:python-ntrack:summary
 msgid "Python bindings for ntrack"
@@ -3497,11 +3497,11 @@ msgstr "openmpi için geliştirme dosyaları"
 
 #: network/misc/openmpi::summary
 msgid "A High Performance Message Passing Library"
-msgstr "Yüksek performanslı ve açık kaynak kodlu MPI (Message Passing Library) kütüphanesi"
+msgstr "Yüksek performanslı ve açık kaynak kodlu MPI (Message Passing Library) kitaplığı"
 
 #: network/misc/openmpi::description
 msgid "Open MPI is a project combining technologies and resources from several other projects (FT-MPI, LA-MPI, LAM/MPI, and PACX-MPI) in order to build the best MPI library available. A completely new MPI-2 compliant implementation, Open MPI offers advantages for system and software vendors, application developers and computer science researchers."
-msgstr "Yüksek performanslı ve açık kaynak kodlu MPI (Message Passing Library) kütüphanesi"
+msgstr "Yüksek performanslı ve açık kaynak kodlu MPI (Message Passing Library) kitaplığı"
 
 #: network/misc/meanwhile:meanwhile-devel:summary
 msgid "Development files for meanwhile"
@@ -3549,11 +3549,11 @@ msgstr ""
 
 #: network/misc/ortp::summary
 msgid "RTP protocol library"
-msgstr "RTP protokolü kütüphanesi"
+msgstr "RTP protokolü kitaplığı"
 
 #: network/misc/ortp::description
 msgid "Ortp is a LGPLv2.1 licensed C library implementing the RTP protocol (rfc1889)."
-msgstr "LGPLv2.1 lisansı ile dağıtılan ve RTP protokolünü (rfc1889) sağlayan C kütüphanesi."
+msgstr "LGPLv2.1 lisansı ile dağıtılan ve RTP protokolünü (rfc1889) sağlayan C kitaplığı."
 
 #: network/monitor/knemo::summary
 msgid "KDE Network Monitor"
@@ -3645,7 +3645,7 @@ msgstr "Tam donanımlı GTK+ Bittorrent istemcisi"
 
 #: network/p2p/deluge::description
 msgid "Deluge is a Bittorrent client. Deluge is intended to bring a native, full-featured client to Linux GTK+ desktop environments such as GNOME and Xfce."
-msgstr "Deluge, bir Bittorrent istemcisidir. Xfce ve GNOME gibi GTK+ tabanlı masaüstü ortamlarıyla görsel kütüphaneler açısından uyumlu çalışması için yazılmış tam donanımlı bir istemcidir."
+msgstr "Deluge, bir Bittorrent istemcisidir. Xfce ve GNOME gibi GTK+ tabanlı masaüstü ortamlarıyla görsel kitaplıkları açısından uyumlu çalışması için yazılmış tam donanımlı bir istemcidir."
 
 #: network/p2p/qbittorrent::summary
 msgid "Qt4 based BitTorrent client"
@@ -4025,11 +4025,11 @@ msgstr "loudmouth için geliştirme dosyaları"
 
 #: network/chat/loudmouth::summary
 msgid "Lightweight C Jabber library"
-msgstr "Hafif bir C jabber kütüphanesi"
+msgstr "Hafif bir C jabber kitaplığı"
 
 #: network/chat/loudmouth::description
 msgid "Loudmouth is a lightweight and easy-to-use C library for programming with the XMPP protocol. It's designed to be easy to get started with and yet extensible to let you do anything the XMPP protocol allows."
-msgstr "Loudmouth XMPP protokolüyle programlama imkanı sunan hafif ve kullanımı kolay bir C kütüphanesi. Programlamada kolay bir başlangıç sunmak ve XMPP protokolü el verdiği ölçüde esnek bir yapıda kalmak için tasarlanmıştır."
+msgstr "Loudmouth XMPP protokolüyle programlama imkanı sunan hafif ve kullanımı kolay bir C kitaplığı. Programlamada kolay bir başlangıç sunmak ve XMPP protokolü el verdiği ölçüde esnek bir yapıda kalmak için tasarlanmıştır."
 
 #: network/mail/mutt::summary
 msgid "Text mode mail user agent"
@@ -4261,7 +4261,7 @@ msgstr "Unix top komutuna benzer ağ trafik izleyici"
 
 #: network/analyzer/ntop::description
 msgid "ntop is a network traffic probe that shows the network usage, similar to what the popular top Unix command does. ntop is based on libpcap and it has been written in a portable way in order to virtually run on every Unix platform and on Win32 as well. ntop users can use a a web browser (e.g. firefox) to navigate through ntop (that acts as a web server) traffic information and get a dump of the network status."
-msgstr "ntop top Unix komutuna benzer şekilde ağ kullanımını gösteren bir ağ trafik izleyicidir. Ntop libpcap kütüphanesini kullanır ve Windows ve Unix işletim sistemleri de dahil olmak üzere birçok platformda çalışacak şekilde yazılmıştır. Kullanıcılar ntop ile trafik bilgisini ve ağ trafiğini görmek için web tarayıcı (örn: firefox) kullanabilir (ntop web sunucu olarak çalışabilir)."
+msgstr "ntop top Unix komutuna benzer şekilde ağ kullanımını gösteren bir ağ trafik izleyicidir. Ntop libpcap kitaplığını kullanır ve Windows ve Unix işletim sistemleri de dahil olmak üzere birçok platformda çalışacak şekilde yazılmıştır. Kullanıcılar ntop ile trafik bilgisini ve ağ trafiğini görmek için web tarayıcı (örn: firefox) kullanabilir (ntop web sunucu olarak çalışabilir)."
 
 #: network/analyzer/openslp:openslp-server:summary
 msgid "OpenSLP server daemon"
@@ -4345,7 +4345,7 @@ msgstr "libpcap için geliştirme dosyaları"
 
 #: network/analyzer/libpcap::summary
 msgid "A system-independent library for user-level network packet capture"
-msgstr "Kullanıcı seviyesinde ağ paketi yakalamak için bir sistem bağımsız kütüphane"
+msgstr "Kullanıcı seviyesinde ağ paketi yakalamak için bir sistem bağımsız kitaplığı"
 
 #: network/analyzer/libpcap::description
 msgid "libpcap (Packet CAPture) provides a portable framework for low-level network monitoring. Applications include network statistics collection, security monitoring, network debugging, etc."
@@ -4713,11 +4713,11 @@ msgstr "librsync için geliştirme dosyaları"
 
 #: network/share/librsync::summary
 msgid "librsync implements the rolling-checksum algorithm of remote file synchronization that was popularized by the rsync utility and is used in rproxy"
-msgstr "Uzaktaki dosyaların senkronize edilmesi için gerekli olan algoritmayı sağlayan kütüphane."
+msgstr "Uzaktaki dosyaların senkronize edilmesi için gerekli olan algoritmayı sağlayan kitaplığı"
 
 #: network/share/librsync::description
 msgid "librsync implements the rolling-checksum algorithm of remote file synchronization that was popularized by the rsync utility and is used in rproxy. This algorithm transfers the differences between 2 files without needing both files on the same system."
-msgstr "Uzaktaki dosyaların senkronize edilmesi için gerekli olan algoritmayı sağlayan kütüphane. Bu algoritma iki dosya arasındaki farkları, iki dosyanın aynı sistemde olmasına ihtiyaç duymadan transfer eder. "
+msgstr "Uzaktaki dosyaların senkronize edilmesi için gerekli olan algoritmayı sağlayan kitaplığı. Bu algoritma iki dosya arasındaki farkları, iki dosyanın aynı sistemde olmasına ihtiyaç duymadan transfer eder. "
 
 #: network/share/grsync::summary
 msgid "GTK GUI for Rsync"
@@ -5041,7 +5041,7 @@ msgstr "ATM ağ bağlantısı desteği için araçlar"
 
 #: network/connection/linux-atm::description
 msgid "linux-atm contains tools for Asynchronous Transfer Mode. Supports raw ATM connections (PVCs and SVCs), IP over ATM, LAN emulation, MPOA, Arequipa, and some others."
-msgstr "linux-atm ATM (Asynchronous Transfer Mode) bağlantısı için gerekli çeşitli araçlar ve kütüphaneler içerir."
+msgstr "linux-atm ATM (Asynchronous Transfer Mode) bağlantısı için gerekli çeşitli araçlar ve kitaplıklarını içerir."
 
 #: network/connection/iw::summary
 msgid "nl80211-based configuration utility for wireless devices"
@@ -5181,11 +5181,11 @@ msgstr "libxklavier için başvuru belgeleri"
 
 #: programming/misc/libxklavier::summary
 msgid "High level XKB library"
-msgstr "Yüksek seviyeli bir XKB kütüphanesi"
+msgstr "Yüksek seviyeli bir XKB kitaplığı"
 
 #: programming/misc/libxklavier::description
 msgid "libxklavier is a library can be used to develop XKB-based applications."
-msgstr "libxklavier, XKB tabanlı uygulamalar geliştirmek için kullanılabilen bir kütüphanedir."
+msgstr "libxklavier, XKB tabanlı uygulamalar geliştirmek için kullanılabilen bir kitaplığıdır."
 
 #: programming/misc/check:check-devel:summary
 msgid "Development files for check"
@@ -5233,7 +5233,7 @@ msgstr "dxflib için geliştirme başlıkları"
 
 #: programming/misc/dxflib::summary
 msgid "An open source C++ library mainly for parsing DXF files"
-msgstr "DXF dosyalarını ayrıştırmak için açık kaynak kodlu C++ kütüphanesi"
+msgstr "DXF dosyalarını ayrıştırmak için açık kaynak kodlu C++ kitaplığı"
 
 #: programming/misc/dxflib::description
 msgid "Dxflib can write DXF files, but you need to have good knowledge of the DXF format to produce valid output."
@@ -5309,11 +5309,11 @@ msgstr "onig için geliştirme başlıklarını içerir."
 
 #: programming/misc/onig::summary
 msgid "A regular expressions library"
-msgstr "Bir düzenli ifade kütüphanesi"
+msgstr "Bir düzenli ifade kitaplığı"
 
 #: programming/misc/onig::description
 msgid "onig is a regular expressions library. The characteristics of this library is that different character encoding for every regular expression object can be specified."
-msgstr "onig bir düzenli ifade kütüphanesidir. Ayırt edici özelliği farklı karakter kodlamaları için farklı düzenli ifadeler tanımlanabilmesidir."
+msgstr "onig bir düzenli ifade kitaplığıdır. Ayırt edici özelliği farklı karakter kodlamaları için farklı düzenli ifadeler tanımlanabilmesidir."
 
 #: programming/misc/clucene:clucene-devel:summary
 msgid "Development files for clucene"
@@ -5329,11 +5329,11 @@ msgstr "CLucene yüksek performanslı, ölçeklenebilir, platform bağımsız, �
 
 #: programming/misc/libstdc++::summary
 msgid "Compatibility package for running binaries linked against a pre gcc 3.4 libstdc++"
-msgstr "gcc 3.4 öncesi bir libstdc++ ile derlenmiş ikili paketler için uyumluluk kütüphanesi"
+msgstr "gcc 3.4 öncesi bir libstdc++ ile derlenmiş ikili paketler için uyumluluk kitaplığı"
 
 #: programming/misc/libstdc++::description
 msgid "The GNU Standard C++ Library. It Contains standard classes and functions such as string, vector, iostreams, and algorithms."
-msgstr "GNU standart c++ kütüphanesi. Libstdc++ kütüphanesi string, vector, iostream, algorithm gibi standart class ve fonksiyonları içerir."
+msgstr "GNU standart c++ kitaplığı. Libstdc++ kitaplığı string, vector, iostream, algorithm gibi standart class ve fonksiyonları içerir."
 
 #: programming/misc/libassuan:libassuan-devel:summary
 msgid "Development files for libassuan"
@@ -5341,7 +5341,7 @@ msgstr "libassuan için geliştirme dosyaları"
 
 #: programming/misc/libassuan::summary
 msgid "IPC library for GnuPG related projects"
-msgstr "GnuPG, GPGME ve newpg tarafından kullanılan IPC kütüphanesi"
+msgstr "GnuPG, GPGME ve newpg tarafından kullanılan IPC kitaplığı"
 
 #: programming/misc/libassuan::description
 msgid "This is the IPC library used by GnuPG 2, GPGME and a few other packages."
@@ -5397,7 +5397,7 @@ msgstr "Son derece verimli bellek kullanımına sahip hash-map uyarlaması"
 
 #: programming/misc/google-sparsehash::description
 msgid "The SparseHash library contains several hash-map implementations, including implementations that optimize for space or speed."
-msgstr "SparseHash kütüphanesi hıza veya boyuta göre eniyileştirilebilecek çeşitli hash-map uyarlamalarını içerir."
+msgstr "SparseHash kitaplığı hıza veya boyuta göre eniyileştirilebilecek çeşitli hash-map uyarlamalarını içerir."
 
 #: programming/misc/libnfsidmap:libnfsidmap-devel:summary
 msgid "Development files for libnfsidmap"
@@ -5405,7 +5405,7 @@ msgstr "libnfsidmap için geliştirme dosyaları"
 
 #: programming/misc/libnfsidmap::summary
 msgid "NFSv4 ID name mapping library"
-msgstr "NFSv4 ID isim haritalandırma (mapping) kütüphanesi"
+msgstr "NFSv4 ID isim haritalandırma (mapping) kitaplığı"
 
 #: programming/misc/libnfsidmap::description
 msgid "libnfsidmap is a library holding multiple methods of mapping names to id's and visa versa, mainly for NFSv4."
@@ -5441,7 +5441,7 @@ msgstr "evolution-data-server, takvim, yapılacak işler, adres defteri gibi bil
 
 #: programming/misc/lib-compat::summary
 msgid "Compatibility C++ and libc5 and libc6 libraries for programs new and old"
-msgstr "libc5,libc6 ve C++ kütüphaneleri uyumlulukları"
+msgstr "libc5,libc6 ve C++ kitaplıkları uyumlulukları"
 
 #: programming/misc/libfli:libfli-devel:summary
 msgid "Development files for libfli"
@@ -5457,11 +5457,11 @@ msgstr "libfli (Finger Lake Instrument) kitaplığı, uygulamalar tarafından FL
 
 #: programming/misc/apr::summary
 msgid "Apache portable runtime library"
-msgstr "Apache portatif çalışma ortamı kütüphanesi (eski sürüm)"
+msgstr "Apache portatif çalışma ortamı kitaplığı (eski sürüm)"
 
 #: programming/misc/apr::description
 msgid "The mission of the Apache portable runtime (APR) is to provide a free library of C data structures and routines."
-msgstr "Apache portatif çalışma ortamı kütüphanesi (APR), C data yapıları için özgür kütüphane sağlar. Bu sürüm 0 ile başlar."
+msgstr "Apache portatif çalışma ortamı kitaplığı (APR), C data yapıları için özgür kitaplığı sağlar. Bu sürüm 0 ile başlar."
 
 #: programming/misc/xylib:xylib-devel:summary
 msgid "Development headers for xylib"
@@ -5473,11 +5473,11 @@ msgstr "xylib için geliştirme başlıklarını içerir."
 
 #: programming/misc/xylib::summary
 msgid "A portable C++ library for reading files that contain x-y data from powder diffraction, spectroscopy or other experimental methods"
-msgstr "Deneysel yöntemlerle elde edilmiş x-y verilerini içeren dosyaları okuyabilmek için bir C++ kütüphanesi"
+msgstr "Deneysel yöntemlerle elde edilmiş x-y verilerini içeren dosyaları okuyabilmek için bir C++ kitaplığı"
 
 #: programming/misc/xylib::description
 msgid "xylib is a portable C++ library for reading files that contain x-y data from powder diffraction, spectroscopy or other experimental methods."
-msgstr "xylib deneysel yöntemlerle elde edilmiş x-y verilerini içeren dosyaları okuyabilmek için bir C++ kütüphanesidir."
+msgstr "xylib deneysel yöntemlerle elde edilmiş x-y verilerini içeren dosyaları okuyabilmek için bir C++ kitaplığıdır."
 
 #: programming/misc/dbus-c++::summary
 msgid "C++ bindings for DBus library"
@@ -5493,7 +5493,7 @@ msgstr "intel-tbb için geliştirme dosyaları"
 
 #: programming/misc/intel-tbb::summary
 msgid "Intel Threading Building Blocks Library"
-msgstr "Intel Threading kütüphanesi"
+msgstr "Intel Threading kitaplığı"
 
 #: programming/misc/intel-tbb::description
 msgid "Threading Building Blocks (TBB) is a C++ runtime library that abstracts the low-level threading details necessary for optimal multi-core performance."
@@ -5549,7 +5549,7 @@ msgstr "libmal için geliştirme dosyaları"
 
 #: programming/misc/libmal::summary
 msgid "Convenience library of the functions malsync distribution"
-msgstr "Tom Whittaker'in Malsync dağıtımı fonksiyonlarının uygunluk kütüphanesi"
+msgstr "Tom Whittaker'in Malsync dağıtımı fonksiyonlarının uygunluk kitaplığı"
 
 #: programming/misc/libmal::description
 msgid "libmal is a convenience library of the functions in Tom Whittaker's malsync distribution along with a few wrapper functions."
@@ -5577,11 +5577,11 @@ msgstr ""
 
 #: programming/misc/libwpd::summary
 msgid "A C++ library designed to help process WordPerfect documents"
-msgstr "WordPerfect belgeleri oluşturmak için yardımcı C++ kütüphanesi"
+msgstr "WordPerfect belgeleri oluşturmak için yardımcı C++ kitaplığı"
 
 #: programming/misc/libwpd::description
 msgid "Library that handles Word Perfect documents."
-msgstr "Libwpd WordPerfect belgeleri oluşturmak için yardımcı C++ kütüphanesidir."
+msgstr "Libwpd WordPerfect belgeleri oluşturmak için yardımcı C++ kitaplığıdır."
 
 #: programming/misc/linbox:linbox-doc:summary
 msgid "Documentation for linbox package"
@@ -5693,7 +5693,7 @@ msgstr "physfs için geliştirme dosyaları"
 
 #: programming/misc/physfs::summary
 msgid "Filesystem library"
-msgstr "Dosya sistemi kütüphanesi"
+msgstr "Dosya sistemi kitaplığı"
 
 #: programming/misc/physfs::description
 msgid "Abstraction layer for filesystems."
@@ -5725,7 +5725,7 @@ msgstr "libevent için geliştirme dosyaları"
 
 #: programming/misc/libevent::summary
 msgid "A library to execute a function when a specific event occurs on a file descriptor"
-msgstr "Dosya tanımlayıcıları üzerindeki belirli değişiklerde belirli fonksiyonların çalıştırılmasını sağlayan bir kütüphane"
+msgstr "Dosya tanımlayıcıları üzerindeki belirli değişiklerde belirli fonksiyonların çalıştırılmasını sağlayan bir kitaplığı"
 
 #: programming/misc/libevent::description
 msgid "The libevent API provides a mechanism to execute a callback function when a specific event occurs on a file descriptor or after a timeout has been reached. libevent is meant to replace the asynchronous event loop found in event driven network servers. An application just needs to call event_dispatch() and can then add or remove events dynamically without having to change the event loop."
@@ -5737,11 +5737,11 @@ msgstr "libunistring için geliştirme dosyaları"
 
 #: programming/misc/libunistring::summary
 msgid "Unicode string library"
-msgstr "Unicode karakter dizisi kütüphanesi"
+msgstr "Unicode karakter dizisi kitaplığı"
 
 #: programming/misc/libunistring::description
 msgid "This library provides functions for manipulating Unicode strings and for manipulating C strings according to the Unicode standard."
-msgstr "Bu kütüphane unicode standartına göre unicode ve C karakter dizilerinde değişiklik yapmak için kullanılabilecek fonksiyonlar sunar."
+msgstr "Bu kitaplığı unicode standartına göre unicode ve C karakter dizilerinde değişiklik yapmak için kullanılabilecek fonksiyonlar sunar."
 
 #: programming/misc/grantlee:grantlee-devel:summary
 msgid "Development files for grantlee"
@@ -5837,11 +5837,11 @@ msgstr ""
 
 #: programming/misc/ucl::summary
 msgid "UCL: The UCL Compression Library"
-msgstr "UCL sıkıştırma kütüphanesi."
+msgstr "UCL sıkıştırma kitaplığı"
 
 #: programming/misc/ucl::description
 msgid "UCL is a portable lossless data compression library written in ANSI C."
-msgstr "UCL, ANSI'de yazılmış, taşınabilir kayıpsız data sıkıştırma kütüphanesidir."
+msgstr "UCL, ANSI'de yazılmış, taşınabilir kayıpsız data sıkıştırma kitaplığıdır."
 
 #: programming/misc/attica:attica-devel:summary
 msgid "Development files for attica"
@@ -5877,11 +5877,11 @@ msgstr ""
 
 #: programming/misc/libwpg::summary
 msgid "A C++ library designed to help process WordPerfect Graphics documents"
-msgstr "WordPerfect grafik belgelerini oluşturmak için yardımcı C++ kütüphanesi"
+msgstr "WordPerfect grafik belgelerini oluşturmak için yardımcı C++ kitaplığı"
 
 #: programming/misc/libwpg::description
 msgid "Libwpg project is a library and to work with graphics in WPG (WordPerfect Graphics) format. WPG is the format used among others in Corel sofware, such as WordPerfect and Presentations."
-msgstr "Libwpg WordPerfect grafik belgelerini oluşturmak için yardımcı C++ kütüphanesidir."
+msgstr "Libwpg WordPerfect grafik belgelerini oluşturmak için yardımcı C++ kitaplığıdır."
 
 #: programming/misc/redland-bindings:php-redland:summary
 msgid "Php bindings for redland"
@@ -5917,11 +5917,11 @@ msgstr "xmlsec1 için belgelendirme dosyaları"
 
 #: programming/misc/xmlsec1::summary
 msgid "XML security library"
-msgstr "XML güvenlik kütüphanesi"
+msgstr "XML güvenlik kitaplığı"
 
 #: programming/misc/xmlsec1::description
 msgid "XML Security Library xmlsec1 is a C library based on LibXML2. The library supports major XML security standards."
-msgstr "xmlsec1, temel XML standartlarını destekleyen, LibXML2 tabanlı bir XML güvenlik kütüphanesidir."
+msgstr "xmlsec1, temel XML standartlarını destekleyen, LibXML2 tabanlı bir XML güvenlik kitaplığıdır."
 
 #: programming/misc/libspectre:libspectre-devel:summary
 msgid "Development files for libspectre"
@@ -5929,7 +5929,7 @@ msgstr "libspectre için geliştirme dosyaları"
 
 #: programming/misc/libspectre::summary
 msgid "A small library for rendering Postscript documents"
-msgstr "Postscript belgeleri görüntüleştirme için küçük bir kütüphane"
+msgstr "Postscript belgeleri görüntüleştirme için küçük bir kitaplığı"
 
 #: programming/misc/libspectre::description
 msgid "libspectre is a small library for rendering Postscript documents. It provides a convenient easy to use API for handling and rendering Postscript documents."
@@ -5941,7 +5941,7 @@ msgstr "libnice için geliştirme dosyaları"
 
 #: programming/misc/libnice::summary
 msgid "GLib ICE library"
-msgstr "GLIB ICE kütüphanesi"
+msgstr "GLIB ICE kitaplığı"
 
 #: programming/misc/libnice::description
 msgid "Nice is an implementation of the IETF's draft Interactive Connectivity Establishment standard (ICE)."
@@ -5953,7 +5953,7 @@ msgstr "libwps için geliştirme dosyaları"
 
 #: programming/misc/libwps::summary
 msgid "Microsoft Works format import library"
-msgstr "Microsoft Works biçimini ithal etmek için bir kütüphane"
+msgstr "Microsoft Works biçimini ithal etmek için bir kitaplığı"
 
 #: programming/misc/libwps::description
 msgid "libwps is a Microsoft Works file format import filter based on top of the libwpd (which is already used in three word processors)."
@@ -5989,11 +5989,11 @@ msgstr "xapian-core için belgelendirme dosyalarını içerir."
 
 #: programming/misc/xapian-core::summary
 msgid "Probabilistic Information Retrieval library"
-msgstr "İstatistiksel Bilgi Çıkarma kütüphanesi"
+msgstr "İstatistiksel Bilgi Çıkarma kitaplığı"
 
 #: programming/misc/xapian-core::description
 msgid "xapian-core is a probabilistic information retrieval library."
-msgstr "xapian-core bir istatistiksel bilgi çıkarma kütüphanesidir."
+msgstr "xapian-core bir istatistiksel bilgi çıkarma kitaplığıdır."
 
 #: programming/misc/akonadi:akonadi-devel:summary
 msgid "Development files for akonadi"
@@ -6045,7 +6045,7 @@ msgstr "RDF ayrıştırıcı araç kiti"
 
 #: programming/misc/raptor::description
 msgid "Raptor is the RDF Parser Toolkit for Redland that provides a set of Resource Description Framework (RDF) parsers and serializers."
-msgstr "librdf, RDF ayrıştırıcılar ve yorumlayıcılar için gerekli kütüphane ve araçları içerir."
+msgstr "librdf, RDF ayrıştırıcılar ve yorumlayıcılar için gerekli kitaplığı ve araçları içerir."
 
 #: programming/misc/vigra:vigra-devel:summary
 msgid "Development files for vigra"
@@ -6077,7 +6077,7 @@ msgstr "libmemcache için geliştirme dosyaları"
 
 #: programming/misc/libmemcache::summary
 msgid "A library written in C for memcached"
-msgstr "memcached için C kütüphanesi"
+msgstr "memcached için C kitaplığı"
 
 #: programming/misc/libmemcache::description
 msgid "Libmemcache implements a client for the superior memcached from Danga Interactive."
@@ -6089,7 +6089,7 @@ msgstr "libqjson için geliştirme dosyaları"
 
 #: programming/misc/libqjson::summary
 msgid "Qt-based library that maps JSON data to QVariant objects"
-msgstr "Qt tabanlı bu kütüphane JSON data haritalarını QVariant nesnelere dönüştürür"
+msgstr "Qt tabanlı bu kitaplığı JSON data haritalarını QVariant nesnelere dönüştürür"
 
 #: programming/misc/libqjson::description
 msgid "libqjson, (JavaScript Object Notation) is a lightweight data-interchange format. It can represents integer, real number, string, an ordered sequence of value, and a collection of name/value pairs."
@@ -6129,11 +6129,11 @@ msgstr "libdaemon için geliştirme dosyaları"
 
 #: programming/misc/libdaemon::summary
 msgid "Library for writing UNIX daemons"
-msgstr "UNIX hizmetleri yazmak için bir kütüphane"
+msgstr "UNIX hizmetleri yazmak için bir kitaplığı"
 
 #: programming/misc/libdaemon::description
 msgid "libdaemon is a lightweight C library which eases the writing of UNIX daemons."
-msgstr "libdaemon, UNIX hizmetleri yazmayı kolaylaştıran hafif bir C kütüphanesidir."
+msgstr "libdaemon, UNIX hizmetleri yazmayı kolaylaştıran hafif bir C kitaplığıdır."
 
 #: programming/misc/libgee:libgee-devel:summary
 msgid "Development files for libgee"
@@ -6153,11 +6153,11 @@ msgstr "liblazy için geliştirme dosyaları"
 
 #: programming/misc/liblazy::summary
 msgid "D-Bus methods provided for convenience"
-msgstr "D-Bus için kolaylaştırıcı metod kütüphanesi"
+msgstr "D-Bus için kolaylaştırıcı metod kitaplığı"
 
 #: programming/misc/liblazy::description
 msgid "liblazy is a simple and easy to use library that provides convenient functions for sending messages over the D-Bus daemon, querying information from HAL or asking PolicyKit for a privilege."
-msgstr "liblazy, D-Bus hizmeti üzerinden ileti gönderimini kolaylaştırmak için tasarlanmış, kullanımı basit bir ara katman kütüphanesidir."
+msgstr "liblazy, D-Bus hizmeti üzerinden ileti gönderimini kolaylaştırmak için tasarlanmış, kullanımı basit bir ara katman kitaplığıdır."
 
 #: programming/misc/log4c:log4c-devel:summary
 msgid "Development files for log4c"
@@ -6241,19 +6241,19 @@ msgstr "libdbusmenu, indicator-applet uygulamasında kullanılan bazı genel kod
 
 #: programming/misc/libxslt::summary
 msgid "XSLT libraries and tools"
-msgstr "XSLT kütüphane ve araçları"
+msgstr "XSLT kitaplığı ve araçları"
 
 #: programming/misc/libxslt::description
 msgid "Libxslt is the XSLT C library developed for the GNOME project. XSLT itself is a an XML language to define transformation for XML."
-msgstr "Libxslt, GNOME projesi için geliştirilen XSLT C kütüphanesidir. XSLT'nin kendisi, XML oluşumunu tanımlayan bir XML dilidir."
+msgstr "Libxslt, GNOME projesi için geliştirilen XSLT C kitaplığıdır. XSLT'nin kendisi, XML oluşumunu tanımlayan bir XML dilidir."
 
 #: programming/misc/libtextcat::summary
 msgid "Text categorization library"
-msgstr "Metin sınıflandırma kütüphanesi"
+msgstr "Metin sınıflandırma kitaplığı"
 
 #: programming/misc/libtextcat::description
 msgid "libtextcat is a library with functions that implement the classification technique described in Cavnar & Trenkle, \"N-Gram-Based Text Categorization\". It was primarily developed for language guessing, a task on which it is known to perform with near-perfect accuracy."
-msgstr "libtextcat Cavnar & Trenkle, \"N-Gram-Based Text Categorization\" çalışmasında bahsedilen sınıflandırma tekniğini gerçekleyen fonksiyonlardan oluşan bir kütüphanedir. Kusursuza yakın doğrulukta yaptığı bilinen bir iş olan dil tahmini amacıyla geliştirilmiştir."
+msgstr "libtextcat Cavnar & Trenkle, \"N-Gram-Based Text Categorization\" çalışmasında bahsedilen sınıflandırma tekniğini gerçekleyen fonksiyonlardan oluşan bir kitaplığıdır. Kusursuza yakın doğrulukta yaptığı bilinen bir iş olan dil tahmini amacıyla geliştirilmiştir."
 
 #: programming/misc/ffcall:ffcall-devel:summary
 msgid "Development files for ffcall"
@@ -6265,7 +6265,7 @@ msgstr "Dış işlev fonksiyonları çağırma kitaplıkları"
 
 #: programming/misc/ffcall::description
 msgid "Collection of four libraries which can be used to build foreign function call interfaces in embedded interpreters."
-msgstr "ffcall inşa sırasında yabancı fonksiyonları çağırmak için kullanılan, 4 kitaplıktan oluşan, bir kütüphanedir."
+msgstr "ffcall inşa sırasında yabancı fonksiyonları çağırmak için kullanılan, 4 kitaplıktan oluşan, bir kitaplığıdır."
 
 #: programming/misc/libxmlpp:libxmlpp-devel:summary
 msgid "Development files for libxmlpp"
@@ -6305,7 +6305,7 @@ msgstr "GNU Taşınabilir iş parçacıkları"
 
 #: programming/misc/pth::description
 msgid "A portable threads library for Unix platforms-It provides non-preemptive scheduling for multiple threads of execution (\"multithreading\") inside server applications."
-msgstr "Pth Unix platformları için derlenmiş taşınabilir kütüphanedir. Bir çok iç sunucu uygulamalarının yerine getirilmesi işlerinin öncelikli olmayan planlamasını yapar."
+msgstr "Pth Unix platformları için derlenmiş taşınabilir kitaplığıdır. Bir çok iç sunucu uygulamalarının yerine getirilmesi işlerinin öncelikli olmayan planlamasını yapar."
 
 #: programming/misc/libsoup:libsoup-docs:summary
 msgid "libsoup reference documents"
@@ -6333,11 +6333,11 @@ msgstr "rlog için belgelendirme dosyaları"
 
 #: programming/misc/rlog::summary
 msgid "A C++ logging library"
-msgstr "C++ dili için bir günlük tutma kütüphanesi"
+msgstr "C++ dili için bir günlük tutma kitaplığıdır"
 
 #: programming/misc/rlog::description
 msgid "rlog provides a flexible message logging facility for C++ programs and libraries."
-msgstr "rlog C++ uygulamaları ve kütüphaneleri için kolayca günlük tutma imkanı sağlayan bir kütüphanedir."
+msgstr "rlog C++ uygulamaları ve kitaplıkları için kolayca günlük tutma imkanı sağlayan bir kitaplığıdır."
 
 #: programming/misc/libast::summary
 msgid "The Library of Assorted Spiffy Things"
@@ -6361,11 +6361,11 @@ msgstr "libgsf için geliştirme dosyaları"
 
 #: programming/misc/libgsf::summary
 msgid "Gnome structured file library"
-msgstr "Gnome yapılandırılmış dosya kütüphanesi"
+msgstr "Gnome yapılandırılmış dosya kitaplığı"
 
 #: programming/misc/libgsf::description
 msgid "The libgsf is a library for reading and writing structured files (eg MS OLE and Zip)."
-msgstr "Libgsf MS, OLE ve Zip gibi yapılandırılmış dosyaları okuyup yazmaya yarayan bir kütüphanedir."
+msgstr "Libgsf MS, OLE ve Zip gibi yapılandırılmış dosyaları okuyup yazmaya yarayan bir kitaplığıdır."
 
 #: programming/misc/libmcs:libmcs-devel:summary
 msgid "Development headers for libmcs"
@@ -6393,11 +6393,11 @@ msgstr "libgksu başvuru belgeleri"
 
 #: programming/misc/libgksu::summary
 msgid "libgksu authorization library"
-msgstr "libgksu yetkilendirme kütüphanesi"
+msgstr "libgksu yetkilendirme kitaplığı"
 
 #: programming/misc/libgksu::description
 msgid "libgksu is an authorization library that provides su and sudo functionality."
-msgstr "libgksu, su ve sudo yetkilendirmesini sağlayan bir kütüphanedir."
+msgstr "libgksu, su ve sudo yetkilendirmesini sağlayan bir kitaplığıdır."
 
 #: programming/misc/libpqxx:libpqxx-docs:summary
 msgid "libpqxx documents and examples"
@@ -6453,15 +6453,15 @@ msgstr "gamin için geliştirme dosyaları"
 
 #: programming/misc/gamin::summary
 msgid "File alteration monitor library"
-msgstr "Dosya değişim izleme kütüphanesi"
+msgstr "Dosya değişim izleme kitaplığı"
 
 #: programming/misc/gamin::description
 msgid "Gamin is a file and directory monitoring system defined to be a subset of the FAM (File Alteration Monitor) system. This is a serviceprovided by a library which allows to detect when a file or a directory has been modified."
-msgstr "Gamin bir dosya ve klasör izleme kütüphanesidir. FAM (Dosya değişim izleyicisi) sisteminin bir alt kolu olarak tanımlanmaktadır. Bir dosyanın veya bir klasörün değiştiğini anlamamıza yarayan bir kütüphanedir."
+msgstr "Gamin bir dosya ve klasör izleme kitaplığıdır. FAM (Dosya değişim izleyicisi) sisteminin bir alt kolu olarak tanımlanmaktadır. Bir dosyanın veya bir klasörün değiştiğini anlamamıza yarayan bir kitaplığıdır."
 
 #: programming/misc/libgdata::summary
 msgid "A library for accessing online services"
-msgstr "Online servislere ulaşmak için bir kütüphane"
+msgstr "Online servislere ulaşmak için bir kitaplığı"
 
 #: programming/misc/libgdata::description
 msgid "libgdata is a GLib-based library for accessing online service APIs using the GData protocol."
@@ -6481,7 +6481,7 @@ msgstr "C++ için sinyal altyapısı"
 
 #: programming/misc/libsigc++::description
 msgid "libsigc++ is a library which implements a full callback system for use in widget libraries, abstract interfaces, and general programming."
-msgstr "libsigc++, widget kütüphanelerinde, soyut arabirimlerde ve genel programlama esnasında kullanılmak üzere tasarlanmış bir sinyal ve callback altyapısıdır."
+msgstr "libsigc++, widget kitaplıkları, soyut arabirimlerde ve genel programlama esnasında kullanılmak üzere tasarlanmış bir sinyal ve callback altyapısıdır."
 
 #: programming/misc/googletest:googletest-devel:summary
 msgid "Development files for gtest"
@@ -6537,11 +6537,11 @@ msgstr "libbinio için geliştirme başlıklarını içerir."
 
 #: programming/misc/libbinio::summary
 msgid "Binary I/O stream class library"
-msgstr "İkili I/O yayın sınıfı kütüphanesi"
+msgstr "İkili I/O yayın sınıfı kitaplığı"
 
 #: programming/misc/libbinio::description
 msgid "libbinio is a binary I/O stream class library."
-msgstr "libbinio ikili I/O yayın sınıfı kütüphanesidir."
+msgstr "libbinio ikili I/O yayın sınıfı kitaplığıdır."
 
 #: programming/misc/omniORB:omniORB-libs:summary
 msgid "omniORB libraries"
@@ -6577,7 +6577,7 @@ msgstr "minixml için geliştirme dosyaları"
 
 #: programming/misc/minixml::summary
 msgid "Lightweight XML Support Library"
-msgstr "Hafif bir XML destek kütüphanesi"
+msgstr "Hafif bir XML destek kitaplığı"
 
 #: programming/misc/minixml::description
 msgid "Mini-XML is a small XML parsing library that you can use to read XML and XML-like data files in your application without requiring large non-standard libraries."
@@ -6605,11 +6605,11 @@ msgstr "libgtop için geliştirme dosyaları"
 
 #: programming/misc/libgtop::summary
 msgid "System monitoring library"
-msgstr "Sistem izleme kütüphanesi"
+msgstr "Sistem izleme kitaplığı"
 
 #: programming/misc/libgtop::description
 msgid "libgtop is a library to get system specific data such as CPU and Memory Usage and information about running processes."
-msgstr "libgtop, çalışan süreçler hakkında CPU ve bellek kullanımı gibi sistem bilgisini almak için bir kütüphanedir."
+msgstr "libgtop, çalışan süreçler hakkında CPU ve bellek kullanımı gibi sistem bilgisini almak için bir kitaplığıdır."
 
 #: programming/misc/googlemock:googlemock-devel:summary
 msgid "Development files for gmock"
@@ -6649,11 +6649,11 @@ msgstr "libofa için geliştirme dosyaları"
 
 #: programming/misc/libofa::summary
 msgid "The Open Fingerprint Architecture library"
-msgstr "Müzik dosyaları için akustik parmak izi oluşturma kütüphaneleri"
+msgstr "Müzik dosyaları için akustik parmak izi oluşturma kitaplığı"
 
 #: programming/misc/libofa::description
 msgid "libofa is a library for generating acoustic fingerprints that can be used to identify music files using the MusicDNS service."
-msgstr "libofa, MısicDNS servisini kullanarak müzik dosyalarının akustik parmak izini oluşturmak için kullanılan bir kütüphanedir."
+msgstr "libofa, MısicDNS servisini kullanarak müzik dosyalarının akustik parmak izini oluşturmak için kullanılan bir kitaplığıdır."
 
 #: programming/misc/geoip::summary
 msgid "C library for country/city/organization to IP address or hostname mapping"
@@ -6681,11 +6681,11 @@ msgstr "liblrdf için geliştirme dosyaları"
 
 #: programming/misc/liblrdf::summary
 msgid "A lightweight RDF library with special support for LADSPA plugins"
-msgstr "LADSPA eklentilerine özel destek sunan hafif bir RDF kütüphanesi"
+msgstr "LADSPA eklentilerine özel destek sunan hafif bir RDF kitaplığı"
 
 #: programming/misc/liblrdf::description
 msgid "A lightweight RDF library with special support for LADSPA plugins."
-msgstr "LADSPA eklentilerine özel destek sunan hafif bir RDF kütüphanesi."
+msgstr "LADSPA eklentilerine özel destek sunan hafif bir RDF kitaplığıdır."
 
 #: programming/misc/libunique:libunique-devel:summary
 msgid "libunique development files"
@@ -6697,11 +6697,11 @@ msgstr "libunique belgeleri"
 
 #: programming/misc/libunique::summary
 msgid "A library for writing single instance applications"
-msgstr "Basit ve örnek uygulamalar yazmak için kütüphane"
+msgstr "Basit ve örnek uygulamalar yazmak için kitaplığı"
 
 #: programming/misc/libunique::description
 msgid "Unique is a library for writing single instance applications. If you launch a single instance application twice, the second instance will either just quit or will send a message to the running instance."
-msgstr "Unique, basit ve örnek uygulamalar yazmak için bir kütüphanedir. Eğer örnek uygulama iki kere başlatılırsa; ikincisi ya kapanacak, ya da birincisine mesaj gönderecektir."
+msgstr "Unique, basit ve örnek uygulamalar yazmak için bir kitaplığıdır. Eğer örnek uygulama iki kere başlatılırsa; ikincisi ya kapanacak, ya da birincisine mesaj gönderecektir."
 
 #: programming/misc/libiodbc:libiodbc-devel:summary
 msgid "Development files for libiodbc"
@@ -6709,11 +6709,11 @@ msgstr "libiodbc için geliştirme dosyaları"
 
 #: programming/misc/libiodbc::summary
 msgid "An Open Source platform independent implementation of both the ODBC and X/Open specifications"
-msgstr "ODBC ve X/Open tanımlamaları için açık kaynak kodlu ve platform bağımsız bir kütüphane."
+msgstr "ODBC ve X/Open tanımlamaları için açık kaynak kodlu ve platform bağımsız bir kitaplık."
 
 #: programming/misc/libiodbc::description
 msgid "iODBC is the acronym for Independent Open DataBase Connectivity, an Open Source platform independent implementation of both the ODBC and X/Open specifications. It is rapidly emerging as the industry standard for developing solutions that are language, platform and database independent."
-msgstr "ODBC ve X/Open tanımlamaları için açık kaynak kodlu ve platform bağımsız bir kütüphane."
+msgstr "ODBC ve X/Open tanımlamaları için açık kaynak kodlu ve platform bağımsız bir kitaplıktır."
 
 #: programming/misc/ETL::summary
 msgid "Extended Template Library"
@@ -6721,7 +6721,7 @@ msgstr "Uzatılmış Şablon Kütüphanesi"
 
 #: programming/misc/ETL::description
 msgid "ETL is a multi-platform class and template library designed to add new datatypes and functions which combine well with the existing types and functions from the C++ Standard Template Library (STL)."
-msgstr "Standart C++ Şablon Kütüphanesinin (STL) mevcut tip ve fonksiyonlarıyla bir araya gelebilmesi için tasarlanmış yeni veri tipleri ve fonksiyonları içeren çoklu-platform sınıf ve şablon kütüphaneleridir."
+msgstr "Standart C++ Şablon Kütüphanesinin (STL) mevcut tip ve fonksiyonlarıyla bir araya gelebilmesi için tasarlanmış yeni veri tipleri ve fonksiyonları içeren çoklu-platform sınıf ve şablon kitaplıklarıdır."
 
 #: programming/misc/iksemel::summary
 msgid "XML parser library"
@@ -6741,7 +6741,7 @@ msgstr "rasqal için HTML formatında geliştirme belgeleri"
 
 #: programming/misc/rasqal::summary
 msgid "Library that handles Resource Description Framework (RDF)"
-msgstr "RDF (Resource Description Framework) işleme kütüphanesi"
+msgstr "RDF (Resource Description Framework) işleme kitaplığı"
 
 #: programming/misc/rasqal::description
 msgid "Rasqal is a C library that handles Resource Description Framework (RDF) query syntaxes, query construction and query execution returning result bindings. The supported query languages are SPARQL and RDQL."
@@ -6753,11 +6753,11 @@ msgstr "boost için başlık dosyaları ve kitaplık belgeleri"
 
 #: programming/misc/boost::summary
 msgid "Peer-reviewed portable C++ source libraries"
-msgstr "Açık kaynak kodlu ve taşınabilir C++ kaynak kütüphaneleri"
+msgstr "Açık kaynak kodlu ve taşınabilir C++ kaynak kitaplıkları"
 
 #: programming/misc/boost::description
 msgid "Boost provides free portable peer-reviewed C++ libraries. The emphasis is on portable libraries which work well with the C++ Standard Library."
-msgstr "Boost, kaynak kodları gözden geçirilmiş C++ kütüphanelerini içerir."
+msgstr "Boost, kaynak kodları gözden geçirilmiş C++ kitaplıklarını içerir."
 
 #: programming/microcontroller/lpc21isp:lpc21isp-devel:summary
 msgid "Development files for lpc21isp"
@@ -7077,7 +7077,7 @@ msgstr "Erlang genel amaçlı bir programlama dili ve çalışma ortamıdır. G�
 
 #: programming/language/R:R-mathlib:summary
 msgid "Math library for R"
-msgstr "R Mathlib kütüphanesi"
+msgstr "R Mathlib kitaplığı"
 
 #: programming/language/R:R-docs:summary
 msgid "Documents for R"
@@ -7125,7 +7125,7 @@ msgstr "Java Servlet API referans gerçeklemesi"
 
 #: programming/language/java/tomcat-servlet-api::description
 msgid "tomcat-servlet-api contains Tomcat's Servlet API 2.5/JSP API 2.1 implementation."
-msgstr "Tomcat-Servlet-API, Tomcat Servlet ve JSP API'lerini gerçekleyen bir kütüphanedir."
+msgstr "Tomcat-Servlet-API, Tomcat Servlet ve JSP API'lerini gerçekleyen bir kitaplığıdır."
 
 #: programming/language/java/junit::summary
 msgid "A simple framework to write repeatable tests"
@@ -7145,7 +7145,7 @@ msgstr "SLF4J kullanıcının dilediği günlük sistemini yayımlama sırasınd
 
 #: programming/language/java/libmatthew-java::summary
 msgid "Matthew Johnson's java libraries"
-msgstr "Matthew Johnson'ın java kütüphaneleri"
+msgstr "Matthew Johnson'ın java kitaplıkları"
 
 #: programming/language/java/libmatthew-java::description
 msgid "Unix Sockets, Debug, CGI, I/O and Hexdump java libraries written by Matthew Johnson."
@@ -27606,7 +27606,7 @@ msgstr "Ağ Güvenlik Servisleri"
 
 #: util/crypt/nss::description
 msgid "Network Security Services (NSS) is a set of libraries designed to support cross-platform development of security-enabled client and server applications. Applications built with NSS can support SSL v2 and v3, TLS, PKCS #5, PKCS #7, PKCS #11, PKCS #12, S/MIME, X.509 v3 certificates, and other security standards."
-msgstr "NSS, platform bağımsız güvenli ağ servisi geliştirme kütüphanelerinden oluşur. Bu kütüphane yardımı ile SSL v2 ve v3, PKCS #5, PKCS #7, PKCS #11, PKCS #12, S/MIME, X.509 v3 sertifikaları ve diğer bir çok güvenlik standardına uygun güvenli sunucu-istemci yazılımları geliştirilebilir."
+msgstr "NSS, platform bağımsız güvenli ağ servisi geliştirme kitaplıklarından oluşur. Bu kitaplık yardımı ile SSL v2 ve v3, PKCS #5, PKCS #7, PKCS #11, PKCS #12, S/MIME, X.509 v3 sertifikaları ve diğer bir çok güvenlik standardına uygun güvenli sunucu-istemci yazılımları geliştirilebilir."
 
 #: util/crypt/libgcrypt:libgcrypt-devel:summary
 msgid "Development files for libgcrypt"
@@ -27614,11 +27614,11 @@ msgstr "libgcrypt için geliştirme dosyaları"
 
 #: util/crypt/libgcrypt::summary
 msgid "General purpose crypto library"
-msgstr "Genel amaçlı bir şifreleme kütüphanesi"
+msgstr "Genel amaçlı bir şifreleme kitaplığı"
 
 #: util/crypt/libgcrypt::description
 msgid "Libgcrypt is a general purpose crypto library based on the code used in GNU Privacy Guard."
-msgstr "Libgcrypt, GNU Privacy Guard kodunu temel alan genel amaçlı bir şifreleme kütüphanesidir."
+msgstr "Libgcrypt, GNU Privacy Guard kodunu temel alan genel amaçlı bir şifreleme kitaplığıdır."
 
 #: util/crypt/cryptsetup-luks:cryptsetup-luks-devel:summary
 msgid "Development files for cryptsetup-luks"
