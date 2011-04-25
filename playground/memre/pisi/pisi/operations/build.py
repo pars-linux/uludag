@@ -234,6 +234,9 @@ class Builder:
         self.actionLocals = None
         self.actionGlobals = None
 
+        self.delta_history_search_paths = []
+        self.delta_search_paths = {}
+
         self.new_packages = []
         self.new_debug_packages = []
 
@@ -310,7 +313,7 @@ class Builder:
 
         # excludeArch should accept regex.
         # eg. <exludeArch>arm*</exludeArch> armv7l, armv5te matches
-        #     <exludeArch>i?86</exludeArch> i586, i686 matches
+        #     <exludeArch>i.86</exludeArch> i586, i686 matches
         architecture = ctx.config.values.general.architecture
         for arch in self.spec.source.excludeArch:
             if re.match(arch, architecture):
@@ -404,7 +407,7 @@ class Builder:
                 # Force ccache to use /root/.ccache instead of $HOME/.ccache
                 # which can be modified through actions.py
                 os.environ["CCACHE_DIR"] = "/root/.ccache"
-                ctx.ui.info(_("CCache detected..."))
+                ctx.ui.info(_("ccache detected..."))
 
     def fetch_files(self):
         self.specdiruri = os.path.dirname(self.specuri.get_uri())
@@ -1002,6 +1005,9 @@ class Builder:
         if ctx.config.values.build.generatedebug:
             debug_packages = []
             for package in self.spec.packages:
+                if "noDebug" in package.buildFlags:
+                    continue
+
                 obj = self.generate_debug_package_object(package)
                 if obj:
                     debug_packages.append(obj)
@@ -1127,7 +1133,11 @@ class Builder:
             # FIXME Remove this hack
             pkg.metadata.package.debug_package = package.debug_package
 
-            delta_packages = self.build_delta_packages(pkg, outdir)
+            if "noDelta" not in package.buildFlags:
+                delta_packages = self.build_delta_packages(pkg)
+            else:
+                delta_packages = []
+
             self.delta_map[name] = delta_packages
 
             pkg.close()
@@ -1148,31 +1158,66 @@ class Builder:
         os.environ.clear()
         os.environ.update(ctx.config.environ)
 
-    def build_delta_packages(self, package, outdir):
-        max_delta_count = int(ctx.config.values.build.max_delta_count)
+    def search_old_packages_for_delta(self, release=None, max_count=0,
+                                      search_paths=None):
+        if search_paths is None:
+            search_paths = (ctx.config.compiled_packages_dir(),
+                            ctx.config.debug_packages_dir())
 
-        if not max_delta_count:
-            return []
+        if release:
+            self.delta_search_paths[release] = search_paths
+        elif max_count > 0:
+            self.delta_history_search_paths.append((search_paths, max_count))
 
-        old_package_dirs = (ctx.config.compiled_packages_dir(),
-                            ctx.config.debug_packages_dir(),
-                            outdir or ".")
+    def build_delta_packages(self, package):
 
-        old_packages = []
-        for update in self.spec.history[1:]:
-            filename = self.package_filename(package.metadata.package, update)
-
-            for package_dir in old_package_dirs:
+        def find_old_package(filename, search_paths):
+            for package_dir in search_paths:
                 path = util.join_path(package_dir, filename)
                 if os.path.exists(path):
-                    old_packages.append(path)
-                    break
+                    return path
 
-            if len(old_packages) == max_delta_count:
-                break
+        old_packages = {}
+
+        for old_release, search_paths in self.delta_search_paths.items():
+            if old_release in old_packages:
+                continue
+
+            update = None
+            for update_tag in self.spec.history[1:]:
+                if update_tag.release == old_release:
+                    update = update_tag
+                    break
+            else:
+                continue
+
+            filename = self.package_filename(package.metadata.package, update)
+            old_package = find_old_package(filename, search_paths)
+            if old_package:
+                old_packages[old_release] = old_package
+
+        for search_paths, max_count in self.delta_history_search_paths:
+            if max_count < 1:
+                continue
+
+            found_old_packages = {}
+            for update in self.spec.history[1:]:
+                if update.release in old_packages:
+                    continue
+
+                filename = self.package_filename(package.metadata.package,
+                                                 update)
+                old_package = find_old_package(filename, search_paths)
+                if old_package:
+                    found_old_packages[update.release] = old_package
+
+                    if len(found_old_packages) == max_count:
+                        break
+
+            old_packages.update(found_old_packages)
 
         from pisi.operations.delta import create_delta_packages_from_obj
-        return create_delta_packages_from_obj(old_packages,
+        return create_delta_packages_from_obj(old_packages.values(),
                                               package,
                                               self.specdir)
 

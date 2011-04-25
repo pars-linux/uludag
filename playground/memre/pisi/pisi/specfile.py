@@ -232,6 +232,7 @@ class Package:
     t_PartOf = [autoxml.String, autoxml.optional]
     t_License = [ [autoxml.String], autoxml.optional]
     t_Icon = [ autoxml.String, autoxml.optional]
+    t_BuildFlags = [[autoxml.String], autoxml.optional, "BuildFlags/Flag"]
     t_BuildType = [ autoxml.String, autoxml.optional ]
     t_BuildDependencies = [[pisi.dependency.Dependency], autoxml.optional]
     t_PackageDependencies = [ [pisi.dependency.Dependency], autoxml.optional, "RuntimeDependencies/Dependency"]
@@ -370,6 +371,7 @@ class Package:
                 % (self.name, self.version, self.release)
         s += _('Summary: %s\n') % unicode(self.summary)
         s += _('Description: %s\n') % unicode(self.description)
+        s += _('Licenses: %s\n') % u", ".join(self.license)
         s += _('Component: %s\n') % unicode(self.partOf)
         s += _('Provides: ')
         for x in self.providesComar:
@@ -455,6 +457,7 @@ class SpecFile(xmlfile.XmlFile):
               self.source.name, self.history[0].version, self.history[0].release)
         s += _('Summary: %s\n') % unicode(self.source.summary)
         s += _('Description: %s\n') % unicode(self.source.description)
+        s += _('Licenses: %s\n') % u", ".join(self.source.license)
         s += _('Component: %s\n') % unicode(self.source.partOf)
         s += _('Build Dependencies: ')
         for x in self.source.buildDependencies:
