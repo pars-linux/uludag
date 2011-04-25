@@ -17,7 +17,11 @@
     <file>gui/pics/logo-on-black.png</file>
     <file>gui/pics/caps.png</file>
     <file>gui/pics/minimal-collection-icon.png</file>
-    <file>gui/pics/desktop-collection-icon.png</file>
+    <file>gui/pics/kde-desktop-collection-icon.png</file>
+    <file>gui/pics/gnome-desktop-collection-icon.png</file>
+    <file>gui/pics/xfce-desktop-collection-icon.png</file>
+    <file>gui/pics/fluxbox-desktop-collection-icon.png</file>
+    <file>gui/pics/lxde-desktop-collection-icon.png</file>
     <file>gui/pics/server-collection-icon.png</file>
     <file>gui/pics/systemsettings.png</file>
     <file>gui/pics/lock.png</file>
