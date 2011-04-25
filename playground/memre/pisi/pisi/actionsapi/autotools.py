@@ -117,11 +117,11 @@ def rawConfigure(parameters = '', configure_cmd='./configure', no_sb2=False, ld_
 def compile(parameters = ''):
     system('%s %s %s' % (get.CC(), get.CFLAGS(), parameters))
 
-def make(parameters = '', ld_lib_path=""):
+def make(parameters = '', ld_lib_path="", no_sb2=False):
     '''make source with given parameters = "all" || "doc" etc.'''
     cmd = '%s make %s %s' % (ld_lib_path, get.makeJOBS(), parameters)
 
-    if crosscompiling:
+    if crosscompiling and not no_sb2:
         cmd = "sb2 %s" % cmd
 
     if system(cmd):
