@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-25 10:26+0300\n"
-"PO-Revision-Date: 2011-01-18 16:27+0200\n"
+"POT-Creation-Date: 2011-04-25 08:02+0000\n"
+"PO-Revision-Date: 2011-04-25 10:25+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -353,6 +353,9 @@ msgid ""
 "applications or even a base system where you can install your choice of "
 "softwares manually."
 msgstr ""
+"Pardus Corporate 2 heeft verschillende mogelijkheden van installatie. Het is "
+"mogelijk om een volledige desktop of server-toepassing te doen of zelfs een "
+"basissysteem waarbij een handmatige keuze uit de software mogelijk is."
 
 #: ../release.xml.in.h:30
 msgid ""
@@ -414,7 +417,7 @@ msgstr "Schijf handmatig partitioneren"
 
 #: ../release.xml.in.h:34
 msgid "Select a collection"
-msgstr ""
+msgstr "Een verzameling selecteren"
 
 #: ../release.xml.in.h:35
 msgid "Select a partitioning method"
@@ -476,8 +479,8 @@ msgstr ""
 "een methode van bestandverificatie. Een mislukte validatie komt meestal door "
 "een fout op het installatiemedium (CD, DVD of USB-opslag).&lt;br&gt;&lt;"
 "br&gt;Bij het maken van een optisch installatiemedium (CD/DVD), probeer DAO "
-"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, "
-"8-12x voor CD)."
+"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, 8-"
+"12x voor CD)."
 
 #: ../release.xml.in.h:42
 msgid "Welcome back..."
