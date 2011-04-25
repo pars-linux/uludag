@@ -113,6 +113,7 @@
                 <SelectedPackage>gst-ffmpeg</SelectedPackage>
                 <SelectedPackage>gtk-engines</SelectedPackage>
                 <SelectedPackage>gtkspell</SelectedPackage>
+                <SelectedPackage>gutenprint</SelectedPackage>
                 <SelectedPackage>hal</SelectedPackage>
                 <SelectedPackage>hplip</SelectedPackage>
                 <SelectedPackage>htop</SelectedPackage>
