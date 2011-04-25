@@ -47,6 +47,7 @@ def exportFlags():
 
     # if we are crosscompiling, some extra flags and variables has to be defined.
     if values.build.crosscompiling:
+        # Toolchain environmental variables
         os.environ["AR"]      = "%s-ar" % values.build.host
         os.environ["AS"]      = "%s-as" % values.build.host
         os.environ["LD"]      = "%s-ld" % values.build.host
@@ -56,13 +57,11 @@ def exportFlags():
         os.environ["OBJDUMP"] = "%s-objdump" % values.build.host
         os.environ["OBJCOPY"] = "%s-objcopy" % values.build.host
         os.environ['FORTRAN'] = "%s-gfortran" % values.build.host
-        # FIXME: sb2 has a libtool too, do not export this unless it is neccessary
-        # os.environ['LIBTOOL']   = "%s-libtool" % values.build.host
 
-        # FIXME: PATH environmental variable should be changed in sb2
-        # os.environ['PATH']  = "%(sysroot)s/bin:%(sysroot)s/sbin:%(sysroot)s/usr/bin:%(sysroot)s/usr/sbin:%(path)s" % { 'sysroot' : sysroot, 'path' : os.environ['PATH'] }
+        os.environ['PYTHON_INCLUDES'] = "-I%s/usr/include/python2.6" % sysroot
         os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
-        os.environ['PYTHON']    = "%s/usr/bin/python" % sysroot
+        os.environ['PYTHONPATH']    = "%s/usr/lib/python2.6" % sysroot
+        os.environ['PYTHON']        = "%s/usr/bin/python" % sysroot
         # FIXME: sometimes perl fails with qemu.
         # os.environ['PERL']      = "%s/usr/bin/perl" % sysroot
         os.environ['SBOX_TARGET_ROOT'] = sysroot
@@ -78,7 +77,7 @@ def exportFlags():
                                     -L%(sysroot)s/usr/lib -Wl,-rpath-link,%(sysroot)s/usr/lib \
                                     " % { 'sysroot' : sysroot, }
 
-        os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
+        # os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
         os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig:%s/usr/qt/4/lib/pkgconfig" % (sysroot, sysroot)
         os.environ['PKGCONFIG']        = "/opt/toolchain/armv7l/bin/pkg-config"
 
