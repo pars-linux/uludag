@@ -6,7 +6,7 @@
     <PackageCollections>
         <PackageCollection default="True">
             <Id>LncFKTgD71WYDFo</Id>
-            <Icon>desktop-collection-icon.png</Icon>
+            <Icon>kde-desktop-collection-icon.png</Icon>
             <Translations>
                 <Translation language="ru_RU">
                     <Title>None</Title>
