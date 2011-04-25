@@ -9,6 +9,7 @@ void print_hello(){
        cout << "this must fail";
 
         #cc
+#fdf
 
 }
 
