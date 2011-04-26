@@ -26,7 +26,7 @@ from kdecore import *
 # Widget
 from diskform import mainForm
 
-from PLinkLabel import PLinkLabel
+from plinklabel import PLinkLabel
 
 # COMAR
 import comar
