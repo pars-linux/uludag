@@ -59,6 +59,7 @@ def exportFlags():
         os.environ['FORTRAN'] = "%s-gfortran" % values.build.host
 
         os.environ['PYTHON_INCLUDES'] = "-I%s/usr/include/python2.6" % sysroot
+        os.environ['PYTHON_LIBS']   = "-I%s/usr/lib/python2.6" % sysroot
         os.environ['PYTHON_PREFIX'] = "%s/usr" % sysroot
         os.environ['PYTHONPATH']    = "%s/usr/lib/python2.6" % sysroot
         os.environ['PYTHON']        = "%s/usr/bin/python" % sysroot
@@ -80,6 +81,10 @@ def exportFlags():
         # os.environ['PKG_CONFIG_SYSROOT_DIR']  = sysroot
         os.environ['PKG_CONFIG_PATH']  = "%s/usr/lib/pkgconfig:%s/usr/qt/4/lib/pkgconfig" % (sysroot, sysroot)
         os.environ['PKGCONFIG']        = "/opt/toolchain/armv7l/bin/pkg-config"
+
+        os.environ['PATH'] = "%(path)s:%(sysroot)s/bin:%(sysroot)s/sbin:%(sysroot)s/usr/bin:%(sysroot)s/usr/sbin" % {\
+                'sysroot' : sysroot,
+                'path'    : os.environ['PATH'] }
 
     if crosscompiling:
         print " ==> cross compiling <== "
