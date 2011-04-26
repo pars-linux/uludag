@@ -148,7 +148,7 @@ msgstr "Partizionare il disco manualmente"
 
 #: ../release.xml.in.h:34
 msgid "Select a collection"
-msgstr ""
+msgstr "Seleziona una raccolta"
 
 #: ../release.xml.in.h:35
 msgid "Select a partitioning method"
@@ -156,11 +156,11 @@ msgstr "Selezionare un metodo di partizionamento"
 
 #: ../release.xml.in.h:36
 msgid "Set your local time and date"
-msgstr ""
+msgstr "Impostare l'ora e la data locale"
 
 #: ../release.xml.in.h:37
 msgid "Setup your account"
-msgstr ""
+msgstr "Imposta il tuo account"
 
 #: ../release.xml.in.h:38
 msgid "Summary"
