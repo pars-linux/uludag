@@ -23,6 +23,7 @@ import pisi.context as ctx
 import pisi.actionsapi
 import pisi.actionsapi.get as get
 from pisi.actionsapi.shelltools import system
+from pisi.actionsapi.shelltools import export
 from pisi.actionsapi.shelltools import can_access_file
 from pisi.actionsapi.shelltools import unlink
 from pisi.actionsapi.libtools import gnuconfig_update
@@ -121,6 +122,12 @@ def make(parameters = '', ld_lib_path="", no_sb2=False):
     '''make source with given parameters = "all" || "doc" etc.'''
     cmd = '%s make %s %s' % (ld_lib_path, get.makeJOBS(), parameters)
 
+    try:
+        ld_lib_path += ":%s" % os.environ['LD_LIBRARY_PATH']
+    except:
+        pass
+
+    export('LD_LIBRARY_PATH', ld_lib_path)
     if crosscompiling and not no_sb2:
         cmd = "sb2 %s" % cmd
 

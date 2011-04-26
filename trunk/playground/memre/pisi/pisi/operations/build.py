@@ -384,6 +384,7 @@ class Builder:
 
         env = {"PKG_DIR": self.pkg_dir(),
                "WORK_DIR": self.pkg_work_dir(),
+               "HOME": self.pkg_work_dir(),
                "INSTALL_DIR": self.pkg_install_dir(),
                "PISI_BUILD_TYPE": self.build_type,
                "SRC_NAME": self.spec.source.name,
@@ -512,12 +513,21 @@ class Builder:
 
     def unpack_source_archives(self):
         ctx.ui.action(_("Unpacking archive(s)..."))
-        self.sourceArchives.unpack(self.pkg_work_dir())
+        work_dir = self.pkg_work_dir()
+        self.sourceArchives.unpack(work_dir)
+
+        sb2_dir = "%s/.scratchbox2" % work_dir
+        if not os.access(sb2_dir, os.O_RDONLY):
+            try:
+                os.symlink("/root/.scratchbox2", sb2_dir)
+            except:
+                print "W: unable to link /root/.scratchbox2 -> %s/.scratchbox2" % work_dir
+
         # apply the patches and prepare a source directory for build.
         if self.apply_patches():
             # Grab AdditionalFiles
             self.copy_additional_source_files()
-            ctx.ui.info(_(" unpacked (%s)") % self.pkg_work_dir())
+            ctx.ui.info(_(" unpacked (%s)") % work_dir)
             self.set_state("unpack")
 
     def run_setup_action(self):
