@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/util-tr.tex -->
+<!--HEVEA command line is: hevea testcases/turkish/util-tr.tex util-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Util Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Benchmark alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Benchmark alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -85,7 +85,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </PRE></LI></OL><!--TOC section Crypt alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Crypt alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> gnupg-docs
-</PRE></LI><LI CLASS="li-enumerate">gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
+ nss-devel
+</PRE></LI><LI CLASS="li-enumerate">nss paketi kurulumu sonrası:<P>multimedia-tr.pdf chromium-browser testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">gnupg paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde anahtar ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim">gpg --gen-key
 </PRE></LI><LI CLASS="li-enumerate">johntheripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
@@ -106,6 +107,7 @@ Sorunsuz bir şekilde yapılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enum
  clamscan eicar.com.txt
 </PRE><P>Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.</P></LI></OL><!--TOC section Admin alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Admin alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> libcgroup
+ libcgroup-devel
 </PRE></LI><LI CLASS="li-enumerate">panda paketi kurulumu sonrası:<P>desktop-tr.pdf panda-kde testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">sudo paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo pisi info pidgin
 </PRE></LI><LI CLASS="li-enumerate">ntp-client paketi kurulumu sonrası:<P>Eğer ntp server servisi açık ise kapatmalısınız. </P><P>Aşağıda bulunan komutun sistem saatini değiştirdiğini gözlemleyin. ("date" komutunu kullanarak kontrol edebilirsiniz.)

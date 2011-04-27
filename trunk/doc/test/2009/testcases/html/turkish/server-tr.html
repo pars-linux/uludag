@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex -->
+<!--HEVEA command line is: hevea testcases/turkish/server-tr.tex server-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -77,7 +77,8 @@ ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aş
 </P><PRE CLASS="verbatim">  service ypbind status
 </PRE></LI></OL><!--TOC section Mta alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> postfi
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> postfix
+ postfix-docs
 </PRE></LI><LI CLASS="li-enumerate">dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
 Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </P><PRE CLASS="verbatim">  service dovecot status
@@ -150,6 +151,10 @@ Servis yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullana
 </PRE></LI></OL><!--TOC section Diğerleri-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> ntp-docs
+ bind-chroot
+ bind-devel
+ bind-libs
+ bind-tools
 </PRE></LI><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> service ntpd status
 </PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.

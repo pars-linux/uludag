@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/multimedia-tr.tex -->
+<!--HEVEA command line is: hevea testcases/turkish/multimedia-tr.tex multimedia-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Multimedia Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Share-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Share</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -84,6 +84,8 @@ dssi-devel
 libvorbis-devel
 pulseaudio-docs
 pulseaudio-libs-devel
+libmodplug
+libmodplug-devel
 </PRE></LI><LI CLASS="li-enumerate">qsynth paketi kurulumu sonrası:<P>Kmenuden qsynth uygulamasını açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">libvorbis paketi kurulumu sonrası:<P>multimedia-tr.pdf vorbis-tools testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">timidity paketi kurulumu sonrası:<P>multimedia-tr.pdf solfege testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">dssi paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> dssi_list_plugins
  dssi_osc_send -p osc.udp://localhost:19383/dssi/test.1 0 7
@@ -154,7 +156,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  mpgjoin chunk-01.mpg chunk-02.mpg 
  mplayer chunk.mpg
 </PRE></LI><LI CLASS="li-enumerate">gpac paketi kurulumu sonrası:<P>multimedia-tr.pdf x264 testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">dvdrip paketi kurulumu sonrası:<P>Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.</P><P>dvdrip uygulmasını kmenüden açın ve dvd’de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
-</P></LI><LI CLASS="li-enumerate">mplayer, vlc, kaffeine, smplayer, gnome-mplayer, bangarang paketleri kurulumu sonrası:
+</P></LI><LI CLASS="li-enumerate">mplayer, mplayer-gui, vlc, kaffeine, smplayer, gnome-mplayer, bangarang paketleri kurulumu sonrası:
 <PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  </PRE>Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya formatı ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-enumerate">vlc-firefox kurulumu sonrası:
@@ -287,6 +289,11 @@ Aşağıda bulunan paketler kurulum testine tabidir
  libopenraw-devel
  CImg
  CImg-docs
+ tiff-devel
+ tiff-docs
+</PRE></LI><LI CLASS="li-enumerate">tiff paketi kurulumu sonrası:
+<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/doga.tiff
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/istanbul.tiff
 </PRE></LI><LI CLASS="li-enumerate">libopenraw paketi kurulumu sonrası:<P>Aşağıda bulunan dosyanın Gimp ile açılabildiğini gözlemleyin.</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/DSC_0048.NEF
 </PRE></LI><LI CLASS="li-enumerate">mypaint paketi kurulumu sonrası:<P>Uygulamayı açın ve fırçaların birkaçını kullanarak çizim yapmayı deneyin, yapabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">autopano-sift-C paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">enblend paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hugin paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test-hugin.zip
 </PRE></LI><LI CLASS="li-enumerate">tesseract paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde text dosyasının oluştuğunu gözlemleyin.
