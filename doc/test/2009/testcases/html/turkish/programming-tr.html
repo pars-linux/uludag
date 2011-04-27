@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/programming-tr.tex -->
+<!--HEVEA command line is: hevea testcases/turkish/programming-tr.tex programming-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -232,6 +232,8 @@ tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekr
 </P></LI></OL><!--TOC subsection Php alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıdaki paketler sadece kurulum testine tabidir
 <PRE CLASS="verbatim"> php-redland
+ php-devel
+ php-zip
 </PRE></LI><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
  php test_phpgtk.phpw
@@ -944,7 +946,12 @@ ocaml ocaml-test.ml
 </PRE></LI><LI CLASS="li-itemize">R-mathlib paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin. (gcc paketini öncelikle kurmanız gerekmektedir.)	
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test-r-mathlib.c
  gcc -o test-r-matlib test-r-matlib.c -lm -lRmath
-</PRE></LI></UL><!--CUT END -->
+</PRE></LI></UL><!--TOC subsection Misc alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc19">8.11</A>  Misc alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> xmlsec1
+ xmlsec2-devel
+ xmlsec1-docs
+</PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
 <!--FOOTER-->
