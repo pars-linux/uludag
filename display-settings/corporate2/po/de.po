@@ -210,7 +210,6 @@ msgid "Select from the list:"
 msgstr "Aus der Liste auswählen:"
 
 #: ui/videocard.py:106
-#, fuzzy
 msgid "radeon"
 msgstr "radeon"
 
