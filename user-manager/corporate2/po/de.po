@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -54,12 +54,8 @@ msgstr "Benutzer-Manager-Hilfe"
 
 #: browser.py:137
 #, python-format
-msgid ""
-"<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %"
-"s<br>ID: %d"
-msgstr ""
-"<big><b>Soll dieser Benutzer gelöscht werden?</b></big><br><br>Name: %"
-"s<br>Benutzername: %s<br>ID: %d"
+msgid "<big><b>Should I delete this user?</b></big><br><br>Name: %s<br>User name: %s<br>ID: %d"
+msgstr "<big><b>Soll dieser Benutzer gelöscht werden?</b></big><br><br>Name: %s<br>Benutzername: %s<br>ID: %d"
 
 #: browser.py:143
 msgid "Delete User"
@@ -75,11 +71,8 @@ msgstr "Benutzer löschen"
 
 #: browser.py:158
 #, python-format
-msgid ""
-"<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
-msgstr ""
-"<big><b>Soll diese Gruppe gelöscht werden?</b></big><br><br>Gruppenname: %"
-"s<br>ID: %d"
+msgid "<big><b>Should I delete this group?</b></big><br><br>Group name: %s<br>ID: %d"
+msgstr "<big><b>Soll diese Gruppe gelöscht werden?</b></big><br><br>Gruppenname: %s<br>ID: %d"
 
 #: browser.py:164 browser.py:165
 msgid "Delete Group"
@@ -99,8 +92,7 @@ msgstr "Gruppenname:"
 
 #: groupedit.py:97
 msgid "Enter a group ID or use auto selection"
-msgstr ""
-"Geben Sie eine Gruppen-ID ein oder verwenden Sie die automatische Auswahl"
+msgstr "Geben Sie eine Gruppen-ID ein oder verwenden Sie die automatische Auswahl"
 
 #: groupedit.py:100
 msgid "Enter a group name"
@@ -204,8 +196,7 @@ msgstr "Hauptgruppe:"
 
 #: useredit.py:376
 msgid "Start with typing this user's full name."
-msgstr ""
-"Beginnen Sie mit der Eingabe von dem vollständigen Namen dieses Benutzer's."
+msgstr "Beginnen Sie mit der Eingabe von dem vollständigen Namen dieses Benutzer's."
 
 #: useredit.py:379
 msgid "You should enter a password for this user."
@@ -217,9 +208,7 @@ msgstr "Das Passwort muss länger sein."
 
 #: useredit.py:388
 msgid "Don't use your full name or user name as a password."
-msgstr ""
-"Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als "
-"Passwort."
+msgstr "Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als Passwort."
 
 #: useredit.py:391
 msgid "Passwords don't match."
@@ -227,13 +216,11 @@ msgstr "Passwörter stimmen nicht überein."
 
 #: useredit.py:395
 msgid "You must enter a user ID or use the auto selection."
-msgstr ""
-"Sie müssen eine Benutzer-ID eingeben oder die automatische Auswahl verwenden."
+msgstr "Sie müssen eine Benutzer-ID eingeben oder die automatische Auswahl verwenden."
 
 #: useredit.py:399
-#, fuzzy
 msgid "You must enter a user ID between 999 and 65535."
-msgstr "Sie müssen einen Benutzernamen eingeben."
+msgstr "Sie müssen eine Benutzer-ID zwischen 999 und 65535 eingeben."
 
 #: useredit.py:404
 msgid "You must enter a user name."
@@ -244,9 +231,8 @@ msgid "This user name is used by another user."
 msgstr "Dieser Benutzername wird von einem anderen Benutzer verwendet."
 
 #: useredit.py:410
-#, fuzzy
 msgid "This user ID is used by another user."
-msgstr "Dieser Benutzername wird von einem anderen Benutzer verwendet."
+msgstr "Diese ID wird von einem anderen Benutzer verwendet."
 
 #: useredit.py:414
 msgid "User name must not start with a number."
@@ -269,12 +255,8 @@ msgid "Give administrator privileges to this user"
 msgstr "Diesen Benutzer Administrator-Rechte vergeben"
 
 #: useredit.py:628
-msgid ""
-"You are removing yourself from the 'wheel' system group, you might not use "
-"your administrator permissions after that."
-msgstr ""
-"Sie entfernen sich von der 'wheel'-Systemgruppe, Sie können danach Ihre "
-"Administratorenrechte nicht mehr verwenden."
+msgid "You are removing yourself from the 'wheel' system group, you might not use your administrator permissions after that."
+msgstr "Sie entfernen sich von der 'wheel'-Systemgruppe, Sie können danach Ihre Administratorenrechte nicht mehr verwenden."
 
 #: useredit.py:629
 msgid "Important Group Change"
@@ -314,15 +296,15 @@ msgstr "Nach Passwort nicht fragen"
 
 #: useredit.py:818 useredit.py:823
 msgid "Apply this policy to all"
-msgstr ""
+msgstr "Diese Regel auf alle übertragen"
 
 #: useredit.py:824
 msgid "Apply this policy to category"
-msgstr ""
+msgstr "Diese Regel auf die Kategorie übertragen"
 
 #: useredit.py:826
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 #~ msgid "Unable to connect to DBus."
 #~ msgstr "Kann nicht mit DBus verbunden werden."
