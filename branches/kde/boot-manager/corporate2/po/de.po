@@ -3,7 +3,7 @@
 # translation of boot-manager.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: src/boot-manager.py:33 src/boot-manager.py:92
 msgid "Boot Manager"
@@ -48,7 +48,7 @@ msgstr "Eintrag löschen"
 
 #: src/ui_elements.py:109
 msgid "This is the last entry, you cannot delete it!"
-msgstr ""
+msgstr "Dies ist der letzte Eintrag, daher nicht löschbar!"
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -127,12 +127,8 @@ msgid "Failed"
 msgstr "Fehlgeschlagen"
 
 #: src/bm_mainview.py:401
-msgid ""
-"These kernels are installed in the system but doesn't exist in boot loader "
-"list:"
-msgstr ""
-"Folgende Kernel sind im System installiert aber existieren nicht in der Boot-"
-"Lader-Liste:"
+msgid "These kernels are installed in the system but doesn't exist in boot loader list:"
+msgstr "Folgende Kernel sind im System installiert aber existieren nicht in der Boot-Lader-Liste:"
 
 #: src/bm_mainview.py:410
 msgid "Add Boot Entry"
@@ -164,18 +160,11 @@ msgstr "Auf DBus wartend..."
 
 #: src/bm_mainview.py:568
 msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Verbindung zu DBus unerwartet geschlossen, es wird versucht erneut zu "
-"verbinden..."
+msgstr "Verbindung zu DBus unerwartet geschlossen, es wird versucht erneut zu verbinden..."
 
 #: src/bm_mainview.py:584
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann "
-"sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
-"ausführen."
+msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+msgstr "Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' ausführen."
 
 #: src/bm_mainview.py:589
 msgid "You are not authorized for this operation."
@@ -187,8 +176,7 @@ msgstr "COMAR-Fehler"
 
 #: src/bm_mainview.py:606
 msgid "Bootloader configuration changed by another application."
-msgstr ""
-"Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
+msgstr "Boot-Loader-Konfiguration wurde durch eine andere Applikation geändert."
 
 #~ msgid "Root:"
 #~ msgstr "Wurzel:"
