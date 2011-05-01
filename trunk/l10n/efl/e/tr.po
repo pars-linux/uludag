@@ -55,7 +55,7 @@ msgstr "<title>Takım<title>"
 #: src/bin/e_actions.c:366
 #, c-format
 msgid "You are about to kill %s.<br><br>Please keep in mind that all data from this window<br>which has not yet been saved will be lost!<br><br>Are you sure you want to kill this window?"
-msgstr ""
+msgstr "%s sonlandırmak üzeresiniz.<br><br>Bu penceredeki henüz kaydedilmemiş bütün verilerin<br>silineceğini lütfen aklınızdan çıkarmayın<br><br>Bu pencereye sonlandırmak istediğinizden emin misiniz?"
 
 #: src/bin/e_actions.c:378
 msgid "Are you sure you want to kill this window?"
