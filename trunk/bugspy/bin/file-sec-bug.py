@@ -7,22 +7,25 @@
 import sys
 import os
 import logging
+import re
 
 from bugspy.bugzilla import Bugzilla
 from bugspy.config import BugspyConfig
 
-# Files to edit
-TRACKER_PARDUS_2009 = "./data/Pardus/tracker.2009.ini"
-TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
-TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
-
-TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
-               "Corporate2": TRACKER_PARDUS_CORPORATE2}
 
 # Global variable that is used when asked for which pardus versions are affected
 PARDUS_RELEASES = {"1": "2009",
                    "2": "Corporate2",
                    "3": "2011"}
+
+# Files to edit
+TRACKER_PARDUS_2009 = "../Security/tracker.2009.txt"
+TRACKER_PARDUS_2011 = "../Security/tracker.2008.txt"
+TRACKER_PARDUS_CORPORATE2 = "../Security/tracker.corporate2.txt"
+
+TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
+               "2011": TRACKER_PARDUS_2011,
+               "Corporate2": TRACKER_PARDUS_CORPORATE2}
 
 log = logging.getLogger("bugzilla")
 log.setLevel(logging.DEBUG)
@@ -60,6 +63,18 @@ def readFile(filename):
     except:
         print "[-] Error while parsing file."
         sys.exit()
+
+def enter_bug_to_tracker(pardus_release, package_name, bug_no):
+    tracker_file =  TRACKER_MAP.get(pardus_release)
+    tracker_data = open(tracker_file, "r").read()
+
+    title_entry_bugs = "not fixed yet:\n===========================\n"
+    entry_bug = "%s = %s" % (package_name, bug_no)
+
+    regex = re.compile(title_entry_bugs)
+    updated_tracker_data  = regex.sub("%s%s\n\n" %(title_entry_bugs, entry_bug) , tracker_data)
+
+    open(tracker_file, "w").write(updated_tracker_data)
 
 def main(filename):
     title, description = readFile(filename)
@@ -198,6 +213,10 @@ def main(filename):
                 # FIXME: Add them to tracker file when we move to new tracker system
                 #file = TRACKER_MAP.get(affected_version)
                 #ini = SecurityINI(file)
+
+                #Write the bug number to tracker
+                package_name = bug_title.split(":")[0]
+                enter_bug_to_tracker(str(affected_version), package_name, no)
 
                 # redhat enterprise_linux: multiple integer overflows (CVE-2010-0727)
                 # will be: multiple integer overflows (CVE-2010-0727)
