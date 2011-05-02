@@ -121,7 +121,7 @@
             </listitem>
             <listitem>
                 <para>
-                    <application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is completely dropped and replaced by the new Plymouth engine.
+                    <application>Plymouth</application> - The bootsplash technology used in Pardus &PREVVER; is updated to its latest version for a much stable experience.
                 </para>
             </listitem>
             <listitem>
@@ -240,6 +240,13 @@
             <title>Office Suite</title>
             <para>
                 <emphasis>LibreOffice</emphasis>, an Open Source personal productivity suite sponsored by the Document Foundation, is now the default Office Suite in Pardus &PRODVER;.
+            </para>
+        </section>
+
+        <section id="sect-Release_Notes-Design_Suite">
+            <title>Design Suite</title>
+            <para>
+                3D modeling, animation, rendering and post-production application <emphasis>Blender</emphasis> is updated to the much-awaited &BLENDERVER; version which brings huge improvements over the older version.
             </para>
         </section>
 
