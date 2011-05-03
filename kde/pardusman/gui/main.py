@@ -18,9 +18,8 @@ import tempfile
 # Qt
 import QTermWidget
 
-from PyQt4.QtCore import SIGNAL
 from PyQt4.QtGui import QIcon, QMessageBox, QMainWindow, QFileDialog, QListWidgetItem
-from PyQt4.QtCore import QFile
+from PyQt4.QtCore import SIGNAL, QFile, Qt
 
 
 # UI
@@ -100,7 +99,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.pushModifyCollection, SIGNAL("clicked()"),self.slotModifyPackageCollection)
         self.connect(self.pushRemoveCollection, SIGNAL("clicked()"),self.slotRemovePackageCollection)
         self.connect(self.pushSetDefaultCollection, SIGNAL("clicked()"),self.slotSetDefaultCollection)
-        self.connect(self.comboSize, SIGNAL("currentIndexChanged(int)"), self.slotShowPackageCollection)
+        self.connect(self.checkCollection, SIGNAL("stateChanged(int)"), self.slotShowPackageCollection)
         self.connect(self.listPackageCollection, SIGNAL("itemClicked(QListWidgetItem *)"),self.slotClickedCollection)
 
         # Initialize
@@ -255,8 +254,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.pushSetDefaultCollection.setChecked(True)
 
 
-    def slotShowPackageCollection(self, index):
-        if self.comboSize.currentIndex() == 1:
+    def slotShowPackageCollection(self, state):
+        if state == Qt.Checked:
             self.collectionFrame.show()
             self.actionPackages.setVisible(False)
         else:
@@ -342,12 +341,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.terminal.setFocus()
 
     def updateCollection(self):
-        if not self.project.media == "dvd":
-            self.listPackageCollection.clear()
-        else:
-            self.project.package_collections = []
-            for index in xrange(self.listPackageCollection.count()):
-                self.project.package_collections.append(self.listPackageCollection.item(index).collection)
+        self.project.package_collections = []
+        for index in xrange(self.listPackageCollection.count()):
+            self.project.package_collections.append(self.listPackageCollection.item(index).collection)
 
     def checkProject(self):
         """
@@ -376,8 +372,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.project.extra_params = unicode(self.lineParameters.text())
         self.project.type = ["install", "live"][self.comboType.currentIndex()]
         self.project.squashfs_comp_type = ["gzip", "lzma", "lzo"][self.comboCompression.currentIndex()]
-        self.project.media = ["cd", "dvd", "usb", "custom"][self.comboSize.currentIndex()]
-        self.updateCollection()
+        if self.checkCollection.isChecked():
+            self.updateCollection()
+        else:
+            self.listPackageCollection.clear()
 
     def loadProject(self):
         """
@@ -391,7 +389,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.lineParameters.setText(unicode(self.project.extra_params))
         self.comboType.setCurrentIndex(["install", "live"].index(self.project.type))
         self.comboCompression.setCurrentIndex(["gzip", "lzma", "lzo"].index(self.project.squashfs_comp_type))
-        self.comboSize.setCurrentIndex(["cd", "dvd", "usb", "custom"].index(self.project.media))
 
         self.listPackageCollection.clear()
         if self.project.package_collections:
@@ -399,6 +396,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 PackageCollectionListItem(self.listPackageCollection, collection, self.project.default_language)
                 if collection.default:
                     self.listPackageCollection.setCurrentRow(index)
+            self.checkCollection.setChecked(True)
+        else:
+            self.checkCollection.setChecked(False)
 
     def updateRepo(self, update_repo=True):
         """

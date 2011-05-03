@@ -176,7 +176,6 @@ class Project:
         self.repo_uri = ""
         self.type = "install"
         self.squashfs_comp_type = "gzip"
-        self.media = "cd"
         self.extra_params = ""
         self.plugin_package = ""
         self.default_language = None
@@ -220,7 +219,6 @@ class Project:
         # Fill in the properties from XML file
         self.title = doc.getTagData("Title")
         self.type = doc.getAttribute("type")
-        self.media = doc.getAttribute("media")
         self.squashfs_comp_type = doc.getAttribute("compression")
 
         self.plugin_package = doc.getTagData("PluginPackage")
@@ -336,7 +334,6 @@ class Project:
         doc = piksemel.newDocument("PardusmanProject")
 
         doc.setAttribute("type", self.type)
-        doc.setAttribute("media", str(self.media))
         doc.setAttribute("compression", str(self.squashfs_comp_type))
 
         if self.title:
