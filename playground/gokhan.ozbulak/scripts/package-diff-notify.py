@@ -27,7 +27,6 @@ REPO_LIST = (
                 "http://svn.pardus.org.tr/pardus/2009/devel/pisi-index.xml.bz2"
             )
 
-
 # Details about packages
 # Structure : {packager_name -> {package_name -> [[[release1, version1],..,[releaseX, versionX]], [#package1,..,#packageX], [#patch1,..,#patchX], [distro_version1,..,distro_versionX] [packager_mail1,..,packager_mailX]]},..}
 REPOS = {}
