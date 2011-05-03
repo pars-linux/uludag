@@ -43,7 +43,7 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="1" colspan="2">
+         <item row="0" column="2" colspan="2">
           <widget class="QLineEdit" name="lineTitle">
            <property name="toolTip">
             <string>The title of the Pardus image</string>
@@ -57,7 +57,7 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="1" colspan="2">
+         <item row="1" column="2" colspan="2">
           <widget class="QLineEdit" name="lineParameters">
            <property name="toolTip">
             <string>Extra parameters to pass to the kernel command line during boot.</string>
@@ -71,14 +71,14 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1">
+         <item row="2" column="2">
           <widget class="QLineEdit" name="lineRepository">
            <property name="toolTip">
             <string>Local or remote URL of the repository index from which the image will be created</string>
            </property>
           </widget>
          </item>
-         <item row="2" column="2">
+         <item row="2" column="3">
           <widget class="QPushButton" name="pushBrowseRepository">
            <property name="text">
             <string>Browse</string>
@@ -92,14 +92,14 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="1">
+         <item row="3" column="2">
           <widget class="QLineEdit" name="lineReleaseFiles">
            <property name="toolTip">
             <string>Path to the local directory which contains metadata about the image like the release notes, etc.</string>
            </property>
           </widget>
          </item>
-         <item row="3" column="2">
+         <item row="3" column="3">
           <widget class="QPushButton" name="pushBrowseReleaseFiles">
            <property name="text">
             <string>Browse</string>
@@ -113,10 +113,10 @@
            </property>
           </widget>
          </item>
-         <item row="4" column="1">
+         <item row="4" column="2">
           <widget class="QLineEdit" name="linePluginPackage"/>
          </item>
-         <item row="4" column="2">
+         <item row="4" column="3">
           <widget class="QPushButton" name="pushBrowsePluginPackage">
            <property name="text">
             <string>Browse</string>
@@ -130,14 +130,14 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="1">
+         <item row="5" column="2">
           <widget class="QLineEdit" name="lineWorkFolder">
            <property name="toolTip">
             <string>Path to the directory where Pardusman will work and create the related files and directories</string>
            </property>
           </widget>
          </item>
-         <item row="5" column="2">
+         <item row="5" column="3">
           <widget class="QPushButton" name="pushBrowseWorkFolder">
            <property name="text">
             <string>Browse</string>
@@ -151,7 +151,7 @@
            </property>
           </widget>
          </item>
-         <item row="6" column="1">
+         <item row="6" column="2">
           <widget class="QComboBox" name="comboType">
            <item>
             <property name="text">
@@ -165,7 +165,7 @@
            </item>
           </widget>
          </item>
-         <item row="6" column="2">
+         <item row="6" column="3">
           <widget class="QComboBox" name="comboCompression">
            <item>
             <property name="text">
@@ -185,40 +185,10 @@
           </widget>
          </item>
          <item row="7" column="0">
-          <widget class="QLabel" name="label_8">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
+          <widget class="QCheckBox" name="checkCollection">
            <property name="text">
-            <string>Image size</string>
+            <string>Collection Base</string>
            </property>
-          </widget>
-         </item>
-         <item row="7" column="1" colspan="2">
-          <widget class="QComboBox" name="comboSize">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <item>
-            <property name="text">
-             <string>CD (700MB)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>DVD (4.2GB)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Flash Disk (1GB)</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Custom</string>
-            </property>
-           </item>
           </widget>
          </item>
         </layout>
@@ -307,7 +277,7 @@
      <x>0</x>
      <y>0</y>
      <width>619</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -436,7 +406,6 @@
   <tabstop>linePluginPackage</tabstop>
   <tabstop>lineWorkFolder</tabstop>
   <tabstop>comboType</tabstop>
-  <tabstop>comboSize</tabstop>
   <tabstop>pushBrowseRepository</tabstop>
   <tabstop>pushBrowseReleaseFiles</tabstop>
   <tabstop>pushBrowsePluginPackage</tabstop>
