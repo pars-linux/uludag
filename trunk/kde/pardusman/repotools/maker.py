@@ -164,8 +164,6 @@ label pardus
     kernel /boot/kernel
     append initrd=/boot/initrd %(exparams)s
 
-%(rescue_template)s
-
 label harddisk
     localboot 0x80
 
