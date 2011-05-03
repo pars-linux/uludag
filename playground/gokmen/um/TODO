@@ -1,0 +1,47 @@
+
+semiupdate repo   = http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/pisi-index.xml.bz2
+2011 repo         = http://packages.pardus.org.tr/pardus/2011/stable/i686/pisi-index.xml.xz
+forceinstall list = http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list
+
+
+
+- Ask user which repo to update to (stable/testing/devel) (?)
+
+- Check if update is possible
+    - check availability of packages
+    - check free disk space
+    - if update will not be healty, warn the user why and do nothing
+    - if update is not possible ask to remove packages (??)
+
+- Final confirmation "are you sure ?"
+
+- Disable all repos
+
+- Install packages from semiupdate repo (order is important) (xz replaces lzma !)
+    libuser-0.57.1-1-1.pisi
+    python-pyliblzma-0.5.3-1-1.pisi
+    pisi-2.4_alpha3-1-1.pisi
+    xz-4.999.9_beta143-1-1.pisi
+
+- Remove semiupdate repo if added
+
+- pisi up --ignore-comar -y
+- install packages from forceinstall list
+- pisi cp baselayout
+- pisi cp
+
+- Modify grub.conf
+    - Remove vga=XXX
+    - Replace splash=XXX with splash
+
+- Symlink previous KDE dirs ?
+    http://bugs.pardus.org.tr/show_bug.cgi?id=17426
+
+- Symlink .kde4 folders to .kde in /home/*  ?
+    http://bugs.pardus.org.tr/show_bug.cgi?id=17428
+
+- run  /usr/sbin/migrate-comar-network-profiles
+- rm -rf /home/*/.kde/share/config/kaptanrc
+    http://bugs.pardus.org.tr/show_bug.cgi?id=17429
+
+
