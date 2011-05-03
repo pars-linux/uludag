@@ -201,6 +201,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         if not self.project.selected_languages:
             QMessageBox.warning(self, self.title, _("Installation Languages is not selected."))
+            return
 
         dialog = PackageCollectionDialog(self, self.repo, self.project)
         if dialog.exec_():
