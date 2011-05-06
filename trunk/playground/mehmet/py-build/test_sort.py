@@ -10,7 +10,7 @@ class TestSort:
         print "alist in test_ascending_sort, before sort:", self.alist
         self.alist.sort()
         print "alist in test_ascending_sort, after sort:", self.alist
-        assert self.alist == [1, 3, 2, 4, 5]
+        assert self.alist == [1, 2, 3, 4, 5]
 
     def test_custom_sort(self):
         def int_compare(x, y):
