@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/hardware-tr.tex hardware-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/hardware-tr.tex hardware-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Hardware Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section CPU alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  CPU alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -80,6 +80,10 @@ foomatic-db-engine
 foomatic-db-hpijs
 foomatic-filters
 hplip-doc
+cups-devel
+cups-php
+system-config-printer
+system-config-printer-gtk
 </PRE></LI><LI CLASS="li-enumerate">epson-alc1100 paketi kurulumu sonrası:<P>Eğer Epson AcuLaser C1100 yazıcınız var ise bu yazıcının tanındığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">cups paketi kurulumu sonrası:<P>Eğer bir yazıcınız var ise deneme çıktı almaya çalışın ve sorunsuz bir şekilde alabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">hplip-gui ve hplip kurulumu sonrası:<P>kmenu’den HP aygıt yöneticisini açın ve bir HP yazıcınız var ise aygıtı bulduğunu, yok ise aygıt bulunmamaktadır uyarısı verdiğini gözlemleyiniz.</P></LI></OL><!--TOC section Smart Card alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Smart Card alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -88,14 +92,22 @@ mozilla-opensc-signer
 openct
 opensc
 pcsc-lite
+pcsc-lite-devel
+pcsc-tools
 </PRE></LI></OL><!--TOC section Info alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Info alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">dmidecode paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Info alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">hal-devel
+hal-docs
+hal-libs
+media-player-info
+</PRE></LI><LI CLASS="li-enumerate">dmidecode paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo dmidecode
 </PRE></LI><LI CLASS="li-enumerate">smolt paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırın ve datalarınızı gönderin.</P><P>Profilinizi paylaşmak için bölümünden, donanımınıza ait linki kopyalayın ve firefox ile sayfanızı görüntüleyin, donanımınızın sunucuya gitmiş olduğunu gözlemleyin.</P><PRE CLASS="verbatim"> smoltSendProfile
 </PRE><PRE CLASS="verbatim"> kaptan
-</PRE></LI><LI CLASS="li-enumerate">hal-info paketi kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">hal-info ve hal paketleri kurulumu sonrası:
 Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.</LI><LI CLASS="li-enumerate">x86info paketi kurulumu sonrası:<P>Aşağıda bulunan komutun x86 mimarisi ile oluşturulmuş cpu’ları listelediğini gözlemleyin.
-</P><PRE CLASS="verbatim"> # x86info
+</P><PRE CLASS="verbatim">  x86info
 </PRE></LI><LI CLASS="li-enumerate">gkrellm paketi kurulumu sonrası:<P>Servis yöneticisinden gkrellm servisini başlatın.</P><P>Aşağıda bulunan komut ile başlatıldığından emin olun.
 </P><PRE CLASS="verbatim"> service gkrellm status
 </PRE></LI></OL><!--TOC section Powermanagement alt Bileşeni-->
@@ -110,7 +122,10 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </P><PRE CLASS="verbatim"> # sensors 
 </PRE></LI></OL><!--TOC section Scanner alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc9">9</A>  Scanner alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-sane-backends paketi kurulumu sonrası:<P>Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">sane-backends-devel
+sane-backends-docs
+</PRE></LI><LI CLASS="li-enumerate">sane-backends paketi kurulumu sonrası:<P>Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 </P><PRE CLASS="verbatim">sane-find-scanner
 scanimage 
 </PRE><P>İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
@@ -182,6 +197,12 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">  obexd
   bluez-compat
   cwiid-devel
+  bluedevil
+  bluedevil-devel
+  bluez-libs
+  bluez-libs-devel
+  libbluedevil
+  libbluedevil-devel
 </PRE></LI><LI CLASS="li-enumerate">obex-data-server paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takın ve dosya paylaşımı yapmaya çalışın. Sorunsuz bir şekilde yapılabildiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">bluez paketi kurulumu sonrası: <P>(Eğer bluetooth aygıtınız var ise bu testi gerçekleştirebilirsiniz.)</P><P>Bluetooth aygıtınızı bilgisayarınıza takınız ve aşağıda bulunan komutun bu aygıtı listelediğini gözlemleyiniz.
 </P><PRE CLASS="verbatim"> list-devices

@@ -105,9 +105,9 @@ clearsilver
 clearsilver-devel
 lemon
 dev86
+colorgcc
 \end{verbatim}
 \item dejagnu paketi kurulumu sonrası:
-
 
 Aşağıda bulunan komutları çalıştırın ve "runtest" konutunun hata döndürmediğini gözlemleyin.
 \begin{verbatim}
@@ -275,6 +275,10 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
  \begin{verbatim}
   kdevelop-devel
  \end{verbatim}
+\item monodevelop paketi kurulumu sonrası:
+
+Kmenu'den uygulamayı açın ve sorunsuz açıldığını gözlemleyin.
+
 \item pisiyap ve kde-servicemenu-pisiyap paketleri kurulumu sonrası:
 
 Kmenuden uygulamayı açın sorunsuz bir şekilde açılabildiğini gözlemleyin.
@@ -453,6 +457,12 @@ programming-tr.pdf dejagnu testini gerçekleştirin.
  php-redland
  php-devel
  php-zip
+\end{verbatim}
+\item cakephp paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde uygulama komut satırını açtığını gözlemleyin.
+\begin{verbatim}
+ cake bake
 \end{verbatim}
 
 \item php-gtk paketi kurulumu sonrası:
@@ -744,7 +754,18 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  python-orbit-devel
  python-Jinja2-docs
  python-sphinx-docs
+ python-SQLObject-docs
 \end{verbatim}
+\item pypolkit paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+ ipython
+ import polkit
+\end{verbatim}
+
+
 \item python-appinfo paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
@@ -1386,7 +1407,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import textile
 \end{verbatim}
 
-\item Turbogears  paketi kurulumu sonrası:
+\item python-turbogears  paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -1751,7 +1772,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \end{verbatim}
 
 
-\item SQLObject  paketi kurulumu sonrası:
+\item python-SQLObject  paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -1936,7 +1957,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \end{verbatim}
 
 
-\item PyX paketi kurulumu sonrası:
+\item python-PyX paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
@@ -2193,10 +2214,20 @@ mono-winfxcore
 mono-zeroconf
 mono-zeroconf-docs
 monodoc-core
+mono-tools
 webkit-sharp
 webkit-sharp-docs
 gecko-sharp
 gecko-sharp-docs
+gnome-desktop-sharp
+gnome-print-sharp
+gnome-sharp-2.24.2-3-p11-x86_64.pisi
+gtksourceview-sharp
+rsvg-sharp
+vte-sharp
+wnck-sharp
+gtk-sharp-devel
+gtk-sharp-docs
 \end{verbatim}
 
 \item boo paketi kurulumu sonrası:
@@ -2244,9 +2275,35 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 programming-tr.pdf mono testini gerçekleştiriniz.
 
 \end{enumerate}
+\subsection{Haskell alt bileşeni}
+\begin{enumerate}
+ \item hugs98 paketi kurulumu sonrası:
+Aşağıda bulunan komutun sorunsuz bir şekilde hugs konsolunu açtığını gözlemleyin.
+\begin{verbatim}
+ hugs
+\end{verbatim}
+
+\end{enumerate}
+
+\subsection{ObjectiveC alt bileşeni}
+\begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+gnustep-make
+\end{verbatim}
+
+\end{enumerate}
 
 
+\subsection{Others}
 \begin{itemize}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+
+\begin{verbatim}
+ R-devel
+ R-docs
+\end{verbatim}
+
 \item ocaml paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırdığını gözlemleyin.
@@ -2279,6 +2336,11 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
  xmlsec1
  xmlsec2-devel
  xmlsec1-docs
+ xylib
+ xylib-devel
+ libxmlpp
+ libxmlpp-devel
+ libxmlpp-docs
 \end{verbatim}
 
 \end{enumerate}

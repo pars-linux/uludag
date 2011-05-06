@@ -86,6 +86,11 @@ Kmenu'den uygulamanın sorunsuz olarak açıldığını gözlemleyin.
 \begin{verbatim}
 ogdi
 proj
+geos
+geos-devel
+geos-docs
+gdal-devel
+gdal
 \end{verbatim}
 \item geotiff-viewer ve libgeotiff paketleri kurulumu sonrası:
 
@@ -156,6 +161,7 @@ CGAL-devel
 CGAL-docs
 geomview-devel
 geomview-docs
+octave-devel
 \end{verbatim}
 
 \item scidavis paketi kurulumu sonası:
@@ -186,7 +192,7 @@ Kmenu'den uygulamanın sorunsuz açıldığını gözlemleyin.
 
 Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
- # octave 
+ octave 
  octave:1> A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
 \end{verbatim}
 
@@ -237,24 +243,34 @@ gfan
 
 \section{Robotics alt Bileşeni}
 \begin{enumerate}
- \item opencv paketi kurulumu sonrası: (kamerası olanlar test edebilecektir.)
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 
-Resim çek butonuna basın sorunsuz bir şekilde ekranınyenilendiğini gözlemleyin
 \begin{verbatim}
- wget http://svn.pardus.org.tr/projeler/facelock/pardus.py
- wget http://svn.pardus.org.tr/projeler/facelock/pardus.png
- python pardus.py
+ opencv
+ opencv-devel
+ opencv-docs
+ player
+ player-devel
 \end{verbatim}
-
 
 \end{enumerate}
 
-\section{Science alt Bileşeni}
+\section{Misc alt Bileşeni}
 \begin{enumerate}
 \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
 cfitsio-devel 
 cfitsio
+givaro
+givaro-devel
+givaro-docs
+\end{verbatim}
+\item pari paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun $2*2$ sonucunu bulduğunu gözlemleyin.
+\begin{verbatim}
+ gp 
+ 2*2
 \end{verbatim}
 
 \end{enumerate}

@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/tex-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/tex-tr.tex tex-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Tex Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Base alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Base alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -54,7 +54,7 @@ texlive-basic paketi kurulumu sonrası:
 texlive-latex paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
  pdflatex test_texlivelatex.tex
  okular test_texlivelatex.pdf
-</PRE></LI><LI CLASS="li-enumerate">texlive-core paketi kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">texlive-core ve texlive-bin, texlive-bin-devel paketleri kurulumu sonrası:
 texlive-latex paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/base/test_texlivelatex.tex
  pdflatex test_texlivelatex.tex
  okular test_texlivelatex.pdf
@@ -140,24 +140,24 @@ latex-beamer kurulumu sonrası:
 </P></LI><LI CLASS="li-enumerate">texlive-science kurulumu sonrası:
 <PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivescience.tex
 </PRE><P>Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild seçeneğini tıklayın ve sorunsuz olarak pdf dosyasının oluşturğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">texlive-genericrecommended kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivegenericrecommended.tex
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivegenericrecommended.tex
 </PRE><P>Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve sırasıyla Alt+2 ve Alt+3 tuşlarına basın ve sorunsuz birşekilde DVI uzantılı bir dosyanın oluştuğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">texlive-pstricks kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivepstricks.tex
+<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivepstricks.tex
 </PRE><P>Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve sırasıyla Alt+2 ve Alt+3 tuşlarına basın ve sorunsuz birşekilde DVI uzantılı bir dosyanın oluştuğunu gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">latex-passivetex ve latex-xmltex kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test-latexpassivetex.fo
- # pdfxmltex test-latexpassivetex.fo
+<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test-latexpassivetex.fo
+  pdfxmltex test-latexpassivetex.fo
 </PRE><P>Yukarıda bulunan komutun düzgün bir şekilde pdf çıktısı ürettiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">texlive-texinfo kurulumu sonrası:<P>Asymptote paketini kurun ve aşağıda bulunan komutları çalıştırın.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.asy
- # asy test_asymptote.asy
- # okular test_asymptote.eps
+</P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.asy
+  asy test_asymptote.asy
+  okular test_asymptote.eps
 </PRE><P>Eps dosyasının sorunsuz bir şekilde üretildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">Aşağıdaki paketler kurulum testine tabidir.
-texlive-genericextra
+<PRE CLASS="verbatim">texlive-genericextra
 texlive-htmlxml
 texlive-context
 texlive-omega
-texlive-psutils
-</LI></OL><!--TOC section Doc alt bileşeni-->
+texlive-psutils 
+</PRE></LI></OL><!--TOC section Doc alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Doc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan dosyalar sadece kurulum testine tabidir.<PRE CLASS="verbatim"> texlive-documentation-bulgarian
  texlive-documentation-chinese
@@ -181,6 +181,7 @@ Aşağıda bulunan dosyalar sadece kurulum testine tabidir.<PRE CLASS="verbatim"
  texlive-documentation-turkish
  texlive-documentation-ukrainian
  texlive-documentation-vietnamese
+ texlive-langextra
 </PRE></LI></OL><!--TOC section Doc alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Doc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.

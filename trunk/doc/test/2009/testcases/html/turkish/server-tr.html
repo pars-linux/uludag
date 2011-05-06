@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/server-tr.tex server-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex server-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -115,6 +115,8 @@ virtuoso-conductor
 virtuoso-doc
 virtuoso-java
 virtuoso-utils
+ctdb
+ctdb-devel
 </PRE></LI><LI CLASS="li-enumerate">memcached paketi kurulumu sonrası:<P>programming-tr.pdf python-memcached testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">postgresql-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">  ipython
   import pgdb </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrası:
@@ -155,9 +157,12 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"
  bind-devel
  bind-libs
  bind-tools
+ samba-devel
+ samba-swat
+ dhcp-devel
 </PRE></LI><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> service ntpd status
-</PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
+</PRE></LI><LI CLASS="li-itemize">dhcp ve dhclient paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
 </P><PRE CLASS="verbatim"> ping 4.2.2.1
 </PRE></LI><LI CLASS="li-itemize">bind paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> dig www.google.com

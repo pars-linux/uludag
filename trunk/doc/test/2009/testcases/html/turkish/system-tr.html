@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/system-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/system-tr.tex system-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">System Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -86,6 +86,26 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  scons
  autoconf
  pkgconfig
+ polkit-devel
+ ncurses-devel
+ ppl
+ ppl-devel
+ dbus-devel
+ expat-devel
+ glib2-devel
+ libX11-devel
+ libXau-devel
+ libXdmcp-devel
+ libcap-devel
+ libpcre-devel
+ libxcb-devel
+ zlib-devel
+ libpcre-devel
+ glib2-devel
+ libusb1-devel
+ pciutils-devel
+ libgudev1-devel
+ libudev-devel
 </PRE></LI><LI CLASS="li-enumerate">automake paketi kurulumu sonrası:<P>Aşağıda bulunan paketlerin sorunsuz derlendiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo pisi it subversion
  2008 için
@@ -109,13 +129,25 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  popt
  libssh2
  dbus-glib 
- libtool-ltdl 
  memtest 
  zlib
  dbus
  pam
  dhcpcd
-</PRE></LI><LI CLASS="li-enumerate">busybox paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test dosyasını sildiğini gözlemleyin.
+ ncurses
+ libX11
+ libXau
+ libXdmcp
+ libcap
+ libpcre
+ libtool-ltdl
+ libxcb
+ libuuid
+ libusb1
+ pciutils
+ libgudev1
+ libudev
+</PRE></LI><LI CLASS="li-enumerate">polkit paketi kurulumu sonrası:<P>programming-tr.pdf pypolkit testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">busybox paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test dosyasını sildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> touch test
  busybox rm test
 </PRE></LI><LI CLASS="li-enumerate">bc paketi kurulumu sonrası:<P>Aşağıda bulunan hatasız bir şekilde sonucu döndürdüğünü gözlemleyin.
@@ -448,6 +480,7 @@ Aşağıda bulunan paketler için:<P>multimedia-tr.pdf gimp-i18n-&lt;lang&gt; te
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Doc alt Bileşeni</H2><!--SEC END --><P>Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </P><PRE CLASS="verbatim"> glibc-doc
  tiff-docs
+ ppl-docs
 </PRE><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->

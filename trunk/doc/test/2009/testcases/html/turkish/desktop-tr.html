@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/desktop-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/desktop-tr.tex desktop-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Masaüstü Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Enlightment alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Enlightment alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -102,7 +102,13 @@ cursor-theme-oxygen-zion
 cursor-theme-oxygen-zion-big
 </PRE><P>Sistem ayarları → Klavye ve Fare → Fare → İmleç teması altında listelendiğini gözlemleyin. İmleç temasını değiştirin ve sorunsuz bir şekilde değiştiğini gözlemleyin.</P></LI></UL><!--TOC section Font alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Font alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
-Orkhun-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Orjhun Brush fontunun ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">terminus-font paketi kurulumu sonrası:<P>Konsole uygulamasını açın, uygulama üzerine sağ tıklayın, geçerli profili düzenle → görünüm → Yazı tipini düzenle seçeneklerini izleyin, ve terminus fontunu seçin ve fontun değiştiğini gözlemleyin.</P></LI><LI CLASS="li-itemize">droid-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Droid fontlarının ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">urw-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve URW fontunun ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">dejavu-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Dejavu fontlarının ekli olduğunu gözlemleyin.
+Aşağıda bulunan paketler sadece kurulum testine tabidir
+<PRE CLASS="verbatim"> freetype-devel
+ fontconfig-devel
+</PRE></LI><LI CLASS="li-itemize">fontconfig ve freetype paketleri kurulumu sonrası: <UL CLASS="itemize"><LI CLASS="li-itemize">
+Bilgisayarınızı yeniden başlatın ve sisteminizde bulunan fontların sorunsuz bir şekilde açıldığını gözlemleyin.
+</LI><LI CLASS="li-itemize">Aşağıda bulunan dosyayı indirin ve üzerine tıklayarak açın, tüm karakterlerin düzgün bir şekilde çıktığını gözlemleyin.<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/vollkorn.otf
+  </PRE></LI></UL></LI><LI CLASS="li-itemize">Orkhun-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Orjhun Brush fontunun ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">terminus-font paketi kurulumu sonrası:<P>Konsole uygulamasını açın, uygulama üzerine sağ tıklayın, geçerli profili düzenle → görünüm → Yazı tipini düzenle seçeneklerini izleyin, ve terminus fontunu seçin ve fontun değiştiğini gözlemleyin.</P></LI><LI CLASS="li-itemize">droid-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Droid fontlarının ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">urw-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve URW fontunun ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">dejavu-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Dejavu fontlarının ekli olduğunu gözlemleyin.
 </P></LI><LI CLASS="li-itemize">fontforge paketi kurulumu sonrası:<P>aquafont paketini kurun, kmenü’den fontforge uygulamasını açın ve /usr/share/fonts/aquafont/aquafont.ttf uzantısını seçin ve listelenen aquafont.ttf dosyası üzerine çift tıklayın ve sorunsuz bir şekilde bu fontun karakterleri ile ilgili bir pencere açıldıpğını gözlemleyin.
 </P></LI><LI CLASS="li-itemize">liberation-fonts paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve LiberationMono, LiberationSans, LiberationSerif fontlarının ekli olduğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">ecofont paketi kurulumu sonrası:<P>Open ofis yazıcı açın ve Sproanq eco sans fontunun ekli olduğunu gözlemleyin.
 </P></LI><LI CLASS="li-itemize">gbfed paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözlemleyin.
@@ -168,13 +174,14 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Gtk</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim">gtk+extra
+gtk+extra-devel
 gtk-doc
 pango-docs
 atk
 gtk2-docs
 gtksourceview
 gtksourceview-docs
-</PRE></LI><LI CLASS="li-enumerate">gtkspell paketi kurulumu sonrası:<P>Pidgin uygulamasından mesaj gönderme penceresini açın ve yanlış türkçe bir kelime girin, yanlış girdiğiniz kelimenin altının kırmızı olarak çizildiğini ve üzerine sağ tıkladığınızdada doğru olabilecek elternatifleri listelediğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">gtkhtml3 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun html editor açtığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">gtk-style-oxygen paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın ve splash temasının düzgün yüklendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">gtkspell paketi kurulumu sonrası:<P>Pidgin uygulamasından mesaj gönderme penceresini açın ve yanlış türkçe bir kelime girin, yanlış girdiğiniz kelimenin altının kırmızı olarak çizildiğini ve üzerine sağ tıkladığınızdada doğru olabilecek elternatifleri listelediğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">gtkhtml3 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun html editor açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> gtkhtml-editor-test
 </PRE></LI><LI CLASS="li-enumerate">QtCurve-Gtk2 paketi kurulumu sonrası:<P>Firefox uygulamasının buton sitilleri ile paket yöneticisinin aynı işe yarayan butonlarının sitil olarak da aynı olduğunu gözlemleyin.</P><P>Örneğin: Yenileme (Refresh) butonu...
 </P></LI><LI CLASS="li-enumerate">libglademm paketi kurulumu sonrası:<P>multimedia-tr.pdf pavucontrol testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">cairo, gtk2-demo paketleri kurulumu sonrası: <P>Aşağıda bulunan komutun demo kodlar için bir gui açtığını gözlemleyin:
