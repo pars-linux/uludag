@@ -27,7 +27,7 @@
  okular test_texlivelatex.pdf
 \end{verbatim}
 
-\item texlive-core paketi kurulumu sonrası:
+\item texlive-core ve texlive-bin, texlive-bin-devel paketleri kurulumu sonrası:
  texlive-latex paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
 
 \begin{verbatim}
@@ -249,21 +249,21 @@ Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve QuickBuild 
 
 \item texlive-genericrecommended kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivegenericrecommended.tex
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivegenericrecommended.tex
 \end{verbatim}
 
 Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve sırasıyla Alt+2 ve Alt+3 tuşlarına basın ve sorunsuz birşekilde DVI uzantılı bir dosyanın oluştuğunu gözlemleyin.
 
 \item texlive-pstricks kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivepstricks.tex
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test_texlivepstricks.tex
 \end{verbatim}
 
 Kile paketini kurun ve yukarıda verilen dosyayı kile ile açın ve sırasıyla Alt+2 ve Alt+3 tuşlarına basın ve sorunsuz birşekilde DVI uzantılı bir dosyanın oluştuğunu gözlemleyin.
 \item  latex-passivetex ve latex-xmltex kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test-latexpassivetex.fo
- # pdfxmltex test-latexpassivetex.fo
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/tex/addon/test-latexpassivetex.fo
+  pdfxmltex test-latexpassivetex.fo
 \end{verbatim}
 
 Yukarıda bulunan komutun düzgün bir şekilde pdf çıktısı ürettiğini gözlemleyin.
@@ -272,19 +272,22 @@ Yukarıda bulunan komutun düzgün bir şekilde pdf çıktısı ürettiğini gö
 
 Asymptote paketini kurun ve aşağıda bulunan komutları çalıştırın.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.asy
- # asy test_asymptote.asy
- # okular test_asymptote.eps
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_asymptote.asy
+  asy test_asymptote.asy
+  okular test_asymptote.eps
 \end{verbatim}
 
 Eps dosyasının sorunsuz bir şekilde üretildiğini gözlemleyin.
 
 \item Aşağıdaki paketler kurulum testine tabidir.
+\begin{verbatim}
 texlive-genericextra
 texlive-htmlxml
 texlive-context
 texlive-omega
-texlive-psutils
+texlive-psutils 
+\end{verbatim}
+
 \end{enumerate}
 \section{Doc alt bileşeni} 
 \begin{enumerate}
@@ -313,6 +316,7 @@ texlive-psutils
  texlive-documentation-turkish
  texlive-documentation-ukrainian
  texlive-documentation-vietnamese
+ texlive-langextra
 \end{verbatim}
 
 \end{enumerate}

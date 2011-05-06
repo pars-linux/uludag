@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/programming-tr.tex programming-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/programming-tr.tex programming-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Programming Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Build alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Build alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -93,6 +93,7 @@ clearsilver
 clearsilver-devel
 lemon
 dev86
+colorgcc
 </PRE></LI><LI CLASS="li-enumerate">dejagnu paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve "runtest" konutunun hata döndürmediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> mkdir dejagnu.test
  cd dejagnu.test
@@ -180,7 +181,7 @@ tig
    svn diff
  </PRE></LI></OL><!--TOC section Environment alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Environment alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">  kdevelop-devel
- </PRE></LI><LI CLASS="li-enumerate">pisiyap ve kde-servicemenu-pisiyap paketleri kurulumu sonrası:<P>Kmenuden uygulamayı açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse-cdt paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-jdt paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pde paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pydev paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Dosya → Yeni → Proje yolunu izleyin pydev proje bölümü listelenmiş olduğunu gözlemleyin.“</P></LI><LI CLASS="li-enumerate">qdevelop paketi kurulumu sonrası:<P>Kmenuden uygulamayı açın, açılabildiğini gözlemleyin</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
+ </PRE></LI><LI CLASS="li-enumerate">monodevelop paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">pisiyap ve kde-servicemenu-pisiyap paketleri kurulumu sonrası:<P>Kmenuden uygulamayı açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse-cdt paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-jdt paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pde paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pydev paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Dosya → Yeni → Proje yolunu izleyin pydev proje bölümü listelenmiş olduğunu gözlemleyin.“</P></LI><LI CLASS="li-enumerate">qdevelop paketi kurulumu sonrası:<P>Kmenuden uygulamayı açın, açılabildiğini gözlemleyin</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/environment/test.py
 </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde bir open office uygulaması açın ve yardım dosyasının ilgili dilde olduğunu gözlemleyin.
 <PRE CLASS="verbatim">eric-i18n-cs
@@ -234,6 +235,8 @@ tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekr
 <PRE CLASS="verbatim"> php-redland
  php-devel
  php-zip
+</PRE></LI><LI CLASS="li-enumerate">cakephp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde uygulama komut satırını açtığını gözlemleyin.
+</P><PRE CLASS="verbatim"> cake bake
 </PRE></LI><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
  php test_phpgtk.phpw
@@ -352,6 +355,9 @@ Class-Accessor.tar.gz
  python-orbit-devel
  python-Jinja2-docs
  python-sphinx-docs
+ python-SQLObject-docs
+</PRE></LI><LI CLASS="li-itemize">pypolkit paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import polkit
 </PRE></LI><LI CLASS="li-itemize">python-appinfo paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
  import appinfo
 </PRE></LI><LI CLASS="li-itemize">pardus-desktop-services paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
@@ -557,7 +563,7 @@ Class-Accessor.tar.gz
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
  import textile
-</PRE></LI><LI CLASS="li-itemize">Turbogears paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</PRE></LI><LI CLASS="li-itemize">python-turbogears paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import turbogears
 </PRE></LI><LI CLASS="li-itemize">TurboGears-mochikit paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -719,7 +725,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </PRE></LI><LI CLASS="li-itemize">cheetah paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import Cheetah
-</PRE></LI><LI CLASS="li-itemize">SQLObject paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</PRE></LI><LI CLASS="li-itemize">python-SQLObject paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import sqlobject
 </PRE></LI><LI CLASS="li-itemize">PyOpenGL paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -791,7 +797,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </PRE></LI><LI CLASS="li-itemize">PyXML paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import xml
-</PRE></LI><LI CLASS="li-itemize">PyX paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+</PRE></LI><LI CLASS="li-itemize">python-PyX paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> ipython
  import pyx
 </PRE></LI><LI CLASS="li-itemize">notify-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -914,10 +920,20 @@ mono-winfxcore
 mono-zeroconf
 mono-zeroconf-docs
 monodoc-core
+mono-tools
 webkit-sharp
 webkit-sharp-docs
 gecko-sharp
 gecko-sharp-docs
+gnome-desktop-sharp
+gnome-print-sharp
+gnome-sharp-2.24.2-3-p11-x86_64.pisi
+gtksourceview-sharp
+rsvg-sharp
+vte-sharp
+wnck-sharp
+gtk-sharp-devel
+gtk-sharp-docs
 </PRE></LI><LI CLASS="li-enumerate">boo paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/
  boo-test.boo
@@ -936,8 +952,20 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
  dotnet/test_mono.cs
  mcs test_mono.cs
  mono test_mono.exe
-</PRE></LI><LI CLASS="li-enumerate">libgdiplus paketi kurulumu sonrası:<P>programming-tr.pdf mono testini gerçekleştiriniz.</P></LI></OL><UL CLASS="itemize"><LI CLASS="li-itemize">
-ocaml paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırdığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">libgdiplus paketi kurulumu sonrası:<P>programming-tr.pdf mono testini gerçekleştiriniz.</P></LI></OL><!--TOC subsection Haskell alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc19">8.11</A>  Haskell alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+hugs98 paketi kurulumu sonrası:
+Aşağıda bulunan komutun sorunsuz bir şekilde hugs konsolunu açtığını gözlemleyin.
+<PRE CLASS="verbatim"> hugs
+</PRE></LI></OL><!--TOC subsection ObjectiveC alt bileşeni-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc20">8.12</A>  ObjectiveC alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">gnustep-make
+</PRE></LI></OL><!--TOC subsection Others-->
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc21">8.13</A>  Others</H3><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> R-devel
+ R-docs
+</PRE></LI><LI CLASS="li-itemize">ocaml paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırdığını gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/ocaml-test.ml 
 ocaml ocaml-test.ml
 </PRE></LI><LI CLASS="li-itemize">R paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve bir grafiğin oluştuğunu gözlemleyin.
@@ -947,10 +975,15 @@ ocaml ocaml-test.ml
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test-r-mathlib.c
  gcc -o test-r-matlib test-r-matlib.c -lm -lRmath
 </PRE></LI></UL><!--TOC subsection Misc alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc19">8.11</A>  Misc alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc22">8.14</A>  Misc alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> xmlsec1
  xmlsec2-devel
  xmlsec1-docs
+ xylib
+ xylib-devel
+ libxmlpp
+ libxmlpp-devel
+ libxmlpp-docs
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->

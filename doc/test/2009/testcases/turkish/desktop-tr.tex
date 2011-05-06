@@ -145,6 +145,22 @@ Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ Fare $\rightarrow$ 
 
 \section{Font alt Bileşeni}
 \begin{itemize}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir
+\begin{verbatim}
+ freetype-devel
+ fontconfig-devel
+\end{verbatim}
+
+\item fontconfig ve freetype paketleri kurulumu sonrası: 
+
+\begin{itemize}
+ \item Bilgisayarınızı yeniden başlatın ve sisteminizde bulunan fontların sorunsuz bir şekilde açıldığını gözlemleyin.
+ \item Aşağıda bulunan dosyayı indirin ve üzerine tıklayarak açın, tüm karakterlerin düzgün bir şekilde çıktığını gözlemleyin.
+
+  \begin{verbatim}
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/vollkorn.otf
+  \end{verbatim}
+\end{itemize}
 \item Orkhun-fonts paketi kurulumu sonrası:
 
 Open ofis yazıcı açın ve Orjhun Brush fontunun ekli olduğunu gözlemleyin.
@@ -341,6 +357,7 @@ Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir:
 \begin{verbatim}
 gtk+extra
+gtk+extra-devel
 gtk-doc
 pango-docs
 atk
@@ -348,10 +365,13 @@ gtk2-docs
 gtksourceview
 gtksourceview-docs
 \end{verbatim}
+\item gtk-style-oxygen paketi kurulumu sonrası:
+
+Bilgisayarınızı yeniden başlatın ve splash temasının düzgün yüklendiğini gözlemleyin.
 
 \item gtkspell paketi kurulumu sonrası:
 
-  Pidgin uygulamasından mesaj gönderme penceresini açın ve yanlış türkçe bir kelime girin, yanlış girdiğiniz kelimenin altının kırmızı olarak çizildiğini ve üzerine sağ tıkladığınızdada doğru olabilecek elternatifleri listelediğini gözlemleyin.
+Pidgin uygulamasından mesaj gönderme penceresini açın ve yanlış türkçe bir kelime girin, yanlış girdiğiniz kelimenin altının kırmızı olarak çizildiğini ve üzerine sağ tıkladığınızdada doğru olabilecek elternatifleri listelediğini gözlemleyin.
 
 \item gtkhtml3 paketi kurulumu sonrası:
 

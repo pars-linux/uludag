@@ -16,6 +16,10 @@
 \maketitle
 \section{Dictionary alt bileşeni}
 \begin{enumerate}
+ \item boncuk paketi kurulumu sonrası:
+
+Kmenu'den uygulamayı açın ve ara bölümüne "elma" yazın, bu sözcüğün sorunsuz bir biçimde ingilizceye çevrildiğini gözlemleyin.
+
 \item goldendict paketi kurulumu sonrası:
 
 Uygulamayı Kmenü'den açın ve bir kaç kelime aratın ve sorunsuz bir şekilde çeviri yaptığını gözlemleyin.
@@ -256,8 +260,12 @@ koffice-l10n-zh_TW
 \begin{verbatim}
  enca
  aqbanking
+ aqbanking-devel
  kmymoney
+ kmymoney-devel
  kmymoney-docs
+ goffice
+ goffice-devel
 \end{verbatim}
 
 \item kchmviewer paketi kurulumu sonrası:
@@ -354,9 +362,9 @@ Sorunsuz bir şekilde açıldığını gözlemleyin.
 
 \item dos2unix paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt
- # dos2unix test_dos2unix.txt deneme1.txt
- # vi deneme1.txt
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt
+  dos2unix test_dos2unix.txt deneme1.txt
+  vi deneme1.txt
 \end{verbatim}
 Text dosyasının sorunsuz bir şekilde dos formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)
 
@@ -453,7 +461,7 @@ Tüm komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 
 \end{enumerate}
-\section{Openoffice alt bileşeni}
+\section{Openoffice ve Libreoffice alt bileşeni}
 \begin{enumerate}
  \item imposter paketi kurulumu sonrası:
 \begin{verbatim}
@@ -533,13 +541,13 @@ Yukarıda linki verilen dosyanın düzgün bir şekilde açıldığını gözlem
  \item sadece kurulum testine tabidir.
 \begin{verbatim}
 openoffice-python
+libreoffice-python
 openoffice-clipart
 \end{verbatim}
 
- \item openoffice-extension-pdfimport paketi kurulumu sonrası.
+ \item openoffice-extension-pdfimport ve  libreoffice-extension-pdfimport paketi kurulumu sonrası.
 \begin{verbatim}
- wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/
-test_openoffice-extension-pdfimport.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-extension-pdfimport.pdf
 \end{verbatim}
 
 \begin{itemize}
@@ -555,7 +563,7 @@ Değişiklikler ile birlikte sorunsuz bir şekilde açıldığını gözlemleyin
 
 \end{itemize}
  
-\item openoffice-extension-presentation-minimizer paketi kurulumu sonrası.
+\item openoffice-extension-presentation-minimizer ve libreoffice-extension-presentation-minimizer paketleri kurulumu sonrası.
 \begin{verbatim}
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 \end{verbatim}
@@ -573,7 +581,7 @@ Düzgün bir şekilde açıldığını gözlemleyin.
 
 \end{itemize}
  
-\item openoffice-extension-presenter-screen paketi kurulumu sonrası.
+\item openoffice-extension-presenter-screen ve libreoffice-extension-presenter-screen paketleri kurulumu sonrası.
 \begin{verbatim}
 wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 \end{verbatim}
@@ -586,7 +594,7 @@ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimp
 F5 tuşuna basın ve bu eklediğiniz notun görüntülenmediğini gözlemleyin.
 
 \end{itemize}
-\item openoffice-extension-report-builder paketi kurulumu sonrası.
+\item openoffice-extension-report-builder ve libreoffice-extension-report-builder paketleri kurulumu sonrası.
 \begin{verbatim}
 wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
 \end{verbatim}
@@ -603,7 +611,7 @@ Sihirbaz kullanarak rapor oluşturu seçin, yeni bir rapor yazmaya çalışın, 
 \end{itemize}
 
 
-\item openoffice-extension-wiki-publisher paketi kurulumu sonrası.
+\item openoffice-extension-wiki-publisher ve libreoffice-extension-wiki-publisher paketleri kurulumu sonrası.
 
 Openoffice Kelime İşlemci'yi açın. Dosya $\rightarrow$ Gönder $\rightarrow$ MediaWiki'ye seçeneğini tıklayın. Wiki sunucusu olarak http://tr.pardus-wiki.org/ adresini ekleyip bağlanmaya çalışın.
 
@@ -620,6 +628,17 @@ openoffice-help-nl
 openoffice-help-pt-BR
 openoffice-help-sv
 openoffice-help-tr
+libreoffice-help-de
+libreoffice-help-en
+libreoffice-help-es
+libreoffice-help-fr
+libreoffice-help-hu
+libreoffice-help-it
+libreoffice-help-nl
+libreoffice-help-pt_BR
+libreoffice-help-ru
+libreoffice-help-sv
+libreoffice-help-tr
 openoffice-langpack-de
 openoffice-langpack-es
 openoffice-langpack-fr
@@ -628,7 +647,17 @@ openoffice-langpack-nl
 openoffice-langpack-pt-BR
 openoffice-langpack-sv
 openoffice-langpack-tr
-
+libreoffice-langpack-de
+libreoffice-langpack-de-extras
+libreoffice-langpack-es
+libreoffice-langpack-fr
+libreoffice-langpack-hu
+libreoffice-langpack-it
+libreoffice-langpack-nl
+libreoffice-langpack-pt_BR
+libreoffice-langpack-ru
+libreoffice-langpack-sv
+libreoffice-langpack-tr
 \end{verbatim}
 Her paket grubu için;
 
@@ -638,9 +667,9 @@ rm -rf .openoffice.org/ ; pisi it openoffice-langpack-x ; pisi it glibc-locales-
 
 Yukarıda bulunan testleri yapınız ve uygulamanın ilgili dilde açıldığını gözlemleyiniz.
 
-\item openoffice-kde paketi kurulumu sonrası:
+\item openoffice-kde ve libreoffice-kde paketi kurulumu sonrası:
 
-Dolphin uygulmasını açın solda bulunan Konumlar bölümünde sağ tıklayıp, yeni ekle deyin. Bir simge seçin ikonunun üzerine tıklayın ve diğer simgeleri seçin. Ara bölümüne oo yazın.
+Dolphin uygulmasını açın solda bulunan Konumlar bölümünde sağ tıklayıp, yeni ekle deyin. Bir simge seçin ikonunun üzerine tıklayın ve diğer simgeleri seçin. Ara bölümüne "libre" (libreoffice için) veya "oo" (openoffice için) yazın.
 
 Aşağıda çıkan ikon penceresinde openoffice uygulamaları ile ilgili ikonların bulunduğunu gözlemleyin.
 
@@ -662,6 +691,12 @@ Yukarıda bulunan dosyayı açın ve Araçlar $\rightarrow$ İmla denetimi ve Di
 \begin{verbatim}
  ghostscript-devel
  ghostscript-docs
+ poppler-cpp
+ poppler-cpp-devel
+ poppler-devel
+ poppler-glib-devel
+ poppler-qt-devel
+ poppler-utils
 \end{verbatim}
 
 \item poppler-glib paketi kurulumu sonrası:
@@ -727,10 +762,10 @@ Yukarıda bulunan komutların sorunsuz bir şekilde uygun çıktıları üretti�
 \item hunspell paketi kurulumu sonrası:
 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
- # sudo pisi it hunspell-dict-en
- # hunspell -d en_US -l hunspell-dict-en.txt
- # hunspell -G -d en_US -l hunspell-dict-en.txt
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
+  sudo pisi it hunspell-dict-en
+  hunspell -d en_US -l hunspell-dict-en.txt
+  hunspell -G -d en_US -l hunspell-dict-en.txt
 \end{verbatim}
 Üçüncü komutun yanlış olan kelimeyi, dördüncü komutun ise düzgün olan kelimeyi bulduğunu gözlemleyin.
 
@@ -748,15 +783,15 @@ aspell-sv
 
 Aşağıdaki ikinci komutu kullanarak kurmuş olduğunuz sözlüğü listeleyin, daha sonra üçüncü komut ile bu sözlüğü kullanarak dosya içerisinde bulunan kelimenin ilgili dildeki karşılığını bulabildiğini gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/spellcheck/test_aspell
-# aspell dicts
-# aspell -l <ilgili listelenen sözlük> -c test_aspell
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/spellcheck/test_aspell
+ aspell dicts
+ aspell -l <ilgili listelenen sözlük> -c test_aspell
 \end{verbatim}
 \item enchant paleti kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
- # sudo pisi it hunspell-dict-en
- # enchant -d en_US ct -a
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/dictionary/hunspell-dict-en.txt
+  sudo pisi it hunspell-dict-en
+  enchant -d en_US ct -a
 \end{verbatim}
 Enchant komutunun yanlış olan sözcük için düzgün bir alternatif ürettiğini gözlemleyin.
 

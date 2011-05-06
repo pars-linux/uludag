@@ -16,6 +16,12 @@
 \maketitle
 \section{Filter alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ iptables-devel
+\end{verbatim}
+
 \item sabishape paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -198,6 +204,9 @@ gift-gnutella
 gift-openft
 giftcurs
 \end{verbatim}
+\item libtorrent paketi kurulumu sonrası:
+
+ qbittorrent paketinş kurun ve Kmenu'den uygulamanın sorunsuz çalıştığını gözlemeyin.
 
 \item ktorrent paketi kurulumu sonrası:
 
@@ -251,6 +260,8 @@ Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indi
  finch-devel
  libpurple
  libpurple-devel
+ sofia-sip
+ sofia-sip-devel
 \end{verbatim}
 \item finch paketi kurulumu sonrası:
 
@@ -265,7 +276,7 @@ Kmenu'den uygulamayı açın, eğer msn mail adresiniz var ise bu adresiniz ile 
 
 \item weechat paketi kurulumu sonrası:
 
-Konsole'a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzünğn açıldığını gözlemleyin.
+Konsole'a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzün açıldığını gözlemleyin.
 
 \item kvirc paketi kurulumu sonrası:
 
@@ -371,6 +382,13 @@ Bu dosyayı indirin ve indirme penceresinin düzgün bir şekilde açıldığın
  smbldap-tools
  cadaver
 \end{verbatim}
+\item rsync paketi kurulumu sonrası:
+Servis yöneticisinden rsync servisini başlatın, aşağıda bulunan komut ile başlamış olduğunu gözlemeyin.
+
+\begin{verbatim}
+ service rsync status
+\end{verbatim}
+
 
 \item smb4k paketi kurulumu sonrası.
 
@@ -407,6 +425,13 @@ Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut
 
 \section{Mail alt Bileşeni}
 \begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ msmtp
+ sylpheed-devel
+ sylpheed-docs
+\end{verbatim}
+
  \item thunderbird ve sylpheed paketleri kurulumu sonrası:
 \begin{itemize}
 \item Bir e-posta hesabı oluşturuyoruz.
@@ -415,6 +440,7 @@ Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut
 \item Filtre oluşturabildiğimizi gözlemliyoruz.
 \item Eğer daha önce thunderbird kullanıyor isek, ev dizini altında .thunderbird dizininin silinmediğini gözlemliyoruz.
 \end{itemize}
+
 \item pyzor paketi kurulumu sonrası:
 
 (Warninglari önemsemeyiniz.)
@@ -525,6 +551,13 @@ cd misc
 
 \section{Connection alt Bileşeni}
 \begin{enumerate}
+\item tor paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ tor 
+\end{verbatim}
+
 \item netcf paketi kurulumu sonrası:
 
  "ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.
@@ -621,7 +654,15 @@ libssh-docs
 ortp
 ortp-devel
 ortp-docs
+enet
+enet-devel
+
+gwenhywfar-devel
 \end{verbatim}
+
+\item gwenhywfar paketi kurulumu sonrası:
+
+kmymoney uygulamasını kurun ve Kmenu'den açın ve sorunsuz olarak açıldığını gözlemeyin.
 
 \end{enumerate}
 

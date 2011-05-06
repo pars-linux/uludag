@@ -46,11 +46,12 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea testcases/turkish/network-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/network-tr.tex network-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Network Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Filter alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Filter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-sabishape paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> iptables-devel
+</PRE></LI><LI CLASS="li-enumerate">sabishape paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> su -
  sabishape start
  sabishape stop
@@ -66,7 +67,25 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> aircrack-ng
  hydra
  ncrack
- 
+ avahi-autoipd
+ avahi-compat-howl
+ avahi-compat-howl-devel
+ avahi-compat-libdns_sd
+ avahi-compat-libdns_sd-devel
+ avahi-devel
+ avahi-dnsconfd
+ avahi-glib
+ avahi-glib-devel
+ avahi-libs
+ avahi-qt
+ avahi-qt-devel
+ avahi-sharp
+ avahi-tools
+ avahi-ui
+ avahi-ui-devel
+ avahi-ui-sharp
+ avahi-ui-sharp-devel
+ avahi-ui-tools
 </PRE></LI><LI CLASS="li-enumerate">libsmi paketi kurulumu sonrası:<P>network-tr.pdf wireshark testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">zenmap paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz bi şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">nikto paketi kurulumu sonrası:<P>Aşağıda bulunan komutun hata vermeden çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">nikto -h 192.168.0.1 -p 443 -ssl 
 </PRE></LI><LI CLASS="li-enumerate">avahi paketi kurulumu sonrası:<P>hardware-tr.pdf cups testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">nmap paketi kurulumu sonrası:<P>Aşağıda bulunan komutun verilen adresleri taradığını gözlemleyin.
@@ -74,7 +93,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 </PRE></LI><LI CLASS="li-enumerate">whois paketi kurulumu sonrası:
 Aşağıda bulunan komutun www.google.com adresinin tüm etki alanlarının listelendiğini gözlemleyin.
 <PRE CLASS="verbatim"> whois www.google.com
-</PRE></LI><LI CLASS="li-enumerate">bind-tools paketi kurulumu sonrası:<PRE CLASS="verbatim"># dig www.google.com
+</PRE></LI><LI CLASS="li-enumerate">bind-tools paketi kurulumu sonrası:<PRE CLASS="verbatim"> dig www.google.com
 </PRE><P>Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">netcat paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve komutun sorunsuz bir şekilde ilgili portu dinlediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> nc -l 3333 
 </PRE></LI><LI CLASS="li-enumerate">rrdtool paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
@@ -104,7 +123,7 @@ gift-fasttrack
 gift-gnutella
 gift-openft
 giftcurs
-</PRE></LI><LI CLASS="li-enumerate">ktorrent paketi kurulumu sonrası:<P>Aşağıda bulunan bağlantıyı Firefox bağlantı bölümüne kopyalayın ve ENTER’a basın. Ktorrent uygulamasının açıldığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">libtorrent paketi kurulumu sonrası:<P>qbittorrent paketinş kurun ve Kmenu’den uygulamanın sorunsuz çalıştığını gözlemeyin.</P></LI><LI CLASS="li-enumerate">ktorrent paketi kurulumu sonrası:<P>Aşağıda bulunan bağlantıyı Firefox bağlantı bölümüne kopyalayın ve ENTER’a basın. Ktorrent uygulamasının açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> http://www.torrentdownloads.net/download/879161/Pardus+2009+International+iso
 </PRE></LI><LI CLASS="li-enumerate">linuxdcpp paketi kurulumu sonrası:
 Tercihler bölümünden bir rumuz giriniz. <P>Uygulamayı açın kullanıcısı fazla olan public hublardan birine bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.
@@ -115,12 +134,20 @@ wget paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştı
 </PRE></LI><LI CLASS="li-enumerate">aria2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun boot.iso’yu sorunsuz bir şekilde indirdiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> aria2c http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 </PRE></LI><LI CLASS="li-enumerate">youtube-dl paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indirildiğini gözlemleyin.
-</P><PRE CLASS="verbatim"># http://www.youtube.com/watch?v=iLNngHQ_lj0
+</P><PRE CLASS="verbatim"> youtube-dl http://www.youtube.com/watch?v=iLNngHQ_lj0
 </PRE></LI></OL><!--TOC section Chat alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> telepathy-mission-control
  amsn-plugins
  konversation-docs 
-</PRE></LI><LI CLASS="li-enumerate">weechat paketi kurulumu sonrası:<P>Konsole’a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzünğn açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kvirc paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlat butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
+ chokoq-devel
+ finch-devel
+ libpurple
+ libpurple-devel
+ sofia-sip
+ sofia-sip-devel
+</PRE></LI><LI CLASS="li-enumerate">finch paketi kurulumu sonrası:<P>Konsoldan aşağıda bulunan komuıtu çalıştırın ve sorunsuz çalışabildiğini gözlemleyin.
+</P><PRE CLASS="verbatim"> finch
+</PRE></LI><LI CLASS="li-enumerate">kmess paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın, eğer msn mail adresiniz var ise bu adresiniz ile bağlanmayı deneyin. Bağlanabildğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">weechat paketi kurulumu sonrası:<P>Konsole’a "weechat" komutunu yazın ve sorunsuz bir şekilde chat arayüzün açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kvirc paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlat butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
 </P><PRE CLASS="verbatim"> su -
  vi /etc/xinetd.d/bitlbee
 </PRE><P>Konversation uygulamasını çalıştırın, Dosya → Çabuk bağlan yolunu izleyerek, Sunucu bilgisayar kısmına "localhost" yazın ve "Bağlan" butonuna basın. Uygulamanın alt bölümünde bulunan kannallarda "bitlbee" kanalının açılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">skype paketi kurulumu sonrası:<P>Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
@@ -135,9 +162,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  </PRE></LI><LI CLASS="li-enumerate">bilbo paketi kurulumu sonrası:<P>Uygulamayı menüden açın ve yeni bir günlük başlığı ve konusu girin ve local olarak kaydedin. </P><P>Eğer bir bloğunuz var ise Blog → Blog ekle kısmından bloğunuzu ekleyip hazırladığınız bloğu gönderebildiğinizi gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">firefox, rekonq, chromium-browser veya arora paketleri kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
-Aşağıda bulunan sayfanın ilgili butonlarına basıldığında sorunsuz bir şekilde çalıştığını gözlemleyin.
-	<PRE CLASS="verbatim">  http://www.croczilla.com/~alex/old-site/dom2.xml
- </PRE></LI><LI CLASS="li-itemize">(Firefox için)Home dizininiz altında bulunan .firefox dizininin baştan oluşturulmadığını gözlemleyin.
+(Firefox için)Home dizininiz altında bulunan .firefox dizininin baştan oluşturulmadığını gözlemleyin.
 	
 	Bookmarklarınızın kaybolmadığını gözlemleyin.
 	
@@ -148,6 +173,9 @@ Aşağıda bulunan sayfanın ilgili butonlarına basıldığında sorunsuz bir �
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Share alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> smbldap-tools
+ cadaver
+</PRE></LI><LI CLASS="li-enumerate">rsync paketi kurulumu sonrası:
+Servis yöneticisinden rsync servisini başlatın, aşağıda bulunan komut ile başlamış olduğunu gözlemeyin.<PRE CLASS="verbatim"> service rsync status
 </PRE></LI><LI CLASS="li-enumerate">smb4k paketi kurulumu sonrası.<P>Uygulamanın sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI></OL><!--TOC section Monitor alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Monitor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 knemo paketi kurulumu sonrası:<P>Uygulamayı Kmenü’den açın ve sistem çekmesine uygulamanın eklendiğini gözlemleyin. 
@@ -158,15 +186,18 @@ knemo paketi kurulumu sonrası:<P>Uygulamayı Kmenü’den açın ve sistem çek
 	Wireshark uygulamasını açın, interface listesinden eth0 seçin ve bu interface ile ilgili paketleri listelendiğini gözlemleyin.
 </LI></OL><!--TOC section Mail alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc9">9</A>  Mail alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-thunderbird ve sylpheed paketleri kurulumu sonrası:
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim"> msmtp
+ sylpheed-devel
+ sylpheed-docs
+</PRE></LI><LI CLASS="li-enumerate">thunderbird ve sylpheed paketleri kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bir e-posta hesabı oluşturuyoruz.
 </LI><LI CLASS="li-itemize">Mail alabildiğimizi gözlemliyoruz.
 </LI><LI CLASS="li-itemize">Mail gönderebildiğimizi gözlemliyoruz.
 </LI><LI CLASS="li-itemize">Filtre oluşturabildiğimizi gözlemliyoruz.
 </LI><LI CLASS="li-itemize">Eğer daha önce thunderbird kullanıyor isek, ev dizini altında .thunderbird dizininin silinmediğini gözlemliyoruz.
-</LI></UL>
-</LI><LI CLASS="li-enumerate">pyzor paketi kurulumu sonrası:<P>(Warninglari önemsemeyiniz.)</P><P>Aşağıda bulunan komutun "public.pyzor.org:24441 (200, OK)" olarak döndüğünü gözlemleyin.
+</LI></UL></LI><LI CLASS="li-enumerate">pyzor paketi kurulumu sonrası:<P>(Warninglari önemsemeyiniz.)</P><P>Aşağıda bulunan komutun "public.pyzor.org:24441 (200, OK)" olarak döndüğünü gözlemleyin.
 </P><PRE CLASS="verbatim"> pyzor ping
 </PRE></LI><LI CLASS="li-enumerate">spamassassin, spamd, bogofilter paketleri kurulumu sonrası:
 <OL CLASS="enumerate" type=a><LI CLASS="li-enumerate">
@@ -205,8 +236,7 @@ Firefox → Düzen → Seçenekler → Eklentileri Yönet → Yan Uygulamalar b�
 <PRE CLASS="verbatim">  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/  
   </PRE></LI></UL>
 </LI></OL><!--TOC section Ftp alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Ftp alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-netkit-ftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Ftp alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">gftp paketi kurulumu sonrası:<P>Kmenu’den gftp uygulamasını açın ve sorunsuz açıldığını gözlemeyin.</P></LI><LI CLASS="li-enumerate">netkit-ftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
 </P><PRE CLASS="verbatim"> ftp ftp.waytec.com
 </PRE></LI><LI CLASS="li-enumerate">filezilla paketi kurulumu sonrası:<P>Uygulamayı açın, sunucu kısmına "ftp.pardus.org.tr" yazın ve "Hızlı bağlan" butonuna basın. "Uzaktaki site" penceresinde "ftp.pardus.org.tr" altında bulunan dizinlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lftp paketi kurulumu sonrası:
 <PRE CLASS="verbatim">  lftp http://ftp.pardus.org.tr/pub/
@@ -219,7 +249,9 @@ ls
 cd misc
 </PRE></LI></OL><!--TOC section Connection alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc12">12</A>  Connection alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-netcf paketi kurulumu sonrası:<P>"ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rfkill paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
+tor paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> tor 
+</PRE></LI><LI CLASS="li-enumerate">netcf paketi kurulumu sonrası:<P>"ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rfkill paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> frkill list
 </PRE></LI><LI CLASS="li-enumerate">kvpnc paketi kurulumu sonrası:<P>Kmenüden uygulamanın düzgün çalıştığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">wireless-regdb paketi kurulumu sonrası:<P>networ-tr.pdf crda testini gerçekleştirin.
@@ -238,7 +270,29 @@ efax-gtk paketi kurulumu sonrası:<P>Kmenu’den efax-gtk uygulamasını açın 
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">italc-client
 italc-master
 libitalc
-</PRE></LI></OL><!--CUT END -->
+rdesktop
+</PRE></LI></OL><!--TOC section RSS alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc15">15</A>  RSS alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+canto paketi kurulumu sonrası<P>Aşağıda bulunan komutun ekli olan rss’leri listelediğni gözlemleyin:</P><PRE CLASS="verbatim">canto
+</PRE></LI></OL><!--TOC section VOIP alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc16">16</A>  VOIP alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan komutun ekli olan rss’leri listelediğni gözlemleyin:<PRE CLASS="verbatim">linphone-devel
+mediastreamer2
+mediastreamer2-devel
+mediastreamer2-docs
+</PRE></LI><LI CLASS="li-enumerate">linphone paketi krulumu sonrası:<P>Kmenuden uygulamasının sorunsuz çalıştığını gözlemleyin.</P></LI></OL><!--TOC section Misc alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc17">17</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">libssh
+libssh-devel
+libssh-docs
+ortp
+ortp-devel
+ortp-docs
+enet
+enet-devel
+
+gwenhywfar-devel
+</PRE></LI><LI CLASS="li-enumerate">gwenhywfar paketi kurulumu sonrası:<P>kmymoney uygulamasını kurun ve Kmenu’den açın ve sorunsuz olarak açıldığını gözlemeyin.</P></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
 <!--FOOTER-->

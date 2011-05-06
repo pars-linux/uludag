@@ -74,6 +74,10 @@ foomatic-db-engine
 foomatic-db-hpijs
 foomatic-filters
 hplip-doc
+cups-devel
+cups-php
+system-config-printer
+system-config-printer-gtk
 \end{verbatim}
 \item epson-alc1100 paketi kurulumu sonrası:
 
@@ -98,6 +102,8 @@ mozilla-opensc-signer
 openct
 opensc
 pcsc-lite
+pcsc-lite-devel
+pcsc-tools
 \end{verbatim}
 
 
@@ -105,6 +111,13 @@ pcsc-lite
 
 \section{Info alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+hal-devel
+hal-docs
+hal-libs
+media-player-info
+\end{verbatim}
 
 \item dmidecode paketi kurulumu sonrası:
 
@@ -127,14 +140,14 @@ Profilinizi paylaşmak için bölümünden, donanımınıza ait linki kopyalayı
  kaptan
 \end{verbatim}
 
- \item  hal-info paketi kurulumu sonrası:
+ \item  hal-info ve hal paketleri kurulumu sonrası:
 Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.
 
  \item  x86info paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun x86 mimarisi ile oluşturulmuş cpu'ları listelediğini gözlemleyin.
 \begin{verbatim}
- # x86info
+  x86info
 \end{verbatim}
 
 
@@ -188,6 +201,12 @@ Aşağıda bulunan komutunun voltaj ve cpu fanı gibi bilgileri hatasız bir şe
 
 \section{Scanner alt Bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+sane-backends-devel
+sane-backends-docs
+\end{verbatim}
+
 \item sane-backends paketi kurulumu sonrası:
 
 Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
@@ -366,6 +385,12 @@ Eğer toshiba dizüstü bilgisayarınız var ise LCD parlaklığı, ses ve fan g
   obexd
   bluez-compat
   cwiid-devel
+  bluedevil
+  bluedevil-devel
+  bluez-libs
+  bluez-libs-devel
+  libbluedevil
+  libbluedevil-devel
 \end{verbatim}
 
  \item obex-data-server paketi kurulumu sonrası: 
