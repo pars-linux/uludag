@@ -1,6 +1,12 @@
 Disk Manager
 ------------
 
+.. automodule:: main
+
+.. autoclass:: MainWidget
+   :members:
+
+
 You do configure how your disk partitions will be initialized at system startup with **Disk Manager**. Disks are integrated into system's file system with this configuration. So that you do not have to mount your disks manually again and again. Disk Manager also allows you to mount or unmount your disk partitions.
 
 
