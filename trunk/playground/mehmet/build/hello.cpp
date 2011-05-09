@@ -8,6 +8,6 @@ void print_hello(){
     cout << "Hello Bot!";
     cout << "this must fail";
     cout << "yazmak";
-    cout << "Metin was here for testing";
+    cout << "Metin was here for testing"
 }
 
