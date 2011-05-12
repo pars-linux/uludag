@@ -18,8 +18,10 @@ for project in "${projects[@]}"
 do
     if [ ! -d $project ]
     then
+        echo "yok"
         cd $rootDir
         svn co $baseUrl$project
+
     fi
 
     if [ -d $project ]
@@ -28,6 +30,8 @@ do
         cd $project$projectSubDir
         python setup.py build
         cd doc
+        cp $rootDir/templates/* *_templates
+        cp $rootDir/static/* *_static
         make html
         # is it enough to move just html dir?
         echo $moveDir
