@@ -85,8 +85,12 @@ class CLI(pisi.ui.UI):
     def close(self):
         pisi.util.xterm_title_reset()
 
-    def format(self, msg, msgtype, colored=True, html=False):
+    def format(self, msg, msgtype, colored=True, html=False, noln=False):
         result = ""
+
+        # Do not use newline is noln is True
+        newline = "" if noln else "\n"
+
         if html:
             # HTML Output
             result = "<span style=\"color: %s\">%s</span><br />\n" % (self.outtypes.get(msgtype, ['',  '', '#000000'])[2], msg)
@@ -95,15 +99,15 @@ class CLI(pisi.ui.UI):
                 if msgtype == 'Display':
                     result = msg
                 elif colored and self.outtypes.has_key(msgtype):
-                    result = pisi.util.colorize(msg, self.outtypes[msgtype][0]) + '\n'
+                    result = pisi.util.colorize(msg, self.outtypes[msgtype][0]) + newline
                 else:
-                    result = msg + '\n'
+                    result = msg + newline
             else:
-                result = msgtype + ': ' + msg + '\n'
+                result = msgtype + ': ' + msg + newline
 
         return result
 
-    def output(self, msg, msgtype=None, err=False, verbose=False, only_on_screen=False):
+    def output(self, msg, msgtype=None, err=False, verbose=False, only_on_screen=False, noln=False):
         if (verbose and self.show_verbose) or (not verbose):
             if type(msg)==type(unicode()):
                 msg = msg.encode('utf-8')
@@ -113,7 +117,7 @@ class CLI(pisi.ui.UI):
                 out = sys.stdout
 
             # Output to screen
-            out.write(self.format(msg, msgtype))
+            out.write(self.format(msg, msgtype, noln=noln))
             out.flush()
 
             if not only_on_screen:
@@ -122,7 +126,7 @@ class CLI(pisi.ui.UI):
                 self.output_file.flush()
 
     def info(self, msg, verbose=False, noln=False):
-        self.output(unicode(msg), 'Info', verbose=verbose)
+        self.output(unicode(msg), 'Info', verbose=verbose, noln=noln)
 
     def warning(self, msg):
         msg = unicode(msg)
