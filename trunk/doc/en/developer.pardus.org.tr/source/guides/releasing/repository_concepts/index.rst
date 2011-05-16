@@ -12,4 +12,5 @@ software repository.
    sourcecode_repository.rst
    software_repository.rst
    subversion_usage.rst
-   subversion_rules.rst
+   version_control_system_rules.rst
+   long_term_support_release_plan.rst
