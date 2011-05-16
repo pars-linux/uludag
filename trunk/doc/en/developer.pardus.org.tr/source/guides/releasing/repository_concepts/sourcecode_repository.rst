@@ -106,9 +106,9 @@ includes distribution folders which reached their `end of life`_.
 Core Projects Source Repository
 ===============================
 
-There are two kind of source repositories; subversion and git based. Fow now,
-git repository is using for testting. Uludag repository, core project source
-repository, is based on subversion.
+There are two kind of source repositories; subversion and git based. For now,
+git repository is using for testing. Uludag repository, `core project source
+repository`_, is based on subversion.
 
 Subversion Repository
 ---------------------
@@ -142,8 +142,8 @@ project.
 Git Repository
 --------------
 
-Unlike uludag repository, which all projects comes together in one path, every
-project has own git repository. For example: 
+Unlike `core projects source repository`_, which all projects comes together in
+one path, every project has own git repository. For example: 
 
 `https://git.pardus.org.tr/uludag/package-manager.git`_
 
@@ -157,7 +157,7 @@ git area, like:
 `https://git.pardus.org.tr/gokmen/package-manager.git`_
 
 Tagging is easier on git for its own properties. Also code review process can
-be handled by redmine code review plug in.
+be handled with code review plug in on `https://tracker.pardus.org.tr`_.
 
 External Projects Source Repository
 ===================================
