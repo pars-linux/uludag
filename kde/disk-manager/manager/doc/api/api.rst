@@ -1,3 +1,5 @@
+.. _doc-index:
+
 TITLE ISTIYOR
 =============
 
