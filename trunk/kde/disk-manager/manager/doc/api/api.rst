@@ -3,7 +3,7 @@ TITLE ISTIYOR
 
 Apidoc comes here
 
-links can come here
+Links can come here
 
 .. toctree::
    :maxdepth: 2
