@@ -27,10 +27,10 @@ After feature freeze some needed expectations:
 
 #. Should implement something testable
 #. Should have the the feature significantly complete
-#. Should submit the fixed bugs with `svn commit hooks`_
+#. Should submit the fixed bugs with `version control systeem commit hooks`_
 #. Can not continue to add new enhancements
 #. Can not make the feature default if it is not already default before freeze
 #. Can not make changes that require other softwares to change.
 
 .. _feature request and tracking: http://developer.pardus.org.tr/guides/newfeature/index.html
-.. _svn commit hooks: http://developer.pardus.org.tr/guides/releasing/repository_concepts/subversion_rules.html#enter-the-bug-number-when-solving-a-bug-from-the-bug-tracking-system
+.. _version control system commit hooks: http://developer.pardus.org.tr/guides/releasing/repository_concepts/version_control_system_rules.html#enter-the-bug-number-when-solving-a-bug-from-the-bug-tracking-system

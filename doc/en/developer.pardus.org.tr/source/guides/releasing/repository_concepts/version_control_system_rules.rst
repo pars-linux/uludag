@@ -1,4 +1,4 @@
-.. _subversion-rules:
+.. _version-control-system-rules:
 
 Rules for a correct version control system usage
 ================================================
@@ -34,11 +34,11 @@ below:
 
 #. Do not commit a non-running code to the repository,
 #. Always update your repository before you commit by means of *svn update* or
-*git pull* in order to get the last changes. Be sure that the changes you made
-do not conflict with the others,
+   *git pull* in order to get the last changes. Be sure that the changes you made
+   do not conflict with the others,
 #. Pay attention to what you commit. To make sure of this, always control the
-changes you are about to commit by means of svn/git diff command before
-commitment,
+   changes you are about to commit by means of svn/git diff command before
+   commitment,
 #. Always test the changes you made. Even better, test them twice.
 
 Write descriptive commit log messages
@@ -66,14 +66,14 @@ to the application at a particular time and might want to work on fixing the
 known issues. Its expected that the change you make is coherent with this rule.
 
 If you are not sure of the coherency of the change you made with the plan, you
-have to refer the related e-mail lists or the main developer.
+have to refer the `related e-mail lists`_ or the main developer.
 
 Changes affecting other components
 ----------------------------------
 
 If you made a change affecting more than one component, inform all developers
 about the change. In order to ensure all developers know about the major update
-you made, always send an informative message to the related e-mail list.
+you made, always send an informative message to the `related e-mail lists`_.
 
 Take responsibility for the changes you made
 --------------------------------------------
@@ -90,6 +90,8 @@ that your changes are not violating those rules.
 Enter the bug number when solving a bug from the bug tracking system
 --------------------------------------------------------------------
 
+This part now is only for for svn, it will be developed for git:
+
 If the update you make is solving a reported bug, in order to synchronize the
 bug tracking system with the updates in the repository, notify the bug you
 solved.
@@ -103,7 +105,7 @@ If the svn/git commit message includes the below information your changes on
 the source code, your message will be added as a comment to the bug report and
 the bug status changed as RESOLVED/FIXED::
 
-        BUG:FIXED:<Bug ID>
+    BUG:FIXED:<Bug ID>
 
 
 Update the files for which you are responsible
@@ -112,7 +114,7 @@ Update the files for which you are responsible
 Update only the files which are in your responsibility. If you find a bug in
 files which is in another developer's responsibility, first, discuss the
 situation either by directly contacting the responsible developer or by asking
-the other developers in e-mail lists and only after doing so make an attemp to
+the other developers in `related e-mail lists`_ and only after doing so make an attemp to
 update the repository. If the responsible developer does not accept the changes
 you made, behave respectfully.
 
@@ -138,3 +140,4 @@ Resources
 
 * `Commit Messages <http://who-t.blogspot.com/2009/12/on-commit-messages.html>`_
 
+.. _related e-mail lists: http://developer.pardus.org.tr/guides/communication/mailing_lists.html
