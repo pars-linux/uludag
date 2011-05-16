@@ -111,6 +111,24 @@
             <icon>goodbye</icon>
             <_help>User accounts are successfully configured. Click Next to proceed. One note: You remember your password, don&apos;t you?</_help>
         </screen>
+        <screen>
+            <name>goodbye3</name>
+            <_title>All done!</_title>
+            <icon>goodbye</icon>
+            <_help>You have successfully rescue your system. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies).</_help>
+        </screen>
+        <screen>
+            <name>rescue</name>
+            <_title>Rescue System</_title>
+            <icon>media-optical-small</icon>
+            <_help>You can reinstall your boot loader or you recover any user password.</_help>
+        </screen>
+        <screen>
+            <name>passwordRescue</name>
+            <_title>Reset forgotten password</_title>
+            <icon>media-optical-small</icon>
+            <_help>You can recover your password.</_help>
+        </screen>
     </screens>
     <slideshows>
         <slideshow>
