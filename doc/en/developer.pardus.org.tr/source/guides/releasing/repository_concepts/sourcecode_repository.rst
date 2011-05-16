@@ -3,7 +3,7 @@
 Source Code Repository
 ~~~~~~~~~~~~~~~~~~~~~~
 
-:Author: Semen Cirit
+:Author: Semen Cirit, Çağlar Kilimci
 :Date: |today|
 :Version: 0.2
 
@@ -106,6 +106,13 @@ includes distribution folders which reached their `end of life`_.
 Core Projects Source Repository
 ===============================
 
+There are two kind of source repositories; subversion and git based. Fow now,
+git repository is using for testting. Uludag repository, core project source
+repository, is based on subversion.
+
+Subversion Repository
+---------------------
+
 `core projects source repository`_ includes the projects which are included in at
 least one Pardus distribution.
 
@@ -115,22 +122,42 @@ repository.
 This repository use general subversion branch maintainance as mentioned above:
 
 trunk Folder
-------------
+^^^^^^^^^^^^
 
 This `trunk`_ folder includes the maintained projects, scripts, and documents of Pardus
 distribution.
 
 branches Folder
----------------
+^^^^^^^^^^^^^^^
 
 Some projects need branches in order to create development lines for multiple
 versions, therefore these projects can be branched under this `branches`_.
 
 tags Folder
------------
+^^^^^^^^^^^
 
 `tags folder`_ is used for unmaintained projects or unmaintained versions of a
 project.
+
+Git Repository
+--------------
+
+Unlike uludag repository, which all projects comes together in one path, every
+project has own git repository. For example: 
+
+`https://git.pardus.org.tr/uludag/package-manager.git`_
+
+Responsibility of repository is responsibility of project. The merge requests
+are applied by project leader.
+
+We do not need extra playground repositories because every developer have own
+git area, like:
+
+`https://git.pardus.org.tr/gokmen`_
+`https://git.pardus.org.tr/gokmen/package-manager.git`_
+
+Tagging is easier on git for its own properties. Also code review process can
+be handled by redmine code review plug in.
 
 External Projects Source Repository
 ===================================
