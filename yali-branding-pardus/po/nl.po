@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-25 08:02+0000\n"
+"POT-Creation-Date: 2011-05-16 15:46+0300\n"
 "PO-Revision-Date: 2011-04-25 10:25+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -416,26 +416,34 @@ msgid "Partition your disk manually"
 msgstr "Schijf handmatig partitioneren"
 
 #: ../release.xml.in.h:34
+msgid "Rescue System"
+msgstr ""
+
+#: ../release.xml.in.h:35
+msgid "Reset forgotten password"
+msgstr ""
+
+#: ../release.xml.in.h:36
 msgid "Select a collection"
 msgstr "Een verzameling selecteren"
 
-#: ../release.xml.in.h:35
+#: ../release.xml.in.h:37
 msgid "Select a partitioning method"
 msgstr "Partitiemethode selecteren"
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
 msgid "Set your local time and date"
 msgstr "Lokale tijd en datum instellen"
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid "Setup your account"
 msgstr "Een account instellen"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 msgid "Summary"
 msgstr "Samenvatting"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -458,7 +466,7 @@ msgstr ""
 "keuze, Kickoff, klassieke menustijl of Lancelot, die gemaakt kan worden met "
 "behulp van Kaptan na de eerste start."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
@@ -466,7 +474,7 @@ msgstr ""
 "Gebruikeraccounts zijn met succes aangemaakt. Klik op Volgende om door te "
 "gaan. U weet het wachtwoord toch nog wel?"
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -479,14 +487,14 @@ msgstr ""
 "een methode van bestandverificatie. Een mislukte validatie komt meestal door "
 "een fout op het installatiemedium (CD, DVD of USB-opslag).&lt;br&gt;&lt;"
 "br&gt;Bij het maken van een optisch installatiemedium (CD/DVD), probeer DAO "
-"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, 8-"
-"12x voor CD)."
+"(Disc-at-once) modus te gebruiken en op een lagere snelheid (4x voor DVD, "
+"8-12x voor CD)."
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 msgid "Welcome back..."
 msgstr "Welkom terug..."
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
 "experience. Dolphin offers web-like features suh as tabbed browsing, folder "
@@ -504,7 +512,7 @@ msgstr ""
 "gemakkelijk door Dolphin in het bestandsysteem geïntegreerd worden. En lijkt "
 "het net alsof locaties op afstand zich op de lokale schijf bevinden."
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -533,7 +541,7 @@ msgstr ""
 "om eerst een reservekopie van uw gegevens te maken om toekomstige problemen "
 "te vermijden."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -549,7 +557,15 @@ msgstr ""
 "br&gt;Ondertussen kunt u genieten van een presentatie welk de bijzondere "
 "eigenschappen van deze nieuwe Pardus zal tonen."
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
+msgid "You can recover your password."
+msgstr ""
+
+#: ../release.xml.in.h:49
+msgid "You can reinstall your boot loader or you recover any user password."
+msgstr ""
+
+#: ../release.xml.in.h:50
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -563,7 +579,7 @@ msgstr ""
 "het installatiemedium (verwijder het USB-apparaat, werp de DVD uit of "
 "ontkoppel het image in de virtuele machine)."
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:51
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -575,7 +591,19 @@ msgstr ""
 "Wees er zeker van dat u het installatiemedium ontkoppelt (verwijder het USB-"
 "apparaat, werp de DVD uit of ontkoppel het image in de virtuele machine)."
 
-#: ../release.xml.in.h:48
+#: ../release.xml.in.h:52
+#, fuzzy
+msgid ""
+"You have successfully rescue your system. Please be sure that you unmount "
+"the installation medium (remove the usb disk, eject the dvd or release the "
+"image in virtual machies)."
+msgstr ""
+"Pardus is met succes op de computer geïnstalleerd. Na een herstart van de "
+"computer kunt u nieuwe gebruikeraccounts toevoegen en Pardus gaan gebruiken. "
+"Wees er zeker van dat u het installatiemedium ontkoppelt (verwijder het USB-"
+"apparaat, werp de DVD uit of ontkoppel het image in de virtuele machine)."
+
+#: ../release.xml.in.h:53
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -606,7 +634,7 @@ msgstr ""
 "installatie- en gebruikershandleiding van Pardus voor meer informatie over "
 "schijfindeling. Het is op het web te vinden."
 
-#: ../release.xml.in.h:49
+#: ../release.xml.in.h:54
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -622,7 +650,7 @@ msgstr ""
 "de gebruiker die de Turkse taal beheersen is er voor ondersteuning ook nog "
 "www.ozgurlukicin.com"
 
-#: ../release.xml.in.h:50
+#: ../release.xml.in.h:55
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -635,7 +663,7 @@ msgstr ""
 "volgende stap kan een keuze uit de de verschillende opties van partitioneren "
 "gemaakt worden."
 
-#: ../release.xml.in.h:51
+#: ../release.xml.in.h:56
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "

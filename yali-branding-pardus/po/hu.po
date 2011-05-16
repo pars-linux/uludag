@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Yali Branding Pardus\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-25 10:26+0300\n"
+"POT-Creation-Date: 2011-05-16 15:46+0300\n"
 "PO-Revision-Date: 2011-01-18 16:26+0200\n"
 "Last-Translator: Attila Siposs <sipiatti@gmail.com>\n"
 "Language-Team: Hungarian <pardus-translators@pardus.org.tr>\n"
@@ -407,26 +407,34 @@ msgid "Partition your disk manually"
 msgstr "Lemezek kézi partícionálása"
 
 #: ../release.xml.in.h:34
-msgid "Select a collection"
+msgid "Rescue System"
 msgstr ""
 
 #: ../release.xml.in.h:35
+msgid "Reset forgotten password"
+msgstr ""
+
+#: ../release.xml.in.h:36
+msgid "Select a collection"
+msgstr ""
+
+#: ../release.xml.in.h:37
 msgid "Select a partitioning method"
 msgstr "Válasszon partícionálási módot"
 
-#: ../release.xml.in.h:36
+#: ../release.xml.in.h:38
 msgid "Set your local time and date"
 msgstr "Helyi dátum és idő beállítása"
 
-#: ../release.xml.in.h:37
+#: ../release.xml.in.h:39
 msgid "Setup your account"
 msgstr "Felhasználói beállítások"
 
-#: ../release.xml.in.h:38
+#: ../release.xml.in.h:40
 msgid "Summary"
 msgstr "Összefoglalás"
 
-#: ../release.xml.in.h:39
+#: ../release.xml.in.h:41
 msgid ""
 "There are a lot of features waiting to be explored. Thousands of softwares, "
 "libraries and tools are not included in the installation medium to save "
@@ -448,7 +456,7 @@ msgstr ""
 "menürendszeréből, melyet a legelső indítás során, a Kaptan segítségével "
 "állíthat be."
 
-#: ../release.xml.in.h:40
+#: ../release.xml.in.h:42
 msgid ""
 "User accounts are successfully configured. Click Next to proceed. One note: "
 "You remember your password, don&apos;t you?"
@@ -456,7 +464,7 @@ msgstr ""
 "A felhasználói fiókok beállításra kerültek. Kattintson a Továbbra a "
 "folytatáshoz. Egy megjegyzés: Ugye emlékszik még a jelszóra?"
 
-#: ../release.xml.in.h:41
+#: ../release.xml.in.h:43
 msgid ""
 "Validation is comparing the packages in the medium with the original ones by "
 "file verification method. A failed validation usually is a sign of a badly "
@@ -471,11 +479,11 @@ msgstr ""
 "At-Once) módban kiírni, alacsonyabb írási sebesség mellett (4x a DVD "
 "lemezek, 8-12x a CD lemezek számára)."
 
-#: ../release.xml.in.h:42
+#: ../release.xml.in.h:44
 msgid "Welcome back..."
 msgstr "A Pardus üdvözli Önt..."
 
-#: ../release.xml.in.h:43
+#: ../release.xml.in.h:45
 msgid ""
 "When using Dolphin, you may see that it learned a lot from the web "
 "experience. Dolphin offers web-like features suh as tabbed browsing, folder "
@@ -494,7 +502,7 @@ msgstr ""
 "segítségével. Így tehát a távoli helyek is úgy kezelhetők, mintha az Ön "
 "saját meghajtóján léteznének."
 
-#: ../release.xml.in.h:44
+#: ../release.xml.in.h:46
 msgid ""
 "When you select \"Use All Space\", Pardus will format your disk and create "
 "four partitions for user space, and system, boot and swap files using LVM "
@@ -520,7 +528,7 @@ msgstr ""
 "használja a \"Saját beállítások\" lehetőséget. Tanácsos biztonsági mentést "
 "végezni a problémák elkerülése érdekében."
 
-#: ../release.xml.in.h:45
+#: ../release.xml.in.h:47
 msgid ""
 "YALI is now installing Pardus on your computer. This operation takes "
 "approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;"
@@ -537,7 +545,15 @@ msgstr ""
 "kiadása által kínált rendszer képességeinek és a bevezett újítások  "
 "bemutatóját."
 
-#: ../release.xml.in.h:46
+#: ../release.xml.in.h:48
+msgid "You can recover your password."
+msgstr ""
+
+#: ../release.xml.in.h:49
+msgid "You can reinstall your boot loader or you recover any user password."
+msgstr ""
+
+#: ../release.xml.in.h:50
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;"
@@ -550,7 +566,7 @@ msgstr ""
 "emlékszik még a jelszóra, és ne felejtse el eltávolítani a telepítő médiumot "
 "(usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
 
-#: ../release.xml.in.h:47
+#: ../release.xml.in.h:51
 msgid ""
 "You have successfully installed Pardus on your computer. After restarting "
 "your computer, you will able to add new user accounts and use Pardus. Please "
@@ -561,7 +577,18 @@ msgstr ""
 "felhasználókat felvenni a Pardus használatához. Ne felejtse el eltávolítani "
 "a telepítő médiát (usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
 
-#: ../release.xml.in.h:48
+#: ../release.xml.in.h:52
+#, fuzzy
+msgid ""
+"You have successfully rescue your system. Please be sure that you unmount "
+"the installation medium (remove the usb disk, eject the dvd or release the "
+"image in virtual machies)."
+msgstr ""
+"Sikeresen telepítette a Pardust számítógépére. Újraindítás után fog tudni "
+"felhasználókat felvenni a Pardus használatához. Ne felejtse el eltávolítani "
+"a telepítő médiát (usb-kulcs, dvd vagy lemezkép ha virtuális gépet használ)."
+
+#: ../release.xml.in.h:53
 msgid ""
 "You have to choose a *free* physical partition in order to create your "
 "system partitions. If anything goes wrong you can Reset and start again. &lt;"
@@ -590,7 +617,7 @@ msgstr ""
 "&lt;br&gt;&lt;br&gt; További információkért tanulmányozza a weboldalunkon "
 "található Pardus Telepítési és Felhasználói Útmutatót."
 
-#: ../release.xml.in.h:49
+#: ../release.xml.in.h:54
 msgid ""
 "You may have questions or need help... Özgürlükİçin community portal is "
 "there for you. The portal is for all users to meet and share their skills "
@@ -606,7 +633,7 @@ msgstr ""
 "van szüksége, vagy segítene másoknak, az első megállója a www.ozgurlukicin."
 "com legyen."
 
-#: ../release.xml.in.h:50
+#: ../release.xml.in.h:55
 msgid ""
 "You will need at least 4GBs of unpartitioned-unused disk space or a disk to "
 "install Pardus (10 GBs recommended though). Please select the disk you want "
@@ -617,7 +644,7 @@ msgstr ""
 "szükség (10GB ajánlott). Válassza ki a telepítésre használandó lemezt. A "
 "következő lépésben választani tud majd több partícionálási lehetőség közül."
 
-#: ../release.xml.in.h:51
+#: ../release.xml.in.h:56
 msgid ""
 "You've installed and booted Pardus successfully... Just a few clicks left... "
 "Pardus supports multiple users on the same system. So you need to create at "
