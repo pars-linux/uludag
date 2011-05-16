@@ -1,4 +1,10 @@
-.. _disk-manager-index:
+.. _api-api:
+
+TITLE ISTIYOR
+=============
+
+Apidoc comes here
+
 
 .. toctree::
    :maxdepth: 2
@@ -8,4 +14,5 @@
 
 .. autoclass:: MainWidget
    :members:
+
 
