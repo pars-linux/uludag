@@ -23,7 +23,7 @@ API Documentation
 .. toctree::
    :maxdepth: 2
 
-   api/api.rst
+   api/index.rst
 
 
 Features
