@@ -68,6 +68,7 @@ function createDoc {
             cd ..
         fi
 
+        mvDir=$1
         if [ -d $project ]
         then
             cd $project$projectSubDir
@@ -76,7 +77,6 @@ function createDoc {
             cp $rootDir/templates/* *_templates
             cp $rootDir/static/* *_static
             make html
-            echo $?
             # is it enough to move just html dir?
             if [ ! -d $mvDir/$project ]
             then
@@ -84,6 +84,7 @@ function createDoc {
                 if [ ! $? -eq 0 ]
                 then
                     # user didn't write absolute path
+                    echo -e "\tInformation: project path is converted!"
                     mvDir=$rootDir/$mvDir
                     mkdir $mvDir/$project
                 fi
@@ -101,7 +102,7 @@ function createDoc {
 #NO_ARGS=0
 #E_OPTERROR=85
 
-mvDir="/home/mehmet/developerdeneem/output"
+mvDir="output"
 wantForce="no"
 
 
@@ -117,11 +118,22 @@ done
 
 if [ ! -d $mvDir ]
 then
+    if [[ $mvDir != */* ]]
+    then
+        mvDir=$rootDir/$mvDir
+        echo -e "Information: Path was coverted to absolute path!"
+    fi
     mkdir $mvDir
     if [ ! $? -eq 0 ]
     then
-        echo -e "\tError: Write absoute path for movedir."
+        echo -e "\tError: Move directory couldn't be created!"
         exit 1
+    fi
+else
+    if [[ $mvDir != */* ]]
+    then
+        mvDir=$rootDir/$mvDir
+        echo -e "Information: Path was coverted to absolute path!"
     fi
 fi
 
