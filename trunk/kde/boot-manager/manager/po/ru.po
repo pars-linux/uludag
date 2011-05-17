@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -11,10 +11,10 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 
 #: src/boot-manager.py:95
 msgid "Boot Manager"
@@ -25,12 +25,12 @@ msgid "(c) 2006-2011 TUBITAK/UEKAE"
 msgstr "(C) 2006-2011 TUBITAK / UEKAE"
 
 #: src/bootmanager/about.py:36
-msgid "Current Maintainer"
-msgstr "Текущий сопровождающий"
-
-#: src/bootmanager/about.py:36
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/bootmanager/about.py:36
+msgid "Current Maintainer"
+msgstr "Текущий сопровождающий"
 
 #: src/bootmanager/about.py:37
 msgid "Bahadır Kandemir"
@@ -46,17 +46,17 @@ msgstr "Aydan Taşdemir"
 
 #: src/bootmanager/about.py:38
 msgid "Pure Qt Support"
-msgstr ""
-
-#: src/bootmanager/about.py:39
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
+msgstr "Pure Qt Support"
 
 #: src/bootmanager/about.py:39
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Ясыров Василий (zaG), Семенов Николай (Tribunal), Щербаков Александр (neocrust), Алексей Иванов (krab)"
+
+#: src/bootmanager/about.py:39
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "zag@vspu.ru, tribunal2000@gmail.com, neocrust@gmail.com, alexey.ivanes@gmail.com"
 
 #: src/bootmanager/edit.py:151 src/bootmanager/edit.py:153
 #: src/bootmanager/edit.py:172 src/bootmanager/edit.py:174
@@ -65,13 +65,12 @@ msgstr "файловой системы"
 
 #: src/bootmanager/edit.py:153 src/bootmanager/edit.py:172
 #: src/bootmanager/edit.py:174
-#, fuzzy
 msgid "All Files"
-msgstr "Все элементы"
+msgstr "Все файлы"
 
 #: src/bootmanager/main.py:120
 msgid "Error"
-msgstr ""
+msgstr "Ошибка"
 
 #: src/bootmanager/main.py:120
 msgid ""
@@ -86,15 +85,14 @@ msgid "All Items"
 msgstr "Все элементы"
 
 #: src/bootmanager/main.py:350
-msgid "Do you want to delete '%1'?"
-msgstr "Вы хотите удалить '%1'?"
-
-#: src/bootmanager/main.py:350
 msgid "Remove items"
 msgstr "удалять элементы"
 
+#: src/bootmanager/main.py:350
+msgid "Do you want to delete '%1'?"
+msgstr "Вы хотите удалить '%1'?"
+
 #: src/bootmanager/main.py:383 src/bootmanager/main.py:388
-#, fuzzy
 msgid "Access denied"
 msgstr "Отказано в доступе."
 
@@ -116,7 +114,7 @@ msgstr "Ядро"
 
 #: ui/ui_edit.py:152 ui/ui_edit.py:154
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: ui/ui_edit.py:153
 msgid "Ramdisk File"
