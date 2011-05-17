@@ -20,5 +20,5 @@ uninstall:
 
 clean:
 	find -name *.pyc | xargs rm -rf
-	rm -f ui/ui_main.py
+	rm -vf ui/ui_*.py
 
