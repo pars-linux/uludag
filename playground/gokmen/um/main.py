@@ -17,13 +17,13 @@ import sys
 
 # PDS
 from pds.quniqueapp import QUniqueApplication
-from gui import UmGui
+from gui import UmMainScreen
 
 if __name__ == '__main__':
 
     app = QUniqueApplication(sys.argv, catalog='um')
 
-    window = UmGui()
+    window = UmMainScreen()
     window.show()
 
     app.exec_()
