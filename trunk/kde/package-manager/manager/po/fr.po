@@ -206,7 +206,7 @@ msgstr "configuration"
 
 #: src/operationmanager.py:137
 msgid "downloading"
-msgstr "téléchargement"
+msgstr "Téléchargement de "
 
 #: src/packagedelegate.py:64
 msgid "critical"
