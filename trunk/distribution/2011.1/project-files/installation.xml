@@ -50,7 +50,6 @@
                 <SelectedPackage>alsa-lib</SelectedPackage>
                 <SelectedPackage>alsa-plugins</SelectedPackage>
                 <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
-                <SelectedPackage>apmd</SelectedPackage>
                 <SelectedPackage>aria2</SelectedPackage>
                 <SelectedPackage>artwork-pardus-release</SelectedPackage>
                 <SelectedPackage>bash-completion</SelectedPackage>
@@ -80,7 +79,6 @@
                 <SelectedPackage>example-content</SelectedPackage>
                 <SelectedPackage>extundelete</SelectedPackage>
                 <SelectedPackage>ffmpeg</SelectedPackage>
-                <SelectedPackage>filelight</SelectedPackage>
                 <SelectedPackage>firefox</SelectedPackage>
                 <SelectedPackage>flashplugin</SelectedPackage>
                 <SelectedPackage>foomatic-db</SelectedPackage>
