@@ -1,19 +1,27 @@
+Constants:
+----------
 
 semiupdate repo   = http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/pisi-index.xml.bz2
 2011 repo         = http://packages.pardus.org.tr/pardus/2011/stable/i686/pisi-index.xml.xz
 forceinstall list = http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list
 
+Legend:
+-------
 
++ Done | - Not Implemented | / In Progress | ? I'm not sure !
 
-- Ask user which repo to update to (stable/testing/devel) (?)
+Tasks:
+------
 
-- Check if update is possible
-    - check availability of packages
-    - check free disk space
-    - if update will not be healty, warn the user why and do nothing
-    - if update is not possible ask to remove packages (??)
++ Ask user which repo to update to (stable/testing/devel) (?)
 
-- Final confirmation "are you sure ?"
+/ Check if update is possible
+    + check availability of packages
+    ? check free disk space ???
+    ? if update will not be healty, warn the user why and do nothing
+    ? if update is not possible ask to remove packages (??)
+
++ Final confirmation "are you sure ?"
 
 - Disable all repos
 
@@ -43,5 +51,4 @@ forceinstall list = http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to
 - run  /usr/sbin/migrate-comar-network-profiles
 - rm -rf /home/*/.kde/share/config/kaptanrc
     http://bugs.pardus.org.tr/show_bug.cgi?id=17429
-
 

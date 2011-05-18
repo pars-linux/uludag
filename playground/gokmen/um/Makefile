@@ -5,6 +5,8 @@ build:
 	pyuic4 ui/ui_screen_1.ui -o ui/ui_screen_1.py
 	pyuic4 ui/ui_screen_2.ui -o ui/ui_screen_2.py
 	pyuic4 ui/ui_screen_3.ui -o ui/ui_screen_3.py
+	pyuic4 ui/ui_screen_4.ui -o ui/ui_screen_4.py
+	pyuic4 ui/ui_screen_5.ui -o ui/ui_screen_5.py
 
 install:
 	mkdir -p /usr/share/um/ui
