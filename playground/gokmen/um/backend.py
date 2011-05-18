@@ -77,7 +77,8 @@ class Iface(QObject, Singleton):
         pisi.api.set_signal_handling(False)
 
     @threaded
-    def installPackages(self, packages):
+    def installPackages(self, packages, with_comar = True):
+        pisi.api.set_comar(with_comar)
         pisi.api.install(packages)
 
     @threaded

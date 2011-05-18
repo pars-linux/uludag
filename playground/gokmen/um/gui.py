@@ -30,10 +30,13 @@ from pds.gui import TOPCENTER, MIDCENTER, BOTCENTER, CURRENT, OUT
 from pds.qpagewidget import QPageWidget
 
 from backend import Iface
-from backend import threaded
 from repo_helper import findMissingPackagesForDistupdate
 
-ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/pisi-index.xml.bz2"
+ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
+REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
+                     "python-pyliblzma-0.5.3-1-1.pisi",
+                     "pisi-2.4_alpha3-1-1.pisi",
+                     "xz-4.999.9_beta143-1-1.pisi")
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
@@ -59,7 +62,7 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         self.msgbox.setStyleSheet(PMessageBox.Style)
         self.msgbox.enableOverlay()
 
-        self.thread = PThread(self, self.findMissingPackages, self.showResults)
+        self.thread_check = PThread(self, self.findMissingPackages, self.showResults)
 
         self.pageWidget = QPageWidget(self.widget_screens)
         self.layout.addWidget(self.pageWidget)
@@ -104,6 +107,13 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
                 getWidget(ui_screen_4, ""), inMethod = updateButtons,
                                             outMethod= updateButtons)
 
+        # Progress Screen
+        self.pageWidget.createPage(
+                getWidget(ui_screen_5, ""), inMethod = self.upgradeSystem)
+
+        upgradeWidget = self.pageWidget.getWidget(4).ui
+        self.progress = upgradeWidget.progress
+
     def checkSystem(self):
         # self.button_next.setEnabled(False)
         # self.button_previous.setEnabled(False)
@@ -113,7 +123,7 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
             if getattr(repoWidget, repo).isChecked():
                 self.target_repo = REPO_TEMPLATE % repo
 
-        self.thread.start()
+        self.thread_check.start()
 
     def findMissingPackages(self):
         self.missing_packages = findMissingPackagesForDistupdate(self.target_repo)
@@ -129,6 +139,9 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         self.label_header.setText("Check results...")
         self.hideMessage()
 
+    def upgradeSystem(self):
+        self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES))
+
     def showMessage(self, message):
         self.msgbox.busy.busy()
         self.msgbox.setMessage(message)
@@ -143,9 +156,8 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         print package, downloaded, total, symbol, percent
         self.progress.setValue(percent)
         if percent == 100:
-            self.label.setText("Download Complete, please press Exit.")
-            self.exitButton.show()
-            self.progress.hide()
+            print "Done !"
+            # self.progress.hide()
 
 class UmGui(QWidget, ui_main.Ui_UpgradeManager):
 
