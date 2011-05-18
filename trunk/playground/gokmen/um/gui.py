@@ -21,6 +21,8 @@ from ui import ui_mainscreen
 from ui import ui_screen_1
 from ui import ui_screen_2
 from ui import ui_screen_3
+from ui import ui_screen_4
+from ui import ui_screen_5
 
 from pds.thread import PThread
 from pds.gui import PMessageBox
@@ -77,7 +79,7 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         self.pageWidget.createPage(
                 getWidget(ui_screen_2, "Select Upgrade Repository..."))
 
-        # Dummy Page
+        # Check Results Page
         self.pageWidget.createPage(
                 getWidget(ui_screen_3, "Checking your system..."),
                 inMethod = self.checkSystem, outMethod = self.hideMessage)
@@ -86,6 +88,21 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         resultWidget.c_package.hide()
         resultWidget.c_disk.hide()
         resultWidget.success.hide()
+
+        def updateButtons():
+            if self.button_next.text() == "Next":
+                self.button_next.setText("Yes, Upgrade")
+                self.button_previous.setText("Cancel")
+                self.button_cancel.hide()
+            else:
+                self.button_next.setText("Next")
+                self.button_previous.setText("Previous")
+                self.button_cancel.show()
+
+        # Last Question
+        self.pageWidget.createPage(
+                getWidget(ui_screen_4, ""), inMethod = updateButtons,
+                                            outMethod= updateButtons)
 
     def checkSystem(self):
         # self.button_next.setEnabled(False)
