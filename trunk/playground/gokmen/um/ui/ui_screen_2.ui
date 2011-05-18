@@ -76,7 +76,7 @@
        <number>12</number>
       </property>
       <item row="0" column="0">
-       <widget class="QRadioButton" name="radioButton">
+       <widget class="QRadioButton" name="stable">
         <property name="text">
          <string>Stable Repository (Recommended)</string>
         </property>
@@ -86,14 +86,14 @@
        </widget>
       </item>
       <item row="1" column="0">
-       <widget class="QRadioButton" name="radioButton_2">
+       <widget class="QRadioButton" name="testing">
         <property name="text">
          <string>Testing Repository</string>
         </property>
        </widget>
       </item>
       <item row="2" column="0">
-       <widget class="QRadioButton" name="radioButton_3">
+       <widget class="QRadioButton" name="devel">
         <property name="text">
          <string>Devel Repository</string>
         </property>
