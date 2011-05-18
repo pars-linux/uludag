@@ -19,16 +19,16 @@ attributetype ( pardusBase:0.2
     SINGLE-VALUE
  )
 
-attributetype ( pardusBase:0.1
-    NAME 'pardusMemoryCapacity'
-    DESC 'How much bytes of memory this device have.'
-    SYNTAX 1.3.6.1.4.1.1466.115.121.1.27
-    SINGLE-VALUE
+objectclass ( pardusBase:0.1
+    NAME 'pardusPolicyObject'
+    DESC 'A node that may have a remote management policy.'
+    SUP (top)
+    MAY (pardusPolicy)
  )
 
 objectclass ( pardusBase:0.0
     NAME 'pardusComputer'
     DESC 'A computer with Pardus operation system running.'
     SUP (top $ device)
-    MAY (pardusMemoryCapacity $ userPassword $ pardusPolicy)
+    MAY (userPassword)
  )
