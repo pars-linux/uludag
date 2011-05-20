@@ -20,7 +20,7 @@ PARDUS_RELEASES = {"1": "2009",
 
 # Files to edit
 TRACKER_PARDUS_2009 = "../Security/tracker.2009.txt"
-TRACKER_PARDUS_2011 = "../Security/tracker.2008.txt"
+TRACKER_PARDUS_2011 = "../Security/tracker.2011.txt"
 TRACKER_PARDUS_CORPORATE2 = "../Security/tracker.corporate2.txt"
 
 TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
@@ -90,19 +90,7 @@ def main(filename):
     print "Proessing bug: %s" % title
     print description
 
-    print ''
-
-    print "Component for bug [Enter=General, k=Kernel]: ",
-    comp = sys.stdin.readline()
-    component = ""
-    if comp[0] == "g" or comp[0] == "\n":
-        component = "guvenlik/security"
-    elif comp[0] == "k":
-        component = "cekirdek / kernel"
-    else:
-        component = "guvenlik/security"
-
-    new_bug["component"] = component
+    component = "guvenlik/security"
 
     print ''
 
