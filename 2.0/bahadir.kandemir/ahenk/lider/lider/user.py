@@ -63,10 +63,12 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         """
             Returns password.
         """
+        if not self.editName.isEnabled() and not len(self.editPassword.text()):
+            return ""
         from lider.helpers.directory import Directory
         password = str(self.editPassword.text())
         salted = Directory.make_password(password)
-        return salted
+        return salted.strip()
 
     def set_name(self, user):
         """

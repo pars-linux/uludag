@@ -327,6 +327,10 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             item.dn = dn
             item.name = name
             item.folder = folder
+            item.user = user
+            item.group = group
+            item.label = label
+            item.description = description
 
             if alternative:
                 self.nodes_alt_dn[dn] = item
@@ -655,6 +659,72 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         item = self.items[0]
 
+        try:
+            if item.folder:
+                dialog = DialogFolder()
+                dialog.set_name(item.name)
+                dialog.set_label(item.label)
+                dialog.set_description(item.description)
+                if dialog.exec_():
+                    label = dialog.get_label()
+                    description = dialog.get_description()
+                    if item.label != label or item.description != description:
+                        self.directory.modify_folder(item.dn, label, description)
+            elif item.user:
+                dialog = DialogUser()
+                dialog.set_name(item.name)
+                dialog.set_password("")
+                dialog.set_description(item.description)
+                if dialog.exec_():
+                    password = dialog.get_password()
+                    description = dialog.get_description()
+                    if item.description != description or len(password):
+                        self.directory.modify_user(item.dn, password, description)
+            elif item.group:
+                dn, old_properties = self.directory.search(item.dn, scope="base", fields=["member"])[0]
+                old_members = old_properties["member"]
+
+                people = []
+                for dn, attrs in self.directory.search(self.directory.directory_domain, ["cn", "objectClass"], "sub"):
+                    if dn.startswith("cn=") and "simpleSecurityObject" in attrs["objectClass"] or "pardusComputer" in attrs["objectClass"]:
+                        people.append(dn)
+
+                dialog = DialogGroup()
+                dialog.set_name(item.name)
+                dialog.set_description(item.description)
+                dialog.set_members(old_members)
+                dialog.set_people(people)
+                if dialog.exec_():
+                    description = dialog.get_description()
+                    members = dialog.get_members()
+                    if item.description != description or old_members != members:
+                        self.directory.modify_group(item.dn, members, description)
+            else:
+                dialog = DialogComputer()
+                dialog.set_name(item.name)
+                dialog.set_password("")
+                dialog.set_description(item.description)
+                if dialog.exec_():
+                    password = dialog.get_password()
+                    description = dialog.get_description()
+                    if item.description != description or len(password):
+                        self.directory.modify_computer(item.dn, password, description)
+
+        except directory.DirectoryConnectionError:
+            self.__update_status("directory", "error")
+            # TODO: Disconnect
+            QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+            return
+        except directory.DirectoryError:
+            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
+            return
+
+        parent = item.parent()
+        self.treeComputers.collapseItem(parent)
+        self.treeComputers.expandItem(parent)
+        self.treeComputers.scrollToItem(item)
+        self.treeComputers.setCurrentItem(item)
+
     def __slot_delete(self):
         """
             Triggered when user wants to delete an item
@@ -770,7 +840,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         people = []
         for dn, attrs in self.directory.search(self.directory.directory_domain, ["cn", "objectClass"], "sub"):
-            if dn.startswith("cn=") and "simpleSecurityObject" in attrs["objectClass"]:
+            if dn.startswith("cn=") and "simpleSecurityObject" in attrs["objectClass"] or "pardusComputer" in attrs["objectClass"]:
                 people.append(dn)
 
         dialog = DialogGroup()
