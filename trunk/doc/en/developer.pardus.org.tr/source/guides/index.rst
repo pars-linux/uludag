@@ -11,5 +11,6 @@ Guides
    kde/index.rst
    rest/index.rst
    licensing/index.rst
+   softwaredevelopment/index.rst
    releasing/index.rst
    communication/index.rst
