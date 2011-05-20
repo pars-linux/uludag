@@ -24,6 +24,7 @@ from lider.computer import DialogComputer
 from lider.folder import DialogFolder
 from lider.search import DialogSearch
 from lider.user import DialogUser
+from lider.group import DialogGroup
 
 # Helper modules
 from lider.helpers import directory
@@ -78,6 +79,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
         self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
         self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
+        self.menu.newAction("New Group", wrappers.Icon("group48"), self.__slot_new_group)
         self.menu.newAction("Delete", wrappers.Icon("edit-delete"), self.__slot_delete)
 
         # Backends
@@ -298,13 +300,14 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
 
         dn = root.dn
 
-        results = self.directory.search(dn, ["o", "cn", "description"], "one")
+        results = self.directory.search(dn, ["o", "cn", "description", "objectClass"], "one")
         fancy = len(results) < 100
         for dn, attrs in results:
             name = dn.split(",")[0].split("=")[1]
             label = name
             folder = dn.startswith("dc=")
-            user = dn.startswith("uid=")
+            user = "simpleSecurityObject" in attrs["objectClass"]
+            group = "groupOfNames" in attrs["objectClass"]
 
             if "description" in attrs:
                 description = attrs["description"][0]
@@ -341,6 +344,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                     item.setIcon(0, wrappers.Icon("user48"))
                 else:
                     item.widget.set_icon(wrappers.Icon("user48"))
+            elif group:
+                if alternative:
+                    item.setIcon(0, wrappers.Icon("group48"))
+                else:
+                    item.widget.set_icon(wrappers.Icon("group48"))
             else:
                 if alternative:
                     item.setIcon(0, wrappers.Icon("computer48"))
@@ -720,11 +728,8 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             password = dialog.get_password()
-            uid = dialog.get_uid()
-            gid = dialog.get_gid()
-            home = dialog.get_home()
             try:
-                dn = self.directory.add_user(parent_path, name, password, uid, gid, home)
+                dn = self.directory.add_user(parent_path, name, password)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
@@ -732,6 +737,46 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add user.")
+                return
+
+            self.treeComputers.collapseItem(parent_item)
+            self.treeComputers.expandItem(parent_item)
+            item = self.nodes_dn[dn]
+            self.treeComputers.scrollToItem(item)
+            self.treeComputers.setCurrentItem(item)
+
+    def __slot_new_group(self):
+        """
+            Triggered when user wants to add a new group.
+        """
+        item = self.items[0]
+
+        if item.folder:
+            parent_item = item
+        else:
+            parent_item = item.parent()
+
+        parent_path = parent_item.dn
+
+        people = []
+        for dn, attrs in self.directory.search(self.directory.directory_domain, ["cn", "objectClass"], "sub"):
+            if dn.startswith("cn=") and "simpleSecurityObject" in attrs["objectClass"]:
+                people.append(dn)
+
+        dialog = DialogGroup()
+        dialog.set_people(people)
+        if dialog.exec_():
+            name = dialog.get_name()
+            members = dialog.get_members()
+            try:
+                dn = self.directory.add_group(parent_path, name, members)
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                # TODO: Disconnect
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add group.")
                 return
 
             self.treeComputers.collapseItem(parent_item)
