@@ -80,6 +80,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
         self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
         self.menu.newAction("New Group", wrappers.Icon("group48"), self.__slot_new_group)
+        self.menu.newAction("Modify", wrappers.Icon("preferences32"), self.__slot_modify)
         self.menu.newAction("Delete", wrappers.Icon("edit-delete"), self.__slot_delete)
 
         # Backends
@@ -644,37 +645,45 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             self.treeComputers.setCurrentItem(item)
             self.menu.exec_(self.treeComputers.mapToGlobal(pos))
 
+    def __slot_modify(self):
+        """
+            Triggered when user wants to modify an item
+        """
+        if len(self.items) != 1:
+            QtGui.QMessageBox.warning(self, "Warning", "Only one item at a time can be modified.")
+            return
+
+        item = self.items[0]
+
     def __slot_delete(self):
         """
             Triggered when user wants to delete an item
         """
         if len(self.items) != 1:
             QtGui.QMessageBox.warning(self, "Warning", "Only one item at a time can be deleted.")
+            return
 
         item = self.items[0]
 
-        dn = item.dn
-        results = self.directory.search(dn, scope="one", fields=["objectClass"])
-
-        if dn.startswith('dc=') and len(results) > 0:
+        if item.folder and len(self.directory.search(item.dn, scope="one", fields=["objectClass"])) > 0:
             QtGui.QMessageBox.warning(self, "Warning", "The selected item is a non-empty directory. It cannot be deleted.")
-        else:
-            msg = str()
-            reply = QtGui.QMessageBox.question(self, "Warning", "This is not undoable. Are you sure you want to remove?", QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
-            if reply == QtGui.QMessageBox.Yes:
-                try:
-                    self.directory.delete_item(dn)
-                    index = item.parent().indexOfChild(self.treeComputers.currentItem())
-                    item.parent().takeChild(index)
+            return
 
-                except directory.DirectoryConnectionError:
-                    self.__update_status("directory", "error")
-                    # TODO: Disconnect
-                    QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
-                    return
-                except directory.DirectoryError:
-                    QtGui.QMessageBox.warning(self, "Connection Error", "Unable to delete item.")
-                    return
+        reply = QtGui.QMessageBox.question(self, "Warning", "This is not undoable. Are you sure you want to remove?", QtGui.QMessageBox.Yes, QtGui.QMessageBox.No )
+        if reply == QtGui.QMessageBox.Yes:
+            try:
+                self.directory.delete_item(item.dn)
+                index = item.parent().indexOfChild(self.treeComputers.currentItem())
+                item.parent().takeChild(index)
+
+            except directory.DirectoryConnectionError:
+                self.__update_status("directory", "error")
+                # TODO: Disconnect
+                QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Unable to delete item.")
+                return
 
     def __slot_new_computer(self):
         """
@@ -728,8 +737,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             password = dialog.get_password()
+            description = dialog.get_description()
             try:
-                dn = self.directory.add_user(parent_path, name, password)
+                dn = self.directory.add_user(parent_path, name, password, description)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
@@ -768,8 +778,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if dialog.exec_():
             name = dialog.get_name()
             members = dialog.get_members()
+            description = dialog.get_description()
             try:
-                dn = self.directory.add_group(parent_path, name, members)
+                dn = self.directory.add_group(parent_path, name, members, description)
             except directory.DirectoryConnectionError:
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
@@ -1020,6 +1031,16 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             Triggered when user clicks reset button.
         """
         if self.stackedWidget.currentIndex() != 0:
+            msg = QtGui.QMessageBox(self)
+            msg.setIcon(QtGui.QMessageBox.Question)
+            msg.setText("Do you want to reset all changes?")
+            msg.setInformativeText("Do you want to continue?")
+            msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+            msg.setDefaultButton(QtGui.QMessageBox.No)
+
+            if msg.exec_() != QtGui.QMessageBox.Yes:
+                return
+
             widget = self.stackedWidget.currentWidget()
             if widget.policy != None:
                 try:

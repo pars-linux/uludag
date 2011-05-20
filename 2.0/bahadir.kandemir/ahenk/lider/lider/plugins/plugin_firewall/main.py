@@ -234,6 +234,16 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
         """
             Triggered when user clicks 'Reset Rules' button.
         """
+        msg = QtGui.QMessageBox(self)
+        msg.setIcon(QtGui.QMessageBox.Question)
+        msg.setText("Do you want to reset all firewall rules?")
+        msg.setInformativeText("Do you want to continue?")
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setDefaultButton(QtGui.QMessageBox.No)
+
+        if msg.exec_() != QtGui.QMessageBox.Yes:
+            return
+
         fp = tempfile.NamedTemporaryFile(delete=False)
         name = fp.name
         fp.write(file("/usr/share/ahenk-lider/firewall.fwb").read())

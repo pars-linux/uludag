@@ -81,11 +81,25 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         """
         self.editPassword.setText(password)
 
+    def get_description(self):
+        """
+            Returns LDAP attribute name.
+        """
+        return str(self.editDescription.text())
+
+    def set_description(self, description):
+        """
+            Sets description.
+        """
+        self.editDescription.setText(description)
+
     def accept(self):
         """
             Checks written passwords are same or not. If not, warn user.
         """
-        if not (self.editPassword.text() == self.editConfirmPassword.text()):
+        if not len(self.editName.text()):
+            QtGui.QMessageBox.warning(self, "User", "Username is missing")
+        elif not (self.editPassword.text() == self.editConfirmPassword.text()):
             QtGui.QMessageBox.warning(self, "User", "Passwords do not match.")
         else:
             QtGui.QDialog.accept(self)
