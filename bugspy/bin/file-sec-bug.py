@@ -91,9 +91,9 @@ def main(filename):
     print description
 
     component = "guvenlik/security"
+    new_bug["component"] = component
 
     print ''
-
     print "Which Pardus versions are affected?"
     print "1- Pardus 2009"
     print "2- Pardus Corporate2"
