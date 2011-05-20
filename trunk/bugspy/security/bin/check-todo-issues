@@ -26,25 +26,19 @@ from bugspy.bugzilla import Bugzilla
 from bugspy.config import BugspyConfig
 
 
-# Files to edit
-TRACKER_PARDUS_2009 = "./data/Pardus/tracker.2009.ini"
-TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
-TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
-TRACKER_PARDUS_2011 = "./data/Pardus/tracker.2011.ini"
-
-
-TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
-               "Corporate2": TRACKER_PARDUS_CORPORATE2,
-               "2011": TRACKER_PARDUS_2011}
-
 # Global variable that is used when asked for which pardus versions are affected
 PARDUS_RELEASES = {"1": "2009",
                    "2": "Corporate2",
                    "3": "2011"
                    }
 
+#Pardus releases's tracker files
+TRACKER_FILES ={"2009": "../../Security/tracker.2009.txt",
+                "2011": "../../Security/tracker.2011.txt",
+                "Coporate2": "../../Security/tracker.corporate2.txt" }
 
-DEFAULT_ISSUE_REGEX = '^CVE-20(0[3-9]|10|11)'
+
+DEFAULT_ISSUE_REGEX = '^CVE-20(10|11)'
 DEFAULT_TODO_REGEX = '^\s+TODO: check$'
 
 # Log class for BugSPY
@@ -561,6 +555,10 @@ class EntryEditor:
                     print "Success! http://bugs.pardus.org.tr/%s" % no
                     print "   %s" % bug_title
 
+                    #Write the bug number to tracker
+                    package_name = bug_title.split(":")[0]
+                    enter_bug_to_tracker(str(affected_version), package_name, bugno)
+ 
 
                     #file = TRACKER_MAP.get(affected_version)
                     #ini = SecurityINI(file)
@@ -666,6 +664,19 @@ def setup_paths():
         if idx == -1:
             raise ImportError, "could not setup paths"
         path = path[0:idx]
+
+
+def enter_bug_to_tracker(pardus_release, package_name, bug_no):
+    tracker_file =  TRACKER_FILES.get(pardus_release)
+    tracker_data = os.open(tracker_file, "r").read()
+
+    title_entry_bugs = "not fixed yet:\n===========================\n"
+    entry_bug = "%s = %s" % (package_name, bug_no)
+
+    regex = re.compile(title_entry_bugs)
+    updated_tracker_data  = regex.sub("%s%s\n\n" %(title_entry_bugs, entry_bug) , tracker_data)
+
+    os.open(tracker_file, "w").write(updated_tracker_data)
 
 
 def miniusage():
