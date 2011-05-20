@@ -148,7 +148,8 @@ class Directory:
         elif scope == "sub":
             scope = ldap.SCOPE_SUBTREE
 
-        pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer)(objectClass=posixAccount))"
+        #pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer)(objectClass=posixAccount)(objectClass=groupOfNames))"
+        pattern = "(|(objectClass=dcObject)(objectClass=pardusComputer)(objectClass=posixAccount)(objectClass=simpleSecurityObject)(objectClass=groupOfNames))"
         try:
             results = self.conn.search_s(directory, scope, pattern, fields)
         except ldap.LDAPError:
@@ -217,14 +218,13 @@ class Directory:
             "dc": [name],
             "objectClass": ["top", "dcObject", "organization"],
             "o": [label],
-            "description": [description]
         }
         try:
             self.add_new(dn, properties)
-        except ldap.LDAPError:
+        except ldap.LDAPError, e:
             try:
                 self.conn.whoami_s()
-            except ldap.LDAPError:
+            except ldap.LDAPError, e:
                 raise DirectoryConnectionError
             raise DirectoryError
 
@@ -243,18 +243,20 @@ class Directory:
             "cn": [name],
             "objectClass": ["top", "device", "pardusComputer"],
             "userPassword": [password],
-            "description": [description]
         }
+        if len(description):
+            properties["description"] = [description]
         try:
             self.add_new(dn, properties)
-        except ldap.LDAPError:
+        except ldap.LDAPError, e:
+            print e
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_user(self, parent_dn, name, password, uid, gid, home=None):
+    def add_user(self, parent_dn, name, password):
         """
             Adds a new user under specified DN.
 
@@ -263,17 +265,36 @@ class Directory:
                 name: Node name
                 password: Node password
         """
-        dn = "uid=%s,%s" % (name, parent_dn)
-        if not home:
-            home = "/home/%s" % name
+        dn = "cn=%s,%s" % (name, parent_dn)
         properties = {
-            "uid": [name],
-            "objectClass": ["top", "account", "posixAccount", "shadowAccount"],
             "cn": [name],
-            "homeDirectory": [home],
-            "uidNumber": [uid],
-            "gidNumber": [gid],
+            "objectClass": ["organizationalRole", "simpleSecurityObject"],
             "userPassword": [password]
+        }
+        try:
+            self.add_new(dn, properties)
+            return dn
+        except ldap.LDAPError:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def add_group(self, parent_dn, name, members):
+        """
+            Adds a new group under specified DN.
+
+            Arguments:
+                parent_dn: Distinguished name of parent
+                name: Node name
+                members: List of member DNs
+        """
+        dn = "cn=%s,%s" % (name, parent_dn)
+        properties = {
+            "cn": [name],
+            "objectClass": ["top", "groupOfNames"],
+            "member": members
         }
         try:
             self.add_new(dn, properties)

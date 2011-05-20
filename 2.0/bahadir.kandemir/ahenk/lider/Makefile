@@ -5,6 +5,7 @@ all:
 	pyuic4 lider/search.ui > lider/ui_search.py
 	pyuic4 lider/folder.ui > lider/ui_folder.py
 	pyuic4 lider/user.ui > lider/ui_user.py
+	pyuic4 lider/group.ui > lider/ui_group.py
 	pyrcc4 lider/data.qrc > lider/data_rc.py
 	
 	pyuic4 lider/widgets/list_item/list_item.ui > lider/widgets/list_item/ui_list_item.py
