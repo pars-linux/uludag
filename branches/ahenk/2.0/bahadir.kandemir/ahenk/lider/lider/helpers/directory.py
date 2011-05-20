@@ -203,7 +203,7 @@ class Directory:
             label = dn.split(",")[0].split("=")[1]
         return label
 
-    def add_folder(self, parent_dn, name, label, description):
+    def add_folder(self, parent_dn, name, label, description=""):
         """
             Adds a new folder under specified DN.
 
@@ -219,6 +219,8 @@ class Directory:
             "objectClass": ["top", "dcObject", "organization"],
             "o": [label],
         }
+        if len(description):
+            properties["description"] = [description]
         try:
             self.add_new(dn, properties)
         except ldap.LDAPError, e:
@@ -228,7 +230,7 @@ class Directory:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_computer(self, parent_dn, name, password, description):
+    def add_computer(self, parent_dn, name, password, description=""):
         """
             Adds a new computer under specified DN.
 
@@ -256,7 +258,7 @@ class Directory:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_user(self, parent_dn, name, password):
+    def add_user(self, parent_dn, name, password, description=""):
         """
             Adds a new user under specified DN.
 
@@ -271,6 +273,8 @@ class Directory:
             "objectClass": ["organizationalRole", "simpleSecurityObject"],
             "userPassword": [password]
         }
+        if len(description):
+            properties["description"] = [description]
         try:
             self.add_new(dn, properties)
             return dn
@@ -281,7 +285,7 @@ class Directory:
                 raise DirectoryConnectionError
             raise DirectoryError
 
-    def add_group(self, parent_dn, name, members):
+    def add_group(self, parent_dn, name, members, description=""):
         """
             Adds a new group under specified DN.
 
@@ -296,6 +300,8 @@ class Directory:
             "objectClass": ["top", "groupOfNames"],
             "member": members
         }
+        if len(description):
+            properties["description"] = [description]
         try:
             self.add_new(dn, properties)
             return dn

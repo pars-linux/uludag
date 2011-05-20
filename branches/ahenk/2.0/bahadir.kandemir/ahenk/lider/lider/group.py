@@ -59,6 +59,18 @@ class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
         self.editName.setText(user)
         self.editName.setEnabled(False)
 
+    def get_description(self):
+        """
+            Returns LDAP attribute name.
+        """
+        return str(self.editDescription.text())
+
+    def set_description(self, description):
+        """
+            Sets description.
+        """
+        self.editDescription.setText(description)
+
     def set_members(self, members):
         """
             Sets group members.
@@ -113,3 +125,11 @@ class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
             name = unicode(item.text())
             self.people[name] = self.members[name]
             self.listPeople.addItem(item)
+
+    def accept(self):
+        if not len(self.editName.text()):
+            QtGui.QMessageBox.warning(self, "Group", "Group name is missing")
+        elif len(self.get_members()) < 1:
+            QtGui.QMessageBox.warning(self, "Group", "There has to be at least one member.")
+        else:
+            QtGui.QDialog.accept(self)

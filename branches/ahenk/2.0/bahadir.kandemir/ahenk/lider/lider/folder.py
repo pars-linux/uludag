@@ -72,4 +72,10 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
         """
         self.editDescription.setText(description)
 
-
+    def accept(self):
+        if not len(self.editName.text()):
+            QtGui.QMessageBox.warning(self, "Folder", "Folder name is missing")
+        elif not len(self.editLabel.text()):
+            QtGui.QMessageBox.warning(self, "Folder", "Folder label is missing")
+        else:
+            QtGui.QDialog.accept(self)

@@ -98,7 +98,9 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         """
             Checks written passwords are same or not. If not, warn user.
         """
-        if not (self.editPassword.text() == self.editConfirmPassword.text()):
-            QtGui.QMessageBox.warning(self, "Computer Adding..", "Passwords do not match.")
+        if not len(self.editName.text()):
+            QtGui.QMessageBox.warning(self, "Computer", "Computer name is missing")
+        elif not (self.editPassword.text() == self.editConfirmPassword.text()):
+            QtGui.QMessageBox.warning(self, "Computer", "Passwords do not match.")
         else:
             QtGui.QDialog.accept(self)
