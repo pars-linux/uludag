@@ -74,12 +74,13 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         menu.newAction("Disconnect", wrappers.Icon("offline48"), self.__slot_disconnect)
         self.pushConnection.setMenu(menu)
 
-        # Popup for new items
+        # Popup for items
         self.menu = wrappers.Menu(self)
-        self.menu.newAction("New Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
-        self.menu.newAction("New Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
-        self.menu.newAction("New User", wrappers.Icon("user48"), self.__slot_new_user)
-        self.menu.newAction("New Group", wrappers.Icon("group48"), self.__slot_new_group)
+        self.menu.newAction("Add Folder", wrappers.Icon("folder48"), self.__slot_new_folder)
+        self.menu.newAction("Add Computer", wrappers.Icon("computer48"), self.__slot_new_computer)
+        self.menu.newAction("Add User", wrappers.Icon("user48"), self.__slot_new_user)
+        self.menu.newAction("Add Group", wrappers.Icon("group48"), self.__slot_new_group)
+        self.menu.addSeparator()
         self.menu.newAction("Modify", wrappers.Icon("preferences32"), self.__slot_modify)
         self.menu.newAction("Delete", wrappers.Icon("edit-delete"), self.__slot_delete)
 
