@@ -59,6 +59,7 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
             Sets name.
         """
         self.editName.setText(user)
+        self.editName.setEnabled(False)
 
     def set_label(self, label):
         """

@@ -238,7 +238,7 @@ class Directory:
                 parent_dn: Distinguished name of parent
                 name: Node name
                 password: Node password
-                description: LDAP attribute name
+                description: description
         """
         dn = "cn=%s,%s" % (name, parent_dn)
         properties = {
@@ -309,6 +309,108 @@ class Directory:
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def modify_folder(self, dn, label, description=""):
+        """
+            Modified folder information.
+
+            Arguments:
+                dn: Distinguished name
+                label: Node label
+                description: description
+        """
+        dn, old_properties = self.search(dn, scope="base", fields=["o", "description"])[0]
+
+        properties = {
+            "o": [label],
+            "description": [description]
+        }
+        try:
+            self.modify(dn, old_properties, properties)
+        except ldap.LDAPError, e:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError, e:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def modify_user(self, dn, password="", description=""):
+        """
+            Modifies user information.
+
+            Arguments:
+                dn: Distinguished name
+                password: User password
+                description: description
+        """
+        dn, old_properties = self.search(dn, scope="base", fields=["userPassword", "description"])[0]
+
+        properties = {
+            "description": [description]
+        }
+        if len(password):
+            properties["userPassword"] = [password]
+        else:
+            del old_properties["userPassword"]
+        try:
+            self.modify(dn, old_properties, properties)
+        except ldap.LDAPError, e:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError, e:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def modify_computer(self, dn, password="", description=""):
+        """
+            Modifies computer information.
+
+            Arguments:
+                dn: Distinguished name
+                password: Computer password
+                description: description
+        """
+        dn, old_properties = self.search(dn, scope="base", fields=["userPassword", "description"])[0]
+
+        properties = {
+            "description": [description]
+        }
+        if len(password):
+            properties["userPassword"] = [password]
+        else:
+            del old_properties["userPassword"]
+        try:
+            self.modify(dn, old_properties, properties)
+        except ldap.LDAPError, e:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError, e:
+                raise DirectoryConnectionError
+            raise DirectoryError
+
+    def modify_group(self, dn, members=[], description=""):
+        """
+            Modifies group information.
+
+            Arguments:
+                dn: Distinguished name
+                members: List of members
+                description: description
+        """
+        dn, old_properties = self.search(dn, scope="base", fields=["member", "description"])[0]
+
+        properties = {
+            "description": [description],
+            "member": members
+        }
+        try:
+            self.modify(dn, old_properties, properties)
+        except ldap.LDAPError, e:
+            try:
+                self.conn.whoami_s()
+            except ldap.LDAPError, e:
                 raise DirectoryConnectionError
             raise DirectoryError
 
