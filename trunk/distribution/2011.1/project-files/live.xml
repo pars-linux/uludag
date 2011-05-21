@@ -33,7 +33,6 @@
         <SelectedPackage>example-content</SelectedPackage>
         <SelectedPackage>extundelete</SelectedPackage>
         <SelectedPackage>ffmpeg</SelectedPackage>
-        <SelectedPackage>filelight</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
@@ -110,6 +109,7 @@
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>kdetoys</SelectedPackage>
         <SelectedPackage>kdeutils</SelectedPackage>
+        <SelectedPackage>kdeutils-filelight</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>kdm-theme-pardus</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
