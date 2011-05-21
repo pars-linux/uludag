@@ -152,6 +152,9 @@ class Install(install):
             shutil.copy(filename, apps_dir)
 
         shutil.copy("data/%s.png" % PROJECT, icon_dir)
+
+        # pisi provides its mime type file, so we dont need it from the pm
+        # you can check the bug pb#18193 about the issue
         # shutil.copy("data/%s.xml" % PROJECT, mime_dir)
 
         # Install icons
