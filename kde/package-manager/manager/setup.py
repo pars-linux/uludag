@@ -152,7 +152,7 @@ class Install(install):
             shutil.copy(filename, apps_dir)
 
         shutil.copy("data/%s.png" % PROJECT, icon_dir)
-        shutil.copy("data/%s.xml" % PROJECT, mime_dir)
+        # shutil.copy("data/%s.xml" % PROJECT, mime_dir)
 
         # Install icons
         for size in ["16x16", "32x32", "48x48", "64x64"]:
