@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>613</width>
-    <height>416</height>
+    <width>854</width>
+    <height>460</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -124,7 +124,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Edit Rules</string>
+         <string>Edit Firewall Rules</string>
         </property>
         <property name="icon">
          <iconset resource="firewall.qrc">
@@ -147,7 +147,7 @@
          </sizepolicy>
         </property>
         <property name="text">
-         <string>Clear Rules</string>
+         <string>Load Default Rules</string>
         </property>
         <property name="icon">
          <iconset resource="firewall.qrc">

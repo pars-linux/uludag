@@ -1051,6 +1051,16 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if self.stackedWidget.currentIndex() == 0:
             return False
 
+        msg = QtGui.QMessageBox(self)
+        msg.setIcon(QtGui.QMessageBox.Question)
+        msg.setText("Policy will be saved.")
+        msg.setInformativeText("Do you want to continue?")
+        msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+        msg.setDefaultButton(QtGui.QMessageBox.No)
+
+        if msg.exec_() != QtGui.QMessageBox.Yes:
+            return
+
         widget = self.stackedWidget.currentWidget()
 
         remove = False
@@ -1104,7 +1114,7 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
         if self.stackedWidget.currentIndex() != 0:
             msg = QtGui.QMessageBox(self)
             msg.setIcon(QtGui.QMessageBox.Question)
-            msg.setText("Do you want to reset all changes?")
+            msg.setText("All changes will be reverted.")
             msg.setInformativeText("Do you want to continue?")
             msg.setStandardButtons(QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
             msg.setDefaultButton(QtGui.QMessageBox.No)
