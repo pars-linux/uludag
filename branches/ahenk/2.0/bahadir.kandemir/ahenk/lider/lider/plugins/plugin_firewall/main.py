@@ -31,6 +31,7 @@ class ThreadFW(QtCore.QThread):
         QtCore.QThread.__init__(self)
 
         self.status = None
+        self.out = ""
         self.error = ""
 
         if group_name:
@@ -51,7 +52,7 @@ class ThreadFW(QtCore.QThread):
         fp.write(self.rules_xml)
         fp.close()
 
-        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
+        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         while True:
             if "delayedQuit" in process.stderr.readline():
                 os.kill(process.pid, signal.SIGINT)
@@ -67,6 +68,7 @@ class ThreadFW(QtCore.QThread):
             return
 
         self.status = True
+        self.out = process.stdout.read()
 
         data = file(name + ".sh").read()
 
@@ -208,7 +210,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall, plugins.PluginWidget):
             self.rules_xml = self.thread.rules_xml
             self.rules_compiled = self.thread.rules_compiled
             if self.thread.status:
-                self.plainTextEdit.setPlainText("")
+                self.plainTextEdit.setPlainText(self.thread.out)
             else:
                 self.plainTextEdit.setPlainText(self.thread.error)
         self.pushEdit.setEnabled(True)
