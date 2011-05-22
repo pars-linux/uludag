@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>939</width>
+    <width>613</width>
     <height>416</height>
    </rect>
   </property>
@@ -28,7 +28,7 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>300</width>
        <height>0</height>
       </size>
      </property>
@@ -36,7 +36,7 @@
       <string>Firewall State</string>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
+      <item row="0" column="0" rowspan="2">
        <widget class="QLabel" name="pixmapStatus">
         <property name="minimumSize">
          <size>
@@ -59,25 +59,21 @@
        </widget>
       </item>
       <item row="0" column="1">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QRadioButton" name="radioEnable">
-          <property name="text">
-           <string>Enable firewall.</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QRadioButton" name="radioDisable">
-          <property name="text">
-           <string>Disable firewall.</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <widget class="QRadioButton" name="radioEnable">
+        <property name="text">
+         <string>Enable firewall.</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QRadioButton" name="radioDisable">
+        <property name="text">
+         <string>Disable firewall.</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
