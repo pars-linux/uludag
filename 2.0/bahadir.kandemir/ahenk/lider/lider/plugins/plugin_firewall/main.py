@@ -75,7 +75,7 @@ class ThreadFW(QtCore.QThread):
 
         # Add NAT log rules
         data = re.sub('    echo \"Rule ([0-9]+) \(NAT\)\"\n    # \n    \$IPTABLES \-t nat (.*) \-j DNAT (.*)',
-                      '    echo "Rule \\1 (NAT)"\n    # \n    $IPTABLES -t nat \\2 -j DNAT \\3\n    $IPTABLES -t nat \\2 -j LOG  --log-level info --log-prefix "RULE \\1 -- TRANSLATE " \\3',
+                      '    echo "Rule \\1 (NAT)"\n    # \n    $IPTABLES -t nat \\2 -j DNAT \\3\n    $IPTABLES -t nat \\2 -j ULOG --ulog-nlgroup 1 --ulog-prefix "RULE \\1 -- TRANSLATE " --ulog-qthreshold 1 \\3',
                       data,
                       re.MULTILINE)
 
