@@ -10,7 +10,6 @@
         <SelectedPackage>alsa-lib</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
-        <SelectedPackage>apmd</SelectedPackage>
         <SelectedPackage>artwork-pardus-release</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
@@ -311,7 +310,6 @@
         <Package>alsa-plugins-pulseaudio</Package>
         <Package>alsa-utils</Package>
         <Package>alternatives</Package>
-        <Package>apmd</Package>
         <Package>ar9170-firmware</Package>
         <Package>artwork-pardus-release</Package>
         <Package>atk</Package>

@@ -404,7 +404,6 @@
                 <Package>alsa-plugins-pulseaudio</Package>
                 <Package>alsa-utils</Package>
                 <Package>alternatives</Package>
-                <Package>apmd</Package>
                 <Package>apr</Package>
                 <Package>apr-util</Package>
                 <Package>ar9170-firmware</Package>
