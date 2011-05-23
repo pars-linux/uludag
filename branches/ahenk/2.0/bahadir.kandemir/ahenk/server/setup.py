@@ -11,5 +11,5 @@ setup(name='ahenk-setup',
       author_email='bahadir@python.net',
       url='http://www.pardus.org.tr/',
       scripts=['ahenk_setup'],
-      data_files=[('/usr/share/ahenk-setup/schema', ['schema/%s' % x for x in os.listdir('schema')])]
+      data_files=[('/usr/share/ahenk-setup/schema', ['schema/%s' % x for x in os.listdir('schema') if not x.startswith(".")])]
      )

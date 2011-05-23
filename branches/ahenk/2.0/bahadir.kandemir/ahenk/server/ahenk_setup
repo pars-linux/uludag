@@ -63,6 +63,16 @@ access to attrs=userPassword
        by dn.exact="cn=%(root_account)s, %(domain)s" write
        by * none
 
+access to attrs=firewallState,firewallRules
+       by group="cn=firewall, dc=groups, %(domain)s" write
+       by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by * read
+
+access to attrs=softwareRepositories,softwareUpdateSchedule,softwareUpdateMode
+       by group="cn=software, dc=groups, %(domain)s" write
+       by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by * read
+
 access to *
        by self write
        by dn.exact="cn=%(root_account)s, %(domain)s" write
@@ -81,6 +91,24 @@ objectClass: organizationalRole
 objectClass: simpleSecurityObject
 cn: %(root_account)s
 userPassword:%(root_password)s
+
+dn: dc=groups, %(domain)s
+objectClass: dcObject
+objectClass: organization
+o: Groups
+dc: groups
+
+dn: cn=firewall, dc=groups, %(domain)s
+cn: firewall
+objectClass: top
+objectClass: groupOfNames
+member: cn=%(root_account)s, %(domain)s
+
+dn: cn=software, dc=groups, %(domain)s
+cn: software
+objectClass: top
+objectClass: groupOfNames
+member: cn=%(root_account)s, %(domain)s
 """
 
 TEMP_JABBER = """{loglevel, 1}.
