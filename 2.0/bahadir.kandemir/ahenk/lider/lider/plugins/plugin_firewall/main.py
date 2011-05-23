@@ -85,6 +85,19 @@ class ThreadFW(QtCore.QThread):
         data = re.sub('RULE_', '%s_RULE_' % self.group_name, data)
         data = re.sub('"RULE ', '"%s RULE ' % self.group_name, data)
 
+        # Add log rules for established and related connections
+        data = re.sub('    \$IPTABLES \-A INPUT   \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT ',
+                      '    $IPTABLES -A INPUT   -m state --state ESTABLISHED,RELATED -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A INPUT   -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
+
+        data = re.sub('    \$IPTABLES \-A OUTPUT  \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT ',
+                      '    $IPTABLES -A OUTPUT  -m state --state ESTABLISHED,RELATED -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A OUTPUT  -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
+
+        data = re.sub('    \$IPTABLES \-A FORWARD \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT',
+                      '    $IPTABLES -A FORWARD -m state --state ESTABLISHED,RELATED -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
+
         self.rules_compiled = data
 
 
