@@ -94,7 +94,7 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         """
             Sets LDAP attribute name.
         """
-        self.editDescription.setText(password)
+        self.editDescription.setText(unicode(password))
 
     def accept(self):
         """

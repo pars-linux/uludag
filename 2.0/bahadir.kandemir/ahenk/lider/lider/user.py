@@ -93,7 +93,7 @@ class DialogUser(QtGui.QDialog, Ui_dialogUser):
         """
             Sets description.
         """
-        self.editDescription.setText(description)
+        self.editDescription.setText(unicode(description))
 
     def accept(self):
         """

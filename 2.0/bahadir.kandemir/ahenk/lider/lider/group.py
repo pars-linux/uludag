@@ -69,7 +69,7 @@ class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
         """
             Sets description.
         """
-        self.editDescription.setText(description)
+        self.editDescription.setText(unicode(description))
 
     def set_members(self, members):
         """
