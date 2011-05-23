@@ -130,6 +130,9 @@ def fetch_policy(conn, options, domain, dn):
 
     paths = parent_paths(dn, domain)
 
+    for g_dn, g_attrs in conn.search_s(domain, ldap.SCOPE_SUBTREE, '(member=%s)' % dn, ['modifyTimestamp']):
+        paths.insert(-1, g_dn)
+
     timestamps = []
     for path in paths:
         search = conn.search_s(path, ldap.SCOPE_BASE, attrlist=['modifyTimestamp'])
