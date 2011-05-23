@@ -51,7 +51,7 @@ class Agent(daemon.Daemon):
         proc_xmpp = multiprocessing.Process(target=workers.worker_xmpp,
                                             args=(self.options, q_in, q_out))
         proc_applier = multiprocessing.Process(target=workers.worker_applier,
-                                               args=(self.options, q_in, q_out, q_foce))
+                                               args=(self.options, q_in, q_out, q_force))
 
         # Signal handler
         def signal_handler(signum, frame):
