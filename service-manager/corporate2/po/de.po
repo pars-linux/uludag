@@ -2,7 +2,7 @@
 # translation of de.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Mustafa Ölcerman <oelcerman@fussballkreis.org>, 2006.
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
@@ -24,7 +24,7 @@ msgid "You are not authorized for this operation."
 msgstr "Sie sind nicht berechtigt diesen Vorgang auszuführen."
 
 #: src/sm_backend.py:48
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "An error occurred:\n"
 "%s"
@@ -90,16 +90,15 @@ msgstr "1"
 
 #: src/service_manager.py:87 src/service_manager.py:135
 msgid "Service Description"
-msgstr ""
+msgstr "Dienstbeschreibung"
 
 #: src/service_manager.py:88 src/service_manager.py:136
 msgid "Run on Startup"
 msgstr "Automatisch starten"
 
 #: src/service_manager.py:89 src/service_manager.py:137
-#, fuzzy
 msgid "Service Name"
-msgstr "Dienste-Manager"
+msgstr "Dienstname"
 
 #: src/service_manager.py:125
 msgid "Run on startup."
