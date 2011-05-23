@@ -65,13 +65,13 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
         """
             Sets label.
         """
-        self.editLabel.setText(label)
+        self.editLabel.setText(unicode(label))
 
     def set_description(self, description):
         """
             Sets description.
         """
-        self.editDescription.setText(description)
+        self.editDescription.setText(unicode(description))
 
     def accept(self):
         if not len(self.editName.text()):
