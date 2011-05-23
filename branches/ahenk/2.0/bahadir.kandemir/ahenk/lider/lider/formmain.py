@@ -716,8 +716,11 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
             # TODO: Disconnect
             QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
             return
+        except directory.DirectoryAccessError:
+            QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+            return
         except directory.DirectoryError:
-            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
+            QtGui.QMessageBox.warning(self, "Connection Error", "Unable to modify item.")
             return
 
         parent = item.parent()
@@ -752,6 +755,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
                 return
+            except directory.DirectoryAccessError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to delete item.")
                 return
@@ -780,6 +786,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryAccessError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add computer.")
@@ -815,6 +824,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryAccessError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add user.")
@@ -857,6 +869,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
                 return
+            except directory.DirectoryAccessError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
+                return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add group.")
                 return
@@ -891,6 +906,9 @@ class FormMain(QtGui.QWidget, Ui_FormMain):
                 self.__update_status("directory", "error")
                 # TODO: Disconnect
                 QtGui.QMessageBox.warning(self, "Connection Error", "Connection lost. Please re-connect.")
+                return
+            except directory.DirectoryAccessError:
+                QtGui.QMessageBox.warning(self, "Connection Error", "Insufficient access.")
                 return
             except directory.DirectoryError:
                 QtGui.QMessageBox.warning(self, "Connection Error", "Unable to add folder.")
