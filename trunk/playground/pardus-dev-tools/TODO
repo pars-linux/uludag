@@ -2,9 +2,17 @@ TODO
 ----
 
 (-) Add trunk/scripts/bump
-(-) Add trunk/scripts/checklib
-(-) Add trunk/scripts/repo-diff
+(-) Add trunk/scripts/checkelf
+(-) Add trunk/scripts/checkout-*
+(-) Add trunk/scripts/compare-files
+(-) Add trunk/scripts/from-review-to-repo
+(-) Add trunk/scripts/list-repo-packages
+(-) Add trunk/scripts/package-diff-notify
+(-) Add trunk/scripts/packager-stats
 (-) Add trunk/scripts/pisimerge
+(-) Add trunk/scripts/repo-diff
+(-) Add trunk/scripts/split-library-packages
+(-) Add trunk/scripts/takeover
 (-) Provide several git,svn scripts to ease some workflows
 
 (-) Provide a hook for defaulting EDITOR to "vi" or "emacs"
