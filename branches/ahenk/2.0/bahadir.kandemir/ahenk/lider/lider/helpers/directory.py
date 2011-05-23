@@ -22,6 +22,12 @@ class DirectoryConnectionError(DirectoryError):
     """
     pass
 
+class DirectoryAccessError(DirectoryError):
+    """
+        Access error class
+    """
+    pass
+
 class Directory:
     """
         Directory service manager.
@@ -224,6 +230,8 @@ class Directory:
         try:
             self.add_new(dn, properties)
         except ldap.LDAPError, e:
+            if "access" in e[0]["desc"]:
+                raise DirectoryAccessError
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError, e:
@@ -251,7 +259,8 @@ class Directory:
         try:
             self.add_new(dn, properties)
         except ldap.LDAPError, e:
-            print e
+            if "access" in e[0]["desc"]:
+                raise DirectoryAccessError
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
@@ -278,7 +287,9 @@ class Directory:
         try:
             self.add_new(dn, properties)
             return dn
-        except ldap.LDAPError:
+        except ldap.LDAPError, e:
+            if "access" in e[0]["desc"]:
+                raise DirectoryAccessError
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
@@ -305,7 +316,9 @@ class Directory:
         try:
             self.add_new(dn, properties)
             return dn
-        except ldap.LDAPError:
+        except ldap.LDAPError, e:
+            if "access" in e[0]["desc"]:
+                raise DirectoryAccessError
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError:
@@ -427,6 +440,8 @@ class Directory:
             ldif = ldap.modlist.modifyModlist(old, new)
             self.conn.modify_s(dn, ldif)
         except ldap.LDAPError, e:
+            if "access" in e[0]["desc"]:
+                raise DirectoryAccessError
             try:
                 self.conn.whoami_s()
             except ldap.LDAPError, e:
