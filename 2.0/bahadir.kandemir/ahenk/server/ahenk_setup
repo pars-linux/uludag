@@ -76,6 +76,7 @@ access to attrs=softwareRepositories,softwareUpdateSchedule,softwareUpdateMode
 access to *
        by self write
        by dn.exact="cn=%(root_account)s, %(domain)s" write
+       by group="cn=admins, dc=groups, %(domain)s" write
        by users read
        by * read
 """
@@ -98,14 +99,23 @@ objectClass: organization
 o: Groups
 dc: groups
 
+dn: cn=admins, dc=groups, %(domain)s
+cn: admins
+description: System administrators
+objectClass: top
+objectClass: groupOfNames
+member: cn=%(root_account)s, %(domain)s
+
 dn: cn=firewall, dc=groups, %(domain)s
 cn: firewall
+description: Firewall administrators
 objectClass: top
 objectClass: groupOfNames
 member: cn=%(root_account)s, %(domain)s
 
 dn: cn=software, dc=groups, %(domain)s
 cn: software
+description: Software stack administrators
 objectClass: top
 objectClass: groupOfNames
 member: cn=%(root_account)s, %(domain)s
