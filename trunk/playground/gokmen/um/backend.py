@@ -29,24 +29,21 @@ class PisiUI(QObject, pisi.ui.UI):
     def __init__(self, *args):
         pisi.ui.UI.__init__(self)
         apply(QObject.__init__, (self,) + args)
-        self.lastPackage = ''
 
     def notify(self, event, **keywords):
-        print "UM DEBUG:", event, keywords
+        self.emit(SIGNAL("notify(int, PyQt_PyObject)"), \
+                  event, keywords)
 
     def info(self, message, verbose = False, noln = False):
-        print "MM:", message
+        pass
+        # print "MM:", message
 
     def warning(self, message):
-        print "WR:", message
+        pass
+        # print "WR:", message
 
     def display_progress(self, **keywords):
-        self.emit(SIGNAL("progress(QString, int, int, QString, int)"), \
-                  keywords['filename'],
-                  keywords['downloaded_size'],
-                  keywords['total_size'],
-                  keywords['symbol'],
-                  keywords['percent'])
+        self.emit(SIGNAL("progress(PyQt_PyObject)"), keywords)
 
 class Singleton(object):
     def __new__(type):
@@ -69,17 +66,21 @@ class Iface(QObject, Singleton):
 
         self.ui = PisiUI()
         self.connect(self.ui,\
-                SIGNAL("progress(QString, int, int, QString, int)"),\
+                SIGNAL("progress(PyQt_PyObject)"),\
                 parent.updateProgress)
+
+        self.connect(self.ui,\
+                SIGNAL("notify(int, PyQt_PyObject)"),\
+                parent.processNotify)
 
         pisi.api.set_userinterface(self.ui)
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
 
     @threaded
-    def installPackages(self, packages, with_comar = True):
+    def installPackages(self, packages, with_comar = True, reinstall = True):
         pisi.api.set_comar(with_comar)
-        pisi.api.install(packages)
+        pisi.api.install(packages, reinstall = reinstall)
 
     @threaded
     def downloadPackages(self, packages):
