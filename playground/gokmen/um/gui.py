@@ -12,10 +12,13 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 
 from PyQt4.QtCore import SIGNAL, QTimer
+from PyQt4.QtGui import QDialog
 from PyQt4.QtGui import QWidget
+
 from ui import ui_main
 from ui import ui_mainscreen
 from ui import ui_screen_1
@@ -40,6 +43,8 @@ REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
+from pisi.ui import *
+
 def getWidget(page = None, title = ""):
     widget = QWidget()
     widget.title = title
@@ -49,10 +54,10 @@ def getWidget(page = None, title = ""):
         widget.ui = page
     return widget
 
-class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
+class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     def __init__(self, parent = None):
-        QWidget.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setupUi(self)
 
         self.target_repo = REPO_TEMPLATE % 'stable'
@@ -111,8 +116,8 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         self.pageWidget.createPage(
                 getWidget(ui_screen_5, ""), inMethod = self.upgradeSystem)
 
-        upgradeWidget = self.pageWidget.getWidget(4).ui
-        self.progress = upgradeWidget.progress
+        # Shortcut for Progress Screen UI
+        self.ps = self.pageWidget.getWidget(4).ui
 
     def checkSystem(self):
         # self.button_next.setEnabled(False)
@@ -140,7 +145,48 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
         self.hideMessage()
 
     def upgradeSystem(self):
+        self.upgradeStep_1()
+
+    def upgradeStep_1(self):
+        self.ps.progress.setFormat("Installing new package management system...")
         self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES))
+
+    def upgradeStep_2(self):
+        self.ps.progress.setFormat("Upgrading to Pardus 2011...")
+
+        # I know this is ugly but we need to use new Pisi :(
+        os.system('upgrade-manager&')
+        sys.exit()
+
+    def processNotify(self, event, notify):
+        if 'package' in notify:
+            package = str(notify['package'].name)
+
+            if event == installing:
+                self.ps.status.setText("Installing: <b>%s</b>" % package)
+            elif event == installed:
+                self.ps.status.setText("Installed: <b>%s</b>" % package)
+            elif event == upgraded:
+                self.ps.status.setText("Upgraded: <b>%s</b>" % package)
+            elif event == removing:
+                self.ps.status.setText("Removing: <b>%s</b>" % package)
+            elif event == removed:
+                self.ps.status.setText("Removed: <b>%s</b>" % package)
+
+            if event in (installed, upgraded) and package == 'pisi':
+                self.ps.progress.setFormat("Step 1 Completed")
+                self.ps.progress.setValue(10)
+                self.upgradeStep_2()
+
+    def updateProgress(self, raw):
+        self.ps.status.setText("Downloading: <b>%s</b>" % raw['filename'])
+        percent = raw['percent']
+
+        if percent==100:
+            self.ps.steps.setMaximum(0)
+        else:
+            self.ps.steps.setMaximum(100)
+            self.ps.steps.setValue(percent)
 
     def showMessage(self, message):
         self.msgbox.busy.busy()
@@ -151,39 +197,4 @@ class UmMainScreen(QWidget, ui_mainscreen.Ui_UpgradeManager):
     def hideMessage(self):
         if self.msgbox.isVisible():
             self.msgbox.animate(start = CURRENT, stop = CURRENT, direction = OUT)
-
-    def updateProgress(self, package, downloaded, total, symbol, percent):
-        print package, downloaded, total, symbol, percent
-        self.progress.setValue(percent)
-        if percent == 100:
-            print "Done !"
-            # self.progress.hide()
-
-class UmGui(QWidget, ui_main.Ui_UpgradeManager):
-
-    def __init__(self, parent = None):
-        QWidget.__init__(self, parent)
-        self.setupUi(self)
-
-        self.progress.hide()
-        self.exitButton.hide()
-
-        self.iface = Iface(self)
-
-        self.upgradeButton.clicked.connect(self.upgrade)
-        self.exitButton.clicked.connect(sys.exit)
-
-    def upgrade(self):
-        self.upgradeButton.hide()
-        self.progress.show()
-
-        self.iface.downloadPackages(['urbanterror'])
-
-    def updateProgress(self, package, downloaded, total, symbol, percent):
-        print package, downloaded, total, symbol, percent
-        self.progress.setValue(percent)
-        if percent == 100:
-            self.label.setText("Download Complete, please press Exit.")
-            self.exitButton.show()
-            self.progress.hide()
 

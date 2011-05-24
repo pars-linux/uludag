@@ -25,11 +25,11 @@ Tasks:
 
 - Disable all repos
 
-- Install packages from semiupdate repo (order is important) (xz replaces lzma !)
-    libuser-0.57.1-1-1.pisi
-    python-pyliblzma-0.5.3-1-1.pisi
-    pisi-2.4_alpha3-1-1.pisi
-    xz-4.999.9_beta143-1-1.pisi
++ Install packages from semiupdate repo (order is important) (xz replaces lzma !)
+  + libuser-0.57.1-1-1.pisi
+  + python-pyliblzma-0.5.3-1-1.pisi
+  + pisi-2.4_alpha3-1-1.pisi
+  + xz-4.999.9_beta143-1-1.pisi
 
 - Remove semiupdate repo if added
 
