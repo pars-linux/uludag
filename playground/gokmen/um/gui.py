@@ -155,8 +155,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.progress.setFormat("Upgrading to Pardus 2011...")
 
         # I know this is ugly but we need to use new Pisi :(
-        os.system('upgrade-manager&')
-        sys.exit()
+        os.execl('/usr/bin/upgrade-manager')
 
     def processNotify(self, event, notify):
         if 'package' in notify:
