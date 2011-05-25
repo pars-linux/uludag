@@ -13,10 +13,14 @@
 
 import pisi
 import threading
+import urlgrabber
+
 from pds.thread import PThread
 
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
+
+FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
 def threaded(fn):
     def run(*k, **kw):
@@ -61,7 +65,6 @@ class Iface(QObject, Singleton):
 
         # Make something crazy.
         # options.yes_all = True
-        # options.ignore_dependency = True
         # options.ignore_safety = True
 
         self.ui = PisiUI()
@@ -78,11 +81,49 @@ class Iface(QObject, Singleton):
         pisi.api.set_signal_handling(False)
 
     @threaded
-    def installPackages(self, packages, with_comar = True, reinstall = True):
+    def installPackages(self, packages, with_comar = True, reinstall = True, ignore_dep = False):
+
+        print "PISI Installing : ", packages
+
+        options = pisi.config.Options()
+        options.ignore_dependency = ignore_dep
+        pisi.api.set_options(options)
+
         pisi.api.set_comar(with_comar)
         pisi.api.install(packages, reinstall = reinstall)
 
     @threaded
     def downloadPackages(self, packages):
         pisi.api.fetch(packages)
+
+    @threaded
+    def upgradeSystem(self):
+        pisi.api.update_repo("pardus-2011")
+
+        options = pisi.config.Options()
+        options.ignore_dependency = False
+        pisi.api.set_options(options)
+
+        pisi.api.set_comar(False)
+        pisi.api.upgrade()
+
+        # Install Required Packages
+        pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
+        self.installPackages(pkgs_to_install, with_comar = False)
+
+        # Configure Pending !
+        self.configurePending(['baselayout'])
+        self.configurePending()
+
+    @threaded
+    def configurePending(self, packages = None):
+        pisi.api.configure_pending(packages)
+
+    def removeRepos(self):
+        repos = pisi.api.list_repos()
+        for repo in repos:
+            pisi.api.remove_repo(repo)
+
+    def addRepo(self, repoAddr):
+        pisi.api.add_repo("pardus-2011", repoAddr)
 

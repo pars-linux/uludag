@@ -14,6 +14,7 @@
 
 import os
 import sys
+import urlgrabber
 
 from PyQt4.QtCore import SIGNAL, QTimer
 from PyQt4.QtGui import QDialog
@@ -56,7 +57,7 @@ def getWidget(page = None, title = ""):
 
 class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
-    def __init__(self, parent = None):
+    def __init__(self, parent = None, inStep2 = False):
         QDialog.__init__(self, parent)
         self.setupUi(self)
 
@@ -67,8 +68,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.msgbox.setStyleSheet(PMessageBox.Style)
         self.msgbox.enableOverlay()
 
-        self.thread_check = PThread(self, self.findMissingPackages, self.showResults)
-
         self.pageWidget = QPageWidget(self.widget_screens)
         self.layout.addWidget(self.pageWidget)
 
@@ -77,47 +76,58 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Update Page Title
         self.connect(self.pageWidget, SIGNAL("currentChanged()"), lambda:\
-                    self.label_header.setText(self.pageWidget.getCurrentWidget().title))
+                     self.label_header.setText(self.pageWidget.getCurrentWidget().title))
 
-        # Welcome
-        self.pageWidget.createPage(
-                getWidget(ui_screen_1, "Welcome to Upgrade Manager..."))
+        if not inStep2:
+            self.current_step = 1
+            self.thread_check = PThread(self, self.findMissingPackages, self.showResults)
 
-        # Repo Selection
-        self.pageWidget.createPage(
-                getWidget(ui_screen_2, "Select Upgrade Repository..."))
+            # Welcome
+            self.pageWidget.createPage(
+                    getWidget(ui_screen_1, "Welcome to Upgrade Manager..."))
 
-        # Check Results Page
-        self.pageWidget.createPage(
-                getWidget(ui_screen_3, "Checking your system..."),
-                inMethod = self.checkSystem, outMethod = self.hideMessage)
+            # Repo Selection
+            self.pageWidget.createPage(
+                    getWidget(ui_screen_2, "Select Upgrade Repository..."))
 
-        resultWidget = self.pageWidget.getWidget(2).ui
-        resultWidget.c_package.hide()
-        resultWidget.c_disk.hide()
-        resultWidget.success.hide()
+            # Check Results Page
+            self.pageWidget.createPage(
+                    getWidget(ui_screen_3, "Checking your system..."),
+                    inMethod = self.checkSystem, outMethod = self.hideMessage)
 
-        def updateButtons():
-            if self.button_next.text() == "Next":
-                self.button_next.setText("Yes, Upgrade")
-                self.button_previous.setText("Cancel")
-                self.button_cancel.hide()
-            else:
-                self.button_next.setText("Next")
-                self.button_previous.setText("Previous")
-                self.button_cancel.show()
+            resultWidget = self.pageWidget.getWidget(2).ui
+            resultWidget.c_package.hide()
+            resultWidget.c_disk.hide()
+            resultWidget.success.hide()
 
-        # Last Question
-        self.pageWidget.createPage(
-                getWidget(ui_screen_4, ""), inMethod = updateButtons,
-                                            outMethod= updateButtons)
+            def updateButtons():
+                if self.button_next.text() == "Next":
+                    self.button_next.setText("Yes, Upgrade")
+                    self.button_previous.setText("Cancel")
+                    self.button_cancel.hide()
+                else:
+                    self.button_next.setText("Next")
+                    self.button_previous.setText("Previous")
+                    self.button_cancel.show()
+
+            # Last Question
+            self.pageWidget.createPage(
+                    getWidget(ui_screen_4, ""), inMethod = updateButtons,
+                                                outMethod= updateButtons)
+        else:
+            self.current_step = 2
 
         # Progress Screen
         self.pageWidget.createPage(
-                getWidget(ui_screen_5, ""), inMethod = self.upgradeSystem)
+                getWidget(ui_screen_5, "Upgrading the system..."), inMethod = self.upgradeStep_1)
 
         # Shortcut for Progress Screen UI
-        self.ps = self.pageWidget.getWidget(4).ui
+        # Get the last added page as progress page
+        # After the first step completed, um will restart with just this page !
+        self.ps = self.pageWidget.getWidget(self.pageWidget.count() - 1).ui
+
+        if inStep2:
+            self.upgradeStep_2()
 
     def checkSystem(self):
         # self.button_next.setEnabled(False)
@@ -144,20 +154,32 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.label_header.setText("Check results...")
         self.hideMessage()
 
-    def upgradeSystem(self):
-        self.upgradeStep_1()
-
     def upgradeStep_1(self):
+        self.disableButtons()
+
+        # To Animate it
+        self.ps.steps.setMaximum(0)
+
+        # Remove Repositories
+        self.ps.progress.setFormat("Removing current repositories...")
+        self.iface.removeRepos()
+
+        # Install New Pisi and its dependencies
+        # To keep install in given order we need to pass ignore_dep as True
         self.ps.progress.setFormat("Installing new package management system...")
-        self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES))
+        self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
     def upgradeStep_2(self):
+        self.disableButtons()
+        self.ps.steps.setMaximum(0)
+        self.ps.progress.setValue(10)
         self.ps.progress.setFormat("Upgrading to Pardus 2011...")
 
-        # I know this is ugly but we need to use new Pisi :(
-        os.execl('/usr/bin/upgrade-manager')
+        # Lets Update !
+        self.iface.upgradeSystem()
 
     def processNotify(self, event, notify):
+
         if 'package' in notify:
             package = str(notify['package'].name)
 
@@ -167,15 +189,27 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
                 self.ps.status.setText("Installed: <b>%s</b>" % package)
             elif event == upgraded:
                 self.ps.status.setText("Upgraded: <b>%s</b>" % package)
+            elif event == configuring:
+                self.ps.status.setText("Configuring: <b>%s</b>" % package)
+            elif event == configured:
+                self.ps.status.setText("Configured: <b>%s</b>" % package)
             elif event == removing:
                 self.ps.status.setText("Removing: <b>%s</b>" % package)
             elif event == removed:
                 self.ps.status.setText("Removed: <b>%s</b>" % package)
 
-            if event in (installed, upgraded) and package == 'pisi':
+            print "DEBUG:", self.ps.status.text()
+
+            if event in (installed, upgraded) and self.current_step == 1:
+                self.ps.progress.setValue(self.ps.progress.value() + 2)
+
+            # END OF Step 1 in Upgrade
+            if event in (installed, upgraded) and package == 'xz' and self.current_step == 1:
                 self.ps.progress.setFormat("Step 1 Completed")
                 self.ps.progress.setValue(10)
-                self.upgradeStep_2()
+                self.iface.addRepo(self.target_repo)
+                # I know this is ugly but we need to use new Pisi :(
+                os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
 
     def updateProgress(self, raw):
         self.ps.status.setText("Downloading: <b>%s</b>" % raw['filename'])
@@ -196,4 +230,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     def hideMessage(self):
         if self.msgbox.isVisible():
             self.msgbox.animate(start = CURRENT, stop = CURRENT, direction = OUT)
+
+    def disableButtons(self):
+        for button in (self.button_cancel, self.button_previous, self.button_next):
+            button.setEnabled(False)
 
