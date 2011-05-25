@@ -13,6 +13,9 @@ si::sysinit:/sbin/mudur.py sysinit
 # Further system initialization, brings up the boot runlevel.
 rc::bootwait:/sbin/mudur.py boot
 
+# Spawn sulogin when in single-user mode
+~~:S:wait:/sbin/sulogin
+
 l0:0:wait:/sbin/mudur.py shutdown
 l1:S1:wait:/sbin/mudur.py single
 l2:2:wait:/sbin/mudur.py nonetwork
