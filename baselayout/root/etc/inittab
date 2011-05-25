@@ -22,12 +22,12 @@ l5:5:wait:/sbin/mudur.py default
 l6:6:wait:/sbin/mudur.py reboot
 #z6:6:respawn:/sbin/sulogin
 
-c1:12345:respawn:/sbin/mingetty --noclear tty1
-c2:12345:respawn:/sbin/mingetty --noclear tty2
-c3:12345:respawn:/sbin/mingetty tty3
-c4:12345:respawn:/sbin/mingetty tty4
-c5:12345:respawn:/sbin/mingetty tty5
-c6:12345:respawn:/sbin/mingetty tty6
+c1:2345:respawn:/sbin/mingetty --noclear tty1
+c2:2345:respawn:/sbin/mingetty --noclear tty2
+c3:2345:respawn:/sbin/mingetty tty3
+c4:2345:respawn:/sbin/mingetty tty4
+c5:2345:respawn:/sbin/mingetty tty5
+c6:2345:respawn:/sbin/mingetty tty6
 
 # SERIAL CONSOLES
 #s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100
