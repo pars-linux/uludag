@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     app = QUniqueApplication(sys.argv, catalog='um')
 
-    window = UmMainScreen()
+    window = UmMainScreen(inStep2 = '--start-from-step2' in sys.argv)
     window.show()
 
     app.exec_()

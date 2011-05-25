@@ -23,7 +23,7 @@ Tasks:
 
 + Final confirmation "are you sure ?"
 
-- Disable all repos
++ Disable all repos (I removed them !)
 
 + Install packages from semiupdate repo (order is important) (xz replaces lzma !)
   + libuser-0.57.1-1-1.pisi
@@ -31,12 +31,12 @@ Tasks:
   + pisi-2.4_alpha3-1-1.pisi
   + xz-4.999.9_beta143-1-1.pisi
 
-- Remove semiupdate repo if added
++ Add selected repository
 
-- pisi up --ignore-comar -y
-- install packages from forceinstall list
-- pisi cp baselayout
-- pisi cp
++ pisi up --ignore-comar -y
++ install packages from forceinstall list
++ pisi cp baselayout
++ pisi cp
 
 - Modify grub.conf
     - Remove vga=XXX
