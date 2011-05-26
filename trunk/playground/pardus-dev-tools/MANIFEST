@@ -2,9 +2,9 @@ bump
 checkelf
 checkout-fedora
 checkout-mandriva
-checkout-suse
 compare-files
 from-review-to-repo
+get-suse-srpm
 list-repo-packages
 package-diff-notify
 packager-stats
