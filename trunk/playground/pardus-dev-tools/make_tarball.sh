@@ -24,6 +24,9 @@ fi
 
 if [ -d "$1" ]; then
     SCRIPTSDIR="$1"
+else
+    echo "Given path is not a directory."
+    exit 1
 fi
 
 if [ -d $DIRNAME ]; then
