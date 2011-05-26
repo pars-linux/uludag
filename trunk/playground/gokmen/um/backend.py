@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import pisi
 import threading
 import urlgrabber
@@ -20,7 +21,10 @@ from pds.thread import PThread
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
 
+DEFAULT_REPO_2011 = "pardus-2011"
+DEFAULT_REPO_2009 = "pardus-2009.2"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
+REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 
 def threaded(fn):
     def run(*k, **kw):
@@ -76,6 +80,8 @@ class Iface(QObject, Singleton):
                 SIGNAL("notify(int, PyQt_PyObject)"),\
                 parent.processNotify)
 
+        self._nof_packgages = 0
+
         pisi.api.set_userinterface(self.ui)
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
@@ -98,20 +104,41 @@ class Iface(QObject, Singleton):
 
     @threaded
     def upgradeSystem(self):
-        pisi.api.update_repo("pardus-2011")
+        print 'PISI VERSION in STEP 2 is', pisi.__version__
 
         options = pisi.config.Options()
         options.ignore_dependency = False
         pisi.api.set_options(options)
-
         pisi.api.set_comar(False)
+
+        # Find the repository to upgrade system
+        try:
+            target_repo = file('/tmp/target_repo').read().strip()
+        except:
+            target_repo = REPO_TEMPLATE % "stable"
+
+        print "ADDING REPO:", target_repo
+        pisi.api.add_repo(DEFAULT_REPO_2011, target_repo)
+
+        # Updating repo from cli
+        # If I use api for this it breaks the repository consistency
+        os.system('pisi ur %s' % DEFAULT_REPO_2011)
+
+        self._nof_packgages = len(pisi.api.list_upgradable())
+        print "I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages
+
+        # Upgrade the system
+        print "STARTING TO UPGRADE"
         pisi.api.upgrade()
 
         # Install Required Packages
         pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
+        self._nof_packgages += len(pkgs_to_install)
+        print "STARTING TO INSTALL FORCE LIST"
         self.installPackages(pkgs_to_install, with_comar = False)
 
         # Configure Pending !
+        print "STARTING TO CONFIGURING"
         self.configurePending(['baselayout'])
         self.configurePending()
 
@@ -119,11 +146,12 @@ class Iface(QObject, Singleton):
     def configurePending(self, packages = None):
         pisi.api.configure_pending(packages)
 
+    @threaded
+    def upgradeRepos(self):
+        pisi.api.update_repo(DEFAULT_REPO_2011)
+
     def removeRepos(self):
         repos = pisi.api.list_repos()
         for repo in repos:
             pisi.api.remove_repo(repo)
-
-    def addRepo(self, repoAddr):
-        pisi.api.add_repo("pardus-2011", repoAddr)
 

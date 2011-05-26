@@ -14,6 +14,8 @@
 
 import os
 import sys
+import time
+import pisi
 import urlgrabber
 
 from PyQt4.QtCore import SIGNAL, QTimer
@@ -116,6 +118,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
                                                 outMethod= updateButtons)
         else:
             self.current_step = 2
+            self._step_2_counter = 0
 
         # Progress Screen
         self.pageWidget.createPage(
@@ -155,6 +158,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.hideMessage()
 
     def upgradeStep_1(self):
+        print 'PISI VERSION in STEP 1 is', pisi.__version__
         self.disableButtons()
 
         # To Animate it
@@ -179,6 +183,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.iface.upgradeSystem()
 
     def processNotify(self, event, notify):
+
+        # print "PN:", event, "%%", notify
 
         if 'package' in notify:
             package = str(notify['package'].name)
@@ -207,9 +213,18 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             if event in (installed, upgraded) and package == 'xz' and self.current_step == 1:
                 self.ps.progress.setFormat("Step 1 Completed")
                 self.ps.progress.setValue(10)
-                self.iface.addRepo(self.target_repo)
+
+                # Write selected upgrade repository to a temporary file
+                file('/tmp/target_repo','w').write(self.target_repo)
+
                 # I know this is ugly but we need to use new Pisi :(
+                time.sleep(2)
                 os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
+
+            if self.current_step == 2 and event in (installed, upgraded):
+                self._step_2_counter += 1
+                if self.iface._nof_packgages > 0:
+                    self.ps.progress.setValue(10 + self._step_2_counter / (self.iface._nof_packgages / 70))
 
     def updateProgress(self, raw):
         self.ps.status.setText("Downloading: <b>%s</b>" % raw['filename'])
