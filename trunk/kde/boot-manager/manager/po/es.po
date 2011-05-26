@@ -116,7 +116,6 @@ msgid "Kernel"
 msgstr "Núcleo (kernel)"
 
 #: ui/ui_edit.py:152 ui/ui_edit.py:154
-#, fuzzy
 msgid "..."
 msgstr "..."
 
