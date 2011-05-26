@@ -3,6 +3,8 @@
 NAME="pardus-dev-tools"
 VERSION=0.0.1
 DIRNAME="$NAME-$VERSION"
+SVR="ibrahim@cekirdek.pardus.org.tr"
+DST="public_html/dist"
 
 EXTRA_DIST="\
 AUTHORS \
@@ -31,13 +33,17 @@ fi
 
 mkdir -p $DIRNAME/scripts
 
-echo "Checking out scripts directory"
+echo "Checking out scripts directory..."
 svn up $SCRIPTSDIR
 
 for script in $DIST; do
     cp "$SCRIPTSDIR/$script" "$DIRNAME/scripts/"
 done
 
+echo "Rolling..."
 cp $EXTRA_DIST $DIRNAME
 tar cjvf $DIRNAME.tar.bz2 $DIRNAME
 rm -rf $DIRNAME
+
+echo "Sending..."
+scp $DIRNAME.tar.bz2 $SVR:$DST
