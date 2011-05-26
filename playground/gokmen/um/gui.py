@@ -57,6 +57,24 @@ def getWidget(page = None, title = ""):
         widget.ui = page
     return widget
 
+def cleanup_pisi():
+    """Close the database cleanly and do other cleanup."""
+    import pisi.context as ctx
+    ctx.disable_keyboard_interrupts()
+    if ctx.log:
+        ctx.loghandler.flush()
+        ctx.log.removeHandler(ctx.loghandler)
+
+    filesdb = pisi.db.filesdb.FilesDB()
+    if filesdb.is_initialized():
+        filesdb.close()
+
+    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
+        os.unlink(ctx.build_leftover)
+
+    ctx.ui.close()
+    ctx.enable_keyboard_interrupts()
+
 class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     def __init__(self, parent = None, inStep2 = False):
@@ -216,6 +234,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
                 # Write selected upgrade repository to a temporary file
                 file('/tmp/target_repo','w').write(self.target_repo)
+
+                # Cleanup Pisi DB
+                cleanup_pisi()
 
                 # I know this is ugly but we need to use new Pisi :(
                 time.sleep(2)
