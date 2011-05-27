@@ -139,7 +139,7 @@ class Iface(QObject, Singleton):
         pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
         self._nof_packgages += len(pkgs_to_install)
         print "STARTING TO INSTALL FORCE LIST"
-        pisi.api.install(packages, reinstall = True)
+        pisi.api.install(pkgs_to_install, reinstall = True)
 
         # Configure Pending !
         print "STARTING TO CONFIGURING"
