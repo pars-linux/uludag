@@ -124,6 +124,9 @@ class Iface(QObject, Singleton):
         # If I use api for this it breaks the repository consistency
         os.system('pisi ur %s' % DEFAULT_REPO_2011)
 
+        # Try to rebuild the DB
+        os.system('pisi rdb')
+
         upgrade_list = pisi.api.list_upgradable()
         self._nof_packgages = len(upgrade_list)
         print "I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages
@@ -136,7 +139,7 @@ class Iface(QObject, Singleton):
         pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
         self._nof_packgages += len(pkgs_to_install)
         print "STARTING TO INSTALL FORCE LIST"
-        self.installPackages(pkgs_to_install, with_comar = False)
+        pisi.api.install(packages, reinstall = True)
 
         # Configure Pending !
         print "STARTING TO CONFIGURING"
