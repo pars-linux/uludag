@@ -125,7 +125,7 @@ class Iface(QObject, Singleton):
         os.system('pisi ur %s' % DEFAULT_REPO_2011)
 
         # Try to rebuild the DB
-        os.system('pisi rdb')
+        os.system('pisi rdb -y')
 
         upgrade_list = pisi.api.list_upgradable()
         self._nof_packgages = len(upgrade_list)
