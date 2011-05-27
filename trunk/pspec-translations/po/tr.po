@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: 2011-05-27 11:21+0300\n"
+"PO-Revision-Date: 2011-05-27 11:27+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -14819,6 +14819,7 @@ msgstr "libmpeg2 için geliştirme dosyaları"
 msgid "libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video streams"
 msgstr "mpeg-2 ve mpeg-1 video görüntülerini çözmek için ücretsiz bir kütüphane"
 
+#: multimedia/video/libmpeg2::description
 msgid "libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video streams. libmpeg2 is able to decode all mpeg streams that conform to certain restrictions: \"constrained parameters\" for mpeg-1, and \"main profile\" for mpeg-2."
 msgstr "libmpeg2, mpeg-1 ve mpeg-2 video akışlarının çözülerek okunması için ücretsiz bir kütüphanedir. Libmpeg-2, bir takım kısıtlayıcı kurallara (mpeg-1 için \"kısıtlanmış parametreler\" ve mpeg-2 için \"ana profil\") uyan bütün mpeg yayınlarını çözebilir."
 
