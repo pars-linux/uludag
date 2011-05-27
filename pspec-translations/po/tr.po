@@ -1,16 +1,15 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2011-05-27 11:21+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2709,11 +2708,11 @@ msgstr "Glade için Xfce eklentileri"
 
 #: desktop/xfce/base/libxfcegui4::summary
 msgid "Xfce GUI library"
-msgstr "Xfce arayüz kütüphanesi"
+msgstr "Xfce arayüz kitaplığı"
 
 #: desktop/xfce/base/libxfcegui4::description
 msgid "Libxfcegui4 is a various GTK+ widgets for Xfce desktop environment."
-msgstr "Libxfcegui4, Xfce masaüstü yöneticisi için tasarlanmış farklı GTK+ parçacıkları kütüphanesidir."
+msgstr "Libxfcegui4, Xfce masaüstü yöneticisi için tasarlanmış farklı GTK+ parçacıkları kitaplığıdır."
 
 #: desktop/xfce/base/exo:exo-devel:summary
 msgid "Development files for exo"
@@ -3105,7 +3104,7 @@ msgstr "libgnome için geliştirme dosyaları"
 
 #: desktop/gnome/libgnome::summary
 msgid "Essential GNOME Libraries"
-msgstr "Gerekli GNOME Kütüphaneleri"
+msgstr "Gerekli GNOME Kitaplıkları"
 
 #: desktop/gnome/libgnome::description
 msgid "GNOME (GNU Network Object Model Environment) is a user-friendly set of GUI applications and desktop tools to be used in conjunction with a window manager for the X Window System. The libgnome package includes non-GUI-related libraries that are needed to run GNOME. The libgnomeui package contains X11-dependent GNOME library features."
@@ -3117,7 +3116,7 @@ msgstr "libgnomecanvas için geliştirme dosyaları"
 
 #: desktop/gnome/libgnomecanvas::summary
 msgid "The Gnome 2 Canvas library"
-msgstr "Gnome 2 Canvas Kütüphanesi"
+msgstr "Gnome 2 Canvas Kitaplıkları"
 
 #: desktop/gnome/libgnomecanvas::description
 msgid "libgnomecanvas package contains the GNOME canvas library. It is an engine for structured graphics and one of the essential GNOME libraries."
@@ -3177,7 +3176,7 @@ msgstr "tn5250 IBM iSeries ve AS/400 terminallerine ve  yazıcılarına öyküne
 
 #: network/remoteshell/nx::summary
 msgid "NX compression technology core libraries"
-msgstr "NX Sıkıştırma teknolojisinin ana kütüphanleri"
+msgstr "NX Sıkıştırma teknolojisinin ana kitaplıkları"
 
 #: network/remoteshell/nx::description
 msgid "NoMachine's exclusive X protocol compression techniques and an integrated set of proxy agents that make it possible to run complete remote desktop sessions, even at full screen, using narrowband Internet connections."
@@ -5325,7 +5324,7 @@ msgstr "spidermonkey için geliştirme dosyaları"
 
 #: programming/misc/spidermonkey::summary
 msgid "Stand-alone JavaScript C Library"
-msgstr "Javascript C Kütüphanesi"
+msgstr "Javascript C Kitaplığı"
 
 #: programming/misc/spidermonkey::description
 msgid "Spidermonkey is Mozilla's C implementation of JavaScript."
@@ -6837,11 +6836,11 @@ msgstr "ODBC ve X/Open tanımlamaları için açık kaynak kodlu ve platform ba�
 
 #: programming/misc/ETL::summary
 msgid "Extended Template Library"
-msgstr "Uzatılmış Şablon Kütüphanesi"
+msgstr "Uzatılmış Şablon Kitaplığı"
 
 #: programming/misc/ETL::description
 msgid "ETL is a multi-platform class and template library designed to add new datatypes and functions which combine well with the existing types and functions from the C++ Standard Template Library (STL)."
-msgstr "Standart C++ Şablon Kütüphanesinin (STL) mevcut tip ve fonksiyonlarıyla bir araya gelebilmesi için tasarlanmış yeni veri tipleri ve fonksiyonları içeren çoklu-platform sınıf ve şablon kitaplıklarıdır."
+msgstr "Standart C++ Şablon Kitaplığının (STL) mevcut tip ve fonksiyonlarıyla bir araya gelebilmesi için tasarlanmış yeni veri tipleri ve fonksiyonları içeren çoklu-platform sınıf ve şablon kitaplıklarıdır."
 
 #: programming/misc/iksemel::summary
 msgid "XML parser library"
@@ -7285,23 +7284,23 @@ msgstr "Matthew Johnson'ın java kitaplıkları"
 
 #: programming/language/java/libmatthew-java::description
 msgid "Unix Sockets, Debug, CGI, I/O and Hexdump java libraries written by Matthew Johnson."
-msgstr "Matthew Johnson tarafından yazılmış olan Unix Soketleri, Hata ayıklama, CGI, G/Ç ve Hexdump java kütüphaneleri."
+msgstr "Matthew Johnson tarafından yazılmış olan Unix Soketleri, Hata ayıklama, CGI, G/Ç ve Hexdump java kitaplıkları."
 
 #: programming/language/java/hamcrest::summary
 msgid "Library of matchers for building test expressions"
-msgstr "Test ifadeleri oluşturabilmek için eşleyici nesne kütüphanesi"
+msgstr "Test ifadeleri oluşturabilmek için eşleyici nesne kitaplığı"
 
 #: programming/language/java/hamcrest::description
 msgid "Provides a library of matcher objects (also known as constraints or predicates) allowing 'match' rules to be defined declaratively, to be used in other frameworks. Typical scenarios include testing frameworks, mocking libraries and UI validation rules."
-msgstr "Diğer geliştirim çatılarında kullanılabilmesi için eşleme kuralı tanımlamayı sağlayan eşleyici nesne kütüphanesi sağlar. Test çatıları, mock kütüphaneleri ve görsel arayüz doğrulama kuralları tipik olarak kullanıldığı yerlerdir."
+msgstr "Diğer geliştirim çatılarında kullanılabilmesi için eşleme kuralı tanımlamayı sağlayan eşleyici nesne kitaplığı sağlar. Test çatıları, mock kitaplığı ve görsel arayüz doğrulama kuralları tipik olarak kullanıldığı yerlerdir."
 
 #: programming/language/java/zemberek::summary
 msgid "Zemberek NLP library"
-msgstr "Zemberek DDİ kütüphanesi"
+msgstr "Zemberek DDİ kitaplığı"
 
 #: programming/language/java/zemberek::description
 msgid "Zemberek Turkish spell checker library."
-msgstr "Zemberek Türkçe yazım denetimi kütüphanesi."
+msgstr "Zemberek Türkçe yazım denetimi kitaplığı."
 
 #: programming/language/java/sun-java:sun-jdk:summary
 msgid "Sun's J2SE Development Kit"
@@ -7521,7 +7520,7 @@ msgstr "C# derleyici ve yorumlayıcı"
 
 #: programming/language/dotnet/mono::description
 msgid "Mono is a C# compiler and interpreter. It also includes mono runtime and class libraries."
-msgstr "Mono, bir C# derleyicisi ve yorumlayıcısıdır, çalıştırma ve sınıf kütüphanelerini içermektedir."
+msgstr "Mono, bir C# derleyicisi ve yorumlayıcısıdır, çalıştırma ve sınıf kitaplıklarını içermektedir."
 
 #: programming/language/dotnet/mono-tools::summary
 msgid "Useful tools to use for Mono development"
@@ -7529,7 +7528,7 @@ msgstr "Mono ile geliştirme yapmak için kullanışlı araçlar"
 
 #: programming/language/dotnet/mono-tools::description
 msgid "Mono-tools includes useful tools (like monodoc, minvoke, guicompare) for creating extensible applications, and for creating libraries which extend those applications."
-msgstr "Mono-tools, çalıştırılabilir uygulamalar ve bu uygulamaların kütüphanelerini oluşturmak için yardımcı araçlar (monodoc, minvoke, guicompare gibi) içerir."
+msgstr "Mono-tools, çalıştırılabilir uygulamalar ve bu uygulamaların kitaplıklarını oluşturmak için yardımcı araçlar (monodoc, minvoke, guicompare gibi) içerir."
 
 #: programming/language/dotnet/gnome-sharp::summary
 msgid "A GNOME bindings for C#"
@@ -7565,7 +7564,7 @@ msgstr ""
 
 #: programming/language/dotnet/libgdiplus::summary
 msgid "Library for using System.Drawing with Mono"
-msgstr "Mono ile System.Drawing kullanmak için gerekli kütüphane"
+msgstr "Mono ile System.Drawing kullanmak için gerekli kitaplığı"
 
 #: programming/language/dotnet/libgdiplus::description
 msgid "Libgdiplus is an open source implementation of the GDI+ API. This is part of the Mono project."
@@ -7609,7 +7608,7 @@ msgstr "Çalıştırılabilir uygulamalar oluşturmak için genel çatı"
 
 #: programming/language/dotnet/mono-addins::description
 msgid "Mono.Addins is a framework for creating extensible applications, and for creating libraries which extend those applications."
-msgstr "Mono.Addins, çalıştırılabilir uygulamalar ve bu uygulamaların kütüphanelerini oluşturmak için genel bir çatıdır."
+msgstr "Mono.Addins, çalıştırılabilir uygulamalar ve bu uygulamaların kitaplıklarını oluşturmak için genel bir çatıdır."
 
 #: programming/language/objectivec/gnustep-gui:gnustep-gui-devel:summary
 msgid "Development headers for gnustep-gui"
@@ -7621,11 +7620,11 @@ msgstr "gnustep-gui için geliştirme başlıklarını içerir."
 
 #: programming/language/objectivec/gnustep-gui::summary
 msgid "Library of GUI classes written in Obj-C"
-msgstr "Obj-C ile yazılmış GUI sınıfları kütüphanesi"
+msgstr "Obj-C ile yazılmış GUI sınıfları kitaplığı"
 
 #: programming/language/objectivec/gnustep-gui::description
 msgid "gnustep-gui provides a library of GUI classes written in Obj-C."
-msgstr "Gnustep-gui, Obj-C ile yazılmış bir GUI sınıfları kütüphanesidir."
+msgstr "Gnustep-gui, Obj-C ile yazılmış bir GUI sınıfları kitaplığıdır."
 
 #: programming/language/objectivec/gnustep-make::summary
 msgid "A simple, powerful and extensible way to write makefiles for a GNUstep-based project"
@@ -7645,11 +7644,11 @@ msgstr "gnustep-base için geliştirme başlıklarını içerir."
 
 #: programming/language/objectivec/gnustep-base::summary
 msgid "The GNUstep Base Library"
-msgstr "GNUstep-BASE Kütüphanesi"
+msgstr "GNUstep-BASE Kitaplığı"
 
 #: programming/language/objectivec/gnustep-base::description
 msgid "The GNUstep Base Library is a library of general-purpose, non-graphical Objective C objects."
-msgstr "Gnustep-base, grafiksel C nesneleri içermeyen temel bir kütüphanedir."
+msgstr "Gnustep-base, grafiksel C nesneleri içermeyen temel bir kitaplığıdır."
 
 #: programming/language/lua:lua-devel:summary
 msgid "Development files for lua"
@@ -7681,7 +7680,7 @@ msgstr "guile için geliştirme dosyaları"
 
 #: programming/language/lisp/guile::summary
 msgid "GNU Scheme interpreter and library"
-msgstr "GNU Scheme yorumlayıcısı ve kütüphanesi"
+msgstr "GNU Scheme yorumlayıcısı ve kitaplığı"
 
 #: programming/language/lisp/guile::description
 msgid "GUILE (GNU's Ubiquitous Intelligent Language for Extension) is a library implementation of the Scheme programming language, written in C. GUILE provides a machine-independent execution platform that can be linked in as a library during the building of extensible programs."
@@ -7797,7 +7796,7 @@ msgstr "Görüntü, ses ve video dosyalarındaki meta bilgileri okuma, yazma ve 
 
 #: programming/language/perl/perl-Image-ExifTool::description
 msgid "ExifTool is a platform-independent Perl library plus a command-line application for reading, writing and editing meta information in image, audio and video files."
-msgstr "ExifTool; görüntü, ses ve video dosyalarındaki meta bilgileri okuma, yazma ve düzenleme işlemleri için kullanabileceğiniz platformdan bağımsız bir Perl kütüphanesi ve komut satırı uygulamasıdır."
+msgstr "ExifTool; görüntü, ses ve video dosyalarındaki meta bilgileri okuma, yazma ve düzenleme işlemleri için kullanabileceğiniz platformdan bağımsız bir Perl kitaplığı ve komut satırı uygulamasıdır."
 
 #: programming/language/perl/perl-Sub-Install::summary
 msgid "A Perl module to install subroutines into packages easily"
@@ -8029,7 +8028,7 @@ msgstr "PC/SC protokolüyle akıllı kartlarla iletişime geçmek için Perl kat
 
 #: programming/language/perl/perl-pcsc::description
 msgid "perl-pcsc is a library which allows to communicate with a smart card using PC/SC (Microsoft version or pcsc-lite for Unixes) from a Perl script."
-msgstr "perl-pcsc, PC/SC protokolünü destekleyen akıllı kartlarla Perl dilinde iletişime geçebilmek için yazılmış bir kütüphanedir."
+msgstr "perl-pcsc, PC/SC protokolünü destekleyen akıllı kartlarla Perl dilinde iletişime geçebilmek için yazılmış bir kitaplığıdır."
 
 #: programming/language/perl/perl-Gtk2-Ex-Simple-List::summary
 msgid "Simple interface to Gtk2's complex MVC list widget"
@@ -8525,11 +8524,11 @@ msgstr "Bu modül Carp.pm gibi hataları bir grup modülün açısından bildiri
 
 #: programming/language/perl/perl-ExtUtils-PkgConfig::summary
 msgid "A library which converts Perl XS code into C code"
-msgstr "Perl XS kodunu C koduna çeviren bir kütüphane"
+msgstr "Perl XS kodunu C koduna çeviren bir kitaplığı"
 
 #: programming/language/perl/perl-ExtUtils-PkgConfig::description
 msgid "The pkg-config program retrieves information about installed libraries, usually for the purposes of compiling against and linking to them."
-msgstr "Pkg-config, genellikle derleme ve bağlantı oluşturma amaçları için kurulmuş olan kütüphanelerin bilgilerini getirir."
+msgstr "Pkg-config, genellikle derleme ve bağlantı oluşturma amaçları için kurulmuş olan kitaplıklarının bilgilerini getirir."
 
 #: programming/language/perl/perl-IO-Digest::summary
 msgid "Calculate digests while reading or writing"
@@ -8597,7 +8596,7 @@ msgstr "perl-Hook-LexWrap mevcut alt yordamın etrafından ara yazılım (wrappe
 
 #: programming/language/perl/perl-GD::summary
 msgid "Interface to Gd Graphics Library"
-msgstr "GD grafik kütüphanesi için Perl modülü"
+msgstr "GD grafik kitaplığı için Perl modülü"
 
 #: programming/language/perl/perl-GD::description
 msgid "This is a autoloadable interface module for GD, a popular library for creating and manipulating PNG files. With this library you can create PNG images on the fly or modify existing files."
@@ -8685,7 +8684,7 @@ msgstr ""
 
 #: programming/language/perl/perl-HTML-Parser::summary
 msgid "HTML Parser"
-msgstr "HTML ayrıştırmak için kütüphane"
+msgstr "HTML ayrıştırmak için kitaplığı"
 
 #: programming/language/perl/perl-HTML-Parser::description
 msgid "The HTML-Parser distribution is a collection of modules that parse and extract information from HTML documents."
@@ -8757,7 +8756,7 @@ msgstr "Bu modül IPv4/IPv6 adresleri için fonksiyonlar sağlar. Modül, IP nes
 
 #: programming/language/perl/perl-SDL::summary
 msgid "Perl interface to SDL library"
-msgstr "SDL kütüphanesi için Perl modülü"
+msgstr "SDL kitaplığı için Perl modülü"
 
 #: programming/language/perl/perl-SDL::description
 msgid "With this interface, you can write SDL applications in Perl."
@@ -8789,11 +8788,11 @@ msgstr ""
 
 #: programming/language/perl/perl-Compress-Bzip2::summary
 msgid "Interface to Bzip2 compression library"
-msgstr "Bzip2 sıkıştırma kütüphanesi için Perl arayüzü"
+msgstr "Bzip2 sıkıştırma kitaplığı için Perl arayüzü"
 
 #: programming/language/perl/perl-Compress-Bzip2::description
 msgid "This module provides a Perl interface to most of the bzip2 compression library."
-msgstr "Bu modül bzip2 sıkıştırma kütüphanesinin büyük bölümü için Perl arayüzü sağlar."
+msgstr "Bu modül bzip2 sıkıştırma kitaplığının büyük bölümü için Perl arayüzü sağlar."
 
 #: programming/language/perl/perl-Test-Fatal::summary
 msgid "Perl module to test code with exceptions"
@@ -9053,11 +9052,11 @@ msgstr "Magic sistemini kullanarak dosya tipini tanımak için Perl modülü"
 
 #: programming/language/perl/perl-XML-Simple::summary
 msgid "XML::Simple Perl module"
-msgstr "XML::Simple Perl kütüphanesi"
+msgstr "XML::Simple Perl modülü"
 
 #: programming/language/perl/perl-XML-Simple::description
 msgid "XML::Simple is an easy API to read/write XML. This package provides XML::Simple's Perl module."
-msgstr "XML::Simple, XML okumak ve yazmak için kolay bir API'dir. Bu paket de, XML::Simple'in Perl kütüphanesini içermektedir."
+msgstr "XML::Simple, XML okumak ve yazmak için kolay bir API'dir. Bu paket de, XML::Simple'in Perl modülünü içermektedir."
 
 #: programming/language/perl/perl-Email-MIME-Attachment-Stripper::summary
 msgid "Perl module for stripping the attachments from a mail"
@@ -9209,7 +9208,7 @@ msgstr "Perl için Glib bağlayıcısı"
 
 #: programming/language/perl/perl-Glib::description
 msgid "This module provides perl access to Glib and GLib's GObject libraries. GLib is a portability and utility library; GObject provides a generic type system with inheritance and a powerful signal system. Together these libraries are used as the foundation for many of the libraries that make up the Gnome environment, and are used in many unrelated projects."
-msgstr "Perl-Glib, Glib ve Glib'in nesne kütüphanelerini Perl bağlayıcılarını içeren bir pakettir. Glib, GTK+ ve GNOME gibi projelerin temelini oluşturan çekirdek kütüphanedir; GObject ise, Glib'in içinde yer alan nesne kütüphanesidir. Bu paketle de sözü geçen iki kütüphane Perl projelerinde kullanılabilmektedir."
+msgstr "Perl-Glib, Glib ve Glib'in nesne kitaplıklarını Perl bağlayıcılarını içeren bir pakettir. Glib, GTK+ ve GNOME gibi projelerin temelini oluşturan çekirdek kitaplıktır; GObject ise, Glib'in içinde yer alan nesne kitaplığıdır. Bu paketle de sözü geçen iki kitaplık Perl projelerinde kullanılabilmektedir."
 
 #: programming/language/perl/perl-Locale-Maketext-Gettext::summary
 msgid "A Perl module that joins the gettext and Maketext frameworks"
@@ -9269,11 +9268,11 @@ msgstr "Bu modül, karmaşık grafik arayüzlerini kolayca inşa etmek için tas
 
 #: programming/language/perl/perl-Crypt-OpenSSL-Bignum::summary
 msgid "Perl module designed to provide basic access to the OpenSSL multiprecision integer arithmetic libraries"
-msgstr "OpenSSL tamsayı aritmetik kütüphanelerine temel erişimi sağlayan Perl modülü"
+msgstr "OpenSSL tamsayı aritmetik kitaplıklarına temel erişimi sağlayan Perl modülü"
 
 #: programming/language/perl/perl-Crypt-OpenSSL-Bignum::description
 msgid "perl-Crypt-OpenSSL-Bignum is an XS perl module designed to provide basic access to the OpenSSL multiprecision integer arithmetic libraries."
-msgstr "perl-Crypt-OpenSSL-Bignum, OpenSSL tamsayı aritmetik kütüphanelerine temel erişimi sağlayan Perl modülüdür."
+msgstr "perl-Crypt-OpenSSL-Bignum, OpenSSL tamsayı aritmetik kitaplıklarına temel erişimi sağlayan Perl modülüdür."
 
 #: programming/language/perl/perl-Unicode-Map8::summary
 msgid "Convert between most 8bit encodings"
@@ -9361,7 +9360,7 @@ msgstr "ZIP arşivlerine erişim için Perl modülü"
 
 #: programming/language/perl/perl-Archive-Zip::description
 msgid "The Archive::Zip module allows a Perl program to create, manipulate, read, and write Zip archive files. This module uses the Compress::Zlib library to read and write the compressed streams inside the files."
-msgstr "Bu modül, Perl programlarının Zip arşiv dosyalarını oluşturmasını, düzenlemesini ve okumasını sağlar. Dosyaların içindeki akımları okumak ve yazmak için Compress:Zlib kütüphanesini kullanır."
+msgstr "Bu modül, Perl programlarının Zip arşiv dosyalarını oluşturmasını, düzenlemesini ve okumasını sağlar. Dosyaların içindeki akımları okumak ve yazmak için Compress:Zlib kitaplığını kullanır."
 
 #: programming/language/perl/perl-Math-Random-Secure::summary
 msgid "Cryptographically-secure, cross-platform replacement for rand()"
@@ -9373,11 +9372,11 @@ msgstr "perl-Math-Random-Secure, Perl tarafından sunulan rand fonksiyonu yerine
 
 #: programming/language/perl/perl-ExtUtils-Depends::summary
 msgid "A library for easily build XS extensions that depend on XS extensions"
-msgstr "XS uzantısı oluşturan Perl kütüphanesi"
+msgstr "XS uzantısı oluşturan Perl kitaplığı"
 
 #: programming/language/perl/perl-ExtUtils-Depends::description
 msgid "This module tries to make it easy to build Perl extensions that use functions and typemaps provided by other Perl extensions."
-msgstr "Bu modül, XS uzantılarına bağımlı XS uzantılarını kolayca oluşturabilmek için yazılmış bir kütüphanedir."
+msgstr "Bu modül, XS uzantılarına bağımlı XS uzantılarını kolayca oluşturabilmek için yazılmış bir kitaplığıdır."
 
 #: programming/language/perl/perl-DateTime-TimeZone::summary
 msgid "Time zone object base class and factory for Perl"
@@ -9769,7 +9768,7 @@ msgstr "perl-TheSchwartz, Perl için güvenilir bir görev kuyruklama sistemidir
 
 #: programming/language/perl/perl-IP-Country::summary
 msgid "Fast lookup of country codes from IP addresses"
-msgstr "IP adreslerinden ülke kodlarına erişim için kullanılan bir kütüphane"
+msgstr "IP adreslerinden ülke kodlarına erişim için kullanılan bir kitaplık"
 
 #: programming/language/perl/perl-IP-Country::description
 msgid "This module comes bundled with a database of countries where various IP addresses have been assigned."
@@ -10053,7 +10052,7 @@ msgstr ""
 
 #: programming/language/perl/perl-Bit-Vector::description
 msgid "Bit::Vector is an efficient C library which allows you to handle bit vectors, sets (of integers), \"big integer arithmetic\" and boolean matrices, all of arbitrary sizes."
-msgstr "Bit::Vector,  istenilen boyutlardaki bit vektörleri, (tamsayı)setleri, “büyük tamsayı aritmatiği” ve  mantıksal matriksleri  tanıtmaya izin veren etkili bir C dili kütüphanesidir."
+msgstr "Bit::Vector,  istenilen boyutlardaki bit vektörleri, (tamsayı)setleri, “büyük tamsayı aritmatiği” ve  mantıksal matriksleri  tanıtmaya izin veren etkili bir C dili kitaplığıdır."
 
 #: programming/language/perl/perl-Tree-DAG_Node::summary
 msgid "Perl (Super)Class for representing nodes in a tree"
@@ -10301,7 +10300,7 @@ msgstr "tcltk için geliştirme dosyaları"
 
 #: programming/language/tcl/tcltk::summary
 msgid "An X11 toolkit implemented with the Tcl scripting language"
-msgstr "Tcl betik dili ile yazılmış X11 araç ve kütüphaneleri"
+msgstr "Tcl betik dili ile yazılmış X11 araç ve kitaplıkları"
 
 #: programming/language/tcl/tcltk::description
 msgid "Tk is an X Windows widget set designed to work closely with the tcl scripting language. It allows you to write simple programs with full featured GUIs in only a little more time then it takes to write a text based interface."
@@ -10389,7 +10388,7 @@ msgstr "python-cryptsetup LUKS aygıtlarının yönetimini kolaylaştırmak içi
 
 #: programming/language/python/python-tornado::summary
 msgid "Friendfeed python web framework"
-msgstr "Friendfeed Python web kütüphanesir"
+msgstr "Friendfeed Python web çatısı"
 
 #: programming/language/python/python-tornado::description
 msgid "Tornado is an open source version of the scalable, non-blocking web server and and tools that power FriendFeed."
@@ -10409,7 +10408,7 @@ msgstr "python-protocols PEP 246 adapt fonksiyonunu yeni deklarasyon API'si ile 
 
 #: programming/language/python/python-pyactiveresource::summary
 msgid "Active Resource library for Python"
-msgstr "Python için Active Resource kütüphanesi"
+msgstr "Python için Active Resource kitaplığı"
 
 #: programming/language/python/python-pyactiveresource::description
 msgid "It provides connection and interaction with a REST server and its objects."
@@ -10501,7 +10500,7 @@ msgstr "Python libao desteği"
 
 #: programming/language/python/python-pyao::description
 msgid "Python bindings for libao audio library."
-msgstr "Python için libao ses kütüphanesi eklentileri."
+msgstr "Python için libao ses kitaplığı eklentileri."
 
 #: programming/language/python/python-gdmodule::summary
 msgid "Python GD module"
@@ -10517,7 +10516,7 @@ msgstr "Python ogg.vorbis desteği"
 
 #: programming/language/python/python-pyvorbis::description
 msgid "Python bindings for the ogg.vorbis library."
-msgstr "Ogg.vorbis kütüphanesi için python eklentileri."
+msgstr "Ogg.vorbis kitaplığı için python eklentileri."
 
 #: programming/language/python/pigment-python::summary
 msgid "Python bindings for Pigment"
@@ -10561,7 +10560,7 @@ msgstr "python-symboltype, daha önceden tüm PEAK araçkitini yükleyerek ulaş
 
 #: programming/language/python/python-eventlet::summary
 msgid "Provides non-blocking io to python programs"
-msgstr "Python programlarına bloklama yapmayan g/ç desteği sağlayan kütüphane"
+msgstr "Python programlarına bloklama yapmayan g/ç desteği sağlayan kitaplığı"
 
 #: programming/language/python/python-eventlet::description
 msgid "Eventlet is a better way to write high-performance network applications with non-blocking input output operations."
@@ -10585,11 +10584,11 @@ msgstr "python-protobuf-socket-rpc protobuf rpc servislerinde basit bir gerçekl
 
 #: programming/language/python/pyopenssl::summary
 msgid "Python interface to the OpenSSL library"
-msgstr "OpenSSL kütüphanesi için Python arayüzü"
+msgstr "OpenSSL kitaplığı için Python arayüzü"
 
 #: programming/language/python/pyopenssl::description
 msgid "This module is a rather thin wrapper around (a subset of) the OpenSSL library. A lot of the object methods do nothing more than calling a corresponding function in the OpenSSL library."
-msgstr "Bu modül aslında OpenSSL kütüphanesi için bir sarıcıdır (wrapper). Bir çok metod OpenSSL kütüphanesindeki ilgili fonksiyonu çağırmaktan başka bir iş yapmaz."
+msgstr "Bu modül aslında OpenSSL kitaplığı için bir sarıcıdır (wrapper). Bir çok metod OpenSSL kitaplığındaki ilgili fonksiyonu çağırmaktan başka bir iş yapmaz."
 
 #: programming/language/python/python-turbocheetah::summary
 msgid "TurboGears plugin to support use of Cheetah templates"
@@ -10637,7 +10636,7 @@ msgstr "libudev için Qt bağlayıcısı"
 
 #: programming/language/python/python-udev:python-udev-qt:description
 msgid "These bindings provide udev capability for Python programs where Qt is used."
-msgstr "Bu bağlayıcı, Qt kullanan Python programlarının, udev kütüphanesi olan libudev'i kullanabilmesini sağlar."
+msgstr "Bu bağlayıcı, Qt kullanan Python programlarının, udev kitaplığı olan libudev'i kullanabilmesini sağlar."
 
 #: programming/language/python/python-udev::summary
 msgid "Python bindings for libudev library"
@@ -10645,7 +10644,7 @@ msgstr "libudev için Python bağlayıcısı"
 
 #: programming/language/python/python-udev::description
 msgid "These bindings enable using of udev library in Python programs."
-msgstr "Bu bağlayıcı, Python programlarında, udev kütüphanesi olan libudev'in işlevselliğinden yararlanmayı sağlar."
+msgstr "Bu bağlayıcı, Python programlarında, udev kitaplığı olan libudev'in işlevselliğinden yararlanmayı sağlar."
 
 #: programming/language/python/python-nose::summary
 msgid "A unittest extension offering automatic test suite discovery and easy test authoring"
@@ -10653,7 +10652,7 @@ msgstr "Python için unittest genişlemesi"
 
 #: programming/language/python/python-nose::description
 msgid "python-nose provides an alternate test discovery and running process for unittest, one that is intended to mimic the behavior of py.test as much as is reasonably possible without resorting to too much magic."
-msgstr "python-nose alternatif test tanıtma ve keşif kütüphanesi."
+msgstr "python-nose alternatif test tanıtma ve keşif kitaplığı."
 
 #: programming/language/python/python-Babel::summary
 msgid "A collection of tools for internationalizing Python applications"
@@ -10677,7 +10676,7 @@ msgstr "Web için çıktı üretmeye yarayan bir Python araç takımı"
 
 #: programming/language/python/python-Genshi::description
 msgid "Genshi is a Python library that provides an integrated set of components for parsing, generating, and processing HTML, XML or other textual content for output generation on the web."
-msgstr "Genshi, ağ üzerinde çıktı üretmek için HTML, XML ve diğer metinsel içerikleri ayrıştırma, üretme ve işleme amaçlı bir bileşen kümesi sağlayan Python kütüphanesidir."
+msgstr "Genshi, ağ üzerinde çıktı üretmek için HTML, XML ve diğer metinsel içerikleri ayrıştırma, üretme ve işleme amaçlı bir bileşen kümesi sağlayan Python kitaplığıdır."
 
 #: programming/language/python/python-weberror::summary
 msgid "Web Error handling and exception catching"
@@ -10717,7 +10716,7 @@ msgstr "Python için GTK+ bağlayıcıları"
 
 #: programming/language/python/python-gtk::description
 msgid "python-gtk lets you to easily create programs with a graphical user interface using the Python programming language and GTK+ library."
-msgstr "python-gtk, Python programlama diliyle GTK+ kütüphanesini kullanarak, basit grafiksel kullanıcı arayüzü oluşturmanızı sağlar."
+msgstr "python-gtk, Python programlama diliyle GTK+ kitaplığını kullanarak, basit grafiksel kullanıcı arayüzü oluşturmanızı sağlar."
 
 #: programming/language/python/python-turbogears::summary
 msgid "TurboGears web framework"
@@ -10745,7 +10744,7 @@ msgstr "python-Unidecode, Unicode karakterlerinin US-ASCII harf çevirilerini sa
 
 #: programming/language/python/python-imaging::summary
 msgid "Python Imaging Library (PIL)"
-msgstr "Python Görüntü İşleme Kütüphanesi"
+msgstr "Python Görüntü İşleme Kitaplığı"
 
 #: programming/language/python/python-imaging::description
 msgid "The Python Imaging Library (PIL) adds image processing capabilities to your Python interpreter. This library supports many file formats, and provides powerful image processing and graphics capabilities."
@@ -10753,11 +10752,11 @@ msgstr ""
 
 #: programming/language/python/python-smbc::summary
 msgid "Python interface to the libsmbclient library"
-msgstr "libsmbclient kütüphanesi için Python arayüzü"
+msgstr "libsmbclient kitaplığı için Python arayüzü"
 
 #: programming/language/python/python-smbc::description
 msgid "python-smbc is a Python binding for the libsmbclient library."
-msgstr "python-smbc, libsmbclient kütüphanesi için bir Python bağlayıcısıdır."
+msgstr "python-smbc, libsmbclient kitaplığı için bir Python bağlayıcısıdır."
 
 #: programming/language/python/python-dns::summary
 msgid "DNS toolkit for Python"
@@ -10805,7 +10804,7 @@ msgstr "Python Kripto ve SSL Araç Takımı"
 
 #: programming/language/python/python-M2Crypto::description
 msgid "The most complete Python wrapper for OpenSSL featuring RSA, DSA, DH, HMACs, message digests, symmetric ciphers (including AES); SSL functionality to implement clients and servers; HTTPS extensions to Python's httplib, urllib, and xmlrpclib; unforgeable HMAC'ing AuthCookies for web session management; FTP/TLS client and server; S/MIME; ZServerSSL: A HTTPS server for Zope and ZSmime: An S/MIME messenger for Zope. M2Crypto can also be used to provide SSL for Twisted.."
-msgstr "OpenSSL için Pythonla yazılmış en geniş ara yazılımdır(wrapper). RSA, DSA, DH, HMACs, mesaj özetleri, simetrik şifreleme (AES dahil); sunucular ve istemciler için SSL özelliği; Python'un httplib, urllib ve xmlrpclib kütüphanelerine HTTPS eklentileri, ağ oturum yönetimi için değiştirilemeyen HMAC'leyici AuthCookie'ler; FPT/TLS istemci ve sunucusu; S/MIME; ZServerSSL; Zope ve ZSmime için HTTPS sunucu; Zope için S/MIME habercisi(messenger) gibi özellikleri bulunmaktadır. M2crypto ayrıca Twisted için SSL desteği de sağlayabilir."
+msgstr "OpenSSL için Pythonla yazılmış en geniş ara yazılımdır(wrapper). RSA, DSA, DH, HMACs, mesaj özetleri, simetrik şifreleme (AES dahil); sunucular ve istemciler için SSL özelliği; Python'un httplib, urllib ve xmlrpclib kitaplıklarına HTTPS eklentileri, ağ oturum yönetimi için değiştirilemeyen HMAC'leyici AuthCookie'ler; FPT/TLS istemci ve sunucusu; S/MIME; ZServerSSL; Zope ve ZSmime için HTTPS sunucu; Zope için S/MIME habercisi(messenger) gibi özellikleri bulunmaktadır. M2crypto ayrıca Twisted için SSL desteği de sağlayabilir."
 
 #: programming/language/python/python-markdown::summary
 msgid "Python implementation of John Gruber's Markdown"
@@ -10849,7 +10848,7 @@ msgstr "Jabber protokolü için python modülü"
 
 #: programming/language/python/python-xmpppy::description
 msgid "A python library that is targeted to provide easy scripting with Jabber."
-msgstr "Jabber ile kolaylıkla programlama yapmayı amaçlayan bir python kütüphanesi."
+msgstr "Jabber ile kolaylıkla programlama yapmayı amaçlayan bir python kitaplığı."
 
 #: programming/language/python/python-configobj:python-configobj-docs:summary
 msgid "python-configobj documentation files"
@@ -10861,7 +10860,7 @@ msgstr "Basit ama güçlü bir configürasyon dosyası yazıcı ve okuyucu"
 
 #: programming/language/python/python-configobj::description
 msgid "python-configobj is a simple but powerful config file reader and writer: an ini file round tripper. Its main feature is that it is very easy to use, with a straightforward programmer's interface and a simple syntax for config files. It has lots of other features though."
-msgstr "python-configobj programcı için sunduğu açık arayüz ve basit sözdizimi sayesinde konfigürasyon dosyaları ile uğraşmayı oldukça kolaylaştıran bir kütüphanedir."
+msgstr "python-configobj programcı için sunduğu açık arayüz ve basit sözdizimi sayesinde konfigürasyon dosyaları ile uğraşmayı oldukça kolaylaştıran bir kitaplığıdır."
 
 #: programming/language/python/python-prioritized-methods::summary
 msgid "An extension to python-peak-rules to prioritize methods in order to to avoid ambiguous methods situations"
@@ -11017,7 +11016,7 @@ msgstr "python-pyquante kuantum kimya yöntemleri ile geliştirme yapmak için a
 
 #: programming/language/python/python-mechanize::summary
 msgid "Stateful programmatic web browsing in Python"
-msgstr "Python'da ayrıntılı bir web gezinti kütüphanesi. "
+msgstr "Python'da ayrıntılı bir web gezinti kitaplığı. "
 
 #: programming/language/python/python-mechanize::description
 msgid "Stateful programmatic web browsing in Python, after Andy Lester's Perl module WWW::Mechanize."
@@ -11029,7 +11028,7 @@ msgstr "Python için DNS modülü."
 
 #: programming/language/python/python-pydns::description
 msgid "A python library for performing DNS queries."
-msgstr "DNS sorgulamaları gerçekleştirmek için bir python kütüphanesi."
+msgstr "DNS sorgulamaları gerçekleştirmek için bir python kitaplığı."
 
 #: programming/language/python/python-bsddb3:python-bsddb3-devel:summary
 msgid "Development files for python-bsddb3"
@@ -11077,7 +11076,7 @@ msgstr "Nesne yönelimli web geliştirme çatısı"
 
 #: programming/language/python/python-cherrypy2::description
 msgid "python-cherrypy2 allows developers to build web applications in much the same way they would build any other object-oriented Python program. This usually results in smaller source code developed in less time."
-msgstr "python-cherrypy2 normal bir python programı yazar gibi web uygulamaları yazılmasına olanak sağlayan bir python kütüphanesidir. Genellikle daha az kod ile daha kısa sürede geliştirme yapılmasına imkan tanır."
+msgstr "python-cherrypy2 normal bir python programı yazar gibi web uygulamaları yazılmasına olanak sağlayan bir python kitaplığıdır. Genellikle daha az kod ile daha kısa sürede geliştirme yapılmasına imkan tanır."
 
 #: programming/language/python/python-pytest:python-pytest-doc:summary
 msgid "Documents and examples for py.test"
@@ -11109,11 +11108,11 @@ msgstr "python-dateutil modülü, Python2.3 ve üzerinde bulunan standart dateti
 
 #: programming/language/python/python-qwt::summary
 msgid "Python bindings for the Qwt library"
-msgstr "Qwt Qt4 kütüphanesi için python eklentileri"
+msgstr "Qwt Qt4 kitaplığı için python eklentileri"
 
 #: programming/language/python/python-qwt::description
 msgid "Qwt is an extension to the Qt GUI library. The Qwt library contains widgets and components which are primarily useful for technical and scientifical purposes. It includes a 2-D plotting widget, different kinds of sliders, and much more."
-msgstr "Qwt, Qt Gui kütüphanesi için bir ektir. Kütüphane teknik ve bilimsel amaçlarla kullanılmak üzere hazırlanmış arayüz elemanları sağlar. 2 boyutlu harita elemanı, çeşitli sürgü araçları gibi arayüz elemanları içerir."
+msgstr "Qwt, Qt Gui kitaplığı için bir ektir. Kitaplık teknik ve bilimsel amaçlarla kullanılmak üzere hazırlanmış arayüz elemanları sağlar. 2 boyutlu harita elemanı, çeşitli sürgü araçları gibi arayüz elemanları içerir."
 
 #: programming/language/python/gst-python:gst-python-devel:summary
 msgid "Development files for gst-python"
@@ -11177,7 +11176,7 @@ msgstr "python-cairo için geliştirme dosyaları"
 
 #: programming/language/python/python-cairo::summary
 msgid "Python wrapper for cairo graphics library"
-msgstr "Cairo vektörel grafik kütüphanesi için Python bağlayıcıları"
+msgstr "Cairo vektörel grafik kitaplığı için Python bağlayıcıları"
 
 #: programming/language/python/python-cairo::description
 msgid "Pycairo is set of Python bindings for the cairo graphics library."
@@ -11185,7 +11184,7 @@ msgstr ""
 
 #: programming/language/python/python-nifti::summary
 msgid "Python interface to the NIfTI I/O libraries"
-msgstr "NIfTI I/O kütüphaneleri Python arayüzü"
+msgstr "NIfTI I/O kitaplıkları Python arayüzü"
 
 #: programming/language/python/python-nifti::description
 msgid "Using PyNIfTI one can easily read and write NIfTI and ANALYZE images from within Python. The NiftiImage class provides Python-style access to the full header information. Image data is made available via NumPy arrays."
@@ -14820,7 +14819,6 @@ msgstr "libmpeg2 için geliştirme dosyaları"
 msgid "libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video streams"
 msgstr "mpeg-2 ve mpeg-1 video görüntülerini çözmek için ücretsiz bir kütüphane"
 
-#: multimedia/video/libmpeg2::description
 msgid "libmpeg2 is a free library for decoding mpeg-2 and mpeg-1 video streams. libmpeg2 is able to decode all mpeg streams that conform to certain restrictions: \"constrained parameters\" for mpeg-1, and \"main profile\" for mpeg-2."
 msgstr "libmpeg2, mpeg-1 ve mpeg-2 video akışlarının çözülerek okunması için ücretsiz bir kütüphanedir. Libmpeg-2, bir takım kısıtlayıcı kurallara (mpeg-1 için \"kısıtlanmış parametreler\" ve mpeg-2 için \"ana profil\") uyan bütün mpeg yayınlarını çözebilir."
 
