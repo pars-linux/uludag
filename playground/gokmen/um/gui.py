@@ -138,10 +138,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 1 Method
     def checkSystem(self):
-        # self.button_next.setEnabled(False)
-        # self.button_previous.setEnabled(False)
         self.showMessage("Checking your system...")
         repoWidget = self.pageWidget.getWidget(1).ui
+
         for repo in ('stable', 'devel', 'testing'):
             if getattr(repoWidget, repo).isChecked():
                 self.target_repo = REPO_TEMPLATE % repo
@@ -159,8 +158,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             resultWidget.package_list.clear()
             resultWidget.c_package.show()
             resultWidget.package_list.addItems(self.missing_packages)
-        else:
-            resultWidget.success.show()
         self.label_header.setText("Check results...")
         self.hideMessage()
 
