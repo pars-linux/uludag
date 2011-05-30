@@ -103,7 +103,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
             resultWidget = self.pageWidget.getWidget(2).ui
             resultWidget.c_package.hide()
-            resultWidget.c_disk.hide()
             resultWidget.success.hide()
 
             def updateButtons():
