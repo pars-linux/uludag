@@ -36,6 +36,7 @@ from pds.gui import TOPCENTER, MIDCENTER, BOTCENTER, CURRENT, OUT
 from pds.qpagewidget import QPageWidget
 
 from backend import Iface
+from backend import cleanup_pisi
 from repo_helper import findMissingPackagesForDistupdate
 
 ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
@@ -57,27 +58,9 @@ def getWidget(page = None, title = ""):
         widget.ui = page
     return widget
 
-def cleanup_pisi():
-    """Close the database cleanly and do other cleanup."""
-    import pisi.context as ctx
-    ctx.disable_keyboard_interrupts()
-    if ctx.log:
-        ctx.loghandler.flush()
-        ctx.log.removeHandler(ctx.loghandler)
-
-    filesdb = pisi.db.filesdb.FilesDB()
-    if filesdb.is_initialized():
-        filesdb.close()
-
-    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
-        os.unlink(ctx.build_leftover)
-
-    ctx.ui.close()
-    ctx.enable_keyboard_interrupts()
-
 class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
-    def __init__(self, parent = None, inStep2 = False):
+    def __init__(self, parent = None, step = 1):
         QDialog.__init__(self, parent)
         self.setupUi(self)
 
@@ -98,8 +81,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.connect(self.pageWidget, SIGNAL("currentChanged()"), lambda:\
                      self.label_header.setText(self.pageWidget.getCurrentWidget().title))
 
-        if not inStep2:
-            self.current_step = 1
+        self.current_step = step
+
+        if step == 1:
             self.thread_check = PThread(self, self.findMissingPackages, self.showResults)
 
             # Welcome
@@ -134,9 +118,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             self.pageWidget.createPage(
                     getWidget(ui_screen_4, ""), inMethod = updateButtons,
                                                 outMethod= updateButtons)
-        else:
-            self.current_step = 2
-            self._step_2_counter = 0
+        self._step_counter = 0
 
         # Progress Screen
         self.pageWidget.createPage(
@@ -144,12 +126,15 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Shortcut for Progress Screen UI
         # Get the last added page as progress page
-        # After the first step completed, um will restart with just this page !
+        # After the first step completed, um will use just this page !
         self.ps = self.pageWidget.getWidget(self.pageWidget.count() - 1).ui
 
-        if inStep2:
+        if step == 2:
             self.upgradeStep_2()
+        elif step == 3:
+            self.upgradeStep_3()
 
+    # Step 1 Method
     def checkSystem(self):
         # self.button_next.setEnabled(False)
         # self.button_previous.setEnabled(False)
@@ -161,9 +146,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         self.thread_check.start()
 
+    # Step 1 Method
     def findMissingPackages(self):
         self.missing_packages = findMissingPackagesForDistupdate(self.target_repo)
 
+    # Step 1 Method
     def showResults(self):
         resultWidget = self.pageWidget.getWidget(2).ui
         if self.missing_packages:
@@ -175,6 +162,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.label_header.setText("Check results...")
         self.hideMessage()
 
+    # Step 1 Method
     def upgradeStep_1(self):
         print 'PISI VERSION in STEP 1 is', pisi.__version__
         self.disableButtons()
@@ -191,6 +179,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.progress.setFormat("Installing new package management system...")
         self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
+    # Step 2 Method
     def upgradeStep_2(self):
         self.disableButtons()
         self.ps.steps.setMaximum(0)
@@ -200,6 +189,17 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         # Lets Update !
         self.iface.upgradeSystem()
 
+    # Step 3 Method
+    def upgradeStep_3(self):
+        self.disableButtons()
+        self.ps.steps.setMaximum(0)
+        self.ps.progress.setValue(70)
+        self.ps.progress.setFormat("Configuring for Pardus 2011...")
+
+        # Lets Configure !
+        self.iface.configureSystem()
+
+    # Shared Method
     def processNotify(self, event, notify):
 
         # print "PN:", event, "%%", notify
@@ -230,6 +230,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             # END OF Step 1 in Upgrade
             if event in (installed, upgraded) and package == 'xz' and self.current_step == 1:
                 self.ps.progress.setFormat("Step 1 Completed")
+                # STEP 1 Finishes at 10 percent
                 self.ps.progress.setValue(10)
 
                 # Write selected upgrade repository to a temporary file
@@ -243,10 +244,18 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
                 os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
 
             if self.current_step == 2 and event in (installed, upgraded):
-                self._step_2_counter += 1
+                self._step_counter += 1
+                # STEP 2 Finishes at 70 percent
                 if self.iface._nof_packgages > 0:
-                    self.ps.progress.setValue(10 + self._step_2_counter / (self.iface._nof_packgages / 70))
+                    self.ps.progress.setValue(10 + self._step_counter / (self.iface._nof_packgages / 70))
 
+            if self.current_step == 3 and event == configured:
+                self._step_counter += 1
+                # STEP 3 Finishes at 100 percent
+                if self.iface._nof_packgages > 0:
+                    self.ps.progress.setValue(70 + self._step_counter / (self.iface._nof_packgages / 100))
+
+    # Shared Method
     def updateProgress(self, raw):
         self.ps.status.setText("Downloading: <b>%s</b>" % raw['filename'])
         percent = raw['percent']
@@ -257,16 +266,19 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             self.ps.steps.setMaximum(100)
             self.ps.steps.setValue(percent)
 
+    # Shared Method
     def showMessage(self, message):
         self.msgbox.busy.busy()
         self.msgbox.setMessage(message)
         if not self.msgbox.isVisible():
             self.msgbox.animate(start = MIDCENTER, stop = MIDCENTER)
 
+    # Shared Method
     def hideMessage(self):
         if self.msgbox.isVisible():
             self.msgbox.animate(start = CURRENT, stop = CURRENT, direction = OUT)
 
+    # Shared Method
     def disableButtons(self):
         for button in (self.button_cancel, self.button_previous, self.button_next):
             button.setEnabled(False)

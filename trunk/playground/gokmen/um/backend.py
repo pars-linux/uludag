@@ -13,6 +13,7 @@
 
 import os
 import pisi
+import time
 import threading
 import urlgrabber
 
@@ -25,6 +26,24 @@ DEFAULT_REPO_2011 = "pardus-2011"
 DEFAULT_REPO_2009 = "pardus-2009.2"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
+
+def cleanup_pisi():
+    """Close the database cleanly and do other cleanup."""
+    import pisi.context as ctx
+    ctx.disable_keyboard_interrupts()
+    if ctx.log:
+        ctx.loghandler.flush()
+        ctx.log.removeHandler(ctx.loghandler)
+
+    filesdb = pisi.db.filesdb.FilesDB()
+    if filesdb.is_initialized():
+        filesdb.close()
+
+    if ctx.build_leftover and os.path.exists(ctx.build_leftover):
+        os.unlink(ctx.build_leftover)
+
+    ctx.ui.close()
+    ctx.enable_keyboard_interrupts()
 
 def threaded(fn):
     def run(*k, **kw):
@@ -141,6 +160,12 @@ class Iface(QObject, Singleton):
         print "STARTING TO INSTALL FORCE LIST"
         pisi.api.install(pkgs_to_install, reinstall = True)
 
+        # Let start from step 3
+        time.sleep(2)
+        os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
+
+    @threaded
+    def configureSystem(self):
         # Configure Pending !
         print "STARTING TO CONFIGURING"
         self.configurePending(['baselayout'])
