@@ -165,7 +165,7 @@ class Iface(QObject, Singleton):
         file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
 
         # Let start from step 3
-        self.parent.processNotify("STATE_2_FINISHED")
+        self.parent.processNotify("STATE_2_FINISHED", {})
 
     @threaded
     def configureSystem(self):
