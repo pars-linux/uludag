@@ -39,6 +39,8 @@ from backend import Iface
 from backend import cleanup_pisi
 from repo_helper import findMissingPackagesForDistupdate
 
+from migratekde import migrateKDE
+
 ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
 REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
                      "python-pyliblzma-0.5.3-1-1.pisi",
@@ -203,6 +205,27 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     def processNotify(self, event, notify):
 
         # print "PN:", event, "%%", notify
+
+        if event == "STATE_2_FINISHED":
+            time.sleep(2)
+            os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
+
+        elif event == "STATE_3_FINISHED":
+            # Step 4
+            self.ps.progress.setFormat("Running Post Upgrade Operations...")
+
+            # Migrate KDE Configs
+            migrateKDE()
+
+            # Migrate NetworkManager Configurations
+            os.system("/usr/sbin/migrate-comar-network-profiles")
+
+            # Bootloader changes TODO Onur
+            # PASS
+
+            # Time to reboot
+            self.ps.progress.setFormat("Rebooting to the Pardus 2011...")
+            os.system("reboot")
 
         if 'package' in notify:
             package = str(notify['package'].name)
