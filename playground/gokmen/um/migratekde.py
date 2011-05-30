@@ -3,6 +3,7 @@
 
 import os
 import pwd
+import shutil
 
 globalSymlinkList = [
 ("/usr/kde/4/bin",                          "/usr/bin"),
@@ -30,8 +31,8 @@ globalSymlinkList = [
 ]
 
 def migrateKDE():
-    if os.path.exits("/usr/kde"):
-        os.rename("/usr/kde", "/usr/old-kde")
+    if os.path.exists("/usr/kde"):
+        shutil.move("/usr/kde", "/usr/old-kde")
 
     try:
         os.makedirs("/usr/kde/4/share/doc") #create old KDE dirs, if they don't exist
@@ -47,9 +48,8 @@ def migrateKDE():
     for user in [u for u in os.listdir("/home") if not u.startswith(".")]: #we may use pwd.getpwall here
         homeDir = os.path.join("/home", user)
 
-        if os.path.exits(os.path.join(homeDir, ".kde")):
+        if os.path.exists(os.path.join(homeDir, ".kde")):
             os.rename(os.path.join(homeDir, ".kde"), os.path.join(homeDir, ".old-kde"))
-
         try:
             os.symlink("./kde4", os.path.join(homeDir, ".kde"))
         except OSError:
@@ -60,7 +60,8 @@ def migrateKDE():
         except KeyError:
             continue
 
-        os.chown(os.path.join(homeDir, ".kde"), uid, gid)
+        if os.path.exists(os.path.join(homeDir, ".kde")):
+            os.chown(os.path.join(homeDir, ".kde"), uid, gid)
 
         try:
             os.unlink(os.path.join(homeDir, ".kde4", "share", "config", "kaptanrc"))
