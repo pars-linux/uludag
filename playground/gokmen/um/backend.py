@@ -101,6 +101,7 @@ class Iface(QObject, Singleton):
 
         self._nof_packgages = 0
 
+        self.parent = parent
         pisi.api.set_userinterface(self.ui)
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
@@ -160,16 +161,23 @@ class Iface(QObject, Singleton):
         print "STARTING TO INSTALL FORCE LIST"
         pisi.api.install(pkgs_to_install, reinstall = True)
 
+        # Write down Nof packages has been upgraded
+        file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
+
         # Let start from step 3
-        time.sleep(2)
-        os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
+        self.parent.processNotify("STATE_2_FINISHED")
 
     @threaded
     def configureSystem(self):
         # Configure Pending !
+
+        # Set number of upgraded packages
+        self._nof_packgages = int(file('/tmp/nof_package_upgraded').read())
+
         print "STARTING TO CONFIGURING"
         self.configurePending(['baselayout'])
         self.configurePending()
+        self.parent.processNotify("STATE_3_FINISHED", {})
 
     @threaded
     def configurePending(self, packages = None):
