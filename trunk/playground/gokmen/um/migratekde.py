@@ -31,7 +31,10 @@ globalSymlinkList = [
 
 def migrateKDE():
     for src, dst in globalSymlinkList:
-        os.symlink(src, dst)
+        try:
+            os.symlink(src, dst)
+        except OSError:
+            continue
 
     for user in [u for u in os.listdir("/home") if not u.startswith(".")]: #we may use pwd.getpwall here
         homeDir = os.path.join("/home", user)
