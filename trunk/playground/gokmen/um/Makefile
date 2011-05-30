@@ -12,6 +12,7 @@ install:
 	mkdir -p /usr/share/um/ui
 	cp ui/*.py /usr/share/um/ui
 	cp *.py /usr/share/um/
+	cp -rf pds /usr/share/um/
 	rm -f /usr/bin/upgrade-manager
 	ln -s /usr/share/um/main.py /usr/bin/upgrade-manager
 	chmod +x /usr/share/um/main.py
