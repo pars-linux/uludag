@@ -31,7 +31,7 @@ def find_missing_delta_packages(testing_dir, stable_dir):
 
     missing_delta_packages = []
     for package in testing_index.packages:
-        if package.name not in releases:
+        if package.history[0].release != releases.get(package.name):
             continue
 
         for delta_package in package.deltaPackages:
