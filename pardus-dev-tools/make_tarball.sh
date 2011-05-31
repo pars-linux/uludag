@@ -7,13 +7,14 @@ SVR="ibrahim@cekirdek.pardus.org.tr"
 DST="public_html/dist"
 
 EXTRA_DIST="\
+data/ \
 AUTHORS \
 ChangeLog \
 COPYING \
 INSTALL \
 NEWS \
 README \
-TODO "
+TODO"
 
 DIST=`cat MANIFEST`
 
@@ -44,8 +45,8 @@ for script in $DIST; do
 done
 
 echo "Rolling..."
-cp $EXTRA_DIST $DIRNAME
-tar cjvf $DIRNAME.tar.bz2 $DIRNAME
+cp -R $EXTRA_DIST $DIRNAME
+tar cjvf $DIRNAME.tar.bz2 $DIRNAME --exclude .svn
 rm -rf $DIRNAME
 
 echo "Sending..."
