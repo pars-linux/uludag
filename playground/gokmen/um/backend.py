@@ -177,6 +177,7 @@ class Iface(QObject, Singleton):
         print "STARTING TO CONFIGURING"
         self.configurePending(['baselayout'])
         self.configurePending()
+
         self.parent.processNotify("STATE_3_FINISHED", {})
 
     @threaded

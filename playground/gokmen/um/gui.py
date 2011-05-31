@@ -220,6 +220,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
             # Time to reboot
             self.ps.progress.setFormat("Rebooting to the Pardus 2011...")
+            time.sleep(3)
             os.system("reboot")
 
         if 'package' in notify:
