@@ -49,9 +49,11 @@ def migrateKDE():
         homeDir = os.path.join("/home", user)
 
         if os.path.exists(os.path.join(homeDir, ".kde")):
+            if os.path.exists(os.path.join(homeDir, ".old-kde")):
+                    shutil.rmtree(os.path.join(homeDir, ".old-kde"))
             os.rename(os.path.join(homeDir, ".kde"), os.path.join(homeDir, ".old-kde"))
         try:
-            os.symlink("./kde4", os.path.join(homeDir, ".kde"))
+            os.symlink(".kde4", os.path.join(homeDir, ".kde"))
         except OSError:
             continue
 
@@ -62,7 +64,7 @@ def migrateKDE():
 
         if os.path.exists(os.path.join(homeDir, ".kde")):
             os.chown(os.path.join(homeDir, ".kde"), uid, gid)
-
+            os.lchown(os.path.join(homeDir, ".kde"), uid, gid)
         try:
             os.unlink(os.path.join(homeDir, ".kde4", "share", "config", "kaptanrc"))
         except OSError:
