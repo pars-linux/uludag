@@ -2,6 +2,3 @@ TODO
 ----
 
 (-) Provide several git,svn scripts to ease some workflows
-
-(-) Provide a hook for defaulting EDITOR to "vi" or "emacs"
-(-) Provide q=quilt alias
