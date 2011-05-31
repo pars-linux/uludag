@@ -175,14 +175,10 @@ class Iface(QObject, Singleton):
         self._nof_packgages = int(file('/tmp/nof_package_upgraded').read())
 
         print "STARTING TO CONFIGURING"
-        self.configurePending(['baselayout'])
-        self.configurePending()
+        pisi.api.configure_pending(['baselayout'])
+        pisi.api.configure_pending()
 
         self.parent.processNotify("STATE_3_FINISHED", {})
-
-    @threaded
-    def configurePending(self, packages = None):
-        pisi.api.configure_pending(packages)
 
     @threaded
     def upgradeRepos(self):
