@@ -7,3 +7,4 @@ Software Development
    :maxdepth: 2
 
    coderules/index.rst
+   developmentlifecycle/index.rst
