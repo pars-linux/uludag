@@ -47,13 +47,14 @@ def migrateKDE():
 
     for user in [u for u in os.listdir("/home") if not u.startswith(".")]: #we may use pwd.getpwall here
         homeDir = os.path.join("/home", user)
+        kdeConfig = os.path.join(homeDir, ".kde")
 
-        if os.path.exists(os.path.join(homeDir, ".kde")):
+        if os.path.exists(kdeConfig):
             if os.path.exists(os.path.join(homeDir, ".old-kde")):
                     shutil.rmtree(os.path.join(homeDir, ".old-kde"))
-            os.rename(os.path.join(homeDir, ".kde"), os.path.join(homeDir, ".old-kde"))
+            os.rename(kdeConfig, os.path.join(homeDir, ".old-kde"))
         try:
-            os.symlink(".kde4", os.path.join(homeDir, ".kde"))
+            os.symlink(".kde4", kdeConfig)
         except OSError:
             continue
 
@@ -62,9 +63,9 @@ def migrateKDE():
         except KeyError:
             continue
 
-        if os.path.exists(os.path.join(homeDir, ".kde")):
-            os.chown(os.path.join(homeDir, ".kde"), uid, gid)
-            os.lchown(os.path.join(homeDir, ".kde"), uid, gid)
+        if os.path.exists(kdeConfig):
+            os.chown(kdeConfig, uid, gid)
+            os.lchown(kdeConfig, uid, gid)
         try:
             os.unlink(os.path.join(homeDir, ".kde4", "share", "config", "kaptanrc"))
         except OSError:
