@@ -10,6 +10,9 @@
 Code Rules
 ==========
 
+This document provides a set of coding rules for Pardus Development, its based on the Google's Python Coding Standards Document.
+
+
 Python Language Rules
 ~~~~~~~~~~~~~~~~~~~~~
 
