@@ -3,9 +3,9 @@ Writing Unittest Rules
 
 - Name your unit tests clearly and consistently: avoid non-descriptive unit tests names 
 
-- Prefix the names of your test functions/methods with test_ and the names of your test classes with Test
+- Prefix the names of your test functions/methods with ``test_`` and the names of your test classes with Test
 
-- Save your test code in files that start with test_
+- Save your test code in files that start with ``test_``
 
 - Put unit tests for your classes in a separate class file as well. Hence, by separating your class implementation and your unit tests, you will automatically be prevented from testing private methods and private properties.
 
@@ -17,13 +17,11 @@ Writing Unittest Rules
 
   - On the other end of the spectrum, you might choose to implement a large suite of unit tests that are incredibly thorough and test a wide variety of scenarios.
 
-
 - You shouldn’t consider the percentage of code coverage to be an end-goal though. Instead, you should strive to increase the state coverage of your unit tests.
 
-  e.g. *double getFraction(Integer a){ return 1/a;}*
+  e.g. ``double getFraction(Integer a){ return 1/a;}``
        
   You should probably test a few different inputs for this method, even if it means that you will have achieved 100% code coverage several times over. Three different states that you might consider testing are a "positive" input, a "negative" input and a "0" input.
-      
 
 - Unit tests should always create their own test data to execute against.
 
@@ -41,34 +39,27 @@ Writing Unittest Rules
 
 - Assertion syntax: no special assertion syntax in py.test; you can use the standard Python assert statements
 
-  e.g.  ...
+  e.g. ::
 
-        *def test_assert_introspection():*
+        def test_assert_introspection():
+            assert True         # assertTrue()
+            assert 1 == 1       # assertEqual()
+            assert not 1 == 2   # assertNotEqual()
+            assert not False    # assertFalse()
 
-            *assert True         # assertTrue()*
-
-            *assert 1 == 1       # assertEqual()*
-
-            *assert not 1 == 2   # assertNotEqual()*
-
-            *assert not False    # assertFalse()*
         ...
 
 - Exception handling: use the raises() function that takes the expected exception type as the first parameter. The other parameters are either:
   
   - *a string specifying the function or method call that is supposed to raise the exception* or 
-
   - *the actual callable, followed by its arguments*
   
-  e.g. ...
+  e.g. ::
 
-       *def test_sort_exception(self):*
-
-           *py.test.raises(NameError, "self.alist.sort(int_compare)")*
-
-           *py.test.raises(ValueError, self.alist.remove, 6)*
+       def test_sort_exception(self):
+           py.test.raises(NameError, "self.alist.sort(int_compare)")
+           py.test.raises(ValueError, self.alist.remove, 6)
        ...
-
 
 - Test only one code unit at a time: your architecture must support testing units (i.e., classes or very small groups of classes) independently, not all chained together.
 
@@ -76,6 +67,6 @@ Writing Unittest Rules
 
 - Organize your tests in hierarchies and test suites by creating a directory tree and placing/grouping your test files in the appropriate directories.  
 
-- Then you can just run py.test with no arguments in the directory that contains your tests, the tool will search the current directory and its subdirectories for files that start with test_ , then it will automagically invoke all the test functions/methods it finds in those files.
+- Then you can just run py.test with no arguments in the directory that contains your tests, the tool will search the current directory and its subdirectories for files that start with ``test_`` , then it will automagically invoke all the test functions/methods it finds in those files.
 
 - Verify the results are correct
