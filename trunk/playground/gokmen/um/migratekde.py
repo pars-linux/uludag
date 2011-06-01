@@ -4,6 +4,7 @@
 import os
 import pwd
 import shutil
+import time
 
 globalSymlinkList = [
 ("/usr/kde/4/bin",                          "/usr/bin"),
@@ -32,7 +33,7 @@ globalSymlinkList = [
 
 def migrateKDE():
     if os.path.exists("/usr/kde"):
-        shutil.move("/usr/kde", "/usr/old-kde")
+        shutil.move("/usr/kde", "/usr/kde-backup-%s" % time.strftime("%Y.%m.%d-%H.%M.%S"))
 
     try:
         os.makedirs("/usr/kde/4/share/doc") #create old KDE dirs, if they don't exist
@@ -48,11 +49,10 @@ def migrateKDE():
     for user in [u for u in os.listdir("/home") if not u.startswith(".")]: #we may use pwd.getpwall here
         homeDir = os.path.join("/home", user)
         kdeConfig = os.path.join(homeDir, ".kde")
+        kdeConfigBackup = os.path.join(homeDir, ".kde-backup-%s" % time.strftime("%Y.%m.%d-%H.%M.%S"))
 
         if os.path.exists(kdeConfig):
-            if os.path.exists(os.path.join(homeDir, ".old-kde")):
-                    shutil.rmtree(os.path.join(homeDir, ".old-kde"))
-            os.rename(kdeConfig, os.path.join(homeDir, ".old-kde"))
+            os.rename(kdeConfig, kdeConfigBackup)
         try:
             os.symlink(".kde4", kdeConfig)
         except OSError:
