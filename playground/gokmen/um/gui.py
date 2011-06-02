@@ -40,6 +40,7 @@ from backend import cleanup_pisi
 from repo_helper import findMissingPackagesForDistupdate
 
 from migratekde import migrateKDE
+from migrategrubconf import migrateGrubconf
 
 ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
 REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
@@ -215,8 +216,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             # Migrate NetworkManager Configurations
             os.system("/usr/sbin/migrate-comar-network-profiles")
 
-            # Bootloader changes TODO Onur
-            # PASS
+            # Migrate BootLoader conf
+            migrateGrubconf('/boot/grub/grub.conf')
 
             # Time to reboot
             self.ps.progress.setFormat("Rebooting to the Pardus 2011...")

@@ -1,19 +1,16 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
 import os
 import re
 import subprocess
 from pardus.diskutils import getRoot
-
 
 grubconf = "/boot/grub/grub.conf"
 #grubconf = "/tmp/sil/grub.conf"
 debug = False
 #debug = True
 rootDevice = ""
-
 
 def loadFile(_file):
     try:
@@ -79,7 +76,5 @@ def migrateGrubconf(cfg=grubconf):
     writeFile(cfg, "\n".join(newConfig))
 
 if __name__ == "__main__":
-
     migrateGrubconf(grubconf)
-
 
