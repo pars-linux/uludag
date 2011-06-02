@@ -12,36 +12,43 @@
 # Please read the COPYING file.
 #
 
+# System
 import os
 import sys
 import time
-import pisi
 import urlgrabber
 
-from PyQt4.QtCore import SIGNAL, QTimer
+# PyQt
 from PyQt4.QtGui import QDialog
 from PyQt4.QtGui import QWidget
+from PyQt4.QtCore import SIGNAL, QTimer
 
-from ui import ui_main
-from ui import ui_mainscreen
+# UI Files
 from ui import ui_screen_1
 from ui import ui_screen_2
 from ui import ui_screen_3
 from ui import ui_screen_4
 from ui import ui_screen_5
+from ui import ui_mainscreen
 
+# PDS Imports
+from pds.gui import *
 from pds.thread import PThread
-from pds.gui import PMessageBox
-from pds.gui import TOPCENTER, MIDCENTER, BOTCENTER, CURRENT, OUT
 from pds.qpagewidget import QPageWidget
+from pds.qprogressindicator import QProgressIndicator
 
+# Pisi
+import pisi
+from pisi.ui import *
 from backend import Iface
 from backend import cleanup_pisi
-from repo_helper import findMissingPackagesForDistupdate
 
+# Helper & Migrate Methods
 from migratekde import migrateKDE
+from repo_helper import findMissingPackagesForDistupdate
 from migrategrubconf import migrateGrubconf
 
+# Constants
 ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
 REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
                      "python-pyliblzma-0.5.3-1-1.pisi",
@@ -49,8 +56,6 @@ REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
                      "xz-4.999.9_beta143-1-1.pisi")
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
-
-from pisi.ui import *
 
 def getWidget(page = None, title = ""):
     widget = QWidget()
@@ -71,7 +76,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.iface = Iface(self)
 
         self.msgbox = PMessageBox(self)
-        self.msgbox.setStyleSheet(PMessageBox.Style)
+        self.msgbox.setStyleSheet("color:white;")
         self.msgbox.enableOverlay()
 
         self.pageWidget = QPageWidget(self.widget_screens)
@@ -107,9 +112,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
                     getWidget(ui_screen_3, "Checking your system..."),
                     inMethod = self.checkSystem, outMethod = self.hideMessage)
 
-            resultWidget = self.pageWidget.getWidget(2).ui
-            resultWidget.c_package.hide()
-
             def updateButtons():
                 if self.button_next.text() == "Next":
                     self.button_next.setText("Yes, Upgrade")
@@ -134,6 +136,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         # Get the last added page as progress page
         # After the first step completed, um will use just this page !
         self.ps = self.pageWidget.getWidget(self.pageWidget.count() - 1).ui
+
+        # Busy indicator to Progress Screen
+        self.ps.busy = QProgressIndicator(self)
+        self.ps.busy.hide()
+        self.ps.layout.addWidget(self.ps.busy)
 
         if step == 2:
             self.upgradeStep_2()
@@ -160,7 +167,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         resultWidget = self.pageWidget.getWidget(2).ui
         if self.missing_packages:
             resultWidget.package_list.clear()
-            resultWidget.c_package.show()
             resultWidget.package_list.addItems(self.missing_packages)
         self.label_header.setText("Check results...")
         self.hideMessage()
@@ -171,7 +177,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.disableButtons()
 
         # To Animate it
-        self.ps.steps.setMaximum(0)
+        self.ps.steps.hide()
+        self.ps.busy.busy()
 
         # Remove Repositories
         self.ps.progress.setFormat("Removing current repositories...")
@@ -206,7 +213,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 2 Method
     def upgradeStep_2(self):
         self.disableButtons()
-        self.ps.steps.setMaximum(0)
+        self.ps.steps.hide()
+        self.ps.busy.busy()
         self.ps.progress.setValue(10)
         self.ps.progress.setFormat("Upgrading to Pardus 2011...")
 
@@ -225,7 +233,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 3 Method
     def upgradeStep_3(self):
         self.disableButtons()
-        self.ps.steps.setMaximum(0)
+        self.ps.steps.hide()
+        self.ps.busy.busy()
         self.ps.progress.setValue(70)
         self.ps.progress.setFormat("Configuring for Pardus 2011...")
 
@@ -299,10 +308,12 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         percent = raw['percent']
 
         if percent==100:
-            self.ps.steps.setMaximum(0)
+            self.ps.steps.hide()
+            self.ps.busy.busy()
         else:
-            self.ps.steps.setMaximum(100)
             self.ps.steps.setValue(percent)
+            self.ps.steps.show()
+            self.ps.busy.hide()
 
     # Shared Method
     def showMessage(self, message):
