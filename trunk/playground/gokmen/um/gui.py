@@ -238,6 +238,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.progress.setValue(70)
         self.ps.progress.setFormat("Configuring for Pardus 2011...")
 
+        self.thread_step_3.start()
+
     # Step 3 Threaded Method
     def step_3_start(self):
         # Lets Configure !
