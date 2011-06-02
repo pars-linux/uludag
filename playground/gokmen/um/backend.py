@@ -14,10 +14,7 @@
 import os
 import pisi
 import time
-import threading
 import urlgrabber
-
-from pds.thread import PThread
 
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
@@ -44,12 +41,6 @@ def cleanup_pisi():
 
     ctx.ui.close()
     ctx.enable_keyboard_interrupts()
-
-def threaded(fn):
-    def run(*k, **kw):
-        t = threading.Thread(target=fn, args=k, kwargs=kw)
-        t.start()
-    return run
 
 class PisiUI(QObject, pisi.ui.UI):
 
@@ -106,7 +97,6 @@ class Iface(QObject, Singleton):
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
 
-    @threaded
     def installPackages(self, packages, with_comar = True, reinstall = True, ignore_dep = False):
 
         print "PISI Installing : ", packages
@@ -118,11 +108,6 @@ class Iface(QObject, Singleton):
         pisi.api.set_comar(with_comar)
         pisi.api.install(packages, reinstall = reinstall)
 
-    @threaded
-    def downloadPackages(self, packages):
-        pisi.api.fetch(packages)
-
-    @threaded
     def upgradeSystem(self):
         print 'PISI VERSION in STEP 2 is', pisi.__version__
 
@@ -164,10 +149,6 @@ class Iface(QObject, Singleton):
         # Write down Nof packages has been upgraded
         file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
 
-        # Let start from step 3
-        self.parent.processNotify("STATE_2_FINISHED", {})
-
-    @threaded
     def configureSystem(self):
         # Configure Pending !
 
@@ -180,7 +161,6 @@ class Iface(QObject, Singleton):
 
         self.parent.processNotify("STATE_3_FINISHED", {})
 
-    @threaded
     def upgradeRepos(self):
         pisi.api.update_repo(DEFAULT_REPO_2011)
 

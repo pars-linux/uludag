@@ -80,6 +80,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.button_next.clicked.connect(self.pageWidget.next)
         self.button_previous.clicked.connect(self.pageWidget.prev)
 
+        # Threads
+        self.thread_step_1 = PThread(self, self.step_1_start, self.step_1_end)
+        self.thread_step_2 = PThread(self, self.step_2_start, self.step_2_end)
+        self.thread_step_3 = PThread(self, self.step_3_start, self.step_3_end)
+
         # Update Page Title
         self.connect(self.pageWidget, SIGNAL("currentChanged()"), lambda:\
                      self.label_header.setText(self.pageWidget.getCurrentWidget().title))
@@ -175,7 +180,28 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         # Install New Pisi and its dependencies
         # To keep install in given order we need to pass ignore_dep as True
         self.ps.progress.setFormat("Installing new package management system...")
+        self.thread_step_1.start()
+
+    # Step 1 Threaded Method
+    def step_1_start(self):
         self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
+
+    # Step 1 Threaded Method Finalize
+    def step_1_end(self):
+        # END OF Step 1 in Upgrade
+        self.ps.progress.setFormat("Step 1 Completed")
+        # STEP 1 Finishes at 10 percent
+        self.ps.progress.setValue(10)
+
+        # Write selected upgrade repository to a temporary file
+        file('/tmp/target_repo','w').write(self.target_repo)
+
+        # Cleanup Pisi DB
+        cleanup_pisi()
+
+        # I know this is ugly but we need to use new Pisi :(
+        time.sleep(2)
+        os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
 
     # Step 2 Method
     def upgradeStep_2(self):
@@ -184,8 +210,17 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.progress.setValue(10)
         self.ps.progress.setFormat("Upgrading to Pardus 2011...")
 
+        self.thread_step_2.start()
+
+    # Step 2 Threaded Method
+    def step_2_start(self):
         # Lets Update !
         self.iface.upgradeSystem()
+
+    # Step 2 Threaded Method Finalize
+    def step_2_end(self):
+        time.sleep(2)
+        os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
 
     # Step 3 Method
     def upgradeStep_3(self):
@@ -194,35 +229,34 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.progress.setValue(70)
         self.ps.progress.setFormat("Configuring for Pardus 2011...")
 
+    # Step 3 Threaded Method
+    def step_3_start(self):
         # Lets Configure !
         self.iface.configureSystem()
+
+    # Step 3 Threaded Method Finalize
+    def step_3_end(self):
+        # Step 4
+        self.ps.progress.setFormat("Running Post Upgrade Operations...")
+
+        # Migrate KDE Configs
+        migrateKDE()
+
+        # Migrate NetworkManager Configurations
+        os.system("/usr/sbin/migrate-comar-network-profiles")
+
+        # Migrate BootLoader conf
+        migrateGrubconf('/boot/grub/grub.conf')
+
+        # Time to reboot
+        self.ps.progress.setFormat("Rebooting to the Pardus 2011...")
+        time.sleep(3)
+        os.system("reboot")
 
     # Shared Method
     def processNotify(self, event, notify):
 
         # print "PN:", event, "%%", notify
-
-        if event == "STATE_2_FINISHED":
-            time.sleep(2)
-            os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
-
-        elif event == "STATE_3_FINISHED":
-            # Step 4
-            self.ps.progress.setFormat("Running Post Upgrade Operations...")
-
-            # Migrate KDE Configs
-            migrateKDE()
-
-            # Migrate NetworkManager Configurations
-            os.system("/usr/sbin/migrate-comar-network-profiles")
-
-            # Migrate BootLoader conf
-            migrateGrubconf('/boot/grub/grub.conf')
-
-            # Time to reboot
-            self.ps.progress.setFormat("Rebooting to the Pardus 2011...")
-            time.sleep(3)
-            os.system("reboot")
 
         if 'package' in notify:
             package = str(notify['package'].name)
@@ -247,27 +281,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             if event in (installed, upgraded) and self.current_step == 1:
                 self.ps.progress.setValue(self.ps.progress.value() + 2)
 
-            # END OF Step 1 in Upgrade
-            if event in (installed, upgraded) and package == 'xz' and self.current_step == 1:
-                self.ps.progress.setFormat("Step 1 Completed")
-                # STEP 1 Finishes at 10 percent
-                self.ps.progress.setValue(10)
-
-                # Write selected upgrade repository to a temporary file
-                file('/tmp/target_repo','w').write(self.target_repo)
-
-                # Cleanup Pisi DB
-                cleanup_pisi()
-
-                # I know this is ugly but we need to use new Pisi :(
-                time.sleep(2)
-                os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
-
             if self.current_step == 2 and event in (installed, upgraded):
                 self._step_counter += 1
                 # STEP 2 Finishes at 70 percent
                 if self.iface._nof_packgages > 0:
-                    self.ps.progress.setValue(10 + self._step_counter / (self.iface._nof_packgages / 70))
+                    self.ps.progress.setValue(10 + self._step_counter / (self.iface._nof_packgages / 60))
 
             if self.current_step == 3 and event == configured:
                 self._step_counter += 1
