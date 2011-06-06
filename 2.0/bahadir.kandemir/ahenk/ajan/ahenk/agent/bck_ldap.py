@@ -189,6 +189,14 @@ def ldap_go(options, q_in, q_out, q_force):
             conn.simple_bind(dn, options.password)
             logging.debug("Logged in as %s" % dn)
 
+            # Get list of administrators
+            search = conn.search_s("cn=admins, dc=groups, %s" % domain, ldap.SCOPE_BASE, attrlist=['member'])
+            if len(search):
+                admins = []
+                for dn, attrs in search:
+                    admins.extend(attrs['member'])
+                q_out.put({"subscribe": admins})
+
             while True:
                 updated, policy, policy_stack = fetch_policy(conn, options, domain, dn)
                 if updated:
