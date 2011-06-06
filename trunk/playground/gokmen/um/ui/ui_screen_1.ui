@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>543</width>
-    <height>412</height>
+    <width>758</width>
+    <height>381</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Welcome to Upgrade Manager</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="2">
+   <item row="0" column="1">
     <spacer name="verticalSpacer_2">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -27,7 +27,7 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1">
+   <item row="1" column="0">
     <spacer name="horizontalSpacer">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -40,7 +40,7 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="2">
+   <item row="1" column="1">
     <widget class="QLabel" name="label">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -50,22 +50,28 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>320</width>
-       <height>130</height>
+       <width>369</width>
+       <height>80</height>
       </size>
      </property>
      <property name="frameShape">
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="text">
-      <string>PIXMAP - 09 to 11 Logo</string>
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../data/data.qrc">:/pixmaps/2009to2011logo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>false</bool>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </item>
-   <item row="1" column="3">
+   <item row="1" column="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -78,7 +84,7 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="2">
+   <item row="2" column="1">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -91,20 +97,7 @@
      </property>
     </spacer>
    </item>
-   <item row="3" column="0">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>48</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="1" colspan="3">
+   <item row="3" column="0" colspan="3">
     <widget class="QLabel" name="label_2">
      <property name="text">
       <string>In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.
@@ -115,27 +108,14 @@ This operation includes, installed package information and available free space 
       <enum>Qt::PlainText</enum>
      </property>
      <property name="alignment">
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
      </property>
     </widget>
    </item>
-   <item row="3" column="4">
-    <spacer name="horizontalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>47</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="4" column="2">
+   <item row="4" column="1">
     <spacer name="verticalSpacer_3">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -150,6 +130,8 @@ This operation includes, installed package information and available free space 
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../data/data.qrc"/>
+ </resources>
  <connections/>
 </ui>
