@@ -148,16 +148,6 @@ def load_config_optional(parser, options):
     else:
         options.interval = 60
 
-    # Administrator UID
-    if parser.has_option("server", "admin"):
-        administrators = parser.get("server", "admin")
-        options.admin = []
-        for username in administrators.split(","):
-            if len(username):
-                options.admin.append(username)
-    else:
-        options.admin = ["administrator"]
-
     # PID file
     if parser.has_option("general", "pidfile"):
         options.pidfile = parser.get("general", "pidfile")

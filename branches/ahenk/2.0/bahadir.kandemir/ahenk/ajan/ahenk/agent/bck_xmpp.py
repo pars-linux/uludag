@@ -40,14 +40,6 @@ def event_session_start(stream):
     prs.addElement('status').addContent('Online')
     stream.send(prs)
 
-    # Subscribe to all admins
-    for username in OPTIONS.admin:
-        logging.debug("Subscribing to %s@%s" % (username, OPTIONS.domain))
-        prs = xish.domish.Element(('jabber:client','presence'))
-        prs["to"] = "%s@%s" % (username, OPTIONS.domain)
-        prs["type"] = "subscribe"
-        stream.send(prs)
-
 def event_iq(iq):
     """
         Iq handler
@@ -60,8 +52,6 @@ def event_presence(presence):
     """
     # Accept all subscriptions from admins
     if presence.getAttribute("type", None) == "subscribe":
-        if presence["from"].split("@")[0] not in OPTIONS.admin:
-            return
         logging.debug("Accepting subscription from %s" % presence["from"])
         prs = xish.domish.Element(('jabber:client','presence'))
         prs["to"] = presence["from"]
@@ -115,11 +105,21 @@ def task_message_queue():
         return
     except IOError:
         return
-    message = xish.domish.Element(('jabber:client','message'))
-    message["to"] = msg["to"]
-    message["type"] = "chat"
-    message.addElement("body", "jabber:client", msg["body"])
-    XMLSTREAM.send(message)
+    if 'to' in msg:
+        message = xish.domish.Element(('jabber:client','message'))
+        message["to"] = msg["to"]
+        message["type"] = "chat"
+        message.addElement("body", "jabber:client", msg["body"])
+        XMLSTREAM.send(message)
+    elif 'subscribe' in msg:
+        # Subscribe to all admins
+        for user_dn in msg['subscribe']:
+            username = user_dn.split(',')[0].split('=')[1]
+            logging.debug("Subscribing to %s@%s" % (username, OPTIONS.domain))
+            message = xish.domish.Element(('jabber:client','presence'))
+            message["to"] = "%s@%s" % (username, OPTIONS.domain)
+            message["type"] = "subscribe"
+            XMLSTREAM.send(message)
 
 def connect():
     myJid = jid.JID('%s@%s/Ahenk' % (OPTIONS.username, OPTIONS.domain))
