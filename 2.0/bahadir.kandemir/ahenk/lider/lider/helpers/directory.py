@@ -67,10 +67,28 @@ class Directory:
         self.password = password
 
         self.directory_domain = "dc=" + domain.replace(".", ",dc=")
-        self.directory_user = "cn=%s,%s" % (self.user, self.directory_domain)
 
         try:
             self.conn = ldap.open(self.host)
+        except ldap.LDAPError:
+            self.is_connected = False
+            raise DirectoryConnectionError
+
+        try:
+            pattern = "(cn=%s)" % self.user
+            search = self.conn.search_s(self.directory_domain, ldap.SCOPE_SUBTREE, pattern, ['cn'])
+            if len(search):
+                self.directory_user = search[0][0]
+            else:
+                self.is_connected = False
+                raise DirectoryConnectionError
+
+        except ldap.LDAPError:
+            self.is_connected = False
+            raise DirectoryConnectionError
+
+
+        try:
             self.conn.simple_bind_s(self.directory_user, self.password)
             self.is_connected = True
         except ldap.LDAPError:
