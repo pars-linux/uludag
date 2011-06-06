@@ -54,7 +54,7 @@ _pds = Pds('upgrade-manager', debug = False)
 _ = _pds.i18n
 
 # Constants
-ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
+ARA_FORM = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
 REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
                      "python-pyliblzma-0.5.3-1-1.pisi",
                      "pisi-2.4_alpha3-1-1.pisi",
@@ -117,6 +117,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
                     getWidget(ui_screen_3, _("Checking your system...")),
                     inMethod = self.checkSystem, outMethod = self.hideMessage)
 
+            resultWidget = self.pageWidget.getWidget(2).ui
+            resultWidget.widget.hide()
+
             def updateButtons():
                 if self.button_next.text() == _("Next"):
                     self.button_next.setText(_("Yes, Upgrade"))
@@ -170,6 +173,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 1 Method
     def showResults(self):
         resultWidget = self.pageWidget.getWidget(2).ui
+        resultWidget.widget.show()
         if self.missing_packages:
             resultWidget.package_list.clear()
             resultWidget.package_list.addItems(self.missing_packages)
