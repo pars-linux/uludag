@@ -8,10 +8,20 @@ forceinstall list = http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to
 Legend:
 -------
 
-+ Done | - Not Implemented | / In Progress | ? I'm not sure !
++ Done
+- Not Implemented
+/ In Progress
+? I'm not sure !
 
 Tasks:
 ------
+
+- Store current step in temporary file and then start from it
+- Do not reinstall all packages in Force List
++ Create a shiny upgrade-manager banner
+
+Step 0: Welcome !
+~~~~~~~~~~~~~~~~~
 
 + Ask user which repo to update to (stable/testing/devel) (?)
 
@@ -21,20 +31,33 @@ Tasks:
     ? if update will not be healty, warn the user why and do nothing
     ? if update is not possible ask to remove packages (??)
 
+- Ask user to remove packages which are unsupported by 2011 and installed in 2009
+
 + Final confirmation "are you sure ?"
 
-+ Disable all repos (I removed them !)
+Step 1: Upgrade to new Pisi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+- Remove unsupported packages if user want
+
++ Disable all repos (I removed them !)
 + Install packages from semiupdate repo (order is important) (xz replaces lzma !)
   + libuser-0.57.1-1-1.pisi
   + python-pyliblzma-0.5.3-1-1.pisi
   + pisi-2.4_alpha3-1-1.pisi
   + xz-4.999.9_beta143-1-1.pisi
 
+Step 2: Upgrade the system
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 + Run pisi rdb
 + Add selected repository
 + pisi up --ignore-comar -y
 + install packages from forceinstall list
+
+Step 3: Configure Pending and Post-Install actions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 + pisi cp baselayout
 + pisi cp
 
@@ -49,7 +72,11 @@ Tasks:
 
 + run  /usr/sbin/migrate-comar-network-profiles
 
-- Modify grub.conf
-    - Remove vga=XXX
-    - Replace splash=XXX with splash
++ Modify grub.conf
+    + Remove vga=XXX
+    + Replace splash=XXX with splash
+
+FINAL
+~~~~~
++ REBOOT TO Pardus 2011 \o/
 
