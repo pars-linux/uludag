@@ -28,6 +28,7 @@ def enable_firewall(rules, options, first=False):
         fp = file(script_path, 'w')
         fp.write(rules)
         fp.close()
+        os.chmod(script_path, 0755)
 
         if not dryrun:
             if first:
