@@ -14,8 +14,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru\n"
-"X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 1.1\n"
 
 #: ../release.xml.in.h:1
 msgid "&quot;root&quot; is the conventional name of the administrator user who has all rights and permissions (to all files and programs) in all modes (single or multi-user).&lt;br&gt;&lt;br&gt;Your password must be easy to remember but strong enough to resist possible attacks. You can use capital and lower-case letters, numbers and punctuation marks in your password. &lt;br&gt;&lt;br&gt;You can also define a hostname for your computer. A hostname is an identifier assigned to your computer. As your computer will be recognized with this name in the local network, it is recommended to select a descriptive hostname."
@@ -196,11 +196,11 @@ msgstr "Когда вы используете Dolphin, вы можете зам
 
 #: ../release.xml.in.h:46
 msgid "When you select \"Use All Space\", Pardus will format your disk and create four partitions for user space, and system, boot and swap files using LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; If there is another installed system with an adequate disk space, you can use the \"Shrink Current System\" option to resize the first partition and install Pardus in the created free space. &lt;br&gt;&lt;br&gt; If you have at least 4GBs of unpartitioned-unused space (10 GBs recommended), you can choose the \"Use Free Space\" option, so Pardus will create the necessary partitions described above.&lt;br&gt;&lt;br&gt; You can choose \"Create Custom Layout\" for manual partitioning.&lt;br&gt;&lt;br&gt; It is advised to backup your data to avoid future problems."
-msgstr "Когда вы выбираете \"Использовать все пространство\", Pardus отформатирует ваш диск и создаст четыре раздела для файлов пользователя, системных, загрзурочный раздел и своп-файлов, используя LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; Если уже установлена другая система с достаточным дисковым пространством, вы можете использовать опцию \"Уменьшить Текущую Систему\" для изменения размера первого раздела и установки Pardus на свободное место. &lt;br&gt;&lt;br&gt; Если у вас есть хотя бы 4Гб неиспользуемого дискового пространства (10 Гб рекомендуется), вы можете выбрать опцию \"Использовать свободное пространство\" и Pardus создаст необходимые разделы так, как это было описано выше. &lt;br&gt;&lt;br&gt; Вы можете выбрать опцию \"Создать разделы вручнуюt\" для собственного варианта разбиения диска.&lt;br&gt;&lt;br&gt; Советуем вам сохранить ваши данные для избежания проблем в будущем."
+msgstr "Когда вы выбираете \"Использовать все пространство\", Pardus отформатирует ваш диск и создаст четыре раздела для файлов пользователя, системных, загрузочный раздел и своп-файлов, используя LVM (Logical Volume Manager). &lt;br&gt;&lt;br&gt; Если уже установлена другая система с достаточным дисковым пространством, вы можете использовать опцию \"Уменьшить Текущую Систему\" для изменения размера первого раздела и установки Pardus на свободное место. &lt;br&gt;&lt;br&gt; Если у вас есть хотя бы 4Гб неиспользуемого дискового пространства (10 Гб рекомендуется), вы можете выбрать опцию \"Использовать свободное пространство\" и Pardus создаст необходимые разделы так, как это было описано выше. &lt;br&gt;&lt;br&gt; Вы можете выбрать опцию \"Создать разделы вручнуюt\" для собственного варианта разбиения диска.&lt;br&gt;&lt;br&gt; Советуем вам сохранить ваши данные для избежания проблем в будущем."
 
 #: ../release.xml.in.h:47
 msgid "YALI is now installing Pardus on your computer. This operation takes approximately 20-30 minutes depending on your computer&apos;s hardware.&lt;br&gt;&lt;br&gt;Note that the installation from a USB storage will be much faster than an optical medium (CD/DVD).&lt;br&gt;&lt;br&gt;Now, sit back and enjoy the installation during which you will be able to discover the features and the innovations offered by this new Pardus release."
-msgstr "YALI сейчас устанавливает Pardus на ваш компьютер. Эта операция займет приблизительно 20-30 минут в зависимости от вашего &apos;s аппаратного обеспечения.&lt;br&gt;&lt;br&gt;Имейте ввиду, что установка с USB-накопителя будет гораздо быстрее, чем с оптического носителя (CD/DVD).&lt;br&gt;&lt;br&gt;А сейчас просто расслабтесь и ждите завершения установки. В процессе вы узнаете о возможностях, которые появились в новой версии Pardus."
+msgstr "YALI сейчас устанавливает Pardus на ваш компьютер. Эта операция займет приблизительно 20-30 минут в зависимости от вашего &apos;s аппаратного обеспечения.&lt;br&gt;&lt;br&gt;Имейте ввиду, что установка с USB-накопителя будет гораздо быстрее, чем с оптического носителя (CD/DVD).&lt;br&gt;&lt;br&gt;А сейчас просто расслабьтесь и ждите завершения установки. В процессе вы узнаете о возможностях, которые появились в новой версии Pardus."
 
 #: ../release.xml.in.h:48
 msgid "You can recover your password."
@@ -212,15 +212,15 @@ msgstr "Вы можете переустановить Ваш загрузчик
 
 #: ../release.xml.in.h:50
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you can finally enjoy the full benefits of Pardus.&lt;br&gt;&lt;br&gt;Please be sure that you remember your password and unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Пожалуйста, убедитесь в том, что вы запомнили Ваш пароль и размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
+msgstr "Вы успешно установили Pardus на Ваш компьютер. После перезагрузки компьютера, Вы наконец-то сможете использовать все преимущества операционной системы Pardus! &lt;br&gt;&lt;br&gt;Пожалуйста, убедитесь в том, что вы запомнили Ваш пароль и отключили установочный диск (извлекли USB диск, DVD диск или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:51
 msgid "You have successfully installed Pardus on your computer. After restarting your computer, you will able to add new user accounts and use Pardus. Please be sure that you unmount the installation medium (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr "Вы успешно установили Pardus на ваш компьютер. После перезагрузки компьютера, вы сможете добавить новые учетные записи пользователей и начать использовать Pardus. Пожалуйста, убедитесь в том, что вы размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
+msgstr "Вы успешно установили Pardus на ваш компьютер. После перезагрузки компьютера, вы сможете добавить новые учетные записи пользователей и начать использовать Pardus. Пожалуйста, убедитесь в том, что вы отключили установочный диск (извлекли USB диск, DVD диск или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:52
 msgid "You have successfully rescue your system. Please be sure that you unmount the installation media (remove the usb disk, eject the dvd or release the image in virtual machies)."
-msgstr "Вы успешно восстановили Вашу систему. Пожалуйста, убедитесь в том, что вы размонтировали установочный диск (извлекли USB диск, извлекли DVD или образ в виртуальной машине)"
+msgstr "Вы успешно восстановили Вашу систему. Пожалуйста, убедитесь в том, что вы отключили установочный диск (извлекли USB диск, DVD диск или образ в виртуальной машине)"
 
 #: ../release.xml.in.h:53
 msgid "You have to choose a *free* physical partition in order to create your system partitions. If anything goes wrong you can Reset and start again. &lt;br&gt;&lt;br&gt;In order to use LVM, first you have to create a Physical Volume, then a Volume Group which will contain your Logical Volumes. You can use Logical Volumes similar to partitions and set them for system files, user files, etc. &lt;br&gt;&lt;br&gt;In order to use RAID partitions you have to create at least two RAID members. Try to divide the space equally as the space of the disk will be same with the smallest partition. When you have two RAID members, you will be able to create a RAID array which is similar to a partition as it may be formatted and set for the system files, user files, etc. &lt;br&gt;&lt;br&gt;Please refer to Pardus Installing and Using Guide for more information about disk partitioning. You can find it in our website."
@@ -238,7 +238,7 @@ msgstr "Вам понадобится по крайней мере 4гб из н
 
 #: ../release.xml.in.h:56
 msgid "You've installed and booted Pardus successfully... Just a few clicks left... Pardus supports multiple users on the same system. So you need to create at least one user and set the system wide configurations. So you will be able to login and enjoy Pardus..."
-msgstr "Вы установили и загрузили Pardus успешно ... Всего несколько кликов осталось... Pardus поддерживает работу нескольких пользователей в одной системе. Так что вам нужно создать хотя бы одного пользователя и настроить общесистемную конфигурацию. Таким образом, чтобы наслаждаться Pardus ..."
+msgstr "Вы установили и загрузили Pardus успешно ... Всего несколько шагов осталось... Pardus поддерживает работу нескольких пользователей в одной системе. Так что вам нужно создать хотя бы одного пользователя и настроить общесистемную конфигурацию. Таким образом, вы сможете авторизоваться в системе и наслаждаться Pardus..."
 
 #~ msgid "Goodbye"
 #~ msgstr "До свидания"
