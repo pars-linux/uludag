@@ -153,10 +153,12 @@ class QPageWidget(QScrollArea):
             # Update each page minimumsize to mainwidget's new size
             for page in self.__pages:
                 page.widget.setMinimumSize(self.size())
+                page.widget.setMaximumSize(self.size())
 
             # Update viewport minimumsize to mainwidget's new size
             # It's a workaround for QScrollArea updateGeometry bug
             self.viewport().setMinimumSize(self.size())
+            self.viewport().setMaximumSize(self.size())
 
             # Update scrollbar position for current page
             self.__scrollBar.setValue(self.__current * self.__base_value())
