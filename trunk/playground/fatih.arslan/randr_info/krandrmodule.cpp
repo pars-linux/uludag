@@ -134,7 +134,7 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     else if (vendorText.startsWith("ATI")){
         ati = true;
         startButton->setText("Start Ati Control Center");
-        startButton->setIcon(KIcon("amdccclesu"));
+        startButton->setIcon(KIcon("amdcccle"));
         showStartButton = true;
     }
 
