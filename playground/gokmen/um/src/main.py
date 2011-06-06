@@ -33,6 +33,7 @@ if __name__ == '__main__':
     window = UmMainScreen(step = step)
     window.show()
 
+    app.setStyle('oxygen')
     app.exec_()
 
     sys.exit(0)

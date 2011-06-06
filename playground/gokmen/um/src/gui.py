@@ -83,8 +83,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.msgbox = PMessageBox(self)
         self.msgbox.setStyleSheet("color:white;")
         self.msgbox.enableOverlay()
-
-        self.pageWidget = QPageWidget(self.widget_screens)
+                                                          # Just for Fun :)
+        self.pageWidget = QPageWidget(self.widget_screens)# , direction = 'ttb')
         self.layout.addWidget(self.pageWidget)
 
         self.button_next.clicked.connect(self.pageWidget.next)
