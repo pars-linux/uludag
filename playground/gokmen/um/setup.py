@@ -77,12 +77,11 @@ def update_messages():
 
     # Cleanup
     os.unlink(files)
-    for f in [_f for _f in filelist if _f.startswith("ui/") or _f.endswith(".h")]:
+    for f in [_f for _f in filelist if (_f.startswith("ui/") or _f.endswith(".h")) and not _f.endswith('__init__.py')]:
         try:
             os.unlink(f)
         except OSError:
             pass
-
 
 class Build(build):
     def run(self):
@@ -109,6 +108,7 @@ class Build(build):
         # Collect UI for pure-qt
         for filename in glob.glob1("ui", "*.ui"):
             os.system("pyuic4 -o build/ui/%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+            print "Creating...", filename
 
         # Remove UI files
         os.system("rm -rf build/ui/*.ui")
