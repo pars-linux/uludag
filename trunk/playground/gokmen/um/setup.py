@@ -33,7 +33,7 @@ def makeDirs(directory):
             pass
 
 def remove(path):
-    if os.path.exists(path):
+    if os.path.lexists(path):
         print ' removing: ', path
         if os.path.isdir(path):
             shutil.rmtree(path)
@@ -147,7 +147,9 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
 
-        shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
+        if os.path.exists("data/%s.desktop" % PROJECT):
+            shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
+
         shutil.rmtree('build/data')
 
         # Install codes
@@ -192,7 +194,7 @@ class Uninstall(Command):
         pass
     def run(self):
         root_dir = "/usr/share"
-        bin_dir = "/usr/bin"
+        bin_dir = "/usr/bin/"
 
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications")
@@ -200,7 +202,8 @@ class Uninstall(Command):
 
         print 'Uninstalling ...'
         remove(project_dir)
-        remove(apps_dir +"/%s.desktop" % PROJECT)
+        remove(apps_dir + "/%s.desktop" % PROJECT)
+        remove(bin_dir + PROJECT)
         for filename in glob.glob1('po', '*.po'):
             lang = filename.rsplit(".", 1)[0]
             remove(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))

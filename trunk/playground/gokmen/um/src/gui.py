@@ -32,6 +32,7 @@ from ui import ui_screen_5
 from ui import ui_mainscreen
 
 # PDS Imports
+from pds import Pds
 from pds.gui import *
 from pds.thread import PThread
 from pds.qpagewidget import QPageWidget
@@ -47,6 +48,10 @@ from backend import cleanup_pisi
 from migratekde import migrateKDE
 from repo_helper import findMissingPackagesForDistupdate
 from migrategrubconf import migrateGrubconf
+
+# Translations
+_pds = Pds('upgrade-manager', debug = False)
+_ = _pds.i18n
 
 # Constants
 ARA_FORM      = "http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/%s"
@@ -101,25 +106,25 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
             # Welcome
             self.pageWidget.createPage(
-                    getWidget(ui_screen_1, "Welcome to Upgrade Manager..."))
+                    getWidget(ui_screen_1, _("Welcome to Upgrade Manager...")))
 
             # Repo Selection
             self.pageWidget.createPage(
-                    getWidget(ui_screen_2, "Select Upgrade Repository..."))
+                    getWidget(ui_screen_2, _("Select Upgrade Repository...")))
 
             # Check Results Page
             self.pageWidget.createPage(
-                    getWidget(ui_screen_3, "Checking your system..."),
+                    getWidget(ui_screen_3, _("Checking your system...")),
                     inMethod = self.checkSystem, outMethod = self.hideMessage)
 
             def updateButtons():
-                if self.button_next.text() == "Next":
-                    self.button_next.setText("Yes, Upgrade")
-                    self.button_previous.setText("Cancel")
+                if self.button_next.text() == _("Next"):
+                    self.button_next.setText(_("Yes, Upgrade"))
+                    self.button_previous.setText(_("Cancel"))
                     self.button_cancel.hide()
                 else:
-                    self.button_next.setText("Next")
-                    self.button_previous.setText("Previous")
+                    self.button_next.setText(_("Next"))
+                    self.button_previous.setText(_("Previous"))
                     self.button_cancel.show()
 
             # Last Question
@@ -130,7 +135,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Progress Screen
         self.pageWidget.createPage(
-                getWidget(ui_screen_5, "Upgrading the system..."), inMethod = self.upgradeStep_1)
+                getWidget(ui_screen_5, _("Upgrading the system...")), inMethod = self.upgradeStep_1)
 
         # Shortcut for Progress Screen UI
         # Get the last added page as progress page
@@ -149,7 +154,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 1 Method
     def checkSystem(self):
-        self.showMessage("Checking your system...")
+        self.showMessage(_("Checking your system..."))
         repoWidget = self.pageWidget.getWidget(1).ui
 
         for repo in ('stable', 'devel', 'testing'):
@@ -168,7 +173,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         if self.missing_packages:
             resultWidget.package_list.clear()
             resultWidget.package_list.addItems(self.missing_packages)
-        self.label_header.setText("Check results...")
+        self.label_header.setText(_("Check results..."))
         self.hideMessage()
 
     # Step 1 Method
@@ -181,12 +186,12 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.busy.busy()
 
         # Remove Repositories
-        self.ps.progress.setFormat("Removing current repositories...")
+        self.ps.progress.setFormat(_("Removing current repositories..."))
         self.iface.removeRepos()
 
         # Install New Pisi and its dependencies
         # To keep install in given order we need to pass ignore_dep as True
-        self.ps.progress.setFormat("Installing new package management system...")
+        self.ps.progress.setFormat(_("Installing new package management system..."))
         self.thread_step_1.start()
 
     # Step 1 Threaded Method
@@ -196,7 +201,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 1 Threaded Method Finalize
     def step_1_end(self):
         # END OF Step 1 in Upgrade
-        self.ps.progress.setFormat("Step 1 Completed")
+        self.ps.progress.setFormat(_("Step 1 Completed"))
         # STEP 1 Finishes at 10 percent
         self.ps.progress.setValue(10)
 
@@ -216,7 +221,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.steps.hide()
         self.ps.busy.busy()
         self.ps.progress.setValue(10)
-        self.ps.progress.setFormat("Upgrading to Pardus 2011...")
+        self.ps.progress.setFormat(_("Upgrading to Pardus 2011..."))
 
         self.thread_step_2.start()
 
@@ -236,7 +241,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.ps.steps.hide()
         self.ps.busy.busy()
         self.ps.progress.setValue(70)
-        self.ps.progress.setFormat("Configuring for Pardus 2011...")
+        self.ps.progress.setFormat(_("Configuring for Pardus 2011..."))
 
         self.thread_step_3.start()
 
@@ -248,7 +253,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 3 Threaded Method Finalize
     def step_3_end(self):
         # Step 4
-        self.ps.progress.setFormat("Running Post Upgrade Operations...")
+        self.ps.progress.setFormat(_("Running Post Upgrade Operations..."))
 
         # Migrate KDE Configs
         migrateKDE()
@@ -260,7 +265,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         migrateGrubconf('/boot/grub/grub.conf')
 
         # Time to reboot
-        self.ps.progress.setFormat("Rebooting to the Pardus 2011...")
+        self.ps.progress.setFormat(_("Rebooting to the Pardus 2011..."))
         time.sleep(3)
         os.system("reboot")
 
@@ -273,19 +278,19 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             package = str(notify['package'].name)
 
             if event == installing:
-                self.ps.status.setText("Installing: <b>%s</b>" % package)
+                self.ps.status.setText(_("Installing: <b>%s</b>") % package)
             elif event == installed:
-                self.ps.status.setText("Installed: <b>%s</b>" % package)
+                self.ps.status.setText(_("Installed: <b>%s</b>") % package)
             elif event == upgraded:
-                self.ps.status.setText("Upgraded: <b>%s</b>" % package)
+                self.ps.status.setText(_("Upgraded: <b>%s</b>") % package)
             elif event == configuring:
-                self.ps.status.setText("Configuring: <b>%s</b>" % package)
+                self.ps.status.setText(_("Configuring: <b>%s</b>") % package)
             elif event == configured:
-                self.ps.status.setText("Configured: <b>%s</b>" % package)
+                self.ps.status.setText(_("Configured: <b>%s</b>") % package)
             elif event == removing:
-                self.ps.status.setText("Removing: <b>%s</b>" % package)
+                self.ps.status.setText(_("Removing: <b>%s</b>") % package)
             elif event == removed:
-                self.ps.status.setText("Removed: <b>%s</b>" % package)
+                self.ps.status.setText(_("Removed: <b>%s</b>") % package)
 
             print "DEBUG:", self.ps.status.text()
 
@@ -306,7 +311,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Shared Method
     def updateProgress(self, raw):
-        self.ps.status.setText("Downloading: <b>%s</b>" % raw['filename'])
+        self.ps.status.setText(_("Downloading: <b>%s</b>") % raw['filename'])
         percent = raw['percent']
 
         if percent==100:
