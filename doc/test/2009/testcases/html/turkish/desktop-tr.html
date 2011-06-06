@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/desktop-tr.tex desktop-tr -->
+<!--HEVEA command line is: hevea desktop-tr.tex desktop-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Masaüstü Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Enlightment alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Enlightment alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -368,7 +368,10 @@ network-tr.pdf choqok testini gerçekleştirin</LI><LI CLASS="li-itemize">kdegra
   kruller
   ksnapshot
 </PRE></LI></OL><!--TOC subsection Addon alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR -->Addon alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">polkit-kde_1 paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın "PolicyKitKDE is already running!" uyarısının verildiğini gözlemleyin.
+<H3 CLASS="subsection"><!--SEC ANCHOR -->Addon alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+Aşağıda bulunan paketler sadece kurulum testine tabidir:<PRE CLASS="verbatim"> kde-servicemenu-rootactions
+ kde-odf-thumbnail
+</PRE></LI><LI CLASS="li-enumerate">polkit-kde_1 paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın "PolicyKitKDE is already running!" uyarısının verildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> /usr/lib/kde4/libexec/polkit-kde-authentication-agent-1
 </PRE><P>Paket yöneticisi için daha önce kullanmış olduğunuz kullanıcı parola ayarlarının değişmediğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">kdm-pardus-theme, kdm paketleri kurulumu sonrası:<P>Bilgisayarınız açılırken kullanıcı giriş ekranının sorunsuz açıldığını ve login olabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">kwin-aurorae-style paketi kurulumu sonrası:
 Sistem ayarları → Görünüm → Pencereler → Pencere dekorasyonu bölümündeb Aurorae Dekorayon Temasını seçin ve oturumunuzu kapatıp tekrar açın ve bu temanın sorunsuz bir sekilde yüklendiğini gözlemleyin.</LI><LI CLASS="li-enumerate">ksplash-pardus-theme paketi kurulumu sonrası:<P>Bilgisayarınız açılırken KDE açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">ksplash-pardus-theme-milky paketi kurulumu sonrası:<P>Sistem ayarları → Açılış ekranı penceresinden Pardus-Milky açılış ekranın seçin ve uygulayın. Bilgisayarınızı yeniden başlatın ve bilgisayarınızın bu tema ile açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">colibri paketi kurulumu sonrası:<P>Sistem Ayarları → Bildirimler → Colibri Bildirimleri bölümünden bu bildirimi aktifleştirin. (Eğer plasma bildirimleriniz açık durumda ise öncelikle bu bildirimlerinizi kapatmalısınız.Plasma kapatılması: Sistem çekmecesi üzerine sağ tıklayın ve Kendiliğinden Açılan Bildirimler bölümünde bulunan seçenekleri inaktif hale getirin ve tamam butonuna basın.)</P><P>Daha sonra konsoldan aşağıda bulunan komutu yazın:</P><PRE CLASS="verbatim"> notify-send test-colibri 

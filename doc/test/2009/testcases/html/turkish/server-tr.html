@@ -46,23 +46,13 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex server-tr -->
+<!--HEVEA command line is: hevea server-tr.tex server-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-freeradius paketi kurulumu sonrası:<P>Servis yöneticisinden freeradius servisini başlatın.</P><P>Serisin başlatılmış olduğunu gözlemleyin:
+cyrus-sasl paketi kurulumu sonrası:<P>network-tr.pdf pidgin testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">freeradius paketi kurulumu sonrası:<P>Servis yöneticisinden freeradius servisini başlatın.</P><P>Serisin başlatılmış olduğunu gözlemleyin:
 </P><PRE CLASS="verbatim"> service freeradius status
-</PRE></LI></OL><!--TOC section Proxy alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim">  service squid status
-</PRE></LI><LI CLASS="li-enumerate">dansguardian paketi kurulumu sonrası:<P>Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim">  service dansguardian status
-</PRE></LI><LI CLASS="li-enumerate">ntlmaps paketi kurulumu sonrası:<P>Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim">  service ntlmaps status
-</PRE></LI></OL><!--TOC section Auth alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+</PRE></LI><LI CLASS="li-enumerate">ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim">  service ypserv status
 </PRE></LI><LI CLASS="li-enumerate">yp-tools paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatıldıktan sonra:
 </P><PRE CLASS="verbatim">  su -
@@ -75,8 +65,18 @@ ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aş
  sudo domainname localdomain
 </PRE><P>Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim">  service ypbind status
+</PRE></LI></OL><!--TOC section Proxy alt bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+polipo paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve soketin dinlenmeye başladığını gözlemleyin:
+</P><PRE CLASS="verbatim"> polipo
+</PRE></LI><LI CLASS="li-enumerate">squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+</P><PRE CLASS="verbatim">  service squid status
+</PRE></LI><LI CLASS="li-enumerate">dansguardian paketi kurulumu sonrası:<P>Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+</P><PRE CLASS="verbatim">  service dansguardian status
+</PRE></LI><LI CLASS="li-enumerate">ntlmaps paketi kurulumu sonrası:<P>Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+</P><PRE CLASS="verbatim">  service ntlmaps status
 </PRE></LI></OL><!--TOC section Mta alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> postfix
  postfix-docs
 </PRE></LI><LI CLASS="li-enumerate">dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
@@ -88,7 +88,7 @@ Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </P><PRE CLASS="verbatim"> netstat -ln|grep 110
  netstat -ln|grep 143
 </PRE></LI></OL><!--TOC section Web alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim">mod_wsgi
 mod_dav_svn
@@ -108,7 +108,7 @@ Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu k
 </LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve komut çıktısında ‘Syntax Ok‘ aldığınzı gözlemleyin.
 <PRE CLASS="verbatim">apachectl -M 
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mod_php paketi kurulumu sonrası:<P>util-tr.pdf phpmyadmin testini gerçekleştiriniz.</P></LI></OL><!--TOC section Database alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">virtuoso
 virtuoso-apps
 virtuoso-conductor
@@ -151,7 +151,7 @@ Servis yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullana
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mysql-man-pages paketi kurulumu sonrası:<P>Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 </P><PRE CLASS="verbatim">man myisampack 
 </PRE></LI></OL><!--TOC section Diğerleri-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> ntp-docs
  bind-chroot
  bind-devel

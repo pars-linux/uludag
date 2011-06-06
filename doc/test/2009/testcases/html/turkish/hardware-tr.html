@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/hardware-tr.tex hardware-tr -->
+<!--HEVEA command line is: hevea hardware-tr.tex hardware-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Hardware Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section CPU alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  CPU alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -230,7 +230,7 @@ Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
 </PRE></LI><LI CLASS="li-enumerate">ntfprogs paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">testdisk paketi kurulumu sonrası:<P>"testdisk" komutunu çalıştırın ve Create → Select a Media → None → Analyse → QuickSearch yolunu izleyin ve sorunsuz bir şekilde seçilen disk içerisinde bulunan bölümlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">ddrescue paketi kurulumu sonrası:<P>Aşağıda bulunan komutun test2 dosyasına test_ddrescue içeriğini kopyaladığını gözlemleyin.
 </P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/disk/test_ddrescue
   ddrescue test_ddrescue test2
- </PRE></LI><LI CLASS="li-enumerate">dosfstools paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu dos veya fat olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">ntfs_3g paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">gparted paketi kurulumu sonrası:<P>Bir usbdis takın ve gparted uygulamasını Kmenu’den çalıştırın. </P><P>Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">fuseiso paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
+ </PRE></LI><LI CLASS="li-enumerate">dosfstools paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu dos veya fat olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">ntfs_3g paketi kurulumu sonrası:<P>gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">gparted paketi kurulumu sonrası:<P>Bir usbdisk takın ve gparted uygulamasını Kmenu’den çalıştırın. </P><P>Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde işlemin gerçekleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">fuseiso paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
  fuseiso -p boot.iso test
  su -
