@@ -24,7 +24,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Do you want to continue ?</string>
+      <string>Do you want to continue?</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
