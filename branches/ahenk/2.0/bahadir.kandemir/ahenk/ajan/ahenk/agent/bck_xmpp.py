@@ -122,7 +122,7 @@ def task_message_queue():
     XMLSTREAM.send(message)
 
 def connect():
-    myJid = jid.JID('%s@%s' % (OPTIONS.username, OPTIONS.domain))
+    myJid = jid.JID('%s@%s/Ahenk' % (OPTIONS.username, OPTIONS.domain))
     factory = client.XMPPClientFactory(myJid, OPTIONS.password)
     factory.clientConnectionLost = event_connection_lost
     factory.clientConnectionFailed = event_connection_failed
