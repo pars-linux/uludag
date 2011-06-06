@@ -8,11 +8,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-06 12:04+0300\n"
+"POT-Creation-Date: 2011-06-06 15:26+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,123 +24,123 @@ msgstr ""
 msgid "Select Upgrade Repository..."
 msgstr ""
 
-#: src/gui.py:117 src/gui.py:157
+#: src/gui.py:117 src/gui.py:160
 msgid "Checking your system..."
 msgstr ""
 
-#: src/gui.py:121 src/gui.py:126 ui/ui_mainscreen.py:64
+#: src/gui.py:124 src/gui.py:129 ui/ui_mainscreen.py:59
 msgid "Next"
 msgstr ""
 
-#: src/gui.py:122 ui/ui_main.py:61
+#: src/gui.py:125 ui/ui_main.py:56
 msgid "Yes, Upgrade"
 msgstr ""
 
-#: src/gui.py:123 ui/ui_mainscreen.py:62
+#: src/gui.py:126 ui/ui_mainscreen.py:57
 msgid "Cancel"
 msgstr ""
 
-#: src/gui.py:127 ui/ui_mainscreen.py:63
+#: src/gui.py:130 ui/ui_mainscreen.py:58
 msgid "Previous"
 msgstr ""
 
-#: src/gui.py:138
+#: src/gui.py:141
 msgid "Upgrading the system..."
 msgstr ""
 
-#: src/gui.py:176
+#: src/gui.py:180
 msgid "Check results..."
 msgstr ""
 
-#: src/gui.py:189
+#: src/gui.py:193
 msgid "Removing current repositories..."
 msgstr ""
 
-#: src/gui.py:194
+#: src/gui.py:198
 msgid "Installing new package management system..."
 msgstr ""
 
-#: src/gui.py:204
+#: src/gui.py:208
 msgid "Step 1 Completed"
 msgstr ""
 
-#: src/gui.py:224
+#: src/gui.py:228
 msgid "Upgrading to Pardus 2011..."
 msgstr ""
 
-#: src/gui.py:244
+#: src/gui.py:248
 msgid "Configuring for Pardus 2011..."
 msgstr ""
 
-#: src/gui.py:256
+#: src/gui.py:260
 msgid "Running Post Upgrade Operations..."
 msgstr ""
 
-#: src/gui.py:268
+#: src/gui.py:272
 msgid "Rebooting to the Pardus 2011..."
-msgstr ""
-
-#: src/gui.py:281
-#, python-format
-msgid "Installing: <b>%s</b>"
-msgstr ""
-
-#: src/gui.py:283
-#, python-format
-msgid "Installed: <b>%s</b>"
 msgstr ""
 
 #: src/gui.py:285
 #, python-format
-msgid "Upgraded: <b>%s</b>"
+msgid "Installing: <b>%s</b>"
 msgstr ""
 
 #: src/gui.py:287
 #, python-format
-msgid "Configuring: <b>%s</b>"
+msgid "Installed: <b>%s</b>"
 msgstr ""
 
 #: src/gui.py:289
 #, python-format
-msgid "Configured: <b>%s</b>"
+msgid "Upgraded: <b>%s</b>"
 msgstr ""
 
 #: src/gui.py:291
 #, python-format
-msgid "Removing: <b>%s</b>"
+msgid "Configuring: <b>%s</b>"
 msgstr ""
 
 #: src/gui.py:293
 #, python-format
+msgid "Configured: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:295
+#, python-format
+msgid "Removing: <b>%s</b>"
+msgstr ""
+
+#: src/gui.py:297
+#, python-format
 msgid "Removed: <b>%s</b>"
 msgstr ""
 
-#: src/gui.py:314
+#: src/gui.py:318
 #, python-format
 msgid "Downloading: <b>%s</b>"
 msgstr ""
 
-#: ui/ui_main.py:60 ui/ui_mainscreen.py:61
+#: ui/ui_main.py:55 ui/ui_mainscreen.py:55
 msgid "Upgrade Manager"
 msgstr ""
 
-#: ui/ui_main.py:62
+#: ui/ui_main.py:57
 msgid "Are you ready to upgrade your system to Pardus 2011?"
 msgstr ""
 
-#: ui/ui_main.py:63
+#: ui/ui_main.py:58
 msgid "Exit"
 msgstr ""
 
-#: ui/ui_mainscreen.py:65 ui/ui_screen_1.py:62
+#: ui/ui_mainscreen.py:56 ui/ui_screen_1.py:57
 msgid "Welcome to Upgrade Manager"
 msgstr ""
 
-#: ui/ui_screen_1.py:63
+#: ui/ui_screen_1.py:58
 msgid "PIXMAP - 09 to 11 Logo"
 msgstr ""
 
-#: ui/ui_screen_1.py:64
+#: ui/ui_screen_1.py:59
 msgid ""
 "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
 "needs to check your computer.\n"
@@ -150,55 +149,41 @@ msgid ""
 "space on your computer."
 msgstr ""
 
-#: ui/ui_screen_2.py:55 ui/ui_screen_3.py:42 ui/ui_screen_4.py:40
-#: ui/ui_screen_5.py:81
+#: ui/ui_screen_2.py:50 ui/ui_screen_3.py:46 ui/ui_screen_4.py:35
+#: ui/ui_screen_5.py:75
 msgid "Analyzing your Computer"
 msgstr ""
 
-#: ui/ui_screen_2.py:56
+#: ui/ui_screen_2.py:51
 msgid "In order to upgrade your system, you must select an upgrade repository:"
 msgstr ""
 
-#: ui/ui_screen_2.py:57
+#: ui/ui_screen_2.py:52
 msgid "Stable Repository (Recommended)"
 msgstr ""
 
-#: ui/ui_screen_2.py:58
+#: ui/ui_screen_2.py:53
 msgid "Testing Repository"
 msgstr ""
 
-#: ui/ui_screen_2.py:59
+#: ui/ui_screen_2.py:54
 msgid "Devel Repository"
 msgstr ""
 
-#: ui/ui_screen_3.py:43
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<table style=\"-qt-table-type: root; margin-top:4px; margin-bottom:4px; "
-"margin-left:4px; margin-right:4px;\">\n"
-"<tr>\n"
-"<td style=\"border: none;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Ubuntu'; font-weight:600;\">Following packages are not available in "
-"selected repository:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Ubuntu'; color:#c00000;\">If you continue with this repository you "
-"will no longer use some applications provided by these packages.</span></p></"
-"td></tr></table></body></html>"
+#: ui/ui_screen_3.py:47
+msgid "Following packages are not available in selected repository:"
 msgstr ""
 
-#: ui/ui_screen_4.py:41
+#: ui/ui_screen_3.py:48
+msgid ""
+"If you continue with this repository you will no longer use some "
+"applications provided by these packages."
+msgstr ""
+
+#: ui/ui_screen_4.py:36
 msgid "Do you want to continue?"
 msgstr ""
 
-#: ui/ui_screen_5.py:82
+#: ui/ui_screen_5.py:76
 msgid "Upgrading packages..."
 msgstr ""
