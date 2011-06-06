@@ -8,10 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-06 11:33+0300\n"
+"POT-Creation-Date: 2011-06-06 12:04+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,19 +29,19 @@ msgstr ""
 msgid "Checking your system..."
 msgstr ""
 
-#: src/gui.py:121 src/gui.py:126 ui/ui_mainscreen.py:58
+#: src/gui.py:121 src/gui.py:126 ui/ui_mainscreen.py:64
 msgid "Next"
 msgstr ""
 
-#: src/gui.py:122 ui/ui_main.py:56
+#: src/gui.py:122 ui/ui_main.py:61
 msgid "Yes, Upgrade"
 msgstr ""
 
-#: src/gui.py:123 ui/ui_mainscreen.py:56
+#: src/gui.py:123 ui/ui_mainscreen.py:62
 msgid "Cancel"
 msgstr ""
 
-#: src/gui.py:127 ui/ui_mainscreen.py:57
+#: src/gui.py:127 ui/ui_mainscreen.py:63
 msgid "Previous"
 msgstr ""
 
@@ -120,27 +121,27 @@ msgstr ""
 msgid "Downloading: <b>%s</b>"
 msgstr ""
 
-#: ui/ui_main.py:55 ui/ui_mainscreen.py:55
+#: ui/ui_main.py:60 ui/ui_mainscreen.py:61
 msgid "Upgrade Manager"
 msgstr ""
 
-#: ui/ui_main.py:57
-msgid "Are you ready to upgrade your system to Pardus 2011 ?"
+#: ui/ui_main.py:62
+msgid "Are you ready to upgrade your system to Pardus 2011?"
 msgstr ""
 
-#: ui/ui_main.py:58
+#: ui/ui_main.py:63
 msgid "Exit"
 msgstr ""
 
-#: ui/ui_mainscreen.py:59 ui/ui_screen_1.py:57
+#: ui/ui_mainscreen.py:65 ui/ui_screen_1.py:62
 msgid "Welcome to Upgrade Manager"
 msgstr ""
 
-#: ui/ui_screen_1.py:58
+#: ui/ui_screen_1.py:63
 msgid "PIXMAP - 09 to 11 Logo"
 msgstr ""
 
-#: ui/ui_screen_1.py:59
+#: ui/ui_screen_1.py:64
 msgid ""
 "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager "
 "needs to check your computer.\n"
@@ -149,29 +150,28 @@ msgid ""
 "space on your computer."
 msgstr ""
 
-#: ui/ui_screen_2.py:50 ui/ui_screen_3.py:37 ui/ui_screen_4.py:35
-#: ui/ui_screen_5.py:75
+#: ui/ui_screen_2.py:55 ui/ui_screen_3.py:42 ui/ui_screen_4.py:40
+#: ui/ui_screen_5.py:81
 msgid "Analyzing your Computer"
 msgstr ""
 
-#: ui/ui_screen_2.py:51
-msgid ""
-"In order to upgrade your system, you must select an upgrade repository :"
+#: ui/ui_screen_2.py:56
+msgid "In order to upgrade your system, you must select an upgrade repository:"
 msgstr ""
 
-#: ui/ui_screen_2.py:52
+#: ui/ui_screen_2.py:57
 msgid "Stable Repository (Recommended)"
 msgstr ""
 
-#: ui/ui_screen_2.py:53
+#: ui/ui_screen_2.py:58
 msgid "Testing Repository"
 msgstr ""
 
-#: ui/ui_screen_2.py:54
+#: ui/ui_screen_2.py:59
 msgid "Devel Repository"
 msgstr ""
 
-#: ui/ui_screen_3.py:38
+#: ui/ui_screen_3.py:43
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -195,10 +195,10 @@ msgid ""
 "td></tr></table></body></html>"
 msgstr ""
 
-#: ui/ui_screen_4.py:36
-msgid "Do you want to continue ?"
+#: ui/ui_screen_4.py:41
+msgid "Do you want to continue?"
 msgstr ""
 
-#: ui/ui_screen_5.py:76
+#: ui/ui_screen_5.py:82
 msgid "Upgrading packages..."
 msgstr ""

@@ -107,7 +107,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Are you ready to upgrade your system to Pardus 2011 ?</string>
+      <string>Are you ready to upgrade your system to Pardus 2011?</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignCenter</set>
