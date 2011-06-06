@@ -356,8 +356,13 @@ class Directory:
 
         properties = {
             "o": [label],
-            "description": [description]
         }
+
+        if description:
+            properties['description'] = [description]
+        else:
+            properties['description'] = []
+
         try:
             self.modify(dn, old_properties, properties)
         except ldap.LDAPError, e:
@@ -378,13 +383,18 @@ class Directory:
         """
         dn, old_properties = self.search(dn, scope="base", fields=["userPassword", "description"])[0]
 
-        properties = {
-            "description": [description]
-        }
+        properties = {}
+
+        if description:
+            properties['description'] = [description]
+        else:
+            properties['description'] = []
+
         if len(password):
             properties["userPassword"] = [password]
-        else:
+        elif 'userPassword' in old_properties:
             del old_properties["userPassword"]
+
         try:
             self.modify(dn, old_properties, properties)
         except ldap.LDAPError, e:
@@ -405,13 +415,18 @@ class Directory:
         """
         dn, old_properties = self.search(dn, scope="base", fields=["userPassword", "description"])[0]
 
-        properties = {
-            "description": [description]
-        }
+        properties = {}
+
+        if description:
+            properties['description'] = [description]
+        else:
+            properties['description'] = []
+
         if len(password):
             properties["userPassword"] = [password]
-        else:
+        elif 'userPassword' in old_properties:
             del old_properties["userPassword"]
+
         try:
             self.modify(dn, old_properties, properties)
         except ldap.LDAPError, e:
@@ -433,9 +448,14 @@ class Directory:
         dn, old_properties = self.search(dn, scope="base", fields=["member", "description"])[0]
 
         properties = {
-            "description": [description],
             "member": members
         }
+
+        if description:
+            properties['description'] = [description]
+        else:
+            properties['description'] = []
+
         try:
             self.modify(dn, old_properties, properties)
         except ldap.LDAPError, e:
