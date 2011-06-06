@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/office-tr.tex office-tr -->
+<!--HEVEA command line is: hevea office-tr.tex office-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Ofis Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Dictionary alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Dictionary alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -120,8 +120,10 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"
  koffice-kchart
  koffice-kdchart
  koffice-libs
-</PRE></LI><LI CLASS="li-enumerate">koffice-core kurulumu sonrası.<UL CLASS="itemize"><LI CLASS="li-itemize">
-KThesaurus uygulamasının, Kmenü → uygulamalar → ofis → daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">koconverter uygulaması:
+ koffice-data
+</PRE></LI><LI CLASS="li-enumerate">koffice-kexi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve uygulamanın sorunsuz açıldığını gözlemleyin.
+</P></LI><LI CLASS="li-enumerate">koffice-kformula kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve uygulamanın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-core kurulumu sonrası.<UL CLASS="itemize"><LI CLASS="li-itemize">
+koffice-kthesaurus uygulamasının, Kmenü → uygulamalar → ofis → daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">koconverter uygulaması:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.html
  koconverter koconverter_test.html koconverter_test.pdf
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/koffice/koconverter_test.xls

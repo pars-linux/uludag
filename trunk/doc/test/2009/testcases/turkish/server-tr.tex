@@ -17,6 +17,10 @@
 \maketitle
 \section{Auth alt bileşeni}
 \begin{enumerate}
+\item cyrus-sasl paketi kurulumu sonrası:
+
+network-tr.pdf pidgin testini gerçekleştiriniz.
+
 \item freeradius paketi kurulumu sonrası:
 
 Servis yöneticisinden freeradius servisini başlatın.
@@ -27,45 +31,6 @@ Serisin başlatılmış olduğunu gözlemleyin:
 \end{verbatim}
 
 
-% \item mit-kerberos paketi kurulumu sonrası:
-% \begin{verbatim}
-% sudo pisi it -c system.devel
-% wget ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.16.00.tar.gz
-% tar xf tcsh-6.16.00.tar.gz
-% cd tcsh-6.16.00 
-% ./configure --prefix=/usr
-% sudo make
-% sudo make install
-% cd ..
-% 
-% \end{verbatim}
-\end{enumerate}
-
-\section{Proxy alt bileşeni}
-\begin{enumerate}
-\item squid paketi kurulumu sonrası:
-
-Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-\begin{verbatim}
-  service squid status
-\end{verbatim}
- \item dansguardian paketi kurulumu sonrası:
-
-Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-\begin{verbatim}
-  service dansguardian status
-\end{verbatim}
-\item ntlmaps paketi kurulumu sonrası:
-
-Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-\begin{verbatim}
-  service ntlmaps status
-\end{verbatim}
-\end{enumerate}
-
-
-\section{Auth alt bileşeni}
-\begin{enumerate}
  \item ypserv paketi kurulumu sonrası:
 
 Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
@@ -98,6 +63,38 @@ Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığ
 \end{verbatim}
 
 \end{enumerate}
+
+
+\section{Proxy alt bileşeni}
+\begin{enumerate}
+\item polipo paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırın ve soketin dinlenmeye başladığını gözlemleyin:
+\begin{verbatim}
+ polipo
+\end{verbatim}
+
+\item squid paketi kurulumu sonrası:
+
+Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+  service squid status
+\end{verbatim}
+ \item dansguardian paketi kurulumu sonrası:
+
+Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+  service dansguardian status
+\end{verbatim}
+\item ntlmaps paketi kurulumu sonrası:
+
+Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
+\begin{verbatim}
+  service ntlmaps status
+\end{verbatim}
+\end{enumerate}
+
+
 
 \section{Mta alt bileşeni}
 \begin{enumerate}

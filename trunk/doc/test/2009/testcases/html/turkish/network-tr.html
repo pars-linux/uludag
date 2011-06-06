@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/network-tr.tex network-tr -->
+<!--HEVEA command line is: hevea network-tr.tex network-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Network Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Filter alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Filter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -86,6 +86,10 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  avahi-ui-sharp
  avahi-ui-sharp-devel
  avahi-ui-tools
+ avahi-devel
+ avahi-dnsconfd
+ avahi-qt3
+ avahi-qt3-devel
 </PRE></LI><LI CLASS="li-enumerate">libsmi paketi kurulumu sonrası:<P>network-tr.pdf wireshark testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">zenmap paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz bi şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">nikto paketi kurulumu sonrası:<P>Aşağıda bulunan komutun hata vermeden çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">nikto -h 192.168.0.1 -p 443 -ssl 
 </PRE></LI><LI CLASS="li-enumerate">avahi paketi kurulumu sonrası:<P>hardware-tr.pdf cups testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">nmap paketi kurulumu sonrası:<P>Aşağıda bulunan komutun verilen adresleri taradığını gözlemleyin.
@@ -190,6 +194,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> msmtp
  sylpheed-devel
  sylpheed-docs
+</PRE></LI><LI CLASS="li-enumerate">mutt paketi kurulumu sonrası:
+Aşağıda bulunan komutun bir e-posta arayüzü açtığını gözlemleyin.
+<PRE CLASS="verbatim"> mutt
 </PRE></LI><LI CLASS="li-enumerate">thunderbird ve sylpheed paketleri kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Bir e-posta hesabı oluşturuyoruz.
@@ -226,7 +233,8 @@ Bir e-posta hesabı oluşturuyoruz.
 </LI></OL> 
 </LI></OL><!--TOC section Plugin alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc10">10</A>  Plugin alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-flashplugin paketi kurulumu sonrası:<P>Firefox’u açın ve aşağıdaki bağlantıda bulunan videonun düzgün bir şekilde çalıştığını gözlemeyin.</P><P>Tam ekran olabiliyor mu? Ses sorunu var mı?
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> mozplugger
+</PRE></LI><LI CLASS="li-enumerate">flashplugin paketi kurulumu sonrası:<P>Firefox’u açın ve aşağıdaki bağlantıda bulunan videonun düzgün bir şekilde çalıştığını gözlemeyin.</P><P>Tam ekran olabiliyor mu? Ses sorunu var mı?
 </P><PRE CLASS="verbatim">http://www.dailymotion.com/relevance/search/lorena+mckennit/video/xd9s3_princesse
 -mononoke-studioslorenna 
 </PRE></LI><LI CLASS="li-enumerate">gecko-mediaplayer paketi kurulumu sonrası:
@@ -249,9 +257,9 @@ ls
 cd misc
 </PRE></LI></OL><!--TOC section Connection alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc12">12</A>  Connection alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-tor paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+tor ve torsocks paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> tor 
-</PRE></LI><LI CLASS="li-enumerate">netcf paketi kurulumu sonrası:<P>"ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rfkill paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">vidalia paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">netcf paketi kurulumu sonrası:<P>"ncftool" komutunu yazın ve yeni bir komut satırı açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rfkill paketi kurulumu sonrası:<P>Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> frkill list
 </PRE></LI><LI CLASS="li-enumerate">kvpnc paketi kurulumu sonrası:<P>Kmenüden uygulamanın düzgün çalıştığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">wireless-regdb paketi kurulumu sonrası:<P>networ-tr.pdf crda testini gerçekleştirin.
