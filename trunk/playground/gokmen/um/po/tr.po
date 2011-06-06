@@ -30,7 +30,7 @@ msgstr "Sisteminiz kontrol ediliyor..."
 
 #: src/gui.py:124 src/gui.py:129 ui/ui_mainscreen.py:59
 msgid "Next"
-msgstr "Sonraki"
+msgstr "İleri"
 
 #: src/gui.py:125 ui/ui_main.py:56
 msgid "Yes, Upgrade"
@@ -42,7 +42,7 @@ msgstr "İptal"
 
 #: src/gui.py:130 ui/ui_mainscreen.py:58
 msgid "Previous"
-msgstr "Önceki"
+msgstr "Geri"
 
 #: src/gui.py:141
 msgid "Upgrading the system..."
