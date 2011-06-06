@@ -77,7 +77,6 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         """
         return str(self.editDescription.text())
 
-
     def set_name(self, user):
         """
             Sets computer name.

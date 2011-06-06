@@ -94,6 +94,13 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>editName</tabstop>
+  <tabstop>editPassword</tabstop>
+  <tabstop>editConfirmPassword</tabstop>
+  <tabstop>editDescription</tabstop>
+  <tabstop>buttonBox</tabstop>
+ </tabstops>
  <resources/>
  <connections>
   <connection>
