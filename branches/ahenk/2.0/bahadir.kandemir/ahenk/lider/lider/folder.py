@@ -36,6 +36,10 @@ class DialogFolder(QtGui.QDialog, Ui_dialogFolder):
         # Attach generated UI
         self.setupUi(self)
 
+        # Name must be alphanumeric only
+        validator = QtGui.QRegExpValidator(QtCore.QRegExp('^[a-zA-Z0-9_-]+$'), self)
+        self.editName.setValidator(validator)
+
     def get_name(self):
         """
             Returns name.

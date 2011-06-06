@@ -36,6 +36,10 @@ class DialogComputer(QtGui.QDialog, Ui_dialogComputer):
         # Attach generated UI
         self.setupUi(self)
 
+        # Name must be alphanumeric only
+        validator = QtGui.QRegExpValidator(QtCore.QRegExp('^[a-zA-Z0-9_-]+$'), self)
+        self.editName.setValidator(validator)
+
         # Signals for password matching control
         self.connect(self.editPassword, QtCore.SIGNAL("textChanged(QString)"), self.__slotPasswordTextChanged)
         self.connect(self.editConfirmPassword, QtCore.SIGNAL("textChanged(QString)"), self.__slotPasswordTextChanged)

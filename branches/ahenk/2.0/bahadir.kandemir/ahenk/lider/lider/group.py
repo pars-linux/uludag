@@ -42,6 +42,10 @@ class DialogGroup(QtGui.QDialog, Ui_dialogGroup):
         # Attach generated UI
         self.setupUi(self)
 
+        # Name must be alphanumeric only
+        validator = QtGui.QRegExpValidator(QtCore.QRegExp('^[a-zA-Z0-9_-]+$'), self)
+        self.editName.setValidator(validator)
+
         # Events
         self.connect(self.pushAdd, QtCore.SIGNAL("clicked()"), self.__slotAddMember)
         self.connect(self.pushDelete, QtCore.SIGNAL("clicked()"), self.__slotRemoveMember)
