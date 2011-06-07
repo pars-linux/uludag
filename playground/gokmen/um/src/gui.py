@@ -65,6 +65,7 @@ REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xm
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
 def salt_text(data):
+    data = unicode(data)
     p = re.compile(r'<.*?>')
     return p.sub('', data)
 
