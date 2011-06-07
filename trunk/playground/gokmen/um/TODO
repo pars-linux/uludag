@@ -17,8 +17,9 @@ Tasks:
 ------
 
 - Store current step in temporary file and then start from it
-- Do not reinstall all packages in Force List
++ Do not reinstall all packages in Force List
 + Create a shiny upgrade-manager banner
++ Logging added
 
 Step 0: Welcome !
 ~~~~~~~~~~~~~~~~~
@@ -31,14 +32,14 @@ Step 0: Welcome !
     ? if update will not be healty, warn the user why and do nothing
     ? if update is not possible ask to remove packages (??)
 
-- Ask user to remove packages which are unsupported by 2011 and installed in 2009
++ Ask user to remove packages which are unsupported by 2011 and installed in 2009
 
 + Final confirmation "are you sure ?"
 
 Step 1: Upgrade to new Pisi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Remove unsupported packages if user want
++ Remove unsupported packages if user want
 
 + Disable all repos (I removed them !)
 + Install packages from semiupdate repo (order is important) (xz replaces lzma !)

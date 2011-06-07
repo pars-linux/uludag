@@ -14,6 +14,7 @@
 
 # System
 import os
+import re
 import sys
 import time
 import urlgrabber
@@ -42,6 +43,7 @@ from pds.qprogressindicator import QProgressIndicator
 import pisi
 from pisi.ui import *
 from backend import Iface
+from backend import SimpleLogger
 from backend import cleanup_pisi
 
 # Helper & Migrate Methods
@@ -62,6 +64,10 @@ REQUIRED_PACKAGES = ("libuser-0.57.1-1-1.pisi",
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 
+def salt_text(data):
+    p = re.compile(r'<.*?>')
+    return p.sub('', data)
+
 def getWidget(page = None, title = ""):
     widget = QWidget()
     widget.title = title
@@ -77,6 +83,9 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         QDialog.__init__(self, parent)
         self.setupUi(self)
 
+        self.logger = SimpleLogger()
+        self.log = self.logger.log
+
         self.target_repo = REPO_TEMPLATE % 'stable'
         self.iface = Iface(self)
 
@@ -89,6 +98,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         self.button_next.clicked.connect(self.pageWidget.next)
         self.button_previous.clicked.connect(self.pageWidget.prev)
+        self.button_cancel.clicked.connect(self.reject)
 
         # Threads
         self.thread_step_1 = PThread(self, self.step_1_start, self.step_1_end)
@@ -158,6 +168,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     # Step 1 Method
     def checkSystem(self):
         self.showMessage(_("Checking your system..."))
+        self.log("CHECKING CURRENT PACKAGES", "GUI")
         repoWidget = self.pageWidget.getWidget(1).ui
 
         for repo in ('stable', 'devel', 'testing'):
@@ -177,21 +188,18 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         if self.missing_packages:
             resultWidget.package_list.clear()
             resultWidget.package_list.addItems(self.missing_packages)
+        self.log("MISSING PACKAGES FOUND: %s" % ','.join(self.missing_packages), "GUI")
         self.label_header.setText(_("Check results..."))
         self.hideMessage()
 
     # Step 1 Method
     def upgradeStep_1(self):
-        print 'PISI VERSION in STEP 1 is', pisi.__version__
+        self.log('PISI VERSION in STEP 1 is %s' % str(pisi.__version__),"GUI")
         self.disableButtons()
 
         # To Animate it
         self.ps.steps.hide()
         self.ps.busy.busy()
-
-        # Remove Repositories
-        self.ps.progress.setFormat(_("Removing current repositories..."))
-        self.iface.removeRepos()
 
         # Install New Pisi and its dependencies
         # To keep install in given order we need to pass ignore_dep as True
@@ -200,6 +208,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 1 Threaded Method
     def step_1_start(self):
+        resultWidget = self.pageWidget.getWidget(2).ui
+        if resultWidget.remove_packages.isChecked():
+            self.iface.removePackages(self.missing_packages)
+
+        self.iface.removeRepos()
         self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
     # Step 1 Threaded Method Finalize
@@ -278,6 +291,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # print "PN:", event, "%%", notify
 
+        self.hideMessage()
+
         if 'package' in notify:
             package = str(notify['package'].name)
 
@@ -296,7 +311,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
             elif event == removed:
                 self.ps.status.setText(_("Removed: <b>%s</b>") % package)
 
-            print "DEBUG:", self.ps.status.text()
+            self.log(salt_text(self.ps.status.text()), "PISI")
 
             if event in (installed, upgraded) and self.current_step == 1:
                 self.ps.progress.setValue(self.ps.progress.value() + 2)
@@ -342,4 +357,14 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
     def disableButtons(self):
         for button in (self.button_cancel, self.button_previous, self.button_next):
             button.setEnabled(False)
+
+    # Shared Method
+    def reject(self):
+        self.log("USER REJECTED", "GUI")
+        for thread in (self.thread_step_1, self.thread_step_2, self.thread_step_3):
+            if thread.isRunning():
+                self.log("REQUEST IGNORED PISI IS STILL RUNNING !", "GUI")
+                return
+        self.log("REQUEST ACCEPTED, EXITING", "GUI")
+        QDialog.reject(self)
 
