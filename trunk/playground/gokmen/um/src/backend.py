@@ -148,19 +148,19 @@ class Iface(QObject, Singleton):
         os.system('pisi ur %s' % DEFAULT_REPO_2011)
         self.log("UPDATING REPOSITORIES COMPLETED", "BACKEND")
 
-        self.parent.showMessage(_("Re-building the Package DB..."))
+        # self.parent.showMessage(_("Re-building the Package DB..."))
         # Try to rebuild the DB
         self.log("STARTING TO RE-BUILD PISI DB", "BACKEND")
         os.system('pisi rdb -y')
         self.log("RE-BUILDING PISI DB COMPLETED", "BACKEND")
-        self.parent.hideMessage()
+        # self.parent.hideMessage()
 
         self.log("GETTING UPGRADABLE PACKAGES", "PISI")
         upgrade_list = pisi.api.list_upgradable()
         self._nof_packgages = len(upgrade_list)
         self.log("I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages, "PISI")
 
-        self.parent.showMessage(_("Calculating dependencies..."))
+        # self.parent.showMessage(_("Calculating dependencies..."))
         # Upgrade the system
         self.log("STARTING TO UPGRADE", "PISI")
         pisi.api.upgrade(upgrade_list)
