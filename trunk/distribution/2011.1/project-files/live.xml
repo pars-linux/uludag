@@ -173,7 +173,7 @@
         <SelectedPackage>firewall-manager</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
-        <SelectedPackage>phonon-backend-xine</SelectedPackage>
+        <SelectedPackage>phonon-backend-vlc</SelectedPackage>
         <SelectedPackage>pinentry-qt</SelectedPackage>
         <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
         <SelectedPackage>plymouth</SelectedPackage>
@@ -882,7 +882,7 @@
         <Package>perl-HTML-Tagset</Package>
         <Package>phonon</Package>
         <Package>phonon-backend-gstreamer</Package>
-        <Package>phonon-backend-xine</Package>
+        <Package>phonon-backend-vlc</Package>
         <Package>piksemel</Package>
         <Package>pinentry</Package>
         <Package>pinentry-qt</Package>

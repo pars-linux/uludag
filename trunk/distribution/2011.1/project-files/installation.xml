@@ -238,7 +238,6 @@
                 <SelectedPackage>pavucontrol</SelectedPackage>
                 <SelectedPackage>phonon-backend-gstreamer</SelectedPackage>
                 <SelectedPackage>phonon-backend-vlc</SelectedPackage>
-                <SelectedPackage>phonon-backend-xine</SelectedPackage>
                 <SelectedPackage>pinentry-qt</SelectedPackage>
                 <SelectedPackage>plasma-applet-networkmanagement</SelectedPackage>
                 <SelectedPackage>plasma-runner-pisi</SelectedPackage>
@@ -1021,7 +1020,6 @@
                 <Package>phonon</Package>
                 <Package>phonon-backend-gstreamer</Package>
                 <Package>phonon-backend-vlc</Package>
-                <Package>phonon-backend-xine</Package>
                 <Package>php-cli</Package>
                 <Package>php-common</Package>
                 <Package>physfs</Package>
