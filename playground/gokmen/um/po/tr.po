@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-06 15:24+0300\n"
+"POT-Creation-Date: 2011-06-07 16:38+0300\n"
 "PO-Revision-Date: 2011-06-06 12:06+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -16,106 +16,110 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: \n"
 
-#: src/gui.py:109
+#: src/backend.py:151
+msgid "Re-building the Package DB..."
+msgstr "Paket veritabanı yeniden inşa ediliyor..."
+
+#: src/backend.py:163
+msgid "Calculating dependencies..."
+msgstr "Bağımlılıklar hesaplanıyor..."
+
+#: src/gui.py:119
 msgid "Welcome to Upgrade Manager..."
 msgstr "Güncelleme Yöneticisi'ne Hoş Geldiniz..."
 
-#: src/gui.py:113
+#: src/gui.py:123
 msgid "Select Upgrade Repository..."
 msgstr "Güncelleme Deposunu Seçin..."
 
-#: src/gui.py:117 src/gui.py:160
+#: src/gui.py:127 src/gui.py:170
 msgid "Checking your system..."
 msgstr "Sisteminiz kontrol ediliyor..."
 
-#: src/gui.py:124 src/gui.py:129 ui/ui_mainscreen.py:59
+#: src/gui.py:134 src/gui.py:139 ui/ui_mainscreen.py:59
 msgid "Next"
 msgstr "İleri"
 
-#: src/gui.py:125 ui/ui_main.py:56
+#: src/gui.py:135 ui/ui_main.py:56
 msgid "Yes, Upgrade"
 msgstr "Evet, Güncelle"
 
-#: src/gui.py:126 ui/ui_mainscreen.py:57
+#: src/gui.py:136 ui/ui_mainscreen.py:57
 msgid "Cancel"
 msgstr "İptal"
 
-#: src/gui.py:130 ui/ui_mainscreen.py:58
+#: src/gui.py:140 ui/ui_mainscreen.py:58
 msgid "Previous"
 msgstr "Geri"
 
-#: src/gui.py:141
+#: src/gui.py:151
 msgid "Upgrading the system..."
 msgstr "Sisteminiz güncelleniyor..."
 
-#: src/gui.py:180
+#: src/gui.py:192
 msgid "Check results..."
 msgstr "Kontrol sonuçları..."
 
-#: src/gui.py:193
-msgid "Removing current repositories..."
-msgstr "Mevcut depolar kaldırılıyor..."
-
-#: src/gui.py:198
+#: src/gui.py:206
 msgid "Installing new package management system..."
 msgstr "Yeni paket yönetim sistemi kuruluyor..."
 
-#: src/gui.py:208
+#: src/gui.py:221
 msgid "Step 1 Completed"
 msgstr "Birinci Adım Tamamlandı"
 
-#: src/gui.py:228
+#: src/gui.py:241
 msgid "Upgrading to Pardus 2011..."
 msgstr "Pardus 2011'e güncelleniyor..."
 
-#: src/gui.py:248
+#: src/gui.py:261
 msgid "Configuring for Pardus 2011..."
 msgstr "Pardus 2011 için yapılandırılıyor..."
 
-#: src/gui.py:260
+#: src/gui.py:273
 msgid "Running Post Upgrade Operations..."
 msgstr "Güncelleme sonrası işler yapılıyor..."
 
-#: src/gui.py:272
+#: src/gui.py:285
 msgid "Rebooting to the Pardus 2011..."
 msgstr "Pardus 2011 için yeniden başlatılıyor..."
 
-#: src/gui.py:285
+#: src/gui.py:300
 #, python-format
 msgid "Installing: <b>%s</b>"
 msgstr "Yükleniyor: <b>%s</b>"
 
-#: src/gui.py:287
+#: src/gui.py:302
 #, python-format
 msgid "Installed: <b>%s</b>"
 msgstr "Yüklendi: <b>%s</b>"
 
-#: src/gui.py:289
+#: src/gui.py:304
 #, python-format
 msgid "Upgraded: <b>%s</b>"
 msgstr "Güncellendi: <b>%s</b>"
 
-#: src/gui.py:291
+#: src/gui.py:306
 #, python-format
 msgid "Configuring: <b>%s</b>"
 msgstr "Yapılandırılıyor: <b>%s</b>"
 
-#: src/gui.py:293
+#: src/gui.py:308
 #, python-format
 msgid "Configured: <b>%s</b>"
 msgstr "Yapılandırıldı: <b>%s</b>"
 
-#: src/gui.py:295
+#: src/gui.py:310
 #, python-format
 msgid "Removing: <b>%s</b>"
 msgstr "Siliniyor: <b>%s</b>"
 
-#: src/gui.py:297
+#: src/gui.py:312
 #, python-format
 msgid "Removed: <b>%s</b>"
 msgstr "Silindi: <b>%s</b>"
 
-#: src/gui.py:318
+#: src/gui.py:333
 #, python-format
 msgid "Downloading: <b>%s</b>"
 msgstr "İndiriliyor: <b>%s</b>"
@@ -132,15 +136,11 @@ msgstr "Sisteminizi Pardus 2011'e güncellemeye hazır mısınız?"
 msgid "Exit"
 msgstr "Çıkış"
 
-#: ui/ui_mainscreen.py:56 ui/ui_screen_1.py:57
+#: ui/ui_mainscreen.py:56 ui/ui_screen_1.py:56
 msgid "Welcome to Upgrade Manager"
 msgstr "Güncelleme Yöneticisi'ne Hoş Geldiniz"
 
-#: ui/ui_screen_1.py:58
-msgid "PIXMAP - 09 to 11 Logo"
-msgstr "LOGO"
-
-#: ui/ui_screen_1.py:59
+#: ui/ui_screen_1.py:57
 msgid ""
 "In order to upgrade your Pardus 2009 system to Pardus 2011, Upgrade Manager needs to check your computer.\n"
 "\n"
@@ -150,7 +150,7 @@ msgstr ""
 "\n"
 "Bu kontroller sisteminizde yüklü paketleri ve kullanılabilecek boş alan hesaplamasını içerir."
 
-#: ui/ui_screen_2.py:50 ui/ui_screen_3.py:46 ui/ui_screen_4.py:35
+#: ui/ui_screen_2.py:50 ui/ui_screen_3.py:50 ui/ui_screen_4.py:35
 #: ui/ui_screen_5.py:75
 msgid "Analyzing your Computer"
 msgstr "Bilgisayarınız kontrol ediliyor"
@@ -171,13 +171,17 @@ msgstr "Test Deposu"
 msgid "Devel Repository"
 msgstr "Geliştirme Deposu"
 
-#: ui/ui_screen_3.py:47
+#: ui/ui_screen_3.py:51
 msgid "Following packages are not available in selected repository:"
 msgstr "Aşağıdaki paketler seçilen yeni depoda mevcut değiller:"
 
-#: ui/ui_screen_3.py:48
+#: ui/ui_screen_3.py:52
 msgid "If you continue with this repository you will no longer use some applications provided by these packages."
 msgstr "Bu depo ile devam ederseniz, bu paketler tarafından sağlanan uygulamalara erişemeyeceksiniz."
+
+#: ui/ui_screen_3.py:53
+msgid "Remove unsupported packages"
+msgstr "Desteklenmeyen paketleri kaldır"
 
 #: ui/ui_screen_4.py:36
 msgid "Do you want to continue?"
@@ -187,3 +191,8 @@ msgstr "Devam etmek istiyor musunuz?"
 msgid "Upgrading packages..."
 msgstr "Paketler güncelleniyor..."
 
+#~ msgid "PIXMAP - 09 to 11 Logo"
+#~ msgstr "LOGO"
+
+#~ msgid "Removing current repositories..."
+#~ msgstr "Mevcut depolar kaldırılıyor..."

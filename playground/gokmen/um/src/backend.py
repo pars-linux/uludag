@@ -42,6 +42,23 @@ def cleanup_pisi():
     ctx.ui.close()
     ctx.enable_keyboard_interrupts()
 
+class SimpleLogger(object):
+
+    def __init__(self):
+        log_file = "/tmp/um-log"
+
+        self.log_file = file(log_file, 'a+')
+        self.log("STARTED TO LOGGING AT %s" % time.asctime(), "LOGGER")
+
+    def log(self, message, sender = 'ANONYMOUS'):
+        now = time.strftime("%H:%M:%S", time.localtime())
+        message = now + ' ' + ('|%-6s|' % sender) + ' ' + message
+        self.log_file.write(message)
+        print message
+
+    def close(self):
+        self.log_file.close()
+
 class PisiUI(QObject, pisi.ui.UI):
 
     def __init__(self, *args):
@@ -77,10 +94,6 @@ class Iface(QObject, Singleton):
         apply(QObject.__init__, (self,))
         options = pisi.config.Options()
 
-        # Make something crazy.
-        # options.yes_all = True
-        # options.ignore_safety = True
-
         self.ui = PisiUI()
         self.connect(self.ui,\
                 SIGNAL("progress(PyQt_PyObject)"),\
@@ -93,13 +106,13 @@ class Iface(QObject, Singleton):
         self._nof_packgages = 0
 
         self.parent = parent
+        self.log = parent.logger.log
         pisi.api.set_userinterface(self.ui)
         pisi.api.set_options(options)
         pisi.api.set_signal_handling(False)
 
     def installPackages(self, packages, with_comar = True, reinstall = True, ignore_dep = False):
-
-        print "PISI Installing : ", packages
+        self.log("PISI Installing : %s " % (','.join(packages)))
 
         options = pisi.config.Options()
         options.ignore_dependency = ignore_dep
@@ -108,10 +121,14 @@ class Iface(QObject, Singleton):
         pisi.api.set_comar(with_comar)
         pisi.api.install(packages, reinstall = reinstall)
 
+    def removePackages(self, packages, ignore_dependency = True, ignore_safety = True):
+        pisi.api.remove(packages, ignore_dependency, ignore_safety)
+
     def upgradeSystem(self):
-        print 'PISI VERSION in STEP 2 is', pisi.__version__
+        self.log('PISI VERSION in STEP 2 is %s' % str(pisi.__version__), "BACKEND")
 
         options = pisi.config.Options()
+        options.yes_all = True
         options.ignore_dependency = False
         pisi.api.set_options(options)
         pisi.api.set_comar(False)
@@ -122,29 +139,48 @@ class Iface(QObject, Singleton):
         except:
             target_repo = REPO_TEMPLATE % "stable"
 
-        print "ADDING REPO:", target_repo
+        self.log("ADDING REPO: %s" % target_repo, "BACKEND")
         pisi.api.add_repo(DEFAULT_REPO_2011, target_repo)
 
         # Updating repo from cli
         # If I use api for this it breaks the repository consistency
+        self.log("STARTING TO UPDATE REPOSITORIES", "BACKEND")
         os.system('pisi ur %s' % DEFAULT_REPO_2011)
+        self.log("UPDATING REPOSITORIES COMPLETED", "BACKEND")
 
+        self.parent.showMessage(_("Re-building the Package DB..."))
         # Try to rebuild the DB
+        self.log("STARTING TO RE-BUILD PISI DB", "BACKEND")
         os.system('pisi rdb -y')
+        self.log("RE-BUILDING PISI DB COMPLETED", "BACKEND")
+        self.parent.hideMessage()
 
+        self.log("GETTING UPGRADABLE PACKAGES", "PISI")
         upgrade_list = pisi.api.list_upgradable()
         self._nof_packgages = len(upgrade_list)
-        print "I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages
+        self.log("I FOUND %d PACKAGES TO UPGRADE" % self._nof_packgages, "PISI")
 
+        self.parent.showMessage(_("Calculating dependencies..."))
         # Upgrade the system
-        print "STARTING TO UPGRADE"
+        self.log("STARTING TO UPGRADE", "PISI")
         pisi.api.upgrade(upgrade_list)
+        self.log("PACKAGE UPGRADE COMPLETED", "PISI")
 
         # Install Required Packages
-        pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
+        self.log("FETCHING FORCE INSTALL PACKAGE LIST", "BACKEND")
+
+        try:
+            pkgs_to_install = urlgrabber.urlread(FORCE_INSTALL).split()
+        except:
+            self.log("FETCHING FAILED !!", "BACKEND")
+            pkgs_to_install = []
+
         self._nof_packgages += len(pkgs_to_install)
-        print "STARTING TO INSTALL FORCE LIST"
-        pisi.api.install(pkgs_to_install, reinstall = True)
+
+        self.log("I FOUND %d PACKAGES TO INSTALL" % len(pkgs_to_install), "BACKEND")
+        self.log("STARTING TO INSTALL FORCE LIST", "PISI")
+        pisi.api.install(pkgs_to_install, reinstall = False)
+        self.log("FORCE LIST INSTALLATION COMPLETED", "PISI")
 
         # Write down Nof packages has been upgraded
         file('/tmp/nof_package_upgraded','w').write(str(self._nof_packgages))
@@ -155,11 +191,11 @@ class Iface(QObject, Singleton):
         # Set number of upgraded packages
         self._nof_packgages = int(file('/tmp/nof_package_upgraded').read())
 
-        print "STARTING TO CONFIGURING"
+        self.log("I FOUND %d PACKAGES TO CONFIGURE" % self._nof_packgages, "BACKEND")
+        self.log("STARTING TO CONFIGURING","PISI")
         pisi.api.configure_pending(['baselayout'])
         pisi.api.configure_pending()
-
-        self.parent.processNotify("STATE_3_FINISHED", {})
+        self.log("CONFIGURE PENDING COMPLETED", "PISI")
 
     def upgradeRepos(self):
         pisi.api.update_repo(DEFAULT_REPO_2011)
