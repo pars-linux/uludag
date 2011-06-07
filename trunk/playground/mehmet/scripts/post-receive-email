@@ -698,7 +698,6 @@ send_mail()
 # --------------- Pardus Additions
 
 check_additional_recipients() {
-    commit_log=`git diff-tree -s --pretty=%B $1`
     cc_list=`git diff-tree -s --pretty=%B $1 | grep '^C[Cc]:\s[A-Za-z0-9._-]*\s\<at\>\s[A-Za-z0-9.]*$' | cut -d: -f2 | sed 's/ at /@/g'`
     for recipie in $cc_list;
     do
