@@ -694,6 +694,20 @@ send_mail()
 	fi
 }
 
+
+# --------------- Pardus Additions
+
+check_additional_recipients() {
+    commit_log=`git diff-tree -s --pretty=%B $1`
+    cc_list=`git diff-tree -s --pretty=%B $1 | grep '^C[Cc]:\s[A-Za-z0-9._-]*\s\<at\>\s[A-Za-z0-9.]*$' | cut -d: -f2 | sed 's/ at /@/g'`
+    for recipie in $cc_list;
+    do
+        ws=' '
+        recipients=$recipients$ws$recipie
+    done
+}
+
+
 # ---------------------------- main()
 
 # --- Constants
@@ -731,10 +745,12 @@ if [ -n "$1" -a -n "$2" -a -n "$3" ]; then
 	# Output to the terminal in command line mode - if someone wanted to
 	# resend an email; they could redirect the output to sendmail
 	# themselves
+    check_additional_recipients $3
 	prep_for_email $2 $3 $1 && PAGER= generate_email
 else
 	while read oldrev newrev refname
 	do
+        check_additional_recipients $newrev
 		prep_for_email $oldrev $newrev $refname || continue
 		generate_email $maxlines | send_mail
 	done
