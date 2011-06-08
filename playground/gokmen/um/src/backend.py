@@ -53,7 +53,7 @@ class SimpleLogger(object):
     def log(self, message, sender = 'ANONYMOUS'):
         now = time.strftime("%H:%M:%S", time.localtime())
         message = now + ' ' + ('|%-6s|' % sender) + ' ' + message
-        self.log_file.write(message)
+        self.log_file.write(message + '\n')
         print message
 
     def close(self):
