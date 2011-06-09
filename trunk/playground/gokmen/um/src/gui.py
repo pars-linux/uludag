@@ -90,6 +90,8 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         self.target_repo = REPO_TEMPLATE % 'stable'
         self.iface = Iface(self)
 
+        self.connect(self.iface, SIGNAL("notify(PyQt_PyObject)"), self.showMessage)
+
         self.msgbox = PMessageBox(self)
         self.msgbox.setStyleSheet("color:white;")
         self.msgbox.enableOverlay()
@@ -231,6 +233,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # I know this is ugly but we need to use new Pisi :(
         time.sleep(2)
+
         os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
 
     # Step 2 Method
