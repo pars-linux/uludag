@@ -16,6 +16,8 @@ import pisi
 import time
 import urlgrabber
 
+from pds import Pds
+
 from PyQt4.QtCore import QObject
 from PyQt4.QtCore import SIGNAL
 
