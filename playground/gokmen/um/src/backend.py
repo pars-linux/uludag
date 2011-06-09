@@ -24,6 +24,10 @@ DEFAULT_REPO_2009 = "pardus-2009.2"
 FORCE_INSTALL = "http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list"
 REPO_TEMPLATE = "http://packages.pardus.org.tr/pardus/2011/%s/i686/pisi-index.xml.xz"
 
+# Translations
+_pds = Pds('upgrade-manager', debug = False)
+_ = _pds.i18n
+
 def cleanup_pisi():
     """Close the database cleanly and do other cleanup."""
     import pisi.context as ctx
