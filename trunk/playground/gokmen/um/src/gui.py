@@ -206,15 +206,16 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Install New Pisi and its dependencies
         # To keep install in given order we need to pass ignore_dep as True
-        self.ps.progress.setFormat(_("Installing new package management system..."))
         self.thread_step_1.start()
 
     # Step 1 Threaded Method
     def step_1_start(self):
         resultWidget = self.pageWidget.getWidget(2).ui
         if resultWidget.remove_packages.isChecked():
+            self.ps.progress.setFormat(_("Removing unsupported packages..."))
             self.iface.removePackages(self.missing_packages)
 
+        self.ps.progress.setFormat(_("Installing new package management system..."))
         self.iface.removeRepos()
         self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
