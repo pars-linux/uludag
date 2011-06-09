@@ -175,5 +175,6 @@ class WidgetModule(QtGui.QWidget, Ui_widgetWeb, plugins.PluginWidget):
             Triggered when user clicks "Browse" button.
         """
         index = self.comboServices.currentIndex()
-        url = self.comboServices.itemData(index).toString()
-        os.system("firefox \"%s\" &" % url)
+        if index > 0:
+            url = self.comboServices.itemData(index).toString()
+            os.system("firefox \"%s\" &" % url)
