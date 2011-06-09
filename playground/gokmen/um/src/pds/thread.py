@@ -36,6 +36,8 @@ class PThread(QThread):
         except Exception, e:
             if self.exceptionHandler:
                 self.exceptionHandler(e)
+            else:
+                print "Exception from thread:\n", e
         finally:
             self.connect(self.parent(), SIGNAL("cleanUp()"), SLOT("deleteLater()"))
 
