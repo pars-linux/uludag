@@ -11,7 +11,7 @@ Code Rules
 ==========
 
 This document provides a set of coding rules for Pardus Development, its based on the Google's Python Coding Standards Document.
-
+You can see the cheatsheet: http://developer.pardus.org.tr/guides/softwaredevelopment/coderules/PythonStyleCheatSheet.pdf
 
 Python Language Rules
 ~~~~~~~~~~~~~~~~~~~~~

@@ -17,6 +17,8 @@ The Force.com platform requires that at least 75% of the Apex Code in an org be 
 Clearly, you wouldn’t want to test all of the different states for this program. Instead, you should probably test a few different inputs for this method, even if it means that you will have achieved 100% code coverage several times over.
 Three different states that you might consider testing are a "positive" input, a "negative" input and a "0" input. Testing with a positive input, and with a negative input will behave as expected. Testing with a "0" input however will yield a surprise "System.MathException". This is just one example of why it makes sense to focus on testing the different states of your code instead of focusing on just the 75% code coverage requirement. 
 
+You can see the cheatsheet: http://developer.pardus.org.tr/guides/softwaredevelopment/coderules/PardusUnitTestCheatSheet.pdf
+
 
 The Value of Unit Tests
 -----------------------
