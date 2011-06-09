@@ -18,6 +18,8 @@ Docstring Rules
 
 .. image:: whole_view.png
 
+You can see the cheatsheet: http://developer.pardus.org.tr/guides/softwaredevelopment/coderules/PardusApiDocStandardsCheatSheet.pdf
+
 
 Below are the code documentation rules in generally we want you to observe:
 
