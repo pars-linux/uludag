@@ -47,13 +47,19 @@ class SimpleLogger(object):
     def __init__(self):
         log_file = "/tmp/um-log"
 
-        self.log_file = file(log_file, 'a+')
+        try:
+            self.log_file = file(log_file, 'a+')
+        except:
+            self.log_file = None
+            self.log("FAILED TO LOGGING TO FILE: %s" % log_file, "LOGGER")
+            self.log("I WILL USE STDOUT", "LOGGER")
         self.log("STARTED TO LOGGING AT %s" % time.asctime(), "LOGGER")
 
     def log(self, message, sender = 'ANONYMOUS'):
         now = time.strftime("%H:%M:%S", time.localtime())
         message = now + ' ' + ('|%-6s|' % sender) + ' ' + message
-        self.log_file.write(message + '\n')
+        if self.log_file:
+            self.log_file.write(message + '\n')
         print message
 
     def close(self):
