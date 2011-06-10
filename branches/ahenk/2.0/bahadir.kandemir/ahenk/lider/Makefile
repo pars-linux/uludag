@@ -23,9 +23,6 @@ all:
 	pyrcc4 lider/plugins/plugin_software/software.qrc > lider/plugins/plugin_software/software_rc.py
 	pyuic4 lider/plugins/plugin_software/repository.ui > lider/plugins/plugin_software/ui_repository.py
 	
-	pyuic4 lider/plugins/plugin_summary/summary.ui > lider/plugins/plugin_summary/ui_summary.py
-	pyrcc4 lider/plugins/plugin_summary/summary.qrc > lider/plugins/plugin_summary/summary_rc.py
-	
 	pyuic4 lider/plugins/plugin_web/web.ui > lider/plugins/plugin_web/ui_web.py
 	pyrcc4 lider/plugins/plugin_web/web.qrc > lider/plugins/plugin_web/web_rc.py
 
