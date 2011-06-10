@@ -55,6 +55,7 @@ class SimpleLogger(object):
 
         try:
             self.log_file = file(log_file, 'a+')
+            self.log_file.write('\n')
         except:
             self.log_file = None
             self.log("FAILED TO LOGGING TO FILE: %s" % log_file, "LOGGER")
@@ -63,13 +64,17 @@ class SimpleLogger(object):
 
     def log(self, message, sender = 'ANONYMOUS'):
         now = time.strftime("%H:%M:%S", time.localtime())
-        message = now + ' ' + ('|%-6s|' % sender) + ' ' + message
+        message = now + ' ' + ('|%-6s|' % ('%.6s' % sender)) + ' ' + message
         if self.log_file:
             self.log_file.write(message + '\n')
         print message
 
     def close(self):
         self.log_file.close()
+
+    def markStep(self, step):
+        step_file = os.path.expanduser("~/.umstep")
+        open(step_file, 'w').write(str(step))
 
 class PisiUI(QObject, pisi.ui.UI):
 
