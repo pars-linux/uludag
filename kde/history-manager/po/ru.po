@@ -86,7 +86,7 @@ msgstr "План восстановления для операции %1 на %2
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
-msgstr "Проверка плана"
+msgstr "Проверка операций отката"
 
 #: .tmp/historymanager/window.py:225
 msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
