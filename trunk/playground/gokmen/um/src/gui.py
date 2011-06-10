@@ -317,7 +317,6 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Finalize log.
         self.log("STEP 4 COMPLETED", "GUI")
-        self.logger.close()
 
         # Mark the step
         self.logger.markStep(4)
@@ -327,6 +326,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
         # Time to reboot to Pardus 2011
         self.log("REBOOTING TO Pardus 2011...", "GUI")
+        self.logger.close()
         os.system("reboot")
 
     # Shared Method
