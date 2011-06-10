@@ -197,6 +197,7 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 1 Method
     def upgradeStep_1(self):
+        self.log("STARTING TO STEP 1", "GUI")
         self.log('PISI VERSION in STEP 1 is %s' % str(pisi.__version__),"GUI")
         self.disableButtons()
 
@@ -213,32 +214,42 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         resultWidget = self.pageWidget.getWidget(2).ui
         if resultWidget.remove_packages.isChecked():
             self.ps.progress.setFormat(_("Removing unsupported packages..."))
-            self.iface.removePackages(self.missing_packages)
+            # self.iface.removePackages(self.missing_packages)
 
         self.ps.progress.setFormat(_("Installing new package management system..."))
-        self.iface.removeRepos()
-        self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
+        # self.iface.removeRepos()
+        # self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
     # Step 1 Threaded Method Finalize
     def step_1_end(self):
         # END OF Step 1 in Upgrade
+        self.log("STEP 1 COMPLETED", "GUI")
         self.ps.progress.setFormat(_("Step 1 Completed"))
+
         # STEP 1 Finishes at 10 percent
         self.ps.progress.setValue(10)
 
         # Write selected upgrade repository to a temporary file
-        file('/tmp/target_repo','w').write(self.target_repo)
+        try:
+            file('/tmp/target_repo','w').write(self.target_repo)
+        except:
+            self.log("TARGET REPO STORE FAILED, USING stable AS DEFAULT", "GUI")
+
+        # Mark the step
+        self.logger.markStep(2)
 
         # Cleanup Pisi DB
         cleanup_pisi()
 
-        # I know this is ugly but we need to use new Pisi :(
+        # Just wait a little bit.
         time.sleep(2)
 
+        # Re-launch the um for 2. step
         os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step2'])
 
     # Step 2 Method
     def upgradeStep_2(self):
+        self.log("STARTING TO STEP 2", "GUI")
         self.disableButtons()
         self.ps.steps.hide()
         self.ps.busy.busy()
@@ -254,11 +265,19 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 2 Threaded Method Finalize
     def step_2_end(self):
+        self.log("STEP 2 COMPLETED", "GUI")
+        # Mark the step
+        self.logger.markStep(3)
+
+        # Just wait a little bit.
         time.sleep(2)
+
+        # Re-launch the um for 3. step
         os.execv('/usr/bin/upgrade-manager', ['/usr/bin/upgrade-manager', '--start-from-step3'])
 
     # Step 3 Method
     def upgradeStep_3(self):
+        self.log("STARTING TO STEP 3", "GUI")
         self.disableButtons()
         self.ps.steps.hide()
         self.ps.busy.busy()
@@ -274,21 +293,40 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
 
     # Step 3 Threaded Method Finalize
     def step_3_end(self):
+        self.log("STEP 3 COMPLETED", "GUI")
         # Step 4
         self.ps.progress.setFormat(_("Running Post Upgrade Operations..."))
 
         # Migrate KDE Configs
+        self.log("RUNNING migrateKDE SCRIPT...", "GUI")
         migrateKDE()
+        self.log("migrateKDE SCRIPT COMPLETED.", "GUI")
 
         # Migrate NetworkManager Configurations
+        self.log("MIGRATING NETWORK PROFILES...", "GUI")
         os.system("/usr/sbin/migrate-comar-network-profiles")
+        self.log("NETWORK PROFILES MIGRATED.", "GUI")
 
         # Migrate BootLoader conf
+        self.log("MIGRATING grub.conf...", "GUI")
         migrateGrubconf('/boot/grub/grub.conf')
+        self.log("grub.conf MIGRATED", "GUI")
 
         # Time to reboot
         self.ps.progress.setFormat(_("Rebooting to the Pardus 2011..."))
+
+        # Finalize log.
+        self.log("STEP 4 COMPLETED", "GUI")
+        self.logger.close()
+
+        # Mark the step
+        self.logger.markStep(4)
+
+        # Just wait a little bit.
         time.sleep(3)
+
+        # Time to reboot to Pardus 2011
+        self.log("REBOOTING TO Pardus 2011...", "GUI")
         os.system("reboot")
 
     # Shared Method
