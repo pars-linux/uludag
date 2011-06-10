@@ -214,11 +214,11 @@ class UmMainScreen(QDialog, ui_mainscreen.Ui_UpgradeManager):
         resultWidget = self.pageWidget.getWidget(2).ui
         if resultWidget.remove_packages.isChecked():
             self.ps.progress.setFormat(_("Removing unsupported packages..."))
-            # self.iface.removePackages(self.missing_packages)
+            self.iface.removePackages(self.missing_packages)
 
         self.ps.progress.setFormat(_("Installing new package management system..."))
-        # self.iface.removeRepos()
-        # self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
+        self.iface.removeRepos()
+        self.iface.installPackages(map(lambda x: ARA_FORM % x, REQUIRED_PACKAGES), ignore_dep = True)
 
     # Step 1 Threaded Method Finalize
     def step_1_end(self):
