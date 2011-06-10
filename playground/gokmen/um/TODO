@@ -5,6 +5,13 @@ semiupdate repo   = http://cekirdek.pardus.org.tr/~onur/2009to2011/packages/pisi
 2011 repo         = http://packages.pardus.org.tr/pardus/2011/stable/i686/pisi-index.xml.xz
 forceinstall list = http://svn.pardus.org.tr/uludag/trunk/pardus-upgrade/2009_to_2011.list
 
+Notes:
+------
+
+Pardus 2009.2 up-to-date 4,2 GB
+Pardus 2011.1 up-to-date 6,2 GB (includes var/cache/pisi/packages)
+814 Upgradable packages  927 MB in standard installation
+
 Legend:
 -------
 
