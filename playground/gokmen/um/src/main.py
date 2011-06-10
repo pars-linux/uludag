@@ -16,8 +16,15 @@ import os
 import sys
 
 # PDS
+from pds import Pds
 from pds.quniqueapp import QUniqueApplication
 from gui import UmMainScreen
+
+from PyQt4.QtGui import QMessageBox
+
+# Translations
+_pds = Pds('upgrade-manager', debug = False)
+_ = _pds.i18n
 
 if __name__ == '__main__':
 
@@ -29,6 +36,23 @@ if __name__ == '__main__':
         step = 3
     else:
         step = 1
+
+    def oldStep():
+        step_file = os.path.expanduser("~/.umstep")
+        if os.path.exists(step_file):
+            return int(open(step_file).read())
+        return 1
+
+    if oldStep() > 1 and oldStep() < 4 and not step > 1:
+        answer = QMessageBox.question(None, _("Upgrade Manager"),
+                                            _("There are uncompleted upgrade steps left.\n"
+                                              "Do you want to continue from this step ? (Recommended)"),
+                                            QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel,
+                                            QMessageBox.Yes)
+        if answer == QMessageBox.Yes:
+            step = oldStep()
+        elif answer == QMessageBox.Cancel:
+            sys.exit(0)
 
     window = UmMainScreen(step = step)
     window.show()
