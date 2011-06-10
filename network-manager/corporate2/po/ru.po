@@ -37,7 +37,7 @@ msgstr "Mod:"
 
 #: browser.py:100
 msgid "Turn on/off connection"
-msgstr ""
+msgstr "Включить/выключить соединение"
 
 #: browser.py:113
 msgid "Configure connection"
@@ -73,47 +73,48 @@ msgstr ""
 
 #: browser.py:415 network-applet.py:327
 msgid "Connect Automatically"
-msgstr ""
+msgstr "Подключаться автоматически"
 
 #: browser.py:434
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Попробовать автоматически подключиться при запуске"
 
 #: browser.py:491
 msgid "Network Connections Help"
-msgstr ""
+msgstr "Справка сетевые подключения"
 
 #: nameconf.py:35
 msgid "Computer"
 msgstr "Компьютер"
 
 #: nameconf.py:41
+#, fuzzy
 msgid "Host name:"
-msgstr ""
+msgstr "Имя хоста:"
 
 #: nameconf.py:45 connection.py:539
 msgid "Name servers"
-msgstr ""
+msgstr "DNS сервера"
 
 #: nameconf.py:56
 msgid "Up"
-msgstr ""
+msgstr "Вверх"
 
 #: nameconf.py:59
 msgid "Down"
-msgstr ""
+msgstr "Вниз"
 
 #: nameconf.py:156
 msgid "Add Name Server"
-msgstr ""
+msgstr "Добавить DNS сервер"
 
 #: nameconf.py:157
 msgid "Name server:"
-msgstr ""
+msgstr "DNS сервер:"
 
 #: comariface.py:177
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Вы не авторизованы для этой операции."
 
 #: comariface.py:179
 msgid ""
@@ -131,23 +132,23 @@ msgstr ""
 
 #: comariface.py:190
 msgid "Network Manager - Error"
-msgstr ""
+msgstr "Менеджер сети - ошибка"
 
 #: comariface.py:353
 msgid "new connection"
-msgstr ""
+msgstr "Новое соединение"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
-msgstr ""
+msgstr "Общий доступ к Интернету"
 
 #: connsharing.py:100
 msgid "Share Internet Connection"
-msgstr ""
+msgstr "Предоставить общий доступ к интернету"
 
 #: connsharing.py:102
 msgid "Interface that goes to internet"
-msgstr ""
+msgstr "Интерфейс, который выходит в интернет"
 
 #: connsharing.py:103
 msgid "Interface that will share connection"
