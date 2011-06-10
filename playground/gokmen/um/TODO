@@ -23,6 +23,7 @@ Legend:
 Tasks:
 ------
 
+- (OK) Calculate installed packages package size and return minimum required free space.
 + Store current step in temporary file and then start from it
 + Do not reinstall all packages in Force List
 + Create a shiny upgrade-manager banner
