@@ -61,7 +61,6 @@ msgid "Details for operation on %1 at %2"
 msgstr "Detalji za operaciju na %1 u %2"
 
 #: .tmp/historymanager/window.py:130
-#, fuzzy
 msgid "There are %1 packages in this snapshot."
 msgstr "Postoji% 1 paketa u ovom snimku."
 
@@ -107,7 +106,7 @@ msgstr ""
 
 #: .tmp/historymanager/window.py:237
 msgid "Start new snapshot"
-msgstr ""
+msgstr "Započni novi snimak"
 
 #: .tmp/historymanager/window.py:238
 msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
@@ -148,7 +147,7 @@ msgstr "Instaliranje"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Snapshot"
-msgstr ""
+msgstr "Snimak"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Takeback"
@@ -184,7 +183,7 @@ msgstr "Pokaži plan operacije"
 
 #: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
-msgstr ""
+msgstr "Novi snimak"
 
 #: .tmp/ui_mainwindow.py:131
 msgid "History Settings"
