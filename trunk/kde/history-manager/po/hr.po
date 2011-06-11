@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the history-manager package.
 # Ivica Kolić <ikoli¢yahoo.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: history-manager\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Croatian\n"
-"X-Poedit-Country: CROATIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: CROATIA\n"
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
@@ -31,8 +31,7 @@ msgstr "Učitavanje pokretanja:"
 msgid " Operations"
 msgstr "Operacije"
 
-#: .tmp/historymanager/about.py:21
-#: .tmp/historymanager/about.py:23
+#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
 msgstr "Upravitelj povijesti"
@@ -62,11 +61,11 @@ msgid "Details for operation on %1 at %2"
 msgstr "Detalji za operaciju na %1 u %2"
 
 #: .tmp/historymanager/window.py:130
+#, fuzzy
 msgid "There are %1 packages in this snapshot."
-msgstr ""
+msgstr "Postoji% 1 paketa u ovom snimku."
 
-#: .tmp/historymanager/window.py:146
-#: .tmp/historymanager/window.py:198
+#: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
 msgid "Ready .."
 msgstr "Spreman..."
 
@@ -76,7 +75,7 @@ msgstr "Učitavam plan operacije"
 
 #: .tmp/historymanager/window.py:173
 msgid "Configuration files in snapshot:"
-msgstr ""
+msgstr "Konfiguracijske datoteke u snimku:"
 
 #: .tmp/historymanager/window.py:181
 msgid "<br> These package(s) will be <b>installed</b> :<br>"
@@ -96,7 +95,7 @@ msgstr ""
 
 #: .tmp/historymanager/window.py:225
 msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
-msgstr ""
+msgstr "<center>Ovo će vratiti sustav natrag na : <b>% 1</b> - <b>2%</b> <br>"
 
 #: .tmp/historymanager/window.py:226
 msgid "If you're unsure, click Cancel and see TakeBack Plan.</center>"
@@ -120,7 +119,7 @@ msgstr ""
 
 #: .tmp/historymanager/window.py:251
 msgid "Authentication Failed"
-msgstr ""
+msgstr "Provjera autentičnosti nije uspjela"
 
 #: .tmp/historymanager/window.py:258
 msgid "Finished succesfully"
@@ -171,8 +170,7 @@ msgstr "Datum - vrijeme povijesti /Natpis"
 msgid "No: Type:"
 msgstr "Br: Tip:"
 
-#: .tmp/ui_uiitem.py:87
-#: .tmp/ui_mainwindow.py:137
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr ""
 
@@ -194,7 +192,7 @@ msgstr "Postavke povijesti"
 
 #: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
-msgstr ""
+msgstr "Alias:"
 
 #: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
@@ -211,4 +209,3 @@ msgstr "%p%"
 #: .tmp/ui_mainwindow.py:138
 msgid "Copy"
 msgstr "Kopiraj"
-
