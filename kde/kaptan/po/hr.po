@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the kaptan package.
 # Ivica Kolić<ikoli@yahoo.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
@@ -11,17 +11,16 @@ msgstr ""
 "PO-Revision-Date: 2011-06-09 23:30+0100\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli@yahoo.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Poedit-Language: Croatian\n"
-"X-Poedit-Country: CROATIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-Country: CROATIA\n"
 
-#: .tmp/ui_kaptan.py:357
-#: .tmp/kaptan.desktop.in.h:1
+#: .tmp/ui_kaptan.py:357 .tmp/kaptan.desktop.in.h:1
 msgid "Kaptan"
 msgstr "Kaptan"
 
@@ -49,14 +48,13 @@ msgstr "Završi"
 msgid "Apply Settings"
 msgstr "Primjeni postavke"
 
-#: .tmp/scrSmolt.py:31
-#: .tmp/ui_scrSmolt.py:154
+#: .tmp/scrSmolt.py:31 .tmp/ui_scrSmolt.py:154
 msgid "Smolt"
 msgstr "Smolt"
 
 #: .tmp/scrSmolt.py:32
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Pomozi da  se Pardus poboljša!"
 
 #: .tmp/scrSmolt.py:68
 msgid "Label"
@@ -68,10 +66,9 @@ msgstr "Podaci"
 
 #: .tmp/scrSmolt.py:108
 msgid "&Host Information"
-msgstr ""
+msgstr "& Informacije o računalu"
 
-#: .tmp/scrSmolt.py:111
-#: .tmp/ui_scrSmolt.py:158
+#: .tmp/scrSmolt.py:111 .tmp/ui_scrSmolt.py:158
 msgid "&Privacy policy"
 msgstr ""
 
@@ -171,14 +168,13 @@ msgstr "Da"
 msgid "No"
 msgstr "Ne"
 
-#: .tmp/ui_scrStyle.py:236
-#: .tmp/scrStyle.py:37
+#: .tmp/ui_scrStyle.py:236 .tmp/scrStyle.py:37
 msgid "Themes"
 msgstr "Teme"
 
 #: .tmp/ui_scrStyle.py:237
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
-msgstr ""
+msgstr "Odaberite vašu omiljenu temu i vrstu radne površine.Prolagodite Pardus razovrsnim stilovima i temama."
 
 #: .tmp/ui_scrStyle.py:238
 msgid "KDE Themes"
@@ -190,11 +186,11 @@ msgstr "Ikone"
 
 #: .tmp/ui_scrStyle.py:242
 msgid "Oxygen - The official icon set of KDE"
-msgstr ""
+msgstr "Oxygen - službeni skup KDE ikona "
 
 #: .tmp/ui_scrStyle.py:243
 msgid "Milky - The official icon set of Pardus"
-msgstr ""
+msgstr "Milky - službeni skup ikona za Pardus"
 
 #: .tmp/ui_scrStyle.py:245
 msgid "Desktop Type"
@@ -212,8 +208,7 @@ msgstr "Pogled mape (KDE3 stil)"
 msgid "Number of Desktops"
 msgstr "Broj radnih površina"
 
-#: .tmp/scrPackage.py:28
-#: .tmp/ui_scrPackage.py:132
+#: .tmp/scrPackage.py:28 .tmp/ui_scrPackage.py:132
 msgid "Packages"
 msgstr "Paketi"
 
@@ -221,8 +216,7 @@ msgstr "Paketi"
 msgid "Install / Remove Programs"
 msgstr "Instaliraj/ukloni programe"
 
-#: .tmp/ui_scrSummary.py:85
-#: .tmp/scrSummary.py:35
+#: .tmp/ui_scrSummary.py:85 .tmp/scrSummary.py:35
 msgid "Summary"
 msgstr "Sažetak"
 
@@ -234,8 +228,7 @@ msgstr "Uspješno ste završili sve korake.Ovo je sažetak postavki koje želite
 msgid "The following settings will be applied"
 msgstr "Slijedeće postavke će biti primjenjene"
 
-#: .tmp/scrMouse.py:29
-#: .tmp/ui_scrMouse.py:202
+#: .tmp/scrMouse.py:29 .tmp/ui_scrMouse.py:202
 msgid "Mouse"
 msgstr "Miš"
 
@@ -259,8 +252,7 @@ msgstr "Jedan klik"
 msgid "Double Click"
 msgstr "Dvostruki klik"
 
-#: .tmp/ui_scrAvatar.py:247
-#: .tmp/ui_wallpaperItem.py:72
+#: .tmp/ui_scrAvatar.py:247 .tmp/ui_wallpaperItem.py:72
 #: .tmp/ui_scrStyleItem.py:69
 msgid "Form"
 msgstr ""
@@ -271,7 +263,7 @@ msgstr ""
 
 #: .tmp/ui_scrAvatar.py:249
 msgid "Options"
-msgstr ""
+msgstr "Opcije"
 
 #: .tmp/ui_scrAvatar.py:250
 msgid "Choose an image"
@@ -285,8 +277,7 @@ msgstr ""
 msgid "Recapture"
 msgstr ""
 
-#: .tmp/scrMenu.py:26
-#: .tmp/ui_scrMenu.py:123
+#: .tmp/scrMenu.py:26 .tmp/ui_scrMenu.py:123
 msgid "Menu"
 msgstr "Izbornik"
 
@@ -294,8 +285,7 @@ msgstr "Izbornik"
 msgid "Choose a Menu Style"
 msgstr "Izaberite stil izbornika"
 
-#: .tmp/scrMenu.py:41
-#: .tmp/ui_scrMenu.py:125
+#: .tmp/scrMenu.py:41 .tmp/ui_scrMenu.py:125
 msgid "Kick-off Menu"
 msgstr "Kick-off izbornik"
 
@@ -303,8 +293,7 @@ msgstr "Kick-off izbornik"
 msgid "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized."
 msgstr "Kick-off izbornik je zadani izbornik Pardusa.<br>br>Prečaci programa su lako dostupni i dobro organizirani."
 
-#: .tmp/scrMenu.py:47
-#: .tmp/ui_scrMenu.py:126
+#: .tmp/scrMenu.py:47 .tmp/ui_scrMenu.py:126
 msgid "Simple Menu"
 msgstr "Jednostavni izbornik"
 
@@ -312,8 +301,7 @@ msgstr "Jednostavni izbornik"
 msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
 msgstr "Jednostavni izbornik je izbornik staroga stila iz KDE3.<br><br>To je vrlo lagan izbornik i preporučuje se za sporije PC-e."
 
-#: .tmp/scrMenu.py:53
-#: .tmp/ui_scrMenu.py:127
+#: .tmp/scrMenu.py:53 .tmp/ui_scrMenu.py:127
 msgid "Lancelot Menu"
 msgstr "Lancelot izbornik"
 
@@ -323,7 +311,7 @@ msgstr "Lancelot je napredni i vrlo prilagodljiv izbornik za Pardus.<br><br>Pre�
 
 #: .tmp/scrAvatar.py:36
 msgid "User Picture"
-msgstr ""
+msgstr "Korisnička fotografija"
 
 #: .tmp/scrAvatar.py:48
 msgid "Create Your User Picture"
@@ -333,9 +321,7 @@ msgstr "Napravite vašu korisničku fotografiju"
 msgid "<b>Smolt</b> is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics."
 msgstr "b>Smolt</b> je alat koji prikuplja informacije u slijedeću tablicu i šalje ih nama što nam omogućuje poboljšati Pardus prema statistikama korisičkog profila."
 
-#: .tmp/ui_scrSmolt.py:156
-#: .tmp/ui_scrGoodbye.py:327
-#: .tmp/ui_scrGoodbye.py:328
+#: .tmp/ui_scrSmolt.py:156 .tmp/ui_scrGoodbye.py:327 .tmp/ui_scrGoodbye.py:328
 msgid "My Smolt Page"
 msgstr "Moja Smolt stranica"
 
@@ -438,8 +424,7 @@ msgstr "Greška"
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
 msgstr "Ne mogu ponovno pokrenuti plazma-radnu površinu.Kaptan će se sada isključiti."
 
-#: .tmp/ui_scrWelcome.py:77
-#: .tmp/scrWelcome.py:27
+#: .tmp/ui_scrWelcome.py:77 .tmp/scrWelcome.py:27
 msgid "Welcome"
 msgstr "Dobrodošli"
 
@@ -449,11 +434,11 @@ msgstr "Što je Pardus?"
 
 #: .tmp/ui_scrWelcome.py:79
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
-msgstr ""
+msgstr "<b>Pardus</b> je pouzdan,siguran,brz i lagan za rukovanje operativni sustav. <br /><br />Sa Pardusom možete se spojiti na internet,čitati vašeu elektroničku poštu,raditi sa vašim uredskim dokumentima,gledati filmove,slušati glazbu,razvijati progrme,igrati igre i puno više! <br /><br /><b>Kaptan</b> će vam pomoći da personalizirate vaš Pardus radni prostor lako i brzo. Molim kliknite <b>slijedeće</b> da biste započeli."
 
 #: .tmp/ui_scrPackage.py:133
 msgid "Show updates in the system tray"
-msgstr ""
+msgstr "Pokaži dopune u traci sustava"
 
 #: .tmp/ui_scrPackage.py:134
 msgid "Check updates automatically every"
@@ -465,15 +450,15 @@ msgstr "sati"
 
 #: .tmp/ui_scrPackage.py:136
 msgid "To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates."
-msgstr ""
+msgstr "Za instalaciju i uklanjanje programa u Pardus, koristite Upravitelj-paketa. Upravitelj-paketa također može automatski instalirati najnovije dostupne dopune. Možete postaviti rok za provjeru novih dopuna."
 
 #: .tmp/ui_scrPackage.py:137
 msgid "Updates"
-msgstr ""
+msgstr "Dopune"
 
 #: .tmp/ui_scrMenu.py:124
 msgid "You can also customize your <b>KDE menu</b> as you like. Please choose one from the following styles."
-msgstr ""
+msgstr "Također možete prilagoditi svoj <b>​​KDE izbornik</b> kako vi to želite. Molimo odaberite jedan od sljedećih stilova."
 
 #: .tmp/ui_scrMenu.py:128
 msgid "Sample"
@@ -481,44 +466,42 @@ msgstr ""
 
 #: .tmp/ui_scrStyleItem.py:70
 msgid "styleName"
-msgstr ""
+msgstr "ime stila"
 
 #: .tmp/ui_scrStyleItem.py:71
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/scrGoodbye.py:24
-#: .tmp/ui_scrGoodbye.py:325
+#: .tmp/scrGoodbye.py:24 .tmp/ui_scrGoodbye.py:325
 msgid "More"
-msgstr ""
+msgstr "Više"
 
 #: .tmp/scrGoodbye.py:25
 msgid "Congratulations!"
-msgstr ""
+msgstr "Čestitamo!"
 
 #: .tmp/ui_scrSearch.py:100
 msgid "Search"
-msgstr ""
+msgstr "Traži"
 
 #: .tmp/ui_scrSearch.py:101
 msgid "Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents."
-msgstr ""
+msgstr "Strigi pretraživanje radne površine indeksira Vaše često korištene datoteke. To Vam daje vrlo brze rezultate pretraživanja datoteka. Strigi također može tražiti datoteke na temelju njihovog sadržaja."
 
 #: .tmp/ui_scrSearch.py:102
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Dopusti da Strigi indeksira moje datoteke"
 
 #: .tmp/ui_scrSearch.py:103
 msgid "Search Options"
-msgstr ""
+msgstr "Opcije traženja"
 
 #: .tmp/scrWelcome.py:28
 #, python-format
 msgid "Welcome to %s"
 msgstr "Dobrošli u %s"
 
-#: .tmp/scrWallpaper.py:34
-#: .tmp/ui_scrWallpaper.py:131
+#: .tmp/scrWallpaper.py:34 .tmp/ui_scrWallpaper.py:131
 msgid "Wallpaper"
 msgstr ""
 
@@ -532,29 +515,27 @@ msgstr "<b>Veše postavke su primjenjene..</b>Sada možete početi uživati u Pa
 
 #: .tmp/ui_scrGoodbye.py:329
 msgid "Go to your Smolt page and rate your hardware components."
-msgstr ""
+msgstr "Idi na svoj Smolt stranicu i ocijenute vaše komponente hardware-a."
 
-#: .tmp/ui_scrGoodbye.py:330
-#: .tmp/ui_scrGoodbye.py:332
+#: .tmp/ui_scrGoodbye.py:330 .tmp/ui_scrGoodbye.py:332
 msgid "System Settings"
 msgstr "Postavke sustava"
 
 #: .tmp/ui_scrGoodbye.py:331
 msgid "Configuration tools for Pardus such as the display, firewall, keyboard, user manager..."
-msgstr ""
+msgstr "Konfiguracijski alati za Pardus, kao što su zaslon, vatrozid, tipkovnica, upravitelj korisnika ..."
 
-#: .tmp/ui_scrGoodbye.py:333
-#: .tmp/ui_scrGoodbye.py:335
+#: .tmp/ui_scrGoodbye.py:333 .tmp/ui_scrGoodbye.py:335
 msgid "Help and Support"
 msgstr "Pomoć i podršaka"
 
 #: .tmp/ui_scrGoodbye.py:334
 msgid "Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages..."
-msgstr ""
+msgstr "Pardus zajednica, mailing liste, chat sobe, Wiki dokumenati, stranice pomoći i podrške ..."
 
 #: .tmp/ui_scrMouse.py:203
 msgid "The <b>clicking behavior</b> defines how many times you want to click when you are opening a file. If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device."
-msgstr ""
+msgstr "<b>Ponašanje klika</b> definira koliko puta želite kliknuti pri otvaranju datoteke. Ako ste <b>ljevoruki,</b> možda ćete htjeti zamijeniti lijeve i desne tipke vašeg pokazivačkog uređaja."
 
 #: .tmp/ui_scrMouse.py:204
 msgid "Clicking Behaviour"
@@ -588,8 +569,7 @@ msgstr ""
 msgid "Customize Your Desktop"
 msgstr "Prilagodite vašu radnu površinu"
 
-#: .tmp/scrKeyboard.py:31
-#: .tmp/ui_scrKeyboard.py:93
+#: .tmp/scrKeyboard.py:31 .tmp/ui_scrKeyboard.py:93
 msgid "Keyboard"
 msgstr "Tipkovnica"
 
@@ -620,4 +600,3 @@ msgstr "Kaptan automatski bira najbolji raspored tipkovnice prema vašem jeziku 
 #: .tmp/ui_scrKeyboard.py:95
 msgid "Test Layout"
 msgstr "Provjera rasporeda"
-
