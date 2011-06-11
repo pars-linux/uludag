@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the package-manager package.
 # Ivica Kolić <ikoli@yahoo.com>, 2011.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
@@ -11,14 +11,13 @@ msgstr ""
 "PO-Revision-Date: 2011-06-09 20:47+0200\n"
 "Last-Translator: Ivica Kolić <ikoli@yahoo.com>\n"
 "Language-Team: Croatian <ikoli@yahoo.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Croatian\n"
 "X-Poedit-Country: CROATIA\n"
+"Language: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Language: Croatian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: data/package-manager.desktop.in.h:1
@@ -85,7 +84,7 @@ msgstr "Pisi greška"
 
 #: src/basketdialog.py:173
 msgid "You must restart your system for the updates to take effect"
-msgstr ""
+msgstr "Morate ponovno pokrenuti vaš sistem da bi dopune stupile na snagu."
 
 #: src/basketdialog.py:175 src/basketdialog.py:184
 msgid "Update Requirements"
@@ -96,9 +95,7 @@ msgid "Packages Require System Restart"
 msgstr "Paketi zahtjevaju ponovno pokretanje sustava"
 
 #: src/basketdialog.py:182
-msgid ""
-"You must restart related system services for the updated package(s) to take "
-"effect"
+msgid "You must restart related system services for the updated package(s) to take effect"
 msgstr ""
 
 #: src/basketdialog.py:185
@@ -106,12 +103,8 @@ msgid "Packages Require Service Restart"
 msgstr "Paketi zahtjevaju ponovno pokretanje servisa"
 
 #: src/basketdialog.py:196
-msgid ""
-"Selected packages are considered critical for the system. Removing them may "
-"cause your system to be unusable."
-msgstr ""
-"Odabrani paketi smatraju e kritičnima za sustav.Njihovo ukloanjanje može "
-"uzrokovati nestabilnost sustava."
+msgid "Selected packages are considered critical for the system. Removing them may cause your system to be unusable."
+msgstr "Odabrani paketi smatraju e kritičnima za sustav.Njihovo ukloanjanje može uzrokovati nestabilnost sustava."
 
 #: src/basketdialog.py:199 src/settingsdialog.py:174
 msgid "Warning"
@@ -122,12 +115,8 @@ msgid "Critical Packages"
 msgstr "Kritični paketi"
 
 #: src/basketdialog.py:211 src/pmwindow.py:144
-msgid ""
-"Selected packages are already installed.<br>If you continue, the packages "
-"will be reinstalled"
-msgstr ""
-"Odabrani paketi su već instalirani.<br>Ako nastavite,paketi će biti ponovno "
-"instalirani."
+msgid "Selected packages are already installed.<br>If you continue, the packages will be reinstalled"
+msgstr "Odabrani paketi su već instalirani.<br>Ako nastavite,paketi će biti ponovno instalirani."
 
 #: src/basketdialog.py:213 src/pmwindow.py:146
 msgid "Already Installed Packages"
@@ -268,7 +257,7 @@ msgstr ""
 
 #: src/pm-install.py:65
 msgid "Hide summary screen"
-msgstr ""
+msgstr "Sakrij zaslon sažetaka"
 
 #: src/pmutils.py:73 src/statemanager.py:243
 msgid "Network Error"
@@ -276,24 +265,20 @@ msgstr "Greška mreže"
 
 #: src/pmutils.py:74 src/statemanager.py:244
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Molim provjerite vaše mrežne veze i pokušajte ponovno."
 
 #: src/pmutils.py:76
 msgid "Authorization Error"
-msgstr ""
+msgstr "Pogreška pri autorizaciji"
 
 #: src/pmutils.py:77
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Nemate dopuštenje za ovu operaciju."
 
 #: src/pmutils.py:80
 #, python-format
-msgid ""
-"Package <b>%s</b> not found in repositories.<br>It may be upgraded or "
-"removed from the repository.<br>Please try upgrading repository informations."
-msgstr ""
-"Paket <b>%s</b> nije nađen u repozitorijima.<br>Možda je dopunjen ili "
-"uklonjen iz repozitorija.<br>Pokušajte dopuniti repozitorije."
+msgid "Package <b>%s</b> not found in repositories.<br>It may be upgraded or removed from the repository.<br>Please try upgrading repository informations."
+msgstr "Paket <b>%s</b> nije nađen u repozitorijima.<br>Možda je dopunjen ili uklonjen iz repozitorija.<br>Pokušajte dopuniti repozitorije."
 
 #: src/pmutils.py:85
 msgid "Mixing file names and package names not supported yet."
@@ -314,7 +299,7 @@ msgstr "Želite li nastaviti?"
 
 #: src/progressdialog.py:74
 msgid "<p align='right'>%1 %</p>"
-msgstr ""
+msgstr "<p poravnaj='desno'>%1 %</p>"
 
 #: src/progressdialog.py:75
 #, python-format
@@ -358,12 +343,8 @@ msgid "Not a valid repository name"
 msgstr "Nije valjano ime repozitorija"
 
 #: src/settingsdialog.py:258
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please "
-"try again.</qt>"
-msgstr ""
-"<qt>Adresa repozitorija treba završavati sa xml ili xml.bz2 ili xz sufiksom."
-"<p>Molim pokušajte ponovno.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 or xz suffix.<p>Please try again.</qt>"
+msgstr "<qt>Adresa repozitorija treba završavati sa xml ili xml.bz2 ili xz sufiksom.<p>Molim pokušajte ponovno.</qt>"
 
 #: src/statemanager.py:85 src/statemanager.py:86
 msgid "Installing Package(s)"
@@ -455,32 +436,23 @@ msgid "You have selected the following package(s) to modify:"
 msgstr "Odabrali ste slijedeći paket(e) za izmjenu:"
 
 #: src/statemanager.py:126 ui/ui_basketdialog.py:187
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Dodatne ovisnosti odabranog paketa koje će također biti instalirane:"
 
 #: src/statemanager.py:127
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr "Obrnute zavisnosti odabranog paketa koje će također će biti uklonjene:"
 
 #: src/statemanager.py:128
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Dodatne ovisnosti odabranog paketa koje će također biti nadograđene:"
 
 #: src/statemanager.py:129
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"modified:"
+msgid "Extra dependencies of the selected package(s) that are also going to be modified:"
 msgstr "Dodatne ovisnosti odabranog paketa koje će također biti izmjenjene:"
 
 #: src/statemanager.py:168
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Trenutno je <b>%1</b> odabranih paketa ukupne <b>%2</b>veličine."
 
 #: src/statemanager.py:171
@@ -496,12 +468,8 @@ msgid "in your basket."
 msgstr "u vašoj košari."
 
 #: src/statemanager.py:209
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Odabrani paketi [%1] su u međusobnom konfliktu.ovi paketi ne mogu biti "
-"instalirani zajedno."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Odabrani paketi [%1] su u međusobnom konfliktu.ovi paketi ne mogu biti instalirani zajedno."
 
 #: src/statemanager.py:210 src/statemanager.py:218
 msgid "Conflict Error"
@@ -509,17 +477,19 @@ msgstr ""
 
 #: src/statemanager.py:214
 msgid "The following packages conflicts:\n"
-msgstr ""
+msgstr "Sljedeći paketi se sukobljuju:\n"
 
 #: src/statemanager.py:216
 msgid "%1 conflicts with: [%2]\n"
-msgstr ""
+msgstr "% 1 se sukobi sa: [2%]\n"
 
 #: src/statemanager.py:217
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
+"\n"
+"Ukloni suprotstavljene pakete iz sustava?"
 
 #: src/tray.py:133 src/tray.py:208
 msgid "There are <b>%1</b> updates available!"
@@ -546,8 +516,9 @@ msgid "Application"
 msgstr "Program"
 
 #: ui/ui_appitem.py:59
+#, fuzzy
 msgid "Web Tarayıcı"
-msgstr ""
+msgstr "Web Tarayıcı"
 
 #: ui/ui_appitem.py:60
 msgid "Firefox"
@@ -619,11 +590,8 @@ msgid "Package Manager Quick Install"
 msgstr ""
 
 #: ui/ui_pminstall.py:84
-msgid ""
-"Following packages are selected to install. Do you want to install these "
-"packages ?"
-msgstr ""
-"Slijedeći paketi su izabrani za instalaciju.Želite li instalirati te pakete?"
+msgid "Following packages are selected to install. Do you want to install these packages ?"
+msgstr "Slijedeći paketi su izabrani za instalaciju.Želite li instalirati te pakete?"
 
 #: ui/ui_pminstall.py:86
 msgid "Install"
@@ -719,7 +687,7 @@ msgstr ""
 
 #: ui/ui_settingsdialog.py:413
 msgid "Maximum cache size:"
-msgstr ""
+msgstr "Maksimalna veličina predmemorije"
 
 #: ui/ui_settingsdialog.py:414
 msgid "Unlimited"
@@ -731,7 +699,7 @@ msgstr " Mib"
 
 #: ui/ui_settingsdialog.py:416
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Trenutni direktorij predmemorije"
 
 #: ui/ui_settingsdialog.py:417
 msgid "Select..."
@@ -742,14 +710,12 @@ msgid "Open"
 msgstr "Otvori"
 
 #: ui/ui_settingsdialog.py:419
-msgid ""
-"Clearing the disk cache will remove all downloaded software. This will not "
-"delete installed software or affect your system stability."
-msgstr ""
+msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
+msgstr "Čišćenje predmemorije diska će ukloniti sav preuzeti softwere. To se neće izbrisati instalirani softwere ili utjecati na stablinost vašeg sustava."
 
 #: ui/ui_settingsdialog.py:420
 msgid "C&lean disk cache now"
-msgstr ""
+msgstr "O&čisti predmemoriju diska sada"
 
 #: ui/ui_settingsdialog.py:421
 msgid "Bandwidth limit"
@@ -765,7 +731,7 @@ msgstr " kB/s"
 
 #: ui/ui_settingsdialog.py:424
 msgid "C&ache"
-msgstr ""
+msgstr "P&redmemorija"
 
 #: ui/ui_settingsdialog.py:427
 msgid "&Add New Repository"
@@ -822,18 +788,11 @@ msgstr "Lozinka:"
 
 #: ui/ui_settingsdialog.py:442
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There is proxy settings "
-"available in KDE, you can click <a href=\"#\"><span style=\" text-"
-"decoration: underline; color:#1b7bae;\">here</span></a> to get these "
-"settings</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">There is proxy settings available in KDE, you can click <a href=\"#\"><span style=\" text-decoration: underline; color:#1b7bae;\">here</span></a> to get these settings</p></body></html>"
 msgstr ""
 
 #: ui/ui_settingsdialog.py:447
@@ -861,12 +820,8 @@ msgid "Operation Summary"
 msgstr "Sažetak operacije"
 
 #: ui/ui_summarydialog.py:63
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"MOžete pokrenuti novoinstalirani program dvostrukim klikom na donju listu "
-"ili kasnije iz izbornika programa."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "MOžete pokrenuti novoinstalirani program dvostrukim klikom na donju listu ili kasnije iz izbornika programa."
 
 #: ui/ui_summarydialog.py:64
 msgid "&Ok"
