@@ -102,7 +102,7 @@ msgstr "Start"
 
 #: ui/ui_item.py:74
 msgid "Active or deactivate module."
-msgstr ""
+msgstr "Uključi ili isključi modul."
 
 #: ui/ui_item.py:75
 msgid "Edit"
