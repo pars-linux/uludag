@@ -7,7 +7,7 @@ Starting Bug Triage
 
 :Author: Semen Cirit
 
-:Version: 0.1
+:Version: 0.2
 
 Choosing Bugs
 -------------
@@ -21,16 +21,28 @@ Understanding Bugzilla
 
     * See `bug cycle`_
 
+Bug Importance
+--------------
+
+We use four types of bug importances and give each a specific meaning and time interval:
+
+- **Urgent:** `Freeze, panics`_ and crashes_ that reproducible on all type of systems and makes the whole system unusable and **security** related bugs. These bugs should fixed promptly.
+- **High:** bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). These bugs should be fixed in 1 months.
+- **Normal:** bugs that are reproducible on all type of systems and makes a part of the program unusable. These bugs are probably be fixed in 6 months.
+- **New feature:** new feature requests. These requests will probably be done for the next release.
+- **Low:** the others - a cosmetic problem, such as a misspelled word or misaligned text or an enhancement, bugs that are not reproducible on all systems. These bugs are not schduled to fix in the next 6 months. This is not the same as planning not to fix the bug; it means that we don't know when we will fix it, if at all.
+
+**Notes:**  Hardware specific bugs generally seemed as urgent, but it should be generally high. Because urgent severity is used when the entire distribution does not work, but a bug restricted to a specific hardware usually has a high severity.
+
+
 Check list for bugs have NEW status
 -----------------------------------
 
-This checklist is used for bugs which have NEW status.
+This checklist is used for bugs which have **NEW** status.
 
 #. Does the bug report mention about a real bug?
 
     * In some cases, users need some help about configuring or using software. These reports are not related with bug or feature request. These type of reports should be closed with RESOLVED/INVALID resolution, and a polite comment should be give in order to guide user to related forums or mail lists.
-    * New package request severities should be "Low"
-    * New feature request severties should be "newfeature"
 
 #. Is the bug product and component right?
 
@@ -40,7 +52,7 @@ This checklist is used for bugs which have NEW status.
 
 #. Has the bug a duplicate?
 
-    * If so, the less informed bug resolution should be set as "RESOLVED/DUPLICATE" with bug number of the most detailed report and `related stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#duplicate-bugs>`_ is gived as a comment.
+    * If so, the less informed bug resolution should be set as **RESOLVED/DUPLICATE** with bug number of the most detailed report and `related stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#duplicate-bugs>`_ is gived as a comment.
     * If it is not clear that a bug is a duplicate of another bug, please politeliy convince reporter with your comment.
     * For additional help: :ref:`finding-duplicates`.
     * Also:
@@ -60,7 +72,7 @@ This checklist is used for bugs which have NEW status.
 #. Is there enough information for developer to fix the bug?
 
     * If not,
-          * Request for more information from the reporter (please be polite). Leave the bug status as "NEW" and state "NEEDINFO" as a keyword.
+          * Request for more information from the reporter (please be polite). Leave the bug status as **NEW** and state **NEEDINFO** as a keyword.
           * Please add your own idea to the comment. This idea generally comes into mind, while trying to reproduce the bug. Additionaly you can comment according to attachments.
     * Look `Gather information from specific Bugs <http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html#gather-information-for-specific-bugs>`_ for necessary bug information:
           * Are the steps for reproduce explained clearly?
@@ -69,30 +81,22 @@ This checklist is used for bugs which have NEW status.
 
 #. Do the summary helps the bug?
 
-    * If the summary part is far away from the meaning of the bug or confusing, feel free to change it. 
+    * If the summary part is far away from the meaning of the bug or confusing, feel free to change it.
     * Please try not to change the idea of the reporter.
 
 #. Which severity should I use?
 
-    During bug triage process, it is very important to state bug severity. Most bugs assigned with severity "normal", but the severity of the bug should change related to following criterias.
-
-    * Urgent: Bugs which make the whole system unusable.
-    * High: Bugs which make the program unusable
-    * Normal: Bugs which make a part of the program unusable.
-    * Low: A cosmetic problem, such as a misspled word or missaligned text or an enhancement
-    * New Features: New feature requests.
-
-    Hardware specific bugs generally seemed as urgent, but it should be generally high. Because urgent severity is used when the entire distribution does not work, but a bug restricted to a specific hardware usually has a high severity.
+    During bug triage process, it is very important to state bug severity. Most bugs assigned with severity **Normal**, but the severity of the bug should change related to different `bug importances`_.
 
 #. Is the bug a blocker bug? (For release tracker bugs)
 
-    Only ongoing releases has tracker bugs. If a bug is a tracker bug of one of the ongoing release it should be fixed before the release time. When it did not fix, it delays the release. Therefore the bug numbers which has a power to block the release should be set to "Depends on" part of release tracker bug. 
+    Only ongoing releases has tracker bugs. If a bug is a tracker bug of one of the ongoing release it should be fixed before the release time. When it did not fix, it delays the release. Therefore the bug numbers which has a power to block the release should be set to "Depends on" part of release tracker bug.
 
 #. How to resolve bugs?
 
-    Many bugs can be fixed unintentially or by upstream. If you realised that the bug is fixed by an update, mark it "RESOLVED/FIXED".
+    Many bugs can be fixed unintentially or by upstream. If you realised that the bug is fixed by an update, mark it **RESOLVED/FIXED**.
 
-    When a bug fixed by its maintainers, the bug will be marked as "RESOLVED/FIXED" autmatically via commit messages.
+    When a bug fixed by its maintainers, the bug will be marked as **RESOLVED/FIXED** autmatically via commit messages.
 
 #. How to handle bugs in multiple releases?
 
@@ -115,9 +119,9 @@ This checklist is used for bugs which have NEW status.
 
     #. If this is a reproducible bug for the original reporter, you can try to experience the bug yourself.
 
-        - If it can be reproducible only for the release reaches its end of life, relove the bug as "RESOLVED/INVALID".
+        - If it can be reproducible only for the release reaches its end of life, relove the bug as **RESOLVED/INVALID**.
         - If the bug can be reproduced for the stable and test repository release at the same time, this is evidence that the bug is not due to a specific configuration or hardware.
-        - If the bug can be reproduced for the stable repository release but not for test repository release this is strong evidence that the bug has already been fixed. Give a bug comment that "this bug will be fixed after the package merges to stable". You can resolve the bug as "RESOLVED/FIXED"
+        - If the bug can be reproduced for the stable repository release but not for test repository release this is strong evidence that the bug has already been fixed. Give a bug comment that "this bug will be fixed after the package merges to stable". You can resolve the bug as **RESOLVED/FIXED**
         - If the bug cannot be reproduced for the stable repository release, this is strong evidence that the bug is due to something different in the environment of the reporter.
             - Make sure that the reporter system is up to date
             - Make sure that you are using exactly the same method to reproduce the bug as the reporter.
@@ -139,15 +143,15 @@ This checklist is used for bugs which have NEW status.
         * `Gnome Bugzilla <https://bugzilla.gnome.org/>`_
         * `Xfce Bugzilla <http://bugzilla.xfce.org/>`_
 
-.. Mark as triaged
-.. ----------------
+Mark as triaged
+----------------
 
-.. If you finish triage, you should add "TRIAGED" keyword, in order to avoid retriage.
+If you finish triage, you should add **TRIAGED** keyword, in order to avoid retriage.
 
 Pursuance
 ---------
 
-If you set a NEEDINFO keyword in a bug, you have to control the bug during 30 days if the reporter or other commenter give an additional information in order to reproduce the bug, you have to remove "NEEDINFO" keyword. If any user return the bug durin 30 days bug will automatically closed.
+If you set a **NEEDINFO** keyword in a bug, you have to control the bug during 30 days if the reporter or other commenter give an additional information in order to reproduce the bug, you have to remove "NEEDINFO" keyword. If any user return the bug durin 30 days bug will automatically closed.
 
 
 EOL Bug Triage
@@ -156,7 +160,7 @@ EOL Bug Triage
 For bugs filed against Pardus releases that have reached their End of Life (EOL):
 
     * If the bug appears to be occurring in a more recent (non-EOL) version, update the version number and leave the bug open,
-    * Otherwise, mark the bug CLOSED/WONTFIX and add the `EOL stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#end-of-life-eol-product>`_.
+    * Otherwise, mark the bug **CLOSED/WONTFIX** and add the `EOL stock response <http://developer.pardus.org.tr/guides/bugtracking/stock_responses.html#end-of-life-eol-product>`_.
 
 
 General Advice
@@ -172,3 +176,8 @@ General Advice
     * Use :ref:`stock-responses` as appropriate.
 
 .. _bug cycle: http://developer.pardus.org.tr/guides/bugtracking/bug_cycle.html
+.. _bug importances: http://developer.pardus.org.tr/guides/bugtracking/howto_bug_triage.html#bug-importance
+.. _Freeze, panics: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#freeze-and-panics
+.. _crashes: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
+.. _crashing: http://developer.pardus.org.tr/guides/bugtracking/bug_and_feature_requests.html?highlight=crash#crashes
+
