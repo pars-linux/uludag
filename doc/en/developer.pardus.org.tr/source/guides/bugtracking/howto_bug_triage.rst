@@ -132,7 +132,7 @@ This checklist is used for bugs which have **NEW** status.
 #. Has the bug already been reported to upstream?
 
     - Search the bug in the upstream Bugzilla or mailing list, if they exist.
-    - If you find a duplicate report, give a link to Pardus bug report and leave the bug open.
+    - If you find a report that has already reported to upstream, give **UPSTREAM** keyword and a link to Pardus bug report and leave the bug open.
 
     Upstream bug reporting systems:
 
