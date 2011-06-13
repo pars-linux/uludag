@@ -26,11 +26,25 @@ Bug Importance
 
 We use four types of bug importances and give each a specific meaning and time interval:
 
-- **Urgent:** `Freeze, panics`_ and crashes_ that reproducible on all type of systems and makes the whole system unusable and **security** related bugs. These bugs should fixed promptly.
-- **High:** bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). These bugs should be fixed in 1 months.
-- **Normal:** bugs that are reproducible on all type of systems and makes a part of the program unusable. These bugs are probably be fixed in 6 months.
-- **New feature:** new feature requests. These requests will probably be done for the next release.
-- **Low:** the others - a cosmetic problem, such as a misspelled word or misaligned text or an enhancement, bugs that are not reproducible on all systems. These bugs are not schduled to fix in the next 6 months. This is not the same as planning not to fix the bug; it means that we don't know when we will fix it, if at all.
+Urgent:
+^^^^^^^
+`Freeze, panics`_ and crashes_ that reproducible on all type of systems and makes the whole system unusable and **security** related bugs. These bugs should fixed promptly.
+
+High:
+^^^^^
+Bugs that are reproducible on all type of systems and makes the program unusable (packages which are totally unusable and have missing dependency, like being uninstallable or crashing_ on startup, bugs cause that cause loss of user data). These bugs should be fixed in 1 months.
+
+Normal:
+^^^^^^^
+Bugs that are reproducible on all type of systems and makes a part of the program unusable. These bugs are probably be fixed in 6 months.
+
+New feature:
+^^^^^^^^^^^^
+New feature requests. These requests will probably be done for the next release.
+
+Low:
+^^^^
+The others - a cosmetic problem, such as a misspelled word or misaligned text or an enhancement, bugs that are not reproducible on all systems. These bugs are not schduled to fix in the next 6 months. This is not the same as planning not to fix the bug; it means that we don't know when we will fix it, if at all.
 
 **Notes:**  Hardware specific bugs generally seemed as urgent, but it should be generally high. Because urgent severity is used when the entire distribution does not work, but a bug restricted to a specific hardware usually has a high severity.
 
