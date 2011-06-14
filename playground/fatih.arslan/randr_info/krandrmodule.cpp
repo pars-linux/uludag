@@ -22,7 +22,6 @@
 #include <QTextStream>
 #include <QSizePolicy>
 #include <QBrush>
-#include <QFile>
 #include "legacyrandrscreen.h"
 #include "randrdisplay.h"
 #include "randrconfig.h"
@@ -42,6 +41,7 @@
 #include <KIcon>
 #include <KProcess>
 #include <KMessageBox>
+#include <KStandardDirs>
 #include <KColorScheme>
 #include <kdesktopfileactions.h>
 #include <config-randr.h>
@@ -127,16 +127,20 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     bool ati = false;
 
     // The user might remove these applications. Check for them too
-    bool nvidia_file = QFile::exists("/usr/share/applications/nvidia-settings.desktop");
-    bool ati_file = QFile::exists("/usr/share/applications/amdccclesu.desktop");
+    // bool nvidia_file = QFile::exists("/usr/share/applications/nvidia-settings.desktop");
+    // bool ati_file = QFile::exists("/usr/share/applications/amdccclesu.desktop");
 
-    if (vendorText.startsWith("NVIDIA") && nvidia_file){
+    // The user might remove these applications. Check for them too
+    bool nvidia_file = KStandardDirs::findExe("nvidia-settings").isNull();
+    bool ati_file = KStandardDirs::findExe("amdcccle").isNull();
+
+    if (vendorText.startsWith("NVIDIA") && !nvidia_file){
         nvidia = true;
         startButton->setText("Start Nvidia Settings");
         startButton->setIcon(KIcon("nvidia-settings"));
         showStartButton = true;
     }
-    else if (vendorText.startsWith("ATI") && ati_file){
+    else if (vendorText.startsWith("ATI") && !ati_file){
         ati = true;
         startButton->setText("Start Ati Control Center");
         startButton->setIcon(KIcon("amdcccle"));
