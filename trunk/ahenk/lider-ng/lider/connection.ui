@@ -28,13 +28,6 @@
    </property>
    <item row="0" column="1">
     <layout class="QGridLayout" name="gridLayout">
-     <item row="0" column="1">
-      <widget class="QComboBox" name="comboDomain">
-       <property name="editable">
-        <bool>true</bool>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
@@ -76,6 +69,9 @@
        </property>
       </widget>
      </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="editDomain"/>
+     </item>
     </layout>
    </item>
    <item row="2" column="1">
@@ -111,6 +107,10 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>editDomain</tabstop>
+  <tabstop>editHost</tabstop>
+  <tabstop>editUser</tabstop>
+  <tabstop>editPassword</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>
  <resources>
