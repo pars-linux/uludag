@@ -15,6 +15,9 @@ from PyQt4 import QtCore
 # Generated UI module
 from lider.ui_connection import Ui_dialogConnection
 
+# Helpers
+from lider.utils import Profile
+
 
 class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
     """
@@ -40,17 +43,33 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         self.setupUi(self)
 
         # UI events
+        self.connect(self.editDomain, QtCore.SIGNAL("editingFinished()"), self.__slot_find_host)
         self.connect(self.editHost, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
         self.connect(self.editUser, QtCore.SIGNAL("editingFinished()"), self.__check_fields)
+
+        # Load last used settings
+        self.__get_profiles()
+
+    def __get_profiles(self):
+        """
+            Gets connection profiles.
+        """
+        last_profile = Profile()
+
+        if last_profile.is_set():
+            self.editDomain.setText(last_profile.get_domain())
+            self.editHost.setText(last_profile.get_address())
+            self.editUser.setText(last_profile.get_username())
+            self.editPassword.setFocus()
 
     def __slot_find_host(self):
         """
             When user finishes editing "domain" field, tries to fill
             host field if possible.
         """
-        if len(self.comboDomain.currentText()) and not self.editHost.isModified():
+        if len(self.editDomain.text()) and not self.editHost.isModified():
             try:
-                host = socket.gethostbyname(str(self.comboDomain.currentText()))
+                host = socket.gethostbyname(str(self.editDomain.text()))
             except socket.error:
                 return
             self.editHost.setText(host)
@@ -65,7 +84,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         """
             Returns domain name.
         """
-        return str(self.comboDomain.currentText())
+        return str(self.editDomain.text())
 
     def get_user(self):
         """
@@ -89,7 +108,7 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         """
             Sets domain name.
         """
-        self.comboDomain.setEditText(domain)
+        self.editDomain.setText(domain)
 
     def set_user(self, user):
         """
@@ -109,11 +128,10 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
 
             Returns: True if valid, else False
         """
-        # if self.editDomain.isModified() and not len(self.editDomain.text()):
-        if not len(self.comboDomain.currentText()):
+        if self.editDomain.isModified() and not len(self.editDomain.text()):
             self.labelWarning.setText("Domain name is required.")
             if set_focus:
-                self.comboDomain.setFocus(QtCore.Qt.OtherFocusReason)
+                self.editDomain.setFocus(QtCore.Qt.OtherFocusReason)
             return False
         if self.editHost.isModified() and not len(self.editHost.text()):
             self.labelWarning.setText("Server address is required.")
@@ -129,5 +147,8 @@ class DialogConnection(QtGui.QDialog, Ui_dialogConnection):
         return True
 
     def accept(self):
+        new_profile = Profile(self.editDomain.text(), self.editHost.text(), self.editUser.text())
+        new_profile.save()
+
         if self.__check_fields(set_focus=True):
             QtGui.QDialog.accept(self)
