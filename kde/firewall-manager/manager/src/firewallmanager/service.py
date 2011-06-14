@@ -33,12 +33,12 @@ class ServiceWidget(QtGui.QWidget, Ui_ServiceWidget):
         self.state = state
         if state:
             self.labelStatus.setText(i18n("Firewall is activated."))
-            self.labelIcon.setPixmap(KIcon("document-encrypt").pixmap(48, 48))
+            self.labelIcon.setPixmap(KIcon("network-idle").pixmap(48, 48))
             self.pushToggle.setIcon(KIcon("media-playback-stop"))
             self.pushToggle.setText(i18n("Stop"))
         else:
             self.labelStatus.setText(i18n("Firewall is deactivated."))
-            self.labelIcon.setPixmap(KIcon("document-decrypt").pixmap(48, 48))
+            self.labelIcon.setPixmap(KIcon("network-error").pixmap(48, 48))
             self.pushToggle.setIcon(KIcon("media-playback-start"))
             self.pushToggle.setText(i18n("Start"))
 
