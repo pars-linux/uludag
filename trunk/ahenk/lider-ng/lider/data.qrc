@@ -1,5 +1,20 @@
 <RCC>
   <qresource prefix="/">
+    <file>icons/edit-delete-black.png</file>
+    <file>icons/radiobutton_checked.png</file>
+    <file>icons/radiobutton_checked_hover.png</file>
+    <file>icons/radiobutton_unchecked.png</file>
+    <file>icons/radiobutton_unchecked_hover.png</file>
+    <file>icons/application-x-mswinurl.png</file>
+    <file>icons/applications-internet.png</file>
+    <file>icons/arrow-left.png</file>
+    <file>icons/arrow-right.png</file>
+    <file>icons/tick.png</file>
+    <file>icons/view-pim-contacts.png</file>
+    <file>icons/white-arrow-down.gif</file>
+    <file>icons/menu-arrow-right.png</file>
+    <file>icons/menu-arrow-left.png</file>
+    <file>icons/list-add.png</file>
     <file>icons/ok32.png</file>
     <file>icons/star32.png</file>
     <file>icons/apply32.png</file>
