@@ -21,6 +21,7 @@ from directory import Connection, Node
 
 # Helpers
 import lider.wrappers as wrappers
+from lider.utils import load_plugins
 from lider import talk
 
 
@@ -68,6 +69,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                     break
                 except:
                     pass
+
+        # Plugins
+        self.plugins = {}
 
         # XMPP backend
         self.xmpp_online = []
@@ -244,10 +248,10 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         """
         # Populate plugins
         self.tabPolicy.clear()
-        from lider.utils import load_plugins
         for name, widget_class in load_plugins().iteritems():
             widget = widget_class(self.tabPolicy)
             self.tabPolicy.addTab(widget, widget.windowTitle())
+            self.plugins[name] = widget
 
     def populateNetwork(self):
         """
@@ -470,3 +474,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                     self.radioExtend.setChecked(True)
                 else:
                     self.radioFollow.setChecked(True)
+                # Pass policies to plugins
+                for name in self.plugins:
+                    widget = self.plugins[name]
+                    widget.load_policy(attributes)
