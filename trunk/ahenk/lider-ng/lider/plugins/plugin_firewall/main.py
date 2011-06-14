@@ -30,6 +30,7 @@ class ThreadFW(QtCore.QThread):
         QtCore.QThread.__init__(self)
 
         self.status = None
+        self.out = ""
         self.error = ""
 
         if group_name:
@@ -50,7 +51,7 @@ class ThreadFW(QtCore.QThread):
         fp.write(self.rules_xml)
         fp.close()
 
-        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE)
+        process = subprocess.Popen(["/usr/bin/fwbuilder", "-d", name], stderr=subprocess.PIPE, stdout=subprocess.PIPE)
         while True:
             if "delayedQuit" in process.stderr.readline():
                 os.kill(process.pid, signal.SIGINT)
@@ -66,6 +67,7 @@ class ThreadFW(QtCore.QThread):
             return
 
         self.status = True
+        self.out = process.stdout.read()
 
         data = file(name + ".sh").read()
 
@@ -74,13 +76,26 @@ class ThreadFW(QtCore.QThread):
 
         # Add NAT log rules
         data = re.sub('    echo \"Rule ([0-9]+) \(NAT\)\"\n    # \n    \$IPTABLES \-t nat (.*) \-j DNAT (.*)',
-                      '    echo "Rule \\1 (NAT)"\n    # \n    $IPTABLES -t nat \\2 -j DNAT \\3\n    $IPTABLES -t nat \\2 -j LOG  --log-level info --log-prefix "RULE \\1 -- TRANSLATE " \\3',
+                      '    echo "Rule \\1 (NAT)"\n    # \n    $IPTABLES -t nat \\2 -j DNAT \\3\n    $IPTABLES -t nat \\2 -j ULOG --ulog-nlgroup 1 --ulog-prefix "RULE \\1 -- TRANSLATE " --ulog-qthreshold 1 \\3',
                       data,
                       re.MULTILINE)
 
         # Add log prefixes
         data = re.sub('RULE_', '%s_RULE_' % self.group_name, data)
         data = re.sub('"RULE ', '"%s RULE ' % self.group_name, data)
+
+        # Add log rules for established and related connections
+        data = re.sub('    \$IPTABLES \-A INPUT   \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT ',
+                      '    $IPTABLES -A INPUT   -m state --state ESTABLISHED,RELATED -m limit --limit 1/minute -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A INPUT   -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
+
+        data = re.sub('    \$IPTABLES \-A OUTPUT  \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT ',
+                      '    $IPTABLES -A OUTPUT  -m state --state ESTABLISHED,RELATED -m limit --limit 1/minute -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A OUTPUT  -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
+
+        data = re.sub('    \$IPTABLES \-A FORWARD \-m state \-\-state ESTABLISHED,RELATED \-j ACCEPT',
+                      '    $IPTABLES -A FORWARD -m state --state ESTABLISHED,RELATED -m limit --limit 1/minute -j ULOG --ulog-nlgroup 1 --ulog-prefix "ESTABLISHED or RELATED" --ulog-qthreshold 1\n    $IPTABLES -A FORWARD -m state --state ESTABLISHED,RELATED -j ACCEPT ',
+                      data)
 
         self.rules_compiled = data
 
@@ -115,14 +130,14 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall):
         self.connect(self.pushReset, QtCore.SIGNAL("clicked()"), self.__slot_reset)
 
     def load_policy(self, policy):
-        firewallState = policy.get("firewallState", ["off"])[0]
+        firewallState = policy.get("firewallstate", ["off"])[0]
         if firewallState == "on":
             self.radioEnable.setChecked(True)
         else:
             self.radioDisable.setChecked(True)
         self.__slot_status()
 
-        firewallRules = policy.get("firewallRules", [""])[0]
+        firewallRules = policy.get("firewallsules", [""])[0]
 
         rules_xml = ""
         rules_compiled = ""
@@ -166,7 +181,7 @@ class WidgetModule(QtGui.QWidget, Ui_widgetFirewall):
             self.rules_xml = self.thread.rules_xml
             self.rules_compiled = self.thread.rules_compiled
             if self.thread.status:
-                self.plainTextEdit.setPlainText("")
+                self.plainTextEdit.setPlainText(self.thread.out)
             else:
                 self.plainTextEdit.setPlainText(self.thread.error)
         self.pushEdit.setEnabled(True)
