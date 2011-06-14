@@ -127,20 +127,16 @@ KRandRModule::KRandRModule(QWidget *parent, const QVariantList&)
     bool ati = false;
 
     // The user might remove these applications. Check for them too
-    // bool nvidia_file = QFile::exists("/usr/share/applications/nvidia-settings.desktop");
-    // bool ati_file = QFile::exists("/usr/share/applications/amdccclesu.desktop");
+    bool nvidia_file = !KStandardDirs::findExe("nvidia-settings").isNull();
+    bool ati_file = !KStandardDirs::findExe("amdcccle").isNull();
 
-    // The user might remove these applications. Check for them too
-    bool nvidia_file = KStandardDirs::findExe("nvidia-settings").isNull();
-    bool ati_file = KStandardDirs::findExe("amdcccle").isNull();
-
-    if (vendorText.startsWith("NVIDIA") && !nvidia_file){
+    if (vendorText.startsWith("NVIDIA") && nvidia_file){
         nvidia = true;
         startButton->setText("Start Nvidia Settings");
         startButton->setIcon(KIcon("nvidia-settings"));
         showStartButton = true;
     }
-    else if (vendorText.startsWith("ATI") && !ati_file){
+    else if (vendorText.startsWith("ATI") && ati_file){
         ati = true;
         startButton->setText("Start Ati Control Center");
         startButton->setIcon(KIcon("amdcccle"));
