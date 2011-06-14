@@ -15,14 +15,19 @@
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-# PyKDE
-from PyKDE4.kdeui import KIcon
+# Pds vs Kde Stuff
+import context as ctx
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KIcon
+else:
+    from firewallmanager.context import KIcon
 
 # UI
 from firewallmanager.ui_item import Ui_ItemWidget
 
-
 class ItemListWidgetItem(QtGui.QListWidgetItem):
+
     def __init__(self, parent, widget):
         QtGui.QListWidgetItem.__init__(self, parent)
         self.widget = widget
@@ -34,8 +39,8 @@ class ItemListWidgetItem(QtGui.QListWidgetItem):
     def getType(self):
         return self.widget.getType()
 
-
 class ItemWidget(QtGui.QWidget, Ui_ItemWidget):
+
     def __init__(self, parent, id_, title="", description="", type_=None, icon=None, state=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)

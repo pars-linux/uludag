@@ -19,7 +19,7 @@ msgstr ""
 
 #: data/firewall-manager.desktop.in.h:1
 msgid "An application for managing firewall."
-msgstr ""
+msgstr "Et program til styring firewall"
 
 #: data/firewall-manager.desktop.in.h:2
 #: data/kcm_firewall-manager.desktop.in.h:1
@@ -27,9 +27,8 @@ msgid "Firewall Manager"
 msgstr "Håndtering af firewall"
 
 #: src/firewallmanager/about.py:26
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:34
 msgid "Current Maintainer"
@@ -37,7 +36,7 @@ msgstr "Nuværende vedligeholder"
 
 #: src/firewallmanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gokmen Goksel"
 
 #: src/firewallmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -56,6 +55,10 @@ msgstr ""
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr ""
+
+#: src/firewallmanager/main.py:94
+msgid "Error"
+msgstr "Fejl"
 
 #: src/firewallmanager/main.py:96
 msgid ""
@@ -81,6 +84,14 @@ msgstr "Adgang nægtet."
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Indstillinger"
+
+#: src/firewallmanager/pagedialog.py:67
+msgid "Ok"
+msgstr "Ok"
+
+#: src/firewallmanager/pagedialog.py:71
+msgid "Cancel"
+msgstr "annullere"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -113,3 +124,19 @@ msgstr "Slet"
 #: ui/ui_main.py:82
 msgid "Add New"
 msgstr "Tilføj ny"
+
+#: ui/ui_settingsitem.py:78
+msgid "Add"
+msgstr "Tilføj"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Down"
+msgstr "Flyt ned"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Up"
+msgstr "Flyt op"
+
+#: ui/ui_settingsitem.py:78
+msgid "Remove"
+msgstr "Fjern"

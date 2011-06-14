@@ -55,7 +55,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="KComboBox" name="comboFilter"/>
+         <widget class="QComboBox" name="comboFilter"/>
         </item>
        </layout>
       </item>
@@ -97,8 +97,8 @@
           <rect>
            <x>0</x>
            <y>0</y>
-           <width>528</width>
-           <height>192</height>
+           <width>526</width>
+           <height>189</height>
           </rect>
          </property>
          <layout class="QGridLayout" name="gridLayout">
@@ -121,15 +121,7 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
-  </customwidget>
- </customwidgets>
  <tabstops>
-  <tabstop>comboFilter</tabstop>
   <tabstop>listItems</tabstop>
   <tabstop>buttonBox</tabstop>
  </tabstops>

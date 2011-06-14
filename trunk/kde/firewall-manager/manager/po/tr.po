@@ -59,6 +59,10 @@ msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Bahadır Kandemir, Necmettin Begiter"
 
+#: src/firewallmanager/main.py:94
+msgid "Error"
+msgstr "Hata"
+
 #: src/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
@@ -83,6 +87,14 @@ msgstr "Erişim reddedildi."
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Ayarlar"
+
+#: src/firewallmanager/pagedialog.py:67
+msgid "Ok"
+msgstr "Tamam"
+
+#: src/firewallmanager/pagedialog.py:71
+msgid "Cancel"
+msgstr "İptal"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -115,6 +127,22 @@ msgstr "Sil"
 #: ui/ui_main.py:82
 msgid "Add New"
 msgstr "Yeni Ekle"
+
+#: ui/ui_settingsitem.py:78
+msgid "Add"
+msgstr "Ekle"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Down"
+msgstr "Asağı Taşı"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#: ui/ui_settingsitem.py:78
+msgid "Remove"
+msgstr "Sil"
 
 #~ msgid " "
 #~ msgstr " "

@@ -15,10 +15,6 @@
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-# PyKDE
-from PyKDE4 import kdeui
-from PyKDE4 import kdecore
-
 # UI
 from firewallmanager.ui_main import Ui_MainWidget
 
@@ -37,6 +33,13 @@ from firewallmanager.service import ServiceWidget
 # Page Dialog
 from firewallmanager.pagedialog import PageDialog
 
+# Context
+import context as ctx
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KIcon
+else:
+    from firewallmanager.context import KIcon
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent, embed=False):
@@ -93,7 +96,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Check if there are packages that provide required backend.
         """
         if not len(self.iface.getPackages()):
-            kdeui.KMessageBox.error(self, kdecore.i18n("There are no packages that provide backend for this application.\nPlease make sure that packages are installed and configured correctly."))
+            ctx.createMessage(self,"Error","There are no packages that provide backend for this application.\nPlease make sure that packages are installed and configured correctly.")
             return False
         return True
 
@@ -149,7 +152,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         type_ = ""
 
         # Build widget and widget item
-        widget = self.makeItemWidget(id_, name, description, type_, kdeui.KIcon(icon), state)
+        widget = self.makeItemWidget(id_, name, description, type_, KIcon(icon), state)
         widgetItem = ItemListWidgetItem(self.listItems, widget)
 
         # Rules are static
@@ -197,7 +200,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             Builds item filter.
         """
         self.comboFilter.clear()
-        self.comboFilter.addItem(kdecore.i18n("All"), QtCore.QVariant("all"))
+        self.comboFilter.addItem(i18n("All"), QtCore.QVariant("all"))
 
     def buildMenu(self):
         """
@@ -208,7 +211,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.pushNew.setMenu(menu)
 
         # New item
-        action = QtGui.QAction(kdecore.i18n("Action"), self)
+        action = QtGui.QAction(i18n("Action"), self)
         action.setData(QtCore.QVariant("action"))
         menu.addAction(action)
 
@@ -254,9 +257,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.iface.setModuleState(widget.getId(), state == QtCore.Qt.Checked)
         except Exception, e:
             if "Comar.PolicyKit" in e._dbus_error_name:
-                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                ctx.createMessage(self,"Error","Access denied.")
             else:
-                kdeui.KMessageBox.error(self, unicode(e))
+                ctx.createMessage(self,"Error", unicode(e))
             self.buildItemList()
 
     def slotItemEdit(self):
@@ -277,9 +280,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.setModuleParameters(widget.getId(), dialog.getValues())
             except Exception, e:
                 if "Comar.PolicyKit" in e._dbus_error_name:
-                    kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                    ctx.createMessage(self,"Error","Access denied.")
                 else:
-                    kdeui.KMessageBox.error(self, unicode(e))
+                    ctx.createMessage(self,"Error", unicode(e))
 
     def slotItemDelete(self):
         """
@@ -314,9 +317,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.iface.setState(state)
         except Exception, e:
             if "Comar.PolicyKit" in e._dbus_error_name:
-                kdeui.KMessageBox.error(self, kdecore.i18n("Access denied."))
+                ctx.createMessage(self,"Error", "Access denied.")
             else:
-                kdeui.KMessageBox.error(self, unicode(e))
+                ctx.createMessage(self,"Error", unicode(e))
         self.widgetService.setEnabled(True)
 
     def slotAnimate(self, frame):
