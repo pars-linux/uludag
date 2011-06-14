@@ -26,6 +26,12 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 
 PROJECT = about.appName
+FOR_KDE_4= False
+
+if 'kde4' in sys.argv:
+    sys.argv.remove('kde4')
+    FOR_KDE_4= True
+    print 'UI files will be created for KDE 4.. '
 
 def makeDirs(directory):
     if not os.path.exists(directory):
@@ -48,7 +54,12 @@ def update_messages():
     # Collect UI files
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+    # Kde4 UI files
+        if FOR_KDE_4:
+            os.system("pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+    # Qt UI files
+        else:
+            os.system("pyuic4 -o ui/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
 
     # Collect headers for desktop files
     for filename in glob.glob("data/*.desktop.in"):
@@ -65,12 +76,7 @@ def update_messages():
                         --keyword=N_ \
                         --keyword=i18n \
                         --keyword=ki18n \
-                        --kde \
-                        -ci18n -ki18n:1 -ki18nc:1c,2 -ki18np:1,2 -ki18ncp:1c,2,3 -ktr2i18n:1 \
-                        -kI18N_NOOP:1 -kI18N_NOOP2:1c,2 -kaliasLocale -kki18n:1 -kki18nc:1c,2 \
-                        -kki18np:1,2 -kki18ncp:1c,2,3 \
-                        --files-from=%s \
-                        -o po/%s.pot" % (PROJECT, files, PROJECT))
+                        -o po/%s.pot" % (PROJECT, files))
 
     # Update PO files
     for item in glob.glob1("po", "*.po"):
@@ -105,15 +111,24 @@ class Build(build):
 
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("pykde4uic -o build/firewallmanager/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+
+            if FOR_KDE_4:
+            # Kde4 UI Files
+                os.system("pykde4uic -o build/firewallmanager/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+
+            else:
+            # Qt UI Files
+                os.system("pyuic4 -o build/firewallmanager/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
 
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
             os.system("pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
 class Install(install):
+
     def run(self):
         install.run(self)
+
         def rst2doc(lang):
             if os.path.exists(os.path.join('help', lang)):
                 for doc in ('main_help', 'preferences_help'):
@@ -128,9 +143,12 @@ class Install(install):
             bin_dir = "/usr/bin"
 
         locale_dir = os.path.join(root_dir, "locale")
-        apps_dir = os.path.join(root_dir, "applications/kde4")
-        services_dir = os.path.join(root_dir, "kde4/services")
-        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+        apps_dir = os.path.join(root_dir, "applications")
+
+        if FOR_KDE_4:
+            services_dir = os.path.join(root_dir, "kde4/services")
+
+        project_dir = os.path.join(root_dir, PROJECT)
 
         # Make directories
         print "Making directories..."
@@ -138,13 +156,18 @@ class Install(install):
         makeDirs(locale_dir)
         makeDirs(apps_dir)
         makeDirs(project_dir)
-        makeDirs(services_dir)
+
+        if FOR_KDE_4:
+            makeDirs(services_dir) 
 
         # Install desktop files
-        print "Installing desktop files..."
 
-        shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
-        shutil.copy("data/kcm_%s.desktop" % PROJECT, services_dir)
+        print "Installing desktop files..."
+        if FOR_KDE_4:
+            shutil.copy("data/kcm_%s.desktop" % PROJECT, apps_dir)
+
+        else:
+            shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
         shutil.rmtree('build/data')
 
         # Install codes
@@ -160,13 +183,10 @@ class Install(install):
             makeDirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
         rst2doc('en')
+
         if os.path.exists("help"):
             print "Installing help files..."
             os.system("cp -R help %s/" % project_dir)
-
-        # Rename
-        # print "Renaming application.py..."
-        # shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
 
         # Modes
         print "Changing file modes..."
@@ -192,14 +212,24 @@ class Uninstall(Command):
         bin_dir = "/usr/bin"
 
         locale_dir = os.path.join(root_dir, "locale")
-        apps_dir = os.path.join(root_dir, "applications/kde4")
-        services_dir = os.path.join(root_dir, "kde4/services")
-        project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+
+        if FOR_KDE_4:
+            apps_dir = os.path.join(root_dir, "applications/kde4")
+            services_dir = os.path.join(root_dir, "kde4/services")
+            project_dir = os.path.join(root_dir, "kde4/apps", PROJECT)
+        else:
+            apps_dir = os.path.join(root_dir, "applications")
+            project_dir = os.path.join(root_dir, PROJECT)
 
         print 'Uninstalling ...'
         remove(project_dir)
         remove(apps_dir +"/%s.desktop" % PROJECT)
-        remove(services_dir +"/kcm_%s.desktop" % PROJECT)
+
+        if os.path.exists(os.path.join(bin_dir, PROJECT)):
+            os.unlink(os.path.join(bin_dir, PROJECT))
+
+        if FOR_KDE_4:
+            remove(services_dir +"/kcm_%s.desktop" % PROJECT)
         for filename in glob.glob1('po', '*.po'):
             lang = filename.rsplit(".", 1)[0]
             remove(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))

@@ -36,7 +36,7 @@ msgstr "Тренутни одржавалац"
 
 #: src/firewallmanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Гокмен Гоксел"
 
 #: src/firewallmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -44,7 +44,7 @@ msgstr "Бахадир Кандемир"
 
 #: src/firewallmanager/about.py:35
 msgid "First Developer"
-msgstr ""
+msgstr "Први Програмер"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
@@ -55,6 +55,10 @@ msgstr "Kurucity@aim.com"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Јожеф Куруцић"
+
+#: src/firewallmanager/main.py:94
+msgid "Error"
+msgstr "Грешка"
 
 #: src/firewallmanager/main.py:96
 msgid ""
@@ -80,6 +84,14 @@ msgstr "Приступ забрањен."
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Подешавања"
+
+#: src/firewallmanager/pagedialog.py:67
+msgid "Ok"
+msgstr "у реду"
+
+#: src/firewallmanager/pagedialog.py:71
+msgid "Cancel"
+msgstr "отказати"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -112,3 +124,19 @@ msgstr "Избриши"
 #: ui/ui_main.py:82
 msgid "Add New"
 msgstr "Додај нови"
+
+#: ui/ui_settingsitem.py:78
+msgid "Add"
+msgstr "Додај"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Down"
+msgstr "Премести надоле"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Up"
+msgstr "Напредовати"
+
+#: ui/ui_settingsitem.py:78
+msgid "Remove"
+msgstr "Уклони"

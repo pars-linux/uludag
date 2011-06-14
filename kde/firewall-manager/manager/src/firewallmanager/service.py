@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2011 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,19 +11,16 @@
 # Please read the COPYING file.
 #
 
-# PyQt
+# PyQt Stuff
 from PyQt4 import QtCore
 from PyQt4 import QtGui
-
-# PyKDE
-from PyKDE4 import kdeui
-from PyKDE4 import kdecore
+from context import i18n, KIcon
 
 # UI
 from firewallmanager.ui_service import Ui_ServiceWidget
 
-
 class ServiceWidget(QtGui.QWidget, Ui_ServiceWidget):
+
     def __init__(self, parent):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
@@ -35,18 +32,19 @@ class ServiceWidget(QtGui.QWidget, Ui_ServiceWidget):
     def setState(self, state):
         self.state = state
         if state:
-            self.labelStatus.setText(kdecore.i18n("Firewall is activated."))
-            self.labelIcon.setPixmap(kdeui.KIcon("document-encrypt").pixmap(48, 48))
-            self.pushToggle.setIcon(kdeui.KIcon("media-playback-stop"))
-            self.pushToggle.setText(kdecore.i18n("Stop"))
+            self.labelStatus.setText(i18n("Firewall is activated."))
+            self.labelIcon.setPixmap(KIcon("document-encrypt").pixmap(48, 48))
+            self.pushToggle.setIcon(KIcon("media-playback-stop"))
+            self.pushToggle.setText(i18n("Stop"))
         else:
-            self.labelStatus.setText(kdecore.i18n("Firewall is deactivated."))
-            self.labelIcon.setPixmap(kdeui.KIcon("document-decrypt").pixmap(48, 48))
-            self.pushToggle.setIcon(kdeui.KIcon("media-playback-start"))
-            self.pushToggle.setText(kdecore.i18n("Start"))
+            self.labelStatus.setText(i18n("Firewall is deactivated."))
+            self.labelIcon.setPixmap(KIcon("document-decrypt").pixmap(48, 48))
+            self.pushToggle.setIcon(KIcon("media-playback-start"))
+            self.pushToggle.setText(i18n("Start"))
 
     def getState(self):
         return self.state
 
     def setEnabled(self, enabled):
         self.pushToggle.setEnabled(enabled)
+

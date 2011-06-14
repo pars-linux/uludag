@@ -35,7 +35,7 @@ msgstr "Güncəl Baxıcı"
 
 #: src/firewallmanager/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: src/firewallmanager/about.py:35
 msgid "Bahadır Kandemir"
@@ -43,7 +43,7 @@ msgstr "Bahadır Kandemir"
 
 #: src/firewallmanager/about.py:35
 msgid "First Developer"
-msgstr ""
+msgstr "Ilk geliştirici"
 
 #: src/firewallmanager/about.py:36
 msgctxt "EMAIL OF TRANSLATORS"
@@ -54,6 +54,10 @@ msgstr "barish.kutsal@gmail.com"
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Barış Kutsal"
+
+#: src/firewallmanager/main.py:94
+msgid "Error"
+msgstr "Xata"
 
 #: src/firewallmanager/main.py:96
 msgid ""
@@ -79,6 +83,14 @@ msgstr "Qadağan olunmuş keçid"
 #: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Ayarlar"
+
+#: src/firewallmanager/pagedialog.py:67
+msgid "Ok"
+msgstr "Əvət"
+
+#: src/firewallmanager/pagedialog.py:71
+msgid "Cancel"
+msgstr "ləğv etmək"
 
 #: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
@@ -111,3 +123,19 @@ msgstr "Sil"
 #: ui/ui_main.py:82
 msgid "Add New"
 msgstr "Yenini əlavə et"
+
+#: ui/ui_settingsitem.py:78
+msgid "Add"
+msgstr "Əlavə et"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Down"
+msgstr "Aşağı Daşı"
+
+#: ui/ui_settingsitem.py:78
+msgid "Move Up"
+msgstr "Yuxarı Daşı"
+
+#: ui/ui_settingsitem.py:78
+msgid "Remove"
+msgstr "Sil"
