@@ -162,6 +162,10 @@ Yukarıdaki komutları çalıştırın, xmlto paketinin sorunsuz bir şekilde ç
  koffice-kdchart
  koffice-libs
  koffice-data
+ kexi-plugin-kspread
+ kexi-plugin-mysql
+ kexi-plugin-postgresql
+ okular-odpgenerator
 \end{verbatim}
 \item koffice-kexi kurulumu sonrası:
 
@@ -259,6 +263,8 @@ koffice-l10n-tr
 koffice-l10n-uk
 koffice-l10n-zh_CN
 koffice-l10n-zh_TW
+koffice-l10n-hu
+koffice-l10n-ru
 \end{verbatim}
 
 \section{Misc alt bileşeni}
@@ -275,6 +281,13 @@ koffice-l10n-zh_TW
  kmymoney-docs
  goffice
  goffice-devel
+\end{verbatim}
+\item pstoedit paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve daha sonra altta bulunan komutu çalıştırın, sorunsuz bir şekilde pdf dönüşümünün yapıldığını gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+pstoedit -f gs:pdfwrite test_oodraw.ps test_oodraw.pdf 
 \end{verbatim}
 
 \item kchmviewer paketi kurulumu sonrası:
