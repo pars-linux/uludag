@@ -282,7 +282,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
             widget.setIcon(0, icon)
 
-            widget.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            if node.is_folder():
+                widget.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
 
             if self.multiple:
                 widget.setCheckState(0, False)
