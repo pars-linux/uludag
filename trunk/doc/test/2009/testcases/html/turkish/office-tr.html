@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea office-tr.tex office-tr -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/office-tr.tex office-tr -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Ofis Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Dictionary alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Dictionary alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -121,6 +121,10 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"
  koffice-kdchart
  koffice-libs
  koffice-data
+ kexi-plugin-kspread
+ kexi-plugin-mysql
+ kexi-plugin-postgresql
+ okular-odpgenerator
 </PRE></LI><LI CLASS="li-enumerate">koffice-kexi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve uygulamanın sorunsuz açıldığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">koffice-kformula kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve uygulamanın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">koffice-core kurulumu sonrası.<UL CLASS="itemize"><LI CLASS="li-itemize">
 koffice-kthesaurus uygulamasının, Kmenü → uygulamalar → ofis → daha fazla uygulama yolunu izleyerek sorunsuz bir şekilde açıldığını ve ilgili kelimenin ilişkili olduğu diğer kelime gruplarını bulabildiğini gözlemleyin.</LI><LI CLASS="li-itemize">koconverter uygulaması:
@@ -153,6 +157,8 @@ koffice-l10n-tr
 koffice-l10n-uk
 koffice-l10n-zh_CN
 koffice-l10n-zh_TW
+koffice-l10n-hu
+koffice-l10n-ru
 </PRE><!--TOC section Misc alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Misc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim"> enca
  aqbanking
@@ -162,6 +168,9 @@ koffice-l10n-zh_TW
  kmymoney-docs
  goffice
  goffice-devel
+</PRE></LI><LI CLASS="li-enumerate">pstoedit paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve daha sonra altta bulunan komutu çalıştırın, sorunsuz bir şekilde pdf dönüşümünün yapıldığını gözlemleyin.
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.ps
+pstoedit -f gs:pdfwrite test_oodraw.ps test_oodraw.pdf 
 </PRE></LI><LI CLASS="li-enumerate">kchmviewer paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">txt2man paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir man dosyası ürettiğini gözlemleyin:</P><PRE CLASS="verbatim"> txt2man -h 2&gt;&amp;1 | txt2man -T
 </PRE></LI><LI CLASS="li-enumerate">skrooge paketi kurulumu sonrası:<P>Kmenu’den uygulamayı çalıştırın ve sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">fet paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">scribus paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
  rst2pdf test.rst
