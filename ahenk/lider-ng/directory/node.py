@@ -3,65 +3,63 @@
 """
 """
 
-# Directory modules
-from directory.utils import get_ldap_name
+# Standard modules
+from multiprocessing import Lock
+
+# Ldap modules
+import ldap.dn
+
+# Node database
+NODE_LOCK = Lock()
+NODE_DB = {}
 
 class Node:
+    address = None
+    classes = []
+    attributes = {}
+    parent = None
+
     def __init__(self, address):
-        self.parent = None
-        self.address = address
-        self.ldap_attributes = None
-        self.ldap_classes = None
-        self.description = ""
+        self.set_address(address)
+        self.set_classes([])
+        self.set_parent(None)
+
+    def set_address(self, address):
+        NODE_LOCK.acquire()
+        if self.address and self.address in NODE_DB:
+            del NODE_DB[self.address]
+        self.address = ldap.dn.dn2str(ldap.dn.str2dn(address))
+        NODE_DB[self.address] = self
+        NODE_LOCK.release()
 
     def get_address(self):
-        """
-        Returns full address of node.
-
-        Returns:
-            DN of LDAP object
-        """
         return self.address
 
     def get_classes(self):
-        """
-        Returns list of node classes.
+        return self.classes
 
-        Returns:
-            List of LDAP classes
-        """
-        return self.ldap_classes
+    def is_fetch_required(self):
+        return len(self.attributes) == 0
+        return len(self.classes) == 0
 
     def set_classes(self, classes):
-        self.ldap_classes = classes
+        self.classes = []
+        for cls in classes:
+            self.classes.append(cls.lower())
 
     def get_attributes(self):
-        """
-        Returns a dictionary of node attributes.
-        Classes are omitted.
-
-        Returns:
-            LDAP attributes
-        """
-        return self.ldap_attributes
+        return self.attributes
 
     def set_attributes(self, attributes):
-        self.ldap_attributes = {}
-        self.ldap_classes = []
-        for key in attributes:
-            if key.lower() == 'objectclass':
-                self.ldap_classes = attributes[key]
-            else:
-                self.ldap_attributes[key.lower()] = attributes[key]
-        # Find description
-        if 'description' in self.ldap_attributes:
-            self.description = self.ldap_attributes['description'][0]
+        self.attributes = attributes
 
     def get_label(self):
-        return get_ldap_name(self.address).capitalize()
+        dn = ldap.dn.str2dn(self.address)
+        return dn[0][0][1]
 
     def get_description(self):
-        return self.description
+        desc = self.attributes.get('description', [''])[0]
+        return unicode(desc)
 
     def get_parent(self):
         return self.parent
@@ -70,7 +68,27 @@ class Node:
         self.parent = node
 
     def is_group(self):
-        return 'groupOfNames' in self.ldap_classes
+        return 'groupofnames' in self.classes
 
     def is_folder(self):
-        return self.address.startswith('dc=')
+        return 'dcobject' in self.classes
+
+    def is_user(self):
+        return 'organizationalrole' in self.classes
+
+    def is_device(self):
+        return 'device' in self.classes
+
+    @staticmethod
+    def get_node_from_address(address):
+        if address in NODE_DB:
+            return NODE_DB[address]
+        return None
+
+    @staticmethod
+    def get_or_create_node(address):
+        node = Node.get_node_from_address(address)
+        if node:
+            return node, False
+        else:
+            return Node(address), True

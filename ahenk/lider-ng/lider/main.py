@@ -65,7 +65,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                 username = dialog.get_user()
                 password = dialog.get_password()
                 try:
-                    self.backend.login_simple(host, domain, username, password)
+                    domain = "dc=%s" % domain.replace(".", ",dc=")
+                    self.backend.connect(host, domain)
+                    self.backend.login_simple(username, password)
                     break
                 except:
                     pass
@@ -77,7 +79,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.xmpp_online = []
         self.xmpp = talk.Talk()
         self.xmpp.start()
-        self.xmpp.connect(host, domain, username, password)
+        #self.xmpp.connect(host, domain, username, password)
 
         # Attach generated UI
         self.setupUi(self)
@@ -280,7 +282,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
             widget.setIcon(0, icon)
 
-            #widget.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
+            widget.setChildIndicatorPolicy(QtGui.QTreeWidgetItem.ShowIndicator)
 
             if self.multiple:
                 widget.setCheckState(0, False)
@@ -425,8 +427,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         if len(nodes) == 1:
             node = nodes[0]
 
-            self.labelNodeURI.setText(node.get_address())
-            self.labelNodeType.setText("...")
+            #self.labelNodeURI.setText(node.get_address())
+            #self.labelNodeType.setText("...")
 
             if node.is_group():
                 self.populateMembers()
