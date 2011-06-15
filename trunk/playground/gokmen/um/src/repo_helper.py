@@ -80,6 +80,17 @@ def getInstalledPackages():
 
     return a
 
+def getInstalledSize(installedPackages)
+    totalsize = 0
+    idb = pisi.db.installdb.InstallDB()
+
+    for i in installedPackages:
+        pkg = idb.get_package(i)
+        totalsize += pkg.installedSize
+        #print "%-30s %s" % (pkg.name, pkg.installedSize)
+
+    return totalsize
+
 def getDistroDiff(installed, nextRepo, obsoletes):
     pkglist = []
     replacedBy = {}
