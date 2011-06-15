@@ -80,7 +80,7 @@ def getInstalledPackages():
 
     return a
 
-def getInstalledSize(installedPackages)
+def getInstalledSize(installedPackages):
     totalsize = 0
     idb = pisi.db.installdb.InstallDB()
 
