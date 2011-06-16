@@ -2061,7 +2061,7 @@ fi
 
 # Define the identity of the package.
  PACKAGE=kde-i18n-tr
- VERSION="3.5.10"
+ VERSION="3.5.11"
 
 
 cat >>confdefs.h <<_ACEOF

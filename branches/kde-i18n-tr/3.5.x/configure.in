@@ -3,7 +3,7 @@ dnl FILE: configure.in.in
 dnl =======================================================
 
 AC_INIT(messages/Makefile.am)
-AM_INIT_AUTOMAKE(kde-i18n-tr, "3.5.10")
+AM_INIT_AUTOMAKE(kde-i18n-tr, "3.5.11")
 AM_CONFIG_HEADER(config.h)
 AC_SUBST(AUTODIRS)
 AM_KDE_WITH_NLS
