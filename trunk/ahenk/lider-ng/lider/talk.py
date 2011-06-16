@@ -73,7 +73,7 @@ class Talk(QtCore.QThread):
         self.username = username
         self.password = password
 
-        myJid = jid.JID('%s@%s' % (self.username, self.domain))
+        myJid = jid.JID('%s@%s/Ahenk' % (self.username, self.domain))
         factory = client.XMPPClientFactory(myJid, self.password)
         factory.clientConnectionLost = self.__event_connection_lost
         factory.clientConnectionFailed = self.__event_connection_failed
