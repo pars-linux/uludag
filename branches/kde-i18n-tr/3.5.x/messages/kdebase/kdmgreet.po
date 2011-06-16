@@ -550,3 +550,15 @@ msgstr "%1 tema dosyası açılamadı"
 #, c-format
 msgid "Cannot parse theme file %1"
 msgstr "%1 tema dosyası açılamadı"
+
+msgid "&Suspend Computer"
+msgstr "&Askıya Al"
+
+msgid "Suspend to Disk"
+msgstr "Sabit Disk ile Askıya Al"
+
+msgid "Suspend to RAM"
+msgstr "RAM ile Askıya Al"
+
+msgid "Standby"
+msgstr "Hazırda Beklet"

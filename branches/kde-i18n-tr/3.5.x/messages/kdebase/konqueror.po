@@ -248,7 +248,7 @@ msgstr "Simge Boyutu"
 #: rc.cpp:222 sidebar/trees/history_module/history_module.cpp:242
 #, no-c-format
 msgid "Sort"
-msgstr "Srala"
+msgstr "Sırala"
 
 #. i18n: file iconview/konq_multicolumnview.rc line 42
 #: rc.cpp:225
@@ -649,19 +649,18 @@ msgstr ""
 #: konq_mainwindow.cc:2774 konq_mainwindow.cc:2807 konq_mainwindow.cc:5233
 #: konq_mainwindow.cc:5251 konq_viewmgr.cc:1165 konq_viewmgr.cc:1183
 msgid "Discard Changes?"
-msgstr "Değişiklikler Silinsin mi?"
+msgstr "Değişiklikler Yoksayılsın mı?"
 
 #: konq_mainwindow.cc:1760 konq_mainwindow.cc:2582 konq_mainwindow.cc:2600
 #: konq_mainwindow.cc:2704 konq_mainwindow.cc:2720 konq_mainwindow.cc:2737
 #: konq_mainwindow.cc:2774 konq_mainwindow.cc:2807 konq_mainwindow.cc:5233
 #: konq_mainwindow.cc:5251 konq_viewmgr.cc:1165 konq_viewmgr.cc:1183
 msgid "&Discard Changes"
-msgstr "&Değişiklikleri Sil"
+msgstr "&Değişiklikleri Yoksay"
 
 #: konq_mainwindow.cc:1865
-#, fuzzy
 msgid "Your sidebar is not functional or unavailable."
-msgstr "Kenar çubuğunuz işlevsel değil veya ulaşılamaz. Yeni girdi yapılamaz."
+msgstr "Kenar çubuğunuz çalışmıyor veya mevcut değil."
 
 #: konq_mainwindow.cc:1865 konq_mainwindow.cc:1884
 msgid "Show History Sidebar"
@@ -1403,7 +1402,7 @@ msgstr "Türe Göre"
 
 #: iconview/konq_iconview.cc:254
 msgid "By Date"
-msgstr "Za&man ile"
+msgstr "Tarihe Göre"
 
 #: iconview/konq_iconview.cc:279
 msgid "Folders First"
@@ -2626,11 +2625,11 @@ msgstr "&Geçmişi Sil"
 
 #: sidebar/trees/history_module/history_module.cpp:88
 msgid "By &Name"
-msgstr "İ&sim ile"
+msgstr "İ&sme Göre"
 
 #: sidebar/trees/history_module/history_module.cpp:93
 msgid "By &Date"
-msgstr "Za&man ile"
+msgstr "Ta&rihe Göre"
 
 #: sidebar/trees/history_module/history_module.cpp:351
 #: sidebar/trees/history_module/kcmhistory.cpp:263

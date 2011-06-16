@@ -119,7 +119,7 @@ msgstr "Doygunlaştır"
 
 #: icons.cpp:543
 msgid "To Monochrome"
-msgstr "Tek Tenk"
+msgstr "Tek Renk"
 
 #: icons.cpp:549
 msgid "&Semi-transparent"

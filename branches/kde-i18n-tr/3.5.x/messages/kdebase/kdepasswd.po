@@ -41,7 +41,7 @@ msgstr "Parola Değiştir"
 
 #: passwddlg.cpp:20
 msgid "Please enter your current password:"
-msgstr "Lütfen şimdikit parolanızı girin:"
+msgstr "Lütfen şimdiki parolanızı girin:"
 
 #: passwddlg.cpp:41 passwddlg.cpp:159
 msgid "Conversation with 'passwd' failed."

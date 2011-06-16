@@ -39,6 +39,9 @@ msgstr "tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr"
 msgid "Select Master Channel"
 msgstr "Ana Kanalı Seçin"
 
+msgid "Advanced Sound Control"
+msgstr "Gelişmiş Ses Denetimi"
+
 #: dialogselectmaster.cpp:73
 msgid "Current Mixer"
 msgstr "Geçerli Karıştırıcı"

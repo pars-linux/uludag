@@ -17038,6 +17038,23 @@ msgid "GroupWise SSL Error"
 msgstr "GroupWise SSL Hatası"
 
 #: protocols/groupwise/gwaccount.cpp:367
+
+#: kopete/kopetewindow.cpp:217
+msgid "&Add Account..."
+msgstr "&Hesap Ekle..."
+
+msgid "&Hide vertical scrollbar"
+msgstr "Dikey kaydırma çubuğunu gizle"
+
+msgid "Displayed Theme Path"
+msgstr "Kullanılacak tema dosyasının yolu"
+
+msgid "Connect automatically"
+msgstr "Otomatik olarak bağlan"
+
+msgid "Auto-hide vertical &scrollbar"
+msgstr "Dikey kaydırma çubuğunu otomatik gizle"
+
 msgid ""
 "_: Message Sending Failed\n"
 "Kopete was not able to send the last message sent on account '%1'.\n"
