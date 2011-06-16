@@ -120,6 +120,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
         self.connect(self.radioFollow, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyEditable)
         self.connect(self.radioMultiple, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyEditable)
+        self.connect(self.radioIgnore, QtCore.SIGNAL("toggled(bool)"), self.slotPolicyEditable)
 
         self.connect(self.pushApply, QtCore.SIGNAL("clicked()"), self.slotApply)
         self.connect(self.pushRevert, QtCore.SIGNAL("clicked()"), self.slotRevert)
@@ -477,6 +478,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
                     self.radioExtend.setChecked(True)
                 else:
                     self.radioFollow.setChecked(True)
+                # Update plugin view
+                self.slotPolicyEditable()
                 # Pass policies to plugins
                 for name in self.plugins:
                     widget = self.plugins[name]
