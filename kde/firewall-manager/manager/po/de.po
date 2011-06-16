@@ -99,7 +99,6 @@ msgid "Firewall is deactivated."
 msgstr "Firewall ist deaktiviert."
 
 #: src/firewallmanager/service.py:46 ui/ui_service.py:47
-#, fuzzy
 msgid "Start"
 msgstr "Start"
 
